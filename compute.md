@@ -9,6 +9,7 @@ digit-folder mesh — no precomputed text, no standalone scripts.
 
 <script setup lang="ts">
 import { report as honesty } from './src/honesty/index'
+import { report as acceptance } from './src/1/acceptance'
 import { report as funding } from './src/9/funding'
 import { report as trinityMatrix } from './src/0/trinity-matrix'
 import { report as ledger } from './src/0/ledger'
@@ -34,6 +35,9 @@ import { report as proton } from './src/8/nucleus/proton-mass-fit'
 
 ## Honesty toolkit (`src/honesty/index.ts`)
 <pre>{{ honesty() }}</pre>
+
+## Acceptance vs proof — what the UI delivers (`src/1/acceptance.ts`)
+<pre>{{ acceptance() }}</pre>
 
 ## License & funding — fused (`src/9/funding.ts`)
 <pre>{{ funding() }}</pre>
