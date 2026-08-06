@@ -12,6 +12,7 @@ import { report as society } from './src/9/society'
 import { report as security } from './src/9/security'
 import { report as access } from './src/9/access'
 import { report as coinsLoop } from './src/9/coins'
+import { report as auraFunding } from './src/9/aura-funding'
 import { report as funding } from './src/9/funding'
 import { report as trinityMatrix } from './src/0/trinity-matrix'
 import { report as ledger } from './src/0/ledger'
@@ -316,4 +317,9 @@ digit to its partner (fixed point **5**), so the folders below are laid out arou
 ### The two coins — donated to ceccec itself · `src/9/coins.ts`
 <details class="depth"><summary>compute</summary>
 <pre>{{ coinsLoop() }}</pre>
+</details>
+
+### funding ⇄ aura — the sustaining loop · `src/9/aura-funding.ts`
+<details class="depth"><summary>compute</summary>
+<pre>{{ auraFunding() }}</pre>
 </details>
