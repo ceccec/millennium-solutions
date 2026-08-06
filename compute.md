@@ -11,6 +11,7 @@ import { report as acceptance } from './src/1/acceptance'
 import { report as society } from './src/9/society'
 import { report as security } from './src/9/security'
 import { report as access } from './src/9/access'
+import { report as coinsLoop } from './src/9/coins'
 import { report as funding } from './src/9/funding'
 import { report as trinityMatrix } from './src/0/trinity-matrix'
 import { report as ledger } from './src/0/ledger'
@@ -280,4 +281,9 @@ digit to its partner (fixed point **5**), so the folders below are laid out arou
 ### License & funding — the cycle · `src/9/funding.ts`
 <details class="depth"><summary>compute</summary>
 <pre>{{ funding() }}</pre>
+</details>
+
+### The two coins — donated to ceccec itself · `src/9/coins.ts`
+<details class="depth"><summary>compute</summary>
+<pre>{{ coinsLoop() }}</pre>
 </details>
