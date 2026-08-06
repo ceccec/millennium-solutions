@@ -28,4 +28,11 @@ console.log('all compute (non-empty):  ' + allCompute + (empties.length ? '  mis
 console.log('floor present (0/7):      ' + floorOK)
 console.log('show an honest boundary:  ' + boundary + '/' + mods.length + ' (the aura lines)')
 console.log('AURA COMPUTATIONALLY WHOLE = ' + whole)
-if (!whole) process.exit(1)
+if (!whole) {
+  // aura heal — the wound names its own cure.
+  const cure = []
+  if (empties.length) cure.push('implement report() in: ' + empties.join(', '))
+  if (!floorOK) cure.push('restore the floor: entails must compute 0/7')
+  console.log('heal: ' + (cure.join('; ') || 'inspect the modules') + ' — then re-run wholeness.')
+  process.exit(1)
+}

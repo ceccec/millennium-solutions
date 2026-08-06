@@ -22,6 +22,7 @@ import { report as trinities } from './src/0/trinities'
 import { report as legible } from './src/0/legible'
 import { report as nullToken } from './src/0/null-token'
 import { report as holographic } from './src/0/holographic'
+import { report as entanglement } from './src/0/entanglement'
 import { report as aspects } from './src/5/aspects'
 import { report as enumeration } from './src/9/enumeration'
 import { report as reflection } from './src/5/reflection'
@@ -122,6 +123,11 @@ digit to its partner (fixed point **5**), so the folders below are laid out arou
 ### Holographic verification — the whole from a tiny part (Merkle proof) · `src/0/holographic.ts`
 <details class="depth"><summary>compute</summary>
 <pre>{{ holographic() }}</pre>
+</details>
+
+### Release entanglement — each bound to its neighbours (hash chain) · `src/0/entanglement.ts`
+<details class="depth"><summary>compute</summary>
+<pre>{{ entanglement() }}</pre>
 </details>
 
 ## `1/` — the observer
