@@ -18,7 +18,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npm install --no-workspaces
+      # No npm install: the three gates are dependency-free (Node built-ins + type-stripped
+      # .ts imports touching only src/0/index.ts). Only docs:build needs vitepress.
       - name: gaps (coverage)
         run: node scripts/gaps.mjs
       - name: seal (consistency, 0/7)
