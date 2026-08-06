@@ -45,6 +45,7 @@ import { report as lens } from './src/7/lens'
 import { report as locale } from './src/7/locale'
 import { report as languageLens } from './src/7/language-lens'
 import { report as glagolitic } from './src/7/glagolitic'
+import { report as cross } from './src/7/cross'
 import { report as proton } from './src/8/nucleus/proton-mass-fit'
 </script>
 
@@ -232,6 +233,11 @@ digit to its partner (fixed point **5**), so the folders below are laid out arou
 ### Seven-star rosette · Glagolitic · the sequence · `src/7/glagolitic.ts`
 <details class="depth"><summary>compute</summary>
 <pre>{{ glagolitic() }}</pre>
+</details>
+
+### The 6×7 / 7×6 cross — 42 combinations, one singularity · `src/7/cross.ts`
+<details class="depth"><summary>compute</summary>
+<pre>{{ cross() }}</pre>
 </details>
 
 ## `8/` — geometry & nucleus
