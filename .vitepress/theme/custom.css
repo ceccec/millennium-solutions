@@ -1,0 +1,39 @@
+/* Depth folds: each computation is a level you descend into. Left rails + indent suggest the
+   mesh depth; monospace summaries read as addresses. Typography carries the "depths". */
+.depth {
+  margin: 0.35rem 0 0.9rem;
+  border-left: 2px solid var(--vp-c-divider);
+  padding-left: 0.9rem;
+  transition: border-color 0.2s;
+}
+.depth > summary {
+  cursor: pointer;
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--vp-c-text-3);
+  user-select: none;
+  padding: 0.1rem 0;
+  list-style: none;
+}
+.depth > summary::before {
+  content: '▸ ';
+  color: var(--vp-c-text-3);
+}
+.depth[open] > summary::before { content: '▾ '; }
+.depth[open] > summary { color: var(--vp-c-brand-1); }
+.depth[open] { border-left-color: var(--vp-c-brand-1); }
+.depth > pre {
+  margin: 0.5rem 0 0;
+  padding: 0.9rem 1rem;
+  overflow-x: auto;
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.8rem;
+  line-height: 1.55;
+  background: var(--vp-c-bg-alt);
+  border-radius: 8px;
+  white-space: pre;
+}
+/* Nested depth (a fold within a fold) indents further — the mesh going deeper. */
+.depth .depth { border-left-color: var(--vp-c-brand-2, var(--vp-c-divider)); }
