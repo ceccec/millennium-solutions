@@ -17,6 +17,7 @@ import { report as singularity } from './src/0/singularity'
 import { report as aspects } from './src/5/aspects'
 import { report as enumeration } from './src/9/enumeration'
 import { report as reflection } from './src/5/reflection'
+import { report as development } from './src/5/development'
 import { report as folds } from './src/5/folds'
 import { report as rosetta } from './src/7/rosetta'
 import { report as rosettaClay } from './src/7/rosetta-clay'
@@ -59,6 +60,9 @@ import { report as proton } from './src/8/nucleus/proton-mass-fit'
 
 ## Reflection — ℤ/9 (`src/5/reflection.ts`)
 <pre>{{ reflection() }}</pre>
+
+## Development goes on in involutions (`src/5/development.ts`)
+<pre>{{ development() }}</pre>
 
 ## Folds (`src/5/folds.ts`)
 <pre>{{ folds() }}</pre>
