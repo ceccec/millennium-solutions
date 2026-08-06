@@ -15,6 +15,7 @@ import { report as ledger } from './src/0/ledger'
 import { report as singularity } from './src/0/singularity'
 import { report as stream } from './src/0/stream'
 import { report as versionMatrix } from './src/0/version-matrix'
+import { report as trinities } from './src/0/trinities'
 import { report as aspects } from './src/5/aspects'
 import { report as enumeration } from './src/9/enumeration'
 import { report as reflection } from './src/5/reflection'
@@ -89,6 +90,11 @@ digit to its partner (fixed point **5**), so the folders below are laid out arou
 ### Versioning — digit matrix folded into a Merkle pyramid · `src/0/version-matrix.ts`
 <details class="depth"><summary>compute</summary>
 <pre>{{ versionMatrix() }}</pre>
+</details>
+
+### Singularity trinities — many threes, one root · `src/0/trinities.ts`
+<details class="depth"><summary>compute</summary>
+<pre>{{ trinities() }}</pre>
 </details>
 
 ## `1/` — the observer
