@@ -8,6 +8,7 @@ outline: deep
 <script setup lang="ts">
 import { report as honesty } from './src/honesty/index'
 import { report as acceptance } from './src/1/acceptance'
+import { report as paradox } from './src/1/paradox'
 import { report as society } from './src/9/society'
 import { report as security } from './src/9/security'
 import { report as access } from './src/9/access'
@@ -142,6 +143,11 @@ digit to its partner (fixed point **5**), so the folders below are laid out arou
 ### Acceptance vs proof — what the UI delivers · `src/1/acceptance.ts`
 <details class="depth"><summary>compute</summary>
 <pre>{{ acceptance() }}</pre>
+</details>
+
+### Purity · clarity · paradox — the limit of self-verification · `src/1/paradox.ts`
+<details class="depth"><summary>compute</summary>
+<pre>{{ paradox() }}</pre>
 </details>
 
 ## `2/` — waves & scales
