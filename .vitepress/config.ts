@@ -23,6 +23,11 @@ export default defineConfig({
       { text: L.nav.compute, link: '/compute' },
       { text: L.nav.decode, link: '/SEQUENCE-DECODE' },
       { text: 'Develop', link: '/DEVELOP' },
+      { text: 'Repo ↗', link: 'https://github.com/ceccec/millennium-solutions' },
+    ],
+
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/ceccec/millennium-solutions' },
     ],
 
     sidebar: [
@@ -55,7 +60,7 @@ export default defineConfig({
 
     footer: {
       message: 'CC BY-NC 4.0 — free for non-commercial use · commercial = the two coins (110 − 108 = 2 = −χ genus-2)',
-      copyright: 'Support development: <a href="https://revolut.me/ceccec" target="_blank" rel="noopener">revolut.me/ceccec</a> · © Tsvetan Rouschev',
+      copyright: 'Source: <a href="https://github.com/ceccec/millennium-solutions" target="_blank" rel="noopener">github.com/ceccec/millennium-solutions</a> · Support: <a href="https://revolut.me/ceccec" target="_blank" rel="noopener">revolut.me/ceccec</a> · © Tsvetan Rouschev',
     },
   },
 
