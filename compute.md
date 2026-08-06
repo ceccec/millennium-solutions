@@ -28,6 +28,7 @@ import { report as stringScale } from './src/2/string-scale'
 import { report as primesVortex } from './src/2/primes-vortex'
 import { report as piBBP } from './src/3/pi-bbp'
 import { report as stringDims } from './src/7/string-dimensions'
+import { report as lens } from './src/7/lens'
 import { report as proton } from './src/8/nucleus/proton-mass-fit'
 </script>
 
@@ -90,6 +91,9 @@ import { report as proton } from './src/8/nucleus/proton-mass-fit'
 
 ## 7-dimensional strings — where 7 really appears (`src/7/string-dimensions.ts`)
 <pre>{{ stringDims() }}</pre>
+
+## The 7-dimensional lens — reflect(singularity, clay) (`src/7/lens.ts`)
+<pre>{{ lens() }}</pre>
 
 ## Proton mass fit (`src/8/nucleus/proton-mass-fit.ts`)
 <pre>{{ proton() }}</pre>
