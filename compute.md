@@ -30,6 +30,7 @@ import { report as frequency } from './src/2/frequency-scales'
 import { report as stringScale } from './src/2/string-scale'
 import { report as primesVortex } from './src/2/primes-vortex'
 import { report as piBBP } from './src/3/pi-bbp'
+import { report as trinity } from './src/3/trinity'
 import { report as stringDims } from './src/7/string-dimensions'
 import { report as lens } from './src/7/lens'
 import { report as locale } from './src/7/locale'
@@ -114,11 +115,16 @@ digit to its partner (fixed point **5**), so the folders below are laid out arou
 <pre>{{ primesVortex() }}</pre>
 </details>
 
-## `3/` — random access
+## `3/` — random access & the trinity
 
 ### π by random access — BBP · `src/3/pi-bbp.ts`
 <details class="depth"><summary>compute</summary>
 <pre>{{ piBBP() }}</pre>
+</details>
+
+### Singularity reflects trinity — ℤ/9 as a trinity of triads · `src/3/trinity.ts`
+<details class="depth"><summary>compute</summary>
+<pre>{{ trinity() }}</pre>
 </details>
 
 ## `5/` — the center · reflection & folds

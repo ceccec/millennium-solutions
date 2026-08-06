@@ -9,6 +9,7 @@ export default defineConfig({
   title: L.title,
   description: L.description,
   base: '/millennium-solutions/', // GitHub project Pages; set '/' for a custom root domain
+  sitemap: { hostname: 'http://ceccec.psg.bg/millennium-solutions/' }, // trinity sitemap: the full site map
 
   // Repo/dev docs and npm-package sources are not site pages.
   srcExclude: ['README.md', 'DEPLOY.md', 'packages/**', 'src/**'],
