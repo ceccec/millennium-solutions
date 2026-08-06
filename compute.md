@@ -32,6 +32,7 @@ import { report as primesVortex } from './src/2/primes-vortex'
 import { report as piBBP } from './src/3/pi-bbp'
 import { report as stringDims } from './src/7/string-dimensions'
 import { report as lens } from './src/7/lens'
+import { report as locale } from './src/7/locale'
 import { report as proton } from './src/8/nucleus/proton-mass-fit'
 </script>
 
@@ -106,6 +107,9 @@ import { report as proton } from './src/8/nucleus/proton-mass-fit'
 
 ## The 7-dimensional lens — reflect(singularity, clay) (`src/7/lens.ts`)
 <pre>{{ lens() }}</pre>
+
+## 7D UI from locale — self-localizing chrome (`src/7/locale.ts`)
+<pre>{{ locale() }}</pre>
 
 ## Proton mass fit (`src/8/nucleus/proton-mass-fit.ts`)
 <pre>{{ proton() }}</pre>

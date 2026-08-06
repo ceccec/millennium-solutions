@@ -1,20 +1,25 @@
 import { defineConfig } from 'vitepress'
+import { LOCALES, LOCALE_ORDER } from '../src/7/locale'
+
+// 7D UI from locale: the interface chrome is SOURCED from the fused locale table.
+// Root locale = en; the other six are ready in the table for per-locale content dirs.
+const L = LOCALES.en
 
 export default defineConfig({
-  title: 'Millennium Solutions',
-  description: 'ℤ/9 vortex framework — recomputable proof of concept',
+  title: L.title,
+  description: L.description,
 
   // Repo/dev docs and npm-package sources are not site pages.
   srcExclude: ['README.md', 'DEPLOY.md', 'packages/**', 'src/**'],
 
   themeConfig: {
     nav: [
-      { text: 'Paper', link: '/' },
-      { text: 'Research', link: '/RESEARCH' },
-      { text: 'Proof of Concept', link: '/PROOF-OF-CONCEPT' },
-      { text: 'Realisations', link: '/REALISATIONS' },
-      { text: 'Compute', link: '/compute' },
-      { text: 'Decode', link: '/SEQUENCE-DECODE' },
+      { text: L.nav.paper, link: '/' },
+      { text: L.nav.research, link: '/RESEARCH' },
+      { text: L.nav.poc, link: '/PROOF-OF-CONCEPT' },
+      { text: L.nav.realisations, link: '/REALISATIONS' },
+      { text: L.nav.compute, link: '/compute' },
+      { text: L.nav.decode, link: '/SEQUENCE-DECODE' },
     ],
 
     sidebar: [
