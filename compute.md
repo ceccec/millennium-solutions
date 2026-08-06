@@ -9,6 +9,7 @@ outline: deep
 import { report as honesty } from './src/honesty/index'
 import { report as acceptance } from './src/1/acceptance'
 import { report as society } from './src/9/society'
+import { report as security } from './src/9/security'
 import { report as funding } from './src/9/funding'
 import { report as trinityMatrix } from './src/0/trinity-matrix'
 import { report as ledger } from './src/0/ledger'
@@ -229,6 +230,11 @@ digit to its partner (fixed point **5**), so the folders below are laid out arou
 ### Live society — alive by participation · `src/9/society.ts`
 <details class="depth"><summary>compute</summary>
 <pre>{{ society() }}</pre>
+</details>
+
+### Public security — transparency, not secrecy · `src/9/security.ts`
+<details class="depth"><summary>compute</summary>
+<pre>{{ security() }}</pre>
 </details>
 
 ### License & funding — the cycle · `src/9/funding.ts`
