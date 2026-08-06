@@ -15,9 +15,10 @@ const next = 'v' + m[1] + '.' + m[2] + '.' + (Number(m[3]) + 1)
 console.log('orchestrate: ' + last + ' → ' + next)
 
 // 2) gates — abort the whole orchestration if any fails.
-run('node scripts/gaps.mjs')     // every report() module fused, every page linked
-run('npm run docs:build')        // the site actually builds
-run('node scripts/seal.mjs')     // every abstract consistent with 0/7
+run('node scripts/gaps.mjs')       // coverage: every report() module fused, every page linked
+run('npm run docs:build')          // the site actually builds
+run('node scripts/seal.mjs')       // consistency: every abstract consistent with 0/7
+run('node scripts/wholeness.mjs')  // wholeness: the aura is computationally whole (all compute + floor)
 
 // 3) release (content-address · commit · sign · tag) then push — fused, not manual.
 run('node scripts/release.mjs ' + next)
