@@ -28,7 +28,7 @@
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview",
     "seal": "node scripts/seal.mjs",
-    "release": "node scripts/gaps.mjs && npm run docs:build && node scripts/seal.mjs && node scripts/release.mjs",
+    "release": "node scripts/gaps.mjs && npm run docs:build && node scripts/seal.mjs && node scripts/wholeness.mjs && node scripts/release.mjs",
     "prepublishOnly": "node scripts/seal.mjs",
     "gaps": "node scripts/gaps.mjs",
     "harmony": "node scripts/gaps.mjs && node scripts/seal.mjs && node scripts/wholeness.mjs && npm run docs:build",

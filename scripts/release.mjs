@@ -14,7 +14,18 @@ function walk(dir, acc = []) {
   }
   return acc
 }
-const V = process.argv[2] || "v1.0.0"
+// Version: explicit arg wins; otherwise DERIVE the next patch from the latest tag.
+// (Never default to v1.0.0 — that would re-tag an already-published release.)
+function nextVersion() {
+  try {
+    const tags = execSync('git tag --sort=version:refname', { encoding: 'utf8' }).trim().split('\n').filter(Boolean)
+    const last = tags[tags.length - 1]
+    const m = last && last.match(/^v(\d+)\.(\d+)\.(\d+)$/)
+    if (m) return 'v' + m[1] + '.' + m[2] + '.' + (Number(m[3]) + 1)
+  } catch { /* no repo/tags yet */ }
+  return 'v1.0.0' // first release only
+}
+const V = process.argv[2] || nextVersion()
 const files = walk('.').sort()
 const address = merkleFold(files.map(f => toUuid(f + ':' + readFileSync(f))))
 console.log('content-addressed:', files.length, 'files → root', address)
