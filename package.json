@@ -32,7 +32,8 @@
     "prepublishOnly": "node scripts/seal.mjs",
     "gaps": "node scripts/gaps.mjs",
     "harmony": "node scripts/gaps.mjs && node scripts/seal.mjs && npm run docs:build",
-    "versions": "node scripts/versions.mjs"
+    "versions": "node scripts/versions.mjs",
+    "orchestrate": "node scripts/orchestrate.mjs"
   },
   "devDependencies": {
     "vitepress": "^2.0.0-alpha.19",

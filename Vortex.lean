@@ -16,7 +16,8 @@ theorem doubling_circuit : (List.range 6).map (fun k => (2 : ZMod 9) ^ k) = [1, 
 theorem two_order_six    : (2 : ZMod 9) ^ 6 = 1 := by decide
 
 -- reflection: 10−d is an involution
-theorem tens_complement_involutive : ∀ d, d ≤ 10 → 10 - (10 - d) = d := by decide
+theorem tens_complement_involutive : ∀ d, d ≤ 10 → 10 - (10 - d) = d := by
+  intro d hd; omega
 
 -- ℤ/7 rosette ≅ C₆
 theorem rosette_pow_six : (3 : ZMod 7) ^ 6 = 1 := by decide

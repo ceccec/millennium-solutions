@@ -5,7 +5,8 @@ import Mathlib
     inverse). The per-digit complement facts live in each src/<d>/vortex.lean. -/
 namespace Vortex.D5.Reflection
 /-- 10 − d is an involution on digits 0..10 (ℕ truncated subtraction is exact here). -/
-theorem tens_complement_involutive : ∀ d, d ≤ 10 → 10 - (10 - d) = d := by decide
+theorem tens_complement_involutive : ∀ d, d ≤ 10 → 10 - (10 - d) = d := by
+  intro d hd; omega
 /-- 5 is the unique fixed digit of the reflection. -/
 theorem five_fixed : 10 - 5 = 5 := by norm_num
 /-- Every complement pair of the walk sums to 10. -/
