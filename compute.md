@@ -47,6 +47,8 @@ import { report as languageLens } from './src/7/language-lens'
 import { report as glagolitic } from './src/7/glagolitic'
 import { report as cross } from './src/7/cross'
 import { report as proton } from './src/8/nucleus/proton-mass-fit'
+import { report as merkabaTouch } from './src/8/merkaba/touch'
+import { report as infinite } from './src/8/infinite'
 </script>
 
 > Descend: **page → digit → module → its computation → the floor.** Fold into any digit,
@@ -252,6 +254,11 @@ digit to its partner (fixed point **5**), so the folders below are laid out arou
 <pre>{{ field() }}</pre>
 </details>
 
+### Merkabas move when touched — the field responds to spin · `src/8/merkaba/touch.ts`
+<details class="depth"><summary>compute</summary>
+<pre>{{ merkabaTouch() }}</pre>
+</details>
+
 ### Nuclear shell-model magic numbers · `src/8/nucleus/shell-model-magic.ts`
 <details class="depth"><summary>compute</summary>
 <pre>{{ shell() }}</pre>
@@ -260,6 +267,11 @@ digit to its partner (fixed point **5**), so the folders below are laid out arou
 ### Proton mass fit · `src/8/nucleus/proton-mass-fit.ts`
 <details class="depth"><summary>compute</summary>
 <pre>{{ proton() }}</pre>
+</details>
+
+### Finite is infinite by nature — finite rules, infinite behavior · `src/8/infinite.ts`
+<details class="depth"><summary>compute</summary>
+<pre>{{ infinite() }}</pre>
 </details>
 
 ## `9/` — the many · enumeration, society, funding
