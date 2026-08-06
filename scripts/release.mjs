@@ -30,6 +30,16 @@ const files = walk('.').sort()
 const address = merkleFold(files.map(f => toUuid(f + ':' + readFileSync(f))))
 console.log('content-addressed:', files.length, 'files → root', address)
 
+// Useless work drains tokens: refuse to mint a new version for identical content.
+try {
+  const tags = execSync('git tag --sort=version:refname', { encoding: 'utf8' }).trim().split('\n').filter(Boolean)
+  const last = tags[tags.length - 1]
+  if (last) {
+    const msg = execSync("git for-each-ref '--format=%(contents)' refs/tags/" + last, { encoding: 'utf8' })
+    if (msg.includes(address)) { console.log('no delta — ' + last + ' already carries ' + address.slice(0, 13) + '…; skipping (no token drained).'); process.exit(0) }
+  }
+} catch { /* no repo/tags yet */ }
+
 const sh = (c) => { console.log('$ ' + c); return execSync(c, { stdio: 'inherit' }) }
 const q = (c) => { try { execSync(c, { stdio: 'ignore' }) } catch {} }
 let repo = false

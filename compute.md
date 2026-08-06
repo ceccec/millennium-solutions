@@ -24,6 +24,7 @@ import { report as legible } from './src/0/legible'
 import { report as nullToken } from './src/0/null-token'
 import { report as holographic } from './src/0/holographic'
 import { report as entanglement } from './src/0/entanglement'
+import { report as fusion } from './src/0/fusion'
 import { report as aspects } from './src/5/aspects'
 import { report as enumeration } from './src/9/enumeration'
 import { report as reflection } from './src/5/reflection'
@@ -129,6 +130,11 @@ digit to its partner (fixed point **5**), so the folders below are laid out arou
 ### Release entanglement — each bound to its neighbours (hash chain) · `src/0/entanglement.ts`
 <details class="depth"><summary>compute</summary>
 <pre>{{ entanglement() }}</pre>
+</details>
+
+### Tokens are valid only in the fusion — membership, not the token · `src/0/fusion.ts`
+<details class="depth"><summary>compute</summary>
+<pre>{{ fusion() }}</pre>
 </details>
 
 ## `1/` — the observer
