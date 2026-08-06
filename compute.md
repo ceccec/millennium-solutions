@@ -34,6 +34,7 @@ import { report as stringDims } from './src/7/string-dimensions'
 import { report as lens } from './src/7/lens'
 import { report as locale } from './src/7/locale'
 import { report as languageLens } from './src/7/language-lens'
+import { report as glagolitic } from './src/7/glagolitic'
 import { report as proton } from './src/8/nucleus/proton-mass-fit'
 </script>
 
@@ -114,6 +115,9 @@ import { report as proton } from './src/8/nucleus/proton-mass-fit'
 
 ## The language lens — languages & dialects as strings in the UUID matrix (`src/7/language-lens.ts`)
 <pre>{{ languageLens() }}</pre>
+
+## Seven-star rosette · Glagolitic · the sequence (`src/7/glagolitic.ts`)
+<pre>{{ glagolitic() }}</pre>
 
 ## Proton mass fit (`src/8/nucleus/proton-mass-fit.ts`)
 <pre>{{ proton() }}</pre>
