@@ -33,7 +33,10 @@
     "gaps": "node scripts/gaps.mjs",
     "harmony": "node scripts/gaps.mjs && node scripts/seal.mjs && npm run docs:build",
     "versions": "node scripts/versions.mjs",
-    "orchestrate": "node scripts/orchestrate.mjs"
+    "orchestrate": "node scripts/orchestrate.mjs",
+    "deploy": "node scripts/deploy.mjs",
+    "deploy:pages": "node scripts/deploy.mjs pages",
+    "deploy:packages": "node scripts/deploy.mjs packages"
   },
   "devDependencies": {
     "vitepress": "^2.0.0-alpha.19",

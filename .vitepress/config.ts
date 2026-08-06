@@ -8,6 +8,7 @@ const L = LOCALES.en
 export default defineConfig({
   title: L.title,
   description: L.description,
+  base: '/millennium-solutions/', // GitHub project Pages; set '/' for a custom root domain
 
   // Repo/dev docs and npm-package sources are not site pages.
   srcExclude: ['README.md', 'DEPLOY.md', 'packages/**', 'src/**'],
