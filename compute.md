@@ -15,6 +15,7 @@ import { report as funding } from './src/9/funding'
 import { report as trinityMatrix } from './src/0/trinity-matrix'
 import { report as ledger } from './src/0/ledger'
 import { report as singularity } from './src/0/singularity'
+import { report as stream } from './src/0/stream'
 import { report as aspects } from './src/5/aspects'
 import { report as enumeration } from './src/9/enumeration'
 import { report as reflection } from './src/5/reflection'
@@ -58,6 +59,9 @@ import { report as proton } from './src/8/nucleus/proton-mass-fit'
 
 ## Singularity — one root, shared reference (`src/0/singularity.ts`)
 <pre>{{ singularity() }}</pre>
+
+## Memory-free UUID streams — loadable payload (`src/0/stream.ts`)
+<pre>{{ stream() }}</pre>
 
 ## The thesis, decomposed and computed (`src/5/aspects.ts`)
 <pre>{{ aspects() }}</pre>
