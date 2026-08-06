@@ -8,12 +8,15 @@ export const FUNDING = {
 // "the two coins" = 110 − 108 = −χ(genus-2) = 2  (the commercial fare)
 export function coins(): number { return 110 - 108 }
 export function report(): string {
-  return 'Funding comes from development: the core is free, developed in the open by the orchestration\n'
-    + '(gaps → seal → sign → release) and the rosetta of packages (core · honesty · vision) — everyone\n'
-    + 'builds their vision on it. Commercial development pays the two coins (110 − 108 = ' + coins()
-    + ' = −χ genus-2, ' + FUNDING.contact + '), which funds further development.\n'
+  return 'The cycle: development → life → development.\n'
+    + 'Development gives the work to people for free; life (the people who use it) funds the next\n'
+    + 'development. The core is free, developed in the open by the orchestration (gaps → seal →\n'
+    + 'sign → release) and the rosetta of packages (core · honesty · vision) — everyone builds their\n'
+    + 'vision on it. Commercial use pays the two coins (110 − 108 = ' + coins()
+    + ' = −χ genus-2, ' + FUNDING.contact + '); living users support voluntarily. Both fund further development.\n'
+    + 'HONEST: support is non-obligatory and not guaranteed — a gift economy, not a revenue promise.\n'
     + 'License: ' + FUNDING.license + ' — free for non-commercial use, attribution ' + FUNDING.author
-    + '. Support (non-obligatory): ' + FUNDING.revolut
+    + '. Support: ' + FUNDING.revolut
 }
 
 // Funding filled with results — the computed proof-of-work the funding supports.
