@@ -26,6 +26,6 @@ try { execSync('git rev-parse --is-inside-work-tree', { stdio: 'ignore' }); repo
 if (!repo) { sh('git init -q'); sh('git config user.name "Tsvetan Rouschev"'); sh('git config user.email "ceci@psg.bg"') }
 sh('git add -A')
 q(`git commit -q -m "release ${V} — content-address ${address}"`)   // no-op if unchanged
-q('git tag -d ${V}')                                                // re-tag (unpublished)
+q(`git tag -d ${V}`)                                              // re-tag (unpublished)
 sh(`git tag -a ${V} -m "signed: Singularity \u00b7 content-address ${address}"`)
-console.log('\n\u2713 ${V} → content-address', address)
+console.log(`\n\u2713 ${V} → content-address ${address}`)
