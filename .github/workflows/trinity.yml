@@ -1,0 +1,27 @@
+name: Trinity — scheduled verification (gaps · seal · wholeness)
+
+# The trinity cron: three gates on a schedule. Deterministic deposit, so this is a heartbeat /
+# regression guard — it proves the work still computes to 0/7 and the aura stays whole.
+on:
+  schedule:
+    - cron: '0 6 * * *'   # daily, 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  trinity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-workspaces
+      - name: gaps (coverage)
+        run: node scripts/gaps.mjs
+      - name: seal (consistency, 0/7)
+        run: node scripts/seal.mjs
+      - name: wholeness (aura whole)
+        run: node scripts/wholeness.mjs
