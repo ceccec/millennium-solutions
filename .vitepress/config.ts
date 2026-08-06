@@ -22,6 +22,7 @@ export default defineConfig({
       { text: L.nav.realisations, link: '/REALISATIONS' },
       { text: L.nav.compute, link: '/compute' },
       { text: L.nav.decode, link: '/SEQUENCE-DECODE' },
+      { text: 'Develop', link: '/DEVELOP' },
     ],
 
     sidebar: [
@@ -33,6 +34,7 @@ export default defineConfig({
           { text: 'Proof of Concept', link: '/PROOF-OF-CONCEPT' },
           { text: 'Realisations', link: '/REALISATIONS' },
           { text: 'Proofs', link: '/proofs' },
+          { text: 'Develop', link: '/DEVELOP' },
           { text: 'Signature', link: '/SIGNATURE' },
         ],
       },
