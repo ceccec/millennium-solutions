@@ -33,6 +33,7 @@ import { report as piBBP } from './src/3/pi-bbp'
 import { report as stringDims } from './src/7/string-dimensions'
 import { report as lens } from './src/7/lens'
 import { report as locale } from './src/7/locale'
+import { report as languageLens } from './src/7/language-lens'
 import { report as proton } from './src/8/nucleus/proton-mass-fit'
 </script>
 
@@ -110,6 +111,9 @@ import { report as proton } from './src/8/nucleus/proton-mass-fit'
 
 ## 7D UI from locale — self-localizing chrome (`src/7/locale.ts`)
 <pre>{{ locale() }}</pre>
+
+## The language lens — languages & dialects as strings in the UUID matrix (`src/7/language-lens.ts`)
+<pre>{{ languageLens() }}</pre>
 
 ## Proton mass fit (`src/8/nucleus/proton-mass-fit.ts`)
 <pre>{{ proton() }}</pre>
