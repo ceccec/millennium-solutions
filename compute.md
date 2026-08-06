@@ -16,6 +16,7 @@ import { report as trinityMatrix } from './src/0/trinity-matrix'
 import { report as ledger } from './src/0/ledger'
 import { report as singularity } from './src/0/singularity'
 import { report as stream } from './src/0/stream'
+import { report as versionMatrix } from './src/0/version-matrix'
 import { report as aspects } from './src/5/aspects'
 import { report as enumeration } from './src/9/enumeration'
 import { report as reflection } from './src/5/reflection'
@@ -62,6 +63,9 @@ import { report as proton } from './src/8/nucleus/proton-mass-fit'
 
 ## Memory-free UUID streams — loadable payload (`src/0/stream.ts`)
 <pre>{{ stream() }}</pre>
+
+## Versioning — digit matrix folded into a Merkle pyramid (`src/0/version-matrix.ts`)
+<pre>{{ versionMatrix() }}</pre>
 
 ## The thesis, decomposed and computed (`src/5/aspects.ts`)
 <pre>{{ aspects() }}</pre>
