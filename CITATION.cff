@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a 7 = 6 + 1 correspondence with the Clay Millennium Problems (observation-based, recomputable)"
+type: software
+authors:
+  - family-names: Rouschev
+    given-names: Tsvetan
+    orcid: "https://orcid.org/0009-0000-7312-9778"
+    affiliation: "PSG, Bulgaria"
+version: "1.0.0"
+license: CC-BY-NC-4.0
+repository-code: "https://github.com/ceccec/millennium-solutions"
+url: "https://github.com/ceccec/millennium-solutions"
+keywords:
+  - modular arithmetic
+  - group theory
+  - Pliska rosette
+  - Clay Millennium Problems
+  - Lean 4
+  - recomputable research
+abstract: >-
+  A free, open, recomputable Z/9 vortex and (Z/7)* rosette framework with a
+  classical simulator of quantum algorithms (TypeScript, Lean 4, VitePress).
+  Division by zero is treated as a change of domain; inversion and ten's-complement
+  reflection are involutions; a 7 = 6 + 1 bijection maps the seven-ray Pliska
+  rosette onto the Clay Millennium Problems. A mechanical entailment test reports
+  0/7: the framework reflects/maps the problems, it does not solve them. Proof of
+  concept, not a resolution.

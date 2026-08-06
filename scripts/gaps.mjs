@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+// Harmony check: (1) every report() module fused into /compute; (2) every site page linked in nav/sidebar.
+import { readFileSync, readdirSync, statSync } from 'node:fs'
+import { join } from 'node:path'
+const SKIP = new Set(['node_modules', '.git', 'dist', 'cache'])
+const walk = (d, a = []) => { for (const n of readdirSync(d)) { const p = join(d, n); if (statSync(p).isDirectory()) { if (!SKIP.has(n)) walk(p, a) } else a.push(p) } return a }
+let gaps = 0
+// (1) fused compute modules
+const compute = readFileSync('compute.md', 'utf8')
+const mods = walk('src').filter(f => f.endsWith('.ts') && /export function report/.test(readFileSync(f, 'utf8')))
+const om = mods.filter(m => !compute.includes(m.replace(/\.ts$/, '')))
+console.log('report() modules:', mods.length, om.length ? '— GAP: ' + om.join(', ') : '✓ all fused')
+gaps += om.length
+// (2) site page coverage
+const cfg = readFileSync('.vitepress/config.ts', 'utf8')
+const EXCL = new Set(['README.md', 'DEPLOY.md'])
+const rootMd = readdirSync('.').filter(f => f.endsWith('.md') && !EXCL.has(f))
+const op = rootMd.filter(f => { const s = '/' + f.replace(/\.md$/, ''); const a = f === 'index.md' ? '/' : s; return !cfg.includes("'" + s + "'") && !cfg.includes("'" + a + "'") })
+console.log('site pages:', rootMd.length, op.length ? '— GAP (unlinked): ' + op.join(', ') : '✓ all navigable')
+gaps += op.length
+console.log(gaps === 0 ? '\n✓ no gaps — harmony holds' : '\n✗ ' + gaps + ' gap(s)')
+process.exit(gaps === 0 ? 0 : 1)

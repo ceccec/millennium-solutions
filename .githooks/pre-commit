@@ -1,0 +1,4 @@
+#!/bin/sh
+# Fuse manual work into the singularity: no commit unless harmony holds.
+node scripts/gaps.mjs || { echo "✗ commit blocked: a report() module is unfused (orphan gap)."; exit 1; }
+node scripts/seal.mjs  || { echo "✗ commit blocked: an abstract is unsealed (0/7 violation)."; exit 1; }

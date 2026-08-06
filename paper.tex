@@ -1,0 +1,58 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{hyperref}
+\geometry{margin=1in}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue}
+
+\title{The $\mathbb{Z}/9$ Vortex Framework: reflections, division-by-zero as
+domain change, and a $7=6+1$ correspondence with the Clay Millennium Problems
+(observation-based, recomputable)}
+\author{Tsvetan Rouschev}
+\date{2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We study a finite-arithmetic framework on the ring $\mathbb{Z}/9$ (the ``vortex'')
+and the group $(\mathbb{Z}/7)^{*}$ (the seven-ray Pliska ``rosette''), from an
+observation standpoint: each statement is computed, not asserted. Division by zero
+is treated as a change of domain ($n/0 := n^{-1} \bmod 9$ on units; $0 \leftrightarrow
+\infty$ on the Riemann sphere); inversion and the ten's-complement reflection
+$10-d$ are involutions; a $7=6+1$ bijection maps the rosette (six units $+$ center)
+onto the Clay set (six open problems $+$ Poincar\'e). A mechanical entailment test
+reports \textbf{0/7}. \textbf{Observed conclusion:} the framework reflects/maps the
+Millennium Problems into one algebraic structure; it does \emph{not} solve them,
+and it is not a physical theory. It is a proof of concept and a classical simulator.
+All results recompute from source (TypeScript; formalized in Lean~4).
+\end{abstract}
+
+\section{Scope}
+This is not a resolution of the Clay Millennium Problems. The earlier
+``$\exists\,\alpha,\ \top \wedge 1^2=1 \wedge 1=1$'' statements are tautologies:
+true in a world where the conjecture is false, hence entailing nothing (0/7). What
+is exact here is the $\mathbb{Z}/9$ / $(\mathbb{Z}/7)^{*}$ algebra, the reflections
+and folds, and the geometry (cube $\to$ hexagon $\to$ Seed/Flower/Fruit/Metatron).
+
+\section{Results (computed)}
+\begin{itemize}
+\item Units $(\mathbb{Z}/9)^{*}=\{1,2,4,5,7,8\}$; nilradical $\{0,3,6,9\}$ with
+      $3^2\equiv 6^2\equiv 0$; doubling $\langle 2\rangle$ is $C_6$.
+\item $10-d$ is an involution, fixed digit $5$; multiplicative inverses
+      $2\leftrightarrow5$, $4\leftrightarrow7$.
+\item $(\mathbb{Z}/7)^{*}\cong C_6 \cong (\mathbb{Z}/9)^{*}$; generator
+      $3\ (\mathrm{mod}\ 7)\leftrightarrow 2\ (\mathrm{mod}\ 9)$.
+\item Shell-model magic numbers $2,8,20,28,50,82,126$ (oscillator + spin-orbit);
+      the $10\cdot 2^{k}$ ladder hits only the oscillator closures $20,40$.
+\item Proton/electron ratio: fit $108\cdot 17 = 1836$ vs measured $1836.15267343$;
+      $1836 \neq 1836.1527$ (curve-fit, not prediction).
+\end{itemize}
+
+\section{Reproducibility}
+See the repository: \url{https://github.com/ceccec/millennium-solutions}. Fused
+TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
+\texttt{norm\_num}) formalize the exact facts. License: CC BY-NC 4.0.
+
+\end{document}

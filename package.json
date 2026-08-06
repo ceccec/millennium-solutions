@@ -1,0 +1,40 @@
+{
+  "name": "millennium-solutions",
+  "version": "1.0.0",
+  "description": "Verifiable, recomputable ℤ/9 vortex CORE: content-addressing, audit ledger, exact arithmetic (0/7). The substrate of the trinity — @ceccec/honesty (method) + @ceccec/millennium-vision (meaning) build on it.",
+  "author": "Tsvetan Rouschev",
+  "license": "CC-BY-NC-4.0",
+  "type": "module",
+  "exports": {
+    ".": "./mod.core.ts"
+  },
+  "files": [
+    "mod.core.ts",
+    "src",
+    "*.md",
+    "LICENSE",
+    ".zenodo.json",
+    "CITATION.cff"
+  ],
+  "funding": {
+    "type": "revolut",
+    "url": "https://revolut.me/ceccec"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview",
+    "seal": "node scripts/seal.mjs",
+    "release": "node scripts/gaps.mjs && npm run docs:build && node scripts/seal.mjs && node scripts/release.mjs",
+    "prepublishOnly": "node scripts/seal.mjs",
+    "gaps": "node scripts/gaps.mjs",
+    "harmony": "node scripts/gaps.mjs && node scripts/seal.mjs && npm run docs:build"
+  },
+  "devDependencies": {
+    "vitepress": "^2.0.0-alpha.19",
+    "vue": "^3.5.41"
+  }
+}

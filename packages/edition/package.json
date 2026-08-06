@@ -1,0 +1,16 @@
+{
+  "name": "@ceccec/millennium-solutions",
+  "version": "1.0.0",
+  "description": "The complete ceccec edition — core + honesty + vision, fused. Bare substrate is the unscoped `millennium-solutions`.",
+  "author": "Tsvetan Rouschev",
+  "license": "CC-BY-NC-4.0",
+  "type": "module",
+  "exports": { ".": "./index.ts" },
+  "files": ["index.ts", "README.md"],
+  "dependencies": {
+    "millennium-solutions": "^1.0.0",
+    "@ceccec/honesty": "^1.0.0",
+    "@ceccec/millennium-vision": "^1.0.0"
+  },
+  "publishConfig": { "access": "public" }
+}

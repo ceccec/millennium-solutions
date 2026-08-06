@@ -1,0 +1,11 @@
+// @ceccec/vortex-core — the verifiable, recomputable core. Facts only, no interpretation.
+export { toUuid, merge, foldPair, merkleFold, sealFacets, gcdBigInt } from './src/0/index.ts'
+export { entails, curveFitCheck, scaleCheck } from './src/honesty/index.ts'
+export { report as honesty } from './src/honesty/index.ts'
+export { report as ledger } from './src/0/ledger.ts'
+export { report as trinityMatrix } from './src/0/trinity-matrix.ts'
+export { report as enumeration } from './src/9/enumeration.ts'
+export { report as reflection } from './src/5/reflection.ts'
+export { report as aspects } from './src/5/aspects.ts'
+export { report as rosetta } from './src/7/rosetta.ts'
+export { report as entailsClay } from './src/7/entails.ts'

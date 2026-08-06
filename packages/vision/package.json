@@ -1,0 +1,22 @@
+{
+  "name": "@ceccec/millennium-vision",
+  "version": "1.0.0",
+  "description": "The ceccec interpretive layer on @ceccec/vortex-core — perspective, clearly labeled. Fork to add your own vision on the shared core.",
+  "author": "Tsvetan Rouschev",
+  "license": "CC-BY-NC-4.0",
+  "type": "module",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "files": [
+    "index.ts",
+    "VISION.md",
+    "README.md"
+  ],
+  "dependencies": {
+    "millennium-solutions": "^1.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
