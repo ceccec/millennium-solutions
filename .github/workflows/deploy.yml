@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: 22
       - uses: actions/configure-pages@v5
-      - run: npm install
+      - run: npm install --no-workspaces  # site needs only vitepress+vue; workspace pkgs aren't published yet
       - run: npm run docs:build
       - uses: actions/upload-pages-artifact@v3
         with:
