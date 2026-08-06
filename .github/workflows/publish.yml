@@ -1,0 +1,41 @@
+name: Publish packages to npm (after all safety measures)
+
+# npm deploy by CI: the safety gates run FIRST (gaps · seal · wholeness). Only an honest, whole,
+# 0/7-consistent deposit is published. Auth is an npm AUTOMATION token stored as the NPM_TOKEN
+# secret (set by the author) — automation tokens skip interactive OTP by design. No secret is in
+# this file; publishing cannot proceed without the secret, and cannot proceed if a gate fails.
+on:
+  release:
+    types: [published]   # cut a GitHub Release → publish (also the Zenodo DOI trigger, if enabled)
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: 'https://registry.npmjs.org'
+
+      # --- all safety measures first (no publish if any fails) ---
+      - name: gaps — coverage (modules fused, pages linked, digits 0..9 covered)
+        run: node scripts/gaps.mjs
+      - name: seal — consistency (every abstract with 0/7)
+        run: node scripts/seal.mjs
+      - name: wholeness — the aura is whole (all compute + floor)
+        run: node scripts/wholeness.mjs
+
+      # --- publish (automation token → no OTP). Dependency first, then the scoped trinity. ---
+      - name: publish core — millennium-solutions
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: publish trinity — @ceccec/*
+        run: npm publish --workspaces --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
