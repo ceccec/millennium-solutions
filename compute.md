@@ -25,6 +25,7 @@ import { report as enumeration } from './src/9/enumeration'
 import { report as reflection } from './src/5/reflection'
 import { report as development } from './src/5/development'
 import { report as folds } from './src/5/folds'
+import { report as diamond } from './src/5/diamond'
 import { report as rosetta } from './src/7/rosetta'
 import { report as rosettaClay } from './src/7/rosetta-clay'
 import { report as geometry } from './src/8/merkaba/geometry'
@@ -183,6 +184,11 @@ digit to its partner (fixed point **5**), so the folders below are laid out arou
 ### Folds · `src/5/folds.ts`
 <details class="depth"><summary>compute</summary>
 <pre>{{ folds() }}</pre>
+</details>
+
+### The diamond — the fixed point that perfectly reflects (Poincaré, H=0) · `src/5/diamond.ts`
+<details class="depth"><summary>compute</summary>
+<pre>{{ diamond() }}</pre>
 </details>
 
 ## `7/` — the rosette · 7 = 6 + 1
