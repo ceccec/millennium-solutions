@@ -19,6 +19,7 @@ import { report as stream } from './src/0/stream'
 import { report as versionMatrix } from './src/0/version-matrix'
 import { report as trinities } from './src/0/trinities'
 import { report as legible } from './src/0/legible'
+import { report as nullToken } from './src/0/null-token'
 import { report as aspects } from './src/5/aspects'
 import { report as enumeration } from './src/9/enumeration'
 import { report as reflection } from './src/5/reflection'
@@ -103,6 +104,11 @@ digit to its partner (fixed point **5**), so the folders below are laid out arou
 ### Universal legibility — paste anything, any verifier checks it · `src/0/legible.ts`
 <details class="depth"><summary>compute</summary>
 <pre>{{ legible() }}</pre>
+</details>
+
+### No token is a token — the void has an address · `src/0/null-token.ts`
+<details class="depth"><summary>compute</summary>
+<pre>{{ nullToken() }}</pre>
 </details>
 
 ## `1/` — the observer
