@@ -44,6 +44,7 @@
     "import-gate": "node scripts/import-gate.ts",
     "security-gate": "node scripts/security-gate.ts",
     "dashboard": "node scripts/dashboard.ts",
+    "mcp": "node scripts/mcp.ts",
     "i18n": "node scripts/i18n.ts"
   },
   "devDependencies": {
