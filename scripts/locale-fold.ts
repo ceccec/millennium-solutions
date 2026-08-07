@@ -11,6 +11,10 @@ import { join, dirname } from 'node:path'
 const DIST = '.vitepress/dist'
 const BASE = '/millennium-solutions/'
 const LOCALES = ['bg', 'de', 'fr', 'es', 'ru', 'zh']
+// same CSP as .vitepress/config.ts — stubs are served pages too, so they carry the policy (no gap).
+const CSP = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; "
+  + "img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; "
+  + "base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
 
 // English content pages = top-level .html, except 404 and the home index (locale homes exist)
 const rootHtml = readdirSync(DIST).filter((n) => n.endsWith('.html') && n !== '404.html' && n !== 'index.html')
@@ -23,6 +27,7 @@ for (const code of LOCALES) {
     mkdirSync(dirname(outPath), { recursive: true })
     writeFileSync(outPath,
       `<!doctype html><html lang="${code}"><head><meta charset="utf-8">`
+      + `<meta http-equiv="Content-Security-Policy" content="${CSP}">`
       + `<meta name="viewport" content="width=device-width,initial-scale=1">`
       + `<title>English until translated · Millennium Solutions</title>`
       + `<link rel="canonical" href="${url}">`

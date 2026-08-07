@@ -14,6 +14,7 @@ if (target === 'pages') {
   run('npm run docs:build')
   run('node scripts/import-gate.ts')  // block any third-party resource-import (deterministic, at the gate)
   run('node scripts/locale-fold.ts')  // language-fallback stubs → no dead switcher links
+  run('node scripts/security-gate.ts') // CSP on every page (incl. stubs) + no committed secrets
   run('npm run sitemap')   // emit the content-addressed sitemap mesh (100% coverage gate)
   run('node scripts/atom-feed.ts')    // emit the Atom feed (RFC 4287) of the monographs
   const remote = cap('git config --get remote.origin.url')
