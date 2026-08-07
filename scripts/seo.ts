@@ -62,7 +62,8 @@ for (const p of pages) {
 }
 
 const seoSeal = merkleFold(sigs) // compute towards 1 place: the whole SEO state → one root
-console.log('\nSEO: ' + totalErr + ' errors · ' + totalWarn + ' warnings across ' + pages.length + ' pages')
+const total = totalErr + totalWarn // WARNINGS ENFORCED AS ERRORS — zero tolerance, no advisory pass.
+console.log('\nSEO: ' + totalErr + ' errors · ' + totalWarn + ' warnings (enforced as errors) across ' + pages.length + ' pages')
 console.log('SEO seal (one place): ' + seoSeal.slice(0, 13) + '…')
-console.log(totalErr === 0 ? '✓ SEO self-audit — 0 errors (warnings advisory)' : '✗ SEO errors present — fix before shipping')
-process.exit(totalErr === 0 ? 0 : 1)
+console.log(total === 0 ? '✓ SEO self-audit — 0 errors · 0 warnings (warnings enforced as errors)' : '✗ SEO — ' + totalErr + ' error(s) + ' + totalWarn + ' warning(s) [=errors] — fix before shipping')
+process.exit(total === 0 ? 0 : 1)

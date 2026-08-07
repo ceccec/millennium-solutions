@@ -92,6 +92,11 @@ export default defineConfig({
       ['meta', { name: 'twitter:description', content: desc }],
       ['link', { rel: 'canonical', href: url }],
     )
+    // hreflang alternates in <head> — the base page across all locales + x-default (was advisory; now delivered).
+    const base = clean.replace(/^(bg|de|fr|es|ru|zh)\//, '')
+    for (const loc of ['en', 'bg', 'de', 'fr', 'es', 'ru', 'zh'])
+      pageData.frontmatter.head.push(['link', { rel: 'alternate', hreflang: loc, href: SITE + (loc === 'en' ? '' : loc + '/') + base }])
+    pageData.frontmatter.head.push(['link', { rel: 'alternate', hreflang: 'x-default', href: SITE + base }])
   },
 
   locales: i18nLocales,
