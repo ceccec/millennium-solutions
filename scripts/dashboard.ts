@@ -31,6 +31,24 @@ const wheel = (() => {
   return `<svg viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="a432 nine-point hue wheel (digit times 40 degrees)">${pts}<circle cx="100" cy="100" r="20" fill="hsl(200 70% 55%)"></circle><text x="100" y="104" text-anchor="middle" font-size="12" fill="#fff">5</text></svg>`
 })()
 
+// horo rhythm SVG — MEDIA that EMERGES FROM COMPUTATION: the {2,3}-compositions of each meter, drawn as bars.
+// self-contained (inline SVG, no external), and it literally computes (from the enumerator). honest pattern.
+const comps = (n: number): number[][] => n === 0 ? [[]] : [2, 3].flatMap((p) => n - p >= 0 ? comps(n - p).map((r) => [p, ...r]) : [])
+const horo = (() => {
+  const meters = [5, 7, 9]
+  let y = 8, rows = ''
+  for (const m of meters) {
+    const cs = comps(m)
+    rows += `<text x="0" y="${y + 10}" font-size="11" fill="var(--vp-c-text-2)">${m}/8 · ${cs.length}</text>`
+    cs.forEach((c, i) => {
+      let x = 60
+      c.forEach((p) => { rows += `<rect x="${x}" y="${y + i * 14}" width="${p * 12 - 2}" height="10" rx="2" fill="hsl(${(p === 2 ? 200 : 120)} 65% 55%)"></rect>`; x += p * 12 })
+    })
+    y += cs.length * 14 + 10
+  }
+  return `<svg viewBox="0 0 220 ${y}" width="240" role="img" aria-label="Bulgarian horo meters as compositions of 2s (blue) and 3s (green)">${rows}</svg>`
+})()
+
 const md = `---
 title: State Dashboard
 description: The deposit's measured state (fact) and its number-patterns (coincidence, not proof).
@@ -66,6 +84,7 @@ ${card('CSP', 'every page', 'security gate — no external imports')}
 
 <div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap">
 ${wheel}
+${horo}
 <div>
 
 - **a432 wheel** — hue = digit × 40° over ℤ/9 (heart 5 at centre). A design mapping, not a measurement of anything.
