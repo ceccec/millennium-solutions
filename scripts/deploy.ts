@@ -11,6 +11,7 @@ const target = (process.argv[2] || 'pages').toLowerCase()
 
 if (target === 'pages') {
   console.log('deploy: pages → gh-pages → https://ceccec.github.io/millennium-solutions/')
+  run('node scripts/dashboard.ts')    // regenerate the computed-state dashboard page (fact + a432 pattern)
   run('npm run docs:build')
   run('node scripts/import-gate.ts')  // block any third-party resource-import (deterministic, at the gate)
   run('node scripts/locale-fold.ts')  // language-fallback stubs → no dead switcher links

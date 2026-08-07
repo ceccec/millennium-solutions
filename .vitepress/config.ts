@@ -117,6 +117,7 @@ export default defineConfig({
         { text: L.nav.realisations, link: '/REALISATIONS' },
       ] },
       { text: L.nav.compute, items: [
+        { text: 'State dashboard', link: '/dashboard' },
         { text: 'Computed results', link: '/compute' },
         { text: 'Verify', link: '/verify' },
         { text: L.nav.decode, link: '/SEQUENCE-DECODE' },

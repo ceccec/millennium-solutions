@@ -25,7 +25,7 @@
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview",
     "seal": "node scripts/seal.ts",
-    "release": "node scripts/gaps.ts && npm run docs:build && node scripts/import-gate.ts && node scripts/security-gate.ts && node scripts/seal.ts && node scripts/wholeness.ts && node scripts/release.ts",
+    "release": "node scripts/gaps.ts && node scripts/dashboard.ts && npm run docs:build && node scripts/import-gate.ts && node scripts/security-gate.ts && node scripts/seal.ts && node scripts/wholeness.ts && node scripts/release.ts",
     "prepublishOnly": "node scripts/seal.ts",
     "gaps": "node scripts/gaps.ts",
     "harmony": "node scripts/gaps.ts && node scripts/seal.ts && node scripts/wholeness.ts && npm run docs:build && node scripts/seo.ts",
@@ -43,6 +43,7 @@
     "wire": "node scripts/wire.ts",
     "import-gate": "node scripts/import-gate.ts",
     "security-gate": "node scripts/security-gate.ts",
+    "dashboard": "node scripts/dashboard.ts",
     "i18n": "node scripts/i18n.ts"
   },
   "devDependencies": {
