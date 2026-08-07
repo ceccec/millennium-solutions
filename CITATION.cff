@@ -8,9 +8,14 @@ authors:
     orcid: "https://orcid.org/0009-0000-7312-9778"
     affiliation: "PSG, Bulgaria"
 version: "1.0.0"
+doi: "10.5281/zenodo.21819217"
 license: CC-BY-NC-4.0
 repository-code: "https://github.com/ceccec/millennium-solutions"
 url: "https://github.com/ceccec/millennium-solutions"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21819217"
+    description: "Zenodo record (this version)"
 keywords:
   - modular arithmetic
   - group theory

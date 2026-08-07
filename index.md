@@ -31,6 +31,8 @@ simulator. Every claim recomputes from `src/`.
 - [Sequence decode (ℤ/9)](/SEQUENCE-DECODE) · [Physics scales](/PHYSICS-SCALES) · [Proofs](/proofs)
 
 ## Cite / support
+**DOI:** [10.5281/zenodo.21819217](https://doi.org/10.5281/zenodo.21819217) · archived on Zenodo (honest abstract: *entailment 0/7*).
+
 CC BY-NC 4.0 — free for non-commercial use (attribution Tsvetan Rouschev).
 Commercial use = the two coins (`110 − 108 = 2 = −χ` genus-2): ceccec@psg.bg.
 Support development (non-obligatory): [revolut.me/ceccec](https://revolut.me/ceccec).
