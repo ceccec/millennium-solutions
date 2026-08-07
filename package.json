@@ -39,6 +39,7 @@
     "deploy:packages": "node scripts/deploy.ts packages",
     "seo": "node scripts/seo.ts",
     "sitemap": "node scripts/sitemap-mesh.ts",
+    "atom": "node scripts/atom-feed.ts",
     "i18n": "node scripts/i18n.ts"
   },
   "devDependencies": {
