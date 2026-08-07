@@ -1,8 +1,7 @@
-name: Deploy site to gh-pages (on push)
+name: Deploy site to gh-pages
 
-# The fold removed the workspace chicken-egg, so CI `npm install` now resolves cleanly (only
-# devDeps: vitepress + vue). This moves the last manual step into CI — push to main → build →
-# publish to gh-pages. Completes "all action-driven": verify (trinity) · publish (npm) · site (here).
+# The fold removed the workspace chicken-egg, so CI npm install resolves cleanly (only devDeps:
+# vitepress + vue). This moves the last manual step into CI: push to main -> build -> gh-pages.
 on:
   push:
     branches: [main]
@@ -10,10 +9,6 @@ on:
 
 permissions:
   contents: write
-
-concurrency:
-  group: site-deploy
-  cancel-in-progress: true
 
 jobs:
   site:
@@ -23,9 +18,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npm install --no-audit --no-fund
-      - run: npm run docs:build
-      - name: publish dist → gh-pages
+      - name: install (devDeps only)
+        run: npm install --no-audit --no-fund
+      - name: build
+        run: npm run docs:build
+      - name: publish to gh-pages
         run: |
           cd .vitepress/dist
           touch .nojekyll

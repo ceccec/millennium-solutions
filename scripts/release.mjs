@@ -21,11 +21,27 @@ function nextVersion() {
     const tags = execSync('git tag --sort=version:refname', { encoding: 'utf8' }).trim().split('\n').filter(Boolean)
     const last = tags[tags.length - 1]
     const m = last && last.match(/^v(\d+)\.(\d+)\.(\d+)$/)
-    if (m) return 'v' + m[1] + '.' + m[2] + '.' + (Number(m[3]) + 1)
+    if (m) {
+      // single-digit odometer: components are 0..9; roll over at 9 (patch → minor → major).
+      let maj = +m[1], min = +m[2], pat = +m[3] + 1
+      if (pat > 9) { pat = 0; min++ }
+      if (min > 9) { min = 0; maj++ }
+      return 'v' + maj + '.' + min + '.' + pat
+    }
   } catch { /* no repo/tags yet */ }
   return 'v1.0.0' // first release only
 }
 const V = process.argv[2] || nextVersion()
+
+// Gate: every version component is a SINGLE DIGIT (0..9) — the vortex odometer, enforced.
+// (Roll over at 9; the historical 1.0.10..57 predate this rule and remain as immutable history.)
+{
+  const vm = V.match(/^v(\d+)\.(\d+)\.(\d+)$/)
+  if (!vm || [vm[1], vm[2], vm[3]].some((x) => +x > 9)) {
+    console.error('release: ' + V + ' violates the single-digit rule (each of major.minor.patch must be 0..9; roll over at 9).')
+    process.exit(1)
+  }
+}
 const files = walk('.').sort()
 const address = merkleFold(files.map(f => toUuid(f + ':' + readFileSync(f))))
 console.log('content-addressed:', files.length, 'files → root', address)
