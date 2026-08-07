@@ -13,10 +13,13 @@ machine-verified in this repository (see *Building* below).
 
 ## Master Theorem
 
-All seven theorems proven in a single unified master theorem:
+The master theorem bundles all seven *statements* into one proposition. Per the
+disclaimer above, these Lean statements are **trivially true propositions** (an
+involution and `1² = 1`) — they are **not** the Millennium conjectures, and
+nothing here proves or solves a Millennium Problem. The honest floor holds: 0/7.
 
 ```lean
-theorem all_theorems_proven :
+theorem all_seven_trivial_statements :
   (∃ α₁, riemann_hypothesis) ∧
   (∃ α₂, p_vs_np) ∧
   (∃ α₃, navier_stokes_smooth) ∧
