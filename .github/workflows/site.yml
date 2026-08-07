@@ -29,7 +29,5 @@ jobs:
           git init -q
           git checkout -q -b gh-pages
           git -c user.name="Singularity" -c user.email="ceccec@psg.bg" add -A
-          git -c user.name="Singularity" -c user.email="ceccec@psg.bg" commit -qm "site: $GITHUB_SHA"
-          git push -f "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" gh-pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          git -c user.name="Singularity" -c user.email="ceccec@psg.bg" commit -qm "site: ${{ github.sha }}"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" gh-pages
