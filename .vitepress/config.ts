@@ -67,6 +67,7 @@ export default defineConfig({
     ['meta', { name: 'twitter:card', content: 'summary' }],
     ['meta', { name: 'twitter:image', content: OG_IMAGE }],
     ['meta', { name: 'author', content: 'Tsvetan Rouschev' }],
+    ['meta', { name: 'robots', content: 'index, follow' }],
     ['meta', { name: 'keywords', content: 'ℤ/9, vortex, Pliska rosette, Clay Millennium Problems, Lean 4, recomputable, 0/7' }],
     ['script', { type: 'application/ld+json' }, JSON.stringify(LD)],
   ],
@@ -76,11 +77,14 @@ export default defineConfig({
     const url = SITE + clean
     const title = pageData.title ? pageData.title + ' | Millennium Solutions' : 'Millennium Solutions'
     const desc = pageData.description || pageData.frontmatter?.description || L.description
+    const lk = ['bg', 'de', 'fr', 'es', 'ru', 'zh'].find((l) => pageData.relativePath.startsWith(l + '/')) || 'en'
+    const ogLocale = { en: 'en_US', bg: 'bg_BG', de: 'de_DE', fr: 'fr_FR', es: 'es_ES', ru: 'ru_RU', zh: 'zh_CN' }[lk]
     pageData.frontmatter.head ??= []
     pageData.frontmatter.head.push(
       ['meta', { property: 'og:title', content: title }],
       ['meta', { property: 'og:description', content: desc }],
       ['meta', { property: 'og:url', content: url }],
+      ['meta', { property: 'og:locale', content: ogLocale }],
       ['meta', { name: 'twitter:title', content: title }],
       ['meta', { name: 'twitter:description', content: desc }],
       ['link', { rel: 'canonical', href: url }],

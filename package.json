@@ -36,7 +36,8 @@
     "deploy": "node scripts/deploy.ts",
     "deploy:pages": "node scripts/deploy.ts pages",
     "deploy:packages": "node scripts/deploy.ts packages",
-    "seo": "node scripts/seo.ts"
+    "seo": "node scripts/seo.ts",
+    "i18n": "node scripts/i18n.ts"
   },
   "devDependencies": {
     "vitepress": "^2.0.0-alpha.19",
