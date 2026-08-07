@@ -30,6 +30,23 @@ const i18nLocales = {
   })),
 }
 
+// SEO: OpenGraph + Twitter cards + JSON-LD structured data (per-page og:title/url via transformPageData).
+const SITE = 'http://ceccec.psg.bg/millennium-solutions/'
+const OG_IMAGE = SITE + 'icon.svg'
+const LD = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareSourceCode',
+  name: 'Millennium Solutions — the ℤ/9 Vortex Framework',
+  description: L.description,
+  author: { '@type': 'Person', name: 'Tsvetan Rouschev', '@id': 'https://orcid.org/0009-0000-7312-9778' },
+  license: 'https://creativecommons.org/licenses/by-nc/4.0/',
+  codeRepository: REPO,
+  url: SITE,
+  identifier: 'https://doi.org/10.5281/zenodo.21819217',
+  programmingLanguage: ['TypeScript', 'Lean 4'],
+  keywords: ['ℤ/9', 'vortex', 'Pliska rosette', 'Clay Millennium Problems', 'Lean 4', 'recomputable', '0/7'],
+}
+
 export default defineConfig({
   title: L.title,
   description: L.description,
@@ -43,7 +60,32 @@ export default defineConfig({
     ['link', { rel: 'icon', href: '/millennium-solutions/icon.svg' }],
     ['link', { rel: 'apple-touch-icon', href: '/millennium-solutions/icon.svg' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
+    // SEO — site-wide OpenGraph / Twitter / structured data (per-page og:title/description/url below)
+    ['meta', { property: 'og:site_name', content: 'Millennium Solutions' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:image', content: OG_IMAGE }],
+    ['meta', { name: 'twitter:card', content: 'summary' }],
+    ['meta', { name: 'twitter:image', content: OG_IMAGE }],
+    ['meta', { name: 'author', content: 'Tsvetan Rouschev' }],
+    ['meta', { name: 'keywords', content: 'ℤ/9, vortex, Pliska rosette, Clay Millennium Problems, Lean 4, recomputable, 0/7' }],
+    ['script', { type: 'application/ld+json' }, JSON.stringify(LD)],
   ],
+
+  transformPageData(pageData) {
+    const clean = pageData.relativePath.replace(/(^|\/)index\.md$/, '$1').replace(/\.md$/, '.html')
+    const url = SITE + clean
+    const title = pageData.title ? pageData.title + ' | Millennium Solutions' : 'Millennium Solutions'
+    const desc = pageData.description || pageData.frontmatter?.description || L.description
+    pageData.frontmatter.head ??= []
+    pageData.frontmatter.head.push(
+      ['meta', { property: 'og:title', content: title }],
+      ['meta', { property: 'og:description', content: desc }],
+      ['meta', { property: 'og:url', content: url }],
+      ['meta', { name: 'twitter:title', content: title }],
+      ['meta', { name: 'twitter:description', content: desc }],
+      ['link', { rel: 'canonical', href: url }],
+    )
+  },
 
   locales: i18nLocales,
 
