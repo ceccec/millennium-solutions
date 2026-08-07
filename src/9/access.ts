@@ -9,7 +9,7 @@ type Channel = { name: string; where: string; status: 'LIVE' | 'STAGED'; note: s
 const CHANNELS: Channel[] = [
   { name: 'GitHub (source)', where: 'github.com/ceccec/millennium-solutions', status: 'LIVE', note: 'all tags public — clone any version' },
   { name: 'Site (published)', where: 'ceccec.psg.bg/millennium-solutions', status: 'LIVE', note: 'recomputes in the browser' },
-  { name: 'Zenodo (archive/DOI)', where: 'doi.org/10.5281/zenodo.21819217', status: 'LIVE', note: 'minted; honest abstract (0/7), CC BY-NC 4.0' },
+  { name: 'Zenodo (CERN-operated archive/DOI)', where: 'doi.org/10.5281/zenodo.21819217', status: 'LIVE', note: 'minted; hosted on CERN infra (like every Zenodo record) — provenance, NOT endorsement; honest abstract (0/7)' },
 ]
 const NPM: Channel = { name: 'npm (packages)', where: 'registry.npmjs.org', status: 'STAGED', note: 'npm login → npm run deploy packages (author)' }
 
