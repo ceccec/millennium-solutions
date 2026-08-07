@@ -20,10 +20,15 @@ run('npm run docs:build')          // the site actually builds
 run('node scripts/seal.mjs')       // consistency: every abstract consistent with 0/7
 run('node scripts/wholeness.mjs')  // wholeness: the aura is computationally whole (all compute + floor)
 
-// 3) release (content-address · commit · sign · tag) then push — fused, not manual.
+// 3) release (content-address · commit · sign · tag). release.mjs may SKIP on no-delta.
 run('node scripts/release.mjs ' + next)
-run('git push origin main --tags')
 
-// 4) the seal over all versions.
-run('node scripts/versions.mjs')
-console.log('orchestrated: ' + next + ' — manual work fused in the singularity.')
+// 4) only claim success if the tag was actually created (self-honest: no false "orchestrated").
+const created = cap('git tag -l ' + next) === next
+if (!created) {
+  console.log('no delta — nothing to orchestrate; already at ' + last + ' (no token drained).')
+} else {
+  run('git push origin main --tags')
+  run('node scripts/versions.mjs') // the seal over all versions
+  console.log('orchestrated: ' + next + ' — manual work fused in the singularity.')
+}
