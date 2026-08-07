@@ -19,11 +19,11 @@ head:
 ## Fact — measured state
 
 <div class="dash-grid">
-<div class="dash-card"><div class="dash-k">Version</div><div class="dash-v">v1.4.7</div><div class="dash-s">git tag (single source)</div></div>
+<div class="dash-card"><div class="dash-k">Version</div><div class="dash-v">v1.4.8</div><div class="dash-s">git tag (single source)</div></div>
 <div class="dash-card"><div class="dash-k">Millennium floor</div><div class="dash-v">0 / 7</div><div class="dash-s">entailed — not solved, not claimed</div></div>
 <div class="dash-card"><div class="dash-k">Honesty gate</div><div class="dash-v">sealed</div><div class="dash-s">all prose consistent with 0/7</div></div>
-<div class="dash-card"><div class="dash-k">Link coverage</div><div class="dash-v">85 nodes</div><div class="dash-s">sitemap mesh (as of last seal)</div></div>
-<div class="dash-card"><div class="dash-k">Seal root</div><div class="dash-v">559ae89a-1405</div><div class="dash-s">merkle of the whole (as of last seal)</div></div>
+<div class="dash-card"><div class="dash-k">Link coverage</div><div class="dash-v">? nodes</div><div class="dash-s">sitemap mesh (as of last seal)</div></div>
+<div class="dash-card"><div class="dash-k">Seal root</div><div class="dash-v">?</div><div class="dash-s">merkle of the whole (as of last seal)</div></div>
 <div class="dash-card"><div class="dash-k">CSP</div><div class="dash-v">every page</div><div class="dash-s">security gate — no external imports</div></div>
 </div>
 
