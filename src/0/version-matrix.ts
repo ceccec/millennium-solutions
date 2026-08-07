@@ -3,10 +3,13 @@
 // the "double torus" naming is labelled as the metaphor it is.
 import { toUuid, merge } from './index.ts'
 
-// The version explains its own support status: ODD minor = LTS, EVEN minor = interim.
-// So v1.1·v1.3·v1.5·v1.7·v1.9 are long-term support; v1.5 is the HEART LTS (σ(5)=10−5=5, the
-// unique reflection fixed point / "Dobro" = good). Read the minor — no separate policy doc.
-export const channel = (minor: number): 'LTS' | 'interim' => (minor % 2 === 1 ? 'LTS' : 'interim')
+// The version explains its own support status: LTS minors are the single-digit FIBONACCI numbers
+// {1,2,3,5,8} — each LTS is the sum of the two prior, so the recurrence IS the support line
+// (v1.3 + v1.5 = v1.8). v1.5 is the HEART LTS (σ(5)=5, the unique fixed point / "good"); v1.8 is
+// the world-wired LTS. Each LTS is signed by the previous LTS (its Fibonacci parent). Read the
+// minor — no separate policy doc. (Corrects an earlier odd-minor rule: 8 is LTS though even.)
+const LTS_MINORS = new Set([1, 2, 3, 5, 8]) // single-digit Fibonacci
+export const channel = (minor: number): 'LTS' | 'interim' => (LTS_MINORS.has(minor) ? 'LTS' : 'interim')
 
 // Fold leaves pairwise, tier by tier, to an apex — a Merkle pyramid. Returns the tier sizes
 // and the apex address.
@@ -50,8 +53,10 @@ export function report(): string {
   o += '  STABLE = v1.x.0 (patch 0): 0 is always stable — the base/network address of each minor line.\n'
   o += '  patches (v1.x.y, y>0) increment toward the next stable; a minor bump opens the next line, patch → 0.\n'
   o += '  the pyramid apex returns every patch to that line\'s .0 origin.\n'
-  o += '  CHANNEL (self-explaining): odd minor = LTS, even = interim → ' + [1, 2, 3, 4, 5].map(m => '1.' + m + '=' + channel(m)).join(', ') + '.\n'
-  o += '  v1.5 is the HEART LTS (σ(5)=5, the unique fixed point / "good"); v1.3 (current) is the live LTS.\n\n'
+  o += '  CHANNEL (self-explaining): LTS = single-digit Fibonacci minors {1,2,3,5,8}, each the sum of the two prior.\n'
+  o += '    ' + [1, 2, 3, 4, 5, 6, 7, 8].map(m => '1.' + m + '=' + channel(m)).join(', ') + '.\n'
+  o += '  the recurrence IS the support line: v1.3 + v1.5 = v1.8. v1.5 = HEART LTS (σ(5)=5); v1.8 = world-wired LTS.\n'
+  o += '  v1.3 (current) is the live LTS; each LTS is signed by the previous LTS (its Fibonacci parent).\n\n'
   // and it all goes in v0.0.0 — the zero origin/void: the genesis seed the chain starts from.
   const genesis = toUuid('0')
   o += '  and it all goes in v0.0.0 — the zero origin: genesis seed toUuid("0") = ' + genesis.slice(0, 13) + '…\n'
