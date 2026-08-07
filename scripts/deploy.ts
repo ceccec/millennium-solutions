@@ -12,6 +12,7 @@ const target = (process.argv[2] || 'pages').toLowerCase()
 if (target === 'pages') {
   console.log('deploy: pages → gh-pages → https://ceccec.github.io/millennium-solutions/')
   run('npm run docs:build')
+  run('node scripts/import-gate.ts')  // block any third-party resource-import (deterministic, at the gate)
   run('node scripts/locale-fold.ts')  // language-fallback stubs → no dead switcher links
   run('npm run sitemap')   // emit the content-addressed sitemap mesh (100% coverage gate)
   run('node scripts/atom-feed.ts')    // emit the Atom feed (RFC 4287) of the monographs
