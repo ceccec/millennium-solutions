@@ -1,3 +1,7 @@
+---
+title: Signature
+---
+
 # Signature — the complete creative work
 
 This deposit — the ℤ/9 vortex framework, its fused computations, the formal Lean

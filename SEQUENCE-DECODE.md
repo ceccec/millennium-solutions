@@ -1,3 +1,7 @@
+---
+title: Sequence decode
+---
+
 # The Vortex Sequence `12487536901` — Full Decode
 
 **Scope.** This document records the structure of the vortex sequence and its

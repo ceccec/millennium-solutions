@@ -1,7 +1,11 @@
+---
+title: Proof of Concept
+---
+
 # Proof of Concept — the ℤ/9 vortex framework
 
 A recomputable proof of concept: every result below derives from code in the
-digit-folder mesh under `src/`. Each `.ts`/`.ts` runs with `node`; each `.lean`
+digit-folder mesh under `src/`. Each `.ts` runs with `node`; each `.lean`
 is written for `lake` + Mathlib (`decide`/`norm_num`). Results are stated as
 computed; interpretation is the reader's.
 

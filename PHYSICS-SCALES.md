@@ -1,3 +1,7 @@
+---
+title: Physics scales
+---
+
 # Physics scales: shell-model magic numbers, matter-as-waves, and where A432 sits
 
 Companion to `SEQUENCE-DECODE.md`. Every value here is computed; reproduce with
