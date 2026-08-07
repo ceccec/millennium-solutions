@@ -42,7 +42,9 @@ const V = process.argv[2] || nextVersion()
     process.exit(1)
   }
 }
-const files = walk('.').sort()
+// content-address only TRACKED files (git ls-files) — deterministic; excludes generated/untracked files
+// so re-running on an unchanged tree yields the SAME address (no phantom deltas). matches next.ts.
+const files = execSync('git ls-files', { encoding: 'utf8' }).trim().split('\n').filter(Boolean).sort()
 const address = merkleFold(files.map(f => toUuid(f + ':' + readFileSync(f))))
 console.log('content-addressed:', files.length, 'files → root', address)
 

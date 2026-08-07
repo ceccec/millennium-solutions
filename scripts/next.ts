@@ -35,9 +35,11 @@ if (message) {
 }
 
 // ── no-message mode: understand what is truly next ─────────────────────────────
-const SKIP = new Set(['node_modules', '.git', 'cache', 'dist'])
-const walk = (d: string, a: string[] = []): string[] => { for (const n of readdirSync(d)) { const p = join(d, n); if (statSync(p).isDirectory()) { if (!SKIP.has(n)) walk(p, a) } else a.push(p) } return a }
-const address = merkleFold(walk('.').sort().map((f) => toUuid(f + ':' + readFileSync(f))))
+// content-address only TRACKED files (git ls-files) — DETERMINISTIC. excludes generated/gitignored files
+// (dashboard.md, boundaries.md) that regenerate each build and otherwise churn a false delta → phantom
+// versions. this is the churn root cause, fixed (must match release.ts, which uses the same source).
+const files = execSync('git ls-files', { encoding: 'utf8' }).trim().split('\n').filter(Boolean).sort()
+const address = merkleFold(files.map((f) => toUuid(f + ':' + readFileSync(f))))
 
 let lastAddr = '', lastTag = ''
 try {
