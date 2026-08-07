@@ -32,6 +32,21 @@ export async function apiFetch(target: string): Promise<ApiRecord> {
   }
 }
 
+// DATA (POST): query a public API with a body, honesty-gate + content-address the response.
+// same seal/gate/INCONCLUSIVE discipline as apiFetch — for read-only query endpoints (e.g. OSV vuln API).
+export async function apiQuery(target: string, body: unknown): Promise<ApiRecord & { raw?: string }> {
+  try {
+    const res = await fetch(target, { method: 'POST', signal: AbortSignal.timeout(8000),
+      headers: { 'content-type': 'application/json', 'user-agent': 'millennium-api' }, body: JSON.stringify(body) })
+    if (!res.ok) return stamp('data', target, 'INCONCLUSIVE', 'http' + res.status, 'HTTP ' + res.status + ' → retry')
+    const text = await res.text()
+    const gate = computes(text)
+    return { ...stamp('data', target, gate.binary ? 'REACHED' : 'DRAINS', text, gate.binary ? text.length + ' bytes · gate clean' : 'gate RED: ' + gate.hit), raw: text }
+  } catch (e: any) {
+    return stamp('data', target, 'INCONCLUSIVE', String(e?.name), (e?.name || 'error') + ' → could not reach; retry')
+  }
+}
+
 // ACTION: invoke a command, content-address the invocation + outcome (an audit record, not data).
 export function apiAction(target: string, cmd: string): ApiRecord {
   try {
