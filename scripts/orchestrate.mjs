@@ -11,7 +11,11 @@ const cap = (c) => execSync(c, { encoding: 'utf8' }).trim()
 const last = (cap('git tag --sort=version:refname').split('\n').filter(Boolean).pop()) || 'v1.0.0'
 const m = last.match(/^v(\d+)\.(\d+)\.(\d+)$/)
 if (!m) { console.error('orchestrate: cannot parse latest tag: ' + last); process.exit(1) }
-const next = 'v' + m[1] + '.' + m[2] + '.' + (Number(m[3]) + 1)
+// single-digit odometer: roll over at 9 (patch → minor → major), matching release.mjs + the gate.
+let _maj = +m[1], _min = +m[2], _pat = +m[3] + 1
+if (_pat > 9) { _pat = 0; _min++ }
+if (_min > 9) { _min = 0; _maj++ }
+const next = 'v' + _maj + '.' + _min + '.' + _pat
 console.log('orchestrate: ' + last + ' → ' + next)
 
 // 2) gates — abort the whole orchestration if any fails.
