@@ -31,11 +31,7 @@ jobs:
         run: node scripts/wholeness.mjs
 
       # --- publish (automation token → no OTP). Dependency first, then the scoped trinity. ---
-      - name: publish core — millennium-solutions
+      - name: publish @ceccec/millennium-solutions
         run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - name: publish trinity — @ceccec/*
-        run: npm publish --workspaces --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

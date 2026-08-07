@@ -48,7 +48,7 @@ export default defineConfig({
   locales: i18nLocales,
 
   // Repo/dev docs and npm-package sources are not site pages.
-  srcExclude: ['README.md', 'DEPLOY.md', 'packages/**', 'src/**'],
+  srcExclude: ['README.md', 'DEPLOY.md', 'src/**'],
 
   themeConfig: {
     nav: [

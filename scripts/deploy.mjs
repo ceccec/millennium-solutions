@@ -23,8 +23,7 @@ if (target === 'pages') {
   console.log('deploy: pages published — live in ~1 min at http://ceccec.psg.bg/millennium-solutions/')
 } else if (target === 'packages') {
   console.log('deploy: packages → npm (prepublishOnly runs the 0/7 seal gate; needs npm login)')
-  run('npm publish --workspaces --access public')
-  run('npm publish --access public')
+  run('npm publish --access public') // one package: @ceccec/millennium-solutions
   console.log('deploy: packages published.')
 } else {
   console.error('usage: npm run deploy [pages|packages]')

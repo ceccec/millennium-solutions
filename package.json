@@ -1,7 +1,7 @@
 {
-  "name": "millennium-solutions",
+  "name": "@ceccec/millennium-solutions",
   "version": "1.0.0",
-  "description": "Verifiable, recomputable ℤ/9 vortex CORE: content-addressing, audit ledger, exact arithmetic (0/7). The substrate of the trinity — @ceccec/honesty (method) + @ceccec/millennium-vision (meaning) build on it.",
+  "description": "Verifiable, recomputable ℤ/9 vortex framework in ONE package — content-addressing, audit ledger, exact arithmetic (0/7), and the honesty toolkit. Facts only.",
   "author": "Tsvetan Rouschev",
   "license": "CC-BY-NC-4.0",
   "type": "module",
@@ -20,9 +20,6 @@
     "type": "revolut",
     "url": "https://revolut.me/ceccec"
   },
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
@@ -43,5 +40,16 @@
   "devDependencies": {
     "vitepress": "^2.0.0-alpha.19",
     "vue": "^3.5.41"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ceccec/millennium-solutions.git"
+  },
+  "homepage": "https://ceccec.psg.bg/millennium-solutions/",
+  "bugs": {
+    "url": "https://github.com/ceccec/millennium-solutions/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

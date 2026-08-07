@@ -11,7 +11,7 @@ export function report(): string {
   return 'The cycle: development → life → development.\n'
     + 'Development gives the work to people for free; life (the people who use it) funds the next\n'
     + 'development. The core is free, developed in the open by the orchestration (gaps → seal →\n'
-    + 'sign → release) and the rosetta of packages (core · honesty · vision) — everyone builds their\n'
+    + 'sign → release) and one open package (@ceccec/millennium-solutions) — everyone builds their\n'
     + 'vision on it. Commercial use pays the two coins (110 − 108 = ' + coins()
     + ' = −χ genus-2, ' + FUNDING.contact + '); living users support voluntarily. Both fund further development.\n'
     + 'HONEST: support is non-obligatory and not guaranteed — a gift economy, not a revenue promise.\n'

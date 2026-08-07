@@ -5,10 +5,10 @@
 import { toUuid, merkleFold } from './index.ts'
 
 const TRINITIES: Record<string, string[]> = {
-  'packages (core · method · meaning)': [
-    'millennium-solutions (core)',
-    '@ceccec/honesty (method)',
-    '@ceccec/millennium-vision (meaning)',
+  'channels (source · site · archive)': [
+    'GitHub (source)',
+    'ceccec.psg.bg (site)',
+    'Zenodo DOI (archive)',
   ],
   'digits (mod-3 triads)': ['axis {3,6,9}', 'one {1,4,7}', 'two {2,5,8}'],
   'origin (0 · 1 · between)': ['0 void', '1 unit', 'between (0,1)'],
