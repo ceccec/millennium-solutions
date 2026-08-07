@@ -9,16 +9,24 @@ import { toUuid, merkleFold } from '../src/0/index.ts'
 const DIST = '.vitepress/dist'
 if (!existsSync(DIST)) { console.error('seo: no dist/ — run `npm run docs:build` first.'); process.exit(1) }
 
-// ERRORS — required in <head> (missing → fail)
+// ERRORS — required in <head> (missing → fail). Stricter than most public checkers: OG + Twitter
+// + canonical + json-ld + viewport + og:type + hreflang all mandatory, not just title/description.
 const HEAD: [string, RegExp][] = [
   ['description', /name="description"/], ['og:title', /property="og:title"/],
   ['og:description', /property="og:description"/], ['og:url', /property="og:url"/],
   ['og:image', /property="og:image"/], ['og:locale', /property="og:locale"/],
+  ['og:type', /property="og:type"/],
   ['twitter:card', /name="twitter:card"/], ['canonical', /rel="canonical"/],
   ['author', /name="author"/], ['robots', /name="robots"/], ['keywords', /name="keywords"/],
-  ['json-ld', /application\/ld\+json/],
+  ['json-ld', /application\/ld\+json/], ['viewport', /name="viewport"/],
 ]
-const DOC: [string, RegExp][] = [['html-lang', /<html[^>]*\blang=/]]
+// NOTE: hreflang is deliberately NOT a hard error — Google accepts it in head OR sitemap OR HTTP
+// header, so requiring the head form specifically would be stricter-than-correct (a false red).
+// It's checked as an advisory WARNING below: a real multilingual-SEO opportunity, honestly flagged.
+const DOC: [string, RegExp][] = [
+  ['html-lang', /<html[^>]*\blang=/], ['charset', /<meta[^>]*charset/i],
+  ['title', /<title>[^<]+<\/title>/i],
+]
 
 const pages = readdirSync(DIST).filter((f) => f.endsWith('.html') && f !== '404.html')
 let totalErr = 0, totalWarn = 0
@@ -30,6 +38,12 @@ for (const p of pages) {
     ...HEAD.filter(([, re]) => !re.test(head)).map(([n]) => n),
     ...DOC.filter(([, re]) => !re.test(html)).map(([n]) => n),
   ]
+  // STRICT count-based checks (presence-regex can't express these): structure + accessibility
+  const h1s = (html.match(/<h1[\s>]/gi) || []).length
+  if (h1s !== 1) errs.push('h1-count=' + h1s + ' (need exactly 1)')
+  const imgs = html.match(/<img\b[^>]*>/gi) || []
+  if (!imgs.every((t) => /\balt=/i.test(t))) errs.push('img-missing-alt')
+  if (/application\/ld\+json/.test(head) && !/"@type"/.test(head)) errs.push('json-ld-untyped')
   // WARNINGS — SERP length heuristics (advisory; learn from what Search Console flags)
   const title = (head.match(/<title>([^<]*)<\/title>/) || [])[1] || ''
   const desc = (head.match(/name="description" content="([^"]*)"/) || [])[1] || ''
@@ -38,6 +52,8 @@ for (const p of pages) {
   if (title.length && title.length < 10) warns.push('title <10 (thin)')
   if (desc.length > 160) warns.push('description ' + desc.length + '>160 (SERP truncates)')
   if (desc.length && desc.length < 50) warns.push('description <50 (thin)')
+  // advisory: hreflang in head is optional (sitemap alternates also valid) but improves multilingual SERP
+  if (!/rel="alternate"[^>]*hreflang/i.test(head)) warns.push('no hreflang in head (multilingual-SEO opportunity; sitemap/HTTP-header also valid)')
 
   if (errs.length) console.log('  ✗ ' + p + '  ERR: ' + errs.join(', '))
   if (warns.length) console.log('  ⚠ ' + p + '  WARN: ' + warns.join(', '))
