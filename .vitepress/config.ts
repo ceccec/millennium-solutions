@@ -5,6 +5,31 @@ import { LOCALES, LOCALE_ORDER } from '../src/7/locale'
 // Root locale = en; the other six are ready in the table for per-locale content dirs.
 const L = LOCALES.en
 
+// VitePress i18n: root = English (full site); six locales get translated chrome + a translated
+// landing, then link into the English deep pages until those are translated. Honest boundary:
+// fixed UI + landing localize deterministically; prose stays English until a translator provides it.
+const REPO = 'https://github.com/ceccec/millennium-solutions'
+const NON_ROOT = ['bg', 'de', 'fr', 'es', 'ru', 'zh'] as const
+const i18nLocales = {
+  root: { label: 'English', lang: 'en' },
+  ...Object.fromEntries(NON_ROOT.map((code) => {
+    const T = LOCALES[code]
+    return [code, {
+      label: T.label, lang: code, link: `/${code}/`,
+      title: T.title, description: T.description,
+      themeConfig: {
+        nav: [
+          { text: T.nav.paper, link: `/${code}/` },
+          { text: T.nav.compute, link: '/compute' },
+          { text: T.nav.research, link: '/RESEARCH' },
+          { text: 'Verify', link: '/verify' },
+          { text: 'Repo ↗', link: REPO },
+        ],
+      },
+    }]
+  })),
+}
+
 export default defineConfig({
   title: L.title,
   description: L.description,
@@ -19,6 +44,8 @@ export default defineConfig({
     ['link', { rel: 'apple-touch-icon', href: '/millennium-solutions/icon.svg' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
   ],
+
+  locales: i18nLocales,
 
   // Repo/dev docs and npm-package sources are not site pages.
   srcExclude: ['README.md', 'DEPLOY.md', 'packages/**', 'src/**'],
