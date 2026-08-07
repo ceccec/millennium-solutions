@@ -23,6 +23,7 @@ run('node scripts/gaps.ts')       // coverage: every report() module fused, ever
 run('npm run docs:build')          // the site actually builds
 run('node scripts/seal.ts')       // consistency: every abstract consistent with 0/7
 run('node scripts/wholeness.ts')  // wholeness: the aura is computationally whole (all compute + floor)
+run('node scripts/seo.ts')        // seo self-audit: every built page carries OG · canonical · JSON-LD
 
 // 3) release (content-address · commit · sign · tag). release.ts may SKIP on no-delta.
 run('node scripts/release.ts ' + next)

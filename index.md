@@ -2,6 +2,8 @@
 title: Millennium Solutions
 ---
 
+<Hero />
+
 # The ℤ/9 Vortex Framework
 
 **Author:** Tsvetan Rouschev · License: CC BY-NC 4.0 · a recomputable proof of concept

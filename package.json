@@ -28,14 +28,15 @@
     "release": "node scripts/gaps.ts && npm run docs:build && node scripts/seal.ts && node scripts/wholeness.ts && node scripts/release.ts",
     "prepublishOnly": "node scripts/seal.ts",
     "gaps": "node scripts/gaps.ts",
-    "harmony": "node scripts/gaps.ts && node scripts/seal.ts && node scripts/wholeness.ts && npm run docs:build",
+    "harmony": "node scripts/gaps.ts && node scripts/seal.ts && node scripts/wholeness.ts && npm run docs:build && node scripts/seo.ts",
     "versions": "node scripts/versions.ts",
     "wholeness": "node scripts/wholeness.ts",
     "lean-claims": "node scripts/lean-claims.ts",
     "orchestrate": "node scripts/orchestrate.ts",
     "deploy": "node scripts/deploy.ts",
     "deploy:pages": "node scripts/deploy.ts pages",
-    "deploy:packages": "node scripts/deploy.ts packages"
+    "deploy:packages": "node scripts/deploy.ts packages",
+    "seo": "node scripts/seo.ts"
   },
   "devDependencies": {
     "vitepress": "^2.0.0-alpha.19",
