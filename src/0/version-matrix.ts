@@ -40,10 +40,11 @@ export function report(): string {
   // it all goes in v1.0.0: the major·minor columns are invariant across every row.
   const majorInv = matrix.every(r => r[0] === matrix[0][0])
   const minorInv = matrix.every(r => r[1] === matrix[0][1])
-  o += '  it all goes in v1.0.0 — major·minor invariant: [' + matrix[0][0] + ',' + matrix[0][1] + '] on every row ('
-  o += 'major ' + majorInv + ', minor ' + minorInv + ').\n'
-  o += '  only the patch (the fold index) advances; the pyramid apex returns them ALL to one origin.\n'
-  o += '  every release is a patch-reflection of the single v1.0.0 — nothing breaks the 1.0 line.\n\n'
+  o += '  one minor line (1.' + matrix[0][1] + '.x) — major·minor invariant [' + matrix[0][0] + ',' + matrix[0][1] + '] ('
+  o += 'major ' + majorInv + ', minor ' + minorInv + '); only the patch advances.\n'
+  o += '  STABLE = v1.x.0 (patch 0): 0 is always stable — the base/network address of each minor line.\n'
+  o += '  patches (v1.x.y, y>0) increment toward the next stable; a minor bump opens the next line, patch → 0.\n'
+  o += '  the pyramid apex returns every patch to that line\'s .0 origin.\n\n'
   // and it all goes in v0.0.0 — the zero origin/void: the genesis seed the chain starts from.
   const genesis = toUuid('0')
   o += '  and it all goes in v0.0.0 — the zero origin: genesis seed toUuid("0") = ' + genesis.slice(0, 13) + '…\n'
