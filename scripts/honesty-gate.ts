@@ -13,10 +13,10 @@ export const RED = /\bwe prove\b|\bproven\b|confidence\s*=?\s*1\.0|ready for pee
 // superlatives that kept re-emerging in conversation and sailed through the old gate.
 // (Bounded REFUSALS of these are fine — the negation guard below lets the deposit
 // document its own limits, e.g. "this is NOT faster than light", without self-flagging.)
-export const OVERREACH = /\b(faster[ -]than[ -]light|superluminal|quantum (speedup|supremacy|advantage|at scale)|quantum (processor|computer)|the qpu|fastest (known|ever|in the world)|unbreakable|unhackable|impossible to (crack|break|violate|reverse)|proves quantum)\b/i
+export const OVERREACH = /\b(faster[ -]than[ -]light|superluminal|quantum (speedup|supremacy|advantage|at scale)|quantum (processor|computer)|the qpu|fastest (known|ever|in the world)|unbreakable|unhackable|impossible to (crack|break|violate|reverse)|proves quantum)\b|\b(prov(e|es|ed|en)|proof of)\b[^.]{0,24}\b(clay|millennium|riemann|hodge|poincar[eé]|navier[- ]?stokes|yang[- ]?mills|birch|swinnerton|p ?vs\.? ?np|p versus np)\b/i
 
 // A negator within this many chars BEFORE an over-reach match = a bounded refusal, allowed.
-const NEGATOR = /\b(not|no|never|isn'?t|aren'?t|does ?n'?t|do ?n'?t|without|bounded by|drains?|refus\w*|neither|nor|cannot|can'?t|only claims?)\b/i
+const NEGATOR = /\b(not|no|nothing|none|never|isn'?t|aren'?t|does ?n'?t|do ?n'?t|without|bounded by|drains?|refus\w*|neither|nor|cannot|can'?t|only claims?)\b/i
 
 // the binary. true = honest (stays); false = overclaim (drained). the match, if any,
 // is the exact prose that failed — the crack, naming its own cure.
