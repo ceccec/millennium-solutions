@@ -1,4 +1,4 @@
-// @ceccec/vortex-vision — the ceccec interpretive layer built ON millennium-solutions.
+// @ceccec/millennium-vision — the ceccec interpretive layer built ON millennium-solutions.
 // This is PERSPECTIVE (opinion), clearly labeled — NOT a computed result.
 // Fork this package to publish your own vision on the shared, verifiable core.
 export function vision(): string {

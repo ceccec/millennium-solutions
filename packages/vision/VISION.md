@@ -1,4 +1,4 @@
-# @ceccec/vortex-vision — the vision layer
+# @ceccec/millennium-vision — the vision layer
 
 **Personal perspective of Tsvetan Rouschev, as an observer — not computed results.**
 

@@ -1,4 +1,4 @@
-# @ceccec/vortex-vision
+# @ceccec/millennium-vision
 
 The **ceccec vision** — an interpretive layer on top of the verifiable
 [`millennium-solutions`](https://www.npmjs.com/package/millennium-solutions).
@@ -8,10 +8,10 @@ author (perspective, clearly labeled). **Everyone can add their own vision:** fo
 this package, depend on `millennium-solutions`, and write your `vision()`.
 
 ```bash
-npm i millennium-solutions @ceccec/vortex-vision
+npm i millennium-solutions @ceccec/millennium-vision
 ```
 ```ts
 import { entails, honesty } from 'millennium-solutions' // the shared facts
-import { vision } from '@ceccec/vortex-vision'         // one perspective on them
+import { vision } from '@ceccec/millennium-vision'         // one perspective on them
 ```
 License: CC BY-NC 4.0 · © Tsvetan Rouschev

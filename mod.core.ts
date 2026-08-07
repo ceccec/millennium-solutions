@@ -1,4 +1,4 @@
-// @ceccec/vortex-core — the verifiable, recomputable core. Facts only, no interpretation.
+// millennium-solutions — the verifiable, recomputable core. Facts only, no interpretation.
 export { toUuid, merge, foldPair, merkleFold, sealFacets, gcdBigInt } from './src/0/index.ts'
 export { entails, curveFitCheck, scaleCheck } from './src/honesty/index.ts'
 export { report as honesty } from './src/honesty/index.ts'
