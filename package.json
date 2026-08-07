@@ -32,6 +32,7 @@
     "versions": "node scripts/versions.ts",
     "wholeness": "node scripts/wholeness.ts",
     "lean-claims": "node scripts/lean-claims.ts",
+    "next": "node scripts/next.ts",
     "orchestrate": "node scripts/orchestrate.ts",
     "deploy": "node scripts/deploy.ts",
     "deploy:pages": "node scripts/deploy.ts pages",

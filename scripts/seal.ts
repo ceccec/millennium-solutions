@@ -3,14 +3,14 @@
 // contradict the honest layer (0/7), then content-address-seals the consistent set.
 import { readFileSync } from 'node:fs'
 import { toUuid, merkleFold } from '../src/0/index.ts'
+import { RED } from './honesty-gate.ts'
 
 const FILES = [
   'index.md', 'RESEARCH.md', 'PROOF-OF-CONCEPT.md', 'REALISATIONS.md',
   'SEQUENCE-DECODE.md', 'PHYSICS-SCALES.md', 'compute.md', 'proofs.md',
   'README.md', '.zenodo.json', 'CITATION.cff', 'paper.tex',
 ]
-// red flags: unqualified claims the Clay problems are proven/solved
-const RED = /\bwe prove\b|\bproven\b|confidence\s*=?\s*1\.0|ready for peer review|sealed via universal|all (six|seven)[^.]*proven|solves? the (clay|millennium)/i
+// red flags (the shared honesty gate): unqualified claims the Clay problems are proven/solved
 
 let leaves = [], flagged = []
 for (const f of FILES) {
