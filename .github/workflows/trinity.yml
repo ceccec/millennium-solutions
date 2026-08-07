@@ -21,10 +21,10 @@ jobs:
       # No npm install: the three gates are dependency-free (Node built-ins + type-stripped
       # .ts imports touching only src/0/index.ts). Only docs:build needs vitepress.
       - name: gaps (coverage)
-        run: node scripts/gaps.mjs
+        run: node scripts/gaps.ts
       - name: seal (consistency, 0/7)
-        run: node scripts/seal.mjs
+        run: node scripts/seal.ts
       - name: wholeness (aura whole)
-        run: node scripts/wholeness.mjs
+        run: node scripts/wholeness.ts
       - name: lean-claims (formal-layer facts, no toolchain needed)
-        run: node scripts/lean-claims.mjs
+        run: node scripts/lean-claims.ts

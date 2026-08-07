@@ -45,6 +45,7 @@ import { report as frequency } from './src/2/frequency-scales'
 import { report as stringScale } from './src/2/string-scale'
 import { report as primesVortex } from './src/2/primes-vortex'
 import { report as quantum } from './src/2/quantum'
+import { report as iching } from './src/2/iching'
 import { report as piBBP } from './src/3/pi-bbp'
 import { report as trinity } from './src/3/trinity'
 import { report as git } from './src/4/git'
@@ -181,6 +182,11 @@ digit to its partner (fixed point **5**), so the folders below are laid out arou
 ### Classical simulator of a quantum algorithm — the paradox computes · `src/2/quantum.ts`
 <details class="depth"><summary>compute</summary>
 <pre>{{ quantum() }}</pre>
+</details>
+
+### I Ching — exact binary combinatorics (2⁶ = 64 = 4³) · `src/2/iching.ts`
+<details class="depth"><summary>compute</summary>
+<pre>{{ iching() }}</pre>
 </details>
 
 ## `3/` — random access & the trinity

@@ -20,7 +20,7 @@ function pyramid(leaves: string[]): { tiers: number[]; apex: string } {
 function ceilLog2(n: number): number { let d = 0, x = 1; while (x < n) { x *= 2; d++ } return d }
 
 export function report(): string {
-  const versions = ['1.0.0', '1.0.1', '1.0.2', '1.0.3'] // illustrative rows (live seal: scripts/versions.mjs)
+  const versions = ['1.0.0', '1.0.1', '1.0.2', '1.0.3'] // illustrative rows (live seal: scripts/versions.ts)
   const matrix = versions.map(v => v.split('.').map(Number))
   const leaves = versions.map(toUuid)
   const { tiers, apex } = pyramid(leaves)
@@ -53,6 +53,6 @@ export function report(): string {
   o += 'HONEST: the digit matrix, the Merkle pyramid (tier sizes + log-depth navigation), and the\n'
   o += 'genus-2 Euler characteristic are all exact. Calling the version history "a double torus" is a\n'
   o += 'topological METAPHOR, not a derivation — versions form a Merkle tree (a pyramid), which is not\n'
-  o += 'literally a genus-2 surface. The live seal over ALL tags is scripts/versions.mjs. entails → 0/7.'
+  o += 'literally a genus-2 surface. The live seal over ALL tags is scripts/versions.ts. entails → 0/7.'
   return o
 }

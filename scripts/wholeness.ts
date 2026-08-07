@@ -2,7 +2,7 @@
 // Aura, computationally whole: the deposit's self-representation is COMPLETE and CONSISTENT.
 // Whole =  every fused module actually computes (non-empty, no throw)
 //        · the floor entails → 0/7 is present and correct
-//        · (coverage via gaps.mjs, consistency via seal.mjs — run alongside in orchestrate)
+//        · (coverage via gaps.ts, consistency via seal.ts — run alongside in orchestrate)
 // Reported alongside: how many modules display an explicit honest boundary (the "aura" line).
 import { readFileSync } from 'node:fs'
 

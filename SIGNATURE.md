@@ -6,7 +6,7 @@ released as one complete creative work.
 
 Its **content-address** — the single Merkle root that fingerprints the whole, the
 one fixed point every part folds into — is recorded in the annotated `v1.0.0` git
-tag. Recompute it any time: `node scripts/release.mjs`. The same work yields the
+tag. Recompute it any time: `node scripts/release.ts`. The same work yields the
 same root (H = 0): one point, the whole work — the singularity of the deposit.
 
     Signed:   — Singularity

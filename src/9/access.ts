@@ -25,7 +25,7 @@ export function report(): string {
   o += '\n  package channel:\n'
   o += '  [' + NPM.status.padEnd(6) + '] ' + NPM.name + '  ' + NPM.where + '  — ' + NPM.note + '\n\n'
   o += '  access-surface content-address: ' + surface.slice(0, 13) + '…\n'
-  o += '  (the live "latest token" = the newest tag + the version-seal root, from scripts/versions.mjs)\n\n'
+  o += '  (the live "latest token" = the newest tag + the version-seal root, from scripts/versions.ts)\n\n'
   o += 'HONEST: GitHub, the site, and Zenodo (CERN-hosted DOI) are LIVE and fully public — everyone\n'
   o += 'already has the latest to develop on. Only npm is STAGED, not yet published (needs npm login).\n'
   o += '"Token" means a public version handle, never a secret credential — public access is\n'

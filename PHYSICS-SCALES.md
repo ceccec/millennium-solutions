@@ -1,7 +1,7 @@
 # Physics scales: shell-model magic numbers, matter-as-waves, and where A432 sits
 
 Companion to `SEQUENCE-DECODE.md`. Every value here is computed; reproduce with
-`node shell-model-magic.mjs` and `node frequency-scales.mjs`. The animation of the
+`node shell-model-magic.ts` and `node frequency-scales.ts`. The animation of the
 merkaba → Flower → Fruit → Metatron construction is `merkaba-flower.html`.
 
 ## 1. The nuclear magic numbers come from the shell model

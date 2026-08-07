@@ -24,11 +24,11 @@ jobs:
 
       # --- all safety measures first (no publish if any fails) ---
       - name: gaps — coverage (modules fused, pages linked, digits 0..9 covered)
-        run: node scripts/gaps.mjs
+        run: node scripts/gaps.ts
       - name: seal — consistency (every abstract with 0/7)
-        run: node scripts/seal.mjs
+        run: node scripts/seal.ts
       - name: wholeness — the aura is whole (all compute + floor)
-        run: node scripts/wholeness.mjs
+        run: node scripts/wholeness.ts
 
       # --- publish (automation token → no OTP). Dependency first, then the scoped trinity. ---
       - name: publish @ceccec/millennium-solutions

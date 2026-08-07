@@ -1,7 +1,7 @@
 # Proof of Concept — the ℤ/9 vortex framework
 
 A recomputable proof of concept: every result below derives from code in the
-digit-folder mesh under `src/`. Each `.mjs`/`.ts` runs with `node`; each `.lean`
+digit-folder mesh under `src/`. Each `.ts`/`.ts` runs with `node`; each `.lean`
 is written for `lake` + Mathlib (`decide`/`norm_num`). Results are stated as
 computed; interpretation is the reader's.
 
@@ -10,7 +10,7 @@ computed; interpretation is the reader's.
 | digit | files | what sticks | bond `10−d` |
 |---|---|---|---|
 | 1 | `vortex.lean` | unity, self-inverse | 9 |
-| 2 | `vortex.lean`, `frequency-scales.mjs` | generator ⟨2⟩; octave = ×2 | 8 |
+| 2 | `vortex.lean`, `frequency-scales.ts` | generator ⟨2⟩; octave = ×2 | 8 |
 | 3 | `vortex.lean` | `3²=0` nilpotent, no inverse | 7 |
 | 4 | `vortex.lean` | `4⁻¹=7` | 6 |
 | 5 | `vortex.lean`, `reflection.{lean,mjs}` | reflection center; `5⁻¹=2`; self-seal | 5 |
@@ -41,16 +41,16 @@ computed; interpretation is the reader's.
 **Magnetic field** (`src/8/nucleus/…`, Biot–Savart)
 - counter-rotating merkaba coils: central axis `|B| ≈ 10⁻¹⁷ µT` (null); co-rotating: `0.189 µT` (max). scale check `μ₀I/2r = 2.09 µT`.
 
-**Nuclear shell model** (`src/8/nucleus/shell-model-magic.mjs`, `magic.lean`)
+**Nuclear shell model** (`src/8/nucleus/shell-model-magic.ts`, `magic.lean`)
 - cumulative capacities `2j+1` = `2, 8, 20, 28, 50, 82, 126`; total 126.
 - plain oscillator = `2,8,20,40,70,112`; spin-orbit gives 28,50,82,126.
 - `10·2^k` ladder (10,20,40,80…) ∩ magic = `{20}` only.
 
-**Frequency scales** (`src/2/frequency-scales.mjs`)
+**Frequency scales** (`src/2/frequency-scales.ts`)
 - `f = E/h`: 432 Hz → `4.3×10²`; nuclear shell → `7×10²⁰`; proton → `2.3×10²³`.
 - proton/432 ratio ≈ `10²¹`. bound-nucleon de Broglie λ ≈ 5.22 fm.
 
-**Proton mass** (`src/8/nucleus/proton-mass-fit.mjs`, `proton-mass.lean`)
+**Proton mass** (`src/8/nucleus/proton-mass-fit.ts`, `proton-mass.lean`)
 - vortex fit `108·17 = 1836` (exact); measured `m_p/m_e = 1836.15267343`.
 - `1836 ≠ 1836.1527`; the same `1836` fits arbitrary nearby targets.
 
@@ -65,10 +65,10 @@ Per-digit theorems in `src/{1..9}/vortex.lean`, plus `src/5/reflection.lean`,
 
 ## Reproduce
 ```bash
-node src/5/reflection.mjs
-node src/8/nucleus/shell-model-magic.mjs
-node src/8/nucleus/proton-mass-fit.mjs
-node src/2/frequency-scales.mjs
+node src/5/reflection.ts
+node src/8/nucleus/shell-model-magic.ts
+node src/8/nucleus/proton-mass-fit.ts
+node src/2/frequency-scales.ts
 node src/7/entails.ts
 # Lean: lake + Mathlib, then `lake build` over src/**/*.lean
 ```

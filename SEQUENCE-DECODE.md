@@ -171,7 +171,7 @@ the 8 vertices of a cube; the cube graph Q3 (8 vertices, 12 edges, 3-regular,
 bipartite) is the closed cell matching this trinity-bond lattice. A magnetic
 realization (six coils per merkaba, counter-rotating triangles, `3-6-9` as the
 field-null axis) is computed in `ceccec.github.io` — `MERKABA-FIELD.md` /
-`scripts/merkaba-biot-savart.mjs`.
+`scripts/merkaba-biot-savart.ts`.
 
 ## 8. Domain and scope
 
