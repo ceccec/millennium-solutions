@@ -10,3 +10,4 @@ build/
 .vitepress/cache
 .vitepress/dist
 dashboard.md
+boundaries.md

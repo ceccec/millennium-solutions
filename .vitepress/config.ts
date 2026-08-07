@@ -118,6 +118,7 @@ export default defineConfig({
       ] },
       { text: L.nav.compute, items: [
         { text: 'State dashboard', link: '/dashboard' },
+        { text: 'Boundaries', link: '/boundaries' },
         { text: 'Computed results', link: '/compute' },
         { text: 'Verify', link: '/verify' },
         { text: L.nav.decode, link: '/SEQUENCE-DECODE' },
