@@ -11,6 +11,8 @@ const target = (process.argv[2] || 'pages').toLowerCase()
 if (target === 'pages') {
   console.log('deploy: pages → gh-pages → https://ceccec.github.io/millennium-solutions/')
   run('npm run docs:build')
+  run('node scripts/locale-fold.ts')  // language-fallback stubs → no dead switcher links
+  run('npm run sitemap')   // emit the content-addressed sitemap mesh (100% coverage gate)
   const remote = cap('git config --get remote.origin.url')
   // Publish dist via a throwaway repo: no hosted runner, no history pollution.
   run('cd .vitepress/dist'

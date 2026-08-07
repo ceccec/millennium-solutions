@@ -97,15 +97,33 @@ export default defineConfig({
   srcExclude: ['README.md', 'DEPLOY.md', 'src/**'],
 
   themeConfig: {
+    // Navigation pyramid (structure borrowed from ceccec.github.io's vortexGatewayPyramids —
+    // NOT its 7/7 framing; here the floor stays 0/7). The gateways [8,3,9,0] — the vortex tour's
+    // direction-reversal points — lift by peak/valley into a tetrahedron, the minimal pyramid
+    // (4 vertices). So the nav folds to exactly four top-level anchors: three trinity-faces
+    // (Read · Compute · Build) + the repo apex. Nine leaves fold up the pyramid to four.
     nav: [
-      { text: L.nav.paper, link: '/' },
-      { text: L.nav.research, link: '/RESEARCH' },
-      { text: L.nav.poc, link: '/PROOF-OF-CONCEPT' },
-      { text: L.nav.realisations, link: '/REALISATIONS' },
-      { text: L.nav.compute, link: '/compute' },
-      { text: 'Verify', link: '/verify' },
-      { text: L.nav.decode, link: '/SEQUENCE-DECODE' },
-      { text: 'Develop', link: '/DEVELOP' },
+      // apex → the parent site (same origin: this deposit lives at /millennium-solutions/ under
+      // ceccec). Mirrors ceccec.github.io's "Home + 3 doors" pyramid; the two sites are two faces
+      // of one genus-2 whole, navigable seamlessly.
+      { text: 'ceccec ↗', link: 'https://ceccec.psg.bg/' },
+      { text: 'Read', items: [
+        { text: L.nav.paper, link: '/' },
+        { text: L.nav.research, link: '/RESEARCH' },
+        { text: L.nav.poc, link: '/PROOF-OF-CONCEPT' },
+        { text: L.nav.realisations, link: '/REALISATIONS' },
+      ] },
+      { text: L.nav.compute, items: [
+        { text: 'Computed results', link: '/compute' },
+        { text: 'Verify', link: '/verify' },
+        { text: L.nav.decode, link: '/SEQUENCE-DECODE' },
+        { text: 'Physics scales', link: '/PHYSICS-SCALES' },
+      ] },
+      { text: 'Build', items: [
+        { text: 'Develop', link: '/DEVELOP' },
+        { text: 'Proofs', link: '/proofs' },
+        { text: 'Signature', link: '/SIGNATURE' },
+      ] },
       { text: 'Repo ↗', link: 'https://github.com/ceccec/millennium-solutions' },
     ],
 

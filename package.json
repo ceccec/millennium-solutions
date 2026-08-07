@@ -38,6 +38,7 @@
     "deploy:pages": "node scripts/deploy.ts pages",
     "deploy:packages": "node scripts/deploy.ts packages",
     "seo": "node scripts/seo.ts",
+    "sitemap": "node scripts/sitemap-mesh.ts",
     "i18n": "node scripts/i18n.ts"
   },
   "devDependencies": {
