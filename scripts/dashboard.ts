@@ -9,13 +9,8 @@ import { readFileSync, existsSync, writeFileSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 
 const version = (() => { try { return execSync('git tag --sort=version:refname', { encoding: 'utf8' }).trim().split('\n').pop() || 'v0' } catch { return 'v0' } })()
-// coverage + seal from the last-built mesh (labeled "as of last seal"); floor is invariant.
-let nodes = '?', edges = '?', resolved = '?', root = '?'
-try {
-  const m = JSON.parse(readFileSync('.vitepress/dist/sitemap.json', 'utf8'))
-  root = (m.root || '?').slice(0, 13); nodes = m.nodes?.length ?? '?'
-  edges = m.edges ?? m.links ?? '?'
-} catch {}
+// coverage = gate-enforced 100% (build fails otherwise); the live seal root is linked to /sitemap.json
+// (source of truth) — no stale/absent embed. floor (0/7) is invariant.
 
 const card = (title: string, value: string, sub: string) =>
   `<div class="dash-card"><div class="dash-k">${title}</div><div class="dash-v">${value}</div><div class="dash-s">${sub}</div></div>`
@@ -73,8 +68,8 @@ head:
 ${card('Version', version, 'git tag (single source)')}
 ${card('Millennium floor', '0 / 7', 'entailed — not solved, not claimed')}
 ${card('Honesty gate', 'sealed', 'all prose consistent with 0/7')}
-${card('Link coverage', resolved === '?' ? nodes + ' nodes' : resolved + '/' + edges, 'sitemap mesh (as of last seal)')}
-${card('Seal root', root, 'merkle of the whole (as of last seal)')}
+${card('Link coverage', '100%', 'gate-enforced — the build fails below 100%')}
+<a class="dash-card" href="/millennium-solutions/sitemap.json" style="text-decoration:none;display:block"><div class="dash-k">Seal root</div><div class="dash-v" style="color:var(--vp-c-brand-1)">live →</div><div class="dash-s">merkle of the whole, current at /sitemap.json</div></a>
 ${card('CSP', 'every page', 'security gate — no external imports')}
 </div>
 
@@ -98,4 +93,4 @@ ${horo}
 `
 
 writeFileSync('dashboard.md', md)
-console.log('dashboard: generated dashboard.md (fact cards + a432 pattern wheel) · version ' + version + ' · root ' + root)
+console.log('dashboard: generated dashboard.md (fact cards + a432 + horo pattern media) · version ' + version)
