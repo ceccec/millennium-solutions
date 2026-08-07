@@ -37,3 +37,26 @@
 }
 /* Nested depth (a fold within a fold) indents further — the mesh going deeper. */
 .depth .depth { border-left-color: var(--vp-c-brand-2, var(--vp-c-divider)); }
+
+/* ── A432 · shadcn-style token orchestration ────────────────────────────────
+   Typing in the search harness reduces the query to a vortex digit (digital
+   root, ℤ/9), places it on the 9-point circle (d·40° = 360/9 — SEQUENCE-DECODE
+   §6), and that one angle drives a single hue. From that hue the whole
+   shadcn-style HSL token set is derived, then bridged onto VitePress's brand
+   tokens so every component re-themes live. 432 lives in the STRUCTURE
+   (40° = 360/9 per digit; 432 = 2⁴·3³), not a decorative timer — the re-theme is
+   instant and deterministic, so it never depends on an animation reaching its end
+   (hidden tab, reduced-motion, or no-@property support would all freeze that).
+   Cosmetic only — no fact, no 0/7, changes. The aura, made responsive. */
+@property --a432-hue { syntax: '<number>'; initial-value: 200; inherits: true; }
+
+/* shadcn-style HSL design tokens, all derived from the one vortex hue — a documented
+   token layer for components. The live VitePress brand re-theme is driven directly in
+   JS (theme/index.ts) with concrete hsl() strings, because nesting these vars across a
+   registered @property computes to invalid/empty in the brand bridge. */
+:root[data-a432] {
+  --primary: hsl(var(--a432-hue) 68% 45%);
+  --ring:    hsl(var(--a432-hue) 72% 55%);
+  --accent:  hsl(var(--a432-hue) 60% 50%);
+  --radius:  8px;
+}
