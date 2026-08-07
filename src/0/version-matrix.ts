@@ -3,6 +3,11 @@
 // the "double torus" naming is labelled as the metaphor it is.
 import { toUuid, merge } from './index.ts'
 
+// The version explains its own support status: ODD minor = LTS, EVEN minor = interim.
+// So v1.1·v1.3·v1.5·v1.7·v1.9 are long-term support; v1.5 is the HEART LTS (σ(5)=10−5=5, the
+// unique reflection fixed point / "Dobro" = good). Read the minor — no separate policy doc.
+export const channel = (minor: number): 'LTS' | 'interim' => (minor % 2 === 1 ? 'LTS' : 'interim')
+
 // Fold leaves pairwise, tier by tier, to an apex — a Merkle pyramid. Returns the tier sizes
 // and the apex address.
 function pyramid(leaves: string[]): { tiers: number[]; apex: string } {
@@ -44,7 +49,9 @@ export function report(): string {
   o += 'major ' + majorInv + ', minor ' + minorInv + '); only the patch advances.\n'
   o += '  STABLE = v1.x.0 (patch 0): 0 is always stable — the base/network address of each minor line.\n'
   o += '  patches (v1.x.y, y>0) increment toward the next stable; a minor bump opens the next line, patch → 0.\n'
-  o += '  the pyramid apex returns every patch to that line\'s .0 origin.\n\n'
+  o += '  the pyramid apex returns every patch to that line\'s .0 origin.\n'
+  o += '  CHANNEL (self-explaining): odd minor = LTS, even = interim → ' + [1, 2, 3, 4, 5].map(m => '1.' + m + '=' + channel(m)).join(', ') + '.\n'
+  o += '  v1.5 is the HEART LTS (σ(5)=5, the unique fixed point / "good"); v1.3 (current) is the live LTS.\n\n'
   // and it all goes in v0.0.0 — the zero origin/void: the genesis seed the chain starts from.
   const genesis = toUuid('0')
   o += '  and it all goes in v0.0.0 — the zero origin: genesis seed toUuid("0") = ' + genesis.slice(0, 13) + '…\n'
