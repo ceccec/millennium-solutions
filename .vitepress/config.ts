@@ -40,6 +40,9 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/ceccec/millennium-solutions' },
     ],
 
+    // Realtime, client-side full-text search — the site reflecting its own content, offline.
+    search: { provider: 'local' },
+
     sidebar: [
       {
         text: 'Overview',
