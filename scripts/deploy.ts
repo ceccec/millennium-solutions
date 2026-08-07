@@ -3,6 +3,7 @@
 //   npm run deploy pages     → build + publish the site to the gh-pages branch (GitHub auth)
 //   npm run deploy packages  → publish the npm trinity (needs YOUR npm login; seal gate runs first)
 import { execSync } from 'node:child_process'
+import { apiAction } from './api.ts'
 const run = (c) => execSync(c, { stdio: 'inherit' })
 const cap = (c) => execSync(c, { encoding: 'utf8' }).trim()
 const REPO = 'ceccec/millennium-solutions'
@@ -20,9 +21,12 @@ if (target === 'pages') {
     + ' && : > .nojekyll && git init -q && git checkout -q -b gh-pages && git add -A'
     + ' && git -c user.name="Tsvetan Rouschev" -c user.email="ceccec@psg.bg" commit -qm "deploy site"'
     + ' && git push -f ' + remote + ' gh-pages && rm -rf .git')
-  // Ensure Pages serves the branch, then build it.
-  try { run(`gh api -X PUT repos/${REPO}/pages -f build_type=legacy -f 'source[branch]=gh-pages' -f 'source[path]=/'`) } catch {}
-  try { run(`gh api -X POST repos/${REPO}/pages/builds`) } catch {}
+  // Ensure Pages serves the branch, then build it — each gh api ACTION uuid-stamped (apiAction records + seals it).
+  const actions = [
+    apiAction('pages-config', `gh api -X PUT repos/${REPO}/pages -f build_type=legacy -f 'source[branch]=gh-pages' -f 'source[path]=/'`),
+    apiAction('pages-build', `gh api -X POST repos/${REPO}/pages/builds`),
+  ]
+  for (const a of actions) console.log(`  api ${a.kind} ${a.verdict.padEnd(7)} ${a.uuid.slice(0, 13)}  ${a.target}`)
   console.log('deploy: pages published — live in ~1 min at https://ceccec.psg.bg/millennium-solutions/')
 } else if (target === 'packages') {
   console.log('deploy: packages → npm (prepublishOnly runs the 0/7 seal gate; needs npm login)')
