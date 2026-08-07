@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import { LOCALES, LOCALE_ORDER } from '../src/7/locale'
+import { CSP } from '../src/0/csp.ts'
 
 // 7D UI from locale: the interface chrome is SOURCED from the fused locale table.
 // Root locale = en; the other six are ready in the table for per-locale content dirs.
@@ -55,15 +56,8 @@ export default defineConfig({
 
   // PWA — installable, offline (service worker registered in theme/index.ts).
   head: [
-    // Content-Security-Policy (meta form — GitHub Pages can't set HTTP headers).
-    // Self-contained: no external scripts/styles/fonts/img/connect. 'unsafe-inline' is REQUIRED here
-    // (VitePress injects inline check-dark-mode/check-mac-os scripts + inline style attributes, and a
-    // meta-CSP can't use nonces) — so this hardens RESOURCE ORIGIN (no third-party loads) but is NOT a
-    // full anti-XSS CSP. The deterministic guarantee is the external-import build gate (scripts/import-gate.ts).
-    ['meta', { 'http-equiv': 'Content-Security-Policy', content:
-      "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; " +
-      "img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; " +
-      "base-uri 'self'; form-action 'self'; frame-ancestors 'none'" }],
+    // Content-Security-Policy (meta form — GitHub Pages can't set HTTP headers). Single source: src/0/csp.ts.
+    ['meta', { 'http-equiv': 'Content-Security-Policy', content: CSP }],
     ['link', { rel: 'manifest', href: '/millennium-solutions/manifest.webmanifest' }],
     ['meta', { name: 'theme-color', content: '#3451b2' }],
     ['link', { rel: 'icon', href: '/millennium-solutions/icon.svg' }],

@@ -7,14 +7,12 @@
 // resolves — "all messages compute true" — while content honestly stays English for now.
 import { readdirSync, existsSync, writeFileSync, mkdirSync } from 'node:fs'
 import { join, dirname } from 'node:path'
+import { CSP } from '../src/0/csp.ts'
 
 const DIST = '.vitepress/dist'
 const BASE = '/millennium-solutions/'
 const LOCALES = ['bg', 'de', 'fr', 'es', 'ru', 'zh']
-// same CSP as .vitepress/config.ts — stubs are served pages too, so they carry the policy (no gap).
-const CSP = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; "
-  + "img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; "
-  + "base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+// CSP imported from the single source (src/0/csp.ts) — stubs carry the SAME policy, no drift.
 
 // English content pages = top-level .html, except 404 and the home index (locale homes exist)
 const rootHtml = readdirSync(DIST).filter((n) => n.endsWith('.html') && n !== '404.html' && n !== 'index.html')
