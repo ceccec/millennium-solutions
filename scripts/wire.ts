@@ -22,15 +22,20 @@ const PROVENANCE = [
 ]
 const deps = Object.keys(JSON.parse(readFileSync('package.json', 'utf8')).devDependencies || {})
 
+// SEQUENTIAL + spaced (no parallel burst) — respect rate limits by architecture: one call at a time,
+// a small gap between, and 429/Retry-After honored in api.ts. gentle by design (reduces risk; not "never").
+const space = (ms: number) => new Promise((r) => setTimeout(r, ms))
 export async function wire() {
-  const provenance = await Promise.all(PROVENANCE.map(async (w) => ({ label: w.label, group: 'provenance', ...(await apiFetch(w.url)) })))
-  const vulnerability = await Promise.all(deps.map(async (name) => {
+  const out: any[] = []
+  for (const w of PROVENANCE) { out.push({ label: w.label, group: 'provenance', ...(await apiFetch(w.url)) }); await space(300) }
+  for (const name of deps) {
     const r = await apiQuery('https://api.osv.dev/v1/query', { package: { name, ecosystem: 'npm' } }) as ApiRecord & { raw?: string }
     let advisories = -1
     try { advisories = (JSON.parse(r.raw || '{}').vulns || []).length } catch {}
-    return { label: 'osv:' + name, group: 'vulnerability', ...r, note: r.verdict === 'REACHED' ? advisories + ' advisor(y/ies) [package-level, advisory]' : r.note }
-  }))
-  return [...provenance, ...vulnerability]
+    out.push({ label: 'osv:' + name, group: 'vulnerability', ...r, note: r.verdict === 'REACHED' ? advisories + ' advisor(y/ies) [package-level, advisory]' : r.note })
+    await space(300)
+  }
+  return out
 }
 
 if (process.argv[1]?.endsWith('wire.ts')) {

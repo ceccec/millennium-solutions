@@ -18,11 +18,27 @@ export type ApiRecord = { kind: 'data' | 'action'; target: string; verdict: stri
 const stamp = (kind: 'data' | 'action', target: string, verdict: string, seed: string, note: string): ApiRecord =>
   ({ kind, target, verdict, uuid: toUuid(kind + ':' + target + ':' + verdict + ':' + seed), note })
 
+// RESPECT limits + honest reachability FORENSICS: classify the failure mode from what the response
+// actually tells us. definite signals (429/403/404/5xx) classify cleanly; a TIMEOUT/DNS fail is
+// AMBIGUOUS (blocked vs down vs my-network) -> INCONCLUSIVE, never concluded "blocked" from one probe.
+const classify = (res: Response): string => {
+  const reset = res.headers.get('x-ratelimit-reset'), remaining = res.headers.get('x-ratelimit-remaining')
+  if (res.status === 429 || (res.status === 403 && remaining === '0')) {
+    const ra = res.headers.get('retry-after')
+    const wait = ra ? ra + 's' : reset ? '~' + Math.max(0, Math.round(+reset - Date.now() / 1000)) + 's' : 'unknown'
+    return 'RATE-LIMITED (' + res.status + ') → honor backoff ' + wait + ', do not retry now'
+  }
+  if (res.status === 403) return 'FORBIDDEN 403 → possibly blocked or auth-required'
+  if (res.status === 404) return 'NOT-FOUND 404 → endpoint moved/removed'
+  if (res.status >= 500) return 'SERVER-ERROR ' + res.status + ' → their side, retry later'
+  return 'HTTP ' + res.status + ' → retry'
+}
+
 // DATA: fetch, honesty-gate the body, content-address it. REACHED | INCONCLUSIVE | DRAINS.
 export async function apiFetch(target: string): Promise<ApiRecord> {
   try {
-    const res = await fetch(target, { signal: AbortSignal.timeout(8000), headers: { 'user-agent': 'millennium-api' } })
-    if (!res.ok) return stamp('data', target, 'INCONCLUSIVE', 'http' + res.status, 'HTTP ' + res.status + ' → retry')
+    const res = await fetch(target, { signal: AbortSignal.timeout(8000), headers: { 'user-agent': 'millennium-wire (+https://ceccec.psg.bg/millennium-solutions/)' } })
+    if (!res.ok) return stamp('data', target, 'INCONCLUSIVE', 'http' + res.status, classify(res))
     const body = await res.text()
     const gate = computes(body)
     return stamp('data', target, gate.binary ? 'REACHED' : 'DRAINS', body,
@@ -37,8 +53,8 @@ export async function apiFetch(target: string): Promise<ApiRecord> {
 export async function apiQuery(target: string, body: unknown): Promise<ApiRecord & { raw?: string }> {
   try {
     const res = await fetch(target, { method: 'POST', signal: AbortSignal.timeout(8000),
-      headers: { 'content-type': 'application/json', 'user-agent': 'millennium-api' }, body: JSON.stringify(body) })
-    if (!res.ok) return stamp('data', target, 'INCONCLUSIVE', 'http' + res.status, 'HTTP ' + res.status + ' → retry')
+      headers: { 'content-type': 'application/json', 'user-agent': 'millennium-wire (+https://ceccec.psg.bg/millennium-solutions/)' }, body: JSON.stringify(body) })
+    if (!res.ok) return stamp('data', target, 'INCONCLUSIVE', 'http' + res.status, classify(res))
     const text = await res.text()
     const gate = computes(text)
     return { ...stamp('data', target, gate.binary ? 'REACHED' : 'DRAINS', text, gate.binary ? text.length + ' bytes · gate clean' : 'gate RED: ' + gate.hit), raw: text }
