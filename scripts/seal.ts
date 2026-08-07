@@ -3,7 +3,7 @@
 // contradict the honest layer (0/7), then content-address-seals the consistent set.
 import { readFileSync } from 'node:fs'
 import { toUuid, merkleFold } from '../src/0/index.ts'
-import { RED } from './honesty-gate.ts'
+import { computes } from './honesty-gate.ts'
 
 const FILES = [
   'index.md', 'RESEARCH.md', 'PROOF-OF-CONCEPT.md', 'REALISATIONS.md',
@@ -16,11 +16,11 @@ let leaves = [], flagged = []
 for (const f of FILES) {
   let txt = ''
   try { txt = readFileSync(f, 'utf8') } catch { continue }
-  const hit = txt.match(RED)
+  const { binary, hit } = computes(txt)
   const seal = toUuid(f + ':' + txt)
-  if (hit) flagged.push({ f, hit: hit[0] })
+  if (!binary) flagged.push({ f, hit })
   leaves.push(seal)
-  console.log((hit ? ' FLAG ' : ' seal ') + f.padEnd(22) + seal.slice(0, 13) + (hit ? '   ← "' + hit[0] + '"' : ''))
+  console.log((binary ? ' seal ' : ' FLAG ') + f.padEnd(22) + seal.slice(0, 13) + (binary ? '' : '   ← "' + hit + '"'))
 }
 console.log('\ndeposit merkle root:', merkleFold(leaves))
 console.log(flagged.length === 0
