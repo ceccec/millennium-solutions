@@ -54,6 +54,7 @@ import { report as languageLens } from './src/7/language-lens'
 import { report as glagolitic } from './src/7/glagolitic'
 import { report as cross } from './src/7/cross'
 import { report as permissions } from './src/7/permissions'
+import { report as rbac } from './src/7/rbac'
 import { report as proton } from './src/8/nucleus/proton-mass-fit'
 import { report as merkabaTouch } from './src/8/merkaba/touch'
 import { report as infinite } from './src/8/infinite'
@@ -283,6 +284,11 @@ digit to its partner (fixed point **5**), so the folders below are laid out arou
 ### Claims as Unix permissions — the floor as 0/7 = chmod 000 · `src/7/permissions.ts`
 <details class="depth"><summary>compute</summary>
 <pre>{{ permissions() }}</pre>
+</details>
+
+### Version as Unix permissions → RBAC · `src/7/rbac.ts`
+<details class="depth"><summary>compute</summary>
+<pre>{{ rbac() }}</pre>
 </details>
 
 ## `8/` — geometry & nucleus
