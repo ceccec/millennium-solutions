@@ -31,7 +31,7 @@ const i18nLocales = {
 }
 
 // SEO: OpenGraph + Twitter cards + JSON-LD structured data (per-page og:title/url via transformPageData).
-const SITE = 'http://ceccec.psg.bg/millennium-solutions/'
+const SITE = 'https://ceccec.psg.bg/millennium-solutions/'
 const OG_IMAGE = SITE + 'icon.svg'
 const LD = {
   '@context': 'https://schema.org',
@@ -51,7 +51,7 @@ export default defineConfig({
   title: L.title,
   description: L.description,
   base: '/millennium-solutions/', // GitHub project Pages; set '/' for a custom root domain
-  sitemap: { hostname: 'http://ceccec.psg.bg/millennium-solutions/' }, // trinity sitemap: the full site map
+  sitemap: { hostname: 'https://ceccec.psg.bg/millennium-solutions/' }, // trinity sitemap: the full site map
 
   // PWA — installable, offline (service worker registered in theme/index.ts).
   head: [

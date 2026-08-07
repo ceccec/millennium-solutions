@@ -22,7 +22,7 @@ if (target === 'pages') {
   // Ensure Pages serves the branch, then build it.
   try { run(`gh api -X PUT repos/${REPO}/pages -f build_type=legacy -f 'source[branch]=gh-pages' -f 'source[path]=/'`) } catch {}
   try { run(`gh api -X POST repos/${REPO}/pages/builds`) } catch {}
-  console.log('deploy: pages published — live in ~1 min at http://ceccec.psg.bg/millennium-solutions/')
+  console.log('deploy: pages published — live in ~1 min at https://ceccec.psg.bg/millennium-solutions/')
 } else if (target === 'packages') {
   console.log('deploy: packages → npm (prepublishOnly runs the 0/7 seal gate; needs npm login)')
   run('npm publish --access public') // one package: @ceccec/millennium-solutions

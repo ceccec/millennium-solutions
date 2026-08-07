@@ -31,7 +31,7 @@ VitePress, formalized in Lean 4, archived on Zenodo (DOI 10.5281/zenodo.21819217
    abstract claiming the Clay problems are solved. You cannot publish "solved" — by design.
 
 ## Pointers
-- site:   http://ceccec.psg.bg/millennium-solutions/  (compute · verify · develop)
+- site:   https://ceccec.psg.bg/millennium-solutions/  (compute · verify · develop)
 - repo:   https://github.com/ceccec/millennium-solutions
 - DOI:    https://doi.org/10.5281/zenodo.21819217
 - author: Tsvetan Rouschev (ORCID 0009-0000-7312-9778) · License: CC BY-NC 4.0

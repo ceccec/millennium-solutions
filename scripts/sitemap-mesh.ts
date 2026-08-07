@@ -40,11 +40,27 @@ for (const n of nodes) for (const l of n.links) { edges++; if (known.has(norm(l)
 const linkPct = edges ? (resolved / edges) * 100 : 100
 const root = merkleFold(nodes.map((n) => n.address))
 
+// Recursive view: each path returns its own subtree (a sitemap of its branch); the whole
+// nests into one tree — "sitemap recursively". The flat `nodes` above stay the coverage gate.
+type TreeNode = { path: string; title?: string; address?: string; children: Record<string, TreeNode> }
+const tree: TreeNode = { path: BASE, children: {} }
+for (const n of nodes) {
+  const rel = n.path.slice(BASE.length).replace(/\/$/, '') // '', 'bg', 'bg/DEVELOP', 'compute'
+  let cur = tree, acc = BASE
+  for (const seg of rel ? rel.split('/') : []) {
+    acc += seg + '/'
+    cur.children[seg] ??= { path: acc.replace(/\/$/, ''), children: {} }
+    cur = cur.children[seg]
+  }
+  cur.title = n.title; cur.address = n.address // attach this node's data at its own depth
+}
+
 const mesh = {
   scope: 'the sitemap mesh — each path a node (self-address + neighbor links); all fold to one root',
   base: BASE, count: nodes.length, root,
   coverage: { pages: '100% (every built page is a node)', links: linkPct.toFixed(1) + '%', edges, resolved },
   nodes,
+  tree, // recursive: each path → its subtree; the whole folds into one
 }
 writeFileSync(join(DIST, 'sitemap.json'), JSON.stringify(mesh, null, 2))
 console.log(`sitemap mesh: ${nodes.length} nodes · ${edges} edges · ${resolved} resolved (${linkPct.toFixed(1)}%) · root ${root.slice(0, 13)}…`)
