@@ -10,5 +10,11 @@ export default {
   Layout: () => h(DefaultTheme.Layout, null, { 'doc-after': () => h(Funding) }),
   enhanceApp({ app }) {
     app.component('Funding', Funding)
+    // PWA: register the offline service worker (client-only; HTTPS or localhost).
+    if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/millennium-solutions/sw.js').catch(() => {})
+      })
+    }
   },
 } satisfies Theme

@@ -11,6 +11,15 @@ export default defineConfig({
   base: '/millennium-solutions/', // GitHub project Pages; set '/' for a custom root domain
   sitemap: { hostname: 'http://ceccec.psg.bg/millennium-solutions/' }, // trinity sitemap: the full site map
 
+  // PWA — installable, offline (service worker registered in theme/index.ts).
+  head: [
+    ['link', { rel: 'manifest', href: '/millennium-solutions/manifest.webmanifest' }],
+    ['meta', { name: 'theme-color', content: '#3451b2' }],
+    ['link', { rel: 'icon', href: '/millennium-solutions/icon.svg' }],
+    ['link', { rel: 'apple-touch-icon', href: '/millennium-solutions/icon.svg' }],
+    ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
+  ],
+
   // Repo/dev docs and npm-package sources are not site pages.
   srcExclude: ['README.md', 'DEPLOY.md', 'packages/**', 'src/**'],
 
@@ -21,6 +30,7 @@ export default defineConfig({
       { text: L.nav.poc, link: '/PROOF-OF-CONCEPT' },
       { text: L.nav.realisations, link: '/REALISATIONS' },
       { text: L.nav.compute, link: '/compute' },
+      { text: 'Verify', link: '/verify' },
       { text: L.nav.decode, link: '/SEQUENCE-DECODE' },
       { text: 'Develop', link: '/DEVELOP' },
       { text: 'Repo ↗', link: 'https://github.com/ceccec/millennium-solutions' },
@@ -47,6 +57,7 @@ export default defineConfig({
         text: 'Fused compute (TS)',
         items: [
           { text: 'Computed results', link: '/compute' },
+          { text: 'Verify (live app)', link: '/verify' },
         ],
       },
       {
