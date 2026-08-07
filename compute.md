@@ -40,6 +40,7 @@ import { report as rosettaClay } from './src/7/rosetta-clay'
 import { report as geometry } from './src/8/merkaba/geometry'
 import { report as field } from './src/8/merkaba/field'
 import { report as entails } from './src/7/entails'
+import { report as entailsAll } from './src/7/entails-all'
 import { report as shell } from './src/8/nucleus/shell-model-magic'
 import { report as frequency } from './src/2/frequency-scales'
 import { report as stringScale } from './src/2/string-scale'
@@ -247,7 +248,7 @@ digit to its partner (fixed point **5**), so the folders below are laid out arou
 <pre>{{ center() }}</pre>
 </details>
 
-### Prove the impossibilities — every NOT, verified · `src/0/impossible.ts`
+### The impossibilities — every NOT, verified by exhaustion · `src/0/impossible.ts`
 <details class="depth"><summary>compute</summary>
 <pre>{{ impossible() }}</pre>
 </details>
@@ -267,6 +268,11 @@ digit to its partner (fixed point **5**), so the folders below are laid out arou
 ### Clay entailment — the floor itself · `src/7/entails.ts`
 <details class="depth" open><summary>compute (open by default)</summary>
 <pre>{{ entails() }}</pre>
+</details>
+
+### 0/7 holds across all 2⁷ possibilities · `src/7/entails-all.ts`
+<details class="depth"><summary>compute</summary>
+<pre>{{ entailsAll() }}</pre>
 </details>
 
 ### 7-dimensional strings — where 7 really appears · `src/7/string-dimensions.ts`
