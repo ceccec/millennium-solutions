@@ -35,7 +35,7 @@ export function report(): string {
   o += '    → the fixed point 5 is the half-step that turns reflection into advance.\n\n'
   o += 'the release process, read this way (a model, not a claim):\n'
   o += '  each release reflects to a checked baseline — gaps → seal is an involution to "harmony holds"\n'
-  o += '  (do it, undo drift, home). The COMPOSITION across releases (v1.0.0 → … → v1.0.6) is the\n'
+  o += '  (do it, undo drift, home). The COMPOSITION across releases (v1.0.0 → … → the latest) is the\n'
   o += '  rotation: net motion built from those reflections. Development never leaves the cycle;\n'
   o += '  it advances around it, two mirrors at a time.\n\n'
   o += 'HONEST: the group law (involution² = id; two reflections = a rotation) is exact. Mapping it\n'
