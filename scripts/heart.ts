@@ -40,10 +40,13 @@ let o = '---\ntitle: Heart\n---\n\n# The pentagon heart\n\n'
 o += '<div style="text-align:center;margin:1.5rem 0">\n' + svg + '\n</div>\n\n'
 o += 'Five is the heart: the fixed point of the ℤ/9 involution (σ(5)=5), the digit `vortex` roots to, '
 o += 'and the pentagon whose diagonal-to-side ratio is the golden ratio φ. The pentagram draws itself; the centre holds 5.\n\n'
-o += '## Games — ' + games.length + ' computed\n\n'
-games.forEach((e) => { o += '- ' + e.name + '  ·  `' + e.receipt.slice(0, 13) + '…`\n' })
+// each theorem rendered as a tarot combination (deterministic encoding of its content-address).
+const tarotOf = (u: string) => [0, 1, 2].map((i) => parseInt(u.replace(/[^0-9a-f]/g, '').slice(i * 4, i * 4 + 4), 16) % 78)
+const line = (e: { name: string; receipt: string }) => '- ' + e.name + '  ·  tarot [' + tarotOf(e.receipt).join(', ') + ']  ·  `' + e.receipt.slice(0, 13) + '…`\n'
+o += '## Games — ' + games.length + ' computed (each with its tarot combination)\n\n'
+games.forEach((e) => { o += line(e) })
 o += '\n## Arts & geometry — ' + arts.length + ' computed\n\n'
-arts.forEach((e) => { o += '- ' + e.name + '  ·  `' + e.receipt.slice(0, 13) + '…`\n' })
+arts.forEach((e) => { o += line(e) })
 const root = merkleFold(games.concat(arts).map((e) => e.receipt).concat([toUuid('pentagon:5')]))
 o += '\nPage content-address: `' + root + '`.\n\n'
 o += '**Honest bound.** This page presents the *computed structure* — the pentagon, the games, the arts — each a decidable fact re-verified every build. It does not explain life or consciousness; the meaning is the observer\'s to bring. Geometry, not a claim about being. Deposit 0/7.\n'

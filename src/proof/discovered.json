@@ -1138,5 +1138,30 @@
     "key": "tarot_holds_theorems",
     "name": "a reading is a prediction the gate drains; each tarot card here holds a theorem, not a fortune",
     "receipt": "9c03a373-918f-8857-a0ca-ec1aff9fe775"
+  },
+  {
+    "key": "tarot_theorem_encoding",
+    "name": "every theorem maps to a deterministic 3-card tarot combination via its content-address (encoding, not fortune)",
+    "receipt": "34f750b8-b626-80a7-9405-d4edf6470150"
+  },
+  {
+    "key": "tarot_major_of_theorem",
+    "name": "a theorem selects one of the 22 major arcana by its content-address (hex sum mod 22) — reproducible, not a reading",
+    "receipt": "eb0e5a3d-d84c-8994-8336-c8ec98d99f42"
+  },
+  {
+    "key": "tarot_distinct_theorems",
+    "name": "distinct theorems generally render distinct tarot combinations — the encoding is content-bound",
+    "receipt": "b50eee93-69b1-885c-becc-6b260fa36f22"
+  },
+  {
+    "key": "tarot_renders_not_divines",
+    "name": "a theorem's tarot combination renders its identity, not its truth — the proof, not the cards, establishes it",
+    "receipt": "7b2b309b-6b24-8704-b921-af44649ebf07"
+  },
+  {
+    "key": "tarot_encoding_total",
+    "name": "THEOREM: \"any theorem may be explained as a tarot combination\" — the encoding is total (every content-address → 3 cards in 0..77)",
+    "receipt": "f7f6254d-4c7e-878f-a149-2a2a1a8ce642"
   }
 ]

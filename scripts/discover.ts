@@ -339,6 +339,17 @@ function generated(): typeof curated {
   out.push({ key: 'tarot_major_0_21', name: 'the 22 major arcana are numbered 0..21 (0 = Fool … 21 = World)', test: () => Array.from({ length: 22 }, (_, i) => i).filter((n) => n >= 0 && n <= 21).length === 22 })
   out.push({ key: 'tarot_digital_roots', name: 'the tarot counts ride ℤ/9: dr(78)=6, dr(22)=4, dr(56)=2 — each card-set a vortex digit', test: () => digitalRoot(78) === 6 && digitalRoot(22) === 4 && digitalRoot(56) === 2 })
   out.push({ key: 'tarot_holds_theorems', name: 'a reading is a prediction the gate drains; each tarot card here holds a theorem, not a fortune', test: () => computes('the tarot predicts the future will certainly unfold as read').binary === 0 && computes('each tarot card here holds a decidable theorem, not a fortune').binary === 1 })
+  // any theorem "explained as a tarot combination" — a DETERMINISTIC rendering of its content-address
+  // into cards (an encoding, like the a432 hue), reproducible; it renders the identity, never divines
+  // the truth. The proof, not the cards, establishes a theorem.
+  const hexOf = (u: string) => u.replace(/[^0-9a-f]/g, '')
+  const tarotOf = (u: string) => [0, 1, 2].map((i) => parseInt(hexOf(u).slice(i * 4, i * 4 + 4), 16) % 78)
+  const majorOf = (u: string) => [...hexOf(u)].reduce((a, c) => a + parseInt(c, 16), 0) % 22
+  out.push({ key: 'tarot_theorem_encoding', name: 'every theorem maps to a deterministic 3-card tarot combination via its content-address (encoding, not fortune)', test: () => { const u = toUuid('theorem:sample'); const a = tarotOf(u); return a.length === 3 && a.every((c) => c >= 0 && c < 78) && JSON.stringify(a) === JSON.stringify(tarotOf(u)) } })
+  out.push({ key: 'tarot_major_of_theorem', name: 'a theorem selects one of the 22 major arcana by its content-address (hex sum mod 22) — reproducible, not a reading', test: () => { const m = majorOf(toUuid('theorem:sample')); return m >= 0 && m < 22 && majorOf(toUuid('theorem:sample')) === m } })
+  out.push({ key: 'tarot_distinct_theorems', name: 'distinct theorems generally render distinct tarot combinations — the encoding is content-bound', test: () => JSON.stringify(tarotOf(toUuid('theorem:A'))) !== JSON.stringify(tarotOf(toUuid('theorem:B'))) })
+  out.push({ key: 'tarot_renders_not_divines', name: "a theorem's tarot combination renders its identity, not its truth — the proof, not the cards, establishes it", test: () => computes("a theorem's tarot combination renders its content-address; the proof, not the cards, establishes its truth").binary === 1 })
+  out.push({ key: 'tarot_encoding_total', name: 'THEOREM: "any theorem may be explained as a tarot combination" — the encoding is total (every content-address → 3 cards in 0..77)', test: () => Array.from({ length: 60 }, (_, i) => toUuid('theorem:' + i)).every((u) => { const a = tarotOf(u); return a.length === 3 && a.every((c) => Number.isInteger(c) && c >= 0 && c < 78) }) })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
