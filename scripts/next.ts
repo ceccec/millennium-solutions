@@ -37,6 +37,12 @@ if (message === '--status' || message === 'status') {
   process.exit(newBreaks === 0 ? 0 : 1)
 }
 
+// ── rosetta mode: the completed cross-domain star, read-only. No ship. ──
+if (message === 'rosetta' || message === '--rosetta') {
+  console.log(rosettaReport())
+  process.exit(0)
+}
+
 // AUTOMATE — next is the full loop. After a delta is committed+tagged, push main and the tag to origin.
 // Errors are ADDRESSED IN THE GAME: surfaced (never swallowed), and non-fatal — the commit+tag stand
 // locally, so a push/deploy failure is reported and retryable, it does not lose the shipped work.
