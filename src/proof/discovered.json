@@ -3548,5 +3548,10 @@
     "key": "the_carmichael_function_equals_phi_exactly_when_the_group_is_cyclic",
     "name": "the Carmichael function equals Euler φ exactly when the group is cyclic: λ(n) — the least exponent with u^λ ≡ 1 for every unit, the exponent of (ℤ/n)* and the lcm of the element orders — equals φ(n) iff (ℤ/n)* is cyclic (has a primitive root). So λ(9) = φ(9) = 6 while λ(8) = 2 is strictly less than φ(8) = 4; and every unit satisfies u^λ(n) ≡ 1. Verified by full enumeration over the moduli up to 60",
     "receipt": "740fdaa6-9674-8cc0-8f84-98aa3ac14e40"
+  },
+  {
+    "key": "the_count_of_primitive_roots_is_phi_of_phi",
+    "name": "the count of primitive roots is φ(φ(n)): when (ℤ/n)* is cyclic, the number of primitive roots — the generators of the unit group — equals φ(φ(n)). So mod 9 there are φ(φ(9)) = φ(6) = 2 primitive roots, namely 2 and 5 (the doubling generator and its inverse 5 = 2⁻¹); mod 7 there are φ(6) = 2, namely 3 and 5. Verified by counting the units of maximal order over the moduli up to 60",
+    "receipt": "f659a146-4caf-8626-a332-578647d10cf4"
   }
 ]
