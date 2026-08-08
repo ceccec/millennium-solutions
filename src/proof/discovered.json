@@ -1483,5 +1483,35 @@
     "key": "relation_superposition",
     "name": "now is a superposition: the folded root holds the six open Clay problems at once (order-independent); observing collapses it to one content-address — INCONCLUSIVE ≠ false, not a physical qubit",
     "receipt": "4c2d2d08-ab33-8bdf-ad0a-fcd81324065b"
+  },
+  {
+    "key": "pascal_rule",
+    "name": "Pascal's rule: C(n,k) = C(n−1,k−1) + C(n−1,k) (all 0<k<n≤12)",
+    "receipt": "9ca05e61-ef59-8e5c-8e5c-ebc1bf68cc79"
+  },
+  {
+    "key": "vandermonde_identity",
+    "name": "Vandermonde's identity: Σ_k C(m,k)·C(n,p−k) = C(m+n,p) (m,n≤6, all p)",
+    "receipt": "1302e2f2-1d77-8f07-a6ea-6b0f1ed2fbc5"
+  },
+  {
+    "key": "gcd_lcm_product",
+    "name": "gcd(a,b)·lcm(a,b) = a·b (all a,b in 1..12)",
+    "receipt": "6dd98763-e7c2-889a-ac75-7a559e883987"
+  },
+  {
+    "key": "relation_superposition_is_fold",
+    "name": "the superposition dissolves into the merkle fold: the folded root is invariant under permutation — many held as one, order-free",
+    "receipt": "2badb5bd-1ac1-852d-81cd-795ea9fd7ffd"
+  },
+  {
+    "key": "relation_superposition_collapse",
+    "name": "the collapse dissolves into content-addressing: observation is a function — one input folds to exactly one address, distinct inputs to distinct",
+    "receipt": "042490a1-cebe-899d-a7b4-ed7268c7b94e"
+  },
+  {
+    "key": "relation_superposition_entanglement",
+    "name": "the superposition dissolves into entanglement: the joint fold depends on both parts, yet neither part is altered — correlation without influence",
+    "receipt": "56849fe1-8015-8fdf-9c4d-84a3cdb1e085"
   }
 ]

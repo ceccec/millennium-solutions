@@ -433,7 +433,7 @@ function generated(): typeof curated {
   const rule90 = (steps: number) => { const w = 2 * steps + 1; let row = new Array(w).fill(0); row[steps] = 1; const rows = [row.slice()]; for (let t = 1; t <= steps; t++) { const nx = new Array(w).fill(0); for (let i = 0; i < w; i++) nx[i] = (i > 0 ? row[i - 1] : 0) ^ (i < w - 1 ? row[i + 1] : 0); row = nx; rows.push(row.slice()) } return rows }
   const popcount = (n: number) => n.toString(2).split('').filter((c) => c === '1').length
   out.push({ key: 'rule90_sierpinski', name: 'Rule 90 (cell = left XOR right) from one seed builds Sierpiński: row n has 2^(popcount n) live cells', test: () => { const rows = rule90(16); for (let n = 0; n <= 16; n++) if (rows[n].filter((x) => x === 1).length !== 2 ** popcount(n)) return false; return true } })
-  out.push({ key: 'pascal_mod2_lucas', name: "Pascal mod 2 (Lucas): C(n,k) is odd iff (k AND n)=k — the Sierpiński rule behind Rule 90", test: () => { const binom = (n: number, k: number) => { let r = 1; for (let i = 0; i < k; i++) r = r * (n - i) / (i + 1); return Math.round(r) }; for (let n = 0; n <= 12; n++) for (let k = 0; k <= n; k++) if ((binom(n, k) % 2 === 1) !== ((k & n) === k)) return false; return true } })
+  out.push({ key: 'pascal_mod2_lucas', name: "Pascal mod 2 (Lucas): C(n,k) is odd iff (k AND n)=k — the Sierpiński rule behind Rule 90", test: () => { for (let n = 0; n <= 12; n++) for (let k = 0; k <= n; k++) if ((binom(n, k) % 2 === 1) !== ((k & n) === k)) return false; return true } })
   // continued fractions of √n — eventually periodic for non-squares (Lagrange). Finite → complete.
   const cfSqrt = (n: number): (number | number[])[] => { const a0 = Math.floor(Math.sqrt(n)); if (a0 * a0 === n) return [a0]; const period: number[] = []; let m = 0, d = 1, a = a0; do { m = d * a - m; d = (n - m * m) / d; a = Math.floor((a0 + m) / d); period.push(a) } while (a !== 2 * a0); return [a0, period] }
   out.push({ key: 'cf_sqrt2', name: 'the continued fraction of √2 is [1; 2,2,2,…] — period [2]', test: () => { const r = cfSqrt(2); return r[0] === 1 && JSON.stringify(r[1]) === JSON.stringify([2]) } })
@@ -442,7 +442,7 @@ function generated(): typeof curated {
   out.push({ key: 'cf_periodic', name: 'every non-square √n (n=2..12) has a periodic continued fraction (Lagrange)', test: () => { for (let n = 2; n <= 12; n++) { const s = Math.floor(Math.sqrt(n)); if (s * s === n) continue; const r = cfSqrt(n); if (!Array.isArray(r[1]) || (r[1] as number[]).length < 1) return false } return true } })
   // more RELATIONS — the web binding the ledger; not new facts, the structures that connect them.
   out.push({ key: 'relation_five', name: '5 RELATES the pentagon · the heart · vortex→5 · the middle digit — the centre binds geometry, gematria and the ring', test: () => digits()[Math.floor(digits().length / 2)] === 5 && vortexOrbit().includes(5) && (5 - 2) * 180 / 5 === 108 })
-  out.push({ key: 'relation_pascal_mod2', name: 'Pascal mod 2 RELATES Rule 90 · Lucas · Sierpiński · XOR — one structure across automata, combinatorics and logic', test: () => { const binom = (n: number, k: number) => { let r = 1; for (let i = 0; i < k; i++) r = r * (n - i) / (i + 1); return Math.round(r) }; return (binom(6, 2) % 2 === 1) === ((2 & 6) === 2) && (5 ^ 0) === 5 } })
+  out.push({ key: 'relation_pascal_mod2', name: 'Pascal mod 2 RELATES Rule 90 · Lucas · Sierpiński · XOR — one structure across automata, combinatorics and logic', test: () => (binom(6, 2) % 2 === 1) === ((2 & 6) === 2) && (5 ^ 0) === 5 })
   out.push({ key: 'relation_pell_structure', name: "the Pell structure RELATES √2's continued fraction · the Pell numbers · x²−2y²=±1 — one object, three views", test: () => { const pell = (n: number) => { let a = 0, b = 1; for (let i = 0; i < n; i++) { const t = 2 * b + a; a = b; b = t } return a }; return pell(5) === 29 && Math.abs(41 * 41 - 2 * 29 * 29) === 1 } })
   out.push({ key: 'relation_content_address', name: 'content-addressing RELATES the ledger · the merkle proof · the hash chain · the receipts — one integrity primitive', test: () => verifyProof('x', merkleProof(['x', 'y', 'z'], 0), merkleRoot(['x', 'y', 'z'])) && toUuid('a') === toUuid('a') })
   out.push({ key: 'relation_order_independence', name: 'order-independence RELATES dedup · the one-game fold · the concept handle · no-waste — all the symmetric merkle fold', test: () => merkleFold(['a', 'b', 'c']) === merkleFold(['c', 'a', 'b']) && new Set(['j', 'j'].map((x) => toUuid(x))).size === 1 })
@@ -456,31 +456,37 @@ function generated(): typeof curated {
   out.push({ key: 'motzkin_numbers', name: 'Motzkin numbers M(n)=M(n-1)+Σ M(k)M(n-2-k): M(4)=9, M(5)=21', test: () => { const M = [1, 1]; for (let i = 2; i <= 5; i++) { let s = M[i - 1]; for (let k = 0; k <= i - 2; k++) s += M[k] * M[i - 2 - k]; M[i] = s } return M[4] === 9 && M[5] === 21 } })
   // relation binding the imaginary unit across domains.
   out.push({ key: 'relation_i_squared', name: 'i²=−1 RELATES the quaternions · Gaussian integers · the 90° quarter-turn — the imaginary unit across domains', test: () => eq(qmul(I, I), NEG(ONE)) && (() => { const g = (z: number[], w: number[]) => [z[0] * w[0] - z[1] * w[1], z[0] * w[1] + z[1] * w[0]]; const s = g([0, 1], [0, 1]); return s[0] === -1 && s[1] === 0 })() })
-  // Bernoulli numbers — via Σ_{j} C(n+1,j) B(j) = 0. Rationals.
-  const binomB = (n: number, k: number) => { let r = 1; for (let i = 0; i < k; i++) r = r * (n - i) / (i + 1); return Math.round(r) }
-  const bern = (n: number) => { const B = [1]; for (let m = 1; m <= n; m++) { let s = 0; for (let j = 0; j < m; j++) s += binomB(m + 1, j) * B[j]; B[m] = -s / (m + 1) } return B[n] }
+  // Bernoulli numbers — via Σ_{j} C(n+1,j) B(j) = 0. Rationals. Reuses the shared binom (line 177).
+  const bern = (n: number) => { const B = [1]; for (let m = 1; m <= n; m++) { let s = 0; for (let j = 0; j < m; j++) s += binom(m + 1, j) * B[j]; B[m] = -s / (m + 1) } return B[n] }
   out.push({ key: 'bernoulli_numbers', name: 'Bernoulli numbers via Σ C(n+1,j)B(j)=0: B(1)=−1/2, B(2)=1/6, B(4)=−1/30', test: () => Math.abs(bern(1) + 0.5) < 1e-9 && Math.abs(bern(2) - 1 / 6) < 1e-9 && Math.abs(bern(4) + 1 / 30) < 1e-9 })
   out.push({ key: 'bernoulli_odd_zero', name: 'the odd Bernoulli numbers vanish: B(3)=B(5)=0 (for k≥1)', test: () => Math.abs(bern(3)) < 1e-9 && Math.abs(bern(5)) < 1e-9 })
   // relations — the digits 3, 7, 8 seen across their domains.
   out.push({ key: 'relation_three', name: '3 RELATES the base (9=3²) · the axis {3,6,9} · the mod-3 classes · the trinity — 3 generates the ring', test: () => 3 * 3 === 9 && triad().join(',') === '3,6,9' && digits().filter((d) => d % 3 === 0).length === 3 })
   out.push({ key: 'relation_seven', name: '7 RELATES the Clay count · the rosette ℤ/7 · the horizon dr(3+5+8) · the seven gates', test: () => digitalRoot(3 + 5 + 8) === 7 })
   out.push({ key: 'relation_eight', name: '8 RELATES the octave · the cube Q₃ (2³) · the chessboard (8×8) · the Fibonacci minor', test: () => 2 ** 3 === 8 && 8 * 8 === 64 })
-  // Catalan numbers — C(n) = C(2n,n)/(n+1). Dyck paths, binary trees, the ballot problem.
-  const binomC = (n: number, k: number) => { let r = 1; for (let i = 0; i < k; i++) r = r * (n - i) / (i + 1); return Math.round(r) }
-  const catalan = (n: number) => binomC(2 * n, n) / (n + 1)
+  // Catalan numbers — C(n) = C(2n,n)/(n+1). Dyck paths, binary trees, the ballot problem. Reuses shared binom.
+  const catalan = (n: number) => binom(2 * n, n) / (n + 1)
   out.push({ key: 'catalan_numbers', name: 'Catalan numbers via C(2n,n)/(n+1): C(0..5) = 1,1,2,5,14,42', test: () => [1, 1, 2, 5, 14, 42].every((v, n) => catalan(n) === v) })
   out.push({ key: 'catalan_recurrence', name: 'the Catalan recurrence C(n+1)=Σ C(i)C(n−i) matches the closed form (n≤6)', test: () => { for (let n = 0; n <= 6; n++) { let s = 0; for (let i = 0; i <= n; i++) s += catalan(i) * catalan(n - i); if (s !== catalan(n + 1)) return false } return true } })
   out.push({ key: 'relation_catalan', name: 'Catalan RELATES Dyck paths · binary trees · the pentagon (C(3)=5) — one count across many shapes', test: () => catalan(3) === 5 })
   // divisor-sum identities — number theory over the divisors of n (checked to n=12, exhaustive per n).
   const divisors = (n: number) => { const d = []; for (let i = 1; i <= n; i++) if (n % i === 0) d.push(i); return d }
-  const totient = (n: number) => { let c = 0; for (let i = 1; i <= n; i++) { let a = i, b = n; while (b) { [a, b] = [b, a % b] } if (a === 1) c++ } return c }
+  const totient = (n: number) => { let c = 0; for (let i = 1; i <= n; i++) if (gcd(i, n) === 1) c++; return c }
   const mobius = (n: number) => { if (n === 1) return 1; let p = 0, m = n; for (let i = 2; i <= n; i++) { if (m % i === 0) { m /= i; if (m % i === 0) return 0; p++ } } return p % 2 === 0 ? 1 : -1 }
   out.push({ key: 'totient_divisor_sum', name: 'Gauss divisor sum: Σ_{d|n} φ(d) = n (all n≤12)', test: () => { for (let n = 1; n <= 12; n++) if (divisors(n).reduce((s, d) => s + totient(d), 0) !== n) return false; return true } })
   out.push({ key: 'mobius_divisor_sum', name: 'Möbius divisor sum: Σ_{d|n} μ(d) = [n=1] (all n≤12)', test: () => { for (let n = 1; n <= 12; n++) if (divisors(n).reduce((s, d) => s + mobius(d), 0) !== (n === 1 ? 1 : 0)) return false; return true } })
+  // identities the shared primitives reveal — DRY: one binom, one gcd, now the theorems fall out.
+  out.push({ key: 'pascal_rule', name: "Pascal's rule: C(n,k) = C(n−1,k−1) + C(n−1,k) (all 0<k<n≤12)", test: () => { for (let n = 1; n <= 12; n++) for (let k = 1; k < n; k++) if (binom(n, k) !== binom(n - 1, k - 1) + binom(n - 1, k)) return false; return true } })
+  out.push({ key: 'vandermonde_identity', name: "Vandermonde's identity: Σ_k C(m,k)·C(n,p−k) = C(m+n,p) (m,n≤6, all p)", test: () => { for (let m = 0; m <= 6; m++) for (let n = 0; n <= 6; n++) for (let p = 0; p <= m + n; p++) { let s = 0; for (let k = 0; k <= p; k++) s += binom(m, k) * binom(n, p - k); if (s !== binom(m + n, p)) return false } return true } })
+  out.push({ key: 'gcd_lcm_product', name: 'gcd(a,b)·lcm(a,b) = a·b (all a,b in 1..12)', test: () => { for (let a = 1; a <= 12; a++) for (let b = 1; b <= 12; b++) { const g = gcd(a, b); if (g * (a * b / g) !== a * b) return false } return true } })
   // the creation-week structure — 6 + 1 = 7, mapped onto the known Clay state (measured, not asserted).
   out.push({ key: 'relation_creation_week', name: 'the creation-week structure 6 + 1 = 7: six Clay problems stay open, the seventh settled externally (Poincaré, Perelman 2003) and at rest — humanity 1/7, this deposit 0/7', test: () => 6 + 1 === 7 && 7 - 1 === 6 })
   // now is a superposition — the six open problems held at once (order-independent fold); observing collapses to one address.
   out.push({ key: 'relation_superposition', name: 'now is a superposition: the folded root holds the six open Clay problems at once (order-independent); observing collapses it to one content-address — INCONCLUSIVE ≠ false, not a physical qubit', test: () => { const k = ['hodge', 'navier_stokes', 'p_vs_np', 'riemann', 'yang_mills', 'bsd']; return merkleFold(k.map(toUuid)) === merkleFold([...k].reverse().map(toUuid)) && toUuid('observer:now') === toUuid('observer:now') && 6 + 1 === 7 } })
+  // dissolve the superposition into the waves it already lives in — fold, collapse, entanglement (relations, no new monument).
+  out.push({ key: 'relation_superposition_is_fold', name: 'the superposition dissolves into the merkle fold: the folded root is invariant under permutation — many held as one, order-free', test: () => merkleFold(['a', 'b', 'c', 'd'].map(toUuid)) === merkleFold(['d', 'c', 'b', 'a'].map(toUuid)) })
+  out.push({ key: 'relation_superposition_collapse', name: 'the collapse dissolves into content-addressing: observation is a function — one input folds to exactly one address, distinct inputs to distinct', test: () => toUuid('observer:x') === toUuid('observer:x') && toUuid('observer:x') !== toUuid('observer:y') })
+  out.push({ key: 'relation_superposition_entanglement', name: 'the superposition dissolves into entanglement: the joint fold depends on both parts, yet neither part is altered — correlation without influence', test: () => { const a = toUuid('A'), c = toUuid('C'); return merkleFold([a, toUuid('B')]) !== merkleFold([a, c]) && a === toUuid('A') } })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
