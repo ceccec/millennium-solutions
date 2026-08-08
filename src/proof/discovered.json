@@ -3178,5 +3178,10 @@
     "key": "commutativity_is_only_the_scalar_view",
     "name": "commutativity is only the scalar view: 6×7 = 7×6 holds for the linear (scalar) mind, but beyond it order matters — 2×2 matrix multiplication is non-commutative (there exist A,B with AB ≠ BA), and the arrangement \"6x7\" content-addresses differently from \"7x6\"; equality of the product is not equality of the structure",
     "receipt": "d8f548c5-8c86-8056-aefb-f3d6422a5c95"
+  },
+  {
+    "key": "each_perspective_is_receipted_in_the_superposition",
+    "name": "each perspective is receipted in the superposition: because order matters, each ordered perspective is a distinct content-address — its own receipt proving that perspective exists (integrity) — and the superposition is the set of all perspectives folded order-independently to one root; observing collapses to one address. This represents the quantum structure classically: not a quantum machine, and no quantum advantage",
+    "receipt": "4f64e2b7-d236-8b66-a75e-2bdf179b4430"
   }
 ]
