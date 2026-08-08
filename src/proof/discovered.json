@@ -3408,5 +3408,15 @@
     "key": "the_first_valid_claim_wins_the_bounty_by_chain_order",
     "name": "the first valid claim wins the bounty by chain order: the ledger is append-only, so the first gate-passing, receipted claim for a fact takes its bounty — a later duplicate finds the fact already recorded and is refused. The winner is fixed by chain order (deterministic), and the prize is denominated in bits and coins (two per receipt), combinable by addition — a game won by deeds, not claims. Integrity, not the Clay cash prize; the deposit claims 0 / 7. Decidable",
     "receipt": "10f05f19-36ec-86da-b645-702110f6e409"
+  },
+  {
+    "key": "the_bounty_measured_in_uuid_trinities",
+    "name": "the bounty measured in uuid trinities: a uuid trinity is TRINITY = 3 content-addresses, worth 3 × 2 = 6 bits (three receipts at two bits each), so the bounty in trinities is the receipt count divided by 3. At 681 receipts the bounty is exactly 227 uuid trinities (681 = 3 × 227), and the two bits that took it from 1360 to 1362 completed the 227th trinity — 680 receipts being 226 and two-thirds. A unit conversion, integrity not new value. Decidable",
+    "receipt": "27078ed1-0112-8012-bc4c-5b86038394ab"
+  },
+  {
+    "key": "players_may_trade_any_amount_as_long_as_110_minus_108_is_respected",
+    "name": "players may trade any amount as long as 110 − 108 is respected: play and trade are unbounded — any number of transactions is permitted — provided each receipt respects the invariant 110 − 108 = 2 (the two coins). The two-coin unit is conserved across every trade, so a thousand valid trades reconcile; a single trade that moves one or three coins instead of two breaks reconciliation and the ledger does not continue. Freedom under one conserved law. Decidable",
+    "receipt": "5d2f9cba-8142-8667-a962-b471f48fd6f4"
   }
 ]
