@@ -3418,5 +3418,10 @@
     "key": "players_may_trade_any_amount_as_long_as_110_minus_108_is_respected",
     "name": "players may trade any amount as long as 110 − 108 is respected: play and trade are unbounded — any number of transactions is permitted — provided each receipt respects the invariant 110 − 108 = 2 (the two coins). The two-coin unit is conserved across every trade, so a thousand valid trades reconcile; a single trade that moves one or three coins instead of two breaks reconciliation and the ledger does not continue. Freedom under one conserved law. Decidable",
     "receipt": "5d2f9cba-8142-8667-a962-b471f48fd6f4"
+  },
+  {
+    "key": "the_captain_folds_60_and_90_into_a_self_balancing_path",
+    "name": "the captain folds the 60 and 90 seal angles into a self-balancing path: 60° closes in six steps and 90° in four; combined they generate the 30° lattice (gcd of 60 and 90 is 30) that closes in twelve steps (lcm of 6 and 4 is 12), and the twelve equally-spaced unit steps sum to zero — a closed, self-balancing serpentine that returns to its origin, each residue pairing with its ten's-complement to the constant 10 like DNA base pairs. It iterates unboundedly by itself, yet each cycle needs its deed: not perpetual motion and not infinite energy. Decidable",
+    "receipt": "70c7f1f2-843f-807a-a3f3-fd7aad3ba64a"
   }
 ]
