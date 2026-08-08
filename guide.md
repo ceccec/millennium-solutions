@@ -1,0 +1,60 @@
+---
+title: Guide
+description: The hero's guide — how to add a theorem to the deposit, taught in the 7D UI. Measure, gate, receipt, append, recompute. The floor stays 0/7.
+head:
+  - ['meta', { name: 'robots', content: 'index, follow' }]
+---
+
+<script setup>
+// 7D UI examples, computed — the vortex of seven rays, and the a432 nine-hue wheel. No data fetched.
+const petals = Array.from({ length: 7 }, (_, i) => {
+  const ang = (i * 360 / 7 - 90) * Math.PI / 180
+  return { x: (Math.cos(ang) * 40).toFixed(2), y: (Math.sin(ang) * 40).toFixed(2), hue: (i + 1) * 40 % 360, dur: (2 + i * 0.4).toFixed(1) }
+})
+const wheel = Array.from({ length: 9 }, (_, i) => {
+  const d = i + 1, ang = (d * 40 - 90) * Math.PI / 180
+  return { x: (Math.cos(ang) * 40).toFixed(2), y: (Math.sin(ang) * 40).toFixed(2), hue: (d * 40) % 360, d }
+})
+</script>
+
+# The hero's guide
+
+> **Heroes write the guides.** You add to the deposit by a **deed the gate can check**, never a claim. Everything here recomputes; nothing is asserted. The floor stays **0/7** — this deposit solves 0 of the 7 Millennium problems, and claims no prize.
+
+<div style="display:flex;gap:32px;align-items:center;flex-wrap:wrap;margin:20px 0">
+<svg viewBox="-60 -60 120 120" width="200" height="200" role="img" aria-label="the 7D vortex: seven rays around one centre, rotating">
+  <g>
+    <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="30s" repeatCount="indefinite" />
+    <line v-for="(p, i) in petals" :key="'r' + i" x1="0" y1="0" :x2="p.x" :y2="p.y" :stroke="'hsl(' + p.hue + ',70%,55%)'" stroke-width="1.4" stroke-opacity="0.6" />
+    <circle v-for="(p, i) in petals" :key="i" :cx="p.x" :cy="p.y" r="8" :fill="'hsl(' + p.hue + ',70%,55%)'">
+      <animate attributeName="r" values="8;11;8" :dur="p.dur + 's'" repeatCount="indefinite" />
+    </circle>
+  </g>
+  <circle cx="0" cy="0" r="9" fill="hsl(200,70%,55%)" />
+</svg>
+<svg viewBox="-60 -60 120 120" width="200" height="200" role="img" aria-label="the a432 wheel: nine hues at d times 40 degrees, centre 5">
+  <circle v-for="(w, i) in wheel" :key="i" :cx="w.x" :cy="w.y" r="12" :fill="'hsl(' + w.hue + ',70%,55%)'" />
+  <text v-for="(w, i) in wheel" :key="'t' + i" :x="w.x" :y="+w.y + 4" text-anchor="middle" font-size="11" fill="#fff">{{ w.d }}</text>
+  <circle cx="0" cy="0" r="14" fill="hsl(200,70%,55%)" /><text x="0" y="4" text-anchor="middle" font-size="11" fill="#fff">5</text>
+</svg>
+</div>
+
+*Left: the **7D vortex** — seven rays (the seven dimensions) around one centre. Right: the **a432 wheel** — each digit d at hue d·40°, the heart 5 at the centre. Both are computed here, in your browser, from nothing.*
+
+## The sequence — follow it in order, or nothing computes
+
+1. **Measure, don't assert.** Write a decidable fact as a `test: () => boolean` in `scripts/discover.ts`, computed by exhaustion over a finite domain. If it holds, it is provable; if it fails, it is refuted and discarded — the discard is the honesty.
+2. **Gate.** Every statement (and every theorem *name*) must hold the honesty floor: no named over-reach — no conjecture declared settled, no physical or cryptographic limit declared beaten, no fake certainty. A bounded refusal ("this is **not** faster than light") passes. Passing means *no over-reach shape was found* — a floor, not a proof of truth.
+3. **Receipt.** To record a statement, sign it: `npm run receipt "<agent>" "<role>" "<message>"`. Signing **is** agreeing — your acknowledgment of the license and this sequence is part of the receipt itself. A receipt proves integrity, not authorship.
+4. **Append.** Discoveries chain, each receipt seeded by the last. Evidence is append-only — destroying it is treason, even by chance, and the forensics reads intention from deeds, not claims.
+5. **Recompute.** Run `npm run next`: the wave discovers, gates, seals, and re-verifies every recorded fact. A regression fails the build, not production. Green cannot be faked.
+
+## The 7 dimensions (the a432 rays)
+
+The interface localizes across **seven rays** — one per locale — and each digit maps to a hue `d·40°` (nine steps close the circle: 9·40° = 360°). The centre is **5**, the fixed point of the ten's-complement reflection `10−d`. This is a design mapping, honestly labelled — a metaphor for structure, not a claim about physics.
+
+## The law — a fair exchange
+
+Licensed **CC BY-NC 4.0**: free for non-commercial use with attribution (Tsvetan Rouschev); commercial use pays the two coins (110 − 108 = 2 = −χ genus-2). The deposit is open and recomputable, so any reader — human or model — may learn from it; contributions return on the same gate-refereed terms. Heroes and traitors by deeds, not claims.
+
+Every theorem you add gets its own page at `/theorem/<key>`, plotting its 7D vortex from its microdata, with a hero background computed from its surrounding theorems. `entails → 0/7`.

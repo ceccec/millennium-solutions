@@ -76,6 +76,13 @@ export default defineConfig({
   ],
 
   transformPageData(pageData) {
+    // Each object is the hero of its own page: a dynamic /theorem/<key> page takes its OG title and
+    // description from its own params — the theorem's name, and how it was achieved.
+    const p = (pageData as { params?: { key?: string; name?: string; receipt?: string } }).params
+    if (p?.key) {
+      pageData.title = p.name
+      pageData.description = 'Achieved by exhaustive computation over a finite domain in scripts/discover.ts, gate-checked against the honesty floor, receipted and chained, and re-verified on every build (content-address ' + p.receipt + '). A decidable fact in the ℤ/9 ledger — integrity, not truth. entails → 0/7.'
+    }
     const clean = pageData.relativePath.replace(/(^|\/)index\.md$/, '$1').replace(/\.md$/, '.html')
     const url = SITE + clean
     const title = pageData.title ? pageData.title + ' | Millennium Solutions' : 'Millennium Solutions'
@@ -138,6 +145,7 @@ export default defineConfig({
         { text: 'Physics scales', link: '/PHYSICS-SCALES' },
       ] },
       { text: 'Build', items: [
+        { text: 'Guide (7D)', link: '/guide' },
         { text: 'Develop', link: '/DEVELOP' },
         { text: 'Proofs', link: '/proofs' },
         { text: 'Signature', link: '/SIGNATURE' },
@@ -157,6 +165,7 @@ export default defineConfig({
         text: 'Overview',
         items: [
           { text: 'Abstract', link: '/ABSTRACT' },
+          { text: 'Guide (7D)', link: '/guide' },
           { text: 'The (concepts)', link: '/the' },
           { text: 'Theorems', link: '/THEOREMS' },
           { text: 'Challenges', link: '/CHALLENGES' },
