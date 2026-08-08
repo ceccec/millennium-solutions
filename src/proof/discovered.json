@@ -58,5 +58,40 @@
     "key": "pisano_9_is_24",
     "name": "Fibonacci mod 9 has Pisano period 24",
     "receipt": "78a65039-07c5-8873-9490-890f0922d602"
+  },
+  {
+    "key": "powperm_k5",
+    "name": "u↦u^5 permutes the units mod 9",
+    "receipt": "1f0b4ff1-9082-81cd-ac7a-d6dac80d0124"
+  },
+  {
+    "key": "powperm_k7",
+    "name": "u↦u^7 permutes the units mod 9",
+    "receipt": "18e9b1df-5a0d-88d1-b449-908eb5a281f5"
+  },
+  {
+    "key": "mulperm_k2",
+    "name": "d↦2·d permutes ℤ/9",
+    "receipt": "fa49923c-924a-8a63-b4ee-5d5ea4dc3b55"
+  },
+  {
+    "key": "mulperm_k4",
+    "name": "d↦4·d permutes ℤ/9",
+    "receipt": "42ce85f4-80cc-888d-98c6-9254109dff44"
+  },
+  {
+    "key": "mulperm_k5",
+    "name": "d↦5·d permutes ℤ/9",
+    "receipt": "51f75927-42fc-894f-a74f-ec4051104cb9"
+  },
+  {
+    "key": "mulperm_k7",
+    "name": "d↦7·d permutes ℤ/9",
+    "receipt": "0ce957cf-c464-80ad-90a6-4511349944b8"
+  },
+  {
+    "key": "mulperm_k8",
+    "name": "d↦8·d permutes ℤ/9",
+    "receipt": "4c6c0c31-87d2-8840-9758-c4ab7a75c3aa"
   }
 ]

@@ -11,7 +11,7 @@ const m9 = (n: number) => ((n % BASE) + BASE) % BASE
 const U = units()
 const ALL = digits()
 
-export const CANDIDATES: { key: string; name: string; test: () => boolean }[] = [
+const curated: { key: string; name: string; test: () => boolean }[] = [
   { key: 'euler_units_pow6', name: 'every unit u⁶ ≡ 1 mod 9 (Euler, φ(9)=6)', test: () => U.every((u) => m9(u ** 6) === 1) },
   { key: 'units_sum_zero', name: 'the units sum to 0 mod 9 (1+2+4+5+7+8=27)', test: () => m9(U.reduce((a, b) => a + b, 0)) === 0 },
   { key: 'self_inverse_1_8', name: 'exactly two self-inverse elements d²≡1 mod 9: {1,8}', test: () => ALL.filter((d) => m9(d * d) === 1).join(',') === '1,8' },
@@ -28,6 +28,21 @@ export const CANDIDATES: { key: string; name: string; test: () => boolean }[] = 
   { key: 'REF_all_units_self_inverse', name: 'REFUTED: every unit is self-inverse', test: () => U.every((u) => m9(u * u) === 1) },
   { key: 'REF_all_have_inverse', name: 'REFUTED: every element has a multiplicative inverse', test: () => ALL.every((d) => ALL.some((e) => m9(d * e) === 1)) },
 ]
+
+// COMPUTATIONALLY GENERATED candidate families — parametrized over the base, each tested exhaustively.
+// Discriminating: some hold (permute), some fail; the wave discovers the true ones and discards the
+// rest. This grows the discovery space by computation, not by hand-typed facts.
+function generated(): typeof curated {
+  const res0 = Array.from({ length: BASE }, (_, i) => i) // {0..BASE-1}, derived from the axiom
+  const isPerm = (img: number[], dom: number[]) => img.length === dom.length && new Set(img).size === dom.length && img.every((v) => dom.includes(v))
+  const out: typeof curated = []
+  // u ↦ u^k permutes the units iff gcd(k, |units|)=1 — true for some k, false for others.
+  for (let k = 2; k <= BASE; k++) out.push({ key: 'powperm_k' + k, name: 'u↦u^' + k + ' permutes the units mod ' + BASE, test: () => isPerm(U.map((u) => m9(u ** k)), U) })
+  // d ↦ k·d permutes ℤ/BASE iff gcd(k, BASE)=1 (k a unit) — true for units, false for the triad.
+  for (let k = 2; k < BASE; k++) out.push({ key: 'mulperm_k' + k, name: 'd↦' + k + '·d permutes ℤ/' + BASE, test: () => isPerm(res0.map((d) => m9(k * d)), res0) })
+  return out
+}
+export const CANDIDATES = [...curated, ...generated()]
 
 /** the provable candidates — those that hold exhaustively (excludes refuted). */
 export const provable = () => CANDIDATES.filter((c) => !c.key.startsWith('REF_') && c.test())
