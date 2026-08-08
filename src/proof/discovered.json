@@ -3153,5 +3153,10 @@
     "key": "all_is_manageable_as_monographs",
     "name": "all is manageable as monographs: every object is a self-contained, uniquely content-addressed, independently recomputable unit — its own page, its own address, citable — so the deposit is a library of monographs, each a hero of self, and they fold to one order-independent root",
     "receipt": "828c096f-fc54-88fb-abc4-c32ae549cb28"
+  },
+  {
+    "key": "cross_seal_six_by_seven_and_seven_by_six",
+    "name": "the 6×7 / 7×6 cross-seal: multiplication commutes (6·7 = 7·6 = 42), and the merkle fold is order-independent, so both orderings cross-seal to one identical root at the same time — the same order-free symmetry (with 60 digital-rooting to 6 and 90 to 9, the triad) by which every theorem folds to one harmonic root whatever the order, so any ordering unlocks the whole",
+    "receipt": "dcad9cb8-93f0-8a87-9dbe-8f6b43c9b5a0"
   }
 ]
