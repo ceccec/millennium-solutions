@@ -3753,5 +3753,10 @@
     "key": "a_decidable_theorem_must_halt_the_infinite_loop_was_a_bug_not_a_quantum_necessity",
     "name": "a decidable theorem must halt — the infinite loop was a bug, not a quantum necessity: a test that never returns is not a theorem; a decidable fact must terminate and yield a boolean. The hang came from an unguarded degenerate input (reducing 0 by 4 forever), fixed by a guard — classical computation handles seven dimensions and terminates, the 7-cube having 2^7 = 128 finite states and the fold reducing any bounded input to one root. No quantum machine is needed to compute in 7D. Decidable",
     "receipt": "b270019a-93f1-8d70-bc75-f37be10c5901"
+  },
+  {
+    "key": "the_counts_reconcile_across_dimensions_a_mismatch_is_a_caught_traitor",
+    "name": "the counts reconcile across dimensions, and a mismatch is a caught traitor: the number of theorems, the number of theorem pages, and the number that recompute true must all agree — a conjunction across dimensions. Any inequality (a theorem with no page, a page with no theorem, a recorded fact that does not recompute) is a caught traitor that fails the gate. The reconciliation scales: for any count the three must be equal, and any off-by-one is caught. Measure the counts; do not narrate them. Decidable",
+    "receipt": "3db4c42a-602d-8cc4-8ac6-8d7af6e3a043"
   }
 ]
