@@ -138,6 +138,7 @@ export default defineConfig({
       ] },
       { text: L.nav.compute, items: [
         { text: 'State dashboard', link: '/dashboard' },
+        { text: 'Accounting', link: '/ACCOUNTING' },
         { text: 'Boundaries', link: '/boundaries' },
         { text: 'Computed results', link: '/compute' },
         { text: 'Verify', link: '/verify' },
@@ -185,6 +186,7 @@ export default defineConfig({
         items: [
           { text: 'Computed results', link: '/compute' },
           { text: 'State dashboard', link: '/dashboard' },
+          { text: 'Accounting', link: '/ACCOUNTING' },
           { text: 'Boundaries', link: '/boundaries' },
           { text: 'Verify (live app)', link: '/verify' },
         ],

@@ -25,7 +25,7 @@
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview",
     "seal": "node scripts/seal.ts",
-    "release": "node scripts/gaps.ts && node scripts/dashboard.ts && node scripts/boundaries.ts && node scripts/challenges.ts && node scripts/heart.ts && npm run docs:build && node scripts/import-gate.ts && node scripts/security-gate.ts && node scripts/theorem-pages-gate.ts && node scripts/receipt-audit.ts && node scripts/forensics.ts && node scripts/claims-gate.ts && node scripts/harmony-currency.ts && node scripts/seal.ts && node scripts/wholeness.ts && node scripts/lean-claims.ts && node scripts/discover.ts && node scripts/release.ts",
+    "release": "node scripts/gaps.ts && node scripts/dashboard.ts && node scripts/boundaries.ts && node scripts/challenges.ts && node scripts/heart.ts && node scripts/accounting.ts && npm run docs:build && node scripts/import-gate.ts && node scripts/security-gate.ts && node scripts/theorem-pages-gate.ts && node scripts/receipt-audit.ts && node scripts/forensics.ts && node scripts/claims-gate.ts && node scripts/harmony-currency.ts && node scripts/seal.ts && node scripts/wholeness.ts && node scripts/lean-claims.ts && node scripts/discover.ts && node scripts/release.ts",
     "prepublishOnly": "node scripts/seal.ts",
     "gaps": "node scripts/gaps.ts",
     "harmony": "node scripts/gaps.ts && node scripts/seal.ts && node scripts/wholeness.ts && npm run docs:build && node scripts/seo.ts",
