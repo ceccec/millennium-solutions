@@ -1008,5 +1008,25 @@
     "key": "involution_telephone",
     "name": "the count of involutions on n elements = the telephone number T(n)=T(n-1)+(n-1)T(n-2) (n ≤ 5)",
     "receipt": "6e0b0a34-8a45-8c1c-ba3c-eaccf10a1331"
+  },
+  {
+    "key": "ledger_merkle_inclusion",
+    "name": "merkle inclusion proof: a leaf verifies against the root using only its proof path (light-client)",
+    "receipt": "4c03b866-98e2-85cd-8c8f-4c1ae528e4e8"
+  },
+  {
+    "key": "ledger_merkle_rejects_forgery",
+    "name": "a leaf not in the tree fails its proof — no forged inclusion",
+    "receipt": "65b1525f-07ad-8fb9-a4d5-03859c8f2caf"
+  },
+  {
+    "key": "ledger_tamper_changes_root",
+    "name": "tampering any leaf changes the merkle root — the ledger is tamper-evident",
+    "receipt": "ae5b2c11-de5b-8e8a-8e1f-6dd52a41f677"
+  },
+  {
+    "key": "ledger_hash_chain",
+    "name": "a hash chain breaks from the first altered block onward (each block seeded by the prior)",
+    "receipt": "691d1a9c-b02a-8440-bcf0-0beefac1182c"
   }
 ]

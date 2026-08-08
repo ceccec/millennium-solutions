@@ -9,6 +9,7 @@
 import { toUuid, merkleFold, units, triad, digitalRoot, digits, BASE, A432_STEP, vortexOrbit } from '../src/0/index.ts'
 import { computes } from './honesty-gate.ts'
 import { LOCALES, LOCALE_ORDER } from '../src/7/locale.ts'
+import { merkleRoot, merkleProof, verifyProof } from '../src/0/merkle-proof.ts'
 const m9 = (n: number) => ((n % BASE) + BASE) % BASE
 const U = units()
 const ALL = digits()
@@ -293,6 +294,15 @@ function generated(): typeof curated {
   out.push({ key: 'involution_sigma', name: 'σ: d↦−d is an involution on ℤ/9 (σ∘σ = id) with exactly one fixed point, the origin (odd base)', test: () => { const R = [...Array(BASE).keys()]; const s = (d: number) => m9(-d); return R.every((d) => s(s(d)) === d) && R.filter((d) => s(d) === d).length === 1 } })
   out.push({ key: 'involution_reversible', name: 'evolution by involution is reversible: the multiplicative-inverse map applied twice is the identity on the units', test: () => { const inv = (u: number) => units().find((w) => m9(u * w) === 1)!; return units().every((u) => inv(inv(u)) === u) } })
   out.push({ key: 'involution_telephone', name: 'the count of involutions on n elements = the telephone number T(n)=T(n-1)+(n-1)T(n-2) (n ≤ 5)', test: () => { const T = [1, 1]; for (let k = 2; k <= 5; k++) T[k] = T[k - 1] + (k - 1) * T[k - 2]; for (let n = 1; n <= 5; n++) { const id = [...Array(n).keys()]; const cnt = perms(id).filter((p) => p.every((_, i) => p[p[i]] === i)).length; if (cnt !== T[n]) return false } return true } })
+  // NEW DOMAIN — ledger primitives (content-addressed, tamper-evident). NO currency, NO mining, NO
+  // consensus, NO wallet — the honest half of "blockchain". Merkle inclusion proofs verify a leaf is in
+  // the root without the other leaves; a forged leaf fails; tampering changes the root; a hash chain
+  // breaks from the first altered block. Integrity, not money — the world decides any lawful use. 0/7.
+  const led = ['genesis', 'block-1', 'block-2', 'block-3', 'block-4']
+  out.push({ key: 'ledger_merkle_inclusion', name: 'merkle inclusion proof: a leaf verifies against the root using only its proof path (light-client)', test: () => verifyProof(led[2], merkleProof(led, 2), merkleRoot(led)) })
+  out.push({ key: 'ledger_merkle_rejects_forgery', name: 'a leaf not in the tree fails its proof — no forged inclusion', test: () => !verifyProof('forged', merkleProof(led, 2), merkleRoot(led)) })
+  out.push({ key: 'ledger_tamper_changes_root', name: 'tampering any leaf changes the merkle root — the ledger is tamper-evident', test: () => merkleRoot(led) !== merkleRoot([led[0], led[1], 'TAMPERED', led[3], led[4]]) })
+  out.push({ key: 'ledger_hash_chain', name: 'a hash chain breaks from the first altered block onward (each block seeded by the prior)', test: () => { const chain = (arr: string[]) => { let h = 'genesis'; const hs: string[] = []; for (const b of arr) { h = toUuid(h + '→' + b); hs.push(h) } return hs }; const a = chain(['b1', 'b2', 'b3']), b = chain(['b1', 'X', 'b3']); return a[0] === b[0] && a[1] !== b[1] && a[2] !== b[2] } })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
