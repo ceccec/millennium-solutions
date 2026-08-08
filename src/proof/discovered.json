@@ -1583,5 +1583,20 @@
     "key": "triangular_square",
     "name": "the figurate identity: T(n) = C(n+1,2) and T(n) + T(n−1) = n² — two triangles make a square (n≤20)",
     "receipt": "787c8714-6ea3-8056-8c1a-c5497e070e3c"
+  },
+  {
+    "key": "surface_euler_char",
+    "name": "the Euler characteristic of a closed orientable genus-g surface is χ = 2 − 2g: sphere 2, torus 0, double torus −2, genus-3 −4",
+    "receipt": "ee2c16a3-aad0-896c-bc7b-a3680cbd7364"
+  },
+  {
+    "key": "coverage_only_torus",
+    "name": "Poincaré–Hopf: a closed orientable surface admits a nowhere-zero tangent field iff χ=0 — only the torus (g=1); the double torus (g=2, χ=−2) has NO full coverage",
+    "receipt": "09e87d88-c3d6-8580-907b-c15a682433b7"
+  },
+  {
+    "key": "relation_genus_two",
+    "name": "the double torus RELATES χ=−2 · the two coins (110−108 = 2 = −χ) · no full coverage — the boundary where \"geometry covers everything\" fails",
+    "receipt": "2f63c1c1-bfa8-8031-853b-71d9af8a0ad9"
   }
 ]
