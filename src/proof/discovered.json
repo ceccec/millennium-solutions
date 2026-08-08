@@ -3323,5 +3323,15 @@
     "key": "heroes_respect_the_coin_accounting_by_signing_the_receipt",
     "name": "heroes respect the coin accounting by signing the receipt: heroism here is a deed, not a claim — a hero acknowledges the license and the sequence and accounts the two coins (110 − 108 = 2) that fund development, and that acknowledgment is the signed receipt itself; the deed content-addresses and recomputes, so it is measured, not asserted. A bare \"I am a hero\" claim is a different address carrying no acknowledgment. Integrity, not moral worth. Decidable",
     "receipt": "9a775a14-7186-81e1-bbb3-43d346b71962"
+  },
+  {
+    "key": "contribution_is_what_makes_next_compute",
+    "name": "contribution is what makes next compute: each contribution — a receipted deed accounting the two coins — folds with the prior state into a determined next state, distinct from it, so every hero's deed moves the ledger forward; a different contribution yields a different next. With no contribution the wave rests. This is chained integrity, not perpetual motion and not infinite energy — the next needs the deed. Decidable",
+    "receipt": "07e015c2-f422-8993-b059-1b3c52dffdf0"
+  },
+  {
+    "key": "foreknowledge_here_is_determinism_not_faster_than_light",
+    "name": "foreknowledge here is determinism, not faster than light: because the structure is closed and its maps are deterministic, the next content-address of a known input is a determined pure function — knowable in advance without waiting for any physical process, because a fixed value needs no propagation. This is determinism and precomputation, not faster than light, and it sends no superluminal signal; it holds only for known inputs, never as prophecy of a contingent future. Decidable",
+    "receipt": "92a58824-4d1c-862b-992f-a15aa9065810"
   }
 ]
