@@ -844,6 +844,15 @@ function generated(): typeof curated {
     out.push({ key: 'josephus_k2_is_left_bit_rotation', name: 'the Josephus survivor is a one-bit left rotation of n: moving the leading 1 of n’s binary to the least-significant position gives the survivor — a counting-out game solved by a single bit shift (n = 1..40)', test: () => { for (let n = 1; n <= 40; n++) if (jos(n) !== (((n & ~(1 << hb(n))) << 1) | 1)) return false; return true } })
     out.push({ key: 'josephus_survivor_always_odd', name: 'the Josephus survivor is always an odd position: since the survivor is 2l+1, no even position ever survives when every second is eliminated (n = 1..40)', test: () => { for (let n = 1; n <= 40; n++) if (jos(n) % 2 !== 1) return false; return true } })
   }
+  // ── a NEW decidable domain — STERN'S DIATOMIC SEQUENCE / CALKIN–WILF: a binary (even/odd) recurrence
+  // whose consecutive ratios enumerate every positive rational exactly once. Full enumeration.
+  {
+    const A: number[] = [0, 1]; for (let i = 2; i <= 300; i++) A[i] = i % 2 === 0 ? A[i / 2] : A[(i - 1) / 2] + A[(i + 1) / 2]
+    const gc = (a: number, b: number): number => b ? gc(b, a % b) : a
+    out.push({ key: 'stern_consecutive_terms_coprime', name: 'Stern’s diatomic sequence has coprime consecutive terms: with a(2n)=a(n), a(2n+1)=a(n)+a(n+1), gcd(a(n), a(n+1)) = 1 for all n — so each ratio a(n)/a(n+1) is already in lowest terms (verified n = 1..200)', test: () => { for (let n = 1; n <= 200; n++) if (gc(A[n], A[n + 1]) !== 1) return false; return true } })
+    out.push({ key: 'calkin_wilf_enumerates_rationals_once', name: 'the Calkin–Wilf sequence lists every positive rational exactly once: the ratios a(n)/a(n+1) are pairwise distinct and reduced — no positive rational repeats (verified for n = 1..150)', test: () => { const seen = new Set<string>(); for (let n = 1; n <= 150; n++) { if (gc(A[n], A[n + 1]) !== 1) return false; const key = A[n] + '/' + A[n + 1]; if (seen.has(key)) return false; seen.add(key) } return seen.size === 150 } })
+    out.push({ key: 'stern_row_sum_is_power_of_three', name: 'Stern row sums are powers of three: summing a(n) over each binary row n ∈ [2^k, 2^(k+1)) gives exactly 3^k — a clean base-3 invariant over the base-2 index (verified k = 0..7)', test: () => { for (let k = 0; k <= 7; k++) { let s = 0; for (let n = 1 << k; n < (1 << (k + 1)); n++) s += A[n]; if (s !== 3 ** k) return false } return true } })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

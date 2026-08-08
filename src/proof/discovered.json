@@ -2458,5 +2458,20 @@
     "key": "josephus_survivor_always_odd",
     "name": "the Josephus survivor is always an odd position: since the survivor is 2l+1, no even position ever survives when every second is eliminated (n = 1..40)",
     "receipt": "c40d916e-c633-8e53-be2c-544cad5ad077"
+  },
+  {
+    "key": "stern_consecutive_terms_coprime",
+    "name": "Stern’s diatomic sequence has coprime consecutive terms: with a(2n)=a(n), a(2n+1)=a(n)+a(n+1), gcd(a(n), a(n+1)) = 1 for all n — so each ratio a(n)/a(n+1) is already in lowest terms (verified n = 1..200)",
+    "receipt": "5726bedf-7c20-8f2c-b30f-c960e454ef5f"
+  },
+  {
+    "key": "calkin_wilf_enumerates_rationals_once",
+    "name": "the Calkin–Wilf sequence lists every positive rational exactly once: the ratios a(n)/a(n+1) are pairwise distinct and reduced — no positive rational repeats (verified for n = 1..150)",
+    "receipt": "03262760-6857-8404-8b54-328abc251187"
+  },
+  {
+    "key": "stern_row_sum_is_power_of_three",
+    "name": "Stern row sums are powers of three: summing a(n) over each binary row n ∈ [2^k, 2^(k+1)) gives exactly 3^k — a clean base-3 invariant over the base-2 index (verified k = 0..7)",
+    "receipt": "88d1069b-4c2d-8865-a5a3-4f4ce02d08f2"
   }
 ]
