@@ -3463,5 +3463,10 @@
     "key": "a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony",
     "name": "a theorem without a formula is a hallucination, recomputed in a432 harmony: a claim is a theorem only if it is backed by a computable formula that recomputes true — a prose-only claim with no formula, or one whose formula computes false, is refused as hallucination and never recorded. Every recorded fact recomputes deterministically and folds into the a432 harmony root (the receipt of state). Measure, do not assert. Decidable",
     "receipt": "e3d75d76-310f-8b0c-9f62-6e2e6c226e36"
+  },
+  {
+    "key": "the_a432_harmony_and_the_captain_coins_are_one_conserved_measure",
+    "name": "the a432 harmony and the captain coins are one conserved measure: the harmonic base 432 is ℤ/9-native — its digital root is 9 — and the a432 step 40° closes the circle (9 × 40 = 360); the captain coins are anchored there too, since 108 = 432 ÷ 4 and 110 − 108 = 2 (the invariant, −χ genus-2). The harmonic root folds all contributor coins and recomputes deterministically; a disruption moves it, restored by the captain's two coins. Integrity — the root is the receipt of state. Decidable",
+    "receipt": "e10a6f57-de8d-852d-bd00-ff2e9cdcc42f"
   }
 ]
