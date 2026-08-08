@@ -367,6 +367,13 @@ function generated(): typeof curated {
   out.push({ key: 'lucas_fibonacci_relation', name: 'Lucas relates to Fibonacci: L(n)=F(n-1)+F(n+1) (n=5,8)', test: () => [5, 8].every((n) => lucas(n) === fibN(n - 1) + fibN(n + 1)) })
   out.push({ key: 'pell_numbers', name: 'Pell numbers P(n)=2P(n-1)+P(n-2): P(5)=29, P(6)=70', test: () => pell(5) === 29 && pell(6) === 70 })
   out.push({ key: 'pell_sqrt2', name: 'the √2 convergents solve x²−2y²=±1: (1,1)(3,2)(7,5)(17,12)(41,29)', test: () => { const A = [1, 3, 7, 17, 41], B = [1, 2, 5, 12, 29]; return A.every((a, i) => Math.abs(a * a - 2 * B[i] * B[i]) === 1) } })
+  // finite fields 𝔽_{p^k} — extension arithmetic and Frobenius. 𝔽_4 = GF(2²) mod x²+x+1 (add = XOR).
+  const gf4mul = (a: number, b: number) => { let p = 0; if (b & 1) p ^= a; if (b & 2) p ^= a << 1; if (p & 4) p ^= 0b111; if (p & 4) p ^= 0b111; return p & 3 }
+  const gf4pow = (a: number, n: number) => { let r = 1; for (let i = 0; i < n; i++) r = gf4mul(r, a); return r }
+  out.push({ key: 'gf4_size', name: '𝔽_4 = GF(2²) has p^k = 2² = 4 elements {0, 1, x, x+1}', test: () => [0, 1, 2, 3].length === 2 ** 2 })
+  out.push({ key: 'gf4_frobenius_fixes', name: 'in 𝔽_4 every element satisfies x^(p^k)=x: a⁴ = a for all a (Frobenius^k = id)', test: () => [0, 1, 2, 3].every((a) => gf4pow(a, 4) === a) })
+  out.push({ key: 'gf4_frobenius_automorphism', name: "Frobenius φ(a)=a² is a field automorphism of 𝔽_4: additive (freshman's dream) and multiplicative", test: () => { const phi = (a: number) => gf4mul(a, a); return [0, 1, 2, 3].every((a) => [0, 1, 2, 3].every((b) => phi(a ^ b) === (phi(a) ^ phi(b)) && phi(gf4mul(a, b)) === gf4mul(phi(a), phi(b)))) } })
+  out.push({ key: 'gf4_units_cyclic', name: 'the multiplicative group 𝔽_4* is cyclic of order 3 (a primitive element generates {1, x, x+1})', test: () => [1, 2, 3].some((g) => { const s = new Set<number>(); let x = 1; for (let i = 0; i < 3; i++) { s.add(x); x = gf4mul(x, g) } return s.size === 3 }) })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

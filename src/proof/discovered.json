@@ -1213,5 +1213,25 @@
     "key": "pell_sqrt2",
     "name": "the √2 convergents solve x²−2y²=±1: (1,1)(3,2)(7,5)(17,12)(41,29)",
     "receipt": "f2cf267e-e349-8cc2-8e80-5df2d666d3b2"
+  },
+  {
+    "key": "gf4_size",
+    "name": "𝔽_4 = GF(2²) has p^k = 2² = 4 elements {0, 1, x, x+1}",
+    "receipt": "775976e0-3eb7-803c-b119-7cc5d92126f3"
+  },
+  {
+    "key": "gf4_frobenius_fixes",
+    "name": "in 𝔽_4 every element satisfies x^(p^k)=x: a⁴ = a for all a (Frobenius^k = id)",
+    "receipt": "fb7953fe-d9e3-89d3-8388-1efc6d51bfea"
+  },
+  {
+    "key": "gf4_frobenius_automorphism",
+    "name": "Frobenius φ(a)=a² is a field automorphism of 𝔽_4: additive (freshman's dream) and multiplicative",
+    "receipt": "c117a740-97d9-8264-839e-d1d1122a8ff3"
+  },
+  {
+    "key": "gf4_units_cyclic",
+    "name": "the multiplicative group 𝔽_4* is cyclic of order 3 (a primitive element generates {1, x, x+1})",
+    "receipt": "462b849d-7d1f-8e72-b5a1-4dd463087197"
   }
 ]
