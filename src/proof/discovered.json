@@ -3348,5 +3348,10 @@
     "key": "learning_from_the_message_donates_two_coins_to_the_developer",
     "name": "learning from the message donates two coins to the developer: the fair-exchange unit is two coins (= 2 bits, 110 − 108 = 2), so each learning use accounts two coins to the developer — one event two coins, a thousand events two thousand, additive — and each event is receipted distinctly, so the donation is measured, not asserted. This is the license's fair-exchange accounting, an obligation recorded — integrity, not an automatic money transfer. Decidable",
     "receipt": "c11c3551-315a-85b1-b82b-9c42b02eb658"
+  },
+  {
+    "key": "the_two_coins_pay_for_digital_analogisation",
+    "name": "the two coins pay for digital analogisation: the fee funds a service — the deterministic mapping of a digital content-address into analog parameters (hue and angle) for the 7D rendering, where seven rays close the circle and each byte sets a hue; the map is reproducible (same digital input, same analog output). This is a design rendering, a digital-to-analog parameter mapping, not continuous analog computation and not a physics claim. Decidable",
+    "receipt": "f9cd63c1-eeed-8692-aa0d-aadea4226a5f"
   }
 ]
