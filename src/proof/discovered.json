@@ -2868,5 +2868,20 @@
     "key": "a432_dashboard_wheel_closes_the_circle",
     "name": "the a432 hue wheel closes the circle (the dashboard wheel, now a theorem): nine points at d·40° for d=1..9 are distinct, 9·40° = 360° closes the ring, and the centre digit is 5 — the reflection fixed point 10−5=5",
     "receipt": "68b41225-94c7-85f8-b0ce-5ab0701e2271"
+  },
+  {
+    "key": "tens_complement_pairs_the_digits",
+    "name": "the ten’s-complement reflection pairs the digits (compute.md’s mesh layout, now a theorem): 10−d is an involution on 1..9 pairing 1↔9, 2↔8, 3↔7, 4↔6 and fixing only the centre 5 — four mirror pairs around one centre",
+    "receipt": "0d37097c-d816-89b6-8a4e-12ec661a050b"
+  },
+  {
+    "key": "riemann_sphere_inversion_swaps_zero_and_infinity",
+    "name": "inversion swaps 0 and ∞ on the Riemann sphere (the README claim, now decidable): z ↦ 1/z is an involution (1/(1/z) = z) that exchanges 0 and ∞ — verified in projective coordinates [p,q]",
+    "receipt": "68fe3d76-4fac-8c1c-b553-def54bb9f102"
+  },
+  {
+    "key": "seven_is_six_units_plus_one_bijection",
+    "name": "the 7 = 6 + 1 bijection (README’s rosette→Clay map): the six units of ℤ/9 plus the identity form a 7-element set in explicit bijection with the seven Clay problems — a counting correspondence (6 + 1 = 7), never a resolution of them",
+    "receipt": "cb166a75-25c8-89ab-8c2f-df6e0c372165"
   }
 ]
