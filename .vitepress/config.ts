@@ -92,9 +92,11 @@ export default defineConfig({
       ['meta', { name: 'twitter:description', content: desc }],
       ['link', { rel: 'canonical', href: url }],
     )
-    // hreflang alternates in <head> — the base page across all locales + x-default (was advisory; now delivered).
+    // hreflang alternates in <head> — the base page across all locales + x-default. Dynamic pages (e.g.
+    // /theorem/<key>) exist only at root, so they get en + x-default only (no locale variants to point at).
     const base = clean.replace(/^(bg|de|fr|es|ru|zh)\//, '')
-    for (const loc of ['en', 'bg', 'de', 'fr', 'es', 'ru', 'zh'])
+    const localised = !base.startsWith('theorem/')
+    for (const loc of (localised ? ['en', 'bg', 'de', 'fr', 'es', 'ru', 'zh'] : ['en']))
       pageData.frontmatter.head.push(['link', { rel: 'alternate', hreflang: loc, href: SITE + (loc === 'en' ? '' : loc + '/') + base }])
     pageData.frontmatter.head.push(['link', { rel: 'alternate', hreflang: 'x-default', href: SITE + base }])
   },

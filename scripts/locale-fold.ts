@@ -14,11 +14,16 @@ const BASE = '/millennium-solutions/'
 const LOCALES = ['bg', 'de', 'fr', 'es', 'ru', 'zh']
 // CSP imported from the single source (src/0/csp.ts) — stubs carry the SAME policy, no drift.
 
-// English content pages = top-level .html, except 404 and the home index (locale homes exist)
+// English content pages = top-level .html, except 404 and the home index (locale homes exist),
+// PLUS the dynamic /theorem/<key> pages (the language switcher links to a per-locale path for each).
 const rootHtml = readdirSync(DIST).filter((n) => n.endsWith('.html') && n !== '404.html' && n !== 'index.html')
+const theoremHtml = existsSync(join(DIST, 'theorem'))
+  ? readdirSync(join(DIST, 'theorem')).filter((n) => n.endsWith('.html')).map((n) => 'theorem/' + n)
+  : []
+const pages = [...rootHtml, ...theoremHtml]
 let made = 0
 for (const code of LOCALES) {
-  for (const page of rootHtml) {
+  for (const page of pages) {
     const outPath = join(DIST, code, page)
     if (existsSync(outPath)) continue // a real translated page already exists — never overwrite it
     const url = BASE + page.replace(/\.html$/, '')
