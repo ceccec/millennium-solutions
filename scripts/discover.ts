@@ -51,6 +51,12 @@ function generated(): typeof curated {
   for (let k = 1; k <= 2 * BASE; k++) out.push({ key: 'powsum0_k' + k, name: 'Σ (unit)^' + k + ' ≡ 0 mod ' + BASE, test: () => m9(U.reduce((s, u) => s + modpow(u, k, BASE), 0)) === 0 })
   // u↦u^k is an involution on the units ((u^k)^k = u) — holds iff k² ≡ 1 in the group order.
   for (let k = 2; k <= BASE; k++) out.push({ key: 'powinv_k' + k, name: 'u↦u^' + k + ' is an involution on the units mod ' + BASE, test: () => U.every((u) => modpow(u, k * k, BASE) === u) })
+  // multiplicative inverse: which residues have one — the units do, the triad does not.
+  for (const d of digits()) out.push({ key: 'hasinv_d' + d, name: d + ' has a multiplicative inverse mod ' + BASE, test: () => digits().some((e) => m9(d * e) === 1) })
+  // self-inverse: u ≡ u⁻¹ (u²≡1) — true for {1,8}, false for the rest.
+  for (const u of U) out.push({ key: 'selfinv_u' + u, name: u + ' is its own inverse mod ' + BASE, test: () => m9(u * u) === 1 })
+  // inverse via Euler: u⁻¹ ≡ u^(|units|−1) — holds for every unit (u · u⁵ = u⁶ ≡ 1).
+  for (const u of U) out.push({ key: 'invpow_u' + u, name: 'the inverse of ' + u + ' is u^(|units|−1) = u⁵ mod ' + BASE, test: () => { const inv = U.find((e) => m9(u * e) === 1); return inv !== undefined && modpow(u, U.length - 1, BASE) === inv } })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

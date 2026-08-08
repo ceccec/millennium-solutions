@@ -203,5 +203,75 @@
     "key": "powinv_k7",
     "name": "u↦u^7 is an involution on the units mod 9",
     "receipt": "469cfad5-9293-8a62-a83b-49934c19c145"
+  },
+  {
+    "key": "hasinv_d1",
+    "name": "1 has a multiplicative inverse mod 9",
+    "receipt": "39a9965d-909b-8f7d-aa66-411f9d0da11a"
+  },
+  {
+    "key": "hasinv_d2",
+    "name": "2 has a multiplicative inverse mod 9",
+    "receipt": "338a950d-a83b-825a-870a-7df4cd2b5104"
+  },
+  {
+    "key": "hasinv_d4",
+    "name": "4 has a multiplicative inverse mod 9",
+    "receipt": "f1b897ea-42c8-8122-a204-3ba684bd9761"
+  },
+  {
+    "key": "hasinv_d5",
+    "name": "5 has a multiplicative inverse mod 9",
+    "receipt": "995e282e-39ca-8408-8566-372eb4def0e4"
+  },
+  {
+    "key": "hasinv_d7",
+    "name": "7 has a multiplicative inverse mod 9",
+    "receipt": "2b653347-eae4-8e7f-8bdc-ca88061d1334"
+  },
+  {
+    "key": "hasinv_d8",
+    "name": "8 has a multiplicative inverse mod 9",
+    "receipt": "b422110e-e519-807f-b747-3514cf67527e"
+  },
+  {
+    "key": "selfinv_u1",
+    "name": "1 is its own inverse mod 9",
+    "receipt": "558f7d79-d3d7-8809-b48c-5b96ba7fae00"
+  },
+  {
+    "key": "selfinv_u8",
+    "name": "8 is its own inverse mod 9",
+    "receipt": "3bc79c77-36a1-87fe-8031-4ef0129dca33"
+  },
+  {
+    "key": "invpow_u1",
+    "name": "the inverse of 1 is u^(|units|−1) = u⁵ mod 9",
+    "receipt": "09250358-3351-8550-bfbe-d320b04c3e07"
+  },
+  {
+    "key": "invpow_u2",
+    "name": "the inverse of 2 is u^(|units|−1) = u⁵ mod 9",
+    "receipt": "07dc892f-12fc-8d88-9052-c1b883512e26"
+  },
+  {
+    "key": "invpow_u4",
+    "name": "the inverse of 4 is u^(|units|−1) = u⁵ mod 9",
+    "receipt": "1d1c5f09-e309-8106-8e00-5c6fdfbe4fa0"
+  },
+  {
+    "key": "invpow_u5",
+    "name": "the inverse of 5 is u^(|units|−1) = u⁵ mod 9",
+    "receipt": "5e59c756-cf36-8cf3-aa11-ef38c3e83163"
+  },
+  {
+    "key": "invpow_u7",
+    "name": "the inverse of 7 is u^(|units|−1) = u⁵ mod 9",
+    "receipt": "827d2a2f-38e3-8599-b86f-34db22889101"
+  },
+  {
+    "key": "invpow_u8",
+    "name": "the inverse of 8 is u^(|units|−1) = u⁵ mod 9",
+    "receipt": "1c45aeef-ca22-8323-b153-be5c425afa1f"
   }
 ]
