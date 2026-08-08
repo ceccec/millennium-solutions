@@ -1668,5 +1668,15 @@
     "key": "nim_misere",
     "name": "misère Nim by minimax matches the closed form: the first player wins iff (some heap ≥2 and nim-sum ≠0) or (every heap ≤1 and nim-sum =0) (heaps ≤3, up to 3 heaps)",
     "receipt": "0823bb14-7699-86b4-bc5b-0cad76f750b3"
+  },
+  {
+    "key": "fair_division_envy_free",
+    "name": "divide-and-choose (2 players): the cutter gets exactly half by its own measure and the chooser gets ≥ half by its own — proportional and envy-free",
+    "receipt": "16f252b2-ed93-846a-9e00-125e8cdf24d5"
+  },
+  {
+    "key": "honeycomb_tiling",
+    "name": "the honeycomb: among regular n-gons exactly {3,4,6} tile the plane (2n divisible by n−2) — the hexagon the most-sided, and optimal (honeycomb theorem, Hales 2001)",
+    "receipt": "6108a7d0-88b6-8a4b-b206-633bea371003"
   }
 ]
