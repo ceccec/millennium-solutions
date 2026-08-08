@@ -3688,5 +3688,10 @@
     "key": "the_five_platonic_solids_all_have_euler_characteristic_two",
     "name": "the five Platonic solids all have Euler characteristic two: the tetrahedron (4,6,4), cube (8,12,6), octahedron (6,12,8), dodecahedron (20,30,12) and icosahedron (12,30,20) each satisfy V − E + F = 2, and these five are the only convex regular polyhedra. They pair by duality — swapping vertices and faces sends the cube to the octahedron, the dodecahedron to the icosahedron, and the tetrahedron to itself — and each dual pair shares its edge count (12 and 30). Decidable",
     "receipt": "8cbfc26d-0a83-812e-ab59-b15981f65958"
+  },
+  {
+    "key": "erdos_among_n_plus_one_from_one_to_2n_one_divides_another",
+    "name": "Erdős: among any n+1 integers from 1 to 2n, one divides another: every subset of size n+1 of {1, 2, ..., 2n} contains two elements where the smaller divides the larger — verified over all such subsets for n up to 7. The bound is tight: the n numbers {n+1, n+2, ..., 2n} contain no such pair, so n+1 is the least size that forces one. The reason is the pigeonhole on odd parts — there are only n odd numbers below 2n. Verified by exhaustive enumeration",
+    "receipt": "c25f629f-5f50-8813-9e03-3a834b1b56d5"
   }
 ]
