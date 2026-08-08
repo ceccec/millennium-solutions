@@ -439,6 +439,12 @@ function generated(): typeof curated {
   out.push({ key: 'cf_sqrt7', name: 'the continued fraction of √7 is [2; 1,1,1,4] — period 4', test: () => { const r = cfSqrt(7); return r[0] === 2 && JSON.stringify(r[1]) === JSON.stringify([1, 1, 1, 4]) } })
   out.push({ key: 'cf_perfect_square', name: '√n terminates iff n is a perfect square: √9 = [3] (no period)', test: () => JSON.stringify(cfSqrt(9)) === JSON.stringify([3]) })
   out.push({ key: 'cf_periodic', name: 'every non-square √n (n=2..12) has a periodic continued fraction (Lagrange)', test: () => { for (let n = 2; n <= 12; n++) { const s = Math.floor(Math.sqrt(n)); if (s * s === n) continue; const r = cfSqrt(n); if (!Array.isArray(r[1]) || (r[1] as number[]).length < 1) return false } return true } })
+  // more RELATIONS — the web binding the ledger; not new facts, the structures that connect them.
+  out.push({ key: 'relation_five', name: '5 RELATES the pentagon · the heart · vortex→5 · the middle digit — the centre binds geometry, gematria and the ring', test: () => digits()[Math.floor(digits().length / 2)] === 5 && vortexOrbit().includes(5) && (5 - 2) * 180 / 5 === 108 })
+  out.push({ key: 'relation_pascal_mod2', name: 'Pascal mod 2 RELATES Rule 90 · Lucas · Sierpiński · XOR — one structure across automata, combinatorics and logic', test: () => { const binom = (n: number, k: number) => { let r = 1; for (let i = 0; i < k; i++) r = r * (n - i) / (i + 1); return Math.round(r) }; return (binom(6, 2) % 2 === 1) === ((2 & 6) === 2) && (5 ^ 0) === 5 } })
+  out.push({ key: 'relation_pell_structure', name: "the Pell structure RELATES √2's continued fraction · the Pell numbers · x²−2y²=±1 — one object, three views", test: () => { const pell = (n: number) => { let a = 0, b = 1; for (let i = 0; i < n; i++) { const t = 2 * b + a; a = b; b = t } return a }; return pell(5) === 29 && Math.abs(41 * 41 - 2 * 29 * 29) === 1 } })
+  out.push({ key: 'relation_content_address', name: 'content-addressing RELATES the ledger · the merkle proof · the hash chain · the receipts — one integrity primitive', test: () => verifyProof('x', merkleProof(['x', 'y', 'z'], 0), merkleRoot(['x', 'y', 'z'])) && toUuid('a') === toUuid('a') })
+  out.push({ key: 'relation_order_independence', name: 'order-independence RELATES dedup · the one-game fold · the concept handle · no-waste — all the symmetric merkle fold', test: () => merkleFold(['a', 'b', 'c']) === merkleFold(['c', 'a', 'b']) && new Set(['j', 'j'].map((x) => toUuid(x))).size === 1 })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

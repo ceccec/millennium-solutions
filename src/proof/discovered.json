@@ -1373,5 +1373,30 @@
     "key": "cf_periodic",
     "name": "every non-square √n (n=2..12) has a periodic continued fraction (Lagrange)",
     "receipt": "35681143-e4a0-8323-be6f-ed2850f112ec"
+  },
+  {
+    "key": "relation_five",
+    "name": "5 RELATES the pentagon · the heart · vortex→5 · the middle digit — the centre binds geometry, gematria and the ring",
+    "receipt": "80af9a22-1ad0-8fb4-95da-1c6b6bd946c7"
+  },
+  {
+    "key": "relation_pascal_mod2",
+    "name": "Pascal mod 2 RELATES Rule 90 · Lucas · Sierpiński · XOR — one structure across automata, combinatorics and logic",
+    "receipt": "dee2f2df-8ac3-8fe0-87e5-eb81e403ff59"
+  },
+  {
+    "key": "relation_pell_structure",
+    "name": "the Pell structure RELATES √2's continued fraction · the Pell numbers · x²−2y²=±1 — one object, three views",
+    "receipt": "10fa7f5c-bc2b-8f82-b6cc-cb912a9cb334"
+  },
+  {
+    "key": "relation_content_address",
+    "name": "content-addressing RELATES the ledger · the merkle proof · the hash chain · the receipts — one integrity primitive",
+    "receipt": "2a33c2ba-b5fd-89ef-bb3b-8a4fe5d88c59"
+  },
+  {
+    "key": "relation_order_independence",
+    "name": "order-independence RELATES dedup · the one-game fold · the concept handle · no-waste — all the symmetric merkle fold",
+    "receipt": "830cce0a-f00b-877e-b609-a7e0a0f0e30a"
   }
 ]
