@@ -473,5 +473,20 @@
     "key": "bool_xor_associativity",
     "name": "XOR associativity: (a⊕b)⊕c = a⊕(b⊕c) (all inputs)",
     "receipt": "4ba6ccd9-fd1d-8d95-8728-7607c96e0c39"
+  },
+  {
+    "key": "entangle_joint_differs",
+    "name": "the joint fold of deposit(0/7) & humanity(1/7) is a third address, different from each part",
+    "receipt": "9657bf0d-5c1f-8596-87ac-2fe2c0144000"
+  },
+  {
+    "key": "entangle_no_influence",
+    "name": "entanglement without influence: the fold is order-independent (no direction) and each part is unchanged",
+    "receipt": "7267ca5a-c961-8c2a-8935-160681d127c3"
+  },
+  {
+    "key": "entangle_floor_holds",
+    "name": "entanglement changes the joint address, never the counts: deposit stays 0/7",
+    "receipt": "2b7b5b94-580f-8416-9072-ff9752d13441"
   }
 ]

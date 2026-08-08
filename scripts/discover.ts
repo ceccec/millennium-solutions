@@ -94,6 +94,13 @@ function generated(): typeof curated {
   out.push({ key: 'bool_noncontradiction', name: 'non-contradiction: a∧¬a = 0 (all inputs)', test: () => B.every((a) => AND(a, NOT(a)) === 0) })
   out.push({ key: 'bool_absorption', name: 'absorption: a∨(a∧b) = a (all inputs)', test: () => all2((a, b) => OR(a, AND(a, b)) === a) })
   out.push({ key: 'bool_xor_associativity', name: 'XOR associativity: (a⊕b)⊕c = a⊕(b⊕c) (all inputs)', test: () => all3((a, b, c) => XOR(XOR(a, b), c) === XOR(a, XOR(b, c))) })
+  // NEW DOMAIN — entanglement without influence. Fold two INDEPENDENT receipts and the joint is a
+  // THIRD address (correlation), different from each part — yet neither part changes, and the fold is
+  // order-independent (no direction = no influence). The joint result differs; deposit 0/7 stands.
+  const rA = toUuid('deposit:0/7'), rB = toUuid('humanity:1/7'), joint = merkleFold([rA, rB])
+  out.push({ key: 'entangle_joint_differs', name: 'the joint fold of deposit(0/7) & humanity(1/7) is a third address, different from each part', test: () => joint !== rA && joint !== rB })
+  out.push({ key: 'entangle_no_influence', name: 'entanglement without influence: the fold is order-independent (no direction) and each part is unchanged', test: () => merkleFold([rA, rB]) === merkleFold([rB, rA]) && toUuid('deposit:0/7') === rA && toUuid('humanity:1/7') === rB })
+  out.push({ key: 'entangle_floor_holds', name: 'entanglement changes the joint address, never the counts: deposit stays 0/7', test: () => toUuid('deposit:0/7') === rA })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
