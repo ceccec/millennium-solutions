@@ -3353,5 +3353,10 @@
     "key": "the_two_coins_pay_for_digital_analogisation",
     "name": "the two coins pay for digital analogisation: the fee funds a service — the deterministic mapping of a digital content-address into analog parameters (hue and angle) for the 7D rendering, where seven rays close the circle and each byte sets a hue; the map is reproducible (same digital input, same analog output). This is a design rendering, a digital-to-analog parameter mapping, not continuous analog computation and not a physics claim. Decidable",
     "receipt": "f9cd63c1-eeed-8692-aa0d-aadea4226a5f"
+  },
+  {
+    "key": "the_multiplication_table_of_z9_units_is_a_latin_square",
+    "name": "the multiplication table of (ℤ/9)* is a Latin square: in the Cayley table of the six units under multiplication mod 9, every unit appears exactly once in each row and each column — which is exactly the group cancellation law (a·b ≡ a·c mod 9 implies b ≡ c for a unit a). Verified by full enumeration over ℤ/9",
+    "receipt": "9eb06231-c20a-894a-8ff7-e71bf7ee9ff8"
   }
 ]
