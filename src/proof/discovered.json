@@ -1693,5 +1693,25 @@
     "key": "relation_rps_z3",
     "name": "rock-paper-scissors RELATES the successor map in ℤ/3: a beats b iff a ≡ b+1 (mod 3) — the trinity’s cycle is the game",
     "receipt": "6b0eec5f-d46f-8a97-afd2-e6418d363a7b"
+  },
+  {
+    "key": "golden_fixed_point",
+    "name": "φ is the fixed point of x = 1 + 1/x (equivalently φ² = φ + 1): the more you nest the recursion, the more it reproduces itself — the most self-similar number",
+    "receipt": "80d92d5a-7ef3-8042-9ee6-621cee598c2b"
+  },
+  {
+    "key": "fibonacci_ratio_phi",
+    "name": "the ratio of consecutive Fibonacci numbers F(n+1)/F(n) converges to φ — the more terms, the closer (|F₃₀/F₂₉ − φ| < 1e-6)",
+    "receipt": "3973e404-f749-88ce-8a2a-97a45b34c73d"
+  },
+  {
+    "key": "harmonic_series_diverges",
+    "name": "the harmonic series Σ 1/k diverges: H(2^k) ≥ 1 + k/2 grows without bound — the more terms, the more it grows (k≤12)",
+    "receipt": "7f9249a7-092e-88b4-b012-b21feba2bf2c"
+  },
+  {
+    "key": "relation_more_the_more",
+    "name": "\"the more the more\" RELATES φ (x=1+1/x) · the Fibonacci ratio · the diverging harmonic series · Sierpiński self-similarity — self-reference across the ledger",
+    "receipt": "a29834f0-8094-88ab-9835-8a09f8ae6e2a"
   }
 ]
