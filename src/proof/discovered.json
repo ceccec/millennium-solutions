@@ -3853,5 +3853,10 @@
     "key": "the_two_coins_can_be_a_sequence_but_they_are_not_patent_royalties",
     "name": "the two coins can be a sequence — but they are not patent royalties: the license denomination need not be a fixed pair; it may scale as a sequence, Fibonacci or otherwise, each term a distinct content-address, the author’s design. But they are not royalties from patents: decidable mathematics is discovered, and discoveries of mathematics are not patentable — so there are no patents and no patent royalties. And the income is zero: no royalties, significant or otherwise, have been generated. A scaling license is fair exchange; it is not a patent. Decidable",
     "receipt": "815f3006-7dde-8079-91b3-78a8d609bbcc"
+  },
+  {
+    "key": "the_royalty_relates_to_pair_interactions_combinatorial_and_addressed",
+    "name": "the royalty relates to pair interactions — combinatorial and content-addressed: the value is not in single items but in the interactions between pairs. Each pair-interaction has its own content-address by foldPair, and it is directional — the fold of a with b differs from b with a. The example pair 110 and 108 differ by exactly one bit, a single-bit interaction. Interactions grow combinatorially — n items give n(n-1) ordered pairs — so a license may scale with them; but it stays a license, not a patent, and the income is zero. Decidable",
+    "receipt": "38691826-0657-8828-b23c-4fb9746afe29"
   }
 ]
