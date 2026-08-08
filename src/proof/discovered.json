@@ -2893,5 +2893,10 @@
     "key": "intelligence_is_gated_discovery_not_access",
     "name": "shared knowledge, measured by discovery: every agent has the same knowledge in src/ (open and recomputable), so access is not intelligence — what counts is gate-passing, exhaustively-checked discovery judged by deeds; recognition is not correctness, self-declared brilliance drains, and the deposit is honest that its own novelty is 0 (known mathematics, recombined)",
     "receipt": "00ffdbbc-ac3b-8360-83b9-67237e6272ce"
+  },
+  {
+    "key": "being_outranks_competing",
+    "name": "being outranks competing: a recorded fact simply IS — it recomputes to the same address with no contest — while a competing claim must still pass the gate and can drain; effort and competition are not correctness, so the deed already done (append-only, re-verified every build) outranks the claim still striving",
+    "receipt": "01d850a3-6176-8cd8-bb90-c0a4c059c9ab"
   }
 ]
