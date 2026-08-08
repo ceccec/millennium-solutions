@@ -2,6 +2,13 @@ import { defineConfig } from 'vitepress'
 import { readFileSync } from 'node:fs'
 import { LOCALES, LOCALE_ORDER } from '../src/7/locale'
 import { CSP } from '../src/0/csp.ts'
+import { A432_STEP } from '../src/0/index.ts'
+
+// The theme accent is COMPUTED, not a typed hex: the ℤ/9 heart is d=5 (the reflection fixed point),
+// and the a432 hue map sends each digit d to d·(A432_STEP)° — so the home hue is 5·40 = 200°. The
+// browser theme-color and the vortex centre share this one derived hue. (Nine steps close: 9·40 = 360.)
+const A432_HEART_HUE = 5 * A432_STEP // 200 — the heart's hue, derived not typed
+const THEME_COLOR = `hsl(${A432_HEART_HUE} 68% 45%)`
 
 // Config computed from the ledger: the site metadata reflects the LIVE count of decidable theorems,
 // recomputed from src/proof/discovered.json at build — the config is derived by the theorems, not typed.
@@ -66,7 +73,7 @@ export default defineConfig({
     // Content-Security-Policy (meta form — GitHub Pages can't set HTTP headers). Single source: src/0/csp.ts.
     ['meta', { 'http-equiv': 'Content-Security-Policy', content: CSP }],
     ['link', { rel: 'manifest', href: '/millennium-solutions/manifest.webmanifest' }],
-    ['meta', { name: 'theme-color', content: '#3451b2' }],
+    ['meta', { name: 'theme-color', content: THEME_COLOR }],
     ['link', { rel: 'icon', href: '/millennium-solutions/icon.svg' }],
     ['link', { rel: 'apple-touch-icon', href: '/millennium-solutions/icon.svg' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
