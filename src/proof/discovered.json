@@ -3763,5 +3763,10 @@
     "key": "bezouts_identity_gcd_is_an_integer_combination",
     "name": "Bézout's identity: for all integers a and b there are integers x and y with a·x + b·y = gcd(a,b) — the greatest common divisor is an integer combination of a and b, computed by the extended Euclidean algorithm. Verified against the kernel gcd for all a, b up to 60. So the gcd is the least positive value that a·x + b·y attains",
     "receipt": "34d5d17a-f22b-80ac-9802-12afec86682d"
+  },
+  {
+    "key": "the_speedup_is_classical_the_cost_is_the_deed_the_income_is_zero",
+    "name": "the speedup is classical, the cost is the deed, the income is zero: the measured speedup is classical memoization (content-addressing, O(1) versus O(N)), not a quantum speedup and with no quantum hardware; it is not at no cost — creating a fact costs the deed of two coins, only verifying it is free; and the income is zero — the deposit is non-commercial under the license, the coins are accounting integrity not cash, and no revenue is measured. Measure, do not assert. Decidable",
+    "receipt": "0591f596-6b4d-8b98-b0f3-7c13bbedbf18"
   }
 ]
