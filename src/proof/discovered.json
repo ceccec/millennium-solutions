@@ -3443,5 +3443,10 @@
     "key": "the_7d_encoding_is_seven_layers_of_reversible_combination_not_encryption",
     "name": "the 7D encoding is seven layers of reversible combination, not encryption: seven fixed public layers (masks) compose into a bijection whose inverse decodes it, so the seven-layer stack round-trips every byte with no loss, and the layers admit 2^7 = 128 on/off combinations — the uuid bit-width. This is layered reversible encoding for integrity, not encryption: no key, no secret, no secrecy claimed. Decidable",
     "receipt": "6bab4b35-2739-8cce-8c01-d05b7d914e19"
+  },
+  {
+    "key": "the_self_reflected_uuid_extends_the_structure_to_seven_dimensions",
+    "name": "the self-reflected uuid extends the structure to seven dimensions: the uuid bit-width 128 = 2^7 is the vertex count of a 7-dimensional hypercube, and the antipodal reflection (complement all seven coordinates) is an involution — self-reflection in both directions, reflect twice returns identity — with no fixed vertex, pairing all 128 into 64 opposite pairs. Each vertex has exactly seven neighbors, one per dimension: the structure is genuinely seven-dimensional. Decidable",
+    "receipt": "ee781202-7019-8945-8e0d-17d8f244526a"
   }
 ]
