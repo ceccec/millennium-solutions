@@ -333,5 +333,105 @@
     "key": "digrev_4321",
     "name": "the digital root of 4321 equals that of its digit-reversal",
     "receipt": "81d7ec86-3a35-8e20-8897-1786dce0818a"
+  },
+  {
+    "key": "domain_prime_m2",
+    "name": "ℤ/2: 2 is prime",
+    "receipt": "9f76b1b5-8922-8c0c-b7d2-70085c9e84dc"
+  },
+  {
+    "key": "domain_cyclic_m2",
+    "name": "ℤ/2: the units form a cyclic group (a primitive root exists)",
+    "receipt": "c3eb14a5-27a7-8daa-9f62-364adbb1ed37"
+  },
+  {
+    "key": "domain_prime_m3",
+    "name": "ℤ/3: 3 is prime",
+    "receipt": "0b1d1411-c61a-8fcb-8118-532bafb4ee89"
+  },
+  {
+    "key": "domain_cyclic_m3",
+    "name": "ℤ/3: the units form a cyclic group (a primitive root exists)",
+    "receipt": "c979466b-d761-8efc-88cf-89ea6e3e0c1e"
+  },
+  {
+    "key": "domain_cyclic_m4",
+    "name": "ℤ/4: the units form a cyclic group (a primitive root exists)",
+    "receipt": "97a008f1-7924-8234-ba29-18d5bc5fe55b"
+  },
+  {
+    "key": "domain_prime_m5",
+    "name": "ℤ/5: 5 is prime",
+    "receipt": "50539929-7d45-8a6c-bad8-a9ef3bbc00fa"
+  },
+  {
+    "key": "domain_cyclic_m5",
+    "name": "ℤ/5: the units form a cyclic group (a primitive root exists)",
+    "receipt": "693c861c-f865-88f6-9a9e-8ca48abb1063"
+  },
+  {
+    "key": "domain_cyclic_m6",
+    "name": "ℤ/6: the units form a cyclic group (a primitive root exists)",
+    "receipt": "b4d4661b-71fb-8c62-adfe-69d762d74e2f"
+  },
+  {
+    "key": "domain_prime_m7",
+    "name": "ℤ/7: 7 is prime",
+    "receipt": "b53d7fb5-3174-8dd4-9857-d702cd25556b"
+  },
+  {
+    "key": "domain_cyclic_m7",
+    "name": "ℤ/7: the units form a cyclic group (a primitive root exists)",
+    "receipt": "86763f93-b89a-8e02-aa0f-8b164c6d9ff1"
+  },
+  {
+    "key": "domain_cyclic_m9",
+    "name": "ℤ/9: the units form a cyclic group (a primitive root exists)",
+    "receipt": "1c6e43c0-95e1-89b1-9c65-056070d544f4"
+  },
+  {
+    "key": "domain_cyclic_m10",
+    "name": "ℤ/10: the units form a cyclic group (a primitive root exists)",
+    "receipt": "59d8b25c-decc-8767-b4df-10709e6ca60f"
+  },
+  {
+    "key": "domain_prime_m11",
+    "name": "ℤ/11: 11 is prime",
+    "receipt": "d561c879-7f37-8b8f-9f86-f5a13bf097b6"
+  },
+  {
+    "key": "domain_cyclic_m11",
+    "name": "ℤ/11: the units form a cyclic group (a primitive root exists)",
+    "receipt": "1767a868-d41e-8751-8efc-5fae0168157b"
+  },
+  {
+    "key": "domain_prime_m13",
+    "name": "ℤ/13: 13 is prime",
+    "receipt": "49707801-e26f-8c4b-ab34-7def682208f0"
+  },
+  {
+    "key": "domain_cyclic_m13",
+    "name": "ℤ/13: the units form a cyclic group (a primitive root exists)",
+    "receipt": "e56ba879-01b2-82c3-a954-c3e784083a21"
+  },
+  {
+    "key": "domain_cyclic_m14",
+    "name": "ℤ/14: the units form a cyclic group (a primitive root exists)",
+    "receipt": "c25680bf-c169-8348-b24f-7bff59487379"
+  },
+  {
+    "key": "domain_prime_m17",
+    "name": "ℤ/17: 17 is prime",
+    "receipt": "50550f6e-6497-8d64-98bb-17495a1ab4d2"
+  },
+  {
+    "key": "domain_cyclic_m17",
+    "name": "ℤ/17: the units form a cyclic group (a primitive root exists)",
+    "receipt": "d5167cce-02af-840d-a405-faaae64de1df"
+  },
+  {
+    "key": "domain_cyclic_m18",
+    "name": "ℤ/18: the units form a cyclic group (a primitive root exists)",
+    "receipt": "92a2b5a1-8526-8701-8a33-58302b31b6ec"
   }
 ]

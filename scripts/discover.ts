@@ -69,6 +69,17 @@ function generated(): typeof curated {
   out.push({ key: 'reverse_circuit', name: 'the halving map ×2⁻¹ traces the doubling circuit in reverse mod ' + BASE, test: () => { const inv2 = U.find((e) => m9(2 * e) === 1); if (inv2 === undefined) return false; const rev: number[] = []; let x = 1; do { rev.push(x); x = m9(inv2 * x) } while (x !== 1); const fwd: number[] = []; let y = 1; do { fwd.push(y); y = m9(2 * y) } while (y !== 1); return JSON.stringify(rev) === JSON.stringify([fwd[0], ...fwd.slice(1).reverse()]) } })
   // digit reversal preserves the digital root (the digit sum is reversal-invariant).
   for (const n of [12, 45, 123, 1234, 9080, 4321]) out.push({ key: 'digrev_' + n, name: 'the digital root of ' + n + ' equals that of its digit-reversal', test: () => digitalRoot(n) === digitalRoot(Number(String(n).split('').reverse().join(''))) })
+  // MORE DOMAINS: the inverse/reverse maps only close where the units are cyclic — so survey moduli m
+  // across a derived range and DISCOVER which rings are prime, which have cyclic units. Each family is
+  // discriminating across the domain range; this grows discovery from one ring (ℤ/9) to many.
+  const gcd = (a: number, b: number): number => b === 0 ? a : gcd(b, a % b)
+  const isPrime = (n: number) => { if (n < 2) return false; for (let d = 2; d * d <= n; d++) if (n % d === 0) return false; return true }
+  const unitsMod = (m: number) => Array.from({ length: m }, (_, i) => i).filter((d) => gcd(d, m) === 1)
+  const isCyclic = (m: number) => { const u = unitsMod(m); return u.length > 0 && u.some((g) => { const s = new Set<number>(); let x = 1 % m; for (let i = 0; i < u.length; i++) { s.add(x); x = (x * g) % m } return s.size === u.length }) }
+  for (let m = 2; m <= 2 * BASE; m++) {
+    out.push({ key: 'domain_prime_m' + m, name: 'ℤ/' + m + ': ' + m + ' is prime', test: () => isPrime(m) })
+    out.push({ key: 'domain_cyclic_m' + m, name: 'ℤ/' + m + ': the units form a cyclic group (a primitive root exists)', test: () => isCyclic(m) })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
