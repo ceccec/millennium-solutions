@@ -7,6 +7,10 @@ outline: deep
 
 <script setup lang="ts">
 import { report as honesty } from './src/honesty/index'
+import { report as theAll } from './src/the/index'
+import { report as theSequence } from './src/the/sequence/index'
+import { report as theTheorem } from './src/the/theorem/index'
+import { report as theGame } from './src/the/game/index'
 import { report as acceptance } from './src/1/acceptance'
 import { report as paradox } from './src/1/paradox'
 import { report as society } from './src/9/society'
@@ -87,6 +91,24 @@ digit to its partner (fixed point **5**), so the folders below are laid out arou
 ### Honesty toolkit · `src/honesty/index.ts`
 <details class="depth"><summary>compute</summary>
 <pre>{{ honesty() }}</pre>
+
+## `the/` — the unifying concepts (everything called "the *")
+
+### The concepts · `src/the/index.ts`
+
+<pre>{{ theAll() }}</pre>
+
+### The sequence · `src/the/sequence/index.ts`
+
+<pre>{{ theSequence() }}</pre>
+
+### The theorem · `src/the/theorem/index.ts`
+
+<pre>{{ theTheorem() }}</pre>
+
+### The game · `src/the/game/index.ts`
+
+<pre>{{ theGame() }}</pre>
 </details>
 
 ## `0/` — the substrate · content-addressing
