@@ -17,6 +17,7 @@ import { join } from 'node:path'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 import { computes } from './honesty-gate.ts'
 import { provable } from './discover.ts'
+import { report as rosettaReport } from '../src/the/rosetta/index.ts'
 
 const message = process.argv.slice(2).join(' ').trim()
 
@@ -122,7 +123,10 @@ try {
 if (address === lastAddr) {
   console.log('next — from the heart (5): the work is WHOLE.')
   console.log('  content-address unchanged since ' + lastTag + ' (' + address.slice(0, 13) + '…).')
-  console.log('  nothing is truly next. at rest — holding cracks nothing. 0/7.')
+  // next completes the rosetta: at rest, the culminating act is not another fact but the whole star —
+  // every domain bound to one core, the cross-domain translation made complete and legible.
+  console.log('\n' + rosettaReport().split('\n').map((l) => '  ' + l).join('\n'))
+  console.log('\n  nothing is truly next. the rosetta is complete; at rest — holding cracks nothing. 0/7.')
   process.exit(0)
 }
 console.log('next — a real delta is present (' + address.slice(0, 13) + '… ≠ ' + lastTag + '). shipping the truly-next:')

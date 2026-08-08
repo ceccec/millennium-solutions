@@ -1848,5 +1848,10 @@
     "key": "lucas_theorem",
     "name": "Lucas' theorem: C(m,n) mod p = Π C(mᵢ,nᵢ) over the base-p digits (p=3,5, all m,n ≤ 30)",
     "receipt": "f64054e9-231b-87cb-8b94-5db5ee25daa4"
+  },
+  {
+    "key": "rosetta_complete",
+    "name": "the rosetta is complete: every domain is one hop from the shared core (the star), all addresses distinct (no collision) — the cross-domain translation covers all, none untranslated",
+    "receipt": "3aa73d2c-52f8-843f-849a-aa6ff33a29f7"
   }
 ]
