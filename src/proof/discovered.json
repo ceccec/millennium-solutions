@@ -1563,5 +1563,25 @@
     "key": "relation_path_rating",
     "name": "the most meaningful paths are rated first: gravity = depth (specificity) gives a deterministic descending order — a defined computable rating, not a truth judgment",
     "receipt": "e64ef7b3-c718-812a-9243-b724a04af826"
+  },
+  {
+    "key": "wilson_theorem",
+    "name": "Wilson's theorem: (n−1)! ≡ −1 (mod n) iff n is prime (all n in 2..12)",
+    "receipt": "060d88ea-9ab8-837d-a154-899d665a5298"
+  },
+  {
+    "key": "fermat_little_theorem",
+    "name": "Fermat's little theorem: a^p ≡ a (mod p) for all a, every prime p≤13",
+    "receipt": "0f0e2397-2586-811d-9091-516396a72ea2"
+  },
+  {
+    "key": "fermat_two_squares",
+    "name": "Fermat's two-squares: an odd prime p is a sum of two squares iff p ≡ 1 (mod 4) (p≤50)",
+    "receipt": "f73538ca-ca7c-8b62-90fc-8d46b0a39526"
+  },
+  {
+    "key": "triangular_square",
+    "name": "the figurate identity: T(n) = C(n+1,2) and T(n) + T(n−1) = n² — two triangles make a square (n≤20)",
+    "receipt": "787c8714-6ea3-8056-8c1a-c5497e070e3c"
   }
 ]
