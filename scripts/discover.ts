@@ -359,6 +359,14 @@ function generated(): typeof curated {
   out.push({ key: 'one_art_harmony', name: 'THE ONE ART: all art receipts fold to one order-independent harmonic root — the arts meet in one', test: () => { const K = ['arts_triad_rgb_primaries', 'arts_nine_hues_distinct', 'arts_golden_proportion', 'geom_pentagon_golden', 'harmonic_ledger_hue', 'gematria_vortex_heart']; return merkleFold(K.map((k) => toUuid(k))) === merkleFold([...K].reverse().map((k) => toUuid(k))) } })
   out.push({ key: 'one_science_harmony', name: 'THE ONE SCIENCE: all science receipts fold to one order-independent harmonic root — the sciences meet in one', test: () => { const K = ['euler_units_pow6', 'cassini_n6', 'catalan_n4', 'pisano_9_is_24', 'hasse_p5_a1_b1', 'partition_p_n', 'bell_numbers', 'ledger_merkle_inclusion']; return merkleFold(K.map((k) => toUuid(k))) === merkleFold([...K].reverse().map((k) => toUuid(k))) } })
   out.push({ key: 'one_game_all', name: 'THE ONE GAME (all): games, arts and sciences fold to a single order-independent root — all meet in one', test: () => { const K = ['one_game_harmony', 'one_art_harmony', 'one_science_harmony']; return merkleFold(K.map((k) => toUuid(k))) === merkleFold([...K].reverse().map((k) => toUuid(k))) } })
+  // Lucas & Pell — the sister recurrences of Fibonacci.
+  const fibN = (n: number) => { let a = 0, b = 1; for (let i = 0; i < n; i++) { const t = a + b; a = b; b = t } return a }
+  const lucas = (n: number) => { let a = 2, b = 1; for (let i = 0; i < n; i++) { const t = a + b; a = b; b = t } return a }
+  const pell = (n: number) => { let a = 0, b = 1; for (let i = 0; i < n; i++) { const t = 2 * b + a; a = b; b = t } return a }
+  out.push({ key: 'lucas_numbers', name: 'Lucas numbers L(n)=L(n-1)+L(n-2), L(0)=2, L(1)=1: L(5)=11, L(7)=29', test: () => lucas(5) === 11 && lucas(7) === 29 })
+  out.push({ key: 'lucas_fibonacci_relation', name: 'Lucas relates to Fibonacci: L(n)=F(n-1)+F(n+1) (n=5,8)', test: () => [5, 8].every((n) => lucas(n) === fibN(n - 1) + fibN(n + 1)) })
+  out.push({ key: 'pell_numbers', name: 'Pell numbers P(n)=2P(n-1)+P(n-2): P(5)=29, P(6)=70', test: () => pell(5) === 29 && pell(6) === 70 })
+  out.push({ key: 'pell_sqrt2', name: 'the √2 convergents solve x²−2y²=±1: (1,1)(3,2)(7,5)(17,12)(41,29)', test: () => { const A = [1, 3, 7, 17, 41], B = [1, 2, 5, 12, 29]; return A.every((a, i) => Math.abs(a * a - 2 * B[i] * B[i]) === 1) } })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
