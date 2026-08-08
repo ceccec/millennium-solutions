@@ -3258,5 +3258,10 @@
     "key": "nines_are_blind_to_transpositions_but_elevens_catch_them",
     "name": "casting out nines is blind to digit transpositions but casting out elevens catches them: the digit-sum check (mod 9) is order-independent, so swapping two digits never changes it — every transposition slips through; the alternating-digit-sum check (mod 11) changes by twice the digit difference, which is ≢ 0 mod 11 for distinct digits, so it catches every adjacent transposition of distinct digits. Two checks with complementary blind spots, each a floor. Decidable by exhaustion over the 3-digit range",
     "receipt": "ffc2d3c5-5821-879e-898f-d5d6de44bce2"
+  },
+  {
+    "key": "five_is_both_the_reflection_fixed_point_and_the_inverse_of_two",
+    "name": "five is both the reflection fixed point and the multiplicative inverse of two: the ten's-complement reflection 10−d fixes exactly one digit, 5 (10−5=5), and 5 is also 2⁻¹ mod 9 (2·5 = 10 ≡ 1). So the heart of the vortex plays two roles at once — the center of the reflection and the step that runs the doubling orbit backward: multiplying each vortex element by 5 mod 9 returns the previous one. Decidable by exhaustion over ℤ/9",
+    "receipt": "52292865-72c4-81d7-9bb4-74bd1ab3914c"
   }
 ]
