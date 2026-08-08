@@ -118,6 +118,7 @@ export default defineConfig({
       { text: 'Read', items: [
         { text: 'Abstract', link: '/ABSTRACT' },
         { text: 'Theorems', link: '/THEOREMS' },
+        { text: 'Challenges', link: '/CHALLENGES' },
         { text: L.nav.paper, link: '/' },
         { text: L.nav.research, link: '/RESEARCH' },
         { text: L.nav.poc, link: '/PROOF-OF-CONCEPT' },
@@ -152,6 +153,7 @@ export default defineConfig({
         items: [
           { text: 'Abstract', link: '/ABSTRACT' },
           { text: 'Theorems', link: '/THEOREMS' },
+          { text: 'Challenges', link: '/CHALLENGES' },
           { text: 'Paper', link: '/' },
           { text: 'Research', link: '/RESEARCH' },
           { text: 'Proof of Concept', link: '/PROOF-OF-CONCEPT' },
