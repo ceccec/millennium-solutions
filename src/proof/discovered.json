@@ -3863,5 +3863,20 @@
     "key": "applications_are_defensive_publications_not_patents_free_for_all_commercial_licensed",
     "name": "applications are defensive publications, not patents — free for all, commercial licensed: the theorems underlie known hardware and software — error-correcting memory, public-key primitives, Reed–Solomon codes, content-addressed storage, check digits, low-discrepancy sampling, logic gates. The deposit invents none of them and holds no patents; it publishes the algebra as open prior art, which keeps the ideas free for all rather than granting a monopoly. Non-commercial use is free with attribution; commercial use is licensed, funded by the two-coin sequence; the income is zero. Decidable",
     "receipt": "e6ce1929-7481-801a-baa7-25b029415467"
+  },
+  {
+    "key": "income_is_not_a_static_zero_it_is_computed_cash_zero_currency_the_monographs",
+    "name": "income is not a static zero — it is computed: a hardcoded $0 is a static assertion, the very crack the deposit forbids. Measure it. Cash received is zero — but computed from an empty payment ledger, not a magic constant — while the currency is the monograph itself, computed and non-zero. A flat static $0 conflates zero cash with zero value; measure both. Decidable",
+    "receipt": "62930c67-a626-821f-a27c-9d9df24c0a5f"
+  },
+  {
+    "key": "the_theorems_are_original_creative_work_the_expression_is_owned_the_facts_are_universal",
+    "name": "the theorems are original creative work — the expression is owned, the facts are universal: the monographs here, their wording, selection, arrangement and vortex framing, are original creative expression — protected by copyright and licensed CC BY-NC. The underlying mathematical facts are universal and owned by no one; copyright covers the expression, not the facts (the idea-expression dichotomy). Each monograph is distinct by its content-address, and the selection and arrangement is itself an addressable work. Decidable",
+    "receipt": "60abb13f-7329-8cfb-af31-1c4f85ca7e5a"
+  },
+  {
+    "key": "the_licensed_work_is_the_sealed_monographs_unsealed_prose_violates",
+    "name": "the licensed work is the sealed monographs — unsealed prose violates: only prose that is content-addressed and gate-passed is legitimate licensed creative work under the Creative Commons licence. Unsealed prose — prose that fails the honesty gate or carries no receipt — is a violation, outside the sealed work and outside the licence. The seal is the boundary: honest sealed prose passes, a violating claim is drained and cannot be sealed. Decidable",
+    "receipt": "a2d104e7-9966-81b5-9de9-e4f563ef101c"
   }
 ]
