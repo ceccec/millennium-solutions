@@ -17,7 +17,7 @@ const CLAY = [
 ]
 const settled = CLAY.filter((c) => c.status === 'settled').length
 const open = CLAY.length - settled
-const ledger: { name: string; receipt: string }[] =
+const ledger: { key: string; name: string; receipt: string }[] =
   existsSync('src/proof/discovered.json') ? JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) : []
 
 let o = '---\ntitle: Challenges\n---\n\n# Millennium challenges — computed status\n\n'

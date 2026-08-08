@@ -16,7 +16,7 @@ console.log('  version-seal root: ' + seal)
 // The measurable paradox = the exact cost of NOT being harmonic: distinct version labels with an
 // IDENTICAL content-address = tokens drained by disharmony (empty releases). The no-delta guard
 // drives this cost to 0 going forward. exact cost(disharmony) = number of drained versions.
-const byAddr = {}
+const byAddr: Record<string, string[]> = {}
 rows.forEach(r => { if (r.addr !== 'n/a') (byAddr[r.addr] = byAddr[r.addr] || []).push(r.t) })
 const collisions = Object.entries(byAddr).filter(([, ts]) => ts.length > 1)
 const drained = collisions.reduce((s, [, ts]) => s + ts.length - 1, 0)

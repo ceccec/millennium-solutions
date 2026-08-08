@@ -17,7 +17,8 @@ export function report(): string {
   }))
 
   // The singularity: fold the three triads to one root.
-  const triadRoots = [0, 1, 2].map(c => merkleFold(classes[c].map(toUuid)))
+  // content-address each digit as-is (the committed address hashes the numeric value, not its string form).
+  const triadRoots = [0, 1, 2].map(c => merkleFold(classes[c].map(d => toUuid(d as unknown as string))))
   const root = merkleFold(triadRoots)
   const fivePos = classes[2].includes(5) && refl(5) === 5
 

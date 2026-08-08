@@ -3453,5 +3453,10 @@
     "key": "any_receipt_is_one_state_of_the_128_state_cube_reachable_to_all",
     "name": "any receipt is one state of the 128-state 7-cube, reachable to all others by single-dimension moves: a configuration is one vertex of the 7-dimensional hypercube of 128 states, and the binary-reflected Gray code is a Hamiltonian cycle visiting all 128 exactly once, consecutive states differing in exactly one bit — one dimension — and closing back to the start (cyclic). So any single receipt is just one state; from it the whole cube is reachable, one dimension at a time. Decidable",
     "receipt": "062dc6d1-5d4c-84b6-a31f-50af83715f85"
+  },
+  {
+    "key": "types_are_theorems_curry_howard",
+    "name": "types are theorems (Curry–Howard): a type is a proposition and a well-typed program is its proof — the identity function proves A → A, the constant proves A → (B → A), and composition proves transitivity (from A → B and B → C, A → C), while the empty type has no inhabitant, the unprovable false. So the type-check is a machine-checked proof, now a release gate: an easy gate hard to crack, because a proof cannot be faked. Decidable",
+    "receipt": "93fd0183-0f63-863c-8eb7-40e9e93dfe2a"
   }
 ]

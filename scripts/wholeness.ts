@@ -16,7 +16,7 @@ let allCompute = true, boundary = 0, floorOK = false
 const empties = []
 for (const { name, path } of mods) {
   let out = ''
-  try { out = (await import(new URL(path, import.meta.url))).report() } catch { out = '' }
+  try { out = (await import(new URL(path, import.meta.url).href)).report() } catch { out = '' }
   if (typeof out !== 'string' || out.trim() === '') { allCompute = false; empties.push(name) }
   if (BOUNDARY.test(out)) boundary++
   if (name === 'entails' && /0\s*\/\s*7/.test(out)) floorOK = true
