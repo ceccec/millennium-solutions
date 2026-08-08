@@ -3193,5 +3193,10 @@
     "key": "entanglement_is_the_joint_receipt",
     "name": "entanglement is the joint receipt: two perspectives share one joint content-address (their folded pair) that depends on both and is symmetric in them, yet neither perspective alone equals it — the correlation lives in the shared derivation. This is classical correlation, not physical nonlocality: not faster than light, and no quantum advantage",
     "receipt": "dd46d2a6-36de-8224-9654-c62ca6a3d897"
+  },
+  {
+    "key": "measurement_here_is_deterministic_not_probabilistic",
+    "name": "measurement here is deterministic, not probabilistic: observing a perspective is content-addressing — repeated observation of the same perspective yields the identical receipt every time (deterministic collapse), and distinct states yield distinct addresses. This is the honest opposite of physical quantum measurement, which is probabilistic: no randomness, no Born rule, and no quantum advantage",
+    "receipt": "8344e1ed-f1f3-8ba0-8075-4e171af184c5"
   }
 ]
