@@ -1328,5 +1328,20 @@
     "key": "stirling_edges",
     "name": "Stirling 2nd kind edges: S(n,1)=1 (one block), S(n,n)=1 (singletons), n=1..6",
     "receipt": "02ae48de-5452-8f78-bf12-caa545b1aeed"
+  },
+  {
+    "key": "chromatic_K4",
+    "name": "the complete graph K₄ needs 4 colours: χ(K₄) = 4",
+    "receipt": "b25fc510-ee6b-818e-ae16-3aad57ae8c48"
+  },
+  {
+    "key": "chromatic_cycles",
+    "name": "even cycle C₄ is 2-colourable, odd cycle C₅ needs 3: χ(C₄)=2, χ(C₅)=3",
+    "receipt": "f6dee48e-8a3a-89d8-8763-137da3086bb0"
+  },
+  {
+    "key": "chromatic_petersen",
+    "name": "the Petersen graph is 3-chromatic: χ = 3 (not 2-colourable)",
+    "receipt": "c8d24ff1-f5ac-8042-a23a-2946cf06e862"
   }
 ]

@@ -414,6 +414,19 @@ function generated(): typeof curated {
   out.push({ key: 'stirling_second_bell', name: 'Stirling 2nd kind S(n,k)=S(n-1,k-1)+k·S(n-1,k): S(4,2)=7 and Σ_k S(4,k)=15=B(4)', test: () => { let s = 0; for (let k = 0; k <= 4; k++) s += S2(4, k); return S2(4, 2) === 7 && s === 15 } })
   out.push({ key: 'stirling_first_factorial', name: 'unsigned Stirling 1st kind (permutations by cycles) sum to n!: Σ_k c(4,k) = 4! = 24', test: () => { let s = 0; for (let k = 0; k <= 4; k++) s += c1(4, k); return s === 24 } })
   out.push({ key: 'stirling_edges', name: 'Stirling 2nd kind edges: S(n,1)=1 (one block), S(n,n)=1 (singletons), n=1..6', test: () => [1, 2, 3, 4, 5, 6].every((n) => S2(n, 1) === 1 && S2(n, n) === 1) })
+  // graph coloring — the chromatic number χ(G) of small graphs, by backtracking (finite → complete).
+  const chromatic = (n: number, edges: number[][]) => {
+    const adj: number[][] = Array.from({ length: n }, () => [])
+    for (const [u, v] of edges) { adj[u].push(v); adj[v].push(u) }
+    const canColor = (k: number) => { const color = new Array(n).fill(-1); const rec = (i: number): boolean => { if (i === n) return true; for (let c = 0; c < k; c++) if (adj[i].every((j) => color[j] !== c)) { color[i] = c; if (rec(i + 1)) return true; color[i] = -1 } return false }; return rec(0) }
+    for (let k = 1; k <= n; k++) if (canColor(k)) return k; return n
+  }
+  const allPairs = (n: number) => { const e: number[][] = []; for (let i = 0; i < n; i++) for (let j = i + 1; j < n; j++) e.push([i, j]); return e }
+  const cycle = (n: number) => Array.from({ length: n }, (_, i) => [i, (i + 1) % n])
+  const petersen = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 0], [5, 7], [7, 9], [9, 6], [6, 8], [8, 5], [0, 5], [1, 6], [2, 7], [3, 8], [4, 9]]
+  out.push({ key: 'chromatic_K4', name: 'the complete graph K₄ needs 4 colours: χ(K₄) = 4', test: () => chromatic(4, allPairs(4)) === 4 })
+  out.push({ key: 'chromatic_cycles', name: 'even cycle C₄ is 2-colourable, odd cycle C₅ needs 3: χ(C₄)=2, χ(C₅)=3', test: () => chromatic(4, cycle(4)) === 2 && chromatic(5, cycle(5)) === 3 })
+  out.push({ key: 'chromatic_petersen', name: 'the Petersen graph is 3-chromatic: χ = 3 (not 2-colourable)', test: () => chromatic(10, petersen) === 3 })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
