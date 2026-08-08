@@ -174,6 +174,14 @@ function generated(): typeof curated {
   // Divisibility by 3 — the digit-root law at the deposit's core: digit-sum ≡ 0 mod 3 ⇔ n ≡ 0 mod 3,
   // verified EXHAUSTIVELY for all n below 10^L (finite range → complete for that range).
   for (const L of [4]) out.push({ key: 'div3_rule_L' + L, name: 'digit-sum ≡ 0 (mod 3) ⇔ n ≡ 0 (mod 3), all n < 10^' + L + ' (exhaustive)', test: () => { for (let n = 0; n < 10 ** L; n++) { const ds = String(n).split('').reduce((a, c) => a + +c, 0); if ((ds % 3 === 0) !== (n % 3 === 0)) return false } return true } })
+  // NEW DOMAIN — wave interference: waves sent equally in all directions CANCEL when they meet. The n
+  // equally-spaced unit vectors (n-th roots of unity, the a432 directions) sum to the ZERO vector —
+  // full destructive interference; the manifested point is the null at the center. Vector arithmetic,
+  // not physical creation (0/7). Finite → complete (exact to floating tolerance).
+  const rootsSumZero = (n: number) => { let re = 0, im = 0; for (let k = 0; k < n; k++) { re += Math.cos(2 * Math.PI * k / n); im += Math.sin(2 * Math.PI * k / n) } return Math.abs(re) < 1e-9 && Math.abs(im) < 1e-9 }
+  for (const n of [2, 3, 5, 7, 9]) out.push({ key: 'roots_cancel_n' + n, name: 'the ' + n + ' equally-spaced unit vectors (n-th roots of unity) cancel to the zero vector', test: () => rootsSumZero(n) })
+  out.push({ key: 'a432_directions_cancel', name: 'the 9 a432 directions (digit×40°) cancel to the zero vector — full interference at the center', test: () => rootsSumZero(BASE) })
+  out.push({ key: 'tetrahedra_sums_cancel', name: 'the two tetrahedra residue-sums cancel: (1+4+7)+(2+5+8) ≡ 0 mod 9', test: () => m9(cls(1).reduce((a, b) => a + b, 0) + cls(2).reduce((a, b) => a + b, 0)) === 0 })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

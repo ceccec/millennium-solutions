@@ -688,5 +688,40 @@
     "key": "div3_rule_L4",
     "name": "digit-sum ≡ 0 (mod 3) ⇔ n ≡ 0 (mod 3), all n < 10^4 (exhaustive)",
     "receipt": "a6c0b047-12a7-8703-868f-e296567dad6f"
+  },
+  {
+    "key": "roots_cancel_n2",
+    "name": "the 2 equally-spaced unit vectors (n-th roots of unity) cancel to the zero vector",
+    "receipt": "f14563e3-9bf7-82e2-a50e-f863358570c7"
+  },
+  {
+    "key": "roots_cancel_n3",
+    "name": "the 3 equally-spaced unit vectors (n-th roots of unity) cancel to the zero vector",
+    "receipt": "0d08dcee-c228-801d-994c-886b233b020a"
+  },
+  {
+    "key": "roots_cancel_n5",
+    "name": "the 5 equally-spaced unit vectors (n-th roots of unity) cancel to the zero vector",
+    "receipt": "986f830c-ea1b-8d9e-99d8-3973b50d4805"
+  },
+  {
+    "key": "roots_cancel_n7",
+    "name": "the 7 equally-spaced unit vectors (n-th roots of unity) cancel to the zero vector",
+    "receipt": "87f482d5-8600-8cae-bb60-6582fbbaf031"
+  },
+  {
+    "key": "roots_cancel_n9",
+    "name": "the 9 equally-spaced unit vectors (n-th roots of unity) cancel to the zero vector",
+    "receipt": "8a7804c7-2d8c-8898-a052-95fed0ea89b7"
+  },
+  {
+    "key": "a432_directions_cancel",
+    "name": "the 9 a432 directions (digit×40°) cancel to the zero vector — full interference at the center",
+    "receipt": "90b398a0-b189-8ac4-9d2d-15cf83cdf849"
+  },
+  {
+    "key": "tetrahedra_sums_cancel",
+    "name": "the two tetrahedra residue-sums cancel: (1+4+7)+(2+5+8) ≡ 0 mod 9",
+    "receipt": "62f28936-0000-8ab8-95a9-791fea47acb2"
   }
 ]
