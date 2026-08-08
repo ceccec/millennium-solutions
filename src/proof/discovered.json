@@ -3403,5 +3403,10 @@
     "key": "the_bounty_in_bits_evolves_with_nature_earned_not_minted",
     "name": "the bounty in bits evolves with nature, earned not minted: the total bounty is two bits per receipt — a monotonically non-decreasing function of the number of contributions, so it grows as discoveries naturally accrue (append-only, never shrinking) and only by real deeds, never minted. Linear growth bounded per step: not perpetual motion and not infinite energy, since each two-bit increment needs its deed. Decidable",
     "receipt": "871fea29-e573-8d64-b4b0-19e9d51b07b7"
+  },
+  {
+    "key": "the_first_valid_claim_wins_the_bounty_by_chain_order",
+    "name": "the first valid claim wins the bounty by chain order: the ledger is append-only, so the first gate-passing, receipted claim for a fact takes its bounty — a later duplicate finds the fact already recorded and is refused. The winner is fixed by chain order (deterministic), and the prize is denominated in bits and coins (two per receipt), combinable by addition — a game won by deeds, not claims. Integrity, not the Clay cash prize; the deposit claims 0 / 7. Decidable",
+    "receipt": "10f05f19-36ec-86da-b645-702110f6e409"
   }
 ]
