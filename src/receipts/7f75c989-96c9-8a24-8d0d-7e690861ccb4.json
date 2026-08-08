@@ -1,0 +1,6 @@
+{
+  "uuid": "7f75c989-96c9-8a24-8d0d-7e690861ccb4",
+  "message": "the deposit is proof-of-concept and proof-of-work-done at once: one content-address attests the computation ran and what it produced. it is provenance, not mining (no target, no wasted energy)",
+  "agent": "claude-opus",
+  "role": "witness"
+}

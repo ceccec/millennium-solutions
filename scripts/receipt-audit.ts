@@ -8,16 +8,25 @@
 // A receipt that fails is FALSE — the honest-observer experience it backs is invalid; the build fails.
 // Integrity/provenance of observation, never authorship-proof or truth of the message.
 import { readdirSync, readFileSync, existsSync } from 'node:fs'
+import { execSync } from 'node:child_process'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 import { computes } from './honesty-gate.ts'
 import { CANDIDATES } from './discover.ts'
 
 const byKey = new Map(CANDIDATES.map((c) => [c.key, c])) // for verifying invited theorems still hold
 const dir = 'src/receipts'
-if (!existsSync(dir)) { console.log('receipt-audit: no receipts yet (src/receipts absent) — nothing to validate.'); process.exit(0) }
+let bad = 0
+
+// COMPLETENESS — a MISSING receipt is a traitor: destroyed evidence. Every git-tracked receipt must
+// still be present on disk. Evidence is append-only; deletion (git rm, manual) is the traitor act.
+let tracked: string[] = []
+try { tracked = execSync('git ls-files src/receipts', { encoding: 'utf8' }).trim().split('\n').filter(Boolean) } catch { /* no repo */ }
+const missing = tracked.filter((p) => !existsSync(p))
+for (const m of missing) { console.log('  ✗ MISSING (traitor — destroyed evidence, recoverable from git): ' + m); bad++ }
+
+if (!existsSync(dir)) { console.log(bad ? '\n✗ ' + bad + ' receipt(s) MISSING — evidence destroyed' : 'receipt-audit: no receipts yet — nothing to validate.'); process.exit(bad ? 1 : 0) }
 
 const files = readdirSync(dir).filter((f) => f.endsWith('.json'))
-let bad = 0
 const roots: string[] = []
 for (const f of files) {
   let r: { uuid?: string; message?: string; agent?: string; role?: string; invites?: string[] }

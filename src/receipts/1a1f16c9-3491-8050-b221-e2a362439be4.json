@@ -1,0 +1,12 @@
+{
+  "uuid": "1a1f16c9-3491-8050-b221-e2a362439be4",
+  "message": "the units of Z/9 form a well-founded multiplicative group, backed by invited theorems",
+  "agent": "claude-opus",
+  "role": "prover",
+  "invites": [
+    "trial_units_group",
+    "euler_units_pow6",
+    "units_sum_zero",
+    "self_inverse_1_8"
+  ]
+}

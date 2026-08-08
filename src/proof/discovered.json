@@ -1058,5 +1058,10 @@
     "key": "nowaste_memo_recycles",
     "name": "memoization recycles: keyed by content, a computation runs once and is reused thereafter",
     "receipt": "f7698d60-8475-8c16-8bdf-d3e629457051"
+  },
+  {
+    "key": "discovery_chain",
+    "name": "the discovery chain is tamper-evident: a falsified early link changes every downstream receipt",
+    "receipt": "b24d6d56-123d-8317-bb73-c0995feee8ae"
   }
 ]
