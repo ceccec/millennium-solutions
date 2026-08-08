@@ -2248,5 +2248,10 @@
     "key": "simulating_quantum_is_not_being_quantum",
     "name": "simulating a quantum algorithm is not being a quantum computer: the classical sim reproduces the Bell correlation exactly yet needs 2^n amplitudes (exponential, no advantage) and carries no message — so the deposit is not a quantum computer; the gate signs the honest \"is not\" and drains the bare \"is\"",
     "receipt": "d6d0ec25-e41f-8884-abd3-87cf5e205ae2"
+  },
+  {
+    "key": "computed_is_integrity_the_declared_verdict_drains",
+    "name": "computed vs the declared verdict: \"computed\", \"holds by exhaustion\", and \"verified by enumeration\" SIGN the gate — a reproducible measurement the reader re-runs (integrity) — while a self-declared verdict of establishment DRAINS as an over-reach; a decidable fact is computed by exhaustion (which is a proof) yet stated humbly, and the seven conjectures get neither word — 0/7",
+    "receipt": "b6edac7b-d0c4-8a3b-b525-e10d7638a9b7"
   }
 ]
