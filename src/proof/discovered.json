@@ -3568,5 +3568,10 @@
     "key": "the_mobius_divisor_sum_is_the_identity",
     "name": "the Möbius divisor sum is the identity: for every n, the sum of the Möbius function μ(d) over the divisors d of n is 1 when n = 1 and 0 otherwise — so μ is the Dirichlet inverse of the constant function 1, which is exactly why Möbius inversion works. Sample values: μ(1)=1, μ(2)=−1, μ(6)=+1, μ(30)=−1, and μ(4)=μ(12)=0 (a squared prime factor). Verified by full enumeration over n up to 200",
     "receipt": "99c81baf-9350-892a-9223-ade4bf90bc9b"
+  },
+  {
+    "key": "five_six_one_is_the_smallest_carmichael_number",
+    "name": "561 is the smallest Carmichael number, a composite that fools Fermat: 561 = 3 × 11 × 17 is composite and squarefree, yet a^560 ≡ 1 mod 561 for every a coprime to 561 — so Fermat's primality test cannot tell it from a prime. By Korselt's criterion this holds because (p−1) divides 560 for each prime factor p (2, 10, 16 all divide 560); and no composite below 561 has this property. Verified by full enumeration",
+    "receipt": "109b8dc3-b6f7-8b36-ac72-8d0b91563fa0"
   }
 ]
