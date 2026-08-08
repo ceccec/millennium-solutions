@@ -1773,5 +1773,50 @@
     "key": "relation_rosetta_star",
     "name": "the rosetta is a star: one shared core (center) connects every domain (leaf) in one hop — content-addressing and forensics expose all in the light, every node and link a computable address, nothing hidden",
     "receipt": "53538c68-2bdb-8fcb-bb3f-d8f8c61db9c4"
+  },
+  {
+    "key": "handshake_lemma",
+    "name": "the handshake lemma: in any graph Σ deg(v) = 2·|E|, so the number of odd-degree vertices is even",
+    "receipt": "0b0c1d31-3705-8234-9828-2171cd217138"
+  },
+  {
+    "key": "lagrange_subgroup_order",
+    "name": "Lagrange (in ℤ/n): the subgroup ⟨k⟩ has order n/gcd(n,k), which divides n — every subgroup order divides the group order (n≤12)",
+    "receipt": "ba7c559a-759f-8d97-800b-efd778ee03c4"
+  },
+  {
+    "key": "cyclic_generators_phi",
+    "name": "in ℤ/n the additive order of k is n/gcd(k,n); k generates the group iff gcd(k,n)=1, so there are exactly φ(n) generators (n≤12)",
+    "receipt": "f0e2e228-d553-8573-b7c1-5de71fd96b5d"
+  },
+  {
+    "key": "derangements",
+    "name": "derangements !n = (n−1)(!(n−1)+!(n−2)): !0..!8 = 1,0,1,2,9,44,265,1854,14833",
+    "receipt": "6970bda5-5f11-8bee-9f1a-4e10dcbc74d4"
+  },
+  {
+    "key": "inclusion_exclusion",
+    "name": "inclusion–exclusion: |A∪B| = |A|+|B|−|A∩B|, and the three-set form, hold on concrete sets",
+    "receipt": "53b5d2ab-2323-8228-9cbe-5585087869a5"
+  },
+  {
+    "key": "chinese_remainder",
+    "name": "the Chinese remainder theorem: for coprime m,n the map x↦(x mod m, x mod n) is a bijection ℤ/mn → ℤ/m×ℤ/n",
+    "receipt": "d051f54b-5713-857d-94d0-60585d7f74d7"
+  },
+  {
+    "key": "quadratic_residues_euler",
+    "name": "Euler's criterion: an odd prime p has (p−1)/2 nonzero quadratic residues, and a is one iff a^((p−1)/2) ≡ 1 (mod p)",
+    "receipt": "7fa74f71-45c4-878a-a271-16763c85f9ea"
+  },
+  {
+    "key": "pigeonhole_principle",
+    "name": "the pigeonhole principle: no injection [n+1]→[n] exists — every such function has a collision (exhaustive, n≤4)",
+    "receipt": "55bef22b-5135-8f77-bb31-48b8a2dba804"
+  },
+  {
+    "key": "pick_theorem",
+    "name": "Pick's theorem: for a lattice polygon Area = I + B/2 − 1 (interior + boundary lattice points), verified on a triangle and a square",
+    "receipt": "e316b749-3010-8254-a178-92ca1a159e18"
   }
 ]
