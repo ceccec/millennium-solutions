@@ -1678,5 +1678,20 @@
     "key": "honeycomb_tiling",
     "name": "the honeycomb: among regular n-gons exactly {3,4,6} tile the plane (2n divisible by n−2) — the hexagon the most-sided, and optimal (honeycomb theorem, Hales 2001)",
     "receipt": "6108a7d0-88b6-8a4b-b206-633bea371003"
+  },
+  {
+    "key": "rps_cyclic",
+    "name": "rock-paper-scissors is non-transitive: each of the three beats exactly one and loses to exactly one — a 3-cycle, no dominant choice",
+    "receipt": "1fc40bf5-ae3d-8336-8de0-8d76a7878057"
+  },
+  {
+    "key": "rps_nash_uniform",
+    "name": "rock-paper-scissors: the payoff matrix is skew-symmetric and the uniform strategy (⅓,⅓,⅓) is the unique Nash equilibrium with value 0 (every pure response earns expected 0)",
+    "receipt": "8ad0f309-1420-88ae-92e5-7dbc155e22a4"
+  },
+  {
+    "key": "relation_rps_z3",
+    "name": "rock-paper-scissors RELATES the successor map in ℤ/3: a beats b iff a ≡ b+1 (mod 3) — the trinity’s cycle is the game",
+    "receipt": "6b0eec5f-d46f-8a97-afd2-e6418d363a7b"
   }
 ]
