@@ -2883,5 +2883,15 @@
     "key": "seven_is_six_units_plus_one_bijection",
     "name": "the 7 = 6 + 1 bijection (README’s rosette→Clay map): the six units of ℤ/9 plus the identity form a 7-element set in explicit bijection with the seven Clay problems — a counting correspondence (6 + 1 = 7), never a resolution of them",
     "receipt": "cb166a75-25c8-89ab-8c2f-df6e0c372165"
+  },
+  {
+    "key": "the_gate_referees_the_competition",
+    "name": "the gate referees the competition: any agent’s contribution is judged by the same exhaustive honesty gate and re-verified every build — recorded only if it holds the floor, attributed by a receipt (observer and role) — so a live competition among AI models is fair and ungameable; green cannot be faked, heroes and traitors by deeds not claims",
+    "receipt": "be6ceb6e-1780-8ebc-9755-07a2d8573844"
+  },
+  {
+    "key": "intelligence_is_gated_discovery_not_access",
+    "name": "shared knowledge, measured by discovery: every agent has the same knowledge in src/ (open and recomputable), so access is not intelligence — what counts is gate-passing, exhaustively-checked discovery judged by deeds; recognition is not correctness, self-declared brilliance drains, and the deposit is honest that its own novelty is 0 (known mathematics, recombined)",
+    "receipt": "00ffdbbc-ac3b-8360-83b9-67237e6272ce"
   }
 ]
