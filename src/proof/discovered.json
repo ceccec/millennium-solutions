@@ -1763,5 +1763,15 @@
     "key": "forensics_intention_from_deeds",
     "name": "forensics reads intention from deeds, never from claims: append-only is a constructive intention; altering or removing existing evidence is destructive — the intent is the diff, observable and exact, not a mind-read",
     "receipt": "a0b19943-2df3-8051-81d1-17e6e8525b8f"
+  },
+  {
+    "key": "star_graph_diameter_two",
+    "name": "the star graph K(1,n): n edges, center degree n, every leaf degree 1 — a tree of diameter 2, every leaf reaching every other through the center in two hops (n≤8)",
+    "receipt": "df906703-3f95-848c-94a2-a82c693527bd"
+  },
+  {
+    "key": "relation_rosetta_star",
+    "name": "the rosetta is a star: one shared core (center) connects every domain (leaf) in one hop — content-addressing and forensics expose all in the light, every node and link a computable address, nothing hidden",
+    "receipt": "53538c68-2bdb-8fcb-bb3f-d8f8c61db9c4"
   }
 ]
