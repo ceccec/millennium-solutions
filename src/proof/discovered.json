@@ -1983,5 +1983,35 @@
     "key": "relation_units_are_coprime_to_base",
     "name": "the units of ℤ/9 ARE the residues coprime to the base: {1,2,4,5,7,8} = {d∈1..9 : gcd(d,9)=1}, and there are φ(9)=6 of them — group theory and number theory agree",
     "receipt": "5b768aaf-a061-8947-90a5-3e60f08a64ec"
+  },
+  {
+    "key": "relation_pisano_binds_fibonacci",
+    "name": "Fibonacci binds to ℤ/9 via the Pisano period: Fib mod 9 repeats every 24 = 4·6 (four times the doubling order of 2) — number theory, dynamics, and the doubling orbit share one period",
+    "receipt": "06593486-abf7-8be1-ac13-deb9bf19170e"
+  },
+  {
+    "key": "relation_triad_is_multiples_of_three",
+    "name": "the triad IS the multiples of three and the nilpotents: {3,6,9} = {d∈1..9 : 3∣d} = {d : d²≡0 mod 9} — divisibility, the axis, and nilpotency name the same three",
+    "receipt": "f980158a-8739-8730-9fb1-3b7f0f771e44"
+  },
+  {
+    "key": "relation_units_sum_and_product",
+    "name": "the unit group binds additively and multiplicatively: the units sum to 0 mod 9 (1+2+4+5+7+8=27) and multiply to −1 ≡ 8 mod 9 (Wilson analog) — one group, two operations agreeing at the floor",
+    "receipt": "6f0228a8-6083-80c9-9c88-38d6896193e5"
+  },
+  {
+    "key": "relation_432_factors",
+    "name": "a432 factors into the trinity and the octave: 432 = 16·27 = 2⁴·3³, and its digital root is the base (dr(432)=9) — the tuning constant is built from ℤ/9’s own primes",
+    "receipt": "534f4384-ac9f-8d92-84f2-803eb32dbd17"
+  },
+  {
+    "key": "relation_imprint_capacity_structure",
+    "name": "the imprint capacity is the uuid’s structure: CAPACITY = 128 − 6 reserved − 7 length header = 115 bits, and a full 115-bit message round-trips — the codec’s limit is exactly the address’s spare bits",
+    "receipt": "2dd85b4b-938a-81c2-b904-3c8ecbfb2133"
+  },
+  {
+    "key": "relation_coin64_is_half_address",
+    "name": "the currency is half the address: coin64(x) is 64 of the 128 bits (16 of 32 hex) of toUuid(x) — the coin and the content-address are the same fold at half the width",
+    "receipt": "b7a0dd2a-c11c-8759-adbb-0de60fef7b37"
   }
 ]
