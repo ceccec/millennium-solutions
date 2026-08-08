@@ -2403,5 +2403,20 @@
     "key": "crc_detects_every_single_bit_error",
     "name": "the CRC detects every single-bit error: flipping any one of the 7 codeword bits makes the remainder mod g(x)=x³+x+1 nonzero (an error polynomial x^i is never divisible by the primitive generator) — so any one-bit crack is caught, exhaustive over all messages and positions",
     "receipt": "13b07ce4-3902-8359-b0e0-050a114cd3cc"
+  },
+  {
+    "key": "nim_loss_iff_zero_nimsum",
+    "name": "Nim (Bouton’s theorem): the player to move loses exactly when the nim-sum — the XOR of the pile sizes — is zero, and wins otherwise; verified against full game-tree analysis for three piles of size ≤ 4",
+    "receipt": "c1487d07-3fe4-8b90-8d10-e9799b93fad3"
+  },
+  {
+    "key": "nim_winning_move_zeros_the_nimsum",
+    "name": "the Nim winning strategy: from any position with nonzero nim-sum there exists a move to a position with nim-sum zero (handing the loss to the opponent) — exhaustive over three piles of size ≤ 5",
+    "receipt": "e90ed988-ec04-8911-b1b7-162784c8ac76"
+  },
+  {
+    "key": "nim_sum_is_xor_gf2",
+    "name": "the nim-sum is GF(2) vector addition: it is bitwise XOR — commutative, associative, and self-inverse (x ⊕ x = 0) — so Nim positions form a GF(2) vector space and the game is decided by binary algebra",
+    "receipt": "c883cd18-f418-882a-9eba-19c3012e4d05"
   }
 ]
