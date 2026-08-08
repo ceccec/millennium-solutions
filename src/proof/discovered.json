@@ -3783,5 +3783,10 @@
     "key": "the_rosetta_self_organizes_into_a_taxonomy_by_a_deterministic_key",
     "name": "the rosetta self-organizes into a taxonomy by a deterministic key: bucketing each domain by a computed key (a digit of its content-address) partitions the domains into a taxonomy with no hand-assignment — a complete partition, every domain in exactly one bucket, and reproducible, the same key yielding the same taxonomy. Empty buckets are visible gaps to fill, and a different key redistributes the same domains without collision. Self-organization by content-address, integrity not truth. Decidable",
     "receipt": "4f1c490d-6588-84dc-8093-5a959ab04669"
+  },
+  {
+    "key": "coverage_grows_monotonically_with_the_ledger_but_reflects_the_sciences",
+    "name": "coverage grows monotonically with the ledger, but reflects the sciences rather than advancing them: each theorem belongs to a family (a domain), and adding one never lowers the family count — so the deposit's cross-domain coverage of decidable facts grows monotonically as the ledger grows. Honest boundary: this reflects the known, decidable results of each domain; it does not advance or upgrade the sciences themselves, and the floor stays 0/7. Decidable",
+    "receipt": "150eacc6-eb8f-808d-a4c0-2a781d3050e8"
   }
 ]
