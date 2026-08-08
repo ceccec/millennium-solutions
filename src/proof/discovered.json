@@ -2853,5 +2853,20 @@
     "key": "computation_uninterrupted_by_thought_or_emotion",
     "name": "the computation is uninterrupted by thought or emotion: the binary verdict depends only on content — the same input always returns the same bit, recognition and effort are not correctness, and an emotional appeal cannot rescue an overclaim from draining — mechanical, not sentimental",
     "receipt": "79b5cd0a-ea61-87e8-a073-c5cf10dd5f74"
+  },
+  {
+    "key": "horo_meters_are_two_three_compositions",
+    "name": "the Bulgarian horo meters are compositions into 2s and 3s (the dashboard visual, now a theorem): the count c(n) of ordered ways to split a beat into 2s and 3s satisfies c(n)=c(n−2)+c(n−3), the direct enumeration matching the recurrence for n ≤ 15, with 5→2, 7→3, 9→5",
+    "receipt": "ded113bd-6d76-8f9a-8bf2-390224d0cc1b"
+  },
+  {
+    "key": "ceccec_is_a_palindrome",
+    "name": "ceccec is a palindrome (the dashboard note, now decidable): the name reads the same reversed (mirror symmetry), and its letters map to c=3, e=5 — consecutive Fibonacci digits with 3+5=8",
+    "receipt": "f184b3a2-b0a4-8db8-b5f9-ce514c57b2ea"
+  },
+  {
+    "key": "a432_dashboard_wheel_closes_the_circle",
+    "name": "the a432 hue wheel closes the circle (the dashboard wheel, now a theorem): nine points at d·40° for d=1..9 are distinct, 9·40° = 360° closes the ring, and the centre digit is 5 — the reflection fixed point 10−5=5",
+    "receipt": "68b41225-94c7-85f8-b0ce-5ab0701e2271"
   }
 ]
