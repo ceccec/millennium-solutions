@@ -2933,5 +2933,10 @@
     "key": "string_scale_is_a_thread_not_a_physical_theory",
     "name": "the string scale is a thread, not a physical theory: the string/Planck-scale frequency and acoustic 432 Hz are ~18 orders of magnitude apart — frequency is a shared thread across scales, but the scales are not interchangeable and this is a metaphor, not a theory of everything (0/7, not faster-than-light)",
     "receipt": "0107480d-24b0-8bfd-976e-deb5c3ffcf12"
+  },
+  {
+    "key": "even_the_server_is_serverless",
+    "name": "all is done serverless, even by the server: the site is statically generated (a deterministic build folds to one address) and statically hosted — there is no server runtime at build or at serve time; the client recomputes in the browser and the server side is a one-time static build plus a static host",
+    "receipt": "c4dc14f8-f3e2-8e0d-bc72-9bd564dbfe03"
   }
 ]
