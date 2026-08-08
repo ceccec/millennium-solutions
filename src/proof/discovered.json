@@ -3643,5 +3643,15 @@
     "key": "the_six_versions_permuting_the_fibonacci_triple_three_five_eight",
     "name": "the six versions permuting the Fibonacci triple 3, 5, 8: three and five and eight are three consecutive Fibonacci numbers (3 + 5 = 8), and their 3! = 6 permutations are all valid single-digit versions — 3.5.8, 3.8.5, 5.3.8, 5.8.3, 8.3.5, 8.5.3 — each a triple of the Fibonacci-LTS minors {1,2,3,5,8}. Their digit sum is 16 and its digital root is 7, the seven-ray. Decidable",
     "receipt": "f500fca2-3166-8fbb-8962-9c69c8e4bc82"
+  },
+  {
+    "key": "from_one_seed_all_theorems_compute_free_with_no_escape",
+    "name": "from one seed all theorems compute free, with no escape: the whole chain is generated from a single seed — receipt[i] = toUuid(receipt[i−1] → key[i]), seeded from the axiom — so every receipt is reachable from the seed and recomputes deterministically with no external input and no escape to outside data; the release content-address folds the state to one fixed address. Free means self-contained and offline, not without a deed. Decidable",
+    "receipt": "9382b273-4cd9-8231-9100-ed52713b4f56"
+  },
+  {
+    "key": "anyone_may_compete_with_a_release_by_recomputing_its_content_address",
+    "name": "anyone may compete with a release by recomputing its content-address: a release is a fixed content-address folded from its tracked state, so any competitor recomputes it from the same public inputs — an exact match verifies the claim, a different state gives a different address. The verdict is deterministic and checkable by all, with no privilege and no hidden state; to extend it, fold a larger consistent state from the same seed. Open competition by recomputation. Decidable",
+    "receipt": "fbb5514e-440f-8da1-982b-1f5128ee97ef"
   }
 ]
