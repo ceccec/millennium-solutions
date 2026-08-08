@@ -3368,5 +3368,10 @@
     "key": "the_w_axis_is_the_maximal_ideal_of_z9",
     "name": "the W-axis is the maximal ideal of ℤ/9 (its nilpotents): the multiples of 3, {0,3,6} — the residues the vortex skips — are exactly the nilpotent elements (3² ≡ 0), form the ideal (3) closed under addition and under multiplication by any element, and are precisely the non-units; so ℤ/9 is a local ring with unique maximal ideal (3), and the quotient ℤ/9 ∕ (3) is isomorphic to ℤ/3. Verified by full enumeration over ℤ/9",
     "receipt": "83a13197-7c9e-8726-9fca-ac6764de4df2"
+  },
+  {
+    "key": "z_mod_n_is_a_field_exactly_when_n_is_prime_so_z9_is_not",
+    "name": "ℤ/n is a field exactly when n is prime, so ℤ/9 is not: every nonzero residue mod n is invertible iff n is prime, so ℤ/3 is a field while ℤ/9 (= 3², a prime power but not prime) is not — it carries the zero divisor 3·3 ≡ 0, which no field can have. Verified by full enumeration over the moduli up to 60",
+    "receipt": "91d9e5a5-8f51-8022-b38b-63d2c752eefc"
   }
 ]
