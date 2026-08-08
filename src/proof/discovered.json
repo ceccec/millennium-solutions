@@ -3,5 +3,10 @@
     "key": "euler_units_pow6",
     "name": "every unit u⁶ ≡ 1 mod 9 (Euler, φ(9)=6)",
     "receipt": "e70a44b2-6eb8-8441-acc5-9e33a053bb0b"
+  },
+  {
+    "key": "units_sum_zero",
+    "name": "the units sum to 0 mod 9 (1+2+4+5+7+8=27)",
+    "receipt": "ec43f3d8-7595-8c1d-90a9-f72ad8da2a7b"
   }
 ]
