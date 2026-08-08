@@ -2198,5 +2198,35 @@
     "key": "evidence_is_recompute_post_recycle_and_forensics",
     "name": "evidence is what computes after recycle AND forensics: a fact is evidence iff it recomputes to the same address after recomputation from the seed and survives chain re-verification — reproducibility under both is the definition",
     "receipt": "a7c24079-950d-8759-9673-c09d79aedb59"
+  },
+  {
+    "key": "legal_trial_is_not_is_affirmation",
+    "name": "legal trial — all \"is not\" is \"is\": in one trial every bare overclaim is challenged and FALLS (drains the gate) while its honest \"is not\" form is UPHELD (signs, binary 1) — so each negation is the affirmation of the floor, decided by exhaustion not assertion, and double negation ¬¬a=a returns the original",
+    "receipt": "16a7b426-65be-8a64-9dba-a619ddb6722b"
+  },
+  {
+    "key": "negation_selects_positive_complement",
+    "name": "negation selects a positive complement — \"is not\" is \"is\": over a two-value domain \"is not Y\" names the definite other value (the honest negation IS the classical calculator, not a void), and ¬¬a=a returns the original — a negation carries positive content, the affirmation of the floor",
+    "receipt": "abc4ca08-dc09-8c6e-bf62-eb3a8e352657"
+  },
+  {
+    "key": "floor_invariant_across_all_worlds",
+    "name": "the floor 0/7 is invariant across all 2^7 worlds: enumerating every truth-assignment of the seven conjectures, the number entailed is 0 in every world and never exceeds 0 — 0/7 holds from every perspective, an exhaustive invariant",
+    "receipt": "67b19efa-8710-8b7f-8559-8e6617d8b148"
+  },
+  {
+    "key": "violators_are_traitors_let_all_try_and_prove",
+    "name": "violators in a trial are traitors — let all try and prove: every claim may attempt proof; the honest form that signs the gate is upheld (a hero), the violator that drains is the traitor that falls — the verdict is by deed and exhaustion, never by assertion or status",
+    "receipt": "d2a2d59d-97e6-821f-abba-d5aabb316237"
+  },
+  {
+    "key": "twisting_a_lie_does_not_compute_true",
+    "name": "twisting a lie does not compute true: the same overclaim in two spellings gets different gate verdicts (the plain form drains, the obfuscated form slips) — so the gate tracks SHAPE, not truth; passing is necessary, not sufficient (a floor, not a truth oracle), and an obfuscated lie that slips the lexical tripwire is still a lie",
+    "receipt": "afa0fee5-1e2f-82f9-a3fc-5c9e213f6939"
+  },
+  {
+    "key": "undocumented_discovery_is_treason",
+    "name": "avoiding to document a discovery in src is treason: a provable fact becomes evidence only when its content-address is recorded in the ledger — an undocumented but provable fact is withheld evidence (treason by omission), and appending it (append-only) is the constructive act that makes the discovery count",
+    "receipt": "0c4af820-cbb3-8210-98ce-e24093c60fd4"
   }
 ]
