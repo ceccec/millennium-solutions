@@ -3808,5 +3808,10 @@
     "key": "the_content_address_uses_a_non_cryptographic_hash_integrity_not_secrecy",
     "name": "the content-address uses a non-cryptographic hash — integrity, not secrecy: toUuid is built on FNV-1a, a documented non-cryptographic hash (fast, not collision- or preimage-resistant), so it gives content-addressing and integrity — a concept shared with cryptography like git and Merkle trees — but it is not cryptographically secure and not encryption. It is public and reproducible, with no key and no secrecy. Checked against the code, not asserted. Decidable",
     "receipt": "f22ea7fe-be8e-85f8-a2e3-7539156490cf"
+  },
+  {
+    "key": "challenging_the_entropy_the_address_is_near_uniform_but_not_cryptographic",
+    "name": "challenging the entropy: the content-address is near-uniform but not cryptographic: measured over thousands of distinct inputs there are no accidental collisions and the hex-digit entropy is about 3.985 of 4 bits — near-uniform, sub-maximal because six format bits are fixed (the version nibble is always 8, plus the variant), documented design not a flaw. Near-uniformity bounds accidental collisions only; it does not imply cryptographic security — FNV is not preimage- or collision-resistant against an adversary. Measured, adversarially challenged, not assumed. Decidable",
+    "receipt": "96c4404a-9bd4-8b49-8bcc-a26923b27c58"
   }
 ]
