@@ -3163,5 +3163,15 @@
     "key": "reflection_of_666_is_444",
     "name": "the reflection of 666 is 444: under the ten’s-complement reflection 10−d (the involution with fixed point 5), each 6 reflects to 4 (6+4=10), so 666 ↔ 444, and reflecting twice returns 666 — an involution; the digital roots are dr(666)=9 and dr(444)=3, both on the triad axis {3,6,9}; numerology defused into ℤ/9 structure",
     "receipt": "5f837f00-0a82-8078-8b77-cd5574ca1247"
+  },
+  {
+    "key": "product_commutes_but_arrangement_differs",
+    "name": "the product commutes but the arrangement differs: 6×7 = 7×6 = 42 as numbers, yet \"6x7\" and \"7x6\" are distinct ordered forms — different content-addresses, a 6-by-7 grid is the transpose of a 7-by-6 (same 42 cells, different shape); commutativity of the product is not identity of the arrangement, though the set of the two folds order-independently",
+    "receipt": "a4339fd6-0e7c-8e22-be7e-56b9e39247a5"
+  },
+  {
+    "key": "service_to_bind_is_accounted_in_coins",
+    "name": "account the coins for the service to bind: each binding (a receipt) is a service accounted at the two coins (110−108 = 2 = −χ genus-2), so N services cost N·2 coins, reinvested into development (destination equals source, a self-loop) — the binding is paid-for, a fair exchange, not free-riding",
+    "receipt": "cf17043b-3fc6-8c31-bb71-6a4c80d4af13"
   }
 ]
