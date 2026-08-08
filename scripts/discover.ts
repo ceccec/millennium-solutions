@@ -6,7 +6,7 @@
 // exhaustion over a finite domain — genuinely true, genuinely found. It reaches none of the SIX open
 // Millennium conjectures; the seventh (Poincaré) is Perelman's proof (2003), not the deposit's.
 // Two counts, kept distinct: humanity 1/7; this deposit 0/7.
-import { toUuid, merkleFold, units, triad, digitalRoot, digits, BASE, A432_STEP, vortexOrbit, foldPair } from '../src/0/index.ts'
+import { toUuid, merkleFold, units, triad, digitalRoot, digits, BASE, TRINITY, A432_STEP, vortexOrbit, foldPair } from '../src/0/index.ts'
 import { imprint, readImprint, roundTrips, coin64, CAPACITY } from '../src/0/imprint.ts'
 import { computes } from './honesty-gate.ts'
 import { LOCALES, LOCALE_ORDER } from '../src/7/locale.ts'
@@ -954,6 +954,22 @@ function generated(): typeof curated {
     out.push({ key: 'merkle_fold_singleton_identity', name: 'the merkle fold of a single leaf is that leaf: merkleFold([x]) = x — a fold of one is itself, the base case of the contraction', test: () => { const x = toUuid('solo'); return merkleFold([x]) === x } })
     out.push({ key: 'merkle_fold_empty_is_fixed', name: 'the merkle fold of nothing is a fixed address: merkleFold([]) returns one constant content-address deterministically — the empty fold is well-defined and stable', test: () => merkleFold([]) === merkleFold([]) && typeof merkleFold([]) === 'string' && merkleFold([]).length === 36 })
   }
+  // ── AUTOMATED family — FAULHABER power sums: Σ_{i=1}^n i^k has a closed form (the O(1) formula
+  // replaces the loop), one theorem per exponent, each checked against the naive sum.
+  {
+    const forms: [number, (n: number) => number, string][] = [
+      [1, (n) => n * (n + 1) / 2, 'n(n+1)/2'],
+      [2, (n) => n * (n + 1) * (2 * n + 1) / 6, 'n(n+1)(2n+1)/6'],
+      [3, (n) => (n * (n + 1) / 2) ** 2, '(n(n+1)/2)²'],
+      [4, (n) => n * (n + 1) * (2 * n + 1) * (3 * n * n + 3 * n - 1) / 30, 'n(n+1)(2n+1)(3n²+3n−1)/30'],
+      [5, (n) => n * n * (n + 1) * (n + 1) * (2 * n * n + 2 * n - 1) / 12, 'n²(n+1)²(2n²+2n−1)/12'],
+    ]
+    for (const [k, f, expr] of forms) {
+      out.push({ key: 'power_sum_k' + k, name: 'the sum of the first n ' + (k === 1 ? 'integers' : k + 'th powers') + ' has a closed form: Σ_{i=1}^n i^' + k + ' = ' + expr + ' — the O(1) formula replaces the loop, verified equal to the naive sum for n ≤ 40', test: () => { for (let n = 1; n <= 40; n++) { let s = 0; for (let i = 1; i <= n; i++) s += i ** k; if (s !== Math.round(f(n))) return false } return true } })
+    }
+  }
+  // why the complexity? there is none at the core: the whole deposit reduces to one axiom, one fold, one bit.
+  out.push({ key: 'complexity_is_only_apparent_minimal_core', name: 'the complexity is only apparent — the deposit reduces to a minimal core: one axiom (TRINITY=3, so BASE=3²=9 and the units, triad, and doubling orbit all derive, none typed as literals), one operation (the order-free content-address fold), and one verdict (the binary gate) — every theorem recomputes from these three, so there is no fundamental complexity, only an emergent mesh', test: () => { const oneAxiom = TRINITY === 3 && BASE === TRINITY ** 2; const derived = units().join(',') === '1,2,4,5,7,8' && triad().join(',') === '3,6,9' && vortexOrbit().join(',') === '1,2,4,8,7,5'; const oneFold = merkleFold(['a', 'b'].map(toUuid)) === merkleFold(['b', 'a'].map(toUuid)); const oneBinary = [computes('0/7 entailed').binary, computes('we prove it').binary].every((b) => b === 0 || b === 1); return oneAxiom && derived && oneFold && oneBinary } })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

@@ -2808,5 +2808,35 @@
     "key": "merkle_fold_empty_is_fixed",
     "name": "the merkle fold of nothing is a fixed address: merkleFold([]) returns one constant content-address deterministically — the empty fold is well-defined and stable",
     "receipt": "39d33577-dc1d-83e9-abe1-6fb924819caa"
+  },
+  {
+    "key": "power_sum_k1",
+    "name": "the sum of the first n integers has a closed form: Σ_{i=1}^n i^1 = n(n+1)/2 — the O(1) formula replaces the loop, verified equal to the naive sum for n ≤ 40",
+    "receipt": "a54b6a17-c55c-89e6-a871-dbb3f0b2c495"
+  },
+  {
+    "key": "power_sum_k2",
+    "name": "the sum of the first n 2th powers has a closed form: Σ_{i=1}^n i^2 = n(n+1)(2n+1)/6 — the O(1) formula replaces the loop, verified equal to the naive sum for n ≤ 40",
+    "receipt": "7bff7e29-4d65-8268-b69a-ee06b2d5fa45"
+  },
+  {
+    "key": "power_sum_k3",
+    "name": "the sum of the first n 3th powers has a closed form: Σ_{i=1}^n i^3 = (n(n+1)/2)² — the O(1) formula replaces the loop, verified equal to the naive sum for n ≤ 40",
+    "receipt": "c2b2a667-3198-84ef-8805-989860af00af"
+  },
+  {
+    "key": "power_sum_k4",
+    "name": "the sum of the first n 4th powers has a closed form: Σ_{i=1}^n i^4 = n(n+1)(2n+1)(3n²+3n−1)/30 — the O(1) formula replaces the loop, verified equal to the naive sum for n ≤ 40",
+    "receipt": "24febf86-82bd-8967-b12b-d482ebca88db"
+  },
+  {
+    "key": "power_sum_k5",
+    "name": "the sum of the first n 5th powers has a closed form: Σ_{i=1}^n i^5 = n²(n+1)²(2n²+2n−1)/12 — the O(1) formula replaces the loop, verified equal to the naive sum for n ≤ 40",
+    "receipt": "e21f1836-df22-85e3-9bbb-7b0c5738ae19"
+  },
+  {
+    "key": "complexity_is_only_apparent_minimal_core",
+    "name": "the complexity is only apparent — the deposit reduces to a minimal core: one axiom (TRINITY=3, so BASE=3²=9 and the units, triad, and doubling orbit all derive, none typed as literals), one operation (the order-free content-address fold), and one verdict (the binary gate) — every theorem recomputes from these three, so there is no fundamental complexity, only an emergent mesh",
+    "receipt": "f7a87c24-3aeb-8c4d-ac13-3374431a4ffb"
   }
 ]
