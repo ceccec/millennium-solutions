@@ -3673,5 +3673,10 @@
     "key": "bertrands_postulate",
     "name": "Bertrand's postulate: for every n ≥ 1 there is a prime p with n < p ≤ 2n — verified for all n from 1 to 500. A witness is Bertrand's own chain of primes, each less than twice the previous: 2, 3, 5, 7, 13, 23, 43, 83, 163, 317, 631, 1259, so consecutive members overlap and cover every interval up to 2·631. Verified by exhaustive search",
     "receipt": "106fcc1d-7995-82cc-94a1-649c4e7e6e0c"
+  },
+  {
+    "key": "the_ramsey_number_r_three_three_is_six",
+    "name": "the Ramsey number R(3,3) is six: every 2-colouring of the edges of the complete graph on six vertices contains a monochromatic triangle — verified over all 2^15 = 32768 colourings — while the complete graph on five vertices admits a colouring with none (the red 5-cycle and the blue pentagram, neither containing a triangle). So six is the least number of people among whom three mutual acquaintances or three mutual strangers are forced. Verified by exhaustive search",
+    "receipt": "f2b26735-9d9d-85a1-bfc9-670a6e77ef2d"
   }
 ]
