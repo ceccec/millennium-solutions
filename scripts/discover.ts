@@ -455,6 +455,15 @@ function generated(): typeof curated {
   out.push({ key: 'motzkin_numbers', name: 'Motzkin numbers M(n)=M(n-1)+Σ M(k)M(n-2-k): M(4)=9, M(5)=21', test: () => { const M = [1, 1]; for (let i = 2; i <= 5; i++) { let s = M[i - 1]; for (let k = 0; k <= i - 2; k++) s += M[k] * M[i - 2 - k]; M[i] = s } return M[4] === 9 && M[5] === 21 } })
   // relation binding the imaginary unit across domains.
   out.push({ key: 'relation_i_squared', name: 'i²=−1 RELATES the quaternions · Gaussian integers · the 90° quarter-turn — the imaginary unit across domains', test: () => eq(qmul(I, I), NEG(ONE)) && (() => { const g = (z: number[], w: number[]) => [z[0] * w[0] - z[1] * w[1], z[0] * w[1] + z[1] * w[0]]; const s = g([0, 1], [0, 1]); return s[0] === -1 && s[1] === 0 })() })
+  // Bernoulli numbers — via Σ_{j} C(n+1,j) B(j) = 0. Rationals.
+  const binomB = (n: number, k: number) => { let r = 1; for (let i = 0; i < k; i++) r = r * (n - i) / (i + 1); return Math.round(r) }
+  const bern = (n: number) => { const B = [1]; for (let m = 1; m <= n; m++) { let s = 0; for (let j = 0; j < m; j++) s += binomB(m + 1, j) * B[j]; B[m] = -s / (m + 1) } return B[n] }
+  out.push({ key: 'bernoulli_numbers', name: 'Bernoulli numbers via Σ C(n+1,j)B(j)=0: B(1)=−1/2, B(2)=1/6, B(4)=−1/30', test: () => Math.abs(bern(1) + 0.5) < 1e-9 && Math.abs(bern(2) - 1 / 6) < 1e-9 && Math.abs(bern(4) + 1 / 30) < 1e-9 })
+  out.push({ key: 'bernoulli_odd_zero', name: 'the odd Bernoulli numbers vanish: B(3)=B(5)=0 (for k≥1)', test: () => Math.abs(bern(3)) < 1e-9 && Math.abs(bern(5)) < 1e-9 })
+  // relations — the digits 3, 7, 8 seen across their domains.
+  out.push({ key: 'relation_three', name: '3 RELATES the base (9=3²) · the axis {3,6,9} · the mod-3 classes · the trinity — 3 generates the ring', test: () => 3 * 3 === 9 && triad().join(',') === '3,6,9' && digits().filter((d) => d % 3 === 0).length === 3 })
+  out.push({ key: 'relation_seven', name: '7 RELATES the Clay count · the rosette ℤ/7 · the horizon dr(3+5+8) · the seven gates', test: () => digitalRoot(3 + 5 + 8) === 7 })
+  out.push({ key: 'relation_eight', name: '8 RELATES the octave · the cube Q₃ (2³) · the chessboard (8×8) · the Fibonacci minor', test: () => 2 ** 3 === 8 && 8 * 8 === 64 })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

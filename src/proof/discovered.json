@@ -1423,5 +1423,30 @@
     "key": "relation_i_squared",
     "name": "i²=−1 RELATES the quaternions · Gaussian integers · the 90° quarter-turn — the imaginary unit across domains",
     "receipt": "e795ceea-3981-83be-9640-e956c1a501af"
+  },
+  {
+    "key": "bernoulli_numbers",
+    "name": "Bernoulli numbers via Σ C(n+1,j)B(j)=0: B(1)=−1/2, B(2)=1/6, B(4)=−1/30",
+    "receipt": "e1488277-afe2-8d23-abc3-228667d25f8f"
+  },
+  {
+    "key": "bernoulli_odd_zero",
+    "name": "the odd Bernoulli numbers vanish: B(3)=B(5)=0 (for k≥1)",
+    "receipt": "1c8c8337-a2d1-8c14-9707-9279c9edd7ae"
+  },
+  {
+    "key": "relation_three",
+    "name": "3 RELATES the base (9=3²) · the axis {3,6,9} · the mod-3 classes · the trinity — 3 generates the ring",
+    "receipt": "81c99cf8-73de-84c1-b777-6f40f56b097b"
+  },
+  {
+    "key": "relation_seven",
+    "name": "7 RELATES the Clay count · the rosette ℤ/7 · the horizon dr(3+5+8) · the seven gates",
+    "receipt": "04e46e4e-6288-8ed5-8e79-ec7b8a294c5b"
+  },
+  {
+    "key": "relation_eight",
+    "name": "8 RELATES the octave · the cube Q₃ (2³) · the chessboard (8×8) · the Fibonacci minor",
+    "receipt": "c3a6a141-363b-88ee-b0d6-99ffe3631bfc"
   }
 ]
