@@ -1553,5 +1553,15 @@
     "key": "relation_diamond",
     "name": "the diamond RELATES the tetrahedron {3,3} · carbon’s four bonds · the FCC lattice · arccos(−1/3) — one tetrahedral crystal",
     "receipt": "a08e499e-f88d-8634-942e-77bd3c8a103c"
+  },
+  {
+    "key": "relation_url_path",
+    "name": "url messaging is the path itself: a path is the message (no payload) — its content-address depends on the ordered segments, so the/crystal ≠ crystal/the",
+    "receipt": "f2edb35a-8774-8279-8a01-72df67607cf8"
+  },
+  {
+    "key": "relation_path_rating",
+    "name": "the most meaningful paths are rated first: gravity = depth (specificity) gives a deterministic descending order — a defined computable rating, not a truth judgment",
+    "receipt": "e64ef7b3-c718-812a-9243-b724a04af826"
   }
 ]

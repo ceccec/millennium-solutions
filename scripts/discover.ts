@@ -22,6 +22,7 @@ import { report as theCreationR } from '../src/the/creation/index.ts'
 import { report as theAbstractR } from '../src/the/abstract/index.ts'
 import { report as theSolidsR } from '../src/the/solids/index.ts'
 import { report as theCrystalR } from '../src/the/crystal/index.ts'
+import { report as thePathR } from '../src/the/path/index.ts'
 const m9 = (n: number) => ((n % BASE) + BASE) % BASE
 const U = units()
 const ALL = digits()
@@ -407,7 +408,9 @@ function generated(): typeof curated {
   out.push({ key: 'relation_xor', name: 'XOR RELATES Boolean algebra · Nim (Bouton) · Sprague–Grundy: the same operation runs all three', test: () => (1 ^ 1) === 0 && (5 ^ 5) === 0 && ((3 ^ 5) ^ 0) === (3 ^ 5) })
   out.push({ key: 'relation_involution', name: 'order-2 RELATES negation · the inverse map · σ · the merkaba counter-rotation: all are involutions', test: () => { const inv = (u: number) => units().find((w) => m9(u * w) === 1)!; return m9(-m9(-5)) === 5 && inv(inv(2)) === 2 } })
   out.push({ key: 'relation_digital_root', name: 'the digital root (mod 9) RELATES the div-by-3 rule · primes-ride-units · the tarot counts · ceccec', test: () => digitalRoot(78) === 6 && digitalRoot(12) === digitalRoot(21) && units().includes(digitalRoot(7)) })
-  out.push({ key: 'the_modules_self_compute', name: 'the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally', test: () => [theAll, theSeq, theThm, theGameR, theHeartR, theSuperR, theStateR, theDomainR, theCreationR, theAbstractR, theSolidsR, theCrystalR].every((f) => { const s = f(); return typeof s === 'string' && s.length > 40 && s.includes('0/7') }) })
+  out.push({ key: 'the_modules_self_compute', name: 'the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally', test: () => [theAll, theSeq, theThm, theGameR, theHeartR, theSuperR, theStateR, theDomainR, theCreationR, theAbstractR, theSolidsR, theCrystalR, thePathR].every((f) => { const s = f(); return typeof s === 'string' && s.length > 40 && s.includes('0/7') }) })
+  out.push({ key: 'relation_url_path', name: 'url messaging is the path itself: a path is the message (no payload) — its content-address depends on the ordered segments, so the/crystal ≠ crystal/the', test: () => toUuid('the/crystal') !== toUuid('crystal/the') && toUuid('the/crystal') === toUuid('the/crystal') })
+  out.push({ key: 'relation_path_rating', name: 'the most meaningful paths are rated first: gravity = depth (specificity) gives a deterministic descending order — a defined computable rating, not a truth judgment', test: () => { const g = (p: string) => p.split('/').length; const ps = ['the', 'the/crystal', 'the/superposition/state']; const rated = [...ps].sort((a, b) => g(b) - g(a)); return rated[0] === 'the/superposition/state' && rated[rated.length - 1] === 'the' && g('the/superposition/state') === 3 } })
   // harmonic ratios — the integer ratios are EXACT rationals (theorems); the a432 Hz tuning is a
   // convention (not a theorem). The octave is the vortex ×2.
   out.push({ key: 'harmonic_octave_2_1', name: 'the octave is 2:1 (frequency doubling) — the vortex ×2 map is the octave', test: () => 2 / 1 === 2 })

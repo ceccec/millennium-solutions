@@ -21,6 +21,7 @@ import { report as theCreation } from './src/the/creation/index'
 import { report as theAbstract } from './src/the/abstract/index'
 import { report as theSolids } from './src/the/solids/index'
 import { report as theCrystal } from './src/the/crystal/index'
+import { report as thePath } from './src/the/path/index'
 import { report as acceptance } from './src/1/acceptance'
 import { report as paradox } from './src/1/paradox'
 import { report as society } from './src/9/society'
@@ -159,6 +160,10 @@ digit to its partner (fixed point **5**), so the folders below are laid out arou
 ### The crystal · `src/the/crystal/index.ts`
 
 <pre>{{ theCrystal() }}</pre>
+
+### The path · `src/the/path/index.ts`
+
+<pre>{{ thePath() }}</pre>
 </details>
 
 ## `0/` — the substrate · content-addressing
