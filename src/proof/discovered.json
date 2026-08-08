@@ -2533,5 +2533,20 @@
     "key": "three_distance_max_gap_non_increasing",
     "name": "adding a point never widens the largest gap: as N grows, each new multiple falls inside an existing gap and splits it, so the maximum gap is non-increasing in N — the points equidistribute (verified exhaustively)",
     "receipt": "7d1620a8-01d2-8ec6-bdec-6accb7871009"
+  },
+  {
+    "key": "bertrand_postulate",
+    "name": "Bertrand’s postulate: for every n ≥ 1 there is a prime p with n < p ≤ 2n — a settled theorem, verified exhaustively for all n ≤ 500",
+    "receipt": "2448b2cf-b204-8097-8728-b486fd523bde"
+  },
+  {
+    "key": "goldbach_holds_in_range_conjecture_open",
+    "name": "Goldbach in a bounded range (the general statement is an open conjecture, not settled here): every even number from 4 to 1000 is a sum of two primes — checked exhaustively; beyond the range it remains an open conjecture",
+    "receipt": "7f84b2f9-af1e-82b7-9e7d-56a8079096dc"
+  },
+  {
+    "key": "twin_primes_in_range_infinitude_open",
+    "name": "twin primes exist in a bounded range (their infinitude is an open conjecture): there are at least 30 pairs of primes p, p+2 below 1000 — existence checked exhaustively; whether infinitely many exist remains open",
+    "receipt": "cb55a95f-ce7f-850e-b68f-23ebb4b8c99c"
   }
 ]

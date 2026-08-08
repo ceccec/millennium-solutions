@@ -890,6 +890,14 @@ function generated(): typeof curated {
     out.push({ key: 'three_gap_largest_is_sum_of_other_two', name: 'the third distance is the sum of the other two: whenever the three-distance points show exactly three distinct gap lengths, the largest equals the sum of the smaller two — verified exhaustively', test: () => { for (const [a, m] of PAIRS) for (let N = 2; N <= m; N++) { const d = [...new Set(gapsOf(a, m, N))].sort((x, y) => x - y); if (d.length === 3 && d[2] !== d[0] + d[1]) return false } return true } })
     out.push({ key: 'three_distance_max_gap_non_increasing', name: 'adding a point never widens the largest gap: as N grows, each new multiple falls inside an existing gap and splits it, so the maximum gap is non-increasing in N — the points equidistribute (verified exhaustively)', test: () => { for (const [a, m] of PAIRS) for (let N = 2; N < m; N++) { const g1 = Math.max(...gapsOf(a, m, N)), g2 = Math.max(...gapsOf(a, m, N + 1)); if (g2 > g1) return false } return true } })
   }
+  // ── a NEW decidable domain — PRIMES IN RANGES: Bertrand (a settled theorem), and two open conjectures
+  // verified only in a bounded range — the honest floor: checked-in-range is NOT proved-in-general.
+  {
+    const isP = (p: number) => { if (p < 2) return false; for (let i = 2; i * i <= p; i++) if (p % i === 0) return false; return true }
+    out.push({ key: 'bertrand_postulate', name: 'Bertrand’s postulate: for every n ≥ 1 there is a prime p with n < p ≤ 2n — a settled theorem, verified exhaustively for all n ≤ 500', test: () => { for (let n = 1; n <= 500; n++) { let f = false; for (let p = n + 1; p <= 2 * n; p++) if (isP(p)) { f = true; break } if (!f) return false } return true } })
+    out.push({ key: 'goldbach_holds_in_range_conjecture_open', name: 'Goldbach in a bounded range (the general statement is an open conjecture, not settled here): every even number from 4 to 1000 is a sum of two primes — checked exhaustively; beyond the range it remains an open conjecture', test: () => { for (let e = 4; e <= 1000; e += 2) { let f = false; for (let a = 2; a <= e / 2; a++) if (isP(a) && isP(e - a)) { f = true; break } if (!f) return false } return true } })
+    out.push({ key: 'twin_primes_in_range_infinitude_open', name: 'twin primes exist in a bounded range (their infinitude is an open conjecture): there are at least 30 pairs of primes p, p+2 below 1000 — existence checked exhaustively; whether infinitely many exist remains open', test: () => { let c = 0; for (let p = 3; p + 2 < 1000; p++) if (isP(p) && isP(p + 2)) c++; return c >= 30 && isP(3) && isP(5) && isP(11) && isP(13) } })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
