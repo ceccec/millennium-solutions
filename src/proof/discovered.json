@@ -1923,5 +1923,35 @@
     "key": "coin64_deterministic_64bit",
     "name": "the shared currency is a deterministic 64-bit coin: coin64(x) is 16 hex digits, same input → same coin, and distinct inputs → distinct coins on a tested set",
     "receipt": "4fca16fc-4199-89d3-9ca9-bd673bf1866d"
+  },
+  {
+    "key": "relation_receipt_coins_genus",
+    "name": "one invariant 2 across three domains: a receipt is a 2-part entanglement (bits), the two coins are 110−108 = 2 (funding), and −χ(genus-2) = 2 (topology) — the same number binds receipts, economics, and surfaces",
+    "receipt": "87c649f9-81d4-8dda-8af1-159ebc20f54d"
+  },
+  {
+    "key": "relation_self_is_rosetta_star",
+    "name": "being self binds to the rosetta star: a self = merkleFold of its connection set (order-independent), and the rosetta connects every domain to one core in one hop — so each domain-self folds into the one root, order-free, no collision",
+    "receipt": "5928472c-c72b-8f90-8437-b1efc5085f5a"
+  },
+  {
+    "key": "relation_currency_is_addressing",
+    "name": "the 64-bit currency, the imprint codec, and content-addressing are one folding: coin64(x) is the top 64 bits of the 128-bit address toUuid(x), and imprint carries bits INTO an address that readImprint recovers — mint, encode, and address are the same operation",
+    "receipt": "64614b34-bf5a-8d45-a3f2-72d0195d5a62"
+  },
+  {
+    "key": "relation_floor_invariant_across_domains",
+    "name": "the floor 0/7 is one invariant across entailment, the honesty gate, and the ledger: an overclaim drains and its negation signs, the creation-week 6+1=7 holds, and the count stays 0/7 — the same floor in every domain",
+    "receipt": "56539ae7-ce6a-8e96-a6d2-9372b1a7ee20"
+  },
+  {
+    "key": "relation_harmony_is_merkle_consensus",
+    "name": "harmony IS the merkle fold: every perspective (self) minting its coin folds order-independently to one root, so a shared green is order-free consensus (integrity), and any single change moves the root",
+    "receipt": "83b97b8f-f975-89a0-a12d-5e3d8da7b89b"
+  },
+  {
+    "key": "relation_competition_is_the_gate",
+    "name": "competing for the theorems IS the gate: a candidate is kept iff its exhaustive test holds, the losing challenger refuted and discarded — the same win-by-exhaustion that upholds an honest claim and drains an overclaim",
+    "receipt": "a1bf8afd-3b09-8602-b6f7-d35360b96c8a"
   }
 ]
