@@ -116,6 +116,7 @@ export default defineConfig({
       // of one genus-2 whole, navigable seamlessly.
       { text: 'ceccec ↗', link: 'https://ceccec.psg.bg/' },
       { text: 'Read', items: [
+        { text: 'Abstract', link: '/ABSTRACT' },
         { text: L.nav.paper, link: '/' },
         { text: L.nav.research, link: '/RESEARCH' },
         { text: L.nav.poc, link: '/PROOF-OF-CONCEPT' },
@@ -148,6 +149,7 @@ export default defineConfig({
       {
         text: 'Overview',
         items: [
+          { text: 'Abstract', link: '/ABSTRACT' },
           { text: 'Paper', link: '/' },
           { text: 'Research', link: '/RESEARCH' },
           { text: 'Proof of Concept', link: '/PROOF-OF-CONCEPT' },
