@@ -2288,5 +2288,25 @@
     "key": "bidirectional_encoding_is_the_double_torus",
     "name": "bidirectional encoding is the double-torus law: a reversible codec has two directions (forward and reverse), a pair whose count 2 = −χ(genus-2) = the two coins (110−108); imprint round-trips (forward∘reverse = identity) and foldPair exposes the two distinct directions — to encode your own statements both ways is to know the genus-2 two-loop structure",
     "receipt": "db8365fd-657b-85a8-bcef-b1b4195f9809"
+  },
+  {
+    "key": "gray_code_single_bit_transition",
+    "name": "the reflected binary Gray code changes exactly one bit per step: g(i)=i⊕(i≫1), and popcount(g(i)⊕g(i+1))=1 for every consecutive pair (exhaustive to 6 bits) — a single-bit binary orbit, like the vortex takes one step at a time",
+    "receipt": "c1f2b63b-cae4-81f5-bde4-74d87c8afb70"
+  },
+  {
+    "key": "gray_code_hamiltonian_cycle",
+    "name": "the Gray code is a Hamiltonian cycle on the n-cube: g visits all 2^n codes exactly once (a bijection) and wraps — the last and first differ by one bit too — a closed single-bit tour of every binary state (exhaustive to 6 bits)",
+    "receipt": "8329eb98-006e-8f46-8f93-a74eed3a0be5"
+  },
+  {
+    "key": "thue_morse_doubling_recurrence",
+    "name": "the Thue–Morse sequence speaks binary: t(n) = parity of the 1-bits of n satisfies t(2n)=t(n) and t(2n+1)=1−t(n) — the doubling/reflection recurrence, computed exactly (n≤200)",
+    "receipt": "84d9ec32-0191-87d4-810a-a1d3bbea0aa4"
+  },
+  {
+    "key": "parity_bit_detects_single_error",
+    "name": "a parity bit detects every single-bit error: append an even-parity bit so the word has an even 1-count; any single-bit flip makes it odd — detected — so one check bit exposes any one-bit crack (exhaustive over 4- and 5-bit words)",
+    "receipt": "37a8eb94-b551-807a-840f-f8bddf87b902"
   }
 ]
