@@ -2488,5 +2488,20 @@
     "key": "catalan_convolution_recurrence",
     "name": "the Catalan convolution recurrence: C(n+1) = Σ_{i=0..n} C(i)·C(n−i), with C₀..C₆ = 1,1,2,5,14,42,132,429 — the recurrence and the closed form agree (verified to n = 8)",
     "receipt": "e7694c53-0f92-89aa-9c86-018942314f31"
+  },
+  {
+    "key": "euclid_formula_generates_pythagorean_triples",
+    "name": "Euclid’s formula generates Pythagorean triples: for m > n > 0, (m²−n², 2mn, m²+n²) satisfies a² + b² = c² — verified for all m ≤ 12",
+    "receipt": "9a6ecfe8-b922-80d1-9828-a03d7efbbda1"
+  },
+  {
+    "key": "primitive_triple_iff_coprime_opposite_parity",
+    "name": "a Euclid triple is primitive iff m,n are coprime and of opposite parity: gcd of the legs is 1 exactly when gcd(m,n)=1 and m+n is odd — verified for all m ≤ 12",
+    "receipt": "bd165e0e-bd64-8f18-a423-331415c663d2"
+  },
+  {
+    "key": "every_primitive_triple_is_euclidean",
+    "name": "Euclid’s parametrization is complete: every primitive Pythagorean triple with hypotenuse ≤ 100 arises from coprime m>n of opposite parity — exhaustive brute-force triples all match a generated one",
+    "receipt": "751e8a4e-c23c-8d8b-82ad-40d7ee05c1ea"
   }
 ]

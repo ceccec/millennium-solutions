@@ -865,6 +865,14 @@ function generated(): typeof curated {
     out.push({ key: 'dyck_paths_counted_by_catalan_closed_form', name: 'Dyck paths are counted by the Catalan closed form: the number of balanced parenthesis strings of length 2n (never dipping below zero) equals C(2n,n)/(n+1) — the O(1) formula replaces the exhaustive 2^(2n) enumeration (verified n = 1..6)', test: () => { for (let n = 1; n <= 6; n++) if (countBalanced(n) !== catalan(n)) return false; return true } })
     out.push({ key: 'catalan_convolution_recurrence', name: 'the Catalan convolution recurrence: C(n+1) = Σ_{i=0..n} C(i)·C(n−i), with C₀..C₆ = 1,1,2,5,14,42,132,429 — the recurrence and the closed form agree (verified to n = 8)', test: () => { const cat = (n: number) => catalan(n); for (let n = 0; n <= 8; n++) { let s = 0; for (let i = 0; i <= n; i++) s += cat(i) * cat(n - i); if (s !== cat(n + 1)) return false } return cat(6) === 132 } })
   }
+  // ── a NEW decidable domain — PYTHAGOREAN TRIPLES (Euclid's parametrization): every primitive triple
+  // comes from coprime m>n of opposite parity. Full enumeration and completeness.
+  {
+    const gc = (a: number, b: number): number => b ? gc(b, a % b) : a
+    out.push({ key: 'euclid_formula_generates_pythagorean_triples', name: 'Euclid’s formula generates Pythagorean triples: for m > n > 0, (m²−n², 2mn, m²+n²) satisfies a² + b² = c² — verified for all m ≤ 12', test: () => { for (let m = 2; m <= 12; m++) for (let n = 1; n < m; n++) { const a = m * m - n * n, b = 2 * m * n, c = m * m + n * n; if (a * a + b * b !== c * c) return false } return true } })
+    out.push({ key: 'primitive_triple_iff_coprime_opposite_parity', name: 'a Euclid triple is primitive iff m,n are coprime and of opposite parity: gcd of the legs is 1 exactly when gcd(m,n)=1 and m+n is odd — verified for all m ≤ 12', test: () => { for (let m = 2; m <= 12; m++) for (let n = 1; n < m; n++) { const a = m * m - n * n, b = 2 * m * n; const primitive = gc(a, b) === 1; const cond = gc(m, n) === 1 && (m + n) % 2 === 1; if (primitive !== cond) return false } return true } })
+    out.push({ key: 'every_primitive_triple_is_euclidean', name: 'Euclid’s parametrization is complete: every primitive Pythagorean triple with hypotenuse ≤ 100 arises from coprime m>n of opposite parity — exhaustive brute-force triples all match a generated one', test: () => { const N = 100; const gen = new Set<string>(); for (let m = 2; m <= 11; m++) for (let n = 1; n < m; n++) if (gc(m, n) === 1 && (m + n) % 2 === 1) { const a = m * m - n * n, b = 2 * m * n, c = m * m + n * n; if (c <= N) gen.add(Math.min(a, b) + ',' + Math.max(a, b) + ',' + c) } for (let a = 1; a <= N; a++) for (let b = a + 1; b <= N; b++) { const c2 = a * a + b * b, c = Math.round(Math.sqrt(c2)); if (c * c === c2 && c <= N && gc(a, b) === 1) if (!gen.has(a + ',' + b + ',' + c)) return false } return true } })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
