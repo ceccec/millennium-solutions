@@ -2953,5 +2953,20 @@
     "key": "consecutive_fibonacci_coprime",
     "name": "consecutive Fibonacci numbers are coprime: gcd(F_n, F_{n+1}) = 1 for all n — no two neighbours share a factor (verified n ≤ 20), the base case of the gcd identity",
     "receipt": "b26dad63-01b2-8272-a7dc-77b1e70b903f"
+  },
+  {
+    "key": "armstrong_3digit_exact_set",
+    "name": "the 3-digit narcissistic (Armstrong) numbers are exactly {153, 370, 371, 407}: each equals the sum of the cubes of its digits — full enumeration of 100..999 yields these four and no others",
+    "receipt": "1cb761fc-f6f3-8660-908d-ddd21198cb64"
+  },
+  {
+    "key": "armstrong_4digit_exact_set",
+    "name": "the 4-digit narcissistic numbers are exactly {1634, 8208, 9474}: each equals the sum of the fourth powers of its digits — full enumeration of 1000..9999 yields these three and no others",
+    "receipt": "c917a298-d323-8122-a6d0-786638511617"
+  },
+  {
+    "key": "single_digits_are_trivially_narcissistic",
+    "name": "every single digit is narcissistic: for 1..9, n = n¹ (one digit raised to the digit-count 1) — the trivial base case of the Armstrong property",
+    "receipt": "2adc6121-3f63-8634-8260-ea9ae2c94c98"
   }
 ]
