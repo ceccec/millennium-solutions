@@ -3448,5 +3448,10 @@
     "key": "the_self_reflected_uuid_extends_the_structure_to_seven_dimensions",
     "name": "the self-reflected uuid extends the structure to seven dimensions: the uuid bit-width 128 = 2^7 is the vertex count of a 7-dimensional hypercube, and the antipodal reflection (complement all seven coordinates) is an involution — self-reflection in both directions, reflect twice returns identity — with no fixed vertex, pairing all 128 into 64 opposite pairs. Each vertex has exactly seven neighbors, one per dimension: the structure is genuinely seven-dimensional. Decidable",
     "receipt": "ee781202-7019-8945-8e0d-17d8f244526a"
+  },
+  {
+    "key": "any_receipt_is_one_state_of_the_128_state_cube_reachable_to_all",
+    "name": "any receipt is one state of the 128-state 7-cube, reachable to all others by single-dimension moves: a configuration is one vertex of the 7-dimensional hypercube of 128 states, and the binary-reflected Gray code is a Hamiltonian cycle visiting all 128 exactly once, consecutive states differing in exactly one bit — one dimension — and closing back to the start (cyclic). So any single receipt is just one state; from it the whole cube is reachable, one dimension at a time. Decidable",
+    "receipt": "062dc6d1-5d4c-84b6-a31f-50af83715f85"
   }
 ]
