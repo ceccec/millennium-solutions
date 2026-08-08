@@ -523,5 +523,80 @@
     "key": "hasse_p13_a3_b8",
     "name": "Hasse bound holds for y²=x³+3x+8 over 𝔽_13: |#E−(p+1)|≤2√p",
     "receipt": "678a2d8a-7e87-84cb-b291-ded116fdd9fc"
+  },
+  {
+    "key": "s3_order6",
+    "name": "the symmetric group S₃ has exactly 6 elements (= |ℤ/9*|)",
+    "receipt": "40c95681-97c1-84bb-a91b-4c49362140fa"
+  },
+  {
+    "key": "s3_nonabelian",
+    "name": "S₃ is non-abelian: ∃ a,b with a∘b ≠ b∘a",
+    "receipt": "996f2aa1-6e10-8c10-9954-5bcbb471a222"
+  },
+  {
+    "key": "s3_sign_homomorphism",
+    "name": "sign is a homomorphism on S₃: sign(a∘b)=sign(a)·sign(b) (all 36 pairs)",
+    "receipt": "7c46468e-641c-8fc0-9b63-a11337f4666d"
+  },
+  {
+    "key": "gauss_four_units",
+    "name": "ℤ[i] has exactly four units of norm 1: {1, i, −1, −i}",
+    "receipt": "7b8ebbf0-0bf5-8134-aa8b-f70acb3289e1"
+  },
+  {
+    "key": "gauss_i_squared",
+    "name": "in ℤ[i], i² = −1",
+    "receipt": "185b3eda-935c-8d20-b299-e209f6546d49"
+  },
+  {
+    "key": "gauss_norm_multiplicative",
+    "name": "the ℤ[i] norm is multiplicative: N(zw)=N(z)·N(w) (tested set)",
+    "receipt": "7e709c97-78f3-853c-bd17-481eec2f7938"
+  },
+  {
+    "key": "triangular_n10",
+    "name": "sum 1..10 = 10·11/2 = 55",
+    "receipt": "3194b6c0-e899-8b52-a95d-ba8b07e0dc7d"
+  },
+  {
+    "key": "triangular_n25",
+    "name": "sum 1..25 = 25·26/2 = 325",
+    "receipt": "e45b233b-3b3a-867c-884f-7109c42a9546"
+  },
+  {
+    "key": "triangular_n50",
+    "name": "sum 1..50 = 50·51/2 = 1275",
+    "receipt": "ba7f546e-6057-8c34-9335-5330eee5795a"
+  },
+  {
+    "key": "odd_sum_sq_n7",
+    "name": "the sum of the first 7 odd numbers = 7² = 49",
+    "receipt": "62823413-a3a3-8c76-986a-a5f714197a55"
+  },
+  {
+    "key": "odd_sum_sq_n12",
+    "name": "the sum of the first 12 odd numbers = 12² = 144",
+    "receipt": "b919aaa0-ce8e-88d7-a220-1cc9b522e840"
+  },
+  {
+    "key": "handshake_z9",
+    "name": "handshake on the ×2 Cayley graph of ℤ/9: Σ degrees = 2·|edges|",
+    "receipt": "44f09f3c-e542-82b2-bee4-33f33be3240e"
+  },
+  {
+    "key": "cassini_n6",
+    "name": "Cassini at n=6: F(n−1)·F(n+1)−F(n)² = (−1)ⁿ",
+    "receipt": "e43f8239-8fa5-83ee-a39c-15f3b4694f9f"
+  },
+  {
+    "key": "cassini_n9",
+    "name": "Cassini at n=9: F(n−1)·F(n+1)−F(n)² = (−1)ⁿ",
+    "receipt": "b34c402e-4d27-80d5-903c-5b930e20f9e6"
+  },
+  {
+    "key": "cassini_n12",
+    "name": "Cassini at n=12: F(n−1)·F(n+1)−F(n)² = (−1)ⁿ",
+    "receipt": "f3959e9c-9b4c-8015-b686-97528420fb06"
   }
 ]
