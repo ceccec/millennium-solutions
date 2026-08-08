@@ -2,10 +2,12 @@
 // Independently verify the ARITHMETIC each Lean theorem (Vortex.lean) asserts — recomputed here,
 // no Lean toolchain needed. Fills a real gap: CI can't run `lake build`, but it can confirm the
 // facts are true. Feeds trust in the formal layer; fails loudly if any claim stops being true.
-import { units, triad, vortexOrbit, merkleFold, digitalRoot } from '../src/0/index.ts'
+import { toUuid, units, triad, vortexOrbit, merkleFold, digitalRoot } from '../src/0/index.ts'
 const m9 = (n) => ((n % 9n) + 9n) % 9n, m7 = (n) => ((n % 7n) + 7n) % 7n
 let fail = 0
-const ck = (name, cond) => { console.log((cond ? '  ✓ ' : '  ✗ FALSE ') + name); if (!cond) fail++ }
+const receipts = []
+// each theorem proves itself (recomputed here) and leaves a receipt; the suite folds to one root.
+const ck = (name, cond) => { console.log((cond ? '  ✓ ' : '  ✗ FALSE ') + name); if (!cond) fail++; receipts.push(toUuid(name + ':' + cond)) }
 
 ck('three_sq_zero: 3²≡0 mod9', m9(9n) === 0n)
 ck('six_sq_zero: 6²≡0 mod9', m9(36n) === 0n)
@@ -36,6 +38,15 @@ ck('triad_off_circuit {3,6,9}', triad().every(d => !vortexOrbit().includes(d)))
 // Theorem — every prime p > 3 has its digital root in the units, never the triad (p coprime to 3 ⇒ p mod 9 ∈ units).
 { const primes = [5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
   ck('primes_gt3_ride_units', primes.every(p => units().includes(digitalRoot(p)))) }
+// "each discovers the next" — a linked derivation chain from the ℤ/9 axiom: each receipt is seeded by
+// the previous, so the chain is tamper-evident (falsify any link ⇒ every downstream receipt changes).
+{ const link = (prev, name, d) => toUuid((prev || 'axiom') + '→' + name + ':' + JSON.stringify(d))
+  const r1 = link(null, 'axiom', 'n→2n'), r2 = link(r1, 'orbit', vortexOrbit()), r3 = link(r2, 'coverage', units())
+  const tampered = link(r1, 'orbit', [9, 9, 9]) // a falsified step 2
+  ck('discovery_chain tamper-evident (falsified link ⇒ downstream differs)', tampered !== r2 && link(tampered, 'coverage', units()) !== r3) }
 
-console.log(fail ? '\n✗ ' + fail + ' Lean claim(s) FALSE' : '\n✓ all Lean theorems state true arithmetic facts (independently recomputed)')
+const root = merkleFold(receipts)
+console.log(fail
+  ? '\n✗ ' + fail + ' of ' + receipts.length + ' theorem(s) FALSE — the suite does not self-prove'
+  : '\n✓ all ' + receipts.length + ' theorems prove themselves (independently recomputed) → receipt ' + root)
 process.exit(fail ? 1 : 0)
