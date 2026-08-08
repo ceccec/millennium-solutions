@@ -3788,5 +3788,10 @@
     "key": "coverage_grows_monotonically_with_the_ledger_but_reflects_the_sciences",
     "name": "coverage grows monotonically with the ledger, but reflects the sciences rather than advancing them: each theorem belongs to a family (a domain), and adding one never lowers the family count — so the deposit's cross-domain coverage of decidable facts grows monotonically as the ledger grows. Honest boundary: this reflects the known, decidable results of each domain; it does not advance or upgrade the sciences themselves, and the floor stays 0/7. Decidable",
     "receipt": "150eacc6-eb8f-808d-a4c0-2a781d3050e8"
+  },
+  {
+    "key": "the_deposit_is_open_prior_art_not_patents_defensive_publication_for_the_public",
+    "name": "the deposit is open prior art, not patents — defensive publication for the public: decidable mathematical facts are not patentable subject matter, and the deposit publishes them openly, timestamped and content-addressed, as defensive publication — the opposite of an exclusionary patent, keeping the facts free for the public. The two coins are the fair exchange to the developer under the non-commercial license, not a royalty from a monopoly. Integrity, not intellectual-property claims. Decidable",
+    "receipt": "a05dfc70-c75d-8ea7-8ec7-6de4d162f79a"
   }
 ]
