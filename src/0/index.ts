@@ -142,6 +142,30 @@ export function digitalRoot(n: number): number {
   return r === 0 ? 9 : r
 }
 
+// ── Canonical number-theory primitives — the algorithms the ledger's Euclid/Wilson/Carmichael
+// theorems are about, hoisted here so they are stated ONCE (a theorem computes; a copy drifts). ──
+
+/** Euclid's algorithm — the greatest common divisor. */
+export function gcd(a: number, b: number): number {
+  while (b) { const t = a % b; a = b; b = t }
+  return a
+}
+
+/** Primality by trial division up to √n — decidable, exact. */
+export function isPrime(n: number): boolean {
+  if (n < 2) return false
+  for (let d = 2; d * d <= n; d++) if (n % d === 0) return false
+  return true
+}
+
+/** Modular exponentiation bᵉ mod n by square-and-multiply. */
+export function modpow(b: number, e: number, n: number): number {
+  let r = 1
+  b %= n
+  while (e > 0) { if (e & 1) r = (r * b) % n; b = (b * b) % n; e >>= 1 }
+  return r
+}
+
 // ── Vortex primitives — DERIVED from a SINGLE axiom. The base of the ring is the one irreducible
 // constant; the residues [1..BASE], the units, the triad, the orbit and the a432 step all COMPUTE
 // from it — no residue list is ever typed as a literal. A constant states; a theorem computes.
