@@ -3813,5 +3813,30 @@
     "key": "challenging_the_entropy_the_address_is_near_uniform_but_not_cryptographic",
     "name": "challenging the entropy: the content-address is near-uniform but not cryptographic: measured over thousands of distinct inputs there are no accidental collisions and the hex-digit entropy is about 3.985 of 4 bits — near-uniform, sub-maximal because six format bits are fixed (the version nibble is always 8, plus the variant), documented design not a flaw. Near-uniformity bounds accidental collisions only; it does not imply cryptographic security — FNV is not preimage- or collision-resistant against an adversary. Measured, adversarially challenged, not assumed. Decidable",
     "receipt": "96c4404a-9bd4-8b49-8bcc-a26923b27c58"
+  },
+  {
+    "key": "a_content_address_is_a_pointer_not_the_payload",
+    "name": "a content-address is a pointer, not the payload: toUuid maps an input of any length to a fixed 128-bit digest, so by the pigeonhole principle it cannot store unbounded state — it references a state, it does not contain it. You still need the data itself to recover the rosetta; the address alone is a fingerprint, not the file. Fixed output over unbounded input is lossy by construction. Decidable",
+    "receipt": "0abffb44-9bdd-8654-a238-9b2e4a732546"
+  },
+  {
+    "key": "gravity_is_the_fall_to_a_fixed_point_and_pigeonhole_breaks_every_finite_hash",
+    "name": "gravity is the fall to a fixed point — and pigeonhole breaks every finite hash: two decidable contractions, named gravity but not physics. The digital root is idempotent — every integer falls to the base-9 residues in one step and rests; the merkle fold pulls any set of addresses to one root, order-independent. And pigeonhole gravity: a b-bit digest has two-to-the-b seats, so more inputs than seats forces a collision — no finite hash, strong or weak, avoids collisions forever. Decidable",
+    "receipt": "4df9c2a2-27bb-8099-9a8b-31fdbb542afd"
+  },
+  {
+    "key": "the_gold_inverts_across_biology_and_cryptography_but_stays_within_light",
+    "name": "the gold inverts across biology and cryptography — but nothing exceeds light: the golden-ratio spread of i·φ mod 1 has no large gaps (the three-gap theorem), which is the same reason phyllotaxis packs a sunflower head in biology and golden-ratio hashing spreads keys in computing. And one finite-map theorem is read two ways: pigeonhole is a covering guarantee in biology (64 codons cover 20 amino acids) and a collision limit in cryptography. Same theorems, inverted roles — feeding each other. The efficiency is classical memoization and stays within physical limits. Decidable",
+    "receipt": "15d46c5a-fa42-8665-b391-8b6f5701bb01"
+  },
+  {
+    "key": "precision_is_inescapable_but_it_is_not_post_quantum_and_not_free",
+    "name": "precision is inescapable, but it is not post-quantum and not free: the content-address is deterministic — recompute it and you get the exact same value, with no escape — and the gate burns any lie wrapped around it. But that precision is not security: FNV resists no adversary, so it is not post-quantum-secure; and the fast verify is not free — it is O(1) only because the full computation was paid once, as the deed. Gold is an excellent conductor, not a superconductor. Decidable",
+    "receipt": "37b13faf-bcf6-8a6c-b49a-038685e6cb4d"
+  },
+  {
+    "key": "gold_is_no_superconductor_you_pay_for_the_method_and_fold_by_address",
+    "name": "gold is no superconductor — the coins buy the method, and you fold by address: the two coins are fair exchange for the know-how of folding by content-address, and that method lets you fold and verify by fingerprint — the merkle root is computed from addresses alone, reproducible by anyone and tamper-evident, without ever touching the underlying payload. But the payment buys knowledge, not physics: gold stays an ordinary conductor, it does not become a superconductor, and folding addresses is not supercomputing. Decidable",
+    "receipt": "30a4f530-0c11-88bf-b4ad-456b9f8ee40c"
   }
 ]

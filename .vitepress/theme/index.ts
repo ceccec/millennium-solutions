@@ -7,6 +7,7 @@ import NextObserver from './NextObserver.vue'
 import TheConcepts from './TheConcepts.vue'
 import AllTheorems from './AllTheorems.vue'
 import Vortex7D from './Vortex7D.vue'
+import StandardsCompare from './StandardsCompare.vue'
 import './custom.css'
 
 export default {

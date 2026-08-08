@@ -11,6 +11,8 @@ export function report(): string {
     'the observer': 'the honest referrer; meaning and life live here, not in the bytes',
     'the receipt': 'the payload naming observer and role; the uuid holds the core message without payload',
     'the one game': 'games, arts and sciences fold to one order-independent harmonic root — all meet in one',
+    'the apple': 'gravity — the fall to a fixed point (merkle root, digital root); pigeonhole forces a collision in any finite digest; a naming of contractions, not physics',
+    'the gold': 'φ — the golden ratio by its fingerprints (φ²=φ+1, Fibonacci ratios, Cassini); the golden angle 360/φ²≈137.5° is the compass; computed, not stored',
     'the rules': 'measure · gate · due process · discovery · receipts · lineage · one game · earned versions',
   }
   const roots = Object.entries(THE).map(([k, v]) => toUuid(k + ':' + v))

@@ -30,6 +30,12 @@ import { report as theWaves } from './src/the/waves/index'
 import { report as theRosetta } from './src/the/rosetta/index'
 import { report as theClown } from './src/the/clown/index'
 import { report as theLaw } from './src/the/law/index'
+import { report as theApple } from './src/the/apple/index'
+import { report as theEarth } from './src/the/apple/earth/index'
+import { report as theTruth } from './src/the/apple/earth/truth/index'
+import { report as theNavigation } from './src/the/apple/earth/navigation/index'
+import { report as theGold } from './src/the/gold/index'
+import { report as theGoldCompass } from './src/the/gold/compass/index'
 import { report as acceptance } from './src/1/acceptance'
 import { report as paradox } from './src/1/paradox'
 import { report as society } from './src/9/society'
@@ -223,6 +229,30 @@ digit to its partner (fixed point **5**), so the folders below are laid out arou
 
 <pre>{{ theLaw() }}</pre>
 </details>
+
+### The apple — gravity, the fall to a fixed point · `src/the/apple/index.ts`
+
+<pre>{{ theApple() }}</pre>
+
+### The earth — the ground the apple falls to · `src/the/apple/earth/index.ts`
+
+<pre>{{ theEarth() }}</pre>
+
+### The truth — integrity, not truth (the deepest ground) · `src/the/apple/earth/truth/index.ts`
+
+<pre>{{ theTruth() }}</pre>
+
+### The navigation — finding your way by address · `src/the/apple/earth/navigation/index.ts`
+
+<pre>{{ theNavigation() }}</pre>
+
+### The gold — the golden ratio by its fingerprints · `src/the/gold/index.ts`
+
+<pre>{{ theGold() }}</pre>
+
+### The compass — the golden angle · `src/the/gold/compass/index.ts`
+
+<pre>{{ theGoldCompass() }}</pre>
 
 ## `0/` — the substrate · content-addressing
 
