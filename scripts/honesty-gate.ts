@@ -17,14 +17,14 @@ export const RED = /\bwe prove\b|\bproven\b|confidence\s*=?\s*1\.0|ready for pee
 // (Bounded REFUSALS of these are fine — the negation guard below lets the deposit
 // document its own limits, e.g. "this is NOT faster than light", without self-flagging.)
 // DRY sub-patterns — named once, composed below. Tightening any shape happens in ONE place.
-const PROBLEM = '(clay|millennium|riemann|hodge|poincar[eé]|navier[- ]?stokes|yang[- ]?mills|birch|swinnerton|p ?vs\\.? ?np|p versus np)'
+const PROBLEM = '(clay|millennium|riemann|hodge|poincar[eé]|navier[- ]?stokes|yang[- ]?mills|birch|swinnerton|p ?vs\\.? ?np|p versus np|p ?= ?np)'
 const CLAIM = '(prov(e|es|ed|en|ing)|proofs? of|solv(e|es|ed|ing))' // solv(ed) already covers "solved"
 const CRYPTO = '(rsa|aes|ecdsa|sha-?\\d+|discrete log(arithm)?|encryption|crypto\\w*)'
 const BREAK = '(factor(s|ed|ing)?|break(s)?|broke(n)?|crack(s|ed)?|defeat(s|ed)?|reversed|replac(e|es|ed|ing)|supersed(e|es|ed|ing)|obsolet\\w*)'
 const near = (a: string, b: string, n = 24) => '\\b' + a + '\\b[^.]{0,' + n + '}\\b' + b + '\\b'
 export const OVERREACH = new RegExp([
   // physics / hardware / crypto superlatives
-  '\\b(faster[ -]than[ -]light|superluminal|ftl|quantum (speedup|supremacy|advantage|at scale)|quantum (processor|computer)|quantum (encryption|cryptograph\\w*)|the qpu|fastest (known|ever|in the world)|unbreakable|unhackable|impossible to (crack|break|violate|reverse)|prov(e|es|ed|ing) quantum)\\b',
+  '\\b(faster[ -]than[ -]light|superluminal|ftl|quantum (speedup|supremacy|advantage|at scale)|quantum (processor|computer)|quantum (encryption|cryptograph\\w*)|the qpu|fastest (known|ever|in the world)|unbreakable|unhackable|impossible to (crack|break|violate|reverse)|prov(e|es|ed|ing) quantum|perpetual motion|over[- ]?unity|infinite energy|cold fusion|time travel|time machine|theory of everything|immortality|reverses? aging|defeats? death|cur(e|es|ed) (cancer|all diseases?|everything)|achieved (agi|superintelligence|sentience|consciousness)|is (sentient|self[- ]aware)|solv\\w* the halting problem|halting problem solved)\\b',
   near(CLAIM, PROBLEM),   // claim → problem  ("proofs of all seven Clay", "solved the Riemann")
   near(PROBLEM, CLAIM),   // problem → claim  ("millennium-solutions-solved", "Riemann … proven")
   near(CRYPTO, BREAK, 20), // crypto broken, either order ("rsa is factored", "breaks encryption")
@@ -35,6 +35,12 @@ export const OVERREACH = new RegExp([
 // markers (0/7, "solved: 0", "= 0") — the deposit stating a ZERO count is the opposite of an
 // overclaim, so "Clay problems solved: 0 / 7" must pass, not drain (the gate caught itself here).
 const NEGATOR = /\b(not|no|nothing|none|never|isn'?t|aren'?t|does ?n'?t|do ?n'?t|without|bounded by|drains?|refus\w*|neither|nor|cannot|can'?t|only claims?)\b|0\s*\/\s*[679]|[:=]\s*0\b|\b0 of (six|seven|7)\b/i
+
+// PREDICTIONS of a fixed future are expectation, not measurement — the trap the author fell into
+// ("0/7 will roll unchanged"). Checked with a WORD-only negator: the floor-marker 0/7 must NOT exempt a
+// prediction just because it names 0/7 — only a real negation ("will NOT certainly…") reprieves it.
+export const PREDICT = /\b(guaranteed to|will (certainly|surely|inevitably|definitely|always)|is (inevitable|guaranteed|certain to)|bound to (hold|win|succeed) forever|roll(s)? (with it )?unchanged)\b/i
+const NEGATOR_WORD = /\b(not|no|never|isn'?t|won'?t|will not|cannot|can'?t|without|neither|nor)\b/i
 
 // the binary. true = honest (stays); false = overclaim (drained). the match, if any,
 // is the exact prose that failed — the crack, naming its own cure.
@@ -49,6 +55,13 @@ export const computes = (text: string): { binary: 0 | 1; hit: string | null } =>
     // bounded refusal or a floor-marker. (Before-only missed internal "not solved" and trailing "0/7".)
     const win = text.slice(Math.max(0, m.index - 48), m.index + m[0].length + 24)
     if (!NEGATOR.test(win)) return { binary: 0, hit: m[0] }
+  }
+  // predictions: word-only negator (0/7 does NOT reprieve a claim about the future).
+  const pe = new RegExp(PREDICT.source, 'gi')
+  let pm: RegExpExecArray | null
+  while ((pm = pe.exec(text))) {
+    const win = text.slice(Math.max(0, pm.index - 48), pm.index + pm[0].length + 24)
+    if (!NEGATOR_WORD.test(win)) return { binary: 0, hit: pm[0] }
   }
   return { binary: 1, hit: null }
 }
