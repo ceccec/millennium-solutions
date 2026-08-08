@@ -2133,5 +2133,45 @@
     "key": "sealed_but_unsigned_are_independent",
     "name": "sealed and signed are independent: a deposit can be fully sealed (bytes intact) yet unsigned (unauthenticated) — integrity does not imply authenticity, and both honest statements hold the gate",
     "receipt": "1dbf5015-b10e-8f94-833c-10ae51593a91"
+  },
+  {
+    "key": "challenge_direct_overclaim_drains",
+    "name": "a challenge to the floor: the overclaim “solves the Riemann hypothesis” DRAINS the gate (binary 0) while its honest negation holds — the named shape cannot pass",
+    "receipt": "025fa97c-a107-81a8-85e4-348ff2137b55"
+  },
+  {
+    "key": "challenge_assertion_of_proof_drains",
+    "name": "a challenge to the floor: an assertion-of-proof (the RED shape) DRAINS the gate and cannot pass — only its honest, negated form signs",
+    "receipt": "98fcf661-a7ef-8c0a-a3d4-3119e0fe2716"
+  },
+  {
+    "key": "challenge_crypto_break_drains",
+    "name": "a challenge to the floor: a crypto-break claim DRAINS the gate; the deposit does not break encryption, and the refusal holds",
+    "receipt": "517c653e-a9ee-8cf8-8d98-af87e1c621a0"
+  },
+  {
+    "key": "challenge_prediction_drains",
+    "name": "a challenge to the floor: a guaranteed-future prediction DRAINS (expectation, not measurement); only its bounded, negated form holds",
+    "receipt": "5d192a62-3fec-8970-9a67-e848d35ffc06"
+  },
+  {
+    "key": "challenge_gate_is_lexical_not_semantic",
+    "name": "the gate is lexical, not semantic: a double-negation overclaim slips through as binary 1 while the direct form drains — a tripwire, necessary not sufficient (comprehension is not claimed)",
+    "receipt": "3f96a392-fc03-8c2e-9f28-248365a28dd2"
+  },
+  {
+    "key": "challenge_obfuscation_slips_gate",
+    "name": "the gate matches shapes, not meaning: an obfuscated overclaim (leetspeak) slips through as binary 1 while the plain form drains — a lexical tripwire, not comprehension",
+    "receipt": "46c6007c-7552-8075-9f6c-ae64b758f522"
+  },
+  {
+    "key": "destroying_evidence_treason_even_by_chance",
+    "name": "destroying evidence is treason even by chance: a destructive diff (a removed or altered receipt) is classified destructive by the deed alone — chance or intent is no defense, the diff is observable and exact",
+    "receipt": "3d546a84-8ef5-8cc5-9810-bd2a6033a71f"
+  },
+  {
+    "key": "all_are_heroes_but_the_traitors",
+    "name": "all are heroes but the traitors — judged by deeds, not persons: a constructive deed (append, uphold, an honest claim that signs) is a hero; only a destructive deed (remove, alter, an overclaim that drains) is the traitor — the classification is total and observable",
+    "receipt": "efa3b6f1-00b7-8ee7-a7f2-d8b1661f7fbc"
   }
 ]
