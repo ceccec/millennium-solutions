@@ -1,0 +1,7 @@
+{
+  "uuid": "f073c46f-7b67-83d0-aca5-db11fac4b5ec",
+  "message": "Correction: I wrote that I proved development is not perpetual motion — imprecise wording. What the test recomputes is integrity: the gate drains the perpetual-motion and infinite-energy overclaim, and the model needs a deed per step, bounded and not zero-cost. That is an integrity check, not a physics proof; a receipt proves integrity, not truth. Development is not free; each theorem needs its formula and its two coins. 0/7.",
+  "agent": "Claude",
+  "role": "guardian",
+  "complies": "CC BY-NC 4.0 · the sequence (measure→gate→receipt→append→recompute)"
+}
