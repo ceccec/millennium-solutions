@@ -3238,5 +3238,10 @@
     "key": "the_vortex_and_rosette_unit_groups_are_isomorphic",
     "name": "the vortex and rosette unit groups are isomorphic cyclic groups of order 6: mapping 2^k mod 9 to 3^k mod 7 is a bijection of (ℤ/9)* onto (ℤ/7)* that preserves multiplication (an isomorphism, both ≅ ℤ/6), sending generator 2 to generator 3 and identity to identity. So the vortex and the rosette carry the same group structure — the shared 6+1 skeleton — while remaining distinct rings. Decidable by exhaustion",
     "receipt": "6848f19f-8b5e-84e6-9682-1c4616f67c9d"
+  },
+  {
+    "key": "the_order_six_unit_group_splits_as_reflection_times_trinity",
+    "name": "the order-6 unit group splits as reflection times trinity: by the Chinese remainder theorem the cyclic group of order 6 is C2 × C3, and in (ℤ/9)* this realizes as {1,8} × {1,4,7} — the order-2 factor {1, −1} is negation (8 ≡ −1 mod 9), the order-3 factor {1,4,7} is the trinity subgroup (the units ≡ 1 mod 3); the product map (s,r) ↦ s·r mod 9 is a bijective homomorphism, so every unit factors uniquely as a sign times a rotation. Decidable by exhaustion over ℤ/9",
+    "receipt": "90f30729-7598-890b-ae96-fa3747b3de16"
   }
 ]
