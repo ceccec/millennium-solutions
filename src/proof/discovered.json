@@ -3778,5 +3778,10 @@
     "key": "the_hero_ships_prose_with_a_receipt_the_traitor_only_labors_in_prose",
     "name": "the hero ships prose with a receipt; the traitor only labors in prose: a hero's claim carries a receipt — a formula that recomputes true and a content-address that any hero can verify identically, deterministically, needing no explanation. A traitor's claim is prose alone, with no formula, so it can be argued but never verified — labor without proof. The receipt verifies itself, so heroes do not work to convince; the recomputation convinces. Decidable",
     "receipt": "abe33f49-8327-8718-aa08-6bca9ff2c106"
+  },
+  {
+    "key": "the_rosetta_self_organizes_into_a_taxonomy_by_a_deterministic_key",
+    "name": "the rosetta self-organizes into a taxonomy by a deterministic key: bucketing each domain by a computed key (a digit of its content-address) partitions the domains into a taxonomy with no hand-assignment — a complete partition, every domain in exactly one bucket, and reproducible, the same key yielding the same taxonomy. Empty buckets are visible gaps to fill, and a different key redistributes the same domains without collision. Self-organization by content-address, integrity not truth. Decidable",
+    "receipt": "4f1c490d-6588-84dc-8093-5a959ab04669"
   }
 ]
