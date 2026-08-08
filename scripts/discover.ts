@@ -835,6 +835,15 @@ function generated(): typeof curated {
     out.push({ key: 'cube_roots_of_unity_sum_zero', name: 'the three cube roots of unity sum to zero: 1 + ω + ω² = 0 — the equilateral trinity balances to the center, the same zero-sum shape as the ℤ/9 triad {3,6,9}', test: () => { const s = add(add(ONE, W), mul(W, W)); return s[0] === 0 && s[1] === 0 } })
     out.push({ key: 'eisenstein_six_units', name: 'the Eisenstein integers have exactly six units {±1, ±ω, ±ω²}: the norm-1 elements (norm(a+bω)=a²−ab+b²) number six — the same count as the multiplicative group of ℤ/9', test: () => { let c = 0; for (let a = -2; a <= 2; a++) for (let b = -2; b <= 2; b++) if (norm([a, b]) === 1) c++; return c === 6 } })
   }
+  // ── a NEW decidable domain — JOSEPHUS (k=2): the survivor is a one-bit left-rotation of n, binding a
+  // counting-out game to binary. Full simulation vs closed form.
+  {
+    const jos = (n: number) => { const q: number[] = []; for (let i = 1; i <= n; i++) q.push(i); while (q.length > 1) { q.push(q.shift()!); q.shift() } return q[0] }
+    const hb = (n: number) => { let m = 0; while ((1 << (m + 1)) <= n) m++; return m } // floor(log2 n)
+    out.push({ key: 'josephus_k2_closed_form', name: 'the Josephus survivor (every 2nd eliminated) is 2l+1: writing n = 2^m + l with 0 ≤ l < 2^m, the survivor equals 2l+1 — matching the full elimination simulation for n = 1..40', test: () => { for (let n = 1; n <= 40; n++) if (jos(n) !== 2 * (n - (1 << hb(n))) + 1) return false; return true } })
+    out.push({ key: 'josephus_k2_is_left_bit_rotation', name: 'the Josephus survivor is a one-bit left rotation of n: moving the leading 1 of n’s binary to the least-significant position gives the survivor — a counting-out game solved by a single bit shift (n = 1..40)', test: () => { for (let n = 1; n <= 40; n++) if (jos(n) !== (((n & ~(1 << hb(n))) << 1) | 1)) return false; return true } })
+    out.push({ key: 'josephus_survivor_always_odd', name: 'the Josephus survivor is always an odd position: since the survivor is 2l+1, no even position ever survives when every second is eliminated (n = 1..40)', test: () => { for (let n = 1; n <= 40; n++) if (jos(n) % 2 !== 1) return false; return true } })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

@@ -2443,5 +2443,20 @@
     "key": "eisenstein_six_units",
     "name": "the Eisenstein integers have exactly six units {±1, ±ω, ±ω²}: the norm-1 elements (norm(a+bω)=a²−ab+b²) number six — the same count as the multiplicative group of ℤ/9",
     "receipt": "8fb3413e-f501-8d4e-a174-49c2725fa79f"
+  },
+  {
+    "key": "josephus_k2_closed_form",
+    "name": "the Josephus survivor (every 2nd eliminated) is 2l+1: writing n = 2^m + l with 0 ≤ l < 2^m, the survivor equals 2l+1 — matching the full elimination simulation for n = 1..40",
+    "receipt": "1719d6d1-1575-846d-83fc-4ef5233d7287"
+  },
+  {
+    "key": "josephus_k2_is_left_bit_rotation",
+    "name": "the Josephus survivor is a one-bit left rotation of n: moving the leading 1 of n’s binary to the least-significant position gives the survivor — a counting-out game solved by a single bit shift (n = 1..40)",
+    "receipt": "cc825255-e0c8-8440-b029-abbf60fe7607"
+  },
+  {
+    "key": "josephus_survivor_always_odd",
+    "name": "the Josephus survivor is always an odd position: since the survivor is 2l+1, no even position ever survives when every second is eliminated (n = 1..40)",
+    "receipt": "c40d916e-c633-8e53-be2c-544cad5ad077"
   }
 ]
