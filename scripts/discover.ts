@@ -6,7 +6,7 @@
 // exhaustion over a finite domain — genuinely true, genuinely found. It reaches none of the SIX open
 // Millennium conjectures; the seventh (Poincaré) is Perelman's proof (2003), not the deposit's.
 // Two counts, kept distinct: humanity 1/7; this deposit 0/7.
-import { toUuid, merkleFold, units, triad, digitalRoot, digits, BASE } from '../src/0/index.ts'
+import { toUuid, merkleFold, units, triad, digitalRoot, digits, BASE, A432_STEP } from '../src/0/index.ts'
 import { computes } from './honesty-gate.ts'
 const m9 = (n: number) => ((n % BASE) + BASE) % BASE
 const U = units()
@@ -154,6 +154,13 @@ function generated(): typeof curated {
   out.push({ key: 'merkaba_axis_closed', name: 'the axis {3,6,9} is closed under doubling (the merkaba spindle)', test: () => dbl(cls(0)).every((d) => cls(0).includes(d)) })
   out.push({ key: 'merkaba_cube_q3', name: 'two tetrahedra = the cube Q₃: 2³ = 8 vertices, 3·2² = 12 edges', test: () => 2 ** 3 === 8 && 3 * 2 ** 2 === 12 })
   out.push({ key: 'merkaba_field_max_null', name: 'the merkaba field f(θ)=(1+cosθ)/2: co-rotating(0)→1 MAX, counter-rotating(π)→0 NULL', test: () => (1 + 1) / 2 === 1 && (1 + (-1)) / 2 === 0 })
+  // NEW DOMAIN — coverage by motion: when the merkaba moves, it covers the surfaces stillness leaves
+  // uncovered. One tetrahedron reaches only its 3 residues; its counter-rotating partner reaches the
+  // other 3 — moving, the pair covers all 6 units with no gap. Rotation by the a432 step visits every
+  // angular position. Motion completes coverage. Finite → complete.
+  out.push({ key: 'cover_one_tetra_partial', name: 'still: one tetrahedron {1,4,7} covers only 3 of the 6 units — 3 remain uncovered', test: () => cls(1).length === 3 && units().filter((u) => !cls(1).includes(u)).length === 3 })
+  out.push({ key: 'cover_moving_pair_full', name: 'moving: the counter-rotating pair {1,4,7}∪{2,5,8} covers every uncovered unit — all 6, no gap', test: () => [...cls(1), ...cls(2)].sort((a, b) => a - b).join(',') === units().join(',') })
+  out.push({ key: 'cover_rotation_full_circle', name: 'rotation by the a432 step (40°) visits all 9 angular positions — the full circle, no gap', test: () => new Set(digits().map((d) => (d * A432_STEP) % 360)).size === BASE })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

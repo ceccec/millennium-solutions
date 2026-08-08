@@ -623,5 +623,20 @@
     "key": "merkaba_field_max_null",
     "name": "the merkaba field f(θ)=(1+cosθ)/2: co-rotating(0)→1 MAX, counter-rotating(π)→0 NULL",
     "receipt": "a9c3214f-3ec7-8f8d-ac3e-e54c57582604"
+  },
+  {
+    "key": "cover_one_tetra_partial",
+    "name": "still: one tetrahedron {1,4,7} covers only 3 of the 6 units — 3 remain uncovered",
+    "receipt": "8c7bcc8a-1869-80a4-950f-d110f58f4117"
+  },
+  {
+    "key": "cover_moving_pair_full",
+    "name": "moving: the counter-rotating pair {1,4,7}∪{2,5,8} covers every uncovered unit — all 6, no gap",
+    "receipt": "22b9e194-9be5-8483-afba-d22ed1dcf3ab"
+  },
+  {
+    "key": "cover_rotation_full_circle",
+    "name": "rotation by the a432 step (40°) visits all 9 angular positions — the full circle, no gap",
+    "receipt": "4a44551c-2cff-84bd-a62f-4d2940d3179e"
   }
 ]
