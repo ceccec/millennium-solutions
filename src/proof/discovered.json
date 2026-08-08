@@ -1448,5 +1448,30 @@
     "key": "relation_eight",
     "name": "8 RELATES the octave · the cube Q₃ (2³) · the chessboard (8×8) · the Fibonacci minor",
     "receipt": "c3a6a141-363b-88ee-b0d6-99ffe3631bfc"
+  },
+  {
+    "key": "catalan_numbers",
+    "name": "Catalan numbers via C(2n,n)/(n+1): C(0..5) = 1,1,2,5,14,42",
+    "receipt": "44a9184c-5ae2-8e3a-8642-f038753708fb"
+  },
+  {
+    "key": "catalan_recurrence",
+    "name": "the Catalan recurrence C(n+1)=Σ C(i)C(n−i) matches the closed form (n≤6)",
+    "receipt": "daaa1391-e9e9-8946-8dc1-f5c6191e4946"
+  },
+  {
+    "key": "relation_catalan",
+    "name": "Catalan RELATES Dyck paths · binary trees · the pentagon (C(3)=5) — one count across many shapes",
+    "receipt": "49db58c0-5101-867c-865a-ac89d9fb6ddb"
+  },
+  {
+    "key": "totient_divisor_sum",
+    "name": "Gauss divisor sum: Σ_{d|n} φ(d) = n (all n≤12)",
+    "receipt": "48628d5b-053e-83ba-a347-390169bd53b2"
+  },
+  {
+    "key": "mobius_divisor_sum",
+    "name": "Möbius divisor sum: Σ_{d|n} μ(d) = [n=1] (all n≤12)",
+    "receipt": "6bcdf028-94aa-8371-a659-0d34861101a4"
   }
 ]

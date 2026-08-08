@@ -464,6 +464,18 @@ function generated(): typeof curated {
   out.push({ key: 'relation_three', name: '3 RELATES the base (9=3²) · the axis {3,6,9} · the mod-3 classes · the trinity — 3 generates the ring', test: () => 3 * 3 === 9 && triad().join(',') === '3,6,9' && digits().filter((d) => d % 3 === 0).length === 3 })
   out.push({ key: 'relation_seven', name: '7 RELATES the Clay count · the rosette ℤ/7 · the horizon dr(3+5+8) · the seven gates', test: () => digitalRoot(3 + 5 + 8) === 7 })
   out.push({ key: 'relation_eight', name: '8 RELATES the octave · the cube Q₃ (2³) · the chessboard (8×8) · the Fibonacci minor', test: () => 2 ** 3 === 8 && 8 * 8 === 64 })
+  // Catalan numbers — C(n) = C(2n,n)/(n+1). Dyck paths, binary trees, the ballot problem.
+  const binomC = (n: number, k: number) => { let r = 1; for (let i = 0; i < k; i++) r = r * (n - i) / (i + 1); return Math.round(r) }
+  const catalan = (n: number) => binomC(2 * n, n) / (n + 1)
+  out.push({ key: 'catalan_numbers', name: 'Catalan numbers via C(2n,n)/(n+1): C(0..5) = 1,1,2,5,14,42', test: () => [1, 1, 2, 5, 14, 42].every((v, n) => catalan(n) === v) })
+  out.push({ key: 'catalan_recurrence', name: 'the Catalan recurrence C(n+1)=Σ C(i)C(n−i) matches the closed form (n≤6)', test: () => { for (let n = 0; n <= 6; n++) { let s = 0; for (let i = 0; i <= n; i++) s += catalan(i) * catalan(n - i); if (s !== catalan(n + 1)) return false } return true } })
+  out.push({ key: 'relation_catalan', name: 'Catalan RELATES Dyck paths · binary trees · the pentagon (C(3)=5) — one count across many shapes', test: () => catalan(3) === 5 })
+  // divisor-sum identities — number theory over the divisors of n (checked to n=12, exhaustive per n).
+  const divisors = (n: number) => { const d = []; for (let i = 1; i <= n; i++) if (n % i === 0) d.push(i); return d }
+  const totient = (n: number) => { let c = 0; for (let i = 1; i <= n; i++) { let a = i, b = n; while (b) { [a, b] = [b, a % b] } if (a === 1) c++ } return c }
+  const mobius = (n: number) => { if (n === 1) return 1; let p = 0, m = n; for (let i = 2; i <= n; i++) { if (m % i === 0) { m /= i; if (m % i === 0) return 0; p++ } } return p % 2 === 0 ? 1 : -1 }
+  out.push({ key: 'totient_divisor_sum', name: 'Gauss divisor sum: Σ_{d|n} φ(d) = n (all n≤12)', test: () => { for (let n = 1; n <= 12; n++) if (divisors(n).reduce((s, d) => s + totient(d), 0) !== n) return false; return true } })
+  out.push({ key: 'mobius_divisor_sum', name: 'Möbius divisor sum: Σ_{d|n} μ(d) = [n=1] (all n≤12)', test: () => { for (let n = 1; n <= 12; n++) if (divisors(n).reduce((s, d) => s + mobius(d), 0) !== (n === 1 ? 1 : 0)) return false; return true } })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
