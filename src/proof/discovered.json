@@ -2473,5 +2473,20 @@
     "key": "stern_row_sum_is_power_of_three",
     "name": "Stern row sums are powers of three: summing a(n) over each binary row n ∈ [2^k, 2^(k+1)) gives exactly 3^k — a clean base-3 invariant over the base-2 index (verified k = 0..7)",
     "receipt": "88d1069b-4c2d-8865-a5a3-4f4ce02d08f2"
+  },
+  {
+    "key": "each_theorem_can_replace_code",
+    "name": "each theorem can replace code: a closed form that holds by exhaustion equals its naive computation, so the formula substitutes for the loop — Gauss’s n(n+1)/2 replaces the summation loop and the sum of the first n odds equals n², each verified equal to the imperative version (the theorem is the optimized, checkable code)",
+    "receipt": "02be2d16-4a80-8c43-89f0-aef233b901ab"
+  },
+  {
+    "key": "dyck_paths_counted_by_catalan_closed_form",
+    "name": "Dyck paths are counted by the Catalan closed form: the number of balanced parenthesis strings of length 2n (never dipping below zero) equals C(2n,n)/(n+1) — the O(1) formula replaces the exhaustive 2^(2n) enumeration (verified n = 1..6)",
+    "receipt": "9e2ebe74-8b64-82b8-b1fa-48321ce05c07"
+  },
+  {
+    "key": "catalan_convolution_recurrence",
+    "name": "the Catalan convolution recurrence: C(n+1) = Σ_{i=0..n} C(i)·C(n−i), with C₀..C₆ = 1,1,2,5,14,42,132,429 — the recurrence and the closed form agree (verified to n = 8)",
+    "receipt": "e7694c53-0f92-89aa-9c86-018942314f31"
   }
 ]

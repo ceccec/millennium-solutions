@@ -853,6 +853,18 @@ function generated(): typeof curated {
     out.push({ key: 'calkin_wilf_enumerates_rationals_once', name: 'the Calkin–Wilf sequence lists every positive rational exactly once: the ratios a(n)/a(n+1) are pairwise distinct and reduced — no positive rational repeats (verified for n = 1..150)', test: () => { const seen = new Set<string>(); for (let n = 1; n <= 150; n++) { if (gc(A[n], A[n + 1]) !== 1) return false; const key = A[n] + '/' + A[n + 1]; if (seen.has(key)) return false; seen.add(key) } return seen.size === 150 } })
     out.push({ key: 'stern_row_sum_is_power_of_three', name: 'Stern row sums are powers of three: summing a(n) over each binary row n ∈ [2^k, 2^(k+1)) gives exactly 3^k — a clean base-3 invariant over the base-2 index (verified k = 0..7)', test: () => { for (let k = 0; k <= 7; k++) { let s = 0; for (let n = 1 << k; n < (1 << (k + 1)); n++) s += A[n]; if (s !== 3 ** k) return false } return true } })
   }
+  // each theorem can replace code: a proven closed form equals its naive computation, so the formula
+  // substitutes for the loop — and the test IS the checkable code that certifies the substitution.
+  out.push({ key: 'each_theorem_can_replace_code', name: 'each theorem can replace code: a closed form that holds by exhaustion equals its naive computation, so the formula substitutes for the loop — Gauss’s n(n+1)/2 replaces the summation loop and the sum of the first n odds equals n², each verified equal to the imperative version (the theorem is the optimized, checkable code)', test: () => { for (let n = 1; n <= 50; n++) { let s = 0; for (let i = 1; i <= n; i++) s += i; if (s !== n * (n + 1) / 2) return false; let o = 0; for (let i = 0; i < n; i++) o += 2 * i + 1; if (o !== n * n) return false } return true } })
+  // ── a NEW decidable domain — CATALAN / DYCK PATHS: the closed form C(2n,n)/(n+1) replaces the
+  // exhaustive count of balanced strings — the theorem-replaces-code principle, demonstrated.
+  {
+    const binom = (n: number, k: number) => { let r = 1; for (let i = 0; i < k; i++) r = r * (n - i) / (i + 1); return Math.round(r) }
+    const catalan = (n: number) => binom(2 * n, n) / (n + 1)
+    const countBalanced = (n: number) => { let c = 0; const L = 2 * n; for (let m = 0; m < (1 << L); m++) { let bal = 0, ok = true; for (let i = 0; i < L; i++) { bal += ((m >> i) & 1) ? -1 : 1; if (bal < 0) { ok = false; break } } if (ok && bal === 0) c++ } return c }
+    out.push({ key: 'dyck_paths_counted_by_catalan_closed_form', name: 'Dyck paths are counted by the Catalan closed form: the number of balanced parenthesis strings of length 2n (never dipping below zero) equals C(2n,n)/(n+1) — the O(1) formula replaces the exhaustive 2^(2n) enumeration (verified n = 1..6)', test: () => { for (let n = 1; n <= 6; n++) if (countBalanced(n) !== catalan(n)) return false; return true } })
+    out.push({ key: 'catalan_convolution_recurrence', name: 'the Catalan convolution recurrence: C(n+1) = Σ_{i=0..n} C(i)·C(n−i), with C₀..C₆ = 1,1,2,5,14,42,132,429 — the recurrence and the closed form agree (verified to n = 8)', test: () => { const cat = (n: number) => catalan(n); for (let n = 0; n <= 8; n++) { let s = 0; for (let i = 0; i <= n; i++) s += cat(i) * cat(n - i); if (s !== cat(n + 1)) return false } return cat(6) === 132 } })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
