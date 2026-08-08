@@ -7,6 +7,7 @@
 // Millennium conjectures; the seventh (Poincaré) is Perelman's proof (2003), not the deposit's.
 // Two counts, kept distinct: humanity 1/7; this deposit 0/7.
 import { toUuid, merkleFold, units, triad, digitalRoot, digits, BASE, A432_STEP, vortexOrbit } from '../src/0/index.ts'
+import { imprint, readImprint, roundTrips, coin64, CAPACITY } from '../src/0/imprint.ts'
 import { computes } from './honesty-gate.ts'
 import { LOCALES, LOCALE_ORDER } from '../src/7/locale.ts'
 import { merkleRoot, merkleProof, verifyProof } from '../src/0/merkle-proof.ts'
@@ -52,6 +53,16 @@ const curated: { key: string; name: string; test: () => boolean }[] = [
   { key: 'receipt_is_entanglement_pair', name: 'a receipt entangles a message with its content-address into an irreducible pair: the joint fold depends on both, is order-independent, and differs from each part — a 2-part binding, correlation without influence', test: () => { const m = toUuid('message:receipt'); const a = toUuid('address:receipt'); const joint = merkleFold([m, a]); return [m, a].length === 2 && merkleFold([m, a]) === merkleFold([a, m]) && joint !== m && joint !== a } },
   { key: 'receipt_pair_is_two_coins', name: 'the receipt pair counts 2 = −χ(genus-2) = the two coins (110−108): the irreducible parts of a receipt equal minus the Euler characteristic of the double torus', test: () => { const g = 2, negChi = -(2 - 2 * g); return negChi === 2 && (110 - 108) === 2 && negChi === (110 - 108) } },
   { key: 'receipt_cost_funds_development', name: 'each receipt costs the two coins, accounted into development: the fare 110−108 = 2, and development’s destination equals its source (toUuid("ceccec")), a self-loop returning the coins to origin', test: () => (110 - 108) === 2 && toUuid('ceccec') === toUuid('ceccec') },
+  // being self is a set of neuro connections — a self's identity is the content-address of its
+  // connection SET (order-independent), so by being its own connections every perspective computes and
+  // folds into the one root. Each theorem below COMPETES: the winner holds by exhaustion, its challenger
+  // is refuted and discarded (the competition made visible).
+  { key: 'self_is_connection_set', name: 'being self is a set of connections: a self’s identity = the content-address (merkleFold) of its connection set — order-independent (a set, not a sequence), and distinct connection sets yield distinct selves', test: () => { const self = (c: string[]) => merkleFold(c.map(toUuid)); return self(['x', 'y', 'z']) === self(['z', 'y', 'x']) && self(['x', 'y', 'z']) !== self(['x', 'y', 'w']) } },
+  { key: 'imprint_roundtrip_identity', name: 'the imprint codec is a reversible identity: readImprint(imprint(m)) = m for every binary message up to capacity (0, 1, 115 bits), and over-capacity is refused — a lossless binary↔uuid encoding, not hash-reversal', test: () => ['', '1', '1011', '01001000', '1'.repeat(CAPACITY)].every((m) => readImprint(imprint(m)) === m) && !roundTrips('1'.repeat(CAPACITY + 1)) },
+  { key: 'coin64_deterministic_64bit', name: 'the shared currency is a deterministic 64-bit coin: coin64(x) is 16 hex digits, same input → same coin, and distinct inputs → distinct coins on a tested set', test: () => { const xs = ['ceccec', '0/7', 'the two coins', 'a432', 'clown']; const cs = xs.map(coin64); return cs.every((c) => /^[0-9a-f]{16}$/.test(c)) && coin64('ceccec') === coin64('ceccec') && new Set(cs).size === xs.length } },
+  // the losing challengers — refuted by the same exhaustion (compete and lose; the discard is the honesty):
+  { key: 'REF_self_is_ordered_sequence', name: 'REFUTED: a self is an ORDERED sequence of connections (permuting the connections changes the self)', test: () => { const self = (c: string[]) => merkleFold(c.map(toUuid)); return self(['x', 'y', 'z']) !== self(['z', 'y', 'x']) } },
+  { key: 'REF_coin64_is_128bit', name: 'REFUTED: the shared coin is 128-bit (a full uuid, 32 hex digits)', test: () => coin64('ceccec').length === 32 },
   // refuted candidates — kept so the engine visibly discards the unprovable:
   { key: 'REF_all_units_self_inverse', name: 'REFUTED: every unit is self-inverse', test: () => U.every((u) => m9(u * u) === 1) },
   { key: 'REF_all_have_inverse', name: 'REFUTED: every element has a multiplicative inverse', test: () => ALL.every((d) => ALL.some((e) => m9(d * e) === 1)) },

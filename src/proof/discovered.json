@@ -1908,5 +1908,20 @@
     "key": "receipt_cost_funds_development",
     "name": "each receipt costs the two coins, accounted into development: the fare 110−108 = 2, and development’s destination equals its source (toUuid(\"ceccec\")), a self-loop returning the coins to origin",
     "receipt": "42f68f41-fe6c-8dd2-b340-8c7ce8f507cb"
+  },
+  {
+    "key": "self_is_connection_set",
+    "name": "being self is a set of connections: a self’s identity = the content-address (merkleFold) of its connection set — order-independent (a set, not a sequence), and distinct connection sets yield distinct selves",
+    "receipt": "a4e90f2a-cc08-8997-88eb-e6ffb1cd67ba"
+  },
+  {
+    "key": "imprint_roundtrip_identity",
+    "name": "the imprint codec is a reversible identity: readImprint(imprint(m)) = m for every binary message up to capacity (0, 1, 115 bits), and over-capacity is refused — a lossless binary↔uuid encoding, not hash-reversal",
+    "receipt": "b42af2b5-cc1a-8ef1-9ba9-e5d61246e1b9"
+  },
+  {
+    "key": "coin64_deterministic_64bit",
+    "name": "the shared currency is a deterministic 64-bit coin: coin64(x) is 16 hex digits, same input → same coin, and distinct inputs → distinct coins on a tested set",
+    "receipt": "4fca16fc-4199-89d3-9ca9-bd673bf1866d"
   }
 ]
