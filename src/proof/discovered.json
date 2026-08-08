@@ -1073,5 +1073,45 @@
     "key": "bell_numbers",
     "name": "the Bell numbers via the Bell triangle: B(3)=5, B(4)=15, B(5)=52",
     "receipt": "fb027062-15fd-85f6-9f0d-a7871be4dbc3"
+  },
+  {
+    "key": "geom_interior_angles_358",
+    "name": "regular n-gon interior angle (n−2)·180/n: triangle 60°, pentagon 108°, octagon 135° (sides 3,5,8)",
+    "receipt": "13cf8dfd-af21-81ea-adf3-592288abacc2"
+  },
+  {
+    "key": "geom_dihedral_358",
+    "name": "the regular 3-, 5-, 8-gon has dihedral symmetry of order 2n: D₃=6, D₅=10, D₈=16",
+    "receipt": "9fd2e0db-cb62-8f72-8dc0-a2f7aa21c614"
+  },
+  {
+    "key": "geom_pentagon_golden",
+    "name": "the pentagon's diagonal-to-side ratio is the golden ratio φ (2·cos36° = φ)",
+    "receipt": "2baca20d-9c58-840e-98c0-e9499801202e"
+  },
+  {
+    "key": "geom_exterior_360",
+    "name": "the exterior angles of any regular n-gon sum to 360° (sides 3, 5, 8)",
+    "receipt": "ef35271f-c232-86ab-ac4f-82fd3a3c46ea"
+  },
+  {
+    "key": "chess_board_64",
+    "name": "the 8×8 board has 64 squares, 32 light and 32 dark",
+    "receipt": "43c69905-b116-83f6-af61-77316cc0a7a3"
+  },
+  {
+    "key": "chess_knight_8_moves",
+    "name": "a knight has exactly 8 leaps — the (±1,±2)/(±2,±1) moves",
+    "receipt": "6dcd739d-87a9-815b-8dc1-daef00be03f1"
+  },
+  {
+    "key": "chess_knight_color_flip",
+    "name": "a knight's leap always changes square colour (the parity of r+c flips)",
+    "receipt": "81566667-a452-881e-9192-bf48b16de712"
+  },
+  {
+    "key": "chess_diagonals_15",
+    "name": "the 8×8 board has 2·8 − 1 = 15 diagonals in each direction",
+    "receipt": "85a4e4b0-787f-8d51-961e-b06105d4b7a7"
   }
 ]

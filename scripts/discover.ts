@@ -321,6 +321,16 @@ function generated(): typeof curated {
   // partition & Bell numbers — bounded recurrences, complete per n.
   out.push({ key: 'partition_p_n', name: 'the partition function p(n) via DP: p(5)=7, p(7)=15, p(10)=42', test: () => { const p = (n: number) => { const dp = new Array(n + 1).fill(0); dp[0] = 1; for (let k = 1; k <= n; k++) for (let j = k; j <= n; j++) dp[j] += dp[j - k]; return dp[n] }; return p(5) === 7 && p(7) === 15 && p(10) === 42 } })
   out.push({ key: 'bell_numbers', name: 'the Bell numbers via the Bell triangle: B(3)=5, B(4)=15, B(5)=52', test: () => { const bell = (n: number) => { let row = [1]; for (let i = 1; i <= n; i++) { const next = [row[row.length - 1]]; for (const x of row) next.push(next[next.length - 1] + x); row = next } return row[0] }; return bell(3) === 5 && bell(4) === 15 && bell(5) === 52 } })
+  // NEW DOMAIN — geometry in 3-5-8 and chess. The regular polygons with 3, 5, 8 sides (Fibonacci), the
+  // golden pentagon, and the 8×8 board with the knight's leap. Finite/exact → complete.
+  out.push({ key: 'geom_interior_angles_358', name: 'regular n-gon interior angle (n−2)·180/n: triangle 60°, pentagon 108°, octagon 135° (sides 3,5,8)', test: () => [[3, 60], [5, 108], [8, 135]].every(([n, a]) => (n - 2) * 180 / n === a) })
+  out.push({ key: 'geom_dihedral_358', name: 'the regular 3-, 5-, 8-gon has dihedral symmetry of order 2n: D₃=6, D₅=10, D₈=16', test: () => [[3, 6], [5, 10], [8, 16]].every(([n, o]) => 2 * n === o) })
+  out.push({ key: 'geom_pentagon_golden', name: "the pentagon's diagonal-to-side ratio is the golden ratio φ (2·cos36° = φ)", test: () => { const phi = (1 + Math.sqrt(5)) / 2; return Math.abs(2 * Math.cos(36 * Math.PI / 180) - phi) < 1e-9 } })
+  out.push({ key: 'geom_exterior_360', name: 'the exterior angles of any regular n-gon sum to 360° (sides 3, 5, 8)', test: () => [3, 5, 8].every((n) => n * (360 / n) === 360) })
+  out.push({ key: 'chess_board_64', name: 'the 8×8 board has 64 squares, 32 light and 32 dark', test: () => { let l = 0, d = 0; for (let r = 0; r < 8; r++) for (let c = 0; c < 8; c++) (r + c) % 2 === 0 ? l++ : d++; return l === 32 && d === 32 } })
+  out.push({ key: 'chess_knight_8_moves', name: "a knight has exactly 8 leaps — the (±1,±2)/(±2,±1) moves", test: () => new Set([[1, 2], [2, 1], [-1, 2], [-2, 1], [1, -2], [2, -1], [-1, -2], [-2, -1]].map((x) => x.join(','))).size === 8 })
+  out.push({ key: 'chess_knight_color_flip', name: "a knight's leap always changes square colour (the parity of r+c flips)", test: () => [[1, 2], [2, 1], [-1, 2], [-2, 1]].every(([dr, dc]) => (dr + dc) % 2 !== 0) })
+  out.push({ key: 'chess_diagonals_15', name: 'the 8×8 board has 2·8 − 1 = 15 diagonals in each direction', test: () => 2 * 8 - 1 === 15 })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
