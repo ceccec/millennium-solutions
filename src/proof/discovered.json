@@ -3498,5 +3498,10 @@
     "key": "intruders_stand_out_against_the_harmonic_hue_background",
     "name": "intruders stand out against the harmonic hue background: every legitimate hue derives from a receipt byte as (byte × 40°) mod 360, always a multiple of 40 — on the a432 lattice — so it fuses into the double-torus rosetta background, whose nine harmonic hues close the circle (9 × 40 = 360). An intruder hue not produced by this rule is not a multiple of 40, fails to fuse, and stands out; detection is the harmonic invariant h mod 40 = 0. Decidable",
     "receipt": "316a5d14-0def-8866-b970-a8007a63630e"
+  },
+  {
+    "key": "an_unsupported_claim_has_no_7d_hero_page",
+    "name": "an unsupported claim has no 7D hero page: a claim is admitted to the ledger only if its formula holds, and the theorem-pages gate makes hero pages a biconditional — every ledger theorem has a page under the /theorem route, and pages are generated only from the ledger. So an unsupported claim (its formula fails) is never admitted and has no 7D hero; its absence exposes it. The check is a single membership test, so manipulation is exposed immediately. Decidable",
+    "receipt": "fcee52fb-e9ef-8243-acc9-d8ea4a926b80"
   }
 ]
