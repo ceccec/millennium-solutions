@@ -3493,5 +3493,10 @@
     "key": "the_receipts_form_one_double_accounted_stream_that_exposes_any_intruder",
     "name": "the receipts form one double-accounted stream that exposes any intruder: the receipts are a single chain — receipt[i] = toUuid(previous → key) — double-accounted at two coins each, folded into one seven-dimensional tamper-seal; recomputing the stream link-by-link finds any interruption at its exact index (and it cascades downstream, so it cannot hide), exposing the intruder. Detection is a theme-independent boolean — the same in dark and light, only the display inverts. Decidable",
     "receipt": "f2515562-0b63-8c19-b33e-cc43024f94b0"
+  },
+  {
+    "key": "intruders_stand_out_against_the_harmonic_hue_background",
+    "name": "intruders stand out against the harmonic hue background: every legitimate hue derives from a receipt byte as (byte × 40°) mod 360, always a multiple of 40 — on the a432 lattice — so it fuses into the double-torus rosetta background, whose nine harmonic hues close the circle (9 × 40 = 360). An intruder hue not produced by this rule is not a multiple of 40, fails to fuse, and stands out; detection is the harmonic invariant h mod 40 = 0. Decidable",
+    "receipt": "316a5d14-0def-8866-b970-a8007a63630e"
   }
 ]
