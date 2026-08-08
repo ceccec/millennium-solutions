@@ -3798,5 +3798,10 @@
     "key": "each_page_is_both_white_and_black_paper_a_theme_reflection_involution",
     "name": "each page is both white and black paper — a theme reflection involution: every computed object is shown as a page, and each page renders in two themes — light (white) and dark (black) — at the same time for its two viewers; toggling between them is an involution (toggle twice returns), like the ten's-complement reflection 10−d whose fixed point is the neutral 5. The two are reflections of one page, one content-address shown in both polarities. A design duality, not a physics claim. Decidable",
     "receipt": "ea03ace1-c964-86c5-ae0f-d7011fec18d7"
+  },
+  {
+    "key": "sealed_statements_are_open_harmonic_monographs_not_cryptographic_private_messages",
+    "name": "sealed statements are open harmonic monographs, not cryptographic private messages: a sealed statement is a monograph with a public content-address that anyone can reproduce — there is no key and no secrecy, so it is not cryptographic and not a private message; the address proves integrity in the open, it does not hide the statement. Open harmonic monographs, publicly addressed. Integrity, not encryption. Decidable",
+    "receipt": "ae500912-1812-8d15-9dde-1129454286e3"
   }
 ]
