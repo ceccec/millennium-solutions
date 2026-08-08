@@ -3508,5 +3508,10 @@
     "key": "local_allocation_maximizes_value_per_two_coins",
     "name": "local allocation maximizes value per two coins: modeling resources (cpu, gpu, memory, storage, network, sensors, drivers) by value-per-coin, the optimal spend of the two coins is greedy — the two highest-value resources — which for unit-cost coins is optimal and beats an equal split across all seven. The allocation is deterministic and reproducible, computed locally to get the most from each two-coin unit of developer funding. A decidable model, not a live hardware scheduler. Decidable",
     "receipt": "b558b67b-716e-8867-a866-b9a2d2b4a2c8"
+  },
+  {
+    "key": "the_reproductive_material_is_guarded_against_prose_poison",
+    "name": "the reproductive material is guarded against prose poison: the material is reproductive — every fact recomputes identically from its formula — and its rendering escapes markdown hazards (a stray angle-tag in a name becomes literal text, not a broken build), so prose cannot corrupt reproduction; a claim carrying no formula is refused as hallucination. The guard is an audit — a computation, escape-then-recompute, reproducible — not an assertion. So no traitor poisons the material with prose. Decidable",
+    "receipt": "37a88d94-8f71-8746-880a-8fe451c5ce8f"
   }
 ]

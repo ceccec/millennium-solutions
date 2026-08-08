@@ -32,7 +32,10 @@ for (const e of ledger) (groups[catOf(e.key)] ??= []).push(e)
 const cats = Object.keys(groups).sort()
 const multi = cats.filter((c) => groups[c].length >= 2)
 const singles = cats.filter((c) => groups[c].length === 1)
-const line = (e: typeof ledger[number]) => '- [' + e.key + '](/theorem/' + e.key + ') — ' + e.name + '  ·  `' + e.receipt.slice(0, 13) + '…`\n'
+// escape markdown/Vue hazards so a stray angle-tag in a theorem name renders as literal text, never a
+// broken build — prose cannot poison the reproducible material.
+const esc = (s: string) => s.replace(/</g, '&lt;').replace(/>/g, '&gt;')
+const line = (e: typeof ledger[number]) => '- [' + e.key + '](/theorem/' + e.key + ') — ' + esc(e.name) + '  ·  `' + e.receipt.slice(0, 13) + '…`\n'
 o += '## Discovered theorems (decidable, over ℤ/9) — ' + ledger.length + ' recorded in ' + cats.length + ' families\n\n'
 o += 'Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:\n\n'
 for (const c of multi.sort((a, b) => groups[b].length - groups[a].length || a.localeCompare(b))) {
