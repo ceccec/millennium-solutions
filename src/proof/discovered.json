@@ -503,5 +503,25 @@
     "key": "duel_floor_upheld",
     "name": "\"the deposit does not solve the Clay problems\" is upheld against its challenge",
     "receipt": "4ee11b6a-d6b6-8362-9e49-ff335395b9fc"
+  },
+  {
+    "key": "hasse_p5_a1_b1",
+    "name": "Hasse bound holds for y²=x³+1x+1 over 𝔽_5: |#E−(p+1)|≤2√p",
+    "receipt": "73bd58ba-4989-8840-a6e1-f9fa1c4be0b1"
+  },
+  {
+    "key": "hasse_p7_a2_b3",
+    "name": "Hasse bound holds for y²=x³+2x+3 over 𝔽_7: |#E−(p+1)|≤2√p",
+    "receipt": "a3d3160b-8c8a-82bb-91f2-3104c37492bf"
+  },
+  {
+    "key": "hasse_p11_a1_b6",
+    "name": "Hasse bound holds for y²=x³+1x+6 over 𝔽_11: |#E−(p+1)|≤2√p",
+    "receipt": "51f2a2c6-6e67-81b9-b576-999a98412de2"
+  },
+  {
+    "key": "hasse_p13_a3_b8",
+    "name": "Hasse bound holds for y²=x³+3x+8 over 𝔽_13: |#E−(p+1)|≤2√p",
+    "receipt": "678a2d8a-7e87-84cb-b291-ded116fdd9fc"
   }
 ]

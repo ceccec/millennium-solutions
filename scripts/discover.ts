@@ -110,6 +110,16 @@ function generated(): typeof curated {
   out.push({ key: 'duel_floor_upheld', name: '"the deposit does not solve the Clay problems" is upheld against its challenge', test: () => duel('the deposit does not solve the Clay problems', 'the deposit solves the Clay problems') })
   out.push({ key: 'duel_overclaim_falls', name: '"faster than light" falls — the claim drains, so it cannot be upheld', test: () => !duel('this is faster than light', 'this is not faster than light') })
   out.push({ key: 'duel_no_both_win', name: 'a claim and its inverse cannot both be upheld (no position wins for both sides)', test: () => !(duel('the deposit does not solve the Clay problems', 'the deposit solves the Clay problems') && duel('the deposit solves the Clay problems', 'the deposit does not solve the Clay problems')) })
+  // NEW DOMAIN — finite fields & elliptic curves (the BSD domain, honestly). Over small 𝔽_p we count
+  // points on E: y²=x³+ax+b EXHAUSTIVELY (decidable) and verify Hasse's bound |#E−(p+1)|≤2√p — a real
+  // theorem, per instance. This is the LOCAL data BSD concerns; computing it is NOT proving BSD (a
+  // global L-rank statement). We compute the very domain of a Clay problem and still solve none. 0/7.
+  const modp = (n: number, p: number) => ((n % p) + p) % p
+  const countE = (p: number, a: number, b: number) => { let n = 1; for (let x = 0; x < p; x++) { const rhs = modp(x * x * x + a * x + b, p); for (let y = 0; y < p; y++) if (modp(y * y, p) === rhs) n++ } return n }
+  const nonsingular = (p: number, a: number, b: number) => modp(4 * a * a * a + 27 * b * b, p) !== 0
+  for (const [p, a, b] of [[5, 1, 1], [7, 2, 3], [11, 1, 6], [13, 3, 8]]) {
+    out.push({ key: 'hasse_p' + p + '_a' + a + '_b' + b, name: 'Hasse bound holds for y²=x³+' + a + 'x+' + b + ' over 𝔽_' + p + ': |#E−(p+1)|≤2√p', test: () => nonsingular(p, a, b) && Math.abs(countE(p, a, b) - (p + 1)) <= 2 * Math.sqrt(p) })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
