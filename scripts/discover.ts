@@ -659,6 +659,20 @@ function generated(): typeof curated {
   out.push({ key: 'relation_cubes_fold_to_0_1_8', name: 'cubes mod 9 fold to {0,1,8}: every d³ ≡ 0, 1, or 8, binding powers to the nilpotent 0 and the self-inverse pair {1,8} (1²≡1, 8²≡1) — one residue set across powers and inverses', test: () => { const m9 = (n: number) => ((n % 9) + 9) % 9; const cubes = new Set(digits().map((d) => m9(d ** 3))); return [...cubes].sort((a, b) => a - b).join(',') === '0,1,8' && m9(1 * 1) === 1 && m9(8 * 8) === 1 } })
   out.push({ key: 'relation_receipt_chain_is_forensic_custody', name: 'the receipt chain IS chain-of-custody: receipt[i] = toUuid(receipt[i−1]→key[i]) from a seed, so altering one link changes every link after it — the merkle-ledger and forensics are one construction', test: () => { const chain = (keys: string[], seed: string) => { let p = seed; const r: string[] = []; for (const k of keys) { p = toUuid(p + '→' + k); r.push(p) } return r }; const good = chain(['a', 'b', 'c'], 'axiom:TRINITY'); const tam = chain(['a', 'X', 'c'], 'axiom:TRINITY'); return good[0] === tam[0] && good[1] !== tam[1] && good[2] !== tam[2] } })
   out.push({ key: 'relation_coin64_collision_free_on_domains', name: 'the 64-bit currency is collision-free across the rosetta: coin64 of each domain yields a distinct coin (as many coins as domains) — the shared currency addresses every perspective uniquely', test: () => new Set(ROSETTA_DOMAINS.map((d) => coin64(d))).size === ROSETTA_DOMAINS.length })
+  // ── a NEW decidable domain — Kaprekar's routine: K(n) = sort-desc(digits) − sort-asc(digits). Fixed
+  // points and UNIVERSAL convergence, each verified EXHAUSTIVELY over every 3- and 4-digit number. Ties
+  // to ℤ/9: both Kaprekar constants digital-root to 9 (the base). New facts, not a relation.
+  {
+    const kap = (n: number, d: number) => { const s = String(n).padStart(d, '0').split('').map(Number); const desc = Number([...s].sort((a, b) => b - a).join('')); const asc = Number([...s].sort((a, b) => a - b).join('')); return desc - asc }
+    const reaches = (n: number, d: number, target: number, maxApplies: number) => { let x = n; if (x === target) return true; for (let i = 0; i < maxApplies; i++) { x = kap(x, d); if (x === target) return true } return false }
+    const repdigit = (n: number, d: number) => new Set(String(n).padStart(d, '0')).size === 1
+    out.push({ key: 'kaprekar_3digit_fixed_495', name: 'Kaprekar 3-digit: 495 is the fixed point — sort-desc minus sort-asc of 495 is 495 (954−459)', test: () => kap(495, 3) === 495 })
+    out.push({ key: 'kaprekar_4digit_fixed_6174', name: 'Kaprekar 4-digit: 6174 is the fixed point — sort-desc minus sort-asc of 6174 is 6174 (7641−1467)', test: () => kap(6174, 4) === 6174 })
+    out.push({ key: 'kaprekar_3digit_converges_495', name: 'Kaprekar 3-digit convergence: every 3-digit number with ≥2 distinct digits reaches 495 within 6 iterations (exhaustive, 100..999)', test: () => { for (let n = 100; n <= 999; n++) if (!repdigit(n, 3) && !reaches(n, 3, 495, 6)) return false; return true } })
+    out.push({ key: 'kaprekar_4digit_converges_6174', name: 'Kaprekar 4-digit convergence: every 4-digit number with ≥2 distinct digits reaches 6174 within 7 iterations (exhaustive, 1000..9999)', test: () => { for (let n = 1000; n <= 9999; n++) if (!repdigit(n, 4) && !reaches(n, 4, 6174, 7)) return false; return true } })
+    out.push({ key: 'kaprekar_repdigit_collapses_zero', name: 'Kaprekar: a repdigit collapses to 0 (sort-desc = sort-asc), the only escape from the routine — 111→0, 1111→0, 777→0', test: () => kap(111, 3) === 0 && kap(1111, 4) === 0 && kap(777, 3) === 0 })
+    out.push({ key: 'kaprekar_constants_digitroot_nine', name: 'the Kaprekar constants bind to ℤ/9: dr(495) = dr(6174) = 9 = BASE — both fixed points sit on the base’s own digital root', test: () => digitalRoot(495) === BASE && digitalRoot(6174) === BASE })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

@@ -2043,5 +2043,35 @@
     "key": "relation_coin64_collision_free_on_domains",
     "name": "the 64-bit currency is collision-free across the rosetta: coin64 of each domain yields a distinct coin (as many coins as domains) — the shared currency addresses every perspective uniquely",
     "receipt": "dc278848-c7d9-8e8d-8f44-06359f52fa2f"
+  },
+  {
+    "key": "kaprekar_3digit_fixed_495",
+    "name": "Kaprekar 3-digit: 495 is the fixed point — sort-desc minus sort-asc of 495 is 495 (954−459)",
+    "receipt": "e3dcb640-7ef2-85a5-9326-fc0cde0e9e3f"
+  },
+  {
+    "key": "kaprekar_4digit_fixed_6174",
+    "name": "Kaprekar 4-digit: 6174 is the fixed point — sort-desc minus sort-asc of 6174 is 6174 (7641−1467)",
+    "receipt": "281de8d0-de1d-8a8e-989d-65d115a653d8"
+  },
+  {
+    "key": "kaprekar_3digit_converges_495",
+    "name": "Kaprekar 3-digit convergence: every 3-digit number with ≥2 distinct digits reaches 495 within 6 iterations (exhaustive, 100..999)",
+    "receipt": "f2904983-365a-8856-bb7d-f54134c3a920"
+  },
+  {
+    "key": "kaprekar_4digit_converges_6174",
+    "name": "Kaprekar 4-digit convergence: every 4-digit number with ≥2 distinct digits reaches 6174 within 7 iterations (exhaustive, 1000..9999)",
+    "receipt": "70bf5db2-ef8c-84a0-80f8-859ad3333a0e"
+  },
+  {
+    "key": "kaprekar_repdigit_collapses_zero",
+    "name": "Kaprekar: a repdigit collapses to 0 (sort-desc = sort-asc), the only escape from the routine — 111→0, 1111→0, 777→0",
+    "receipt": "dc31aff0-745f-8396-9577-8f51e5acf388"
+  },
+  {
+    "key": "kaprekar_constants_digitroot_nine",
+    "name": "the Kaprekar constants bind to ℤ/9: dr(495) = dr(6174) = 9 = BASE — both fixed points sit on the base’s own digital root",
+    "receipt": "cacade9e-3882-855d-8c3a-517f4f13a957"
   }
 ]
