@@ -2308,5 +2308,15 @@
     "key": "parity_bit_detects_single_error",
     "name": "a parity bit detects every single-bit error: append an even-parity bit so the word has an even 1-count; any single-bit flip makes it odd — detected — so one check bit exposes any one-bit crack (exhaustive over 4- and 5-bit words)",
     "receipt": "37a8eb94-b551-807a-840f-f8bddf87b902"
+  },
+  {
+    "key": "hamming74_corrects_any_single_error",
+    "name": "Hamming(7,4) corrects any single-bit error: every 4-bit word encodes to 7 bits with 3 parity checks, and for each of the 16 words and each of the 7 flip positions the 3-bit syndrome equals the error position (0 for none) and the decoder recovers the original — the error names its own location (exhaustive, 16×8)",
+    "receipt": "8725a6eb-aa41-8559-82a2-749a0a4e0ddf"
+  },
+  {
+    "key": "hamming74_minimum_distance_three",
+    "name": "Hamming(7,4) has minimum distance 3: the 16 codewords differ pairwise in at least 3 bits (exactly 3 is the minimum) — one flip changes a single bit, so the nearest codeword stays unique, which is exactly why any single-bit error is correctable (exhaustive over all 120 pairs)",
+    "receipt": "b108ba72-765e-8bbd-847a-cb2125f6a448"
   }
 ]
