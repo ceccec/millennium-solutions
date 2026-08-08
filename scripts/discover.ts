@@ -57,6 +57,14 @@ function generated(): typeof curated {
   for (const u of U) out.push({ key: 'selfinv_u' + u, name: u + ' is its own inverse mod ' + BASE, test: () => m9(u * u) === 1 })
   // inverse via Euler: u⁻¹ ≡ u^(|units|−1) — holds for every unit (u · u⁵ = u⁶ ≡ 1).
   for (const u of U) out.push({ key: 'invpow_u' + u, name: 'the inverse of ' + u + ' is u^(|units|−1) = u⁵ mod ' + BASE, test: () => { const inv = U.find((e) => m9(u * e) === 1); return inv !== undefined && modpow(u, U.length - 1, BASE) === inv } })
+  // additive inverse (negation): ℤ/BASE is an additive group; negation is an involution.
+  out.push({ key: 'add_group', name: 'every residue has an additive inverse mod ' + BASE, test: () => digits().every((d) => digits().some((e) => m9(d + e) === 0)) })
+  out.push({ key: 'neg_involution', name: 'negation −(−d) ≡ d is an involution on ℤ/' + BASE, test: () => digits().every((d) => m9(-m9(-d)) === m9(d)) })
+  // self-negation: 2d ≡ 0 — only 0 for an odd base (discriminating).
+  for (const d of digits()) out.push({ key: 'selfneg_d' + d, name: d + ' is its own additive inverse (2·' + d + ' ≡ 0) mod ' + BASE, test: () => m9(2 * d) === 0 })
+  // the multiplicative inverse map is a permutation of the units and an involution.
+  out.push({ key: 'invmap_perm', name: 'the multiplicative inverse map permutes the units mod ' + BASE, test: () => { const img = U.map((u) => U.find((e) => m9(u * e) === 1)); return new Set(img).size === U.length && img.every((v) => v !== undefined) } })
+  out.push({ key: 'invmap_involution', name: 'the multiplicative inverse map is an involution on the units mod ' + BASE, test: () => U.every((u) => { const inv = U.find((e) => m9(u * e) === 1); return inv !== undefined && U.find((e) => m9(inv * e) === 1) === u }) })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

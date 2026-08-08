@@ -273,5 +273,30 @@
     "key": "invpow_u8",
     "name": "the inverse of 8 is u^(|units|−1) = u⁵ mod 9",
     "receipt": "1c45aeef-ca22-8323-b153-be5c425afa1f"
+  },
+  {
+    "key": "add_group",
+    "name": "every residue has an additive inverse mod 9",
+    "receipt": "7c5b01de-e813-81ce-a774-d14fe8bdead3"
+  },
+  {
+    "key": "neg_involution",
+    "name": "negation −(−d) ≡ d is an involution on ℤ/9",
+    "receipt": "5eb8cd1f-9e06-83c8-8968-78b19e8a93b7"
+  },
+  {
+    "key": "selfneg_d9",
+    "name": "9 is its own additive inverse (2·9 ≡ 0) mod 9",
+    "receipt": "8d0d0254-5ca1-8fcb-8579-6acfa07d4448"
+  },
+  {
+    "key": "invmap_perm",
+    "name": "the multiplicative inverse map permutes the units mod 9",
+    "receipt": "8455c1ab-d297-8f77-a944-75e7c002c989"
+  },
+  {
+    "key": "invmap_involution",
+    "name": "the multiplicative inverse map is an involution on the units mod 9",
+    "receipt": "43418601-7a73-8a86-a0de-15c29d79c005"
   }
 ]
