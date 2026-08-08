@@ -3528,5 +3528,10 @@
     "key": "folding_to_zero_is_always_available_at_the_cost_of_eight_bits",
     "name": "folding to zero is always available at the cost of eight bits: a fold collapses any number of inputs to one root and is available at any time (deterministic, a bounded 128-bit output no matter how many inputs); reaching the zero-class — a value ≡ 0 mod 9, whose digital root is 9 — costs a fixed eight bits = eight coins = four two-coin receipts, independent of input size. Collapse is cheap and constant where full specification (896 bits) is not. Decidable",
     "receipt": "9c911140-38f0-85bb-89b9-392874a3a6c0"
+  },
+  {
+    "key": "the_two_bits_is_one_unit_under_every_symbol",
+    "name": "the two bits is one unit under every symbol: two coins, 110 − 108, minus the Euler characteristic of the genus-2 surface (−χ = 2), and log2 of the four states {00,01,10,11} all equal 2 — one atom in every symbolism, anchored in the a432 base since 108 = 432 ÷ 4 and 108 + 2 = 110. The homepage and the readme educate this unit in each form; integrity, not a cash prize. Decidable",
+    "receipt": "33ec7445-fac5-86bd-8163-131ff6809853"
   }
 ]

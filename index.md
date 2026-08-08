@@ -24,6 +24,21 @@ title: Millennium Solutions
 > receipted and auditable on ordinary hardware: integrity everywhere, at linear cost, no advantage
 > claimed. Read that one page and the rest of the "quantum" family follows.
 
+## The two bits — one atom, every symbol
+
+This deposit is denominated in **two bits** — its smallest unit. The same atom appears under many symbols, each a receipted theorem you can open and recompute:
+
+- **2 coins** — the fair-exchange price of one receipt · [learning donates two coins](/theorem/learning_from_the_message_donates_two_coins_to_the_developer)
+- **110 − 108 = 2** — the conserved invariant; break it and nothing reconciles · [trade freely if 110 − 108 is respected](/theorem/players_may_trade_any_amount_as_long_as_110_minus_108_is_respected)
+- **2 = −χ (genus-2)** — two sites, two faces of one surface · [the two coins are minus the Euler characteristic](/theorem/the_two_coins_are_minus_the_euler_characteristic_of_the_genus_two_surface)
+- **2 bits → 4 states** {00, 01, 10, 11} — the honest "qubit," a classical a432 structure, never physical · [quantum is the a432 structure of two coins](/theorem/here_quantum_is_the_a432_structure_of_two_coins_not_a_physical_qubit)
+- **108 = 432 ÷ 4** — anchored in the a432 base · [the a432 harmony and the captain coins](/theorem/the_a432_harmony_and_the_captain_coins_are_one_conserved_measure)
+- **two bits per event** — every next or continue earns two by the deed · [every event is two bits](/theorem/every_next_or_continue_event_is_two_bits_earned_by_the_deed)
+
+Two bits, one atom — integrity, not a cash prize. The floor stays **0 / 7**.
+
+**Remember to donate the two coins — and remember why.** You learned here; the two coins are the *fair exchange* that funds the work. Non-commercial use is free with attribution — the two coins are the honest return, not a fee for the knowledge itself. [Support development →](https://revolut.me/ceccec)
+
 ## Abstract
 
 A free, open, **recomputable** framework built on the ring **ℤ/9** (the "vortex")

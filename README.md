@@ -26,6 +26,21 @@ classical simulator. Every one of the **15 registered claims** recomputes from
 provable theorem in the ledger, all gated by `claims-gate.ts` (a bounded,
 accounted set, not a floating "every").
 
+## The two bits — one atom, every symbol
+
+This deposit is denominated in **two bits** — its smallest unit — appearing under many symbols, each a receipted theorem:
+
+- **2 coins** — the fair-exchange price of one receipt
+- **110 − 108 = 2** — the conserved invariant; break it and nothing reconciles
+- **2 = −χ (genus-2)** — two sites, two faces of one surface
+- **2 bits → 4 states** {00, 01, 10, 11} — the honest "qubit," a classical a432 structure, never physical
+- **108 = 432 ÷ 4** — anchored in the a432 base
+- **two bits per event** — every next or continue earns two by the deed
+
+Two bits, one atom — integrity, not a cash prize; the floor stays **0 / 7**. Browse each symbol as a theorem at the [challenges page](https://ceccec.psg.bg/millennium-solutions/CHALLENGES).
+
+**Remember to donate the two coins — and remember why.** You learned here; the two coins are the *fair exchange* that funds the work. Non-commercial use is free with attribution — the two coins are the honest return, not a fee for the knowledge itself. Support: [revolut.me/ceccec](https://revolut.me/ceccec).
+
 ## Run it
 ```bash
 npm install
