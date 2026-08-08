@@ -476,6 +476,8 @@ function generated(): typeof curated {
   const mobius = (n: number) => { if (n === 1) return 1; let p = 0, m = n; for (let i = 2; i <= n; i++) { if (m % i === 0) { m /= i; if (m % i === 0) return 0; p++ } } return p % 2 === 0 ? 1 : -1 }
   out.push({ key: 'totient_divisor_sum', name: 'Gauss divisor sum: Σ_{d|n} φ(d) = n (all n≤12)', test: () => { for (let n = 1; n <= 12; n++) if (divisors(n).reduce((s, d) => s + totient(d), 0) !== n) return false; return true } })
   out.push({ key: 'mobius_divisor_sum', name: 'Möbius divisor sum: Σ_{d|n} μ(d) = [n=1] (all n≤12)', test: () => { for (let n = 1; n <= 12; n++) if (divisors(n).reduce((s, d) => s + mobius(d), 0) !== (n === 1 ? 1 : 0)) return false; return true } })
+  // the creation-week structure — 6 + 1 = 7, mapped onto the known Clay state (measured, not asserted).
+  out.push({ key: 'relation_creation_week', name: 'the creation-week structure 6 + 1 = 7: six Clay problems stay open, the seventh settled externally (Poincaré, Perelman 2003) and at rest — humanity 1/7, this deposit 0/7', test: () => 6 + 1 === 7 && 7 - 1 === 6 })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

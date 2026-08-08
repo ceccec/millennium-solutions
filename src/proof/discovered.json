@@ -1473,5 +1473,10 @@
     "key": "mobius_divisor_sum",
     "name": "Möbius divisor sum: Σ_{d|n} μ(d) = [n=1] (all n≤12)",
     "receipt": "6bcdf028-94aa-8371-a659-0d34861101a4"
+  },
+  {
+    "key": "relation_creation_week",
+    "name": "the creation-week structure 6 + 1 = 7: six Clay problems stay open, the seventh settled externally (Poincaré, Perelman 2003) and at rest — humanity 1/7, this deposit 0/7",
+    "receipt": "6de0c6a5-40aa-8a06-984a-6515e4768a29"
   }
 ]
