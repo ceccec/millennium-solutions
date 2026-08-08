@@ -433,5 +433,45 @@
     "key": "domain_cyclic_m18",
     "name": "ℤ/18: the units form a cyclic group (a primitive root exists)",
     "receipt": "92a2b5a1-8526-8701-8a33-58302b31b6ec"
+  },
+  {
+    "key": "bool_demorgan1",
+    "name": "De Morgan: ¬(a∧b) = ¬a∨¬b (all inputs)",
+    "receipt": "7e3ebb75-50c9-8d2c-9e59-ee8931741046"
+  },
+  {
+    "key": "bool_demorgan2",
+    "name": "De Morgan: ¬(a∨b) = ¬a∧¬b (all inputs)",
+    "receipt": "bd5e61d1-fd26-8466-8f17-c9691e9390a7"
+  },
+  {
+    "key": "bool_distributivity",
+    "name": "distributivity: a∧(b∨c) = (a∧b)∨(a∧c) (all inputs)",
+    "receipt": "0a5da686-6595-8d4f-acc4-0289bc2e451f"
+  },
+  {
+    "key": "bool_double_negation",
+    "name": "double negation: ¬¬a = a (all inputs)",
+    "receipt": "a4640234-4e32-85ad-acf0-ea3d9c160cf2"
+  },
+  {
+    "key": "bool_excluded_middle",
+    "name": "excluded middle: a∨¬a = 1 (all inputs)",
+    "receipt": "29468d4a-f416-89c6-b95b-ab0f0390c769"
+  },
+  {
+    "key": "bool_noncontradiction",
+    "name": "non-contradiction: a∧¬a = 0 (all inputs)",
+    "receipt": "1d8543d8-7d61-8dd4-99f5-e93e6605a090"
+  },
+  {
+    "key": "bool_absorption",
+    "name": "absorption: a∨(a∧b) = a (all inputs)",
+    "receipt": "75ad142a-a56a-89de-8e2b-dade084e4bcf"
+  },
+  {
+    "key": "bool_xor_associativity",
+    "name": "XOR associativity: (a⊕b)⊕c = a⊕(b⊕c) (all inputs)",
+    "receipt": "4ba6ccd9-fd1d-8d95-8728-7607c96e0c39"
   }
 ]

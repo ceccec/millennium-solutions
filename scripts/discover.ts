@@ -80,6 +80,20 @@ function generated(): typeof curated {
     out.push({ key: 'domain_prime_m' + m, name: 'ℤ/' + m + ': ' + m + ' is prime', test: () => isPrime(m) })
     out.push({ key: 'domain_cyclic_m' + m, name: 'ℤ/' + m + ': the units form a cyclic group (a primitive root exists)', test: () => isCyclic(m) })
   }
+  // NEW DOMAIN — Boolean algebra (propositional logic). Truth tables are finite, so each law is
+  // verified over ALL inputs: a complete proof, not a sample — the same rigor as ℤ/9, a domain apart.
+  const B = [0, 1]
+  const NOT = (a: number) => (a ? 0 : 1), AND = (a: number, b: number) => a & b, OR = (a: number, b: number) => a | b, XOR = (a: number, b: number) => a ^ b
+  const all2 = (p: (a: number, b: number) => boolean) => B.every((a) => B.every((b) => p(a, b)))
+  const all3 = (p: (a: number, b: number, c: number) => boolean) => B.every((a) => B.every((b) => B.every((c) => p(a, b, c))))
+  out.push({ key: 'bool_demorgan1', name: 'De Morgan: ¬(a∧b) = ¬a∨¬b (all inputs)', test: () => all2((a, b) => NOT(AND(a, b)) === OR(NOT(a), NOT(b))) })
+  out.push({ key: 'bool_demorgan2', name: 'De Morgan: ¬(a∨b) = ¬a∧¬b (all inputs)', test: () => all2((a, b) => NOT(OR(a, b)) === AND(NOT(a), NOT(b))) })
+  out.push({ key: 'bool_distributivity', name: 'distributivity: a∧(b∨c) = (a∧b)∨(a∧c) (all inputs)', test: () => all3((a, b, c) => AND(a, OR(b, c)) === OR(AND(a, b), AND(a, c))) })
+  out.push({ key: 'bool_double_negation', name: 'double negation: ¬¬a = a (all inputs)', test: () => B.every((a) => NOT(NOT(a)) === a) })
+  out.push({ key: 'bool_excluded_middle', name: 'excluded middle: a∨¬a = 1 (all inputs)', test: () => B.every((a) => OR(a, NOT(a)) === 1) })
+  out.push({ key: 'bool_noncontradiction', name: 'non-contradiction: a∧¬a = 0 (all inputs)', test: () => B.every((a) => AND(a, NOT(a)) === 0) })
+  out.push({ key: 'bool_absorption', name: 'absorption: a∨(a∧b) = a (all inputs)', test: () => all2((a, b) => OR(a, AND(a, b)) === a) })
+  out.push({ key: 'bool_xor_associativity', name: 'XOR associativity: (a⊕b)⊕c = a⊕(b⊕c) (all inputs)', test: () => all3((a, b, c) => XOR(XOR(a, b), c) === XOR(a, XOR(b, c))) })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
