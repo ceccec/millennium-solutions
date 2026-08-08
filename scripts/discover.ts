@@ -182,6 +182,12 @@ function generated(): typeof curated {
   for (const n of [2, 3, 5, 7, 9]) out.push({ key: 'roots_cancel_n' + n, name: 'the ' + n + ' equally-spaced unit vectors (n-th roots of unity) cancel to the zero vector', test: () => rootsSumZero(n) })
   out.push({ key: 'a432_directions_cancel', name: 'the 9 a432 directions (digit×40°) cancel to the zero vector — full interference at the center', test: () => rootsSumZero(BASE) })
   out.push({ key: 'tetrahedra_sums_cancel', name: 'the two tetrahedra residue-sums cancel: (1+4+7)+(2+5+8) ≡ 0 mod 9', test: () => m9(cls(1).reduce((a, b) => a + b, 0) + cls(2).reduce((a, b) => a + b, 0)) === 0 })
+  // NEW DOMAIN — Stern–Brocot / Farey: the mediant tree of the rationals. Consecutive Farey fractions
+  // a/b, c/d satisfy bc−ad = 1, and their mediant (a+c)/(b+d) lies strictly between them. Complete for
+  // each Farey order F_n (a finite, fully-enumerated sequence).
+  const farey = (n: number) => { const fs: number[][] = []; for (let b = 1; b <= n; b++) for (let a = 0; a <= b; a++) if (gcd(a, b) === 1) fs.push([a, b]); return fs.sort((x, y) => x[0] / x[1] - y[0] / y[1]) }
+  for (const n of [4, 5, 6]) out.push({ key: 'farey_neighbor_F' + n, name: 'Farey F_' + n + ': consecutive a/b, c/d satisfy bc − ad = 1', test: () => { const f = farey(n); for (let i = 0; i + 1 < f.length; i++) { const [a, b] = f[i], [c, d] = f[i + 1]; if (b * c - a * d !== 1) return false } return true } })
+  out.push({ key: 'mediant_between', name: 'the mediant (a+c)/(b+d) lies strictly between a/b and c/d (Farey F_6)', test: () => { const f = farey(6); for (let i = 0; i + 1 < f.length; i++) { const [a, b] = f[i], [c, d] = f[i + 1]; const m = (a + c) / (b + d); if (!(a / b < m && m < c / d)) return false } return true } })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

@@ -61,10 +61,10 @@ if (message) {
   // FALLBACK — never dead-end: propose the most probable next idea (a decidable domain not yet added).
   // Honestly bounded: each is a suggestion to implement as a family in scripts/discover.ts, not a claim.
   const BACKLOG = [
-    'Stern–Brocot / Farey — the mediant tree of the rationals (neighbors satisfy bc−ad=1)',
     'partition & Bell numbers — bounded recurrences (complete per n)',
     'Lucas / Pell sequences — the sister recurrences and their identities',
     'finite fields 𝔽_{p^k} — extension arithmetic and Frobenius x↦x^p',
+    'perfect / amicable numbers — σ(n) divisor sums (bounded search)',
     'Collatz — bounded orbit lengths (behavior, never the conjecture)',
     'harmonic ratios — a432 just intonation 3:2, 4:3, 5:4 (UI, not theorem)',
   ]

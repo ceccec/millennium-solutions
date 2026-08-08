@@ -723,5 +723,25 @@
     "key": "tetrahedra_sums_cancel",
     "name": "the two tetrahedra residue-sums cancel: (1+4+7)+(2+5+8) ≡ 0 mod 9",
     "receipt": "62f28936-0000-8ab8-95a9-791fea47acb2"
+  },
+  {
+    "key": "farey_neighbor_F4",
+    "name": "Farey F_4: consecutive a/b, c/d satisfy bc − ad = 1",
+    "receipt": "f6d16338-2b33-81cc-a85c-75c5facc0cf1"
+  },
+  {
+    "key": "farey_neighbor_F5",
+    "name": "Farey F_5: consecutive a/b, c/d satisfy bc − ad = 1",
+    "receipt": "170484c5-3b95-82d8-9315-7e3551aeba6c"
+  },
+  {
+    "key": "farey_neighbor_F6",
+    "name": "Farey F_6: consecutive a/b, c/d satisfy bc − ad = 1",
+    "receipt": "21bdf7ff-2f61-823e-8b58-6dc5c47b64d8"
+  },
+  {
+    "key": "mediant_between",
+    "name": "the mediant (a+c)/(b+d) lies strictly between a/b and c/d (Farey F_6)",
+    "receipt": "b1919795-2272-8d24-81b3-9736ab80d085"
   }
 ]
