@@ -29,6 +29,7 @@ import { report as theCancer } from './src/the/cancer/index'
 import { report as theWaves } from './src/the/waves/index'
 import { report as theRosetta } from './src/the/rosetta/index'
 import { report as theClown } from './src/the/clown/index'
+import { report as theLaw } from './src/the/law/index'
 import { report as acceptance } from './src/1/acceptance'
 import { report as paradox } from './src/1/paradox'
 import { report as society } from './src/9/society'
@@ -217,6 +218,10 @@ digit to its partner (fixed point **5**), so the folders below are laid out arou
 ### The clown · `src/the/clown/index.ts`
 
 <pre>{{ theClown() }}</pre>
+
+### The law — follow the license and the sequence · `src/the/law/index.ts`
+
+<pre>{{ theLaw() }}</pre>
 </details>
 
 ## `0/` — the substrate · content-addressing
