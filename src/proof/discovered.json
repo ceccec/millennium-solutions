@@ -1343,5 +1343,15 @@
     "key": "chromatic_petersen",
     "name": "the Petersen graph is 3-chromatic: χ = 3 (not 2-colourable)",
     "receipt": "c8d24ff1-f5ac-8042-a23a-2946cf06e862"
+  },
+  {
+    "key": "rule90_sierpinski",
+    "name": "Rule 90 (cell = left XOR right) from one seed builds Sierpiński: row n has 2^(popcount n) live cells",
+    "receipt": "07dbb102-aef1-8609-9111-adc20cc8204f"
+  },
+  {
+    "key": "pascal_mod2_lucas",
+    "name": "Pascal mod 2 (Lucas): C(n,k) is odd iff (k AND n)=k — the Sierpiński rule behind Rule 90",
+    "receipt": "3d9ea41f-0180-8592-b5f2-7a51b954de0d"
   }
 ]

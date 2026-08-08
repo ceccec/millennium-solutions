@@ -427,6 +427,12 @@ function generated(): typeof curated {
   out.push({ key: 'chromatic_K4', name: 'the complete graph K₄ needs 4 colours: χ(K₄) = 4', test: () => chromatic(4, allPairs(4)) === 4 })
   out.push({ key: 'chromatic_cycles', name: 'even cycle C₄ is 2-colourable, odd cycle C₅ needs 3: χ(C₄)=2, χ(C₅)=3', test: () => chromatic(4, cycle(4)) === 2 && chromatic(5, cycle(5)) === 3 })
   out.push({ key: 'chromatic_petersen', name: 'the Petersen graph is 3-chromatic: χ = 3 (not 2-colourable)', test: () => chromatic(10, petersen) === 3 })
+  // cellular automata — Rule 90 (cell = left XOR right) from one seed builds the Sierpiński triangle,
+  // which is Pascal's triangle mod 2. Finite grid → complete.
+  const rule90 = (steps: number) => { const w = 2 * steps + 1; let row = new Array(w).fill(0); row[steps] = 1; const rows = [row.slice()]; for (let t = 1; t <= steps; t++) { const nx = new Array(w).fill(0); for (let i = 0; i < w; i++) nx[i] = (i > 0 ? row[i - 1] : 0) ^ (i < w - 1 ? row[i + 1] : 0); row = nx; rows.push(row.slice()) } return rows }
+  const popcount = (n: number) => n.toString(2).split('').filter((c) => c === '1').length
+  out.push({ key: 'rule90_sierpinski', name: 'Rule 90 (cell = left XOR right) from one seed builds Sierpiński: row n has 2^(popcount n) live cells', test: () => { const rows = rule90(16); for (let n = 0; n <= 16; n++) if (rows[n].filter((x) => x === 1).length !== 2 ** popcount(n)) return false; return true } })
+  out.push({ key: 'pascal_mod2_lucas', name: "Pascal mod 2 (Lucas): C(n,k) is odd iff (k AND n)=k — the Sierpiński rule behind Rule 90", test: () => { const binom = (n: number, k: number) => { let r = 1; for (let i = 0; i < k; i++) r = r * (n - i) / (i + 1); return Math.round(r) }; for (let n = 0; n <= 12; n++) for (let k = 0; k <= n; k++) if ((binom(n, k) % 2 === 1) !== ((k & n) === k)) return false; return true } })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
