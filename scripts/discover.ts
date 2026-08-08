@@ -926,6 +926,16 @@ function generated(): typeof curated {
     out.push({ key: 'mobius_inversion_recovers_totient', name: 'Möbius inversion recovers the totient: since Σ_{d|n} φ(d) = n, inversion gives φ(n) = Σ_{d|n} μ(d)·(n/d) — the two identities are inverse (verified n ≤ 100)', test: () => { for (let n = 1; n <= 100; n++) { let s = 0; for (let d = 1; d <= n; d++) if (n % d === 0) s += mobius(d) * (n / d); if (s !== phi(n)) return false } return true } })
     out.push({ key: 'mobius_nonzero_iff_squarefree', name: 'μ(n) is nonzero exactly on squarefree n: μ(n) = 0 iff some prime square divides n, else μ(n) = (−1)^(number of prime factors) — verified against a direct squarefree test for n ≤ 100', test: () => { const squarefree = (n: number) => { for (let p = 2; p * p <= n; p++) if (n % (p * p) === 0) return false; return true }; for (let n = 1; n <= 100; n++) if ((mobius(n) !== 0) !== squarefree(n)) return false; return true } })
   }
+  // ── AUTOMATED family — one loop enumerates Fermat's little theorem and Wilson's theorem per prime,
+  // so the generator discovers many provable facts at once (each still checked exhaustively).
+  {
+    const PRIMES = [2, 3, 5, 7, 11, 13, 17, 19, 23]
+    const pw = (a: number, e: number, m: number) => { let r = 1, x = a % m; while (e > 0) { if (e & 1) r = r * x % m; x = x * x % m; e >>= 1 } return r }
+    for (const p of PRIMES) {
+      out.push({ key: 'flt_prime_' + p, name: 'Fermat’s little theorem at p=' + p + ': a^(p−1) ≡ 1 (mod ' + p + ') for every residue a from 1 to ' + (p - 1) + ' — exhaustive over all nonzero residues', test: () => { for (let a = 1; a < p; a++) if (pw(a, p - 1, p) !== 1) return false; return true } })
+      out.push({ key: 'wilson_prime_' + p, name: 'Wilson’s theorem at p=' + p + ': (p−1)! ≡ −1 (mod ' + p + '), i.e. the factorial of ' + (p - 1) + ' is congruent to ' + (p - 1) + ' mod ' + p, test: () => { let f = 1; for (let k = 1; k < p; k++) f = f * k % p; return f === (p === 2 ? 1 : p - 1) } })
+    }
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

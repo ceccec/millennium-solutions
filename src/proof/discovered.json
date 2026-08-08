@@ -2593,5 +2593,95 @@
     "key": "mobius_nonzero_iff_squarefree",
     "name": "μ(n) is nonzero exactly on squarefree n: μ(n) = 0 iff some prime square divides n, else μ(n) = (−1)^(number of prime factors) — verified against a direct squarefree test for n ≤ 100",
     "receipt": "dcfbba55-f67a-82bb-9b3e-d1505f1a5363"
+  },
+  {
+    "key": "flt_prime_2",
+    "name": "Fermat’s little theorem at p=2: a^(p−1) ≡ 1 (mod 2) for every residue a from 1 to 1 — exhaustive over all nonzero residues",
+    "receipt": "d12ad177-6d1b-89e4-af0e-788b0c212354"
+  },
+  {
+    "key": "wilson_prime_2",
+    "name": "Wilson’s theorem at p=2: (p−1)! ≡ −1 (mod 2), i.e. the factorial of 1 is congruent to 1 mod 2",
+    "receipt": "e1c811e1-9da7-84e8-a4dc-9227bcee8b30"
+  },
+  {
+    "key": "flt_prime_3",
+    "name": "Fermat’s little theorem at p=3: a^(p−1) ≡ 1 (mod 3) for every residue a from 1 to 2 — exhaustive over all nonzero residues",
+    "receipt": "1db7299b-1252-8c59-917f-b00a9b52cc31"
+  },
+  {
+    "key": "wilson_prime_3",
+    "name": "Wilson’s theorem at p=3: (p−1)! ≡ −1 (mod 3), i.e. the factorial of 2 is congruent to 2 mod 3",
+    "receipt": "40b4e3f7-5107-8e9c-8f17-6d2045ff2c5b"
+  },
+  {
+    "key": "flt_prime_5",
+    "name": "Fermat’s little theorem at p=5: a^(p−1) ≡ 1 (mod 5) for every residue a from 1 to 4 — exhaustive over all nonzero residues",
+    "receipt": "1af98c7c-8739-8f81-bdbb-6860bd2c6d94"
+  },
+  {
+    "key": "wilson_prime_5",
+    "name": "Wilson’s theorem at p=5: (p−1)! ≡ −1 (mod 5), i.e. the factorial of 4 is congruent to 4 mod 5",
+    "receipt": "f13ef0ee-72c7-88cf-8350-6cef2fd9fe2e"
+  },
+  {
+    "key": "flt_prime_7",
+    "name": "Fermat’s little theorem at p=7: a^(p−1) ≡ 1 (mod 7) for every residue a from 1 to 6 — exhaustive over all nonzero residues",
+    "receipt": "08a7edbf-e5d7-8c31-a378-c372f52a4588"
+  },
+  {
+    "key": "wilson_prime_7",
+    "name": "Wilson’s theorem at p=7: (p−1)! ≡ −1 (mod 7), i.e. the factorial of 6 is congruent to 6 mod 7",
+    "receipt": "56980766-f17e-89be-81c5-2617d7e1cfe3"
+  },
+  {
+    "key": "flt_prime_11",
+    "name": "Fermat’s little theorem at p=11: a^(p−1) ≡ 1 (mod 11) for every residue a from 1 to 10 — exhaustive over all nonzero residues",
+    "receipt": "c791c388-f1b1-8167-b162-4c8a52d5b249"
+  },
+  {
+    "key": "wilson_prime_11",
+    "name": "Wilson’s theorem at p=11: (p−1)! ≡ −1 (mod 11), i.e. the factorial of 10 is congruent to 10 mod 11",
+    "receipt": "e45be64f-536d-861c-b02c-de713ad3f488"
+  },
+  {
+    "key": "flt_prime_13",
+    "name": "Fermat’s little theorem at p=13: a^(p−1) ≡ 1 (mod 13) for every residue a from 1 to 12 — exhaustive over all nonzero residues",
+    "receipt": "3e4b71c9-9430-872c-b700-8c8bda183ee0"
+  },
+  {
+    "key": "wilson_prime_13",
+    "name": "Wilson’s theorem at p=13: (p−1)! ≡ −1 (mod 13), i.e. the factorial of 12 is congruent to 12 mod 13",
+    "receipt": "ff70c030-7a2b-8eab-a8f8-0bae3d30ce3b"
+  },
+  {
+    "key": "flt_prime_17",
+    "name": "Fermat’s little theorem at p=17: a^(p−1) ≡ 1 (mod 17) for every residue a from 1 to 16 — exhaustive over all nonzero residues",
+    "receipt": "e72bc7f3-a4ed-88af-bac3-f581b78e88c2"
+  },
+  {
+    "key": "wilson_prime_17",
+    "name": "Wilson’s theorem at p=17: (p−1)! ≡ −1 (mod 17), i.e. the factorial of 16 is congruent to 16 mod 17",
+    "receipt": "bb266542-a930-82da-a1df-fc19b4d93801"
+  },
+  {
+    "key": "flt_prime_19",
+    "name": "Fermat’s little theorem at p=19: a^(p−1) ≡ 1 (mod 19) for every residue a from 1 to 18 — exhaustive over all nonzero residues",
+    "receipt": "428a30df-1f9d-86ff-b559-88643c0e45e8"
+  },
+  {
+    "key": "wilson_prime_19",
+    "name": "Wilson’s theorem at p=19: (p−1)! ≡ −1 (mod 19), i.e. the factorial of 18 is congruent to 18 mod 19",
+    "receipt": "75a76bbd-ea3c-8232-a159-4f3a9d04560b"
+  },
+  {
+    "key": "flt_prime_23",
+    "name": "Fermat’s little theorem at p=23: a^(p−1) ≡ 1 (mod 23) for every residue a from 1 to 22 — exhaustive over all nonzero residues",
+    "receipt": "8a96231b-3cf5-8a4c-98e3-f9b71624f0b9"
+  },
+  {
+    "key": "wilson_prime_23",
+    "name": "Wilson’s theorem at p=23: (p−1)! ≡ −1 (mod 23), i.e. the factorial of 22 is congruent to 22 mod 23",
+    "receipt": "8a1af55d-c04e-8f58-a11d-cf37833b994a"
   }
 ]
