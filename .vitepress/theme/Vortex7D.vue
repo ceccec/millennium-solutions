@@ -180,6 +180,11 @@ onMounted(() => {
       <button type="button" class="vortex7d-btn" :aria-pressed="soundOn" :title="soundOn ? 'a432 tones on (tap the vortex)' : 'enable a432-tuned tones'" @click="toggleSound">{{ soundOn ? '🔊' : '🔈' }}</button>
       <button type="button" class="vortex7d-btn" title="read this theorem's microdata aloud" aria-label="Speak this theorem" @click="speak">🗣</button>
     </div>
+    <!-- screensaver "movie" caption: name what is on screen / being narrated, and how to resume -->
+    <div class="vortex7d-caption" v-if="idle && name">
+      <div class="vortex7d-title">{{ name }}</div>
+      <div class="vortex7d-hint">move or tap to resume</div>
+    </div>
   </div>
 </template>
 
@@ -196,9 +201,12 @@ onMounted(() => {
 .vortex7d-btn:hover { border-color: var(--vp-c-brand-1); }
 
 /* screensaver: after inactivity the vortex expands to fill the screen; any activity dismisses it */
-.vortex7d-wrap.screensaver { position: fixed; inset: 0; z-index: 60; display: flex; align-items: center; justify-content: center; background: var(--vp-c-bg); animation: vortex7d-fade 1.2s ease both; }
-.vortex7d-wrap.screensaver .vortex7d { width: min(88vw, 88vh); height: min(88vw, 88vh); }
+.vortex7d-wrap.screensaver { position: fixed; inset: 0; z-index: 60; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; background: var(--vp-c-bg); animation: vortex7d-fade 1.2s ease both; padding: 4vmin; }
+.vortex7d-wrap.screensaver .vortex7d { width: min(78vw, 78vh); height: min(78vw, 78vh); }
 .vortex7d-wrap.screensaver .vortex7d-bg { animation-duration: 40s; }
+.vortex7d-caption { max-width: 80ch; text-align: center; }
+.vortex7d-title { font-size: clamp(1rem, 2.4vw, 1.5rem); font-weight: 600; color: var(--vp-c-text-1); line-height: 1.4; }
+.vortex7d-hint { margin-top: 10px; font-size: 0.85rem; color: var(--vp-c-text-3); letter-spacing: 0.04em; }
 @keyframes vortex7d-fade { from { opacity: 0; } to { opacity: 1; } }
 
 @media (prefers-reduced-motion: reduce) {
