@@ -1818,5 +1818,35 @@
     "key": "pick_theorem",
     "name": "Pick's theorem: for a lattice polygon Area = I + B/2 − 1 (interior + boundary lattice points), verified on a triangle and a square",
     "receipt": "e316b749-3010-8254-a178-92ca1a159e18"
+  },
+  {
+    "key": "ramsey_r33",
+    "name": "Ramsey R(3,3)=6: every 2-colouring of K₆'s edges has a monochromatic triangle (exhaustive over all 2¹⁵), and K₅ admits a colouring with none",
+    "receipt": "23cacdea-c68c-8323-a93a-95ce1b9f4454"
+  },
+  {
+    "key": "cauchy_schwarz",
+    "name": "the Cauchy–Schwarz inequality: (Σ aᵢbᵢ)² ≤ (Σ aᵢ²)(Σ bᵢ²) on integer vectors",
+    "receipt": "f513285b-39c3-882a-8924-e5616d46fe1d"
+  },
+  {
+    "key": "am_gm_inequality",
+    "name": "the AM–GM inequality: the arithmetic mean ≥ the geometric mean (2 and 3 variables, exhaustive on a grid)",
+    "receipt": "3fd7d863-31e4-8834-86b0-cbd45a0451ce"
+  },
+  {
+    "key": "cantor_pairing",
+    "name": "the Cantor pairing π(a,b)=(a+b)(a+b+1)/2+b is a bijection ℕ×ℕ → ℕ: injective and onto (verified on a grid)",
+    "receipt": "1b2e9abe-ca7b-8260-b40d-dd9c53294d4f"
+  },
+  {
+    "key": "partition_pentagonal",
+    "name": "partition numbers via Euler's pentagonal recurrence: p(0..8) = 1,1,2,3,5,7,11,15,22",
+    "receipt": "48ac0164-7c5a-8752-8b3f-dc84ddb9202a"
+  },
+  {
+    "key": "lucas_theorem",
+    "name": "Lucas' theorem: C(m,n) mod p = Π C(mᵢ,nᵢ) over the base-p digits (p=3,5, all m,n ≤ 30)",
+    "receipt": "f64054e9-231b-87cb-8b94-5db5ee25daa4"
   }
 ]
