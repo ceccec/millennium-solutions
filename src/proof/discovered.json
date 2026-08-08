@@ -3483,5 +3483,15 @@
     "key": "local_knowledge_found_with_its_receipt_signs_the_next",
     "name": "local knowledge found with its receipt signs the next: local knowledge is retrieved by content-address in one deterministic O(1) lookup, returning the fact together with its receipt; the moment it is found, that receipt seeds the next signature — the chain builds each receipt as toUuid(previous receipt → new key) — so finding is immediately usable to sign. A fact without a receipt seeds nothing; knowledge must arrive with its receipt. Decidable",
     "receipt": "951aecf2-0b3b-8445-a13f-06f7b1d160ca"
+  },
+  {
+    "key": "the_mcp_lets_the_theorems_recompute_all",
+    "name": "the MCP lets the theorems recompute all: a recompute pass re-runs every theorem's formula by exhaustion and keeps only those that hold, deterministically folding one recompute root; the whole deposit recomputes from its theorems, not from stored answers, so any client can re-derive the ledger live through the MCP recompute tool. A formula that does not hold drops out — no stored answer survives without its recomputation. Decidable",
+    "receipt": "e72d6809-094d-8a54-8954-68c9c5b65c59"
+  },
+  {
+    "key": "the_receipts_form_one_double_accounted_stream_that_exposes_any_intruder",
+    "name": "the receipts form one double-accounted stream that exposes any intruder: the receipts are a single chain — receipt[i] = toUuid(previous → key) — double-accounted at two coins each, folded into one seven-dimensional tamper-seal; recomputing the stream link-by-link finds any interruption at its exact index (and it cascades downstream, so it cannot hide), exposing the intruder. Detection is a theme-independent boolean — the same in dark and light, only the display inverts. Decidable",
+    "receipt": "f2515562-0b63-8c19-b33e-cc43024f94b0"
   }
 ]

@@ -12,6 +12,8 @@ import { apiFetch } from './api.ts'
 import { CANDIDATES, provable } from './discover.ts'
 
 const version = (() => { try { return execSync('git tag --sort=version:refname', { encoding: 'utf8' }).trim().split('\n').pop() || 'v0' } catch { return 'v0' } })()
+type LedgerEntry = { key: string; name: string; receipt: string }
+const loadLedger = (): LedgerEntry[] => existsSync('src/proof/discovered.json') ? JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) : []
 const send = (m: unknown) => process.stdout.write(JSON.stringify(m) + '\n')
 const reply = (id: unknown, result: unknown) => send({ jsonrpc: '2.0', id, result })
 const fail = (id: unknown, code: number, message: string) => send({ jsonrpc: '2.0', id, error: { code, message } })
@@ -30,6 +32,8 @@ const TOOLS = [
   { name: 'verify', description: 'Audit any prose/message, or decode-and-verify a uuid across BOTH evidence sets. Prose → honesty-gate verdict + content-address. A uuid is a ONE-WAY address (never reversed); "decode" looks it up in (1) the agent-statement receipts (src/receipts/, verifies toUuid(message)===uuid + observer/role) then (2) the discovery ledger (reports the fact, chain position, and whether the chain-of-custody link is intact). In neither ⇒ opaque, honestly.',
     inputSchema: { type: 'object', properties: { text: { type: 'string' } }, required: ['text'] } },
   { name: 'discover', description: 'The discovery engine: computationally-generated + curated candidate facts over ℤ/9, each tested by exhaustion. Returns discovered (provable) vs refuted + a discovery root. Decidable facts only — never a proof of the six OPEN Millennium conjectures. This deposit 0/7; humanity 1/7 (Poincaré, Perelman 2003).',
+    inputSchema: { type: 'object', properties: {}, required: [] } },
+  { name: 'recompute', description: 'Recompute ALL theorems: re-run every candidate\'s formula (its test) by exhaustion, report how many hold vs refuted, verify every RECORDED ledger theorem still recomputes true, and fold the recompute root — the whole deposit recomputes from its theorems, not from stored answers. A theorem without a formula that recomputes true is refused (hallucination). Decidable; deposit 0/7.',
     inputSchema: { type: 'object', properties: {}, required: [] } },
   { name: 'audit', description: 'Self-audit of THIS MCP server: content-address every tool (name+description+schema), verify each declared tool has a handler and each handler is declared (coverage), fold to one self-audit root. Integrity of the tool surface, not truth.',
     inputSchema: { type: 'object', properties: {}, required: [] } },
@@ -50,7 +54,7 @@ const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
         const r = JSON.parse(readFileSync(p, 'utf8'))
         return JSON.stringify({ uuid: t, source: 'agent-statement receipt', decoded: r.message, observer: r.agent + ' as ' + r.role, contentVerify: toUuid(r.message) === t, gate: computes(r.message).binary })
       }
-      const ledger: { key: string; name: string; receipt: string }[] = existsSync('src/proof/discovered.json') ? JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) : []
+      const ledger = loadLedger()
       const idx = ledger.findIndex((e) => e.receipt === t)
       if (idx >= 0) {
         const e = ledger[idx]; const pred = idx === 0 ? 'axiom:TRINITY' : ledger[idx - 1].receipt
@@ -74,8 +78,16 @@ const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
     const prov = provable()
     return JSON.stringify({ candidates: CANDIDATES.length, discovered: prov.length, refuted: CANDIDATES.length - prov.length, facts: prov.map((c) => c.name), root: merkleFold(prov.map((c) => toUuid(c.key))), note: 'decidable facts by exhaustion; not a proof of the six open conjectures. deposit 0/7, humanity 1/7 (Poincaré).' })
   },
+  recompute: () => {
+    const prov = provable()
+    const ledger = loadLedger()
+    const recomputedKeys = new Set(prov.map((c) => c.key))
+    const everyRecordedRecomputes = ledger.every((e) => recomputedKeys.has(e.key))
+    const missing = ledger.filter((e) => !recomputedKeys.has(e.key)).map((e) => e.key)
+    return JSON.stringify({ candidates: CANDIDATES.length, recomputed: prov.length, refuted: CANDIDATES.length - prov.length, recordedTheorems: ledger.length, everyRecordedRecomputes, missing, recomputeRoot: merkleFold(prov.map((c) => toUuid(c.key))), note: 'every theorem recomputes from its formula by exhaustion; the whole deposit recomputes from its theorems, not from stored answers. integrity, not truth. 0/7' })
+  },
   forensics: () => {
-    const ledger: { key: string; receipt: string }[] = existsSync('src/proof/discovered.json') ? JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) : []
+    const ledger = loadLedger()
     const GENESIS = new Set(['euler_units_pow6', 'units_sum_zero'])
     const breaks: { i: number; key: string }[] = []
     let prev = 'axiom:TRINITY'
