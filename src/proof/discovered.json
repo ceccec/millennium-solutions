@@ -3213,5 +3213,10 @@
     "key": "local_deterministic_correlations_respect_the_chsh_bound",
     "name": "local deterministic correlations respect the classical CHSH bound: each perspective outputs ±1 as a deterministic function of its own setting and a shared receipt (a local hidden-variable model), so for every shared value the CHSH combination is exactly ±2 and its average |S| ≤ 2 — the classical bound holds, never exceeded. This deposit does not violate the Bell inequality and claims no quantum advantage",
     "receipt": "ee023d60-bb71-8c6d-807a-5768ee999558"
+  },
+  {
+    "key": "two_is_a_primitive_root_mod_nine_and_generates_the_vortex",
+    "name": "two is a primitive root mod 9 and generates the vortex: the powers of 2 mod 9 cycle 2,4,8,7,5,1 with order 6, generating the full unit group (ℤ/9)* = {1,2,4,5,7,8}; the vortex orbit is exactly this cycle as a set, and every element skips the multiples of 3 (the W-axis). A decidable fact by exhaustion over ℤ/9",
+    "receipt": "dd3b0f30-660d-8076-ab29-83d14ccf22ee"
   }
 ]
