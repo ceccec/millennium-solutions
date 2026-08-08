@@ -3578,5 +3578,15 @@
     "key": "wilsons_theorem_characterizes_the_primes_exactly",
     "name": "Wilson's theorem characterizes the primes exactly: for n > 1, (n−1)! ≡ −1 mod n if and only if n is prime; and for every composite n > 4, (n−1)! ≡ 0 mod n, with the lone exception n = 4 giving (n−1)! ≡ 2. So the value of (n−1)! mod n is a complete primality test — minus one for primes, zero for composites above four. Verified by full enumeration over n up to 100",
     "receipt": "e9e83ab7-6f5e-8ac2-ac63-d12492c35851"
+  },
+  {
+    "key": "nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number",
+    "name": "Nicomachus theorem: the sum of the first n cubes is the square of the nth triangular number — 1³ + 2³ + ... + n³ = (n(n+1)/2)² = (1 + 2 + ... + n)². So a sum of consecutive cubes is always a perfect square, the square of the sum. Verified by full enumeration over n up to 60",
+    "receipt": "5c562cab-4297-8d38-9310-90d6b4195e17"
+  },
+  {
+    "key": "the_sum_of_the_first_n_odd_numbers_is_n_squared",
+    "name": "the sum of the first n odd numbers is n squared: 1 + 3 + 5 + ... + (2n−1) = n², so the odd numbers build the perfect squares one gnomon at a time; equivalently, consecutive squares differ by an odd number, (m+1)² − m² = 2m + 1. Verified by full enumeration over n up to 200",
+    "receipt": "6f3b1539-0b56-8044-8f4d-b0a8bfadc8e4"
   }
 ]
