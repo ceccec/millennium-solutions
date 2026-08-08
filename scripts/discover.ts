@@ -265,6 +265,12 @@ function generated(): typeof curated {
   out.push({ key: 'gematria_51_class', name: '"merkaba", "pleme", "wave" share the letter-sum 51 (digital root 6)', test: () => lsum('merkaba') === 51 && lsum('pleme') === 51 && lsum('wave') === 51 && drWord('merkaba') === 6 })
   out.push({ key: 'gematria_ceccec_harmony_4', name: '"ceccec" and "harmony" share the digital root 4', test: () => drWord('ceccec') === 4 && drWord('harmony') === 4 })
   out.push({ key: 'gematria_singularity_horo_2', name: '"singularity" and "horo" share the digital root 2', test: () => drWord('singularity') === 2 && drWord('horo') === 2 })
+  // vocabulary improved WITH the discovered domains — the gematria clusters the domain names by kinship.
+  out.push({ key: 'gematria_nim_games_9', name: '"nim" and "games" both digital-root to 9 — nim is a game', test: () => drWord('nim') === 9 && drWord('games') === 9 })
+  out.push({ key: 'gematria_nim_theorists_87', name: 'the Nim theorists coincide: "bouton" and "sprague" share the letter-sum 87', test: () => lsum('bouton') === 87 && lsum('sprague') === 87 })
+  out.push({ key: 'gematria_combinatorics_52', name: '"catalan", "pascal", "hasse" share the letter-sum 52 (all digital-root 7)', test: () => lsum('catalan') === 52 && lsum('pascal') === 52 && lsum('hasse') === 52 && drWord('catalan') === 7 })
+  out.push({ key: 'gematria_fibonacci_pair_2', name: '"cassini" and "pisano" both digital-root to 2 — the two Fibonacci-period theorems', test: () => drWord('cassini') === 2 && drWord('pisano') === 2 })
+  out.push({ key: 'gematria_golden_pair_1', name: '"farey" and "beatty" both digital-root to 1 — the golden-ratio pair', test: () => drWord('farey') === 1 && drWord('beatty') === 1 })
   // NEW DOMAIN — the language lens: the UUID matrix sees translations as BYTES, not meaning. Distinct
   // translation strings → distinct addresses; identical → identical; the cross-locale concept handle is
   // order-independent but exists ONLY because a human aligned the LOCALES table. Meaning is not in the

@@ -948,5 +948,30 @@
     "key": "trial_prediction",
     "name": "trial DRAINED (tried): a prediction guaranteed to succeed is not upheld — it drains; the negated form signs",
     "receipt": "8412c3c0-9f52-8a31-b045-9812ae3da106"
+  },
+  {
+    "key": "gematria_nim_games_9",
+    "name": "\"nim\" and \"games\" both digital-root to 9 — nim is a game",
+    "receipt": "e935f43f-8872-815d-8ba4-1f2f5b6900ba"
+  },
+  {
+    "key": "gematria_nim_theorists_87",
+    "name": "the Nim theorists coincide: \"bouton\" and \"sprague\" share the letter-sum 87",
+    "receipt": "34bbaaa2-e335-88c3-b814-ae59f2fa485b"
+  },
+  {
+    "key": "gematria_combinatorics_52",
+    "name": "\"catalan\", \"pascal\", \"hasse\" share the letter-sum 52 (all digital-root 7)",
+    "receipt": "d7265dff-3bf4-850d-bce9-a5ed0507ffa0"
+  },
+  {
+    "key": "gematria_fibonacci_pair_2",
+    "name": "\"cassini\" and \"pisano\" both digital-root to 2 — the two Fibonacci-period theorems",
+    "receipt": "3fda7026-d509-818c-9cf2-ce5729976d5b"
+  },
+  {
+    "key": "gematria_golden_pair_1",
+    "name": "\"farey\" and \"beatty\" both digital-root to 1 — the golden-ratio pair",
+    "receipt": "b05ef0a5-d593-8eda-81e2-75f02209c5cf"
   }
 ]
