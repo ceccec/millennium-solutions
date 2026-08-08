@@ -58,6 +58,19 @@ if (message) {
     process.exit(0)
   }
   console.log('next — the wave has reached rest: no new provable fact in the candidate space (' + known.size + ' recorded).')
+  // FALLBACK — never dead-end: propose the most probable next idea (a decidable domain not yet added).
+  // Honestly bounded: each is a suggestion to implement as a family in scripts/discover.ts, not a claim.
+  const BACKLOG = [
+    'symmetric group S₃ — permutation parity and the sign homomorphism (|S₃| = 6 = |ℤ/9*|)',
+    'figurate numbers — triangular n(n+1)/2, square, pentagonal identities (bounded range)',
+    'Fibonacci/Lucas — Cassini F(n)²−F(n−1)·F(n+1) = (−1)ⁿ (verified over a range)',
+    'continued fractions — convergents of rationals; the golden ratio [1;1,1,…]',
+    'Gaussian integers ℤ[i] — the four units {1,i,−1,−i} and norm multiplicativity',
+    'graph theory — the handshake lemma on the vortex Cayley graph',
+  ]
+  console.log('  fallback — next idea (most probable): ' + BACKLOG[0])
+  if (BACKLOG.length > 1) console.log('  queue: ' + BACKLOG.slice(1).map((s) => s.split(' — ')[0]).join(' · '))
+  console.log('  add it as a family in scripts/discover.ts and the wave sends again.')
 }
 
 // ── then: understand what is truly next ─────────────────────────────────────────
