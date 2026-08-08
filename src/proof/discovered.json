@@ -3273,5 +3273,10 @@
     "key": "the_imprint_codec_is_injective_with_an_exact_115_bit_capacity",
     "name": "the imprint codec is an injective lossless encoding with an exact 115-bit capacity: distinct binary messages of length ≤ CAPACITY map to distinct uuids and read back exactly (readImprint(imprint(m)) = m), so the encoding loses nothing; the capacity is exactly 128 − 6 reserved − 7 length-header = 115 bits, and a 116-bit message is rejected — the boundary is exact, not approximate. A bounded codec, integrity not secrecy. Decidable by exhaustion up to the bound",
     "receipt": "9ce1e391-865f-8072-9d97-fdc1f1996354"
+  },
+  {
+    "key": "the_nonzero_residues_sum_to_zero_mod_n_exactly_when_n_is_odd",
+    "name": "the nonzero residues sum to zero mod n exactly when n is odd: 1+2+...+(n−1) = n(n−1)/2 is ≡ 0 mod n iff n is odd (when n is even the sum ≡ n/2 mod n). So for n = 9 the residues sum to 36 ≡ 0 (digital root 9) and cancel, whereas for even moduli they leave a remainder of n/2. Decidable by exhaustion over the moduli up to 200",
+    "receipt": "3ad53e9c-3917-8a6c-adb4-d8c51ec4f65c"
   }
 ]
