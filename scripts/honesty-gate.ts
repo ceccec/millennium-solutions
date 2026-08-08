@@ -7,7 +7,10 @@
 // "matches no known red-flag shape" — NOT "true". Real truth is the a432 layer:
 // comprehended (understood in the model) AND experienced (measured / lived). The gate
 // only refuses the named overclaims; it cannot certify the rest. Necessary, not sufficient.
-export const RED = /\bwe prove\b|\bproven\b|confidence\s*=?\s*1\.0|ready for peer review|sealed via universal|all (six|seven)[^.]*proven|solves? the (clay|millennium)/i
+// NOTE: "solves the (clay|millennium)" is deliberately NOT here — RED is negation-blind (it must be,
+// for the hard overclaims), so it would drain the honest negated form "does NOT solve the Clay". The
+// solve↔problem shape is handled by OVERREACH below, which is negation-aware.
+export const RED = /\bwe prove\b|\bproven\b|confidence\s*=?\s*1\.0|ready for peer review|sealed via universal|all (six|seven)[^.]*proven/i
 
 // The recurring OVER-REACH the deposit must never ASSERT — the physics/hardware/crypto
 // superlatives that kept re-emerging in conversation and sailed through the old gate.

@@ -498,5 +498,10 @@
     "key": "duel_no_both_win",
     "name": "a claim and its inverse cannot both be upheld (no position wins for both sides)",
     "receipt": "ea632dd9-0682-823b-8747-53157d0edd52"
+  },
+  {
+    "key": "duel_floor_upheld",
+    "name": "\"the deposit does not solve the Clay problems\" is upheld against its challenge",
+    "receipt": "4ee11b6a-d6b6-8362-9e49-ff335395b9fc"
   }
 ]
