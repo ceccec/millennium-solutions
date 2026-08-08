@@ -3693,5 +3693,30 @@
     "key": "erdos_among_n_plus_one_from_one_to_2n_one_divides_another",
     "name": "Erdős: among any n+1 integers from 1 to 2n, one divides another: every subset of size n+1 of {1, 2, ..., 2n} contains two elements where the smaller divides the larger — verified over all such subsets for n up to 7. The bound is tight: the n numbers {n+1, n+2, ..., 2n} contain no such pair, so n+1 is the least size that forces one. The reason is the pigeonhole on odd parts — there are only n odd numbers below 2n. Verified by exhaustive enumeration",
     "receipt": "c25f629f-5f50-8813-9e03-3a834b1b56d5"
+  },
+  {
+    "key": "the_sum_of_the_first_n_squares",
+    "name": "the sum of the first n squares is n(n+1)(2n+1)/6: 1² + 2² + ... + n² = n(n+1)(2n+1)/6 for every n — verified by full enumeration over n up to 200. Together with the sum of the first n cubes being a perfect square, the power sums have clean closed forms. Verified by enumeration",
+    "receipt": "021952ba-2f3f-8815-9e41-d3f5213ee995"
+  },
+  {
+    "key": "the_sum_of_powers_of_two_is_one_less_than_the_next_power",
+    "name": "the sum of powers of two is one less than the next power: 2⁰ + 2¹ + ... + 2ⁿ = 2^(n+1) − 1 for every n — the geometric series with ratio 2, which is exactly why a Mersenne number 2^p − 1 is a run of p ones in binary. Verified by full enumeration over n up to 40",
+    "receipt": "8255cf27-1b9c-8a02-909e-a4ed62e938a0"
+  },
+  {
+    "key": "the_binomial_row_sums_and_alternating_sum",
+    "name": "the binomial coefficients in row n sum to 2ⁿ, and their alternating sum is zero: Σ_k C(n,k) = 2ⁿ (counting every subset of an n-set) while Σ_k (−1)^k C(n,k) = 0 for n ≥ 1 (equally many even and odd subsets). Verified by full enumeration over n up to 25",
+    "receipt": "27db35f3-f44c-8ddc-b07c-fd32a0f5d306"
+  },
+  {
+    "key": "fermats_little_theorem_a_to_the_p_is_a_mod_p",
+    "name": "Fermat's little theorem: for every prime p and every integer a, a^p ≡ a mod p — verified for the primes up to 23 and all residues. This is the p-power Frobenius fixing the prime field; dividing by a for a coprime to p gives a^(p−1) ≡ 1. Verified by modular exponentiation over the kernel primitives",
+    "receipt": "d1bc3347-a347-85ea-b47b-34a92c896dd1"
+  },
+  {
+    "key": "the_collatz_map_reaches_one_for_every_start_up_to_10000",
+    "name": "the Collatz map reaches 1 for every start up to 10000: iterating n → n/2 when even and 3n+1 when odd reaches 1 from every starting value from 1 to 10000 — verified by direct iteration, with 27 taking 111 steps. The general conjecture is open; this is the bounded, checked fact, not a proof for all n. Verified by exhaustive iteration",
+    "receipt": "3af2a56f-7938-8382-b1aa-4d58ac3547f9"
   }
 ]
