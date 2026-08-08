@@ -2578,5 +2578,20 @@
     "key": "euler_theorem_totient",
     "name": "Euler’s theorem: a^φ(n) ≡ 1 (mod n) for every a coprime to n — the generalization of Fermat’s little theorem (verified for all n ≤ 30 and all coprime a), and at n=9 every unit u satisfies u⁶ ≡ 1",
     "receipt": "bf7c3af5-42f9-8756-a0d9-446b6e7aafcc"
+  },
+  {
+    "key": "mobius_divisor_sum_is_indicator",
+    "name": "the Möbius divisor sum is the identity indicator: Σ_{d | n} μ(d) = 1 when n=1 and 0 otherwise — the defining orthogonality that makes Möbius inversion work (verified n ≤ 100)",
+    "receipt": "e0bbc47c-3270-8bba-81ce-b07729547ae8"
+  },
+  {
+    "key": "mobius_inversion_recovers_totient",
+    "name": "Möbius inversion recovers the totient: since Σ_{d|n} φ(d) = n, inversion gives φ(n) = Σ_{d|n} μ(d)·(n/d) — the two identities are inverse (verified n ≤ 100)",
+    "receipt": "0aa5076c-3b31-8d11-b828-d33c22a7b612"
+  },
+  {
+    "key": "mobius_nonzero_iff_squarefree",
+    "name": "μ(n) is nonzero exactly on squarefree n: μ(n) = 0 iff some prime square divides n, else μ(n) = (−1)^(number of prime factors) — verified against a direct squarefree test for n ≤ 100",
+    "receipt": "dcfbba55-f67a-82bb-9b3e-d1505f1a5363"
   }
 ]

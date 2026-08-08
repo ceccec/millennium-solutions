@@ -917,6 +917,15 @@ function generated(): typeof curated {
     out.push({ key: 'totient_is_multiplicative', name: 'the totient is multiplicative: φ(mn) = φ(m)·φ(n) whenever gcd(m,n)=1 — verified exhaustively for coprime m,n ≤ 12 (so φ(9)=φ(9) and, e.g., φ(45)=φ(9)φ(5)=6·4=24)', test: () => { for (let m = 1; m <= 12; m++) for (let n = 1; n <= 12; n++) if (gc(m, n) === 1 && phi(m * n) !== phi(m) * phi(n)) return false; return true } })
     out.push({ key: 'euler_theorem_totient', name: 'Euler’s theorem: a^φ(n) ≡ 1 (mod n) for every a coprime to n — the generalization of Fermat’s little theorem (verified for all n ≤ 30 and all coprime a), and at n=9 every unit u satisfies u⁶ ≡ 1', test: () => { for (let n = 2; n <= 30; n++) for (let a = 1; a < n; a++) if (gc(a, n) === 1 && pm(a, phi(n), n) !== 1) return false; return true } })
   }
+  // ── a NEW decidable domain — MÖBIUS function μ and inversion: the dual of the totient. Full enumeration.
+  {
+    const gc = (a: number, b: number): number => b ? gc(b, a % b) : a
+    const phi = (n: number) => { let c = 0; for (let k = 1; k <= n; k++) if (gc(k, n) === 1) c++; return c }
+    const mobius = (n: number) => { if (n === 1) return 1; let cnt = 0, m = n; for (let p = 2; p * p <= m; p++) if (m % p === 0) { let e = 0; while (m % p === 0) { m /= p; e++ } if (e > 1) return 0; cnt++ } if (m > 1) cnt++; return cnt % 2 === 0 ? 1 : -1 }
+    out.push({ key: 'mobius_divisor_sum_is_indicator', name: 'the Möbius divisor sum is the identity indicator: Σ_{d | n} μ(d) = 1 when n=1 and 0 otherwise — the defining orthogonality that makes Möbius inversion work (verified n ≤ 100)', test: () => { for (let n = 1; n <= 100; n++) { let s = 0; for (let d = 1; d <= n; d++) if (n % d === 0) s += mobius(d); if (s !== (n === 1 ? 1 : 0)) return false } return true } })
+    out.push({ key: 'mobius_inversion_recovers_totient', name: 'Möbius inversion recovers the totient: since Σ_{d|n} φ(d) = n, inversion gives φ(n) = Σ_{d|n} μ(d)·(n/d) — the two identities are inverse (verified n ≤ 100)', test: () => { for (let n = 1; n <= 100; n++) { let s = 0; for (let d = 1; d <= n; d++) if (n % d === 0) s += mobius(d) * (n / d); if (s !== phi(n)) return false } return true } })
+    out.push({ key: 'mobius_nonzero_iff_squarefree', name: 'μ(n) is nonzero exactly on squarefree n: μ(n) = 0 iff some prime square divides n, else μ(n) = (−1)^(number of prime factors) — verified against a direct squarefree test for n ≤ 100', test: () => { const squarefree = (n: number) => { for (let p = 2; p * p <= n; p++) if (n % (p * p) === 0) return false; return true }; for (let n = 1; n <= 100; n++) if ((mobius(n) !== 0) !== squarefree(n)) return false; return true } })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
