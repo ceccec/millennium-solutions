@@ -49,16 +49,37 @@ const CONCEPTS = [
   { title: 'from the heart', src: 'src/from/the/heart/index.ts', text: fromTheHeart() },
   { title: 'play the game', src: 'src/play/the/game/index.ts', text: playTheGame() },
 ]
+
+// Make every card interactive: link anything linkable INSIDE the card — source-file paths (→ the repo)
+// and URLs (→ the target). Bare "/word" tokens are deliberately NOT linked, because the concept text
+// carries math like ℤ/9 and 0/7 that are not routes (no dead links, no prose poison).
+const REPO = 'https://github.com/ceccec/millennium-solutions/blob/main/'
+const repoHref = (src: string) => REPO + src
+type Seg = { t: string; href?: string; ext?: boolean }
+function linkify(text: string): Seg[] {
+  const segs: Seg[] = []
+  const re = /(https?:\/\/[^\s)]+)|((?:src|scripts)\/[\w./-]+\.(?:ts|vue|md|json))/g
+  let last = 0, m: RegExpExecArray | null
+  while ((m = re.exec(text)) !== null) {
+    if (m.index > last) segs.push({ t: text.slice(last, m.index) })
+    const tok = m[0]
+    segs.push({ t: tok, href: m[1] ? tok : repoHref(tok), ext: true })
+    last = m.index + tok.length
+  }
+  if (last < text.length) segs.push({ t: text.slice(last) })
+  return segs
+}
+const cards = CONCEPTS.map((c) => ({ ...c, segs: linkify(c.text) }))
 </script>
 
 <template>
   <div class="the-concepts">
-    <article v-for="c in CONCEPTS" :key="c.src" class="the-card">
+    <article v-for="c in cards" :key="c.src" class="the-card">
       <header class="the-head">
         <h3>{{ c.title }}</h3>
-        <code>{{ c.src }}</code>
+        <a class="the-src" :href="repoHref(c.src)" target="_blank" rel="noopener" title="view source on GitHub"><code>{{ c.src }}</code></a>
       </header>
-      <pre>{{ c.text }}</pre>
+      <pre class="the-body"><template v-for="(s, i) in c.segs" :key="i"><a v-if="s.href" :href="s.href" target="_blank" rel="noopener">{{ s.t }}</a><template v-else>{{ s.t }}</template></template></pre>
     </article>
   </div>
 </template>
@@ -70,7 +91,13 @@ const CONCEPTS = [
   border-radius: 12px;
   padding: 1rem 1.15rem;
   background: var(--vp-c-bg-soft);
+  transition: border-color .2s ease;
 }
+.the-card:hover { border-color: var(--vp-c-brand-1); }
+.the-src { text-decoration: none; }
+.the-src code { color: var(--vp-c-text-2); }
+.the-src:hover code { color: var(--vp-c-brand-1); }
+.the-body a { color: var(--vp-c-brand-1); text-decoration: underline; text-underline-offset: 2px; }
 .the-head {
   display: flex; align-items: baseline; justify-content: space-between;
   gap: 1rem; flex-wrap: wrap; margin-bottom: .5rem;

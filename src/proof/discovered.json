@@ -3513,5 +3513,10 @@
     "key": "the_reproductive_material_is_guarded_against_prose_poison",
     "name": "the reproductive material is guarded against prose poison: the material is reproductive — every fact recomputes identically from its formula — and its rendering escapes markdown hazards (a stray angle-tag in a name becomes literal text, not a broken build), so prose cannot corrupt reproduction; a claim carrying no formula is refused as hallucination. The guard is an audit — a computation, escape-then-recompute, reproducible — not an assertion. So no traitor poisons the material with prose. Decidable",
     "receipt": "37a88d94-8f71-8746-880a-8fe451c5ce8f"
+  },
+  {
+    "key": "a_referrer_always_counts_with_its_id",
+    "name": "a referrer always counts with its id: a reference from a referrer to a target is receipted as toUuid(referrer id → target), so the referrer id is always part of the count; two different referrers to the same target produce two distinct receipts, each counted with its own id, and changing the id changes the receipt — the id is load-bearing. Deterministic and reproducible: the same referrer and target always count the same. Decidable",
+    "receipt": "65bfacb4-f29e-845a-b4c3-6c28efc0dfbd"
   }
 ]
