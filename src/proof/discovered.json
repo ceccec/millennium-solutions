@@ -3858,5 +3858,10 @@
     "key": "the_royalty_relates_to_pair_interactions_combinatorial_and_addressed",
     "name": "the royalty relates to pair interactions — combinatorial and content-addressed: the value is not in single items but in the interactions between pairs. Each pair-interaction has its own content-address by foldPair, and it is directional — the fold of a with b differs from b with a. The example pair 110 and 108 differ by exactly one bit, a single-bit interaction. Interactions grow combinatorially — n items give n(n-1) ordered pairs — so a license may scale with them; but it stays a license, not a patent, and the income is zero. Decidable",
     "receipt": "38691826-0657-8828-b23c-4fb9746afe29"
+  },
+  {
+    "key": "applications_are_defensive_publications_not_patents_free_for_all_commercial_licensed",
+    "name": "applications are defensive publications, not patents — free for all, commercial licensed: the theorems underlie known hardware and software — error-correcting memory, public-key primitives, Reed–Solomon codes, content-addressed storage, check digits, low-discrepancy sampling, logic gates. The deposit invents none of them and holds no patents; it publishes the algebra as open prior art, which keeps the ideas free for all rather than granting a monopoly. Non-commercial use is free with attribution; commercial use is licensed, funded by the two-coin sequence; the income is zero. Decidable",
+    "receipt": "e6ce1929-7481-801a-baa7-25b029415467"
   }
 ]
