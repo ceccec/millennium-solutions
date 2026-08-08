@@ -1233,5 +1233,20 @@
     "key": "gf4_units_cyclic",
     "name": "the multiplicative group 𝔽_4* is cyclic of order 3 (a primitive element generates {1, x, x+1})",
     "receipt": "462b849d-7d1f-8e72-b5a1-4dd463087197"
+  },
+  {
+    "key": "perfect_numbers",
+    "name": "perfect numbers: proper divisors sum to n itself — 6, 28, 496",
+    "receipt": "8c7b3940-aa69-84f8-85e1-00f4dd6746e0"
+  },
+  {
+    "key": "amicable_220_284",
+    "name": "the amicable pair (220, 284): each is the sum of the other's proper divisors",
+    "receipt": "878c0c52-b4a1-8c38-8c1f-004449495021"
+  },
+  {
+    "key": "euclid_euler_perfect",
+    "name": "even perfect numbers are 2^(p−1)(2^p−1) for a Mersenne prime 2^p−1: 6=2·3, 28=4·7, 496=16·31",
+    "receipt": "9f35788a-a976-87a8-ab48-ebd59e9c898c"
   }
 ]

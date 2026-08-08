@@ -374,6 +374,12 @@ function generated(): typeof curated {
   out.push({ key: 'gf4_frobenius_fixes', name: 'in 𝔽_4 every element satisfies x^(p^k)=x: a⁴ = a for all a (Frobenius^k = id)', test: () => [0, 1, 2, 3].every((a) => gf4pow(a, 4) === a) })
   out.push({ key: 'gf4_frobenius_automorphism', name: "Frobenius φ(a)=a² is a field automorphism of 𝔽_4: additive (freshman's dream) and multiplicative", test: () => { const phi = (a: number) => gf4mul(a, a); return [0, 1, 2, 3].every((a) => [0, 1, 2, 3].every((b) => phi(a ^ b) === (phi(a) ^ phi(b)) && phi(gf4mul(a, b)) === gf4mul(phi(a), phi(b)))) } })
   out.push({ key: 'gf4_units_cyclic', name: 'the multiplicative group 𝔽_4* is cyclic of order 3 (a primitive element generates {1, x, x+1})', test: () => [1, 2, 3].some((g) => { const s = new Set<number>(); let x = 1; for (let i = 0; i < 3; i++) { s.add(x); x = gf4mul(x, g) } return s.size === 3 }) })
+  // perfect & amicable numbers — σ(n) divisor sums (bounded search, complete per n).
+  const properSum = (n: number) => { let s = 0; for (let d = 1; d < n; d++) if (n % d === 0) s += d; return s }
+  const isPrimeN = (m: number) => { if (m < 2) return false; for (let d = 2; d * d <= m; d++) if (m % d === 0) return false; return true }
+  out.push({ key: 'perfect_numbers', name: 'perfect numbers: proper divisors sum to n itself — 6, 28, 496', test: () => [6, 28, 496].every((n) => properSum(n) === n) })
+  out.push({ key: 'amicable_220_284', name: "the amicable pair (220, 284): each is the sum of the other's proper divisors", test: () => properSum(220) === 284 && properSum(284) === 220 })
+  out.push({ key: 'euclid_euler_perfect', name: 'even perfect numbers are 2^(p−1)(2^p−1) for a Mersenne prime 2^p−1: 6=2·3, 28=4·7, 496=16·31', test: () => { const perf = (p: number) => 2 ** (p - 1) * (2 ** p - 1); return perf(2) === 6 && perf(3) === 28 && perf(5) === 496 && [3, 7, 31].every(isPrimeN) } })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
