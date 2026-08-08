@@ -228,6 +228,13 @@ function generated(): typeof curated {
   out.push({ key: 'vocab_letter_sum_reversal_invariant', name: 'a word and its reversal share one letter-sum digital root (vede ↔ edev)', test: () => drWord('vede') === drWord('edev') })
   out.push({ key: 'vocab_glagolitic_bijection', name: 'the 9 Glagolitic letters (Azъ…Zemlja) are 9 distinct symbols, one per ℤ/9 digit', test: () => { const g = ['az', 'buky', 'vede', 'glagoli', 'dobro', 'jest', 'zhivete', 'dzelo', 'zemlja']; return g.length === BASE && new Set(g).size === BASE } })
   out.push({ key: 'vocab_seven_locales', name: 'the rosetta carries 7 distinct locale keys (en·bg·de·fr·es·ru·zh)', test: () => { const L = ['en', 'bg', 'de', 'fr', 'es', 'ru', 'zh']; return L.length === 7 && new Set(L).size === 7 } })
+  // vocabulary/gematria — a1z26 letter-sum digital roots of the core terms reveal real coincidences.
+  const lsum = (w: string) => a1z26(w).reduce((x, y) => x + y, 0)
+  out.push({ key: 'gematria_vortex_heart', name: '"vortex" digital-roots to 5 — the heart digit (σ(5)=5)', test: () => drWord('vortex') === 5 })
+  out.push({ key: 'gematria_trinity_horizon', name: '"trinity" digital-roots to 7 — the horizon digit', test: () => drWord('trinity') === 7 })
+  out.push({ key: 'gematria_51_class', name: '"merkaba", "pleme", "wave" share the letter-sum 51 (digital root 6)', test: () => lsum('merkaba') === 51 && lsum('pleme') === 51 && lsum('wave') === 51 && drWord('merkaba') === 6 })
+  out.push({ key: 'gematria_ceccec_harmony_4', name: '"ceccec" and "harmony" share the digital root 4', test: () => drWord('ceccec') === 4 && drWord('harmony') === 4 })
+  out.push({ key: 'gematria_singularity_horo_2', name: '"singularity" and "horo" share the digital root 2', test: () => drWord('singularity') === 2 && drWord('horo') === 2 })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

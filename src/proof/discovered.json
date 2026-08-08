@@ -828,5 +828,30 @@
     "key": "vocab_seven_locales",
     "name": "the rosetta carries 7 distinct locale keys (en·bg·de·fr·es·ru·zh)",
     "receipt": "21c521ea-3baf-8167-a97a-897b8fe2cd19"
+  },
+  {
+    "key": "gematria_vortex_heart",
+    "name": "\"vortex\" digital-roots to 5 — the heart digit (σ(5)=5)",
+    "receipt": "63abfd7c-c91c-84aa-bcbc-ae556c519184"
+  },
+  {
+    "key": "gematria_trinity_horizon",
+    "name": "\"trinity\" digital-roots to 7 — the horizon digit",
+    "receipt": "dce0ba69-7ba9-8311-84ad-24f27a5ed98f"
+  },
+  {
+    "key": "gematria_51_class",
+    "name": "\"merkaba\", \"pleme\", \"wave\" share the letter-sum 51 (digital root 6)",
+    "receipt": "b38c9c21-a8ac-8717-a010-aee988439606"
+  },
+  {
+    "key": "gematria_ceccec_harmony_4",
+    "name": "\"ceccec\" and \"harmony\" share the digital root 4",
+    "receipt": "cbd3ab4e-2f05-87c8-8ebc-034902ce13e8"
+  },
+  {
+    "key": "gematria_singularity_horo_2",
+    "name": "\"singularity\" and \"horo\" share the digital root 2",
+    "receipt": "1c434409-549d-8f61-a8f7-6aad069e68f9"
   }
 ]
