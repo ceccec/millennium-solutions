@@ -1,0 +1,5 @@
+function e(e){return{solves:!e,note:e?`true even when the conjecture is false → entails nothing`:`can be false when the conjecture is false → may entail`}}function t(e,t,n=[1,2,3,5,7,11,13,17],r){let i=e=>{let r={err:1/0,expr:``};for(let i of t)for(let a of[1,...t])for(let t of n){let n=i*t/a,o=Math.abs(n-e)/e;o<r.err&&(r={err:o,expr:i+`·`+t+`/`+a+` = `+n})}return r},a=i(e),o=r===void 0?null:i(r);return{fit:a.expr,err:a.err,controlFit:o?.expr??null,vacuous:o?o.err<.02:null}}function n(e,t){let n=e/t;return{ratio:n,orders:Math.round(Math.log10(Math.abs(n)))}}function r(){let r=e(!0),i=t(1836.15267,[9,16,27,108,216,432],[1,2,3,5,7,11,13,17],1837.4),a=n(0x25f273933db5700000,432),o=`honesty toolkit — point these at any claim:
+`;return o+=`  entails(true-when-conjecture-false): solves=`+r.solves+`  → `+r.note+`
+`,o+=`  curveFitCheck(m_p/m_e): best `+i.fit+`   vacuous? `+i.vacuous+` (same fit hits control 1837.4)
+`,o+=`  scaleCheck(nuclear 7e20 Hz, 432 Hz): ~10^`+a.orders+` apart
+`,o+=`three questions for any bold claim: does it ENTAIL? does the FIT fit anything? do the SCALES match?`,o}export{n as i,e as n,r,t};

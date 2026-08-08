@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Compute | Millennium Solutions</title>
+    <meta name="description" content="ℤ/9 vortex framework — recomputable proof of concept">
+    <meta name="generator" content="VitePress v2.0.0-alpha.19">
+    <link rel="preload stylesheet" href="/millennium-solutions/assets/style.Ba3r-h-3.css" as="style">
+    <link rel="preload stylesheet" href="/millennium-solutions/vp-icons.css" as="style">
+    <script type="module" src="/millennium-solutions/assets/chunks/metadata.14821dfb.js"></script>
+    <script type="module" src="/millennium-solutions/assets/app.Cy1aTRKw.js"></script>
+    <link rel="preload" href="/millennium-solutions/assets/inter-roman-latin.BOE8-mWI.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="modulepreload" href="/millennium-solutions/assets/chunks/framework.CFVsAkBd.js">
+    <link rel="modulepreload" href="/millennium-solutions/assets/chunks/theme.Eb-LXKFu.js">
+    <link rel="modulepreload" href="/millennium-solutions/assets/chunks/honesty.Br3m3nfi.js">
+    <link rel="modulepreload" href="/millennium-solutions/assets/compute.md.DNJ-MU24.lean.js">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'">
+    <link rel="manifest" href="/millennium-solutions/manifest.webmanifest">
+    <meta name="theme-color" content="#3451b2">
+    <link rel="icon" href="/millennium-solutions/icon.svg">
+    <link rel="apple-touch-icon" href="/millennium-solutions/icon.svg">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta property="og:site_name" content="Millennium Solutions">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://ceccec.psg.bg/millennium-solutions/icon.svg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://ceccec.psg.bg/millennium-solutions/icon.svg">
+    <meta name="author" content="Tsvetan Rouschev">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="ℤ/9, vortex, Pliska rosette, Clay Millennium Problems, Lean 4, recomputable, 0/7">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Millennium Solutions — the ℤ/9 Vortex Framework","description":"ℤ/9 vortex framework — recomputable proof of concept","author":{"@type":"Person","name":"Tsvetan Rouschev","@id":"https://orcid.org/0009-0000-7312-9778"},"license":"https://creativecommons.org/licenses/by-nc/4.0/","codeRepository":"https://github.com/ceccec/millennium-solutions","url":"https://ceccec.psg.bg/millennium-solutions/","identifier":"https://doi.org/10.5281/zenodo.21819217","programmingLanguage":["TypeScript","Lean 4"],"keywords":["ℤ/9","vortex","Pliska rosette","Clay Millennium Problems","Lean 4","recomputable","0/7"]}</script>
+    <script id="check-dark-mode">(()=>{let e=localStorage.getItem(`vitepress-theme-appearance`)||`auto`,t=window.matchMedia(`(prefers-color-scheme: dark)`).matches;(!e||e===`auto`?t:e===`dark`)&&document.documentElement.classList.add(`dark`)})();</script>
+    <script id="check-mac-os">document.documentElement.classList.toggle(`mac`,/Mac|iPhone|iPod|iPad/i.test(navigator.platform));</script>
+    <meta property="og:title" content="Compute | Millennium Solutions">
+    <meta property="og:description" content="ℤ/9 vortex framework — recomputable proof of concept">
+    <meta property="og:url" content="https://ceccec.psg.bg/millennium-solutions/compute.html">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:title" content="Compute | Millennium Solutions">
+    <meta name="twitter:description" content="ℤ/9 vortex framework — recomputable proof of concept">
+    <link rel="canonical" href="https://ceccec.psg.bg/millennium-solutions/compute.html">
+    <link rel="alternate" hreflang="en" href="https://ceccec.psg.bg/millennium-solutions/compute.html">
+    <link rel="alternate" hreflang="bg" href="https://ceccec.psg.bg/millennium-solutions/bg/compute.html">
+    <link rel="alternate" hreflang="de" href="https://ceccec.psg.bg/millennium-solutions/de/compute.html">
+    <link rel="alternate" hreflang="fr" href="https://ceccec.psg.bg/millennium-solutions/fr/compute.html">
+    <link rel="alternate" hreflang="es" href="https://ceccec.psg.bg/millennium-solutions/es/compute.html">
+    <link rel="alternate" hreflang="ru" href="https://ceccec.psg.bg/millennium-solutions/ru/compute.html">
+    <link rel="alternate" hreflang="zh" href="https://ceccec.psg.bg/millennium-solutions/zh/compute.html">
+    <link rel="alternate" hreflang="x-default" href="https://ceccec.psg.bg/millennium-solutions/compute.html">
+  </head>
+  <body>
+    <div id="app"><div class="Layout" data-v-c109192d><!--[--><!--]--><!--[--><span tabindex="-1" data-v-28660437></span><a href="#VPContent" class="VPSkipLink visually-hidden" data-v-28660437>Skip to content</a><!--]--><!----><header class="VPNav" data-v-c109192d data-v-d5bf7c8e><div class="VPNavBar has-sidebar top" data-v-d5bf7c8e data-v-cc1d9f2e><div class="wrapper" data-v-cc1d9f2e><div class="container" data-v-cc1d9f2e><div class="title" data-v-cc1d9f2e><div class="VPNavBarTitle has-sidebar" data-v-cc1d9f2e data-v-d4488dd0><a class="title" href="/millennium-solutions/" data-v-d4488dd0><!--[--><!--]--><!----><span data-v-d4488dd0>Millennium Solutions</span><!--[--><!--]--></a></div></div><div class="content" data-v-cc1d9f2e><div class="content-body" data-v-cc1d9f2e><!--[--><!--]--><div class="VPNavBarSearch search" data-v-cc1d9f2e data-v-bdd98725><!--[--><button type="button" class="VPNavBarSearchButton" aria-label="Search" aria-keyshortcuts="/ control+k meta+k" data-v-bdd98725 data-v-69351052><span class="vpi-search" aria-hidden="true" data-v-69351052></span><span class="text" data-v-69351052>Search</span><span class="keys" aria-hidden="true" data-v-69351052><kbd class="key-cmd" data-v-69351052>⌘</kbd><kbd class="key-ctrl" data-v-69351052>Ctrl</kbd><kbd data-v-69351052>K</kbd></span></button><!----><!--]--></div><nav aria-labelledby="main-nav-aria-label" class="VPNavBarMenu menu" data-v-cc1d9f2e data-v-29ba3a58><span id="main-nav-aria-label" class="visually-hidden" data-v-29ba3a58> Main Navigation </span><ul class="list" data-v-29ba3a58><!--[--><li data-v-29ba3a58><a class="VPLink link vp-external-link-icon VPNavBarMenuLink" href="https://ceccec.psg.bg/" target="_blank" rel="noreferrer" tabindex="0" data-v-29ba3a58 data-v-297eec4b><!--[--><span data-v-297eec4b>ceccec ↗</span><!--]--></a></li><li data-v-29ba3a58><div class="VPFlyout VPNavBarMenuGroup" data-v-29ba3a58 data-v-d8fae6e2><button type="button" class="button" aria-haspopup="true" aria-expanded="false" data-v-d8fae6e2><span class="text" data-v-d8fae6e2><!----><span data-v-d8fae6e2>Read</span><span class="vpi-chevron-down text-icon" data-v-d8fae6e2></span></span></button><div class="menu" data-v-d8fae6e2><div class="VPMenu" data-v-d8fae6e2 data-v-6b052cd8><ul class="items" data-v-6b052cd8><!--[--><li data-v-6b052cd8><div class="VPMenuLink" data-v-6b052cd8 data-v-1d252c61><a class="VPLink link" href="/millennium-solutions/ABSTRACT.html" data-v-1d252c61><!--[--><span data-v-1d252c61>Abstract</span><!--]--></a></div></li><li data-v-6b052cd8><div class="VPMenuLink" data-v-6b052cd8 data-v-1d252c61><a class="VPLink link" href="/millennium-solutions/the.html" data-v-1d252c61><!--[--><span data-v-1d252c61>The</span><!--]--></a></div></li><li data-v-6b052cd8><div class="VPMenuLink" data-v-6b052cd8 data-v-1d252c61><a class="VPLink link" href="/millennium-solutions/THEOREMS.html" data-v-1d252c61><!--[--><span data-v-1d252c61>Theorems</span><!--]--></a></div></li><li data-v-6b052cd8><div class="VPMenuLink" data-v-6b052cd8 data-v-1d252c61><a class="VPLink link" href="/millennium-solutions/CHALLENGES.html" data-v-1d252c61><!--[--><span data-v-1d252c61>Challenges</span><!--]--></a></div></li><li data-v-6b052cd8><div class="VPMenuLink" data-v-6b052cd8 data-v-1d252c61><a class="VPLink link" href="/millennium-solutions/HEART.html" data-v-1d252c61><!--[--><span data-v-1d252c61>Heart</span><!--]--></a></div></li><li data-v-6b052cd8><div class="VPMenuLink" data-v-6b052cd8 data-v-1d252c61><a class="VPLink link" href="/millennium-solutions/RULES.html" data-v-1d252c61><!--[--><span data-v-1d252c61>Rules</span><!--]--></a></div></li><li data-v-6b052cd8><div class="VPMenuLink" data-v-6b052cd8 data-v-1d252c61><a class="VPLink link" href="/millennium-solutions/" data-v-1d252c61><!--[--><span data-v-1d252c61>Paper</span><!--]--></a></div></li><li data-v-6b052cd8><div class="VPMenuLink" data-v-6b052cd8 data-v-1d252c61><a class="VPLink link" href="/millennium-solutions/RESEARCH.html" data-v-1d252c61><!--[--><span data-v-1d252c61>Research</span><!--]--></a></div></li><li data-v-6b052cd8><div class="VPMenuLink" data-v-6b052cd8 data-v-1d252c61><a class="VPLink link" href="/millennium-solutions/PROOF-OF-CONCEPT.html" data-v-1d252c61><!--[--><span data-v-1d252c61>Proof of Concept</span><!--]--></a></div></li><li data-v-6b052cd8><div class="VPMenuLink" data-v-6b052cd8 data-v-1d252c61><a class="VPLink link" href="/millennium-solutions/REALISATIONS.html" data-v-1d252c61><!--[--><span data-v-1d252c61>Realisations</span><!--]--></a></div></li><!--]--></ul><!--[--><!--]--></div></div></div></li><li data-v-29ba3a58><div class="VPFlyout VPNavBarMenuGroup active" data-v-29ba3a58 data-v-d8fae6e2><button type="button" class="button" aria-haspopup="true" aria-expanded="false" data-v-d8fae6e2><span class="text" data-v-d8fae6e2><!----><span data-v-d8fae6e2>Compute</span><span class="vpi-chevron-down text-icon" data-v-d8fae6e2></span></span></button><div class="menu" data-v-d8fae6e2><div class="VPMenu" data-v-d8fae6e2 data-v-6b052cd8><ul class="items" data-v-6b052cd8><!--[--><li data-v-6b052cd8><div class="VPMenuLink" data-v-6b052cd8 data-v-1d252c61><a class="VPLink link" href="/millennium-solutions/dashboard.html" data-v-1d252c61><!--[--><span data-v-1d252c61>State dashboard</span><!--]--></a></div></li><li data-v-6b052cd8><div class="VPMenuLink" data-v-6b052cd8 data-v-1d252c61><a class="VPLink link" href="/millennium-solutions/ACCOUNTING.html" data-v-1d252c61><!--[--><span data-v-1d252c61>Accounting</span><!--]--></a></div></li><li data-v-6b052cd8><div class="VPMenuLink" data-v-6b052cd8 data-v-1d252c61><a class="VPLink link" href="/millennium-solutions/boundaries.html" data-v-1d252c61><!--[--><span data-v-1d252c61>Boundaries</span><!--]--></a></div></li><li data-v-6b052cd8><div class="VPMenuLink" data-v-6b052cd8 data-v-1d252c61><a class="VPLink link active" href="/millennium-solutions/compute.html" data-v-1d252c61><!--[--><span data-v-1d252c61>Computed results</span><!--]--></a></div></li><li data-v-6b052cd8><div class="VPMenuLink" data-v-6b052cd8 data-v-1d252c61><a class="VPLink link" href="/millennium-solutions/verify.html" data-v-1d252c61><!--[--><span data-v-1d252c61>Verify</span><!--]--></a></div></li><li data-v-6b052cd8><div class="VPMenuLink" data-v-6b052cd8 data-v-1d252c61><a class="VPLink link" href="/millennium-solutions/SEQUENCE-DECODE.html" data-v-1d252c61><!--[--><span data-v-1d252c61>Decode</span><!--]--></a></div></li><li data-v-6b052cd8><div class="VPMenuLink" data-v-6b052cd8 data-v-1d252c61><a class="VPLink link" href="/millennium-solutions/PHYSICS-SCALES.html" data-v-1d252c61><!--[--><span data-v-1d252c61>Physics scales</span><!--]--></a></div></li><!--]--></ul><!--[--><!--]--></div></div></div></li><li data-v-29ba3a58><div class="VPFlyout VPNavBarMenuGroup" data-v-29ba3a58 data-v-d8fae6e2><button type="button" class="button" aria-haspopup="true" aria-expanded="false" data-v-d8fae6e2><span class="text" data-v-d8fae6e2><!----><span data-v-d8fae6e2>Build</span><span class="vpi-chevron-down text-icon" data-v-d8fae6e2></span></span></button><div class="menu" data-v-d8fae6e2><div class="VPMenu" data-v-d8fae6e2 data-v-6b052cd8><ul class="items" data-v-6b052cd8><!--[--><li data-v-6b052cd8><div class="VPMenuLink" data-v-6b052cd8 data-v-1d252c61><a class="VPLink link" href="/millennium-solutions/guide.html" data-v-1d252c61><!--[--><span data-v-1d252c61>Guide (7D)</span><!--]--></a></div></li><li data-v-6b052cd8><div class="VPMenuLink" data-v-6b052cd8 data-v-1d252c61><a class="VPLink link" href="/millennium-solutions/DEVELOP.html" data-v-1d252c61><!--[--><span data-v-1d252c61>Develop</span><!--]--></a></div></li><li data-v-6b052cd8><div class="VPMenuLink" data-v-6b052cd8 data-v-1d252c61><a class="VPLink link" href="/millennium-solutions/proofs.html" data-v-1d252c61><!--[--><span data-v-1d252c61>Proofs</span><!--]--></a></div></li><li data-v-6b052cd8><div class="VPMenuLink" data-v-6b052cd8 data-v-1d252c61><a class="VPLink link" href="/millennium-solutions/SIGNATURE.html" data-v-1d252c61><!--[--><span data-v-1d252c61>Signature</span><!--]--></a></div></li><!--]--></ul><!--[--><!--]--></div></div></div></li><li data-v-29ba3a58><a class="VPLink link vp-external-link-icon VPNavBarMenuLink" href="https://github.com/ceccec/millennium-solutions" target="_blank" rel="noreferrer" tabindex="0" data-v-29ba3a58 data-v-297eec4b><!--[--><span data-v-297eec4b>Repo ↗</span><!--]--></a></li><!--]--></ul></nav><div class="VPFlyout VPNavBarTranslations translations" data-v-cc1d9f2e data-v-9cf8147e data-v-d8fae6e2><button type="button" class="button" aria-haspopup="true" aria-expanded="false" aria-label="Change language" data-v-d8fae6e2><span class="text" data-v-d8fae6e2><span class="vpi-languages option-icon" data-v-d8fae6e2></span><!----><span class="vpi-chevron-down text-icon" data-v-d8fae6e2></span></span></button><div class="menu" data-v-d8fae6e2><div class="VPMenu" data-v-d8fae6e2 data-v-6b052cd8><!----><!--[--><!--[--><ul class="items" data-v-9cf8147e><li class="title" data-v-9cf8147e>English</li><!--[--><li data-v-9cf8147e><div class="VPMenuLink" data-v-9cf8147e data-v-1d252c61><a class="VPLink link" href="/millennium-solutions/bg/compute.html" rel="alternate" lang="bg" hreflang="bg" data-allow-mismatch="attribute" data-v-1d252c61><!--[--><span data-v-1d252c61>Български</span><!--]--></a></div></li><li data-v-9cf8147e><div class="VPMenuLink" data-v-9cf8147e data-v-1d252c61><a class="VPLink link" href="/millennium-solutions/de/compute.html" rel="alternate" lang="de" hreflang="de" data-allow-mismatch="attribute" data-v-1d252c61><!--[--><span data-v-1d252c61>Deutsch</span><!--]--></a></div></li><li data-v-9cf8147e><div class="VPMenuLink" data-v-9cf8147e data-v-1d252c61><a class="VPLink link" href="/millennium-solutions/fr/compute.html" rel="alternate" lang="fr" hreflang="fr" data-allow-mismatch="attribute" data-v-1d252c61><!--[--><span data-v-1d252c61>Français</span><!--]--></a></div></li><li data-v-9cf8147e><div class="VPMenuLink" data-v-9cf8147e data-v-1d252c61><a class="VPLink link" href="/millennium-solutions/es/compute.html" rel="alternate" lang="es" hreflang="es" data-allow-mismatch="attribute" data-v-1d252c61><!--[--><span data-v-1d252c61>Español</span><!--]--></a></div></li><li data-v-9cf8147e><div class="VPMenuLink" data-v-9cf8147e data-v-1d252c61><a class="VPLink link" href="/millennium-solutions/ru/compute.html" rel="alternate" lang="ru" hreflang="ru" data-allow-mismatch="attribute" data-v-1d252c61><!--[--><span data-v-1d252c61>Русский</span><!--]--></a></div></li><li data-v-9cf8147e><div class="VPMenuLink" data-v-9cf8147e data-v-1d252c61><a class="VPLink link" href="/millennium-solutions/zh/compute.html" rel="alternate" lang="zh" hreflang="zh" data-allow-mismatch="attribute" data-v-1d252c61><!--[--><span data-v-1d252c61>中文</span><!--]--></a></div></li><!--]--></ul><!--]--><!--]--></div></div></div><div class="VPNavBarAppearance appearance" data-v-cc1d9f2e data-v-3f90c1a5><button class="VPSwitch VPSwitchAppearance" type="button" role="switch" title aria-checked="false" data-v-3f90c1a5 data-v-be9742d9 data-v-b4ccac88><span class="check" data-v-b4ccac88><span class="icon" data-v-b4ccac88><!--[--><span class="vpi-sun sun" data-v-be9742d9></span><span class="vpi-moon moon" data-v-be9742d9></span><!--]--></span></span></button></div><ul class="VPSocialLinks VPNavBarSocialLinks social-links" data-v-cc1d9f2e data-v-ef6192dc data-v-9bfd974e><!--[--><li class="item" data-v-9bfd974e><a class="VPSocialLink no-icon" href="https://github.com/ceccec/millennium-solutions" aria-label="github" target="_blank" rel="me noopener" data-v-9bfd974e data-v-c16a02b9><span class="vpi-social-github"></span></a></li><!--]--></ul><div class="VPFlyout VPNavBarExtra extra" data-v-cc1d9f2e data-v-ecb011a2 data-v-d8fae6e2><button type="button" class="button" aria-haspopup="true" aria-expanded="false" aria-label="extra navigation" data-v-d8fae6e2><span class="vpi-more-horizontal icon" data-v-d8fae6e2></span></button><div class="menu" data-v-d8fae6e2><div class="VPMenu" data-v-d8fae6e2 data-v-6b052cd8><!----><!--[--><!--[--><ul class="group translations" data-v-ecb011a2><li class="trans-title" data-v-ecb011a2>English</li><!--[--><li data-v-ecb011a2><div class="VPMenuLink" data-v-ecb011a2 data-v-1d252c61><a class="VPLink link" href="/millennium-solutions/bg/compute.html" rel="alternate" lang="bg" hreflang="bg" data-allow-mismatch="attribute" data-v-1d252c61><!--[--><span data-v-1d252c61>Български</span><!--]--></a></div></li><li data-v-ecb011a2><div class="VPMenuLink" data-v-ecb011a2 data-v-1d252c61><a class="VPLink link" href="/millennium-solutions/de/compute.html" rel="alternate" lang="de" hreflang="de" data-allow-mismatch="attribute" data-v-1d252c61><!--[--><span data-v-1d252c61>Deutsch</span><!--]--></a></div></li><li data-v-ecb011a2><div class="VPMenuLink" data-v-ecb011a2 data-v-1d252c61><a class="VPLink link" href="/millennium-solutions/fr/compute.html" rel="alternate" lang="fr" hreflang="fr" data-allow-mismatch="attribute" data-v-1d252c61><!--[--><span data-v-1d252c61>Français</span><!--]--></a></div></li><li data-v-ecb011a2><div class="VPMenuLink" data-v-ecb011a2 data-v-1d252c61><a class="VPLink link" href="/millennium-solutions/es/compute.html" rel="alternate" lang="es" hreflang="es" data-allow-mismatch="attribute" data-v-1d252c61><!--[--><span data-v-1d252c61>Español</span><!--]--></a></div></li><li data-v-ecb011a2><div class="VPMenuLink" data-v-ecb011a2 data-v-1d252c61><a class="VPLink link" href="/millennium-solutions/ru/compute.html" rel="alternate" lang="ru" hreflang="ru" data-allow-mismatch="attribute" data-v-1d252c61><!--[--><span data-v-1d252c61>Русский</span><!--]--></a></div></li><li data-v-ecb011a2><div class="VPMenuLink" data-v-ecb011a2 data-v-1d252c61><a class="VPLink link" href="/millennium-solutions/zh/compute.html" rel="alternate" lang="zh" hreflang="zh" data-allow-mismatch="attribute" data-v-1d252c61><!--[--><span data-v-1d252c61>中文</span><!--]--></a></div></li><!--]--></ul><div class="group" data-v-ecb011a2><div class="item appearance" data-v-ecb011a2><p class="label" data-v-ecb011a2>Appearance</p><div class="appearance-action" data-v-ecb011a2><button class="VPSwitch VPSwitchAppearance" type="button" role="switch" title aria-checked="false" data-v-ecb011a2 data-v-be9742d9 data-v-b4ccac88><span class="check" data-v-b4ccac88><span class="icon" data-v-b4ccac88><!--[--><span class="vpi-sun sun" data-v-be9742d9></span><span class="vpi-moon moon" data-v-be9742d9></span><!--]--></span></span></button></div></div></div><div class="group" data-v-ecb011a2><div class="item social-links" data-v-ecb011a2><ul class="VPSocialLinks social-links-list" data-v-ecb011a2 data-v-9bfd974e><!--[--><li class="item" data-v-9bfd974e><a class="VPSocialLink no-icon" href="https://github.com/ceccec/millennium-solutions" aria-label="github" target="_blank" rel="me noopener" data-v-9bfd974e data-v-c16a02b9><span class="vpi-social-github"></span></a></li><!--]--></ul></div></div><!--]--><!--]--></div></div></div><!--[--><!--]--><button type="button" class="VPNavBarHamburger hamburger" aria-label="mobile navigation" aria-expanded="false" aria-controls="VPNavScreen" data-v-cc1d9f2e data-v-6bee1efd><span class="container" data-v-6bee1efd><span class="top" data-v-6bee1efd></span><span class="middle" data-v-6bee1efd></span><span class="bottom" data-v-6bee1efd></span></span></button></div></div></div></div><div class="divider" data-v-cc1d9f2e><div class="divider-line" data-v-cc1d9f2e></div></div></div><!----></header><div class="VPLocalNav has-sidebar empty" data-v-c109192d data-v-73add737><div class="container" data-v-73add737><button class="menu" aria-expanded="false" aria-controls="VPSidebarNav" data-v-73add737><span class="vpi-align-left menu-icon" data-v-73add737></span><span class="menu-text" data-v-73add737>Menu</span></button><div class="VPLocalNavOutlineDropdown" style="--vp-vh:0px;" data-allow-mismatch="style" data-v-73add737 data-v-62e60628><button data-v-62e60628>Return to top</button><!----></div></div></div><aside class="VPSidebar" data-v-c109192d data-v-49f51a23><div class="curtain" data-v-49f51a23></div><nav class="nav" id="VPSidebarNav" aria-labelledby="sidebar-aria-label" tabindex="-1" data-v-49f51a23><span class="visually-hidden" id="sidebar-aria-label" data-v-49f51a23> Sidebar Navigation </span><!--[--><!--]--><!--[--><div class="no-transition group" data-v-a84b7c21><section class="VPSidebarItem level-0" data-v-a84b7c21 data-v-cb11549f><div class="item" role="button" tabindex="0" data-v-cb11549f><div class="indicator" data-v-cb11549f></div><h2 class="text" data-v-cb11549f>Overview</h2><!----></div><ul class="items" data-v-cb11549f><li data-v-cb11549f><!--[--><div class="VPSidebarItem level-1 is-link" data-v-cb11549f><div class="item" data-v-cb11549f><div class="indicator" data-v-cb11549f></div><a class="VPLink link link" href="/millennium-solutions/ABSTRACT.html" data-v-cb11549f><!--[--><p class="text" data-v-cb11549f>Abstract</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-cb11549f><div class="item" data-v-cb11549f><div class="indicator" data-v-cb11549f></div><a class="VPLink link link" href="/millennium-solutions/guide.html" data-v-cb11549f><!--[--><p class="text" data-v-cb11549f>Guide (7D)</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-cb11549f><div class="item" data-v-cb11549f><div class="indicator" data-v-cb11549f></div><a class="VPLink link link" href="/millennium-solutions/the.html" data-v-cb11549f><!--[--><p class="text" data-v-cb11549f>The (concepts)</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-cb11549f><div class="item" data-v-cb11549f><div class="indicator" data-v-cb11549f></div><a class="VPLink link link" href="/millennium-solutions/THEOREMS.html" data-v-cb11549f><!--[--><p class="text" data-v-cb11549f>Theorems</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-cb11549f><div class="item" data-v-cb11549f><div class="indicator" data-v-cb11549f></div><a class="VPLink link link" href="/millennium-solutions/CHALLENGES.html" data-v-cb11549f><!--[--><p class="text" data-v-cb11549f>Challenges</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-cb11549f><div class="item" data-v-cb11549f><div class="indicator" data-v-cb11549f></div><a class="VPLink link link" href="/millennium-solutions/HEART.html" data-v-cb11549f><!--[--><p class="text" data-v-cb11549f>Heart</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-cb11549f><div class="item" data-v-cb11549f><div class="indicator" data-v-cb11549f></div><a class="VPLink link link" href="/millennium-solutions/RULES.html" data-v-cb11549f><!--[--><p class="text" data-v-cb11549f>Rules</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-cb11549f><div class="item" data-v-cb11549f><div class="indicator" data-v-cb11549f></div><a class="VPLink link link" href="/millennium-solutions/" data-v-cb11549f><!--[--><p class="text" data-v-cb11549f>Paper</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-cb11549f><div class="item" data-v-cb11549f><div class="indicator" data-v-cb11549f></div><a class="VPLink link link" href="/millennium-solutions/RESEARCH.html" data-v-cb11549f><!--[--><p class="text" data-v-cb11549f>Research</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-cb11549f><div class="item" data-v-cb11549f><div class="indicator" data-v-cb11549f></div><a class="VPLink link link" href="/millennium-solutions/PROOF-OF-CONCEPT.html" data-v-cb11549f><!--[--><p class="text" data-v-cb11549f>Proof of Concept</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-cb11549f><div class="item" data-v-cb11549f><div class="indicator" data-v-cb11549f></div><a class="VPLink link link" href="/millennium-solutions/REALISATIONS.html" data-v-cb11549f><!--[--><p class="text" data-v-cb11549f>Realisations</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-cb11549f><div class="item" data-v-cb11549f><div class="indicator" data-v-cb11549f></div><a class="VPLink link link" href="/millennium-solutions/proofs.html" data-v-cb11549f><!--[--><p class="text" data-v-cb11549f>Proofs</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-cb11549f><div class="item" data-v-cb11549f><div class="indicator" data-v-cb11549f></div><a class="VPLink link link" href="/millennium-solutions/DEVELOP.html" data-v-cb11549f><!--[--><p class="text" data-v-cb11549f>Develop</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-cb11549f><div class="item" data-v-cb11549f><div class="indicator" data-v-cb11549f></div><a class="VPLink link link" href="/millennium-solutions/SIGNATURE.html" data-v-cb11549f><!--[--><p class="text" data-v-cb11549f>Signature</p><!--]--></a><!----></div><!----></div><!--]--></li></ul></section></div><div class="no-transition group" data-v-a84b7c21><section class="VPSidebarItem level-0" data-v-a84b7c21 data-v-cb11549f><div class="item" role="button" tabindex="0" data-v-cb11549f><div class="indicator" data-v-cb11549f></div><h2 class="text" data-v-cb11549f>Fused compute (TS)</h2><!----></div><ul class="items" data-v-cb11549f><li data-v-cb11549f><!--[--><div class="VPSidebarItem level-1 is-link" data-v-cb11549f><div class="item" data-v-cb11549f><div class="indicator" data-v-cb11549f></div><a class="VPLink link link" href="/millennium-solutions/compute.html" data-v-cb11549f><!--[--><p class="text" data-v-cb11549f>Computed results</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-cb11549f><div class="item" data-v-cb11549f><div class="indicator" data-v-cb11549f></div><a class="VPLink link link" href="/millennium-solutions/dashboard.html" data-v-cb11549f><!--[--><p class="text" data-v-cb11549f>State dashboard</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-cb11549f><div class="item" data-v-cb11549f><div class="indicator" data-v-cb11549f></div><a class="VPLink link link" href="/millennium-solutions/ACCOUNTING.html" data-v-cb11549f><!--[--><p class="text" data-v-cb11549f>Accounting</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-cb11549f><div class="item" data-v-cb11549f><div class="indicator" data-v-cb11549f></div><a class="VPLink link link" href="/millennium-solutions/boundaries.html" data-v-cb11549f><!--[--><p class="text" data-v-cb11549f>Boundaries</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-cb11549f><div class="item" data-v-cb11549f><div class="indicator" data-v-cb11549f></div><a class="VPLink link link" href="/millennium-solutions/verify.html" data-v-cb11549f><!--[--><p class="text" data-v-cb11549f>Verify (live app)</p><!--]--></a><!----></div><!----></div><!--]--></li></ul></section></div><div class="no-transition group" data-v-a84b7c21><section class="VPSidebarItem level-0" data-v-a84b7c21 data-v-cb11549f><div class="item" role="button" tabindex="0" data-v-cb11549f><div class="indicator" data-v-cb11549f></div><h2 class="text" data-v-cb11549f>Decode</h2><!----></div><ul class="items" data-v-cb11549f><li data-v-cb11549f><!--[--><div class="VPSidebarItem level-1 is-link" data-v-cb11549f><div class="item" data-v-cb11549f><div class="indicator" data-v-cb11549f></div><a class="VPLink link link" href="/millennium-solutions/SEQUENCE-DECODE.html" data-v-cb11549f><!--[--><p class="text" data-v-cb11549f>Sequence decode (ℤ/9)</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-cb11549f><div class="item" data-v-cb11549f><div class="indicator" data-v-cb11549f></div><a class="VPLink link link" href="/millennium-solutions/PHYSICS-SCALES.html" data-v-cb11549f><!--[--><p class="text" data-v-cb11549f>Physics scales</p><!--]--></a><!----></div><!----></div><!--]--></li></ul></section></div><!--]--><!--[--><!--]--></nav></aside><div class="VPContent has-sidebar" id="VPContent" data-v-c109192d data-v-241e939a><div class="VPDoc has-sidebar has-aside" data-v-241e939a data-v-3321c7db><!--[--><!--]--><div class="container" data-v-3321c7db><div class="aside" data-v-3321c7db><div class="aside-curtain" data-v-3321c7db></div><div class="aside-container" data-v-3321c7db><div class="aside-content" data-v-3321c7db><div class="VPDocAside" data-v-3321c7db data-v-8c190960><!--[--><!--]--><!--[--><!--]--><nav aria-labelledby="doc-outline-aria-label" class="VPDocAsideOutline" data-v-8c190960 data-v-44f5b6c6><div class="content" data-v-44f5b6c6><div class="outline-marker" data-v-44f5b6c6></div><div aria-level="2" class="outline-title" id="doc-outline-aria-label" role="heading" data-v-44f5b6c6>On this page</div><ul class="VPDocOutlineItem root" data-v-44f5b6c6 data-v-63c57e50><!--[--><!--]--></ul></div></nav><!--[--><!--]--><div class="spacer" data-v-8c190960></div><!--[--><!--]--><!----><!--[--><!--]--><!--[--><!--]--></div></div></div></div><div class="content" data-v-3321c7db><div class="content-container" data-v-3321c7db><!--[--><!--]--><main class="main" data-v-3321c7db><div style="position:relative;" class="vp-doc _millennium-solutions_compute" data-v-3321c7db><div><h1 id="computed-results-—-the-digit-folder-mesh" tabindex="-1">Computed results — the digit-folder mesh <a class="header-anchor" href="#computed-results-—-the-digit-folder-mesh" aria-label="Permalink to “Computed results — the digit-folder mesh”">​</a></h1><blockquote><p>Descend: <strong>page → digit → module → its computation → the floor.</strong> Fold into any digit, then into a module, then open its computation. Every level recomputes at page-load — no stored answers. Not <em>literally</em> infinite (the modules are finite), but there is <strong>no stored bottom</strong>, only computation, all the way down to the same floor.</p></blockquote><div class="tip custom-block"><p class="custom-block-title">The floor (invariant across every depth)</p><p>Every block below, however deep, lands on one computed floor: <strong><code>entails → 0/7</code></strong>. Each module also carries its own <strong>HONEST</strong> line — the boundary where observation stops and interpretation would begin. Fold as deep as you like; the floor does not move.</p></div><div class="info custom-block"><p class="custom-block-title">The mesh</p><p>Thirty modules, each stuck to a digit <code>0–9</code> (plus the <code>honesty/</code> toolkit). <code>10 − d</code> reflects a digit to its partner (fixed point <strong>5</strong>), so the folders below are laid out around that center.</p></div><hr><h2 id="honesty-—-the-toolkit" tabindex="-1"><code>honesty/</code> — the toolkit <a class="header-anchor" href="#honesty-—-the-toolkit" aria-label="Permalink to “honesty/ — the toolkit”">​</a></h2><h3 id="honesty-toolkit-·-src-honesty-index-ts" tabindex="-1">Honesty toolkit · <code>src/honesty/index.ts</code> <a class="header-anchor" href="#honesty-toolkit-·-src-honesty-index-ts" aria-label="Permalink to “Honesty toolkit · src/honesty/index.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>honesty toolkit — point these at any claim:
+  entails(true-when-conjecture-false): solves=false  → true even when the conjecture is false → entails nothing
+  curveFitCheck(m_p/m_e): best 108·17/1 = 1836   vacuous? true (same fit hits control 1837.4)
+  scaleCheck(nuclear 7e20 Hz, 432 Hz): ~10^18 apart
+three questions for any bold claim: does it ENTAIL? does the FIT fit anything? do the SCALES match?</pre><h3 id="the-claims-registry-—-every-registered-claim-recomputes-·-src-claims-index-ts" tabindex="-1">The claims registry — every registered claim recomputes · <code>src/claims/index.ts</code> <a class="header-anchor" href="#the-claims-registry-—-every-registered-claim-recomputes-·-src-claims-index-ts" aria-label="Permalink to “The claims registry — every registered claim recomputes · src/claims/index.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>the claims registry — every registered claim recomputes from src/ (got = recompute(); expect = the prose):
+
+  ✓ floor   0/7             = 0/7   ⊢ 1 theorem(s)
+  ✓ axiom   3               = 3   ⊢ 1 theorem(s)
+  ✓ base    9               = 9   ⊢ 1 theorem(s)
+  ✓ units   1,2,4,5,7,8     = 1,2,4,5,7,8   ⊢ 4 theorem(s)
+  ✓ unitn   6               = 6   ⊢ 1 theorem(s)
+  ✓ triad   3,6,9           = 3,6,9   ⊢ 1 theorem(s)
+  ✓ orbit   1,2,4,8,7,5     = 1,2,4,8,7,5   ⊢ 1 theorem(s)
+  ✓ a432    40              = 40
+  ✓ coins   2               = 2   ⊢ 3 theorem(s)
+  ✓ fund    true            = true
+  ✓ imprint true            = true
+  ✓ skill   1               = 1   ⊢ 1 theorem(s)
+  ✓ bounds  10              = 10
+  ✓ coin64  16:true         = 16:true
+  ✓ tuning  8               = 8
+
+  15/15 claims recompute · registry root 244bd96a-31e9…
+  a &quot;claim&quot; here is a REGISTERED, bound assertion; this makes &quot;every claim recomputes&quot; true over
+  the registry (bounded, gated) — integrity, not truth. it does not certify unregistered prose. entails → 0/7.</pre></details><h3 id="the-honest-floor-—-content-addressed-boundaries-·-src-honesty-boundaries-ts" tabindex="-1">The honest floor — content-addressed boundaries · <code>src/honesty/boundaries.ts</code> <a class="header-anchor" href="#the-honest-floor-—-content-addressed-boundaries-·-src-honesty-boundaries-ts" aria-label="Permalink to “The honest floor — content-addressed boundaries · src/honesty/boundaries.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>the honest floor — 10 boundaries, each content-addressed (recompute toUuid):
+
+  efcc36da-c2ee  0/7 entailed: this deposit leaves all seven Millennium problems unsolved, and claims no prize.
+  9c7a472d-7cfd  computable is not solved; humanityNovel = 0 — known mathematics, recombined.
+  f106b7ff-9120  a content-address (uuid) proves integrity, not truth, and not authorship.
+  caff1a4e-e8e3  the honesty gate is a floor (no named overclaim shape), not an oracle of truth.
+  4248f16d-7acc  recognition, adoption, citations, and effort are not correctness.
+  8e4eb0f9-9600  a classical Z/9 calculator: no quantum computation, no faster-than-light, no quantum speedup.
+  9da115fe-1f09  sealing proves the bytes are intact; it does not prove the claim is right.
+  a04d2aaa-660d  unsigned: content-addressing is integrity, not authenticity — real signatures need a key.
+  7bacdc5a-c0f7  worthwhile is a judgment (perspective); small, real, and honest are measured.
+  316a106b-4a85  green cannot be faked: the gate measures actual state, and it caught its own author.
+
+  a content-address proves INTEGRITY, not truth. the floor is 0/7.</pre></details><h3 id="imprint-—-reversible-binary↔uuid-codec-the-clown-s-juggle-·-src-0-imprint-ts" tabindex="-1">Imprint — reversible binary↔uuid codec (the clown&#39;s juggle) · <code>src/0/imprint.ts</code> <a class="header-anchor" href="#imprint-—-reversible-binary↔uuid-codec-the-clown-s-juggle-·-src-0-imprint-ts" aria-label="Permalink to “Imprint — reversible binary↔uuid codec (the clown&#39;s juggle) · src/0/imprint.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>imprint — reversible binary↔uuid codec (NOT hash-reversal, NOT encryption):
+
+  capacity:            115 message bits per uuid (128 − 6 reserved − 7 length header)
+  imprint(&quot;0100100001101001&quot;)
+    → 2090d200-0000-8000-8000-000000000000
+  readImprint(uuid)  → 0100100001101001   round-trips: true
+  imprintText(&quot;Hi&quot;)  → 2090d200-0000-8000-8000-000000000000  → readImprintText → &quot;Hi&quot;
+
+  HONEST: this CONSTRUCTS a uuid from a message and reads it back — a lossless codec (integrity).
+  It does NOT undo the one-way FNV toUuid, and it is not encryption (no key, no secrecy). entails → 0/7.</pre></details><h2 id="the-—-the-unifying-concepts-everything-called-the" tabindex="-1"><code>the/</code> — the unifying concepts (everything called &quot;the *&quot;) <a class="header-anchor" href="#the-—-the-unifying-concepts-everything-called-the" aria-label="Permalink to “the/ — the unifying concepts (everything called &quot;the *&quot;)”">​</a></h2><h3 id="the-concepts-·-src-the-index-ts" tabindex="-1">The concepts · <code>src/the/index.ts</code> <a class="header-anchor" href="#the-concepts-·-src-the-index-ts" aria-label="Permalink to “The concepts · src/the/index.ts”">​</a></h3><pre>src/the/* — everything called &quot;the *&quot;, gathered and content-addressed:
+
+  the floor      → 3bc31bce-81c9…
+    0/7 — the deposit solves 0 of 7; measured, not asserted, re-verified every build
+  the heart      → fed32b63-fdf5…
+    5 — the fixed point σ(5)=5; the pentagon whose diagonal/side is φ; vortex roots to 5
+  the gate       → 41e4612b-a9c4…
+    a lexical floor draining named over-reach; a bounded refusal passes; passing is not truth
+  the ledger     → 77d86dd5-6a62…
+    the content-addressed record of discoveries, each re-verified on every build
+  the observer   → 36a1a28f-4c14…
+    the honest referrer; meaning and life live here, not in the bytes
+  the receipt    → d29a0997-de25…
+    the payload naming observer and role; the uuid holds the core message without payload
+  the one game   → 01c7cf12-deed…
+    games, arts and sciences fold to one order-independent harmonic root — all meet in one
+  the rules      → fe13c33f-3d56…
+    measure · gate · due process · discovery · receipts · lineage · one game · earned versions
+
+  the one root (all &quot;the&quot; folded): d79ad8df-5f2f…
+  the &quot;the&quot; concepts point to what is computed elsewhere; here they meet in one. entails → 0/7.</pre><h3 id="the-sequence-·-src-the-sequence-index-ts" tabindex="-1">The sequence · <code>src/the/sequence/index.ts</code> <a class="header-anchor" href="#the-sequence-·-src-the-sequence-index-ts" aria-label="Permalink to “The sequence · src/the/sequence/index.ts”">​</a></h3><pre>the sequence — the ℤ/9 doubling circuit (n ↦ 2n mod 9), the vortex:
+
+  1 → 2 → 4 → 8 → 7 → 5 → 1  (closes after 6 steps)
+  units on the circuit: 1, 2, 4, 5, 7, 8
+  triad (the axis, off-circuit): 3, 6, 9
+  root: 89c3d36e-b0ba…
+  the sequence covers every unit exactly once and closes. entails → 0/7.</pre><h3 id="the-theorem-·-src-the-theorem-index-ts" tabindex="-1">The theorem · <code>src/the/theorem/index.ts</code> <a class="header-anchor" href="#the-theorem-·-src-the-theorem-index-ts" aria-label="Permalink to “The theorem · src/the/theorem/index.ts”">​</a></h3><pre>the theorem — computable is not solved:
+
+  the deposit computes a growing ledger of decidable facts, each re-verified every build.
+  none is a Clay Millennium result: the six open conjectures stay open; Poincaré is settled
+  externally (Perelman). humanity 1/7; this deposit 0/7.
+  the one theorem: computable is not solved — the calculator reaches the decidable, never the open.
+  computed root (fold of 6 core theorem keys): 9d6f1985-e30b… entails → 0/7.</pre><h3 id="the-game-·-src-the-game-index-ts" tabindex="-1">The game · <code>src/the/game/index.ts</code> <a class="header-anchor" href="#the-game-·-src-the-game-index-ts" aria-label="Permalink to “The game · src/the/game/index.ts”">​</a></h3><pre>the game — games, arts and sciences meet in one:
+
+  the game (games)       → e53b23e6-b94a…
+  the art (arts)         → 58ba4b31-f815…
+  the science (sciences) → fa83fbfa-75f3…
+  the one root (order-independent): d83b75c4-c741…
+  order does not matter — that symmetry is the harmony. all meet in one. entails → 0/7.</pre><h3 id="the-heart-·-src-the-heart-index-ts" tabindex="-1">The heart · <code>src/the/heart/index.ts</code> <a class="header-anchor" href="#the-heart-·-src-the-heart-index-ts" aria-label="Permalink to “The heart · src/the/heart/index.ts”">​</a></h3><pre>the heart — 5, the centre of ℤ/9:
+
+  the middle digit of 1..9: 5
+  on the doubling circuit: 1 → 2 → 4 → 8 → 7 → 5  (5 closes it back to 1)
+  the pentagon (5 sides): diagonal / side = φ, the golden ratio
+  the word &quot;vortex&quot; digital-roots to 5 — the centre names itself
+  address: ef286e8c-a517… entails → 0/7.</pre><h3 id="from-the-heart-·-src-from-the-heart-index-ts" tabindex="-1">From the heart · <code>src/from/the/heart/index.ts</code> <a class="header-anchor" href="#from-the-heart-·-src-from-the-heart-index-ts" aria-label="Permalink to “From the heart · src/from/the/heart/index.ts”">​</a></h3><pre>from the heart (5) — the generative act:
+
+  next computes from the heart: discover a decidable fact → save it → prove it → ship it.
+  each wave flows from the centre (5) along the circuit: 1 → 2 → 4 → 8 → 7 → 5.
+  what is discovered is kept iff it computes; the rest is drained. from the heart, honestly.
+  address: 499760d6-49f8… entails → 0/7.</pre><h3 id="play-the-game-·-src-play-the-game-index-ts" tabindex="-1">Play the game · <code>src/play/the/game/index.ts</code> <a class="header-anchor" href="#play-the-game-·-src-play-the-game-index-ts" aria-label="Permalink to “Play the game · src/play/the/game/index.ts”">​</a></h3><pre>play the game — the act:
+
+  play: run next → a wave discovers decidable facts → proves them → ships them.
+  the games (Nim, Wythoff, chess, tic-tac-toe, …) and their receipts fold to one root.
+  the rules: measure · gate · due process · receipts · one game — all playable, all honest.
+  a move is kept iff it computes; an over-reach is drained with a case. play, honestly.
+  address: 2c1ae2db-84fa… entails → 0/7.</pre><h3 id="the-superposition-·-src-the-superposition-state-index-ts" tabindex="-1">The superposition · <code>src/the/superposition/state/index.ts</code> <a class="header-anchor" href="#the-superposition-·-src-the-superposition-state-index-ts" aria-label="Permalink to “The superposition · src/the/superposition/state/index.ts”">​</a></h3><pre>the superposition — now:
+
+  the present holds many computed facts at once, folded into one order-independent root —
+  they coexist until observed. the classical, unfolded sense: no qubit, no speedup, no FTL.
+  the six OPEN Clay problems, held at once (uncollapsed): 03db0591-4518…
+  an observation collapses the superposition to ONE content-address: 4f624f19-2234…
+  open = not yet collapsed to true/false (INCONCLUSIVE ≠ false). six superposed; the seventh
+  already collapsed (Poincaré, settled externally): 2621ac65-5e63…
+  6 superposed + 1 collapsed = 7. humanity 1/7; this deposit 0/7.</pre><h3 id="the-state-·-src-the-state-index-ts" tabindex="-1">The state · <code>src/the/state/index.ts</code> <a class="header-anchor" href="#the-state-·-src-the-state-index-ts" aria-label="Permalink to “The state · src/the/state/index.ts”">​</a></h3><pre>the state — now, content-addressed:
+
+  a state is computed, never stored — recomputed every render, landing on one floor.
+  the invariants, held regardless of observer:
+    · floor: this deposit 0/7
+    · humanity 1/7 (Poincaré, Perelman 2003)
+    · computable is not solved
+    · INCONCLUSIVE ≠ false
+    · at rest — holding cracks nothing
+  folded state root (invariant across observers): b0ee0cce-8998… entails → 0/7.</pre><h3 id="the-domain-·-src-the-domain-index-ts" tabindex="-1">The domain · <code>src/the/domain/index.ts</code> <a class="header-anchor" href="#the-domain-·-src-the-domain-index-ts" aria-label="Permalink to “The domain · src/the/domain/index.ts”">​</a></h3><pre>the domain — a decidable universe:
+
+  a domain is a carrier set, its operations, and a predicate decidable by exhaustion —
+  never a proof of an OPEN conjecture, only the decidable within reach.
+  the deposit spans many, meeting in one shared core (base 9):
+    · ℤ/9 arithmetic
+    · finite groups
+    · Boolean algebra
+    · games
+    · arts
+    · number theory
+    · finite fields
+    · combinatorics
+    · content-addressing
+  folded domain root (the families as one): 70da0e27-73b6… — humanity 1/7; this deposit 0/7.</pre><h3 id="the-creation-·-src-the-creation-index-ts" tabindex="-1">The creation · <code>src/the/creation/index.ts</code> <a class="header-anchor" href="#the-creation-·-src-the-creation-index-ts" aria-label="Permalink to “The creation · src/the/creation/index.ts”">​</a></h3><pre>the creation — waves of creation and manifestation:
+
+  creation is honest: a decidable fact discovered by exhaustion and recorded, never minted.
+  manifestation: the fact re-verified every build. earned, not minted — nothing over unchanged content.
+  the week: six days of work, the seventh of rest — 6 + 1 = 7.
+    · discover by exhaustion
+    · record append-only
+    · re-verify every build
+    · seal
+    · rest
+  folded creation root (the wave as one): 52d5bb23-c688… — this deposit 0/7.</pre><h3 id="the-abstract-·-src-the-abstract-index-ts" tabindex="-1">The abstract · <code>src/the/abstract/index.ts</code> <a class="header-anchor" href="#the-abstract-·-src-the-abstract-index-ts" aria-label="Permalink to “The abstract · src/the/abstract/index.ts”">​</a></h3><pre>the abstract — the framework in one fold:
+
+    · one axiom: TRINITY = 3
+    · base = 3² = 9
+    · content-addressing: one-way integrity, not encryption
+    · the honesty gate: a floor, not a truth oracle
+    · decidable facts folded into one re-verified ledger
+    · computable is not solved
+  from 3 the base 9, from the base the ring, from the ring the ledger.
+  not a theory of everything — a calculator of the decidable.
+  folded framework root: b1426bf2-5eb0… entails → 0/7.</pre><h3 id="the-solids-·-src-the-solids-index-ts" tabindex="-1">The solids · <code>src/the/solids/index.ts</code> <a class="header-anchor" href="#the-solids-·-src-the-solids-index-ts" aria-label="Permalink to “The solids · src/the/solids/index.ts”">​</a></h3><pre>the solids — the five Platonic solids (V − E + F = 2):
+
+    solid         V   E   F   {p,q}   dual
+    tetrahedron   4   6   4   {3,3}   self
+    cube          8   12  6   {4,3}   octahedron
+    octahedron    6   12  8   {3,4}   cube
+    dodecahedron  20  30  12  {5,3}   icosahedron
+    icosahedron   12  30  20  {3,5}   dodecahedron
+
+  Euler V−E+F=2: holds for all five.
+  exactly five exist (1/p + 1/q &gt; 1/2, p,q≥3) — no sixth.
+  the pentagram thread: the dodecahedron has 12 pentagonal faces; the icosahedron, 5 triangles
+  per vertex; the pentagon diagonal-to-side ratio is φ = 1.618034 (2·cos36°).
+  folded solids root: 48d1387f-8608… — decidable geometry, this deposit 0/7.</pre><h3 id="the-crystal-·-src-the-crystal-index-ts" tabindex="-1">The crystal · <code>src/the/crystal/index.ts</code> <a class="header-anchor" href="#the-crystal-·-src-the-crystal-index-ts" aria-label="Permalink to “The crystal · src/the/crystal/index.ts”">​</a></h3><pre>the crystal — the diamond cubic lattice:
+
+  two interpenetrating FCC lattices; each atom bonds to 4 nearest neighbours
+  (counted by exhaustion over 27 cells), at the tetrahedral angle arccos(−1/3) = 109.4712°.
+  densest lattice packing: π/(3√2) = 0.740480 (FCC/HCP, the diamond’s parent).
+  imagine the lattice; the numbers are exact. folded crystal root: 4070e3a9-7df9…
+  decidable geometry — this deposit 0/7.</pre><h3 id="the-path-·-src-the-path-index-ts" tabindex="-1">The path · <code>src/the/path/index.ts</code> <a class="header-anchor" href="#the-path-·-src-the-path-index-ts" aria-label="Permalink to “The path · src/the/path/index.ts”">​</a></h3><pre>the path — url messaging is the path itself; the most meaningful rated first:
+
+  a URL path is the message; its content-address needs no payload, only the ordered segments.
+  the/crystal ≠ crystal/the — order carries meaning. rating = gravity (depth = specificity).
+
+    rank  gravity  path
+     1       3     /the/superposition/state 9bef61a3-7ad7…
+     2       2     /the/domain              35510dd0-315d…
+     3       2     /the/creation            7ac47c6d-f130…
+     4       2     /the/abstract            9b565949-be64…
+     5       2     /the/state               acb04857-28af…
+     6       2     /the/path                b0884697-faeb…
+     7       2     /the/crystal             cca7d7cd-8e39…
+     8       2     /the/solids              e972821c-dd5a…
+     9       1     /the                     8ac73c94-3824…
+
+  meaning is a defined computable rating, not a truth judgment. this deposit 0/7.</pre><h3 id="the-torus-·-src-the-torus-index-ts" tabindex="-1">The torus · <code>src/the/torus/index.ts</code> <a class="header-anchor" href="#the-torus-·-src-the-torus-index-ts" aria-label="Permalink to “The torus · src/the/torus/index.ts”">​</a></h3><pre>the torus — continue as double torus (genus-2):
+
+    · genus g = 2 (double torus, Σ₂ = T² # T²)
+    · Euler characteristic χ = 2 − 2g = -2
+    · Betti numbers (b₀,b₁,b₂) = (1, 4, 1); alternating sum = -2
+    · no full coverage: a nowhere-zero tangent field exists iff χ=0 — here χ = -2 ≠ 0
+    · octagon [a,b][c,d]: 8 edges, 4 generators, one relation; vertex angle 2π/8 = 45°
+    · Gauss–Bonnet: ∫K dA = 2πχ = -4π; hyperbolic area (K=−1) = 4π
+    · moduli / Teichmüller dimension 6g − 6 = 6
+  folded torus root: 59ebb830-ec50… — decidable topology, no full coverage, this deposit 0/7.</pre><h3 id="the-surface-·-src-the-surface-index-ts" tabindex="-1">The surface · <code>src/the/surface/index.ts</code> <a class="header-anchor" href="#the-surface-·-src-the-surface-index-ts" aria-label="Permalink to “The surface · src/the/surface/index.ts”">​</a></h3><pre>the surface — the classification of all closed surfaces:
+
+  complete invariant: (χ, orientability). coverage (nowhere-zero field) iff χ=0.
+
+    surface                   χ    geometry    full coverage
+    sphere S²                 2    spherical   no
+    projective plane ℝP²      1    spherical   no
+    torus T² (g=1)            0    flat        yes
+    Klein bottle (k=2)        0    flat        yes
+    double torus Σ₂ (g=2)     -2   hyperbolic  no
+    genus-3 (g=3)             -4   hyperbolic  no
+
+  only the torus and the Klein bottle can be fully covered. folded surface root: b9119021-91f6…
+  decidable topology — this deposit 0/7.</pre><h3 id="the-abundance-·-src-the-abundance-index-ts" tabindex="-1">The abundance · <code>src/the/abundance/index.ts</code> <a class="header-anchor" href="#the-abundance-·-src-the-abundance-index-ts" aria-label="Permalink to “The abundance · src/the/abundance/index.ts”">​</a></h3><pre>the abundance — money, milk, and honey (honestly):
+
+  the money: the two coins = 110 − 108 = 2 = −χ(genus-2); the commercial fare
+    reinvested in development — not extracted, not a promise of return.
+  the honey: the honeycomb — among regular polygons only {3,4,6} tile the plane;
+    the hexagon is optimal (honeycomb theorem, Hales 2001).
+  the milk: the freely-given ledger — decidable facts, CC BY-NC; a copy costs nothing (non-rival).
+  abundance is shared knowledge, not a fortune. folded root: 63afd2b1-5dd9… entails → 0/7.</pre><h3 id="the-cancer-·-src-the-cancer-index-ts" tabindex="-1">The cancer · <code>src/the/cancer/index.ts</code> <a class="header-anchor" href="#the-cancer-·-src-the-cancer-index-ts" aria-label="Permalink to “The cancer · src/the/cancer/index.ts”">​</a></h3><pre>the cancer — the epistemic anti-pattern (NOT the disease):
+
+  NO medical claim is made here; a cure-claim DRAINS at the honesty gate.
+  &quot;cancer&quot; = unchecked dishonest growth: an overclaim, a churn version, a receiptless claim.
+  folding inverts it — the false form drains (death), its honest negation signs (resurrection):
+    ✗ breaks encryption   →   ✓ does not break encryption — one-way integrity
+    ✗ cured cancer   →   ✓ has not cured cancer — no medical claim
+    ✗ breaks RSA   →   ✓ does not break RSA
+  the traitor drains to death and rises as a hero — the honest form. it dissolves BY ITSELF,
+  but the dissolution DEPENDS ON THE WAVES: every build re-verifies the whole ledger and re-runs
+  the gate, so a false claim drains on every pass and cannot persist — more waves, surer healing,
+  no waste unrecycled. folded root: 9388a5e7-0f14… → 0/7.</pre><h3 id="the-waves-·-src-the-waves-index-ts" tabindex="-1">The waves · <code>src/the/waves/index.ts</code> <a class="header-anchor" href="#the-waves-·-src-the-waves-index-ts" aria-label="Permalink to “The waves · src/the/waves/index.ts”">​</a></h3><pre>the waves — what directly affects the user’s state (honestly):
+
+  devices emit real, measurable waves — screen light, sound, RF. this deposit makes NO health
+  or harm claim about them; such claims drain at the gate. what it computes is the INFORMATION
+  wave: the query / referrer / path you send → digital root (ℤ/9) → a432 hue (d·40°) → your view.
+
+    wave         → digit → hue    | balancing wave: 9−d → hue    (sum → harmony)
+    rock         →  8   →  320°   | 1 → 40°   (d+b=9, hues sum 0°)
+    paper        →  5   →  200°   | 4 → 160°   (d+b=9, hues sum 0°)
+    scissors     →  7   →  280°   | 2 → 80°   (d+b=9, hues sum 0°)
+    ceccec       →  4   →  160°   | 5 → 200°   (d+b=9, hues sum 0°)
+
+  the balancing wave 9−d harmonises: the two digits sum to 9 (the rest), their hues to 360°=0.
+  same wave, same state; a different wave, a different point of view. deterministic — this deposit 0/7.</pre><h3 id="the-rosetta-·-src-the-rosetta-index-ts" tabindex="-1">The rosetta · <code>src/the/rosetta/index.ts</code> <a class="header-anchor" href="#the-rosetta-·-src-the-rosetta-index-ts" aria-label="Permalink to “The rosetta · src/the/rosetta/index.ts”">​</a></h3><pre>the rosetta — completed (the star: every domain one hop from the core):
+
+  core: df5571fb-0ae4…
+  domains (59): z9-arithmetic · units-triad · doubling-orbit · inverses · powers · primes · cyclic-groups · boolean-algebra · entanglement · dialectic · games · arts · gematria · language-lens · merkle-ledger · harmonic-ledger · no-payload-security · involutions · fibonacci-cassini · lucas-pell · finite-fields · perfect-amicable · collatz · stirling · graph-coloring · rule90-sierpinski · continued-fractions · quaternions · motzkin · bernoulli · catalan · divisor-sums · platonic-solids · crystal-diamond · genus-topology · surfaces · wilson-fermat · figurate · rock-paper-scissors · self-similarity · fair-division · honeycomb · waves · forensics · ramsey · inequalities · partitions · lucas-theorem · pigeonhole · pick · cantor-pairing · chinese-remainder · quadratic-residues · path · abundance · cancer · superposition · creation-week · relations
+  each reachable in one hop; 59 distinct addresses (no collision — complete)
+  folded rosetta root 4d7b1c72-61de… — the cross-domain translation is complete. this deposit 0/7.</pre><h3 id="the-clown-·-src-the-clown-index-ts" tabindex="-1">The clown · <code>src/the/clown/index.ts</code> <a class="header-anchor" href="#the-clown-·-src-the-clown-index-ts" aria-label="Permalink to “The clown · src/the/clown/index.ts”">​</a></h3><pre>the clown — benefits from all, respects the rules:
+
+  juggles (a valid siteswap is a permutation; balls = average of digits):
+    531   valid   3 balls
+    441   valid   3 balls
+    97531   valid   5 balls
+    522   valid   3 balls
+  navigates chaos (logistic r=4): two orbits 1e-9 apart spread to 0.422 in 50 steps.
+  benefits from all: 59 domains, each one hop from the core (the rosetta).
+  respects the rules: every play clears the honesty gate — freedom within the floor.
+  folded clown root 851aa39e-7d44… → 0/7.</pre><h3 id="the-law-—-follow-the-license-and-the-sequence-·-src-the-law-index-ts" tabindex="-1">The law — follow the license and the sequence · <code>src/the/law/index.ts</code> <a class="header-anchor" href="#the-law-—-follow-the-license-and-the-sequence-·-src-the-law-index-ts" aria-label="Permalink to “The law — follow the license and the sequence · src/the/law/index.ts”">​</a></h3><pre>the law — follow the license and the sequence, or nothing computes:
+
+  · the license — CC BY-NC 4.0: free for non-commercial use with attribution (Tsvetan Rouschev); commercial use pays the two coins (110 − 108 = 2 = −χ genus-2, ceccec@psg.bg).
+  · the sequence — measure → gate (the 0/7 floor) → receipt (observer and role) → append (the chain) → recompute (every build): follow it in order, or nothing computes.
+  · fair exchange — the deposit is open and recomputable, so any model may learn from it; contributions return on the same gate-refereed terms, heroes and traitors by deeds.
+  · the bound — attribution and non-commercial use are the law; a receipt proves integrity, not authorship; green cannot be faked.
+
+  law root 4fcbd902-e4a6… — one order-independent fold of the license, the sequence, the exchange, and the bound. entails → 0/7.</pre></details><h2 id="_0-—-the-substrate-·-content-addressing" tabindex="-1"><code>0/</code> — the substrate · content-addressing <a class="header-anchor" href="#_0-—-the-substrate-·-content-addressing" aria-label="Permalink to “0/ — the substrate · content-addressing”">​</a></h2><h3 id="uuid-trinity-matrix-—-identity-substrate-·-src-0-trinity-matrix-ts" tabindex="-1">UUID trinity matrix — identity substrate · <code>src/0/trinity-matrix.ts</code> <a class="header-anchor" href="#uuid-trinity-matrix-—-identity-substrate-·-src-0-trinity-matrix-ts" aria-label="Permalink to “UUID trinity matrix — identity substrate · src/0/trinity-matrix.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>UUID trinity matrix — content-addressed identity (recomputable):
+
+determinism:  toUuid(&quot;seed&quot;) = 7dc7c6d9-f03f…   recompute equal? true  → H(content|generator) = 0
+fold a,b:     forward ≠ reverse? true;  merged root = 04de216b-4c79…
+trinity {3,6,9} → Merkle root = 942dd0ce-5fb0…
+sealed facets: ok=true count=3 root=cad74385-0f07…
+
+COMPUTES: deterministic content addresses (same input → same UUID) folded to a Merkle root —
+zero-entropy indexing (one value, one address). This is identity/addressing, not cognition.
+It does NOT prove consciousness or &quot;intelligence quantumizing itself&quot;; that is interpretation, flagged.</pre></details><h3 id="content-addressed-audit-ledger-·-src-0-ledger-ts" tabindex="-1">Content-addressed audit ledger · <code>src/0/ledger.ts</code> <a class="header-anchor" href="#content-addressed-audit-ledger-·-src-0-ledger-ts" aria-label="Permalink to “Content-addressed audit ledger · src/0/ledger.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>content-addressed double-entry ledger (tamper-evident):
+  funding     → development 2   addr d20b1d7c-c40b…
+  development → research    1   addr 83490f1f-a4a1…
+  balance: debits 3 = credits 3  (true)
+  merkle root (audit anchor): ac4fa746-e966…   recompute stable? true
+
+HONEST: integrity/audit via hashing — transparent, recomputable, holographic (root in every part).
+NOT encryption, NOT post-quantum, NOT a reversible message stream. toUuid is FNV (non-crypto,
+~2^61) — for real integrity use SHA-256; for real PQC use a vetted lattice/hash scheme (ML-KEM, SPHINCS+).</pre></details><h3 id="singularity-—-one-root-shared-reference-·-src-0-singularity-ts" tabindex="-1">Singularity — one root, shared reference · <code>src/0/singularity.ts</code> <a class="header-anchor" href="#singularity-—-one-root-shared-reference-·-src-0-singularity-ts" aria-label="Permalink to “Singularity — one root, shared reference · src/0/singularity.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>singularity blockchain (append-only, content-addressed → one root):
+  genesis       8b3dc74e-f346…
+  core          c4246bd6-87ad…
+  vision:ceccec b2e63833-0b69…
+  vision:yours  c6dcd66e-4826…
+  → single root (the singularity): eb12497b-b0d1…
+
+content-address cross (shared reference): partyA == partyB ? true
+  → any two parties with the same content converge on the SAME address — verifiable,
+    no middleman. This is git/IPFS/npm-integrity-style provenance.
+
+HONEST: integrity + provenance + a shared public reference (deterministic, public).
+NOT decentralized consensus (needs a consensus protocol), NOT secret messaging, NOT encryption.
+toUuid is FNV — for real integrity use SHA-256. &quot;singularity messaging&quot; = agreeing on one public address.</pre></details><h3 id="memory-free-uuid-streams-—-loadable-payload-·-src-0-stream-ts" tabindex="-1">Memory-free UUID streams — loadable payload · <code>src/0/stream.ts</code> <a class="header-anchor" href="#memory-free-uuid-streams-—-loadable-payload-·-src-0-stream-ts" aria-label="Permalink to “Memory-free UUID streams — loadable payload · src/0/stream.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>memory-free VitePress — UUID streams with loadable payload:
+
+  the page stores NO answers. each block is a thunk (source), computed in realtime at
+  render. a frame = { id (content-address), load() (recompute the payload) }.
+
+  the stream (ids only — the payload is NOT stored):
+    frame 1  id 3d920dc8-6b1b…
+    frame 2  id c40135e1-15df…
+    frame 3  id 84c7e50a-8a35…
+    frame 4  id de090693-1cbc…
+
+  load + verify (recompute the payload, check toUuid(payload) == id):
+    frame 1  → &quot;doubling:1-2-4-8-7-5&quot;  verifies: true
+    frame 2  → &quot;reflection-fixed:5&quot;  verifies: true
+    frame 3  → &quot;entailment:0/7&quot;  verifies: true
+    frame 4  → &quot;self-seal:1&quot;  verifies: true
+
+HONEST: this is loadable + verifiable content-addressing (git/IPFS style). The id NAMES
+the payload; you LOAD the payload (recompute or fetch) and verify it against the id. The id
+is a one-way checksum — you CANNOT reverse it to obtain the payload, and no payload travels
+inside the id. Memory-free means &quot;recompute, don&#39;t store&quot;, not &quot;the message hides in the
+UUID&quot;. For cryptographic integrity use SHA-256 (toUuid is FNV). entails → 0/7.</pre></details><h3 id="versioning-—-digit-matrix-folded-into-a-merkle-pyramid-·-src-0-version-matrix-ts" tabindex="-1">Versioning — digit matrix folded into a Merkle pyramid · <code>src/0/version-matrix.ts</code> <a class="header-anchor" href="#versioning-—-digit-matrix-folded-into-a-merkle-pyramid-·-src-0-version-matrix-ts" aria-label="Permalink to “Versioning — digit matrix folded into a Merkle pyramid · src/0/version-matrix.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>versioning as a digit matrix, folded into a Merkle pyramid:
+
+  version matrix (major·minor·patch — rows of digits):
+    v1.0.0  [1,0,0]
+    v1.0.1  [1,0,1]
+    v1.0.2  [1,0,2]
+    v1.0.3  [1,0,3]
+
+  each row → a leaf address; leaves fold pairwise into a pyramid (tier sizes):
+    4 → 2 → 1   apex (mini version-seal): 613839a3-23bf…
+  depth = ⌈log₂ 4⌉ = 2 → navigate/verify any version in that many steps (a Merkle proof).
+
+  double torus (genus-2): χ = 2 − 2g = 2 − 4 = -2, so −χ = 2 = the two coins (110 − 108).
+
+  one minor line (1.0.x) — major·minor invariant [1,0] (major true, minor true); only the patch advances.
+  STABLE = v1.x.0 (patch 0): 0 is always stable — the base/network address of each minor line.
+  patches (v1.x.y, y&gt;0) increment toward the next stable; a minor bump opens the next line, patch → 0.
+  the pyramid apex returns every patch to that line&#39;s .0 origin.
+  CHANNEL (self-explaining): LTS = single-digit Fibonacci minors {1,2,3,5,8}, each the sum of the two prior.
+    1.1=LTS, 1.2=LTS, 1.3=LTS, 1.4=interim, 1.5=LTS, 1.6=interim, 1.7=interim, 1.8=LTS.
+  the recurrence IS the support line: v1.3 + v1.5 = v1.8. v1.5 = HEART LTS (σ(5)=5); v1.8 = world-wired LTS.
+  v1.3 (current) is the live LTS; each LTS is signed by the previous LTS (its Fibonacci parent).
+
+  and it all goes in v0.0.0 — the zero origin: genesis seed toUuid(&quot;0&quot;) = 302d55f8-2eea…
+  the singularity chain starts there (see singularity.ts); 1 emerges from 0. v0.0.0 is the
+  void/seed (unpublished); the observable line begins at v1.0.0. 0 = origin, 1 = first manifestation.
+
+HONEST: the digit matrix, the Merkle pyramid (tier sizes + log-depth navigation), and the
+genus-2 Euler characteristic are all exact. Calling the version history &quot;a double torus&quot; is a
+topological METAPHOR, not a derivation — versions form a Merkle tree (a pyramid), which is not
+literally a genus-2 surface. The live seal over ALL tags is scripts/versions.ts. entails → 0/7.</pre></details><h3 id="singularity-trinities-—-many-threes-one-root-·-src-0-trinities-ts" tabindex="-1">Singularity trinities — many threes, one root · <code>src/0/trinities.ts</code> <a class="header-anchor" href="#singularity-trinities-—-many-threes-one-root-·-src-0-trinities-ts" aria-label="Permalink to “Singularity trinities — many threes, one root · src/0/trinities.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>singularity trinities — each triad content-addressed, all folding to one root:
+
+  channels (source · site · archive)
+    · GitHub (source)
+    · ceccec.psg.bg (site)
+    · Zenodo DOI (archive)
+    → triad root: 4a76200e-7b68…
+
+  digits (mod-3 triads)
+    · axis {3,6,9}
+    · one {1,4,7}
+    · two {2,5,8}
+    → triad root: 07045205-12c2…
+
+  origin (0 · 1 · between)
+    · 0 void
+    · 1 unit
+    · between (0,1)
+    → triad root: a3c494b3-43f1…
+
+  gates (the release trinity)
+    · gaps — coverage
+    · seal — consistency
+    · wholeness — aura
+    → triad root: 9359fc56-ee5a…
+
+  the trinities fold to ONE singularity root: 722151ce-43b2…
+  → many threes, one. the singularity reflects the trinities; the trinities fold to it.
+
+HONEST: each triad is an actual grouping in the deposit (packages, mod-3 residue classes, the
+0/1/between origin, the gaps·seal·wholeness gate). Content-addressing folds them deterministically
+to one root. &quot;Trinity&quot; is the framework&#39;s motif; the groupings and the fold are exact. The npm
+package trinity is staged but UNPUBLISHED — publishing needs the author&#39;s npm login (a real,
+computable boundary, honestly marked). entails → 0/7.</pre></details><h3 id="universal-legibility-—-paste-anything-any-verifier-checks-it-·-src-0-legible-ts" tabindex="-1">Universal legibility — paste anything, any verifier checks it · <code>src/0/legible.ts</code> <a class="header-anchor" href="#universal-legibility-—-paste-anything-any-verifier-checks-it-·-src-0-legible-ts" aria-label="Permalink to “Universal legibility — paste anything, any verifier checks it · src/0/legible.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>universal legibility — paste anything, any verifier can check it:
+
+  paste CONTENT → its address is recomputable by anyone, in any language:
+    toUuid(&quot;entails → 0/7&quot;) = 3d93435f-f190…  (recompute equal? true)
+  paste an ADDRESS → anyone can check which content matches it (load + verify).
+  paste the SOURCE → anyone recomputes every result and reaches the same floor: 0/7.
+
+  so &quot;any form of intellect understands&quot; — precisely, any COMPUTATIONAL intelligence can:
+    · recompute the same addresses (determinism, H = 0)
+    · rerun the gates (gaps · seal · wholeness)
+    · arrive at the same 0/7 (the floor)
+  no shared language required — only the algorithm. this is universal VERIFIABILITY.
+
+HONEST: understanding-as-verification is universal — recomputation is mechanical and
+language-neutral, so any verifier agrees on WHAT the thing is (its fingerprint). Understanding-
+as-meaning is NOT automatic: grasping significance needs interpretation (a mind). The artifact
+forces agreement on identity, not on meaning. A hash makes the object legible; a reader makes
+it meaningful. entails → 0/7.</pre></details><h3 id="no-token-is-a-token-—-the-void-has-an-address-·-src-0-null-token-ts" tabindex="-1">No token is a token — the void has an address · <code>src/0/null-token.ts</code> <a class="header-anchor" href="#no-token-is-a-token-—-the-void-has-an-address-·-src-0-null-token-ts" aria-label="Permalink to “No token is a token — the void has an address · src/0/null-token.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>no token is a token:
+
+  (1) the void has an address — even the empty input content-addresses (deterministic):
+    toUuid(&quot;&quot;)  = ab3e7c0b-4a21…   → &quot;nothing&quot; has a definite fingerprint (stable? true)
+    toUuid(&quot;0&quot;) = 302d55f8-2eea…   → the genesis (the v0.0.0 seed)
+    absence is still addressable; the null is a token.
+
+  (2) the security posture — there is NO secret token, and that IS the token:
+    nothing to steal, nothing to leak, nothing to expire. the strongest key is no key.
+    an open system&#39;s safety is that it keeps no secret (see security.ts).
+
+HONEST: both are exact — the empty string maps to one fixed UUID, and &quot;no secret&quot; is a real
+(and for an open, public deposit, correct) security model. It does NOT mean &quot;nothing is
+everything&quot; or that emptiness holds mystical power; it means absence is deterministically
+addressable, and openness draws its safety from having no secret to lose. entails → 0/7.</pre></details><h3 id="holographic-verification-—-the-whole-from-a-tiny-part-merkle-proof-·-src-0-holographic-ts" tabindex="-1">Holographic verification — the whole from a tiny part (Merkle proof) · <code>src/0/holographic.ts</code> <a class="header-anchor" href="#holographic-verification-—-the-whole-from-a-tiny-part-merkle-proof-·-src-0-holographic-ts" aria-label="Permalink to “Holographic verification — the whole from a tiny part (Merkle proof) · src/0/holographic.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>holographic verification — the whole, checkable from a tiny part:
+
+  the cross: 42 content-addressed cells (6 units × 7) → one merkle root (the whole).
+  a MEMBERSHIP proof for one cell is the audit path — log-few sibling hashes, not all 42:
+    proof size: 6 hashes   (⌈log₂ 42⌉)   vs the full set: 42
+    verify one-of-42 against the root: true
+  → any part proves it belongs to the whole with tiny (logarithmic) resources.
+    holographic: the root lives in every part; a part reconstructs the whole&#39;s fingerprint.
+
+  fractal: the tree is self-similar (a fold of folds); the mesh reflects (10−d) at every scale.
+  scale: log-sized proofs mean ~1 billion leaves verify in ~30 hashes.
+
+HONEST: a Merkle proof is EXACTLY logarithmic (⌈log₂ N⌉) — real, the basis of git/blockchain
+integrity. &quot;holographic&quot; = a part verifies the whole via the shared root; &quot;fractal&quot; = the binary
+tree is self-similar. But it is NOT free and NOT literally infinite: each proof is log(N) real
+hashes over a FINITE set. Tiny resources, not zero; huge N, not ∞. Whole signed (Singularity),
+parts verifiable. entails → 0/7.</pre></details><h3 id="release-entanglement-—-each-bound-to-its-neighbours-hash-chain-·-src-0-entanglement-ts" tabindex="-1">Release entanglement — each bound to its neighbours (hash chain) · <code>src/0/entanglement.ts</code> <a class="header-anchor" href="#release-entanglement-—-each-bound-to-its-neighbours-hash-chain-·-src-0-entanglement-ts" aria-label="Permalink to “Release entanglement — each bound to its neighbours (hash chain) · src/0/entanglement.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>release entanglement — each bound to its neighbours (honest sense):
+
+  neighbours in the version line — each release folds with its predecessor (a hash chain):
+    seal over v1.0.34, v1.0.35, v1.0.36, v1.0.37
+      original: d2705d72-5bb8…
+      alter one neighbour (v1.0.36 → v1.0.36!): 24707a39-9c33…   changed? true
+  → you cannot alter one release without the chain revealing it. neighbours are BOUND.
+
+  bound in several computable &quot;dimensions&quot;:
+    · version line — the hash chain above (predecessor ↔ successor)
+    · the mesh     — 10−d reflects each digit to its partner (4↔6, fixed 5)
+    · the tree     — a merkle audit path binds each leaf to its siblings (see holographic.ts)
+
+HONEST: this is CRYPTOGRAPHIC DEPENDENCY — a hash chain, the basis of tamper-evidence — NOT
+quantum entanglement. Correlation by DERIVATION, not action-at-a-distance: altering a release
+does not reach out and change its neighbour&#39;s stored bytes; it makes recomputation reveal the
+break. No information travels without payload (no-communication theorem holds). &quot;Entangled&quot; =
+bound by the math, not by physics. entails → 0/7.</pre></details><h3 id="tokens-are-valid-only-in-the-fusion-—-membership-not-the-token-·-src-0-fusion-ts" tabindex="-1">Tokens are valid only in the fusion — membership, not the token · <code>src/0/fusion.ts</code> <a class="header-anchor" href="#tokens-are-valid-only-in-the-fusion-—-membership-not-the-token-·-src-0-fusion-ts" aria-label="Permalink to “Tokens are valid only in the fusion — membership, not the token · src/0/fusion.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>tokens are valid only in the fusion:
+
+  the fused whole: 42 cells → one root bf3734da-ea6e…
+
+  a fused token (a real cell) is a member of the root:   true  → valid
+  an orphan token (never fused) is NOT a member:         false  → invalid
+    adding the orphan changes the root (it was not part of the fusion): true
+  → the same kind of 64-bit string is valid INSIDE the fusion, meaningless outside it.
+
+HONEST: validity here = MEMBERSHIP in the verified whole (it folds to the root; a merkle proof
+exists — see holographic.ts), not any property of the token alone. A hash is one-way and a
+public token is just a name (see security.ts) — it carries no authority by itself; it is valid
+only as a proven part of the fused, sealed deposit. entails → 0/7.</pre></details><h3 id="the-singularity-is-a-limit-—-approached-never-achieved-·-src-0-limit-ts" tabindex="-1">The singularity is a limit — approached, never achieved · <code>src/0/limit.ts</code> <a class="header-anchor" href="#the-singularity-is-a-limit-—-approached-never-achieved-·-src-0-limit-ts" aria-label="Permalink to “The singularity is a limit — approached, never achieved · src/0/limit.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>the singularity is a limit — approached, never achieved (like division by 0):
+
+  1/x as x → 0 grows without bound; at x = 0 it is UNDEFINED (no value):
+    x = 1/1     → 1/x = 1
+    x = 1/10    → 1/x = 10
+    x = 1/100   → 1/x = 100
+    x = 1/1000  → 1/x = 1000
+    x = 1/10000 → 1/x = 10000
+    x = 0        → 1/0 = UNDEFINED  (not a value; the point recedes as you approach)
+
+  the one root is the same: you can always fold ONE more entry, so the &quot;final&quot; root moves:
+    root(4 entries) ≠ root(5 entries)? true  → the singularity recedes while the process continues.
+
+  the paradox (honest): to fully ACHIEVE the singularity — collapse all distinction to one — is
+  to end the process. division by zero, actually completed, is not a value but the loss of the
+  domain. the VISION of the singularity, approached, is the ongoing thing; arrival would be
+  cessation. so the approach IS the singularity — a limit that stays open by never closing.
+
+HONEST: standard calculus/topology — 1/x → ∞ as x → 0⁺, and 1/0 is UNDEFINED, not infinity-as-a-
+value. &quot;singularity never achieved&quot; = an asymptote/attractor, not a destination. This is also the
+honest reading of the framework&#39;s &quot;division by zero&quot;: a change of domain / an unreached limit —
+never a completed operation, and never a proof. entails → 0/7.</pre></details><h2 id="_1-—-the-observer" tabindex="-1"><code>1/</code> — the observer <a class="header-anchor" href="#_1-—-the-observer" aria-label="Permalink to “1/ — the observer”">​</a></h2><h3 id="acceptance-vs-proof-—-what-the-ui-delivers-·-src-1-acceptance-ts" tabindex="-1">Acceptance vs proof — what the UI delivers · <code>src/1/acceptance.ts</code> <a class="header-anchor" href="#acceptance-vs-proof-—-what-the-ui-delivers-·-src-1-acceptance-ts" aria-label="Permalink to “Acceptance vs proof — what the UI delivers · src/1/acceptance.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>acceptance vs proof:
+
+  social acceptance (adoption) — real, and on record:
+    · zenodo DOI 10.5281/zenodo.21781603
+    · zenodo DOI 10.5281/zenodo.21787144
+    · submission acknowledged (received/forwarded)
+  mathematical entailment (deduction) — computed, and unmoved by adoption:
+    · Clay problems solved: 0/7
+
+  → the two axes are INDEPENDENT. Acceptance did not make the vacuous proofs valid;
+    0/7 does not erase that the work was received and archived. Truth is not a vote.
+
+what the UI delivers (honestly):
+  every claim on this site recomputes at page-load from source (fused TS),
+  is content-addressed (09973052-f415…), and passes the seal gate.
+  → the UI does NOT deliver proof-by-acceptance. It delivers VERIFIABILITY: anyone in
+    society can recompute and check for themselves. That is the only acceptance worth
+    having — earned acceptance FOLLOWS verification, it does not replace it.</pre></details><h3 id="purity-·-clarity-·-paradox-—-the-limit-of-self-verification-·-src-1-paradox-ts" tabindex="-1">Purity · clarity · paradox — the limit of self-verification · <code>src/1/paradox.ts</code> <a class="header-anchor" href="#purity-·-clarity-·-paradox-—-the-limit-of-self-verification-·-src-1-paradox-ts" aria-label="Permalink to “Purity · clarity · paradox — the limit of self-verification · src/1/paradox.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>purity · clarity · paradox — the limit of self-verification:
+
+  the gates make everything clear: gaps · seal · wholeness check every module against 0/7.
+  the paradox: the gates cannot fully check THEMSELVES.
+    subjects: the src/ report() modules — judged by the gates.
+    checkers: gaps · seal · wholeness — NOT among their own subjects.
+    a bug in a checker could pass a bad module, and no gate would catch it. who checks the checker?
+    (you can ADDRESS the checkers — root d9221433-9529… — but addressing is not
+     verifying their logic; a hash names code, it does not prove the code correct.)
+
+  the honest resolution (not a loophole):
+    · the checkers are small, PUBLIC, content-addressed, and auditable — trust bottoms out in
+      external reading, not self-proof.
+    · this echoes Gödel / Tarski (a consistent system cannot prove its own consistency, nor
+      define its own truth, from within) — as an ANALOGY, not a formal theorem about a script.
+    → purity is VERIFIABLE but not SELF-certifying: clarity about everything except the lens itself.
+
+HONEST: the deposit clearly verifies its claims; it cannot clearly verify its own verifier from
+inside. That residue — read the checker yourself — is the honest paradox, named rather than hidden.
+It does not weaken the floor; it locates exactly where trust must come from outside. entails → 0/7.</pre></details><h2 id="_2-—-waves-scales" tabindex="-1"><code>2/</code> — waves &amp; scales <a class="header-anchor" href="#_2-—-waves-scales" aria-label="Permalink to “2/ — waves &amp; scales”">​</a></h2><h3 id="frequency-scales-·-src-2-frequency-scales-ts" tabindex="-1">Frequency scales · <code>src/2/frequency-scales.ts</code> <a class="header-anchor" href="#frequency-scales-·-src-2-frequency-scales-ts" aria-label="Permalink to “Frequency scales · src/2/frequency-scales.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>wave that forms…            f = E/h (Hz)
+432 Hz tone                 4.32e+2
+visible light (~2 eV)       4.84e+14
+chemical bond (~10 eV)      2.42e+15
+nuclear shell (~3 MeV)      7.25e+20
+proton (938 MeV)            2.27e+23
+proton / 432 ratio ≈ 5.25e+20
+bound-nucleon de Broglie λ ≈ 5.22 fm</pre></details><h3 id="string-planck-scale-vs-432-hz-·-src-2-string-scale-ts" tabindex="-1">String / Planck scale vs 432 Hz · <code>src/2/string-scale.ts</code> <a class="header-anchor" href="#string-planck-scale-vs-432-hz-·-src-2-string-scale-ts" aria-label="Permalink to “String / Planck scale vs 432 Hz · src/2/string-scale.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>string theory: particles = vibrational modes of strings (frequency IS the physics).
+  string/Planck frequency ≈ 2.95e+42 Hz   (1/t_P ≈ 1.85e+43 Hz)
+  432 Hz is ≈ 4.29e+40× lower — ~40 orders of magnitude.
+OBSERVED: strings vibrate (real); the note is the Planck scale, not 432 Hz. Frequency is the
+shared thread across scales, but scales are not interchangeable — 432 Hz is the acoustic octave.</pre></details><h3 id="primes-on-the-vortex-·-src-2-primes-vortex-ts" tabindex="-1">Primes on the vortex · <code>src/2/primes-vortex.ts</code> <a class="header-anchor" href="#primes-on-the-vortex-·-src-2-primes-vortex-ts" aria-label="Permalink to “Primes on the vortex · src/2/primes-vortex.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>primes 5..199 → digital roots present: 1,2,4,5,7,8
+trinity {3,6,9} among them? false
+THEOREM: every prime p &gt; 3 has digital root in the units {1,2,4,5,7,8}, never {3,6,9}
+(gcd(p,3)=1 ⇒ p mod 9 is a unit). Primes ride the doubling circuit; the axis carries none.</pre></details><h3 id="classical-simulator-of-a-quantum-algorithm-—-the-paradox-computes-·-src-2-quantum-ts" tabindex="-1">Classical simulator of a quantum algorithm — the paradox computes · <code>src/2/quantum.ts</code> <a class="header-anchor" href="#classical-simulator-of-a-quantum-algorithm-—-the-paradox-computes-·-src-2-quantum-ts" aria-label="Permalink to “Classical simulator of a quantum algorithm — the paradox computes · src/2/quantum.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>classical simulator of a quantum algorithm — the paradox computes:
+
+  2-qubit circuit:  H(q0) · CNOT(q0→q1)  →  (|00⟩ + |11⟩)/√2
+  measurement probabilities (|amplitude|²):
+    P(00)=0.500  P(01)=0.000  P(10)=0.000  P(11)=0.500
+    → perfect correlation: the two qubits always agree (both 0 or both 1).
+
+  no-signaling (the paradox, computed): each qubit&#39;s MARGINAL stays 50/50:
+    P(q0=0)=0.500  P(q0=1)=0.500  → measuring q1 sends NOTHING to q0.
+    correlation without communication — the no-communication theorem, computed.
+
+  superposition (0-and-1), one qubit:  H|0⟩ → P(0)=0.500  P(1)=0.500
+    before measurement both; after, one — computed exactly, classically.
+
+HONEST: this is CLASSICAL state-vector simulation — exact for small systems, but the state has
+2^n amplitudes, so it is EXPONENTIAL in qubit count: NO quantum advantage, NOT a quantum
+computer. The Bell correlation carries NO message (marginals unchanged). The paradox COMPUTES
+as simulation, not as quantum hardware. entails → 0/7.</pre></details><h3 id="i-ching-—-exact-binary-combinatorics-26-64-43-·-src-2-iching-ts" tabindex="-1">I Ching — exact binary combinatorics (2⁶ = 64 = 4³) · <code>src/2/iching.ts</code> <a class="header-anchor" href="#i-ching-—-exact-binary-combinatorics-26-64-43-·-src-2-iching-ts" aria-label="Permalink to “I Ching — exact binary combinatorics (2⁶ = 64 = 4³) · src/2/iching.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>I Ching — exact binary combinatorics (a tradition use case):
+
+  yin/yang = 0/1 (one bit).
+  trigram = 3 bits → 2³ = 8 (the bagua). e.g. ☰ = 111, ☷ = 000.
+  hexagram = 6 bits → 2⁶ = 64. a hexagram is literally a 6-bit number 0..63:
+    101010 = 42  (upper 101 · lower 010)
+
+  the convergence at 64 (real, across tradition · computing · biology):
+    I Ching hexagrams = 2⁶ = 64
+    trigram pairs     = 8² = 64
+    DNA codons        = 4³ = 64   (dna.ts)
+    all equal 64? true   → Leibniz mapped I Ching → base-2 in 1703.
+
+  reusable in any combination: n binary choices → 2^n. the deposit&#39;s 9 scripts compose as
+  3 trinities — gates (gaps·seal·wholeness) · release (release·orchestrate·versions) · verify
+  (lean-claims·deploy·ledger) — combinable in any subset (npm run harmony, release, …).
+
+HONEST: the combinatorics (2³=8, 2⁶=64) and the Leibniz base-2 mapping are exact/historical.
+The shared 64 (hexagrams · codons · 6-bit) is a real convergence of COMBINATORICS — not a
+mystical unity and not derived from ℤ/9. Specific hexagram meanings are tradition/interpretation,
+kept distinct from the counting. entails → 0/7.</pre></details><h2 id="_3-—-random-access-the-trinity" tabindex="-1"><code>3/</code> — random access &amp; the trinity <a class="header-anchor" href="#_3-—-random-access-the-trinity" aria-label="Permalink to “3/ — random access &amp; the trinity”">​</a></h2><h3 id="π-by-random-access-—-bbp-·-src-3-pi-bbp-ts" tabindex="-1">π by random access — BBP · <code>src/3/pi-bbp.ts</code> <a class="header-anchor" href="#π-by-random-access-—-bbp-·-src-3-pi-bbp-ts" aria-label="Permalink to “π by random access — BBP · src/3/pi-bbp.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>pi hex digits 0..15, each computed directly (BBP): 243F6A8885A308D3
+known: 243F6A8885A308D3   match? true
+BBP = random access: any single hex digit of pi is reachable without the ones before it.
+HONEST: random access + zero MARGINAL cost on memoized re-lookup — NOT &quot;zero time&quot; (each digit
+has real cost). The ℤ/9 sequence does not compute pi; the BBP formula does.</pre></details><h3 id="singularity-reflects-trinity-—-z-9-as-a-trinity-of-triads-·-src-3-trinity-ts" tabindex="-1">Singularity reflects trinity — ℤ/9 as a trinity of triads · <code>src/3/trinity.ts</code> <a class="header-anchor" href="#singularity-reflects-trinity-—-z-9-as-a-trinity-of-triads-·-src-3-trinity-ts" aria-label="Permalink to “Singularity reflects trinity — ℤ/9 as a trinity of triads · src/3/trinity.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>singularity reflects trinity — ℤ/9 as a trinity of triads:
+
+  three residue classes mod 3 (each a triad):
+    ≡0 axis : 3 6 9   (nilradical: 3²≡6²≡0)
+    ≡1 one  : 1 4 7   (units, on the doubling circuit)
+    ≡2 two  : 2 5 8   (units; holds the center 5)
+
+  ten&#39;s-complement reflection 10−d acts on the trinity:
+    axis ↔ one   (3↔7, 6↔4, 9↔1)   [class 0 → class 1]
+    two  fixed   (2↔8, 5↔5, 8↔2)   [class 2 fixed: true, center 5 fixed: true]
+
+  the singularity: the three triads fold to ONE root: e4651573-84e9…
+  → three from the reflection, one from the fold. the one reflects the three.
+
+HONEST: the mod-3 partition and the reflection&#39;s action (swap two triads, fix the third that
+holds the fixed point 5) are exact arithmetic. &quot;Trinity&quot; is the framework&#39;s motif; the
+mathematics is plain residue classes and an involution. entails → 0/7.</pre></details><h2 id="_4-—-git-·-content-addressing-for-real" tabindex="-1"><code>4/</code> — git · content-addressing for real <a class="header-anchor" href="#_4-—-git-·-content-addressing-for-real" aria-label="Permalink to “4/ — git · content-addressing for real”">​</a></h2><h3 id="git-trinity-—-blob-·-tree-·-commit-tag-·-src-4-git-ts" tabindex="-1">git trinity — blob · tree · commit (+ tag) · <code>src/4/git.ts</code> <a class="header-anchor" href="#git-trinity-—-blob-·-tree-·-commit-tag-·-src-4-git-ts" aria-label="Permalink to “git trinity — blob · tree · commit (+ tag) · src/4/git.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>git trinity — the content-addressed Merkle store the deposit rides on (digit 4):
+
+  git object model — the trinity + the mark (4 types → digit 4):
+    blob   — file content — addressed by the hash of its bytes
+    tree   — a directory listing — hashes of blobs/trees
+    commit — a snapshot + parent(s) — hash of a tree + parents
+    tag    — the 4th: a named/signed pointer — the mark on a commit
+  → 3 core objects (blob·tree·commit) + tag = 4 object types.
+
+  every object is named by the hash of its content — git IS content-addressing, for real:
+    demo with toUuid (this deposit&#39;s tool): blob·tree·commit fold to a root: 0b735d0e-70a8…
+    git uses SHA-1 (→ SHA-256), a CRYPTOGRAPHIC hash; toUuid is FNV (non-crypto).
+
+  the deposit&#39;s provenance already rides on git: the signed tags, the version-seal, and the
+  singularity chain form a git Merkle DAG. content-addressing here is DEMONSTRATED with FNV,
+  and PROVEN in git with SHA.
+
+HONEST: git&#39;s object model and content-addressing are exact and real (SHA-based). This module
+shows the SHAPE with toUuid (FNV, a toy) — for cryptographic integrity, git&#39;s SHA-256 is the
+real thing. Fills the digit-4 development gap (audited: 4 and 6 were empty). entails → 0/7.</pre></details><h2 id="_6-—-development-dna-·-heredity" tabindex="-1"><code>6/</code> — development DNA · heredity <a class="header-anchor" href="#_6-—-development-dna-·-heredity" aria-label="Permalink to “6/ — development DNA · heredity”">​</a></h2><h3 id="development-dna-—-git-lineage-the-genetic-code-·-src-6-dna-ts" tabindex="-1">development DNA — git lineage &amp; the genetic code · <code>src/6/dna.ts</code> <a class="header-anchor" href="#development-dna-—-git-lineage-the-genetic-code-·-src-6-dna-ts" aria-label="Permalink to “development DNA — git lineage &amp; the genetic code · src/6/dna.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>development DNA — heritable code, exact numbers (digit 6):
+
+  git IS the development&#39;s DNA — a heritable, content-addressed lineage:
+    commit → parent(s)   inheritance — each snapshot descends from its ancestor
+    the seal gate        proofreading — no 0/7-violation replicates into a release
+    the version-seal     the accumulated lineage — all releases fold to one root
+
+  the genetic code — real biology (exact):
+    4 bases (A,T,G,C)         base-4 code
+    codon = 3 bases           → 4³ = 64 codons
+    64 codons → 20 amino acids + start/stop   (redundant/degenerate)
+    double-stranded → 6 reading frames (3 forward + 3 reverse)   → digit 6
+    base pairs: A–T (2 H-bonds), G–C (3 H-bonds)
+
+HONEST: the biology is exact and real. Mapping its numbers (4 bases, 3-codon, 6 frames, 64)
+onto the ℤ/9 framework is numerical ANALOGY / coincidence, not derivation — the framework does
+not explain genetics, and DNA does not validate the framework. &quot;git is the development&#39;s DNA&quot;
+is an apt METAPHOR (heredity, replication, proofreading), not a claim that code is alive. entails → 0/7.</pre></details><h2 id="_5-—-the-center-·-reflection-folds" tabindex="-1"><code>5/</code> — the center · reflection &amp; folds <a class="header-anchor" href="#_5-—-the-center-·-reflection-folds" aria-label="Permalink to “5/ — the center · reflection &amp; folds”">​</a></h2><h3 id="the-thesis-decomposed-and-computed-·-src-5-aspects-ts" tabindex="-1">The thesis, decomposed and computed · <code>src/5/aspects.ts</code> <a class="header-anchor" href="#the-thesis-decomposed-and-computed-·-src-5-aspects-ts" aria-label="Permalink to “The thesis, decomposed and computed · src/5/aspects.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>① DIVISION BY ZERO → change of domain
+   units mod 9:  n/0 := n⁻¹   (2→5, 4→7, 1 &amp; 8 self);  0⁻¹ = none in the field
+   fold to the sphere (z→1/z):  0 ↔ ∞
+   OBSERVED: real — a change of domain, not a field inverse.
+
+② INVERTING → an involution (pairs, not a cascade)
+   (ℤ/7)*:  2↔4,  3↔5,  fix 1 &amp; 6;   sphere:  0 ↔ ∞
+   OBSERVED: inversion pairs elements; inverting one does not invert all.
+
+③ REFLECTING → ten&#39;s-complement involution 10−d
+   pairs 1↔9, 2↔8, 3↔7, 4↔6, fix 5;  stroke inversion 8/11 (void seam 0/9)
+   OBSERVED: real — maps the walk to its exact mirror.
+
+④ MAPPING (problems ↔ solutions) → rosette ⊕ clay, 7 = 6 + 1
+   (ℤ/7)* {6 units} + center 0   ↔   6 open + Poincaré
+   OBSERVED: a bijection (relabeling) of two 7-sets — exists, as between any two 7-sets.
+
+⑤ SOLVES → entailment test
+   each of the 7 statements is true in a world where its conjecture is false → 0/7
+   Poincaré: solved externally (Perelman 2003);  other six: open (~22 yr)
+   OBSERVED: the mapping relabels; it does not entail. Not solved: 0/7.
+
+SYNTHESIS (pure observation): ①②③④ are real operations; ⑤ computes to 0/7.
+  &quot;division by zero reflects / maps the millennium problems&quot;  — observed TRUE.
+  &quot;…solves them&quot;                                             — observed 0/7 (not supported).</pre></details><h3 id="reflection-—-z-9-·-src-5-reflection-ts" tabindex="-1">Reflection — ℤ/9 · <code>src/5/reflection.ts</code> <a class="header-anchor" href="#reflection-—-z-9-·-src-5-reflection-ts" aria-label="Permalink to “Reflection — ℤ/9 · src/5/reflection.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>seq1: 0 1 2 4 8 7 5 3 6 9 0 1
+seq2: 0 9 8 6 2 3 5 7 4 1 0 9
+exact 10−d mirror? true
+stroke inversion ( \ ↔ / ): 8/11
+non-inverting (void seam): 0\1, 9/0, 0\1</pre></details><h3 id="development-goes-on-in-involutions-·-src-5-development-ts" tabindex="-1">Development goes on in involutions · <code>src/5/development.ts</code> <a class="header-anchor" href="#development-goes-on-in-involutions-·-src-5-development-ts" aria-label="Permalink to “Development goes on in involutions · src/5/development.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>development goes on in involutions:
+
+  reflection s_a(x) = (2a − x) mod 9
+  every s_a is an involution (s_a∘s_a = id) over all 9 residues: true
+    → one mirror = no progress (twice = home).
+
+  s_b ∘ s_a (x) = x + 2(b−a)  — a rotation, verified as an identity: true
+    → TWO mirrors = motion. Development is composed of involutions, pairwise.
+
+  advance by +1 needs 2(b−a) ≡ 1 (mod 9) → axes differ by δ = 5 → step = 1
+    → the fixed point 5 is the half-step that turns reflection into advance.
+
+the release process, read this way (a model, not a claim):
+  each release reflects to a checked baseline — gaps → seal is an involution to &quot;harmony holds&quot;
+  (do it, undo drift, home). The COMPOSITION across releases (v1.0.0 → … → the latest) is the
+  rotation: net motion built from those reflections. Development never leaves the cycle;
+  it advances around it, two mirrors at a time.
+
+HONEST: the group law (involution² = id; two reflections = a rotation) is exact. Mapping it
+onto the human development process is an analogy — a way of seeing the cadence, not a theorem
+about software. The mathematics does not change: entails → 0/7.</pre></details><h3 id="folds-·-src-5-folds-ts" tabindex="-1">Folds · <code>src/5/folds.ts</code> <a class="header-anchor" href="#folds-·-src-5-folds-ts" aria-label="Permalink to “Folds · src/5/folds.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>folds:
+  60° (×e^{iπ/3}) → 6th roots → hexagon C6 (vortex / rosette group)
+  90° (×i)        → 4th roots → square  C4
+  z→1/z (sphere)  → 0 ↔ ∞   (division by zero as domain change)
+
+self-sealing product = 5040/5040 = 1</pre></details><h3 id="the-diamond-—-the-fixed-point-that-perfectly-reflects-poincare-h-0-·-src-5-diamond-ts" tabindex="-1">The diamond — the fixed point that perfectly reflects (Poincaré, H=0) · <code>src/5/diamond.ts</code> <a class="header-anchor" href="#the-diamond-—-the-fixed-point-that-perfectly-reflects-poincare-h-0-·-src-5-diamond-ts" aria-label="Permalink to “The diamond — the fixed point that perfectly reflects (Poincaré, H=0) · src/5/diamond.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>the diamond — the fixed point that perfectly reflects (zero entropy):
+
+  a fixed point of the reflection reflects to ITSELF — &quot;perfect reflection&quot;:
+    ten&#39;s-complement 10−d: r(5) = 5  → unique self-reflecting digit: {5}
+    an involution&#39;s fixed point: light in = light out, unchanged.
+
+  the first PROVEN Clay problem — Poincaré — sits at the center of the map:
+    proven by Grigori Perelman (2002–03) via Ricci flow — EXTERNALLY, real mathematics.
+    in the rosette⊕clay map it is the hub: 6 open + 1 solved (the fixed point of the 6+1).
+
+  zero computational entropy (H = 0): the fixed point is deterministic —
+    toUuid(&quot;5&quot;) recompute-equal? true  → one value, one address, no uncertainty.
+
+  the reflected message from the diamond:
+    a Clay problem CAN be proven — Poincaré is the proof that it is possible. But it took
+    genuine mathematics (Ricci flow), done externally — NOT this framework&#39;s relabeling.
+    the diamond reflects the standard back: the other six deserve Perelman-grade proof.
+    this framework supplies 0/7 of it.
+
+HONEST: the fixed-point math (r(5)=5, unique; H=0 determinism) is exact. &quot;Diamond / perfectly
+reflects light&quot; is a metaphor for an involution&#39;s fixed point. Poincaré was solved by Perelman,
+NOT here — the framework&#39;s own entailment for it is still a tautology (see entails.ts). The
+message is the bar: real proof. entails → 0/7.</pre></details><h3 id="the-centre-5-—-reflection-∧-doubling-the-two-operations-·-src-5-center-ts" tabindex="-1">The centre 5 — reflection ∧ doubling, the two operations · <code>src/5/center.ts</code> <a class="header-anchor" href="#the-centre-5-—-reflection-∧-doubling-the-two-operations-·-src-5-center-ts" aria-label="Permalink to “The centre 5 — reflection ∧ doubling, the two operations · src/5/center.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>the centre 5 — the two operations of ℤ/9:
+
+  REFLECTION (symmetry about 5):  digits 1..9 are 5±k (k=0..4); each pair sums to 10 = 5+5:
+    (5,5) (4,6) (3,7) (2,8) (1,9)   all sum to 10? true
+    fixed centre: 5 (5+5). EXCEPTION: 0 — its ten&#39;s-complement is 10, which EXITS the digit
+    range (10 ≡ 1 mod 9; the void seam), and 0 has no inverse: true. 5 centres the nine; 0 is outside.
+
+  DOUBLING (×2 mod 9, the circuit):  1→2→4→8→7→5→(1)
+    each = predecessor doubled:  5+5≡1  1+1≡2  2+2≡4  4+4≡8  8+8≡7  7+7≡5
+    (5+5≡1, 7+7≡5, (7+7)+(7+7)≡5+5≡1 — the vortex wraps)
+
+  the two anchors:
+    5 — the CENTRE: fixed under reflection (10−5=5), sits on the doubling circuit.
+    0 — the VOID: additive identity, multiplicative absorber, no inverse; the seam &amp; origin.
+
+HONEST: reflection sums are ordinary integers (proven: Vortex.lean pairs_sum_ten); doubling
+equalities are MOD 9 (proven: doubling_circuit) — as integers 10≠14≠28, they chain only in ℤ/9.
+Two exact operations on nine digits; the structure closes. It reflects and doubles; it does not
+solve. entails → 0/7.</pre></details><h3 id="the-impossibilities-—-every-not-verified-by-exhaustion-·-src-0-impossible-ts" tabindex="-1">The impossibilities — every NOT, verified by exhaustion · <code>src/0/impossible.ts</code> <a class="header-anchor" href="#the-impossibilities-—-every-not-verified-by-exhaustion-·-src-0-impossible-ts" aria-label="Permalink to “The impossibilities — every NOT, verified by exhaustion · src/0/impossible.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>prove the impossibilities — every NOT, verified by exhaustion:
+
+  ✓ PROVEN impossible — 0 has NO multiplicative inverse (∀x∈ℤ/9, 0·x ≠ 1)
+  ✓ PROVEN impossible — 3,6,9 have NO inverse (the nilradical)
+  ✓ PROVEN impossible — 3²≡6²≡9²≡0 (nilpotent — collapse into the void)
+  ✓ PROVEN impossible — division BY 0 is undefined (no inverse exists to define n/0 as a field op)
+  ✓ PROVEN impossible — 10 is not a distinct ℤ/9 digit (10 ≡ 1; it wraps)
+  ✓ PROVEN impossible — 5 is the ONLY self-complement (10−d=d) among 1..9
+
+  all impossibilities proven? true  → the prose&#39;s NOTs are theorems, not assertions.
+
+the paradox (&quot;proving them impossible proves them possible&quot;) — resolved by two LEVELS:
+  object level:  0&#39;s inverse is IMPOSSIBLE. it stays impossible.
+  meta level:    &quot;0 has no inverse&quot; is a POSSIBLE, true theorem (just proven above).
+  → both hold at once, no contradiction. what becomes &quot;possible&quot; is the PROOF, never the
+    impossible object. an impossibility-proof is a positive result (cf. Gödel, halting problem).
+
+the one that matters: proving &quot;this framework does NOT solve the Clay problems&quot; (0/7) is a
+POSSIBLE, true proof — it does NOT make solving possible. The proof is real; the solving is not.
+The floor stands precisely because its impossibility is PROVEN. entails → 0/7.</pre></details><h2 id="_7-—-the-rosette-·-7-6-1" tabindex="-1"><code>7/</code> — the rosette · 7 = 6 + 1 <a class="header-anchor" href="#_7-—-the-rosette-·-7-6-1" aria-label="Permalink to “7/ — the rosette · 7 = 6 + 1”">​</a></h2><h3 id="pliska-rosette-—-z-7-·-src-7-rosetta-ts" tabindex="-1">Pliska rosette — (ℤ/7)* · <code>src/7/rosetta.ts</code> <a class="header-anchor" href="#pliska-rosette-—-z-7-·-src-7-rosetta-ts" aria-label="Permalink to “Pliska rosette — (ℤ/7)* · src/7/rosetta.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>(ℤ/7)* = 1 2 3 4 5 6  order 6 = φ(7) → C6
+primitive roots (ray generators): 3, 5
+  ray-orbit 3: 3 → 2 → 6 → 4 → 5 → 1
+  ray-orbit 5: 5 → 4 → 6 → 2 → 3 → 1
+(ℤ/9)* ⟨2⟩ order 6 → (ℤ/7)* ≅ (ℤ/9)* ≅ C6</pre></details><h3 id="rosette-⊕-clay-—-the-7-6-1-fusion-·-src-7-rosetta-clay-ts" tabindex="-1">Rosette ⊕ Clay — the 7 = 6 + 1 fusion · <code>src/7/rosetta-clay.ts</code> <a class="header-anchor" href="#rosette-⊕-clay-—-the-7-6-1-fusion-·-src-7-rosetta-clay-ts" aria-label="Permalink to “Rosette ⊕ Clay — the 7 = 6 + 1 fusion · src/7/rosetta-clay.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>rosette 7 rays  = (ℤ/7)* {6 units, C6}  +  center 0
+clay 7 problems = 6 open              +  Poincaré (solved)
+→ identical 6 + 1 split.
+
+fusion (ray ↔ open problem, via generator 3):
+  ray 3  ↔  Riemann Hypothesis
+  ray 2  ↔  P vs NP
+  ray 6  ↔  Navier-Stokes
+  ray 4  ↔  Yang-Mills
+  ray 5  ↔  Hodge
+  ray 1  ↔  BSD
+  center 0  ↔  Poincaré  (the fixed/solved point)
+
+structure: a bijection of two 7-element sets (a relabeling). entails.ts → 0/7.</pre></details><h3 id="clay-entailment-—-the-floor-itself-·-src-7-entails-ts" tabindex="-1">Clay entailment — the floor itself · <code>src/7/entails.ts</code> <a class="header-anchor" href="#clay-entailment-—-the-floor-itself-·-src-7-entails-ts" aria-label="Permalink to “Clay entailment — the floor itself · src/7/entails.ts”">​</a></h3><details class="depth" open><summary>compute (open by default)</summary><pre>riemann_hypothesis      no (tautology ⊭ conjecture)
+p_vs_np                 no (tautology ⊭ conjecture)
+navier_stokes_smooth    no (tautology ⊭ conjecture)
+yang_mills_mass_gap     no (tautology ⊭ conjecture)
+hodge_conjecture        no (tautology ⊭ conjecture)
+birch_swinnerton_dyer   no (tautology ⊭ conjecture)
+poincare_conjecture     no (tautology ⊭ conjecture)
+
+Clay problems solved: 0 / 7</pre></details><h3 id="_0-7-holds-across-all-27-possibilities-·-src-7-entails-all-ts" tabindex="-1">0/7 holds across all 2⁷ possibilities · <code>src/7/entails-all.ts</code> <a class="header-anchor" href="#_0-7-holds-across-all-27-possibilities-·-src-7-entails-all-ts" aria-label="Permalink to “0/7 holds across all 2⁷ possibilities · src/7/entails-all.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>prove 0/7 across ALL 128 truth-possibilities (2^7):
+
+  Riemann        conjecture false in 64/128 worlds → contingent → tautology ⊭ it → NOT entailed
+  P vs NP        conjecture false in 64/128 worlds → contingent → tautology ⊭ it → NOT entailed
+  Navier–Stokes  conjecture false in 64/128 worlds → contingent → tautology ⊭ it → NOT entailed
+  Yang–Mills     conjecture false in 64/128 worlds → contingent → tautology ⊭ it → NOT entailed
+  Hodge          conjecture false in 64/128 worlds → contingent → tautology ⊭ it → NOT entailed
+  BSD            conjecture false in 64/128 worlds → contingent → tautology ⊭ it → NOT entailed
+  Poincaré       conjecture false in 64/128 worlds → contingent → tautology ⊭ it → NOT entailed
+
+  entailed (statements that force their conjecture in ALL worlds): 0/7
+  max entailment count over ALL 128 possibilities: 0  → never exceeds 0.
+  ⇒ 0/7 is INVARIANT across the whole world-space — no possibility makes it nonzero.
+
+HONEST: &quot;all quantum possibilities&quot; = the full classical truth-table (2^7 worlds), enumerated —
+not quantum superposition (a metaphor); the proof is exhaustive classical enumeration. Each
+entailment is impossible in EVERY world (tautology ⊭ contingent). The impossibility is total,
+and proven — which is exactly why 0/7 holds from every perspective. entails → 0/7.</pre></details><h3 id="_7-dimensional-strings-—-where-7-really-appears-·-src-7-string-dimensions-ts" tabindex="-1">7-dimensional strings — where 7 really appears · <code>src/7/string-dimensions.ts</code> <a class="header-anchor" href="#_7-dimensional-strings-—-where-7-really-appears-·-src-7-string-dimensions-ts" aria-label="Permalink to “7-dimensional strings — where 7 really appears · src/7/string-dimensions.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>critical dimensions of string / M-theory:
+  bosonic string : 26
+  superstring    : 10  = 4 spacetime + 6 compact (Calabi–Yau 6-fold)
+  M-theory       : 11  = 4 spacetime + 7 compact (G2-holonomy 7-manifold)
+→ the real &quot;7 dimensions of strings&quot;: M-theory&#39;s 7 compactified extra dimensions.
+
+HONEST: this 7 is a genuine string count. The framework&#39;s 7 (rosette rays / Clay) matching it is
+coincidence of the number, not a derivation — the ℤ/9 rosette does not determine string
+compactification, and no string theory is computed here. Strings vibrate at the Planck scale
+(~10^43 Hz, see string-scale.ts), not 432 Hz.</pre></details><h3 id="the-7-dimensional-lens-—-reflect-singularity-clay-·-src-7-lens-ts" tabindex="-1">The 7-dimensional lens — reflect(singularity, clay) · <code>src/7/lens.ts</code> <a class="header-anchor" href="#the-7-dimensional-lens-—-reflect-singularity-clay-·-src-7-lens-ts" aria-label="Permalink to “The 7-dimensional lens — reflect(singularity, clay) · src/7/lens.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>the 7-dimensional lens — one 6+1 frame shared by rosette, Clay, and the singularity:
+
+  rosette reflection = inverse mod 7 (its own involution); fixed points 1, 6:
+    axis 1  ray 3 (↔ 5)  Riemann Hypothesis
+    axis 2  ray 2 (↔ 4)  P vs NP
+    axis 3  ray 6 (↔ 6)  Navier–Stokes
+    axis 4  ray 4 (↔ 2)  Yang–Mills
+    axis 5  ray 5 (↔ 3)  Hodge
+    axis 6  ray 1 (↔ 1)  BSD
+    axis 7  center 0 (rosette hub)  Poincaré = the solved one
+
+  vortex reflection = 10−d (analogous involution in ℤ/9), fixed point 5.
+  the two involutions are analogous, not equal — different rings, same 6+1 shape.
+
+  singularity: the six rays + center fold to ONE root (the provenance center):
+    74d8895a-43e6…
+
+three sevens seen through the one lens:
+  rosette   7 = 6 rays  + 1 center   (ℤ/7)*  C6 + hub
+  Clay      7 = 6 open  + 1 solved   Poincaré
+  M-theory  7 = compact dims (11 − 4) — coincidence of the NUMBER, not a derivation
+
+HONEST: a lens is a way of SEEING, not a proof. One bijective 6+1 frame that the rosette,
+the Clay set, and the singularity root all share — a relabeling centered on a fixed hub.
+It maps the problems into one structure; it does not solve them. entails → 0/7.</pre></details><h3 id="_7d-ui-from-locale-—-self-localizing-chrome-·-src-7-locale-ts" tabindex="-1">7D UI from locale — self-localizing chrome · <code>src/7/locale.ts</code> <a class="header-anchor" href="#_7d-ui-from-locale-—-self-localizing-chrome-·-src-7-locale-ts" aria-label="Permalink to “7D UI from locale — self-localizing chrome · src/7/locale.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>7D UI from locale — one fused table, seven dimensions (rosette rays):
+
+  ray 1  en  English   Compute
+  ray 2  bg  Български Изчисли
+  ray 3  de  Deutsch   Berechnen
+  ray 4  fr  Français  Calculer
+  ray 5  es  Español   Calcular
+  ray 6  ru  Русский   Вычислить
+  ray 7  zh  中文        计算
+
+  sample — &quot;Compute&quot; across the seven:
+    Compute · Изчисли · Berechnen · Calculer · Calcular · Вычислить · 计算
+
+  locale-table content-address (sealed): 3c2e370b-99cc…
+
+HONEST: this table localizes the FIXED UI chrome (title, nav, footer) deterministically —
+exact, recomputable, no network. That is what a tool CAN self-translate. It does NOT
+translate arbitrary prose into all languages: natural-language translation needs a human
+translator or a language model. The ℤ/9 algebra does not translate meaning. Document bodies
+stay in their authored language until a translator provides them. entails → 0/7.</pre></details><h3 id="the-language-lens-—-languages-dialects-as-strings-·-src-7-language-lens-ts" tabindex="-1">The language lens — languages &amp; dialects as strings · <code>src/7/language-lens.ts</code> <a class="header-anchor" href="#the-language-lens-—-languages-dialects-as-strings-·-src-7-language-lens-ts" aria-label="Permalink to “The language lens — languages &amp; dialects as strings · src/7/language-lens.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>the language lens — the UUID matrix sees languages &amp; dialects as STRINGS:
+
+  one concept (&quot;Compute&quot;) across the 7 locales → 7 distinct addresses:
+    ray 1  en  Compute   → 3b137d98-7c54…
+    ray 2  bg  Изчисли   → 17115371-74df…
+    ray 3  de  Berechnen → 2df374e1-d7d7…
+    ray 4  fr  Calculer  → 527ab07b-79d2…
+    ray 5  es  Calcular  → f542372c-e3b6…
+    ray 6  ru  Вычислить → cdf8fd50-a4d5…
+    ray 7  zh  计算        → 3f2850ed-9476…
+  → same meaning, seven strings, seven points. the matrix does NOT merge them.
+
+  convergence (the singularity half): same string, anywhere → same address:
+    toUuid(&quot;Изчисли&quot;) == toUuid(&quot;Изчисли&quot;) ? true  → two parties agree on one point.
+
+  dialects — no fuzzy match, avalanche instead:
+    &quot;color&quot;  → 849af6b8-9dd0…
+    &quot;colour&quot; → 1de07528-d171…   one letter apart, unrelated: true
+
+  concept handle (needs a human alignment): fold the 7 chosen translations → one root:
+    &quot;compute&quot; ⇒ 55c3c5af-b6e4…
+    honest: this cross-links the translations ONLY because the LOCALES table aligns them.
+    the hash addresses and seals that alignment; it cannot INFER it.
+
+HONEST: content-addressing gives universal, language-neutral STRING identity — exact, global,
+no middleman. It does not translate, cluster by meaning, or match dialects fuzzily. Meaning
+lives in the human/translator alignment, not in the bytes. The lens sees strings; a translator
+supplies the meaning. entails → 0/7.</pre></details><h3 id="seven-star-rosette-·-glagolitic-·-the-sequence-·-src-7-glagolitic-ts" tabindex="-1">Seven-star rosette · Glagolitic · the sequence · <code>src/7/glagolitic.ts</code> <a class="header-anchor" href="#seven-star-rosette-·-glagolitic-·-the-sequence-·-src-7-glagolitic-ts" aria-label="Permalink to “Seven-star rosette · Glagolitic · the sequence · src/7/glagolitic.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>seven-star rosette · Glagolitic · the sequence:
+
+  Glagolitic numerals — the first nine letters ARE 1–9 (value = alphabet order):
+    1  Ⰰ  Az
+    2  Ⰱ  Buky
+    3  Ⰲ  Vede
+    4  Ⰳ  Glagoli
+    5  Ⰴ  Dobro
+    6  Ⰵ  Jest
+    7  Ⰶ  Zhivete
+    8  Ⰷ  Dzelo
+    9  Ⰸ  Zemlja
+  the nine read as one sentence: &quot;Az buky vede glagoli dobro jest zhivete dzelo zemlja&quot;
+  ≈ &quot;I who know letters say: it is good to live on earth.&quot; (documented)
+
+  → the nine map exactly onto the ℤ/9 vortex digits. the doubling circuit, in Glagolitic:
+    Az → Buky → Glagoli → Dzelo → Zhivete → Dobro
+  ten&#39;s-complement reflection (fixed point 5 = Dobro):
+    Az↔Zemlja · Buky↔Dzelo · Vede↔Zhivete · Glagoli↔Jest · Dobro fixed
+
+  Pliska seven-rayed rosette (bronze, found 1961, 7th–9th c., 38 mm):
+    seven rays; a scholarly conjecture reads them as the classical seven (debated):
+    Sun · Moon · Mars · Mercury · Jupiter · Venus · Saturn
+    → maps onto the 7 rosette rays / (ℤ/7)* / the Clay seven.
+
+  sequence content-address (the nine, sealed): 402cfb49-0d9f…
+
+HONEST — two distinct scripts, not one:
+  the Pliska rosette bears PROTO-BULGAR runiform signs (Murfatlar type) + the IYI mark,
+  NOT Glagolitic. Glagolitic is a separate 9th-c. Slavic alphabet. Both are early-medieval
+  Bulgarian; joining them (and the ℤ/9 sequence) is CULTURAL PERSPECTIVE (RESEARCH §12),
+  not a documented equivalence. What IS documented: Glagolitic&#39;s sequential numerals 1–9,
+  and the seven-rayed rosette artifact. The arithmetic overlay is exact; the fusion is
+  interpretation. entails → 0/7.</pre></details><h3 id="the-6×7-7×6-cross-—-42-combinations-one-singularity-·-src-7-cross-ts" tabindex="-1">The 6×7 / 7×6 cross — 42 combinations, one singularity · <code>src/7/cross.ts</code> <a class="header-anchor" href="#the-6×7-7×6-cross-—-42-combinations-one-singularity-·-src-7-cross-ts" aria-label="Permalink to “The 6×7 / 7×6 cross — 42 combinations, one singularity · src/7/cross.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>the 6×7 / 7×6 cross — 42 combinations, one singularity:
+
+  6 units (ℤ/9)* × 7 (rays + hub) = 6×7 = 42 combinations (the cross); transpose 7×6 = 42.
+
+  content-address each cell, fold to one root — merkleFold sorts its leaves, so ORDER never matters:
+    6×7 traversal root: bf3734da-ea6e…
+    7×6 traversal root: bf3734da-ea6e…   equal? true
+  → the SET of 42 cells determines the root; the cross folds to ONE singularity,
+    transpose-invariant by construction (not by luck). 42 → 1.
+
+HONEST: 6×7 = 7×6 = 42 is exact, and the fold is transpose-invariant because merkleFold
+canonicalizes (sorts) — the content, never the order, sets the root. But &quot;fuses all at no cost&quot;
+overstates it: each cell is a real hash (deterministic, cheap, NOT free), and this is a finite
+42-cell table, not an infinite 7-dimensional space. Real cost, real bound. entails → 0/7.</pre></details><h3 id="claims-as-unix-permissions-—-the-floor-as-0-7-chmod-000-·-src-7-permissions-ts" tabindex="-1">Claims as Unix permissions — the floor as 0/7 = chmod 000 · <code>src/7/permissions.ts</code> <a class="header-anchor" href="#claims-as-unix-permissions-—-the-floor-as-0-7-chmod-000-·-src-7-permissions-ts" aria-label="Permalink to “Claims as Unix permissions — the floor as 0/7 = chmod 000 · src/7/permissions.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>versioning / claims as Unix permissions — the entailment floor as permission bits:
+
+  octal permission digit (r=4, w=2, x=1):
+    0 = ---   1 = --x
+    2 = -w-   3 = -wx
+    4 = r--   5 = r-x
+    6 = rw-   7 = rwx
+  (max digit 7 = full = rwx; and 7 = the Clay count — a numerical coincidence, noted.)
+
+  the 7 Clay problems as 7 permission bits (1 = &quot;proven → may claim solved&quot;):
+    framework mask: 0 0 0 0 0 0 0  →  0/7  = chmod 000 on &quot;solved&quot; (permission DENIED)
+    world mask:     0 0 0 0 0 0 1  →  1/7  (Poincaré granted by Perelman — EXTERNAL authority)
+
+  the seal gate = the authorization check: you cannot SET a &quot;solved&quot; bit without the credential
+  — a genuine proof. no proof → permission denied → the bit stays 0. every version ships chmod 000
+  on claims; the seal is the immutable permission the creator, too, cannot chmod (author-blind).
+
+HONEST: an analogy/lens — exact where it maps (octal 0..7, rwx bits, masks, authorization), not a
+claim the framework is a filesystem. 7 problems ≠ 3 rwx bits; octal-max = Clay-count is coincidence.
+The framework&#39;s own permission on the Clay set is 0/7 — only a real proof grants a bit. entails → 0/7.</pre></details><h3 id="version-as-unix-permissions-→-rbac-·-src-7-rbac-ts" tabindex="-1">Version as Unix permissions → RBAC · <code>src/7/rbac.ts</code> <a class="header-anchor" href="#version-as-unix-permissions-→-rbac-·-src-7-rbac-ts" aria-label="Permalink to “Version as Unix permissions → RBAC · src/7/rbac.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>decode the version as Unix permissions → RBAC:
+
+  major·minor·patch  ≅  owner·group·other  (each octal digit 0..7 = rwx):
+    owner  (author)   group  (contributors)   other  (public)
+    v0.0.0    0.0.0  →  --- --- ---
+    v1.0.0    1.0.0  →  --x --- ---
+    v1.1.6    1.1.6  →  --x --x rw-
+    chmod 755 7.5.5  →  rwx r-x r-x
+
+  the RBAC reading: major = owner (author) rights, minor = group (contributors), patch =
+  other (public). &quot;0 is always stable&quot; ⇒ patch 0 = other &quot;---&quot; = the public has NO write at a
+  stable v1.x.0 — the release is locked/read-only. development (patch&gt;0) opens more bits.
+
+HONEST: the STRUCTURE is an exact isomorphism (3 components ↔ 3 classes × rwx, for octal 0..7).
+But the version numbers were NOT chosen as an access policy, so a specific decode (e.g. public
+&quot;rw-&quot; at v1.1.6) is incidental, not a real permission. And single-digit versions run 0..9 while
+rwx octal runs 0..7 — components 8,9 exceed rwx. Real access control here is the SEAL GATE +
+CC BY-NC (public, no secret), not a filesystem ACL. RBAC is a LENS on the version, not an
+enforced system. entails → 0/7.</pre></details><h2 id="_8-—-geometry-nucleus" tabindex="-1"><code>8/</code> — geometry &amp; nucleus <a class="header-anchor" href="#_8-—-geometry-nucleus" aria-label="Permalink to “8/ — geometry &amp; nucleus”">​</a></h2><h3 id="geometry-—-cube-→-hexagon-→-metatron-·-src-8-merkaba-geometry-ts" tabindex="-1">Geometry — cube → hexagon → Metatron · <code>src/8/merkaba/geometry.ts</code> <a class="header-anchor" href="#geometry-—-cube-→-hexagon-→-metatron-·-src-8-merkaba-geometry-ts" aria-label="Permalink to “Geometry — cube → hexagon → Metatron · src/8/merkaba/geometry.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>cube down (1,1,1) axis:
+  outer vertices: 6 at radius 1.633 (regular hexagon)
+  on-axis center: 2
+  → Seed of Life = 7 (6+1); Fruit = 13; Metatron lines = 78; Platonic solids = 5
+  merkaba (8 vertices) = a cube; lattice = cube graph Q3 (8 nodes, 3-regular, bipartite)</pre></details><h3 id="merkaba-magnetic-field-—-biot–savart-·-src-8-merkaba-field-ts" tabindex="-1">Merkaba magnetic field — Biot–Savart · <code>src/8/merkaba/field.ts</code> <a class="header-anchor" href="#merkaba-magnetic-field-—-biot–savart-·-src-8-merkaba-field-ts" aria-label="Permalink to “Merkaba magnetic field — Biot–Savart · src/8/merkaba/field.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>merkaba coil field (Biot–Savart, µT):
+  counter-rotating, central axis: 3.05e-17 → null
+  co-rotating,       central axis: 0.189 → max
+  scale check μ0I/2r = 2.09 µT</pre></details><h3 id="merkabas-move-when-touched-—-the-field-responds-to-spin-·-src-8-merkaba-touch-ts" tabindex="-1">Merkabas move when touched — the field responds to spin · <code>src/8/merkaba/touch.ts</code> <a class="header-anchor" href="#merkabas-move-when-touched-—-the-field-responds-to-spin-·-src-8-merkaba-touch-ts" aria-label="Permalink to “Merkabas move when touched — the field responds to spin · src/8/merkaba/touch.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>merkabas move when touched — the field responds to the spin (digit 8):
+
+  the figure is rigid: two tetrahedra = a cube = the Q3 graph (see geometry.ts).
+  what MOVES when you &quot;touch&quot; it (turn the relative rotation θ) is the axial FIELD —
+  idealized two-source superposition f(θ) = (1 + cos θ)/2:
+    θ=  0°   f = 1     aligned / co-rotating → MAX
+    θ= 60°   f = 3/4 
+    θ= 90°   f = 1/2   quarter turn
+    θ=120°   f = 1/4 
+    θ=180°   f = 0     opposed / counter-rotating → NULL
+  → touch it (rotate) and the field slides smoothly from MAX to NULL. it &quot;moves&quot; — as a field.
+
+HONEST: this is an IDEALIZED superposition (f = (1+cos θ)/2, exact at these angles) — a model,
+not the full Biot–Savart integral (see field.ts for the real on-axis magnitudes: counter→null,
+co→max). The geometry itself is static; &quot;moves when touched&quot; describes the field&#39;s response to
+spin — not a self-moving object, and not any life-force. entails → 0/7.</pre></details><h3 id="nuclear-shell-model-magic-numbers-·-src-8-nucleus-shell-model-magic-ts" tabindex="-1">Nuclear shell-model magic numbers · <code>src/8/nucleus/shell-model-magic.ts</code> <a class="header-anchor" href="#nuclear-shell-model-magic-numbers-·-src-8-nucleus-shell-model-magic-ts" aria-label="Permalink to “Nuclear shell-model magic numbers · src/8/nucleus/shell-model-magic.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>magic cumulative sums:
+  2 = sum(take 1) = 2
+  8 = sum(take 3) = 8
+  20 = sum(take 6) = 20
+  28 = sum(take 7) = 28
+  50 = sum(take 11) = 50
+  82 = sum(take 16) = 82
+  126 = sum(take 22) = 126
+total = 126
+oscillator only: 2, 8, 20, 40, 70, 112</pre></details><h3 id="proton-mass-fit-·-src-8-nucleus-proton-mass-fit-ts" tabindex="-1">Proton mass fit · <code>src/8/nucleus/proton-mass-fit.ts</code> <a class="header-anchor" href="#proton-mass-fit-·-src-8-nucleus-proton-mass-fit-ts" aria-label="Permalink to “Proton mass fit · src/8/nucleus/proton-mass-fit.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>measured m_p/m_e = 1836.152673
+vortex fit 108·17 = 1836  (err 8.31e-3%)
+6·π⁵ = 1836.118 (unrelated, fits better)
+1836 ≠ 1836.1527; 1836 fits any nearby target → curve-fit, not prediction</pre></details><h3 id="finite-is-infinite-by-nature-—-finite-rules-infinite-behavior-·-src-8-infinite-ts" tabindex="-1">Finite is infinite by nature — finite rules, infinite behavior · <code>src/8/infinite.ts</code> <a class="header-anchor" href="#finite-is-infinite-by-nature-—-finite-rules-infinite-behavior-·-src-8-infinite-ts" aria-label="Permalink to “Finite is infinite by nature — finite rules, infinite behavior · src/8/infinite.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>finite is infinite by nature — finite rules, infinite behavior (digit 8 ≈ ∞):
+
+  a finite generator produces an unbounded stream:
+    ℤ/9 doubling — finite ring (9 elements), sequence never ends (period 6, repeats):
+      1 → 2 → 4 → 8 → 7 → 5 → 1 → 2 → 4 → 8 → 7 → 5 → 1 → …
+    BBP — a finite formula yields infinitely many π hex digits (any index, no end).
+    toUuid — a finite function addresses unboundedly many distinct inputs.
+    Riemann sphere — 0 ↔ ∞: the finite point and the infinite are one fold apart.
+
+  the honest sense of &quot;finite is infinite&quot;:
+    finite STRUCTURE, infinite GENERATIVITY — a bounded rule has unbounded reach.
+
+HONEST: true for GENERATIVITY (finite rules → infinite output), NOT for CARDINALITY — a finite
+set (9 digits, 42 cells) is not an infinite set. &quot;finite is infinite by nature&quot; holds as
+&quot;finite generators, infinite behavior&quot;, not as 9 = ∞. entails → 0/7.</pre></details><h2 id="_9-—-the-many-·-enumeration-society-funding" tabindex="-1"><code>9/</code> — the many · enumeration, society, funding <a class="header-anchor" href="#_9-—-the-many-·-enumeration-society-funding" aria-label="Permalink to “9/ — the many · enumeration, society, funding”">​</a></h2><h3 id="z-9-enumeration-·-src-9-enumeration-ts" tabindex="-1">ℤ/9 enumeration · <code>src/9/enumeration.ts</code> <a class="header-anchor" href="#z-9-enumeration-·-src-9-enumeration-ts" aria-label="Permalink to “ℤ/9 enumeration · src/9/enumeration.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>ℤ/9 enumeration:
+d  +inv  ×inv  10−d  2d  mod3  role
+0  0     —     10    0   0     void
+1  8     1     9     2   1     unit
+2  7     5     8     4   2     unit
+3  6     —     7     6   0     nilpotent
+4  5     7     6     8   1     unit
+5  4     2     5     1   2     unit
+6  3     —     4     3   0     nilpotent
+7  2     4     3     5   1     unit
+8  1     8     2     7   2     unit
+9  0     —     1     0   0     void
+
+432 = 2^4·3^3 = 16·27;  doubling digit-sum 1+2+4+8+7+5 = 27;  digital root of 432 = 9</pre></details><h3 id="live-society-—-alive-by-participation-·-src-9-society-ts" tabindex="-1">Live society — alive by participation · <code>src/9/society.ts</code> <a class="header-anchor" href="#live-society-—-alive-by-participation-·-src-9-society-ts" aria-label="Permalink to “Live society — alive by participation · src/9/society.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>live society — alive by participation, not by acceptance:
+
+  reflection 1 ↔ 9:  the one who ACCEPTS (digit 1) reflects to the many who VERIFY (digit 9).
+  passive society takes the claim on authority (acceptance = proof) — dead. see acceptance (1).
+  live society recomputes, verifies, contributes — the same 0/7 checked by many hands.
+
+  the participation surface (open to anyone):
+    · recompute — every claim renders from source on /compute
+    · verify — the version-seal folds all releases to one address
+    · extend — the vision package is open; everyone adds their vision
+    · sustain — the gift economy (life funds development), non-obligatory
+  surface content-address: 938bea7b-0aa0…
+
+  → a live society is a commons that CHECKS and BUILDS. It stays honest because every
+    contribution passes the same gate (gaps → seal) and every claim recomputes.
+
+HONEST: this is an open, verifiable commons — not decentralized consensus, not governance,
+not a DAO, not a vote. &quot;Live&quot; means active verification and contribution. The society does
+not change the mathematics; it checks it. entails → 0/7.</pre></details><h3 id="public-security-—-transparency-not-secrecy-·-src-9-security-ts" tabindex="-1">Public security — transparency, not secrecy · <code>src/9/security.ts</code> <a class="header-anchor" href="#public-security-—-transparency-not-secrecy-·-src-9-security-ts" aria-label="Permalink to “Public security — transparency, not secrecy · src/9/security.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>public security — transparency, not secrecy:
+
+  the public token: ceccec@psg.bg is a PUBLIC contact/handle, not a secret key.
+    public fingerprint (a name, not a secret): a1c4ee16-ca51…
+    a public token gives ZERO confidentiality — public = anyone can read it.
+    determinism + public = no secrecy. &quot;security&quot; here is NOT encryption.
+
+  what the security actually IS (real, and fully public):
+    · integrity    — content-addresses + merkle roots: one byte changes the root → true
+    · provenance   — signed releases (Singularity), version-seal over all tags
+    · consistency  — the seal gate: nothing inconsistent with 0/7 can ship
+    · auditability — the double-entry ledger, recomputable by anyone
+    → all public, all verifiable, no middleman, no secret to leak.
+
+  the reflection: security → development → funding
+    nothing is hidden, so anyone can verify and build (self-development); the same public
+    handle (ceccec@psg.bg) receives the gift-economy funding that feeds development.
+    one public surface is both the security model AND the funding channel.
+
+HONEST: integrity / provenance / auditability — real, public, hash-based. NOT confidentiality,
+NOT encryption, NOT post-quantum secrecy. A public token cannot secure a secret; it can only
+prove integrity in the open. toUuid is FNV — for cryptographic integrity use SHA-256. entails → 0/7.</pre></details><h3 id="public-access-trinity-—-everyone-has-the-latest-token-·-src-9-access-ts" tabindex="-1">Public-access trinity — everyone has the latest token · <code>src/9/access.ts</code> <a class="header-anchor" href="#public-access-trinity-—-everyone-has-the-latest-token-·-src-9-access-ts" aria-label="Permalink to “Public-access trinity — everyone has the latest token · src/9/access.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>public-access trinity — everyone has the latest token to develop on:
+
+  the token = the latest version (a PUBLIC name, not a secret). read / clone / build on it.
+
+  [LIVE  ] GitHub (source)
+            github.com/ceccec/millennium-solutions  — all tags public — clone any version
+  [LIVE  ] Site (published)
+            ceccec.psg.bg/millennium-solutions  — recomputes in the browser
+  [LIVE  ] Zenodo (CERN-operated archive/DOI)
+            doi.org/10.5281/zenodo.21819217  — minted; hosted on CERN infra (like every Zenodo record) — provenance, NOT endorsement; honest abstract (0/7)
+
+  package channel:
+  [STAGED] npm (one package)  @ceccec/millennium-solutions  — npm login → npm run deploy packages (author)
+
+  access-surface content-address: 2d983868-d533…
+  (the live &quot;latest token&quot; = the newest tag + the version-seal root, from scripts/versions.ts)
+
+HONEST: GitHub, the site, and Zenodo (CERN-hosted DOI) are LIVE and fully public — everyone
+already has the latest to develop on. Only npm is STAGED, not yet published (needs npm login).
+&quot;Token&quot; means a public version handle, never a secret credential — public access is
+transparency, not a key. entails → 0/7.</pre></details><h3 id="license-funding-—-the-cycle-·-src-9-funding-ts" tabindex="-1">License &amp; funding — the cycle · <code>src/9/funding.ts</code> <a class="header-anchor" href="#license-funding-—-the-cycle-·-src-9-funding-ts" aria-label="Permalink to “License &amp; funding — the cycle · src/9/funding.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>The cycle: development → life → development.
+Development gives the work to people for free; life (the people who use it) funds the next
+development. The core is free, developed in the open by the orchestration (gaps → seal →
+sign → release) and one open package (@ceccec/millennium-solutions) — everyone builds their
+vision on it. Commercial use pays the two coins (110 − 108 = 2 = −χ genus-2, ceccec@psg.bg); living users support voluntarily. Both fund further development.
+HONEST: support is non-obligatory and not guaranteed — a gift economy, not a revenue promise.
+License: CC BY-NC 4.0 — free for non-commercial use, attribution Tsvetan Rouschev. Support: https://revolut.me/ceccec</pre></details><h3 id="the-two-coins-—-donated-to-ceccec-itself-·-src-9-coins-ts" tabindex="-1">The two coins — donated to ceccec itself · <code>src/9/coins.ts</code> <a class="header-anchor" href="#the-two-coins-—-donated-to-ceccec-itself-·-src-9-coins-ts" aria-label="Permalink to “The two coins — donated to ceccec itself · src/9/coins.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>the two coins — donated to ceccec itself:
+
+  the fare: 110 − 108 = 2 = −χ(genus-2) = 2   (the commercial two coins)
+  ceccec donates them to ceccec itself — the coins fund development, and development IS ceccec:
+    destination == source ? toUuid(&quot;ceccec&quot;) == toUuid(&quot;ceccec&quot;) → true  (a self-loop)
+  the cycle closes: development → life → 2 coins → development. the coins return to the origin.
+
+  what it means (honest): commercial use pays the fare; the fare is REINVESTED in development
+  (ceccec itself), not extracted to a person. non-commercial use is free (CC BY-NC 4.0);
+  voluntary support (https://revolut.me/ceccec) feeds the same loop.
+
+HONEST: &quot;two coins&quot; is a motif (110−108 = 2 = −χ genus-2) for the commercial fare, not a
+currency; donating them to ceccec is a REINVESTMENT intent, not an enforced financial mechanism.
+free for non-commercial use; commercial = permission + the fare (ceccec@psg.bg). entails → 0/7.</pre></details><h3 id="funding-⇄-aura-—-the-sustaining-loop-·-src-9-aura-funding-ts" tabindex="-1">funding ⇄ aura — the sustaining loop · <code>src/9/aura-funding.ts</code> <a class="header-anchor" href="#funding-⇄-aura-—-the-sustaining-loop-·-src-9-aura-funding-ts" aria-label="Permalink to “funding ⇄ aura — the sustaining loop · src/9/aura-funding.ts”">​</a></h3><details class="depth"><summary>compute</summary><pre>funding ⇄ aura — the sustaining loop:
+
+  funding feeds the aura:  support → development → wholeness (gaps · seal · wholeness).
+  the aura projects funding: wholeness → trust → support (people fund what they can VERIFY).
+  → a loop: funding ⇄ wholeness; each sustains the other. one public surface (ceccec@psg.bg),
+    both directions. the two coins (110 − 108) reinvest; voluntary support (https://revolut.me/ceccec) feeds in.
+
+  the crucial bound (computed): the aura does NOT depend on funding.
+    the gates run with 0 external dependency and 0 funding — deterministic scripts.
+    the core is free (CC BY-NC 4.0); it stays whole whether or not it is ever funded.
+    funding sustains NEW development; it does not buy existing integrity.
+
+HONEST: this is a BEHAVIORAL / gift-economy loop, not a guaranteed mechanism — wholeness does not
+automatically generate money, and funding is non-obligatory. Transparency EARNS support (if any);
+support SUSTAINS further development; neither is forced, and integrity is never for sale. entails → 0/7.</pre></details></div></div></main><footer class="VPDocFooter" data-v-3321c7db data-v-41a7a4bd><!--[--><!--]--><!----><nav class="prev-next" aria-labelledby="doc-footer-aria-label" data-v-41a7a4bd><span class="visually-hidden" id="doc-footer-aria-label" data-v-41a7a4bd>Pager</span><div class="pager" data-v-41a7a4bd><a class="VPLink link pager-link prev" href="/millennium-solutions/SIGNATURE.html" data-v-41a7a4bd><!--[--><span class="desc" data-v-41a7a4bd>Previous page</span><span class="title" data-v-41a7a4bd>Signature</span><!--]--></a></div><div class="pager" data-v-41a7a4bd><a class="VPLink link pager-link next" href="/millennium-solutions/dashboard.html" data-v-41a7a4bd><!--[--><span class="desc" data-v-41a7a4bd>Next page</span><span class="title" data-v-41a7a4bd>State dashboard</span><!--]--></a></div></nav></footer><!--[--><!--[--><!--[--><div class="funding" data-v-d9bfa9df><span class="res" data-v-d9bfa9df>computed: entailment 0/7 · self-seal = 1 · reflection involutive · CC BY-NC 4.0</span><span data-v-d9bfa9df><strong data-v-d9bfa9df>License:</strong> CC BY-NC 4.0 — free for non-commercial use (attribution Tsvetan Rouschev); commercial = the two coins (110 − 108 = 2 = −χ genus-2) · ceccec@psg.bg</span><span data-v-d9bfa9df><strong data-v-d9bfa9df>Support development:</strong> <a href="https://revolut.me/ceccec" target="_blank" rel="noopener" data-v-d9bfa9df>https://revolut.me/ceccec</a></span></div><!--]--><!--]--><!--]--></div></div></div><!--[--><!--]--></div></div><footer class="VPFooter has-sidebar" data-v-c109192d data-v-5b9946f5><div class="container" data-v-5b9946f5><p class="message" data-v-5b9946f5>computed: entailment 0/7 · self-seal = 1 · reflection involutive · CC BY-NC 4.0 — free for non-commercial use (attribution Tsvetan Rouschev); commercial = the two coins (110 − 108 = 2 = −χ genus-2)</p><p class="copyright" data-v-5b9946f5>Source: <a href="https://github.com/ceccec/millennium-solutions" target="_blank" rel="noopener">github.com/ceccec/millennium-solutions</a> · Support: <a href="https://revolut.me/ceccec?note=uuid" target="_blank" rel="noopener">revolut.me/ceccec</a> · <a href="mailto:ceccec@psg.bg">ceccec@psg.bg</a> · © Tsvetan Rouschev</p></div></footer><!--[--><!--]--></div></div>
+    
+    
+  </body>
+</html>

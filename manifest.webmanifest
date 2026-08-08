@@ -1,0 +1,13 @@
+{
+  "name": "Millennium Solutions — ℤ/9 Vortex",
+  "short_name": "Millennium",
+  "description": "Recomputable ℤ/9 vortex framework — verify claims live. entails → 0/7.",
+  "start_url": "/millennium-solutions/",
+  "scope": "/millennium-solutions/",
+  "display": "standalone",
+  "background_color": "#1b1b1f",
+  "theme_color": "#3451b2",
+  "icons": [
+    { "src": "/millennium-solutions/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
