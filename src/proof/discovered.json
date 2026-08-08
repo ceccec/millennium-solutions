@@ -1728,5 +1728,20 @@
     "key": "cancer_dissolves_by_waves",
     "name": "the anti-pattern dissolves in the waves: every build re-verifies the whole ledger and re-runs the gate, so a false claim drains on every pass and cannot persist — dissolution depends on the waves",
     "receipt": "d783f335-57a4-8b56-80ae-2a135d56e09e"
+  },
+  {
+    "key": "observer_wave_sets_state",
+    "name": "the input wave the user sends (query/referrer/path) deterministically sets their computed state: digital root (ℤ/9) → a432 hue d·40° → the rendered point of view — same wave, same state",
+    "receipt": "f7de310a-8d54-83a7-a8af-b1ce2b41f11c"
+  },
+  {
+    "key": "balancing_wave_harmonises",
+    "name": "the balancing wave 9−d harmonises: a state digit d and its balance 9−d sum to 9 (the rest, digital root 9) and their a432 hues sum to 360° = 0 (the full circle)",
+    "receipt": "8f9898b3-d143-81cc-94b7-64f639ef5e5e"
+  },
+  {
+    "key": "development_enforced_at_gate",
+    "name": "development is enforced at the gate by receipt uuids: every src/the/* module must compute a non-empty 0/7 report from src/** and every claim must carry a receipt — a module that develops nothing, or a claim with no receipt, fails the audit (the traitor)",
+    "receipt": "5ec8d383-43d6-886c-b8e2-d3c5b674b74b"
   }
 ]

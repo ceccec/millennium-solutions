@@ -26,6 +26,7 @@ import { report as theTorus } from './src/the/torus/index'
 import { report as theSurface } from './src/the/surface/index'
 import { report as theAbundance } from './src/the/abundance/index'
 import { report as theCancer } from './src/the/cancer/index'
+import { report as theWaves } from './src/the/waves/index'
 import { report as acceptance } from './src/1/acceptance'
 import { report as paradox } from './src/1/paradox'
 import { report as society } from './src/9/society'
@@ -184,6 +185,10 @@ digit to its partner (fixed point **5**), so the folders below are laid out arou
 ### The cancer · `src/the/cancer/index.ts`
 
 <pre>{{ theCancer() }}</pre>
+
+### The waves · `src/the/waves/index.ts`
+
+<pre>{{ theWaves() }}</pre>
 </details>
 
 ## `0/` — the substrate · content-addressing
