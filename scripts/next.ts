@@ -20,6 +20,22 @@ import { provable } from './discover.ts'
 
 const message = process.argv.slice(2).join(' ').trim()
 
+// ── status mode: a read-only health report — version, ledger, chain-of-custody, floor. No ship. ──
+if (message === '--status' || message === 'status') {
+  const ver = (() => { try { return execSync('git describe --tags --abbrev=0', { encoding: 'utf8' }).trim() } catch { return 'v0' } })()
+  const led: { key: string; receipt: string }[] = existsSync('src/proof/discovered.json') ? JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) : []
+  const GENESIS = new Set(['euler_units_pow6', 'units_sum_zero'])
+  let prev = 'axiom:TRINITY', newBreaks = 0
+  for (const e of led) { if (toUuid(prev + '→' + e.key) !== e.receipt && !GENESIS.has(e.key)) newBreaks++; prev = e.receipt }
+  const seal = led.length ? merkleFold(led.map((e) => e.receipt)) : 'none'
+  console.log('next — status (read-only health report):')
+  console.log('  version:          ' + ver)
+  console.log('  ledger:           ' + led.length + ' decidable facts, re-verified each build')
+  console.log('  chain-of-custody: ' + (newBreaks === 0 ? 'intact' : newBreaks + ' NEW break(s) — legal trial') + ' · tamper-seal ' + seal.slice(0, 13) + '…')
+  console.log('  floor:            0/7 (humanity 1/7 — Poincaré, Perelman 2003)')
+  process.exit(newBreaks === 0 ? 0 : 1)
+}
+
 // AUTOMATE — next is the full loop. After a delta is committed+tagged, push main and the tag to origin.
 // Errors are ADDRESSED IN THE GAME: surfaced (never swallowed), and non-fatal — the commit+tag stand
 // locally, so a push/deploy failure is reported and retryable, it does not lose the shipped work.

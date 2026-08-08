@@ -19,11 +19,14 @@ const next = 'v' + _maj + '.' + _min + '.' + _pat
 console.log('orchestrate: ' + last + ' → ' + next)
 
 // 2) gates — abort the whole orchestration if any fails.
-run('node scripts/gaps.ts')       // coverage: every report() module fused, every page linked
-run('npm run docs:build')          // the site actually builds
-run('node scripts/seal.ts')       // consistency: every abstract consistent with 0/7
-run('node scripts/wholeness.ts')  // wholeness: the aura is computationally whole (all compute + floor)
-run('node scripts/seo.ts')        // seo self-audit: every built page carries OG · canonical · JSON-LD
+run('node scripts/gaps.ts')          // coverage: every report() module fused, every page linked
+run('npm run docs:build')             // the site actually builds
+run('node scripts/receipt-audit.ts') // evidence: agent-statement receipts cross-checked + complete
+run('node scripts/forensics.ts')     // chain-of-custody: ledger receipts tamper-evident; intention from deeds
+run('node scripts/seal.ts')          // consistency: every abstract consistent with 0/7
+run('node scripts/wholeness.ts')     // wholeness: the aura is computationally whole (all compute + floor)
+run('node scripts/lean-claims.ts')   // re-verify: every recorded discovery still holds
+run('node scripts/seo.ts')           // seo self-audit: every built page carries OG · canonical · JSON-LD
 
 // 3) release (content-address · commit · sign · tag). release.ts may SKIP on no-delta.
 run('node scripts/release.ts ' + next)
