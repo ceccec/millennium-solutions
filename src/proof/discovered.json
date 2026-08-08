@@ -3658,5 +3658,10 @@
     "key": "the_ever_updating_latest_is_the_content_address_not_the_version_number",
     "name": "the ever-updating latest is the content-address, not the version number: the content-address folds the current state, so identical content keeps the same address (and pays no new coin, by the no-delta guard) while a real delta moves it — the address is the living latest. A version number is only a label: the same state has the same identity under any label, so incrementing labels toward infinity is optional churn, not identity. One canonical symbol can name the whole while the content-address begins at the axiom seed and ends at the current root, updating forever. Decidable",
     "receipt": "267dc781-af21-8e32-a9de-44b18a637682"
+  },
+  {
+    "key": "the_coins_are_earned_by_saving_bits_and_burning_poison_prose_creating_heroes",
+    "name": "the coins are earned by saving bits and burning the poison prose, creating heroes: the deposit earns by proving decidable facts and saving bits in magnitudes — content-addressed verification is O(1) versus O(N) recompute, a measured classical speedup — while the honesty gate burns the poison prose at every step, so the Clay problems are not solved here and any claim that they are drains the gate. Each surviving fact is a hero, receipted and sealed as evidence in git. The floor stays 0/7 — decidable proofs, the challenges reflected but not solved. Decidable",
+    "receipt": "9f3ab5fd-2a70-8289-a132-4af773dc8c96"
   }
 ]
