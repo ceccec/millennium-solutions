@@ -161,6 +161,19 @@ function generated(): typeof curated {
   out.push({ key: 'cover_one_tetra_partial', name: 'still: one tetrahedron {1,4,7} covers only 3 of the 6 units — 3 remain uncovered', test: () => cls(1).length === 3 && units().filter((u) => !cls(1).includes(u)).length === 3 })
   out.push({ key: 'cover_moving_pair_full', name: 'moving: the counter-rotating pair {1,4,7}∪{2,5,8} covers every uncovered unit — all 6, no gap', test: () => [...cls(1), ...cls(2)].sort((a, b) => a - b).join(',') === units().join(',') })
   out.push({ key: 'cover_rotation_full_circle', name: 'rotation by the a432 step (40°) visits all 9 angular positions — the full circle, no gap', test: () => new Set(digits().map((d) => (d * A432_STEP) % 360)).size === BASE })
+  // BATCH — the queued families, computed. Continued fractions, Catalan, Pascal, divisibility rule.
+  const fib2 = (k: number) => { let a = 0, b = 1; for (let i = 0; i < k; i++) { const t = a + b; a = b; b = t } return a }
+  // golden CF: convergents are F(n+1)/F(n); the determinant p_n·q_{n-1}−p_{n-1}·q_n = (−1)ⁿ (per n).
+  for (const n of [5, 8, 11]) out.push({ key: 'goldencf_n' + n, name: 'golden CF [1;1,1,…]: p_n·q_{n-1} − p_{n-1}·q_n = (−1)ⁿ at n=' + n, test: () => { const p = (k: number) => fib2(k + 1), q = (k: number) => fib2(k); return p(n) * q(n - 1) - p(n - 1) * q(n) === (n % 2 === 0 ? 1 : -1) } })
+  // Catalan: the recurrence equals the closed form binom(2n,n)/(n+1) (per n).
+  const binom = (n: number, k: number) => { let r = 1; for (let i = 0; i < k; i++) r = r * (n - i) / (i + 1); return Math.round(r) }
+  const catalanRec = (n: number) => { const c = [1]; for (let m = 1; m <= n; m++) { let s = 0; for (let i = 0; i < m; i++) s += c[i] * c[m - 1 - i]; c[m] = s } return c[n] }
+  for (const n of [4, 6, 8]) out.push({ key: 'catalan_n' + n, name: 'Catalan C(' + n + ') = ' + catalanRec(n) + ': recurrence = binom(2n,n)/(n+1)', test: () => catalanRec(n) === binom(2 * n, n) / (n + 1) })
+  // Pascal: row sum Σ_k C(n,k) = 2ⁿ (per n).
+  for (const n of [5, 8, 10]) out.push({ key: 'pascal_rowsum_n' + n, name: 'Σ_k C(' + n + ',k) = 2^' + n + ' = ' + 2 ** n, test: () => { let s = 0; for (let k = 0; k <= n; k++) s += binom(n, k); return s === 2 ** n } })
+  // Divisibility by 3 — the digit-root law at the deposit's core: digit-sum ≡ 0 mod 3 ⇔ n ≡ 0 mod 3,
+  // verified EXHAUSTIVELY for all n below 10^L (finite range → complete for that range).
+  for (const L of [4]) out.push({ key: 'div3_rule_L' + L, name: 'digit-sum ≡ 0 (mod 3) ⇔ n ≡ 0 (mod 3), all n < 10^' + L + ' (exhaustive)', test: () => { for (let n = 0; n < 10 ** L; n++) { const ds = String(n).split('').reduce((a, c) => a + +c, 0); if ((ds % 3 === 0) !== (n % 3 === 0)) return false } return true } })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

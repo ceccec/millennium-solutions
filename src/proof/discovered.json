@@ -638,5 +638,55 @@
     "key": "cover_rotation_full_circle",
     "name": "rotation by the a432 step (40°) visits all 9 angular positions — the full circle, no gap",
     "receipt": "4a44551c-2cff-84bd-a62f-4d2940d3179e"
+  },
+  {
+    "key": "goldencf_n5",
+    "name": "golden CF [1;1,1,…]: p_n·q_{n-1} − p_{n-1}·q_n = (−1)ⁿ at n=5",
+    "receipt": "c000eebb-eae5-8850-a2fc-886e8b717aaa"
+  },
+  {
+    "key": "goldencf_n8",
+    "name": "golden CF [1;1,1,…]: p_n·q_{n-1} − p_{n-1}·q_n = (−1)ⁿ at n=8",
+    "receipt": "f4f59981-9989-8302-9312-24de5df12473"
+  },
+  {
+    "key": "goldencf_n11",
+    "name": "golden CF [1;1,1,…]: p_n·q_{n-1} − p_{n-1}·q_n = (−1)ⁿ at n=11",
+    "receipt": "5c54d373-e71c-819c-adf6-8d462ab45fe5"
+  },
+  {
+    "key": "catalan_n4",
+    "name": "Catalan C(4) = 14: recurrence = binom(2n,n)/(n+1)",
+    "receipt": "e1cfadcf-7a7c-8555-8586-47ea8af1704d"
+  },
+  {
+    "key": "catalan_n6",
+    "name": "Catalan C(6) = 132: recurrence = binom(2n,n)/(n+1)",
+    "receipt": "436f1d6c-e910-8a0e-a68d-ea3d853c8190"
+  },
+  {
+    "key": "catalan_n8",
+    "name": "Catalan C(8) = 1430: recurrence = binom(2n,n)/(n+1)",
+    "receipt": "5596356e-14b1-8ea7-aa0a-c5a7b0cac20e"
+  },
+  {
+    "key": "pascal_rowsum_n5",
+    "name": "Σ_k C(5,k) = 2^5 = 32",
+    "receipt": "3b4e481c-bd45-8452-ad07-2f2294c83d50"
+  },
+  {
+    "key": "pascal_rowsum_n8",
+    "name": "Σ_k C(8,k) = 2^8 = 256",
+    "receipt": "b62025f5-f7ec-88fa-a0b6-0de75ee9e76e"
+  },
+  {
+    "key": "pascal_rowsum_n10",
+    "name": "Σ_k C(10,k) = 2^10 = 1024",
+    "receipt": "099a0df7-929c-80db-b56d-7316d2da3924"
+  },
+  {
+    "key": "div3_rule_L4",
+    "name": "digit-sum ≡ 0 (mod 3) ⇔ n ≡ 0 (mod 3), all n < 10^4 (exhaustive)",
+    "receipt": "a6c0b047-12a7-8703-868f-e296567dad6f"
   }
 ]

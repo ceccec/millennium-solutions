@@ -61,14 +61,15 @@ if (message) {
   // FALLBACK — never dead-end: propose the most probable next idea (a decidable domain not yet added).
   // Honestly bounded: each is a suggestion to implement as a family in scripts/discover.ts, not a claim.
   const BACKLOG = [
-    'continued fractions — the golden ratio [1;1,1,…] convergents = F(n+1)/F(n)',
-    'Catalan & partition numbers — bounded recurrences (complete per n)',
-    'Pascal identities — Σ C(n,k) = 2ⁿ, hockey-stick (bounded n)',
-    'Stern–Brocot / Farey — the mediant structure of the rationals',
-    'finite-state automata — the mod-3 acceptor (finite → complete)',
-    'harmonic ratios — a432 just intonation 3:2, 4:3, 5:4 (convention-bounded, UI not theorem)',
+    'Stern–Brocot / Farey — the mediant tree of the rationals (neighbors satisfy bc−ad=1)',
+    'partition & Bell numbers — bounded recurrences (complete per n)',
+    'Lucas / Pell sequences — the sister recurrences and their identities',
+    'finite fields 𝔽_{p^k} — extension arithmetic and Frobenius x↦x^p',
+    'Collatz — bounded orbit lengths (behavior, never the conjecture)',
+    'harmonic ratios — a432 just intonation 3:2, 4:3, 5:4 (UI, not theorem)',
   ]
-  console.log('  fallback — next idea (most probable): ' + BACKLOG[0])
+  console.log('  fallback — there is always a computable dimension; the queue never empties.')
+  console.log('  next idea (most probable): ' + BACKLOG[0])
   if (BACKLOG.length > 1) console.log('  queue: ' + BACKLOG.slice(1).map((s) => s.split(' — ')[0]).join(' · '))
   console.log('  add it as a family in scripts/discover.ts and the wave sends again.')
 }
