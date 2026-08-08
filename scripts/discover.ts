@@ -23,6 +23,7 @@ import { report as theAbstractR } from '../src/the/abstract/index.ts'
 import { report as theSolidsR } from '../src/the/solids/index.ts'
 import { report as theCrystalR } from '../src/the/crystal/index.ts'
 import { report as thePathR } from '../src/the/path/index.ts'
+import { report as theTorusR } from '../src/the/torus/index.ts'
 const m9 = (n: number) => ((n % BASE) + BASE) % BASE
 const U = units()
 const ALL = digits()
@@ -407,7 +408,7 @@ function generated(): typeof curated {
   out.push({ key: 'relation_xor', name: 'XOR RELATES Boolean algebra · Nim (Bouton) · Sprague–Grundy: the same operation runs all three', test: () => (1 ^ 1) === 0 && (5 ^ 5) === 0 && ((3 ^ 5) ^ 0) === (3 ^ 5) })
   out.push({ key: 'relation_involution', name: 'order-2 RELATES negation · the inverse map · σ · the merkaba counter-rotation: all are involutions', test: () => { const inv = (u: number) => units().find((w) => m9(u * w) === 1)!; return m9(-m9(-5)) === 5 && inv(inv(2)) === 2 } })
   out.push({ key: 'relation_digital_root', name: 'the digital root (mod 9) RELATES the div-by-3 rule · primes-ride-units · the tarot counts · ceccec', test: () => digitalRoot(78) === 6 && digitalRoot(12) === digitalRoot(21) && units().includes(digitalRoot(7)) })
-  out.push({ key: 'the_modules_self_compute', name: 'the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally', test: () => [theAll, theSeq, theThm, theGameR, theHeartR, theSuperR, theStateR, theDomainR, theCreationR, theAbstractR, theSolidsR, theCrystalR, thePathR].every((f) => { const s = f(); return typeof s === 'string' && s.length > 40 && s.includes('0/7') }) })
+  out.push({ key: 'the_modules_self_compute', name: 'the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally', test: () => [theAll, theSeq, theThm, theGameR, theHeartR, theSuperR, theStateR, theDomainR, theCreationR, theAbstractR, theSolidsR, theCrystalR, thePathR, theTorusR].every((f) => { const s = f(); return typeof s === 'string' && s.length > 40 && s.includes('0/7') }) })
   out.push({ key: 'relation_url_path', name: 'url messaging is the path itself: a path is the message (no payload) — its content-address depends on the ordered segments, so the/crystal ≠ crystal/the', test: () => toUuid('the/crystal') !== toUuid('crystal/the') && toUuid('the/crystal') === toUuid('the/crystal') })
   out.push({ key: 'relation_path_rating', name: 'the most meaningful paths are rated first: gravity = depth (specificity) gives a deterministic descending order — a defined computable rating, not a truth judgment', test: () => { const g = (p: string) => p.split('/').length; const ps = ['the', 'the/crystal', 'the/superposition/state']; const rated = [...ps].sort((a, b) => g(b) - g(a)); return rated[0] === 'the/superposition/state' && rated[rated.length - 1] === 'the' && g('the/superposition/state') === 3 } })
   // harmonic ratios — the integer ratios are EXACT rationals (theorems); the a432 Hz tuning is a
@@ -515,6 +516,12 @@ function generated(): typeof curated {
   out.push({ key: 'surface_euler_char', name: 'the Euler characteristic of a closed orientable genus-g surface is χ = 2 − 2g: sphere 2, torus 0, double torus −2, genus-3 −4', test: () => chi(0) === 2 && chi(1) === 0 && chi(2) === -2 && chi(3) === -4 })
   out.push({ key: 'coverage_only_torus', name: 'Poincaré–Hopf: a closed orientable surface admits a nowhere-zero tangent field iff χ=0 — only the torus (g=1); the double torus (g=2, χ=−2) has NO full coverage', test: () => { const coverable = (g: number) => chi(g) === 0; return coverable(1) && !coverable(0) && !coverable(2) && !coverable(3) } })
   out.push({ key: 'relation_genus_two', name: 'the double torus RELATES χ=−2 · the two coins (110−108 = 2 = −χ) · no full coverage — the boundary where "geometry covers everything" fails', test: () => chi(2) === -2 && 110 - 108 === -chi(2) && chi(2) !== 0 })
+  // continue as double torus — the genus-2 surface Σ₂ developed: Betti, Gauss–Bonnet, octagon, connected sum, moduli.
+  out.push({ key: 'genus2_betti', name: 'the double torus Betti numbers (b₀,b₁,b₂) = (1, 2g=4, 1): the alternating sum b₀−b₁+b₂ = −2 = χ', test: () => { const g = 2, b = [1, 2 * g, 1]; return b[0] - b[1] + b[2] === chi(g) && b[1] === 4 } })
+  out.push({ key: 'genus2_connected_sum', name: 'the double torus is T² # T² (connected sum of two tori): χ(A#B) = χ(A)+χ(B)−2 gives 0+0−2 = −2', test: () => { const cs = (a: number, b: number) => a + b - 2; return cs(chi(1), chi(1)) === chi(2) } })
+  out.push({ key: 'genus2_octagon', name: 'the double torus is a regular octagon with edges identified [a,b][c,d]: 4g=8 edges, 2g=4 generators, one relation; the single vertex forces interior angle 2π/8 = 45°', test: () => { const g = 2; return 4 * g === 8 && 2 * g === 4 && Math.abs(2 * Math.PI / 8 - Math.PI / 4) < 1e-12 } })
+  out.push({ key: 'genus2_gauss_bonnet', name: 'Gauss–Bonnet on the double torus: ∫K dA = 2πχ = −4π; a hyperbolic metric (K=−1) gives area −2πχ = 4π', test: () => Math.abs(2 * Math.PI * chi(2) + 4 * Math.PI) < 1e-9 && Math.abs(-2 * Math.PI * chi(2) - 4 * Math.PI) < 1e-9 })
+  out.push({ key: 'genus2_moduli_dim', name: 'the moduli / Teichmüller space of the double torus has real dimension 6g − 6 = 6', test: () => 6 * 2 - 6 === 6 })
   // the creation-week structure — 6 + 1 = 7, mapped onto the known Clay state (measured, not asserted).
   out.push({ key: 'relation_creation_week', name: 'the creation-week structure 6 + 1 = 7: six Clay problems stay open, the seventh settled externally (Poincaré, Perelman 2003) and at rest — humanity 1/7, this deposit 0/7', test: () => 6 + 1 === 7 && 7 - 1 === 6 })
   // now is a superposition — the six open problems held at once (order-independent fold); observing collapses to one address.

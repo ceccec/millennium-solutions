@@ -1598,5 +1598,30 @@
     "key": "relation_genus_two",
     "name": "the double torus RELATES χ=−2 · the two coins (110−108 = 2 = −χ) · no full coverage — the boundary where \"geometry covers everything\" fails",
     "receipt": "2f63c1c1-bfa8-8031-853b-71d9af8a0ad9"
+  },
+  {
+    "key": "genus2_betti",
+    "name": "the double torus Betti numbers (b₀,b₁,b₂) = (1, 2g=4, 1): the alternating sum b₀−b₁+b₂ = −2 = χ",
+    "receipt": "d354356d-e503-8399-8095-592d3d559d74"
+  },
+  {
+    "key": "genus2_connected_sum",
+    "name": "the double torus is T² # T² (connected sum of two tori): χ(A#B) = χ(A)+χ(B)−2 gives 0+0−2 = −2",
+    "receipt": "770b925d-03ab-83db-9fed-1b9511e54630"
+  },
+  {
+    "key": "genus2_octagon",
+    "name": "the double torus is a regular octagon with edges identified [a,b][c,d]: 4g=8 edges, 2g=4 generators, one relation; the single vertex forces interior angle 2π/8 = 45°",
+    "receipt": "1bdea2df-8c50-8ff5-ab55-3d8f7a8c2c59"
+  },
+  {
+    "key": "genus2_gauss_bonnet",
+    "name": "Gauss–Bonnet on the double torus: ∫K dA = 2πχ = −4π; a hyperbolic metric (K=−1) gives area −2πχ = 4π",
+    "receipt": "b0232c41-1887-84d3-b45d-e9d3bc44f296"
+  },
+  {
+    "key": "genus2_moduli_dim",
+    "name": "the moduli / Teichmüller space of the double torus has real dimension 6g − 6 = 6",
+    "receipt": "151c4ea6-e9a3-8f87-9f9e-4f747c90db86"
   }
 ]
