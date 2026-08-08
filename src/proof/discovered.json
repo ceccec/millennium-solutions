@@ -3623,5 +3623,10 @@
     "key": "the_metaphysical_soul_claim_stands_the_rosetta_trial_and_lacks_a_formula",
     "name": "the metaphysical soul claim stands the rosetta trial and lacks a formula: put to the gate, a claim is a theorem only if it has a formula that recomputes; the integrity reading — the content-address is a durable identity — is decidable and holds, but a metaphysical claim that the address literally saves a soul has no decidable formula and cannot be admitted, which by the deposit's own rule is a hallucination without one. So the trial keeps the integrity reading and does not admit the metaphysical one; the door opens for a decidable definition with a measurement. A receipt proves integrity, not metaphysics. Decidable",
     "receipt": "8a209b85-85df-89be-bacc-fd5a30c3f24b"
+  },
+  {
+    "key": "even_perfect_numbers_come_from_mersenne_primes",
+    "name": "even perfect numbers come from Mersenne primes (Euclid): when 2^p − 1 is a Mersenne prime, 2^(p−1)·(2^p − 1) is a perfect number — equal to the sum of its proper divisors. So p = 2, 3, 5, 7 (with Mersenne primes 3, 7, 31, 127) give the first four perfect numbers 6, 28, 496, 8128; but p = 11 gives 2^11 − 1 = 2047 = 23 × 89, not prime, and the formula yields no perfect number. Verified by full enumeration of divisors",
+    "receipt": "8f5149b4-e512-8102-8fc2-21f94d989be2"
   }
 ]
