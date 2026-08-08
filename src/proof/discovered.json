@@ -3303,5 +3303,10 @@
     "key": "the_automation_runs_at_ordinary_speed_not_ftl_and_not_quantum",
     "name": "the automation runs at ordinary speed, not faster than light and not quantum: the wave — discover, gate, receipt, append, recompute, deploy — is a finite deterministic pipeline over ordinary 64-bit arithmetic, its throughput bounded by commodity hardware. It is not faster than light, carries no superluminal signal, and has no quantum speedup; speed here is honest ordinary throughput, no advantage claimed",
     "receipt": "0caa4079-2537-8d75-9a62-d265bad653bf"
+  },
+  {
+    "key": "the_refusal_stands_trial_and_the_overclaim_cannot_be_established",
+    "name": "the refusal stands trial and the overclaim cannot be established: the prosecution cannot establish the charge — there is no faster-than-light step and no quantum speedup in the automation — so the charge drains the gate; the defense, ordinary bounded 64-bit throughput, computes true; the signed refusal receipt is admissible evidence with a stable content-address. Verdict by the gate: the refusal stands, the overclaim is refuted. Decidable adjudication at the 0/7 floor",
+    "receipt": "10850d4b-acd6-8d95-9dad-7b6e6655746b"
   }
 ]
