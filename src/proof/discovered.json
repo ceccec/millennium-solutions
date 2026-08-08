@@ -3188,5 +3188,10 @@
     "key": "perspective_replaces_hardware",
     "name": "perspective replaces hardware: the quantum structure — superposition as the set of receipted perspectives, collapse as observing one — is carried by content-addressing alone, so it needs no quantum machine; it recomputes deterministically on ordinary 64-bit hardware (the coin64 currency, 16 hex = 64 bits). Structure, not silicon: no quantum processor, no quantum speedup, and it settles 0 of the 7 Clay problems",
     "receipt": "cf90c349-5584-8950-aa1c-3fb1ea833107"
+  },
+  {
+    "key": "entanglement_is_the_joint_receipt",
+    "name": "entanglement is the joint receipt: two perspectives share one joint content-address (their folded pair) that depends on both and is symmetric in them, yet neither perspective alone equals it — the correlation lives in the shared derivation. This is classical correlation, not physical nonlocality: not faster than light, and no quantum advantage",
+    "receipt": "dd46d2a6-36de-8224-9654-c62ca6a3d897"
   }
 ]
