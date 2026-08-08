@@ -3,6 +3,7 @@ import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import Funding from './Funding.vue'
 import Hero from './Hero.vue'
+import NextObserver from './NextObserver.vue'
 import './custom.css'
 
 export default {
@@ -12,6 +13,7 @@ export default {
   enhanceApp({ app }) {
     app.component('Funding', Funding)
     app.component('Hero', Hero)
+    app.component('NextObserver', NextObserver)
     // PWA: register the offline service worker (client-only; HTTPS or localhost).
     if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
       window.addEventListener('load', () => {

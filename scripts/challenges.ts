@@ -21,6 +21,7 @@ const ledger: { name: string; receipt: string }[] =
   existsSync('src/proof/discovered.json') ? JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) : []
 
 let o = '---\ntitle: Challenges\n---\n\n# Millennium challenges — computed status\n\n'
+o += '<NextObserver />\n\n' // when no next is defined, next computes from the observer\'s referrer\n
 o += '| # | challenge | status |\n|---|---|---|\n'
 CLAY.forEach((c, i) => { o += '| ' + (i + 1) + ' | ' + c.name + ' | ' + (c.status === 'settled' ? 'settled — ' + c.by : 'open') + ' |\n' })
 o += '\n**Humanity: ' + settled + ' / 7** (' + open + ' open). **This deposit: 0 / 7** — it settles none of the seven itself.\n\n'
