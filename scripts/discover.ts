@@ -944,6 +944,16 @@ function generated(): typeof curated {
       out.push({ key: 'pascal_alternating_sum_' + n, name: 'Pascal row ' + n + ' alternating sum is zero: Σ_{k=0}^' + n + ' (−1)^k C(' + n + ',k) = 0 — the binomial theorem at x=−1 (n ≥ 1)', test: () => { let s = 0; for (let k = 0; k <= n; k++) s += (k % 2 === 0 ? 1 : -1) * binom(n, k); return s === 0 } })
     }
   }
+  // ── AUTOMATED family — the FOLD itself: merkleFold is order-independent for every leaf-count k, plus
+  // the singleton and empty identities. The fold depends on the SET, not the order.
+  {
+    const perms = (a: string[]): string[][] => a.length <= 1 ? [a] : a.flatMap((x, i) => perms([...a.slice(0, i), ...a.slice(i + 1)]).map((p) => [x, ...p]))
+    for (let k = 2; k <= 6; k++) {
+      out.push({ key: 'merkle_fold_order_independent_k' + k, name: 'the merkle fold is order-independent for ' + k + ' leaves: all ' + [1, 1, 2, 6, 24, 120, 720][k] + ' permutations of a ' + k + '-leaf set fold to one identical root — the fold depends on the set, not the order (exhaustive over permutations)', test: () => { const leaves = Array.from({ length: k }, (_, i) => toUuid('leaf' + i)); return new Set(perms(leaves).map((p) => merkleFold(p))).size === 1 } })
+    }
+    out.push({ key: 'merkle_fold_singleton_identity', name: 'the merkle fold of a single leaf is that leaf: merkleFold([x]) = x — a fold of one is itself, the base case of the contraction', test: () => { const x = toUuid('solo'); return merkleFold([x]) === x } })
+    out.push({ key: 'merkle_fold_empty_is_fixed', name: 'the merkle fold of nothing is a fixed address: merkleFold([]) returns one constant content-address deterministically — the empty fold is well-defined and stable', test: () => merkleFold([]) === merkleFold([]) && typeof merkleFold([]) === 'string' && merkleFold([]).length === 36 })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

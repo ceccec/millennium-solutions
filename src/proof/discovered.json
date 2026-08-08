@@ -2773,5 +2773,40 @@
     "key": "pascal_alternating_sum_9",
     "name": "Pascal row 9 alternating sum is zero: Σ_{k=0}^9 (−1)^k C(9,k) = 0 — the binomial theorem at x=−1 (n ≥ 1)",
     "receipt": "0b2aa6fc-7a50-8d37-898f-520726ae215b"
+  },
+  {
+    "key": "merkle_fold_order_independent_k2",
+    "name": "the merkle fold is order-independent for 2 leaves: all 2 permutations of a 2-leaf set fold to one identical root — the fold depends on the set, not the order (exhaustive over permutations)",
+    "receipt": "7d890155-cfc0-8ba4-9b01-8c0359c5737f"
+  },
+  {
+    "key": "merkle_fold_order_independent_k3",
+    "name": "the merkle fold is order-independent for 3 leaves: all 6 permutations of a 3-leaf set fold to one identical root — the fold depends on the set, not the order (exhaustive over permutations)",
+    "receipt": "4dd3026d-fe0a-8b12-8374-072b3b58478d"
+  },
+  {
+    "key": "merkle_fold_order_independent_k4",
+    "name": "the merkle fold is order-independent for 4 leaves: all 24 permutations of a 4-leaf set fold to one identical root — the fold depends on the set, not the order (exhaustive over permutations)",
+    "receipt": "513fdf6e-56d8-8c9f-8e7f-272f4f63358b"
+  },
+  {
+    "key": "merkle_fold_order_independent_k5",
+    "name": "the merkle fold is order-independent for 5 leaves: all 120 permutations of a 5-leaf set fold to one identical root — the fold depends on the set, not the order (exhaustive over permutations)",
+    "receipt": "ab5bbd9a-0476-855d-9d5b-35efb2b8a955"
+  },
+  {
+    "key": "merkle_fold_order_independent_k6",
+    "name": "the merkle fold is order-independent for 6 leaves: all 720 permutations of a 6-leaf set fold to one identical root — the fold depends on the set, not the order (exhaustive over permutations)",
+    "receipt": "17ae48ae-1d8f-8cac-898b-3b9729c1af0d"
+  },
+  {
+    "key": "merkle_fold_singleton_identity",
+    "name": "the merkle fold of a single leaf is that leaf: merkleFold([x]) = x — a fold of one is itself, the base case of the contraction",
+    "receipt": "87251012-c3fa-8bd7-9aa6-a123fd490f03"
+  },
+  {
+    "key": "merkle_fold_empty_is_fixed",
+    "name": "the merkle fold of nothing is a fixed address: merkleFold([]) returns one constant content-address deterministically — the empty fold is well-defined and stable",
+    "receipt": "39d33577-dc1d-83e9-abe1-6fb924819caa"
   }
 ]
