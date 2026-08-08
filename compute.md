@@ -84,6 +84,9 @@ import { report as rbac } from './src/7/rbac'
 import { report as proton } from './src/8/nucleus/proton-mass-fit'
 import { report as merkabaTouch } from './src/8/merkaba/touch'
 import { report as infinite } from './src/8/infinite'
+import { report as claims } from './src/claims/index'
+import { report as imprint } from './src/0/imprint'
+import { report as boundariesFloor } from './src/honesty/boundaries'
 </script>
 
 > Descend: **page → digit → module → its computation → the floor.** Fold into any digit,
@@ -109,6 +112,21 @@ digit to its partner (fixed point **5**), so the folders below are laid out arou
 ### Honesty toolkit · `src/honesty/index.ts`
 <details class="depth"><summary>compute</summary>
 <pre>{{ honesty() }}</pre>
+
+### The claims registry — every registered claim recomputes · `src/claims/index.ts`
+<details class="depth"><summary>compute</summary>
+<pre>{{ claims() }}</pre>
+</details>
+
+### The honest floor — content-addressed boundaries · `src/honesty/boundaries.ts`
+<details class="depth"><summary>compute</summary>
+<pre>{{ boundariesFloor() }}</pre>
+</details>
+
+### Imprint — reversible binary↔uuid codec (the clown's juggle) · `src/0/imprint.ts`
+<details class="depth"><summary>compute</summary>
+<pre>{{ imprint() }}</pre>
+</details>
 
 ## `the/` — the unifying concepts (everything called "the *")
 

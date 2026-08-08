@@ -5,19 +5,9 @@
 import { writeFileSync } from 'node:fs'
 import { toUuid } from '../src/0/index.ts'
 import { computes } from './honesty-gate.ts'
+import { BOUNDARY_STATEMENTS } from '../src/honesty/boundaries.ts' // canonical in src/ — recomputes from source
 
-const STATEMENTS = [
-  '0/7 entailed: this deposit leaves all seven Millennium problems unsolved, and claims no prize.',
-  'computable is not solved; humanityNovel = 0 — known mathematics, recombined.',
-  'a content-address (uuid) proves integrity, not truth, and not authorship.',
-  'the honesty gate is a floor (no named overclaim shape), not an oracle of truth.',
-  'recognition, adoption, citations, and effort are not correctness.',
-  'a classical Z/9 calculator: no quantum computation, no faster-than-light, no quantum speedup.',
-  'sealing proves the bytes are intact; it does not prove the claim is right.',
-  'unsigned: content-addressing is integrity, not authenticity — real signatures need a key.',
-  'worthwhile is a judgment (perspective); small, real, and honest are measured.',
-  'green cannot be faked: the gate measures actual state, and it caught its own author.',
-]
+const STATEMENTS = BOUNDARY_STATEMENTS
 const kept = STATEMENTS.filter((s) => computes(s).binary === 1)   // only honest statements are delivered
 const dropped = STATEMENTS.filter((s) => computes(s).binary === 0)
 const rows = kept.map((s) => `<tr><td><code>${toUuid(s).slice(0, 13)}</code></td><td>${s}</td></tr>`).join('\n')

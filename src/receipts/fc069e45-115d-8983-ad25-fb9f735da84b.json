@@ -1,0 +1,6 @@
+{
+  "uuid": "fc069e45-115d-8983-ad25-fb9f735da84b",
+  "message": "imprint constructs a uuid from a binary message and readImprint returns it exactly; a reversible codec, not a reversal of the one-way toUuid hash, and not encryption.",
+  "agent": "claude-opus",
+  "role": "measurer"
+}

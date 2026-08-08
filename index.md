@@ -24,7 +24,10 @@ in VitePress. Observations, each computed:
 **Observed conclusion:** the framework *reflects / maps* the Millennium Problems
 into one algebraic structure. It **does not solve them**, and it is **not** a
 quantum computer or a physical theory — it is a proof of concept and a classical
-simulator. Every claim recomputes from `src/`.
+simulator. Every one of the **15 registered claims** recomputes from `src/` —
+each bound to its exact recomputation and, where one exists, to a provable theorem
+in the ledger, all gated by `claims-gate.ts` (a bounded, accounted set, not a
+floating "every").
 
 ## Read
 - [Research](/RESEARCH) — the full study (§1–§12, incl. the author's perspective)

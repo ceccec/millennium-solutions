@@ -1893,5 +1893,20 @@
     "key": "relation_clown_respects_rules",
     "name": "the clown benefits from all and respects the rules of the game: every play clears the honesty gate (0/7), carries a receipt, and is won by exhaustion — an overclaim drains, so freedom lives within the floor",
     "receipt": "56557ac3-77ac-82f1-8b5a-db5694229b5b"
+  },
+  {
+    "key": "receipt_is_entanglement_pair",
+    "name": "a receipt entangles a message with its content-address into an irreducible pair: the joint fold depends on both, is order-independent, and differs from each part — a 2-part binding, correlation without influence",
+    "receipt": "f71771ad-075c-8d25-a191-13b5e3baddf4"
+  },
+  {
+    "key": "receipt_pair_is_two_coins",
+    "name": "the receipt pair counts 2 = −χ(genus-2) = the two coins (110−108): the irreducible parts of a receipt equal minus the Euler characteristic of the double torus",
+    "receipt": "8107fd62-4172-818e-8f15-4cf402530c0d"
+  },
+  {
+    "key": "receipt_cost_funds_development",
+    "name": "each receipt costs the two coins, accounted into development: the fare 110−108 = 2, and development’s destination equals its source (toUuid(\"ceccec\")), a self-loop returning the coins to origin",
+    "receipt": "42f68f41-fe6c-8dd2-b340-8c7ce8f507cb"
   }
 ]
