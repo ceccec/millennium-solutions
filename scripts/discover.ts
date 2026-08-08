@@ -8,6 +8,7 @@
 // Two counts, kept distinct: humanity 1/7; this deposit 0/7.
 import { toUuid, merkleFold, units, triad, digitalRoot, digits, BASE, A432_STEP, vortexOrbit } from '../src/0/index.ts'
 import { computes } from './honesty-gate.ts'
+import { LOCALES, LOCALE_ORDER } from '../src/7/locale.ts'
 const m9 = (n: number) => ((n % BASE) + BASE) % BASE
 const U = units()
 const ALL = digits()
@@ -235,6 +236,14 @@ function generated(): typeof curated {
   out.push({ key: 'gematria_51_class', name: '"merkaba", "pleme", "wave" share the letter-sum 51 (digital root 6)', test: () => lsum('merkaba') === 51 && lsum('pleme') === 51 && lsum('wave') === 51 && drWord('merkaba') === 6 })
   out.push({ key: 'gematria_ceccec_harmony_4', name: '"ceccec" and "harmony" share the digital root 4', test: () => drWord('ceccec') === 4 && drWord('harmony') === 4 })
   out.push({ key: 'gematria_singularity_horo_2', name: '"singularity" and "horo" share the digital root 2', test: () => drWord('singularity') === 2 && drWord('horo') === 2 })
+  // NEW DOMAIN — the language lens: the UUID matrix sees translations as BYTES, not meaning. Distinct
+  // translation strings → distinct addresses; identical → identical; the cross-locale concept handle is
+  // order-independent but exists ONLY because a human aligned the LOCALES table. Meaning is not in the
+  // bytes — the lens sees strings; a translator supplies the meaning. Finite → complete. 0/7.
+  const words = LOCALE_ORDER.map((l) => LOCALES[l].nav.compute)
+  out.push({ key: 'lens_strings_not_meaning', name: 'the lens sees bytes: distinct translations → distinct addresses, identical → identical', test: () => new Set(words).size === new Set(words.map((w) => toUuid(w))).size })
+  out.push({ key: 'lens_concept_handle_order_independent', name: 'the cross-locale concept handle (fold of the aligned translations) is order-independent', test: () => merkleFold(words.map((w) => toUuid(w))) === merkleFold([...words].reverse().map((w) => toUuid(w))) })
+  out.push({ key: 'lens_deterministic', name: 'each translation content-addresses deterministically — toUuid(s) reproduces exactly', test: () => words.every((w) => toUuid(w) === toUuid(w)) })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

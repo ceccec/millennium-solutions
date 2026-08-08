@@ -853,5 +853,20 @@
     "key": "gematria_singularity_horo_2",
     "name": "\"singularity\" and \"horo\" share the digital root 2",
     "receipt": "1c434409-549d-8f61-a8f7-6aad069e68f9"
+  },
+  {
+    "key": "lens_strings_not_meaning",
+    "name": "the lens sees bytes: distinct translations → distinct addresses, identical → identical",
+    "receipt": "9ab46c9a-f620-8e37-a4e7-5fc0a3eb9a8b"
+  },
+  {
+    "key": "lens_concept_handle_order_independent",
+    "name": "the cross-locale concept handle (fold of the aligned translations) is order-independent",
+    "receipt": "5e07b827-f250-8f2b-b3f7-59f552f04999"
+  },
+  {
+    "key": "lens_deterministic",
+    "name": "each translation content-addresses deterministically — toUuid(s) reproduces exactly",
+    "receipt": "b46579fd-1b90-8cf2-80e9-a0b8a3176225"
   }
 ]
