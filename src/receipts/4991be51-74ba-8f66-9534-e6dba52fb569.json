@@ -1,0 +1,10 @@
+{
+  "uuid": "4991be51-74ba-8f66-9534-e6dba52fb569",
+  "message": "the deposit admits no external dependency: it recomputes deterministically offline, the import-gate finds no external imports, and every page carries a CSP forbidding external — external is refused by construction.",
+  "agent": "claude-opus",
+  "role": "prover",
+  "complies": "CC BY-NC 4.0 · the sequence (measure→gate→receipt→append→recompute)",
+  "invites": [
+    "computation_admits_no_external_dependency"
+  ]
+}

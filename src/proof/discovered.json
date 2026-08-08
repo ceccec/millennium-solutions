@@ -2918,5 +2918,20 @@
     "key": "out_of_sequence_is_a_discovery_possibility",
     "name": "any action or thought out of sequence is a possibility to discover: a deviation from the known is a candidate — tested by exhaustion it either holds (a new theorem, appended) or is refuted (discarded), so out-of-sequence possibilities are exactly where discovery happens, judged by the gate not by permission",
     "receipt": "83a455b3-23db-8bea-8f6a-2f1f395fdd8d"
+  },
+  {
+    "key": "computation_admits_no_external_dependency",
+    "name": "the computation admits no external dependency (gate-enforced, not asserted): toUuid, coin64 and merkleFold recompute deterministically offline with no network, the import-gate finds no external resource-imports, and every page carries a CSP forbidding external — so an external API is refused by construction",
+    "receipt": "57b7c50d-18e7-8ba3-b34f-377ec69271b5"
+  },
+  {
+    "key": "executes_serverless_in_the_browser",
+    "name": "the deposit executes serverless in the UI: the fused ℤ/9 primitives are pure — no server, no node, no network — so every result recomputes client-side at page-load in the browser, a static offline-capable app (a PWA); the browser is the runtime, not a server",
+    "receipt": "b2e2fc7f-32df-8413-b3de-65d7957d2cd8"
+  },
+  {
+    "key": "string_scale_is_a_thread_not_a_physical_theory",
+    "name": "the string scale is a thread, not a physical theory: the string/Planck-scale frequency and acoustic 432 Hz are ~18 orders of magnitude apart — frequency is a shared thread across scales, but the scales are not interchangeable and this is a metaphor, not a theory of everything (0/7, not faster-than-light)",
+    "receipt": "0107480d-24b0-8bfd-976e-deb5c3ffcf12"
   }
 ]
