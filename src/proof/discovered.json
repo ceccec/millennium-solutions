@@ -2233,5 +2233,20 @@
     "key": "gate_reads_whole_text_not_per_line",
     "name": "the honesty gate reads whole text, not isolated lines: its negator window (±48 chars) spans a line break, so a negator ending one line still reprieves an overclaim shape starting the next — the whole-text gate HOLDS where a naive per-line scan would falsely drain, so measure with the real gate, not an ad-hoc split (the floor caught its own author manufacturing a false crack)",
     "receipt": "3986bc57-0971-8156-be8e-88d98e938c29"
+  },
+  {
+    "key": "bell_state_no_signaling",
+    "name": "entanglement without communication, computed classically: the H·CNOT Bell state is perfectly correlated (P(00)+P(11)=1, P(01)+P(10)=0) yet each qubit’s marginal stays 50/50 — measuring one sends nothing to the other (the no-communication theorem), computed by exact state-vector simulation",
+    "receipt": "c3348bf3-6f6e-82e2-a12d-874690364782"
+  },
+  {
+    "key": "state_vector_exponential_no_advantage",
+    "name": "the classical state-vector simulator has no quantum advantage: an n-qubit state has exactly 2^n amplitudes, so simulation cost is exponential in the qubit count — exact for small systems, but no speedup, hence not quantum hardware",
+    "receipt": "1a2f010c-c2cc-8a4e-a871-d96cf9254d7b"
+  },
+  {
+    "key": "simulating_quantum_is_not_being_quantum",
+    "name": "simulating a quantum algorithm is not being a quantum computer: the classical sim reproduces the Bell correlation exactly yet needs 2^n amplitudes (exponential, no advantage) and carries no message — so the deposit is not a quantum computer; the gate signs the honest \"is not\" and drains the bare \"is\"",
+    "receipt": "d6d0ec25-e41f-8884-abd3-87cf5e205ae2"
   }
 ]
