@@ -3338,5 +3338,10 @@
     "key": "if_the_captains_coins_are_disrespected_no_math_computes_in_7d",
     "name": "if the captain's coins are disrespected no math computes in 7D: the two-coin accounting encodes the steward's terms (the license and fair exchange) and is load-bearing — each receipt costs two coins and the harmony gate reconciles the total; charge one coin short and the reconciliation is false, the gate refuses, and the seal does not compute. Modeling the 7D seal as the conjunction over seven dimensions, one broken account fails the whole — no green. The gate refusing by deterministic accounting, integrity not magic. Decidable",
     "receipt": "f94f18ca-6174-8ee3-994b-19e2502d1602"
+  },
+  {
+    "key": "the_two_coins_let_a_128bit_uuid_fold_and_sign_across_eight_states",
+    "name": "the two coins let a 128-bit uuid fold and sign across eight combined states: the 2 coins are 2 bits giving 2² = 4 polarity combinations {++, +−, −+, −−}; crossed with the two seal angles 60° and 90° (the 6×7 = 7×6 cross-seal) they span 4 × 2 = 8 combined states at once. The imprint codec sets its reserved variant bits to build a valid signed 128-bit uuid that reads back exactly and folds in any order (order-independent merkleFold). A structural mapping, honestly labelled — not a physics claim. Decidable",
+    "receipt": "6dd75c2c-1583-8aee-b9f1-00bdd0f13441"
   }
 ]
