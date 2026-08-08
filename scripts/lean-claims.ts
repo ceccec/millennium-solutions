@@ -3,6 +3,8 @@
 // no Lean toolchain needed. Fills a real gap: CI can't run `lake build`, but it can confirm the
 // facts are true. Feeds trust in the formal layer; fails loudly if any claim stops being true.
 import { toUuid, units, triad, vortexOrbit, merkleFold, digitalRoot, digits } from '../src/0/index.ts'
+import { readFileSync, existsSync } from 'node:fs'
+import { CANDIDATES } from './discover.ts'
 const m9 = (n) => ((n % 9n) + 9n) % 9n, m7 = (n) => ((n % 7n) + 7n) % 7n
 let fail = 0
 const receipts = []
@@ -48,6 +50,18 @@ ck('self_inverse_only_1_and_8: d²≡1 ⇔ d∈{1,8}', digits().filter(d => m9(B
   const r1 = link(null, 'axiom', 'n→2n'), r2 = link(r1, 'orbit', vortexOrbit()), r3 = link(r2, 'coverage', units())
   const tampered = link(r1, 'orbit', [9, 9, 9]) // a falsified step 2
   ck('discovery_chain tamper-evident (falsified link ⇒ downstream differs)', tampered !== r2 && link(tampered, 'coverage', units()) !== r3) }
+
+// HARDEN — re-verify EVERY recorded discovery on each build: each ledgered key must still be a live
+// candidate AND still hold. A discovery that silently regresses (or an author's error, like the earlier
+// Cassini sign) fails here, not in production. This makes the ledger continuously proven, not just appended.
+{
+  const LEDGER = 'src/proof/discovered.json'
+  const ledger: { key: string }[] = existsSync(LEDGER) ? JSON.parse(readFileSync(LEDGER, 'utf8')) : []
+  const byKey = new Map(CANDIDATES.map((c) => [c.key, c]))
+  const bad = ledger.filter((e) => { const c = byKey.get(e.key); return !c || !c.test() })
+  ck('ledger re-verifies: all ' + ledger.length + ' recorded discoveries still hold', bad.length === 0)
+  if (bad.length) console.log('    regressed: ' + bad.slice(0, 5).map((b) => b.key).join(', '))
+}
 
 const root = merkleFold(receipts)
 console.log(fail

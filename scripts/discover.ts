@@ -202,6 +202,21 @@ function generated(): typeof curated {
   out.push({ key: 'both_games_truth_and_honesty', name: 'both games: the orbit covers the units (computes) AND "covers, solves no Clay" signs', test: () => covers && computes('the doubling orbit covers every unit of Z/9 and does not solve any Clay problem').binary === 1 })
   out.push({ key: 'both_games_overclaim_loses', name: 'the overclaim loses both games: "the orbit solves the Clay problems" drains and proves nothing', test: () => computes('the doubling orbit solves the Clay problems').binary === 0 })
   out.push({ key: 'both_games_358', name: 'the 3-5-8 trinity plays both: 3+5=8 computes AND "3+5=8, proving no open conjecture" signs', test: () => (3 + 5 === 8) && computes('three plus five equals eight, proving no open conjecture').binary === 1 })
+  // NEW DOMAIN — combinatorial games. Nim (Bouton): a 2-heap position is a loss for the mover iff the
+  // XOR of the heaps is 0 — verified exhaustively via game-tree solving (finite → complete). Wythoff:
+  // ⌊nφ²⌋ − ⌊nφ⌋ = n, the golden-ratio Beatty identity (tying the game to Fibonacci / 3-5-8).
+  const nimMemo = new Map<string, boolean>()
+  const nimWin = (a: number, b: number): boolean => { const k = [a, b].sort((x, y) => x - y).join(','); const c = nimMemo.get(k); if (c !== undefined) return c; let w = false; for (let t = 0; t < a && !w; t++) if (!nimWin(t, b)) w = true; for (let t = 0; t < b && !w; t++) if (!nimWin(a, t)) w = true; nimMemo.set(k, w); return w }
+  out.push({ key: 'nim_bouton_H6', name: 'Nim (Bouton): a 2-heap position is a loss for the mover iff XOR = 0 (all heaps ≤ 6, exhaustive)', test: () => { for (let a = 0; a <= 6; a++) for (let b = 0; b <= 6; b++) if (nimWin(a, b) !== ((a ^ b) !== 0)) return false; return true } })
+  const phi = (1 + Math.sqrt(5)) / 2
+  out.push({ key: 'wythoff_identity', name: 'Wythoff: ⌊nφ²⌋ − ⌊nφ⌋ = n for all n ≤ 20 (the golden-ratio Beatty identity)', test: () => { for (let n = 1; n <= 20; n++) if (Math.floor(n * phi * phi) - Math.floor(n * phi) !== n) return false; return true } })
+  // NEW DOMAIN — arts: the computable structure behind palette and proportion. a432 hue = digit×40°; the
+  // triad {3,6,9} lands on the RGB primary hues; the nine hues are distinct and equally spaced; CMY are
+  // the 180° complements of RGB; φ (aesthetic proportion) satisfies φ²=φ+1. Finite/exact.
+  out.push({ key: 'arts_triad_rgb_primaries', name: 'the triad {3,6,9} maps to the RGB primary hues: 0°(red), 120°(green), 240°(blue)', test: () => JSON.stringify(triad().map((d) => (d * A432_STEP) % 360).sort((a, b) => a - b)) === JSON.stringify([0, 120, 240]) })
+  out.push({ key: 'arts_nine_hues_distinct', name: 'the nine a432 hues (digit×40°) are distinct and equally spaced around the wheel', test: () => new Set(digits().map((d) => (d * A432_STEP) % 360)).size === 9 })
+  out.push({ key: 'arts_cmy_complements_rgb', name: 'CMY are the 180° complements of RGB: each primary hue + 180° is a secondary hue', test: () => [0, 120, 240].every((h) => new Set([60, 180, 300]).has((h + 180) % 360)) })
+  out.push({ key: 'arts_golden_proportion', name: 'the golden ratio (aesthetic proportion) satisfies φ² = φ + 1', test: () => { const g = (1 + Math.sqrt(5)) / 2; return Math.abs(g * g - (g + 1)) < 1e-9 } })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

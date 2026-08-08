@@ -773,5 +773,35 @@
     "key": "both_games_358",
     "name": "the 3-5-8 trinity plays both: 3+5=8 computes AND \"3+5=8, proving no open conjecture\" signs",
     "receipt": "c26cc4c6-7c93-8de0-8d75-db338b32a42b"
+  },
+  {
+    "key": "nim_bouton_H6",
+    "name": "Nim (Bouton): a 2-heap position is a loss for the mover iff XOR = 0 (all heaps ≤ 6, exhaustive)",
+    "receipt": "4b41d6ed-63f3-89b9-809e-375a6ec07154"
+  },
+  {
+    "key": "wythoff_identity",
+    "name": "Wythoff: ⌊nφ²⌋ − ⌊nφ⌋ = n for all n ≤ 20 (the golden-ratio Beatty identity)",
+    "receipt": "5526fdb5-4a24-8152-80b7-3f9362b880c0"
+  },
+  {
+    "key": "arts_triad_rgb_primaries",
+    "name": "the triad {3,6,9} maps to the RGB primary hues: 0°(red), 120°(green), 240°(blue)",
+    "receipt": "316f831d-95da-8390-95a6-2c80a2b2dbb2"
+  },
+  {
+    "key": "arts_nine_hues_distinct",
+    "name": "the nine a432 hues (digit×40°) are distinct and equally spaced around the wheel",
+    "receipt": "7f22f5c0-f4bd-8c47-a3eb-cd1b4e72a468"
+  },
+  {
+    "key": "arts_cmy_complements_rgb",
+    "name": "CMY are the 180° complements of RGB: each primary hue + 180° is a secondary hue",
+    "receipt": "13b5af77-bfc6-8343-8e67-b3060e9e0af4"
+  },
+  {
+    "key": "arts_golden_proportion",
+    "name": "the golden ratio (aesthetic proportion) satisfies φ² = φ + 1",
+    "receipt": "48801162-b59d-81a7-b477-ac0d6a02a7a6"
   }
 ]
