@@ -27,7 +27,7 @@ const TOOLS = [
     inputSchema: { type: 'object', properties: { url: { type: 'string' } }, required: ['url'] } },
   { name: 'lineage', description: 'Delivery vs churn across release tags, by git tree hash (git\'s own faithful content-address). Identical trees = a tag minted over no delta (churn); distinct = a delivery. Integrity-level: measures WHAT was delivered, not whether it is true. Heroes and traitors by deeds, not statements.',
     inputSchema: { type: 'object', properties: {}, required: [] } },
-  { name: 'verify', description: 'Audit any prose/message, or decode-and-verify a uuid. Prose → honesty-gate verdict + content-address. A uuid is a ONE-WAY address (cannot be reversed to its message); "decode" looks it up in the receipt ledger and verifies toUuid(message)===uuid. No recorded receipt ⇒ opaque, honestly.',
+  { name: 'verify', description: 'Audit any prose/message, or decode-and-verify a uuid across BOTH evidence sets. Prose → honesty-gate verdict + content-address. A uuid is a ONE-WAY address (never reversed); "decode" looks it up in (1) the agent-statement receipts (src/receipts/, verifies toUuid(message)===uuid + observer/role) then (2) the discovery ledger (reports the fact, chain position, and whether the chain-of-custody link is intact). In neither ⇒ opaque, honestly.',
     inputSchema: { type: 'object', properties: { text: { type: 'string' } }, required: ['text'] } },
   { name: 'discover', description: 'The discovery engine: computationally-generated + curated candidate facts over ℤ/9, each tested by exhaustion. Returns discovered (provable) vs refuted + a discovery root. Decidable facts only — never a proof of the six OPEN Millennium conjectures. This deposit 0/7; humanity 1/7 (Poincaré, Perelman 2003).',
     inputSchema: { type: 'object', properties: {}, required: [] } },
@@ -46,9 +46,19 @@ const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
     const t = String(a.text || '')
     if (/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/.test(t)) {
       const p = 'src/receipts/' + t + '.json'
-      if (!existsSync(p)) return JSON.stringify({ uuid: t, decoded: null, note: 'not in ledger — a one-way address cannot be reversed to its message' })
-      const r = JSON.parse(readFileSync(p, 'utf8'))
-      return JSON.stringify({ uuid: t, decoded: r.message, observer: r.agent + ' as ' + r.role, contentVerify: toUuid(r.message) === t, gate: computes(r.message).binary })
+      if (existsSync(p)) {
+        const r = JSON.parse(readFileSync(p, 'utf8'))
+        return JSON.stringify({ uuid: t, source: 'agent-statement receipt', decoded: r.message, observer: r.agent + ' as ' + r.role, contentVerify: toUuid(r.message) === t, gate: computes(r.message).binary })
+      }
+      const ledger: { key: string; name: string; receipt: string }[] = existsSync('src/proof/discovered.json') ? JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) : []
+      const idx = ledger.findIndex((e) => e.receipt === t)
+      if (idx >= 0) {
+        const e = ledger[idx]; const pred = idx === 0 ? 'axiom:TRINITY' : ledger[idx - 1].receipt
+        const linkOk = toUuid(pred + '→' + e.key) === e.receipt
+        const genesis = e.key === 'euler_units_pow6' || e.key === 'units_sum_zero'
+        return JSON.stringify({ uuid: t, source: 'discovery ledger', fact: e.name, key: e.key, chainPosition: idx, chainLinkIntact: linkOk, note: linkOk ? 'chain-of-custody intact' : genesis ? 'genesis discontinuity (documented baseline)' : 'BROKEN — tamper (legal trial)' })
+      }
+      return JSON.stringify({ uuid: t, decoded: null, note: 'in neither the receipt ledger nor the discovery ledger — a one-way address cannot be reversed to its message' })
     }
     const g = computes(t)
     return JSON.stringify({ text: t, contentAddress: toUuid(t), gate: g.binary, hit: g.hit, note: g.binary ? 'holds the floor' : 'drains: ' + g.hit })
