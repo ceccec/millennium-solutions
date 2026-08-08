@@ -17,6 +17,12 @@ title: Millennium Solutions
 > the Clay problems and is **not a quantum computer**. Structure, not silicon —
 > [each perspective is receipted](/theorem/each_perspective_is_receipted_in_the_superposition) ·
 > [perspective replaces hardware](/theorem/perspective_replaces_hardware).
+>
+> **Start here — why compute quantum (honestly)?** The smallest honest unit is
+> [**quantum = the a432 structure of two coins**](/theorem/here_quantum_is_the_a432_structure_of_two_coins_not_a_physical_qubit)
+> — 2 bits, 4 states, never a physical qubit. It matters because those two coins make **every** state
+> receipted and auditable on ordinary hardware: integrity everywhere, at linear cost, no advantage
+> claimed. Read that one page and the rest of the "quantum" family follows.
 
 ## Abstract
 

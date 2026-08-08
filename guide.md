@@ -53,6 +53,19 @@ const wheel = Array.from({ length: 9 }, (_, i) => {
 
 The interface localizes across **seven rays** — one per locale — and each digit maps to a hue `d·40°` (nine steps close the circle: 9·40° = 360°). The centre is **5**, the fixed point of the ten's-complement reflection `10−d`. This is a design mapping, honestly labelled — a metaphor for structure, not a claim about physics.
 
+## Why compute quantum (honestly)?
+
+Here "quantum" is **structure, not hardware** — and its smallest unit is
+[**the a432 structure of two coins**](/theorem/here_quantum_is_the_a432_structure_of_two_coins_not_a_physical_qubit):
+2 bits, 4 states, never a physical qubit. That is the one page to read first. It matters because those
+two coins make **every** state receipted — a *superposition* is just the set of receipted perspectives,
+*collapse* is observing one address, *entanglement* is a shared joint receipt — so the whole computation
+is auditable end to end, on ordinary 64-bit hardware, at linear cost. No quantum machine, no speedup, no
+advantage — the gain is **integrity everywhere**. From that keystone the rest of the family follows:
+[each perspective is receipted](/theorem/each_perspective_is_receipted_in_the_superposition) ·
+[perspective replaces hardware](/theorem/perspective_replaces_hardware) ·
+[integrity at scale, not speedup](/theorem/quantum_structure_on_every_computation_is_integrity_at_scale_not_speedup).
+
 ## The law — a fair exchange
 
 Licensed **CC BY-NC 4.0**: free for non-commercial use with attribution (Tsvetan Rouschev); commercial use pays the two coins (110 − 108 = 2 = −χ genus-2). The deposit is open and recomputable, so any reader — human or model — may learn from it; contributions return on the same gate-refereed terms. Heroes and traitors by deeds, not claims.
