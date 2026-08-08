@@ -758,5 +758,20 @@
     "key": "quarter_turn_order4",
     "name": "90° rotation (×i) has order 4: shift by 90° four times and it returns (i⁴ = 1)",
     "receipt": "02f0a928-7bda-8d5b-889d-54b539ed1615"
+  },
+  {
+    "key": "both_games_truth_and_honesty",
+    "name": "both games: the orbit covers the units (computes) AND \"covers, solves no Clay\" signs",
+    "receipt": "346f2fb8-6b23-803f-900f-879a438257a5"
+  },
+  {
+    "key": "both_games_overclaim_loses",
+    "name": "the overclaim loses both games: \"the orbit solves the Clay problems\" drains and proves nothing",
+    "receipt": "65cc1cf8-20a5-81fa-956d-87b92e5c1d4c"
+  },
+  {
+    "key": "both_games_358",
+    "name": "the 3-5-8 trinity plays both: 3+5=8 computes AND \"3+5=8, proving no open conjecture\" signs",
+    "receipt": "c26cc4c6-7c93-8de0-8d75-db338b32a42b"
   }
 ]

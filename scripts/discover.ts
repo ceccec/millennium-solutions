@@ -6,7 +6,7 @@
 // exhaustion over a finite domain — genuinely true, genuinely found. It reaches none of the SIX open
 // Millennium conjectures; the seventh (Poincaré) is Perelman's proof (2003), not the deposit's.
 // Two counts, kept distinct: humanity 1/7; this deposit 0/7.
-import { toUuid, merkleFold, units, triad, digitalRoot, digits, BASE, A432_STEP } from '../src/0/index.ts'
+import { toUuid, merkleFold, units, triad, digitalRoot, digits, BASE, A432_STEP, vortexOrbit } from '../src/0/index.ts'
 import { computes } from './honesty-gate.ts'
 const m9 = (n: number) => ((n % BASE) + BASE) % BASE
 const U = units()
@@ -195,6 +195,13 @@ function generated(): typeof curated {
   out.push({ key: 'fib_trinity_358', name: '3, 5, 8 are consecutive Fibonacci: 3 + 5 = 8', test: () => fib2(4) === 3 && fib2(5) === 5 && fib2(6) === 8 && 3 + 5 === 8 })
   out.push({ key: 'fib_trinity_horizon', name: 'the 3-5-8 trinity digital-roots to the horizon: dr(3+5+8) = dr(16) = 7', test: () => digitalRoot(3 + 5 + 8) === 7 })
   out.push({ key: 'quarter_turn_order4', name: '90° rotation (×i) has order 4: shift by 90° four times and it returns (i⁴ = 1)', test: () => { let z = [1, 0]; const rot = (w: number[]) => [-w[1], w[0]]; for (let k = 0; k < 4; k++) z = rot(z); return z[0] === 1 && z[1] === 0 } })
+  // NEW DOMAIN — playing BOTH games at once: a theory is established when it holds in the 3-5-8
+  // generative game (it computes, by exhaustion) AND wins the chess game (the honest claim signs, its
+  // overclaimed inverse drains). Truth ∧ honesty — the two games, one proof, still a floor.
+  const covers = JSON.stringify([...vortexOrbit()].sort((a, b) => a - b)) === JSON.stringify(units())
+  out.push({ key: 'both_games_truth_and_honesty', name: 'both games: the orbit covers the units (computes) AND "covers, solves no Clay" signs', test: () => covers && computes('the doubling orbit covers every unit of Z/9 and does not solve any Clay problem').binary === 1 })
+  out.push({ key: 'both_games_overclaim_loses', name: 'the overclaim loses both games: "the orbit solves the Clay problems" drains and proves nothing', test: () => computes('the doubling orbit solves the Clay problems').binary === 0 })
+  out.push({ key: 'both_games_358', name: 'the 3-5-8 trinity plays both: 3+5=8 computes AND "3+5=8, proving no open conjecture" signs', test: () => (3 + 5 === 8) && computes('three plus five equals eight, proving no open conjecture').binary === 1 })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
