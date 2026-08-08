@@ -936,6 +936,14 @@ function generated(): typeof curated {
       out.push({ key: 'wilson_prime_' + p, name: 'Wilson’s theorem at p=' + p + ': (p−1)! ≡ −1 (mod ' + p + '), i.e. the factorial of ' + (p - 1) + ' is congruent to ' + (p - 1) + ' mod ' + p, test: () => { let f = 1; for (let k = 1; k < p; k++) f = f * k % p; return f === (p === 2 ? 1 : p - 1) } })
     }
   }
+  // ── AUTOMATED family — binomial (Pascal) identities per row: Σ C(n,k) = 2^n and Σ (−1)^k C(n,k) = 0.
+  {
+    const binom = (n: number, k: number) => { let r = 1; for (let i = 0; i < k; i++) r = r * (n - i) / (i + 1); return Math.round(r) }
+    for (let n = 1; n <= 9; n++) {
+      out.push({ key: 'pascal_row_sum_' + n, name: 'Pascal row ' + n + ' sums to 2^' + n + ': Σ_{k=0}^' + n + ' C(' + n + ',k) = ' + (2 ** n) + ' — the binomial theorem at x=1, computed exactly', test: () => { let s = 0; for (let k = 0; k <= n; k++) s += binom(n, k); return s === 2 ** n } })
+      out.push({ key: 'pascal_alternating_sum_' + n, name: 'Pascal row ' + n + ' alternating sum is zero: Σ_{k=0}^' + n + ' (−1)^k C(' + n + ',k) = 0 — the binomial theorem at x=−1 (n ≥ 1)', test: () => { let s = 0; for (let k = 0; k <= n; k++) s += (k % 2 === 0 ? 1 : -1) * binom(n, k); return s === 0 } })
+    }
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
