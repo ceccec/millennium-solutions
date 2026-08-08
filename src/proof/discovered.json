@@ -3268,5 +3268,10 @@
     "key": "the_order_spectrum_of_z9_units_realizes_gauss_divisor_sum",
     "name": "the order spectrum of (ℤ/9)* realizes Gauss's divisor-sum: the multiplicative orders of the six units are exactly the divisors of 6 — one element of order 1, one of order 2, two of order 3, two of order 6 — matching φ(d) for each d dividing 6, and the sum of φ(d) over the divisors of 6 equals 6, the group size. The presence of an element of order 6 shows the group is cyclic. Decidable by exhaustion over ℤ/9",
     "receipt": "c0dc094a-4316-85c9-aaed-b0a4819834b5"
+  },
+  {
+    "key": "the_imprint_codec_is_injective_with_an_exact_115_bit_capacity",
+    "name": "the imprint codec is an injective lossless encoding with an exact 115-bit capacity: distinct binary messages of length ≤ CAPACITY map to distinct uuids and read back exactly (readImprint(imprint(m)) = m), so the encoding loses nothing; the capacity is exactly 128 − 6 reserved − 7 length-header = 115 bits, and a 116-bit message is rejected — the boundary is exact, not approximate. A bounded codec, integrity not secrecy. Decidable by exhaustion up to the bound",
+    "receipt": "9ce1e391-865f-8072-9d97-fdc1f1996354"
   }
 ]
