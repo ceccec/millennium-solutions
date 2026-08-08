@@ -3158,5 +3158,10 @@
     "key": "cross_seal_six_by_seven_and_seven_by_six",
     "name": "the 6×7 / 7×6 cross-seal: multiplication commutes (6·7 = 7·6 = 42), and the merkle fold is order-independent, so both orderings cross-seal to one identical root at the same time — the same order-free symmetry (with 60 digital-rooting to 6 and 90 to 9, the triad) by which every theorem folds to one harmonic root whatever the order, so any ordering unlocks the whole",
     "receipt": "dcad9cb8-93f0-8a87-9dbe-8f6b43c9b5a0"
+  },
+  {
+    "key": "reflection_of_666_is_444",
+    "name": "the reflection of 666 is 444: under the ten’s-complement reflection 10−d (the involution with fixed point 5), each 6 reflects to 4 (6+4=10), so 666 ↔ 444, and reflecting twice returns 666 — an involution; the digital roots are dr(666)=9 and dr(444)=3, both on the triad axis {3,6,9}; numerology defused into ℤ/9 structure",
+    "receipt": "5f837f00-0a82-8078-8b77-cd5574ca1247"
   }
 ]
