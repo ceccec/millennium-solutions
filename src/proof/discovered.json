@@ -8,5 +8,55 @@
     "key": "units_sum_zero",
     "name": "the units sum to 0 mod 9 (1+2+4+5+7+8=27)",
     "receipt": "ec43f3d8-7595-8c1d-90a9-f72ad8da2a7b"
+  },
+  {
+    "key": "self_inverse_1_8",
+    "name": "exactly two self-inverse elements d²≡1 mod 9: {1,8}",
+    "receipt": "91985354-2258-85f7-bbc7-a89dd39cdeae"
+  },
+  {
+    "key": "triad_nilpotent",
+    "name": "the triad is nilpotent d²≡0 mod 9: {3,6,9}",
+    "receipt": "af48a8bc-86a0-8090-bd46-05dee4b09ac5"
+  },
+  {
+    "key": "doubling_digitroot_period6",
+    "name": "digital root of 2^k has period 6",
+    "receipt": "942f0b01-460f-8056-a301-ddfea9942f0e"
+  },
+  {
+    "key": "units_product_neg1",
+    "name": "product of the units ≡ 8 ≡ -1 mod 9 (Wilson analog)",
+    "receipt": "cb8655bf-108e-8327-8a17-c4a34e5f1b01"
+  },
+  {
+    "key": "triad_sum_zero",
+    "name": "the triad sums to 0 mod 9 (3+6+9=18)",
+    "receipt": "17434a40-2712-80e5-9ea6-9dd6ea25b305"
+  },
+  {
+    "key": "cubes_in_0_1_8",
+    "name": "every cube d³ mod 9 ∈ {0,1,8}",
+    "receipt": "5ecfca3d-68f4-822d-9893-ded794ac37da"
+  },
+  {
+    "key": "squares_in_0_1_4_7",
+    "name": "every square d² mod 9 ∈ {0,1,4,7}",
+    "receipt": "6f43410e-08c3-875a-bf9f-7c54a5ff5b1d"
+  },
+  {
+    "key": "order_of_2_is_6",
+    "name": "multiplicative order of 2 mod 9 is 6",
+    "receipt": "e577fc05-6637-81e3-9f66-5809f583d7dc"
+  },
+  {
+    "key": "sum_1_to_9_zero",
+    "name": "1+2+…+9 ≡ 0 mod 9 (=45)",
+    "receipt": "ccb897a5-e55d-8173-a598-f0878eed957f"
+  },
+  {
+    "key": "pisano_9_is_24",
+    "name": "Fibonacci mod 9 has Pisano period 24",
+    "receipt": "78a65039-07c5-8873-9490-890f0922d602"
   }
 ]

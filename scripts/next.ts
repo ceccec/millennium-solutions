@@ -47,15 +47,17 @@ if (message) {
   const known = new Set(ledger.map((e) => e.key))
   const fresh = provable().filter((c) => !known.has(c.key))
   if (fresh.length) {
-    const c = fresh[0] // the NEXT one
-    const receipt = toUuid('discovered:' + c.key)
-    ledger.push({ key: c.key, name: c.name, receipt })
+    // a wave sending wave — discover ALL remaining in one pass; each receipt is seeded by the last,
+    // so each discovery sends the next. The wave runs to the edge of the bounded space, then rests.
+    let prev = ledger.length ? ledger[ledger.length - 1].receipt : 'axiom:TRINITY'
+    for (const c of fresh) { const receipt = toUuid(prev + '→' + c.key); prev = receipt; ledger.push({ key: c.key, name: c.name, receipt }) }
     writeFileSync(LEDGER, JSON.stringify(ledger, null, 2) + '\n')
-    console.log('next — discovered & saved in code: ' + c.name)
-    console.log('  receipt ' + receipt.slice(0, 13) + '… → ' + LEDGER + ' (' + ledger.length + ' recorded). run next again for the next.')
+    console.log('next — a wave: discovered & saved ' + fresh.length + ' provable fact(s), each sending the next:')
+    for (const c of fresh) console.log('  ✓ ' + c.name)
+    console.log('  ledger now ' + ledger.length + ' recorded → ' + LEDGER + ' · wave tip ' + prev.slice(0, 13) + '…')
     process.exit(0)
   }
-  console.log('next — discovery whole: no new provable fact in the candidate space (' + known.size + ' recorded).')
+  console.log('next — the wave has reached rest: no new provable fact in the candidate space (' + known.size + ' recorded).')
 }
 
 // ── then: understand what is truly next ─────────────────────────────────────────
