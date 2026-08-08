@@ -11,7 +11,7 @@ const target = (process.argv[2] || 'pages').toLowerCase()
 
 if (target === 'pages') {
   console.log('deploy: pages → gh-pages → https://ceccec.github.io/millennium-solutions/')
-  run('node scripts/dashboard.ts'); run('node scripts/boundaries.ts'); run('node scripts/challenges.ts')    // regenerate the computed pages (dashboard · boundaries · millennium challenges)
+  run('node scripts/dashboard.ts'); run('node scripts/boundaries.ts'); run('node scripts/challenges.ts'); run('node scripts/heart.ts')    // regenerate the computed pages (dashboard · boundaries · millennium challenges)
   run('npm run docs:build')
   run('node scripts/import-gate.ts')  // block any third-party resource-import (deterministic, at the gate)
   run('node scripts/locale-fold.ts')  // language-fallback stubs → no dead switcher links

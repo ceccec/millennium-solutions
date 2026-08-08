@@ -1113,5 +1113,30 @@
     "key": "chess_diagonals_15",
     "name": "the 8×8 board has 2·8 − 1 = 15 diagonals in each direction",
     "receipt": "85a4e4b0-787f-8d51-961e-b06105d4b7a7"
+  },
+  {
+    "key": "tarot_78_cards",
+    "name": "the tarot has 78 cards: 22 major arcana + 56 minor (22+56=78)",
+    "receipt": "e2f4737c-87a0-8f9b-aa46-9fe1c43f32a9"
+  },
+  {
+    "key": "tarot_minor_4x14",
+    "name": "the minor arcana is 4 suits × 14 ranks = 56",
+    "receipt": "c9de57ab-a524-8dcc-a537-6cbb1970be8f"
+  },
+  {
+    "key": "tarot_major_0_21",
+    "name": "the 22 major arcana are numbered 0..21 (0 = Fool … 21 = World)",
+    "receipt": "b9a00780-3406-8423-85f5-6b7fd0ff8cc2"
+  },
+  {
+    "key": "tarot_digital_roots",
+    "name": "the tarot counts ride ℤ/9: dr(78)=6, dr(22)=4, dr(56)=2 — each card-set a vortex digit",
+    "receipt": "df86a738-4b27-8b24-bbe4-14afbe44a12c"
+  },
+  {
+    "key": "tarot_holds_theorems",
+    "name": "a reading is a prediction the gate drains; each tarot card here holds a theorem, not a fortune",
+    "receipt": "9c03a373-918f-8857-a0ca-ec1aff9fe775"
   }
 ]

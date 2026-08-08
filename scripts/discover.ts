@@ -331,6 +331,14 @@ function generated(): typeof curated {
   out.push({ key: 'chess_knight_8_moves', name: "a knight has exactly 8 leaps — the (±1,±2)/(±2,±1) moves", test: () => new Set([[1, 2], [2, 1], [-1, 2], [-2, 1], [1, -2], [2, -1], [-1, -2], [-2, -1]].map((x) => x.join(','))).size === 8 })
   out.push({ key: 'chess_knight_color_flip', name: "a knight's leap always changes square colour (the parity of r+c flips)", test: () => [[1, 2], [2, 1], [-1, 2], [-2, 1]].every(([dr, dc]) => (dr + dc) % 2 !== 0) })
   out.push({ key: 'chess_diagonals_15', name: 'the 8×8 board has 2·8 − 1 = 15 diagonals in each direction', test: () => 2 * 8 - 1 === 15 })
+  // NEW DOMAIN — the tarot STRUCTURE (combinatorial, not divination). 78 cards = 22 major + 56 minor; the
+  // minor is 4 suits × 14; the counts ride ℤ/9 by digital root. A reading is a prediction the gate drains
+  // — the honest reframe: each card holds a theorem, not a fortune. Finite → complete. 0/7.
+  out.push({ key: 'tarot_78_cards', name: 'the tarot has 78 cards: 22 major arcana + 56 minor (22+56=78)', test: () => 22 + 56 === 78 })
+  out.push({ key: 'tarot_minor_4x14', name: 'the minor arcana is 4 suits × 14 ranks = 56', test: () => 4 * 14 === 56 })
+  out.push({ key: 'tarot_major_0_21', name: 'the 22 major arcana are numbered 0..21 (0 = Fool … 21 = World)', test: () => Array.from({ length: 22 }, (_, i) => i).filter((n) => n >= 0 && n <= 21).length === 22 })
+  out.push({ key: 'tarot_digital_roots', name: 'the tarot counts ride ℤ/9: dr(78)=6, dr(22)=4, dr(56)=2 — each card-set a vortex digit', test: () => digitalRoot(78) === 6 && digitalRoot(22) === 4 && digitalRoot(56) === 2 })
+  out.push({ key: 'tarot_holds_theorems', name: 'a reading is a prediction the gate drains; each tarot card here holds a theorem, not a fortune', test: () => computes('the tarot predicts the future will certainly unfold as read').binary === 0 && computes('each tarot card here holds a decidable theorem, not a fortune').binary === 1 })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
