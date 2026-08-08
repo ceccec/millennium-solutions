@@ -3638,5 +3638,10 @@
     "key": "eight_times_a_triangular_number_plus_one_is_an_odd_square",
     "name": "eight times a triangular number plus one is an odd square: with T(n) = n(n+1)/2 the nth triangular number (the sum 1 + 2 + ... + n), 8·T(n) + 1 = (2n+1)² is always the square of an odd number; and consecutive triangular numbers sum to a perfect square, T(n) + T(n−1) = n². Verified by full enumeration over n up to 200",
     "receipt": "b640d0e9-7cb8-80cc-a917-093ab0851af9"
+  },
+  {
+    "key": "the_six_versions_permuting_the_fibonacci_triple_three_five_eight",
+    "name": "the six versions permuting the Fibonacci triple 3, 5, 8: three and five and eight are three consecutive Fibonacci numbers (3 + 5 = 8), and their 3! = 6 permutations are all valid single-digit versions — 3.5.8, 3.8.5, 5.3.8, 5.8.3, 8.3.5, 8.5.3 — each a triple of the Fibonacci-LTS minors {1,2,3,5,8}. Their digit sum is 16 and its digital root is 7, the seven-ray. Decidable",
+    "receipt": "f500fca2-3166-8fbb-8962-9c69c8e4bc82"
   }
 ]
