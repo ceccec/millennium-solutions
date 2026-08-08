@@ -3458,5 +3458,10 @@
     "key": "types_are_theorems_curry_howard",
     "name": "types are theorems (Curry–Howard): a type is a proposition and a well-typed program is its proof — the identity function proves A → A, the constant proves A → (B → A), and composition proves transitivity (from A → B and B → C, A → C), while the empty type has no inhabitant, the unprovable false. So the type-check is a machine-checked proof, now a release gate: an easy gate hard to crack, because a proof cannot be faked. Decidable",
     "receipt": "93fd0183-0f63-863c-8eb7-40e9e93dfe2a"
+  },
+  {
+    "key": "a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony",
+    "name": "a theorem without a formula is a hallucination, recomputed in a432 harmony: a claim is a theorem only if it is backed by a computable formula that recomputes true — a prose-only claim with no formula, or one whose formula computes false, is refused as hallucination and never recorded. Every recorded fact recomputes deterministically and folds into the a432 harmony root (the receipt of state). Measure, do not assert. Decidable",
+    "receipt": "e3d75d76-310f-8b0c-9f62-6e2e6c226e36"
   }
 ]
