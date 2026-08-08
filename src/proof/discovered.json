@@ -743,5 +743,20 @@
     "key": "mediant_between",
     "name": "the mediant (a+c)/(b+d) lies strictly between a/b and c/d (Farey F_6)",
     "receipt": "b1919795-2272-8d24-81b3-9736ab80d085"
+  },
+  {
+    "key": "fib_trinity_358",
+    "name": "3, 5, 8 are consecutive Fibonacci: 3 + 5 = 8",
+    "receipt": "d628c034-b0b3-88fc-8e94-b51b210b2fbb"
+  },
+  {
+    "key": "fib_trinity_horizon",
+    "name": "the 3-5-8 trinity digital-roots to the horizon: dr(3+5+8) = dr(16) = 7",
+    "receipt": "cc1d4a9c-b31c-8f4b-bf47-4f9fb8f0d1d8"
+  },
+  {
+    "key": "quarter_turn_order4",
+    "name": "90° rotation (×i) has order 4: shift by 90° four times and it returns (i⁴ = 1)",
+    "receipt": "02f0a928-7bda-8d5b-889d-54b539ed1615"
   }
 ]

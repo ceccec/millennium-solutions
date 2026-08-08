@@ -188,6 +188,13 @@ function generated(): typeof curated {
   const farey = (n: number) => { const fs: number[][] = []; for (let b = 1; b <= n; b++) for (let a = 0; a <= b; a++) if (gcd(a, b) === 1) fs.push([a, b]); return fs.sort((x, y) => x[0] / x[1] - y[0] / y[1]) }
   for (const n of [4, 5, 6]) out.push({ key: 'farey_neighbor_F' + n, name: 'Farey F_' + n + ': consecutive a/b, c/d satisfy bc − ad = 1', test: () => { const f = farey(n); for (let i = 0; i + 1 < f.length; i++) { const [a, b] = f[i], [c, d] = f[i + 1]; if (b * c - a * d !== 1) return false } return true } })
   out.push({ key: 'mediant_between', name: 'the mediant (a+c)/(b+d) lies strictly between a/b and c/d (Farey F_6)', test: () => { const f = farey(6); for (let i = 0; i + 1 < f.length; i++) { const [a, b] = f[i], [c, d] = f[i + 1]; const m = (a + c) / (b + d); if (!(a / b < m && m < c / d)) return false } return true } })
+  // NEW DOMAIN — the 3-5-8 Fibonacci trinity and the 90° quarter-turn. 3,5,8 are consecutive Fibonacci
+  // (3+5=8); their sum's digital root is 7 — the v3.5.8 horizon, the 7/7 that is never reached. A 90°
+  // rotation (×i) has order 4: shift by 90° four times and it returns. Arithmetic; the "creates" is
+  // framing, not derivation. Finite → complete.
+  out.push({ key: 'fib_trinity_358', name: '3, 5, 8 are consecutive Fibonacci: 3 + 5 = 8', test: () => fib2(4) === 3 && fib2(5) === 5 && fib2(6) === 8 && 3 + 5 === 8 })
+  out.push({ key: 'fib_trinity_horizon', name: 'the 3-5-8 trinity digital-roots to the horizon: dr(3+5+8) = dr(16) = 7', test: () => digitalRoot(3 + 5 + 8) === 7 })
+  out.push({ key: 'quarter_turn_order4', name: '90° rotation (×i) has order 4: shift by 90° four times and it returns (i⁴ = 1)', test: () => { let z = [1, 0]; const rot = (w: number[]) => [-w[1], w[0]]; for (let k = 0; k < 4; k++) z = rot(z); return z[0] === 1 && z[1] === 0 } })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
