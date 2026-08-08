@@ -3478,5 +3478,10 @@
     "key": "reflection_swaps_444_and_666_while_6x7_and_7x6_are_one_state_among_all",
     "name": "reflection swaps 444 and 666 while 6×7 and 7×6 are one state among all: the digit reflection 10−d swaps 666 and 444 and is an involution (reflect twice returns the number), with digital roots dr(444) = 3 and dr(666) = 9; the products 6×7 = 7×6 = 42 agree as scalars, yet the ordered arrangements \"6x7\"/\"7x6\" and the ordered pairs [444,666]/[666,444] content-address distinctly while folding order-independently to one root. Each ordered arrangement is one state among all the fold holds at once. Decidable",
     "receipt": "e25bde8c-a288-8c3c-8f8a-cfaadcac51d1"
+  },
+  {
+    "key": "local_knowledge_found_with_its_receipt_signs_the_next",
+    "name": "local knowledge found with its receipt signs the next: local knowledge is retrieved by content-address in one deterministic O(1) lookup, returning the fact together with its receipt; the moment it is found, that receipt seeds the next signature — the chain builds each receipt as toUuid(previous receipt → new key) — so finding is immediately usable to sign. A fact without a receipt seeds nothing; knowledge must arrive with its receipt. Decidable",
+    "receipt": "951aecf2-0b3b-8445-a13f-06f7b1d160ca"
   }
 ]
