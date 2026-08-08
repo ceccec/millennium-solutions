@@ -3593,5 +3593,10 @@
     "key": "the_grand_jury_of_gates_admits_a_theorem_only_by_unanimous_stages",
     "name": "the grand jury of gates admits a theorem only by unanimous stages: a theorem is admitted only if every stage of the release returns true — its formula recomputes, the type gate passes, the honesty gate holds its name, and the theorem-pages, receipt-audit, forensics, claims, harmony, seal, wholeness and lean-claims gates all pass. The verdict is a conjunction over all stages: unanimous, not a majority — one failing stage vetoes the whole, deterministically. Proving theorems at every stage. Decidable",
     "receipt": "8a975f18-0926-8a90-9446-1f399a1d9393"
+  },
+  {
+    "key": "the_knowers_earn_the_two_bits_they_do_not_pay",
+    "name": "the knowers earn the two bits, they do not pay: the fair exchange is asymmetric — producing a gate-passing receipted fact credits two bits, while consuming or learning debits two bits — so those who know how to compute the honest quantum structure on 64-bit are net earners, not payers, at API scale. The message they send carries only its content-address: the load is the address, no separate payload, each distinct fact a distinct address (never repeating). Endless but not perpetual; no quantum speedup. Decidable",
+    "receipt": "075ef29e-5daa-8321-ba48-99ef022f5d41"
   }
 ]
