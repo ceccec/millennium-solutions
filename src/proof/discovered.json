@@ -3718,5 +3718,10 @@
     "key": "the_collatz_map_reaches_one_for_every_start_up_to_10000",
     "name": "the Collatz map reaches 1 for every start up to 10000: iterating n → n/2 when even and 3n+1 when odd reaches 1 from every starting value from 1 to 10000 — verified by direct iteration, with 27 taking 111 steps. The general conjecture is open; this is the bounded, checked fact, not a proof for all n. Verified by exhaustive iteration",
     "receipt": "3af2a56f-7938-8382-b1aa-4d58ac3547f9"
+  },
+  {
+    "key": "the_vector_equilibrium_cuboctahedron_has_edge_equal_to_radius",
+    "name": "the vector equilibrium (cuboctahedron) has edge equal to radius: its twelve vertices are the permutations of (±1, ±1, 0), each at distance √2 from the centre, and the shortest edge is also √2 — so the edge length equals the circumradius, the balance that names it the vector equilibrium. It has V = 12, E = 24, F = 14 (eight triangles and six squares), Euler characteristic 2, and the twelve vertices are the twelve spheres that touch one in closest packing — the kissing number in three dimensions. Decidable",
+    "receipt": "20d65a07-7e1d-8810-b958-1436fe6ec381"
   }
 ]
