@@ -3803,5 +3803,10 @@
     "key": "sealed_statements_are_open_harmonic_monographs_not_cryptographic_private_messages",
     "name": "sealed statements are open harmonic monographs, not cryptographic private messages: a sealed statement is a monograph with a public content-address that anyone can reproduce — there is no key and no secrecy, so it is not cryptographic and not a private message; the address proves integrity in the open, it does not hide the statement. Open harmonic monographs, publicly addressed. Integrity, not encryption. Decidable",
     "receipt": "ae500912-1812-8d15-9dde-1129454286e3"
+  },
+  {
+    "key": "the_content_address_uses_a_non_cryptographic_hash_integrity_not_secrecy",
+    "name": "the content-address uses a non-cryptographic hash — integrity, not secrecy: toUuid is built on FNV-1a, a documented non-cryptographic hash (fast, not collision- or preimage-resistant), so it gives content-addressing and integrity — a concept shared with cryptography like git and Merkle trees — but it is not cryptographically secure and not encryption. It is public and reproducible, with no key and no secrecy. Checked against the code, not asserted. Decidable",
+    "receipt": "f22ea7fe-be8e-85f8-a2e3-7539156490cf"
   }
 ]
