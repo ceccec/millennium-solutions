@@ -1063,5 +1063,15 @@
     "key": "discovery_chain",
     "name": "the discovery chain is tamper-evident: a falsified early link changes every downstream receipt",
     "receipt": "b24d6d56-123d-8317-bb73-c0995feee8ae"
+  },
+  {
+    "key": "partition_p_n",
+    "name": "the partition function p(n) via DP: p(5)=7, p(7)=15, p(10)=42",
+    "receipt": "d90db9a6-f922-8067-8580-0f4201ad122a"
+  },
+  {
+    "key": "bell_numbers",
+    "name": "the Bell numbers via the Bell triangle: B(3)=5, B(4)=15, B(5)=52",
+    "receipt": "fb027062-15fd-85f6-9f0d-a7871be4dbc3"
   }
 ]

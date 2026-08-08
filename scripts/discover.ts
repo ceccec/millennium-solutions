@@ -318,6 +318,9 @@ function generated(): typeof curated {
   out.push({ key: 'nowaste_dedup', name: 'identical content deduplicates to one address — no duplicate storage, no recompute', test: () => new Set(['job', 'job', 'job'].map((x) => toUuid(x))).size === 1 })
   out.push({ key: 'nowaste_order_independent', name: 'a set and any reordering fold to one root — no duplicate root for the same content', test: () => merkleFold(['a', 'b', 'c']) === merkleFold(['c', 'b', 'a']) })
   out.push({ key: 'nowaste_memo_recycles', name: 'memoization recycles: keyed by content, a computation runs once and is reused thereafter', test: () => { const cache = new Map<string, number>(); let runs = 0; const f = (k: string) => cache.has(k) ? cache.get(k)! : (runs++, cache.set(k, 42), 42); f('r'); f('r'); f('r'); return runs === 1 } })
+  // partition & Bell numbers — bounded recurrences, complete per n.
+  out.push({ key: 'partition_p_n', name: 'the partition function p(n) via DP: p(5)=7, p(7)=15, p(10)=42', test: () => { const p = (n: number) => { const dp = new Array(n + 1).fill(0); dp[0] = 1; for (let k = 1; k <= n; k++) for (let j = k; j <= n; j++) dp[j] += dp[j - k]; return dp[n] }; return p(5) === 7 && p(7) === 15 && p(10) === 42 } })
+  out.push({ key: 'bell_numbers', name: 'the Bell numbers via the Bell triangle: B(3)=5, B(4)=15, B(5)=52', test: () => { const bell = (n: number) => { let row = [1]; for (let i = 1; i <= n; i++) { const next = [row[row.length - 1]]; for (const x of row) next.push(next[next.length - 1] + x); row = next } return row[0] }; return bell(3) === 5 && bell(4) === 15 && bell(5) === 52 } })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
