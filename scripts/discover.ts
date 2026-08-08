@@ -43,6 +43,14 @@ function generated(): typeof curated {
   // which exponents annihilate every unit to 1 — holds iff the group order (φ(9)=6) divides k.
   const modpow = (b: number, e: number, m: number) => { let r = 1, x = ((b % m) + m) % m; while (e > 0) { if (e & 1) r = (r * x) % m; x = (x * x) % m; e >>= 1 } return r }
   for (let k = 1; k <= 2 * BASE; k++) out.push({ key: 'unit_exp_id_k' + k, name: 'every unit u^' + k + ' ≡ 1 mod ' + BASE, test: () => U.every((u) => modpow(u, k, BASE) === 1) })
+  // quadratic residues among the units — some units are squares mod BASE, some are not.
+  for (const u of U) out.push({ key: 'qr_u' + u, name: u + ' is a quadratic residue mod ' + BASE, test: () => U.some((v) => m9(v * v) === u) })
+  // additive generators — k generates ℤ/BASE under repeated +k iff gcd(k,BASE)=1.
+  for (let k = 2; k < BASE; k++) out.push({ key: 'addgen_k' + k, name: k + ' additively generates ℤ/' + BASE, test: () => { const seen = new Set<number>(); let x = 0; for (let i = 0; i < BASE; i++) { seen.add(x); x = m9(x + k) } return seen.size === BASE } })
+  // sum of the k-th powers of the units ≡ 0 mod BASE — holds for some exponents, not others.
+  for (let k = 1; k <= 2 * BASE; k++) out.push({ key: 'powsum0_k' + k, name: 'Σ (unit)^' + k + ' ≡ 0 mod ' + BASE, test: () => m9(U.reduce((s, u) => s + modpow(u, k, BASE), 0)) === 0 })
+  // u↦u^k is an involution on the units ((u^k)^k = u) — holds iff k² ≡ 1 in the group order.
+  for (let k = 2; k <= BASE; k++) out.push({ key: 'powinv_k' + k, name: 'u↦u^' + k + ' is an involution on the units mod ' + BASE, test: () => U.every((u) => modpow(u, k * k, BASE) === u) })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

@@ -108,5 +108,100 @@
     "key": "unit_exp_id_k18",
     "name": "every unit u^18 ≡ 1 mod 9",
     "receipt": "2b186dab-e777-8313-84ac-d1468232dc04"
+  },
+  {
+    "key": "qr_u1",
+    "name": "1 is a quadratic residue mod 9",
+    "receipt": "14d5f9ba-f63d-8abe-b1a3-0bd857fbab0c"
+  },
+  {
+    "key": "qr_u4",
+    "name": "4 is a quadratic residue mod 9",
+    "receipt": "b7c96faf-18b7-8740-a24a-00aa5ef259a1"
+  },
+  {
+    "key": "qr_u7",
+    "name": "7 is a quadratic residue mod 9",
+    "receipt": "2a422f9b-761a-8144-9234-6fc6349673bb"
+  },
+  {
+    "key": "addgen_k2",
+    "name": "2 additively generates ℤ/9",
+    "receipt": "0bbffa4b-6e1a-8b0e-b518-764caaf7b590"
+  },
+  {
+    "key": "addgen_k4",
+    "name": "4 additively generates ℤ/9",
+    "receipt": "4c1d450d-3580-8c81-819b-a0f72a0d9680"
+  },
+  {
+    "key": "addgen_k5",
+    "name": "5 additively generates ℤ/9",
+    "receipt": "e5666f9f-43d1-8f3c-b40e-331d179b89d9"
+  },
+  {
+    "key": "addgen_k7",
+    "name": "7 additively generates ℤ/9",
+    "receipt": "fda50fef-6d27-895e-b874-bb8fd33604d4"
+  },
+  {
+    "key": "addgen_k8",
+    "name": "8 additively generates ℤ/9",
+    "receipt": "c66fca78-c926-8aed-ba19-9831349a60ad"
+  },
+  {
+    "key": "powsum0_k1",
+    "name": "Σ (unit)^1 ≡ 0 mod 9",
+    "receipt": "b4fee774-cdff-88b2-9483-77ccfbd56cef"
+  },
+  {
+    "key": "powsum0_k3",
+    "name": "Σ (unit)^3 ≡ 0 mod 9",
+    "receipt": "fbfb7f9d-51de-8606-9f26-75a81cc137dc"
+  },
+  {
+    "key": "powsum0_k5",
+    "name": "Σ (unit)^5 ≡ 0 mod 9",
+    "receipt": "39495fe4-d242-880b-b683-b385de5a6e77"
+  },
+  {
+    "key": "powsum0_k7",
+    "name": "Σ (unit)^7 ≡ 0 mod 9",
+    "receipt": "cdbccdf3-368a-86a9-85d6-ff3d927b967d"
+  },
+  {
+    "key": "powsum0_k9",
+    "name": "Σ (unit)^9 ≡ 0 mod 9",
+    "receipt": "67ed08eb-2153-8c5d-be6b-93acccf13188"
+  },
+  {
+    "key": "powsum0_k11",
+    "name": "Σ (unit)^11 ≡ 0 mod 9",
+    "receipt": "7ff93c21-5564-8385-a5dd-6d6c9d509b5f"
+  },
+  {
+    "key": "powsum0_k13",
+    "name": "Σ (unit)^13 ≡ 0 mod 9",
+    "receipt": "817aa55d-813f-8b70-8107-525998403f27"
+  },
+  {
+    "key": "powsum0_k15",
+    "name": "Σ (unit)^15 ≡ 0 mod 9",
+    "receipt": "df354f89-1c7d-88e5-8c70-c827dc7819a5"
+  },
+  {
+    "key": "powsum0_k17",
+    "name": "Σ (unit)^17 ≡ 0 mod 9",
+    "receipt": "fecb2108-39df-8291-9781-b5a2c2139867"
+  },
+  {
+    "key": "powinv_k5",
+    "name": "u↦u^5 is an involution on the units mod 9",
+    "receipt": "8e327990-c88f-89ef-9b35-76d48c067435"
+  },
+  {
+    "key": "powinv_k7",
+    "name": "u↦u^7 is an involution on the units mod 9",
+    "receipt": "469cfad5-9293-8a62-a83b-49934c19c145"
   }
 ]
