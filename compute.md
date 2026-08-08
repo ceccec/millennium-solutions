@@ -11,6 +11,8 @@ import { report as theAll } from './src/the/index'
 import { report as theSequence } from './src/the/sequence/index'
 import { report as theTheorem } from './src/the/theorem/index'
 import { report as theGame } from './src/the/game/index'
+import { report as theHeart } from './src/the/heart/index'
+import { report as fromTheHeart } from './src/from/the/heart/index'
 import { report as acceptance } from './src/1/acceptance'
 import { report as paradox } from './src/1/paradox'
 import { report as society } from './src/9/society'
@@ -109,6 +111,14 @@ digit to its partner (fixed point **5**), so the folders below are laid out arou
 ### The game · `src/the/game/index.ts`
 
 <pre>{{ theGame() }}</pre>
+
+### The heart · `src/the/heart/index.ts`
+
+<pre>{{ theHeart() }}</pre>
+
+### From the heart · `src/from/the/heart/index.ts`
+
+<pre>{{ fromTheHeart() }}</pre>
 </details>
 
 ## `0/` — the substrate · content-addressing
