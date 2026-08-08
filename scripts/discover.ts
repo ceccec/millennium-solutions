@@ -673,6 +673,25 @@ function generated(): typeof curated {
     out.push({ key: 'kaprekar_repdigit_collapses_zero', name: 'Kaprekar: a repdigit collapses to 0 (sort-desc = sort-asc), the only escape from the routine — 111→0, 1111→0, 777→0', test: () => kap(111, 3) === 0 && kap(1111, 4) === 0 && kap(777, 3) === 0 })
     out.push({ key: 'kaprekar_constants_digitroot_nine', name: 'the Kaprekar constants bind to ℤ/9: dr(495) = dr(6174) = 9 = BASE — both fixed points sit on the base’s own digital root', test: () => digitalRoot(495) === BASE && digitalRoot(6174) === BASE })
   }
+  // ── a NEW decidable domain — the 3×3 magic square (Lo Shu), built from exactly the digits 1..9 (ℤ/9).
+  // Every fact is proven by FULL ENUMERATION of all 9! arrangements (Heap's algorithm, computed once).
+  // Ties to the framework: the center is 5 (the reflection fixed point), the constant 15 has dr 6.
+  {
+    const MAGIC: number[][] = (() => {
+      const a = [1, 2, 3, 4, 5, 6, 7, 8, 9], res: number[][] = []
+      const lines = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
+      const isMagic = (x: number[]) => lines.every((L) => x[L[0]] + x[L[1]] + x[L[2]] === 15)
+      const heap = (k: number) => { if (k === 1) { if (isMagic(a)) res.push([...a]); return } for (let i = 0; i < k; i++) { heap(k - 1); const j = k % 2 === 0 ? i : 0;[a[j], a[k - 1]] = [a[k - 1], a[j]] } }
+      heap(a.length)
+      return res
+    })()
+    out.push({ key: 'magic3_constant_15', name: 'the 3×3 magic square constant is 15 = (1+2+…+9)/3, and every magic arrangement’s rows sum to it — the digits 1..9 split three ways at the floor', test: () => { let s = 0; for (let i = 1; i <= 9; i++) s += i; return s / 3 === 15 && MAGIC.length > 0 && MAGIC.every((sq) => sq[0] + sq[1] + sq[2] === 15) } })
+    out.push({ key: 'magic3_count_is_8', name: 'there are exactly 8 magic squares of order 3 (Lo Shu and its dihedral symmetries) — full enumeration of all 9! arrangements yields 8', test: () => MAGIC.length === 8 })
+    out.push({ key: 'magic3_center_is_5', name: 'the center of every 3×3 magic square is 5 — the midpoint of 1..9 and the fixed point of the ten’s-complement reflection', test: () => MAGIC.length === 8 && MAGIC.every((sq) => sq[4] === 5) })
+    out.push({ key: 'magic3_corners_even_edges_odd', name: 'in every 3×3 magic square the corners are the evens {2,4,6,8} and the edges the odds {1,3,7,9}, around the center 5 — parity is forced by the constraints', test: () => MAGIC.every((sq) => [sq[0], sq[2], sq[6], sq[8]].every((c) => c % 2 === 0) && [sq[1], sq[3], sq[5], sq[7]].every((e) => e % 2 === 1)) })
+    out.push({ key: 'magic3_opposite_cells_sum_10', name: 'in every 3×3 magic square cells opposite through the center sum to 10 = 2·5 — the balancing complement (each cell and its mirror average to the center)', test: () => MAGIC.every((sq) => [[0, 8], [2, 6], [1, 7], [3, 5]].every(([i, j]) => sq[i] + sq[j] === 10)) })
+    out.push({ key: 'magic3_constant_digitroot_6', name: 'the magic constant binds to ℤ/9: dr(15) = 6 — the constant sits on a triad digit, and 15 = 3·5 (the axis 3 times the center)', test: () => digitalRoot(15) === 6 && 15 === 3 * 5 && MAGIC.length === 8 })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

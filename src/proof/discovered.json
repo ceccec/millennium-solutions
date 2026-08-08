@@ -2073,5 +2073,35 @@
     "key": "kaprekar_constants_digitroot_nine",
     "name": "the Kaprekar constants bind to ℤ/9: dr(495) = dr(6174) = 9 = BASE — both fixed points sit on the base’s own digital root",
     "receipt": "cacade9e-3882-855d-8c3a-517f4f13a957"
+  },
+  {
+    "key": "magic3_constant_15",
+    "name": "the 3×3 magic square constant is 15 = (1+2+…+9)/3, and every magic arrangement’s rows sum to it — the digits 1..9 split three ways at the floor",
+    "receipt": "aae70a2b-a007-82d8-b606-b711e7efd63f"
+  },
+  {
+    "key": "magic3_count_is_8",
+    "name": "there are exactly 8 magic squares of order 3 (Lo Shu and its dihedral symmetries) — full enumeration of all 9! arrangements yields 8",
+    "receipt": "32b64f76-3ce4-8e43-be25-95b70acf2554"
+  },
+  {
+    "key": "magic3_center_is_5",
+    "name": "the center of every 3×3 magic square is 5 — the midpoint of 1..9 and the fixed point of the ten’s-complement reflection",
+    "receipt": "188b78b7-199c-8b50-89b6-e44adf956757"
+  },
+  {
+    "key": "magic3_corners_even_edges_odd",
+    "name": "in every 3×3 magic square the corners are the evens {2,4,6,8} and the edges the odds {1,3,7,9}, around the center 5 — parity is forced by the constraints",
+    "receipt": "80f537f2-862e-89f9-b743-379484b9abe4"
+  },
+  {
+    "key": "magic3_opposite_cells_sum_10",
+    "name": "in every 3×3 magic square cells opposite through the center sum to 10 = 2·5 — the balancing complement (each cell and its mirror average to the center)",
+    "receipt": "c527c7e0-2820-84b4-8d05-d5b35be75419"
+  },
+  {
+    "key": "magic3_constant_digitroot_6",
+    "name": "the magic constant binds to ℤ/9: dr(15) = 6 — the constant sits on a triad digit, and 15 = 3·5 (the axis 3 times the center)",
+    "receipt": "673cb9e4-1b3c-8e17-a95c-003edc1eaf4d"
   }
 ]
