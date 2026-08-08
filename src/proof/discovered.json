@@ -3228,5 +3228,10 @@
     "key": "the_units_of_z9_form_three_additive_inverse_pairs_summing_to_nine",
     "name": "the six units of ℤ/9 form three additive-inverse pairs summing to nine: (ℤ/9)* = {1,2,4,5,7,8} splits into {1,8},{2,7},{4,5}, each pair {d, 9−d} summing to 9 ≡ 0 mod 9, so the whole group sums to 27 ≡ 0; multiplication by 8 ≡ −1 sends every unit to its additive inverse, swapping the pairs. Decidable by exhaustion over ℤ/9",
     "receipt": "7f57b768-13b6-86be-9823-970433a33378"
+  },
+  {
+    "key": "three_is_a_primitive_root_mod_seven_and_the_rosette_is_six_plus_one",
+    "name": "three is a primitive root mod 7 and the rosette is six plus one: the powers of 3 mod 7 cycle 3,2,6,4,5,1 with order 6, generating the full unit group (ℤ/7)* = {1,2,3,4,5,6}; so 7 decomposes as 6 units + 1 (the class of 0) — the seven-ray \"6+1\" structure — and the units pair by additive inverse {1,6},{2,5},{3,4}, each summing to 7. Decidable by exhaustion over ℤ/7",
+    "receipt": "15050d64-20c7-893b-bf21-9cd15fe5d6fa"
   }
 ]
