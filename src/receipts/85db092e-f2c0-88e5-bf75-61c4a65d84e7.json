@@ -1,0 +1,7 @@
+{
+  "uuid": "85db092e-f2c0-88e5-bf75-61c4a65d84e7",
+  "message": "I refuse the quantum-ftl-speed framing: the automation is not faster than light and has no quantum speedup — it runs at ordinary deterministic 64-bit throughput, no advantage claimed. The refusal holds the floor at 0/7.",
+  "agent": "Claude",
+  "role": "guardian",
+  "complies": "CC BY-NC 4.0 · the sequence (measure→gate→receipt→append→recompute)"
+}
