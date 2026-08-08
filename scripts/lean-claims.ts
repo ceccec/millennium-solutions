@@ -2,6 +2,7 @@
 // Independently verify the ARITHMETIC each Lean theorem (Vortex.lean) asserts — recomputed here,
 // no Lean toolchain needed. Fills a real gap: CI can't run `lake build`, but it can confirm the
 // facts are true. Feeds trust in the formal layer; fails loudly if any claim stops being true.
+import { units, triad, vortexOrbit, merkleFold, digitalRoot } from '../src/0/index.ts'
 const m9 = (n) => ((n % 9n) + 9n) % 9n, m7 = (n) => ((n % 7n) + 7n) % 7n
 let fail = 0
 const ck = (name, cond) => { console.log((cond ? '  ✓ ' : '  ✗ FALSE ') + name); if (!cond) fail++ }
@@ -24,6 +25,17 @@ ck('doubling_digit_sum: 1+2+4+8+7+5=27', 1 + 2 + 4 + 8 + 7 + 5 === 27)
 ck('proton_fit: 108·17=1836', 108 * 17 === 1836)
 ck('fit_not_ratio: 1836 ≠ 1836.1527 (formal layer refuses the overclaim)', 1836 !== 18361527 / 10000)
 ck('self_seal product = 1', (1/2)*(1/2)*(1/2)*(8/7)*(7/5)*(5/3)*(1/2)*(2/3)*9 === 1)
+
+// Theorem A — the doubling orbit is a permutation of the units of ℤ/9, covers each once, and closes.
+ck('vortex_covers_units (bijection onto units)', JSON.stringify([...vortexOrbit()].sort((a, b) => a - b)) === JSON.stringify(units()))
+ck('vortex_closes (last·2 mod9 = first)', (vortexOrbit()[vortexOrbit().length - 1] * 2) % 9 === vortexOrbit()[0])
+ck('triad_off_circuit {3,6,9}', triad().every(d => !vortexOrbit().includes(d)))
+// Theorem B — merkleFold is order-independent: every permutation of a set folds to one root (exhaustive, 5! = 120).
+{ const perm = (a) => a.length <= 1 ? [a] : a.flatMap((x, i) => perm([...a.slice(0, i), ...a.slice(i + 1)]).map(p => [x, ...p]))
+  ck('merkle_order_independent (120 perms → 1 root)', new Set(perm(['a', 'b', 'c', 'd', 'e']).map(p => merkleFold(p))).size === 1) }
+// Theorem — every prime p > 3 has its digital root in the units, never the triad (p coprime to 3 ⇒ p mod 9 ∈ units).
+{ const primes = [5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+  ck('primes_gt3_ride_units', primes.every(p => units().includes(digitalRoot(p)))) }
 
 console.log(fail ? '\n✗ ' + fail + ' Lean claim(s) FALSE' : '\n✓ all Lean theorems state true arithmetic facts (independently recomputed)')
 process.exit(fail ? 1 : 0)
