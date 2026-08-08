@@ -23,5 +23,11 @@ const covered = new Set(mods.map(m => (m.match(/^src\/(\d)\//) || [])[1]).filter
 const missingDigits = ['0','1','2','3','4','5','6','7','8','9'].filter(d => !covered.has(d))
 console.log('digit coverage:', (10 - missingDigits.length) + '/10', missingDigits.length ? '— GAP: digit(s) ' + missingDigits.join(',') + ' empty' : '✓ all digits developed')
 gaps += missingDigits.length
+// (4) sidebar coverage — every navigable page must ALSO be in the persistent sidebar (every reference linked,
+// not just reachable from the nav dropdowns). This is the "ui is missing links" gap, now gated.
+const sidebarBlock = (cfg.split(/\bsidebar\s*:/)[1] || '').split(/\bfooter\s*:/)[0]
+const notInSidebar = rootMd.filter(f => { const s = '/' + f.replace(/\.md$/, ''); const a = f === 'index.md' ? '/' : s; return !sidebarBlock.includes("'" + s + "'") && !sidebarBlock.includes("'" + a + "'") })
+console.log('sidebar coverage:', (rootMd.length - notInSidebar.length) + '/' + rootMd.length, notInSidebar.length ? '— GAP (not in sidebar): ' + notInSidebar.join(', ') : '✓ every reference linked in the sidebar')
+gaps += notInSidebar.length
 console.log(gaps === 0 ? '\n✓ no gaps — harmony holds' : '\n✗ ' + gaps + ' gap(s)')
 process.exit(gaps === 0 ? 0 : 1)

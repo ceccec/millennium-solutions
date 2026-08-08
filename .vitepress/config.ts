@@ -155,6 +155,7 @@ export default defineConfig({
         text: 'Overview',
         items: [
           { text: 'Abstract', link: '/ABSTRACT' },
+          { text: 'The (concepts)', link: '/the' },
           { text: 'Theorems', link: '/THEOREMS' },
           { text: 'Challenges', link: '/CHALLENGES' },
           { text: 'Heart', link: '/HEART' },
@@ -172,6 +173,8 @@ export default defineConfig({
         text: 'Fused compute (TS)',
         items: [
           { text: 'Computed results', link: '/compute' },
+          { text: 'State dashboard', link: '/dashboard' },
+          { text: 'Boundaries', link: '/boundaries' },
           { text: 'Verify (live app)', link: '/verify' },
         ],
       },

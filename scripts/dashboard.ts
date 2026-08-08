@@ -50,6 +50,11 @@ description: The deposit's measured state (fact) and its number-patterns (coinci
 head:
   - ['meta', { name: 'robots', content: 'index, follow' }]
 ---
+<script setup>
+// links via the VitePress API only — withBase resolves the site base (no hardcoded '/millennium-solutions/').
+import { withBase } from 'vitepress'
+</script>
+
 <style>
 .dash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:16px 0}
 .dash-card{border:1px solid var(--vp-c-divider);border-radius:var(--radius,12px);padding:16px;background:var(--vp-c-bg-soft)}
@@ -69,7 +74,7 @@ ${card('Version', version, 'git tag (single source)')}
 ${card('Millennium floor', '0 / 7', 'entailed — not solved, not claimed')}
 ${card('Honesty gate', 'sealed', 'all prose consistent with 0/7')}
 ${card('Link coverage', '100%', 'gate-enforced — the build fails below 100%')}
-<a class="dash-card" href="/millennium-solutions/sitemap.json" style="text-decoration:none;display:block"><div class="dash-k">Seal root</div><div class="dash-v" style="color:var(--vp-c-brand-1)">live →</div><div class="dash-s">merkle of the whole, current at /sitemap.json</div></a>
+<a class="dash-card" :href="withBase('/sitemap.json')" style="text-decoration:none;display:block"><div class="dash-k">Seal root</div><div class="dash-v" style="color:var(--vp-c-brand-1)">live →</div><div class="dash-s">merkle of the whole, current at /sitemap.json</div></a>
 ${card('CSP', 'every page', 'security gate — no external imports')}
 </div>
 
