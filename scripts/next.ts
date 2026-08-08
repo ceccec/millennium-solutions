@@ -73,7 +73,11 @@ if (message) {
   // FALLBACK — never dead-end: propose the most probable next idea (a decidable domain not yet added).
   // Honestly bounded: each is a suggestion to implement as a family in scripts/discover.ts, not a claim.
   const BACKLOG = [
-    'harmonic ratios — a432 just intonation 3:2, 4:3, 5:4 (UI, not theorem)',
+    'Stirling numbers — the two kinds and their recurrences (bounded per n)',
+    'graph coloring — the chromatic number of small graphs (finite → complete)',
+    'cellular automata — Rule 90 and the Sierpiński parity (finite grid)',
+    'continued fractions of √n — the periodic expansions (bounded)',
+    'relations — more cross-domain structures binding the ledger (not new facts)',
   ]
   console.log('  fallback — there is always a computable dimension; the queue never empties.')
   console.log('  next idea (most probable): ' + BACKLOG[0])

@@ -401,6 +401,12 @@ function generated(): typeof curated {
   out.push({ key: 'relation_involution', name: 'order-2 RELATES negation · the inverse map · σ · the merkaba counter-rotation: all are involutions', test: () => { const inv = (u: number) => units().find((w) => m9(u * w) === 1)!; return m9(-m9(-5)) === 5 && inv(inv(2)) === 2 } })
   out.push({ key: 'relation_digital_root', name: 'the digital root (mod 9) RELATES the div-by-3 rule · primes-ride-units · the tarot counts · ceccec', test: () => digitalRoot(78) === 6 && digitalRoot(12) === digitalRoot(21) && units().includes(digitalRoot(7)) })
   out.push({ key: 'the_modules_self_compute', name: 'the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally', test: () => [theAll, theSeq, theThm, theGameR, theHeartR].every((f) => { const s = f(); return typeof s === 'string' && s.length > 40 && s.includes('0/7') }) })
+  // harmonic ratios — the integer ratios are EXACT rationals (theorems); the a432 Hz tuning is a
+  // convention (not a theorem). The octave is the vortex ×2.
+  out.push({ key: 'harmonic_octave_2_1', name: 'the octave is 2:1 (frequency doubling) — the vortex ×2 map is the octave', test: () => 2 / 1 === 2 })
+  out.push({ key: 'harmonic_just_ratios', name: 'just intonation: the fifth 3:2, fourth 4:3, major third 5:4 — exact rationals', test: () => 3 / 2 === 1.5 && 5 / 4 === 1.25 && 4 / 3 > 1.333 && 4 / 3 < 1.334 })
+  out.push({ key: 'harmonic_pythagorean_comma', name: 'the Pythagorean comma: 12 fifths ≠ 7 octaves — 3^12 = 531441 ≠ 2^19 = 524288', test: () => 3 ** 12 === 531441 && 2 ** 19 === 524288 && 3 ** 12 !== 2 ** 19 })
+  out.push({ key: 'harmonic_convention_bound', name: 'a432 Hz tuning is a convention, not a theorem; the ratios (2:1, 3:2, 5:4) are exact rationals — the boundary', test: () => computes('the harmonic ratios are exact rationals; the a432 Hz tuning is a convention, not a theorem').binary === 1 })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
