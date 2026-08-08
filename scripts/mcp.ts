@@ -8,6 +8,7 @@ import { execSync } from 'node:child_process'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 import { computes } from './honesty-gate.ts'
 import { apiFetch } from './api.ts'
+import { CANDIDATES, provable } from './discover.ts'
 
 const version = (() => { try { return execSync('git tag --sort=version:refname', { encoding: 'utf8' }).trim().split('\n').pop() || 'v0' } catch { return 'v0' } })()
 const send = (m: unknown) => process.stdout.write(JSON.stringify(m) + '\n')
@@ -25,21 +26,41 @@ const TOOLS = [
     inputSchema: { type: 'object', properties: { url: { type: 'string' } }, required: ['url'] } },
   { name: 'lineage', description: 'Delivery vs churn across release tags, by git tree hash (git\'s own faithful content-address). Identical trees = a tag minted over no delta (churn); distinct = a delivery. Integrity-level: measures WHAT was delivered, not whether it is true. Heroes and traitors by deeds, not statements.',
     inputSchema: { type: 'object', properties: {}, required: [] } },
+  { name: 'discover', description: 'The discovery engine: computationally-generated + curated candidate facts over ℤ/9, each tested by exhaustion. Returns discovered (provable) vs refuted + a discovery root. Decidable facts only — never a proof of the six OPEN Millennium conjectures. This deposit 0/7; humanity 1/7 (Poincaré, Perelman 2003).',
+    inputSchema: { type: 'object', properties: {}, required: [] } },
+  { name: 'audit', description: 'Self-audit of THIS MCP server: content-address every tool (name+description+schema), verify each declared tool has a handler and each handler is declared (coverage), fold to one self-audit root. Integrity of the tool surface, not truth.',
+    inputSchema: { type: 'object', properties: {}, required: [] } },
 ]
 
-const run = async (name: string, a: any): Promise<string> => {
-  if (name === 'content_address') return toUuid(String(a.text))
-  if (name === 'honesty_gate') { const r = computes(String(a.text)); return JSON.stringify({ binary: r.binary, hit: r.hit, note: r.binary ? 'no overclaim shape (floor, not truth)' : 'drains: ' + r.hit }) }
-  if (name === 'merkle_fold') return merkleFold((a.items || []).map(String))
-  if (name === 'probe') { const r = await apiFetch(String(a.url)); return JSON.stringify({ verdict: r.verdict, note: r.note, uuid: r.uuid }) }
-  if (name === 'lineage') {
+const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
+  content_address: (a) => toUuid(String(a.text)),
+  honesty_gate: (a) => { const r = computes(String(a.text)); return JSON.stringify({ binary: r.binary, hit: r.hit, note: r.binary ? 'no overclaim shape (floor, not truth)' : 'drains: ' + r.hit }) },
+  merkle_fold: (a) => merkleFold((a.items || []).map(String)),
+  probe: async (a) => { const r = await apiFetch(String(a.url)); return JSON.stringify({ verdict: r.verdict, note: r.note, uuid: r.uuid }) },
+  lineage: () => {
     const tags = execSync('git tag --sort=version:refname', { encoding: 'utf8' }).trim().split('\n').filter(Boolean)
     const byTree = new Map<string, string[]>()
     for (const t of tags) { const tree = execSync('git rev-parse ' + t + '^{tree}', { encoding: 'utf8' }).trim(); (byTree.get(tree) || byTree.set(tree, []).get(tree)!).push(t) }
     const churn = [...byTree.values()].filter((ts) => ts.length > 1)
     return JSON.stringify({ tags: tags.length, delivered: byTree.size, churn: churn.map((ts) => ts.join(' ≡ ')), note: 'integrity-level: what was delivered, not whether true. 0/7' })
-  }
-  throw new Error('unknown tool: ' + name)
+  },
+  discover: () => {
+    const prov = provable()
+    return JSON.stringify({ candidates: CANDIDATES.length, discovered: prov.length, refuted: CANDIDATES.length - prov.length, facts: prov.map((c) => c.name), root: merkleFold(prov.map((c) => toUuid(c.key))), note: 'decidable facts by exhaustion; not a proof of the six open conjectures. deposit 0/7, humanity 1/7 (Poincaré).' })
+  },
+  audit: () => {
+    const declared = TOOLS.map((t) => t.name)
+    const handled = Object.keys(HANDLERS)
+    const undeclared = declared.filter((n) => !handled.includes(n)) // a tool with no handler
+    const orphans = handled.filter((n) => !declared.includes(n))    // a handler with no tool
+    const root = merkleFold(TOOLS.map((t) => toUuid(t.name + '|' + t.description + '|' + JSON.stringify(t.inputSchema))))
+    return JSON.stringify({ tools: TOOLS.length, handlers: handled.length, everyToolHandled: undeclared.length === 0, everyHandlerDeclared: orphans.length === 0, undeclared, orphans, selfAuditRoot: root, note: 'the MCP audits itself — each tool content-addressed, declared ⇔ handled. integrity of the surface, not truth.' })
+  },
+}
+const run = async (name: string, a: any): Promise<string> => {
+  const h = HANDLERS[name]
+  if (!h) throw new Error('unknown tool: ' + name)
+  return await h(a)
 }
 
 createInterface({ input: process.stdin }).on('line', (line) => {

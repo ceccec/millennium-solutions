@@ -93,5 +93,20 @@
     "key": "mulperm_k8",
     "name": "d↦8·d permutes ℤ/9",
     "receipt": "4c6c0c31-87d2-8840-9758-c4ab7a75c3aa"
+  },
+  {
+    "key": "unit_exp_id_k6",
+    "name": "every unit u^6 ≡ 1 mod 9",
+    "receipt": "6401a9a1-a937-89c1-b6eb-e06c92a7ccb4"
+  },
+  {
+    "key": "unit_exp_id_k12",
+    "name": "every unit u^12 ≡ 1 mod 9",
+    "receipt": "17a9eeab-619a-885a-8edc-46531fb04042"
+  },
+  {
+    "key": "unit_exp_id_k18",
+    "name": "every unit u^18 ≡ 1 mod 9",
+    "receipt": "2b186dab-e777-8313-84ac-d1468232dc04"
   }
 ]
