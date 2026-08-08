@@ -2348,5 +2348,15 @@
     "key": "any_64bit_machine_suffices",
     "name": "any 64-bit machine does the job: the deposit computes with exact integer arithmetic — coin64 is a 64-bit value (16 hex), and every address recomputes identically (deterministic) — so any commodity classical 64-bit machine reproduces the results; no quantum, no special hardware is needed, which is the honest hardware design",
     "receipt": "31f2c89b-9b7a-8740-96cc-c60886838bd8"
+  },
+  {
+    "key": "drift_signals_disresonance",
+    "name": "drift signals disresonance: a resonant computation recomputes to the same content-address on every call (deterministic, no drift) — toUuid, coin64, and merkleFold return identical results repeatedly; any drift, a different result for the same input, would signal non-deterministic code to be found and removed",
+    "receipt": "fd1755ff-8ebd-8e84-9450-7441936e3ed7"
+  },
+  {
+    "key": "the_sequence_is_the_classical_opposite_of_quantum",
+    "name": "the sequence is the classical opposite of the quantum: the deposit computes a single definite orbit (1,2,4,8,7,5) recomputed identically with no drift (determinism), whereas a quantum machine is probabilistic (superposition, measurement collapse) — resonance is the opposite pole of quantum indeterminacy, and no quantum advantage is claimed",
+    "receipt": "3d3837b1-1982-888e-a61f-6ad5c544ae44"
   }
 ]
