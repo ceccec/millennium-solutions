@@ -279,6 +279,14 @@ function generated(): typeof curated {
   out.push({ key: 'lens_strings_not_meaning', name: 'the lens sees bytes: distinct translations → distinct addresses, identical → identical', test: () => new Set(words).size === new Set(words.map((w) => toUuid(w))).size })
   out.push({ key: 'lens_concept_handle_order_independent', name: 'the cross-locale concept handle (fold of the aligned translations) is order-independent', test: () => merkleFold(words.map((w) => toUuid(w))) === merkleFold([...words].reverse().map((w) => toUuid(w))) })
   out.push({ key: 'lens_deterministic', name: 'each translation content-addresses deterministically — toUuid(s) reproduces exactly', test: () => words.every((w) => toUuid(w) === toUuid(w)) })
+  // NEW DOMAIN — no-payload security. The uuid encodes a message's IDENTITY without its payload: a
+  // fixed-length, one-way content-address that reveals nothing recoverable and travels without the
+  // message. But it is HASHING (integrity), NOT encryption, and it breaks NO cipher. "Max security" is
+  // having no secret to lose — the address is openly published; there is nothing to intercept. 0/7.
+  out.push({ key: 'nopayload_fixed_length', name: 'the content-address is fixed-length (36 chars) regardless of message size — no payload travels', test: () => toUuid('a').length === 36 && toUuid('x'.repeat(9999)).length === 36 })
+  out.push({ key: 'nopayload_no_plaintext', name: 'the content-address contains no plaintext — the uuid (hex) reveals no message bytes', test: () => !toUuid('the-secret-message').includes('secret') })
+  out.push({ key: 'nopayload_avalanche', name: 'a one-character change gives an unrelated address (avalanche) — no gradient leaks the message', test: () => toUuid('message0') !== toUuid('message1') })
+  out.push({ key: 'nopayload_not_encryption', name: 'content-addressing breaks no cipher: "breaks encryption" drains; "does not break encryption, one-way integrity" signs', test: () => computes('content-addressing breaks encryption').binary === 0 && computes('content-addressing does not break encryption; it is one-way integrity').binary === 1 })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

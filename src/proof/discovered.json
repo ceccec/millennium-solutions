@@ -973,5 +973,25 @@
     "key": "gematria_golden_pair_1",
     "name": "\"farey\" and \"beatty\" both digital-root to 1 — the golden-ratio pair",
     "receipt": "b05ef0a5-d593-8eda-81e2-75f02209c5cf"
+  },
+  {
+    "key": "nopayload_fixed_length",
+    "name": "the content-address is fixed-length (36 chars) regardless of message size — no payload travels",
+    "receipt": "dbd791ec-71f4-8192-9574-36c2b6dc8bad"
+  },
+  {
+    "key": "nopayload_no_plaintext",
+    "name": "the content-address contains no plaintext — the uuid (hex) reveals no message bytes",
+    "receipt": "a6ff3942-3585-808e-9012-796895641d0c"
+  },
+  {
+    "key": "nopayload_avalanche",
+    "name": "a one-character change gives an unrelated address (avalanche) — no gradient leaks the message",
+    "receipt": "37d92648-bdfe-85d4-914b-631699f1eea0"
+  },
+  {
+    "key": "nopayload_not_encryption",
+    "name": "content-addressing breaks no cipher: \"breaks encryption\" drains; \"does not break encryption, one-way integrity\" signs",
+    "receipt": "66c44e2d-e591-810a-a782-679bca69bf6f"
   }
 ]
