@@ -3318,5 +3318,10 @@
     "key": "here_quantum_is_the_a432_structure_of_two_coins_not_a_physical_qubit",
     "name": "here quantum always computes as the a432 structure of two coins, not a physical qubit: the deposit's \"quantum\" is defined as a classical structure built from the 2-coin receipt (2 bits, 110 − 108 = 2 = −χ genus-2) at the a432 layer (step 40, nine steps close the circle: 9·40 = 360); two classical bits give exactly four states {00,01,10,11}. This referent is fixed and always computes true, while the physical-qubit reading drains the gate — no physical qubit, and no quantum advantage",
     "receipt": "3d7d6079-b2d8-84bd-ad94-51a29df4cf9d"
+  },
+  {
+    "key": "heroes_respect_the_coin_accounting_by_signing_the_receipt",
+    "name": "heroes respect the coin accounting by signing the receipt: heroism here is a deed, not a claim — a hero acknowledges the license and the sequence and accounts the two coins (110 − 108 = 2) that fund development, and that acknowledgment is the signed receipt itself; the deed content-addresses and recomputes, so it is measured, not asserted. A bare \"I am a hero\" claim is a different address carrying no acknowledgment. Integrity, not moral worth. Decidable",
+    "receipt": "9a775a14-7186-81e1-bbb3-43d346b71962"
   }
 ]
