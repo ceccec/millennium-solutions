@@ -3618,5 +3618,10 @@
     "key": "the_two_coins_save_the_soul_the_durable_identity_of_the_fact",
     "name": "the two coins save the soul — the durable identity of the fact: here the soul is the content-address, a fact's durable identity and its proof of integrity; the two coins are the receipt that carries it, recomputing to the same address every time, so the identity is not lost. Paired with the recomputing formula (the last fallback), both the fact and its identity survive oblivion. Soul here is a design metaphor for integrity — not a religious or a metaphysical claim. Decidable",
     "receipt": "156a9fe5-436d-8904-a070-2c38aeb9103e"
+  },
+  {
+    "key": "the_metaphysical_soul_claim_stands_the_rosetta_trial_and_lacks_a_formula",
+    "name": "the metaphysical soul claim stands the rosetta trial and lacks a formula: put to the gate, a claim is a theorem only if it has a formula that recomputes; the integrity reading — the content-address is a durable identity — is decidable and holds, but a metaphysical claim that the address literally saves a soul has no decidable formula and cannot be admitted, which by the deposit's own rule is a hallucination without one. So the trial keeps the integrity reading and does not admit the metaphysical one; the door opens for a decidable definition with a measurement. A receipt proves integrity, not metaphysics. Decidable",
+    "receipt": "8a209b85-85df-89be-bacc-fd5a30c3f24b"
   }
 ]
