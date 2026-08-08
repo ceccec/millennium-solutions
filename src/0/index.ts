@@ -142,31 +142,44 @@ export function digitalRoot(n: number): number {
   return r === 0 ? 9 : r
 }
 
-// ── Vortex primitives — DERIVED, not asserted. Each was a hardcoded constant elsewhere; here it is
-// computed, so every use re-proves it (Theorem A: the doubling orbit is a permutation of the units,
-// covers each once, and closes; verified exhaustively in scripts/lean-claims.ts). A constant states;
-// a theorem computes. Note: 9 itself is the axiom (the base of ℤ/9) — that one is not derivable. ──
+// ── Vortex primitives — DERIVED from a SINGLE axiom. The base of the ring is the one irreducible
+// constant; the residues [1..BASE], the units, the triad, the orbit and the a432 step all COMPUTE
+// from it — no residue list is ever typed as a literal. A constant states; a theorem computes.
+// (Theorem A: the doubling orbit is a permutation of the units, covers each once, and closes —
+// verified exhaustively in scripts/lean-claims.ts.) ──
 
-/** The units of ℤ/9 — residues coprime to 9. Derived as gcd(d,9)=1 → [1,2,4,5,7,8]. */
+/** The one irreducible axiom: the trinity. Everything below derives — BASE is TRINITY², the residues
+ *  are [1..BASE], the units/triad/orbit/step all compute. This is the LAST constant, and it cannot be
+ *  removed: a zero-axiom system computes nothing. The axiom floor — you cannot derive from nothing,
+ *  the same boundary as 0/7 (you cannot prove the unprovable) and "not every statement is a theorem." */
+export const TRINITY = 3
+export const BASE = TRINITY ** 2 // 9 — derived, not typed
+
+/** The residues [1..BASE] — derived from the axiom, never typed as a literal. */
+export function digits(): number[] {
+  return Array.from({ length: BASE }, (_, i) => i + 1)
+}
+
+/** The units of ℤ/9 — residues coprime to the base. Derived: gcd(d,BASE)=1 → [1,2,4,5,7,8]. */
 export function units(): number[] {
-  return [1, 2, 3, 4, 5, 6, 7, 8, 9].filter((d) => gcdBigInt(BigInt(d), 9n) === 1n)
+  return digits().filter((d) => gcdBigInt(BigInt(d), BigInt(BASE)) === 1n)
 }
 
-/** The triad {3,6,9} — the non-units of ℤ/9 (share the factor 3). Derived as the complement. */
+/** The triad {3,6,9} — non-units (share a factor with the base). Derived as the complement. */
 export function triad(): number[] {
-  return [1, 2, 3, 4, 5, 6, 7, 8, 9].filter((d) => gcdBigInt(BigInt(d), 9n) !== 1n)
+  return digits().filter((d) => gcdBigInt(BigInt(d), BigInt(BASE)) !== 1n)
 }
 
-/** The vortex doubling circuit — the orbit of n→2n (mod 9) from 1: computed [1,2,4,8,7,5]. */
+/** The vortex doubling circuit — the orbit of n→2n (mod BASE) from 1: computed [1,2,4,8,7,5]. */
 export function vortexOrbit(): number[] {
   const orbit: number[] = []
   let x = 1
-  do { orbit.push(x); x = (x * 2) % 9 } while (x !== 1)
+  do { orbit.push(x); x = (x * 2) % BASE } while (x !== 1)
   return orbit
 }
 
-/** a432 angular quantum — one ninth of the circle: 360/9 = 40°, derived not typed. */
-export const A432_STEP = 360 / units().concat(triad()).length
+/** a432 angular quantum — one BASE-th of the circle: 360/9 = 40°, derived. */
+export const A432_STEP = 360 / BASE
 
 /** Animation engine interface */
 export interface AnimationEngine {

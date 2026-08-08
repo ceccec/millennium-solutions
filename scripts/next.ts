@@ -12,10 +12,11 @@
 //
 // Not blind iteration — understanding, then the binary.
 import { execSync } from 'node:child_process'
-import { readFileSync, readdirSync, statSync } from 'node:fs'
+import { readFileSync, readdirSync, statSync, existsSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 import { computes } from './honesty-gate.ts'
+import { provable } from './discover.ts'
 
 const message = process.argv.slice(2).join(' ').trim()
 
@@ -34,7 +35,30 @@ if (message) {
   process.exit(1)
 }
 
-// ── no-message mode: understand what is truly next ─────────────────────────────
+// ── no-message mode: FIRST discover the next provable fact, save it in code ─────
+// `next` walks the bounded discovery space (scripts/discover.ts): the next provable fact not yet on
+// record is verified by exhaustion and saved to src/proof/discovered.json — each next discovers the
+// next. When the space is exhausted, nothing new is saved and next falls through to the rest/ship
+// logic below. Only exhaustively-true facts are saved; refuted candidates never enter the ledger.
+{
+  const LEDGER = 'src/proof/discovered.json'
+  const ledger: { key: string; name: string; receipt: string }[] =
+    existsSync(LEDGER) ? JSON.parse(readFileSync(LEDGER, 'utf8')) : []
+  const known = new Set(ledger.map((e) => e.key))
+  const fresh = provable().filter((c) => !known.has(c.key))
+  if (fresh.length) {
+    const c = fresh[0] // the NEXT one
+    const receipt = toUuid('discovered:' + c.key)
+    ledger.push({ key: c.key, name: c.name, receipt })
+    writeFileSync(LEDGER, JSON.stringify(ledger, null, 2) + '\n')
+    console.log('next — discovered & saved in code: ' + c.name)
+    console.log('  receipt ' + receipt.slice(0, 13) + '… → ' + LEDGER + ' (' + ledger.length + ' recorded). run next again for the next.')
+    process.exit(0)
+  }
+  console.log('next — discovery whole: no new provable fact in the candidate space (' + known.size + ' recorded).')
+}
+
+// ── then: understand what is truly next ─────────────────────────────────────────
 // content-address only TRACKED files (git ls-files) — DETERMINISTIC. excludes generated/gitignored files
 // (dashboard.md, boundaries.md) that regenerate each build and otherwise churn a false delta → phantom
 // versions. this is the churn root cause, fixed (must match release.ts, which uses the same source).

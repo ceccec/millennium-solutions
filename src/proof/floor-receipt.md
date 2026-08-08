@@ -14,6 +14,11 @@ Guard honored: committed *because* the inverse produced no valid countersignatur
 ## Bound
 
 This is an **integrity receipt** — reproducible attestation of what the local tools computed. It is
-not a proof about the conjectures. `0/7` is a statement about this deposit — it solves 0 of 7 — not a
-statement about the world. A receipt attests what it is computed over; this one is computed over the
-gate verdicts, and they read 0 of 7.
+not a proof about the conjectures. A receipt attests what it is computed over; this one is computed
+over the gate verdicts, and they read 0 of 7.
+
+**Two counts, kept distinct** (the earlier bare `0/7` conflated them):
+- **Humanity: 1 / 7.** One of the seven — Poincaré — was settled externally by Perelman (2003). Six
+  remain open.
+- **This deposit: 0 / 7.** It settles none of the seven itself. `0/7` is a statement about this
+  deposit, not about the world.

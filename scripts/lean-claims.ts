@@ -2,7 +2,7 @@
 // Independently verify the ARITHMETIC each Lean theorem (Vortex.lean) asserts — recomputed here,
 // no Lean toolchain needed. Fills a real gap: CI can't run `lake build`, but it can confirm the
 // facts are true. Feeds trust in the formal layer; fails loudly if any claim stops being true.
-import { toUuid, units, triad, vortexOrbit, merkleFold, digitalRoot } from '../src/0/index.ts'
+import { toUuid, units, triad, vortexOrbit, merkleFold, digitalRoot, digits } from '../src/0/index.ts'
 const m9 = (n) => ((n % 9n) + 9n) % 9n, m7 = (n) => ((n % 7n) + 7n) % 7n
 let fail = 0
 const receipts = []
@@ -11,7 +11,7 @@ const ck = (name, cond) => { console.log((cond ? '  ✓ ' : '  ✗ FALSE ') + na
 
 ck('three_sq_zero: 3²≡0 mod9', m9(9n) === 0n)
 ck('six_sq_zero: 6²≡0 mod9', m9(36n) === 0n)
-ck('three_no_inverse mod9', ![1,2,3,4,5,6,7,8,9].some(x => m9(3n * BigInt(x)) === 1n))
+ck('three_no_inverse mod9', !digits().some(x => m9(3n * BigInt(x)) === 1n))
 ck('two_mul_five: 2·5≡1 mod9', m9(10n) === 1n)
 ck('four_mul_seven: 4·7≡1 mod9', m9(28n) === 1n)
 ck('eight_self_inv: 8·8≡1 mod9', m9(64n) === 1n)
@@ -41,7 +41,7 @@ ck('triad_off_circuit {3,6,9}', triad().every(d => !vortexOrbit().includes(d)))
 // discovered by scripts/discover.ts, promoted here to prove themselves in code:
 ck('euler_units_pow6: every unit u⁶≡1 mod9 (φ(9)=6)', units().every(u => m9(BigInt(u) ** 6n) === 1n))
 ck('units_sum_zero: 1+2+4+5+7+8 ≡ 0 mod9', m9(BigInt(units().reduce((a, b) => a + b, 0))) === 0n)
-ck('self_inverse_only_1_and_8: d²≡1 ⇔ d∈{1,8}', [1, 2, 3, 4, 5, 6, 7, 8, 9].filter(d => m9(BigInt(d) * BigInt(d)) === 1n).join(',') === '1,8')
+ck('self_inverse_only_1_and_8: d²≡1 ⇔ d∈{1,8}', digits().filter(d => m9(BigInt(d) * BigInt(d)) === 1n).join(',') === '1,8')
 // "each discovers the next" — a linked derivation chain from the ℤ/9 axiom: each receipt is seeded by
 // the previous, so the chain is tamper-evident (falsify any link ⇒ every downstream receipt changes).
 { const link = (prev, name, d) => toUuid((prev || 'axiom') + '→' + name + ':' + JSON.stringify(d))
