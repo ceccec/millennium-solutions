@@ -3248,5 +3248,10 @@
     "key": "the_two_coins_are_minus_the_euler_characteristic_of_the_genus_two_surface",
     "name": "the two coins are minus the Euler characteristic of the genus-2 surface: χ(Σ_g) = 2 − 2g gives χ(Σ_2) = −2, so −χ = 2 — the deposit's \"two coins\" (110 − 108 = 2, the commercial fee). The genus-2 surface is the connected sum of two tori (χ adds under connected sum, minus 2: 0 + 0 − 2 = −2), and Euler's V−E+F = 2 for the tetrahedron (genus 0). Decidable arithmetic over the surfaces",
     "receipt": "67dc5aca-4753-8079-917e-27320ad2625e"
+  },
+  {
+    "key": "casting_out_nines_detects_any_error_that_changes_the_value_mod_nine",
+    "name": "casting out nines detects any error that changes the value mod 9: for a claimed product, dr(dr(a)·dr(b)) = dr(claimed) is a necessary check — a correct product always passes, and any wrong answer differing mod 9 always fails (caught). Honest bound: an error preserving the value mod 9 (e.g. off by a multiple of 9) slips through undetected, so the check is necessary, not sufficient — a floor, exactly like the honesty gate. Decidable by exhaustion over a bounded grid",
+    "receipt": "a8c8871a-5b56-8587-8aa5-5ddd2bb8c9d4"
   }
 ]
