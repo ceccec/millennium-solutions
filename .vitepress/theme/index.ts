@@ -36,7 +36,7 @@ export default {
           for (const b of BRAND) root.style.removeProperty(b)
           return
         }
-        const hue = (d * 40) % 360 // 360/9 = 40° per digit; {3,6,9} land on RGB primaries
+        const hue = (d * (360 / 9)) % 360 // step derived: full circle / base 9 = 40° per digit
         root.dataset.a432 = String(d)
         root.style.setProperty('--a432-hue', String(hue))
         // set concrete hsl() strings directly — inline beats the stylesheet and avoids

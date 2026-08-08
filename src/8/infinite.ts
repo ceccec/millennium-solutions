@@ -2,11 +2,13 @@
 // A bounded rule has unbounded reach: the finite ℤ/9 doubling cycles forever; a finite formula
 // (BBP) yields endless π digits; a finite function addresses unbounded inputs. True for behavior,
 // not for cardinality — a finite set is still finite.
+import { vortexOrbit } from '../0/index.ts'
+
 export function report(): string {
   // The finite doubling rule (×2 mod 9) traced past its period — a finite cycle, infinitely walked.
   const seq: number[] = []; let x = 1
   for (let i = 0; i < 13; i++) { seq.push(x); x = (x * 2) % 9 }
-  const period = 6 // 1,2,4,8,7,5 then repeats
+  const period = vortexOrbit().length // derived, not typed: the doubling orbit's length (Theorem A)
 
   let o = 'finite is infinite by nature — finite rules, infinite behavior (digit 8 ≈ ∞):\n\n'
   o += '  a finite generator produces an unbounded stream:\n'

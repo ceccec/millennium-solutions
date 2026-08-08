@@ -142,6 +142,32 @@ export function digitalRoot(n: number): number {
   return r === 0 ? 9 : r
 }
 
+// ── Vortex primitives — DERIVED, not asserted. Each was a hardcoded constant elsewhere; here it is
+// computed, so every use re-proves it (Theorem A: the doubling orbit is a permutation of the units,
+// covers each once, and closes; verified exhaustively in scripts/lean-claims.ts). A constant states;
+// a theorem computes. Note: 9 itself is the axiom (the base of ℤ/9) — that one is not derivable. ──
+
+/** The units of ℤ/9 — residues coprime to 9. Derived as gcd(d,9)=1 → [1,2,4,5,7,8]. */
+export function units(): number[] {
+  return [1, 2, 3, 4, 5, 6, 7, 8, 9].filter((d) => gcdBigInt(BigInt(d), 9n) === 1n)
+}
+
+/** The triad {3,6,9} — the non-units of ℤ/9 (share the factor 3). Derived as the complement. */
+export function triad(): number[] {
+  return [1, 2, 3, 4, 5, 6, 7, 8, 9].filter((d) => gcdBigInt(BigInt(d), 9n) !== 1n)
+}
+
+/** The vortex doubling circuit — the orbit of n→2n (mod 9) from 1: computed [1,2,4,8,7,5]. */
+export function vortexOrbit(): number[] {
+  const orbit: number[] = []
+  let x = 1
+  do { orbit.push(x); x = (x * 2) % 9 } while (x !== 1)
+  return orbit
+}
+
+/** a432 angular quantum — one ninth of the circle: 360/9 = 40°, derived not typed. */
+export const A432_STEP = 360 / units().concat(triad()).length
+
 /** Animation engine interface */
 export interface AnimationEngine {
   readonly running: boolean
