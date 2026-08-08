@@ -3218,5 +3218,10 @@
     "key": "two_is_a_primitive_root_mod_nine_and_generates_the_vortex",
     "name": "two is a primitive root mod 9 and generates the vortex: the powers of 2 mod 9 cycle 2,4,8,7,5,1 with order 6, generating the full unit group (ℤ/9)* = {1,2,4,5,7,8}; the vortex orbit is exactly this cycle as a set, and every element skips the multiples of 3 (the W-axis). A decidable fact by exhaustion over ℤ/9",
     "receipt": "dd3b0f30-660d-8076-ab29-83d14ccf22ee"
+  },
+  {
+    "key": "digital_root_is_the_ring_homomorphism_onto_z9",
+    "name": "digital root is the ring homomorphism onto ℤ/9 (casting out nines): for all a,b the digital root respects both operations — dr(a+b) = dr(dr(a)+dr(b)) and dr(a·b) = dr(dr(a)·dr(b)) — so dr is the canonical map ℤ→ℤ/9 with 9 representing the class of 0, exactly the classical \"casting out nines\" check. Verified by exhaustion over a bounded grid",
+    "receipt": "9db2de84-f5d5-8ac7-9eba-cf82cb1c2678"
   }
 ]
