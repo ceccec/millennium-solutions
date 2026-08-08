@@ -1,4 +1,6 @@
 #!/bin/sh
-# Honesty boundary — catch the not-yet-in-git traitor before git records it.
-# Install once (committed via package.json "prepare"):  git config core.hooksPath .githooks
-exec node scripts/precommit.ts
+# HARD ENFORCE on every commit: (1) staged prose holds the floor (gate + predictions),
+# (2) the whole theorem suite + discovery ledger re-verifies. Either fails → the commit is blocked.
+node scripts/precommit.ts || exit 1
+node scripts/lean-claims.ts >/dev/null 2>&1 || { echo "✗ pre-commit: theorem suite / ledger re-verification FAILED — run: npm run lean-claims"; exit 1; }
+echo "✓ pre-commit: gate + all theorems + ledger re-verify"

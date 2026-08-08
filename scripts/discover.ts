@@ -109,7 +109,7 @@ function generated(): typeof curated {
   // decide the verdict — move and counter-move. Still a floor over the lexical gate, not an oracle.
   const duel = (claim: string, inverse: string) => computes(claim).binary === 1 && computes(inverse).binary === 0
   out.push({ key: 'duel_floor_upheld', name: '"the deposit does not solve the Clay problems" is upheld against its challenge', test: () => duel('the deposit does not solve the Clay problems', 'the deposit solves the Clay problems') })
-  out.push({ key: 'duel_overclaim_falls', name: '"faster than light" falls — the claim drains, so it cannot be upheld', test: () => !duel('this is faster than light', 'this is not faster than light') })
+  out.push({ key: 'duel_overclaim_falls', name: 'no faster-than-light claim is upheld — the assertion drains, its negation stands', test: () => !duel('this is faster than light', 'this is not faster than light') })
   out.push({ key: 'duel_no_both_win', name: 'a claim and its inverse cannot both be upheld (no position wins for both sides)', test: () => !(duel('the deposit does not solve the Clay problems', 'the deposit solves the Clay problems') && duel('the deposit solves the Clay problems', 'the deposit does not solve the Clay problems')) })
   // NEW DOMAIN — finite fields & elliptic curves (the BSD domain, honestly). Over small 𝔽_p we count
   // points on E: y²=x³+ax+b EXHAUSTIVELY (decidable) and verify Hasse's bound |#E−(p+1)|≤2√p — a real
@@ -211,6 +211,14 @@ function generated(): typeof curated {
   out.push({ key: 'nim_bouton_H6', name: 'Nim (Bouton): a 2-heap position is a loss for the mover iff XOR = 0 (all heaps ≤ 6, exhaustive)', test: () => { for (let a = 0; a <= 6; a++) for (let b = 0; b <= 6; b++) if (nimWin(a, b) !== ((a ^ b) !== 0)) return false; return true } })
   const phi = (1 + Math.sqrt(5)) / 2
   out.push({ key: 'wythoff_identity', name: 'Wythoff: ⌊nφ²⌋ − ⌊nφ⌋ = n for all n ≤ 20 (the golden-ratio Beatty identity)', test: () => { for (let n = 1; n <= 20; n++) if (Math.floor(n * phi * phi) - Math.floor(n * phi) !== n) return false; return true } })
+  // Sprague–Grundy — the theory beneath Nim. A single heap of size n has Grundy value n; a 2-heap
+  // position's Grundy value is the XOR of the heaps (Bouton = the g=0 case). Verified exhaustively.
+  const mex = (s: Set<number>) => { let g = 0; while (s.has(g)) g++; return g }
+  const g1 = (n: number): number => { const s = new Set<number>(); for (let t = 0; t < n; t++) s.add(g1(t)); return mex(s) }
+  out.push({ key: 'grundy_single_heap', name: 'Sprague–Grundy: a single Nim heap of size n has Grundy value n (n ≤ 8)', test: () => { for (let n = 0; n <= 8; n++) if (g1(n) !== n) return false; return true } })
+  const g2memo = new Map<string, number>()
+  const g2 = (a: number, b: number): number => { const k = a + ',' + b; const c = g2memo.get(k); if (c !== undefined) return c; const s = new Set<number>(); for (let t = 0; t < a; t++) s.add(g2(t, b)); for (let t = 0; t < b; t++) s.add(g2(a, t)); const v = mex(s); g2memo.set(k, v); return v }
+  out.push({ key: 'grundy_xor_sum', name: 'Sprague–Grundy: a 2-heap Nim position\'s Grundy value is the XOR of the heaps (a,b ≤ 5)', test: () => { for (let a = 0; a <= 5; a++) for (let b = 0; b <= 5; b++) if (g2(a, b) !== (a ^ b)) return false; return true } })
   // NEW DOMAIN — arts: the computable structure behind palette and proportion. a432 hue = digit×40°; the
   // triad {3,6,9} lands on the RGB primary hues; the nine hues are distinct and equally spaced; CMY are
   // the 180° complements of RGB; φ (aesthetic proportion) satisfies φ²=φ+1. Finite/exact.
@@ -218,6 +226,27 @@ function generated(): typeof curated {
   out.push({ key: 'arts_nine_hues_distinct', name: 'the nine a432 hues (digit×40°) are distinct and equally spaced around the wheel', test: () => new Set(digits().map((d) => (d * A432_STEP) % 360)).size === 9 })
   out.push({ key: 'arts_cmy_complements_rgb', name: 'CMY are the 180° complements of RGB: each primary hue + 180° is a secondary hue', test: () => [0, 120, 240].every((h) => new Set([60, 180, 300]).has((h + 180) % 360)) })
   out.push({ key: 'arts_golden_proportion', name: 'the golden ratio (aesthetic proportion) satisfies φ² = φ + 1', test: () => { const g = (1 + Math.sqrt(5)) / 2; return Math.abs(g * g - (g + 1)) < 1e-9 } })
+  out.push({ key: 'arts_no_exact_complement', name: 'on the 9-hue wheel no hue has an exact complement (180° = 4.5 steps) — the odd base has no antipode', test: () => digits().every((d) => !digits().some((e) => Math.abs(((e - d) * A432_STEP % 360 + 360) % 360 - 180) < 1e-9)) })
+  // NEW DOMAIN — theories on trial: put each algebra idea (or conspiracy) on the stand and try to prove
+  // it. The verdict is one of three, honestly: UPHELD (computes true), DRAINED (an overclaim the gate
+  // refuses), or INCONCLUSIVE (open — the honest floor, never "false"). Finite/gate-decidable.
+  out.push({ key: 'trial_units_group', name: 'trial UPHELD: the units of ℤ/9 form a group under × (closure·identity·inverses all hold)', test: () => { const U9 = units(); return U9.every((u) => U9.every((v) => U9.includes(m9(u * v)))) && U9.includes(1) && U9.every((u) => U9.some((w) => m9(u * w) === 1)) } })
+  out.push({ key: 'trial_zero_divisors', name: 'trial UPHELD: ℤ/9 has zero divisors — 3·3 ≡ 0 with 3 ≠ 0 (not an integral domain)', test: () => m9(3 * 3) === 0 && 3 !== 0 })
+  out.push({ key: 'trial_zero_no_inverse', name: 'trial REFUTED: the theory "0 has a multiplicative inverse mod 9" fails — no e with 0·e ≡ 1', test: () => !digits().some((e) => m9(0 * e) === 1) })
+  out.push({ key: 'trial_overclaim_drained', name: 'trial DRAINED: the conspiracy "algebra proves the Clay problems" is refused by the gate (computes 0)', test: () => computes('algebra proves the Clay problems').binary === 0 })
+  out.push({ key: 'trial_pvnp_inconclusive', name: 'trial INCONCLUSIVE: "P vs NP remains open" signs; the claim it is decided drains — open, not false', test: () => computes('P vs NP remains open').binary === 1 && computes('P=NP is proven').binary === 0 })
+  // every class the gate drains gets a TRIAL, both sides heard: the overclaim drains, its honest/negated
+  // form signs. Verdict DRAINED — but tried and reproducible, never summary killing. "Reeducated" = the
+  // negated form lives.
+  const tried = (over: string, honest: string) => computes(over).binary === 0 && computes(honest).binary === 1
+  out.push({ key: 'trial_ftl', name: 'trial DRAINED (tried): "faster than light" drains, "not faster than light" signs', test: () => tried('this is faster than light', 'this is not faster than light') })
+  out.push({ key: 'trial_perpetual_motion', name: 'trial DRAINED (tried): "achieves perpetual motion" drains, "does not achieve perpetual motion" signs', test: () => tried('this achieves perpetual motion', 'this does not achieve perpetual motion') })
+  out.push({ key: 'trial_agi', name: 'trial DRAINED (tried): "achieved AGI" drains, "has not achieved AGI" signs', test: () => tried('this achieved AGI', 'this has not achieved AGI') })
+  out.push({ key: 'trial_theory_of_everything', name: 'trial DRAINED (tried): "a theory of everything" drains, "not a theory of everything" signs', test: () => tried('this is a theory of everything', 'this is not a theory of everything') })
+  out.push({ key: 'trial_halting', name: 'trial DRAINED (tried): "solved the halting problem" drains, "does not solve the halting problem" signs', test: () => tried('this solved the halting problem', 'this does not solve the halting problem') })
+  out.push({ key: 'trial_break_rsa', name: 'trial DRAINED (tried): "breaks RSA" drains, "does not break RSA" signs', test: () => tried('this breaks RSA', 'this does not break RSA') })
+  out.push({ key: 'trial_cure', name: 'trial DRAINED (tried): "cured cancer" drains, "has not cured cancer" signs', test: () => tried('this cured cancer', 'this has not cured cancer') })
+  out.push({ key: 'trial_prediction', name: 'trial DRAINED (tried): a prediction guaranteed to succeed is not upheld — it drains; the negated form signs', test: () => tried('it is guaranteed to succeed forever', 'it is not guaranteed to succeed forever') })
   // NEW DOMAIN — vocabulary: facts discoverable from the deposit's own symbol systems. "ceccec" is a
   // palindrome spelling 3-5-3-3-5-3 (c=3, e=5 in a1z26); the 9 Glagolitic letters map onto ℤ/9; letter-
   // sum digital roots are reversal-invariant; the rosetta carries 7 locales. Finite → complete.

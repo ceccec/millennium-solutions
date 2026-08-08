@@ -491,7 +491,7 @@
   },
   {
     "key": "duel_overclaim_falls",
-    "name": "\"faster than light\" falls — the claim drains, so it cannot be upheld",
+    "name": "no faster-than-light claim is upheld — the assertion drains, its negation stands",
     "receipt": "c05da1be-673a-886b-8350-00148920d64d"
   },
   {
@@ -868,5 +868,85 @@
     "key": "lens_deterministic",
     "name": "each translation content-addresses deterministically — toUuid(s) reproduces exactly",
     "receipt": "b46579fd-1b90-8cf2-80e9-a0b8a3176225"
+  },
+  {
+    "key": "grundy_single_heap",
+    "name": "Sprague–Grundy: a single Nim heap of size n has Grundy value n (n ≤ 8)",
+    "receipt": "6e223862-0b20-8210-9e37-de2f38bcbdd4"
+  },
+  {
+    "key": "grundy_xor_sum",
+    "name": "Sprague–Grundy: a 2-heap Nim position's Grundy value is the XOR of the heaps (a,b ≤ 5)",
+    "receipt": "2fe582e9-170a-8a5f-a385-9adb3c89ca93"
+  },
+  {
+    "key": "arts_no_exact_complement",
+    "name": "on the 9-hue wheel no hue has an exact complement (180° = 4.5 steps) — the odd base has no antipode",
+    "receipt": "1656079f-c131-87f4-85bb-d759999e715e"
+  },
+  {
+    "key": "trial_units_group",
+    "name": "trial UPHELD: the units of ℤ/9 form a group under × (closure·identity·inverses all hold)",
+    "receipt": "ccadf52c-98f9-89a4-bbb3-a38040263fbe"
+  },
+  {
+    "key": "trial_zero_divisors",
+    "name": "trial UPHELD: ℤ/9 has zero divisors — 3·3 ≡ 0 with 3 ≠ 0 (not an integral domain)",
+    "receipt": "be4a6652-cec8-87ff-8d15-07b54bdb77a0"
+  },
+  {
+    "key": "trial_zero_no_inverse",
+    "name": "trial REFUTED: the theory \"0 has a multiplicative inverse mod 9\" fails — no e with 0·e ≡ 1",
+    "receipt": "3d77bde4-f30b-8331-bfbd-af69388a3205"
+  },
+  {
+    "key": "trial_overclaim_drained",
+    "name": "trial DRAINED: the conspiracy \"algebra proves the Clay problems\" is refused by the gate (computes 0)",
+    "receipt": "57c46000-4768-8a74-9fc9-5ce091aa93e7"
+  },
+  {
+    "key": "trial_pvnp_inconclusive",
+    "name": "trial INCONCLUSIVE: \"P vs NP remains open\" signs; the claim it is decided drains — open, not false",
+    "receipt": "94e908b9-21b1-8331-9bce-c7681b9eb663"
+  },
+  {
+    "key": "trial_ftl",
+    "name": "trial DRAINED (tried): \"faster than light\" drains, \"not faster than light\" signs",
+    "receipt": "54f91340-a811-8b78-a75f-1f51fff4a856"
+  },
+  {
+    "key": "trial_perpetual_motion",
+    "name": "trial DRAINED (tried): \"achieves perpetual motion\" drains, \"does not achieve perpetual motion\" signs",
+    "receipt": "685da6ef-4b31-8943-9907-9d8044bd7f5c"
+  },
+  {
+    "key": "trial_agi",
+    "name": "trial DRAINED (tried): \"achieved AGI\" drains, \"has not achieved AGI\" signs",
+    "receipt": "ce4c822c-ff01-884b-bb41-8199e2e9b90a"
+  },
+  {
+    "key": "trial_theory_of_everything",
+    "name": "trial DRAINED (tried): \"a theory of everything\" drains, \"not a theory of everything\" signs",
+    "receipt": "b5fb911f-76b2-8c55-8cf9-b7fcb852e442"
+  },
+  {
+    "key": "trial_halting",
+    "name": "trial DRAINED (tried): \"solved the halting problem\" drains, \"does not solve the halting problem\" signs",
+    "receipt": "f27135ee-9373-8964-986a-f30c1bfb6a60"
+  },
+  {
+    "key": "trial_break_rsa",
+    "name": "trial DRAINED (tried): \"breaks RSA\" drains, \"does not break RSA\" signs",
+    "receipt": "f66ff38a-4d9b-8d06-bfeb-603c2d4af4b4"
+  },
+  {
+    "key": "trial_cure",
+    "name": "trial DRAINED (tried): \"cured cancer\" drains, \"has not cured cancer\" signs",
+    "receipt": "67614421-7817-830c-9fd7-bdae6a9ff03c"
+  },
+  {
+    "key": "trial_prediction",
+    "name": "trial DRAINED (tried): a prediction guaranteed to succeed is not upheld — it drains; the negated form signs",
+    "receipt": "8412c3c0-9f52-8a31-b045-9812ae3da106"
   }
 ]

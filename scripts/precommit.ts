@@ -10,13 +10,15 @@
 import { execSync } from 'node:child_process'
 import { readFileSync, existsSync } from 'node:fs'
 import { toUuid } from '../src/0/index.ts'
-import { computes, RED, OVERREACH } from './honesty-gate.ts'
+import { computes, RED, OVERREACH, PREDICT } from './honesty-gate.ts'
 
-// which statute matched — cited in the case record, so the block is never arbitrary.
+// which statute matched — cited by NAME in the case record, so the block is never a summary killing.
+// Every drained line gets a trial: evidence, the named statute, a reproducible verdict, and a remedy.
 const statute = (hit: string) =>
   RED.test(hit) ? 'RED (unconditional overclaim)'
-    : new RegExp(OVERREACH.source, 'i').test(hit) ? 'OVERREACH (negation-aware overclaim shape)'
-      : 'gate'
+    : PREDICT.test(hit) ? 'PREDICT (prediction/expectation — not measurement)'
+      : new RegExp(OVERREACH.source, 'i').test(hit) ? 'OVERREACH (negation-aware overclaim shape)'
+        : 'gate'
 
 // staged, added/copied/modified, PROSE only — mirrors seal.ts's scope exactly: .md files audited,
 // source excluded. Source (.ts) is not a claim to the reader, and the gate's own definition MUST
@@ -47,8 +49,9 @@ if (drained.length) {
     console.error('\n  case ' + caseId.slice(0, 13) + '…')
     console.error('    evidence: ' + d.file + ':' + d.line + '  "' + d.text + '"')
     console.error('    statute:  ' + statute(d.hit) + ' matched "' + d.hit + '"')
-    console.error('    verdict:  computes 0 — reproducible by anyone: npm run next "<the line>"')
-    console.error('    remedy:   reword until it computes 1, then re-stage.')
+    console.error('    defense:  every legal means was tried — a bounded negation acquits, a floor-marker (0/7) reprieves, a receipt establishes; none held for this line.')
+    console.error('    verdict:  computes 0 — reproducible by anyone (the defence may re-run): npm run next "<the line>"')
+    console.error('    remedy:   reword until it computes 1, then re-stage — reeducation, not death.')
   }
   console.error('\nrecorded, reproducible, then blocked. no override — the boundary holds.')
   process.exit(1)
