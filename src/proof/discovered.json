@@ -1653,5 +1653,20 @@
     "key": "genus_g_moduli_dim",
     "name": "the moduli space of genus-g curves (g≥2) has complex dimension 3g−3 and real dimension 6g−6: (g=2)→(3,6), (g=3)→(6,12)",
     "receipt": "b67fc1f6-5d2c-8b8f-900e-711902bb457d"
+  },
+  {
+    "key": "subtraction_game_grundy",
+    "name": "the subtraction game S={1,2,3}: the Grundy value computed by the mex rule equals n mod 4 — losing positions are n ≡ 0 (mod 4) (n≤24)",
+    "receipt": "a3094aa6-da92-8abc-9326-e515261f8e01"
+  },
+  {
+    "key": "kayles_grundy",
+    "name": "Kayles (remove 1 or 2 adjacent pins, splitting the row): the mex-computed Grundy values match the known sequence 0,1,2,3,1,4,3,2,1,4,2,6,4,1,2,7,1,4,3,2 (n≤19)",
+    "receipt": "b6db3052-5c2a-86e2-9145-7b6d53bd9e59"
+  },
+  {
+    "key": "nim_misere",
+    "name": "misère Nim by minimax matches the closed form: the first player wins iff (some heap ≥2 and nim-sum ≠0) or (every heap ≤1 and nim-sum =0) (heaps ≤3, up to 3 heaps)",
+    "receipt": "0823bb14-7699-86b4-bc5b-0cad76f750b3"
   }
 ]
