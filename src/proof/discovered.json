@@ -298,5 +298,40 @@
     "key": "invmap_involution",
     "name": "the multiplicative inverse map is an involution on the units mod 9",
     "receipt": "43418601-7a73-8a86-a0de-15c29d79c005"
+  },
+  {
+    "key": "reverse_circuit",
+    "name": "the halving map ×2⁻¹ traces the doubling circuit in reverse mod 9",
+    "receipt": "205fe01b-d27f-80b2-acd8-24f46753d135"
+  },
+  {
+    "key": "digrev_12",
+    "name": "the digital root of 12 equals that of its digit-reversal",
+    "receipt": "750f5efd-3001-8ef1-bb04-9d556f9a77a4"
+  },
+  {
+    "key": "digrev_45",
+    "name": "the digital root of 45 equals that of its digit-reversal",
+    "receipt": "d447d1f0-3306-86cf-a944-89777bf354d8"
+  },
+  {
+    "key": "digrev_123",
+    "name": "the digital root of 123 equals that of its digit-reversal",
+    "receipt": "8b16af95-b502-8c83-a0e0-6d05b3fff7e8"
+  },
+  {
+    "key": "digrev_1234",
+    "name": "the digital root of 1234 equals that of its digit-reversal",
+    "receipt": "b9c9d09f-a74a-8e90-9506-c28af41776f7"
+  },
+  {
+    "key": "digrev_9080",
+    "name": "the digital root of 9080 equals that of its digit-reversal",
+    "receipt": "e2efb528-c895-8ca8-aee7-01e4b1e67727"
+  },
+  {
+    "key": "digrev_4321",
+    "name": "the digital root of 4321 equals that of its digit-reversal",
+    "receipt": "81d7ec86-3a35-8e20-8897-1786dce0818a"
   }
 ]

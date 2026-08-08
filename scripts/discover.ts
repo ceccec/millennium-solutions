@@ -65,6 +65,10 @@ function generated(): typeof curated {
   // the multiplicative inverse map is a permutation of the units and an involution.
   out.push({ key: 'invmap_perm', name: 'the multiplicative inverse map permutes the units mod ' + BASE, test: () => { const img = U.map((u) => U.find((e) => m9(u * e) === 1)); return new Set(img).size === U.length && img.every((v) => v !== undefined) } })
   out.push({ key: 'invmap_involution', name: 'the multiplicative inverse map is an involution on the units mod ' + BASE, test: () => U.every((u) => { const inv = U.find((e) => m9(u * e) === 1); return inv !== undefined && U.find((e) => m9(inv * e) === 1) === u }) })
+  // REVERSE: the halving map ×2⁻¹ walks the doubling circuit backward.
+  out.push({ key: 'reverse_circuit', name: 'the halving map ×2⁻¹ traces the doubling circuit in reverse mod ' + BASE, test: () => { const inv2 = U.find((e) => m9(2 * e) === 1); if (inv2 === undefined) return false; const rev: number[] = []; let x = 1; do { rev.push(x); x = m9(inv2 * x) } while (x !== 1); const fwd: number[] = []; let y = 1; do { fwd.push(y); y = m9(2 * y) } while (y !== 1); return JSON.stringify(rev) === JSON.stringify([fwd[0], ...fwd.slice(1).reverse()]) } })
+  // digit reversal preserves the digital root (the digit sum is reversal-invariant).
+  for (const n of [12, 45, 123, 1234, 9080, 4321]) out.push({ key: 'digrev_' + n, name: 'the digital root of ' + n + ' equals that of its digit-reversal', test: () => digitalRoot(n) === digitalRoot(Number(String(n).split('').reverse().join(''))) })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
