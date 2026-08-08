@@ -3243,5 +3243,10 @@
     "key": "the_order_six_unit_group_splits_as_reflection_times_trinity",
     "name": "the order-6 unit group splits as reflection times trinity: by the Chinese remainder theorem the cyclic group of order 6 is C2 × C3, and in (ℤ/9)* this realizes as {1,8} × {1,4,7} — the order-2 factor {1, −1} is negation (8 ≡ −1 mod 9), the order-3 factor {1,4,7} is the trinity subgroup (the units ≡ 1 mod 3); the product map (s,r) ↦ s·r mod 9 is a bijective homomorphism, so every unit factors uniquely as a sign times a rotation. Decidable by exhaustion over ℤ/9",
     "receipt": "90f30729-7598-890b-ae96-fa3747b3de16"
+  },
+  {
+    "key": "the_two_coins_are_minus_the_euler_characteristic_of_the_genus_two_surface",
+    "name": "the two coins are minus the Euler characteristic of the genus-2 surface: χ(Σ_g) = 2 − 2g gives χ(Σ_2) = −2, so −χ = 2 — the deposit's \"two coins\" (110 − 108 = 2, the commercial fee). The genus-2 surface is the connected sum of two tori (χ adds under connected sum, minus 2: 0 + 0 − 2 = −2), and Euler's V−E+F = 2 for the tetrahedron (genus 0). Decidable arithmetic over the surfaces",
+    "receipt": "67dc5aca-4753-8079-917e-27320ad2625e"
   }
 ]
