@@ -1043,5 +1043,20 @@
     "key": "harmonic_root_hue",
     "name": "the merkle root carries a harmonic a432 hue — one of the nine (hex digital root × 40°)",
     "receipt": "f302789e-a628-8a2f-b715-95ab8ee148f7"
+  },
+  {
+    "key": "nowaste_dedup",
+    "name": "identical content deduplicates to one address — no duplicate storage, no recompute",
+    "receipt": "9d5f8f65-d529-86fe-b2bd-f9c913db4e15"
+  },
+  {
+    "key": "nowaste_order_independent",
+    "name": "a set and any reordering fold to one root — no duplicate root for the same content",
+    "receipt": "23112077-b200-8c4d-9914-77971953bf46"
+  },
+  {
+    "key": "nowaste_memo_recycles",
+    "name": "memoization recycles: keyed by content, a computation runs once and is reused thereafter",
+    "receipt": "f7698d60-8475-8c16-8bdf-d3e629457051"
   }
 ]

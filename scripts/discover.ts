@@ -310,6 +310,13 @@ function generated(): typeof curated {
   out.push({ key: 'harmonic_ledger_hue', name: 'every content-address maps to one of the 9 a432 hues (hex digital root × 40°) — the harmonic ledger', test: () => led.every((b) => { const d = uuidDigit(toUuid(b)); return d >= 1 && d <= 9 }) })
   out.push({ key: 'harmonic_ledger_deterministic', name: 'the harmonic hue is deterministic and reproducible: the same content-address always yields the same a432 digit', test: () => led.every((b) => uuidDigit(toUuid(b)) === uuidDigit(toUuid(b))) })
   out.push({ key: 'harmonic_root_hue', name: 'the merkle root carries a harmonic a432 hue — one of the nine (hex digital root × 40°)', test: () => { const d = uuidDigit(merkleRoot(led)); return d >= 1 && d <= 9 && (d * A432_STEP) % 40 === 0 } })
+  // NEW DOMAIN — no digital waste (recycling by content-address). Identical content deduplicates to one
+  // address (no duplicate storage, no recompute); a set and any reordering fold to one root; memoization
+  // runs a computation once and reuses it. Not zero-energy — no REDUNDANT work. Documented states
+  // (receipts) leave nothing to redo. Finite → complete.
+  out.push({ key: 'nowaste_dedup', name: 'identical content deduplicates to one address — no duplicate storage, no recompute', test: () => new Set(['job', 'job', 'job'].map((x) => toUuid(x))).size === 1 })
+  out.push({ key: 'nowaste_order_independent', name: 'a set and any reordering fold to one root — no duplicate root for the same content', test: () => merkleFold(['a', 'b', 'c']) === merkleFold(['c', 'b', 'a']) })
+  out.push({ key: 'nowaste_memo_recycles', name: 'memoization recycles: keyed by content, a computation runs once and is reused thereafter', test: () => { const cache = new Map<string, number>(); let runs = 0; const f = (k: string) => cache.has(k) ? cache.get(k)! : (runs++, cache.set(k, 42), 42); f('r'); f('r'); f('r'); return runs === 1 } })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

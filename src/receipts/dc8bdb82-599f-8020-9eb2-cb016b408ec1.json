@@ -1,6 +1,0 @@
-{
-  "uuid": "dc8bdb82-599f-8020-9eb2-cb016b408ec1",
-  "message": "a receipt proves what it is computed over, not the claim within it",
-  "agent": "claude-opus",
-  "role": "witness"
-}
