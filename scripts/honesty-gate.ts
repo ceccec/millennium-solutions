@@ -21,7 +21,7 @@ const BREAK = '(factor(s|ed|ing)?|break(s)?|broke(n)?|crack(s|ed)?|defeat(s|ed)?
 const near = (a: string, b: string, n = 24) => '\\b' + a + '\\b[^.]{0,' + n + '}\\b' + b + '\\b'
 export const OVERREACH = new RegExp([
   // physics / hardware / crypto superlatives
-  '\\b(faster[ -]than[ -]light|superluminal|quantum (speedup|supremacy|advantage|at scale)|quantum (processor|computer)|quantum (encryption|cryptograph\\w*)|the qpu|fastest (known|ever|in the world)|unbreakable|unhackable|impossible to (crack|break|violate|reverse)|proves quantum)\\b',
+  '\\b(faster[ -]than[ -]light|superluminal|ftl|quantum (speedup|supremacy|advantage|at scale)|quantum (processor|computer)|quantum (encryption|cryptograph\\w*)|the qpu|fastest (known|ever|in the world)|unbreakable|unhackable|impossible to (crack|break|violate|reverse)|prov(e|es|ed|ing) quantum)\\b',
   near(CLAIM, PROBLEM),   // claim → problem  ("proofs of all seven Clay", "solved the Riemann")
   near(PROBLEM, CLAIM),   // problem → claim  ("millennium-solutions-solved", "Riemann … proven")
   near(CRYPTO, BREAK, 20), // crypto broken, either order ("rsa is factored", "breaks encryption")

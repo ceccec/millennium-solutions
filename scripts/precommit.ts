@@ -11,10 +11,12 @@ import { execSync } from 'node:child_process'
 import { readFileSync, existsSync } from 'node:fs'
 import { computes } from './honesty-gate.ts'
 
-// staged, added/copied/modified, prose only (the gate is lexical — it reads prose, not binaries).
+// staged, added/copied/modified, PROSE only — mirrors seal.ts's scope exactly: .md files audited,
+// source excluded. Source (.ts) is not a claim to the reader, and the gate's own definition MUST
+// contain the forbidden vocabulary to detect it — an instrument cannot pass its own measurement.
 const staged = execSync('git diff --cached --name-only --diff-filter=ACM', { encoding: 'utf8' })
   .trim().split('\n').filter(Boolean)
-  .filter((f) => /\.(md|ts|txt|json|vue|html)$/.test(f) && existsSync(f))
+  .filter((f) => f.endsWith('.md') && existsSync(f))
 
 const drained: { file: string; line: number; hit: string; text: string }[] = []
 for (const f of staged) {
