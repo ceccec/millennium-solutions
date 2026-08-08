@@ -3683,5 +3683,10 @@
     "key": "the_handshaking_lemma",
     "name": "the handshaking lemma: in every finite graph the sum of the vertex degrees equals twice the number of edges, so the number of vertices of odd degree is always even — verified over all 2^10 = 1024 graphs on five vertices. The degree sum double-counts each edge, which is why an odd count of odd-degree vertices is impossible. Verified by exhaustive enumeration",
     "receipt": "b3239688-033f-8f24-811e-4ee77f236466"
+  },
+  {
+    "key": "the_five_platonic_solids_all_have_euler_characteristic_two",
+    "name": "the five Platonic solids all have Euler characteristic two: the tetrahedron (4,6,4), cube (8,12,6), octahedron (6,12,8), dodecahedron (20,30,12) and icosahedron (12,30,20) each satisfy V − E + F = 2, and these five are the only convex regular polyhedra. They pair by duality — swapping vertices and faces sends the cube to the octahedron, the dodecahedron to the icosahedron, and the tetrahedron to itself — and each dual pair shares its edge count (12 and 30). Decidable",
+    "receipt": "8cbfc26d-0a83-812e-ab59-b15981f65958"
   }
 ]
