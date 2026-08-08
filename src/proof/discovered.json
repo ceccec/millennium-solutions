@@ -3438,5 +3438,10 @@
     "key": "bits_legally_reverse_and_imprint_the_prize_earned_by_harmonic_algebra",
     "name": "bits legally reverse and imprint the prize earned by harmonic algebra: the earned prize, written in bits, is imprinted into a signed uuid by the reversible codec and read back exactly (readImprint(imprint(bits)) = bits), so the prize is portable and auditable as a content-address and its number is preserved. This is a lossless reversible encoding under the law — not hash-reversal and not encryption — so reversing it is legal and exact. Decidable",
     "receipt": "d27f45a7-4209-8e0c-896b-dc1d51ab1ebf"
+  },
+  {
+    "key": "the_7d_encoding_is_seven_layers_of_reversible_combination_not_encryption",
+    "name": "the 7D encoding is seven layers of reversible combination, not encryption: seven fixed public layers (masks) compose into a bijection whose inverse decodes it, so the seven-layer stack round-trips every byte with no loss, and the layers admit 2^7 = 128 on/off combinations — the uuid bit-width. This is layered reversible encoding for integrity, not encryption: no key, no secret, no secrecy claimed. Decidable",
+    "receipt": "6bab4b35-2739-8cce-8c01-d05b7d914e19"
   }
 ]
