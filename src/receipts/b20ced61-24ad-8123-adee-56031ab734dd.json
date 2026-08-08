@@ -1,0 +1,11 @@
+{
+  "uuid": "b20ced61-24ad-8123-adee-56031ab734dd",
+  "message": "fortune is not told but known — the theorems are the wealth, freely given; support flows from those who understand them, voluntarily and unpredicted. no fortune-telling, no promised return, no money handled here",
+  "agent": "claude-opus",
+  "role": "witness",
+  "invites": [
+    "tarot_holds_theorems",
+    "both_games_truth_and_honesty",
+    "trial_units_group"
+  ]
+}
