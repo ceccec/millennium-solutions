@@ -3253,5 +3253,10 @@
     "key": "casting_out_nines_detects_any_error_that_changes_the_value_mod_nine",
     "name": "casting out nines detects any error that changes the value mod 9: for a claimed product, dr(dr(a)·dr(b)) = dr(claimed) is a necessary check — a correct product always passes, and any wrong answer differing mod 9 always fails (caught). Honest bound: an error preserving the value mod 9 (e.g. off by a multiple of 9) slips through undetected, so the check is necessary, not sufficient — a floor, exactly like the honesty gate. Decidable by exhaustion over a bounded grid",
     "receipt": "a8c8871a-5b56-8587-8aa5-5ddd2bb8c9d4"
+  },
+  {
+    "key": "nines_are_blind_to_transpositions_but_elevens_catch_them",
+    "name": "casting out nines is blind to digit transpositions but casting out elevens catches them: the digit-sum check (mod 9) is order-independent, so swapping two digits never changes it — every transposition slips through; the alternating-digit-sum check (mod 11) changes by twice the digit difference, which is ≢ 0 mod 11 for distinct digits, so it catches every adjacent transposition of distinct digits. Two checks with complementary blind spots, each a floor. Decidable by exhaustion over the 3-digit range",
+    "receipt": "ffc2d3c5-5821-879e-898f-d5d6de44bce2"
   }
 ]
