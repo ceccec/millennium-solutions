@@ -3148,5 +3148,10 @@
     "key": "decimal_period_of_1_over_43",
     "name": "the decimal period of 1/43 is 21: the repeating length of 1/43 equals the multiplicative order of 10 mod 43, and divides 43−1 = 42 — computed by long division and matched to the order",
     "receipt": "900a955f-62f1-84da-bb5f-2e27393145df"
+  },
+  {
+    "key": "all_is_manageable_as_monographs",
+    "name": "all is manageable as monographs: every object is a self-contained, uniquely content-addressed, independently recomputable unit — its own page, its own address, citable — so the deposit is a library of monographs, each a hero of self, and they fold to one order-independent root",
+    "receipt": "828c096f-fc54-88fb-abc4-c32ae549cb28"
   }
 ]
