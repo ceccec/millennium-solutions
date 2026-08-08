@@ -1163,5 +1163,35 @@
     "key": "tarot_encoding_total",
     "name": "THEOREM: \"any theorem may be explained as a tarot combination\" — the encoding is total (every content-address → 3 cards in 0..77)",
     "receipt": "f7f6254d-4c7e-878f-a149-2a2a1a8ce642"
+  },
+  {
+    "key": "tictactoe_draw",
+    "name": "tic-tac-toe with perfect play is a draw (minimax over all positions = 0)",
+    "receipt": "95089477-058f-8dd4-8c9b-687082f66780"
+  },
+  {
+    "key": "subtraction_game_mod4",
+    "name": "the subtraction game {1,2,3}: position n loses for the mover iff n ≡ 0 mod 4",
+    "receipt": "821c7911-3c60-8515-8b9d-e857e41feada"
+  },
+  {
+    "key": "one_game_harmony",
+    "name": "THE ONE GAME: all game receipts fold to one order-independent harmonic root — the games meet in one",
+    "receipt": "55cb8c5f-73cc-82ab-88ed-8a9ce10af097"
+  },
+  {
+    "key": "one_art_harmony",
+    "name": "THE ONE ART: all art receipts fold to one order-independent harmonic root — the arts meet in one",
+    "receipt": "6abed2f1-66f5-83a3-8715-878c5004b886"
+  },
+  {
+    "key": "one_science_harmony",
+    "name": "THE ONE SCIENCE: all science receipts fold to one order-independent harmonic root — the sciences meet in one",
+    "receipt": "831f5688-1127-8d4b-ad87-e6f7c47b1312"
+  },
+  {
+    "key": "one_game_all",
+    "name": "THE ONE GAME (all): games, arts and sciences fold to a single order-independent root — all meet in one",
+    "receipt": "ea90214e-fe97-88b8-ad92-539a26d73fef"
   }
 ]
