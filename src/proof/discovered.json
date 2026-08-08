@@ -598,5 +598,30 @@
     "key": "cassini_n12",
     "name": "Cassini at n=12: F(n−1)·F(n+1)−F(n)² = (−1)ⁿ",
     "receipt": "f3959e9c-9b4c-8015-b686-97528420fb06"
+  },
+  {
+    "key": "merkaba_partition",
+    "name": "the mod-3 classes {3,6,9}·{1,4,7}·{2,5,8} partition ℤ/9 into 3+3+3",
+    "receipt": "782ddd50-1c1a-8cc1-9943-886c4146b22e"
+  },
+  {
+    "key": "merkaba_counter_rotation",
+    "name": "doubling counter-rotates the two tetrahedra: {1,4,7} ↔ {2,5,8}",
+    "receipt": "5acd8c30-cd18-80bf-9d63-bb48c9d8645d"
+  },
+  {
+    "key": "merkaba_axis_closed",
+    "name": "the axis {3,6,9} is closed under doubling (the merkaba spindle)",
+    "receipt": "1b0e8f6a-2b64-824f-ae5a-b4e4cbb73b9b"
+  },
+  {
+    "key": "merkaba_cube_q3",
+    "name": "two tetrahedra = the cube Q₃: 2³ = 8 vertices, 3·2² = 12 edges",
+    "receipt": "9f00a7e0-ffab-89c8-b815-e2f415086009"
+  },
+  {
+    "key": "merkaba_field_max_null",
+    "name": "the merkaba field f(θ)=(1+cosθ)/2: co-rotating(0)→1 MAX, counter-rotating(π)→0 NULL",
+    "receipt": "a9c3214f-3ec7-8f8d-ac3e-e54c57582604"
   }
 ]

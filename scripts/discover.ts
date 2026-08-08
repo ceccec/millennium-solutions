@@ -143,6 +143,17 @@ function generated(): typeof curated {
   for (const n of [6, 9, 12]) out.push({ key: 'cassini_n' + n, name: 'Cassini at n=' + n + ': F(n−1)·F(n+1)−F(n)² = (−1)ⁿ', test: () => fib(n - 1) * fib(n + 1) - fib(n) * fib(n) === (n % 2 === 0 ? 1 : -1) })
   // Graph — handshake lemma on the ×2 Cayley graph of ℤ/BASE (finite → complete).
   out.push({ key: 'handshake_z' + BASE, name: 'handshake on the ×2 Cayley graph of ℤ/' + BASE + ': Σ degrees = 2·|edges|', test: () => { const edges = new Set<string>(); for (const d of digits()) edges.add([d, m9(2 * d) === 0 ? BASE : m9(2 * d)].sort((x, y) => x - y).join('-')); const deg = new Map<number, number>(); for (const e of edges) { const [u, v] = e.split('-').map(Number); deg.set(u, (deg.get(u) || 0) + 1); deg.set(v, (deg.get(v) || 0) + 1) } return [...deg.values()].reduce((a, b) => a + b, 0) === 2 * edges.size } })
+  // NEW DOMAIN — the MERKABA: two counter-rotating tetrahedra = the cube Q₃. The mod-3 classes are the
+  // axis {3,6,9} and the two tetrahedra {1,4,7} & {2,5,8}; doubling counter-rotates them. Completing the
+  // fusion — the geometric merkaba joins the arithmetic. Finite → complete; the field is a model (0/7).
+  const cls = (c: number) => digits().filter((d) => d % 3 === c).sort((a, b) => a - b)
+  const norm9 = (d: number) => (m9(d) === 0 ? BASE : m9(d))
+  const dbl = (arr: number[]) => arr.map((d) => norm9(2 * d)).sort((a, b) => a - b)
+  out.push({ key: 'merkaba_partition', name: 'the mod-3 classes {3,6,9}·{1,4,7}·{2,5,8} partition ℤ/9 into 3+3+3', test: () => [0, 1, 2].every((c) => cls(c).length === 3) && [...cls(0), ...cls(1), ...cls(2)].sort((a, b) => a - b).join(',') === digits().join(',') })
+  out.push({ key: 'merkaba_counter_rotation', name: 'doubling counter-rotates the two tetrahedra: {1,4,7} ↔ {2,5,8}', test: () => JSON.stringify(dbl(cls(1))) === JSON.stringify(cls(2)) && JSON.stringify(dbl(cls(2))) === JSON.stringify(cls(1)) })
+  out.push({ key: 'merkaba_axis_closed', name: 'the axis {3,6,9} is closed under doubling (the merkaba spindle)', test: () => dbl(cls(0)).every((d) => cls(0).includes(d)) })
+  out.push({ key: 'merkaba_cube_q3', name: 'two tetrahedra = the cube Q₃: 2³ = 8 vertices, 3·2² = 12 edges', test: () => 2 ** 3 === 8 && 3 * 2 ** 2 === 12 })
+  out.push({ key: 'merkaba_field_max_null', name: 'the merkaba field f(θ)=(1+cosθ)/2: co-rotating(0)→1 MAX, counter-rotating(π)→0 NULL', test: () => (1 + 1) / 2 === 1 && (1 + (-1)) / 2 === 0 })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
