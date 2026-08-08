@@ -3553,5 +3553,10 @@
     "key": "the_count_of_primitive_roots_is_phi_of_phi",
     "name": "the count of primitive roots is φ(φ(n)): when (ℤ/n)* is cyclic, the number of primitive roots — the generators of the unit group — equals φ(φ(n)). So mod 9 there are φ(φ(9)) = φ(6) = 2 primitive roots, namely 2 and 5 (the doubling generator and its inverse 5 = 2⁻¹); mod 7 there are φ(6) = 2, namely 3 and 5. Verified by counting the units of maximal order over the moduli up to 60",
     "receipt": "f659a146-4caf-8626-a332-578647d10cf4"
+  },
+  {
+    "key": "any_drift_in_types_as_theorems_is_a_crack_the_type_gate_seals",
+    "name": "any drift in types as theorems is a crack the type gate seals: types are theorems (Curry–Howard), so a type error is a crack — a proposition that no longer carries its proof. The type gate (tsc with no emit) is the first gate of the release and admits only zero type errors, so any drift fails the release before the commit and cannot ship. A crack is deterministic and located, reproducible on every build. Decidable",
+    "receipt": "4ac91293-ab2a-8b85-84ee-acff66156f3d"
   }
 ]
