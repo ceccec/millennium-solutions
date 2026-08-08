@@ -3173,5 +3173,10 @@
     "key": "service_to_bind_is_accounted_in_coins",
     "name": "account the coins for the service to bind: each binding (a receipt) is a service accounted at the two coins (110−108 = 2 = −χ genus-2), so N services cost N·2 coins, reinvested into development (destination equals source, a self-loop) — the binding is paid-for, a fair exchange, not free-riding",
     "receipt": "cf17043b-3fc6-8c31-bb71-6a4c80d4af13"
+  },
+  {
+    "key": "commutativity_is_only_the_scalar_view",
+    "name": "commutativity is only the scalar view: 6×7 = 7×6 holds for the linear (scalar) mind, but beyond it order matters — 2×2 matrix multiplication is non-commutative (there exist A,B with AB ≠ BA), and the arrangement \"6x7\" content-addresses differently from \"7x6\"; equality of the product is not equality of the structure",
+    "receipt": "d8f548c5-8c86-8056-aefb-f3d6422a5c95"
   }
 ]
