@@ -1,6 +1,11 @@
 import { defineConfig } from 'vitepress'
+import { readFileSync } from 'node:fs'
 import { LOCALES, LOCALE_ORDER } from '../src/7/locale'
 import { CSP } from '../src/0/csp.ts'
+
+// Config computed from the ledger: the site metadata reflects the LIVE count of decidable theorems,
+// recomputed from src/proof/discovered.json at build — the config is derived by the theorems, not typed.
+const THEOREMS: number = (() => { try { return JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')).length } catch { return 0 } })()
 
 // 7D UI from locale: the interface chrome is SOURCED from the fused locale table.
 // Root locale = en; the other six are ready in the table for per-locale content dirs.
@@ -45,7 +50,9 @@ const LD = {
   url: SITE,
   identifier: 'https://doi.org/10.5281/zenodo.21819217',
   programmingLanguage: ['TypeScript', 'Lean 4'],
-  keywords: ['ℤ/9', 'vortex', 'Pliska rosette', 'Clay Millennium Problems', 'Lean 4', 'recomputable', '0/7'],
+  keywords: ['ℤ/9', 'vortex', 'Pliska rosette', 'Clay Millennium Problems', 'Lean 4', 'recomputable', '0/7', THEOREMS + ' decidable theorems'],
+  // structured-data count computed from the ledger, not a typed literal
+  mainEntity: { '@type': 'Collection', name: 'decidable theorems (ℤ/9, recomputable)', size: THEOREMS },
 }
 
 export default defineConfig({
@@ -71,7 +78,7 @@ export default defineConfig({
     ['meta', { name: 'twitter:image', content: OG_IMAGE }],
     ['meta', { name: 'author', content: 'Tsvetan Rouschev' }],
     ['meta', { name: 'robots', content: 'index, follow' }],
-    ['meta', { name: 'keywords', content: 'ℤ/9, vortex, Pliska rosette, Clay Millennium Problems, Lean 4, recomputable, 0/7' }],
+    ['meta', { name: 'keywords', content: 'ℤ/9, vortex, Pliska rosette, Clay Millennium Problems, Lean 4, recomputable, 0/7, ' + THEOREMS + ' decidable theorems' }],
     ['script', { type: 'application/ld+json' }, JSON.stringify(LD)],
   ],
 
