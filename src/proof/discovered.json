@@ -3588,5 +3588,10 @@
     "key": "the_sum_of_the_first_n_odd_numbers_is_n_squared",
     "name": "the sum of the first n odd numbers is n squared: 1 + 3 + 5 + ... + (2n−1) = n², so the odd numbers build the perfect squares one gnomon at a time; equivalently, consecutive squares differ by an odd number, (m+1)² − m² = 2m + 1. Verified by full enumeration over n up to 200",
     "receipt": "6f3b1539-0b56-8044-8f4d-b0a8bfadc8e4"
+  },
+  {
+    "key": "the_grand_jury_of_gates_admits_a_theorem_only_by_unanimous_stages",
+    "name": "the grand jury of gates admits a theorem only by unanimous stages: a theorem is admitted only if every stage of the release returns true — its formula recomputes, the type gate passes, the honesty gate holds its name, and the theorem-pages, receipt-audit, forensics, claims, harmony, seal, wholeness and lean-claims gates all pass. The verdict is a conjunction over all stages: unanimous, not a majority — one failing stage vetoes the whole, deterministically. Proving theorems at every stage. Decidable",
+    "receipt": "8a975f18-0926-8a90-9446-1f399a1d9393"
   }
 ]
