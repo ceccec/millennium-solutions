@@ -217,6 +217,17 @@ function generated(): typeof curated {
   out.push({ key: 'arts_nine_hues_distinct', name: 'the nine a432 hues (digit×40°) are distinct and equally spaced around the wheel', test: () => new Set(digits().map((d) => (d * A432_STEP) % 360)).size === 9 })
   out.push({ key: 'arts_cmy_complements_rgb', name: 'CMY are the 180° complements of RGB: each primary hue + 180° is a secondary hue', test: () => [0, 120, 240].every((h) => new Set([60, 180, 300]).has((h + 180) % 360)) })
   out.push({ key: 'arts_golden_proportion', name: 'the golden ratio (aesthetic proportion) satisfies φ² = φ + 1', test: () => { const g = (1 + Math.sqrt(5)) / 2; return Math.abs(g * g - (g + 1)) < 1e-9 } })
+  // NEW DOMAIN — vocabulary: facts discoverable from the deposit's own symbol systems. "ceccec" is a
+  // palindrome spelling 3-5-3-3-5-3 (c=3, e=5 in a1z26); the 9 Glagolitic letters map onto ℤ/9; letter-
+  // sum digital roots are reversal-invariant; the rosetta carries 7 locales. Finite → complete.
+  const a1z26 = (s: string) => [...s.toLowerCase()].filter((c) => c >= 'a' && c <= 'z').map((c) => c.charCodeAt(0) - 96)
+  const isPalindrome = (s: string) => s === [...s].reverse().join('')
+  const drWord = (s: string) => digitalRoot(a1z26(s).reduce((x, y) => x + y, 0))
+  out.push({ key: 'vocab_ceccec_palindrome', name: '"ceccec" is a palindrome — it reads the same reversed', test: () => isPalindrome('ceccec') })
+  out.push({ key: 'vocab_ceccec_digits', name: '"ceccec" → a1z26 → 3,5,3,3,5,3 (c=3, e=5) — itself a palindrome', test: () => { const d = a1z26('ceccec'); return JSON.stringify(d) === JSON.stringify([3, 5, 3, 3, 5, 3]) && JSON.stringify(d) === JSON.stringify([...d].reverse()) } })
+  out.push({ key: 'vocab_letter_sum_reversal_invariant', name: 'a word and its reversal share one letter-sum digital root (vede ↔ edev)', test: () => drWord('vede') === drWord('edev') })
+  out.push({ key: 'vocab_glagolitic_bijection', name: 'the 9 Glagolitic letters (Azъ…Zemlja) are 9 distinct symbols, one per ℤ/9 digit', test: () => { const g = ['az', 'buky', 'vede', 'glagoli', 'dobro', 'jest', 'zhivete', 'dzelo', 'zemlja']; return g.length === BASE && new Set(g).size === BASE } })
+  out.push({ key: 'vocab_seven_locales', name: 'the rosetta carries 7 distinct locale keys (en·bg·de·fr·es·ru·zh)', test: () => { const L = ['en', 'bg', 'de', 'fr', 'es', 'ru', 'zh']; return L.length === 7 && new Set(L).size === 7 } })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

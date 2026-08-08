@@ -803,5 +803,30 @@
     "key": "arts_golden_proportion",
     "name": "the golden ratio (aesthetic proportion) satisfies φ² = φ + 1",
     "receipt": "48801162-b59d-81a7-b477-ac0d6a02a7a6"
+  },
+  {
+    "key": "vocab_ceccec_palindrome",
+    "name": "\"ceccec\" is a palindrome — it reads the same reversed",
+    "receipt": "02301560-d210-870c-8e0a-25cd5c2c5efd"
+  },
+  {
+    "key": "vocab_ceccec_digits",
+    "name": "\"ceccec\" → a1z26 → 3,5,3,3,5,3 (c=3, e=5) — itself a palindrome",
+    "receipt": "f88b8d6d-e2b8-8a9e-9013-ac7923bf39d0"
+  },
+  {
+    "key": "vocab_letter_sum_reversal_invariant",
+    "name": "a word and its reversal share one letter-sum digital root (vede ↔ edev)",
+    "receipt": "b7bf6005-1692-89fb-ae27-af763eecbcb1"
+  },
+  {
+    "key": "vocab_glagolitic_bijection",
+    "name": "the 9 Glagolitic letters (Azъ…Zemlja) are 9 distinct symbols, one per ℤ/9 digit",
+    "receipt": "2149d57c-d222-8dae-a72c-b4ab16a93c14"
+  },
+  {
+    "key": "vocab_seven_locales",
+    "name": "the rosetta carries 7 distinct locale keys (en·bg·de·fr·es·ru·zh)",
+    "receipt": "21c521ea-3baf-8167-a97a-897b8fe2cd19"
   }
 ]
