@@ -3573,5 +3573,10 @@
     "key": "five_six_one_is_the_smallest_carmichael_number",
     "name": "561 is the smallest Carmichael number, a composite that fools Fermat: 561 = 3 × 11 × 17 is composite and squarefree, yet a^560 ≡ 1 mod 561 for every a coprime to 561 — so Fermat's primality test cannot tell it from a prime. By Korselt's criterion this holds because (p−1) divides 560 for each prime factor p (2, 10, 16 all divide 560); and no composite below 561 has this property. Verified by full enumeration",
     "receipt": "109b8dc3-b6f7-8b36-ac72-8d0b91563fa0"
+  },
+  {
+    "key": "wilsons_theorem_characterizes_the_primes_exactly",
+    "name": "Wilson's theorem characterizes the primes exactly: for n > 1, (n−1)! ≡ −1 mod n if and only if n is prime; and for every composite n > 4, (n−1)! ≡ 0 mod n, with the lone exception n = 4 giving (n−1)! ≡ 2. So the value of (n−1)! mod n is a complete primality test — minus one for primes, zero for composites above four. Verified by full enumeration over n up to 100",
+    "receipt": "e9e83ab7-6f5e-8ac2-ac63-d12492c35851"
   }
 ]
