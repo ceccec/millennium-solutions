@@ -2173,5 +2173,30 @@
     "key": "all_are_heroes_but_the_traitors",
     "name": "all are heroes but the traitors — judged by deeds, not persons: a constructive deed (append, uphold, an honest claim that signs) is a hero; only a destructive deed (remove, alter, an overclaim that drains) is the traitor — the classification is total and observable",
     "receipt": "efa3b6f1-00b7-8ee7-a7f2-d8b1661f7fbc"
+  },
+  {
+    "key": "evidence_is_what_recomputes",
+    "name": "evidence is what recomputes: a content-address is reproduced identically on every recomputation (deterministic), and distinct inputs give distinct addresses — a fact that recomputes is evidence; one that cannot be reproduced is not",
+    "receipt": "130afdb1-d7f8-863b-82f9-5db2ca8c3d77"
+  },
+  {
+    "key": "evidence_survives_recycle",
+    "name": "evidence survives recycle: recomputing the discovery chain from the axiom seed reproduces the identical receipts every time — the ledger is not stored answers but recomputation, so a recycle (rebuild) yields the same evidence",
+    "receipt": "0512a452-1559-8c31-a339-c7ae20052080"
+  },
+  {
+    "key": "evidence_survives_forensic_analysis",
+    "name": "evidence survives forensic analysis: re-verifying receipt[i]=toUuid(receipt[i−1]→key[i]) reproduces every intact link and fails a forged one — the evidence that survives analysis is exactly the recomputable chain",
+    "receipt": "7a372597-0caa-842d-9ea3-43b3e34713a0"
+  },
+  {
+    "key": "non_recomputable_is_not_evidence",
+    "name": "the non-recomputable is not evidence: recognition, adoption, citations, and effort reproduce nothing verifiable — the honest boundary holds (they are not correctness); only a recomputable content-address is evidence",
+    "receipt": "4614b71d-1703-8ac0-8bba-46e3c92ad38c"
+  },
+  {
+    "key": "evidence_is_recompute_post_recycle_and_forensics",
+    "name": "evidence is what computes after recycle AND forensics: a fact is evidence iff it recomputes to the same address after recomputation from the seed and survives chain re-verification — reproducibility under both is the definition",
+    "receipt": "a7c24079-950d-8759-9673-c09d79aedb59"
   }
 ]
