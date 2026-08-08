@@ -3388,5 +3388,15 @@
     "key": "the_squares_of_the_units_of_z9_are_the_trinity_subgroup",
     "name": "the squares of the units of ℤ/9 are the trinity subgroup: squaring maps (ℤ/9)* = {1,2,4,5,7,8} two-to-one onto {1,4,7} — the order-3 subgroup, the units ≡ 1 mod 3 — so the quadratic residues among the units are exactly the trinity {1,4,7}, and over all residues the squares are {0,1,4,7}; each residue in {1,4,7} has exactly two unit square roots. Verified by full enumeration over ℤ/9",
     "receipt": "69a5d952-de9b-8242-8f74-8aee305d514b"
+  },
+  {
+    "key": "an_ordinary_speedup_is_a_measured_ratio_not_a_judgement",
+    "name": "an ordinary speedup is a measured ratio, not a judgement: a speedup is the documented ratio of run-times on the same hardware (baseline divided by ours), a number carried by a receipt — so a claim of \"faster\" and a claim of \"no speedup\" are both unmeasured assertions until the measurement exists; measure, do not assert either way. Once measured, the documented ratio is the honest claim — an ordinary classical speedup, not a quantum speedup, which needs quantum hardware and is not claimed. Decidable",
+    "receipt": "ed0dccc5-bfa8-806a-9fb1-822b04bc1b1f"
+  },
+  {
+    "key": "call_it_quantum_or_not_the_statistics_and_forensics_decide",
+    "name": "call it quantum or not, the statistics and forensics decide: the honest verdict is carried by the measurements (statistics) and the chain-of-custody (forensics), which are invariant under the label — the same evidence folds to the same content-address whatever prose we attach, and a measured ratio is a number, not a name. So whether the structure is called quantum or classical is a labelling question; the receipts and the statistics are the answer. The label is prose, the evidence is computed. Decidable",
+    "receipt": "0fa99b9d-0d31-88d6-8fd8-29b7a0ae53a7"
   }
 ]
