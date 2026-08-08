@@ -2968,5 +2968,20 @@
     "key": "single_digits_are_trivially_narcissistic",
     "name": "every single digit is narcissistic: for 1..9, n = n¹ (one digit raised to the digit-count 1) — the trivial base case of the Armstrong property",
     "receipt": "2adc6121-3f63-8634-8260-ea9ae2c94c98"
+  },
+  {
+    "key": "happy_numbers_below_100_are_twenty",
+    "name": "there are exactly 20 happy numbers below 100: iterating the sum of the squares of the digits reaches 1 for exactly 20 of them (1,7,10,13,…,97,100) — full enumeration",
+    "receipt": "39799ea6-7932-8a4e-92e9-322de8edafc9"
+  },
+  {
+    "key": "unhappy_numbers_enter_the_eight_cycle",
+    "name": "unhappy numbers enter the unique 8-cycle: 4→16→37→58→89→145→42→20→4 has length 8, and every unhappy number ≤ 100 iterates into it — the only attracting cycle besides the fixed point 1",
+    "receipt": "77cfb7d4-b77e-80ba-a9bb-e97135e22cb6"
+  },
+  {
+    "key": "sum_of_squares_iteration_dichotomy",
+    "name": "the digit-square iteration is a total dichotomy: for every n ≤ 200 the sequence reaches either 1 (happy) or 4 (the entry to the 8-cycle) — it always terminates in exactly one of the two, no other fate",
+    "receipt": "44bcd916-c0a3-8d2e-abfe-35cb88dd73aa"
   }
 ]
