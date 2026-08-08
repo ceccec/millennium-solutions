@@ -303,6 +303,13 @@ function generated(): typeof curated {
   out.push({ key: 'ledger_merkle_rejects_forgery', name: 'a leaf not in the tree fails its proof — no forged inclusion', test: () => !verifyProof('forged', merkleProof(led, 2), merkleRoot(led)) })
   out.push({ key: 'ledger_tamper_changes_root', name: 'tampering any leaf changes the merkle root — the ledger is tamper-evident', test: () => merkleRoot(led) !== merkleRoot([led[0], led[1], 'TAMPERED', led[3], led[4]]) })
   out.push({ key: 'ledger_hash_chain', name: 'a hash chain breaks from the first altered block onward (each block seeded by the prior)', test: () => { const chain = (arr: string[]) => { let h = 'genesis'; const hs: string[] = []; for (const b of arr) { h = toUuid(h + '→' + b); hs.push(h) } return hs }; const a = chain(['b1', 'b2', 'b3']), b = chain(['b1', 'X', 'b3']); return a[0] === b[0] && a[1] !== b[1] && a[2] !== b[2] } })
+  // harmonic ledger — the a432 layer over the ledger: every content-address maps to one of the 9 a432
+  // hues via its hex digital root (×40°), deterministic and reproducible. Published open (CC-BY-NC); the
+  // world decides any lawful use. Still integrity, not money — no currency, no mining, no consensus.
+  const uuidDigit = (u: string) => digitalRoot([...u.replace(/[^0-9a-f]/g, '')].reduce((a, c) => a + parseInt(c, 16), 0))
+  out.push({ key: 'harmonic_ledger_hue', name: 'every content-address maps to one of the 9 a432 hues (hex digital root × 40°) — the harmonic ledger', test: () => led.every((b) => { const d = uuidDigit(toUuid(b)); return d >= 1 && d <= 9 }) })
+  out.push({ key: 'harmonic_ledger_deterministic', name: 'the harmonic hue is deterministic and reproducible: the same content-address always yields the same a432 digit', test: () => led.every((b) => uuidDigit(toUuid(b)) === uuidDigit(toUuid(b))) })
+  out.push({ key: 'harmonic_root_hue', name: 'the merkle root carries a harmonic a432 hue — one of the nine (hex digital root × 40°)', test: () => { const d = uuidDigit(merkleRoot(led)); return d >= 1 && d <= 9 && (d * A432_STEP) % 40 === 0 } })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

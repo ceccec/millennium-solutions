@@ -1028,5 +1028,20 @@
     "key": "ledger_hash_chain",
     "name": "a hash chain breaks from the first altered block onward (each block seeded by the prior)",
     "receipt": "691d1a9c-b02a-8440-bcf0-0beefac1182c"
+  },
+  {
+    "key": "harmonic_ledger_hue",
+    "name": "every content-address maps to one of the 9 a432 hues (hex digital root × 40°) — the harmonic ledger",
+    "receipt": "089d12f5-4e12-8829-a762-df920cf9d502"
+  },
+  {
+    "key": "harmonic_ledger_deterministic",
+    "name": "the harmonic hue is deterministic and reproducible: the same content-address always yields the same a432 digit",
+    "receipt": "24aa4bf9-516c-8f2e-8aac-948730f844ae"
+  },
+  {
+    "key": "harmonic_root_hue",
+    "name": "the merkle root carries a harmonic a432 hue — one of the nine (hex digital root × 40°)",
+    "receipt": "f302789e-a628-8a2f-b715-95ab8ee148f7"
   }
 ]
