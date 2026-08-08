@@ -73,7 +73,6 @@ if (message) {
   // FALLBACK — never dead-end: propose the most probable next idea (a decidable domain not yet added).
   // Honestly bounded: each is a suggestion to implement as a family in scripts/discover.ts, not a claim.
   const BACKLOG = [
-    'Stirling numbers — the two kinds and their recurrences (bounded per n)',
     'graph coloring — the chromatic number of small graphs (finite → complete)',
     'cellular automata — Rule 90 and the Sierpiński parity (finite grid)',
     'continued fractions of √n — the periodic expansions (bounded)',

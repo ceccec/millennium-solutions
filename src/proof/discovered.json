@@ -1313,5 +1313,20 @@
     "key": "harmonic_convention_bound",
     "name": "a432 Hz tuning is a convention, not a theorem; the ratios (2:1, 3:2, 5:4) are exact rationals — the boundary",
     "receipt": "d80f191a-d8c4-8e7e-8069-250dcec2667e"
+  },
+  {
+    "key": "stirling_second_bell",
+    "name": "Stirling 2nd kind S(n,k)=S(n-1,k-1)+k·S(n-1,k): S(4,2)=7 and Σ_k S(4,k)=15=B(4)",
+    "receipt": "23e393cc-dd5d-836d-bd74-29ff41c8391a"
+  },
+  {
+    "key": "stirling_first_factorial",
+    "name": "unsigned Stirling 1st kind (permutations by cycles) sum to n!: Σ_k c(4,k) = 4! = 24",
+    "receipt": "e1f258a9-dbdb-8159-acb3-e7dadc5192b2"
+  },
+  {
+    "key": "stirling_edges",
+    "name": "Stirling 2nd kind edges: S(n,1)=1 (one block), S(n,n)=1 (singletons), n=1..6",
+    "receipt": "02ae48de-5452-8f78-bf12-caa545b1aeed"
   }
 ]

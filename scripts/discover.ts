@@ -407,6 +407,13 @@ function generated(): typeof curated {
   out.push({ key: 'harmonic_just_ratios', name: 'just intonation: the fifth 3:2, fourth 4:3, major third 5:4 — exact rationals', test: () => 3 / 2 === 1.5 && 5 / 4 === 1.25 && 4 / 3 > 1.333 && 4 / 3 < 1.334 })
   out.push({ key: 'harmonic_pythagorean_comma', name: 'the Pythagorean comma: 12 fifths ≠ 7 octaves — 3^12 = 531441 ≠ 2^19 = 524288', test: () => 3 ** 12 === 531441 && 2 ** 19 === 524288 && 3 ** 12 !== 2 ** 19 })
   out.push({ key: 'harmonic_convention_bound', name: 'a432 Hz tuning is a convention, not a theorem; the ratios (2:1, 3:2, 5:4) are exact rationals — the boundary', test: () => computes('the harmonic ratios are exact rationals; the a432 Hz tuning is a convention, not a theorem').binary === 1 })
+  // Stirling numbers — the two kinds. 2nd kind (set partitions into k blocks) sums to Bell(n); unsigned
+  // 1st kind (permutations with k cycles) sums to n!. Bounded recurrences, complete per n.
+  const S2 = (n: number, k: number): number => { if (k === 0) return n === 0 ? 1 : 0; if (k > n) return 0; if (k === n || k === 1) return 1; return S2(n - 1, k - 1) + k * S2(n - 1, k) }
+  const c1 = (n: number, k: number): number => { if (k === 0) return n === 0 ? 1 : 0; if (k > n) return 0; if (k === n) return 1; return c1(n - 1, k - 1) + (n - 1) * c1(n - 1, k) }
+  out.push({ key: 'stirling_second_bell', name: 'Stirling 2nd kind S(n,k)=S(n-1,k-1)+k·S(n-1,k): S(4,2)=7 and Σ_k S(4,k)=15=B(4)', test: () => { let s = 0; for (let k = 0; k <= 4; k++) s += S2(4, k); return S2(4, 2) === 7 && s === 15 } })
+  out.push({ key: 'stirling_first_factorial', name: 'unsigned Stirling 1st kind (permutations by cycles) sum to n!: Σ_k c(4,k) = 4! = 24', test: () => { let s = 0; for (let k = 0; k <= 4; k++) s += c1(4, k); return s === 24 } })
+  out.push({ key: 'stirling_edges', name: 'Stirling 2nd kind edges: S(n,1)=1 (one block), S(n,n)=1 (singletons), n=1..6', test: () => [1, 2, 3, 4, 5, 6].every((n) => S2(n, 1) === 1 && S2(n, n) === 1) })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
