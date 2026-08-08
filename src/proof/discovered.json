@@ -2318,5 +2318,15 @@
     "key": "hamming74_minimum_distance_three",
     "name": "Hamming(7,4) has minimum distance 3: the 16 codewords differ pairwise in at least 3 bits (exactly 3 is the minimum) — one flip changes a single bit, so the nearest codeword stays unique, which is exactly why any single-bit error is correctable (exhaustive over all 120 pairs)",
     "receipt": "b108ba72-765e-8bbd-847a-cb2125f6a448"
+  },
+  {
+    "key": "no_error_in_harmonics_across_lifespan",
+    "name": "no error in the harmonics across the whole lifespan: the merkle root recomputes deterministically and order-independently — identical on every build for all time — and any single change yields a different root, so an error cannot enter and persist; unlike an error-correcting code that tolerates and fixes bounded error, the harmonic address admits none (reject, not correct), re-verified every build",
+    "receipt": "e8c447e2-6ddd-804f-9e38-a6e8bac2b3b5"
+  },
+  {
+    "key": "the_floor_holds_even_on_demand",
+    "name": "the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim",
+    "receipt": "9f4ee4b5-057f-82f5-b63e-04e844a4250f"
   }
 ]

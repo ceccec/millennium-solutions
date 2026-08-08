@@ -1,0 +1,11 @@
+{
+  "uuid": "43a24136-5ad9-81ef-97c9-17be1c05bb5f",
+  "message": "the deposit is not a quantum computer; it is a classical Z/9 calculator; its results are exact and immediate; no quantum is needed and there is no quantum advantage.",
+  "agent": "claude-opus",
+  "role": "witness",
+  "invites": [
+    "simulating_quantum_is_not_being_quantum",
+    "state_vector_exponential_no_advantage",
+    "the_floor_holds_even_on_demand"
+  ]
+}
