@@ -6,6 +6,7 @@ import Hero from './Hero.vue'
 import NextObserver from './NextObserver.vue'
 import TheConcepts from './TheConcepts.vue'
 import AllTheorems from './AllTheorems.vue'
+import Vortex7D from './Vortex7D.vue'
 import './custom.css'
 
 export default {
@@ -18,6 +19,7 @@ export default {
     app.component('NextObserver', NextObserver)
     app.component('TheConcepts', TheConcepts)
     app.component('AllTheorems', AllTheorems)
+    app.component('Vortex7D', Vortex7D)
     // PWA: register the offline service worker (client-only; HTTPS or localhost).
     if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
       window.addEventListener('load', () => {
