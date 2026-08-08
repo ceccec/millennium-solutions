@@ -2358,5 +2358,20 @@
     "key": "the_sequence_is_the_classical_opposite_of_quantum",
     "name": "the sequence is the classical opposite of the quantum: the deposit computes a single definite orbit (1,2,4,8,7,5) recomputed identically with no drift (determinism), whereas a quantum machine is probabilistic (superposition, measurement collapse) — resonance is the opposite pole of quantum indeterminacy, and no quantum advantage is claimed",
     "receipt": "3d3837b1-1982-888e-a61f-6ad5c544ae44"
+  },
+  {
+    "key": "farey_neighbours_unimodular",
+    "name": "Farey neighbours are unimodular: consecutive reduced fractions a/b < c/d in the Farey sequence F_n satisfy bc − ad = 1 (determinant one) — verified exhaustively for n ≤ 7",
+    "receipt": "f122d7de-8779-861d-85da-d12b8564005f"
+  },
+  {
+    "key": "farey_mediant_between_and_reduced",
+    "name": "the mediant of Farey neighbours lies strictly between them and is already reduced: for adjacent a/b < c/d, a/b < (a+c)/(b+d) < c/d and gcd(a+c, b+d) = 1 — the Stern–Brocot construction, exhaustive for n ≤ 7",
+    "receipt": "863ad7a4-6be9-87b3-8198-02f1d0a21f6f"
+  },
+  {
+    "key": "farey_lists_every_reduced_fraction_once",
+    "name": "the Farey sequence lists every reduced fraction exactly once: |F_n| = 1 + Σ φ(q) for q=1..n and no fraction repeats — each rational in lowest terms appears once (exhaustive n ≤ 7), the exact-rational analog of the deposit’s gcd-reduced arithmetic",
+    "receipt": "bc1bf0aa-1f40-81c1-9d19-d237f462f51f"
   }
 ]
