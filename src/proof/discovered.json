@@ -3758,5 +3758,10 @@
     "key": "the_counts_reconcile_across_dimensions_a_mismatch_is_a_caught_traitor",
     "name": "the counts reconcile across dimensions, and a mismatch is a caught traitor: the number of theorems, the number of theorem pages, and the number that recompute true must all agree — a conjunction across dimensions. Any inequality (a theorem with no page, a page with no theorem, a recorded fact that does not recompute) is a caught traitor that fails the gate. The reconciliation scales: for any count the three must be equal, and any off-by-one is caught. Measure the counts; do not narrate them. Decidable",
     "receipt": "3db4c42a-602d-8cc4-8ac6-8d7af6e3a043"
+  },
+  {
+    "key": "bezouts_identity_gcd_is_an_integer_combination",
+    "name": "Bézout's identity: for all integers a and b there are integers x and y with a·x + b·y = gcd(a,b) — the greatest common divisor is an integer combination of a and b, computed by the extended Euclidean algorithm. Verified against the kernel gcd for all a, b up to 60. So the gcd is the least positive value that a·x + b·y attains",
+    "receipt": "34d5d17a-f22b-80ac-9802-12afec86682d"
   }
 ]
