@@ -20,6 +20,15 @@ import { provable } from './discover.ts'
 
 const message = process.argv.slice(2).join(' ').trim()
 
+// AUTOMATE — next is the full loop. After a delta is committed+tagged, push main and the tag to origin.
+const pushAll = () => {
+  try {
+    execSync('git push origin main', { stdio: 'inherit' })
+    const tag = execSync('git describe --tags --abbrev=0', { encoding: 'utf8' }).trim()
+    execSync('git push origin ' + tag, { stdio: 'inherit' })
+  } catch { console.log('  (push skipped — offline or no remote)') }
+}
+
 // ── message mode: the binary decides whether it stays ──────────────────────────
 if (message) {
   const { binary, hit } = computes(message)
@@ -55,6 +64,9 @@ if (message) {
     console.log('next — a wave: discovered & saved ' + fresh.length + ' provable fact(s), each sending the next:')
     for (const c of fresh) console.log('  ✓ ' + c.name)
     console.log('  ledger now ' + ledger.length + ' recorded → ' + LEDGER + ' · wave tip ' + prev.slice(0, 13) + '…')
+    // ship the discoveries and push — the full loop in one `next`.
+    execSync('npm run release', { stdio: 'inherit' })
+    pushAll()
     process.exit(0)
   }
   console.log('next — the wave has reached rest: no new provable fact in the candidate space (' + known.size + ' recorded).')
@@ -96,3 +108,4 @@ if (address === lastAddr) {
 console.log('next — a real delta is present (' + address.slice(0, 13) + '… ≠ ' + lastTag + '). shipping the truly-next:')
 execSync('npm run orchestrate', { stdio: 'inherit' })
 execSync('npm run deploy:pages', { stdio: 'inherit' })
+pushAll()
