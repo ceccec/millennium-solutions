@@ -3278,5 +3278,10 @@
     "key": "the_nonzero_residues_sum_to_zero_mod_n_exactly_when_n_is_odd",
     "name": "the nonzero residues sum to zero mod n exactly when n is odd: 1+2+...+(n−1) = n(n−1)/2 is ≡ 0 mod n iff n is odd (when n is even the sum ≡ n/2 mod n). So for n = 9 the residues sum to 36 ≡ 0 (digital root 9) and cancel, whereas for even moduli they leave a remainder of n/2. Decidable by exhaustion over the moduli up to 200",
     "receipt": "3ad53e9c-3917-8a6c-adb4-d8c51ec4f65c"
+  },
+  {
+    "key": "gauss_generalization_of_wilson_product_of_units",
+    "name": "Gauss's generalization of Wilson: the product of the units mod n is ≡ −1 when n has a primitive root and ≡ +1 otherwise. For n = 9 (primitive root 2) the six units multiply to 1·2·4·5·7·8 ≡ −1 mod 9 (that is 8); for n = 8 (no primitive root, units ≅ C2×C2) they multiply to +1. Verified by exhaustion over the moduli up to 60",
+    "receipt": "a5246422-b686-8024-86ec-6b92f2c00754"
   }
 ]
