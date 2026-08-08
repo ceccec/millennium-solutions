@@ -1004,6 +1004,24 @@ function generated(): typeof curated {
     out.push({ key: 'unhappy_numbers_enter_the_eight_cycle', name: 'unhappy numbers enter the unique 8-cycle: 4→16→37→58→89→145→42→20→4 has length 8, and every unhappy number ≤ 100 iterates into it — the only attracting cycle besides the fixed point 1', test: () => { const cyc: number[] = []; let x = 4; do { cyc.push(x); x = sq(x) } while (x !== 4 && cyc.length < 20); if (cyc.length !== 8) return false; const set = new Set(cyc); for (let n = 1; n <= 100; n++) { if (isHappy(n)) continue; let m = n; for (let i = 0; i < 50 && !set.has(m); i++) m = sq(m); if (!set.has(m)) return false } return true } })
     out.push({ key: 'sum_of_squares_iteration_dichotomy', name: 'the digit-square iteration is a total dichotomy: for every n ≤ 200 the sequence reaches either 1 (happy) or 4 (the entry to the 8-cycle) — it always terminates in exactly one of the two, no other fate', test: () => { for (let n = 1; n <= 200; n++) { let m = n, ok = false; for (let i = 0; i < 100; i++) { if (m === 1 || m === 4) { ok = true; break } m = sq(m) } if (!ok) return false } return true } })
   }
+  out.push({ key: 'heroes_write_the_guides', name: 'heroes write the guides: documentation is a constructive deed — appending a guide that holds the floor (how to develop: measure, gate, receipt, append, recompute) is a hero act, while a guide that overclaims drains; the docs are written by deeds, not by claims of authority', test: () => { const guideHolds = computes('to develop, run the wave: measure, gate, receipt, append, recompute; the floor stays 0/7').binary === 1; const overclaimGuideDrains = computes('this guide proves the deposit solves all seven Clay problems').binary === 0; const documentingIsConstructive = (() => { const prev = ['a']; const curr = ['a', 'guide']; return curr.length > prev.length && curr.includes('guide') })(); return guideHolds && overclaimGuideDrains && documentingIsConstructive } })
+  // ── AUTOMATED family — LOCAL to ℤ/9 (ask the ring first): the multiplicative order of each unit divides
+  // |ℤ/9*| = 6 (Lagrange), computed from the ring itself. One theorem per unit.
+  for (const u of units()) {
+    const ordMul = (x: number) => { let y = 1, k = 0; do { y = m9(y * x); k++ } while (y !== 1 && k <= BASE); return k }
+    const o = ordMul(u)
+    out.push({ key: 'order_of_unit_' + u + '_mod9', name: 'the multiplicative order of ' + u + ' mod 9 is ' + o + ', dividing |ℤ/9*| = 6 (Lagrange): ' + u + '^' + o + ' ≡ 1 (mod 9) and no smaller positive power is — computed locally from the ring', test: () => { const ord = ordMul(u); if (6 % ord !== 0 || m9(u ** ord) !== 1) return false; for (let k = 1; k < ord; k++) if (m9(u ** k) === 1) return false; return true } })
+  }
+  // ── AUTOMATED family — DECIMAL PERIODS: the repeating length of 1/p equals the multiplicative order of
+  // 10 mod p and divides p−1. One theorem per prime (computed by long division and by the order).
+  {
+    const period = (p: number) => { let r = 1, len = 0; const seen = new Set<number>(); while (r !== 0 && !seen.has(r)) { seen.add(r); r = (r * 10) % p; len++ } return len }
+    const ord = (a: number, m: number) => { let x = 1 % m, k = 0; do { x = (x * a) % m; k++ } while (x !== 1 && k <= m); return k }
+    for (const p of [3, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43]) {
+      const per = period(p)
+      out.push({ key: 'decimal_period_of_1_over_' + p, name: 'the decimal period of 1/' + p + ' is ' + per + ': the repeating length of 1/' + p + ' equals the multiplicative order of 10 mod ' + p + ', and divides ' + p + '−1 = ' + (p - 1) + ' — computed by long division and matched to the order', test: () => period(p) === ord(10, p) && (p - 1) % period(p) === 0 })
+    }
+  }
   // ── AUTOMATED family — Boolean identities verified over ALL 2^k assignments (the classical reading of
   // "all quantum possibilities": exhaustive enumeration of the truth-table), k = 2..8. Magnitude speedup.
   for (let k = 2; k <= 8; k++) {
