@@ -3653,5 +3653,10 @@
     "key": "anyone_may_compete_with_a_release_by_recomputing_its_content_address",
     "name": "anyone may compete with a release by recomputing its content-address: a release is a fixed content-address folded from its tracked state, so any competitor recomputes it from the same public inputs — an exact match verifies the claim, a different state gives a different address. The verdict is deterministic and checkable by all, with no privilege and no hidden state; to extend it, fold a larger consistent state from the same seed. Open competition by recomputation. Decidable",
     "receipt": "fbb5514e-440f-8da1-982b-1f5128ee97ef"
+  },
+  {
+    "key": "the_ever_updating_latest_is_the_content_address_not_the_version_number",
+    "name": "the ever-updating latest is the content-address, not the version number: the content-address folds the current state, so identical content keeps the same address (and pays no new coin, by the no-delta guard) while a real delta moves it — the address is the living latest. A version number is only a label: the same state has the same identity under any label, so incrementing labels toward infinity is optional churn, not identity. One canonical symbol can name the whole while the content-address begins at the axiom seed and ends at the current root, updating forever. Decidable",
+    "receipt": "267dc781-af21-8e32-a9de-44b18a637682"
   }
 ]
