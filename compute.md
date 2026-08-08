@@ -14,6 +14,7 @@ import { report as theGame } from './src/the/game/index'
 import { report as theHeart } from './src/the/heart/index'
 import { report as fromTheHeart } from './src/from/the/heart/index'
 import { report as playTheGame } from './src/play/the/game/index'
+import { report as theSuperposition } from './src/the/superposition/state/index'
 import { report as acceptance } from './src/1/acceptance'
 import { report as paradox } from './src/1/paradox'
 import { report as society } from './src/9/society'
@@ -124,6 +125,10 @@ digit to its partner (fixed point **5**), so the folders below are laid out arou
 ### Play the game · `src/play/the/game/index.ts`
 
 <pre>{{ playTheGame() }}</pre>
+
+### The superposition · `src/the/superposition/state/index.ts`
+
+<pre>{{ theSuperposition() }}</pre>
 </details>
 
 ## `0/` — the substrate · content-addressing

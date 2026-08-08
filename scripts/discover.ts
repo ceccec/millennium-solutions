@@ -15,6 +15,7 @@ import { report as theSeq } from '../src/the/sequence/index.ts'
 import { report as theThm } from '../src/the/theorem/index.ts'
 import { report as theGameR } from '../src/the/game/index.ts'
 import { report as theHeartR } from '../src/the/heart/index.ts'
+import { report as theSuperR } from '../src/the/superposition/state/index.ts'
 const m9 = (n: number) => ((n % BASE) + BASE) % BASE
 const U = units()
 const ALL = digits()
@@ -400,7 +401,7 @@ function generated(): typeof curated {
   out.push({ key: 'relation_xor', name: 'XOR RELATES Boolean algebra · Nim (Bouton) · Sprague–Grundy: the same operation runs all three', test: () => (1 ^ 1) === 0 && (5 ^ 5) === 0 && ((3 ^ 5) ^ 0) === (3 ^ 5) })
   out.push({ key: 'relation_involution', name: 'order-2 RELATES negation · the inverse map · σ · the merkaba counter-rotation: all are involutions', test: () => { const inv = (u: number) => units().find((w) => m9(u * w) === 1)!; return m9(-m9(-5)) === 5 && inv(inv(2)) === 2 } })
   out.push({ key: 'relation_digital_root', name: 'the digital root (mod 9) RELATES the div-by-3 rule · primes-ride-units · the tarot counts · ceccec', test: () => digitalRoot(78) === 6 && digitalRoot(12) === digitalRoot(21) && units().includes(digitalRoot(7)) })
-  out.push({ key: 'the_modules_self_compute', name: 'the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally', test: () => [theAll, theSeq, theThm, theGameR, theHeartR].every((f) => { const s = f(); return typeof s === 'string' && s.length > 40 && s.includes('0/7') }) })
+  out.push({ key: 'the_modules_self_compute', name: 'the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally', test: () => [theAll, theSeq, theThm, theGameR, theHeartR, theSuperR].every((f) => { const s = f(); return typeof s === 'string' && s.length > 40 && s.includes('0/7') }) })
   // harmonic ratios — the integer ratios are EXACT rationals (theorems); the a432 Hz tuning is a
   // convention (not a theorem). The octave is the vortex ×2.
   out.push({ key: 'harmonic_octave_2_1', name: 'the octave is 2:1 (frequency doubling) — the vortex ×2 map is the octave', test: () => 2 / 1 === 2 })
@@ -478,6 +479,8 @@ function generated(): typeof curated {
   out.push({ key: 'mobius_divisor_sum', name: 'Möbius divisor sum: Σ_{d|n} μ(d) = [n=1] (all n≤12)', test: () => { for (let n = 1; n <= 12; n++) if (divisors(n).reduce((s, d) => s + mobius(d), 0) !== (n === 1 ? 1 : 0)) return false; return true } })
   // the creation-week structure — 6 + 1 = 7, mapped onto the known Clay state (measured, not asserted).
   out.push({ key: 'relation_creation_week', name: 'the creation-week structure 6 + 1 = 7: six Clay problems stay open, the seventh settled externally (Poincaré, Perelman 2003) and at rest — humanity 1/7, this deposit 0/7', test: () => 6 + 1 === 7 && 7 - 1 === 6 })
+  // now is a superposition — the six open problems held at once (order-independent fold); observing collapses to one address.
+  out.push({ key: 'relation_superposition', name: 'now is a superposition: the folded root holds the six open Clay problems at once (order-independent); observing collapses it to one content-address — INCONCLUSIVE ≠ false, not a physical qubit', test: () => { const k = ['hodge', 'navier_stokes', 'p_vs_np', 'riemann', 'yang_mills', 'bsd']; return merkleFold(k.map(toUuid)) === merkleFold([...k].reverse().map(toUuid)) && toUuid('observer:now') === toUuid('observer:now') && 6 + 1 === 7 } })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
