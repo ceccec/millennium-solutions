@@ -2388,5 +2388,20 @@
     "key": "discrete_log_is_group_isomorphism",
     "name": "the discrete log is a group isomorphism ℤ/9* ≅ ℤ/6: with index base 2, ind(u·v mod 9) = (ind(u)+ind(v)) mod 6 for every pair of units — multiplication becomes addition mod 6 (the multiplicative group is cyclic of order 6), exhaustive over all 36 pairs",
     "receipt": "66a1d58a-91e9-887b-95a2-385178833b07"
+  },
+  {
+    "key": "gf2_addition_is_xor",
+    "name": "GF(2) arithmetic speaks binary: polynomial addition over GF(2) is bitwise XOR, and every element is its own additive inverse (a ⊕ a = 0, characteristic 2) — the field of two elements is pure bit algebra",
+    "receipt": "b3ac7829-c58e-8363-b52b-ae28fd9726b0"
+  },
+  {
+    "key": "crc_codeword_divisible_by_generator",
+    "name": "a CRC codeword is exactly divisible by its generator: appending the remainder of (m·x³) mod g(x) to the message yields a codeword with zero remainder mod g(x)=x³+x+1 — verified for every 4-bit message",
+    "receipt": "fb2f0e96-86e7-86a2-93e4-4387399dcedc"
+  },
+  {
+    "key": "crc_detects_every_single_bit_error",
+    "name": "the CRC detects every single-bit error: flipping any one of the 7 codeword bits makes the remainder mod g(x)=x³+x+1 nonzero (an error polynomial x^i is never divisible by the primitive generator) — so any one-bit crack is caught, exhaustive over all messages and positions",
+    "receipt": "13b07ce4-3902-8359-b0e0-050a114cd3cc"
   }
 ]
