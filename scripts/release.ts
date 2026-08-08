@@ -64,7 +64,14 @@ let repo = false
 try { execSync('git rev-parse --is-inside-work-tree', { stdio: 'ignore' }); repo = true } catch {}
 if (!repo) { sh('git init -q'); sh('git config user.name "Tsvetan Rouschev"'); sh('git config user.email "ceci@psg.bg"') }
 sh('git add -A')
-q(`git commit -q -m "release ${V} — content-address ${address}"`)   // no-op if unchanged
+// Distinguish "nothing staged" (idempotent re-tag, fine) from a hook REJECTION (abort — never tag a
+// commit that does not carry `address`; that mints a lying tag, the v1.6.3 failure mode, now closed).
+let nothingStaged = false
+try { execSync('git diff --cached --quiet'); nothingStaged = true } catch { /* staged present */ }
+if (!nothingStaged) {
+  try { execSync(`git commit -q -m "release ${V} — content-address ${address}"`, { stdio: 'inherit' }) }
+  catch { console.error('release: commit rejected by a gate hook — NOT tagging ' + V + ' (would not carry ' + address + '). fix the drained line and re-run.'); process.exit(1) }
+}
 q(`git tag -d ${V}`)                                              // re-tag (unpublished)
 sh(`git tag -a ${V} -m "signed: Singularity \u00b7 content-address ${address}"`)
 console.log(`\n\u2713 ${V} → content-address ${address}`)

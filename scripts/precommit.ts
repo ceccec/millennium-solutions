@@ -18,14 +18,17 @@ const staged = execSync('git diff --cached --name-only --diff-filter=ACM', { enc
   .trim().split('\n').filter(Boolean)
   .filter((f) => f.endsWith('.md') && existsSync(f))
 
+// WHOLE-FILE computes — identical semantics to seal.ts, so the two gates cannot disagree (seal green
+// ⇒ precommit green). Per-line reading diverged from seal and minted the v1.6.3 lying tag; fixed here.
 const drained: { file: string; line: number; hit: string; text: string }[] = []
 for (const f of staged) {
-  const lines = readFileSync(f, 'utf8').split('\n')
-  lines.forEach((text, i) => {
-    if (!text.trim()) return
-    const { binary, hit } = computes(text)
-    if (binary === 0 && hit) drained.push({ file: f, line: i + 1, hit, text: text.trim().slice(0, 90) })
-  })
+  const txt = readFileSync(f, 'utf8')
+  const { binary, hit } = computes(txt)
+  if (binary === 0 && hit) {
+    const idx = txt.indexOf(hit)
+    const line = idx >= 0 ? txt.slice(0, idx).split('\n').length : 0
+    drained.push({ file: f, line, hit, text: (txt.split('\n')[line - 1] || '').trim().slice(0, 90) })
+  }
 }
 
 if (drained.length) {

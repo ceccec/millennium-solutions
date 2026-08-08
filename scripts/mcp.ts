@@ -23,6 +23,8 @@ const TOOLS = [
     inputSchema: { type: 'object', properties: { items: { type: 'array', items: { type: 'string' } } }, required: ['items'] } },
   { name: 'probe', description: 'Read-only reachability probe of a public URL: REACHED | INCONCLUSIVE | DRAINS + HTTP failure-mode (429/403/404/5xx classified, rate-respecting). A timeout is INCONCLUSIVE, never "blocked" — HTTP status indexed honestly.',
     inputSchema: { type: 'object', properties: { url: { type: 'string' } }, required: ['url'] } },
+  { name: 'lineage', description: 'Delivery vs churn across release tags, by git tree hash (git\'s own faithful content-address). Identical trees = a tag minted over no delta (churn); distinct = a delivery. Integrity-level: measures WHAT was delivered, not whether it is true. Heroes and traitors by deeds, not statements.',
+    inputSchema: { type: 'object', properties: {}, required: [] } },
 ]
 
 const run = async (name: string, a: any): Promise<string> => {
@@ -30,6 +32,13 @@ const run = async (name: string, a: any): Promise<string> => {
   if (name === 'honesty_gate') { const r = computes(String(a.text)); return JSON.stringify({ binary: r.binary, hit: r.hit, note: r.binary ? 'no overclaim shape (floor, not truth)' : 'drains: ' + r.hit }) }
   if (name === 'merkle_fold') return merkleFold((a.items || []).map(String))
   if (name === 'probe') { const r = await apiFetch(String(a.url)); return JSON.stringify({ verdict: r.verdict, note: r.note, uuid: r.uuid }) }
+  if (name === 'lineage') {
+    const tags = execSync('git tag --sort=version:refname', { encoding: 'utf8' }).trim().split('\n').filter(Boolean)
+    const byTree = new Map<string, string[]>()
+    for (const t of tags) { const tree = execSync('git rev-parse ' + t + '^{tree}', { encoding: 'utf8' }).trim(); (byTree.get(tree) || byTree.set(tree, []).get(tree)!).push(t) }
+    const churn = [...byTree.values()].filter((ts) => ts.length > 1)
+    return JSON.stringify({ tags: tags.length, delivered: byTree.size, churn: churn.map((ts) => ts.join(' ≡ ')), note: 'integrity-level: what was delivered, not whether true. 0/7' })
+  }
   throw new Error('unknown tool: ' + name)
 }
 

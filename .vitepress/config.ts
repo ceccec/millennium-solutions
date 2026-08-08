@@ -117,6 +117,7 @@ export default defineConfig({
       { text: 'ceccec ↗', link: 'https://ceccec.psg.bg/' },
       { text: 'Read', items: [
         { text: 'Abstract', link: '/ABSTRACT' },
+        { text: 'Theorems', link: '/THEOREMS' },
         { text: L.nav.paper, link: '/' },
         { text: L.nav.research, link: '/RESEARCH' },
         { text: L.nav.poc, link: '/PROOF-OF-CONCEPT' },
@@ -150,6 +151,7 @@ export default defineConfig({
         text: 'Overview',
         items: [
           { text: 'Abstract', link: '/ABSTRACT' },
+          { text: 'Theorems', link: '/THEOREMS' },
           { text: 'Paper', link: '/' },
           { text: 'Research', link: '/RESEARCH' },
           { text: 'Proof of Concept', link: '/PROOF-OF-CONCEPT' },
