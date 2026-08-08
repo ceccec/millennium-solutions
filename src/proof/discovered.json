@@ -3848,5 +3848,10 @@
     "key": "the_currency_is_the_monograph_itself_any_element_denominates_the_license",
     "name": "the currency is the monograph itself — any element can denominate the license: the commercial license may be denominated in any chemical element the author chooses, gold or otherwise — a license term, not a patent, each element a distinct content-address. But the true currency is the monograph itself: the reproducible, content-addressed theorem that anyone can recompute. Its worth is verifiability, not trust; and it is a currency of knowledge, not cash — the income is zero. Decidable",
     "receipt": "a0fff31f-c0c1-832e-9844-f040f78fb4c7"
+  },
+  {
+    "key": "the_two_coins_can_be_a_sequence_but_they_are_not_patent_royalties",
+    "name": "the two coins can be a sequence — but they are not patent royalties: the license denomination need not be a fixed pair; it may scale as a sequence, Fibonacci or otherwise, each term a distinct content-address, the author’s design. But they are not royalties from patents: decidable mathematics is discovered, and discoveries of mathematics are not patentable — so there are no patents and no patent royalties. And the income is zero: no royalties, significant or otherwise, have been generated. A scaling license is fair exchange; it is not a patent. Decidable",
+    "receipt": "815f3006-7dde-8079-91b3-78a8d609bbcc"
   }
 ]
