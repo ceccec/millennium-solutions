@@ -3558,5 +3558,10 @@
     "key": "any_drift_in_types_as_theorems_is_a_crack_the_type_gate_seals",
     "name": "any drift in types as theorems is a crack the type gate seals: types are theorems (Curry–Howard), so a type error is a crack — a proposition that no longer carries its proof. The type gate (tsc with no emit) is the first gate of the release and admits only zero type errors, so any drift fails the release before the commit and cannot ship. A crack is deterministic and located, reproducible on every build. Decidable",
     "receipt": "4ac91293-ab2a-8b85-84ee-acff66156f3d"
+  },
+  {
+    "key": "the_totient_summatory_identity_of_gauss",
+    "name": "the totient summatory identity (Gauss): for every n, the sum of Euler φ(d) over the divisors d of n equals n. The witness is the n fractions 1/n, 2/n, ..., n/n reduced to lowest terms — each has a denominator d dividing n, and exactly φ(d) of them have denominator d, so the counts sum to n. Verified by full enumeration over n up to 200",
+    "receipt": "4de62f7d-7500-8d11-b156-209d574b7c4f"
   }
 ]
