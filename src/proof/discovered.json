@@ -3748,5 +3748,10 @@
     "key": "legendres_three_square_theorem",
     "name": "Legendre's three-square theorem: a non-negative integer is a sum of three squares if and only if it is not of the form 4^a·(8b + 7) — verified for every n up to 300. So 7 = 4⁰·7 is not a sum of three squares (it needs four), matching the four-square theorem. Verified by exhaustive search",
     "receipt": "ec266737-e9ab-8115-b76b-84c9a8d8c5f8"
+  },
+  {
+    "key": "a_decidable_theorem_must_halt_the_infinite_loop_was_a_bug_not_a_quantum_necessity",
+    "name": "a decidable theorem must halt — the infinite loop was a bug, not a quantum necessity: a test that never returns is not a theorem; a decidable fact must terminate and yield a boolean. The hang came from an unguarded degenerate input (reducing 0 by 4 forever), fixed by a guard — classical computation handles seven dimensions and terminates, the 7-cube having 2^7 = 128 finite states and the fold reducing any bounded input to one root. No quantum machine is needed to compute in 7D. Decidable",
+    "receipt": "b270019a-93f1-8d70-bc75-f37be10c5901"
   }
 ]
