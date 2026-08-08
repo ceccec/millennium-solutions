@@ -27,7 +27,7 @@ CLAY.forEach((c, i) => { o += '| ' + (i + 1) + ' | ' + c.name + ' | ' + (c.statu
 o += '\n**Humanity: ' + settled + ' / 7** (' + open + ' open). **This deposit: 0 / 7** — it settles none of the seven itself.\n\n'
 o += '## Discovered theorems (decidable, over ℤ/9) — ' + ledger.length + ' recorded\n\n'
 o += 'Computed by exhaustion, each saved with a chained receipt (`scripts/discover.ts` · walked by `next`):\n\n'
-ledger.forEach((e) => { o += '- ' + e.name + '  ·  `' + e.receipt.slice(0, 13) + '…`\n' })
+ledger.forEach((e) => { o += '- [' + e.key + '](/theorem/' + e.key + ') — ' + e.name + '  ·  `' + e.receipt.slice(0, 13) + '…`\n' })
 const root = merkleFold(ledger.map((e) => e.receipt).concat(CLAY.map((c) => toUuid(c.name + ':' + c.status))))
 o += '\nPage content-address: `' + root + '`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.\n'
 writeFileSync('CHALLENGES.md', o)
