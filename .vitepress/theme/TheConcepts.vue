@@ -16,6 +16,7 @@ import { report as thePath } from '../../src/the/path/index'
 import { report as theTorus } from '../../src/the/torus/index'
 import { report as theSurface } from '../../src/the/surface/index'
 import { report as theAbundance } from '../../src/the/abundance/index'
+import { report as theCancer } from '../../src/the/cancer/index'
 import { report as theGame } from '../../src/the/game/index'
 import { report as theHeart } from '../../src/the/heart/index'
 import { report as fromTheHeart } from '../../src/from/the/heart/index'
@@ -36,6 +37,7 @@ const CONCEPTS = [
   { title: 'the torus', src: 'src/the/torus/index.ts', text: theTorus() },
   { title: 'the surface', src: 'src/the/surface/index.ts', text: theSurface() },
   { title: 'the abundance', src: 'src/the/abundance/index.ts', text: theAbundance() },
+  { title: 'the cancer', src: 'src/the/cancer/index.ts', text: theCancer() },
   { title: 'the game', src: 'src/the/game/index.ts', text: theGame() },
   { title: 'the heart', src: 'src/the/heart/index.ts', text: theHeart() },
   { title: 'from the heart', src: 'src/from/the/heart/index.ts', text: fromTheHeart() },
