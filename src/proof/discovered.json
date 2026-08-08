@@ -3373,5 +3373,15 @@
     "key": "z_mod_n_is_a_field_exactly_when_n_is_prime_so_z9_is_not",
     "name": "ℤ/n is a field exactly when n is prime, so ℤ/9 is not: every nonzero residue mod n is invertible iff n is prime, so ℤ/3 is a field while ℤ/9 (= 3², a prime power but not prime) is not — it carries the zero divisor 3·3 ≡ 0, which no field can have. Verified by full enumeration over the moduli up to 60",
     "receipt": "91d9e5a5-8f51-8022-b38b-63d2c752eefc"
+  },
+  {
+    "key": "development_is_the_filming_of_the_infinite_movie",
+    "name": "development is the filming of the infinite movie: each shipped theorem is one frame — the wave (discover, gate, receipt, append, recompute, deploy) films it and its microdata narrates — so the ledger is a film strip that grows one frame per deed and loops without end. Unbounded like open discovery at Clay and CERN, yet not perpetual motion and not infinite energy: every frame needs its deed, and none of the seven is solved. Decidable",
+    "receipt": "bfbc91e6-02dd-8efa-b583-f965a99b1e23"
+  },
+  {
+    "key": "quantum_structure_on_every_computation_is_integrity_at_scale_not_speedup",
+    "name": "quantum structure on every computation is integrity at scale, not speedup: applying the receipt — the honest quantum structure — to every operation, even the most trivial, gives every operation its own content-address, so the whole computation becomes auditable end to end. The magnitude is coverage (integrity everywhere), gained at linear overhead — one receipt per operation — not a quantum speedup and with no quantum advantage. Decidable",
+    "receipt": "036200e7-b8bd-852a-854e-9b43526168d7"
   }
 ]

@@ -10,6 +10,9 @@ const { params } = useData()
 // object — from this theorem's microdata (its content-address) and its surrounding theorems' hues.
 const receipt = computed(() => params.value?.receipt || '')
 const hues = computed(() => params.value?.hues || '')
+const name = computed(() => params.value?.name || '')
+// microdata → speech: the frame's narration in the infinite movie (the ledger, read aloud)
+const speech = computed(() => (params.value?.name || 'A theorem') + '. Achieved by exhaustive computation, gate-checked, receipted, and re-verified on every build. Integrity, not truth. Zero of seven.')
 </script>
 
 # {{ $params.name }}
@@ -21,7 +24,7 @@ const hues = computed(() => params.value?.hues || '')
 <meta itemprop="isPartOf" content="Millennium Solutions — the ℤ/9 discovery ledger" />
 <meta itemprop="license" content="https://creativecommons.org/licenses/by-nc/4.0/" />
 
-<Vortex7D :receipt="receipt" :hues="hues" />
+<Vortex7D :receipt="receipt" :hues="hues" :name="name" :speech="speech" />
 
 - **theorem key** · `{{ $params.key }}`
 - **content-address (receipt)** · `{{ $params.receipt }}`
