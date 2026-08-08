@@ -1248,5 +1248,20 @@
     "key": "euclid_euler_perfect",
     "name": "even perfect numbers are 2^(p−1)(2^p−1) for a Mersenne prime 2^p−1: 6=2·3, 28=4·7, 496=16·31",
     "receipt": "9f35788a-a976-87a8-ab48-ebd59e9c898c"
+  },
+  {
+    "key": "collatz_reaches_1_range",
+    "name": "Collatz: every n < 10^4 reaches 1 — VERIFIED for the range, not settled for all n (the conjecture is open)",
+    "receipt": "5842dff6-fc0d-8cd8-9a9b-0fc096468358"
+  },
+  {
+    "key": "collatz_27_orbit",
+    "name": "the Collatz orbit of 27 reaches 1 in 111 steps (a specific bounded orbit)",
+    "receipt": "2b528505-25f6-8cf0-b722-f9c9bdf16089"
+  },
+  {
+    "key": "collatz_open",
+    "name": "the Collatz conjecture is INCONCLUSIVE here: \"remains open\" signs; a claim it is settled drains — open, not false",
+    "receipt": "5524c423-8dc8-8e8d-8fd3-eadaa2fe7b36"
   }
 ]

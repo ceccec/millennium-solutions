@@ -73,7 +73,6 @@ if (message) {
   // FALLBACK — never dead-end: propose the most probable next idea (a decidable domain not yet added).
   // Honestly bounded: each is a suggestion to implement as a family in scripts/discover.ts, not a claim.
   const BACKLOG = [
-    'Collatz — bounded orbit lengths (behavior, never the conjecture)',
     'harmonic ratios — a432 just intonation 3:2, 4:3, 5:4 (UI, not theorem)',
   ]
   console.log('  fallback — there is always a computable dimension; the queue never empties.')

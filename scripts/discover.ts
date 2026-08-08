@@ -380,6 +380,12 @@ function generated(): typeof curated {
   out.push({ key: 'perfect_numbers', name: 'perfect numbers: proper divisors sum to n itself — 6, 28, 496', test: () => [6, 28, 496].every((n) => properSum(n) === n) })
   out.push({ key: 'amicable_220_284', name: "the amicable pair (220, 284): each is the sum of the other's proper divisors", test: () => properSum(220) === 284 && properSum(284) === 220 })
   out.push({ key: 'euclid_euler_perfect', name: 'even perfect numbers are 2^(p−1)(2^p−1) for a Mersenne prime 2^p−1: 6=2·3, 28=4·7, 496=16·31', test: () => { const perf = (p: number) => 2 ** (p - 1) * (2 ** p - 1); return perf(2) === 6 && perf(3) === 28 && perf(5) === 496 && [3, 7, 31].every(isPrimeN) } })
+  // Collatz — bounded orbits (behavior), NEVER the conjecture. A range check is verified, not proven;
+  // the conjecture stays open (inconclusive ≠ false). The honest boundary, as a discovered fact.
+  const collatzSteps = (n: number) => { let s = 0; while (n !== 1) { n = n % 2 === 0 ? n / 2 : 3 * n + 1; s++; if (s > 100000) return -1 } return s }
+  out.push({ key: 'collatz_reaches_1_range', name: 'Collatz: every n < 10^4 reaches 1 — VERIFIED for the range, not settled for all n (the conjecture is open)', test: () => { for (let n = 1; n < 10000; n++) if (collatzSteps(n) < 0) return false; return true } })
+  out.push({ key: 'collatz_27_orbit', name: 'the Collatz orbit of 27 reaches 1 in 111 steps (a specific bounded orbit)', test: () => collatzSteps(27) === 111 })
+  out.push({ key: 'collatz_open', name: 'the Collatz conjecture is INCONCLUSIVE here: "remains open" signs; a claim it is settled drains — open, not false', test: () => computes('the Collatz conjecture remains open').binary === 1 && computes('the Collatz conjecture is proven').binary === 0 })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
