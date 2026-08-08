@@ -1753,5 +1753,10 @@
     "key": "legal_trial_decides",
     "name": "in unsettled cases a legal trial decides: a claim neither settled nor refuted is INCONCLUSIVE (open, not false) — try and prove by all means from src/**, no draining without trial, and false may become true with new evidence",
     "receipt": "044301ca-0913-8a02-aeca-46ee812b3582"
+  },
+  {
+    "key": "forensics_chain_of_custody",
+    "name": "forensics: the ledger receipts chain link-by-link (receipt[i]=toUuid(receipt[i-1]→key[i])) — altering one breaks its link AND the next, localising the tamper; the surrounding links stay intact",
+    "receipt": "037ea589-afdd-8fb1-af6e-38eba110789d"
   }
 ]

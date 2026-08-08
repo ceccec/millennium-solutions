@@ -33,6 +33,8 @@ const TOOLS = [
     inputSchema: { type: 'object', properties: {}, required: [] } },
   { name: 'audit', description: 'Self-audit of THIS MCP server: content-address every tool (name+description+schema), verify each declared tool has a handler and each handler is declared (coverage), fold to one self-audit root. Integrity of the tool surface, not truth.',
     inputSchema: { type: 'object', properties: {}, required: [] } },
+  { name: 'forensics', description: 'Chain-of-custody for the discovery ledger: recompute the receipt chain link-by-link (receipt[i]=toUuid(receipt[i-1]→key[i]), seed axiom:TRINITY), pinpoint any break, check for duplicate keys/receipts, and fold a tamper-evident seal. Genesis discontinuities are a documented baseline; a NEW break is tampering. Integrity/provenance of evidence, not truth.',
+    inputSchema: { type: 'object', properties: {}, required: [] } },
 ]
 
 const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
@@ -61,6 +63,17 @@ const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
   discover: () => {
     const prov = provable()
     return JSON.stringify({ candidates: CANDIDATES.length, discovered: prov.length, refuted: CANDIDATES.length - prov.length, facts: prov.map((c) => c.name), root: merkleFold(prov.map((c) => toUuid(c.key))), note: 'decidable facts by exhaustion; not a proof of the six open conjectures. deposit 0/7, humanity 1/7 (Poincaré).' })
+  },
+  forensics: () => {
+    const ledger: { key: string; receipt: string }[] = existsSync('src/proof/discovered.json') ? JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) : []
+    const GENESIS = new Set(['euler_units_pow6', 'units_sum_zero'])
+    const breaks: { i: number; key: string }[] = []
+    let prev = 'axiom:TRINITY'
+    for (let i = 0; i < ledger.length; i++) { if (toUuid(prev + '→' + ledger[i].key) !== ledger[i].receipt) breaks.push({ i, key: ledger[i].key }); prev = ledger[i].receipt }
+    const newBreaks = breaks.filter((b) => !GENESIS.has(b.key))
+    const dupKeys = ledger.length - new Set(ledger.map((e) => e.key)).size
+    const dupReceipts = ledger.length - new Set(ledger.map((e) => e.receipt)).size
+    return JSON.stringify({ receipts: ledger.length, chainIntact: newBreaks.length === 0, newBreaks, genesisBaseline: [...GENESIS], duplicateKeys: dupKeys, duplicateReceipts: dupReceipts, tamperSeal: merkleFold(ledger.map((e) => e.receipt)), note: 'chain-of-custody: a NEW break or a collision is tampering (legal trial). genesis discontinuities are documented. integrity, not truth. 0/7' })
   },
   audit: () => {
     const declared = TOOLS.map((t) => t.name)
