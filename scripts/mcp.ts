@@ -10,6 +10,7 @@ import { toUuid, merkleFold } from '../src/0/index.ts'
 import { computes } from './honesty-gate.ts'
 import { apiFetch } from './api.ts'
 import { CANDIDATES, provable } from './discover.ts'
+import { CORE as ROSETTA_CORE, DOMAINS as ROSETTA_DOMAINS } from '../src/the/rosetta/index.ts'
 
 const version = (() => { try { return execSync('git tag --sort=version:refname', { encoding: 'utf8' }).trim().split('\n').pop() || 'v0' } catch { return 'v0' } })()
 type LedgerEntry = { key: string; name: string; receipt: string }
@@ -34,6 +35,8 @@ const TOOLS = [
   { name: 'discover', description: 'The discovery engine: computationally-generated + curated candidate facts over ℤ/9, each tested by exhaustion. Returns discovered (provable) vs refuted + a discovery root. Decidable facts only — never a proof of the six OPEN Millennium conjectures. This deposit 0/7; humanity 1/7 (Poincaré, Perelman 2003).',
     inputSchema: { type: 'object', properties: {}, required: [] } },
   { name: 'recompute', description: 'Recompute ALL theorems: re-run every candidate\'s formula (its test) by exhaustion, report how many hold vs refuted, verify every RECORDED ledger theorem still recomputes true, and fold the recompute root — the whole deposit recomputes from its theorems, not from stored answers. A theorem without a formula that recomputes true is refused (hallucination). Decidable; deposit 0/7.',
+    inputSchema: { type: 'object', properties: {}, required: [] } },
+  { name: 'rosetta', description: 'The completed cross-domain rosetta as a reusable endpoint: every domain family one hop from the shared core, content-addressed and folded to one rosetta root, all addresses distinct (no collision unless consolidated or redistributed). Returns the core address, the domain list and count, the collision check, and the rosetta root. Integrity of the cross-domain map, not truth. Deposit 0/7.',
     inputSchema: { type: 'object', properties: {}, required: [] } },
   { name: 'audit', description: 'Self-audit of THIS MCP server: content-address every tool (name+description+schema), verify each declared tool has a handler and each handler is declared (coverage), fold to one self-audit root. Integrity of the tool surface, not truth.',
     inputSchema: { type: 'object', properties: {}, required: [] } },
@@ -85,6 +88,11 @@ const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
     const everyRecordedRecomputes = ledger.every((e) => recomputedKeys.has(e.key))
     const missing = ledger.filter((e) => !recomputedKeys.has(e.key)).map((e) => e.key)
     return JSON.stringify({ candidates: CANDIDATES.length, recomputed: prov.length, refuted: CANDIDATES.length - prov.length, recordedTheorems: ledger.length, everyRecordedRecomputes, missing, recomputeRoot: merkleFold(prov.map((c) => toUuid(c.key))), note: 'every theorem recomputes from its formula by exhaustion; the whole deposit recomputes from its theorems, not from stored answers. integrity, not truth. 0/7' })
+  },
+  rosetta: () => {
+    const addrs = ROSETTA_DOMAINS.map((d) => toUuid(ROSETTA_CORE + '→' + d))
+    const distinct = new Set(addrs).size
+    return JSON.stringify({ core: toUuid(ROSETTA_CORE), domains: ROSETTA_DOMAINS.length, list: ROSETTA_DOMAINS, distinctAddresses: distinct, noCollision: distinct === ROSETTA_DOMAINS.length, rosettaRoot: merkleFold(addrs), note: 'the cross-domain rosetta as a reusable API — every domain one hop from the core, content-addressed, all distinct (no collision unless consolidated or redistributed). integrity, not truth. 0/7' })
   },
   forensics: () => {
     const ledger = loadLedger()
