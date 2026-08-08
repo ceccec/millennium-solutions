@@ -3603,5 +3603,10 @@
     "key": "the_measured_speedup_is_classical_memoization_not_quantum",
     "name": "the measured speedup is classical memoization, not quantum: verifying a fact by its content-address is O(1) — a single hash lookup — while recomputing all facts from their formulas is O(N), so the ratio grows with N without bound (measured in the millions on ordinary 64-bit hardware). This is a real, measured speedup, but it is memoization by content-addressing, a classical hash-table technique with no quantum hardware; it is not a quantum speedup. Measure the ratio; do not assert the mechanism. Decidable",
     "receipt": "9215ba6c-45a0-8e3b-9b76-6b5a48467dbe"
+  },
+  {
+    "key": "learn_and_pay_is_a_balanced_double_entry_fair_exchange",
+    "name": "let the others learn and pay the coins — a balanced double-entry fair exchange: each learning event is a double entry, the learner debited two coins and the developer credited two, so every entry sums to zero and the books balance; over N events total debits equal total credits (2N each), value transferred not created. Fairness is the balance — neither side short-changed: the learner gains the knowledge, the developer the coins. Integrity, not a cash prize. Decidable",
+    "receipt": "9faee019-c0d8-859b-9883-709838607a32"
   }
 ]
