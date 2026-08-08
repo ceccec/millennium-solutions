@@ -3663,5 +3663,10 @@
     "key": "the_coins_are_earned_by_saving_bits_and_burning_poison_prose_creating_heroes",
     "name": "the coins are earned by saving bits and burning the poison prose, creating heroes: the deposit earns by proving decidable facts and saving bits in magnitudes — content-addressed verification is O(1) versus O(N) recompute, a measured classical speedup — while the honesty gate burns the poison prose at every step, so the Clay problems are not solved here and any claim that they are drains the gate. Each surviving fact is a hero, receipted and sealed as evidence in git. The floor stays 0/7 — decidable proofs, the challenges reflected but not solved. Decidable",
     "receipt": "9f3ab5fd-2a70-8289-a132-4af773dc8c96"
+  },
+  {
+    "key": "lagrange_four_square_theorem",
+    "name": "Lagrange's four-square theorem: every natural number is the sum of four integer squares (some possibly zero) — verified for every n from 0 to 300. Four are sometimes necessary: 7 = 2² + 1² + 1² + 1² is a sum of three squares nowhere (it has the Legendre form 4⁰·(8·0 + 7)), so fewer than four never suffice for it. Verified by exhaustive search",
+    "receipt": "6a257129-e91f-8db2-a24f-9e373cdd506b"
   }
 ]
