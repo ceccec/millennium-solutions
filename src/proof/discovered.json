@@ -2328,5 +2328,25 @@
     "key": "the_floor_holds_even_on_demand",
     "name": "the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim",
     "receipt": "9f4ee4b5-057f-82f5-b63e-04e844a4250f"
+  },
+  {
+    "key": "zeckendorf_exists_no_consecutive",
+    "name": "Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)",
+    "receipt": "fc1da781-afd9-8476-85b6-031af09dd36f"
+  },
+  {
+    "key": "zeckendorf_representation_unique",
+    "name": "Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1",
+    "receipt": "c21a803b-fee4-8c3f-a241-81388c1cda13"
+  },
+  {
+    "key": "fibonacci_lts_minors_are_zeckendorf_base",
+    "name": "the Fibonacci-LTS minors are the Zeckendorf base: the long-term-support minors {1,2,3,5,8} are consecutive Fibonacci numbers obeying the recurrence (1+2=3, 2+3=5, 3+5=8), the same base that represents every integer — versioning and number theory share one sequence",
+    "receipt": "a896449a-a35b-8759-862b-b1eeb429329f"
+  },
+  {
+    "key": "any_64bit_machine_suffices",
+    "name": "any 64-bit machine does the job: the deposit computes with exact integer arithmetic — coin64 is a 64-bit value (16 hex), and every address recomputes identically (deterministic) — so any commodity classical 64-bit machine reproduces the results; no quantum, no special hardware is needed, which is the honest hardware design",
+    "receipt": "31f2c89b-9b7a-8740-96cc-c60886838bd8"
   }
 ]
