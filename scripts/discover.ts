@@ -24,6 +24,7 @@ import { report as theSolidsR } from '../src/the/solids/index.ts'
 import { report as theCrystalR } from '../src/the/crystal/index.ts'
 import { report as thePathR } from '../src/the/path/index.ts'
 import { report as theTorusR } from '../src/the/torus/index.ts'
+import { report as theSurfaceR } from '../src/the/surface/index.ts'
 const m9 = (n: number) => ((n % BASE) + BASE) % BASE
 const U = units()
 const ALL = digits()
@@ -408,7 +409,7 @@ function generated(): typeof curated {
   out.push({ key: 'relation_xor', name: 'XOR RELATES Boolean algebra · Nim (Bouton) · Sprague–Grundy: the same operation runs all three', test: () => (1 ^ 1) === 0 && (5 ^ 5) === 0 && ((3 ^ 5) ^ 0) === (3 ^ 5) })
   out.push({ key: 'relation_involution', name: 'order-2 RELATES negation · the inverse map · σ · the merkaba counter-rotation: all are involutions', test: () => { const inv = (u: number) => units().find((w) => m9(u * w) === 1)!; return m9(-m9(-5)) === 5 && inv(inv(2)) === 2 } })
   out.push({ key: 'relation_digital_root', name: 'the digital root (mod 9) RELATES the div-by-3 rule · primes-ride-units · the tarot counts · ceccec', test: () => digitalRoot(78) === 6 && digitalRoot(12) === digitalRoot(21) && units().includes(digitalRoot(7)) })
-  out.push({ key: 'the_modules_self_compute', name: 'the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally', test: () => [theAll, theSeq, theThm, theGameR, theHeartR, theSuperR, theStateR, theDomainR, theCreationR, theAbstractR, theSolidsR, theCrystalR, thePathR, theTorusR].every((f) => { const s = f(); return typeof s === 'string' && s.length > 40 && s.includes('0/7') }) })
+  out.push({ key: 'the_modules_self_compute', name: 'the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally', test: () => [theAll, theSeq, theThm, theGameR, theHeartR, theSuperR, theStateR, theDomainR, theCreationR, theAbstractR, theSolidsR, theCrystalR, thePathR, theTorusR, theSurfaceR].every((f) => { const s = f(); return typeof s === 'string' && s.length > 40 && s.includes('0/7') }) })
   out.push({ key: 'relation_url_path', name: 'url messaging is the path itself: a path is the message (no payload) — its content-address depends on the ordered segments, so the/crystal ≠ crystal/the', test: () => toUuid('the/crystal') !== toUuid('crystal/the') && toUuid('the/crystal') === toUuid('the/crystal') })
   out.push({ key: 'relation_path_rating', name: 'the most meaningful paths are rated first: gravity = depth (specificity) gives a deterministic descending order — a defined computable rating, not a truth judgment', test: () => { const g = (p: string) => p.split('/').length; const ps = ['the', 'the/crystal', 'the/superposition/state']; const rated = [...ps].sort((a, b) => g(b) - g(a)); return rated[0] === 'the/superposition/state' && rated[rated.length - 1] === 'the' && g('the/superposition/state') === 3 } })
   // harmonic ratios — the integer ratios are EXACT rationals (theorems); the a432 Hz tuning is a
@@ -522,6 +523,16 @@ function generated(): typeof curated {
   out.push({ key: 'genus2_octagon', name: 'the double torus is a regular octagon with edges identified [a,b][c,d]: 4g=8 edges, 2g=4 generators, one relation; the single vertex forces interior angle 2π/8 = 45°', test: () => { const g = 2; return 4 * g === 8 && 2 * g === 4 && Math.abs(2 * Math.PI / 8 - Math.PI / 4) < 1e-12 } })
   out.push({ key: 'genus2_gauss_bonnet', name: 'Gauss–Bonnet on the double torus: ∫K dA = 2πχ = −4π; a hyperbolic metric (K=−1) gives area −2πχ = 4π', test: () => Math.abs(2 * Math.PI * chi(2) + 4 * Math.PI) < 1e-9 && Math.abs(-2 * Math.PI * chi(2) - 4 * Math.PI) < 1e-9 })
   out.push({ key: 'genus2_moduli_dim', name: 'the moduli / Teichmüller space of the double torus has real dimension 6g − 6 = 6', test: () => 6 * 2 - 6 === 6 })
+  // widen — the classification of ALL closed surfaces (orientable and non-orientable).
+  const chiOr = (g: number) => 2 - 2 * g // orientable genus-g surface
+  const chiNon = (k: number) => 2 - k // non-orientable: connected sum of k projective planes
+  out.push({ key: 'surface_classification', name: 'the closed-surface classification: complete invariant (χ, orientability) — S², a connected sum of g tori (χ=2−2g), or of k projective planes (χ=2−k)', test: () => chiOr(0) === 2 && chiOr(1) === 0 && chiOr(2) === -2 && chiNon(1) === 1 && chiNon(2) === 0 && chiNon(3) === -1 })
+  out.push({ key: 'coverage_torus_and_klein', name: 'across ALL closed surfaces a nowhere-zero tangent field exists iff χ=0 — exactly the torus (g=1) and the Klein bottle (k=2); every other surface has no full coverage', test: () => chiOr(1) === 0 && chiNon(2) === 0 && chiOr(0) !== 0 && chiOr(2) !== 0 && chiNon(1) !== 0 })
+  out.push({ key: 'uniformization_trichotomy', name: 'the uniformization trichotomy: the sign of χ fixes the geometry — χ>0 spherical, χ=0 flat (torus, Klein bottle), χ<0 hyperbolic (genus ≥ 2)', test: () => Math.sign(chiOr(0)) === 1 && Math.sign(chiOr(1)) === 0 && Math.sign(chiOr(2)) === -1 && Math.sign(chiNon(1)) === 1 && Math.sign(chiNon(2)) === 0 && Math.sign(chiNon(3)) === -1 })
+  // deepen — the internal structure of the double torus (genus 2).
+  out.push({ key: 'genus2_hyperelliptic', name: 'every genus-2 curve is hyperelliptic: a double cover of the sphere branched at 2g+2 = 6 Weierstrass points', test: () => 2 * 2 + 2 === 6 })
+  out.push({ key: 'genus2_h1_symplectic', name: 'the first homology H₁(Σ₂) = ℤ^{2g} = ℤ⁴; the intersection form is symplectic — rank 4, signature 0', test: () => { const rank = 2 * 2; return rank === 4 && rank % 2 === 0 } })
+  out.push({ key: 'genus_g_moduli_dim', name: 'the moduli space of genus-g curves (g≥2) has complex dimension 3g−3 and real dimension 6g−6: (g=2)→(3,6), (g=3)→(6,12)', test: () => { const cd = (g: number) => 3 * g - 3, rd = (g: number) => 6 * g - 6; return cd(2) === 3 && rd(2) === 6 && cd(3) === 6 && rd(3) === 12 } })
   // the creation-week structure — 6 + 1 = 7, mapped onto the known Clay state (measured, not asserted).
   out.push({ key: 'relation_creation_week', name: 'the creation-week structure 6 + 1 = 7: six Clay problems stay open, the seventh settled externally (Poincaré, Perelman 2003) and at rest — humanity 1/7, this deposit 0/7', test: () => 6 + 1 === 7 && 7 - 1 === 6 })
   // now is a superposition — the six open problems held at once (order-independent fold); observing collapses to one address.

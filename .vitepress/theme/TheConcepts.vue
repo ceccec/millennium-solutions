@@ -14,6 +14,7 @@ import { report as theSolids } from '../../src/the/solids/index'
 import { report as theCrystal } from '../../src/the/crystal/index'
 import { report as thePath } from '../../src/the/path/index'
 import { report as theTorus } from '../../src/the/torus/index'
+import { report as theSurface } from '../../src/the/surface/index'
 import { report as theGame } from '../../src/the/game/index'
 import { report as theHeart } from '../../src/the/heart/index'
 import { report as fromTheHeart } from '../../src/from/the/heart/index'
@@ -32,6 +33,7 @@ const CONCEPTS = [
   { title: 'the crystal', src: 'src/the/crystal/index.ts', text: theCrystal() },
   { title: 'the path', src: 'src/the/path/index.ts', text: thePath() },
   { title: 'the torus', src: 'src/the/torus/index.ts', text: theTorus() },
+  { title: 'the surface', src: 'src/the/surface/index.ts', text: theSurface() },
   { title: 'the game', src: 'src/the/game/index.ts', text: theGame() },
   { title: 'the heart', src: 'src/the/heart/index.ts', text: theHeart() },
   { title: 'from the heart', src: 'src/from/the/heart/index.ts', text: fromTheHeart() },

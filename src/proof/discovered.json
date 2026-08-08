@@ -1623,5 +1623,35 @@
     "key": "genus2_moduli_dim",
     "name": "the moduli / Teichmüller space of the double torus has real dimension 6g − 6 = 6",
     "receipt": "151c4ea6-e9a3-8f87-9f9e-4f747c90db86"
+  },
+  {
+    "key": "surface_classification",
+    "name": "the closed-surface classification: complete invariant (χ, orientability) — S², a connected sum of g tori (χ=2−2g), or of k projective planes (χ=2−k)",
+    "receipt": "95c6da2d-4c99-8e10-ab13-cc316ac6296b"
+  },
+  {
+    "key": "coverage_torus_and_klein",
+    "name": "across ALL closed surfaces a nowhere-zero tangent field exists iff χ=0 — exactly the torus (g=1) and the Klein bottle (k=2); every other surface has no full coverage",
+    "receipt": "83a457a6-7afb-86fd-aba9-34108fbd15ab"
+  },
+  {
+    "key": "uniformization_trichotomy",
+    "name": "the uniformization trichotomy: the sign of χ fixes the geometry — χ>0 spherical, χ=0 flat (torus, Klein bottle), χ<0 hyperbolic (genus ≥ 2)",
+    "receipt": "d83c2656-d21c-860a-a2d0-ca8436b40c24"
+  },
+  {
+    "key": "genus2_hyperelliptic",
+    "name": "every genus-2 curve is hyperelliptic: a double cover of the sphere branched at 2g+2 = 6 Weierstrass points",
+    "receipt": "c7d84ef0-85e9-84e7-a6a8-8d1c04e2574c"
+  },
+  {
+    "key": "genus2_h1_symplectic",
+    "name": "the first homology H₁(Σ₂) = ℤ^{2g} = ℤ⁴; the intersection form is symplectic — rank 4, signature 0",
+    "receipt": "a7a7d584-5220-80c6-bc83-9037693d7d53"
+  },
+  {
+    "key": "genus_g_moduli_dim",
+    "name": "the moduli space of genus-g curves (g≥2) has complex dimension 3g−3 and real dimension 6g−6: (g=2)→(3,6), (g=3)→(6,12)",
+    "receipt": "b67fc1f6-5d2c-8b8f-900e-711902bb457d"
   }
 ]

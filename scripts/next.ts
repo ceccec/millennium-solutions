@@ -21,12 +21,20 @@ import { provable } from './discover.ts'
 const message = process.argv.slice(2).join(' ').trim()
 
 // AUTOMATE — next is the full loop. After a delta is committed+tagged, push main and the tag to origin.
+// Errors are ADDRESSED IN THE GAME: surfaced (never swallowed), and non-fatal — the commit+tag stand
+// locally, so a push/deploy failure is reported and retryable, it does not lose the shipped work.
+const firstLine = (e: unknown) => { const m = e instanceof Error ? e.message : String(e); return m.split('\n')[0] }
 const pushAll = () => {
   try {
     execSync('git push origin main', { stdio: 'inherit' })
     const tag = execSync('git describe --tags --abbrev=0', { encoding: 'utf8' }).trim()
     execSync('git push origin ' + tag, { stdio: 'inherit' })
-  } catch { console.log('  (push skipped — offline or no remote)') }
+  } catch (e) { console.log('  push error (addressed · non-fatal — commit+tag are local, retry `git push --tags`): ' + firstLine(e)) }
+}
+// deploy the live site as part of the game — the fresh-facts wave ships the site too, not only the tag.
+const deployPages = () => {
+  try { execSync('npm run deploy:pages', { stdio: 'inherit' }) }
+  catch (e) { console.log('  deploy error (addressed · non-fatal — release stands, retry `npm run deploy:pages`): ' + firstLine(e)) }
 }
 
 // ── message mode: the binary decides whether it stays ──────────────────────────
@@ -64,9 +72,10 @@ if (message) {
     console.log('next — a wave: discovered & saved ' + fresh.length + ' provable fact(s), each sending the next:')
     for (const c of fresh) console.log('  ✓ ' + c.name)
     console.log('  ledger now ' + ledger.length + ' recorded → ' + LEDGER + ' · wave tip ' + prev.slice(0, 13) + '…')
-    // ship the discoveries and push — the full loop in one `next`.
+    // ship the discoveries, push, AND deploy the live site — the full loop in one `next`.
     execSync('npm run release', { stdio: 'inherit' })
     pushAll()
+    deployPages()
     process.exit(0)
   }
   console.log('next — the wave has reached rest: no new provable fact in the candidate space (' + known.size + ' recorded).')
@@ -102,5 +111,5 @@ if (address === lastAddr) {
 }
 console.log('next — a real delta is present (' + address.slice(0, 13) + '… ≠ ' + lastTag + '). shipping the truly-next:')
 execSync('npm run orchestrate', { stdio: 'inherit' })
-execSync('npm run deploy:pages', { stdio: 'inherit' })
+deployPages()
 pushAll()
