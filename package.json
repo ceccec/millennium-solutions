@@ -32,6 +32,8 @@
     "versions": "node scripts/versions.ts",
     "wholeness": "node scripts/wholeness.ts",
     "lean-claims": "node scripts/lean-claims.ts",
+    "prepare": "git config core.hooksPath .githooks || true",
+    "precommit": "node scripts/precommit.ts",
     "next": "node scripts/next.ts",
     "orchestrate": "node scripts/orchestrate.ts",
     "deploy": "node scripts/deploy.ts",

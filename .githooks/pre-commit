@@ -1,4 +1,4 @@
 #!/bin/sh
-# Fuse manual work into the singularity: no commit unless harmony holds.
-node scripts/gaps.ts || { echo "✗ commit blocked: a report() module is unfused (orphan gap)."; exit 1; }
-node scripts/seal.ts  || { echo "✗ commit blocked: an abstract is unsealed (0/7 violation)."; exit 1; }
+# Honesty boundary — catch the not-yet-in-git traitor before git records it.
+# Install once (committed via package.json "prepare"):  git config core.hooksPath .githooks
+exec node scripts/precommit.ts
