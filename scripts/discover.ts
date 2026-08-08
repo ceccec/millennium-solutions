@@ -898,6 +898,15 @@ function generated(): typeof curated {
     out.push({ key: 'goldbach_holds_in_range_conjecture_open', name: 'Goldbach in a bounded range (the general statement is an open conjecture, not settled here): every even number from 4 to 1000 is a sum of two primes — checked exhaustively; beyond the range it remains an open conjecture', test: () => { for (let e = 4; e <= 1000; e += 2) { let f = false; for (let a = 2; a <= e / 2; a++) if (isP(a) && isP(e - a)) { f = true; break } if (!f) return false } return true } })
     out.push({ key: 'twin_primes_in_range_infinitude_open', name: 'twin primes exist in a bounded range (their infinitude is an open conjecture): there are at least 30 pairs of primes p, p+2 below 1000 — existence checked exhaustively; whether infinitely many exist remains open', test: () => { let c = 0; for (let p = 3; p + 2 < 1000; p++) if (isP(p) && isP(p + 2)) c++; return c >= 30 && isP(3) && isP(5) && isP(11) && isP(13) } })
   }
+  // ── a NEW decidable domain — QUADRATIC RECIPROCITY (Gauss): the Legendre symbol and its law. Full check.
+  {
+    const pm = (a: number, e: number, m: number) => { let r = 1, x = ((a % m) + m) % m; while (e > 0) { if (e & 1) r = r * x % m; x = x * x % m; e >>= 1 } return r }
+    const leg = (a: number, p: number) => { const r = pm(a, (p - 1) / 2, p); return r === p - 1 ? -1 : r }
+    const ODD = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43]
+    out.push({ key: 'quadratic_reciprocity_law', name: 'Gauss’s law of quadratic reciprocity: for distinct odd primes p, q the Legendre symbols satisfy (p/q)(q/p) = (−1)^((p−1)/2·(q−1)/2) — verified exhaustively over all pairs of odd primes ≤ 43', test: () => { for (const p of ODD) for (const q of ODD) { if (p === q) continue; const lhs = leg(p, q) * leg(q, p); const rhs = ((((p - 1) / 2) * ((q - 1) / 2)) % 2 === 0) ? 1 : -1; if (lhs !== rhs) return false } return true } })
+    out.push({ key: 'reciprocity_first_supplement', name: 'the first supplement: (−1/p) = (−1)^((p−1)/2), so −1 is a quadratic residue mod p exactly when p ≡ 1 (mod 4) — verified for all odd primes ≤ 43', test: () => { for (const p of ODD) if (leg(p - 1, p) !== (p % 4 === 1 ? 1 : -1)) return false; return true } })
+    out.push({ key: 'reciprocity_second_supplement', name: 'the second supplement: (2/p) = (−1)^((p²−1)/8), so 2 is a quadratic residue mod p exactly when p ≡ ±1 (mod 8) — verified for all odd primes ≤ 43', test: () => { for (const p of ODD) if (leg(2, p) !== ((p % 8 === 1 || p % 8 === 7) ? 1 : -1)) return false; return true } })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

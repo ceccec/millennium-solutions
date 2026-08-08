@@ -2548,5 +2548,20 @@
     "key": "twin_primes_in_range_infinitude_open",
     "name": "twin primes exist in a bounded range (their infinitude is an open conjecture): there are at least 30 pairs of primes p, p+2 below 1000 — existence checked exhaustively; whether infinitely many exist remains open",
     "receipt": "cb55a95f-ce7f-850e-b68f-23ebb4b8c99c"
+  },
+  {
+    "key": "quadratic_reciprocity_law",
+    "name": "Gauss’s law of quadratic reciprocity: for distinct odd primes p, q the Legendre symbols satisfy (p/q)(q/p) = (−1)^((p−1)/2·(q−1)/2) — verified exhaustively over all pairs of odd primes ≤ 43",
+    "receipt": "a0ef7331-2cc2-89c1-8534-d70b8c52b14a"
+  },
+  {
+    "key": "reciprocity_first_supplement",
+    "name": "the first supplement: (−1/p) = (−1)^((p−1)/2), so −1 is a quadratic residue mod p exactly when p ≡ 1 (mod 4) — verified for all odd primes ≤ 43",
+    "receipt": "544a22fa-bd6c-80bb-b67a-362342e07324"
+  },
+  {
+    "key": "reciprocity_second_supplement",
+    "name": "the second supplement: (2/p) = (−1)^((p²−1)/8), so 2 is a quadratic residue mod p exactly when p ≡ ±1 (mod 8) — verified for all odd primes ≤ 43",
+    "receipt": "4577b712-15d4-8070-bb81-6acb1068c1f5"
   }
 ]
