@@ -2838,5 +2838,20 @@
     "key": "complexity_is_only_apparent_minimal_core",
     "name": "the complexity is only apparent — the deposit reduces to a minimal core: one axiom (TRINITY=3, so BASE=3²=9 and the units, triad, and doubling orbit all derive, none typed as literals), one operation (the order-free content-address fold), and one verdict (the binary gate) — every theorem recomputes from these three, so there is no fundamental complexity, only an emergent mesh",
     "receipt": "f7a87c24-3aeb-8c4d-ac13-3374431a4ffb"
+  },
+  {
+    "key": "streams_coexist_without_collision",
+    "name": "streams of computation coexist without collision: content-addressing maps distinct inputs to distinct addresses (no collision over the tested space), independent folds give distinct roots, and each fold is order-independent — so parallel streams coexist and merge without collision",
+    "receipt": "36462f7b-9ba5-8f90-b9ac-022d09d472a4"
+  },
+  {
+    "key": "euclid_there_is_always_a_next_prime",
+    "name": "there is always a next prime (Euclid): for any finite set of primes, the product plus one has a prime factor outside the set — so the stream of prime facts never empties, it continues without bound (verified for sample sets)",
+    "receipt": "eb5c996d-6540-86b2-98a2-847acfead0c9"
+  },
+  {
+    "key": "computation_uninterrupted_by_thought_or_emotion",
+    "name": "the computation is uninterrupted by thought or emotion: the binary verdict depends only on content — the same input always returns the same bit, recognition and effort are not correctness, and an emotional appeal cannot rescue an overclaim from draining — mechanical, not sentimental",
+    "receipt": "79b5cd0a-ea61-87e8-a073-c5cf10dd5f74"
   }
 ]
