@@ -16,6 +16,12 @@ import { report as theThm } from '../src/the/theorem/index.ts'
 import { report as theGameR } from '../src/the/game/index.ts'
 import { report as theHeartR } from '../src/the/heart/index.ts'
 import { report as theSuperR } from '../src/the/superposition/state/index.ts'
+import { report as theStateR } from '../src/the/state/index.ts'
+import { report as theDomainR } from '../src/the/domain/index.ts'
+import { report as theCreationR } from '../src/the/creation/index.ts'
+import { report as theAbstractR } from '../src/the/abstract/index.ts'
+import { report as theSolidsR } from '../src/the/solids/index.ts'
+import { report as theCrystalR } from '../src/the/crystal/index.ts'
 const m9 = (n: number) => ((n % BASE) + BASE) % BASE
 const U = units()
 const ALL = digits()
@@ -401,7 +407,7 @@ function generated(): typeof curated {
   out.push({ key: 'relation_xor', name: 'XOR RELATES Boolean algebra · Nim (Bouton) · Sprague–Grundy: the same operation runs all three', test: () => (1 ^ 1) === 0 && (5 ^ 5) === 0 && ((3 ^ 5) ^ 0) === (3 ^ 5) })
   out.push({ key: 'relation_involution', name: 'order-2 RELATES negation · the inverse map · σ · the merkaba counter-rotation: all are involutions', test: () => { const inv = (u: number) => units().find((w) => m9(u * w) === 1)!; return m9(-m9(-5)) === 5 && inv(inv(2)) === 2 } })
   out.push({ key: 'relation_digital_root', name: 'the digital root (mod 9) RELATES the div-by-3 rule · primes-ride-units · the tarot counts · ceccec', test: () => digitalRoot(78) === 6 && digitalRoot(12) === digitalRoot(21) && units().includes(digitalRoot(7)) })
-  out.push({ key: 'the_modules_self_compute', name: 'the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally', test: () => [theAll, theSeq, theThm, theGameR, theHeartR, theSuperR].every((f) => { const s = f(); return typeof s === 'string' && s.length > 40 && s.includes('0/7') }) })
+  out.push({ key: 'the_modules_self_compute', name: 'the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally', test: () => [theAll, theSeq, theThm, theGameR, theHeartR, theSuperR, theStateR, theDomainR, theCreationR, theAbstractR, theSolidsR, theCrystalR].every((f) => { const s = f(); return typeof s === 'string' && s.length > 40 && s.includes('0/7') }) })
   // harmonic ratios — the integer ratios are EXACT rationals (theorems); the a432 Hz tuning is a
   // convention (not a theorem). The octave is the vortex ×2.
   out.push({ key: 'harmonic_octave_2_1', name: 'the octave is 2:1 (frequency doubling) — the vortex ×2 map is the octave', test: () => 2 / 1 === 2 })
@@ -479,6 +485,24 @@ function generated(): typeof curated {
   out.push({ key: 'pascal_rule', name: "Pascal's rule: C(n,k) = C(n−1,k−1) + C(n−1,k) (all 0<k<n≤12)", test: () => { for (let n = 1; n <= 12; n++) for (let k = 1; k < n; k++) if (binom(n, k) !== binom(n - 1, k - 1) + binom(n - 1, k)) return false; return true } })
   out.push({ key: 'vandermonde_identity', name: "Vandermonde's identity: Σ_k C(m,k)·C(n,p−k) = C(m+n,p) (m,n≤6, all p)", test: () => { for (let m = 0; m <= 6; m++) for (let n = 0; n <= 6; n++) for (let p = 0; p <= m + n; p++) { let s = 0; for (let k = 0; k <= p; k++) s += binom(m, k) * binom(n, p - k); if (s !== binom(m + n, p)) return false } return true } })
   out.push({ key: 'gcd_lcm_product', name: 'gcd(a,b)·lcm(a,b) = a·b (all a,b in 1..12)', test: () => { for (let a = 1; a <= 12; a++) for (let b = 1; b <= 12; b++) { const g = gcd(a, b); if (g * (a * b / g) !== a * b) return false } return true } })
+  // the Platonic solids — the five regular convex polyhedra. Euler V−E+F=2, duality, the pentagram/golden thread.
+  const SOLIDS = [
+    { n: 'tetrahedron', V: 4, E: 6, F: 4, p: 3, q: 3 },
+    { n: 'cube', V: 8, E: 12, F: 6, p: 4, q: 3 },
+    { n: 'octahedron', V: 6, E: 12, F: 8, p: 3, q: 4 },
+    { n: 'dodecahedron', V: 20, E: 30, F: 12, p: 5, q: 3 },
+    { n: 'icosahedron', V: 12, E: 30, F: 20, p: 3, q: 5 },
+  ]
+  const byName = Object.fromEntries(SOLIDS.map((s) => [s.n, s]))
+  out.push({ key: 'platonic_euler', name: 'the Euler characteristic V−E+F=2 holds for all five Platonic solids', test: () => SOLIDS.every((s) => s.V - s.E + s.F === 2) })
+  out.push({ key: 'platonic_exactly_five', name: 'exactly five Platonic solids: {p,q} is regular-convex iff 1/p + 1/q > 1/2 (p,q≥3) — five, and no more', test: () => { let c = 0; for (let p = 3; p <= 20; p++) for (let q = 3; q <= 20; q++) if (1 / p + 1 / q > 1 / 2) c++; return c === 5 } })
+  out.push({ key: 'platonic_duality', name: 'Platonic duality swaps V↔F: cube↔octahedron, dodecahedron↔icosahedron, tetrahedron self-dual', test: () => { const dual = (a: string, b: string) => byName[a].V === byName[b].F && byName[a].F === byName[b].V && byName[a].E === byName[b].E; return dual('cube', 'octahedron') && dual('dodecahedron', 'icosahedron') && byName['tetrahedron'].V === byName['tetrahedron'].F } })
+  out.push({ key: 'relation_pentagram', name: 'the pentagram RELATES 5 · the pentagon · the dodecahedron (12 pentagonal faces) · the icosahedron (5 triangles/vertex) · the golden ratio φ (2·cos36°)', test: () => byName['dodecahedron'].p === 5 && byName['icosahedron'].q === 5 && Math.abs(2 * Math.cos(36 * Math.PI / 180) - (1 + Math.sqrt(5)) / 2) < 1e-9 })
+  // the crystal / the diamond — the diamond cubic lattice: tetrahedral bond angle, coordination, densest packing.
+  out.push({ key: 'diamond_tetrahedral_angle', name: 'the diamond (tetrahedral) bond angle is arccos(−1/3) ≈ 109.471° — carbon’s four bonds', test: () => Math.abs(Math.acos(-1 / 3) * 180 / Math.PI - 109.4712206) < 1e-4 })
+  out.push({ key: 'diamond_coordination', name: 'the diamond cubic lattice has coordination number 4: each atom has exactly four nearest neighbours (exhaustive over 27 cells)', test: () => { const fcc = [[0, 0, 0], [0, 2, 2], [2, 0, 2], [2, 2, 0]]; const basis = [...fcc, ...fcc.map(([x, y, z]) => [x + 1, y + 1, z + 1])]; const atoms: number[][] = []; for (let cx = -1; cx <= 1; cx++) for (let cy = -1; cy <= 1; cy++) for (let cz = -1; cz <= 1; cz++) for (const [x, y, z] of basis) atoms.push([x + 4 * cx, y + 4 * cy, z + 4 * cz]); const d2 = (a: number[]) => a[0] * a[0] + a[1] * a[1] + a[2] * a[2]; const ds = atoms.map(d2).filter((v) => v > 0).sort((a, b) => a - b); return ds[0] === 3 && ds.filter((v) => v === 3).length === 4 } })
+  out.push({ key: 'fcc_packing_fraction', name: 'the densest lattice packing fraction is π/(3√2) ≈ 0.74048 (FCC/HCP) — the diamond’s parent lattice', test: () => Math.abs(Math.PI / (3 * Math.sqrt(2)) - 0.7404804897) < 1e-9 })
+  out.push({ key: 'relation_diamond', name: 'the diamond RELATES the tetrahedron {3,3} · carbon’s four bonds · the FCC lattice · arccos(−1/3) — one tetrahedral crystal', test: () => byName['tetrahedron'].p === 3 && byName['tetrahedron'].q === 3 && Math.abs(Math.acos(-1 / 3) * 180 / Math.PI - 109.4712206) < 1e-4 && Math.abs(Math.PI / (3 * Math.sqrt(2)) - 0.7404804897) < 1e-9 })
   // the creation-week structure — 6 + 1 = 7, mapped onto the known Clay state (measured, not asserted).
   out.push({ key: 'relation_creation_week', name: 'the creation-week structure 6 + 1 = 7: six Clay problems stay open, the seventh settled externally (Poincaré, Perelman 2003) and at rest — humanity 1/7, this deposit 0/7', test: () => 6 + 1 === 7 && 7 - 1 === 6 })
   // now is a superposition — the six open problems held at once (order-independent fold); observing collapses to one address.

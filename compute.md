@@ -15,6 +15,12 @@ import { report as theHeart } from './src/the/heart/index'
 import { report as fromTheHeart } from './src/from/the/heart/index'
 import { report as playTheGame } from './src/play/the/game/index'
 import { report as theSuperposition } from './src/the/superposition/state/index'
+import { report as theState } from './src/the/state/index'
+import { report as theDomain } from './src/the/domain/index'
+import { report as theCreation } from './src/the/creation/index'
+import { report as theAbstract } from './src/the/abstract/index'
+import { report as theSolids } from './src/the/solids/index'
+import { report as theCrystal } from './src/the/crystal/index'
 import { report as acceptance } from './src/1/acceptance'
 import { report as paradox } from './src/1/paradox'
 import { report as society } from './src/9/society'
@@ -129,6 +135,30 @@ digit to its partner (fixed point **5**), so the folders below are laid out arou
 ### The superposition · `src/the/superposition/state/index.ts`
 
 <pre>{{ theSuperposition() }}</pre>
+
+### The state · `src/the/state/index.ts`
+
+<pre>{{ theState() }}</pre>
+
+### The domain · `src/the/domain/index.ts`
+
+<pre>{{ theDomain() }}</pre>
+
+### The creation · `src/the/creation/index.ts`
+
+<pre>{{ theCreation() }}</pre>
+
+### The abstract · `src/the/abstract/index.ts`
+
+<pre>{{ theAbstract() }}</pre>
+
+### The solids · `src/the/solids/index.ts`
+
+<pre>{{ theSolids() }}</pre>
+
+### The crystal · `src/the/crystal/index.ts`
+
+<pre>{{ theCrystal() }}</pre>
 </details>
 
 ## `0/` — the substrate · content-addressing

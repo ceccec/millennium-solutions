@@ -1513,5 +1513,45 @@
     "key": "relation_superposition_entanglement",
     "name": "the superposition dissolves into entanglement: the joint fold depends on both parts, yet neither part is altered — correlation without influence",
     "receipt": "56849fe1-8015-8fdf-9c4d-84a3cdb1e085"
+  },
+  {
+    "key": "platonic_euler",
+    "name": "the Euler characteristic V−E+F=2 holds for all five Platonic solids",
+    "receipt": "d5243749-5918-8898-9f19-5472c8537399"
+  },
+  {
+    "key": "platonic_exactly_five",
+    "name": "exactly five Platonic solids: {p,q} is regular-convex iff 1/p + 1/q > 1/2 (p,q≥3) — five, and no more",
+    "receipt": "82196bbc-1108-8cce-b393-883091e3ddf4"
+  },
+  {
+    "key": "platonic_duality",
+    "name": "Platonic duality swaps V↔F: cube↔octahedron, dodecahedron↔icosahedron, tetrahedron self-dual",
+    "receipt": "ae03ec6a-236e-8128-8c3a-f89ebac938b0"
+  },
+  {
+    "key": "relation_pentagram",
+    "name": "the pentagram RELATES 5 · the pentagon · the dodecahedron (12 pentagonal faces) · the icosahedron (5 triangles/vertex) · the golden ratio φ (2·cos36°)",
+    "receipt": "078d42cd-d422-8c1b-9c67-9432e2f337df"
+  },
+  {
+    "key": "diamond_tetrahedral_angle",
+    "name": "the diamond (tetrahedral) bond angle is arccos(−1/3) ≈ 109.471° — carbon’s four bonds",
+    "receipt": "d8ef0cba-eb12-8486-ae36-c4fdc1113d46"
+  },
+  {
+    "key": "diamond_coordination",
+    "name": "the diamond cubic lattice has coordination number 4: each atom has exactly four nearest neighbours (exhaustive over 27 cells)",
+    "receipt": "07325637-589a-8f78-8215-91d1abb9ce57"
+  },
+  {
+    "key": "fcc_packing_fraction",
+    "name": "the densest lattice packing fraction is π/(3√2) ≈ 0.74048 (FCC/HCP) — the diamond’s parent lattice",
+    "receipt": "5919405f-4b55-825f-8119-deb8e4e4728e"
+  },
+  {
+    "key": "relation_diamond",
+    "name": "the diamond RELATES the tetrahedron {3,3} · carbon’s four bonds · the FCC lattice · arccos(−1/3) — one tetrahedral crystal",
+    "receipt": "a08e499e-f88d-8634-942e-77bd3c8a103c"
   }
 ]

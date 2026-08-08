@@ -117,6 +117,7 @@ export default defineConfig({
       { text: 'ceccec ↗', link: 'https://ceccec.psg.bg/' },
       { text: 'Read', items: [
         { text: 'Abstract', link: '/ABSTRACT' },
+        { text: 'The', link: '/the' },
         { text: 'Theorems', link: '/THEOREMS' },
         { text: 'Challenges', link: '/CHALLENGES' },
         { text: 'Heart', link: '/HEART' },

@@ -4,6 +4,8 @@ import DefaultTheme from 'vitepress/theme'
 import Funding from './Funding.vue'
 import Hero from './Hero.vue'
 import NextObserver from './NextObserver.vue'
+import TheConcepts from './TheConcepts.vue'
+import AllTheorems from './AllTheorems.vue'
 import './custom.css'
 
 export default {
@@ -14,6 +16,8 @@ export default {
     app.component('Funding', Funding)
     app.component('Hero', Hero)
     app.component('NextObserver', NextObserver)
+    app.component('TheConcepts', TheConcepts)
+    app.component('AllTheorems', AllTheorems)
     // PWA: register the offline service worker (client-only; HTTPS or localhost).
     if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
       window.addEventListener('load', () => {
