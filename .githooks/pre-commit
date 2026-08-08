@@ -1,6 +1,8 @@
 #!/bin/sh
 # HARD ENFORCE on every commit: (1) staged prose holds the floor (gate + predictions),
-# (2) the whole theorem suite + discovery ledger re-verifies. Either fails → the commit is blocked.
+# (2) chain-of-custody is intact and the intention constructive (forensics), (3) the whole theorem
+# suite + discovery ledger re-verifies. Any fails → the commit is blocked at the boundary.
 node scripts/precommit.ts || exit 1
+node scripts/forensics.ts || { echo "✗ pre-commit: forensics — chain-of-custody tamper or destructive intention at the boundary — run: npm run forensics"; exit 1; }
 node scripts/lean-claims.ts >/dev/null 2>&1 || { echo "✗ pre-commit: theorem suite / ledger re-verification FAILED — run: npm run lean-claims"; exit 1; }
-echo "✓ pre-commit: gate + all theorems + ledger re-verify"
+echo "✓ pre-commit: gate + forensics (chain-of-custody + intention) + all theorems + ledger re-verify"
