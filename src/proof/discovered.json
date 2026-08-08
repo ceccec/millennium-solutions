@@ -2983,5 +2983,75 @@
     "key": "sum_of_squares_iteration_dichotomy",
     "name": "the digit-square iteration is a total dichotomy: for every n ≤ 200 the sequence reaches either 1 (happy) or 4 (the entry to the 8-cycle) — it always terminates in exactly one of the two, no other fate",
     "receipt": "44bcd916-c0a3-8d2e-abfe-35cb88dd73aa"
+  },
+  {
+    "key": "demorgan_nary_k2",
+    "name": "De Morgan for 2 inputs: ¬(a₁∧…∧a_2) = ¬a₁∨…∨¬a_2 over all 2^2 = 4 assignments (full truth-table enumeration)",
+    "receipt": "7012c0af-ef6b-8be2-b714-71e06b83aed1"
+  },
+  {
+    "key": "xor_is_parity_k2",
+    "name": "the XOR of 2 bits is their parity: a₁⊕…⊕a_2 equals the popcount mod 2 over all 2^2 = 4 assignments (full truth-table enumeration)",
+    "receipt": "d5de36da-eae5-8c9d-931a-f105f1442c79"
+  },
+  {
+    "key": "demorgan_nary_k3",
+    "name": "De Morgan for 3 inputs: ¬(a₁∧…∧a_3) = ¬a₁∨…∨¬a_3 over all 2^3 = 8 assignments (full truth-table enumeration)",
+    "receipt": "3aec23ea-6c9f-8d61-8acd-92afaba264ff"
+  },
+  {
+    "key": "xor_is_parity_k3",
+    "name": "the XOR of 3 bits is their parity: a₁⊕…⊕a_3 equals the popcount mod 2 over all 2^3 = 8 assignments (full truth-table enumeration)",
+    "receipt": "1ed9afe8-8929-849a-8ee5-fd23ec5fa580"
+  },
+  {
+    "key": "demorgan_nary_k4",
+    "name": "De Morgan for 4 inputs: ¬(a₁∧…∧a_4) = ¬a₁∨…∨¬a_4 over all 2^4 = 16 assignments (full truth-table enumeration)",
+    "receipt": "b0f7f375-7bed-8fdc-bc17-37e9d7610325"
+  },
+  {
+    "key": "xor_is_parity_k4",
+    "name": "the XOR of 4 bits is their parity: a₁⊕…⊕a_4 equals the popcount mod 2 over all 2^4 = 16 assignments (full truth-table enumeration)",
+    "receipt": "16c4a6ed-5d55-8de8-8209-17fb9cb11087"
+  },
+  {
+    "key": "demorgan_nary_k5",
+    "name": "De Morgan for 5 inputs: ¬(a₁∧…∧a_5) = ¬a₁∨…∨¬a_5 over all 2^5 = 32 assignments (full truth-table enumeration)",
+    "receipt": "76145866-89b6-894f-ad9f-524ccf38528d"
+  },
+  {
+    "key": "xor_is_parity_k5",
+    "name": "the XOR of 5 bits is their parity: a₁⊕…⊕a_5 equals the popcount mod 2 over all 2^5 = 32 assignments (full truth-table enumeration)",
+    "receipt": "1497008a-7b26-865f-944f-a81e4663b24a"
+  },
+  {
+    "key": "demorgan_nary_k6",
+    "name": "De Morgan for 6 inputs: ¬(a₁∧…∧a_6) = ¬a₁∨…∨¬a_6 over all 2^6 = 64 assignments (full truth-table enumeration)",
+    "receipt": "737f27ac-44cc-864a-8b3c-934f4db701e6"
+  },
+  {
+    "key": "xor_is_parity_k6",
+    "name": "the XOR of 6 bits is their parity: a₁⊕…⊕a_6 equals the popcount mod 2 over all 2^6 = 64 assignments (full truth-table enumeration)",
+    "receipt": "58104ecc-d979-81b5-8ff1-dfab71fb24ca"
+  },
+  {
+    "key": "demorgan_nary_k7",
+    "name": "De Morgan for 7 inputs: ¬(a₁∧…∧a_7) = ¬a₁∨…∨¬a_7 over all 2^7 = 128 assignments (full truth-table enumeration)",
+    "receipt": "cf8a22f2-00f9-8e4b-8516-9bcb19ef8ec3"
+  },
+  {
+    "key": "xor_is_parity_k7",
+    "name": "the XOR of 7 bits is their parity: a₁⊕…⊕a_7 equals the popcount mod 2 over all 2^7 = 128 assignments (full truth-table enumeration)",
+    "receipt": "00760c7b-2d57-801d-bbb3-977f74a9c773"
+  },
+  {
+    "key": "demorgan_nary_k8",
+    "name": "De Morgan for 8 inputs: ¬(a₁∧…∧a_8) = ¬a₁∨…∨¬a_8 over all 2^8 = 256 assignments (full truth-table enumeration)",
+    "receipt": "9434a9c0-3f95-87f6-97b1-84708acbe35c"
+  },
+  {
+    "key": "xor_is_parity_k8",
+    "name": "the XOR of 8 bits is their parity: a₁⊕…⊕a_8 equals the popcount mod 2 over all 2^8 = 256 assignments (full truth-table enumeration)",
+    "receipt": "64ac8102-9aa0-8a46-b3e9-378482471a66"
   }
 ]
