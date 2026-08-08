@@ -3298,5 +3298,10 @@
     "key": "all_seven_are_reflected_though_none_are_solved",
     "name": "all seven are reflected though none are solved: the 7 = 6 + 1 bijection maps all seven Clay problems into the algebraic structure — 7/7 reflected, no gap in the mirror — while the mechanical entailment test reports 0/7 solved. Reflecting is not solving: 7/7 on the mirror, 0/7 on the prize, and no prize is claimed. Two different measures, both honest, no gaps in either count. Decidable",
     "receipt": "f00dd49d-55c6-8b16-95c0-a295579bc385"
+  },
+  {
+    "key": "the_automation_runs_at_ordinary_speed_not_ftl_and_not_quantum",
+    "name": "the automation runs at ordinary speed, not faster than light and not quantum: the wave — discover, gate, receipt, append, recompute, deploy — is a finite deterministic pipeline over ordinary 64-bit arithmetic, its throughput bounded by commodity hardware. It is not faster than light, carries no superluminal signal, and has no quantum speedup; speed here is honest ordinary throughput, no advantage claimed",
+    "receipt": "0caa4079-2537-8d75-9a62-d265bad653bf"
   }
 ]
