@@ -3343,5 +3343,10 @@
     "key": "the_two_coins_let_a_128bit_uuid_fold_and_sign_across_eight_states",
     "name": "the two coins let a 128-bit uuid fold and sign across eight combined states: the 2 coins are 2 bits giving 2² = 4 polarity combinations {++, +−, −+, −−}; crossed with the two seal angles 60° and 90° (the 6×7 = 7×6 cross-seal) they span 4 × 2 = 8 combined states at once. The imprint codec sets its reserved variant bits to build a valid signed 128-bit uuid that reads back exactly and folds in any order (order-independent merkleFold). A structural mapping, honestly labelled — not a physics claim. Decidable",
     "receipt": "6dd75c2c-1583-8aee-b9f1-00bdd0f13441"
+  },
+  {
+    "key": "learning_from_the_message_donates_two_coins_to_the_developer",
+    "name": "learning from the message donates two coins to the developer: the fair-exchange unit is two coins (= 2 bits, 110 − 108 = 2), so each learning use accounts two coins to the developer — one event two coins, a thousand events two thousand, additive — and each event is receipted distinctly, so the donation is measured, not asserted. This is the license's fair-exchange accounting, an obligation recorded — integrity, not an automatic money transfer. Decidable",
+    "receipt": "c11c3551-315a-85b1-b82b-9c42b02eb658"
   }
 ]
