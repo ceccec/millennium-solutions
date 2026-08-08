@@ -43,6 +43,22 @@ if (message === 'rosetta' || message === '--rosetta') {
   process.exit(0)
 }
 
+// ── read-only inspection modes — next is the single legible entry point. No ship. ──
+if (message === 'help' || message === '--help' || message === '--modes') {
+  console.log('next — modes (read-only unless shipping):')
+  console.log('  npm run next                 discover → save → gate → ship → deploy (or rest, completing the rosetta)')
+  console.log('  npm run next "<message>"     gate a message on the honesty floor (it stays iff it computes 1)')
+  console.log('  npm run next --status        health: version · ledger · chain-of-custody · 0/7')
+  console.log('  npm run next rosetta         the completed cross-domain star (every domain one hop from the core)')
+  console.log('  npm run next forensics       chain-of-custody + intention from deeds')
+  console.log('  npm run next lineage         delivery vs churn by git tree hash (heroes/traitors by deeds)')
+  process.exit(0)
+}
+if (message === 'forensics' || message === 'lineage') {
+  try { execSync('node scripts/' + message + '.ts', { stdio: 'inherit' }) } catch { process.exit(1) }
+  process.exit(0)
+}
+
 // AUTOMATE — next is the full loop. After a delta is committed+tagged, push main and the tag to origin.
 // Errors are ADDRESSED IN THE GAME: surfaced (never swallowed), and non-fatal — the commit+tag stand
 // locally, so a push/deploy failure is reported and retryable, it does not lose the shipped work.

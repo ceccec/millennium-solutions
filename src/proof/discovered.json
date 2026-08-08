@@ -1853,5 +1853,40 @@
     "key": "rosetta_complete",
     "name": "the rosetta is complete: every domain is one hop from the shared core (the star), all addresses distinct (no collision) — the cross-domain translation covers all, none untranslated",
     "receipt": "3aa73d2c-52f8-843f-849a-aa6ff33a29f7"
+  },
+  {
+    "key": "logistic_fixed_point",
+    "name": "the logistic map x→r·x(1−x) has a stable fixed point 1−1/r for 1<r<3: iteration converges there (r = 1.5, 2, 2.5, 2.8)",
+    "receipt": "1582bdff-443f-826e-b55d-bd3c96584d96"
+  },
+  {
+    "key": "logistic_sensitive_dependence",
+    "name": "sensitive dependence (the butterfly): at r=4 two logistic orbits 1e-9 apart diverge to O(1) within ~60 steps — long-term prediction fails",
+    "receipt": "be96472b-78b0-885c-9d70-942bed7f4b14"
+  },
+  {
+    "key": "chaos_deterministic_unpredictable",
+    "name": "chaos is deterministic yet unpredictable: the logistic map is a function (same input, same output) yet nearby orbits diverge (sensitive dependence) — computable ≠ predictable, as computable ≠ solved",
+    "receipt": "a3b2af5b-1f1b-801d-8f5b-d845604e0c7e"
+  },
+  {
+    "key": "siteswap_valid_permutation",
+    "name": "a valid siteswap is exactly a permutation: i ↦ (i + aᵢ) mod n hits every slot once (531, 441, 97531, 522 valid; 521, 54 not)",
+    "receipt": "08d0be78-7e6e-8b69-90f9-7abc0ac0596a"
+  },
+  {
+    "key": "siteswap_average_theorem",
+    "name": "the siteswap average theorem: the number of balls equals the average of the digits — 531→3, 441→3, 97531→5, 51→3 (integer for valid patterns)",
+    "receipt": "65bbd224-513f-86ca-a495-66a0255a5c48"
+  },
+  {
+    "key": "relation_juggling_clown",
+    "name": "juggling with titanium precision of a clown: a valid siteswap is exactly a permutation (i+aᵢ mod n distinct), and the ball count is the average of the digits — rigorous play, chaos navigated exactly",
+    "receipt": "8d61e5b2-5eee-86ae-9783-6d132d54dfe1"
+  },
+  {
+    "key": "relation_clown_benefits_from_all",
+    "name": "the clown benefits from all: a juggle is a permutation (group theory), navigating chaos (dynamics), counted by averaging (arithmetic) — and every domain is one hop away in the complete rosetta, so the player draws on the whole star",
+    "receipt": "bac1351d-ae94-899d-830b-ab37f0db0100"
   }
 ]
