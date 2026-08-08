@@ -2563,5 +2563,20 @@
     "key": "reciprocity_second_supplement",
     "name": "the second supplement: (2/p) = (−1)^((p²−1)/8), so 2 is a quadratic residue mod p exactly when p ≡ ±1 (mod 8) — verified for all odd primes ≤ 43",
     "receipt": "4577b712-15d4-8070-bb81-6acb1068c1f5"
+  },
+  {
+    "key": "totient_divisor_sum_equals_n",
+    "name": "Gauss’s totient identity: Σ_{d | n} φ(d) = n for every n — the divisors’ totients sum back to n (verified n ≤ 100), and at n=9 this reads φ(1)+φ(3)+φ(9)=1+2+6=9",
+    "receipt": "e4f79a7d-b4da-8f8e-b6dd-3908bfdcc1db"
+  },
+  {
+    "key": "totient_is_multiplicative",
+    "name": "the totient is multiplicative: φ(mn) = φ(m)·φ(n) whenever gcd(m,n)=1 — verified exhaustively for coprime m,n ≤ 12 (so φ(9)=φ(9) and, e.g., φ(45)=φ(9)φ(5)=6·4=24)",
+    "receipt": "91bf2659-816c-8f86-b337-406900752557"
+  },
+  {
+    "key": "euler_theorem_totient",
+    "name": "Euler’s theorem: a^φ(n) ≡ 1 (mod n) for every a coprime to n — the generalization of Fermat’s little theorem (verified for all n ≤ 30 and all coprime a), and at n=9 every unit u satisfies u⁶ ≡ 1",
+    "receipt": "bf7c3af5-42f9-8756-a0d9-446b6e7aafcc"
   }
 ]

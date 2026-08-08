@@ -907,6 +907,16 @@ function generated(): typeof curated {
     out.push({ key: 'reciprocity_first_supplement', name: 'the first supplement: (−1/p) = (−1)^((p−1)/2), so −1 is a quadratic residue mod p exactly when p ≡ 1 (mod 4) — verified for all odd primes ≤ 43', test: () => { for (const p of ODD) if (leg(p - 1, p) !== (p % 4 === 1 ? 1 : -1)) return false; return true } })
     out.push({ key: 'reciprocity_second_supplement', name: 'the second supplement: (2/p) = (−1)^((p²−1)/8), so 2 is a quadratic residue mod p exactly when p ≡ ±1 (mod 8) — verified for all odd primes ≤ 43', test: () => { for (const p of ODD) if (leg(2, p) !== ((p % 8 === 1 || p % 8 === 7) ? 1 : -1)) return false; return true } })
   }
+  // ── a NEW decidable domain — EULER'S TOTIENT φ: Gauss's divisor-sum, multiplicativity, and Euler's
+  // theorem, tying back to ℤ/9 where φ(9)=6 is the unit count. Full enumeration.
+  {
+    const gc = (a: number, b: number): number => b ? gc(b, a % b) : a
+    const phi = (n: number) => { let c = 0; for (let k = 1; k <= n; k++) if (gc(k, n) === 1) c++; return c }
+    const pm = (a: number, e: number, m: number) => { let r = 1, x = a % m; while (e > 0) { if (e & 1) r = r * x % m; x = x * x % m; e >>= 1 } return r }
+    out.push({ key: 'totient_divisor_sum_equals_n', name: 'Gauss’s totient identity: Σ_{d | n} φ(d) = n for every n — the divisors’ totients sum back to n (verified n ≤ 100), and at n=9 this reads φ(1)+φ(3)+φ(9)=1+2+6=9', test: () => { for (let n = 1; n <= 100; n++) { let s = 0; for (let d = 1; d <= n; d++) if (n % d === 0) s += phi(d); if (s !== n) return false } return true } })
+    out.push({ key: 'totient_is_multiplicative', name: 'the totient is multiplicative: φ(mn) = φ(m)·φ(n) whenever gcd(m,n)=1 — verified exhaustively for coprime m,n ≤ 12 (so φ(9)=φ(9) and, e.g., φ(45)=φ(9)φ(5)=6·4=24)', test: () => { for (let m = 1; m <= 12; m++) for (let n = 1; n <= 12; n++) if (gc(m, n) === 1 && phi(m * n) !== phi(m) * phi(n)) return false; return true } })
+    out.push({ key: 'euler_theorem_totient', name: 'Euler’s theorem: a^φ(n) ≡ 1 (mod n) for every a coprime to n — the generalization of Fermat’s little theorem (verified for all n ≤ 30 and all coprime a), and at n=9 every unit u satisfies u⁶ ≡ 1', test: () => { for (let n = 2; n <= 30; n++) for (let a = 1; a < n; a++) if (gc(a, n) === 1 && pm(a, phi(n), n) !== 1) return false; return true } })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
