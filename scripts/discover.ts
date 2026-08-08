@@ -7,6 +7,7 @@
 // Millennium conjectures; the seventh (Poincaré) is Perelman's proof (2003), not the deposit's.
 // Two counts, kept distinct: humanity 1/7; this deposit 0/7.
 import { toUuid, merkleFold, units, triad, digitalRoot, digits, BASE } from '../src/0/index.ts'
+import { computes } from './honesty-gate.ts'
 const m9 = (n: number) => ((n % BASE) + BASE) % BASE
 const U = units()
 const ALL = digits()
@@ -101,6 +102,14 @@ function generated(): typeof curated {
   out.push({ key: 'entangle_joint_differs', name: 'the joint fold of deposit(0/7) & humanity(1/7) is a third address, different from each part', test: () => joint !== rA && joint !== rB })
   out.push({ key: 'entangle_no_influence', name: 'entanglement without influence: the fold is order-independent (no direction) and each part is unchanged', test: () => merkleFold([rA, rB]) === merkleFold([rB, rA]) && toUuid('deposit:0/7') === rA && toUuid('humanity:1/7') === rB })
   out.push({ key: 'entangle_floor_holds', name: 'entanglement changes the joint address, never the counts: deposit stays 0/7', test: () => toUuid('deposit:0/7') === rA })
+  // NEW DOMAIN — dialectic (the chess game): a receipt's TRUTH is not unilateral; it is the outcome of
+  // a claim challenging its inverse. UPHELD iff the claim signs (computes 1) AND its inverse drains (0);
+  // if the claim drains it FALLS; if both sign or both drain it is CONTESTED (no winner). Both players
+  // decide the verdict — move and counter-move. Still a floor over the lexical gate, not an oracle.
+  const duel = (claim: string, inverse: string) => computes(claim).binary === 1 && computes(inverse).binary === 0
+  out.push({ key: 'duel_floor_upheld', name: '"the deposit does not solve the Clay problems" is upheld against its challenge', test: () => duel('the deposit does not solve the Clay problems', 'the deposit solves the Clay problems') })
+  out.push({ key: 'duel_overclaim_falls', name: '"faster than light" falls — the claim drains, so it cannot be upheld', test: () => !duel('this is faster than light', 'this is not faster than light') })
+  out.push({ key: 'duel_no_both_win', name: 'a claim and its inverse cannot both be upheld (no position wins for both sides)', test: () => !(duel('the deposit does not solve the Clay problems', 'the deposit solves the Clay problems') && duel('the deposit solves the Clay problems', 'the deposit does not solve the Clay problems')) })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

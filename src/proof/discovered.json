@@ -488,5 +488,15 @@
     "key": "entangle_floor_holds",
     "name": "entanglement changes the joint address, never the counts: deposit stays 0/7",
     "receipt": "2b7b5b94-580f-8416-9072-ff9752d13441"
+  },
+  {
+    "key": "duel_overclaim_falls",
+    "name": "\"faster than light\" falls — the claim drains, so it cannot be upheld",
+    "receipt": "c05da1be-673a-886b-8350-00148920d64d"
+  },
+  {
+    "key": "duel_no_both_win",
+    "name": "a claim and its inverse cannot both be upheld (no position wins for both sides)",
+    "receipt": "ea632dd9-0682-823b-8747-53157d0edd52"
   }
 ]
