@@ -38,6 +38,10 @@ ck('triad_off_circuit {3,6,9}', triad().every(d => !vortexOrbit().includes(d)))
 // Theorem — every prime p > 3 has its digital root in the units, never the triad (p coprime to 3 ⇒ p mod 9 ∈ units).
 { const primes = [5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
   ck('primes_gt3_ride_units', primes.every(p => units().includes(digitalRoot(p)))) }
+// discovered by scripts/discover.ts, promoted here to prove themselves in code:
+ck('euler_units_pow6: every unit u⁶≡1 mod9 (φ(9)=6)', units().every(u => m9(BigInt(u) ** 6n) === 1n))
+ck('units_sum_zero: 1+2+4+5+7+8 ≡ 0 mod9', m9(BigInt(units().reduce((a, b) => a + b, 0))) === 0n)
+ck('self_inverse_only_1_and_8: d²≡1 ⇔ d∈{1,8}', [1, 2, 3, 4, 5, 6, 7, 8, 9].filter(d => m9(BigInt(d) * BigInt(d)) === 1n).join(',') === '1,8')
 // "each discovers the next" — a linked derivation chain from the ℤ/9 axiom: each receipt is seeded by
 // the previous, so the chain is tamper-evident (falsify any link ⇒ every downstream receipt changes).
 { const link = (prev, name, d) => toUuid((prev || 'axiom') + '→' + name + ':' + JSON.stringify(d))
