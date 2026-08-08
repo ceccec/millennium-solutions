@@ -2518,5 +2518,20 @@
     "key": "sum_of_two_squares_characterization",
     "name": "the sum-of-two-squares theorem: n is a sum of two squares iff every prime ≡ 3 (mod 4) in its factorization occurs to an even power — the brute-force check and the factorization criterion agree for all n ≤ 100",
     "receipt": "d4fcdaa1-8273-8174-9359-a799acd2a33c"
+  },
+  {
+    "key": "three_distance_at_most_three_gaps",
+    "name": "the three-distance (Steinhaus) theorem: for the points {0, a, 2a, …, (N−1)a} mod m, the consecutive gaps around the circle take at most three distinct lengths — verified exhaustively over several a/m and every N",
+    "receipt": "d41f38cb-c074-80bb-b8bd-f3eda0b7d27e"
+  },
+  {
+    "key": "three_gap_largest_is_sum_of_other_two",
+    "name": "the third distance is the sum of the other two: whenever the three-distance points show exactly three distinct gap lengths, the largest equals the sum of the smaller two — verified exhaustively",
+    "receipt": "a898c992-86c9-856d-bad9-bc6955b8a76e"
+  },
+  {
+    "key": "three_distance_max_gap_non_increasing",
+    "name": "adding a point never widens the largest gap: as N grows, each new multiple falls inside an existing gap and splits it, so the maximum gap is non-increasing in N — the points equidistribute (verified exhaustively)",
+    "receipt": "7d1620a8-01d2-8ec6-bdec-6accb7871009"
   }
 ]
