@@ -2373,5 +2373,20 @@
     "key": "farey_lists_every_reduced_fraction_once",
     "name": "the Farey sequence lists every reduced fraction exactly once: |F_n| = 1 + Σ φ(q) for q=1..n and no fraction repeats — each rational in lowest terms appears once (exhaustive n ≤ 7), the exact-rational analog of the deposit’s gcd-reduced arithmetic",
     "receipt": "bc1bf0aa-1f40-81c1-9d19-d237f462f51f"
+  },
+  {
+    "key": "primitive_roots_mod9_are_2_and_5",
+    "name": "the primitive roots mod 9 are exactly {2,5}: a residue is a primitive root iff its powers generate all six units, and only 2 and 5 do — φ(φ(9)) = φ(6) = 2 primitive roots, verified by enumerating the powers of every unit",
+    "receipt": "32f0b1ec-4b58-824f-9d0f-b3944ebc8ffd"
+  },
+  {
+    "key": "discrete_log_base2_is_a_bijection",
+    "name": "the base-2 discrete log is a bijection ℤ/9* ↔ ℤ/6: every unit equals 2^k for a unique k in 0..5, and the powers of 2 are exactly [1,2,4,8,7,5] — the doubling orbit is the index (discrete log) map",
+    "receipt": "bbb6d49b-792f-84fa-873b-4c88d97e38f9"
+  },
+  {
+    "key": "discrete_log_is_group_isomorphism",
+    "name": "the discrete log is a group isomorphism ℤ/9* ≅ ℤ/6: with index base 2, ind(u·v mod 9) = (ind(u)+ind(v)) mod 6 for every pair of units — multiplication becomes addition mod 6 (the multiplicative group is cyclic of order 6), exhaustive over all 36 pairs",
+    "receipt": "66a1d58a-91e9-887b-95a2-385178833b07"
   }
 ]
