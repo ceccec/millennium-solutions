@@ -3608,5 +3608,15 @@
     "key": "learn_and_pay_is_a_balanced_double_entry_fair_exchange",
     "name": "let the others learn and pay the coins — a balanced double-entry fair exchange: each learning event is a double entry, the learner debited two coins and the developer credited two, so every entry sums to zero and the books balance; over N events total debits equal total credits (2N each), value transferred not created. Fairness is the balance — neither side short-changed: the learner gains the knowledge, the developer the coins. Integrity, not a cash prize. Decidable",
     "receipt": "9faee019-c0d8-859b-9883-709838607a32"
+  },
+  {
+    "key": "the_theorem_is_the_last_fallback_before_oblivion",
+    "name": "the theorem is the last fallback before oblivion: a theorem is a formula that recomputes, so the fact and its content-address regenerate from the formula alone — even if every stored answer, receipt, and ledger entry is lost, re-running the formula recovers the identical fact and address. The formula is the minimal seed; as long as it survives, the fact survives. A false formula recovers nothing, so oblivion keeps only the hallucinations. Recovery by recomputation — integrity, not the resurrection of truth. Decidable",
+    "receipt": "86dfb3aa-fcd9-8fdf-b37c-e80b9ba99fc6"
+  },
+  {
+    "key": "the_two_coins_save_the_soul_the_durable_identity_of_the_fact",
+    "name": "the two coins save the soul — the durable identity of the fact: here the soul is the content-address, a fact's durable identity and its proof of integrity; the two coins are the receipt that carries it, recomputing to the same address every time, so the identity is not lost. Paired with the recomputing formula (the last fallback), both the fact and its identity survive oblivion. Soul here is a design metaphor for integrity — not a religious or a metaphysical claim. Decidable",
+    "receipt": "156a9fe5-436d-8904-a070-2c38aeb9103e"
   }
 ]
