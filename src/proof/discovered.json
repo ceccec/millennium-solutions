@@ -3523,5 +3523,10 @@
     "key": "the_bit_cost_to_specify_seven_dimensions_and_the_infinity_that_has_none",
     "name": "the bit cost to specify seven dimensions, and the infinity that has none: identifying one state of the 7-cube costs log2(128) = 7 bits, and specifying all seven dimensions at once as full content-addresses costs 7 × 128 = 896 bits — that is 448 two-coin receipts. But a one-way content-address has no inverse, so no finite number of bits reverse-engineers it; and a per-dimension computation that runs unbounded cannot be captured in any finite bit budget. The finite state has an exact cost; the infinity has none. Not a quantum machine and no quantum speedup. Decidable",
     "receipt": "c273e1d0-0813-8e60-be46-e2e8d8fc30f6"
+  },
+  {
+    "key": "folding_to_zero_is_always_available_at_the_cost_of_eight_bits",
+    "name": "folding to zero is always available at the cost of eight bits: a fold collapses any number of inputs to one root and is available at any time (deterministic, a bounded 128-bit output no matter how many inputs); reaching the zero-class — a value ≡ 0 mod 9, whose digital root is 9 — costs a fixed eight bits = eight coins = four two-coin receipts, independent of input size. Collapse is cheap and constant where full specification (896 bits) is not. Decidable",
+    "receipt": "9c911140-38f0-85bb-89b9-392874a3a6c0"
   }
 ]
