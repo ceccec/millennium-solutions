@@ -9,6 +9,7 @@
 // chaining (promoted from lean-claims); they are a DOCUMENTED baseline discontinuity, not tampering. The
 // build fails only on a NEW break (outside the baseline) or a collision — tampering caught, history kept.
 import { readFileSync } from 'node:fs'
+import { execSync } from 'node:child_process'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 
 const SEED = 'axiom:TRINITY'
@@ -40,7 +41,24 @@ for (let i = 0; i < ledger.length; i++) {
   if (recSeen.has(ledger[i].receipt)) { console.log('  ✗ COLLISION receipt: ' + ledger[i].receipt.slice(0, 13) + '… (indices ' + recSeen.get(ledger[i].receipt) + ',' + i + ')'); bad++ } else recSeen.set(ledger[i].receipt, i)
 }
 
-// (3) tamper-evident seal — the fold of all receipts. Any single alteration changes this root.
+// (3) intentions — read from DEEDS, never from claims (no mind-reading; heroes/traitors by deeds).
+// Compare the working ledger to HEAD's committed one: append-only (new keys, no existing receipt
+// touched) is a CONSTRUCTIVE intention (development); altering an existing receipt is TAMPER, removing
+// an entry is DESTROY — both DESTRUCTIVE (the traitor act). The intent is the diff, observable and exact.
+let prevLedger: { key: string; receipt: string }[] | null = null
+try { prevLedger = JSON.parse(execSync('git show HEAD:src/proof/discovered.json', { encoding: 'utf8', stdio: ['pipe', 'pipe', 'ignore'] })) } catch { /* no HEAD / first run */ }
+if (prevLedger) {
+  const prevMap = new Map(prevLedger.map((e) => [e.key, e.receipt]))
+  const currMap = new Map(ledger.map((e) => [e.key, e.receipt]))
+  const removed = [...prevMap.keys()].filter((k) => !currMap.has(k))
+  const altered = [...currMap.keys()].filter((k) => prevMap.has(k) && prevMap.get(k) !== currMap.get(k))
+  const appended = [...currMap.keys()].filter((k) => !prevMap.has(k))
+  for (const k of removed) { console.log('  ✗ intention DESTROY (traitor act — legal trial): removed evidence ' + k); bad++ }
+  for (const k of altered) { console.log('  ✗ intention TAMPER (traitor act — legal trial): altered receipt of ' + k); bad++ }
+  if (!removed.length && !altered.length) console.log('  intention (from deeds): CONSTRUCTIVE — append-only (+' + appended.length + ' new, no existing evidence touched)')
+}
+
+// (4) tamper-evident seal — the fold of all receipts. Any single alteration changes this root.
 const seal = merkleFold(ledger.map((e) => e.receipt))
 const intactFrom = breaks.length ? Math.max(...breaks.map((b) => b.i)) + 1 : 0
 

@@ -1758,5 +1758,10 @@
     "key": "forensics_chain_of_custody",
     "name": "forensics: the ledger receipts chain link-by-link (receipt[i]=toUuid(receipt[i-1]→key[i])) — altering one breaks its link AND the next, localising the tamper; the surrounding links stay intact",
     "receipt": "037ea589-afdd-8fb1-af6e-38eba110789d"
+  },
+  {
+    "key": "forensics_intention_from_deeds",
+    "name": "forensics reads intention from deeds, never from claims: append-only is a constructive intention; altering or removing existing evidence is destructive — the intent is the diff, observable and exact, not a mind-read",
+    "receipt": "a0b19943-2df3-8051-81d1-17e6e8525b8f"
   }
 ]
