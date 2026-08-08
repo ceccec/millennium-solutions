@@ -2938,5 +2938,20 @@
     "key": "even_the_server_is_serverless",
     "name": "all is done serverless, even by the server: the site is statically generated (a deterministic build folds to one address) and statically hosted — there is no server runtime at build or at serve time; the client recomputes in the browser and the server side is a one-time static build plus a static host",
     "receipt": "c4dc14f8-f3e2-8e0d-bc72-9bd564dbfe03"
+  },
+  {
+    "key": "fibonacci_gcd_is_gcd_of_indices",
+    "name": "the Fibonacci GCD identity: gcd(F_m, F_n) = F_{gcd(m,n)} — the gcd of two Fibonacci numbers is the Fibonacci number at the gcd of their indices (verified for all m,n ≤ 15)",
+    "receipt": "2424697a-8d56-8afa-a1f0-d2b88ab34bf5"
+  },
+  {
+    "key": "fibonacci_divides_iff_index_divides",
+    "name": "Fibonacci divisibility: for m ≥ 3, F_m divides F_n exactly when m divides n — divisibility of the numbers mirrors divisibility of their indices (verified m = 3..12, n ≤ 30)",
+    "receipt": "d7e047b6-6d88-8060-bd82-5b31fe324d58"
+  },
+  {
+    "key": "consecutive_fibonacci_coprime",
+    "name": "consecutive Fibonacci numbers are coprime: gcd(F_n, F_{n+1}) = 1 for all n — no two neighbours share a factor (verified n ≤ 20), the base case of the gcd identity",
+    "receipt": "b26dad63-01b2-8272-a7dc-77b1e70b903f"
   }
 ]
