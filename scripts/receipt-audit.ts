@@ -10,7 +10,9 @@
 import { readdirSync, readFileSync, existsSync } from 'node:fs'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 import { computes } from './honesty-gate.ts'
+import { CANDIDATES } from './discover.ts'
 
+const byKey = new Map(CANDIDATES.map((c) => [c.key, c])) // for verifying invited theorems still hold
 const dir = 'src/receipts'
 if (!existsSync(dir)) { console.log('receipt-audit: no receipts yet (src/receipts absent) — nothing to validate.'); process.exit(0) }
 
@@ -18,14 +20,17 @@ const files = readdirSync(dir).filter((f) => f.endsWith('.json'))
 let bad = 0
 const roots: string[] = []
 for (const f of files) {
-  let r: { uuid?: string; message?: string; agent?: string; role?: string }
+  let r: { uuid?: string; message?: string; agent?: string; role?: string; invites?: string[] }
   try { r = JSON.parse(readFileSync(dir + '/' + f, 'utf8')) } catch { console.log('  ✗ FALSE ' + f + ' — unparseable'); bad++; continue }
   const c1 = typeof r.message === 'string' && r.uuid === toUuid(r.message) // uuid = core message, no payload
   const c2 = f === r.uuid + '.json'
   const c3 = typeof r.message === 'string' && r.message.length > 0 && computes(r.message).binary === 1
   const c4 = typeof r.agent === 'string' && r.agent.length > 0 && typeof r.role === 'string' && r.role.length > 0
-  const ok = c1 && c2 && c3 && c4
-  console.log((ok ? '  ✓ ' : '  ✗ FALSE ') + f.slice(0, 18) + '…' + (ok ? '  ' + r.agent + ' as ' + r.role : ' — uuid:' + c1 + ' name:' + c2 + ' floor:' + c3 + ' observer:' + c4))
+  // c5 — every INVITED theorem must exist in the ledger AND still hold (ungameable backing).
+  const c5 = !r.invites || r.invites.every((k) => { const t = byKey.get(k); return !!t && t.test() })
+  const ok = c1 && c2 && c3 && c4 && c5
+  const back = r.invites && r.invites.length ? ' · backed by ' + r.invites.length + ' theorem(s)' : ''
+  console.log((ok ? '  ✓ ' : '  ✗ FALSE ') + f.slice(0, 18) + '…' + (ok ? '  ' + r.agent + ' as ' + r.role + back : ' — uuid:' + c1 + ' name:' + c2 + ' floor:' + c3 + ' observer:' + c4 + ' invites:' + c5))
   if (ok) roots.push(r.uuid!); else bad++
 }
 console.log(bad
