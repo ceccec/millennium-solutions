@@ -2013,5 +2013,35 @@
     "key": "relation_coin64_is_half_address",
     "name": "the currency is half the address: coin64(x) is 64 of the 128 bits (16 of 32 hex) of toUuid(x) — the coin and the content-address are the same fold at half the width",
     "receipt": "b7a0dd2a-c11c-8759-adbb-0de60fef7b37"
+  },
+  {
+    "key": "relation_reflection_center_five",
+    "name": "the ten’s-complement reflection 10−d fixes exactly the center 5 (10−5=5), the midpoint of the digits 1..9 — reflection and the center are one point",
+    "receipt": "7d631733-c04b-8da1-818e-cc1554f8e20d"
+  },
+  {
+    "key": "relation_ninecomplement_permutes_units",
+    "name": "the balancing complement 9−d permutes the units: {1,2,4,5,7,8} ↦ {8,7,5,4,2,1}, pairing each unit with its partner summing to 9 — the balancing wave stays within the unit group",
+    "receipt": "9643c24f-342a-80c9-a8c7-6a0e5ae154bb"
+  },
+  {
+    "key": "relation_triangular_45_is_base",
+    "name": "the ninth triangular number binds figurate numbers to the base: 1+2+…+9 = 45 and dr(45) = 9 = BASE — summing the digits returns the base through its own digital root",
+    "receipt": "65e3085d-bd15-8cb2-835b-89ab5051b585"
+  },
+  {
+    "key": "relation_cubes_fold_to_0_1_8",
+    "name": "cubes mod 9 fold to {0,1,8}: every d³ ≡ 0, 1, or 8, binding powers to the nilpotent 0 and the self-inverse pair {1,8} (1²≡1, 8²≡1) — one residue set across powers and inverses",
+    "receipt": "b233f460-cd4d-8721-a915-60f60dca612b"
+  },
+  {
+    "key": "relation_receipt_chain_is_forensic_custody",
+    "name": "the receipt chain IS chain-of-custody: receipt[i] = toUuid(receipt[i−1]→key[i]) from a seed, so altering one link changes every link after it — the merkle-ledger and forensics are one construction",
+    "receipt": "d0307011-b34a-836e-95b0-9255acdda52b"
+  },
+  {
+    "key": "relation_coin64_collision_free_on_domains",
+    "name": "the 64-bit currency is collision-free across the rosetta: coin64 of each domain yields a distinct coin (as many coins as domains) — the shared currency addresses every perspective uniquely",
+    "receipt": "dc278848-c7d9-8e8d-8f44-06359f52fa2f"
   }
 ]
