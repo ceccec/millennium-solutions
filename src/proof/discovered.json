@@ -3203,5 +3203,10 @@
     "key": "the_receipt_does_not_reveal_the_state",
     "name": "the receipt does not reveal the state: the imprint codec is reversible by construction (readImprint(imprint(m)) = m), but a genuine content-address toUuid(state) provides no inverse — reading it back as an imprint does not return the input. So a receipt proves a state existed without disclosing it. This is a bounded design fact, not a cryptographic guarantee: no unbreakable claim, and no quantum advantage",
     "receipt": "92ce8ab3-c4ae-86c4-85b1-2b9ce3115a29"
+  },
+  {
+    "key": "no_perspective_signals_faster_than_exchange",
+    "name": "no perspective signals faster than exchange: a perspective's local receipt is a function of itself alone, so a remote perspective's choice cannot change it — observing locally reveals nothing about the other; the joint correlation appears only when both are folded together (exchange). Information travels only by exchange: not faster than light, and no superluminal signaling",
+    "receipt": "64609304-4409-8c99-8b76-d3656bffcfb0"
   }
 ]
