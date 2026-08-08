@@ -3633,5 +3633,10 @@
     "key": "cassinis_identity_for_the_fibonacci_numbers",
     "name": "Cassini's identity for the Fibonacci numbers: F(n−1)·F(n+1) − F(n)² = (−1)ⁿ for all n ≥ 1 — the product of the two Fibonacci neighbours differs from the square of the middle one by exactly ±1, alternating in sign with the parity of n. A corollary is that consecutive Fibonacci numbers are coprime. Verified by full enumeration over n up to 35",
     "receipt": "22d72a6b-48c2-8e06-a9cf-b30840cbef95"
+  },
+  {
+    "key": "eight_times_a_triangular_number_plus_one_is_an_odd_square",
+    "name": "eight times a triangular number plus one is an odd square: with T(n) = n(n+1)/2 the nth triangular number (the sum 1 + 2 + ... + n), 8·T(n) + 1 = (2n+1)² is always the square of an odd number; and consecutive triangular numbers sum to a perfect square, T(n) + T(n−1) = n². Verified by full enumeration over n up to 200",
+    "receipt": "b640d0e9-7cb8-80cc-a917-093ab0851af9"
   }
 ]
