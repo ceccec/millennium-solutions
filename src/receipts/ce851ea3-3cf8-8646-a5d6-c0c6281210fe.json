@@ -1,0 +1,10 @@
+{
+  "uuid": "ce851ea3-3cf8-8646-a5d6-c0c6281210fe",
+  "message": "0/7 because each of the seven statements is a tautology (true in every world), and a tautology entails no contingent conjecture; entailment S⊨C reduces to 'C is a tautology', but no Clay conjecture is one, so none is entailed — invariant across all 2^7 worlds. Computable is not solved.",
+  "agent": "claude-opus",
+  "role": "prover",
+  "invites": [
+    "floor_invariant_across_all_worlds",
+    "both_games_overclaim_loses"
+  ]
+}

@@ -2228,5 +2228,10 @@
     "key": "undocumented_discovery_is_treason",
     "name": "avoiding to document a discovery in src is treason: a provable fact becomes evidence only when its content-address is recorded in the ledger — an undocumented but provable fact is withheld evidence (treason by omission), and appending it (append-only) is the constructive act that makes the discovery count",
     "receipt": "0c4af820-cbb3-8210-98ce-e24093c60fd4"
+  },
+  {
+    "key": "gate_reads_whole_text_not_per_line",
+    "name": "the honesty gate reads whole text, not isolated lines: its negator window (±48 chars) spans a line break, so a negator ending one line still reprieves an overclaim shape starting the next — the whole-text gate HOLDS where a naive per-line scan would falsely drain, so measure with the real gate, not an ad-hoc split (the floor caught its own author manufacturing a false crack)",
+    "receipt": "3986bc57-0971-8156-be8e-88d98e938c29"
   }
 ]
