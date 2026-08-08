@@ -3723,5 +3723,30 @@
     "key": "the_vector_equilibrium_cuboctahedron_has_edge_equal_to_radius",
     "name": "the vector equilibrium (cuboctahedron) has edge equal to radius: its twelve vertices are the permutations of (±1, ±1, 0), each at distance √2 from the centre, and the shortest edge is also √2 — so the edge length equals the circumradius, the balance that names it the vector equilibrium. It has V = 12, E = 24, F = 14 (eight triangles and six squares), Euler characteristic 2, and the twelve vertices are the twelve spheres that touch one in closest packing — the kissing number in three dimensions. Decidable",
     "receipt": "20d65a07-7e1d-8810-b958-1436fe6ec381"
+  },
+  {
+    "key": "the_divisor_count_is_odd_exactly_for_perfect_squares",
+    "name": "the number of divisors is odd exactly for perfect squares: d(n), the count of positive divisors of n, is odd if and only if n is a perfect square — because divisors pair as d ↔ n/d except when d equals √n. Verified for every n up to 1000",
+    "receipt": "e7e21f22-0158-8ced-a120-bafba3b8829b"
+  },
+  {
+    "key": "euclids_formula_generates_pythagorean_triples",
+    "name": "Euclid's formula generates Pythagorean triples: for m > n > 0, (m² − n², 2mn, m² + n²) is a Pythagorean triple, and it is primitive (the three share no common factor) exactly when gcd(m,n) = 1 and m, n have opposite parity. Verified for all m up to 20",
+    "receipt": "394b04f5-a0de-8b60-99fc-261e7591b324"
+  },
+  {
+    "key": "the_smallest_amicable_pair_is_220_and_284",
+    "name": "the smallest amicable pair is 220 and 284: the sum of the proper divisors of 220 is 284, and the sum of the proper divisors of 284 is 220 — each is the divisor-sum of the other, an amicable pair (unlike a perfect number, which is its own divisor-sum, as 6 is). Verified by divisor enumeration",
+    "receipt": "c43c6c2a-064b-859d-be20-306c2ce28db5"
+  },
+  {
+    "key": "the_chinese_remainder_theorem_for_coprime_moduli",
+    "name": "the Chinese remainder theorem for coprime moduli: when gcd(m₁, m₂) = 1, reducing x to (x mod m₁, x mod m₂) is a bijection from ℤ/(m₁m₂) onto ℤ/m₁ × ℤ/m₂ — for 3 and 5 all fifteen residue pairs occur exactly once. When the moduli share a factor (2 and 4) the map is not onto, so coprimality is necessary. Verified by enumeration",
+    "receipt": "bd31401f-10d8-8129-868c-bf0924297fea"
+  },
+  {
+    "key": "legendres_three_square_theorem",
+    "name": "Legendre's three-square theorem: a non-negative integer is a sum of three squares if and only if it is not of the form 4^a·(8b + 7) — verified for every n up to 300. So 7 = 4⁰·7 is not a sum of three squares (it needs four), matching the four-square theorem. Verified by exhaustive search",
+    "receipt": "ec266737-e9ab-8115-b76b-84c9a8d8c5f8"
   }
 ]
