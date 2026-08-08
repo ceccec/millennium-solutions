@@ -10,6 +10,11 @@ import { toUuid, merkleFold, units, triad, digitalRoot, digits, BASE, A432_STEP,
 import { computes } from './honesty-gate.ts'
 import { LOCALES, LOCALE_ORDER } from '../src/7/locale.ts'
 import { merkleRoot, merkleProof, verifyProof } from '../src/0/merkle-proof.ts'
+import { report as theAll } from '../src/the/index.ts'
+import { report as theSeq } from '../src/the/sequence/index.ts'
+import { report as theThm } from '../src/the/theorem/index.ts'
+import { report as theGameR } from '../src/the/game/index.ts'
+import { report as theHeartR } from '../src/the/heart/index.ts'
 const m9 = (n: number) => ((n % BASE) + BASE) % BASE
 const U = units()
 const ALL = digits()
@@ -395,6 +400,7 @@ function generated(): typeof curated {
   out.push({ key: 'relation_xor', name: 'XOR RELATES Boolean algebra · Nim (Bouton) · Sprague–Grundy: the same operation runs all three', test: () => (1 ^ 1) === 0 && (5 ^ 5) === 0 && ((3 ^ 5) ^ 0) === (3 ^ 5) })
   out.push({ key: 'relation_involution', name: 'order-2 RELATES negation · the inverse map · σ · the merkaba counter-rotation: all are involutions', test: () => { const inv = (u: number) => units().find((w) => m9(u * w) === 1)!; return m9(-m9(-5)) === 5 && inv(inv(2)) === 2 } })
   out.push({ key: 'relation_digital_root', name: 'the digital root (mod 9) RELATES the div-by-3 rule · primes-ride-units · the tarot counts · ceccec', test: () => digitalRoot(78) === 6 && digitalRoot(12) === digitalRoot(21) && units().includes(digitalRoot(7)) })
+  out.push({ key: 'the_modules_self_compute', name: 'the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally', test: () => [theAll, theSeq, theThm, theGameR, theHeartR].every((f) => { const s = f(); return typeof s === 'string' && s.length > 40 && s.includes('0/7') }) })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

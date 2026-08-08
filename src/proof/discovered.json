@@ -1288,5 +1288,10 @@
     "key": "relation_digital_root",
     "name": "the digital root (mod 9) RELATES the div-by-3 rule · primes-ride-units · the tarot counts · ceccec",
     "receipt": "d708c933-0c92-8e57-a4a7-9d15fd14d320"
+  },
+  {
+    "key": "the_modules_self_compute",
+    "name": "the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally",
+    "receipt": "e9948e15-ed3d-809d-b494-9580b8677bf8"
   }
 ]
