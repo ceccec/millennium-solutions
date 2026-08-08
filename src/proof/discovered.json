@@ -993,5 +993,20 @@
     "key": "nopayload_not_encryption",
     "name": "content-addressing breaks no cipher: \"breaks encryption\" drains; \"does not break encryption, one-way integrity\" signs",
     "receipt": "66c44e2d-e591-810a-a782-679bca69bf6f"
+  },
+  {
+    "key": "involution_sigma",
+    "name": "σ: d↦−d is an involution on ℤ/9 (σ∘σ = id) with exactly one fixed point, the origin (odd base)",
+    "receipt": "2032f25f-ca45-8c51-9825-75f092f3231f"
+  },
+  {
+    "key": "involution_reversible",
+    "name": "evolution by involution is reversible: the multiplicative-inverse map applied twice is the identity on the units",
+    "receipt": "09577a63-e630-80e4-8c04-b3088c295343"
+  },
+  {
+    "key": "involution_telephone",
+    "name": "the count of involutions on n elements = the telephone number T(n)=T(n-1)+(n-1)T(n-2) (n ≤ 5)",
+    "receipt": "6e0b0a34-8a45-8c1c-ba3c-eaccf10a1331"
   }
 ]

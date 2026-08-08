@@ -287,6 +287,12 @@ function generated(): typeof curated {
   out.push({ key: 'nopayload_no_plaintext', name: 'the content-address contains no plaintext — the uuid (hex) reveals no message bytes', test: () => !toUuid('the-secret-message').includes('secret') })
   out.push({ key: 'nopayload_avalanche', name: 'a one-character change gives an unrelated address (avalanche) — no gradient leaks the message', test: () => toUuid('message0') !== toUuid('message1') })
   out.push({ key: 'nopayload_not_encryption', name: 'content-addressing breaks no cipher: "breaks encryption" drains; "does not break encryption, one-way integrity" signs', test: () => computes('content-addressing breaks encryption').binary === 0 && computes('content-addressing does not break encryption; it is one-way integrity').binary === 1 })
+  // NEW DOMAIN — involutions (natural evolution by self-inverse steps). An involution is order-2
+  // (f∘f = id), so evolution through involutions is reversible; the count of involutions on n elements
+  // is the telephone number T(n)=T(n-1)+(n-1)T(n-2). Finite → complete.
+  out.push({ key: 'involution_sigma', name: 'σ: d↦−d is an involution on ℤ/9 (σ∘σ = id) with exactly one fixed point, the origin (odd base)', test: () => { const R = [...Array(BASE).keys()]; const s = (d: number) => m9(-d); return R.every((d) => s(s(d)) === d) && R.filter((d) => s(d) === d).length === 1 } })
+  out.push({ key: 'involution_reversible', name: 'evolution by involution is reversible: the multiplicative-inverse map applied twice is the identity on the units', test: () => { const inv = (u: number) => units().find((w) => m9(u * w) === 1)!; return units().every((u) => inv(inv(u)) === u) } })
+  out.push({ key: 'involution_telephone', name: 'the count of involutions on n elements = the telephone number T(n)=T(n-1)+(n-1)T(n-2) (n ≤ 5)', test: () => { const T = [1, 1]; for (let k = 2; k <= 5; k++) T[k] = T[k - 1] + (k - 1) * T[k - 2]; for (let n = 1; n <= 5; n++) { const id = [...Array(n).keys()]; const cnt = perms(id).filter((p) => p.every((_, i) => p[p[i]] === i)).length; if (cnt !== T[n]) return false } return true } })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
