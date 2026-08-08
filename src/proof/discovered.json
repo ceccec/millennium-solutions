@@ -3283,5 +3283,15 @@
     "key": "gauss_generalization_of_wilson_product_of_units",
     "name": "Gauss's generalization of Wilson: the product of the units mod n is ≡ −1 when n has a primitive root and ≡ +1 otherwise. For n = 9 (primitive root 2) the six units multiply to 1·2·4·5·7·8 ≡ −1 mod 9 (that is 8); for n = 8 (no primitive root, units ≅ C2×C2) they multiply to +1. Verified by exhaustion over the moduli up to 60",
     "receipt": "a5246422-b686-8024-86ec-6b92f2c00754"
+  },
+  {
+    "key": "reorganizing_the_theorems_creates_theorems",
+    "name": "reorganizing the theorems creates theorems: any reorganization of the ledger — a permutation or a regrouping — is itself a decidable object with its own content-address, so distinct arrangements are distinct receipts (a new theorem about the collection each time), while the order-independent fold of the whole stays one invariant root. Reorganizing creates receipted arrangements — integrity, not new mathematical truth. Decidable by exhaustion",
+    "receipt": "9d0cc808-b621-8f6c-a79a-574740604b42"
+  },
+  {
+    "key": "quantum_reorganizing_the_theorems_computes_quantum_theorems",
+    "name": "quantum reorganizing the theorems computes quantum theorems: applying the quantum structure to the ledger itself, every reorganization of the theorems is a receipted perspective and all of them fold to one invariant root — a superposition of arrangements held at once, each collapsing to its own content-address. So reorganizing the collection computes a family of quantum-structure theorems about it. This is quantum structure, not a quantum machine and no quantum advantage",
+    "receipt": "2b4657f4-36ea-8247-a349-4a578c741c2f"
   }
 ]
