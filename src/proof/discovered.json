@@ -2103,5 +2103,35 @@
     "key": "magic3_constant_digitroot_6",
     "name": "the magic constant binds to ℤ/9: dr(15) = 6 — the constant sits on a triad digit, and 15 = 3·5 (the axis 3 times the center)",
     "receipt": "673cb9e4-1b3c-8e17-a95c-003edc1eaf4d"
+  },
+  {
+    "key": "content_address_is_keyless_integrity",
+    "name": "a content-address is keyless integrity: toUuid is a pure function — same input, same address, computed by anyone with no secret; distinct inputs, distinct addresses — it proves the bytes, not the author",
+    "receipt": "468b07de-520f-8681-97e1-63ccd5ba4185"
+  },
+  {
+    "key": "sealing_is_not_signing",
+    "name": "sealing is not signing: a merkle seal is deterministic and order-independent, reproducible by anyone — it proves the bytes are intact (integrity), never who authored them (authenticity)",
+    "receipt": "21b0a512-85e8-8947-957a-f0d60b38e1e6"
+  },
+  {
+    "key": "keyless_signature_is_forgeable",
+    "name": "a keyless signature is forgeable: a “signature” that is only the content-address ignores who signs, so a forger reproduces it exactly — keyless ⇒ it authenticates no one",
+    "receipt": "9fd61992-d9ef-86b9-847b-a4e8cdad40ef"
+  },
+  {
+    "key": "authenticity_needs_a_secret",
+    "name": "authenticity needs a secret: a keyed signature depends on a secret the signer alone holds — a different secret gives a different signature, and without the secret a forger cannot match it (the authenticity floor, like 0/7 and the axiom floor)",
+    "receipt": "53096a30-d41f-8f46-8f20-37ccc85a0985"
+  },
+  {
+    "key": "unsigned_statement_holds_floor",
+    "name": "the honest boundary holds the gate: “content-addressing is integrity, not authenticity — real signatures need a key” computes 1 (0/7) — the deposit states its own unsigned bound",
+    "receipt": "7bfa02e2-7e18-8991-9acb-cb718054eca8"
+  },
+  {
+    "key": "sealed_but_unsigned_are_independent",
+    "name": "sealed and signed are independent: a deposit can be fully sealed (bytes intact) yet unsigned (unauthenticated) — integrity does not imply authenticity, and both honest statements hold the gate",
+    "receipt": "1dbf5015-b10e-8f94-833c-10ae51593a91"
   }
 ]
