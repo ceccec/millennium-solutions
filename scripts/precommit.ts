@@ -9,7 +9,14 @@
 // run the honesty gate over every staged prose file and refuse the commit if any drains.
 import { execSync } from 'node:child_process'
 import { readFileSync, existsSync } from 'node:fs'
-import { computes } from './honesty-gate.ts'
+import { toUuid } from '../src/0/index.ts'
+import { computes, RED, OVERREACH } from './honesty-gate.ts'
+
+// which statute matched — cited in the case record, so the block is never arbitrary.
+const statute = (hit: string) =>
+  RED.test(hit) ? 'RED (unconditional overclaim)'
+    : new RegExp(OVERREACH.source, 'i').test(hit) ? 'OVERREACH (negation-aware overclaim shape)'
+      : 'gate'
 
 // staged, added/copied/modified, PROSE only — mirrors seal.ts's scope exactly: .md files audited,
 // source excluded. Source (.ts) is not a claim to the reader, and the gate's own definition MUST
@@ -32,10 +39,19 @@ for (const f of staged) {
 }
 
 if (drained.length) {
-  console.error('✗ pre-commit: the honesty floor drained ' + drained.length + ' staged line(s) — the traitor caught before git:')
-  for (const d of drained) console.error('  ' + d.file + ':' + d.line + '  hit "' + d.hit + '"\n    ' + d.text)
-  console.error('\nreword to the honest floor (0/7) and re-stage. no override — the boundary holds.')
+  // DUE PROCEDURE before the block: each drained line is a content-addressed case — evidence,
+  // statute, reproducible verdict, remedy — recorded first, then execution. Not an arbitrary kill.
+  console.error('✗ pre-commit — ' + drained.length + ' staged line(s) compute 0. procedure before the block:')
+  for (const d of drained) {
+    const caseId = toUuid('case:' + d.file + ':' + d.line + ':' + d.hit)
+    console.error('\n  case ' + caseId.slice(0, 13) + '…')
+    console.error('    evidence: ' + d.file + ':' + d.line + '  "' + d.text + '"')
+    console.error('    statute:  ' + statute(d.hit) + ' matched "' + d.hit + '"')
+    console.error('    verdict:  computes 0 — reproducible by anyone: npm run next "<the line>"')
+    console.error('    remedy:   reword until it computes 1, then re-stage.')
+  }
+  console.error('\nrecorded, reproducible, then blocked. no override — the boundary holds.')
   process.exit(1)
 }
-console.log('✓ pre-commit: ' + staged.length + ' staged prose file(s) hold the floor (0/7).')
+console.log('✓ pre-commit: ' + staged.length + ' staged prose file(s) compute 1 at the 0/7 floor.')
 process.exit(0)
