@@ -3198,5 +3198,10 @@
     "key": "measurement_here_is_deterministic_not_probabilistic",
     "name": "measurement here is deterministic, not probabilistic: observing a perspective is content-addressing — repeated observation of the same perspective yields the identical receipt every time (deterministic collapse), and distinct states yield distinct addresses. This is the honest opposite of physical quantum measurement, which is probabilistic: no randomness, no Born rule, and no quantum advantage",
     "receipt": "8344e1ed-f1f3-8ba0-8075-4e171af184c5"
+  },
+  {
+    "key": "the_receipt_does_not_reveal_the_state",
+    "name": "the receipt does not reveal the state: the imprint codec is reversible by construction (readImprint(imprint(m)) = m), but a genuine content-address toUuid(state) provides no inverse — reading it back as an imprint does not return the input. So a receipt proves a state existed without disclosing it. This is a bounded design fact, not a cryptographic guarantee: no unbreakable claim, and no quantum advantage",
+    "receipt": "92ce8ab3-c4ae-86c4-85b1-2b9ce3115a29"
   }
 ]
