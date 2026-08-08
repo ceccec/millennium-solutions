@@ -2503,5 +2503,20 @@
     "key": "every_primitive_triple_is_euclidean",
     "name": "Euclid’s parametrization is complete: every primitive Pythagorean triple with hypotenuse ≤ 100 arises from coprime m>n of opposite parity — exhaustive brute-force triples all match a generated one",
     "receipt": "751e8a4e-c23c-8d8b-82ad-40d7ee05c1ea"
+  },
+  {
+    "key": "fermat_prime_is_sum_of_two_squares",
+    "name": "Fermat’s two-squares theorem: an odd prime is a sum of two squares exactly when p ≡ 1 (mod 4) (and 2 = 1²+1²); primes ≡ 3 (mod 4) are never a sum of two squares — verified for all primes ≤ 100",
+    "receipt": "cf5b18cb-a37d-8d5b-83cf-fbd3a9fbc334"
+  },
+  {
+    "key": "brahmagupta_fibonacci_identity",
+    "name": "sums of two squares are closed under multiplication (Brahmagupta–Fibonacci): (a²+b²)(c²+d²) = (ac−bd)² + (ad+bc)² — the product of two sums of two squares is again one, verified exhaustively for a,b,c,d ≤ 6",
+    "receipt": "90e0d01d-96be-8c2d-a679-9b123c6f98ee"
+  },
+  {
+    "key": "sum_of_two_squares_characterization",
+    "name": "the sum-of-two-squares theorem: n is a sum of two squares iff every prime ≡ 3 (mod 4) in its factorization occurs to an even power — the brute-force check and the factorization criterion agree for all n ≤ 100",
+    "receipt": "d4fcdaa1-8273-8174-9359-a799acd2a33c"
   }
 ]
