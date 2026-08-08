@@ -1398,5 +1398,30 @@
     "key": "relation_order_independence",
     "name": "order-independence RELATES dedup · the one-game fold · the concept handle · no-waste — all the symmetric merkle fold",
     "receipt": "830cce0a-f00b-877e-b609-a7e0a0f0e30a"
+  },
+  {
+    "key": "quaternion_hamilton",
+    "name": "the quaternions: i²=j²=k²=−1 and ijk=−1 (Hamilton's relation)",
+    "receipt": "33c7aebb-0cf3-893b-8b7b-fd79e1a90da2"
+  },
+  {
+    "key": "quaternion_noncommutative",
+    "name": "the quaternions are non-commutative: ij=k but ji=−k",
+    "receipt": "0dca5831-27b0-83d6-91a5-5536a4570f41"
+  },
+  {
+    "key": "quaternion_8_units",
+    "name": "the quaternion units form a group of 8: {±1, ±i, ±j, ±k}",
+    "receipt": "591b9388-6c28-8d60-a828-3be1dcc2e154"
+  },
+  {
+    "key": "motzkin_numbers",
+    "name": "Motzkin numbers M(n)=M(n-1)+Σ M(k)M(n-2-k): M(4)=9, M(5)=21",
+    "receipt": "d6c643c7-2880-873c-b8ad-17897f86309b"
+  },
+  {
+    "key": "relation_i_squared",
+    "name": "i²=−1 RELATES the quaternions · Gaussian integers · the 90° quarter-turn — the imaginary unit across domains",
+    "receipt": "e795ceea-3981-83be-9640-e956c1a501af"
   }
 ]

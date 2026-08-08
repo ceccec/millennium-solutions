@@ -445,6 +445,16 @@ function generated(): typeof curated {
   out.push({ key: 'relation_pell_structure', name: "the Pell structure RELATES √2's continued fraction · the Pell numbers · x²−2y²=±1 — one object, three views", test: () => { const pell = (n: number) => { let a = 0, b = 1; for (let i = 0; i < n; i++) { const t = 2 * b + a; a = b; b = t } return a }; return pell(5) === 29 && Math.abs(41 * 41 - 2 * 29 * 29) === 1 } })
   out.push({ key: 'relation_content_address', name: 'content-addressing RELATES the ledger · the merkle proof · the hash chain · the receipts — one integrity primitive', test: () => verifyProof('x', merkleProof(['x', 'y', 'z'], 0), merkleRoot(['x', 'y', 'z'])) && toUuid('a') === toUuid('a') })
   out.push({ key: 'relation_order_independence', name: 'order-independence RELATES dedup · the one-game fold · the concept handle · no-waste — all the symmetric merkle fold', test: () => merkleFold(['a', 'b', 'c']) === merkleFold(['c', 'a', 'b']) && new Set(['j', 'j'].map((x) => toUuid(x))).size === 1 })
+  // NEW DOMAIN — quaternions (a non-commutative division algebra). Finite → complete.
+  const qmul = (a: number[], b: number[]) => [a[0] * b[0] - a[1] * b[1] - a[2] * b[2] - a[3] * b[3], a[0] * b[1] + a[1] * b[0] + a[2] * b[3] - a[3] * b[2], a[0] * b[2] - a[1] * b[3] + a[2] * b[0] + a[3] * b[1], a[0] * b[3] + a[1] * b[2] - a[2] * b[1] + a[3] * b[0]]
+  const ONE = [1, 0, 0, 0], I = [0, 1, 0, 0], J = [0, 0, 1, 0], Kq = [0, 0, 0, 1], NEG = (q: number[]) => q.map((x) => -x), eq = (a: number[], b: number[]) => JSON.stringify(a) === JSON.stringify(b)
+  out.push({ key: 'quaternion_hamilton', name: "the quaternions: i²=j²=k²=−1 and ijk=−1 (Hamilton's relation)", test: () => eq(qmul(I, I), NEG(ONE)) && eq(qmul(J, J), NEG(ONE)) && eq(qmul(Kq, Kq), NEG(ONE)) && eq(qmul(qmul(I, J), Kq), NEG(ONE)) })
+  out.push({ key: 'quaternion_noncommutative', name: 'the quaternions are non-commutative: ij=k but ji=−k', test: () => eq(qmul(I, J), Kq) && eq(qmul(J, I), NEG(Kq)) })
+  out.push({ key: 'quaternion_8_units', name: 'the quaternion units form a group of 8: {±1, ±i, ±j, ±k}', test: () => { const U = [ONE, NEG(ONE), I, NEG(I), J, NEG(J), Kq, NEG(Kq)]; return U.length === 8 && U.every((a) => U.some((b) => eq(qmul(a, b), ONE))) } })
+  // Motzkin numbers — lattice paths / non-crossing chords. Bounded recurrence.
+  out.push({ key: 'motzkin_numbers', name: 'Motzkin numbers M(n)=M(n-1)+Σ M(k)M(n-2-k): M(4)=9, M(5)=21', test: () => { const M = [1, 1]; for (let i = 2; i <= 5; i++) { let s = M[i - 1]; for (let k = 0; k <= i - 2; k++) s += M[k] * M[i - 2 - k]; M[i] = s } return M[4] === 9 && M[5] === 21 } })
+  // relation binding the imaginary unit across domains.
+  out.push({ key: 'relation_i_squared', name: 'i²=−1 RELATES the quaternions · Gaussian integers · the 90° quarter-turn — the imaginary unit across domains', test: () => eq(qmul(I, I), NEG(ONE)) && (() => { const g = (z: number[], w: number[]) => [z[0] * w[0] - z[1] * w[1], z[0] * w[1] + z[1] * w[0]]; const s = g([0, 1], [0, 1]); return s[0] === -1 && s[1] === 0 })() })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
