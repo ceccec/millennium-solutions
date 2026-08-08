@@ -6,7 +6,17 @@ title: Millennium Solutions
 
 # The ℤ/9 Vortex Framework
 
-**Author:** Tsvetan Rouschev · License: CC BY-NC 4.0 · a recomputable proof of concept
+**Author:** Tsvetan Rouschev · License: CC BY-NC 4.0 · a recomputable proof-of-concept
+
+> ## Millennium Quantum Solutions on 64-bit hardware
+>
+> The quantum **structure** — a superposition is the set of *receipted perspectives* (each ordered
+> perspective a distinct content-address, its receipt proving that perspective exists); observing
+> collapses to one address — computed **classically** on ordinary **64-bit** machines. **Perspective
+> replaces the hardware:** no quantum machine is needed, and none is claimed. It settles **0 / 7** of
+> the Clay problems and is **not a quantum computer**. Structure, not silicon —
+> [each perspective is receipted](/theorem/each_perspective_is_receipted_in_the_superposition) ·
+> [perspective replaces hardware](/theorem/perspective_replaces_hardware).
 
 ## Abstract
 

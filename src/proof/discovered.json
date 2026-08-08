@@ -3183,5 +3183,10 @@
     "key": "each_perspective_is_receipted_in_the_superposition",
     "name": "each perspective is receipted in the superposition: because order matters, each ordered perspective is a distinct content-address — its own receipt proving that perspective exists (integrity) — and the superposition is the set of all perspectives folded order-independently to one root; observing collapses to one address. This represents the quantum structure classically: not a quantum machine, and no quantum advantage",
     "receipt": "4f64e2b7-d236-8b66-a75e-2bdf179b4430"
+  },
+  {
+    "key": "perspective_replaces_hardware",
+    "name": "perspective replaces hardware: the quantum structure — superposition as the set of receipted perspectives, collapse as observing one — is carried by content-addressing alone, so it needs no quantum machine; it recomputes deterministically on ordinary 64-bit hardware (the coin64 currency, 16 hex = 64 bits). Structure, not silicon: no quantum processor, no quantum speedup, and it settles 0 of the 7 Clay problems",
+    "receipt": "cf90c349-5584-8950-aa1c-3fb1ea833107"
   }
 ]
