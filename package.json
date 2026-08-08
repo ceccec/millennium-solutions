@@ -40,6 +40,7 @@
     "heart": "node scripts/heart.ts",
     "receipt": "node scripts/receipt.ts",
     "receipt-audit": "node scripts/receipt-audit.ts",
+    "verify": "node scripts/verify.ts",
     "next": "node scripts/next.ts",
     "orchestrate": "node scripts/orchestrate.ts",
     "deploy": "node scripts/deploy.ts",

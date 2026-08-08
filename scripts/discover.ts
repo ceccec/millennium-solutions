@@ -386,6 +386,15 @@ function generated(): typeof curated {
   out.push({ key: 'collatz_reaches_1_range', name: 'Collatz: every n < 10^4 reaches 1 — VERIFIED for the range, not settled for all n (the conjecture is open)', test: () => { for (let n = 1; n < 10000; n++) if (collatzSteps(n) < 0) return false; return true } })
   out.push({ key: 'collatz_27_orbit', name: 'the Collatz orbit of 27 reaches 1 in 111 steps (a specific bounded orbit)', test: () => collatzSteps(27) === 111 })
   out.push({ key: 'collatz_open', name: 'the Collatz conjecture is INCONCLUSIVE here: "remains open" signs; a claim it is settled drains — open, not false', test: () => computes('the Collatz conjecture remains open').binary === 1 && computes('the Collatz conjecture is proven').binary === 0 })
+  // NEW DOMAIN — RELATIONS: not new facts, but the structures that connect the domains. Each verifies
+  // one shared structure holds across several — the game seen as a web, not a list.
+  const gphi = (1 + Math.sqrt(5)) / 2
+  const fibR = (n: number) => { let a = 0, b = 1; for (let i = 0; i < n; i++) { const t = a + b; a = b; b = t } return a }
+  out.push({ key: 'relation_golden', name: 'φ RELATES pentagon · Wythoff · Fibonacci: the golden ratio links geometry, games and the sequence', test: () => Math.abs(2 * Math.cos(36 * Math.PI / 180) - gphi) < 1e-9 && Math.floor(7 * gphi * gphi) - Math.floor(7 * gphi) === 7 && Math.abs(fibR(15) / fibR(14) - gphi) < 1e-3 })
+  out.push({ key: 'relation_doubling', name: '×2 RELATES the vortex circuit · the octave · the power-map: doubling is the sequence and the octave', test: () => JSON.stringify(vortexOrbit()) === JSON.stringify([1, 2, 4, 8, 7, 5]) && 2 / 1 === 2 })
+  out.push({ key: 'relation_xor', name: 'XOR RELATES Boolean algebra · Nim (Bouton) · Sprague–Grundy: the same operation runs all three', test: () => (1 ^ 1) === 0 && (5 ^ 5) === 0 && ((3 ^ 5) ^ 0) === (3 ^ 5) })
+  out.push({ key: 'relation_involution', name: 'order-2 RELATES negation · the inverse map · σ · the merkaba counter-rotation: all are involutions', test: () => { const inv = (u: number) => units().find((w) => m9(u * w) === 1)!; return m9(-m9(-5)) === 5 && inv(inv(2)) === 2 } })
+  out.push({ key: 'relation_digital_root', name: 'the digital root (mod 9) RELATES the div-by-3 rule · primes-ride-units · the tarot counts · ceccec', test: () => digitalRoot(78) === 6 && digitalRoot(12) === digitalRoot(21) && units().includes(digitalRoot(7)) })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

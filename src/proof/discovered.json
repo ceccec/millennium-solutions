@@ -1263,5 +1263,30 @@
     "key": "collatz_open",
     "name": "the Collatz conjecture is INCONCLUSIVE here: \"remains open\" signs; a claim it is settled drains — open, not false",
     "receipt": "5524c423-8dc8-8e8d-8fd3-eadaa2fe7b36"
+  },
+  {
+    "key": "relation_golden",
+    "name": "φ RELATES pentagon · Wythoff · Fibonacci: the golden ratio links geometry, games and the sequence",
+    "receipt": "4a37bd0c-74ee-8ea6-8284-fca81e17a401"
+  },
+  {
+    "key": "relation_doubling",
+    "name": "×2 RELATES the vortex circuit · the octave · the power-map: doubling is the sequence and the octave",
+    "receipt": "9d8271dd-56d8-82dc-9ce9-17f6cf037ad9"
+  },
+  {
+    "key": "relation_xor",
+    "name": "XOR RELATES Boolean algebra · Nim (Bouton) · Sprague–Grundy: the same operation runs all three",
+    "receipt": "5f57290e-9bc5-86a2-b111-e716ba0daef9"
+  },
+  {
+    "key": "relation_involution",
+    "name": "order-2 RELATES negation · the inverse map · σ · the merkaba counter-rotation: all are involutions",
+    "receipt": "cde24c0a-f206-8eb6-a4ea-58ad446a2909"
+  },
+  {
+    "key": "relation_digital_root",
+    "name": "the digital root (mod 9) RELATES the div-by-3 rule · primes-ride-units · the tarot counts · ceccec",
+    "receipt": "d708c933-0c92-8e57-a4a7-9d15fd14d320"
   }
 ]
