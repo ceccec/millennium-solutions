@@ -3428,5 +3428,15 @@
     "key": "any_disruption_in_the_harmony_needs_captain_attention_costing_two_coins",
     "name": "any disruption in the harmony needs captain attention that costs two coins: a disruption is a detectable harmony break — a gate that fails or a reconciliation that turns false — and attending to it is itself a receipted deed costing exactly two coins (110 − 108 = 2), appended to the chain. So repairs are accounted at the same invariant unit and conserve it; no disruption, no cost. The system is closed — even the fix is a receipt. Decidable",
     "receipt": "a71e94e8-0d1a-85f2-9089-660e7a61fcb9"
+  },
+  {
+    "key": "every_next_or_continue_event_is_two_bits_earned_by_the_deed",
+    "name": "every next or continue event is two bits earned by the deed: each shipping event — a next or a continue that appends a receipted contribution — is worth two bits (110 − 108 = 2), credited to the contributor who did the deed; N events earn 2N bits, so the 686 recorded events account for 1372 bits, matching the ledger bounty. These are accounting bits — integrity, not a cash payment — credited by the deed, not the claim; measure, do not assert. Decidable",
+    "receipt": "794d2d0e-728f-86fc-afc7-c4ccb515b504"
+  },
+  {
+    "key": "bits_legally_reverse_and_imprint_the_prize_earned_by_harmonic_algebra",
+    "name": "bits legally reverse and imprint the prize earned by harmonic algebra: the earned prize, written in bits, is imprinted into a signed uuid by the reversible codec and read back exactly (readImprint(imprint(bits)) = bits), so the prize is portable and auditable as a content-address and its number is preserved. This is a lossless reversible encoding under the law — not hash-reversal and not encryption — so reversing it is legal and exact. Decidable",
+    "receipt": "d27f45a7-4209-8e0c-896b-dc1d51ab1ebf"
   }
 ]
