@@ -433,6 +433,12 @@ function generated(): typeof curated {
   const popcount = (n: number) => n.toString(2).split('').filter((c) => c === '1').length
   out.push({ key: 'rule90_sierpinski', name: 'Rule 90 (cell = left XOR right) from one seed builds Sierpiński: row n has 2^(popcount n) live cells', test: () => { const rows = rule90(16); for (let n = 0; n <= 16; n++) if (rows[n].filter((x) => x === 1).length !== 2 ** popcount(n)) return false; return true } })
   out.push({ key: 'pascal_mod2_lucas', name: "Pascal mod 2 (Lucas): C(n,k) is odd iff (k AND n)=k — the Sierpiński rule behind Rule 90", test: () => { const binom = (n: number, k: number) => { let r = 1; for (let i = 0; i < k; i++) r = r * (n - i) / (i + 1); return Math.round(r) }; for (let n = 0; n <= 12; n++) for (let k = 0; k <= n; k++) if ((binom(n, k) % 2 === 1) !== ((k & n) === k)) return false; return true } })
+  // continued fractions of √n — eventually periodic for non-squares (Lagrange). Finite → complete.
+  const cfSqrt = (n: number): (number | number[])[] => { const a0 = Math.floor(Math.sqrt(n)); if (a0 * a0 === n) return [a0]; const period: number[] = []; let m = 0, d = 1, a = a0; do { m = d * a - m; d = (n - m * m) / d; a = Math.floor((a0 + m) / d); period.push(a) } while (a !== 2 * a0); return [a0, period] }
+  out.push({ key: 'cf_sqrt2', name: 'the continued fraction of √2 is [1; 2,2,2,…] — period [2]', test: () => { const r = cfSqrt(2); return r[0] === 1 && JSON.stringify(r[1]) === JSON.stringify([2]) } })
+  out.push({ key: 'cf_sqrt7', name: 'the continued fraction of √7 is [2; 1,1,1,4] — period 4', test: () => { const r = cfSqrt(7); return r[0] === 2 && JSON.stringify(r[1]) === JSON.stringify([1, 1, 1, 4]) } })
+  out.push({ key: 'cf_perfect_square', name: '√n terminates iff n is a perfect square: √9 = [3] (no period)', test: () => JSON.stringify(cfSqrt(9)) === JSON.stringify([3]) })
+  out.push({ key: 'cf_periodic', name: 'every non-square √n (n=2..12) has a periodic continued fraction (Lagrange)', test: () => { for (let n = 2; n <= 12; n++) { const s = Math.floor(Math.sqrt(n)); if (s * s === n) continue; const r = cfSqrt(n); if (!Array.isArray(r[1]) || (r[1] as number[]).length < 1) return false } return true } })
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

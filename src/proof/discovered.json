@@ -1353,5 +1353,25 @@
     "key": "pascal_mod2_lucas",
     "name": "Pascal mod 2 (Lucas): C(n,k) is odd iff (k AND n)=k — the Sierpiński rule behind Rule 90",
     "receipt": "3d9ea41f-0180-8592-b5f2-7a51b954de0d"
+  },
+  {
+    "key": "cf_sqrt2",
+    "name": "the continued fraction of √2 is [1; 2,2,2,…] — period [2]",
+    "receipt": "a6818a20-2d51-8d56-af87-49f8eb3b55e1"
+  },
+  {
+    "key": "cf_sqrt7",
+    "name": "the continued fraction of √7 is [2; 1,1,1,4] — period 4",
+    "receipt": "f062762b-1892-82e5-9854-fc3e242193e0"
+  },
+  {
+    "key": "cf_perfect_square",
+    "name": "√n terminates iff n is a perfect square: √9 = [3] (no period)",
+    "receipt": "08e82fe9-197c-8f9c-ad3d-24b5184e0052"
+  },
+  {
+    "key": "cf_periodic",
+    "name": "every non-square √n (n=2..12) has a periodic continued fraction (Lagrange)",
+    "receipt": "35681143-e4a0-8323-be6f-ed2850f112ec"
   }
 ]
