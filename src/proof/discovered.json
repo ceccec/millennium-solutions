@@ -3678,5 +3678,10 @@
     "key": "the_ramsey_number_r_three_three_is_six",
     "name": "the Ramsey number R(3,3) is six: every 2-colouring of the edges of the complete graph on six vertices contains a monochromatic triangle — verified over all 2^15 = 32768 colourings — while the complete graph on five vertices admits a colouring with none (the red 5-cycle and the blue pentagram, neither containing a triangle). So six is the least number of people among whom three mutual acquaintances or three mutual strangers are forced. Verified by exhaustive search",
     "receipt": "f2b26735-9d9d-85a1-bfc9-670a6e77ef2d"
+  },
+  {
+    "key": "the_handshaking_lemma",
+    "name": "the handshaking lemma: in every finite graph the sum of the vertex degrees equals twice the number of edges, so the number of vertices of odd degree is always even — verified over all 2^10 = 1024 graphs on five vertices. The degree sum double-counts each edge, which is why an odd count of odd-degree vertices is impossible. Verified by exhaustive enumeration",
+    "receipt": "b3239688-033f-8f24-811e-4ee77f236466"
   }
 ]
