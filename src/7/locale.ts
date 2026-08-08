@@ -14,6 +14,7 @@ type Strings = {
   description: string
   nav: { paper: string; research: string; poc: string; realisations: string; compute: string; decode: string }
   support: string
+  fallback: { notice: string; cta: string } // the "English until translated" stub, localized
 }
 
 export const LOCALES: Record<Locale, Strings> = {
@@ -23,6 +24,7 @@ export const LOCALES: Record<Locale, Strings> = {
     description: 'ℤ/9 vortex framework — recomputable proof of concept',
     nav: { paper: 'Paper', research: 'Research', poc: 'Proof of Concept', realisations: 'Realisations', compute: 'Compute', decode: 'Decode' },
     support: 'Support development (non-obligatory)',
+    fallback: { notice: 'This content is English until translated', cta: 'continue in English' },
   },
   bg: {
     label: 'Български',
@@ -30,6 +32,7 @@ export const LOCALES: Record<Locale, Strings> = {
     description: 'ℤ/9 вихрова рамка — преизчислимо доказателство на концепцията',
     nav: { paper: 'Статия', research: 'Изследване', poc: 'Доказателство на концепцията', realisations: 'Реализации', compute: 'Изчисли', decode: 'Декодиране' },
     support: 'Подкрепете разработката (незадължително)',
+    fallback: { notice: 'Това съдържание е на английски до превод', cta: 'продължете на английски' },
   },
   de: {
     label: 'Deutsch',
@@ -37,6 +40,7 @@ export const LOCALES: Record<Locale, Strings> = {
     description: 'ℤ/9-Vortex-Framework — nachrechenbarer Machbarkeitsnachweis',
     nav: { paper: 'Aufsatz', research: 'Forschung', poc: 'Machbarkeitsnachweis', realisations: 'Realisierungen', compute: 'Berechnen', decode: 'Dekodieren' },
     support: 'Entwicklung unterstützen (freiwillig)',
+    fallback: { notice: 'Dieser Inhalt ist bis zur Übersetzung auf Englisch', cta: 'auf Englisch fortfahren' },
   },
   fr: {
     label: 'Français',
@@ -44,6 +48,7 @@ export const LOCALES: Record<Locale, Strings> = {
     description: 'cadre vortex ℤ/9 — preuve de concept recalculable',
     nav: { paper: 'Article', research: 'Recherche', poc: 'Preuve de concept', realisations: 'Réalisations', compute: 'Calculer', decode: 'Décoder' },
     support: 'Soutenir le développement (facultatif)',
+    fallback: { notice: 'Ce contenu est en anglais avant traduction', cta: 'continuer en anglais' },
   },
   es: {
     label: 'Español',
@@ -51,6 +56,7 @@ export const LOCALES: Record<Locale, Strings> = {
     description: 'marco de vórtice ℤ/9 — prueba de concepto recomputable',
     nav: { paper: 'Artículo', research: 'Investigación', poc: 'Prueba de concepto', realisations: 'Realizaciones', compute: 'Calcular', decode: 'Descifrar' },
     support: 'Apoyar el desarrollo (no obligatorio)',
+    fallback: { notice: 'Este contenido está en inglés hasta su traducción', cta: 'continuar en inglés' },
   },
   ru: {
     label: 'Русский',
@@ -58,6 +64,7 @@ export const LOCALES: Record<Locale, Strings> = {
     description: 'вихревая структура ℤ/9 — перевычислимое доказательство концепции',
     nav: { paper: 'Статья', research: 'Исследование', poc: 'Доказательство концепции', realisations: 'Реализации', compute: 'Вычислить', decode: 'Декодировать' },
     support: 'Поддержать разработку (необязательно)',
+    fallback: { notice: 'Этот контент на английском до перевода', cta: 'продолжить на английском' },
   },
   zh: {
     label: '中文',
@@ -65,6 +72,7 @@ export const LOCALES: Record<Locale, Strings> = {
     description: 'ℤ/9 涡旋框架 — 可重算的概念验证',
     nav: { paper: '论文', research: '研究', poc: '概念验证', realisations: '实现', compute: '计算', decode: '解码' },
     support: '支持开发（非强制）',
+    fallback: { notice: '此内容在翻译前以英文显示', cta: '继续以英文阅读' },
   },
 }
 

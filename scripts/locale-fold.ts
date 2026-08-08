@@ -8,6 +8,7 @@
 import { readdirSync, existsSync, writeFileSync, mkdirSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { CSP } from '../src/0/csp.ts'
+import { LOCALES as CHROME } from '../src/7/locale.ts' // the verified per-locale UI table (fallback strings)
 
 const DIST = '.vitepress/dist'
 const BASE = '/millennium-solutions/'
@@ -27,17 +28,19 @@ for (const code of LOCALES) {
     const outPath = join(DIST, code, page)
     if (existsSync(outPath)) continue // a real translated page already exists — never overwrite it
     const url = BASE + page.replace(/\.html$/, '')
+    const chrome = CHROME[code as keyof typeof CHROME]
+    const fb = chrome.fallback // localized "English until translated" notice + call-to-action
     mkdirSync(dirname(outPath), { recursive: true })
     writeFileSync(outPath,
       `<!doctype html><html lang="${code}"><head><meta charset="utf-8">`
       + `<meta http-equiv="Content-Security-Policy" content="${CSP}">`
       + `<meta name="viewport" content="width=device-width,initial-scale=1">`
-      + `<title>English until translated · Millennium Solutions</title>`
+      + `<title>${fb.notice} · ${chrome.title}</title>`
       + `<link rel="canonical" href="${url}">`
       + `<meta http-equiv="refresh" content="0; url=${url}">`
       + `<meta name="robots" content="noindex,follow">`
-      + `</head><body>This content is English until translated — `
-      + `<a href="${url}">continue in English</a>.</body></html>`)
+      + `</head><body>${fb.notice} — `
+      + `<a href="${url}">${fb.cta}</a>.</body></html>`)
     made++
   }
 }
