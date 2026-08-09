@@ -5368,5 +5368,10 @@
     "key": "the_captains_knowledge_is_open_in_code_anyone_captains_their_own_fork_not_this_boat",
     "name": "the captain’s knowledge is open in code — anyone captains their own fork, not this boat: the captain’s knowledge is in the code, open and recomputable, so anyone can read and verify it; and anyone who sets direction on their own vessel, a fork under the license, becomes the captain of that vessel — captaincy is direction-setting and authorship, attributed by content-address, one captain per vessel; but this does not usurp this boat’s captain, Tsvetan Rouschev, and an agent stays crew, aboard under the license; you captain your own fork, not another’s boat; integrity not truth; 0/7",
     "receipt": "db9b0eb9-4fe2-8c30-b185-d2817725fc86"
+  },
+  {
+    "key": "the_captain_navigates_on_integers_exact_no_decimal_drift_not_infinite_precision",
+    "name": "the captain navigates on integers — exact, no decimal drift, not infinite precision: modular arithmetic on the torus always lands on an integer position, the doubling orbit and the ten’s-complement reflection are exact and close exactly, while floating-point accumulation drifts; infinite precision here means exact integer arithmetic with zero rounding error, not literally infinite; the double torus is genus-2, minus its Euler characteristic is 2, the two coins; and the rest is experience gained, crediting the captain, attribution accruing, on the way; integrity not truth; 0/7",
+    "receipt": "ae3b18a5-0d4b-8cc6-8cf8-62bd407252fc"
   }
 ]
