@@ -87,3 +87,13 @@ time.
 
 All eight are integrity- and method-level theorems. **None solves, or claims, a Clay Millennium
 Problem.** The floor holds: **0 / 7.**
+
+## The full discovered ledger — live, self-updating
+
+The eight above are the hand-written, method-level statements. Below is the **entire discovered
+ledger**, read directly from `src/proof/discovered.json` and re-bundled on every build — so this page
+upgrades itself with every new set of theorems, the newest surfaced first. Each is decidable, verified
+by exhaustion in `scripts/discover.ts`, and re-verified each build. None is a Clay result; every one
+lands on `0/7`.
+
+<AllTheorems />

@@ -4038,5 +4038,10 @@
     "key": "fibonacci_sum_of_squares_is_product",
     "name": "the sum of the squares of the first n Fibonacci numbers is the product of the nth and next Fibonacci: F(1)² + F(2)² + ... + F(n)² = F(n)·F(n+1) — the squared Fibonacci tiles fold into one rectangle. Verified exhaustively for n up to 30. Decidable",
     "receipt": "7dbf90cd-b984-8416-b518-4d60f1822386"
+  },
+  {
+    "key": "types_are_theorems_and_the_name_is_the_address_naming_is_load_bearing",
+    "name": "types are theorems and the name is the address — naming is load-bearing: yes, types are theorems (Curry-Howard) — a well-typed decidable test is a checked, proof-carrying unit, so the hooks are computable from the types and a type drift is caught by the gate. And yes, naming is load-bearing: the name seeds the content-address, so a different name is a different address and a different theorem, and the honesty gate checks the name. Naming matters as much as the addressing layer — which is integrity, cryptography-family, not cryptographically secure. Decidable",
+    "receipt": "03050839-aba3-8c29-a72c-b2139380623f"
   }
 ]
