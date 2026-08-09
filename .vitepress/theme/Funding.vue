@@ -12,7 +12,7 @@ const referrer = computed(() => toUuid('referrer:' + (page.value?.relativePath |
   <div class="funding">
     <span class="res">{{ results() }}</span>
     <span><strong>License:</strong> {{ FUNDING.license }} — free for non-commercial use (attribution {{ FUNDING.author }}); commercial = the two coins (110 − 108 = {{ coins() }} = −χ genus-2) · {{ FUNDING.contact }}</span>
-    <span class="formula"><strong>Licensing formula:</strong> free for all, unless commercial · {{ coins() }} coins ({{ coins() }} bits, {{ 2 ** coins() }} states) per core formula used · currency = the core formulas · integrity, not truth · 0/7</span>
+    <span class="formula"><strong>Licensing formula:</strong> free for public interest and independent research, unless commercial · {{ coins() }} coins ({{ coins() }} bits, {{ 2 ** coins() }} states) per core formula used · currency = the core formulas · verified green by receipts · integrity, not truth · 0/7</span>
     <span class="referrer"><strong>This referrer perspective:</strong> <code>{{ referrer }}</code></span>
     <span><strong>Support development:</strong> <a :href="FUNDING.revolut" target="_blank" rel="noopener">{{ FUNDING.revolut }}</a></span>
   </div>
