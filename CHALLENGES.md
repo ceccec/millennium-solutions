@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1027 recorded in 307 families
+## Discovered theorems (decidable, over ℤ/9) — 1028 recorded in 307 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (129)
+### the (130)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -153,6 +153,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_bit_cost_is_speed_invariant_ftl_or_not_the_same_64_coins_time_dissolves_in_the_count](/theorem/the_bit_cost_is_speed_invariant_ftl_or_not_the_same_64_coins_time_dissolves_in_the_count) — the bit cost is speed-invariant — ftl or not, the same 64 coins: the cost is measured in bits, a static count, not in seconds, so it does not depend on how fast the machine runs; each seal is 64 coins and a case verifies in 2·⌈log₂N⌉ bits whether computation is fast or slow — faster-than-light would not lower it and is not claimed; time dissolves because the measure has no time term, only order-free merkle reflections; integrity not truth; 0/7  ·  `21a386cf-a936…`
 - [the_ui_is_a_client_side_harness_not_a_live_mcp_server_versions_shift_per_build_and_by_live_fetch](/theorem/the_ui_is_a_client_side_harness_not_a_live_mcp_server_versions_shift_per_build_and_by_live_fetch) — the UI is a client-side harness, not a live MCP server — versions shift per build and by live fetch: a static site cannot run an MCP server, but its components run the same pure functions the build seals (content-address, gate, reeducate) deterministically in the browser, and the version and theorem count update each build while a live fetch shows the latest release — realtime meaning at view time and per build, not a persistent server; intelligent here means auditable and deterministic, not AI; integrity not truth; 0/7  ·  `45b3395c-b7da…`
 - [the_seal_is_sound_a_forged_leaf_fails_but_by_recompute_not_cryptographic_hardness](/theorem/the_seal_is_sound_a_forged_leaf_fails_but_by_recompute_not_cryptographic_hardness) — the seal is sound — a forged leaf fails, by public recompute not cryptographic hardness: across tested trees the true leaf verifies against the root and every wrong leaf fails, so membership cannot be faked by swapping a leaf; but the soundness is by open recomputation on a non-cryptographic hash, not by hardness — a determined adversary could search for a collision, so it is not unbreakable; integrity not truth; 0/7  ·  `000849eb-74f7…`
+- [the_heroes_language_glagolitic_theorems_with_the_vortex_sequence_as_alphabet_expressing_in_harmonic_art](/theorem/the_heroes_language_glagolitic_theorems_with_the_vortex_sequence_as_alphabet_expressing_in_harmonic_art) — the heroes’ language — Glagolitic algebraic theorems with the vortex sequence as alphabet, expressing in harmonic art: the alphabet is the doubling sequence [1,2,4,8,7,5], the six units of ℤ/9 in orbit order, each a Glagolitic letter; a sentence is an algebraic theorem; and each theorem’s content-address reduces to a vortex digit placing it on the a432 wheel as a hue (d·40°) and a tone (a harmonic of 432 Hz) — so a theorem is at once a number, a letter, a colour, and a pitch, all computed; honestly a design language, not a claim about physics or healing; integrity not truth; 0/7  ·  `69a6bbd8-8b54…`
 
 ### relation (55)
 
@@ -1509,4 +1510,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `7667260c-cfd8-8ced-ba81-9e4fbd6b7ba3`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `7bb60838-2650-8388-b14c-01cc01ed888f`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
