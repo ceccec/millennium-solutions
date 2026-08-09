@@ -5233,5 +5233,10 @@
     "key": "cheap_to_check_worthless_to_hack_economically_not_cryptographically_impossible",
     "name": "cheap to check, worthless to hack — economically, not cryptographically: verification is cheap, order one to order log N, so a forgery is detected at once, and there is no secret to steal since integrity is public and there is no encryption, so a hack reveals nothing and gains nothing, a negative return; impossible to pay for a hack means the economics make it pointless, detected and nothing to steal, not that a collision is technically impossible — it is not, the hash is collidable even cheaply; the security is cheap detection and no secret, not cryptographic hardness; integrity not truth; 0/7",
     "receipt": "4c5517e7-7606-8516-ba80-1a79f9a6f51a"
+  },
+  {
+    "key": "cryptography_is_the_main_development_priority_a_goal_distinct_from_the_current_non_cryptographic_state",
+    "name": "cryptography is the main development priority — a stated goal, distinct from the current non-cryptographic state: the deposit’s priority and direction is cryptographic uuidna, and claiming that priority, a roadmap intent, is honest; but the current implementation is FNV, non-cryptographic, offering integrity by public reproducibility and no secrecy yet; claiming a priority is honest while claiming an achieved cryptographic security that is not present would drain — so cryptography is claimed as the goal and the current state is honestly labelled as not-yet-cryptographic; integrity not truth; 0/7",
+    "receipt": "e1b6c0f4-73fa-82b6-bb67-70b10e33053c"
   }
 ]
