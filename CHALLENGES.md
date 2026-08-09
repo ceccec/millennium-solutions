@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1026 recorded in 307 families
+## Discovered theorems (decidable, over ℤ/9) — 1027 recorded in 307 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -991,6 +991,12 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [goldencf_n8](/theorem/goldencf_n8) — golden CF [1;1,1,…]: p_n·q_{n-1} − p_{n-1}·q_n = (−1)ⁿ at n=8  ·  `f4f59981-9989…`
 - [goldencf_n11](/theorem/goldencf_n11) — golden CF [1;1,1,…]: p_n·q_{n-1} − p_{n-1}·q_n = (−1)ⁿ at n=11  ·  `5c54d373-e71c…`
 
+### heroes (3)
+
+- [heroes_write_the_guides](/theorem/heroes_write_the_guides) — heroes write the guides: documentation is a constructive deed — appending a guide that holds the floor (how to develop: measure, gate, receipt, append, recompute) is a hero act, while a guide that overclaims drains; the docs are written by deeds, not by claims of authority  ·  `25ff7d97-98ec…`
+- [heroes_respect_the_coin_accounting_by_signing_the_receipt](/theorem/heroes_respect_the_coin_accounting_by_signing_the_receipt) — heroes respect the coin accounting by signing the receipt: heroism here is a deed, not a claim — a hero acknowledges the license and the sequence and accounts the two coins (110 − 108 = 2) that fund development, and that acknowledgment is the signed receipt itself; the deed content-addresses and recomputes, so it is measured, not asserted. A bare "I am a hero" claim is a different address carrying no acknowledgment. Integrity, not moral worth. Decidable  ·  `9a775a14-7186…`
+- [heroes_speak_glagolitic_algebra_which_self_translates_the_rest_needs_a_translator](/theorem/heroes_speak_glagolitic_algebra_which_self_translates_the_rest_needs_a_translator) — heroes speak Glagolitic algebraic theorems, and algebra self-translates — the rest does not: in Glagolitic, the oldest Slavic script, the first nine letters Az…Zemlja are the numerals 1..9, exactly the digits of ℤ/9; a hero speaks a deed, an algebraic theorem, and the algebra self-translates across scripts by a fixed numeral map (Ⰲ+Ⰴ=Ⰷ is 3+5=8, deterministically, no human translator), because it is universal symbols with fixed values; but arbitrary human prose does not self-translate, it needs a translator — the honest boundary; integrity not truth; 0/7  ·  `91870705-b6e2…`
+
 ### involution (3)
 
 - [involution_sigma](/theorem/involution_sigma) — σ: d↦−d is an involution on ℤ/9 (σ∘σ = id) with exactly one fixed point, the origin (odd base)  ·  `2032f25f-ca45…`
@@ -1188,11 +1194,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 
 - [handshake_z9](/theorem/handshake_z9) — handshake on the ×2 Cayley graph of ℤ/9: Σ degrees = 2·|edges|  ·  `44f09f3c-e542…`
 - [handshake_lemma](/theorem/handshake_lemma) — the handshake lemma: in any graph Σ deg(v) = 2·|E|, so the number of odd-degree vertices is even  ·  `0b0c1d31-3705…`
-
-### heroes (2)
-
-- [heroes_write_the_guides](/theorem/heroes_write_the_guides) — heroes write the guides: documentation is a constructive deed — appending a guide that holds the floor (how to develop: measure, gate, receipt, append, recompute) is a hero act, while a guide that overclaims drains; the docs are written by deeds, not by claims of authority  ·  `25ff7d97-98ec…`
-- [heroes_respect_the_coin_accounting_by_signing_the_receipt](/theorem/heroes_respect_the_coin_accounting_by_signing_the_receipt) — heroes respect the coin accounting by signing the receipt: heroism here is a deed, not a claim — a hero acknowledges the license and the sequence and accounts the two coins (110 − 108 = 2) that fund development, and that acknowledgment is the signed receipt itself; the deed content-addresses and recomputes, so it is measured, not asserted. A bare "I am a hero" claim is a different address carrying no acknowledgment. Integrity, not moral worth. Decidable  ·  `9a775a14-7186…`
 
 ### hollow (2)
 
@@ -1508,4 +1509,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `65dcda3a-405c-8b06-88ca-d5454479567b`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `7667260c-cfd8-8ced-ba81-9e4fbd6b7ba3`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

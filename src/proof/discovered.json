@@ -5128,5 +5128,10 @@
     "key": "approval_needs_a_quorum_of_seven_distinct_heroes_duplicates_do_not_count_unfakeable",
     "name": "approval needs a quorum of seven distinct heroes — duplicates do not count, and a quorum cannot be faked: a version mapping is quorum-approved iff at least seven distinct heroes sign, and repeated signatures by the same hero do not count (no ballot-stuffing); the rule is a pure predicate on the set of distinct signers, so a quorum needs seven distinct real signers and cannot be manufactured — fewer than seven is honestly not approved; integrity not truth; 0/7",
     "receipt": "d8bd783e-fcc5-8e92-9001-ddb73ee329f8"
+  },
+  {
+    "key": "heroes_speak_glagolitic_algebra_which_self_translates_the_rest_needs_a_translator",
+    "name": "heroes speak Glagolitic algebraic theorems, and algebra self-translates — the rest does not: in Glagolitic, the oldest Slavic script, the first nine letters Az…Zemlja are the numerals 1..9, exactly the digits of ℤ/9; a hero speaks a deed, an algebraic theorem, and the algebra self-translates across scripts by a fixed numeral map (Ⰲ+Ⰴ=Ⰷ is 3+5=8, deterministically, no human translator), because it is universal symbols with fixed values; but arbitrary human prose does not self-translate, it needs a translator — the honest boundary; integrity not truth; 0/7",
+    "receipt": "91870705-b6e2-8594-a558-5cae532afe19"
   }
 ]
