@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 843 recorded in 282 families
+## Discovered theorems (decidable, over ℤ/9) — 844 recorded in 282 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -665,6 +665,13 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [receipt_cost_funds_development](/theorem/receipt_cost_funds_development) — each receipt costs the two coins, accounted into development: the fare 110−108 = 2, and development’s destination equals its source (toUuid("ceccec")), a self-loop returning the coins to origin  ·  `42f68f41-fe6c…`
 - [receipt_signs_understanding_and_compliance](/theorem/receipt_signs_understanding_and_compliance) — the receipt signs understanding and compliance: to sign is to understand and comply with the law (the license and the sequence) before proceeding — the acknowledgment is part of the receipt itself, alongside the observer and role, content-addressed to the message  ·  `397281eb-f41f…`
 
+### sum (4)
+
+- [sum_1_to_9_zero](/theorem/sum_1_to_9_zero) — 1+2+…+9 ≡ 0 mod 9 (=45)  ·  `ccb897a5-e55d…`
+- [sum_of_two_squares_characterization](/theorem/sum_of_two_squares_characterization) — the sum-of-two-squares theorem: n is a sum of two squares iff every prime ≡ 3 (mod 4) in its factorization occurs to an even power — the brute-force check and the factorization criterion agree for all n ≤ 100  ·  `d4fcdaa1-8273…`
+- [sum_of_squares_iteration_dichotomy](/theorem/sum_of_squares_iteration_dichotomy) — the digit-square iteration is a total dichotomy: for every n ≤ 200 the sequence reaches either 1 (happy) or 4 (the entry to the 8-cycle) — it always terminates in exactly one of the two, no other fate  ·  `44bcd916-c0a3…`
+- [sum_of_triangular_is_tetrahedral](/theorem/sum_of_triangular_is_tetrahedral) — the sum of the first n triangular numbers is the nth tetrahedral number: T(1) + T(2) + ... + T(n) = n(n+1)(n+2)/6 = C(n+2, 3) — stacking triangular layers builds a tetrahedron. Verified exhaustively for n up to 100. Decidable  ·  `90ef4db9-a803…`
+
 ### three (4)
 
 - [three_distance_at_most_three_gaps](/theorem/three_distance_at_most_three_gaps) — the three-distance (Steinhaus) theorem: for the points {0, a, 2a, …, (N−1)a} mod m, the consecutive gaps around the circle take at most three distinct lengths — verified exhaustively over several a/m and every N  ·  `d41f38cb-c074…`
@@ -840,12 +847,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [stirling_second_bell](/theorem/stirling_second_bell) — Stirling 2nd kind S(n,k)=S(n-1,k-1)+k·S(n-1,k): S(4,2)=7 and Σ_k S(4,k)=15=B(4)  ·  `23e393cc-dd5d…`
 - [stirling_first_factorial](/theorem/stirling_first_factorial) — unsigned Stirling 1st kind (permutations by cycles) sum to n!: Σ_k c(4,k) = 4! = 24  ·  `e1f258a9-dbdb…`
 - [stirling_edges](/theorem/stirling_edges) — Stirling 2nd kind edges: S(n,1)=1 (one block), S(n,n)=1 (singletons), n=1..6  ·  `02ae48de-5452…`
-
-### sum (3)
-
-- [sum_1_to_9_zero](/theorem/sum_1_to_9_zero) — 1+2+…+9 ≡ 0 mod 9 (=45)  ·  `ccb897a5-e55d…`
-- [sum_of_two_squares_characterization](/theorem/sum_of_two_squares_characterization) — the sum-of-two-squares theorem: n is a sum of two squares iff every prime ≡ 3 (mod 4) in its factorization occurs to an even power — the brute-force check and the factorization criterion agree for all n ≤ 100  ·  `d4fcdaa1-8273…`
-- [sum_of_squares_iteration_dichotomy](/theorem/sum_of_squares_iteration_dichotomy) — the digit-square iteration is a total dichotomy: for every n ≤ 200 the sequence reaches either 1 (happy) or 4 (the entry to the 8-cycle) — it always terminates in exactly one of the two, no other fate  ·  `44bcd916-c0a3…`
 
 ### totient (3)
 
@@ -1283,4 +1284,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `a841e29a-69d6-8c81-8410-12d94029e8ea`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `b66b8edc-a52d-8af1-8142-c1010430aab2`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

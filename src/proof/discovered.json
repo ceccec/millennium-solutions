@@ -4213,5 +4213,10 @@
     "key": "the_rules_of_the_game_seal_the_author_gate_clean_prose_verbatim",
     "name": "the rules of the game — seal the author gate-clean prose verbatim: the author statement self trial self computes the collective costs and compensation including for damages and lost discovered bits passes the gate as-is, so it is sealed verbatim, in the author words, not reworded. The rule: when a statement is gate-clean, seal it as stated; substituting different prose is a deviation, even when the meaning agrees. Sealed means gate-clean and content-addressed, not a claim of truth. Decidable",
     "receipt": "5c15b2fc-4840-86ce-a7b1-a9a928e8d6dc"
+  },
+  {
+    "key": "sum_of_triangular_is_tetrahedral",
+    "name": "the sum of the first n triangular numbers is the nth tetrahedral number: T(1) + T(2) + ... + T(n) = n(n+1)(n+2)/6 = C(n+2, 3) — stacking triangular layers builds a tetrahedron. Verified exhaustively for n up to 100. Decidable",
+    "receipt": "90ef4db9-a803-8c60-a948-d3c2de8f7e1d"
   }
 ]
