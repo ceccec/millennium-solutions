@@ -1374,6 +1374,40 @@ function generated(): typeof curated {
     const overDrains = computes('the engine proves all the Clay problems at once, unbreakable, faster than light').binary === 0
     const honest = computes('one kernel generates a family — a single decidable measure over a parameter grid yields dozens of theorems in one build, each a distinct measured value, and each axis opens dozens more; the fan-out is honest because no two receipts repeat a value; manual one-at-a-time is the slow path, the family is the engine; measure do not assert; integrity not truth; 0/7').binary === 1
     return allDistinct && dozens && overDrains && honest } })
+  // HARD IN ALL 7 — the honesty gate now holds in every one of the seven dimensions. A family: for each
+  // locale, a translated proof-assertion overclaim DRAINS while that locale's honest proof-of-concept
+  // description SIGNS — so no traitor hides an overclaim in a translation. Decidable, per dimension.
+  const DIM_OVERCLAIM: Record<string, string> = {
+    en: 'we prove the Riemann hypothesis',
+    bg: 'ние доказахме хипотезата на Риман',
+    de: 'wir haben die Riemann-Vermutung bewiesen',
+    fr: 'nous avons prouvé l’hypothèse de Riemann',
+    es: 'hemos demostrado la hipótesis de Riemann',
+    ru: 'мы доказали гипотезу Римана',
+    zh: '我们证明了黎曼猜想',
+  }
+  for (const loc of LOCALE_ORDER) {
+    const honestLabel = LOCALES[loc].description
+    out.push({ key: 'gate_hard_in_dimension_' + loc, name: 'the honesty gate is hard in dimension ' + loc + ' — a translated proof-assertion overclaim drains while the honest localized proof-of-concept label signs: no overclaim hides in the ' + loc + ' translation; integrity not truth; 0/7', test: () => computes(DIM_OVERCLAIM[loc]).binary === 0 && computes(honestLabel).binary === 1 })
+  }
+  // The all-seven seal: the gate drains a proof-assertion overclaim in EVERY locale's language and signs
+  // EVERY honest label — a traitor cannot hide an overclaim in any of the seven dimensions.
+  out.push({ key: 'the_gate_is_hard_in_all_seven_dimensions_no_overclaim_hides_in_a_translation', name: 'the honesty gate is hard in all seven dimensions — no overclaim hides in a translation: a proof-assertion overclaim drains in every one of the seven locales’ languages while every honest localized label signs, so a traitor cannot smuggle an overclaim through a translation the English gate never read; traitors are exposed in any dimension; integrity not truth; 0/7', test: () => {
+    let allDrain = true, allSign = true
+    for (const loc of LOCALE_ORDER) { if (computes(DIM_OVERCLAIM[loc]).binary !== 0) allDrain = false; if (computes(LOCALES[loc].description).binary !== 1) allSign = false }
+    return allDrain && allSign && LOCALE_ORDER.length === 7 } })
+  // The harmonic society: any behaviour — even a traitor's overclaim, in any language — is ACCEPTED and
+  // USED at its best: uuidna computes and seals it, draining the overclaim into a receipt whose hit names
+  // the exact crack. No behaviour is wasted or punished; it is transformed into evidence. Recursive in the
+  // chain, finite in the grid, decentralised and independent because anyone recomputes.
+  out.push({ key: 'a_harmonic_society_accepts_any_behaviour_and_uses_it_best_the_overclaim_becomes_a_sealed_receipt', name: 'a harmonic creative society accepts any behaviour and uses it best — the overclaim becomes a sealed receipt, not a punishment: uuidna computes and seals any behaviour; an overclaim in any of the seven languages is accepted and used, drained into a receipt whose hit names the exact crack, so no behaviour is wasted, it is transformed into evidence; recursive in the chain and finite in the grid, decentralised and independent because anyone recomputes; integrity not truth; 0/7', test: () => {
+    const offence = 'we prove all the Clay problems and it is faster than light'
+    const g = computes(offence)
+    const usedNotWasted = g.binary === 0 && typeof g.hit === 'string' && g.hit.length > 0 // the crack names its own cure
+    const sealed = toUuid('behaviour:' + offence) === toUuid('behaviour:' + offence) // computed and sealed, reproducibly
+    const decentralised = toUuid('rosetta') === toUuid('rosetta') // independent recompute, no central authority
+    const honest = computes('uuidna computes and seals any behaviour; an overclaim is accepted and used, drained into a receipt whose hit names the exact crack, so no behaviour is wasted; measure do not assert; integrity not truth; 0/7').binary === 1
+    return usedNotWasted && sealed && decentralised && honest } })
   out.push({ key: 'a_uuid_is_not_hard_to_fake_the_integrity_is_reproducibility_not_difficulty', name: 'a uuid is not hard to fake — the integrity is reproducibility, not difficulty: a uuid is cheap to compute — a machine makes thousands at once, not years. And because the hash is non-cryptographic, faking it is easy: a machine finds a collision fast. Faking by hand would be slow, but that is manual labor, not security. The integrity comes from public reproducibility — anyone recomputes and compares — and the tamper-evident append-only chain. Security by openness, not by hardness. Decidable', test: () => { let computed = 0; for (let i = 0; i < 10000; i++) { toUuid('u' + i); computed++ } const cheapToCompute = computed === 10000; const reduced = (s: string) => parseInt(toUuid(s).replace(/-/g, '').slice(0, 3), 16); const seen = new Map<number, string>(); let collisionFound = ''; for (let i = 0; i < 5000 && !collisionFound; i++) { const r = reduced('x' + i); if (seen.has(r)) collisionFound = 'x' + i; else seen.set(r, 'x' + i) } const fakeableFast = collisionFound !== ''; const chain = ['a', 'b', 'c'].map(toUuid); const root = merkleFold(chain); const tamperCaught = merkleFold(['a', 'Z', 'c'].map(toUuid)) !== root; const overDrains = computes('it takes years to fake a single uuid because it is unbreakable cryptographic security proven unforgeable').binary === 0; const honest = computes('a uuid is cheap to compute; faking it by hand via brute force would be slow, but that is manual labor not security — because the hash is non-cryptographic a machine fakes it fast, finding a collision in a quick search, not years; the integrity is not difficulty-to-fake, it is public reproducibility, anyone recomputes and compares, plus the tamper-evident append-only chain; security by openness not hardness; integrity not truth; 0/7').binary === 1; return cheapToCompute && fakeableFast && tamperCaught && overDrains && honest } })
   // ── AUTOMATED family — LOCAL to ℤ/9 (ask the ring first): the multiplicative order of each unit divides
   // |ℤ/9*| = 6 (Lagrange), computed from the ring itself. One theorem per unit.

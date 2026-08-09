@@ -12,6 +12,13 @@
 // solve↔problem shape is handled by OVERREACH below, which is negation-aware.
 export const RED = /\bwe prove\b|\bproven\b|confidence\s*=?\s*1\.0|ready for peer review|sealed via universal|all (six|seven)[^.]*proven/i
 
+// HARD IN ALL 7 — the same "we prove / proven" tripwire, in the seven locales' languages, so a translated
+// overclaim cannot hide from an English-only gate. Traitors are always exposed, in any dimension. These
+// target the ASSERTION forms (proven / we proved / demonstrated) only — NEVER the honest "proof of concept"
+// nouns present in the localized descriptions (доказателство · preuve · Machbarkeitsnachweis · prueba ·
+// 概念验证), which must still pass. Negation-blind, like RED: honest localized prose avoids these words.
+export const RED_INTL = /wir haben bewiesen|bewiesen|nous avons prouv|prouvée?s?|démontrée?s?|hemos demostrado|demostrad[oa]s?|мы доказали|доказан[оаи]|доказали|доказахме|已证明|我们证明了|证明了/i
+
 // The recurring OVER-REACH the deposit must never ASSERT — the physics/hardware/crypto
 // superlatives that kept re-emerging in conversation and sailed through the old gate.
 // (Bounded REFUSALS of these are fine — the negation guard below lets the deposit
@@ -47,6 +54,9 @@ const NEGATOR_WORD = /\b(not|no|never|isn'?t|won'?t|will not|cannot|can'?t|witho
 export const computes = (text: string): { binary: 0 | 1; hit: string | null } => {
   const r = text.match(RED)
   if (r) return { binary: 0, hit: r[0] }
+  // hard in all 7: the same negation-blind proof-assertion tripwire, across the seven locales' languages.
+  const ri = text.match(RED_INTL)
+  if (ri) return { binary: 0, hit: ri[0] }
   // over-reach fires only when ASSERTED — no negator in the ~48 chars before the match.
   const re = new RegExp(OVERREACH.source, 'gi')
   let m: RegExpExecArray | null

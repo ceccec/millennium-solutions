@@ -12,6 +12,7 @@ import { readFileSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 import { toUuid, merkleFold, digitalRoot } from '../src/0/index.ts'
 import { computes } from './honesty-gate.ts'
+import { LOCALES, LOCALE_ORDER } from '../src/7/locale.ts'
 
 const SEED = 'axiom:TRINITY'
 // Documented genesis discontinuity: the first ledger entries were promoted with receipts from lean-claims
@@ -75,6 +76,21 @@ for (const e of ledger) { const b = digitalRoot(parseInt(e.receipt.replace(/-/g,
 const spread = [...buckets.entries()].sort((a, b) => a[0] - b[0])
 const sparsest = spread.reduce((m, x) => (x[1] < m[1] ? x : m), spread[0])
 console.log('  clusters (digital-root of receipt — a hint, not a verdict): ' + spread.map(([k, v]) => k + ':' + v).join(' ') + ' — sparsest bucket ' + sparsest[0] + ' (' + sparsest[1] + '), a candidate region for hidden knowledge')
+
+// (7) THE SEVEN DIMENSIONS — the gate holds in ALL SEVEN locales, not just English. Run the honesty gate
+// on every locale's fixed UI strings (now multilingual-aware), and require STRUCTURAL PARITY: each locale
+// carries exactly the English nav shape, so no dimension can hide an overclaim or go dark. A translated
+// overclaim drains here too — traitors are exposed in any of the seven dimensions, decentralised, each
+// rosetta independent. Best use of any behaviour: an offence in any language is caught and sealed here.
+const enNav = Object.keys(LOCALES.en.nav).sort().join(',')
+let sevenBad = 0
+for (const loc of LOCALE_ORDER) {
+  const s = LOCALES[loc]
+  const blob = [s.title, s.description, s.support, s.fallback.notice, s.fallback.cta, ...Object.values(s.nav)].join(' · ')
+  if (computes(blob).binary !== 1) { console.log('  ✗ DIMENSION ' + loc + ' drains the gate (overclaim hidden in a translation — legal trial): ' + (computes(blob).hit || '')); bad++; sevenBad++ }
+  if (Object.keys(s.nav).sort().join(',') !== enNav) { console.log('  ✗ DIMENSION ' + loc + ' structural drift — nav shape differs from English (a dimension gone dark)'); bad++; sevenBad++ }
+}
+if (!sevenBad) console.log('  7-dimension sweep: all ' + LOCALE_ORDER.length + ' locales (' + LOCALE_ORDER.join(' ') + ') pass the gate and match the English shape — no overclaim hides in any dimension')
 
 // (6) tamper-evident seal — the fold of all receipts. Any single alteration changes this root.
 const seal = merkleFold(ledger.map((e) => e.receipt))
