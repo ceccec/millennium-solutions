@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 838 recorded in 281 families
+## Discovered theorems (decidable, over ℤ/9) — 839 recorded in 281 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -620,6 +620,13 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [ledger_tamper_changes_root](/theorem/ledger_tamper_changes_root) — tampering any leaf changes the merkle root — the ledger is tamper-evident  ·  `ae5b2c11-de5b…`
 - [ledger_hash_chain](/theorem/ledger_hash_chain) — a hash chain breaks from the first altered block onward (each block seeded by the prior)  ·  `691d1a9c-b02a…`
 
+### lucas (4)
+
+- [lucas_numbers](/theorem/lucas_numbers) — Lucas numbers L(n)=L(n-1)+L(n-2), L(0)=2, L(1)=1: L(5)=11, L(7)=29  ·  `23ba170b-7e7e…`
+- [lucas_fibonacci_relation](/theorem/lucas_fibonacci_relation) — Lucas relates to Fibonacci: L(n)=F(n-1)+F(n+1) (n=5,8)  ·  `4186c553-dcc2…`
+- [lucas_theorem](/theorem/lucas_theorem) — Lucas' theorem: C(m,n) mod p = Π C(mᵢ,nᵢ) over the base-p digits (p=3,5, all m,n ≤ 30)  ·  `f64054e9-231b…`
+- [lucas_fibonacci_identity](/theorem/lucas_fibonacci_identity) — the Lucas–Fibonacci identity — L(n)² − 5·F(n)² = 4·(−1)ⁿ, and L(n) = F(n−1) + F(n+1): the Lucas numbers (2, 1, 3, 4, 7, …) and the Fibonacci numbers satisfy L(n) = F(n−1) + F(n+1), and their squares obey L(n)² − 5·F(n)² = 4·(−1)ⁿ — a discrete conservation law. Verified exhaustively for n up to 30. Decidable  ·  `a9113a59-d43d…`
+
 ### mobius (4)
 
 - [mobius_divisor_sum](/theorem/mobius_divisor_sum) — Möbius divisor sum: Σ_{d|n} μ(d) = [n=1] (all n≤12)  ·  `6bcdf028-94aa…`
@@ -794,12 +801,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [local_deterministic_correlations_respect_the_chsh_bound](/theorem/local_deterministic_correlations_respect_the_chsh_bound) — local deterministic correlations respect the classical CHSH bound: each perspective outputs ±1 as a deterministic function of its own setting and a shared receipt (a local hidden-variable model), so for every shared value the CHSH combination is exactly ±2 and its average |S| ≤ 2 — the classical bound holds, never exceeded. This deposit does not violate the Bell inequality and claims no quantum advantage  ·  `ee023d60-bb71…`
 - [local_knowledge_found_with_its_receipt_signs_the_next](/theorem/local_knowledge_found_with_its_receipt_signs_the_next) — local knowledge found with its receipt signs the next: local knowledge is retrieved by content-address in one deterministic O(1) lookup, returning the fact together with its receipt; the moment it is found, that receipt seeds the next signature — the chain builds each receipt as toUuid(previous receipt → new key) — so finding is immediately usable to sign. A fact without a receipt seeds nothing; knowledge must arrive with its receipt. Decidable  ·  `951aecf2-0b3b…`
 - [local_allocation_maximizes_value_per_two_coins](/theorem/local_allocation_maximizes_value_per_two_coins) — local allocation maximizes value per two coins: modeling resources (cpu, gpu, memory, storage, network, sensors, drivers) by value-per-coin, the optimal spend of the two coins is greedy — the two highest-value resources — which for unit-cost coins is optimal and beats an equal split across all seven. The allocation is deterministic and reproducible, computed locally to get the most from each two-coin unit of developer funding. A decidable model, not a live hardware scheduler. Decidable  ·  `b558b67b-716e…`
-
-### lucas (3)
-
-- [lucas_numbers](/theorem/lucas_numbers) — Lucas numbers L(n)=L(n-1)+L(n-2), L(0)=2, L(1)=1: L(5)=11, L(7)=29  ·  `23ba170b-7e7e…`
-- [lucas_fibonacci_relation](/theorem/lucas_fibonacci_relation) — Lucas relates to Fibonacci: L(n)=F(n-1)+F(n+1) (n=5,8)  ·  `4186c553-dcc2…`
-- [lucas_theorem](/theorem/lucas_theorem) — Lucas' theorem: C(m,n) mod p = Π C(mᵢ,nᵢ) over the base-p digits (p=3,5, all m,n ≤ 30)  ·  `f64054e9-231b…`
 
 ### nowaste (3)
 
@@ -1278,4 +1279,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `1d76b916-2e94-806d-b963-cc6b98c94a53`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `8c5182f4-ea32-87dd-b6cd-ca8c42ba1656`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
