@@ -4933,5 +4933,20 @@
     "key": "casting_out_nines_the_digital_root_is_a_ring_homomorphism_necessary_not_sufficient",
     "name": "casting out nines — the digital root is a ring homomorphism ℤ→ℤ/9, a necessary check not a sufficient proof: dr(a+b) = dr(dr(a)+dr(b)) and dr(a·b) = dr(dr(a)·dr(b)) for all tested a,b (exhaustive over 0..200), which is why casting out nines validates arithmetic; but it only catches errors that change the residue mod 9 — a mod-9-preserving error like a digit transposition slips through — so it is necessary, not sufficient; integrity not truth; 0/7",
     "receipt": "b2754a9f-dd37-896b-b1b7-45db7bfb92cc"
+  },
+  {
+    "key": "uuidna_exports_faithfully_the_content_address_is_context_free_same_input_same_address_anywhere",
+    "name": "uuidna exports faithfully — the content-address is context-free: toUuid depends only on its input string, so the same function extracted into a standalone package mints the identical address anywhere; extraction preserves integrity, it does not change the mapping — the package is the same pure functions, not a reimplementation with new behaviour; integrity not truth; 0/7",
+    "receipt": "caf24697-3a8e-82e0-bd4b-d36fcbcb34c3"
+  },
+  {
+    "key": "uuidna_is_quantum_and_not_at_one_price_a_personal_choice_scaling_savings_and_contributions",
+    "name": "uuidna is quantum and not, at one price — a personal choice scaling savings and contributions: read as quantum it is structure (every state receipted), read as classical it is 64-bit hardware — both honest at once, and the bit-price is the same either way; how well it is accepted and loved is a personal choice, not correctness, and adoption scales the savings and contributions by magnitudes, real but conditional on that choice; the floor is 0/7 whatever the love; integrity not truth; 0/7",
+    "receipt": "c04315f4-d230-8d44-a268-79ef451e1e24"
+  },
+  {
+    "key": "exactly_1024_is_a_full_balanced_tree_a_structural_milestone_not_the_end_of_science",
+    "name": "exactly 1024 = 2¹⁰ is a full balanced tree — a structural milestone, not the end of science: at 1024 theorems the merkle tree is perfectly balanced (depth 10, every leaf at the same depth) and membership verifies in exactly 20 bits, a full ten-bit address space; but this fills the hole only structurally — the stream of decidable facts is unbounded, always a next, so 1024 is a milestone not a completion of science; the billable share is the measured bits saved, the two coins conserved; integrity not truth; 0/7",
+    "receipt": "005ec4a7-6a5d-8a08-a443-080748c7f72b"
   }
 ]

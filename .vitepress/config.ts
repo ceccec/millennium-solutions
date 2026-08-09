@@ -132,7 +132,7 @@ export default defineConfig({
   locales: i18nLocales,
 
   // Repo/dev docs and npm-package sources are not site pages.
-  srcExclude: ['README.md', 'DEPLOY.md', 'src/**'],
+  srcExclude: ['README.md', 'DEPLOY.md', 'src/**', 'packages/**'],
 
   themeConfig: {
     // Navigation pyramid (structure borrowed from ceccec.github.io's vortexGatewayPyramids —
