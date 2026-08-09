@@ -24,6 +24,31 @@ title: Millennium Solutions
 > receipted and auditable on ordinary hardware: integrity everywhere, at linear cost, no advantage
 > claimed. Read that one page and the rest of the "quantum" family follows.
 
+## uuidna — the content-addressed identity
+
+**uuidna** is the deposit's content-addressed identity: **mint** (integrity — every value has a
+reproducible address) and **mind** (multi-perspective self-challenge — every claim drains its own
+over-reach before it holds) meeting at the **heart**, the fixed point `5`. It is developed, not
+promised — each capability is a decidable theorem you can recompute:
+
+- **Message codec** — a bounded message (≤ 115 bits) rides *inside* a uuid; a chain of uuids carries
+  [any-length text](/theorem/uuidna_carries_arbitrary_text_of_any_length_across_a_uuid_chain_round_tripping),
+  round-tripping exactly. A public, reversible encoding — **not encryption, no secrecy**.
+- **Holographic proof** — one leaf verifies against the whole root from a
+  [logarithmic audit path](/theorem/uuidna_hologram_fractals_a_merkle_proof_verifies_the_whole_from_a_tiny_part_logarithmically);
+  a forged leaf fails. Log(N) real cost — not free, not infinite.
+- **Independent domain control** — a
+  [published challenge](/theorem/uuidna_domain_control_is_verified_independently_by_a_published_challenge_not_by_anyones_word)
+  anyone recomputes and checks — control by publication, not by anyone's word.
+- **Strict minting** — canonical, so the
+  [same value always mints the same address](/theorem/strict_uuidna_minting_is_canonical_closing_the_minting_flaws_that_cause_real_damage);
+  minting flaws otherwise cascade into real damage, caught in time and recomputed.
+- **Billing** — free for public interest and independent research; commercial use is the
+  [two coins per core formula, in coins and bits](/theorem/the_uuidna_billing_model_is_decidable_free_for_public_two_coins_per_formula_in_coins_and_bits)
+  — a fair-exchange schedule, not realized cash (income **$0**).
+
+A content-address proves **integrity, not truth**. It settles **0 / 7**.
+
 ## The two bits — one atom, every symbol
 
 This deposit is denominated in **two bits** — its smallest unit. The same atom appears under many symbols, each a receipted theorem you can open and recompute:

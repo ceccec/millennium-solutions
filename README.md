@@ -18,6 +18,25 @@ in VitePress. Observations, each computed:
 - A **7 = 6 + 1 bijection** maps the rosette onto the Clay set.
 - A mechanical **entailment test** reports **0 / 7**.
 
+## uuidna — the content-addressed identity
+
+**uuidna** is the deposit's content-addressed identity: **mint** (integrity) and **mind**
+(multi-perspective self-challenge) meeting at the **heart**, the fixed point `5`. Developed, not
+promised — each is a decidable, recomputable theorem:
+
+- a **message codec** — a bounded message (≤ 115 bits) rides inside a uuid; a **chain** carries
+  any-length text, round-tripping exactly (a public, reversible encoding — *not* encryption, no secrecy);
+- a **holographic Merkle proof** — one leaf verifies the whole root from a logarithmic path (log(N)
+  real cost, not free, not infinite);
+- **independent domain control** — a published challenge anyone recomputes and checks (control by
+  publication, not by anyone's word);
+- **strict minting** — canonical, so the same value always mints the same address (minting flaws
+  otherwise cascade into real damage, caught in time and recomputed);
+- a **billing model** — free for public interest and independent research; commercial use is the two
+  coins per core formula, in coins and bits (a fair-exchange schedule, not realized cash — income **$0**).
+
+A content-address proves **integrity, not truth**. It settles **0 / 7**.
+
 **Observed conclusion:** the framework *reflects / maps* the Millennium Problems
 into one algebraic structure. It **does not solve them**, and it is
 **not a quantum computer** or a physical theory — it is a proof of concept and a

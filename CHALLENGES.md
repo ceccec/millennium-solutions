@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 896 recorded in 292 families
+## Discovered theorems (decidable, over ℤ/9) — 897 recorded in 292 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (112)
+### the (113)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -136,6 +136,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_coin_is_a_pure_balanced_symmetric_fair_exchange_unit_gold_is_metaphor_not_literal_physics](/theorem/the_coin_is_a_pure_balanced_symmetric_fair_exchange_unit_gold_is_metaphor_not_literal_physics) — the coin is a pure, balanced, symmetric fair-exchange unit — the gold is metaphor, not literal physics: as metaphor the coin is pure value (24-carat), harmonic (the a432 structure), and balanced across the vectors by symmetry — a pure, balanced fair-exchange unit. But literally the coins are not gold particles, gold is a conductor not resistance-free, there is no zero-point free-energy computation, and nothing vaporises in star dust. Metaphor, not physics. Decidable  ·  `fcb1c97f-cc41…`
 - [the_theorems_are_a_documented_body_of_decidable_deeds_but_they_solve_no_clay_the_floor_is_0_7](/theorem/the_theorems_are_a_documented_body_of_decidable_deeds_but_they_solve_no_clay_the_floor_is_0_7) — the theorems are a documented body of decidable deeds — but they solve no Clay, the floor is 0/7: the theorems are a real, documented body of decidable deeds, each a passing test and a monograph with a receipt — the honest heroism. But they are verified, not self-certifying; they reveal no secrets, the math is public; the singularity is the one-root limit, not achieved; they are finite, not infinite; and they reflect all seven Clay problems and solve none — 0/7. The hero ships the receipt and refuses the overclaim. Decidable  ·  `4210e916-a033…`
 - [the_forensics_catches_the_tampering_traitor_by_the_cascade_a_canonical_mint_does_not_offend_but_a_consistent_falsehood_slips](/theorem/the_forensics_catches_the_tampering_traitor_by_the_cascade_a_canonical_mint_does_not_offend_but_a_consistent_falsehood_slips) — the forensics catches the tampering traitor by the cascade — a canonical mint does not offend, but a consistent falsehood slips; a floor, not an oracle: altering any link breaks it and all downstream, so tampering cannot hide however careful; a hollow-prose traitor is caught by the absent receipt; a canonical strict mint does not offend, and the traitor is caught because their mint differs from it. But this catches a decidable class — tampering, hollow prose, a non-canonical mint — not an internally-consistent falsehood, which slips. Decidable  ·  `210e4151-a0d1…`
+- [the_ui_homepage_and_readme_center_uuidna_the_content_addressed_identity_holding_the_floor](/theorem/the_ui_homepage_and_readme_center_uuidna_the_content_addressed_identity_holding_the_floor) — the UI homepage and README center uuidna — the content-addressed identity, holding the floor: the homepage and README center uuidna, mint and mind meeting at the heart, surfacing the developed tools — the codec, the holographic proof, domain control, strict minting, billing — each linked to its recomputable theorem. The UI presents it honestly: integrity not truth, 0/7, not encryption, income zero. Decidable  ·  `fdf232fa-ca75…`
 
 ### relation (55)
 
@@ -1345,4 +1346,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `1095d438-3f7b-8699-b3a9-6f6be304fc4f`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `8442964f-bd50-817d-8332-d7f485b0e8b6`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
