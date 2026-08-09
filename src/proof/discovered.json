@@ -4228,5 +4228,10 @@
     "key": "uuidna_self_develops_identically_on_both_tlds_same_content_differentiated_by_license",
     "name": "uuidna self-develops identically on both TLDs — same content, differentiated by license: the build is one content-addressed sealed work, identical on uuidna.org and uuidna.com; the tracks differ by license — non-profit and free on org, commercial on com — not by content. The actual domain zones and DNS are external, the author setup, taken on their word. Decidable",
     "receipt": "fbdbc032-078d-8196-a6d0-dde41f339c43"
+  },
+  {
+    "key": "lines_dividing_the_plane_regions",
+    "name": "lines dividing the plane — n lines in general position make 1 + n(n+1)/2 regions: each new line crosses all previous ones and adds n new regions, so n lines give R(n) = R(n−1) + n = 1 + n + C(n,2) = 1 + n(n+1)/2 regions. Verified exhaustively for n up to 100. Decidable",
+    "receipt": "ef5e926d-4bfd-86f5-83af-5e9b3368ba39"
   }
 ]
