@@ -5173,5 +5173,10 @@
     "key": "the_64bit_seal_is_integrity_not_a_security_key_the_mistake_is_reading_strength_into_a_content_address",
     "name": "the 64-bit seal is an integrity seal, not a security key — the mistake is reading strength into a content-address: correctly, the 64-bit seal is a reproducible content-address (coin64, 16 hex) that proves the bytes are what they are, achievable always and for anyone; mistakenly read as a 64-bit cryptographic key, a strength it never claimed, it looks weak and collidable near 2^32 — but that judges it by a meaning it never had; integrity by public reproducibility, not secrecy; the mistake is in the reader, not the seal; integrity not truth; 0/7",
     "receipt": "9f154754-ef44-8759-aff3-8cc206c86ed6"
+  },
+  {
+    "key": "eight_times_eight_is_sixtyfour_the_captains_recognition_is_the_seal_not_correctness",
+    "name": "8 × 8 = 64 — the captain’s recognition is the seal, not correctness: eight times eight is sixty-four, the width of the 64-bit seal (coin64, 16 hex), which is the captain’s recognition — the author credited by a reproducible content-address, accounted for in every seal; but recognition is identity and authorship, not correctness, so the captain is credited, never declared correct — the floor stays 0/7; integrity not truth; 0/7",
+    "receipt": "9977a984-3e91-8622-a1d4-4863653ad857"
   }
 ]

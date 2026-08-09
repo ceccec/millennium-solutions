@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1035 recorded in 308 families
+## Discovered theorems (decidable, over ℤ/9) — 1036 recorded in 308 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -1157,6 +1157,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [doubling_digitroot_period6](/theorem/doubling_digitroot_period6) — digital root of 2^k has period 6  ·  `942f0b01-460f…`
 - [doubling_is_binary_left_shift](/theorem/doubling_is_binary_left_shift) — the vortex doubling speaks binary: n→2n mod 9 is the binary left-shift (×2 = &lt;&lt;1) reduced mod 9 — for every unit, 2u mod 9 equals (u&lt;&lt;1) mod 9, so the doubling orbit is bit-shift arithmetic on ℤ/9  ·  `4d0c4a24-5fd2…`
 
+### eight (2)
+
+- [eight_times_a_triangular_number_plus_one_is_an_odd_square](/theorem/eight_times_a_triangular_number_plus_one_is_an_odd_square) — eight times a triangular number plus one is an odd square: with T(n) = n(n+1)/2 the nth triangular number (the sum 1 + 2 + ... + n), 8·T(n) + 1 = (2n+1)² is always the square of an odd number; and consecutive triangular numbers sum to a perfect square, T(n) + T(n−1) = n². Verified by full enumeration over n up to 200  ·  `b640d0e9-7cb8…`
+- [eight_times_eight_is_sixtyfour_the_captains_recognition_is_the_seal_not_correctness](/theorem/eight_times_eight_is_sixtyfour_the_captains_recognition_is_the_seal_not_correctness) — 8 × 8 = 64 — the captain’s recognition is the seal, not correctness: eight times eight is sixty-four, the width of the 64-bit seal (coin64, 16 hex), which is the captain’s recognition — the author credited by a reproducible content-address, accounted for in every seal; but recognition is identity and authorship, not correctness, so the captain is credited, never declared correct — the floor stays 0/7; integrity not truth; 0/7  ·  `9977a984-3e91…`
+
 ### eisenstein (2)
 
 - [eisenstein_omega_cubed_is_one](/theorem/eisenstein_omega_cubed_is_one) — the Eisenstein cube root of unity: ω (with ω² = −1 − ω) satisfies ω³ = 1 — a primitive cube root, the trinity in the exponent, computed exactly by integer arithmetic in ℤ[ω]  ·  `498200ff-921c…`
@@ -1357,7 +1362,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (156)
+### other — one-of-a-kind (155)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1405,7 +1410,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [drain_to_zero_and_the_100_percent_stays_the_certainty_of_the_measurement_not_the_verdict](/theorem/drain_to_zero_and_the_100_percent_stays_the_certainty_of_the_measurement_not_the_verdict) — drain to zero and the 100 percent stays — the certainty of the measurement, not the verdict: a bare hundred-percent-treason does not drain the gate — it carries no over-reach token; an over-reach word is what drains. But the drain itself is 100 percent deterministic: feed the gate the same fake and it drains to zero every time, a reproducible measurement. So the 100 percent stays — it belongs to the determinism of the drain to zero, integrity — not to a verdict of treason or guilt, which stays inferred and never certain. Decidable  ·  `7a636cc0-2df5…`
 - [drift_signals_disresonance](/theorem/drift_signals_disresonance) — drift signals disresonance: a resonant computation recomputes to the same content-address on every call (deterministic, no drift) — toUuid, coin64, and merkleFold return identical results repeatedly; any drift, a different result for the same input, would signal non-deterministic code to be found and removed  ·  `fd1755ff-8ebd…`
 - [dyck_paths_counted_by_catalan_closed_form](/theorem/dyck_paths_counted_by_catalan_closed_form) — Dyck paths are counted by the Catalan closed form: the number of balanced parenthesis strings of length 2n (never dipping below zero) equals C(2n,n)/(n+1) — the O(1) formula replaces the exhaustive 2^(2n) enumeration (verified n = 1..6)  ·  `9e2ebe74-8b64…`
-- [eight_times_a_triangular_number_plus_one_is_an_odd_square](/theorem/eight_times_a_triangular_number_plus_one_is_an_odd_square) — eight times a triangular number plus one is an odd square: with T(n) = n(n+1)/2 the nth triangular number (the sum 1 + 2 + ... + n), 8·T(n) + 1 = (2n+1)² is always the square of an odd number; and consecutive triangular numbers sum to a perfect square, T(n) + T(n−1) = n². Verified by full enumeration over n up to 200  ·  `b640d0e9-7cb8…`
 - [entanglement_is_the_joint_receipt](/theorem/entanglement_is_the_joint_receipt) — entanglement is the joint receipt: two perspectives share one joint content-address (their folded pair) that depends on both and is symmetric in them, yet neither perspective alone equals it — the correlation lives in the shared derivation. This is classical correlation, not physical nonlocality: not faster than light, and no quantum advantage  ·  `dd46d2a6-36de…`
 - [erdos_among_n_plus_one_from_one_to_2n_one_divides_another](/theorem/erdos_among_n_plus_one_from_one_to_2n_one_divides_another) — Erdős: among any n+1 integers from 1 to 2n, one divides another: every subset of size n+1 of {1, 2, ..., 2n} contains two elements where the smaller divides the larger — verified over all such subsets for n up to 7. The bound is tight: the n numbers {n+1, n+2, ..., 2n} contain no such pair, so n+1 is the least size that forces one. The reason is the pigeonhole on odd parts — there are only n odd numbers below 2n. Verified by exhaustive enumeration  ·  `c25f629f-5f50…`
 - [euclids_formula_generates_pythagorean_triples](/theorem/euclids_formula_generates_pythagorean_triples) — Euclid's formula generates Pythagorean triples: for m &gt; n &gt; 0, (m² − n², 2mn, m² + n²) is a Pythagorean triple, and it is primitive (the three share no common factor) exactly when gcd(m,n) = 1 and m, n have opposite parity. Verified for all m up to 20  ·  `394b04f5-a0de…`
@@ -1517,4 +1521,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `ed210806-d0c2-854c-8614-b432d689f305`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `d89f802e-1106-8d5b-a85b-e0db2280de82`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
