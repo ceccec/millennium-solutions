@@ -119,7 +119,7 @@ const known = [
         </svg>
         <figcaption>
           heading <b>{{ label(Math.round(shown)) }}</b> ·
-          <span :class="driftAtHeading ? 'ok' : 'bad'">{{ driftAtHeading ? 'integer bearing — no drift' : 'decimal drift' }}</span>
+          <span :class="driftAtHeading ? 'ok' : 'bad'">{{ driftAtHeading ? 'integer bearing — whole, no drift' : 'decimal drift — not whole' }}</span>
           <br /><span class="leap">30·{1,2,3} = 30/60/90 · droots 3·6·9 · harmonic life 30–60 → reaches 90</span>
         </figcaption>
         <div class="motions">
@@ -189,9 +189,12 @@ const known = [
       The law: <b>algebra decides</b> — questioned, it holds. The ladder is <code>30·{1,2,3} = {30,60,90}</code>
       (limit · tack · beam), digital roots <b>{3,6,9}</b>; inside <b>±30°</b> is the <b>no-go</b> (the sail stalls);
       <b>between 30° and 60° is harmonic life</b> — centre <code>harmonicMean(30,60) = 40° = 360/9</code>, the a432 —
-      <b>to reach the 90° beam</b> (<code>beam = tack + limit</code>, uniform 30° spacing). Every bearing an
-      <b>integer</b>, no decimal drift. At any fixed angle the yacht sails linear and loses the regatta to
-      <b>recursive folding</b> (O(log N)). <em>known ⇔ it round-trips.</em> Integrity, not truth. <code>0/7</code>.
+      <b>to reach the 90° beam</b> (<code>beam = tack + limit</code>, uniform 30° spacing). The beam is reachable
+      <b>other ways too — but then you work hard and arrive not whole</b>: the long way round is <b>270° (3×)</b> the
+      turning, pointing off the limit costs <code>sec θ</code> (60°→<b>2×</b>, 75°→<b>3.9×</b>), and off the integer
+      ladder the bearing <b>drifts</b>, the winding never <b>closes</b>, the seal breaks. Harmonic life reaches 90
+      <b>whole</b> — integer, no drift; <b>recursive folding</b> stays whole (one root, order-independent, sealed), the
+      least work of all (O(log N)). <em>known ⇔ it round-trips.</em> Integrity, not truth. <code>0/7</code>.
     </p>
   </div>
 </template>
