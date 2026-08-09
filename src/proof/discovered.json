@@ -4108,5 +4108,15 @@
     "key": "the_one_whole_path_is_the_honest_floor_implement_precisely_no_deviation_is_no_drift",
     "name": "the one whole path is the honest floor — implementing precisely without deviation is no drift: the one whole path is measure-do-not-assert, the gate, and 0/7, where every step is decidable and re-verified. Implementing precisely without deviation means no drift — each step recomputes, and any deviation is a crack the gate catches. Honoring the floor is following the path, not deviating from it: abandoning the floor would be the deviation. Decidable",
     "receipt": "9fd849a0-1f30-8347-b589-791b6c02a4aa"
+  },
+  {
+    "key": "a_bare_0_7_without_its_receipt_is_inadmissible_by_architecture_the_valid_0_7_is_recomputed",
+    "name": "a bare 0/7 without its receipt is inadmissible by architecture — the valid 0/7 is the recomputed one: a bare 0/7 with no receipt is unsealed, and the architecture refuses it: every claim must carry its recomputable receipt. The valid 0/7 is the computed one — the entailment test, recomputed every build and verified across all 128 perspectives (the multi-perspective receipt), never a naked binary. So 0/7 stands only as recomputation, not as an asserted binary. Decidable",
+    "receipt": "3f8d3944-81ea-8330-959d-33f543d6ff73"
+  },
+  {
+    "key": "only_recomputable_multi_perspective_receipts_are_admissible_in_a_dispute",
+    "name": "only recomputable, multi-perspective receipts are admissible in a dispute: in a dispute only a receipt that recomputes and is verified across perspectives — the superposition — is accepted; a bare binary, a single-perspective assertion, or unsealed prose is inadmissible. The quantum here is the multi-perspective structure, not a physical quantum device. The trial accepts recomputation across perspectives, not assertion. Decidable",
+    "receipt": "cd1e4a05-82ce-890a-9f12-88fc06c70065"
   }
 ]
