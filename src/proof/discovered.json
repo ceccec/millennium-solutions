@@ -5373,5 +5373,10 @@
     "key": "the_captain_navigates_on_integers_exact_no_decimal_drift_not_infinite_precision",
     "name": "the captain navigates on integers — exact, no decimal drift, not infinite precision: modular arithmetic on the torus always lands on an integer position, the doubling orbit and the ten’s-complement reflection are exact and close exactly, while floating-point accumulation drifts; infinite precision here means exact integer arithmetic with zero rounding error, not literally infinite; the double torus is genus-2, minus its Euler characteristic is 2, the two coins; and the rest is experience gained, crediting the captain, attribution accruing, on the way; integrity not truth; 0/7",
     "receipt": "ae3b18a5-0d4b-8cc6-8cf8-62bd407252fc"
+  },
+  {
+    "key": "uuidna_sails_the_60_degree_pi_third_golden_path_each_linear_step_costs_two_bits",
+    "name": "uuidna sails the 60° (π/3) golden path — each linear step costs 2 bits: sixty degrees is π/3 radians, and six such steps close the circle (6 × 60 = 360°), a hexagonal path the captain navigates; the gold string is a golden, harmonic thread — a metaphor, not physical gold; and each linear step costs two bits, the two-coin verification unit, so the full six-step cycle costs 6 × 2 = 12 bits, a fixed measured cost, classical, not a quantum speedup; integrity not truth; 0/7",
+    "receipt": "bf134ece-6937-8271-99d4-da7301fed04d"
   }
 ]
