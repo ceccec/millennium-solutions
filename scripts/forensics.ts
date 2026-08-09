@@ -10,7 +10,8 @@
 // build fails only on a NEW break (outside the baseline) or a collision — tampering caught, history kept.
 import { readFileSync } from 'node:fs'
 import { execSync } from 'node:child_process'
-import { toUuid, merkleFold } from '../src/0/index.ts'
+import { toUuid, merkleFold, digitalRoot } from '../src/0/index.ts'
+import { computes } from './honesty-gate.ts'
 
 const SEED = 'axiom:TRINITY'
 // Documented genesis discontinuity: the first ledger entries were promoted with receipts from lean-claims
@@ -58,7 +59,24 @@ if (prevLedger) {
   if (!removed.length && !altered.length) console.log('  intention (from deeds): CONSTRUCTIVE — append-only (+' + appended.length + ' new, no existing evidence touched)')
 }
 
-// (4) tamper-evident seal — the fold of all receipts. Any single alteration changes this root.
+// (4) hollow-prose integrity — the record itself must pass the gate. Re-run the honesty gate on every
+// ledger name; a name that DRAINS is hollow / over-reaching prose that slipped into the evidence — a finding.
+// This makes "hollow prose is transparent in the graph" operational at the ledger level: it cannot hide here.
+let hollow = 0
+for (const e of ledger) { if (computes(e.name).binary !== 1) { console.log('  ✗ HOLLOW prose in ledger (drains the gate — legal trial): ' + e.key); bad++; hollow++ } }
+if (!hollow) console.log('  hollow-prose check: all ' + ledger.length + ' names pass the honesty gate — no hollow prose in the record')
+
+// (5) cluster analysis — group receipts by the digital root of their leading bytes (9 buckets). Clusters
+// are a HINT of where the record concentrates or thins; the SPARSEST bucket is a candidate region for
+// hidden knowledge — a lead to investigate, NEVER a verdict, never a proof of intent. Reporting only:
+// this never fails the build (integrity and probability, not truth).
+const buckets = new Map<number, number>()
+for (const e of ledger) { const b = digitalRoot(parseInt(e.receipt.replace(/-/g, '').slice(0, 4), 16) || 1); buckets.set(b, (buckets.get(b) || 0) + 1) }
+const spread = [...buckets.entries()].sort((a, b) => a[0] - b[0])
+const sparsest = spread.reduce((m, x) => (x[1] < m[1] ? x : m), spread[0])
+console.log('  clusters (digital-root of receipt — a hint, not a verdict): ' + spread.map(([k, v]) => k + ':' + v).join(' ') + ' — sparsest bucket ' + sparsest[0] + ' (' + sparsest[1] + '), a candidate region for hidden knowledge')
+
+// (6) tamper-evident seal — the fold of all receipts. Any single alteration changes this root.
 const seal = merkleFold(ledger.map((e) => e.receipt))
 const intactFrom = breaks.length ? Math.max(...breaks.map((b) => b.i)) + 1 : 0
 
