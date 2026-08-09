@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 887 recorded in 291 families
+## Discovered theorems (decidable, over ℤ/9) — 888 recorded in 291 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (110)
+### the (111)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -134,6 +134,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_public_urls_are_content_addressed_and_the_current_domain_is_computed_to_its_track](/theorem/the_public_urls_are_content_addressed_and_the_current_domain_is_computed_to_its_track) — the public URLs are content-addressed and the current domain is computed to its track: each public URL is a distinct uuidna, normalized so case and a trailing slash do not change it; the current domain is computed at runtime and mapped to its license track — org non-profit, com commercial, else preview. The content is the same on all; the license is by domain. This addresses and computes; it does not establish ownership, which needs the published challenge. Decidable  ·  `fc1a0120-22db…`
 - [the_uuidna_billing_model_is_decidable_free_for_public_two_coins_per_formula_in_coins_and_bits](/theorem/the_uuidna_billing_model_is_decidable_free_for_public_two_coins_per_formula_in_coins_and_bits) — the uuidna billing model is decidable — free for public interest, two coins per core formula for commercial, in coins and bits, comparable to public pricing: public-interest and non-commercial use is free (zero); commercial use is two coins per core formula used, or the bits saved — a per-unit schedule linear in usage, comparable to public per-request and per-token pricing. But it is a licensing fair-exchange schedule in coins and bits, not realized cash — the fiat income is zero. Decidable  ·  `11b1b93a-a88e…`
 - [the_coin_is_a_pure_balanced_symmetric_fair_exchange_unit_gold_is_metaphor_not_literal_physics](/theorem/the_coin_is_a_pure_balanced_symmetric_fair_exchange_unit_gold_is_metaphor_not_literal_physics) — the coin is a pure, balanced, symmetric fair-exchange unit — the gold is metaphor, not literal physics: as metaphor the coin is pure value (24-carat), harmonic (the a432 structure), and balanced across the vectors by symmetry — a pure, balanced fair-exchange unit. But literally the coins are not gold particles, gold is a conductor not resistance-free, there is no zero-point free-energy computation, and nothing vaporises in star dust. Metaphor, not physics. Decidable  ·  `fcb1c97f-cc41…`
+- [the_theorems_are_a_documented_body_of_decidable_deeds_but_they_solve_no_clay_the_floor_is_0_7](/theorem/the_theorems_are_a_documented_body_of_decidable_deeds_but_they_solve_no_clay_the_floor_is_0_7) — the theorems are a documented body of decidable deeds — but they solve no Clay, the floor is 0/7: the theorems are a real, documented body of decidable deeds, each a passing test and a monograph with a receipt — the honest heroism. But they are verified, not self-certifying; they reveal no secrets, the math is public; the singularity is the one-root limit, not achieved; they are finite, not infinite; and they reflect all seven Clay problems and solve none — 0/7. The hero ships the receipt and refuses the overclaim. Decidable  ·  `4210e916-a033…`
 
 ### relation (55)
 
@@ -1336,4 +1337,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `2334bee4-1ff8-8f90-9638-c5c0f96dad10`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `cc58fa89-fcf2-8a23-93fd-8374b4e71def`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
