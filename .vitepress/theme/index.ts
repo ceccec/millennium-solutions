@@ -15,6 +15,7 @@ import Coins from './Coins.vue'
 import SealMath from './SealMath.vue'
 import Version from './Version.vue'
 import TokenCost from './TokenCost.vue'
+import Propulsion from './Propulsion.vue'
 import './custom.css'
 
 export default {
@@ -36,6 +37,7 @@ export default {
     app.component('SealMath', SealMath)
     app.component('Version', Version)
     app.component('TokenCost', TokenCost)
+    app.component('Propulsion', Propulsion)
     // PWA: register the offline service worker (client-only; HTTPS or localhost).
     if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
       window.addEventListener('load', () => {
