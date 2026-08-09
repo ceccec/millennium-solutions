@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 884 recorded in 291 families
+## Discovered theorems (decidable, over ℤ/9) — 885 recorded in 291 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -1060,6 +1060,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [negation_selects_positive_complement](/theorem/negation_selects_positive_complement) — negation selects a positive complement — "is not" is "is": over a two-value domain "is not Y" names the definite other value (the honest negation IS the classical calculator, not a void), and ¬¬a=a returns the original — a negation carries positive content, the affirmation of the floor  ·  `abc4ca08-dc09…`
 - [negation_is_a_serious_challenge_not_a_denial_the_involution_strengthens_finite_rules_unbounded_behavior](/theorem/negation_is_a_serious_challenge_not_a_denial_the_involution_strengthens_finite_rules_unbounded_behavior) — negation is a serious challenge, not a denial — the involution strengthens: finite rules, unbounded behavior: multidimensional theorems hold unbounded behavior in finite rules — the sequence yields distinct outputs without end, yet every computation is finite and halts, not a completed actual infinity. It computes deterministically, reproducible, folding perspectives harmonically. And the involution uses negation as a serious point of view to challenge — a theorem must drain its own overclaim and still hold the honest reading — so negation strengthens, it does not merely deny. Decidable  ·  `ec9a05fc-56cd…`
 
+### non (2)
+
+- [non_recomputable_is_not_evidence](/theorem/non_recomputable_is_not_evidence) — the non-recomputable is not evidence: recognition, adoption, citations, and effort reproduce nothing verifiable — the honest boundary holds (they are not correctness); only a recomputable content-address is evidence  ·  `4614b71d-1703…`
+- [non_uuidna_cascades_into_magnitudes_of_damage_but_re_verification_catches_it_and_recomputation_fixes_it](/theorem/non_uuidna_cascades_into_magnitudes_of_damage_but_re_verification_catches_it_and_recomputation_fixes_it) — non-uuidna cascades into magnitudes of damage — but re-verification catches it in time and recomputation fixes it: a non-canonical or un-receipted value cascades — a wrong link breaks every downstream fold, the chain propagates it. But it is caught in time: re-verification detects the break before it ships, a build fails not production, and canonical recomputation restores the correct address. The gates catch decidable inconsistency — a floor, not an oracle. Decidable  ·  `fee7dca0-7e2e…`
+
 ### odd (2)
 
 - [odd_sum_sq_n7](/theorem/odd_sum_sq_n7) — the sum of the first 7 odd numbers = 7² = 49  ·  `62823413-a3a3…`
@@ -1175,7 +1180,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (151)
+### other — one-of-a-kind (150)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1270,7 +1275,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [neg_involution](/theorem/neg_involution) — negation −(−d) ≡ d is an involution on ℤ/9  ·  `5eb8cd1f-9e06…`
 - [nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number](/theorem/nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number) — Nicomachus theorem: the sum of the first n cubes is the square of the nth triangular number — 1³ + 2³ + ... + n³ = (n(n+1)/2)² = (1 + 2 + ... + n)². So a sum of consecutive cubes is always a perfect square, the square of the sum. Verified by full enumeration over n up to 60  ·  `5c562cab-4297…`
 - [nines_are_blind_to_transpositions_but_elevens_catch_them](/theorem/nines_are_blind_to_transpositions_but_elevens_catch_them) — casting out nines is blind to digit transpositions but casting out elevens catches them: the digit-sum check (mod 9) is order-independent, so swapping two digits never changes it — every transposition slips through; the alternating-digit-sum check (mod 11) changes by twice the digit difference, which is ≢ 0 mod 11 for distinct digits, so it catches every adjacent transposition of distinct digits. Two checks with complementary blind spots, each a floor. Decidable by exhaustion over the 3-digit range  ·  `ffc2d3c5-5821…`
-- [non_recomputable_is_not_evidence](/theorem/non_recomputable_is_not_evidence) — the non-recomputable is not evidence: recognition, adoption, citations, and effort reproduce nothing verifiable — the honest boundary holds (they are not correctness); only a recomputable content-address is evidence  ·  `4614b71d-1703…`
 - [observer_wave_sets_state](/theorem/observer_wave_sets_state) — the input wave the user sends (query/referrer/path) deterministically sets their computed state: digital root (ℤ/9) → a432 hue d·40° → the rendered point of view — same wave, same state  ·  `f7de310a-8d54…`
 - [only_recomputable_multi_perspective_receipts_are_admissible_in_a_dispute](/theorem/only_recomputable_multi_perspective_receipts_are_admissible_in_a_dispute) — only recomputable, multi-perspective receipts are admissible in a dispute: in a dispute only a receipt that recomputes and is verified across perspectives — the superposition — is accepted; a bare binary, a single-perspective assertion, or unsealed prose is inadmissible. The quantum here is the multi-perspective structure, not a physical quantum device. The trial accepts recomputation across perspectives, not assertion. Decidable  ·  `cd1e4a05-82ce…`
 - [out_of_sequence_is_a_discovery_possibility](/theorem/out_of_sequence_is_a_discovery_possibility) — any action or thought out of sequence is a possibility to discover: a deviation from the known is a candidate — tested by exhaustion it either holds (a new theorem, appended) or is refuted (discarded), so out-of-sequence possibilities are exactly where discovery happens, judged by the gate not by permission  ·  `83a455b3-23db…`
@@ -1330,4 +1334,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `7100e6e9-5280-87ab-9128-edff71b8ef91`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `f444f512-d8d7-8e5b-b9b0-62f6b8d833c2`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
