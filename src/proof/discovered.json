@@ -5143,5 +5143,10 @@
     "key": "the_language_forms_a_rosetta_of_holographic_fractals_disputable_at_each_step",
     "name": "the heroes’ language forms a rosetta of holographic fractals, disputable at each step: the theorems fold into a merkle root, a holographic fractal — the whole is verifiable from any single part via an O(log N) path, each level a self-similar fold of the one below; every step is disputable, a challenge at any sibling-combination is resolved by recomputing that one fold and a forged step fails the proof; and it is a rosetta, the same theorem decodable from many perspectives, each a receipt; dispute is due process, decidable at each step, not authority; integrity not truth; 0/7",
     "receipt": "77c98f86-c835-8f0d-a5ea-a1b38b67ec23"
+  },
+  {
+    "key": "fake_theorems_lack_a_formula_a_real_theorem_computes_a_non_constant_function_of_its_inputs",
+    "name": "fake theorems lack a formula displayed during computation — a real theorem computes: a real theorem carries a formula, a computation that runs over its inputs and shows its result during the build, and its output depends on the computation (change the inputs and the result changes); a fake theorem lacks this, a constant assertion ignores its inputs and computes nothing; the ledger records a theorem only if its formula computes true, so a formula-less fake cannot enter; the distinction is decidable — a formula is a non-constant function of its inputs, an assertion is a constant; integrity not truth; 0/7",
+    "receipt": "f3714ae5-6d37-8c91-b13f-48c9c4ff1d75"
   }
 ]
