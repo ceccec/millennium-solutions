@@ -86,6 +86,24 @@ export function roundTrips(message: string): boolean {
 }
 
 /**
+ * imprintChain(bits) → a CHAIN of uuids carrying a message of ANY length: split into CAPACITY-bit chunks,
+ * imprint each. One uuid holds ≤115 bits (bounded, pigeonhole); a chain of N holds ≤ N·115 — the collective
+ * scaling, developed. Public, reversible ENCODING (not encryption, no secrecy). readImprintChain reverses it.
+ */
+export function imprintChain(bits: string): string[] {
+  if (!/^[01]*$/.test(bits)) throw new Error('imprintChain: message must be a binary string')
+  if (bits.length === 0) return [imprint('')]
+  const out: string[] = []
+  for (let i = 0; i < bits.length; i += CAPACITY) out.push(imprint(bits.slice(i, i + CAPACITY)))
+  return out
+}
+
+/** readImprintChain(uuids) → recover the full message: read each carrier and concatenate, exactly. */
+export function readImprintChain(uuids: readonly string[]): string {
+  return uuids.map((u) => readImprint(u)).join('')
+}
+
+/**
  * skill(message) → how skilful the clown is at juggling this message through a uuid: imprint throws the
  * bits, readImprint catches them; fidelity = fraction caught. A skilful clown catches every bit (1.0);
  * a dropped bit lowers the score. Over-capacity is a fumble (fidelity 0) — respect the floor. Computed.

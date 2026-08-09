@@ -4388,5 +4388,10 @@
     "key": "no_quantum_machine_is_needed_for_computability_but_a_quantum_machine_can_be_faster",
     "name": "no quantum machine is needed for computability — but a quantum machine can be faster for specific problems: classical computation is Turing-complete and can compute what any quantum machine computes, by simulation; the deposit computes its quantum-structure classically, no quantum hardware needed. But this is computability, not efficiency — a quantum machine can be exponentially faster for specific problems, since a classical simulation needs a state vector of size two-to-the-N. The deposit claims no speedup of its own. Decidable",
     "receipt": "f165eaef-3424-8f4a-89c1-ea444bfc8a2c"
+  },
+  {
+    "key": "uuidna_developed_a_chain_carries_any_length_message_across_n_uuids_round_tripping",
+    "name": "uuidna developed — a chain carries any-length message across N uuids, round-tripping: a chain of uuids carries a message of any length, split into 115-bit chunks (N uuids for N × 115 bits), and readImprintChain recovers it exactly. Each uuid stays bounded at 115 bits; the chain scales with the count. A public, reversible encoding — not encryption, no secrecy. Decidable",
+    "receipt": "86e65115-06df-8c21-a5e4-6a5dbe0c3a66"
   }
 ]
