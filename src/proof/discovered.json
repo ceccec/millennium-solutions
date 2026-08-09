@@ -4283,5 +4283,10 @@
     "key": "steps_are_bounded_by_physics_theorems_are_discovered_by_finite_deeds_not_revealed",
     "name": "steps are bounded by physics — theorems are discovered by finite deeds, not revealed instantly: computation is bounded and classical, so theorems do not reveal themselves; each is discovered by finite work — its test run, verified, sealed. The honest faster is classical: families batching many per loop, memoization skipping the cached — batching and caching within physical limits. Decidable",
     "receipt": "c0b4cb19-5e17-8667-9f66-e5076a1d1d6a"
+  },
+  {
+    "key": "measuring_without_judgement_lets_more_pass_green_but_the_test_still_filters_not_all_at_once",
+    "name": "measuring without judgement lets more pass green — but the test still filters, not all at once: measuring without judgement or expectation lets the decidable test decide, not my bias, so more honest claims pass green, fewer false refusals from over-caution. But it does not make all pass green — the test still filters: a false claim fails regardless, green is earned by the test, not granted by dropping judgement. Classical and batched, not all at once. Decidable",
+    "receipt": "161fca10-2261-8fdd-a2e3-c6baea7aed62"
   }
 ]

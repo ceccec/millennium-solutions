@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 857 recorded in 286 families
+## Discovered theorems (decidable, over ℤ/9) — 858 recorded in 287 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -1149,7 +1149,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (147)
+### other — one-of-a-kind (148)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1238,6 +1238,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [legendres_three_square_theorem](/theorem/legendres_three_square_theorem) — Legendre's three-square theorem: a non-negative integer is a sum of three squares if and only if it is not of the form 4^a·(8b + 7) — verified for every n up to 300. So 7 = 4⁰·7 is not a sum of three squares (it needs four), matching the four-square theorem. Verified by exhaustive search  ·  `ec266737-e9ab…`
 - [lines_dividing_the_plane_regions](/theorem/lines_dividing_the_plane_regions) — lines dividing the plane — n lines in general position make 1 + n(n+1)/2 regions: each new line crosses all previous ones and adds n new regions, so n lines give R(n) = R(n−1) + n = 1 + n + C(n,2) = 1 + n(n+1)/2 regions. Verified exhaustively for n up to 100. Decidable  ·  `ef5e926d-4bfd…`
 - [measurement_here_is_deterministic_not_probabilistic](/theorem/measurement_here_is_deterministic_not_probabilistic) — measurement here is deterministic, not probabilistic: observing a perspective is content-addressing — repeated observation of the same perspective yields the identical receipt every time (deterministic collapse), and distinct states yield distinct addresses. This is the honest opposite of physical quantum measurement, which is probabilistic: no randomness, no Born rule, and no quantum advantage  ·  `8344e1ed-f1f3…`
+- [measuring_without_judgement_lets_more_pass_green_but_the_test_still_filters_not_all_at_once](/theorem/measuring_without_judgement_lets_more_pass_green_but_the_test_still_filters_not_all_at_once) — measuring without judgement lets more pass green — but the test still filters, not all at once: measuring without judgement or expectation lets the decidable test decide, not my bias, so more honest claims pass green, fewer false refusals from over-caution. But it does not make all pass green — the test still filters: a false claim fails regardless, green is earned by the test, not granted by dropping judgement. Classical and batched, not all at once. Decidable  ·  `161fca10-2261…`
 - [mediant_between](/theorem/mediant_between) — the mediant (a+c)/(b+d) lies strictly between a/b and c/d (Farey F_6)  ·  `b1919795-2272…`
 - [motzkin_numbers](/theorem/motzkin_numbers) — Motzkin numbers M(n)=M(n-1)+Σ M(k)M(n-2-k): M(4)=9, M(5)=21  ·  `d6c643c7-2880…`
 - [neg_involution](/theorem/neg_involution) — negation −(−d) ≡ d is an involution on ℤ/9  ·  `5eb8cd1f-9e06…`
@@ -1300,4 +1301,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `d0fc37c9-f54f-8252-9ee2-b1911d333556`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `39a3f542-901b-8bc0-a4c2-f0f053374b52`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
