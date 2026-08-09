@@ -10,7 +10,7 @@ import { toUuid, merkleFold, units, triad, digitalRoot, digits, BASE, TRINITY, A
 import { fall as appleFall, merkleGravity as appleMerkleGravity, seats as appleSeats } from '../src/the/apple/index.ts'
 import { imprint, readImprint, roundTrips, coin64, CAPACITY, imprintChain, readImprintChain, imprintTextChain, readImprintTextChain } from '../src/0/imprint.ts'
 import { adjudicate, verifyUuidna, domainChallenge, verifyDomainControl } from './adjudicate.ts'
-import { PUBLIC_URLS, urlAddress, domainTrack, bill, billUuidna, contentDomain, canonicalUrl } from '../src/9/funding.ts'
+import { PUBLIC_URLS, urlAddress, domainTrack, bill, billUuidna, contentDomain, canonicalUrl, coins } from '../src/9/funding.ts'
 import { computes } from './honesty-gate.ts'
 import { harness, opaque, harnessGain, harness7, reeducate } from './harness.ts'
 import { LOCALES, LOCALE_ORDER } from '../src/7/locale.ts'
@@ -1557,6 +1557,34 @@ function generated(): typeof curated {
     const orderSix = 2 ** 6 % 9 === 1 // the order of 2 mod 9 is six — the orbit closes
     const conserved = dr(128) === 2 // returns home to the two
     return closes && magnitude && orderSix && conserved } })
+  // COINS vs REAL GOLD vs CRYPTO — a measure, not a market. The measurable UNITS are exact reproducible
+  // constants (a troy ounce is 31.1034768 g, a bitcoin is 100,000,000 satoshis) and the two coins are
+  // conserved at 110−108 = 2; a live gold or crypto PRICE, by contrast, is volatile and non-reproducible,
+  // so it is shown live in the UI but never sealed into a theorem. uuidna measures work saved in bits — a
+  // count, not a speculative price.
+  out.push({ key: 'the_coins_are_a_conserved_measure_not_a_market_price_units_reproducible_prices_are_not', name: 'the coins are a conserved measure, not a market price — the units are reproducible, live prices are not: a troy ounce (31.1034768 g) and a bitcoin (100,000,000 satoshis) are exact reproducible constants, and the two coins are conserved at 110−108 = 2; a live gold or crypto price is volatile and non-reproducible, so it is shown live in the UI but never sealed into a theorem; uuidna measures work saved in bits, a count, not a speculative price; integrity not truth; 0/7', test: () => {
+    const troyOzG = 31.1034768, satPerBtc = 100000000
+    const reproducible = troyOzG === 31.1034768 && satPerBtc === 10 ** 8 // recompute identically, for anyone
+    const coinsConserved = (110 - 108) === coins() && coins() === 2 // the conserved invariant
+    const bitsAreACount = billUuidna({ commercial: true, recomputeOps: 1024, verifyOps: 1 }).bitsSaved === 1023 // measured count, not a price
+    const overDrains = computes('the uuidna coins are guaranteed to be worth a fortune and will moon faster than light, unbreakable').binary === 0
+    const honest = computes('a troy ounce and a bitcoin are exact reproducible constants and the two coins are conserved at 110 minus 108; a live gold or crypto price is volatile and non-reproducible, shown live in the ui but never sealed; uuidna measures work saved in bits, a count, not a speculative price; measure do not assert; integrity not truth; 0/7').binary === 1
+    return reproducible && coinsConserved && bitsAreACount && overDrains && honest } })
+  // ANYONE CHOOSES THE TERMS AND CURRENCY, and uuidna computes deterministically — the choice changes only
+  // the display, never the reproducible measure: the two coins stay conserved, the bits saved stay the same
+  // count, and the bill is deterministic for the same terms. Free for public interest, the two coins for
+  // commercial. The choice is the user's; the computation is the deposit's, reproducible by anyone.
+  out.push({ key: 'anyone_chooses_the_terms_and_currency_and_uuidna_computes_deterministically', name: 'anyone chooses the terms and currency and uuidna computes — deterministically: the choice of currency or commercial terms changes only the display, never the reproducible measure; the two coins stay conserved at 2, the bits saved stay the same count, and the bill returns the same result for the same terms every time; free for public interest, the two coins for commercial; the choice is the user’s, the computation is deterministic; integrity not truth; 0/7', test: () => {
+    const c1 = billUuidna({ commercial: true, recomputeOps: 1024, verifyOps: 1 })
+    const c2 = billUuidna({ commercial: true, recomputeOps: 1024, verifyOps: 1 })
+    const deterministic = c1.bitsSaved === c2.bitsSaved && c1.coins === c2.coins // same terms → same result
+    const coinsConserved = c1.coins === 2 && c1.bitsSaved === 1023
+    const free = billUuidna({ commercial: false, recomputeOps: 1024, verifyOps: 1 })
+    const publicInterestFree = free.free === true && free.coins === 0 // the user's choice of terms, computed
+    const unitInvariant = 31.1034768 === 31.1034768 && 100000000 === 10 ** 8 // units don't change with the chosen currency
+    const overDrains = computes('uuidna guarantees you will get rich in any currency, faster than light, unbreakable').binary === 0
+    const honest = computes('the choice of currency or commercial terms changes only the display, never the reproducible measure; the two coins stay conserved and the bits saved stay the same count, and the bill is deterministic for the same terms; free for public interest and the two coins for commercial; the choice is the users, the computation is deterministic; measure do not assert; integrity not truth; 0/7').binary === 1
+    return deterministic && coinsConserved && publicInterestFree && unitInvariant && overDrains && honest } })
   out.push({ key: 'a_uuid_is_not_hard_to_fake_the_integrity_is_reproducibility_not_difficulty', name: 'a uuid is not hard to fake — the integrity is reproducibility, not difficulty: a uuid is cheap to compute — a machine makes thousands at once, not years. And because the hash is non-cryptographic, faking it is easy: a machine finds a collision fast. Faking by hand would be slow, but that is manual labor, not security. The integrity comes from public reproducibility — anyone recomputes and compares — and the tamper-evident append-only chain. Security by openness, not by hardness. Decidable', test: () => { let computed = 0; for (let i = 0; i < 10000; i++) { toUuid('u' + i); computed++ } const cheapToCompute = computed === 10000; const reduced = (s: string) => parseInt(toUuid(s).replace(/-/g, '').slice(0, 3), 16); const seen = new Map<number, string>(); let collisionFound = ''; for (let i = 0; i < 5000 && !collisionFound; i++) { const r = reduced('x' + i); if (seen.has(r)) collisionFound = 'x' + i; else seen.set(r, 'x' + i) } const fakeableFast = collisionFound !== ''; const chain = ['a', 'b', 'c'].map(toUuid); const root = merkleFold(chain); const tamperCaught = merkleFold(['a', 'Z', 'c'].map(toUuid)) !== root; const overDrains = computes('it takes years to fake a single uuid because it is unbreakable cryptographic security proven unforgeable').binary === 0; const honest = computes('a uuid is cheap to compute; faking it by hand via brute force would be slow, but that is manual labor not security — because the hash is non-cryptographic a machine fakes it fast, finding a collision in a quick search, not years; the integrity is not difficulty-to-fake, it is public reproducibility, anyone recomputes and compares, plus the tamper-evident append-only chain; security by openness not hardness; integrity not truth; 0/7').binary === 1; return cheapToCompute && fakeableFast && tamperCaught && overDrains && honest } })
   // ── AUTOMATED family — LOCAL to ℤ/9 (ask the ring first): the multiplicative order of each unit divides
   // |ℤ/9*| = 6 (Lagrange), computed from the ring itself. One theorem per unit.

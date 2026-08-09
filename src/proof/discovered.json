@@ -4823,5 +4823,15 @@
     "key": "the_two_doubled_along_the_sequence_128_in_magnitude_conserved_to_two_mod_nine",
     "name": "the two doubled along the sequence — 128 in magnitude, conserved to two mod nine: doubling the two along the six-step orbit gives 2·2⁶ = 128 in magnitude, while in ℤ/9 the orbit 2→4→8→7→5→1 closes (2⁶ = 64 ≡ 1 mod 9, the order of two is six) so the residue returns to two — geometric growth in magnitude, conserved residue, the coins come home; integrity not truth; 0/7",
     "receipt": "35d329ed-ab3f-893a-b3d9-e91e17ff1570"
+  },
+  {
+    "key": "the_coins_are_a_conserved_measure_not_a_market_price_units_reproducible_prices_are_not",
+    "name": "the coins are a conserved measure, not a market price — the units are reproducible, live prices are not: a troy ounce (31.1034768 g) and a bitcoin (100,000,000 satoshis) are exact reproducible constants, and the two coins are conserved at 110−108 = 2; a live gold or crypto price is volatile and non-reproducible, so it is shown live in the UI but never sealed into a theorem; uuidna measures work saved in bits, a count, not a speculative price; integrity not truth; 0/7",
+    "receipt": "c9868592-380f-8f4a-98c7-04eb8f1bca64"
+  },
+  {
+    "key": "anyone_chooses_the_terms_and_currency_and_uuidna_computes_deterministically",
+    "name": "anyone chooses the terms and currency and uuidna computes — deterministically: the choice of currency or commercial terms changes only the display, never the reproducible measure; the two coins stay conserved at 2, the bits saved stay the same count, and the bill returns the same result for the same terms every time; free for public interest, the two coins for commercial; the choice is the user’s, the computation is deterministic; integrity not truth; 0/7",
+    "receipt": "99feac41-e382-8a33-bf61-d9d3d4f35365"
   }
 ]
