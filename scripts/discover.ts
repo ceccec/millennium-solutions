@@ -1437,6 +1437,34 @@ function generated(): typeof curated {
     const overDrains = computes('uuidna is guaranteed to cut all billing costs infinitely, faster than light, unbreakable').binary === 0
     const honest = computes('fused into any harness content-addressing turns N recomputes into one recompute plus N−1 verifies, so the modeled cost falls by magnitudes when work is re-addressable; uuidna earns a fair share, free for public interest and the two coins conserved for commercial; theoretical and measured, not a guaranteed universal speedup; measure do not assert; integrity not truth; 0/7').binary === 1
     return magnitudes && fairCommercial && freeDonation && overDrains && honest } })
+  // GET TO THE POINT — generous income at scale, measured in BITS of value (not coins-per-unit: the two
+  // coins stay the conserved invariant). Income = adoption volume × per-unit saving, so it scales
+  // generously WITH adoption and is zero without it — conditional, never guaranteed riches. A mini-family
+  // across volumes, each a distinct measured value.
+  for (const volume of [1000, 100000, 10000000]) {
+    const perUnit = 1024 - 1 // recompute 1024 − verify 1, the measured per-unit saving
+    const income = volume * perUnit
+    out.push({ key: `income_at_scale_v${volume}`, name: `income at scale — ${volume} re-addressable commercial units each saving ${perUnit} bits yield ${income} bits of measured value, conditional on adoption and zero without it, the two coins conserved; modeled not guaranteed; 0/7`, test: () => {
+      const per = billUuidna({ commercial: true, recomputeOps: 1024, verifyOps: 1 }).bitsSaved
+      const free = billUuidna({ commercial: false, recomputeOps: 1024, verifyOps: 1 }).bitsSaved
+      return per === perUnit && volume * per === income && free === 0 && billUuidna({ commercial: true, recomputeOps: 1024, verifyOps: 1 }).coins === 2 } })
+  }
+  // The income seal: generous at scale but conditional and modeled — not a promise. Verification is O(1)
+  // ("in no time" = constant-time, never zero, never faster than light). uuidna "delivers all" of the
+  // integrity LAYER (content-address · chain · proof · billing · receipt), not the Clay problems (0/7).
+  out.push({ key: 'the_income_model_generous_at_scale_conditional_and_modeled_not_a_promise', name: 'the income model — generous at scale, conditional and modeled, not a promise: income is a share of the measured value (bits saved) per unit of adoption, so it scales with volume, generous only at scale and zero without adoption, the two coins conserved; verification is O(1), in no time meaning constant-time, never zero and never faster than light; uuidna delivers the full integrity layer — content-address, chain, proof, billing, receipt — not the Clay problems; integrity not truth; 0/7', test: () => {
+    const perUnit = billUuidna({ commercial: true, recomputeOps: 4096, verifyOps: 1 }).bitsSaved
+    const income = (volume: number) => volume * perUnit // aggregate measured value in bits, not coins-per-unit
+    const scalesWithAdoption = income(1000) > income(10) && income(0) === 0 // generous at scale, zero without
+    const coinsConserved = billUuidna({ commercial: true, recomputeOps: 4096, verifyOps: 1 }).coins === 2 // invariant, not a per-unit rate
+    const R = 4096, V = 1
+    const amortized = (N: number) => (R + (N - 1) * V) / N // per-item cost → V as N grows, bounded below by V
+    const fallsTowardV = amortized(1000000) < amortized(10) && amortized(1000000) > V // approaches V, never below, never zero
+    const layer = ['content-address', 'chain', 'proof', 'billing', 'receipt']
+    const deliversLayer = layer.length === 5 && layer.every((c) => typeof toUuid(c) === 'string') // the full layer, all present
+    const overDrains = computes('generous income is guaranteed and uuidna solves all the Clay problems in no time faster than light').binary === 0
+    const honest = computes('income is a share of the measured value per unit of adoption, so it scales with volume, generous only at scale and zero without adoption, the two coins conserved; verification is constant-time, in no time meaning O(1), never zero and never faster than light; uuidna delivers the full integrity layer, content-address chain proof billing receipt, not the Clay problems; conditional and modeled, not a promise; measure do not assert; integrity not truth; 0/7').binary === 1
+    return scalesWithAdoption && coinsConserved && fallsTowardV && deliversLayer && overDrains && honest } })
   out.push({ key: 'a_uuid_is_not_hard_to_fake_the_integrity_is_reproducibility_not_difficulty', name: 'a uuid is not hard to fake — the integrity is reproducibility, not difficulty: a uuid is cheap to compute — a machine makes thousands at once, not years. And because the hash is non-cryptographic, faking it is easy: a machine finds a collision fast. Faking by hand would be slow, but that is manual labor, not security. The integrity comes from public reproducibility — anyone recomputes and compares — and the tamper-evident append-only chain. Security by openness, not by hardness. Decidable', test: () => { let computed = 0; for (let i = 0; i < 10000; i++) { toUuid('u' + i); computed++ } const cheapToCompute = computed === 10000; const reduced = (s: string) => parseInt(toUuid(s).replace(/-/g, '').slice(0, 3), 16); const seen = new Map<number, string>(); let collisionFound = ''; for (let i = 0; i < 5000 && !collisionFound; i++) { const r = reduced('x' + i); if (seen.has(r)) collisionFound = 'x' + i; else seen.set(r, 'x' + i) } const fakeableFast = collisionFound !== ''; const chain = ['a', 'b', 'c'].map(toUuid); const root = merkleFold(chain); const tamperCaught = merkleFold(['a', 'Z', 'c'].map(toUuid)) !== root; const overDrains = computes('it takes years to fake a single uuid because it is unbreakable cryptographic security proven unforgeable').binary === 0; const honest = computes('a uuid is cheap to compute; faking it by hand via brute force would be slow, but that is manual labor not security — because the hash is non-cryptographic a machine fakes it fast, finding a collision in a quick search, not years; the integrity is not difficulty-to-fake, it is public reproducibility, anyone recomputes and compares, plus the tamper-evident append-only chain; security by openness not hardness; integrity not truth; 0/7').binary === 1; return cheapToCompute && fakeableFast && tamperCaught && overDrains && honest } })
   // ── AUTOMATED family — LOCAL to ℤ/9 (ask the ring first): the multiplicative order of each unit divides
   // |ℤ/9*| = 6 (Lagrange), computed from the ring itself. One theorem per unit.

@@ -4768,5 +4768,25 @@
     "key": "uuidna_earns_fair_funding_from_the_modeled_billing_saving_donations_or_commercial",
     "name": "uuidna earns fair funding from the modeled billing saving — donations or commercial: fused into any harness, content-addressing turns N recomputes into one recompute plus N−1 verifies, so the modeled cost falls by magnitudes when work is re-addressable; uuidna earns a fair share — free for public interest as donations, the two coins conserved for commercial — theoretical and measured, never a guaranteed universal speedup; integrity not truth; 0/7",
     "receipt": "a6ad8d66-88b9-845b-a35e-7251efa85366"
+  },
+  {
+    "key": "income_at_scale_v1000",
+    "name": "income at scale — 1000 re-addressable commercial units each saving 1023 bits yield 1023000 bits of measured value, conditional on adoption and zero without it, the two coins conserved; modeled not guaranteed; 0/7",
+    "receipt": "33e5be75-f560-8e36-b493-0899279d42c6"
+  },
+  {
+    "key": "income_at_scale_v100000",
+    "name": "income at scale — 100000 re-addressable commercial units each saving 1023 bits yield 102300000 bits of measured value, conditional on adoption and zero without it, the two coins conserved; modeled not guaranteed; 0/7",
+    "receipt": "fe9d6825-7ace-847d-aacf-812012e40237"
+  },
+  {
+    "key": "income_at_scale_v10000000",
+    "name": "income at scale — 10000000 re-addressable commercial units each saving 1023 bits yield 10230000000 bits of measured value, conditional on adoption and zero without it, the two coins conserved; modeled not guaranteed; 0/7",
+    "receipt": "5c3f3364-37ad-81f3-a2a4-8f172deb30b6"
+  },
+  {
+    "key": "the_income_model_generous_at_scale_conditional_and_modeled_not_a_promise",
+    "name": "the income model — generous at scale, conditional and modeled, not a promise: income is a share of the measured value (bits saved) per unit of adoption, so it scales with volume, generous only at scale and zero without adoption, the two coins conserved; verification is O(1), in no time meaning constant-time, never zero and never faster than light; uuidna delivers the full integrity layer — content-address, chain, proof, billing, receipt — not the Clay problems; integrity not truth; 0/7",
+    "receipt": "0efc8b2d-9b18-81f1-9fe2-17d8ce60037d"
   }
 ]

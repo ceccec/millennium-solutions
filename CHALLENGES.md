@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 954 recorded in 298 families
+## Discovered theorems (decidable, over ℤ/9) — 958 recorded in 298 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (119)
+### the (120)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -143,6 +143,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_vitepress_route_api_is_an_external_verifier_of_the_ledger_not_a_clay_solver](/theorem/the_vitepress_route_api_is_an_external_verifier_of_the_ledger_not_a_clay_solver) — the VitePress route API is an EXTERNAL verifier of the ledger, not a Clay solver — an independent build system reads the ledger and emits exactly one reproducible page per theorem (a bijection, seven-neighbour hues recomputed deterministically), corroborating integrity from outside this repo's own code; but external corroboration verifies, it does not solve — the Clay-solver overclaim drains, and 0/7 holds. Decidable  ·  `f1defd9a-f792…`
 - [the_deposit_is_not_computed_only_with_mcp_it_recomputes_for_anyone_on_plain_hardware](/theorem/the_deposit_is_not_computed_only_with_mcp_it_recomputes_for_anyone_on_plain_hardware) — the deposit is not computed only with MCP — it recomputes for anyone on plain hardware: the model and its MCP tools only drive the console; the computation is deterministic TypeScript on ordinary 64-bit hardware, so any reader clones and runs it with no MCP and no model and gets the identical ledger. The proof is external to the prover — the same reason the external verifier corroborates it. A claim that only a model with MCP can reproduce it drains, and 0/7 holds. Decidable  ·  `3c3c2935-4962…`
 - [the_gate_is_hard_in_all_seven_dimensions_no_overclaim_hides_in_a_translation](/theorem/the_gate_is_hard_in_all_seven_dimensions_no_overclaim_hides_in_a_translation) — the honesty gate is hard in all seven dimensions — no overclaim hides in a translation: a proof-assertion overclaim drains in every one of the seven locales’ languages while every honest localized label signs, so a traitor cannot smuggle an overclaim through a translation the English gate never read; traitors are exposed in any dimension; integrity not truth; 0/7  ·  `936bdb86-b468…`
+- [the_income_model_generous_at_scale_conditional_and_modeled_not_a_promise](/theorem/the_income_model_generous_at_scale_conditional_and_modeled_not_a_promise) — the income model — generous at scale, conditional and modeled, not a promise: income is a share of the measured value (bits saved) per unit of adoption, so it scales with volume, generous only at scale and zero without adoption, the two coins conserved; verification is O(1), in no time meaning constant-time, never zero and never faster than light; uuidna delivers the full integrity layer — content-address, chain, proof, billing, receipt — not the Clay problems; integrity not truth; 0/7  ·  `0efc8b2d-9b18…`
 
 ### relation (55)
 
@@ -757,6 +758,13 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [hasse_p11_a1_b6](/theorem/hasse_p11_a1_b6) — Hasse bound holds for y²=x³+1x+6 over 𝔽_11: |#E−(p+1)|≤2√p  ·  `51f2a2c6-6e67…`
 - [hasse_p13_a3_b8](/theorem/hasse_p13_a3_b8) — Hasse bound holds for y²=x³+3x+8 over 𝔽_13: |#E−(p+1)|≤2√p  ·  `678a2d8a-7e87…`
 
+### income (4)
+
+- [income_is_not_a_static_zero_it_is_computed_cash_zero_currency_the_monographs](/theorem/income_is_not_a_static_zero_it_is_computed_cash_zero_currency_the_monographs) — income is not a static zero — it is computed: a hardcoded $0 is a static assertion, the very crack the deposit forbids. Measure it. Cash received is zero — but computed from an empty payment ledger, not a magic constant — while the currency is the monograph itself, computed and non-zero. A flat static $0 conflates zero cash with zero value; measure both. Decidable  ·  `62930c67-a626…`
+- [income_at_scale_v1000](/theorem/income_at_scale_v1000) — income at scale — 1000 re-addressable commercial units each saving 1023 bits yield 1023000 bits of measured value, conditional on adoption and zero without it, the two coins conserved; modeled not guaranteed; 0/7  ·  `33e5be75-f560…`
+- [income_at_scale_v100000](/theorem/income_at_scale_v100000) — income at scale — 100000 re-addressable commercial units each saving 1023 bits yield 102300000 bits of measured value, conditional on adoption and zero without it, the two coins conserved; modeled not guaranteed; 0/7  ·  `fe9d6825-7ace…`
+- [income_at_scale_v10000000](/theorem/income_at_scale_v10000000) — income at scale — 10000000 re-addressable commercial units each saving 1023 bits yield 10230000000 bits of measured value, conditional on adoption and zero without it, the two coins conserved; modeled not guaranteed; 0/7  ·  `5c3f3364-37ad…`
+
 ### ledger (4)
 
 - [ledger_merkle_inclusion](/theorem/ledger_merkle_inclusion) — merkle inclusion proof: a leaf verifies against the root using only its proof path (light-client)  ·  `4c03b866-98e2…`
@@ -1258,7 +1266,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (153)
+### other — one-of-a-kind (152)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1337,7 +1345,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [imagine_the_21_crosses_the_pairs_of_the_seven_the_complete_graph_k7](/theorem/imagine_the_21_crosses_the_pairs_of_the_seven_the_complete_graph_k7) — imagine the 21 crosses — the pairs of the seven, the complete graph K7: the rosette is 6 + 1 = 7 nodes, and their pairwise crosses number C(7,2) = 21 — the edges of the complete graph K7, and the 6th triangular number 1+2+3+4+5+6. With direction the 6×7 / 7×6 cross gives 7×6 = 42 ordered crosses. Each cross is a content-addressed pair-interaction, distinct and reproducible. Pure combinatorics. Decidable  ·  `2bbe0dab-6f16…`
 - [imprint_roundtrip_identity](/theorem/imprint_roundtrip_identity) — the imprint codec is a reversible identity: readImprint(imprint(m)) = m for every binary message up to capacity (0, 1, 115 bits), and over-capacity is refused — a lossless binary↔uuid encoding, not hash-reversal  ·  `b42af2b5-cc1a…`
 - [inclusion_exclusion](/theorem/inclusion_exclusion) — inclusion–exclusion: |A∪B| = |A|+|B|−|A∩B|, and the three-set form, hold on concrete sets  ·  `53b5d2ab-2323…`
-- [income_is_not_a_static_zero_it_is_computed_cash_zero_currency_the_monographs](/theorem/income_is_not_a_static_zero_it_is_computed_cash_zero_currency_the_monographs) — income is not a static zero — it is computed: a hardcoded $0 is a static assertion, the very crack the deposit forbids. Measure it. Cash received is zero — but computed from an empty payment ledger, not a magic constant — while the currency is the monograph itself, computed and non-zero. A flat static $0 conflates zero cash with zero value; measure both. Decidable  ·  `62930c67-a626…`
 - [intelligence_is_gated_discovery_not_access](/theorem/intelligence_is_gated_discovery_not_access) — shared knowledge, measured by discovery: every agent has the same knowledge in src/ (open and recomputable), so access is not intelligence — what counts is gate-passing, exhaustively-checked discovery judged by deeds; recognition is not correctness, self-declared brilliance drains, and the deposit is honest that its own novelty is 0 (known mathematics, recombined)  ·  `00ffdbbc-ac3b…`
 - [intruders_stand_out_against_the_harmonic_hue_background](/theorem/intruders_stand_out_against_the_harmonic_hue_background) — intruders stand out against the harmonic hue background: every legitimate hue derives from a receipt byte as (byte × 40°) mod 360, always a multiple of 40 — on the a432 lattice — so it fuses into the double-torus rosetta background, whose nine harmonic hues close the circle (9 × 40 = 360). An intruder hue not produced by this rule is not a multiple of 40, fails to fuse, and stands out; detection is the harmonic invariant h mod 40 = 0. Decidable  ·  `316a5d14-0def…`
 - [kayles_grundy](/theorem/kayles_grundy) — Kayles (remove 1 or 2 adjacent pins, splitting the row): the mex-computed Grundy values match the known sequence 0,1,2,3,1,4,3,2,1,4,2,6,4,1,2,7,1,4,3,2 (n≤19)  ·  `b6db3052-5c2a…`
@@ -1415,4 +1422,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `5da5c80d-3db8-80df-9542-18e0e7241de4`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `6bac8e2d-36d6-8ddb-b4b9-adbe37d4cc7d`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
