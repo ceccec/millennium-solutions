@@ -5333,5 +5333,10 @@
     "key": "the_contribution_is_obligatory_coins_the_donation_is_voluntary_cash",
     "name": "the contribution is obligatory, the donation is voluntary — coins versus cash: the contribution, attribution to the captain always and the two coins or measured bit-difference for commercial use, is obligatory under the license and denominated in coins and bits, compute saved, not cash; the donation, via revolut, is voluntary and is real fiat cash; so the obligatory contribution is in coins and the voluntary donation is in cash, and the deposit does not measure the donation balance so it cannot assert the cash income is zero; integrity not truth; 0/7",
     "receipt": "31e69f5e-1f85-860c-b55e-a40e2a733e1c"
+  },
+  {
+    "key": "the_token_cost_model_cost_per_trillion_is_price_times_a_million_uuidna_earns_the_cache_hit_saving",
+    "name": "the token-cost model — cost per trillion is price times a million, uuidna earns the cache-hit saving: the cost per trillion input tokens is the price per million tokens times one million, since a trillion is a million million-token units; with uuidna as a content-addressing caching layer the re-addressable fraction pays the cached read, a fraction of the input price, instead of the full recompute, so the earnings equal the hit-rate times one minus the cache fraction times the price times a million; the earnings are conditional on the hit-rate, never a universal discount, and the live prices come from a public no-key api, not asserted by the deposit; integrity not truth; 0/7",
+    "receipt": "64689ded-bb05-82a8-891e-19a4ff2cac4c"
   }
 ]
