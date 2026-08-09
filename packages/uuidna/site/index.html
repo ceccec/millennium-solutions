@@ -26,7 +26,15 @@
 <body>
 <main>
   <h1>uuidna</h1>
-  <p class="sub">Content-addressed identity, honest by construction. <span class="floor">0 / 7</span></p>
+  <p class="sub"><b>uuid ⊕ dna</b> — identity's DNA. Content-addressed, honest by construction. <span class="floor">0 / 7</span></p>
+  <div class="card">
+    <b>The brand.</b> <em>uuidna = uuid ⊕ dna</em> — every value carries its <b>DNA</b>: a reproducible, keyless
+    content-address. <code>mint</code> the DNA, <code>mind</code> the honest floor. It holds itself to the same
+    rule — its own name's DNA is <code>uuidna_address("uuidna") = fc511532-6e8a-8418-a522-a51b1d46a70c</code>,
+    reproducible by anyone. And it <b>folds every direction at once</b> — <code>+/−</code> (reflection),
+    <code>/</code> (halving, O(log N)), <code>\</code> (the other diagonal) — order-independent, all collapsing to
+    one root. Sealed: receipt <code>1431b4c4-7950-8d7b-88d1-b633219692f8</code>. Integrity, not truth.
+  </div>
 
   <p><b>mint</b> (integrity — every value has a reproducible address) and <b>mind</b> (multi-perspective
   self-challenge — every claim drains its own over-reach before it holds) meeting at the <b>heart</b>, the
@@ -48,6 +56,13 @@
 
   <p>A content-address proves <b>integrity, not truth</b>. It settles <b>0 / 7</b> of the Clay problems and is
   not a quantum computer — structure computed classically on ordinary hardware.</p>
+
+  <h2 style="font-size:1.15rem;margin:2rem 0 .5rem;">Adopt</h2>
+  <p><b>Install:</b> <code>npm install @uuidna/uuidna</code> — ESM, zero runtime deps, typed.</p>
+  <p><b>Fuse into any harness (MCP):</b> add to your client's <code>mcpServers</code>:</p>
+  <pre class="card mono" style="overflow-x:auto;white-space:pre;font-size:.82rem;">{ "mcpServers": { "uuidna": { "command": "npx", "args": ["-y", "@uuidna/uuidna"] } } }</pre>
+  <p>Tools: <code>uuidna_address · uuidna_gate · uuidna_reeducate · uuidna_merkle_prove/verify ·
+  uuidna_imprint/read · uuidna_bill</code> — the same pure functions the build seals.</p>
 
   <div class="links">
     <a href="https://www.npmjs.com/package/@uuidna/uuidna">npm: @uuidna/uuidna</a>

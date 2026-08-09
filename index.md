@@ -28,9 +28,12 @@ title: Millennium Solutions
 
 ## uuidna — the content-addressed identity
 
-**uuidna** is the deposit's content-addressed identity: **mint** (integrity — every value has a
-reproducible address) and **mind** (multi-perspective self-challenge — every claim drains its own
-over-reach before it holds) meeting at the **heart**, the fixed point `5`. It is developed, not
+**uuidna = uuid ⊕ dna** — identity's **DNA**. It is the deposit's content-addressed identity: **mint**
+(integrity — every value has a reproducible address) and **mind** (multi-perspective self-challenge — every
+claim drains its own over-reach before it holds) meeting at the **heart**, the fixed point `5`. The brand holds
+itself to its own rule — its name's DNA is `uuidna_address("uuidna") = fc511532…`, reproducible by anyone —
+and the fold folds every direction at once (`+/−`, `/`, `\`), order-independent to one root
+([sealed](/captain)). It is developed, not
 promised — each capability is a decidable theorem you can recompute:
 
 - **Message codec** — a bounded message (≤ 115 bits) rides *inside* a uuid; a chain of uuids carries
