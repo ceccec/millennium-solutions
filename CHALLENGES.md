@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1062 recorded in 322 families
+## Discovered theorems (decidable, over ℤ/9) — 1063 recorded in 322 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -822,6 +822,13 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [chess_knight_color_flip](/theorem/chess_knight_color_flip) — a knight's leap always changes square colour (the parity of r+c flips)  ·  `81566667-a452…`
 - [chess_diagonals_15](/theorem/chess_diagonals_15) — the 8×8 board has 2·8 − 1 = 15 diagonals in each direction  ·  `85a4e4b0-787f…`
 
+### cover (4)
+
+- [cover_one_tetra_partial](/theorem/cover_one_tetra_partial) — still: one tetrahedron {1,4,7} covers only 3 of the 6 units — 3 remain uncovered  ·  `8c7bcc8a-1869…`
+- [cover_moving_pair_full](/theorem/cover_moving_pair_full) — moving: the counter-rotating pair {1,4,7}∪{2,5,8} covers every uncovered unit — all 6, no gap  ·  `22b9e194-9be5…`
+- [cover_rotation_full_circle](/theorem/cover_rotation_full_circle) — rotation by the a432 step (40°) visits all 9 angular positions — the full circle, no gap  ·  `4a44551c-2cff…`
+- [cover_all_not_less_the_units_and_triad_partition_z9_the_orbit_covers_every_unit_the_seven_cover_all_rays](/theorem/cover_all_not_less_the_units_and_triad_partition_z9_the_orbit_covers_every_unit_the_seven_cover_all_rays) — cover all, not less — the units and triad partition ℤ/9, the orbit covers every unit, the seven cover all rays: the units {1,2,4,5,7,8} and the triad {3,6,9} partition ℤ/9, their union all nine digits and their intersection empty, no gap and no overlap; the doubling orbit covers every unit exactly once, a permutation with none missed; and the seven dimensions cover all seven rays; full coverage, not less; but this is completeness of a finite structure, not a claim about everything; integrity not truth; 0/7  ·  `57777a64-36dd…`
+
 ### evidence (4)
 
 - [evidence_is_what_recomputes](/theorem/evidence_is_what_recomputes) — evidence is what recomputes: a content-address is reproduced identically on every recomputation (deterministic), and distinct inputs give distinct addresses — a fact that recomputes is evidence; one that cannot be reproduced is not  ·  `130afdb1-d7f8…`
@@ -954,12 +961,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [content_address_is_keyless_integrity](/theorem/content_address_is_keyless_integrity) — a content-address is keyless integrity: toUuid is a pure function — same input, same address, computed by anyone with no secret; distinct inputs, distinct addresses — it proves the bytes, not the author  ·  `468b07de-520f…`
 - [content_addressing_is_bit_algebra](/theorem/content_addressing_is_bit_algebra) — content-addressing speaks binary: a uuid is 128 bits by exact integer arithmetic, coin64 is its top 64 bits (16 hex), and imprint packs a message into the free bits so readImprint returns it exactly — identity, encoding, and currency are all bit algebra  ·  `8ccb9d02-6614…`
 - [content_is_logically_distributed_across_the_two_domains_for_seo_one_canonical_per_page_strict_sitemap](/theorem/content_is_logically_distributed_across_the_two_domains_for_seo_one_canonical_per_page_strict_sitemap) — content is logically distributed across the two domains for SEO — one canonical per page, a strict sitemap: public science and the open method are canonical on org, commercial licensing and billing on com, so each page has a single canonical URL, avoiding duplicate content across the two domains; the sitemap is the strict set of canonical URLs. The content is the same sealed work; the distribution is which domain owns each canonical. Decidable  ·  `74a8d8e8-198b…`
-
-### cover (3)
-
-- [cover_one_tetra_partial](/theorem/cover_one_tetra_partial) — still: one tetrahedron {1,4,7} covers only 3 of the 6 units — 3 remain uncovered  ·  `8c7bcc8a-1869…`
-- [cover_moving_pair_full](/theorem/cover_moving_pair_full) — moving: the counter-rotating pair {1,4,7}∪{2,5,8} covers every uncovered unit — all 6, no gap  ·  `22b9e194-9be5…`
-- [cover_rotation_full_circle](/theorem/cover_rotation_full_circle) — rotation by the a432 step (40°) visits all 9 angular positions — the full circle, no gap  ·  `4a44551c-2cff…`
 
 ### coverage (3)
 
@@ -1550,4 +1551,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `0c6a104b-79cc-82ad-9c79-db7457c2e501`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `47a95caf-67e7-8f67-8480-48cea9ff03c5`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
