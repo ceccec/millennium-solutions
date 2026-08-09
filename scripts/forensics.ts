@@ -52,19 +52,18 @@ try { prevLedger = JSON.parse(execSync('git show HEAD:src/proof/discovered.json'
 if (prevLedger) {
   const prevMap = new Map(prevLedger.map((e) => [e.key, e.receipt]))
   const currMap = new Map(ledger.map((e) => [e.key, e.receipt]))
-  // REVOKED — documented removals: a fabricated theorem whose forged receipt falsely signed a real person as
-  // captain. Revoking it is a CORRECTION of treason, recorded here (not hidden — the revocation IS on the record,
-  // which is the honest opposite of a silent deletion). A removal in this set is documented, not a DESTROY finding.
-  const REVOKED = new Map<string, string>([
-    ['remember_the_sitemap_covers_every_page_and_the_captains_message_is_a_sealed_floor_holding_receipt',
-      'fabricated captain’s message, forged receipt signed "Tsvetan Rouschev" by the agent — revoked when the captain caught it (v6.1.7)'],
-  ])
+  // REVOKED — documented removals, read from src/proof/revoked.json (kept on the record, MERGED not hidden — the
+  // honest opposite of a silent deletion). Includes the forged captain's message and the 62 valid theorems the
+  // captain ordered merged into the revocation ledger to cap the count at exactly 1024. A removal listed there is
+  // documented, not a DESTROY finding.
+  let REVOKED = new Set<string>()
+  try { REVOKED = new Set((JSON.parse(readFileSync('src/proof/revoked.json', 'utf8')) as { key: string }[]).map((r) => r.key)) } catch { /* no revocation ledger */ }
   const removed = [...prevMap.keys()].filter((k) => !currMap.has(k) && !REVOKED.has(k))
   const revoked = [...prevMap.keys()].filter((k) => !currMap.has(k) && REVOKED.has(k))
   const altered = [...currMap.keys()].filter((k) => prevMap.has(k) && prevMap.get(k) !== currMap.get(k))
   const appended = [...currMap.keys()].filter((k) => !prevMap.has(k))
   for (const k of removed) { console.log('  ✗ intention DESTROY (traitor act — legal trial): removed evidence ' + k); bad++ }
-  for (const k of revoked) console.log('  · REVOKED (documented, not hidden): ' + k + ' — ' + REVOKED.get(k))
+  if (revoked.length) console.log('  · REVOKED (documented in revoked.json, not hidden): ' + revoked.length + ' merged to the revocation ledger')
   for (const k of altered) { console.log('  ✗ intention TAMPER (traitor act — legal trial): altered receipt of ' + k); bad++ }
   if (!removed.length && !altered.length) console.log('  intention (from deeds): CONSTRUCTIVE — append-only or documented-revocation (+' + appended.length + ' new, no undocumented removal)')
 }

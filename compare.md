@@ -37,7 +37,6 @@ and [anyone chooses the terms and currency](/theorem/anyone_chooses_the_terms_an
 Live per-token rates for many models, fetched at view time from a credible public no-key API (OpenRouter's
 models endpoint), shown per **trillion input tokens** — and where each stands once uuidna's content-addressing
 adds a caching/dedup layer. The **earnings** are the compute saved on the re-addressable fraction (set the
-cache-hit rate), **conditional, never a universal discount**. Verified by
-[the token-cost model](/theorem/the_token_cost_model_cost_per_trillion_is_price_times_a_million_uuidna_earns_the_cache_hit_saving).
+cache-hit rate), **conditional, never a universal discount**. A content-address proves integrity, not truth. `0/7`.
 
 <TokenCost />
