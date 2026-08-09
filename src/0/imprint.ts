@@ -103,6 +103,20 @@ export function readImprintChain(uuids: readonly string[]): string {
   return uuids.map((u) => readImprint(u)).join('')
 }
 
+/** imprintTextChain(text) → a uuid chain carrying arbitrary UTF-8 text of any length (built on imprintChain). */
+export function imprintTextChain(text: string): string[] {
+  const bytes = [...new TextEncoder().encode(text)]
+  return imprintChain(bytes.map((b) => num2bits(b, 8)).join(''))
+}
+
+/** readImprintTextChain(uuids) → recover the full text from its uuid chain, exactly. */
+export function readImprintTextChain(uuids: readonly string[]): string {
+  const bits = readImprintChain(uuids)
+  const bytes: number[] = []
+  for (let i = 0; i + 8 <= bits.length; i += 8) bytes.push(parseInt(bits.slice(i, i + 8), 2))
+  return new TextDecoder().decode(new Uint8Array(bytes))
+}
+
 /**
  * skill(message) → how skilful the clown is at juggling this message through a uuid: imprint throws the
  * bits, readImprint catches them; fidelity = fraction caught. A skilful clown catches every bit (1.0);

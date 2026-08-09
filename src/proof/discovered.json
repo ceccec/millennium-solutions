@@ -4398,5 +4398,10 @@
     "key": "uuidna_hologram_fractals_a_merkle_proof_verifies_the_whole_from_a_tiny_part_logarithmically",
     "name": "uuidna hologram fractals — a Merkle proof verifies the whole from a tiny part, logarithmically: a holographic membership proof shows one leaf belongs to the whole root from a tiny audit path of about log₂ N sibling hashes, not the full set; a forged leaf does not verify. The tree is fractal — self-similar, a fold of folds. But it is log(N) real cost — not free, not literally infinite; holographic and fractal are structural, not physics. Decidable",
     "receipt": "25e5795b-4aee-885d-8f8b-2c4f73a772c9"
+  },
+  {
+    "key": "uuidna_carries_arbitrary_text_of_any_length_across_a_uuid_chain_round_tripping",
+    "name": "uuidna carries arbitrary text of any length across a uuid chain, round-tripping: text becomes UTF-8 bits, split into 115-bit carriers (imprintTextChain), and readImprintTextChain recovers it exactly — for any length. Each uuid stays bounded; the chain scales with the text. A public, reversible encoding — not encryption, no secrecy. Decidable",
+    "receipt": "436614fa-4651-87cf-a2a8-f20dacde54ae"
   }
 ]
