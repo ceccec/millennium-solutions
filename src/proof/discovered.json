@@ -4218,5 +4218,10 @@
     "key": "sum_of_triangular_is_tetrahedral",
     "name": "the sum of the first n triangular numbers is the nth tetrahedral number: T(1) + T(2) + ... + T(n) = n(n+1)(n+2)/6 = C(n+2, 3) — stacking triangular layers builds a tetrahedron. Verified exhaustively for n up to 100. Decidable",
     "receipt": "90ef4db9-a803-8c60-a948-d3c2de8f7e1d"
+  },
+  {
+    "key": "exhaustion_is_finite_enumeration_structurally_like_summing_all_states_not_physical",
+    "name": "exhaustion is finite enumeration — structurally like summing all states, not physical thermodynamics or quantum mechanics: verified by exhaustion means checking every case in a finite domain, structurally like summing over all microstates or enumerating all basis states, each case a content-address, a uuidna. But it is finite combinatorial enumeration — not physical thermodynamics, no heat or entropy or energy, and not quantum mechanics, no wavefunction or measurement. The analogy is structural, not physical. Decidable",
+    "receipt": "f4142a6a-5dad-8fe6-b5bb-c3dd024b44d3"
   }
 ]
