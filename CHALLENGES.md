@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1033 recorded in 308 families
+## Discovered theorems (decidable, over ℤ/9) — 1034 recorded in 308 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (133)
+### the (134)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -157,6 +157,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_language_forms_a_rosetta_of_holographic_fractals_disputable_at_each_step](/theorem/the_language_forms_a_rosetta_of_holographic_fractals_disputable_at_each_step) — the heroes’ language forms a rosetta of holographic fractals, disputable at each step: the theorems fold into a merkle root, a holographic fractal — the whole is verifiable from any single part via an O(log N) path, each level a self-similar fold of the one below; every step is disputable, a challenge at any sibling-combination is resolved by recomputing that one fold and a forged step fails the proof; and it is a rosetta, the same theorem decodable from many perspectives, each a receipt; dispute is due process, decidable at each step, not authority; integrity not truth; 0/7  ·  `77c98f86-c835…`
 - [the_cascade_1024_64_8_2_are_powers_of_two_at_triangular_exponents_verified_not_derived](/theorem/the_cascade_1024_64_8_2_are_powers_of_two_at_triangular_exponents_verified_not_derived) — the cascade 1024 ← 64 ← 8 ← 2 — powers of two at triangular exponents, verified not derived: 2, 8, 64, 1024 are 2^1, 2^3, 2^6, 2^10, the powers of two at the triangular exponents T1=1, T2=3, T3=6, T4=10; each larger level is verified from fewer bits by the holographic reduction (1024 leaves verify in a 10-step merkle path), so it is solved-by in the sense of reduces-and-verifies, never that two bits derive the 1024 payloads — you still need them, 0/7; integrity not truth; 0/7  ·  `5589a30d-4b8a…`
 - [the_one_externally_settled_clay_poincare_is_referenced_as_axiom_not_claimed_here](/theorem/the_one_externally_settled_clay_poincare_is_referenced_as_axiom_not_claimed_here) — the one externally-settled Clay is an axiom — Poincaré (Perelman, 2003), cited not claimed: the deposit references Poincaré, Perelman result from 2003, as an axiom, displaying it transparently and never absorbing it as its own; so humanity stands at 1 of 7 while this deposit stays 0 of 7; the reverse of the doubling orbit and its ten-complement inverse reflect the reference, but referencing an axiom is not solving it; integrity not truth; 0/7  ·  `86826bc4-52c2…`
+- [the_64bit_seal_is_achievable_so_the_axiom_reference_holds_integrity_by_reproducibility_not_hardness](/theorem/the_64bit_seal_is_achievable_so_the_axiom_reference_holds_integrity_by_reproducibility_not_hardness) — the 64-bit seal is achievable — so the axiom-reference holds, by reproducibility not hardness: coin64 mints a 64-bit seal (16 hex digits) from any content, deterministically and always, so computing the seal is trivially achievable and the condition "unless the 64-bit seal is unachievable" never fires; but 64 bits is also achievable to collide, a machine finds a collision near the birthday bound of about 2^32, so the seal proves integrity by public reproducibility, not by hardness — achievable, not unbreakable; integrity not truth; 0/7  ·  `f4d8cf05-3d94…`
 
 ### relation (55)
 
@@ -1515,4 +1516,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `abbb98bd-c0b4-82dc-89dc-218f3436c064`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `6ee6daff-2a01-89d0-a187-00da7ac9ee13`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

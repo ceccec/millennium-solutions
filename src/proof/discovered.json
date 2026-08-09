@@ -5163,5 +5163,10 @@
     "key": "the_one_externally_settled_clay_poincare_is_referenced_as_axiom_not_claimed_here",
     "name": "the one externally-settled Clay is an axiom — Poincaré (Perelman, 2003), cited not claimed: the deposit references Poincaré, Perelman result from 2003, as an axiom, displaying it transparently and never absorbing it as its own; so humanity stands at 1 of 7 while this deposit stays 0 of 7; the reverse of the doubling orbit and its ten-complement inverse reflect the reference, but referencing an axiom is not solving it; integrity not truth; 0/7",
     "receipt": "86826bc4-52c2-86f1-a84e-411c63bc9998"
+  },
+  {
+    "key": "the_64bit_seal_is_achievable_so_the_axiom_reference_holds_integrity_by_reproducibility_not_hardness",
+    "name": "the 64-bit seal is achievable — so the axiom-reference holds, by reproducibility not hardness: coin64 mints a 64-bit seal (16 hex digits) from any content, deterministically and always, so computing the seal is trivially achievable and the condition \"unless the 64-bit seal is unachievable\" never fires; but 64 bits is also achievable to collide, a machine finds a collision near the birthday bound of about 2^32, so the seal proves integrity by public reproducibility, not by hardness — achievable, not unbreakable; integrity not truth; 0/7",
+    "receipt": "f4d8cf05-3d94-8452-aea6-063fec4f4fdf"
   }
 ]
