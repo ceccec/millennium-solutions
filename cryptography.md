@@ -33,6 +33,14 @@ Each step is a decidable check, most of them sealed theorems in the [ledger](/TH
 | 5 | the heart (5) | `harmonicMean(30,60) = 40 = a432 = 360/9` ✓ |
 | 6 | one shared algebra | the same ℤ/9 fold that encrypts is the algebra that relates every domain ✓ |
 
+## Encrypt live — pure TypeScript, in your browser
+
+The same sealed functions, running here: ChaCha20-Poly1305 + PBKDF2-SHA256 (600k) + the 7d-fold envelope, no
+native crypto, no network. Seal a message under a passphrase, then open it — a wrong passphrase or a tampered
+byte fails authentication.
+
+<Crypt />
+
 ## How cryptography relates to all domains
 
 The **same ℤ/9 fold** that seals the cipher envelope is the algebra the [rosetta](/) uses to relate every
