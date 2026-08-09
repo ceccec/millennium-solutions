@@ -67,6 +67,13 @@ let hollow = 0
 for (const e of ledger) { if (computes(e.name).binary !== 1) { console.log('  ✗ HOLLOW prose in ledger (drains the gate — legal trial): ' + e.key); bad++; hollow++ } }
 if (!hollow) console.log('  hollow-prose check: all ' + ledger.length + ' names pass the honesty gate — no hollow prose in the record')
 
+// (4b) bounded-refusal census — names carrying a HARD token (faster-than-light, quantum advantage, unbreakable)
+// held in check by a negator. These are the honest boundary theorems (a bounded refusal), NOT offenses; reporting
+// only (never fails the build). The count is the automated audit of "how many boundaries the deposit holds".
+const HARD = /faster.than.light|superluminal|unbreakable|unhackable|quantum (computer|speedup|advantage|at scale)|perpetual motion|infinite energy/i
+const boundedRefusals = ledger.filter((e) => HARD.test(e.name)).length
+console.log('  bounded refusals (a hard token reprieved by a negator — honest boundary theorems, not offenses): ' + boundedRefusals + ' / ' + ledger.length)
+
 // (5) cluster analysis — group receipts by the digital root of their leading bytes (9 buckets). Clusters
 // are a HINT of where the record concentrates or thins; the SPARSEST bucket is a candidate region for
 // hidden knowledge — a lead to investigate, NEVER a verdict, never a proof of intent. Reporting only:
