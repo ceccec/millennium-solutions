@@ -5313,5 +5313,10 @@
     "key": "cover_all_not_less_the_units_and_triad_partition_z9_the_orbit_covers_every_unit_the_seven_cover_all_rays",
     "name": "cover all, not less — the units and triad partition ℤ/9, the orbit covers every unit, the seven cover all rays: the units {1,2,4,5,7,8} and the triad {3,6,9} partition ℤ/9, their union all nine digits and their intersection empty, no gap and no overlap; the doubling orbit covers every unit exactly once, a permutation with none missed; and the seven dimensions cover all seven rays; full coverage, not less; but this is completeness of a finite structure, not a claim about everything; integrity not truth; 0/7",
     "receipt": "57777a64-36dd-8eb9-ad37-0889bff9936c"
+  },
+  {
+    "key": "a_commit_reveal_structure_from_uuidna_the_shape_of_a_commitment_self_hosted_not_yet_secure",
+    "name": "a commit-reveal structure from uuidna — the shape of a commitment, self-hosted, not yet secure: commit(value, nonce) is the content-address of the value and a nonce, published without revealing the value, and reveal shows the value and nonce so anyone checks the address matches; binding, a different value gives a different commitment over the tested space, and hiding, the commitment does not display the value and a nonce blinds a low-entropy value; but built on the non-cryptographic address it is not secure, a collision breaks binding and brute force breaks the hiding of low-entropy values, so the strength is the work ahead; structure now, cryptographic strength the goal; integrity not truth; 0/7",
+    "receipt": "71a30ad7-33b0-84c2-89e0-d8ad4f1241ee"
   }
 ]
