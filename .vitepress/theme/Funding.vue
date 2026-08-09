@@ -1,12 +1,23 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import { useData } from 'vitepress'
-import { FUNDING, coins, results } from '../../src/9/funding'
+import { FUNDING, coins, results, PUBLIC_URLS, urlAddress, domainTrack } from '../../src/9/funding'
 import { toUuid } from '../../src/0/index.ts'
 // The specific licensed referrer perspective: each page is a distinct observer, content-addressed by
 // its own path. The licensing formula is printed with THIS perspective's address — reproducible by anyone.
 const { page } = useData()
 const referrer = computed(() => toUuid('referrer:' + (page.value?.relativePath || 'index.md')))
+// The CURRENT domain is COMPUTED at runtime (never hardcoded) and mapped to its license track.
+const currentDomain = ref('')
+const currentTrack = ref('')
+const currentAddress = ref('')
+onMounted(() => {
+  const host = window.location.hostname
+  currentDomain.value = host
+  const t = domainTrack(host)
+  currentTrack.value = t.track + ' — ' + t.note
+  currentAddress.value = urlAddress(window.location.origin)
+})
 </script>
 <template>
   <div class="funding">
@@ -14,6 +25,9 @@ const referrer = computed(() => toUuid('referrer:' + (page.value?.relativePath |
     <span><strong>License:</strong> {{ FUNDING.license }} — free for non-commercial use (attribution {{ FUNDING.author }}); commercial = the two coins (110 − 108 = {{ coins() }} = −χ genus-2) · {{ FUNDING.contact }}</span>
     <span class="formula"><strong>Licensing formula:</strong> free for public interest and independent research, unless commercial · {{ coins() }} coins ({{ coins() }} bits, {{ 2 ** coins() }} states) per core formula used · currency = the core formulas · verified green by receipts · integrity, not truth · 0/7</span>
     <span class="referrer"><strong>This referrer perspective:</strong> <code>{{ referrer }}</code></span>
+    <span v-if="currentDomain" class="domain"><strong>Current domain (computed):</strong> {{ currentDomain }} · {{ currentTrack }} · <code>{{ currentAddress.slice(0, 13) }}…</code></span>
+    <span class="urls"><strong>Public URLs (content-addressed):</strong>
+      <template v-for="u in PUBLIC_URLS" :key="u"><a :href="u" target="_blank" rel="noopener">{{ u }}</a> <code>{{ urlAddress(u).slice(0, 13) }}…</code> </template></span>
     <span><strong>Support development:</strong> <a :href="FUNDING.revolut" target="_blank" rel="noopener">{{ FUNDING.revolut }}</a></span>
   </div>
 </template>

@@ -1,4 +1,5 @@
 // Funding + license as computed data — fused, recomputable, usable across the UI.
+import { toUuid } from '../0/index.ts'
 export const FUNDING = {
   license: 'CC BY-NC 4.0',
   author: 'Tsvetan Rouschev',
@@ -24,4 +25,20 @@ export function results(): string {
   const selfSeal = (1 / 2) * (1 / 2) * (1 / 2) * (8 / 7) * (7 / 5) * (5 / 3) * (1 / 2) * (2 / 3) * 9 // = 1
   const solved = 0 // entailment: each of 7 statements holds even when its conjecture is false → 0/7
   return `computed: entailment ${solved}/7 · self-seal = ${Math.round(selfSeal)} · reflection involutive · CC BY-NC 4.0`
+}
+
+// The public endpoints, content-addressed — a uuidna per URL. The CURRENT domain is computed at runtime
+// (window.location.hostname) and mapped to its license track; it is never hardcoded.
+export const PUBLIC_URLS = ['https://uuidna.org', 'https://uuidna.com', 'https://ceccec.psg.bg/millennium-solutions/'] as const
+
+/** urlAddress(url) → the content-address (uuidna) of a public URL — normalise (lowercase, no trailing slash). */
+export function urlAddress(url: string): string {
+  return toUuid('uuidna:url:' + url.toLowerCase().replace(/\/+$/, ''))
+}
+
+/** domainTrack(hostname) → the license track computed from the current domain. .org = non-profit, .com = commercial. */
+export function domainTrack(hostname: string): { track: string; note: string } {
+  if (/\buuidna\.org$/.test(hostname)) return { track: 'non-profit', note: 'free for public interest and independent research' }
+  if (/\buuidna\.com$/.test(hostname)) return { track: 'commercial', note: 'the two coins per core formula used' }
+  return { track: 'preview', note: 'the sealed work — same content, license by domain' }
 }

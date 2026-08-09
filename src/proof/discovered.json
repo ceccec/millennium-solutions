@@ -4408,5 +4408,10 @@
     "key": "uuidna_domain_control_is_verified_independently_by_a_published_challenge_not_by_anyones_word",
     "name": "uuidna domain control is verified independently by a published challenge — not by anyone word: the controller publishes the challenge token, a content-address unique to the domain, at a place only the controller can write; anyone recomputes the expected token and checks the published one matches. A wrong or absent token fails. The fetch is the verifier task; this proves control by publication, not legal ownership. Decidable",
     "receipt": "46bc8218-a9db-8d21-a954-8bae4de3526f"
+  },
+  {
+    "key": "the_public_urls_are_content_addressed_and_the_current_domain_is_computed_to_its_track",
+    "name": "the public URLs are content-addressed and the current domain is computed to its track: each public URL is a distinct uuidna, normalized so case and a trailing slash do not change it; the current domain is computed at runtime and mapped to its license track — org non-profit, com commercial, else preview. The content is the same on all; the license is by domain. This addresses and computes; it does not establish ownership, which needs the published challenge. Decidable",
+    "receipt": "fc1a0120-22db-82d8-bb7e-2b0b22822862"
   }
 ]
