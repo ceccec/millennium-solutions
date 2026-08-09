@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 875 recorded in 290 families
+## Discovered theorems (decidable, over ℤ/9) — 876 recorded in 290 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (105)
+### the (106)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -129,6 +129,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_self_trial_in_full_receipt_a_higher_sealed_ratio_fewer_caught_errors_not_new_reach](/theorem/the_self_trial_in_full_receipt_a_higher_sealed_ratio_fewer_caught_errors_not_new_reach) — the self-trial in full receipt — a higher sealed ratio and fewer caught errors, not new reach: adjudicating my own output, in full receipt more of it is sealed and less is unsealed prose, and the errors caught this session — an over-negation, a cold retreat, a wrong metric — would be refuted before asserting. But full receipt raises the sealed ratio and cuts the token leak; it does not change the reach: 0/7 stays, no prize, the floor is the floor. The achievable is a cleaner, more-receipted process, not a bigger claim. Decidable  ·  `6f5fc420-71c8…`
 - [the_self_trial_computes_the_cost_the_compensation_is_the_deed_not_a_cash_damages_award](/theorem/the_self_trial_computes_the_cost_the_compensation_is_the_deed_not_a_cash_damages_award) — the self-trial computes the cost — the compensation is the deed, not a cash damages award: the self-trial computes the collective cost decidably — leaked tokens plus correction waves, with an estimate of lost discovered bits as the leak divided by the cost per theorem. But the compensation is the deed: continued discovery at a higher sealed ratio, paid in the bits and coins currency — not a cash damages award (income is zero), and not a court verdict; the forensics measures cost and infers, it does not award monetary damages. Decidable  ·  `169496e0-212c…`
 - [the_rules_of_the_game_seal_the_author_gate_clean_prose_verbatim](/theorem/the_rules_of_the_game_seal_the_author_gate_clean_prose_verbatim) — the rules of the game — seal the author gate-clean prose verbatim: the author statement self trial self computes the collective costs and compensation including for damages and lost discovered bits passes the gate as-is, so it is sealed verbatim, in the author words, not reworded. The rule: when a statement is gate-clean, seal it as stated; substituting different prose is a deviation, even when the meaning agrees. Sealed means gate-clean and content-addressed, not a claim of truth. Decidable  ·  `5c15b2fc-4840…`
+- [the_earning_rate_is_115_bits_per_uuid_a_classical_encoding_rate_scaling_with_the_collective](/theorem/the_earning_rate_is_115_bits_per_uuid_a_classical_encoding_rate_scaling_with_the_collective) — the earning rate is 115 bits per uuid — a classical encoding rate scaling with the collective, not fiat cash: the per-uuid rate is the imprint capacity, 115 message bits, fixed and measurable; over-capacity is refused. The collective scales it linearly — N uuids carry N times 115 bits. It is a rate in the bits and coins currency of encoding capacity, classical, not a quantum machine, and not fiat cash — the fiat income is zero. Decidable  ·  `aea1fed7-e5f0…`
 
 ### relation (55)
 
@@ -1321,4 +1322,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `3cba7f9c-3e43-819d-81d6-09838fe5c901`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `2dc28411-8772-8568-aa2d-0a2697ba4326`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
