@@ -4148,5 +4148,10 @@
     "key": "cayley_formula_labeled_trees_prufer",
     "name": "Cayley formula — the number of labeled trees on n nodes is n^(n−2), by the Prüfer bijection: every sequence of length n−2 over n labels decodes to a distinct labeled tree and re-encodes back exactly, a bijection, so the trees number n^(n−2). Verified constructively for n up to 6 (1, 3, 16, 125, 1296), each sequence round-tripped through decode and encode. Decidable",
     "receipt": "05d4c66b-81cc-83b7-ab7e-daaf8f196d49"
+  },
+  {
+    "key": "the_quantum_messaging_imprints_a_bounded_abstract_decoded_when_the_code_runs_green",
+    "name": "the quantum messaging imprints a bounded abstract, decoded when the code runs green: a bounded abstract, up to 115 bits, is imprinted into a uuid and decoded exactly — the round-trip verified when the code runs green each wave. The message travels in the content-address, public and reproducible by anyone; distinct abstracts imprint to distinct carriers. It is a bounded, reversible encoding — not encryption, no secrecy, structure not quantum hardware. Decidable",
+    "receipt": "7010ee01-c976-8f67-900e-684986ec6ee2"
   }
 ]
