@@ -4158,5 +4158,15 @@
     "key": "ceccec_charges_for_the_uuidna_commercially_free_for_nonprofit_research_verified_by_receipts",
     "name": "ceccec charges for the uuidna commercially — free for non-profit and independent research, all verified by receipts: ceccec charges commercially for the uuidna, the content-addressed work, unless it is public non-profit or independent research and development, which is free. Every use passes green by receipts — recomputable and confirmable. It is a license, not a patent, priced in the fair-exchange currency of coins and bits saved; the fiat income is zero. Decidable",
     "receipt": "94b695c5-a3bb-8ea9-8664-69d671795d3f"
+  },
+  {
+    "key": "the_license_has_two_tracks_commercial_to_com_nonprofit_to_org_lts_is_fibonacci_registration_is_external",
+    "name": "the license has two tracks — commercial to com, non-profit to org — and LTS versions are the Fibonacci minors; the registration itself is external: the license splits into two tracks, commercial and non-profit, mapping naturally to com and org, and the long-term support versions are the Fibonacci minors 1, 2, 3, 5, 8. But the actual domain registration is an external real-world fact, outside the decidable layer — the deposit seals recomputable facts, not registry state; the registration is taken on the author word, not asserted here. Decidable",
+    "receipt": "9a258ded-4070-8d5c-ae2f-e90553066326"
+  },
+  {
+    "key": "the_forensic_tool_adjudicates_any_statement_before_thinking_a_recomputable_verdict_not_truth",
+    "name": "the forensic tool adjudicates any statement before thinking — a recomputable verdict, not truth: the tool returns refuted, sealed, or unverified for any statement — usable as a pre-filter before reasoning, so a named overclaim is rejected before tokens are spent; a gate-clean statement with a holding decidable test is sealed, with a failing test refuted, with no test unverified. It never claims absolute truth — the gate is a floor, not an oracle. Decidable",
+    "receipt": "a1bc77d0-5d58-8007-812d-2b1b51d402e5"
   }
 ]
