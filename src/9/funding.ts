@@ -6,12 +6,13 @@ export const FUNDING = {
   revolut: 'https://revolut.me/ceccec',
   contact: 'ceccec@psg.bg',
   // The captain's message — canonical link, reminded at the captain page and in every contribution block.
-  // "contribute 2 to earn 64 more folds": the two coins (110−108) per commercial use earn the seal's 64 two-bit
-  // fold-verifications (128 bits = 64×2) of recursive-fold leverage (O(log N)). Contribution obligatory; donation
-  // not. Refined from the earlier "save 64" (receipt 593b546a, kept on record — append-only). Receipt below.
+  // Free on the free sailing angle (off the wind, non-commercial); prize earning in waves on the beating band
+  // (30–60°), each leap folding and sending the next (O(log N)); contribute the two coins (110−108 = −χ genus-2)
+  // to earn up to the seal's 64 two-bit fold-verifications per wave — conditional, contributor keeps the rest,
+  // zero without a saving. Refined in the open (lineage on /captain — append-only). Current receipt below.
   captainMessage: 'https://uuidna.com/captain/message',
-  captainReminder: 'remember to contribute 2 to earn 64 more folds',
-  captainReceipt: 'daad8cd4-d4db-8dca-9c97-9a838cbce528',
+  captainReminder: 'free on the free sailing angle; prize earning in waves — contribute 2 to earn up to 64 per wave, keep the rest',
+  captainReceipt: '85ac8585-9dc1-8964-9848-ae0f49cc82fb',
 }
 // "the two coins" = 110 − 108 = −χ(genus-2) = 2  (the commercial fare)
 export function coins(): number { return 110 - 108 }
