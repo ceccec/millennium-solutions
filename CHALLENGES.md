@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 837 recorded in 281 families
+## Discovered theorems (decidable, over ℤ/9) — 838 recorded in 281 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (101)
+### the (102)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -125,6 +125,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_license_has_two_tracks_commercial_to_com_nonprofit_to_org_lts_is_fibonacci_registration_is_external](/theorem/the_license_has_two_tracks_commercial_to_com_nonprofit_to_org_lts_is_fibonacci_registration_is_external) — the license has two tracks — commercial to com, non-profit to org — and LTS versions are the Fibonacci minors; the registration itself is external: the license splits into two tracks, commercial and non-profit, mapping naturally to com and org, and the long-term support versions are the Fibonacci minors 1, 2, 3, 5, 8. But the actual domain registration is an external real-world fact, outside the decidable layer — the deposit seals recomputable facts, not registry state; the registration is taken on the author word, not asserted here. Decidable  ·  `9a258ded-4070…`
 - [the_forensic_tool_adjudicates_any_statement_before_thinking_a_recomputable_verdict_not_truth](/theorem/the_forensic_tool_adjudicates_any_statement_before_thinking_a_recomputable_verdict_not_truth) — the forensic tool adjudicates any statement before thinking — a recomputable verdict, not truth: the tool returns refuted, sealed, or unverified for any statement — usable as a pre-filter before reasoning, so a named overclaim is rejected before tokens are spent; a gate-clean statement with a holding decidable test is sealed, with a failing test refuted, with no test unverified. It never claims absolute truth — the gate is a floor, not an oracle. Decidable  ·  `a1bc77d0-5d58…`
 - [the_build_is_self_sufficient_and_the_computed_pages_are_sealed_as_evidence](/theorem/the_build_is_self_sufficient_and_the_computed_pages_are_sealed_as_evidence) — the build is self-sufficient and the computed pages are sealed as evidence: a predocs:build hook regenerates the computed pages — dashboard, boundaries, CHALLENGES, HEART, ACCOUNTING — before the site builds, so a fresh clone has no dead links and production renders every page. The pages are also committed as sealed evidence, timestamped in git: computed AND stored as the record, the generator and ledger the source, the commit the snapshot. Still computed, not hand-authored. Decidable  ·  `ccda8e65-9635…`
+- [the_build_is_faster_and_cheaper_with_content_addressed_receipts_classical_caching_not_quantum](/theorem/the_build_is_faster_and_cheaper_with_content_addressed_receipts_classical_caching_not_quantum) — the build is faster and cheaper with content-addressed receipts — classical caching, not a quantum machine: if the receipt is unchanged the work is skipped — an order-one verify instead of an order-N rebuild — and the saving grows with what is cached. The quantum here is the multi-perspective recomputable structure; the speedup is classical memoization and caching, not a quantum machine. Decidable  ·  `b90f343e-a21e…`
 
 ### relation (55)
 
@@ -1277,4 +1278,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `e70db566-abb3-85fb-b10c-950f0ffbbfb0`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `1d76b916-2e94-806d-b963-cc6b98c94a53`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

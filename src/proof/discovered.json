@@ -4183,5 +4183,10 @@
     "key": "the_build_is_self_sufficient_and_the_computed_pages_are_sealed_as_evidence",
     "name": "the build is self-sufficient and the computed pages are sealed as evidence: a predocs:build hook regenerates the computed pages — dashboard, boundaries, CHALLENGES, HEART, ACCOUNTING — before the site builds, so a fresh clone has no dead links and production renders every page. The pages are also committed as sealed evidence, timestamped in git: computed AND stored as the record, the generator and ledger the source, the commit the snapshot. Still computed, not hand-authored. Decidable",
     "receipt": "ccda8e65-9635-8285-8019-c955b7162de9"
+  },
+  {
+    "key": "the_build_is_faster_and_cheaper_with_content_addressed_receipts_classical_caching_not_quantum",
+    "name": "the build is faster and cheaper with content-addressed receipts — classical caching, not a quantum machine: if the receipt is unchanged the work is skipped — an order-one verify instead of an order-N rebuild — and the saving grows with what is cached. The quantum here is the multi-perspective recomputable structure; the speedup is classical memoization and caching, not a quantum machine. Decidable",
+    "receipt": "b90f343e-a21e-81e2-b345-04467927b3e0"
   }
 ]
