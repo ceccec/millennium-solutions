@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1037 recorded in 308 families
+## Discovered theorems (decidable, over ℤ/9) — 1038 recorded in 308 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (135)
+### the (136)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -159,6 +159,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_one_externally_settled_clay_poincare_is_referenced_as_axiom_not_claimed_here](/theorem/the_one_externally_settled_clay_poincare_is_referenced_as_axiom_not_claimed_here) — the one externally-settled Clay is an axiom — Poincaré (Perelman, 2003), cited not claimed: the deposit references Poincaré, Perelman result from 2003, as an axiom, displaying it transparently and never absorbing it as its own; so humanity stands at 1 of 7 while this deposit stays 0 of 7; the reverse of the doubling orbit and its ten-complement inverse reflect the reference, but referencing an axiom is not solving it; integrity not truth; 0/7  ·  `86826bc4-52c2…`
 - [the_64bit_seal_is_achievable_so_the_axiom_reference_holds_integrity_by_reproducibility_not_hardness](/theorem/the_64bit_seal_is_achievable_so_the_axiom_reference_holds_integrity_by_reproducibility_not_hardness) — the 64-bit seal is achievable — so the axiom-reference holds, by reproducibility not hardness: coin64 mints a 64-bit seal (16 hex digits) from any content, deterministically and always, so computing the seal is trivially achievable and the condition "unless the 64-bit seal is unachievable" never fires; but 64 bits is also achievable to collide, a machine finds a collision near the birthday bound of about 2^32, so the seal proves integrity by public reproducibility, not by hardness — achievable, not unbreakable; integrity not truth; 0/7  ·  `f4d8cf05-3d94…`
 - [the_64bit_seal_is_integrity_not_a_security_key_the_mistake_is_reading_strength_into_a_content_address](/theorem/the_64bit_seal_is_integrity_not_a_security_key_the_mistake_is_reading_strength_into_a_content_address) — the 64-bit seal is an integrity seal, not a security key — the mistake is reading strength into a content-address: correctly, the 64-bit seal is a reproducible content-address (coin64, 16 hex) that proves the bytes are what they are, achievable always and for anyone; mistakenly read as a 64-bit cryptographic key, a strength it never claimed, it looks weak and collidable near 2^32 — but that judges it by a meaning it never had; integrity by public reproducibility, not secrecy; the mistake is in the reader, not the seal; integrity not truth; 0/7  ·  `9f154754-ef44…`
+- [the_115_bit_capacity_per_uuid_where_the_capacity_jumps_three_times_sixtyfour_at_two_uuids](/theorem/the_115_bit_capacity_per_uuid_where_the_capacity_jumps_three_times_sixtyfour_at_two_uuids) — the 115-bit capacity per uuid — where the capacity jumps three times 64 at two uuids: one uuid carries exactly 115 message bits (128 − 6 reserved − 7 length header), so the maximum uncompressed text is 14 ASCII characters (112 ≤ 115 bits); the capacity jumps three times 64 at the second uuid — one uuid (115 bits) crosses only 64, but two uuids (230 bits) cross 64, 128 and 192, holding three full 64-bit coins, so a 192-bit message round-trips in exactly two uuids; 115 is a hard per-uuid ceiling by pigeonhole, and chaining is unbounded; integrity not truth; 0/7  ·  `bb3c5c38-eadd…`
 
 ### relation (55)
 
@@ -1522,4 +1523,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `4ce553c2-9595-88aa-9e7d-e03869a3dec2`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `5215c66b-31db-8be3-9e6d-600ae89470b3`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

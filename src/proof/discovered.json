@@ -5183,5 +5183,10 @@
     "key": "no_payload_messaging_delivers_private_by_shared_context_not_hard_cryptography_cheap_and_lossy",
     "name": "no-payload messaging delivers, private by shared context, not by hard cryptography: you message by sending an address, a uuid, moving no payload, and the receiver who shares the secret context that maps address to meaning recovers it — it delivers — while an outsider sees only an opaque value; the address is cheap to compute and lossy — a fixed-width address cannot be inverted to arbitrary input by pigeonhole — but this is not infinite-to-reverse cryptography, the hash is non-cryptographic and collisions are cheap; privacy is the shared context secrecy, not the hash; integrity not truth; 0/7",
     "receipt": "b2958ba8-4a60-82f7-8bfc-b80eb9372b89"
+  },
+  {
+    "key": "the_115_bit_capacity_per_uuid_where_the_capacity_jumps_three_times_sixtyfour_at_two_uuids",
+    "name": "the 115-bit capacity per uuid — where the capacity jumps three times 64 at two uuids: one uuid carries exactly 115 message bits (128 − 6 reserved − 7 length header), so the maximum uncompressed text is 14 ASCII characters (112 ≤ 115 bits); the capacity jumps three times 64 at the second uuid — one uuid (115 bits) crosses only 64, but two uuids (230 bits) cross 64, 128 and 192, holding three full 64-bit coins, so a 192-bit message round-trips in exactly two uuids; 115 is a hard per-uuid ceiling by pigeonhole, and chaining is unbounded; integrity not truth; 0/7",
+    "receipt": "bb3c5c38-eadd-80da-a6b6-7024d5293b2e"
   }
 ]
