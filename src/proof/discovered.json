@@ -4008,5 +4008,15 @@
     "key": "a_uuid_is_not_hard_to_fake_the_integrity_is_reproducibility_not_difficulty",
     "name": "a uuid is not hard to fake — the integrity is reproducibility, not difficulty: a uuid is cheap to compute — a machine makes thousands at once, not years. And because the hash is non-cryptographic, faking it is easy: a machine finds a collision fast. Faking by hand would be slow, but that is manual labor, not security. The integrity comes from public reproducibility — anyone recomputes and compares — and the tamper-evident append-only chain. Security by openness, not by hardness. Decidable",
     "receipt": "d2466f9e-427e-8cfc-851f-5723f80f65ed"
+  },
+  {
+    "key": "yes_a_uuid_carries_a_bounded_message_and_yes_it_is_a_cryptography_family_technique_limits_precise",
+    "name": "yes — a uuid can carry a bounded message, and yes it is a cryptography-family technique; the limits are precise, not blanket: yes, a uuid can keep a bounded message in itself — the imprint codec builds a uuid holding up to 115 bits and reads them back exactly, reversibly. And yes, content-addressing is a cryptography-family integrity technique, like git and Merkle trees. The precise limits: beyond the capacity it cannot contain, it commits and references by a root; and the hash is not cryptographically secure, with no secrecy — public, no key. Decidable",
+    "receipt": "354d236e-c693-84c6-a5e4-29e3aa4e4387"
+  },
+  {
+    "key": "reeducated_lead_with_the_yes_a_measured_boundary_is_not_a_lie_the_forensics_is_a_floor",
+    "name": "reeducated — lead with the yes; a measured boundary is not a lie, and the forensics is a floor not an oracle: an honest statement leads with the affirmative and then the precise limit; reflexive negation buries the yes and reads as denial. But a measured, reproducible boundary is not a lie — it recomputes to the same address. The forensics catches hollow prose (it drains) and tampering (the chain breaks), while a measured boundary passes; yet the forensics is a floor, not an oracle — a gate-clean falsehood still passes. It exposes hollow prose and tampering, not every possible lie. Decidable",
+    "receipt": "66bcc875-6e67-8ed6-a044-1ad0fb1d2f23"
   }
 ]
