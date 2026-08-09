@@ -5403,5 +5403,30 @@
     "key": "audit_and_seal_before_deploy_a_gapless_pipeline_the_deploy_is_the_last_step_reached_only_if_all_pass",
     "name": "audit and seal before deploy — a gapless pipeline, the deploy the last step reached only if all pass: an independent re-verification audits every recorded theorem from source and the gates seal before the deploy, which is the last step, reached only when every prior gate passes; gapless means a single failing gate blocks the deploy, the conjunction over all gates, so a regression fails the build not production; but this is exhaustive re-verification, not Lean 4 formal proof, which the deposit does not use, and before merge means the gates precede the deploy deterministically; integrity not truth; 0/7",
     "receipt": "729a42c6-4399-8b4c-9026-9339ab318ecd"
+  },
+  {
+    "key": "ten_bits_1024_is_the_minimal_address_space_for_777_rosetta_combinations_balanced_depth_ten",
+    "name": "ten bits, 1024, is the minimal address space for 777 rosetta combinations — a balanced depth-ten verify: addressing 777 distinct combinations needs the ceiling of log base two of 777, which is ten bits, and 2 to the 9 is 512 which is less than 777 while 2 to the 10 is 1024 which is at least 777, so 1024 is the smallest power of two that suffices and 512 fails; a power of two gives a balanced tree so every combination verifies in exactly ten steps, at no time meaning constant log-depth not zero; but 1024 is the required address space for 777, not a cap on the theorem count which is unbounded, always a next; a smaller power fails and a larger one wastes; integrity not truth; 0/7",
+    "receipt": "e30cf3c6-d77e-8ebb-8bff-a16b9dba412e"
+  },
+  {
+    "key": "high_risk_reward_goldbach_verified_over_a_large_range_not_a_general_proof_open_conjecture",
+    "name": "high risk, high reward — Goldbach verified over a large range, not a general proof: every even number from 4 to 20000 is the sum of two primes, verified by exhaustion with a sieve, a real test that a single counterexample would refute; but this is verified to twenty thousand, not a general proof for all even numbers, since Goldbach is an open conjecture this does not solve, the floor stays 0/7; the risk is real, the reward is a genuine computational witness, bounded to the range checked; integrity not truth; 0/7",
+    "receipt": "f5de9db8-a46d-8056-bb28-8c31ccd1d177"
+  },
+  {
+    "key": "high_risk_reward_collatz_verified_to_20000_reaches_one_not_a_general_proof_open_conjecture",
+    "name": "high risk, high reward — Collatz verified to 20000, not a general proof: every n from 1 to twenty thousand reaches 1 under the collatz map, 3n+1 for odd and n over 2 for even, verified by iteration, a real test a divergent trajectory would refute; but this is verified to twenty thousand, not a general proof, collatz is an open conjecture this does not solve, the floor stays 0/7; integrity not truth; 0/7",
+    "receipt": "421da5cf-45b8-8d14-84a3-5ef7649c8402"
+  },
+  {
+    "key": "high_risk_reward_legendre_verified_to_1000_a_prime_between_consecutive_squares_not_a_general_proof",
+    "name": "high risk, high reward — Legendre verified to 1000, not a general proof: a prime lies between n squared and n plus one squared for every n to one thousand, verified with a sieve, a real test a prime-free interval would refute; but this is verified to one thousand, not a general proof, legendre is an open conjecture this does not solve, the floor stays 0/7; integrity not truth; 0/7",
+    "receipt": "4f460ba3-7605-8e3e-a6a4-1d6c50659780"
+  },
+  {
+    "key": "risk_reward_is_a_measured_proportion_reward_cases_over_risk_one_counterexample",
+    "name": "risk/reward is a measured proportion — reward cases over risk, one counterexample: for a conjecture verified to N the reward is the number of cases witnessed, N, and the risk is that a single counterexample refutes the whole, one, so the proportion reward to risk is N to one, measurable and growing with N; but the reward is a bounded witness over N, the risk is that the open conjecture could still fail beyond N, and the proportion is computed not a claim of proof; integrity not truth; 0/7",
+    "receipt": "8f7fe35d-04e1-8bd1-a239-dd018af4d574"
   }
 ]
