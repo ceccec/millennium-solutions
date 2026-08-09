@@ -4863,5 +4863,10 @@
     "key": "seal_math_n1024_verify_20_bits",
     "name": "seal math — a case of 1024 receipts: the seal stays 128 bits while membership verifies in 10 merkle steps = 20 bits (2 per verification), logarithmic in the case size; integrity not truth; 0/7",
     "receipt": "f9ee3ca4-31b2-88c8-9edf-9af50c6cead7"
+  },
+  {
+    "key": "the_967_receipt_case_verify_20_bits_bill_on_the_967_computation_value_earn_the_947_bit_saving",
+    "name": "the 967-receipt case — verify 20 bits, bill on the 967-computation value, earn the 947-bit saving, two coins conserved: a case of 967 receipts verifies membership in ⌈log₂967⌉ = 10 merkle steps = 20 bits, while the value delivered is the 967 computations the customer would otherwise recompute; uuidna bills on that value and verifies at 20 bits, earning the measured 967−20 = 947-bit saving with the two coins conserved — you bill for value delivered, not hidden work; classical logarithmic verification, not a quantum-hardware advantage; integrity not truth; 0/7",
+    "receipt": "b7dd9563-39b5-8dfe-8b0a-1555c0d3cfc5"
   }
 ]

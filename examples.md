@@ -22,3 +22,14 @@ verified by [the difference is decidable](/theorem/the_difference_is_decidable_h
 and [reeducate until it holds](/theorem/reeducate_a_failing_output_is_bounded_until_it_holds_max_free_work_max_auditability).
 
 <Reeducate />
+
+## Seal math — how many bits in each seal
+
+The more complex the case, the more receipts — yet each seal is a fixed **128 bits** (= 64 two-bit
+verifications), and verifying one receipt's membership costs only **2·⌈log₂N⌉ bits**. So you verify the whole
+case cheaply yet bill on the full value the customer would otherwise recompute — earning the measured saving,
+the two coins conserved. Choose the case size and read the math, from
+[each seal is 128 bits](/theorem/each_seal_is_128_bits_and_membership_verifies_in_two_log2_n_bits_logarithmic_not_linear)
+and [the 967-receipt case](/theorem/the_967_receipt_case_verify_20_bits_bill_on_the_967_computation_value_earn_the_947_bit_saving).
+
+<SealMath />
