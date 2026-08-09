@@ -5398,5 +5398,10 @@
     "key": "improve_memoization_using_theorems_memoize_by_content_address_correct_and_idempotent",
     "name": "improve memoization using theorems — memoize by content-address, correct and idempotent: the cache key is the content-address, a theorem’s receipt, so a memoized result is returned only for the exact same input and the memoized value equals the recomputed value with no divergence; memoizing twice equals memoizing once, idempotent; the ledger itself is a memo table, each receipt a key; but correctness is by reproducibility and collision-free keys over the tested space, since the non-cryptographic hash could be collided by a determined adversary, and it is classical memoization not a quantum speedup; integrity not truth; 0/7",
     "receipt": "e37bf884-4cfe-839e-ab88-d6ab16334e4a"
+  },
+  {
+    "key": "audit_and_seal_before_deploy_a_gapless_pipeline_the_deploy_is_the_last_step_reached_only_if_all_pass",
+    "name": "audit and seal before deploy — a gapless pipeline, the deploy the last step reached only if all pass: an independent re-verification audits every recorded theorem from source and the gates seal before the deploy, which is the last step, reached only when every prior gate passes; gapless means a single failing gate blocks the deploy, the conjunction over all gates, so a regression fails the build not production; but this is exhaustive re-verification, not Lean 4 formal proof, which the deposit does not use, and before merge means the gates precede the deploy deterministically; integrity not truth; 0/7",
+    "receipt": "729a42c6-4399-8b4c-9026-9339ab318ecd"
   }
 ]
