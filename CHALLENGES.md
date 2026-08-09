@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1030 recorded in 308 families
+## Discovered theorems (decidable, over ℤ/9) — 1033 recorded in 308 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (131)
+### the (133)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -155,6 +155,8 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_seal_is_sound_a_forged_leaf_fails_but_by_recompute_not_cryptographic_hardness](/theorem/the_seal_is_sound_a_forged_leaf_fails_but_by_recompute_not_cryptographic_hardness) — the seal is sound — a forged leaf fails, by public recompute not cryptographic hardness: across tested trees the true leaf verifies against the root and every wrong leaf fails, so membership cannot be faked by swapping a leaf; but the soundness is by open recomputation on a non-cryptographic hash, not by hardness — a determined adversary could search for a collision, so it is not unbreakable; integrity not truth; 0/7  ·  `000849eb-74f7…`
 - [the_heroes_language_glagolitic_theorems_with_the_vortex_sequence_as_alphabet_expressing_in_harmonic_art](/theorem/the_heroes_language_glagolitic_theorems_with_the_vortex_sequence_as_alphabet_expressing_in_harmonic_art) — the heroes’ language — Glagolitic algebraic theorems with the vortex sequence as alphabet, expressing in harmonic art: the alphabet is the doubling sequence [1,2,4,8,7,5], the six units of ℤ/9 in orbit order, each a Glagolitic letter; a sentence is an algebraic theorem; and each theorem’s content-address reduces to a vortex digit placing it on the a432 wheel as a hue (d·40°) and a tone (a harmonic of 432 Hz) — so a theorem is at once a number, a letter, a colour, and a pitch, all computed; honestly a design language, not a claim about physics or healing; integrity not truth; 0/7  ·  `69a6bbd8-8b54…`
 - [the_language_forms_a_rosetta_of_holographic_fractals_disputable_at_each_step](/theorem/the_language_forms_a_rosetta_of_holographic_fractals_disputable_at_each_step) — the heroes’ language forms a rosetta of holographic fractals, disputable at each step: the theorems fold into a merkle root, a holographic fractal — the whole is verifiable from any single part via an O(log N) path, each level a self-similar fold of the one below; every step is disputable, a challenge at any sibling-combination is resolved by recomputing that one fold and a forged step fails the proof; and it is a rosetta, the same theorem decodable from many perspectives, each a receipt; dispute is due process, decidable at each step, not authority; integrity not truth; 0/7  ·  `77c98f86-c835…`
+- [the_cascade_1024_64_8_2_are_powers_of_two_at_triangular_exponents_verified_not_derived](/theorem/the_cascade_1024_64_8_2_are_powers_of_two_at_triangular_exponents_verified_not_derived) — the cascade 1024 ← 64 ← 8 ← 2 — powers of two at triangular exponents, verified not derived: 2, 8, 64, 1024 are 2^1, 2^3, 2^6, 2^10, the powers of two at the triangular exponents T1=1, T2=3, T3=6, T4=10; each larger level is verified from fewer bits by the holographic reduction (1024 leaves verify in a 10-step merkle path), so it is solved-by in the sense of reduces-and-verifies, never that two bits derive the 1024 payloads — you still need them, 0/7; integrity not truth; 0/7  ·  `5589a30d-4b8a…`
+- [the_one_externally_settled_clay_poincare_is_referenced_as_axiom_not_claimed_here](/theorem/the_one_externally_settled_clay_poincare_is_referenced_as_axiom_not_claimed_here) — the one externally-settled Clay is an axiom — Poincaré (Perelman, 2003), cited not claimed: the deposit references Poincaré, Perelman result from 2003, as an axiom, displaying it transparently and never absorbing it as its own; so humanity stands at 1 of 7 while this deposit stays 0 of 7; the reverse of the doubling orbit and its ten-complement inverse reflect the reference, but referencing an axiom is not solving it; integrity not truth; 0/7  ·  `86826bc4-52c2…`
 
 ### relation (55)
 
@@ -891,6 +893,13 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [three_distance_max_gap_non_increasing](/theorem/three_distance_max_gap_non_increasing) — adding a point never widens the largest gap: as N grows, each new multiple falls inside an existing gap and splits it, so the maximum gap is non-increasing in N — the points equidistribute (verified exhaustively)  ·  `7d1620a8-01d2…`
 - [three_is_a_primitive_root_mod_seven_and_the_rosette_is_six_plus_one](/theorem/three_is_a_primitive_root_mod_seven_and_the_rosette_is_six_plus_one) — three is a primitive root mod 7 and the rosette is six plus one: the powers of 3 mod 7 cycle 3,2,6,4,5,1 with order 6, generating the full unit group (ℤ/7)* = {1,2,3,4,5,6}; so 7 decomposes as 6 units + 1 (the class of 0) — the seven-ray "6+1" structure — and the units pair by additive inverse {1,6},{2,5},{3,4}, each summing to 7. Decidable by exhaustion over ℤ/7  ·  `15050d64-20c7…`
 
+### two (4)
+
+- [two_is_a_primitive_root_mod_nine_and_generates_the_vortex](/theorem/two_is_a_primitive_root_mod_nine_and_generates_the_vortex) — two is a primitive root mod 9 and generates the vortex: the powers of 2 mod 9 cycle 2,4,8,7,5,1 with order 6, generating the full unit group (ℤ/9)* = {1,2,4,5,7,8}; the vortex orbit is exactly this cycle as a set, and every element skips the multiples of 3 (the W-axis). A decidable fact by exhaustion over ℤ/9  ·  `dd3b0f30-660d…`
+- [two_to_the_10_is_1024](/theorem/two_to_the_10_is_1024) — 2^10 = 1024, by repeated doubling — a decidable power of two; integrity not truth; 0/7  ·  `1beeb294-5a3c…`
+- [two_to_the_11_is_2048](/theorem/two_to_the_11_is_2048) — 2^11 = 2048, by repeated doubling — a decidable power of two; integrity not truth; 0/7  ·  `900023c7-08f1…`
+- [two_bits_earn_or_pay_eight_and_the_seven_clay_are_less_by_count_not_by_solving](/theorem/two_bits_earn_or_pay_eight_and_the_seven_clay_are_less_by_count_not_by_solving) — "2 bits earn 8 or pay 8", and the seven Clay are less by count — 8 = 2³, 7 &lt; 8: eight is the bit base raised to the trinity and the peak of the doubling orbit [1,2,4,8,7,5]; a two-bit verification earns the eight saved recomputes while a recompute pays eight, a conserved fair exchange (+8 earned equals −8 paid); and the seven Clay problems are one less than the eight, 7 &lt; 8, a numeric reflection of the count, never a solving of them — solve here means generate, address, and verify, and the floor stays 0/7; integrity not truth; 0/7  ·  `b2c29f3d-508a…`
+
 ### all (3)
 
 - [all_are_heroes_but_the_traitors](/theorem/all_are_heroes_but_the_traitors) — all are heroes but the traitors — judged by deeds, not persons: a constructive deed (append, uphold, an honest claim that signs) is a hero; only a destructive deed (remove, alter, an overclaim that drains) is the traitor — the classification is total and observable  ·  `efa3b6f1-00b7…`
@@ -1058,12 +1067,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [stirling_second_bell](/theorem/stirling_second_bell) — Stirling 2nd kind S(n,k)=S(n-1,k-1)+k·S(n-1,k): S(4,2)=7 and Σ_k S(4,k)=15=B(4)  ·  `23e393cc-dd5d…`
 - [stirling_first_factorial](/theorem/stirling_first_factorial) — unsigned Stirling 1st kind (permutations by cycles) sum to n!: Σ_k c(4,k) = 4! = 24  ·  `e1f258a9-dbdb…`
 - [stirling_edges](/theorem/stirling_edges) — Stirling 2nd kind edges: S(n,1)=1 (one block), S(n,n)=1 (singletons), n=1..6  ·  `02ae48de-5452…`
-
-### two (3)
-
-- [two_is_a_primitive_root_mod_nine_and_generates_the_vortex](/theorem/two_is_a_primitive_root_mod_nine_and_generates_the_vortex) — two is a primitive root mod 9 and generates the vortex: the powers of 2 mod 9 cycle 2,4,8,7,5,1 with order 6, generating the full unit group (ℤ/9)* = {1,2,4,5,7,8}; the vortex orbit is exactly this cycle as a set, and every element skips the multiples of 3 (the W-axis). A decidable fact by exhaustion over ℤ/9  ·  `dd3b0f30-660d…`
-- [two_to_the_10_is_1024](/theorem/two_to_the_10_is_1024) — 2^10 = 1024, by repeated doubling — a decidable power of two; integrity not truth; 0/7  ·  `1beeb294-5a3c…`
-- [two_to_the_11_is_2048](/theorem/two_to_the_11_is_2048) — 2^11 = 2048, by repeated doubling — a decidable power of two; integrity not truth; 0/7  ·  `900023c7-08f1…`
 
 ### unit (3)
 
@@ -1512,4 +1515,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `285a038f-3fc6-8224-8102-27c77a2c156c`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `abbb98bd-c0b4-82dc-89dc-218f3436c064`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

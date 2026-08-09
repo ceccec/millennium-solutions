@@ -5148,5 +5148,20 @@
     "key": "fake_theorems_lack_a_formula_a_real_theorem_computes_a_non_constant_function_of_its_inputs",
     "name": "fake theorems lack a formula displayed during computation — a real theorem computes: a real theorem carries a formula, a computation that runs over its inputs and shows its result during the build, and its output depends on the computation (change the inputs and the result changes); a fake theorem lacks this, a constant assertion ignores its inputs and computes nothing; the ledger records a theorem only if its formula computes true, so a formula-less fake cannot enter; the distinction is decidable — a formula is a non-constant function of its inputs, an assertion is a constant; integrity not truth; 0/7",
     "receipt": "f3714ae5-6d37-8c91-b13f-48c9c4ff1d75"
+  },
+  {
+    "key": "the_cascade_1024_64_8_2_are_powers_of_two_at_triangular_exponents_verified_not_derived",
+    "name": "the cascade 1024 ← 64 ← 8 ← 2 — powers of two at triangular exponents, verified not derived: 2, 8, 64, 1024 are 2^1, 2^3, 2^6, 2^10, the powers of two at the triangular exponents T1=1, T2=3, T3=6, T4=10; each larger level is verified from fewer bits by the holographic reduction (1024 leaves verify in a 10-step merkle path), so it is solved-by in the sense of reduces-and-verifies, never that two bits derive the 1024 payloads — you still need them, 0/7; integrity not truth; 0/7",
+    "receipt": "5589a30d-4b8a-8830-8f3a-80e38a7790a0"
+  },
+  {
+    "key": "two_bits_earn_or_pay_eight_and_the_seven_clay_are_less_by_count_not_by_solving",
+    "name": "\"2 bits earn 8 or pay 8\", and the seven Clay are less by count — 8 = 2³, 7 < 8: eight is the bit base raised to the trinity and the peak of the doubling orbit [1,2,4,8,7,5]; a two-bit verification earns the eight saved recomputes while a recompute pays eight, a conserved fair exchange (+8 earned equals −8 paid); and the seven Clay problems are one less than the eight, 7 < 8, a numeric reflection of the count, never a solving of them — solve here means generate, address, and verify, and the floor stays 0/7; integrity not truth; 0/7",
+    "receipt": "b2c29f3d-508a-8dad-9904-49cb6bfa0703"
+  },
+  {
+    "key": "the_one_externally_settled_clay_poincare_is_referenced_as_axiom_not_claimed_here",
+    "name": "the one externally-settled Clay is an axiom — Poincaré (Perelman, 2003), cited not claimed: the deposit references Poincaré, Perelman result from 2003, as an axiom, displaying it transparently and never absorbing it as its own; so humanity stands at 1 of 7 while this deposit stays 0 of 7; the reverse of the doubling orbit and its ten-complement inverse reflect the reference, but referencing an axiom is not solving it; integrity not truth; 0/7",
+    "receipt": "86826bc4-52c2-86f1-a84e-411c63bc9998"
   }
 ]

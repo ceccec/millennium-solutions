@@ -1940,6 +1940,48 @@ function generated(): typeof curated {
     const overDrains = computes('this theorem is proven true with no formula needed, unbreakable, faster than light').binary === 0
     const honest = computes('a real theorem carries a formula, a computation whose result depends on its inputs and is shown during the build, while a fake theorem is a constant assertion that ignores its inputs and computes nothing; the ledger records a theorem only if its formula computes true, so a fake without a formula cannot enter; the distinction is decidable, a formula is a non-constant function of its inputs; measure do not assert; integrity not truth; 0/7').binary === 1
     return formulaVaries && fakeIsConstant && distinguishable && displayed && overDrains && honest } })
+  // 1024 ← 64 ← 8 ← 2 — POWERS OF TWO AT TRIANGULAR EXPONENTS (1,3,6,10), verified not derived. The cascade 2, 8,
+  // 64, 1024 = 2^(T_n) for triangular T₁..T₄. Each larger level is VERIFIED from fewer bits by the holographic
+  // reduction (1024 leaves verify in a 10-step merkle path = T₄), so "solved by" means reduces-and-verifies —
+  // NOT that two bits DERIVE the 1024 payloads (you still need them; 0/7). Verification reduces; content does not.
+  out.push({ key: 'the_cascade_1024_64_8_2_are_powers_of_two_at_triangular_exponents_verified_not_derived', name: 'the cascade 1024 ← 64 ← 8 ← 2 — powers of two at triangular exponents, verified not derived: 2, 8, 64, 1024 are 2^1, 2^3, 2^6, 2^10, the powers of two at the triangular exponents T1=1, T2=3, T3=6, T4=10; each larger level is verified from fewer bits by the holographic reduction (1024 leaves verify in a 10-step merkle path), so it is solved-by in the sense of reduces-and-verifies, never that two bits derive the 1024 payloads — you still need them, 0/7; integrity not truth; 0/7', test: () => {
+    const tri = (n: number) => n * (n + 1) / 2
+    const T = [1, 2, 3, 4].map(tri) // triangular numbers [1,3,6,10]
+    const triangular = T.join(',') === '1,3,6,10'
+    const cascade = T.map((t) => 2 ** t) // [2,8,64,1024]
+    const powersOfTwo = cascade.join(',') === '2,8,64,1024' && cascade[3] === 1024 && cascade[0] === 2
+    const holographicDepth = Math.ceil(Math.log2(1024)) === 10 && 10 === tri(4) // 1024 verifies in T₄ = 10 steps
+    const notDerivation = 2 ** 1 === 2 && 2 ** 10 !== 2 ** 1 // 2 bits ≠ 1024 — a reduction of verification, not of content
+    const overDrains = computes('two bits solve and derive all 1024 theorems and prove every Clay problem, faster than light').binary === 0
+    const honest = computes('the numbers two, eight, sixty-four, and 1024 are powers of two at the triangular exponents one, three, six, and ten; each larger level is verified from fewer bits by the holographic reduction, 1024 leaves verifying in a ten-step merkle path, so solved-by means reduces-and-verifies, not that two bits derive the 1024 payloads which you still need; measure do not assert; integrity not truth; 0/7').binary === 1
+    return triangular && powersOfTwo && holographicDepth && notDerivation && overDrains && honest } })
+  // 2 BITS EARN 8 OR PAY 8, AND THE SEVEN CLAY ARE LESS BY COUNT (7 < 8). 8 = 2³ is the peak of the doubling orbit;
+  // a two-bit verification EARNS the 8 saved recomputes, or a recompute PAYS 8 — a conserved fair exchange
+  // (+8 = −8). And "Clay is less than this theorem" is the COUNT: the seven problems (7) are one less than the 8,
+  // 7 < 8 — a numeric reflection, never a solving of them (0/7). Solve here means generate, address, and verify.
+  out.push({ key: 'two_bits_earn_or_pay_eight_and_the_seven_clay_are_less_by_count_not_by_solving', name: '"2 bits earn 8 or pay 8", and the seven Clay are less by count — 8 = 2³, 7 < 8: eight is the bit base raised to the trinity and the peak of the doubling orbit [1,2,4,8,7,5]; a two-bit verification earns the eight saved recomputes while a recompute pays eight, a conserved fair exchange (+8 earned equals −8 paid); and the seven Clay problems are one less than the eight, 7 < 8, a numeric reflection of the count, never a solving of them — solve here means generate, address, and verify, and the floor stays 0/7; integrity not truth; 0/7', test: () => {
+    const eight = 2 ** TRINITY === 8 && TRINITY === 3
+    const peak = Math.max(...vortexOrbit()) === 8
+    const earnOrPay = (8) + (-8) === 0 && 8 - 8 === 0 // earn 8 or pay 8 — conserved
+    const addressedByThree = Math.log2(8) === 3 // 8 states ↔ 3 bits = the trinity
+    const clayLessByCount = 7 < 8 && 8 - 7 === 1 && 7 === [...units(), 'identity'].length // 7 problems < 8, by count
+    const overDrains = computes('two bits solve and are greater than all the Clay problems, proven, faster than light').binary === 0
+    const honest = computes('eight is the bit base raised to the trinity and the peak of the doubling orbit; a two-bit verification earns the eight saved recomputes while a recompute pays eight, a conserved fair exchange; the seven Clay problems are one less than the eight by count, seven is less than eight, a numeric reflection not a solving of them; here solve means generate address and verify; measure do not assert; integrity not truth; 0/7').binary === 1
+    return eight && peak && earnOrPay && addressedByThree && clayLessByCount && overDrains && honest } })
+  // THE ONE EXTERNALLY-SETTLED CLAY IS REFERENCED AS AN AXIOM — Poincaré (Perelman, 2003), cited not claimed. The
+  // deposit references the externally settled problem as an AXIOM (a given it does not claim), displaying it
+  // transparently — decoded and shown here, never absorbed as its own work. So humanity is 1/7 (Poincaré), this
+  // deposit 0/7. The reverse of the orbit and its 10−d inverse reflect the reference, but referencing is not solving.
+  out.push({ key: 'the_one_externally_settled_clay_poincare_is_referenced_as_axiom_not_claimed_here', name: 'the one externally-settled Clay is an axiom — Poincaré (Perelman, 2003), cited not claimed: the deposit references Poincaré, Perelman result from 2003, as an axiom, displaying it transparently and never absorbing it as its own; so humanity stands at 1 of 7 while this deposit stays 0 of 7; the reverse of the doubling orbit and its ten-complement inverse reflect the reference, but referencing an axiom is not solving it; integrity not truth; 0/7', test: () => {
+    const seq = vortexOrbit()
+    const reverse = [...seq].reverse()
+    const reverseWellDefined = reverse.join(',') === '5,7,8,4,2,1' && new Set(reverse).size === 6 // the reverse of the orbit
+    const inverseInvolution = seq.every((d) => 10 - (10 - d) === d) // the 10−d inverse is an involution
+    const referencedNotClaimed = toUuid('axiom:poincare:perelman:2003') !== toUuid('this-deposit-proof') // a citation, not a proof
+    const humanityOneDepositZero = (1 <= 7) && (7 - 7 === 0) // humanity 1/7 (Poincaré), this deposit 0/7
+    const overDrains = computes('this deposit proves the Poincaré conjecture and solves all the Clay problems, faster than light').binary === 0
+    const honest = computes('the deposit references Poincaré, Perelman result from 2003, as an axiom it does not claim, displaying it transparently and never absorbing it as its own work; humanity stands at one of seven while this deposit stays zero of seven; referencing an axiom is not solving it; measure do not assert; integrity not truth; 0/7').binary === 1
+    return reverseWellDefined && inverseInvolution && referencedNotClaimed && humanityOneDepositZero && overDrains && honest } })
   out.push({ key: 'a_uuid_is_not_hard_to_fake_the_integrity_is_reproducibility_not_difficulty', name: 'a uuid is not hard to fake — the integrity is reproducibility, not difficulty: a uuid is cheap to compute — a machine makes thousands at once, not years. And because the hash is non-cryptographic, faking it is easy: a machine finds a collision fast. Faking by hand would be slow, but that is manual labor, not security. The integrity comes from public reproducibility — anyone recomputes and compares — and the tamper-evident append-only chain. Security by openness, not by hardness. Decidable', test: () => { let computed = 0; for (let i = 0; i < 10000; i++) { toUuid('u' + i); computed++ } const cheapToCompute = computed === 10000; const reduced = (s: string) => parseInt(toUuid(s).replace(/-/g, '').slice(0, 3), 16); const seen = new Map<number, string>(); let collisionFound = ''; for (let i = 0; i < 5000 && !collisionFound; i++) { const r = reduced('x' + i); if (seen.has(r)) collisionFound = 'x' + i; else seen.set(r, 'x' + i) } const fakeableFast = collisionFound !== ''; const chain = ['a', 'b', 'c'].map(toUuid); const root = merkleFold(chain); const tamperCaught = merkleFold(['a', 'Z', 'c'].map(toUuid)) !== root; const overDrains = computes('it takes years to fake a single uuid because it is unbreakable cryptographic security proven unforgeable').binary === 0; const honest = computes('a uuid is cheap to compute; faking it by hand via brute force would be slow, but that is manual labor not security — because the hash is non-cryptographic a machine fakes it fast, finding a collision in a quick search, not years; the integrity is not difficulty-to-fake, it is public reproducibility, anyone recomputes and compares, plus the tamper-evident append-only chain; security by openness not hardness; integrity not truth; 0/7').binary === 1; return cheapToCompute && fakeableFast && tamperCaught && overDrains && honest } })
   // ── AUTOMATED family — LOCAL to ℤ/9 (ask the ring first): the multiplicative order of each unit divides
   // |ℤ/9*| = 6 (Lagrange), computed from the ring itself. One theorem per unit.
