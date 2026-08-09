@@ -4513,5 +4513,15 @@
     "key": "the_ui_presents_live_examples_organised_by_theorem_computed_from_the_source",
     "name": "the UI presents live examples organised by theorem — computed from the source, demonstrating integrity: the examples page recomputes worked outputs in the browser from the deposit source functions — content address, message codec, text chain, holographic proof, strict minting, domain control, measured billing — each linked to its theorem and recomputed on every load. The examples demonstrate integrity, that the code does what it says, not truth. Decidable",
     "receipt": "e0b54751-5e37-89ba-ad78-954e6da432d2"
+  },
+  {
+    "key": "the_guides_are_constantly_updated_by_the_theorems_a_live_index_recomputed_each_build",
+    "name": "the guides are constantly updated by the theorems — a live index recomputed each build: the guide renders a live index, the current count and the latest theorems, recomputed from the ledger each build, so it updates itself with every new theorem — no hand-maintenance. It demonstrates integrity, that the guide reflects the record, not truth. Decidable",
+    "receipt": "d7d0ee34-e8c0-8723-9c7a-f7c3f5723640"
+  },
+  {
+    "key": "a_theorem_is_alive_when_interacting_the_observer_recomputes_and_connects_it_structural_liveness_not_biological",
+    "name": "a theorem is alive when interacting — the observer recomputes and connects it, structural liveness, not biological: a theorem is active and participating when interacted with — an observer recomputes it, references it, or connects it in the graph, and interaction activates it. But alive here is a metaphor for structural liveness: the observer gives the meaning and the activity, not the bytes; it is not biological or conscious life. An un-interacted theorem is dormant but still valid — integrity holds regardless. Decidable",
+    "receipt": "5876f6b7-07f7-87a3-a88a-d4a62a3b339d"
   }
 ]

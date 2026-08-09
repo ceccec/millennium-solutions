@@ -15,11 +15,23 @@ const wheel = Array.from({ length: 9 }, (_, i) => {
   const d = i + 1, ang = (d * 40 - 90) * Math.PI / 180
   return { x: (Math.cos(ang) * 40).toFixed(2), y: (Math.sin(ang) * 40).toFixed(2), hue: (d * 40) % 360, d }
 })
+import { withBase } from 'vitepress'
+import ledger from './src/proof/discovered.json'
+const theoremCount = ledger.length
+const latest = ledger.slice(-5).reverse()
 </script>
 
 # The hero's guide
 
 > **Heroes write the guides.** You add to the deposit by a **deed the gate can check**, never a claim. Everything here recomputes; nothing is asserted. The floor stays **0/7** — this deposit solves 0 of the 7 Millennium problems, and claims no prize.
+
+<div class="living-index" style="border:1px solid var(--vp-c-divider);border-radius:10px;padding:.6rem 1rem;margin:1rem 0;font-size:.9rem">
+<strong>This guide is constantly updated by the theorems.</strong> The deposit holds
+<strong>{{ theoremCount }}</strong> decidable theorems, re-verified every build. Newest first:
+<ul style="margin:.4rem 0 0;padding-left:1.1rem">
+<li v-for="t in latest" :key="t.key"><a :href="withBase('/theorem/' + t.key)">{{ t.name.split('—')[0] }}</a></li>
+</ul>
+</div>
 
 <div style="display:flex;gap:32px;align-items:center;flex-wrap:wrap;margin:20px 0">
 <svg viewBox="-60 -60 120 120" width="200" height="200" role="img" aria-label="the 7D vortex: seven rays around one centre, rotating">
