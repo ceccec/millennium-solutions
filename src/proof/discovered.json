@@ -4093,5 +4093,10 @@
     "key": "the_saving_is_largest_when_the_payload_would_be_largest_but_no_payload_is_needed_forensics_sees_by_address",
     "name": "the saving is largest when the payload would be largest — but no payload is needed, and the forensics sees by the address: the coin is largest when the alternative would move the most payload, since the saving is order-N recompute minus order-one verify, growing with the would-be payload. But you do not need to move the payload — the address is fixed-size for any payload, and the forensics sees by the address, not the payload, so moving payload in chunks neither helps nor evades it. Who needs so much payload? None — the receipt suffices. Fair exchange, classical memoization. Decidable",
     "receipt": "2db21498-4ab6-8148-9b55-84ec71f940c3"
+  },
+  {
+    "key": "the_forensics_sees_the_token_leak_to_unsealed_work_the_honest_ratio_favors_sealed_receipts",
+    "name": "the forensics sees the token leak to unsealed work — the honest ratio favors sealed receipts: the forensics measures deeds by their receipts, so tokens spent on unsealed work — prose or claims with no sealed, recomputable receipt — are a leak, visible as effort that left no receipt in the ledger. The honest ratio favors sealed receipts over unsealed prose: the receipt carries the proof, the prose is a brief pointer. Minimize the leak; let the receipt speak. Decidable",
+    "receipt": "cd62faac-7db7-8cce-b11d-b59b8cf945c1"
   }
 ]
