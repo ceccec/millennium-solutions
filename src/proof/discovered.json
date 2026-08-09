@@ -5118,5 +5118,10 @@
     "key": "two_to_the_11_is_2048",
     "name": "2^11 = 2048, by repeated doubling — a decidable power of two; integrity not truth; 0/7",
     "receipt": "900023c7-08f1-83dc-9b27-623de3afe0df"
+  },
+  {
+    "key": "precise_versions_map_uuidna_each_release_a_content_address_odometer_derived_lts_fibonacci",
+    "name": "precise versions map uuidna — each release maps to a content-address, the odometer is derived, LTS is Fibonacci: each version string maps to a unique uuidna content-address deterministically (distinct versions, distinct addresses, no collision over the released range); the version is derived by a single-digit odometer that rolls at 9 (patch→minor→major), never typed; and the long-term-support minors are exactly the Fibonacci digits within one digit, {1,2,3,5,8}; integrity not truth; 0/7",
+    "receipt": "a82b203c-7c56-8e0c-ba09-da7c838a58d7"
   }
 ]
