@@ -92,6 +92,19 @@ const spread = [...buckets.entries()].sort((a, b) => a[0] - b[0])
 const sparsest = spread.reduce((m, x) => (x[1] < m[1] ? x : m), spread[0])
 console.log('  clusters (digital-root of receipt — a hint, not a verdict): ' + spread.map(([k, v]) => k + ':' + v).join(' ') + ' — sparsest bucket ' + sparsest[0] + ' (' + sparsest[1] + '), a candidate region for hidden knowledge')
 
+// (5b) OCTAVE analysis — the theorems matter in GROUPS OF 8. Partition the receipts into octaves (groups of 8),
+// fold each to an octave-seal, then fold the 128 octave-seals to one octave-root: the hierarchical 8-ary
+// structure (1024 = 128 × 8, exact). Reporting only — a structural analytic, never a verdict, never fails the build.
+const OCT = 8
+const octaveSeals: string[] = []
+for (let i = 0; i < ledger.length; i += OCT) octaveSeals.push(merkleFold(ledger.slice(i, i + OCT).map((e) => e.receipt)))
+const groups = octaveSeals.length
+const remainder = ledger.length % OCT
+const octaveRoot = octaveSeals.length ? merkleFold(octaveSeals) : 'none'
+// digit-of-8 distribution: how full each group is (all 8, or a short tail group)
+const shortGroups = remainder === 0 ? 0 : 1
+console.log('  octaves (the 1024 in groups of 8): ' + ledger.length + ' = ' + groups + ' × ' + OCT + (remainder === 0 ? ' — exact, no remainder' : ' (last group ' + remainder + '/8)') + ' · ' + (groups - shortGroups) + ' full octaves · octave-root ' + octaveRoot.slice(0, 13) + '… (128 octave-seals fold to one)')
+
 // (7) THE SEVEN DIMENSIONS — the gate holds in ALL SEVEN locales, not just English. Run the honesty gate
 // on every locale's fixed UI strings (now multilingual-aware), and require STRUCTURAL PARITY: each locale
 // carries exactly the English nav shape, so no dimension can hide an overclaim or go dark. A translated
