@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, onMounted } from 'vue'
 import { useData } from 'vitepress'
-import { FUNDING, coins, results, PUBLIC_URLS, urlAddress, domainTrack } from '../../src/9/funding'
+import { FUNDING, coins, results, PUBLIC_URLS, urlAddress, domainTrack, contentDomain } from '../../src/9/funding'
 import { toUuid } from '../../src/0/index.ts'
 // The specific licensed referrer perspective: each page is a distinct observer, content-addressed by
 // its own path. The licensing formula is printed with THIS perspective's address — reproducible by anyone.
@@ -17,6 +17,16 @@ onMounted(() => {
   const t = domainTrack(host)
   currentTrack.value = t.track + ' — ' + t.note
   currentAddress.value = urlAddress(window.location.origin)
+  // Route each page to its canonical track — ONLY when already on a live uuidna domain (guarded), so the
+  // current host and previews never redirect and it never points at a non-live host. Swap host, keep path.
+  if (/\buuidna\.(org|com)$/.test(host)) {
+    const pageName = (page.value?.relativePath || 'index.md').replace(/\.md$/, '')
+    const wantCom = contentDomain(pageName) === 'com'
+    if (wantCom !== host.endsWith('uuidna.com')) {
+      const target = wantCom ? 'uuidna.com' : 'uuidna.org'
+      window.location.replace(window.location.protocol + '//' + target + window.location.pathname + window.location.search)
+    }
+  }
 })
 </script>
 <template>
