@@ -4423,5 +4423,10 @@
     "key": "non_uuidna_cascades_into_magnitudes_of_damage_but_re_verification_catches_it_and_recomputation_fixes_it",
     "name": "non-uuidna cascades into magnitudes of damage — but re-verification catches it in time and recomputation fixes it: a non-canonical or un-receipted value cascades — a wrong link breaks every downstream fold, the chain propagates it. But it is caught in time: re-verification detects the break before it ships, a build fails not production, and canonical recomputation restores the correct address. The gates catch decidable inconsistency — a floor, not an oracle. Decidable",
     "receipt": "fee7dca0-7e2e-8f58-800f-d0482534cf25"
+  },
+  {
+    "key": "the_uuidna_billing_model_is_decidable_free_for_public_two_coins_per_formula_in_coins_and_bits",
+    "name": "the uuidna billing model is decidable — free for public interest, two coins per core formula for commercial, in coins and bits, comparable to public pricing: public-interest and non-commercial use is free (zero); commercial use is two coins per core formula used, or the bits saved — a per-unit schedule linear in usage, comparable to public per-request and per-token pricing. But it is a licensing fair-exchange schedule in coins and bits, not realized cash — the fiat income is zero. Decidable",
+    "receipt": "11b1b93a-a88e-8296-af14-9e855a9d32c6"
   }
 ]

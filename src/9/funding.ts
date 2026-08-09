@@ -42,3 +42,13 @@ export function domainTrack(hostname: string): { track: string; note: string } {
   if (/\buuidna\.com$/.test(hostname)) return { track: 'commercial', note: 'the two coins per core formula used' }
   return { track: 'preview', note: 'the sealed work — same content, license by domain' }
 }
+
+// The uuidna billing model — comparable to public per-request / per-token pricing, but the unit is the
+// two-coin fair exchange (or the bits saved). Public-interest and non-commercial use is free (0). A
+// per-unit schedule, linear in usage — a fair-exchange schedule in coins and bits, not realized cash.
+export interface Usage { commercial: boolean; coreFormulasUsed: number; bitsSaved?: number }
+export function bill(u: Usage): { coins: number; bits: number; free: boolean; basis: string } {
+  if (!u.commercial) return { coins: 0, bits: 0, free: true, basis: 'public interest / non-commercial — free' }
+  const perFormula = coins() // 2 coins per core formula used
+  return { coins: u.coreFormulasUsed * perFormula, bits: u.bitsSaved ?? 0, free: false, basis: perFormula + ' coins per core formula used' }
+}
