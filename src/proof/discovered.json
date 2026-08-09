@@ -5318,5 +5318,45 @@
     "key": "uuidna_crypt_aead_ciphertext_depends_on_the_key",
     "name": "uuidna crypt AEAD ciphertext depends on the key — a changed key changes the ciphertext; 0/7",
     "receipt": "65f00e32-b6ee-8ca8-9e90-95e08e15a762"
+  },
+  {
+    "key": "pure_ts_sha256_matches_the_55_byte_boundary_vector",
+    "name": "pure-TS SHA-256 matches the 55-byte single-block-boundary vector — the padding still fits one block; transparent, no native crypto; 0/7",
+    "receipt": "b72406b4-72b1-8b93-bf7c-42e006035c1e"
+  },
+  {
+    "key": "pure_ts_sha256_matches_the_56_byte_boundary_vector",
+    "name": "pure-TS SHA-256 matches the 56-byte vector where padding forces a second block — transparent, no native crypto; 0/7",
+    "receipt": "52241e8b-dbbe-8ee0-85a4-043d8e59a547"
+  },
+  {
+    "key": "pure_ts_sha256_matches_the_64_byte_block_vector",
+    "name": "pure-TS SHA-256 matches the 64-byte one-block vector where padding spills into a new block — transparent; 0/7",
+    "receipt": "db62a0d6-bb37-883e-8d13-373229220848"
+  },
+  {
+    "key": "pure_ts_hmac_sha256_matches_rfc_4231_case_3",
+    "name": "pure-TS HMAC-SHA256 matches RFC 4231 test case 3 — transparent message authentication; 0/7",
+    "receipt": "3574b2f1-732c-8457-929e-c62591ca8615"
+  },
+  {
+    "key": "pure_ts_hmac_sha256_matches_rfc_4231_case_6",
+    "name": "pure-TS HMAC-SHA256 matches RFC 4231 test case 6, a larger-than-block key — transparent; 0/7",
+    "receipt": "d1faa763-7f42-8d12-8f24-0e90bebec211"
+  },
+  {
+    "key": "pure_ts_chacha20_matches_the_rfc_8439_a1_block_vector_1",
+    "name": "pure-TS ChaCha20 matches the RFC 8439 Appendix A.1 block test vector 1 — all-zero key and nonce, transparent; 0/7",
+    "receipt": "cf49d9d4-7ead-8a97-a411-33d3460e9c98"
+  },
+  {
+    "key": "the_pure_ts_aead_tag_depends_on_the_plaintext",
+    "name": "the pure-TS AEAD tag depends on the plaintext — different messages give different tags; 0/7",
+    "receipt": "02662bfe-144a-818b-9325-fe74f36004e7"
+  },
+  {
+    "key": "the_pure_ts_aead_tag_depends_on_the_associated_data",
+    "name": "the pure-TS AEAD tag depends on the associated data — different AAD gives different tags; 0/7",
+    "receipt": "3e9ee2bb-a1d3-8cbe-8ea6-bebdf97ffd64"
   }
 ]

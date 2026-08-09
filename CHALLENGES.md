@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1064 recorded in 306 families
+## Discovered theorems (decidable, over ℤ/9) — 1072 recorded in 306 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (141)
+### the (143)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -165,6 +165,8 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_pure_ts_poly1305_tag_depends_on_the_key](/theorem/the_pure_ts_poly1305_tag_depends_on_the_key) — the pure-TS Poly1305 tag depends on the one-time key — a changed key changes the tag; 0/7  ·  `5b5aab90-28f0…`
 - [the_pure_ts_poly1305_tags_an_empty_message](/theorem/the_pure_ts_poly1305_tags_an_empty_message) — the pure-TS Poly1305 tags an empty message to a 16-byte tag — the padding rule holds; 0/7  ·  `89fc8d47-1ba8…`
 - [the_pure_ts_pbkdf2_prefix_is_consistent_across_lengths](/theorem/the_pure_ts_pbkdf2_prefix_is_consistent_across_lengths) — the pure-TS PBKDF2 output is prefix-consistent across derived-key lengths — a shorter key is the prefix of a longer; 0/7  ·  `0d6ce721-905a…`
+- [the_pure_ts_aead_tag_depends_on_the_plaintext](/theorem/the_pure_ts_aead_tag_depends_on_the_plaintext) — the pure-TS AEAD tag depends on the plaintext — different messages give different tags; 0/7  ·  `02662bfe-144a…`
+- [the_pure_ts_aead_tag_depends_on_the_associated_data](/theorem/the_pure_ts_aead_tag_depends_on_the_associated_data) — the pure-TS AEAD tag depends on the associated data — different AAD gives different tags; 0/7  ·  `3e9ee2bb-a1d3…`
 
 ### relation (55)
 
@@ -223,6 +225,36 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [relation_cubes_fold_to_0_1_8](/theorem/relation_cubes_fold_to_0_1_8) — cubes mod 9 fold to {0,1,8}: every d³ ≡ 0, 1, or 8, binding powers to the nilpotent 0 and the self-inverse pair {1,8} (1²≡1, 8²≡1) — one residue set across powers and inverses  ·  `b233f460-cd4d…`
 - [relation_receipt_chain_is_forensic_custody](/theorem/relation_receipt_chain_is_forensic_custody) — the receipt chain IS chain-of-custody: receipt[i] = toUuid(receipt[i−1]→key[i]) from a seed, so altering one link changes every link after it — the merkle-ledger and forensics are one construction  ·  `d0307011-b34a…`
 - [relation_coin64_collision_free_on_domains](/theorem/relation_coin64_collision_free_on_domains) — the 64-bit currency is collision-free across the rosetta: coin64 of each domain yields a distinct coin (as many coins as domains) — the shared currency addresses every perspective uniquely  ·  `dc278848-c7d9…`
+
+### pure (27)
+
+- [pure_ts_sha256_matches_the_fips_180_4_test_vector](/theorem/pure_ts_sha256_matches_the_fips_180_4_test_vector) — pure-TS SHA-256 matches the FIPS 180-4 test vector — a transparent hash in pure TypeScript, no native crypto and no secrecy claim; integrity, not truth; 0/7  ·  `6d222327-6bbe…`
+- [pure_ts_chacha20_poly1305_matches_the_rfc_8439_aead_vector](/theorem/pure_ts_chacha20_poly1305_matches_the_rfc_8439_aead_vector) — pure-TS ChaCha20-Poly1305 matches the RFC 8439 AEAD test vector — real authenticated secrecy in pure TypeScript, checked against the standard’s own vector; not constant-time; 0/7  ·  `d350e733-70a6…`
+- [pure_ts_pbkdf2_hmac_sha256_matches_the_test_vector](/theorem/pure_ts_pbkdf2_hmac_sha256_matches_the_test_vector) — pure-TS PBKDF2-HMAC-SHA256 matches the published test vector — the key derivation is transparent TypeScript, no native WebCrypto; 0/7  ·  `f0ce4052-5fc1…`
+- [pure_ts_sha256_matches_the_vector_for_the_empty_string](/theorem/pure_ts_sha256_matches_the_vector_for_the_empty_string) — pure-TS SHA-256 matches the FIPS 180-4 vector for the empty string — a transparent hash, no native crypto; 0/7  ·  `bd1b63d6-1f0d…`
+- [pure_ts_sha256_matches_the_vector_for_a](/theorem/pure_ts_sha256_matches_the_vector_for_a) — pure-TS SHA-256 matches the FIPS 180-4 vector for the single byte a — transparent, no native crypto; 0/7  ·  `dd16d6fc-0ef1…`
+- [pure_ts_sha256_matches_the_448_bit_vector](/theorem/pure_ts_sha256_matches_the_448_bit_vector) — pure-TS SHA-256 matches the FIPS 180-4 448-bit multi-block vector — transparent, no native crypto; 0/7  ·  `7c1b0a7a-67ce…`
+- [pure_ts_sha256_matches_the_896_bit_vector](/theorem/pure_ts_sha256_matches_the_896_bit_vector) — pure-TS SHA-256 matches the FIPS 180-4 896-bit multi-block vector — transparent, no native crypto; 0/7  ·  `17e4fa5b-6ea9…`
+- [pure_ts_sha256_matches_the_quick_fox_vector](/theorem/pure_ts_sha256_matches_the_quick_fox_vector) — pure-TS SHA-256 matches the published quick-brown-fox vector — transparent, no native crypto; 0/7  ·  `743ea505-7e62…`
+- [pure_ts_sha256_matches_the_quick_fox_period_vector](/theorem/pure_ts_sha256_matches_the_quick_fox_period_vector) — pure-TS SHA-256 matches the published quick-brown-fox-with-period vector — one byte changes the whole digest; 0/7  ·  `562e4a8d-1039…`
+- [pure_ts_sha256_matches_the_vector_for_hello](/theorem/pure_ts_sha256_matches_the_vector_for_hello) — pure-TS SHA-256 matches the published vector for hello — transparent, no native crypto; 0/7  ·  `f527bacc-2402…`
+- [pure_ts_chacha20_matches_the_rfc_8439_keystream_vector](/theorem/pure_ts_chacha20_matches_the_rfc_8439_keystream_vector) — pure-TS ChaCha20 matches the RFC 8439 encryption test vector — the keystream is transparent, no native crypto; 0/7  ·  `de4cebc3-9387…`
+- [pure_ts_chacha20_is_its_own_inverse_with_the_same_key_counter_nonce](/theorem/pure_ts_chacha20_is_its_own_inverse_with_the_same_key_counter_nonce) — pure-TS ChaCha20 is its own inverse under the same key, counter and nonce — decrypt undoes encrypt; 0/7  ·  `881267b1-4e30…`
+- [pure_ts_poly1305_matches_the_rfc_8439_tag_vector](/theorem/pure_ts_poly1305_matches_the_rfc_8439_tag_vector) — pure-TS Poly1305 matches the RFC 8439 MAC test vector — the one-time authenticator is transparent; 0/7  ·  `c349f619-a6d9…`
+- [pure_ts_poly1305_matches_the_all_zero_vector](/theorem/pure_ts_poly1305_matches_the_all_zero_vector) — pure-TS Poly1305 matches the RFC 8439 all-zero key-and-message vector — a zero tag, decidable; 0/7  ·  `fbb80d8e-7541…`
+- [pure_ts_poly1305_matches_the_rfc_8439_a3_s_only_vector](/theorem/pure_ts_poly1305_matches_the_rfc_8439_a3_s_only_vector) — pure-TS Poly1305 matches the RFC 8439 A.3 s-only test vector — the r=0 case returns s; 0/7  ·  `60d05e04-ba74…`
+- [pure_ts_pbkdf2_hmac_sha256_matches_the_two_iteration_vector](/theorem/pure_ts_pbkdf2_hmac_sha256_matches_the_two_iteration_vector) — pure-TS PBKDF2-HMAC-SHA256 matches the published two-iteration vector — transparent key derivation; 0/7  ·  `ea298776-dafe…`
+- [pure_ts_pbkdf2_hmac_sha256_matches_the_4096_iteration_vector](/theorem/pure_ts_pbkdf2_hmac_sha256_matches_the_4096_iteration_vector) — pure-TS PBKDF2-HMAC-SHA256 matches the published 4096-iteration vector — transparent key derivation; 0/7  ·  `db47b21a-6870…`
+- [pure_ts_pbkdf2_hmac_sha256_matches_the_40_byte_vector](/theorem/pure_ts_pbkdf2_hmac_sha256_matches_the_40_byte_vector) — pure-TS PBKDF2-HMAC-SHA256 matches the published 40-byte multi-block vector — transparent; 0/7  ·  `e0987365-ecd6…`
+- [pure_ts_hmac_sha256_matches_rfc_4231_case_1](/theorem/pure_ts_hmac_sha256_matches_rfc_4231_case_1) — pure-TS HMAC-SHA256 matches RFC 4231 test case 1 — transparent message authentication; 0/7  ·  `da6cabfe-c551…`
+- [pure_ts_hmac_sha256_matches_rfc_4231_case_2](/theorem/pure_ts_hmac_sha256_matches_rfc_4231_case_2) — pure-TS HMAC-SHA256 matches RFC 4231 test case 2, the Jefe vector — transparent; 0/7  ·  `238e355e-a994…`
+- [pure_ts_hmac_sha256_matches_rfc_4231_case_4](/theorem/pure_ts_hmac_sha256_matches_rfc_4231_case_4) — pure-TS HMAC-SHA256 matches RFC 4231 test case 4 — transparent message authentication; 0/7  ·  `d0aff6db-1e39…`
+- [pure_ts_sha256_matches_the_55_byte_boundary_vector](/theorem/pure_ts_sha256_matches_the_55_byte_boundary_vector) — pure-TS SHA-256 matches the 55-byte single-block-boundary vector — the padding still fits one block; transparent, no native crypto; 0/7  ·  `b72406b4-72b1…`
+- [pure_ts_sha256_matches_the_56_byte_boundary_vector](/theorem/pure_ts_sha256_matches_the_56_byte_boundary_vector) — pure-TS SHA-256 matches the 56-byte vector where padding forces a second block — transparent, no native crypto; 0/7  ·  `52241e8b-dbbe…`
+- [pure_ts_sha256_matches_the_64_byte_block_vector](/theorem/pure_ts_sha256_matches_the_64_byte_block_vector) — pure-TS SHA-256 matches the 64-byte one-block vector where padding spills into a new block — transparent; 0/7  ·  `db62a0d6-bb37…`
+- [pure_ts_hmac_sha256_matches_rfc_4231_case_3](/theorem/pure_ts_hmac_sha256_matches_rfc_4231_case_3) — pure-TS HMAC-SHA256 matches RFC 4231 test case 3 — transparent message authentication; 0/7  ·  `3574b2f1-732c…`
+- [pure_ts_hmac_sha256_matches_rfc_4231_case_6](/theorem/pure_ts_hmac_sha256_matches_rfc_4231_case_6) — pure-TS HMAC-SHA256 matches RFC 4231 test case 6, a larger-than-block key — transparent; 0/7  ·  `d1faa763-7f42…`
+- [pure_ts_chacha20_matches_the_rfc_8439_a1_block_vector_1](/theorem/pure_ts_chacha20_matches_the_rfc_8439_a1_block_vector_1) — pure-TS ChaCha20 matches the RFC 8439 Appendix A.1 block test vector 1 — all-zero key and nonce, transparent; 0/7  ·  `cf49d9d4-7ead…`
 
 ### uuidna (26)
 
@@ -330,30 +362,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [sum_of_cubes_1_to_7_is_triangular_squared](/theorem/sum_of_cubes_1_to_7_is_triangular_squared) — the sum of cubes 1³+…+7³ = 28² = 784, the square of the 7-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7  ·  `118130e3-c53a…`
 - [sum_of_cubes_1_to_8_is_triangular_squared](/theorem/sum_of_cubes_1_to_8_is_triangular_squared) — the sum of cubes 1³+…+8³ = 36² = 1296, the square of the 8-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7  ·  `2fe72e2f-285d…`
 - [sum_of_cubes_1_to_9_is_triangular_squared](/theorem/sum_of_cubes_1_to_9_is_triangular_squared) — the sum of cubes 1³+…+9³ = 45² = 2025, the square of the 9-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7  ·  `367f20c6-732e…`
-
-### pure (21)
-
-- [pure_ts_sha256_matches_the_fips_180_4_test_vector](/theorem/pure_ts_sha256_matches_the_fips_180_4_test_vector) — pure-TS SHA-256 matches the FIPS 180-4 test vector — a transparent hash in pure TypeScript, no native crypto and no secrecy claim; integrity, not truth; 0/7  ·  `6d222327-6bbe…`
-- [pure_ts_chacha20_poly1305_matches_the_rfc_8439_aead_vector](/theorem/pure_ts_chacha20_poly1305_matches_the_rfc_8439_aead_vector) — pure-TS ChaCha20-Poly1305 matches the RFC 8439 AEAD test vector — real authenticated secrecy in pure TypeScript, checked against the standard’s own vector; not constant-time; 0/7  ·  `d350e733-70a6…`
-- [pure_ts_pbkdf2_hmac_sha256_matches_the_test_vector](/theorem/pure_ts_pbkdf2_hmac_sha256_matches_the_test_vector) — pure-TS PBKDF2-HMAC-SHA256 matches the published test vector — the key derivation is transparent TypeScript, no native WebCrypto; 0/7  ·  `f0ce4052-5fc1…`
-- [pure_ts_sha256_matches_the_vector_for_the_empty_string](/theorem/pure_ts_sha256_matches_the_vector_for_the_empty_string) — pure-TS SHA-256 matches the FIPS 180-4 vector for the empty string — a transparent hash, no native crypto; 0/7  ·  `bd1b63d6-1f0d…`
-- [pure_ts_sha256_matches_the_vector_for_a](/theorem/pure_ts_sha256_matches_the_vector_for_a) — pure-TS SHA-256 matches the FIPS 180-4 vector for the single byte a — transparent, no native crypto; 0/7  ·  `dd16d6fc-0ef1…`
-- [pure_ts_sha256_matches_the_448_bit_vector](/theorem/pure_ts_sha256_matches_the_448_bit_vector) — pure-TS SHA-256 matches the FIPS 180-4 448-bit multi-block vector — transparent, no native crypto; 0/7  ·  `7c1b0a7a-67ce…`
-- [pure_ts_sha256_matches_the_896_bit_vector](/theorem/pure_ts_sha256_matches_the_896_bit_vector) — pure-TS SHA-256 matches the FIPS 180-4 896-bit multi-block vector — transparent, no native crypto; 0/7  ·  `17e4fa5b-6ea9…`
-- [pure_ts_sha256_matches_the_quick_fox_vector](/theorem/pure_ts_sha256_matches_the_quick_fox_vector) — pure-TS SHA-256 matches the published quick-brown-fox vector — transparent, no native crypto; 0/7  ·  `743ea505-7e62…`
-- [pure_ts_sha256_matches_the_quick_fox_period_vector](/theorem/pure_ts_sha256_matches_the_quick_fox_period_vector) — pure-TS SHA-256 matches the published quick-brown-fox-with-period vector — one byte changes the whole digest; 0/7  ·  `562e4a8d-1039…`
-- [pure_ts_sha256_matches_the_vector_for_hello](/theorem/pure_ts_sha256_matches_the_vector_for_hello) — pure-TS SHA-256 matches the published vector for hello — transparent, no native crypto; 0/7  ·  `f527bacc-2402…`
-- [pure_ts_chacha20_matches_the_rfc_8439_keystream_vector](/theorem/pure_ts_chacha20_matches_the_rfc_8439_keystream_vector) — pure-TS ChaCha20 matches the RFC 8439 encryption test vector — the keystream is transparent, no native crypto; 0/7  ·  `de4cebc3-9387…`
-- [pure_ts_chacha20_is_its_own_inverse_with_the_same_key_counter_nonce](/theorem/pure_ts_chacha20_is_its_own_inverse_with_the_same_key_counter_nonce) — pure-TS ChaCha20 is its own inverse under the same key, counter and nonce — decrypt undoes encrypt; 0/7  ·  `881267b1-4e30…`
-- [pure_ts_poly1305_matches_the_rfc_8439_tag_vector](/theorem/pure_ts_poly1305_matches_the_rfc_8439_tag_vector) — pure-TS Poly1305 matches the RFC 8439 MAC test vector — the one-time authenticator is transparent; 0/7  ·  `c349f619-a6d9…`
-- [pure_ts_poly1305_matches_the_all_zero_vector](/theorem/pure_ts_poly1305_matches_the_all_zero_vector) — pure-TS Poly1305 matches the RFC 8439 all-zero key-and-message vector — a zero tag, decidable; 0/7  ·  `fbb80d8e-7541…`
-- [pure_ts_poly1305_matches_the_rfc_8439_a3_s_only_vector](/theorem/pure_ts_poly1305_matches_the_rfc_8439_a3_s_only_vector) — pure-TS Poly1305 matches the RFC 8439 A.3 s-only test vector — the r=0 case returns s; 0/7  ·  `60d05e04-ba74…`
-- [pure_ts_pbkdf2_hmac_sha256_matches_the_two_iteration_vector](/theorem/pure_ts_pbkdf2_hmac_sha256_matches_the_two_iteration_vector) — pure-TS PBKDF2-HMAC-SHA256 matches the published two-iteration vector — transparent key derivation; 0/7  ·  `ea298776-dafe…`
-- [pure_ts_pbkdf2_hmac_sha256_matches_the_4096_iteration_vector](/theorem/pure_ts_pbkdf2_hmac_sha256_matches_the_4096_iteration_vector) — pure-TS PBKDF2-HMAC-SHA256 matches the published 4096-iteration vector — transparent key derivation; 0/7  ·  `db47b21a-6870…`
-- [pure_ts_pbkdf2_hmac_sha256_matches_the_40_byte_vector](/theorem/pure_ts_pbkdf2_hmac_sha256_matches_the_40_byte_vector) — pure-TS PBKDF2-HMAC-SHA256 matches the published 40-byte multi-block vector — transparent; 0/7  ·  `e0987365-ecd6…`
-- [pure_ts_hmac_sha256_matches_rfc_4231_case_1](/theorem/pure_ts_hmac_sha256_matches_rfc_4231_case_1) — pure-TS HMAC-SHA256 matches RFC 4231 test case 1 — transparent message authentication; 0/7  ·  `da6cabfe-c551…`
-- [pure_ts_hmac_sha256_matches_rfc_4231_case_2](/theorem/pure_ts_hmac_sha256_matches_rfc_4231_case_2) — pure-TS HMAC-SHA256 matches RFC 4231 test case 2, the Jefe vector — transparent; 0/7  ·  `238e355e-a994…`
-- [pure_ts_hmac_sha256_matches_rfc_4231_case_4](/theorem/pure_ts_hmac_sha256_matches_rfc_4231_case_4) — pure-TS HMAC-SHA256 matches RFC 4231 test case 4 — transparent message authentication; 0/7  ·  `d0aff6db-1e39…`
 
 ### domain (20)
 
@@ -1549,4 +1557,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `9aa6ce2a-64c6-83fd-a0eb-f21fe07c3ae0`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `4a3581dc-b985-81c2-81fd-574e074b4a10`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
