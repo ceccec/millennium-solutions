@@ -120,7 +120,7 @@ const known = [
         <figcaption>
           heading <b>{{ label(Math.round(shown)) }}</b> ·
           <span :class="driftAtHeading ? 'ok' : 'bad'">{{ driftAtHeading ? 'integer bearing — no drift' : 'decimal drift' }}</span>
-          <br /><span class="leap">tack {{ Math.round(leapDelta) }}° · ±60 to make ±90 · <b>by algebra</b>, in full aura</span>
+          <br /><span class="leap">30·{1,2,3} = 30/60/90 · droots 3·6·9 · harmonic life 30–60 → reaches 90</span>
         </figcaption>
         <div class="motions">
           <button @click="port" title="port tack — −60°">◂ port −60</button>
@@ -186,11 +186,12 @@ const known = [
       </span>
     </div>
     <p class="foot">
-      The zones are exact: inside <b>±30°</b> is the <b>no-go</b> (the sail stalls); <b>30°→60°</b> is <b>harmonic
-      life</b> — its centre is <code>harmonicMean(30,60) = 40° = 360/9</code>, the <b>a432</b> quantum; <b>±60°</b> is the
-      loose tack (the gold string, π/3); <b>±90°</b> is the beam (π/2). Every bearing is an <b>integer</b> — no decimal
-      drift. But at any fixed angle the yacht sails linear and loses the regatta to <b>recursive folding</b> (O(log N)).
-      <em>known ⇔ it round-trips.</em> A content-address proves integrity, not truth. <code>0/7</code>.
+      The law: <b>algebra decides</b> — questioned, it holds. The ladder is <code>30·{1,2,3} = {30,60,90}</code>
+      (limit · tack · beam), digital roots <b>{3,6,9}</b>; inside <b>±30°</b> is the <b>no-go</b> (the sail stalls);
+      <b>between 30° and 60° is harmonic life</b> — centre <code>harmonicMean(30,60) = 40° = 360/9</code>, the a432 —
+      <b>to reach the 90° beam</b> (<code>beam = tack + limit</code>, uniform 30° spacing). Every bearing an
+      <b>integer</b>, no decimal drift. At any fixed angle the yacht sails linear and loses the regatta to
+      <b>recursive folding</b> (O(log N)). <em>known ⇔ it round-trips.</em> Integrity, not truth. <code>0/7</code>.
     </p>
   </div>
 </template>
