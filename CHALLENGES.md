@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 974 recorded in 300 families
+## Discovered theorems (decidable, over ℤ/9) — 975 recorded in 300 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -638,6 +638,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [arts_golden_proportion](/theorem/arts_golden_proportion) — the golden ratio (aesthetic proportion) satisfies φ² = φ + 1  ·  `48801162-b59d…`
 - [arts_no_exact_complement](/theorem/arts_no_exact_complement) — on the 9-hue wheel no hue has an exact complement (180° = 4.5 steps) — the odd base has no antipode  ·  `1656079f-c131…`
 
+### each (5)
+
+- [each_theorem_can_replace_code](/theorem/each_theorem_can_replace_code) — each theorem can replace code: a closed form that holds by exhaustion equals its naive computation, so the formula substitutes for the loop — Gauss’s n(n+1)/2 replaces the summation loop and the sum of the first n odds equals n², each verified equal to the imperative version (the theorem is the optimized, checkable code)  ·  `02be2d16-4a80…`
+- [each_perspective_is_receipted_in_the_superposition](/theorem/each_perspective_is_receipted_in_the_superposition) — each perspective is receipted in the superposition: because order matters, each ordered perspective is a distinct content-address — its own receipt proving that perspective exists (integrity) — and the superposition is the set of all perspectives folded order-independently to one root; observing collapses to one address. This represents the quantum structure classically: not a quantum machine, and no quantum advantage  ·  `4f64e2b7-d236…`
+- [each_page_is_both_white_and_black_paper_a_theme_reflection_involution](/theorem/each_page_is_both_white_and_black_paper_a_theme_reflection_involution) — each page is both white and black paper — a theme reflection involution: every computed object is shown as a page, and each page renders in two themes — light (white) and dark (black) — at the same time for its two viewers; toggling between them is an involution (toggle twice returns), like the ten's-complement reflection 10−d whose fixed point is the neutral 5. The two are reflections of one page, one content-address shown in both polarities. A design duality, not a physics claim. Decidable  ·  `ea03ace1-c964…`
+- [each_seal_is_128_bits_and_membership_verifies_in_two_log2_n_bits_logarithmic_not_linear](/theorem/each_seal_is_128_bits_and_membership_verifies_in_two_log2_n_bits_logarithmic_not_linear) — each seal is 128 bits, 64 two-bit verifications, and membership verifies in 2·⌈log₂N⌉ bits — logarithmic, not linear: a seal is one 128-bit content-address no matter how many receipts it folds (fixed width, the pointer-not-payload bound), which is 128 ÷ 2 = 64 two-bit verifications; verifying one receipt against a seal over N receipts costs 2·⌈log₂N⌉ bits (the merkle proof path), so the more complex the case the more receipts but verification grows only logarithmically — structural speed on classical hardware, not a quantum-hardware advantage; integrity not truth; 0/7  ·  `89de8193-b0fc…`
+- [each_seal_is_exactly_64_coins_at_two_bits_each_and_not_at_faster_than_light](/theorem/each_seal_is_exactly_64_coins_at_two_bits_each_and_not_at_faster_than_light) — each seal is exactly 64 coins at two bits each — and not at faster than light: taking a coin as the two-bit verification unit, a 128-bit seal is exactly 128 ÷ 2 = 64 coins, so the 967 computations each carry a 64-coin seal; but the speed is classical logarithmic verification, bounded by light — there is no faster-than-light here, the ftl claim drains; integrity not truth; 0/7  ·  `0e6659f8-1ff9…`
+
 ### external (5)
 
 - [external_verifier_bijection_n3](/theorem/external_verifier_bijection_n3) — the external verifier is a bijection at N=3 — an independent build maps 3 ledger entries to exactly 3 reproducible pages, seven-neighbour hues deterministic; corroborates integrity, solves nothing; 0/7  ·  `c5e89f53-9173…`
@@ -738,13 +746,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [chess_knight_8_moves](/theorem/chess_knight_8_moves) — a knight has exactly 8 leaps — the (±1,±2)/(±2,±1) moves  ·  `6dcd739d-87a9…`
 - [chess_knight_color_flip](/theorem/chess_knight_color_flip) — a knight's leap always changes square colour (the parity of r+c flips)  ·  `81566667-a452…`
 - [chess_diagonals_15](/theorem/chess_diagonals_15) — the 8×8 board has 2·8 − 1 = 15 diagonals in each direction  ·  `85a4e4b0-787f…`
-
-### each (4)
-
-- [each_theorem_can_replace_code](/theorem/each_theorem_can_replace_code) — each theorem can replace code: a closed form that holds by exhaustion equals its naive computation, so the formula substitutes for the loop — Gauss’s n(n+1)/2 replaces the summation loop and the sum of the first n odds equals n², each verified equal to the imperative version (the theorem is the optimized, checkable code)  ·  `02be2d16-4a80…`
-- [each_perspective_is_receipted_in_the_superposition](/theorem/each_perspective_is_receipted_in_the_superposition) — each perspective is receipted in the superposition: because order matters, each ordered perspective is a distinct content-address — its own receipt proving that perspective exists (integrity) — and the superposition is the set of all perspectives folded order-independently to one root; observing collapses to one address. This represents the quantum structure classically: not a quantum machine, and no quantum advantage  ·  `4f64e2b7-d236…`
-- [each_page_is_both_white_and_black_paper_a_theme_reflection_involution](/theorem/each_page_is_both_white_and_black_paper_a_theme_reflection_involution) — each page is both white and black paper — a theme reflection involution: every computed object is shown as a page, and each page renders in two themes — light (white) and dark (black) — at the same time for its two viewers; toggling between them is an involution (toggle twice returns), like the ten's-complement reflection 10−d whose fixed point is the neutral 5. The two are reflections of one page, one content-address shown in both polarities. A design duality, not a physics claim. Decidable  ·  `ea03ace1-c964…`
-- [each_seal_is_128_bits_and_membership_verifies_in_two_log2_n_bits_logarithmic_not_linear](/theorem/each_seal_is_128_bits_and_membership_verifies_in_two_log2_n_bits_logarithmic_not_linear) — each seal is 128 bits, 64 two-bit verifications, and membership verifies in 2·⌈log₂N⌉ bits — logarithmic, not linear: a seal is one 128-bit content-address no matter how many receipts it folds (fixed width, the pointer-not-payload bound), which is 128 ÷ 2 = 64 two-bit verifications; verifying one receipt against a seal over N receipts costs 2·⌈log₂N⌉ bits (the merkle proof path), so the more complex the case the more receipts but verification grows only logarithmically — structural speed on classical hardware, not a quantum-hardware advantage; integrity not truth; 0/7  ·  `89de8193-b0fc…`
 
 ### evidence (4)
 
@@ -1444,4 +1445,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `aab4b745-1208-80fc-97e6-4a8820eafe9c`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `5b95f884-5e2c-8fa5-973b-bc10ce941349`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

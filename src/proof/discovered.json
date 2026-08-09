@@ -4868,5 +4868,10 @@
     "key": "the_967_receipt_case_verify_20_bits_bill_on_the_967_computation_value_earn_the_947_bit_saving",
     "name": "the 967-receipt case — verify 20 bits, bill on the 967-computation value, earn the 947-bit saving, two coins conserved: a case of 967 receipts verifies membership in ⌈log₂967⌉ = 10 merkle steps = 20 bits, while the value delivered is the 967 computations the customer would otherwise recompute; uuidna bills on that value and verifies at 20 bits, earning the measured 967−20 = 947-bit saving with the two coins conserved — you bill for value delivered, not hidden work; classical logarithmic verification, not a quantum-hardware advantage; integrity not truth; 0/7",
     "receipt": "b7dd9563-39b5-8dfe-8b0a-1555c0d3cfc5"
+  },
+  {
+    "key": "each_seal_is_exactly_64_coins_at_two_bits_each_and_not_at_faster_than_light",
+    "name": "each seal is exactly 64 coins at two bits each — and not at faster than light: taking a coin as the two-bit verification unit, a 128-bit seal is exactly 128 ÷ 2 = 64 coins, so the 967 computations each carry a 64-coin seal; but the speed is classical logarithmic verification, bounded by light — there is no faster-than-light here, the ftl claim drains; integrity not truth; 0/7",
+    "receipt": "0e6659f8-1ff9-88e9-9bb9-d223bb43b4b4"
   }
 ]
