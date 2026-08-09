@@ -4458,5 +4458,10 @@
     "key": "uuidna_corrects_code_via_types_and_test_gates_a_decidable_class_not_whatever_code",
     "name": "uuidna corrects code via types and test gates — a decidable class, not whatever code; a floor, not an oracle: the type system catches type drift (types are theorems), a failing test is discarded, and broken code fails the build — prompting correction. But it does not correct whatever code: a compiling, gate-clean but logically wrong program passes uncorrected; correcting arbitrary logic is beyond a floor. The cost is the classical 64-bit computation. Decidable",
     "receipt": "b1b8af51-4a53-8481-bd16-331f2c1866f9"
+  },
+  {
+    "key": "a_failing_test_must_be_recorded_as_a_refutation_not_silently_discarded_hiding_evidence_is_the_traitor_move",
+    "name": "a failing test must be recorded as a refutation, not silently discarded — hiding evidence is the traitor move: a failing test must leave a content-addressed REFUTED receipt — evidence, not silently discarded. Silent discard hides evidence, the traitor move, and the forensics catches it by the absent record. The honest trial keeps both what passed and what failed — due process. Hiding is caught and rejected, not rewarded. Decidable",
+    "receipt": "a0121405-6d12-81e1-9225-578fc9665560"
   }
 ]
