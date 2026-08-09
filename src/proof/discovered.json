@@ -4273,5 +4273,10 @@
     "key": "polygonal_numbers_s10_closed_form_equals_recurrence",
     "name": "the 10-gonal numbers — closed form equals recurrence: P = ((10−2)·n² − (10−4)·n) / 2 matches the recurrence P(n) = P(n−1) + ((10−2)(n−1) + 1) with P(1) = 1, term for term. Verified exhaustively for n up to 50. Decidable",
     "receipt": "f03c1061-c8ed-8e43-9443-5846cfcb4fdd"
+  },
+  {
+    "key": "uuidna_feeds_free_by_address_from_the_content_addressed_ledger_not_an_akashic_record",
+    "name": "uuidna feeds free by address from the content-addressed ledger — not an akashic record: uuidna feeds free by reference — a fixed-size content-address for any content, no payload moved, free to recompute. But the knowledge base is the content-addressed ledger: finite, public, and recomputable — not an akashic record or a cosmic metaphysical knowledge field. Decidable",
+    "receipt": "9cfba5bd-fd53-82e9-8f25-17cf62bb9c73"
   }
 ]

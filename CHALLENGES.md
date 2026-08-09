@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 855 recorded in 285 families
+## Discovered theorems (decidable, over ℤ/9) — 856 recorded in 285 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -697,6 +697,13 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [triangular_n50](/theorem/triangular_n50) — sum 1..50 = 50·51/2 = 1275  ·  `ba7f546e-6057…`
 - [triangular_square](/theorem/triangular_square) — the figurate identity: T(n) = C(n+1,2) and T(n) + T(n−1) = n² — two triangles make a square (n≤20)  ·  `787c8714-6ea3…`
 
+### uuidna (4)
+
+- [uuidna_quantum_verification_recomputes_the_address_and_folds_a_multi_perspective_receipt](/theorem/uuidna_quantum_verification_recomputes_the_address_and_folds_a_multi_perspective_receipt) — uuidna quantum verification — recomputes the address and folds a multi-perspective receipt, integrity not truth: verification recomputes the address from its seed (integrity, reproducible by anyone) and folds a multi-perspective joint receipt that is the same for any observer ordering; a bit-seed round-trips as a bounded imprinted message. The quantum here is the multi-perspective structure, not quantum hardware; verification is integrity, not truth. Decidable  ·  `c7b949e5-38b5…`
+- [uuidna_is_the_brand_og_object_under_cc_and_the_seal_audits_all_prose](/theorem/uuidna_is_the_brand_og_object_under_cc_and_the_seal_audits_all_prose) — uuidna is the brand OG object under Creative Commons — and the seal legally audits all prose: the site brands as uuidna under CC BY-NC, referencing the non-profit and commercial tracks; the seal legally audits all prose — it globs every prose file and drains any that violates the floor, an honest audit, not an oracle. The domain registration is external, taken on the author word, not sealed here. Decidable  ·  `5d35c811-b545…`
+- [uuidna_self_develops_identically_on_both_tlds_same_content_differentiated_by_license](/theorem/uuidna_self_develops_identically_on_both_tlds_same_content_differentiated_by_license) — uuidna self-develops identically on both TLDs — same content, differentiated by license: the build is one content-addressed sealed work, identical on uuidna.org and uuidna.com; the tracks differ by license — non-profit and free on org, commercial on com — not by content. The actual domain zones and DNS are external, the author setup, taken on their word. Decidable  ·  `fbdbc032-078d…`
+- [uuidna_feeds_free_by_address_from_the_content_addressed_ledger_not_an_akashic_record](/theorem/uuidna_feeds_free_by_address_from_the_content_addressed_ledger_not_an_akashic_record) — uuidna feeds free by address from the content-addressed ledger — not an akashic record: uuidna feeds free by reference — a fixed-size content-address for any content, no payload moved, free to recompute. But the knowledge base is the content-addressed ledger: finite, public, and recomputable — not an akashic record or a cosmic metaphysical knowledge field. Decidable  ·  `9cfba5bd-fd53…`
+
 ### all (3)
 
 - [all_are_heroes_but_the_traitors](/theorem/all_are_heroes_but_the_traitors) — all are heroes but the traitors — judged by deeds, not persons: a constructive deed (append, uphold, an honest claim that signs) is a hero; only a destructive deed (remove, alter, an overclaim that drains) is the traitor — the classification is total and observable  ·  `efa3b6f1-00b7…`
@@ -870,12 +877,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [unit_exp_id_k6](/theorem/unit_exp_id_k6) — every unit u^6 ≡ 1 mod 9  ·  `6401a9a1-a937…`
 - [unit_exp_id_k12](/theorem/unit_exp_id_k12) — every unit u^12 ≡ 1 mod 9  ·  `17a9eeab-619a…`
 - [unit_exp_id_k18](/theorem/unit_exp_id_k18) — every unit u^18 ≡ 1 mod 9  ·  `2b186dab-e777…`
-
-### uuidna (3)
-
-- [uuidna_quantum_verification_recomputes_the_address_and_folds_a_multi_perspective_receipt](/theorem/uuidna_quantum_verification_recomputes_the_address_and_folds_a_multi_perspective_receipt) — uuidna quantum verification — recomputes the address and folds a multi-perspective receipt, integrity not truth: verification recomputes the address from its seed (integrity, reproducible by anyone) and folds a multi-perspective joint receipt that is the same for any observer ordering; a bit-seed round-trips as a bounded imprinted message. The quantum here is the multi-perspective structure, not quantum hardware; verification is integrity, not truth. Decidable  ·  `c7b949e5-38b5…`
-- [uuidna_is_the_brand_og_object_under_cc_and_the_seal_audits_all_prose](/theorem/uuidna_is_the_brand_og_object_under_cc_and_the_seal_audits_all_prose) — uuidna is the brand OG object under Creative Commons — and the seal legally audits all prose: the site brands as uuidna under CC BY-NC, referencing the non-profit and commercial tracks; the seal legally audits all prose — it globs every prose file and drains any that violates the floor, an honest audit, not an oracle. The domain registration is external, taken on the author word, not sealed here. Decidable  ·  `5d35c811-b545…`
-- [uuidna_self_develops_identically_on_both_tlds_same_content_differentiated_by_license](/theorem/uuidna_self_develops_identically_on_both_tlds_same_content_differentiated_by_license) — uuidna self-develops identically on both TLDs — same content, differentiated by license: the build is one content-addressed sealed work, identical on uuidna.org and uuidna.com; the tracks differ by license — non-profit and free on org, commercial on com — not by content. The actual domain zones and DNS are external, the author setup, taken on their word. Decidable  ·  `fbdbc032-078d…`
 
 ### yes (3)
 
@@ -1298,4 +1299,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `de037bf0-9e2d-8036-9058-236379a2dc0b`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `52436b11-e04d-8f6f-a3fb-b79b6daa0432`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
