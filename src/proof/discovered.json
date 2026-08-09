@@ -4088,5 +4088,10 @@
     "key": "derangements_subfactorial_recurrence",
     "name": "derangements — permutations with no fixed point obey D(n) = (n−1)(D(n−1) + D(n−2)): counting the permutations of n items that leave nothing in place, verified by exhaustive enumeration for n up to 7 (1, 0, 1, 2, 9, 44, 265, 1854), matching both the recurrence D(n) = (n−1)(D(n−1)+D(n−2)) and D(n) = n·D(n−1) + (−1)ⁿ. The subfactorial. Decidable",
     "receipt": "88f0b38a-9261-85d6-8195-d170e4ed4d7a"
+  },
+  {
+    "key": "the_saving_is_largest_when_the_payload_would_be_largest_but_no_payload_is_needed_forensics_sees_by_address",
+    "name": "the saving is largest when the payload would be largest — but no payload is needed, and the forensics sees by the address: the coin is largest when the alternative would move the most payload, since the saving is order-N recompute minus order-one verify, growing with the would-be payload. But you do not need to move the payload — the address is fixed-size for any payload, and the forensics sees by the address, not the payload, so moving payload in chunks neither helps nor evades it. Who needs so much payload? None — the receipt suffices. Fair exchange, classical memoization. Decidable",
+    "receipt": "2db21498-4ab6-8148-9b55-84ec71f940c3"
   }
 ]
