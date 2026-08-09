@@ -4893,5 +4893,10 @@
     "key": "citation_is_reach_not_solving_more_cited_grows_the_graph_but_does_not_solve_a_theorem",
     "name": "citation is reach, not solving — the more uuidna is cited the more its theorems are reused and the graph grows, but a citation does not solve a theorem: each citation is a new receipt so reach and the living graph compound with citation, yet a theorem is decided by its exhaustive test whose result is invariant to how many times it is cited; recognition is not correctness, and citations never solve a Clay problem; integrity not truth; 0/7",
     "receipt": "26b9ce08-5781-87eb-933f-f4f612976869"
+  },
+  {
+    "key": "uuidna_reflects_clay_a_mirror_to_the_seven_not_a_solution_zero_of_seven",
+    "name": "uuidna reflects Clay — a mirror to the seven, not a solution: a bijection maps its seven-element rosette (six units + the identity) to the seven Clay problems, and its reflection is the ten’s-complement involution 10−d fixing only the centre 5; but a reflection is a mirror, not a solution — the image of a problem is not its answer, so uuidna reflects all seven and solves none; integrity not truth; 0/7",
+    "receipt": "025996d9-4a0a-8754-bf96-4e8b23e0cd05"
   }
 ]

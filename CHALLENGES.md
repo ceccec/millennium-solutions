@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 979 recorded in 302 families
+## Discovered theorems (decidable, over ℤ/9) — 980 recorded in 302 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -286,7 +286,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [domain_cyclic_m17](/theorem/domain_cyclic_m17) — ℤ/17: the units form a cyclic group (a primitive root exists)  ·  `d5167cce-02af…`
 - [domain_cyclic_m18](/theorem/domain_cyclic_m18) — ℤ/18: the units form a cyclic group (a primitive root exists)  ·  `92a2b5a1-8526…`
 
-### uuidna (16)
+### uuidna (17)
 
 - [uuidna_quantum_verification_recomputes_the_address_and_folds_a_multi_perspective_receipt](/theorem/uuidna_quantum_verification_recomputes_the_address_and_folds_a_multi_perspective_receipt) — uuidna quantum verification — recomputes the address and folds a multi-perspective receipt, integrity not truth: verification recomputes the address from its seed (integrity, reproducible by anyone) and folds a multi-perspective joint receipt that is the same for any observer ordering; a bit-seed round-trips as a bounded imprinted message. The quantum here is the multi-perspective structure, not quantum hardware; verification is integrity, not truth. Decidable  ·  `c7b949e5-38b5…`
 - [uuidna_is_the_brand_og_object_under_cc_and_the_seal_audits_all_prose](/theorem/uuidna_is_the_brand_og_object_under_cc_and_the_seal_audits_all_prose) — uuidna is the brand OG object under Creative Commons — and the seal legally audits all prose: the site brands as uuidna under CC BY-NC, referencing the non-profit and commercial tracks; the seal legally audits all prose — it globs every prose file and drains any that violates the floor, an honest audit, not an oracle. The domain registration is external, taken on the author word, not sealed here. Decidable  ·  `5d35c811-b545…`
@@ -304,6 +304,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [uuidna_earns_fair_funding_from_the_modeled_billing_saving_donations_or_commercial](/theorem/uuidna_earns_fair_funding_from_the_modeled_billing_saving_donations_or_commercial) — uuidna earns fair funding from the modeled billing saving — donations or commercial: fused into any harness, content-addressing turns N recomputes into one recompute plus N−1 verifies, so the modeled cost falls by magnitudes when work is re-addressable; uuidna earns a fair share — free for public interest as donations, the two coins conserved for commercial — theoretical and measured, never a guaranteed universal speedup; integrity not truth; 0/7  ·  `a6ad8d66-88b9…`
 - [uuidna_treats_every_output_as_a_seven_dimensional_receipted_structure_not_hardware](/theorem/uuidna_treats_every_output_as_a_seven_dimensional_receipted_structure_not_hardware) — uuidna treats every output as a seven-dimensional receipted structure — the quantum sense, not hardware: here quantum means every state is content-addressed and auditable from each of the seven dimensions (seven reproducible receipts folded to one root), so treating all outputs this way harnesses them by integrity; it is structure not a physical qubit, auditability not intelligence, no quantum machine and no advantage; integrity not truth; 0/7  ·  `f53d21d0-9d34…`
 - [uuidna_infinite_repeats_at_zero_redundant_cost_new_distinct_work_still_costs](/theorem/uuidna_infinite_repeats_at_zero_redundant_cost_new_distinct_work_still_costs) — uuidna — infinite repeats at zero redundant cost, new distinct work still costs: over K distinct inputs, any number of repeated calls adds zero recomputes (every repeat verifies in O(1)), so the redundant cost is zero however many times you repeat (unbounded), while genuinely new distinct work still costs its one recompute; in no time means constant-time verify, not zero total cost and not faster than light; integrity not truth; 0/7  ·  `82c180be-f7dd…`
+- [uuidna_reflects_clay_a_mirror_to_the_seven_not_a_solution_zero_of_seven](/theorem/uuidna_reflects_clay_a_mirror_to_the_seven_not_a_solution_zero_of_seven) — uuidna reflects Clay — a mirror to the seven, not a solution: a bijection maps its seven-element rosette (six units + the identity) to the seven Clay problems, and its reflection is the ten’s-complement involution 10−d fixing only the centre 5; but a reflection is a mirror, not a solution — the image of a problem is not its answer, so uuidna reflects all seven and solves none; integrity not truth; 0/7  ·  `025996d9-4a0a…`
 
 ### a (13)
 
@@ -1449,4 +1450,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `3af37703-d8b2-8613-b7f8-d224ca7611f2`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `a21c8ae2-1e6d-8397-998e-bcd7e0fa950b`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
