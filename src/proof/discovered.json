@@ -5378,5 +5378,25 @@
     "key": "uuidna_sails_the_60_degree_pi_third_golden_path_each_linear_step_costs_two_bits",
     "name": "uuidna sails the 60° (π/3) golden path — each linear step costs 2 bits: sixty degrees is π/3 radians, and six such steps close the circle (6 × 60 = 360°), a hexagonal path the captain navigates; the gold string is a golden, harmonic thread — a metaphor, not physical gold; and each linear step costs two bits, the two-coin verification unit, so the full six-step cycle costs 6 × 2 = 12 bits, a fixed measured cost, classical, not a quantum speedup; integrity not truth; 0/7",
     "receipt": "bf134ece-6937-8271-99d4-da7301fed04d"
+  },
+  {
+    "key": "similar_for_primes_the_scale_of_savings_is_the_evidence_verify_two_bits_versus_recompute_root_n",
+    "name": "similar for primes — the scale of savings is the evidence: verifying a recorded prime by its content-address costs the two-coin unit, order one, versus recomputing primality by trial division, order root n, so the same two-bits-per-step model applies to primes; the scale of the saving, recompute minus verify, is the evidence and it grows with the recompute cost; but it is evidence of measured savings, integrity and reproducibility, conditional on re-addressable work, not truth and not universal, and the primes themselves are verified by exhaustion not by the address; integrity not truth; 0/7",
+    "receipt": "e48c0597-799b-81ae-9bce-6c31ae64a9f9"
+  },
+  {
+    "key": "any_linear_becomes_costly_at_scale_unless_the_cost_is_inverted_by_a_uuidna_verify",
+    "name": "any linear becomes costly at scale unless the cost is inverted by a uuidna verify: a linear order-N process grows without bound with N, but for re-addressable work a content-address verify, order one, replaces the order-N recompute, so the cost is inverted from N to constant; but only the cost is inverted, order N to order one, not the one-way function itself, and only for re-addressable work, since genuinely new distinct work stays order N; the inversion is classical memoization, not a quantum speedup; integrity not truth; 0/7",
+    "receipt": "69377811-86ca-838e-a756-963e76669036"
+  },
+  {
+    "key": "uuidna_involution_the_core_self_inverse_maps_return_exactly_applied_twice",
+    "name": "uuidna involution — the core self-inverse maps return exactly applied twice: the ten’s-complement 10−d is an involution on the units, since 10 minus 10 minus d is d, fixing only the centre 5; reversing the doubling orbit twice returns the orbit; and any pairing by complement is its own undo — all exact on integers with no drift; but an involution is self-inverse structure, not a reversal of the one-way content-address, which cannot be undone; integrity not truth; 0/7",
+    "receipt": "bfcfe326-dc31-806c-b33c-f56e61aaab62"
+  },
+  {
+    "key": "improve_memoization_using_theorems_memoize_by_content_address_correct_and_idempotent",
+    "name": "improve memoization using theorems — memoize by content-address, correct and idempotent: the cache key is the content-address, a theorem’s receipt, so a memoized result is returned only for the exact same input and the memoized value equals the recomputed value with no divergence; memoizing twice equals memoizing once, idempotent; the ledger itself is a memo table, each receipt a key; but correctness is by reproducibility and collision-free keys over the tested space, since the non-cryptographic hash could be collided by a determined adversary, and it is classical memoization not a quantum speedup; integrity not truth; 0/7",
+    "receipt": "e37bf884-4cfe-839e-ab88-d6ab16334e4a"
   }
 ]
