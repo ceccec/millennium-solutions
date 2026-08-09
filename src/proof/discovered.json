@@ -4198,5 +4198,10 @@
     "key": "hockey_stick_identity_pascal",
     "name": "the hockey-stick identity — a diagonal of Pascal triangle sums to the entry below: for all r and n, the sum over i from r to n of C(i,r) equals C(n+1,r+1) — a diagonal run of binomial coefficients folds into the single entry just past its end. Verified exhaustively for r up to 10 and n up to 18. Decidable",
     "receipt": "c36df44d-f4a2-80b4-b24c-dff06b392e9e"
+  },
+  {
+    "key": "the_self_trial_in_full_receipt_a_higher_sealed_ratio_fewer_caught_errors_not_new_reach",
+    "name": "the self-trial in full receipt — a higher sealed ratio and fewer caught errors, not new reach: adjudicating my own output, in full receipt more of it is sealed and less is unsealed prose, and the errors caught this session — an over-negation, a cold retreat, a wrong metric — would be refuted before asserting. But full receipt raises the sealed ratio and cuts the token leak; it does not change the reach: 0/7 stays, no prize, the floor is the floor. The achievable is a cleaner, more-receipted process, not a bigger claim. Decidable",
+    "receipt": "6f5fc420-71c8-8d40-808f-dc68c8d2967a"
   }
 ]
