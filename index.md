@@ -61,6 +61,8 @@ checks **20 bits**); and on the [Compare page](/compare) you can weigh the
 a **measure, not a market**. The value is real savings in bits (work not repeated), material at scale but modeled
 and conditional — never a promise.
 
+<Version />
+
 ## The two bits — one atom, every symbol
 
 This deposit is denominated in **two bits** — its smallest unit. The same atom appears under many symbols, each a receipted theorem you can open and recompute:

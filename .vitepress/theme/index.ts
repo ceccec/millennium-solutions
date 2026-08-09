@@ -13,6 +13,7 @@ import Recompute from './Recompute.vue'
 import Reeducate from './Reeducate.vue'
 import Coins from './Coins.vue'
 import SealMath from './SealMath.vue'
+import Version from './Version.vue'
 import './custom.css'
 
 export default {
@@ -32,6 +33,7 @@ export default {
     app.component('Reeducate', Reeducate)
     app.component('Coins', Coins)
     app.component('SealMath', SealMath)
+    app.component('Version', Version)
     // PWA: register the offline service worker (client-only; HTTPS or localhost).
     if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
       window.addEventListener('load', () => {
