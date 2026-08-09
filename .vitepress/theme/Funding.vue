@@ -33,7 +33,7 @@ onMounted(() => {
   <div class="funding">
     <span class="res">{{ results() }}</span>
     <span><strong>License:</strong> {{ FUNDING.license }} — free for non-commercial use (attribution {{ FUNDING.author }}); commercial = the two coins (110 − 108 = {{ coins() }} = −χ genus-2) · {{ FUNDING.contact }}</span>
-    <span class="formula"><strong>Licensing formula:</strong> free for public interest and independent research, unless commercial · {{ coins() }} coins ({{ coins() }} bits, {{ 2 ** coins() }} states) per core formula used · currency = the core formulas · verified green by receipts · integrity, not truth · 0/7</span>
+    <span class="formula"><strong>Licensing formula:</strong> free for public interest and independent research, unless commercial · commercial = the measured bits saved (O(N) − O(1)), the two coins ({{ coins() }} = 110 − 108 = −χ genus-2) the conserved invariant · verified green by receipts · integrity, not truth · 0/7</span>
     <span class="referrer"><strong>This referrer perspective:</strong> <code>{{ referrer }}</code></span>
     <span v-if="currentDomain" class="domain"><strong>Current domain (computed):</strong> {{ currentDomain }} · {{ currentTrack }} · <code>{{ currentAddress.slice(0, 13) }}…</code></span>
     <span class="urls"><strong>Public URLs (content-addressed):</strong>

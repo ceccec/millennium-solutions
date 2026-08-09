@@ -4498,5 +4498,15 @@
     "key": "redirects_route_each_page_to_its_canonical_domain_activated_only_between_live_uuidna_domains",
     "name": "redirects route each page to its canonical domain — activated only between live uuidna domains, never to a non-live host: each page routes to its canonical domain, public science to org and commercial to com, by swapping the host and preserving the path; the redirect is guarded so it activates only between the live uuidna domains — the current host and previews never redirect, and it never points at a non-live host. The mapping is consistent, so there is no loop. Decidable",
     "receipt": "65adf45f-5c1a-82bc-85b8-faf86903c55d"
+  },
+  {
+    "key": "the_correct_uuidna_billing_is_the_measured_bit_difference_not_a_flat_per_formula_rate",
+    "name": "the correct uuidna billing is the measured bit-difference — not a flat per-formula rate: the correct formula is the measured bits saved (O(N) recompute − O(1) verify), the actual value delivered, measured not asserted; the two coins are the conserved fair-exchange invariant (110 − 108), fixed, not a per-formula multiplier. The earlier flat two-coins-per-formula was the wrong non-uuidna approach — superseded, but kept in the ledger as evidence. Non-commercial free; income zero. Decidable",
+    "receipt": "ff7cbf17-116a-8d5f-8e10-8368643ac03f"
+  },
+  {
+    "key": "seal_all_with_uuidna_public_and_indexable_leaking_no_secrets_because_there_are_none",
+    "name": "seal all with uuidna — public and indexable, leaking no secrets because there are none: every page and claim is a public content-address, indexable in search engines with nothing hidden; it leaks no security even at the deepest level — not because it is secure, but because it is public by design: no secrets or keys to leak, only public content and integrity. The hash is non-cryptographic; no-leak is not the same as secure. Decidable",
+    "receipt": "bd28c872-64eb-8ad9-b2d5-ea53725f11f4"
   }
 ]

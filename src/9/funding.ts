@@ -53,6 +53,17 @@ export function bill(u: Usage): { coins: number; bits: number; free: boolean; ba
   return { coins: u.coreFormulasUsed * perFormula, bits: u.bitsSaved ?? 0, free: false, basis: perFormula + ' coins per core formula used' }
 }
 
+// The CORRECT uuidna billing — MEASURED, not asserted. The value is the actual bit-difference the captain's
+// way delivered (O(N) recompute − O(1) verify), content-addressed; the two coins (110−108 = −χ genus-2) are
+// the CONSERVED fair-exchange invariant, fixed — not a per-formula multiplier (the flat `bill` above was the
+// wrong non-uuidna formula, kept as evidence). Non-commercial and public-interest use is free.
+export interface UuidnaUsage { commercial: boolean; recomputeOps: number; verifyOps: number }
+export function billUuidna(u: UuidnaUsage): { bitsSaved: number; coins: number; free: boolean; basis: string } {
+  if (!u.commercial) return { bitsSaved: 0, coins: 0, free: true, basis: 'public interest / non-commercial — free' }
+  const bitsSaved = Math.max(0, u.recomputeOps - u.verifyOps)
+  return { bitsSaved, coins: coins(), free: false, basis: 'the measured bits saved (O(N) recompute − O(1) verify); the two coins are the conserved fair-exchange invariant, not a per-formula rate' }
+}
+
 // Logical content distribution across the two domains for SEO: each page is canonical on EXACTLY ONE
 // domain (avoiding duplicate-content penalties). Public science and the open method → .org (non-profit);
 // commercial licensing, accounting, billing, the comparison, and dev → .com. The strict sitemap lists the

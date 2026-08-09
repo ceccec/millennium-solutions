@@ -43,9 +43,9 @@ promised — each capability is a decidable theorem you can recompute:
 - **Strict minting** — canonical, so the
   [same value always mints the same address](/theorem/strict_uuidna_minting_is_canonical_closing_the_minting_flaws_that_cause_real_damage);
   minting flaws otherwise cascade into real damage, caught in time and recomputed.
-- **Billing** — free for public interest and independent research; commercial use is the
-  [two coins per core formula, in coins and bits](/theorem/the_uuidna_billing_model_is_decidable_free_for_public_two_coins_per_formula_in_coins_and_bits)
-  — a fair-exchange schedule, not realized cash (income **$0**).
+- **Billing** — free for public interest and independent research; commercial use is billed on the
+  [measured bits saved (O(N) − O(1))](/theorem/the_correct_uuidna_billing_is_the_measured_bit_difference_not_a_flat_per_formula_rate),
+  the two coins the conserved invariant — a fair-exchange schedule, not realized cash (income **$0**).
 
 A content-address proves **integrity, not truth**. It settles **0 / 7**.
 

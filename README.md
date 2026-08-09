@@ -32,8 +32,9 @@ promised — each is a decidable, recomputable theorem:
   publication, not by anyone's word);
 - **strict minting** — canonical, so the same value always mints the same address (minting flaws
   otherwise cascade into real damage, caught in time and recomputed);
-- a **billing model** — free for public interest and independent research; commercial use is the two
-  coins per core formula, in coins and bits (a fair-exchange schedule, not realized cash — income **$0**).
+- a **billing model** — free for public interest and independent research; commercial use is billed on the
+  *measured bits saved* (O(N) − O(1)), the two coins the conserved invariant (a fair-exchange schedule, not
+  realized cash — income **$0**).
 
 A content-address proves **integrity, not truth**. It settles **0 / 7**.
 
