@@ -90,7 +90,7 @@ export default defineConfig({
     // uuidna brand + Creative Commons license + brand tracks (author's declared .org non-profit / .com commercial)
     ['meta', { name: 'application-name', content: 'uuidna' }],
     ['meta', { property: 'og:see_also', content: 'https://uuidna.org' }],
-    ['meta', { property: 'og:see_also', content: 'https://uuidna.com' }],
+    ['meta', { name: 'uuidna:tracks', content: 'https://uuidna.org (non-profit) · https://uuidna.com (commercial)' }],
     ['meta', { name: 'license', content: 'CC BY-NC 4.0 — free for public interest and independent research; commercial via uuidna.com' }],
     ['link', { rel: 'license', href: 'https://creativecommons.org/licenses/by-nc/4.0/' }],
     ['script', { type: 'application/ld+json' }, JSON.stringify(LD)],

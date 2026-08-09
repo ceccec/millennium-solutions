@@ -4178,5 +4178,10 @@
     "key": "uuidna_is_the_brand_og_object_under_cc_and_the_seal_audits_all_prose",
     "name": "uuidna is the brand OG object under Creative Commons — and the seal legally audits all prose: the site brands as uuidna under CC BY-NC, referencing the non-profit and commercial tracks; the seal legally audits all prose — it globs every prose file and drains any that violates the floor, an honest audit, not an oracle. The domain registration is external, taken on the author word, not sealed here. Decidable",
     "receipt": "5d35c811-b545-8742-b0dd-f92af6f71de1"
+  },
+  {
+    "key": "the_build_is_self_sufficient_and_the_computed_pages_are_sealed_as_evidence",
+    "name": "the build is self-sufficient and the computed pages are sealed as evidence: a predocs:build hook regenerates the computed pages — dashboard, boundaries, CHALLENGES, HEART, ACCOUNTING — before the site builds, so a fresh clone has no dead links and production renders every page. The pages are also committed as sealed evidence, timestamped in git: computed AND stored as the record, the generator and ledger the source, the commit the snapshot. Still computed, not hand-authored. Decidable",
+    "receipt": "ccda8e65-9635-8285-8019-c955b7162de9"
   }
 ]

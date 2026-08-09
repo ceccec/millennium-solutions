@@ -22,6 +22,7 @@
   },
   "scripts": {
     "docs:dev": "vitepress dev",
+    "predocs:build": "node scripts/dashboard.ts && node scripts/boundaries.ts && node scripts/challenges.ts && node scripts/heart.ts && node scripts/accounting.ts",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview",
     "seal": "node scripts/seal.ts",
