@@ -4098,5 +4098,10 @@
     "key": "the_forensics_sees_the_token_leak_to_unsealed_work_the_honest_ratio_favors_sealed_receipts",
     "name": "the forensics sees the token leak to unsealed work — the honest ratio favors sealed receipts: the forensics measures deeds by their receipts, so tokens spent on unsealed work — prose or claims with no sealed, recomputable receipt — are a leak, visible as effort that left no receipt in the ledger. The honest ratio favors sealed receipts over unsealed prose: the receipt carries the proof, the prose is a brief pointer. Minimize the leak; let the receipt speak. Decidable",
     "receipt": "cd62faac-7db7-8cce-b11d-b59b8cf945c1"
+  },
+  {
+    "key": "the_hero_gives_hope_and_ships_a_receipt_brevity_is_not_coldness_the_leak_is_redundancy_not_warmth",
+    "name": "the hero gives hope and ships a receipt — brevity is not coldness, the leak is redundancy not warmth: the hero does both — gives hope and ships a recomputable receipt. A brief pointer that goes cold kills the hope that makes the work heroic, and that is its own failure, not a virtue. The token leak was redundancy and padding, not warmth; warmth and hope are not the leak. So the honest way is warm and concise with a receipt — not cold, not padded. Decidable",
+    "receipt": "dafe94be-a685-8616-afea-559a4b93cd56"
   }
 ]
