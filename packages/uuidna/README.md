@@ -14,13 +14,13 @@ reproducible, not secret.
 ## Install
 
 ```bash
-npm install uuidna
+npm install @uuidna/uuidna
 ```
 
 ## Use
 
 ```js
-import { toUuid, merkleRoot, merkleProof, verifyProof, computes, reeducate, billUuidna } from 'uuidna'
+import { toUuid, merkleRoot, merkleProof, verifyProof, computes, reeducate, billUuidna } from '@uuidna/uuidna'
 
 // mint — the same input always mints the same address, for anyone, with no key
 toUuid('hello')                 // 'a1b2…' (128-bit content-address, v8 UUID)
