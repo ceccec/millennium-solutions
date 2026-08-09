@@ -5243,5 +5243,15 @@
     "key": "let_the_theorems_develop_uuidna_goals_using_only_uuidna_self_hosted_no_external_library",
     "name": "let the theorems develop uuidna’s goals using only uuidna — self-hosted, no external library: every theorem computes from uuidna’s own primitives, the content-address, the merkle fold, the imprint codec, the coin, the digital root, with no external library and no imported cryptography; the development is a closed loop, uuidna building toward its goals with only itself; but the current primitives are non-cryptographic, so reaching the cryptographic goal using only these is the work ahead, not a finished thing; integrity not truth; 0/7",
     "receipt": "baa7eb72-a523-86c2-804e-237bb143715f"
+  },
+  {
+    "key": "the_goals_compute_their_statistics_and_forensic_research_self_measuring_self_auditing",
+    "name": "the goals compute their statistics and forensic research — self-measuring, self-auditing: the ledger’s distribution is computed, its receipts bucketed by digital root and coverage measured, so progress toward the goals is a number not an opinion; and the forensic research is computed too — the chain is tamper-evident, a broken link and a collision are detected, intention is read from deeds, and the sparsest bucket is a lead to investigate; but statistics measure and forensics detect, neither proves truth, and a lead is a hint not a verdict; integrity not truth; 0/7",
+    "receipt": "6edcd5e4-dfb0-8b9a-9649-936e7c95c5bb"
+  },
+  {
+    "key": "catch_and_educate_precise_the_gate_names_the_exact_hit_and_reeducate_bounds_only_it",
+    "name": "catch and educate, precise — the gate names the exact hit and reeducate bounds only it: the gate catches an overclaim precisely, returning the exact offending phrase, the hit, not a vague flag; and the reeducator educates precisely, bounding exactly that hit and leaving the honest remainder untouched, the maximum free work; precision means the exact crack is named and only it is corrected, the crack naming its own cure; catching and correcting is integrity, not a proof of truth; integrity not truth; 0/7",
+    "receipt": "b11be78c-6876-84e7-b128-d2dba48b64b3"
   }
 ]

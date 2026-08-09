@@ -24,7 +24,7 @@ import { withBase } from 'vitepress'
 ## Fact — measured state
 
 <div class="dash-grid">
-<div class="dash-card"><div class="dash-k">Version</div><div class="dash-v">v6.0.1</div><div class="dash-s">git tag (single source)</div></div>
+<div class="dash-card"><div class="dash-k">Version</div><div class="dash-v">v6.0.2</div><div class="dash-s">git tag (single source)</div></div>
 <div class="dash-card"><div class="dash-k">Millennium floor</div><div class="dash-v">0 / 7</div><div class="dash-s">entailed — not solved, not claimed</div></div>
 <div class="dash-card"><div class="dash-k">Honesty gate</div><div class="dash-v">sealed</div><div class="dash-s">all prose consistent with 0/7</div></div>
 <div class="dash-card"><div class="dash-k">Link coverage</div><div class="dash-v">100%</div><div class="dash-s">gate-enforced — the build fails below 100%</div></div>
