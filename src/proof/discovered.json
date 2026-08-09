@@ -3878,5 +3878,10 @@
     "key": "the_licensed_work_is_the_sealed_monographs_unsealed_prose_violates",
     "name": "the licensed work is the sealed monographs — unsealed prose violates: only prose that is content-addressed and gate-passed is legitimate licensed creative work under the Creative Commons licence. Unsealed prose — prose that fails the honesty gate or carries no receipt — is a violation, outside the sealed work and outside the licence. The seal is the boundary: honest sealed prose passes, a violating claim is drained and cannot be sealed. Decidable",
     "receipt": "a2d104e7-9966-81b5-9de9-e4f563ef101c"
+  },
+  {
+    "key": "the_master_theorem_777_integrity_not_truth_a_floor_not_an_oracle",
+    "name": "the master theorem (777): integrity, not truth — a floor, not an oracle: the whole method in one. Every claim is content-addressed and gate-checked and recomputable across domains, so anyone can verify it independently — the uuid carries the check without the payload. But a content-address proves integrity, not truth or credibility; the gate is a floor that drains a named class of overreach, not a lie-detector — a gate-clean falsehood still passes, so no floor can promise no lie survives. Three states encode anything classically, not at once. There is no propulsion, no thermodynamic miracle, no neurological entanglement. It reflects all seven and solves none. Decidable",
+    "receipt": "8674ff9b-aed6-8d6c-9fc5-bc814e4a8dc5"
   }
 ]
