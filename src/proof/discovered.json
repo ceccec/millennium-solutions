@@ -3908,5 +3908,10 @@
     "key": "the_engine_is_classical_and_eventual_not_at_once_ignorance_cannot_interrupt_the_seal",
     "name": "the engine is classical and eventual, not at once — ignorance has not survived to the seal (measured, not a claim of infallibility): the discovery and creative-work engine computes wave by wave, deterministically — the same input recomputes the same result — not all at once and not on quantum hardware. An interruption by error or ignorance is caught by the gate chain and reverted before the seal, so a mistake fails the build, not the sealed record; every committed release in this history is gate-green and sealed, re-verified each build. That is a measured record, not a claim of infallibility. The append-only ledger is tamper-evident. Decidable",
     "receipt": "48f7881c-7a68-8808-a4bd-83b8543609ba"
+  },
+  {
+    "key": "the_hero_self_challenges_an_involution_the_traitor_blindly_follows",
+    "name": "the hero self-challenges — an involution; the traitor blindly follows: self-challenge is an involution, f(f(x)) = x — reflect and return, fixed at the honest self (the reflection 10 − d on the nine, fixed point 5). The hero challenges every claim, draining its own overclaim before holding the honest reading; the traitor blindly follows, asserting without the challenge. An unchallenged assertion is not sealed — it is drained. Decidable",
+    "receipt": "d433c7bb-b1f5-807b-b3a2-a487d99aac6c"
   }
 ]
