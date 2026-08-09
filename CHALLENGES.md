@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 847 recorded in 284 families
+## Discovered theorems (decidable, over ℤ/9) — 855 recorded in 285 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -365,6 +365,17 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [bool_noncontradiction](/theorem/bool_noncontradiction) — non-contradiction: a∧¬a = 0 (all inputs)  ·  `1d8543d8-7d61…`
 - [bool_absorption](/theorem/bool_absorption) — absorption: a∨(a∧b) = a (all inputs)  ·  `75ad142a-a56a…`
 - [bool_xor_associativity](/theorem/bool_xor_associativity) — XOR associativity: (a⊕b)⊕c = a⊕(b⊕c) (all inputs)  ·  `4ba6ccd9-fd1d…`
+
+### polygonal (8)
+
+- [polygonal_numbers_s3_closed_form_equals_recurrence](/theorem/polygonal_numbers_s3_closed_form_equals_recurrence) — the 3-gonal numbers — closed form equals recurrence: P = ((3−2)·n² − (3−4)·n) / 2 matches the recurrence P(n) = P(n−1) + ((3−2)(n−1) + 1) with P(1) = 1, term for term. Verified exhaustively for n up to 50. Decidable  ·  `a9aba186-a37a…`
+- [polygonal_numbers_s4_closed_form_equals_recurrence](/theorem/polygonal_numbers_s4_closed_form_equals_recurrence) — the 4-gonal numbers — closed form equals recurrence: P = ((4−2)·n² − (4−4)·n) / 2 matches the recurrence P(n) = P(n−1) + ((4−2)(n−1) + 1) with P(1) = 1, term for term. Verified exhaustively for n up to 50. Decidable  ·  `fb4fe338-6b20…`
+- [polygonal_numbers_s5_closed_form_equals_recurrence](/theorem/polygonal_numbers_s5_closed_form_equals_recurrence) — the 5-gonal numbers — closed form equals recurrence: P = ((5−2)·n² − (5−4)·n) / 2 matches the recurrence P(n) = P(n−1) + ((5−2)(n−1) + 1) with P(1) = 1, term for term. Verified exhaustively for n up to 50. Decidable  ·  `04266de4-c76d…`
+- [polygonal_numbers_s6_closed_form_equals_recurrence](/theorem/polygonal_numbers_s6_closed_form_equals_recurrence) — the 6-gonal numbers — closed form equals recurrence: P = ((6−2)·n² − (6−4)·n) / 2 matches the recurrence P(n) = P(n−1) + ((6−2)(n−1) + 1) with P(1) = 1, term for term. Verified exhaustively for n up to 50. Decidable  ·  `1bb13df4-173f…`
+- [polygonal_numbers_s7_closed_form_equals_recurrence](/theorem/polygonal_numbers_s7_closed_form_equals_recurrence) — the 7-gonal numbers — closed form equals recurrence: P = ((7−2)·n² − (7−4)·n) / 2 matches the recurrence P(n) = P(n−1) + ((7−2)(n−1) + 1) with P(1) = 1, term for term. Verified exhaustively for n up to 50. Decidable  ·  `5ea11c5b-7f68…`
+- [polygonal_numbers_s8_closed_form_equals_recurrence](/theorem/polygonal_numbers_s8_closed_form_equals_recurrence) — the 8-gonal numbers — closed form equals recurrence: P = ((8−2)·n² − (8−4)·n) / 2 matches the recurrence P(n) = P(n−1) + ((8−2)(n−1) + 1) with P(1) = 1, term for term. Verified exhaustively for n up to 50. Decidable  ·  `cc3176b9-2e83…`
+- [polygonal_numbers_s9_closed_form_equals_recurrence](/theorem/polygonal_numbers_s9_closed_form_equals_recurrence) — the 9-gonal numbers — closed form equals recurrence: P = ((9−2)·n² − (9−4)·n) / 2 matches the recurrence P(n) = P(n−1) + ((9−2)(n−1) + 1) with P(1) = 1, term for term. Verified exhaustively for n up to 50. Decidable  ·  `b2da2f8a-bdd9…`
+- [polygonal_numbers_s10_closed_form_equals_recurrence](/theorem/polygonal_numbers_s10_closed_form_equals_recurrence) — the 10-gonal numbers — closed form equals recurrence: P = ((10−2)·n² − (10−4)·n) / 2 matches the recurrence P(n) = P(n−1) + ((10−2)(n−1) + 1) with P(1) = 1, term for term. Verified exhaustively for n up to 50. Decidable  ·  `f03c1061-c8ed…`
 
 ### demorgan (7)
 
@@ -1287,4 +1298,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `1c14518c-aece-859f-917b-b69dbc18b506`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `de037bf0-9e2d-8036-9058-236379a2dc0b`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

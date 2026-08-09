@@ -4233,5 +4233,45 @@
     "key": "lines_dividing_the_plane_regions",
     "name": "lines dividing the plane — n lines in general position make 1 + n(n+1)/2 regions: each new line crosses all previous ones and adds n new regions, so n lines give R(n) = R(n−1) + n = 1 + n + C(n,2) = 1 + n(n+1)/2 regions. Verified exhaustively for n up to 100. Decidable",
     "receipt": "ef5e926d-4bfd-86f5-83af-5e9b3368ba39"
+  },
+  {
+    "key": "polygonal_numbers_s3_closed_form_equals_recurrence",
+    "name": "the 3-gonal numbers — closed form equals recurrence: P = ((3−2)·n² − (3−4)·n) / 2 matches the recurrence P(n) = P(n−1) + ((3−2)(n−1) + 1) with P(1) = 1, term for term. Verified exhaustively for n up to 50. Decidable",
+    "receipt": "a9aba186-a37a-8cf6-8863-552add032f15"
+  },
+  {
+    "key": "polygonal_numbers_s4_closed_form_equals_recurrence",
+    "name": "the 4-gonal numbers — closed form equals recurrence: P = ((4−2)·n² − (4−4)·n) / 2 matches the recurrence P(n) = P(n−1) + ((4−2)(n−1) + 1) with P(1) = 1, term for term. Verified exhaustively for n up to 50. Decidable",
+    "receipt": "fb4fe338-6b20-88a9-8403-2d7425bc9638"
+  },
+  {
+    "key": "polygonal_numbers_s5_closed_form_equals_recurrence",
+    "name": "the 5-gonal numbers — closed form equals recurrence: P = ((5−2)·n² − (5−4)·n) / 2 matches the recurrence P(n) = P(n−1) + ((5−2)(n−1) + 1) with P(1) = 1, term for term. Verified exhaustively for n up to 50. Decidable",
+    "receipt": "04266de4-c76d-8a62-bdda-b3c2d606d753"
+  },
+  {
+    "key": "polygonal_numbers_s6_closed_form_equals_recurrence",
+    "name": "the 6-gonal numbers — closed form equals recurrence: P = ((6−2)·n² − (6−4)·n) / 2 matches the recurrence P(n) = P(n−1) + ((6−2)(n−1) + 1) with P(1) = 1, term for term. Verified exhaustively for n up to 50. Decidable",
+    "receipt": "1bb13df4-173f-8c7e-8163-6c390c8b6e7b"
+  },
+  {
+    "key": "polygonal_numbers_s7_closed_form_equals_recurrence",
+    "name": "the 7-gonal numbers — closed form equals recurrence: P = ((7−2)·n² − (7−4)·n) / 2 matches the recurrence P(n) = P(n−1) + ((7−2)(n−1) + 1) with P(1) = 1, term for term. Verified exhaustively for n up to 50. Decidable",
+    "receipt": "5ea11c5b-7f68-8cc3-99dc-c1914b2ed2ad"
+  },
+  {
+    "key": "polygonal_numbers_s8_closed_form_equals_recurrence",
+    "name": "the 8-gonal numbers — closed form equals recurrence: P = ((8−2)·n² − (8−4)·n) / 2 matches the recurrence P(n) = P(n−1) + ((8−2)(n−1) + 1) with P(1) = 1, term for term. Verified exhaustively for n up to 50. Decidable",
+    "receipt": "cc3176b9-2e83-819b-9614-e0a0ce9ac6c0"
+  },
+  {
+    "key": "polygonal_numbers_s9_closed_form_equals_recurrence",
+    "name": "the 9-gonal numbers — closed form equals recurrence: P = ((9−2)·n² − (9−4)·n) / 2 matches the recurrence P(n) = P(n−1) + ((9−2)(n−1) + 1) with P(1) = 1, term for term. Verified exhaustively for n up to 50. Decidable",
+    "receipt": "b2da2f8a-bdd9-8313-bc8f-4f676870fc68"
+  },
+  {
+    "key": "polygonal_numbers_s10_closed_form_equals_recurrence",
+    "name": "the 10-gonal numbers — closed form equals recurrence: P = ((10−2)·n² − (10−4)·n) / 2 matches the recurrence P(n) = P(n−1) + ((10−2)(n−1) + 1) with P(1) = 1, term for term. Verified exhaustively for n up to 50. Decidable",
+    "receipt": "f03c1061-c8ed-8e43-9443-5846cfcb4fdd"
   }
 ]
