@@ -4928,5 +4928,10 @@
     "key": "merkle_proof_soundness_n16",
     "name": "merkle proof soundness at N=16 — a forged leaf never verifies: for every position in a 16-leaf tree the true leaf verifies against the root while each wrong leaf fails (exhaustive over positions × forgeries), so membership cannot be faked by swapping the leaf; soundness by recompute on a non-cryptographic hash, not hardness; integrity not truth; 0/7",
     "receipt": "684debb6-eb40-879e-ac40-4163e2eb0bac"
+  },
+  {
+    "key": "casting_out_nines_the_digital_root_is_a_ring_homomorphism_necessary_not_sufficient",
+    "name": "casting out nines — the digital root is a ring homomorphism ℤ→ℤ/9, a necessary check not a sufficient proof: dr(a+b) = dr(dr(a)+dr(b)) and dr(a·b) = dr(dr(a)·dr(b)) for all tested a,b (exhaustive over 0..200), which is why casting out nines validates arithmetic; but it only catches errors that change the residue mod 9 — a mod-9-preserving error like a digit transposition slips through — so it is necessary, not sufficient; integrity not truth; 0/7",
+    "receipt": "b2754a9f-dd37-896b-b1b7-45db7bfb92cc"
   }
 ]
