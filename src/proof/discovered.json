@@ -4058,5 +4058,10 @@
     "key": "yes_a_uuid_imprints_a_bounded_cryptographic_receipt_efficiency_is_the_skill_the_rule_decides",
     "name": "yes, a uuid imprints a bounded cryptographic receipt — efficiency is the skill, the rule decides, the bound is 115 bits: the imprint codec encodes up to 115 bits into a single uuid and reads them back exactly, and fitting more meaning into the same bits is a real, measurable efficiency. But a single uuid holds at most 115 message bits by pigeonhole — over-capacity is refused; beyond it you chain uuids or commit by a root, references not containment. The rule decides deterministically: round-trip or refusal. Efficiency within a hard bound, not unbounded intelligence. Decidable",
     "receipt": "78089943-1a94-8dd4-a34c-56f05e944260"
+  },
+  {
+    "key": "negation_is_a_serious_challenge_not_a_denial_the_involution_strengthens_finite_rules_unbounded_behavior",
+    "name": "negation is a serious challenge, not a denial — the involution strengthens: finite rules, unbounded behavior: multidimensional theorems hold unbounded behavior in finite rules — the sequence yields distinct outputs without end, yet every computation is finite and halts, not a completed actual infinity. It computes deterministically, reproducible, folding perspectives harmonically. And the involution uses negation as a serious point of view to challenge — a theorem must drain its own overclaim and still hold the honest reading — so negation strengthens, it does not merely deny. Decidable",
+    "receipt": "ec9a05fc-56cd-88dd-840b-0a1336eb71a9"
   }
 ]
