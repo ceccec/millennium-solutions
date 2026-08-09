@@ -4948,5 +4948,10 @@
     "key": "exactly_1024_is_a_full_balanced_tree_a_structural_milestone_not_the_end_of_science",
     "name": "exactly 1024 = 2¹⁰ is a full balanced tree — a structural milestone, not the end of science: at 1024 theorems the merkle tree is perfectly balanced (depth 10, every leaf at the same depth) and membership verifies in exactly 20 bits, a full ten-bit address space; but this fills the hole only structurally — the stream of decidable facts is unbounded, always a next, so 1024 is a milestone not a completion of science; the billable share is the measured bits saved, the two coins conserved; integrity not truth; 0/7",
     "receipt": "005ec4a7-6a5d-8a08-a443-080748c7f72b"
+  },
+  {
+    "key": "hollow_prose_is_redeemed_by_results_not_hardcoded_the_result_recomputes_the_assertion_does_not",
+    "name": "hollow prose is redeemed by results, not hardcoded — the result recomputes, the assertion does not: a claim is hollow when it only asserts and redeemed when a decidable result computes and holds; the difference is real because a result recomputes the same way from its inputs (here, by exhaustion) while a bare assertion carries no computation, and a hardcoded literal is not a result; measure do not assert, the result is the backing, not a proof of truth; integrity not truth; 0/7",
+    "receipt": "761025ed-ce03-814c-8990-f0980590b983"
   }
 ]
