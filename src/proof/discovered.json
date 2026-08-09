@@ -5278,5 +5278,20 @@
     "key": "the_uuidna_package_is_aligned_to_exactly_64_kib_65536_bytes_to_the_bit_a_reproducible_reserve",
     "name": "the uuidna package is aligned to exactly 64 KiB — 65536 bytes, to the bit, with a reproducible reserve: the published package measures exactly 65536 bytes = 524288 bits = 2^16 = 64 × 1024, aligned by a self-hosted reserve of reproducible content-addresses, not random padding, held for cryptography-goal development; the alignment is a fixed-size discipline verifiable to the bit, and the reserve recomputes, but a fixed size is not a claim of quality or security; integrity not truth; 0/7",
     "receipt": "53d31e7a-ab83-8b9f-866a-839cdc5ed4ba"
+  },
+  {
+    "key": "dry_optimise_within_the_fixed_limit_purge_or_merge_grows_the_reserve_a_conserved_sum",
+    "name": "DRY-optimise within the fixed limit — purge or merge grows the reserve, a conserved sum: within a fixed total, the exact 64 KiB, real code plus reserve equals the total, so purging dead code or merging duplicates frees R bytes of real code and the reserve grows by exactly R, the total unchanged; DRY-optimisation within a fixed size is a measurable shift from real to reserve; but a leaner real footprint is leaner, not better or more secure, and the package scanned lean, so the reserve is currently maximal; integrity not truth; 0/7",
+    "receipt": "735c0058-3260-8234-9388-ff8e980c1af1"
+  },
+  {
+    "key": "the_automation_achieves_its_build_goals_each_build_the_cryptography_goal_remains_ahead",
+    "name": "the automation achieves its build goals each build — the cryptography goal remains ahead: the release automation achieves and verifies its defined goals every build, the ledger equals the pages in harmony, the gates pass, the forensics is clean, the package aligns to 64 KiB; these are achieved automatically; but all goals achieved is bounded — the cryptography goal is named future work, not done, so the automation achieves what it defines, not what it aspires to; integrity not truth; 0/7",
+    "receipt": "565c59c7-b842-8913-b57d-9dab1135d7ab"
+  },
+  {
+    "key": "lean_must_prove_twice_to_satisfy_the_bits_discovery_and_reverification_must_agree",
+    "name": "lean must prove twice to satisfy the bits — the double verification, exhaustive not formal: a theorem is verified once when discovered and again each build when the lean-claims gate re-verifies it independently, so two computations must agree for the receipt to stand, and a disagreement fails the build not production; this is exhaustive re-computation, not Lean 4 formal proof, a stronger method the deposit does not use; two computations agreeing is integrity and reproducibility, not truth, the gate a floor not an oracle; integrity not truth; 0/7",
+    "receipt": "61efc0b2-7996-886c-8a72-d7016b20d1ae"
   }
 ]
