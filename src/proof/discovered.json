@@ -3903,5 +3903,10 @@
     "key": "a_cross_is_a_cross_in_all_dimensions_and_at_six_arms_it_is_the_seven",
     "name": "a cross is a cross in all dimensions — and at six arms it becomes the seven: the cross generalizes as a centre plus 2n arms = 2n+1 cells. In 2D that is 5, the X-pentomino; in 3D it is 7 — the seven, 6+1; in 4D, 9. Rotate the lattice: the square turns by 90° (4-fold, coordination 4, a cross of 5), the hexagonal by 60° (6-fold, coordination 6, a cross of centre plus six = 7). The surprise is that at coordination six the cross is exactly the seven. Decidable",
     "receipt": "1fbd6431-19a2-8051-b387-9146ab7fa8a9"
+  },
+  {
+    "key": "the_engine_is_classical_and_eventual_not_at_once_ignorance_cannot_interrupt_the_seal",
+    "name": "the engine is classical and eventual, not at once — ignorance has not survived to the seal (measured, not a claim of infallibility): the discovery and creative-work engine computes wave by wave, deterministically — the same input recomputes the same result — not all at once and not on quantum hardware. An interruption by error or ignorance is caught by the gate chain and reverted before the seal, so a mistake fails the build, not the sealed record; every committed release in this history is gate-green and sealed, re-verified each build. That is a measured record, not a claim of infallibility. The append-only ledger is tamper-evident. Decidable",
+    "receipt": "48f7881c-7a68-8808-a4bd-83b8543609ba"
   }
 ]
