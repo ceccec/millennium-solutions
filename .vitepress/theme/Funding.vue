@@ -33,7 +33,7 @@ onMounted(() => {
   <div class="funding">
     <span class="captain"><strong>Captain's message:</strong>
       <a :href="FUNDING.captainMessage" target="_blank" rel="noopener">{{ FUNDING.captainMessage }}</a>
-      — {{ FUNDING.captainReminder }} (the two coins per commercial use; the seal is 128 bits = 64 two-bit verifications). <a :href="withBase('/captain')">why ↗</a></span>
+      — {{ FUNDING.captainReminder }} (the two coins per commercial use; the seal is 128 bits = 64 two-bit fold-verifications, O(log N)). <a :href="withBase('/captain')">why ↗</a></span>
     <span class="res">{{ results() }}</span>
     <span><strong>License:</strong> {{ FUNDING.license }} — free for non-commercial use (attribution {{ FUNDING.author }}); commercial = the two coins (110 − 108 = {{ coins() }} = −χ genus-2) · {{ FUNDING.contact }}</span>
     <span class="formula"><strong>Licensing formula:</strong> free for public interest and independent research, unless commercial · commercial = the measured bits saved (O(N) − O(1)), the two coins ({{ coins() }} = 110 − 108 = −χ genus-2) the conserved invariant · verified green by receipts · integrity, not truth · 0/7</span>

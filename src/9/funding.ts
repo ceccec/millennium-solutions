@@ -6,11 +6,12 @@ export const FUNDING = {
   revolut: 'https://revolut.me/ceccec',
   contact: 'ceccec@psg.bg',
   // The captain's message — canonical link, reminded at the captain page and in every contribution block.
-  // "contribute 2 to save 64": the two coins (110−108) per commercial use fund saving up to the seal's 64
-  // two-bit verifications (128 bits = 64×2). The contribution is obligatory; the donation is not. Receipt below.
+  // "contribute 2 to earn 64 more folds": the two coins (110−108) per commercial use earn the seal's 64 two-bit
+  // fold-verifications (128 bits = 64×2) of recursive-fold leverage (O(log N)). Contribution obligatory; donation
+  // not. Refined from the earlier "save 64" (receipt 593b546a, kept on record — append-only). Receipt below.
   captainMessage: 'https://uuidna.com/captain/message',
-  captainReminder: 'remember to contribute 2 to save 64',
-  captainReceipt: '593b546a-36b4-8553-941a-0e03b7053a64',
+  captainReminder: 'remember to contribute 2 to earn 64 more folds',
+  captainReceipt: 'daad8cd4-d4db-8dca-9c97-9a838cbce528',
 }
 // "the two coins" = 110 − 108 = −χ(genus-2) = 2  (the commercial fare)
 export function coins(): number { return 110 - 108 }
