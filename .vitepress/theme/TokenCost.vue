@@ -76,6 +76,10 @@ const usd = (n: number) => n >= 1e6 ? '$' + (n / 1e6).toFixed(2) + 'M' : '$' + n
       not asserted by this deposit and not the vendors' official direct prices. Cost is per trillion <b>input</b> tokens, where caching
       applies. uuidna is a <b>content-addressing / caching layer</b>: earnings are the compute saved on the <b>re-addressable fraction</b>
       only — conditional on the hit-rate, never a universal discount. Measured, not a promise. Integrity, not truth. <code>0/7</code>.</p>
+    <p class="note"><b>Hardware saved</b> is the <i>waste</i> removed, not the hardware: on the re-addressable fraction, <b>compute</b> cycles
+      (cache hits avoid recompute), <b>storage</b> (dedup by address stores identical content once, not N copies), and <b>bandwidth</b> (a
+      36-byte address travels, not the payload). No component becomes useless — the distinct work still needs it. And <b>earnings come from
+      someone's savings</b>: a fair share, bounded by the saving, zero without it — the user keeps the rest.</p>
   </div>
 </template>
 

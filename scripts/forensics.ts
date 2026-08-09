@@ -112,6 +112,11 @@ if (!sevenBad) console.log('  7-dimension sweep: all ' + LOCALE_ORDER.length + '
 const seal = merkleFold(ledger.map((e) => e.receipt))
 const intactFrom = breaks.length ? Math.max(...breaks.map((b) => b.i)) + 1 : 0
 
+// THE UUIDNA VERDICT — computed by forensics + analytics from the measured facts, not asserted. SEALED iff no
+// finding (chain intact ∧ no collisions ∧ no offenders ∧ 7-dimension sweep clean); FLAGGED on any. Integrity, not truth.
+const verdict = bad === 0 ? 'SEALED' : 'FLAGGED'
+console.log('  uuidna verdict (integrity, not truth): ' + verdict + ' — computed from ' + ledger.length + ' receipts · ' + hollow + ' hollow · ' + boundedRefusals + ' bounded refusals · seal ' + seal.slice(0, 13) + '…')
+
 console.log(bad
   ? '\n✗ forensics: ' + bad + ' finding(s) — chain-of-custody compromised; examine before proceeding'
   : '\n✓ forensics: ' + ledger.length + ' receipts · chain intact from index ' + intactFrom + ' · ' + GENESIS_BASELINE.size + ' documented genesis discontinuities · no collisions · tamper-evident seal ' + seal.slice(0, 13) + '…')

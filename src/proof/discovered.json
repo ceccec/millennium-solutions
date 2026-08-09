@@ -5338,5 +5338,25 @@
     "key": "the_token_cost_model_cost_per_trillion_is_price_times_a_million_uuidna_earns_the_cache_hit_saving",
     "name": "the token-cost model — cost per trillion is price times a million, uuidna earns the cache-hit saving: the cost per trillion input tokens is the price per million tokens times one million, since a trillion is a million million-token units; with uuidna as a content-addressing caching layer the re-addressable fraction pays the cached read, a fraction of the input price, instead of the full recompute, so the earnings equal the hit-rate times one minus the cache fraction times the price times a million; the earnings are conditional on the hit-rate, never a universal discount, and the live prices come from a public no-key api, not asserted by the deposit; integrity not truth; 0/7",
     "receipt": "64689ded-bb05-82a8-891e-19a4ff2cac4c"
+  },
+  {
+    "key": "hardware_savings_are_the_waste_removed_not_the_hardware_compute_storage_bandwidth_on_re_addressable_work",
+    "name": "hardware savings are the waste removed, not the hardware — compute, storage, bandwidth on re-addressable work: content-addressing removes redundant work, so the resources it would consume are saved — compute, where cache hits avoid recompute cycles; storage, where dedup by address stores identical content once instead of N copies; and bandwidth, where no-payload messaging sends a 36-byte address instead of the payload; but it removes the waste, the redundant work, not the hardware itself — the distinct work still needs it and no component becomes useless, and the saving is conditional on re-addressability; integrity not truth; 0/7",
+    "receipt": "0c7d05f1-95e3-876b-8bd2-49ccc3705dc8"
+  },
+  {
+    "key": "earnings_come_from_someones_savings_a_fair_share_bounded_by_the_saving_zero_without_it",
+    "name": "earnings come from someone’s savings — a fair share, bounded by the saving, zero without it: uuidna’s earning is a share of the saving a user actually realizes in compute, storage, bandwidth, or cost, bounded by that saving so it is never more than what was saved, and zero when there is no saving; the user keeps the rest so both benefit, and the earning is downstream of a real saving, not created from nothing nor extracted beyond the value; no saving, no earning; integrity not truth; 0/7",
+    "receipt": "fb7286e8-9b2e-8c93-9f3f-ac62273e8c68"
+  },
+  {
+    "key": "forensics_and_analytics_compute_the_uuidna_verdict_sealed_or_flagged_a_verdict_of_integrity_not_truth",
+    "name": "forensics and analytics compute the uuidna verdict — sealed or flagged, a verdict of integrity not truth: the verdict is a decidable function of the measured facts, sealed when the forensics is clean, the chain intact, no collisions, no offenders, only documented revocations, and the analytics show coverage, and flagged on any finding; it is computed from the binary measurements each build, not asserted; but the verdict is of integrity, that the record is consistent and tamper-evident, not of truth, since a sealed record can still hold a false statement the lexical gate passed; integrity not truth; 0/7",
+    "receipt": "8c94412d-29c4-894c-b9d8-70f8623a0d85"
+  },
+  {
+    "key": "uuidna_is_the_captains_boat_everyone_aboard_is_under_the_license_which_binds_the_work_not_the_truth",
+    "name": "uuidna is the captain’s boat — everyone aboard is under the license, which binds the work not the truth: the vessel, the work, is the captain’s, copyright Tsvetan Rouschev, licensed CC BY-NC 4.0, so to use it is to be aboard under those terms — attribution obligatory, non-commercial free, commercial licensed, and the captain’s rules, the gate and the fair exchange, apply; but the captain owns the work and its license, not the truth, since the knowledge reached is public and reachable by recomputation by anyone; boarding is voluntary and once aboard the license binds; integrity not truth; 0/7",
+    "receipt": "5fdc41b0-9212-8d2e-a62c-46d96b8b43ba"
   }
 ]
