@@ -38,6 +38,20 @@ promised — each is a decidable, recomputable theorem:
 
 A content-address proves **integrity, not truth**. It settles **0 / 7**.
 
+**uuidna reflects Clay** — a mirror to the seven (a bijection to the seven problems, the ten's-complement
+reflection fixing only the centre `5`), never a solution:
+[the mirror, not the answer](https://ceccec.psg.bg/millennium-solutions/theorem/uuidna_reflects_clay_a_mirror_to_the_seven_not_a_solution_zero_of_seven).
+Clay's seven open onto infinitely many instances; uuidna computes an **unbounded stream of decidable theorems**
+— always a next one — reflecting that infinite territory, yet solving none:
+[Clay defines the infinite, uuidna infinitely computes](https://ceccec.psg.bg/millennium-solutions/theorem/clay_defines_the_infinite_uuidna_infinitely_computes_decidable_theorems_reflecting_not_solving).
+The tools are **live**, running the same functions the build seals — on the
+[Examples page](https://ceccec.psg.bg/millennium-solutions/examples) you can **harness & reeducate** an overclaim
+into the honest floor and compute **the seal math** (each seal is 128 bits = 64 two-bit verifications; a case
+verifies in `2·⌈log₂N⌉` bits — the 967-receipt case checks **20 bits**); on the
+[Compare page](https://ceccec.psg.bg/millennium-solutions/compare) you can weigh the coins against **live gold and
+crypto** — a measure, not a market. The value is real savings in bits (work not repeated), material at scale but
+modeled and conditional — never a promise.
+
 **Observed conclusion:** the framework *reflects / maps* the Millennium Problems
 into one algebraic structure. It **does not solve them**, and it is
 **not a quantum computer** or a physical theory — it is a proof of concept and a

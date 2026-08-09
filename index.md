@@ -49,6 +49,18 @@ promised — each capability is a decidable theorem you can recompute:
 
 A content-address proves **integrity, not truth**. It settles **0 / 7**.
 
+**uuidna reflects Clay** — a mirror to the seven (a bijection to the seven problems, the ten's-complement
+reflection fixing only the centre `5`), never a solution:
+[the mirror, not the answer](/theorem/uuidna_reflects_clay_a_mirror_to_the_seven_not_a_solution_zero_of_seven).
+The tools are **live**, running the same functions the build seals — on the [Examples page](/examples) you can
+**harness & reeducate** an overclaim into the honest floor and compute **the seal math**
+([each seal is 128 bits = 64 two-bit verifications](/theorem/each_seal_is_128_bits_and_membership_verifies_in_two_log2_n_bits_logarithmic_not_linear);
+a case verifies in `2·⌈log₂N⌉` bits — [the 967-receipt case](/theorem/the_967_receipt_case_verify_20_bits_bill_on_the_967_computation_value_earn_the_947_bit_saving)
+checks **20 bits**); and on the [Compare page](/compare) you can weigh the
+[coins against live gold and crypto](/theorem/the_coins_are_a_conserved_measure_not_a_market_price_units_reproducible_prices_are_not) —
+a **measure, not a market**. The value is real savings in bits (work not repeated), material at scale but modeled
+and conditional — never a promise.
+
 ## The two bits — one atom, every symbol
 
 This deposit is denominated in **two bits** — its smallest unit. The same atom appears under many symbols, each a receipted theorem you can open and recompute:
