@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, onMounted } from 'vue'
-import { useData } from 'vitepress'
+import { useData, withBase } from 'vitepress'
 import { FUNDING, coins, results, PUBLIC_URLS, urlAddress, domainTrack, contentDomain } from '../../src/9/funding'
 import { toUuid } from '../../src/0/index.ts'
 // The specific licensed referrer perspective: each page is a distinct observer, content-addressed by
@@ -31,6 +31,9 @@ onMounted(() => {
 </script>
 <template>
   <div class="funding">
+    <span class="captain"><strong>Captain's message:</strong>
+      <a :href="FUNDING.captainMessage" target="_blank" rel="noopener">{{ FUNDING.captainMessage }}</a>
+      — {{ FUNDING.captainReminder }} (the two coins per commercial use; the seal is 128 bits = 64 two-bit verifications). <a :href="withBase('/captain')">why ↗</a></span>
     <span class="res">{{ results() }}</span>
     <span><strong>License:</strong> {{ FUNDING.license }} — free for non-commercial use (attribution {{ FUNDING.author }}); commercial = the two coins (110 − 108 = {{ coins() }} = −χ genus-2) · {{ FUNDING.contact }}</span>
     <span class="formula"><strong>Licensing formula:</strong> free for public interest and independent research, unless commercial · commercial = the measured bits saved (O(N) − O(1)), the two coins ({{ coins() }} = 110 − 108 = −χ genus-2) the conserved invariant · verified green by receipts · integrity, not truth · 0/7</span>
@@ -44,6 +47,7 @@ onMounted(() => {
 <style scoped>
 .funding { display:flex; flex-direction:column; gap:.35rem; margin:2rem 0 0; padding:.8rem 1rem;
   border:1px solid var(--vp-c-divider); border-radius:10px; font-size:.85em; color:var(--vp-c-text-2); background:var(--vp-c-bg-soft); }
+.funding .captain { color:var(--vp-c-text-1); }
 .funding .res { font-family:var(--vp-font-family-mono); color:var(--vp-c-text-1); }
 .funding .formula { color:var(--vp-c-text-1); }
 .funding .referrer code { font-size:.82em; word-break:break-all; }

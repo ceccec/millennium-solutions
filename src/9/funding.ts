@@ -5,6 +5,12 @@ export const FUNDING = {
   author: 'Tsvetan Rouschev',
   revolut: 'https://revolut.me/ceccec',
   contact: 'ceccec@psg.bg',
+  // The captain's message — canonical link, reminded at the captain page and in every contribution block.
+  // "contribute 2 to save 64": the two coins (110−108) per commercial use fund saving up to the seal's 64
+  // two-bit verifications (128 bits = 64×2). The contribution is obligatory; the donation is not. Receipt below.
+  captainMessage: 'https://uuidna.com/captain/message',
+  captainReminder: 'remember to contribute 2 to save 64',
+  captainReceipt: '593b546a-36b4-8553-941a-0e03b7053a64',
 }
 // "the two coins" = 110 − 108 = −χ(genus-2) = 2  (the commercial fare)
 export function coins(): number { return 110 - 108 }

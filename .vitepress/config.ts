@@ -174,6 +174,7 @@ export default defineConfig({
         { text: 'Develop', link: '/DEVELOP' },
         { text: 'Proofs', link: '/proofs' },
         { text: 'Signature', link: '/SIGNATURE' },
+        { text: "Captain's message", link: '/captain' },
       ] },
       { text: 'Repo ↗', link: 'https://github.com/ceccec/millennium-solutions' },
     ],
@@ -204,6 +205,7 @@ export default defineConfig({
           { text: 'Proofs', link: '/proofs' },
           { text: 'Develop', link: '/DEVELOP' },
           { text: 'Signature', link: '/SIGNATURE' },
+          { text: "Captain's message", link: '/captain' },
         ],
       },
       {
