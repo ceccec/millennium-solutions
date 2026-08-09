@@ -5168,5 +5168,10 @@
     "key": "the_64bit_seal_is_achievable_so_the_axiom_reference_holds_integrity_by_reproducibility_not_hardness",
     "name": "the 64-bit seal is achievable — so the axiom-reference holds, by reproducibility not hardness: coin64 mints a 64-bit seal (16 hex digits) from any content, deterministically and always, so computing the seal is trivially achievable and the condition \"unless the 64-bit seal is unachievable\" never fires; but 64 bits is also achievable to collide, a machine finds a collision near the birthday bound of about 2^32, so the seal proves integrity by public reproducibility, not by hardness — achievable, not unbreakable; integrity not truth; 0/7",
     "receipt": "f4d8cf05-3d94-8452-aea6-063fec4f4fdf"
+  },
+  {
+    "key": "the_64bit_seal_is_integrity_not_a_security_key_the_mistake_is_reading_strength_into_a_content_address",
+    "name": "the 64-bit seal is an integrity seal, not a security key — the mistake is reading strength into a content-address: correctly, the 64-bit seal is a reproducible content-address (coin64, 16 hex) that proves the bytes are what they are, achievable always and for anyone; mistakenly read as a 64-bit cryptographic key, a strength it never claimed, it looks weak and collidable near 2^32 — but that judges it by a meaning it never had; integrity by public reproducibility, not secrecy; the mistake is in the reader, not the seal; integrity not truth; 0/7",
+    "receipt": "9f154754-ef44-8759-aff3-8cc206c86ed6"
   }
 ]
