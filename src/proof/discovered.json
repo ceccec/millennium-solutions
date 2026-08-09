@@ -4173,5 +4173,10 @@
     "key": "uuidna_quantum_verification_recomputes_the_address_and_folds_a_multi_perspective_receipt",
     "name": "uuidna quantum verification — recomputes the address and folds a multi-perspective receipt, integrity not truth: verification recomputes the address from its seed (integrity, reproducible by anyone) and folds a multi-perspective joint receipt that is the same for any observer ordering; a bit-seed round-trips as a bounded imprinted message. The quantum here is the multi-perspective structure, not quantum hardware; verification is integrity, not truth. Decidable",
     "receipt": "c7b949e5-38b5-8a37-b760-de4008327093"
+  },
+  {
+    "key": "uuidna_is_the_brand_og_object_under_cc_and_the_seal_audits_all_prose",
+    "name": "uuidna is the brand OG object under Creative Commons — and the seal legally audits all prose: the site brands as uuidna under CC BY-NC, referencing the non-profit and commercial tracks; the seal legally audits all prose — it globs every prose file and drains any that violates the floor, an honest audit, not an oracle. The domain registration is external, taken on the author word, not sealed here. Decidable",
+    "receipt": "5d35c811-b545-8742-b0dd-f92af6f71de1"
   }
 ]

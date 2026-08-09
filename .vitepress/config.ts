@@ -86,7 +86,13 @@ export default defineConfig({
     ['meta', { name: 'twitter:image', content: OG_IMAGE }],
     ['meta', { name: 'author', content: 'Tsvetan Rouschev' }],
     ['meta', { name: 'robots', content: 'index, follow' }],
-    ['meta', { name: 'keywords', content: 'ℤ/9, vortex, Pliska rosette, Clay Millennium Problems, Lean 4, recomputable, 0/7, ' + THEOREMS + ' decidable theorems' }],
+    ['meta', { name: 'keywords', content: 'uuidna, ℤ/9, vortex, Pliska rosette, Clay Millennium Problems, Lean 4, recomputable, 0/7, ' + THEOREMS + ' decidable theorems' }],
+    // uuidna brand + Creative Commons license + brand tracks (author's declared .org non-profit / .com commercial)
+    ['meta', { name: 'application-name', content: 'uuidna' }],
+    ['meta', { property: 'og:see_also', content: 'https://uuidna.org' }],
+    ['meta', { property: 'og:see_also', content: 'https://uuidna.com' }],
+    ['meta', { name: 'license', content: 'CC BY-NC 4.0 — free for public interest and independent research; commercial via uuidna.com' }],
+    ['link', { rel: 'license', href: 'https://creativecommons.org/licenses/by-nc/4.0/' }],
     ['script', { type: 'application/ld+json' }, JSON.stringify(LD)],
   ],
 
