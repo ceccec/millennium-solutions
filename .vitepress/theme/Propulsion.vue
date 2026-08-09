@@ -31,17 +31,51 @@ const beam = () => swing(heading.value < 0 ? -BEAM : BEAM)      // make the ±90
 const CX = 130, CY = 130, R = 96
 const pt = (deg: number, r = R) => { const a = (deg - 90) * Math.PI / 180; return [CX + r * Math.cos(a), CY + r * Math.sin(a)] }
 // the reachable envelope: the forward semicircle −90 → +90, swept through the bow (0)
-const arcPath = computed(() => { const [xl, yl] = pt(-BEAM), [xr, yr] = pt(BEAM); return `M ${CX} ${CY} L ${xl.toFixed(1)} ${yl.toFixed(1)} A ${R} ${R} 0 0 1 ${xr.toFixed(1)} ${yr.toFixed(1)} Z` })
-const marks = [-BEAM, -GOLD, 0, GOLD, BEAM].map((d) => ({ d, xy: pt(d, R + 13), tick: pt(d, R - 6), out: pt(d), tack: Math.abs(d) === GOLD, beamMark: Math.abs(d) === BEAM }))
+const LIMIT = 30                                  // the limit of efficiency — close-hauled edge (π/6, droot 3)
+const harmonicMean = (a: number, b: number) => (2 * a * b) / (a + b)
+const LIFE = harmonicMean(LIMIT, GOLD)            // 40° = A432_STEP = 360/9 — the harmonic centre of life
+const wedge = (a: number, b: number) => { const [xa, ya] = pt(a), [xb, yb] = pt(b); return `M ${CX} ${CY} L ${xa.toFixed(1)} ${ya.toFixed(1)} A ${R} ${R} 0 0 1 ${xb.toFixed(1)} ${yb.toFixed(1)} Z` }
+const arcPath = computed(() => wedge(-BEAM, BEAM))         // the forward reach −90 → +90
+const nogo = computed(() => wedge(-LIMIT, LIMIT))          // within ±30° the sail stalls (no-go)
+const lifeStar = computed(() => wedge(LIMIT, GOLD))        // 30 → 60, starboard — harmonic life
+const lifePort = computed(() => wedge(-GOLD, -LIMIT))      // −60 → −30, port — harmonic life
+const marks = [-BEAM, -GOLD, -LIMIT, 0, LIMIT, GOLD, BEAM].map((d) => ({ d, xy: pt(d, R + 13), tick: pt(d, R - 6), out: pt(d), tack: Math.abs(d) === GOLD, beamMark: Math.abs(d) === BEAM, limit: Math.abs(d) === LIMIT }))
+const lifeMarks = [-LIFE, LIFE].map((d) => ({ d, out: pt(d), hub: [CX, CY] as [number, number], xy: pt(d, R + 13) }))  // ±40° a432 centre
+// REGATTA — the ±60 tack sails linear (O(N)) and loses; the winner folds recursively (O(log N)). Measured.
+const foldLevels = Math.ceil(Math.log2(LEDGER))   // 10 — and 2^10 = 1024, the counter-gravity
+const linearBits = LEDGER * 2, verifyBits = 2 * foldLevels
+const ratio = (LEDGER / foldLevels).toFixed(1)
 const bow = computed(() => pt(heading.value, R - 14))
 const driftAtHeading = computed(() => driftFree(heading.value))
 const label = (d: number) => (d > 0 ? '+' : '') + d + '°'
+
+// THE STATE IS A TORUS — T² = S¹×S¹. Course is the toroidal angle u; the tack is the poloidal angle v,
+// oscillating between the −60° and +60° latitudes. A rational winding CLOSES on itself — integer positions,
+// no decimal drift (the captain's double-torus navigation). Drawn as a projected torus with the tack winding.
+const RAD = Math.PI / 180
+const T_CX = 130, T_CY = 64, T_R = 72, T_r = 22, SQ = 0.42, TILT = 0.5
+const spin = ref(0)
+const proj = (u: number, v: number): [number, number] => {
+  const Rr = T_R + T_r * Math.cos(v), x = Rr * Math.cos(u + spin.value), y = Rr * Math.sin(u + spin.value), z = T_r * Math.sin(v)
+  return [T_CX + x, T_CY + y * SQ - z * TILT]
+}
+const toPath = (pts: [number, number][]) => pts.map((p, i) => (i ? 'L' : 'M') + p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' ')
+const ring = (v: number) => toPath(Array.from({ length: 65 }, (_, i) => proj((i / 64) * 2 * Math.PI, v)))
+const bandPort = computed(() => ring(-GOLD * RAD))   // the −60° tack latitude
+const equator = computed(() => ring(0))
+const bandStar = computed(() => ring(GOLD * RAD))    // the +60° tack latitude
+const windPath = computed(() => toPath(Array.from({ length: 257 }, (_, i) => { const u = (i / 256) * 2 * Math.PI; return proj(u, GOLD * RAD * Math.sin(3 * u)) })))
 
 // smooth needle: ease the drawn bearing toward the integer target (no drift in the landing).
 const shown = ref(GOLD)
 let raf = 0
 onMounted(() => {
-  const loop = () => { const d = heading.value - shown.value; shown.value += d * 0.18; if (Math.abs(d) < 0.05) shown.value = heading.value; raf = requestAnimationFrame(loop) }
+  const still = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  const loop = () => {
+    const d = heading.value - shown.value; shown.value += d * 0.18; if (Math.abs(d) < 0.05) shown.value = heading.value
+    if (!still) spin.value = (spin.value + 0.004) % (2 * Math.PI)
+    raf = requestAnimationFrame(loop)
+  }
   if (typeof requestAnimationFrame !== 'undefined') loop()
 })
 onUnmounted(() => { if (raf) cancelAnimationFrame(raf) })
@@ -66,10 +100,16 @@ const known = [
         <svg viewBox="0 0 260 260" role="img" aria-label="navigation compass: tacking minus 60 and plus 60 degrees to make the plus or minus 90 degree beam">
           <circle :cx="CX" :cy="CY" :r="R" class="rim" fill="none" />
           <path :d="arcPath" class="arc" />
+          <path :d="lifePort" class="life" />
+          <path :d="lifeStar" class="life" />
+          <path :d="nogo" class="nogo" />
+          <g class="a432">
+            <line v-for="lm in lifeMarks" :key="lm.d" :x1="lm.hub[0]" :y1="lm.hub[1]" :x2="lm.out[0]" :y2="lm.out[1]" />
+          </g>
           <g class="marks">
             <g v-for="m in marks" :key="m.d">
-              <line :x1="m.tick[0]" :y1="m.tick[1]" :x2="m.out[0]" :y2="m.out[1]" :class="{ tick: true, gold: m.tack, beam: m.beamMark }" />
-              <text :x="m.xy[0]" :y="m.xy[1]" text-anchor="middle" dominant-baseline="middle" :class="{ gold: m.tack, beam: m.beamMark }">{{ label(m.d) }}</text>
+              <line :x1="m.tick[0]" :y1="m.tick[1]" :x2="m.out[0]" :y2="m.out[1]" :class="{ tick: true, gold: m.tack, beam: m.beamMark, limit: m.limit }" />
+              <text :x="m.xy[0]" :y="m.xy[1]" text-anchor="middle" dominant-baseline="middle" :class="{ gold: m.tack, beam: m.beamMark, limit: m.limit }">{{ label(m.d) }}</text>
             </g>
           </g>
           <circle :key="aura" :cx="bow[0]" :cy="bow[1]" r="6" class="aura" />
@@ -106,6 +146,38 @@ const known = [
       </figure>
     </div>
 
+    <!-- this state is a torus — T² = S¹×S¹; the tack winds between the ±60 latitudes and closes -->
+    <figure class="torus">
+      <svg viewBox="0 0 260 130" role="img" aria-label="the state as a torus: the tack winds between the minus 60 and plus 60 latitudes and closes on integer positions">
+        <path :d="bandPort" class="band" />
+        <path :d="equator" class="eq" />
+        <path :d="bandStar" class="band" />
+        <path :d="windPath" class="wind" />
+      </svg>
+      <figcaption>
+        this state is a <b>torus</b> (T² = S¹×S¹): course winds the ring, the tack oscillates between the
+        <b>−60° and +60° latitudes</b>; the winding is rational, so it <b>closes on integer positions — no decimal drift</b>.
+      </figcaption>
+    </figure>
+
+    <!-- regatta: linear tack loses to recursive folding — measured, honest floor log N -->
+    <figure class="regatta">
+      <div class="lane">
+        <span class="who">linear tack (±60)</span>
+        <span class="track"><span class="bar lin"></span><span class="boat lin">⛵</span></span>
+        <span class="num">{{ LEDGER }} steps · {{ linearBits }} bits · O(N)</span>
+      </div>
+      <div class="lane">
+        <span class="who">recursive fold</span>
+        <span class="track"><span class="bar fold"></span><span class="boat fold">⛵</span><span class="mark">▮ mark</span></span>
+        <span class="num">{{ foldLevels }} levels · {{ verifyBits }} bits · O(log N)</span>
+      </div>
+      <figcaption>
+        regatta: the ±60 tack sails <b>linear</b> and loses; the winner <b>folds recursively</b> — <b>{{ ratio }}×</b> fewer
+        steps, order-independent, converging to one root. The limit is <b>log N</b>, not O(1), not infinite, not FTL. <code>0/7</code>.
+      </figcaption>
+    </figure>
+
     <!-- what the captain knows — proven by round-trip messaging, not by claim -->
     <div class="knows">
       <span class="lead">the captain knows — round-tripped through the codec:</span>
@@ -114,9 +186,10 @@ const known = [
       </span>
     </div>
     <p class="foot">
-      The yacht cannot sail straight to the mark: it <b>tacks −60° and +60°</b> (the gold string, π/3, port and
-      starboard) to make the <b>±90° beam</b> (π/2). Every bearing is an <b>integer</b> — no decimal drift; the
-      circuit <code>1→2→4→8→7→5</code> is growth by doubling, each move a leap in full aura, by algebra.
+      The zones are exact: inside <b>±30°</b> is the <b>no-go</b> (the sail stalls); <b>30°→60°</b> is <b>harmonic
+      life</b> — its centre is <code>harmonicMean(30,60) = 40° = 360/9</code>, the <b>a432</b> quantum; <b>±60°</b> is the
+      loose tack (the gold string, π/3); <b>±90°</b> is the beam (π/2). Every bearing is an <b>integer</b> — no decimal
+      drift. But at any fixed angle the yacht sails linear and loses the regatta to <b>recursive folding</b> (O(log N)).
       <em>known ⇔ it round-trips.</em> A content-address proves integrity, not truth. <code>0/7</code>.
     </p>
   </div>
@@ -129,12 +202,17 @@ const known = [
 
 .compass svg { width: 100%; height: auto; max-width: 320px; display: block; margin: 0 auto; }
 .compass .rim { stroke: var(--vp-c-divider); stroke-width: 1.5; }
-.compass .arc { fill: var(--vp-c-brand-1); opacity: 0.1; stroke: var(--vp-c-brand-1); stroke-width: 1; stroke-opacity: 0.35; }
+.compass .arc { fill: var(--vp-c-text-3); opacity: 0.06; stroke: none; }
+.compass .life { fill: var(--vp-c-brand-1); opacity: 0.13; stroke: none; }
+.compass .nogo { fill: var(--vp-c-danger-1, #d33); opacity: 0.1; stroke: none; }
+.compass .a432 line { stroke: var(--vp-c-brand-1); stroke-width: 1.2; stroke-dasharray: 2 2; opacity: 0.7; }
 .compass .tick { stroke: var(--vp-c-text-3); stroke-width: 1.5; }
 .compass .tick.gold { stroke: var(--vp-c-brand-1); stroke-width: 2.5; }
+.compass .tick.limit { stroke: var(--vp-c-brand-1); stroke-width: 2; }
 .compass .tick.beam { stroke: var(--vp-c-text-2); stroke-width: 2; stroke-dasharray: 3 2; }
 .compass text { fill: var(--vp-c-text-2); font-size: 11px; font-family: var(--vp-font-family-mono); }
 .compass text.gold { fill: var(--vp-c-brand-1); font-weight: 700; }
+.compass text.limit { fill: var(--vp-c-brand-1); }
 .compass text.beam { fill: var(--vp-c-text-2); }
 .compass .needle { stroke: var(--vp-c-brand-1); stroke-width: 2.5; stroke-linecap: round; }
 .compass .bow { fill: var(--vp-c-brand-1); }
@@ -161,6 +239,27 @@ const known = [
 @keyframes rise { 0% { transform: translateY(0); opacity: 0; } 8% { opacity: 0.5; } 85% { opacity: 0.9; } 100% { transform: translateY(-224px); opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .lift .rise { animation: none; display: none; } }
 .lift figcaption { font-size: 0.8rem; color: var(--vp-c-text-2); margin-top: 0.4rem; text-align: center; }
+
+.torus { margin: 1.1rem 0 0.2rem; }
+.torus svg { width: 100%; height: auto; max-width: 460px; display: block; margin: 0 auto; }
+.torus .band { fill: none; stroke: var(--vp-c-brand-1); stroke-width: 1; stroke-opacity: 0.55; stroke-dasharray: 4 3; }
+.torus .eq { fill: none; stroke: var(--vp-c-text-3); stroke-width: 0.8; stroke-opacity: 0.35; }
+.torus .wind { fill: none; stroke: var(--vp-c-brand-1); stroke-width: 1.6; stroke-linejoin: round; }
+.torus figcaption { text-align: center; font-size: 0.8rem; color: var(--vp-c-text-2); margin-top: 0.3rem; }
+
+.regatta { margin: 1.1rem 0 0.2rem; border: 1px solid var(--vp-c-divider); border-radius: 10px; padding: 0.7rem 0.8rem; }
+.regatta .lane { display: grid; grid-template-columns: 8.5rem 1fr; align-items: center; gap: 0.6rem; margin-bottom: 0.4rem; }
+.regatta .who { font-family: var(--vp-font-family-mono); font-size: 0.76rem; color: var(--vp-c-text-2); }
+.regatta .track { position: relative; height: 1.2rem; }
+.regatta .bar { position: absolute; top: 50%; left: 0; height: 3px; transform: translateY(-50%); border-radius: 2px; }
+.regatta .bar.lin { width: 96%; background: var(--vp-c-text-3); }
+.regatta .bar.fold { width: 8%; background: var(--vp-c-brand-1); }
+.regatta .boat { position: absolute; top: 50%; transform: translate(-50%, -50%); font-size: 0.85rem; }
+.regatta .boat.lin { left: 8%; filter: grayscale(1); opacity: 0.6; }
+.regatta .boat.fold { left: 8%; }
+.regatta .mark { position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: 0.62rem; color: var(--vp-c-brand-1); }
+.regatta .num { grid-column: 2; font-family: var(--vp-font-family-mono); font-size: 0.72rem; color: var(--vp-c-text-3); }
+.regatta figcaption { font-size: 0.8rem; color: var(--vp-c-text-2); margin-top: 0.4rem; }
 
 .knows { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin: 1rem 0 0.3rem; }
 .knows .lead { font-size: 0.82rem; color: var(--vp-c-text-2); }
