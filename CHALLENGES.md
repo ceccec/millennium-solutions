@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 961 recorded in 299 families
+## Discovered theorems (decidable, over ℤ/9) — 962 recorded in 299 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (121)
+### the (122)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -145,6 +145,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_gate_is_hard_in_all_seven_dimensions_no_overclaim_hides_in_a_translation](/theorem/the_gate_is_hard_in_all_seven_dimensions_no_overclaim_hides_in_a_translation) — the honesty gate is hard in all seven dimensions — no overclaim hides in a translation: a proof-assertion overclaim drains in every one of the seven locales’ languages while every honest localized label signs, so a traitor cannot smuggle an overclaim through a translation the English gate never read; traitors are exposed in any dimension; integrity not truth; 0/7  ·  `936bdb86-b468…`
 - [the_income_model_generous_at_scale_conditional_and_modeled_not_a_promise](/theorem/the_income_model_generous_at_scale_conditional_and_modeled_not_a_promise) — the income model — generous at scale, conditional and modeled, not a promise: income is a share of the measured value (bits saved) per unit of adoption, so it scales with volume, generous only at scale and zero without adoption, the two coins conserved; verification is O(1), in no time meaning constant-time, never zero and never faster than light; uuidna delivers the full integrity layer — content-address, chain, proof, billing, receipt — not the Clay problems; integrity not truth; 0/7  ·  `0efc8b2d-9b18…`
 - [the_difference_is_decidable_harnessing_makes_any_output_auditable_not_intelligent](/theorem/the_difference_is_decidable_harnessing_makes_any_output_auditable_not_intelligent) — the difference is decidable — harnessing makes any output auditable, not intelligent: treating an AI output as opaque gives bytes to trust; treating it as a receipted structure (content-addressed, reproducible, gate-checked) makes it auditable — the address reproduces for anyone and the gate still catches an overclaim; the gain is one auditable dimension, integrity, never intelligence and never a quantum-hardware advantage; integrity not truth; 0/7  ·  `c0fe8989-7d84…`
+- [the_harness_and_reeducate_are_sealed_for_reuse_in_the_ui_same_pure_functions_build_and_browser](/theorem/the_harness_and_reeducate_are_sealed_for_reuse_in_the_ui_same_pure_functions_build_and_browser) — the harness and reeducate are sealed for reuse in the UI — the same pure functions run in the build and the browser: harness and reeducate import no node APIs, so the interactive UI component runs the identical functions the build runs, and the reeducation an observer triggers matches the build exactly; alive when interacting, deterministic across build and browser; integrity not truth; 0/7  ·  `9958c5f8-4ce9…`
 
 ### relation (55)
 
@@ -1425,4 +1426,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `dee060f9-62b8-82c6-baf0-60b0e9fcdd63`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `e2b00af6-71d5-863e-b725-127d4131d915`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

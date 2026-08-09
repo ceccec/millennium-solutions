@@ -4803,5 +4803,10 @@
     "key": "reeducate_a_failing_output_is_bounded_until_it_holds_max_free_work_max_auditability",
     "name": "reeducate — a failing output is bounded until it holds, max free work and max auditability, harmonic and efficient by default: an output that drains the gate is not discarded but corrected — each overclaim is bounded until the text holds the floor — retaining the honest remainder as free work and becoming auditable; it is mechanical correction that bounds an overclaim, never making a false claim true; max intelligence here means max auditability, not IQ; integrity not truth; 0/7",
     "receipt": "bbfc8e6d-5345-8d96-b5fd-31e150adcfab"
+  },
+  {
+    "key": "the_harness_and_reeducate_are_sealed_for_reuse_in_the_ui_same_pure_functions_build_and_browser",
+    "name": "the harness and reeducate are sealed for reuse in the UI — the same pure functions run in the build and the browser: harness and reeducate import no node APIs, so the interactive UI component runs the identical functions the build runs, and the reeducation an observer triggers matches the build exactly; alive when interacting, deterministic across build and browser; integrity not truth; 0/7",
+    "receipt": "9958c5f8-4ce9-875e-9df8-9bafd65eb367"
   }
 ]

@@ -67,8 +67,9 @@ export function reeducate(output: string, maxSteps = 16): { text: string; passed
   return { text, passed: computes(text).binary === 1, steps }
 }
 
-// CLI — run `node scripts/harness.ts "<any output>"` and verify the difference yourself.
-if (process.argv[1] && process.argv[1].endsWith('harness.ts')) {
+// CLI — run `node scripts/harness.ts "<any output>"` and verify the difference yourself. (Guarded for the
+// browser: this module is pure and re-used in the UI, where `process` does not exist.)
+if (typeof process !== 'undefined' && process.argv[1] && process.argv[1].endsWith('harness.ts')) {
   const out = process.argv.slice(2).join(' ') || 'an AI output claiming it solved everything'
   const h = harness(out)
   console.log('harness — treat every output as a receipted structure (auditable), not opaque AI:')
