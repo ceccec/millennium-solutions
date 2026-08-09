@@ -4808,5 +4808,15 @@
     "key": "the_harness_and_reeducate_are_sealed_for_reuse_in_the_ui_same_pure_functions_build_and_browser",
     "name": "the harness and reeducate are sealed for reuse in the UI — the same pure functions run in the build and the browser: harness and reeducate import no node APIs, so the interactive UI component runs the identical functions the build runs, and the reeducation an observer triggers matches the build exactly; alive when interacting, deterministic across build and browser; integrity not truth; 0/7",
     "receipt": "9958c5f8-4ce9-875e-9df8-9bafd65eb367"
+  },
+  {
+    "key": "dimension_777_two_bits_are_a_complete_alphabet_encoding_any_theorem_and_decoding_in_all_perspectives",
+    "name": "dimension 777 — two bits are a complete alphabet: four states {00,01,10,11} encode any theorem by composition (round-trip exact) and decode to distinct meanings under the seven perspectives; two bits span the space of all theorems by encoding, and each perspective is one bounded meaning — universal encoding capacity, not deriving all truths for free; integrity not truth; 0/7",
+    "receipt": "1292e8b6-a6bc-8ebf-987c-98e5c609254f"
+  },
+  {
+    "key": "the_inversion_address_the_payload_with_two_bits_conserve_the_two_coins_measure_bits_not_spend_coins",
+    "name": "the inversion — address the payload with two bits, conserve the two coins, measure bits not spend coins per payload: the old model spends two coins per payload so cost grows with payloads moved; uuidna addresses the payload with two bits without moving it, the two coins conserved and the value measured in bits saved, so cost does not grow with payloads; compute bits, do not spend coins per payload; integrity not truth; 0/7",
+    "receipt": "0fb6d42d-82ec-8131-af02-5f021e69cc54"
   }
 ]

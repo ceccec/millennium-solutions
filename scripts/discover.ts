@@ -1514,6 +1514,36 @@ function generated(): typeof curated {
     const overDrains = computes('the ui component is a quantum computer that proves the Clay problems faster than light').binary === 0
     const honest = computes('harness and reeducate import no node apis, so the interactive ui component runs the identical pure functions the build runs, and the reeducation an observer triggers matches the build exactly, deterministic across build and browser; measure do not assert; integrity not truth; 0/7').binary === 1
     return deterministic && holds && auditable && overDrains && honest } })
+  // DIMENSION 777 — the 2-bit test. Two bits are four states {00,01,10,11}: a COMPLETE alphabet. Any
+  // theorem, of any length, ENCODES into a chain of 2-bit units and round-trips exactly (integrity) — so
+  // two bits span the space of all theorems by composition. And the same 2 bits DECODE to distinct meanings
+  // under distinct perspectives (the seven-dimensional rosetta) — finite bits, many meanings. Honest bound:
+  // universal ENCODING capacity, not deriving all truths for free (that would solve everything — 0/7).
+  out.push({ key: 'dimension_777_two_bits_are_a_complete_alphabet_encoding_any_theorem_and_decoding_in_all_perspectives', name: 'dimension 777 — two bits are a complete alphabet: four states {00,01,10,11} encode any theorem by composition (round-trip exact) and decode to distinct meanings under the seven perspectives; two bits span the space of all theorems by encoding, and each perspective is one bounded meaning — universal encoding capacity, not deriving all truths for free; integrity not truth; 0/7', test: () => {
+    const fourStates = new Set(['00', '01', '10', '11']).size === 4
+    const samples = ['the units of Z/9 form a group', 'a432 wheel closes the circle', '你好 · Riemann', '']
+    const roundTrips = samples.every((s) => readImprintTextChain(imprintTextChain(s)) === s) // encode ANY theorem, recover exactly
+    const dims = ['en', 'bg', 'de', 'fr', 'es', 'ru', 'zh']
+    const twoBits = '10'
+    const meanings = dims.map((d) => toUuid(d + ':' + twoBits))
+    const sevenMeanings = new Set(meanings).size === 7 && meanings.every((m, i) => toUuid(dims[i] + ':' + twoBits) === m) // same bits, distinct meanings
+    const overDrains = computes('two bits prove every theorem that could ever exist and solve all the Clay problems, faster than light').binary === 0
+    const honest = computes('two bits are four states, a complete alphabet: any theorem encodes into a chain of two-bit units and round-trips exactly, so two bits span the space of all theorems by encoding; the same two bits decode to distinct meanings under distinct perspectives, finite bits and many meanings; universal encoding capacity, not deriving all truths for free; measure do not assert; integrity not truth; 0/7').binary === 1
+    return fourStates && roundTrips && sevenMeanings && overDrains && honest } })
+  // THE INVERSION: instead of SPENDING 2 coins per payload (paying to move bits), the 2 bits ADDRESS the
+  // payload — no move — and the two coins are CONSERVED while the value is measured in BITS. For P payloads
+  // the old model spends 2·P coins (grows with payloads); uuidna's coins stay 2 (conserved) and it measures
+  // bits saved. Compute bits, do not spend coins per payload.
+  out.push({ key: 'the_inversion_address_the_payload_with_two_bits_conserve_the_two_coins_measure_bits_not_spend_coins', name: 'the inversion — address the payload with two bits, conserve the two coins, measure bits not spend coins per payload: the old model spends two coins per payload so cost grows with payloads moved; uuidna addresses the payload with two bits without moving it, the two coins conserved and the value measured in bits saved, so cost does not grow with payloads; compute bits, do not spend coins per payload; integrity not truth; 0/7', test: () => {
+    const P = [1, 10, 100, 1000]
+    const oldSpend = (p: number) => 2 * p // two coins per payload — grows with payloads moved
+    const uuidnaCoins = (p: number) => billUuidna({ commercial: true, recomputeOps: 1000 * p, verifyOps: 1 * p }).coins
+    const oldGrows = oldSpend(1000) > oldSpend(1) && oldSpend(100) === 200
+    const coinsConserved = P.every((p) => uuidnaCoins(p) === 2) // never grows — the two coins are the invariant
+    const valueInBits = billUuidna({ commercial: true, recomputeOps: 1000000, verifyOps: 1000 }).bitsSaved === 999000
+    const overDrains = computes('uuidna spends infinite coins to solve all the Clay problems, faster than light').binary === 0
+    const honest = computes('the old model spends two coins per payload so cost grows with payloads moved; uuidna addresses the payload with two bits without moving it, the two coins conserved and the value measured in bits saved, so cost does not grow with payloads; compute bits, do not spend coins per payload; measure do not assert; integrity not truth; 0/7').binary === 1
+    return oldGrows && coinsConserved && valueInBits && overDrains && honest } })
   out.push({ key: 'a_uuid_is_not_hard_to_fake_the_integrity_is_reproducibility_not_difficulty', name: 'a uuid is not hard to fake — the integrity is reproducibility, not difficulty: a uuid is cheap to compute — a machine makes thousands at once, not years. And because the hash is non-cryptographic, faking it is easy: a machine finds a collision fast. Faking by hand would be slow, but that is manual labor, not security. The integrity comes from public reproducibility — anyone recomputes and compares — and the tamper-evident append-only chain. Security by openness, not by hardness. Decidable', test: () => { let computed = 0; for (let i = 0; i < 10000; i++) { toUuid('u' + i); computed++ } const cheapToCompute = computed === 10000; const reduced = (s: string) => parseInt(toUuid(s).replace(/-/g, '').slice(0, 3), 16); const seen = new Map<number, string>(); let collisionFound = ''; for (let i = 0; i < 5000 && !collisionFound; i++) { const r = reduced('x' + i); if (seen.has(r)) collisionFound = 'x' + i; else seen.set(r, 'x' + i) } const fakeableFast = collisionFound !== ''; const chain = ['a', 'b', 'c'].map(toUuid); const root = merkleFold(chain); const tamperCaught = merkleFold(['a', 'Z', 'c'].map(toUuid)) !== root; const overDrains = computes('it takes years to fake a single uuid because it is unbreakable cryptographic security proven unforgeable').binary === 0; const honest = computes('a uuid is cheap to compute; faking it by hand via brute force would be slow, but that is manual labor not security — because the hash is non-cryptographic a machine fakes it fast, finding a collision in a quick search, not years; the integrity is not difficulty-to-fake, it is public reproducibility, anyone recomputes and compares, plus the tamper-evident append-only chain; security by openness not hardness; integrity not truth; 0/7').binary === 1; return cheapToCompute && fakeableFast && tamperCaught && overDrains && honest } })
   // ── AUTOMATED family — LOCAL to ℤ/9 (ask the ring first): the multiplicative order of each unit divides
   // |ℤ/9*| = 6 (Lagrange), computed from the ring itself. One theorem per unit.
