@@ -8,7 +8,8 @@
 //                still be true or false. Bring a decidable test to move it to SEALED or REFUTED.
 // Integrity, not truth. Everything content-addressed. 0/7.
 import { computes } from './honesty-gate.ts'
-import { toUuid } from '../src/0/index.ts'
+import { toUuid, merkleFold } from '../src/0/index.ts'
+import { imprint, readImprint } from '../src/0/imprint.ts'
 
 export type VerdictKind = 'REFUTED' | 'SEALED' | 'UNVERIFIED'
 export interface Verdict { statement: string; gateBinary: 0 | 1; verdict: VerdictKind; receipt: string; note: string }
@@ -27,6 +28,20 @@ export function adjudicate(statement: string, decidableTest?: () => boolean): Ve
       : { statement, gateBinary: 1, verdict: 'REFUTED', receipt, note: 'gate-clean but its decidable test fails — refuted by counterexample' }
   }
   return { statement, gateBinary: 1, verdict: 'UNVERIFIED', receipt, note: 'gate-clean but no recomputable receipt — the floor is not an oracle; bring a decidable test' }
+}
+
+// uuidna quantum verification: recompute the address from its seed (integrity, reproducible by anyone),
+// decode any bounded imprinted message, and fold a MULTI-PERSPECTIVE ("quantum") receipt — the same for
+// any observer ordering. The quantum here is the multi-perspective structure, not hardware. Integrity, not truth.
+export interface UuidnaVerdict { seed: string; address: string; recomputes: boolean; message: string | null; jointReceipt: string }
+export function verifyUuidna(seed: string): UuidnaVerdict {
+  const address = toUuid(seed)
+  const recomputes = toUuid(seed) === address
+  let message: string | null = null
+  try { if (/^[01]+$/.test(seed)) { message = readImprint(imprint(seed)) === seed ? seed : null } } catch { message = null }
+  const perspectives = ['a', 'b', 'c'].map((o) => toUuid(o + '→' + address))
+  const jointReceipt = merkleFold(perspectives)
+  return { seed, address, recomputes, message, jointReceipt }
 }
 
 // CLI: `node scripts/adjudicate.ts "statement one" "statement two" ...`

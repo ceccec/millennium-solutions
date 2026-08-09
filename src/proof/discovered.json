@@ -4168,5 +4168,10 @@
     "key": "the_forensic_tool_adjudicates_any_statement_before_thinking_a_recomputable_verdict_not_truth",
     "name": "the forensic tool adjudicates any statement before thinking — a recomputable verdict, not truth: the tool returns refuted, sealed, or unverified for any statement — usable as a pre-filter before reasoning, so a named overclaim is rejected before tokens are spent; a gate-clean statement with a holding decidable test is sealed, with a failing test refuted, with no test unverified. It never claims absolute truth — the gate is a floor, not an oracle. Decidable",
     "receipt": "a1bc77d0-5d58-8007-812d-2b1b51d402e5"
+  },
+  {
+    "key": "uuidna_quantum_verification_recomputes_the_address_and_folds_a_multi_perspective_receipt",
+    "name": "uuidna quantum verification — recomputes the address and folds a multi-perspective receipt, integrity not truth: verification recomputes the address from its seed (integrity, reproducible by anyone) and folds a multi-perspective joint receipt that is the same for any observer ordering; a bit-seed round-trips as a bounded imprinted message. The quantum here is the multi-perspective structure, not quantum hardware; verification is integrity, not truth. Decidable",
+    "receipt": "c7b949e5-38b5-8a37-b760-de4008327093"
   }
 ]
