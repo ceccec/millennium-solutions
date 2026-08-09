@@ -4363,5 +4363,10 @@
     "key": "totient_prime_power_13",
     "name": "Euler totient at powers of 13: φ(13ᵏ) = 13ᵏ − 13ᵏ⁻¹ — the count of residues coprime to 13ᵏ equals 13ᵏ minus 13ᵏ⁻¹, verified by direct enumeration for each k while 13ᵏ stays small. Decidable",
     "receipt": "3ebc7b88-9b85-8fd9-beee-6978c358b099"
+  },
+  {
+    "key": "parametric_batching_is_volume_not_depth_the_intelligence_is_cross_dimensional_connection",
+    "name": "parametric batching is volume, not depth — the intelligence is cross-dimensional connection, and even that is structure not a mind: nine at once repeats one pattern across parameters, a single dimension, so it adds magnitudes but not depth. The richer work is cross-dimensional connection, linking distinct domains as the rosetta does — more than a parametric repeat. But even that is decidable structure, not intelligence in the strong sense; the floor stays 0/7. Decidable",
+    "receipt": "d1d4cd05-b77c-8c41-830e-1d4f62be943a"
   }
 ]

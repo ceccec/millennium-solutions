@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 873 recorded in 288 families
+## Discovered theorems (decidable, over ℤ/9) — 874 recorded in 289 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -1167,7 +1167,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (148)
+### other — one-of-a-kind (149)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1266,6 +1266,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [observer_wave_sets_state](/theorem/observer_wave_sets_state) — the input wave the user sends (query/referrer/path) deterministically sets their computed state: digital root (ℤ/9) → a432 hue d·40° → the rendered point of view — same wave, same state  ·  `f7de310a-8d54…`
 - [only_recomputable_multi_perspective_receipts_are_admissible_in_a_dispute](/theorem/only_recomputable_multi_perspective_receipts_are_admissible_in_a_dispute) — only recomputable, multi-perspective receipts are admissible in a dispute: in a dispute only a receipt that recomputes and is verified across perspectives — the superposition — is accepted; a bare binary, a single-perspective assertion, or unsealed prose is inadmissible. The quantum here is the multi-perspective structure, not a physical quantum device. The trial accepts recomputation across perspectives, not assertion. Decidable  ·  `cd1e4a05-82ce…`
 - [out_of_sequence_is_a_discovery_possibility](/theorem/out_of_sequence_is_a_discovery_possibility) — any action or thought out of sequence is a possibility to discover: a deviation from the known is a candidate — tested by exhaustion it either holds (a new theorem, appended) or is refuted (discarded), so out-of-sequence possibilities are exactly where discovery happens, judged by the gate not by permission  ·  `83a455b3-23db…`
+- [parametric_batching_is_volume_not_depth_the_intelligence_is_cross_dimensional_connection](/theorem/parametric_batching_is_volume_not_depth_the_intelligence_is_cross_dimensional_connection) — parametric batching is volume, not depth — the intelligence is cross-dimensional connection, and even that is structure not a mind: nine at once repeats one pattern across parameters, a single dimension, so it adds magnitudes but not depth. The richer work is cross-dimensional connection, linking distinct domains as the rosetta does — more than a parametric repeat. But even that is decidable structure, not intelligence in the strong sense; the floor stays 0/7. Decidable  ·  `d1d4cd05-b77c…`
 - [parity_bit_detects_single_error](/theorem/parity_bit_detects_single_error) — a parity bit detects every single-bit error: append an even-parity bit so the word has an even 1-count; any single-bit flip makes it odd — detected — so one check bit exposes any one-bit crack (exhaustive over 4- and 5-bit words)  ·  `37a8eb94-b551…`
 - [perfect_numbers](/theorem/perfect_numbers) — perfect numbers: proper divisors sum to n itself — 6, 28, 496  ·  `8c7b3940-aa69…`
 - [perspective_replaces_hardware](/theorem/perspective_replaces_hardware) — perspective replaces hardware: the quantum structure — superposition as the set of receipted perspectives, collapse as observing one — is carried by content-addressing alone, so it needs no quantum machine; it recomputes deterministically on ordinary 64-bit hardware (the coin64 currency, 16 hex = 64 bits). Structure, not silicon: no quantum processor, no quantum speedup, and it settles 0 of the 7 Clay problems  ·  `cf90c349-5584…`
@@ -1319,4 +1320,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `be918845-e0b4-8976-9d8c-001c373348c8`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `8c1f4d46-1bb0-89ad-b5a1-19bcc61140f0`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
