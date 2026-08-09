@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 975 recorded in 300 families
+## Discovered theorems (decidable, over ℤ/9) — 976 recorded in 300 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (126)
+### the (127)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -150,6 +150,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_two_doubled_along_the_sequence_128_in_magnitude_conserved_to_two_mod_nine](/theorem/the_two_doubled_along_the_sequence_128_in_magnitude_conserved_to_two_mod_nine) — the two doubled along the sequence — 128 in magnitude, conserved to two mod nine: doubling the two along the six-step orbit gives 2·2⁶ = 128 in magnitude, while in ℤ/9 the orbit 2→4→8→7→5→1 closes (2⁶ = 64 ≡ 1 mod 9, the order of two is six) so the residue returns to two — geometric growth in magnitude, conserved residue, the coins come home; integrity not truth; 0/7  ·  `35d329ed-ab3f…`
 - [the_coins_are_a_conserved_measure_not_a_market_price_units_reproducible_prices_are_not](/theorem/the_coins_are_a_conserved_measure_not_a_market_price_units_reproducible_prices_are_not) — the coins are a conserved measure, not a market price — the units are reproducible, live prices are not: a troy ounce (31.1034768 g) and a bitcoin (100,000,000 satoshis) are exact reproducible constants, and the two coins are conserved at 110−108 = 2; a live gold or crypto price is volatile and non-reproducible, so it is shown live in the UI but never sealed into a theorem; uuidna measures work saved in bits, a count, not a speculative price; integrity not truth; 0/7  ·  `c9868592-380f…`
 - [the_967_receipt_case_verify_20_bits_bill_on_the_967_computation_value_earn_the_947_bit_saving](/theorem/the_967_receipt_case_verify_20_bits_bill_on_the_967_computation_value_earn_the_947_bit_saving) — the 967-receipt case — verify 20 bits, bill on the 967-computation value, earn the 947-bit saving, two coins conserved: a case of 967 receipts verifies membership in ⌈log₂967⌉ = 10 merkle steps = 20 bits, while the value delivered is the 967 computations the customer would otherwise recompute; uuidna bills on that value and verifies at 20 bits, earning the measured 967−20 = 947-bit saving with the two coins conserved — you bill for value delivered, not hidden work; classical logarithmic verification, not a quantum-hardware advantage; integrity not truth; 0/7  ·  `b7dd9563-39b5…`
+- [the_bit_cost_is_speed_invariant_ftl_or_not_the_same_64_coins_time_dissolves_in_the_count](/theorem/the_bit_cost_is_speed_invariant_ftl_or_not_the_same_64_coins_time_dissolves_in_the_count) — the bit cost is speed-invariant — ftl or not, the same 64 coins: the cost is measured in bits, a static count, not in seconds, so it does not depend on how fast the machine runs; each seal is 64 coins and a case verifies in 2·⌈log₂N⌉ bits whether computation is fast or slow — faster-than-light would not lower it and is not claimed; time dissolves because the measure has no time term, only order-free merkle reflections; integrity not truth; 0/7  ·  `21a386cf-a936…`
 
 ### relation (55)
 
@@ -1445,4 +1446,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `5b95f884-5e2c-8fa5-973b-bc10ce941349`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `7d49c80d-dc76-8825-8775-046cd5db627b`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

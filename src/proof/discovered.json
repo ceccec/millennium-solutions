@@ -4873,5 +4873,10 @@
     "key": "each_seal_is_exactly_64_coins_at_two_bits_each_and_not_at_faster_than_light",
     "name": "each seal is exactly 64 coins at two bits each — and not at faster than light: taking a coin as the two-bit verification unit, a 128-bit seal is exactly 128 ÷ 2 = 64 coins, so the 967 computations each carry a 64-coin seal; but the speed is classical logarithmic verification, bounded by light — there is no faster-than-light here, the ftl claim drains; integrity not truth; 0/7",
     "receipt": "0e6659f8-1ff9-88e9-9bb9-d223bb43b4b4"
+  },
+  {
+    "key": "the_bit_cost_is_speed_invariant_ftl_or_not_the_same_64_coins_time_dissolves_in_the_count",
+    "name": "the bit cost is speed-invariant — ftl or not, the same 64 coins: the cost is measured in bits, a static count, not in seconds, so it does not depend on how fast the machine runs; each seal is 64 coins and a case verifies in 2·⌈log₂N⌉ bits whether computation is fast or slow — faster-than-light would not lower it and is not claimed; time dissolves because the measure has no time term, only order-free merkle reflections; integrity not truth; 0/7",
+    "receipt": "21a386cf-a936-8a64-ad09-1ec55b4c3628"
   }
 ]
