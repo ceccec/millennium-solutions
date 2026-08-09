@@ -26,6 +26,8 @@ const speech = computed(() => (params.value?.name || 'A theorem') + '. Achieved 
 
 <Vortex7D :receipt="receipt" :hues="hues" :name="name" :speech="speech" />
 
+<Recompute />
+
 - **theorem key** · `{{ $params.key }}`
 - **content-address (receipt)** · `{{ $params.receipt }}`
 - **status** · decidable, re-verified on every build — recomputes from `src/`

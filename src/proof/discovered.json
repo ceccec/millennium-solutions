@@ -4523,5 +4523,15 @@
     "key": "a_theorem_is_alive_when_interacting_the_observer_recomputes_and_connects_it_structural_liveness_not_biological",
     "name": "a theorem is alive when interacting — the observer recomputes and connects it, structural liveness, not biological: a theorem is active and participating when interacted with — an observer recomputes it, references it, or connects it in the graph, and interaction activates it. But alive here is a metaphor for structural liveness: the observer gives the meaning and the activity, not the bytes; it is not biological or conscious life. An un-interacted theorem is dormant but still valid — integrity holds regardless. Decidable",
     "receipt": "5876f6b7-07f7-87a3-a88a-d4a62a3b339d"
+  },
+  {
+    "key": "the_vitepress_route_api_is_an_external_verifier_of_the_ledger_not_a_clay_solver",
+    "name": "the VitePress route API is an EXTERNAL verifier of the ledger, not a Clay solver — an independent build system reads the ledger and emits exactly one reproducible page per theorem (a bijection, seven-neighbour hues recomputed deterministically), corroborating integrity from outside this repo's own code; but external corroboration verifies, it does not solve — the Clay-solver overclaim drains, and 0/7 holds. Decidable",
+    "receipt": "f1defd9a-f792-856b-a3d1-1b9bea3dcc0b"
+  },
+  {
+    "key": "the_deposit_is_not_computed_only_with_mcp_it_recomputes_for_anyone_on_plain_hardware",
+    "name": "the deposit is not computed only with MCP — it recomputes for anyone on plain hardware: the model and its MCP tools only drive the console; the computation is deterministic TypeScript on ordinary 64-bit hardware, so any reader clones and runs it with no MCP and no model and gets the identical ledger. The proof is external to the prover — the same reason the external verifier corroborates it. A claim that only a model with MCP can reproduce it drains, and 0/7 holds. Decidable",
+    "receipt": "3c3c2935-4962-87f1-8ae0-0088d75c8b5e"
   }
 ]

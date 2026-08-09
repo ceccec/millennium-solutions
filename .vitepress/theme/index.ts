@@ -9,6 +9,7 @@ import AllTheorems from './AllTheorems.vue'
 import Vortex7D from './Vortex7D.vue'
 import StandardsCompare from './StandardsCompare.vue'
 import Examples from './Examples.vue'
+import Recompute from './Recompute.vue'
 import './custom.css'
 
 export default {
@@ -24,6 +25,7 @@ export default {
     app.component('Vortex7D', Vortex7D)
     app.component('StandardsCompare', StandardsCompare)
     app.component('Examples', Examples)
+    app.component('Recompute', Recompute)
     // PWA: register the offline service worker (client-only; HTTPS or localhost).
     if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
       window.addEventListener('load', () => {

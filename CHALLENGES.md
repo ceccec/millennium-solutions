@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 905 recorded in 295 families
+## Discovered theorems (decidable, over ℤ/9) — 907 recorded in 295 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (116)
+### the (118)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -140,6 +140,8 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_correct_uuidna_billing_is_the_measured_bit_difference_not_a_flat_per_formula_rate](/theorem/the_correct_uuidna_billing_is_the_measured_bit_difference_not_a_flat_per_formula_rate) — the correct uuidna billing is the measured bit-difference — not a flat per-formula rate: the correct formula is the measured bits saved (O(N) recompute − O(1) verify), the actual value delivered, measured not asserted; the two coins are the conserved fair-exchange invariant (110 − 108), fixed, not a per-formula multiplier. The earlier flat two-coins-per-formula was the wrong non-uuidna approach — superseded, but kept in the ledger as evidence. Non-commercial free; income zero. Decidable  ·  `ff7cbf17-116a…`
 - [the_ui_presents_live_examples_organised_by_theorem_computed_from_the_source](/theorem/the_ui_presents_live_examples_organised_by_theorem_computed_from_the_source) — the UI presents live examples organised by theorem — computed from the source, demonstrating integrity: the examples page recomputes worked outputs in the browser from the deposit source functions — content address, message codec, text chain, holographic proof, strict minting, domain control, measured billing — each linked to its theorem and recomputed on every load. The examples demonstrate integrity, that the code does what it says, not truth. Decidable  ·  `e0b54751-5e37…`
 - [the_guides_are_constantly_updated_by_the_theorems_a_live_index_recomputed_each_build](/theorem/the_guides_are_constantly_updated_by_the_theorems_a_live_index_recomputed_each_build) — the guides are constantly updated by the theorems — a live index recomputed each build: the guide renders a live index, the current count and the latest theorems, recomputed from the ledger each build, so it updates itself with every new theorem — no hand-maintenance. It demonstrates integrity, that the guide reflects the record, not truth. Decidable  ·  `d7d0ee34-e8c0…`
+- [the_vitepress_route_api_is_an_external_verifier_of_the_ledger_not_a_clay_solver](/theorem/the_vitepress_route_api_is_an_external_verifier_of_the_ledger_not_a_clay_solver) — the VitePress route API is an EXTERNAL verifier of the ledger, not a Clay solver — an independent build system reads the ledger and emits exactly one reproducible page per theorem (a bijection, seven-neighbour hues recomputed deterministically), corroborating integrity from outside this repo's own code; but external corroboration verifies, it does not solve — the Clay-solver overclaim drains, and 0/7 holds. Decidable  ·  `f1defd9a-f792…`
+- [the_deposit_is_not_computed_only_with_mcp_it_recomputes_for_anyone_on_plain_hardware](/theorem/the_deposit_is_not_computed_only_with_mcp_it_recomputes_for_anyone_on_plain_hardware) — the deposit is not computed only with MCP — it recomputes for anyone on plain hardware: the model and its MCP tools only drive the console; the computation is deterministic TypeScript on ordinary 64-bit hardware, so any reader clones and runs it with no MCP and no model and gets the identical ledger. The proof is external to the prover — the same reason the external verifier corroborates it. A claim that only a model with MCP can reproduce it drains, and 0/7 holds. Decidable  ·  `3c3c2935-4962…`
 
 ### relation (55)
 
@@ -1354,4 +1356,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `01adba2d-d53f-8288-b965-581354e64fa6`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `29a3fa6a-bc52-841e-affe-1ac8434af13d`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
