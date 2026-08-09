@@ -5263,5 +5263,10 @@
     "key": "a_keyed_mac_structure_from_uuidna_the_shape_of_authentication_self_hosted_not_yet_secure",
     "name": "a keyed-MAC structure from uuidna — the shape of authentication, self-hosted, not yet secure: mac(key, message) = the content-address of key then message, so with the shared key the receiver recomputes and matches to authenticate, while without the key the mac cannot be recomputed from the message alone; this is the structure of a keyed message authentication code, built only from uuidna primitives; but built on the non-cryptographic content-address it is not cryptographically secure, a determined adversary can forge via collisions, so the security is the work ahead — structure now, cryptographic strength the goal; integrity not truth; 0/7",
     "receipt": "8d5cc5da-e722-8598-91fc-cffbada20802"
+  },
+  {
+    "key": "a_bidirectional_seven_dimensional_authentication_structure_a_scaffold_toward_encryption_not_yet_secret",
+    "name": "a bidirectional seven-dimensional authentication structure — a scaffold toward encryption, not yet secret: the keyed MAC made bidirectional, a forward tag on the message and a reverse tag on the acknowledgment, and covered across the seven dimensions with a keyed tag per perspective, gives the shape of a seven-dimensional authenticated channel; but it provides authentication and integrity, bidirectionally and in all seven perspectives, not confidentiality — the content-address is public, so nothing is hidden; encryption is the goal, this is the authentication scaffold toward it; integrity not truth; 0/7",
+    "receipt": "d94a12c4-3610-8619-89a2-77737640603d"
   }
 ]
