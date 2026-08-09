@@ -4448,5 +4448,15 @@
     "key": "uuidna_corrects_what_is_decidable_a_named_class_and_bounded_errors_not_whatever_prose",
     "name": "uuidna corrects what is decidable — a named class and bounded errors, not whatever prose; a floor, not an oracle: strict minting canonicalises representation, error-correcting codes fix bounded errors, and the gate detects and refuses a named class of overclaim, prompting correction. But it does not correct whatever prose is written — a gate-clean falsehood passes uncorrected, and correcting arbitrary meaning is beyond a floor. Detection prompts the correction, a separate deed. Decidable",
     "receipt": "172ef329-c1a4-80ae-bf69-a5576d531b03"
+  },
+  {
+    "key": "uuidna_self_coverage_costs_exactly_the_classical_64bit_computation_no_free_lunch_coverage_grows_not_maximal",
+    "name": "uuidna self-coverage costs exactly the classical 64-bit computation — no free lunch, the coverage grows, not maximal: uuidna achieves self-coverage by re-verifying its own claims each build via precise combinations, at the cost of the classical 64-bit computation — no cost other than that; the deed is the cost, no free lunch. It corrects a named class and bounded errors, not whatever prose; the coverage grows with the ledger, not maximal or complete; classical and batched, not at once. Decidable",
+    "receipt": "79243891-e460-8641-9d01-274b4fffe546"
+  },
+  {
+    "key": "uuidna_corrects_code_via_types_and_test_gates_a_decidable_class_not_whatever_code",
+    "name": "uuidna corrects code via types and test gates — a decidable class, not whatever code; a floor, not an oracle: the type system catches type drift (types are theorems), a failing test is discarded, and broken code fails the build — prompting correction. But it does not correct whatever code: a compiling, gate-clean but logically wrong program passes uncorrected; correcting arbitrary logic is beyond a floor. The cost is the classical 64-bit computation. Decidable",
+    "receipt": "b1b8af51-4a53-8481-bd16-331f2c1866f9"
   }
 ]
