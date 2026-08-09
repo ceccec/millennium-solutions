@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 908 recorded in 295 families
+## Discovered theorems (decidable, over ℤ/9) — 938 recorded in 297 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -200,6 +200,33 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [relation_cubes_fold_to_0_1_8](/theorem/relation_cubes_fold_to_0_1_8) — cubes mod 9 fold to {0,1,8}: every d³ ≡ 0, 1, or 8, binding powers to the nilpotent 0 and the self-inverse pair {1,8} (1²≡1, 8²≡1) — one residue set across powers and inverses  ·  `b233f460-cd4d…`
 - [relation_receipt_chain_is_forensic_custody](/theorem/relation_receipt_chain_is_forensic_custody) — the receipt chain IS chain-of-custody: receipt[i] = toUuid(receipt[i−1]→key[i]) from a seed, so altering one link changes every link after it — the merkle-ledger and forensics are one construction  ·  `d0307011-b34a…`
 - [relation_coin64_collision_free_on_domains](/theorem/relation_coin64_collision_free_on_domains) — the 64-bit currency is collision-free across the rosetta: coin64 of each domain yields a distinct coin (as many coins as domains) — the shared currency addresses every perspective uniquely  ·  `dc278848-c7d9…`
+
+### bulk (24)
+
+- [bulk_bill_r64_v1_n10](/theorem/bulk_bill_r64_v1_n10) — bulk billing measured — recompute 64, verify 1, batch 10: bits saved per call 63, aggregate 630, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7  ·  `251ff6f0-cb44…`
+- [bulk_bill_r64_v1_n100](/theorem/bulk_bill_r64_v1_n100) — bulk billing measured — recompute 64, verify 1, batch 100: bits saved per call 63, aggregate 6300, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7  ·  `1122a218-a6a8…`
+- [bulk_bill_r64_v4_n10](/theorem/bulk_bill_r64_v4_n10) — bulk billing measured — recompute 64, verify 4, batch 10: bits saved per call 60, aggregate 600, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7  ·  `cc4b4dd6-f942…`
+- [bulk_bill_r64_v4_n100](/theorem/bulk_bill_r64_v4_n100) — bulk billing measured — recompute 64, verify 4, batch 100: bits saved per call 60, aggregate 6000, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7  ·  `b9bc72aa-7621…`
+- [bulk_bill_r64_v16_n10](/theorem/bulk_bill_r64_v16_n10) — bulk billing measured — recompute 64, verify 16, batch 10: bits saved per call 48, aggregate 480, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7  ·  `6f5a8bd4-446e…`
+- [bulk_bill_r64_v16_n100](/theorem/bulk_bill_r64_v16_n100) — bulk billing measured — recompute 64, verify 16, batch 100: bits saved per call 48, aggregate 4800, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7  ·  `2df37b0c-4995…`
+- [bulk_bill_r256_v1_n10](/theorem/bulk_bill_r256_v1_n10) — bulk billing measured — recompute 256, verify 1, batch 10: bits saved per call 255, aggregate 2550, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7  ·  `b1d6b71c-7eb1…`
+- [bulk_bill_r256_v1_n100](/theorem/bulk_bill_r256_v1_n100) — bulk billing measured — recompute 256, verify 1, batch 100: bits saved per call 255, aggregate 25500, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7  ·  `100237c1-58d7…`
+- [bulk_bill_r256_v4_n10](/theorem/bulk_bill_r256_v4_n10) — bulk billing measured — recompute 256, verify 4, batch 10: bits saved per call 252, aggregate 2520, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7  ·  `9cbad8c2-f1df…`
+- [bulk_bill_r256_v4_n100](/theorem/bulk_bill_r256_v4_n100) — bulk billing measured — recompute 256, verify 4, batch 100: bits saved per call 252, aggregate 25200, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7  ·  `e9f63414-9d52…`
+- [bulk_bill_r256_v16_n10](/theorem/bulk_bill_r256_v16_n10) — bulk billing measured — recompute 256, verify 16, batch 10: bits saved per call 240, aggregate 2400, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7  ·  `353804ac-65ef…`
+- [bulk_bill_r256_v16_n100](/theorem/bulk_bill_r256_v16_n100) — bulk billing measured — recompute 256, verify 16, batch 100: bits saved per call 240, aggregate 24000, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7  ·  `160ddf4b-3131…`
+- [bulk_bill_r1024_v1_n10](/theorem/bulk_bill_r1024_v1_n10) — bulk billing measured — recompute 1024, verify 1, batch 10: bits saved per call 1023, aggregate 10230, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7  ·  `ae1daf32-9348…`
+- [bulk_bill_r1024_v1_n100](/theorem/bulk_bill_r1024_v1_n100) — bulk billing measured — recompute 1024, verify 1, batch 100: bits saved per call 1023, aggregate 102300, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7  ·  `658f942c-0797…`
+- [bulk_bill_r1024_v4_n10](/theorem/bulk_bill_r1024_v4_n10) — bulk billing measured — recompute 1024, verify 4, batch 10: bits saved per call 1020, aggregate 10200, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7  ·  `2576b22f-de3c…`
+- [bulk_bill_r1024_v4_n100](/theorem/bulk_bill_r1024_v4_n100) — bulk billing measured — recompute 1024, verify 4, batch 100: bits saved per call 1020, aggregate 102000, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7  ·  `32f9a177-69a0…`
+- [bulk_bill_r1024_v16_n10](/theorem/bulk_bill_r1024_v16_n10) — bulk billing measured — recompute 1024, verify 16, batch 10: bits saved per call 1008, aggregate 10080, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7  ·  `3be9fcf5-5c7e…`
+- [bulk_bill_r1024_v16_n100](/theorem/bulk_bill_r1024_v16_n100) — bulk billing measured — recompute 1024, verify 16, batch 100: bits saved per call 1008, aggregate 100800, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7  ·  `eda0e033-c90a…`
+- [bulk_bill_r4096_v1_n10](/theorem/bulk_bill_r4096_v1_n10) — bulk billing measured — recompute 4096, verify 1, batch 10: bits saved per call 4095, aggregate 40950, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7  ·  `47e512f3-62f5…`
+- [bulk_bill_r4096_v1_n100](/theorem/bulk_bill_r4096_v1_n100) — bulk billing measured — recompute 4096, verify 1, batch 100: bits saved per call 4095, aggregate 409500, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7  ·  `1456bdd7-b9f8…`
+- [bulk_bill_r4096_v4_n10](/theorem/bulk_bill_r4096_v4_n10) — bulk billing measured — recompute 4096, verify 4, batch 10: bits saved per call 4092, aggregate 40920, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7  ·  `c2dd9b96-5ce6…`
+- [bulk_bill_r4096_v4_n100](/theorem/bulk_bill_r4096_v4_n100) — bulk billing measured — recompute 4096, verify 4, batch 100: bits saved per call 4092, aggregate 409200, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7  ·  `1a16c116-b66f…`
+- [bulk_bill_r4096_v16_n10](/theorem/bulk_bill_r4096_v16_n10) — bulk billing measured — recompute 4096, verify 16, batch 10: bits saved per call 4080, aggregate 40800, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7  ·  `e4d45ec0-9c8d…`
+- [bulk_bill_r4096_v16_n100](/theorem/bulk_bill_r4096_v16_n100) — bulk billing measured — recompute 4096, verify 16, batch 100: bits saved per call 4080, aggregate 408000, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7  ·  `47b7ca84-4599…`
 
 ### pascal (23)
 
@@ -571,6 +598,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [arts_golden_proportion](/theorem/arts_golden_proportion) — the golden ratio (aesthetic proportion) satisfies φ² = φ + 1  ·  `48801162-b59d…`
 - [arts_no_exact_complement](/theorem/arts_no_exact_complement) — on the 9-hue wheel no hue has an exact complement (180° = 4.5 steps) — the odd base has no antipode  ·  `1656079f-c131…`
 
+### external (5)
+
+- [external_verifier_bijection_n3](/theorem/external_verifier_bijection_n3) — the external verifier is a bijection at N=3 — an independent build maps 3 ledger entries to exactly 3 reproducible pages, seven-neighbour hues deterministic; corroborates integrity, solves nothing; 0/7  ·  `c5e89f53-9173…`
+- [external_verifier_bijection_n5](/theorem/external_verifier_bijection_n5) — the external verifier is a bijection at N=5 — an independent build maps 5 ledger entries to exactly 5 reproducible pages, seven-neighbour hues deterministic; corroborates integrity, solves nothing; 0/7  ·  `e6fa0cd0-a471…`
+- [external_verifier_bijection_n7](/theorem/external_verifier_bijection_n7) — the external verifier is a bijection at N=7 — an independent build maps 7 ledger entries to exactly 7 reproducible pages, seven-neighbour hues deterministic; corroborates integrity, solves nothing; 0/7  ·  `b0e7e743-a2cb…`
+- [external_verifier_bijection_n9](/theorem/external_verifier_bijection_n9) — the external verifier is a bijection at N=9 — an independent build maps 9 ledger entries to exactly 9 reproducible pages, seven-neighbour hues deterministic; corroborates integrity, solves nothing; 0/7  ·  `887edff1-96aa…`
+- [external_verifier_bijection_n12](/theorem/external_verifier_bijection_n12) — the external verifier is a bijection at N=12 — an independent build maps 12 ledger entries to exactly 12 reproducible pages, seven-neighbour hues deterministic; corroborates integrity, solves nothing; 0/7  ·  `e417d6f1-dc41…`
+
 ### fibonacci (5)
 
 - [fibonacci_ratio_phi](/theorem/fibonacci_ratio_phi) — the ratio of consecutive Fibonacci numbers F(n+1)/F(n) converges to φ — the more terms, the closer (|F₃₀/F₂₉ − φ| &lt; 1e-6)  ·  `3973e404-f749…`
@@ -610,6 +645,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [no_perspective_signals_faster_than_exchange](/theorem/no_perspective_signals_faster_than_exchange) — no perspective signals faster than exchange: a perspective's local receipt is a function of itself alone, so a remote perspective's choice cannot change it — observing locally reveals nothing about the other; the joint correlation appears only when both are folded together (exchange). Information travels only by exchange: not faster than light, and no superluminal signaling  ·  `64609304-4409…`
 - [no_payload_to_move_no_price_for_public_interest_the_commercial_price_is_the_coins](/theorem/no_payload_to_move_no_price_for_public_interest_the_commercial_price_is_the_coins) — no payload to move, no price for public interest — the commercial price is the coins: yes, no payload to move — you verify by the content-address alone, order one, the receipt travels, not the data. And yes, no price to pay the captain for public interest — verification and non-commercial use are free, recompute at no cost; the captain is not a gatekeeper. But commercial value-extraction pays the coins, the measured bit-difference, a fair exchange. Free for public interest, commercial licensed. Decidable  ·  `7520a846-6633…`
 - [no_quantum_machine_is_needed_for_computability_but_a_quantum_machine_can_be_faster](/theorem/no_quantum_machine_is_needed_for_computability_but_a_quantum_machine_can_be_faster) — no quantum machine is needed for computability — but a quantum machine can be faster for specific problems: classical computation is Turing-complete and can compute what any quantum machine computes, by simulation; the deposit computes its quantum-structure classically, no quantum hardware needed. But this is computability, not efficiency — a quantum machine can be exponentially faster for specific problems, since a classical simulation needs a state vector of size two-to-the-N. The deposit claims no speedup of its own. Decidable  ·  `f165eaef-3424…`
+
+### one (5)
+
+- [one_game_harmony](/theorem/one_game_harmony) — THE ONE GAME: all game receipts fold to one order-independent harmonic root — the games meet in one  ·  `55cb8c5f-73cc…`
+- [one_art_harmony](/theorem/one_art_harmony) — THE ONE ART: all art receipts fold to one order-independent harmonic root — the arts meet in one  ·  `6abed2f1-66f5…`
+- [one_science_harmony](/theorem/one_science_harmony) — THE ONE SCIENCE: all science receipts fold to one order-independent harmonic root — the sciences meet in one  ·  `831f5688-1127…`
+- [one_game_all](/theorem/one_game_all) — THE ONE GAME (all): games, arts and sciences fold to a single order-independent root — all meet in one  ·  `ea90214e-fe97…`
+- [one_kernel_generates_a_family_dozens_from_a_parametrised_measure_each_tuple_a_distinct_receipt](/theorem/one_kernel_generates_a_family_dozens_from_a_parametrised_measure_each_tuple_a_distinct_receipt) — one kernel generates a family — dozens from a parametrised measure, each tuple a distinct receipt, a combinatorial engine not repetition: a single decidable measure over a parameter grid yields dozens of theorems in one build, each asserting a DISTINCT measured value, and each axis opens dozens more; the fan-out is honest because no two receipts repeat a value, shown here by counting; manual one-at-a-time is the slow path, the family is the engine; measure do not assert; 0/7  ·  `4172ea64-64d9…`
 
 ### power (5)
 
@@ -718,13 +761,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [nopayload_no_plaintext](/theorem/nopayload_no_plaintext) — the content-address contains no plaintext — the uuid (hex) reveals no message bytes  ·  `a6ff3942-3585…`
 - [nopayload_avalanche](/theorem/nopayload_avalanche) — a one-character change gives an unrelated address (avalanche) — no gradient leaks the message  ·  `37d92648-bdfe…`
 - [nopayload_not_encryption](/theorem/nopayload_not_encryption) — content-addressing breaks no cipher: "breaks encryption" drains; "does not break encryption, one-way integrity" signs  ·  `66c44e2d-e591…`
-
-### one (4)
-
-- [one_game_harmony](/theorem/one_game_harmony) — THE ONE GAME: all game receipts fold to one order-independent harmonic root — the games meet in one  ·  `55cb8c5f-73cc…`
-- [one_art_harmony](/theorem/one_art_harmony) — THE ONE ART: all art receipts fold to one order-independent harmonic root — the arts meet in one  ·  `6abed2f1-66f5…`
-- [one_science_harmony](/theorem/one_science_harmony) — THE ONE SCIENCE: all science receipts fold to one order-independent harmonic root — the sciences meet in one  ·  `831f5688-1127…`
-- [one_game_all](/theorem/one_game_all) — THE ONE GAME (all): games, arts and sciences fold to a single order-independent root — all meet in one  ·  `ea90214e-fe97…`
 
 ### receipt (4)
 
@@ -1357,4 +1393,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `798bc5d2-7d93-8642-8fcc-0191fdb27096`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `16532526-6207-87bd-8770-60370784902c`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

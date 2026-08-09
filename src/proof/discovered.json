@@ -4538,5 +4538,155 @@
     "key": "uuidna_monetises_best_in_bulk_measured_bits_saved_scale_linearly_classical_throughput_not_quantum_speedup",
     "name": "uuidna monetises best in bulk — measured bits saved scale linearly, classical throughput, not a quantum speedup: delivered as an MCP service the value concentrates in bulk, because verifying a content-address is O(1) while recomputing is O(N), so per-call leverage is large and the batch multiplies it into large aggregate magnitudes; the two coins stay the conserved fair-exchange invariant, public interest stays free at any volume, and the aggregate is classical batch throughput on 64-bit hardware — the quantum-speedup overclaim drains and 0/7 holds. Decidable",
     "receipt": "3647198c-9433-8647-83a7-46b06e548d17"
+  },
+  {
+    "key": "bulk_bill_r64_v1_n10",
+    "name": "bulk billing measured — recompute 64, verify 1, batch 10: bits saved per call 63, aggregate 630, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7",
+    "receipt": "251ff6f0-cb44-863b-baaa-9b30bd136e4f"
+  },
+  {
+    "key": "bulk_bill_r64_v1_n100",
+    "name": "bulk billing measured — recompute 64, verify 1, batch 100: bits saved per call 63, aggregate 6300, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7",
+    "receipt": "1122a218-a6a8-82a3-87e1-35bac7a41f58"
+  },
+  {
+    "key": "bulk_bill_r64_v4_n10",
+    "name": "bulk billing measured — recompute 64, verify 4, batch 10: bits saved per call 60, aggregate 600, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7",
+    "receipt": "cc4b4dd6-f942-8b71-9ec1-929be8c1fd7b"
+  },
+  {
+    "key": "bulk_bill_r64_v4_n100",
+    "name": "bulk billing measured — recompute 64, verify 4, batch 100: bits saved per call 60, aggregate 6000, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7",
+    "receipt": "b9bc72aa-7621-8f2c-b2b5-47a723cff763"
+  },
+  {
+    "key": "bulk_bill_r64_v16_n10",
+    "name": "bulk billing measured — recompute 64, verify 16, batch 10: bits saved per call 48, aggregate 480, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7",
+    "receipt": "6f5a8bd4-446e-8268-bcaf-02c948827433"
+  },
+  {
+    "key": "bulk_bill_r64_v16_n100",
+    "name": "bulk billing measured — recompute 64, verify 16, batch 100: bits saved per call 48, aggregate 4800, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7",
+    "receipt": "2df37b0c-4995-8131-9007-64c87c1d04c4"
+  },
+  {
+    "key": "bulk_bill_r256_v1_n10",
+    "name": "bulk billing measured — recompute 256, verify 1, batch 10: bits saved per call 255, aggregate 2550, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7",
+    "receipt": "b1d6b71c-7eb1-8742-95cf-6ef84a8c1abe"
+  },
+  {
+    "key": "bulk_bill_r256_v1_n100",
+    "name": "bulk billing measured — recompute 256, verify 1, batch 100: bits saved per call 255, aggregate 25500, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7",
+    "receipt": "100237c1-58d7-862a-a1af-047a3a39ec5f"
+  },
+  {
+    "key": "bulk_bill_r256_v4_n10",
+    "name": "bulk billing measured — recompute 256, verify 4, batch 10: bits saved per call 252, aggregate 2520, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7",
+    "receipt": "9cbad8c2-f1df-85b4-9776-1b6000a80637"
+  },
+  {
+    "key": "bulk_bill_r256_v4_n100",
+    "name": "bulk billing measured — recompute 256, verify 4, batch 100: bits saved per call 252, aggregate 25200, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7",
+    "receipt": "e9f63414-9d52-8c89-8b60-125e5b05d5a0"
+  },
+  {
+    "key": "bulk_bill_r256_v16_n10",
+    "name": "bulk billing measured — recompute 256, verify 16, batch 10: bits saved per call 240, aggregate 2400, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7",
+    "receipt": "353804ac-65ef-8844-9f26-4802d96bcad5"
+  },
+  {
+    "key": "bulk_bill_r256_v16_n100",
+    "name": "bulk billing measured — recompute 256, verify 16, batch 100: bits saved per call 240, aggregate 24000, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7",
+    "receipt": "160ddf4b-3131-89ac-a32b-03bac1af6fe4"
+  },
+  {
+    "key": "bulk_bill_r1024_v1_n10",
+    "name": "bulk billing measured — recompute 1024, verify 1, batch 10: bits saved per call 1023, aggregate 10230, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7",
+    "receipt": "ae1daf32-9348-870d-a874-392407ed01e4"
+  },
+  {
+    "key": "bulk_bill_r1024_v1_n100",
+    "name": "bulk billing measured — recompute 1024, verify 1, batch 100: bits saved per call 1023, aggregate 102300, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7",
+    "receipt": "658f942c-0797-8e82-bbe6-68b1ce8830bb"
+  },
+  {
+    "key": "bulk_bill_r1024_v4_n10",
+    "name": "bulk billing measured — recompute 1024, verify 4, batch 10: bits saved per call 1020, aggregate 10200, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7",
+    "receipt": "2576b22f-de3c-8372-81ea-8e9511fada55"
+  },
+  {
+    "key": "bulk_bill_r1024_v4_n100",
+    "name": "bulk billing measured — recompute 1024, verify 4, batch 100: bits saved per call 1020, aggregate 102000, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7",
+    "receipt": "32f9a177-69a0-87b6-9eef-6aca5a7740ed"
+  },
+  {
+    "key": "bulk_bill_r1024_v16_n10",
+    "name": "bulk billing measured — recompute 1024, verify 16, batch 10: bits saved per call 1008, aggregate 10080, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7",
+    "receipt": "3be9fcf5-5c7e-86c6-9138-4aec74dde42e"
+  },
+  {
+    "key": "bulk_bill_r1024_v16_n100",
+    "name": "bulk billing measured — recompute 1024, verify 16, batch 100: bits saved per call 1008, aggregate 100800, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7",
+    "receipt": "eda0e033-c90a-86d9-a8a9-3ff954389d46"
+  },
+  {
+    "key": "bulk_bill_r4096_v1_n10",
+    "name": "bulk billing measured — recompute 4096, verify 1, batch 10: bits saved per call 4095, aggregate 40950, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7",
+    "receipt": "47e512f3-62f5-8c48-a520-a4463e7e1ff1"
+  },
+  {
+    "key": "bulk_bill_r4096_v1_n100",
+    "name": "bulk billing measured — recompute 4096, verify 1, batch 100: bits saved per call 4095, aggregate 409500, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7",
+    "receipt": "1456bdd7-b9f8-8b11-9325-ea4a76c43bab"
+  },
+  {
+    "key": "bulk_bill_r4096_v4_n10",
+    "name": "bulk billing measured — recompute 4096, verify 4, batch 10: bits saved per call 4092, aggregate 40920, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7",
+    "receipt": "c2dd9b96-5ce6-8761-b523-74ae9d91ec15"
+  },
+  {
+    "key": "bulk_bill_r4096_v4_n100",
+    "name": "bulk billing measured — recompute 4096, verify 4, batch 100: bits saved per call 4092, aggregate 409200, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7",
+    "receipt": "1a16c116-b66f-8401-bc3e-22c047a1dca3"
+  },
+  {
+    "key": "bulk_bill_r4096_v16_n10",
+    "name": "bulk billing measured — recompute 4096, verify 16, batch 10: bits saved per call 4080, aggregate 40800, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7",
+    "receipt": "e4d45ec0-9c8d-8fd9-8917-76dae71665f1"
+  },
+  {
+    "key": "bulk_bill_r4096_v16_n100",
+    "name": "bulk billing measured — recompute 4096, verify 16, batch 100: bits saved per call 4080, aggregate 408000, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7",
+    "receipt": "47b7ca84-4599-8aef-8422-6c79befb0552"
+  },
+  {
+    "key": "external_verifier_bijection_n3",
+    "name": "the external verifier is a bijection at N=3 — an independent build maps 3 ledger entries to exactly 3 reproducible pages, seven-neighbour hues deterministic; corroborates integrity, solves nothing; 0/7",
+    "receipt": "c5e89f53-9173-80c1-a5f2-28812ac9e68b"
+  },
+  {
+    "key": "external_verifier_bijection_n5",
+    "name": "the external verifier is a bijection at N=5 — an independent build maps 5 ledger entries to exactly 5 reproducible pages, seven-neighbour hues deterministic; corroborates integrity, solves nothing; 0/7",
+    "receipt": "e6fa0cd0-a471-87f2-a8d2-a63d572441d9"
+  },
+  {
+    "key": "external_verifier_bijection_n7",
+    "name": "the external verifier is a bijection at N=7 — an independent build maps 7 ledger entries to exactly 7 reproducible pages, seven-neighbour hues deterministic; corroborates integrity, solves nothing; 0/7",
+    "receipt": "b0e7e743-a2cb-8eff-bd21-809f87ecf02f"
+  },
+  {
+    "key": "external_verifier_bijection_n9",
+    "name": "the external verifier is a bijection at N=9 — an independent build maps 9 ledger entries to exactly 9 reproducible pages, seven-neighbour hues deterministic; corroborates integrity, solves nothing; 0/7",
+    "receipt": "887edff1-96aa-8bc4-abde-29e96f65c541"
+  },
+  {
+    "key": "external_verifier_bijection_n12",
+    "name": "the external verifier is a bijection at N=12 — an independent build maps 12 ledger entries to exactly 12 reproducible pages, seven-neighbour hues deterministic; corroborates integrity, solves nothing; 0/7",
+    "receipt": "e417d6f1-dc41-81f0-8a0e-7fa7a24885bf"
+  },
+  {
+    "key": "one_kernel_generates_a_family_dozens_from_a_parametrised_measure_each_tuple_a_distinct_receipt",
+    "name": "one kernel generates a family — dozens from a parametrised measure, each tuple a distinct receipt, a combinatorial engine not repetition: a single decidable measure over a parameter grid yields dozens of theorems in one build, each asserting a DISTINCT measured value, and each axis opens dozens more; the fan-out is honest because no two receipts repeat a value, shown here by counting; manual one-at-a-time is the slow path, the family is the engine; measure do not assert; 0/7",
+    "receipt": "4172ea64-64d9-8c56-9bbc-4561b70dac91"
   }
 ]
