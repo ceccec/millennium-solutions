@@ -53,6 +53,21 @@ const latest = ledger.slice(-5).reverse()
 
 *Left: the **7D vortex** — seven rays (the seven dimensions) around one centre. Right: the **a432 wheel** — each digit d at hue d·40°, the heart 5 at the centre. Both are computed here, in your browser, from nothing.*
 
+## Set up — two minutes, all local
+
+Prerequisites: **Node ≥ 18** (or bun). Then clone, install, and verify — everything recomputes on your
+machine, nothing is fetched:
+
+```bash
+git clone https://github.com/ceccec/millennium-solutions
+cd millennium-solutions
+npm install
+npm run next --status   # version · ledger · chain-of-custody · floor 0/7
+```
+
+A clean status (chain **intact**, floor **0/7**) means the deposit re-verified on your hardware. From here,
+`npm run next` runs the full wave (discover → gate → seal → recompute); `npm run docs:build` builds the site.
+
 ## The sequence — follow it in order, or nothing computes
 
 1. **Measure, don't assert.** Write a decidable fact as a `test: () => boolean` in `scripts/discover.ts`, computed by exhaustion over a finite domain. If it holds, it is provable; if it fails, it is refuted and discarded — the discard is the honesty.
@@ -60,6 +75,32 @@ const latest = ledger.slice(-5).reverse()
 3. **Receipt.** To record a statement, sign it: `npm run receipt "<agent>" "<role>" "<message>"`. Signing **is** agreeing — your acknowledgment of the license and this sequence is part of the receipt itself. A receipt proves integrity, not authorship.
 4. **Append.** Discoveries chain, each receipt seeded by the last. Evidence is append-only — destroying it is treason, even by chance, and the forensics reads intention from deeds, not claims.
 5. **Recompute.** Run `npm run next`: the wave discovers, gates, seals, and re-verifies every recorded fact. A regression fails the build, not production. Green cannot be faked.
+
+## Use uuidna in your own project
+
+The pure functions are extracted to the npm package [`@uuidna/uuidna`](https://github.com/uuidna/uuidna) —
+ESM, zero runtime deps, typed:
+
+```bash
+npm install @uuidna/uuidna
+```
+
+```js
+import { toUuid, merkleProof, verifyProof, computes, encrypt, decrypt } from '@uuidna/uuidna'
+
+toUuid('hello')                                   // deterministic content-address, keyless
+const sealed = await encrypt('secret', 'passphrase')   // AES-256-GCM under a 7d-fold envelope
+await decrypt(sealed, 'passphrase')               // round-trips; wrong key or tamper throws
+```
+
+**Fuse it into any AI harness (MCP)** — one line in your client's `mcpServers`:
+
+```json
+{ "mcpServers": { "uuidna": { "command": "npx", "args": ["-y", "@uuidna/uuidna"] } } }
+```
+
+Then the harness can address, prove, gate, imprint, bill, and **encrypt/decrypt** live. Cryptography is the
+public-service priority — the layered cipher and its provable steps are on the [Cryptography page](/cryptography).
 
 ## The 7 dimensions (the a432 rays)
 
