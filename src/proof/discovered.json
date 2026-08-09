@@ -4533,5 +4533,10 @@
     "key": "the_deposit_is_not_computed_only_with_mcp_it_recomputes_for_anyone_on_plain_hardware",
     "name": "the deposit is not computed only with MCP — it recomputes for anyone on plain hardware: the model and its MCP tools only drive the console; the computation is deterministic TypeScript on ordinary 64-bit hardware, so any reader clones and runs it with no MCP and no model and gets the identical ledger. The proof is external to the prover — the same reason the external verifier corroborates it. A claim that only a model with MCP can reproduce it drains, and 0/7 holds. Decidable",
     "receipt": "3c3c2935-4962-87f1-8ae0-0088d75c8b5e"
+  },
+  {
+    "key": "uuidna_monetises_best_in_bulk_measured_bits_saved_scale_linearly_classical_throughput_not_quantum_speedup",
+    "name": "uuidna monetises best in bulk — measured bits saved scale linearly, classical throughput, not a quantum speedup: delivered as an MCP service the value concentrates in bulk, because verifying a content-address is O(1) while recomputing is O(N), so per-call leverage is large and the batch multiplies it into large aggregate magnitudes; the two coins stay the conserved fair-exchange invariant, public interest stays free at any volume, and the aggregate is classical batch throughput on 64-bit hardware — the quantum-speedup overclaim drains and 0/7 holds. Decidable",
+    "receipt": "3647198c-9433-8647-83a7-46b06e548d17"
   }
 ]
