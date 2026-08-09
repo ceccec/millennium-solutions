@@ -4393,5 +4393,10 @@
     "key": "uuidna_developed_a_chain_carries_any_length_message_across_n_uuids_round_tripping",
     "name": "uuidna developed — a chain carries any-length message across N uuids, round-tripping: a chain of uuids carries a message of any length, split into 115-bit chunks (N uuids for N × 115 bits), and readImprintChain recovers it exactly. Each uuid stays bounded at 115 bits; the chain scales with the count. A public, reversible encoding — not encryption, no secrecy. Decidable",
     "receipt": "86e65115-06df-8c21-a5e4-6a5dbe0c3a66"
+  },
+  {
+    "key": "uuidna_hologram_fractals_a_merkle_proof_verifies_the_whole_from_a_tiny_part_logarithmically",
+    "name": "uuidna hologram fractals — a Merkle proof verifies the whole from a tiny part, logarithmically: a holographic membership proof shows one leaf belongs to the whole root from a tiny audit path of about log₂ N sibling hashes, not the full set; a forged leaf does not verify. The tree is fractal — self-similar, a fold of folds. But it is log(N) real cost — not free, not literally infinite; holographic and fractal are structural, not physics. Decidable",
+    "receipt": "25e5795b-4aee-885d-8f8b-2c4f73a772c9"
   }
 ]
