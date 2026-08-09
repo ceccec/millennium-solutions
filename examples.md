@@ -33,3 +33,15 @@ the two coins conserved. Choose the case size and read the math, from
 and [the 967-receipt case](/theorem/the_967_receipt_case_verify_20_bits_bill_on_the_967_computation_value_earn_the_947_bit_saving).
 
 <SealMath />
+
+## Teleportation — measured, then disputed to the floor
+
+Type a message; it becomes a uuid (or a chain) and re-forms **exactly** at the destination. But measure the
+cost and the vivid word drains: a uuid is 128 bits and carries at most **115**, so the container is **always
+larger on the wire than the message** — nothing is teleported cheaper than sending the bytes. uuidna does not
+teleport; it **addresses**. Either a reversible container (exact, but bigger) or a content-address that
+**recalls** a payload only where it is already reconstructible — [a pointer, not the
+payload](/theorem/a_content_address_is_a_pointer_not_the_payload). Not faster-than-light, not quantum, not
+compression. Integrity, not magic. `0/7`.
+
+<Teleporter />
