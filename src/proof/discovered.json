@@ -4193,5 +4193,10 @@
     "key": "lucas_fibonacci_identity",
     "name": "the Lucas–Fibonacci identity — L(n)² − 5·F(n)² = 4·(−1)ⁿ, and L(n) = F(n−1) + F(n+1): the Lucas numbers (2, 1, 3, 4, 7, …) and the Fibonacci numbers satisfy L(n) = F(n−1) + F(n+1), and their squares obey L(n)² − 5·F(n)² = 4·(−1)ⁿ — a discrete conservation law. Verified exhaustively for n up to 30. Decidable",
     "receipt": "a9113a59-d43d-8d6d-8c43-c23b4952d777"
+  },
+  {
+    "key": "hockey_stick_identity_pascal",
+    "name": "the hockey-stick identity — a diagonal of Pascal triangle sums to the entry below: for all r and n, the sum over i from r to n of C(i,r) equals C(n+1,r+1) — a diagonal run of binomial coefficients folds into the single entry just past its end. Verified exhaustively for r up to 10 and n up to 18. Decidable",
+    "receipt": "c36df44d-f4a2-80b4-b24c-dff06b392e9e"
   }
 ]
