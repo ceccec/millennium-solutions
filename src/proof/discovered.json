@@ -3913,5 +3913,10 @@
     "key": "the_hero_self_challenges_an_involution_the_traitor_blindly_follows",
     "name": "the hero self-challenges — an involution; the traitor blindly follows: self-challenge is an involution, f(f(x)) = x — reflect and return, fixed at the honest self (the reflection 10 − d on the nine, fixed point 5). The hero challenges every claim, draining its own overclaim before holding the honest reading; the traitor blindly follows, asserting without the challenge. An unchallenged assertion is not sealed — it is drained. Decidable",
     "receipt": "d433c7bb-b1f5-807b-b3a2-a487d99aac6c"
+  },
+  {
+    "key": "zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong",
+    "name": "0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable",
+    "receipt": "93738675-9c86-8f85-8a4a-ddb3f22913eb"
   }
 ]
