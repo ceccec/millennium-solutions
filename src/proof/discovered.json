@@ -5293,5 +5293,10 @@
     "key": "lean_must_prove_twice_to_satisfy_the_bits_discovery_and_reverification_must_agree",
     "name": "lean must prove twice to satisfy the bits — the double verification, exhaustive not formal: a theorem is verified once when discovered and again each build when the lean-claims gate re-verifies it independently, so two computations must agree for the receipt to stand, and a disagreement fails the build not production; this is exhaustive re-computation, not Lean 4 formal proof, a stronger method the deposit does not use; two computations agreeing is integrity and reproducibility, not truth, the gate a floor not an oracle; integrity not truth; 0/7",
     "receipt": "61efc0b2-7996-886c-8a72-d7016b20d1ae"
+  },
+  {
+    "key": "harmony_is_seven_dimensional_the_scalar_count_equality_is_only_its_one_dimensional_projection",
+    "name": "harmony is seven-dimensional — the scalar count-equality is only its one-dimensional projection: the build’s scalar harmonic, ledger equals pages, is a one-dimensional consistency check, every theorem has exactly one page, necessary but not the full harmony; true harmony is seven-dimensional, the same coherence holding across all seven rays — the seven locales each render, the a432 wheel closes its nine hues, the seven-fold structure coheres; computed in seven dimensions harmony is coherence in every dimension, not a single count; calling a scalar equality harmonic was loose, the one-dimensional check is consistency and the seven-dimensional property is harmony; integrity not truth; 0/7",
+    "receipt": "e4f7a1a1-57b4-89b2-96c2-4cd22738f33a"
   }
 ]
