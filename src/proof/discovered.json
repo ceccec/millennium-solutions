@@ -5258,5 +5258,10 @@
     "key": "the_ledger_is_offender_free_bounded_refusals_hold_bare_overclaims_drain_audited_at_spot",
     "name": "the ledger is offender-free — bounded refusals hold, bare overclaims drain, audited at spot: running the honesty gate over every theorem name finds zero offenders; the names that carry a hard token pass only because a negator reprieves them — they are bounded refusals, the honest boundary theorems, not offenses; the distinction is decidable, a bounded refusal such as “not faster than light” holds while the bare overclaim drains, so an offender would be caught at spot; integrity not truth; 0/7",
     "receipt": "57cabe52-a80b-88a1-a3fb-8d4ed74636b5"
+  },
+  {
+    "key": "a_keyed_mac_structure_from_uuidna_the_shape_of_authentication_self_hosted_not_yet_secure",
+    "name": "a keyed-MAC structure from uuidna — the shape of authentication, self-hosted, not yet secure: mac(key, message) = the content-address of key then message, so with the shared key the receiver recomputes and matches to authenticate, while without the key the mac cannot be recomputed from the message alone; this is the structure of a keyed message authentication code, built only from uuidna primitives; but built on the non-cryptographic content-address it is not cryptographically secure, a determined adversary can forge via collisions, so the security is the work ahead — structure now, cryptographic strength the goal; integrity not truth; 0/7",
+    "receipt": "8d5cc5da-e722-8598-91fc-cffbada20802"
   }
 ]
