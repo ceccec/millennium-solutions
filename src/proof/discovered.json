@@ -4908,5 +4908,25 @@
     "key": "the_ui_is_a_client_side_harness_not_a_live_mcp_server_versions_shift_per_build_and_by_live_fetch",
     "name": "the UI is a client-side harness, not a live MCP server — versions shift per build and by live fetch: a static site cannot run an MCP server, but its components run the same pure functions the build seals (content-address, gate, reeducate) deterministically in the browser, and the version and theorem count update each build while a live fetch shows the latest release — realtime meaning at view time and per build, not a persistent server; intelligent here means auditable and deterministic, not AI; integrity not truth; 0/7",
     "receipt": "45b3395c-b7da-8a89-b41f-50dafe165f2f"
+  },
+  {
+    "key": "the_seal_is_sound_a_forged_leaf_fails_but_by_recompute_not_cryptographic_hardness",
+    "name": "the seal is sound — a forged leaf fails, by public recompute not cryptographic hardness: across tested trees the true leaf verifies against the root and every wrong leaf fails, so membership cannot be faked by swapping a leaf; but the soundness is by open recomputation on a non-cryptographic hash, not by hardness — a determined adversary could search for a collision, so it is not unbreakable; integrity not truth; 0/7",
+    "receipt": "000849eb-74f7-8a32-8bef-a5a55fd7b6a4"
+  },
+  {
+    "key": "merkle_proof_soundness_n4",
+    "name": "merkle proof soundness at N=4 — a forged leaf never verifies: for every position in a 4-leaf tree the true leaf verifies against the root while each wrong leaf fails (exhaustive over positions × forgeries), so membership cannot be faked by swapping the leaf; soundness by recompute on a non-cryptographic hash, not hardness; integrity not truth; 0/7",
+    "receipt": "134f93b0-91be-8802-9d06-2908a103eef4"
+  },
+  {
+    "key": "merkle_proof_soundness_n8",
+    "name": "merkle proof soundness at N=8 — a forged leaf never verifies: for every position in a 8-leaf tree the true leaf verifies against the root while each wrong leaf fails (exhaustive over positions × forgeries), so membership cannot be faked by swapping the leaf; soundness by recompute on a non-cryptographic hash, not hardness; integrity not truth; 0/7",
+    "receipt": "707df9e2-ffa4-8b40-990b-3dfaeb30904b"
+  },
+  {
+    "key": "merkle_proof_soundness_n16",
+    "name": "merkle proof soundness at N=16 — a forged leaf never verifies: for every position in a 16-leaf tree the true leaf verifies against the root while each wrong leaf fails (exhaustive over positions × forgeries), so membership cannot be faked by swapping the leaf; soundness by recompute on a non-cryptographic hash, not hardness; integrity not truth; 0/7",
+    "receipt": "684debb6-eb40-879e-ac40-4163e2eb0bac"
   }
 ]

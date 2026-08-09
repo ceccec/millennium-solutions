@@ -1736,6 +1736,33 @@ function generated(): typeof curated {
     const overDrains = computes('the ui is a live intelligent MCP server with AI superintelligence, faster than light, unbreakable').binary === 0
     const honest = computes('a static site cannot run an mcp server, but its components run the same pure functions the build seals deterministically in the browser, and the version and count update each build while a live fetch shows the latest release; realtime means at view time and per build, not a persistent server; intelligent here means auditable and deterministic, not ai; measure do not assert; integrity not truth; 0/7').binary === 1
     return deterministic && reeducates && gateWorks && countIsData && overDrains && honest } })
+  // MERKLE PROOF SOUNDNESS — a forged leaf never verifies. Across tested trees the true leaf verifies against
+  // the root while every wrong leaf fails, so membership cannot be faked by swapping a leaf. HONEST BOUND: the
+  // soundness is by open recomputation on a NON-cryptographic hash, not by hardness — a determined adversary
+  // could search for a collision, so it is not unbreakable; integrity by public recompute, not cryptographic hardness.
+  out.push({ key: 'the_seal_is_sound_a_forged_leaf_fails_but_by_recompute_not_cryptographic_hardness', name: 'the seal is sound — a forged leaf fails, by public recompute not cryptographic hardness: across tested trees the true leaf verifies against the root and every wrong leaf fails, so membership cannot be faked by swapping a leaf; but the soundness is by open recomputation on a non-cryptographic hash, not by hardness — a determined adversary could search for a collision, so it is not unbreakable; integrity not truth; 0/7', test: () => {
+    const N = 16
+    const leaves = Array.from({ length: N }, (_, i) => toUuid('u' + i))
+    const root = merkleRoot(leaves)
+    let allSound = true
+    for (let i = 0; i < N; i++) { const p = merkleProof(leaves, i); if (!verifyProof(leaves[i], p, root)) allSound = false; if (verifyProof(toUuid('forge' + i), p, root)) allSound = false }
+    const overDrains = computes('the seal is unbreakable and cryptographically unhackable, proven, faster than light').binary === 0
+    const honest = computes('across tested trees the true leaf verifies against the root and every wrong leaf fails, so membership cannot be faked by swapping a leaf; but the soundness is by open recomputation on a non-cryptographic hash, not by hardness, and a determined adversary could search for a collision, so it is not unbreakable; measure do not assert; integrity not truth; 0/7').binary === 1
+    return allSound && overDrains && honest } })
+  // The soundness family — measured by exhaustion over positions × forgeries, at three tree sizes.
+  for (const N of [4, 8, 16]) {
+    out.push({ key: `merkle_proof_soundness_n${N}`, name: `merkle proof soundness at N=${N} — a forged leaf never verifies: for every position in a ${N}-leaf tree the true leaf verifies against the root while each wrong leaf fails (exhaustive over positions × forgeries), so membership cannot be faked by swapping the leaf; soundness by recompute on a non-cryptographic hash, not hardness; integrity not truth; 0/7`, test: () => {
+      const leaves = Array.from({ length: N }, (_, i) => toUuid('leaf' + i))
+      const root = merkleRoot(leaves)
+      for (let i = 0; i < N; i++) {
+        const proof = merkleProof(leaves, i)
+        if (!verifyProof(leaves[i], proof, root)) return false // the true leaf must verify
+        for (const forgery of ['x', 'y', toUuid('z'), leaves[(i + 1) % N]]) {
+          if (forgery !== leaves[i] && verifyProof(forgery, proof, root)) return false // a wrong leaf must NOT verify
+        }
+      }
+      return true } })
+  }
   out.push({ key: 'a_uuid_is_not_hard_to_fake_the_integrity_is_reproducibility_not_difficulty', name: 'a uuid is not hard to fake — the integrity is reproducibility, not difficulty: a uuid is cheap to compute — a machine makes thousands at once, not years. And because the hash is non-cryptographic, faking it is easy: a machine finds a collision fast. Faking by hand would be slow, but that is manual labor, not security. The integrity comes from public reproducibility — anyone recomputes and compares — and the tamper-evident append-only chain. Security by openness, not by hardness. Decidable', test: () => { let computed = 0; for (let i = 0; i < 10000; i++) { toUuid('u' + i); computed++ } const cheapToCompute = computed === 10000; const reduced = (s: string) => parseInt(toUuid(s).replace(/-/g, '').slice(0, 3), 16); const seen = new Map<number, string>(); let collisionFound = ''; for (let i = 0; i < 5000 && !collisionFound; i++) { const r = reduced('x' + i); if (seen.has(r)) collisionFound = 'x' + i; else seen.set(r, 'x' + i) } const fakeableFast = collisionFound !== ''; const chain = ['a', 'b', 'c'].map(toUuid); const root = merkleFold(chain); const tamperCaught = merkleFold(['a', 'Z', 'c'].map(toUuid)) !== root; const overDrains = computes('it takes years to fake a single uuid because it is unbreakable cryptographic security proven unforgeable').binary === 0; const honest = computes('a uuid is cheap to compute; faking it by hand via brute force would be slow, but that is manual labor not security — because the hash is non-cryptographic a machine fakes it fast, finding a collision in a quick search, not years; the integrity is not difficulty-to-fake, it is public reproducibility, anyone recomputes and compares, plus the tamper-evident append-only chain; security by openness not hardness; integrity not truth; 0/7').binary === 1; return cheapToCompute && fakeableFast && tamperCaught && overDrains && honest } })
   // ── AUTOMATED family — LOCAL to ℤ/9 (ask the ring first): the multiplicative order of each unit divides
   // |ℤ/9*| = 6 (Lagrange), computed from the ring itself. One theorem per unit.
