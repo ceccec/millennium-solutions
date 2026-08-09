@@ -4028,5 +4028,10 @@
     "key": "expose_the_alternatives_and_verify_each_with_a_receipt_the_orchestration_activates_the_loop",
     "name": "expose the alternatives and verify each with a receipt — the orchestration activates the loop: exposing an alternative is not enough; each is verified with its own receipt, a decidable test that passes, activating the full orchestration of gates. Content is created from experience — a perspective, the deed, becomes a sealed receipted theorem, sailing the vessel, the learning earning the coins. But verify means a recomputable receipt over its domain, not absolute proof. Decidable",
     "receipt": "3ab9f3c8-94f7-89ae-99ed-87c804b4cb1e"
+  },
+  {
+    "key": "vandermonde_identity_binomial_convolution",
+    "name": "the Vandermonde identity — choosing r from m+n splits across the two groups: for all m, n and every r, the sum over k of C(m,k) times C(n,r−k) equals C(m+n,r) — choosing r items from a pile of m+n is the same as summing every way to take k from the first m and r−k from the second n. Verified exhaustively for m and n up to 12. Decidable",
+    "receipt": "c7a822fe-a30a-8f15-9333-ef7d7622bc84"
   }
 ]
