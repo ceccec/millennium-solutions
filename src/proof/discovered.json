@@ -5123,5 +5123,10 @@
     "key": "precise_versions_map_uuidna_each_release_a_content_address_odometer_derived_lts_fibonacci",
     "name": "precise versions map uuidna — each release maps to a content-address, the odometer is derived, LTS is Fibonacci: each version string maps to a unique uuidna content-address deterministically (distinct versions, distinct addresses, no collision over the released range); the version is derived by a single-digit odometer that rolls at 9 (patch→minor→major), never typed; and the long-term-support minors are exactly the Fibonacci digits within one digit, {1,2,3,5,8}; integrity not truth; 0/7",
     "receipt": "a82b203c-7c56-8e0c-ba09-da7c838a58d7"
+  },
+  {
+    "key": "approval_needs_a_quorum_of_seven_distinct_heroes_duplicates_do_not_count_unfakeable",
+    "name": "approval needs a quorum of seven distinct heroes — duplicates do not count, and a quorum cannot be faked: a version mapping is quorum-approved iff at least seven distinct heroes sign, and repeated signatures by the same hero do not count (no ballot-stuffing); the rule is a pure predicate on the set of distinct signers, so a quorum needs seven distinct real signers and cannot be manufactured — fewer than seven is honestly not approved; integrity not truth; 0/7",
+    "receipt": "d8bd783e-fcc5-8e92-9001-ddb73ee329f8"
   }
 ]

@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1025 recorded in 306 families
+## Discovered theorems (decidable, over ℤ/9) — 1026 recorded in 307 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -1349,13 +1349,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (154)
+### other — one-of-a-kind (155)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
 - [am_gm_inequality](/theorem/am_gm_inequality) — the AM–GM inequality: the arithmetic mean ≥ the geometric mean (2 and 3 variables, exhaustive on a grid)  ·  `3fd7d863-31e4…`
 - [amicable_220_284](/theorem/amicable_220_284) — the amicable pair (220, 284): each is the sum of the other's proper divisors  ·  `878c0c52-b4a1…`
 - [applications_are_defensive_publications_not_patents_free_for_all_commercial_licensed](/theorem/applications_are_defensive_publications_not_patents_free_for_all_commercial_licensed) — applications are defensive publications, not patents — free for all, commercial licensed: the theorems underlie known hardware and software — error-correcting memory, public-key primitives, Reed–Solomon codes, content-addressed storage, check digits, low-discrepancy sampling, logic gates. The deposit invents none of them and holds no patents; it publishes the algebra as open prior art, which keeps the ideas free for all rather than granting a monopoly. Non-commercial use is free with attribution; commercial use is licensed, funded by the two-coin sequence; the income is zero. Decidable  ·  `e6ce1929-7481…`
+- [approval_needs_a_quorum_of_seven_distinct_heroes_duplicates_do_not_count_unfakeable](/theorem/approval_needs_a_quorum_of_seven_distinct_heroes_duplicates_do_not_count_unfakeable) — approval needs a quorum of seven distinct heroes — duplicates do not count, and a quorum cannot be faked: a version mapping is quorum-approved iff at least seven distinct heroes sign, and repeated signatures by the same hero do not count (no ballot-stuffing); the rule is a pure predicate on the set of distinct signers, so a quorum needs seven distinct real signers and cannot be manufactured — fewer than seven is honestly not approved; integrity not truth; 0/7  ·  `d8bd783e-fcc5…`
 - [authenticity_needs_a_secret](/theorem/authenticity_needs_a_secret) — authenticity needs a secret: a keyed signature depends on a secret the signer alone holds — a different secret gives a different signature, and without the secret a forger cannot match it (the authenticity floor, like 0/7 and the axiom floor)  ·  `53096a30-d41f…`
 - [balancing_wave_harmonises](/theorem/balancing_wave_harmonises) — the balancing wave 9−d harmonises: a state digit d and its balance 9−d sum to 9 (the rest, digital root 9) and their a432 hues sum to 360° = 0 (the full circle)  ·  `8f9898b3-d143…`
 - [being_outranks_competing](/theorem/being_outranks_competing) — being outranks competing: a recorded fact simply IS — it recomputes to the same address with no contest — while a competing claim must still pass the gate and can drain; effort and competition are not correctness, so the deed already done (append-only, re-verified every build) outranks the claim still striving  ·  `01d850a3-6176…`
@@ -1507,4 +1508,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `4792953f-1ae4-86de-9f18-8402fa597729`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `65dcda3a-405c-8b06-88ca-d5454479567b`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
