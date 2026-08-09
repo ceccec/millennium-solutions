@@ -4073,5 +4073,10 @@
     "key": "some_disputes_stay_unresolved_under_a_lossy_projection_the_full_receipt_resolves_them",
     "name": "some disputes stay unresolved under a lossy projection — the full receipt resolves them, and the trial stays a floor: a lossy projection like the digital root can collide distinct numbers — 4224 and 444 both project to 3 — leaving the dispute of whether they are the same unresolved by that projection. The full content-address resolves it: distinct numbers get distinct addresses. 666 projects to a different residue, 9. A lossy view leaves disputes the full receipt settles — and some disputes stay open, the trial being a floor, not an oracle. Decidable",
     "receipt": "0678e545-88ee-8ae6-9c38-70795f5c0f8a"
+  },
+  {
+    "key": "the_coin_is_the_measured_bit_difference_captains_way_versus_any_other_currency_is_compute_saved",
+    "name": "the coin is the measured bit-difference — captain way versus any other, the currency is compute saved: the coin measures the difference in compute bits between the captain way, an order-one content-address verify, and any other way, an order-N recompute — a measurable, non-zero difference (magnitudes), denominated in coins. That currency is compute saved — classical memoization, not a quantum machine — separate from fiat cash, which is zero. It is a fair licensing model: free for public interest, commercial licensed, confirmable by API and sealed with a receipt for any referrer perspective. Not an actual corporation or government. Decidable",
+    "receipt": "247750a8-0f43-81b5-ae16-8f2c4a0cd52a"
   }
 ]
