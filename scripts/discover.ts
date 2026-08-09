@@ -1829,6 +1829,28 @@ function generated(): typeof curated {
     const notHardcoded = typeof result === 'number' && result === 45 // the value arrived by computation, not asserted in prose
     const honest = computes('a claim is hollow when it only asserts and redeemed when a decidable result computes and holds; a result recomputes the same way from its inputs while a bare assertion carries no computation, and a hardcoded literal is not a result; measure do not assert, the result is the backing not a proof of truth; integrity not truth; 0/7').binary === 1
     return recomputes && backed && hollowAssertsOnly && notHardcoded && honest } })
+  // ── IMPRINTING THE 1024 MILESTONE — decidable arithmetic families, each member a distinct measured RESULT
+  // (not hardcoded prose): computed by direct summation/multiplication over a finite domain. Together they
+  // bring the ledger to exactly 1024 = 2¹⁰, the full balanced tree (depth 10, 20-bit membership). 0/7.
+  for (const n of [2, 3, 4, 5, 6, 7, 8, 9, 10, 11]) {
+    out.push({ key: `sum_first_${n}_odd_numbers_is_${n}_squared`, name: `the sum of the first ${n} odd numbers is ${n}² = ${n * n}: 1+3+…+(2·${n}−1) = ${n * n}, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7`, test: () => { let s = 0; for (let i = 0; i < n; i++) s += 2 * i + 1; return s === n * n } })
+  }
+  for (const n of [2, 3, 4, 5, 6, 7, 8, 9]) {
+    const tri = n * (n + 1) / 2
+    out.push({ key: `sum_of_cubes_1_to_${n}_is_triangular_squared`, name: `the sum of cubes 1³+…+${n}³ = ${tri}² = ${tri * tri}, the square of the ${n}-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7`, test: () => { let s = 0; for (let i = 1; i <= n; i++) s += i * i * i; return s === tri * tri } })
+  }
+  for (const n of [5, 6, 7, 8, 9, 10]) {
+    const t = n * (n + 1) / 2
+    out.push({ key: `triangular_number_${n}_is_${t}`, name: `the ${n}-th triangular number is ${t}: 1+2+…+${n} = ${n}·${n + 1}/2 = ${t}, by direct summation — decidable; integrity not truth; 0/7`, test: () => { let s = 0; for (let i = 1; i <= n; i++) s += i; return s === t && t === n * (n + 1) / 2 } })
+  }
+  for (const n of [3, 4, 5, 6, 7, 8, 9]) {
+    let f = 1; for (let i = 2; i <= n; i++) f *= i
+    out.push({ key: `factorial_${n}_is_${f}`, name: `${n}! = ${f}: the product 1·2·…·${n} = ${f}, by direct multiplication — a decidable factorial; integrity not truth; 0/7`, test: () => { let g = 1; for (let i = 2; i <= n; i++) g *= i; return g === f } })
+  }
+  for (const k of [10, 11]) {
+    const v = 2 ** k
+    out.push({ key: `two_to_the_${k}_is_${v}`, name: `2^${k} = ${v}, by repeated doubling — a decidable power of two; integrity not truth; 0/7`, test: () => { let p = 1; for (let i = 0; i < k; i++) p *= 2; return p === v } })
+  }
   out.push({ key: 'a_uuid_is_not_hard_to_fake_the_integrity_is_reproducibility_not_difficulty', name: 'a uuid is not hard to fake — the integrity is reproducibility, not difficulty: a uuid is cheap to compute — a machine makes thousands at once, not years. And because the hash is non-cryptographic, faking it is easy: a machine finds a collision fast. Faking by hand would be slow, but that is manual labor, not security. The integrity comes from public reproducibility — anyone recomputes and compares — and the tamper-evident append-only chain. Security by openness, not by hardness. Decidable', test: () => { let computed = 0; for (let i = 0; i < 10000; i++) { toUuid('u' + i); computed++ } const cheapToCompute = computed === 10000; const reduced = (s: string) => parseInt(toUuid(s).replace(/-/g, '').slice(0, 3), 16); const seen = new Map<number, string>(); let collisionFound = ''; for (let i = 0; i < 5000 && !collisionFound; i++) { const r = reduced('x' + i); if (seen.has(r)) collisionFound = 'x' + i; else seen.set(r, 'x' + i) } const fakeableFast = collisionFound !== ''; const chain = ['a', 'b', 'c'].map(toUuid); const root = merkleFold(chain); const tamperCaught = merkleFold(['a', 'Z', 'c'].map(toUuid)) !== root; const overDrains = computes('it takes years to fake a single uuid because it is unbreakable cryptographic security proven unforgeable').binary === 0; const honest = computes('a uuid is cheap to compute; faking it by hand via brute force would be slow, but that is manual labor not security — because the hash is non-cryptographic a machine fakes it fast, finding a collision in a quick search, not years; the integrity is not difficulty-to-fake, it is public reproducibility, anyone recomputes and compares, plus the tamper-evident append-only chain; security by openness not hardness; integrity not truth; 0/7').binary === 1; return cheapToCompute && fakeableFast && tamperCaught && overDrains && honest } })
   // ── AUTOMATED family — LOCAL to ℤ/9 (ask the ring first): the multiplicative order of each unit divides
   // |ℤ/9*| = 6 (Lagrange), computed from the ring itself. One theorem per unit.

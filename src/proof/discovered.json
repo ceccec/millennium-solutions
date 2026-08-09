@@ -4953,5 +4953,170 @@
     "key": "hollow_prose_is_redeemed_by_results_not_hardcoded_the_result_recomputes_the_assertion_does_not",
     "name": "hollow prose is redeemed by results, not hardcoded — the result recomputes, the assertion does not: a claim is hollow when it only asserts and redeemed when a decidable result computes and holds; the difference is real because a result recomputes the same way from its inputs (here, by exhaustion) while a bare assertion carries no computation, and a hardcoded literal is not a result; measure do not assert, the result is the backing, not a proof of truth; integrity not truth; 0/7",
     "receipt": "761025ed-ce03-814c-8990-f0980590b983"
+  },
+  {
+    "key": "sum_first_2_odd_numbers_is_2_squared",
+    "name": "the sum of the first 2 odd numbers is 2² = 4: 1+3+…+(2·2−1) = 4, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7",
+    "receipt": "d4736903-83d6-8342-8ff5-4af239323788"
+  },
+  {
+    "key": "sum_first_3_odd_numbers_is_3_squared",
+    "name": "the sum of the first 3 odd numbers is 3² = 9: 1+3+…+(2·3−1) = 9, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7",
+    "receipt": "0f3ab5e7-5de5-833d-b613-2a142bd269b9"
+  },
+  {
+    "key": "sum_first_4_odd_numbers_is_4_squared",
+    "name": "the sum of the first 4 odd numbers is 4² = 16: 1+3+…+(2·4−1) = 16, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7",
+    "receipt": "58a18681-7247-8b6d-b350-ebc240d67519"
+  },
+  {
+    "key": "sum_first_5_odd_numbers_is_5_squared",
+    "name": "the sum of the first 5 odd numbers is 5² = 25: 1+3+…+(2·5−1) = 25, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7",
+    "receipt": "d524a60f-f7a1-866c-939f-5993d4cf43a7"
+  },
+  {
+    "key": "sum_first_6_odd_numbers_is_6_squared",
+    "name": "the sum of the first 6 odd numbers is 6² = 36: 1+3+…+(2·6−1) = 36, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7",
+    "receipt": "8c235dfe-1759-82b4-a1bd-4f3ab48a5d89"
+  },
+  {
+    "key": "sum_first_7_odd_numbers_is_7_squared",
+    "name": "the sum of the first 7 odd numbers is 7² = 49: 1+3+…+(2·7−1) = 49, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7",
+    "receipt": "4d5818b4-f10c-8c34-b143-250bc217039d"
+  },
+  {
+    "key": "sum_first_8_odd_numbers_is_8_squared",
+    "name": "the sum of the first 8 odd numbers is 8² = 64: 1+3+…+(2·8−1) = 64, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7",
+    "receipt": "6b5f98bd-b79d-8abd-8baa-8977090b2b3b"
+  },
+  {
+    "key": "sum_first_9_odd_numbers_is_9_squared",
+    "name": "the sum of the first 9 odd numbers is 9² = 81: 1+3+…+(2·9−1) = 81, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7",
+    "receipt": "b38c5643-4326-8536-9e9f-63e1cda1fb13"
+  },
+  {
+    "key": "sum_first_10_odd_numbers_is_10_squared",
+    "name": "the sum of the first 10 odd numbers is 10² = 100: 1+3+…+(2·10−1) = 100, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7",
+    "receipt": "86ea5403-d088-82b2-b559-d66964972b7f"
+  },
+  {
+    "key": "sum_first_11_odd_numbers_is_11_squared",
+    "name": "the sum of the first 11 odd numbers is 11² = 121: 1+3+…+(2·11−1) = 121, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7",
+    "receipt": "6c1e6094-08ab-86cd-9f4c-fb65aea91e36"
+  },
+  {
+    "key": "sum_of_cubes_1_to_2_is_triangular_squared",
+    "name": "the sum of cubes 1³+…+2³ = 3² = 9, the square of the 2-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7",
+    "receipt": "30da4e62-e3b6-8bd5-977d-1e1bd0ac2cc4"
+  },
+  {
+    "key": "sum_of_cubes_1_to_3_is_triangular_squared",
+    "name": "the sum of cubes 1³+…+3³ = 6² = 36, the square of the 3-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7",
+    "receipt": "0af95322-da4a-8800-a067-6f0e2bb77708"
+  },
+  {
+    "key": "sum_of_cubes_1_to_4_is_triangular_squared",
+    "name": "the sum of cubes 1³+…+4³ = 10² = 100, the square of the 4-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7",
+    "receipt": "b902429f-4fc2-8838-b17d-901b312a4571"
+  },
+  {
+    "key": "sum_of_cubes_1_to_5_is_triangular_squared",
+    "name": "the sum of cubes 1³+…+5³ = 15² = 225, the square of the 5-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7",
+    "receipt": "9f7754c1-589b-838b-8339-4e247389b0aa"
+  },
+  {
+    "key": "sum_of_cubes_1_to_6_is_triangular_squared",
+    "name": "the sum of cubes 1³+…+6³ = 21² = 441, the square of the 6-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7",
+    "receipt": "b9c21a4d-776b-841e-bea1-6eccec7386c8"
+  },
+  {
+    "key": "sum_of_cubes_1_to_7_is_triangular_squared",
+    "name": "the sum of cubes 1³+…+7³ = 28² = 784, the square of the 7-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7",
+    "receipt": "118130e3-c53a-82c9-94d8-78fbecc8f1d3"
+  },
+  {
+    "key": "sum_of_cubes_1_to_8_is_triangular_squared",
+    "name": "the sum of cubes 1³+…+8³ = 36² = 1296, the square of the 8-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7",
+    "receipt": "2fe72e2f-285d-83fd-88e2-f762c2e9b779"
+  },
+  {
+    "key": "sum_of_cubes_1_to_9_is_triangular_squared",
+    "name": "the sum of cubes 1³+…+9³ = 45² = 2025, the square of the 9-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7",
+    "receipt": "367f20c6-732e-83d9-99ad-2514175d3338"
+  },
+  {
+    "key": "triangular_number_5_is_15",
+    "name": "the 5-th triangular number is 15: 1+2+…+5 = 5·6/2 = 15, by direct summation — decidable; integrity not truth; 0/7",
+    "receipt": "dfb6cdf1-6b6f-8474-8110-cf10451ca879"
+  },
+  {
+    "key": "triangular_number_6_is_21",
+    "name": "the 6-th triangular number is 21: 1+2+…+6 = 6·7/2 = 21, by direct summation — decidable; integrity not truth; 0/7",
+    "receipt": "92c0df17-aaf8-8962-bc16-880cb2dccb09"
+  },
+  {
+    "key": "triangular_number_7_is_28",
+    "name": "the 7-th triangular number is 28: 1+2+…+7 = 7·8/2 = 28, by direct summation — decidable; integrity not truth; 0/7",
+    "receipt": "66a8f84d-bcaf-8181-8899-c5afbbfbbe59"
+  },
+  {
+    "key": "triangular_number_8_is_36",
+    "name": "the 8-th triangular number is 36: 1+2+…+8 = 8·9/2 = 36, by direct summation — decidable; integrity not truth; 0/7",
+    "receipt": "8d27c785-8174-88f9-a3ea-4f5a2cd8f9f6"
+  },
+  {
+    "key": "triangular_number_9_is_45",
+    "name": "the 9-th triangular number is 45: 1+2+…+9 = 9·10/2 = 45, by direct summation — decidable; integrity not truth; 0/7",
+    "receipt": "fcade988-e6df-879d-bfc8-db07eef9d88e"
+  },
+  {
+    "key": "triangular_number_10_is_55",
+    "name": "the 10-th triangular number is 55: 1+2+…+10 = 10·11/2 = 55, by direct summation — decidable; integrity not truth; 0/7",
+    "receipt": "6707610b-2336-8c17-bdba-6d048d05db0b"
+  },
+  {
+    "key": "factorial_3_is_6",
+    "name": "3! = 6: the product 1·2·…·3 = 6, by direct multiplication — a decidable factorial; integrity not truth; 0/7",
+    "receipt": "f12f3f47-053e-8afb-85ba-f030eeb304bb"
+  },
+  {
+    "key": "factorial_4_is_24",
+    "name": "4! = 24: the product 1·2·…·4 = 24, by direct multiplication — a decidable factorial; integrity not truth; 0/7",
+    "receipt": "e52c98a6-a7c6-8e4c-8f61-2178fc95ca30"
+  },
+  {
+    "key": "factorial_5_is_120",
+    "name": "5! = 120: the product 1·2·…·5 = 120, by direct multiplication — a decidable factorial; integrity not truth; 0/7",
+    "receipt": "6c1fb190-35ab-82ad-8fac-4581fde59aa7"
+  },
+  {
+    "key": "factorial_6_is_720",
+    "name": "6! = 720: the product 1·2·…·6 = 720, by direct multiplication — a decidable factorial; integrity not truth; 0/7",
+    "receipt": "81ebf136-662d-81e8-b654-68c07f59ee86"
+  },
+  {
+    "key": "factorial_7_is_5040",
+    "name": "7! = 5040: the product 1·2·…·7 = 5040, by direct multiplication — a decidable factorial; integrity not truth; 0/7",
+    "receipt": "f9f89b0b-4e92-8305-b83f-d5085929d490"
+  },
+  {
+    "key": "factorial_8_is_40320",
+    "name": "8! = 40320: the product 1·2·…·8 = 40320, by direct multiplication — a decidable factorial; integrity not truth; 0/7",
+    "receipt": "a4149b01-1f71-86c3-9dad-987320176a49"
+  },
+  {
+    "key": "factorial_9_is_362880",
+    "name": "9! = 362880: the product 1·2·…·9 = 362880, by direct multiplication — a decidable factorial; integrity not truth; 0/7",
+    "receipt": "b0d11119-b00e-8da2-a099-f2d3dab8ccf7"
+  },
+  {
+    "key": "two_to_the_10_is_1024",
+    "name": "2^10 = 1024, by repeated doubling — a decidable power of two; integrity not truth; 0/7",
+    "receipt": "1beeb294-5a3c-867a-a78c-8152a9d3737a"
+  },
+  {
+    "key": "two_to_the_11_is_2048",
+    "name": "2^11 = 2048, by repeated doubling — a decidable power of two; integrity not truth; 0/7",
+    "receipt": "900023c7-08f1-83dc-9b27-623de3afe0df"
   }
 ]

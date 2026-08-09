@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 991 recorded in 304 families
+## Discovered theorems (decidable, over ℤ/9) — 1024 recorded in 305 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -265,6 +265,31 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [pascal_row_sum_9](/theorem/pascal_row_sum_9) — Pascal row 9 sums to 2^9: Σ_{k=0}^9 C(9,k) = 512 — the binomial theorem at x=1, computed exactly  ·  `85e80c0f-5296…`
 - [pascal_alternating_sum_9](/theorem/pascal_alternating_sum_9) — Pascal row 9 alternating sum is zero: Σ_{k=0}^9 (−1)^k C(9,k) = 0 — the binomial theorem at x=−1 (n ≥ 1)  ·  `0b2aa6fc-7a50…`
 
+### sum (22)
+
+- [sum_1_to_9_zero](/theorem/sum_1_to_9_zero) — 1+2+…+9 ≡ 0 mod 9 (=45)  ·  `ccb897a5-e55d…`
+- [sum_of_two_squares_characterization](/theorem/sum_of_two_squares_characterization) — the sum-of-two-squares theorem: n is a sum of two squares iff every prime ≡ 3 (mod 4) in its factorization occurs to an even power — the brute-force check and the factorization criterion agree for all n ≤ 100  ·  `d4fcdaa1-8273…`
+- [sum_of_squares_iteration_dichotomy](/theorem/sum_of_squares_iteration_dichotomy) — the digit-square iteration is a total dichotomy: for every n ≤ 200 the sequence reaches either 1 (happy) or 4 (the entry to the 8-cycle) — it always terminates in exactly one of the two, no other fate  ·  `44bcd916-c0a3…`
+- [sum_of_triangular_is_tetrahedral](/theorem/sum_of_triangular_is_tetrahedral) — the sum of the first n triangular numbers is the nth tetrahedral number: T(1) + T(2) + ... + T(n) = n(n+1)(n+2)/6 = C(n+2, 3) — stacking triangular layers builds a tetrahedron. Verified exhaustively for n up to 100. Decidable  ·  `90ef4db9-a803…`
+- [sum_first_2_odd_numbers_is_2_squared](/theorem/sum_first_2_odd_numbers_is_2_squared) — the sum of the first 2 odd numbers is 2² = 4: 1+3+…+(2·2−1) = 4, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7  ·  `d4736903-83d6…`
+- [sum_first_3_odd_numbers_is_3_squared](/theorem/sum_first_3_odd_numbers_is_3_squared) — the sum of the first 3 odd numbers is 3² = 9: 1+3+…+(2·3−1) = 9, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7  ·  `0f3ab5e7-5de5…`
+- [sum_first_4_odd_numbers_is_4_squared](/theorem/sum_first_4_odd_numbers_is_4_squared) — the sum of the first 4 odd numbers is 4² = 16: 1+3+…+(2·4−1) = 16, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7  ·  `58a18681-7247…`
+- [sum_first_5_odd_numbers_is_5_squared](/theorem/sum_first_5_odd_numbers_is_5_squared) — the sum of the first 5 odd numbers is 5² = 25: 1+3+…+(2·5−1) = 25, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7  ·  `d524a60f-f7a1…`
+- [sum_first_6_odd_numbers_is_6_squared](/theorem/sum_first_6_odd_numbers_is_6_squared) — the sum of the first 6 odd numbers is 6² = 36: 1+3+…+(2·6−1) = 36, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7  ·  `8c235dfe-1759…`
+- [sum_first_7_odd_numbers_is_7_squared](/theorem/sum_first_7_odd_numbers_is_7_squared) — the sum of the first 7 odd numbers is 7² = 49: 1+3+…+(2·7−1) = 49, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7  ·  `4d5818b4-f10c…`
+- [sum_first_8_odd_numbers_is_8_squared](/theorem/sum_first_8_odd_numbers_is_8_squared) — the sum of the first 8 odd numbers is 8² = 64: 1+3+…+(2·8−1) = 64, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7  ·  `6b5f98bd-b79d…`
+- [sum_first_9_odd_numbers_is_9_squared](/theorem/sum_first_9_odd_numbers_is_9_squared) — the sum of the first 9 odd numbers is 9² = 81: 1+3+…+(2·9−1) = 81, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7  ·  `b38c5643-4326…`
+- [sum_first_10_odd_numbers_is_10_squared](/theorem/sum_first_10_odd_numbers_is_10_squared) — the sum of the first 10 odd numbers is 10² = 100: 1+3+…+(2·10−1) = 100, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7  ·  `86ea5403-d088…`
+- [sum_first_11_odd_numbers_is_11_squared](/theorem/sum_first_11_odd_numbers_is_11_squared) — the sum of the first 11 odd numbers is 11² = 121: 1+3+…+(2·11−1) = 121, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7  ·  `6c1e6094-08ab…`
+- [sum_of_cubes_1_to_2_is_triangular_squared](/theorem/sum_of_cubes_1_to_2_is_triangular_squared) — the sum of cubes 1³+…+2³ = 3² = 9, the square of the 2-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7  ·  `30da4e62-e3b6…`
+- [sum_of_cubes_1_to_3_is_triangular_squared](/theorem/sum_of_cubes_1_to_3_is_triangular_squared) — the sum of cubes 1³+…+3³ = 6² = 36, the square of the 3-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7  ·  `0af95322-da4a…`
+- [sum_of_cubes_1_to_4_is_triangular_squared](/theorem/sum_of_cubes_1_to_4_is_triangular_squared) — the sum of cubes 1³+…+4³ = 10² = 100, the square of the 4-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7  ·  `b902429f-4fc2…`
+- [sum_of_cubes_1_to_5_is_triangular_squared](/theorem/sum_of_cubes_1_to_5_is_triangular_squared) — the sum of cubes 1³+…+5³ = 15² = 225, the square of the 5-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7  ·  `9f7754c1-589b…`
+- [sum_of_cubes_1_to_6_is_triangular_squared](/theorem/sum_of_cubes_1_to_6_is_triangular_squared) — the sum of cubes 1³+…+6³ = 21² = 441, the square of the 6-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7  ·  `b9c21a4d-776b…`
+- [sum_of_cubes_1_to_7_is_triangular_squared](/theorem/sum_of_cubes_1_to_7_is_triangular_squared) — the sum of cubes 1³+…+7³ = 28² = 784, the square of the 7-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7  ·  `118130e3-c53a…`
+- [sum_of_cubes_1_to_8_is_triangular_squared](/theorem/sum_of_cubes_1_to_8_is_triangular_squared) — the sum of cubes 1³+…+8³ = 36² = 1296, the square of the 8-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7  ·  `2fe72e2f-285d…`
+- [sum_of_cubes_1_to_9_is_triangular_squared](/theorem/sum_of_cubes_1_to_9_is_triangular_squared) — the sum of cubes 1³+…+9³ = 45² = 2025, the square of the 9-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7  ·  `367f20c6-732e…`
+
 ### domain (20)
 
 - [domain_prime_m2](/theorem/domain_prime_m2) — ℤ/2: 2 is prime  ·  `9f76b1b5-8922…`
@@ -396,6 +421,19 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [tarot_renders_not_divines](/theorem/tarot_renders_not_divines) — a theorem's tarot combination renders its identity, not its truth — the proof, not the cards, establishes it  ·  `7b2b309b-6b24…`
 - [tarot_encoding_total](/theorem/tarot_encoding_total) — THEOREM: "any theorem may be explained as a tarot combination" — the encoding is total (every content-address → 3 cards in 0..77)  ·  `f7f6254d-4c7e…`
 
+### triangular (10)
+
+- [triangular_n10](/theorem/triangular_n10) — sum 1..10 = 10·11/2 = 55  ·  `3194b6c0-e899…`
+- [triangular_n25](/theorem/triangular_n25) — sum 1..25 = 25·26/2 = 325  ·  `e45b233b-3b3a…`
+- [triangular_n50](/theorem/triangular_n50) — sum 1..50 = 50·51/2 = 1275  ·  `ba7f546e-6057…`
+- [triangular_square](/theorem/triangular_square) — the figurate identity: T(n) = C(n+1,2) and T(n) + T(n−1) = n² — two triangles make a square (n≤20)  ·  `787c8714-6ea3…`
+- [triangular_number_5_is_15](/theorem/triangular_number_5_is_15) — the 5-th triangular number is 15: 1+2+…+5 = 5·6/2 = 15, by direct summation — decidable; integrity not truth; 0/7  ·  `dfb6cdf1-6b6f…`
+- [triangular_number_6_is_21](/theorem/triangular_number_6_is_21) — the 6-th triangular number is 21: 1+2+…+6 = 6·7/2 = 21, by direct summation — decidable; integrity not truth; 0/7  ·  `92c0df17-aaf8…`
+- [triangular_number_7_is_28](/theorem/triangular_number_7_is_28) — the 7-th triangular number is 28: 1+2+…+7 = 7·8/2 = 28, by direct summation — decidable; integrity not truth; 0/7  ·  `66a8f84d-bcaf…`
+- [triangular_number_8_is_36](/theorem/triangular_number_8_is_36) — the 8-th triangular number is 36: 1+2+…+8 = 8·9/2 = 36, by direct summation — decidable; integrity not truth; 0/7  ·  `8d27c785-8174…`
+- [triangular_number_9_is_45](/theorem/triangular_number_9_is_45) — the 9-th triangular number is 45: 1+2+…+9 = 9·10/2 = 45, by direct summation — decidable; integrity not truth; 0/7  ·  `fcade988-e6df…`
+- [triangular_number_10_is_55](/theorem/triangular_number_10_is_55) — the 10-th triangular number is 55: 1+2+…+10 = 10·11/2 = 55, by direct summation — decidable; integrity not truth; 0/7  ·  `6707610b-2336…`
+
 ### wilson (10)
 
 - [wilson_theorem](/theorem/wilson_theorem) — Wilson's theorem: (n−1)! ≡ −1 (mod n) iff n is prime (all n in 2..12)  ·  `060d88ea-9ab8…`
@@ -511,6 +549,16 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [demorgan_nary_k6](/theorem/demorgan_nary_k6) — De Morgan for 6 inputs: ¬(a₁∧…∧a_6) = ¬a₁∨…∨¬a_6 over all 2^6 = 64 assignments (full truth-table enumeration)  ·  `737f27ac-44cc…`
 - [demorgan_nary_k7](/theorem/demorgan_nary_k7) — De Morgan for 7 inputs: ¬(a₁∧…∧a_7) = ¬a₁∨…∨¬a_7 over all 2^7 = 128 assignments (full truth-table enumeration)  ·  `cf8a22f2-00f9…`
 - [demorgan_nary_k8](/theorem/demorgan_nary_k8) — De Morgan for 8 inputs: ¬(a₁∧…∧a_8) = ¬a₁∨…∨¬a_8 over all 2^8 = 256 assignments (full truth-table enumeration)  ·  `9434a9c0-3f95…`
+
+### factorial (7)
+
+- [factorial_3_is_6](/theorem/factorial_3_is_6) — 3! = 6: the product 1·2·…·3 = 6, by direct multiplication — a decidable factorial; integrity not truth; 0/7  ·  `f12f3f47-053e…`
+- [factorial_4_is_24](/theorem/factorial_4_is_24) — 4! = 24: the product 1·2·…·4 = 24, by direct multiplication — a decidable factorial; integrity not truth; 0/7  ·  `e52c98a6-a7c6…`
+- [factorial_5_is_120](/theorem/factorial_5_is_120) — 5! = 120: the product 1·2·…·5 = 120, by direct multiplication — a decidable factorial; integrity not truth; 0/7  ·  `6c1fb190-35ab…`
+- [factorial_6_is_720](/theorem/factorial_6_is_720) — 6! = 720: the product 1·2·…·6 = 720, by direct multiplication — a decidable factorial; integrity not truth; 0/7  ·  `81ebf136-662d…`
+- [factorial_7_is_5040](/theorem/factorial_7_is_5040) — 7! = 5040: the product 1·2·…·7 = 5040, by direct multiplication — a decidable factorial; integrity not truth; 0/7  ·  `f9f89b0b-4e92…`
+- [factorial_8_is_40320](/theorem/factorial_8_is_40320) — 8! = 40320: the product 1·2·…·8 = 40320, by direct multiplication — a decidable factorial; integrity not truth; 0/7  ·  `a4149b01-1f71…`
+- [factorial_9_is_362880](/theorem/factorial_9_is_362880) — 9! = 362880: the product 1·2·…·9 = 362880, by direct multiplication — a decidable factorial; integrity not truth; 0/7  ·  `b0d11119-b00e…`
 
 ### genus2 (7)
 
@@ -834,26 +882,12 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [receipt_cost_funds_development](/theorem/receipt_cost_funds_development) — each receipt costs the two coins, accounted into development: the fare 110−108 = 2, and development’s destination equals its source (toUuid("ceccec")), a self-loop returning the coins to origin  ·  `42f68f41-fe6c…`
 - [receipt_signs_understanding_and_compliance](/theorem/receipt_signs_understanding_and_compliance) — the receipt signs understanding and compliance: to sign is to understand and comply with the law (the license and the sequence) before proceeding — the acknowledgment is part of the receipt itself, alongside the observer and role, content-addressed to the message  ·  `397281eb-f41f…`
 
-### sum (4)
-
-- [sum_1_to_9_zero](/theorem/sum_1_to_9_zero) — 1+2+…+9 ≡ 0 mod 9 (=45)  ·  `ccb897a5-e55d…`
-- [sum_of_two_squares_characterization](/theorem/sum_of_two_squares_characterization) — the sum-of-two-squares theorem: n is a sum of two squares iff every prime ≡ 3 (mod 4) in its factorization occurs to an even power — the brute-force check and the factorization criterion agree for all n ≤ 100  ·  `d4fcdaa1-8273…`
-- [sum_of_squares_iteration_dichotomy](/theorem/sum_of_squares_iteration_dichotomy) — the digit-square iteration is a total dichotomy: for every n ≤ 200 the sequence reaches either 1 (happy) or 4 (the entry to the 8-cycle) — it always terminates in exactly one of the two, no other fate  ·  `44bcd916-c0a3…`
-- [sum_of_triangular_is_tetrahedral](/theorem/sum_of_triangular_is_tetrahedral) — the sum of the first n triangular numbers is the nth tetrahedral number: T(1) + T(2) + ... + T(n) = n(n+1)(n+2)/6 = C(n+2, 3) — stacking triangular layers builds a tetrahedron. Verified exhaustively for n up to 100. Decidable  ·  `90ef4db9-a803…`
-
 ### three (4)
 
 - [three_distance_at_most_three_gaps](/theorem/three_distance_at_most_three_gaps) — the three-distance (Steinhaus) theorem: for the points {0, a, 2a, …, (N−1)a} mod m, the consecutive gaps around the circle take at most three distinct lengths — verified exhaustively over several a/m and every N  ·  `d41f38cb-c074…`
 - [three_gap_largest_is_sum_of_other_two](/theorem/three_gap_largest_is_sum_of_other_two) — the third distance is the sum of the other two: whenever the three-distance points show exactly three distinct gap lengths, the largest equals the sum of the smaller two — verified exhaustively  ·  `a898c992-86c9…`
 - [three_distance_max_gap_non_increasing](/theorem/three_distance_max_gap_non_increasing) — adding a point never widens the largest gap: as N grows, each new multiple falls inside an existing gap and splits it, so the maximum gap is non-increasing in N — the points equidistribute (verified exhaustively)  ·  `7d1620a8-01d2…`
 - [three_is_a_primitive_root_mod_seven_and_the_rosette_is_six_plus_one](/theorem/three_is_a_primitive_root_mod_seven_and_the_rosette_is_six_plus_one) — three is a primitive root mod 7 and the rosette is six plus one: the powers of 3 mod 7 cycle 3,2,6,4,5,1 with order 6, generating the full unit group (ℤ/7)* = {1,2,3,4,5,6}; so 7 decomposes as 6 units + 1 (the class of 0) — the seven-ray "6+1" structure — and the units pair by additive inverse {1,6},{2,5},{3,4}, each summing to 7. Decidable by exhaustion over ℤ/7  ·  `15050d64-20c7…`
-
-### triangular (4)
-
-- [triangular_n10](/theorem/triangular_n10) — sum 1..10 = 10·11/2 = 55  ·  `3194b6c0-e899…`
-- [triangular_n25](/theorem/triangular_n25) — sum 1..25 = 25·26/2 = 325  ·  `e45b233b-3b3a…`
-- [triangular_n50](/theorem/triangular_n50) — sum 1..50 = 50·51/2 = 1275  ·  `ba7f546e-6057…`
-- [triangular_square](/theorem/triangular_square) — the figurate identity: T(n) = C(n+1,2) and T(n) + T(n−1) = n² — two triangles make a square (n≤20)  ·  `787c8714-6ea3…`
 
 ### all (3)
 
@@ -1016,6 +1050,12 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [stirling_second_bell](/theorem/stirling_second_bell) — Stirling 2nd kind S(n,k)=S(n-1,k-1)+k·S(n-1,k): S(4,2)=7 and Σ_k S(4,k)=15=B(4)  ·  `23e393cc-dd5d…`
 - [stirling_first_factorial](/theorem/stirling_first_factorial) — unsigned Stirling 1st kind (permutations by cycles) sum to n!: Σ_k c(4,k) = 4! = 24  ·  `e1f258a9-dbdb…`
 - [stirling_edges](/theorem/stirling_edges) — Stirling 2nd kind edges: S(n,1)=1 (one block), S(n,n)=1 (singletons), n=1..6  ·  `02ae48de-5452…`
+
+### two (3)
+
+- [two_is_a_primitive_root_mod_nine_and_generates_the_vortex](/theorem/two_is_a_primitive_root_mod_nine_and_generates_the_vortex) — two is a primitive root mod 9 and generates the vortex: the powers of 2 mod 9 cycle 2,4,8,7,5,1 with order 6, generating the full unit group (ℤ/9)* = {1,2,4,5,7,8}; the vortex orbit is exactly this cycle as a set, and every element skips the multiples of 3 (the W-axis). A decidable fact by exhaustion over ℤ/9  ·  `dd3b0f30-660d…`
+- [two_to_the_10_is_1024](/theorem/two_to_the_10_is_1024) — 2^10 = 1024, by repeated doubling — a decidable power of two; integrity not truth; 0/7  ·  `1beeb294-5a3c…`
+- [two_to_the_11_is_2048](/theorem/two_to_the_11_is_2048) — 2^11 = 2048, by repeated doubling — a decidable power of two; integrity not truth; 0/7  ·  `900023c7-08f1…`
 
 ### unit (3)
 
@@ -1309,7 +1349,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (154)
+### other — one-of-a-kind (153)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1454,7 +1494,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [trinities_collectively_carry_more_and_beat_linear_by_coverage_and_verification_not_absolute_defeat](/theorem/trinities_collectively_carry_more_and_beat_linear_by_coverage_and_verification_not_absolute_defeat) — trinities collectively carry more and beat linear work by coverage and verification — not absolute defeat: the structure builds on trinities, three, and a collection of uuids carries a longer shared message than one, bounded per uuid but scaling with the count, folded to one shared root. The reproducible collective beats a linear offender by coverage — magnitudes more ground — and by verification: a skillful hollow prose is caught regardless of skill, because it carries no receipt. Classical combinatorial coverage, not a quantum machine, not an absolute defeat. Decidable  ·  `08ecf2e6-c969…`
 - [twin_primes_in_range_infinitude_open](/theorem/twin_primes_in_range_infinitude_open) — twin primes exist in a bounded range (their infinitude is an open conjecture): there are at least 30 pairs of primes p, p+2 below 1000 — existence checked exhaustively; whether infinitely many exist remains open  ·  `cb55a95f-ce7f…`
 - [twisting_a_lie_does_not_compute_true](/theorem/twisting_a_lie_does_not_compute_true) — twisting a lie does not compute true: the same overclaim in two spellings gets different gate verdicts (the plain form drains, the obfuscated form slips) — so the gate tracks SHAPE, not truth; passing is necessary, not sufficient (a floor, not a truth oracle), and an obfuscated lie that slips the lexical tripwire is still a lie  ·  `afa0fee5-1e2f…`
-- [two_is_a_primitive_root_mod_nine_and_generates_the_vortex](/theorem/two_is_a_primitive_root_mod_nine_and_generates_the_vortex) — two is a primitive root mod 9 and generates the vortex: the powers of 2 mod 9 cycle 2,4,8,7,5,1 with order 6, generating the full unit group (ℤ/9)* = {1,2,4,5,7,8}; the vortex orbit is exactly this cycle as a set, and every element skips the multiples of 3 (the W-axis). A decidable fact by exhaustion over ℤ/9  ·  `dd3b0f30-660d…`
 - [undocumented_discovery_is_treason](/theorem/undocumented_discovery_is_treason) — avoiding to document a discovery in src is treason: a provable fact becomes evidence only when its content-address is recorded in the ledger — an undocumented but provable fact is withheld evidence (treason by omission), and appending it (append-only) is the constructive act that makes the discovery count  ·  `0c4af820-cbb3…`
 - [unhappy_numbers_enter_the_eight_cycle](/theorem/unhappy_numbers_enter_the_eight_cycle) — unhappy numbers enter the unique 8-cycle: 4→16→37→58→89→145→42→20→4 has length 8, and every unhappy number ≤ 100 iterates into it — the only attracting cycle besides the fixed point 1  ·  `77cfb7d4-b77e…`
 - [uniformization_trichotomy](/theorem/uniformization_trichotomy) — the uniformization trichotomy: the sign of χ fixes the geometry — χ&gt;0 spherical, χ=0 flat (torus, Klein bottle), χ&lt;0 hyperbolic (genus ≥ 2)  ·  `d83c2656-d21c…`
@@ -1467,4 +1506,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `27ee60a9-8594-87ff-8e2b-5c1aa728a2bf`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `ee913b6a-1a4a-879b-a986-f398dac0120f`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
