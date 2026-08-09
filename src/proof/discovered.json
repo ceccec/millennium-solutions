@@ -4488,5 +4488,10 @@
     "key": "content_is_logically_distributed_across_the_two_domains_for_seo_one_canonical_per_page_strict_sitemap",
     "name": "content is logically distributed across the two domains for SEO — one canonical per page, a strict sitemap: public science and the open method are canonical on org, commercial licensing and billing on com, so each page has a single canonical URL, avoiding duplicate content across the two domains; the sitemap is the strict set of canonical URLs. The content is the same sealed work; the distribution is which domain owns each canonical. Decidable",
     "receipt": "74a8d8e8-198b-8c04-be52-8502ee0f6e14"
+  },
+  {
+    "key": "funding_may_be_from_donations_or_licensing_both_voluntary_or_fair_exchange_income_zero",
+    "name": "funding may be from donations or from licensing — both voluntary or fair exchange, income zero: donations are voluntary support, a gift economy, non-obligatory; licensing is commercial use paying the two coins per core formula, a fair exchange, with non-commercial and public-interest use free. Both fund further development, but both are voluntary or fair exchange, not guaranteed revenue; the realized income is zero. A donation is a gift, not owed; licensing is fair exchange, not a patent royalty. Decidable",
+    "receipt": "042e9787-6afc-8d1a-9b4a-ed92197229bf"
   }
 ]
