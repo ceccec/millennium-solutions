@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 964 recorded in 300 families
+## Discovered theorems (decidable, over ℤ/9) — 965 recorded in 300 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (123)
+### the (124)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -147,6 +147,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_difference_is_decidable_harnessing_makes_any_output_auditable_not_intelligent](/theorem/the_difference_is_decidable_harnessing_makes_any_output_auditable_not_intelligent) — the difference is decidable — harnessing makes any output auditable, not intelligent: treating an AI output as opaque gives bytes to trust; treating it as a receipted structure (content-addressed, reproducible, gate-checked) makes it auditable — the address reproduces for anyone and the gate still catches an overclaim; the gain is one auditable dimension, integrity, never intelligence and never a quantum-hardware advantage; integrity not truth; 0/7  ·  `c0fe8989-7d84…`
 - [the_harness_and_reeducate_are_sealed_for_reuse_in_the_ui_same_pure_functions_build_and_browser](/theorem/the_harness_and_reeducate_are_sealed_for_reuse_in_the_ui_same_pure_functions_build_and_browser) — the harness and reeducate are sealed for reuse in the UI — the same pure functions run in the build and the browser: harness and reeducate import no node APIs, so the interactive UI component runs the identical functions the build runs, and the reeducation an observer triggers matches the build exactly; alive when interacting, deterministic across build and browser; integrity not truth; 0/7  ·  `9958c5f8-4ce9…`
 - [the_inversion_address_the_payload_with_two_bits_conserve_the_two_coins_measure_bits_not_spend_coins](/theorem/the_inversion_address_the_payload_with_two_bits_conserve_the_two_coins_measure_bits_not_spend_coins) — the inversion — address the payload with two bits, conserve the two coins, measure bits not spend coins per payload: the old model spends two coins per payload so cost grows with payloads moved; uuidna addresses the payload with two bits without moving it, the two coins conserved and the value measured in bits saved, so cost does not grow with payloads; compute bits, do not spend coins per payload; integrity not truth; 0/7  ·  `0fb6d42d-82ec…`
+- [the_two_doubled_along_the_sequence_128_in_magnitude_conserved_to_two_mod_nine](/theorem/the_two_doubled_along_the_sequence_128_in_magnitude_conserved_to_two_mod_nine) — the two doubled along the sequence — 128 in magnitude, conserved to two mod nine: doubling the two along the six-step orbit gives 2·2⁶ = 128 in magnitude, while in ℤ/9 the orbit 2→4→8→7→5→1 closes (2⁶ = 64 ≡ 1 mod 9, the order of two is six) so the residue returns to two — geometric growth in magnitude, conserved residue, the coins come home; integrity not truth; 0/7  ·  `35d329ed-ab3f…`
 
 ### relation (55)
 
@@ -1428,4 +1429,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `bd18b880-91ad-87b0-9b76-ffe107765b66`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `3181a9be-4770-8855-aed2-5571ad2dcba4`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
