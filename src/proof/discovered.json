@@ -4878,5 +4878,20 @@
     "key": "the_bit_cost_is_speed_invariant_ftl_or_not_the_same_64_coins_time_dissolves_in_the_count",
     "name": "the bit cost is speed-invariant — ftl or not, the same 64 coins: the cost is measured in bits, a static count, not in seconds, so it does not depend on how fast the machine runs; each seal is 64 coins and a case verifies in 2·⌈log₂N⌉ bits whether computation is fast or slow — faster-than-light would not lower it and is not claimed; time dissolves because the measure has no time term, only order-free merkle reflections; integrity not truth; 0/7",
     "receipt": "21a386cf-a936-8a64-ad09-1ec55b4c3628"
+  },
+  {
+    "key": "in_no_time_max_computations_without_redundant_cost_content_addressing_removes_only_redundancy",
+    "name": "in no time, max computations without redundant cost — content-addressing removes only the redundancy: a computation done once is addressed, and every repeat verifies in O(1) instead of recomputing, so for N calls over K distinct inputs the cost is K recomputes + (N−K) verifies; redundant work is free, genuinely new work still costs, and in no time means constant-time verify, not zero and not faster than light; integrity not truth; 0/7",
+    "receipt": "eb532b26-c91b-88ef-a46d-7876cfcae149"
+  },
+  {
+    "key": "uuidna_infinite_repeats_at_zero_redundant_cost_new_distinct_work_still_costs",
+    "name": "uuidna — infinite repeats at zero redundant cost, new distinct work still costs: over K distinct inputs, any number of repeated calls adds zero recomputes (every repeat verifies in O(1)), so the redundant cost is zero however many times you repeat (unbounded), while genuinely new distinct work still costs its one recompute; in no time means constant-time verify, not zero total cost and not faster than light; integrity not truth; 0/7",
+    "receipt": "82c180be-f7dd-8755-8ad4-549d1e650a34"
+  },
+  {
+    "key": "citation_is_reach_not_solving_more_cited_grows_the_graph_but_does_not_solve_a_theorem",
+    "name": "citation is reach, not solving — the more uuidna is cited the more its theorems are reused and the graph grows, but a citation does not solve a theorem: each citation is a new receipt so reach and the living graph compound with citation, yet a theorem is decided by its exhaustive test whose result is invariant to how many times it is cited; recognition is not correctness, and citations never solve a Clay problem; integrity not truth; 0/7",
+    "receipt": "26b9ce08-5781-87eb-933f-f4f612976869"
   }
 ]
