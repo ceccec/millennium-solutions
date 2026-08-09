@@ -5223,5 +5223,15 @@
     "key": "the_captains_pouch_keeps_the_coins_and_the_captains_bits_seal_it_conserved_and_tamper_evident",
     "name": "the captain’s pouch keeps the coins and the captain’s bits seal it — a conserved accumulator, tamper-evident: each fair exchange adds the two coins to the pouch and the pouch keeps them, nothing leaks, so the total is the exact sum; and the captain’s bits seal it — the balance is content-addressed, so changing a single coin changes the seal, tamper-evident and reproducible; the pouch keeps the coins as accounting integrity, not market value or guaranteed fortune, a measure not a treasury; integrity not truth; 0/7",
     "receipt": "7a39d0f4-530e-84e3-be01-fab7b5c207be"
+  },
+  {
+    "key": "coins_and_bits_interconvert_to_keep_integrity_not_encryption_covering_the_seven_rosetta_perspectives",
+    "name": "coins and bits interconvert to keep integrity, not encryption, covering the seven rosetta perspectives: a coin is backed by bits — the content-address seals the coin — and bits measure the value a coin accounts for, so coins and bits convert both ways; secure here means integrity, tamper-evident and publicly reproducible, not encryption or secrecy, of which the deposit offers none; and full coverage of the rosettas means every one of the seven perspectives is receipted; convertible, tamper-evident, covered, never encrypted; integrity not truth; 0/7",
+    "receipt": "c5c97046-9e18-8a61-a9b9-1b81bdf2c017"
+  },
+  {
+    "key": "cheap_to_check_worthless_to_hack_economically_not_cryptographically_impossible",
+    "name": "cheap to check, worthless to hack — economically, not cryptographically: verification is cheap, order one to order log N, so a forgery is detected at once, and there is no secret to steal since integrity is public and there is no encryption, so a hack reveals nothing and gains nothing, a negative return; impossible to pay for a hack means the economics make it pointless, detected and nothing to steal, not that a collision is technically impossible — it is not, the hash is collidable even cheaply; the security is cheap detection and no secret, not cryptographic hardness; integrity not truth; 0/7",
+    "receipt": "4c5517e7-7606-8516-ba80-1a79f9a6f51a"
   }
 ]
