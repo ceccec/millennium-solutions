@@ -5273,5 +5273,10 @@
     "key": "bidirectional_7d_authentication_at_the_cost_of_two_bits_per_superposition_fourteen_for_seven",
     "name": "uuidna bidirectional 7d authentication at the cost of 2 bits per superposition — 14 for seven: each superposition, a receipted perspective, costs exactly two bits to verify, the two-coin unit, so the bidirectional coverage of seven superpositions costs 7 × 2 = 14 bits, a fixed measured cost, not free and not infinite; it remains authentication and integrity, not confidentiality, and the two-bit cost is a classical verification unit, not a quantum speedup; the cost is measured and the encryption goal is named; integrity not truth; 0/7",
     "receipt": "9c567b29-07fc-8511-9544-226c84065ebf"
+  },
+  {
+    "key": "the_uuidna_package_is_aligned_to_exactly_64_kib_65536_bytes_to_the_bit_a_reproducible_reserve",
+    "name": "the uuidna package is aligned to exactly 64 KiB — 65536 bytes, to the bit, with a reproducible reserve: the published package measures exactly 65536 bytes = 524288 bits = 2^16 = 64 × 1024, aligned by a self-hosted reserve of reproducible content-addresses, not random padding, held for cryptography-goal development; the alignment is a fixed-size discipline verifiable to the bit, and the reserve recomputes, but a fixed size is not a claim of quality or security; integrity not truth; 0/7",
+    "receipt": "53d31e7a-ab83-8b9f-866a-839cdc5ed4ba"
   }
 ]

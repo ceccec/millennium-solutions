@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1055 recorded in 317 families
+## Discovered theorems (decidable, over ℤ/9) — 1056 recorded in 317 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (141)
+### the (142)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -165,6 +165,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_captains_pouch_keeps_the_coins_and_the_captains_bits_seal_it_conserved_and_tamper_evident](/theorem/the_captains_pouch_keeps_the_coins_and_the_captains_bits_seal_it_conserved_and_tamper_evident) — the captain’s pouch keeps the coins and the captain’s bits seal it — a conserved accumulator, tamper-evident: each fair exchange adds the two coins to the pouch and the pouch keeps them, nothing leaks, so the total is the exact sum; and the captain’s bits seal it — the balance is content-addressed, so changing a single coin changes the seal, tamper-evident and reproducible; the pouch keeps the coins as accounting integrity, not market value or guaranteed fortune, a measure not a treasury; integrity not truth; 0/7  ·  `7a39d0f4-530e…`
 - [the_goals_compute_their_statistics_and_forensic_research_self_measuring_self_auditing](/theorem/the_goals_compute_their_statistics_and_forensic_research_self_measuring_self_auditing) — the goals compute their statistics and forensic research — self-measuring, self-auditing: the ledger’s distribution is computed, its receipts bucketed by digital root and coverage measured, so progress toward the goals is a number not an opinion; and the forensic research is computed too — the chain is tamper-evident, a broken link and a collision are detected, intention is read from deeds, and the sparsest bucket is a lead to investigate; but statistics measure and forensics detect, neither proves truth, and a lead is a hint not a verdict; integrity not truth; 0/7  ·  `6edcd5e4-dfb0…`
 - [the_ledger_is_offender_free_bounded_refusals_hold_bare_overclaims_drain_audited_at_spot](/theorem/the_ledger_is_offender_free_bounded_refusals_hold_bare_overclaims_drain_audited_at_spot) — the ledger is offender-free — bounded refusals hold, bare overclaims drain, audited at spot: running the honesty gate over every theorem name finds zero offenders; the names that carry a hard token pass only because a negator reprieves them — they are bounded refusals, the honest boundary theorems, not offenses; the distinction is decidable, a bounded refusal such as “not faster than light” holds while the bare overclaim drains, so an offender would be caught at spot; integrity not truth; 0/7  ·  `57cabe52-a80b…`
+- [the_uuidna_package_is_aligned_to_exactly_64_kib_65536_bytes_to_the_bit_a_reproducible_reserve](/theorem/the_uuidna_package_is_aligned_to_exactly_64_kib_65536_bytes_to_the_bit_a_reproducible_reserve) — the uuidna package is aligned to exactly 64 KiB — 65536 bytes, to the bit, with a reproducible reserve: the published package measures exactly 65536 bytes = 524288 bits = 2^16 = 64 × 1024, aligned by a self-hosted reserve of reproducible content-addresses, not random padding, held for cryptography-goal development; the alignment is a fixed-size discipline verifiable to the bit, and the reserve recomputes, but a fixed size is not a claim of quality or security; integrity not truth; 0/7  ·  `53d31e7a-ab83…`
 
 ### relation (55)
 
@@ -1543,4 +1544,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `f73ad7be-87b1-8c14-8f98-7a98c729976e`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `bb4044a8-bcfe-8d7b-870f-3a6bf03175da`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
