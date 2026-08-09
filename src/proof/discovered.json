@@ -4463,5 +4463,15 @@
     "key": "a_failing_test_must_be_recorded_as_a_refutation_not_silently_discarded_hiding_evidence_is_the_traitor_move",
     "name": "a failing test must be recorded as a refutation, not silently discarded — hiding evidence is the traitor move: a failing test must leave a content-addressed REFUTED receipt — evidence, not silently discarded. Silent discard hides evidence, the traitor move, and the forensics catches it by the absent record. The honest trial keeps both what passed and what failed — due process. Hiding is caught and rejected, not rewarded. Decidable",
     "receipt": "a0121405-6d12-81e1-9225-578fc9665560"
+  },
+  {
+    "key": "the_forensics_catches_the_tampering_traitor_by_the_cascade_a_canonical_mint_does_not_offend_but_a_consistent_falsehood_slips",
+    "name": "the forensics catches the tampering traitor by the cascade — a canonical mint does not offend, but a consistent falsehood slips; a floor, not an oracle: altering any link breaks it and all downstream, so tampering cannot hide however careful; a hollow-prose traitor is caught by the absent receipt; a canonical strict mint does not offend, and the traitor is caught because their mint differs from it. But this catches a decidable class — tampering, hollow prose, a non-canonical mint — not an internally-consistent falsehood, which slips. Decidable",
+    "receipt": "210e4151-a0d1-8efe-ae8a-c6137e92c222"
+  },
+  {
+    "key": "a_multi_perspective_mind_does_not_offend_but_still_errs_honestly_dimension_7_is_the_discipline_not_an_agi",
+    "name": "a multi-perspective mind does not offend but still errs honestly — dimension-7 is the discipline, not an AGI: a multi-perspective mind self-challenges, draining its own overclaim before asserting, so it never commits the traitor act of tampering, hiding, or overclaiming; the traitor offends by reasoning single-perspective. But dimension-7 is the multi-perspective discipline, not an AGI or an infallible mind — it still makes honest errors, which are caught and corrected. An error is not an offense. Decidable",
+    "receipt": "7dba5bec-7728-819b-88e1-3b0e3c32cdfd"
   }
 ]
