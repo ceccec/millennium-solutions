@@ -44,6 +44,18 @@ export function verifyUuidna(seed: string): UuidnaVerdict {
   return { seed, address, recomputes, message, jointReceipt }
 }
 
+// uuidna domain control — verified INDEPENDENTLY, not by anyone's word. The controller publishes the
+// challenge token at a place only they can write (e.g. https://<domain>/.well-known/uuidna.txt, or a
+// DNS TXT record, or a meta tag on the site); anyone recomputes the expected token and checks the
+// published one matches. Control is PROVEN by the publication — no trust. The fetch is the verifier's
+// task (external); the token and the comparison are decidable and reproducible here. Integrity, not truth.
+export function domainChallenge(domain: string): string {
+  return toUuid('uuidna:domain-control:' + domain.toLowerCase())
+}
+export function verifyDomainControl(domain: string, publishedToken: string): boolean {
+  return publishedToken === domainChallenge(domain)
+}
+
 // CLI: `node scripts/adjudicate.ts "statement one" "statement two" ...`
 if (import.meta.url === `file://${process.argv[1]}`) {
   const statements = process.argv.slice(2)

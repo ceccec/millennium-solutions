@@ -4403,5 +4403,10 @@
     "key": "uuidna_carries_arbitrary_text_of_any_length_across_a_uuid_chain_round_tripping",
     "name": "uuidna carries arbitrary text of any length across a uuid chain, round-tripping: text becomes UTF-8 bits, split into 115-bit carriers (imprintTextChain), and readImprintTextChain recovers it exactly — for any length. Each uuid stays bounded; the chain scales with the text. A public, reversible encoding — not encryption, no secrecy. Decidable",
     "receipt": "436614fa-4651-87cf-a2a8-f20dacde54ae"
+  },
+  {
+    "key": "uuidna_domain_control_is_verified_independently_by_a_published_challenge_not_by_anyones_word",
+    "name": "uuidna domain control is verified independently by a published challenge — not by anyone word: the controller publishes the challenge token, a content-address unique to the domain, at a place only the controller can write; anyone recomputes the expected token and checks the published one matches. A wrong or absent token fails. The fetch is the verifier task; this proves control by publication, not legal ownership. Decidable",
+    "receipt": "46bc8218-a9db-8d21-a954-8bae4de3526f"
   }
 ]
