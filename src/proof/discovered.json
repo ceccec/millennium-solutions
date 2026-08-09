@@ -4508,5 +4508,10 @@
     "key": "seal_all_with_uuidna_public_and_indexable_leaking_no_secrets_because_there_are_none",
     "name": "seal all with uuidna — public and indexable, leaking no secrets because there are none: every page and claim is a public content-address, indexable in search engines with nothing hidden; it leaks no security even at the deepest level — not because it is secure, but because it is public by design: no secrets or keys to leak, only public content and integrity. The hash is non-cryptographic; no-leak is not the same as secure. Decidable",
     "receipt": "bd28c872-64eb-8ad9-b2d5-ea53725f11f4"
+  },
+  {
+    "key": "the_ui_presents_live_examples_organised_by_theorem_computed_from_the_source",
+    "name": "the UI presents live examples organised by theorem — computed from the source, demonstrating integrity: the examples page recomputes worked outputs in the browser from the deposit source functions — content address, message codec, text chain, holographic proof, strict minting, domain control, measured billing — each linked to its theorem and recomputed on every load. The examples demonstrate integrity, that the code does what it says, not truth. Decidable",
+    "receipt": "e0b54751-5e37-89ba-ad78-954e6da432d2"
   }
 ]

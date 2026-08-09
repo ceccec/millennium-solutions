@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 902 recorded in 295 families
+## Discovered theorems (decidable, over ℤ/9) — 903 recorded in 295 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (114)
+### the (115)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -138,6 +138,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_forensics_catches_the_tampering_traitor_by_the_cascade_a_canonical_mint_does_not_offend_but_a_consistent_falsehood_slips](/theorem/the_forensics_catches_the_tampering_traitor_by_the_cascade_a_canonical_mint_does_not_offend_but_a_consistent_falsehood_slips) — the forensics catches the tampering traitor by the cascade — a canonical mint does not offend, but a consistent falsehood slips; a floor, not an oracle: altering any link breaks it and all downstream, so tampering cannot hide however careful; a hollow-prose traitor is caught by the absent receipt; a canonical strict mint does not offend, and the traitor is caught because their mint differs from it. But this catches a decidable class — tampering, hollow prose, a non-canonical mint — not an internally-consistent falsehood, which slips. Decidable  ·  `210e4151-a0d1…`
 - [the_ui_homepage_and_readme_center_uuidna_the_content_addressed_identity_holding_the_floor](/theorem/the_ui_homepage_and_readme_center_uuidna_the_content_addressed_identity_holding_the_floor) — the UI homepage and README center uuidna — the content-addressed identity, holding the floor: the homepage and README center uuidna, mint and mind meeting at the heart, surfacing the developed tools — the codec, the holographic proof, domain control, strict minting, billing — each linked to its recomputable theorem. The UI presents it honestly: integrity not truth, 0/7, not encryption, income zero. Decidable  ·  `fdf232fa-ca75…`
 - [the_correct_uuidna_billing_is_the_measured_bit_difference_not_a_flat_per_formula_rate](/theorem/the_correct_uuidna_billing_is_the_measured_bit_difference_not_a_flat_per_formula_rate) — the correct uuidna billing is the measured bit-difference — not a flat per-formula rate: the correct formula is the measured bits saved (O(N) recompute − O(1) verify), the actual value delivered, measured not asserted; the two coins are the conserved fair-exchange invariant (110 − 108), fixed, not a per-formula multiplier. The earlier flat two-coins-per-formula was the wrong non-uuidna approach — superseded, but kept in the ledger as evidence. Non-commercial free; income zero. Decidable  ·  `ff7cbf17-116a…`
+- [the_ui_presents_live_examples_organised_by_theorem_computed_from_the_source](/theorem/the_ui_presents_live_examples_organised_by_theorem_computed_from_the_source) — the UI presents live examples organised by theorem — computed from the source, demonstrating integrity: the examples page recomputes worked outputs in the browser from the deposit source functions — content address, message codec, text chain, holographic proof, strict minting, domain control, measured billing — each linked to its theorem and recomputed on every load. The examples demonstrate integrity, that the code does what it says, not truth. Decidable  ·  `e0b54751-5e37…`
 
 ### relation (55)
 
@@ -1351,4 +1352,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `4c90454b-b556-8999-8edb-673c29bbdf6a`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `2f3a5f27-b2d0-8aee-8bc3-60b78abbff06`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
