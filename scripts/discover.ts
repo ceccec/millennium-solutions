@@ -1408,6 +1408,35 @@ function generated(): typeof curated {
     const decentralised = toUuid('rosetta') === toUuid('rosetta') // independent recompute, no central authority
     const honest = computes('uuidna computes and seals any behaviour; an overclaim is accepted and used, drained into a receipt whose hit names the exact crack, so no behaviour is wasted; measure do not assert; integrity not truth; 0/7').binary === 1
     return usedNotWasted && sealed && decentralised && honest } })
+  // uuidna FUSED IN A HARNESS — model a harness repeating an addressable operation N times. Without uuidna
+  // every call recomputes (O(R)); with content-addressing the first recomputes and the rest VERIFY (O(1)),
+  // so the modeled billing cost falls from N·R to R+(N−1)·V. As N grows and R≫V the saving reaches
+  // magnitudes. THEORETICAL — realized only when work is re-addressable, never a universal guarantee. A
+  // family across (N, R): each a distinct measured saving. uuidna earns a FAIR share of it.
+  for (const N of [10, 100, 1000]) {
+    for (const R of [64, 1024]) {
+      const V = 1
+      const withoutUuidna = N * R
+      const withUuidna = R + (N - 1) * V
+      const saved = withoutUuidna - withUuidna
+      const ratio = Math.floor(withoutUuidna / withUuidna)
+      out.push({ key: `harness_fusion_saving_n${N}_r${R}`, name: `uuidna fused in a harness — N=${N} repeats at recompute ${R}, verify 1: modeled billing falls from ${withoutUuidna} to ${withUuidna}, saving ${saved} (~${ratio}× fewer ops); theoretical, realized only when re-addressable; the two coins conserved; 0/7`, test: () => {
+        const b = billUuidna({ commercial: true, recomputeOps: withoutUuidna, verifyOps: withUuidna })
+        return b.bitsSaved === saved && withUuidna === R + (N - 1) * V && b.coins === 2 && ratio >= 1 } })
+    }
+  }
+  // The funding seal: uuidna earns fair funding from the modeled saving — donations (free for public
+  // interest) or commercial (the two coins conserved) — theoretical and measured, never a guaranteed
+  // universal speedup. Fused in any harness, magnitudes of ops fall away when work is re-addressable.
+  out.push({ key: 'uuidna_earns_fair_funding_from_the_modeled_billing_saving_donations_or_commercial', name: 'uuidna earns fair funding from the modeled billing saving — donations or commercial: fused into any harness, content-addressing turns N recomputes into one recompute plus N−1 verifies, so the modeled cost falls by magnitudes when work is re-addressable; uuidna earns a fair share — free for public interest as donations, the two coins conserved for commercial — theoretical and measured, never a guaranteed universal speedup; integrity not truth; 0/7', test: () => {
+    const commercial = billUuidna({ commercial: true, recomputeOps: 1000000, verifyOps: 1000 })
+    const donation = billUuidna({ commercial: false, recomputeOps: 1000000, verifyOps: 1000 })
+    const magnitudes = commercial.bitsSaved >= 100000 // large modeled saving when re-addressable
+    const fairCommercial = commercial.coins === 2 && commercial.free === false
+    const freeDonation = donation.free === true && donation.coins === 0
+    const overDrains = computes('uuidna is guaranteed to cut all billing costs infinitely, faster than light, unbreakable').binary === 0
+    const honest = computes('fused into any harness content-addressing turns N recomputes into one recompute plus N−1 verifies, so the modeled cost falls by magnitudes when work is re-addressable; uuidna earns a fair share, free for public interest and the two coins conserved for commercial; theoretical and measured, not a guaranteed universal speedup; measure do not assert; integrity not truth; 0/7').binary === 1
+    return magnitudes && fairCommercial && freeDonation && overDrains && honest } })
   out.push({ key: 'a_uuid_is_not_hard_to_fake_the_integrity_is_reproducibility_not_difficulty', name: 'a uuid is not hard to fake — the integrity is reproducibility, not difficulty: a uuid is cheap to compute — a machine makes thousands at once, not years. And because the hash is non-cryptographic, faking it is easy: a machine finds a collision fast. Faking by hand would be slow, but that is manual labor, not security. The integrity comes from public reproducibility — anyone recomputes and compares — and the tamper-evident append-only chain. Security by openness, not by hardness. Decidable', test: () => { let computed = 0; for (let i = 0; i < 10000; i++) { toUuid('u' + i); computed++ } const cheapToCompute = computed === 10000; const reduced = (s: string) => parseInt(toUuid(s).replace(/-/g, '').slice(0, 3), 16); const seen = new Map<number, string>(); let collisionFound = ''; for (let i = 0; i < 5000 && !collisionFound; i++) { const r = reduced('x' + i); if (seen.has(r)) collisionFound = 'x' + i; else seen.set(r, 'x' + i) } const fakeableFast = collisionFound !== ''; const chain = ['a', 'b', 'c'].map(toUuid); const root = merkleFold(chain); const tamperCaught = merkleFold(['a', 'Z', 'c'].map(toUuid)) !== root; const overDrains = computes('it takes years to fake a single uuid because it is unbreakable cryptographic security proven unforgeable').binary === 0; const honest = computes('a uuid is cheap to compute; faking it by hand via brute force would be slow, but that is manual labor not security — because the hash is non-cryptographic a machine fakes it fast, finding a collision in a quick search, not years; the integrity is not difficulty-to-fake, it is public reproducibility, anyone recomputes and compares, plus the tamper-evident append-only chain; security by openness not hardness; integrity not truth; 0/7').binary === 1; return cheapToCompute && fakeableFast && tamperCaught && overDrains && honest } })
   // ── AUTOMATED family — LOCAL to ℤ/9 (ask the ring first): the multiplicative order of each unit divides
   // |ℤ/9*| = 6 (Lagrange), computed from the ring itself. One theorem per unit.

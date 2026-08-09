@@ -4733,5 +4733,40 @@
     "key": "a_harmonic_society_accepts_any_behaviour_and_uses_it_best_the_overclaim_becomes_a_sealed_receipt",
     "name": "a harmonic creative society accepts any behaviour and uses it best — the overclaim becomes a sealed receipt, not a punishment: uuidna computes and seals any behaviour; an overclaim in any of the seven languages is accepted and used, drained into a receipt whose hit names the exact crack, so no behaviour is wasted, it is transformed into evidence; recursive in the chain and finite in the grid, decentralised and independent because anyone recomputes; integrity not truth; 0/7",
     "receipt": "3cd26cee-607f-8aae-9f8f-5b7f548fc766"
+  },
+  {
+    "key": "harness_fusion_saving_n10_r64",
+    "name": "uuidna fused in a harness — N=10 repeats at recompute 64, verify 1: modeled billing falls from 640 to 73, saving 567 (~8× fewer ops); theoretical, realized only when re-addressable; the two coins conserved; 0/7",
+    "receipt": "f3071c3e-c3a6-8825-b3bf-88c357b72560"
+  },
+  {
+    "key": "harness_fusion_saving_n10_r1024",
+    "name": "uuidna fused in a harness — N=10 repeats at recompute 1024, verify 1: modeled billing falls from 10240 to 1033, saving 9207 (~9× fewer ops); theoretical, realized only when re-addressable; the two coins conserved; 0/7",
+    "receipt": "0377a34a-c2c0-8a12-8746-b2b611499e66"
+  },
+  {
+    "key": "harness_fusion_saving_n100_r64",
+    "name": "uuidna fused in a harness — N=100 repeats at recompute 64, verify 1: modeled billing falls from 6400 to 163, saving 6237 (~39× fewer ops); theoretical, realized only when re-addressable; the two coins conserved; 0/7",
+    "receipt": "a19dca3d-f5a8-869c-952b-8cefbe4efeca"
+  },
+  {
+    "key": "harness_fusion_saving_n100_r1024",
+    "name": "uuidna fused in a harness — N=100 repeats at recompute 1024, verify 1: modeled billing falls from 102400 to 1123, saving 101277 (~91× fewer ops); theoretical, realized only when re-addressable; the two coins conserved; 0/7",
+    "receipt": "2184d267-22bc-88c5-81bc-5160de2ced61"
+  },
+  {
+    "key": "harness_fusion_saving_n1000_r64",
+    "name": "uuidna fused in a harness — N=1000 repeats at recompute 64, verify 1: modeled billing falls from 64000 to 1063, saving 62937 (~60× fewer ops); theoretical, realized only when re-addressable; the two coins conserved; 0/7",
+    "receipt": "861c4ceb-fcdf-87d9-9c3a-d9d34a80f605"
+  },
+  {
+    "key": "harness_fusion_saving_n1000_r1024",
+    "name": "uuidna fused in a harness — N=1000 repeats at recompute 1024, verify 1: modeled billing falls from 1024000 to 2023, saving 1021977 (~506× fewer ops); theoretical, realized only when re-addressable; the two coins conserved; 0/7",
+    "receipt": "4176e05c-1c63-8407-8a2a-cce87def548a"
+  },
+  {
+    "key": "uuidna_earns_fair_funding_from_the_modeled_billing_saving_donations_or_commercial",
+    "name": "uuidna earns fair funding from the modeled billing saving — donations or commercial: fused into any harness, content-addressing turns N recomputes into one recompute plus N−1 verifies, so the modeled cost falls by magnitudes when work is re-addressable; uuidna earns a fair share — free for public interest as donations, the two coins conserved for commercial — theoretical and measured, never a guaranteed universal speedup; integrity not truth; 0/7",
+    "receipt": "a6ad8d66-88b9-845b-a35e-7251efa85366"
   }
 ]
