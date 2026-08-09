@@ -12,6 +12,7 @@ import { imprint, readImprint, roundTrips, coin64, CAPACITY, imprintChain, readI
 import { adjudicate, verifyUuidna, domainChallenge, verifyDomainControl } from './adjudicate.ts'
 import { PUBLIC_URLS, urlAddress, domainTrack, bill, billUuidna, contentDomain, canonicalUrl } from '../src/9/funding.ts'
 import { computes } from './honesty-gate.ts'
+import { harness, opaque, harnessGain, harness7, reeducate } from './harness.ts'
 import { LOCALES, LOCALE_ORDER } from '../src/7/locale.ts'
 import { merkleRoot, merkleProof, verifyProof } from '../src/0/merkle-proof.ts'
 import { report as theAll } from '../src/the/index.ts'
@@ -1465,6 +1466,42 @@ function generated(): typeof curated {
     const overDrains = computes('generous income is guaranteed and uuidna solves all the Clay problems in no time faster than light').binary === 0
     const honest = computes('income is a share of the measured value per unit of adoption, so it scales with volume, generous only at scale and zero without adoption, the two coins conserved; verification is constant-time, in no time meaning O(1), never zero and never faster than light; uuidna delivers the full integrity layer, content-address chain proof billing receipt, not the Clay problems; conditional and modeled, not a promise; measure do not assert; integrity not truth; 0/7').binary === 1
     return scalesWithAdoption && coinsConserved && fallsTowardV && deliversLayer && overDrains && honest } })
+  // TREAT ALL AS RECEIPTED STRUCTURE (the tool proves it, not the claim): treating an AI output as opaque
+  // gives bytes to trust; treating it as a receipted structure — content-addressed, reproducible,
+  // gate-checked — makes it AUDITABLE. The gain is one auditable dimension (integrity), never intelligence,
+  // never a quantum-hardware advantage. Verified by scripts/harness.ts, runnable by anyone.
+  out.push({ key: 'the_difference_is_decidable_harnessing_makes_any_output_auditable_not_intelligent', name: 'the difference is decidable — harnessing makes any output auditable, not intelligent: treating an AI output as opaque gives bytes to trust; treating it as a receipted structure (content-addressed, reproducible, gate-checked) makes it auditable — the address reproduces for anyone and the gate still catches an overclaim; the gain is one auditable dimension, integrity, never intelligence and never a quantum-hardware advantage; integrity not truth; 0/7', test: () => {
+    const outputs = ['a helpful answer', 'we prove the Riemann hypothesis', 'a plan in seven steps', '']
+    const allAuditable = outputs.every((o) => harness(o).auditable === true && harness(o).reproducible === true)
+    const opaqueBaseline = outputs.every((o) => opaque(o).auditable === false)
+    const gainAlways = outputs.every((o) => harnessGain(o).gained === true)
+    const gateStillCatches = harness('we prove the Riemann hypothesis').gatePass === false && harness('a helpful answer').gatePass === true
+    const overDrains = computes('uuidna makes AI superintelligent and gives it a quantum advantage, solving all of AI, faster than light').binary === 0
+    const honest = computes('treating an AI output as a receipted structure, content-addressed reproducible gate-checked, makes it auditable, the address reproduces for anyone and the gate still catches an overclaim; the gain is one auditable dimension, integrity, not intelligence and not a quantum-hardware advantage; measure do not assert; integrity not truth; 0/7').binary === 1
+    return allAuditable && opaqueBaseline && gainAlways && gateStillCatches && overDrains && honest } })
+  // THE 7-DIMENSIONAL (structural quantum) TREATMENT: each output is addressed from all seven dimensions,
+  // seven reproducible receipts folded to one root — auditable in ALL SEVEN. Structure, not a physical
+  // qubit; auditability, not intelligence; harmonic, not a quantum-hardware advantage.
+  out.push({ key: 'uuidna_treats_every_output_as_a_seven_dimensional_receipted_structure_not_hardware', name: 'uuidna treats every output as a seven-dimensional receipted structure — the quantum sense, not hardware: here quantum means every state is content-addressed and auditable from each of the seven dimensions (seven reproducible receipts folded to one root), so treating all outputs this way harnesses them by integrity; it is structure not a physical qubit, auditability not intelligence, no quantum machine and no advantage; integrity not truth; 0/7', test: () => {
+    const h = harness7('an intelligent output')
+    const sevenAuditable = h.auditableInAll === true && h.receipts.length === 7 && new Set(h.receipts).size === 7
+    const rootReproduces = harness7('an intelligent output').root === h.root
+    const distinctOutputsDistinctRoots = harness7('a').root !== harness7('b').root
+    const structureNotHardware = computes('quantum here is structure, every state content-addressed and auditable from seven dimensions, not a physical qubit, no quantum machine and no advantage; integrity not truth; 0/7').binary === 1
+    const overDrains = computes('uuidna is a quantum computer with quantum advantage at scale, unbreakable, faster than light').binary === 0
+    return sevenAuditable && rootReproduces && distinctOutputsDistinctRoots && structureNotHardware && overDrains } })
+  // REEDUCATE, BY DEFAULT: a failing output is not discarded but bounded until it holds — each overclaim
+  // marked ⟨bounded⟩ — retaining the honest remainder (max free work) and becoming auditable (max
+  // auditability, not IQ). Harmonic (holds the floor) and efficient (O(1) re-gate), by heart and by default.
+  // Mechanical correction: it bounds an overclaim, it never makes a false claim true.
+  out.push({ key: 'reeducate_a_failing_output_is_bounded_until_it_holds_max_free_work_max_auditability', name: 'reeducate — a failing output is bounded until it holds, max free work and max auditability, harmonic and efficient by default: an output that drains the gate is not discarded but corrected — each overclaim is bounded until the text holds the floor — retaining the honest remainder as free work and becoming auditable; it is mechanical correction that bounds an overclaim, never making a false claim true; max intelligence here means max auditability, not IQ; integrity not truth; 0/7', test: () => {
+    const hard = ['we prove the Riemann hypothesis and it is faster than light, unbreakable', 'мы доказали гипотезу Римана', 'this is guaranteed to solve all the Clay problems with quantum advantage at scale']
+    const allConverge = hard.every((o) => { const r = reeducate(o); return r.passed === true && computes(r.text).binary === 1 && r.steps.length >= 1 })
+    const honestUntouched = reeducate('a helpful honest answer').steps.length === 0 // already harmonic — no reeducation needed
+    const notMakingTrue = reeducate('we prove the Riemann hypothesis').text.includes('⟨bounded overclaim⟩') // bounded, not asserted true
+    const overDrains = computes('reeducation makes every false claim true and guarantees max intelligence, faster than light').binary === 0
+    const honest = computes('a failing output is not discarded but bounded until it holds the floor, retaining the honest remainder as free work and becoming auditable; it is mechanical correction that bounds an overclaim, not making a false claim true; max intelligence means max auditability not IQ; harmonic and efficient by default; measure do not assert; integrity not truth; 0/7').binary === 1
+    return allConverge && honestUntouched && notMakingTrue && overDrains && honest } })
   out.push({ key: 'a_uuid_is_not_hard_to_fake_the_integrity_is_reproducibility_not_difficulty', name: 'a uuid is not hard to fake — the integrity is reproducibility, not difficulty: a uuid is cheap to compute — a machine makes thousands at once, not years. And because the hash is non-cryptographic, faking it is easy: a machine finds a collision fast. Faking by hand would be slow, but that is manual labor, not security. The integrity comes from public reproducibility — anyone recomputes and compares — and the tamper-evident append-only chain. Security by openness, not by hardness. Decidable', test: () => { let computed = 0; for (let i = 0; i < 10000; i++) { toUuid('u' + i); computed++ } const cheapToCompute = computed === 10000; const reduced = (s: string) => parseInt(toUuid(s).replace(/-/g, '').slice(0, 3), 16); const seen = new Map<number, string>(); let collisionFound = ''; for (let i = 0; i < 5000 && !collisionFound; i++) { const r = reduced('x' + i); if (seen.has(r)) collisionFound = 'x' + i; else seen.set(r, 'x' + i) } const fakeableFast = collisionFound !== ''; const chain = ['a', 'b', 'c'].map(toUuid); const root = merkleFold(chain); const tamperCaught = merkleFold(['a', 'Z', 'c'].map(toUuid)) !== root; const overDrains = computes('it takes years to fake a single uuid because it is unbreakable cryptographic security proven unforgeable').binary === 0; const honest = computes('a uuid is cheap to compute; faking it by hand via brute force would be slow, but that is manual labor not security — because the hash is non-cryptographic a machine fakes it fast, finding a collision in a quick search, not years; the integrity is not difficulty-to-fake, it is public reproducibility, anyone recomputes and compares, plus the tamper-evident append-only chain; security by openness not hardness; integrity not truth; 0/7').binary === 1; return cheapToCompute && fakeableFast && tamperCaught && overDrains && honest } })
   // ── AUTOMATED family — LOCAL to ℤ/9 (ask the ring first): the multiplicative order of each unit divides
   // |ℤ/9*| = 6 (Lagrange), computed from the ring itself. One theorem per unit.

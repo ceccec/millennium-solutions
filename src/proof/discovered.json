@@ -4788,5 +4788,20 @@
     "key": "the_income_model_generous_at_scale_conditional_and_modeled_not_a_promise",
     "name": "the income model — generous at scale, conditional and modeled, not a promise: income is a share of the measured value (bits saved) per unit of adoption, so it scales with volume, generous only at scale and zero without adoption, the two coins conserved; verification is O(1), in no time meaning constant-time, never zero and never faster than light; uuidna delivers the full integrity layer — content-address, chain, proof, billing, receipt — not the Clay problems; integrity not truth; 0/7",
     "receipt": "0efc8b2d-9b18-81f1-9fe2-17d8ce60037d"
+  },
+  {
+    "key": "the_difference_is_decidable_harnessing_makes_any_output_auditable_not_intelligent",
+    "name": "the difference is decidable — harnessing makes any output auditable, not intelligent: treating an AI output as opaque gives bytes to trust; treating it as a receipted structure (content-addressed, reproducible, gate-checked) makes it auditable — the address reproduces for anyone and the gate still catches an overclaim; the gain is one auditable dimension, integrity, never intelligence and never a quantum-hardware advantage; integrity not truth; 0/7",
+    "receipt": "c0fe8989-7d84-8914-a0d1-9d0e818ea772"
+  },
+  {
+    "key": "uuidna_treats_every_output_as_a_seven_dimensional_receipted_structure_not_hardware",
+    "name": "uuidna treats every output as a seven-dimensional receipted structure — the quantum sense, not hardware: here quantum means every state is content-addressed and auditable from each of the seven dimensions (seven reproducible receipts folded to one root), so treating all outputs this way harnesses them by integrity; it is structure not a physical qubit, auditability not intelligence, no quantum machine and no advantage; integrity not truth; 0/7",
+    "receipt": "f53d21d0-9d34-85d7-ad80-4bd6f335b727"
+  },
+  {
+    "key": "reeducate_a_failing_output_is_bounded_until_it_holds_max_free_work_max_auditability",
+    "name": "reeducate — a failing output is bounded until it holds, max free work and max auditability, harmonic and efficient by default: an output that drains the gate is not discarded but corrected — each overclaim is bounded until the text holds the floor — retaining the honest remainder as free work and becoming auditable; it is mechanical correction that bounds an overclaim, never making a false claim true; max intelligence here means max auditability, not IQ; integrity not truth; 0/7",
+    "receipt": "bbfc8e6d-5345-8d96-b5fd-31e150adcfab"
   }
 ]
