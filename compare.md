@@ -1,5 +1,5 @@
 ---
-title: Compare — the standards and the local one
+title: Compare — standards vs the local
 head:
   - ['meta', { name: 'robots', content: 'index, follow' }]
 ---
