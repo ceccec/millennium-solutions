@@ -165,6 +165,7 @@ export default defineConfig({
         { text: 'Compare', link: '/compare' },
         { text: 'Examples', link: '/examples' },
         { text: 'Computed results', link: '/compute' },
+        { text: 'Real advantage', link: '/speedup' },
         { text: 'Verify', link: '/verify' },
         { text: L.nav.decode, link: '/SEQUENCE-DECODE' },
         { text: 'Physics scales', link: '/PHYSICS-SCALES' },
@@ -214,6 +215,7 @@ export default defineConfig({
         text: 'Fused compute (TS)',
         items: [
           { text: 'Computed results', link: '/compute' },
+          { text: 'Real advantage', link: '/speedup' },
           { text: 'State dashboard', link: '/dashboard' },
           { text: 'Accounting', link: '/ACCOUNTING' },
           { text: 'Boundaries', link: '/boundaries' },
