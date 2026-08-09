@@ -4333,5 +4333,35 @@
     "key": "geometric_series_base_10",
     "name": "the geometric series in base 10: 1 + 10 + 10² + ... + 10ⁿ = (10ⁿ⁺¹ − 1)/(10 − 1) — the base-10 repunit-style sum. Verified exhaustively for n up to 12. Decidable",
     "receipt": "984a9c4c-396a-82ae-b8be-6e48b92ef963"
+  },
+  {
+    "key": "totient_prime_power_2",
+    "name": "Euler totient at powers of 2: φ(2ᵏ) = 2ᵏ − 2ᵏ⁻¹ — the count of residues coprime to 2ᵏ equals 2ᵏ minus 2ᵏ⁻¹, verified by direct enumeration for each k while 2ᵏ stays small. Decidable",
+    "receipt": "38c1deee-e2ec-8f21-92c0-c605f0862f77"
+  },
+  {
+    "key": "totient_prime_power_3",
+    "name": "Euler totient at powers of 3: φ(3ᵏ) = 3ᵏ − 3ᵏ⁻¹ — the count of residues coprime to 3ᵏ equals 3ᵏ minus 3ᵏ⁻¹, verified by direct enumeration for each k while 3ᵏ stays small. Decidable",
+    "receipt": "5104553a-69c5-8f98-916a-9b04b7ce4136"
+  },
+  {
+    "key": "totient_prime_power_5",
+    "name": "Euler totient at powers of 5: φ(5ᵏ) = 5ᵏ − 5ᵏ⁻¹ — the count of residues coprime to 5ᵏ equals 5ᵏ minus 5ᵏ⁻¹, verified by direct enumeration for each k while 5ᵏ stays small. Decidable",
+    "receipt": "70180ded-f087-8be4-911d-bbe94662cd8d"
+  },
+  {
+    "key": "totient_prime_power_7",
+    "name": "Euler totient at powers of 7: φ(7ᵏ) = 7ᵏ − 7ᵏ⁻¹ — the count of residues coprime to 7ᵏ equals 7ᵏ minus 7ᵏ⁻¹, verified by direct enumeration for each k while 7ᵏ stays small. Decidable",
+    "receipt": "e280e2e0-edf2-8561-8d90-a417b79440be"
+  },
+  {
+    "key": "totient_prime_power_11",
+    "name": "Euler totient at powers of 11: φ(11ᵏ) = 11ᵏ − 11ᵏ⁻¹ — the count of residues coprime to 11ᵏ equals 11ᵏ minus 11ᵏ⁻¹, verified by direct enumeration for each k while 11ᵏ stays small. Decidable",
+    "receipt": "13099835-d7b4-8fcd-a43c-10d405b5ab02"
+  },
+  {
+    "key": "totient_prime_power_13",
+    "name": "Euler totient at powers of 13: φ(13ᵏ) = 13ᵏ − 13ᵏ⁻¹ — the count of residues coprime to 13ᵏ equals 13ᵏ minus 13ᵏ⁻¹, verified by direct enumeration for each k while 13ᵏ stays small. Decidable",
+    "receipt": "3ebc7b88-9b85-8fd9-beee-6978c358b099"
   }
 ]

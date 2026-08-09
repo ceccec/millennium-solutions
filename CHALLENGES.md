@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 867 recorded in 288 families
+## Discovered theorems (decidable, over ℤ/9) — 873 recorded in 288 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -366,6 +366,18 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [powsum0_k13](/theorem/powsum0_k13) — Σ (unit)^13 ≡ 0 mod 9  ·  `817aa55d-813f…`
 - [powsum0_k15](/theorem/powsum0_k15) — Σ (unit)^15 ≡ 0 mod 9  ·  `df354f89-1c7d…`
 - [powsum0_k17](/theorem/powsum0_k17) — Σ (unit)^17 ≡ 0 mod 9  ·  `fecb2108-39df…`
+
+### totient (9)
+
+- [totient_divisor_sum](/theorem/totient_divisor_sum) — Gauss divisor sum: Σ_{d|n} φ(d) = n (all n≤12)  ·  `48628d5b-053e…`
+- [totient_divisor_sum_equals_n](/theorem/totient_divisor_sum_equals_n) — Gauss’s totient identity: Σ_{d | n} φ(d) = n for every n — the divisors’ totients sum back to n (verified n ≤ 100), and at n=9 this reads φ(1)+φ(3)+φ(9)=1+2+6=9  ·  `e4f79a7d-b4da…`
+- [totient_is_multiplicative](/theorem/totient_is_multiplicative) — the totient is multiplicative: φ(mn) = φ(m)·φ(n) whenever gcd(m,n)=1 — verified exhaustively for coprime m,n ≤ 12 (so φ(9)=φ(9) and, e.g., φ(45)=φ(9)φ(5)=6·4=24)  ·  `91bf2659-816c…`
+- [totient_prime_power_2](/theorem/totient_prime_power_2) — Euler totient at powers of 2: φ(2ᵏ) = 2ᵏ − 2ᵏ⁻¹ — the count of residues coprime to 2ᵏ equals 2ᵏ minus 2ᵏ⁻¹, verified by direct enumeration for each k while 2ᵏ stays small. Decidable  ·  `38c1deee-e2ec…`
+- [totient_prime_power_3](/theorem/totient_prime_power_3) — Euler totient at powers of 3: φ(3ᵏ) = 3ᵏ − 3ᵏ⁻¹ — the count of residues coprime to 3ᵏ equals 3ᵏ minus 3ᵏ⁻¹, verified by direct enumeration for each k while 3ᵏ stays small. Decidable  ·  `5104553a-69c5…`
+- [totient_prime_power_5](/theorem/totient_prime_power_5) — Euler totient at powers of 5: φ(5ᵏ) = 5ᵏ − 5ᵏ⁻¹ — the count of residues coprime to 5ᵏ equals 5ᵏ minus 5ᵏ⁻¹, verified by direct enumeration for each k while 5ᵏ stays small. Decidable  ·  `70180ded-f087…`
+- [totient_prime_power_7](/theorem/totient_prime_power_7) — Euler totient at powers of 7: φ(7ᵏ) = 7ᵏ − 7ᵏ⁻¹ — the count of residues coprime to 7ᵏ equals 7ᵏ minus 7ᵏ⁻¹, verified by direct enumeration for each k while 7ᵏ stays small. Decidable  ·  `e280e2e0-edf2…`
+- [totient_prime_power_11](/theorem/totient_prime_power_11) — Euler totient at powers of 11: φ(11ᵏ) = 11ᵏ − 11ᵏ⁻¹ — the count of residues coprime to 11ᵏ equals 11ᵏ minus 11ᵏ⁻¹, verified by direct enumeration for each k while 11ᵏ stays small. Decidable  ·  `13099835-d7b4…`
+- [totient_prime_power_13](/theorem/totient_prime_power_13) — Euler totient at powers of 13: φ(13ᵏ) = 13ᵏ − 13ᵏ⁻¹ — the count of residues coprime to 13ᵏ equals 13ᵏ minus 13ᵏ⁻¹, verified by direct enumeration for each k while 13ᵏ stays small. Decidable  ·  `3ebc7b88-9b85…`
 
 ### bool (8)
 
@@ -878,12 +890,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [stirling_first_factorial](/theorem/stirling_first_factorial) — unsigned Stirling 1st kind (permutations by cycles) sum to n!: Σ_k c(4,k) = 4! = 24  ·  `e1f258a9-dbdb…`
 - [stirling_edges](/theorem/stirling_edges) — Stirling 2nd kind edges: S(n,1)=1 (one block), S(n,n)=1 (singletons), n=1..6  ·  `02ae48de-5452…`
 
-### totient (3)
-
-- [totient_divisor_sum](/theorem/totient_divisor_sum) — Gauss divisor sum: Σ_{d|n} φ(d) = n (all n≤12)  ·  `48628d5b-053e…`
-- [totient_divisor_sum_equals_n](/theorem/totient_divisor_sum_equals_n) — Gauss’s totient identity: Σ_{d | n} φ(d) = n for every n — the divisors’ totients sum back to n (verified n ≤ 100), and at n=9 this reads φ(1)+φ(3)+φ(9)=1+2+6=9  ·  `e4f79a7d-b4da…`
-- [totient_is_multiplicative](/theorem/totient_is_multiplicative) — the totient is multiplicative: φ(mn) = φ(m)·φ(n) whenever gcd(m,n)=1 — verified exhaustively for coprime m,n ≤ 12 (so φ(9)=φ(9) and, e.g., φ(45)=φ(9)φ(5)=6·4=24)  ·  `91bf2659-816c…`
-
 ### unit (3)
 
 - [unit_exp_id_k6](/theorem/unit_exp_id_k6) — every unit u^6 ≡ 1 mod 9  ·  `6401a9a1-a937…`
@@ -1313,4 +1319,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `1e72ac60-6296-8b8c-886b-f6967d703e6e`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `be918845-e0b4-8976-9d8c-001c373348c8`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
