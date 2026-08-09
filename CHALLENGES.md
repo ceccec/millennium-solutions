@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 877 recorded in 290 families
+## Discovered theorems (decidable, over ℤ/9) — 878 recorded in 290 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -573,6 +573,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [nim_winning_move_zeros_the_nimsum](/theorem/nim_winning_move_zeros_the_nimsum) — the Nim winning strategy: from any position with nonzero nim-sum there exists a move to a position with nim-sum zero (handing the loss to the opponent) — exhaustive over three piles of size ≤ 5  ·  `e90ed988-ec04…`
 - [nim_sum_is_xor_gf2](/theorem/nim_sum_is_xor_gf2) — the nim-sum is GF(2) vector addition: it is bitwise XOR — commutative, associative, and self-inverse (x ⊕ x = 0) — so Nim positions form a GF(2) vector space and the game is decided by binary algebra  ·  `c883cd18-f418…`
 
+### no (5)
+
+- [no_crack_evades_the_content_address](/theorem/no_crack_evades_the_content_address) — no crack evades exposure: any change to a statement — one character or one bit — yields a different content-address, so tampering is caught on recompute; a short message imprinted into a uuid reads back exactly (the receipt recovers it), and the gate drains an overclaim — every statement is tamper-evident and floor-checked  ·  `26558d49-1151…`
+- [no_error_in_harmonics_across_lifespan](/theorem/no_error_in_harmonics_across_lifespan) — no error in the harmonics across the whole lifespan: the merkle root recomputes deterministically and order-independently — identical on every build for all time — and any single change yields a different root, so an error cannot enter and persist; unlike an error-correcting code that tolerates and fixes bounded error, the harmonic address admits none (reject, not correct), re-verified every build  ·  `e8c447e2-6ddd…`
+- [no_perspective_signals_faster_than_exchange](/theorem/no_perspective_signals_faster_than_exchange) — no perspective signals faster than exchange: a perspective's local receipt is a function of itself alone, so a remote perspective's choice cannot change it — observing locally reveals nothing about the other; the joint correlation appears only when both are folded together (exchange). Information travels only by exchange: not faster than light, and no superluminal signaling  ·  `64609304-4409…`
+- [no_payload_to_move_no_price_for_public_interest_the_commercial_price_is_the_coins](/theorem/no_payload_to_move_no_price_for_public_interest_the_commercial_price_is_the_coins) — no payload to move, no price for public interest — the commercial price is the coins: yes, no payload to move — you verify by the content-address alone, order one, the receipt travels, not the data. And yes, no price to pay the captain for public interest — verification and non-commercial use are free, recompute at no cost; the captain is not a gatekeeper. But commercial value-extraction pays the coins, the measured bit-difference, a fair exchange. Free for public interest, commercial licensed. Decidable  ·  `7520a846-6633…`
+- [no_quantum_machine_is_needed_for_computability_but_a_quantum_machine_can_be_faster](/theorem/no_quantum_machine_is_needed_for_computability_but_a_quantum_machine_can_be_faster) — no quantum machine is needed for computability — but a quantum machine can be faster for specific problems: classical computation is Turing-complete and can compute what any quantum machine computes, by simulation; the deposit computes its quantum-structure classically, no quantum hardware needed. But this is computability, not efficiency — a quantum machine can be exponentially faster for specific problems, since a classical simulation needs a state vector of size two-to-the-N. The deposit claims no speedup of its own. Decidable  ·  `f165eaef-3424…`
+
 ### power (5)
 
 - [power_sum_k1](/theorem/power_sum_k1) — the sum of the first n integers has a closed form: Σ_{i=1}^n i^1 = n(n+1)/2 — the O(1) formula replaces the loop, verified equal to the naive sum for n ≤ 40  ·  `a54b6a17-c55c…`
@@ -673,13 +681,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [mobius_divisor_sum_is_indicator](/theorem/mobius_divisor_sum_is_indicator) — the Möbius divisor sum is the identity indicator: Σ_{d | n} μ(d) = 1 when n=1 and 0 otherwise — the defining orthogonality that makes Möbius inversion work (verified n ≤ 100)  ·  `e0bbc47c-3270…`
 - [mobius_inversion_recovers_totient](/theorem/mobius_inversion_recovers_totient) — Möbius inversion recovers the totient: since Σ_{d|n} φ(d) = n, inversion gives φ(n) = Σ_{d|n} μ(d)·(n/d) — the two identities are inverse (verified n ≤ 100)  ·  `0aa5076c-3b31…`
 - [mobius_nonzero_iff_squarefree](/theorem/mobius_nonzero_iff_squarefree) — μ(n) is nonzero exactly on squarefree n: μ(n) = 0 iff some prime square divides n, else μ(n) = (−1)^(number of prime factors) — verified against a direct squarefree test for n ≤ 100  ·  `dcfbba55-f67a…`
-
-### no (4)
-
-- [no_crack_evades_the_content_address](/theorem/no_crack_evades_the_content_address) — no crack evades exposure: any change to a statement — one character or one bit — yields a different content-address, so tampering is caught on recompute; a short message imprinted into a uuid reads back exactly (the receipt recovers it), and the gate drains an overclaim — every statement is tamper-evident and floor-checked  ·  `26558d49-1151…`
-- [no_error_in_harmonics_across_lifespan](/theorem/no_error_in_harmonics_across_lifespan) — no error in the harmonics across the whole lifespan: the merkle root recomputes deterministically and order-independently — identical on every build for all time — and any single change yields a different root, so an error cannot enter and persist; unlike an error-correcting code that tolerates and fixes bounded error, the harmonic address admits none (reject, not correct), re-verified every build  ·  `e8c447e2-6ddd…`
-- [no_perspective_signals_faster_than_exchange](/theorem/no_perspective_signals_faster_than_exchange) — no perspective signals faster than exchange: a perspective's local receipt is a function of itself alone, so a remote perspective's choice cannot change it — observing locally reveals nothing about the other; the joint correlation appears only when both are folded together (exchange). Information travels only by exchange: not faster than light, and no superluminal signaling  ·  `64609304-4409…`
-- [no_payload_to_move_no_price_for_public_interest_the_commercial_price_is_the_coins](/theorem/no_payload_to_move_no_price_for_public_interest_the_commercial_price_is_the_coins) — no payload to move, no price for public interest — the commercial price is the coins: yes, no payload to move — you verify by the content-address alone, order one, the receipt travels, not the data. And yes, no price to pay the captain for public interest — verification and non-commercial use are free, recompute at no cost; the captain is not a gatekeeper. But commercial value-extraction pays the coins, the measured bit-difference, a fair exchange. Free for public interest, commercial licensed. Decidable  ·  `7520a846-6633…`
 
 ### nopayload (4)
 
@@ -1323,4 +1324,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `ebec89ed-79d8-816d-b763-6d4f4bf7051b`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `5de61eb6-6759-8f70-8f53-858fbf6c2e39`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
