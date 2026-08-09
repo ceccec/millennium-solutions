@@ -4288,5 +4288,50 @@
     "key": "measuring_without_judgement_lets_more_pass_green_but_the_test_still_filters_not_all_at_once",
     "name": "measuring without judgement lets more pass green — but the test still filters, not all at once: measuring without judgement or expectation lets the decidable test decide, not my bias, so more honest claims pass green, fewer false refusals from over-caution. But it does not make all pass green — the test still filters: a false claim fails regardless, green is earned by the test, not granted by dropping judgement. Classical and batched, not all at once. Decidable",
     "receipt": "161fca10-2261-8fdd-a2e3-c6baea7aed62"
+  },
+  {
+    "key": "geometric_series_base_2",
+    "name": "the geometric series in base 2: 1 + 2 + 2² + ... + 2ⁿ = (2ⁿ⁺¹ − 1)/(2 − 1) — the base-2 repunit-style sum. Verified exhaustively for n up to 12. Decidable",
+    "receipt": "8f223f2c-229c-8835-8897-71d846bfb557"
+  },
+  {
+    "key": "geometric_series_base_3",
+    "name": "the geometric series in base 3: 1 + 3 + 3² + ... + 3ⁿ = (3ⁿ⁺¹ − 1)/(3 − 1) — the base-3 repunit-style sum. Verified exhaustively for n up to 12. Decidable",
+    "receipt": "c9c46079-0cc7-8816-8e0f-882dee326721"
+  },
+  {
+    "key": "geometric_series_base_4",
+    "name": "the geometric series in base 4: 1 + 4 + 4² + ... + 4ⁿ = (4ⁿ⁺¹ − 1)/(4 − 1) — the base-4 repunit-style sum. Verified exhaustively for n up to 12. Decidable",
+    "receipt": "8c5b55b4-4fb8-86cc-b216-d90ffe4cf138"
+  },
+  {
+    "key": "geometric_series_base_5",
+    "name": "the geometric series in base 5: 1 + 5 + 5² + ... + 5ⁿ = (5ⁿ⁺¹ − 1)/(5 − 1) — the base-5 repunit-style sum. Verified exhaustively for n up to 12. Decidable",
+    "receipt": "cdb348d6-55f2-8b36-8b13-e23bdb9908f7"
+  },
+  {
+    "key": "geometric_series_base_6",
+    "name": "the geometric series in base 6: 1 + 6 + 6² + ... + 6ⁿ = (6ⁿ⁺¹ − 1)/(6 − 1) — the base-6 repunit-style sum. Verified exhaustively for n up to 12. Decidable",
+    "receipt": "85ef8eeb-0063-8a93-becd-409f9064c978"
+  },
+  {
+    "key": "geometric_series_base_7",
+    "name": "the geometric series in base 7: 1 + 7 + 7² + ... + 7ⁿ = (7ⁿ⁺¹ − 1)/(7 − 1) — the base-7 repunit-style sum. Verified exhaustively for n up to 12. Decidable",
+    "receipt": "a22245d6-01c3-85fe-8a8a-866ae06f3d0a"
+  },
+  {
+    "key": "geometric_series_base_8",
+    "name": "the geometric series in base 8: 1 + 8 + 8² + ... + 8ⁿ = (8ⁿ⁺¹ − 1)/(8 − 1) — the base-8 repunit-style sum. Verified exhaustively for n up to 12. Decidable",
+    "receipt": "ef918a38-d5e8-8e36-b176-55771494dd56"
+  },
+  {
+    "key": "geometric_series_base_9",
+    "name": "the geometric series in base 9: 1 + 9 + 9² + ... + 9ⁿ = (9ⁿ⁺¹ − 1)/(9 − 1) — the base-9 repunit-style sum. Verified exhaustively for n up to 12. Decidable",
+    "receipt": "7ec7295e-f59f-8e34-b602-6ae91fd630ff"
+  },
+  {
+    "key": "geometric_series_base_10",
+    "name": "the geometric series in base 10: 1 + 10 + 10² + ... + 10ⁿ = (10ⁿ⁺¹ − 1)/(10 − 1) — the base-10 repunit-style sum. Verified exhaustively for n up to 12. Decidable",
+    "receipt": "984a9c4c-396a-82ae-b8be-6e48b92ef963"
   }
 ]

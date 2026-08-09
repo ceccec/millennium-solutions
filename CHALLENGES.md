@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 858 recorded in 287 families
+## Discovered theorems (decidable, over ℤ/9) — 867 recorded in 288 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -330,6 +330,18 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [flt_prime_17](/theorem/flt_prime_17) — Fermat’s little theorem at p=17: a^(p−1) ≡ 1 (mod 17) for every residue a from 1 to 16 — exhaustive over all nonzero residues  ·  `e72bc7f3-a4ed…`
 - [flt_prime_19](/theorem/flt_prime_19) — Fermat’s little theorem at p=19: a^(p−1) ≡ 1 (mod 19) for every residue a from 1 to 18 — exhaustive over all nonzero residues  ·  `428a30df-1f9d…`
 - [flt_prime_23](/theorem/flt_prime_23) — Fermat’s little theorem at p=23: a^(p−1) ≡ 1 (mod 23) for every residue a from 1 to 22 — exhaustive over all nonzero residues  ·  `8a96231b-3cf5…`
+
+### geometric (9)
+
+- [geometric_series_base_2](/theorem/geometric_series_base_2) — the geometric series in base 2: 1 + 2 + 2² + ... + 2ⁿ = (2ⁿ⁺¹ − 1)/(2 − 1) — the base-2 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  `8f223f2c-229c…`
+- [geometric_series_base_3](/theorem/geometric_series_base_3) — the geometric series in base 3: 1 + 3 + 3² + ... + 3ⁿ = (3ⁿ⁺¹ − 1)/(3 − 1) — the base-3 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  `c9c46079-0cc7…`
+- [geometric_series_base_4](/theorem/geometric_series_base_4) — the geometric series in base 4: 1 + 4 + 4² + ... + 4ⁿ = (4ⁿ⁺¹ − 1)/(4 − 1) — the base-4 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  `8c5b55b4-4fb8…`
+- [geometric_series_base_5](/theorem/geometric_series_base_5) — the geometric series in base 5: 1 + 5 + 5² + ... + 5ⁿ = (5ⁿ⁺¹ − 1)/(5 − 1) — the base-5 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  `cdb348d6-55f2…`
+- [geometric_series_base_6](/theorem/geometric_series_base_6) — the geometric series in base 6: 1 + 6 + 6² + ... + 6ⁿ = (6ⁿ⁺¹ − 1)/(6 − 1) — the base-6 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  `85ef8eeb-0063…`
+- [geometric_series_base_7](/theorem/geometric_series_base_7) — the geometric series in base 7: 1 + 7 + 7² + ... + 7ⁿ = (7ⁿ⁺¹ − 1)/(7 − 1) — the base-7 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  `a22245d6-01c3…`
+- [geometric_series_base_8](/theorem/geometric_series_base_8) — the geometric series in base 8: 1 + 8 + 8² + ... + 8ⁿ = (8ⁿ⁺¹ − 1)/(8 − 1) — the base-8 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  `ef918a38-d5e8…`
+- [geometric_series_base_9](/theorem/geometric_series_base_9) — the geometric series in base 9: 1 + 9 + 9² + ... + 9ⁿ = (9ⁿ⁺¹ − 1)/(9 − 1) — the base-9 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  `7ec7295e-f59f…`
+- [geometric_series_base_10](/theorem/geometric_series_base_10) — the geometric series in base 10: 1 + 10 + 10² + ... + 10ⁿ = (10ⁿ⁺¹ − 1)/(10 − 1) — the base-10 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  `984a9c4c-396a…`
 
 ### harmonic (9)
 
@@ -1301,4 +1313,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `39a3f542-901b-8bc0-a4c2-f0f053374b52`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `1e72ac60-6296-8b8c-886b-f6967d703e6e`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

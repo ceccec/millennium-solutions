@@ -59,7 +59,7 @@ Five is the heart: the fixed point of the ℤ/9 involution (σ(5)=5), the digit 
 - the Nim winning strategy: from any position with nonzero nim-sum there exists a move to a position with nim-sum zero (handing the loss to the opponent) — exhaustive over three piles of size ≤ 5  ·  tarot [70, 74, 48]  ·  `e90ed988-ec04…`
 - the nim-sum is GF(2) vector addition: it is bitwise XOR — commutative, associative, and self-inverse (x ⊕ x = 0) — so Nim positions form a GF(2) vector space and the game is decided by binary algebra  ·  tarot [7, 10, 10]  ·  `c883cd18-f418…`
 
-## Arts & geometry — 28 computed
+## Arts & geometry — 37 computed
 
 - the triad {3,6,9} maps to the RGB primary hues: 0°(red), 120°(green), 240°(blue)  ·  tarot [19, 25, 64]  ·  `316f831d-95da…`
 - the nine a432 hues (digit×40°) are distinct and equally spaced around the wheel  ·  tarot [20, 44, 19]  ·  `7f22f5c0-f4bd…`
@@ -89,7 +89,16 @@ Five is the heart: the fixed point of the ℤ/9 involution (σ(5)=5), the digit 
 - a432 Hz tuning is a convention, not a theorem; the ratios (2:1, 3:2, 5:4) are exact rationals — the boundary  ·  tarot [9, 30, 34]  ·  `d80f191a-d8c4…`
 - the harmonic series Σ 1/k diverges: H(2^k) ≥ 1 + k/2 grows without bound — the more terms, the more it grows (k≤12)  ·  tarot [54, 57, 10]  ·  `7f9249a7-092e…`
 - harmonic self-confirmation is perception, not proof, and cross-links run both ways: the harmonic pattern lets a recipient perceive fusion versus an intruder — a hue off the a432 lattice stands out — so one can self-confirm at a glance without decoding the encoding; this is a perceptual design metaphor, not a neurological or a health claim. Repo and site cross-link both ways, each fact content-addressed on both sides. Perception is not proof — the recomputation is. Decidable  ·  tarot [35, 48, 21]  ·  `ef9fdb90-3519…`
+- the geometric series in base 2: 1 + 2 + 2² + ... + 2ⁿ = (2ⁿ⁺¹ − 1)/(2 − 1) — the base-2 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  tarot [60, 26, 46]  ·  `8f223f2c-229c…`
+- the geometric series in base 3: 1 + 3 + 3² + ... + 3ⁿ = (3ⁿ⁺¹ − 1)/(3 − 1) — the base-3 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  tarot [16, 49, 73]  ·  `c9c46079-0cc7…`
+- the geometric series in base 4: 1 + 4 + 4² + ... + 4ⁿ = (4ⁿ⁺¹ − 1)/(4 − 1) — the base-4 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  tarot [51, 22, 50]  ·  `8c5b55b4-4fb8…`
+- the geometric series in base 5: 1 + 5 + 5² + ... + 5ⁿ = (5ⁿ⁺¹ − 1)/(5 − 1) — the base-5 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  tarot [9, 4, 6]  ·  `cdb348d6-55f2…`
+- the geometric series in base 6: 1 + 6 + 6² + ... + 6ⁿ = (6ⁿ⁺¹ − 1)/(6 − 1) — the base-6 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  tarot [45, 5, 21]  ·  `85ef8eeb-0063…`
+- the geometric series in base 7: 1 + 7 + 7² + ... + 7ⁿ = (7ⁿ⁺¹ − 1)/(7 − 1) — the base-7 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  tarot [10, 16, 61]  ·  `a22245d6-01c3…`
+- the geometric series in base 8: 1 + 8 + 8² + ... + 8ⁿ = (8ⁿ⁺¹ − 1)/(8 − 1) — the base-8 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  tarot [21, 50, 4]  ·  `ef918a38-d5e8…`
+- the geometric series in base 9: 1 + 9 + 9² + ... + 9ⁿ = (9ⁿ⁺¹ − 1)/(9 − 1) — the base-9 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  tarot [7, 60, 11]  ·  `7ec7295e-f59f…`
+- the geometric series in base 10: 1 + 10 + 10² + ... + 10ⁿ = (10ⁿ⁺¹ − 1)/(10 − 1) — the base-10 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  tarot [64, 76, 34]  ·  `984a9c4c-396a…`
 
-Page content-address: `fbb75d51-9a5f-820d-bfde-406d9e73cc91`.
+Page content-address: `925eb0e2-0d6b-84af-9ab8-18af3fcf9d0e`.
 
 **Honest bound.** This page presents the *computed structure* — the pentagon, the games, the arts — each a decidable fact re-verified every build. It does not explain life or consciousness; the meaning is the observer's to bring. Geometry, not a claim about being. Deposit 0/7.
