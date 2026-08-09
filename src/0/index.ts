@@ -66,6 +66,14 @@ export function toUuid(seed: string): string {
   return uuid
 }
 
+/** strictUuidna(value) → a STRICT, canonical mint: coerce to string, normalize (NFC), trim — so the SAME
+ *  logical value always mints the SAME address. Minting flaws (toUuid(3) vs toUuid('3'), stray whitespace,
+ *  a decomposed vs composed unicode form) mint inconsistent addresses and silently break integrity — real
+ *  damage. Strict minting closes them. Canonicalisation is a discipline that must stay consistent, not truth. */
+export function strictUuidna(value: unknown): string {
+  return toUuid('uuidna:' + String(value).normalize('NFC').trim())
+}
+
 /** Fold two addresses into one */
 export function merge(a: string, b: string): string {
   return toUuid(`${a}:${b}`)

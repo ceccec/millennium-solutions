@@ -4413,5 +4413,10 @@
     "key": "the_public_urls_are_content_addressed_and_the_current_domain_is_computed_to_its_track",
     "name": "the public URLs are content-addressed and the current domain is computed to its track: each public URL is a distinct uuidna, normalized so case and a trailing slash do not change it; the current domain is computed at runtime and mapped to its license track — org non-profit, com commercial, else preview. The content is the same on all; the license is by domain. This addresses and computes; it does not establish ownership, which needs the published challenge. Decidable",
     "receipt": "fc1a0120-22db-82d8-bb7e-2b0b22822862"
+  },
+  {
+    "key": "strict_uuidna_minting_is_canonical_closing_the_minting_flaws_that_cause_real_damage",
+    "name": "strict uuidna minting is canonical — closing the minting flaws that cause real damage: minting flaws cause real damage — a non-canonical input mints an inconsistent address and integrity breaks. Strict minting closes them: coerce to string, normalize unicode to NFC, trim, so the same logical value always mints the same address; different values still differ. Canonicalisation is a discipline that must stay consistent, not truth; the hash stays non-cryptographic. Decidable",
+    "receipt": "22f71789-95eb-8f3c-8faa-7b2869e7113e"
   }
 ]

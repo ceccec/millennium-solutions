@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 883 recorded in 290 families
+## Discovered theorems (decidable, over ℤ/9) — 884 recorded in 291 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -1175,7 +1175,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (150)
+### other — one-of-a-kind (151)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1306,6 +1306,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [state_vector_exponential_no_advantage](/theorem/state_vector_exponential_no_advantage) — the classical state-vector simulator has no quantum advantage: an n-qubit state has exactly 2^n amplitudes, so simulation cost is exponential in the qubit count — exact for small systems, but no speedup, hence not quantum hardware  ·  `1a2f010c-c2cc…`
 - [steps_are_bounded_by_physics_theorems_are_discovered_by_finite_deeds_not_revealed](/theorem/steps_are_bounded_by_physics_theorems_are_discovered_by_finite_deeds_not_revealed) — steps are bounded by physics — theorems are discovered by finite deeds, not revealed instantly: computation is bounded and classical, so theorems do not reveal themselves; each is discovered by finite work — its test run, verified, sealed. The honest faster is classical: families batching many per loop, memoization skipping the cached — batching and caching within physical limits. Decidable  ·  `c0b4cb19-5e17…`
 - [streams_coexist_without_collision](/theorem/streams_coexist_without_collision) — streams of computation coexist without collision: content-addressing maps distinct inputs to distinct addresses (no collision over the tested space), independent folds give distinct roots, and each fold is order-independent — so parallel streams coexist and merge without collision  ·  `36462f7b-9ba5…`
+- [strict_uuidna_minting_is_canonical_closing_the_minting_flaws_that_cause_real_damage](/theorem/strict_uuidna_minting_is_canonical_closing_the_minting_flaws_that_cause_real_damage) — strict uuidna minting is canonical — closing the minting flaws that cause real damage: minting flaws cause real damage — a non-canonical input mints an inconsistent address and integrity breaks. Strict minting closes them: coerce to string, normalize unicode to NFC, trim, so the same logical value always mints the same address; different values still differ. Canonicalisation is a discipline that must stay consistent, not truth; the hash stays non-cryptographic. Decidable  ·  `22f71789-95eb…`
 - [string_scale_is_a_thread_not_a_physical_theory](/theorem/string_scale_is_a_thread_not_a_physical_theory) — the string scale is a thread, not a physical theory: the string/Planck-scale frequency and acoustic 432 Hz are ~18 orders of magnitude apart — frequency is a shared thread across scales, but the scales are not interchangeable and this is a metaphor, not a theory of everything (0/7, not faster-than-light)  ·  `0107480d-24b0…`
 - [tens_complement_pairs_the_digits](/theorem/tens_complement_pairs_the_digits) — the ten’s-complement reflection pairs the digits (compute.md’s mesh layout, now a theorem): 10−d is an involution on 1..9 pairing 1↔9, 2↔8, 3↔7, 4↔6 and fixing only the centre 5 — four mirror pairs around one centre  ·  `0d37097c-d816…`
 - [tetrahedra_sums_cancel](/theorem/tetrahedra_sums_cancel) — the two tetrahedra residue-sums cancel: (1+4+7)+(2+5+8) ≡ 0 mod 9  ·  `62f28936-0000…`
@@ -1329,4 +1330,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `a9bad4cf-a285-87c6-aaf9-5eb40bcd7b4b`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `7100e6e9-5280-87ab-9128-edff71b8ef91`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
