@@ -3883,5 +3883,25 @@
     "key": "the_master_theorem_777_integrity_not_truth_a_floor_not_an_oracle",
     "name": "the master theorem (777): integrity, not truth — a floor, not an oracle: the whole method in one. Every claim is content-addressed and gate-checked and recomputable across domains, so anyone can verify it independently — the uuid carries the check without the payload. But a content-address proves integrity, not truth or credibility; the gate is a floor that drains a named class of overreach, not a lie-detector — a gate-clean falsehood still passes, so no floor can promise no lie survives. Three states encode anything classically, not at once. There is no propulsion, no thermodynamic miracle, no neurological entanglement. It reflects all seven and solves none. Decidable",
     "receipt": "8674ff9b-aed6-8d6c-9fc5-bc814e4a8dc5"
+  },
+  {
+    "key": "imagine_the_21_crosses_the_pairs_of_the_seven_the_complete_graph_k7",
+    "name": "imagine the 21 crosses — the pairs of the seven, the complete graph K7: the rosette is 6 + 1 = 7 nodes, and their pairwise crosses number C(7,2) = 21 — the edges of the complete graph K7, and the 6th triangular number 1+2+3+4+5+6. With direction the 6×7 / 7×6 cross gives 7×6 = 42 ordered crosses. Each cross is a content-addressed pair-interaction, distinct and reproducible. Pure combinatorics. Decidable",
+    "receipt": "2bbe0dab-6f16-88f9-a5a3-ead772913e0a"
+  },
+  {
+    "key": "do_the_crosses_form_a_cube_no_but_the_seven_are_its_corners_and_the_fano_plane",
+    "name": "do the 21 crosses form a cube? No — but the seven are the cube’s nonzero corners, and their XOR triples are the Fano plane: K7 has 21 edges and a cube has 12, so the crosses are not a cube. Yet the seven nodes are exactly the nonzero corners of the 3-cube {0,1} cubed (the origin dropped), and their XOR-collinear triples a⊕b=c form the Fano plane — 7 points, 7 lines of three, each point on three lines. Decidable",
+    "receipt": "0c2d2fac-89ad-80ba-b173-9cd8aa20166c"
+  },
+  {
+    "key": "the_cross_in_tetris_is_not_a_piece_it_is_the_x_pentomino",
+    "name": "what is the shape of each cross in Tetris? It is not a Tetris piece — the cross is the X-pentomino: a Tetris piece is a tetromino of 4 cells, but a plus cross is a centre plus four arms = 5 cells, so it is a pentomino, not a tetromino — specifically the X-pentomino, one of the 12 free pentominoes, with 4-fold symmetry. The nearest Tetris piece to a cross is the T-tetromino. Tetris itself uses the 7 one-sided tetrominoes — the seven, 6 + 1. Decidable",
+    "receipt": "6bc4adf4-1c66-8d4b-973d-86caadce802f"
+  },
+  {
+    "key": "a_cross_is_a_cross_in_all_dimensions_and_at_six_arms_it_is_the_seven",
+    "name": "a cross is a cross in all dimensions — and at six arms it becomes the seven: the cross generalizes as a centre plus 2n arms = 2n+1 cells. In 2D that is 5, the X-pentomino; in 3D it is 7 — the seven, 6+1; in 4D, 9. Rotate the lattice: the square turns by 90° (4-fold, coordination 4, a cross of 5), the hexagonal by 60° (6-fold, coordination 6, a cross of centre plus six = 7). The surprise is that at coordination six the cross is exactly the seven. Decidable",
+    "receipt": "1fbd6431-19a2-8051-b387-9146ab7fa8a9"
   }
 ]
