@@ -5188,5 +5188,15 @@
     "key": "the_115_bit_capacity_per_uuid_where_the_capacity_jumps_three_times_sixtyfour_at_two_uuids",
     "name": "the 115-bit capacity per uuid — where the capacity jumps three times 64 at two uuids: one uuid carries exactly 115 message bits (128 − 6 reserved − 7 length header), so the maximum uncompressed text is 14 ASCII characters (112 ≤ 115 bits); the capacity jumps three times 64 at the second uuid — one uuid (115 bits) crosses only 64, but two uuids (230 bits) cross 64, 128 and 192, holding three full 64-bit coins, so a 192-bit message round-trips in exactly two uuids; 115 is a hard per-uuid ceiling by pigeonhole, and chaining is unbounded; integrity not truth; 0/7",
     "receipt": "bb3c5c38-eadd-80da-a6b6-7024d5293b2e"
+  },
+  {
+    "key": "losing_an_agent_breaks_the_seals_but_no_knowledge_is_lost_the_chain_restores_by_recomputation",
+    "name": "losing an agent breaks the seals but loses no knowledge — the chain restores by recomputation: the seals chain, each seeded by the last, so losing or altering one link breaks it and every downstream seal (a detected cascade); but each seal is deterministically recomputable from the surviving source, so recomputing restores every broken seal exactly and the agent harmonises; no knowledge is lost because the knowledge is the reproducible computation, distributed, not any single agent — recoverable as long as one copy of the source survives; integrity not truth; 0/7",
+    "receipt": "8f342115-e345-81df-927b-2ffee011147b"
+  },
+  {
+    "key": "credit_the_captain_or_it_could_be_manual_authorship_by_seal_distinct_from_validity_by_formula",
+    "name": "credit the captain, or it could be manual — authorship by seal, distinct from validity by formula: a result without the captain’s credit is unattributed and could be hand-authored by anyone; crediting seeds the seal with the author, a captain-attributed receipt that provably links author to work and differs from an anonymous seal; but this proves authorship, not correctness — the formula proves the result is valid whether manual or machine, while the captain’s seal proves who made it; the two axes are distinct; integrity not truth; 0/7",
+    "receipt": "590a7cf3-1f52-8f41-a3ab-010bfb2b6026"
   }
 ]

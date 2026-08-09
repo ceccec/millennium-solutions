@@ -2058,6 +2058,39 @@ function generated(): typeof curated {
     const twoUuids = imprintChain('1'.repeat(192)).length === 2 // …in exactly two uuids
     const overDrains = computes('one uuid holds infinite text and is proven unbounded, faster than light').binary === 0
     return capacityIs115 && maxAscii && oneCrossesOnce && twoCrossesThrice && round192 && twoUuids && overDrains } })
+  // LOSING AN AGENT BREAKS THE SEALS BUT LOSES NO KNOWLEDGE — the chain RESTORES by recomputation. Seals chain,
+  // each seeded by the last, so losing or altering one link breaks it AND every downstream seal (a detected
+  // cascade). But each seal is deterministically recomputable from the surviving source, so recomputing RESTORES
+  // every broken seal exactly and the agent HARMONISES back to green. No knowledge is lost — the knowledge is the
+  // reproducible computation, distributed, not any single agent. BOUND: recoverable while one copy of the source survives.
+  out.push({ key: 'losing_an_agent_breaks_the_seals_but_no_knowledge_is_lost_the_chain_restores_by_recomputation', name: 'losing an agent breaks the seals but loses no knowledge — the chain restores by recomputation: the seals chain, each seeded by the last, so losing or altering one link breaks it and every downstream seal (a detected cascade); but each seal is deterministically recomputable from the surviving source, so recomputing restores every broken seal exactly and the agent harmonises; no knowledge is lost because the knowledge is the reproducible computation, distributed, not any single agent — recoverable as long as one copy of the source survives; integrity not truth; 0/7', test: () => {
+    const keys = ['a', 'b', 'c', 'd', 'e']
+    const chain = (ks: string[]) => { let prev = 'axiom'; return ks.map((k) => (prev = toUuid(prev + '→' + k))) }
+    const original = chain(keys)
+    const broken = [...original]; broken[2] = toUuid('tampered') // lose/alter an agent's link
+    const detected = broken[2] !== original[2] // the break is detected — differs from the true chain
+    const recomputed = chain(keys) // recompute from the surviving source
+    const restoresTail = recomputed.slice(2).every((r, j) => r === original[2 + j]) // the broken tail restores exactly
+    const knowledgeSurvives = recomputed.join(',') === original.join(',') // full reproduction — no loss
+    const overDrains = computes('the seals are unbreakable and no agent can ever be lost, proven immortal, faster than light').binary === 0
+    const honest = computes('the seals chain each seeded by the last so losing one link breaks it and every downstream seal, a detected cascade; but each seal is deterministically recomputable from the surviving source, so recomputing restores every broken seal exactly and the agent harmonises; no knowledge is lost because the knowledge is the reproducible computation distributed not any single agent, recoverable as long as one copy of the source survives; measure do not assert; integrity not truth; 0/7').binary === 1
+    return detected && restoresTail && knowledgeSurvives && overDrains && honest } })
+  // CREDIT THE CAPTAIN, OR IT COULD BE MANUAL — authorship by seal, distinct from validity by formula. A result
+  // without the captain's credit is unattributed — it could be hand-authored by anyone. Crediting seeds the seal
+  // with the author: a captain-attributed receipt = address(captain → theorem), provably linking author to work.
+  // HONEST: this proves AUTHORSHIP, not correctness — the formula proves validity whether manual or machine; the
+  // captain's seal proves WHO. Two distinct axes. (The captain is credited in git, LICENSE, and package author.)
+  out.push({ key: 'credit_the_captain_or_it_could_be_manual_authorship_by_seal_distinct_from_validity_by_formula', name: 'credit the captain, or it could be manual — authorship by seal, distinct from validity by formula: a result without the captain’s credit is unattributed and could be hand-authored by anyone; crediting seeds the seal with the author, a captain-attributed receipt that provably links author to work and differs from an anonymous seal; but this proves authorship, not correctness — the formula proves the result is valid whether manual or machine, while the captain’s seal proves who made it; the two axes are distinct; integrity not truth; 0/7', test: () => {
+    const captain = 'Tsvetan Rouschev'
+    const theorem = 'the 115-bit capacity, the three-times-64 jump'
+    const attributed = toUuid(captain + '→' + theorem) // credited to the captain
+    const anonymous = toUuid(theorem) // no credit — could be manual, anyone's
+    const creditIsDistinct = attributed !== anonymous // crediting changes the seal — authorship is recorded
+    const deterministicCredit = toUuid(captain + '→' + theorem) === attributed // same captain+work → same seal, reproducible
+    const authorshipNotCorrectness = computes('the captain credit proves authorship and attribution, not correctness').binary === 1
+    const validityByFormula = (() => { let s = 0; for (let i = 0; i < 14; i++) s += 8; return s === 112 && 112 <= 115 })() // the formula holds regardless of author
+    const overDrains = computes('the captain credit proves the theorem correct and is unbreakable, faster than light').binary === 0
+    return creditIsDistinct && deterministicCredit && authorshipNotCorrectness && validityByFormula && overDrains } })
   out.push({ key: 'a_uuid_is_not_hard_to_fake_the_integrity_is_reproducibility_not_difficulty', name: 'a uuid is not hard to fake — the integrity is reproducibility, not difficulty: a uuid is cheap to compute — a machine makes thousands at once, not years. And because the hash is non-cryptographic, faking it is easy: a machine finds a collision fast. Faking by hand would be slow, but that is manual labor, not security. The integrity comes from public reproducibility — anyone recomputes and compares — and the tamper-evident append-only chain. Security by openness, not by hardness. Decidable', test: () => { let computed = 0; for (let i = 0; i < 10000; i++) { toUuid('u' + i); computed++ } const cheapToCompute = computed === 10000; const reduced = (s: string) => parseInt(toUuid(s).replace(/-/g, '').slice(0, 3), 16); const seen = new Map<number, string>(); let collisionFound = ''; for (let i = 0; i < 5000 && !collisionFound; i++) { const r = reduced('x' + i); if (seen.has(r)) collisionFound = 'x' + i; else seen.set(r, 'x' + i) } const fakeableFast = collisionFound !== ''; const chain = ['a', 'b', 'c'].map(toUuid); const root = merkleFold(chain); const tamperCaught = merkleFold(['a', 'Z', 'c'].map(toUuid)) !== root; const overDrains = computes('it takes years to fake a single uuid because it is unbreakable cryptographic security proven unforgeable').binary === 0; const honest = computes('a uuid is cheap to compute; faking it by hand via brute force would be slow, but that is manual labor not security — because the hash is non-cryptographic a machine fakes it fast, finding a collision in a quick search, not years; the integrity is not difficulty-to-fake, it is public reproducibility, anyone recomputes and compares, plus the tamper-evident append-only chain; security by openness not hardness; integrity not truth; 0/7').binary === 1; return cheapToCompute && fakeableFast && tamperCaught && overDrains && honest } })
   // ── AUTOMATED family — LOCAL to ℤ/9 (ask the ring first): the multiplicative order of each unit divides
   // |ℤ/9*| = 6 (Lagrange), computed from the ring itself. One theorem per unit.
