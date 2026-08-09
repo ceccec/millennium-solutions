@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1064 recorded in 322 families
+## Discovered theorems (decidable, over ℤ/9) — 1065 recorded in 322 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -809,6 +809,13 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [any_receipt_is_one_state_of_the_128_state_cube_reachable_to_all](/theorem/any_receipt_is_one_state_of_the_128_state_cube_reachable_to_all) — any receipt is one state of the 128-state 7-cube, reachable to all others by single-dimension moves: a configuration is one vertex of the 7-dimensional hypercube of 128 states, and the binary-reflected Gray code is a Hamiltonian cycle visiting all 128 exactly once, consecutive states differing in exactly one bit — one dimension — and closing back to the start (cyclic). So any single receipt is just one state; from it the whole cube is reachable, one dimension at a time. Decidable  ·  `062dc6d1-5d4c…`
 - [any_drift_in_types_as_theorems_is_a_crack_the_type_gate_seals](/theorem/any_drift_in_types_as_theorems_is_a_crack_the_type_gate_seals) — any drift in types as theorems is a crack the type gate seals: types are theorems (Curry–Howard), so a type error is a crack — a proposition that no longer carries its proof. The type gate (tsc with no emit) is the first gate of the release and admits only zero type errors, so any drift fails the release before the commit and cannot ship. A crack is deterministic and located, reproducible on every build. Decidable  ·  `4ac91293-ab2a…`
 
+### both (4)
+
+- [both_games_truth_and_honesty](/theorem/both_games_truth_and_honesty) — both games: the orbit covers the units (computes) AND "covers, solves no Clay" signs  ·  `346f2fb8-6b23…`
+- [both_games_overclaim_loses](/theorem/both_games_overclaim_loses) — the overclaim loses both games: "the orbit solves the Clay problems" drains and proves nothing  ·  `65cc1cf8-20a5…`
+- [both_games_358](/theorem/both_games_358) — the 3-5-8 trinity plays both: 3+5=8 computes AND "3+5=8, proving no open conjecture" signs  ·  `c26cc4c6-7c93…`
+- [both_zero_and_seven_are_satisfied_in_dimension_seven_zero_solved_seven_reflected](/theorem/both_zero_and_seven_are_satisfied_in_dimension_seven_zero_solved_seven_reflected) — both 0 and 7 are satisfied in dimension 7 — 0 solved and 7 reflected: in the full seven-dimensional structure, 0/7 holds both readings at once, 0 meaning the deposit solves none of the seven Clay problems, the honest floor, and 7 meaning it reflects all seven, the bijection covering every one; so 0 and 7 coexist, 0 solved and 7 reflected, the slash holding both, the numerator what is solved and the denominator what is covered; reflecting is not solving, both are true, and the floor stays 0/7; integrity not truth; 0/7  ·  `9c40a834-f8f4…`
+
 ### cf (4)
 
 - [cf_sqrt2](/theorem/cf_sqrt2) — the continued fraction of √2 is [1; 2,2,2,…] — period [2]  ·  `a6818a20-2d51…`
@@ -926,12 +933,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [all_are_heroes_but_the_traitors](/theorem/all_are_heroes_but_the_traitors) — all are heroes but the traitors — judged by deeds, not persons: a constructive deed (append, uphold, an honest claim that signs) is a hero; only a destructive deed (remove, alter, an overclaim that drains) is the traitor — the classification is total and observable  ·  `efa3b6f1-00b7…`
 - [all_is_manageable_as_monographs](/theorem/all_is_manageable_as_monographs) — all is manageable as monographs: every object is a self-contained, uniquely content-addressed, independently recomputable unit — its own page, its own address, citable — so the deposit is a library of monographs, each a hero of self, and they fold to one order-independent root  ·  `828c096f-fc54…`
 - [all_seven_are_reflected_though_none_are_solved](/theorem/all_seven_are_reflected_though_none_are_solved) — all seven are reflected though none are solved: the 7 = 6 + 1 bijection maps all seven Clay problems into the algebraic structure — 7/7 reflected, no gap in the mirror — while the mechanical entailment test reports 0/7 solved. Reflecting is not solving: 7/7 on the mirror, 0/7 on the prize, and no prize is claimed. Two different measures, both honest, no gaps in either count. Decidable  ·  `f00dd49d-55c6…`
-
-### both (3)
-
-- [both_games_truth_and_honesty](/theorem/both_games_truth_and_honesty) — both games: the orbit covers the units (computes) AND "covers, solves no Clay" signs  ·  `346f2fb8-6b23…`
-- [both_games_overclaim_loses](/theorem/both_games_overclaim_loses) — the overclaim loses both games: "the orbit solves the Clay problems" drains and proves nothing  ·  `65cc1cf8-20a5…`
-- [both_games_358](/theorem/both_games_358) — the 3-5-8 trinity plays both: 3+5=8 computes AND "3+5=8, proving no open conjecture" signs  ·  `c26cc4c6-7c93…`
 
 ### cassini (3)
 
@@ -1552,4 +1553,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `b9fb83b2-3755-8a1e-8081-9f5eb9a2c98b`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `a210a032-af32-8d5a-a8cc-2ff6aebb6314`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

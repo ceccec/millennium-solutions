@@ -5318,5 +5318,10 @@
     "key": "a_commit_reveal_structure_from_uuidna_the_shape_of_a_commitment_self_hosted_not_yet_secure",
     "name": "a commit-reveal structure from uuidna — the shape of a commitment, self-hosted, not yet secure: commit(value, nonce) is the content-address of the value and a nonce, published without revealing the value, and reveal shows the value and nonce so anyone checks the address matches; binding, a different value gives a different commitment over the tested space, and hiding, the commitment does not display the value and a nonce blinds a low-entropy value; but built on the non-cryptographic address it is not secure, a collision breaks binding and brute force breaks the hiding of low-entropy values, so the strength is the work ahead; structure now, cryptographic strength the goal; integrity not truth; 0/7",
     "receipt": "71a30ad7-33b0-84c2-89e0-d8ad4f1241ee"
+  },
+  {
+    "key": "both_zero_and_seven_are_satisfied_in_dimension_seven_zero_solved_seven_reflected",
+    "name": "both 0 and 7 are satisfied in dimension 7 — 0 solved and 7 reflected: in the full seven-dimensional structure, 0/7 holds both readings at once, 0 meaning the deposit solves none of the seven Clay problems, the honest floor, and 7 meaning it reflects all seven, the bijection covering every one; so 0 and 7 coexist, 0 solved and 7 reflected, the slash holding both, the numerator what is solved and the denominator what is covered; reflecting is not solving, both are true, and the floor stays 0/7; integrity not truth; 0/7",
+    "receipt": "9c40a834-f8f4-8a7e-a546-9fdbb55df6fe"
   }
 ]
