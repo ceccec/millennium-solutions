@@ -52,3 +52,16 @@ export function bill(u: Usage): { coins: number; bits: number; free: boolean; ba
   const perFormula = coins() // 2 coins per core formula used
   return { coins: u.coreFormulasUsed * perFormula, bits: u.bitsSaved ?? 0, free: false, basis: perFormula + ' coins per core formula used' }
 }
+
+// Logical content distribution across the two domains for SEO: each page is canonical on EXACTLY ONE
+// domain (avoiding duplicate-content penalties). Public science and the open method → .org (non-profit);
+// commercial licensing, accounting, billing, the comparison, and dev → .com. The strict sitemap lists the
+// canonical URLs. (The build emits these canonicals only when the zones are live — never to a non-live host.)
+export function contentDomain(page: string): 'org' | 'com' {
+  return /^(FUNDING|ACCOUNTING|compare|billing|DEVELOP|license|commercial)/i.test(page) ? 'com' : 'org'
+}
+export function canonicalUrl(page: string): string {
+  const host = contentDomain(page) === 'com' ? 'https://uuidna.com' : 'https://uuidna.org'
+  const p = page === 'index' || page === 'index.md' ? '/' : '/' + page.replace(/\.md$/, '')
+  return host + p
+}
