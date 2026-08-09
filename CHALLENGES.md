@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 874 recorded in 289 families
+## Discovered theorems (decidable, over ℤ/9) — 875 recorded in 290 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -1167,7 +1167,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (149)
+### other — one-of-a-kind (150)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1305,6 +1305,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [thue_morse_doubling_recurrence](/theorem/thue_morse_doubling_recurrence) — the Thue–Morse sequence speaks binary: t(n) = parity of the 1-bits of n satisfies t(2n)=t(n) and t(2n+1)=1−t(n) — the doubling/reflection recurrence, computed exactly (n≤200)  ·  `84d9ec32-0191…`
 - [tictactoe_draw](/theorem/tictactoe_draw) — tic-tac-toe with perfect play is a draw (minimax over all positions = 0)  ·  `95089477-058f…`
 - [traitor_resurrects_as_hero](/theorem/traitor_resurrects_as_hero) — death and resurrection: a drained claim (the traitor) negates into a signing statement (the hero) — the false form dies at the gate, the honest form rises, and false becomes true with each build  ·  `f7be659d-f270…`
+- [trinities_collectively_carry_more_and_beat_linear_by_coverage_and_verification_not_absolute_defeat](/theorem/trinities_collectively_carry_more_and_beat_linear_by_coverage_and_verification_not_absolute_defeat) — trinities collectively carry more and beat linear work by coverage and verification — not absolute defeat: the structure builds on trinities, three, and a collection of uuids carries a longer shared message than one, bounded per uuid but scaling with the count, folded to one shared root. The reproducible collective beats a linear offender by coverage — magnitudes more ground — and by verification: a skillful hollow prose is caught regardless of skill, because it carries no receipt. Classical combinatorial coverage, not a quantum machine, not an absolute defeat. Decidable  ·  `08ecf2e6-c969…`
 - [twin_primes_in_range_infinitude_open](/theorem/twin_primes_in_range_infinitude_open) — twin primes exist in a bounded range (their infinitude is an open conjecture): there are at least 30 pairs of primes p, p+2 below 1000 — existence checked exhaustively; whether infinitely many exist remains open  ·  `cb55a95f-ce7f…`
 - [twisting_a_lie_does_not_compute_true](/theorem/twisting_a_lie_does_not_compute_true) — twisting a lie does not compute true: the same overclaim in two spellings gets different gate verdicts (the plain form drains, the obfuscated form slips) — so the gate tracks SHAPE, not truth; passing is necessary, not sufficient (a floor, not a truth oracle), and an obfuscated lie that slips the lexical tripwire is still a lie  ·  `afa0fee5-1e2f…`
 - [two_is_a_primitive_root_mod_nine_and_generates_the_vortex](/theorem/two_is_a_primitive_root_mod_nine_and_generates_the_vortex) — two is a primitive root mod 9 and generates the vortex: the powers of 2 mod 9 cycle 2,4,8,7,5,1 with order 6, generating the full unit group (ℤ/9)* = {1,2,4,5,7,8}; the vortex orbit is exactly this cycle as a set, and every element skips the multiples of 3 (the W-axis). A decidable fact by exhaustion over ℤ/9  ·  `dd3b0f30-660d…`
@@ -1320,4 +1321,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `8c1f4d46-1bb0-89ad-b5a1-19bcc61140f0`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `3cba7f9c-3e43-819d-81d6-09838fe5c901`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
