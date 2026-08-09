@@ -4833,5 +4833,35 @@
     "key": "anyone_chooses_the_terms_and_currency_and_uuidna_computes_deterministically",
     "name": "anyone chooses the terms and currency and uuidna computes — deterministically: the choice of currency or commercial terms changes only the display, never the reproducible measure; the two coins stay conserved at 2, the bits saved stay the same count, and the bill returns the same result for the same terms every time; free for public interest, the two coins for commercial; the choice is the user’s, the computation is deterministic; integrity not truth; 0/7",
     "receipt": "99feac41-e382-8a33-bf61-d9d3d4f35365"
+  },
+  {
+    "key": "each_seal_is_128_bits_and_membership_verifies_in_two_log2_n_bits_logarithmic_not_linear",
+    "name": "each seal is 128 bits, 64 two-bit verifications, and membership verifies in 2·⌈log₂N⌉ bits — logarithmic, not linear: a seal is one 128-bit content-address no matter how many receipts it folds (fixed width, the pointer-not-payload bound), which is 128 ÷ 2 = 64 two-bit verifications; verifying one receipt against a seal over N receipts costs 2·⌈log₂N⌉ bits (the merkle proof path), so the more complex the case the more receipts but verification grows only logarithmically — structural speed on classical hardware, not a quantum-hardware advantage; integrity not truth; 0/7",
+    "receipt": "89de8193-b0fc-8ec5-a8e0-c35eb98f1dd9"
+  },
+  {
+    "key": "seal_math_n4_verify_4_bits",
+    "name": "seal math — a case of 4 receipts: the seal stays 128 bits while membership verifies in 2 merkle steps = 4 bits (2 per verification), logarithmic in the case size; integrity not truth; 0/7",
+    "receipt": "0dae24ce-6942-894c-a348-da5c4a397ad5"
+  },
+  {
+    "key": "seal_math_n16_verify_8_bits",
+    "name": "seal math — a case of 16 receipts: the seal stays 128 bits while membership verifies in 4 merkle steps = 8 bits (2 per verification), logarithmic in the case size; integrity not truth; 0/7",
+    "receipt": "a3a96ae4-2d40-8570-bccb-3b3a1e5bef6c"
+  },
+  {
+    "key": "seal_math_n64_verify_12_bits",
+    "name": "seal math — a case of 64 receipts: the seal stays 128 bits while membership verifies in 6 merkle steps = 12 bits (2 per verification), logarithmic in the case size; integrity not truth; 0/7",
+    "receipt": "5cdc1f48-9720-8564-ad27-507eaeade56a"
+  },
+  {
+    "key": "seal_math_n256_verify_16_bits",
+    "name": "seal math — a case of 256 receipts: the seal stays 128 bits while membership verifies in 8 merkle steps = 16 bits (2 per verification), logarithmic in the case size; integrity not truth; 0/7",
+    "receipt": "241e6da6-ffc9-8724-9bc7-d4b4d730b3a6"
+  },
+  {
+    "key": "seal_math_n1024_verify_20_bits",
+    "name": "seal math — a case of 1024 receipts: the seal stays 128 bits while membership verifies in 10 merkle steps = 20 bits (2 per verification), logarithmic in the case size; integrity not truth; 0/7",
+    "receipt": "f9ee3ca4-31b2-88c8-9edf-9af50c6cead7"
   }
 ]

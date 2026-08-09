@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 967 recorded in 300 families
+## Discovered theorems (decidable, over ℤ/9) — 973 recorded in 300 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -612,6 +612,15 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [magic3_opposite_cells_sum_10](/theorem/magic3_opposite_cells_sum_10) — in every 3×3 magic square cells opposite through the center sum to 10 = 2·5 — the balancing complement (each cell and its mirror average to the center)  ·  `c527c7e0-2820…`
 - [magic3_constant_digitroot_6](/theorem/magic3_constant_digitroot_6) — the magic constant binds to ℤ/9: dr(15) = 6 — the constant sits on a triad digit, and 15 = 3·5 (the axis 3 times the center)  ·  `673cb9e4-1b3c…`
 
+### seal (6)
+
+- [seal_all_with_uuidna_public_and_indexable_leaking_no_secrets_because_there_are_none](/theorem/seal_all_with_uuidna_public_and_indexable_leaking_no_secrets_because_there_are_none) — seal all with uuidna — public and indexable, leaking no secrets because there are none: every page and claim is a public content-address, indexable in search engines with nothing hidden; it leaks no security even at the deepest level — not because it is secure, but because it is public by design: no secrets or keys to leak, only public content and integrity. The hash is non-cryptographic; no-leak is not the same as secure. Decidable  ·  `bd28c872-64eb…`
+- [seal_math_n4_verify_4_bits](/theorem/seal_math_n4_verify_4_bits) — seal math — a case of 4 receipts: the seal stays 128 bits while membership verifies in 2 merkle steps = 4 bits (2 per verification), logarithmic in the case size; integrity not truth; 0/7  ·  `0dae24ce-6942…`
+- [seal_math_n16_verify_8_bits](/theorem/seal_math_n16_verify_8_bits) — seal math — a case of 16 receipts: the seal stays 128 bits while membership verifies in 4 merkle steps = 8 bits (2 per verification), logarithmic in the case size; integrity not truth; 0/7  ·  `a3a96ae4-2d40…`
+- [seal_math_n64_verify_12_bits](/theorem/seal_math_n64_verify_12_bits) — seal math — a case of 64 receipts: the seal stays 128 bits while membership verifies in 6 merkle steps = 12 bits (2 per verification), logarithmic in the case size; integrity not truth; 0/7  ·  `5cdc1f48-9720…`
+- [seal_math_n256_verify_16_bits](/theorem/seal_math_n256_verify_16_bits) — seal math — a case of 256 receipts: the seal stays 128 bits while membership verifies in 8 merkle steps = 16 bits (2 per verification), logarithmic in the case size; integrity not truth; 0/7  ·  `241e6da6-ffc9…`
+- [seal_math_n1024_verify_20_bits](/theorem/seal_math_n1024_verify_20_bits) — seal math — a case of 1024 receipts: the seal stays 128 bits while membership verifies in 10 merkle steps = 20 bits (2 per verification), logarithmic in the case size; integrity not truth; 0/7  ·  `f9ee3ca4-31b2…`
+
 ### addgen (5)
 
 - [addgen_k2](/theorem/addgen_k2) — 2 additively generates ℤ/9  ·  `0bbffa4b-6e1a…`
@@ -728,6 +737,13 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [chess_knight_8_moves](/theorem/chess_knight_8_moves) — a knight has exactly 8 leaps — the (±1,±2)/(±2,±1) moves  ·  `6dcd739d-87a9…`
 - [chess_knight_color_flip](/theorem/chess_knight_color_flip) — a knight's leap always changes square colour (the parity of r+c flips)  ·  `81566667-a452…`
 - [chess_diagonals_15](/theorem/chess_diagonals_15) — the 8×8 board has 2·8 − 1 = 15 diagonals in each direction  ·  `85a4e4b0-787f…`
+
+### each (4)
+
+- [each_theorem_can_replace_code](/theorem/each_theorem_can_replace_code) — each theorem can replace code: a closed form that holds by exhaustion equals its naive computation, so the formula substitutes for the loop — Gauss’s n(n+1)/2 replaces the summation loop and the sum of the first n odds equals n², each verified equal to the imperative version (the theorem is the optimized, checkable code)  ·  `02be2d16-4a80…`
+- [each_perspective_is_receipted_in_the_superposition](/theorem/each_perspective_is_receipted_in_the_superposition) — each perspective is receipted in the superposition: because order matters, each ordered perspective is a distinct content-address — its own receipt proving that perspective exists (integrity) — and the superposition is the set of all perspectives folded order-independently to one root; observing collapses to one address. This represents the quantum structure classically: not a quantum machine, and no quantum advantage  ·  `4f64e2b7-d236…`
+- [each_page_is_both_white_and_black_paper_a_theme_reflection_involution](/theorem/each_page_is_both_white_and_black_paper_a_theme_reflection_involution) — each page is both white and black paper — a theme reflection involution: every computed object is shown as a page, and each page renders in two themes — light (white) and dark (black) — at the same time for its two viewers; toggling between them is an involution (toggle twice returns), like the ten's-complement reflection 10−d whose fixed point is the neutral 5. The two are reflections of one page, one content-address shown in both polarities. A design duality, not a physics claim. Decidable  ·  `ea03ace1-c964…`
+- [each_seal_is_128_bits_and_membership_verifies_in_two_log2_n_bits_logarithmic_not_linear](/theorem/each_seal_is_128_bits_and_membership_verifies_in_two_log2_n_bits_logarithmic_not_linear) — each seal is 128 bits, 64 two-bit verifications, and membership verifies in 2·⌈log₂N⌉ bits — logarithmic, not linear: a seal is one 128-bit content-address no matter how many receipts it folds (fixed width, the pointer-not-payload bound), which is 128 ÷ 2 = 64 two-bit verifications; verifying one receipt against a seal over N receipts costs 2·⌈log₂N⌉ bits (the merkle proof path), so the more complex the case the more receipts but verification grows only logarithmically — structural speed on classical hardware, not a quantum-hardware advantage; integrity not truth; 0/7  ·  `89de8193-b0fc…`
 
 ### evidence (4)
 
@@ -892,12 +908,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [duel_overclaim_falls](/theorem/duel_overclaim_falls) — no faster-than-light claim is upheld — the assertion drains, its negation stands  ·  `c05da1be-673a…`
 - [duel_no_both_win](/theorem/duel_no_both_win) — a claim and its inverse cannot both be upheld (no position wins for both sides)  ·  `ea632dd9-0682…`
 - [duel_floor_upheld](/theorem/duel_floor_upheld) — "the deposit does not solve the Clay problems" is upheld against its challenge  ·  `4ee11b6a-d6b6…`
-
-### each (3)
-
-- [each_theorem_can_replace_code](/theorem/each_theorem_can_replace_code) — each theorem can replace code: a closed form that holds by exhaustion equals its naive computation, so the formula substitutes for the loop — Gauss’s n(n+1)/2 replaces the summation loop and the sum of the first n odds equals n², each verified equal to the imperative version (the theorem is the optimized, checkable code)  ·  `02be2d16-4a80…`
-- [each_perspective_is_receipted_in_the_superposition](/theorem/each_perspective_is_receipted_in_the_superposition) — each perspective is receipted in the superposition: because order matters, each ordered perspective is a distinct content-address — its own receipt proving that perspective exists (integrity) — and the superposition is the set of all perspectives folded order-independently to one root; observing collapses to one address. This represents the quantum structure classically: not a quantum machine, and no quantum advantage  ·  `4f64e2b7-d236…`
-- [each_page_is_both_white_and_black_paper_a_theme_reflection_involution](/theorem/each_page_is_both_white_and_black_paper_a_theme_reflection_involution) — each page is both white and black paper — a theme reflection involution: every computed object is shown as a page, and each page renders in two themes — light (white) and dark (black) — at the same time for its two viewers; toggling between them is an involution (toggle twice returns), like the ten's-complement reflection 10−d whose fixed point is the neutral 5. The two are reflections of one page, one content-address shown in both polarities. A design duality, not a physics claim. Decidable  ·  `ea03ace1-c964…`
 
 ### entangle (3)
 
@@ -1277,7 +1287,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (153)
+### other — one-of-a-kind (152)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1397,7 +1407,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [riemann_sphere_inversion_swaps_zero_and_infinity](/theorem/riemann_sphere_inversion_swaps_zero_and_infinity) — inversion swaps 0 and ∞ on the Riemann sphere (the README claim, now decidable): z ↦ 1/z is an involution (1/(1/z) = z) that exchanges 0 and ∞ — verified in projective coordinates [p,q]  ·  `68fe3d76-4fac…`
 - [rosetta_complete](/theorem/rosetta_complete) — the rosetta is complete: every domain is one hop from the shared core (the star), all addresses distinct (no collision) — the cross-domain translation covers all, none untranslated  ·  `3aa73d2c-52f8…`
 - [rule90_sierpinski](/theorem/rule90_sierpinski) — Rule 90 (cell = left XOR right) from one seed builds Sierpiński: row n has 2^(popcount n) live cells  ·  `07dbb102-aef1…`
-- [seal_all_with_uuidna_public_and_indexable_leaking_no_secrets_because_there_are_none](/theorem/seal_all_with_uuidna_public_and_indexable_leaking_no_secrets_because_there_are_none) — seal all with uuidna — public and indexable, leaking no secrets because there are none: every page and claim is a public content-address, indexable in search engines with nothing hidden; it leaks no security even at the deepest level — not because it is secure, but because it is public by design: no secrets or keys to leak, only public content and integrity. The hash is non-cryptographic; no-leak is not the same as secure. Decidable  ·  `bd28c872-64eb…`
 - [sealing_is_not_signing](/theorem/sealing_is_not_signing) — sealing is not signing: a merkle seal is deterministic and order-independent, reproducible by anyone — it proves the bytes are intact (integrity), never who authored them (authenticity)  ·  `21b0a512-85e8…`
 - [selfneg_d9](/theorem/selfneg_d9) — 9 is its own additive inverse (2·9 ≡ 0) mod 9  ·  `8d0d0254-5ca1…`
 - [service_to_bind_is_accounted_in_coins](/theorem/service_to_bind_is_accounted_in_coins) — account the coins for the service to bind: each binding (a receipt) is a service accounted at the two coins (110−108 = 2 = −χ genus-2), so N services cost N·2 coins, reinvested into development (destination equals source, a self-loop) — the binding is paid-for, a fair exchange, not free-riding  ·  `cf17043b-3fc6…`
@@ -1434,4 +1443,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `fb8288a8-50e4-8999-97f4-989fb1a768f0`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `2a47d2fc-4622-8375-ae69-8a3cee945c51`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

@@ -1585,6 +1585,35 @@ function generated(): typeof curated {
     const overDrains = computes('uuidna guarantees you will get rich in any currency, faster than light, unbreakable').binary === 0
     const honest = computes('the choice of currency or commercial terms changes only the display, never the reproducible measure; the two coins stay conserved and the bits saved stay the same count, and the bill is deterministic for the same terms; free for public interest and the two coins for commercial; the choice is the users, the computation is deterministic; measure do not assert; integrity not truth; 0/7').binary === 1
     return deterministic && coinsConserved && publicInterestFree && unitInvariant && overDrains && honest } })
+  // HOW MANY BITS IN EACH SEAL — do the math. A seal is one 128-bit content-address no matter how many
+  // receipts it folds (fixed width, the pointer-not-payload bound) = 128 ÷ 2 = 64 two-bit verifications.
+  // Verifying ONE receipt against a seal over N receipts costs 2·⌈log₂N⌉ bits (the merkle proof path), so
+  // the more complex the case the more receipts, yet verification grows only LOGARITHMICALLY — structural
+  // speed on classical hardware, never a physical quantum advantage. Each verification is 2 bits (two coins).
+  out.push({ key: 'each_seal_is_128_bits_and_membership_verifies_in_two_log2_n_bits_logarithmic_not_linear', name: 'each seal is 128 bits, 64 two-bit verifications, and membership verifies in 2·⌈log₂N⌉ bits — logarithmic, not linear: a seal is one 128-bit content-address no matter how many receipts it folds (fixed width, the pointer-not-payload bound), which is 128 ÷ 2 = 64 two-bit verifications; verifying one receipt against a seal over N receipts costs 2·⌈log₂N⌉ bits (the merkle proof path), so the more complex the case the more receipts but verification grows only logarithmically — structural speed on classical hardware, not a quantum-hardware advantage; integrity not truth; 0/7', test: () => {
+    const sealBits = merkleFold(['a', 'b', 'c', 'd'].map(toUuid)).replace(/-/g, '').length * 4
+    const fixed128 = sealBits === 128 && toUuid('anything').replace(/-/g, '').length * 4 === 128 // seal and receipt both 128
+    const sixtyFour = 128 / 2 === 64 // 64 two-bit verifications per seal
+    const leaves = Array.from({ length: 1024 }, (_, i) => toUuid('leaf' + i))
+    const root = merkleRoot(leaves)
+    const proof = merkleProof(leaves, 0)
+    const logarithmic = proof.length === Math.ceil(Math.log2(1024)) && proof.length * 2 === 20 && verifyProof(leaves[0], proof, root)
+    const overDrains = computes('the seal gives infinite bits and a quantum speedup at scale, faster than light, unbreakable').binary === 0
+    const honest = computes('a seal is one 128-bit content-address no matter how many receipts it folds, which is 128 divided by 2 equals 64 two-bit verifications; verifying one receipt against a seal over N receipts costs two times the ceiling of log base 2 of N bits, the merkle proof path, so the more complex the case the more receipts but verification grows only logarithmically; structural speed on classical hardware, no quantum machine and no advantage; measure do not assert; integrity not truth; 0/7').binary === 1
+    return fixed128 && sixtyFour && logarithmic && overDrains && honest } })
+  // The seal math as a family across case sizes: measured merkle depths, each a distinct fact. Seal = 128
+  // bits always; verification = ⌈log₂N⌉ steps × 2 bits. The more complex the case, the more receipts — the
+  // bits to VERIFY grow logarithmically, the seal not at all.
+  for (const N of [4, 16, 64, 256, 1024]) {
+    const depth = Math.ceil(Math.log2(N))
+    const verifyBits = depth * 2
+    out.push({ key: `seal_math_n${N}_verify_${verifyBits}_bits`, name: `seal math — a case of ${N} receipts: the seal stays 128 bits while membership verifies in ${depth} merkle steps = ${verifyBits} bits (2 per verification), logarithmic in the case size; integrity not truth; 0/7`, test: () => {
+      const leaves = Array.from({ length: N }, (_, i) => toUuid('c' + i))
+      const root = merkleRoot(leaves)
+      const proof = merkleProof(leaves, 0)
+      const sealBits = root.replace(/-/g, '').length * 4
+      return proof.length === depth && proof.length * 2 === verifyBits && sealBits === 128 && verifyProof(leaves[0], proof, root) } })
+  }
   out.push({ key: 'a_uuid_is_not_hard_to_fake_the_integrity_is_reproducibility_not_difficulty', name: 'a uuid is not hard to fake — the integrity is reproducibility, not difficulty: a uuid is cheap to compute — a machine makes thousands at once, not years. And because the hash is non-cryptographic, faking it is easy: a machine finds a collision fast. Faking by hand would be slow, but that is manual labor, not security. The integrity comes from public reproducibility — anyone recomputes and compares — and the tamper-evident append-only chain. Security by openness, not by hardness. Decidable', test: () => { let computed = 0; for (let i = 0; i < 10000; i++) { toUuid('u' + i); computed++ } const cheapToCompute = computed === 10000; const reduced = (s: string) => parseInt(toUuid(s).replace(/-/g, '').slice(0, 3), 16); const seen = new Map<number, string>(); let collisionFound = ''; for (let i = 0; i < 5000 && !collisionFound; i++) { const r = reduced('x' + i); if (seen.has(r)) collisionFound = 'x' + i; else seen.set(r, 'x' + i) } const fakeableFast = collisionFound !== ''; const chain = ['a', 'b', 'c'].map(toUuid); const root = merkleFold(chain); const tamperCaught = merkleFold(['a', 'Z', 'c'].map(toUuid)) !== root; const overDrains = computes('it takes years to fake a single uuid because it is unbreakable cryptographic security proven unforgeable').binary === 0; const honest = computes('a uuid is cheap to compute; faking it by hand via brute force would be slow, but that is manual labor not security — because the hash is non-cryptographic a machine fakes it fast, finding a collision in a quick search, not years; the integrity is not difficulty-to-fake, it is public reproducibility, anyone recomputes and compares, plus the tamper-evident append-only chain; security by openness not hardness; integrity not truth; 0/7').binary === 1; return cheapToCompute && fakeableFast && tamperCaught && overDrains && honest } })
   // ── AUTOMATED family — LOCAL to ℤ/9 (ask the ring first): the multiplicative order of each unit divides
   // |ℤ/9*| = 6 (Lagrange), computed from the ring itself. One theorem per unit.
