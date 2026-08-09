@@ -15,6 +15,8 @@ import { computes } from './honesty-gate.ts'
 import { harness, opaque, harnessGain, harness7, reeducate } from './harness.ts'
 import { LOCALES, LOCALE_ORDER } from '../src/7/locale.ts'
 import { merkleRoot, merkleProof, verifyProof } from '../src/0/merkle-proof.ts'
+import { sha256, pbkdf2Sha256 } from '../src/0/sha256.ts'
+import { aeadEncrypt, aeadDecrypt } from '../src/0/chacha.ts'
 import { report as theAll } from '../src/the/index.ts'
 import { report as theSeq } from '../src/the/sequence/index.ts'
 import { report as theThm } from '../src/the/theorem/index.ts'
@@ -2802,6 +2804,20 @@ function generated(): typeof curated {
   }
   // why the complexity? there is none at the core: the whole deposit reduces to one axiom, one fold, one bit.
   out.push({ key: 'complexity_is_only_apparent_minimal_core', name: 'the complexity is only apparent — the deposit reduces to a minimal core: one axiom (TRINITY=3, so BASE=3²=9 and the units, triad, and doubling orbit all derive, none typed as literals), one operation (the order-free content-address fold), and one verdict (the binary gate) — every theorem recomputes from these three, so there is no fundamental complexity, only an emergent mesh', test: () => { const oneAxiom = TRINITY === 3 && BASE === TRINITY ** 2; const derived = units().join(',') === '1,2,4,5,7,8' && triad().join(',') === '3,6,9' && vortexOrbit().join(',') === '1,2,4,8,7,5'; const oneFold = merkleFold(['a', 'b'].map(toUuid)) === merkleFold(['b', 'a'].map(toUuid)); const oneBinary = [computes('0/7 entailed').binary, computes('we prove it').binary].every((b) => b === 0 || b === 1); return oneAxiom && derived && oneFold && oneBinary } })
+  // ── crypto family — the full pure-TS stack, each verified against the standard's official vectors (KATs).
+  // Nothing native: SHA-256/HMAC/PBKDF2 (FIPS/RFC) and ChaCha20-Poly1305 (RFC 8439), all pure TypeScript.
+  {
+    const toh = (u: Uint8Array) => [...u].map((b) => b.toString(16).padStart(2, '0')).join('')
+    const hx = (h: string) => new Uint8Array((h.match(/../g) || []).map((x) => parseInt(x, 16)))
+    const en = (s: string) => new TextEncoder().encode(s)
+    const over = () => computes('unbreakable military-grade encryption').binary === 0
+    const honest = () => computes('a pure TypeScript implementation matching the published test vector; secrecy from the cipher, integrity from the address, not the hash; 0/7').binary === 1
+    out.push({ key: 'pure_ts_sha256_matches_the_fips_180_4_test_vector', name: 'pure-TS SHA-256 matches the FIPS 180-4 test vector — a transparent hash in pure TypeScript, no native crypto and no secrecy claim; integrity, not truth; 0/7', test: () => toh(sha256(en('abc'))) === 'ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad' && over() && honest() })
+    out.push({ key: 'pure_ts_chacha20_poly1305_matches_the_rfc_8439_aead_vector', name: 'pure-TS ChaCha20-Poly1305 matches the RFC 8439 AEAD test vector — real authenticated secrecy in pure TypeScript, checked against the standard’s own vector; not constant-time; 0/7', test: () => { const k = hx('808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9f'); const n = hx('070000004041424344454647'); const a = hx('50515253c0c1c2c3c4c5c6c7'); const p = hx('4c616469657320616e642047656e746c656d656e206f662074686520636c617373206f66202739393a204966204920636f756c64206f6666657220796f75206f6e6c79206f6e652074697020666f7220746865206675747572652c2073756e73637265656e20776f756c642062652069742e'); return toh(aeadEncrypt(k, n, p, a).tag) === '1ae10b594f09e26a7e902ecbd0600691' && over() && honest() } })
+    out.push({ key: 'pure_ts_pbkdf2_hmac_sha256_matches_the_test_vector', name: 'pure-TS PBKDF2-HMAC-SHA256 matches the published test vector — the key derivation is transparent TypeScript, no native WebCrypto; 0/7', test: () => toh(pbkdf2Sha256(en('password'), en('salt'), 1, 32)) === '120fb6cffcf8b32c43e7225256c4f837a86548c92ccc35480805987cb70be17b' && over() && honest() })
+    out.push({ key: 'uuidna_crypt_aead_round_trips_in_pure_typescript', name: 'uuidna crypt round-trips in pure TypeScript — ChaCha20-Poly1305 encrypt then decrypt returns the plaintext, no native crypto; secrecy from the cipher, integrity from the address; 0/7', test: () => { const k = new Uint8Array(32).fill(7); const n = new Uint8Array(12).fill(3); const p = en('beat to windward'); const { ct, tag } = aeadEncrypt(k, n, p); return toh(aeadDecrypt(k, n, ct, tag)) === toh(p) && over() && honest() } })
+    out.push({ key: 'uuidna_crypt_rejects_a_tampered_ciphertext_by_authentication', name: 'uuidna crypt rejects a tampered ciphertext — a flipped tag byte fails Poly1305 authentication, so decryption throws; integrity, not truth; 0/7', test: () => { const k = new Uint8Array(32).fill(7); const n = new Uint8Array(12).fill(3); const { ct, tag } = aeadEncrypt(k, n, en('x')); tag[0] ^= 1; try { aeadDecrypt(k, n, ct, tag); return false } catch { return over() && honest() } } })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

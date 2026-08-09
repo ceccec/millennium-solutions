@@ -5118,5 +5118,30 @@
     "key": "two_to_the_11_is_2048",
     "name": "2^11 = 2048, by repeated doubling — a decidable power of two; integrity not truth; 0/7",
     "receipt": "900023c7-08f1-83dc-9b27-623de3afe0df"
+  },
+  {
+    "key": "pure_ts_sha256_matches_the_fips_180_4_test_vector",
+    "name": "pure-TS SHA-256 matches the FIPS 180-4 test vector — a transparent hash in pure TypeScript, no native crypto and no secrecy claim; integrity, not truth; 0/7",
+    "receipt": "6d222327-6bbe-8d34-9ab5-2f603aa9ab0e"
+  },
+  {
+    "key": "pure_ts_chacha20_poly1305_matches_the_rfc_8439_aead_vector",
+    "name": "pure-TS ChaCha20-Poly1305 matches the RFC 8439 AEAD test vector — real authenticated secrecy in pure TypeScript, checked against the standard’s own vector; not constant-time; 0/7",
+    "receipt": "d350e733-70a6-8819-aaf4-2819552bf4b7"
+  },
+  {
+    "key": "pure_ts_pbkdf2_hmac_sha256_matches_the_test_vector",
+    "name": "pure-TS PBKDF2-HMAC-SHA256 matches the published test vector — the key derivation is transparent TypeScript, no native WebCrypto; 0/7",
+    "receipt": "f0ce4052-5fc1-8a70-bb4c-1f200c69ac98"
+  },
+  {
+    "key": "uuidna_crypt_aead_round_trips_in_pure_typescript",
+    "name": "uuidna crypt round-trips in pure TypeScript — ChaCha20-Poly1305 encrypt then decrypt returns the plaintext, no native crypto; secrecy from the cipher, integrity from the address; 0/7",
+    "receipt": "62e1f13d-b50f-838a-ae08-8f6f2b62c2af"
+  },
+  {
+    "key": "uuidna_crypt_rejects_a_tampered_ciphertext_by_authentication",
+    "name": "uuidna crypt rejects a tampered ciphertext — a flipped tag byte fails Poly1305 authentication, so decryption throws; integrity, not truth; 0/7",
+    "receipt": "7ecfb33a-07b3-8202-ac17-311572db3012"
   }
 ]

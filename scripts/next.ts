@@ -101,15 +101,14 @@ if (message) {
   const ledger: { key: string; name: string; receipt: string }[] =
     existsSync(LEDGER) ? JSON.parse(readFileSync(LEDGER, 'utf8')) : []
   const known = new Set(ledger.map((e) => e.key))
-  // CAP at exactly 1024 (the captain's order): never exceed 1024, and never re-add a key merged into the
-  // revocation ledger (src/proof/revoked.json — the forged message + the 62 capped theorems). Documented, not hidden.
-  const CAP = 1024
+  // CAP LIFTED (the captain's order: "lift the cap and finish the full pure-TS crypto"). The ledger grows
+  // again — every provable fact is discovered. The revocation ledger still excludes merged keys (the forged
+  // message + the earlier capped theorems) — documented, not re-added silently.
   const revokedKeys = existsSync('src/proof/revoked.json')
     ? new Set((JSON.parse(readFileSync('src/proof/revoked.json', 'utf8')) as { key: string }[]).map((r) => r.key))
     : new Set<string>()
   const fresh = provable()
     .filter((c) => !known.has(c.key) && !revokedKeys.has(c.key))
-    .slice(0, Math.max(0, CAP - ledger.length))
   if (fresh.length) {
     // a wave sending wave — discover ALL remaining in one pass; each receipt is seeded by the last,
     // so each discovery sends the next. The wave runs to the edge of the bounded space, then rests.
