@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1054 recorded in 317 families
+## Discovered theorems (decidable, over ℤ/9) — 1055 recorded in 317 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -1121,6 +1121,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [bernoulli_numbers](/theorem/bernoulli_numbers) — Bernoulli numbers via Σ C(n+1,j)B(j)=0: B(1)=−1/2, B(2)=1/6, B(4)=−1/30  ·  `e1488277-afe2…`
 - [bernoulli_odd_zero](/theorem/bernoulli_odd_zero) — the odd Bernoulli numbers vanish: B(3)=B(5)=0 (for k≥1)  ·  `1c8c8337-a2d1…`
 
+### bidirectional (2)
+
+- [bidirectional_encoding_is_the_double_torus](/theorem/bidirectional_encoding_is_the_double_torus) — bidirectional encoding is the double-torus law: a reversible codec has two directions (forward and reverse), a pair whose count 2 = −χ(genus-2) = the two coins (110−108); imprint round-trips (forward∘reverse = identity) and foldPair exposes the two distinct directions — to encode your own statements both ways is to know the genus-2 two-loop structure  ·  `db8365fd-657b…`
+- [bidirectional_7d_authentication_at_the_cost_of_two_bits_per_superposition_fourteen_for_seven](/theorem/bidirectional_7d_authentication_at_the_cost_of_two_bits_per_superposition_fourteen_for_seven) — uuidna bidirectional 7d authentication at the cost of 2 bits per superposition — 14 for seven: each superposition, a receipted perspective, costs exactly two bits to verify, the two-coin unit, so the bidirectional coverage of seven superpositions costs 7 × 2 = 14 bits, a fixed measured cost, not free and not infinite; it remains authentication and integrity, not confidentiality, and the two-bit cost is a classical verification unit, not a quantum speedup; the cost is measured and the encryption goal is named; integrity not truth; 0/7  ·  `9c567b29-07fc…`
+
 ### cancer (2)
 
 - [cancer_inversion_heals](/theorem/cancer_inversion_heals) — the anti-pattern inverts at the gate: an overclaim drains and its honest negation signs — folding a false claim returns it to the floor (no medical claim; "cured cancer" itself drains)  ·  `9ec77026-e0b8…`
@@ -1371,7 +1376,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (164)
+### other — one-of-a-kind (163)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1385,7 +1390,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [bertrand_postulate](/theorem/bertrand_postulate) — Bertrand’s postulate: for every n ≥ 1 there is a prime p with n &lt; p ≤ 2n — a settled theorem, verified exhaustively for all n ≤ 500  ·  `2448b2cf-b204…`
 - [bertrands_postulate](/theorem/bertrands_postulate) — Bertrand's postulate: for every n ≥ 1 there is a prime p with n &lt; p ≤ 2n — verified for all n from 1 to 500. A witness is Bertrand's own chain of primes, each less than twice the previous: 2, 3, 5, 7, 13, 23, 43, 83, 163, 317, 631, 1259, so consecutive members overlap and cover every interval up to 2·631. Verified by exhaustive search  ·  `106fcc1d-7995…`
 - [bezouts_identity_gcd_is_an_integer_combination](/theorem/bezouts_identity_gcd_is_an_integer_combination) — Bézout's identity: for all integers a and b there are integers x and y with a·x + b·y = gcd(a,b) — the greatest common divisor is an integer combination of a and b, computed by the extended Euclidean algorithm. Verified against the kernel gcd for all a, b up to 60. So the gcd is the least positive value that a·x + b·y attains  ·  `34d5d17a-f22b…`
-- [bidirectional_encoding_is_the_double_torus](/theorem/bidirectional_encoding_is_the_double_torus) — bidirectional encoding is the double-torus law: a reversible codec has two directions (forward and reverse), a pair whose count 2 = −χ(genus-2) = the two coins (110−108); imprint round-trips (forward∘reverse = identity) and foldPair exposes the two distinct directions — to encode your own statements both ways is to know the genus-2 two-loop structure  ·  `db8365fd-657b…`
 - [bits_legally_reverse_and_imprint_the_prize_earned_by_harmonic_algebra](/theorem/bits_legally_reverse_and_imprint_the_prize_earned_by_harmonic_algebra) — bits legally reverse and imprint the prize earned by harmonic algebra: the earned prize, written in bits, is imprinted into a signed uuid by the reversible codec and read back exactly (readImprint(imprint(bits)) = bits), so the prize is portable and auditable as a content-address and its number is preserved. This is a lossless reversible encoding under the law — not hash-reversal and not encryption — so reversing it is legal and exact. Decidable  ·  `d27f45a7-4209…`
 - [brahmagupta_fibonacci_identity](/theorem/brahmagupta_fibonacci_identity) — sums of two squares are closed under multiplication (Brahmagupta–Fibonacci): (a²+b²)(c²+d²) = (ac−bd)² + (ad+bc)² — the product of two sums of two squares is again one, verified exhaustively for a,b,c,d ≤ 6  ·  `90e0d01d-96be…`
 - [calkin_wilf_enumerates_rationals_once](/theorem/calkin_wilf_enumerates_rationals_once) — the Calkin–Wilf sequence lists every positive rational exactly once: the ratios a(n)/a(n+1) are pairwise distinct and reduced — no positive rational repeats (verified for n = 1..150)  ·  `03262760-6857…`
@@ -1539,4 +1543,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `e3b3cd36-090b-84c4-b982-7d874cf98fb2`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `f73ad7be-87b1-8c14-8f98-7a98c729976e`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

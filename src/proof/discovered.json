@@ -5268,5 +5268,10 @@
     "key": "a_bidirectional_seven_dimensional_authentication_structure_a_scaffold_toward_encryption_not_yet_secret",
     "name": "a bidirectional seven-dimensional authentication structure — a scaffold toward encryption, not yet secret: the keyed MAC made bidirectional, a forward tag on the message and a reverse tag on the acknowledgment, and covered across the seven dimensions with a keyed tag per perspective, gives the shape of a seven-dimensional authenticated channel; but it provides authentication and integrity, bidirectionally and in all seven perspectives, not confidentiality — the content-address is public, so nothing is hidden; encryption is the goal, this is the authentication scaffold toward it; integrity not truth; 0/7",
     "receipt": "d94a12c4-3610-8619-89a2-77737640603d"
+  },
+  {
+    "key": "bidirectional_7d_authentication_at_the_cost_of_two_bits_per_superposition_fourteen_for_seven",
+    "name": "uuidna bidirectional 7d authentication at the cost of 2 bits per superposition — 14 for seven: each superposition, a receipted perspective, costs exactly two bits to verify, the two-coin unit, so the bidirectional coverage of seven superpositions costs 7 × 2 = 14 bits, a fixed measured cost, not free and not infinite; it remains authentication and integrity, not confidentiality, and the two-bit cost is a classical verification unit, not a quantum speedup; the cost is measured and the encryption goal is named; integrity not truth; 0/7",
+    "receipt": "9c567b29-07fc-8511-9544-226c84065ebf"
   }
 ]
