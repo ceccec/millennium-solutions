@@ -7,4 +7,10 @@
   // `npm run docs:build` runs `predocs:build` first, generating the computed pages (dashboard,
   // boundaries, CHALLENGES, HEART, ACCOUNTING) so no links are dead on a fresh clone.
   "assets": { "directory": ".vitepress/dist" }
+  // Both TLDs: same content, license-differentiated (.org non-profit / .com commercial). Add the zones
+  // to this Cloudflare account, then uncomment to serve on both:
+  // ,"routes": [
+  //   { "pattern": "uuidna.org", "custom_domain": true },
+  //   { "pattern": "uuidna.com", "custom_domain": true }
+  // ]
 }

@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 845 recorded in 283 families
+## Discovered theorems (decidable, over ℤ/9) — 846 recorded in 283 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -860,6 +860,12 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [unit_exp_id_k12](/theorem/unit_exp_id_k12) — every unit u^12 ≡ 1 mod 9  ·  `17a9eeab-619a…`
 - [unit_exp_id_k18](/theorem/unit_exp_id_k18) — every unit u^18 ≡ 1 mod 9  ·  `2b186dab-e777…`
 
+### uuidna (3)
+
+- [uuidna_quantum_verification_recomputes_the_address_and_folds_a_multi_perspective_receipt](/theorem/uuidna_quantum_verification_recomputes_the_address_and_folds_a_multi_perspective_receipt) — uuidna quantum verification — recomputes the address and folds a multi-perspective receipt, integrity not truth: verification recomputes the address from its seed (integrity, reproducible by anyone) and folds a multi-perspective joint receipt that is the same for any observer ordering; a bit-seed round-trips as a bounded imprinted message. The quantum here is the multi-perspective structure, not quantum hardware; verification is integrity, not truth. Decidable  ·  `c7b949e5-38b5…`
+- [uuidna_is_the_brand_og_object_under_cc_and_the_seal_audits_all_prose](/theorem/uuidna_is_the_brand_og_object_under_cc_and_the_seal_audits_all_prose) — uuidna is the brand OG object under Creative Commons — and the seal legally audits all prose: the site brands as uuidna under CC BY-NC, referencing the non-profit and commercial tracks; the seal legally audits all prose — it globs every prose file and drains any that violates the floor, an honest audit, not an oracle. The domain registration is external, taken on the author word, not sealed here. Decidable  ·  `5d35c811-b545…`
+- [uuidna_self_develops_identically_on_both_tlds_same_content_differentiated_by_license](/theorem/uuidna_self_develops_identically_on_both_tlds_same_content_differentiated_by_license) — uuidna self-develops identically on both TLDs — same content, differentiated by license: the build is one content-addressed sealed work, identical on uuidna.org and uuidna.com; the tracks differ by license — non-profit and free on org, commercial on com — not by content. The actual domain zones and DNS are external, the author setup, taken on their word. Decidable  ·  `fbdbc032-078d…`
+
 ### yes (3)
 
 - [yes_a_uuid_carries_a_bounded_message_and_yes_it_is_a_cryptography_family_technique_limits_precise](/theorem/yes_a_uuid_carries_a_bounded_message_and_yes_it_is_a_cryptography_family_technique_limits_precise) — yes — a uuid can carry a bounded message, and yes it is a cryptography-family technique; the limits are precise, not blanket: yes, a uuid can keep a bounded message in itself — the imprint codec builds a uuid holding up to 115 bits and reads them back exactly, reversibly. And yes, content-addressing is a cryptography-family integrity technique, like git and Merkle trees. The precise limits: beyond the capacity it cannot contain, it commits and references by a root; and the hash is not cryptographically secure, with no secrecy — public, no key. Decidable  ·  `354d236e-c693…`
@@ -1121,11 +1127,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [units_sum_zero](/theorem/units_sum_zero) — the units sum to 0 mod 9 (1+2+4+5+7+8=27)  ·  `ec43f3d8-7595…`
 - [units_product_neg1](/theorem/units_product_neg1) — product of the units ≡ 8 ≡ -1 mod 9 (Wilson analog)  ·  `cb8655bf-108e…`
 
-### uuidna (2)
-
-- [uuidna_quantum_verification_recomputes_the_address_and_folds_a_multi_perspective_receipt](/theorem/uuidna_quantum_verification_recomputes_the_address_and_folds_a_multi_perspective_receipt) — uuidna quantum verification — recomputes the address and folds a multi-perspective receipt, integrity not truth: verification recomputes the address from its seed (integrity, reproducible by anyone) and folds a multi-perspective joint receipt that is the same for any observer ordering; a bit-seed round-trips as a bounded imprinted message. The quantum here is the multi-perspective structure, not quantum hardware; verification is integrity, not truth. Decidable  ·  `c7b949e5-38b5…`
-- [uuidna_is_the_brand_og_object_under_cc_and_the_seal_audits_all_prose](/theorem/uuidna_is_the_brand_og_object_under_cc_and_the_seal_audits_all_prose) — uuidna is the brand OG object under Creative Commons — and the seal legally audits all prose: the site brands as uuidna under CC BY-NC, referencing the non-profit and commercial tracks; the seal legally audits all prose — it globs every prose file and drains any that violates the floor, an honest audit, not an oracle. The domain registration is external, taken on the author word, not sealed here. Decidable  ·  `5d35c811-b545…`
-
 ### vandermonde (2)
 
 - [vandermonde_identity](/theorem/vandermonde_identity) — Vandermonde's identity: Σ_k C(m,k)·C(n,p−k) = C(m+n,p) (m,n≤6, all p)  ·  `1302e2f2-1d77…`
@@ -1285,4 +1286,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `7631f987-630d-8c5f-9f36-bde58453f893`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `da1de502-8a16-8cf2-a46d-bd039c0ef2d6`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

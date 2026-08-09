@@ -4223,5 +4223,10 @@
     "key": "exhaustion_is_finite_enumeration_structurally_like_summing_all_states_not_physical",
     "name": "exhaustion is finite enumeration — structurally like summing all states, not physical thermodynamics or quantum mechanics: verified by exhaustion means checking every case in a finite domain, structurally like summing over all microstates or enumerating all basis states, each case a content-address, a uuidna. But it is finite combinatorial enumeration — not physical thermodynamics, no heat or entropy or energy, and not quantum mechanics, no wavefunction or measurement. The analogy is structural, not physical. Decidable",
     "receipt": "f4142a6a-5dad-8fe6-b5bb-c3dd024b44d3"
+  },
+  {
+    "key": "uuidna_self_develops_identically_on_both_tlds_same_content_differentiated_by_license",
+    "name": "uuidna self-develops identically on both TLDs — same content, differentiated by license: the build is one content-addressed sealed work, identical on uuidna.org and uuidna.com; the tracks differ by license — non-profit and free on org, commercial on com — not by content. The actual domain zones and DNS are external, the author setup, taken on their word. Decidable",
+    "receipt": "fbdbc032-078d-8196-a6d0-dde41f339c43"
   }
 ]
