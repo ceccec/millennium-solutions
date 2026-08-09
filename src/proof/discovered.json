@@ -5143,5 +5143,180 @@
     "key": "uuidna_crypt_rejects_a_tampered_ciphertext_by_authentication",
     "name": "uuidna crypt rejects a tampered ciphertext — a flipped tag byte fails Poly1305 authentication, so decryption throws; integrity, not truth; 0/7",
     "receipt": "7ecfb33a-07b3-8202-ac17-311572db3012"
+  },
+  {
+    "key": "pure_ts_sha256_matches_the_vector_for_the_empty_string",
+    "name": "pure-TS SHA-256 matches the FIPS 180-4 vector for the empty string — a transparent hash, no native crypto; 0/7",
+    "receipt": "bd1b63d6-1f0d-866b-91e9-36edd40fd4d8"
+  },
+  {
+    "key": "pure_ts_sha256_matches_the_vector_for_a",
+    "name": "pure-TS SHA-256 matches the FIPS 180-4 vector for the single byte a — transparent, no native crypto; 0/7",
+    "receipt": "dd16d6fc-0ef1-8217-bb45-bfb54a961b87"
+  },
+  {
+    "key": "pure_ts_sha256_matches_the_448_bit_vector",
+    "name": "pure-TS SHA-256 matches the FIPS 180-4 448-bit multi-block vector — transparent, no native crypto; 0/7",
+    "receipt": "7c1b0a7a-67ce-859b-a72e-909ee3e9a9f5"
+  },
+  {
+    "key": "pure_ts_sha256_matches_the_896_bit_vector",
+    "name": "pure-TS SHA-256 matches the FIPS 180-4 896-bit multi-block vector — transparent, no native crypto; 0/7",
+    "receipt": "17e4fa5b-6ea9-8a7c-9dee-822cfb8c5075"
+  },
+  {
+    "key": "pure_ts_sha256_matches_the_quick_fox_vector",
+    "name": "pure-TS SHA-256 matches the published quick-brown-fox vector — transparent, no native crypto; 0/7",
+    "receipt": "743ea505-7e62-8991-87b4-e27c734d0675"
+  },
+  {
+    "key": "pure_ts_sha256_matches_the_quick_fox_period_vector",
+    "name": "pure-TS SHA-256 matches the published quick-brown-fox-with-period vector — one byte changes the whole digest; 0/7",
+    "receipt": "562e4a8d-1039-8b2a-8a88-cdffd53a1611"
+  },
+  {
+    "key": "pure_ts_sha256_matches_the_vector_for_hello",
+    "name": "pure-TS SHA-256 matches the published vector for hello — transparent, no native crypto; 0/7",
+    "receipt": "f527bacc-2402-89b4-bf1c-f97446df9218"
+  },
+  {
+    "key": "pure_ts_chacha20_matches_the_rfc_8439_keystream_vector",
+    "name": "pure-TS ChaCha20 matches the RFC 8439 encryption test vector — the keystream is transparent, no native crypto; 0/7",
+    "receipt": "de4cebc3-9387-8fe7-80f4-59633c360006"
+  },
+  {
+    "key": "the_pure_ts_chacha20_block_is_64_bytes",
+    "name": "the pure-TS ChaCha20 block function outputs exactly 64 bytes — the RFC 8439 block width, decidable; 0/7",
+    "receipt": "c3c57b75-04a1-83ee-9469-633ad8841345"
+  },
+  {
+    "key": "pure_ts_chacha20_is_its_own_inverse_with_the_same_key_counter_nonce",
+    "name": "pure-TS ChaCha20 is its own inverse under the same key, counter and nonce — decrypt undoes encrypt; 0/7",
+    "receipt": "881267b1-4e30-884b-9d9f-9aa3b4a71ee1"
+  },
+  {
+    "key": "the_pure_ts_chacha20_keystream_advances_with_the_counter",
+    "name": "the pure-TS ChaCha20 keystream advances with the block counter — successive blocks differ; 0/7",
+    "receipt": "1fe2cf16-c994-87d8-8116-9a2288606e49"
+  },
+  {
+    "key": "the_pure_ts_chacha20_keystream_depends_on_the_nonce",
+    "name": "the pure-TS ChaCha20 keystream depends on the nonce — a changed nonce changes the block; 0/7",
+    "receipt": "8e5ea30c-bc45-80a3-9e37-fc1ebbbeb46c"
+  },
+  {
+    "key": "the_pure_ts_chacha20_keystream_depends_on_the_key",
+    "name": "the pure-TS ChaCha20 keystream depends on the key — a changed key changes the block; 0/7",
+    "receipt": "dfb1e6de-43a6-8fc1-84ef-5ac9312aefef"
+  },
+  {
+    "key": "the_pure_ts_chacha20_block_is_deterministic",
+    "name": "the pure-TS ChaCha20 block is deterministic — the same inputs give the same block, reproducible; 0/7",
+    "receipt": "246ecf16-9eb7-89bc-8be4-fb637193e1b9"
+  },
+  {
+    "key": "the_pure_ts_chacha20_ciphertext_is_plaintext_xor_keystream",
+    "name": "the pure-TS ChaCha20 ciphertext equals plaintext XOR keystream — a stream cipher by construction; 0/7",
+    "receipt": "1545c99e-ac2a-8125-adf9-a5d9eae28962"
+  },
+  {
+    "key": "pure_ts_poly1305_matches_the_rfc_8439_tag_vector",
+    "name": "pure-TS Poly1305 matches the RFC 8439 MAC test vector — the one-time authenticator is transparent; 0/7",
+    "receipt": "c349f619-a6d9-8aac-9871-8e77383e476c"
+  },
+  {
+    "key": "pure_ts_poly1305_matches_the_all_zero_vector",
+    "name": "pure-TS Poly1305 matches the RFC 8439 all-zero key-and-message vector — a zero tag, decidable; 0/7",
+    "receipt": "fbb80d8e-7541-8a57-beca-aa5d09196fc1"
+  },
+  {
+    "key": "the_pure_ts_poly1305_tag_is_16_bytes",
+    "name": "the pure-TS Poly1305 tag is exactly 16 bytes — the RFC 8439 tag width, decidable; 0/7",
+    "receipt": "e5d408f9-f0c4-8ba5-b085-cd4004b96944"
+  },
+  {
+    "key": "the_pure_ts_poly1305_tag_is_deterministic",
+    "name": "the pure-TS Poly1305 tag is deterministic — the same message and key give the same tag; 0/7",
+    "receipt": "8476964e-e0b2-8020-9a35-4a4153e2e368"
+  },
+  {
+    "key": "the_pure_ts_poly1305_tag_depends_on_the_message",
+    "name": "the pure-TS Poly1305 tag depends on the message — a changed message changes the tag; 0/7",
+    "receipt": "b5ee82b6-c932-82d5-9128-4f7537969941"
+  },
+  {
+    "key": "the_pure_ts_poly1305_tag_depends_on_the_key",
+    "name": "the pure-TS Poly1305 tag depends on the one-time key — a changed key changes the tag; 0/7",
+    "receipt": "5b5aab90-28f0-8bbe-a876-4b655d5ce061"
+  },
+  {
+    "key": "the_pure_ts_poly1305_tags_an_empty_message",
+    "name": "the pure-TS Poly1305 tags an empty message to a 16-byte tag — the padding rule holds; 0/7",
+    "receipt": "89fc8d47-1ba8-882c-aa05-3a441ab9b1ce"
+  },
+  {
+    "key": "pure_ts_poly1305_matches_the_rfc_8439_a3_s_only_vector",
+    "name": "pure-TS Poly1305 matches the RFC 8439 A.3 s-only test vector — the r=0 case returns s; 0/7",
+    "receipt": "60d05e04-ba74-8f5e-acc9-87dd335e676e"
+  },
+  {
+    "key": "pure_ts_pbkdf2_hmac_sha256_matches_the_two_iteration_vector",
+    "name": "pure-TS PBKDF2-HMAC-SHA256 matches the published two-iteration vector — transparent key derivation; 0/7",
+    "receipt": "ea298776-dafe-8bfb-a034-5bd348b1ef6d"
+  },
+  {
+    "key": "pure_ts_pbkdf2_hmac_sha256_matches_the_4096_iteration_vector",
+    "name": "pure-TS PBKDF2-HMAC-SHA256 matches the published 4096-iteration vector — transparent key derivation; 0/7",
+    "receipt": "db47b21a-6870-845b-9d6f-7ec09d694d2c"
+  },
+  {
+    "key": "pure_ts_pbkdf2_hmac_sha256_matches_the_40_byte_vector",
+    "name": "pure-TS PBKDF2-HMAC-SHA256 matches the published 40-byte multi-block vector — transparent; 0/7",
+    "receipt": "e0987365-ecd6-8b31-93ed-f37f8741840f"
+  },
+  {
+    "key": "pure_ts_hmac_sha256_matches_rfc_4231_case_1",
+    "name": "pure-TS HMAC-SHA256 matches RFC 4231 test case 1 — transparent message authentication; 0/7",
+    "receipt": "da6cabfe-c551-80ef-a5b0-37817493585a"
+  },
+  {
+    "key": "pure_ts_hmac_sha256_matches_rfc_4231_case_2",
+    "name": "pure-TS HMAC-SHA256 matches RFC 4231 test case 2, the Jefe vector — transparent; 0/7",
+    "receipt": "238e355e-a994-8998-8b9b-c85197e69e6d"
+  },
+  {
+    "key": "pure_ts_hmac_sha256_matches_rfc_4231_case_4",
+    "name": "pure-TS HMAC-SHA256 matches RFC 4231 test case 4 — transparent message authentication; 0/7",
+    "receipt": "d0aff6db-1e39-8db2-97c9-dc3b712ec9ca"
+  },
+  {
+    "key": "the_pure_ts_pbkdf2_prefix_is_consistent_across_lengths",
+    "name": "the pure-TS PBKDF2 output is prefix-consistent across derived-key lengths — a shorter key is the prefix of a longer; 0/7",
+    "receipt": "0d6ce721-905a-862f-82fd-d3bd0748a39f"
+  },
+  {
+    "key": "uuidna_crypt_rejects_tampered_associated_data",
+    "name": "uuidna crypt rejects tampered associated data — a changed AAD fails Poly1305 authentication; 0/7",
+    "receipt": "05b33e1a-8698-8454-b05c-9e79c9a28350"
+  },
+  {
+    "key": "uuidna_crypt_aead_is_deterministic_given_key_and_nonce",
+    "name": "uuidna crypt AEAD is deterministic given key and nonce — the same inputs seal to the same ciphertext and tag, reproducible; 0/7",
+    "receipt": "a7f1fa8c-246c-8c85-b2ff-9d1262d8d4e5"
+  },
+  {
+    "key": "uuidna_crypt_aead_ciphertext_depends_on_the_nonce",
+    "name": "uuidna crypt AEAD ciphertext depends on the nonce — a changed nonce changes the ciphertext; 0/7",
+    "receipt": "d09d0ee4-7e96-87da-bb93-f706ce53fdf8"
+  },
+  {
+    "key": "uuidna_crypt_aead_round_trips_an_empty_plaintext",
+    "name": "uuidna crypt AEAD round-trips an empty plaintext — the tag authenticates the empty message; 0/7",
+    "receipt": "37f63daa-d8e0-85e6-869a-7527760c8059"
+  },
+  {
+    "key": "uuidna_crypt_aead_ciphertext_depends_on_the_key",
+    "name": "uuidna crypt AEAD ciphertext depends on the key — a changed key changes the ciphertext; 0/7",
+    "receipt": "65f00e32-b6ee-8ca8-9e90-95e08e15a762"
   }
 ]
