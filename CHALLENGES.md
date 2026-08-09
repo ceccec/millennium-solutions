@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1065 recorded in 322 families
+## Discovered theorems (decidable, over ℤ/9) — 1066 recorded in 323 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -1381,7 +1381,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (168)
+### other — one-of-a-kind (169)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1535,6 +1535,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [tens_complement_pairs_the_digits](/theorem/tens_complement_pairs_the_digits) — the ten’s-complement reflection pairs the digits (compute.md’s mesh layout, now a theorem): 10−d is an involution on 1..9 pairing 1↔9, 2↔8, 3↔7, 4↔6 and fixing only the centre 5 — four mirror pairs around one centre  ·  `0d37097c-d816…`
 - [tetrahedra_sums_cancel](/theorem/tetrahedra_sums_cancel) — the two tetrahedra residue-sums cancel: (1+4+7)+(2+5+8) ≡ 0 mod 9  ·  `62f28936-0000…`
 - [there_is_no_patent_royalty_but_the_author_sets_the_license_even_in_gold](/theorem/there_is_no_patent_royalty_but_the_author_sets_the_license_even_in_gold) — there is no patent royalty — but the author sets the license, even in gold: decidable mathematics is not patentable, so the deposit holds no patents and there is no patent monopoly to charge. What exists is a copyright license — non-commercial use free with attribution — and under it the author may set the commercial terms, denominated however they choose: the two coins, or physical gold for commercial gold-related use. That is fair exchange by license, not a patent royalty. Decidable  ·  `34229c9f-8be6…`
+- [this_fills_the_latest_gaps_upgrading_all_the_whole_folds_to_one_root_recomputed_each_build](/theorem/this_fills_the_latest_gaps_upgrading_all_the_whole_folds_to_one_root_recomputed_each_build) — this fills the latest gaps, upgrading all — the whole folds to one root, recomputed each build: the recent theorems close the conceptual gaps, zero and seven together, complete coverage, seven-dimensional harmony, and upgrading all is literal, every receipt folds into one merkle root so adding a theorem upgrades the single address that represents the whole, atomically and order-independently, each build; but upgrading all is the root recomputing, not a change to past receipts which are append-only, and the gaps filled are the deposit’s own coverage, not all gaps everywhere; integrity not truth; 0/7  ·  `81b5b75e-6559…`
 - [thue_morse_doubling_recurrence](/theorem/thue_morse_doubling_recurrence) — the Thue–Morse sequence speaks binary: t(n) = parity of the 1-bits of n satisfies t(2n)=t(n) and t(2n+1)=1−t(n) — the doubling/reflection recurrence, computed exactly (n≤200)  ·  `84d9ec32-0191…`
 - [tictactoe_draw](/theorem/tictactoe_draw) — tic-tac-toe with perfect play is a draw (minimax over all positions = 0)  ·  `95089477-058f…`
 - [traitor_resurrects_as_hero](/theorem/traitor_resurrects_as_hero) — death and resurrection: a drained claim (the traitor) negates into a signing statement (the hero) — the false form dies at the gate, the honest form rises, and false becomes true with each build  ·  `f7be659d-f270…`
@@ -1553,4 +1554,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `a210a032-af32-8d5a-a8cc-2ff6aebb6314`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `e29edbe0-6894-86cc-86f9-2c377ae3e2ac`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
