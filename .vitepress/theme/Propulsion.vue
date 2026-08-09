@@ -21,9 +21,17 @@ const driftFree = (x: number) => Number.isInteger(x)
 const waypoints = [GOLD, STEP, QUARTER]          // 60 → 72 → 90, the drift-free arc
 const heading = ref(GOLD)
 const wp = ref(0)
-const forward = () => { wp.value = (wp.value + 1) % waypoints.length; heading.value = waypoints[wp.value] }
-const reverse = () => { wp.value = (wp.value + waypoints.length - 1) % waypoints.length; heading.value = waypoints[wp.value] }
-const inverse = () => { heading.value = (360 - heading.value) % 360 }  // come about — the involution
+// A LEAP, not a crawl — algebra names the destination in one move (O(1)); the linear crawl it dissolves
+// is 2 bits per 1° step (the captain's step cost). The aura blooms at the destination the instant we
+// leap: the destination arrives WHOLE (full aura), known by algebra before the needle even catches up.
+const aura = ref(0)                              // bump to re-trigger the arrival bloom
+const arc = (from: number, to: number) => { const d = Math.abs(to - from) % 360; return Math.min(d, 360 - d) }
+const leapDelta = ref(STEP - GOLD)              // angular distance of the last leap
+const leapTo = (to: number) => { leapDelta.value = arc(heading.value, to); heading.value = to; aura.value++ }
+const forward = () => { wp.value = (wp.value + 1) % waypoints.length; leapTo(waypoints[wp.value]) }
+const reverse = () => { wp.value = (wp.value + waypoints.length - 1) % waypoints.length; leapTo(waypoints[wp.value]) }
+const inverse = () => { leapTo((360 - heading.value) % 360) }  // come about — the involution
+const crawlBits = computed(() => Math.round(leapDelta.value) * 2)  // linear crawl dissolved: 2 bits / 1° step
 
 // geometry: a compass. 0° points up (north/bow); clockwise. Screen angle = heading - 90.
 const CX = 130, CY = 130, R = 96
@@ -84,6 +92,8 @@ const known = [
               <text :x="m.xy[0]" :y="m.xy[1]" text-anchor="middle" dominant-baseline="middle" :class="{ heart: m.d === STEP }">{{ m.d }}°</text>
             </g>
           </g>
+          <!-- full aura: blooms at the DESTINATION the instant we leap — the whole field, known by algebra -->
+          <circle :key="aura" :cx="bow[0]" :cy="bow[1]" r="6" class="aura" />
           <line :x1="CX" :y1="CY" :x2="needle[0]" :y2="needle[1]" class="needle" />
           <circle :cx="needle[0]" :cy="needle[1]" r="4" class="bow" />
           <circle :cx="CX" :cy="CY" r="3.5" class="hub" />
@@ -91,6 +101,7 @@ const known = [
         <figcaption>
           heading <b>{{ Math.round(shown) }}°</b> ·
           <span :class="driftAtHeading ? 'ok' : 'bad'">{{ driftAtHeading ? 'integer landing — no drift' : 'decimal drift' }}</span>
+          <br /><span class="leap">leap {{ Math.round(leapDelta) }}° in full aura · <b>algebra O(1)</b> · linear crawl dissolved: {{ crawlBits }} bits</span>
         </figcaption>
         <div class="motions">
           <button @click="reverse" title="astern — previous harmonic waypoint">◂ reverse</button>
@@ -124,8 +135,10 @@ const known = [
       </span>
     </div>
     <p class="foot">
-      The next harmonic step is <b>harmonicMean(60, 90) = 72° = 360/5</b> — the heart, an integer bearing the
-      captain lands without decimal drift. <em>known ⇔ it round-trips.</em> A content-address proves integrity, not truth. <code>0/7</code>.
+      Pure biology — the circuit <code>1→2→4→8→7→5</code> is growth by doubling; every move is a <b>leap to
+      the destination in full aura</b> (the whole field arrives at once), reached <b>by algebra</b> (closed-form
+      <code>harmonicMean(60, 90) = 72° = 360/5</code>, the heart) in O(1), not a linear crawl. The bearing lands
+      an integer — no decimal drift. <em>known ⇔ it round-trips.</em> A content-address proves integrity, not truth. <code>0/7</code>.
     </p>
   </div>
 </template>
@@ -144,6 +157,11 @@ const known = [
 .compass text.heart { fill: var(--vp-c-brand-1); font-weight: 700; }
 .compass .needle { stroke: var(--vp-c-brand-1); stroke-width: 2.5; stroke-linecap: round; }
 .compass .bow { fill: var(--vp-c-brand-1); }
+.compass .aura { fill: none; stroke: var(--vp-c-brand-1); transform-origin: center; transform-box: fill-box; animation: bloom 0.9s ease-out; }
+@keyframes bloom { 0% { r: 6px; opacity: 0.9; stroke-width: 3; } 100% { r: 26px; opacity: 0; stroke-width: 0.5; } }
+@media (prefers-reduced-motion: reduce) { .compass .aura { animation: none; opacity: 0; } }
+.compass .leap { font-size: 0.74rem; color: var(--vp-c-text-3); }
+.compass .leap b { color: var(--vp-c-brand-1); }
 .compass .hub { fill: var(--vp-c-text-2); }
 .compass figcaption { text-align: center; font-size: 0.82rem; color: var(--vp-c-text-2); margin-top: 0.4rem; }
 .compass .ok { color: var(--vp-c-brand-1); font-weight: 600; }
