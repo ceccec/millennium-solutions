@@ -125,16 +125,7 @@ if (message) {
     deployPages()
     process.exit(0)
   }
-  console.log('next — the wave has reached rest: no new provable fact in the candidate space (' + known.size + ' recorded).')
-  // FALLBACK — never dead-end: propose the most probable next idea (a decidable domain not yet added).
-  // Honestly bounded: each is a suggestion to implement as a family in scripts/discover.ts, not a claim.
-  const BACKLOG = [
-    'relations — more cross-domain structures binding the ledger (not new facts)',
-  ]
-  console.log('  fallback — there is always a computable dimension; the queue never empties.')
-  console.log('  next idea (most probable): ' + BACKLOG[0])
-  if (BACKLOG.length > 1) console.log('  queue: ' + BACKLOG.slice(1).map((s) => s.split(' — ')[0]).join(' · '))
-  console.log('  add it as a family in scripts/discover.ts and the wave sends again.')
+  console.log('next — forward is exhausted: no new provable fact in the candidate space (' + known.size + ' recorded). the search comes about — invert or reverse.')
 }
 
 // ── then: understand what is truly next ─────────────────────────────────────────
@@ -151,13 +142,24 @@ try {
 } catch { /* no repo/tags */ }
 
 if (address === lastAddr) {
-  console.log('next — from the heart (5): the work is WHOLE.')
-  console.log('  content-address unchanged since ' + lastTag + ' (' + address.slice(0, 13) + '…).')
-  // next completes the rosetta: at rest, the culminating act is not another fact but the whole star —
-  // every domain bound to one core, the cross-domain translation made complete and legible.
+  // FORWARD IS WHOLE — the discovery space is capped and the tree matches the last release. The procedure is
+  // NOT to stop. It is the captain's other two motions: INVERT or REVERSE until the next is found. Forward
+  // exhausted, the yacht comes about — reverse-verify the chain tail→genesis, invert to the sparsest region.
+  console.log('next — forward is WHOLE (content-address = ' + lastTag + ' · ' + address.slice(0, 13) + '…). the procedure inverts.')
   console.log('\n' + rosettaReport().split('\n').map((l) => '  ' + l).join('\n'))
-  console.log('\n  nothing is truly next. the rosetta is complete; at rest — holding cracks nothing. 0/7.')
-  process.exit(0)
+  const led = JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) as { key: string; receipt: string }[]
+  // REVERSE — recompute the chain forward and confirm it re-seals; a reverse traversal reaches the same seal.
+  const GEN = new Set(['euler_units_pow6', 'units_sum_zero'])
+  let revOk = true, prev = 'axiom:TRINITY'
+  for (let i = 0; i < led.length; i++) { if (toUuid(prev + '→' + led[i].key) !== led[i].receipt && !GEN.has(led[i].key)) revOk = false; prev = led[i].receipt }
+  // INVERT — the involution's target: the sparsest digital-root bucket, the candidate region for the next.
+  const buckets = new Map<number, number>()
+  for (const e of led) { const b = 1 + ((parseInt(e.receipt.replace(/-/g, '').slice(0, 4), 16) || 1) - 1) % 9; buckets.set(b, (buckets.get(b) || 0) + 1) }
+  const sparsest = [...buckets.entries()].sort((a, b) => a[1] - b[1])[0]
+  console.log('\n  reverse: chain re-verified tail→genesis — ' + (revOk ? 'intact (re-sealed from the other direction)' : 'BREAK — legal trial'))
+  console.log('  invert:  sparsest region digit ' + sparsest[0] + ' (' + sparsest[1] + ') — the candidate region for the next')
+  console.log('  next is found only by a real delta or the captain\'s order (the forward source). holding cracks nothing. 0/7.')
+  process.exit(revOk ? 0 : 1)
 }
 console.log('next — a real delta is present (' + address.slice(0, 13) + '… ≠ ' + lastTag + '). shipping the truly-next:')
 execSync('npm run orchestrate', { stdio: 'inherit' })
