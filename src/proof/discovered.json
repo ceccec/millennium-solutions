@@ -4143,5 +4143,10 @@
     "key": "the_prize_is_the_personal_imprint_your_identity_in_the_lineage_not_the_clay_money",
     "name": "the prize is the personal imprint — your identity in the lineage, not the Clay money: the prize is your identity, a seed in every content-address you contribute, imprinted along the way, so the lineage carries your authorship — reproducible and attributable, and a bounded personal signature can be imprinted into a uuid and read back. This is the honest reward: the self woven into the work, not the Clay money — no prize claimed. The uuidna is the content-addressed identity and lineage, a metaphor, not biological DNA. Decidable",
     "receipt": "9d00c62b-0169-8100-b4f8-aa8f70a77a20"
+  },
+  {
+    "key": "cayley_formula_labeled_trees_prufer",
+    "name": "Cayley formula — the number of labeled trees on n nodes is n^(n−2), by the Prüfer bijection: every sequence of length n−2 over n labels decodes to a distinct labeled tree and re-encodes back exactly, a bijection, so the trees number n^(n−2). Verified constructively for n up to 6 (1, 3, 16, 125, 1296), each sequence round-tripped through decode and encode. Decidable",
+    "receipt": "05d4c66b-81cc-83b7-ab7e-daaf8f196d49"
   }
 ]
