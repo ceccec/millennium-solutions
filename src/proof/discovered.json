@@ -5178,5 +5178,10 @@
     "key": "eight_times_eight_is_sixtyfour_the_captains_recognition_is_the_seal_not_correctness",
     "name": "8 × 8 = 64 — the captain’s recognition is the seal, not correctness: eight times eight is sixty-four, the width of the 64-bit seal (coin64, 16 hex), which is the captain’s recognition — the author credited by a reproducible content-address, accounted for in every seal; but recognition is identity and authorship, not correctness, so the captain is credited, never declared correct — the floor stays 0/7; integrity not truth; 0/7",
     "receipt": "9977a984-3e91-8622-a1d4-4863653ad857"
+  },
+  {
+    "key": "no_payload_messaging_delivers_private_by_shared_context_not_hard_cryptography_cheap_and_lossy",
+    "name": "no-payload messaging delivers, private by shared context, not by hard cryptography: you message by sending an address, a uuid, moving no payload, and the receiver who shares the secret context that maps address to meaning recovers it — it delivers — while an outsider sees only an opaque value; the address is cheap to compute and lossy — a fixed-width address cannot be inverted to arbitrary input by pigeonhole — but this is not infinite-to-reverse cryptography, the hash is non-cryptographic and collisions are cheap; privacy is the shared context secrecy, not the hash; integrity not truth; 0/7",
+    "receipt": "b2958ba8-4a60-82f7-8bfc-b80eb9372b89"
   }
 ]
