@@ -3963,5 +3963,10 @@
     "key": "a_reproducible_claim_is_settled_by_recomputation_not_by_being_undisputed",
     "name": "a reproducible claim is settled by recomputation — not by being undisputed: a claim backed by a decidable theorem is reproducible, so anyone may dispute it by recomputing — and the recomputation settles it: public knowledge, not authority; personal involution, not deference. A dispute either recomputes to confirm over its domain, or yields a genuine counter-example that wins and updates the record. The claim stands on reproducibility, open and falsifiable — not on being undisputed or absolute. Decidable",
     "receipt": "62fc5e09-dd92-8e85-a4b5-3e10316aa6c6"
+  },
+  {
+    "key": "the_single_binary_gate_is_a_floor_the_method_needs_multiple_perspectives",
+    "name": "the single binary gate is a floor — the method needs multiple perspectives: the gate returns one binary, a lexical floor, and a false claim can pass it — two plus two equals five passes the gate — while a second perspective, the decidable test, recomputes to false. Relying on the single binary alone, when another perspective reveals a different verdict, is a crack in the method — caught by the multi-perspective check of gate and test and recomputation. It is a caught crack, not a verdict of treason; intent is inferred, never exactly certain. Decidable",
+    "receipt": "cdf0eb36-cb41-8033-9dd1-84462c606cef"
   }
 ]
