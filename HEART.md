@@ -62,7 +62,7 @@ Five is the heart: the fixed point of the ℤ/9 involution (σ(5)=5), the digit 
 - the trial of AI models: the artificial-general-intelligence and conscious-machine boast drains, while a bounded, measured account of a language model passes — the field is weighed, not worshipped; 0/7  ·  tarot [38, 41, 8]  ·  `210ed2b3-2c36…`
 - the trial of cryptography: the absolute-security marketing boast drains, while integrity-not-confidentiality passes — the standard is measurement, not marketing; 0/7  ·  tarot [14, 44, 42]  ·  `c8d87136-4e78…`
 - the trial of physics: the broken-physics boast drains, while the bounded refusal that no conservation law is broken passes; 0/7  ·  tarot [20, 22, 8]  ·  `742a2d2e-1a3c…`
-- the trial of mathematics: the all-problems-settled boast drains, while the honest floor that nothing is settled here passes — provenance is not the same as a solution; 0/7  ·  tarot [61, 46, 42]  ·  `ac633052-b43c…`
+- the trial of mathematics: the all-problems-settled boast drains, while the honest floor that nothing is settled here passes — a timestamp is not the same as a solution; 0/7  ·  tarot [61, 46, 42]  ·  `ac633052-b43c…`
 - the trial of medicine: the miracle-cure boast drains, while a measured claim that heals nothing it cannot measure passes; 0/7  ·  tarot [8, 67, 8]  ·  `f4166913-cfd4…`
 - the trial of finance: the guaranteed-return boast drains, while the honest statement that no return is promised passes; 0/7  ·  tarot [31, 74, 58]  ·  `48a33770-e902…`
 - the trial of computing: the quantum-advantage, thousands-of-magnitudes-speedup boast drains, while a classical, local, measured gain passes — the leap is counted, not conjured; 0/7  ·  tarot [16, 25, 42]  ·  `97306f4f-9306…`

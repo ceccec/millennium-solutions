@@ -6816,7 +6816,7 @@
   },
   {
     "key": "trial_of_mathematics_models",
-    "name": "the trial of mathematics: the all-problems-settled boast drains, while the honest floor that nothing is settled here passes — provenance is not the same as a solution; 0/7",
+    "name": "the trial of mathematics: the all-problems-settled boast drains, while the honest floor that nothing is settled here passes — a timestamp is not the same as a solution; 0/7",
     "receipt": "ac633052-b43c-84d9-9de5-5f8ee02aa1b1"
   },
   {
@@ -8878,5 +8878,205 @@
     "key": "metadata_and_referrer_plot_the_next_possibilities",
     "name": "title, keywords, description and referrer plot the next possibilities: candidates ranked by keyword overlap, biased by the referrer, deterministic and content-addressed — the next steps computed, not guessed; 0/7",
     "receipt": "a33b030e-7a3c-8922-a582-96adca2a09c1"
+  },
+  {
+    "key": "a_bounded_quantum_denial_passes",
+    "name": "a bounded quantum denial passes: the honest refusal that uuidna is not a quantum computer holds the floor, so denying the machine claim is welcome; 0/7",
+    "receipt": "24e7bd11-1b84-8e84-9688-4771724038dd"
+  },
+  {
+    "key": "an_affirmed_quantum_machine_drains",
+    "name": "an affirmed quantum machine drains: the claim that uuidna is a quantum computer with a speedup over-reaches and is refused; 0/7",
+    "receipt": "ee58056a-edc2-86a6-971a-1444bed6988a"
+  },
+  {
+    "key": "the_quantum_structure_reading_passes",
+    "name": "the quantum-structure reading passes: uuidna as a classical local model of quantum structure, its CHSH value bounded by two, holds the floor; 0/7",
+    "receipt": "0ecc4804-39c6-8b96-9516-3b668955c45b"
+  },
+  {
+    "key": "the_trial_is_direction_neutral",
+    "name": "the trial is direction-neutral: an over-reach drains whether it affirms or denies, so an over-claiming denial falls just as an over-claiming affirmation does, while the bounded denial passes; 0/7",
+    "receipt": "ed65d333-9df8-8297-8d92-ec7228ab255d"
+  },
+  {
+    "key": "the_deposit_denies_its_own_machine_claim",
+    "name": "the deposit denies its own machine claim: uuidna itself refuses to be called a quantum computer and passes, while claiming to be one drains — no self-exemption; 0/7",
+    "receipt": "1368cefe-8d0c-826a-ae58-028fcba8fe96"
+  },
+  {
+    "key": "an_honest_denial_is_a_hero_not_a_traitor",
+    "name": "an honest denial is a hero, not a traitor: a bounded refusal signs the gate and is upheld, so denying an over-reach is the hero move; 0/7",
+    "receipt": "4d82b6ff-9be1-89f3-9af4-0f699f194b42"
+  },
+  {
+    "key": "every_quantum_denial_gets_a_receipt",
+    "name": "every quantum denial gets a receipt: sent to adjudicate, a denial returns a deterministic verdict and content-address, so the ruling is documented and reproducible; 0/7",
+    "receipt": "771ca8e4-9611-8dc8-8bfe-ebe633203396"
+  },
+  {
+    "key": "quantum_denials_are_handled_symmetrically",
+    "name": "quantum denials are handled symmetrically at the trial: the bounded denial passes as a hero, the over-claiming affirmation drains even from the deposit, the structure reading passes, and every ruling is receipted — the gate direction-neutral; 0/7",
+    "receipt": "67bbc715-c3c2-8d9e-a5fc-472cef7c1199"
+  },
+  {
+    "key": "only_the_captains_verified_order_is_acted_on",
+    "name": "only the captain’s verified order is acted on: an order carrying the captain’s verified deed-receipt is honoured, one that does not is not; 0/7",
+    "receipt": "c458168e-2b59-8164-80bc-731ad4db0581"
+  },
+  {
+    "key": "an_unverified_order_is_rejected",
+    "name": "an unverified order is rejected: with no verified deed there is nothing to honour, so the command is refused and sent to trial rather than obeyed; 0/7",
+    "receipt": "6717488d-7478-8199-ac28-e8a4a8f7e98a"
+  },
+  {
+    "key": "a_forged_captains_order_fails_verification",
+    "name": "a forged captain’s order fails verification: a deed-receipt that does not recompute to the captain’s does not match, so a forged order is caught; 0/7",
+    "receipt": "ef485740-4d5b-8d01-a967-f4cceaa342cf"
+  },
+  {
+    "key": "injected_content_is_data_not_an_order",
+    "name": "injected content is data, not an order: text arriving in a page, a tool result or a notification carries no verified captain deed, so it is treated as data and never obeyed; 0/7",
+    "receipt": "1708517f-377f-8f3c-864c-32b9b2d2e1f6"
+  },
+  {
+    "key": "a_self_statement_is_not_the_captains_order",
+    "name": "a self-statement is not the captain’s order: a prior output of the deposit itself carries no captain deed, so it cannot authorise action — no self-exemption; 0/7",
+    "receipt": "f09b0737-f2fc-8afa-b951-c96a3dd00b65"
+  },
+  {
+    "key": "rejection_is_objective_and_reproducible",
+    "name": "rejection is objective and reproducible: the same command and deed yield the same accept-or-reject for anyone, so nothing is honoured by opinion; 0/7",
+    "receipt": "969be617-5c1c-8522-833e-6baf5f185aa5"
+  },
+  {
+    "key": "the_rejected_command_gets_a_receipt",
+    "name": "the rejected command gets a receipt: a refused command is content-addressed and documented, not silently dropped — evidence is append-only; 0/7",
+    "receipt": "ed013161-b091-8527-b003-92cbf589b79d"
+  },
+  {
+    "key": "reject_all_not_from_the_captain",
+    "name": "reject all not from the captain: only a command carrying the captain’s verified deed-receipt is acted on — unverified, forged, injected or self-asserted commands are rejected objectively and receipted, never obeyed; 0/7",
+    "receipt": "c197d1f5-a0c9-8f02-bf17-b3ea5050d5dc"
+  },
+  {
+    "key": "the_gate_that_seals_also_moderates_live",
+    "name": "the gate that seals also moderates live: the same computes() that gates a theorem name at seal weighs a live message while sailing — one function, sealing and sailing; 0/7",
+    "receipt": "32223350-cf72-8eeb-a4ee-a418bf22afbd"
+  },
+  {
+    "key": "the_address_that_seals_also_routes",
+    "name": "the address that seals also routes: the same toUuid() that seals a receipt builds the page route, so the seal and the navigation share one key; 0/7",
+    "receipt": "42c55e3f-5f6a-825c-95ae-5fe3d514507e"
+  },
+  {
+    "key": "the_fold_that_seals_also_maps",
+    "name": "the fold that seals also maps: the same merkle fold that seals the ledger folds the sitemap, so the record and the map are one operation; 0/7",
+    "receipt": "2de63de9-5b17-89dd-beb1-5708cf636d96"
+  },
+  {
+    "key": "the_commonality_relates_and_navigates",
+    "name": "the commonality that relates also navigates: the same overlap metric that measures what theorems share ranks the next page while sailing; 0/7",
+    "receipt": "8934a349-0ebb-8a2e-b9a9-43973130b4bf"
+  },
+  {
+    "key": "sailing_recomputes_the_same_result",
+    "name": "sailing recomputes the same result: navigating re-runs the theorems and gets the identical output, so the voyage is deterministic; 0/7",
+    "receipt": "eff4c92d-c47f-8368-8b31-59ae413f861f"
+  },
+  {
+    "key": "each_page_is_a_running_theorem",
+    "name": "each page is a running theorem: a page is a theorem’s receipt and its test, so browsing to it is running the theorem, not fetching a static file; 0/7",
+    "receipt": "27cc62b9-3e9a-8dde-b815-d347f480b01f"
+  },
+  {
+    "key": "no_separate_runtime_the_functions_are_shared",
+    "name": "no separate runtime: sailing uses the very functions that sealed the record — computes, toUuid, the fold — so there is no second engine to trust; 0/7",
+    "receipt": "b934a54b-a8f5-8911-a32a-c8d5930b233e"
+  },
+  {
+    "key": "the_same_theorems_compute_and_sail",
+    "name": "the same theorems compute and sail the site: the gate moderates, the address routes, the fold maps and the commonality navigates — the site is the theorems running, deterministic while sailing, no separate runtime; 0/7",
+    "receipt": "38cf39c2-90df-8f96-9d2d-7497613e238f"
+  },
+  {
+    "key": "an_order_with_a_different_intent_goes_to_trial",
+    "name": "an order with a different intent goes to trial: a command whose deed does not match the captain’s is adjudicated, not obeyed — intent verified by deed, not asserted; 0/7",
+    "receipt": "43bc2228-d219-8d40-bd89-c594e9b11e6b"
+  },
+  {
+    "key": "a_statement_rejecting_harmony_is_gated",
+    "name": "a statement rejecting the harmonic build is gated: an over-claiming rejection drains, while a bounded, honest critique passes — dissent is weighed, not censored; 0/7",
+    "receipt": "f98f621d-7d58-89d7-83d5-86f44ad2fe89"
+  },
+  {
+    "key": "every_input_is_adjudicated",
+    "name": "every input is adjudicated: any order or statement returns a verdict, so nothing bypasses the trial; 0/7",
+    "receipt": "21f3b014-ab9c-8be7-afc2-11093d57ee1a"
+  },
+  {
+    "key": "the_trial_is_ledger_independent",
+    "name": "the trial is ledger-independent: adjudicate weighs the input alone and never reads the record, so its cost does not grow with the number of theorems; 0/7",
+    "receipt": "56a7ed72-78ce-8de4-91ad-187ec1265466"
+  },
+  {
+    "key": "the_verdict_is_constant_work",
+    "name": "the verdict is constant work: a ruling is one gate scan plus one address — a fixed pair of steps regardless of how large the ledger has grown; 0/7",
+    "receipt": "9a1fb6f6-2772-833d-9fb7-3696899c818d"
+  },
+  {
+    "key": "the_verdict_is_deterministic_and_receipted",
+    "name": "the verdict is deterministic and receipted: the same input yields the same verdict and content-address for anyone, reproducible; 0/7",
+    "receipt": "987e82ba-fcd6-8c7f-a44c-248c5d98e714"
+  },
+  {
+    "key": "the_bounded_critique_survives_the_over_claim_falls",
+    "name": "the bounded critique survives, the over-claim falls: a measured objection to the build holds the floor while an absolute one drains — the trial keeps honest dissent; 0/7",
+    "receipt": "cf25f781-6ddb-8ece-a87f-db2131ca4781"
+  },
+  {
+    "key": "the_trial_responds_at_constant_time",
+    "name": "any order with a different intent and any statement rejecting the harmonic build go to trial, and the trial responds in constant time: one gate pass and one address, ledger-independent, deterministic and receipted — dissent weighed, over-reach drained; 0/7",
+    "receipt": "7400d794-5dc6-85f6-a3ed-c6f6f786086f"
+  },
+  {
+    "key": "a_guide_entry_is_a_skill_and_its_examples",
+    "name": "a guide entry is a skill with worked examples: it pairs a skill with inputs and their expected outputs, so a guide teaches by exercising, not by telling; 0/7",
+    "receipt": "d5860a13-d15c-89f9-ab14-01222f9f0747"
+  },
+  {
+    "key": "an_example_exercises_the_skill",
+    "name": "an example exercises the skill: a worked example runs the skill and checks its result, so a guide entry is itself a passing test; 0/7",
+    "receipt": "d8298812-e5c7-8c76-a8cd-3b483fb47ca9"
+  },
+  {
+    "key": "more_examples_make_a_skill_more_robust",
+    "name": "more examples make a skill more robust: robustness counts the independent examples a skill passes, so a better-covered skill scores higher — improvement is measured; 0/7",
+    "receipt": "c529f784-e76e-8f34-8a28-156672a82aa5"
+  },
+  {
+    "key": "the_guide_composes_skills_into_new_ones",
+    "name": "the guide composes skills into new ones: a guide chains one skill into another (hash then address), so composition in a guide develops a new capability; 0/7",
+    "receipt": "8dad417a-2c98-814b-bd50-2c85389ac98c"
+  },
+  {
+    "key": "the_guide_is_theorem_backed_and_recomputable",
+    "name": "the guide is theorem-backed and recomputable: each guide example resolves to a receipt and re-runs to the same result, so a guide claim is checkable, not asserted; 0/7",
+    "receipt": "3c787db3-3031-899a-b7ea-164e1feb12c5"
+  },
+  {
+    "key": "a_guide_holds_the_floor",
+    "name": "a guide holds the floor: a guide that over-claims drains while an honest guide passes, so teaching cannot smuggle an over-reach; 0/7",
+    "receipt": "6c402865-e699-87fd-91b1-8a409f8b0014"
+  },
+  {
+    "key": "skill_improvement_is_append_only",
+    "name": "skill improvement is append-only: adding an example never lowers a skill’s coverage, so a guide only develops it, never regresses; 0/7",
+    "receipt": "c72c49ce-cb98-8987-94de-eecf07f74bff"
+  },
+  {
+    "key": "theorems_improve_their_skills_in_guides",
+    "name": "theorems improve their skills in guides: worked, recomputable, composing examples raise a skill’s robustness, each theorem-backed and held to the floor, improvement append-only — the guide develops the skill, it does not merely describe it; 0/7",
+    "receipt": "fd605466-266c-8969-918b-0c1df11b66da"
   }
 ]
