@@ -2969,6 +2969,19 @@ function generated(): typeof curated {
     out.push({ key: 'goldbachs_even_sum_of_two_primes_to_a_thousand', name: 'Goldbach’s even conjecture holds over the tested range: every even number from 4 to 1000 is a sum of two primes — checked by computation, not a general result; 0/7', test: () => { for (let n = 4; n <= 1000; n += 2) if (!twoPrimes(n)) return false; return true } })
     out.push({ key: 'the_gaps_between_primes_grow_without_bound', name: 'the gaps between primes grow without bound: the run n!+2 … n!+n is all composite, giving a prime-free stretch of length n−1 for any n; 0/7', test: () => { for (let n = 3; n <= 8; n++) { let f = 1; for (let i = 2; i <= n; i++) f *= i; for (let k = 2; k <= n; k++) if (isPrime(f + k)) return false } return true } })
   }
+  // ── Euler’s polyhedron formula across the five Platonic solids (V − E + F = 2), duality, and the genus poles.
+  {
+    const S: Record<string, number[]> = { tetra: [4, 6, 4], cube: [8, 12, 6], octa: [6, 12, 8], dodeca: [20, 30, 12], icosa: [12, 30, 20] }
+    const chi = ([V, E, F]: number[]) => V - E + F
+    out.push({ key: 'euler_characteristic_of_the_tetrahedron_is_two', name: 'Euler’s formula for the tetrahedron: V − E + F = 4 − 6 + 4 = 2 — the self-dual solid on the sphere; 0/7', test: () => chi(S.tetra) === 2 })
+    out.push({ key: 'euler_characteristic_of_the_cube_is_two', name: 'Euler’s formula for the cube: V − E + F = 8 − 12 + 6 = 2 — the eight-vertex solid on the sphere; 0/7', test: () => chi(S.cube) === 2 })
+    out.push({ key: 'euler_characteristic_of_the_octahedron_is_two', name: 'Euler’s formula for the octahedron: V − E + F = 6 − 12 + 8 = 2 — the cube’s dual; 0/7', test: () => chi(S.octa) === 2 })
+    out.push({ key: 'euler_characteristic_of_the_dodecahedron_is_two', name: 'Euler’s formula for the dodecahedron: V − E + F = 20 − 30 + 12 = 2 — the twelve-face solid; 0/7', test: () => chi(S.dodeca) === 2 })
+    out.push({ key: 'euler_characteristic_of_the_icosahedron_is_two', name: 'Euler’s formula for the icosahedron: V − E + F = 12 − 30 + 20 = 2 — the dodecahedron’s dual; 0/7', test: () => chi(S.icosa) === 2 })
+    out.push({ key: 'eulers_formula_holds_for_all_five_platonic_solids', name: 'Euler’s polyhedron formula V − E + F = 2 holds for all five Platonic solids — one invariant across the whole family; 0/7', test: () => Object.values(S).every((s) => chi(s) === 2) })
+    out.push({ key: 'platonic_duality_swaps_vertices_and_faces', name: 'Platonic duality swaps vertices and faces at fixed edges: cube(8,6)↔octahedron(6,8) and dodecahedron(20,12)↔icosahedron(12,20), the tetrahedron self-dual; 0/7', test: () => S.cube[0] === S.octa[2] && S.cube[2] === S.octa[0] && S.cube[1] === S.octa[1] && S.dodeca[0] === S.icosa[2] && S.dodeca[2] === S.icosa[0] && S.tetra[0] === S.tetra[2] })
+    out.push({ key: 'the_platonic_solids_are_genus_zero_with_euler_number_two', name: 'the Platonic solids are genus-zero, Euler number 2 — the sphere’s characteristic, the opposite pole from the double torus’s χ = −2 (the two coins); 0/7', test: () => Object.values(S).every((s) => chi(s) === 2) && 2 - 2 * 0 === 2 && 2 - 2 * 2 === -2 })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

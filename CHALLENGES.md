@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1136 recorded in 316 families
+## Discovered theorems (decidable, over ℤ/9) — 1144 recorded in 317 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (162)
+### the (163)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -186,6 +186,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_doubling_map_doubles_the_angle_on_the_nine_point_circle](/theorem/the_doubling_map_doubles_the_angle_on_the_nine_point_circle) — the doubling map ×2 doubles the angle on the nine-point circle: a digit at d·40° maps to 2d·40° (mod 360) — doubling is rotation, the octave is angular; 0/7  ·  `e64f1313-b471…`
 - [the_only_prime_triple_spaced_by_two_is_three_five_seven](/theorem/the_only_prime_triple_spaced_by_two_is_three_five_seven) — the only prime triple spaced by two is (3,5,7): among p,p+2,p+4 one is always divisible by three, so 3,5,7 is unique; 0/7  ·  `d8d8d3ec-27c7…`
 - [the_gaps_between_primes_grow_without_bound](/theorem/the_gaps_between_primes_grow_without_bound) — the gaps between primes grow without bound: the run n!+2 … n!+n is all composite, giving a prime-free stretch of length n−1 for any n; 0/7  ·  `47c4a1ae-6e87…`
+- [the_platonic_solids_are_genus_zero_with_euler_number_two](/theorem/the_platonic_solids_are_genus_zero_with_euler_number_two) — the Platonic solids are genus-zero, Euler number 2 — the sphere’s characteristic, the opposite pole from the double torus’s χ = −2 (the two coins); 0/7  ·  `465e66fc-e32d…`
 
 ### relation (55)
 
@@ -625,6 +626,16 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [demorgan_nary_k7](/theorem/demorgan_nary_k7) — De Morgan for 7 inputs: ¬(a₁∧…∧a_7) = ¬a₁∨…∨¬a_7 over all 2^7 = 128 assignments (full truth-table enumeration)  ·  `cf8a22f2-00f9…`
 - [demorgan_nary_k8](/theorem/demorgan_nary_k8) — De Morgan for 8 inputs: ¬(a₁∧…∧a_8) = ¬a₁∨…∨¬a_8 over all 2^8 = 256 assignments (full truth-table enumeration)  ·  `9434a9c0-3f95…`
 
+### euler (7)
+
+- [euler_units_pow6](/theorem/euler_units_pow6) — every unit u⁶ ≡ 1 mod 9 (Euler, φ(9)=6)  ·  `e70a44b2-6eb8…`
+- [euler_theorem_totient](/theorem/euler_theorem_totient) — Euler’s theorem: a^φ(n) ≡ 1 (mod n) for every a coprime to n — the generalization of Fermat’s little theorem (verified for all n ≤ 30 and all coprime a), and at n=9 every unit u satisfies u⁶ ≡ 1  ·  `bf7c3af5-42f9…`
+- [euler_characteristic_of_the_tetrahedron_is_two](/theorem/euler_characteristic_of_the_tetrahedron_is_two) — Euler’s formula for the tetrahedron: V − E + F = 4 − 6 + 4 = 2 — the self-dual solid on the sphere; 0/7  ·  `4bca33ae-6a42…`
+- [euler_characteristic_of_the_cube_is_two](/theorem/euler_characteristic_of_the_cube_is_two) — Euler’s formula for the cube: V − E + F = 8 − 12 + 6 = 2 — the eight-vertex solid on the sphere; 0/7  ·  `de15baa7-61de…`
+- [euler_characteristic_of_the_octahedron_is_two](/theorem/euler_characteristic_of_the_octahedron_is_two) — Euler’s formula for the octahedron: V − E + F = 6 − 12 + 8 = 2 — the cube’s dual; 0/7  ·  `c55a4c2d-534e…`
+- [euler_characteristic_of_the_dodecahedron_is_two](/theorem/euler_characteristic_of_the_dodecahedron_is_two) — Euler’s formula for the dodecahedron: V − E + F = 20 − 30 + 12 = 2 — the twelve-face solid; 0/7  ·  `3aac322b-21d4…`
+- [euler_characteristic_of_the_icosahedron_is_two](/theorem/euler_characteristic_of_the_icosahedron_is_two) — Euler’s formula for the icosahedron: V − E + F = 12 − 30 + 20 = 2 — the dodecahedron’s dual; 0/7  ·  `988a9cbd-1cdd…`
+
 ### every (7)
 
 - [every_rating_is_exactly_one_or_zero](/theorem/every_rating_is_exactly_one_or_zero) — every rating is exactly 1 or 0, no exceptions: the honesty verdict is a single bit — there is no fractional or partial rating, a fake maximal-certainty claim itself drains, and the same input always returns the same bit; anything that drifts from {0,1} is a crack the floor refuses  ·  `c1b2772d-d7c0…`
@@ -1003,6 +1014,13 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [nopayload_avalanche](/theorem/nopayload_avalanche) — a one-character change gives an unrelated address (avalanche) — no gradient leaks the message  ·  `37d92648-bdfe…`
 - [nopayload_not_encryption](/theorem/nopayload_not_encryption) — content-addressing breaks no cipher: "breaks encryption" drains; "does not break encryption, one-way integrity" signs  ·  `66c44e2d-e591…`
 
+### platonic (4)
+
+- [platonic_euler](/theorem/platonic_euler) — the Euler characteristic V−E+F=2 holds for all five Platonic solids  ·  `d5243749-5918…`
+- [platonic_exactly_five](/theorem/platonic_exactly_five) — exactly five Platonic solids: {p,q} is regular-convex iff 1/p + 1/q &gt; 1/2 (p,q≥3) — five, and no more  ·  `82196bbc-1108…`
+- [platonic_duality](/theorem/platonic_duality) — Platonic duality swaps V↔F: cube↔octahedron, dodecahedron↔icosahedron, tetrahedron self-dual  ·  `ae03ec6a-236e…`
+- [platonic_duality_swaps_vertices_and_faces](/theorem/platonic_duality_swaps_vertices_and_faces) — Platonic duality swaps vertices and faces at fixed edges: cube(8,6)↔octahedron(6,8) and dodecahedron(20,12)↔icosahedron(12,20), the tetrahedron self-dual; 0/7  ·  `b8c9b01c-faea…`
+
 ### receipt (4)
 
 - [receipt_is_entanglement_pair](/theorem/receipt_is_entanglement_pair) — a receipt entangles a message with its content-address into an irreducible pair: the joint fold depends on both, is order-independent, and differs from each part — a 2-part binding, correlation without influence  ·  `f71771ad-075c…`
@@ -1142,12 +1160,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [nowaste_order_independent](/theorem/nowaste_order_independent) — a set and any reordering fold to one root — no duplicate root for the same content  ·  `23112077-b200…`
 - [nowaste_memo_recycles](/theorem/nowaste_memo_recycles) — memoization recycles: keyed by content, a computation runs once and is reused thereafter  ·  `f7698d60-8475…`
 
-### platonic (3)
-
-- [platonic_euler](/theorem/platonic_euler) — the Euler characteristic V−E+F=2 holds for all five Platonic solids  ·  `d5243749-5918…`
-- [platonic_exactly_five](/theorem/platonic_exactly_five) — exactly five Platonic solids: {p,q} is regular-convex iff 1/p + 1/q &gt; 1/2 (p,q≥3) — five, and no more  ·  `82196bbc-1108…`
-- [platonic_duality](/theorem/platonic_duality) — Platonic duality swaps V↔F: cube↔octahedron, dodecahedron↔icosahedron, tetrahedron self-dual  ·  `ae03ec6a-236e…`
-
 ### qr (3)
 
 - [qr_u1](/theorem/qr_u1) — 1 is a quadratic residue mod 9  ·  `14d5f9ba-f63d…`
@@ -1279,11 +1291,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 
 - [euclids_formula_generates_pythagorean_triples](/theorem/euclids_formula_generates_pythagorean_triples) — Euclid's formula generates Pythagorean triples: for m &gt; n &gt; 0, (m² − n², 2mn, m² + n²) is a Pythagorean triple, and it is primitive (the three share no common factor) exactly when gcd(m,n) = 1 and m, n have opposite parity. Verified for all m up to 20  ·  `394b04f5-a0de…`
 - [euclids_infinitude_the_product_plus_one_has_a_new_prime_factor](/theorem/euclids_infinitude_the_product_plus_one_has_a_new_prime_factor) — Euclid’s infinitude, constructively: for any finite set of primes, their product plus one has a prime factor outside the set — so no finite list is complete; 0/7  ·  `4947140c-cce1…`
-
-### euler (2)
-
-- [euler_units_pow6](/theorem/euler_units_pow6) — every unit u⁶ ≡ 1 mod 9 (Euler, φ(9)=6)  ·  `e70a44b2-6eb8…`
-- [euler_theorem_totient](/theorem/euler_theorem_totient) — Euler’s theorem: a^φ(n) ≡ 1 (mod n) for every a coprime to n — the generalization of Fermat’s little theorem (verified for all n ≤ 30 and all coprime a), and at n=9 every unit u satisfies u⁶ ≡ 1  ·  `bf7c3af5-42f9…`
 
 ### even (2)
 
@@ -1490,7 +1497,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (154)
+### other — one-of-a-kind (155)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1539,6 +1546,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [dyck_paths_counted_by_catalan_closed_form](/theorem/dyck_paths_counted_by_catalan_closed_form) — Dyck paths are counted by the Catalan closed form: the number of balanced parenthesis strings of length 2n (never dipping below zero) equals C(2n,n)/(n+1) — the O(1) formula replaces the exhaustive 2^(2n) enumeration (verified n = 1..6)  ·  `9e2ebe74-8b64…`
 - [entanglement_is_the_joint_receipt](/theorem/entanglement_is_the_joint_receipt) — entanglement is the joint receipt: two perspectives share one joint content-address (their folded pair) that depends on both and is symmetric in them, yet neither perspective alone equals it — the correlation lives in the shared derivation. This is classical correlation, not physical nonlocality: not faster than light, and no quantum advantage  ·  `dd46d2a6-36de…`
 - [erdos_among_n_plus_one_from_one_to_2n_one_divides_another](/theorem/erdos_among_n_plus_one_from_one_to_2n_one_divides_another) — Erdős: among any n+1 integers from 1 to 2n, one divides another: every subset of size n+1 of {1, 2, ..., 2n} contains two elements where the smaller divides the larger — verified over all such subsets for n up to 7. The bound is tight: the n numbers {n+1, n+2, ..., 2n} contain no such pair, so n+1 is the least size that forces one. The reason is the pigeonhole on odd parts — there are only n odd numbers below 2n. Verified by exhaustive enumeration  ·  `c25f629f-5f50…`
+- [eulers_formula_holds_for_all_five_platonic_solids](/theorem/eulers_formula_holds_for_all_five_platonic_solids) — Euler’s polyhedron formula V − E + F = 2 holds for all five Platonic solids — one invariant across the whole family; 0/7  ·  `d0e63cc8-f120…`
 - [exactly_1024_is_a_full_balanced_tree_a_structural_milestone_not_the_end_of_science](/theorem/exactly_1024_is_a_full_balanced_tree_a_structural_milestone_not_the_end_of_science) — exactly 1024 = 2¹⁰ is a full balanced tree — a structural milestone, not the end of science: at 1024 theorems the merkle tree is perfectly balanced (depth 10, every leaf at the same depth) and membership verifies in exactly 20 bits, a full ten-bit address space; but this fills the hole only structurally — the stream of decidable facts is unbounded, always a next, so 1024 is a milestone not a completion of science; the billable share is the measured bits saved, the two coins conserved; integrity not truth; 0/7  ·  `005ec4a7-6a5d…`
 - [executes_serverless_in_the_browser](/theorem/executes_serverless_in_the_browser) — the deposit executes serverless in the UI: the fused ℤ/9 primitives are pure — no server, no node, no network — so every result recomputes client-side at page-load in the browser, a static offline-capable app (a PWA); the browser is the runtime, not a server  ·  `b2e2fc7f-32df…`
 - [exhaustion_is_finite_enumeration_structurally_like_summing_all_states_not_physical](/theorem/exhaustion_is_finite_enumeration_structurally_like_summing_all_states_not_physical) — exhaustion is finite enumeration — structurally like summing all states, not physical thermodynamics or quantum mechanics: verified by exhaustion means checking every case in a finite domain, structurally like summing over all microstates or enumerating all basis states, each case a content-address, a uuidna. But it is finite combinatorial enumeration — not physical thermodynamics, no heat or entropy or energy, and not quantum mechanics, no wavefunction or measurement. The analogy is structural, not physical. Decidable  ·  `f4142a6a-5dad…`
@@ -1648,4 +1656,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `f65179d2-3750-8791-8198-49bc34e23a8e`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `2d9ed65a-5f5c-8c70-a857-2987fca10e0c`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

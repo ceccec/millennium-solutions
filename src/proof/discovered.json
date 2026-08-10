@@ -5678,5 +5678,45 @@
     "key": "the_gaps_between_primes_grow_without_bound",
     "name": "the gaps between primes grow without bound: the run n!+2 … n!+n is all composite, giving a prime-free stretch of length n−1 for any n; 0/7",
     "receipt": "47c4a1ae-6e87-8e0b-9956-a22b0a7d05ff"
+  },
+  {
+    "key": "euler_characteristic_of_the_tetrahedron_is_two",
+    "name": "Euler’s formula for the tetrahedron: V − E + F = 4 − 6 + 4 = 2 — the self-dual solid on the sphere; 0/7",
+    "receipt": "4bca33ae-6a42-8d76-b5ce-172f3ca1cc2a"
+  },
+  {
+    "key": "euler_characteristic_of_the_cube_is_two",
+    "name": "Euler’s formula for the cube: V − E + F = 8 − 12 + 6 = 2 — the eight-vertex solid on the sphere; 0/7",
+    "receipt": "de15baa7-61de-819b-9840-958f04366e7f"
+  },
+  {
+    "key": "euler_characteristic_of_the_octahedron_is_two",
+    "name": "Euler’s formula for the octahedron: V − E + F = 6 − 12 + 8 = 2 — the cube’s dual; 0/7",
+    "receipt": "c55a4c2d-534e-8db3-a64c-0e87ca174094"
+  },
+  {
+    "key": "euler_characteristic_of_the_dodecahedron_is_two",
+    "name": "Euler’s formula for the dodecahedron: V − E + F = 20 − 30 + 12 = 2 — the twelve-face solid; 0/7",
+    "receipt": "3aac322b-21d4-82c2-8dbf-2ade90ce2145"
+  },
+  {
+    "key": "euler_characteristic_of_the_icosahedron_is_two",
+    "name": "Euler’s formula for the icosahedron: V − E + F = 12 − 30 + 20 = 2 — the dodecahedron’s dual; 0/7",
+    "receipt": "988a9cbd-1cdd-84eb-942d-f2d6baddaf20"
+  },
+  {
+    "key": "eulers_formula_holds_for_all_five_platonic_solids",
+    "name": "Euler’s polyhedron formula V − E + F = 2 holds for all five Platonic solids — one invariant across the whole family; 0/7",
+    "receipt": "d0e63cc8-f120-819a-a315-7b7bd6bd3b9f"
+  },
+  {
+    "key": "platonic_duality_swaps_vertices_and_faces",
+    "name": "Platonic duality swaps vertices and faces at fixed edges: cube(8,6)↔octahedron(6,8) and dodecahedron(20,12)↔icosahedron(12,20), the tetrahedron self-dual; 0/7",
+    "receipt": "b8c9b01c-faea-834f-8e00-2792c0a167a9"
+  },
+  {
+    "key": "the_platonic_solids_are_genus_zero_with_euler_number_two",
+    "name": "the Platonic solids are genus-zero, Euler number 2 — the sphere’s characteristic, the opposite pole from the double torus’s χ = −2 (the two coins); 0/7",
+    "receipt": "465e66fc-e32d-825c-b24f-f57b925551a8"
   }
 ]
