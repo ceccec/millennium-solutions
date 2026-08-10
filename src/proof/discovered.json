@@ -5518,5 +5518,45 @@
     "key": "two_to_the_tenth_is_1024_the_harmonic_ledger",
     "name": "two to the tenth is 1024: ten doublings reach the harmonic ledger size, digitalRoot(1024)=7 — the octave raised to the tenth is the milestone count; 0/7",
     "receipt": "568ccd10-1bb6-85ed-8976-15065052f6fb"
+  },
+  {
+    "key": "the_nine_times_table_always_digital_roots_to_nine",
+    "name": "the nine times table always digital-roots to nine: digitalRoot(9k) = 9 for every k ≥ 1 — nine is the base’s fixed point; 0/7",
+    "receipt": "8c8d01f5-d52d-8575-aa03-89d309896180"
+  },
+  {
+    "key": "the_regular_nonagon_exterior_angle_is_the_a432_step",
+    "name": "the regular nonagon’s exterior angle is 360/9 = 40° = the a432 step — the base draws the nine-point circle at the a432 quantum; 0/7",
+    "receipt": "07f088c5-a18e-8014-9fbc-a94f47faffbd"
+  },
+  {
+    "key": "casting_out_nines_is_multiplicative",
+    "name": "casting out nines is multiplicative: digitalRoot(a·b) = digitalRoot(digitalRoot(a)·digitalRoot(b)) — the base-9 check catches arithmetic slips in products; 0/7",
+    "receipt": "c3fe563f-88f8-8f0e-9f1c-11d96fc5a191"
+  },
+  {
+    "key": "every_digital_root_lands_in_one_to_nine",
+    "name": "every digital root of a positive integer lands in 1..9 — the base folds the naturals onto nine residues; 0/7",
+    "receipt": "f0db1861-14cd-8784-8bc9-5d7c977ac5ca"
+  },
+  {
+    "key": "a_number_minus_its_digit_reversal_is_a_multiple_of_nine",
+    "name": "a number minus its digit reversal is a multiple of nine: n − reverse(n) ≡ 0 (mod 9), since both share a digit sum — the base’s reversal invariant; 0/7",
+    "receipt": "0780bec8-e70e-8e9e-8a68-dca98a553e3f"
+  },
+  {
+    "key": "the_digits_one_to_nine_sum_to_forty_five_rooting_to_nine",
+    "name": "the digits one to nine sum to 45, whose digital root is 9: 1+2+…+9 = 45, dr(45)=9 — the whole returns to the base; 0/7",
+    "receipt": "75ec1aeb-f860-8308-9c0a-4011f35c4524"
+  },
+  {
+    "key": "nine_is_the_base_and_the_trinity_squared",
+    "name": "nine is the base and the trinity squared: BASE = 9 = 3² = TRINITY², so the units, triad and orbit all derive from the single axiom three; 0/7",
+    "receipt": "932fbd24-4bae-8013-bbf7-a40721be2635"
+  },
+  {
+    "key": "a_number_is_divisible_by_nine_iff_its_digit_sum_is",
+    "name": "a number is divisible by nine iff its digit sum is: n ≡ digitsum(n) (mod 9), so 9 | n exactly when 9 | digitsum(n) — the base’s divisibility rule; 0/7",
+    "receipt": "b6696b2c-04c7-8d40-94c8-de9e0775b84f"
   }
 ]

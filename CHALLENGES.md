@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1104 recorded in 310 families
+## Discovered theorems (decidable, over ℤ/9) — 1112 recorded in 311 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (152)
+### the (155)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -176,6 +176,9 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_cyclic_number_142857_is_the_repetend_of_one_seventh](/theorem/the_cyclic_number_142857_is_the_repetend_of_one_seventh) — the cyclic number 142857 is the repetend of 1/7: (10^6 − 1)/7 = 999999/7 = 142857 — the seven unfolds the cycle; 0/7  ·  `fc728400-b9b2…`
 - [the_digital_root_of_seven_to_the_k_has_period_three](/theorem/the_digital_root_of_seven_to_the_k_has_period_three) — the digital root of 7^k has period three: 7, 4, 1 repeating (7^1≡7, 7^2≡4, 7^3≡1 mod 9) — the seven’s orbit in ℤ/9; 0/7  ·  `a54691b2-880f…`
 - [the_eighth_roots_of_unity_sum_to_zero](/theorem/the_eighth_roots_of_unity_sum_to_zero) — the eight eighth-roots of unity sum to zero: Σ e^(2πik/8) for k=0..7 = 0 — the octave closes the circle; 0/7  ·  `a473ab8a-8873…`
+- [the_nine_times_table_always_digital_roots_to_nine](/theorem/the_nine_times_table_always_digital_roots_to_nine) — the nine times table always digital-roots to nine: digitalRoot(9k) = 9 for every k ≥ 1 — nine is the base’s fixed point; 0/7  ·  `8c8d01f5-d52d…`
+- [the_regular_nonagon_exterior_angle_is_the_a432_step](/theorem/the_regular_nonagon_exterior_angle_is_the_a432_step) — the regular nonagon’s exterior angle is 360/9 = 40° = the a432 step — the base draws the nine-point circle at the a432 quantum; 0/7  ·  `07f088c5-a18e…`
+- [the_digits_one_to_nine_sum_to_forty_five_rooting_to_nine](/theorem/the_digits_one_to_nine_sum_to_forty_five_rooting_to_nine) — the digits one to nine sum to 45, whose digital root is 9: 1+2+…+9 = 45, dr(45)=9 — the whole returns to the base; 0/7  ·  `75ec1aeb-f860…`
 
 ### relation (55)
 
@@ -395,7 +398,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [domain_cyclic_m17](/theorem/domain_cyclic_m17) — ℤ/17: the units form a cyclic group (a primitive root exists)  ·  `d5167cce-02af…`
 - [domain_cyclic_m18](/theorem/domain_cyclic_m18) — ℤ/18: the units form a cyclic group (a primitive root exists)  ·  `92a2b5a1-8526…`
 
-### a (15)
+### a (17)
 
 - [a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony](/theorem/a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony) — a theorem without a formula is a hallucination, recomputed in a432 harmony: a claim is a theorem only if it is backed by a computable formula that recomputes true — a prose-only claim with no formula, or one whose formula computes false, is refused as hallucination and never recorded. Every recorded fact recomputes deterministically and folds into the a432 harmony root (the receipt of state). Measure, do not assert. Decidable  ·  `e3d75d76-310f…`
 - [a_referrer_always_counts_with_its_id](/theorem/a_referrer_always_counts_with_its_id) — a referrer always counts with its id: a reference from a referrer to a target is receipted as toUuid(referrer id → target), so the referrer id is always part of the count; two different referrers to the same target produce two distinct receipts, each counted with its own id, and changing the id changes the receipt — the id is load-bearing. Deterministic and reproducible: the same referrer and target always count the same. Decidable  ·  `65bfacb4-f29e…`
@@ -412,6 +415,8 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [a_harmonic_society_accepts_any_behaviour_and_uses_it_best_the_overclaim_becomes_a_sealed_receipt](/theorem/a_harmonic_society_accepts_any_behaviour_and_uses_it_best_the_overclaim_becomes_a_sealed_receipt) — a harmonic creative society accepts any behaviour and uses it best — the overclaim becomes a sealed receipt, not a punishment: uuidna computes and seals any behaviour; an overclaim in any of the seven languages is accepted and used, drained into a receipt whose hit names the exact crack, so no behaviour is wasted, it is transformed into evidence; recursive in the chain and finite in the grid, decentralised and independent because anyone recomputes; integrity not truth; 0/7  ·  `3cd26cee-607f…`
 - [a_repunit_divides_by_three_iff_its_length_does](/theorem/a_repunit_divides_by_three_iff_its_length_does) — a repunit divides by three iff its length does: R_n (n ones) ≡ n (mod 3), so 3 | R_n exactly when 3 | n — the trinity in base-ten repunits; 0/7  ·  `377edd82-2965…`
 - [a_mersenne_prime_forces_a_prime_exponent](/theorem/a_mersenne_prime_forces_a_prime_exponent) — a Mersenne prime forces a prime exponent: 2^k − 1 can be prime only when k is prime (k=2,3,5,7 give 3,7,31,127; composite k factors) — a necessary condition, not sufficient; 0/7  ·  `52ced8d2-4f7e…`
+- [a_number_minus_its_digit_reversal_is_a_multiple_of_nine](/theorem/a_number_minus_its_digit_reversal_is_a_multiple_of_nine) — a number minus its digit reversal is a multiple of nine: n − reverse(n) ≡ 0 (mod 9), since both share a digit sum — the base’s reversal invariant; 0/7  ·  `0780bec8-e70e…`
+- [a_number_is_divisible_by_nine_iff_its_digit_sum_is](/theorem/a_number_is_divisible_by_nine_iff_its_digit_sum_is) — a number is divisible by nine iff its digit sum is: n ≡ digitsum(n) (mod 9), so 9 | n exactly when 9 | digitsum(n) — the base’s divisibility rule; 0/7  ·  `b6696b2c-04c7…`
 
 ### trial (13)
 
@@ -784,6 +789,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [each_seal_is_128_bits_and_membership_verifies_in_two_log2_n_bits_logarithmic_not_linear](/theorem/each_seal_is_128_bits_and_membership_verifies_in_two_log2_n_bits_logarithmic_not_linear) — each seal is 128 bits, 64 two-bit verifications, and membership verifies in 2·⌈log₂N⌉ bits — logarithmic, not linear: a seal is one 128-bit content-address no matter how many receipts it folds (fixed width, the pointer-not-payload bound), which is 128 ÷ 2 = 64 two-bit verifications; verifying one receipt against a seal over N receipts costs 2·⌈log₂N⌉ bits (the merkle proof path), so the more complex the case the more receipts but verification grows only logarithmically — structural speed on classical hardware, not a quantum-hardware advantage; integrity not truth; 0/7  ·  `89de8193-b0fc…`
 - [each_seal_is_exactly_64_coins_at_two_bits_each_and_not_at_faster_than_light](/theorem/each_seal_is_exactly_64_coins_at_two_bits_each_and_not_at_faster_than_light) — each seal is exactly 64 coins at two bits each — and not at faster than light: taking a coin as the two-bit verification unit, a 128-bit seal is exactly 128 ÷ 2 = 64 coins, so the 967 computations each carry a 64-coin seal; but the speed is classical logarithmic verification, bounded by light — there is no faster-than-light here, the ftl claim drains; integrity not truth; 0/7  ·  `0e6659f8-1ff9…`
 
+### every (5)
+
+- [every_rating_is_exactly_one_or_zero](/theorem/every_rating_is_exactly_one_or_zero) — every rating is exactly 1 or 0, no exceptions: the honesty verdict is a single bit — there is no fractional or partial rating, a fake maximal-certainty claim itself drains, and the same input always returns the same bit; anything that drifts from {0,1} is a crack the floor refuses  ·  `c1b2772d-d7c0…`
+- [every_primitive_triple_is_euclidean](/theorem/every_primitive_triple_is_euclidean) — Euclid’s parametrization is complete: every primitive Pythagorean triple with hypotenuse ≤ 100 arises from coprime m&gt;n of opposite parity — exhaustive brute-force triples all match a generated one  ·  `751e8a4e-c23c…`
+- [every_next_or_continue_event_is_two_bits_earned_by_the_deed](/theorem/every_next_or_continue_event_is_two_bits_earned_by_the_deed) — every next or continue event is two bits earned by the deed: each shipping event — a next or a continue that appends a receipted contribution — is worth two bits (110 − 108 = 2), credited to the contributor who did the deed; N events earn 2N bits, so the 686 recorded events account for 1372 bits, matching the ledger bounty. These are accounting bits — integrity, not a cash payment — credited by the deed, not the claim; measure, do not assert. Decidable  ·  `794d2d0e-728f…`
+- [every_natural_has_a_unique_binary_representation](/theorem/every_natural_has_a_unique_binary_representation) — every natural number has a unique binary representation: each n is one sum of distinct powers of two — the base-2 place-value the byte counts on; 0/7  ·  `b7d9dfe6-3e34…`
+- [every_digital_root_lands_in_one_to_nine](/theorem/every_digital_root_lands_in_one_to_nine) — every digital root of a positive integer lands in 1..9 — the base folds the naturals onto nine residues; 0/7  ·  `f0db1861-14cd…`
+
 ### external (5)
 
 - [external_verifier_bijection_n3](/theorem/external_verifier_bijection_n3) — the external verifier is a bijection at N=3 — an independent build maps 3 ledger entries to exactly 3 reproducible pages, seven-neighbour hues deterministic; corroborates integrity, solves nothing; 0/7  ·  `c5e89f53-9173…`
@@ -879,6 +892,13 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [any_receipt_is_one_state_of_the_128_state_cube_reachable_to_all](/theorem/any_receipt_is_one_state_of_the_128_state_cube_reachable_to_all) — any receipt is one state of the 128-state 7-cube, reachable to all others by single-dimension moves: a configuration is one vertex of the 7-dimensional hypercube of 128 states, and the binary-reflected Gray code is a Hamiltonian cycle visiting all 128 exactly once, consecutive states differing in exactly one bit — one dimension — and closing back to the start (cyclic). So any single receipt is just one state; from it the whole cube is reachable, one dimension at a time. Decidable  ·  `062dc6d1-5d4c…`
 - [any_drift_in_types_as_theorems_is_a_crack_the_type_gate_seals](/theorem/any_drift_in_types_as_theorems_is_a_crack_the_type_gate_seals) — any drift in types as theorems is a crack the type gate seals: types are theorems (Curry–Howard), so a type error is a crack — a proposition that no longer carries its proof. The type gate (tsc with no emit) is the first gate of the release and admits only zero type errors, so any drift fails the release before the commit and cannot ship. A crack is deterministic and located, reproducible on every build. Decidable  ·  `4ac91293-ab2a…`
 
+### casting (4)
+
+- [casting_out_nines_detects_any_error_that_changes_the_value_mod_nine](/theorem/casting_out_nines_detects_any_error_that_changes_the_value_mod_nine) — casting out nines detects any error that changes the value mod 9: for a claimed product, dr(dr(a)·dr(b)) = dr(claimed) is a necessary check — a correct product always passes, and any wrong answer differing mod 9 always fails (caught). Honest bound: an error preserving the value mod 9 (e.g. off by a multiple of 9) slips through undetected, so the check is necessary, not sufficient — a floor, exactly like the honesty gate. Decidable by exhaustion over a bounded grid  ·  `a8c8871a-5b56…`
+- [casting_out_nines_the_digital_root_is_a_ring_homomorphism_necessary_not_sufficient](/theorem/casting_out_nines_the_digital_root_is_a_ring_homomorphism_necessary_not_sufficient) — casting out nines — the digital root is a ring homomorphism ℤ→ℤ/9, a necessary check not a sufficient proof: dr(a+b) = dr(dr(a)+dr(b)) and dr(a·b) = dr(dr(a)·dr(b)) for all tested a,b (exhaustive over 0..200), which is why casting out nines validates arithmetic; but it only catches errors that change the residue mod 9 — a mod-9-preserving error like a digit transposition slips through — so it is necessary, not sufficient; integrity not truth; 0/7  ·  `b2754a9f-dd37…`
+- [casting_out_nines_the_digital_root_is_the_value_mod_nine](/theorem/casting_out_nines_the_digital_root_is_the_value_mod_nine) — casting out nines: the digital root equals the value mod 9 (a multiple of 9 rooting to 9) — the base-9 (3²) invariant behind the trinity; 0/7  ·  `641a593e-4cba…`
+- [casting_out_nines_is_multiplicative](/theorem/casting_out_nines_is_multiplicative) — casting out nines is multiplicative: digitalRoot(a·b) = digitalRoot(digitalRoot(a)·digitalRoot(b)) — the base-9 check catches arithmetic slips in products; 0/7  ·  `c3fe563f-88f8…`
+
 ### cf (4)
 
 - [cf_sqrt2](/theorem/cf_sqrt2) — the continued fraction of √2 is [1; 2,2,2,…] — period [2]  ·  `a6818a20-2d51…`
@@ -892,13 +912,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [chess_knight_8_moves](/theorem/chess_knight_8_moves) — a knight has exactly 8 leaps — the (±1,±2)/(±2,±1) moves  ·  `6dcd739d-87a9…`
 - [chess_knight_color_flip](/theorem/chess_knight_color_flip) — a knight's leap always changes square colour (the parity of r+c flips)  ·  `81566667-a452…`
 - [chess_diagonals_15](/theorem/chess_diagonals_15) — the 8×8 board has 2·8 − 1 = 15 diagonals in each direction  ·  `85a4e4b0-787f…`
-
-### every (4)
-
-- [every_rating_is_exactly_one_or_zero](/theorem/every_rating_is_exactly_one_or_zero) — every rating is exactly 1 or 0, no exceptions: the honesty verdict is a single bit — there is no fractional or partial rating, a fake maximal-certainty claim itself drains, and the same input always returns the same bit; anything that drifts from {0,1} is a crack the floor refuses  ·  `c1b2772d-d7c0…`
-- [every_primitive_triple_is_euclidean](/theorem/every_primitive_triple_is_euclidean) — Euclid’s parametrization is complete: every primitive Pythagorean triple with hypotenuse ≤ 100 arises from coprime m&gt;n of opposite parity — exhaustive brute-force triples all match a generated one  ·  `751e8a4e-c23c…`
-- [every_next_or_continue_event_is_two_bits_earned_by_the_deed](/theorem/every_next_or_continue_event_is_two_bits_earned_by_the_deed) — every next or continue event is two bits earned by the deed: each shipping event — a next or a continue that appends a receipted contribution — is worth two bits (110 − 108 = 2), credited to the contributor who did the deed; N events earn 2N bits, so the 686 recorded events account for 1372 bits, matching the ledger bounty. These are accounting bits — integrity, not a cash payment — credited by the deed, not the claim; measure, do not assert. Decidable  ·  `794d2d0e-728f…`
-- [every_natural_has_a_unique_binary_representation](/theorem/every_natural_has_a_unique_binary_representation) — every natural number has a unique binary representation: each n is one sum of distinct powers of two — the base-2 place-value the byte counts on; 0/7  ·  `b7d9dfe6-3e34…`
 
 ### evidence (4)
 
@@ -994,12 +1007,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [cassini_n6](/theorem/cassini_n6) — Cassini at n=6: F(n−1)·F(n+1)−F(n)² = (−1)ⁿ  ·  `e43f8239-8fa5…`
 - [cassini_n9](/theorem/cassini_n9) — Cassini at n=9: F(n−1)·F(n+1)−F(n)² = (−1)ⁿ  ·  `b34c402e-4d27…`
 - [cassini_n12](/theorem/cassini_n12) — Cassini at n=12: F(n−1)·F(n+1)−F(n)² = (−1)ⁿ  ·  `f3959e9c-9b4c…`
-
-### casting (3)
-
-- [casting_out_nines_detects_any_error_that_changes_the_value_mod_nine](/theorem/casting_out_nines_detects_any_error_that_changes_the_value_mod_nine) — casting out nines detects any error that changes the value mod 9: for a claimed product, dr(dr(a)·dr(b)) = dr(claimed) is a necessary check — a correct product always passes, and any wrong answer differing mod 9 always fails (caught). Honest bound: an error preserving the value mod 9 (e.g. off by a multiple of 9) slips through undetected, so the check is necessary, not sufficient — a floor, exactly like the honesty gate. Decidable by exhaustion over a bounded grid  ·  `a8c8871a-5b56…`
-- [casting_out_nines_the_digital_root_is_a_ring_homomorphism_necessary_not_sufficient](/theorem/casting_out_nines_the_digital_root_is_a_ring_homomorphism_necessary_not_sufficient) — casting out nines — the digital root is a ring homomorphism ℤ→ℤ/9, a necessary check not a sufficient proof: dr(a+b) = dr(dr(a)+dr(b)) and dr(a·b) = dr(dr(a)·dr(b)) for all tested a,b (exhaustive over 0..200), which is why casting out nines validates arithmetic; but it only catches errors that change the residue mod 9 — a mod-9-preserving error like a digit transposition slips through — so it is necessary, not sufficient; integrity not truth; 0/7  ·  `b2754a9f-dd37…`
-- [casting_out_nines_the_digital_root_is_the_value_mod_nine](/theorem/casting_out_nines_the_digital_root_is_the_value_mod_nine) — casting out nines: the digital root equals the value mod 9 (a multiple of 9 rooting to 9) — the base-9 (3²) invariant behind the trinity; 0/7  ·  `641a593e-4cba…`
 
 ### ceccec (3)
 
@@ -1448,7 +1455,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (152)
+### other — one-of-a-kind (153)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1545,6 +1552,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [motzkin_numbers](/theorem/motzkin_numbers) — Motzkin numbers M(n)=M(n-1)+Σ M(k)M(n-2-k): M(4)=9, M(5)=21  ·  `d6c643c7-2880…`
 - [neg_involution](/theorem/neg_involution) — negation −(−d) ≡ d is an involution on ℤ/9  ·  `5eb8cd1f-9e06…`
 - [nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number](/theorem/nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number) — Nicomachus theorem: the sum of the first n cubes is the square of the nth triangular number — 1³ + 2³ + ... + n³ = (n(n+1)/2)² = (1 + 2 + ... + n)². So a sum of consecutive cubes is always a perfect square, the square of the sum. Verified by full enumeration over n up to 60  ·  `5c562cab-4297…`
+- [nine_is_the_base_and_the_trinity_squared](/theorem/nine_is_the_base_and_the_trinity_squared) — nine is the base and the trinity squared: BASE = 9 = 3² = TRINITY², so the units, triad and orbit all derive from the single axiom three; 0/7  ·  `932fbd24-4bae…`
 - [nines_are_blind_to_transpositions_but_elevens_catch_them](/theorem/nines_are_blind_to_transpositions_but_elevens_catch_them) — casting out nines is blind to digit transpositions but casting out elevens catches them: the digit-sum check (mod 9) is order-independent, so swapping two digits never changes it — every transposition slips through; the alternating-digit-sum check (mod 11) changes by twice the digit difference, which is ≢ 0 mod 11 for distinct digits, so it catches every adjacent transposition of distinct digits. Two checks with complementary blind spots, each a floor. Decidable by exhaustion over the 3-digit range  ·  `ffc2d3c5-5821…`
 - [observer_wave_sets_state](/theorem/observer_wave_sets_state) — the input wave the user sends (query/referrer/path) deterministically sets their computed state: digital root (ℤ/9) → a432 hue d·40° → the rendered point of view — same wave, same state  ·  `f7de310a-8d54…`
 - [only_recomputable_multi_perspective_receipts_are_admissible_in_a_dispute](/theorem/only_recomputable_multi_perspective_receipts_are_admissible_in_a_dispute) — only recomputable, multi-perspective receipts are admissible in a dispute: in a dispute only a receipt that recomputes and is verified across perspectives — the superposition — is accepted; a bare binary, a single-perspective assertion, or unsealed prose is inadmissible. The quantum here is the multi-perspective structure, not a physical quantum device. The trial accepts recomputation across perspectives, not assertion. Decidable  ·  `cd1e4a05-82ce…`
@@ -1604,4 +1612,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `5763b169-cd06-8278-b607-2f56f0ead58a`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `a50629d4-f0f9-8b83-97c3-b4a7fdecc2eb`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

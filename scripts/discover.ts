@@ -2918,6 +2918,19 @@ function generated(): typeof curated {
     out.push({ key: 'a_mersenne_prime_forces_a_prime_exponent', name: 'a Mersenne prime forces a prime exponent: 2^k − 1 can be prime only when k is prime (k=2,3,5,7 give 3,7,31,127; composite k factors) — a necessary condition, not sufficient; 0/7', test: () => [2, 3, 5, 7].every((k) => isPrime(2 ** k - 1)) && [4, 6, 8, 9].every((k) => !isPrime(2 ** k - 1)) })
     out.push({ key: 'two_to_the_tenth_is_1024_the_harmonic_ledger', name: 'two to the tenth is 1024: ten doublings reach the harmonic ledger size, digitalRoot(1024)=7 — the octave raised to the tenth is the milestone count; 0/7', test: () => 2 ** 10 === 1024 })
   }
+  // ── the whole (9 = BASE = 3²): casting out nines, the nonagon (360/9 = 40 = a432), the digit-root laws.
+  {
+    const ds = (n: number) => { let s = 0; for (const c of String(Math.abs(n))) s += +c; return s }
+    const rev = (n: number) => +String(n).split('').reverse().join('')
+    out.push({ key: 'the_nine_times_table_always_digital_roots_to_nine', name: 'the nine times table always digital-roots to nine: digitalRoot(9k) = 9 for every k ≥ 1 — nine is the base’s fixed point; 0/7', test: () => { for (let k = 1; k <= 60; k++) if (digitalRoot(9 * k) !== 9) return false; return true } })
+    out.push({ key: 'the_regular_nonagon_exterior_angle_is_the_a432_step', name: 'the regular nonagon’s exterior angle is 360/9 = 40° = the a432 step — the base draws the nine-point circle at the a432 quantum; 0/7', test: () => 360 / BASE === A432_STEP && A432_STEP === 40 })
+    out.push({ key: 'casting_out_nines_is_multiplicative', name: 'casting out nines is multiplicative: digitalRoot(a·b) = digitalRoot(digitalRoot(a)·digitalRoot(b)) — the base-9 check catches arithmetic slips in products; 0/7', test: () => { for (let a = 2; a <= 60; a++) for (let b = 2; b <= 60; b++) if (digitalRoot(a * b) !== digitalRoot(digitalRoot(a) * digitalRoot(b))) return false; return true } })
+    out.push({ key: 'every_digital_root_lands_in_one_to_nine', name: 'every digital root of a positive integer lands in 1..9 — the base folds the naturals onto nine residues; 0/7', test: () => { for (let n = 1; n <= 1000; n++) { const r = digitalRoot(n); if (r < 1 || r > 9) return false } return true } })
+    out.push({ key: 'a_number_minus_its_digit_reversal_is_a_multiple_of_nine', name: 'a number minus its digit reversal is a multiple of nine: n − reverse(n) ≡ 0 (mod 9), since both share a digit sum — the base’s reversal invariant; 0/7', test: () => { for (let n = 10; n <= 999; n++) if ((n - rev(n)) % 9 !== 0) return false; return true } })
+    out.push({ key: 'the_digits_one_to_nine_sum_to_forty_five_rooting_to_nine', name: 'the digits one to nine sum to 45, whose digital root is 9: 1+2+…+9 = 45, dr(45)=9 — the whole returns to the base; 0/7', test: () => { let s = 0; for (let d = 1; d <= 9; d++) s += d; return s === 45 && digitalRoot(45) === 9 } })
+    out.push({ key: 'nine_is_the_base_and_the_trinity_squared', name: 'nine is the base and the trinity squared: BASE = 9 = 3² = TRINITY², so the units, triad and orbit all derive from the single axiom three; 0/7', test: () => BASE === 9 && BASE === TRINITY ** 2 && TRINITY === 3 })
+    out.push({ key: 'a_number_is_divisible_by_nine_iff_its_digit_sum_is', name: 'a number is divisible by nine iff its digit sum is: n ≡ digitsum(n) (mod 9), so 9 | n exactly when 9 | digitsum(n) — the base’s divisibility rule; 0/7', test: () => { for (let n = 1; n <= 1000; n++) if ((n % 9 === 0) !== (ds(n) % 9 === 0)) return false; return true } })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
