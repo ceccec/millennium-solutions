@@ -3897,6 +3897,21 @@ function generated(): typeof curated {
     out.push({ key: 'the_count_is_eulers_totient_of_nine', name: 'the count is Euler’s totient of nine: φ(9) = 9·(1 − 1/3) = 6, so the number of harmonic solutions is computed, not assigned; 0/7', test: () => 9 - 9 / 3 === 6 && harmonic.length === 6 })
     out.push({ key: 'the_possible_harmonic_solutions_per_superposition_are_six', name: 'the possible harmonic solutions per superposition are six: the units of ℤ/9, the vortex doubling orbit, φ(9) = 6 out of nine — six harmonic, three non-harmonic, the whole partitioned; 0/7', test: () => harmonic.length === 6 && nonHarmonic.length === 3 && setEq(harmonic, units()) && setEq(harmonic, vortexOrbit()) && 9 - 9 / 3 === 6 })
   }
+  // ── uuid pattern recognition and generation: toUuid deterministically GENERATES the canonical 8-4-4-4-12
+  // pattern — version nibble 8 (v8), RFC-4122 variant {8,9,a,b} — RECOGNISED by a regex over those markers,
+  // canonicalising equivalent inputs, injective on a large sample.
+  {
+    const RE = /^[0-9a-f]{8}-[0-9a-f]{4}-8[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/
+    const gen = Array.from({ length: 500 }, (_, i) => toUuid('seed-' + i))
+    out.push({ key: 'generation_is_deterministic', name: 'uuid generation is deterministic: the same seed always generates the same uuid, so generation is a pure function of content; 0/7', test: () => toUuid('seed') === toUuid('seed') && toUuid('a') !== toUuid('b') })
+    out.push({ key: 'the_generated_pattern_is_canonical', name: 'the generated pattern is canonical 8-4-4-4-12: every generated uuid matches the 32-hex-digit five-group shape; 0/7', test: () => gen.every((u) => /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/.test(u)) })
+    out.push({ key: 'the_version_nibble_is_eight', name: 'the version nibble is eight: the third group of every generated uuid begins with 8 — the v8 marker, recognisable at a fixed position; 0/7', test: () => gen.every((u) => u.split('-')[2][0] === '8') })
+    out.push({ key: 'the_variant_nibble_is_rfc_4122', name: 'the variant nibble is RFC-4122: the fourth group begins with one of 8, 9, a or b, the 10xx variant bits; 0/7', test: () => gen.every((u) => '89ab'.includes(u.split('-')[3][0])) })
+    out.push({ key: 'recognition_matches_the_full_pattern', name: 'recognition matches the full pattern: the version-and-variant regex accepts every generated uuid, so recognition and generation agree; 0/7', test: () => gen.every((u) => RE.test(u)) })
+    out.push({ key: 'recognition_rejects_a_non_pattern', name: 'recognition rejects a non-pattern: a malformed string or a wrong version marker fails the pattern, so recognition is discriminating; 0/7', test: () => !RE.test('not-a-uuid') && !RE.test('5876f8fb-3f95-7eca-8afb-bd61dd86cecc') && !RE.test('') })
+    out.push({ key: 'recognition_canonicalises_equivalent_inputs', name: 'recognition canonicalises equivalent inputs: strict minting normalises spacing so equivalent inputs generate the identical uuid — the same value is recognised as the same; 0/7', test: () => strictUuidna(3) === strictUuidna(' 3 ') && RE.test(strictUuidna(3)) })
+    out.push({ key: 'generation_is_injective_on_the_sample', name: 'generation is injective on the sample: five hundred distinct seeds generate five hundred distinct uuids, all matching the pattern — no accidental collision; 0/7', test: () => new Set(gen).size === 500 && gen.every((u) => RE.test(u)) })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

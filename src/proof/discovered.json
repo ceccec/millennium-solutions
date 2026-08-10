@@ -8318,5 +8318,45 @@
     "key": "the_possible_harmonic_solutions_per_superposition_are_six",
     "name": "the possible harmonic solutions per superposition are six: the units of ℤ/9, the vortex doubling orbit, φ(9) = 6 out of nine — six harmonic, three non-harmonic, the whole partitioned; 0/7",
     "receipt": "d656891f-fcc5-8113-966f-5cfd219e0b48"
+  },
+  {
+    "key": "generation_is_deterministic",
+    "name": "uuid generation is deterministic: the same seed always generates the same uuid, so generation is a pure function of content; 0/7",
+    "receipt": "627dcbe3-93fb-894b-a959-b79850db4e7c"
+  },
+  {
+    "key": "the_generated_pattern_is_canonical",
+    "name": "the generated pattern is canonical 8-4-4-4-12: every generated uuid matches the 32-hex-digit five-group shape; 0/7",
+    "receipt": "bc56d44e-84a7-8e64-b2a2-47012261cd3d"
+  },
+  {
+    "key": "the_version_nibble_is_eight",
+    "name": "the version nibble is eight: the third group of every generated uuid begins with 8 — the v8 marker, recognisable at a fixed position; 0/7",
+    "receipt": "1c298f69-441a-86a1-9109-1b660eafedce"
+  },
+  {
+    "key": "the_variant_nibble_is_rfc_4122",
+    "name": "the variant nibble is RFC-4122: the fourth group begins with one of 8, 9, a or b, the 10xx variant bits; 0/7",
+    "receipt": "5eb74bb1-a18d-80b8-9afb-ffc63df57b87"
+  },
+  {
+    "key": "recognition_matches_the_full_pattern",
+    "name": "recognition matches the full pattern: the version-and-variant regex accepts every generated uuid, so recognition and generation agree; 0/7",
+    "receipt": "bcb7c200-12b8-84e0-a1e9-1ed57672273f"
+  },
+  {
+    "key": "recognition_rejects_a_non_pattern",
+    "name": "recognition rejects a non-pattern: a malformed string or a wrong version marker fails the pattern, so recognition is discriminating; 0/7",
+    "receipt": "aca6b31e-c57d-8dcd-a20a-1f49a1bc17cf"
+  },
+  {
+    "key": "recognition_canonicalises_equivalent_inputs",
+    "name": "recognition canonicalises equivalent inputs: strict minting normalises spacing so equivalent inputs generate the identical uuid — the same value is recognised as the same; 0/7",
+    "receipt": "74099b6f-869b-8ea6-a7ec-b4af228bd864"
+  },
+  {
+    "key": "generation_is_injective_on_the_sample",
+    "name": "generation is injective on the sample: five hundred distinct seeds generate five hundred distinct uuids, all matching the pattern — no accidental collision; 0/7",
+    "receipt": "7055ddd3-2d16-8247-88ac-aaac54cb2ad5"
   }
 ]

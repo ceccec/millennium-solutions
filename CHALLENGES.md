@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1664 recorded in 425 families
+## Discovered theorems (decidable, over ℤ/9) — 1672 recorded in 427 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (348)
+### the (351)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -372,6 +372,9 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_non_harmonic_are_three_multiples_of_three](/theorem/the_non_harmonic_are_three_multiples_of_three) — the non-harmonic are three: the residues sharing the factor three — the multiples of three — number exactly three; 0/7  ·  `e0592399-231f…`
 - [the_count_is_eulers_totient_of_nine](/theorem/the_count_is_eulers_totient_of_nine) — the count is Euler’s totient of nine: φ(9) = 9·(1 − 1/3) = 6, so the number of harmonic solutions is computed, not assigned; 0/7  ·  `cb45b828-bf73…`
 - [the_possible_harmonic_solutions_per_superposition_are_six](/theorem/the_possible_harmonic_solutions_per_superposition_are_six) — the possible harmonic solutions per superposition are six: the units of ℤ/9, the vortex doubling orbit, φ(9) = 6 out of nine — six harmonic, three non-harmonic, the whole partitioned; 0/7  ·  `d656891f-fcc5…`
+- [the_generated_pattern_is_canonical](/theorem/the_generated_pattern_is_canonical) — the generated pattern is canonical 8-4-4-4-12: every generated uuid matches the 32-hex-digit five-group shape; 0/7  ·  `bc56d44e-84a7…`
+- [the_version_nibble_is_eight](/theorem/the_version_nibble_is_eight) — the version nibble is eight: the third group of every generated uuid begins with 8 — the v8 marker, recognisable at a fixed position; 0/7  ·  `1c298f69-441a…`
+- [the_variant_nibble_is_rfc_4122](/theorem/the_variant_nibble_is_rfc_4122) — the variant nibble is RFC-4122: the fourth group begins with one of 8, 9, a or b, the 10xx variant bits; 0/7  ·  `5eb74bb1-a18d…`
 
 ### a (65)
 
@@ -1640,6 +1643,12 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [quaternion_noncommutative](/theorem/quaternion_noncommutative) — the quaternions are non-commutative: ij=k but ji=−k  ·  `0dca5831-27b0…`
 - [quaternion_8_units](/theorem/quaternion_8_units) — the quaternion units form a group of 8: {±1, ±i, ±j, ±k}  ·  `591b9388-6c28…`
 
+### recognition (3)
+
+- [recognition_matches_the_full_pattern](/theorem/recognition_matches_the_full_pattern) — recognition matches the full pattern: the version-and-variant regex accepts every generated uuid, so recognition and generation agree; 0/7  ·  `bcb7c200-12b8…`
+- [recognition_rejects_a_non_pattern](/theorem/recognition_rejects_a_non_pattern) — recognition rejects a non-pattern: a malformed string or a wrong version marker fails the pattern, so recognition is discriminating; 0/7  ·  `aca6b31e-c57d…`
+- [recognition_canonicalises_equivalent_inputs](/theorem/recognition_canonicalises_equivalent_inputs) — recognition canonicalises equivalent inputs: strict minting normalises spacing so equivalent inputs generate the identical uuid — the same value is recognised as the same; 0/7  ·  `74099b6f-869b…`
+
 ### s3 (3)
 
 - [s3_order6](/theorem/s3_order6) — the symmetric group S₃ has exactly 6 elements (= |ℤ/9*|)  ·  `40c95681-97c1…`
@@ -1796,6 +1805,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 
 - [from_one_seed_all_theorems_compute_free_with_no_escape](/theorem/from_one_seed_all_theorems_compute_free_with_no_escape) — from one seed all theorems compute free, with no escape: the whole chain is generated from a single seed — receipt[i] = toUuid(receipt[i−1] → key[i]), seeded from the axiom — so every receipt is reachable from the seed and recomputes deterministically with no external input and no escape to outside data; the release content-address folds the state to one fixed address. Free means self-contained and offline, not without a deed. Decidable  ·  `9382b273-4cd9…`
 - [from_version_to_ui_no_payload](/theorem/from_version_to_ui_no_payload) — from the version to the UI, no payload: the version is a translatable label, the receipt re-derives from the chain, and the UI reads the ledger to recompute — the address travels, the value is rebuilt; 0/7  ·  `b3a25d08-135b…`
+
+### generation (2)
+
+- [generation_is_deterministic](/theorem/generation_is_deterministic) — uuid generation is deterministic: the same seed always generates the same uuid, so generation is a pure function of content; 0/7  ·  `627dcbe3-93fb…`
+- [generation_is_injective_on_the_sample](/theorem/generation_is_injective_on_the_sample) — generation is injective on the sample: five hundred distinct seeds generate five hundred distinct uuids, all matching the pattern — no accidental collision; 0/7  ·  `7055ddd3-2d16…`
 
 ### gray (2)
 
@@ -2257,4 +2271,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `1f400ca5-a403-8201-bbe3-d9053f6ba6c2`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `b972abdc-74fb-8d9c-9e0e-6255157b90f0`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
