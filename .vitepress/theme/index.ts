@@ -19,6 +19,7 @@ import Propulsion from './Propulsion.vue'
 import Teleporter from './Teleporter.vue'
 import Crypt from './Crypt.vue'
 import Organism from './Organism.vue'
+import Harness from './Harness.vue'
 import './custom.css'
 
 export default {
@@ -44,6 +45,7 @@ export default {
     app.component('Teleporter', Teleporter)
     app.component('Crypt', Crypt)
     app.component('Organism', Organism)
+    app.component('Harness', Harness)
     // PWA: register the offline service worker (client-only; HTTPS or localhost).
     if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
       window.addEventListener('load', () => {

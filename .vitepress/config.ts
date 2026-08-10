@@ -148,6 +148,7 @@ export default defineConfig({
       { text: 'Read', items: [
         { text: 'Abstract', link: '/ABSTRACT' },
         { text: 'The organism', link: '/organism' },
+        { text: 'The harness', link: '/harness' },
         { text: 'The', link: '/the' },
         { text: 'Theorems', link: '/THEOREMS' },
         { text: 'Challenges', link: '/CHALLENGES' },
@@ -218,6 +219,7 @@ export default defineConfig({
         text: 'Fused compute (TS)',
         items: [
           { text: 'Computed results', link: '/compute' },
+          { text: 'Harness (dashboard)', link: '/harness' },
           { text: 'Real advantage', link: '/speedup' },
           { text: 'State dashboard', link: '/dashboard' },
           { text: 'Accounting', link: '/ACCOUNTING' },
