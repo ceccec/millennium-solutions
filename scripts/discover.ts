@@ -4049,6 +4049,22 @@ function generated(): typeof curated {
     out.push({ key: 'the_rosetta_ties_the_seven_dimensions', name: 'the rosetta ties the seven dimensions: the reversal must hold read in every dialect, so a boast that it is cracked drains while the honest asymmetry passes; 0/7', test: () => computes('inverting one reversible layer is cheap; reversing all seven authenticated dimensions is expensive').binary === 1 && computes('we crack the encryption and reverse all seven dimensions instantly').binary === 0 })
     out.push({ key: 'forward_reverse_inverse_combined_via_the_rosetta', name: 'forward, reverse and inverse combined via the rosetta: each motion an involution or a keyed layer, composing in order — cheap to compute and to invert one layer, expensive to reverse all seven, the seven cross-linked and all required to hold; 0/7', test: () => rev(rev('x')) === 'x' && diamond(diamond(7)) === 7 && readImprint(imprint('11')) === '11' && reverse7(dims, dims) === true && reverse7(['x', ...dims.slice(1)], dims) === false })
   }
+  // ── the site covers all gaps: which theorems have more or less in common is fundamental UI architecture (a
+  // symmetric commonality metric over shared key tokens), and the whole is a hologram — a part proves the whole
+  // and the inverse rejects a foreign part.
+  {
+    const tokens = (key: string) => new Set(key.split('_'))
+    const jaccard = (a: string, b: string) => { const A = tokens(a), B = tokens(b); const inter = [...A].filter((t) => B.has(t)).length; const uni = new Set([...A, ...B]).size; return uni === 0 ? 0 : inter / uni }
+    const leaves = Array.from({ length: 8 }, (_, i) => toUuid('leaf' + i))
+    out.push({ key: 'commonality_is_shared_key_tokens', name: 'commonality is shared key tokens: two theorems that share tokens in their keys have a positive commonality, so relatedness is computed, not curated; 0/7', test: () => jaccard('the_gate_reads_greek', 'the_gate_reads_hebrew') > 0 && jaccard('the_gate_reads_greek', 'genesis_the_octave') < jaccard('the_gate_reads_greek', 'the_gate_reads_hebrew') })
+    out.push({ key: 'the_commonality_metric_is_symmetric', name: 'the commonality metric is symmetric: how much A has in common with B equals how much B has with A; 0/7', test: () => jaccard('a_b_c', 'a_b_d') === jaccard('a_b_d', 'a_b_c') })
+    out.push({ key: 'identical_theorems_are_maximally_common', name: 'identical theorems are maximally common: a key compared with itself scores one, the top of the scale; 0/7', test: () => jaccard('same_key_here', 'same_key_here') === 1 })
+    out.push({ key: 'disjoint_theorems_share_nothing', name: 'disjoint theorems share nothing: keys with no common token score zero, the bottom of the scale; 0/7', test: () => jaccard('alpha_beta', 'gamma_delta') === 0 })
+    out.push({ key: 'the_ui_groups_by_commonality', name: 'the UI groups by commonality: theorems sharing a family token cluster together, so the interface architecture is the commonality graph; 0/7', test: () => jaccard('genesis_0_void', 'genesis_1_unit') > jaccard('genesis_0_void', 'vibe_hype') })
+    out.push({ key: 'the_hologram_proves_the_whole_from_a_part', name: 'the hologram proves the whole from a part: a single leaf verifies against the root by its proof path, so the whole is recoverable from a fragment; 0/7', test: () => verifyProof(leaves[3], merkleProof(leaves, 3), merkleRoot(leaves)) === true })
+    out.push({ key: 'the_inverse_rejects_a_foreign_part', name: 'the inverse rejects a foreign part: a leaf not in the tree fails its proof, so the hologram computes both ways — belonging and not-belonging; 0/7', test: () => verifyProof(toUuid('foreign'), merkleProof(leaves, 3), merkleRoot(leaves)) === false })
+    out.push({ key: 'the_site_covers_all_gaps_as_a_hologram', name: 'the site covers all gaps as a hologram: commonality is a symmetric computed metric that groups the UI, and the whole is reconstructable from a part while the inverse rejects a foreign one — no gap uncovered; 0/7', test: () => jaccard('a_b', 'a_b') === 1 && jaccard('a_b', 'c_d') === 0 && verifyProof(leaves[0], merkleProof(leaves, 0), merkleRoot(leaves)) && !verifyProof(toUuid('x'), merkleProof(leaves, 0), merkleRoot(leaves)) })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

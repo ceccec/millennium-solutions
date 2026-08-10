@@ -30,10 +30,14 @@ const linksOf = (html: string) => {
   return [...out]
 }
 
+// A node is addressed by its PATH and its EDGES (the "self and its neighbours" hologram) — NOT by re-hashing the
+// full HTML. Per-file content integrity is already sealed by release.ts (merkleFold of git ls-files), so hashing
+// every page here was redundant and O(total bytes) — the build's biggest cost (~17s at 12k pages). Now O(links).
 const nodes = htmls.sort().map((f) => {
   const html = readFileSync(f, 'utf8')
   const path = routeOf(f)
-  return { path, title: titleOf(html), address: toUuid(path + ':' + html), links: linksOf(html) }
+  const links = linksOf(html)
+  return { path, title: titleOf(html), address: toUuid(path + ':' + links.join(',')), links }
 })
 const known = new Set(nodes.map((n) => norm(n.path)))
 

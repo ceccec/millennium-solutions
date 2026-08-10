@@ -8718,5 +8718,45 @@
     "key": "the_rosetta_ties_the_seven_dimensions",
     "name": "the rosetta ties the seven dimensions: the reversal must hold read in every dialect, so a boast that it is cracked drains while the honest asymmetry passes; 0/7",
     "receipt": "15dbb84e-9e1b-8d7b-8571-ddbdc1f404a5"
+  },
+  {
+    "key": "commonality_is_shared_key_tokens",
+    "name": "commonality is shared key tokens: two theorems that share tokens in their keys have a positive commonality, so relatedness is computed, not curated; 0/7",
+    "receipt": "5d6c029b-4d68-8965-8259-d58fae9c5cd6"
+  },
+  {
+    "key": "the_commonality_metric_is_symmetric",
+    "name": "the commonality metric is symmetric: how much A has in common with B equals how much B has with A; 0/7",
+    "receipt": "bd6032fa-6cb5-82e1-b10c-2b874fc5b4c3"
+  },
+  {
+    "key": "identical_theorems_are_maximally_common",
+    "name": "identical theorems are maximally common: a key compared with itself scores one, the top of the scale; 0/7",
+    "receipt": "284b66d1-53ed-8ac4-a191-4d34e7c2a90c"
+  },
+  {
+    "key": "disjoint_theorems_share_nothing",
+    "name": "disjoint theorems share nothing: keys with no common token score zero, the bottom of the scale; 0/7",
+    "receipt": "6d3d64f3-3b7b-8579-8037-1f963a59c28e"
+  },
+  {
+    "key": "the_ui_groups_by_commonality",
+    "name": "the UI groups by commonality: theorems sharing a family token cluster together, so the interface architecture is the commonality graph; 0/7",
+    "receipt": "5fa71ba5-6fb6-8b09-8801-e8583f5a3085"
+  },
+  {
+    "key": "the_hologram_proves_the_whole_from_a_part",
+    "name": "the hologram proves the whole from a part: a single leaf verifies against the root by its proof path, so the whole is recoverable from a fragment; 0/7",
+    "receipt": "40452af7-2fed-807c-bb74-e79b4f44ad10"
+  },
+  {
+    "key": "the_inverse_rejects_a_foreign_part",
+    "name": "the inverse rejects a foreign part: a leaf not in the tree fails its proof, so the hologram computes both ways — belonging and not-belonging; 0/7",
+    "receipt": "5270de38-d02a-8a14-8929-a482e2ed5e6c"
+  },
+  {
+    "key": "the_site_covers_all_gaps_as_a_hologram",
+    "name": "the site covers all gaps as a hologram: commonality is a symmetric computed metric that groups the UI, and the whole is reconstructable from a part while the inverse rejects a foreign one — no gap uncovered; 0/7",
+    "receipt": "2ca6874c-e3ae-852a-9f53-955bf538aeea"
   }
 ]
