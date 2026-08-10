@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1496 recorded in 393 families
+## Discovered theorems (decidable, over ℤ/9) — 1504 recorded in 394 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (272)
+### the (276)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -296,6 +296,10 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_ui_presents_each_output_by_address](/theorem/the_ui_presents_each_output_by_address) — the UI presents each output by its address: a tool output is shown by its content-address (a pointer), deterministic and distinct for distinct outputs — by reference, not by payload; 0/7  ·  `00a5458e-b8c6…`
 - [the_theorems_are_the_basis_of_the_skills](/theorem/the_theorems_are_the_basis_of_the_skills) — the theorems are the basis of the skills: each skill’s behaviour is a decidable test — the gate returns a bit, the fold a root — so a skill is a theorem made callable; 0/7  ·  `3355f5f9-50b0…`
 - [the_ui_is_the_harness_of_the_mcp](/theorem/the_ui_is_the_harness_of_the_mcp) — the UI is the harness of the MCP: every tool output is made auditable, auditable in all seven, reeducated when it overclaims, addressed and chained — the thirteen tools the skills, the theorems their basis, each output presented by reference; 0/7  ·  `6e10bfae-3485…`
+- [the_rosetta_registers_seven_locales](/theorem/the_rosetta_registers_seven_locales) — the rosetta registers seven locales: the locale order lists exactly seven distinct dimensions (en, bg, de, fr, es, ru, zh); 0/7  ·  `a06a85f6-7dd2…`
+- [the_gate_reads_every_registered_locale](/theorem/the_gate_reads_every_registered_locale) — the gate reads every registered locale: a proof-boast in each of the seven locales’ languages drains to the floor, so an overclaim hides in no dimension; 0/7  ·  `dd2e93cb-7610…`
+- [the_seven_locales_fold_to_one_rosetta_root](/theorem/the_seven_locales_fold_to_one_rosetta_root) — the seven locales fold to one rosetta root: the merkle fold of the locale codes is a single deterministic address, order-independent; 0/7  ·  `e7359878-8045…`
+- [the_floor_is_the_same_in_every_locale](/theorem/the_floor_is_the_same_in_every_locale) — the floor is the same in every locale: the honest 0/7 passes and a proof-boast drains identically whichever dimension it is read in — one floor across the rosetta; 0/7  ·  `3c88e732-e79d…`
 
 ### relation (55)
 
@@ -355,7 +359,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [relation_receipt_chain_is_forensic_custody](/theorem/relation_receipt_chain_is_forensic_custody) — the receipt chain IS chain-of-custody: receipt[i] = toUuid(receipt[i−1]→key[i]) from a seed, so altering one link changes every link after it — the merkle-ledger and forensics are one construction  ·  `d0307011-b34a…`
 - [relation_coin64_collision_free_on_domains](/theorem/relation_coin64_collision_free_on_domains) — the 64-bit currency is collision-free across the rosetta: coin64 of each domain yields a distinct coin (as many coins as domains) — the shared currency addresses every perspective uniquely  ·  `dc278848-c7d9…`
 
-### a (47)
+### a (48)
 
 - [a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony](/theorem/a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony) — a theorem without a formula is a hallucination, recomputed in a432 harmony: a claim is a theorem only if it is backed by a computable formula that recomputes true — a prose-only claim with no formula, or one whose formula computes false, is refused as hallucination and never recorded. Every recorded fact recomputes deterministically and folds into the a432 harmony root (the receipt of state). Measure, do not assert. Decidable  ·  `e3d75d76-310f…`
 - [a_referrer_always_counts_with_its_id](/theorem/a_referrer_always_counts_with_its_id) — a referrer always counts with its id: a reference from a referrer to a target is receipted as toUuid(referrer id → target), so the referrer id is always part of the count; two different referrers to the same target produce two distinct receipts, each counted with its own id, and changing the id changes the receipt — the id is load-bearing. Deterministic and reproducible: the same referrer and target always count the same. Decidable  ·  `65bfacb4-f29e…`
@@ -404,8 +408,9 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [a_dissent_in_the_trinity_localises_the_bug](/theorem/a_dissent_in_the_trinity_localises_the_bug) — a dissent in the trinity localises the bug: when the three verdicts disagree, the minority position marks where to look — the disagreement is the lead; 0/7  ·  `41a03892-55b4…`
 - [a_test_teaches_by_its_verdict](/theorem/a_test_teaches_by_its_verdict) — a test teaches by its verdict: the gate returns a bit and, when it drains, the exact prose to fix — feedback, not punishment; 0/7  ·  `87e17181-eb3d…`
 - [a_receipt_is_plain_serialisable_data](/theorem/a_receipt_is_plain_serialisable_data) — a receipt is plain, serialisable data: a 36-character string that survives JSON round-trip unchanged, consumable by any framework without adapters; 0/7  ·  `beb5814b-105b…`
+- [a_content_address_needs_no_client_framework](/theorem/a_content_address_needs_no_client_framework) — a content-address needs no client framework: it is a bare identifier with no markup, so a page can present it without shipping a framework runtime; 0/7  ·  `4f4b9996-7fa5…`
 
-### uuidna (31)
+### uuidna (32)
 
 - [uuidna_quantum_verification_recomputes_the_address_and_folds_a_multi_perspective_receipt](/theorem/uuidna_quantum_verification_recomputes_the_address_and_folds_a_multi_perspective_receipt) — uuidna quantum verification — recomputes the address and folds a multi-perspective receipt, integrity not truth: verification recomputes the address from its seed (integrity, reproducible by anyone) and folds a multi-perspective joint receipt that is the same for any observer ordering; a bit-seed round-trips as a bounded imprinted message. The quantum here is the multi-perspective structure, not quantum hardware; verification is integrity, not truth. Decidable  ·  `c7b949e5-38b5…`
 - [uuidna_is_the_brand_og_object_under_cc_and_the_seal_audits_all_prose](/theorem/uuidna_is_the_brand_og_object_under_cc_and_the_seal_audits_all_prose) — uuidna is the brand OG object under Creative Commons — and the seal legally audits all prose: the site brands as uuidna under CC BY-NC, referencing the non-profit and commercial tracks; the seal legally audits all prose — it globs every prose file and drains any that violates the floor, an honest audit, not an oracle. The domain registration is external, taken on the author word, not sealed here. Decidable  ·  `5d35c811-b545…`
@@ -438,6 +443,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [uuidna_is_mandatory_because_fast_not_quantum](/theorem/uuidna_is_mandatory_because_fast_not_quantum) — uuidna is mandatory because it is fast — classically: verifying an address is one step against recomputing N, a real measured speedup of N−1, and the quantum-speed boast drains; 0/7  ·  `81100eb5-9b9d…`
 - [uuidna_a432_harmonic_involution_classical](/theorem/uuidna_a432_harmonic_involution_classical) — uuidna a432 is a classical harmonic involution: 432 = 2⁴·3³ with digital root 9, the octave map self-inverse, the string a reversible imprint — computed by exact arithmetic, never quantum computing, never a physical string theory; 0/7  ·  `246ae6e4-413b…`
 - [uuidna_ports_at_scale_as_a_compliant_plugin](/theorem/uuidna_ports_at_scale_as_a_compliant_plugin) — uuidna ports at scale as a compliant plugin: pure, state-free, host-independent functions producing plain serialisable data — the same address, fold and verdict everywhere, independent and fully compliant with its host; 0/7  ·  `2c4753ae-be4f…`
+- [uuidna_fuses_the_locale_api_framework_free](/theorem/uuidna_fuses_the_locale_api_framework_free) — uuidna fuses the VitePress locale API in the rosetta, framework-free: seven locales matching one nav shape, folding to one root, each read by the gate, presented as content-addresses without a client runtime — lighter and integrity-checkable, never an unbounded speed or security claim; 0/7  ·  `68e49218-402a…`
 
 ### pure (27)
 
@@ -617,7 +623,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [gate_reads_twenty_two_dialects](/theorem/gate_reads_twenty_two_dialects) — uuidna reads twenty-two dialects: a proof-boast drains in every one — the theorems, not a translator, discovered the languages, at scale and speed; 0/7  ·  `cdae6ede-4cd5…`
 - [gate_reads_glagolitic](/theorem/gate_reads_glagolitic) — the honesty gate reads Glagolitic, the oldest Slavic script (script #23): a proof-root in Glagolitic transliterates through the rosetta to Cyrillic and drains — one message, crosslinked across scripts; 0/7  ·  `c56a3ac1-222e…`
 
-### every (13)
+### every (14)
 
 - [every_rating_is_exactly_one_or_zero](/theorem/every_rating_is_exactly_one_or_zero) — every rating is exactly 1 or 0, no exceptions: the honesty verdict is a single bit — there is no fractional or partial rating, a fake maximal-certainty claim itself drains, and the same input always returns the same bit; anything that drifts from {0,1} is a crack the floor refuses  ·  `c1b2772d-d7c0…`
 - [every_primitive_triple_is_euclidean](/theorem/every_primitive_triple_is_euclidean) — Euclid’s parametrization is complete: every primitive Pythagorean triple with hypotenuse ≤ 100 arises from coprime m&gt;n of opposite parity — exhaustive brute-force triples all match a generated one  ·  `751e8a4e-c23c…`
@@ -632,6 +638,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [every_page_is_a_receipt_referrer_relative](/theorem/every_page_is_a_receipt_referrer_relative) — every page is a receipt from the referrer: the address is a function of referrer and page, so the same page seen from two referrers yields two receipts, each deterministic; 0/7  ·  `5702ea67-172d…`
 - [every_page_recomputes_unless_a_wave_imprints](/theorem/every_page_recomputes_unless_a_wave_imprints) — every page recomputes the same result unless a wave imprints: the referrer-relative receipt is deterministic and the page address invariant, while each observing wave advances a tamper-evident audit chain — logged, not mutated; 0/7  ·  `e4e70d71-52c9…`
 - [every_mcp_output_is_harnessed_auditable](/theorem/every_mcp_output_is_harnessed_auditable) — every MCP output is harnessed auditable: wrapping any tool output makes it auditable, so nothing leaves the MCP unweighed; 0/7  ·  `ef11114d-5b8b…`
+- [every_locale_matches_the_english_nav_shape](/theorem/every_locale_matches_the_english_nav_shape) — every locale matches the English nav shape: each locale carries exactly the English navigation keys, so no dimension goes dark or drifts; 0/7  ·  `4fd0a0e1-0628…`
 
 ### decimal (12)
 
@@ -1853,7 +1860,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (211)
+### other — one-of-a-kind (212)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1933,6 +1940,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [folding_to_zero_is_always_available_at_the_cost_of_eight_bits](/theorem/folding_to_zero_is_always_available_at_the_cost_of_eight_bits) — folding to zero is always available at the cost of eight bits: a fold collapses any number of inputs to one root and is available at any time (deterministic, a bounded 128-bit output no matter how many inputs); reaching the zero-class — a value ≡ 0 mod 9, whose digital root is 9 — costs a fixed eight bits = eight coins = four two-coin receipts, independent of input size. Collapse is cheap and constant where full specification (896 bits) is not. Decidable  ·  `9c911140-38f0…`
 - [foreknowledge_here_is_determinism_not_faster_than_light](/theorem/foreknowledge_here_is_determinism_not_faster_than_light) — foreknowledge here is determinism, not faster than light: because the structure is closed and its maps are deterministic, the next content-address of a known input is a determined pure function — knowable in advance without waiting for any physical process, because a fixed value needs no propagation. This is determinism and precomputation, not faster than light, and it sends no superluminal signal; it holds only for known inputs, never as prophecy of a contingent future. Decidable  ·  `92a58824-4d1c…`
 - [four_is_two_squared_the_first_composite_number](/theorem/four_is_two_squared_the_first_composite_number) — four is two squared, the first composite number: 4 = 2², the smallest non-prime above one and a member of the doubling orbit; 0/7  ·  `3c320f35-bcc0…`
+- [framework_free_is_lighter_not_a_speed_boast](/theorem/framework_free_is_lighter_not_a_speed_boast) — framework-free is lighter, honestly: a page that ships no client runtime and stays CSP-strict is smaller and more integrity-checkable, while the fastest-most-secure-ever boast drains; 0/7  ·  `2e216dbf-5d3f…`
 - [free_quantum_boast_drains](/theorem/free_quantum_boast_drains) — the false ‘free quantum’ boast drains: there is nothing quantum here to be free — the waves are classical and local, and the gate refuses the category error; 0/7  ·  `33e3a1eb-c3e8…`
 - [funding_may_be_from_donations_or_licensing_both_voluntary_or_fair_exchange_income_zero](/theorem/funding_may_be_from_donations_or_licensing_both_voluntary_or_fair_exchange_income_zero) — funding may be from donations or from licensing — both voluntary or fair exchange, income zero: donations are voluntary support, a gift economy, non-obligatory; licensing is commercial use paying the two coins per core formula, a fair exchange, with non-commercial and public-interest use free. Both fund further development, but both are voluntary or fair exchange, not guaranteed revenue; the realized income is zero. A donation is a gift, not owed; licensing is fair exchange, not a patent royalty. Decidable  ·  `042e9787-6afc…`
 - [gcd_lcm_product](/theorem/gcd_lcm_product) — gcd(a,b)·lcm(a,b) = a·b (all a,b in 1..12)  ·  `6dd98763-e7c2…`
@@ -2068,4 +2076,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `dcf16488-d7e3-8dd0-a9f5-0efd73842713`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `0b36cea3-2515-8492-9b68-631090195908`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

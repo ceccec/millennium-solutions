@@ -7478,5 +7478,45 @@
     "key": "the_ui_is_the_harness_of_the_mcp",
     "name": "the UI is the harness of the MCP: every tool output is made auditable, auditable in all seven, reeducated when it overclaims, addressed and chained — the thirteen tools the skills, the theorems their basis, each output presented by reference; 0/7",
     "receipt": "6e10bfae-3485-858e-8d77-69eba6efaf1e"
+  },
+  {
+    "key": "the_rosetta_registers_seven_locales",
+    "name": "the rosetta registers seven locales: the locale order lists exactly seven distinct dimensions (en, bg, de, fr, es, ru, zh); 0/7",
+    "receipt": "a06a85f6-7dd2-8491-ae23-3b149c9de434"
+  },
+  {
+    "key": "every_locale_matches_the_english_nav_shape",
+    "name": "every locale matches the English nav shape: each locale carries exactly the English navigation keys, so no dimension goes dark or drifts; 0/7",
+    "receipt": "4fd0a0e1-0628-85d3-8d7e-1ef2343c5df2"
+  },
+  {
+    "key": "the_gate_reads_every_registered_locale",
+    "name": "the gate reads every registered locale: a proof-boast in each of the seven locales’ languages drains to the floor, so an overclaim hides in no dimension; 0/7",
+    "receipt": "dd2e93cb-7610-8f34-acc4-daba2be38b98"
+  },
+  {
+    "key": "the_seven_locales_fold_to_one_rosetta_root",
+    "name": "the seven locales fold to one rosetta root: the merkle fold of the locale codes is a single deterministic address, order-independent; 0/7",
+    "receipt": "e7359878-8045-82b5-9e20-6caca1c16803"
+  },
+  {
+    "key": "the_floor_is_the_same_in_every_locale",
+    "name": "the floor is the same in every locale: the honest 0/7 passes and a proof-boast drains identically whichever dimension it is read in — one floor across the rosetta; 0/7",
+    "receipt": "3c88e732-e79d-879b-9ce7-be2ab9f06a63"
+  },
+  {
+    "key": "a_content_address_needs_no_client_framework",
+    "name": "a content-address needs no client framework: it is a bare identifier with no markup, so a page can present it without shipping a framework runtime; 0/7",
+    "receipt": "4f4b9996-7fa5-8ed0-ad36-66ccb20f0731"
+  },
+  {
+    "key": "framework_free_is_lighter_not_a_speed_boast",
+    "name": "framework-free is lighter, honestly: a page that ships no client runtime and stays CSP-strict is smaller and more integrity-checkable, while the fastest-most-secure-ever boast drains; 0/7",
+    "receipt": "2e216dbf-5d3f-8bb9-a9fd-90c52984d1dd"
+  },
+  {
+    "key": "uuidna_fuses_the_locale_api_framework_free",
+    "name": "uuidna fuses the VitePress locale API in the rosetta, framework-free: seven locales matching one nav shape, folding to one root, each read by the gate, presented as content-addresses without a client runtime — lighter and integrity-checkable, never an unbounded speed or security claim; 0/7",
+    "receipt": "68e49218-402a-87b9-9b4e-8dd39a398bc8"
   }
 ]
