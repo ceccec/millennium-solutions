@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1662 recorded in 425 families
+## Discovered theorems (decidable, over ℤ/9) — 1664 recorded in 425 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (346)
+### the (348)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -370,6 +370,8 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_harmonic_solutions_are_the_units](/theorem/the_harmonic_solutions_are_the_units) — the harmonic solutions are the units: the six coprime residues are precisely the multiplicative units of ℤ/9; 0/7  ·  `f9a0f5cf-a4cf…`
 - [the_harmonic_solutions_form_the_doubling_orbit](/theorem/the_harmonic_solutions_form_the_doubling_orbit) — the harmonic solutions form the doubling orbit: the six units are exactly the vortex doubling cycle {1,2,4,8,7,5}, one harmonic wheel; 0/7  ·  `f48380ce-29b0…`
 - [the_non_harmonic_are_three_multiples_of_three](/theorem/the_non_harmonic_are_three_multiples_of_three) — the non-harmonic are three: the residues sharing the factor three — the multiples of three — number exactly three; 0/7  ·  `e0592399-231f…`
+- [the_count_is_eulers_totient_of_nine](/theorem/the_count_is_eulers_totient_of_nine) — the count is Euler’s totient of nine: φ(9) = 9·(1 − 1/3) = 6, so the number of harmonic solutions is computed, not assigned; 0/7  ·  `cb45b828-bf73…`
+- [the_possible_harmonic_solutions_per_superposition_are_six](/theorem/the_possible_harmonic_solutions_per_superposition_are_six) — the possible harmonic solutions per superposition are six: the units of ℤ/9, the vortex doubling orbit, φ(9) = 6 out of nine — six harmonic, three non-harmonic, the whole partitioned; 0/7  ·  `d656891f-fcc5…`
 
 ### a (65)
 
@@ -2255,4 +2257,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `f0c17ceb-73a2-82eb-9064-b7b95c1a47fd`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `1f400ca5-a403-8201-bbe3-d9053f6ba6c2`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
