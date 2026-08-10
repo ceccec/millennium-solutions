@@ -12,6 +12,7 @@ import { readFileSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 import { toUuid, merkleFold, digitalRoot } from '../src/0/index.ts'
 import { computes } from './honesty-gate.ts'
+import { CANDIDATES } from './discover.ts' // gap classification only (reporting) — distinguishes an undiscovered theorem from a non-theorem
 import { LOCALES, LOCALE_ORDER } from '../src/7/locale.ts'
 
 const SEED = 'axiom:TRINITY'
@@ -90,7 +91,41 @@ const buckets = new Map<number, number>()
 for (const e of ledger) { const b = digitalRoot(parseInt(e.receipt.replace(/-/g, '').slice(0, 4), 16) || 1); buckets.set(b, (buckets.get(b) || 0) + 1) }
 const spread = [...buckets.entries()].sort((a, b) => a[0] - b[0])
 const sparsest = spread.reduce((m, x) => (x[1] < m[1] ? x : m), spread[0])
-console.log('  clusters (digital-root of receipt — a hint, not a verdict): ' + spread.map(([k, v]) => k + ':' + v).join(' ') + ' — sparsest bucket ' + sparsest[0] + ' (' + sparsest[1] + '), a candidate region for hidden knowledge')
+console.log('  clusters (digital-root of receipt — a LOSSY hint, not a verdict; each event compressed to 1 of 9 roots): ' + spread.map(([k, v]) => k + ':' + v).join(' ') + ' — sparsest bucket ' + sparsest[0] + ' (' + sparsest[1] + '); the EXACT undiscovered are pointed at below, uncompressed')
+
+// (5c) GAP ANALYSIS — the LOSSLESS complement to the digital-root buckets above. Rather than compress every
+// receipt-event into one of nine roots (which discards the event and can only wave at a "region"), this reads the
+// KEY NAMESPACE directly and points EXACTLY at the undiscovered: an integer-indexed theorem family that runs dense
+// and nearly-complete but SKIPS an index has a precise hole — a specific theorem not yet discovered (or removed).
+// Named directly, excluding documented revocations. A lead to investigate, never a verdict; never fails the build.
+let REVOKED_G = new Set<string>()
+try { REVOKED_G = new Set((JSON.parse(readFileSync('src/proof/revoked.json', 'utf8')) as { key: string }[]).map((r) => r.key)) } catch { /* no revocation ledger */ }
+const idxSeries = new Map<string, number[]>()
+for (const e of ledger) { const m = e.key.match(/^(.*?)(\d+)$/); if (m) { const p = m[1]; if (!idxSeries.has(p)) idxSeries.set(p, []); idxSeries.get(p)!.push(parseInt(m[2], 10)) } }
+const exactGaps: string[] = []
+for (const [p, idx] of idxSeries) {
+  const s = [...new Set(idx)].sort((a, b) => a - b)
+  const span = s[s.length - 1] - s[0] + 1
+  // a real family with a gap: ≥4 members, a bounded span, ≥70% full (dense) — never a sparse hashed range
+  if (s.length < 4 || span > 16 || s.length / span < 0.7) continue
+  for (let n = s[0]; n <= s[s.length - 1]; n++) { const k = p + n; if (!s.includes(n) && !REVOKED_G.has(k)) exactGaps.push(k) }
+}
+// classify each exact gap against the candidate space, so the pointer distinguishes a GENUINELY undiscovered
+// theorem (computes true, absent) from a non-theorem's shadow (computes false — correctly absent) or an
+// index the generator never proposes (a lead to develop). This is what makes the pointer EXACT, not merely a hole.
+const candByKey = new Map(CANDIDATES.map((c) => [c.key, c]))
+const undiscovered: string[] = [], nonTheorem: string[] = [], unproposed: string[] = []
+for (const k of exactGaps) { const c = candByKey.get(k); if (!c) unproposed.push(k); else if (c.test()) undiscovered.push(k); else nonTheorem.push(k) }
+console.log(undiscovered.length
+  ? '  gap (LOSSLESS — GENUINELY UNDISCOVERED: computes TRUE yet absent from a dense family — a theorem to SHIP): ' + undiscovered.join(' ')
+  : '  gap (LOSSLESS): 0 genuinely-undiscovered — every dense-family index that computes true is already sealed')
+if (nonTheorem.length) console.log('  gap — correctly absent (a non-theorem: computes FALSE at this index — its absence is right, not a hole): ' + nonTheorem.join(' '))
+if (unproposed.length) console.log('  gap — unproposed (the generator emits no candidate here — a lead to DEVELOP the generator, never a tamper): ' + unproposed.join(' '))
+// distance to the next full octave — the other exact, uncompressed lead (theorems matter in groups of 8)
+const toNextOctave = (8 - (ledger.length % 8)) % 8
+console.log('  gap — to the next full octave: ' + (toNextOctave === 0
+  ? 'none, the ledger is octave-exact (' + ledger.length + ' = ' + (ledger.length / 8) + ' × 8)'
+  : toNextOctave + ' theorem(s) short of ' + (Math.ceil(ledger.length / 8) * 8)))
 
 // (5b) OCTAVE analysis — the theorems matter in GROUPS OF 8. Partition the receipts into octaves (groups of 8),
 // fold each to an octave-seal, then fold the 128 octave-seals to one octave-root: the hierarchical 8-ary

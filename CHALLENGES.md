@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1288 recorded in 349 families
+## Discovered theorems (decidable, over ℤ/9) — 1296 recorded in 351 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -786,6 +786,16 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [order_of_unit_5_mod9](/theorem/order_of_unit_5_mod9) — the multiplicative order of 5 mod 9 is 6, dividing |ℤ/9*| = 6 (Lagrange): 5^6 ≡ 1 (mod 9) and no smaller positive power is — computed locally from the ring  ·  `0f86f485-4cee…`
 - [order_of_unit_7_mod9](/theorem/order_of_unit_7_mod9) — the multiplicative order of 7 mod 9 is 3, dividing |ℤ/9*| = 6 (Lagrange): 7^3 ≡ 1 (mod 9) and no smaller positive power is — computed locally from the ring  ·  `cfaa11a0-1154…`
 - [order_of_unit_8_mod9](/theorem/order_of_unit_8_mod9) — the multiplicative order of 8 mod 9 is 2, dividing |ℤ/9*| = 6 (Lagrange): 8^2 ≡ 1 (mod 9) and no smaller positive power is — computed locally from the ring  ·  `88406d2d-0559…`
+
+### skill (7)
+
+- [skill_hash_then_address_composes](/theorem/skill_hash_then_address_composes) — skill — hash then address compose: SHA-256 digested into a content-address is deterministic and injective, one organ feeding the next; 0/7  ·  `2f3a4a39-0ab7…`
+- [skill_fold_of_hashes_composes](/theorem/skill_fold_of_hashes_composes) — skill — the fold of hashes composes: the merkle fold of a list of SHA-256 digests is deterministic and changes when any digest changes — fold built on hash; 0/7  ·  `3092dec9-2604…`
+- [skill_keyed_hash_hmac](/theorem/skill_keyed_hash_hmac) — skill — the keyed hash: HMAC-SHA256 is deterministic under a fixed key and diverges when the key changes — an organ that authenticates; 0/7  ·  `d965dcce-a035…`
+- [skill_inclusion_proof_composes](/theorem/skill_inclusion_proof_composes) — skill — the inclusion proof: a leaf verifies against the merkle root by its path while a forged leaf fails — the light-client organ, proof composed from fold; 0/7  ·  `e0dc3162-15ea…`
+- [skill_authenticated_secrecy_tag](/theorem/skill_authenticated_secrecy_tag) — skill — authenticated secrecy: the pure-TS AEAD tag is deterministic for fixed inputs and changes with the plaintext — the organ that seals a message (not constant-time); 0/7  ·  `a68a0ff4-ea80…`
+- [skill_key_stretch_pbkdf2](/theorem/skill_key_stretch_pbkdf2) — skill — the key stretch: PBKDF2-HMAC-SHA256 is deterministic and iteration-sensitive, so more rounds cost more work — the organ that hardens a secret; 0/7  ·  `109bb14d-f750…`
+- [skill_gate_distributed_via_rosetta](/theorem/skill_gate_distributed_via_rosetta) — skill — the gate distributed through the rosetta: one proof-boast drains in Latin, Cyrillic and Glagolitic, so the discernment organ reaches every script; 0/7  ·  `d42c7060-0cc9…`
 
 ### vibe (7)
 
@@ -1637,7 +1647,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (180)
+### other — one-of-a-kind (181)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1788,6 +1798,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [simulating_quantum_is_not_being_quantum](/theorem/simulating_quantum_is_not_being_quantum) — simulating a quantum algorithm is not being a quantum computer: the classical sim reproduces the Bell correlation exactly yet needs 2^n amplitudes (exponential, no advantage) and carries no message — so the deposit is not a quantum computer; the gate signs the honest "is not" and drains the bare "is"  ·  `d6d0ec25-e41f…`
 - [single_digits_are_trivially_narcissistic](/theorem/single_digits_are_trivially_narcissistic) — every single digit is narcissistic: for 1..9, n = n¹ (one digit raised to the digit-count 1) — the trivial base case of the Armstrong property  ·  `2adc6121-3f63…`
 - [sixty_one_sense_three_stop_codons](/theorem/sixty_one_sense_three_stop_codons) — DNA’s sixty-four codons split 61 sense + 3 stop, encoding 20 amino acids — more codons than meanings, so the code is redundant by construction; 0/7  ·  `e4c2a026-ccbd…`
+- [skills_compose_into_one_organism](/theorem/skills_compose_into_one_organism) — the skills compose into one organism: hash, fold, proof and gate each hold, and their composition holds — the whole organism computes true where each organ does, and what is not an organ never enters; 0/7  ·  `a1d69b35-548d…`
 - [some_disputes_stay_unresolved_under_a_lossy_projection_the_full_receipt_resolves_them](/theorem/some_disputes_stay_unresolved_under_a_lossy_projection_the_full_receipt_resolves_them) — some disputes stay unresolved under a lossy projection — the full receipt resolves them, and the trial stays a floor: a lossy projection like the digital root can collide distinct numbers — 4224 and 444 both project to 3 — leaving the dispute of whether they are the same unresolved by that projection. The full content-address resolves it: distinct numbers get distinct addresses. 666 projects to a different residue, 9. A lossy view leaves disputes the full receipt settles — and some disputes stay open, the trial being a floor, not an oracle. Decidable  ·  `0678e545-88ee…`
 - [speedup_is_bounded_and_classical](/theorem/speedup_is_bounded_and_classical) — the speedup is bounded and classical: a local, deterministic gain passes while an unbounded magical-speedup boast drains — fast, yes; magical, no; 0/7  ·  `4a174b2a-8b03…`
 - [squares_in_0_1_4_7](/theorem/squares_in_0_1_4_7) — every square d² mod 9 ∈ {0,1,4,7}  ·  `6f43410e-08c3…`
@@ -1821,4 +1832,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `66555c99-be5c-84ec-96ff-e6849292d28b`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `f893a521-d372-8a85-a570-92880c54bb56`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

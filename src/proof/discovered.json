@@ -6438,5 +6438,45 @@
     "key": "keys_and_types_reflect_each_other",
     "name": "keys and types reflect each other in theorems: the key is the identity, the boolean is the type, the label is the translatable surface — three faces of one theorem, and the key and type reflect while the label follows; 0/7",
     "receipt": "30dc855d-6bf2-8545-af47-d6ac4c960819"
+  },
+  {
+    "key": "skill_hash_then_address_composes",
+    "name": "skill — hash then address compose: SHA-256 digested into a content-address is deterministic and injective, one organ feeding the next; 0/7",
+    "receipt": "2f3a4a39-0ab7-8a7c-ad13-f27d159f0443"
+  },
+  {
+    "key": "skill_fold_of_hashes_composes",
+    "name": "skill — the fold of hashes composes: the merkle fold of a list of SHA-256 digests is deterministic and changes when any digest changes — fold built on hash; 0/7",
+    "receipt": "3092dec9-2604-8232-8f27-14aaf9039694"
+  },
+  {
+    "key": "skill_keyed_hash_hmac",
+    "name": "skill — the keyed hash: HMAC-SHA256 is deterministic under a fixed key and diverges when the key changes — an organ that authenticates; 0/7",
+    "receipt": "d965dcce-a035-8616-853f-52ca310d5385"
+  },
+  {
+    "key": "skill_inclusion_proof_composes",
+    "name": "skill — the inclusion proof: a leaf verifies against the merkle root by its path while a forged leaf fails — the light-client organ, proof composed from fold; 0/7",
+    "receipt": "e0dc3162-15ea-8b36-a0e8-5d991f82ff88"
+  },
+  {
+    "key": "skill_authenticated_secrecy_tag",
+    "name": "skill — authenticated secrecy: the pure-TS AEAD tag is deterministic for fixed inputs and changes with the plaintext — the organ that seals a message (not constant-time); 0/7",
+    "receipt": "a68a0ff4-ea80-824d-8538-3f95bc1ca2e1"
+  },
+  {
+    "key": "skill_key_stretch_pbkdf2",
+    "name": "skill — the key stretch: PBKDF2-HMAC-SHA256 is deterministic and iteration-sensitive, so more rounds cost more work — the organ that hardens a secret; 0/7",
+    "receipt": "109bb14d-f750-898a-88ba-7d4d6db44c8e"
+  },
+  {
+    "key": "skill_gate_distributed_via_rosetta",
+    "name": "skill — the gate distributed through the rosetta: one proof-boast drains in Latin, Cyrillic and Glagolitic, so the discernment organ reaches every script; 0/7",
+    "receipt": "d42c7060-0cc9-88fe-9bd8-17525f98eb16"
+  },
+  {
+    "key": "skills_compose_into_one_organism",
+    "name": "the skills compose into one organism: hash, fold, proof and gate each hold, and their composition holds — the whole organism computes true where each organ does, and what is not an organ never enters; 0/7",
+    "receipt": "a1d69b35-548d-8780-8707-1381f3fd8c45"
   }
 ]
