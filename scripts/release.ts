@@ -64,14 +64,9 @@ try {
 // tampering). Every version is SIGNED FROM A GRAVITY THEOREM: the content-address FALLS, through the gravity
 // receipt, to its fixed point (merkleGravity) — that fold is the version's signature. Single-digit odometer.
 const PKGS = ['packages/uuidna/package.json', 'package.json']
-function bumpNpm() {
-  const cur = (JSON.parse(readFileSync(PKGS[0], 'utf8')).version || '0.0.0').match(/^(\d+)\.(\d+)\.(\d+)$/)
-  let maj = +cur[1], min = +cur[2], pat = +cur[3] + 1
-  if (pat > 9) { pat = 0; min++ }
-  if (min > 9) { min = 0; maj++ }
-  return maj + '.' + min + '.' + pat
-}
-const NPM = bumpNpm()
+// FROZEN at the captain's directive — "stay at v0.1.1". The npm version is a held label; the content-address
+// (and the gravity-signed provenance tag) is the true latest, advancing every release while the label holds.
+const NPM = (JSON.parse(readFileSync(PKGS[0], 'utf8')).version || '0.1.1')
 const ledger = JSON.parse(readFileSync('src/proof/discovered.json', 'utf8'))
 const grav = ledger.find((e) => e.key === 'gravity_is_the_fall_to_a_fixed_point_and_pigeonhole_breaks_every_finite_hash') || ledger.find((e) => /gravit/i.test(e.key))
 const gravSig = merkleGravity([grav.receipt, address]) // the address falls to its fixed point through gravity

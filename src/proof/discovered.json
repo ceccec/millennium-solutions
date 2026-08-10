@@ -7038,5 +7038,45 @@
     "key": "every_page_recomputes_unless_a_wave_imprints",
     "name": "every page recomputes the same result unless a wave imprints: the referrer-relative receipt is deterministic and the page address invariant, while each observing wave advances a tamper-evident audit chain — logged, not mutated; 0/7",
     "receipt": "e4e70d71-52c9-818a-b1ec-54da1ffc6077"
+  },
+  {
+    "key": "each_perspective_is_a_distinct_file",
+    "name": "each perspective is a distinct file: distinct perspective content mints a distinct uuid, so two perspectives never share a file address; 0/7",
+    "receipt": "8b0df014-6111-884b-86be-786d2a6ec3af"
+  },
+  {
+    "key": "file_uuids_are_totally_ordered",
+    "name": "file uuids are totally ordered: read as 128-bit integers they compare by trichotomy, so any two distinct uuids sort deterministically; 0/7",
+    "receipt": "b6c0f3a3-7c11-82f8-8aea-aa0fd52f76a0"
+  },
+  {
+    "key": "file_uuids_sort_deterministically",
+    "name": "file uuids sort deterministically: sorting the same set of file uuids yields the same order every time; 0/7",
+    "receipt": "8942287d-c93e-8c6d-9932-344b59f2601e"
+  },
+  {
+    "key": "file_uuids_group_by_digital_root",
+    "name": "file uuids group by digital root: each uuid falls into one of nine digital-root buckets (the vortex), a total, deterministic grouping; 0/7",
+    "receipt": "f5d82370-2c78-8548-82d3-1f5f57c59cc8"
+  },
+  {
+    "key": "sorted_uuids_partition_into_octaves",
+    "name": "sorted uuids partition into octaves: a sorted list of file uuids splits into groups of eight, so sixteen files make exactly two octaves; 0/7",
+    "receipt": "bb384a72-70c0-864a-945e-02d2d8407fd8"
+  },
+  {
+    "key": "the_grouping_is_reproducible",
+    "name": "the grouping is reproducible: the same set of file uuids produces the same buckets and the same octaves on every run; 0/7",
+    "receipt": "20c7a103-dd43-8448-8018-ed125d213c28"
+  },
+  {
+    "key": "the_confidentiality_is_the_real_envelope_not_maximum",
+    "name": "the confidentiality is the real envelope, not a maximum-security claim: the ChaCha20-Poly1305 envelope gives authenticated secrecy checked against the standard vector, while the maximum-security boast drains; 0/7",
+    "receipt": "1b56e932-2256-894e-a157-e1c8e5bc214d"
+  },
+  {
+    "key": "perspectives_are_files_grouped_and_sorted_in_seven_dimensions",
+    "name": "perspectives are files grouped and sorted in seven dimensions: distinct perspectives mint distinct file uuids that sort by their 128-bit value and group by digital root into octaves — a deterministic organisation, the envelope real and bounded, not a maximum-security claim; 0/7",
+    "receipt": "dc3c89eb-849e-8d13-87ee-df37bec8a8b7"
   }
 ]

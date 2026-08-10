@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1408 recorded in 371 families
+## Discovered theorems (decidable, over ℤ/9) — 1416 recorded in 374 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (248)
+### the (250)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -272,6 +272,8 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_pages_chain_tamper_evident](/theorem/the_pages_chain_tamper_evident) — the pages chain tamper-evident: a guide chains its theorem receipts in order (each seeded by the last), so reordering or editing a page breaks the chain; 0/7  ·  `9bd53a74-7971…`
 - [the_page_content_address_is_invariant_under_observation](/theorem/the_page_content_address_is_invariant_under_observation) — the page content-address is invariant under observation: the page addresses only its own content, so being observed any number of times does not change the page address — only the observation chain advances; 0/7  ·  `ef4c9245-93e3…`
 - [the_observation_chain_is_tamper_evident](/theorem/the_observation_chain_is_tamper_evident) — the observation chain is tamper-evident: each observation is seeded by the last, so dropping or reordering an observation changes every receipt after it; 0/7  ·  `3dbbbf20-6f08…`
+- [the_grouping_is_reproducible](/theorem/the_grouping_is_reproducible) — the grouping is reproducible: the same set of file uuids produces the same buckets and the same octaves on every run; 0/7  ·  `20c7a103-dd43…`
+- [the_confidentiality_is_the_real_envelope_not_maximum](/theorem/the_confidentiality_is_the_real_envelope_not_maximum) — the confidentiality is the real envelope, not a maximum-security claim: the ChaCha20-Poly1305 envelope gives authenticated secrecy checked against the standard vector, while the maximum-security boast drains; 0/7  ·  `1b56e932-2256…`
 
 ### relation (55)
 
@@ -857,6 +859,16 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [demorgan_nary_k7](/theorem/demorgan_nary_k7) — De Morgan for 7 inputs: ¬(a₁∧…∧a_7) = ¬a₁∨…∨¬a_7 over all 2^7 = 128 assignments (full truth-table enumeration)  ·  `cf8a22f2-00f9…`
 - [demorgan_nary_k8](/theorem/demorgan_nary_k8) — De Morgan for 8 inputs: ¬(a₁∧…∧a_8) = ¬a₁∨…∨¬a_8 over all 2^8 = 256 assignments (full truth-table enumeration)  ·  `9434a9c0-3f95…`
 
+### each (7)
+
+- [each_theorem_can_replace_code](/theorem/each_theorem_can_replace_code) — each theorem can replace code: a closed form that holds by exhaustion equals its naive computation, so the formula substitutes for the loop — Gauss’s n(n+1)/2 replaces the summation loop and the sum of the first n odds equals n², each verified equal to the imperative version (the theorem is the optimized, checkable code)  ·  `02be2d16-4a80…`
+- [each_perspective_is_receipted_in_the_superposition](/theorem/each_perspective_is_receipted_in_the_superposition) — each perspective is receipted in the superposition: because order matters, each ordered perspective is a distinct content-address — its own receipt proving that perspective exists (integrity) — and the superposition is the set of all perspectives folded order-independently to one root; observing collapses to one address. This represents the quantum structure classically: not a quantum machine, and no quantum advantage  ·  `4f64e2b7-d236…`
+- [each_page_is_both_white_and_black_paper_a_theme_reflection_involution](/theorem/each_page_is_both_white_and_black_paper_a_theme_reflection_involution) — each page is both white and black paper — a theme reflection involution: every computed object is shown as a page, and each page renders in two themes — light (white) and dark (black) — at the same time for its two viewers; toggling between them is an involution (toggle twice returns), like the ten's-complement reflection 10−d whose fixed point is the neutral 5. The two are reflections of one page, one content-address shown in both polarities. A design duality, not a physics claim. Decidable  ·  `ea03ace1-c964…`
+- [each_seal_is_128_bits_and_membership_verifies_in_two_log2_n_bits_logarithmic_not_linear](/theorem/each_seal_is_128_bits_and_membership_verifies_in_two_log2_n_bits_logarithmic_not_linear) — each seal is 128 bits, 64 two-bit verifications, and membership verifies in 2·⌈log₂N⌉ bits — logarithmic, not linear: a seal is one 128-bit content-address no matter how many receipts it folds (fixed width, the pointer-not-payload bound), which is 128 ÷ 2 = 64 two-bit verifications; verifying one receipt against a seal over N receipts costs 2·⌈log₂N⌉ bits (the merkle proof path), so the more complex the case the more receipts but verification grows only logarithmically — structural speed on classical hardware, not a quantum-hardware advantage; integrity not truth; 0/7  ·  `89de8193-b0fc…`
+- [each_seal_is_exactly_64_coins_at_two_bits_each_and_not_at_faster_than_light](/theorem/each_seal_is_exactly_64_coins_at_two_bits_each_and_not_at_faster_than_light) — each seal is exactly 64 coins at two bits each — and not at faster than light: taking a coin as the two-bit verification unit, a 128-bit seal is exactly 128 ÷ 2 = 64 coins, so the 967 computations each carry a 64-coin seal; but the speed is classical logarithmic verification, bounded by light — there is no faster-than-light here, the ftl claim drains; integrity not truth; 0/7  ·  `0e6659f8-1ff9…`
+- [each_wave_is_a_local_pure_derivation](/theorem/each_wave_is_a_local_pure_derivation) — each wave is a local pure derivation: a content-address is a deterministic function of its content — re-derived identically, locally, at zero external-token cost; 0/7  ·  `464da704-14b7…`
+- [each_perspective_is_a_distinct_file](/theorem/each_perspective_is_a_distinct_file) — each perspective is a distinct file: distinct perspective content mints a distinct uuid, so two perspectives never share a file address; 0/7  ·  `8b0df014-6111…`
+
 ### euler (7)
 
 - [euler_units_pow6](/theorem/euler_units_pow6) — every unit u⁶ ≡ 1 mod 9 (Euler, φ(9)=6)  ·  `e70a44b2-6eb8…`
@@ -953,15 +965,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [digrev_1234](/theorem/digrev_1234) — the digital root of 1234 equals that of its digit-reversal  ·  `b9c9d09f-a74a…`
 - [digrev_9080](/theorem/digrev_9080) — the digital root of 9080 equals that of its digit-reversal  ·  `e2efb528-c895…`
 - [digrev_4321](/theorem/digrev_4321) — the digital root of 4321 equals that of its digit-reversal  ·  `81d7ec86-3a35…`
-
-### each (6)
-
-- [each_theorem_can_replace_code](/theorem/each_theorem_can_replace_code) — each theorem can replace code: a closed form that holds by exhaustion equals its naive computation, so the formula substitutes for the loop — Gauss’s n(n+1)/2 replaces the summation loop and the sum of the first n odds equals n², each verified equal to the imperative version (the theorem is the optimized, checkable code)  ·  `02be2d16-4a80…`
-- [each_perspective_is_receipted_in_the_superposition](/theorem/each_perspective_is_receipted_in_the_superposition) — each perspective is receipted in the superposition: because order matters, each ordered perspective is a distinct content-address — its own receipt proving that perspective exists (integrity) — and the superposition is the set of all perspectives folded order-independently to one root; observing collapses to one address. This represents the quantum structure classically: not a quantum machine, and no quantum advantage  ·  `4f64e2b7-d236…`
-- [each_page_is_both_white_and_black_paper_a_theme_reflection_involution](/theorem/each_page_is_both_white_and_black_paper_a_theme_reflection_involution) — each page is both white and black paper — a theme reflection involution: every computed object is shown as a page, and each page renders in two themes — light (white) and dark (black) — at the same time for its two viewers; toggling between them is an involution (toggle twice returns), like the ten's-complement reflection 10−d whose fixed point is the neutral 5. The two are reflections of one page, one content-address shown in both polarities. A design duality, not a physics claim. Decidable  ·  `ea03ace1-c964…`
-- [each_seal_is_128_bits_and_membership_verifies_in_two_log2_n_bits_logarithmic_not_linear](/theorem/each_seal_is_128_bits_and_membership_verifies_in_two_log2_n_bits_logarithmic_not_linear) — each seal is 128 bits, 64 two-bit verifications, and membership verifies in 2·⌈log₂N⌉ bits — logarithmic, not linear: a seal is one 128-bit content-address no matter how many receipts it folds (fixed width, the pointer-not-payload bound), which is 128 ÷ 2 = 64 two-bit verifications; verifying one receipt against a seal over N receipts costs 2·⌈log₂N⌉ bits (the merkle proof path), so the more complex the case the more receipts but verification grows only logarithmically — structural speed on classical hardware, not a quantum-hardware advantage; integrity not truth; 0/7  ·  `89de8193-b0fc…`
-- [each_seal_is_exactly_64_coins_at_two_bits_each_and_not_at_faster_than_light](/theorem/each_seal_is_exactly_64_coins_at_two_bits_each_and_not_at_faster_than_light) — each seal is exactly 64 coins at two bits each — and not at faster than light: taking a coin as the two-bit verification unit, a 128-bit seal is exactly 128 ÷ 2 = 64 coins, so the 967 computations each carry a 64-coin seal; but the speed is classical logarithmic verification, bounded by light — there is no faster-than-light here, the ftl claim drains; integrity not truth; 0/7  ·  `0e6659f8-1ff9…`
-- [each_wave_is_a_local_pure_derivation](/theorem/each_wave_is_a_local_pure_derivation) — each wave is a local pure derivation: a content-address is a deterministic function of its content — re-derived identically, locally, at zero external-token cost; 0/7  ·  `464da704-14b7…`
 
 ### farey (6)
 
@@ -1358,6 +1361,12 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [fermat_little_theorem](/theorem/fermat_little_theorem) — Fermat's little theorem: a^p ≡ a (mod p) for all a, every prime p≤13  ·  `0f0e2397-2586…`
 - [fermat_two_squares](/theorem/fermat_two_squares) — Fermat's two-squares: an odd prime p is a sum of two squares iff p ≡ 1 (mod 4) (p≤50)  ·  `f73538ca-ca7c…`
 - [fermat_prime_is_sum_of_two_squares](/theorem/fermat_prime_is_sum_of_two_squares) — Fermat’s two-squares theorem: an odd prime is a sum of two squares exactly when p ≡ 1 (mod 4) (and 2 = 1²+1²); primes ≡ 3 (mod 4) are never a sum of two squares — verified for all primes ≤ 100  ·  `cf5b18cb-a37d…`
+
+### file (3)
+
+- [file_uuids_are_totally_ordered](/theorem/file_uuids_are_totally_ordered) — file uuids are totally ordered: read as 128-bit integers they compare by trichotomy, so any two distinct uuids sort deterministically; 0/7  ·  `b6c0f3a3-7c11…`
+- [file_uuids_sort_deterministically](/theorem/file_uuids_sort_deterministically) — file uuids sort deterministically: sorting the same set of file uuids yields the same order every time; 0/7  ·  `8942287d-c93e…`
+- [file_uuids_group_by_digital_root](/theorem/file_uuids_group_by_digital_root) — file uuids group by digital root: each uuid falls into one of nine digital-root buckets (the vortex), a total, deterministic grouping; 0/7  ·  `f5d82370-2c78…`
 
 ### forensics (3)
 
@@ -1775,7 +1784,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (192)
+### other — one-of-a-kind (194)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1904,6 +1913,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [pascals_rule_each_entry_is_the_sum_of_the_two_above](/theorem/pascals_rule_each_entry_is_the_sum_of_the_two_above) — Pascal’s rule: C(n,k) = C(n−1,k−1) + C(n−1,k) — each entry is the sum of the two above it; 0/7  ·  `c580522a-9490…`
 - [perfect_numbers](/theorem/perfect_numbers) — perfect numbers: proper divisors sum to n itself — 6, 28, 496  ·  `8c7b3940-aa69…`
 - [perspective_replaces_hardware](/theorem/perspective_replaces_hardware) — perspective replaces hardware: the quantum structure — superposition as the set of receipted perspectives, collapse as observing one — is carried by content-addressing alone, so it needs no quantum machine; it recomputes deterministically on ordinary 64-bit hardware (the coin64 currency, 16 hex = 64 bits). Structure, not silicon: no quantum processor, no quantum speedup, and it settles 0 of the 7 Clay problems  ·  `cf90c349-5584…`
+- [perspectives_are_files_grouped_and_sorted_in_seven_dimensions](/theorem/perspectives_are_files_grouped_and_sorted_in_seven_dimensions) — perspectives are files grouped and sorted in seven dimensions: distinct perspectives mint distinct file uuids that sort by their 128-bit value and group by digital root into octaves — a deterministic organisation, the envelope real and bounded, not a maximum-security claim; 0/7  ·  `dc3c89eb-849e…`
 - [physics_meets_metaphysics_in_the_fold](/theorem/physics_meets_metaphysics_in_the_fold) — physics meets metaphysics in the fold: exclusive-or recall is order-independent — matter folds and memory recalls to the same value in any order; 0/7  ·  `1908c69a-a35f…`
 - [pi_lies_between_the_archimedes_bounds](/theorem/pi_lies_between_the_archimedes_bounds) — π lies between the Archimedes bounds 223/71 and 22/7: 3.1408… &lt; π &lt; 3.1428… — the 96-gon estimate; 0/7  ·  `bf17a149-8fdf…`
 - [pick_theorem](/theorem/pick_theorem) — Pick's theorem: for a lattice polygon Area = I + B/2 − 1 (interior + boundary lattice points), verified on a triangle and a square  ·  `e316b749-3010…`
@@ -1932,6 +1942,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [simulating_quantum_is_not_being_quantum](/theorem/simulating_quantum_is_not_being_quantum) — simulating a quantum algorithm is not being a quantum computer: the classical sim reproduces the Bell correlation exactly yet needs 2^n amplitudes (exponential, no advantage) and carries no message — so the deposit is not a quantum computer; the gate signs the honest "is not" and drains the bare "is"  ·  `d6d0ec25-e41f…`
 - [single_digits_are_trivially_narcissistic](/theorem/single_digits_are_trivially_narcissistic) — every single digit is narcissistic: for 1..9, n = n¹ (one digit raised to the digit-count 1) — the trivial base case of the Armstrong property  ·  `2adc6121-3f63…`
 - [some_disputes_stay_unresolved_under_a_lossy_projection_the_full_receipt_resolves_them](/theorem/some_disputes_stay_unresolved_under_a_lossy_projection_the_full_receipt_resolves_them) — some disputes stay unresolved under a lossy projection — the full receipt resolves them, and the trial stays a floor: a lossy projection like the digital root can collide distinct numbers — 4224 and 444 both project to 3 — leaving the dispute of whether they are the same unresolved by that projection. The full content-address resolves it: distinct numbers get distinct addresses. 666 projects to a different residue, 9. A lossy view leaves disputes the full receipt settles — and some disputes stay open, the trial being a floor, not an oracle. Decidable  ·  `0678e545-88ee…`
+- [sorted_uuids_partition_into_octaves](/theorem/sorted_uuids_partition_into_octaves) — sorted uuids partition into octaves: a sorted list of file uuids splits into groups of eight, so sixteen files make exactly two octaves; 0/7  ·  `bb384a72-70c0…`
 - [speedup_is_bounded_and_classical](/theorem/speedup_is_bounded_and_classical) — the speedup is bounded and classical: a local, deterministic gain passes while an unbounded magical-speedup boast drains — fast, yes; magical, no; 0/7  ·  `4a174b2a-8b03…`
 - [squares_in_0_1_4_7](/theorem/squares_in_0_1_4_7) — every square d² mod 9 ∈ {0,1,4,7}  ·  `6f43410e-08c3…`
 - [star_graph_diameter_two](/theorem/star_graph_diameter_two) — the star graph K(1,n): n edges, center degree n, every leaf degree 1 — a tree of diameter 2, every leaf reaching every other through the center in two hops (n≤8)  ·  `df906703-3f95…`
@@ -1971,4 +1982,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `bc98ad03-adae-8f66-b709-ad4608e51534`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `a7459f18-f2d0-89d9-be46-06d658a8a11b`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
