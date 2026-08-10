@@ -6,7 +6,7 @@ import { readFileSync, writeFileSync } from 'node:fs'
 import { merkleFold } from '../src/0/index.ts'
 
 const ledger = JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) as { receipt: string }[]
-const pkg = JSON.parse(readFileSync('packages/uuidna/package.json', 'utf8'))
+const pkg = JSON.parse(readFileSync('node_modules/@uuidna/uuidna/package.json', 'utf8'))
 const n = ledger.length
 const seal = merkleFold(ledger.map((e) => e.receipt))
 

@@ -63,7 +63,7 @@ try {
 // version (the git tag below is immutable content-address PROVENANCE, not the version — rewriting it would be
 // tampering). Every version is SIGNED FROM A GRAVITY THEOREM: the content-address FALLS, through the gravity
 // receipt, to its fixed point (merkleGravity) — that fold is the version's signature. Single-digit odometer.
-const PKGS = ['packages/uuidna/package.json', 'package.json']
+const PKGS = ['package.json'] // uuidna now lives in its own repo (github:uuidna/uuidna); only this package's version is bumped here
 // FROZEN at the captain's directive — "stay at v0.1.1". The npm version is a held label; the content-address
 // (and the gravity-signed provenance tag) is the true latest, advancing every release while the label holds.
 const NPM = (JSON.parse(readFileSync(PKGS[0], 'utf8')).version || '0.1.1')

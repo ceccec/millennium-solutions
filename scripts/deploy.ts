@@ -19,9 +19,11 @@ if (target === 'pages') {
   run('npm run sitemap')   // emit the content-addressed sitemap mesh (100% coverage gate)
   run('node scripts/atom-feed.ts')    // emit the Atom feed (RFC 4287) of the monographs
   const remote = cap('git config --get remote.origin.url')
-  // Publish dist via a throwaway repo: no hosted runner, no history pollution.
+  // Publish dist via a throwaway repo: no hosted runner, no history pollution. SELF-HEALING: clear any
+  // leftover .git FIRST — a prior run that died before its trailing `rm -rf .git` leaves a checked-out
+  // gh-pages branch that made `git checkout -b gh-pages` fail ("branch already exists") on every retry.
   run('cd .vitepress/dist'
-    + ' && : > .nojekyll && git init -q && git checkout -q -b gh-pages && git add -A'
+    + ' && rm -rf .git && : > .nojekyll && git init -q && git checkout -q -b gh-pages && git add -A'
     + ' && git -c user.name="Tsvetan Rouschev" -c user.email="ceccec@psg.bg" commit -qm "deploy site"'
     + ' && git push -f ' + remote + ' gh-pages && rm -rf .git')
   // Ensure Pages serves the branch, then build it — each gh api ACTION uuid-stamped (apiAction records + seals it).
