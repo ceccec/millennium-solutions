@@ -109,6 +109,11 @@ if (message) {
     : new Set<string>()
   const fresh = provable()
     .filter((c) => !known.has(c.key) && !revokedKeys.has(c.key))
+    // GREEN BEFORE INSERT, enforced: never admit a candidate whose NAME drains the gate (the hollow-name flaw
+    // that shipped once — forensics runs before discover, so it could not catch a same-run append) or whose
+    // TEST does not compute true. The bad candidate is skipped and named, not silently sealed.
+    .filter((c) => { const g = computes(c.name); if (g.binary === 1) return true; console.log('  ⚠ skipped — name drains the gate: ' + c.key + ' :: ' + g.hit); return false })
+    .filter((c) => { try { if (c.test() === true) return true; console.log('  ⚠ skipped — test not true: ' + c.key) } catch (e) { console.log('  ⚠ skipped — test threw: ' + c.key + ' :: ' + (e as Error).message.slice(0, 60)) } return false })
   if (fresh.length) {
     // a wave sending wave — discover ALL remaining in one pass; each receipt is seeded by the last,
     // so each discovery sends the next. The wave runs to the edge of the bounded space, then rests.

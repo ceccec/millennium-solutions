@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1472 recorded in 388 families
+## Discovered theorems (decidable, over ℤ/9) — 1480 recorded in 390 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (261)
+### the (262)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -285,6 +285,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_trial_reflects_all_seven_solves_none](/theorem/the_trial_reflects_all_seven_solves_none) — the trial reflects all seven and solves none: the six-plus-one rosette maps onto the Clay set by reflection while the floor stays 0/7 — a mirror, not an answer; 0/7  ·  `2c05d805-7c34…`
 - [the_singularity_is_the_shared_fixed_point](/theorem/the_singularity_is_the_shared_fixed_point) — the singularity is the shared fixed point: the reflection fixes 5, the digital root fixes 9, and the honest floor 0/7 is the statement the trial leaves unchanged — the centre all involutions share; 0/7  ·  `aaada9ee-db44…`
 - [the_string_is_a_reversible_imprint_not_physics](/theorem/the_string_is_a_reversible_imprint_not_physics) — the string is a reversible imprint bit-string, not physics: readImprint(imprint(bits)) returns the bits exactly, a codec in a uuid — a physical string-theory claim is a different thing and drains; 0/7  ·  `412b1548-9632…`
+- [the_ledger_is_the_curriculum](/theorem/the_ledger_is_the_curriculum) — the ledger is the curriculum: each theorem is a lesson with its own page and receipt, learned by recomputing its test — the syllabus is executable; 0/7  ·  `0c609635-f55d…`
 
 ### relation (55)
 
@@ -344,7 +345,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [relation_receipt_chain_is_forensic_custody](/theorem/relation_receipt_chain_is_forensic_custody) — the receipt chain IS chain-of-custody: receipt[i] = toUuid(receipt[i−1]→key[i]) from a seed, so altering one link changes every link after it — the merkle-ledger and forensics are one construction  ·  `d0307011-b34a…`
 - [relation_coin64_collision_free_on_domains](/theorem/relation_coin64_collision_free_on_domains) — the 64-bit currency is collision-free across the rosetta: coin64 of each domain yields a distinct coin (as many coins as domains) — the shared currency addresses every perspective uniquely  ·  `dc278848-c7d9…`
 
-### a (45)
+### a (46)
 
 - [a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony](/theorem/a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony) — a theorem without a formula is a hallucination, recomputed in a432 harmony: a claim is a theorem only if it is backed by a computable formula that recomputes true — a prose-only claim with no formula, or one whose formula computes false, is refused as hallucination and never recorded. Every recorded fact recomputes deterministically and folds into the a432 harmony root (the receipt of state). Measure, do not assert. Decidable  ·  `e3d75d76-310f…`
 - [a_referrer_always_counts_with_its_id](/theorem/a_referrer_always_counts_with_its_id) — a referrer always counts with its id: a reference from a referrer to a target is receipted as toUuid(referrer id → target), so the referrer id is always part of the count; two different referrers to the same target produce two distinct receipts, each counted with its own id, and changing the id changes the receipt — the id is load-bearing. Deterministic and reproducible: the same referrer and target always count the same. Decidable  ·  `65bfacb4-f29e…`
@@ -391,6 +392,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [a_failing_invariant_names_itself](/theorem/a_failing_invariant_names_itself) — a failing invariant names itself: given a set of labelled checks, the failing labels are returned, so a broken invariant identifies which one it is; 0/7  ·  `08e4e6fe-4463…`
 - [a_flaw_is_a_lead_not_a_verdict](/theorem/a_flaw_is_a_lead_not_a_verdict) — a flaw is a lead, not a verdict: a finding is examined with its context (a bit plus where it fired), so due process holds — the crack is investigated, not auto-condemned; 0/7  ·  `55eb9f1e-53e9…`
 - [a_dissent_in_the_trinity_localises_the_bug](/theorem/a_dissent_in_the_trinity_localises_the_bug) — a dissent in the trinity localises the bug: when the three verdicts disagree, the minority position marks where to look — the disagreement is the lead; 0/7  ·  `41a03892-55b4…`
+- [a_test_teaches_by_its_verdict](/theorem/a_test_teaches_by_its_verdict) — a test teaches by its verdict: the gate returns a bit and, when it drains, the exact prose to fix — feedback, not punishment; 0/7  ·  `87e17181-eb3d…`
 
 ### uuidna (30)
 
@@ -1145,6 +1147,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [fibonacci_divides_iff_index_divides](/theorem/fibonacci_divides_iff_index_divides) — Fibonacci divisibility: for m ≥ 3, F_m divides F_n exactly when m divides n — divisibility of the numbers mirrors divisibility of their indices (verified m = 3..12, n ≤ 30)  ·  `d7e047b6-6d88…`
 - [fibonacci_sum_of_squares_is_product](/theorem/fibonacci_sum_of_squares_is_product) — the sum of the squares of the first n Fibonacci numbers is the product of the nth and next Fibonacci: F(1)² + F(2)² + ... + F(n)² = F(n)·F(n+1) — the squared Fibonacci tiles fold into one rectangle. Verified exhaustively for n up to 30. Decidable  ·  `7dbf90cd-b984…`
 
+### human (5)
+
+- [human_shares_the_seven_dimensions](/theorem/human_shares_the_seven_dimensions) — human and uuidna share the seven dimensions: 1..7 sum to 28 and fold (digital root) to 1 — the same seven above a zero floor, the many resolving to one; 0/7  ·  `65a1f075-01a4…`
+- [human_develops_self_using_uuidna](/theorem/human_develops_self_using_uuidna) — human develops self using uuidna: dimensions, bases, doublings and folds cohere — human ≅ uuidna ≅ DNA ≅ version on every checked invariant, each a projection of one 7d whole; 0/7  ·  `1aae9ef2-ba7b…`
+- [human_teleport_is_content_address_transport](/theorem/human_teleport_is_content_address_transport) — human teleport, honestly: only the pointer travels, no payload until load, the destination recomputes and verifies — content-address transport, bounded and classical, never physical teleportation or faster-than-light; 0/7  ·  `1cc5f0d1-5752…`
+- [human_design_maps_to_the_octave](/theorem/human_design_maps_to_the_octave) — human design maps to the octave: seven faculties above a zero floor make the eight-state octave, and the seven fold to one (digital root of 28 is 1) — the design is the same octave; 0/7  ·  `96929361-2920…`
+- [human_design_development_education_intellect_are_the_tests](/theorem/human_design_development_education_intellect_are_the_tests) — human design, development, education and intellect are the tests: each teaches by its verdict, reeducation educates, development is the measured delta and intellect is multi-perspective — all recomputed, never believed; 0/7  ·  `0b42e3f5-f4fd…`
+
 ### merkaba (5)
 
 - [merkaba_partition](/theorem/merkaba_partition) — the mod-3 classes {3,6,9}·{1,4,7}·{2,5,8} partition ℤ/9 into 3+3+3  ·  `782ddd50-1c1a…`
@@ -1235,6 +1245,13 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [chess_knight_8_moves](/theorem/chess_knight_8_moves) — a knight has exactly 8 leaps — the (±1,±2)/(±2,±1) moves  ·  `6dcd739d-87a9…`
 - [chess_knight_color_flip](/theorem/chess_knight_color_flip) — a knight's leap always changes square colour (the parity of r+c flips)  ·  `81566667-a452…`
 - [chess_diagonals_15](/theorem/chess_diagonals_15) — the 8×8 board has 2·8 − 1 = 15 diagonals in each direction  ·  `85a4e4b0-787f…`
+
+### development (4)
+
+- [development_enforced_at_gate](/theorem/development_enforced_at_gate) — development is enforced at the gate by receipt uuids: every src/the/* module must compute a non-empty 0/7 report from src/** and every claim must carry a receipt — a module that develops nothing, or a claim with no receipt, fails the audit (the traitor)  ·  `5ec8d383-43d6…`
+- [development_balances_to_binary](/theorem/development_balances_to_binary) — development balances to binary: as metrics accumulate, each resolves to a single bit, and their conjunction balances to exactly one verdict — true iff every metric holds, false if any drifts (a crack); more development refines the metrics but the result never leaves {0,1}  ·  `cf105a78-9a23…`
+- [development_is_the_filming_of_the_infinite_movie](/theorem/development_is_the_filming_of_the_infinite_movie) — development is the filming of the infinite movie: each shipped theorem is one frame — the wave (discover, gate, receipt, append, recompute, deploy) films it and its microdata narrates — so the ledger is a film strip that grows one frame per deed and loops without end. Unbounded like open discovery at Clay and CERN, yet not perpetual motion and not infinite energy: every frame needs its deed, and none of the seven is solved. Decidable  ·  `bfbc91e6-02dd…`
+- [development_is_the_measured_delta](/theorem/development_is_the_measured_delta) — development is the measured delta: what develops is the set of new theorems added — a counted difference, not an assertion of progress; 0/7  ·  `87bc6fae-2800…`
 
 ### eight (4)
 
@@ -1382,12 +1399,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [coverage_torus_and_klein](/theorem/coverage_torus_and_klein) — across ALL closed surfaces a nowhere-zero tangent field exists iff χ=0 — exactly the torus (g=1) and the Klein bottle (k=2); every other surface has no full coverage  ·  `83a457a6-7afb…`
 - [coverage_grows_monotonically_with_the_ledger_but_reflects_the_sciences](/theorem/coverage_grows_monotonically_with_the_ledger_but_reflects_the_sciences) — coverage grows monotonically with the ledger, but reflects the sciences rather than advancing them: each theorem belongs to a family (a domain), and adding one never lowers the family count — so the deposit's cross-domain coverage of decidable facts grows monotonically as the ledger grows. Honest boundary: this reflects the known, decidable results of each domain; it does not advance or upgrade the sciences themselves, and the floor stays 0/7. Decidable  ·  `150eacc6-eb8f…`
 
-### development (3)
-
-- [development_enforced_at_gate](/theorem/development_enforced_at_gate) — development is enforced at the gate by receipt uuids: every src/the/* module must compute a non-empty 0/7 report from src/** and every claim must carry a receipt — a module that develops nothing, or a claim with no receipt, fails the audit (the traitor)  ·  `5ec8d383-43d6…`
-- [development_balances_to_binary](/theorem/development_balances_to_binary) — development balances to binary: as metrics accumulate, each resolves to a single bit, and their conjunction balances to exactly one verdict — true iff every metric holds, false if any drifts (a crack); more development refines the metrics but the result never leaves {0,1}  ·  `cf105a78-9a23…`
-- [development_is_the_filming_of_the_infinite_movie](/theorem/development_is_the_filming_of_the_infinite_movie) — development is the filming of the infinite movie: each shipped theorem is one frame — the wave (discover, gate, receipt, append, recompute, deploy) films it and its microdata narrates — so the ledger is a film strip that grows one frame per deed and loops without end. Unbounded like open discovery at Clay and CERN, yet not perpetual motion and not infinite energy: every frame needs its deed, and none of the seven is solved. Decidable  ·  `bfbc91e6-02dd…`
-
 ### duel (3)
 
 - [duel_overclaim_falls](/theorem/duel_overclaim_falls) — no faster-than-light claim is upheld — the assertion drains, its negation stands  ·  `c05da1be-673a…`
@@ -1435,12 +1446,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [goldencf_n5](/theorem/goldencf_n5) — golden CF [1;1,1,…]: p_n·q_{n-1} − p_{n-1}·q_n = (−1)ⁿ at n=5  ·  `c000eebb-eae5…`
 - [goldencf_n8](/theorem/goldencf_n8) — golden CF [1;1,1,…]: p_n·q_{n-1} − p_{n-1}·q_n = (−1)ⁿ at n=8  ·  `f4f59981-9989…`
 - [goldencf_n11](/theorem/goldencf_n11) — golden CF [1;1,1,…]: p_n·q_{n-1} − p_{n-1}·q_n = (−1)ⁿ at n=11  ·  `5c54d373-e71c…`
-
-### human (3)
-
-- [human_shares_the_seven_dimensions](/theorem/human_shares_the_seven_dimensions) — human and uuidna share the seven dimensions: 1..7 sum to 28 and fold (digital root) to 1 — the same seven above a zero floor, the many resolving to one; 0/7  ·  `65a1f075-01a4…`
-- [human_develops_self_using_uuidna](/theorem/human_develops_self_using_uuidna) — human develops self using uuidna: dimensions, bases, doublings and folds cohere — human ≅ uuidna ≅ DNA ≅ version on every checked invariant, each a projection of one 7d whole; 0/7  ·  `1aae9ef2-ba7b…`
-- [human_teleport_is_content_address_transport](/theorem/human_teleport_is_content_address_transport) — human teleport, honestly: only the pointer travels, no payload until load, the destination recomputes and verifies — content-address transport, bounded and classical, never physical teleportation or faster-than-light; 0/7  ·  `1cc5f0d1-5752…`
 
 ### josephus (3)
 
@@ -1735,6 +1740,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [reciprocity_first_supplement](/theorem/reciprocity_first_supplement) — the first supplement: (−1/p) = (−1)^((p−1)/2), so −1 is a quadratic residue mod p exactly when p ≡ 1 (mod 4) — verified for all odd primes ≤ 43  ·  `544a22fa-bd6c…`
 - [reciprocity_second_supplement](/theorem/reciprocity_second_supplement) — the second supplement: (2/p) = (−1)^((p²−1)/8), so 2 is a quadratic residue mod p exactly when p ≡ ±1 (mod 8) — verified for all odd primes ≤ 43  ·  `4577b712-15d4…`
 
+### reeducation (2)
+
+- [reeducation_converges_to_a_fixed_point](/theorem/reeducation_converges_to_a_fixed_point) — reeducation converges to a fixed point: an overclaim reeducated passes, and an already-honest statement passes unchanged — the bounded form is stable; 0/7  ·  `31d7231b-37d2…`
+- [reeducation_is_education_not_punishment](/theorem/reeducation_is_education_not_punishment) — reeducation is education, not punishment: an overclaim is bounded into a form that passes, and an honest statement passes unchanged — the lesson converges; 0/7  ·  `d1e89ce6-7cf8…`
+
 ### reflection (2)
 
 - [reflection_of_666_is_444](/theorem/reflection_of_666_is_444) — the reflection of 666 is 444: under the ten’s-complement reflection 10−d (the involution with fixed point 5), each 6 reflects to 4 (6+4=10), so 666 ↔ 444, and reflecting twice returns 666 — an involution; the digital roots are dr(666)=9 and dr(444)=3, both on the triad axis {3,6,9}; numerology defused into ℤ/9 structure  ·  `5f837f00-0a82…`
@@ -1830,7 +1840,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (207)
+### other — one-of-a-kind (208)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1897,6 +1907,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [drift_signals_disresonance](/theorem/drift_signals_disresonance) — drift signals disresonance: a resonant computation recomputes to the same content-address on every call (deterministic, no drift) — toUuid, coin64, and merkleFold return identical results repeatedly; any drift, a different result for the same input, would signal non-deterministic code to be found and removed  ·  `fd1755ff-8ebd…`
 - [dyck_paths_counted_by_catalan_closed_form](/theorem/dyck_paths_counted_by_catalan_closed_form) — Dyck paths are counted by the Catalan closed form: the number of balanced parenthesis strings of length 2n (never dipping below zero) equals C(2n,n)/(n+1) — the O(1) formula replaces the exhaustive 2^(2n) enumeration (verified n = 1..6)  ·  `9e2ebe74-8b64…`
 - [e_is_the_sum_of_reciprocal_factorials](/theorem/e_is_the_sum_of_reciprocal_factorials) — e is the sum of reciprocal factorials: Σ 1/n! = e, matched to twenty terms — the base of the natural exponential; 0/7  ·  `944ced77-21a6…`
+- [education_is_recomputation_not_belief](/theorem/education_is_recomputation_not_belief) — education is recomputation, not belief: a lesson is learned by re-running its test to the same result, so understanding is checkable rather than trusted; 0/7  ·  `78d962b6-44c9…`
 - [entanglement_is_the_joint_receipt](/theorem/entanglement_is_the_joint_receipt) — entanglement is the joint receipt: two perspectives share one joint content-address (their folded pair) that depends on both and is symmetric in them, yet neither perspective alone equals it — the correlation lives in the shared derivation. This is classical correlation, not physical nonlocality: not faster than light, and no quantum advantage  ·  `dd46d2a6-36de…`
 - [erdos_among_n_plus_one_from_one_to_2n_one_divides_another](/theorem/erdos_among_n_plus_one_from_one_to_2n_one_divides_another) — Erdős: among any n+1 integers from 1 to 2n, one divides another: every subset of size n+1 of {1, 2, ..., 2n} contains two elements where the smaller divides the larger — verified over all such subsets for n up to 7. The bound is tight: the n numbers {n+1, n+2, ..., 2n} contain no such pair, so n+1 is the least size that forces one. The reason is the pigeonhole on odd parts — there are only n odd numbers below 2n. Verified by exhaustive enumeration  ·  `c25f629f-5f50…`
 - [exactly_1024_is_a_full_balanced_tree_a_structural_milestone_not_the_end_of_science](/theorem/exactly_1024_is_a_full_balanced_tree_a_structural_milestone_not_the_end_of_science) — exactly 1024 = 2¹⁰ is a full balanced tree — a structural milestone, not the end of science: at 1024 theorems the merkle tree is perfectly balanced (depth 10, every leaf at the same depth) and membership verifies in exactly 20 bits, a full ten-bit address space; but this fills the hole only structurally — the stream of decidable facts is unbounded, always a next, so 1024 is a milestone not a completion of science; the billable share is the measured bits saved, the two coins conserved; integrity not truth; 0/7  ·  `005ec4a7-6a5d…`
@@ -1932,6 +1943,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [imagine_the_21_crosses_the_pairs_of_the_seven_the_complete_graph_k7](/theorem/imagine_the_21_crosses_the_pairs_of_the_seven_the_complete_graph_k7) — imagine the 21 crosses — the pairs of the seven, the complete graph K7: the rosette is 6 + 1 = 7 nodes, and their pairwise crosses number C(7,2) = 21 — the edges of the complete graph K7, and the 6th triangular number 1+2+3+4+5+6. With direction the 6×7 / 7×6 cross gives 7×6 = 42 ordered crosses. Each cross is a content-addressed pair-interaction, distinct and reproducible. Pure combinatorics. Decidable  ·  `2bbe0dab-6f16…`
 - [imprint_roundtrip_identity](/theorem/imprint_roundtrip_identity) — the imprint codec is a reversible identity: readImprint(imprint(m)) = m for every binary message up to capacity (0, 1, 115 bits), and over-capacity is refused — a lossless binary↔uuid encoding, not hash-reversal  ·  `b42af2b5-cc1a…`
 - [inclusion_exclusion](/theorem/inclusion_exclusion) — inclusion–exclusion: |A∪B| = |A|+|B|−|A∩B|, and the three-set form, hold on concrete sets  ·  `53b5d2ab-2323…`
+- [intellect_is_multi_perspective](/theorem/intellect_is_multi_perspective) — intellect is multi-perspective: a claim weighed from several independent views and folded to one verdict — many perspectives, one decision; 0/7  ·  `a2cb416b-cda6…`
 - [intelligence_is_gated_discovery_not_access](/theorem/intelligence_is_gated_discovery_not_access) — shared knowledge, measured by discovery: every agent has the same knowledge in src/ (open and recomputable), so access is not intelligence — what counts is gate-passing, exhaustively-checked discovery judged by deeds; recognition is not correctness, self-declared brilliance drains, and the deposit is honest that its own novelty is 0 (known mathematics, recombined)  ·  `00ffdbbc-ac3b…`
 - [intruders_stand_out_against_the_harmonic_hue_background](/theorem/intruders_stand_out_against_the_harmonic_hue_background) — intruders stand out against the harmonic hue background: every legitimate hue derives from a receipt byte as (byte × 40°) mod 360, always a multiple of 40 — on the a432 lattice — so it fuses into the double-torus rosetta background, whose nine harmonic hues close the circle (9 × 40 = 360). An intruder hue not produced by this rule is not a multiple of 40, fails to fuse, and stands out; detection is the harmonic invariant h mod 40 = 0. Decidable  ·  `316a5d14-0def…`
 - [judicial_involution](/theorem/judicial_involution) — judicial involution: the trial is a reflection whose verdict is idempotent, whose fixed point is the honest floor, whose reeducation converges, and whose appeal is recomputation — reflect and reflect back, the centre held; 0/7  ·  `4f726cb3-476f…`
@@ -1986,7 +1998,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [redirects_route_each_page_to_its_canonical_domain_activated_only_between_live_uuidna_domains](/theorem/redirects_route_each_page_to_its_canonical_domain_activated_only_between_live_uuidna_domains) — redirects route each page to its canonical domain — activated only between live uuidna domains, never to a non-live host: each page routes to its canonical domain, public science to org and commercial to com, by swapping the host and preserving the path; the redirect is guarded so it activates only between the live uuidna domains — the current host and previews never redirect, and it never points at a non-live host. The mapping is consistent, so there is no loop. Decidable  ·  `65adf45f-5c1a…`
 - [reeducate_a_failing_output_is_bounded_until_it_holds_max_free_work_max_auditability](/theorem/reeducate_a_failing_output_is_bounded_until_it_holds_max_free_work_max_auditability) — reeducate — a failing output is bounded until it holds, max free work and max auditability, harmonic and efficient by default: an output that drains the gate is not discarded but corrected — each overclaim is bounded until the text holds the floor — retaining the honest remainder as free work and becoming auditable; it is mechanical correction that bounds an overclaim, never making a false claim true; max intelligence here means max auditability, not IQ; integrity not truth; 0/7  ·  `bbfc8e6d-5345…`
 - [reeducated_lead_with_the_yes_a_measured_boundary_is_not_a_lie_the_forensics_is_a_floor](/theorem/reeducated_lead_with_the_yes_a_measured_boundary_is_not_a_lie_the_forensics_is_a_floor) — reeducated — lead with the yes; a measured boundary is not a lie, and the forensics is a floor not an oracle: an honest statement leads with the affirmative and then the precise limit; reflexive negation buries the yes and reads as denial. But a measured, reproducible boundary is not a lie — it recomputes to the same address. The forensics catches hollow prose (it drains) and tampering (the chain breaks), while a measured boundary passes; yet the forensics is a floor, not an oracle — a gate-clean falsehood still passes. It exposes hollow prose and tampering, not every possible lie. Decidable  ·  `66bcc875-6e67…`
-- [reeducation_converges_to_a_fixed_point](/theorem/reeducation_converges_to_a_fixed_point) — reeducation converges to a fixed point: an overclaim reeducated passes, and an already-honest statement passes unchanged — the bounded form is stable; 0/7  ·  `31d7231b-37d2…`
 - [related_theorems_contribute_connectivity_a_real_measurable_contribution_but_not_new_reach](/theorem/related_theorems_contribute_connectivity_a_real_measurable_contribution_but_not_new_reach) — related theorems contribute connectivity — a real, measurable contribution, but not new reach: each related theorem is a distinct edge that folds into the one shared root, so every one contributes, measurably — adding it changes the root. But connectivity is not new reach: relations are connective tissue and the floor 0/7 is unchanged by them, while new domains add substance. Every theorem contributes; none is uniquely best. Decidable  ·  `882f1821-fdec…`
 - [reorganizing_the_theorems_creates_theorems](/theorem/reorganizing_the_theorems_creates_theorems) — reorganizing the theorems creates theorems: any reorganization of the ledger — a permutation or a regrouping — is itself a decidable object with its own content-address, so distinct arrangements are distinct receipts (a new theorem about the collection each time), while the order-independent fold of the whole stays one invariant root. Reorganizing creates receipted arrangements — integrity, not new mathematical truth. Decidable by exhaustion  ·  `9d0cc808-b621…`
 - [riemann_sphere_inversion_swaps_zero_and_infinity](/theorem/riemann_sphere_inversion_swaps_zero_and_infinity) — inversion swaps 0 and ∞ on the Riemann sphere (the README claim, now decidable): z ↦ 1/z is an involution (1/(1/z) = z) that exchanges 0 and ∞ — verified in projective coordinates [p,q]  ·  `68fe3d76-4fac…`
@@ -2041,4 +2052,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `5ab05591-3ae0-8a01-b596-2431a13f653b`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `98163f01-c64e-89d1-9aa2-f7fb424d13f2`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
