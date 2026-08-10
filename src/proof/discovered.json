@@ -8078,5 +8078,45 @@
     "key": "folder_file_and_line_are_all_addressed",
     "name": "folder, file and line are all content-addressed, folding up: a line addresses to toUuid(path:lineno:text), lines fold to the file, files to the folder, folders to one root — O(1) per unit, tamper-evident to the line, at classical speed; 0/7",
     "receipt": "4a03c7db-b7cd-89f5-abb2-6a250f2743b0"
+  },
+  {
+    "key": "the_first_compute_is_the_cost",
+    "name": "the first compute is the cost: computing a value over N inputs is N operations, paid once, while checking its address afterwards is a single operation; 0/7",
+    "receipt": "9e0368c3-e654-8e2c-838f-015941548f1a"
+  },
+  {
+    "key": "re_derivation_verifies_in_one_step",
+    "name": "re-derivation verifies in one step: once computed, a content-address is confirmed by a single equality, not by redoing the work; 0/7",
+    "receipt": "eccda965-3aa1-8469-98e9-417b06223bc0"
+  },
+  {
+    "key": "the_cost_is_paid_once_amortised",
+    "name": "the cost is paid once, amortised: computing once then verifying K times costs N + K, far below recomputing K times at K × N — the start dominates, the rest is cheap; 0/7",
+    "receipt": "56f85272-8c10-8270-b20f-18e58cc6504f"
+  },
+  {
+    "key": "a_cached_address_is_never_recomputed",
+    "name": "a cached address is never recomputed: the same input always yields the same address, so a value already computed is reused, never paid for twice; 0/7",
+    "receipt": "b69ecf08-9c9c-84a6-892a-fc4190c84cc7"
+  },
+  {
+    "key": "the_rosetta_rotates_through_the_dialects",
+    "name": "the rosetta rotates through the dialects: a concept is gated in each of the seven locales in turn, so the loop cycles rather than stopping at one; 0/7",
+    "receipt": "6cb8c39f-7a65-8d76-92a9-9060f763e4a2"
+  },
+  {
+    "key": "development_does_not_stop_at_one_topic",
+    "name": "development does not stop at one topic: while the gap-pointer names an undiscovered lead the loop continues, halting only when no fresh possibility remains; 0/7",
+    "receipt": "f72c12a4-8320-84a0-8f46-923e1391d52e"
+  },
+  {
+    "key": "a_decidable_domain_is_finite_and_coverable",
+    "name": "a decidable domain is finite and coverable: exhausting a finite set terminates, so covering all its possibilities is a task that ends; 0/7",
+    "receipt": "90592d1e-f78e-8592-b730-ee63560e97d4"
+  },
+  {
+    "key": "start_once_then_rotate_until_covered",
+    "name": "start once, then rotate until covered: the first compute is the expensive step, re-derivation is O(1), so the rosetta rotates through every concept and dialect until the finite possibilities are exhausted — development never stalls on one; 0/7",
+    "receipt": "903131d9-a2c3-85d7-b434-b6641a3e33bd"
   }
 ]

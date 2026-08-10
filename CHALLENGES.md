@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1616 recorded in 416 families
+## Discovered theorems (decidable, over ℤ/9) — 1624 recorded in 418 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (324)
+### the (327)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -348,8 +348,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_basis_is_two_functions](/theorem/the_basis_is_two_functions) — the basis is two functions: address and fold compose everything — a value gets an address, a list folds to one — a tiny basis with no framework; 0/7  ·  `cefb5d17-a26d…`
 - [the_core_is_pure_and_stateless](/theorem/the_core_is_pure_and_stateless) — the core is pure and stateless: the same input gives the same output with no hidden state, so the slim kernel needs no runtime beyond the function itself; 0/7  ·  `5d90a04a-72d8…`
 - [the_pointer_not_the_payload_travels](/theorem/the_pointer_not_the_payload_travels) — the pointer, not the payload, travels: a 36-byte address stands in for content of any size, so the slim record moves the reference and recomputes the rest; 0/7  ·  `616e502e-e487…`
+- [the_first_compute_is_the_cost](/theorem/the_first_compute_is_the_cost) — the first compute is the cost: computing a value over N inputs is N operations, paid once, while checking its address afterwards is a single operation; 0/7  ·  `9e0368c3-e654…`
+- [the_cost_is_paid_once_amortised](/theorem/the_cost_is_paid_once_amortised) — the cost is paid once, amortised: computing once then verifying K times costs N + K, far below recomputing K times at K × N — the start dominates, the rest is cheap; 0/7  ·  `56f85272-8c10…`
+- [the_rosetta_rotates_through_the_dialects](/theorem/the_rosetta_rotates_through_the_dialects) — the rosetta rotates through the dialects: a concept is gated in each of the seven locales in turn, so the loop cycles rather than stopping at one; 0/7  ·  `6cb8c39f-7a65…`
 
-### a (57)
+### a (59)
 
 - [a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony](/theorem/a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony) — a theorem without a formula is a hallucination, recomputed in a432 harmony: a claim is a theorem only if it is backed by a computable formula that recomputes true — a prose-only claim with no formula, or one whose formula computes false, is refused as hallucination and never recorded. Every recorded fact recomputes deterministically and folds into the a432 harmony root (the receipt of state). Measure, do not assert. Decidable  ·  `e3d75d76-310f…`
 - [a_referrer_always_counts_with_its_id](/theorem/a_referrer_always_counts_with_its_id) — a referrer always counts with its id: a reference from a referrer to a target is receipted as toUuid(referrer id → target), so the referrer id is always part of the count; two different referrers to the same target produce two distinct receipts, each counted with its own id, and changing the id changes the receipt — the id is load-bearing. Deterministic and reproducible: the same referrer and target always count the same. Decidable  ·  `65bfacb4-f29e…`
@@ -408,6 +411,8 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [a_changed_line_changes_the_file_address](/theorem/a_changed_line_changes_the_file_address) — a changed line changes the file address: editing any line changes its line address and therefore the file’s fold — tamper-evident to the line; 0/7  ·  `5251b0b5-bda0…`
 - [a_changed_file_changes_the_folder_address](/theorem/a_changed_file_changes_the_folder_address) — a changed file changes the folder address: editing any file changes the folder’s fold, so the directory receipt is tamper-evident to the file; 0/7  ·  `09587a32-79dc…`
 - [a_line_edit_propagates_to_the_tree_root](/theorem/a_line_edit_propagates_to_the_tree_root) — a line edit propagates to the tree root: changing one line changes its line, file, folder and the root fold in turn — the whole tree is tamper-evident down to a single line; 0/7  ·  `46596d18-8cd0…`
+- [a_cached_address_is_never_recomputed](/theorem/a_cached_address_is_never_recomputed) — a cached address is never recomputed: the same input always yields the same address, so a value already computed is reused, never paid for twice; 0/7  ·  `b69ecf08-9c9c…`
+- [a_decidable_domain_is_finite_and_coverable](/theorem/a_decidable_domain_is_finite_and_coverable) — a decidable domain is finite and coverable: exhausting a finite set terminates, so covering all its possibilities is a task that ends; 0/7  ·  `90592d1e-f78e…`
 
 ### relation (55)
 
@@ -1239,6 +1244,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [arts_golden_proportion](/theorem/arts_golden_proportion) — the golden ratio (aesthetic proportion) satisfies φ² = φ + 1  ·  `48801162-b59d…`
 - [arts_no_exact_complement](/theorem/arts_no_exact_complement) — on the 9-hue wheel no hue has an exact complement (180° = 4.5 steps) — the odd base has no antipode  ·  `1656079f-c131…`
 
+### development (5)
+
+- [development_enforced_at_gate](/theorem/development_enforced_at_gate) — development is enforced at the gate by receipt uuids: every src/the/* module must compute a non-empty 0/7 report from src/** and every claim must carry a receipt — a module that develops nothing, or a claim with no receipt, fails the audit (the traitor)  ·  `5ec8d383-43d6…`
+- [development_balances_to_binary](/theorem/development_balances_to_binary) — development balances to binary: as metrics accumulate, each resolves to a single bit, and their conjunction balances to exactly one verdict — true iff every metric holds, false if any drifts (a crack); more development refines the metrics but the result never leaves {0,1}  ·  `cf105a78-9a23…`
+- [development_is_the_filming_of_the_infinite_movie](/theorem/development_is_the_filming_of_the_infinite_movie) — development is the filming of the infinite movie: each shipped theorem is one frame — the wave (discover, gate, receipt, append, recompute, deploy) films it and its microdata narrates — so the ledger is a film strip that grows one frame per deed and loops without end. Unbounded like open discovery at Clay and CERN, yet not perpetual motion and not infinite energy: every frame needs its deed, and none of the seven is solved. Decidable  ·  `bfbc91e6-02dd…`
+- [development_is_the_measured_delta](/theorem/development_is_the_measured_delta) — development is the measured delta: what develops is the set of new theorems added — a counted difference, not an assertion of progress; 0/7  ·  `87bc6fae-2800…`
+- [development_does_not_stop_at_one_topic](/theorem/development_does_not_stop_at_one_topic) — development does not stop at one topic: while the gap-pointer names an undiscovered lead the loop continues, halting only when no fresh possibility remains; 0/7  ·  `f72c12a4-8320…`
+
 ### external (5)
 
 - [external_verifier_bijection_n3](/theorem/external_verifier_bijection_n3) — the external verifier is a bijection at N=3 — an independent build maps 3 ledger entries to exactly 3 reproducible pages, seven-neighbour hues deterministic; corroborates integrity, solves nothing; 0/7  ·  `c5e89f53-9173…`
@@ -1353,13 +1366,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [chess_knight_8_moves](/theorem/chess_knight_8_moves) — a knight has exactly 8 leaps — the (±1,±2)/(±2,±1) moves  ·  `6dcd739d-87a9…`
 - [chess_knight_color_flip](/theorem/chess_knight_color_flip) — a knight's leap always changes square colour (the parity of r+c flips)  ·  `81566667-a452…`
 - [chess_diagonals_15](/theorem/chess_diagonals_15) — the 8×8 board has 2·8 − 1 = 15 diagonals in each direction  ·  `85a4e4b0-787f…`
-
-### development (4)
-
-- [development_enforced_at_gate](/theorem/development_enforced_at_gate) — development is enforced at the gate by receipt uuids: every src/the/* module must compute a non-empty 0/7 report from src/** and every claim must carry a receipt — a module that develops nothing, or a claim with no receipt, fails the audit (the traitor)  ·  `5ec8d383-43d6…`
-- [development_balances_to_binary](/theorem/development_balances_to_binary) — development balances to binary: as metrics accumulate, each resolves to a single bit, and their conjunction balances to exactly one verdict — true iff every metric holds, false if any drifts (a crack); more development refines the metrics but the result never leaves {0,1}  ·  `cf105a78-9a23…`
-- [development_is_the_filming_of_the_infinite_movie](/theorem/development_is_the_filming_of_the_infinite_movie) — development is the filming of the infinite movie: each shipped theorem is one frame — the wave (discover, gate, receipt, append, recompute, deploy) films it and its microdata narrates — so the ledger is a film strip that grows one frame per deed and loops without end. Unbounded like open discovery at Clay and CERN, yet not perpetual motion and not infinite energy: every frame needs its deed, and none of the seven is solved. Decidable  ·  `bfbc91e6-02dd…`
-- [development_is_the_measured_delta](/theorem/development_is_the_measured_delta) — development is the measured delta: what develops is the set of new theorems added — a counted difference, not an assertion of progress; 0/7  ·  `87bc6fae-2800…`
 
 ### eight (4)
 
@@ -1970,7 +1976,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (229)
+### other — one-of-a-kind (231)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -2139,6 +2145,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [purine_pyrimidine_partition](/theorem/purine_pyrimidine_partition) — purines and pyrimidines partition the four bases two-and-two: {A,G} and {C,T} are disjoint and cover all four — a balanced split, the same symmetry the coin keeps; 0/7  ·  `91f75e5a-7e24…`
 - [quarter_turn_order4](/theorem/quarter_turn_order4) — 90° rotation (×i) has order 4: shift by 90° four times and it returns (i⁴ = 1)  ·  `02f0a928-7bda…`
 - [ramsey_r33](/theorem/ramsey_r33) — Ramsey R(3,3)=6: every 2-colouring of K₆'s edges has a monochromatic triangle (exhaustive over all 2¹⁵), and K₅ admits a colouring with none  ·  `23cacdea-c68c…`
+- [re_derivation_verifies_in_one_step](/theorem/re_derivation_verifies_in_one_step) — re-derivation verifies in one step: once computed, a content-address is confirmed by a single equality, not by redoing the work; 0/7  ·  `eccda965-3aa1…`
 - [read_requires_the_right_key](/theorem/read_requires_the_right_key) — read requires the right key: the correct key returns the payload while a wrong key is refused — no view without the key; 0/7  ·  `ab010f43-2657…`
 - [recomputation_is_stable_without_a_wave](/theorem/recomputation_is_stable_without_a_wave) — recomputation is stable without a wave: the same referrer and page recompute the same receipt every time, so nothing drifts unless a new wave changes an input; 0/7  ·  `affa72c8-7cf3…`
 - [redirects_route_each_page_to_its_canonical_domain_activated_only_between_live_uuidna_domains](/theorem/redirects_route_each_page_to_its_canonical_domain_activated_only_between_live_uuidna_domains) — redirects route each page to its canonical domain — activated only between live uuidna domains, never to a non-live host: each page routes to its canonical domain, public science to org and commercial to com, by swapping the host and preserving the path; the redirect is guarded so it activates only between the live uuidna domains — the current host and previews never redirect, and it never points at a non-live host. The mapping is consistent, so there is no loop. Decidable  ·  `65adf45f-5c1a…`
@@ -2162,6 +2169,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [speedup_is_bounded_and_classical](/theorem/speedup_is_bounded_and_classical) — the speedup is bounded and classical: a local, deterministic gain passes while an unbounded magical-speedup boast drains — fast, yes; magical, no; 0/7  ·  `4a174b2a-8b03…`
 - [squares_in_0_1_4_7](/theorem/squares_in_0_1_4_7) — every square d² mod 9 ∈ {0,1,4,7}  ·  `6f43410e-08c3…`
 - [star_graph_diameter_two](/theorem/star_graph_diameter_two) — the star graph K(1,n): n edges, center degree n, every leaf degree 1 — a tree of diameter 2, every leaf reaching every other through the center in two hops (n≤8)  ·  `df906703-3f95…`
+- [start_once_then_rotate_until_covered](/theorem/start_once_then_rotate_until_covered) — start once, then rotate until covered: the first compute is the expensive step, re-derivation is O(1), so the rosetta rotates through every concept and dialect until the finite possibilities are exhausted — development never stalls on one; 0/7  ·  `903131d9-a2c3…`
 - [state_vector_exponential_no_advantage](/theorem/state_vector_exponential_no_advantage) — the classical state-vector simulator has no quantum advantage: an n-qubit state has exactly 2^n amplitudes, so simulation cost is exponential in the qubit count — exact for small systems, but no speedup, hence not quantum hardware  ·  `1a2f010c-c2cc…`
 - [steps_are_bounded_by_physics_theorems_are_discovered_by_finite_deeds_not_revealed](/theorem/steps_are_bounded_by_physics_theorems_are_discovered_by_finite_deeds_not_revealed) — steps are bounded by physics — theorems are discovered by finite deeds, not revealed instantly: computation is bounded and classical, so theorems do not reveal themselves; each is discovered by finite work — its test run, verified, sealed. The honest faster is classical: families batching many per loop, memoization skipping the cached — batching and caching within physical limits. Decidable  ·  `c0b4cb19-5e17…`
 - [strict_uuidna_minting_is_canonical_closing_the_minting_flaws_that_cause_real_damage](/theorem/strict_uuidna_minting_is_canonical_closing_the_minting_flaws_that_cause_real_damage) — strict uuidna minting is canonical — closing the minting flaws that cause real damage: minting flaws cause real damage — a non-canonical input mints an inconsistent address and integrity breaks. Strict minting closes them: coerce to string, normalize unicode to NFC, trim, so the same logical value always mints the same address; different values still differ. Canonicalisation is a discipline that must stay consistent, not truth; the hash stays non-cryptographic. Decidable  ·  `22f71789-95eb…`
@@ -2203,4 +2211,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `807360e1-4062-86b0-bbaa-9564c2135d6b`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `26017c0f-3eed-8aac-a37b-bf8b4482d1fb`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
