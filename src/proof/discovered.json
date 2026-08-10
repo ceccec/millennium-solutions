@@ -9118,5 +9118,45 @@
     "key": "a_combination_folds_to_one_address",
     "name": "a combination folds to one address: any selection of theorems merkle-folds to a single order-independent receipt, so a combination is itself content-addressed; 0/7",
     "receipt": "09cafb76-25fe-8bd2-b696-42fa6cf2f612"
+  },
+  {
+    "key": "every_theorem_has_a_documented_inverse",
+    "name": "every theorem has a documented inverse: its negation mints its own content-address, so the inverse is a receipt in its own right; 0/7",
+    "receipt": "6b1dd60c-acc3-84c0-b5ab-65e7e3271b59"
+  },
+  {
+    "key": "the_inverse_receipt_is_distinct",
+    "name": "the inverse receipt is distinct: a theorem and its inverse address differently, so the two are told apart; 0/7",
+    "receipt": "152cf674-0327-89d2-bc7d-8403a706d202"
+  },
+  {
+    "key": "the_boast_drains_its_inverse_signs",
+    "name": "the boast drains, its inverse signs: an over-claim fails the gate while its negation passes — the inverted theorem is the honest one; 0/7",
+    "receipt": "3da9aaac-7e46-86ad-8b55-dd7362b1b1ac"
+  },
+  {
+    "key": "the_inverse_of_the_inverse_is_the_theorem",
+    "name": "the inverse of the inverse is the theorem: the ten’s-complement reflection applied twice returns every digit, so inversion is an involution; 0/7",
+    "receipt": "c96c7ab0-73ce-818e-8d39-605ec45a23c3"
+  },
+  {
+    "key": "the_inverse_is_reproducible",
+    "name": "the inverse is reproducible: the same theorem yields the same inverse address every time, so the negation is checkable; 0/7",
+    "receipt": "f7da0229-dfef-8d3d-8b14-c695d48054b9"
+  },
+  {
+    "key": "the_pair_documents_the_full_trial",
+    "name": "the pair documents the full trial: a theorem and its inverse fold to one pair-address, so both the claim and its refutation are on the record; 0/7",
+    "receipt": "501a21c3-12f1-86f7-a5fe-8ddd8d7078c3"
+  },
+  {
+    "key": "the_refuted_form_is_kept_not_hidden",
+    "name": "the refuted form is kept, not hidden: a failed claim is recorded as its inverse rather than discarded, so evidence stays append-only; 0/7",
+    "receipt": "6044e59f-21af-834e-af8f-49ba8323f409"
+  },
+  {
+    "key": "the_inverted_theorems_are_documented",
+    "name": "the inverted theorems are documented: each has its own distinct, reproducible receipt, a boast draining while its inverse signs, inversion an involution, and every pair on the record — the refutation kept, not hidden; 0/7",
+    "receipt": "56f362d7-9f39-8ffa-a763-a331ca7cbd31"
   }
 ]

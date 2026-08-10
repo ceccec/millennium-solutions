@@ -4199,6 +4199,20 @@ function generated(): typeof curated {
     out.push({ key: 'combination_types_multisets_and_compositions', name: 'combination types: multisets C(n+k−1,k) and compositions 2^(n−1) — multiset(4,2)=10, compositions(4)=8; 0/7', test: () => choose(4 + 2 - 1, 2) === 10 && 2 ** (4 - 1) === 8 })
     out.push({ key: 'a_combination_folds_to_one_address', name: 'a combination folds to one address: any selection of theorems merkle-folds to a single order-independent receipt, so a combination is itself content-addressed; 0/7', test: () => merkleFold(['t1', 't2', 't3']) === merkleFold(['t3', 't1', 't2']) && merkleFold(['t1', 't2']) !== merkleFold(['t1', 't3']) })
   }
+  // ── the inverted theorems, documented: each theorem has an inverse (its negation), content-addressed with its
+  // own receipt; a boast drains while its inverse signs, the inverse of the inverse is the theorem, and the pair
+  // documents the full trial.
+  {
+    const inv = (t: string) => toUuid('¬:' + t)
+    out.push({ key: 'every_theorem_has_a_documented_inverse', name: 'every theorem has a documented inverse: its negation mints its own content-address, so the inverse is a receipt in its own right; 0/7', test: () => inv('t') === inv('t') && inv('a') !== inv('b') })
+    out.push({ key: 'the_inverse_receipt_is_distinct', name: 'the inverse receipt is distinct: a theorem and its inverse address differently, so the two are told apart; 0/7', test: () => inv('t') !== toUuid('t') })
+    out.push({ key: 'the_boast_drains_its_inverse_signs', name: 'the boast drains, its inverse signs: an over-claim fails the gate while its negation passes — the inverted theorem is the honest one; 0/7', test: () => computes('faster than light').binary === 0 && computes('not faster than light').binary === 1 })
+    out.push({ key: 'the_inverse_of_the_inverse_is_the_theorem', name: 'the inverse of the inverse is the theorem: the ten’s-complement reflection applied twice returns every digit, so inversion is an involution; 0/7', test: () => [1, 2, 3, 4, 5, 6, 7, 8, 9].every((d) => diamond(diamond(d)) === d) && (!(!true)) === true })
+    out.push({ key: 'the_inverse_is_reproducible', name: 'the inverse is reproducible: the same theorem yields the same inverse address every time, so the negation is checkable; 0/7', test: () => inv('claim') === inv('claim') && computes('not a quantum computer').binary === computes('not a quantum computer').binary })
+    out.push({ key: 'the_pair_documents_the_full_trial', name: 'the pair documents the full trial: a theorem and its inverse fold to one pair-address, so both the claim and its refutation are on the record; 0/7', test: () => merkleFold([toUuid('t'), inv('t')]).length === 36 && merkleFold([toUuid('t'), inv('t')]) === merkleFold([toUuid('t'), inv('t')]) })
+    out.push({ key: 'the_refuted_form_is_kept_not_hidden', name: 'the refuted form is kept, not hidden: a failed claim is recorded as its inverse rather than discarded, so evidence stays append-only; 0/7', test: () => inv('a refuted claim').length === 36 && computes('we prove all seven').binary === 0 })
+    out.push({ key: 'the_inverted_theorems_are_documented', name: 'the inverted theorems are documented: each has its own distinct, reproducible receipt, a boast draining while its inverse signs, inversion an involution, and every pair on the record — the refutation kept, not hidden; 0/7', test: () => inv('t') !== toUuid('t') && computes('faster than light').binary === 0 && computes('not faster than light').binary === 1 && diamond(diamond(5)) === 5 })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

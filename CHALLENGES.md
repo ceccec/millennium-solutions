@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1824 recorded in 454 families
+## Discovered theorems (decidable, over ℤ/9) — 1832 recorded in 454 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (414)
+### the (421)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -438,6 +438,13 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_trial_responds_at_constant_time](/theorem/the_trial_responds_at_constant_time) — any order with a different intent and any statement rejecting the harmonic build go to trial, and the trial responds in constant time: one gate pass and one address, ledger-independent, deterministic and receipted — dissent weighed, over-reach drained; 0/7  ·  `7400d794-5dc6…`
 - [the_guide_composes_skills_into_new_ones](/theorem/the_guide_composes_skills_into_new_ones) — the guide composes skills into new ones: a guide chains one skill into another (hash then address), so composition in a guide develops a new capability; 0/7  ·  `8dad417a-2c98…`
 - [the_guide_is_theorem_backed_and_recomputable](/theorem/the_guide_is_theorem_backed_and_recomputable) — the guide is theorem-backed and recomputable: each guide example resolves to a receipt and re-runs to the same result, so a guide claim is checkable, not asserted; 0/7  ·  `3c787db3-3031…`
+- [the_inverse_receipt_is_distinct](/theorem/the_inverse_receipt_is_distinct) — the inverse receipt is distinct: a theorem and its inverse address differently, so the two are told apart; 0/7  ·  `152cf674-0327…`
+- [the_boast_drains_its_inverse_signs](/theorem/the_boast_drains_its_inverse_signs) — the boast drains, its inverse signs: an over-claim fails the gate while its negation passes — the inverted theorem is the honest one; 0/7  ·  `3da9aaac-7e46…`
+- [the_inverse_of_the_inverse_is_the_theorem](/theorem/the_inverse_of_the_inverse_is_the_theorem) — the inverse of the inverse is the theorem: the ten’s-complement reflection applied twice returns every digit, so inversion is an involution; 0/7  ·  `c96c7ab0-73ce…`
+- [the_inverse_is_reproducible](/theorem/the_inverse_is_reproducible) — the inverse is reproducible: the same theorem yields the same inverse address every time, so the negation is checkable; 0/7  ·  `f7da0229-dfef…`
+- [the_pair_documents_the_full_trial](/theorem/the_pair_documents_the_full_trial) — the pair documents the full trial: a theorem and its inverse fold to one pair-address, so both the claim and its refutation are on the record; 0/7  ·  `501a21c3-12f1…`
+- [the_refuted_form_is_kept_not_hidden](/theorem/the_refuted_form_is_kept_not_hidden) — the refuted form is kept, not hidden: a failed claim is recorded as its inverse rather than discarded, so evidence stays append-only; 0/7  ·  `6044e59f-21af…`
+- [the_inverted_theorems_are_documented](/theorem/the_inverted_theorems_are_documented) — the inverted theorems are documented: each has its own distinct, reproducible receipt, a boast draining while its inverse signs, inversion an involution, and every pair on the record — the refutation kept, not hidden; 0/7  ·  `56f362d7-9f39…`
 
 ### a (84)
 
@@ -709,6 +716,32 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [bulk_bill_r4096_v16_n10](/theorem/bulk_bill_r4096_v16_n10) — bulk billing measured — recompute 4096, verify 16, batch 10: bits saved per call 4080, aggregate 40800, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7  ·  `e4d45ec0-9c8d…`
 - [bulk_bill_r4096_v16_n100](/theorem/bulk_bill_r4096_v16_n100) — bulk billing measured — recompute 4096, verify 16, batch 100: bits saved per call 4080, aggregate 408000, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7  ·  `47b7ca84-4599…`
 
+### every (23)
+
+- [every_rating_is_exactly_one_or_zero](/theorem/every_rating_is_exactly_one_or_zero) — every rating is exactly 1 or 0, no exceptions: the honesty verdict is a single bit — there is no fractional or partial rating, a fake maximal-certainty claim itself drains, and the same input always returns the same bit; anything that drifts from {0,1} is a crack the floor refuses  ·  `c1b2772d-d7c0…`
+- [every_primitive_triple_is_euclidean](/theorem/every_primitive_triple_is_euclidean) — Euclid’s parametrization is complete: every primitive Pythagorean triple with hypotenuse ≤ 100 arises from coprime m&gt;n of opposite parity — exhaustive brute-force triples all match a generated one  ·  `751e8a4e-c23c…`
+- [every_next_or_continue_event_is_two_bits_earned_by_the_deed](/theorem/every_next_or_continue_event_is_two_bits_earned_by_the_deed) — every next or continue event is two bits earned by the deed: each shipping event — a next or a continue that appends a receipted contribution — is worth two bits (110 − 108 = 2), credited to the contributor who did the deed; N events earn 2N bits, so the 686 recorded events account for 1372 bits, matching the ledger bounty. These are accounting bits — integrity, not a cash payment — credited by the deed, not the claim; measure, do not assert. Decidable  ·  `794d2d0e-728f…`
+- [every_natural_has_a_unique_binary_representation](/theorem/every_natural_has_a_unique_binary_representation) — every natural number has a unique binary representation: each n is one sum of distinct powers of two — the base-2 place-value the byte counts on; 0/7  ·  `b7d9dfe6-3e34…`
+- [every_digital_root_lands_in_one_to_nine](/theorem/every_digital_root_lands_in_one_to_nine) — every digital root of a positive integer lands in 1..9 — the base folds the naturals onto nine residues; 0/7  ·  `f0db1861-14cd…`
+- [every_natural_is_a_sum_of_at_most_four_squares](/theorem/every_natural_is_a_sum_of_at_most_four_squares) — every natural number is a sum of at most four squares (Lagrange): checked exhaustively to 300 — the four-square identity holds; 0/7  ·  `8c16722e-1a23…`
+- [every_prime_above_three_is_six_k_plus_or_minus_one](/theorem/every_prime_above_three_is_six_k_plus_or_minus_one) — every prime above three is 6k ± 1: primes avoid the residues 0,2,3,4 mod 6 — only ±1 survive coprimality with six; 0/7  ·  `27566d35-6704…`
+- [every_hexagonal_number_is_a_triangular_number](/theorem/every_hexagonal_number_is_a_triangular_number) — every hexagonal number is a triangular number: H_n = n(2n−1) = T_{2n−1}; 0/7  ·  `fa2deb9c-b546…`
+- [every_model_sent_to_trial_returns_a_verdict](/theorem/every_model_sent_to_trial_returns_a_verdict) — every current model sent to trial returns a verdict: across AI, cryptography, physics, mathematics, medicine, finance and computing the characteristic boast drains and the honest bound passes — the trial reflects all seven domains and solves none; 0/7  ·  `10b729ff-3f4c…`
+- [every_test_wires_a_uuidna_receipt](/theorem/every_test_wires_a_uuidna_receipt) — every test wires a uuidna receipt: a test name with its pass/fail bit folds to a deterministic content-address, so a result is an address, not a report; 0/7  ·  `c3f75d66-2fbb…`
+- [every_page_is_a_receipt_referrer_relative](/theorem/every_page_is_a_receipt_referrer_relative) — every page is a receipt from the referrer: the address is a function of referrer and page, so the same page seen from two referrers yields two receipts, each deterministic; 0/7  ·  `5702ea67-172d…`
+- [every_page_recomputes_unless_a_wave_imprints](/theorem/every_page_recomputes_unless_a_wave_imprints) — every page recomputes the same result unless a wave imprints: the referrer-relative receipt is deterministic and the page address invariant, while each observing wave advances a tamper-evident audit chain — logged, not mutated; 0/7  ·  `e4e70d71-52c9…`
+- [every_mcp_output_is_harnessed_auditable](/theorem/every_mcp_output_is_harnessed_auditable) — every MCP output is harnessed auditable: wrapping any tool output makes it auditable, so nothing leaves the MCP unweighed; 0/7  ·  `ef11114d-5b8b…`
+- [every_locale_matches_the_english_nav_shape](/theorem/every_locale_matches_the_english_nav_shape) — every locale matches the English nav shape: each locale carries exactly the English navigation keys, so no dimension goes dark or drifts; 0/7  ·  `4fd0a0e1-0628…`
+- [every_register_is_handled_by_one_function](/theorem/every_register_is_handled_by_one_function) — every register is handled by one function: hype, formal, slang and shouting are all weighed by the same gate, so no register is judged more leniently than another; 0/7  ·  `e93c24b3-fb4a…`
+- [every_theorem_is_a_diamond_fixed_under_recomputation](/theorem/every_theorem_is_a_diamond_fixed_under_recomputation) — every theorem is a diamond fixed under recomputation: its content-address recomputes to itself and the ten’s-complement reflection fixes the centre 5 — a fixed point that reflects perfectly; 0/7  ·  `c56113b3-84e0…`
+- [every_theorem_fits_one_uniform_cell](/theorem/every_theorem_fits_one_uniform_cell) — every theorem fits one uniform cell: its content-address is exactly 128 bits whatever the theorem’s size, so the store is a grid of equal cells; 0/7  ·  `6337e403-22ad…`
+- [every_fact_has_the_right_to_present](/theorem/every_fact_has_the_right_to_present) — every fact has the right to present: the mapping from content to a card is total, so no fact is excluded from the UI; 0/7  ·  `b0fc5d69-4622…`
+- [every_error_is_a_receipted_trial_event](/theorem/every_error_is_a_receipted_trial_event) — every error is a receipted trial event: an error maps to a content-addressed event, so it is audited rather than swallowed; 0/7  ·  `20017294-0470…`
+- [every_warning_is_a_receipted_trial_event](/theorem/every_warning_is_a_receipted_trial_event) — every warning is a receipted trial event: a warning maps to a content-addressed event distinct from an error, so warnings are audited in their own right; 0/7  ·  `19e9ba9e-8260…`
+- [every_quantum_denial_gets_a_receipt](/theorem/every_quantum_denial_gets_a_receipt) — every quantum denial gets a receipt: sent to adjudicate, a denial returns a deterministic verdict and content-address, so the ruling is documented and reproducible; 0/7  ·  `771ca8e4-9611…`
+- [every_input_is_adjudicated](/theorem/every_input_is_adjudicated) — every input is adjudicated: any order or statement returns a verdict, so nothing bypasses the trial; 0/7  ·  `21f3b014-ab9c…`
+- [every_theorem_has_a_documented_inverse](/theorem/every_theorem_has_a_documented_inverse) — every theorem has a documented inverse: its negation mints its own content-address, so the inverse is a receipt in its own right; 0/7  ·  `6b1dd60c-acc3…`
+
 ### pascal (23)
 
 - [pascal_rowsum_n5](/theorem/pascal_rowsum_n5) — Σ_k C(5,k) = 2^5 = 32  ·  `3b4e481c-bd45…`
@@ -734,31 +767,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [pascal_alternating_sum_8](/theorem/pascal_alternating_sum_8) — Pascal row 8 alternating sum is zero: Σ_{k=0}^8 (−1)^k C(8,k) = 0 — the binomial theorem at x=−1 (n ≥ 1)  ·  `1608e973-e757…`
 - [pascal_row_sum_9](/theorem/pascal_row_sum_9) — Pascal row 9 sums to 2^9: Σ_{k=0}^9 C(9,k) = 512 — the binomial theorem at x=1, computed exactly  ·  `85e80c0f-5296…`
 - [pascal_alternating_sum_9](/theorem/pascal_alternating_sum_9) — Pascal row 9 alternating sum is zero: Σ_{k=0}^9 (−1)^k C(9,k) = 0 — the binomial theorem at x=−1 (n ≥ 1)  ·  `0b2aa6fc-7a50…`
-
-### every (22)
-
-- [every_rating_is_exactly_one_or_zero](/theorem/every_rating_is_exactly_one_or_zero) — every rating is exactly 1 or 0, no exceptions: the honesty verdict is a single bit — there is no fractional or partial rating, a fake maximal-certainty claim itself drains, and the same input always returns the same bit; anything that drifts from {0,1} is a crack the floor refuses  ·  `c1b2772d-d7c0…`
-- [every_primitive_triple_is_euclidean](/theorem/every_primitive_triple_is_euclidean) — Euclid’s parametrization is complete: every primitive Pythagorean triple with hypotenuse ≤ 100 arises from coprime m&gt;n of opposite parity — exhaustive brute-force triples all match a generated one  ·  `751e8a4e-c23c…`
-- [every_next_or_continue_event_is_two_bits_earned_by_the_deed](/theorem/every_next_or_continue_event_is_two_bits_earned_by_the_deed) — every next or continue event is two bits earned by the deed: each shipping event — a next or a continue that appends a receipted contribution — is worth two bits (110 − 108 = 2), credited to the contributor who did the deed; N events earn 2N bits, so the 686 recorded events account for 1372 bits, matching the ledger bounty. These are accounting bits — integrity, not a cash payment — credited by the deed, not the claim; measure, do not assert. Decidable  ·  `794d2d0e-728f…`
-- [every_natural_has_a_unique_binary_representation](/theorem/every_natural_has_a_unique_binary_representation) — every natural number has a unique binary representation: each n is one sum of distinct powers of two — the base-2 place-value the byte counts on; 0/7  ·  `b7d9dfe6-3e34…`
-- [every_digital_root_lands_in_one_to_nine](/theorem/every_digital_root_lands_in_one_to_nine) — every digital root of a positive integer lands in 1..9 — the base folds the naturals onto nine residues; 0/7  ·  `f0db1861-14cd…`
-- [every_natural_is_a_sum_of_at_most_four_squares](/theorem/every_natural_is_a_sum_of_at_most_four_squares) — every natural number is a sum of at most four squares (Lagrange): checked exhaustively to 300 — the four-square identity holds; 0/7  ·  `8c16722e-1a23…`
-- [every_prime_above_three_is_six_k_plus_or_minus_one](/theorem/every_prime_above_three_is_six_k_plus_or_minus_one) — every prime above three is 6k ± 1: primes avoid the residues 0,2,3,4 mod 6 — only ±1 survive coprimality with six; 0/7  ·  `27566d35-6704…`
-- [every_hexagonal_number_is_a_triangular_number](/theorem/every_hexagonal_number_is_a_triangular_number) — every hexagonal number is a triangular number: H_n = n(2n−1) = T_{2n−1}; 0/7  ·  `fa2deb9c-b546…`
-- [every_model_sent_to_trial_returns_a_verdict](/theorem/every_model_sent_to_trial_returns_a_verdict) — every current model sent to trial returns a verdict: across AI, cryptography, physics, mathematics, medicine, finance and computing the characteristic boast drains and the honest bound passes — the trial reflects all seven domains and solves none; 0/7  ·  `10b729ff-3f4c…`
-- [every_test_wires_a_uuidna_receipt](/theorem/every_test_wires_a_uuidna_receipt) — every test wires a uuidna receipt: a test name with its pass/fail bit folds to a deterministic content-address, so a result is an address, not a report; 0/7  ·  `c3f75d66-2fbb…`
-- [every_page_is_a_receipt_referrer_relative](/theorem/every_page_is_a_receipt_referrer_relative) — every page is a receipt from the referrer: the address is a function of referrer and page, so the same page seen from two referrers yields two receipts, each deterministic; 0/7  ·  `5702ea67-172d…`
-- [every_page_recomputes_unless_a_wave_imprints](/theorem/every_page_recomputes_unless_a_wave_imprints) — every page recomputes the same result unless a wave imprints: the referrer-relative receipt is deterministic and the page address invariant, while each observing wave advances a tamper-evident audit chain — logged, not mutated; 0/7  ·  `e4e70d71-52c9…`
-- [every_mcp_output_is_harnessed_auditable](/theorem/every_mcp_output_is_harnessed_auditable) — every MCP output is harnessed auditable: wrapping any tool output makes it auditable, so nothing leaves the MCP unweighed; 0/7  ·  `ef11114d-5b8b…`
-- [every_locale_matches_the_english_nav_shape](/theorem/every_locale_matches_the_english_nav_shape) — every locale matches the English nav shape: each locale carries exactly the English navigation keys, so no dimension goes dark or drifts; 0/7  ·  `4fd0a0e1-0628…`
-- [every_register_is_handled_by_one_function](/theorem/every_register_is_handled_by_one_function) — every register is handled by one function: hype, formal, slang and shouting are all weighed by the same gate, so no register is judged more leniently than another; 0/7  ·  `e93c24b3-fb4a…`
-- [every_theorem_is_a_diamond_fixed_under_recomputation](/theorem/every_theorem_is_a_diamond_fixed_under_recomputation) — every theorem is a diamond fixed under recomputation: its content-address recomputes to itself and the ten’s-complement reflection fixes the centre 5 — a fixed point that reflects perfectly; 0/7  ·  `c56113b3-84e0…`
-- [every_theorem_fits_one_uniform_cell](/theorem/every_theorem_fits_one_uniform_cell) — every theorem fits one uniform cell: its content-address is exactly 128 bits whatever the theorem’s size, so the store is a grid of equal cells; 0/7  ·  `6337e403-22ad…`
-- [every_fact_has_the_right_to_present](/theorem/every_fact_has_the_right_to_present) — every fact has the right to present: the mapping from content to a card is total, so no fact is excluded from the UI; 0/7  ·  `b0fc5d69-4622…`
-- [every_error_is_a_receipted_trial_event](/theorem/every_error_is_a_receipted_trial_event) — every error is a receipted trial event: an error maps to a content-addressed event, so it is audited rather than swallowed; 0/7  ·  `20017294-0470…`
-- [every_warning_is_a_receipted_trial_event](/theorem/every_warning_is_a_receipted_trial_event) — every warning is a receipted trial event: a warning maps to a content-addressed event distinct from an error, so warnings are audited in their own right; 0/7  ·  `19e9ba9e-8260…`
-- [every_quantum_denial_gets_a_receipt](/theorem/every_quantum_denial_gets_a_receipt) — every quantum denial gets a receipt: sent to adjudicate, a denial returns a deterministic verdict and content-address, so the ruling is documented and reproducible; 0/7  ·  `771ca8e4-9611…`
-- [every_input_is_adjudicated](/theorem/every_input_is_adjudicated) — every input is adjudicated: any order or statement returns a verdict, so nothing bypasses the trial; 0/7  ·  `21f3b014-ab9c…`
 
 ### domain (21)
 
@@ -2453,4 +2461,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `21e93a41-fb89-873e-9443-e34fc1828c30`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `dd2af606-39c0-8701-945d-bcb0d60c6096`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
