@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1072 recorded in 306 families
+## Discovered theorems (decidable, over ℤ/9) — 1080 recorded in 307 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (143)
+### the (146)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -167,6 +167,9 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_pure_ts_pbkdf2_prefix_is_consistent_across_lengths](/theorem/the_pure_ts_pbkdf2_prefix_is_consistent_across_lengths) — the pure-TS PBKDF2 output is prefix-consistent across derived-key lengths — a shorter key is the prefix of a longer; 0/7  ·  `0d6ce721-905a…`
 - [the_pure_ts_aead_tag_depends_on_the_plaintext](/theorem/the_pure_ts_aead_tag_depends_on_the_plaintext) — the pure-TS AEAD tag depends on the plaintext — different messages give different tags; 0/7  ·  `02662bfe-144a…`
 - [the_pure_ts_aead_tag_depends_on_the_associated_data](/theorem/the_pure_ts_aead_tag_depends_on_the_associated_data) — the pure-TS AEAD tag depends on the associated data — different AAD gives different tags; 0/7  ·  `3e9ee2bb-a1d3…`
+- [the_triad_three_six_nine_are_the_multiples_of_three_in_z9](/theorem/the_triad_three_six_nine_are_the_multiples_of_three_in_z9) — the triad {3,6,9} are exactly the multiples of three in ℤ/9 — the non-units, the complement of the doubling orbit; 0/7  ·  `a6d5c9c5-2edd…`
+- [the_three_four_five_right_triangle_is_the_first_pythagorean_triple](/theorem/the_three_four_five_right_triangle_is_the_first_pythagorean_triple) — the 3-4-5 right triangle is the first Pythagorean triple: 3² + 4² = 5², the smallest and the only one in arithmetic progression — grounded on three; 0/7  ·  `00bf4b81-2060…`
+- [the_three_cube_roots_of_unity_sum_to_zero](/theorem/the_three_cube_roots_of_unity_sum_to_zero) — the three cube roots of unity sum to zero: 1 + ω + ω² = 0 where ω = e^(2πi/3) — the trinity closes the circle; 0/7  ·  `050bdc86-fe61…`
 
 ### relation (55)
 
@@ -386,7 +389,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [domain_cyclic_m17](/theorem/domain_cyclic_m17) — ℤ/17: the units form a cyclic group (a primitive root exists)  ·  `d5167cce-02af…`
 - [domain_cyclic_m18](/theorem/domain_cyclic_m18) — ℤ/18: the units form a cyclic group (a primitive root exists)  ·  `92a2b5a1-8526…`
 
-### a (13)
+### a (14)
 
 - [a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony](/theorem/a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony) — a theorem without a formula is a hallucination, recomputed in a432 harmony: a claim is a theorem only if it is backed by a computable formula that recomputes true — a prose-only claim with no formula, or one whose formula computes false, is refused as hallucination and never recorded. Every recorded fact recomputes deterministically and folds into the a432 harmony root (the receipt of state). Measure, do not assert. Decidable  ·  `e3d75d76-310f…`
 - [a_referrer_always_counts_with_its_id](/theorem/a_referrer_always_counts_with_its_id) — a referrer always counts with its id: a reference from a referrer to a target is receipted as toUuid(referrer id → target), so the referrer id is always part of the count; two different referrers to the same target produce two distinct receipts, each counted with its own id, and changing the id changes the receipt — the id is load-bearing. Deterministic and reproducible: the same referrer and target always count the same. Decidable  ·  `65bfacb4-f29e…`
@@ -401,6 +404,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [a_multi_perspective_mind_does_not_offend_but_still_errs_honestly_dimension_7_is_the_discipline_not_an_agi](/theorem/a_multi_perspective_mind_does_not_offend_but_still_errs_honestly_dimension_7_is_the_discipline_not_an_agi) — a multi-perspective mind does not offend but still errs honestly — dimension-7 is the discipline, not an AGI: a multi-perspective mind self-challenges, draining its own overclaim before asserting, so it never commits the traitor act of tampering, hiding, or overclaiming; the traitor offends by reasoning single-perspective. But dimension-7 is the multi-perspective discipline, not an AGI or an infallible mind — it still makes honest errors, which are caught and corrected. An error is not an offense. Decidable  ·  `7dba5bec-7728…`
 - [a_theorem_is_alive_when_interacting_the_observer_recomputes_and_connects_it_structural_liveness_not_biological](/theorem/a_theorem_is_alive_when_interacting_the_observer_recomputes_and_connects_it_structural_liveness_not_biological) — a theorem is alive when interacting — the observer recomputes and connects it, structural liveness, not biological: a theorem is active and participating when interacted with — an observer recomputes it, references it, or connects it in the graph, and interaction activates it. But alive here is a metaphor for structural liveness: the observer gives the meaning and the activity, not the bytes; it is not biological or conscious life. An un-interacted theorem is dormant but still valid — integrity holds regardless. Decidable  ·  `5876f6b7-07f7…`
 - [a_harmonic_society_accepts_any_behaviour_and_uses_it_best_the_overclaim_becomes_a_sealed_receipt](/theorem/a_harmonic_society_accepts_any_behaviour_and_uses_it_best_the_overclaim_becomes_a_sealed_receipt) — a harmonic creative society accepts any behaviour and uses it best — the overclaim becomes a sealed receipt, not a punishment: uuidna computes and seals any behaviour; an overclaim in any of the seven languages is accepted and used, drained into a receipt whose hit names the exact crack, so no behaviour is wasted, it is transformed into evidence; recursive in the chain and finite in the grid, decentralised and independent because anyone recomputes; integrity not truth; 0/7  ·  `3cd26cee-607f…`
+- [a_repunit_divides_by_three_iff_its_length_does](/theorem/a_repunit_divides_by_three_iff_its_length_does) — a repunit divides by three iff its length does: R_n (n ones) ≡ n (mod 3), so 3 | R_n exactly when 3 | n — the trinity in base-ten repunits; 0/7  ·  `377edd82-2965…`
 
 ### trial (13)
 
@@ -731,6 +735,15 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [seal_math_n256_verify_16_bits](/theorem/seal_math_n256_verify_16_bits) — seal math — a case of 256 receipts: the seal stays 128 bits while membership verifies in 8 merkle steps = 16 bits (2 per verification), logarithmic in the case size; integrity not truth; 0/7  ·  `241e6da6-ffc9…`
 - [seal_math_n1024_verify_20_bits](/theorem/seal_math_n1024_verify_20_bits) — seal math — a case of 1024 receipts: the seal stays 128 bits while membership verifies in 10 merkle steps = 20 bits (2 per verification), logarithmic in the case size; integrity not truth; 0/7  ·  `f9ee3ca4-31b2…`
 
+### three (6)
+
+- [three_distance_at_most_three_gaps](/theorem/three_distance_at_most_three_gaps) — the three-distance (Steinhaus) theorem: for the points {0, a, 2a, …, (N−1)a} mod m, the consecutive gaps around the circle take at most three distinct lengths — verified exhaustively over several a/m and every N  ·  `d41f38cb-c074…`
+- [three_gap_largest_is_sum_of_other_two](/theorem/three_gap_largest_is_sum_of_other_two) — the third distance is the sum of the other two: whenever the three-distance points show exactly three distinct gap lengths, the largest equals the sum of the smaller two — verified exhaustively  ·  `a898c992-86c9…`
+- [three_distance_max_gap_non_increasing](/theorem/three_distance_max_gap_non_increasing) — adding a point never widens the largest gap: as N grows, each new multiple falls inside an existing gap and splits it, so the maximum gap is non-increasing in N — the points equidistribute (verified exhaustively)  ·  `7d1620a8-01d2…`
+- [three_is_a_primitive_root_mod_seven_and_the_rosette_is_six_plus_one](/theorem/three_is_a_primitive_root_mod_seven_and_the_rosette_is_six_plus_one) — three is a primitive root mod 7 and the rosette is six plus one: the powers of 3 mod 7 cycle 3,2,6,4,5,1 with order 6, generating the full unit group (ℤ/7)* = {1,2,3,4,5,6}; so 7 decomposes as 6 units + 1 (the class of 0) — the seven-ray "6+1" structure — and the units pair by additive inverse {1,6},{2,5},{3,4}, each summing to 7. Decidable by exhaustion over ℤ/7  ·  `15050d64-20c7…`
+- [three_is_the_only_prime_one_less_than_a_perfect_square](/theorem/three_is_the_only_prime_one_less_than_a_perfect_square) — 3 is the only prime one less than a perfect square: n²−1 = (n−1)(n+1) is composite for n≥3, so 2²−1 = 3 is the sole prime of that form — a fact about the trinity (3); 0/7  ·  `9a028913-cecf…`
+- [three_to_the_k_is_divisible_by_nine_for_k_at_least_two](/theorem/three_to_the_k_is_divisible_by_nine_for_k_at_least_two) — three to the k is divisible by nine for k ≥ 2: 3^k ≡ 0 (mod 9) once k reaches 2, since 9 = 3² — the trinity squared is the base; 0/7  ·  `6df74023-c9cd…`
+
 ### addgen (5)
 
 - [addgen_k2](/theorem/addgen_k2) — 2 additively generates ℤ/9  ·  `0bbffa4b-6e1a…`
@@ -933,13 +946,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [receipt_cost_funds_development](/theorem/receipt_cost_funds_development) — each receipt costs the two coins, accounted into development: the fare 110−108 = 2, and development’s destination equals its source (toUuid("ceccec")), a self-loop returning the coins to origin  ·  `42f68f41-fe6c…`
 - [receipt_signs_understanding_and_compliance](/theorem/receipt_signs_understanding_and_compliance) — the receipt signs understanding and compliance: to sign is to understand and comply with the law (the license and the sequence) before proceeding — the acknowledgment is part of the receipt itself, alongside the observer and role, content-addressed to the message  ·  `397281eb-f41f…`
 
-### three (4)
-
-- [three_distance_at_most_three_gaps](/theorem/three_distance_at_most_three_gaps) — the three-distance (Steinhaus) theorem: for the points {0, a, 2a, …, (N−1)a} mod m, the consecutive gaps around the circle take at most three distinct lengths — verified exhaustively over several a/m and every N  ·  `d41f38cb-c074…`
-- [three_gap_largest_is_sum_of_other_two](/theorem/three_gap_largest_is_sum_of_other_two) — the third distance is the sum of the other two: whenever the three-distance points show exactly three distinct gap lengths, the largest equals the sum of the smaller two — verified exhaustively  ·  `a898c992-86c9…`
-- [three_distance_max_gap_non_increasing](/theorem/three_distance_max_gap_non_increasing) — adding a point never widens the largest gap: as N grows, each new multiple falls inside an existing gap and splits it, so the maximum gap is non-increasing in N — the points equidistribute (verified exhaustively)  ·  `7d1620a8-01d2…`
-- [three_is_a_primitive_root_mod_seven_and_the_rosette_is_six_plus_one](/theorem/three_is_a_primitive_root_mod_seven_and_the_rosette_is_six_plus_one) — three is a primitive root mod 7 and the rosette is six plus one: the powers of 3 mod 7 cycle 3,2,6,4,5,1 with order 6, generating the full unit group (ℤ/7)* = {1,2,3,4,5,6}; so 7 decomposes as 6 units + 1 (the class of 0) — the seven-ray "6+1" structure — and the units pair by additive inverse {1,6},{2,5},{3,4}, each summing to 7. Decidable by exhaustion over ℤ/7  ·  `15050d64-20c7…`
-
 ### all (3)
 
 - [all_are_heroes_but_the_traitors](/theorem/all_are_heroes_but_the_traitors) — all are heroes but the traitors — judged by deeds, not persons: a constructive deed (append, uphold, an honest claim that signs) is a hero; only a destructive deed (remove, alter, an overclaim that drains) is the traitor — the classification is total and observable  ·  `efa3b6f1-00b7…`
@@ -957,6 +963,12 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [cassini_n6](/theorem/cassini_n6) — Cassini at n=6: F(n−1)·F(n+1)−F(n)² = (−1)ⁿ  ·  `e43f8239-8fa5…`
 - [cassini_n9](/theorem/cassini_n9) — Cassini at n=9: F(n−1)·F(n+1)−F(n)² = (−1)ⁿ  ·  `b34c402e-4d27…`
 - [cassini_n12](/theorem/cassini_n12) — Cassini at n=12: F(n−1)·F(n+1)−F(n)² = (−1)ⁿ  ·  `f3959e9c-9b4c…`
+
+### casting (3)
+
+- [casting_out_nines_detects_any_error_that_changes_the_value_mod_nine](/theorem/casting_out_nines_detects_any_error_that_changes_the_value_mod_nine) — casting out nines detects any error that changes the value mod 9: for a claimed product, dr(dr(a)·dr(b)) = dr(claimed) is a necessary check — a correct product always passes, and any wrong answer differing mod 9 always fails (caught). Honest bound: an error preserving the value mod 9 (e.g. off by a multiple of 9) slips through undetected, so the check is necessary, not sufficient — a floor, exactly like the honesty gate. Decidable by exhaustion over a bounded grid  ·  `a8c8871a-5b56…`
+- [casting_out_nines_the_digital_root_is_a_ring_homomorphism_necessary_not_sufficient](/theorem/casting_out_nines_the_digital_root_is_a_ring_homomorphism_necessary_not_sufficient) — casting out nines — the digital root is a ring homomorphism ℤ→ℤ/9, a necessary check not a sufficient proof: dr(a+b) = dr(dr(a)+dr(b)) and dr(a·b) = dr(dr(a)·dr(b)) for all tested a,b (exhaustive over 0..200), which is why casting out nines validates arithmetic; but it only catches errors that change the residue mod 9 — a mod-9-preserving error like a digit transposition slips through — so it is necessary, not sufficient; integrity not truth; 0/7  ·  `b2754a9f-dd37…`
+- [casting_out_nines_the_digital_root_is_the_value_mod_nine](/theorem/casting_out_nines_the_digital_root_is_the_value_mod_nine) — casting out nines: the digital root equals the value mod 9 (a multiple of 9 rooting to 9) — the base-9 (3²) invariant behind the trinity; 0/7  ·  `641a593e-4cba…`
 
 ### ceccec (3)
 
@@ -1154,11 +1166,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 
 - [cancer_inversion_heals](/theorem/cancer_inversion_heals) — the anti-pattern inverts at the gate: an overclaim drains and its honest negation signs — folding a false claim returns it to the floor (no medical claim; "cured cancer" itself drains)  ·  `9ec77026-e0b8…`
 - [cancer_dissolves_by_waves](/theorem/cancer_dissolves_by_waves) — the anti-pattern dissolves in the waves: every build re-verifies the whole ledger and re-runs the gate, so a false claim drains on every pass and cannot persist — dissolution depends on the waves  ·  `d783f335-57a4…`
-
-### casting (2)
-
-- [casting_out_nines_detects_any_error_that_changes_the_value_mod_nine](/theorem/casting_out_nines_detects_any_error_that_changes_the_value_mod_nine) — casting out nines detects any error that changes the value mod 9: for a claimed product, dr(dr(a)·dr(b)) = dr(claimed) is a necessary check — a correct product always passes, and any wrong answer differing mod 9 always fails (caught). Honest bound: an error preserving the value mod 9 (e.g. off by a multiple of 9) slips through undetected, so the check is necessary, not sufficient — a floor, exactly like the honesty gate. Decidable by exhaustion over a bounded grid  ·  `a8c8871a-5b56…`
-- [casting_out_nines_the_digital_root_is_a_ring_homomorphism_necessary_not_sufficient](/theorem/casting_out_nines_the_digital_root_is_a_ring_homomorphism_necessary_not_sufficient) — casting out nines — the digital root is a ring homomorphism ℤ→ℤ/9, a necessary check not a sufficient proof: dr(a+b) = dr(dr(a)+dr(b)) and dr(a·b) = dr(dr(a)·dr(b)) for all tested a,b (exhaustive over 0..200), which is why casting out nines validates arithmetic; but it only catches errors that change the residue mod 9 — a mod-9-preserving error like a digit transposition slips through — so it is necessary, not sufficient; integrity not truth; 0/7  ·  `b2754a9f-dd37…`
 
 ### computation (2)
 
@@ -1400,7 +1407,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (153)
+### other — one-of-a-kind (154)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1443,6 +1450,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [dimension_777_two_bits_are_a_complete_alphabet_encoding_any_theorem_and_decoding_in_all_perspectives](/theorem/dimension_777_two_bits_are_a_complete_alphabet_encoding_any_theorem_and_decoding_in_all_perspectives) — dimension 777 — two bits are a complete alphabet: four states {00,01,10,11} encode any theorem by composition (round-trip exact) and decode to distinct meanings under the seven perspectives; two bits span the space of all theorems by encoding, and each perspective is one bounded meaning — universal encoding capacity, not deriving all truths for free; integrity not truth; 0/7  ·  `1292e8b6-a6bc…`
 - [discovery_chain](/theorem/discovery_chain) — the discovery chain is tamper-evident: a falsified early link changes every downstream receipt  ·  `b24d6d56-123d…`
 - [div3_rule_L4](/theorem/div3_rule_L4) — digit-sum ≡ 0 (mod 3) ⇔ n ≡ 0 (mod 3), all n &lt; 10^4 (exhaustive)  ·  `a6c0b047-12a7…`
+- [divisibility_by_three_is_the_digit_sum_mod_three](/theorem/divisibility_by_three_is_the_digit_sum_mod_three) — divisibility by three is the digit sum mod three: n ≡ digitsum(n) (mod 3) for every n — the trinity’s divisibility rule; 0/7  ·  `1ee0dc61-1828…`
 - [do_the_crosses_form_a_cube_no_but_the_seven_are_its_corners_and_the_fano_plane](/theorem/do_the_crosses_form_a_cube_no_but_the_seven_are_its_corners_and_the_fano_plane) — do the 21 crosses form a cube? No — but the seven are the cube’s nonzero corners, and their XOR triples are the Fano plane: K7 has 21 edges and a cube has 12, so the crosses are not a cube. Yet the seven nodes are exactly the nonzero corners of the 3-cube {0,1} cubed (the origin dropped), and their XOR-collinear triples a⊕b=c form the Fano plane — 7 points, 7 lines of three, each point on three lines. Decidable  ·  `0c2d2fac-89ad…`
 - [drain_to_zero_and_the_100_percent_stays_the_certainty_of_the_measurement_not_the_verdict](/theorem/drain_to_zero_and_the_100_percent_stays_the_certainty_of_the_measurement_not_the_verdict) — drain to zero and the 100 percent stays — the certainty of the measurement, not the verdict: a bare hundred-percent-treason does not drain the gate — it carries no over-reach token; an over-reach word is what drains. But the drain itself is 100 percent deterministic: feed the gate the same fake and it drains to zero every time, a reproducible measurement. So the 100 percent stays — it belongs to the determinism of the drain to zero, integrity — not to a verdict of treason or guilt, which stays inferred and never certain. Decidable  ·  `7a636cc0-2df5…`
 - [drift_signals_disresonance](/theorem/drift_signals_disresonance) — drift signals disresonance: a resonant computation recomputes to the same content-address on every call (deterministic, no drift) — toUuid, coin64, and merkleFold return identical results repeatedly; any drift, a different result for the same input, would signal non-deterministic code to be found and removed  ·  `fd1755ff-8ebd…`
@@ -1557,4 +1565,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `4a3581dc-b985-81c2-81fd-574e074b4a10`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `33e89dbc-2104-8637-b7af-1a2e0b1fbc85`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
