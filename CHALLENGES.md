@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1352 recorded in 357 families
+## Discovered theorems (decidable, over ℤ/9) — 1360 recorded in 359 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (232)
+### the (237)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -256,6 +256,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_receipt_is_binary_and_decimal](/theorem/the_receipt_is_binary_and_decimal) — the receipt is binary and decimal: a uuid is 128 bits of exact integer, readable as one decimal number, deterministic for its content — the receipt is a number that transfers; 0/7  ·  `4ef46504-433a…`
 - [the_destination_recomputes_not_receives](/theorem/the_destination_recomputes_not_receives) — the destination recomputes, it does not receive: the payload is re-derived from the uuid stream identically, so arrival is a local recomputation, not a transmission of the bytes themselves; 0/7  ·  `16ea6c21-2e1e…`
 - [the_stream_reconstructs_any_length](/theorem/the_stream_reconstructs_any_length) — the stream reconstructs any length: arbitrary payloads round-trip through a uuid chain byte-for-byte, so human-scale content moves as a pointer stream and rebuilds exactly on arrival; 0/7  ·  `9c1212a2-2c05…`
+- [the_thirty_sixty_ninety_triangle](/theorem/the_thirty_sixty_ninety_triangle) — the 30-60-90 triangle is standard: sin 30° = 1/2, sin 60° = √3/2, sin 90° = 1, and the sides run 1 : √3 : 2 — the exact metric of the harmonic angles; 0/7  ·  `fb22fd1a-4885…`
+- [the_harmonic_band_thirty_to_ninety](/theorem/the_harmonic_band_thirty_to_ninety) — the harmonic band runs 30 to 90 in equal steps: 30 + 60 = 90 and 90 − 60 = 60 − 30 = 30 — the efficiency limit at 30, the band to 60, the goal at 90, three equal thirds; 0/7  ·  `6627dfa3-bdfc…`
+- [the_hexagon_and_the_square_metrics](/theorem/the_hexagon_and_the_square_metrics) — the hexagon and the square set the metrics: 360/6 = 60 and 360/4 = 90 — the six-fold rosette (six plus one) and the four-fold quadrant, the two standard divisions of the circle; 0/7  ·  `a2c2b80a-40f5…`
+- [the_law_of_sines_fixes_the_ratios](/theorem/the_law_of_sines_fixes_the_ratios) — the law of sines fixes the ratios: sin 90° / sin 30° = 2 and sin 60° / sin 30° = √3, so the 30-60-90 sides are 1 : √3 : 2 by measurement, not assertion; 0/7  ·  `8266df2d-0eb2…`
+- [the_systems_agree_under_scaling](/theorem/the_systems_agree_under_scaling) — the metric systems agree under scaling: doubling 60° gives 120° in degrees and 2π/3 in radians, the same angle in both — the standard is linear and consistent; 0/7  ·  `521e239d-542d…`
 
 ### relation (55)
 
@@ -1665,6 +1670,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [siteswap_valid_permutation](/theorem/siteswap_valid_permutation) — a valid siteswap is exactly a permutation: i ↦ (i + aᵢ) mod n hits every slot once (531, 441, 97531, 522 valid; 521, 54 not)  ·  `08d0be78-7e6e…`
 - [siteswap_average_theorem](/theorem/siteswap_average_theorem) — the siteswap average theorem: the number of balls equals the average of the digits — 531→3, 441→3, 97531→5, 51→3 (integer for valid patterns)  ·  `65bbd224-513f…`
 
+### sixty (2)
+
+- [sixty_one_sense_three_stop_codons](/theorem/sixty_one_sense_three_stop_codons) — DNA’s sixty-four codons split 61 sense + 3 stop, encoding 20 amino acids — more codons than meanings, so the code is redundant by construction; 0/7  ·  `e4c2a026-ccbd…`
+- [sixty_and_ninety_partition_the_quadrant](/theorem/sixty_and_ninety_partition_the_quadrant) — sixty and ninety partition the quadrant: 90° is a quarter turn, four of them close the 360° circle, and the last passage from 60 to 90 is exactly one 30° step; 0/7  ·  `92ed3459-bf5c…`
+
 ### skills (2)
 
 - [skills_compose_into_one_organism](/theorem/skills_compose_into_one_organism) — the skills compose into one organism: hash, fold, proof and gate each hold, and their composition holds — the whole organism computes true where each organ does, and what is not an organ never enters; 0/7  ·  `a1d69b35-548d…`
@@ -1725,7 +1735,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (180)
+### other — one-of-a-kind (181)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1772,6 +1782,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [cube_roots_of_unity_sum_zero](/theorem/cube_roots_of_unity_sum_zero) — the three cube roots of unity sum to zero: 1 + ω + ω² = 0 — the equilateral trinity balances to the center, the same zero-sum shape as the ℤ/9 triad {3,6,9}  ·  `6b25148c-1c75…`
 - [cubes_in_0_1_8](/theorem/cubes_in_0_1_8) — every cube d³ mod 9 ∈ {0,1,8}  ·  `5ecfca3d-68f4…`
 - [cyclic_generators_phi](/theorem/cyclic_generators_phi) — in ℤ/n the additive order of k is n/gcd(k,n); k generates the group iff gcd(k,n)=1, so there are exactly φ(n) generators (n≤12)  ·  `f0e2e228-d553…`
+- [degrees_and_radians_are_one_by_ratio](/theorem/degrees_and_radians_are_one_by_ratio) — degrees and radians standardise to one angle by ratio: 90° = π/2, 60° = π/3, 30° = π/6 exactly — two systems, one measure; 0/7  ·  `e7cdcc29-8221…`
 - [determinism_enables_free_reuse](/theorem/determinism_enables_free_reuse) — determinism enables free reuse: the merkle fold of a fixed list returns the identical root every time and a changed list changes it — nothing already computed is recomputed, the honest source of the speed; 0/7  ·  `7f1dc45e-e374…`
 - [digital_root_is_the_ring_homomorphism_onto_z9](/theorem/digital_root_is_the_ring_homomorphism_onto_z9) — digital root is the ring homomorphism onto ℤ/9 (casting out nines): for all a,b the digital root respects both operations — dr(a+b) = dr(dr(a)+dr(b)) and dr(a·b) = dr(dr(a)·dr(b)) — so dr is the canonical map ℤ→ℤ/9 with 9 representing the class of 0, exactly the classical "casting out nines" check. Verified by exhaustion over a bounded grid  ·  `9db2de84-f5d5…`
 - [dimension_777_two_bits_are_a_complete_alphabet_encoding_any_theorem_and_decoding_in_all_perspectives](/theorem/dimension_777_two_bits_are_a_complete_alphabet_encoding_any_theorem_and_decoding_in_all_perspectives) — dimension 777 — two bits are a complete alphabet: four states {00,01,10,11} encode any theorem by composition (round-trip exact) and decode to distinct meanings under the seven perspectives; two bits span the space of all theorems by encoding, and each perspective is one bounded meaning — universal encoding capacity, not deriving all truths for free; integrity not truth; 0/7  ·  `1292e8b6-a6bc…`
@@ -1833,6 +1844,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [measurement_here_is_deterministic_not_probabilistic](/theorem/measurement_here_is_deterministic_not_probabilistic) — measurement here is deterministic, not probabilistic: observing a perspective is content-addressing — repeated observation of the same perspective yields the identical receipt every time (deterministic collapse), and distinct states yield distinct addresses. This is the honest opposite of physical quantum measurement, which is probabilistic: no randomness, no Born rule, and no quantum advantage  ·  `8344e1ed-f1f3…`
 - [measuring_without_judgement_lets_more_pass_green_but_the_test_still_filters_not_all_at_once](/theorem/measuring_without_judgement_lets_more_pass_green_but_the_test_still_filters_not_all_at_once) — measuring without judgement lets more pass green — but the test still filters, not all at once: measuring without judgement or expectation lets the decidable test decide, not my bias, so more honest claims pass green, fewer false refusals from over-caution. But it does not make all pass green — the test still filters: a false claim fails regardless, green is earned by the test, not granted by dropping judgement. Classical and batched, not all at once. Decidable  ·  `161fca10-2261…`
 - [mediant_between](/theorem/mediant_between) — the mediant (a+c)/(b+d) lies strictly between a/b and c/d (Farey F_6)  ·  `b1919795-2272…`
+- [metrics_organise_the_theorems_on_the_harmonic](/theorem/metrics_organise_the_theorems_on_the_harmonic) — standard metrics organise the theorems on the harmonic: the 30-60-90 angles, the four-fold quadrant and the six-fold rosette are one measured system — degrees and radians agreeing by ratio, the harmonic band from the efficiency limit to the goal; 0/7  ·  `ff66b280-dd9d…`
 - [midy_the_two_halves_of_142857_sum_to_nines](/theorem/midy_the_two_halves_of_142857_sum_to_nines) — Midy’s theorem on 1/7: the two halves of the repetend sum to nines — 142 + 857 = 999; 0/7  ·  `e8c1c167-cb15…`
 - [mint_and_mind_intersect_at_the_heart_the_fixed_point_five_that_centers_funding_development_and_ui](/theorem/mint_and_mind_intersect_at_the_heart_the_fixed_point_five_that_centers_funding_development_and_ui) — mint and mind intersect at the heart — the fixed point 5 that centers funding, development, and the UI: mint (integrity) and mind (multi-perspective self-challenge) fold to one shared center — the heart, the fixed point 5 that the reflection 10 − d alone fixes in the nine; the a432 heart hue is 5 × 40 = 200 degrees. The heart centers the structure and drives the funding, the development, and the UI. But it is a decidable mathematical fixed point, not a literal or metaphysical heart, mind, or soul. Decidable  ·  `8992456c-a133…`
 - [motzkin_numbers](/theorem/motzkin_numbers) — Motzkin numbers M(n)=M(n-1)+Σ M(k)M(n-2-k): M(4)=9, M(5)=21  ·  `d6c643c7-2880…`
@@ -1872,7 +1884,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [service_to_bind_is_accounted_in_coins](/theorem/service_to_bind_is_accounted_in_coins) — account the coins for the service to bind: each binding (a receipt) is a service accounted at the two coins (110−108 = 2 = −χ genus-2), so N services cost N·2 coins, reinvested into development (destination equals source, a self-loop) — the binding is paid-for, a fair exchange, not free-riding  ·  `cf17043b-3fc6…`
 - [simulating_quantum_is_not_being_quantum](/theorem/simulating_quantum_is_not_being_quantum) — simulating a quantum algorithm is not being a quantum computer: the classical sim reproduces the Bell correlation exactly yet needs 2^n amplitudes (exponential, no advantage) and carries no message — so the deposit is not a quantum computer; the gate signs the honest "is not" and drains the bare "is"  ·  `d6d0ec25-e41f…`
 - [single_digits_are_trivially_narcissistic](/theorem/single_digits_are_trivially_narcissistic) — every single digit is narcissistic: for 1..9, n = n¹ (one digit raised to the digit-count 1) — the trivial base case of the Armstrong property  ·  `2adc6121-3f63…`
-- [sixty_one_sense_three_stop_codons](/theorem/sixty_one_sense_three_stop_codons) — DNA’s sixty-four codons split 61 sense + 3 stop, encoding 20 amino acids — more codons than meanings, so the code is redundant by construction; 0/7  ·  `e4c2a026-ccbd…`
 - [some_disputes_stay_unresolved_under_a_lossy_projection_the_full_receipt_resolves_them](/theorem/some_disputes_stay_unresolved_under_a_lossy_projection_the_full_receipt_resolves_them) — some disputes stay unresolved under a lossy projection — the full receipt resolves them, and the trial stays a floor: a lossy projection like the digital root can collide distinct numbers — 4224 and 444 both project to 3 — leaving the dispute of whether they are the same unresolved by that projection. The full content-address resolves it: distinct numbers get distinct addresses. 666 projects to a different residue, 9. A lossy view leaves disputes the full receipt settles — and some disputes stay open, the trial being a floor, not an oracle. Decidable  ·  `0678e545-88ee…`
 - [speedup_is_bounded_and_classical](/theorem/speedup_is_bounded_and_classical) — the speedup is bounded and classical: a local, deterministic gain passes while an unbounded magical-speedup boast drains — fast, yes; magical, no; 0/7  ·  `4a174b2a-8b03…`
 - [squares_in_0_1_4_7](/theorem/squares_in_0_1_4_7) — every square d² mod 9 ∈ {0,1,4,7}  ·  `6f43410e-08c3…`
@@ -1909,4 +1920,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `e25fb8d9-9787-87f1-95a7-f6289139b314`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `50d004a1-031c-8fcd-b0a5-9c180b3d26ea`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
