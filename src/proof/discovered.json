@@ -7953,5 +7953,10 @@
     "key": "uuidna_is_crud_by_keys_open_by_computation",
     "name": "uuidna is CRUD by keys, open by computation: create encrypts to a receipt, read decrypts only with the key, update mints a new address, delete drops the key — the key gates the confidential payload only, while anyone may compute, prove and verify, intent shown by receipts; 0/7",
     "receipt": "b7c2eebb-d230-87d1-8f70-241325e30629"
+  },
+  {
+    "key": "intentions_are_shown_by_receipts_not_role",
+    "name": "intentions are shown by receipts, not by role: a deed leaves a content-addressed receipt anyone can recompute, so intent is demonstrated by what was done, not granted by a permission; 0/7",
+    "receipt": "608670b2-aebe-8370-8771-320358898684"
   }
 ]

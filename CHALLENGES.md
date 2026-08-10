@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1591 recorded in 410 families
+## Discovered theorems (decidable, over ℤ/9) — 1592 recorded in 411 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -1947,7 +1947,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (224)
+### other — one-of-a-kind (225)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -2060,6 +2060,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [inclusion_exclusion](/theorem/inclusion_exclusion) — inclusion–exclusion: |A∪B| = |A|+|B|−|A∩B|, and the three-set form, hold on concrete sets  ·  `53b5d2ab-2323…`
 - [intellect_is_multi_perspective](/theorem/intellect_is_multi_perspective) — intellect is multi-perspective: a claim weighed from several independent views and folded to one verdict — many perspectives, one decision; 0/7  ·  `a2cb416b-cda6…`
 - [intelligence_is_gated_discovery_not_access](/theorem/intelligence_is_gated_discovery_not_access) — shared knowledge, measured by discovery: every agent has the same knowledge in src/ (open and recomputable), so access is not intelligence — what counts is gate-passing, exhaustively-checked discovery judged by deeds; recognition is not correctness, self-declared brilliance drains, and the deposit is honest that its own novelty is 0 (known mathematics, recombined)  ·  `00ffdbbc-ac3b…`
+- [intentions_are_shown_by_receipts_not_role](/theorem/intentions_are_shown_by_receipts_not_role) — intentions are shown by receipts, not by role: a deed leaves a content-addressed receipt anyone can recompute, so intent is demonstrated by what was done, not granted by a permission; 0/7  ·  `608670b2-aebe…`
 - [intruders_stand_out_against_the_harmonic_hue_background](/theorem/intruders_stand_out_against_the_harmonic_hue_background) — intruders stand out against the harmonic hue background: every legitimate hue derives from a receipt byte as (byte × 40°) mod 360, always a multiple of 40 — on the a432 lattice — so it fuses into the double-torus rosetta background, whose nine harmonic hues close the circle (9 × 40 = 360). An intruder hue not produced by this rule is not a multiple of 40, fails to fuse, and stands out; detection is the harmonic invariant h mod 40 = 0. Decidable  ·  `316a5d14-0def…`
 - [judicial_involution](/theorem/judicial_involution) — judicial involution: the trial is a reflection whose verdict is idempotent, whose fixed point is the honest floor, whose reeducation converges, and whose appeal is recomputation — reflect and reflect back, the centre held; 0/7  ·  `4f726cb3-476f…`
 - [kayles_grundy](/theorem/kayles_grundy) — Kayles (remove 1 or 2 adjacent pins, splitting the row): the mex-computed Grundy values match the known sequence 0,1,2,3,1,4,3,2,1,4,2,6,4,1,2,7,1,4,3,2 (n≤19)  ·  `b6db3052-5c2a…`
@@ -2175,4 +2176,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `874d90c7-e8b1-88ce-b921-7f50289042ab`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `f5d800a4-bdaf-86eb-927e-c5308d3f4ca6`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
