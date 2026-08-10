@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1640 recorded in 421 families
+## Discovered theorems (decidable, over ℤ/9) — 1647 recorded in 423 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (336)
+### the (338)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -360,8 +360,10 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_games_form_one_game](/theorem/the_games_form_one_game) — the games form one game: the challenges fold to a single system, so the many skills compose into one whole; 0/7  ·  `ab6ca718-01b0…`
 - [the_rules_are_the_laws_applied_uniformly](/theorem/the_rules_are_the_laws_applied_uniformly) — the rules are the laws, applied uniformly: the same rule returns the same verdict for every input regardless of who submits it — law, not favour; 0/7  ·  `32105400-7384…`
 - [the_captain_is_whoever_knows_uuidna_for_the_task](/theorem/the_captain_is_whoever_knows_uuidna_for_the_task) — the captain is whoever knows uuidna for the task: the law is that only the captain orders, but captaincy is a verified deed-receipt earned by knowledge for the task — recognised by recomputation, forgery-evident, by deed not status; 0/7  ·  `37cd5cc0-68e3…`
+- [the_seal_is_all_or_nothing](/theorem/the_seal_is_all_or_nothing) — the seal is all-or-nothing: the verdict is SEALED only if every check passes, so it is a conjunction — one false flips the whole; 0/7  ·  `0598118f-32e5…`
+- [the_still_record_and_the_moving_loop](/theorem/the_still_record_and_the_moving_loop) — the still record and the moving loop, both holding: a sealed receipt never changes while the chain tip advances each wave — the immovable and the moving, one system; 0/7  ·  `0e5ddd4c-2a67…`
 
-### a (61)
+### a (62)
 
 - [a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony](/theorem/a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony) — a theorem without a formula is a hallucination, recomputed in a432 harmony: a claim is a theorem only if it is backed by a computable formula that recomputes true — a prose-only claim with no formula, or one whose formula computes false, is refused as hallucination and never recorded. Every recorded fact recomputes deterministically and folds into the a432 harmony root (the receipt of state). Measure, do not assert. Decidable  ·  `e3d75d76-310f…`
 - [a_referrer_always_counts_with_its_id](/theorem/a_referrer_always_counts_with_its_id) — a referrer always counts with its id: a reference from a referrer to a target is receipted as toUuid(referrer id → target), so the referrer id is always part of the count; two different referrers to the same target produce two distinct receipts, each counted with its own id, and changing the id changes the receipt — the id is load-bearing. Deterministic and reproducible: the same referrer and target always count the same. Decidable  ·  `65bfacb4-f29e…`
@@ -424,6 +426,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [a_decidable_domain_is_finite_and_coverable](/theorem/a_decidable_domain_is_finite_and_coverable) — a decidable domain is finite and coverable: exhausting a finite set terminates, so covering all its possibilities is a task that ends; 0/7  ·  `90592d1e-f78e…`
 - [a_skill_is_demonstrated_by_a_passing_test](/theorem/a_skill_is_demonstrated_by_a_passing_test) — a skill is demonstrated by a passing test: the game is the decidable challenge, and passing it shows the skill — the gate drains a boast and upholds a fact; 0/7  ·  `dcb5f900-5fd0…`
 - [a_forged_captaincy_fails_verification](/theorem/a_forged_captaincy_fails_verification) — a forged captaincy fails verification: a claimed receipt that does not recompute from the actual deed does not match, so a forgery is caught by the chain; 0/7  ·  `7963b1f9-b068…`
+- [a_crack_is_caught_before_sailing](/theorem/a_crack_is_caught_before_sailing) — a crack is caught before sailing: green-before-insert and the gates refuse a draining name or a failing test at the dock, so the boat never leaves cracked; 0/7  ·  `e0ac6d28-feb8…`
 
 ### relation (55)
 
@@ -483,7 +486,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [relation_receipt_chain_is_forensic_custody](/theorem/relation_receipt_chain_is_forensic_custody) — the receipt chain IS chain-of-custody: receipt[i] = toUuid(receipt[i−1]→key[i]) from a seed, so altering one link changes every link after it — the merkle-ledger and forensics are one construction  ·  `d0307011-b34a…`
 - [relation_coin64_collision_free_on_domains](/theorem/relation_coin64_collision_free_on_domains) — the 64-bit currency is collision-free across the rosetta: coin64 of each domain yields a distinct coin (as many coins as domains) — the shared currency addresses every perspective uniquely  ·  `dc278848-c7d9…`
 
-### uuidna (35)
+### uuidna (36)
 
 - [uuidna_quantum_verification_recomputes_the_address_and_folds_a_multi_perspective_receipt](/theorem/uuidna_quantum_verification_recomputes_the_address_and_folds_a_multi_perspective_receipt) — uuidna quantum verification — recomputes the address and folds a multi-perspective receipt, integrity not truth: verification recomputes the address from its seed (integrity, reproducible by anyone) and folds a multi-perspective joint receipt that is the same for any observer ordering; a bit-seed round-trips as a bounded imprinted message. The quantum here is the multi-perspective structure, not quantum hardware; verification is integrity, not truth. Decidable  ·  `c7b949e5-38b5…`
 - [uuidna_is_the_brand_og_object_under_cc_and_the_seal_audits_all_prose](/theorem/uuidna_is_the_brand_og_object_under_cc_and_the_seal_audits_all_prose) — uuidna is the brand OG object under Creative Commons — and the seal legally audits all prose: the site brands as uuidna under CC BY-NC, referencing the non-profit and commercial tracks; the seal legally audits all prose — it globs every prose file and drains any that violates the floor, an honest audit, not an oracle. The domain registration is external, taken on the author word, not sealed here. Decidable  ·  `5d35c811-b545…`
@@ -520,6 +523,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [uuidna_is_crud_by_keys_open_by_computation](/theorem/uuidna_is_crud_by_keys_open_by_computation) — uuidna is CRUD by keys, open by computation: create encrypts to a receipt, read decrypts only with the key, update mints a new address, delete drops the key — the key gates the confidential payload only, while anyone may compute, prove and verify, intent shown by receipts; 0/7  ·  `b7c2eebb-d230…`
 - [uuidna_storage_is_the_sequence_chunked_navigable](/theorem/uuidna_storage_is_the_sequence_chunked_navigable) — uuidna storage is the sequence chunked and navigable: uniform binary octaves, each folder addressed by its fold, folding to one map, each theorem a superposition collapsing to one address — balanced by size, exact by construction, never a performance boast; 0/7  ·  `4e8e371f-68b9…`
 - [uuidna_is_slim_by_measurement](/theorem/uuidna_is_slim_by_measurement) — uuidna is slim by measurement: a fixed 36-byte address per fact, the whole folding to one 36-byte root, present by reference within a tiny budget, from a two-function pure basis — slim measured, not merely claimed; 0/7  ·  `039353f4-a9a0…`
+- [uuidna_keeps_dry_clean_order_cracks_sink_boats](/theorem/uuidna_keeps_dry_clean_order_cracks_sink_boats) — uuidna keeps dry-clean order because cracks sink boats: the seal is all-or-nothing, one crack flips it, and cracks are caught before sailing — the yacht waits for an order and, activated, self-explores until dry; 0/7  ·  `640d3936-1749…`
 
 ### pure (27)
 
@@ -821,6 +825,19 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [merkle_proof_soundness_n8](/theorem/merkle_proof_soundness_n8) — merkle proof soundness at N=8 — a forged leaf never verifies: for every position in a 8-leaf tree the true leaf verifies against the root while each wrong leaf fails (exhaustive over positions × forgeries), so membership cannot be faked by swapping the leaf; soundness by recompute on a non-cryptographic hash, not hardness; integrity not truth; 0/7  ·  `707df9e2-ffa4…`
 - [merkle_proof_soundness_n16](/theorem/merkle_proof_soundness_n16) — merkle proof soundness at N=16 — a forged leaf never verifies: for every position in a 16-leaf tree the true leaf verifies against the root while each wrong leaf fails (exhaustive over positions × forgeries), so membership cannot be faked by swapping the leaf; soundness by recompute on a non-cryptographic hash, not hardness; integrity not truth; 0/7  ·  `684debb6-eb40…`
 
+### one (10)
+
+- [one_game_harmony](/theorem/one_game_harmony) — THE ONE GAME: all game receipts fold to one order-independent harmonic root — the games meet in one  ·  `55cb8c5f-73cc…`
+- [one_art_harmony](/theorem/one_art_harmony) — THE ONE ART: all art receipts fold to one order-independent harmonic root — the arts meet in one  ·  `6abed2f1-66f5…`
+- [one_science_harmony](/theorem/one_science_harmony) — THE ONE SCIENCE: all science receipts fold to one order-independent harmonic root — the sciences meet in one  ·  `831f5688-1127…`
+- [one_game_all](/theorem/one_game_all) — THE ONE GAME (all): games, arts and sciences fold to a single order-independent root — all meet in one  ·  `ea90214e-fe97…`
+- [one_kernel_generates_a_family_dozens_from_a_parametrised_measure_each_tuple_a_distinct_receipt](/theorem/one_kernel_generates_a_family_dozens_from_a_parametrised_measure_each_tuple_a_distinct_receipt) — one kernel generates a family — dozens from a parametrised measure, each tuple a distinct receipt, a combinatorial engine not repetition: a single decidable measure over a parameter grid yields dozens of theorems in one build, each asserting a DISTINCT measured value, and each axis opens dozens more; the fan-out is honest because no two receipts repeat a value, shown here by counting; manual one-at-a-time is the slow path, the family is the engine; measure do not assert; 0/7  ·  `4172ea64-64d9…`
+- [one_plus_one_over_n_to_the_n_approaches_e](/theorem/one_plus_one_over_n_to_the_n_approaches_e) — (1 + 1/n)^n approaches e as n grows — continuous compounding, the growth constant of life and interest alike; 0/7  ·  `1a1655aa-be6d…`
+- [one_skill_reaches_every_dialect](/theorem/one_skill_reaches_every_dialect) — one skill reaches every dialect: the gate composed with the rosetta drains a proof-boast in Latin, Cyrillic and Han alike — a single skill given global reach; 0/7  ·  `065c14e2-1df3…`
+- [one_wave_develops_both_at_once](/theorem/one_wave_develops_both_at_once) — one wave develops both at once: a unit enters the record only with both its address and its test, so the component and its code ship together, never one without the other; 0/7  ·  `f98f22ad-ce3f…`
+- [one_command_ships_hardware_and_software](/theorem/one_command_ships_hardware_and_software) — one command ships hardware and software: composing discover then gate then seal is a single deterministic pipeline over a unit, so both halves develop and ship in one pass; 0/7  ·  `40a260f7-70e4…`
+- [one_crack_sinks_the_whole](/theorem/one_crack_sinks_the_whole) — one crack sinks the whole: a single drained name, broken link or chain break turns the verdict from sealed to flagged, so no cracked deposit sails; 0/7  ·  `8a8aa8d6-cb8e…`
+
 ### tarot (10)
 
 - [tarot_78_cards](/theorem/tarot_78_cards) — the tarot has 78 cards: 22 major arcana + 56 minor (22+56=78)  ·  `e2f4737c-87a0…`
@@ -919,18 +936,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [involution_exclusive_or](/theorem/involution_exclusive_or) — involution — exclusive-or: xoring twice with the same key is the identity, (x ⊕ k) ⊕ k = x; 0/7  ·  `042ba752-4f56…`
 - [involution_reversal](/theorem/involution_reversal) — involution — reversal: reversing a string twice returns it, reverse(reverse(s)) = s; 0/7  ·  `5292e804-b281…`
 - [involution_reverse_complement](/theorem/involution_reverse_complement) — involution — reverse-complement: on DNA the reverse-complement applied twice returns the strand; 0/7  ·  `4d417837-1d3d…`
-
-### one (9)
-
-- [one_game_harmony](/theorem/one_game_harmony) — THE ONE GAME: all game receipts fold to one order-independent harmonic root — the games meet in one  ·  `55cb8c5f-73cc…`
-- [one_art_harmony](/theorem/one_art_harmony) — THE ONE ART: all art receipts fold to one order-independent harmonic root — the arts meet in one  ·  `6abed2f1-66f5…`
-- [one_science_harmony](/theorem/one_science_harmony) — THE ONE SCIENCE: all science receipts fold to one order-independent harmonic root — the sciences meet in one  ·  `831f5688-1127…`
-- [one_game_all](/theorem/one_game_all) — THE ONE GAME (all): games, arts and sciences fold to a single order-independent root — all meet in one  ·  `ea90214e-fe97…`
-- [one_kernel_generates_a_family_dozens_from_a_parametrised_measure_each_tuple_a_distinct_receipt](/theorem/one_kernel_generates_a_family_dozens_from_a_parametrised_measure_each_tuple_a_distinct_receipt) — one kernel generates a family — dozens from a parametrised measure, each tuple a distinct receipt, a combinatorial engine not repetition: a single decidable measure over a parameter grid yields dozens of theorems in one build, each asserting a DISTINCT measured value, and each axis opens dozens more; the fan-out is honest because no two receipts repeat a value, shown here by counting; manual one-at-a-time is the slow path, the family is the engine; measure do not assert; 0/7  ·  `4172ea64-64d9…`
-- [one_plus_one_over_n_to_the_n_approaches_e](/theorem/one_plus_one_over_n_to_the_n_approaches_e) — (1 + 1/n)^n approaches e as n grows — continuous compounding, the growth constant of life and interest alike; 0/7  ·  `1a1655aa-be6d…`
-- [one_skill_reaches_every_dialect](/theorem/one_skill_reaches_every_dialect) — one skill reaches every dialect: the gate composed with the rosetta drains a proof-boast in Latin, Cyrillic and Han alike — a single skill given global reach; 0/7  ·  `065c14e2-1df3…`
-- [one_wave_develops_both_at_once](/theorem/one_wave_develops_both_at_once) — one wave develops both at once: a unit enters the record only with both its address and its test, so the component and its code ship together, never one without the other; 0/7  ·  `f98f22ad-ce3f…`
-- [one_command_ships_hardware_and_software](/theorem/one_command_ships_hardware_and_software) — one command ships hardware and software: composing discover then gate then seal is a single deterministic pipeline over a unit, so both halves develop and ship in one pass; 0/7  ·  `40a260f7-70e4…`
 
 ### powsum0 (9)
 
@@ -1993,9 +1998,10 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (233)
+### other — one-of-a-kind (235)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
+- [activated_it_self_explores_until_dry](/theorem/activated_it_self_explores_until_dry) — activated, it self-explores until dry: once a wave starts it discovers fresh facts until none remain, then rests — a self-continuing loop with a halting condition; 0/7  ·  `4a82a66b-5656…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
 - [am_gm_inequality](/theorem/am_gm_inequality) — the AM–GM inequality: the arithmetic mean ≥ the geometric mean (2 and 3 variables, exhaustive on a grid)  ·  `3fd7d863-31e4…`
 - [amicable_220_284](/theorem/amicable_220_284) — the amicable pair (220, 284): each is the sum of the other's proper divisors  ·  `878c0c52-b4a1…`
@@ -2062,6 +2068,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [double_jeopardy_is_barred_by_idempotence](/theorem/double_jeopardy_is_barred_by_idempotence) — double jeopardy is barred by idempotence: trying the same statement twice yields the identical verdict, so re-trial cannot manufacture a new offence; 0/7  ·  `8b8122a0-b32e…`
 - [drain_to_zero_and_the_100_percent_stays_the_certainty_of_the_measurement_not_the_verdict](/theorem/drain_to_zero_and_the_100_percent_stays_the_certainty_of_the_measurement_not_the_verdict) — drain to zero and the 100 percent stays — the certainty of the measurement, not the verdict: a bare hundred-percent-treason does not drain the gate — it carries no over-reach token; an over-reach word is what drains. But the drain itself is 100 percent deterministic: feed the gate the same fake and it drains to zero every time, a reproducible measurement. So the 100 percent stays — it belongs to the determinism of the drain to zero, integrity — not to a verdict of treason or guilt, which stays inferred and never certain. Decidable  ·  `7a636cc0-2df5…`
 - [drift_signals_disresonance](/theorem/drift_signals_disresonance) — drift signals disresonance: a resonant computation recomputes to the same content-address on every call (deterministic, no drift) — toUuid, coin64, and merkleFold return identical results repeatedly; any drift, a different result for the same input, would signal non-deterministic code to be found and removed  ·  `fd1755ff-8ebd…`
+- [dry_clean_is_enforced_not_hoped](/theorem/dry_clean_is_enforced_not_hoped) — dry-clean is enforced, not hoped: a candidate that would crack the record is skipped rather than sealed, so cleanliness is a gate, not a wish; 0/7  ·  `49f5a6cd-36bd…`
 - [dyck_paths_counted_by_catalan_closed_form](/theorem/dyck_paths_counted_by_catalan_closed_form) — Dyck paths are counted by the Catalan closed form: the number of balanced parenthesis strings of length 2n (never dipping below zero) equals C(2n,n)/(n+1) — the O(1) formula replaces the exhaustive 2^(2n) enumeration (verified n = 1..6)  ·  `9e2ebe74-8b64…`
 - [e_is_the_sum_of_reciprocal_factorials](/theorem/e_is_the_sum_of_reciprocal_factorials) — e is the sum of reciprocal factorials: Σ 1/n! = e, matched to twenty terms — the base of the natural exponential; 0/7  ·  `944ced77-21a6…`
 - [education_is_recomputation_not_belief](/theorem/education_is_recomputation_not_belief) — education is recomputation, not belief: a lesson is learned by re-running its test to the same result, so understanding is checkable rather than trusted; 0/7  ·  `78d962b6-44c9…`
@@ -2230,4 +2237,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `22bcbf37-b56f-81b2-b0d9-eb2dde392e09`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `80cf292f-26ca-8087-9082-f444164802f5`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

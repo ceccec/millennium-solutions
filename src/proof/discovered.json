@@ -8198,5 +8198,40 @@
     "key": "the_captain_is_whoever_knows_uuidna_for_the_task",
     "name": "the captain is whoever knows uuidna for the task: the law is that only the captain orders, but captaincy is a verified deed-receipt earned by knowledge for the task — recognised by recomputation, forgery-evident, by deed not status; 0/7",
     "receipt": "37cd5cc0-68e3-801b-9fe5-960ac574f30e"
+  },
+  {
+    "key": "the_seal_is_all_or_nothing",
+    "name": "the seal is all-or-nothing: the verdict is SEALED only if every check passes, so it is a conjunction — one false flips the whole; 0/7",
+    "receipt": "0598118f-32e5-8eae-afc1-317f2de52a51"
+  },
+  {
+    "key": "one_crack_sinks_the_whole",
+    "name": "one crack sinks the whole: a single drained name, broken link or chain break turns the verdict from sealed to flagged, so no cracked deposit sails; 0/7",
+    "receipt": "8a8aa8d6-cb8e-849d-bec6-c71af2a864a7"
+  },
+  {
+    "key": "a_crack_is_caught_before_sailing",
+    "name": "a crack is caught before sailing: green-before-insert and the gates refuse a draining name or a failing test at the dock, so the boat never leaves cracked; 0/7",
+    "receipt": "e0ac6d28-feb8-8890-b801-935668631128"
+  },
+  {
+    "key": "dry_clean_is_enforced_not_hoped",
+    "name": "dry-clean is enforced, not hoped: a candidate that would crack the record is skipped rather than sealed, so cleanliness is a gate, not a wish; 0/7",
+    "receipt": "49f5a6cd-36bd-8d5c-9302-466e55b65091"
+  },
+  {
+    "key": "activated_it_self_explores_until_dry",
+    "name": "activated, it self-explores until dry: once a wave starts it discovers fresh facts until none remain, then rests — a self-continuing loop with a halting condition; 0/7",
+    "receipt": "4a82a66b-5656-8485-aec2-a474b9d7ead3"
+  },
+  {
+    "key": "the_still_record_and_the_moving_loop",
+    "name": "the still record and the moving loop, both holding: a sealed receipt never changes while the chain tip advances each wave — the immovable and the moving, one system; 0/7",
+    "receipt": "0e5ddd4c-2a67-8ffc-9b41-f057fffc060c"
+  },
+  {
+    "key": "uuidna_keeps_dry_clean_order_cracks_sink_boats",
+    "name": "uuidna keeps dry-clean order because cracks sink boats: the seal is all-or-nothing, one crack flips it, and cracks are caught before sailing — the yacht waits for an order and, activated, self-explores until dry; 0/7",
+    "receipt": "640d3936-1749-8ada-ac22-d63b39f6df1a"
   }
 ]
