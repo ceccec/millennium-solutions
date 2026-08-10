@@ -7918,5 +7918,40 @@
     "key": "unreceipted_prose_is_tried_and_receipted",
     "name": "unreceipted prose is tried and receipted: any statement against the record, lacking a verifiable receipt, is sent to the gate and gets one — a verdict plus an address, verifiable and total, documenting rather than condemning; 0/7",
     "receipt": "cd5ed64d-8a33-8092-80d5-23ee50cc49de"
+  },
+  {
+    "key": "create_encrypts_the_code_into_a_receipt",
+    "name": "create encrypts the code into a receipt: the ChaCha20-Poly1305 ciphertext of a payload gets a content-address, and the right key recovers the payload exactly; 0/7",
+    "receipt": "4baca642-0ef3-8d12-91bf-991061aac111"
+  },
+  {
+    "key": "read_requires_the_right_key",
+    "name": "read requires the right key: the correct key returns the payload while a wrong key is refused — no view without the key; 0/7",
+    "receipt": "ab010f43-2657-8631-98c2-4c94eb0da534"
+  },
+  {
+    "key": "the_receipt_holds_the_ciphertext_not_the_plaintext",
+    "name": "the receipt holds the ciphertext, not the plaintext: the address is minted from the encrypted form, deterministic and distinct per ciphertext, and the payload is not derivable from it; 0/7",
+    "receipt": "98e6c842-506c-8f7c-a73a-07763da053be"
+  },
+  {
+    "key": "update_mints_a_new_address",
+    "name": "update mints a new address: re-encrypting changed code yields a different ciphertext and a different receipt, so an edit is a new version while the old address stays immutable; 0/7",
+    "receipt": "147ac909-acaa-805c-9e79-be59473dc3f4"
+  },
+  {
+    "key": "delete_is_dropping_the_key",
+    "name": "delete is dropping the key: without the key the ciphertext cannot be read, so revoking the key revokes view/edit/delete access to the payload; 0/7",
+    "receipt": "cdaad27e-1677-8360-989f-7249e39a82f3"
+  },
+  {
+    "key": "compute_and_prove_are_open_to_all",
+    "name": "compute and prove are open to all: running the gate and minting an address need no key, so anyone may compute, prove and verify — access control is on the confidential payload only, never on the computation; 0/7",
+    "receipt": "72b893ba-a5f6-805f-a74a-b1097c96c846"
+  },
+  {
+    "key": "uuidna_is_crud_by_keys_open_by_computation",
+    "name": "uuidna is CRUD by keys, open by computation: create encrypts to a receipt, read decrypts only with the key, update mints a new address, delete drops the key — the key gates the confidential payload only, while anyone may compute, prove and verify, intent shown by receipts; 0/7",
+    "receipt": "b7c2eebb-d230-87d1-8f70-241325e30629"
   }
 ]
