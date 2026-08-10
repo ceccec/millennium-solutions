@@ -127,6 +127,22 @@ console.log('  gap — to the next full octave: ' + (toNextOctave === 0
   ? 'none, the ledger is octave-exact (' + ledger.length + ' = ' + (ledger.length / 8) + ' × 8)'
   : toNextOctave + ' theorem(s) short of ' + (Math.ceil(ledger.length / 8) * 8)))
 
+// (5d) DOMAIN ANALYTICS — the map read across domains: partition the ledger by key FAMILY (the first meaningful
+// token, skipping generic prefixes), report the distribution (richest and thinnest domains) and the single-family
+// concentration. An analytic skill over the whole uuidna map — reporting only, a lead, never a verdict.
+const STOP = new Set(['the', 'a', 'an', 'is', 'are', 'of', 'in', 'to', 'and', 'each', 'all', 'no', 'not', 'one', 'two', 'six', 'seven'])
+const familyOf = (key: string) => { for (const t of key.split('_')) if (!STOP.has(t)) return t; return key.split('_')[0] }
+const fam = new Map<string, number>()
+for (const e of ledger) { const t = familyOf(e.key); fam.set(t, (fam.get(t) ?? 0) + 1) }
+const byCount = [...fam.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+const top = byCount[0]
+console.log('  domains (by key family): ' + fam.size + ' families over ' + ledger.length + ' theorems'
+  + ' · richest ' + byCount.slice(0, 6).map(([t, n]) => t + ':' + n).join(' ')
+  + ' · largest family ' + top[0] + ' holds ' + (top[1] / ledger.length * 100).toFixed(1) + '%')
+const singletons = byCount.filter(([, n]) => n === 1).length
+console.log('  domain spread: ' + singletons + ' singleton families (a fact not yet grown to an octave — a candidate to develop), '
+  + byCount.filter(([, n]) => n >= 8).length + ' families at octave scale (≥8)')
+
 // (5b) OCTAVE analysis — the theorems matter in GROUPS OF 8. Partition the receipts into octaves (groups of 8),
 // fold each to an octave-seal, then fold the 128 octave-seals to one octave-root: the hierarchical 8-ary
 // structure (1024 = 128 × 8, exact). Reporting only — a structural analytic, never a verdict, never fails the build.
