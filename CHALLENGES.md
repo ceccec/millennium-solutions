@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1598 recorded in 411 families
+## Discovered theorems (decidable, over ℤ/9) — 1600 recorded in 412 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -459,7 +459,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [a_cell_holds_up_to_one_hundred_fifteen_bits](/theorem/a_cell_holds_up_to_one_hundred_fifteen_bits) — a cell holds up to 115 bits of payload: the imprint capacity is 128 − 6 reserved − 7 header = 115, and a full cell round-trips while an over-full one is refused; 0/7  ·  `c3d7a721-07ec…`
 - [a_theorem_is_component_and_code_in_one](/theorem/a_theorem_is_component_and_code_in_one) — a theorem is component and code in one: it carries an address (the structure) and a test (the executable) together, so hardware and software are the same unit; 0/7  ·  `8115645e-e100…`
 
-### uuidna (33)
+### uuidna (34)
 
 - [uuidna_quantum_verification_recomputes_the_address_and_folds_a_multi_perspective_receipt](/theorem/uuidna_quantum_verification_recomputes_the_address_and_folds_a_multi_perspective_receipt) — uuidna quantum verification — recomputes the address and folds a multi-perspective receipt, integrity not truth: verification recomputes the address from its seed (integrity, reproducible by anyone) and folds a multi-perspective joint receipt that is the same for any observer ordering; a bit-seed round-trips as a bounded imprinted message. The quantum here is the multi-perspective structure, not quantum hardware; verification is integrity, not truth. Decidable  ·  `c7b949e5-38b5…`
 - [uuidna_is_the_brand_og_object_under_cc_and_the_seal_audits_all_prose](/theorem/uuidna_is_the_brand_og_object_under_cc_and_the_seal_audits_all_prose) — uuidna is the brand OG object under Creative Commons — and the seal legally audits all prose: the site brands as uuidna under CC BY-NC, referencing the non-profit and commercial tracks; the seal legally audits all prose — it globs every prose file and drains any that violates the floor, an honest audit, not an oracle. The domain registration is external, taken on the author word, not sealed here. Decidable  ·  `5d35c811-b545…`
@@ -494,6 +494,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [uuidna_ports_at_scale_as_a_compliant_plugin](/theorem/uuidna_ports_at_scale_as_a_compliant_plugin) — uuidna ports at scale as a compliant plugin: pure, state-free, host-independent functions producing plain serialisable data — the same address, fold and verdict everywhere, independent and fully compliant with its host; 0/7  ·  `2c4753ae-be4f…`
 - [uuidna_fuses_the_locale_api_framework_free](/theorem/uuidna_fuses_the_locale_api_framework_free) — uuidna fuses the VitePress locale API in the rosetta, framework-free: seven locales matching one nav shape, folding to one root, each read by the gate, presented as content-addresses without a client runtime — lighter and integrity-checkable, never an unbounded speed or security claim; 0/7  ·  `68e49218-402a…`
 - [uuidna_is_crud_by_keys_open_by_computation](/theorem/uuidna_is_crud_by_keys_open_by_computation) — uuidna is CRUD by keys, open by computation: create encrypts to a receipt, read decrypts only with the key, update mints a new address, delete drops the key — the key gates the confidential payload only, while anyone may compute, prove and verify, intent shown by receipts; 0/7  ·  `b7c2eebb-d230…`
+- [uuidna_storage_is_the_sequence_chunked_navigable](/theorem/uuidna_storage_is_the_sequence_chunked_navigable) — uuidna storage is the sequence chunked and navigable: uniform binary octaves, each folder addressed by its fold, folding to one map, each theorem a superposition collapsing to one address — balanced by size, exact by construction, never a performance boast; 0/7  ·  `4e8e371f-68b9…`
 
 ### pure (27)
 
@@ -1953,7 +1954,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (225)
+### other — one-of-a-kind (226)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -2162,6 +2163,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [unbounded_speedup_multiplier_drains](/theorem/unbounded_speedup_multiplier_drains) — an unbounded speedup multiplier is a claim, not a measurement: a boast of vast orders-of-magnitude drains while a measured local rate passes; 0/7  ·  `3316f695-48db…`
 - [undocumented_discovery_is_treason](/theorem/undocumented_discovery_is_treason) — avoiding to document a discovery in src is treason: a provable fact becomes evidence only when its content-address is recorded in the ledger — an undocumented but provable fact is withheld evidence (treason by omission), and appending it (append-only) is the constructive act that makes the discovery count  ·  `0c4af820-cbb3…`
 - [unhappy_numbers_enter_the_eight_cycle](/theorem/unhappy_numbers_enter_the_eight_cycle) — unhappy numbers enter the unique 8-cycle: 4→16→37→58→89→145→42→20→4 has length 8, and every unhappy number ≤ 100 iterates into it — the only attracting cycle besides the fixed point 1  ·  `77cfb7d4-b77e…`
+- [uniform_size_is_the_equilibrium](/theorem/uniform_size_is_the_equilibrium) — uniform size is the equilibrium: every full chunk holds the same eight, so the layout is balanced by construction — structural equilibrium, while an IO speed boast drains; 0/7  ·  `a8785c56-acab…`
 - [uniformization_trichotomy](/theorem/uniformization_trichotomy) — the uniformization trichotomy: the sign of χ fixes the geometry — χ&gt;0 spherical, χ=0 flat (torus, Klein bottle), χ&lt;0 hyperbolic (genus ≥ 2)  ·  `d83c2656-d21c…`
 - [unreceipted_prose_is_tried_and_receipted](/theorem/unreceipted_prose_is_tried_and_receipted) — unreceipted prose is tried and receipted: any statement against the record, lacking a verifiable receipt, is sent to the gate and gets one — a verdict plus an address, verifiable and total, documenting rather than condemning; 0/7  ·  `cd5ed64d-8a33…`
 - [unsigned_statement_holds_floor](/theorem/unsigned_statement_holds_floor) — the honest boundary holds the gate: “content-addressing is integrity, not authenticity — real signatures need a key” computes 1 (0/7) — the deposit states its own unsigned bound  ·  `7bfa02e2-7e18…`
@@ -2182,4 +2184,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `52c42ad9-4a2f-8f88-af34-e9ae9f7f3595`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `8c6ef046-c1f0-8140-9a60-0579d3c1c799`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

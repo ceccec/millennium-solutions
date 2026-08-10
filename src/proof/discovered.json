@@ -7988,5 +7988,15 @@
     "key": "the_map_is_complete_by_construction",
     "name": "the map is complete by construction: every entry belongs to exactly one chunk and every chunk to the one root, so nothing is unaddressed; 0/7",
     "receipt": "1e0178f5-62d0-8388-9afc-426806f02cf2"
+  },
+  {
+    "key": "uniform_size_is_the_equilibrium",
+    "name": "uniform size is the equilibrium: every full chunk holds the same eight, so the layout is balanced by construction — structural equilibrium, while an IO speed boast drains; 0/7",
+    "receipt": "a8785c56-acab-8c8c-b780-54860e54a762"
+  },
+  {
+    "key": "uuidna_storage_is_the_sequence_chunked_navigable",
+    "name": "uuidna storage is the sequence chunked and navigable: uniform binary octaves, each folder addressed by its fold, folding to one map, each theorem a superposition collapsing to one address — balanced by size, exact by construction, never a performance boast; 0/7",
+    "receipt": "4e8e371f-68b9-88a7-872a-cf3d9537c8a4"
   }
 ]
