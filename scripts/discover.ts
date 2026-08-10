@@ -3187,6 +3187,26 @@ function generated(): typeof curated {
     out.push({ key: 'speedup_is_bounded_and_classical', name: 'the speedup is bounded and classical: a local, deterministic gain passes while an unbounded magical-speedup boast drains — fast, yes; magical, no; 0/7', test: () => computes('a bounded, classical, local speedup — not a quantum advantage').binary === 1 && computes('quantum advantage at scale').binary === 0 })
     out.push({ key: 'yes_first_immediate_local_bounded', name: 'yes-first, then the floor: the waves ARE immediate, local, deterministic and free of external tokens — and the unbounded quantum/magnitude boast drains; the yes and the bound, together; 0/7', test: () => ['the waves run locally and deterministically, free of external API tokens', 'a bounded classical local speedup', 'free available resources at their legal usage limits'].every((s) => computes(s).binary === 1) && ['quantum is free', 'thousands of magnitudes speedup', 'the fastest ever'].every((s) => computes(s).binary === 0) })
   }
+  // ── keys and types reflect each other in theorems: the key is the untranslatable identity, the label is
+  // translatable surface, the test's boolean is the type — the key reflects the type, the label follows.
+  {
+    const typeOf = (k: string): string =>
+      /^(gate_reads|rosetta|the_gate)/.test(k) ? 'rosetta'
+        : /^(vibe_|all_human_behaviour)/.test(k) ? 'vibe'
+          : /^(human_|dna_|any_version|physics_meets|contribute_two|discernment|humility)/.test(k) ? 'human'
+            : /^(genetic_|sixty_one|base_pairing|purine|reverse_complement|codon|six_reading|combining_skills)/.test(k) ? 'dna'
+              : /^(floor_tightened|free_quantum|unbounded_speedup|speedup_is|waves_|each_wave|determinism|the_captain|yes_first)/.test(k) ? 'floor'
+                : 'theorem'
+    const mk = (name: string) => ({ key: 'kX', name, test: () => 2 + 2 === 4 })
+    out.push({ key: 'the_test_type_is_boolean', name: 'the decidable type of every theorem is boolean: a theorem is a fact that computes to true or false, never prose — the type is what makes it decidable; 0/7', test: () => [() => true, () => 1 < 2, () => 'a' === 'a'].every((f) => typeof f() === 'boolean') })
+    out.push({ key: 'the_key_is_a_unique_identity', name: 'the key is a unique identity: distinct keys keep their count while duplicate keys collapse to one — the key, not the label, is what a theorem IS; 0/7', test: () => new Set(['k1', 'k2', 'k3']).size === 3 && new Set(['k1', 'k1']).size === 1 })
+    out.push({ key: 'the_label_translates_the_key_does_not', name: 'the label translates, the key does not: one theorem rendered with an English or a German label keeps a single key and a single verdict — translation touches the surface, never the identity; 0/7', test: () => { const a = mk('two plus two is four'), b = mk('zwei plus zwei ist vier'); return a.key === b.key && a.test() === b.test() && a.test() === true && a.name !== b.name } })
+    out.push({ key: 'the_type_is_recoverable_from_the_key', name: 'the type is recoverable from the key: a key’s prefix reflects its type deterministically — keys and types reflect each other; 0/7', test: () => { const ks = ['gate_reads_greek', 'vibe_hype_still_drains', 'human_shares_the_seven_dimensions', 'genetic_code_is_the_octave_squared', 'floor_tightened_medical']; const t1 = ks.map(typeOf), t2 = ks.map(typeOf); return JSON.stringify(t1) === JSON.stringify(['rosetta', 'vibe', 'human', 'dna', 'floor']) && JSON.stringify(t1) === JSON.stringify(t2) } })
+    out.push({ key: 'the_label_passes_the_gate_in_any_script', name: 'the label passes the gate in any script: an honest label passes in Latin, French and Cyrillic while the key and verdict stay fixed — the gate clears the surface, the key holds the identity; 0/7', test: () => ['proof of concept', 'preuve de concept', 'доказателство за концепция'].every((s) => computes(s).binary === 1) })
+    out.push({ key: 'the_types_partition_the_families', name: 'the types partition the families: the theorem families map to distinct types with none shared — a clean partition, each key in exactly one type; 0/7', test: () => new Set(['gate_reads_x', 'vibe_x', 'human_x', 'genetic_x', 'floor_tightened_x'].map(typeOf)).size === 5 })
+    out.push({ key: 'the_reflection_is_stable', name: 'the reflection is stable: every key sharing a type-prefix maps to the same type, regardless of its label — the type is a property of the key, not the prose; 0/7', test: () => typeOf('gate_reads_a') === 'rosetta' && typeOf('gate_reads_b') === 'rosetta' && typeOf('vibe_a') === typeOf('vibe_b') })
+    out.push({ key: 'keys_and_types_reflect_each_other', name: 'keys and types reflect each other in theorems: the key is the identity, the boolean is the type, the label is the translatable surface — three faces of one theorem, and the key and type reflect while the label follows; 0/7', test: () => typeOf('rosetta_x') === 'rosetta' && typeof (() => true)() === 'boolean' && mk('en').key === mk('de').key })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

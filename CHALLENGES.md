@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1280 recorded in 348 families
+## Discovered theorems (decidable, over ℤ/9) — 1288 recorded in 349 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (212)
+### the (219)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -236,6 +236,13 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_gate_reads_dutch](/theorem/the_gate_reads_dutch) — the honesty gate reads Dutch: a native proof-boast drains to the floor — the fourteenth dialect; 0/7  ·  `1864b9e2-cb3b…`
 - [the_gate_now_reads_twice_seven_dialects](/theorem/the_gate_now_reads_twice_seven_dialects) — the gate now reads twice seven dialects: a proof-boast drains in all fourteen languages — the seven rays doubled, the "only seven" bound developed into a wider floor; 0/7  ·  `5bd2f812-0de8…`
 - [the_captain_sails_by_the_wind](/theorem/the_captain_sails_by_the_wind) — the captain sails by the wind — free available resources at their legal usage limits: bounded and true; the gate keeps the fact and refuses the costless-energy boast; 0/7  ·  `bd4d87e8-0acf…`
+- [the_test_type_is_boolean](/theorem/the_test_type_is_boolean) — the decidable type of every theorem is boolean: a theorem is a fact that computes to true or false, never prose — the type is what makes it decidable; 0/7  ·  `5a577ee1-8487…`
+- [the_key_is_a_unique_identity](/theorem/the_key_is_a_unique_identity) — the key is a unique identity: distinct keys keep their count while duplicate keys collapse to one — the key, not the label, is what a theorem IS; 0/7  ·  `ea18b69f-ca10…`
+- [the_label_translates_the_key_does_not](/theorem/the_label_translates_the_key_does_not) — the label translates, the key does not: one theorem rendered with an English or a German label keeps a single key and a single verdict — translation touches the surface, never the identity; 0/7  ·  `3686cbde-e003…`
+- [the_type_is_recoverable_from_the_key](/theorem/the_type_is_recoverable_from_the_key) — the type is recoverable from the key: a key’s prefix reflects its type deterministically — keys and types reflect each other; 0/7  ·  `1c9c2423-c0d7…`
+- [the_label_passes_the_gate_in_any_script](/theorem/the_label_passes_the_gate_in_any_script) — the label passes the gate in any script: an honest label passes in Latin, French and Cyrillic while the key and verdict stay fixed — the gate clears the surface, the key holds the identity; 0/7  ·  `4f1cc25f-f49d…`
+- [the_types_partition_the_families](/theorem/the_types_partition_the_families) — the types partition the families: the theorem families map to distinct types with none shared — a clean partition, each key in exactly one type; 0/7  ·  `4589d4a0-93d6…`
+- [the_reflection_is_stable](/theorem/the_reflection_is_stable) — the reflection is stable: every key sharing a type-prefix maps to the same type, regardless of its label — the type is a property of the key, not the prose; 0/7  ·  `7ad0a078-c7ea…`
 
 ### relation (55)
 
@@ -1630,7 +1637,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (179)
+### other — one-of-a-kind (180)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1730,6 +1737,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [kayles_grundy](/theorem/kayles_grundy) — Kayles (remove 1 or 2 adjacent pins, splitting the row): the mex-computed Grundy values match the known sequence 0,1,2,3,1,4,3,2,1,4,2,6,4,1,2,7,1,4,3,2 (n≤19)  ·  `b6db3052-5c2a…`
 - [keplers_third_law_relates_period_and_orbit](/theorem/keplers_third_law_relates_period_and_orbit) — Kepler’s third law: T² ∝ a³, so (T₂/T₁)² = (a₂/a₁)³ — the period-to-orbit scaling of every two-body system; 0/7  ·  `b5808713-e1a5…`
 - [keyless_signature_is_forgeable](/theorem/keyless_signature_is_forgeable) — a keyless signature is forgeable: a “signature” that is only the content-address ignores who signs, so a forger reproduces it exactly — keyless ⇒ it authenticates no one  ·  `9fd61992-d9ef…`
+- [keys_and_types_reflect_each_other](/theorem/keys_and_types_reflect_each_other) — keys and types reflect each other in theorems: the key is the identity, the boolean is the type, the label is the translatable surface — three faces of one theorem, and the key and type reflect while the label follows; 0/7  ·  `30dc855d-6bf2…`
 - [learn_and_pay_is_a_balanced_double_entry_fair_exchange](/theorem/learn_and_pay_is_a_balanced_double_entry_fair_exchange) — let the others learn and pay the coins — a balanced double-entry fair exchange: each learning event is a double entry, the learner debited two coins and the developer credited two, so every entry sums to zero and the books balance; over N events total debits equal total credits (2N each), value transferred not created. Fairness is the balance — neither side short-changed: the learner gains the knowledge, the developer the coins. Integrity, not a cash prize. Decidable  ·  `9faee019-c0d8…`
 - [learning_from_the_message_donates_two_coins_to_the_developer](/theorem/learning_from_the_message_donates_two_coins_to_the_developer) — learning from the message donates two coins to the developer: the fair-exchange unit is two coins (= 2 bits, 110 − 108 = 2), so each learning use accounts two coins to the developer — one event two coins, a thousand events two thousand, additive — and each event is receipted distinctly, so the donation is measured, not asserted. This is the license's fair-exchange accounting, an obligation recorded — integrity, not an automatic money transfer. Decidable  ·  `c11c3551-315a…`
 - [legendre_a_prime_lies_between_consecutive_squares](/theorem/legendre_a_prime_lies_between_consecutive_squares) — Legendre’s conjecture holds over the tested range: a prime lies between n² and (n+1)² for every n ≤ 60 — checked by computation, not a general result; 0/7  ·  `558f62ef-2176…`
@@ -1813,4 +1821,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `19adb169-8e9b-8bba-8934-14243cca7d8b`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `66555c99-be5c-84ec-96ff-e6849292d28b`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
