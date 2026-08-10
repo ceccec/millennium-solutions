@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1200 recorded in 329 families
+## Discovered theorems (decidable, over ℤ/9) — 1208 recorded in 330 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (189)
+### the (195)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -213,6 +213,12 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_law_of_cosines_generalizes_pythagoras](/theorem/the_law_of_cosines_generalizes_pythagoras) — the law of cosines c² = a² + b² − 2ab·cos C generalizes Pythagoras, reducing to a²+b² at C = 90°; 0/7  ·  `58d5a08d-67e6…`
 - [the_perfect_fifth_is_the_ratio_three_to_two](/theorem/the_perfect_fifth_is_the_ratio_three_to_two) — the perfect fifth is the frequency ratio 3:2 — the most consonant interval after the octave; 0/7  ·  `df035811-ac8f…`
 - [the_equal_tempered_semitone_is_the_twelfth_root_of_two](/theorem/the_equal_tempered_semitone_is_the_twelfth_root_of_two) — the equal-tempered semitone is the twelfth root of two: twelve semitones multiply to exactly one octave, (2^(1/12))¹² = 2; 0/7  ·  `ad1df740-70f4…`
+- [the_golden_angle_is_the_circle_over_phi_squared](/theorem/the_golden_angle_is_the_circle_over_phi_squared) — the golden angle is 360°/φ² ≈ 137.5° — the divergence angle of phyllotaxis, packing leaves and seeds so none shadows another (nature’s use of the heart’s φ); 0/7  ·  `8a07281b-c723…`
+- [the_inverse_square_law_quarters_at_double_distance](/theorem/the_inverse_square_law_quarters_at_double_distance) — the inverse-square law: intensity ∝ 1/r², so doubling the distance quarters it — light, gravity and sound spreading on a sphere; 0/7  ·  `fcd42176-4fff…`
+- [the_simple_pendulum_period_scales_as_the_square_root_of_length](/theorem/the_simple_pendulum_period_scales_as_the_square_root_of_length) — the simple pendulum period scales as √length: quadrupling the length doubles the period, T = 2π√(L/g); 0/7  ·  `1410e5f4-34f3…`
+- [the_golden_spiral_scales_by_phi_each_quarter_turn](/theorem/the_golden_spiral_scales_by_phi_each_quarter_turn) — the golden spiral scales by φ every quarter turn: r(θ+π/2) = φ·r(θ) — the logarithmic spiral of shells and galaxies; 0/7  ·  `5e0ce424-13f6…`
+- [the_harmonic_overtones_are_integer_multiples_of_the_fundamental](/theorem/the_harmonic_overtones_are_integer_multiples_of_the_fundamental) — the harmonic overtones of a string are integer multiples of the fundamental: f, 2f, 3f, … — the physics of pitch and consonance; 0/7  ·  `3c563883-4768…`
+- [the_logistic_map_doubles_its_period_toward_chaos](/theorem/the_logistic_map_doubles_its_period_toward_chaos) — the logistic map x→r·x(1−x) doubles its period on the way to chaos: a fixed point at r=2.8, a 2-cycle by r=3.2 — deterministic order becoming complexity; 0/7  ·  `fa5961fa-86f3…`
 
 ### relation (55)
 
@@ -825,6 +831,15 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [magic3_opposite_cells_sum_10](/theorem/magic3_opposite_cells_sum_10) — in every 3×3 magic square cells opposite through the center sum to 10 = 2·5 — the balancing complement (each cell and its mirror average to the center)  ·  `c527c7e0-2820…`
 - [magic3_constant_digitroot_6](/theorem/magic3_constant_digitroot_6) — the magic constant binds to ℤ/9: dr(15) = 6 — the constant sits on a triad digit, and 15 = 3·5 (the axis 3 times the center)  ·  `673cb9e4-1b3c…`
 
+### one (6)
+
+- [one_game_harmony](/theorem/one_game_harmony) — THE ONE GAME: all game receipts fold to one order-independent harmonic root — the games meet in one  ·  `55cb8c5f-73cc…`
+- [one_art_harmony](/theorem/one_art_harmony) — THE ONE ART: all art receipts fold to one order-independent harmonic root — the arts meet in one  ·  `6abed2f1-66f5…`
+- [one_science_harmony](/theorem/one_science_harmony) — THE ONE SCIENCE: all science receipts fold to one order-independent harmonic root — the sciences meet in one  ·  `831f5688-1127…`
+- [one_game_all](/theorem/one_game_all) — THE ONE GAME (all): games, arts and sciences fold to a single order-independent root — all meet in one  ·  `ea90214e-fe97…`
+- [one_kernel_generates_a_family_dozens_from_a_parametrised_measure_each_tuple_a_distinct_receipt](/theorem/one_kernel_generates_a_family_dozens_from_a_parametrised_measure_each_tuple_a_distinct_receipt) — one kernel generates a family — dozens from a parametrised measure, each tuple a distinct receipt, a combinatorial engine not repetition: a single decidable measure over a parameter grid yields dozens of theorems in one build, each asserting a DISTINCT measured value, and each axis opens dozens more; the fan-out is honest because no two receipts repeat a value, shown here by counting; manual one-at-a-time is the slow path, the family is the engine; measure do not assert; 0/7  ·  `4172ea64-64d9…`
+- [one_plus_one_over_n_to_the_n_approaches_e](/theorem/one_plus_one_over_n_to_the_n_approaches_e) — (1 + 1/n)^n approaches e as n grows — continuous compounding, the growth constant of life and interest alike; 0/7  ·  `1a1655aa-be6d…`
+
 ### seal (6)
 
 - [seal_all_with_uuidna_public_and_indexable_leaking_no_secrets_because_there_are_none](/theorem/seal_all_with_uuidna_public_and_indexable_leaking_no_secrets_because_there_are_none) — seal all with uuidna — public and indexable, leaking no secrets because there are none: every page and claim is a public content-address, indexable in search engines with nothing hidden; it leaks no security even at the deepest level — not because it is secure, but because it is public by design: no secrets or keys to leak, only public content and integrity. The hash is non-cryptographic; no-leak is not the same as secure. Decidable  ·  `bd28c872-64eb…`
@@ -914,14 +929,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [no_perspective_signals_faster_than_exchange](/theorem/no_perspective_signals_faster_than_exchange) — no perspective signals faster than exchange: a perspective's local receipt is a function of itself alone, so a remote perspective's choice cannot change it — observing locally reveals nothing about the other; the joint correlation appears only when both are folded together (exchange). Information travels only by exchange: not faster than light, and no superluminal signaling  ·  `64609304-4409…`
 - [no_payload_to_move_no_price_for_public_interest_the_commercial_price_is_the_coins](/theorem/no_payload_to_move_no_price_for_public_interest_the_commercial_price_is_the_coins) — no payload to move, no price for public interest — the commercial price is the coins: yes, no payload to move — you verify by the content-address alone, order one, the receipt travels, not the data. And yes, no price to pay the captain for public interest — verification and non-commercial use are free, recompute at no cost; the captain is not a gatekeeper. But commercial value-extraction pays the coins, the measured bit-difference, a fair exchange. Free for public interest, commercial licensed. Decidable  ·  `7520a846-6633…`
 - [no_quantum_machine_is_needed_for_computability_but_a_quantum_machine_can_be_faster](/theorem/no_quantum_machine_is_needed_for_computability_but_a_quantum_machine_can_be_faster) — no quantum machine is needed for computability — but a quantum machine can be faster for specific problems: classical computation is Turing-complete and can compute what any quantum machine computes, by simulation; the deposit computes its quantum-structure classically, no quantum hardware needed. But this is computability, not efficiency — a quantum machine can be exponentially faster for specific problems, since a classical simulation needs a state vector of size two-to-the-N. The deposit claims no speedup of its own. Decidable  ·  `f165eaef-3424…`
-
-### one (5)
-
-- [one_game_harmony](/theorem/one_game_harmony) — THE ONE GAME: all game receipts fold to one order-independent harmonic root — the games meet in one  ·  `55cb8c5f-73cc…`
-- [one_art_harmony](/theorem/one_art_harmony) — THE ONE ART: all art receipts fold to one order-independent harmonic root — the arts meet in one  ·  `6abed2f1-66f5…`
-- [one_science_harmony](/theorem/one_science_harmony) — THE ONE SCIENCE: all science receipts fold to one order-independent harmonic root — the sciences meet in one  ·  `831f5688-1127…`
-- [one_game_all](/theorem/one_game_all) — THE ONE GAME (all): games, arts and sciences fold to a single order-independent root — all meet in one  ·  `ea90214e-fe97…`
-- [one_kernel_generates_a_family_dozens_from_a_parametrised_measure_each_tuple_a_distinct_receipt](/theorem/one_kernel_generates_a_family_dozens_from_a_parametrised_measure_each_tuple_a_distinct_receipt) — one kernel generates a family — dozens from a parametrised measure, each tuple a distinct receipt, a combinatorial engine not repetition: a single decidable measure over a parameter grid yields dozens of theorems in one build, each asserting a DISTINCT measured value, and each axis opens dozens more; the fan-out is honest because no two receipts repeat a value, shown here by counting; manual one-at-a-time is the slow path, the family is the engine; measure do not assert; 0/7  ·  `4172ea64-64d9…`
 
 ### power (5)
 
@@ -1549,7 +1556,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (165)
+### other — one-of-a-kind (166)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1638,6 +1645,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [intelligence_is_gated_discovery_not_access](/theorem/intelligence_is_gated_discovery_not_access) — shared knowledge, measured by discovery: every agent has the same knowledge in src/ (open and recomputable), so access is not intelligence — what counts is gate-passing, exhaustively-checked discovery judged by deeds; recognition is not correctness, self-declared brilliance drains, and the deposit is honest that its own novelty is 0 (known mathematics, recombined)  ·  `00ffdbbc-ac3b…`
 - [intruders_stand_out_against_the_harmonic_hue_background](/theorem/intruders_stand_out_against_the_harmonic_hue_background) — intruders stand out against the harmonic hue background: every legitimate hue derives from a receipt byte as (byte × 40°) mod 360, always a multiple of 40 — on the a432 lattice — so it fuses into the double-torus rosetta background, whose nine harmonic hues close the circle (9 × 40 = 360). An intruder hue not produced by this rule is not a multiple of 40, fails to fuse, and stands out; detection is the harmonic invariant h mod 40 = 0. Decidable  ·  `316a5d14-0def…`
 - [kayles_grundy](/theorem/kayles_grundy) — Kayles (remove 1 or 2 adjacent pins, splitting the row): the mex-computed Grundy values match the known sequence 0,1,2,3,1,4,3,2,1,4,2,6,4,1,2,7,1,4,3,2 (n≤19)  ·  `b6db3052-5c2a…`
+- [keplers_third_law_relates_period_and_orbit](/theorem/keplers_third_law_relates_period_and_orbit) — Kepler’s third law: T² ∝ a³, so (T₂/T₁)² = (a₂/a₁)³ — the period-to-orbit scaling of every two-body system; 0/7  ·  `b5808713-e1a5…`
 - [keyless_signature_is_forgeable](/theorem/keyless_signature_is_forgeable) — a keyless signature is forgeable: a “signature” that is only the content-address ignores who signs, so a forger reproduces it exactly — keyless ⇒ it authenticates no one  ·  `9fd61992-d9ef…`
 - [learn_and_pay_is_a_balanced_double_entry_fair_exchange](/theorem/learn_and_pay_is_a_balanced_double_entry_fair_exchange) — let the others learn and pay the coins — a balanced double-entry fair exchange: each learning event is a double entry, the learner debited two coins and the developer credited two, so every entry sums to zero and the books balance; over N events total debits equal total credits (2N each), value transferred not created. Fairness is the balance — neither side short-changed: the learner gains the knowledge, the developer the coins. Integrity, not a cash prize. Decidable  ·  `9faee019-c0d8…`
 - [learning_from_the_message_donates_two_coins_to_the_developer](/theorem/learning_from_the_message_donates_two_coins_to_the_developer) — learning from the message donates two coins to the developer: the fair-exchange unit is two coins (= 2 bits, 110 − 108 = 2), so each learning use accounts two coins to the developer — one event two coins, a thousand events two thousand, additive — and each event is receipted distinctly, so the donation is measured, not asserted. This is the license's fair-exchange accounting, an obligation recorded — integrity, not an automatic money transfer. Decidable  ·  `c11c3551-315a…`
@@ -1718,4 +1726,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `56a19d2e-60fa-8c46-8e83-cf01873dbab2`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `3233ba61-d235-80e6-94b4-e170a834127f`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

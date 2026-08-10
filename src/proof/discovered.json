@@ -5998,5 +5998,45 @@
     "key": "beats_arise_from_two_near_frequencies",
     "name": "beats arise from two near frequencies: cos(2π·5·t) + cos(2π·6·t) = 2·cos(2π·0.5·t)·cos(2π·5.5·t) — a slow envelope over a fast tone; 0/7",
     "receipt": "b81e2695-36a3-8ce0-8f5b-5818f2d7c976"
+  },
+  {
+    "key": "the_golden_angle_is_the_circle_over_phi_squared",
+    "name": "the golden angle is 360°/φ² ≈ 137.5° — the divergence angle of phyllotaxis, packing leaves and seeds so none shadows another (nature’s use of the heart’s φ); 0/7",
+    "receipt": "8a07281b-c723-86ec-96d6-529ca4cc07a7"
+  },
+  {
+    "key": "one_plus_one_over_n_to_the_n_approaches_e",
+    "name": "(1 + 1/n)^n approaches e as n grows — continuous compounding, the growth constant of life and interest alike; 0/7",
+    "receipt": "1a1655aa-be6d-83c2-8276-162fb8873fd8"
+  },
+  {
+    "key": "the_inverse_square_law_quarters_at_double_distance",
+    "name": "the inverse-square law: intensity ∝ 1/r², so doubling the distance quarters it — light, gravity and sound spreading on a sphere; 0/7",
+    "receipt": "fcd42176-4fff-8ea2-95d1-dc44ec4719d8"
+  },
+  {
+    "key": "keplers_third_law_relates_period_and_orbit",
+    "name": "Kepler’s third law: T² ∝ a³, so (T₂/T₁)² = (a₂/a₁)³ — the period-to-orbit scaling of every two-body system; 0/7",
+    "receipt": "b5808713-e1a5-88ef-900b-b26b1def355d"
+  },
+  {
+    "key": "the_simple_pendulum_period_scales_as_the_square_root_of_length",
+    "name": "the simple pendulum period scales as √length: quadrupling the length doubles the period, T = 2π√(L/g); 0/7",
+    "receipt": "1410e5f4-34f3-8e63-8642-29fda134bdab"
+  },
+  {
+    "key": "the_golden_spiral_scales_by_phi_each_quarter_turn",
+    "name": "the golden spiral scales by φ every quarter turn: r(θ+π/2) = φ·r(θ) — the logarithmic spiral of shells and galaxies; 0/7",
+    "receipt": "5e0ce424-13f6-8d7d-b1a4-418269c486a1"
+  },
+  {
+    "key": "the_harmonic_overtones_are_integer_multiples_of_the_fundamental",
+    "name": "the harmonic overtones of a string are integer multiples of the fundamental: f, 2f, 3f, … — the physics of pitch and consonance; 0/7",
+    "receipt": "3c563883-4768-864b-a6c8-a16eeacdc1e7"
+  },
+  {
+    "key": "the_logistic_map_doubles_its_period_toward_chaos",
+    "name": "the logistic map x→r·x(1−x) doubles its period on the way to chaos: a fixed point at r=2.8, a 2-cycle by r=3.2 — deterministic order becoming complexity; 0/7",
+    "receipt": "fa5961fa-86f3-8c61-afc8-3a9eceb41a06"
   }
 ]
