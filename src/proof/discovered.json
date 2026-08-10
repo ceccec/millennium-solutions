@@ -5438,5 +5438,45 @@
     "key": "ten_factors_as_two_times_five_the_heart_and_the_even_prime",
     "name": "ten factors as 2 × 5 — the base is the even prime times the heart, so a fraction terminates in base ten exactly when its denominator’s only primes are 2 and 5; 0/7",
     "receipt": "aa3e534d-7294-8494-a19e-173512f8c7d2"
+  },
+  {
+    "key": "ten_has_multiplicative_order_six_modulo_seven",
+    "name": "ten has multiplicative order six modulo seven: 10^6 ≡ 1 (mod 7) and no smaller power, so 1/7 repeats with period six — the seven’s repetend; 0/7",
+    "receipt": "b9901b9b-563d-83d6-b97a-fb22360562a9"
+  },
+  {
+    "key": "the_cyclic_number_142857_is_the_repetend_of_one_seventh",
+    "name": "the cyclic number 142857 is the repetend of 1/7: (10^6 − 1)/7 = 999999/7 = 142857 — the seven unfolds the cycle; 0/7",
+    "receipt": "fc728400-b9b2-8e14-aa4c-cc9c8259cc4e"
+  },
+  {
+    "key": "_142857_times_one_through_six_are_its_cyclic_rotations",
+    "name": "142857 times one through six are its cyclic rotations: each product uses the same six digits {1,4,2,8,5,7} in rotated order; 0/7",
+    "receipt": "c15edd03-3700-85a0-a31f-bd7df0a4a574"
+  },
+  {
+    "key": "_142857_times_seven_is_six_nines",
+    "name": "142857 times seven is six nines: 142857 × 7 = 999999 — the cyclic number completes to all-nines at the seven; 0/7",
+    "receipt": "0da31e4f-84ac-8af4-afd4-342023445081"
+  },
+  {
+    "key": "midy_the_two_halves_of_142857_sum_to_nines",
+    "name": "Midy’s theorem on 1/7: the two halves of the repetend sum to nines — 142 + 857 = 999; 0/7",
+    "receipt": "e8c1c167-cb15-8008-b731-ecedfae6cc18"
+  },
+  {
+    "key": "seven_is_the_fourth_prime",
+    "name": "seven is the fourth prime: after 2, 3, 5 comes 7 — the count of the Clay problems the floor measures at 0/7; 0/7",
+    "receipt": "c60e6bfb-c12d-8a28-b90a-086ef07d9440"
+  },
+  {
+    "key": "the_digital_root_of_seven_to_the_k_has_period_three",
+    "name": "the digital root of 7^k has period three: 7, 4, 1 repeating (7^1≡7, 7^2≡4, 7^3≡1 mod 9) — the seven’s orbit in ℤ/9; 0/7",
+    "receipt": "a54691b2-880f-897a-9d13-78bd4785c7f7"
+  },
+  {
+    "key": "seven_divides_the_repunit_of_length_six",
+    "name": "seven divides the repunit of length six: 7 | 111111, since 10^6 ≡ 1 (mod 7) makes R_6 = (10^6−1)/9 a multiple of seven; 0/7",
+    "receipt": "8ac0b06d-5eee-8c9a-801a-d3f18d30d5ae"
   }
 ]

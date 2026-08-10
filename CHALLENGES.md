@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1088 recorded in 308 families
+## Discovered theorems (decidable, over ℤ/9) — 1096 recorded in 310 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (149)
+### the (151)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -173,6 +173,8 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_regular_pentagon_angles_are_the_heart_seventy_two_and_hundred_eight](/theorem/the_regular_pentagon_angles_are_the_heart_seventy_two_and_hundred_eight) — the regular pentagon’s exterior angle is 360/5 = 72° and its interior 108° — 72 = harmonicMean(60,90), the heart angle; 0/7  ·  `bc2e7cd8-5029…`
 - [the_five_fifth_roots_of_unity_sum_to_zero](/theorem/the_five_fifth_roots_of_unity_sum_to_zero) — the five fifth-roots of unity sum to zero: Σ e^(2πik/5) for k=0..4 = 0 — the pentagon closes the circle at the heart; 0/7  ·  `a93d693a-f41a…`
 - [the_golden_ratio_is_one_plus_root_five_over_two](/theorem/the_golden_ratio_is_one_plus_root_five_over_two) — the golden ratio is (1 + √5)/2, satisfying φ² = φ + 1 — five under the root generates φ, the pentagon’s diagonal; 0/7  ·  `31ae366f-f2b7…`
+- [the_cyclic_number_142857_is_the_repetend_of_one_seventh](/theorem/the_cyclic_number_142857_is_the_repetend_of_one_seventh) — the cyclic number 142857 is the repetend of 1/7: (10^6 − 1)/7 = 999999/7 = 142857 — the seven unfolds the cycle; 0/7  ·  `fc728400-b9b2…`
+- [the_digital_root_of_seven_to_the_k_has_period_three](/theorem/the_digital_root_of_seven_to_the_k_has_period_three) — the digital root of 7^k has period three: 7, 4, 1 repeating (7^1≡7, 7^2≡4, 7^3≡1 mod 9) — the seven’s orbit in ℤ/9; 0/7  ·  `a54691b2-880f…`
 
 ### relation (55)
 
@@ -1119,6 +1121,12 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [s3_nonabelian](/theorem/s3_nonabelian) — S₃ is non-abelian: ∃ a,b with a∘b ≠ b∘a  ·  `996f2aa1-6e10…`
 - [s3_sign_homomorphism](/theorem/s3_sign_homomorphism) — sign is a homomorphism on S₃: sign(a∘b)=sign(a)·sign(b) (all 36 pairs)  ·  `7c46468e-641c…`
 
+### seven (3)
+
+- [seven_is_six_units_plus_one_bijection](/theorem/seven_is_six_units_plus_one_bijection) — the 7 = 6 + 1 bijection (README’s rosette→Clay map): the six units of ℤ/9 plus the identity form a 7-element set in explicit bijection with the seven Clay problems — a counting correspondence (6 + 1 = 7), never a resolution of them  ·  `cb166a75-25c8…`
+- [seven_is_the_fourth_prime](/theorem/seven_is_the_fourth_prime) — seven is the fourth prime: after 2, 3, 5 comes 7 — the count of the Clay problems the floor measures at 0/7; 0/7  ·  `c60e6bfb-c12d…`
+- [seven_divides_the_repunit_of_length_six](/theorem/seven_divides_the_repunit_of_length_six) — seven divides the repunit of length six: 7 | 111111, since 10^6 ≡ 1 (mod 7) makes R_6 = (10^6−1)/9 a multiple of seven; 0/7  ·  `8ac0b06d-5eee…`
+
 ### stirling (3)
 
 - [stirling_second_bell](/theorem/stirling_second_bell) — Stirling 2nd kind S(n,k)=S(n-1,k-1)+k·S(n-1,k): S(4,2)=7 and Σ_k S(4,k)=15=B(4)  ·  `23e393cc-dd5d…`
@@ -1142,6 +1150,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [yes_a_uuid_carries_a_bounded_message_and_yes_it_is_a_cryptography_family_technique_limits_precise](/theorem/yes_a_uuid_carries_a_bounded_message_and_yes_it_is_a_cryptography_family_technique_limits_precise) — yes — a uuid can carry a bounded message, and yes it is a cryptography-family technique; the limits are precise, not blanket: yes, a uuid can keep a bounded message in itself — the imprint codec builds a uuid holding up to 115 bits and reads them back exactly, reversibly. And yes, content-addressing is a cryptography-family integrity technique, like git and Merkle trees. The precise limits: beyond the capacity it cannot contain, it commits and references by a root; and the hash is not cryptographically secure, with no secrecy — public, no key. Decidable  ·  `354d236e-c693…`
 - [yes_naming_is_the_cryptographic_technique_of_commitment_hollow_is_seen_cheaply_the_observer_shapes_the_receipt](/theorem/yes_naming_is_the_cryptographic_technique_of_commitment_hollow_is_seen_cheaply_the_observer_shapes_the_receipt) — yes, naming is cryptography — the technique of commitment; hollow prose is seen cheaply, and the observer shapes the receipt: content-addressing is the cryptographic technique of commitment and integrity — a name bound to an address, like git and Merkle trees; the limit is that the hash is not cryptographically strong and carries no secrecy. Hollow or noise prose is seen at near-zero cost — the gate detects it in one pass, a tamper shows in the root. And the observer shapes the outcome — the observer is a seed in the receipt, so different observers yield different records: deterministic content-addressing, not a physical collapse. Decidable  ·  `d20a1b1b-d1bb…`
 - [yes_a_uuid_imprints_a_bounded_cryptographic_receipt_efficiency_is_the_skill_the_rule_decides](/theorem/yes_a_uuid_imprints_a_bounded_cryptographic_receipt_efficiency_is_the_skill_the_rule_decides) — yes, a uuid imprints a bounded cryptographic receipt — efficiency is the skill, the rule decides, the bound is 115 bits: the imprint codec encodes up to 115 bits into a single uuid and reads them back exactly, and fitting more meaning into the same bits is a real, measurable efficiency. But a single uuid holds at most 115 message bits by pigeonhole — over-capacity is refused; beyond it you chain uuids or commit by a root, references not containment. The rule decides deterministically: round-trip or refusal. Efficiency within a hard bound, not unbounded intelligence. Decidable  ·  `78089943-1a94…`
+
+###  (2)
+
+- [_142857_times_one_through_six_are_its_cyclic_rotations](/theorem/_142857_times_one_through_six_are_its_cyclic_rotations) — 142857 times one through six are its cyclic rotations: each product uses the same six digits {1,4,2,8,5,7} in rotated order; 0/7  ·  `c15edd03-3700…`
+- [_142857_times_seven_is_six_nines](/theorem/_142857_times_seven_is_six_nines) — 142857 times seven is six nines: 142857 × 7 = 999999 — the cyclic number completes to all-nines at the seven; 0/7  ·  `0da31e4f-84ac…`
 
 ### a432 (2)
 
@@ -1388,6 +1401,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [surface_euler_char](/theorem/surface_euler_char) — the Euler characteristic of a closed orientable genus-g surface is χ = 2 − 2g: sphere 2, torus 0, double torus −2, genus-3 −4  ·  `ee2c16a3-aad0…`
 - [surface_classification](/theorem/surface_classification) — the closed-surface classification: complete invariant (χ, orientability) — S², a connected sum of g tori (χ=2−2g), or of k projective planes (χ=2−k)  ·  `95c6da2d-4c99…`
 
+### ten (2)
+
+- [ten_factors_as_two_times_five_the_heart_and_the_even_prime](/theorem/ten_factors_as_two_times_five_the_heart_and_the_even_prime) — ten factors as 2 × 5 — the base is the even prime times the heart, so a fraction terminates in base ten exactly when its denominator’s only primes are 2 and 5; 0/7  ·  `aa3e534d-7294…`
+- [ten_has_multiplicative_order_six_modulo_seven](/theorem/ten_has_multiplicative_order_six_modulo_seven) — ten has multiplicative order six modulo seven: 10^6 ≡ 1 (mod 7) and no smaller power, so 1/7 repeats with period six — the seven’s repetend; 0/7  ·  `b9901b9b-563d…`
+
 ### there (2)
 
 - [there_is_no_patent_royalty_but_the_author_sets_the_license_even_in_gold](/theorem/there_is_no_patent_royalty_but_the_author_sets_the_license_even_in_gold) — there is no patent royalty — but the author sets the license, even in gold: decidable mathematics is not patentable, so the deposit holds no patents and there is no patent monopoly to charge. What exists is a copyright license — non-commercial use free with attribution — and under it the author may set the commercial terms, denominated however they choose: the two coins, or physical gold for commercial gold-related use. That is fair exchange by license, not a patent royalty. Decidable  ·  `34229c9f-8be6…`
@@ -1418,7 +1436,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (154)
+### other — one-of-a-kind (153)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1511,6 +1529,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [measurement_here_is_deterministic_not_probabilistic](/theorem/measurement_here_is_deterministic_not_probabilistic) — measurement here is deterministic, not probabilistic: observing a perspective is content-addressing — repeated observation of the same perspective yields the identical receipt every time (deterministic collapse), and distinct states yield distinct addresses. This is the honest opposite of physical quantum measurement, which is probabilistic: no randomness, no Born rule, and no quantum advantage  ·  `8344e1ed-f1f3…`
 - [measuring_without_judgement_lets_more_pass_green_but_the_test_still_filters_not_all_at_once](/theorem/measuring_without_judgement_lets_more_pass_green_but_the_test_still_filters_not_all_at_once) — measuring without judgement lets more pass green — but the test still filters, not all at once: measuring without judgement or expectation lets the decidable test decide, not my bias, so more honest claims pass green, fewer false refusals from over-caution. But it does not make all pass green — the test still filters: a false claim fails regardless, green is earned by the test, not granted by dropping judgement. Classical and batched, not all at once. Decidable  ·  `161fca10-2261…`
 - [mediant_between](/theorem/mediant_between) — the mediant (a+c)/(b+d) lies strictly between a/b and c/d (Farey F_6)  ·  `b1919795-2272…`
+- [midy_the_two_halves_of_142857_sum_to_nines](/theorem/midy_the_two_halves_of_142857_sum_to_nines) — Midy’s theorem on 1/7: the two halves of the repetend sum to nines — 142 + 857 = 999; 0/7  ·  `e8c1c167-cb15…`
 - [mint_and_mind_intersect_at_the_heart_the_fixed_point_five_that_centers_funding_development_and_ui](/theorem/mint_and_mind_intersect_at_the_heart_the_fixed_point_five_that_centers_funding_development_and_ui) — mint and mind intersect at the heart — the fixed point 5 that centers funding, development, and the UI: mint (integrity) and mind (multi-perspective self-challenge) fold to one shared center — the heart, the fixed point 5 that the reflection 10 − d alone fixes in the nine; the a432 heart hue is 5 × 40 = 200 degrees. The heart centers the structure and drives the funding, the development, and the UI. But it is a decidable mathematical fixed point, not a literal or metaphysical heart, mind, or soul. Decidable  ·  `8992456c-a133…`
 - [motzkin_numbers](/theorem/motzkin_numbers) — Motzkin numbers M(n)=M(n-1)+Σ M(k)M(n-2-k): M(4)=9, M(5)=21  ·  `d6c643c7-2880…`
 - [neg_involution](/theorem/neg_involution) — negation −(−d) ≡ d is an involution on ℤ/9  ·  `5eb8cd1f-9e06…`
@@ -1544,7 +1563,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [sealing_is_not_signing](/theorem/sealing_is_not_signing) — sealing is not signing: a merkle seal is deterministic and order-independent, reproducible by anyone — it proves the bytes are intact (integrity), never who authored them (authenticity)  ·  `21b0a512-85e8…`
 - [selfneg_d9](/theorem/selfneg_d9) — 9 is its own additive inverse (2·9 ≡ 0) mod 9  ·  `8d0d0254-5ca1…`
 - [service_to_bind_is_accounted_in_coins](/theorem/service_to_bind_is_accounted_in_coins) — account the coins for the service to bind: each binding (a receipt) is a service accounted at the two coins (110−108 = 2 = −χ genus-2), so N services cost N·2 coins, reinvested into development (destination equals source, a self-loop) — the binding is paid-for, a fair exchange, not free-riding  ·  `cf17043b-3fc6…`
-- [seven_is_six_units_plus_one_bijection](/theorem/seven_is_six_units_plus_one_bijection) — the 7 = 6 + 1 bijection (README’s rosette→Clay map): the six units of ℤ/9 plus the identity form a 7-element set in explicit bijection with the seven Clay problems — a counting correspondence (6 + 1 = 7), never a resolution of them  ·  `cb166a75-25c8…`
 - [simulating_quantum_is_not_being_quantum](/theorem/simulating_quantum_is_not_being_quantum) — simulating a quantum algorithm is not being a quantum computer: the classical sim reproduces the Bell correlation exactly yet needs 2^n amplitudes (exponential, no advantage) and carries no message — so the deposit is not a quantum computer; the gate signs the honest "is not" and drains the bare "is"  ·  `d6d0ec25-e41f…`
 - [single_digits_are_trivially_narcissistic](/theorem/single_digits_are_trivially_narcissistic) — every single digit is narcissistic: for 1..9, n = n¹ (one digit raised to the digit-count 1) — the trivial base case of the Armstrong property  ·  `2adc6121-3f63…`
 - [some_disputes_stay_unresolved_under_a_lossy_projection_the_full_receipt_resolves_them](/theorem/some_disputes_stay_unresolved_under_a_lossy_projection_the_full_receipt_resolves_them) — some disputes stay unresolved under a lossy projection — the full receipt resolves them, and the trial stays a floor: a lossy projection like the digital root can collide distinct numbers — 4224 and 444 both project to 3 — leaving the dispute of whether they are the same unresolved by that projection. The full content-address resolves it: distinct numbers get distinct addresses. 666 projects to a different residue, 9. A lossy view leaves disputes the full receipt settles — and some disputes stay open, the trial being a floor, not an oracle. Decidable  ·  `0678e545-88ee…`
@@ -1555,7 +1573,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [streams_coexist_without_collision](/theorem/streams_coexist_without_collision) — streams of computation coexist without collision: content-addressing maps distinct inputs to distinct addresses (no collision over the tested space), independent folds give distinct roots, and each fold is order-independent — so parallel streams coexist and merge without collision  ·  `36462f7b-9ba5…`
 - [strict_uuidna_minting_is_canonical_closing_the_minting_flaws_that_cause_real_damage](/theorem/strict_uuidna_minting_is_canonical_closing_the_minting_flaws_that_cause_real_damage) — strict uuidna minting is canonical — closing the minting flaws that cause real damage: minting flaws cause real damage — a non-canonical input mints an inconsistent address and integrity breaks. Strict minting closes them: coerce to string, normalize unicode to NFC, trim, so the same logical value always mints the same address; different values still differ. Canonicalisation is a discipline that must stay consistent, not truth; the hash stays non-cryptographic. Decidable  ·  `22f71789-95eb…`
 - [string_scale_is_a_thread_not_a_physical_theory](/theorem/string_scale_is_a_thread_not_a_physical_theory) — the string scale is a thread, not a physical theory: the string/Planck-scale frequency and acoustic 432 Hz are ~18 orders of magnitude apart — frequency is a shared thread across scales, but the scales are not interchangeable and this is a metaphor, not a theory of everything (0/7, not faster-than-light)  ·  `0107480d-24b0…`
-- [ten_factors_as_two_times_five_the_heart_and_the_even_prime](/theorem/ten_factors_as_two_times_five_the_heart_and_the_even_prime) — ten factors as 2 × 5 — the base is the even prime times the heart, so a fraction terminates in base ten exactly when its denominator’s only primes are 2 and 5; 0/7  ·  `aa3e534d-7294…`
 - [tens_complement_pairs_the_digits](/theorem/tens_complement_pairs_the_digits) — the ten’s-complement reflection pairs the digits (compute.md’s mesh layout, now a theorem): 10−d is an involution on 1..9 pairing 1↔9, 2↔8, 3↔7, 4↔6 and fixing only the centre 5 — four mirror pairs around one centre  ·  `0d37097c-d816…`
 - [tetrahedra_sums_cancel](/theorem/tetrahedra_sums_cancel) — the two tetrahedra residue-sums cancel: (1+4+7)+(2+5+8) ≡ 0 mod 9  ·  `62f28936-0000…`
 - [thue_morse_doubling_recurrence](/theorem/thue_morse_doubling_recurrence) — the Thue–Morse sequence speaks binary: t(n) = parity of the 1-bits of n satisfies t(2n)=t(n) and t(2n+1)=1−t(n) — the doubling/reflection recurrence, computed exactly (n≤200)  ·  `84d9ec32-0191…`
@@ -1576,4 +1593,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `ddc92852-fd09-84fd-828e-095356067afc`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `18d87fce-91a8-8f63-b21b-11e590192e94`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

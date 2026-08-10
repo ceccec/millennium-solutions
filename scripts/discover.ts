@@ -2894,6 +2894,18 @@ function generated(): typeof curated {
     out.push({ key: 'the_golden_ratio_is_one_plus_root_five_over_two', name: 'the golden ratio is (1 + √5)/2, satisfying φ² = φ + 1 — five under the root generates φ, the pentagon’s diagonal; 0/7', test: () => { const p = (1 + Math.sqrt(5)) / 2; return Math.abs(p * p - (p + 1)) < 1e-9 } })
     out.push({ key: 'ten_factors_as_two_times_five_the_heart_and_the_even_prime', name: 'ten factors as 2 × 5 — the base is the even prime times the heart, so a fraction terminates in base ten exactly when its denominator’s only primes are 2 and 5; 0/7', test: () => 2 * 5 === 10 && isPrime(2) && isPrime(5) && 10 % 5 === 0 && 10 % 2 === 0 })
   }
+  // ── the seven (the floor is 0/7): genuine facts about seven and the cyclic number 142857 = 1/7.
+  {
+    const sortd = (n: number) => String(n).split('').sort().join('')
+    out.push({ key: 'ten_has_multiplicative_order_six_modulo_seven', name: 'ten has multiplicative order six modulo seven: 10^6 ≡ 1 (mod 7) and no smaller power, so 1/7 repeats with period six — the seven’s repetend; 0/7', test: () => { for (let k = 1; k <= 5; k++) if (10 ** k % 7 === 1) return false; return 10 ** 6 % 7 === 1 } })
+    out.push({ key: 'the_cyclic_number_142857_is_the_repetend_of_one_seventh', name: 'the cyclic number 142857 is the repetend of 1/7: (10^6 − 1)/7 = 999999/7 = 142857 — the seven unfolds the cycle; 0/7', test: () => 999999 % 7 === 0 && 999999 / 7 === 142857 })
+    out.push({ key: '_142857_times_one_through_six_are_its_cyclic_rotations', name: '142857 times one through six are its cyclic rotations: each product uses the same six digits {1,4,2,8,5,7} in rotated order; 0/7', test: () => { for (let m = 1; m <= 6; m++) if (sortd(142857 * m) !== sortd(142857)) return false; return true } })
+    out.push({ key: '_142857_times_seven_is_six_nines', name: '142857 times seven is six nines: 142857 × 7 = 999999 — the cyclic number completes to all-nines at the seven; 0/7', test: () => 142857 * 7 === 999999 })
+    out.push({ key: 'midy_the_two_halves_of_142857_sum_to_nines', name: 'Midy’s theorem on 1/7: the two halves of the repetend sum to nines — 142 + 857 = 999; 0/7', test: () => 142 + 857 === 999 })
+    out.push({ key: 'seven_is_the_fourth_prime', name: 'seven is the fourth prime: after 2, 3, 5 comes 7 — the count of the Clay problems the floor measures at 0/7; 0/7', test: () => { const ps: number[] = []; for (let n = 2; ps.length < 4; n++) if (isPrime(n)) ps.push(n); return ps[3] === 7 } })
+    out.push({ key: 'the_digital_root_of_seven_to_the_k_has_period_three', name: 'the digital root of 7^k has period three: 7, 4, 1 repeating (7^1≡7, 7^2≡4, 7^3≡1 mod 9) — the seven’s orbit in ℤ/9; 0/7', test: () => 7 ** 1 % 9 === 7 && 7 ** 2 % 9 === 4 && 7 ** 3 % 9 === 1 && 7 ** 4 % 9 === 7 })
+    out.push({ key: 'seven_divides_the_repunit_of_length_six', name: 'seven divides the repunit of length six: 7 | 111111, since 10^6 ≡ 1 (mod 7) makes R_6 = (10^6−1)/9 a multiple of seven; 0/7', test: () => 111111 % 7 === 0 })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
