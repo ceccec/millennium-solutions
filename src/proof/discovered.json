@@ -7838,5 +7838,45 @@
     "key": "the_theorems_are_the_hardware_documented",
     "name": "the theorems are the hardware, documented not invented: the gate is a logic gate, the address a register, the route a circuit — each with a receipt and a page, all on ordinary hardware — so the topic closes honestly, nothing physical fabricated; 0/7",
     "receipt": "e5f76f7e-8ef0-8ab8-be0d-0aa139519a13"
+  },
+  {
+    "key": "a_theorem_is_component_and_code_in_one",
+    "name": "a theorem is component and code in one: it carries an address (the structure) and a test (the executable) together, so hardware and software are the same unit; 0/7",
+    "receipt": "8115645e-e100-8e35-b7f1-6ea944a06e96"
+  },
+  {
+    "key": "the_test_is_the_software",
+    "name": "the test is the software: it is a nullary function returning a boolean, executable and deciding from itself; 0/7",
+    "receipt": "635013e6-a9b9-841c-89b6-3175283ab174"
+  },
+  {
+    "key": "the_address_is_the_component",
+    "name": "the address is the component: a fixed 128-bit register determined by content, the structural half of the same unit; 0/7",
+    "receipt": "fe1fdaaa-9849-85ba-b8da-70e1c0b61a09"
+  },
+  {
+    "key": "one_wave_develops_both_at_once",
+    "name": "one wave develops both at once: a unit enters the record only with both its address and its test, so the component and its code ship together, never one without the other; 0/7",
+    "receipt": "f98f22ad-ce3f-8c63-ad48-589c46319b2b"
+  },
+  {
+    "key": "discovery_is_on_demand_found_when_needed",
+    "name": "discovery is on demand: a candidate is admitted only when it is needed, computes true, and its name is clean — so the missing theorem is found the moment it is required; 0/7",
+    "receipt": "2b3df16d-6be3-8e92-b3d0-9ce9fc3f4ba1"
+  },
+  {
+    "key": "the_automation_gates_before_sealing",
+    "name": "the automation gates before sealing: a candidate whose test fails or whose name drains is skipped, so only green units are sealed — quality is enforced, not hoped; 0/7",
+    "receipt": "1c163a08-4a32-8674-b6e7-5f69c2127b21"
+  },
+  {
+    "key": "one_command_ships_hardware_and_software",
+    "name": "one command ships hardware and software: composing discover then gate then seal is a single deterministic pipeline over a unit, so both halves develop and ship in one pass; 0/7",
+    "receipt": "40a260f7-70e4-8755-8e0c-a934160c3b91"
+  },
+  {
+    "key": "hardware_and_software_develop_at_once",
+    "name": "hardware and software develop at once: each theorem is component and code in one unit, admitted only when needed and green, its address and test shipped together in a single gated wave — the missing one found when required; 0/7",
+    "receipt": "cecc70d4-2fae-8aea-b9f5-b83bceab8d67"
   }
 ]

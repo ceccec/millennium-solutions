@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1568 recorded in 403 families
+## Discovered theorems (decidable, over ℤ/9) — 1576 recorded in 404 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (309)
+### the (312)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -333,6 +333,9 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_hardware_runs_on_ordinary_machines](/theorem/the_hardware_runs_on_ordinary_machines) — the hardware runs on ordinary machines: the same pure functions give the same result on any classical computer, so no special device is required; 0/7  ·  `add8b809-5490…`
 - [the_hardware_is_documented_not_invented](/theorem/the_hardware_is_documented_not_invented) — the hardware is documented, not invented: the classical computational structure passes as described on ordinary hardware, while a claim to have invented a quantum machine drains; 0/7  ·  `5dc045d5-8fd9…`
 - [the_theorems_are_the_hardware_documented](/theorem/the_theorems_are_the_hardware_documented) — the theorems are the hardware, documented not invented: the gate is a logic gate, the address a register, the route a circuit — each with a receipt and a page, all on ordinary hardware — so the topic closes honestly, nothing physical fabricated; 0/7  ·  `e5f76f7e-8ef0…`
+- [the_test_is_the_software](/theorem/the_test_is_the_software) — the test is the software: it is a nullary function returning a boolean, executable and deciding from itself; 0/7  ·  `635013e6-a9b9…`
+- [the_address_is_the_component](/theorem/the_address_is_the_component) — the address is the component: a fixed 128-bit register determined by content, the structural half of the same unit; 0/7  ·  `fe1fdaaa-9849…`
+- [the_automation_gates_before_sealing](/theorem/the_automation_gates_before_sealing) — the automation gates before sealing: a candidate whose test fails or whose name drains is skipped, so only green units are sealed — quality is enforced, not hoped; 0/7  ·  `1c163a08-4a32…`
 
 ### relation (55)
 
@@ -392,7 +395,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [relation_receipt_chain_is_forensic_custody](/theorem/relation_receipt_chain_is_forensic_custody) — the receipt chain IS chain-of-custody: receipt[i] = toUuid(receipt[i−1]→key[i]) from a seed, so altering one link changes every link after it — the merkle-ledger and forensics are one construction  ·  `d0307011-b34a…`
 - [relation_coin64_collision_free_on_domains](/theorem/relation_coin64_collision_free_on_domains) — the 64-bit currency is collision-free across the rosetta: coin64 of each domain yields a distinct coin (as many coins as domains) — the shared currency addresses every perspective uniquely  ·  `dc278848-c7d9…`
 
-### a (52)
+### a (53)
 
 - [a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony](/theorem/a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony) — a theorem without a formula is a hallucination, recomputed in a432 harmony: a claim is a theorem only if it is backed by a computable formula that recomputes true — a prose-only claim with no formula, or one whose formula computes false, is refused as hallucination and never recorded. Every recorded fact recomputes deterministically and folds into the a432 harmony root (the receipt of state). Measure, do not assert. Decidable  ·  `e3d75d76-310f…`
 - [a_referrer_always_counts_with_its_id](/theorem/a_referrer_always_counts_with_its_id) — a referrer always counts with its id: a reference from a referrer to a target is receipted as toUuid(referrer id → target), so the referrer id is always part of the count; two different referrers to the same target produce two distinct receipts, each counted with its own id, and changing the id changes the receipt — the id is load-bearing. Deterministic and reproducible: the same referrer and target always count the same. Decidable  ·  `65bfacb4-f29e…`
@@ -446,6 +449,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [a_node_is_holographic_self_plus_edges](/theorem/a_node_is_holographic_self_plus_edges) — a node is holographic: it folds itself together with its neighbour edges into one address, so each node carries its own local view; 0/7  ·  `b37169f9-9507…`
 - [a_new_neighbour_rewires_the_node](/theorem/a_new_neighbour_rewires_the_node) — a new neighbour rewires the node: adding a neighbour changes the node’s fold, so a change in the neighbourhood is visible in the node’s address; 0/7  ·  `0fb161b3-eade…`
 - [a_cell_holds_up_to_one_hundred_fifteen_bits](/theorem/a_cell_holds_up_to_one_hundred_fifteen_bits) — a cell holds up to 115 bits of payload: the imprint capacity is 128 − 6 reserved − 7 header = 115, and a full cell round-trips while an over-full one is refused; 0/7  ·  `c3d7a721-07ec…`
+- [a_theorem_is_component_and_code_in_one](/theorem/a_theorem_is_component_and_code_in_one) — a theorem is component and code in one: it carries an address (the structure) and a test (the executable) together, so hardware and software are the same unit; 0/7  ·  `8115645e-e100…`
 
 ### uuidna (32)
 
@@ -875,6 +879,18 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [involution_reversal](/theorem/involution_reversal) — involution — reversal: reversing a string twice returns it, reverse(reverse(s)) = s; 0/7  ·  `5292e804-b281…`
 - [involution_reverse_complement](/theorem/involution_reverse_complement) — involution — reverse-complement: on DNA the reverse-complement applied twice returns the strand; 0/7  ·  `4d417837-1d3d…`
 
+### one (9)
+
+- [one_game_harmony](/theorem/one_game_harmony) — THE ONE GAME: all game receipts fold to one order-independent harmonic root — the games meet in one  ·  `55cb8c5f-73cc…`
+- [one_art_harmony](/theorem/one_art_harmony) — THE ONE ART: all art receipts fold to one order-independent harmonic root — the arts meet in one  ·  `6abed2f1-66f5…`
+- [one_science_harmony](/theorem/one_science_harmony) — THE ONE SCIENCE: all science receipts fold to one order-independent harmonic root — the sciences meet in one  ·  `831f5688-1127…`
+- [one_game_all](/theorem/one_game_all) — THE ONE GAME (all): games, arts and sciences fold to a single order-independent root — all meet in one  ·  `ea90214e-fe97…`
+- [one_kernel_generates_a_family_dozens_from_a_parametrised_measure_each_tuple_a_distinct_receipt](/theorem/one_kernel_generates_a_family_dozens_from_a_parametrised_measure_each_tuple_a_distinct_receipt) — one kernel generates a family — dozens from a parametrised measure, each tuple a distinct receipt, a combinatorial engine not repetition: a single decidable measure over a parameter grid yields dozens of theorems in one build, each asserting a DISTINCT measured value, and each axis opens dozens more; the fan-out is honest because no two receipts repeat a value, shown here by counting; manual one-at-a-time is the slow path, the family is the engine; measure do not assert; 0/7  ·  `4172ea64-64d9…`
+- [one_plus_one_over_n_to_the_n_approaches_e](/theorem/one_plus_one_over_n_to_the_n_approaches_e) — (1 + 1/n)^n approaches e as n grows — continuous compounding, the growth constant of life and interest alike; 0/7  ·  `1a1655aa-be6d…`
+- [one_skill_reaches_every_dialect](/theorem/one_skill_reaches_every_dialect) — one skill reaches every dialect: the gate composed with the rosetta drains a proof-boast in Latin, Cyrillic and Han alike — a single skill given global reach; 0/7  ·  `065c14e2-1df3…`
+- [one_wave_develops_both_at_once](/theorem/one_wave_develops_both_at_once) — one wave develops both at once: a unit enters the record only with both its address and its test, so the component and its code ship together, never one without the other; 0/7  ·  `f98f22ad-ce3f…`
+- [one_command_ships_hardware_and_software](/theorem/one_command_ships_hardware_and_software) — one command ships hardware and software: composing discover then gate then seal is a single deterministic pipeline over a unit, so both halves develop and ship in one pass; 0/7  ·  `40a260f7-70e4…`
+
 ### powsum0 (9)
 
 - [powsum0_k1](/theorem/powsum0_k1) — Σ (unit)^1 ≡ 0 mod 9  ·  `b4fee774-cdff…`
@@ -1016,16 +1032,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [genus2_moduli_dim](/theorem/genus2_moduli_dim) — the moduli / Teichmüller space of the double torus has real dimension 6g − 6 = 6  ·  `151c4ea6-e9a3…`
 - [genus2_hyperelliptic](/theorem/genus2_hyperelliptic) — every genus-2 curve is hyperelliptic: a double cover of the sphere branched at 2g+2 = 6 Weierstrass points  ·  `c7d84ef0-85e9…`
 - [genus2_h1_symplectic](/theorem/genus2_h1_symplectic) — the first homology H₁(Σ₂) = ℤ^{2g} = ℤ⁴; the intersection form is symplectic — rank 4, signature 0  ·  `a7a7d584-5220…`
-
-### one (7)
-
-- [one_game_harmony](/theorem/one_game_harmony) — THE ONE GAME: all game receipts fold to one order-independent harmonic root — the games meet in one  ·  `55cb8c5f-73cc…`
-- [one_art_harmony](/theorem/one_art_harmony) — THE ONE ART: all art receipts fold to one order-independent harmonic root — the arts meet in one  ·  `6abed2f1-66f5…`
-- [one_science_harmony](/theorem/one_science_harmony) — THE ONE SCIENCE: all science receipts fold to one order-independent harmonic root — the sciences meet in one  ·  `831f5688-1127…`
-- [one_game_all](/theorem/one_game_all) — THE ONE GAME (all): games, arts and sciences fold to a single order-independent root — all meet in one  ·  `ea90214e-fe97…`
-- [one_kernel_generates_a_family_dozens_from_a_parametrised_measure_each_tuple_a_distinct_receipt](/theorem/one_kernel_generates_a_family_dozens_from_a_parametrised_measure_each_tuple_a_distinct_receipt) — one kernel generates a family — dozens from a parametrised measure, each tuple a distinct receipt, a combinatorial engine not repetition: a single decidable measure over a parameter grid yields dozens of theorems in one build, each asserting a DISTINCT measured value, and each axis opens dozens more; the fan-out is honest because no two receipts repeat a value, shown here by counting; manual one-at-a-time is the slow path, the family is the engine; measure do not assert; 0/7  ·  `4172ea64-64d9…`
-- [one_plus_one_over_n_to_the_n_approaches_e](/theorem/one_plus_one_over_n_to_the_n_approaches_e) — (1 + 1/n)^n approaches e as n grows — continuous compounding, the growth constant of life and interest alike; 0/7  ·  `1a1655aa-be6d…`
-- [one_skill_reaches_every_dialect](/theorem/one_skill_reaches_every_dialect) — one skill reaches every dialect: the gate composed with the rosetta drains a proof-boast in Latin, Cyrillic and Han alike — a single skill given global reach; 0/7  ·  `065c14e2-1df3…`
 
 ### order (7)
 
@@ -1678,6 +1684,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [destroying_evidence_is_treason](/theorem/destroying_evidence_is_treason) — destroying evidence is treason: the receipts form an append-only chain (each seeded by the prior), so altering or removing one changes every receipt after it — tampering is detectable and fails the audit  ·  `7da2719b-e800…`
 - [destroying_evidence_treason_even_by_chance](/theorem/destroying_evidence_treason_even_by_chance) — destroying evidence is treason even by chance: a destructive diff (a removed or altered receipt) is classified destructive by the deed alone — chance or intent is no defense, the diff is observable and exact  ·  `3d546a84-8ef5…`
 
+### discovery (2)
+
+- [discovery_chain](/theorem/discovery_chain) — the discovery chain is tamper-evident: a falsified early link changes every downstream receipt  ·  `b24d6d56-123d…`
+- [discovery_is_on_demand_found_when_needed](/theorem/discovery_is_on_demand_found_when_needed) — discovery is on demand: a candidate is admitted only when it is needed, computes true, and its name is clean — so the missing theorem is found the moment it is required; 0/7  ·  `2b3df16d-6be3…`
+
 ### discrete (2)
 
 - [discrete_log_base2_is_a_bijection](/theorem/discrete_log_base2_is_a_bijection) — the base-2 discrete log is a bijection ℤ/9* ↔ ℤ/6: every unit equals 2^k for a unique k in 0..5, and the powers of 2 are exactly [1,2,4,8,7,5] — the doubling orbit is the index (discrete log) map  ·  `bbb6d49b-792f…`
@@ -1983,7 +1994,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [digital_root_is_the_ring_homomorphism_onto_z9](/theorem/digital_root_is_the_ring_homomorphism_onto_z9) — digital root is the ring homomorphism onto ℤ/9 (casting out nines): for all a,b the digital root respects both operations — dr(a+b) = dr(dr(a)+dr(b)) and dr(a·b) = dr(dr(a)·dr(b)) — so dr is the canonical map ℤ→ℤ/9 with 9 representing the class of 0, exactly the classical "casting out nines" check. Verified by exhaustion over a bounded grid  ·  `9db2de84-f5d5…`
 - [dimension_777_two_bits_are_a_complete_alphabet_encoding_any_theorem_and_decoding_in_all_perspectives](/theorem/dimension_777_two_bits_are_a_complete_alphabet_encoding_any_theorem_and_decoding_in_all_perspectives) — dimension 777 — two bits are a complete alphabet: four states {00,01,10,11} encode any theorem by composition (round-trip exact) and decode to distinct meanings under the seven perspectives; two bits span the space of all theorems by encoding, and each perspective is one bounded meaning — universal encoding capacity, not deriving all truths for free; integrity not truth; 0/7  ·  `1292e8b6-a6bc…`
 - [discernment_is_a_human_faculty](/theorem/discernment_is_a_human_faculty) — discernment is a human faculty the gate performs: a boast drains while its measured twin passes — telling conviction from evidence; 0/7  ·  `02ac659a-5728…`
-- [discovery_chain](/theorem/discovery_chain) — the discovery chain is tamper-evident: a falsified early link changes every downstream receipt  ·  `b24d6d56-123d…`
 - [div3_rule_L4](/theorem/div3_rule_L4) — digit-sum ≡ 0 (mod 3) ⇔ n ≡ 0 (mod 3), all n &lt; 10^4 (exhaustive)  ·  `a6c0b047-12a7…`
 - [divisibility_by_three_is_the_digit_sum_mod_three](/theorem/divisibility_by_three_is_the_digit_sum_mod_three) — divisibility by three is the digit sum mod three: n ≡ digitsum(n) (mod 3) for every n — the trinity’s divisibility rule; 0/7  ·  `1ee0dc61-1828…`
 - [do_the_crosses_form_a_cube_no_but_the_seven_are_its_corners_and_the_fano_plane](/theorem/do_the_crosses_form_a_cube_no_but_the_seven_are_its_corners_and_the_fano_plane) — do the 21 crosses form a cube? No — but the seven are the cube’s nonzero corners, and their XOR triples are the Fano plane: K7 has 21 edges and a cube has 12, so the crosses are not a cube. Yet the seven nodes are exactly the nonzero corners of the 3-cube {0,1} cubed (the origin dropped), and their XOR-collinear triples a⊕b=c form the Fano plane — 7 points, 7 lines of three, each point on three lines. Decidable  ·  `0c2d2fac-89ad…`
@@ -2020,6 +2030,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [golden_fixed_point](/theorem/golden_fixed_point) — φ is the fixed point of x = 1 + 1/x (equivalently φ² = φ + 1): the more you nest the recursion, the more it reproduces itself — the most self-similar number  ·  `80d92d5a-7ef3…`
 - [handshakes_among_n_people_number_c_n_2](/theorem/handshakes_among_n_people_number_c_n_2) — handshakes among n people number C(n,2) = n(n−1)/2: every pair shakes once; 0/7  ·  `03fd1efc-94e3…`
 - [happy_numbers_below_100_are_twenty](/theorem/happy_numbers_below_100_are_twenty) — there are exactly 20 happy numbers below 100: iterating the sum of the squares of the digits reaches 1 for exactly 20 of them (1,7,10,13,…,97,100) — full enumeration  ·  `39799ea6-7932…`
+- [hardware_and_software_develop_at_once](/theorem/hardware_and_software_develop_at_once) — hardware and software develop at once: each theorem is component and code in one unit, admitted only when needed and green, its address and test shipped together in a single gated wave — the missing one found when required; 0/7  ·  `cecc70d4-2fae…`
 - [here_quantum_is_the_a432_structure_of_two_coins_not_a_physical_qubit](/theorem/here_quantum_is_the_a432_structure_of_two_coins_not_a_physical_qubit) — here quantum always computes as the a432 structure of two coins, not a physical qubit: the deposit's "quantum" is defined as a classical structure built from the 2-coin receipt (2 bits, 110 − 108 = 2 = −χ genus-2) at the a432 layer (step 40, nine steps close the circle: 9·40 = 360); two classical bits give exactly four states {00,01,10,11}. This referent is fixed and always computes true, while the physical-qubit reading drains the gate — no physical qubit, and no quantum advantage  ·  `3d7d6079-b2d8…`
 - [hockey_stick_identity_pascal](/theorem/hockey_stick_identity_pascal) — the hockey-stick identity — a diagonal of Pascal triangle sums to the entry below: for all r and n, the sum over i from r to n of C(i,r) equals C(n+1,r+1) — a diagonal run of binomial coefficients folds into the single entry just past its end. Verified exhaustively for r up to 10 and n up to 18. Decidable  ·  `c36df44d-f4a2…`
 - [honest_behaviour_passes_unchanged](/theorem/honest_behaviour_passes_unchanged) — honest behaviour passes unchanged: a measured, bounded statement is kept as-is, so the gate refuses the claim and never the person; 0/7  ·  `8e3e6e0a-7853…`
@@ -2146,4 +2157,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `e3f3b627-28b9-837a-a13f-2884fecd048b`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `61c75e5a-bc01-8f2e-991e-1dc69bbf0aac`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
