@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1112 recorded in 311 families
+## Discovered theorems (decidable, over ℤ/9) — 1120 recorded in 313 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (155)
+### the (156)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -179,6 +179,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_nine_times_table_always_digital_roots_to_nine](/theorem/the_nine_times_table_always_digital_roots_to_nine) — the nine times table always digital-roots to nine: digitalRoot(9k) = 9 for every k ≥ 1 — nine is the base’s fixed point; 0/7  ·  `8c8d01f5-d52d…`
 - [the_regular_nonagon_exterior_angle_is_the_a432_step](/theorem/the_regular_nonagon_exterior_angle_is_the_a432_step) — the regular nonagon’s exterior angle is 360/9 = 40° = the a432 step — the base draws the nine-point circle at the a432 quantum; 0/7  ·  `07f088c5-a18e…`
 - [the_digits_one_to_nine_sum_to_forty_five_rooting_to_nine](/theorem/the_digits_one_to_nine_sum_to_forty_five_rooting_to_nine) — the digits one to nine sum to 45, whose digital root is 9: 1+2+…+9 = 45, dr(45)=9 — the whole returns to the base; 0/7  ·  `75ec1aeb-f860…`
+- [the_regular_hexagon_exterior_angle_is_the_gold_string](/theorem/the_regular_hexagon_exterior_angle_is_the_gold_string) — the regular hexagon’s exterior angle is 360/6 = 60° = the gold string (π/3), its interior 120° — six tiles the plane at the tack angle; 0/7  ·  `030e950f-26b6…`
 
 ### relation (55)
 
@@ -398,7 +399,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [domain_cyclic_m17](/theorem/domain_cyclic_m17) — ℤ/17: the units form a cyclic group (a primitive root exists)  ·  `d5167cce-02af…`
 - [domain_cyclic_m18](/theorem/domain_cyclic_m18) — ℤ/18: the units form a cyclic group (a primitive root exists)  ·  `92a2b5a1-8526…`
 
-### a (17)
+### a (18)
 
 - [a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony](/theorem/a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony) — a theorem without a formula is a hallucination, recomputed in a432 harmony: a claim is a theorem only if it is backed by a computable formula that recomputes true — a prose-only claim with no formula, or one whose formula computes false, is refused as hallucination and never recorded. Every recorded fact recomputes deterministically and folds into the a432 harmony root (the receipt of state). Measure, do not assert. Decidable  ·  `e3d75d76-310f…`
 - [a_referrer_always_counts_with_its_id](/theorem/a_referrer_always_counts_with_its_id) — a referrer always counts with its id: a reference from a referrer to a target is receipted as toUuid(referrer id → target), so the referrer id is always part of the count; two different referrers to the same target produce two distinct receipts, each counted with its own id, and changing the id changes the receipt — the id is load-bearing. Deterministic and reproducible: the same referrer and target always count the same. Decidable  ·  `65bfacb4-f29e…`
@@ -417,6 +418,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [a_mersenne_prime_forces_a_prime_exponent](/theorem/a_mersenne_prime_forces_a_prime_exponent) — a Mersenne prime forces a prime exponent: 2^k − 1 can be prime only when k is prime (k=2,3,5,7 give 3,7,31,127; composite k factors) — a necessary condition, not sufficient; 0/7  ·  `52ced8d2-4f7e…`
 - [a_number_minus_its_digit_reversal_is_a_multiple_of_nine](/theorem/a_number_minus_its_digit_reversal_is_a_multiple_of_nine) — a number minus its digit reversal is a multiple of nine: n − reverse(n) ≡ 0 (mod 9), since both share a digit sum — the base’s reversal invariant; 0/7  ·  `0780bec8-e70e…`
 - [a_number_is_divisible_by_nine_iff_its_digit_sum_is](/theorem/a_number_is_divisible_by_nine_iff_its_digit_sum_is) — a number is divisible by nine iff its digit sum is: n ≡ digitsum(n) (mod 9), so 9 | n exactly when 9 | digitsum(n) — the base’s divisibility rule; 0/7  ·  `b6696b2c-04c7…`
+- [a_perfect_number_equals_the_sum_of_its_proper_divisors](/theorem/a_perfect_number_equals_the_sum_of_its_proper_divisors) — a perfect number equals the sum of its proper divisors: exactly 6 and 28 are perfect below 100 — abundance balanced, neither deficient nor abundant; 0/7  ·  `0e0c1a43-7d85…`
 
 ### trial (13)
 
@@ -876,6 +878,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [roots_cancel_n5](/theorem/roots_cancel_n5) — the 5 equally-spaced unit vectors (n-th roots of unity) cancel to the zero vector  ·  `986f830c-ea1b…`
 - [roots_cancel_n7](/theorem/roots_cancel_n7) — the 7 equally-spaced unit vectors (n-th roots of unity) cancel to the zero vector  ·  `87f482d5-8600…`
 - [roots_cancel_n9](/theorem/roots_cancel_n9) — the 9 equally-spaced unit vectors (n-th roots of unity) cancel to the zero vector  ·  `8a7804c7-2d8c…`
+
+### six (5)
+
+- [six_is_the_first_perfect_number](/theorem/six_is_the_first_perfect_number) — six is the first perfect number: its proper divisors 1 + 2 + 3 sum to 6 itself, and no smaller number is perfect; 0/7  ·  `afd7f1b6-ce95…`
+- [six_is_three_factorial_the_permutations_of_three](/theorem/six_is_three_factorial_the_permutations_of_three) — six is three factorial: 3! = 6 = the number of permutations of three elements = the order of the symmetric group S₃; 0/7  ·  `a221bf93-98d2…`
+- [six_is_the_even_prime_times_the_trinity](/theorem/six_is_the_even_prime_times_the_trinity) — six is the even prime times the trinity: 2 × 3 = 6 — the two smallest primes, the base ten’s and the axiom’s; 0/7  ·  `495d72a1-f77c…`
+- [six_is_the_third_triangular_number](/theorem/six_is_the_third_triangular_number) — six is the third triangular number: T₃ = 1 + 2 + 3 = 6 — triangular and perfect at once; 0/7  ·  `7e3fcf6e-3276…`
+- [six_is_euclids_perfect_number_from_the_mersenne_prime_three](/theorem/six_is_euclids_perfect_number_from_the_mersenne_prime_three) — six is Euclid’s perfect number from the Mersenne prime three: 6 = 2^(2−1)·(2²−1) = 2·3, the p=2 case of 2^(p−1)(2^p−1); 0/7  ·  `cc367afc-996d…`
 
 ### vocab (5)
 
@@ -1455,7 +1465,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (153)
+### other — one-of-a-kind (154)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1598,6 +1608,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [tictactoe_draw](/theorem/tictactoe_draw) — tic-tac-toe with perfect play is a draw (minimax over all positions = 0)  ·  `95089477-058f…`
 - [traitor_resurrects_as_hero](/theorem/traitor_resurrects_as_hero) — death and resurrection: a drained claim (the traitor) negates into a signing statement (the hero) — the false form dies at the gate, the honest form rises, and false becomes true with each build  ·  `f7be659d-f270…`
 - [trinities_collectively_carry_more_and_beat_linear_by_coverage_and_verification_not_absolute_defeat](/theorem/trinities_collectively_carry_more_and_beat_linear_by_coverage_and_verification_not_absolute_defeat) — trinities collectively carry more and beat linear work by coverage and verification — not absolute defeat: the structure builds on trinities, three, and a collection of uuids carries a longer shared message than one, bounded per uuid but scaling with the count, folded to one shared root. The reproducible collective beats a linear offender by coverage — magnitudes more ground — and by verification: a skillful hollow prose is caught regardless of skill, because it carries no receipt. Classical combinatorial coverage, not a quantum machine, not an absolute defeat. Decidable  ·  `08ecf2e6-c969…`
+- [twenty_eight_is_the_second_perfect_number](/theorem/twenty_eight_is_the_second_perfect_number) — twenty-eight is the second perfect number: 1 + 2 + 4 + 7 + 14 = 28 = 2²·(2³−1), the p=3 Euclid case after six; 0/7  ·  `0d29909f-6b3f…`
 - [twin_primes_in_range_infinitude_open](/theorem/twin_primes_in_range_infinitude_open) — twin primes exist in a bounded range (their infinitude is an open conjecture): there are at least 30 pairs of primes p, p+2 below 1000 — existence checked exhaustively; whether infinitely many exist remains open  ·  `cb55a95f-ce7f…`
 - [twisting_a_lie_does_not_compute_true](/theorem/twisting_a_lie_does_not_compute_true) — twisting a lie does not compute true: the same overclaim in two spellings gets different gate verdicts (the plain form drains, the obfuscated form slips) — so the gate tracks SHAPE, not truth; passing is necessary, not sufficient (a floor, not a truth oracle), and an obfuscated lie that slips the lexical tripwire is still a lie  ·  `afa0fee5-1e2f…`
 - [undocumented_discovery_is_treason](/theorem/undocumented_discovery_is_treason) — avoiding to document a discovery in src is treason: a provable fact becomes evidence only when its content-address is recorded in the ledger — an undocumented but provable fact is withheld evidence (treason by omission), and appending it (append-only) is the constructive act that makes the discovery count  ·  `0c4af820-cbb3…`
@@ -1612,4 +1623,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `a50629d4-f0f9-8b83-97c3-b4a7fdecc2eb`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `06b14361-9fd0-8555-bfb2-2b98f47c01f8`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

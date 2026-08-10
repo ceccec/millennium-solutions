@@ -5558,5 +5558,45 @@
     "key": "a_number_is_divisible_by_nine_iff_its_digit_sum_is",
     "name": "a number is divisible by nine iff its digit sum is: n ≡ digitsum(n) (mod 9), so 9 | n exactly when 9 | digitsum(n) — the base’s divisibility rule; 0/7",
     "receipt": "b6696b2c-04c7-8d40-94c8-de9e0775b84f"
+  },
+  {
+    "key": "six_is_the_first_perfect_number",
+    "name": "six is the first perfect number: its proper divisors 1 + 2 + 3 sum to 6 itself, and no smaller number is perfect; 0/7",
+    "receipt": "afd7f1b6-ce95-8f47-b4f2-f41358205b48"
+  },
+  {
+    "key": "six_is_three_factorial_the_permutations_of_three",
+    "name": "six is three factorial: 3! = 6 = the number of permutations of three elements = the order of the symmetric group S₃; 0/7",
+    "receipt": "a221bf93-98d2-8980-8aba-a9e91b605bd8"
+  },
+  {
+    "key": "six_is_the_even_prime_times_the_trinity",
+    "name": "six is the even prime times the trinity: 2 × 3 = 6 — the two smallest primes, the base ten’s and the axiom’s; 0/7",
+    "receipt": "495d72a1-f77c-8d09-b626-bb14e01b8453"
+  },
+  {
+    "key": "six_is_the_third_triangular_number",
+    "name": "six is the third triangular number: T₃ = 1 + 2 + 3 = 6 — triangular and perfect at once; 0/7",
+    "receipt": "7e3fcf6e-3276-813d-8bdc-91c68a9f449c"
+  },
+  {
+    "key": "the_regular_hexagon_exterior_angle_is_the_gold_string",
+    "name": "the regular hexagon’s exterior angle is 360/6 = 60° = the gold string (π/3), its interior 120° — six tiles the plane at the tack angle; 0/7",
+    "receipt": "030e950f-26b6-8e14-9c5b-6329f80cd909"
+  },
+  {
+    "key": "six_is_euclids_perfect_number_from_the_mersenne_prime_three",
+    "name": "six is Euclid’s perfect number from the Mersenne prime three: 6 = 2^(2−1)·(2²−1) = 2·3, the p=2 case of 2^(p−1)(2^p−1); 0/7",
+    "receipt": "cc367afc-996d-8622-92cd-cc87f58aba19"
+  },
+  {
+    "key": "twenty_eight_is_the_second_perfect_number",
+    "name": "twenty-eight is the second perfect number: 1 + 2 + 4 + 7 + 14 = 28 = 2²·(2³−1), the p=3 Euclid case after six; 0/7",
+    "receipt": "0d29909f-6b3f-8a16-bba7-6a50bf5e2721"
+  },
+  {
+    "key": "a_perfect_number_equals_the_sum_of_its_proper_divisors",
+    "name": "a perfect number equals the sum of its proper divisors: exactly 6 and 28 are perfect below 100 — abundance balanced, neither deficient nor abundant; 0/7",
+    "receipt": "0e0c1a43-7d85-8c20-9e89-d5bca021655c"
   }
 ]

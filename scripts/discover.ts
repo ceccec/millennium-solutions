@@ -2931,6 +2931,19 @@ function generated(): typeof curated {
     out.push({ key: 'nine_is_the_base_and_the_trinity_squared', name: 'nine is the base and the trinity squared: BASE = 9 = 3² = TRINITY², so the units, triad and orbit all derive from the single axiom three; 0/7', test: () => BASE === 9 && BASE === TRINITY ** 2 && TRINITY === 3 })
     out.push({ key: 'a_number_is_divisible_by_nine_iff_its_digit_sum_is', name: 'a number is divisible by nine iff its digit sum is: n ≡ digitsum(n) (mod 9), so 9 | n exactly when 9 | digitsum(n) — the base’s divisibility rule; 0/7', test: () => { for (let n = 1; n <= 1000; n++) if ((n % 9 === 0) !== (ds(n) % 9 === 0)) return false; return true } })
   }
+  // ── the perfect six (6 = 1+2+3): perfect numbers, 3! = |S₃|, the hexagon at the gold string 60°.
+  {
+    const properSum = (n: number) => { let s = 0; for (let d = 1; d < n; d++) if (n % d === 0) s += d; return s }
+    const fact = (n: number) => { let f = 1; for (let i = 2; i <= n; i++) f *= i; return f }
+    out.push({ key: 'six_is_the_first_perfect_number', name: 'six is the first perfect number: its proper divisors 1 + 2 + 3 sum to 6 itself, and no smaller number is perfect; 0/7', test: () => { if (properSum(6) !== 6) return false; for (let n = 2; n < 6; n++) if (properSum(n) === n) return false; return true } })
+    out.push({ key: 'six_is_three_factorial_the_permutations_of_three', name: 'six is three factorial: 3! = 6 = the number of permutations of three elements = the order of the symmetric group S₃; 0/7', test: () => fact(3) === 6 })
+    out.push({ key: 'six_is_the_even_prime_times_the_trinity', name: 'six is the even prime times the trinity: 2 × 3 = 6 — the two smallest primes, the base ten’s and the axiom’s; 0/7', test: () => 2 * 3 === 6 && isPrime(2) && isPrime(3) })
+    out.push({ key: 'six_is_the_third_triangular_number', name: 'six is the third triangular number: T₃ = 1 + 2 + 3 = 6 — triangular and perfect at once; 0/7', test: () => { let t = 0; for (let i = 1; i <= 3; i++) t += i; return t === 6 } })
+    out.push({ key: 'the_regular_hexagon_exterior_angle_is_the_gold_string', name: 'the regular hexagon’s exterior angle is 360/6 = 60° = the gold string (π/3), its interior 120° — six tiles the plane at the tack angle; 0/7', test: () => 360 / 6 === 60 && 180 - 60 === 120 })
+    out.push({ key: 'six_is_euclids_perfect_number_from_the_mersenne_prime_three', name: 'six is Euclid’s perfect number from the Mersenne prime three: 6 = 2^(2−1)·(2²−1) = 2·3, the p=2 case of 2^(p−1)(2^p−1); 0/7', test: () => { const p = 2; return 2 ** (p - 1) * (2 ** p - 1) === 6 && isPrime(2 ** p - 1) } })
+    out.push({ key: 'twenty_eight_is_the_second_perfect_number', name: 'twenty-eight is the second perfect number: 1 + 2 + 4 + 7 + 14 = 28 = 2²·(2³−1), the p=3 Euclid case after six; 0/7', test: () => properSum(28) === 28 && 2 ** 2 * (2 ** 3 - 1) === 28 && isPrime(2 ** 3 - 1) })
+    out.push({ key: 'a_perfect_number_equals_the_sum_of_its_proper_divisors', name: 'a perfect number equals the sum of its proper divisors: exactly 6 and 28 are perfect below 100 — abundance balanced, neither deficient nor abundant; 0/7', test: () => { const ps: number[] = []; for (let n = 2; n < 100; n++) if (properSum(n) === n) ps.push(n); return ps.join(',') === '6,28' } })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
