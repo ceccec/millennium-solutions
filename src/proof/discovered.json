@@ -7958,5 +7958,35 @@
     "key": "intentions_are_shown_by_receipts_not_role",
     "name": "intentions are shown by receipts, not by role: a deed leaves a content-addressed receipt anyone can recompute, so intent is demonstrated by what was done, not granted by a permission; 0/7",
     "receipt": "608670b2-aebe-8370-8771-320358898684"
+  },
+  {
+    "key": "the_sequence_chunks_into_uniform_octaves",
+    "name": "the sequence chunks into uniform octaves: split into groups of eight, sixteen entries make exactly two full chunks, each the same size; 0/7",
+    "receipt": "16388141-a8ae-8e20-94e2-b9576d5e9ec9"
+  },
+  {
+    "key": "each_chunk_is_addressed_by_its_fold",
+    "name": "each chunk is addressed by its fold: a folder’s content-address is the merkle fold of its entries, deterministic and order-independent; 0/7",
+    "receipt": "08ecf928-b99d-8de2-af10-9eb96ef841fd"
+  },
+  {
+    "key": "the_folder_address_is_binary",
+    "name": "the folder address is binary: its 128-bit content-address reads as an integer, so a folder is named in exact binary, not by position; 0/7",
+    "receipt": "915a8158-b98a-84c5-9f35-4ddc0a4cd2fe"
+  },
+  {
+    "key": "the_chunks_navigate_as_one_map",
+    "name": "the chunks navigate as one map: the folder folds themselves fold to a single root, order-independent, so the whole store is one navigable address; 0/7",
+    "receipt": "04c8884e-9094-8350-ae53-aba94549037e"
+  },
+  {
+    "key": "each_theorem_is_a_superposition_of_readings",
+    "name": "each theorem is a superposition of readings: it can be read in algebra and other framings, yet all readings of the same content collapse to one address — many perspectives, one receipt; 0/7",
+    "receipt": "562f1352-07b7-82f0-8081-343fa49bb519"
+  },
+  {
+    "key": "the_map_is_complete_by_construction",
+    "name": "the map is complete by construction: every entry belongs to exactly one chunk and every chunk to the one root, so nothing is unaddressed; 0/7",
+    "receipt": "1e0178f5-62d0-8388-9afc-426806f02cf2"
   }
 ]
