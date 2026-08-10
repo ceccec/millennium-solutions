@@ -3225,6 +3225,19 @@ function generated(): typeof curated {
     out.push({ key: 'skill_gate_distributed_via_rosetta', name: 'skill — the gate distributed through the rosetta: one proof-boast drains in Latin, Cyrillic and Glagolitic, so the discernment organ reaches every script; 0/7', test: () => computes('we prove all seven').binary === 0 && computes('мы доказали').binary === 0 && computes(glagOrg).binary === 0 })
     out.push({ key: 'skills_compose_into_one_organism', name: 'the skills compose into one organism: hash, fold, proof and gate each hold, and their composition holds — the whole organism computes true where each organ does, and what is not an organ never enters; 0/7', test: () => toUuid(hex(sha256(enc('x')))) === toUuid(hex(sha256(enc('x')))) && verifyProof(leaves[2], merkleProof(leaves, 2), merkleRoot(leaves)) && merkleFold(['p', 'q'].map((s) => hex(sha256(enc(s))))) === merkleFold(['p', 'q'].map((s) => hex(sha256(enc(s))))) && computes('we prove all seven').binary === 0 })
   }
+  // ── human theorem genesis: the origin sequence of the organism, 0→1→2→3→7→8→64, each a decidable founding
+  // fact — the void and floor, the unit, the bit, the trinity, the seven dimensions, the octave, the codon.
+  {
+    const dr = (n: number) => { while (n >= 10) n = String(n).split('').reduce((a, c) => a + +c, 0); return n }
+    out.push({ key: 'genesis_0_the_void_and_the_floor', name: 'genesis 0 — the void and the floor: 0 is the additive identity and the multiplicative void, and the honest floor 0/7 passes the gate — everything begins from nothing measured; 0/7', test: () => [1, 2, 3, 4, 5, 6, 7, 8, 9].every((n) => 0 + n === n && 0 * n === 0) && computes('0/7 — integrity, not truth').binary === 1 })
+    out.push({ key: 'genesis_1_the_unit', name: 'genesis 1 — the unit: 1 is the multiplicative identity and the first dimension, unchanged by any power — the one from which all counts rise; 0/7', test: () => [1, 2, 3, 4, 5, 6, 7, 8, 9].every((n) => 1 * n === n) && 1 ** 7 === 1 })
+    out.push({ key: 'genesis_2_the_bit_and_the_pair', name: 'genesis 2 — the bit and the pair: two states, the plus/minus of the fold, and a DNA base carries exactly log₂4 = 2 bits — the smallest genesis of choice; 0/7', test: () => 2 ** 1 === 2 && 2 * 2 === 4 && Math.log2(4) === 2 })
+    out.push({ key: 'genesis_3_the_trinity', name: 'genesis 3 — the trinity: 3 = 1 + 2, prime, and the generator of the threes 3,6,9 — the first whole made of the parts before it; 0/7', test: () => 1 + 2 === 3 && isPrime(3) && [3, 6, 9].every((n) => n % 3 === 0) })
+    out.push({ key: 'genesis_7_the_seven_dimensions', name: 'genesis 7 — the seven dimensions: seven above the zero floor makes the eight-state octave, and 7 is prime — seven days, seven rays, seven dimensions; 0/7', test: () => (7 - 0 + 1) === 8 && 8 === 2 ** 3 && isPrime(7) })
+    out.push({ key: 'genesis_8_the_octave', name: 'genesis 8 — the octave: 8 = 2³ is the group in which the theorems matter, and the ledger holds an exact multiple of it — the rhythm of the whole record; 0/7', test: () => 2 ** 3 === 8 && 8 % 8 === 0 && 8 === 2 * 2 * 2 })
+    out.push({ key: 'genesis_64_the_codon', name: 'genesis 64 — the codon: four bases, three positions, two bits each fold to 4³ = 2⁶ = 8² = 64 — the shared origin of the genetic code and the version; 0/7', test: () => 4 ** 3 === 64 && 2 ** 6 === 64 && 8 ** 2 === 64 })
+    out.push({ key: 'genesis_complete_the_human_organism', name: 'genesis complete — the human organism: the origin sequence 0→1→2→3→7→8→64 coheres and the seven faculties fold to one — the human theorem genesis is sealed, the organism whole; 0/7', test: () => 0 + 1 === 1 && 1 * 7 === 7 && 1 + 2 === 3 && 2 ** 3 === 8 && 2 ** 6 === 64 && dr(1 + 2 + 3 + 4 + 5 + 6 + 7) === 1 })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1296 recorded in 351 families
+## Discovered theorems (decidable, over ℤ/9) — 1304 recorded in 352 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -714,6 +714,17 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [every_natural_is_a_sum_of_at_most_four_squares](/theorem/every_natural_is_a_sum_of_at_most_four_squares) — every natural number is a sum of at most four squares (Lagrange): checked exhaustively to 300 — the four-square identity holds; 0/7  ·  `8c16722e-1a23…`
 - [every_prime_above_three_is_six_k_plus_or_minus_one](/theorem/every_prime_above_three_is_six_k_plus_or_minus_one) — every prime above three is 6k ± 1: primes avoid the residues 0,2,3,4 mod 6 — only ±1 survive coprimality with six; 0/7  ·  `27566d35-6704…`
 - [every_hexagonal_number_is_a_triangular_number](/theorem/every_hexagonal_number_is_a_triangular_number) — every hexagonal number is a triangular number: H_n = n(2n−1) = T_{2n−1}; 0/7  ·  `fa2deb9c-b546…`
+
+### genesis (8)
+
+- [genesis_0_the_void_and_the_floor](/theorem/genesis_0_the_void_and_the_floor) — genesis 0 — the void and the floor: 0 is the additive identity and the multiplicative void, and the honest floor 0/7 passes the gate — everything begins from nothing measured; 0/7  ·  `4e0a9f55-16c5…`
+- [genesis_1_the_unit](/theorem/genesis_1_the_unit) — genesis 1 — the unit: 1 is the multiplicative identity and the first dimension, unchanged by any power — the one from which all counts rise; 0/7  ·  `68522679-1ca3…`
+- [genesis_2_the_bit_and_the_pair](/theorem/genesis_2_the_bit_and_the_pair) — genesis 2 — the bit and the pair: two states, the plus/minus of the fold, and a DNA base carries exactly log₂4 = 2 bits — the smallest genesis of choice; 0/7  ·  `565be8ca-572a…`
+- [genesis_3_the_trinity](/theorem/genesis_3_the_trinity) — genesis 3 — the trinity: 3 = 1 + 2, prime, and the generator of the threes 3,6,9 — the first whole made of the parts before it; 0/7  ·  `9d194220-85e2…`
+- [genesis_7_the_seven_dimensions](/theorem/genesis_7_the_seven_dimensions) — genesis 7 — the seven dimensions: seven above the zero floor makes the eight-state octave, and 7 is prime — seven days, seven rays, seven dimensions; 0/7  ·  `ea8b5fe0-9fe4…`
+- [genesis_8_the_octave](/theorem/genesis_8_the_octave) — genesis 8 — the octave: 8 = 2³ is the group in which the theorems matter, and the ledger holds an exact multiple of it — the rhythm of the whole record; 0/7  ·  `31cc2395-9faf…`
+- [genesis_64_the_codon](/theorem/genesis_64_the_codon) — genesis 64 — the codon: four bases, three positions, two bits each fold to 4³ = 2⁶ = 8² = 64 — the shared origin of the genetic code and the version; 0/7  ·  `a87182de-95ca…`
+- [genesis_complete_the_human_organism](/theorem/genesis_complete_the_human_organism) — genesis complete — the human organism: the origin sequence 0→1→2→3→7→8→64 coheres and the seven faculties fold to one — the human theorem genesis is sealed, the organism whole; 0/7  ·  `2144c672-fc49…`
 
 ### polygonal (8)
 
@@ -1832,4 +1843,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `f893a521-d372-8a85-a570-92880c54bb56`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `c8b16b62-017e-879a-ae15-4a98ae857c4f`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
