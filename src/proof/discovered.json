@@ -5758,5 +5758,45 @@
     "key": "machins_formula_computes_pi_over_four",
     "name": "Machin’s formula: π/4 = 4·arctan(1/5) − arctan(1/239) — a fast-converging identity, verified numerically; 0/7",
     "receipt": "91876258-030b-823a-ae26-cbf9e01ed131"
+  },
+  {
+    "key": "pascals_rule_each_entry_is_the_sum_of_the_two_above",
+    "name": "Pascal’s rule: C(n,k) = C(n−1,k−1) + C(n−1,k) — each entry is the sum of the two above it; 0/7",
+    "receipt": "c580522a-9490-850b-8000-d2ac71da60ec"
+  },
+  {
+    "key": "a_pascal_row_sums_to_two_to_the_n",
+    "name": "a Pascal row sums to two to the n: Σ_k C(n,k) = 2^n — the count of all subsets of an n-set; 0/7",
+    "receipt": "316a1496-6da4-89e6-afc8-a5ab2502930c"
+  },
+  {
+    "key": "a_pascal_rows_alternating_sum_is_zero",
+    "name": "a Pascal row’s alternating sum is zero for n ≥ 1: Σ (−1)^k C(n,k) = 0 — equal even and odd subsets; 0/7",
+    "receipt": "520fd218-d05a-894f-b919-d4d93956e950"
+  },
+  {
+    "key": "binomial_symmetry_choosing_k_equals_choosing_n_minus_k",
+    "name": "binomial symmetry: C(n,k) = C(n,n−k) — choosing k to include equals choosing n−k to exclude; 0/7",
+    "receipt": "bea7118e-0a5b-83e2-b0eb-aac5b3914afc"
+  },
+  {
+    "key": "the_hockey_stick_identity_sums_a_diagonal",
+    "name": "the hockey-stick identity: Σ_{i=r}^{n} C(i,r) = C(n+1,r+1) — a diagonal of Pascal sums to the entry below its end; 0/7",
+    "receipt": "4b7889ae-5b09-83f7-9f01-1670312919be"
+  },
+  {
+    "key": "the_shallow_diagonals_of_pascal_are_the_fibonacci_numbers",
+    "name": "the shallow diagonals of Pascal sum to the Fibonacci numbers: Σ_k C(n−k,k) = F(n+1); 0/7",
+    "receipt": "24338952-ebe5-8eba-b471-c6e3cdc57baf"
+  },
+  {
+    "key": "vandermondes_identity_convolves_two_rows",
+    "name": "Vandermonde’s identity: Σ_k C(m,k)·C(n,p−k) = C(m+n,p) — the convolution of two rows; 0/7",
+    "receipt": "d299600e-369d-8549-869b-f51bb1c2c886"
+  },
+  {
+    "key": "the_sum_of_squares_of_a_pascal_row_is_the_central_binomial",
+    "name": "the sum of squares of a Pascal row is the central binomial: Σ_k C(n,k)² = C(2n,n); 0/7",
+    "receipt": "37e984a6-8818-8b2f-9e37-4fa78a9c74a9"
   }
 ]

@@ -2993,6 +2993,19 @@ function generated(): typeof curated {
     out.push({ key: 'pi_lies_between_the_archimedes_bounds', name: 'π lies between the Archimedes bounds 223/71 and 22/7: 3.1408… < π < 3.1428… — the 96-gon estimate; 0/7', test: () => 223 / 71 < Math.PI && Math.PI < 22 / 7 })
     out.push({ key: 'machins_formula_computes_pi_over_four', name: 'Machin’s formula: π/4 = 4·arctan(1/5) − arctan(1/239) — a fast-converging identity, verified numerically; 0/7', test: () => Math.abs(4 * Math.atan(1 / 5) - Math.atan(1 / 239) - Math.PI / 4) < 1e-12 })
   }
+  // ── Pascal’s triangle & binomial identities: Pascal’s rule, row sums, symmetry, hockey stick, Vandermonde.
+  {
+    const C = (n: number, k: number): number => { if (k < 0 || k > n) return 0; k = Math.min(k, n - k); let r = 1; for (let i = 0; i < k; i++) r = r * (n - i) / (i + 1); return Math.round(r) }
+    const fib = (n: number) => { let a = 0, b = 1; for (let i = 0; i < n; i++) { [a, b] = [b, a + b] } return a }
+    out.push({ key: 'pascals_rule_each_entry_is_the_sum_of_the_two_above', name: 'Pascal’s rule: C(n,k) = C(n−1,k−1) + C(n−1,k) — each entry is the sum of the two above it; 0/7', test: () => { for (let n = 1; n <= 25; n++) for (let k = 0; k <= n; k++) if (C(n, k) !== C(n - 1, k - 1) + C(n - 1, k)) return false; return true } })
+    out.push({ key: 'a_pascal_row_sums_to_two_to_the_n', name: 'a Pascal row sums to two to the n: Σ_k C(n,k) = 2^n — the count of all subsets of an n-set; 0/7', test: () => { for (let n = 0; n <= 25; n++) { let s = 0; for (let k = 0; k <= n; k++) s += C(n, k); if (s !== 2 ** n) return false } return true } })
+    out.push({ key: 'a_pascal_rows_alternating_sum_is_zero', name: 'a Pascal row’s alternating sum is zero for n ≥ 1: Σ (−1)^k C(n,k) = 0 — equal even and odd subsets; 0/7', test: () => { for (let n = 1; n <= 25; n++) { let s = 0; for (let k = 0; k <= n; k++) s += (k % 2 ? -1 : 1) * C(n, k); if (s !== 0) return false } return true } })
+    out.push({ key: 'binomial_symmetry_choosing_k_equals_choosing_n_minus_k', name: 'binomial symmetry: C(n,k) = C(n,n−k) — choosing k to include equals choosing n−k to exclude; 0/7', test: () => { for (let n = 0; n <= 30; n++) for (let k = 0; k <= n; k++) if (C(n, k) !== C(n, n - k)) return false; return true } })
+    out.push({ key: 'the_hockey_stick_identity_sums_a_diagonal', name: 'the hockey-stick identity: Σ_{i=r}^{n} C(i,r) = C(n+1,r+1) — a diagonal of Pascal sums to the entry below its end; 0/7', test: () => { for (let r = 0; r <= 6; r++) for (let n = r; n <= 20; n++) { let s = 0; for (let i = r; i <= n; i++) s += C(i, r); if (s !== C(n + 1, r + 1)) return false } return true } })
+    out.push({ key: 'the_shallow_diagonals_of_pascal_are_the_fibonacci_numbers', name: 'the shallow diagonals of Pascal sum to the Fibonacci numbers: Σ_k C(n−k,k) = F(n+1); 0/7', test: () => { for (let n = 0; n <= 20; n++) { let s = 0; for (let k = 0; 2 * k <= n; k++) s += C(n - k, k); if (s !== fib(n + 1)) return false } return true } })
+    out.push({ key: 'vandermondes_identity_convolves_two_rows', name: 'Vandermonde’s identity: Σ_k C(m,k)·C(n,p−k) = C(m+n,p) — the convolution of two rows; 0/7', test: () => { for (let m = 0; m <= 8; m++) for (let n = 0; n <= 8; n++) for (let p = 0; p <= m + n; p++) { let s = 0; for (let k = 0; k <= p; k++) s += C(m, k) * C(n, p - k); if (s !== C(m + n, p)) return false } return true } })
+    out.push({ key: 'the_sum_of_squares_of_a_pascal_row_is_the_central_binomial', name: 'the sum of squares of a Pascal row is the central binomial: Σ_k C(n,k)² = C(2n,n); 0/7', test: () => { for (let n = 0; n <= 14; n++) { let s = 0; for (let k = 0; k <= n; k++) s += C(n, k) ** 2; if (s !== C(2 * n, n)) return false } return true } })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
