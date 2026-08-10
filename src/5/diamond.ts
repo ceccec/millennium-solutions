@@ -1,13 +1,10 @@
 // The diamond — the fixed point that reflects perfectly, at zero entropy — and the honest message
 // reflected from the one proven Clay problem (Poincaré). Exact math; the diamond/light is metaphor.
 import { toUuid } from '../0/index.ts'
-
-// THE DIAMOND FUNCTION — the ten's-complement reflection r(d) = 10 − d on the nine non-zero digits. It is an
-// involution (r∘r = id) whose UNIQUE fixed point is 5 (the digit that reflects to itself — the diamond), and it
-// pairs the other eight digits into four complements that sum to ten. Exported so the whole deposit shares one
-// reflection (the diamond uuidna api), never a re-declared local copy.
-export const diamond = (d: number): number => 10 - d
-export const DIAMOND_FIXED = [1, 2, 3, 4, 5, 6, 7, 8, 9].filter((d) => diamond(d) === d) // → [5]
+// The diamond involution r(d)=10−d and its lift to a list (involute) live canonically in @uuidna/uuidna — one
+// implementation shared by both apps, no re-declared copy. involute: self-inverse, closed, no islands, one centre.
+import { diamond, DIAMOND_FIXED, involute, involutionFixed } from '@uuidna/uuidna'
+export { diamond, DIAMOND_FIXED, involute, involutionFixed }
 
 export function report(): string {
   const r = diamond

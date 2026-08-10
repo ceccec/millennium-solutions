@@ -5,6 +5,9 @@
   "author": "Tsvetan Rouschev",
   "license": "CC-BY-NC-4.0",
   "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
   "exports": {
     ".": "./mod.core.ts"
   },
@@ -27,7 +30,7 @@
     "docs:preview": "vitepress preview",
     "seal": "node scripts/seal.ts",
     "typecheck": "tsc --noEmit",
-    "release": "tsc --noEmit && node scripts/gaps.ts && node scripts/dashboard.ts && node scripts/boundaries.ts && node scripts/challenges.ts && node scripts/heart.ts && node scripts/accounting.ts && node scripts/speedup.ts && npm run docs:build && node scripts/import-gate.ts && node scripts/locale-fold.ts && node scripts/security-gate.ts && node scripts/sitemap-mesh.ts && node scripts/theorem-pages-gate.ts && node scripts/receipt-audit.ts && node scripts/forensics.ts && node scripts/claims-gate.ts && node scripts/harmony-currency.ts && node scripts/gate-corpus.ts && node scripts/seal.ts && node scripts/wholeness.ts && node scripts/lean-claims.ts && node scripts/discover.ts && node scripts/release.ts",
+    "release": "npm --prefix packages/uuidna run build && tsc --noEmit && node scripts/gaps.ts && node scripts/dashboard.ts && node scripts/boundaries.ts && node scripts/challenges.ts && node scripts/heart.ts && node scripts/accounting.ts && node scripts/speedup.ts && npm run docs:build && node scripts/import-gate.ts && node scripts/locale-fold.ts && node scripts/security-gate.ts && node scripts/sitemap-mesh.ts && node scripts/theorem-pages-gate.ts && node scripts/receipt-audit.ts && node scripts/forensics.ts && node scripts/claims-gate.ts && node scripts/harmony-currency.ts && node scripts/gate-corpus.ts && node scripts/seal.ts && node scripts/wholeness.ts && node scripts/lean-claims.ts && node scripts/discover.ts && node scripts/release.ts",
     "prepublishOnly": "node scripts/seal.ts",
     "gaps": "node scripts/gaps.ts",
     "harmony": "node scripts/gaps.ts && node scripts/seal.ts && node scripts/wholeness.ts && npm run docs:build && node scripts/seo.ts",

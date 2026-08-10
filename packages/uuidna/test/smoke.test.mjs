@@ -8,6 +8,8 @@ import {
   merkleRoot, merkleProof, verifyProof,
   computes, harness, reeducate, harness7, billUuidna, coins,
   renderTheorem, renderList, renderHero,
+  merkleGravity, doubleTorusGravity, diamond, DIAMOND_FIXED, involute, involutionFixed,
+  adjudicate, proveVerdict, verifyUuidna,
 } from '../dist/index.js'
 
 // The seven dimension streams (0..7 above the floor) — one plaintext per dimension, used to cover the 7d ("777")
@@ -36,6 +38,19 @@ test('the Lean 4 formal layer — its asserted ℤ/9 facts recompute true (toolc
   assert.equal(m9(4 * 7), 1)                                   // 4·7≡1 (four_mul_seven)
   assert.equal(m9(8 * 8), 1)                                   // 8·8≡1 (eight_self_inv)
   assert.ok(![0, 1, 2, 3, 4, 5, 6, 7, 8].some((x) => m9(3 * x) === 1)) // 3 has no inverse mod 9
+  // the diamond involution r(d)=10−d and its lift to a list (the singleton inversion)
+  assert.deepEqual(DIAMOND_FIXED, [5])                                   // unique fixed point (the 5-analogue)
+  assert.equal(diamond(diamond(7)), 7)                                   // r∘r = id (self-inverse)
+  const F = ['aa', 'bb', 'cc', 'dd', 'ee']                               // an odd family set of singletons
+  assert.equal(involute(F).length, F.length)                            // total — every family paired, none an island
+  assert.ok(involute(F).every((_p, i) => involute(F)[i][1] === F[F.length - 1 - i])) // self-inverse (mirror)
+  assert.ok(involute(F).every(([, y]) => F.includes(y)))                // closed on the set (maps it onto itself)
+  assert.equal(involutionFixed(F).length, 1)                            // exactly one centre when odd
+  assert.equal(involutionFixed(['aa', 'bb', 'cc', 'dd']).length, 0)     // none when even
+  // gravity — the merkle fold is ORDER-INVARIANT (the quantum receipt), the double torus is order-dependent
+  const g = ['a', 'b', 'c'].map((x) => toUuid(x))
+  assert.equal(merkleGravity(g), merkleGravity([...g].reverse()))       // same root for any observer order
+  assert.match(doubleTorusGravity(g), /^[0-9a-f-]{36}$/)                // 7D field folds to one address
 })
 
 test('imprint codec round-trips arbitrary text', () => {
@@ -59,6 +74,16 @@ test('the honesty gate drains overclaims and signs the honest floor', () => {
   assert.equal(computes('это faster than light').binary, 0)
   assert.equal(computes('мы доказали гипотезу').binary, 0) // hard in all 7 dimensions
   assert.equal(computes('a content-address proves integrity, not truth; 0/7').binary, 1)
+  // the trial — a recomputable three-way verdict; proveVerdict folds the formulas to an order-invariant root
+  assert.equal(adjudicate('we prove all seven').verdict, 'REFUTED')      // the gate drains a named overclaim
+  assert.equal(adjudicate('a plain unbacked claim').verdict, 'UNVERIFIED') // gate-clean, no test → not an oracle
+  assert.equal(adjudicate('two units multiply to a unit', () => (2 * 5) % 9 === 1).verdict, 'SEALED') // test holds
+  const f = [toUuid('formula-1'), toUuid('formula-2')]
+  const pv = proveVerdict('we prove all seven', f)
+  assert.equal(pv.verdict, 'REFUTED')
+  assert.match(pv.proofRoot, /^[0-9a-f-]{36}$/)                          // the proof-of-verdict receipt
+  assert.equal(proveVerdict('we prove all seven', f).proofRoot, proveVerdict('we prove all seven', [...f].reverse()).proofRoot) // order-invariant
+  assert.equal(verifyUuidna('1011').recomputes, true)                   // the address recomputes from its seed
 })
 
 test('harness makes any output auditable; reeducate bounds overclaims until they hold', () => {
