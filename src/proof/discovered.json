@@ -9078,5 +9078,45 @@
     "key": "theorems_improve_their_skills_in_guides",
     "name": "theorems improve their skills in guides: worked, recomputable, composing examples raise a skill’s robustness, each theorem-backed and held to the floor, improvement append-only — the guide develops the skill, it does not merely describe it; 0/7",
     "receipt": "fd605466-266c-8969-918b-0c1df11b66da"
+  },
+  {
+    "key": "n_choose_k_counts_combinations",
+    "name": "n choose k counts combinations: C(8,2)=28, C(9,3)=84, C(n,0)=1 — the exact number of unordered selections; 0/7",
+    "receipt": "7118bd5b-3cf3-8a68-81e2-9b2de0219dad"
+  },
+  {
+    "key": "pascals_symmetry",
+    "name": "Pascal symmetry: C(n,k)=C(n,n−k), choosing k to take equals choosing n−k to leave; 0/7",
+    "receipt": "6b2ee272-124f-83e6-8cc7-10fa2f7c2dd6"
+  },
+  {
+    "key": "pascals_rule",
+    "name": "Pascal’s rule: C(n,k)=C(n−1,k−1)+C(n−1,k) — each entry the sum of the two above it; 0/7",
+    "receipt": "30211aa9-97b0-8b7b-bab9-5e2b522ea588"
+  },
+  {
+    "key": "permutations_are_ordered_combinations",
+    "name": "permutations are ordered combinations: P(n,k)=C(n,k)·k!, so P(8,2)=56 orders over 28 selections; 0/7",
+    "receipt": "4699903a-edcb-8903-8379-a87e6be8be59"
+  },
+  {
+    "key": "domain_pairs_are_n_choose_two",
+    "name": "domain pairs are n choose 2: N theorems admit C(N,2)=N(N−1)/2 pairwise combinations — 28 for eight; 0/7",
+    "receipt": "0087b719-1ac5-8d54-b0b1-e81ed85f646a"
+  },
+  {
+    "key": "a_theorem_is_reused_across_combinations",
+    "name": "a theorem is reused across combinations: a fixed theorem sits in C(N−1,k−1) of the k-combinations — in 7 of the pairs of eight; 0/7",
+    "receipt": "b3156114-678f-8093-a3d0-84732e0a5986"
+  },
+  {
+    "key": "combination_types_multisets_and_compositions",
+    "name": "combination types: multisets C(n+k−1,k) and compositions 2^(n−1) — multiset(4,2)=10, compositions(4)=8; 0/7",
+    "receipt": "56916825-8a39-8b7a-bb15-881c0d8c7de2"
+  },
+  {
+    "key": "a_combination_folds_to_one_address",
+    "name": "a combination folds to one address: any selection of theorems merkle-folds to a single order-independent receipt, so a combination is itself content-addressed; 0/7",
+    "receipt": "09cafb76-25fe-8bd2-b696-42fa6cf2f612"
   }
 ]

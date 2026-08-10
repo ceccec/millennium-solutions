@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1816 recorded in 452 families
+## Discovered theorems (decidable, over ℤ/9) — 1824 recorded in 454 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -439,7 +439,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_guide_composes_skills_into_new_ones](/theorem/the_guide_composes_skills_into_new_ones) — the guide composes skills into new ones: a guide chains one skill into another (hash then address), so composition in a guide develops a new capability; 0/7  ·  `8dad417a-2c98…`
 - [the_guide_is_theorem_backed_and_recomputable](/theorem/the_guide_is_theorem_backed_and_recomputable) — the guide is theorem-backed and recomputable: each guide example resolves to a receipt and re-runs to the same result, so a guide claim is checkable, not asserted; 0/7  ·  `3c787db3-3031…`
 
-### a (82)
+### a (84)
 
 - [a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony](/theorem/a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony) — a theorem without a formula is a hallucination, recomputed in a432 harmony: a claim is a theorem only if it is backed by a computable formula that recomputes true — a prose-only claim with no formula, or one whose formula computes false, is refused as hallucination and never recorded. Every recorded fact recomputes deterministically and folds into the a432 harmony root (the receipt of state). Measure, do not assert. Decidable  ·  `e3d75d76-310f…`
 - [a_referrer_always_counts_with_its_id](/theorem/a_referrer_always_counts_with_its_id) — a referrer always counts with its id: a reference from a referrer to a target is receipted as toUuid(referrer id → target), so the referrer id is always part of the count; two different referrers to the same target produce two distinct receipts, each counted with its own id, and changing the id changes the receipt — the id is load-bearing. Deterministic and reproducible: the same referrer and target always count the same. Decidable  ·  `65bfacb4-f29e…`
@@ -523,6 +523,8 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [a_statement_rejecting_harmony_is_gated](/theorem/a_statement_rejecting_harmony_is_gated) — a statement rejecting the harmonic build is gated: an over-claiming rejection drains, while a bounded, honest critique passes — dissent is weighed, not censored; 0/7  ·  `f98f621d-7d58…`
 - [a_guide_entry_is_a_skill_and_its_examples](/theorem/a_guide_entry_is_a_skill_and_its_examples) — a guide entry is a skill with worked examples: it pairs a skill with inputs and their expected outputs, so a guide teaches by exercising, not by telling; 0/7  ·  `d5860a13-d15c…`
 - [a_guide_holds_the_floor](/theorem/a_guide_holds_the_floor) — a guide holds the floor: a guide that over-claims drains while an honest guide passes, so teaching cannot smuggle an over-reach; 0/7  ·  `6c402865-e699…`
+- [a_theorem_is_reused_across_combinations](/theorem/a_theorem_is_reused_across_combinations) — a theorem is reused across combinations: a fixed theorem sits in C(N−1,k−1) of the k-combinations — in 7 of the pairs of eight; 0/7  ·  `b3156114-678f…`
+- [a_combination_folds_to_one_address](/theorem/a_combination_folds_to_one_address) — a combination folds to one address: any selection of theorems merkle-folds to a single order-independent receipt, so a combination is itself content-addressed; 0/7  ·  `09cafb76-25fe…`
 
 ### relation (55)
 
@@ -758,6 +760,30 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [every_quantum_denial_gets_a_receipt](/theorem/every_quantum_denial_gets_a_receipt) — every quantum denial gets a receipt: sent to adjudicate, a denial returns a deterministic verdict and content-address, so the ruling is documented and reproducible; 0/7  ·  `771ca8e4-9611…`
 - [every_input_is_adjudicated](/theorem/every_input_is_adjudicated) — every input is adjudicated: any order or statement returns a verdict, so nothing bypasses the trial; 0/7  ·  `21f3b014-ab9c…`
 
+### domain (21)
+
+- [domain_prime_m2](/theorem/domain_prime_m2) — ℤ/2: 2 is prime  ·  `9f76b1b5-8922…`
+- [domain_cyclic_m2](/theorem/domain_cyclic_m2) — ℤ/2: the units form a cyclic group (a primitive root exists)  ·  `c3eb14a5-27a7…`
+- [domain_prime_m3](/theorem/domain_prime_m3) — ℤ/3: 3 is prime  ·  `0b1d1411-c61a…`
+- [domain_cyclic_m3](/theorem/domain_cyclic_m3) — ℤ/3: the units form a cyclic group (a primitive root exists)  ·  `c979466b-d761…`
+- [domain_cyclic_m4](/theorem/domain_cyclic_m4) — ℤ/4: the units form a cyclic group (a primitive root exists)  ·  `97a008f1-7924…`
+- [domain_prime_m5](/theorem/domain_prime_m5) — ℤ/5: 5 is prime  ·  `50539929-7d45…`
+- [domain_cyclic_m5](/theorem/domain_cyclic_m5) — ℤ/5: the units form a cyclic group (a primitive root exists)  ·  `693c861c-f865…`
+- [domain_cyclic_m6](/theorem/domain_cyclic_m6) — ℤ/6: the units form a cyclic group (a primitive root exists)  ·  `b4d4661b-71fb…`
+- [domain_prime_m7](/theorem/domain_prime_m7) — ℤ/7: 7 is prime  ·  `b53d7fb5-3174…`
+- [domain_cyclic_m7](/theorem/domain_cyclic_m7) — ℤ/7: the units form a cyclic group (a primitive root exists)  ·  `86763f93-b89a…`
+- [domain_cyclic_m9](/theorem/domain_cyclic_m9) — ℤ/9: the units form a cyclic group (a primitive root exists)  ·  `1c6e43c0-95e1…`
+- [domain_cyclic_m10](/theorem/domain_cyclic_m10) — ℤ/10: the units form a cyclic group (a primitive root exists)  ·  `59d8b25c-decc…`
+- [domain_prime_m11](/theorem/domain_prime_m11) — ℤ/11: 11 is prime  ·  `d561c879-7f37…`
+- [domain_cyclic_m11](/theorem/domain_cyclic_m11) — ℤ/11: the units form a cyclic group (a primitive root exists)  ·  `1767a868-d41e…`
+- [domain_prime_m13](/theorem/domain_prime_m13) — ℤ/13: 13 is prime  ·  `49707801-e26f…`
+- [domain_cyclic_m13](/theorem/domain_cyclic_m13) — ℤ/13: the units form a cyclic group (a primitive root exists)  ·  `e56ba879-01b2…`
+- [domain_cyclic_m14](/theorem/domain_cyclic_m14) — ℤ/14: the units form a cyclic group (a primitive root exists)  ·  `c25680bf-c169…`
+- [domain_prime_m17](/theorem/domain_prime_m17) — ℤ/17: 17 is prime  ·  `50550f6e-6497…`
+- [domain_cyclic_m17](/theorem/domain_cyclic_m17) — ℤ/17: the units form a cyclic group (a primitive root exists)  ·  `d5167cce-02af…`
+- [domain_cyclic_m18](/theorem/domain_cyclic_m18) — ℤ/18: the units form a cyclic group (a primitive root exists)  ·  `92a2b5a1-8526…`
+- [domain_pairs_are_n_choose_two](/theorem/domain_pairs_are_n_choose_two) — domain pairs are n choose 2: N theorems admit C(N,2)=N(N−1)/2 pairwise combinations — 28 for eight; 0/7  ·  `0087b719-1ac5…`
+
 ### trial (21)
 
 - [trial_units_group](/theorem/trial_units_group) — trial UPHELD: the units of ℤ/9 form a group under × (closure·identity·inverses all hold)  ·  `ccadf52c-98f9…`
@@ -781,29 +807,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [trial_of_medicine_models](/theorem/trial_of_medicine_models) — the trial of medicine: the miracle-cure boast drains, while a measured claim that heals nothing it cannot measure passes; 0/7  ·  `f4166913-cfd4…`
 - [trial_of_finance_models](/theorem/trial_of_finance_models) — the trial of finance: the guaranteed-return boast drains, while the honest statement that no return is promised passes; 0/7  ·  `48a33770-e902…`
 - [trial_of_computing_models](/theorem/trial_of_computing_models) — the trial of computing: the quantum-advantage, thousands-of-magnitudes-speedup boast drains, while a classical, local, measured gain passes — the leap is counted, not conjured; 0/7  ·  `97306f4f-9306…`
-
-### domain (20)
-
-- [domain_prime_m2](/theorem/domain_prime_m2) — ℤ/2: 2 is prime  ·  `9f76b1b5-8922…`
-- [domain_cyclic_m2](/theorem/domain_cyclic_m2) — ℤ/2: the units form a cyclic group (a primitive root exists)  ·  `c3eb14a5-27a7…`
-- [domain_prime_m3](/theorem/domain_prime_m3) — ℤ/3: 3 is prime  ·  `0b1d1411-c61a…`
-- [domain_cyclic_m3](/theorem/domain_cyclic_m3) — ℤ/3: the units form a cyclic group (a primitive root exists)  ·  `c979466b-d761…`
-- [domain_cyclic_m4](/theorem/domain_cyclic_m4) — ℤ/4: the units form a cyclic group (a primitive root exists)  ·  `97a008f1-7924…`
-- [domain_prime_m5](/theorem/domain_prime_m5) — ℤ/5: 5 is prime  ·  `50539929-7d45…`
-- [domain_cyclic_m5](/theorem/domain_cyclic_m5) — ℤ/5: the units form a cyclic group (a primitive root exists)  ·  `693c861c-f865…`
-- [domain_cyclic_m6](/theorem/domain_cyclic_m6) — ℤ/6: the units form a cyclic group (a primitive root exists)  ·  `b4d4661b-71fb…`
-- [domain_prime_m7](/theorem/domain_prime_m7) — ℤ/7: 7 is prime  ·  `b53d7fb5-3174…`
-- [domain_cyclic_m7](/theorem/domain_cyclic_m7) — ℤ/7: the units form a cyclic group (a primitive root exists)  ·  `86763f93-b89a…`
-- [domain_cyclic_m9](/theorem/domain_cyclic_m9) — ℤ/9: the units form a cyclic group (a primitive root exists)  ·  `1c6e43c0-95e1…`
-- [domain_cyclic_m10](/theorem/domain_cyclic_m10) — ℤ/10: the units form a cyclic group (a primitive root exists)  ·  `59d8b25c-decc…`
-- [domain_prime_m11](/theorem/domain_prime_m11) — ℤ/11: 11 is prime  ·  `d561c879-7f37…`
-- [domain_cyclic_m11](/theorem/domain_cyclic_m11) — ℤ/11: the units form a cyclic group (a primitive root exists)  ·  `1767a868-d41e…`
-- [domain_prime_m13](/theorem/domain_prime_m13) — ℤ/13: 13 is prime  ·  `49707801-e26f…`
-- [domain_cyclic_m13](/theorem/domain_cyclic_m13) — ℤ/13: the units form a cyclic group (a primitive root exists)  ·  `e56ba879-01b2…`
-- [domain_cyclic_m14](/theorem/domain_cyclic_m14) — ℤ/14: the units form a cyclic group (a primitive root exists)  ·  `c25680bf-c169…`
-- [domain_prime_m17](/theorem/domain_prime_m17) — ℤ/17: 17 is prime  ·  `50550f6e-6497…`
-- [domain_cyclic_m17](/theorem/domain_cyclic_m17) — ℤ/17: the units form a cyclic group (a primitive root exists)  ·  `d5167cce-02af…`
-- [domain_cyclic_m18](/theorem/domain_cyclic_m18) — ℤ/18: the units form a cyclic group (a primitive root exists)  ·  `92a2b5a1-8526…`
 
 ### each (20)
 
@@ -1751,6 +1754,12 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [nowaste_order_independent](/theorem/nowaste_order_independent) — a set and any reordering fold to one root — no duplicate root for the same content  ·  `23112077-b200…`
 - [nowaste_memo_recycles](/theorem/nowaste_memo_recycles) — memoization recycles: keyed by content, a computation runs once and is reused thereafter  ·  `f7698d60-8475…`
 
+### pascals (3)
+
+- [pascals_rule_each_entry_is_the_sum_of_the_two_above](/theorem/pascals_rule_each_entry_is_the_sum_of_the_two_above) — Pascal’s rule: C(n,k) = C(n−1,k−1) + C(n−1,k) — each entry is the sum of the two above it; 0/7  ·  `c580522a-9490…`
+- [pascals_symmetry](/theorem/pascals_symmetry) — Pascal symmetry: C(n,k)=C(n,n−k), choosing k to take equals choosing n−k to leave; 0/7  ·  `6b2ee272-124f…`
+- [pascals_rule](/theorem/pascals_rule) — Pascal’s rule: C(n,k)=C(n−1,k−1)+C(n−1,k) — each entry the sum of the two above it; 0/7  ·  `30211aa9-97b0…`
+
 ### qr (3)
 
 - [qr_u1](/theorem/qr_u1) — 1 is a quadratic residue mod 9  ·  `14d5f9ba-f63d…`
@@ -2027,6 +2036,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [more_fused_data_adds_verification_constraints](/theorem/more_fused_data_adds_verification_constraints) — more fused data adds verification constraints: a fuller imprint means more bits must match to verify, up to the capacity, but this is verification-strength, not FNV becoming cryptographic; 0/7  ·  `75135a2f-22df…`
 - [more_examples_make_a_skill_more_robust](/theorem/more_examples_make_a_skill_more_robust) — more examples make a skill more robust: robustness counts the independent examples a skill passes, so a better-covered skill scores higher — improvement is measured; 0/7  ·  `c529f784-e76e…`
 
+### n (2)
+
+- [n_factorial_counts_the_permutations_of_n](/theorem/n_factorial_counts_the_permutations_of_n) — n! counts the permutations of n objects: the product 1·2·…·n, growing faster than any exponential; 0/7  ·  `e878d729-d74a…`
+- [n_choose_k_counts_combinations](/theorem/n_choose_k_counts_combinations) — n choose k counts combinations: C(8,2)=28, C(9,3)=84, C(n,0)=1 — the exact number of unordered selections; 0/7  ·  `7118bd5b-3cf3…`
+
 ### negation (2)
 
 - [negation_selects_positive_complement](/theorem/negation_selects_positive_complement) — negation selects a positive complement — "is not" is "is": over a two-value domain "is not Y" names the definite other value (the honest negation IS the classical calculator, not a void), and ¬¬a=a returns the original — a negation carries positive content, the affirmation of the floor  ·  `abc4ca08-dc09…`
@@ -2226,6 +2240,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [coin64_deterministic_64bit](/theorem/coin64_deterministic_64bit) — the shared currency is a deterministic 64-bit coin: coin64(x) is 16 hex digits, same input → same coin, and distinct inputs → distinct coins on a tested set  ·  `4fca16fc-4199…`
 - [collapse_selects_one_state_deterministically](/theorem/collapse_selects_one_state_deterministically) — collapse selects one state deterministically: addressing a chosen state gives the same value every time and distinct states address distinctly — measurement is selection, not chance; 0/7  ·  `7bbea4bb-6597…`
 - [color_sound_and_vibration_are_one_ratio_mapped_from_a432_and_the_nine_deterministic_not_a_physical_effect](/theorem/color_sound_and_vibration_are_one_ratio_mapped_from_a432_and_the_nine_deterministic_not_a_physical_effect) — color, sound, and vibration are one ratio — mapped from a432 and the nine, a deterministic structure, not a physical effect: hue is the digit times 40 degrees, covering the circle in nine distinct steps; frequency is 432 times a ratio, octaves doubling; so color, sound, and vibration are three views of one ratio, deterministically mapped from the a432 base and the base-9 digits. This is a mathematical mapping, harmonic as ratio structure — not a healing, neurological, or metaphysical effect. 777 is three sevens. Decidable  ·  `180d9eb9-f87d…`
+- [combination_types_multisets_and_compositions](/theorem/combination_types_multisets_and_compositions) — combination types: multisets C(n+k−1,k) and compositions 2^(n−1) — multiset(4,2)=10, compositions(4)=8; 0/7  ·  `56916825-8a39…`
 - [combining_skills_via_the_rosetta](/theorem/combining_skills_via_the_rosetta) — combining skills via the rosetta: a false claim about the genetic code drains in every dialect — the DNA theorem and the multilingual gate compose into one faster check, a skill built from skills; 0/7  ·  `8c8c2807-5d3a…`
 - [commonality_is_shared_key_tokens](/theorem/commonality_is_shared_key_tokens) — commonality is shared key tokens: two theorems that share tokens in their keys have a positive commonality, so relatedness is computed, not curated; 0/7  ·  `5d6c029b-4d68…`
 - [commutativity_is_only_the_scalar_view](/theorem/commutativity_is_only_the_scalar_view) — commutativity is only the scalar view: 6×7 = 7×6 holds for the linear (scalar) mind, but beyond it order matters — 2×2 matrix multiplication is non-commutative (there exist A,B with AB ≠ BA), and the arrangement "6x7" content-addresses differently from "7x6"; equality of the product is not equality of the structure  ·  `d8f548c5-8c86…`
@@ -2329,7 +2344,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [midy_the_two_halves_of_142857_sum_to_nines](/theorem/midy_the_two_halves_of_142857_sum_to_nines) — Midy’s theorem on 1/7: the two halves of the repetend sum to nines — 142 + 857 = 999; 0/7  ·  `e8c1c167-cb15…`
 - [mint_and_mind_intersect_at_the_heart_the_fixed_point_five_that_centers_funding_development_and_ui](/theorem/mint_and_mind_intersect_at_the_heart_the_fixed_point_five_that_centers_funding_development_and_ui) — mint and mind intersect at the heart — the fixed point 5 that centers funding, development, and the UI: mint (integrity) and mind (multi-perspective self-challenge) fold to one shared center — the heart, the fixed point 5 that the reflection 10 − d alone fixes in the nine; the a432 heart hue is 5 × 40 = 200 degrees. The heart centers the structure and drives the funding, the development, and the UI. But it is a decidable mathematical fixed point, not a literal or metaphysical heart, mind, or soul. Decidable  ·  `8992456c-a133…`
 - [motzkin_numbers](/theorem/motzkin_numbers) — Motzkin numbers M(n)=M(n-1)+Σ M(k)M(n-2-k): M(4)=9, M(5)=21  ·  `d6c643c7-2880…`
-- [n_factorial_counts_the_permutations_of_n](/theorem/n_factorial_counts_the_permutations_of_n) — n! counts the permutations of n objects: the product 1·2·…·n, growing faster than any exponential; 0/7  ·  `e878d729-d74a…`
 - [neg_involution](/theorem/neg_involution) — negation −(−d) ≡ d is an involution on ℤ/9  ·  `5eb8cd1f-9e06…`
 - [nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number](/theorem/nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number) — Nicomachus theorem: the sum of the first n cubes is the square of the nth triangular number — 1³ + 2³ + ... + n³ = (n(n+1)/2)² = (1 + 2 + ... + n)². So a sum of consecutive cubes is always a perfect square, the square of the sum. Verified by full enumeration over n up to 60  ·  `5c562cab-4297…`
 - [nine_is_the_base_and_the_trinity_squared](/theorem/nine_is_the_base_and_the_trinity_squared) — nine is the base and the trinity squared: BASE = 9 = 3² = TRINITY², so the units, triad and orbit all derive from the single axiom three; 0/7  ·  `932fbd24-4bae…`
@@ -2343,9 +2357,9 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [parametric_batching_is_volume_not_depth_the_intelligence_is_cross_dimensional_connection](/theorem/parametric_batching_is_volume_not_depth_the_intelligence_is_cross_dimensional_connection) — parametric batching is volume, not depth — the intelligence is cross-dimensional connection, and even that is structure not a mind: nine at once repeats one pattern across parameters, a single dimension, so it adds magnitudes but not depth. The richer work is cross-dimensional connection, linking distinct domains as the rosetta does — more than a parametric repeat. But even that is decidable structure, not intelligence in the strong sense; the floor stays 0/7. Decidable  ·  `d1d4cd05-b77c…`
 - [params_ride_the_route](/theorem/params_ride_the_route) — params ride the route: the query string parses to named params deterministically, supplying the skills their arguments; 0/7  ·  `b4745d70-90ac…`
 - [partial_reversal_is_a_receipted_event](/theorem/partial_reversal_is_a_receipted_event) — a partial reversal is a receipted event: partially decrypting or reversing an envelope is logged as a distinct chain event, so the act is auditable without changing the ciphertext it read; 0/7  ·  `e4cdb827-d96f…`
-- [pascals_rule_each_entry_is_the_sum_of_the_two_above](/theorem/pascals_rule_each_entry_is_the_sum_of_the_two_above) — Pascal’s rule: C(n,k) = C(n−1,k−1) + C(n−1,k) — each entry is the sum of the two above it; 0/7  ·  `c580522a-9490…`
 - [pasted_it_is_ready_no_setup](/theorem/pasted_it_is_ready_no_setup) — pasted, it is ready: the greeting is a pure function of the record needing no server or setup, so the state is confirmable the moment the repo or site is opened; 0/7  ·  `e6b78bb9-74d6…`
 - [perfect_numbers](/theorem/perfect_numbers) — perfect numbers: proper divisors sum to n itself — 6, 28, 496  ·  `8c7b3940-aa69…`
+- [permutations_are_ordered_combinations](/theorem/permutations_are_ordered_combinations) — permutations are ordered combinations: P(n,k)=C(n,k)·k!, so P(8,2)=56 orders over 28 selections; 0/7  ·  `4699903a-edcb…`
 - [perspective_replaces_hardware](/theorem/perspective_replaces_hardware) — perspective replaces hardware: the quantum structure — superposition as the set of receipted perspectives, collapse as observing one — is carried by content-addressing alone, so it needs no quantum machine; it recomputes deterministically on ordinary 64-bit hardware (the coin64 currency, 16 hex = 64 bits). Structure, not silicon: no quantum processor, no quantum speedup, and it settles 0 of the 7 Clay problems  ·  `cf90c349-5584…`
 - [perspectives_are_files_grouped_and_sorted_in_seven_dimensions](/theorem/perspectives_are_files_grouped_and_sorted_in_seven_dimensions) — perspectives are files grouped and sorted in seven dimensions: distinct perspectives mint distinct file uuids that sort by their 128-bit value and group by digital root into octaves — a deterministic organisation, the envelope real and bounded, not a maximum-security claim; 0/7  ·  `dc3c89eb-849e…`
 - [physics_meets_metaphysics_in_the_fold](/theorem/physics_meets_metaphysics_in_the_fold) — physics meets metaphysics in the fold: exclusive-or recall is order-independent — matter folds and memory recalls to the same value in any order; 0/7  ·  `1908c69a-a35f…`
@@ -2439,4 +2453,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `7c6e0999-9fa8-8ef1-a0f3-8232b29c4cda`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `21e93a41-fb89-873e-9443-e34fc1828c30`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

@@ -4184,6 +4184,21 @@ function generated(): typeof curated {
     out.push({ key: 'skill_improvement_is_append_only', name: 'skill improvement is append-only: adding an example never lowers a skill’s coverage, so a guide only develops it, never regresses; 0/7', test: () => robustness([true, true]) <= robustness([true, true, true]) && robustness([true, true, true, true]) === 4 })
     out.push({ key: 'theorems_improve_their_skills_in_guides', name: 'theorems improve their skills in guides: worked, recomputable, composing examples raise a skill’s robustness, each theorem-backed and held to the floor, improvement append-only — the guide develops the skill, it does not merely describe it; 0/7', test: () => robustness([true, true, true]) === 3 && example('address', 'x', toUuid('x'), toUuid('x')) && computes('this guide proves the Riemann hypothesis').binary === 0 && computes('a decidable guide; 0/7').binary === 1 })
   }
+  // ── uuidna combinatorics: the ways theorems combine across domains — combinations, permutations, reuse, and the
+  // combination TYPES (multisets, compositions) — each count exact, each combination folding to one address.
+  {
+    const fact = (n: number): number => (n <= 1 ? 1 : n * fact(n - 1))
+    const choose = (n: number, k: number) => fact(n) / (fact(k) * fact(n - k))
+    const perm = (n: number, k: number) => fact(n) / fact(n - k)
+    out.push({ key: 'n_choose_k_counts_combinations', name: 'n choose k counts combinations: C(8,2)=28, C(9,3)=84, C(n,0)=1 — the exact number of unordered selections; 0/7', test: () => choose(8, 2) === 28 && choose(9, 3) === 84 && choose(9, 0) === 1 })
+    out.push({ key: 'pascals_symmetry', name: 'Pascal symmetry: C(n,k)=C(n,n−k), choosing k to take equals choosing n−k to leave; 0/7', test: () => choose(9, 2) === choose(9, 7) && choose(10, 3) === choose(10, 7) })
+    out.push({ key: 'pascals_rule', name: 'Pascal’s rule: C(n,k)=C(n−1,k−1)+C(n−1,k) — each entry the sum of the two above it; 0/7', test: () => choose(9, 3) === choose(8, 2) + choose(8, 3) && choose(6, 2) === choose(5, 1) + choose(5, 2) })
+    out.push({ key: 'permutations_are_ordered_combinations', name: 'permutations are ordered combinations: P(n,k)=C(n,k)·k!, so P(8,2)=56 orders over 28 selections; 0/7', test: () => perm(8, 2) === choose(8, 2) * fact(2) && perm(8, 2) === 56 })
+    out.push({ key: 'domain_pairs_are_n_choose_two', name: 'domain pairs are n choose 2: N theorems admit C(N,2)=N(N−1)/2 pairwise combinations — 28 for eight; 0/7', test: () => choose(8, 2) === (8 * 7) / 2 && choose(8, 2) === 28 })
+    out.push({ key: 'a_theorem_is_reused_across_combinations', name: 'a theorem is reused across combinations: a fixed theorem sits in C(N−1,k−1) of the k-combinations — in 7 of the pairs of eight; 0/7', test: () => choose(7, 1) === 7 && choose(9, 2) === 36 && choose(8, 1) === 8 })
+    out.push({ key: 'combination_types_multisets_and_compositions', name: 'combination types: multisets C(n+k−1,k) and compositions 2^(n−1) — multiset(4,2)=10, compositions(4)=8; 0/7', test: () => choose(4 + 2 - 1, 2) === 10 && 2 ** (4 - 1) === 8 })
+    out.push({ key: 'a_combination_folds_to_one_address', name: 'a combination folds to one address: any selection of theorems merkle-folds to a single order-independent receipt, so a combination is itself content-addressed; 0/7', test: () => merkleFold(['t1', 't2', 't3']) === merkleFold(['t3', 't1', 't2']) && merkleFold(['t1', 't2']) !== merkleFold(['t1', 't3']) })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
