@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1160 recorded in 324 families
+## Discovered theorems (decidable, over ℤ/9) — 1178 recorded in 326 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (169)
+### the (177)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -193,6 +193,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_hockey_stick_identity_sums_a_diagonal](/theorem/the_hockey_stick_identity_sums_a_diagonal) — the hockey-stick identity: Σ_{i=r}^{n} C(i,r) = C(n+1,r+1) — a diagonal of Pascal sums to the entry below its end; 0/7  ·  `4b7889ae-5b09…`
 - [the_shallow_diagonals_of_pascal_are_the_fibonacci_numbers](/theorem/the_shallow_diagonals_of_pascal_are_the_fibonacci_numbers) — the shallow diagonals of Pascal sum to the Fibonacci numbers: Σ_k C(n−k,k) = F(n+1); 0/7  ·  `24338952-ebe5…`
 - [the_sum_of_squares_of_a_pascal_row_is_the_central_binomial](/theorem/the_sum_of_squares_of_a_pascal_row_is_the_central_binomial) — the sum of squares of a Pascal row is the central binomial: Σ_k C(n,k)² = C(2n,n); 0/7  ·  `37e984a6-8818…`
+- [the_sum_of_the_first_n_cubes_is_the_square_of_their_sum](/theorem/the_sum_of_the_first_n_cubes_is_the_square_of_their_sum) — the sum of the first n cubes is the square of the sum (Nicomachus): Σk³ = (Σk)² = (n(n+1)/2)²; 0/7  ·  `b84a64a5-d2ae…`
+- [the_sum_of_the_first_n_even_numbers_is_n_times_n_plus_one](/theorem/the_sum_of_the_first_n_even_numbers_is_n_times_n_plus_one) — the sum of the first n even numbers is n(n+1): 2+4+…+2n = n(n+1) = twice the triangular; 0/7  ·  `be759d3e-690c…`
+- [the_derangement_recurrence_holds](/theorem/the_derangement_recurrence_holds) — the derangement recurrence holds: D_n = (n−1)(D_{n−1}+D_{n−2}), D_1=0, D_2=1 — permutations with no fixed point; 0/7  ·  `068f1309-f0bd…`
+- [the_number_of_derangements_over_n_factorial_approaches_one_over_e](/theorem/the_number_of_derangements_over_n_factorial_approaches_one_over_e) — the fraction of permutations that are derangements approaches 1/e: D_n/n! → 1/e as n grows; 0/7  ·  `e004191c-7b7e…`
+- [the_area_of_a_pythagorean_triangle_is_a_multiple_of_six](/theorem/the_area_of_a_pythagorean_triangle_is_a_multiple_of_six) — the area of an integer right triangle is a multiple of six: ab/2 ≡ 0 (mod 6) for every Pythagorean triple; 0/7  ·  `4eebdcf3-958b…`
+- [the_reciprocal_triangular_numbers_sum_to_two](/theorem/the_reciprocal_triangular_numbers_sum_to_two) — the reciprocals of the triangular numbers sum to two: Σ 1/T_n = 2, telescoping as 2(1/n − 1/(n+1)); 0/7  ·  `2415c2e7-2ec2…`
+- [the_difference_of_consecutive_squares_is_the_odd_numbers](/theorem/the_difference_of_consecutive_squares_is_the_odd_numbers) — the difference of consecutive squares is the odd numbers: (n+1)² − n² = 2n+1; 0/7  ·  `b082f743-3482…`
+- [the_product_of_any_three_consecutive_integers_is_divisible_by_six](/theorem/the_product_of_any_three_consecutive_integers_is_divisible_by_six) — the product of any three consecutive integers is divisible by six: among three consecutive there is a multiple of two and of three; 0/7  ·  `09a17240-17e1…`
 
 ### relation (55)
 
@@ -338,6 +346,33 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [bulk_bill_r4096_v16_n10](/theorem/bulk_bill_r4096_v16_n10) — bulk billing measured — recompute 4096, verify 16, batch 10: bits saved per call 4080, aggregate 40800, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7  ·  `e4d45ec0-9c8d…`
 - [bulk_bill_r4096_v16_n100](/theorem/bulk_bill_r4096_v16_n100) — bulk billing measured — recompute 4096, verify 16, batch 100: bits saved per call 4080, aggregate 408000, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7  ·  `47b7ca84-4599…`
 
+### sum (24)
+
+- [sum_1_to_9_zero](/theorem/sum_1_to_9_zero) — 1+2+…+9 ≡ 0 mod 9 (=45)  ·  `ccb897a5-e55d…`
+- [sum_of_two_squares_characterization](/theorem/sum_of_two_squares_characterization) — the sum-of-two-squares theorem: n is a sum of two squares iff every prime ≡ 3 (mod 4) in its factorization occurs to an even power — the brute-force check and the factorization criterion agree for all n ≤ 100  ·  `d4fcdaa1-8273…`
+- [sum_of_squares_iteration_dichotomy](/theorem/sum_of_squares_iteration_dichotomy) — the digit-square iteration is a total dichotomy: for every n ≤ 200 the sequence reaches either 1 (happy) or 4 (the entry to the 8-cycle) — it always terminates in exactly one of the two, no other fate  ·  `44bcd916-c0a3…`
+- [sum_of_triangular_is_tetrahedral](/theorem/sum_of_triangular_is_tetrahedral) — the sum of the first n triangular numbers is the nth tetrahedral number: T(1) + T(2) + ... + T(n) = n(n+1)(n+2)/6 = C(n+2, 3) — stacking triangular layers builds a tetrahedron. Verified exhaustively for n up to 100. Decidable  ·  `90ef4db9-a803…`
+- [sum_first_2_odd_numbers_is_2_squared](/theorem/sum_first_2_odd_numbers_is_2_squared) — the sum of the first 2 odd numbers is 2² = 4: 1+3+…+(2·2−1) = 4, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7  ·  `d4736903-83d6…`
+- [sum_first_3_odd_numbers_is_3_squared](/theorem/sum_first_3_odd_numbers_is_3_squared) — the sum of the first 3 odd numbers is 3² = 9: 1+3+…+(2·3−1) = 9, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7  ·  `0f3ab5e7-5de5…`
+- [sum_first_4_odd_numbers_is_4_squared](/theorem/sum_first_4_odd_numbers_is_4_squared) — the sum of the first 4 odd numbers is 4² = 16: 1+3+…+(2·4−1) = 16, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7  ·  `58a18681-7247…`
+- [sum_first_5_odd_numbers_is_5_squared](/theorem/sum_first_5_odd_numbers_is_5_squared) — the sum of the first 5 odd numbers is 5² = 25: 1+3+…+(2·5−1) = 25, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7  ·  `d524a60f-f7a1…`
+- [sum_first_6_odd_numbers_is_6_squared](/theorem/sum_first_6_odd_numbers_is_6_squared) — the sum of the first 6 odd numbers is 6² = 36: 1+3+…+(2·6−1) = 36, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7  ·  `8c235dfe-1759…`
+- [sum_first_7_odd_numbers_is_7_squared](/theorem/sum_first_7_odd_numbers_is_7_squared) — the sum of the first 7 odd numbers is 7² = 49: 1+3+…+(2·7−1) = 49, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7  ·  `4d5818b4-f10c…`
+- [sum_first_8_odd_numbers_is_8_squared](/theorem/sum_first_8_odd_numbers_is_8_squared) — the sum of the first 8 odd numbers is 8² = 64: 1+3+…+(2·8−1) = 64, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7  ·  `6b5f98bd-b79d…`
+- [sum_first_9_odd_numbers_is_9_squared](/theorem/sum_first_9_odd_numbers_is_9_squared) — the sum of the first 9 odd numbers is 9² = 81: 1+3+…+(2·9−1) = 81, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7  ·  `b38c5643-4326…`
+- [sum_first_10_odd_numbers_is_10_squared](/theorem/sum_first_10_odd_numbers_is_10_squared) — the sum of the first 10 odd numbers is 10² = 100: 1+3+…+(2·10−1) = 100, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7  ·  `86ea5403-d088…`
+- [sum_first_11_odd_numbers_is_11_squared](/theorem/sum_first_11_odd_numbers_is_11_squared) — the sum of the first 11 odd numbers is 11² = 121: 1+3+…+(2·11−1) = 121, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7  ·  `6c1e6094-08ab…`
+- [sum_of_cubes_1_to_2_is_triangular_squared](/theorem/sum_of_cubes_1_to_2_is_triangular_squared) — the sum of cubes 1³+…+2³ = 3² = 9, the square of the 2-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7  ·  `30da4e62-e3b6…`
+- [sum_of_cubes_1_to_3_is_triangular_squared](/theorem/sum_of_cubes_1_to_3_is_triangular_squared) — the sum of cubes 1³+…+3³ = 6² = 36, the square of the 3-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7  ·  `0af95322-da4a…`
+- [sum_of_cubes_1_to_4_is_triangular_squared](/theorem/sum_of_cubes_1_to_4_is_triangular_squared) — the sum of cubes 1³+…+4³ = 10² = 100, the square of the 4-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7  ·  `b902429f-4fc2…`
+- [sum_of_cubes_1_to_5_is_triangular_squared](/theorem/sum_of_cubes_1_to_5_is_triangular_squared) — the sum of cubes 1³+…+5³ = 15² = 225, the square of the 5-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7  ·  `9f7754c1-589b…`
+- [sum_of_cubes_1_to_6_is_triangular_squared](/theorem/sum_of_cubes_1_to_6_is_triangular_squared) — the sum of cubes 1³+…+6³ = 21² = 441, the square of the 6-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7  ·  `b9c21a4d-776b…`
+- [sum_of_cubes_1_to_7_is_triangular_squared](/theorem/sum_of_cubes_1_to_7_is_triangular_squared) — the sum of cubes 1³+…+7³ = 28² = 784, the square of the 7-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7  ·  `118130e3-c53a…`
+- [sum_of_cubes_1_to_8_is_triangular_squared](/theorem/sum_of_cubes_1_to_8_is_triangular_squared) — the sum of cubes 1³+…+8³ = 36² = 1296, the square of the 8-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7  ·  `2fe72e2f-285d…`
+- [sum_of_cubes_1_to_9_is_triangular_squared](/theorem/sum_of_cubes_1_to_9_is_triangular_squared) — the sum of cubes 1³+…+9³ = 45² = 2025, the square of the 9-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7  ·  `367f20c6-732e…`
+- [sum_of_the_first_n_integers_is_n_times_n_plus_one_over_two](/theorem/sum_of_the_first_n_integers_is_n_times_n_plus_one_over_two) — the sum of the first n integers is n(n+1)/2: the triangular formula Gauss found as a boy; 0/7  ·  `bd236190-04c3…`
+- [sum_of_the_first_n_squares_is_the_pyramidal_formula](/theorem/sum_of_the_first_n_squares_is_the_pyramidal_formula) — the sum of the first n squares is n(n+1)(2n+1)/6 — the square-pyramidal number; 0/7  ·  `f55d43ea-8f50…`
+
 ### pascal (23)
 
 - [pascal_rowsum_n5](/theorem/pascal_rowsum_n5) — Σ_k C(5,k) = 2^5 = 32  ·  `3b4e481c-bd45…`
@@ -364,32 +399,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [pascal_row_sum_9](/theorem/pascal_row_sum_9) — Pascal row 9 sums to 2^9: Σ_{k=0}^9 C(9,k) = 512 — the binomial theorem at x=1, computed exactly  ·  `85e80c0f-5296…`
 - [pascal_alternating_sum_9](/theorem/pascal_alternating_sum_9) — Pascal row 9 alternating sum is zero: Σ_{k=0}^9 (−1)^k C(9,k) = 0 — the binomial theorem at x=−1 (n ≥ 1)  ·  `0b2aa6fc-7a50…`
 
-### sum (22)
-
-- [sum_1_to_9_zero](/theorem/sum_1_to_9_zero) — 1+2+…+9 ≡ 0 mod 9 (=45)  ·  `ccb897a5-e55d…`
-- [sum_of_two_squares_characterization](/theorem/sum_of_two_squares_characterization) — the sum-of-two-squares theorem: n is a sum of two squares iff every prime ≡ 3 (mod 4) in its factorization occurs to an even power — the brute-force check and the factorization criterion agree for all n ≤ 100  ·  `d4fcdaa1-8273…`
-- [sum_of_squares_iteration_dichotomy](/theorem/sum_of_squares_iteration_dichotomy) — the digit-square iteration is a total dichotomy: for every n ≤ 200 the sequence reaches either 1 (happy) or 4 (the entry to the 8-cycle) — it always terminates in exactly one of the two, no other fate  ·  `44bcd916-c0a3…`
-- [sum_of_triangular_is_tetrahedral](/theorem/sum_of_triangular_is_tetrahedral) — the sum of the first n triangular numbers is the nth tetrahedral number: T(1) + T(2) + ... + T(n) = n(n+1)(n+2)/6 = C(n+2, 3) — stacking triangular layers builds a tetrahedron. Verified exhaustively for n up to 100. Decidable  ·  `90ef4db9-a803…`
-- [sum_first_2_odd_numbers_is_2_squared](/theorem/sum_first_2_odd_numbers_is_2_squared) — the sum of the first 2 odd numbers is 2² = 4: 1+3+…+(2·2−1) = 4, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7  ·  `d4736903-83d6…`
-- [sum_first_3_odd_numbers_is_3_squared](/theorem/sum_first_3_odd_numbers_is_3_squared) — the sum of the first 3 odd numbers is 3² = 9: 1+3+…+(2·3−1) = 9, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7  ·  `0f3ab5e7-5de5…`
-- [sum_first_4_odd_numbers_is_4_squared](/theorem/sum_first_4_odd_numbers_is_4_squared) — the sum of the first 4 odd numbers is 4² = 16: 1+3+…+(2·4−1) = 16, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7  ·  `58a18681-7247…`
-- [sum_first_5_odd_numbers_is_5_squared](/theorem/sum_first_5_odd_numbers_is_5_squared) — the sum of the first 5 odd numbers is 5² = 25: 1+3+…+(2·5−1) = 25, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7  ·  `d524a60f-f7a1…`
-- [sum_first_6_odd_numbers_is_6_squared](/theorem/sum_first_6_odd_numbers_is_6_squared) — the sum of the first 6 odd numbers is 6² = 36: 1+3+…+(2·6−1) = 36, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7  ·  `8c235dfe-1759…`
-- [sum_first_7_odd_numbers_is_7_squared](/theorem/sum_first_7_odd_numbers_is_7_squared) — the sum of the first 7 odd numbers is 7² = 49: 1+3+…+(2·7−1) = 49, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7  ·  `4d5818b4-f10c…`
-- [sum_first_8_odd_numbers_is_8_squared](/theorem/sum_first_8_odd_numbers_is_8_squared) — the sum of the first 8 odd numbers is 8² = 64: 1+3+…+(2·8−1) = 64, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7  ·  `6b5f98bd-b79d…`
-- [sum_first_9_odd_numbers_is_9_squared](/theorem/sum_first_9_odd_numbers_is_9_squared) — the sum of the first 9 odd numbers is 9² = 81: 1+3+…+(2·9−1) = 81, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7  ·  `b38c5643-4326…`
-- [sum_first_10_odd_numbers_is_10_squared](/theorem/sum_first_10_odd_numbers_is_10_squared) — the sum of the first 10 odd numbers is 10² = 100: 1+3+…+(2·10−1) = 100, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7  ·  `86ea5403-d088…`
-- [sum_first_11_odd_numbers_is_11_squared](/theorem/sum_first_11_odd_numbers_is_11_squared) — the sum of the first 11 odd numbers is 11² = 121: 1+3+…+(2·11−1) = 121, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7  ·  `6c1e6094-08ab…`
-- [sum_of_cubes_1_to_2_is_triangular_squared](/theorem/sum_of_cubes_1_to_2_is_triangular_squared) — the sum of cubes 1³+…+2³ = 3² = 9, the square of the 2-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7  ·  `30da4e62-e3b6…`
-- [sum_of_cubes_1_to_3_is_triangular_squared](/theorem/sum_of_cubes_1_to_3_is_triangular_squared) — the sum of cubes 1³+…+3³ = 6² = 36, the square of the 3-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7  ·  `0af95322-da4a…`
-- [sum_of_cubes_1_to_4_is_triangular_squared](/theorem/sum_of_cubes_1_to_4_is_triangular_squared) — the sum of cubes 1³+…+4³ = 10² = 100, the square of the 4-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7  ·  `b902429f-4fc2…`
-- [sum_of_cubes_1_to_5_is_triangular_squared](/theorem/sum_of_cubes_1_to_5_is_triangular_squared) — the sum of cubes 1³+…+5³ = 15² = 225, the square of the 5-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7  ·  `9f7754c1-589b…`
-- [sum_of_cubes_1_to_6_is_triangular_squared](/theorem/sum_of_cubes_1_to_6_is_triangular_squared) — the sum of cubes 1³+…+6³ = 21² = 441, the square of the 6-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7  ·  `b9c21a4d-776b…`
-- [sum_of_cubes_1_to_7_is_triangular_squared](/theorem/sum_of_cubes_1_to_7_is_triangular_squared) — the sum of cubes 1³+…+7³ = 28² = 784, the square of the 7-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7  ·  `118130e3-c53a…`
-- [sum_of_cubes_1_to_8_is_triangular_squared](/theorem/sum_of_cubes_1_to_8_is_triangular_squared) — the sum of cubes 1³+…+8³ = 36² = 1296, the square of the 8-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7  ·  `2fe72e2f-285d…`
-- [sum_of_cubes_1_to_9_is_triangular_squared](/theorem/sum_of_cubes_1_to_9_is_triangular_squared) — the sum of cubes 1³+…+9³ = 45² = 2025, the square of the 9-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7  ·  `367f20c6-732e…`
-
-### a (20)
+### a (21)
 
 - [a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony](/theorem/a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony) — a theorem without a formula is a hallucination, recomputed in a432 harmony: a claim is a theorem only if it is backed by a computable formula that recomputes true — a prose-only claim with no formula, or one whose formula computes false, is refused as hallucination and never recorded. Every recorded fact recomputes deterministically and folds into the a432 harmony root (the receipt of state). Measure, do not assert. Decidable  ·  `e3d75d76-310f…`
 - [a_referrer_always_counts_with_its_id](/theorem/a_referrer_always_counts_with_its_id) — a referrer always counts with its id: a reference from a referrer to a target is receipted as toUuid(referrer id → target), so the referrer id is always part of the count; two different referrers to the same target produce two distinct receipts, each counted with its own id, and changing the id changes the receipt — the id is load-bearing. Deterministic and reproducible: the same referrer and target always count the same. Decidable  ·  `65bfacb4-f29e…`
@@ -411,6 +421,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [a_perfect_number_equals_the_sum_of_its_proper_divisors](/theorem/a_perfect_number_equals_the_sum_of_its_proper_divisors) — a perfect number equals the sum of its proper divisors: exactly 6 and 28 are perfect below 100 — abundance balanced, neither deficient nor abundant; 0/7  ·  `0e0c1a43-7d85…`
 - [a_pascal_row_sums_to_two_to_the_n](/theorem/a_pascal_row_sums_to_two_to_the_n) — a Pascal row sums to two to the n: Σ_k C(n,k) = 2^n — the count of all subsets of an n-set; 0/7  ·  `316a1496-6da4…`
 - [a_pascal_rows_alternating_sum_is_zero](/theorem/a_pascal_rows_alternating_sum_is_zero) — a Pascal row’s alternating sum is zero for n ≥ 1: Σ (−1)^k C(n,k) = 0 — equal even and odd subsets; 0/7  ·  `520fd218-d05a…`
+- [a_square_never_ends_in_two_three_seven_or_eight_in_base_ten](/theorem/a_square_never_ends_in_two_three_seven_or_eight_in_base_ten) — a perfect square never ends in 2, 3, 7 or 8 in base ten: the last digit is one of 0,1,4,5,6,9; 0/7  ·  `560a627a-349e…`
 
 ### domain (20)
 
@@ -602,6 +613,17 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [bool_absorption](/theorem/bool_absorption) — absorption: a∨(a∧b) = a (all inputs)  ·  `75ad142a-a56a…`
 - [bool_xor_associativity](/theorem/bool_xor_associativity) — XOR associativity: (a⊕b)⊕c = a⊕(b⊕c) (all inputs)  ·  `4ba6ccd9-fd1d…`
 
+### every (8)
+
+- [every_rating_is_exactly_one_or_zero](/theorem/every_rating_is_exactly_one_or_zero) — every rating is exactly 1 or 0, no exceptions: the honesty verdict is a single bit — there is no fractional or partial rating, a fake maximal-certainty claim itself drains, and the same input always returns the same bit; anything that drifts from {0,1} is a crack the floor refuses  ·  `c1b2772d-d7c0…`
+- [every_primitive_triple_is_euclidean](/theorem/every_primitive_triple_is_euclidean) — Euclid’s parametrization is complete: every primitive Pythagorean triple with hypotenuse ≤ 100 arises from coprime m&gt;n of opposite parity — exhaustive brute-force triples all match a generated one  ·  `751e8a4e-c23c…`
+- [every_next_or_continue_event_is_two_bits_earned_by_the_deed](/theorem/every_next_or_continue_event_is_two_bits_earned_by_the_deed) — every next or continue event is two bits earned by the deed: each shipping event — a next or a continue that appends a receipted contribution — is worth two bits (110 − 108 = 2), credited to the contributor who did the deed; N events earn 2N bits, so the 686 recorded events account for 1372 bits, matching the ledger bounty. These are accounting bits — integrity, not a cash payment — credited by the deed, not the claim; measure, do not assert. Decidable  ·  `794d2d0e-728f…`
+- [every_natural_has_a_unique_binary_representation](/theorem/every_natural_has_a_unique_binary_representation) — every natural number has a unique binary representation: each n is one sum of distinct powers of two — the base-2 place-value the byte counts on; 0/7  ·  `b7d9dfe6-3e34…`
+- [every_digital_root_lands_in_one_to_nine](/theorem/every_digital_root_lands_in_one_to_nine) — every digital root of a positive integer lands in 1..9 — the base folds the naturals onto nine residues; 0/7  ·  `f0db1861-14cd…`
+- [every_natural_is_a_sum_of_at_most_four_squares](/theorem/every_natural_is_a_sum_of_at_most_four_squares) — every natural number is a sum of at most four squares (Lagrange): checked exhaustively to 300 — the four-square identity holds; 0/7  ·  `8c16722e-1a23…`
+- [every_prime_above_three_is_six_k_plus_or_minus_one](/theorem/every_prime_above_three_is_six_k_plus_or_minus_one) — every prime above three is 6k ± 1: primes avoid the residues 0,2,3,4 mod 6 — only ±1 survive coprimality with six; 0/7  ·  `27566d35-6704…`
+- [every_hexagonal_number_is_a_triangular_number](/theorem/every_hexagonal_number_is_a_triangular_number) — every hexagonal number is a triangular number: H_n = n(2n−1) = T_{2n−1}; 0/7  ·  `fa2deb9c-b546…`
+
 ### gate (8)
 
 - [gate_reads_whole_text_not_per_line](/theorem/gate_reads_whole_text_not_per_line) — the honesty gate reads whole text, not isolated lines: its negator window (±48 chars) spans a line break, so a negator ending one line still reprieves an overclaim shape starting the next — the whole-text gate HOLDS where a naive per-line scan would falsely drain, so measure with the real gate, not an ad-hoc split (the floor caught its own author manufacturing a false crack)  ·  `3986bc57-0971…`
@@ -624,6 +646,17 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [polygonal_numbers_s9_closed_form_equals_recurrence](/theorem/polygonal_numbers_s9_closed_form_equals_recurrence) — the 9-gonal numbers — closed form equals recurrence: P = ((9−2)·n² − (9−4)·n) / 2 matches the recurrence P(n) = P(n−1) + ((9−2)(n−1) + 1) with P(1) = 1, term for term. Verified exhaustively for n up to 50. Decidable  ·  `b2da2f8a-bdd9…`
 - [polygonal_numbers_s10_closed_form_equals_recurrence](/theorem/polygonal_numbers_s10_closed_form_equals_recurrence) — the 10-gonal numbers — closed form equals recurrence: P = ((10−2)·n² − (10−4)·n) / 2 matches the recurrence P(n) = P(n−1) + ((10−2)(n−1) + 1) with P(1) = 1, term for term. Verified exhaustively for n up to 50. Decidable  ·  `f03c1061-c8ed…`
 
+### two (8)
+
+- [two_is_a_primitive_root_mod_nine_and_generates_the_vortex](/theorem/two_is_a_primitive_root_mod_nine_and_generates_the_vortex) — two is a primitive root mod 9 and generates the vortex: the powers of 2 mod 9 cycle 2,4,8,7,5,1 with order 6, generating the full unit group (ℤ/9)* = {1,2,4,5,7,8}; the vortex orbit is exactly this cycle as a set, and every element skips the multiples of 3 (the W-axis). A decidable fact by exhaustion over ℤ/9  ·  `dd3b0f30-660d…`
+- [two_to_the_10_is_1024](/theorem/two_to_the_10_is_1024) — 2^10 = 1024, by repeated doubling — a decidable power of two; integrity not truth; 0/7  ·  `1beeb294-5a3c…`
+- [two_to_the_11_is_2048](/theorem/two_to_the_11_is_2048) — 2^11 = 2048, by repeated doubling — a decidable power of two; integrity not truth; 0/7  ·  `900023c7-08f1…`
+- [two_is_the_only_even_prime](/theorem/two_is_the_only_even_prime) — two is the only even prime: every other even number has two as a proper factor — the even prime that halves the base ten; 0/7  ·  `814da9ab-c97f…`
+- [two_to_the_eighth_is_two_hundred_fifty_six_a_byte](/theorem/two_to_the_eighth_is_two_hundred_fifty_six_a_byte) — two to the eighth is 256: a byte of 8 bits addresses 256 values — the octave of bits; 0/7  ·  `a716f358-f9d7…`
+- [two_to_the_tenth_is_1024_the_harmonic_ledger](/theorem/two_to_the_tenth_is_1024_the_harmonic_ledger) — two to the tenth is 1024: ten doublings reach the harmonic ledger size, digitalRoot(1024)=7 — the octave raised to the tenth is the milestone count; 0/7  ·  `568ccd10-1bb6…`
+- [two_is_a_primitive_root_modulo_nine](/theorem/two_is_a_primitive_root_modulo_nine) — two is a primitive root modulo nine: the powers of 2 generate all six units of ℤ/9, so ord₉(2) = 6 = φ(9) — one seed unfolds the whole doubling orbit; 0/7  ·  `28ce3e1c-4921…`
+- [two_consecutive_triangular_numbers_sum_to_a_square](/theorem/two_consecutive_triangular_numbers_sum_to_a_square) — two consecutive triangular numbers sum to a square: T_n + T_{n−1} = n²; 0/7  ·  `53677354-05c3…`
+
 ### demorgan (7)
 
 - [demorgan_nary_k2](/theorem/demorgan_nary_k2) — De Morgan for 2 inputs: ¬(a₁∧…∧a_2) = ¬a₁∨…∨¬a_2 over all 2^2 = 4 assignments (full truth-table enumeration)  ·  `7012c0af-ef6b…`
@@ -643,16 +676,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [euler_characteristic_of_the_octahedron_is_two](/theorem/euler_characteristic_of_the_octahedron_is_two) — Euler’s formula for the octahedron: V − E + F = 6 − 12 + 8 = 2 — the cube’s dual; 0/7  ·  `c55a4c2d-534e…`
 - [euler_characteristic_of_the_dodecahedron_is_two](/theorem/euler_characteristic_of_the_dodecahedron_is_two) — Euler’s formula for the dodecahedron: V − E + F = 20 − 30 + 12 = 2 — the twelve-face solid; 0/7  ·  `3aac322b-21d4…`
 - [euler_characteristic_of_the_icosahedron_is_two](/theorem/euler_characteristic_of_the_icosahedron_is_two) — Euler’s formula for the icosahedron: V − E + F = 12 − 30 + 20 = 2 — the dodecahedron’s dual; 0/7  ·  `988a9cbd-1cdd…`
-
-### every (7)
-
-- [every_rating_is_exactly_one_or_zero](/theorem/every_rating_is_exactly_one_or_zero) — every rating is exactly 1 or 0, no exceptions: the honesty verdict is a single bit — there is no fractional or partial rating, a fake maximal-certainty claim itself drains, and the same input always returns the same bit; anything that drifts from {0,1} is a crack the floor refuses  ·  `c1b2772d-d7c0…`
-- [every_primitive_triple_is_euclidean](/theorem/every_primitive_triple_is_euclidean) — Euclid’s parametrization is complete: every primitive Pythagorean triple with hypotenuse ≤ 100 arises from coprime m&gt;n of opposite parity — exhaustive brute-force triples all match a generated one  ·  `751e8a4e-c23c…`
-- [every_next_or_continue_event_is_two_bits_earned_by_the_deed](/theorem/every_next_or_continue_event_is_two_bits_earned_by_the_deed) — every next or continue event is two bits earned by the deed: each shipping event — a next or a continue that appends a receipted contribution — is worth two bits (110 − 108 = 2), credited to the contributor who did the deed; N events earn 2N bits, so the 686 recorded events account for 1372 bits, matching the ledger bounty. These are accounting bits — integrity, not a cash payment — credited by the deed, not the claim; measure, do not assert. Decidable  ·  `794d2d0e-728f…`
-- [every_natural_has_a_unique_binary_representation](/theorem/every_natural_has_a_unique_binary_representation) — every natural number has a unique binary representation: each n is one sum of distinct powers of two — the base-2 place-value the byte counts on; 0/7  ·  `b7d9dfe6-3e34…`
-- [every_digital_root_lands_in_one_to_nine](/theorem/every_digital_root_lands_in_one_to_nine) — every digital root of a positive integer lands in 1..9 — the base folds the naturals onto nine residues; 0/7  ·  `f0db1861-14cd…`
-- [every_natural_is_a_sum_of_at_most_four_squares](/theorem/every_natural_is_a_sum_of_at_most_four_squares) — every natural number is a sum of at most four squares (Lagrange): checked exhaustively to 300 — the four-square identity holds; 0/7  ·  `8c16722e-1a23…`
-- [every_prime_above_three_is_six_k_plus_or_minus_one](/theorem/every_prime_above_three_is_six_k_plus_or_minus_one) — every prime above three is 6k ± 1: primes avoid the residues 0,2,3,4 mod 6 — only ±1 survive coprimality with six; 0/7  ·  `27566d35-6704…`
 
 ### factorial (7)
 
@@ -683,16 +706,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [order_of_unit_5_mod9](/theorem/order_of_unit_5_mod9) — the multiplicative order of 5 mod 9 is 6, dividing |ℤ/9*| = 6 (Lagrange): 5^6 ≡ 1 (mod 9) and no smaller positive power is — computed locally from the ring  ·  `0f86f485-4cee…`
 - [order_of_unit_7_mod9](/theorem/order_of_unit_7_mod9) — the multiplicative order of 7 mod 9 is 3, dividing |ℤ/9*| = 6 (Lagrange): 7^3 ≡ 1 (mod 9) and no smaller positive power is — computed locally from the ring  ·  `cfaa11a0-1154…`
 - [order_of_unit_8_mod9](/theorem/order_of_unit_8_mod9) — the multiplicative order of 8 mod 9 is 2, dividing |ℤ/9*| = 6 (Lagrange): 8^2 ≡ 1 (mod 9) and no smaller positive power is — computed locally from the ring  ·  `88406d2d-0559…`
-
-### two (7)
-
-- [two_is_a_primitive_root_mod_nine_and_generates_the_vortex](/theorem/two_is_a_primitive_root_mod_nine_and_generates_the_vortex) — two is a primitive root mod 9 and generates the vortex: the powers of 2 mod 9 cycle 2,4,8,7,5,1 with order 6, generating the full unit group (ℤ/9)* = {1,2,4,5,7,8}; the vortex orbit is exactly this cycle as a set, and every element skips the multiples of 3 (the W-axis). A decidable fact by exhaustion over ℤ/9  ·  `dd3b0f30-660d…`
-- [two_to_the_10_is_1024](/theorem/two_to_the_10_is_1024) — 2^10 = 1024, by repeated doubling — a decidable power of two; integrity not truth; 0/7  ·  `1beeb294-5a3c…`
-- [two_to_the_11_is_2048](/theorem/two_to_the_11_is_2048) — 2^11 = 2048, by repeated doubling — a decidable power of two; integrity not truth; 0/7  ·  `900023c7-08f1…`
-- [two_is_the_only_even_prime](/theorem/two_is_the_only_even_prime) — two is the only even prime: every other even number has two as a proper factor — the even prime that halves the base ten; 0/7  ·  `814da9ab-c97f…`
-- [two_to_the_eighth_is_two_hundred_fifty_six_a_byte](/theorem/two_to_the_eighth_is_two_hundred_fifty_six_a_byte) — two to the eighth is 256: a byte of 8 bits addresses 256 values — the octave of bits; 0/7  ·  `a716f358-f9d7…`
-- [two_to_the_tenth_is_1024_the_harmonic_ledger](/theorem/two_to_the_tenth_is_1024_the_harmonic_ledger) — two to the tenth is 1024: ten doublings reach the harmonic ledger size, digitalRoot(1024)=7 — the octave raised to the tenth is the milestone count; 0/7  ·  `568ccd10-1bb6…`
-- [two_is_a_primitive_root_modulo_nine](/theorem/two_is_a_primitive_root_modulo_nine) — two is a primitive root modulo nine: the powers of 2 generate all six units of ℤ/9, so ord₉(2) = 6 = φ(9) — one seed unfolds the whole doubling orbit; 0/7  ·  `28ce3e1c-4921…`
 
 ### xor (7)
 
@@ -952,6 +965,13 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [chess_knight_color_flip](/theorem/chess_knight_color_flip) — a knight's leap always changes square colour (the parity of r+c flips)  ·  `81566667-a452…`
 - [chess_diagonals_15](/theorem/chess_diagonals_15) — the 8×8 board has 2·8 − 1 = 15 diagonals in each direction  ·  `85a4e4b0-787f…`
 
+### eight (4)
+
+- [eight_times_a_triangular_number_plus_one_is_an_odd_square](/theorem/eight_times_a_triangular_number_plus_one_is_an_odd_square) — eight times a triangular number plus one is an odd square: with T(n) = n(n+1)/2 the nth triangular number (the sum 1 + 2 + ... + n), 8·T(n) + 1 = (2n+1)² is always the square of an odd number; and consecutive triangular numbers sum to a perfect square, T(n) + T(n−1) = n². Verified by full enumeration over n up to 200  ·  `b640d0e9-7cb8…`
+- [eight_and_nine_are_the_only_consecutive_perfect_powers](/theorem/eight_and_nine_are_the_only_consecutive_perfect_powers) — eight and nine are the only consecutive perfect powers: 2³ and 3² are adjacent, and Mihailescu (Catalan) settles that no other perfect powers differ by one — 8 and 9 (the base) are unique; 0/7  ·  `4ac00184-4301…`
+- [eight_is_the_largest_fibonacci_perfect_cube](/theorem/eight_is_the_largest_fibonacci_perfect_cube) — eight is the largest Fibonacci number that is a perfect cube: among the Fibonacci numbers only 1 and 8 = 2³ are cubes — the octave sits on the sequence; 0/7  ·  `d54f7105-647e…`
+- [eight_times_a_triangular_number_plus_one_is_a_square](/theorem/eight_times_a_triangular_number_plus_one_is_a_square) — eight times a triangular number plus one is an odd square: 8·T_n + 1 = (2n+1)²; 0/7  ·  `2d9b9a90-3968…`
+
 ### evidence (4)
 
 - [evidence_is_what_recomputes](/theorem/evidence_is_what_recomputes) — evidence is what recomputes: a content-address is reproduced identically on every recomputation (deterministic), and distinct inputs give distinct addresses — a fact that recomputes is evidence; one that cannot be reproduced is not  ·  `130afdb1-d7f8…`
@@ -1102,12 +1122,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [duel_no_both_win](/theorem/duel_no_both_win) — a claim and its inverse cannot both be upheld (no position wins for both sides)  ·  `ea632dd9-0682…`
 - [duel_floor_upheld](/theorem/duel_floor_upheld) — "the deposit does not solve the Clay problems" is upheld against its challenge  ·  `4ee11b6a-d6b6…`
 
-### eight (3)
-
-- [eight_times_a_triangular_number_plus_one_is_an_odd_square](/theorem/eight_times_a_triangular_number_plus_one_is_an_odd_square) — eight times a triangular number plus one is an odd square: with T(n) = n(n+1)/2 the nth triangular number (the sum 1 + 2 + ... + n), 8·T(n) + 1 = (2n+1)² is always the square of an odd number; and consecutive triangular numbers sum to a perfect square, T(n) + T(n−1) = n². Verified by full enumeration over n up to 200  ·  `b640d0e9-7cb8…`
-- [eight_and_nine_are_the_only_consecutive_perfect_powers](/theorem/eight_and_nine_are_the_only_consecutive_perfect_powers) — eight and nine are the only consecutive perfect powers: 2³ and 3² are adjacent, and Mihailescu (Catalan) settles that no other perfect powers differ by one — 8 and 9 (the base) are unique; 0/7  ·  `4ac00184-4301…`
-- [eight_is_the_largest_fibonacci_perfect_cube](/theorem/eight_is_the_largest_fibonacci_perfect_cube) — eight is the largest Fibonacci number that is a perfect cube: among the Fibonacci numbers only 1 and 8 = 2³ are cubes — the octave sits on the sequence; 0/7  ·  `d54f7105-647e…`
-
 ### entangle (3)
 
 - [entangle_joint_differs](/theorem/entangle_joint_differs) — the joint fold of deposit(0/7) & humanity(1/7) is a third address, different from each part  ·  `9657bf0d-5c1f…`
@@ -1119,6 +1133,12 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [euclid_euler_perfect](/theorem/euclid_euler_perfect) — even perfect numbers are 2^(p−1)(2^p−1) for a Mersenne prime 2^p−1: 6=2·3, 28=4·7, 496=16·31  ·  `9f35788a-a976…`
 - [euclid_formula_generates_pythagorean_triples](/theorem/euclid_formula_generates_pythagorean_triples) — Euclid’s formula generates Pythagorean triples: for m &gt; n &gt; 0, (m²−n², 2mn, m²+n²) satisfies a² + b² = c² — verified for all m ≤ 12  ·  `9a6ecfe8-b922…`
 - [euclid_there_is_always_a_next_prime](/theorem/euclid_there_is_always_a_next_prime) — there is always a next prime (Euclid): for any finite set of primes, the product plus one has a prime factor outside the set — so the stream of prime facts never empties, it continues without bound (verified for sample sets)  ·  `eb5c996d-6540…`
+
+### euclids (3)
+
+- [euclids_formula_generates_pythagorean_triples](/theorem/euclids_formula_generates_pythagorean_triples) — Euclid's formula generates Pythagorean triples: for m &gt; n &gt; 0, (m² − n², 2mn, m² + n²) is a Pythagorean triple, and it is primitive (the three share no common factor) exactly when gcd(m,n) = 1 and m, n have opposite parity. Verified for all m up to 20  ·  `394b04f5-a0de…`
+- [euclids_infinitude_the_product_plus_one_has_a_new_prime_factor](/theorem/euclids_infinitude_the_product_plus_one_has_a_new_prime_factor) — Euclid’s infinitude, constructively: for any finite set of primes, their product plus one has a prime factor outside the set — so no finite list is complete; 0/7  ·  `4947140c-cce1…`
+- [euclids_parametrization_generates_pythagorean_triples](/theorem/euclids_parametrization_generates_pythagorean_triples) — Euclid’s parametrization generates Pythagorean triples: (m²−n², 2mn, m²+n²) satisfies a²+b²=c² for all m&gt;n≥1; 0/7  ·  `c2bde5ba-19bc…`
 
 ### fermat (3)
 
@@ -1197,6 +1217,12 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [stirling_second_bell](/theorem/stirling_second_bell) — Stirling 2nd kind S(n,k)=S(n-1,k-1)+k·S(n-1,k): S(4,2)=7 and Σ_k S(4,k)=15=B(4)  ·  `23e393cc-dd5d…`
 - [stirling_first_factorial](/theorem/stirling_first_factorial) — unsigned Stirling 1st kind (permutations by cycles) sum to n!: Σ_k c(4,k) = 4! = 24  ·  `e1f258a9-dbdb…`
 - [stirling_edges](/theorem/stirling_edges) — Stirling 2nd kind edges: S(n,1)=1 (one block), S(n,n)=1 (singletons), n=1..6  ·  `02ae48de-5452…`
+
+### there (3)
+
+- [there_is_no_patent_royalty_but_the_author_sets_the_license_even_in_gold](/theorem/there_is_no_patent_royalty_but_the_author_sets_the_license_even_in_gold) — there is no patent royalty — but the author sets the license, even in gold: decidable mathematics is not patentable, so the deposit holds no patents and there is no patent monopoly to charge. What exists is a copyright license — non-commercial use free with attribution — and under it the author may set the commercial terms, denominated however they choose: the two coins, or physical gold for commercial gold-related use. That is fair exchange by license, not a patent royalty. Decidable  ·  `34229c9f-8be6…`
+- [there_are_exactly_five_platonic_solids](/theorem/there_are_exactly_five_platonic_solids) — there are exactly five Platonic solids: the pairs {p,q} with 1/p + 1/q &gt; 1/2 (p,q ≥ 3) number exactly five — tetrahedron, cube, octahedron, dodecahedron, icosahedron; 0/7  ·  `6504415b-1ea5…`
+- [there_are_infinitely_many_pythagorean_triples](/theorem/there_are_infinitely_many_pythagorean_triples) — there are infinitely many Pythagorean triples: every scaling k·(3,4,5) is a triple, so no finite list is complete; 0/7  ·  `99627f3a-6e22…`
 
 ### unit (3)
 
@@ -1294,11 +1320,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 
 - [eisenstein_omega_cubed_is_one](/theorem/eisenstein_omega_cubed_is_one) — the Eisenstein cube root of unity: ω (with ω² = −1 − ω) satisfies ω³ = 1 — a primitive cube root, the trinity in the exponent, computed exactly by integer arithmetic in ℤ[ω]  ·  `498200ff-921c…`
 - [eisenstein_six_units](/theorem/eisenstein_six_units) — the Eisenstein integers have exactly six units {±1, ±ω, ±ω²}: the norm-1 elements (norm(a+bω)=a²−ab+b²) number six — the same count as the multiplicative group of ℤ/9  ·  `8fb3413e-f501…`
-
-### euclids (2)
-
-- [euclids_formula_generates_pythagorean_triples](/theorem/euclids_formula_generates_pythagorean_triples) — Euclid's formula generates Pythagorean triples: for m &gt; n &gt; 0, (m² − n², 2mn, m² + n²) is a Pythagorean triple, and it is primitive (the three share no common factor) exactly when gcd(m,n) = 1 and m, n have opposite parity. Verified for all m up to 20  ·  `394b04f5-a0de…`
-- [euclids_infinitude_the_product_plus_one_has_a_new_prime_factor](/theorem/euclids_infinitude_the_product_plus_one_has_a_new_prime_factor) — Euclid’s infinitude, constructively: for any finite set of primes, their product plus one has a prime factor outside the set — so no finite list is complete; 0/7  ·  `4947140c-cce1…`
 
 ### eulers (2)
 
@@ -1475,11 +1496,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [ten_factors_as_two_times_five_the_heart_and_the_even_prime](/theorem/ten_factors_as_two_times_five_the_heart_and_the_even_prime) — ten factors as 2 × 5 — the base is the even prime times the heart, so a fraction terminates in base ten exactly when its denominator’s only primes are 2 and 5; 0/7  ·  `aa3e534d-7294…`
 - [ten_has_multiplicative_order_six_modulo_seven](/theorem/ten_has_multiplicative_order_six_modulo_seven) — ten has multiplicative order six modulo seven: 10^6 ≡ 1 (mod 7) and no smaller power, so 1/7 repeats with period six — the seven’s repetend; 0/7  ·  `b9901b9b-563d…`
 
-### there (2)
-
-- [there_is_no_patent_royalty_but_the_author_sets_the_license_even_in_gold](/theorem/there_is_no_patent_royalty_but_the_author_sets_the_license_even_in_gold) — there is no patent royalty — but the author sets the license, even in gold: decidable mathematics is not patentable, so the deposit holds no patents and there is no patent monopoly to charge. What exists is a copyright license — non-commercial use free with attribution — and under it the author may set the commercial terms, denominated however they choose: the two coins, or physical gold for commercial gold-related use. That is fair exchange by license, not a patent royalty. Decidable  ·  `34229c9f-8be6…`
-- [there_are_exactly_five_platonic_solids](/theorem/there_are_exactly_five_platonic_solids) — there are exactly five Platonic solids: the pairs {p,q} with 1/p + 1/q &gt; 1/2 (p,q ≥ 3) number exactly five — tetrahedron, cube, octahedron, dodecahedron, icosahedron; 0/7  ·  `6504415b-1ea5…`
-
 ### triad (2)
 
 - [triad_nilpotent](/theorem/triad_nilpotent) — the triad is nilpotent d²≡0 mod 9: {3,6,9}  ·  `af48a8bc-86a0…`
@@ -1510,7 +1526,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (161)
+### other — one-of-a-kind (163)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1583,6 +1599,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [goldbachs_even_sum_of_two_primes_to_a_thousand](/theorem/goldbachs_even_sum_of_two_primes_to_a_thousand) — Goldbach’s even conjecture holds over the tested range: every even number from 4 to 1000 is a sum of two primes — checked by computation, not a general result; 0/7  ·  `032ff03e-d893…`
 - [golden_fixed_point](/theorem/golden_fixed_point) — φ is the fixed point of x = 1 + 1/x (equivalently φ² = φ + 1): the more you nest the recursion, the more it reproduces itself — the most self-similar number  ·  `80d92d5a-7ef3…`
 - [gravity_is_the_fall_to_a_fixed_point_and_pigeonhole_breaks_every_finite_hash](/theorem/gravity_is_the_fall_to_a_fixed_point_and_pigeonhole_breaks_every_finite_hash) — gravity is the fall to a fixed point — and pigeonhole breaks every finite hash: two decidable contractions, named gravity but not physics. The digital root is idempotent — every integer falls to the base-9 residues in one step and rests; the merkle fold pulls any set of addresses to one root, order-independent. And pigeonhole gravity: a b-bit digest has two-to-the-b seats, so more inputs than seats forces a collision — no finite hash, strong or weak, avoids collisions forever. Decidable  ·  `4df9c2a2-27bb…`
+- [handshakes_among_n_people_number_c_n_2](/theorem/handshakes_among_n_people_number_c_n_2) — handshakes among n people number C(n,2) = n(n−1)/2: every pair shakes once; 0/7  ·  `03fd1efc-94e3…`
 - [happy_numbers_below_100_are_twenty](/theorem/happy_numbers_below_100_are_twenty) — there are exactly 20 happy numbers below 100: iterating the sum of the squares of the digits reaches 1 for exactly 20 of them (1,7,10,13,…,97,100) — full enumeration  ·  `39799ea6-7932…`
 - [here_quantum_is_the_a432_structure_of_two_coins_not_a_physical_qubit](/theorem/here_quantum_is_the_a432_structure_of_two_coins_not_a_physical_qubit) — here quantum always computes as the a432 structure of two coins, not a physical qubit: the deposit's "quantum" is defined as a classical structure built from the 2-coin receipt (2 bits, 110 − 108 = 2 = −χ genus-2) at the a432 layer (step 40, nine steps close the circle: 9·40 = 360); two classical bits give exactly four states {00,01,10,11}. This referent is fixed and always computes true, while the physical-qubit reading drains the gate — no physical qubit, and no quantum advantage  ·  `3d7d6079-b2d8…`
 - [hockey_stick_identity_pascal](/theorem/hockey_stick_identity_pascal) — the hockey-stick identity — a diagonal of Pascal triangle sums to the entry below: for all r and n, the sum over i from r to n of C(i,r) equals C(n+1,r+1) — a diagonal run of binomial coefficients folds into the single entry just past its end. Verified exhaustively for r up to 10 and n up to 18. Decidable  ·  `c36df44d-f4a2…`
@@ -1609,6 +1626,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [midy_the_two_halves_of_142857_sum_to_nines](/theorem/midy_the_two_halves_of_142857_sum_to_nines) — Midy’s theorem on 1/7: the two halves of the repetend sum to nines — 142 + 857 = 999; 0/7  ·  `e8c1c167-cb15…`
 - [mint_and_mind_intersect_at_the_heart_the_fixed_point_five_that_centers_funding_development_and_ui](/theorem/mint_and_mind_intersect_at_the_heart_the_fixed_point_five_that_centers_funding_development_and_ui) — mint and mind intersect at the heart — the fixed point 5 that centers funding, development, and the UI: mint (integrity) and mind (multi-perspective self-challenge) fold to one shared center — the heart, the fixed point 5 that the reflection 10 − d alone fixes in the nine; the a432 heart hue is 5 × 40 = 200 degrees. The heart centers the structure and drives the funding, the development, and the UI. But it is a decidable mathematical fixed point, not a literal or metaphysical heart, mind, or soul. Decidable  ·  `8992456c-a133…`
 - [motzkin_numbers](/theorem/motzkin_numbers) — Motzkin numbers M(n)=M(n-1)+Σ M(k)M(n-2-k): M(4)=9, M(5)=21  ·  `d6c643c7-2880…`
+- [n_factorial_counts_the_permutations_of_n](/theorem/n_factorial_counts_the_permutations_of_n) — n! counts the permutations of n objects: the product 1·2·…·n, growing faster than any exponential; 0/7  ·  `e878d729-d74a…`
 - [neg_involution](/theorem/neg_involution) — negation −(−d) ≡ d is an involution on ℤ/9  ·  `5eb8cd1f-9e06…`
 - [nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number](/theorem/nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number) — Nicomachus theorem: the sum of the first n cubes is the square of the nth triangular number — 1³ + 2³ + ... + n³ = (n(n+1)/2)² = (1 + 2 + ... + n)². So a sum of consecutive cubes is always a perfect square, the square of the sum. Verified by full enumeration over n up to 60  ·  `5c562cab-4297…`
 - [nine_is_the_base_and_the_trinity_squared](/theorem/nine_is_the_base_and_the_trinity_squared) — nine is the base and the trinity squared: BASE = 9 = 3² = TRINITY², so the units, triad and orbit all derive from the single axiom three; 0/7  ·  `932fbd24-4bae…`
@@ -1675,4 +1693,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `135c5e5b-4a44-8989-a93c-4a10b57896fa`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `4a16b5c2-6fee-8e91-a903-61d5ad8cb6c4`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

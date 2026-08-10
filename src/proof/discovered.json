@@ -5798,5 +5798,95 @@
     "key": "the_sum_of_squares_of_a_pascal_row_is_the_central_binomial",
     "name": "the sum of squares of a Pascal row is the central binomial: Σ_k C(n,k)² = C(2n,n); 0/7",
     "receipt": "37e984a6-8818-8b2f-9e37-4fa78a9c74a9"
+  },
+  {
+    "key": "sum_of_the_first_n_integers_is_n_times_n_plus_one_over_two",
+    "name": "the sum of the first n integers is n(n+1)/2: the triangular formula Gauss found as a boy; 0/7",
+    "receipt": "bd236190-04c3-842c-a0b6-1338c254b590"
+  },
+  {
+    "key": "sum_of_the_first_n_squares_is_the_pyramidal_formula",
+    "name": "the sum of the first n squares is n(n+1)(2n+1)/6 — the square-pyramidal number; 0/7",
+    "receipt": "f55d43ea-8f50-8d72-91a7-27a3233942cc"
+  },
+  {
+    "key": "the_sum_of_the_first_n_cubes_is_the_square_of_their_sum",
+    "name": "the sum of the first n cubes is the square of the sum (Nicomachus): Σk³ = (Σk)² = (n(n+1)/2)²; 0/7",
+    "receipt": "b84a64a5-d2ae-83f1-a28f-6e8425fca522"
+  },
+  {
+    "key": "the_sum_of_the_first_n_even_numbers_is_n_times_n_plus_one",
+    "name": "the sum of the first n even numbers is n(n+1): 2+4+…+2n = n(n+1) = twice the triangular; 0/7",
+    "receipt": "be759d3e-690c-8d2f-b63e-716ab41fce82"
+  },
+  {
+    "key": "n_factorial_counts_the_permutations_of_n",
+    "name": "n! counts the permutations of n objects: the product 1·2·…·n, growing faster than any exponential; 0/7",
+    "receipt": "e878d729-d74a-83c7-b203-ef46c3d574cb"
+  },
+  {
+    "key": "the_derangement_recurrence_holds",
+    "name": "the derangement recurrence holds: D_n = (n−1)(D_{n−1}+D_{n−2}), D_1=0, D_2=1 — permutations with no fixed point; 0/7",
+    "receipt": "068f1309-f0bd-81d2-92a2-bc3a2a21b4c8"
+  },
+  {
+    "key": "handshakes_among_n_people_number_c_n_2",
+    "name": "handshakes among n people number C(n,2) = n(n−1)/2: every pair shakes once; 0/7",
+    "receipt": "03fd1efc-94e3-87c5-962d-55663f48d28b"
+  },
+  {
+    "key": "the_number_of_derangements_over_n_factorial_approaches_one_over_e",
+    "name": "the fraction of permutations that are derangements approaches 1/e: D_n/n! → 1/e as n grows; 0/7",
+    "receipt": "e004191c-7b7e-89d4-9945-d513fc5bd092"
+  },
+  {
+    "key": "euclids_parametrization_generates_pythagorean_triples",
+    "name": "Euclid’s parametrization generates Pythagorean triples: (m²−n², 2mn, m²+n²) satisfies a²+b²=c² for all m>n≥1; 0/7",
+    "receipt": "c2bde5ba-19bc-8926-b056-d9f03eb23c6e"
+  },
+  {
+    "key": "there_are_infinitely_many_pythagorean_triples",
+    "name": "there are infinitely many Pythagorean triples: every scaling k·(3,4,5) is a triple, so no finite list is complete; 0/7",
+    "receipt": "99627f3a-6e22-8832-8245-d740d3733591"
+  },
+  {
+    "key": "the_area_of_a_pythagorean_triangle_is_a_multiple_of_six",
+    "name": "the area of an integer right triangle is a multiple of six: ab/2 ≡ 0 (mod 6) for every Pythagorean triple; 0/7",
+    "receipt": "4eebdcf3-958b-8c4a-a9d1-d87df7788ec1"
+  },
+  {
+    "key": "two_consecutive_triangular_numbers_sum_to_a_square",
+    "name": "two consecutive triangular numbers sum to a square: T_n + T_{n−1} = n²; 0/7",
+    "receipt": "53677354-05c3-82e3-9073-34a34daae041"
+  },
+  {
+    "key": "eight_times_a_triangular_number_plus_one_is_a_square",
+    "name": "eight times a triangular number plus one is an odd square: 8·T_n + 1 = (2n+1)²; 0/7",
+    "receipt": "2d9b9a90-3968-8d06-8751-a2fe5ef7e641"
+  },
+  {
+    "key": "every_hexagonal_number_is_a_triangular_number",
+    "name": "every hexagonal number is a triangular number: H_n = n(2n−1) = T_{2n−1}; 0/7",
+    "receipt": "fa2deb9c-b546-8a97-87df-de01b46274dc"
+  },
+  {
+    "key": "the_reciprocal_triangular_numbers_sum_to_two",
+    "name": "the reciprocals of the triangular numbers sum to two: Σ 1/T_n = 2, telescoping as 2(1/n − 1/(n+1)); 0/7",
+    "receipt": "2415c2e7-2ec2-8a1d-8dff-d6278f2690ac"
+  },
+  {
+    "key": "the_difference_of_consecutive_squares_is_the_odd_numbers",
+    "name": "the difference of consecutive squares is the odd numbers: (n+1)² − n² = 2n+1; 0/7",
+    "receipt": "b082f743-3482-8744-96c0-0839ea4f7f77"
+  },
+  {
+    "key": "a_square_never_ends_in_two_three_seven_or_eight_in_base_ten",
+    "name": "a perfect square never ends in 2, 3, 7 or 8 in base ten: the last digit is one of 0,1,4,5,6,9; 0/7",
+    "receipt": "560a627a-349e-8949-93db-85187e7696ee"
+  },
+  {
+    "key": "the_product_of_any_three_consecutive_integers_is_divisible_by_six",
+    "name": "the product of any three consecutive integers is divisible by six: among three consecutive there is a multiple of two and of three; 0/7",
+    "receipt": "09a17240-17e1-86b5-9235-cf63a416c554"
   }
 ]
