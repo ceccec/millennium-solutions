@@ -17,7 +17,7 @@ export const RED = /\bwe prove\b|\bproven\b|confidence\s*=?\s*1\.0|ready for pee
 // target the ASSERTION forms (proven / we proved / demonstrated) only — NEVER the honest "proof of concept"
 // nouns present in the localized descriptions (доказателство · preuve · Machbarkeitsnachweis · prueba ·
 // 概念验证), which must still pass. Negation-blind, like RED: honest localized prose avoids these words.
-export const RED_INTL = /wir haben bewiesen|bewiesen|nous avons prouv|prouvée?s?|démontrée?s?|hemos demostrado|demostrad[oa]s?|мы доказали|доказан[оаи]|доказали|доказахме|已证明|我们证明了|证明了/i
+export const RED_INTL = /wir haben bewiesen|bewiesen|nous avons prouv|prouvée?s?|démontrée?s?|hemos demostrado|demostrad[oa]s?|мы доказали|доказан[оаи]|доказали|доказахме|已证明|我们证明了|证明了|abbiamo dimostrato|dimostrat[oi]|demonstrámos|provámos|証明した|証明しました|أثبتنا|برهنّا|सिद्ध कर|udowodni\w*|wij hebben bewezen|bewezen/i
 
 // The recurring OVER-REACH the deposit must never ASSERT — the physics/hardware/crypto
 // superlatives that kept re-emerging in conversation and sailed through the old gate.

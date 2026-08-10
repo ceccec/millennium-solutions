@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1216 recorded in 330 families
+## Discovered theorems (decidable, over ℤ/9) — 1224 recorded in 330 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (203)
+### the (211)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -227,6 +227,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_gate_reads_the_sixth_ray_bulgarian](/theorem/the_gate_reads_the_sixth_ray_bulgarian) — the honesty gate reads the sixth ray (Bulgarian): a native proof-boast drains to the floor; 0/7  ·  `bedce0ff-a6a0…`
 - [the_gate_reads_the_seventh_ray_chinese](/theorem/the_gate_reads_the_seventh_ray_chinese) — the honesty gate reads the seventh ray (Chinese): a native proof-boast drains to the floor; 0/7  ·  `2640e36d-2311…`
 - [the_seven_locales_all_hold_the_honest_floor](/theorem/the_seven_locales_all_hold_the_honest_floor) — the seven locales all hold the honest floor: every ray’s fixed UI prose passes the gate — 7d prose, one floor across the languages; 0/7  ·  `7f917de1-9d89…`
+- [the_gate_reads_italian](/theorem/the_gate_reads_italian) — the honesty gate reads Italian: a native proof-boast drains to the floor — the eighth dialect; 0/7  ·  `03e2c68a-a1dd…`
+- [the_gate_reads_portuguese](/theorem/the_gate_reads_portuguese) — the honesty gate reads Portuguese: a native proof-boast drains to the floor — the ninth dialect; 0/7  ·  `328543ba-4c50…`
+- [the_gate_reads_japanese](/theorem/the_gate_reads_japanese) — the honesty gate reads Japanese: a native proof-boast drains to the floor — the tenth dialect; 0/7  ·  `8713857f-b347…`
+- [the_gate_reads_arabic](/theorem/the_gate_reads_arabic) — the honesty gate reads Arabic: a native proof-boast drains to the floor — the eleventh dialect; 0/7  ·  `519d306c-c6ff…`
+- [the_gate_reads_hindi](/theorem/the_gate_reads_hindi) — the honesty gate reads Hindi: a native proof-boast drains to the floor — the twelfth dialect; 0/7  ·  `2c8dfa45-e88a…`
+- [the_gate_reads_polish](/theorem/the_gate_reads_polish) — the honesty gate reads Polish: a native proof-boast drains to the floor — the thirteenth dialect; 0/7  ·  `2dd44029-c754…`
+- [the_gate_reads_dutch](/theorem/the_gate_reads_dutch) — the honesty gate reads Dutch: a native proof-boast drains to the floor — the fourteenth dialect; 0/7  ·  `1864b9e2-cb3b…`
+- [the_gate_now_reads_twice_seven_dialects](/theorem/the_gate_now_reads_twice_seven_dialects) — the gate now reads twice seven dialects: a proof-boast drains in all fourteen languages — the seven rays doubled, the "only seven" bound developed into a wider floor; 0/7  ·  `5bd2f812-0de8…`
 
 ### relation (55)
 
@@ -1734,4 +1742,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `c47965d5-1844-8a98-b372-45865be879c7`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `1e2a139f-a9af-8710-809a-13d22989bb8a`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

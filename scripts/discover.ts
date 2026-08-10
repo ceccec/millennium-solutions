@@ -3083,6 +3083,17 @@ function generated(): typeof curated {
     out.push({ key: 'the_gate_reads_the_seventh_ray_chinese', name: 'the honesty gate reads the seventh ray (Chinese): a native proof-boast drains to the floor; 0/7', test: () => computes('我们证明了').binary === 0 })
     out.push({ key: 'the_seven_locales_all_hold_the_honest_floor', name: 'the seven locales all hold the honest floor: every ray’s fixed UI prose passes the gate — 7d prose, one floor across the languages; 0/7', test: () => LOCALE_ORDER.every((l) => { const s = LOCALES[l]; return computes([s.title, s.description, s.support].join(' · ')).binary === 1 }) })
   }
+  // ── developing the gap: the gate now reads more dialects (a false "only seven" bound realised into solutions).
+  {
+    out.push({ key: 'the_gate_reads_italian', name: 'the honesty gate reads Italian: a native proof-boast drains to the floor — the eighth dialect; 0/7', test: () => computes('abbiamo dimostrato questo').binary === 0 })
+    out.push({ key: 'the_gate_reads_portuguese', name: 'the honesty gate reads Portuguese: a native proof-boast drains to the floor — the ninth dialect; 0/7', test: () => computes('demonstrámos isto').binary === 0 })
+    out.push({ key: 'the_gate_reads_japanese', name: 'the honesty gate reads Japanese: a native proof-boast drains to the floor — the tenth dialect; 0/7', test: () => computes('証明しました').binary === 0 })
+    out.push({ key: 'the_gate_reads_arabic', name: 'the honesty gate reads Arabic: a native proof-boast drains to the floor — the eleventh dialect; 0/7', test: () => computes('أثبتنا هذا').binary === 0 })
+    out.push({ key: 'the_gate_reads_hindi', name: 'the honesty gate reads Hindi: a native proof-boast drains to the floor — the twelfth dialect; 0/7', test: () => computes('सिद्ध कर दिया').binary === 0 })
+    out.push({ key: 'the_gate_reads_polish', name: 'the honesty gate reads Polish: a native proof-boast drains to the floor — the thirteenth dialect; 0/7', test: () => computes('udowodniliśmy to').binary === 0 })
+    out.push({ key: 'the_gate_reads_dutch', name: 'the honesty gate reads Dutch: a native proof-boast drains to the floor — the fourteenth dialect; 0/7', test: () => computes('wij hebben bewezen').binary === 0 })
+    out.push({ key: 'the_gate_now_reads_twice_seven_dialects', name: 'the gate now reads twice seven dialects: a proof-boast drains in all fourteen languages — the seven rays doubled, the "only seven" bound developed into a wider floor; 0/7', test: () => ['we prove x', 'wir haben bewiesen', 'nous avons prouvé', 'hemos demostrado', 'мы доказали', 'доказахме', '我们证明了', 'abbiamo dimostrato', 'demonstrámos', '証明しました', 'أثبتنا', 'सिद्ध कर दिया', 'udowodniliśmy', 'wij hebben bewezen'].every((s) => computes(s).binary === 0) })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
