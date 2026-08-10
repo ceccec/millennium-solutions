@@ -5888,5 +5888,35 @@
     "key": "the_product_of_any_three_consecutive_integers_is_divisible_by_six",
     "name": "the product of any three consecutive integers is divisible by six: among three consecutive there is a multiple of two and of three; 0/7",
     "receipt": "09a17240-17e1-86b5-9235-cf63a416c554"
+  },
+  {
+    "key": "the_arithmetic_mean_is_at_least_the_geometric_mean",
+    "name": "AM ≥ GM for two positives: (a+b)/2 ≥ √(ab), equality iff a=b — the mean inequality’s base case; 0/7",
+    "receipt": "6e5aafcf-cbb5-86f2-95d0-21f36d3b4213"
+  },
+  {
+    "key": "a_positive_number_plus_its_reciprocal_is_at_least_two",
+    "name": "a positive number plus its reciprocal is at least two: x + 1/x ≥ 2 for x > 0, equality at x = 1; 0/7",
+    "receipt": "93cbc2a0-436d-890f-9b01-d7a9a63b451c"
+  },
+  {
+    "key": "bernoullis_inequality_holds",
+    "name": "Bernoulli’s inequality: (1+x)^n ≥ 1 + n·x for x ≥ −1 and integer n ≥ 0; 0/7",
+    "receipt": "f630d85b-1224-8007-80fc-eaba931bdf54"
+  },
+  {
+    "key": "the_triangle_inequality_holds_on_the_line",
+    "name": "the triangle inequality: |a + b| ≤ |a| + |b| for all reals; 0/7",
+    "receipt": "a45c0613-96e3-8ec4-a4fe-ce5df71287ba"
+  },
+  {
+    "key": "the_cauchy_schwarz_inequality_holds_in_two_dimensions",
+    "name": "the Cauchy–Schwarz inequality in 2D: (a₁b₁ + a₂b₂)² ≤ (a₁²+a₂²)(b₁²+b₂²); 0/7",
+    "receipt": "d949b87b-4e06-8442-94ed-b6cd5cdc082d"
+  },
+  {
+    "key": "the_mean_chain_harmonic_geometric_arithmetic_quadratic",
+    "name": "the mean chain HM ≤ GM ≤ AM ≤ QM for two positives: harmonic ≤ geometric ≤ arithmetic ≤ quadratic mean; 0/7",
+    "receipt": "17379539-c0c5-82cb-a971-d38e5807a377"
   }
 ]

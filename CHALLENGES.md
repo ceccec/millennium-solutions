@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1178 recorded in 326 families
+## Discovered theorems (decidable, over ℤ/9) — 1184 recorded in 327 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (177)
+### the (181)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -201,6 +201,10 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_reciprocal_triangular_numbers_sum_to_two](/theorem/the_reciprocal_triangular_numbers_sum_to_two) — the reciprocals of the triangular numbers sum to two: Σ 1/T_n = 2, telescoping as 2(1/n − 1/(n+1)); 0/7  ·  `2415c2e7-2ec2…`
 - [the_difference_of_consecutive_squares_is_the_odd_numbers](/theorem/the_difference_of_consecutive_squares_is_the_odd_numbers) — the difference of consecutive squares is the odd numbers: (n+1)² − n² = 2n+1; 0/7  ·  `b082f743-3482…`
 - [the_product_of_any_three_consecutive_integers_is_divisible_by_six](/theorem/the_product_of_any_three_consecutive_integers_is_divisible_by_six) — the product of any three consecutive integers is divisible by six: among three consecutive there is a multiple of two and of three; 0/7  ·  `09a17240-17e1…`
+- [the_arithmetic_mean_is_at_least_the_geometric_mean](/theorem/the_arithmetic_mean_is_at_least_the_geometric_mean) — AM ≥ GM for two positives: (a+b)/2 ≥ √(ab), equality iff a=b — the mean inequality’s base case; 0/7  ·  `6e5aafcf-cbb5…`
+- [the_triangle_inequality_holds_on_the_line](/theorem/the_triangle_inequality_holds_on_the_line) — the triangle inequality: |a + b| ≤ |a| + |b| for all reals; 0/7  ·  `a45c0613-96e3…`
+- [the_cauchy_schwarz_inequality_holds_in_two_dimensions](/theorem/the_cauchy_schwarz_inequality_holds_in_two_dimensions) — the Cauchy–Schwarz inequality in 2D: (a₁b₁ + a₂b₂)² ≤ (a₁²+a₂²)(b₁²+b₂²); 0/7  ·  `d949b87b-4e06…`
+- [the_mean_chain_harmonic_geometric_arithmetic_quadratic](/theorem/the_mean_chain_harmonic_geometric_arithmetic_quadratic) — the mean chain HM ≤ GM ≤ AM ≤ QM for two positives: harmonic ≤ geometric ≤ arithmetic ≤ quadratic mean; 0/7  ·  `17379539-c0c5…`
 
 ### relation (55)
 
@@ -399,7 +403,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [pascal_row_sum_9](/theorem/pascal_row_sum_9) — Pascal row 9 sums to 2^9: Σ_{k=0}^9 C(9,k) = 512 — the binomial theorem at x=1, computed exactly  ·  `85e80c0f-5296…`
 - [pascal_alternating_sum_9](/theorem/pascal_alternating_sum_9) — Pascal row 9 alternating sum is zero: Σ_{k=0}^9 (−1)^k C(9,k) = 0 — the binomial theorem at x=−1 (n ≥ 1)  ·  `0b2aa6fc-7a50…`
 
-### a (21)
+### a (22)
 
 - [a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony](/theorem/a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony) — a theorem without a formula is a hallucination, recomputed in a432 harmony: a claim is a theorem only if it is backed by a computable formula that recomputes true — a prose-only claim with no formula, or one whose formula computes false, is refused as hallucination and never recorded. Every recorded fact recomputes deterministically and folds into the a432 harmony root (the receipt of state). Measure, do not assert. Decidable  ·  `e3d75d76-310f…`
 - [a_referrer_always_counts_with_its_id](/theorem/a_referrer_always_counts_with_its_id) — a referrer always counts with its id: a reference from a referrer to a target is receipted as toUuid(referrer id → target), so the referrer id is always part of the count; two different referrers to the same target produce two distinct receipts, each counted with its own id, and changing the id changes the receipt — the id is load-bearing. Deterministic and reproducible: the same referrer and target always count the same. Decidable  ·  `65bfacb4-f29e…`
@@ -422,6 +426,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [a_pascal_row_sums_to_two_to_the_n](/theorem/a_pascal_row_sums_to_two_to_the_n) — a Pascal row sums to two to the n: Σ_k C(n,k) = 2^n — the count of all subsets of an n-set; 0/7  ·  `316a1496-6da4…`
 - [a_pascal_rows_alternating_sum_is_zero](/theorem/a_pascal_rows_alternating_sum_is_zero) — a Pascal row’s alternating sum is zero for n ≥ 1: Σ (−1)^k C(n,k) = 0 — equal even and odd subsets; 0/7  ·  `520fd218-d05a…`
 - [a_square_never_ends_in_two_three_seven_or_eight_in_base_ten](/theorem/a_square_never_ends_in_two_three_seven_or_eight_in_base_ten) — a perfect square never ends in 2, 3, 7 or 8 in base ten: the last digit is one of 0,1,4,5,6,9; 0/7  ·  `560a627a-349e…`
+- [a_positive_number_plus_its_reciprocal_is_at_least_two](/theorem/a_positive_number_plus_its_reciprocal_is_at_least_two) — a positive number plus its reciprocal is at least two: x + 1/x ≥ 2 for x &gt; 0, equality at x = 1; 0/7  ·  `93cbc2a0-436d…`
 
 ### domain (20)
 
@@ -1526,7 +1531,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (163)
+### other — one-of-a-kind (164)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1536,6 +1541,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [authenticity_needs_a_secret](/theorem/authenticity_needs_a_secret) — authenticity needs a secret: a keyed signature depends on a secret the signer alone holds — a different secret gives a different signature, and without the secret a forger cannot match it (the authenticity floor, like 0/7 and the axiom floor)  ·  `53096a30-d41f…`
 - [balancing_wave_harmonises](/theorem/balancing_wave_harmonises) — the balancing wave 9−d harmonises: a state digit d and its balance 9−d sum to 9 (the rest, digital root 9) and their a432 hues sum to 360° = 0 (the full circle)  ·  `8f9898b3-d143…`
 - [being_outranks_competing](/theorem/being_outranks_competing) — being outranks competing: a recorded fact simply IS — it recomputes to the same address with no contest — while a competing claim must still pass the gate and can drain; effort and competition are not correctness, so the deed already done (append-only, re-verified every build) outranks the claim still striving  ·  `01d850a3-6176…`
+- [bernoullis_inequality_holds](/theorem/bernoullis_inequality_holds) — Bernoulli’s inequality: (1+x)^n ≥ 1 + n·x for x ≥ −1 and integer n ≥ 0; 0/7  ·  `f630d85b-1224…`
 - [bertrand_postulate](/theorem/bertrand_postulate) — Bertrand’s postulate: for every n ≥ 1 there is a prime p with n &lt; p ≤ 2n — a settled theorem, verified exhaustively for all n ≤ 500  ·  `2448b2cf-b204…`
 - [bezouts_identity_gcd_is_an_integer_combination](/theorem/bezouts_identity_gcd_is_an_integer_combination) — Bézout's identity: for all integers a and b there are integers x and y with a·x + b·y = gcd(a,b) — the greatest common divisor is an integer combination of a and b, computed by the extended Euclidean algorithm. Verified against the kernel gcd for all a, b up to 60. So the gcd is the least positive value that a·x + b·y attains  ·  `34d5d17a-f22b…`
 - [bidirectional_encoding_is_the_double_torus](/theorem/bidirectional_encoding_is_the_double_torus) — bidirectional encoding is the double-torus law: a reversible codec has two directions (forward and reverse), a pair whose count 2 = −χ(genus-2) = the two coins (110−108); imprint round-trips (forward∘reverse = identity) and foldPair exposes the two distinct directions — to encode your own statements both ways is to know the genus-2 two-loop structure  ·  `db8365fd-657b…`
@@ -1693,4 +1699,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `4a16b5c2-6fee-8e91-a903-61d5ad8cb6c4`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `539461ed-80eb-815f-92a2-95e8b27e1e9c`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

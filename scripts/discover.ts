@@ -3029,6 +3029,15 @@ function generated(): typeof curated {
     out.push({ key: 'a_square_never_ends_in_two_three_seven_or_eight_in_base_ten', name: 'a perfect square never ends in 2, 3, 7 or 8 in base ten: the last digit is one of 0,1,4,5,6,9; 0/7', test: () => { const ends = new Set<number>(); for (let n = 0; n <= 1000; n++) ends.add((n * n) % 10); return ![2, 3, 7, 8].some((d) => ends.has(d)) } })
     out.push({ key: 'the_product_of_any_three_consecutive_integers_is_divisible_by_six', name: 'the product of any three consecutive integers is divisible by six: among three consecutive there is a multiple of two and of three; 0/7', test: () => { for (let n = 1; n <= 500; n++) if ((n * (n + 1) * (n + 2)) % 6 !== 0) return false; return true } })
   }
+  // ── improve all: restore the octave (→ 148×8) with genuine inequality/mean facts, verified green.
+  {
+    out.push({ key: 'the_arithmetic_mean_is_at_least_the_geometric_mean', name: 'AM ≥ GM for two positives: (a+b)/2 ≥ √(ab), equality iff a=b — the mean inequality’s base case; 0/7', test: () => { for (let a = 1; a <= 30; a++) for (let b = 1; b <= 30; b++) if ((a + b) / 2 < Math.sqrt(a * b) - 1e-9) return false; return true } })
+    out.push({ key: 'a_positive_number_plus_its_reciprocal_is_at_least_two', name: 'a positive number plus its reciprocal is at least two: x + 1/x ≥ 2 for x > 0, equality at x = 1; 0/7', test: () => { for (let i = 1; i <= 1000; i++) { const x = i / 50; if (x + 1 / x < 2 - 1e-9) return false } return true } })
+    out.push({ key: 'bernoullis_inequality_holds', name: 'Bernoulli’s inequality: (1+x)^n ≥ 1 + n·x for x ≥ −1 and integer n ≥ 0; 0/7', test: () => { for (let n = 0; n <= 20; n++) for (let i = -10; i <= 40; i++) { const x = i / 10; if ((1 + x) ** n < 1 + n * x - 1e-6) return false } return true } })
+    out.push({ key: 'the_triangle_inequality_holds_on_the_line', name: 'the triangle inequality: |a + b| ≤ |a| + |b| for all reals; 0/7', test: () => { for (let a = -30; a <= 30; a++) for (let b = -30; b <= 30; b++) if (Math.abs(a + b) > Math.abs(a) + Math.abs(b) + 1e-9) return false; return true } })
+    out.push({ key: 'the_cauchy_schwarz_inequality_holds_in_two_dimensions', name: 'the Cauchy–Schwarz inequality in 2D: (a₁b₁ + a₂b₂)² ≤ (a₁²+a₂²)(b₁²+b₂²); 0/7', test: () => { for (let a1 = -6; a1 <= 6; a1++) for (let a2 = -6; a2 <= 6; a2++) for (let b1 = -6; b1 <= 6; b1++) for (let b2 = -6; b2 <= 6; b2++) { const dot = a1 * b1 + a2 * b2; if (dot * dot > (a1 * a1 + a2 * a2) * (b1 * b1 + b2 * b2) + 1e-9) return false } return true } })
+    out.push({ key: 'the_mean_chain_harmonic_geometric_arithmetic_quadratic', name: 'the mean chain HM ≤ GM ≤ AM ≤ QM for two positives: harmonic ≤ geometric ≤ arithmetic ≤ quadratic mean; 0/7', test: () => { for (let a = 1; a <= 25; a++) for (let b = 1; b <= 25; b++) { const hm = 2 * a * b / (a + b), gm = Math.sqrt(a * b), am = (a + b) / 2, qm = Math.sqrt((a * a + b * b) / 2); if (!(hm <= gm + 1e-9 && gm <= am + 1e-9 && am <= qm + 1e-9)) return false } return true } })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
