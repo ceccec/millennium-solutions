@@ -5638,5 +5638,45 @@
     "key": "the_doubling_map_doubles_the_angle_on_the_nine_point_circle",
     "name": "the doubling map ×2 doubles the angle on the nine-point circle: a digit at d·40° maps to 2d·40° (mod 360) — doubling is rotation, the octave is angular; 0/7",
     "receipt": "e64f1313-b471-89bc-a593-827ed10d9db5"
+  },
+  {
+    "key": "euclids_infinitude_the_product_plus_one_has_a_new_prime_factor",
+    "name": "Euclid’s infinitude, constructively: for any finite set of primes, their product plus one has a prime factor outside the set — so no finite list is complete; 0/7",
+    "receipt": "4947140c-cce1-84e4-9c6d-d026adcf56d0"
+  },
+  {
+    "key": "bertrands_postulate_a_prime_lies_between_n_and_two_n",
+    "name": "Bertrand’s postulate: for every n ≥ 1 there is a prime p with n < p ≤ 2n — verified exhaustively to 500; 0/7",
+    "receipt": "a58870e1-1622-885c-9c47-ca99101a7115"
+  },
+  {
+    "key": "the_only_prime_triple_spaced_by_two_is_three_five_seven",
+    "name": "the only prime triple spaced by two is (3,5,7): among p,p+2,p+4 one is always divisible by three, so 3,5,7 is unique; 0/7",
+    "receipt": "d8d8d3ec-27c7-8518-a443-52493087624a"
+  },
+  {
+    "key": "every_prime_above_three_is_six_k_plus_or_minus_one",
+    "name": "every prime above three is 6k ± 1: primes avoid the residues 0,2,3,4 mod 6 — only ±1 survive coprimality with six; 0/7",
+    "receipt": "27566d35-6704-8ff1-b3ce-baddcc49ee71"
+  },
+  {
+    "key": "twin_primes_recur_below_a_thousand",
+    "name": "twin primes recur: pairs (p, p+2) both prime — (3,5),(5,7),(11,13),(17,19),… number many below a thousand; 0/7",
+    "receipt": "36973e3a-4503-8c6d-a290-24e8df8181bb"
+  },
+  {
+    "key": "legendre_a_prime_lies_between_consecutive_squares",
+    "name": "Legendre’s conjecture holds over the tested range: a prime lies between n² and (n+1)² for every n ≤ 60 — checked by computation, not a general result; 0/7",
+    "receipt": "558f62ef-2176-8d74-8471-4ccec64d0c9e"
+  },
+  {
+    "key": "goldbachs_even_sum_of_two_primes_to_a_thousand",
+    "name": "Goldbach’s even conjecture holds over the tested range: every even number from 4 to 1000 is a sum of two primes — checked by computation, not a general result; 0/7",
+    "receipt": "032ff03e-d893-87d8-8dd0-857432282e69"
+  },
+  {
+    "key": "the_gaps_between_primes_grow_without_bound",
+    "name": "the gaps between primes grow without bound: the run n!+2 … n!+n is all composite, giving a prime-free stretch of length n−1 for any n; 0/7",
+    "receipt": "47c4a1ae-6e87-8e0b-9956-a22b0a7d05ff"
   }
 ]
