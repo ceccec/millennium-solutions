@@ -1,9 +1,12 @@
-// Offline + SECURE INTEGRITY PROXY. The deposit is deterministic, so cached pages recompute identically
-// offline. Beyond caching, this worker treats the transport as ASSUMED INSECURE: every same-origin asset it
-// fetches is verified against a build-time SHA-256 manifest (sw-integrity.json) using a pure-JS SHA-256 (no
-// native WebCrypto) — a MITM-tampered response over plain HTTP fails the check and is refused, never served or
-// cached. Honest scope: this is INTEGRITY (tamper-detection via a cryptographic hash), NOT confidentiality —
-// the bytes are public, only their authenticity is proven. Integrity, not truth. 0/7.
+// Offline + SECURE INTEGRITY PROXY that PROXIES ALL TRAFFIC and SIGNS RECEIPTS. The deposit is deterministic,
+// so cached pages recompute identically offline. This worker sits in the path of EVERY request: same-origin
+// GET is verified against a build-time SHA-256 manifest (sw-integrity.json) with a pure-JS SHA-256 (no native
+// WebCrypto) — a MITM-tampered response over assumed-insecure transport fails and is refused, never served or
+// cached; every other request (cross-origin, non-GET) is forwarded transparently. Each verified asset is
+// SIGNED into a chained content-address RECEIPT (toUuid, ported from the ledger) and posted to the clients, so
+// the traffic is an audited, tamper-evident stream — forensics (a broken link localises tampering) and
+// analytics run on the receipts. Honest scope: INTEGRITY and provenance, NOT confidentiality; a receipt is a
+// content-address, not a keyed signature; opaque cross-origin responses cannot be hash-verified. 0/7.
 
 // ── pure-JS SHA-256 (FIPS 180-4), a port of src/0/sha256.ts → lowercase hex. KAT: sha256("abc") = ba7816bf… ──
 const K = new Uint32Array([
@@ -41,7 +44,36 @@ function sha256hex(msg) {
   return hex
 }
 
-const CACHE = 'millennium-v3'
+// ── toUuid — the deposit's content-address (FNV-1a → v8 UUID), ported faithfully so the worker's receipts
+// match the ledger's. A receipt is a content-address, not a keyed signature: it proves the observation
+// (what was fetched, unaltered), never the truth. ──
+function h32(s, seed) {
+  let h = (0x811c9dc5 ^ seed) >>> 0
+  for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193) >>> 0; h ^= h >>> 13 }
+  h = Math.imul(h ^ (h >>> 16), 0x85ebca6b) >>> 0
+  h = Math.imul(h ^ (h >>> 13), 0xc2b2ae35) >>> 0
+  return (h ^ (h >>> 16)) >>> 0
+}
+function toUuid(seed) {
+  const words = [h32(seed, 0), h32(seed, 0x9e3779b9), h32(seed, 0x243f6a88), h32(seed, 0xb7e15162)]
+  const b = []
+  for (const w of words) b.push((w >>> 24) & 255, (w >>> 16) & 255, (w >>> 8) & 255, w & 255)
+  b[6] = (b[6] & 0x0f) | 0x80; b[8] = (b[8] & 0x3f) | 0x80
+  const x = b.map((v) => v.toString(16).padStart(2, '0')).join('')
+  return x.slice(0, 8) + '-' + x.slice(8, 12) + '-' + x.slice(12, 16) + '-' + x.slice(16, 20) + '-' + x.slice(20)
+}
+// The traffic receipt chain — each receipt seeded by the last (receipt = toUuid(prev → url:hash)), so altering
+// or dropping one breaks every receipt after it: a tamper-evident, auditable log of what the worker proxied.
+let CHAIN = toUuid('axiom:traffic')
+let SIGNED = 0
+async function signReceipt(pathname, hash) {
+  CHAIN = toUuid(CHAIN + '→' + pathname + ':' + hash)
+  SIGNED++
+  const receipt = { type: 'uuidna-receipt', pathname, address: hash, receipt: CHAIN, n: SIGNED }
+  for (const c of await self.clients.matchAll()) c.postMessage(receipt) // clients audit + analyse the stream
+}
+
+const CACHE = 'millennium-v4'
 let INTEGRITY = null
 async function manifest() {
   if (INTEGRITY) return INTEGRITY
@@ -56,6 +88,7 @@ async function verified(req, res) {
   if (want) {
     const got = sha256hex(new Uint8Array(await res.clone().arrayBuffer()))
     if (got !== want) throw new Error('integrity mismatch — refusing tampered asset: ' + new URL(req.url).pathname)
+    signReceipt(new URL(req.url).pathname, got) // sign a chained receipt for the verified asset
   }
   return res
 }
@@ -67,7 +100,11 @@ self.addEventListener('activate', (e) => e.waitUntil((async () => {
 })()))
 self.addEventListener('fetch', (e) => {
   const req = e.request
-  if (req.method !== 'GET' || new URL(req.url).origin !== self.location.origin) return
+  // PROXY ALL TRAFFIC: every request passes through the worker. Same-origin GET is integrity-verified against
+  // the manifest below; everything else (cross-origin, POST/PUT/…) is forwarded transparently — the worker is
+  // in the path of all traffic, but honestly cannot hash-verify opaque cross-origin responses.
+  const sameOriginGet = req.method === 'GET' && new URL(req.url).origin === self.location.origin
+  if (!sameOriginGet) { e.respondWith(fetch(req).catch(() => caches.match(req))); return }
   const isDoc = req.mode === 'navigate' || req.destination === 'document'
   if (isDoc) {
     e.respondWith(
