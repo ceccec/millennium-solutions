@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1080 recorded in 307 families
+## Discovered theorems (decidable, over ℤ/9) — 1088 recorded in 308 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (146)
+### the (149)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -170,6 +170,9 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_triad_three_six_nine_are_the_multiples_of_three_in_z9](/theorem/the_triad_three_six_nine_are_the_multiples_of_three_in_z9) — the triad {3,6,9} are exactly the multiples of three in ℤ/9 — the non-units, the complement of the doubling orbit; 0/7  ·  `a6d5c9c5-2edd…`
 - [the_three_four_five_right_triangle_is_the_first_pythagorean_triple](/theorem/the_three_four_five_right_triangle_is_the_first_pythagorean_triple) — the 3-4-5 right triangle is the first Pythagorean triple: 3² + 4² = 5², the smallest and the only one in arithmetic progression — grounded on three; 0/7  ·  `00bf4b81-2060…`
 - [the_three_cube_roots_of_unity_sum_to_zero](/theorem/the_three_cube_roots_of_unity_sum_to_zero) — the three cube roots of unity sum to zero: 1 + ω + ω² = 0 where ω = e^(2πi/3) — the trinity closes the circle; 0/7  ·  `050bdc86-fe61…`
+- [the_regular_pentagon_angles_are_the_heart_seventy_two_and_hundred_eight](/theorem/the_regular_pentagon_angles_are_the_heart_seventy_two_and_hundred_eight) — the regular pentagon’s exterior angle is 360/5 = 72° and its interior 108° — 72 = harmonicMean(60,90), the heart angle; 0/7  ·  `bc2e7cd8-5029…`
+- [the_five_fifth_roots_of_unity_sum_to_zero](/theorem/the_five_fifth_roots_of_unity_sum_to_zero) — the five fifth-roots of unity sum to zero: Σ e^(2πik/5) for k=0..4 = 0 — the pentagon closes the circle at the heart; 0/7  ·  `a93d693a-f41a…`
+- [the_golden_ratio_is_one_plus_root_five_over_two](/theorem/the_golden_ratio_is_one_plus_root_five_over_two) — the golden ratio is (1 + √5)/2, satisfying φ² = φ + 1 — five under the root generates φ, the pentagon’s diagonal; 0/7  ·  `31ae366f-f2b7…`
 
 ### relation (55)
 
@@ -784,6 +787,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [fibonacci_divides_iff_index_divides](/theorem/fibonacci_divides_iff_index_divides) — Fibonacci divisibility: for m ≥ 3, F_m divides F_n exactly when m divides n — divisibility of the numbers mirrors divisibility of their indices (verified m = 3..12, n ≤ 30)  ·  `d7e047b6-6d88…`
 - [fibonacci_sum_of_squares_is_product](/theorem/fibonacci_sum_of_squares_is_product) — the sum of the squares of the first n Fibonacci numbers is the product of the nth and next Fibonacci: F(1)² + F(2)² + ... + F(n)² = F(n)·F(n+1) — the squared Fibonacci tiles fold into one rectangle. Verified exhaustively for n up to 30. Decidable  ·  `7dbf90cd-b984…`
 
+### five (5)
+
+- [five_is_both_the_reflection_fixed_point_and_the_inverse_of_two](/theorem/five_is_both_the_reflection_fixed_point_and_the_inverse_of_two) — five is both the reflection fixed point and the multiplicative inverse of two: the ten's-complement reflection 10−d fixes exactly one digit, 5 (10−5=5), and 5 is also 2⁻¹ mod 9 (2·5 = 10 ≡ 1). So the heart of the vortex plays two roles at once — the center of the reflection and the step that runs the doubling orbit backward: multiplying each vortex element by 5 mod 9 returns the previous one. Decidable by exhaustion over ℤ/9  ·  `52292865-72c4…`
+- [five_six_one_is_the_smallest_carmichael_number](/theorem/five_six_one_is_the_smallest_carmichael_number) — 561 is the smallest Carmichael number, a composite that fools Fermat: 561 = 3 × 11 × 17 is composite and squarefree, yet a^560 ≡ 1 mod 561 for every a coprime to 561 — so Fermat's primality test cannot tell it from a prime. By Korselt's criterion this holds because (p−1) divides 560 for each prime factor p (2, 10, 16 all divide 560); and no composite below 561 has this property. Verified by full enumeration  ·  `109b8dc3-b6f7…`
+- [five_is_the_unique_ten_complement_fixed_point](/theorem/five_is_the_unique_ten_complement_fixed_point) — 5 is the unique ten’s-complement fixed point: among the digits 1..9 only σ(d)=10−d fixes 5 — the heart the reflection cannot move; 0/7  ·  `565565ff-cc3b…`
+- [five_is_a_fermat_prime_so_the_regular_pentagon_is_constructible](/theorem/five_is_a_fermat_prime_so_the_regular_pentagon_is_constructible) — 5 is a Fermat prime (5 = 2^(2^1)+1), so by Gauss–Wantzel the regular pentagon is straightedge-and-compass constructible — the heart is built, not assumed; 0/7  ·  `79ee4523-d085…`
+- [five_is_the_largest_fixed_point_of_the_fibonacci_index](/theorem/five_is_the_largest_fixed_point_of_the_fibonacci_index) — 5 is the largest fixed point of the Fibonacci index: F(5)=5 and no larger n has F(n)=n — the heart sits on the sequence; 0/7  ·  `90f11fdf-1287…`
+
 ### merkaba (5)
 
 - [merkaba_partition](/theorem/merkaba_partition) — the mod-3 classes {3,6,9}·{1,4,7}·{2,5,8} partition ℤ/9 into 3+3+3  ·  `782ddd50-1c1a…`
@@ -1222,11 +1233,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [fib_trinity_358](/theorem/fib_trinity_358) — 3, 5, 8 are consecutive Fibonacci: 3 + 5 = 8  ·  `d628c034-b0b3…`
 - [fib_trinity_horizon](/theorem/fib_trinity_horizon) — the 3-5-8 trinity digital-roots to the horizon: dr(3+5+8) = dr(16) = 7  ·  `cc1d4a9c-b31c…`
 
-### five (2)
-
-- [five_is_both_the_reflection_fixed_point_and_the_inverse_of_two](/theorem/five_is_both_the_reflection_fixed_point_and_the_inverse_of_two) — five is both the reflection fixed point and the multiplicative inverse of two: the ten's-complement reflection 10−d fixes exactly one digit, 5 (10−5=5), and 5 is also 2⁻¹ mod 9 (2·5 = 10 ≡ 1). So the heart of the vortex plays two roles at once — the center of the reflection and the step that runs the doubling orbit backward: multiplying each vortex element by 5 mod 9 returns the previous one. Decidable by exhaustion over ℤ/9  ·  `52292865-72c4…`
-- [five_six_one_is_the_smallest_carmichael_number](/theorem/five_six_one_is_the_smallest_carmichael_number) — 561 is the smallest Carmichael number, a composite that fools Fermat: 561 = 3 × 11 × 17 is composite and squarefree, yet a^560 ≡ 1 mod 561 for every a coprime to 561 — so Fermat's primality test cannot tell it from a prime. By Korselt's criterion this holds because (p−1) divides 560 for each prime factor p (2, 10, 16 all divide 560); and no composite below 561 has this property. Verified by full enumeration  ·  `109b8dc3-b6f7…`
-
 ### gray (2)
 
 - [gray_code_single_bit_transition](/theorem/gray_code_single_bit_transition) — the reflected binary Gray code changes exactly one bit per step: g(i)=i⊕(i≫1), and popcount(g(i)⊕g(i+1))=1 for every consecutive pair (exhaustive to 6 bits) — a single-bit binary orbit, like the vortex takes one step at a time  ·  `c1f2b63b-cae4…`
@@ -1381,6 +1387,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 
 - [surface_euler_char](/theorem/surface_euler_char) — the Euler characteristic of a closed orientable genus-g surface is χ = 2 − 2g: sphere 2, torus 0, double torus −2, genus-3 −4  ·  `ee2c16a3-aad0…`
 - [surface_classification](/theorem/surface_classification) — the closed-surface classification: complete invariant (χ, orientability) — S², a connected sum of g tori (χ=2−2g), or of k projective planes (χ=2−k)  ·  `95c6da2d-4c99…`
+
+### there (2)
+
+- [there_is_no_patent_royalty_but_the_author_sets_the_license_even_in_gold](/theorem/there_is_no_patent_royalty_but_the_author_sets_the_license_even_in_gold) — there is no patent royalty — but the author sets the license, even in gold: decidable mathematics is not patentable, so the deposit holds no patents and there is no patent monopoly to charge. What exists is a copyright license — non-commercial use free with attribution — and under it the author may set the commercial terms, denominated however they choose: the two coins, or physical gold for commercial gold-related use. That is fair exchange by license, not a patent royalty. Decidable  ·  `34229c9f-8be6…`
+- [there_are_exactly_five_platonic_solids](/theorem/there_are_exactly_five_platonic_solids) — there are exactly five Platonic solids: the pairs {p,q} with 1/p + 1/q &gt; 1/2 (p,q ≥ 3) number exactly five — tetrahedron, cube, octahedron, dodecahedron, icosahedron; 0/7  ·  `6504415b-1ea5…`
 
 ### triad (2)
 
@@ -1544,9 +1555,9 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [streams_coexist_without_collision](/theorem/streams_coexist_without_collision) — streams of computation coexist without collision: content-addressing maps distinct inputs to distinct addresses (no collision over the tested space), independent folds give distinct roots, and each fold is order-independent — so parallel streams coexist and merge without collision  ·  `36462f7b-9ba5…`
 - [strict_uuidna_minting_is_canonical_closing_the_minting_flaws_that_cause_real_damage](/theorem/strict_uuidna_minting_is_canonical_closing_the_minting_flaws_that_cause_real_damage) — strict uuidna minting is canonical — closing the minting flaws that cause real damage: minting flaws cause real damage — a non-canonical input mints an inconsistent address and integrity breaks. Strict minting closes them: coerce to string, normalize unicode to NFC, trim, so the same logical value always mints the same address; different values still differ. Canonicalisation is a discipline that must stay consistent, not truth; the hash stays non-cryptographic. Decidable  ·  `22f71789-95eb…`
 - [string_scale_is_a_thread_not_a_physical_theory](/theorem/string_scale_is_a_thread_not_a_physical_theory) — the string scale is a thread, not a physical theory: the string/Planck-scale frequency and acoustic 432 Hz are ~18 orders of magnitude apart — frequency is a shared thread across scales, but the scales are not interchangeable and this is a metaphor, not a theory of everything (0/7, not faster-than-light)  ·  `0107480d-24b0…`
+- [ten_factors_as_two_times_five_the_heart_and_the_even_prime](/theorem/ten_factors_as_two_times_five_the_heart_and_the_even_prime) — ten factors as 2 × 5 — the base is the even prime times the heart, so a fraction terminates in base ten exactly when its denominator’s only primes are 2 and 5; 0/7  ·  `aa3e534d-7294…`
 - [tens_complement_pairs_the_digits](/theorem/tens_complement_pairs_the_digits) — the ten’s-complement reflection pairs the digits (compute.md’s mesh layout, now a theorem): 10−d is an involution on 1..9 pairing 1↔9, 2↔8, 3↔7, 4↔6 and fixing only the centre 5 — four mirror pairs around one centre  ·  `0d37097c-d816…`
 - [tetrahedra_sums_cancel](/theorem/tetrahedra_sums_cancel) — the two tetrahedra residue-sums cancel: (1+4+7)+(2+5+8) ≡ 0 mod 9  ·  `62f28936-0000…`
-- [there_is_no_patent_royalty_but_the_author_sets_the_license_even_in_gold](/theorem/there_is_no_patent_royalty_but_the_author_sets_the_license_even_in_gold) — there is no patent royalty — but the author sets the license, even in gold: decidable mathematics is not patentable, so the deposit holds no patents and there is no patent monopoly to charge. What exists is a copyright license — non-commercial use free with attribution — and under it the author may set the commercial terms, denominated however they choose: the two coins, or physical gold for commercial gold-related use. That is fair exchange by license, not a patent royalty. Decidable  ·  `34229c9f-8be6…`
 - [thue_morse_doubling_recurrence](/theorem/thue_morse_doubling_recurrence) — the Thue–Morse sequence speaks binary: t(n) = parity of the 1-bits of n satisfies t(2n)=t(n) and t(2n+1)=1−t(n) — the doubling/reflection recurrence, computed exactly (n≤200)  ·  `84d9ec32-0191…`
 - [tictactoe_draw](/theorem/tictactoe_draw) — tic-tac-toe with perfect play is a draw (minimax over all positions = 0)  ·  `95089477-058f…`
 - [traitor_resurrects_as_hero](/theorem/traitor_resurrects_as_hero) — death and resurrection: a drained claim (the traitor) negates into a signing statement (the hero) — the false form dies at the gate, the honest form rises, and false becomes true with each build  ·  `f7be659d-f270…`
@@ -1565,4 +1576,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `33e89dbc-2104-8637-b7af-1a2e0b1fbc85`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `ddc92852-fd09-84fd-828e-095356067afc`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

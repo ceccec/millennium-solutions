@@ -5398,5 +5398,45 @@
     "key": "a_repunit_divides_by_three_iff_its_length_does",
     "name": "a repunit divides by three iff its length does: R_n (n ones) ≡ n (mod 3), so 3 | R_n exactly when 3 | n — the trinity in base-ten repunits; 0/7",
     "receipt": "377edd82-2965-85d4-8d19-0d8ada99c6b0"
+  },
+  {
+    "key": "five_is_the_unique_ten_complement_fixed_point",
+    "name": "5 is the unique ten’s-complement fixed point: among the digits 1..9 only σ(d)=10−d fixes 5 — the heart the reflection cannot move; 0/7",
+    "receipt": "565565ff-cc3b-8fc1-88cf-32550f1be634"
+  },
+  {
+    "key": "there_are_exactly_five_platonic_solids",
+    "name": "there are exactly five Platonic solids: the pairs {p,q} with 1/p + 1/q > 1/2 (p,q ≥ 3) number exactly five — tetrahedron, cube, octahedron, dodecahedron, icosahedron; 0/7",
+    "receipt": "6504415b-1ea5-824f-8693-b06e85755f3c"
+  },
+  {
+    "key": "the_regular_pentagon_angles_are_the_heart_seventy_two_and_hundred_eight",
+    "name": "the regular pentagon’s exterior angle is 360/5 = 72° and its interior 108° — 72 = harmonicMean(60,90), the heart angle; 0/7",
+    "receipt": "bc2e7cd8-5029-852d-9548-026f4a332532"
+  },
+  {
+    "key": "the_five_fifth_roots_of_unity_sum_to_zero",
+    "name": "the five fifth-roots of unity sum to zero: Σ e^(2πik/5) for k=0..4 = 0 — the pentagon closes the circle at the heart; 0/7",
+    "receipt": "a93d693a-f41a-8cc2-97ef-4a46bd22641f"
+  },
+  {
+    "key": "five_is_a_fermat_prime_so_the_regular_pentagon_is_constructible",
+    "name": "5 is a Fermat prime (5 = 2^(2^1)+1), so by Gauss–Wantzel the regular pentagon is straightedge-and-compass constructible — the heart is built, not assumed; 0/7",
+    "receipt": "79ee4523-d085-8c37-9b27-6c245ecf6905"
+  },
+  {
+    "key": "five_is_the_largest_fixed_point_of_the_fibonacci_index",
+    "name": "5 is the largest fixed point of the Fibonacci index: F(5)=5 and no larger n has F(n)=n — the heart sits on the sequence; 0/7",
+    "receipt": "90f11fdf-1287-80ba-8cf4-5ab0b5a935b7"
+  },
+  {
+    "key": "the_golden_ratio_is_one_plus_root_five_over_two",
+    "name": "the golden ratio is (1 + √5)/2, satisfying φ² = φ + 1 — five under the root generates φ, the pentagon’s diagonal; 0/7",
+    "receipt": "31ae366f-f2b7-8ed8-8fe9-92f7ce01cccf"
+  },
+  {
+    "key": "ten_factors_as_two_times_five_the_heart_and_the_even_prime",
+    "name": "ten factors as 2 × 5 — the base is the even prime times the heart, so a fraction terminates in base ten exactly when its denominator’s only primes are 2 and 5; 0/7",
+    "receipt": "aa3e534d-7294-8494-a19e-173512f8c7d2"
   }
 ]
