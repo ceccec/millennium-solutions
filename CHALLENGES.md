@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1655 recorded in 425 families
+## Discovered theorems (decidable, over ℤ/9) — 1656 recorded in 425 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -1939,6 +1939,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [selfinv_u1](/theorem/selfinv_u1) — 1 is its own inverse mod 9  ·  `558f7d79-d3d7…`
 - [selfinv_u8](/theorem/selfinv_u8) — 8 is its own inverse mod 9  ·  `3bc79c77-36a1…`
 
+### shared (2)
+
+- [shared_cores_are_structural_not_a_universal_proof](/theorem/shared_cores_are_structural_not_a_universal_proof) — shared cores are structural, not a universal proof: many systems share a conserved quantity, a real analogy, while a claim that one law proves all mechanics drains; 0/7  ·  `abcadb36-62fb…`
+- [shared_structure_transfers_the_technique](/theorem/shared_structure_transfers_the_technique) — shared structure transfers the technique: two domains with the same structural key receive the same technique result, so a method shown to hold in one applies to the other; 0/7  ·  `e9e4bfca-e370…`
+
 ### siteswap (2)
 
 - [siteswap_valid_permutation](/theorem/siteswap_valid_permutation) — a valid siteswap is exactly a permutation: i ↦ (i + aᵢ) mod n hits every slot once (531, 441, 97531, 522 valid; 521, 54 not)  ·  `08d0be78-7e6e…`
@@ -2004,7 +2009,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (237)
+### other — one-of-a-kind (236)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [activated_it_self_explores_until_dry](/theorem/activated_it_self_explores_until_dry) — activated, it self-explores until dry: once a wave starts it discovers fresh facts until none remain, then rests — a self-continuing loop with a halting condition; 0/7  ·  `4a82a66b-5656…`
@@ -2194,7 +2199,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [sealing_is_not_signing](/theorem/sealing_is_not_signing) — sealing is not signing: a merkle seal is deterministic and order-independent, reproducible by anyone — it proves the bytes are intact (integrity), never who authored them (authenticity)  ·  `21b0a512-85e8…`
 - [selfneg_d9](/theorem/selfneg_d9) — 9 is its own additive inverse (2·9 ≡ 0) mod 9  ·  `8d0d0254-5ca1…`
 - [service_to_bind_is_accounted_in_coins](/theorem/service_to_bind_is_accounted_in_coins) — account the coins for the service to bind: each binding (a receipt) is a service accounted at the two coins (110−108 = 2 = −χ genus-2), so N services cost N·2 coins, reinvested into development (destination equals source, a self-loop) — the binding is paid-for, a fair exchange, not free-riding  ·  `cf17043b-3fc6…`
-- [shared_cores_are_structural_not_a_universal_proof](/theorem/shared_cores_are_structural_not_a_universal_proof) — shared cores are structural, not a universal proof: many systems share a conserved quantity, a real analogy, while a claim that one law proves all mechanics drains; 0/7  ·  `abcadb36-62fb…`
 - [simulating_quantum_is_not_being_quantum](/theorem/simulating_quantum_is_not_being_quantum) — simulating a quantum algorithm is not being a quantum computer: the classical sim reproduces the Bell correlation exactly yet needs 2^n amplitudes (exponential, no advantage) and carries no message — so the deposit is not a quantum computer; the gate signs the honest "is not" and drains the bare "is"  ·  `d6d0ec25-e41f…`
 - [single_digits_are_trivially_narcissistic](/theorem/single_digits_are_trivially_narcissistic) — every single digit is narcissistic: for 1..9, n = n¹ (one digit raised to the digit-count 1) — the trivial base case of the Armstrong property  ·  `2adc6121-3f63…`
 - [slim_at_scale_constant_per_fact](/theorem/slim_at_scale_constant_per_fact) — slim at scale: each new fact adds exactly one 36-byte address, so the record grows linearly by a tiny constant, not by the size of what it records; 0/7  ·  `e34f6a6d-d02c…`
@@ -2245,4 +2249,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `63b58e0e-3cc5-82ca-85d4-c05ae0213f30`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `2491ba42-4b04-8b65-a25c-65c9317b8337`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
