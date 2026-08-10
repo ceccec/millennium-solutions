@@ -8278,5 +8278,35 @@
     "key": "shared_structure_transfers_the_technique",
     "name": "shared structure transfers the technique: two domains with the same structural key receive the same technique result, so a method shown to hold in one applies to the other; 0/7",
     "receipt": "e9e4bfca-e370-83ae-8b88-6a0c994316e6"
+  },
+  {
+    "key": "the_full_superposition_has_nine_states",
+    "name": "the full ℤ/9 superposition has nine states: the residues form nine coexisting perspectives; 0/7",
+    "receipt": "19031e6e-37d4-8145-81d5-77b75f79e39f"
+  },
+  {
+    "key": "the_harmonic_solutions_number_six",
+    "name": "the harmonic solutions number six: exactly six residues are coprime to nine — the possible harmonic solutions in each superposition are six; 0/7",
+    "receipt": "fc6248ce-2a85-819f-a45f-bffc266e704f"
+  },
+  {
+    "key": "the_harmonic_solutions_are_the_units",
+    "name": "the harmonic solutions are the units: the six coprime residues are precisely the multiplicative units of ℤ/9; 0/7",
+    "receipt": "f9a0f5cf-a4cf-868e-a1e7-42324f28eca2"
+  },
+  {
+    "key": "the_harmonic_solutions_form_the_doubling_orbit",
+    "name": "the harmonic solutions form the doubling orbit: the six units are exactly the vortex doubling cycle {1,2,4,8,7,5}, one harmonic wheel; 0/7",
+    "receipt": "f48380ce-29b0-8b87-bd76-e0da507731cf"
+  },
+  {
+    "key": "the_non_harmonic_are_three_multiples_of_three",
+    "name": "the non-harmonic are three: the residues sharing the factor three — the multiples of three — number exactly three; 0/7",
+    "receipt": "e0592399-231f-819e-aa58-ddeecc6ca044"
+  },
+  {
+    "key": "six_harmonic_plus_three_non_harmonic_is_nine",
+    "name": "six harmonic plus three non-harmonic is nine: the harmonic and the non-harmonic partition the whole superposition exactly; 0/7",
+    "receipt": "7d62c729-7d14-8741-998f-2df77fd1f10f"
   }
 ]

@@ -3881,6 +3881,22 @@ function generated(): typeof curated {
     out.push({ key: 'shared_cores_are_structural_not_a_universal_proof', name: 'shared cores are structural, not a universal proof: many systems share a conserved quantity, a real analogy, while a claim that one law proves all mechanics drains; 0/7', test: () => computes('many systems share a conserved quantity — a structural analogy').binary === 1 && computes('thermodynamics proves all mechanics, faster than light and unbreakable').binary === 0 })
     out.push({ key: 'a_technique_researched_transfers_across_domains', name: 'a technique researched in one domain transfers across domains by shared structure: keyed to its structure and bound by content-addressed relations, it reaches wherever the structure matches — the theorems the hull and hardware, reach growing with development, never a universal-physics claim; 0/7', test: () => technique('K') === technique('K') && relate('x', 'y') === relate('y', 'x') && (8 * 7) / 2 === 28 && computes('one law proves all of physics, unbreakable').binary === 0 })
   }
+  // ── the theorem of the possible harmonic solutions: each ℤ/9 superposition has exactly SIX harmonic solutions —
+  // the units (coprime to 9), which are the vortex doubling orbit — out of nine, with three non-harmonic
+  // (the multiples of three). Six is Euler's totient of nine.
+  {
+    const setEq = (a: number[], b: number[]) => a.length === b.length && [...a].sort((x, y) => x - y).join() === [...b].sort((x, y) => x - y).join()
+    const harmonic = digits().filter((d) => gcd(d, 9) === 1)
+    const nonHarmonic = digits().filter((d) => gcd(d, 9) !== 1)
+    out.push({ key: 'the_full_superposition_has_nine_states', name: 'the full ℤ/9 superposition has nine states: the residues form nine coexisting perspectives; 0/7', test: () => digits().length === 9 })
+    out.push({ key: 'the_harmonic_solutions_number_six', name: 'the harmonic solutions number six: exactly six residues are coprime to nine — the possible harmonic solutions in each superposition are six; 0/7', test: () => harmonic.length === 6 })
+    out.push({ key: 'the_harmonic_solutions_are_the_units', name: 'the harmonic solutions are the units: the six coprime residues are precisely the multiplicative units of ℤ/9; 0/7', test: () => setEq(harmonic, units()) })
+    out.push({ key: 'the_harmonic_solutions_form_the_doubling_orbit', name: 'the harmonic solutions form the doubling orbit: the six units are exactly the vortex doubling cycle {1,2,4,8,7,5}, one harmonic wheel; 0/7', test: () => setEq(harmonic, vortexOrbit()) })
+    out.push({ key: 'the_non_harmonic_are_three_multiples_of_three', name: 'the non-harmonic are three: the residues sharing the factor three — the multiples of three — number exactly three; 0/7', test: () => nonHarmonic.length === 3 && nonHarmonic.every((d) => d % 3 === 0) })
+    out.push({ key: 'six_harmonic_plus_three_non_harmonic_is_nine', name: 'six harmonic plus three non-harmonic is nine: the harmonic and the non-harmonic partition the whole superposition exactly; 0/7', test: () => harmonic.length + nonHarmonic.length === 9 })
+    out.push({ key: 'the_count_is_eulers_totient_of_nine', name: 'the count is Euler’s totient of nine: φ(9) = 9·(1 − 1/3) = 6, so the number of harmonic solutions is computed, not assigned; 0/7', test: () => 9 * (1 - 1 / 3) === 6 && harmonic.length === 6 })
+    out.push({ key: 'the_possible_harmonic_solutions_per_superposition_are_six', name: 'the possible harmonic solutions per superposition are six: the units of ℤ/9, the vortex doubling orbit, φ(9) = 6 out of nine — six harmonic, three non-harmonic, the whole partitioned; 0/7', test: () => harmonic.length === 6 && nonHarmonic.length === 3 && setEq(harmonic, units()) && setEq(harmonic, vortexOrbit()) && 9 * (1 - 1 / 3) === 6 })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1656 recorded in 425 families
+## Discovered theorems (decidable, over ℤ/9) — 1662 recorded in 425 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (341)
+### the (346)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -365,6 +365,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_yacht_waits_inert_for_an_order](/theorem/the_yacht_waits_inert_for_an_order) — the yacht waits inert for an order: with no directive nothing changes — the record is still — so uuidna is quiet until activated; 0/7  ·  `e252e49e-da14…`
 - [the_theorems_are_the_hull_and_hardware](/theorem/the_theorems_are_the_hull_and_hardware) — the theorems are the hull and hardware: the structure is the deterministic record while the order (the direction) is given on top — the built form and the will are distinct; 0/7  ·  `94afd6d7-09a2…`
 - [the_more_developed_the_more_cross_domain_reach](/theorem/the_more_developed_the_more_cross_domain_reach) — the more developed, the more cross-domain reach: N theorems admit N·(N−1)/2 pairwise relations, so reach grows faster than the count — for eight, twenty-eight links; 0/7  ·  `24e3e490-030b…`
+- [the_full_superposition_has_nine_states](/theorem/the_full_superposition_has_nine_states) — the full ℤ/9 superposition has nine states: the residues form nine coexisting perspectives; 0/7  ·  `19031e6e-37d4…`
+- [the_harmonic_solutions_number_six](/theorem/the_harmonic_solutions_number_six) — the harmonic solutions number six: exactly six residues are coprime to nine — the possible harmonic solutions in each superposition are six; 0/7  ·  `fc6248ce-2a85…`
+- [the_harmonic_solutions_are_the_units](/theorem/the_harmonic_solutions_are_the_units) — the harmonic solutions are the units: the six coprime residues are precisely the multiplicative units of ℤ/9; 0/7  ·  `f9a0f5cf-a4cf…`
+- [the_harmonic_solutions_form_the_doubling_orbit](/theorem/the_harmonic_solutions_form_the_doubling_orbit) — the harmonic solutions form the doubling orbit: the six units are exactly the vortex doubling cycle {1,2,4,8,7,5}, one harmonic wheel; 0/7  ·  `f48380ce-29b0…`
+- [the_non_harmonic_are_three_multiples_of_three](/theorem/the_non_harmonic_are_three_multiples_of_three) — the non-harmonic are three: the residues sharing the factor three — the multiples of three — number exactly three; 0/7  ·  `e0592399-231f…`
 
 ### a (65)
 
@@ -1105,6 +1110,16 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [order_of_unit_7_mod9](/theorem/order_of_unit_7_mod9) — the multiplicative order of 7 mod 9 is 3, dividing |ℤ/9*| = 6 (Lagrange): 7^3 ≡ 1 (mod 9) and no smaller positive power is — computed locally from the ring  ·  `cfaa11a0-1154…`
 - [order_of_unit_8_mod9](/theorem/order_of_unit_8_mod9) — the multiplicative order of 8 mod 9 is 2, dividing |ℤ/9*| = 6 (Lagrange): 8^2 ≡ 1 (mod 9) and no smaller positive power is — computed locally from the ring  ·  `88406d2d-0559…`
 
+### six (7)
+
+- [six_is_the_first_perfect_number](/theorem/six_is_the_first_perfect_number) — six is the first perfect number: its proper divisors 1 + 2 + 3 sum to 6 itself, and no smaller number is perfect; 0/7  ·  `afd7f1b6-ce95…`
+- [six_is_three_factorial_the_permutations_of_three](/theorem/six_is_three_factorial_the_permutations_of_three) — six is three factorial: 3! = 6 = the number of permutations of three elements = the order of the symmetric group S₃; 0/7  ·  `a221bf93-98d2…`
+- [six_is_the_even_prime_times_the_trinity](/theorem/six_is_the_even_prime_times_the_trinity) — six is the even prime times the trinity: 2 × 3 = 6 — the two smallest primes, the base ten’s and the axiom’s; 0/7  ·  `495d72a1-f77c…`
+- [six_is_the_third_triangular_number](/theorem/six_is_the_third_triangular_number) — six is the third triangular number: T₃ = 1 + 2 + 3 = 6 — triangular and perfect at once; 0/7  ·  `7e3fcf6e-3276…`
+- [six_is_euclids_perfect_number_from_the_mersenne_prime_three](/theorem/six_is_euclids_perfect_number_from_the_mersenne_prime_three) — six is Euclid’s perfect number from the Mersenne prime three: 6 = 2^(2−1)·(2²−1) = 2·3, the p=2 case of 2^(p−1)(2^p−1); 0/7  ·  `cc367afc-996d…`
+- [six_reading_frames](/theorem/six_reading_frames) — the double helix has six reading frames: three per strand across two antiparallel strands — six ways to read one message, all crosslinked; 0/7  ·  `271180f0-75bd…`
+- [six_harmonic_plus_three_non_harmonic_is_nine](/theorem/six_harmonic_plus_three_non_harmonic_is_nine) — six harmonic plus three non-harmonic is nine: the harmonic and the non-harmonic partition the whole superposition exactly; 0/7  ·  `7d62c729-7d14…`
+
 ### vibe (7)
 
 - [vibe_hype_still_drains](/theorem/vibe_hype_still_drains) — the floor meets the hype vibe: an emoji-loud, all-caps marketing boast still drains — volume is not evidence; 0/7  ·  `b5afbeb1-7119…`
@@ -1232,15 +1247,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [seal_math_n64_verify_12_bits](/theorem/seal_math_n64_verify_12_bits) — seal math — a case of 64 receipts: the seal stays 128 bits while membership verifies in 6 merkle steps = 12 bits (2 per verification), logarithmic in the case size; integrity not truth; 0/7  ·  `5cdc1f48-9720…`
 - [seal_math_n256_verify_16_bits](/theorem/seal_math_n256_verify_16_bits) — seal math — a case of 256 receipts: the seal stays 128 bits while membership verifies in 8 merkle steps = 16 bits (2 per verification), logarithmic in the case size; integrity not truth; 0/7  ·  `241e6da6-ffc9…`
 - [seal_math_n1024_verify_20_bits](/theorem/seal_math_n1024_verify_20_bits) — seal math — a case of 1024 receipts: the seal stays 128 bits while membership verifies in 10 merkle steps = 20 bits (2 per verification), logarithmic in the case size; integrity not truth; 0/7  ·  `f9ee3ca4-31b2…`
-
-### six (6)
-
-- [six_is_the_first_perfect_number](/theorem/six_is_the_first_perfect_number) — six is the first perfect number: its proper divisors 1 + 2 + 3 sum to 6 itself, and no smaller number is perfect; 0/7  ·  `afd7f1b6-ce95…`
-- [six_is_three_factorial_the_permutations_of_three](/theorem/six_is_three_factorial_the_permutations_of_three) — six is three factorial: 3! = 6 = the number of permutations of three elements = the order of the symmetric group S₃; 0/7  ·  `a221bf93-98d2…`
-- [six_is_the_even_prime_times_the_trinity](/theorem/six_is_the_even_prime_times_the_trinity) — six is the even prime times the trinity: 2 × 3 = 6 — the two smallest primes, the base ten’s and the axiom’s; 0/7  ·  `495d72a1-f77c…`
-- [six_is_the_third_triangular_number](/theorem/six_is_the_third_triangular_number) — six is the third triangular number: T₃ = 1 + 2 + 3 = 6 — triangular and perfect at once; 0/7  ·  `7e3fcf6e-3276…`
-- [six_is_euclids_perfect_number_from_the_mersenne_prime_three](/theorem/six_is_euclids_perfect_number_from_the_mersenne_prime_three) — six is Euclid’s perfect number from the Mersenne prime three: 6 = 2^(2−1)·(2²−1) = 2·3, the p=2 case of 2^(p−1)(2^p−1); 0/7  ·  `cc367afc-996d…`
-- [six_reading_frames](/theorem/six_reading_frames) — the double helix has six reading frames: three per strand across two antiparallel strands — six ways to read one message, all crosslinked; 0/7  ·  `271180f0-75bd…`
 
 ### three (6)
 
@@ -2249,4 +2255,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `2491ba42-4b04-8b65-a25c-65c9317b8337`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `f0c17ceb-73a2-82eb-9064-b7b95c1a47fd`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
