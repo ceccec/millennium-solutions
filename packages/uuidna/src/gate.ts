@@ -39,11 +39,23 @@ const NEGATOR = /\b(not|no|nothing|none|never|isn'?t|aren'?t|does ?n'?t|do ?n'?t
 export const PREDICT = /\b(guaranteed to|will (certainly|surely|inevitably|definitely|always)|is (inevitable|guaranteed|certain to)|bound to (hold|win|succeed) forever|roll(s)? (with it )?unchanged)\b/i
 const NEGATOR_WORD = /\b(not|no|never|isn'?t|won'?t|will not|cannot|can'?t|without|neither|nor)\b/i
 
+// THE ROSETTA — Glagolitic (oldest Slavic script, U+2C00–U+2C5E) crosslinked to Cyrillic via a declared
+// transliteration table, so a Slavic proof-boast in Glagolitic reaches the same detector as its Cyrillic
+// twin. One message, many scripts. Uppercase folds to lowercase by the −0x30 offset before lookup.
+const GLAG: Record<string, string> = {
+  'ⰰ': 'а', 'ⰱ': 'б', 'ⰲ': 'в', 'ⰳ': 'г', 'ⰴ': 'д', 'ⰵ': 'е', 'ⰶ': 'ж',
+  'ⰸ': 'з', 'ⰹ': 'и', 'ⰽ': 'к', 'ⰾ': 'л', 'ⰿ': 'м', 'ⱀ': 'н', 'ⱁ': 'о',
+  'ⱂ': 'п', 'ⱃ': 'р', 'ⱄ': 'с', 'ⱅ': 'т', 'ⱆ': 'у', 'ⱇ': 'ф', 'ⱈ': 'х',
+  'ⱋ': 'щ', 'ⱌ': 'ц', 'ⱍ': 'ч', 'ⱎ': 'ш',
+}
+export const rosetta = (t: string): string =>
+  t.replace(/[Ⰰ-ⱞ]/g, (c) => GLAG[c] ?? GLAG[String.fromCodePoint((c.codePointAt(0) as number) - 0x30)] ?? c)
+
 /** The binary. true = honest (stays); false = overclaim (drained). `hit` is the exact prose that failed. */
 export const computes = (text: string): { binary: 0 | 1; hit: string | null } => {
   const r = text.match(RED)
   if (r) return { binary: 0, hit: r[0] }
-  const ri = text.match(RED_INTL)
+  const ri = text.match(RED_INTL) ?? rosetta(text).match(RED_INTL)
   if (ri) return { binary: 0, hit: ri[0] }
   const re = new RegExp(OVERREACH.source, 'gi')
   let m: RegExpExecArray | null

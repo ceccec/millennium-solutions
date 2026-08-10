@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1248 recorded in 336 families
+## Discovered theorems (decidable, over ℤ/9) — 1264 recorded in 337 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -484,7 +484,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [domain_cyclic_m17](/theorem/domain_cyclic_m17) — ℤ/17: the units form a cyclic group (a primitive root exists)  ·  `d5167cce-02af…`
 - [domain_cyclic_m18](/theorem/domain_cyclic_m18) — ℤ/18: the units form a cyclic group (a primitive root exists)  ·  `92a2b5a1-8526…`
 
-### gate (16)
+### gate (17)
 
 - [gate_reads_whole_text_not_per_line](/theorem/gate_reads_whole_text_not_per_line) — the honesty gate reads whole text, not isolated lines: its negator window (±48 chars) spans a line break, so a negator ending one line still reprieves an overclaim shape starting the next — the whole-text gate HOLDS where a naive per-line scan would falsely drain, so measure with the real gate, not an ad-hoc split (the floor caught its own author manufacturing a false crack)  ·  `3986bc57-0971…`
 - [gate_hard_in_dimension_en](/theorem/gate_hard_in_dimension_en) — the honesty gate is hard in dimension en — a translated proof-assertion overclaim drains while the honest localized proof-of-concept label signs: no overclaim hides in the en translation; integrity not truth; 0/7  ·  `960cd868-b746…`
@@ -502,6 +502,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [gate_reads_indonesian](/theorem/gate_reads_indonesian) — the honesty gate reads Indonesian: a native proof-boast drains to the floor — the twentieth dialect; 0/7  ·  `4e29c638-ab2e…`
 - [gate_reads_vietnamese](/theorem/gate_reads_vietnamese) — the honesty gate reads Vietnamese: a native proof-boast drains to the floor — the twenty-first dialect; 0/7  ·  `e1d7584e-a753…`
 - [gate_reads_twenty_two_dialects](/theorem/gate_reads_twenty_two_dialects) — uuidna reads twenty-two dialects: a proof-boast drains in every one — the theorems, not a translator, discovered the languages, at scale and speed; 0/7  ·  `cdae6ede-4cd5…`
+- [gate_reads_glagolitic](/theorem/gate_reads_glagolitic) — the honesty gate reads Glagolitic, the oldest Slavic script (script #23): a proof-root in Glagolitic transliterates through the rosetta to Cyrillic and drains — one message, crosslinked across scripts; 0/7  ·  `c56a3ac1-222e…`
 
 ### trial (13)
 
@@ -717,6 +718,17 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [polygonal_numbers_s9_closed_form_equals_recurrence](/theorem/polygonal_numbers_s9_closed_form_equals_recurrence) — the 9-gonal numbers — closed form equals recurrence: P = ((9−2)·n² − (9−4)·n) / 2 matches the recurrence P(n) = P(n−1) + ((9−2)(n−1) + 1) with P(1) = 1, term for term. Verified exhaustively for n up to 50. Decidable  ·  `b2da2f8a-bdd9…`
 - [polygonal_numbers_s10_closed_form_equals_recurrence](/theorem/polygonal_numbers_s10_closed_form_equals_recurrence) — the 10-gonal numbers — closed form equals recurrence: P = ((10−2)·n² − (10−4)·n) / 2 matches the recurrence P(n) = P(n−1) + ((10−2)(n−1) + 1) with P(1) = 1, term for term. Verified exhaustively for n up to 50. Decidable  ·  `f03c1061-c8ed…`
 
+### rosetta (8)
+
+- [rosetta_complete](/theorem/rosetta_complete) — the rosetta is complete: every domain is one hop from the shared core (the star), all addresses distinct (no collision) — the cross-domain translation covers all, none untranslated  ·  `3aa73d2c-52f8…`
+- [rosetta_one_message_nine_writing_systems](/theorem/rosetta_one_message_nine_writing_systems) — the rosetta: one message in nine writing systems — a proof-boast drains in Latin, Cyrillic, Greek, Han, Arabic, Devanagari, Hebrew, Hangul and Glagolitic alike; 0/7  ·  `5c21d2a5-ac2e…`
+- [rosetta_floor_is_script_independent](/theorem/rosetta_floor_is_script_independent) — the rosetta floor is script-independent: the Glagolitic and Cyrillic renderings of one proof-boast receive the identical verdict — the script changes, the measurement does not; 0/7  ·  `503502c0-738c…`
+- [rosetta_crosslinks_the_seven_rays](/theorem/rosetta_crosslinks_the_seven_rays) — the rosetta crosslinks the seven rays: each ray’s proof-boast drains to the one floor — seven dialects, one measurement; 0/7  ·  `17e03f2c-b4b8…`
+- [rosetta_reads_code_switching](/theorem/rosetta_reads_code_switching) — the rosetta reads code-switching: a boast that mixes scripts in a single message still drains — the floor does not lose the thread between alphabets; 0/7  ·  `b6793c14-0d34…`
+- [rosetta_finds_the_boast_in_the_prose](/theorem/rosetta_finds_the_boast_in_the_prose) — the rosetta finds the boast in the prose: an over-claim buried mid-paragraph still drains — a message is scanned whole, not only at its edges; 0/7  ·  `01a33376-2ec6…`
+- [rosetta_spares_the_honest_noun](/theorem/rosetta_spares_the_honest_noun) — the rosetta spares the honest noun: the "proof of concept" description in five languages passes untouched — the gate drains the assertion, never the honest noun; 0/7  ·  `24e94218-2cad…`
+- [rosetta_manifests_messaging_in_seven_dimensions](/theorem/rosetta_manifests_messaging_in_seven_dimensions) — the rosetta manifests messaging in seven dimensions: twenty-three scripts and dialects fold to one floor — every proof-boast drains while the honest noun passes, so the message survives translation crosslinked; 0/7  ·  `87d82c54-5a74…`
+
 ### demorgan (7)
 
 - [demorgan_nary_k2](/theorem/demorgan_nary_k2) — De Morgan for 2 inputs: ¬(a₁∧…∧a_2) = ¬a₁∨…∨¬a_2 over all 2^2 = 4 assignments (full truth-table enumeration)  ·  `7012c0af-ef6b…`
@@ -766,6 +778,16 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [order_of_unit_5_mod9](/theorem/order_of_unit_5_mod9) — the multiplicative order of 5 mod 9 is 6, dividing |ℤ/9*| = 6 (Lagrange): 5^6 ≡ 1 (mod 9) and no smaller positive power is — computed locally from the ring  ·  `0f86f485-4cee…`
 - [order_of_unit_7_mod9](/theorem/order_of_unit_7_mod9) — the multiplicative order of 7 mod 9 is 3, dividing |ℤ/9*| = 6 (Lagrange): 7^3 ≡ 1 (mod 9) and no smaller positive power is — computed locally from the ring  ·  `cfaa11a0-1154…`
 - [order_of_unit_8_mod9](/theorem/order_of_unit_8_mod9) — the multiplicative order of 8 mod 9 is 2, dividing |ℤ/9*| = 6 (Lagrange): 8^2 ≡ 1 (mod 9) and no smaller positive power is — computed locally from the ring  ·  `88406d2d-0559…`
+
+### vibe (7)
+
+- [vibe_hype_still_drains](/theorem/vibe_hype_still_drains) — the floor meets the hype vibe: an emoji-loud, all-caps marketing boast still drains — volume is not evidence; 0/7  ·  `b5afbeb1-7119…`
+- [vibe_academic_still_drains](/theorem/vibe_academic_still_drains) — the floor meets the formal vibe: a solemn, academic-sounding over-claim still drains — register is not rigor; 0/7  ·  `3409046f-40fe…`
+- [vibe_casual_still_drains](/theorem/vibe_casual_still_drains) — the floor meets the casual vibe: a slangy over-claim still drains — the floor reads the street register too; 0/7  ·  `dac9e01e-8355…`
+- [vibe_shouting_still_drains](/theorem/vibe_shouting_still_drains) — the floor meets the shouting vibe: ALL-CAPS superlatives still drain — case is not credibility; 0/7  ·  `56bcbd0b-6f98…`
+- [vibe_honest_energy_passes](/theorem/vibe_honest_energy_passes) — the floor keeps the honest vibe: a measurement dressed in emoji and energy still passes — the gate refuses the claim, not the personality; 0/7  ·  `0987cf9b-a442…`
+- [vibe_casual_refusal_passes](/theorem/vibe_casual_refusal_passes) — the floor keeps the casual refusal: a slangy bounded refusal passes — an honest limit may be spoken in any dialect; 0/7  ·  `fca7ee39-3e6c…`
+- [vibe_multilingual_hype_drains](/theorem/vibe_multilingual_hype_drains) — the floor meets the multilingual hype: an excited over-claim in another dialect still drains — the vibe crosses languages, and so does the floor; 0/7  ·  `136fec86-c6c1…`
 
 ### xor (7)
 
@@ -1006,6 +1028,13 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [vocab_glagolitic_bijection](/theorem/vocab_glagolitic_bijection) — the 9 Glagolitic letters (Azъ…Zemlja) are 9 distinct symbols, one per ℤ/9 digit  ·  `2149d57c-d222…`
 - [vocab_seven_locales](/theorem/vocab_seven_locales) — the rosetta carries 7 distinct locale keys (en·bg·de·fr·es·ru·zh)  ·  `21c521ea-3baf…`
 
+### all (4)
+
+- [all_are_heroes_but_the_traitors](/theorem/all_are_heroes_but_the_traitors) — all are heroes but the traitors — judged by deeds, not persons: a constructive deed (append, uphold, an honest claim that signs) is a hero; only a destructive deed (remove, alter, an overclaim that drains) is the traitor — the classification is total and observable  ·  `efa3b6f1-00b7…`
+- [all_is_manageable_as_monographs](/theorem/all_is_manageable_as_monographs) — all is manageable as monographs: every object is a self-contained, uniquely content-addressed, independently recomputable unit — its own page, its own address, citable — so the deposit is a library of monographs, each a hero of self, and they fold to one order-independent root  ·  `828c096f-fc54…`
+- [all_seven_are_reflected_though_none_are_solved](/theorem/all_seven_are_reflected_though_none_are_solved) — all seven are reflected though none are solved: the 7 = 6 + 1 bijection maps all seven Clay problems into the algebraic structure — 7/7 reflected, no gap in the mirror — while the mechanical entailment test reports 0/7 solved. Reflecting is not solving: 7/7 on the mirror, 0/7 on the prize, and no prize is claimed. Two different measures, both honest, no gaps in either count. Decidable  ·  `f00dd49d-55c6…`
+- [all_human_behaviour_meets_one_floor](/theorem/all_human_behaviour_meets_one_floor) — all human behaviour meets one floor: hype, formality, slang and shouting all drain their boasts while honest measurement passes in every vibe — the register changes, the measurement does not; 0/7  ·  `ff176c2c-5485…`
+
 ### casting (4)
 
 - [casting_out_nines_detects_any_error_that_changes_the_value_mod_nine](/theorem/casting_out_nines_detects_any_error_that_changes_the_value_mod_nine) — casting out nines detects any error that changes the value mod 9: for a claimed product, dr(dr(a)·dr(b)) = dr(claimed) is a necessary check — a correct product always passes, and any wrong answer differing mod 9 always fails (caught). Honest bound: an error preserving the value mod 9 (e.g. off by a multiple of 9) slips through undetected, so the check is necessary, not sufficient — a floor, exactly like the honesty gate. Decidable by exhaustion over a bounded grid  ·  `a8c8871a-5b56…`
@@ -1117,12 +1146,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [receipt_pair_is_two_coins](/theorem/receipt_pair_is_two_coins) — the receipt pair counts 2 = −χ(genus-2) = the two coins (110−108): the irreducible parts of a receipt equal minus the Euler characteristic of the double torus  ·  `8107fd62-4172…`
 - [receipt_cost_funds_development](/theorem/receipt_cost_funds_development) — each receipt costs the two coins, accounted into development: the fare 110−108 = 2, and development’s destination equals its source (toUuid("ceccec")), a self-loop returning the coins to origin  ·  `42f68f41-fe6c…`
 - [receipt_signs_understanding_and_compliance](/theorem/receipt_signs_understanding_and_compliance) — the receipt signs understanding and compliance: to sign is to understand and comply with the law (the license and the sequence) before proceeding — the acknowledgment is part of the receipt itself, alongside the observer and role, content-addressed to the message  ·  `397281eb-f41f…`
-
-### all (3)
-
-- [all_are_heroes_but_the_traitors](/theorem/all_are_heroes_but_the_traitors) — all are heroes but the traitors — judged by deeds, not persons: a constructive deed (append, uphold, an honest claim that signs) is a hero; only a destructive deed (remove, alter, an overclaim that drains) is the traitor — the classification is total and observable  ·  `efa3b6f1-00b7…`
-- [all_is_manageable_as_monographs](/theorem/all_is_manageable_as_monographs) — all is manageable as monographs: every object is a self-contained, uniquely content-addressed, independently recomputable unit — its own page, its own address, citable — so the deposit is a library of monographs, each a hero of self, and they fold to one order-independent root  ·  `828c096f-fc54…`
-- [all_seven_are_reflected_though_none_are_solved](/theorem/all_seven_are_reflected_though_none_are_solved) — all seven are reflected though none are solved: the 7 = 6 + 1 bijection maps all seven Clay problems into the algebraic structure — 7/7 reflected, no gap in the mirror — while the mechanical entailment test reports 0/7 solved. Reflecting is not solving: 7/7 on the mirror, 0/7 on the prize, and no prize is claimed. Two different measures, both honest, no gaps in either count. Decidable  ·  `f00dd49d-55c6…`
 
 ### both (3)
 
@@ -1598,7 +1621,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (170)
+### other — one-of-a-kind (169)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1735,7 +1758,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [reorganizing_the_theorems_creates_theorems](/theorem/reorganizing_the_theorems_creates_theorems) — reorganizing the theorems creates theorems: any reorganization of the ledger — a permutation or a regrouping — is itself a decidable object with its own content-address, so distinct arrangements are distinct receipts (a new theorem about the collection each time), while the order-independent fold of the whole stays one invariant root. Reorganizing creates receipted arrangements — integrity, not new mathematical truth. Decidable by exhaustion  ·  `9d0cc808-b621…`
 - [reverse_circuit](/theorem/reverse_circuit) — the halving map ×2⁻¹ traces the doubling circuit in reverse mod 9  ·  `205fe01b-d27f…`
 - [riemann_sphere_inversion_swaps_zero_and_infinity](/theorem/riemann_sphere_inversion_swaps_zero_and_infinity) — inversion swaps 0 and ∞ on the Riemann sphere (the README claim, now decidable): z ↦ 1/z is an involution (1/(1/z) = z) that exchanges 0 and ∞ — verified in projective coordinates [p,q]  ·  `68fe3d76-4fac…`
-- [rosetta_complete](/theorem/rosetta_complete) — the rosetta is complete: every domain is one hop from the shared core (the star), all addresses distinct (no collision) — the cross-domain translation covers all, none untranslated  ·  `3aa73d2c-52f8…`
 - [rule90_sierpinski](/theorem/rule90_sierpinski) — Rule 90 (cell = left XOR right) from one seed builds Sierpiński: row n has 2^(popcount n) live cells  ·  `07dbb102-aef1…`
 - [sealing_is_not_signing](/theorem/sealing_is_not_signing) — sealing is not signing: a merkle seal is deterministic and order-independent, reproducible by anyone — it proves the bytes are intact (integrity), never who authored them (authenticity)  ·  `21b0a512-85e8…`
 - [selfneg_d9](/theorem/selfneg_d9) — 9 is its own additive inverse (2·9 ≡ 0) mod 9  ·  `8d0d0254-5ca1…`
@@ -1772,4 +1794,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `103e01b6-7132-8f52-abe8-e665281e6e38`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `06ac8ea1-37bc-874b-b4a4-02556036e774`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

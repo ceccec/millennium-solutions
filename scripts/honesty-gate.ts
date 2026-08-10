@@ -71,13 +71,28 @@ const NEGATOR = /\b(not|no|nothing|none|never|isn'?t|aren'?t|does ?n'?t|do ?n'?t
 export const PREDICT = /\b(guaranteed to|will (certainly|surely|inevitably|definitely|always)|is (inevitable|guaranteed|certain to)|bound to (hold|win|succeed) forever|roll(s)? (with it )?unchanged)\b/i
 const NEGATOR_WORD = /\b(not|no|never|isn'?t|won'?t|will not|cannot|can'?t|without|neither|nor)\b/i
 
+// THE ROSETTA — the oldest Slavic script (Glagolitic, Unicode block U+2C00–U+2C5E) is CROSSLINKED to
+// Cyrillic: a declared transliteration table maps each Glagolitic letter to its Cyrillic sound, so a
+// Slavic proof-boast written in Glagolitic reaches the same RED_INTL detector as its Cyrillic twin. One
+// message, many scripts — messaging manifests across dialects because the floor is script-independent.
+// Uppercase (U+2C00+) folds to lowercase (U+2C30+) by the −0x30 offset before lookup.
+const GLAG: Record<string, string> = {
+  'ⰰ': 'а', 'ⰱ': 'б', 'ⰲ': 'в', 'ⰳ': 'г', 'ⰴ': 'д', 'ⰵ': 'е', 'ⰶ': 'ж',
+  'ⰸ': 'з', 'ⰹ': 'и', 'ⰽ': 'к', 'ⰾ': 'л', 'ⰿ': 'м', 'ⱀ': 'н', 'ⱁ': 'о',
+  'ⱂ': 'п', 'ⱃ': 'р', 'ⱄ': 'с', 'ⱅ': 'т', 'ⱆ': 'у', 'ⱇ': 'ф', 'ⱈ': 'х',
+  'ⱋ': 'щ', 'ⱌ': 'ц', 'ⱍ': 'ч', 'ⱎ': 'ш',
+}
+export const rosetta = (t: string): string =>
+  t.replace(/[Ⰰ-ⱞ]/g, (c) => GLAG[c] ?? GLAG[String.fromCodePoint((c.codePointAt(0) as number) - 0x30)] ?? c)
+
 // the binary. true = honest (stays); false = overclaim (drained). the match, if any,
 // is the exact prose that failed — the crack, naming its own cure.
 export const computes = (text: string): { binary: 0 | 1; hit: string | null } => {
   const r = text.match(RED)
   if (r) return { binary: 0, hit: r[0] }
-  // hard in all 7: the same negation-blind proof-assertion tripwire, across the seven locales' languages.
-  const ri = text.match(RED_INTL)
+  // hard in all 7 (now 22 dialects), AND crosslinked through the rosetta so a Glagolitic-script proof-boast
+  // transliterates to Cyrillic and hits the same detector — one message, many scripts.
+  const ri = text.match(RED_INTL) ?? rosetta(text).match(RED_INTL)
   if (ri) return { binary: 0, hit: ri[0] }
   // over-reach fires only when ASSERTED — no negator in the ~48 chars before the match.
   const re = new RegExp(OVERREACH.source, 'gi')
