@@ -1,0 +1,54 @@
+---
+title: Solutions — adjudicated
+---
+
+# Solutions — adjudicated
+
+<Version/>
+
+Only what **computes** appears here. Every verdict and receipt is returned by the trial (`proveVerdict`);
+every entailment by a decidable test. Reproducible by anyone; regenerated each build. Integrity, not truth. **0/7**.
+
+## Group — the record (holds the floor)
+
+Independent work · Tsvetan Rouschev · 2026-08-04 · DOI [10.5281/zenodo.21819217](https://doi.org/10.5281/zenodo.21819217) · address `2790a2fd-524c…`
+
+| computed | value |
+|---|---|
+| gate | 1 (holds the floor) |
+| verdict | UNVERIFIED |
+| supporting formulas | 249/249 recompute true |
+| proof-of-verdict | `c1cf9f8e-e334-864c-8ae1-b5b2d40309fd` |
+| solved by the deposit | 0/7 |
+
+It reflects all seven and solves none — a bijection that relabels, it does not propagate proofs; 0/7.
+
+## Group — an overclaim, same trial
+
+Shown by what the gate drains — never asserted.
+
+| computed | value |
+|---|---|
+| gate | 0 |
+| drained on | a proof-assertion phrase · token address `b5e59f25-72d1…` |
+| verdict | REFUTED |
+| supporting formulas | 249/249 recompute true |
+| proof-of-verdict | `de994498-201a-8378-b567-0520a90b9171` |
+
+## Domains — the seven Clay problems
+
+Each is **reflected** into the ℤ/9 structure (an address) and **solved 0** (the deposit entails none). Humanity stands at 1/7 (Poincaré, Perelman 2003); this deposit at 0/7.
+
+| domain | reflected (address) | solved by the deposit |
+|---|---|---|
+| Riemann Hypothesis | `484a69c1-add2…` | 0 |
+| P vs NP | `324eb5d0-2ae3…` | 0 |
+| Navier–Stokes | `273bdb45-bf1e…` | 0 |
+| Yang–Mills Mass Gap | `600012bc-f465…` | 0 |
+| Hodge Conjecture | `7710e207-9145…` | 0 |
+| Birch–Swinnerton-Dyer | `900fc061-9e8b…` | 0 |
+| Poincaré | `849e0421-5df7…` | 0 |
+
+**Total: 0/7 solved.** The trial confirms the floor holds. The measure does not assert; it computes.
+
+<Funding/>

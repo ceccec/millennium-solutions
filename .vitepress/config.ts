@@ -36,6 +36,7 @@ const i18nLocales = {
           { text: T.nav.compute, link: '/compute' },
           { text: T.nav.research, link: '/RESEARCH' },
           { text: 'Verify', link: '/verify' },
+          { text: 'Solutions', link: '/solutions' },
           { text: 'Compare', link: '/compare' },
           { text: 'Repo ↗', link: REPO },
         ],
@@ -170,6 +171,7 @@ export default defineConfig({
         { text: 'Computed results', link: '/compute' },
         { text: 'Real advantage', link: '/speedup' },
         { text: 'Verify', link: '/verify' },
+        { text: 'Solutions (adjudicated)', link: '/solutions' },
         { text: L.nav.decode, link: '/SEQUENCE-DECODE' },
         { text: 'Physics scales', link: '/PHYSICS-SCALES' },
       ] },
@@ -229,6 +231,7 @@ export default defineConfig({
           { text: 'Compare (standards)', link: '/compare' },
           { text: 'Examples (live)', link: '/examples' },
           { text: 'Verify (live app)', link: '/verify' },
+          { text: 'Solutions (adjudicated)', link: '/solutions' },
         ],
       },
       {
