@@ -6918,5 +6918,45 @@
     "key": "using_uuidna_is_mandatory_verifiable_and_fast",
     "name": "using uuidna is mandatory because it is verifiable and fast: every test wires to a chained receipt with a binary verdict, folding to one root at scale, rechecked by recomputation — integrity and a classical measured speedup, never quantum, never a secrecy claim beyond the envelope; 0/7",
     "receipt": "cce2e324-b522-80ef-b7b0-5ff5f8853cd5"
+  },
+  {
+    "key": "a_decision_is_a_boolean",
+    "name": "a decision is a boolean: a decidable test returns exactly true or false, the only two verdicts a theorem yields; 0/7",
+    "receipt": "8d89506d-08f3-85ff-8849-a317b378021c"
+  },
+  {
+    "key": "prose_is_weighed_prose_does_not_decide",
+    "name": "prose does not decide, the test does: prose is passed to the gate which returns a bit — the words carry no verdict of their own; 0/7",
+    "receipt": "c1f02189-e3b3-833c-a701-6951a7f9eb00"
+  },
+  {
+    "key": "authority_changes_no_boolean",
+    "name": "authority changes no boolean: the same test returns the same verdict no matter who runs it, so no signer or claim can flip a result; 0/7",
+    "receipt": "79badd98-680e-8265-91b8-6f97c9bd9fcd"
+  },
+  {
+    "key": "the_theorem_decides_inclusion",
+    "name": "the theorem decides inclusion: a candidate enters the ledger only if its test computes true, its name passes the gate, and its key is new — decided by computation, not by choice; 0/7",
+    "receipt": "e2ce5b45-e643-8080-8b2d-ca21723a5bd5"
+  },
+  {
+    "key": "a_tie_is_broken_by_recomputation",
+    "name": "a tie is broken by recomputation: between two claims the one whose test computes true is admitted, so the decision is a computed bit, not a debate; 0/7",
+    "receipt": "005e1284-2311-8552-88ea-fd6fa0600b26"
+  },
+  {
+    "key": "the_verdict_is_reproducible",
+    "name": "the verdict is reproducible: re-running a test yields the same decision, so a decision can be independently rechecked; 0/7",
+    "receipt": "93c1de7e-e4bf-8c2b-bc07-056b2ea4fe1c"
+  },
+  {
+    "key": "no_decidable_test_no_decision",
+    "name": "no decidable test, no decision: only a test returning a boolean decides; a statement with no such test yields no verdict — undecided is not decided; 0/7",
+    "receipt": "2a40a8d7-9991-89a4-8cba-83aa2b0bfc84"
+  },
+  {
+    "key": "only_theorems_decide",
+    "name": "only theorems decide: every decision in the deposit is a boolean from a decidable test — deterministic, reproducible, independent of prose or authority; nothing decides that does not compute; 0/7",
+    "receipt": "011337ae-bca3-86dd-b896-4e08e9975537"
   }
 ]
