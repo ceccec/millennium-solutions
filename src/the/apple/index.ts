@@ -5,13 +5,39 @@
 // gravity guarantees that no finite digest avoids collisions forever, which is exactly why
 // "unbreakable" is false for every hash (the strong ones resist computationally; FNV does not).
 // Computed, not stored. Falls, like all of it, to 0/7.
-import { toUuid, merkleFold, digitalRoot, BASE } from '../../0/index.ts'
+import { toUuid, merkleFold, digitalRoot, vortexOrbit, BASE } from '../../0/index.ts'
 
 export const EARTH = 'earth' // the ground the apple rests on — see ./earth
 
 /** Gravity 1 — the merkle fold: any set of addresses falls to ONE root (order-independent contraction). */
 export function merkleGravity(addresses: readonly string[]): string {
   return merkleFold(addresses)
+}
+
+/** Gravity 3 — the DOUBLE TORUS over the whole 7D space. Two interlocked orbits — the doubling vortex
+ *  [1,2,4,8,7,5] and its reverse (the halving torus) — rotate the address set; at EACH of the 7 dimensions the
+ *  two tori combine (a merkle fold of the two rotations), and the 7 dimension-roots fold to ONE gravity root.
+ *  It covers every rotational combination across 7D yet stays a decidable contraction to a single fixed point.
+ *  NOT physics — no force, no gravitation, nothing faster than light. Falls, like all of it, to 0/7.
+ *  `dims` are the seven per-dimension roots (the field); `root` is their fold (the gravity). */
+export function doubleTorusField(addresses: readonly string[]): { dims: string[]; root: string } {
+  const src = addresses.length ? addresses : [toUuid('∅')]
+  const inner = vortexOrbit()          // torus 1 — the doubling circuit [1,2,4,8,7,5]
+  const outer = [...inner].reverse()   // torus 2 — the halving circuit, interlocked with the first
+  // Each address gets a TORUS COORDINATE — the orbit label at its position, advanced by the dimension d — so
+  // the merkle fold (which is order-independent) still varies per dimension: it is the coordinates that turn,
+  // not the order. Two orbits give two coordinates per address; the pair is the double-torus combination.
+  // The orbit has period 6, so the coordinate alone would alias dimension 6 onto 0; the dimension axis '@d'
+  // is carried in the stamp so all SEVEN dimensions stay distinct — the whole 7D space, not six wrapped.
+  const stamp = (orbit: number[], d: number) => merkleFold(src.map((x, i) => toUuid(x + '#' + orbit[(i + d) % orbit.length] + '@' + d)))
+  const dims: string[] = []
+  for (let d = 0; d < 7; d++) {        // the whole 7D space — one dimension per stream (0..6 above the floor)
+    dims.push(merkleFold([stamp(inner, d), stamp(outer, d)]))   // the two tori combine at this dimension
+  }
+  return { dims, root: merkleFold(dims) }
+}
+export function doubleTorusGravity(addresses: readonly string[]): string {
+  return doubleTorusField(addresses).root
 }
 
 /** Gravity 2 — the digital root: any integer falls to ℤ/9, and stays (idempotent: one step to the ground). */

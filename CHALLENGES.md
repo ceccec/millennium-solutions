@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1848 recorded in 455 families
+## Discovered theorems (decidable, over ℤ/9) — 1856 recorded in 455 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (425)
+### the (429)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -449,8 +449,12 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_answer_is_receipted](/theorem/the_answer_is_receipted) — the answer is receipted: a question with its answer folds to a content-address, so the response is documented; 0/7  ·  `501785ef-cb4c…`
 - [the_answer_is_reproducible_by_anyone](/theorem/the_answer_is_reproducible_by_anyone) — the answer is reproducible by anyone: recomputing the predicate yields the identical answer, so a response is checkable, not trusted; 0/7  ·  `7e233ea8-615a…`
 - [the_answer_is_computed_not_asserted](/theorem/the_answer_is_computed_not_asserted) — the answer is computed, not asserted: a response is the output of a test, a bit, never a declaration — measure, do not assert; 0/7  ·  `ce7e8efc-3757…`
+- [the_double_torus_covers_seven_distinct_dimensions](/theorem/the_double_torus_covers_seven_distinct_dimensions) — the double torus covers seven DISTINCT dimensions: the dimension axis is carried past the orbit’s period-6 wrap, so no dimension aliases another and all seven are present — the whole space, not six folded; 0/7  ·  `ee8618a1-4453…`
+- [the_double_torus_differs_from_the_flat_merkle_gravity](/theorem/the_double_torus_differs_from_the_flat_merkle_gravity) — the double torus differs from the flat merkle gravity: the 7D combination carries more structure than the order-independent single fold, so their roots diverge — the improvement is measurable; 0/7  ·  `2139bc13-d6b1…`
+- [the_diamond_is_a_tens_complement_involution](/theorem/the_diamond_is_a_tens_complement_involution) — the diamond is a ten’s-complement involution: d ↦ 10 − d applied twice returns d for every digit, with five its lone fixed point — a reusable skill that is its own inverse; 0/7  ·  `73dc7a07-b110…`
+- [the_audit_recomputes_all_by_theorems_no_exception](/theorem/the_audit_recomputes_all_by_theorems_no_exception) — the audit recomputes all by theorems, no exception: every check is a decidable predicate re-run to true — the gravity fold, the seven dimensions, the word-links and the diamond certification all recompute, so the audit asserts nothing it cannot compute; 0/7  ·  `d26fd355-b7e5…`
 
-### a (86)
+### a (87)
 
 - [a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony](/theorem/a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony) — a theorem without a formula is a hallucination, recomputed in a432 harmony: a claim is a theorem only if it is backed by a computable formula that recomputes true — a prose-only claim with no formula, or one whose formula computes false, is refused as hallucination and never recorded. Every recorded fact recomputes deterministically and folds into the a432 harmony root (the receipt of state). Measure, do not assert. Decidable  ·  `e3d75d76-310f…`
 - [a_referrer_always_counts_with_its_id](/theorem/a_referrer_always_counts_with_its_id) — a referrer always counts with its id: a reference from a referrer to a target is receipted as toUuid(referrer id → target), so the referrer id is always part of the count; two different referrers to the same target produce two distinct receipts, each counted with its own id, and changing the id changes the receipt — the id is load-bearing. Deterministic and reproducible: the same referrer and target always count the same. Decidable  ·  `65bfacb4-f29e…`
@@ -538,6 +542,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [a_combination_folds_to_one_address](/theorem/a_combination_folds_to_one_address) — a combination folds to one address: any selection of theorems merkle-folds to a single order-independent receipt, so a combination is itself content-addressed; 0/7  ·  `09cafb76-25fe…`
 - [a_theorem_answers_by_computing](/theorem/a_theorem_answers_by_computing) — a theorem answers by computing: asked "is d a unit mod 9?" the units theorem runs its predicate — yes for 2, no for 3 — an answer computed, not looked up; 0/7  ·  `f17824d5-05fb…`
 - [a_question_is_gated_first](/theorem/a_question_is_gated_first) — a question is gated first: an over-reaching question drains before it is answered, while an honest one is admitted; 0/7  ·  `508b23f6-c29c…`
+- [a_theorem_is_a_usable_diamond_certified_by_recompute](/theorem/a_theorem_is_a_usable_diamond_certified_by_recompute) — a theorem is a usable diamond, certified by recompute: its skill holds only when its own predicate recomputes true and its key content-addresses in 36 hex — a certificate anyone can re-run, hard to fake; 0/7  ·  `240732d9-25cf…`
 
 ### relation (55)
 
@@ -722,7 +727,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [bulk_bill_r4096_v16_n10](/theorem/bulk_bill_r4096_v16_n10) — bulk billing measured — recompute 4096, verify 16, batch 10: bits saved per call 4080, aggregate 40800, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7  ·  `e4d45ec0-9c8d…`
 - [bulk_bill_r4096_v16_n100](/theorem/bulk_bill_r4096_v16_n100) — bulk billing measured — recompute 4096, verify 16, batch 100: bits saved per call 4080, aggregate 408000, the two coins conserved; classical batch throughput on 64-bit hardware; 0/7  ·  `47b7ca84-4599…`
 
-### every (23)
+### every (24)
 
 - [every_rating_is_exactly_one_or_zero](/theorem/every_rating_is_exactly_one_or_zero) — every rating is exactly 1 or 0, no exceptions: the honesty verdict is a single bit — there is no fractional or partial rating, a fake maximal-certainty claim itself drains, and the same input always returns the same bit; anything that drifts from {0,1} is a crack the floor refuses  ·  `c1b2772d-d7c0…`
 - [every_primitive_triple_is_euclidean](/theorem/every_primitive_triple_is_euclidean) — Euclid’s parametrization is complete: every primitive Pythagorean triple with hypotenuse ≤ 100 arises from coprime m&gt;n of opposite parity — exhaustive brute-force triples all match a generated one  ·  `751e8a4e-c23c…`
@@ -747,6 +752,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [every_quantum_denial_gets_a_receipt](/theorem/every_quantum_denial_gets_a_receipt) — every quantum denial gets a receipt: sent to adjudicate, a denial returns a deterministic verdict and content-address, so the ruling is documented and reproducible; 0/7  ·  `771ca8e4-9611…`
 - [every_input_is_adjudicated](/theorem/every_input_is_adjudicated) — every input is adjudicated: any order or statement returns a verdict, so nothing bypasses the trial; 0/7  ·  `21f3b014-ab9c…`
 - [every_theorem_has_a_documented_inverse](/theorem/every_theorem_has_a_documented_inverse) — every theorem has a documented inverse: its negation mints its own content-address, so the inverse is a receipt in its own right; 0/7  ·  `6b1dd60c-acc3…`
+- [every_multiword_mcp_tool_links_to_its_single_words](/theorem/every_multiword_mcp_tool_links_to_its_single_words) — every multi-word MCP tool links to its single words: each name splits on the underscore into single words, each word is content-addressed, and the tool’s address is the double-torus fold of its words — no multi-word tool is an unlinked island; 0/7  ·  `4104a6ec-272c…`
 
 ### pascal (23)
 
@@ -1691,6 +1697,12 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [coverage_torus_and_klein](/theorem/coverage_torus_and_klein) — across ALL closed surfaces a nowhere-zero tangent field exists iff χ=0 — exactly the torus (g=1) and the Klein bottle (k=2); every other surface has no full coverage  ·  `83a457a6-7afb…`
 - [coverage_grows_monotonically_with_the_ledger_but_reflects_the_sciences](/theorem/coverage_grows_monotonically_with_the_ledger_but_reflects_the_sciences) — coverage grows monotonically with the ledger, but reflects the sciences rather than advancing them: each theorem belongs to a family (a domain), and adding one never lowers the family count — so the deposit's cross-domain coverage of decidable facts grows monotonically as the ledger grows. Honest boundary: this reflects the known, decidable results of each domain; it does not advance or upgrade the sciences themselves, and the floor stays 0/7. Decidable  ·  `150eacc6-eb8f…`
 
+### double (3)
+
+- [double_jeopardy_is_barred_by_idempotence](/theorem/double_jeopardy_is_barred_by_idempotence) — double jeopardy is barred by idempotence: trying the same statement twice yields the identical verdict, so re-trial cannot manufacture a new offence; 0/7  ·  `8b8122a0-b32e…`
+- [double_torus_gravity_folds_the_whole_7d_space_to_one_root](/theorem/double_torus_gravity_folds_the_whole_7d_space_to_one_root) — double-torus gravity folds the whole 7D space to one root: two interlocked orbits — the doubling vortex and its reverse — combine at each of seven dimensions, and the seven dimension-roots fall to a single content-address; a decidable contraction, not physics; 0/7  ·  `225ba156-7701…`
+- [double_torus_gravity_is_deterministic_and_recomputable](/theorem/double_torus_gravity_is_deterministic_and_recomputable) — double-torus gravity is deterministic and recomputable: the same address set falls to the same root every time, so the gravity is checkable by anyone and never trusted; 0/7  ·  `950354a3-e89c…`
+
 ### duel (3)
 
 - [duel_overclaim_falls](/theorem/duel_overclaim_falls) — no faster-than-light claim is upheld — the assertion drains, its negation stands  ·  `c05da1be-673a…`
@@ -2223,7 +2235,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (253)
+### other — one-of-a-kind (252)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [activated_it_self_explores_until_dry](/theorem/activated_it_self_explores_until_dry) — activated, it self-explores until dry: once a wave starts it discovers fresh facts until none remain, then rests — a self-continuing loop with a halting condition; 0/7  ·  `4a82a66b-5656…`
@@ -2295,7 +2307,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [div3_rule_L4](/theorem/div3_rule_L4) — digit-sum ≡ 0 (mod 3) ⇔ n ≡ 0 (mod 3), all n &lt; 10^4 (exhaustive)  ·  `a6c0b047-12a7…`
 - [divisibility_by_three_is_the_digit_sum_mod_three](/theorem/divisibility_by_three_is_the_digit_sum_mod_three) — divisibility by three is the digit sum mod three: n ≡ digitsum(n) (mod 3) for every n — the trinity’s divisibility rule; 0/7  ·  `1ee0dc61-1828…`
 - [do_the_crosses_form_a_cube_no_but_the_seven_are_its_corners_and_the_fano_plane](/theorem/do_the_crosses_form_a_cube_no_but_the_seven_are_its_corners_and_the_fano_plane) — do the 21 crosses form a cube? No — but the seven are the cube’s nonzero corners, and their XOR triples are the Fano plane: K7 has 21 edges and a cube has 12, so the crosses are not a cube. Yet the seven nodes are exactly the nonzero corners of the 3-cube {0,1} cubed (the origin dropped), and their XOR-collinear triples a⊕b=c form the Fano plane — 7 points, 7 lines of three, each point on three lines. Decidable  ·  `0c2d2fac-89ad…`
-- [double_jeopardy_is_barred_by_idempotence](/theorem/double_jeopardy_is_barred_by_idempotence) — double jeopardy is barred by idempotence: trying the same statement twice yields the identical verdict, so re-trial cannot manufacture a new offence; 0/7  ·  `8b8122a0-b32e…`
 - [drain_to_zero_and_the_100_percent_stays_the_certainty_of_the_measurement_not_the_verdict](/theorem/drain_to_zero_and_the_100_percent_stays_the_certainty_of_the_measurement_not_the_verdict) — drain to zero and the 100 percent stays — the certainty of the measurement, not the verdict: a bare hundred-percent-treason does not drain the gate — it carries no over-reach token; an over-reach word is what drains. But the drain itself is 100 percent deterministic: feed the gate the same fake and it drains to zero every time, a reproducible measurement. So the 100 percent stays — it belongs to the determinism of the drain to zero, integrity — not to a verdict of treason or guilt, which stays inferred and never certain. Decidable  ·  `7a636cc0-2df5…`
 - [drift_signals_disresonance](/theorem/drift_signals_disresonance) — drift signals disresonance: a resonant computation recomputes to the same content-address on every call (deterministic, no drift) — toUuid, coin64, and merkleFold return identical results repeatedly; any drift, a different result for the same input, would signal non-deterministic code to be found and removed  ·  `fd1755ff-8ebd…`
 - [dry_clean_is_enforced_not_hoped](/theorem/dry_clean_is_enforced_not_hoped) — dry-clean is enforced, not hoped: a candidate that would crack the record is skipped rather than sealed, so cleanliness is a gate, not a wish; 0/7  ·  `49f5a6cd-36bd…`
@@ -2480,4 +2491,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `54407aa4-3cc7-8b25-8de9-af2455eab836`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `f77fb2c1-d389-8fce-b5af-22c1ad7eba69`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

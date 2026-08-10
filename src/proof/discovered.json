@@ -9238,5 +9238,45 @@
     "key": "each_theorem_responds_with_computed_answers",
     "name": "each theorem responds to questions with computed answers: it runs its predicate to answer, deterministic and receipted, an over-reaching question drained and an out-of-domain one returned to the floor — never asserted; 0/7",
     "receipt": "7f64cba2-4938-8d91-a4d6-9835ffcd50c2"
+  },
+  {
+    "key": "double_torus_gravity_folds_the_whole_7d_space_to_one_root",
+    "name": "double-torus gravity folds the whole 7D space to one root: two interlocked orbits — the doubling vortex and its reverse — combine at each of seven dimensions, and the seven dimension-roots fall to a single content-address; a decidable contraction, not physics; 0/7",
+    "receipt": "225ba156-7701-8f18-b161-a48bc0aecf32"
+  },
+  {
+    "key": "the_double_torus_covers_seven_distinct_dimensions",
+    "name": "the double torus covers seven DISTINCT dimensions: the dimension axis is carried past the orbit’s period-6 wrap, so no dimension aliases another and all seven are present — the whole space, not six folded; 0/7",
+    "receipt": "ee8618a1-4453-87f0-9d53-7b0b54f00f72"
+  },
+  {
+    "key": "double_torus_gravity_is_deterministic_and_recomputable",
+    "name": "double-torus gravity is deterministic and recomputable: the same address set falls to the same root every time, so the gravity is checkable by anyone and never trusted; 0/7",
+    "receipt": "950354a3-e89c-82f4-9455-63205b2ddf47"
+  },
+  {
+    "key": "the_double_torus_differs_from_the_flat_merkle_gravity",
+    "name": "the double torus differs from the flat merkle gravity: the 7D combination carries more structure than the order-independent single fold, so their roots diverge — the improvement is measurable; 0/7",
+    "receipt": "2139bc13-d6b1-8cf0-b3eb-7471129d38f3"
+  },
+  {
+    "key": "every_multiword_mcp_tool_links_to_its_single_words",
+    "name": "every multi-word MCP tool links to its single words: each name splits on the underscore into single words, each word is content-addressed, and the tool’s address is the double-torus fold of its words — no multi-word tool is an unlinked island; 0/7",
+    "receipt": "4104a6ec-272c-89a5-8cdc-77d2192db53a"
+  },
+  {
+    "key": "a_theorem_is_a_usable_diamond_certified_by_recompute",
+    "name": "a theorem is a usable diamond, certified by recompute: its skill holds only when its own predicate recomputes true and its key content-addresses in 36 hex — a certificate anyone can re-run, hard to fake; 0/7",
+    "receipt": "240732d9-25cf-8869-9935-b30916b70dc5"
+  },
+  {
+    "key": "the_diamond_is_a_tens_complement_involution",
+    "name": "the diamond is a ten’s-complement involution: d ↦ 10 − d applied twice returns d for every digit, with five its lone fixed point — a reusable skill that is its own inverse; 0/7",
+    "receipt": "73dc7a07-b110-8e88-b4d3-67b0b177ef84"
+  },
+  {
+    "key": "the_audit_recomputes_all_by_theorems_no_exception",
+    "name": "the audit recomputes all by theorems, no exception: every check is a decidable predicate re-run to true — the gravity fold, the seven dimensions, the word-links and the diamond certification all recompute, so the audit asserts nothing it cannot compute; 0/7",
+    "receipt": "d26fd355-b7e5-844c-bc27-30f59d6bab18"
   }
 ]

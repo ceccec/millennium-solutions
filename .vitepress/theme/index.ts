@@ -24,8 +24,9 @@ import './custom.css'
 
 export default {
   extends: DefaultTheme,
-  // Funding is fused under every page's content, and usable as <Funding/> in any prose.
-  Layout: () => h(DefaultTheme.Layout, null, { 'doc-after': () => h(Funding) }),
+  // Funding — the captain's message with the donation link — is fused under EVERY page (layout-bottom renders
+  // on all layouts: home, doc, and custom), and usable as <Funding/> in any prose.
+  Layout: () => h(DefaultTheme.Layout, null, { 'layout-bottom': () => h(Funding) }),
   enhanceApp({ app }) {
     app.component('Funding', Funding)
     app.component('Hero', Hero)

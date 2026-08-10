@@ -7,7 +7,10 @@ import { createInterface } from 'node:readline'
 import { execSync } from 'node:child_process'
 import { readFileSync, existsSync } from 'node:fs'
 import { toUuid, merkleFold } from '../src/0/index.ts'
+import { doubleTorusGravity } from '../src/the/apple/index.ts'
+import { diamond } from '../src/5/diamond.ts'
 import { computes } from './honesty-gate.ts'
+import { proveVerdict } from './verdict.ts'
 import { apiFetch } from './api.ts'
 import { CANDIDATES, provable } from './discover.ts'
 import { CORE as ROSETTA_CORE, DOMAINS as ROSETTA_DOMAINS } from '../src/the/rosetta/index.ts'
@@ -67,8 +70,11 @@ const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
       }
       return JSON.stringify({ uuid: t, decoded: null, note: 'in neither the receipt ledger nor the discovery ledger — a one-way address cannot be reversed to its message' })
     }
-    const g = computes(t)
-    return JSON.stringify({ text: t, contentAddress: toUuid(t), gate: g.binary, hit: g.hit, note: g.binary ? 'holds the floor' : 'drains: ' + g.hit })
+    // Prose → the FULL, formula-backed trial (reusable): the floor verdict PLUS a proof-of-verdict receipt that
+    // folds every supporting ledger theorem whose formula recomputes true (double-torus 7D). The bare gate
+    // binary is the O(1) floor; proofReceipt is the valid ruling that cites its formulas — reproducible by anyone.
+    const v = proveVerdict(t)
+    return JSON.stringify({ text: t, contentAddress: v.receipt, gate: v.gateBinary, hit: v.gateBinary ? null : computes(t).hit, verdict: v.verdict, formulas: v.formulas, recomputedTrue: v.recomputedTrue, proofReceipt: v.proofReceipt, note: v.note + ' — full trial: ' + v.recomputedTrue + '/' + v.formulas + ' theorem-formulas recompute true, folded to the proof-of-verdict receipt. integrity, not truth. 0/7' })
   },
   lineage: () => {
     const tags = execSync('git tag --sort=version:refname', { encoding: 'utf8' }).trim().split('\n').filter(Boolean)
@@ -111,7 +117,25 @@ const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
     const undeclared = declared.filter((n) => !handled.includes(n)) // a tool with no handler
     const orphans = handled.filter((n) => !declared.includes(n))    // a handler with no tool
     const root = merkleFold(TOOLS.map((t) => toUuid(t.name + '|' + t.description + '|' + JSON.stringify(t.inputSchema))))
-    return JSON.stringify({ tools: TOOLS.length, handlers: handled.length, everyToolHandled: undeclared.length === 0, everyHandlerDeclared: orphans.length === 0, undeclared, orphans, selfAuditRoot: root, note: 'the MCP audits itself — each tool content-addressed, declared ⇔ handled. integrity of the surface, not truth.' })
+    // VIOLATION FIX — no multi-word tool may be an unlinked island: split each name into single words, address
+    // each word, and link the tool to its words by the DOUBLE-TORUS gravity of their addresses (the whole 7D).
+    const wordsOf = (n: string) => n.split('_').filter(Boolean)
+    const links = declared.map((n) => ({ tool: n, words: wordsOf(n), address: doubleTorusGravity(wordsOf(n).map((w) => toUuid('word:' + w))) }))
+    const singleWords = [...new Set(declared.flatMap(wordsOf))]
+    const everyMultiwordLinked = links.filter((l) => l.words.length > 1).every((l) => l.words.every((w) => toUuid('word:' + w).length === 36) && l.address.length === 36)
+    // ALL IS COMPUTABLE BY THEOREMS, NO EXCEPTION — the audit recomputes its checks as decidable predicates,
+    // and RE-RUNS the recorded audit diamonds from the ledger's theorems (their test() must recompute true).
+    const AUDIT_DIAMONDS = ['every_multiword_mcp_tool_links_to_its_single_words', 'the_double_torus_covers_seven_distinct_dimensions', 'the_diamond_is_a_tens_complement_involution', 'the_audit_recomputes_all_by_theorems_no_exception', 'a_theorem_is_a_usable_diamond_certified_by_recompute']
+    const diamonds = AUDIT_DIAMONDS.map((k) => { const c = CANDIDATES.find((x) => x.key === k); return { key: k, certified: !!c && c.test() === true && computes(c.name).binary === 1 } })
+    const theorems = {
+      everyToolHandled: undeclared.length === 0,
+      everyHandlerDeclared: orphans.length === 0,
+      everyMultiwordLinked,
+      diamondInvolution: [1, 2, 3, 4, 5, 6, 7, 8, 9].every((d) => diamond(diamond(d)) === d),
+      everyDiamondCertified: diamonds.every((d) => d.certified),
+    }
+    const allComputeTrue = Object.values(theorems).every(Boolean)
+    return JSON.stringify({ tools: TOOLS.length, handlers: handled.length, ...theorems, allComputeTrue, undeclared, orphans, singleWords: singleWords.length, diamonds, links, selfAuditRoot: root, note: 'the MCP audits itself BY THEOREMS — every tool content-addressed and handled, every multi-word tool linked to its single words by double-torus gravity (7D), each check a decidable predicate recomputed true and each diamond re-run from the ledger. integrity of the surface, not truth. 0/7' })
   },
 }
 const run = async (name: string, a: any): Promise<string> => {

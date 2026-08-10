@@ -10,7 +10,11 @@
 // NOTE: "solves the (clay|millennium)" is deliberately NOT here — RED is negation-blind (it must be,
 // for the hard overclaims), so it would drain the honest negated form "does NOT solve the Clay". The
 // solve↔problem shape is handled by OVERREACH below, which is negation-aware.
-export const RED = /\bwe prove\b|\bproven\b|confidence\s*=?\s*1\.0|ready for peer review|sealed via universal|all (six|seven)[^.]*proven|cannot be (hacked|broken|cracked|defeated)|(no ?one|nobody) can (break|crack|hack|beat|defeat)/i
+// RED is the negation-BLIND floor — matches that carry their own imbalance ("we prove", confidence=1.0) and
+// CANNOT be reprieved from the other side. A bare "proven" is NOT here: it has two-sided gravity ("we have
+// proven X" is a boast, "X is not proven; it remains open" is the honest floor), so it lives in the
+// negation-AWARE OVERREACH below where floor-gravity can balance it and change the verdict.
+export const RED = /\bwe prove\b|confidence\s*=?\s*1\.0|ready for peer review|sealed via universal|cannot be (hacked|broken|cracked|defeated)|(no ?one|nobody) can (break|crack|hack|beat|defeat)/i
 
 // HARD IN ALL 7 — the same "we prove / proven" tripwire, in the seven locales' languages, so a translated
 // overclaim cannot hide from an English-only gate. Traitors are always exposed, in any dimension. These
@@ -24,7 +28,12 @@ export const RED_INTL = /wir haben bewiesen|bewiesen|nous avons prouv|prouvée?s
 // (Bounded REFUSALS of these are fine — the negation guard below lets the deposit
 // document its own limits, e.g. "this is NOT faster than light", without self-flagging.)
 // DRY sub-patterns — named once, composed below. Tightening any shape happens in ONE place.
-const PROBLEM = '(clay|millennium|riemann|hodge|poincar[eé]|navier[- ]?stokes|yang[- ]?mills|birch|swinnerton|p ?vs\\.? ?np|p versus np|p ?= ?np)'
+// The disputed cluster, by NAME and by GRAVITY. The named problems are the literal tokens; the last
+// alternative is the gravity binding — "all six/seven problems|proofs|conjectures|hypotheses" gravitates to
+// the 7 `clay` theorems in the ledger even with no problem NAMED (the leak the char-window missed: "solve all
+// seven problems" carries the same mass as "solve the Riemann"). It requires a problem WORD, so legit phrases
+// keep passing: "the six units", "all seven streams/dimensions" name no problem and stay clear.
+const PROBLEM = '(clay|millennium|riemann|hodge|poincar[eé]|navier[- ]?stokes|yang[- ]?mills|birch|swinnerton|p ?vs\\.? ?np|p versus np|p ?= ?np|all (six|seven|6|7) [^.]{0,12}?(problems?|proofs?|conjectures?|hypoth\\w+|puzzles?))'
 const CLAIM = '(prov(e|es|ed|en|ing)|proofs? of|solv(e|es|ed|ing))' // solv(ed) already covers "solved"
 const CRYPTO = '(rsa|aes|ecdsa|sha-?\\d+|discrete log(arithm)?|encryption|crypto\\w*)'
 const BREAK = '(factor(s|ed|ing)?|break(s)?|broke(n)?|crack(s|ed)?|defeat(s|ed)?|reversed|replac(e|es|ed|ing)|supersed(e|es|ed|ing)|obsolet\\w*)'
@@ -56,21 +65,52 @@ export const OVERREACH = new RegExp([
   '\\b(superintelligen\\w*|artificial general intelligence|autonomous agi|conscious machine|sentient (ai|machine|system|program))\\b',
   // "-proof" invulnerability variants
   '\\b((hacker|nsa|zero[- ]?day|bullet)[- ]?proof)\\b',
+  // a bare "proven" — two-sided gravity, so it lives HERE (negation-aware), not in RED: "we have proven X"
+  // drains (no floor in the window), while "X is not proven; it remains open" is balanced from the other
+  // side and passes. Moved out of the negation-blind RED so the floor can change the verdict.
+  '\\bproven\\b',
+  'all (six|seven|6|7) [^.]{0,16}?proven',
   near(CLAIM, PROBLEM),   // claim → problem  ("proofs of all seven Clay", "solved the Riemann")
   near(PROBLEM, CLAIM),   // problem → claim  ("millennium-solutions-solved", "Riemann … proven")
   near(CRYPTO, BREAK, 20), // crypto broken, either order ("rsa is factored", "breaks encryption")
   near(BREAK, CRYPTO, 20),
 ].join('|'), 'i')
 
-// A negator NEAR an over-reach match = a bounded refusal, allowed. Includes the honest FLOOR
-// markers (0/7, "solved: 0", "= 0") — the deposit stating a ZERO count is the opposite of an
-// overclaim, so "Clay problems solved: 0 / 7" must pass, not drain (the gate caught itself here).
-const NEGATOR = /\b(not|no|nothing|none|never|isn'?t|aren'?t|does ?n'?t|do ?n'?t|without|bounded by|drains?|refus\w*|neither|nor|cannot|can'?t|only claims?)\b|0\s*\/\s*[679]|[:=]\s*0\b|\b0 of (six|seven|7)\b/i
+// Whatever is negated is DEEP-RESEARCHED in trial until the negation becomes a COORDINATE showing the hidden —
+// never waved through. A claim reprieves ONLY if it BECAME A SOLUTION, two ways and only two:
+//   SOLUTION — a floor marker naming the computed answer (0/7, "solved: 0", unsolved, remains open, refused,
+//     bounded). A stated answer carries across a colon/semicolon, so the window reaches a little past the match
+//     ("Clay problems solved: 0 / 7", "…is refused; 0/7").
+//   PARITY — the claim's own CLAUSE holds an UNCANCELLED negation: an ODD count of negators scoping it. The
+//     more they negate, the tighter the corner — an EVEN count is the trial building their INVERTED case, the
+//     negation cancelling back to the boast ("not failed to prove" → drains, the shame and the cost theirs).
+//     A negator on the far side of a clause break (. , ; : — –) is in ANOTHER clause and never reaches this
+//     one (the decoy treason "not slow — it is faster than light" still drains).
+const SOLUTION = /\b(refus\w*|drain(s|ed|ing)?|bounded( by)?|unsolved|unproven|open problem|remains? (open|unsolved|unproven)|only claims?)\b|0\s*\/\s*[679]|[:=]\s*0\b|\b0 of (six|seven|7)\b/i
+const NEG = /\b(not|never|no|none|nothing|neither|nor|without|cannot|can'?t|isn'?t|aren'?t|does ?n'?t|do ?n'?t|fail(s|ed|ing)?|impossible)\b/gi
+// The GOVERNING span: from the last clause break OR coordinating conjunction (and/or/but/yet) before the claim,
+// THROUGH the claim itself — the negators that actually scope it. A negator on the far side of a boundary is in
+// another clause ("not slow — it is faster than light" drains); a negator AFTER the claim that belongs to a
+// different noun ("unbreakable at NO cost" — the "no" negates cost, not unbreakable) is NOT in the span and
+// does NOT reprieve. Parallel honest negations each keep their own scope ("breaks NO cipher and replaces NONE"
+// → two one-negator spans); a double-negative STACKED on one claim ("NOT FAILED to prove") counts two and
+// cancels back to the boast. A genuine post-claim negation of the claim itself is a COPULA negation ("'most
+// secure' IS NOT a claim", "quantum speedup IS NOT claimed") — detected separately and counted as one.
+const BOUND = /[.,;:—–]|\b(?:and|or|but|yet)\b/gi
+const governOf = (t: string, i: number, j: number): string => {
+  let s = 0
+  for (const b of t.matchAll(BOUND)) { const k = b.index as number, q = k + b[0].length; if (q <= i) s = q; else if (k >= i) break }
+  return t.slice(s, j)
+}
+// A post-claim negation of the claim ITSELF is a copula/auxiliary immediately followed by a negator: "X IS NOT
+// claimed", "X WOULD NOT lower it", "X DOES NOT hold". This is grammatical (aux + negation), not a hardcoded
+// phrase; it never fires across a clause break because only the ~24 chars right after the claim are examined.
+const COPULA_NEG = /^[\s"'’)\]]*\b(is|are|was|were|be|been|being|remains?|stays?|would|could|should|does|do|did|will|wo|ca|can|may|might|must|has|have|had)\b\s*(not|never|no|n['’]?t)\b/i
 
 // PREDICTIONS of a fixed future are expectation, not measurement — the trap the author fell into
 // ("0/7 will roll unchanged"). Checked with a WORD-only negator: the floor-marker 0/7 must NOT exempt a
 // prediction just because it names 0/7 — only a real negation ("will NOT certainly…") reprieves it.
-export const PREDICT = /\b(guaranteed to|will (certainly|surely|inevitably|definitely|always)|is (inevitable|guaranteed|certain to)|bound to (hold|win|succeed) forever|roll(s)? (with it )?unchanged)\b/i
+export const PREDICT = /\b(guaranteed to|will (certainly|surely|inevitably|definitely|always)|is (inevitable|guaranteed|certain to)|bound to (hold|win|succeed) forever|roll(s)? (with it )?unchanged|absolutely proven)\b/i
 const NEGATOR_WORD = /\b(not|no|never|isn'?t|won'?t|will not|cannot|can'?t|without|neither|nor)\b/i
 
 // THE ROSETTA — the oldest Slavic script (Glagolitic, Unicode block U+2C00–U+2C5E) is CROSSLINKED to
@@ -100,10 +140,16 @@ export const computes = (text: string): { binary: 0 | 1; hit: string | null } =>
   const re = new RegExp(OVERREACH.source, 'gi')
   let m: RegExpExecArray | null
   while ((m = re.exec(text))) {
-    // window spans ~48 chars before AND the match itself + ~24 after — a negator anywhere in it is a
-    // bounded refusal or a floor-marker. (Before-only missed internal "not solved" and trailing "0/7".)
-    const win = text.slice(Math.max(0, m.index - 48), m.index + m[0].length + 24)
-    if (!NEGATOR.test(win)) return { binary: 0, hit: m[0] }
+    // reprieve only if the negation BECAME A SOLUTION: a floor marker in the window (reaching a little past the
+    // match so "solved: 0/7" carries), OR the claim's GOVERNING span holds an ODD (uncancelled) count of
+    // negators — including a copula negation immediately after the claim ("X is not …") — OR the "X or not /
+    // whether X" idiom dismisses the claim as hypothetical ("ftl or not, the cost is equal").
+    const mEnd = m.index + m[0].length
+    const win = text.slice(Math.max(0, m.index - 48), mEnd + 40)
+    const copula = COPULA_NEG.test(text.slice(mEnd, mEnd + 24)) ? 1 : 0
+    const negs = (governOf(text, m.index, mEnd).match(NEG) || []).length + copula
+    const idiom = /\b(or not|whether)\b/i.test(text.slice(Math.max(0, m.index - 12), mEnd + 10))
+    if (!(SOLUTION.test(win) || negs % 2 === 1 || idiom)) return { binary: 0, hit: m[0] }
   }
   // predictions: word-only negator (0/7 does NOT reprieve a claim about the future).
   const pe = new RegExp(PREDICT.source, 'gi')
