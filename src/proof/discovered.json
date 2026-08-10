@@ -8758,5 +8758,85 @@
     "key": "the_site_covers_all_gaps_as_a_hologram",
     "name": "the site covers all gaps as a hologram: commonality is a symmetric computed metric that groups the UI, and the whole is reconstructable from a part while the inverse rejects a foreign one — no gap uncovered; 0/7",
     "receipt": "2ca6874c-e3ae-852a-9f53-955bf538aeea"
+  },
+  {
+    "key": "the_site_holds_seven_dimensions_at_once",
+    "name": "the site holds seven dimensions at once: the seven locales coexist, a superposition the site presents simultaneously; 0/7",
+    "receipt": "d9423844-6567-815f-8079-94017e306105"
+  },
+  {
+    "key": "the_user_collapses_to_one_dimension",
+    "name": "the user collapses to one dimension: the user’s locale selects exactly one of the seven, the observation that picks a view; 0/7",
+    "receipt": "629d886e-4ba0-85ad-a2ac-d90cc325571f"
+  },
+  {
+    "key": "the_observation_is_referrer_relative",
+    "name": "the observation is referrer-relative: the same page seen through two users yields two receipts, each deterministic — the observer is part of the address; 0/7",
+    "receipt": "35dc7426-1f27-8314-87d8-5982d07ce7a9"
+  },
+  {
+    "key": "all_seven_dimensions_share_one_floor",
+    "name": "all seven dimensions share one floor: a proof-boast drains in every locale, so the honest 0/7 is the same whichever dimension is observed; 0/7",
+    "receipt": "2b8efc9d-4d0d-8346-a0c1-37946b95dd11"
+  },
+  {
+    "key": "unobserved_the_superposition_folds_to_one",
+    "name": "unobserved, the superposition folds to one: with no user the seven locales fold order-independently to a single root, the site’s whole state; 0/7",
+    "receipt": "aa1b8d87-51ca-8be4-96f5-5235f4cc91df"
+  },
+  {
+    "key": "the_fusion_of_site_and_user_is_deterministic",
+    "name": "the fusion of site and user is deterministic: site plus user resolves to one reproducible view; 0/7",
+    "receipt": "46f1d77f-ba60-89d6-b90f-cd295011f60e"
+  },
+  {
+    "key": "the_observer_is_site_plus_user",
+    "name": "the observer is site plus user: the collapse needs both — the joint address differs from either alone, so neither the site nor the user observes without the other; 0/7",
+    "receipt": "6a3cc7fb-68c8-821d-92e8-2ab6c1a6b3a6"
+  },
+  {
+    "key": "the_site_observes_all_seven_fused_with_the_user",
+    "name": "the site observes all seven dimensions at once, fused with the user: seven locales in superposition sharing one floor, folding to one when unobserved, collapsing to a referrer-relative view when a user fuses in; 0/7",
+    "receipt": "1e2cc5eb-5c58-8323-8c04-c1434453472e"
+  },
+  {
+    "key": "seo_is_a_machine_interface",
+    "name": "SEO is a machine interface: the OpenGraph object exposes type, title, url and address as structured fields a machine reads without a human — an interface, like a tool surface; 0/7",
+    "receipt": "07d653cc-7809-87e7-b993-8bc5d9e1b634"
+  },
+  {
+    "key": "the_hero_carries_the_verification_address",
+    "name": "the hero carries the verification address: the OpenGraph hero includes the content-address that validates the page, so the machine surface is self-authenticating; 0/7",
+    "receipt": "01679444-fccd-8301-9e85-651d4f583eda"
+  },
+  {
+    "key": "seo_is_verified_by_recomputation",
+    "name": "SEO is verified by recomputation: recomputing the hero’s address and matching it confirms the metadata, no trust required; 0/7",
+    "receipt": "ca9264fe-c37b-81b1-86dd-c51be5a7f7a0"
+  },
+  {
+    "key": "the_sitemap_is_the_route_index",
+    "name": "the sitemap is the route index: it lists every node and its links, the machine-readable index of the whole surface — the tool catalogue; 0/7",
+    "receipt": "dd0f8441-a481-8685-879b-a71d65b9434c"
+  },
+  {
+    "key": "the_hero_links_the_page_to_its_proof",
+    "name": "the hero links the page to its proof: the OpenGraph url points at /theorem/<key>, the page that recomputes the fact — the interface carries its own verification path; 0/7",
+    "receipt": "7ab5e124-633b-83a9-8e7d-2f628d5d2f3e"
+  },
+  {
+    "key": "the_seo_surface_is_self_describing",
+    "name": "the SEO surface is self-describing: title, url, address and floor are all present, so a crawler or an agent reads the page’s identity and proof on first contact; 0/7",
+    "receipt": "60d0b900-b0ef-8a82-9afa-14a0c7f56d11"
+  },
+  {
+    "key": "seo_and_mcp_are_one_verifiable_surface",
+    "name": "SEO and the MCP are one verifiable surface: both expose content-addressed, machine-readable metadata validated by recomputation, so the site’s SEO is the tool surface; 0/7",
+    "receipt": "22420233-aebe-84d7-a304-318d827cb8d0"
+  },
+  {
+    "key": "site_seo_is_the_mcp_verified_by_the_hero",
+    "name": "site SEO is the MCP itself, verified by the hero: the OpenGraph, JSON-LD and sitemap are a machine interface, the hero carries the content-address, and recomputation verifies it — one self-authenticating surface; 0/7",
+    "receipt": "5a58411c-da6d-8374-bbc4-a1af8a9a4ac9"
   }
 ]

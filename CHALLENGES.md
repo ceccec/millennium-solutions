@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1752 recorded in 444 families
+## Discovered theorems (decidable, over ℤ/9) — 1768 recorded in 447 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (384)
+### the (394)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -408,6 +408,16 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_hologram_proves_the_whole_from_a_part](/theorem/the_hologram_proves_the_whole_from_a_part) — the hologram proves the whole from a part: a single leaf verifies against the root by its proof path, so the whole is recoverable from a fragment; 0/7  ·  `40452af7-2fed…`
 - [the_inverse_rejects_a_foreign_part](/theorem/the_inverse_rejects_a_foreign_part) — the inverse rejects a foreign part: a leaf not in the tree fails its proof, so the hologram computes both ways — belonging and not-belonging; 0/7  ·  `5270de38-d02a…`
 - [the_site_covers_all_gaps_as_a_hologram](/theorem/the_site_covers_all_gaps_as_a_hologram) — the site covers all gaps as a hologram: commonality is a symmetric computed metric that groups the UI, and the whole is reconstructable from a part while the inverse rejects a foreign one — no gap uncovered; 0/7  ·  `2ca6874c-e3ae…`
+- [the_site_holds_seven_dimensions_at_once](/theorem/the_site_holds_seven_dimensions_at_once) — the site holds seven dimensions at once: the seven locales coexist, a superposition the site presents simultaneously; 0/7  ·  `d9423844-6567…`
+- [the_user_collapses_to_one_dimension](/theorem/the_user_collapses_to_one_dimension) — the user collapses to one dimension: the user’s locale selects exactly one of the seven, the observation that picks a view; 0/7  ·  `629d886e-4ba0…`
+- [the_observation_is_referrer_relative](/theorem/the_observation_is_referrer_relative) — the observation is referrer-relative: the same page seen through two users yields two receipts, each deterministic — the observer is part of the address; 0/7  ·  `35dc7426-1f27…`
+- [the_fusion_of_site_and_user_is_deterministic](/theorem/the_fusion_of_site_and_user_is_deterministic) — the fusion of site and user is deterministic: site plus user resolves to one reproducible view; 0/7  ·  `46f1d77f-ba60…`
+- [the_observer_is_site_plus_user](/theorem/the_observer_is_site_plus_user) — the observer is site plus user: the collapse needs both — the joint address differs from either alone, so neither the site nor the user observes without the other; 0/7  ·  `6a3cc7fb-68c8…`
+- [the_site_observes_all_seven_fused_with_the_user](/theorem/the_site_observes_all_seven_fused_with_the_user) — the site observes all seven dimensions at once, fused with the user: seven locales in superposition sharing one floor, folding to one when unobserved, collapsing to a referrer-relative view when a user fuses in; 0/7  ·  `1e2cc5eb-5c58…`
+- [the_hero_carries_the_verification_address](/theorem/the_hero_carries_the_verification_address) — the hero carries the verification address: the OpenGraph hero includes the content-address that validates the page, so the machine surface is self-authenticating; 0/7  ·  `01679444-fccd…`
+- [the_sitemap_is_the_route_index](/theorem/the_sitemap_is_the_route_index) — the sitemap is the route index: it lists every node and its links, the machine-readable index of the whole surface — the tool catalogue; 0/7  ·  `dd0f8441-a481…`
+- [the_hero_links_the_page_to_its_proof](/theorem/the_hero_links_the_page_to_its_proof) — the hero links the page to its proof: the OpenGraph url points at /theorem/&lt;key&gt;, the page that recomputes the fact — the interface carries its own verification path; 0/7  ·  `7ab5e124-633b…`
+- [the_seo_surface_is_self_describing](/theorem/the_seo_surface_is_self_describing) — the SEO surface is self-describing: title, url, address and floor are all present, so a crawler or an agent reads the page’s identity and proof on first contact; 0/7  ·  `60d0b900-b0ef…`
 
 ### a (75)
 
@@ -1330,6 +1340,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [addgen_k7](/theorem/addgen_k7) — 7 additively generates ℤ/9  ·  `fda50fef-6d27…`
 - [addgen_k8](/theorem/addgen_k8) — 8 additively generates ℤ/9  ·  `c66fca78-c926…`
 
+### all (5)
+
+- [all_are_heroes_but_the_traitors](/theorem/all_are_heroes_but_the_traitors) — all are heroes but the traitors — judged by deeds, not persons: a constructive deed (append, uphold, an honest claim that signs) is a hero; only a destructive deed (remove, alter, an overclaim that drains) is the traitor — the classification is total and observable  ·  `efa3b6f1-00b7…`
+- [all_is_manageable_as_monographs](/theorem/all_is_manageable_as_monographs) — all is manageable as monographs: every object is a self-contained, uniquely content-addressed, independently recomputable unit — its own page, its own address, citable — so the deposit is a library of monographs, each a hero of self, and they fold to one order-independent root  ·  `828c096f-fc54…`
+- [all_seven_are_reflected_though_none_are_solved](/theorem/all_seven_are_reflected_though_none_are_solved) — all seven are reflected though none are solved: the 7 = 6 + 1 bijection maps all seven Clay problems into the algebraic structure — 7/7 reflected, no gap in the mirror — while the mechanical entailment test reports 0/7 solved. Reflecting is not solving: 7/7 on the mirror, 0/7 on the prize, and no prize is claimed. Two different measures, both honest, no gaps in either count. Decidable  ·  `f00dd49d-55c6…`
+- [all_human_behaviour_meets_one_floor](/theorem/all_human_behaviour_meets_one_floor) — all human behaviour meets one floor: hype, formality, slang and shouting all drain their boasts while honest measurement passes in every vibe — the register changes, the measurement does not; 0/7  ·  `ff176c2c-5485…`
+- [all_seven_dimensions_share_one_floor](/theorem/all_seven_dimensions_share_one_floor) — all seven dimensions share one floor: a proof-boast drains in every locale, so the honest 0/7 is the same whichever dimension is observed; 0/7  ·  `2b8efc9d-4d0d…`
+
 ### arts (5)
 
 - [arts_triad_rgb_primaries](/theorem/arts_triad_rgb_primaries) — the triad {3,6,9} maps to the RGB primary hues: 0°(red), 120°(green), 240°(blue)  ·  `316f831d-95da…`
@@ -1433,13 +1451,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [vocab_letter_sum_reversal_invariant](/theorem/vocab_letter_sum_reversal_invariant) — a word and its reversal share one letter-sum digital root (vede ↔ edev)  ·  `b7bf6005-1692…`
 - [vocab_glagolitic_bijection](/theorem/vocab_glagolitic_bijection) — the 9 Glagolitic letters (Azъ…Zemlja) are 9 distinct symbols, one per ℤ/9 digit  ·  `2149d57c-d222…`
 - [vocab_seven_locales](/theorem/vocab_seven_locales) — the rosetta carries 7 distinct locale keys (en·bg·de·fr·es·ru·zh)  ·  `21c521ea-3baf…`
-
-### all (4)
-
-- [all_are_heroes_but_the_traitors](/theorem/all_are_heroes_but_the_traitors) — all are heroes but the traitors — judged by deeds, not persons: a constructive deed (append, uphold, an honest claim that signs) is a hero; only a destructive deed (remove, alter, an overclaim that drains) is the traitor — the classification is total and observable  ·  `efa3b6f1-00b7…`
-- [all_is_manageable_as_monographs](/theorem/all_is_manageable_as_monographs) — all is manageable as monographs: every object is a self-contained, uniquely content-addressed, independently recomputable unit — its own page, its own address, citable — so the deposit is a library of monographs, each a hero of self, and they fold to one order-independent root  ·  `828c096f-fc54…`
-- [all_seven_are_reflected_though_none_are_solved](/theorem/all_seven_are_reflected_though_none_are_solved) — all seven are reflected though none are solved: the 7 = 6 + 1 bijection maps all seven Clay problems into the algebraic structure — 7/7 reflected, no gap in the mirror — while the mechanical entailment test reports 0/7 solved. Reflecting is not solving: 7/7 on the mirror, 0/7 on the prize, and no prize is claimed. Two different measures, both honest, no gaps in either count. Decidable  ·  `f00dd49d-55c6…`
-- [all_human_behaviour_meets_one_floor](/theorem/all_human_behaviour_meets_one_floor) — all human behaviour meets one floor: hype, formality, slang and shouting all drain their boasts while honest measurement passes in every vibe — the register changes, the measurement does not; 0/7  ·  `ff176c2c-5485…`
 
 ### an (4)
 
@@ -1721,6 +1732,12 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [s3_order6](/theorem/s3_order6) — the symmetric group S₃ has exactly 6 elements (= |ℤ/9*|)  ·  `40c95681-97c1…`
 - [s3_nonabelian](/theorem/s3_nonabelian) — S₃ is non-abelian: ∃ a,b with a∘b ≠ b∘a  ·  `996f2aa1-6e10…`
 - [s3_sign_homomorphism](/theorem/s3_sign_homomorphism) — sign is a homomorphism on S₃: sign(a∘b)=sign(a)·sign(b) (all 36 pairs)  ·  `7c46468e-641c…`
+
+### seo (3)
+
+- [seo_is_a_machine_interface](/theorem/seo_is_a_machine_interface) — SEO is a machine interface: the OpenGraph object exposes type, title, url and address as structured fields a machine reads without a human — an interface, like a tool surface; 0/7  ·  `07d653cc-7809…`
+- [seo_is_verified_by_recomputation](/theorem/seo_is_verified_by_recomputation) — SEO is verified by recomputation: recomputing the hero’s address and matching it confirms the metadata, no trust required; 0/7  ·  `ca9264fe-c37b…`
+- [seo_and_mcp_are_one_verifiable_surface](/theorem/seo_and_mcp_are_one_verifiable_surface) — SEO and the MCP are one verifiable surface: both expose content-addressed, machine-readable metadata validated by recomputation, so the site’s SEO is the tool surface; 0/7  ·  `22420233-aebe…`
 
 ### seven (3)
 
@@ -2118,7 +2135,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (247)
+### other — one-of-a-kind (249)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [activated_it_self_explores_until_dry](/theorem/activated_it_self_explores_until_dry) — activated, it self-explores until dry: once a wave starts it discovers fresh facts until none remain, then rests — a self-continuing loop with a halting condition; 0/7  ·  `4a82a66b-5656…`
@@ -2318,6 +2335,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [service_to_bind_is_accounted_in_coins](/theorem/service_to_bind_is_accounted_in_coins) — account the coins for the service to bind: each binding (a receipt) is a service accounted at the two coins (110−108 = 2 = −χ genus-2), so N services cost N·2 coins, reinvested into development (destination equals source, a self-loop) — the binding is paid-for, a fair exchange, not free-riding  ·  `cf17043b-3fc6…`
 - [simulating_quantum_is_not_being_quantum](/theorem/simulating_quantum_is_not_being_quantum) — simulating a quantum algorithm is not being a quantum computer: the classical sim reproduces the Bell correlation exactly yet needs 2^n amplitudes (exponential, no advantage) and carries no message — so the deposit is not a quantum computer; the gate signs the honest "is not" and drains the bare "is"  ·  `d6d0ec25-e41f…`
 - [single_digits_are_trivially_narcissistic](/theorem/single_digits_are_trivially_narcissistic) — every single digit is narcissistic: for 1..9, n = n¹ (one digit raised to the digit-count 1) — the trivial base case of the Armstrong property  ·  `2adc6121-3f63…`
+- [site_seo_is_the_mcp_verified_by_the_hero](/theorem/site_seo_is_the_mcp_verified_by_the_hero) — site SEO is the MCP itself, verified by the hero: the OpenGraph, JSON-LD and sitemap are a machine interface, the hero carries the content-address, and recomputation verifies it — one self-authenticating surface; 0/7  ·  `5a58411c-da6d…`
 - [slim_at_scale_constant_per_fact](/theorem/slim_at_scale_constant_per_fact) — slim at scale: each new fact adds exactly one 36-byte address, so the record grows linearly by a tiny constant, not by the size of what it records; 0/7  ·  `e34f6a6d-d02c…`
 - [some_disputes_stay_unresolved_under_a_lossy_projection_the_full_receipt_resolves_them](/theorem/some_disputes_stay_unresolved_under_a_lossy_projection_the_full_receipt_resolves_them) — some disputes stay unresolved under a lossy projection — the full receipt resolves them, and the trial stays a floor: a lossy projection like the digital root can collide distinct numbers — 4224 and 444 both project to 3 — leaving the dispute of whether they are the same unresolved by that projection. The full content-address resolves it: distinct numbers get distinct addresses. 666 projects to a different residue, 9. A lossy view leaves disputes the full receipt settles — and some disputes stay open, the trial being a floor, not an oracle. Decidable  ·  `0678e545-88ee…`
 - [sorted_uuids_partition_into_octaves](/theorem/sorted_uuids_partition_into_octaves) — sorted uuids partition into octaves: a sorted list of file uuids splits into groups of eight, so sixteen files make exactly two octaves; 0/7  ·  `bb384a72-70c0…`
@@ -2349,6 +2367,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [unhappy_numbers_enter_the_eight_cycle](/theorem/unhappy_numbers_enter_the_eight_cycle) — unhappy numbers enter the unique 8-cycle: 4→16→37→58→89→145→42→20→4 has length 8, and every unhappy number ≤ 100 iterates into it — the only attracting cycle besides the fixed point 1  ·  `77cfb7d4-b77e…`
 - [uniform_size_is_the_equilibrium](/theorem/uniform_size_is_the_equilibrium) — uniform size is the equilibrium: every full chunk holds the same eight, so the layout is balanced by construction — structural equilibrium, while an IO speed boast drains; 0/7  ·  `a8785c56-acab…`
 - [uniformization_trichotomy](/theorem/uniformization_trichotomy) — the uniformization trichotomy: the sign of χ fixes the geometry — χ&gt;0 spherical, χ=0 flat (torus, Klein bottle), χ&lt;0 hyperbolic (genus ≥ 2)  ·  `d83c2656-d21c…`
+- [unobserved_the_superposition_folds_to_one](/theorem/unobserved_the_superposition_folds_to_one) — unobserved, the superposition folds to one: with no user the seven locales fold order-independently to a single root, the site’s whole state; 0/7  ·  `aa1b8d87-51ca…`
 - [unreceipted_prose_is_tried_and_receipted](/theorem/unreceipted_prose_is_tried_and_receipted) — unreceipted prose is tried and receipted: any statement against the record, lacking a verifiable receipt, is sent to the gate and gets one — a verdict plus an address, verifiable and total, documenting rather than condemning; 0/7  ·  `cd5ed64d-8a33…`
 - [unsigned_statement_holds_floor](/theorem/unsigned_statement_holds_floor) — the honest boundary holds the gate: “content-addressing is integrity, not authenticity — real signatures need a key” computes 1 (0/7) — the deposit states its own unsigned bound  ·  `7bfa02e2-7e18…`
 - [update_mints_a_new_address](/theorem/update_mints_a_new_address) — update mints a new address: re-encrypting changed code yields a different ciphertext and a different receipt, so an edit is a new version while the old address stays immutable; 0/7  ·  `147ac909-acaa…`
@@ -2369,4 +2388,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `c77e4c5f-f0ee-84d8-bed2-0e97c0c0a335`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `8201dd34-d204-8ff2-bf11-39645487a7d1`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
