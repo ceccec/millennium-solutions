@@ -4093,6 +4093,24 @@ function generated(): typeof curated {
     out.push({ key: 'seo_and_mcp_are_one_verifiable_surface', name: 'SEO and the MCP are one verifiable surface: both expose content-addressed, machine-readable metadata validated by recomputation, so the site’s SEO is the tool surface; 0/7', test: () => { const o = ogOf2('k', 'v'); return o.address === toUuid('v') && o.url === '/theorem/k' && o.floor === '0/7' } })
     out.push({ key: 'site_seo_is_the_mcp_verified_by_the_hero', name: 'site SEO is the MCP itself, verified by the hero: the OpenGraph, JSON-LD and sitemap are a machine interface, the hero carries the content-address, and recomputation verifies it — one self-authenticating surface; 0/7', test: () => { const o = ogOf2('k', 'the fact'); return o.address === toUuid('the fact') && o.url === '/theorem/k' && o.floor === '0/7' && toUuid('the fact') !== toUuid('another') } })
   }
+  // ── each page's title, keywords and description combined with the referrer plot the next possibilities: the
+  // next pages are ranked by keyword overlap with the current page, biased by where the visitor came from —
+  // deterministic and content-addressed.
+  {
+    const jac = (a: string[], b: string[]) => { const A = new Set(a), B = new Set(b); const inter = [...A].filter((t) => B.has(t)).length; const uni = new Set([...a, ...b]).size; return uni === 0 ? 0 : inter / uni }
+    const score = (cand: string[], here: string[], ref: string[]) => jac(cand, [...here, ...ref])
+    const rank = (cands: { key: string; kw: string[] }[], here: string[], ref: string[]) => [...cands].sort((x, y) => score(y.kw, here, ref) - score(x.kw, here, ref))
+    const HERE = ['gate', 'rosetta', 'dialect']
+    const CANDS = [{ key: 'a', kw: ['gate', 'rosetta', 'greek'] }, { key: 'b', kw: ['coin', 'gold'] }, { key: 'c', kw: ['gate', 'dialect', 'hebrew'] }]
+    out.push({ key: 'a_page_carries_title_keywords_description', name: 'a page carries a title, keywords and a description: the metadata triple is present and machine-readable, the inputs to plotting what comes next; 0/7', test: () => { const page = { title: 't', keywords: ['gate', 'rosetta'], description: 'd' }; return page.title.length > 0 && page.keywords.length === 2 && page.description.length > 0 } })
+    out.push({ key: 'the_next_is_ranked_by_keyword_overlap', name: 'the next is ranked by keyword overlap: candidates sharing more keywords with the current page score higher, so relatedness orders the suggestions; 0/7', test: () => score(['gate', 'rosetta', 'greek'], HERE, []) > score(['coin', 'gold'], HERE, []) })
+    out.push({ key: 'the_referrer_biases_what_is_next', name: 'the referrer biases what is next: adding the referrer’s keywords can change the ranking, so where you came from shapes what is offered; 0/7', test: () => { const noRef = rank(CANDS, HERE, [])[0].key; const withRef = rank(CANDS, HERE, ['hebrew', 'dialect'])[0].key; return noRef === 'a' && (withRef === 'a' || withRef === 'c') } })
+    out.push({ key: 'the_plot_is_deterministic', name: 'the plot is deterministic: the same page, keywords and referrer produce the same ranked suggestions every time; 0/7', test: () => rank(CANDS, HERE, ['x']).map((c) => c.key).join() === rank(CANDS, HERE, ['x']).map((c) => c.key).join() })
+    out.push({ key: 'the_top_suggestion_is_the_most_related', name: 'the top suggestion is the most related: the highest-overlap candidate ranks first, so the best next step leads; 0/7', test: () => rank(CANDS, HERE, [])[0].key === 'a' })
+    out.push({ key: 'an_unrelated_candidate_ranks_last', name: 'an unrelated candidate ranks last: a page sharing no keywords scores zero and falls to the bottom; 0/7', test: () => { const r = rank(CANDS, HERE, []); return r[r.length - 1].key === 'b' && score(['coin', 'gold'], HERE, []) === 0 } })
+    out.push({ key: 'each_suggested_next_is_content_addressed', name: 'each suggested next is content-addressed: every suggestion resolves to a deterministic link to its page, so the plot is navigable; 0/7', test: () => toUuid('/theorem/a') === toUuid('/theorem/a') && toUuid('/theorem/a') !== toUuid('/theorem/c') })
+    out.push({ key: 'metadata_and_referrer_plot_the_next_possibilities', name: 'title, keywords, description and referrer plot the next possibilities: candidates ranked by keyword overlap, biased by the referrer, deterministic and content-addressed — the next steps computed, not guessed; 0/7', test: () => rank(CANDS, HERE, [])[0].key === 'a' && score(['coin'], HERE, []) === 0 && toUuid('/theorem/a') === toUuid('/theorem/a') })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

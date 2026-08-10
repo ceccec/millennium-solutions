@@ -8838,5 +8838,45 @@
     "key": "site_seo_is_the_mcp_verified_by_the_hero",
     "name": "site SEO is the MCP itself, verified by the hero: the OpenGraph, JSON-LD and sitemap are a machine interface, the hero carries the content-address, and recomputation verifies it — one self-authenticating surface; 0/7",
     "receipt": "5a58411c-da6d-8374-bbc4-a1af8a9a4ac9"
+  },
+  {
+    "key": "a_page_carries_title_keywords_description",
+    "name": "a page carries a title, keywords and a description: the metadata triple is present and machine-readable, the inputs to plotting what comes next; 0/7",
+    "receipt": "86c22cbe-79fb-8e48-8f4f-6a74e77e3cd1"
+  },
+  {
+    "key": "the_next_is_ranked_by_keyword_overlap",
+    "name": "the next is ranked by keyword overlap: candidates sharing more keywords with the current page score higher, so relatedness orders the suggestions; 0/7",
+    "receipt": "35824d9e-13d3-8c79-8df7-cd2ffc86e5c1"
+  },
+  {
+    "key": "the_referrer_biases_what_is_next",
+    "name": "the referrer biases what is next: adding the referrer’s keywords can change the ranking, so where you came from shapes what is offered; 0/7",
+    "receipt": "8ae5a3d7-3ef2-87e8-85d2-0db4a05dc35e"
+  },
+  {
+    "key": "the_plot_is_deterministic",
+    "name": "the plot is deterministic: the same page, keywords and referrer produce the same ranked suggestions every time; 0/7",
+    "receipt": "17526a2d-2851-857d-9a74-1258b2c89aba"
+  },
+  {
+    "key": "the_top_suggestion_is_the_most_related",
+    "name": "the top suggestion is the most related: the highest-overlap candidate ranks first, so the best next step leads; 0/7",
+    "receipt": "51dfdf54-71c2-87ae-889b-85bc470e1858"
+  },
+  {
+    "key": "an_unrelated_candidate_ranks_last",
+    "name": "an unrelated candidate ranks last: a page sharing no keywords scores zero and falls to the bottom; 0/7",
+    "receipt": "cf248749-153a-8b18-8207-b464e6569faa"
+  },
+  {
+    "key": "each_suggested_next_is_content_addressed",
+    "name": "each suggested next is content-addressed: every suggestion resolves to a deterministic link to its page, so the plot is navigable; 0/7",
+    "receipt": "db957c1f-2fa9-8d61-bccf-d01f61c2aae8"
+  },
+  {
+    "key": "metadata_and_referrer_plot_the_next_possibilities",
+    "name": "title, keywords, description and referrer plot the next possibilities: candidates ranked by keyword overlap, biased by the referrer, deterministic and content-addressed — the next steps computed, not guessed; 0/7",
+    "receipt": "a33b030e-7a3c-8922-a582-96adca2a09c1"
   }
 ]

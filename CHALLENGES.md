@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1768 recorded in 447 families
+## Discovered theorems (decidable, over ℤ/9) — 1776 recorded in 448 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (394)
+### the (398)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -418,8 +418,12 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_sitemap_is_the_route_index](/theorem/the_sitemap_is_the_route_index) — the sitemap is the route index: it lists every node and its links, the machine-readable index of the whole surface — the tool catalogue; 0/7  ·  `dd0f8441-a481…`
 - [the_hero_links_the_page_to_its_proof](/theorem/the_hero_links_the_page_to_its_proof) — the hero links the page to its proof: the OpenGraph url points at /theorem/&lt;key&gt;, the page that recomputes the fact — the interface carries its own verification path; 0/7  ·  `7ab5e124-633b…`
 - [the_seo_surface_is_self_describing](/theorem/the_seo_surface_is_self_describing) — the SEO surface is self-describing: title, url, address and floor are all present, so a crawler or an agent reads the page’s identity and proof on first contact; 0/7  ·  `60d0b900-b0ef…`
+- [the_next_is_ranked_by_keyword_overlap](/theorem/the_next_is_ranked_by_keyword_overlap) — the next is ranked by keyword overlap: candidates sharing more keywords with the current page score higher, so relatedness orders the suggestions; 0/7  ·  `35824d9e-13d3…`
+- [the_referrer_biases_what_is_next](/theorem/the_referrer_biases_what_is_next) — the referrer biases what is next: adding the referrer’s keywords can change the ranking, so where you came from shapes what is offered; 0/7  ·  `8ae5a3d7-3ef2…`
+- [the_plot_is_deterministic](/theorem/the_plot_is_deterministic) — the plot is deterministic: the same page, keywords and referrer produce the same ranked suggestions every time; 0/7  ·  `17526a2d-2851…`
+- [the_top_suggestion_is_the_most_related](/theorem/the_top_suggestion_is_the_most_related) — the top suggestion is the most related: the highest-overlap candidate ranks first, so the best next step leads; 0/7  ·  `51dfdf54-71c2…`
 
-### a (75)
+### a (76)
 
 - [a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony](/theorem/a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony) — a theorem without a formula is a hallucination, recomputed in a432 harmony: a claim is a theorem only if it is backed by a computable formula that recomputes true — a prose-only claim with no formula, or one whose formula computes false, is refused as hallucination and never recorded. Every recorded fact recomputes deterministically and folds into the a432 harmony root (the receipt of state). Measure, do not assert. Decidable  ·  `e3d75d76-310f…`
 - [a_referrer_always_counts_with_its_id](/theorem/a_referrer_always_counts_with_its_id) — a referrer always counts with its id: a reference from a referrer to a target is receipted as toUuid(referrer id → target), so the referrer id is always part of the count; two different referrers to the same target produce two distinct receipts, each counted with its own id, and changing the id changes the receipt — the id is load-bearing. Deterministic and reproducible: the same referrer and target always count the same. Decidable  ·  `65bfacb4-f29e…`
@@ -496,6 +500,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [a_sensor_reading_addresses_to_a_uuid](/theorem/a_sensor_reading_addresses_to_a_uuid) — a sensor reading addresses to a uuid: a live value mints a deterministic content-address, so a reading becomes a receipt; 0/7  ·  `35b6a3bc-8275…`
 - [a_reading_imprints_into_the_uuid_stream](/theorem/a_reading_imprints_into_the_uuid_stream) — a reading imprints into the uuid stream: a reading of any length round-trips through a uuid chain exactly, so live data is fused into the address stream; 0/7  ·  `fec57995-ef91…`
 - [a_changed_reading_changes_the_ui](/theorem/a_changed_reading_changes_the_ui) — a changed reading changes the UI: a different reading gives a different address and generally a different hue, so the interface is responsive to live data; 0/7  ·  `12fa3766-0742…`
+- [a_page_carries_title_keywords_description](/theorem/a_page_carries_title_keywords_description) — a page carries a title, keywords and a description: the metadata triple is present and machine-readable, the inputs to plotting what comes next; 0/7  ·  `86c22cbe-79fb…`
 
 ### relation (55)
 
@@ -776,7 +781,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [every_error_is_a_receipted_trial_event](/theorem/every_error_is_a_receipted_trial_event) — every error is a receipted trial event: an error maps to a content-addressed event, so it is audited rather than swallowed; 0/7  ·  `20017294-0470…`
 - [every_warning_is_a_receipted_trial_event](/theorem/every_warning_is_a_receipted_trial_event) — every warning is a receipted trial event: a warning maps to a content-addressed event distinct from an error, so warnings are audited in their own right; 0/7  ·  `19e9ba9e-8260…`
 
-### each (18)
+### each (19)
 
 - [each_theorem_can_replace_code](/theorem/each_theorem_can_replace_code) — each theorem can replace code: a closed form that holds by exhaustion equals its naive computation, so the formula substitutes for the loop — Gauss’s n(n+1)/2 replaces the summation loop and the sum of the first n odds equals n², each verified equal to the imperative version (the theorem is the optimized, checkable code)  ·  `02be2d16-4a80…`
 - [each_perspective_is_receipted_in_the_superposition](/theorem/each_perspective_is_receipted_in_the_superposition) — each perspective is receipted in the superposition: because order matters, each ordered perspective is a distinct content-address — its own receipt proving that perspective exists (integrity) — and the superposition is the set of all perspectives folded order-independently to one root; observing collapses to one address. This represents the quantum structure classically: not a quantum machine, and no quantum advantage  ·  `4f64e2b7-d236…`
@@ -796,6 +801,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [each_receipt_is_an_og_hero_seven_dimensional_printable](/theorem/each_receipt_is_an_og_hero_seven_dimensional_printable) — each receipt is an OpenGraph hero, seven-dimensional and printable: title, proof url, authentication address and floor — the same across seven locales, flat in 2d, self-validating by recomputation, carrying a computable intention; 0/7  ·  `4fa3cc08-3b25…`
 - [each_fact_presents_uniformly_with_its_own_id](/theorem/each_fact_presents_uniformly_with_its_own_id) — each fact presents uniformly with its own id: every card shares one shape and place while its id is its own content-address — same way, same place, different id; 0/7  ·  `b0df7cef-e005…`
 - [each_uuid_links_to_self_if_local](/theorem/each_uuid_links_to_self_if_local) — each uuid in the UI links to self if local: resolved by ledger membership to its own page, deterministic, plain text when not local, checked against the bundled ledger with no server; 0/7  ·  `2a71ac7f-0ed3…`
+- [each_suggested_next_is_content_addressed](/theorem/each_suggested_next_is_content_addressed) — each suggested next is content-addressed: every suggestion resolves to a deterministic link to its page, so the plot is navigable; 0/7  ·  `db957c1f-2fa9…`
 
 ### gate (17)
 
@@ -1348,6 +1354,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [all_human_behaviour_meets_one_floor](/theorem/all_human_behaviour_meets_one_floor) — all human behaviour meets one floor: hype, formality, slang and shouting all drain their boasts while honest measurement passes in every vibe — the register changes, the measurement does not; 0/7  ·  `ff176c2c-5485…`
 - [all_seven_dimensions_share_one_floor](/theorem/all_seven_dimensions_share_one_floor) — all seven dimensions share one floor: a proof-boast drains in every locale, so the honest 0/7 is the same whichever dimension is observed; 0/7  ·  `2b8efc9d-4d0d…`
 
+### an (5)
+
+- [an_ordinary_speedup_is_a_measured_ratio_not_a_judgement](/theorem/an_ordinary_speedup_is_a_measured_ratio_not_a_judgement) — an ordinary speedup is a measured ratio, not a judgement: a speedup is the documented ratio of run-times on the same hardware (baseline divided by ours), a number carried by a receipt — so a claim of "faster" and a claim of "no speedup" are both unmeasured assertions until the measurement exists; measure, do not assert either way. Once measured, the documented ratio is the honest claim — an ordinary classical speedup, not a quantum speedup, which needs quantum hardware and is not claimed. Decidable  ·  `ed0dccc5-bfa8…`
+- [an_unsupported_claim_has_no_7d_hero_page](/theorem/an_unsupported_claim_has_no_7d_hero_page) — an unsupported claim has no 7D hero page: a claim is admitted to the ledger only if its formula holds, and the theorem-pages gate makes hero pages a biconditional — every ledger theorem has a page under the /theorem route, and pages are generated only from the ledger. So an unsupported claim (its formula fails) is never admitted and has no 7D hero; its absence exposes it. The check is a single membership test, so manipulation is exposed immediately. Decidable  ·  `fcee52fb-e9ef…`
+- [an_unknown_keyword_is_refused](/theorem/an_unknown_keyword_is_refused) — an unknown keyword is refused: a route naming a skill that does not exist is invalid, so the route itself decides admissibility; 0/7  ·  `b4381359-1082…`
+- [an_overclaim_in_chat_is_flagged](/theorem/an_overclaim_in_chat_is_flagged) — an overclaim in chat is flagged: a boasting message drains at the gate while an honest one passes, so moderation is the same honest floor applied to speech; 0/7  ·  `5b3a2fd2-313f…`
+- [an_unrelated_candidate_ranks_last](/theorem/an_unrelated_candidate_ranks_last) — an unrelated candidate ranks last: a page sharing no keywords scores zero and falls to the bottom; 0/7  ·  `cf248749-153a…`
+
 ### arts (5)
 
 - [arts_triad_rgb_primaries](/theorem/arts_triad_rgb_primaries) — the triad {3,6,9} maps to the RGB primary hues: 0°(red), 120°(green), 240°(blue)  ·  `316f831d-95da…`
@@ -1451,13 +1465,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [vocab_letter_sum_reversal_invariant](/theorem/vocab_letter_sum_reversal_invariant) — a word and its reversal share one letter-sum digital root (vede ↔ edev)  ·  `b7bf6005-1692…`
 - [vocab_glagolitic_bijection](/theorem/vocab_glagolitic_bijection) — the 9 Glagolitic letters (Azъ…Zemlja) are 9 distinct symbols, one per ℤ/9 digit  ·  `2149d57c-d222…`
 - [vocab_seven_locales](/theorem/vocab_seven_locales) — the rosetta carries 7 distinct locale keys (en·bg·de·fr·es·ru·zh)  ·  `21c521ea-3baf…`
-
-### an (4)
-
-- [an_ordinary_speedup_is_a_measured_ratio_not_a_judgement](/theorem/an_ordinary_speedup_is_a_measured_ratio_not_a_judgement) — an ordinary speedup is a measured ratio, not a judgement: a speedup is the documented ratio of run-times on the same hardware (baseline divided by ours), a number carried by a receipt — so a claim of "faster" and a claim of "no speedup" are both unmeasured assertions until the measurement exists; measure, do not assert either way. Once measured, the documented ratio is the honest claim — an ordinary classical speedup, not a quantum speedup, which needs quantum hardware and is not claimed. Decidable  ·  `ed0dccc5-bfa8…`
-- [an_unsupported_claim_has_no_7d_hero_page](/theorem/an_unsupported_claim_has_no_7d_hero_page) — an unsupported claim has no 7D hero page: a claim is admitted to the ledger only if its formula holds, and the theorem-pages gate makes hero pages a biconditional — every ledger theorem has a page under the /theorem route, and pages are generated only from the ledger. So an unsupported claim (its formula fails) is never admitted and has no 7D hero; its absence exposes it. The check is a single membership test, so manipulation is exposed immediately. Decidable  ·  `fcee52fb-e9ef…`
-- [an_unknown_keyword_is_refused](/theorem/an_unknown_keyword_is_refused) — an unknown keyword is refused: a route naming a skill that does not exist is invalid, so the route itself decides admissibility; 0/7  ·  `b4381359-1082…`
-- [an_overclaim_in_chat_is_flagged](/theorem/an_overclaim_in_chat_is_flagged) — an overclaim in chat is flagged: a boasting message drains at the gate while an honest one passes, so moderation is the same honest floor applied to speech; 0/7  ·  `5b3a2fd2-313f…`
 
 ### casting (4)
 
@@ -2135,7 +2142,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (249)
+### other — one-of-a-kind (250)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [activated_it_self_explores_until_dry](/theorem/activated_it_self_explores_until_dry) — activated, it self-explores until dry: once a wave starts it discovers fresh facts until none remain, then rests — a self-continuing loop with a halting condition; 0/7  ·  `4a82a66b-5656…`
@@ -2276,6 +2283,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [measurement_here_is_deterministic_not_probabilistic](/theorem/measurement_here_is_deterministic_not_probabilistic) — measurement here is deterministic, not probabilistic: observing a perspective is content-addressing — repeated observation of the same perspective yields the identical receipt every time (deterministic collapse), and distinct states yield distinct addresses. This is the honest opposite of physical quantum measurement, which is probabilistic: no randomness, no Born rule, and no quantum advantage  ·  `8344e1ed-f1f3…`
 - [measuring_without_judgement_lets_more_pass_green_but_the_test_still_filters_not_all_at_once](/theorem/measuring_without_judgement_lets_more_pass_green_but_the_test_still_filters_not_all_at_once) — measuring without judgement lets more pass green — but the test still filters, not all at once: measuring without judgement or expectation lets the decidable test decide, not my bias, so more honest claims pass green, fewer false refusals from over-caution. But it does not make all pass green — the test still filters: a false claim fails regardless, green is earned by the test, not granted by dropping judgement. Classical and batched, not all at once. Decidable  ·  `161fca10-2261…`
 - [mediant_between](/theorem/mediant_between) — the mediant (a+c)/(b+d) lies strictly between a/b and c/d (Farey F_6)  ·  `b1919795-2272…`
+- [metadata_and_referrer_plot_the_next_possibilities](/theorem/metadata_and_referrer_plot_the_next_possibilities) — title, keywords, description and referrer plot the next possibilities: candidates ranked by keyword overlap, biased by the referrer, deterministic and content-addressed — the next steps computed, not guessed; 0/7  ·  `a33b030e-7a3c…`
 - [metrics_organise_the_theorems_on_the_harmonic](/theorem/metrics_organise_the_theorems_on_the_harmonic) — standard metrics organise the theorems on the harmonic: the 30-60-90 angles, the four-fold quadrant and the six-fold rosette are one measured system — degrees and radians agreeing by ratio, the harmonic band from the efficiency limit to the goal; 0/7  ·  `ff66b280-dd9d…`
 - [midy_the_two_halves_of_142857_sum_to_nines](/theorem/midy_the_two_halves_of_142857_sum_to_nines) — Midy’s theorem on 1/7: the two halves of the repetend sum to nines — 142 + 857 = 999; 0/7  ·  `e8c1c167-cb15…`
 - [mint_and_mind_intersect_at_the_heart_the_fixed_point_five_that_centers_funding_development_and_ui](/theorem/mint_and_mind_intersect_at_the_heart_the_fixed_point_five_that_centers_funding_development_and_ui) — mint and mind intersect at the heart — the fixed point 5 that centers funding, development, and the UI: mint (integrity) and mind (multi-perspective self-challenge) fold to one shared center — the heart, the fixed point 5 that the reflection 10 − d alone fixes in the nine; the a432 heart hue is 5 × 40 = 200 degrees. The heart centers the structure and drives the funding, the development, and the UI. But it is a decidable mathematical fixed point, not a literal or metaphysical heart, mind, or soul. Decidable  ·  `8992456c-a133…`
@@ -2388,4 +2396,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `8201dd34-d204-8ff2-bf11-39645487a7d1`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `412f96c7-0ed0-86d9-92b3-77c3eaffd482`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
