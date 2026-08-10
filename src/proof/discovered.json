@@ -7598,5 +7598,45 @@
     "key": "theorems_define_and_handle_human_behaviour",
     "name": "theorems define and handle human behaviour in code: every utterance weighed to a bit, every register and dialect handled by one function, over-claims reeducated and honest speech kept — by deed not status, each verdict coloured from its own address in the UI; 0/7",
     "receipt": "c4e68ce3-f520-8ccd-93d0-2e93998c07d7"
+  },
+  {
+    "key": "a_config_value_is_computed_by_folding_not_typed",
+    "name": "a config value is computed by folding, not typed: a value derived from the fold of the record recomputes to the same address, so the config is a function of the theorems; 0/7",
+    "receipt": "54c69949-10b1-8807-bf6c-c54d874fa057"
+  },
+  {
+    "key": "each_theorem_wires_to_its_neighbours",
+    "name": "each theorem wires to its neighbours: a directed edge to a neighbour is a deterministic content-address, so the link is itself checkable; 0/7",
+    "receipt": "b28c9446-e3ae-870b-adce-6d801c091f03"
+  },
+  {
+    "key": "the_edge_is_directed_and_distinct",
+    "name": "the edge is directed and distinct: a→b and b→a are different addresses, so the wiring records direction, not just adjacency; 0/7",
+    "receipt": "a6d10c28-9b18-8343-a81a-e51f4aa0eea4"
+  },
+  {
+    "key": "the_undirected_pair_folds_the_same",
+    "name": "the undirected pair folds the same: sorting a pair before folding gives one address for the connection regardless of which end is named first; 0/7",
+    "receipt": "6f8b94b8-10ea-896c-bdd4-777472ad1e6b"
+  },
+  {
+    "key": "a_node_is_holographic_self_plus_edges",
+    "name": "a node is holographic: it folds itself together with its neighbour edges into one address, so each node carries its own local view; 0/7",
+    "receipt": "b37169f9-9507-871d-9749-43a592e6494f"
+  },
+  {
+    "key": "a_new_neighbour_rewires_the_node",
+    "name": "a new neighbour rewires the node: adding a neighbour changes the node’s fold, so a change in the neighbourhood is visible in the node’s address; 0/7",
+    "receipt": "0fb161b3-eade-857a-b915-cb0b6e4af57d"
+  },
+  {
+    "key": "the_whole_mesh_folds_to_one_root",
+    "name": "the whole mesh folds to one root: the node folds themselves fold to a single address, order-independent, so the entire wiring is one checkable root; 0/7",
+    "receipt": "36cbd42d-fd25-839f-9701-7a1d6eb8f2a8"
+  },
+  {
+    "key": "theorems_compute_the_configs_that_wire_to_neighbours",
+    "name": "theorems compute the configs that wire themselves to neighbours: values derived by folding the record, edges content-addressed and directed, each node holographic with its neighbourhood, the whole mesh one order-independent root; 0/7",
+    "receipt": "31222e30-5c1f-880a-997a-6f17c6cf615c"
   }
 ]
