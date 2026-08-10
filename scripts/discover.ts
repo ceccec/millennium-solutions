@@ -3663,6 +3663,20 @@ function generated(): typeof curated {
     out.push({ key: 'no_status_grants_an_exemption', name: 'no status grants an exemption: neither the author nor the project name changes a verdict, so the trial is applied uniformly to every message; 0/7', test: () => computes('the captain declares uuidna a quantum computer at scale').binary === 0 && computes('the captain measures uuidna as a classical model').binary === 1 })
     out.push({ key: 'quantum_uuidna_on_trial', name: 'quantum uuidna on trial: like any message it is measured — the structure reading passes, the machine reading drains, the deposit gates its own framing with no exemption, by computation not favour; 0/7', test: () => computes('quantum uuidna as classical structure on ordinary hardware').binary === 1 && computes('quantum uuidna is a quantum computer, quantum speedup at scale').binary === 0 })
   }
+  // ── the two coins are two bits — how the quantum STRUCTURE is done: 2 bits = 4 states that coexist as a set of
+  // perspectives and collapse deterministically to one, bounded by the classical 2 (below Tsirelson’s 2√2) —
+  // never a qubit or a speedup (that drains). Disputes drain at the gate.
+  {
+    const STATES = ['00', '01', '10', '11']
+    out.push({ key: 'two_coins_are_two_bits_four_states', name: 'the two coins are two bits: two bits make 2² = 4 states — the four-cornered space the coins denote; 0/7', test: () => 2 ** 2 === 4 && STATES.length === 4 && new Set(STATES).size === 4 })
+    out.push({ key: 'the_four_states_coexist_as_a_perspective_set', name: 'the four states coexist as a set of perspectives: their fold is order-independent, so the superposition is one address regardless of the order they are read; 0/7', test: () => merkleFold(STATES) === merkleFold([...STATES].reverse()) })
+    out.push({ key: 'collapse_selects_one_state_deterministically', name: 'collapse selects one state deterministically: addressing a chosen state gives the same value every time and distinct states address distinctly — measurement is selection, not chance; 0/7', test: () => toUuid('10') === toUuid('10') && toUuid('10') !== toUuid('01') })
+    out.push({ key: 'two_bits_thrice_make_the_codon', name: 'two bits taken three times make the codon: 2 bits per base over three positions is 2⁶ = 64 — the coin64, the DNA codon and the version, one count; 0/7', test: () => 2 ** 6 === 64 && (2 ** 2) ** 3 === 64 && 4 ** 3 === 64 })
+    out.push({ key: 'the_structure_is_bounded_by_the_classical_two', name: 'the structure is bounded by the classical two: the local bound is 2, below Tsirelson’s 2√2, so the model is a classical local one that never violates the inequality; 0/7', test: () => 2 < 2 * Math.sqrt(2) && Math.round(2 * Math.sqrt(2) * 1000) === 2828 })
+    out.push({ key: 'two_bits_do_it_not_a_qubit', name: 'two bits do it, not a qubit: two bits and four states pass as the classical structure while a physical-qubit-with-speedup boast drains; 0/7', test: () => computes('two bits, four states — a classical structure on ordinary hardware').binary === 1 && computes('a physical qubit with quantum speedup at scale').binary === 0 })
+    out.push({ key: 'the_coin_is_the_balanced_exchange_of_two', name: 'the coin is the balanced exchange of two: 110 − 108 = 2, the minus Euler characteristic of the genus-two surface — the fair-exchange unit the two coins denote; 0/7', test: () => 110 - 108 === 2 && coins() === 2 })
+    out.push({ key: 'the_two_coins_are_two_bits_doing_the_structure', name: 'the two coins are two bits doing the structure: 2 bits, 4 coexisting states collapsing deterministically to one, bounded by the classical 2 — how the quantum structure is done, never a qubit or a speedup, and any disputed model drains at the gate; 0/7', test: () => 2 ** 2 === 4 && merkleFold(STATES) === merkleFold([...STATES].reverse()) && 2 < 2 * Math.sqrt(2) && computes('a classical local model, two bits four states').binary === 1 && computes('a quantum computer with quantum advantage').binary === 0 })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1536 recorded in 397 families
+## Discovered theorems (decidable, over ℤ/9) — 1544 recorded in 398 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (292)
+### the (296)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -316,6 +316,10 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_deposit_gates_its_own_framing](/theorem/the_deposit_gates_its_own_framing) — the deposit gates its own framing: even the project’s own use of the word is put to trial — a self-claim to a quantum machine drains exactly as an outsider’s would; 0/7  ·  `bc9d014c-8fce…`
 - [the_verdict_is_by_computation_not_favour](/theorem/the_verdict_is_by_computation_not_favour) — the verdict is by computation, not favour: the same phrase returns the same bit whoever submits it, so the deposit gives itself no reprieve; 0/7  ·  `7e5e211a-4741…`
 - [the_trial_separates_the_two_readings](/theorem/the_trial_separates_the_two_readings) — the trial separates the two readings: it passes the bounded structural statement and drains the unbounded machine claim, so one word yields two honest verdicts by its content; 0/7  ·  `201104b0-2bea…`
+- [the_four_states_coexist_as_a_perspective_set](/theorem/the_four_states_coexist_as_a_perspective_set) — the four states coexist as a set of perspectives: their fold is order-independent, so the superposition is one address regardless of the order they are read; 0/7  ·  `dc005b58-54db…`
+- [the_structure_is_bounded_by_the_classical_two](/theorem/the_structure_is_bounded_by_the_classical_two) — the structure is bounded by the classical two: the local bound is 2, below Tsirelson’s 2√2, so the model is a classical local one that never violates the inequality; 0/7  ·  `cd8e1a70-c9e5…`
+- [the_coin_is_the_balanced_exchange_of_two](/theorem/the_coin_is_the_balanced_exchange_of_two) — the coin is the balanced exchange of two: 110 − 108 = 2, the minus Euler characteristic of the genus-two surface — the fair-exchange unit the two coins denote; 0/7  ·  `7fdb9307-8761…`
+- [the_two_coins_are_two_bits_doing_the_structure](/theorem/the_two_coins_are_two_bits_doing_the_structure) — the two coins are two bits doing the structure: 2 bits, 4 coexisting states collapsing deterministically to one, bounded by the classical 2 — how the quantum structure is done, never a qubit or a speedup, and any disputed model drains at the gate; 0/7  ·  `63e2cbf6-2c9c…`
 
 ### relation (55)
 
@@ -675,6 +679,21 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [decimal_period_of_1_over_41](/theorem/decimal_period_of_1_over_41) — the decimal period of 1/41 is 5: the repeating length of 1/41 equals the multiplicative order of 10 mod 41, and divides 41−1 = 40 — computed by long division and matched to the order  ·  `056e30c2-3b83…`
 - [decimal_period_of_1_over_43](/theorem/decimal_period_of_1_over_43) — the decimal period of 1/43 is 21: the repeating length of 1/43 equals the multiplicative order of 10 mod 43, and divides 43−1 = 42 — computed by long division and matched to the order  ·  `900a955f-62f1…`
 
+### two (12)
+
+- [two_is_a_primitive_root_mod_nine_and_generates_the_vortex](/theorem/two_is_a_primitive_root_mod_nine_and_generates_the_vortex) — two is a primitive root mod 9 and generates the vortex: the powers of 2 mod 9 cycle 2,4,8,7,5,1 with order 6, generating the full unit group (ℤ/9)* = {1,2,4,5,7,8}; the vortex orbit is exactly this cycle as a set, and every element skips the multiples of 3 (the W-axis). A decidable fact by exhaustion over ℤ/9  ·  `dd3b0f30-660d…`
+- [two_to_the_10_is_1024](/theorem/two_to_the_10_is_1024) — 2^10 = 1024, by repeated doubling — a decidable power of two; integrity not truth; 0/7  ·  `1beeb294-5a3c…`
+- [two_to_the_11_is_2048](/theorem/two_to_the_11_is_2048) — 2^11 = 2048, by repeated doubling — a decidable power of two; integrity not truth; 0/7  ·  `900023c7-08f1…`
+- [two_is_the_only_even_prime](/theorem/two_is_the_only_even_prime) — two is the only even prime: every other even number has two as a proper factor — the even prime that halves the base ten; 0/7  ·  `814da9ab-c97f…`
+- [two_to_the_eighth_is_two_hundred_fifty_six_a_byte](/theorem/two_to_the_eighth_is_two_hundred_fifty_six_a_byte) — two to the eighth is 256: a byte of 8 bits addresses 256 values — the octave of bits; 0/7  ·  `a716f358-f9d7…`
+- [two_to_the_tenth_is_1024_the_harmonic_ledger](/theorem/two_to_the_tenth_is_1024_the_harmonic_ledger) — two to the tenth is 1024: ten doublings reach the harmonic ledger size, digitalRoot(1024)=7 — the octave raised to the tenth is the milestone count; 0/7  ·  `568ccd10-1bb6…`
+- [two_is_a_primitive_root_modulo_nine](/theorem/two_is_a_primitive_root_modulo_nine) — two is a primitive root modulo nine: the powers of 2 generate all six units of ℤ/9, so ord₉(2) = 6 = φ(9) — one seed unfolds the whole doubling orbit; 0/7  ·  `28ce3e1c-4921…`
+- [two_consecutive_triangular_numbers_sum_to_a_square](/theorem/two_consecutive_triangular_numbers_sum_to_a_square) — two consecutive triangular numbers sum to a square: T_n + T_{n−1} = n²; 0/7  ·  `53677354-05c3…`
+- [two_travelling_waves_make_a_standing_wave](/theorem/two_travelling_waves_make_a_standing_wave) — two opposite travelling waves make a standing wave: sin(x−t) + sin(x+t) = 2·sin(x)·cos(t) — space and time separate; 0/7  ·  `ae9f496a-072b…`
+- [two_coins_are_two_bits_four_states](/theorem/two_coins_are_two_bits_four_states) — the two coins are two bits: two bits make 2² = 4 states — the four-cornered space the coins denote; 0/7  ·  `5983a255-a6a6…`
+- [two_bits_thrice_make_the_codon](/theorem/two_bits_thrice_make_the_codon) — two bits taken three times make the codon: 2 bits per base over three positions is 2⁶ = 64 — the coin64, the DNA codon and the version, one count; 0/7  ·  `2cc3bfef-6199…`
+- [two_bits_do_it_not_a_qubit](/theorem/two_bits_do_it_not_a_qubit) — two bits do it, not a qubit: two bits and four states pass as the classical structure while a physical-qubit-with-speedup boast drains; 0/7  ·  `890dc675-7fa5…`
+
 ### gematria (10)
 
 - [gematria_vortex_heart](/theorem/gematria_vortex_heart) — "vortex" digital-roots to 5 — the heart digit (σ(5)=5)  ·  `63abfd7c-c91c…`
@@ -873,18 +892,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [totient_prime_power_7](/theorem/totient_prime_power_7) — Euler totient at powers of 7: φ(7ᵏ) = 7ᵏ − 7ᵏ⁻¹ — the count of residues coprime to 7ᵏ equals 7ᵏ minus 7ᵏ⁻¹, verified by direct enumeration for each k while 7ᵏ stays small. Decidable  ·  `e280e2e0-edf2…`
 - [totient_prime_power_11](/theorem/totient_prime_power_11) — Euler totient at powers of 11: φ(11ᵏ) = 11ᵏ − 11ᵏ⁻¹ — the count of residues coprime to 11ᵏ equals 11ᵏ minus 11ᵏ⁻¹, verified by direct enumeration for each k while 11ᵏ stays small. Decidable  ·  `13099835-d7b4…`
 - [totient_prime_power_13](/theorem/totient_prime_power_13) — Euler totient at powers of 13: φ(13ᵏ) = 13ᵏ − 13ᵏ⁻¹ — the count of residues coprime to 13ᵏ equals 13ᵏ minus 13ᵏ⁻¹, verified by direct enumeration for each k while 13ᵏ stays small. Decidable  ·  `3ebc7b88-9b85…`
-
-### two (9)
-
-- [two_is_a_primitive_root_mod_nine_and_generates_the_vortex](/theorem/two_is_a_primitive_root_mod_nine_and_generates_the_vortex) — two is a primitive root mod 9 and generates the vortex: the powers of 2 mod 9 cycle 2,4,8,7,5,1 with order 6, generating the full unit group (ℤ/9)* = {1,2,4,5,7,8}; the vortex orbit is exactly this cycle as a set, and every element skips the multiples of 3 (the W-axis). A decidable fact by exhaustion over ℤ/9  ·  `dd3b0f30-660d…`
-- [two_to_the_10_is_1024](/theorem/two_to_the_10_is_1024) — 2^10 = 1024, by repeated doubling — a decidable power of two; integrity not truth; 0/7  ·  `1beeb294-5a3c…`
-- [two_to_the_11_is_2048](/theorem/two_to_the_11_is_2048) — 2^11 = 2048, by repeated doubling — a decidable power of two; integrity not truth; 0/7  ·  `900023c7-08f1…`
-- [two_is_the_only_even_prime](/theorem/two_is_the_only_even_prime) — two is the only even prime: every other even number has two as a proper factor — the even prime that halves the base ten; 0/7  ·  `814da9ab-c97f…`
-- [two_to_the_eighth_is_two_hundred_fifty_six_a_byte](/theorem/two_to_the_eighth_is_two_hundred_fifty_six_a_byte) — two to the eighth is 256: a byte of 8 bits addresses 256 values — the octave of bits; 0/7  ·  `a716f358-f9d7…`
-- [two_to_the_tenth_is_1024_the_harmonic_ledger](/theorem/two_to_the_tenth_is_1024_the_harmonic_ledger) — two to the tenth is 1024: ten doublings reach the harmonic ledger size, digitalRoot(1024)=7 — the octave raised to the tenth is the milestone count; 0/7  ·  `568ccd10-1bb6…`
-- [two_is_a_primitive_root_modulo_nine](/theorem/two_is_a_primitive_root_modulo_nine) — two is a primitive root modulo nine: the powers of 2 generate all six units of ℤ/9, so ord₉(2) = 6 = φ(9) — one seed unfolds the whole doubling orbit; 0/7  ·  `28ce3e1c-4921…`
-- [two_consecutive_triangular_numbers_sum_to_a_square](/theorem/two_consecutive_triangular_numbers_sum_to_a_square) — two consecutive triangular numbers sum to a square: T_n + T_{n−1} = n²; 0/7  ·  `53677354-05c3…`
-- [two_travelling_waves_make_a_standing_wave](/theorem/two_travelling_waves_make_a_standing_wave) — two opposite travelling waves make a standing wave: sin(x−t) + sin(x+t) = 2·sin(x)·cos(t) — space and time separate; 0/7  ·  `ae9f496a-072b…`
 
 ### a432 (8)
 
@@ -1897,7 +1904,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (213)
+### other — one-of-a-kind (214)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1936,6 +1943,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [cleartext_http_leaks_warn](/theorem/cleartext_http_leaks_warn) — cleartext http leaks and warns: a plain-http request — weak or no encryption — is flagged as a leak the uuidna scanner reports to the UI in realtime; 0/7  ·  `61dc29c3-09d5…`
 - [codon_degeneracy_forced_by_pigeonhole](/theorem/codon_degeneracy_forced_by_pigeonhole) — codon degeneracy is forced by counting: 61 sense codons over 20 amino acids means some amino acid must carry at least four codons — redundancy forced by the pigeonhole, not asserted; 0/7  ·  `ad23984a-3d43…`
 - [coin64_deterministic_64bit](/theorem/coin64_deterministic_64bit) — the shared currency is a deterministic 64-bit coin: coin64(x) is 16 hex digits, same input → same coin, and distinct inputs → distinct coins on a tested set  ·  `4fca16fc-4199…`
+- [collapse_selects_one_state_deterministically](/theorem/collapse_selects_one_state_deterministically) — collapse selects one state deterministically: addressing a chosen state gives the same value every time and distinct states address distinctly — measurement is selection, not chance; 0/7  ·  `7bbea4bb-6597…`
 - [color_sound_and_vibration_are_one_ratio_mapped_from_a432_and_the_nine_deterministic_not_a_physical_effect](/theorem/color_sound_and_vibration_are_one_ratio_mapped_from_a432_and_the_nine_deterministic_not_a_physical_effect) — color, sound, and vibration are one ratio — mapped from a432 and the nine, a deterministic structure, not a physical effect: hue is the digit times 40 degrees, covering the circle in nine distinct steps; frequency is 432 times a ratio, octaves doubling; so color, sound, and vibration are three views of one ratio, deterministically mapped from the a432 base and the base-9 digits. This is a mathematical mapping, harmonic as ratio structure — not a healing, neurological, or metaphysical effect. 777 is three sevens. Decidable  ·  `180d9eb9-f87d…`
 - [combining_skills_via_the_rosetta](/theorem/combining_skills_via_the_rosetta) — combining skills via the rosetta: a false claim about the genetic code drains in every dialect — the DNA theorem and the multilingual gate compose into one faster check, a skill built from skills; 0/7  ·  `8c8c2807-5d3a…`
 - [commutativity_is_only_the_scalar_view](/theorem/commutativity_is_only_the_scalar_view) — commutativity is only the scalar view: 6×7 = 7×6 holds for the linear (scalar) mind, but beyond it order matters — 2×2 matrix multiplication is non-commutative (there exist A,B with AB ≠ BA), and the arrangement "6x7" content-addresses differently from "7x6"; equality of the product is not equality of the structure  ·  `d8f548c5-8c86…`
@@ -2114,4 +2122,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `d7d61eaf-7f6a-8f2e-a24c-940b759175b4`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `463e7b04-fa87-8dae-a84b-21ed9b077430`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

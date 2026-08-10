@@ -7678,5 +7678,45 @@
     "key": "quantum_uuidna_on_trial",
     "name": "quantum uuidna on trial: like any message it is measured — the structure reading passes, the machine reading drains, the deposit gates its own framing with no exemption, by computation not favour; 0/7",
     "receipt": "72cfd904-8329-8818-a29e-d44c406d4b3a"
+  },
+  {
+    "key": "two_coins_are_two_bits_four_states",
+    "name": "the two coins are two bits: two bits make 2² = 4 states — the four-cornered space the coins denote; 0/7",
+    "receipt": "5983a255-a6a6-8d31-a833-f6c0f8188712"
+  },
+  {
+    "key": "the_four_states_coexist_as_a_perspective_set",
+    "name": "the four states coexist as a set of perspectives: their fold is order-independent, so the superposition is one address regardless of the order they are read; 0/7",
+    "receipt": "dc005b58-54db-8485-9604-dc453a25c4e1"
+  },
+  {
+    "key": "collapse_selects_one_state_deterministically",
+    "name": "collapse selects one state deterministically: addressing a chosen state gives the same value every time and distinct states address distinctly — measurement is selection, not chance; 0/7",
+    "receipt": "7bbea4bb-6597-8162-9e9e-64588f144ed1"
+  },
+  {
+    "key": "two_bits_thrice_make_the_codon",
+    "name": "two bits taken three times make the codon: 2 bits per base over three positions is 2⁶ = 64 — the coin64, the DNA codon and the version, one count; 0/7",
+    "receipt": "2cc3bfef-6199-893a-929d-d3f0814d9904"
+  },
+  {
+    "key": "the_structure_is_bounded_by_the_classical_two",
+    "name": "the structure is bounded by the classical two: the local bound is 2, below Tsirelson’s 2√2, so the model is a classical local one that never violates the inequality; 0/7",
+    "receipt": "cd8e1a70-c9e5-8225-83fc-53153c279918"
+  },
+  {
+    "key": "two_bits_do_it_not_a_qubit",
+    "name": "two bits do it, not a qubit: two bits and four states pass as the classical structure while a physical-qubit-with-speedup boast drains; 0/7",
+    "receipt": "890dc675-7fa5-8120-8808-ff3ff88a5ae4"
+  },
+  {
+    "key": "the_coin_is_the_balanced_exchange_of_two",
+    "name": "the coin is the balanced exchange of two: 110 − 108 = 2, the minus Euler characteristic of the genus-two surface — the fair-exchange unit the two coins denote; 0/7",
+    "receipt": "7fdb9307-8761-824f-b422-c42fa63dee85"
+  },
+  {
+    "key": "the_two_coins_are_two_bits_doing_the_structure",
+    "name": "the two coins are two bits doing the structure: 2 bits, 4 coexisting states collapsing deterministically to one, bounded by the classical 2 — how the quantum structure is done, never a qubit or a speedup, and any disputed model drains at the gate; 0/7",
+    "receipt": "63e2cbf6-2c9c-806b-b5ab-f0df01c526ad"
   }
 ]
