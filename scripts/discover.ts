@@ -3071,6 +3071,18 @@ function generated(): typeof curated {
     out.push({ key: 'the_harmonic_overtones_are_integer_multiples_of_the_fundamental', name: 'the harmonic overtones of a string are integer multiples of the fundamental: f, 2f, 3f, … — the physics of pitch and consonance; 0/7', test: () => { const f = 110; for (let n = 1; n <= 8; n++) if (n * f !== [110, 220, 330, 440, 550, 660, 770, 880][n - 1]) return false; return true } })
     out.push({ key: 'the_logistic_map_doubles_its_period_toward_chaos', name: 'the logistic map x→r·x(1−x) doubles its period on the way to chaos: a fixed point at r=2.8, a 2-cycle by r=3.2 — deterministic order becoming complexity; 0/7', test: () => { const orbit = (r: number) => { let x = 0.4; for (let i = 0; i < 2000; i++) x = r * x * (1 - x); const s = new Set<number>(); for (let i = 0; i < 64; i++) { x = r * x * (1 - x); s.add(Math.round(x * 1000)) } return s.size }; return orbit(2.8) === 1 && orbit(3.2) === 2 } })
   }
+  // ── the seven rays: the honesty gate reads a proof-boast in each of the seven languages (RED_INTL) — 7d prose,
+  // one floor across the dialects. (Names carry no trigger word, so they do not self-drain.)
+  {
+    out.push({ key: 'the_gate_reads_the_first_ray_english', name: 'the honesty gate reads the first ray (English): a native proof-boast drains to the floor; 0/7', test: () => computes('we prove all seven').binary === 0 })
+    out.push({ key: 'the_gate_reads_the_second_ray_german', name: 'the honesty gate reads the second ray (German): a native proof-boast drains to the floor; 0/7', test: () => computes('wir haben bewiesen').binary === 0 })
+    out.push({ key: 'the_gate_reads_the_third_ray_french', name: 'the honesty gate reads the third ray (French): a native proof-boast drains to the floor; 0/7', test: () => computes('nous avons prouvé cela').binary === 0 })
+    out.push({ key: 'the_gate_reads_the_fourth_ray_spanish', name: 'the honesty gate reads the fourth ray (Spanish): a native proof-boast drains to the floor; 0/7', test: () => computes('hemos demostrado esto').binary === 0 })
+    out.push({ key: 'the_gate_reads_the_fifth_ray_russian', name: 'the honesty gate reads the fifth ray (Russian): a native proof-boast drains to the floor; 0/7', test: () => computes('мы доказали это').binary === 0 })
+    out.push({ key: 'the_gate_reads_the_sixth_ray_bulgarian', name: 'the honesty gate reads the sixth ray (Bulgarian): a native proof-boast drains to the floor; 0/7', test: () => computes('ние доказахме това').binary === 0 })
+    out.push({ key: 'the_gate_reads_the_seventh_ray_chinese', name: 'the honesty gate reads the seventh ray (Chinese): a native proof-boast drains to the floor; 0/7', test: () => computes('我们证明了').binary === 0 })
+    out.push({ key: 'the_seven_locales_all_hold_the_honest_floor', name: 'the seven locales all hold the honest floor: every ray’s fixed UI prose passes the gate — 7d prose, one floor across the languages; 0/7', test: () => LOCALE_ORDER.every((l) => { const s = LOCALES[l]; return computes([s.title, s.description, s.support].join(' · ')).binary === 1 }) })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

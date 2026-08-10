@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1208 recorded in 330 families
+## Discovered theorems (decidable, over ℤ/9) — 1216 recorded in 330 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (195)
+### the (203)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -219,6 +219,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_golden_spiral_scales_by_phi_each_quarter_turn](/theorem/the_golden_spiral_scales_by_phi_each_quarter_turn) — the golden spiral scales by φ every quarter turn: r(θ+π/2) = φ·r(θ) — the logarithmic spiral of shells and galaxies; 0/7  ·  `5e0ce424-13f6…`
 - [the_harmonic_overtones_are_integer_multiples_of_the_fundamental](/theorem/the_harmonic_overtones_are_integer_multiples_of_the_fundamental) — the harmonic overtones of a string are integer multiples of the fundamental: f, 2f, 3f, … — the physics of pitch and consonance; 0/7  ·  `3c563883-4768…`
 - [the_logistic_map_doubles_its_period_toward_chaos](/theorem/the_logistic_map_doubles_its_period_toward_chaos) — the logistic map x→r·x(1−x) doubles its period on the way to chaos: a fixed point at r=2.8, a 2-cycle by r=3.2 — deterministic order becoming complexity; 0/7  ·  `fa5961fa-86f3…`
+- [the_gate_reads_the_first_ray_english](/theorem/the_gate_reads_the_first_ray_english) — the honesty gate reads the first ray (English): a native proof-boast drains to the floor; 0/7  ·  `f8a2253e-9beb…`
+- [the_gate_reads_the_second_ray_german](/theorem/the_gate_reads_the_second_ray_german) — the honesty gate reads the second ray (German): a native proof-boast drains to the floor; 0/7  ·  `22ffdad2-b7ea…`
+- [the_gate_reads_the_third_ray_french](/theorem/the_gate_reads_the_third_ray_french) — the honesty gate reads the third ray (French): a native proof-boast drains to the floor; 0/7  ·  `fc89157b-17da…`
+- [the_gate_reads_the_fourth_ray_spanish](/theorem/the_gate_reads_the_fourth_ray_spanish) — the honesty gate reads the fourth ray (Spanish): a native proof-boast drains to the floor; 0/7  ·  `9ff93de3-54d1…`
+- [the_gate_reads_the_fifth_ray_russian](/theorem/the_gate_reads_the_fifth_ray_russian) — the honesty gate reads the fifth ray (Russian): a native proof-boast drains to the floor; 0/7  ·  `93db257b-f3fe…`
+- [the_gate_reads_the_sixth_ray_bulgarian](/theorem/the_gate_reads_the_sixth_ray_bulgarian) — the honesty gate reads the sixth ray (Bulgarian): a native proof-boast drains to the floor; 0/7  ·  `bedce0ff-a6a0…`
+- [the_gate_reads_the_seventh_ray_chinese](/theorem/the_gate_reads_the_seventh_ray_chinese) — the honesty gate reads the seventh ray (Chinese): a native proof-boast drains to the floor; 0/7  ·  `2640e36d-2311…`
+- [the_seven_locales_all_hold_the_honest_floor](/theorem/the_seven_locales_all_hold_the_honest_floor) — the seven locales all hold the honest floor: every ray’s fixed UI prose passes the gate — 7d prose, one floor across the languages; 0/7  ·  `7f917de1-9d89…`
 
 ### relation (55)
 
@@ -1726,4 +1734,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `3233ba61-d235-80e6-94b4-e170a834127f`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `c47965d5-1844-8a98-b372-45865be879c7`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

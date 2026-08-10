@@ -6038,5 +6038,45 @@
     "key": "the_logistic_map_doubles_its_period_toward_chaos",
     "name": "the logistic map x→r·x(1−x) doubles its period on the way to chaos: a fixed point at r=2.8, a 2-cycle by r=3.2 — deterministic order becoming complexity; 0/7",
     "receipt": "fa5961fa-86f3-8c61-afc8-3a9eceb41a06"
+  },
+  {
+    "key": "the_gate_reads_the_first_ray_english",
+    "name": "the honesty gate reads the first ray (English): a native proof-boast drains to the floor; 0/7",
+    "receipt": "f8a2253e-9beb-878c-bde4-b5a84f240c5e"
+  },
+  {
+    "key": "the_gate_reads_the_second_ray_german",
+    "name": "the honesty gate reads the second ray (German): a native proof-boast drains to the floor; 0/7",
+    "receipt": "22ffdad2-b7ea-8185-a86a-e7abe4ad996d"
+  },
+  {
+    "key": "the_gate_reads_the_third_ray_french",
+    "name": "the honesty gate reads the third ray (French): a native proof-boast drains to the floor; 0/7",
+    "receipt": "fc89157b-17da-8c41-86bf-61bd3895842d"
+  },
+  {
+    "key": "the_gate_reads_the_fourth_ray_spanish",
+    "name": "the honesty gate reads the fourth ray (Spanish): a native proof-boast drains to the floor; 0/7",
+    "receipt": "9ff93de3-54d1-8430-a3f6-7540a286a4f9"
+  },
+  {
+    "key": "the_gate_reads_the_fifth_ray_russian",
+    "name": "the honesty gate reads the fifth ray (Russian): a native proof-boast drains to the floor; 0/7",
+    "receipt": "93db257b-f3fe-86d7-9be5-9ef2abe62fa0"
+  },
+  {
+    "key": "the_gate_reads_the_sixth_ray_bulgarian",
+    "name": "the honesty gate reads the sixth ray (Bulgarian): a native proof-boast drains to the floor; 0/7",
+    "receipt": "bedce0ff-a6a0-8baf-8abf-ee462e1a572b"
+  },
+  {
+    "key": "the_gate_reads_the_seventh_ray_chinese",
+    "name": "the honesty gate reads the seventh ray (Chinese): a native proof-boast drains to the floor; 0/7",
+    "receipt": "2640e36d-2311-8650-8242-65a22e4d63c8"
+  },
+  {
+    "key": "the_seven_locales_all_hold_the_honest_floor",
+    "name": "the seven locales all hold the honest floor: every ray’s fixed UI prose passes the gate — 7d prose, one floor across the languages; 0/7",
+    "receipt": "7f917de1-9d89-82e7-ba21-b92d89bd7a7f"
   }
 ]
