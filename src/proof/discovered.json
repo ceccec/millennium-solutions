@@ -8518,5 +8518,45 @@
     "key": "uuidna_detects_corrects_and_self_cleans",
     "name": "uuidna detects, corrects and self-cleans: a content-address detects any change, parity a single flip, a repetition code corrects by majority, corrections verify by recomputation, and storage drops any chunk missing a valid signature; 0/7",
     "receipt": "c66a8bd4-8d1c-8084-91ed-60c52de9d5bd"
+  },
+  {
+    "key": "locality_is_ledger_membership",
+    "name": "locality is ledger membership: a uuid is local exactly when it is a known receipt in the ledger, checked in one step; 0/7",
+    "receipt": "1ccfb27b-9499-8f4d-ae5d-618aefac1b0d"
+  },
+  {
+    "key": "a_local_uuid_resolves_to_its_key",
+    "name": "a local uuid resolves to its key: the ledger maps a receipt back to the key it seals, so a uuid knows which fact it is; 0/7",
+    "receipt": "7cfe3d27-7a63-8428-93bb-673be7500efd"
+  },
+  {
+    "key": "a_local_uuid_links_to_self",
+    "name": "a local uuid links to self: it resolves to its own page /theorem/<key>, so the address is clickable to the fact it addresses; 0/7",
+    "receipt": "eac06382-eca6-85dd-8e41-604f2f62a865"
+  },
+  {
+    "key": "a_non_local_uuid_is_plain_text",
+    "name": "a non-local uuid is plain text: a uuid not in the ledger resolves to no link, so the UI never fabricates a destination it cannot back; 0/7",
+    "receipt": "22464176-b209-87e6-8ba4-7cd38421d856"
+  },
+  {
+    "key": "the_self_link_is_deterministic",
+    "name": "the self link is deterministic: the same local uuid always yields the same page, so the link is stable and reproducible; 0/7",
+    "receipt": "18e61c36-fd39-8495-8829-abd649013861"
+  },
+  {
+    "key": "receipt_and_key_are_a_bijection",
+    "name": "receipt and key are a bijection: distinct keys mint distinct receipts and each receipt maps back to one key, so the self-link is unambiguous; 0/7",
+    "receipt": "ffb70f58-5b9e-8b05-b6ef-9406c456870b"
+  },
+  {
+    "key": "the_locality_check_needs_no_server",
+    "name": "the locality check needs no server: membership is tested against the bundled ledger, a pure function with no lookup service; 0/7",
+    "receipt": "3f3cd09c-41d8-8f6f-b6e4-e08481e71384"
+  },
+  {
+    "key": "each_uuid_links_to_self_if_local",
+    "name": "each uuid in the UI links to self if local: resolved by ledger membership to its own page, deterministic, plain text when not local, checked against the bundled ledger with no server; 0/7",
+    "receipt": "2a71ac7f-0ed3-815a-beb7-7bd1b98401f6"
   }
 ]

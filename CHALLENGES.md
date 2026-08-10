@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1704 recorded in 433 families
+## Discovered theorems (decidable, over ℤ/9) — 1712 recorded in 434 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (362)
+### the (364)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -386,8 +386,10 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_fallback_is_deterministic](/theorem/the_fallback_is_deterministic) — the fallback is deterministic: the same recovery chain yields the same response every time, so recovery is reproducible; 0/7  ·  `d196d540-ae20…`
 - [the_error_names_its_own_cure](/theorem/the_error_names_its_own_cure) — the error names its own cure: a drained statement returns the exact prose that failed, so the error carries the fix rather than only a code; 0/7  ·  `254eb2fa-0a2d…`
 - [the_chain_localises_the_error](/theorem/the_chain_localises_the_error) — the chain localises the error: recomputing a chain from its seed, the first mismatching link names the corrupted position, so the error is located, not merely flagged; 0/7  ·  `fd563817-7ebf…`
+- [the_self_link_is_deterministic](/theorem/the_self_link_is_deterministic) — the self link is deterministic: the same local uuid always yields the same page, so the link is stable and reproducible; 0/7  ·  `18e61c36-fd39…`
+- [the_locality_check_needs_no_server](/theorem/the_locality_check_needs_no_server) — the locality check needs no server: membership is tested against the bundled ledger, a pure function with no lookup service; 0/7  ·  `3f3cd09c-41d8…`
 
-### a (69)
+### a (72)
 
 - [a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony](/theorem/a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony) — a theorem without a formula is a hallucination, recomputed in a432 harmony: a claim is a theorem only if it is backed by a computable formula that recomputes true — a prose-only claim with no formula, or one whose formula computes false, is refused as hallucination and never recorded. Every recorded fact recomputes deterministically and folds into the a432 harmony root (the receipt of state). Measure, do not assert. Decidable  ·  `e3d75d76-310f…`
 - [a_referrer_always_counts_with_its_id](/theorem/a_referrer_always_counts_with_its_id) — a referrer always counts with its id: a reference from a referrer to a target is receipted as toUuid(referrer id → target), so the referrer id is always part of the count; two different referrers to the same target produce two distinct receipts, each counted with its own id, and changing the id changes the receipt — the id is load-bearing. Deterministic and reproducible: the same referrer and target always count the same. Decidable  ·  `65bfacb4-f29e…`
@@ -458,6 +460,9 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [a_content_address_detects_any_change](/theorem/a_content_address_detects_any_change) — a content-address detects any change: altering a single character changes the address, so any corruption is detected by recomputation; 0/7  ·  `065b1990-debd…`
 - [a_repetition_code_corrects_by_majority](/theorem/a_repetition_code_corrects_by_majority) — a repetition code corrects by majority: three copies vote, so a single flipped copy is corrected back to the true bit; 0/7  ·  `235ce115-071a…`
 - [a_missing_or_wrong_signature_is_refused](/theorem/a_missing_or_wrong_signature_is_refused) — a missing or wrong signature is refused: an asset whose recomputed hash does not match its expected signature is rejected, never served or stored; 0/7  ·  `0971f486-6966…`
+- [a_local_uuid_resolves_to_its_key](/theorem/a_local_uuid_resolves_to_its_key) — a local uuid resolves to its key: the ledger maps a receipt back to the key it seals, so a uuid knows which fact it is; 0/7  ·  `7cfe3d27-7a63…`
+- [a_local_uuid_links_to_self](/theorem/a_local_uuid_links_to_self) — a local uuid links to self: it resolves to its own page /theorem/&lt;key&gt;, so the address is clickable to the fact it addresses; 0/7  ·  `eac06382-eca6…`
+- [a_non_local_uuid_is_plain_text](/theorem/a_non_local_uuid_is_plain_text) — a non-local uuid is plain text: a uuid not in the ledger resolves to no link, so the UI never fabricates a destination it cannot back; 0/7  ·  `22464176-b209…`
 
 ### relation (55)
 
@@ -738,7 +743,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [every_error_is_a_receipted_trial_event](/theorem/every_error_is_a_receipted_trial_event) — every error is a receipted trial event: an error maps to a content-addressed event, so it is audited rather than swallowed; 0/7  ·  `20017294-0470…`
 - [every_warning_is_a_receipted_trial_event](/theorem/every_warning_is_a_receipted_trial_event) — every warning is a receipted trial event: a warning maps to a content-addressed event distinct from an error, so warnings are audited in their own right; 0/7  ·  `19e9ba9e-8260…`
 
-### each (17)
+### each (18)
 
 - [each_theorem_can_replace_code](/theorem/each_theorem_can_replace_code) — each theorem can replace code: a closed form that holds by exhaustion equals its naive computation, so the formula substitutes for the loop — Gauss’s n(n+1)/2 replaces the summation loop and the sum of the first n odds equals n², each verified equal to the imperative version (the theorem is the optimized, checkable code)  ·  `02be2d16-4a80…`
 - [each_perspective_is_receipted_in_the_superposition](/theorem/each_perspective_is_receipted_in_the_superposition) — each perspective is receipted in the superposition: because order matters, each ordered perspective is a distinct content-address — its own receipt proving that perspective exists (integrity) — and the superposition is the set of all perspectives folded order-independently to one root; observing collapses to one address. This represents the quantum structure classically: not a quantum machine, and no quantum advantage  ·  `4f64e2b7-d236…`
@@ -757,6 +762,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [each_file_is_content_addressed](/theorem/each_file_is_content_addressed) — each file is content-addressed: a file maps to the fold of its lines (equivalently toUuid(path:content)), distinct per path and content — the rule the release already uses; 0/7  ·  `ddb99d3d-a029…`
 - [each_receipt_is_an_og_hero_seven_dimensional_printable](/theorem/each_receipt_is_an_og_hero_seven_dimensional_printable) — each receipt is an OpenGraph hero, seven-dimensional and printable: title, proof url, authentication address and floor — the same across seven locales, flat in 2d, self-validating by recomputation, carrying a computable intention; 0/7  ·  `4fa3cc08-3b25…`
 - [each_fact_presents_uniformly_with_its_own_id](/theorem/each_fact_presents_uniformly_with_its_own_id) — each fact presents uniformly with its own id: every card shares one shape and place while its id is its own content-address — same way, same place, different id; 0/7  ·  `b0df7cef-e005…`
+- [each_uuid_links_to_self_if_local](/theorem/each_uuid_links_to_self_if_local) — each uuid in the UI links to self if local: resolved by ledger membership to its own page, deterministic, plain text when not local, checked against the bundled ledger with no server; 0/7  ·  `2a71ac7f-0ed3…`
 
 ### gate (17)
 
@@ -1381,6 +1387,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [power_sum_k4](/theorem/power_sum_k4) — the sum of the first n 4th powers has a closed form: Σ_{i=1}^n i^4 = n(n+1)(2n+1)(3n²+3n−1)/30 — the O(1) formula replaces the loop, verified equal to the naive sum for n ≤ 40  ·  `24febf86-82bd…`
 - [power_sum_k5](/theorem/power_sum_k5) — the sum of the first n 5th powers has a closed form: Σ_{i=1}^n i^5 = n²(n+1)²(2n²+2n−1)/12 — the O(1) formula replaces the loop, verified equal to the naive sum for n ≤ 40  ·  `e21f1836-df22…`
 
+### receipt (5)
+
+- [receipt_is_entanglement_pair](/theorem/receipt_is_entanglement_pair) — a receipt entangles a message with its content-address into an irreducible pair: the joint fold depends on both, is order-independent, and differs from each part — a 2-part binding, correlation without influence  ·  `f71771ad-075c…`
+- [receipt_pair_is_two_coins](/theorem/receipt_pair_is_two_coins) — the receipt pair counts 2 = −χ(genus-2) = the two coins (110−108): the irreducible parts of a receipt equal minus the Euler characteristic of the double torus  ·  `8107fd62-4172…`
+- [receipt_cost_funds_development](/theorem/receipt_cost_funds_development) — each receipt costs the two coins, accounted into development: the fare 110−108 = 2, and development’s destination equals its source (toUuid("ceccec")), a self-loop returning the coins to origin  ·  `42f68f41-fe6c…`
+- [receipt_signs_understanding_and_compliance](/theorem/receipt_signs_understanding_and_compliance) — the receipt signs understanding and compliance: to sign is to understand and comply with the law (the license and the sequence) before proceeding — the acknowledgment is part of the receipt itself, alongside the observer and role, content-addressed to the message  ·  `397281eb-f41f…`
+- [receipt_and_key_are_a_bijection](/theorem/receipt_and_key_are_a_bijection) — receipt and key are a bijection: distinct keys mint distinct receipts and each receipt maps back to one key, so the self-link is unambiguous; 0/7  ·  `ffb70f58-5b9e…`
+
 ### roots (5)
 
 - [roots_cancel_n2](/theorem/roots_cancel_n2) — the 2 equally-spaced unit vectors (n-th roots of unity) cancel to the zero vector  ·  `f14563e3-9bf7…`
@@ -1515,13 +1529,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [platonic_exactly_five](/theorem/platonic_exactly_five) — exactly five Platonic solids: {p,q} is regular-convex iff 1/p + 1/q &gt; 1/2 (p,q≥3) — five, and no more  ·  `82196bbc-1108…`
 - [platonic_duality](/theorem/platonic_duality) — Platonic duality swaps V↔F: cube↔octahedron, dodecahedron↔icosahedron, tetrahedron self-dual  ·  `ae03ec6a-236e…`
 - [platonic_duality_swaps_vertices_and_faces](/theorem/platonic_duality_swaps_vertices_and_faces) — Platonic duality swaps vertices and faces at fixed edges: cube(8,6)↔octahedron(6,8) and dodecahedron(20,12)↔icosahedron(12,20), the tetrahedron self-dual; 0/7  ·  `b8c9b01c-faea…`
-
-### receipt (4)
-
-- [receipt_is_entanglement_pair](/theorem/receipt_is_entanglement_pair) — a receipt entangles a message with its content-address into an irreducible pair: the joint fold depends on both, is order-independent, and differs from each part — a 2-part binding, correlation without influence  ·  `f71771ad-075c…`
-- [receipt_pair_is_two_coins](/theorem/receipt_pair_is_two_coins) — the receipt pair counts 2 = −χ(genus-2) = the two coins (110−108): the irreducible parts of a receipt equal minus the Euler characteristic of the double torus  ·  `8107fd62-4172…`
-- [receipt_cost_funds_development](/theorem/receipt_cost_funds_development) — each receipt costs the two coins, accounted into development: the fare 110−108 = 2, and development’s destination equals its source (toUuid("ceccec")), a self-loop returning the coins to origin  ·  `42f68f41-fe6c…`
-- [receipt_signs_understanding_and_compliance](/theorem/receipt_signs_understanding_and_compliance) — the receipt signs understanding and compliance: to sign is to understand and comply with the law (the license and the sequence) before proceeding — the acknowledgment is part of the receipt itself, alongside the observer and role, content-addressed to the message  ·  `397281eb-f41f…`
 
 ### yes (4)
 
@@ -2061,7 +2068,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (241)
+### other — one-of-a-kind (242)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [activated_it_self_explores_until_dry](/theorem/activated_it_self_explores_until_dry) — activated, it self-explores until dry: once a wave starts it discovers fresh facts until none remain, then rests — a self-continuing loop with a halting condition; 0/7  ·  `4a82a66b-5656…`
@@ -2195,6 +2202,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [legendres_three_square_theorem](/theorem/legendres_three_square_theorem) — Legendre's three-square theorem: a non-negative integer is a sum of three squares if and only if it is not of the form 4^a·(8b + 7) — verified for every n up to 300. So 7 = 4⁰·7 is not a sum of three squares (it needs four), matching the four-square theorem. Verified by exhaustive search  ·  `ec266737-e9ab…`
 - [let_the_flaws_discover_the_tools](/theorem/let_the_flaws_discover_the_tools) — let the flaws discover the tools: the gate hit, the chain-break index, the missing gap key and the trinity dissent each name the fix, so the record improves by exposing cracks — the flaw is the lead that builds the tool; 0/7  ·  `8bc8cc9e-eb8f…`
 - [light_at_all_times_the_address_is_the_load](/theorem/light_at_all_times_the_address_is_the_load) — light at all times: the content-address is a fixed 36 characters whatever the size of what it names, so the yacht carries the pointer, never the payload; 0/7  ·  `93b77fd5-67bd…`
+- [locality_is_ledger_membership](/theorem/locality_is_ledger_membership) — locality is ledger membership: a uuid is local exactly when it is a known receipt in the ledger, checked in one step; 0/7  ·  `1ccfb27b-9499…`
 - [machins_formula_computes_pi_over_four](/theorem/machins_formula_computes_pi_over_four) — Machin’s formula: π/4 = 4·arctan(1/5) − arctan(1/239) — a fast-converging identity, verified numerically; 0/7  ·  `91876258-030b…`
 - [mcp_outputs_chain_into_an_audit_log](/theorem/mcp_outputs_chain_into_an_audit_log) — MCP outputs chain into an audit log: each output receipt is seeded by the last, so the tool-call history is ordered and tamper-evident; 0/7  ·  `741dfe34-a806…`
 - [measurement_here_is_deterministic_not_probabilistic](/theorem/measurement_here_is_deterministic_not_probabilistic) — measurement here is deterministic, not probabilistic: observing a perspective is content-addressing — repeated observation of the same perspective yields the identical receipt every time (deterministic collapse), and distinct states yield distinct addresses. This is the honest opposite of physical quantum measurement, which is probabilistic: no randomness, no Born rule, and no quantum advantage  ·  `8344e1ed-f1f3…`
@@ -2306,4 +2314,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `912d121f-cf2d-8c66-8d1c-a870d3302153`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `b2590e4f-ff0e-842e-9c31-17fd72bb85c1`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

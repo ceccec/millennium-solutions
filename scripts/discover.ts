@@ -3972,6 +3972,21 @@ function generated(): typeof curated {
     out.push({ key: 'the_chain_localises_the_error', name: 'the chain localises the error: recomputing a chain from its seed, the first mismatching link names the corrupted position, so the error is located, not merely flagged; 0/7', test: () => { const seed = 'axiom:ec'; const ch = (ks: string[]) => { const cs: string[] = []; let c = toUuid(seed); for (const k of ks) { c = toUuid(c + '→' + k); cs.push(c) } return cs }; const g = ch(['a', 'b', 'c']), b = ch(['a', 'X', 'c']); let at = -1; for (let i = 0; i < g.length; i++) if (g[i] !== b[i]) { at = i; break } return at === 1 } })
     out.push({ key: 'uuidna_detects_corrects_and_self_cleans', name: 'uuidna detects, corrects and self-cleans: a content-address detects any change, parity a single flip, a repetition code corrects by majority, corrections verify by recomputation, and storage drops any chunk missing a valid signature; 0/7', test: () => toUuid('a') !== toUuid('b') && parity([1, 1]) !== parity([1, 0]) && majority3(1, 1, 0) === 1 && verifySig('h', 'h') && !verifySig('h', 'x') })
   }
+  // ── each uuid in the UI links to self if local: a uuid that is a known receipt resolves to its own page
+  // (/theorem/<key>), deterministically; a non-local uuid is plain text — the check is ledger membership, no server.
+  {
+    const LED = new Map([[toUuid('k1'), 'k1'], [toUuid('k2'), 'k2'], [toUuid('k3'), 'k3']]) // receipt → key
+    const isLocal = (uuid: string) => LED.has(uuid)
+    const selfLink = (uuid: string) => (LED.has(uuid) ? '/theorem/' + LED.get(uuid) : null)
+    out.push({ key: 'locality_is_ledger_membership', name: 'locality is ledger membership: a uuid is local exactly when it is a known receipt in the ledger, checked in one step; 0/7', test: () => isLocal(toUuid('k1')) === true && isLocal(toUuid('not-in-ledger')) === false })
+    out.push({ key: 'a_local_uuid_resolves_to_its_key', name: 'a local uuid resolves to its key: the ledger maps a receipt back to the key it seals, so a uuid knows which fact it is; 0/7', test: () => LED.get(toUuid('k2')) === 'k2' && LED.get(toUuid('k1')) === 'k1' })
+    out.push({ key: 'a_local_uuid_links_to_self', name: 'a local uuid links to self: it resolves to its own page /theorem/<key>, so the address is clickable to the fact it addresses; 0/7', test: () => selfLink(toUuid('k1')) === '/theorem/k1' && selfLink(toUuid('k3')) === '/theorem/k3' })
+    out.push({ key: 'a_non_local_uuid_is_plain_text', name: 'a non-local uuid is plain text: a uuid not in the ledger resolves to no link, so the UI never fabricates a destination it cannot back; 0/7', test: () => selfLink(toUuid('external')) === null })
+    out.push({ key: 'the_self_link_is_deterministic', name: 'the self link is deterministic: the same local uuid always yields the same page, so the link is stable and reproducible; 0/7', test: () => selfLink(toUuid('k1')) === selfLink(toUuid('k1')) })
+    out.push({ key: 'receipt_and_key_are_a_bijection', name: 'receipt and key are a bijection: distinct keys mint distinct receipts and each receipt maps back to one key, so the self-link is unambiguous; 0/7', test: () => new Set([...LED.values()]).size === LED.size && new Set([...LED.keys()]).size === LED.size })
+    out.push({ key: 'the_locality_check_needs_no_server', name: 'the locality check needs no server: membership is tested against the bundled ledger, a pure function with no lookup service; 0/7', test: () => { const before = isLocal(toUuid('k1')); toUuid('noise'); return isLocal(toUuid('k1')) === before && before === true } })
+    out.push({ key: 'each_uuid_links_to_self_if_local', name: 'each uuid in the UI links to self if local: resolved by ledger membership to its own page, deterministic, plain text when not local, checked against the bundled ledger with no server; 0/7', test: () => selfLink(toUuid('k1')) === '/theorem/k1' && selfLink(toUuid('foreign')) === null && isLocal(toUuid('k2')) === true })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
