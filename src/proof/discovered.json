@@ -7998,5 +7998,45 @@
     "key": "uuidna_storage_is_the_sequence_chunked_navigable",
     "name": "uuidna storage is the sequence chunked and navigable: uniform binary octaves, each folder addressed by its fold, folding to one map, each theorem a superposition collapsing to one address — balanced by size, exact by construction, never a performance boast; 0/7",
     "receipt": "4e8e371f-68b9-88a7-872a-cf3d9537c8a4"
+  },
+  {
+    "key": "a_fact_costs_one_fixed_thirty_six_byte_address",
+    "name": "a fact costs one fixed 36-byte address: the content-address is 36 characters (128 bits) whatever the size of what it names — a constant cost per fact; 0/7",
+    "receipt": "d11e6008-e5b9-8f3f-9a50-696d162c40f6"
+  },
+  {
+    "key": "present_by_reference_fits_a_tiny_budget",
+    "name": "present by reference fits a tiny budget: 1600 facts as addresses are 1600 × 36 = 57,600 bytes (~56 kB), while the same many arbitrary payloads could not fit that — slim by pointer, not by payload; 0/7",
+    "receipt": "0b67a698-d2e3-8159-932d-8bcb987a13ae"
+  },
+  {
+    "key": "the_whole_record_folds_to_one_root",
+    "name": "the whole record folds to one 36-byte root: any number of addresses merkle-fold to a single 36-character seal, so the entire ledger is checked by one small value; 0/7",
+    "receipt": "2a5c3249-982c-8501-8575-6bb54570fd00"
+  },
+  {
+    "key": "the_basis_is_two_functions",
+    "name": "the basis is two functions: address and fold compose everything — a value gets an address, a list folds to one — a tiny basis with no framework; 0/7",
+    "receipt": "cefb5d17-a26d-821a-b6a1-5d4363e96312"
+  },
+  {
+    "key": "the_core_is_pure_and_stateless",
+    "name": "the core is pure and stateless: the same input gives the same output with no hidden state, so the slim kernel needs no runtime beyond the function itself; 0/7",
+    "receipt": "5d90a04a-72d8-85e7-b8ae-06bef56f983f"
+  },
+  {
+    "key": "slim_at_scale_constant_per_fact",
+    "name": "slim at scale: each new fact adds exactly one 36-byte address, so the record grows linearly by a tiny constant, not by the size of what it records; 0/7",
+    "receipt": "e34f6a6d-d02c-8d9f-9fb0-45026526d762"
+  },
+  {
+    "key": "the_pointer_not_the_payload_travels",
+    "name": "the pointer, not the payload, travels: a 36-byte address stands in for content of any size, so the slim record moves the reference and recomputes the rest; 0/7",
+    "receipt": "616e502e-e487-8413-994a-cf99cc38ebff"
+  },
+  {
+    "key": "uuidna_is_slim_by_measurement",
+    "name": "uuidna is slim by measurement: a fixed 36-byte address per fact, the whole folding to one 36-byte root, present by reference within a tiny budget, from a two-function pure basis — slim measured, not merely claimed; 0/7",
+    "receipt": "039353f4-a9a0-86dd-9bc6-8eb8389b0d3b"
   }
 ]
