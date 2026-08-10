@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1743 recorded in 442 families
+## Discovered theorems (decidable, over ℤ/9) — 1744 recorded in 442 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (378)
+### the (379)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -402,6 +402,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_dynamics_are_deterministic_and_replayable](/theorem/the_dynamics_are_deterministic_and_replayable) — the dynamics are deterministic and replayable: the same reading yields the same UI state, so a sequence of readings replays identically; 0/7  ·  `a1575c17-c2b5…`
 - [the_reading_maps_to_a_bounded_ui_value](/theorem/the_reading_maps_to_a_bounded_ui_value) — the reading maps to a bounded UI value: the hue is taken modulo 360, so however large the reading, the interface value stays in range; 0/7  ·  `4c8c2eb0-d99c…`
 - [the_three_motions_compose](/theorem/the_three_motions_compose) — the three motions compose: forward, reverse and inverse apply in order and a different order gives a different result — a composed pipeline; 0/7  ·  `a1995ce9-8acf…`
+- [the_rosetta_ties_the_seven_dimensions](/theorem/the_rosetta_ties_the_seven_dimensions) — the rosetta ties the seven dimensions: the reversal must hold read in every dialect, so a boast that it is cracked drains while the honest asymmetry passes; 0/7  ·  `15dbb84e-9e1b…`
 
 ### a (75)
 
@@ -2357,4 +2358,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `a82bb08d-5d7d-8af0-b772-510a688bb5f0`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `c0e421d4-fc23-8c85-bcbe-a4f383dd6b3c`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
