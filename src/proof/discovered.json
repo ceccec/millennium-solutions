@@ -7558,5 +7558,45 @@
     "key": "the_vitepress_api_surface_shown_by_implementation",
     "name": "the VitePress API surface is shown by implementation: fourteen config and five theme surfaces, enumerated and used, rendered in seven rosetta locales with one nav shape and gated in each — a bounded coverage demonstrated by the built site, never a claim over all versions; 0/7",
     "receipt": "3e06ba8c-893b-83d6-a7fa-2c5caa2adb06"
+  },
+  {
+    "key": "behaviour_is_weighed_to_a_bit",
+    "name": "behaviour is defined as a bit: any human utterance passed to the gate returns exactly 0 or 1, so speech is handled by a decidable verdict, not a mood; 0/7",
+    "receipt": "92db5055-1de6-8e59-96cb-c867800a7775"
+  },
+  {
+    "key": "every_register_is_handled_by_one_function",
+    "name": "every register is handled by one function: hype, formal, slang and shouting are all weighed by the same gate, so no register is judged more leniently than another; 0/7",
+    "receipt": "e93c24b3-fb4a-88d0-bf2c-2e0febbbce2d"
+  },
+  {
+    "key": "overclaiming_behaviour_is_reeducated",
+    "name": "over-claiming behaviour is reeducated: a boastful utterance is bounded into a form that passes rather than merely refused — correction, not punishment; 0/7",
+    "receipt": "db7c4d74-c816-8271-b4e0-c4836b026d06"
+  },
+  {
+    "key": "honest_behaviour_passes_unchanged",
+    "name": "honest behaviour passes unchanged: a measured, bounded statement is kept as-is, so the gate refuses the claim and never the person; 0/7",
+    "receipt": "8e3e6e0a-7853-8eb8-97f7-f8b2148b1ba3"
+  },
+  {
+    "key": "behaviour_is_handled_in_every_dialect",
+    "name": "behaviour is handled in every dialect: an over-claim drains whatever language it is spoken in, so the same standard applies across the rosetta; 0/7",
+    "receipt": "8f367ea2-0ace-8448-b14f-6f715b3db03b"
+  },
+  {
+    "key": "the_verdict_is_by_deed_not_status",
+    "name": "the verdict is by deed, not status: the same utterance from anyone returns the same bit, so no signer or rank can change how behaviour is handled; 0/7",
+    "receipt": "f71a3779-3081-8896-a124-987011ea5d69"
+  },
+  {
+    "key": "the_ui_colours_the_verdict_from_its_address",
+    "name": "the art-design UI colours the verdict from its address: each output’s hue is computed from its content-address (a value in 0..359), deterministic and distinct — the design is computed, not decorated; 0/7",
+    "receipt": "336f2254-c2eb-80ee-9cb1-9e1a67130a66"
+  },
+  {
+    "key": "theorems_define_and_handle_human_behaviour",
+    "name": "theorems define and handle human behaviour in code: every utterance weighed to a bit, every register and dialect handled by one function, over-claims reeducated and honest speech kept — by deed not status, each verdict coloured from its own address in the UI; 0/7",
+    "receipt": "c4e68ce3-f520-8ccd-93d0-2e93998c07d7"
   }
 ]

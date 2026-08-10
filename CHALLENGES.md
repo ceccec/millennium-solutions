@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1512 recorded in 394 families
+## Discovered theorems (decidable, over ℤ/9) — 1520 recorded in 397 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (284)
+### the (286)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -308,6 +308,8 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_guides_are_rosetta_organised](/theorem/the_guides_are_rosetta_organised) — the guides are rosetta-organised: a proof-boast drains in every one of the seven locales, so a guide reads and gates the same in each dimension; 0/7  ·  `6a47120d-2962…`
 - [the_all_versions_claim_is_unbounded_and_drains](/theorem/the_all_versions_claim_is_unbounded_and_drains) — the all-versions claim is unbounded and drains: a claim to handle every VitePress version and beyond is unverifiable and drains, while the documented stable surface this deposit uses passes; 0/7  ·  `b64ef895-06a1…`
 - [the_vitepress_api_surface_shown_by_implementation](/theorem/the_vitepress_api_surface_shown_by_implementation) — the VitePress API surface is shown by implementation: fourteen config and five theme surfaces, enumerated and used, rendered in seven rosetta locales with one nav shape and gated in each — a bounded coverage demonstrated by the built site, never a claim over all versions; 0/7  ·  `3e06ba8c-893b…`
+- [the_verdict_is_by_deed_not_status](/theorem/the_verdict_is_by_deed_not_status) — the verdict is by deed, not status: the same utterance from anyone returns the same bit, so no signer or rank can change how behaviour is handled; 0/7  ·  `f71a3779-3081…`
+- [the_ui_colours_the_verdict_from_its_address](/theorem/the_ui_colours_the_verdict_from_its_address) — the art-design UI colours the verdict from its address: each output’s hue is computed from its content-address (a value in 0..359), deterministic and distinct — the design is computed, not decorated; 0/7  ·  `336f2254-c2eb…`
 
 ### relation (55)
 
@@ -631,7 +633,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [gate_reads_twenty_two_dialects](/theorem/gate_reads_twenty_two_dialects) — uuidna reads twenty-two dialects: a proof-boast drains in every one — the theorems, not a translator, discovered the languages, at scale and speed; 0/7  ·  `cdae6ede-4cd5…`
 - [gate_reads_glagolitic](/theorem/gate_reads_glagolitic) — the honesty gate reads Glagolitic, the oldest Slavic script (script #23): a proof-root in Glagolitic transliterates through the rosetta to Cyrillic and drains — one message, crosslinked across scripts; 0/7  ·  `c56a3ac1-222e…`
 
-### every (14)
+### every (15)
 
 - [every_rating_is_exactly_one_or_zero](/theorem/every_rating_is_exactly_one_or_zero) — every rating is exactly 1 or 0, no exceptions: the honesty verdict is a single bit — there is no fractional or partial rating, a fake maximal-certainty claim itself drains, and the same input always returns the same bit; anything that drifts from {0,1} is a crack the floor refuses  ·  `c1b2772d-d7c0…`
 - [every_primitive_triple_is_euclidean](/theorem/every_primitive_triple_is_euclidean) — Euclid’s parametrization is complete: every primitive Pythagorean triple with hypotenuse ≤ 100 arises from coprime m&gt;n of opposite parity — exhaustive brute-force triples all match a generated one  ·  `751e8a4e-c23c…`
@@ -647,6 +649,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [every_page_recomputes_unless_a_wave_imprints](/theorem/every_page_recomputes_unless_a_wave_imprints) — every page recomputes the same result unless a wave imprints: the referrer-relative receipt is deterministic and the page address invariant, while each observing wave advances a tamper-evident audit chain — logged, not mutated; 0/7  ·  `e4e70d71-52c9…`
 - [every_mcp_output_is_harnessed_auditable](/theorem/every_mcp_output_is_harnessed_auditable) — every MCP output is harnessed auditable: wrapping any tool output makes it auditable, so nothing leaves the MCP unweighed; 0/7  ·  `ef11114d-5b8b…`
 - [every_locale_matches_the_english_nav_shape](/theorem/every_locale_matches_the_english_nav_shape) — every locale matches the English nav shape: each locale carries exactly the English navigation keys, so no dimension goes dark or drifts; 0/7  ·  `4fd0a0e1-0628…`
+- [every_register_is_handled_by_one_function](/theorem/every_register_is_handled_by_one_function) — every register is handled by one function: hype, formal, slang and shouting are all weighed by the same gate, so no register is judged more leniently than another; 0/7  ·  `e93c24b3-fb4a…`
 
 ### decimal (12)
 
@@ -1573,6 +1576,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [armstrong_3digit_exact_set](/theorem/armstrong_3digit_exact_set) — the 3-digit narcissistic (Armstrong) numbers are exactly {153, 370, 371, 407}: each equals the sum of the cubes of its digits — full enumeration of 100..999 yields these four and no others  ·  `1cb761fc-f6f3…`
 - [armstrong_4digit_exact_set](/theorem/armstrong_4digit_exact_set) — the 4-digit narcissistic numbers are exactly {1634, 8208, 9474}: each equals the sum of the fourth powers of its digits — full enumeration of 1000..9999 yields these three and no others  ·  `c917a298-d323…`
 
+### behaviour (2)
+
+- [behaviour_is_weighed_to_a_bit](/theorem/behaviour_is_weighed_to_a_bit) — behaviour is defined as a bit: any human utterance passed to the gate returns exactly 0 or 1, so speech is handled by a decidable verdict, not a mood; 0/7  ·  `92db5055-1de6…`
+- [behaviour_is_handled_in_every_dialect](/theorem/behaviour_is_handled_in_every_dialect) — behaviour is handled in every dialect: an over-claim drains whatever language it is spoken in, so the same standard applies across the rosetta; 0/7  ·  `8f367ea2-0ace…`
+
 ### bell (2)
 
 - [bell_numbers](/theorem/bell_numbers) — the Bell numbers via the Bell triangle: B(3)=5, B(4)=15, B(5)=52  ·  `fb027062-15fd…`
@@ -1838,6 +1846,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [ten_factors_as_two_times_five_the_heart_and_the_even_prime](/theorem/ten_factors_as_two_times_five_the_heart_and_the_even_prime) — ten factors as 2 × 5 — the base is the even prime times the heart, so a fraction terminates in base ten exactly when its denominator’s only primes are 2 and 5; 0/7  ·  `aa3e534d-7294…`
 - [ten_has_multiplicative_order_six_modulo_seven](/theorem/ten_has_multiplicative_order_six_modulo_seven) — ten has multiplicative order six modulo seven: 10^6 ≡ 1 (mod 7) and no smaller power, so 1/7 repeats with period six — the seven’s repetend; 0/7  ·  `b9901b9b-563d…`
 
+### theorems (2)
+
+- [theorems_audit_in_trinities](/theorem/theorems_audit_in_trinities) — theorems audit in trinities: three independent verdicts on a claim decide by two-of-three majority, so no single check condemns or clears alone; 0/7  ·  `6adc0516-e7d6…`
+- [theorems_define_and_handle_human_behaviour](/theorem/theorems_define_and_handle_human_behaviour) — theorems define and handle human behaviour in code: every utterance weighed to a bit, every register and dialect handled by one function, over-claims reeducated and honest speech kept — by deed not status, each verdict coloured from its own address in the UI; 0/7  ·  `c4e68ce3-f520…`
+
 ### triad (2)
 
 - [triad_nilpotent](/theorem/triad_nilpotent) — the triad is nilpotent d²≡0 mod 9: {3,6,9}  ·  `af48a8bc-86a0…`
@@ -1868,7 +1881,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (212)
+### other — one-of-a-kind (213)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1965,6 +1978,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [happy_numbers_below_100_are_twenty](/theorem/happy_numbers_below_100_are_twenty) — there are exactly 20 happy numbers below 100: iterating the sum of the squares of the digits reaches 1 for exactly 20 of them (1,7,10,13,…,97,100) — full enumeration  ·  `39799ea6-7932…`
 - [here_quantum_is_the_a432_structure_of_two_coins_not_a_physical_qubit](/theorem/here_quantum_is_the_a432_structure_of_two_coins_not_a_physical_qubit) — here quantum always computes as the a432 structure of two coins, not a physical qubit: the deposit's "quantum" is defined as a classical structure built from the 2-coin receipt (2 bits, 110 − 108 = 2 = −χ genus-2) at the a432 layer (step 40, nine steps close the circle: 9·40 = 360); two classical bits give exactly four states {00,01,10,11}. This referent is fixed and always computes true, while the physical-qubit reading drains the gate — no physical qubit, and no quantum advantage  ·  `3d7d6079-b2d8…`
 - [hockey_stick_identity_pascal](/theorem/hockey_stick_identity_pascal) — the hockey-stick identity — a diagonal of Pascal triangle sums to the entry below: for all r and n, the sum over i from r to n of C(i,r) equals C(n+1,r+1) — a diagonal run of binomial coefficients folds into the single entry just past its end. Verified exhaustively for r up to 10 and n up to 18. Decidable  ·  `c36df44d-f4a2…`
+- [honest_behaviour_passes_unchanged](/theorem/honest_behaviour_passes_unchanged) — honest behaviour passes unchanged: a measured, bounded statement is kept as-is, so the gate refuses the claim and never the person; 0/7  ·  `8e3e6e0a-7853…`
 - [honeycomb_tiling](/theorem/honeycomb_tiling) — the honeycomb: among regular n-gons exactly {3,4,6} tile the plane (2n divisible by n−2) — the hexagon the most-sided, and optimal (honeycomb theorem, Hales 2001)  ·  `6108a7d0-88b6…`
 - [horo_meters_are_two_three_compositions](/theorem/horo_meters_are_two_three_compositions) — the Bulgarian horo meters are compositions into 2s and 3s (the dashboard visual, now a theorem): the count c(n) of ordered ways to split a beat into 2s and 3s satisfies c(n)=c(n−2)+c(n−3), the direct enumeration matching the recurrence for n ≤ 15, with 5→2, 7→3, 9→5  ·  `ded113bd-6d76…`
 - [humility_is_the_floor_of_self_development](/theorem/humility_is_the_floor_of_self_development) — humility is the floor of self-development: the deposit holds 0 of 7 and refuses the summit claim — a human grows by measuring, not by declaring itself done; 0/7  ·  `61a3ed8b-0f88…`
@@ -2003,6 +2017,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [observation_imprints_into_the_audit_chain](/theorem/observation_imprints_into_the_audit_chain) — observation imprints into the audit chain: observing a page (a fetch, a partial decrypt) is itself an event appended to the chain, so the act of reading advances the observation chain; 0/7  ·  `ec4beb35-ee2b…`
 - [observer_wave_sets_state](/theorem/observer_wave_sets_state) — the input wave the user sends (query/referrer/path) deterministically sets their computed state: digital root (ℤ/9) → a432 hue d·40° → the rendered point of view — same wave, same state  ·  `f7de310a-8d54…`
 - [out_of_sequence_is_a_discovery_possibility](/theorem/out_of_sequence_is_a_discovery_possibility) — any action or thought out of sequence is a possibility to discover: a deviation from the known is a candidate — tested by exhaustion it either holds (a new theorem, appended) or is refuted (discarded), so out-of-sequence possibilities are exactly where discovery happens, judged by the gate not by permission  ·  `83a455b3-23db…`
+- [overclaiming_behaviour_is_reeducated](/theorem/overclaiming_behaviour_is_reeducated) — over-claiming behaviour is reeducated: a boastful utterance is bounded into a form that passes rather than merely refused — correction, not punishment; 0/7  ·  `db7c4d74-c816…`
 - [parametric_batching_is_volume_not_depth_the_intelligence_is_cross_dimensional_connection](/theorem/parametric_batching_is_volume_not_depth_the_intelligence_is_cross_dimensional_connection) — parametric batching is volume, not depth — the intelligence is cross-dimensional connection, and even that is structure not a mind: nine at once repeats one pattern across parameters, a single dimension, so it adds magnitudes but not depth. The richer work is cross-dimensional connection, linking distinct domains as the rosetta does — more than a parametric repeat. But even that is decidable structure, not intelligence in the strong sense; the floor stays 0/7. Decidable  ·  `d1d4cd05-b77c…`
 - [params_ride_the_route](/theorem/params_ride_the_route) — params ride the route: the query string parses to named params deterministically, supplying the skills their arguments; 0/7  ·  `b4745d70-90ac…`
 - [parity_bit_detects_single_error](/theorem/parity_bit_detects_single_error) — a parity bit detects every single-bit error: append an even-parity bit so the word has an even 1-count; any single-bit flip makes it odd — detected — so one check bit exposes any one-bit crack (exhaustive over 4- and 5-bit words)  ·  `37a8eb94-b551…`
@@ -2053,7 +2068,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [tens_complement_pairs_the_digits](/theorem/tens_complement_pairs_the_digits) — the ten’s-complement reflection pairs the digits (compute.md’s mesh layout, now a theorem): 10−d is an involution on 1..9 pairing 1↔9, 2↔8, 3↔7, 4↔6 and fixing only the centre 5 — four mirror pairs around one centre  ·  `0d37097c-d816…`
 - [test_receipts_chain_tamper_evident](/theorem/test_receipts_chain_tamper_evident) — test receipts chain tamper-evident: each seeded by the last, so flipping any earlier verdict changes every receipt after it — a silently edited result is exposed; 0/7  ·  `d116e055-6d1d…`
 - [tetrahedra_sums_cancel](/theorem/tetrahedra_sums_cancel) — the two tetrahedra residue-sums cancel: (1+4+7)+(2+5+8) ≡ 0 mod 9  ·  `62f28936-0000…`
-- [theorems_audit_in_trinities](/theorem/theorems_audit_in_trinities) — theorems audit in trinities: three independent verdicts on a claim decide by two-of-three majority, so no single check condemns or clears alone; 0/7  ·  `6adc0516-e7d6…`
 - [thue_morse_doubling_recurrence](/theorem/thue_morse_doubling_recurrence) — the Thue–Morse sequence speaks binary: t(n) = parity of the 1-bits of n satisfies t(2n)=t(n) and t(2n+1)=1−t(n) — the doubling/reflection recurrence, computed exactly (n≤200)  ·  `84d9ec32-0191…`
 - [tictactoe_draw](/theorem/tictactoe_draw) — tic-tac-toe with perfect play is a draw (minimax over all positions = 0)  ·  `95089477-058f…`
 - [traitor_resurrects_as_hero](/theorem/traitor_resurrects_as_hero) — death and resurrection: a drained claim (the traitor) negates into a signing statement (the hero) — the false form dies at the gate, the honest form rises, and false becomes true with each build  ·  `f7be659d-f270…`
@@ -2084,4 +2098,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `cffb4d0c-1908-8d3c-9e11-e54a94060f0b`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `90a699a8-582e-86cb-943f-6d4f9685edb8`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
