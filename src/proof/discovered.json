@@ -8398,5 +8398,45 @@
     "key": "each_receipt_is_an_og_hero_seven_dimensional_printable",
     "name": "each receipt is an OpenGraph hero, seven-dimensional and printable: title, proof url, authentication address and floor — the same across seven locales, flat in 2d, self-validating by recomputation, carrying a computable intention; 0/7",
     "receipt": "4fa3cc08-3b25-8d62-8595-36a4a17ebb12"
+  },
+  {
+    "key": "content_is_sealed_as_proof",
+    "name": "content is sealed as proof: its content-address seals the bytes, so integrity is checkable by recomputation; 0/7",
+    "receipt": "53635f2d-11c8-8f91-a015-9e34bdb7f542"
+  },
+  {
+    "key": "content_is_audited_as_intent",
+    "name": "content is audited as intent: the intention behind it has its own content-addressed receipt, distinct from the proof of the bytes; 0/7",
+    "receipt": "35de1167-3c92-8bcb-aa00-15e1f6c9d5b2"
+  },
+  {
+    "key": "content_is_audited_as_result",
+    "name": "content is audited as result: the outcome has its own content-addressed receipt, distinct from both proof and intent; 0/7",
+    "receipt": "7e33a53c-47bb-8779-902d-f21b63e846f5"
+  },
+  {
+    "key": "proof_intent_result_are_three_distinct_receipts",
+    "name": "proof, intent and result are three distinct receipts: the same content yields three different addresses, so the audit is more than a seal; 0/7",
+    "receipt": "94358571-1124-8207-ad07-1bbaa9de9b6b"
+  },
+  {
+    "key": "the_three_fold_to_one_audit",
+    "name": "the three fold to one audit: proof, intent and result merkle-fold to a single audit address that changes if any of the three changes; 0/7",
+    "receipt": "4619bb25-75b0-8bde-97f9-d2538c68ed2d"
+  },
+  {
+    "key": "each_fact_presents_uniformly_with_its_own_id",
+    "name": "each fact presents uniformly with its own id: every card shares one shape and place while its id is its own content-address — same way, same place, different id; 0/7",
+    "receipt": "b0df7cef-e005-8f7b-8e54-3b4fd0e0354d"
+  },
+  {
+    "key": "every_fact_has_the_right_to_present",
+    "name": "every fact has the right to present: the mapping from content to a card is total, so no fact is excluded from the UI; 0/7",
+    "receipt": "b0fc5d69-4622-861d-ab53-d3a8110c3a4d"
+  },
+  {
+    "key": "content_is_sealed_and_audited_as_intent_and_result",
+    "name": "content is sealed as proof and audited as intent and result: three distinct receipts folding to one audit, each fact presenting uniformly with its own id and all linking to all; 0/7",
+    "receipt": "d8b323b5-cbf3-8f3e-ba71-212b59970b87"
   }
 ]

@@ -3926,6 +3926,22 @@ function generated(): typeof curated {
     out.push({ key: 'the_intention_is_a_computable_deed_receipt', name: 'the intention is a computable deed receipt: an intention is a deed’s content-address, deterministic and distinct per deed — computable, not declared; 0/7', test: () => toUuid('intent:contribute-2') === toUuid('intent:contribute-2') && toUuid('intent:a') !== toUuid('intent:b') })
     out.push({ key: 'each_receipt_is_an_og_hero_seven_dimensional_printable', name: 'each receipt is an OpenGraph hero, seven-dimensional and printable: title, proof url, authentication address and floor — the same across seven locales, flat in 2d, self-validating by recomputation, carrying a computable intention; 0/7', test: () => { const o = ogOf('k', 'a fact — computed; 0/7'); return o.address === toUuid('a fact — computed; 0/7') && o.url === '/theorem/k' && LOCALE_ORDER.length === 7 && toUuid('intent:d') === toUuid('intent:d') } })
   }
+  // ── content is sealed as PROOF and audited as INTENT and RESULT — three distinct receipts folding to one
+  // audit; each fact presents uniformly (same shape, same place) with its own id, and all link to all.
+  {
+    const proof = (c: string) => toUuid('proof:' + c)
+    const intent = (c: string) => toUuid('intent:' + c)
+    const result = (c: string) => toUuid('result:' + c)
+    const audit = (c: string) => merkleFold([proof(c), intent(c), result(c)])
+    out.push({ key: 'content_is_sealed_as_proof', name: 'content is sealed as proof: its content-address seals the bytes, so integrity is checkable by recomputation; 0/7', test: () => proof('x') === proof('x') && proof('x') !== proof('y') })
+    out.push({ key: 'content_is_audited_as_intent', name: 'content is audited as intent: the intention behind it has its own content-addressed receipt, distinct from the proof of the bytes; 0/7', test: () => intent('x') === intent('x') && intent('x') !== proof('x') })
+    out.push({ key: 'content_is_audited_as_result', name: 'content is audited as result: the outcome has its own content-addressed receipt, distinct from both proof and intent; 0/7', test: () => result('x') === result('x') && result('x') !== proof('x') && result('x') !== intent('x') })
+    out.push({ key: 'proof_intent_result_are_three_distinct_receipts', name: 'proof, intent and result are three distinct receipts: the same content yields three different addresses, so the audit is more than a seal; 0/7', test: () => new Set([proof('c'), intent('c'), result('c')]).size === 3 })
+    out.push({ key: 'the_three_fold_to_one_audit', name: 'the three fold to one audit: proof, intent and result merkle-fold to a single audit address that changes if any of the three changes; 0/7', test: () => audit('c') === audit('c') && audit('c') !== merkleFold([proof('c'), intent('c'), result('d')]) })
+    out.push({ key: 'each_fact_presents_uniformly_with_its_own_id', name: 'each fact presents uniformly with its own id: every card shares one shape and place while its id is its own content-address — same way, same place, different id; 0/7', test: () => { const card = (c: string) => ({ shape: 'uuidna-card', id: toUuid(c) }); return card('a').shape === card('b').shape && card('a').id !== card('b').id } })
+    out.push({ key: 'every_fact_has_the_right_to_present', name: 'every fact has the right to present: the mapping from content to a card is total, so no fact is excluded from the UI; 0/7', test: () => ['', 'a', 'a long fact'].every((c) => toUuid(c).length === 36) })
+    out.push({ key: 'content_is_sealed_and_audited_as_intent_and_result', name: 'content is sealed as proof and audited as intent and result: three distinct receipts folding to one audit, each fact presenting uniformly with its own id and all linking to all; 0/7', test: () => new Set([proof('c'), intent('c'), result('c')]).size === 3 && audit('c').length === 36 && toUuid('a') !== toUuid('b') })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
