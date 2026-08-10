@@ -105,6 +105,30 @@ classical model. Every one of the **15 registered claims** recomputes from
 provable theorem in the ledger, all gated by `claims-gate.ts` (a bounded,
 accounted set, not a floating "every").
 
+## The seven, computed to the floor — one theorem per problem
+
+Each Clay problem gets **one** Lean theorem that **computes** from the ℤ/9 doubling sequence
+(`orbit k = 2ᵏ mod 9`, the reflection `refl d = 10 − d`, the derived `isUnit`). Every one carries
+`provenHere = 0` — the fact is *adjacent* to the problem, never the conjecture. **No anchors, no
+axioms** (pure `by decide`); `#print axioms` reports *does not depend on any axioms*, verified by
+`lean src/proof/index.lean`.
+
+| # | Problem (→ theorem page, Lean proof + outlet) | Computed formula (from the sequence) | Honest bound — not the prize |
+|---|-----------------------------------------------|--------------------------------------|------------------------------|
+| 1 | [Riemann](/theorem/riemann_reflection_and_heart) | `refl ∘ refl = id ∧ #{d : refl d = d} = 1` | the symmetry and its one heart (the ½-analogue) — not the zeros' place |
+| 2 | [P vs NP](/theorem/p_vs_np_inverse_is_unique) | `∀ d, #{e : d·e ≡ 1 (mod 9)} = (isUnit d ? 1 : 0)` | a unique inverse (verify in one step) — not a separation |
+| 3 | [Navier–Stokes](/theorem/navier_stokes_flow_is_bounded) | `∀ k, 2ᵏ mod 9 ∈ span⟨2⟩` | a bounded 6-cycle forever — not global smoothness |
+| 4 | [Yang–Mills](/theorem/yang_mills_spectral_gap) | `2ᵏ ≢ 1 for 0 < k < 6, and 2⁶ ≡ 1` | an order-6 spectral gap — not the mass gap |
+| 5 | [Hodge](/theorem/hodge_span_is_the_units) | `span⟨2⟩ = units ∧ non-units ∉ span` | algebraic generation/containment — not (p,p) ⇒ algebraic |
+| 6 | [Birch–Swinnerton-Dyer](/theorem/birch_swinnerton_dyer_vanishing) | `Σ span ≡ Σ units ≡ 0 (mod 9)` | a digit-sum vanishing (27 ≡ 0) — not rank ↔ L-order |
+| 7 | [Poincaré](/theorem/poincare_single_closed_loop) | `orbit 6 = orbit 0, six distinct steps` | one closed simple loop — not the 3-sphere (Perelman's theorem) |
+
+Each problem links to its **theorem page** — the Lean proof in publication form with a citation to the
+qualified outlet (Clay Mathematics Institute; Perelman's arXiv for Poincaré). The full Lean, every
+`by decide` proof sorry-free and axiom-free, is in
+[`src/proof/index.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/index.lean);
+each remains **0 / 7**.
+
 ## Read
 - [Research](/RESEARCH) — the full study (§1–§12, incl. the author's perspective)
 - [Compute](/compute) — results recomputed live from the fused TypeScript modules

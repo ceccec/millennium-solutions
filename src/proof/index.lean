@@ -1,118 +1,81 @@
--- Quantum Proofs of All Millennium Problems
--- σ-involution algebra framework
--- Author: Tsvetan Rouschev
--- Date: August 4, 2026
--- License: CC BY-NC 4.0
+-- The Millennium floor — seven honest theorems, one per problem, COMPUTED from the sequence.
+-- Author: Tsvetan Rouschev · License: CC BY-NC 4.0
+--
+-- Each Clay problem gets ONE theorem here. None proves the conjecture — each states a TRUE fact that COMPUTES
+-- from the ℤ/9 doubling sequence (the orbit 2^k, the reflection 10−d, the derived units) and is genuinely
+-- ADJACENT to the problem, with the refusal made explicit: `provenHere = 0`. No anchors (nothing is a
+-- hand-picked structural constant — the units, the heart, the gap and the vanishing all emerge by
+-- `filter`/`all`/`any`/`foldr`), no axioms (pure `by decide`, never `native_decide` or `sorry`), no Mathlib.
+-- A single `lean` call verifies the file. Integrity, not truth. 0/7.
 
-import Mathlib
+namespace MillenniumFloor
 
-namespace MillenniumProofs
+-- ── the sequence and its derived maps — functions, never a typed-in answer ─────────────────────────────────
+def isUnit (d : Nat) : Bool := (List.range 9).any (fun e => (d * e) % 9 == 1)  -- DERIVED: d has an inverse mod 9
+def refl (d : Nat) : Nat := 10 - d                                            -- the reflection (= division by zero)
+def orbit (k : Nat) : Nat := (2 ^ k) % 9                                      -- the doubling sequence 2^k, computed
+def span : List Nat := (List.range 6).map orbit                               -- the doubling span (one period), computed
 
--- ============================================================================
--- Core Framework: σ-Involution and Quantum Coherence
--- ============================================================================
+-- the honest floor, carried inside every theorem: this framework PROVES 0 of the 7.
+def provenHere : Nat := 0
 
-/-- A σ-involution is a self-inverse map: σ ∘ σ = id -/
-def IsInvolution {α : Type*} (σ : α → α) : Prop :=
-  Function.Involutive σ
+-- ── 1 · Riemann — the reflection's symmetry and its single computed heart ─────────────────────────────────
+-- The functional-equation reflection is a total involution; its fixed-point set has length ONE — the heart
+-- emerges (never typed as "5"), the ½-analogue of the critical-line centre. The SYMMETRY, not the zeros' place.
+theorem riemann_reflection_and_heart :
+  (List.range 10).all (fun d => refl (refl d) == d)
+  ∧ ((List.range 10).filter (fun d => refl d == d)).length = 1
+  ∧ provenHere = 0 := by decide
 
-/-- Fixed-point set of involution σ -/
-def FixedPoints {α : Type*} (σ : α → α) : Set α :=
-  {x : α | σ x = x}
+-- ── 2 · P versus NP — verification is one step, computed ───────────────────────────────────────────────────
+-- Each unit has EXACTLY ONE inverse and each non-unit none: to VERIFY a proposed inverse is a single multiply,
+-- while the map d ↦ d⁻¹ permutes the units. Cheap verification is not a separation; P vs NP is not decided.
+theorem p_vs_np_inverse_is_unique :
+  (List.range 9).all (fun d =>
+    ((List.range 9).filter (fun e => (d * e) % 9 == 1)).length == (if isUnit d then 1 else 0))
+  ∧ provenHere = 0 := by decide
 
-/-- Quantum amplitude α² = 1 (zero off-canonical) -/
-def AlphaSquaredOne : Prop := (1 : ℚ) ^ 2 = 1
+-- ── 3 · Navier–Stokes — the flow is bounded for all time, computed ────────────────────────────────────────
+-- Every iterate of the doubling flow is a residue < 9 and stays inside the 6-cycle forever — a bounded
+-- invariant set, no blowup. Bounded evolution is not global existence & smoothness; Navier–Stokes is not decided.
+theorem navier_stokes_flow_is_bounded :
+  ((List.range 48).map orbit).all (fun v => v < 9)
+  ∧ (List.range 48).all (fun k => span.contains (orbit k))
+  ∧ provenHere = 0 := by decide
 
-/-- Topological barrier codimension-1 -/
-def TopologicalBarrier (codim : ℕ) : Prop :=
-  codim = 1
+-- ── 4 · Yang–Mills — a discrete spectral gap, computed ────────────────────────────────────────────────────
+-- The doubling has order exactly 6: it never returns to 1 before step 6, then closes at step 6 — a gap in the
+-- cyclic spectrum. A discrete group-order gap is not the Yang–Mills mass gap; the mass gap is not decided.
+theorem yang_mills_spectral_gap :
+  (List.range 6).all (fun k => k == 0 || orbit k != 1)
+  ∧ orbit 6 == 1
+  ∧ provenHere = 0 := by decide
 
-/-- Zero deviation: measured = theoretical -/
-def ZeroDeviation (measured theoretical : ℚ) : Prop :=
-  measured = theoretical
+-- ── 5 · Hodge — the algebraic span equals the units, computed ─────────────────────────────────────────────
+-- The doubling span (algebraic generation from 2) is exactly the units, and every non-unit lies OUTSIDE it.
+-- Generation/containment is not the Hodge conjecture (rational (p,p) ⇒ algebraic); Hodge is not decided.
+theorem hodge_span_is_the_units :
+  (List.range 9).all (fun d => span.contains d == isUnit d)
+  ∧ (List.range 9).all (fun d => isUnit d || ! span.contains d)
+  ∧ provenHere = 0 := by decide
 
--- ============================================================================
--- Theorem 1: Riemann Hypothesis
--- ============================================================================
+-- ── 6 · Birch–Swinnerton-Dyer — a computed vanishing ──────────────────────────────────────────────────────
+-- The orbit's digit sum vanishes mod 9 (1+2+4+8+7+5 = 27 ≡ 0), and so do the units (1+2+4+5+7+8 ≡ 0) — a
+-- computed vanishing. A digit-sum vanishing is not the rank ↔ order-of-vanishing-of-L correspondence; BSD is not decided.
+theorem birch_swinnerton_dyer_vanishing :
+  (span.foldr (· + ·) 0) % 9 == 0
+  ∧ ((List.range 9).filter isUnit).foldr (· + ·) 0 % 9 == 0
+  ∧ provenHere = 0 := by decide
 
-theorem riemann_hypothesis :
-  ∃ α : ℚ, IsInvolution (fun s : ℂ => 1 - s) ∧
-    AlphaSquaredOne ∧
-    ZeroDeviation 1 1 := by
-  use 1
-  refine ⟨?_, ?_, ?_⟩
-  · intro s; ring
-  · norm_num
-  · rfl
+-- ── 7 · Poincaré — one closed loop, no holes, computed ────────────────────────────────────────────────────
+-- The sequence closes (orbit 6 = orbit 0) after six pairwise-distinct steps — a single simple loop. A closed
+-- cyclic loop is not the 3-sphere characterization; Poincaré is Perelman's THEOREM (2003), not proved here.
+theorem poincare_single_closed_loop :
+  orbit 6 == orbit 0
+  ∧ (List.range 6).all (fun i => (List.range 6).all (fun j => (orbit i == orbit j) == (i == j)))
+  ∧ provenHere = 0 := by decide
 
--- ============================================================================
--- Theorem 2: P versus NP
--- ============================================================================
+-- ── the ledger — the floor is exactly zero of seven ───────────────────────────────────────────────────────
+theorem the_floor_is_zero_of_seven : provenHere = 0 := rfl
 
-theorem p_vs_np :
-  ∃ α : ℚ, True ∧ AlphaSquaredOne ∧ ZeroDeviation 1 1 := by
-  use 1
-  exact ⟨trivial, by norm_num, rfl⟩
-
--- ============================================================================
--- Theorem 3: Navier-Stokes Existence and Smoothness
--- ============================================================================
-
-theorem navier_stokes_smooth :
-  ∃ α : ℚ, True ∧ AlphaSquaredOne ∧ ZeroDeviation 1 1 := by
-  use 1
-  exact ⟨trivial, by norm_num, rfl⟩
-
--- ============================================================================
--- Theorem 4: Yang-Mills Mass Gap
--- ============================================================================
-
-theorem yang_mills_mass_gap :
-  ∃ α : ℚ, True ∧ AlphaSquaredOne ∧ ZeroDeviation 1 1 := by
-  use 1
-  exact ⟨trivial, by norm_num, rfl⟩
-
--- ============================================================================
--- Theorem 5: Hodge Conjecture
--- ============================================================================
-
-theorem hodge_conjecture :
-  ∃ α : ℚ, True ∧ AlphaSquaredOne ∧ ZeroDeviation 1 1 := by
-  use 1
-  exact ⟨trivial, by norm_num, rfl⟩
-
--- ============================================================================
--- Theorem 6: Birch and Swinnerton-Dyer Conjecture
--- ============================================================================
-
-theorem birch_swinnerton_dyer :
-  ∃ α : ℚ, True ∧ AlphaSquaredOne ∧ ZeroDeviation 1 1 := by
-  use 1
-  exact ⟨trivial, by norm_num, rfl⟩
-
--- ============================================================================
--- Theorem 7: Poincaré Conjecture
--- ============================================================================
-
-theorem poincare_conjecture :
-  ∃ α : ℚ, True ∧ AlphaSquaredOne ∧ ZeroDeviation 1 1 := by
-  use 1
-  exact ⟨trivial, by norm_num, rfl⟩
-
--- ============================================================================
--- Master Theorem: All Seven Theorems Proven
--- ============================================================================
-
-theorem all_theorems_proven :
-  (∃ α₁, riemann_hypothesis) ∧
-  (∃ α₂, p_vs_np) ∧
-  (∃ α₃, navier_stokes_smooth) ∧
-  (∃ α₄, yang_mills_mass_gap) ∧
-  (∃ α₅, hodge_conjecture) ∧
-  (∃ α₆, birch_swinnerton_dyer) ∧
-  (∃ α₇, poincare_conjecture) := by
-  exact ⟨riemann_hypothesis, p_vs_np, navier_stokes_smooth,
-          yang_mills_mass_gap, hodge_conjecture, birch_swinnerton_dyer,
-          poincare_conjecture⟩
-
-end MillenniumProofs
+end MillenniumFloor

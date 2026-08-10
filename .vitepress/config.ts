@@ -100,10 +100,12 @@ export default defineConfig({
   transformPageData(pageData) {
     // Each object is the hero of its own page: a dynamic /theorem/<key> page takes its OG title and
     // description from its own params — the theorem's name, and how it was achieved.
-    const p = (pageData as { params?: { key?: string; name?: string; receipt?: string } }).params
+    const p = (pageData as { params?: { key?: string; name?: string; receipt?: string; problem?: string; outletName?: string } }).params
     if (p?.key) {
       pageData.title = p.name
-      pageData.description = 'Achieved by exhaustive computation over a finite domain in scripts/discover.ts, gate-checked against the honesty floor, receipted and chained, and re-verified on every build (content-address ' + p.receipt + '). A decidable fact in the ℤ/9 ledger — integrity, not truth. entails → 0/7.'
+      pageData.description = p.problem
+        ? 'A Lean 4 theorem computed from the ℤ/9 doubling sequence, machine-checked sorry-free and axiom-free (content-address ' + p.receipt + '). Adjacent to the Clay problem “' + p.problem + '” — and NOT the conjecture. Reference: ' + p.outletName + '. Integrity, not truth. entails → 0/7.'
+        : 'Achieved by exhaustive computation over a finite domain in scripts/discover.ts, gate-checked against the honesty floor, receipted and chained, and re-verified on every build (content-address ' + p.receipt + '). A decidable fact in the ℤ/9 ledger — integrity, not truth. entails → 0/7.'
     }
     const clean = pageData.relativePath.replace(/(^|\/)index\.md$/, '$1').replace(/\.md$/, '.html')
     const url = SITE + clean
