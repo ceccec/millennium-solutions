@@ -147,6 +147,7 @@ export default defineConfig({
       { text: 'ceccec ↗', link: 'https://ceccec.psg.bg/' },
       { text: 'Read', items: [
         { text: 'Abstract', link: '/ABSTRACT' },
+        { text: 'The organism', link: '/organism' },
         { text: 'The', link: '/the' },
         { text: 'Theorems', link: '/THEOREMS' },
         { text: 'Challenges', link: '/CHALLENGES' },
@@ -229,6 +230,7 @@ export default defineConfig({
       {
         text: 'Decode',
         items: [
+          { text: 'The organism', link: '/organism' },
           { text: 'Sequence decode (ℤ/9)', link: '/SEQUENCE-DECODE' },
           { text: 'Physics scales', link: '/PHYSICS-SCALES' },
         ],
