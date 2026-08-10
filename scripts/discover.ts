@@ -2906,6 +2906,18 @@ function generated(): typeof curated {
     out.push({ key: 'the_digital_root_of_seven_to_the_k_has_period_three', name: 'the digital root of 7^k has period three: 7, 4, 1 repeating (7^1≡7, 7^2≡4, 7^3≡1 mod 9) — the seven’s orbit in ℤ/9; 0/7', test: () => 7 ** 1 % 9 === 7 && 7 ** 2 % 9 === 4 && 7 ** 3 % 9 === 1 && 7 ** 4 % 9 === 7 })
     out.push({ key: 'seven_divides_the_repunit_of_length_six', name: 'seven divides the repunit of length six: 7 | 111111, since 10^6 ≡ 1 (mod 7) makes R_6 = (10^6−1)/9 a multiple of seven; 0/7', test: () => 111111 % 7 === 0 })
   }
+  // ── the octave (8): powers of two, Mihailescu (8 & 9 the only consecutive perfect powers), Mersenne, the byte.
+  {
+    const isCube = (n: number) => { const r = Math.round(Math.cbrt(n)); return r * r * r === n }
+    out.push({ key: 'eight_and_nine_are_the_only_consecutive_perfect_powers', name: 'eight and nine are the only consecutive perfect powers: 2³ and 3² are adjacent, and Mihailescu (Catalan) settles that no other perfect powers differ by one — 8 and 9 (the base) are unique; 0/7', test: () => { const N = 100000, P = new Set<number>(); for (let a = 2; a * a <= N; a++) { let x = a * a; while (x <= N) { P.add(x); x *= a } } const hits: number[] = []; for (let n = 4; n < N; n++) if (P.has(n) && P.has(n + 1)) hits.push(n); return hits.length === 1 && hits[0] === 8 } })
+    out.push({ key: 'eight_is_the_largest_fibonacci_perfect_cube', name: 'eight is the largest Fibonacci number that is a perfect cube: among the Fibonacci numbers only 1 and 8 = 2³ are cubes — the octave sits on the sequence; 0/7', test: () => { let a = 1, b = 1; const cubes: number[] = []; for (let i = 0; i < 40; i++) { if (isCube(a) && a > 1) cubes.push(a);[a, b] = [b, a + b] } return cubes.length === 1 && cubes[0] === 8 } })
+    out.push({ key: 'every_natural_has_a_unique_binary_representation', name: 'every natural number has a unique binary representation: each n is one sum of distinct powers of two — the base-2 place-value the byte counts on; 0/7', test: () => { for (let n = 1; n <= 2000; n++) { let s = 0; for (let b = 0; b < 12; b++) if (n & (1 << b)) s += 2 ** b; if (s !== n) return false } return true } })
+    out.push({ key: 'the_eighth_roots_of_unity_sum_to_zero', name: 'the eight eighth-roots of unity sum to zero: Σ e^(2πik/8) for k=0..7 = 0 — the octave closes the circle; 0/7', test: () => { let re = 0, im = 0; for (let k = 0; k < 8; k++) { re += Math.cos(2 * Math.PI * k / 8); im += Math.sin(2 * Math.PI * k / 8) } return Math.abs(re) < 1e-9 && Math.abs(im) < 1e-9 } })
+    out.push({ key: 'two_is_the_only_even_prime', name: 'two is the only even prime: every other even number has two as a proper factor — the even prime that halves the base ten; 0/7', test: () => { for (let n = 4; n <= 1000; n += 2) if (isPrime(n)) return false; return isPrime(2) } })
+    out.push({ key: 'two_to_the_eighth_is_two_hundred_fifty_six_a_byte', name: 'two to the eighth is 256: a byte of 8 bits addresses 256 values — the octave of bits; 0/7', test: () => 2 ** 8 === 256 })
+    out.push({ key: 'a_mersenne_prime_forces_a_prime_exponent', name: 'a Mersenne prime forces a prime exponent: 2^k − 1 can be prime only when k is prime (k=2,3,5,7 give 3,7,31,127; composite k factors) — a necessary condition, not sufficient; 0/7', test: () => [2, 3, 5, 7].every((k) => isPrime(2 ** k - 1)) && [4, 6, 8, 9].every((k) => !isPrime(2 ** k - 1)) })
+    out.push({ key: 'two_to_the_tenth_is_1024_the_harmonic_ledger', name: 'two to the tenth is 1024: ten doublings reach the harmonic ledger size, digitalRoot(1024)=7 — the octave raised to the tenth is the milestone count; 0/7', test: () => 2 ** 10 === 1024 })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

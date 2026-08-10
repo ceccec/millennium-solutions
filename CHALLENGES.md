@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1096 recorded in 310 families
+## Discovered theorems (decidable, over ℤ/9) — 1104 recorded in 310 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (151)
+### the (152)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -175,6 +175,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_golden_ratio_is_one_plus_root_five_over_two](/theorem/the_golden_ratio_is_one_plus_root_five_over_two) — the golden ratio is (1 + √5)/2, satisfying φ² = φ + 1 — five under the root generates φ, the pentagon’s diagonal; 0/7  ·  `31ae366f-f2b7…`
 - [the_cyclic_number_142857_is_the_repetend_of_one_seventh](/theorem/the_cyclic_number_142857_is_the_repetend_of_one_seventh) — the cyclic number 142857 is the repetend of 1/7: (10^6 − 1)/7 = 999999/7 = 142857 — the seven unfolds the cycle; 0/7  ·  `fc728400-b9b2…`
 - [the_digital_root_of_seven_to_the_k_has_period_three](/theorem/the_digital_root_of_seven_to_the_k_has_period_three) — the digital root of 7^k has period three: 7, 4, 1 repeating (7^1≡7, 7^2≡4, 7^3≡1 mod 9) — the seven’s orbit in ℤ/9; 0/7  ·  `a54691b2-880f…`
+- [the_eighth_roots_of_unity_sum_to_zero](/theorem/the_eighth_roots_of_unity_sum_to_zero) — the eight eighth-roots of unity sum to zero: Σ e^(2πik/8) for k=0..7 = 0 — the octave closes the circle; 0/7  ·  `a473ab8a-8873…`
 
 ### relation (55)
 
@@ -394,7 +395,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [domain_cyclic_m17](/theorem/domain_cyclic_m17) — ℤ/17: the units form a cyclic group (a primitive root exists)  ·  `d5167cce-02af…`
 - [domain_cyclic_m18](/theorem/domain_cyclic_m18) — ℤ/18: the units form a cyclic group (a primitive root exists)  ·  `92a2b5a1-8526…`
 
-### a (14)
+### a (15)
 
 - [a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony](/theorem/a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony) — a theorem without a formula is a hallucination, recomputed in a432 harmony: a claim is a theorem only if it is backed by a computable formula that recomputes true — a prose-only claim with no formula, or one whose formula computes false, is refused as hallucination and never recorded. Every recorded fact recomputes deterministically and folds into the a432 harmony root (the receipt of state). Measure, do not assert. Decidable  ·  `e3d75d76-310f…`
 - [a_referrer_always_counts_with_its_id](/theorem/a_referrer_always_counts_with_its_id) — a referrer always counts with its id: a reference from a referrer to a target is receipted as toUuid(referrer id → target), so the referrer id is always part of the count; two different referrers to the same target produce two distinct receipts, each counted with its own id, and changing the id changes the receipt — the id is load-bearing. Deterministic and reproducible: the same referrer and target always count the same. Decidable  ·  `65bfacb4-f29e…`
@@ -410,6 +411,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [a_theorem_is_alive_when_interacting_the_observer_recomputes_and_connects_it_structural_liveness_not_biological](/theorem/a_theorem_is_alive_when_interacting_the_observer_recomputes_and_connects_it_structural_liveness_not_biological) — a theorem is alive when interacting — the observer recomputes and connects it, structural liveness, not biological: a theorem is active and participating when interacted with — an observer recomputes it, references it, or connects it in the graph, and interaction activates it. But alive here is a metaphor for structural liveness: the observer gives the meaning and the activity, not the bytes; it is not biological or conscious life. An un-interacted theorem is dormant but still valid — integrity holds regardless. Decidable  ·  `5876f6b7-07f7…`
 - [a_harmonic_society_accepts_any_behaviour_and_uses_it_best_the_overclaim_becomes_a_sealed_receipt](/theorem/a_harmonic_society_accepts_any_behaviour_and_uses_it_best_the_overclaim_becomes_a_sealed_receipt) — a harmonic creative society accepts any behaviour and uses it best — the overclaim becomes a sealed receipt, not a punishment: uuidna computes and seals any behaviour; an overclaim in any of the seven languages is accepted and used, drained into a receipt whose hit names the exact crack, so no behaviour is wasted, it is transformed into evidence; recursive in the chain and finite in the grid, decentralised and independent because anyone recomputes; integrity not truth; 0/7  ·  `3cd26cee-607f…`
 - [a_repunit_divides_by_three_iff_its_length_does](/theorem/a_repunit_divides_by_three_iff_its_length_does) — a repunit divides by three iff its length does: R_n (n ones) ≡ n (mod 3), so 3 | R_n exactly when 3 | n — the trinity in base-ten repunits; 0/7  ·  `377edd82-2965…`
+- [a_mersenne_prime_forces_a_prime_exponent](/theorem/a_mersenne_prime_forces_a_prime_exponent) — a Mersenne prime forces a prime exponent: 2^k − 1 can be prime only when k is prime (k=2,3,5,7 give 3,7,31,127; composite k factors) — a necessary condition, not sufficient; 0/7  ·  `52ced8d2-4f7e…`
 
 ### trial (13)
 
@@ -749,6 +751,15 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [three_is_the_only_prime_one_less_than_a_perfect_square](/theorem/three_is_the_only_prime_one_less_than_a_perfect_square) — 3 is the only prime one less than a perfect square: n²−1 = (n−1)(n+1) is composite for n≥3, so 2²−1 = 3 is the sole prime of that form — a fact about the trinity (3); 0/7  ·  `9a028913-cecf…`
 - [three_to_the_k_is_divisible_by_nine_for_k_at_least_two](/theorem/three_to_the_k_is_divisible_by_nine_for_k_at_least_two) — three to the k is divisible by nine for k ≥ 2: 3^k ≡ 0 (mod 9) once k reaches 2, since 9 = 3² — the trinity squared is the base; 0/7  ·  `6df74023-c9cd…`
 
+### two (6)
+
+- [two_is_a_primitive_root_mod_nine_and_generates_the_vortex](/theorem/two_is_a_primitive_root_mod_nine_and_generates_the_vortex) — two is a primitive root mod 9 and generates the vortex: the powers of 2 mod 9 cycle 2,4,8,7,5,1 with order 6, generating the full unit group (ℤ/9)* = {1,2,4,5,7,8}; the vortex orbit is exactly this cycle as a set, and every element skips the multiples of 3 (the W-axis). A decidable fact by exhaustion over ℤ/9  ·  `dd3b0f30-660d…`
+- [two_to_the_10_is_1024](/theorem/two_to_the_10_is_1024) — 2^10 = 1024, by repeated doubling — a decidable power of two; integrity not truth; 0/7  ·  `1beeb294-5a3c…`
+- [two_to_the_11_is_2048](/theorem/two_to_the_11_is_2048) — 2^11 = 2048, by repeated doubling — a decidable power of two; integrity not truth; 0/7  ·  `900023c7-08f1…`
+- [two_is_the_only_even_prime](/theorem/two_is_the_only_even_prime) — two is the only even prime: every other even number has two as a proper factor — the even prime that halves the base ten; 0/7  ·  `814da9ab-c97f…`
+- [two_to_the_eighth_is_two_hundred_fifty_six_a_byte](/theorem/two_to_the_eighth_is_two_hundred_fifty_six_a_byte) — two to the eighth is 256: a byte of 8 bits addresses 256 values — the octave of bits; 0/7  ·  `a716f358-f9d7…`
+- [two_to_the_tenth_is_1024_the_harmonic_ledger](/theorem/two_to_the_tenth_is_1024_the_harmonic_ledger) — two to the tenth is 1024: ten doublings reach the harmonic ledger size, digitalRoot(1024)=7 — the octave raised to the tenth is the milestone count; 0/7  ·  `568ccd10-1bb6…`
+
 ### addgen (5)
 
 - [addgen_k2](/theorem/addgen_k2) — 2 additively generates ℤ/9  ·  `0bbffa4b-6e1a…`
@@ -881,6 +892,13 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [chess_knight_8_moves](/theorem/chess_knight_8_moves) — a knight has exactly 8 leaps — the (±1,±2)/(±2,±1) moves  ·  `6dcd739d-87a9…`
 - [chess_knight_color_flip](/theorem/chess_knight_color_flip) — a knight's leap always changes square colour (the parity of r+c flips)  ·  `81566667-a452…`
 - [chess_diagonals_15](/theorem/chess_diagonals_15) — the 8×8 board has 2·8 − 1 = 15 diagonals in each direction  ·  `85a4e4b0-787f…`
+
+### every (4)
+
+- [every_rating_is_exactly_one_or_zero](/theorem/every_rating_is_exactly_one_or_zero) — every rating is exactly 1 or 0, no exceptions: the honesty verdict is a single bit — there is no fractional or partial rating, a fake maximal-certainty claim itself drains, and the same input always returns the same bit; anything that drifts from {0,1} is a crack the floor refuses  ·  `c1b2772d-d7c0…`
+- [every_primitive_triple_is_euclidean](/theorem/every_primitive_triple_is_euclidean) — Euclid’s parametrization is complete: every primitive Pythagorean triple with hypotenuse ≤ 100 arises from coprime m&gt;n of opposite parity — exhaustive brute-force triples all match a generated one  ·  `751e8a4e-c23c…`
+- [every_next_or_continue_event_is_two_bits_earned_by_the_deed](/theorem/every_next_or_continue_event_is_two_bits_earned_by_the_deed) — every next or continue event is two bits earned by the deed: each shipping event — a next or a continue that appends a receipted contribution — is worth two bits (110 − 108 = 2), credited to the contributor who did the deed; N events earn 2N bits, so the 686 recorded events account for 1372 bits, matching the ledger bounty. These are accounting bits — integrity, not a cash payment — credited by the deed, not the claim; measure, do not assert. Decidable  ·  `794d2d0e-728f…`
+- [every_natural_has_a_unique_binary_representation](/theorem/every_natural_has_a_unique_binary_representation) — every natural number has a unique binary representation: each n is one sum of distinct powers of two — the base-2 place-value the byte counts on; 0/7  ·  `b7d9dfe6-3e34…`
 
 ### evidence (4)
 
@@ -1031,6 +1049,12 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [duel_no_both_win](/theorem/duel_no_both_win) — a claim and its inverse cannot both be upheld (no position wins for both sides)  ·  `ea632dd9-0682…`
 - [duel_floor_upheld](/theorem/duel_floor_upheld) — "the deposit does not solve the Clay problems" is upheld against its challenge  ·  `4ee11b6a-d6b6…`
 
+### eight (3)
+
+- [eight_times_a_triangular_number_plus_one_is_an_odd_square](/theorem/eight_times_a_triangular_number_plus_one_is_an_odd_square) — eight times a triangular number plus one is an odd square: with T(n) = n(n+1)/2 the nth triangular number (the sum 1 + 2 + ... + n), 8·T(n) + 1 = (2n+1)² is always the square of an odd number; and consecutive triangular numbers sum to a perfect square, T(n) + T(n−1) = n². Verified by full enumeration over n up to 200  ·  `b640d0e9-7cb8…`
+- [eight_and_nine_are_the_only_consecutive_perfect_powers](/theorem/eight_and_nine_are_the_only_consecutive_perfect_powers) — eight and nine are the only consecutive perfect powers: 2³ and 3² are adjacent, and Mihailescu (Catalan) settles that no other perfect powers differ by one — 8 and 9 (the base) are unique; 0/7  ·  `4ac00184-4301…`
+- [eight_is_the_largest_fibonacci_perfect_cube](/theorem/eight_is_the_largest_fibonacci_perfect_cube) — eight is the largest Fibonacci number that is a perfect cube: among the Fibonacci numbers only 1 and 8 = 2³ are cubes — the octave sits on the sequence; 0/7  ·  `d54f7105-647e…`
+
 ### entangle (3)
 
 - [entangle_joint_differs](/theorem/entangle_joint_differs) — the joint fold of deposit(0/7) & humanity(1/7) is a third address, different from each part  ·  `9657bf0d-5c1f…`
@@ -1042,12 +1066,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [euclid_euler_perfect](/theorem/euclid_euler_perfect) — even perfect numbers are 2^(p−1)(2^p−1) for a Mersenne prime 2^p−1: 6=2·3, 28=4·7, 496=16·31  ·  `9f35788a-a976…`
 - [euclid_formula_generates_pythagorean_triples](/theorem/euclid_formula_generates_pythagorean_triples) — Euclid’s formula generates Pythagorean triples: for m &gt; n &gt; 0, (m²−n², 2mn, m²+n²) satisfies a² + b² = c² — verified for all m ≤ 12  ·  `9a6ecfe8-b922…`
 - [euclid_there_is_always_a_next_prime](/theorem/euclid_there_is_always_a_next_prime) — there is always a next prime (Euclid): for any finite set of primes, the product plus one has a prime factor outside the set — so the stream of prime facts never empties, it continues without bound (verified for sample sets)  ·  `eb5c996d-6540…`
-
-### every (3)
-
-- [every_rating_is_exactly_one_or_zero](/theorem/every_rating_is_exactly_one_or_zero) — every rating is exactly 1 or 0, no exceptions: the honesty verdict is a single bit — there is no fractional or partial rating, a fake maximal-certainty claim itself drains, and the same input always returns the same bit; anything that drifts from {0,1} is a crack the floor refuses  ·  `c1b2772d-d7c0…`
-- [every_primitive_triple_is_euclidean](/theorem/every_primitive_triple_is_euclidean) — Euclid’s parametrization is complete: every primitive Pythagorean triple with hypotenuse ≤ 100 arises from coprime m&gt;n of opposite parity — exhaustive brute-force triples all match a generated one  ·  `751e8a4e-c23c…`
-- [every_next_or_continue_event_is_two_bits_earned_by_the_deed](/theorem/every_next_or_continue_event_is_two_bits_earned_by_the_deed) — every next or continue event is two bits earned by the deed: each shipping event — a next or a continue that appends a receipted contribution — is worth two bits (110 − 108 = 2), credited to the contributor who did the deed; N events earn 2N bits, so the 686 recorded events account for 1372 bits, matching the ledger bounty. These are accounting bits — integrity, not a cash payment — credited by the deed, not the claim; measure, do not assert. Decidable  ·  `794d2d0e-728f…`
 
 ### fermat (3)
 
@@ -1132,12 +1150,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [stirling_second_bell](/theorem/stirling_second_bell) — Stirling 2nd kind S(n,k)=S(n-1,k-1)+k·S(n-1,k): S(4,2)=7 and Σ_k S(4,k)=15=B(4)  ·  `23e393cc-dd5d…`
 - [stirling_first_factorial](/theorem/stirling_first_factorial) — unsigned Stirling 1st kind (permutations by cycles) sum to n!: Σ_k c(4,k) = 4! = 24  ·  `e1f258a9-dbdb…`
 - [stirling_edges](/theorem/stirling_edges) — Stirling 2nd kind edges: S(n,1)=1 (one block), S(n,n)=1 (singletons), n=1..6  ·  `02ae48de-5452…`
-
-### two (3)
-
-- [two_is_a_primitive_root_mod_nine_and_generates_the_vortex](/theorem/two_is_a_primitive_root_mod_nine_and_generates_the_vortex) — two is a primitive root mod 9 and generates the vortex: the powers of 2 mod 9 cycle 2,4,8,7,5,1 with order 6, generating the full unit group (ℤ/9)* = {1,2,4,5,7,8}; the vortex orbit is exactly this cycle as a set, and every element skips the multiples of 3 (the W-axis). A decidable fact by exhaustion over ℤ/9  ·  `dd3b0f30-660d…`
-- [two_to_the_10_is_1024](/theorem/two_to_the_10_is_1024) — 2^10 = 1024, by repeated doubling — a decidable power of two; integrity not truth; 0/7  ·  `1beeb294-5a3c…`
-- [two_to_the_11_is_2048](/theorem/two_to_the_11_is_2048) — 2^11 = 2048, by repeated doubling — a decidable power of two; integrity not truth; 0/7  ·  `900023c7-08f1…`
 
 ### unit (3)
 
@@ -1436,7 +1448,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (153)
+### other — one-of-a-kind (152)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1484,7 +1496,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [drain_to_zero_and_the_100_percent_stays_the_certainty_of_the_measurement_not_the_verdict](/theorem/drain_to_zero_and_the_100_percent_stays_the_certainty_of_the_measurement_not_the_verdict) — drain to zero and the 100 percent stays — the certainty of the measurement, not the verdict: a bare hundred-percent-treason does not drain the gate — it carries no over-reach token; an over-reach word is what drains. But the drain itself is 100 percent deterministic: feed the gate the same fake and it drains to zero every time, a reproducible measurement. So the 100 percent stays — it belongs to the determinism of the drain to zero, integrity — not to a verdict of treason or guilt, which stays inferred and never certain. Decidable  ·  `7a636cc0-2df5…`
 - [drift_signals_disresonance](/theorem/drift_signals_disresonance) — drift signals disresonance: a resonant computation recomputes to the same content-address on every call (deterministic, no drift) — toUuid, coin64, and merkleFold return identical results repeatedly; any drift, a different result for the same input, would signal non-deterministic code to be found and removed  ·  `fd1755ff-8ebd…`
 - [dyck_paths_counted_by_catalan_closed_form](/theorem/dyck_paths_counted_by_catalan_closed_form) — Dyck paths are counted by the Catalan closed form: the number of balanced parenthesis strings of length 2n (never dipping below zero) equals C(2n,n)/(n+1) — the O(1) formula replaces the exhaustive 2^(2n) enumeration (verified n = 1..6)  ·  `9e2ebe74-8b64…`
-- [eight_times_a_triangular_number_plus_one_is_an_odd_square](/theorem/eight_times_a_triangular_number_plus_one_is_an_odd_square) — eight times a triangular number plus one is an odd square: with T(n) = n(n+1)/2 the nth triangular number (the sum 1 + 2 + ... + n), 8·T(n) + 1 = (2n+1)² is always the square of an odd number; and consecutive triangular numbers sum to a perfect square, T(n) + T(n−1) = n². Verified by full enumeration over n up to 200  ·  `b640d0e9-7cb8…`
 - [entanglement_is_the_joint_receipt](/theorem/entanglement_is_the_joint_receipt) — entanglement is the joint receipt: two perspectives share one joint content-address (their folded pair) that depends on both and is symmetric in them, yet neither perspective alone equals it — the correlation lives in the shared derivation. This is classical correlation, not physical nonlocality: not faster than light, and no quantum advantage  ·  `dd46d2a6-36de…`
 - [erdos_among_n_plus_one_from_one_to_2n_one_divides_another](/theorem/erdos_among_n_plus_one_from_one_to_2n_one_divides_another) — Erdős: among any n+1 integers from 1 to 2n, one divides another: every subset of size n+1 of {1, 2, ..., 2n} contains two elements where the smaller divides the larger — verified over all such subsets for n up to 7. The bound is tight: the n numbers {n+1, n+2, ..., 2n} contain no such pair, so n+1 is the least size that forces one. The reason is the pigeonhole on odd parts — there are only n odd numbers below 2n. Verified by exhaustive enumeration  ·  `c25f629f-5f50…`
 - [euclids_formula_generates_pythagorean_triples](/theorem/euclids_formula_generates_pythagorean_triples) — Euclid's formula generates Pythagorean triples: for m &gt; n &gt; 0, (m² − n², 2mn, m² + n²) is a Pythagorean triple, and it is primitive (the three share no common factor) exactly when gcd(m,n) = 1 and m, n have opposite parity. Verified for all m up to 20  ·  `394b04f5-a0de…`
@@ -1593,4 +1604,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `18d87fce-91a8-8f63-b21b-11e590192e94`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `5763b169-cd06-8278-b607-2f56f0ead58a`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
