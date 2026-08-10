@@ -5918,5 +5918,85 @@
     "key": "the_mean_chain_harmonic_geometric_arithmetic_quadratic",
     "name": "the mean chain HM ≤ GM ≤ AM ≤ QM for two positives: harmonic ≤ geometric ≤ arithmetic ≤ quadratic mean; 0/7",
     "receipt": "17379539-c0c5-82cb-a971-d38e5807a377"
+  },
+  {
+    "key": "antiphase_waves_cancel_by_destructive_interference",
+    "name": "antiphase waves cancel: sin(x) + sin(x+π) = 0 for all x — destructive interference, two waves half a cycle apart annihilate; 0/7",
+    "receipt": "37562731-f635-8c06-afab-9565bd214060"
+  },
+  {
+    "key": "in_phase_waves_reinforce_by_constructive_interference",
+    "name": "in-phase waves reinforce: sin(x) + sin(x) = 2·sin(x) — constructive interference doubles the amplitude; 0/7",
+    "receipt": "e000fbee-c974-8e77-a483-7bfe6adca617"
+  },
+  {
+    "key": "two_travelling_waves_make_a_standing_wave",
+    "name": "two opposite travelling waves make a standing wave: sin(x−t) + sin(x+t) = 2·sin(x)·cos(t) — space and time separate; 0/7",
+    "receipt": "ae9f496a-072b-810f-8ae5-874be46746b2"
+  },
+  {
+    "key": "sum_to_product_folds_two_sines",
+    "name": "the sum-to-product identity: sin(a) + sin(b) = 2·sin((a+b)/2)·cos((a−b)/2) — the algebra behind interference and beats; 0/7",
+    "receipt": "a538ef17-b7f8-80d9-8d18-1fb9ce978bf0"
+  },
+  {
+    "key": "harmonic_sines_are_orthogonal_over_a_period",
+    "name": "distinct harmonic sines are orthogonal over a period: ∫₀^{2π} sin(mx)·sin(nx) dx = 0 for m ≠ n — why waves of different harmonics do not interfere on average; 0/7",
+    "receipt": "0d37c981-4913-8133-acf4-f425adfd68d1"
+  },
+  {
+    "key": "a_standing_wave_has_fixed_nodes",
+    "name": "a standing wave has fixed nodes: sin(nπ) = 0 for every integer n — the points that never move; 0/7",
+    "receipt": "952ff4c0-cb4e-843c-914b-e440bd13377f"
+  },
+  {
+    "key": "the_pythagorean_trig_identity_holds",
+    "name": "the Pythagorean identity: sin²x + cos²x = 1 for all x — the unit circle; 0/7",
+    "receipt": "ac3d69b2-cc03-8f8b-9ac1-89529f2d10bc"
+  },
+  {
+    "key": "the_double_angle_sine_identity",
+    "name": "the double-angle sine identity: sin(2x) = 2·sin(x)·cos(x); 0/7",
+    "receipt": "21e762fd-bcb6-8328-99f1-ec75d3234193"
+  },
+  {
+    "key": "the_double_angle_cosine_identity",
+    "name": "the double-angle cosine identity: cos(2x) = cos²x − sin²x; 0/7",
+    "receipt": "60536a19-adda-8cea-abb2-6cf2b7524184"
+  },
+  {
+    "key": "the_sine_addition_formula",
+    "name": "the sine addition formula: sin(a+b) = sin a·cos b + cos a·sin b; 0/7",
+    "receipt": "fa1f87ef-5889-83af-93ba-76d5021b6d3c"
+  },
+  {
+    "key": "the_cosine_addition_formula",
+    "name": "the cosine addition formula: cos(a+b) = cos a·cos b − sin a·sin b; 0/7",
+    "receipt": "9e95fc39-cca8-8ecd-93cd-38808c721df6"
+  },
+  {
+    "key": "the_law_of_cosines_generalizes_pythagoras",
+    "name": "the law of cosines c² = a² + b² − 2ab·cos C generalizes Pythagoras, reducing to a²+b² at C = 90°; 0/7",
+    "receipt": "58d5a08d-67e6-84a3-9b7f-f748df1364d8"
+  },
+  {
+    "key": "the_perfect_fifth_is_the_ratio_three_to_two",
+    "name": "the perfect fifth is the frequency ratio 3:2 — the most consonant interval after the octave; 0/7",
+    "receipt": "df035811-ac8f-8c06-bf43-9e6c9e1c1c7b"
+  },
+  {
+    "key": "the_equal_tempered_semitone_is_the_twelfth_root_of_two",
+    "name": "the equal-tempered semitone is the twelfth root of two: twelve semitones multiply to exactly one octave, (2^(1/12))¹² = 2; 0/7",
+    "receipt": "ad1df740-70f4-8a4c-8d3c-484ea804704a"
+  },
+  {
+    "key": "a_square_wave_is_the_sum_of_odd_harmonics",
+    "name": "a square wave is the sum of odd harmonics: (4/π)·Σ sin((2k−1)x)/(2k−1) approaches ±1 away from the jumps (Fourier); 0/7",
+    "receipt": "3ee9459d-4a87-8cd6-a23b-d77072ef8e4f"
+  },
+  {
+    "key": "beats_arise_from_two_near_frequencies",
+    "name": "beats arise from two near frequencies: cos(2π·5·t) + cos(2π·6·t) = 2·cos(2π·0.5·t)·cos(2π·5.5·t) — a slow envelope over a fast tone; 0/7",
+    "receipt": "b81e2695-36a3-8ce0-8f5b-5818f2d7c976"
   }
 ]

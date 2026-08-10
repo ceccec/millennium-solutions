@@ -59,7 +59,7 @@ Five is the heart: the fixed point of the ℤ/9 involution (σ(5)=5), the digit 
 - the Nim winning strategy: from any position with nonzero nim-sum there exists a move to a position with nim-sum zero (handing the loss to the opponent) — exhaustive over three piles of size ≤ 5  ·  tarot [70, 74, 48]  ·  `e90ed988-ec04…`
 - the nim-sum is GF(2) vector addition: it is bitwise XOR — commutative, associative, and self-inverse (x ⊕ x = 0) — so Nim positions form a GF(2) vector space and the game is decided by binary algebra  ·  tarot [7, 10, 10]  ·  `c883cd18-f418…`
 
-## Arts & geometry — 37 computed
+## Arts & geometry — 38 computed
 
 - the triad {3,6,9} maps to the RGB primary hues: 0°(red), 120°(green), 240°(blue)  ·  tarot [19, 25, 64]  ·  `316f831d-95da…`
 - the nine a432 hues (digit×40°) are distinct and equally spaced around the wheel  ·  tarot [20, 44, 19]  ·  `7f22f5c0-f4bd…`
@@ -98,7 +98,8 @@ Five is the heart: the fixed point of the ℤ/9 involution (σ(5)=5), the digit 
 - the geometric series in base 8: 1 + 8 + 8² + ... + 8ⁿ = (8ⁿ⁺¹ − 1)/(8 − 1) — the base-8 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  tarot [21, 50, 4]  ·  `ef918a38-d5e8…`
 - the geometric series in base 9: 1 + 9 + 9² + ... + 9ⁿ = (9ⁿ⁺¹ − 1)/(9 − 1) — the base-9 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  tarot [7, 60, 11]  ·  `7ec7295e-f59f…`
 - the geometric series in base 10: 1 + 10 + 10² + ... + 10ⁿ = (10ⁿ⁺¹ − 1)/(10 − 1) — the base-10 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  tarot [64, 76, 34]  ·  `984a9c4c-396a…`
+- distinct harmonic sines are orthogonal over a period: ∫₀^{2π} sin(mx)·sin(nx) dx = 0 for m ≠ n — why waves of different harmonics do not interfere on average; 0/7  ·  tarot [29, 27, 65]  ·  `0d37c981-4913…`
 
-Page content-address: `925eb0e2-0d6b-84af-9ab8-18af3fcf9d0e`.
+Page content-address: `f2fdb55b-5c35-83b6-a10a-9f617aac20e1`.
 
 **Honest bound.** This page presents the *computed structure* — the pentagon, the games, the arts — each a decidable fact re-verified every build. It does not explain life or consciousness; the meaning is the observer's to bring. Geometry, not a claim about being. Deposit 0/7.
