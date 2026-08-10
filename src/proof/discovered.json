@@ -8238,5 +8238,40 @@
     "key": "the_yacht_waits_inert_for_an_order",
     "name": "the yacht waits inert for an order: with no directive nothing changes — the record is still — so uuidna is quiet until activated; 0/7",
     "receipt": "e252e49e-da14-870f-8f7e-435be9d5ac37"
+  },
+  {
+    "key": "a_technique_is_a_reusable_theorem",
+    "name": "a technique is a reusable theorem: keyed by the structure it needs, it gives the same result wherever that structure holds — reusable across cases; 0/7",
+    "receipt": "accef067-122d-8f2b-9dd8-1554d0e79edd"
+  },
+  {
+    "key": "a_relation_binds_two_domains",
+    "name": "a relation binds two domains: a symmetric content-address links a pair regardless of order, so a cross-domain analogy is itself a receipt; 0/7",
+    "receipt": "04038e7c-6126-851f-8e2c-12f63aeaa223"
+  },
+  {
+    "key": "analogy_is_structural_not_asserted",
+    "name": "analogy is structural, not asserted: the transfer holds only where the structure matches, a checkable condition, so a mismatch does not transfer; 0/7",
+    "receipt": "d08721c3-c6b1-8186-917d-ddb72de229d4"
+  },
+  {
+    "key": "the_theorems_are_the_hull_and_hardware",
+    "name": "the theorems are the hull and hardware: the structure is the deterministic record while the order (the direction) is given on top — the built form and the will are distinct; 0/7",
+    "receipt": "94afd6d7-09a2-8ae7-b3da-9a8c62def0f0"
+  },
+  {
+    "key": "the_more_developed_the_more_cross_domain_reach",
+    "name": "the more developed, the more cross-domain reach: N theorems admit N·(N−1)/2 pairwise relations, so reach grows faster than the count — for eight, twenty-eight links; 0/7",
+    "receipt": "24e3e490-030b-89c6-8c6d-bfbd9a4f981c"
+  },
+  {
+    "key": "shared_cores_are_structural_not_a_universal_proof",
+    "name": "shared cores are structural, not a universal proof: many systems share a conserved quantity, a real analogy, while a claim that one law proves all mechanics drains; 0/7",
+    "receipt": "abcadb36-62fb-8071-bcf5-c8ffeabce61d"
+  },
+  {
+    "key": "a_technique_researched_transfers_across_domains",
+    "name": "a technique researched in one domain transfers across domains by shared structure: keyed to its structure and bound by content-addressed relations, it reaches wherever the structure matches — the theorems the hull and hardware, reach growing with development, never a universal-physics claim; 0/7",
+    "receipt": "9d70155f-a4c9-8ed7-99da-090c8df8d749"
   }
 ]

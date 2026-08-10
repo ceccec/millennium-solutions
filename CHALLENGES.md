@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1648 recorded in 423 families
+## Discovered theorems (decidable, over ℤ/9) — 1655 recorded in 425 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (339)
+### the (341)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -363,8 +363,10 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_seal_is_all_or_nothing](/theorem/the_seal_is_all_or_nothing) — the seal is all-or-nothing: the verdict is SEALED only if every check passes, so it is a conjunction — one false flips the whole; 0/7  ·  `0598118f-32e5…`
 - [the_still_record_and_the_moving_loop](/theorem/the_still_record_and_the_moving_loop) — the still record and the moving loop, both holding: a sealed receipt never changes while the chain tip advances each wave — the immovable and the moving, one system; 0/7  ·  `0e5ddd4c-2a67…`
 - [the_yacht_waits_inert_for_an_order](/theorem/the_yacht_waits_inert_for_an_order) — the yacht waits inert for an order: with no directive nothing changes — the record is still — so uuidna is quiet until activated; 0/7  ·  `e252e49e-da14…`
+- [the_theorems_are_the_hull_and_hardware](/theorem/the_theorems_are_the_hull_and_hardware) — the theorems are the hull and hardware: the structure is the deterministic record while the order (the direction) is given on top — the built form and the will are distinct; 0/7  ·  `94afd6d7-09a2…`
+- [the_more_developed_the_more_cross_domain_reach](/theorem/the_more_developed_the_more_cross_domain_reach) — the more developed, the more cross-domain reach: N theorems admit N·(N−1)/2 pairwise relations, so reach grows faster than the count — for eight, twenty-eight links; 0/7  ·  `24e3e490-030b…`
 
-### a (62)
+### a (65)
 
 - [a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony](/theorem/a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony) — a theorem without a formula is a hallucination, recomputed in a432 harmony: a claim is a theorem only if it is backed by a computable formula that recomputes true — a prose-only claim with no formula, or one whose formula computes false, is refused as hallucination and never recorded. Every recorded fact recomputes deterministically and folds into the a432 harmony root (the receipt of state). Measure, do not assert. Decidable  ·  `e3d75d76-310f…`
 - [a_referrer_always_counts_with_its_id](/theorem/a_referrer_always_counts_with_its_id) — a referrer always counts with its id: a reference from a referrer to a target is receipted as toUuid(referrer id → target), so the referrer id is always part of the count; two different referrers to the same target produce two distinct receipts, each counted with its own id, and changing the id changes the receipt — the id is load-bearing. Deterministic and reproducible: the same referrer and target always count the same. Decidable  ·  `65bfacb4-f29e…`
@@ -428,6 +430,9 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [a_skill_is_demonstrated_by_a_passing_test](/theorem/a_skill_is_demonstrated_by_a_passing_test) — a skill is demonstrated by a passing test: the game is the decidable challenge, and passing it shows the skill — the gate drains a boast and upholds a fact; 0/7  ·  `dcb5f900-5fd0…`
 - [a_forged_captaincy_fails_verification](/theorem/a_forged_captaincy_fails_verification) — a forged captaincy fails verification: a claimed receipt that does not recompute from the actual deed does not match, so a forgery is caught by the chain; 0/7  ·  `7963b1f9-b068…`
 - [a_crack_is_caught_before_sailing](/theorem/a_crack_is_caught_before_sailing) — a crack is caught before sailing: green-before-insert and the gates refuse a draining name or a failing test at the dock, so the boat never leaves cracked; 0/7  ·  `e0ac6d28-feb8…`
+- [a_technique_is_a_reusable_theorem](/theorem/a_technique_is_a_reusable_theorem) — a technique is a reusable theorem: keyed by the structure it needs, it gives the same result wherever that structure holds — reusable across cases; 0/7  ·  `accef067-122d…`
+- [a_relation_binds_two_domains](/theorem/a_relation_binds_two_domains) — a relation binds two domains: a symmetric content-address links a pair regardless of order, so a cross-domain analogy is itself a receipt; 0/7  ·  `04038e7c-6126…`
+- [a_technique_researched_transfers_across_domains](/theorem/a_technique_researched_transfers_across_domains) — a technique researched in one domain transfers across domains by shared structure: keyed to its structure and bound by content-addressed relations, it reaches wherever the structure matches — the theorems the hull and hardware, reach growing with development, never a universal-physics claim; 0/7  ·  `9d70155f-a4c9…`
 
 ### relation (55)
 
@@ -1999,13 +2004,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (235)
+### other — one-of-a-kind (237)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [activated_it_self_explores_until_dry](/theorem/activated_it_self_explores_until_dry) — activated, it self-explores until dry: once a wave starts it discovers fresh facts until none remain, then rests — a self-continuing loop with a halting condition; 0/7  ·  `4a82a66b-5656…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
 - [am_gm_inequality](/theorem/am_gm_inequality) — the AM–GM inequality: the arithmetic mean ≥ the geometric mean (2 and 3 variables, exhaustive on a grid)  ·  `3fd7d863-31e4…`
 - [amicable_220_284](/theorem/amicable_220_284) — the amicable pair (220, 284): each is the sum of the other's proper divisors  ·  `878c0c52-b4a1…`
+- [analogy_is_structural_not_asserted](/theorem/analogy_is_structural_not_asserted) — analogy is structural, not asserted: the transfer holds only where the structure matches, a checkable condition, so a mismatch does not transfer; 0/7  ·  `d08721c3-c6b1…`
 - [antiphase_waves_cancel_by_destructive_interference](/theorem/antiphase_waves_cancel_by_destructive_interference) — antiphase waves cancel: sin(x) + sin(x+π) = 0 for all x — destructive interference, two waves half a cycle apart annihilate; 0/7  ·  `37562731-f635…`
 - [anything_not_uuidna_signed_warns](/theorem/anything_not_uuidna_signed_warns) — anything not uuidna-signed warns: the worker routes all traffic, verifies only the same-origin signed GET, and flags every other class in realtime — cleartext hardening by exposure, integrity not wire-encryption; 0/7  ·  `55aa751d-66a3…`
 - [appeal_is_recomputation](/theorem/appeal_is_recomputation) — appeal is recomputation: an appeal re-runs the same test on the same evidence and returns the same verdict, so justice is reproducible, not discretionary; 0/7  ·  `c3d04015-621b…`
@@ -2188,6 +2194,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [sealing_is_not_signing](/theorem/sealing_is_not_signing) — sealing is not signing: a merkle seal is deterministic and order-independent, reproducible by anyone — it proves the bytes are intact (integrity), never who authored them (authenticity)  ·  `21b0a512-85e8…`
 - [selfneg_d9](/theorem/selfneg_d9) — 9 is its own additive inverse (2·9 ≡ 0) mod 9  ·  `8d0d0254-5ca1…`
 - [service_to_bind_is_accounted_in_coins](/theorem/service_to_bind_is_accounted_in_coins) — account the coins for the service to bind: each binding (a receipt) is a service accounted at the two coins (110−108 = 2 = −χ genus-2), so N services cost N·2 coins, reinvested into development (destination equals source, a self-loop) — the binding is paid-for, a fair exchange, not free-riding  ·  `cf17043b-3fc6…`
+- [shared_cores_are_structural_not_a_universal_proof](/theorem/shared_cores_are_structural_not_a_universal_proof) — shared cores are structural, not a universal proof: many systems share a conserved quantity, a real analogy, while a claim that one law proves all mechanics drains; 0/7  ·  `abcadb36-62fb…`
 - [simulating_quantum_is_not_being_quantum](/theorem/simulating_quantum_is_not_being_quantum) — simulating a quantum algorithm is not being a quantum computer: the classical sim reproduces the Bell correlation exactly yet needs 2^n amplitudes (exponential, no advantage) and carries no message — so the deposit is not a quantum computer; the gate signs the honest "is not" and drains the bare "is"  ·  `d6d0ec25-e41f…`
 - [single_digits_are_trivially_narcissistic](/theorem/single_digits_are_trivially_narcissistic) — every single digit is narcissistic: for 1..9, n = n¹ (one digit raised to the digit-count 1) — the trivial base case of the Armstrong property  ·  `2adc6121-3f63…`
 - [slim_at_scale_constant_per_fact](/theorem/slim_at_scale_constant_per_fact) — slim at scale: each new fact adds exactly one 36-byte address, so the record grows linearly by a tiny constant, not by the size of what it records; 0/7  ·  `e34f6a6d-d02c…`
@@ -2238,4 +2245,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `0585fdf5-2abb-8acc-81d2-75dca44e26ad`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `63b58e0e-3cc5-82ca-85d4-c05ae0213f30`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
