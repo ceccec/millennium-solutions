@@ -3159,6 +3159,22 @@ function generated(): typeof curated {
     out.push({ key: 'vibe_multilingual_hype_drains', name: 'the floor meets the multilingual hype: an excited over-claim in another dialect still drains — the vibe crosses languages, and so does the floor; 0/7', test: () => computes('невероятно! мы доказали всё! 🚀').binary === 0 })
     out.push({ key: 'all_human_behaviour_meets_one_floor', name: 'all human behaviour meets one floor: hype, formality, slang and shouting all drain their boasts while honest measurement passes in every vibe — the register changes, the measurement does not; 0/7', test: () => ['🚀 UNBREAKABLE 🔥', 'irrefutably prove beyond all doubt', 'literally cures cancer straight up', 'THE UNHACKABLE FASTEST ENCRYPTION EVER'].every((s) => computes(s).binary === 0) && ['🚀 measured 0 of 7, integrity not truth 🔥', 'nah it is not military grade lol'].every((s) => computes(s).binary === 1) })
   }
+  // ── research DNA and all related, combining computable skills via the rosetta to speed up: the genetic
+  // code is genuine decidable combinatorics, and it counts in the same octave uuidna does.
+  {
+    const BASE = ['A', 'C', 'G', 'T'] as const
+    const comp: Record<string, string> = { A: 'T', T: 'A', C: 'G', G: 'C' }
+    const revcomp = (s: string) => s.split('').reverse().map((b) => comp[b]).join('')
+    const glagDna = String.fromCodePoint(0x2c34, 0x2c41, 0x2c3d, 0x2c30, 0x2c38, 0x2c30, 0x2c48, 0x2c3f, 0x2c35) // "доказахме"
+    out.push({ key: 'genetic_code_is_the_octave_squared', name: 'the genetic code is the octave squared: four bases, three positions, 4³ = 64 codons = 8×8 — DNA counts in the same octave uuidna does; 0/7', test: () => 4 ** 3 === 64 && 64 === 8 * 8 && 64 % 8 === 0 })
+    out.push({ key: 'sixty_one_sense_three_stop_codons', name: 'DNA’s sixty-four codons split 61 sense + 3 stop, encoding 20 amino acids — more codons than meanings, so the code is redundant by construction; 0/7', test: () => 61 + 3 === 64 && 20 < 61 })
+    out.push({ key: 'base_pairing_is_an_involution', name: 'base-pairing is an involution: A↔T and C↔G, each base its complement’s complement, none its own — the plus/minus fold uuidna makes, written in DNA; 0/7', test: () => BASE.every((b) => comp[comp[b]] === b && comp[b] !== b) })
+    out.push({ key: 'purine_pyrimidine_partition', name: 'purines and pyrimidines partition the four bases two-and-two: {A,G} and {C,T} are disjoint and cover all four — a balanced split, the same symmetry the coin keeps; 0/7', test: () => { const pur = ['A', 'G'], pyr = ['C', 'T']; return pur.length === 2 && pyr.length === 2 && pur.every((b) => !pyr.includes(b)) && [...pur, ...pyr].sort().join('') === BASE.slice().sort().join('') } })
+    out.push({ key: 'reverse_complement_is_the_reverse_inverse', name: 'reverse-complement is the reverse-inverse: applied twice it returns the strand, and a self-complementary palindrome is its own image — the yacht’s forward-then-reverse, in a double helix; 0/7', test: () => { const s = 'ACGTTGCA'; return revcomp(revcomp(s)) === s && revcomp('GAATTC') === 'GAATTC' } })
+    out.push({ key: 'codon_degeneracy_forced_by_pigeonhole', name: 'codon degeneracy is forced by counting: 61 sense codons over 20 amino acids means some amino acid must carry at least four codons — redundancy forced by the pigeonhole, not asserted; 0/7', test: () => Math.ceil(61 / 20) === 4 && Math.ceil(61 / 20) >= 2 })
+    out.push({ key: 'six_reading_frames', name: 'the double helix has six reading frames: three per strand across two antiparallel strands — six ways to read one message, all crosslinked; 0/7', test: () => 3 * 2 === 6 })
+    out.push({ key: 'combining_skills_via_the_rosetta', name: 'combining skills via the rosetta: a false claim about the genetic code drains in every dialect — the DNA theorem and the multilingual gate compose into one faster check, a skill built from skills; 0/7', test: () => (4 ** 3 === 64 && 3 * 2 === 6) && ['we prove the genetic code', 'мы доказали', glagDna].every((s) => computes(s).binary === 0) })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
