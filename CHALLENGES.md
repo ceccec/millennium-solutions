@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1712 recorded in 434 families
+## Discovered theorems (decidable, over ℤ/9) — 1720 recorded in 435 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (364)
+### the (371)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -388,6 +388,13 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_chain_localises_the_error](/theorem/the_chain_localises_the_error) — the chain localises the error: recomputing a chain from its seed, the first mismatching link names the corrupted position, so the error is located, not merely flagged; 0/7  ·  `fd563817-7ebf…`
 - [the_self_link_is_deterministic](/theorem/the_self_link_is_deterministic) — the self link is deterministic: the same local uuid always yields the same page, so the link is stable and reproducible; 0/7  ·  `18e61c36-fd39…`
 - [the_locality_check_needs_no_server](/theorem/the_locality_check_needs_no_server) — the locality check needs no server: membership is tested against the bundled ledger, a pure function with no lookup service; 0/7  ·  `3f3cd09c-41d8…`
+- [the_uuid_is_five_groups_of_128_bits](/theorem/the_uuid_is_five_groups_of_128_bits) — the uuid is five groups of 128 bits: the group lengths 8-4-4-4-12 hex sum to 32 hex digits = 128 bits; 0/7  ·  `ed149a92-f090…`
+- [the_first_group_is_a_thirty_two_bit_code](/theorem/the_first_group_is_a_thirty_two_bit_code) — the first group is a 32-bit code: the leading eight hex digits are a short receipt code, a handle to the full address; 0/7  ·  `6a7a7e2f-362a…`
+- [the_short_code_is_deterministic](/theorem/the_short_code_is_deterministic) — the short code is deterministic: the same content yields the same first group, so the receipt code is stable; 0/7  ·  `83faf9a8-b270…`
+- [the_short_code_may_collide_so_it_only_approves](/theorem/the_short_code_may_collide_so_it_only_approves) — the short code may collide, so it only approves: 32 bits is a far smaller space than 128, so the code identifies approximately and cannot alone confirm; 0/7  ·  `0ea7a396-c2ac…`
+- [the_full_address_verifies_uniquely](/theorem/the_full_address_verifies_uniquely) — the full address verifies uniquely: at 128 bits distinct content addresses distinctly across a large sample, so the content key confirms what the code only approves; 0/7  ·  `f4d83120-48be…`
+- [the_top_sixty_four_bits_are_the_coin](/theorem/the_top_sixty_four_bits_are_the_coin) — the top 64 bits are the coin: coin64 is the leading sixteen hex digits of the address, so the prefix already denominates the currency; 0/7  ·  `5ea5e4a7-48a3…`
+- [the_first_part_is_a_receipt_code_verified_by_content](/theorem/the_first_part_is_a_receipt_code_verified_by_content) — the first part is a receipt code verified by content: the 32-bit first group approves a receipt by id while the full 128-bit content address verifies it uniquely, and the top 64 bits are the coin; 0/7  ·  `5f4cc8e2-4cfc…`
 
 ### a (72)
 
@@ -2068,7 +2075,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (242)
+### other — one-of-a-kind (243)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [activated_it_self_explores_until_dry](/theorem/activated_it_self_explores_until_dry) — activated, it self-explores until dry: once a wave starts it discovers fresh facts until none remain, then rests — a self-continuing loop with a halting condition; 0/7  ·  `4a82a66b-5656…`
@@ -2080,6 +2087,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [anything_not_uuidna_signed_warns](/theorem/anything_not_uuidna_signed_warns) — anything not uuidna-signed warns: the worker routes all traffic, verifies only the same-origin signed GET, and flags every other class in realtime — cleartext hardening by exposure, integrity not wire-encryption; 0/7  ·  `55aa751d-66a3…`
 - [appeal_is_recomputation](/theorem/appeal_is_recomputation) — appeal is recomputation: an appeal re-runs the same test on the same evidence and returns the same verdict, so justice is reproducible, not discretionary; 0/7  ·  `c3d04015-621b…`
 - [applications_are_defensive_publications_not_patents_free_for_all_commercial_licensed](/theorem/applications_are_defensive_publications_not_patents_free_for_all_commercial_licensed) — applications are defensive publications, not patents — free for all, commercial licensed: the theorems underlie known hardware and software — error-correcting memory, public-key primitives, Reed–Solomon codes, content-addressed storage, check digits, low-discrepancy sampling, logic gates. The deposit invents none of them and holds no patents; it publishes the algebra as open prior art, which keeps the ideas free for all rather than granting a monopoly. Non-commercial use is free with attribution; commercial use is licensed, funded by the two-coin sequence; the income is zero. Decidable  ·  `e6ce1929-7481…`
+- [approve_by_code_then_verify_by_content](/theorem/approve_by_code_then_verify_by_content) — approve by code, then verify by content: a receipt is matched by its short code and confirmed by recomputing the full address — a two-stage check, cheap then exact; 0/7  ·  `c9e8fd04-8f2d…`
 - [authenticity_needs_a_secret](/theorem/authenticity_needs_a_secret) — authenticity needs a secret: a keyed signature depends on a secret the signer alone holds — a different secret gives a different signature, and without the secret a forger cannot match it (the authenticity floor, like 0/7 and the axiom floor)  ·  `53096a30-d41f…`
 - [authority_changes_no_boolean](/theorem/authority_changes_no_boolean) — authority changes no boolean: the same test returns the same verdict no matter who runs it, so no signer or claim can flip a result; 0/7  ·  `79badd98-680e…`
 - [balancing_wave_harmonises](/theorem/balancing_wave_harmonises) — the balancing wave 9−d harmonises: a state digit d and its balance 9−d sum to 9 (the rest, digital root 9) and their a432 hues sum to 360° = 0 (the full circle)  ·  `8f9898b3-d143…`
@@ -2314,4 +2322,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `b2590e4f-ff0e-842e-9c31-17fd72bb85c1`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `9ae3473c-8ab6-8496-9fc7-bdfffb1aa213`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

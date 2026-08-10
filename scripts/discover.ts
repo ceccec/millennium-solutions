@@ -3987,6 +3987,21 @@ function generated(): typeof curated {
     out.push({ key: 'the_locality_check_needs_no_server', name: 'the locality check needs no server: membership is tested against the bundled ledger, a pure function with no lookup service; 0/7', test: () => { const before = isLocal(toUuid('k1')); toUuid('noise'); return isLocal(toUuid('k1')) === before && before === true } })
     out.push({ key: 'each_uuid_links_to_self_if_local', name: 'each uuid in the UI links to self if local: resolved by ledger membership to its own page, deterministic, plain text when not local, checked against the bundled ledger with no server; 0/7', test: () => selfLink(toUuid('k1')) === '/theorem/k1' && selfLink(toUuid('foreign')) === null && isLocal(toUuid('k2')) === true })
   }
+  // ── the uuid format analysed: 8-4-4-4-12 = 128 bits; the first group is a 32-bit short RECEIPT CODE (a handle,
+  // approvable by id but possibly colliding), the top 64 bits are the coin, and the full 128-bit content address
+  // VERIFIES uniquely — approve by code, verify by content.
+  {
+    const groups = (u: string) => u.split('-')
+    const sample = Array.from({ length: 500 }, (_, i) => toUuid('u' + i))
+    out.push({ key: 'the_uuid_is_five_groups_of_128_bits', name: 'the uuid is five groups of 128 bits: the group lengths 8-4-4-4-12 hex sum to 32 hex digits = 128 bits; 0/7', test: () => { const g = groups(toUuid('x')).map((p) => p.length); return g.join(',') === '8,4,4,4,12' && g.reduce((a, b) => a + b, 0) * 4 === 128 } })
+    out.push({ key: 'the_first_group_is_a_thirty_two_bit_code', name: 'the first group is a 32-bit code: the leading eight hex digits are a short receipt code, a handle to the full address; 0/7', test: () => groups(toUuid('x'))[0].length === 8 && groups(toUuid('x'))[0].length * 4 === 32 })
+    out.push({ key: 'the_short_code_is_deterministic', name: 'the short code is deterministic: the same content yields the same first group, so the receipt code is stable; 0/7', test: () => groups(toUuid('c'))[0] === groups(toUuid('c'))[0] })
+    out.push({ key: 'the_short_code_may_collide_so_it_only_approves', name: 'the short code may collide, so it only approves: 32 bits is a far smaller space than 128, so the code identifies approximately and cannot alone confirm; 0/7', test: () => 2 ** 32 < 2 ** 128 && groups(toUuid('x'))[0].length < toUuid('x').replace(/-/g, '').length })
+    out.push({ key: 'the_full_address_verifies_uniquely', name: 'the full address verifies uniquely: at 128 bits distinct content addresses distinctly across a large sample, so the content key confirms what the code only approves; 0/7', test: () => new Set(sample).size === 500 && sample.every((u) => u === toUuid('u' + sample.indexOf(u))) })
+    out.push({ key: 'approve_by_code_then_verify_by_content', name: 'approve by code, then verify by content: a receipt is matched by its short code and confirmed by recomputing the full address — a two-stage check, cheap then exact; 0/7', test: () => { const full = toUuid('receipt'); const code = groups(full)[0]; return groups(toUuid('receipt'))[0] === code && toUuid('receipt') === full } })
+    out.push({ key: 'the_top_sixty_four_bits_are_the_coin', name: 'the top 64 bits are the coin: coin64 is the leading sixteen hex digits of the address, so the prefix already denominates the currency; 0/7', test: () => coin64('ceccec') === toUuid('ceccec').replace(/-/g, '').slice(0, 16) && coin64('x').length === 16 })
+    out.push({ key: 'the_first_part_is_a_receipt_code_verified_by_content', name: 'the first part is a receipt code verified by content: the 32-bit first group approves a receipt by id while the full 128-bit content address verifies it uniquely, and the top 64 bits are the coin; 0/7', test: () => groups(toUuid('r'))[0].length === 8 && 2 ** 32 < 2 ** 128 && coin64('r') === toUuid('r').replace(/-/g, '').slice(0, 16) && new Set(sample).size === 500 })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

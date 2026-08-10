@@ -8558,5 +8558,45 @@
     "key": "each_uuid_links_to_self_if_local",
     "name": "each uuid in the UI links to self if local: resolved by ledger membership to its own page, deterministic, plain text when not local, checked against the bundled ledger with no server; 0/7",
     "receipt": "2a71ac7f-0ed3-815a-beb7-7bd1b98401f6"
+  },
+  {
+    "key": "the_uuid_is_five_groups_of_128_bits",
+    "name": "the uuid is five groups of 128 bits: the group lengths 8-4-4-4-12 hex sum to 32 hex digits = 128 bits; 0/7",
+    "receipt": "ed149a92-f090-8c4a-94bf-7af9b93590b6"
+  },
+  {
+    "key": "the_first_group_is_a_thirty_two_bit_code",
+    "name": "the first group is a 32-bit code: the leading eight hex digits are a short receipt code, a handle to the full address; 0/7",
+    "receipt": "6a7a7e2f-362a-8a53-b37e-788104771b77"
+  },
+  {
+    "key": "the_short_code_is_deterministic",
+    "name": "the short code is deterministic: the same content yields the same first group, so the receipt code is stable; 0/7",
+    "receipt": "83faf9a8-b270-8f35-8b37-d6074075a672"
+  },
+  {
+    "key": "the_short_code_may_collide_so_it_only_approves",
+    "name": "the short code may collide, so it only approves: 32 bits is a far smaller space than 128, so the code identifies approximately and cannot alone confirm; 0/7",
+    "receipt": "0ea7a396-c2ac-8ef3-b370-488979c355f3"
+  },
+  {
+    "key": "the_full_address_verifies_uniquely",
+    "name": "the full address verifies uniquely: at 128 bits distinct content addresses distinctly across a large sample, so the content key confirms what the code only approves; 0/7",
+    "receipt": "f4d83120-48be-8442-b5a7-d137295d82d3"
+  },
+  {
+    "key": "approve_by_code_then_verify_by_content",
+    "name": "approve by code, then verify by content: a receipt is matched by its short code and confirmed by recomputing the full address — a two-stage check, cheap then exact; 0/7",
+    "receipt": "c9e8fd04-8f2d-87b2-a874-36576ebd2458"
+  },
+  {
+    "key": "the_top_sixty_four_bits_are_the_coin",
+    "name": "the top 64 bits are the coin: coin64 is the leading sixteen hex digits of the address, so the prefix already denominates the currency; 0/7",
+    "receipt": "5ea5e4a7-48a3-85b1-90e3-092a236066ef"
+  },
+  {
+    "key": "the_first_part_is_a_receipt_code_verified_by_content",
+    "name": "the first part is a receipt code verified by content: the 32-bit first group approves a receipt by id while the full 128-bit content address verifies it uniquely, and the top 64 bits are the coin; 0/7",
+    "receipt": "5f4cc8e2-4cfc-8b29-bb34-a7625311703f"
   }
 ]
