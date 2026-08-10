@@ -83,6 +83,25 @@ async function warn(url, reason) {
   for (const c of await self.clients.matchAll()) c.postMessage(w)
 }
 
+// THE ROUTE IS THE GATEWAY TO THE PATH — all in the PWA: a same-origin /skill/<a>/<b>/... request is executed
+// as a skill pipeline in the worker itself, catch-all split by "/", keywords composed in order with ?in=…,
+// returning a deterministic uuidna receipt. Skills use only what the worker already computes (toUuid, sha256).
+const SKILLS = {
+  address: (x) => toUuid(x),
+  hash: (x) => sha256hex(new TextEncoder().encode(x)),
+  reverse: (x) => x.split('').reverse().join(''),
+}
+function runSkillRoute(url) {
+  const parts = (url.pathname.split('/skill/')[1] || '').split('/').filter(Boolean)
+  const input = url.searchParams.get('in') || ''
+  const unknown = parts.filter((k) => !(k in SKILLS))
+  if (!parts.length || unknown.length) return new Response(JSON.stringify({ error: 'unknown or empty skill route', unknown }), { status: 400, headers: { 'content-type': 'application/json' } })
+  let v = input
+  for (const k of parts) v = SKILLS[k](v)
+  const receipt = { type: 'uuidna-skill-receipt', route: parts, input, result: v, address: toUuid(parts.join('/') + ':' + input + ':' + v) }
+  return new Response(JSON.stringify(receipt), { headers: { 'content-type': 'application/json' } })
+}
+
 const CACHE = 'millennium-v4'
 let INTEGRITY = null
 async function manifest() {
@@ -110,6 +129,8 @@ self.addEventListener('activate', (e) => e.waitUntil((async () => {
 })()))
 self.addEventListener('fetch', (e) => {
   const req = e.request
+  // THE ROUTE IS THE GATEWAY: a same-origin GET /skill/... executes as a skill pipeline in the worker — all in the PWA.
+  { const u = new URL(req.url); if (req.method === 'GET' && u.origin === self.location.origin && u.pathname.includes('/skill/')) { e.respondWith(runSkillRoute(u)); return } }
   // PROXY ALL TRAFFIC: every request passes through the worker. Same-origin GET is integrity-verified against
   // the manifest below; everything else (cross-origin, POST/PUT/…) is forwarded transparently — the worker is
   // in the path of all traffic, but honestly cannot hash-verify opaque cross-origin responses.

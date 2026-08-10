@@ -7118,5 +7118,45 @@
     "key": "the_route_is_the_skill_pipeline",
     "name": "the route is the skill pipeline: catch all, split by \"/\", the keywords are skills composed in order with the params supplied — one router for communications, translations, analytics and forensics, deterministic and refusing the unknown; 0/7",
     "receipt": "4dc9603c-7a95-8b2a-9ddb-36a367c95c59"
+  },
+  {
+    "key": "a_chat_message_routes_through_the_gate",
+    "name": "a chat message routes through the gate: every message is weighed to a bit — 1 passes, 0 is flagged — so moderation is a computed verdict, not a moderator’s opinion; 0/7",
+    "receipt": "40c45973-32f0-8083-98b4-b9717cca155a"
+  },
+  {
+    "key": "a_chat_message_becomes_a_receipt",
+    "name": "a chat message becomes a receipt: its content folds to a deterministic address, so a message is identified by what it says, not when it was sent; 0/7",
+    "receipt": "cc9f0a53-9a56-887c-8d7d-07747fa490f7"
+  },
+  {
+    "key": "a_room_is_a_chain_of_message_receipts",
+    "name": "a room is a chain of message receipts: each message is seeded by the last, so reordering or dropping a message changes every receipt after it; 0/7",
+    "receipt": "fd897aef-30e7-849a-9251-3f90fa4b58d6"
+  },
+  {
+    "key": "a_room_is_addressed_by_its_fold",
+    "name": "a room is addressed by its fold: the merkle fold of its message receipts is the room address, so changing any message changes the room; 0/7",
+    "receipt": "436a83ac-8e63-8689-bf99-15a5a92430ff"
+  },
+  {
+    "key": "an_overclaim_in_chat_is_flagged",
+    "name": "an overclaim in chat is flagged: a boasting message drains at the gate while an honest one passes, so moderation is the same honest floor applied to speech; 0/7",
+    "receipt": "5b3a2fd2-313f-8100-bb8a-eb823276d434"
+  },
+  {
+    "key": "chat_is_moderated_across_dialects",
+    "name": "chat is moderated across dialects: a proof-boast is flagged in any language via the rosetta, so a translated overclaim cannot slip past the room; 0/7",
+    "receipt": "04330526-c573-85f6-99a4-ca73509782bc"
+  },
+  {
+    "key": "a_chat_receipt_is_referrer_relative",
+    "name": "a chat receipt is referrer-relative: the same message from two senders yields two receipts, each deterministic, so authorship is part of the address; 0/7",
+    "receipt": "dc9c5596-3894-8b10-ba4e-75c344f5a668"
+  },
+  {
+    "key": "route_chat_through_uuidna",
+    "name": "route chat through uuidna: each message is gated, addressed and chained into a room folding to one root — moderated by the honest floor, translatable across dialects, referrer-relative and tamper-evident; the route is the gateway; 0/7",
+    "receipt": "9a64e6e9-28ef-880d-8a48-5ba5a1b469d7"
   }
 ]
