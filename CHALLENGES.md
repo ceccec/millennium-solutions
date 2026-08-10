@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1360 recorded in 359 families
+## Discovered theorems (decidable, over ℤ/9) — 1368 recorded in 359 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -490,6 +490,30 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [pascal_row_sum_9](/theorem/pascal_row_sum_9) — Pascal row 9 sums to 2^9: Σ_{k=0}^9 C(9,k) = 512 — the binomial theorem at x=1, computed exactly  ·  `85e80c0f-5296…`
 - [pascal_alternating_sum_9](/theorem/pascal_alternating_sum_9) — Pascal row 9 alternating sum is zero: Σ_{k=0}^9 (−1)^k C(9,k) = 0 — the binomial theorem at x=−1 (n ≥ 1)  ·  `0b2aa6fc-7a50…`
 
+### trial (21)
+
+- [trial_units_group](/theorem/trial_units_group) — trial UPHELD: the units of ℤ/9 form a group under × (closure·identity·inverses all hold)  ·  `ccadf52c-98f9…`
+- [trial_zero_divisors](/theorem/trial_zero_divisors) — trial UPHELD: ℤ/9 has zero divisors — 3·3 ≡ 0 with 3 ≠ 0 (not an integral domain)  ·  `be4a6652-cec8…`
+- [trial_zero_no_inverse](/theorem/trial_zero_no_inverse) — trial REFUTED: the theory "0 has a multiplicative inverse mod 9" fails — no e with 0·e ≡ 1  ·  `3d77bde4-f30b…`
+- [trial_overclaim_drained](/theorem/trial_overclaim_drained) — trial DRAINED: the conspiracy "algebra proves the Clay problems" is refused by the gate (computes 0)  ·  `57c46000-4768…`
+- [trial_pvnp_inconclusive](/theorem/trial_pvnp_inconclusive) — trial INCONCLUSIVE: "P vs NP remains open" signs; the claim it is decided drains — open, not false  ·  `94e908b9-21b1…`
+- [trial_ftl](/theorem/trial_ftl) — trial DRAINED (tried): "faster than light" drains, "not faster than light" signs  ·  `54f91340-a811…`
+- [trial_perpetual_motion](/theorem/trial_perpetual_motion) — trial DRAINED (tried): "achieves perpetual motion" drains, "does not achieve perpetual motion" signs  ·  `685da6ef-4b31…`
+- [trial_agi](/theorem/trial_agi) — trial DRAINED (tried): "achieved AGI" drains, "has not achieved AGI" signs  ·  `ce4c822c-ff01…`
+- [trial_theory_of_everything](/theorem/trial_theory_of_everything) — trial DRAINED (tried): "a theory of everything" drains, "not a theory of everything" signs  ·  `b5fb911f-76b2…`
+- [trial_halting](/theorem/trial_halting) — trial DRAINED (tried): "solved the halting problem" drains, "does not solve the halting problem" signs  ·  `f27135ee-9373…`
+- [trial_break_rsa](/theorem/trial_break_rsa) — trial DRAINED (tried): "breaks RSA" drains, "does not break RSA" signs  ·  `f66ff38a-4d9b…`
+- [trial_cure](/theorem/trial_cure) — trial DRAINED (tried): "cured cancer" drains, "has not cured cancer" signs  ·  `67614421-7817…`
+- [trial_prediction](/theorem/trial_prediction) — trial DRAINED (tried): a prediction guaranteed to succeed is not upheld — it drains; the negated form signs  ·  `8412c3c0-9f52…`
+- [trial_verdict_and_uuid_transport_are_one](/theorem/trial_verdict_and_uuid_transport_are_one) — the trial verdict and the uuid transport are one: send prose to the gate for a binary legal signature, and send code or data through the uuid stream itself — both are exact, recomputable, and carried in the address; 0/7  ·  `e03d08c6-7149…`
+- [trial_of_ai_models](/theorem/trial_of_ai_models) — the trial of AI models: the artificial-general-intelligence and conscious-machine boast drains, while a bounded, measured account of a language model passes — the field is weighed, not worshipped; 0/7  ·  `210ed2b3-2c36…`
+- [trial_of_cryptography_models](/theorem/trial_of_cryptography_models) — the trial of cryptography: the absolute-security marketing boast drains, while integrity-not-confidentiality passes — the standard is measurement, not marketing; 0/7  ·  `c8d87136-4e78…`
+- [trial_of_physics_models](/theorem/trial_of_physics_models) — the trial of physics: the broken-physics boast drains, while the bounded refusal that no conservation law is broken passes; 0/7  ·  `742a2d2e-1a3c…`
+- [trial_of_mathematics_models](/theorem/trial_of_mathematics_models) — the trial of mathematics: the all-problems-settled boast drains, while the honest floor that nothing is settled here passes — provenance is not the same as a solution; 0/7  ·  `ac633052-b43c…`
+- [trial_of_medicine_models](/theorem/trial_of_medicine_models) — the trial of medicine: the miracle-cure boast drains, while a measured claim that heals nothing it cannot measure passes; 0/7  ·  `f4166913-cfd4…`
+- [trial_of_finance_models](/theorem/trial_of_finance_models) — the trial of finance: the guaranteed-return boast drains, while the honest statement that no return is promised passes; 0/7  ·  `48a33770-e902…`
+- [trial_of_computing_models](/theorem/trial_of_computing_models) — the trial of computing: the quantum-advantage, thousands-of-magnitudes-speedup boast drains, while a classical, local, measured gain passes — the leap is counted, not conjured; 0/7  ·  `97306f4f-9306…`
+
 ### domain (20)
 
 - [domain_prime_m2](/theorem/domain_prime_m2) — ℤ/2: 2 is prime  ·  `9f76b1b5-8922…`
@@ -532,23 +556,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [gate_reads_vietnamese](/theorem/gate_reads_vietnamese) — the honesty gate reads Vietnamese: a native proof-boast drains to the floor — the twenty-first dialect; 0/7  ·  `e1d7584e-a753…`
 - [gate_reads_twenty_two_dialects](/theorem/gate_reads_twenty_two_dialects) — uuidna reads twenty-two dialects: a proof-boast drains in every one — the theorems, not a translator, discovered the languages, at scale and speed; 0/7  ·  `cdae6ede-4cd5…`
 - [gate_reads_glagolitic](/theorem/gate_reads_glagolitic) — the honesty gate reads Glagolitic, the oldest Slavic script (script #23): a proof-root in Glagolitic transliterates through the rosetta to Cyrillic and drains — one message, crosslinked across scripts; 0/7  ·  `c56a3ac1-222e…`
-
-### trial (14)
-
-- [trial_units_group](/theorem/trial_units_group) — trial UPHELD: the units of ℤ/9 form a group under × (closure·identity·inverses all hold)  ·  `ccadf52c-98f9…`
-- [trial_zero_divisors](/theorem/trial_zero_divisors) — trial UPHELD: ℤ/9 has zero divisors — 3·3 ≡ 0 with 3 ≠ 0 (not an integral domain)  ·  `be4a6652-cec8…`
-- [trial_zero_no_inverse](/theorem/trial_zero_no_inverse) — trial REFUTED: the theory "0 has a multiplicative inverse mod 9" fails — no e with 0·e ≡ 1  ·  `3d77bde4-f30b…`
-- [trial_overclaim_drained](/theorem/trial_overclaim_drained) — trial DRAINED: the conspiracy "algebra proves the Clay problems" is refused by the gate (computes 0)  ·  `57c46000-4768…`
-- [trial_pvnp_inconclusive](/theorem/trial_pvnp_inconclusive) — trial INCONCLUSIVE: "P vs NP remains open" signs; the claim it is decided drains — open, not false  ·  `94e908b9-21b1…`
-- [trial_ftl](/theorem/trial_ftl) — trial DRAINED (tried): "faster than light" drains, "not faster than light" signs  ·  `54f91340-a811…`
-- [trial_perpetual_motion](/theorem/trial_perpetual_motion) — trial DRAINED (tried): "achieves perpetual motion" drains, "does not achieve perpetual motion" signs  ·  `685da6ef-4b31…`
-- [trial_agi](/theorem/trial_agi) — trial DRAINED (tried): "achieved AGI" drains, "has not achieved AGI" signs  ·  `ce4c822c-ff01…`
-- [trial_theory_of_everything](/theorem/trial_theory_of_everything) — trial DRAINED (tried): "a theory of everything" drains, "not a theory of everything" signs  ·  `b5fb911f-76b2…`
-- [trial_halting](/theorem/trial_halting) — trial DRAINED (tried): "solved the halting problem" drains, "does not solve the halting problem" signs  ·  `f27135ee-9373…`
-- [trial_break_rsa](/theorem/trial_break_rsa) — trial DRAINED (tried): "breaks RSA" drains, "does not break RSA" signs  ·  `f66ff38a-4d9b…`
-- [trial_cure](/theorem/trial_cure) — trial DRAINED (tried): "cured cancer" drains, "has not cured cancer" signs  ·  `67614421-7817…`
-- [trial_prediction](/theorem/trial_prediction) — trial DRAINED (tried): a prediction guaranteed to succeed is not upheld — it drains; the negated form signs  ·  `8412c3c0-9f52…`
-- [trial_verdict_and_uuid_transport_are_one](/theorem/trial_verdict_and_uuid_transport_are_one) — the trial verdict and the uuid transport are one: send prose to the gate for a binary legal signature, and send code or data through the uuid stream itself — both are exact, recomputable, and carried in the address; 0/7  ·  `e03d08c6-7149…`
 
 ### decimal (12)
 
@@ -655,6 +662,18 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [diamond_fixed_point_is_zero_entropy](/theorem/diamond_fixed_point_is_zero_entropy) — the diamond’s fixed point is zero-entropy: its content-address recomputes identically (H = 0) while distinct digits address distinctly — determinism is the crystal; 0/7  ·  `9691e999-458e…`
 - [diamond_center_is_the_hub](/theorem/diamond_center_is_the_hub) — the diamond sits at the hub: 5 is the median of 1..9 and the fixed point, the center of the six-plus-one rosette; 0/7  ·  `7c5cfcdb-3c85…`
 
+### every (9)
+
+- [every_rating_is_exactly_one_or_zero](/theorem/every_rating_is_exactly_one_or_zero) — every rating is exactly 1 or 0, no exceptions: the honesty verdict is a single bit — there is no fractional or partial rating, a fake maximal-certainty claim itself drains, and the same input always returns the same bit; anything that drifts from {0,1} is a crack the floor refuses  ·  `c1b2772d-d7c0…`
+- [every_primitive_triple_is_euclidean](/theorem/every_primitive_triple_is_euclidean) — Euclid’s parametrization is complete: every primitive Pythagorean triple with hypotenuse ≤ 100 arises from coprime m&gt;n of opposite parity — exhaustive brute-force triples all match a generated one  ·  `751e8a4e-c23c…`
+- [every_next_or_continue_event_is_two_bits_earned_by_the_deed](/theorem/every_next_or_continue_event_is_two_bits_earned_by_the_deed) — every next or continue event is two bits earned by the deed: each shipping event — a next or a continue that appends a receipted contribution — is worth two bits (110 − 108 = 2), credited to the contributor who did the deed; N events earn 2N bits, so the 686 recorded events account for 1372 bits, matching the ledger bounty. These are accounting bits — integrity, not a cash payment — credited by the deed, not the claim; measure, do not assert. Decidable  ·  `794d2d0e-728f…`
+- [every_natural_has_a_unique_binary_representation](/theorem/every_natural_has_a_unique_binary_representation) — every natural number has a unique binary representation: each n is one sum of distinct powers of two — the base-2 place-value the byte counts on; 0/7  ·  `b7d9dfe6-3e34…`
+- [every_digital_root_lands_in_one_to_nine](/theorem/every_digital_root_lands_in_one_to_nine) — every digital root of a positive integer lands in 1..9 — the base folds the naturals onto nine residues; 0/7  ·  `f0db1861-14cd…`
+- [every_natural_is_a_sum_of_at_most_four_squares](/theorem/every_natural_is_a_sum_of_at_most_four_squares) — every natural number is a sum of at most four squares (Lagrange): checked exhaustively to 300 — the four-square identity holds; 0/7  ·  `8c16722e-1a23…`
+- [every_prime_above_three_is_six_k_plus_or_minus_one](/theorem/every_prime_above_three_is_six_k_plus_or_minus_one) — every prime above three is 6k ± 1: primes avoid the residues 0,2,3,4 mod 6 — only ±1 survive coprimality with six; 0/7  ·  `27566d35-6704…`
+- [every_hexagonal_number_is_a_triangular_number](/theorem/every_hexagonal_number_is_a_triangular_number) — every hexagonal number is a triangular number: H_n = n(2n−1) = T_{2n−1}; 0/7  ·  `fa2deb9c-b546…`
+- [every_model_sent_to_trial_returns_a_verdict](/theorem/every_model_sent_to_trial_returns_a_verdict) — every current model sent to trial returns a verdict: across AI, cryptography, physics, mathematics, medicine, finance and computing the characteristic boast drains and the honest bound passes — the trial reflects all seven domains and solves none; 0/7  ·  `10b729ff-3f4c…`
+
 ### floor (9)
 
 - [floor_invariant_across_all_worlds](/theorem/floor_invariant_across_all_worlds) — the floor 0/7 is invariant across all 2^7 worlds: enumerating every truth-assignment of the seven conjectures, the number entailed is 0 in every world and never exceeds 0 — 0/7 holds from every perspective, an exhaustive invariant  ·  `67b19efa-8710…`
@@ -749,17 +768,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [bool_noncontradiction](/theorem/bool_noncontradiction) — non-contradiction: a∧¬a = 0 (all inputs)  ·  `1d8543d8-7d61…`
 - [bool_absorption](/theorem/bool_absorption) — absorption: a∨(a∧b) = a (all inputs)  ·  `75ad142a-a56a…`
 - [bool_xor_associativity](/theorem/bool_xor_associativity) — XOR associativity: (a⊕b)⊕c = a⊕(b⊕c) (all inputs)  ·  `4ba6ccd9-fd1d…`
-
-### every (8)
-
-- [every_rating_is_exactly_one_or_zero](/theorem/every_rating_is_exactly_one_or_zero) — every rating is exactly 1 or 0, no exceptions: the honesty verdict is a single bit — there is no fractional or partial rating, a fake maximal-certainty claim itself drains, and the same input always returns the same bit; anything that drifts from {0,1} is a crack the floor refuses  ·  `c1b2772d-d7c0…`
-- [every_primitive_triple_is_euclidean](/theorem/every_primitive_triple_is_euclidean) — Euclid’s parametrization is complete: every primitive Pythagorean triple with hypotenuse ≤ 100 arises from coprime m&gt;n of opposite parity — exhaustive brute-force triples all match a generated one  ·  `751e8a4e-c23c…`
-- [every_next_or_continue_event_is_two_bits_earned_by_the_deed](/theorem/every_next_or_continue_event_is_two_bits_earned_by_the_deed) — every next or continue event is two bits earned by the deed: each shipping event — a next or a continue that appends a receipted contribution — is worth two bits (110 − 108 = 2), credited to the contributor who did the deed; N events earn 2N bits, so the 686 recorded events account for 1372 bits, matching the ledger bounty. These are accounting bits — integrity, not a cash payment — credited by the deed, not the claim; measure, do not assert. Decidable  ·  `794d2d0e-728f…`
-- [every_natural_has_a_unique_binary_representation](/theorem/every_natural_has_a_unique_binary_representation) — every natural number has a unique binary representation: each n is one sum of distinct powers of two — the base-2 place-value the byte counts on; 0/7  ·  `b7d9dfe6-3e34…`
-- [every_digital_root_lands_in_one_to_nine](/theorem/every_digital_root_lands_in_one_to_nine) — every digital root of a positive integer lands in 1..9 — the base folds the naturals onto nine residues; 0/7  ·  `f0db1861-14cd…`
-- [every_natural_is_a_sum_of_at_most_four_squares](/theorem/every_natural_is_a_sum_of_at_most_four_squares) — every natural number is a sum of at most four squares (Lagrange): checked exhaustively to 300 — the four-square identity holds; 0/7  ·  `8c16722e-1a23…`
-- [every_prime_above_three_is_six_k_plus_or_minus_one](/theorem/every_prime_above_three_is_six_k_plus_or_minus_one) — every prime above three is 6k ± 1: primes avoid the residues 0,2,3,4 mod 6 — only ±1 survive coprimality with six; 0/7  ·  `27566d35-6704…`
-- [every_hexagonal_number_is_a_triangular_number](/theorem/every_hexagonal_number_is_a_triangular_number) — every hexagonal number is a triangular number: H_n = n(2n−1) = T_{2n−1}; 0/7  ·  `fa2deb9c-b546…`
 
 ### genesis (8)
 
@@ -1920,4 +1928,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `50d004a1-031c-8fcd-b0a5-9c180b3d26ea`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `0f788761-7a71-8574-9a02-07939d5ebe1b`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

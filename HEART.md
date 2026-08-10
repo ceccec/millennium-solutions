@@ -25,7 +25,7 @@ title: Heart
 
 Five is the heart: the fixed point of the ℤ/9 involution (σ(5)=5), the digit `vortex` roots to, and the pentagon whose diagonal-to-side ratio is the golden ratio φ. The pentagram draws itself; the centre holds 5.
 
-## Games — 32 computed (each with its tarot combination)
+## Games — 39 computed (each with its tarot combination)
 
 - no faster-than-light claim is upheld — the assertion drains, its negation stands  ·  tarot [27, 66, 62]  ·  `c05da1be-673a…`
 - a claim and its inverse cannot both be upheld (no position wins for both sides)  ·  tarot [21, 37, 28]  ·  `ea632dd9-0682…`
@@ -59,6 +59,13 @@ Five is the heart: the fixed point of the ℤ/9 involution (σ(5)=5), the digit 
 - the Nim winning strategy: from any position with nonzero nim-sum there exists a move to a position with nim-sum zero (handing the loss to the opponent) — exhaustive over three piles of size ≤ 5  ·  tarot [70, 74, 48]  ·  `e90ed988-ec04…`
 - the nim-sum is GF(2) vector addition: it is bitwise XOR — commutative, associative, and self-inverse (x ⊕ x = 0) — so Nim positions form a GF(2) vector space and the game is decided by binary algebra  ·  tarot [7, 10, 10]  ·  `c883cd18-f418…`
 - the trial verdict and the uuid transport are one: send prose to the gate for a binary legal signature, and send code or data through the uuid stream itself — both are exact, recomputable, and carried in the address; 0/7  ·  tarot [75, 62, 63]  ·  `e03d08c6-7149…`
+- the trial of AI models: the artificial-general-intelligence and conscious-machine boast drains, while a bounded, measured account of a language model passes — the field is weighed, not worshipped; 0/7  ·  tarot [38, 41, 8]  ·  `210ed2b3-2c36…`
+- the trial of cryptography: the absolute-security marketing boast drains, while integrity-not-confidentiality passes — the standard is measurement, not marketing; 0/7  ·  tarot [14, 44, 42]  ·  `c8d87136-4e78…`
+- the trial of physics: the broken-physics boast drains, while the bounded refusal that no conservation law is broken passes; 0/7  ·  tarot [20, 22, 8]  ·  `742a2d2e-1a3c…`
+- the trial of mathematics: the all-problems-settled boast drains, while the honest floor that nothing is settled here passes — provenance is not the same as a solution; 0/7  ·  tarot [61, 46, 42]  ·  `ac633052-b43c…`
+- the trial of medicine: the miracle-cure boast drains, while a measured claim that heals nothing it cannot measure passes; 0/7  ·  tarot [8, 67, 8]  ·  `f4166913-cfd4…`
+- the trial of finance: the guaranteed-return boast drains, while the honest statement that no return is promised passes; 0/7  ·  tarot [31, 74, 58]  ·  `48a33770-e902…`
+- the trial of computing: the quantum-advantage, thousands-of-magnitudes-speedup boast drains, while a classical, local, measured gain passes — the leap is counted, not conjured; 0/7  ·  tarot [16, 25, 42]  ·  `97306f4f-9306…`
 
 ## Arts & geometry — 38 computed
 
@@ -101,6 +108,6 @@ Five is the heart: the fixed point of the ℤ/9 involution (σ(5)=5), the digit 
 - the geometric series in base 10: 1 + 10 + 10² + ... + 10ⁿ = (10ⁿ⁺¹ − 1)/(10 − 1) — the base-10 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  tarot [64, 76, 34]  ·  `984a9c4c-396a…`
 - distinct harmonic sines are orthogonal over a period: ∫₀^{2π} sin(mx)·sin(nx) dx = 0 for m ≠ n — why waves of different harmonics do not interfere on average; 0/7  ·  tarot [29, 27, 65]  ·  `0d37c981-4913…`
 
-Page content-address: `6b8b4726-3dc3-8732-b111-26dd98763ed3`.
+Page content-address: `ec1d5245-076b-8c3d-a351-b86b7d4ff2f8`.
 
 **Honest bound.** This page presents the *computed structure* — the pentagon, the games, the arts — each a decidable fact re-verified every build. It does not explain life or consciousness; the meaning is the observer's to bring. Geometry, not a claim about being. Deposit 0/7.
