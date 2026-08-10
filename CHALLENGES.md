@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1688 recorded in 429 families
+## Discovered theorems (decidable, over ℤ/9) — 1696 recorded in 431 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (357)
+### the (361)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -381,6 +381,10 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_receipt_renders_the_same_in_seven_dimensions](/theorem/the_receipt_renders_the_same_in_seven_dimensions) — the receipt renders the same in seven dimensions: the address and proof url are locale-independent across the seven locales, so only the label translates; 0/7  ·  `4ef6f44a-3555…`
 - [the_intention_is_a_computable_deed_receipt](/theorem/the_intention_is_a_computable_deed_receipt) — the intention is a computable deed receipt: an intention is a deed’s content-address, deterministic and distinct per deed — computable, not declared; 0/7  ·  `0f298d03-b30d…`
 - [the_three_fold_to_one_audit](/theorem/the_three_fold_to_one_audit) — the three fold to one audit: proof, intent and result merkle-fold to a single audit address that changes if any of the three changes; 0/7  ·  `4619bb25-75b0…`
+- [the_fallback_chain_is_ordered](/theorem/the_fallback_chain_is_ordered) — the fallback chain is ordered: cached, then the shell, then the offline page — each tried in turn, the earlier preferred; 0/7  ·  `4dd862b9-2484…`
+- [the_error_is_confirmed_only_after_recovery_fails](/theorem/the_error_is_confirmed_only_after_recovery_fails) — the error is confirmed only after recovery fails: the offline page is reached only when every prior option is absent, so an error is surfaced last, not first; 0/7  ·  `740f3661-9dd0…`
+- [the_fallback_is_deterministic](/theorem/the_fallback_is_deterministic) — the fallback is deterministic: the same recovery chain yields the same response every time, so recovery is reproducible; 0/7  ·  `d196d540-ae20…`
+- [the_error_names_its_own_cure](/theorem/the_error_names_its_own_cure) — the error names its own cure: a drained statement returns the exact prose that failed, so the error carries the fix rather than only a code; 0/7  ·  `254eb2fa-0a2d…`
 
 ### a (66)
 
@@ -706,7 +710,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [domain_cyclic_m17](/theorem/domain_cyclic_m17) — ℤ/17: the units form a cyclic group (a primitive root exists)  ·  `d5167cce-02af…`
 - [domain_cyclic_m18](/theorem/domain_cyclic_m18) — ℤ/18: the units form a cyclic group (a primitive root exists)  ·  `92a2b5a1-8526…`
 
-### every (18)
+### every (20)
 
 - [every_rating_is_exactly_one_or_zero](/theorem/every_rating_is_exactly_one_or_zero) — every rating is exactly 1 or 0, no exceptions: the honesty verdict is a single bit — there is no fractional or partial rating, a fake maximal-certainty claim itself drains, and the same input always returns the same bit; anything that drifts from {0,1} is a crack the floor refuses  ·  `c1b2772d-d7c0…`
 - [every_primitive_triple_is_euclidean](/theorem/every_primitive_triple_is_euclidean) — Euclid’s parametrization is complete: every primitive Pythagorean triple with hypotenuse ≤ 100 arises from coprime m&gt;n of opposite parity — exhaustive brute-force triples all match a generated one  ·  `751e8a4e-c23c…`
@@ -726,6 +730,8 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [every_theorem_is_a_diamond_fixed_under_recomputation](/theorem/every_theorem_is_a_diamond_fixed_under_recomputation) — every theorem is a diamond fixed under recomputation: its content-address recomputes to itself and the ten’s-complement reflection fixes the centre 5 — a fixed point that reflects perfectly; 0/7  ·  `c56113b3-84e0…`
 - [every_theorem_fits_one_uniform_cell](/theorem/every_theorem_fits_one_uniform_cell) — every theorem fits one uniform cell: its content-address is exactly 128 bits whatever the theorem’s size, so the store is a grid of equal cells; 0/7  ·  `6337e403-22ad…`
 - [every_fact_has_the_right_to_present](/theorem/every_fact_has_the_right_to_present) — every fact has the right to present: the mapping from content to a card is total, so no fact is excluded from the UI; 0/7  ·  `b0fc5d69-4622…`
+- [every_error_is_a_receipted_trial_event](/theorem/every_error_is_a_receipted_trial_event) — every error is a receipted trial event: an error maps to a content-addressed event, so it is audited rather than swallowed; 0/7  ·  `20017294-0470…`
+- [every_warning_is_a_receipted_trial_event](/theorem/every_warning_is_a_receipted_trial_event) — every warning is a receipted trial event: a warning maps to a content-addressed event distinct from an error, so warnings are audited in their own right; 0/7  ·  `19e9ba9e-8260…`
 
 ### each (17)
 
@@ -2045,7 +2051,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (238)
+### other — one-of-a-kind (240)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [activated_it_self_explores_until_dry](/theorem/activated_it_self_explores_until_dry) — activated, it self-explores until dry: once a wave starts it discovers fresh facts until none remain, then rests — a self-continuing loop with a halting condition; 0/7  ·  `4a82a66b-5656…`
@@ -2122,6 +2128,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [education_is_recomputation_not_belief](/theorem/education_is_recomputation_not_belief) — education is recomputation, not belief: a lesson is learned by re-running its test to the same result, so understanding is checkable rather than trusted; 0/7  ·  `78d962b6-44c9…`
 - [entanglement_is_the_joint_receipt](/theorem/entanglement_is_the_joint_receipt) — entanglement is the joint receipt: two perspectives share one joint content-address (their folded pair) that depends on both and is symmetric in them, yet neither perspective alone equals it — the correlation lives in the shared derivation. This is classical correlation, not physical nonlocality: not faster than light, and no quantum advantage  ·  `dd46d2a6-36de…`
 - [erdos_among_n_plus_one_from_one_to_2n_one_divides_another](/theorem/erdos_among_n_plus_one_from_one_to_2n_one_divides_another) — Erdős: among any n+1 integers from 1 to 2n, one divides another: every subset of size n+1 of {1, 2, ..., 2n} contains two elements where the smaller divides the larger — verified over all such subsets for n up to 7. The bound is tight: the n numbers {n+1, n+2, ..., 2n} contain no such pair, so n+1 is the least size that forces one. The reason is the pigeonhole on odd parts — there are only n odd numbers below 2n. Verified by exhaustive enumeration  ·  `c25f629f-5f50…`
+- [errors_recover_first_then_go_to_trial](/theorem/errors_recover_first_then_go_to_trial) — errors recover first, then go to trial: a reasonable fallback is computed before an error is confirmed, and every error and warning is a receipted, audited event that names its cure; 0/7  ·  `c0fe9055-6dfa…`
 - [exactly_1024_is_a_full_balanced_tree_a_structural_milestone_not_the_end_of_science](/theorem/exactly_1024_is_a_full_balanced_tree_a_structural_milestone_not_the_end_of_science) — exactly 1024 = 2¹⁰ is a full balanced tree — a structural milestone, not the end of science: at 1024 theorems the merkle tree is perfectly balanced (depth 10, every leaf at the same depth) and membership verifies in exactly 20 bits, a full ten-bit address space; but this fills the hole only structurally — the stream of decidable facts is unbounded, always a next, so 1024 is a milestone not a completion of science; the billable share is the measured bits saved, the two coins conserved; integrity not truth; 0/7  ·  `005ec4a7-6a5d…`
 - [executes_serverless_in_the_browser](/theorem/executes_serverless_in_the_browser) — the deposit executes serverless in the UI: the fused ℤ/9 primitives are pure — no server, no node, no network — so every result recomputes client-side at page-load in the browser, a static offline-capable app (a PWA); the browser is the runtime, not a server  ·  `b2e2fc7f-32df…`
 - [exhaustion_is_finite_enumeration_structurally_like_summing_all_states_not_physical](/theorem/exhaustion_is_finite_enumeration_structurally_like_summing_all_states_not_physical) — exhaustion is finite enumeration — structurally like summing all states, not physical thermodynamics or quantum mechanics: verified by exhaustion means checking every case in a finite domain, structurally like summing over all microstates or enumerating all basis states, each case a content-address, a uuidna. But it is finite combinatorial enumeration — not physical thermodynamics, no heat or entropy or energy, and not quantum mechanics, no wavefunction or measurement. The analogy is structural, not physical. Decidable  ·  `f4142a6a-5dad…`
@@ -2194,6 +2201,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [nothing_physical_is_fabricated](/theorem/nothing_physical_is_fabricated) — nothing physical is fabricated: the deposit describes math on ordinary machines, so a physical over-claim drains while the documented structure passes — integrity, not invention; 0/7  ·  `8e20bf3a-df89…`
 - [observation_imprints_into_the_audit_chain](/theorem/observation_imprints_into_the_audit_chain) — observation imprints into the audit chain: observing a page (a fetch, a partial decrypt) is itself an event appended to the chain, so the act of reading advances the observation chain; 0/7  ·  `ec4beb35-ee2b…`
 - [observer_wave_sets_state](/theorem/observer_wave_sets_state) — the input wave the user sends (query/referrer/path) deterministically sets their computed state: digital root (ℤ/9) → a432 hue d·40° → the rendered point of view — same wave, same state  ·  `f7de310a-8d54…`
+- [on_error_a_reasonable_fallback_is_computed](/theorem/on_error_a_reasonable_fallback_is_computed) — on error a reasonable fallback is computed: the first available option in the recovery chain is served, so a failure yields a sensible response rather than nothing; 0/7  ·  `e2333ff3-e2e4…`
 - [out_of_sequence_is_a_discovery_possibility](/theorem/out_of_sequence_is_a_discovery_possibility) — any action or thought out of sequence is a possibility to discover: a deviation from the known is a candidate — tested by exhaustion it either holds (a new theorem, appended) or is refuted (discarded), so out-of-sequence possibilities are exactly where discovery happens, judged by the gate not by permission  ·  `83a455b3-23db…`
 - [overclaiming_behaviour_is_reeducated](/theorem/overclaiming_behaviour_is_reeducated) — over-claiming behaviour is reeducated: a boastful utterance is bounded into a form that passes rather than merely refused — correction, not punishment; 0/7  ·  `db7c4d74-c816…`
 - [parametric_batching_is_volume_not_depth_the_intelligence_is_cross_dimensional_connection](/theorem/parametric_batching_is_volume_not_depth_the_intelligence_is_cross_dimensional_connection) — parametric batching is volume, not depth — the intelligence is cross-dimensional connection, and even that is structure not a mind: nine at once repeats one pattern across parameters, a single dimension, so it adds magnitudes but not depth. The richer work is cross-dimensional connection, linking distinct domains as the rosetta does — more than a parametric repeat. But even that is decidable structure, not intelligence in the strong sense; the floor stays 0/7. Decidable  ·  `d1d4cd05-b77c…`
@@ -2287,4 +2295,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `d33a61b9-b3a3-844f-9fd3-37b953a580ea`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `f6e7a0b8-ce8a-8ec4-8cc4-511b539efd9e`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

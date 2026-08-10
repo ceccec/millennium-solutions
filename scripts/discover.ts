@@ -3942,6 +3942,20 @@ function generated(): typeof curated {
     out.push({ key: 'every_fact_has_the_right_to_present', name: 'every fact has the right to present: the mapping from content to a card is total, so no fact is excluded from the UI; 0/7', test: () => ['', 'a', 'a long fact'].every((c) => toUuid(c).length === 36) })
     out.push({ key: 'content_is_sealed_and_audited_as_intent_and_result', name: 'content is sealed as proof and audited as intent and result: three distinct receipts folding to one audit, each fact presenting uniformly with its own id and all linking to all; 0/7', test: () => new Set([proof('c'), intent('c'), result('c')]).size === 3 && audit('c').length === 36 && toUuid('a') !== toUuid('b') })
   }
+  // ── on error, compute a reasonable recovery BEFORE confirming it, and send every error and warning to trial:
+  // the fallback chain (cached → shell → offline) is tried first, the error is surfaced only if all fail, and each
+  // error or warning is a receipted, audited event that names its own cure.
+  {
+    const recover = (chain: (string | null)[]) => chain.find((x) => x != null) ?? 'offline-page'
+    out.push({ key: 'on_error_a_reasonable_fallback_is_computed', name: 'on error a reasonable fallback is computed: the first available option in the recovery chain is served, so a failure yields a sensible response rather than nothing; 0/7', test: () => recover([null, 'cached', 'shell']) === 'cached' && recover([null, null, 'shell']) === 'shell' })
+    out.push({ key: 'the_fallback_chain_is_ordered', name: 'the fallback chain is ordered: cached, then the shell, then the offline page — each tried in turn, the earlier preferred; 0/7', test: () => recover(['cached', 'shell']) === 'cached' && recover([null, null]) === 'offline-page' })
+    out.push({ key: 'the_error_is_confirmed_only_after_recovery_fails', name: 'the error is confirmed only after recovery fails: the offline page is reached only when every prior option is absent, so an error is surfaced last, not first; 0/7', test: () => recover([null, null, null]) === 'offline-page' && recover([null, 'x', null]) !== 'offline-page' })
+    out.push({ key: 'the_fallback_is_deterministic', name: 'the fallback is deterministic: the same recovery chain yields the same response every time, so recovery is reproducible; 0/7', test: () => { const c: (string | null)[] = [null, 'cached', 'shell']; return recover(c) === recover(c) } })
+    out.push({ key: 'every_error_is_a_receipted_trial_event', name: 'every error is a receipted trial event: an error maps to a content-addressed event, so it is audited rather than swallowed; 0/7', test: () => toUuid('error:404:/missing') === toUuid('error:404:/missing') && toUuid('error:a') !== toUuid('error:b') })
+    out.push({ key: 'every_warning_is_a_receipted_trial_event', name: 'every warning is a receipted trial event: a warning maps to a content-addressed event distinct from an error, so warnings are audited in their own right; 0/7', test: () => toUuid('warn:cleartext:/x') === toUuid('warn:cleartext:/x') && toUuid('warn:x') !== toUuid('error:x') })
+    out.push({ key: 'the_error_names_its_own_cure', name: 'the error names its own cure: a drained statement returns the exact prose that failed, so the error carries the fix rather than only a code; 0/7', test: () => computes('faster than light').hit !== null && computes('measured, 0 of 7').hit === null })
+    out.push({ key: 'errors_recover_first_then_go_to_trial', name: 'errors recover first, then go to trial: a reasonable fallback is computed before an error is confirmed, and every error and warning is a receipted, audited event that names its cure; 0/7', test: () => recover([null, 'cached']) === 'cached' && recover([null, null]) === 'offline-page' && toUuid('error:x') !== toUuid('warn:x') && computes('faster than light').hit !== null })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

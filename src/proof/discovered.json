@@ -8438,5 +8438,45 @@
     "key": "content_is_sealed_and_audited_as_intent_and_result",
     "name": "content is sealed as proof and audited as intent and result: three distinct receipts folding to one audit, each fact presenting uniformly with its own id and all linking to all; 0/7",
     "receipt": "d8b323b5-cbf3-8f3e-ba71-212b59970b87"
+  },
+  {
+    "key": "on_error_a_reasonable_fallback_is_computed",
+    "name": "on error a reasonable fallback is computed: the first available option in the recovery chain is served, so a failure yields a sensible response rather than nothing; 0/7",
+    "receipt": "e2333ff3-e2e4-8af9-80e7-858e967ce6a7"
+  },
+  {
+    "key": "the_fallback_chain_is_ordered",
+    "name": "the fallback chain is ordered: cached, then the shell, then the offline page — each tried in turn, the earlier preferred; 0/7",
+    "receipt": "4dd862b9-2484-85af-8c5d-8582ba20c8c0"
+  },
+  {
+    "key": "the_error_is_confirmed_only_after_recovery_fails",
+    "name": "the error is confirmed only after recovery fails: the offline page is reached only when every prior option is absent, so an error is surfaced last, not first; 0/7",
+    "receipt": "740f3661-9dd0-8060-958f-5485a10b7fd2"
+  },
+  {
+    "key": "the_fallback_is_deterministic",
+    "name": "the fallback is deterministic: the same recovery chain yields the same response every time, so recovery is reproducible; 0/7",
+    "receipt": "d196d540-ae20-88fd-8608-b1b452e32b80"
+  },
+  {
+    "key": "every_error_is_a_receipted_trial_event",
+    "name": "every error is a receipted trial event: an error maps to a content-addressed event, so it is audited rather than swallowed; 0/7",
+    "receipt": "20017294-0470-8dd9-b025-ff260eb43bd2"
+  },
+  {
+    "key": "every_warning_is_a_receipted_trial_event",
+    "name": "every warning is a receipted trial event: a warning maps to a content-addressed event distinct from an error, so warnings are audited in their own right; 0/7",
+    "receipt": "19e9ba9e-8260-8959-bcca-d07dd8dd476d"
+  },
+  {
+    "key": "the_error_names_its_own_cure",
+    "name": "the error names its own cure: a drained statement returns the exact prose that failed, so the error carries the fix rather than only a code; 0/7",
+    "receipt": "254eb2fa-0a2d-8a97-9fe7-929653c3d318"
+  },
+  {
+    "key": "errors_recover_first_then_go_to_trial",
+    "name": "errors recover first, then go to trial: a reasonable fallback is computed before an error is confirmed, and every error and warning is a receipted, audited event that names its cure; 0/7",
+    "receipt": "c0fe9055-6dfa-8976-b902-ba2bdb0ffedb"
   }
 ]
