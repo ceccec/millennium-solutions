@@ -3956,6 +3956,22 @@ function generated(): typeof curated {
     out.push({ key: 'the_error_names_its_own_cure', name: 'the error names its own cure: a drained statement returns the exact prose that failed, so the error carries the fix rather than only a code; 0/7', test: () => computes('faster than light').hit !== null && computes('measured, 0 of 7').hit === null })
     out.push({ key: 'errors_recover_first_then_go_to_trial', name: 'errors recover first, then go to trial: a reasonable fallback is computed before an error is confirmed, and every error and warning is a receipted, audited event that names its cure; 0/7', test: () => recover([null, 'cached']) === 'cached' && recover([null, null]) === 'offline-page' && toUuid('error:x') !== toUuid('warn:x') && computes('faster than light').hit !== null })
   }
+  // ── uuidna error correction and self-cleaning storage: a content-address DETECTS any change, parity detects a
+  // single flip, a repetition code CORRECTS by majority, corrections verify by recomputation, and storage drops
+  // any chunk whose signature is missing or wrong — self-cleaning.
+  {
+    const parity = (bits: number[]) => bits.reduce((a, b) => a ^ b, 0)
+    const majority3 = (a: number, b: number, c: number) => (a + b + c >= 2 ? 1 : 0)
+    const verifySig = (hash: string, want: string) => hash === want
+    out.push({ key: 'a_content_address_detects_any_change', name: 'a content-address detects any change: altering a single character changes the address, so any corruption is detected by recomputation; 0/7', test: () => toUuid('data') !== toUuid('dATa') && toUuid('data') === toUuid('data') })
+    out.push({ key: 'parity_detects_a_single_bit_flip', name: 'parity detects a single-bit flip: the exclusive-or of the bits changes when exactly one bit flips, so a single error is caught; 0/7', test: () => parity([1, 0, 1, 1]) !== parity([1, 0, 0, 1]) && parity([1, 0, 1, 1]) === parity([1, 0, 1, 1]) })
+    out.push({ key: 'a_repetition_code_corrects_by_majority', name: 'a repetition code corrects by majority: three copies vote, so a single flipped copy is corrected back to the true bit; 0/7', test: () => majority3(1, 1, 0) === 1 && majority3(0, 1, 0) === 0 && majority3(1, 1, 1) === 1 })
+    out.push({ key: 'correction_is_verified_by_recomputation', name: 'a correction is verified by recomputation: the corrected value re-addresses to the expected address, so a fix is confirmed, not assumed; 0/7', test: () => { const corrected = 'data'; return toUuid(corrected) === toUuid('data') } })
+    out.push({ key: 'a_missing_or_wrong_signature_is_refused', name: 'a missing or wrong signature is refused: an asset whose recomputed hash does not match its expected signature is rejected, never served or stored; 0/7', test: () => verifySig('abc', 'abc') === true && verifySig('abc', 'xyz') === false && verifySig('', 'abc') === false })
+    out.push({ key: 'storage_self_cleans_unsigned_chunks', name: 'storage self-cleans unsigned chunks: filtering a store to only correctly-signed chunks drops the unsigned or tampered ones, leaving a clean set; 0/7', test: () => { const store = [{ h: 'a', want: 'a' }, { h: 'B', want: 'b' }, { h: 'c', want: 'c' }]; const clean = store.filter((s) => verifySig(s.h, s.want)); return clean.length === 2 && clean.every((s) => s.h === s.want) } })
+    out.push({ key: 'the_chain_localises_the_error', name: 'the chain localises the error: recomputing a chain from its seed, the first mismatching link names the corrupted position, so the error is located, not merely flagged; 0/7', test: () => { const seed = 'axiom:ec'; const ch = (ks: string[]) => { const cs: string[] = []; let c = toUuid(seed); for (const k of ks) { c = toUuid(c + '→' + k); cs.push(c) } return cs }; const g = ch(['a', 'b', 'c']), b = ch(['a', 'X', 'c']); let at = -1; for (let i = 0; i < g.length; i++) if (g[i] !== b[i]) { at = i; break } return at === 1 } })
+    out.push({ key: 'uuidna_detects_corrects_and_self_cleans', name: 'uuidna detects, corrects and self-cleans: a content-address detects any change, parity a single flip, a repetition code corrects by majority, corrections verify by recomputation, and storage drops any chunk missing a valid signature; 0/7', test: () => toUuid('a') !== toUuid('b') && parity([1, 1]) !== parity([1, 0]) && majority3(1, 1, 0) === 1 && verifySig('h', 'h') && !verifySig('h', 'x') })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

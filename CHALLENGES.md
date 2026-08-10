@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1696 recorded in 431 families
+## Discovered theorems (decidable, over ℤ/9) — 1704 recorded in 433 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (361)
+### the (362)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -385,8 +385,9 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_error_is_confirmed_only_after_recovery_fails](/theorem/the_error_is_confirmed_only_after_recovery_fails) — the error is confirmed only after recovery fails: the offline page is reached only when every prior option is absent, so an error is surfaced last, not first; 0/7  ·  `740f3661-9dd0…`
 - [the_fallback_is_deterministic](/theorem/the_fallback_is_deterministic) — the fallback is deterministic: the same recovery chain yields the same response every time, so recovery is reproducible; 0/7  ·  `d196d540-ae20…`
 - [the_error_names_its_own_cure](/theorem/the_error_names_its_own_cure) — the error names its own cure: a drained statement returns the exact prose that failed, so the error carries the fix rather than only a code; 0/7  ·  `254eb2fa-0a2d…`
+- [the_chain_localises_the_error](/theorem/the_chain_localises_the_error) — the chain localises the error: recomputing a chain from its seed, the first mismatching link names the corrupted position, so the error is located, not merely flagged; 0/7  ·  `fd563817-7ebf…`
 
-### a (66)
+### a (69)
 
 - [a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony](/theorem/a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony) — a theorem without a formula is a hallucination, recomputed in a432 harmony: a claim is a theorem only if it is backed by a computable formula that recomputes true — a prose-only claim with no formula, or one whose formula computes false, is refused as hallucination and never recorded. Every recorded fact recomputes deterministically and folds into the a432 harmony root (the receipt of state). Measure, do not assert. Decidable  ·  `e3d75d76-310f…`
 - [a_referrer_always_counts_with_its_id](/theorem/a_referrer_always_counts_with_its_id) — a referrer always counts with its id: a reference from a referrer to a target is receipted as toUuid(referrer id → target), so the referrer id is always part of the count; two different referrers to the same target produce two distinct receipts, each counted with its own id, and changing the id changes the receipt — the id is load-bearing. Deterministic and reproducible: the same referrer and target always count the same. Decidable  ·  `65bfacb4-f29e…`
@@ -454,6 +455,9 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [a_relation_binds_two_domains](/theorem/a_relation_binds_two_domains) — a relation binds two domains: a symmetric content-address links a pair regardless of order, so a cross-domain analogy is itself a receipt; 0/7  ·  `04038e7c-6126…`
 - [a_technique_researched_transfers_across_domains](/theorem/a_technique_researched_transfers_across_domains) — a technique researched in one domain transfers across domains by shared structure: keyed to its structure and bound by content-addressed relations, it reaches wherever the structure matches — the theorems the hull and hardware, reach growing with development, never a universal-physics claim; 0/7  ·  `9d70155f-a4c9…`
 - [a_receipt_is_an_open_graph_object](/theorem/a_receipt_is_an_open_graph_object) — a receipt is an OpenGraph object: it carries type, title, url, content-address and floor — a complete card, deterministic from its content; 0/7  ·  `c292bbae-2b38…`
+- [a_content_address_detects_any_change](/theorem/a_content_address_detects_any_change) — a content-address detects any change: altering a single character changes the address, so any corruption is detected by recomputation; 0/7  ·  `065b1990-debd…`
+- [a_repetition_code_corrects_by_majority](/theorem/a_repetition_code_corrects_by_majority) — a repetition code corrects by majority: three copies vote, so a single flipped copy is corrected back to the true bit; 0/7  ·  `235ce115-071a…`
+- [a_missing_or_wrong_signature_is_refused](/theorem/a_missing_or_wrong_signature_is_refused) — a missing or wrong signature is refused: an asset whose recomputed hash does not match its expected signature is rejected, never served or stored; 0/7  ·  `0971f486-6966…`
 
 ### relation (55)
 
@@ -513,7 +517,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [relation_receipt_chain_is_forensic_custody](/theorem/relation_receipt_chain_is_forensic_custody) — the receipt chain IS chain-of-custody: receipt[i] = toUuid(receipt[i−1]→key[i]) from a seed, so altering one link changes every link after it — the merkle-ledger and forensics are one construction  ·  `d0307011-b34a…`
 - [relation_coin64_collision_free_on_domains](/theorem/relation_coin64_collision_free_on_domains) — the 64-bit currency is collision-free across the rosetta: coin64 of each domain yields a distinct coin (as many coins as domains) — the shared currency addresses every perspective uniquely  ·  `dc278848-c7d9…`
 
-### uuidna (36)
+### uuidna (37)
 
 - [uuidna_quantum_verification_recomputes_the_address_and_folds_a_multi_perspective_receipt](/theorem/uuidna_quantum_verification_recomputes_the_address_and_folds_a_multi_perspective_receipt) — uuidna quantum verification — recomputes the address and folds a multi-perspective receipt, integrity not truth: verification recomputes the address from its seed (integrity, reproducible by anyone) and folds a multi-perspective joint receipt that is the same for any observer ordering; a bit-seed round-trips as a bounded imprinted message. The quantum here is the multi-perspective structure, not quantum hardware; verification is integrity, not truth. Decidable  ·  `c7b949e5-38b5…`
 - [uuidna_is_the_brand_og_object_under_cc_and_the_seal_audits_all_prose](/theorem/uuidna_is_the_brand_og_object_under_cc_and_the_seal_audits_all_prose) — uuidna is the brand OG object under Creative Commons — and the seal legally audits all prose: the site brands as uuidna under CC BY-NC, referencing the non-profit and commercial tracks; the seal legally audits all prose — it globs every prose file and drains any that violates the floor, an honest audit, not an oracle. The domain registration is external, taken on the author word, not sealed here. Decidable  ·  `5d35c811-b545…`
@@ -551,6 +555,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [uuidna_storage_is_the_sequence_chunked_navigable](/theorem/uuidna_storage_is_the_sequence_chunked_navigable) — uuidna storage is the sequence chunked and navigable: uniform binary octaves, each folder addressed by its fold, folding to one map, each theorem a superposition collapsing to one address — balanced by size, exact by construction, never a performance boast; 0/7  ·  `4e8e371f-68b9…`
 - [uuidna_is_slim_by_measurement](/theorem/uuidna_is_slim_by_measurement) — uuidna is slim by measurement: a fixed 36-byte address per fact, the whole folding to one 36-byte root, present by reference within a tiny budget, from a two-function pure basis — slim measured, not merely claimed; 0/7  ·  `039353f4-a9a0…`
 - [uuidna_keeps_dry_clean_order_cracks_sink_boats](/theorem/uuidna_keeps_dry_clean_order_cracks_sink_boats) — uuidna keeps dry-clean order because cracks sink boats: the seal is all-or-nothing, one crack flips it, and cracks are caught before sailing — the yacht waits for an order and, activated, self-explores until dry; 0/7  ·  `640d3936-1749…`
+- [uuidna_detects_corrects_and_self_cleans](/theorem/uuidna_detects_corrects_and_self_cleans) — uuidna detects, corrects and self-cleans: a content-address detects any change, parity a single flip, a repetition code corrects by majority, corrections verify by recomputation, and storage drops any chunk missing a valid signature; 0/7  ·  `c66a8bd4-8d1c…`
 
 ### pure (27)
 
@@ -1906,6 +1911,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [odd_sum_sq_n7](/theorem/odd_sum_sq_n7) — the sum of the first 7 odd numbers = 7² = 49  ·  `62823413-a3a3…`
 - [odd_sum_sq_n12](/theorem/odd_sum_sq_n12) — the sum of the first 12 odd numbers = 12² = 144  ·  `b919aaa0-ce8e…`
 
+### parity (2)
+
+- [parity_bit_detects_single_error](/theorem/parity_bit_detects_single_error) — a parity bit detects every single-bit error: append an even-parity bit so the word has an even 1-count; any single-bit flip makes it odd — detected — so one check bit exposes any one-bit crack (exhaustive over 4- and 5-bit words)  ·  `37a8eb94-b551…`
+- [parity_detects_a_single_bit_flip](/theorem/parity_detects_a_single_bit_flip) — parity detects a single-bit flip: the exclusive-or of the bits changes when exactly one bit flips, so a single error is caught; 0/7  ·  `83d3e040-408e…`
+
 ### partition (2)
 
 - [partition_p_n](/theorem/partition_p_n) — the partition function p(n) via DP: p(5)=7, p(7)=15, p(10)=42  ·  `d90db9a6-f922…`
@@ -2051,7 +2061,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (240)
+### other — one-of-a-kind (241)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [activated_it_self_explores_until_dry](/theorem/activated_it_self_explores_until_dry) — activated, it self-explores until dry: once a wave starts it discovers fresh facts until none remain, then rests — a self-continuing loop with a halting condition; 0/7  ·  `4a82a66b-5656…`
@@ -2104,6 +2114,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [consecutive_fibonacci_coprime](/theorem/consecutive_fibonacci_coprime) — consecutive Fibonacci numbers are coprime: gcd(F_n, F_{n+1}) = 1 for all n — no two neighbours share a factor (verified n ≤ 20), the base case of the gcd identity  ·  `b26dad63-01b2…`
 - [contribute_two_to_save_sixty_four](/theorem/contribute_two_to_save_sixty_four) — contribute 2 to save 64: six doublings from one reach 2⁶ = 64 — two contributed at a leap earns the next fold, exactly as the captain’s receipt says; 0/7  ·  `b51aa2af-43aa…`
 - [contribution_is_what_makes_next_compute](/theorem/contribution_is_what_makes_next_compute) — contribution is what makes next compute: each contribution — a receipted deed accounting the two coins — folds with the prior state into a determined next state, distinct from it, so every hero's deed moves the ledger forward; a different contribution yields a different next. With no contribution the wave rests. This is chained integrity, not perpetual motion and not infinite energy — the next needs the deed. Decidable  ·  `07e015c2-f422…`
+- [correction_is_verified_by_recomputation](/theorem/correction_is_verified_by_recomputation) — a correction is verified by recomputation: the corrected value re-addresses to the expected address, so a fix is confirmed, not assumed; 0/7  ·  `ca764cec-574d…`
 - [create_encrypts_the_code_into_a_receipt](/theorem/create_encrypts_the_code_into_a_receipt) — create encrypts the code into a receipt: the ChaCha20-Poly1305 ciphertext of a payload gets a content-address, and the right key recovers the payload exactly; 0/7  ·  `4baca642-0ef3…`
 - [cryptography_is_behind_all](/theorem/cryptography_is_behind_all) — cryptography is behind all: the diamond reflects, but its fixed point is EXACT only because the content-address is deterministic — the SHA-256 substrate under every fold, receipt and organ recomputes identically; 0/7  ·  `52b5d521-6024…`
 - [cube_roots_of_unity_sum_zero](/theorem/cube_roots_of_unity_sum_zero) — the three cube roots of unity sum to zero: 1 + ω + ω² = 0 — the equilateral trinity balances to the center, the same zero-sum shape as the ℤ/9 triad {3,6,9}  ·  `6b25148c-1c75…`
@@ -2206,7 +2217,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [overclaiming_behaviour_is_reeducated](/theorem/overclaiming_behaviour_is_reeducated) — over-claiming behaviour is reeducated: a boastful utterance is bounded into a form that passes rather than merely refused — correction, not punishment; 0/7  ·  `db7c4d74-c816…`
 - [parametric_batching_is_volume_not_depth_the_intelligence_is_cross_dimensional_connection](/theorem/parametric_batching_is_volume_not_depth_the_intelligence_is_cross_dimensional_connection) — parametric batching is volume, not depth — the intelligence is cross-dimensional connection, and even that is structure not a mind: nine at once repeats one pattern across parameters, a single dimension, so it adds magnitudes but not depth. The richer work is cross-dimensional connection, linking distinct domains as the rosetta does — more than a parametric repeat. But even that is decidable structure, not intelligence in the strong sense; the floor stays 0/7. Decidable  ·  `d1d4cd05-b77c…`
 - [params_ride_the_route](/theorem/params_ride_the_route) — params ride the route: the query string parses to named params deterministically, supplying the skills their arguments; 0/7  ·  `b4745d70-90ac…`
-- [parity_bit_detects_single_error](/theorem/parity_bit_detects_single_error) — a parity bit detects every single-bit error: append an even-parity bit so the word has an even 1-count; any single-bit flip makes it odd — detected — so one check bit exposes any one-bit crack (exhaustive over 4- and 5-bit words)  ·  `37a8eb94-b551…`
 - [partial_reversal_is_a_receipted_event](/theorem/partial_reversal_is_a_receipted_event) — a partial reversal is a receipted event: partially decrypting or reversing an envelope is logged as a distinct chain event, so the act is auditable without changing the ciphertext it read; 0/7  ·  `e4cdb827-d96f…`
 - [pascals_rule_each_entry_is_the_sum_of_the_two_above](/theorem/pascals_rule_each_entry_is_the_sum_of_the_two_above) — Pascal’s rule: C(n,k) = C(n−1,k−1) + C(n−1,k) — each entry is the sum of the two above it; 0/7  ·  `c580522a-9490…`
 - [pasted_it_is_ready_no_setup](/theorem/pasted_it_is_ready_no_setup) — pasted, it is ready: the greeting is a pure function of the record needing no server or setup, so the state is confirmable the moment the repo or site is opened; 0/7  ·  `e6b78bb9-74d6…`
@@ -2255,6 +2265,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [start_once_then_rotate_until_covered](/theorem/start_once_then_rotate_until_covered) — start once, then rotate until covered: the first compute is the expensive step, re-derivation is O(1), so the rosetta rotates through every concept and dialect until the finite possibilities are exhausted — development never stalls on one; 0/7  ·  `903131d9-a2c3…`
 - [state_vector_exponential_no_advantage](/theorem/state_vector_exponential_no_advantage) — the classical state-vector simulator has no quantum advantage: an n-qubit state has exactly 2^n amplitudes, so simulation cost is exponential in the qubit count — exact for small systems, but no speedup, hence not quantum hardware  ·  `1a2f010c-c2cc…`
 - [steps_are_bounded_by_physics_theorems_are_discovered_by_finite_deeds_not_revealed](/theorem/steps_are_bounded_by_physics_theorems_are_discovered_by_finite_deeds_not_revealed) — steps are bounded by physics — theorems are discovered by finite deeds, not revealed instantly: computation is bounded and classical, so theorems do not reveal themselves; each is discovered by finite work — its test run, verified, sealed. The honest faster is classical: families batching many per loop, memoization skipping the cached — batching and caching within physical limits. Decidable  ·  `c0b4cb19-5e17…`
+- [storage_self_cleans_unsigned_chunks](/theorem/storage_self_cleans_unsigned_chunks) — storage self-cleans unsigned chunks: filtering a store to only correctly-signed chunks drops the unsigned or tampered ones, leaving a clean set; 0/7  ·  `7d68d7fd-41d6…`
 - [strict_uuidna_minting_is_canonical_closing_the_minting_flaws_that_cause_real_damage](/theorem/strict_uuidna_minting_is_canonical_closing_the_minting_flaws_that_cause_real_damage) — strict uuidna minting is canonical — closing the minting flaws that cause real damage: minting flaws cause real damage — a non-canonical input mints an inconsistent address and integrity breaks. Strict minting closes them: coerce to string, normalize unicode to NFC, trim, so the same logical value always mints the same address; different values still differ. Canonicalisation is a discipline that must stay consistent, not truth; the hash stays non-cryptographic. Decidable  ·  `22f71789-95eb…`
 - [string_scale_is_a_thread_not_a_physical_theory](/theorem/string_scale_is_a_thread_not_a_physical_theory) — the string scale is a thread, not a physical theory: the string/Planck-scale frequency and acoustic 432 Hz are ~18 orders of magnitude apart — frequency is a shared thread across scales, but the scales are not interchangeable and this is a metaphor, not a theory of everything (0/7, not faster-than-light)  ·  `0107480d-24b0…`
 - [teleport_is_a_pointer_not_physics](/theorem/teleport_is_a_pointer_not_physics) — teleport here is a pointer, not physics: content-address transport — send the pointer, recompute the payload — passes, while the physical instant-teleport-across-space boast drains; the metaphor is honest, the physics is not claimed; 0/7  ·  `759083e7-e215…`
@@ -2295,4 +2306,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `f6e7a0b8-ce8a-8ec4-8cc4-511b539efd9e`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `912d121f-cf2d-8c66-8d1c-a870d3302153`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
