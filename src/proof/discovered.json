@@ -6958,5 +6958,45 @@
     "key": "only_theorems_decide",
     "name": "only theorems decide: every decision in the deposit is a boolean from a decidable test — deterministic, reproducible, independent of prose or authority; nothing decides that does not compute; 0/7",
     "receipt": "011337ae-bca3-86dd-b896-4e08e9975537"
+  },
+  {
+    "key": "a_theorem_responds_in_a_receipt",
+    "name": "a theorem responds in a receipt: its key folds to a deterministic content-address, so every theorem answers with an address, not free prose; 0/7",
+    "receipt": "0dbe9c6f-3905-8367-89fc-5bfc68e4847c"
+  },
+  {
+    "key": "the_receipt_is_the_page",
+    "name": "the receipt is the page: a theorem key maps one-to-one to its page path /theorem/<key>, so distinct theorems have distinct pages and the same key the same page; 0/7",
+    "receipt": "ce2184b7-43f5-8185-9fc7-0dfb2a652273"
+  },
+  {
+    "key": "only_theorems_name_and_describe",
+    "name": "only theorems name and describe: a page carries a theorem name, which must pass the gate — a draining name is refused, so no unbacked prose becomes a page; 0/7",
+    "receipt": "7dffb5d5-9c68-86a6-9d0d-c0a726ce9214"
+  },
+  {
+    "key": "a_guide_is_a_sequence_of_theorems",
+    "name": "a guide is a sequence of theorems: an ordered list of theorem keys folds to one content-address, so a guide is addressed by exactly the theorems it lists; 0/7",
+    "receipt": "25e916f9-5ea7-869a-97e8-064cf67bc35a"
+  },
+  {
+    "key": "the_book_recomputes_from_its_theorems",
+    "name": "the book recomputes from its theorems: the book address is the fold of its theorem receipts, so changing any listed theorem changes the book; 0/7",
+    "receipt": "7e8a5312-3a24-8286-b8d9-aef0e0bb0702"
+  },
+  {
+    "key": "a_point_is_proven_by_a_theorem_or_not_taken",
+    "name": "a point is taken only when a theorem proves it: the point holds iff some decidable test computes true, otherwise it is not taken — the theorem decides the point; 0/7",
+    "receipt": "a6df4b0f-8a78-88d3-a3b6-b3f0d8506a0e"
+  },
+  {
+    "key": "the_pages_chain_tamper_evident",
+    "name": "the pages chain tamper-evident: a guide chains its theorem receipts in order (each seeded by the last), so reordering or editing a page breaks the chain; 0/7",
+    "receipt": "9bd53a74-7971-8b75-8277-8fa80fd7d0fd"
+  },
+  {
+    "key": "only_theorems_write_the_guides",
+    "name": "only theorems write the guides: a book is composed only of theorems — each names and describes itself, responds in a receipt, and its receipt is its page — so a guide holds nothing that is not a theorem; 0/7",
+    "receipt": "297e5944-f910-8fab-877d-6e8549dd08d6"
   }
 ]
