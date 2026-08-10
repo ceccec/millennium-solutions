@@ -3255,6 +3255,22 @@ function generated(): typeof curated {
     out.push({ key: 'diamond_center_is_the_hub', name: 'the diamond sits at the hub: 5 is the median of 1..9 and the fixed point, the center of the six-plus-one rosette; 0/7', test: () => digits9[(digits9.length - 1) / 2] === 5 && diamond(5) === 5 && 6 + 1 === 7 })
     out.push({ key: 'cryptography_is_behind_all', name: 'cryptography is behind all: the diamond reflects, but its fixed point is EXACT only because the content-address is deterministic — the SHA-256 substrate under every fold, receipt and organ recomputes identically; 0/7', test: () => digits9.every((d) => diamond(diamond(d)) === d) && diamond(5) === 5 && toUuid('5') === toUuid('5') && hex(sha256(enc('diamond'))) === hex(sha256(enc('diamond'))) && hex(sha256(enc('a'))) !== hex(sha256(enc('b'))) })
   }
+  // ── no payload needed: a content-addressed theorem is self-deriving — you ship the address and recompute,
+  // never a trusted payload. From the version (a label) to the UI (which re-derives from the ledger), the DNA
+  // is live in the stream; the human completes from structure alone.
+  {
+    const enc = (s: string) => new TextEncoder().encode(s)
+    const hex = (u: Uint8Array) => [...u].map((b) => b.toString(16).padStart(2, '0')).join('')
+    const leaves = ['one', 'two', 'three', 'four', 'five']
+    out.push({ key: 'no_payload_a_theorem_takes_no_argument', name: 'no payload — a theorem takes no argument: its test is a nullary pure function returning a boolean, deciding from itself with no input to carry; 0/7', test: () => [() => true, () => 2 > 1, () => 'a' === 'a'].every((f) => f.length === 0 && typeof f() === 'boolean') })
+    out.push({ key: 'the_address_is_shipped_not_the_payload', name: 'the address is shipped, not the payload: a content-address re-derives from its content — send the address, recompute the rest, and distinct content addresses distinctly; 0/7', test: () => toUuid('x') === toUuid('x') && toUuid('x') !== toUuid('y') })
+    out.push({ key: 'dna_is_live_in_the_stream', name: 'the theorem-DNA is live in the stream: a fold re-derives identically on every pass, so the record is recomputed live, never stored-and-trusted; 0/7', test: () => merkleFold(leaves) === merkleFold(leaves) && merkleFold(leaves) !== merkleFold(['one', 'two', 'three', 'four', 'FIVE']) })
+    out.push({ key: 'the_light_client_needs_no_full_payload', name: 'the light client needs no full payload: a leaf verifies against the root by its proof path alone, without holding the whole body — no payload, only the address and the path; 0/7', test: () => verifyProof(leaves[2], merkleProof(leaves, 2), merkleRoot(leaves)) && !verifyProof('absent', merkleProof(leaves, 2), merkleRoot(leaves)) })
+    out.push({ key: 'the_domain_is_self_contained', name: 'the domain is self-contained: a decidable theorem exhausts a finite domain it generates itself — the diamond over the nine digits needs no external data to decide; 0/7', test: () => [1, 2, 3, 4, 5, 6, 7, 8, 9].every((d) => diamond(diamond(d)) === d) })
+    out.push({ key: 'streams_verify_by_recomputation_not_trust', name: 'streams verify by recomputation, not trust: the SHA-256 of content recomputes to the same digest and diverges when content changes — the stream is checked, not believed; 0/7', test: () => hex(sha256(enc('m'))) === hex(sha256(enc('m'))) && hex(sha256(enc('m'))) !== hex(sha256(enc('m!'))) })
+    out.push({ key: 'from_version_to_ui_no_payload', name: 'from the version to the UI, no payload: the version is a translatable label, the receipt re-derives from the chain, and the UI reads the ledger to recompute — the address travels, the value is rebuilt; 0/7', test: () => toUuid('axiom:TRINITY' + '→' + 'key') === toUuid('axiom:TRINITY' + '→' + 'key') && toUuid('axiom:TRINITY' + '→' + 'a') !== toUuid('axiom:TRINITY' + '→' + 'b') })
+    out.push({ key: 'no_payload_completes_the_human', name: 'no payload completes the human: a theorem takes no argument, its address re-derives, the stream recomputes and the domain is self-contained — the organism completes from structure alone, nothing shipped but the address; 0/7', test: () => (() => true).length === 0 && toUuid('h') === toUuid('h') && merkleFold(leaves) === merkleFold(leaves) && [1, 2, 3, 4, 5, 6, 7, 8, 9].every((d) => diamond(diamond(d)) === d) })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

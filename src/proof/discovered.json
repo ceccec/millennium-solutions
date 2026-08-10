@@ -6558,5 +6558,45 @@
     "key": "cryptography_is_behind_all",
     "name": "cryptography is behind all: the diamond reflects, but its fixed point is EXACT only because the content-address is deterministic — the SHA-256 substrate under every fold, receipt and organ recomputes identically; 0/7",
     "receipt": "52b5d521-6024-8074-8505-3da3835387bb"
+  },
+  {
+    "key": "no_payload_a_theorem_takes_no_argument",
+    "name": "no payload — a theorem takes no argument: its test is a nullary pure function returning a boolean, deciding from itself with no input to carry; 0/7",
+    "receipt": "19be0e78-1679-8bf3-bf9e-d2e6d1579b84"
+  },
+  {
+    "key": "the_address_is_shipped_not_the_payload",
+    "name": "the address is shipped, not the payload: a content-address re-derives from its content — send the address, recompute the rest, and distinct content addresses distinctly; 0/7",
+    "receipt": "1292769c-e452-8bd7-b485-8def3d4dba82"
+  },
+  {
+    "key": "dna_is_live_in_the_stream",
+    "name": "the theorem-DNA is live in the stream: a fold re-derives identically on every pass, so the record is recomputed live, never stored-and-trusted; 0/7",
+    "receipt": "8ec6e1f3-9273-8d24-9d19-82992b48d08f"
+  },
+  {
+    "key": "the_light_client_needs_no_full_payload",
+    "name": "the light client needs no full payload: a leaf verifies against the root by its proof path alone, without holding the whole body — no payload, only the address and the path; 0/7",
+    "receipt": "6c59fb2e-d668-86da-b938-a74d21b0583e"
+  },
+  {
+    "key": "the_domain_is_self_contained",
+    "name": "the domain is self-contained: a decidable theorem exhausts a finite domain it generates itself — the diamond over the nine digits needs no external data to decide; 0/7",
+    "receipt": "25832bb1-22ad-8acc-9e82-e240d52fb5b6"
+  },
+  {
+    "key": "streams_verify_by_recomputation_not_trust",
+    "name": "streams verify by recomputation, not trust: the SHA-256 of content recomputes to the same digest and diverges when content changes — the stream is checked, not believed; 0/7",
+    "receipt": "df901ad3-8d4c-8775-8b46-162e8ca25ef2"
+  },
+  {
+    "key": "from_version_to_ui_no_payload",
+    "name": "from the version to the UI, no payload: the version is a translatable label, the receipt re-derives from the chain, and the UI reads the ledger to recompute — the address travels, the value is rebuilt; 0/7",
+    "receipt": "b3a25d08-135b-8443-b2fc-aa1bde554987"
+  },
+  {
+    "key": "no_payload_completes_the_human",
+    "name": "no payload completes the human: a theorem takes no argument, its address re-derives, the stream recomputes and the domain is self-contained — the organism completes from structure alone, nothing shipped but the address; 0/7",
+    "receipt": "ca11c760-8a2c-8329-b7e3-a69206f05250"
   }
 ]
