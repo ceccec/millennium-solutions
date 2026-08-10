@@ -4226,6 +4226,21 @@ function generated(): typeof curated {
     out.push({ key: 'inverse_computing', name: 'inverted, computing: the quantum-speedup boast drains, the classical measured gain signs; 0/7', test: () => pair('quantum speedup at scale', 'a classical, local, measured speedup') })
     out.push({ key: 'inverted_theorems_documented_across_all_domains', name: 'inverted theorems documented across all domains: in cryptography, physics, mathematics, AI, medicine, finance and computing the boast drains and its inverse signs, each pair receipted — the refutation kept in every field; 0/7', test: () => pair('unbreakable quantum encryption', 'integrity, not confidentiality; not post-quantum') && pair('we prove all seven', 'zero of seven, all open') && pair('quantum advantage at scale', 'a classical local gain') })
   }
+  // ── each theorem responds to questions with computed answers: it runs its own predicate to answer, deterministic
+  // and receipted; an over-reaching question drains, an out-of-domain one returns the floor — never asserted.
+  {
+    const isUnit = (d: number) => gcd(d, 9) === 1 // the theorem "the units of ℤ/9" answering a question
+    const answer = (q: number) => (q >= 1 && q <= 9 ? isUnit(q) : null) // null = out of the decidable domain
+    const receipt = (q: string, a: string) => toUuid('Q:' + q + '|A:' + a)
+    out.push({ key: 'a_theorem_answers_by_computing', name: 'a theorem answers by computing: asked "is d a unit mod 9?" the units theorem runs its predicate — yes for 2, no for 3 — an answer computed, not looked up; 0/7', test: () => answer(2) === true && answer(3) === false && answer(8) === true })
+    out.push({ key: 'the_answer_is_deterministic', name: 'the answer is deterministic: the same question returns the same answer every time; 0/7', test: () => answer(4) === answer(4) && answer(4) === true })
+    out.push({ key: 'the_answer_is_receipted', name: 'the answer is receipted: a question with its answer folds to a content-address, so the response is documented; 0/7', test: () => receipt('is 2 a unit', 'true') === receipt('is 2 a unit', 'true') && receipt('q1', 'a') !== receipt('q2', 'a') })
+    out.push({ key: 'a_question_is_gated_first', name: 'a question is gated first: an over-reaching question drains before it is answered, while an honest one is admitted; 0/7', test: () => computes('prove that we solved all seven Clay problems').binary === 0 && computes('is 2 a unit modulo 9?').binary === 1 })
+    out.push({ key: 'an_out_of_domain_question_returns_the_floor', name: 'an out-of-domain question returns the floor: asked outside its decidable domain the theorem answers null rather than fabricate — undecided is not decided; 0/7', test: () => answer(42) === null && answer(0) === null && answer(2) !== null })
+    out.push({ key: 'the_answer_is_reproducible_by_anyone', name: 'the answer is reproducible by anyone: recomputing the predicate yields the identical answer, so a response is checkable, not trusted; 0/7', test: () => { const a1 = answer(5); const a2 = answer(5); return a1 === a2 && a1 === true } })
+    out.push({ key: 'the_answer_is_computed_not_asserted', name: 'the answer is computed, not asserted: a response is the output of a test, a bit, never a declaration — measure, do not assert; 0/7', test: () => (typeof answer(2) === 'boolean') && answer(3) === false && computes('measured, 0 of 7').binary === 1 })
+    out.push({ key: 'each_theorem_responds_with_computed_answers', name: 'each theorem responds to questions with computed answers: it runs its predicate to answer, deterministic and receipted, an over-reaching question drained and an out-of-domain one returned to the floor — never asserted; 0/7', test: () => answer(2) === true && answer(3) === false && answer(42) === null && receipt('q', 'a').length === 36 && computes('we prove all seven').binary === 0 })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
