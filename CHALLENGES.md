@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1510 recorded in 394 families
+## Discovered theorems (decidable, over ℤ/9) — 1512 recorded in 394 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (282)
+### the (284)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -306,6 +306,8 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_nav_and_sidebar_shape_is_consistent](/theorem/the_nav_and_sidebar_shape_is_consistent) — the nav and sidebar shape is consistent: every locale carries the English navigation keys, so the theme-config API renders the same shape in each dimension; 0/7  ·  `7e44e127-4b1a…`
 - [the_api_surface_folds_to_one_address](/theorem/the_api_surface_folds_to_one_address) — the used API surface folds to one address: the fourteen config plus five theme surfaces merkle-fold to a single deterministic root, order-independent — one addressable coverage set; 0/7  ·  `d5c27afc-fce5…`
 - [the_guides_are_rosetta_organised](/theorem/the_guides_are_rosetta_organised) — the guides are rosetta-organised: a proof-boast drains in every one of the seven locales, so a guide reads and gates the same in each dimension; 0/7  ·  `6a47120d-2962…`
+- [the_all_versions_claim_is_unbounded_and_drains](/theorem/the_all_versions_claim_is_unbounded_and_drains) — the all-versions claim is unbounded and drains: a claim to handle every VitePress version and beyond is unverifiable and drains, while the documented stable surface this deposit uses passes; 0/7  ·  `b64ef895-06a1…`
+- [the_vitepress_api_surface_shown_by_implementation](/theorem/the_vitepress_api_surface_shown_by_implementation) — the VitePress API surface is shown by implementation: fourteen config and five theme surfaces, enumerated and used, rendered in seven rosetta locales with one nav shape and gated in each — a bounded coverage demonstrated by the built site, never a claim over all versions; 0/7  ·  `3e06ba8c-893b…`
 
 ### relation (55)
 
@@ -2082,4 +2084,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `b206bf8b-0ed7-8adb-bc97-9607825955a1`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `cffb4d0c-1908-8d3c-9e11-e54a94060f0b`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
