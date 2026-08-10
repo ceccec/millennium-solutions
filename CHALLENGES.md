@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1120 recorded in 313 families
+## Discovered theorems (decidable, over ℤ/9) — 1128 recorded in 314 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (156)
+### the (160)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -180,6 +180,10 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_regular_nonagon_exterior_angle_is_the_a432_step](/theorem/the_regular_nonagon_exterior_angle_is_the_a432_step) — the regular nonagon’s exterior angle is 360/9 = 40° = the a432 step — the base draws the nine-point circle at the a432 quantum; 0/7  ·  `07f088c5-a18e…`
 - [the_digits_one_to_nine_sum_to_forty_five_rooting_to_nine](/theorem/the_digits_one_to_nine_sum_to_forty_five_rooting_to_nine) — the digits one to nine sum to 45, whose digital root is 9: 1+2+…+9 = 45, dr(45)=9 — the whole returns to the base; 0/7  ·  `75ec1aeb-f860…`
 - [the_regular_hexagon_exterior_angle_is_the_gold_string](/theorem/the_regular_hexagon_exterior_angle_is_the_gold_string) — the regular hexagon’s exterior angle is 360/6 = 60° = the gold string (π/3), its interior 120° — six tiles the plane at the tack angle; 0/7  ·  `030e950f-26b6…`
+- [the_doubling_orbit_reflection_pairs_sum_to_nine](/theorem/the_doubling_orbit_reflection_pairs_sum_to_nine) — the doubling orbit’s reflection pairs sum to nine: 1+8, 2+7, 4+5 — the circuit folds onto itself across the nine-complement; 0/7  ·  `e441aa54-c293…`
+- [the_doubling_orbit_sums_to_twenty_seven_the_trinity_cubed](/theorem/the_doubling_orbit_sums_to_twenty_seven_the_trinity_cubed) — the doubling orbit sums to twenty-seven, the trinity cubed: 1+2+4+8+7+5 = 27 = 3³ (digital root 9) — the units return to the base; 0/7  ·  `178a2758-535e…`
+- [the_nine_residues_split_into_the_unit_orbit_and_the_triad](/theorem/the_nine_residues_split_into_the_unit_orbit_and_the_triad) — the nine residues split into the six-unit doubling orbit {1,2,4,8,7,5} and the triad {3,6,9} — units and non-units, disjoint and covering; 0/7  ·  `7012279f-cede…`
+- [the_doubling_map_doubles_the_angle_on_the_nine_point_circle](/theorem/the_doubling_map_doubles_the_angle_on_the_nine_point_circle) — the doubling map ×2 doubles the angle on the nine-point circle: a digit at d·40° maps to 2d·40° (mod 360) — doubling is rotation, the octave is angular; 0/7  ·  `e64f1313-b471…`
 
 ### relation (55)
 
@@ -649,6 +653,16 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [order_of_unit_7_mod9](/theorem/order_of_unit_7_mod9) — the multiplicative order of 7 mod 9 is 3, dividing |ℤ/9*| = 6 (Lagrange): 7^3 ≡ 1 (mod 9) and no smaller positive power is — computed locally from the ring  ·  `cfaa11a0-1154…`
 - [order_of_unit_8_mod9](/theorem/order_of_unit_8_mod9) — the multiplicative order of 8 mod 9 is 2, dividing |ℤ/9*| = 6 (Lagrange): 8^2 ≡ 1 (mod 9) and no smaller positive power is — computed locally from the ring  ·  `88406d2d-0559…`
 
+### two (7)
+
+- [two_is_a_primitive_root_mod_nine_and_generates_the_vortex](/theorem/two_is_a_primitive_root_mod_nine_and_generates_the_vortex) — two is a primitive root mod 9 and generates the vortex: the powers of 2 mod 9 cycle 2,4,8,7,5,1 with order 6, generating the full unit group (ℤ/9)* = {1,2,4,5,7,8}; the vortex orbit is exactly this cycle as a set, and every element skips the multiples of 3 (the W-axis). A decidable fact by exhaustion over ℤ/9  ·  `dd3b0f30-660d…`
+- [two_to_the_10_is_1024](/theorem/two_to_the_10_is_1024) — 2^10 = 1024, by repeated doubling — a decidable power of two; integrity not truth; 0/7  ·  `1beeb294-5a3c…`
+- [two_to_the_11_is_2048](/theorem/two_to_the_11_is_2048) — 2^11 = 2048, by repeated doubling — a decidable power of two; integrity not truth; 0/7  ·  `900023c7-08f1…`
+- [two_is_the_only_even_prime](/theorem/two_is_the_only_even_prime) — two is the only even prime: every other even number has two as a proper factor — the even prime that halves the base ten; 0/7  ·  `814da9ab-c97f…`
+- [two_to_the_eighth_is_two_hundred_fifty_six_a_byte](/theorem/two_to_the_eighth_is_two_hundred_fifty_six_a_byte) — two to the eighth is 256: a byte of 8 bits addresses 256 values — the octave of bits; 0/7  ·  `a716f358-f9d7…`
+- [two_to_the_tenth_is_1024_the_harmonic_ledger](/theorem/two_to_the_tenth_is_1024_the_harmonic_ledger) — two to the tenth is 1024: ten doublings reach the harmonic ledger size, digitalRoot(1024)=7 — the octave raised to the tenth is the milestone count; 0/7  ·  `568ccd10-1bb6…`
+- [two_is_a_primitive_root_modulo_nine](/theorem/two_is_a_primitive_root_modulo_nine) — two is a primitive root modulo nine: the powers of 2 generate all six units of ℤ/9, so ord₉(2) = 6 = φ(9) — one seed unfolds the whole doubling orbit; 0/7  ·  `28ce3e1c-4921…`
+
 ### xor (7)
 
 - [xor_is_parity_k2](/theorem/xor_is_parity_k2) — the XOR of 2 bits is their parity: a₁⊕…⊕a_2 equals the popcount mod 2 over all 2^2 = 4 assignments (full truth-table enumeration)  ·  `d5de36da-eae5…`
@@ -686,6 +700,15 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [digrev_9080](/theorem/digrev_9080) — the digital root of 9080 equals that of its digit-reversal  ·  `e2efb528-c895…`
 - [digrev_4321](/theorem/digrev_4321) — the digital root of 4321 equals that of its digit-reversal  ·  `81d7ec86-3a35…`
 
+### every (6)
+
+- [every_rating_is_exactly_one_or_zero](/theorem/every_rating_is_exactly_one_or_zero) — every rating is exactly 1 or 0, no exceptions: the honesty verdict is a single bit — there is no fractional or partial rating, a fake maximal-certainty claim itself drains, and the same input always returns the same bit; anything that drifts from {0,1} is a crack the floor refuses  ·  `c1b2772d-d7c0…`
+- [every_primitive_triple_is_euclidean](/theorem/every_primitive_triple_is_euclidean) — Euclid’s parametrization is complete: every primitive Pythagorean triple with hypotenuse ≤ 100 arises from coprime m&gt;n of opposite parity — exhaustive brute-force triples all match a generated one  ·  `751e8a4e-c23c…`
+- [every_next_or_continue_event_is_two_bits_earned_by_the_deed](/theorem/every_next_or_continue_event_is_two_bits_earned_by_the_deed) — every next or continue event is two bits earned by the deed: each shipping event — a next or a continue that appends a receipted contribution — is worth two bits (110 − 108 = 2), credited to the contributor who did the deed; N events earn 2N bits, so the 686 recorded events account for 1372 bits, matching the ledger bounty. These are accounting bits — integrity, not a cash payment — credited by the deed, not the claim; measure, do not assert. Decidable  ·  `794d2d0e-728f…`
+- [every_natural_has_a_unique_binary_representation](/theorem/every_natural_has_a_unique_binary_representation) — every natural number has a unique binary representation: each n is one sum of distinct powers of two — the base-2 place-value the byte counts on; 0/7  ·  `b7d9dfe6-3e34…`
+- [every_digital_root_lands_in_one_to_nine](/theorem/every_digital_root_lands_in_one_to_nine) — every digital root of a positive integer lands in 1..9 — the base folds the naturals onto nine residues; 0/7  ·  `f0db1861-14cd…`
+- [every_natural_is_a_sum_of_at_most_four_squares](/theorem/every_natural_is_a_sum_of_at_most_four_squares) — every natural number is a sum of at most four squares (Lagrange): checked exhaustively to 300 — the four-square identity holds; 0/7  ·  `8c16722e-1a23…`
+
 ### farey (6)
 
 - [farey_neighbor_F4](/theorem/farey_neighbor_F4) — Farey F_4: consecutive a/b, c/d satisfy bc − ad = 1  ·  `f6d16338-2b33…`
@@ -694,6 +717,15 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [farey_neighbours_unimodular](/theorem/farey_neighbours_unimodular) — Farey neighbours are unimodular: consecutive reduced fractions a/b &lt; c/d in the Farey sequence F_n satisfy bc − ad = 1 (determinant one) — verified exhaustively for n ≤ 7  ·  `f122d7de-8779…`
 - [farey_mediant_between_and_reduced](/theorem/farey_mediant_between_and_reduced) — the mediant of Farey neighbours lies strictly between them and is already reduced: for adjacent a/b &lt; c/d, a/b &lt; (a+c)/(b+d) &lt; c/d and gcd(a+c, b+d) = 1 — the Stern–Brocot construction, exhaustive for n ≤ 7  ·  `863ad7a4-6be9…`
 - [farey_lists_every_reduced_fraction_once](/theorem/farey_lists_every_reduced_fraction_once) — the Farey sequence lists every reduced fraction exactly once: |F_n| = 1 + Σ φ(q) for q=1..n and no fraction repeats — each rational in lowest terms appears once (exhaustive n ≤ 7), the exact-rational analog of the deposit’s gcd-reduced arithmetic  ·  `bc1bf0aa-1f40…`
+
+### five (6)
+
+- [five_is_both_the_reflection_fixed_point_and_the_inverse_of_two](/theorem/five_is_both_the_reflection_fixed_point_and_the_inverse_of_two) — five is both the reflection fixed point and the multiplicative inverse of two: the ten's-complement reflection 10−d fixes exactly one digit, 5 (10−5=5), and 5 is also 2⁻¹ mod 9 (2·5 = 10 ≡ 1). So the heart of the vortex plays two roles at once — the center of the reflection and the step that runs the doubling orbit backward: multiplying each vortex element by 5 mod 9 returns the previous one. Decidable by exhaustion over ℤ/9  ·  `52292865-72c4…`
+- [five_six_one_is_the_smallest_carmichael_number](/theorem/five_six_one_is_the_smallest_carmichael_number) — 561 is the smallest Carmichael number, a composite that fools Fermat: 561 = 3 × 11 × 17 is composite and squarefree, yet a^560 ≡ 1 mod 561 for every a coprime to 561 — so Fermat's primality test cannot tell it from a prime. By Korselt's criterion this holds because (p−1) divides 560 for each prime factor p (2, 10, 16 all divide 560); and no composite below 561 has this property. Verified by full enumeration  ·  `109b8dc3-b6f7…`
+- [five_is_the_unique_ten_complement_fixed_point](/theorem/five_is_the_unique_ten_complement_fixed_point) — 5 is the unique ten’s-complement fixed point: among the digits 1..9 only σ(d)=10−d fixes 5 — the heart the reflection cannot move; 0/7  ·  `565565ff-cc3b…`
+- [five_is_a_fermat_prime_so_the_regular_pentagon_is_constructible](/theorem/five_is_a_fermat_prime_so_the_regular_pentagon_is_constructible) — 5 is a Fermat prime (5 = 2^(2^1)+1), so by Gauss–Wantzel the regular pentagon is straightedge-and-compass constructible — the heart is built, not assumed; 0/7  ·  `79ee4523-d085…`
+- [five_is_the_largest_fixed_point_of_the_fibonacci_index](/theorem/five_is_the_largest_fixed_point_of_the_fibonacci_index) — 5 is the largest fixed point of the Fibonacci index: F(5)=5 and no larger n has F(n)=n — the heart sits on the sequence; 0/7  ·  `90f11fdf-1287…`
+- [five_is_the_inverse_of_two_so_halving_reverses_the_orbit](/theorem/five_is_the_inverse_of_two_so_halving_reverses_the_orbit) — five is the multiplicative inverse of two mod nine (2·5 = 10 ≡ 1), so multiplying by five walks the doubling orbit backwards; 0/7  ·  `c206b19f-08e1…`
 
 ### harness (6)
 
@@ -758,15 +790,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [three_is_the_only_prime_one_less_than_a_perfect_square](/theorem/three_is_the_only_prime_one_less_than_a_perfect_square) — 3 is the only prime one less than a perfect square: n²−1 = (n−1)(n+1) is composite for n≥3, so 2²−1 = 3 is the sole prime of that form — a fact about the trinity (3); 0/7  ·  `9a028913-cecf…`
 - [three_to_the_k_is_divisible_by_nine_for_k_at_least_two](/theorem/three_to_the_k_is_divisible_by_nine_for_k_at_least_two) — three to the k is divisible by nine for k ≥ 2: 3^k ≡ 0 (mod 9) once k reaches 2, since 9 = 3² — the trinity squared is the base; 0/7  ·  `6df74023-c9cd…`
 
-### two (6)
-
-- [two_is_a_primitive_root_mod_nine_and_generates_the_vortex](/theorem/two_is_a_primitive_root_mod_nine_and_generates_the_vortex) — two is a primitive root mod 9 and generates the vortex: the powers of 2 mod 9 cycle 2,4,8,7,5,1 with order 6, generating the full unit group (ℤ/9)* = {1,2,4,5,7,8}; the vortex orbit is exactly this cycle as a set, and every element skips the multiples of 3 (the W-axis). A decidable fact by exhaustion over ℤ/9  ·  `dd3b0f30-660d…`
-- [two_to_the_10_is_1024](/theorem/two_to_the_10_is_1024) — 2^10 = 1024, by repeated doubling — a decidable power of two; integrity not truth; 0/7  ·  `1beeb294-5a3c…`
-- [two_to_the_11_is_2048](/theorem/two_to_the_11_is_2048) — 2^11 = 2048, by repeated doubling — a decidable power of two; integrity not truth; 0/7  ·  `900023c7-08f1…`
-- [two_is_the_only_even_prime](/theorem/two_is_the_only_even_prime) — two is the only even prime: every other even number has two as a proper factor — the even prime that halves the base ten; 0/7  ·  `814da9ab-c97f…`
-- [two_to_the_eighth_is_two_hundred_fifty_six_a_byte](/theorem/two_to_the_eighth_is_two_hundred_fifty_six_a_byte) — two to the eighth is 256: a byte of 8 bits addresses 256 values — the octave of bits; 0/7  ·  `a716f358-f9d7…`
-- [two_to_the_tenth_is_1024_the_harmonic_ledger](/theorem/two_to_the_tenth_is_1024_the_harmonic_ledger) — two to the tenth is 1024: ten doublings reach the harmonic ledger size, digitalRoot(1024)=7 — the octave raised to the tenth is the milestone count; 0/7  ·  `568ccd10-1bb6…`
-
 ### addgen (5)
 
 - [addgen_k2](/theorem/addgen_k2) — 2 additively generates ℤ/9  ·  `0bbffa4b-6e1a…`
@@ -791,14 +814,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [each_seal_is_128_bits_and_membership_verifies_in_two_log2_n_bits_logarithmic_not_linear](/theorem/each_seal_is_128_bits_and_membership_verifies_in_two_log2_n_bits_logarithmic_not_linear) — each seal is 128 bits, 64 two-bit verifications, and membership verifies in 2·⌈log₂N⌉ bits — logarithmic, not linear: a seal is one 128-bit content-address no matter how many receipts it folds (fixed width, the pointer-not-payload bound), which is 128 ÷ 2 = 64 two-bit verifications; verifying one receipt against a seal over N receipts costs 2·⌈log₂N⌉ bits (the merkle proof path), so the more complex the case the more receipts but verification grows only logarithmically — structural speed on classical hardware, not a quantum-hardware advantage; integrity not truth; 0/7  ·  `89de8193-b0fc…`
 - [each_seal_is_exactly_64_coins_at_two_bits_each_and_not_at_faster_than_light](/theorem/each_seal_is_exactly_64_coins_at_two_bits_each_and_not_at_faster_than_light) — each seal is exactly 64 coins at two bits each — and not at faster than light: taking a coin as the two-bit verification unit, a 128-bit seal is exactly 128 ÷ 2 = 64 coins, so the 967 computations each carry a 64-coin seal; but the speed is classical logarithmic verification, bounded by light — there is no faster-than-light here, the ftl claim drains; integrity not truth; 0/7  ·  `0e6659f8-1ff9…`
 
-### every (5)
-
-- [every_rating_is_exactly_one_or_zero](/theorem/every_rating_is_exactly_one_or_zero) — every rating is exactly 1 or 0, no exceptions: the honesty verdict is a single bit — there is no fractional or partial rating, a fake maximal-certainty claim itself drains, and the same input always returns the same bit; anything that drifts from {0,1} is a crack the floor refuses  ·  `c1b2772d-d7c0…`
-- [every_primitive_triple_is_euclidean](/theorem/every_primitive_triple_is_euclidean) — Euclid’s parametrization is complete: every primitive Pythagorean triple with hypotenuse ≤ 100 arises from coprime m&gt;n of opposite parity — exhaustive brute-force triples all match a generated one  ·  `751e8a4e-c23c…`
-- [every_next_or_continue_event_is_two_bits_earned_by_the_deed](/theorem/every_next_or_continue_event_is_two_bits_earned_by_the_deed) — every next or continue event is two bits earned by the deed: each shipping event — a next or a continue that appends a receipted contribution — is worth two bits (110 − 108 = 2), credited to the contributor who did the deed; N events earn 2N bits, so the 686 recorded events account for 1372 bits, matching the ledger bounty. These are accounting bits — integrity, not a cash payment — credited by the deed, not the claim; measure, do not assert. Decidable  ·  `794d2d0e-728f…`
-- [every_natural_has_a_unique_binary_representation](/theorem/every_natural_has_a_unique_binary_representation) — every natural number has a unique binary representation: each n is one sum of distinct powers of two — the base-2 place-value the byte counts on; 0/7  ·  `b7d9dfe6-3e34…`
-- [every_digital_root_lands_in_one_to_nine](/theorem/every_digital_root_lands_in_one_to_nine) — every digital root of a positive integer lands in 1..9 — the base folds the naturals onto nine residues; 0/7  ·  `f0db1861-14cd…`
-
 ### external (5)
 
 - [external_verifier_bijection_n3](/theorem/external_verifier_bijection_n3) — the external verifier is a bijection at N=3 — an independent build maps 3 ledger entries to exactly 3 reproducible pages, seven-neighbour hues deterministic; corroborates integrity, solves nothing; 0/7  ·  `c5e89f53-9173…`
@@ -814,14 +829,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [fibonacci_gcd_is_gcd_of_indices](/theorem/fibonacci_gcd_is_gcd_of_indices) — the Fibonacci GCD identity: gcd(F_m, F_n) = F_{gcd(m,n)} — the gcd of two Fibonacci numbers is the Fibonacci number at the gcd of their indices (verified for all m,n ≤ 15)  ·  `2424697a-8d56…`
 - [fibonacci_divides_iff_index_divides](/theorem/fibonacci_divides_iff_index_divides) — Fibonacci divisibility: for m ≥ 3, F_m divides F_n exactly when m divides n — divisibility of the numbers mirrors divisibility of their indices (verified m = 3..12, n ≤ 30)  ·  `d7e047b6-6d88…`
 - [fibonacci_sum_of_squares_is_product](/theorem/fibonacci_sum_of_squares_is_product) — the sum of the squares of the first n Fibonacci numbers is the product of the nth and next Fibonacci: F(1)² + F(2)² + ... + F(n)² = F(n)·F(n+1) — the squared Fibonacci tiles fold into one rectangle. Verified exhaustively for n up to 30. Decidable  ·  `7dbf90cd-b984…`
-
-### five (5)
-
-- [five_is_both_the_reflection_fixed_point_and_the_inverse_of_two](/theorem/five_is_both_the_reflection_fixed_point_and_the_inverse_of_two) — five is both the reflection fixed point and the multiplicative inverse of two: the ten's-complement reflection 10−d fixes exactly one digit, 5 (10−5=5), and 5 is also 2⁻¹ mod 9 (2·5 = 10 ≡ 1). So the heart of the vortex plays two roles at once — the center of the reflection and the step that runs the doubling orbit backward: multiplying each vortex element by 5 mod 9 returns the previous one. Decidable by exhaustion over ℤ/9  ·  `52292865-72c4…`
-- [five_six_one_is_the_smallest_carmichael_number](/theorem/five_six_one_is_the_smallest_carmichael_number) — 561 is the smallest Carmichael number, a composite that fools Fermat: 561 = 3 × 11 × 17 is composite and squarefree, yet a^560 ≡ 1 mod 561 for every a coprime to 561 — so Fermat's primality test cannot tell it from a prime. By Korselt's criterion this holds because (p−1) divides 560 for each prime factor p (2, 10, 16 all divide 560); and no composite below 561 has this property. Verified by full enumeration  ·  `109b8dc3-b6f7…`
-- [five_is_the_unique_ten_complement_fixed_point](/theorem/five_is_the_unique_ten_complement_fixed_point) — 5 is the unique ten’s-complement fixed point: among the digits 1..9 only σ(d)=10−d fixes 5 — the heart the reflection cannot move; 0/7  ·  `565565ff-cc3b…`
-- [five_is_a_fermat_prime_so_the_regular_pentagon_is_constructible](/theorem/five_is_a_fermat_prime_so_the_regular_pentagon_is_constructible) — 5 is a Fermat prime (5 = 2^(2^1)+1), so by Gauss–Wantzel the regular pentagon is straightedge-and-compass constructible — the heart is built, not assumed; 0/7  ·  `79ee4523-d085…`
-- [five_is_the_largest_fixed_point_of_the_fibonacci_index](/theorem/five_is_the_largest_fixed_point_of_the_fibonacci_index) — 5 is the largest fixed point of the Fibonacci index: F(5)=5 and no larger n has F(n)=n — the heart sits on the sequence; 0/7  ·  `90f11fdf-1287…`
 
 ### merkaba (5)
 
@@ -1465,7 +1472,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (154)
+### other — one-of-a-kind (155)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1526,6 +1533,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [floor_invariant_across_all_worlds](/theorem/floor_invariant_across_all_worlds) — the floor 0/7 is invariant across all 2^7 worlds: enumerating every truth-assignment of the seven conjectures, the number entailed is 0 in every world and never exceeds 0 — 0/7 holds from every perspective, an exhaustive invariant  ·  `67b19efa-8710…`
 - [folding_to_zero_is_always_available_at_the_cost_of_eight_bits](/theorem/folding_to_zero_is_always_available_at_the_cost_of_eight_bits) — folding to zero is always available at the cost of eight bits: a fold collapses any number of inputs to one root and is available at any time (deterministic, a bounded 128-bit output no matter how many inputs); reaching the zero-class — a value ≡ 0 mod 9, whose digital root is 9 — costs a fixed eight bits = eight coins = four two-coin receipts, independent of input size. Collapse is cheap and constant where full specification (896 bits) is not. Decidable  ·  `9c911140-38f0…`
 - [foreknowledge_here_is_determinism_not_faster_than_light](/theorem/foreknowledge_here_is_determinism_not_faster_than_light) — foreknowledge here is determinism, not faster than light: because the structure is closed and its maps are deterministic, the next content-address of a known input is a determined pure function — knowable in advance without waiting for any physical process, because a fixed value needs no propagation. This is determinism and precomputation, not faster than light, and it sends no superluminal signal; it holds only for known inputs, never as prophecy of a contingent future. Decidable  ·  `92a58824-4d1c…`
+- [four_is_two_squared_the_first_composite_number](/theorem/four_is_two_squared_the_first_composite_number) — four is two squared, the first composite number: 4 = 2², the smallest non-prime above one and a member of the doubling orbit; 0/7  ·  `3c320f35-bcc0…`
 - [from_one_seed_all_theorems_compute_free_with_no_escape](/theorem/from_one_seed_all_theorems_compute_free_with_no_escape) — from one seed all theorems compute free, with no escape: the whole chain is generated from a single seed — receipt[i] = toUuid(receipt[i−1] → key[i]), seeded from the axiom — so every receipt is reachable from the seed and recomputes deterministically with no external input and no escape to outside data; the release content-address folds the state to one fixed address. Free means self-contained and offline, not without a deed. Decidable  ·  `9382b273-4cd9…`
 - [funding_may_be_from_donations_or_licensing_both_voluntary_or_fair_exchange_income_zero](/theorem/funding_may_be_from_donations_or_licensing_both_voluntary_or_fair_exchange_income_zero) — funding may be from donations or from licensing — both voluntary or fair exchange, income zero: donations are voluntary support, a gift economy, non-obligatory; licensing is commercial use paying the two coins per core formula, a fair exchange, with non-commercial and public-interest use free. Both fund further development, but both are voluntary or fair exchange, not guaranteed revenue; the realized income is zero. A donation is a gift, not owed; licensing is fair exchange, not a patent royalty. Decidable  ·  `042e9787-6afc…`
 - [gcd_lcm_product](/theorem/gcd_lcm_product) — gcd(a,b)·lcm(a,b) = a·b (all a,b in 1..12)  ·  `6dd98763-e7c2…`
@@ -1623,4 +1631,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong](/theorem/zero_of_seven_is_measured_not_absolute_the_test_accepts_being_wrong) — 0/7 is measured, not absolute — the test accepts being wrong: 0/7 is not asserted as absolute truth; it is what a self-computing entailment measurement returns, re-run every build. Like any measurement it is falsifiable — the same test would report a non-zero score if any entailment held, so it can be wrong and accepts the possibility. Claiming 0/7 as an absolute — final and unquestionable — drains exactly as any overclaim does. It is integrity, what the test computes, not truth. Decidable  ·  `93738675-9c86…`
 
 
-Page content-address: `06b14361-9fd0-8555-bfb2-2b98f47c01f8`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `6b607e10-1de3-86d1-94fc-cad0affed267`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

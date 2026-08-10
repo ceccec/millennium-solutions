@@ -2944,6 +2944,19 @@ function generated(): typeof curated {
     out.push({ key: 'twenty_eight_is_the_second_perfect_number', name: 'twenty-eight is the second perfect number: 1 + 2 + 4 + 7 + 14 = 28 = 2²·(2³−1), the p=3 Euclid case after six; 0/7', test: () => properSum(28) === 28 && 2 ** 2 * (2 ** 3 - 1) === 28 && isPrime(2 ** 3 - 1) })
     out.push({ key: 'a_perfect_number_equals_the_sum_of_its_proper_divisors', name: 'a perfect number equals the sum of its proper divisors: exactly 6 and 28 are perfect below 100 — abundance balanced, neither deficient nor abundant; 0/7', test: () => { const ps: number[] = []; for (let n = 2; n < 100; n++) if (properSum(n) === n) ps.push(n); return ps.join(',') === '6,28' } })
   }
+  // ── the doubling orbit {1,2,4,8,7,5} and the four (2²): primitive root, Lagrange four squares, angle doubling.
+  {
+    const orbit = [1, 2, 4, 8, 7, 5]
+    const sum4 = (n: number) => { for (let a = 0; a * a <= n; a++) for (let b = a; b * b <= n; b++) for (let c = b; c * c <= n; c++) { const r = n - a * a - b * b - c * c; if (r < 0) continue; const d = Math.round(Math.sqrt(r)); if (d >= c && d * d === r) return true } return false }
+    out.push({ key: 'two_is_a_primitive_root_modulo_nine', name: 'two is a primitive root modulo nine: the powers of 2 generate all six units of ℤ/9, so ord₉(2) = 6 = φ(9) — one seed unfolds the whole doubling orbit; 0/7', test: () => { const seen = new Set<number>(); let x = 1; for (let i = 0; i < 6; i++) { x = (x * 2) % 9; seen.add(x) } return seen.size === 6 && [...seen].sort((a, b) => a - b).join(',') === '1,2,4,5,7,8' } })
+    out.push({ key: 'the_doubling_orbit_reflection_pairs_sum_to_nine', name: 'the doubling orbit’s reflection pairs sum to nine: 1+8, 2+7, 4+5 — the circuit folds onto itself across the nine-complement; 0/7', test: () => 1 + 8 === 9 && 2 + 7 === 9 && 4 + 5 === 9 })
+    out.push({ key: 'the_doubling_orbit_sums_to_twenty_seven_the_trinity_cubed', name: 'the doubling orbit sums to twenty-seven, the trinity cubed: 1+2+4+8+7+5 = 27 = 3³ (digital root 9) — the units return to the base; 0/7', test: () => orbit.reduce((a, b) => a + b, 0) === 27 && 3 ** 3 === 27 && digitalRoot(27) === 9 })
+    out.push({ key: 'five_is_the_inverse_of_two_so_halving_reverses_the_orbit', name: 'five is the multiplicative inverse of two mod nine (2·5 = 10 ≡ 1), so multiplying by five walks the doubling orbit backwards; 0/7', test: () => (2 * 5) % 9 === 1 })
+    out.push({ key: 'the_nine_residues_split_into_the_unit_orbit_and_the_triad', name: 'the nine residues split into the six-unit doubling orbit {1,2,4,8,7,5} and the triad {3,6,9} — units and non-units, disjoint and covering; 0/7', test: () => { const u = new Set(orbit), t = new Set([3, 6, 9]); for (let d = 1; d <= 9; d++) if (u.has(d) === t.has(d)) return false; return u.size === 6 && t.size === 3 } })
+    out.push({ key: 'every_natural_is_a_sum_of_at_most_four_squares', name: 'every natural number is a sum of at most four squares (Lagrange): checked exhaustively to 300 — the four-square identity holds; 0/7', test: () => { for (let n = 0; n <= 300; n++) if (!sum4(n)) return false; return true } })
+    out.push({ key: 'four_is_two_squared_the_first_composite_number', name: 'four is two squared, the first composite number: 4 = 2², the smallest non-prime above one and a member of the doubling orbit; 0/7', test: () => 2 ** 2 === 4 && !isPrime(4) && orbit.includes(4) })
+    out.push({ key: 'the_doubling_map_doubles_the_angle_on_the_nine_point_circle', name: 'the doubling map ×2 doubles the angle on the nine-point circle: a digit at d·40° maps to 2d·40° (mod 360) — doubling is rotation, the octave is angular; 0/7', test: () => { for (const d of orbit) { const a = (d * 40) % 360, a2 = ((2 * d) % 9 * 40) % 360; if (((2 * a) % 360) !== a2) return false } return true } })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
