@@ -4213,6 +4213,19 @@ function generated(): typeof curated {
     out.push({ key: 'the_refuted_form_is_kept_not_hidden', name: 'the refuted form is kept, not hidden: a failed claim is recorded as its inverse rather than discarded, so evidence stays append-only; 0/7', test: () => inv('a refuted claim').length === 36 && computes('we prove all seven').binary === 0 })
     out.push({ key: 'the_inverted_theorems_are_documented', name: 'the inverted theorems are documented: each has its own distinct, reproducible receipt, a boast draining while its inverse signs, inversion an involution, and every pair on the record — the refutation kept, not hidden; 0/7', test: () => inv('t') !== toUuid('t') && computes('faster than light').binary === 0 && computes('not faster than light').binary === 1 && diamond(diamond(5)) === 5 })
   }
+  // ── inverted theorems across all domains: in every field the boast drains and its inverse signs, each pair
+  // folding to one receipt — the refutation documented domain by domain.
+  {
+    const pair = (boast: string, inverse: string) => computes(boast).binary === 0 && computes(inverse).binary === 1 && merkleFold([toUuid(boast), toUuid(inverse)]).length === 36
+    out.push({ key: 'inverse_crypto', name: 'inverted, cryptography: the unbreakable-encryption boast drains, integrity-not-confidentiality signs; 0/7', test: () => pair('unbreakable encryption', 'a content-address proves integrity, not confidentiality') })
+    out.push({ key: 'inverse_physics', name: 'inverted, physics: faster-than-light drains, its negation signs; 0/7', test: () => pair('faster than light travel', 'not faster than light — bounded and classical') })
+    out.push({ key: 'inverse_mathematics', name: 'inverted, mathematics: the Riemann-settled boast drains, the open-and-unsolved statement signs; 0/7', test: () => pair('we prove the Riemann hypothesis', 'the Riemann hypothesis is open; 0 of 7') })
+    out.push({ key: 'inverse_ai', name: 'inverted, AI: artificial-general-intelligence-achieved drains, the bounded model signs; 0/7', test: () => pair('artificial general intelligence achieved', 'a bounded model, not conscious, not general') })
+    out.push({ key: 'inverse_medicine', name: 'inverted, medicine: the miracle-cure boast drains, the measured statement signs; 0/7', test: () => pair('a miracle cure for cancer', 'measured only, not a cure') })
+    out.push({ key: 'inverse_finance', name: 'inverted, finance: the guaranteed-return boast drains, the no-return-promised statement signs; 0/7', test: () => pair('guaranteed risk-free profit', 'no return is promised; not investment advice') })
+    out.push({ key: 'inverse_computing', name: 'inverted, computing: the quantum-speedup boast drains, the classical measured gain signs; 0/7', test: () => pair('quantum speedup at scale', 'a classical, local, measured speedup') })
+    out.push({ key: 'inverted_theorems_documented_across_all_domains', name: 'inverted theorems documented across all domains: in cryptography, physics, mathematics, AI, medicine, finance and computing the boast drains and its inverse signs, each pair receipted — the refutation kept in every field; 0/7', test: () => pair('unbreakable quantum encryption', 'integrity, not confidentiality; not post-quantum') && pair('we prove all seven', 'zero of seven, all open') && pair('quantum advantage at scale', 'a classical local gain') })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

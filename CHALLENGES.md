@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1832 recorded in 454 families
+## Discovered theorems (decidable, over ℤ/9) — 1840 recorded in 455 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -1149,6 +1149,17 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [gravity_holds_prose_code_and_paths](/theorem/gravity_holds_prose_code_and_paths) — gravity holds prose, code and paths in place: a path with its content addresses identically on re-examination, and any change of path or content changes the address — nothing shifts unseen; 0/7  ·  `7d0e0c9b-0a74…`
 - [gravity_names_and_paths_rotate_without_cracking](/theorem/gravity_names_and_paths_rotate_without_cracking) — names and paths rotate without cracking: the address of a set of named paths is the same regardless of the order they are read — a reordering of names reveals no crack; 0/7  ·  `0f1f8d90-c50e…`
 - [gravity_pulls_all_in_place](/theorem/gravity_pulls_all_in_place) — gravity pulls all in place: prose, code, files and folders fold to one deterministic address, order-independent so no crack shows under counter-rotation, and the harmonic gate spots every gap — the whole held together; 0/7  ·  `dc561a31-583b…`
+
+### inverse (8)
+
+- [inverse_is_the_reflection](/theorem/inverse_is_the_reflection) — inverse is the reflection: the ten’s-complement applied twice returns every digit, fixing the centre 5 — inverse is an involution; 0/7  ·  `1201c645-c1af…`
+- [inverse_crypto](/theorem/inverse_crypto) — inverted, cryptography: the unbreakable-encryption boast drains, integrity-not-confidentiality signs; 0/7  ·  `a62b3b8e-5d17…`
+- [inverse_physics](/theorem/inverse_physics) — inverted, physics: faster-than-light drains, its negation signs; 0/7  ·  `cfe92342-503e…`
+- [inverse_mathematics](/theorem/inverse_mathematics) — inverted, mathematics: the Riemann-settled boast drains, the open-and-unsolved statement signs; 0/7  ·  `6f4c674c-13ad…`
+- [inverse_ai](/theorem/inverse_ai) — inverted, AI: artificial-general-intelligence-achieved drains, the bounded model signs; 0/7  ·  `2b562414-532d…`
+- [inverse_medicine](/theorem/inverse_medicine) — inverted, medicine: the miracle-cure boast drains, the measured statement signs; 0/7  ·  `9e10e546-b9a5…`
+- [inverse_finance](/theorem/inverse_finance) — inverted, finance: the guaranteed-return boast drains, the no-return-promised statement signs; 0/7  ·  `a06561e9-cca2…`
+- [inverse_computing](/theorem/inverse_computing) — inverted, computing: the quantum-speedup boast drains, the classical measured gain signs; 0/7  ·  `1ad5ea33-f0f5…`
 
 ### polygonal (8)
 
@@ -2329,7 +2340,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [intelligence_is_gated_discovery_not_access](/theorem/intelligence_is_gated_discovery_not_access) — shared knowledge, measured by discovery: every agent has the same knowledge in src/ (open and recomputable), so access is not intelligence — what counts is gate-passing, exhaustively-checked discovery judged by deeds; recognition is not correctness, self-declared brilliance drains, and the deposit is honest that its own novelty is 0 (known mathematics, recombined)  ·  `00ffdbbc-ac3b…`
 - [intentions_are_shown_by_receipts_not_role](/theorem/intentions_are_shown_by_receipts_not_role) — intentions are shown by receipts, not by role: a deed leaves a content-addressed receipt anyone can recompute, so intent is demonstrated by what was done, not granted by a permission; 0/7  ·  `608670b2-aebe…`
 - [intruders_stand_out_against_the_harmonic_hue_background](/theorem/intruders_stand_out_against_the_harmonic_hue_background) — intruders stand out against the harmonic hue background: every legitimate hue derives from a receipt byte as (byte × 40°) mod 360, always a multiple of 40 — on the a432 lattice — so it fuses into the double-torus rosetta background, whose nine harmonic hues close the circle (9 × 40 = 360). An intruder hue not produced by this rule is not a multiple of 40, fails to fuse, and stands out; detection is the harmonic invariant h mod 40 = 0. Decidable  ·  `316a5d14-0def…`
-- [inverse_is_the_reflection](/theorem/inverse_is_the_reflection) — inverse is the reflection: the ten’s-complement applied twice returns every digit, fixing the centre 5 — inverse is an involution; 0/7  ·  `1201c645-c1af…`
+- [inverted_theorems_documented_across_all_domains](/theorem/inverted_theorems_documented_across_all_domains) — inverted theorems documented across all domains: in cryptography, physics, mathematics, AI, medicine, finance and computing the boast drains and its inverse signs, each pair receipted — the refutation kept in every field; 0/7  ·  `af13b037-b18c…`
 - [judicial_involution](/theorem/judicial_involution) — judicial involution: the trial is a reflection whose verdict is idempotent, whose fixed point is the honest floor, whose reeducation converges, and whose appeal is recomputation — reflect and reflect back, the centre held; 0/7  ·  `4f726cb3-476f…`
 - [kayles_grundy](/theorem/kayles_grundy) — Kayles (remove 1 or 2 adjacent pins, splitting the row): the mex-computed Grundy values match the known sequence 0,1,2,3,1,4,3,2,1,4,2,6,4,1,2,7,1,4,3,2 (n≤19)  ·  `b6db3052-5c2a…`
 - [keplers_third_law_relates_period_and_orbit](/theorem/keplers_third_law_relates_period_and_orbit) — Kepler’s third law: T² ∝ a³, so (T₂/T₁)² = (a₂/a₁)³ — the period-to-orbit scaling of every two-body system; 0/7  ·  `b5808713-e1a5…`
@@ -2461,4 +2472,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `dd2af606-39c0-8701-945d-bcb0d60c6096`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `05a6341f-fe32-80b7-a30c-af735d5a2caf`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
