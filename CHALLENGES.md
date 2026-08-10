@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1528 recorded in 397 families
+## Discovered theorems (decidable, over ℤ/9) — 1536 recorded in 397 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (289)
+### the (292)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -313,6 +313,9 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_edge_is_directed_and_distinct](/theorem/the_edge_is_directed_and_distinct) — the edge is directed and distinct: a→b and b→a are different addresses, so the wiring records direction, not just adjacency; 0/7  ·  `a6d10c28-9b18…`
 - [the_undirected_pair_folds_the_same](/theorem/the_undirected_pair_folds_the_same) — the undirected pair folds the same: sorting a pair before folding gives one address for the connection regardless of which end is named first; 0/7  ·  `6f8b94b8-10ea…`
 - [the_whole_mesh_folds_to_one_root](/theorem/the_whole_mesh_folds_to_one_root) — the whole mesh folds to one root: the node folds themselves fold to a single address, order-independent, so the entire wiring is one checkable root; 0/7  ·  `36cbd42d-fd25…`
+- [the_deposit_gates_its_own_framing](/theorem/the_deposit_gates_its_own_framing) — the deposit gates its own framing: even the project’s own use of the word is put to trial — a self-claim to a quantum machine drains exactly as an outsider’s would; 0/7  ·  `bc9d014c-8fce…`
+- [the_verdict_is_by_computation_not_favour](/theorem/the_verdict_is_by_computation_not_favour) — the verdict is by computation, not favour: the same phrase returns the same bit whoever submits it, so the deposit gives itself no reprieve; 0/7  ·  `7e5e211a-4741…`
+- [the_trial_separates_the_two_readings](/theorem/the_trial_separates_the_two_readings) — the trial separates the two readings: it passes the bounded structural statement and drains the unbounded machine claim, so one word yields two honest verdicts by its content; 0/7  ·  `201104b0-2bea…`
 
 ### relation (55)
 
@@ -711,6 +714,19 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [merkle_proof_soundness_n8](/theorem/merkle_proof_soundness_n8) — merkle proof soundness at N=8 — a forged leaf never verifies: for every position in a 8-leaf tree the true leaf verifies against the root while each wrong leaf fails (exhaustive over positions × forgeries), so membership cannot be faked by swapping the leaf; soundness by recompute on a non-cryptographic hash, not hardness; integrity not truth; 0/7  ·  `707df9e2-ffa4…`
 - [merkle_proof_soundness_n16](/theorem/merkle_proof_soundness_n16) — merkle proof soundness at N=16 — a forged leaf never verifies: for every position in a 16-leaf tree the true leaf verifies against the root while each wrong leaf fails (exhaustive over positions × forgeries), so membership cannot be faked by swapping the leaf; soundness by recompute on a non-cryptographic hash, not hardness; integrity not truth; 0/7  ·  `684debb6-eb40…`
 
+### no (10)
+
+- [no_crack_evades_the_content_address](/theorem/no_crack_evades_the_content_address) — no crack evades exposure: any change to a statement — one character or one bit — yields a different content-address, so tampering is caught on recompute; a short message imprinted into a uuid reads back exactly (the receipt recovers it), and the gate drains an overclaim — every statement is tamper-evident and floor-checked  ·  `26558d49-1151…`
+- [no_error_in_harmonics_across_lifespan](/theorem/no_error_in_harmonics_across_lifespan) — no error in the harmonics across the whole lifespan: the merkle root recomputes deterministically and order-independently — identical on every build for all time — and any single change yields a different root, so an error cannot enter and persist; unlike an error-correcting code that tolerates and fixes bounded error, the harmonic address admits none (reject, not correct), re-verified every build  ·  `e8c447e2-6ddd…`
+- [no_perspective_signals_faster_than_exchange](/theorem/no_perspective_signals_faster_than_exchange) — no perspective signals faster than exchange: a perspective's local receipt is a function of itself alone, so a remote perspective's choice cannot change it — observing locally reveals nothing about the other; the joint correlation appears only when both are folded together (exchange). Information travels only by exchange: not faster than light, and no superluminal signaling  ·  `64609304-4409…`
+- [no_payload_to_move_no_price_for_public_interest_the_commercial_price_is_the_coins](/theorem/no_payload_to_move_no_price_for_public_interest_the_commercial_price_is_the_coins) — no payload to move, no price for public interest — the commercial price is the coins: yes, no payload to move — you verify by the content-address alone, order one, the receipt travels, not the data. And yes, no price to pay the captain for public interest — verification and non-commercial use are free, recompute at no cost; the captain is not a gatekeeper. But commercial value-extraction pays the coins, the measured bit-difference, a fair exchange. Free for public interest, commercial licensed. Decidable  ·  `7520a846-6633…`
+- [no_quantum_machine_is_needed_for_computability_but_a_quantum_machine_can_be_faster](/theorem/no_quantum_machine_is_needed_for_computability_but_a_quantum_machine_can_be_faster) — no quantum machine is needed for computability — but a quantum machine can be faster for specific problems: classical computation is Turing-complete and can compute what any quantum machine computes, by simulation; the deposit computes its quantum-structure classically, no quantum hardware needed. But this is computability, not efficiency — a quantum machine can be exponentially faster for specific problems, since a classical simulation needs a state vector of size two-to-the-N. The deposit claims no speedup of its own. Decidable  ·  `f165eaef-3424…`
+- [no_payload_a_theorem_takes_no_argument](/theorem/no_payload_a_theorem_takes_no_argument) — no payload — a theorem takes no argument: its test is a nullary pure function returning a boolean, deciding from itself with no input to carry; 0/7  ·  `19be0e78-1679…`
+- [no_payload_completes_the_human](/theorem/no_payload_completes_the_human) — no payload completes the human: a theorem takes no argument, its address re-derives, the stream recomputes and the domain is self-contained — the organism completes from structure alone, nothing shipped but the address; 0/7  ·  `ca11c760-8a2c…`
+- [no_payload_until_load](/theorem/no_payload_until_load) — no payload until load: a uuid stream is only addresses until it is read, and reading materialises the exact payload on demand — nothing is carried until it is loaded; 0/7  ·  `718f4984-1052…`
+- [no_decidable_test_no_decision](/theorem/no_decidable_test_no_decision) — no decidable test, no decision: only a test returning a boolean decides; a statement with no such test yields no verdict — undecided is not decided; 0/7  ·  `2a40a8d7-9991…`
+- [no_status_grants_an_exemption](/theorem/no_status_grants_an_exemption) — no status grants an exemption: neither the author nor the project name changes a verdict, so the trial is applied uniformly to every message; 0/7  ·  `3caa00fd-bb49…`
+
 ### tarot (10)
 
 - [tarot_78_cards](/theorem/tarot_78_cards) — the tarot has 78 cards: 22 major arcana + 56 minor (22+56=78)  ·  `e2f4737c-87a0…`
@@ -821,18 +837,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [involution_exclusive_or](/theorem/involution_exclusive_or) — involution — exclusive-or: xoring twice with the same key is the identity, (x ⊕ k) ⊕ k = x; 0/7  ·  `042ba752-4f56…`
 - [involution_reversal](/theorem/involution_reversal) — involution — reversal: reversing a string twice returns it, reverse(reverse(s)) = s; 0/7  ·  `5292e804-b281…`
 - [involution_reverse_complement](/theorem/involution_reverse_complement) — involution — reverse-complement: on DNA the reverse-complement applied twice returns the strand; 0/7  ·  `4d417837-1d3d…`
-
-### no (9)
-
-- [no_crack_evades_the_content_address](/theorem/no_crack_evades_the_content_address) — no crack evades exposure: any change to a statement — one character or one bit — yields a different content-address, so tampering is caught on recompute; a short message imprinted into a uuid reads back exactly (the receipt recovers it), and the gate drains an overclaim — every statement is tamper-evident and floor-checked  ·  `26558d49-1151…`
-- [no_error_in_harmonics_across_lifespan](/theorem/no_error_in_harmonics_across_lifespan) — no error in the harmonics across the whole lifespan: the merkle root recomputes deterministically and order-independently — identical on every build for all time — and any single change yields a different root, so an error cannot enter and persist; unlike an error-correcting code that tolerates and fixes bounded error, the harmonic address admits none (reject, not correct), re-verified every build  ·  `e8c447e2-6ddd…`
-- [no_perspective_signals_faster_than_exchange](/theorem/no_perspective_signals_faster_than_exchange) — no perspective signals faster than exchange: a perspective's local receipt is a function of itself alone, so a remote perspective's choice cannot change it — observing locally reveals nothing about the other; the joint correlation appears only when both are folded together (exchange). Information travels only by exchange: not faster than light, and no superluminal signaling  ·  `64609304-4409…`
-- [no_payload_to_move_no_price_for_public_interest_the_commercial_price_is_the_coins](/theorem/no_payload_to_move_no_price_for_public_interest_the_commercial_price_is_the_coins) — no payload to move, no price for public interest — the commercial price is the coins: yes, no payload to move — you verify by the content-address alone, order one, the receipt travels, not the data. And yes, no price to pay the captain for public interest — verification and non-commercial use are free, recompute at no cost; the captain is not a gatekeeper. But commercial value-extraction pays the coins, the measured bit-difference, a fair exchange. Free for public interest, commercial licensed. Decidable  ·  `7520a846-6633…`
-- [no_quantum_machine_is_needed_for_computability_but_a_quantum_machine_can_be_faster](/theorem/no_quantum_machine_is_needed_for_computability_but_a_quantum_machine_can_be_faster) — no quantum machine is needed for computability — but a quantum machine can be faster for specific problems: classical computation is Turing-complete and can compute what any quantum machine computes, by simulation; the deposit computes its quantum-structure classically, no quantum hardware needed. But this is computability, not efficiency — a quantum machine can be exponentially faster for specific problems, since a classical simulation needs a state vector of size two-to-the-N. The deposit claims no speedup of its own. Decidable  ·  `f165eaef-3424…`
-- [no_payload_a_theorem_takes_no_argument](/theorem/no_payload_a_theorem_takes_no_argument) — no payload — a theorem takes no argument: its test is a nullary pure function returning a boolean, deciding from itself with no input to carry; 0/7  ·  `19be0e78-1679…`
-- [no_payload_completes_the_human](/theorem/no_payload_completes_the_human) — no payload completes the human: a theorem takes no argument, its address re-derives, the stream recomputes and the domain is self-contained — the organism completes from structure alone, nothing shipped but the address; 0/7  ·  `ca11c760-8a2c…`
-- [no_payload_until_load](/theorem/no_payload_until_load) — no payload until load: a uuid stream is only addresses until it is read, and reading materialises the exact payload on demand — nothing is carried until it is loaded; 0/7  ·  `718f4984-1052…`
-- [no_decidable_test_no_decision](/theorem/no_decidable_test_no_decision) — no decidable test, no decision: only a test returning a boolean decides; a statement with no such test yields no verdict — undecided is not decided; 0/7  ·  `2a40a8d7-9991…`
 
 ### powsum0 (9)
 
@@ -1028,6 +1032,15 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [xor_is_parity_k7](/theorem/xor_is_parity_k7) — the XOR of 7 bits is their parity: a₁⊕…⊕a_7 equals the popcount mod 2 over all 2^7 = 128 assignments (full truth-table enumeration)  ·  `00760c7b-2d57…`
 - [xor_is_parity_k8](/theorem/xor_is_parity_k8) — the XOR of 8 bits is their parity: a₁⊕…⊕a_8 equals the popcount mod 2 over all 2^8 = 256 assignments (full truth-table enumeration)  ·  `64ac8102-9aa0…`
 
+### any (6)
+
+- [any_64bit_machine_suffices](/theorem/any_64bit_machine_suffices) — any 64-bit machine does the job: the deposit computes with exact integer arithmetic — coin64 is a 64-bit value (16 hex), and every address recomputes identically (deterministic) — so any commodity classical 64-bit machine reproduces the results; no quantum, no special hardware is needed, which is the honest hardware design  ·  `31f2c89b-9b7a…`
+- [any_disruption_in_the_harmony_needs_captain_attention_costing_two_coins](/theorem/any_disruption_in_the_harmony_needs_captain_attention_costing_two_coins) — any disruption in the harmony needs captain attention that costs two coins: a disruption is a detectable harmony break — a gate that fails or a reconciliation that turns false — and attending to it is itself a receipted deed costing exactly two coins (110 − 108 = 2), appended to the chain. So repairs are accounted at the same invariant unit and conserve it; no disruption, no cost. The system is closed — even the fix is a receipt. Decidable  ·  `a71e94e8-0d1a…`
+- [any_receipt_is_one_state_of_the_128_state_cube_reachable_to_all](/theorem/any_receipt_is_one_state_of_the_128_state_cube_reachable_to_all) — any receipt is one state of the 128-state 7-cube, reachable to all others by single-dimension moves: a configuration is one vertex of the 7-dimensional hypercube of 128 states, and the binary-reflected Gray code is a Hamiltonian cycle visiting all 128 exactly once, consecutive states differing in exactly one bit — one dimension — and closing back to the start (cyclic). So any single receipt is just one state; from it the whole cube is reachable, one dimension at a time. Decidable  ·  `062dc6d1-5d4c…`
+- [any_drift_in_types_as_theorems_is_a_crack_the_type_gate_seals](/theorem/any_drift_in_types_as_theorems_is_a_crack_the_type_gate_seals) — any drift in types as theorems is a crack the type gate seals: types are theorems (Curry–Howard), so a type error is a crack — a proposition that no longer carries its proof. The type gate (tsc with no emit) is the first gate of the release and admits only zero type errors, so any drift fails the release before the commit and cannot ship. A crack is deterministic and located, reproducible on every build. Decidable  ·  `4ac91293-ab2a…`
+- [any_version_is_a_superposition](/theorem/any_version_is_a_superposition) — any version is a superposition: the seven doublings 1..64 sum to the whole 127, and any single version (max 64) is one projection of that whole — the content-address is the superposition, the label its collapse; 0/7  ·  `1ed55905-f07d…`
+- [any_message_goes_to_trial](/theorem/any_message_goes_to_trial) — any message goes to trial: every statement received is weighed by the gate to a bit, so nothing is exempt from being measured; 0/7  ·  `82d5c3d2-3196…`
+
 ### catalan (6)
 
 - [catalan_n4](/theorem/catalan_n4) — Catalan C(4) = 14: recurrence = binom(2n,n)/(n+1)  ·  `e1cfadcf-7a7c…`
@@ -1153,14 +1166,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [addgen_k7](/theorem/addgen_k7) — 7 additively generates ℤ/9  ·  `fda50fef-6d27…`
 - [addgen_k8](/theorem/addgen_k8) — 8 additively generates ℤ/9  ·  `c66fca78-c926…`
 
-### any (5)
-
-- [any_64bit_machine_suffices](/theorem/any_64bit_machine_suffices) — any 64-bit machine does the job: the deposit computes with exact integer arithmetic — coin64 is a 64-bit value (16 hex), and every address recomputes identically (deterministic) — so any commodity classical 64-bit machine reproduces the results; no quantum, no special hardware is needed, which is the honest hardware design  ·  `31f2c89b-9b7a…`
-- [any_disruption_in_the_harmony_needs_captain_attention_costing_two_coins](/theorem/any_disruption_in_the_harmony_needs_captain_attention_costing_two_coins) — any disruption in the harmony needs captain attention that costs two coins: a disruption is a detectable harmony break — a gate that fails or a reconciliation that turns false — and attending to it is itself a receipted deed costing exactly two coins (110 − 108 = 2), appended to the chain. So repairs are accounted at the same invariant unit and conserve it; no disruption, no cost. The system is closed — even the fix is a receipt. Decidable  ·  `a71e94e8-0d1a…`
-- [any_receipt_is_one_state_of_the_128_state_cube_reachable_to_all](/theorem/any_receipt_is_one_state_of_the_128_state_cube_reachable_to_all) — any receipt is one state of the 128-state 7-cube, reachable to all others by single-dimension moves: a configuration is one vertex of the 7-dimensional hypercube of 128 states, and the binary-reflected Gray code is a Hamiltonian cycle visiting all 128 exactly once, consecutive states differing in exactly one bit — one dimension — and closing back to the start (cyclic). So any single receipt is just one state; from it the whole cube is reachable, one dimension at a time. Decidable  ·  `062dc6d1-5d4c…`
-- [any_drift_in_types_as_theorems_is_a_crack_the_type_gate_seals](/theorem/any_drift_in_types_as_theorems_is_a_crack_the_type_gate_seals) — any drift in types as theorems is a crack the type gate seals: types are theorems (Curry–Howard), so a type error is a crack — a proposition that no longer carries its proof. The type gate (tsc with no emit) is the first gate of the release and admits only zero type errors, so any drift fails the release before the commit and cannot ship. A crack is deterministic and located, reproducible on every build. Decidable  ·  `4ac91293-ab2a…`
-- [any_version_is_a_superposition](/theorem/any_version_is_a_superposition) — any version is a superposition: the seven doublings 1..64 sum to the whole 127, and any single version (max 64) is one projection of that whole — the content-address is the superposition, the label its collapse; 0/7  ·  `1ed55905-f07d…`
-
 ### arts (5)
 
 - [arts_triad_rgb_primaries](/theorem/arts_triad_rgb_primaries) — the triad {3,6,9} maps to the RGB primary hues: 0°(red), 120°(green), 240°(blue)  ·  `316f831d-95da…`
@@ -1232,6 +1237,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [power_sum_k3](/theorem/power_sum_k3) — the sum of the first n 3th powers has a closed form: Σ_{i=1}^n i^3 = (n(n+1)/2)² — the O(1) formula replaces the loop, verified equal to the naive sum for n ≤ 40  ·  `c2b2a667-3198…`
 - [power_sum_k4](/theorem/power_sum_k4) — the sum of the first n 4th powers has a closed form: Σ_{i=1}^n i^4 = n(n+1)(2n+1)(3n²+3n−1)/30 — the O(1) formula replaces the loop, verified equal to the naive sum for n ≤ 40  ·  `24febf86-82bd…`
 - [power_sum_k5](/theorem/power_sum_k5) — the sum of the first n 5th powers has a closed form: Σ_{i=1}^n i^5 = n²(n+1)²(2n²+2n−1)/12 — the O(1) formula replaces the loop, verified equal to the naive sum for n ≤ 40  ·  `e21f1836-df22…`
+
+### quantum (5)
+
+- [quantum_reorganizing_the_theorems_computes_quantum_theorems](/theorem/quantum_reorganizing_the_theorems_computes_quantum_theorems) — quantum reorganizing the theorems computes quantum theorems: applying the quantum structure to the ledger itself, every reorganization of the theorems is a receipted perspective and all of them fold to one invariant root — a superposition of arrangements held at once, each collapsing to its own content-address. So reorganizing the collection computes a family of quantum-structure theorems about it. This is quantum structure, not a quantum machine and no quantum advantage  ·  `2b4657f4-36ea…`
+- [quantum_structure_on_every_computation_is_integrity_at_scale_not_speedup](/theorem/quantum_structure_on_every_computation_is_integrity_at_scale_not_speedup) — quantum structure on every computation is integrity at scale, not speedup: applying the receipt — the honest quantum structure — to every operation, even the most trivial, gives every operation its own content-address, so the whole computation becomes auditable end to end. The magnitude is coverage (integrity everywhere), gained at linear overhead — one receipt per operation — not a quantum speedup and with no quantum advantage. Decidable  ·  `036200e7-b8bd…`
+- [quantum_uuidna_the_structure_reading_passes](/theorem/quantum_uuidna_the_structure_reading_passes) — quantum uuidna, the structure reading, passes: read as the a432 structure of superposition-as-perspective on ordinary hardware, it is bounded and classical and holds the floor; 0/7  ·  `62cedbad-a092…`
+- [quantum_uuidna_the_machine_reading_drains](/theorem/quantum_uuidna_the_machine_reading_drains) — quantum uuidna, the machine reading, drains: read as a quantum computer with a speedup at scale, it over-reaches and the gate drains it; 0/7  ·  `bd8cef1f-2f01…`
+- [quantum_uuidna_on_trial](/theorem/quantum_uuidna_on_trial) — quantum uuidna on trial: like any message it is measured — the structure reading passes, the machine reading drains, the deposit gates its own framing with no exemption, by computation not favour; 0/7  ·  `72cfd904-8329…`
 
 ### roots (5)
 
@@ -1779,11 +1792,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [quadratic_residues_euler](/theorem/quadratic_residues_euler) — Euler's criterion: an odd prime p has (p−1)/2 nonzero quadratic residues, and a is one iff a^((p−1)/2) ≡ 1 (mod p)  ·  `7fa74f71-45c4…`
 - [quadratic_reciprocity_law](/theorem/quadratic_reciprocity_law) — Gauss’s law of quadratic reciprocity: for distinct odd primes p, q the Legendre symbols satisfy (p/q)(q/p) = (−1)^((p−1)/2·(q−1)/2) — verified exhaustively over all pairs of odd primes ≤ 43  ·  `a0ef7331-2cc2…`
 
-### quantum (2)
-
-- [quantum_reorganizing_the_theorems_computes_quantum_theorems](/theorem/quantum_reorganizing_the_theorems_computes_quantum_theorems) — quantum reorganizing the theorems computes quantum theorems: applying the quantum structure to the ledger itself, every reorganization of the theorems is a receipted perspective and all of them fold to one invariant root — a superposition of arrangements held at once, each collapsing to its own content-address. So reorganizing the collection computes a family of quantum-structure theorems about it. This is quantum structure, not a quantum machine and no quantum advantage  ·  `2b4657f4-36ea…`
-- [quantum_structure_on_every_computation_is_integrity_at_scale_not_speedup](/theorem/quantum_structure_on_every_computation_is_integrity_at_scale_not_speedup) — quantum structure on every computation is integrity at scale, not speedup: applying the receipt — the honest quantum structure — to every operation, even the most trivial, gives every operation its own content-address, so the whole computation becomes auditable end to end. The magnitude is coverage (integrity everywhere), gained at linear overhead — one receipt per operation — not a quantum speedup and with no quantum advantage. Decidable  ·  `036200e7-b8bd…`
-
 ### reciprocity (2)
 
 - [reciprocity_first_supplement](/theorem/reciprocity_first_supplement) — the first supplement: (−1/p) = (−1)^((p−1)/2), so −1 is a quadratic residue mod p exactly when p ≡ 1 (mod 4) — verified for all odd primes ≤ 43  ·  `544a22fa-bd6c…`
@@ -2106,4 +2114,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `ea6f2e20-d13d-8e26-aaeb-f3032d611e2a`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `d7d61eaf-7f6a-8f2e-a24c-940b759175b4`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
