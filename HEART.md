@@ -25,7 +25,7 @@ title: Heart
 
 Five is the heart: the fixed point of the ℤ/9 involution (σ(5)=5), the digit `vortex` roots to, and the pentagon whose diagonal-to-side ratio is the golden ratio φ. The pentagram draws itself; the centre holds 5.
 
-## Games — 31 computed (each with its tarot combination)
+## Games — 32 computed (each with its tarot combination)
 
 - no faster-than-light claim is upheld — the assertion drains, its negation stands  ·  tarot [27, 66, 62]  ·  `c05da1be-673a…`
 - a claim and its inverse cannot both be upheld (no position wins for both sides)  ·  tarot [21, 37, 28]  ·  `ea632dd9-0682…`
@@ -58,6 +58,7 @@ Five is the heart: the fixed point of the ℤ/9 involution (σ(5)=5), the digit 
 - Nim (Bouton’s theorem): the player to move loses exactly when the nim-sum — the XOR of the pile sizes — is zero, and wins otherwise; verified against full game-tree analysis for three piles of size ≤ 4  ·  tarot [28, 27, 54]  ·  `c1487d07-3fe4…`
 - the Nim winning strategy: from any position with nonzero nim-sum there exists a move to a position with nim-sum zero (handing the loss to the opponent) — exhaustive over three piles of size ≤ 5  ·  tarot [70, 74, 48]  ·  `e90ed988-ec04…`
 - the nim-sum is GF(2) vector addition: it is bitwise XOR — commutative, associative, and self-inverse (x ⊕ x = 0) — so Nim positions form a GF(2) vector space and the game is decided by binary algebra  ·  tarot [7, 10, 10]  ·  `c883cd18-f418…`
+- the trial verdict and the uuid transport are one: send prose to the gate for a binary legal signature, and send code or data through the uuid stream itself — both are exact, recomputable, and carried in the address; 0/7  ·  tarot [75, 62, 63]  ·  `e03d08c6-7149…`
 
 ## Arts & geometry — 38 computed
 
@@ -100,6 +101,6 @@ Five is the heart: the fixed point of the ℤ/9 involution (σ(5)=5), the digit 
 - the geometric series in base 10: 1 + 10 + 10² + ... + 10ⁿ = (10ⁿ⁺¹ − 1)/(10 − 1) — the base-10 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  tarot [64, 76, 34]  ·  `984a9c4c-396a…`
 - distinct harmonic sines are orthogonal over a period: ∫₀^{2π} sin(mx)·sin(nx) dx = 0 for m ≠ n — why waves of different harmonics do not interfere on average; 0/7  ·  tarot [29, 27, 65]  ·  `0d37c981-4913…`
 
-Page content-address: `f2fdb55b-5c35-83b6-a10a-9f617aac20e1`.
+Page content-address: `6b8b4726-3dc3-8732-b111-26dd98763ed3`.
 
 **Honest bound.** This page presents the *computed structure* — the pentagon, the games, the arts — each a decidable fact re-verified every build. It does not explain life or consciousness; the meaning is the observer's to bring. Geometry, not a claim about being. Deposit 0/7.

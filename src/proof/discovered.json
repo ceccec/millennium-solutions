@@ -6678,5 +6678,45 @@
     "key": "uuidna_skills_leap_by_composition",
     "name": "uuidna skills leap by composition: a discrete, classical, measured step-change — skills compose super-additively, reach logarithmically, hold under reordering and distribute via the rosetta — the leap is real and bounded, never a quantum claim; 0/7",
     "receipt": "c2312ab8-094f-8f83-9919-8a9d2a2ff9e9"
+  },
+  {
+    "key": "the_trial_returns_a_binary_verdict",
+    "name": "the trial returns a binary verdict: every statement sent to the gate computes to exactly one bit — 0 drained or 1 passed — a legal verdict, not an opinion; 0/7",
+    "receipt": "7a58882f-2524-8d4b-b030-9dca1dd945ff"
+  },
+  {
+    "key": "the_verdict_is_a_content_signature",
+    "name": "the verdict is a content signature: a statement with its verdict folds to a deterministic content-address, identical on re-examination and distinct for distinct statements — the signature of the trial; 0/7",
+    "receipt": "0acecfa4-0d14-821e-bf0e-1c08bd8e250c"
+  },
+  {
+    "key": "the_trial_reeducates_by_naming_the_offense",
+    "name": "the trial reeducates by naming the offense: a drained statement returns the exact prose that failed while an honest one returns none — the verdict carries its own cure; 0/7",
+    "receipt": "553f8537-9669-8d0f-a4ef-6e2f66622212"
+  },
+  {
+    "key": "a_uuid_carries_data_in_itself",
+    "name": "a uuid carries data in itself: the imprint codec packs a binary message into a uuid’s free bits and reads it back exactly, up to 115 bits, refusing more — data transported in the address itself; 0/7",
+    "receipt": "d956953c-2f23-861f-9542-3df71e9f8369"
+  },
+  {
+    "key": "the_uuid_stream_carries_code",
+    "name": "the uuid stream carries code: arbitrary text — source code included — imprints across a uuid chain and reads back byte-for-byte, so a stream of receipts is itself the transport; 0/7",
+    "receipt": "3d1b5744-b0d1-8326-97f1-1efa48a94f77"
+  },
+  {
+    "key": "the_receipt_is_binary_and_decimal",
+    "name": "the receipt is binary and decimal: a uuid is 128 bits of exact integer, readable as one decimal number, deterministic for its content — the receipt is a number that transfers; 0/7",
+    "receipt": "4ef46504-433a-80b7-b952-80f65f729b69"
+  },
+  {
+    "key": "transfer_is_verified_by_recomputation",
+    "name": "the transfer is verified, not trusted: data recovered from a uuid stream re-imprints to the identical stream, so the receipt proves its own payload by recomputation; 0/7",
+    "receipt": "f90523f2-6f97-8c63-9355-6cfc5a653dc0"
+  },
+  {
+    "key": "trial_verdict_and_uuid_transport_are_one",
+    "name": "the trial verdict and the uuid transport are one: send prose to the gate for a binary legal signature, and send code or data through the uuid stream itself — both are exact, recomputable, and carried in the address; 0/7",
+    "receipt": "e03d08c6-7149-8bb6-8f80-10b9d8d5bc34"
   }
 ]

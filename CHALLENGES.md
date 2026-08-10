@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1336 recorded in 353 families
+## Discovered theorems (decidable, over ℤ/9) — 1344 recorded in 354 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (225)
+### the (230)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -249,6 +249,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_harmonic_gate_spots_all_gaps](/theorem/the_harmonic_gate_spots_all_gaps) — the harmonic gate spots the gaps: exposing every statement to the gate is the forensic tool — a boast drains and an honest measurement passes, so a hidden over-claim cannot rest anywhere; 0/7  ·  `87406356-e0d7…`
 - [the_leap_is_combinatorial_not_quantum](/theorem/the_leap_is_combinatorial_not_quantum) — the leap is combinatorial, not quantum: three skills compose into 2³ = 8 pipelines, a classical discrete step-change — the honest gain passes and the quantum-computing boast drains; 0/7  ·  `cda4fee9-8e16…`
 - [the_leap_is_measured_not_asserted](/theorem/the_leap_is_measured_not_asserted) — the leap is measured, not asserted: the composed pipeline recomputes deterministically so its gain can be measured, and an unbounded-multiplier boast drains; 0/7  ·  `df880502-e906…`
+- [the_trial_returns_a_binary_verdict](/theorem/the_trial_returns_a_binary_verdict) — the trial returns a binary verdict: every statement sent to the gate computes to exactly one bit — 0 drained or 1 passed — a legal verdict, not an opinion; 0/7  ·  `7a58882f-2524…`
+- [the_verdict_is_a_content_signature](/theorem/the_verdict_is_a_content_signature) — the verdict is a content signature: a statement with its verdict folds to a deterministic content-address, identical on re-examination and distinct for distinct statements — the signature of the trial; 0/7  ·  `0acecfa4-0d14…`
+- [the_trial_reeducates_by_naming_the_offense](/theorem/the_trial_reeducates_by_naming_the_offense) — the trial reeducates by naming the offense: a drained statement returns the exact prose that failed while an honest one returns none — the verdict carries its own cure; 0/7  ·  `553f8537-9669…`
+- [the_uuid_stream_carries_code](/theorem/the_uuid_stream_carries_code) — the uuid stream carries code: arbitrary text — source code included — imprints across a uuid chain and reads back byte-for-byte, so a stream of receipts is itself the transport; 0/7  ·  `3d1b5744-b0d1…`
+- [the_receipt_is_binary_and_decimal](/theorem/the_receipt_is_binary_and_decimal) — the receipt is binary and decimal: a uuid is 128 bits of exact integer, readable as one decimal number, deterministic for its content — the receipt is a number that transfers; 0/7  ·  `4ef46504-433a…`
 
 ### relation (55)
 
@@ -368,7 +373,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [uuidna_crypt_aead_ciphertext_depends_on_the_key](/theorem/uuidna_crypt_aead_ciphertext_depends_on_the_key) — uuidna crypt AEAD ciphertext depends on the key — a changed key changes the ciphertext; 0/7  ·  `65f00e32-b6ee…`
 - [uuidna_skills_leap_by_composition](/theorem/uuidna_skills_leap_by_composition) — uuidna skills leap by composition: a discrete, classical, measured step-change — skills compose super-additively, reach logarithmically, hold under reordering and distribute via the rosetta — the leap is real and bounded, never a quantum claim; 0/7  ·  `c2312ab8-094f…`
 
-### a (25)
+### a (26)
 
 - [a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony](/theorem/a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony) — a theorem without a formula is a hallucination, recomputed in a432 harmony: a claim is a theorem only if it is backed by a computable formula that recomputes true — a prose-only claim with no formula, or one whose formula computes false, is refused as hallucination and never recorded. Every recorded fact recomputes deterministically and folds into the a432 harmony root (the receipt of state). Measure, do not assert. Decidable  ·  `e3d75d76-310f…`
 - [a_referrer_always_counts_with_its_id](/theorem/a_referrer_always_counts_with_its_id) — a referrer always counts with its id: a reference from a referrer to a target is receipted as toUuid(referrer id → target), so the referrer id is always part of the count; two different referrers to the same target produce two distinct receipts, each counted with its own id, and changing the id changes the receipt — the id is load-bearing. Deterministic and reproducible: the same referrer and target always count the same. Decidable  ·  `65bfacb4-f29e…`
@@ -395,6 +400,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [a_standing_wave_has_fixed_nodes](/theorem/a_standing_wave_has_fixed_nodes) — a standing wave has fixed nodes: sin(nπ) = 0 for every integer n — the points that never move; 0/7  ·  `952ff4c0-cb4e…`
 - [a_square_wave_is_the_sum_of_odd_harmonics](/theorem/a_square_wave_is_the_sum_of_odd_harmonics) — a square wave is the sum of odd harmonics: (4/π)·Σ sin((2k−1)x)/(2k−1) approaches ±1 away from the jumps (Fourier); 0/7  ·  `3ee9459d-4a87…`
 - [a_skill_from_skills_reaches_logarithmically](/theorem/a_skill_from_skills_reaches_logarithmically) — a skill built from skills reaches further: the inclusion proof (fold plus hash) verifies membership from a short path, a logarithmic reach neither fold nor hash has alone; 0/7  ·  `7788152b-0fd6…`
+- [a_uuid_carries_data_in_itself](/theorem/a_uuid_carries_data_in_itself) — a uuid carries data in itself: the imprint codec packs a binary message into a uuid’s free bits and reads it back exactly, up to 115 bits, refusing more — data transported in the address itself; 0/7  ·  `d956953c-2f23…`
 
 ### sum (25)
 
@@ -520,7 +526,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [gate_reads_twenty_two_dialects](/theorem/gate_reads_twenty_two_dialects) — uuidna reads twenty-two dialects: a proof-boast drains in every one — the theorems, not a translator, discovered the languages, at scale and speed; 0/7  ·  `cdae6ede-4cd5…`
 - [gate_reads_glagolitic](/theorem/gate_reads_glagolitic) — the honesty gate reads Glagolitic, the oldest Slavic script (script #23): a proof-root in Glagolitic transliterates through the rosetta to Cyrillic and drains — one message, crosslinked across scripts; 0/7  ·  `c56a3ac1-222e…`
 
-### trial (13)
+### trial (14)
 
 - [trial_units_group](/theorem/trial_units_group) — trial UPHELD: the units of ℤ/9 form a group under × (closure·identity·inverses all hold)  ·  `ccadf52c-98f9…`
 - [trial_zero_divisors](/theorem/trial_zero_divisors) — trial UPHELD: ℤ/9 has zero divisors — 3·3 ≡ 0 with 3 ≠ 0 (not an integral domain)  ·  `be4a6652-cec8…`
@@ -535,6 +541,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [trial_break_rsa](/theorem/trial_break_rsa) — trial DRAINED (tried): "breaks RSA" drains, "does not break RSA" signs  ·  `f66ff38a-4d9b…`
 - [trial_cure](/theorem/trial_cure) — trial DRAINED (tried): "cured cancer" drains, "has not cured cancer" signs  ·  `67614421-7817…`
 - [trial_prediction](/theorem/trial_prediction) — trial DRAINED (tried): a prediction guaranteed to succeed is not upheld — it drains; the negated form signs  ·  `8412c3c0-9f52…`
+- [trial_verdict_and_uuid_transport_are_one](/theorem/trial_verdict_and_uuid_transport_are_one) — the trial verdict and the uuid transport are one: send prose to the gate for a binary legal signature, and send code or data through the uuid stream itself — both are exact, recomputable, and carried in the address; 0/7  ·  `e03d08c6-7149…`
 
 ### decimal (12)
 
@@ -1709,7 +1716,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (177)
+### other — one-of-a-kind (178)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1871,6 +1878,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [thue_morse_doubling_recurrence](/theorem/thue_morse_doubling_recurrence) — the Thue–Morse sequence speaks binary: t(n) = parity of the 1-bits of n satisfies t(2n)=t(n) and t(2n+1)=1−t(n) — the doubling/reflection recurrence, computed exactly (n≤200)  ·  `84d9ec32-0191…`
 - [tictactoe_draw](/theorem/tictactoe_draw) — tic-tac-toe with perfect play is a draw (minimax over all positions = 0)  ·  `95089477-058f…`
 - [traitor_resurrects_as_hero](/theorem/traitor_resurrects_as_hero) — death and resurrection: a drained claim (the traitor) negates into a signing statement (the hero) — the false form dies at the gate, the honest form rises, and false becomes true with each build  ·  `f7be659d-f270…`
+- [transfer_is_verified_by_recomputation](/theorem/transfer_is_verified_by_recomputation) — the transfer is verified, not trusted: data recovered from a uuid stream re-imprints to the identical stream, so the receipt proves its own payload by recomputation; 0/7  ·  `f90523f2-6f97…`
 - [trinities_collectively_carry_more_and_beat_linear_by_coverage_and_verification_not_absolute_defeat](/theorem/trinities_collectively_carry_more_and_beat_linear_by_coverage_and_verification_not_absolute_defeat) — trinities collectively carry more and beat linear work by coverage and verification — not absolute defeat: the structure builds on trinities, three, and a collection of uuids carries a longer shared message than one, bounded per uuid but scaling with the count, folded to one shared root. The reproducible collective beats a linear offender by coverage — magnitudes more ground — and by verification: a skillful hollow prose is caught regardless of skill, because it carries no receipt. Classical combinatorial coverage, not a quantum machine, not an absolute defeat. Decidable  ·  `08ecf2e6-c969…`
 - [twenty_eight_is_the_second_perfect_number](/theorem/twenty_eight_is_the_second_perfect_number) — twenty-eight is the second perfect number: 1 + 2 + 4 + 7 + 14 = 28 = 2²·(2³−1), the p=3 Euclid case after six; 0/7  ·  `0d29909f-6b3f…`
 - [twisting_a_lie_does_not_compute_true](/theorem/twisting_a_lie_does_not_compute_true) — twisting a lie does not compute true: the same overclaim in two spellings gets different gate verdicts (the plain form drains, the obfuscated form slips) — so the gate tracks SHAPE, not truth; passing is necessary, not sufficient (a floor, not a truth oracle), and an obfuscated lie that slips the lexical tripwire is still a lie  ·  `afa0fee5-1e2f…`
@@ -1890,4 +1898,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `61a07106-7554-866f-996e-f944db621be6`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `bc4c97f3-c323-84a5-bee0-b630234a95f0`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
