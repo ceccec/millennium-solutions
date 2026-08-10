@@ -8233,5 +8233,10 @@
     "key": "uuidna_keeps_dry_clean_order_cracks_sink_boats",
     "name": "uuidna keeps dry-clean order because cracks sink boats: the seal is all-or-nothing, one crack flips it, and cracks are caught before sailing — the yacht waits for an order and, activated, self-explores until dry; 0/7",
     "receipt": "640d3936-1749-8ada-ac22-d63b39f6df1a"
+  },
+  {
+    "key": "the_yacht_waits_inert_for_an_order",
+    "name": "the yacht waits inert for an order: with no directive nothing changes — the record is still — so uuidna is quiet until activated; 0/7",
+    "receipt": "e252e49e-da14-870f-8f7e-435be9d5ac37"
   }
 ]

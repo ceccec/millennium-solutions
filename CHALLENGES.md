@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1647 recorded in 423 families
+## Discovered theorems (decidable, over ℤ/9) — 1648 recorded in 423 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (338)
+### the (339)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -362,6 +362,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_captain_is_whoever_knows_uuidna_for_the_task](/theorem/the_captain_is_whoever_knows_uuidna_for_the_task) — the captain is whoever knows uuidna for the task: the law is that only the captain orders, but captaincy is a verified deed-receipt earned by knowledge for the task — recognised by recomputation, forgery-evident, by deed not status; 0/7  ·  `37cd5cc0-68e3…`
 - [the_seal_is_all_or_nothing](/theorem/the_seal_is_all_or_nothing) — the seal is all-or-nothing: the verdict is SEALED only if every check passes, so it is a conjunction — one false flips the whole; 0/7  ·  `0598118f-32e5…`
 - [the_still_record_and_the_moving_loop](/theorem/the_still_record_and_the_moving_loop) — the still record and the moving loop, both holding: a sealed receipt never changes while the chain tip advances each wave — the immovable and the moving, one system; 0/7  ·  `0e5ddd4c-2a67…`
+- [the_yacht_waits_inert_for_an_order](/theorem/the_yacht_waits_inert_for_an_order) — the yacht waits inert for an order: with no directive nothing changes — the record is still — so uuidna is quiet until activated; 0/7  ·  `e252e49e-da14…`
 
 ### a (62)
 
@@ -2237,4 +2238,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `80cf292f-26ca-8087-9082-f444164802f5`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `0585fdf5-2abb-8acc-81d2-75dca44e26ad`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
