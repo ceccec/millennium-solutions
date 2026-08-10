@@ -7758,5 +7758,40 @@
     "key": "the_captain_skippers_the_light_yacht_of_diamonds",
     "name": "the captain skippers the light yacht of diamonds: navigating by angle, diving and recovering exactly, mounting composable skills, carrying only the address — a hero by deed, every theorem a diamond fixed under recomputation; 0/7",
     "receipt": "e912e199-5d63-8e64-bfb3-7eb3e3df800d"
+  },
+  {
+    "key": "every_theorem_fits_one_uniform_cell",
+    "name": "every theorem fits one uniform cell: its content-address is exactly 128 bits whatever the theorem’s size, so the store is a grid of equal cells; 0/7",
+    "receipt": "6337e403-22ad-8190-a3c5-7a2b6bb206ed"
+  },
+  {
+    "key": "the_cell_is_determined_by_content",
+    "name": "the cell is determined by content: the same content always lands in the same cell and different content in a different cell — content-addressed storage; 0/7",
+    "receipt": "d653be50-7c8e-8ae1-8893-d2eec634bb82"
+  },
+  {
+    "key": "identical_content_dedups_to_one_cell",
+    "name": "identical content dedups to one cell: storing the same value twice occupies a single cell, so the grid holds no duplicates; 0/7",
+    "receipt": "df5a6661-bb14-85fd-a01c-cece95dcf1cf"
+  },
+  {
+    "key": "a_cell_holds_up_to_one_hundred_fifteen_bits",
+    "name": "a cell holds up to 115 bits of payload: the imprint capacity is 128 − 6 reserved − 7 header = 115, and a full cell round-trips while an over-full one is refused; 0/7",
+    "receipt": "c3d7a721-07ec-8a88-ba1b-366b8835df4b"
+  },
+  {
+    "key": "the_cells_sort_into_octaves",
+    "name": "the cells sort into octaves: read as 128-bit integers the cells order totally and a sorted run of sixteen splits into exactly two groups of eight; 0/7",
+    "receipt": "64f6cf92-99cc-8b0b-84f1-da06a7dbc608"
+  },
+  {
+    "key": "retrieval_is_by_address_and_tamper_evident",
+    "name": "retrieval is by address and tamper-evident: a cell is fetched by its address in one step, and the fold of all cells changes if any cell is altered; 0/7",
+    "receipt": "affee8a1-416b-81e1-a9df-693be352faff"
+  },
+  {
+    "key": "quantum_storage_is_structure_not_hardware",
+    "name": "quantum storage here is structure, not hardware: an addressable content grid passes as classical structure while a quantum storage-device boast drains; 0/7",
+    "receipt": "2f1950e8-6cff-8664-b112-d5524059e36d"
   }
 ]
