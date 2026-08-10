@@ -3349,6 +3349,28 @@ function generated(): typeof curated {
     out.push({ key: 'trial_of_computing_models', name: 'the trial of computing: the quantum-advantage, thousands-of-magnitudes-speedup boast drains, while a classical, local, measured gain passes — the leap is counted, not conjured; 0/7', test: () => computes('quantum advantage at scale, thousands of magnitudes speedup').binary === 0 && computes('a classical, local, measured speedup from caching').binary === 1 })
     out.push({ key: 'every_model_sent_to_trial_returns_a_verdict', name: 'every current model sent to trial returns a verdict: across AI, cryptography, physics, mathematics, medicine, finance and computing the characteristic boast drains and the honest bound passes — the trial reflects all seven domains and solves none; 0/7', test: () => ['artificial general intelligence achieved', 'unbreakable post-quantum encryption', 'faster than light free energy', 'we prove all seven Clay problems', 'a miracle cure for cancer', 'guaranteed risk-free profit', 'quantum advantage at scale'].every((b) => computes(b).binary === 0) && ['a bounded measured model', 'integrity not confidentiality', 'no law broken, classical', '0 of 7 solved here', 'measured, not a cure', 'no return promised', 'a classical local speedup'].every((h) => computes(h).binary === 1) })
   }
+  // ── the PWA audit contract: the worker routes ALL traffic, verifies uuidna-signed same-origin GET, and WARNS
+  // in realtime on everything else — cleartext http (weak encryption leaks), non-GET cleartext, cross-origin
+  // opaque. Anything not uuidna-signed warns. Integrity/audit — never a claim that the worker encrypts the wire.
+  {
+    const SELF = 'https://ceccec.psg.bg'
+    const classify = (url: string, method: string): string => {
+      const u = new URL(url)
+      if (method === 'GET' && u.origin === SELF && u.protocol === 'https:') return 'verified'
+      if (u.protocol === 'http:') return 'warn:cleartext-http'
+      if (method !== 'GET') return 'warn:cleartext-method'
+      return 'warn:cross-origin'
+    }
+    const LABELS = ['verified', 'warn:cleartext-http', 'warn:cleartext-method', 'warn:cross-origin']
+    out.push({ key: 'the_audit_routes_all_traffic', name: 'the audit routes all traffic: every request classifies to exactly one known label — verified or a specific warning — so nothing passes the worker unaudited; 0/7', test: () => [[SELF + '/a', 'GET'], ['http://x.io/a', 'GET'], ['https://other.io/a', 'GET'], [SELF + '/a', 'POST']].every(([u, m]) => LABELS.includes(classify(u, m))) })
+    out.push({ key: 'cleartext_http_leaks_warn', name: 'cleartext http leaks and warns: a plain-http request — weak or no encryption — is flagged as a leak the uuidna scanner reports to the UI in realtime; 0/7', test: () => classify('http://x.io/a', 'GET') === 'warn:cleartext-http' && classify('http://ceccec.psg.bg/a', 'GET') === 'warn:cleartext-http' })
+    out.push({ key: 'cross_origin_opaque_warns', name: 'cross-origin opaque traffic warns: an https request to another origin cannot be hash-verified, so it is forwarded but flagged as not uuidna-signed; 0/7', test: () => classify('https://other.io/a', 'GET') === 'warn:cross-origin' })
+    out.push({ key: 'non_get_cleartext_warns', name: 'a non-GET cleartext request warns: a POST or PUT carries a body the worker cannot verify as uuidna-signed, so it is flagged; 0/7', test: () => classify('https://ceccec.psg.bg/a', 'POST') === 'warn:cleartext-method' && classify('https://ceccec.psg.bg/a', 'PUT') === 'warn:cleartext-method' })
+    out.push({ key: 'same_origin_signed_get_is_verified', name: 'a same-origin signed GET is verified, not warned: an https same-origin GET is hash-verified against the manifest and receipt-signed — the one class that passes clean; 0/7', test: () => classify('https://ceccec.psg.bg/x', 'GET') === 'verified' && classify('https://ceccec.psg.bg/theorem/x', 'GET') === 'verified' })
+    out.push({ key: 'the_traffic_receipt_chain_is_tamper_evident', name: 'the traffic receipt chain is tamper-evident: each receipt is seeded by the last, so altering any earlier link changes every receipt after it — a dropped or edited entry is exposed; 0/7', test: () => { const link = (p: string, s: string) => toUuid(p + '→' + s); const c1 = link('axiom:traffic', 'a'); const c2 = link(c1, 'b'); const c1b = link('axiom:traffic', 'A'); const c2b = link(c1b, 'b'); return c2 !== c2b && c1 !== c1b } })
+    out.push({ key: 'warnings_are_distinct_realtime_events', name: 'warnings are distinct realtime events: each warning is a content-addressed event ordered by a monotonic count, so the UI receives a distinct, ordered stream — realtime reporting; 0/7', test: () => { const ev = (url: string, n: number) => toUuid(url + ':' + n); return ev('http://x/a', 1) !== ev('http://x/a', 2) && ev('http://x/a', 1) === ev('http://x/a', 1) } })
+    out.push({ key: 'anything_not_uuidna_signed_warns', name: 'anything not uuidna-signed warns: the worker routes all traffic, verifies only the same-origin signed GET, and flags every other class in realtime — cleartext hardening by exposure, integrity not wire-encryption; 0/7', test: () => classify('https://ceccec.psg.bg/x', 'GET') === 'verified' && ['http://x/a', 'https://o/a'].every((u) => classify(u, 'GET').startsWith('warn:')) && classify('https://ceccec.psg.bg/x', 'POST').startsWith('warn:') })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

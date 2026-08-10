@@ -73,6 +73,16 @@ async function signReceipt(pathname, hash) {
   for (const c of await self.clients.matchAll()) c.postMessage(receipt) // clients audit + analyse the stream
 }
 
+// AUDIT WARNINGS — the honest complement to the receipt chain: traffic the worker CANNOT verify as uuidna-signed
+// (cross-origin, or a non-GET cleartext request) is forwarded but flagged to every client in realtime. Anything
+// not uuidna-signed warns — cleartext hardening. Integrity/audit, not a claim that the worker encrypts the wire.
+let WARNED = 0
+async function warn(url, reason) {
+  WARNED++
+  const w = { type: 'uuidna-warning', url, reason, n: WARNED }
+  for (const c of await self.clients.matchAll()) c.postMessage(w)
+}
+
 const CACHE = 'millennium-v4'
 let INTEGRITY = null
 async function manifest() {
@@ -104,7 +114,18 @@ self.addEventListener('fetch', (e) => {
   // the manifest below; everything else (cross-origin, POST/PUT/…) is forwarded transparently — the worker is
   // in the path of all traffic, but honestly cannot hash-verify opaque cross-origin responses.
   const sameOriginGet = req.method === 'GET' && new URL(req.url).origin === self.location.origin
-  if (!sameOriginGet) { e.respondWith(fetch(req).catch(() => caches.match(req))); return }
+  if (!sameOriginGet) {
+    // AUDIT + WARN in realtime: traffic the worker cannot verify as uuidna-signed is forwarded but flagged.
+    // Plain http (cleartext) and non-GET cleartext requests are the weak-encryption leaks a uuidna scanner
+    // reports to the UI; cross-origin https is unverified (opaque). Anything not uuidna-signed warns.
+    const u = new URL(req.url)
+    const reason = u.protocol === 'http:' ? 'cleartext http — weak/no encryption, leaks; not uuidna-signed'
+      : req.method !== 'GET' ? req.method + ' cleartext request — not uuidna-signed, integrity unverified'
+        : 'cross-origin — opaque, not uuidna-signed, integrity unverified'
+    warn(req.url, reason)
+    e.respondWith(fetch(req).catch(() => caches.match(req)))
+    return
+  }
   const isDoc = req.mode === 'navigate' || req.destination === 'document'
   if (isDoc) {
     e.respondWith(
