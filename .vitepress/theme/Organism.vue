@@ -34,6 +34,35 @@ const spine = computed(() => {
   return g.slice().sort((a, b) => n(a.key) - n(b.key))
 })
 const spineNums = [0, 1, 2, 3, 7, 8, 64]
+
+// THE FORENSIC FIELD — every theorem wired onto a hue double-torus, positioned deterministically from its
+// receipt (no hidden layout), hued by the organ its key reflects. Exposing all at once IS the forensic tool:
+// the whole ledger is one field, nothing hides. Two rings = the double torus; a theorem falls on one ring by a
+// bit of its receipt, its angle set by the receipt's own bytes.
+const ORGAN_HUE: Record<string, number> = { genesis: 45, dimensions: 275, dna: 130, skills: 205, rosetta: 320, vibe: 20, trial: 175 }
+function organOf(key: string): string {
+  for (const o of ORGANS) if (o.re.test(key)) return o.id
+  return 'body'
+}
+const field = computed(() => {
+  const W = 760, H = 340, cy = H / 2, rx = 150, ry = 118, sep = 178
+  return theorems.map((t) => {
+    const h = t.receipt.replace(/-/g, '')
+    const ring = parseInt(h[0], 16) & 1 // one bit of the receipt → left or right torus
+    const ang = (parseInt(h.slice(1, 6), 16) / 0xfffff) * Math.PI * 2
+    const wobble = 0.72 + (parseInt(h.slice(6, 8), 16) / 255) * 0.28 // depth on the torus tube
+    const cx = W / 2 + (ring ? sep / 2 : -sep / 2)
+    const id = organOf(t.key)
+    return {
+      key: t.key,
+      x: +(cx + Math.cos(ang) * rx * wobble).toFixed(1),
+      y: +(cy + Math.sin(ang) * ry * wobble).toFixed(1),
+      hue: ORGAN_HUE[id] ?? 0,
+      body: id === 'body',
+    }
+  })
+})
+const W = 760, H = 340
 </script>
 
 <template>
@@ -60,6 +89,18 @@ const spineNums = [0, 1, 2, 3, 7, 8, 64]
         </li>
       </ol>
       <p class="cap">0 the void and floor · 1 the unit · 2 the bit · 3 the trinity · 7 the dimensions · 8 the octave · 64 the codon</p>
+    </div>
+
+    <div class="fieldwrap">
+      <h3>The forensic field — every theorem exposed</h3>
+      <p class="cap">All {{ theorems.length }} theorems wired onto one hue double-torus, each placed by its own receipt and coloured by its organ. Exposing all at once is the forensic tool: the whole ledger is one field, and nothing hides.</p>
+      <svg class="field" :viewBox="'0 0 ' + W + ' ' + H" preserveAspectRatio="xMidYMid meet" role="img" aria-label="all theorems on a double torus">
+        <ellipse :cx="W / 2 - 89" :cy="H / 2" rx="150" ry="118" class="ring" />
+        <ellipse :cx="W / 2 + 89" :cy="H / 2" rx="150" ry="118" class="ring" />
+        <circle v-for="d in field" :key="d.key" :cx="d.x" :cy="d.y" :r="d.body ? 1.5 : 2.4"
+          :fill="d.body ? 'var(--vp-c-text-3)' : 'hsl(' + d.hue + ' 70% 55%)'"
+          :opacity="d.body ? 0.35 : 0.85" />
+      </svg>
     </div>
 
     <div class="organs">
