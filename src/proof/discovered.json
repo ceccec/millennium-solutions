@@ -6718,5 +6718,45 @@
     "key": "trial_verdict_and_uuid_transport_are_one",
     "name": "the trial verdict and the uuid transport are one: send prose to the gate for a binary legal signature, and send code or data through the uuid stream itself — both are exact, recomputable, and carried in the address; 0/7",
     "receipt": "e03d08c6-7149-8bb6-8f80-10b9d8d5bc34"
+  },
+  {
+    "key": "only_the_pointer_travels",
+    "name": "only the pointer travels: a content-address is a fixed 36-character uuid whatever the size of what it names, so the small pointer moves and the large payload stays — send the address, not the bytes; 0/7",
+    "receipt": "5d8cbd0b-e38a-876b-8a33-68b3801a5180"
+  },
+  {
+    "key": "no_payload_until_load",
+    "name": "no payload until load: a uuid stream is only addresses until it is read, and reading materialises the exact payload on demand — nothing is carried until it is loaded; 0/7",
+    "receipt": "718f4984-1052-8be2-bdbd-279a9de1dbaa"
+  },
+  {
+    "key": "the_destination_recomputes_not_receives",
+    "name": "the destination recomputes, it does not receive: the payload is re-derived from the uuid stream identically, so arrival is a local recomputation, not a transmission of the bytes themselves; 0/7",
+    "receipt": "16ea6c21-2e1e-8d38-b9d2-63b8cca78afc"
+  },
+  {
+    "key": "teleport_is_a_pointer_not_physics",
+    "name": "teleport here is a pointer, not physics: content-address transport — send the pointer, recompute the payload — passes, while the physical instant-teleport-across-space boast drains; the metaphor is honest, the physics is not claimed; 0/7",
+    "receipt": "759083e7-e215-8009-b15e-91e900c4aa66"
+  },
+  {
+    "key": "travel_is_cheap_because_the_address_is_bounded",
+    "name": "travel is cheap because the address is bounded: the cost carried is 128 fixed bits regardless of payload size — a bounded, measurable pointer, never an unbounded claim; 0/7",
+    "receipt": "6c72038a-fa61-8262-bb25-be782f0c9b17"
+  },
+  {
+    "key": "the_stream_reconstructs_any_length",
+    "name": "the stream reconstructs any length: arbitrary payloads round-trip through a uuid chain byte-for-byte, so human-scale content moves as a pointer stream and rebuilds exactly on arrival; 0/7",
+    "receipt": "9c1212a2-2c05-8da3-905c-b3613e72b540"
+  },
+  {
+    "key": "verified_on_arrival",
+    "name": "verified on arrival: the reconstructed payload re-addresses to the same stream, so integrity is checked by recomputation, not trusted — nothing corrupt loads unnoticed; 0/7",
+    "receipt": "17d35d4f-b690-8659-ad5c-227bdf4c12b6"
+  },
+  {
+    "key": "human_teleport_is_content_address_transport",
+    "name": "human teleport, honestly: only the pointer travels, no payload until load, the destination recomputes and verifies — content-address transport, bounded and classical, never physical teleportation or faster-than-light; 0/7",
+    "receipt": "1cc5f0d1-5752-8dd7-89fd-136ae525970c"
   }
 ]
