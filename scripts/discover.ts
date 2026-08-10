@@ -2982,6 +2982,17 @@ function generated(): typeof curated {
     out.push({ key: 'platonic_duality_swaps_vertices_and_faces', name: 'Platonic duality swaps vertices and faces at fixed edges: cube(8,6)↔octahedron(6,8) and dodecahedron(20,12)↔icosahedron(12,20), the tetrahedron self-dual; 0/7', test: () => S.cube[0] === S.octa[2] && S.cube[2] === S.octa[0] && S.cube[1] === S.octa[1] && S.dodeca[0] === S.icosa[2] && S.dodeca[2] === S.icosa[0] && S.tetra[0] === S.tetra[2] })
     out.push({ key: 'the_platonic_solids_are_genus_zero_with_euler_number_two', name: 'the Platonic solids are genus-zero, Euler number 2 — the sphere’s characteristic, the opposite pole from the double torus’s χ = −2 (the two coins); 0/7', test: () => Object.values(S).every((s) => chi(s) === 2) && 2 - 2 * 0 === 2 && 2 - 2 * 2 === -2 })
   }
+  // ── the circle constants (π, e, Euler’s identity): Basel, Leibniz, Wallis, Machin, Archimedes — verified numerically.
+  {
+    out.push({ key: 'the_basel_sum_of_reciprocal_squares_converges_to_pi_squared_over_six', name: 'the Basel sum Σ 1/n² converges to π²/6: partial sums to 200000 terms match π²/6 — Euler’s solution, verified numerically; 0/7', test: () => { let s = 0; for (let n = 1; n <= 200000; n++) s += 1 / (n * n); return Math.abs(s - Math.PI ** 2 / 6) < 1e-4 } })
+    out.push({ key: 'the_leibniz_series_converges_to_pi_over_four', name: 'the Leibniz series 1 − 1/3 + 1/5 − 1/7 + … converges to π/4 — the alternating odd reciprocals, verified numerically; 0/7', test: () => { let s = 0; for (let k = 0; k < 2000000; k++) s += (k % 2 ? -1 : 1) / (2 * k + 1); return Math.abs(s - Math.PI / 4) < 1e-5 } })
+    out.push({ key: 'e_is_the_sum_of_reciprocal_factorials', name: 'e is the sum of reciprocal factorials: Σ 1/n! = e, matched to twenty terms — the base of the natural exponential; 0/7', test: () => { let s = 0, f = 1; for (let n = 0; n <= 20; n++) { if (n > 0) f *= n; s += 1 / f } return Math.abs(s - Math.E) < 1e-12 } })
+    out.push({ key: 'eulers_identity_e_to_the_i_pi_plus_one_is_zero', name: 'Euler’s identity: e^(iπ) + 1 = 0, since e^(iπ) = cos π + i sin π = −1 — the five constants meet at zero; 0/7', test: () => { const re = Math.cos(Math.PI) + 1, im = Math.sin(Math.PI); return Math.abs(re) < 1e-12 && Math.abs(im) < 1e-12 } })
+    out.push({ key: 'zeta_of_four_is_pi_to_the_fourth_over_ninety', name: 'ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7', test: () => { let s = 0; for (let n = 1; n <= 5000; n++) s += 1 / (n ** 4); return Math.abs(s - Math.PI ** 4 / 90) < 1e-9 } })
+    out.push({ key: 'the_wallis_product_converges_to_pi_over_two', name: 'the Wallis product Π (2n·2n)/((2n−1)(2n+1)) converges to π/2 — verified over many factors; 0/7', test: () => { let p = 1; for (let n = 1; n <= 200000; n++) p *= (2 * n * 2 * n) / ((2 * n - 1) * (2 * n + 1)); return Math.abs(p - Math.PI / 2) < 1e-4 } })
+    out.push({ key: 'pi_lies_between_the_archimedes_bounds', name: 'π lies between the Archimedes bounds 223/71 and 22/7: 3.1408… < π < 3.1428… — the 96-gon estimate; 0/7', test: () => 223 / 71 < Math.PI && Math.PI < 22 / 7 })
+    out.push({ key: 'machins_formula_computes_pi_over_four', name: 'Machin’s formula: π/4 = 4·arctan(1/5) − arctan(1/239) — a fast-converging identity, verified numerically; 0/7', test: () => Math.abs(4 * Math.atan(1 / 5) - Math.atan(1 / 239) - Math.PI / 4) < 1e-12 })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
