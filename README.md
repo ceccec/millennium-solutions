@@ -9,7 +9,8 @@
 
 A free, open, **recomputable** framework built on the ring **ℤ/9** (the "vortex")
 and the group **(ℤ/7)\*** (the seven-ray Pliska "rosette"), with a **classical
-simulator of quantum algorithms** — TypeScript, formalized in Lean 4, documented
+model of quantum *structure*** (superposition as a set of perspectives, deterministic
+collapse, CHSH ≤ 2 — a local model, not quantum algorithms) — TypeScript, formalized in Lean 4, documented
 in VitePress. Observations, each computed:
 
 - **Division by zero** is a *change of domain* (`n/0 := n⁻¹ mod 9` on units; `0 ↔ ∞`
@@ -55,7 +56,7 @@ modeled and conditional — never a promise.
 **Observed conclusion:** the framework *reflects / maps* the Millennium Problems
 into one algebraic structure. It **does not solve them**, and it is
 **not a quantum computer** or a physical theory — it is a proof of concept and a
-classical simulator. Every one of the **15 registered claims** recomputes from
+classical model. Every one of the **15 registered claims** recomputes from
 `src/` — each bound to its exact recomputation and, where one exists, to a
 provable theorem in the ledger, all gated by `claims-gate.ts` (a bounded,
 accounted set, not a floating "every").
