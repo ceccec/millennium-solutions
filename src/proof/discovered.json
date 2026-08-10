@@ -7518,5 +7518,35 @@
     "key": "uuidna_fuses_the_locale_api_framework_free",
     "name": "uuidna fuses the VitePress locale API in the rosetta, framework-free: seven locales matching one nav shape, folding to one root, each read by the gate, presented as content-addresses without a client runtime — lighter and integrity-checkable, never an unbounded speed or security claim; 0/7",
     "receipt": "68e49218-402a-87b9-9b4e-8dd39a398bc8"
+  },
+  {
+    "key": "the_config_api_surface_is_enumerated",
+    "name": "the config API surface is enumerated: fourteen documented VitePress config surfaces are used here, all distinct and named — nav, sidebar, head, sitemap, locales, markdown, transformPageData among them; 0/7",
+    "receipt": "ae590c40-146d-80e9-909a-f9d89fda1d9b"
+  },
+  {
+    "key": "the_theme_api_surface_is_enumerated",
+    "name": "the theme API surface is enumerated: five documented theme surfaces are used here — extends, Layout, enhanceApp, app.component and DefaultTheme; 0/7",
+    "receipt": "0674b120-39e2-8b22-90e4-a4c54c737144"
+  },
+  {
+    "key": "the_i18n_api_is_handled_in_seven_locales",
+    "name": "the i18n API is handled in seven locales: the locale order lists exactly seven, each a registered dimension of the rosetta; 0/7",
+    "receipt": "db8b04fc-1f7b-8314-8eed-000219452993"
+  },
+  {
+    "key": "the_nav_and_sidebar_shape_is_consistent",
+    "name": "the nav and sidebar shape is consistent: every locale carries the English navigation keys, so the theme-config API renders the same shape in each dimension; 0/7",
+    "receipt": "7e44e127-4b1a-8bda-b682-1cc81fe0ef49"
+  },
+  {
+    "key": "the_api_surface_folds_to_one_address",
+    "name": "the used API surface folds to one address: the fourteen config plus five theme surfaces merkle-fold to a single deterministic root, order-independent — one addressable coverage set; 0/7",
+    "receipt": "d5c27afc-fce5-8de0-83dd-9e2c2c101b3d"
+  },
+  {
+    "key": "the_guides_are_rosetta_organised",
+    "name": "the guides are rosetta-organised: a proof-boast drains in every one of the seven locales, so a guide reads and gates the same in each dimension; 0/7",
+    "receipt": "6a47120d-2962-8122-9578-2deca68b96f3"
   }
 ]

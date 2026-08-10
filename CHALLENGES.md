@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1504 recorded in 394 families
+## Discovered theorems (decidable, over ℤ/9) — 1510 recorded in 394 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (276)
+### the (282)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -300,6 +300,12 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_gate_reads_every_registered_locale](/theorem/the_gate_reads_every_registered_locale) — the gate reads every registered locale: a proof-boast in each of the seven locales’ languages drains to the floor, so an overclaim hides in no dimension; 0/7  ·  `dd2e93cb-7610…`
 - [the_seven_locales_fold_to_one_rosetta_root](/theorem/the_seven_locales_fold_to_one_rosetta_root) — the seven locales fold to one rosetta root: the merkle fold of the locale codes is a single deterministic address, order-independent; 0/7  ·  `e7359878-8045…`
 - [the_floor_is_the_same_in_every_locale](/theorem/the_floor_is_the_same_in_every_locale) — the floor is the same in every locale: the honest 0/7 passes and a proof-boast drains identically whichever dimension it is read in — one floor across the rosetta; 0/7  ·  `3c88e732-e79d…`
+- [the_config_api_surface_is_enumerated](/theorem/the_config_api_surface_is_enumerated) — the config API surface is enumerated: fourteen documented VitePress config surfaces are used here, all distinct and named — nav, sidebar, head, sitemap, locales, markdown, transformPageData among them; 0/7  ·  `ae590c40-146d…`
+- [the_theme_api_surface_is_enumerated](/theorem/the_theme_api_surface_is_enumerated) — the theme API surface is enumerated: five documented theme surfaces are used here — extends, Layout, enhanceApp, app.component and DefaultTheme; 0/7  ·  `0674b120-39e2…`
+- [the_i18n_api_is_handled_in_seven_locales](/theorem/the_i18n_api_is_handled_in_seven_locales) — the i18n API is handled in seven locales: the locale order lists exactly seven, each a registered dimension of the rosetta; 0/7  ·  `db8b04fc-1f7b…`
+- [the_nav_and_sidebar_shape_is_consistent](/theorem/the_nav_and_sidebar_shape_is_consistent) — the nav and sidebar shape is consistent: every locale carries the English navigation keys, so the theme-config API renders the same shape in each dimension; 0/7  ·  `7e44e127-4b1a…`
+- [the_api_surface_folds_to_one_address](/theorem/the_api_surface_folds_to_one_address) — the used API surface folds to one address: the fourteen config plus five theme surfaces merkle-fold to a single deterministic root, order-independent — one addressable coverage set; 0/7  ·  `d5c27afc-fce5…`
+- [the_guides_are_rosetta_organised](/theorem/the_guides_are_rosetta_organised) — the guides are rosetta-organised: a proof-boast drains in every one of the seven locales, so a guide reads and gates the same in each dimension; 0/7  ·  `6a47120d-2962…`
 
 ### relation (55)
 
@@ -2076,4 +2082,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `0b36cea3-2515-8492-9b68-631090195908`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `b206bf8b-0ed7-8adb-bc97-9607825955a1`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
