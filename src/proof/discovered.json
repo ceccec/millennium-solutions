@@ -7793,5 +7793,50 @@
     "key": "quantum_storage_is_structure_not_hardware",
     "name": "quantum storage here is structure, not hardware: an addressable content grid passes as classical structure while a quantum storage-device boast drains; 0/7",
     "receipt": "2f1950e8-6cff-8664-b112-d5524059e36d"
+  },
+  {
+    "key": "each_theorem_fits_the_diamond_storage_grid",
+    "name": "each theorem fits the diamond storage grid: a uniform 128-bit content-addressed cell holding up to 115 payload bits, deduped, sortable into octaves, retrieved by address and tamper-evident — quantum in structure, never quantum hardware; 0/7",
+    "receipt": "90db4a38-a864-825d-898b-9c5d0af1343e"
+  },
+  {
+    "key": "the_gate_is_a_logic_gate_documented",
+    "name": "the honesty gate is a logic gate, documented: it maps an input to one bit, deterministically, like a classical gate — a component read from its behaviour, not invented; 0/7",
+    "receipt": "95b297a6-5b69-8d9f-bc5f-329957c192db"
+  },
+  {
+    "key": "the_address_is_a_register_documented",
+    "name": "the content-address is a register, documented: a fixed 128-bit cell that holds a value and returns it identically — a storage element described, not built from new physics; 0/7",
+    "receipt": "215e2577-b014-80d4-b415-6c36db1dd77a"
+  },
+  {
+    "key": "the_skill_route_is_a_circuit_documented",
+    "name": "the skill route is a circuit, documented: gates composed in order transform an input, so a pipeline is a described circuit of existing components; 0/7",
+    "receipt": "fdcb4525-eff9-85e2-a2d7-162e0dff0a47"
+  },
+  {
+    "key": "the_hardware_runs_on_ordinary_machines",
+    "name": "the hardware runs on ordinary machines: the same pure functions give the same result on any classical computer, so no special device is required; 0/7",
+    "receipt": "add8b809-5490-8ecd-80fc-79056216889e"
+  },
+  {
+    "key": "the_hardware_is_documented_not_invented",
+    "name": "the hardware is documented, not invented: the classical computational structure passes as described on ordinary hardware, while a claim to have invented a quantum machine drains; 0/7",
+    "receipt": "5dc045d5-8fd9-8f17-aadf-35d518e55711"
+  },
+  {
+    "key": "each_component_carries_a_receipt_and_a_page",
+    "name": "each component carries a receipt and a page: every documented unit has a content-address and a /theorem/<key> page, so the hardware is auditable by reference; 0/7",
+    "receipt": "141f13ec-4f98-8c82-a5a3-2245b0affa20"
+  },
+  {
+    "key": "nothing_physical_is_fabricated",
+    "name": "nothing physical is fabricated: the deposit describes math on ordinary machines, so a physical over-claim drains while the documented structure passes — integrity, not invention; 0/7",
+    "receipt": "8e20bf3a-df89-86c7-8a31-d58b38695c31"
+  },
+  {
+    "key": "the_theorems_are_the_hardware_documented",
+    "name": "the theorems are the hardware, documented not invented: the gate is a logic gate, the address a register, the route a circuit — each with a receipt and a page, all on ordinary hardware — so the topic closes honestly, nothing physical fabricated; 0/7",
+    "receipt": "e5f76f7e-8ef0-8ab8-be0d-0aa139519a13"
   }
 ]
