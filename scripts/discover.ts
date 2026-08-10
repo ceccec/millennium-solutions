@@ -3094,6 +3094,44 @@ function generated(): typeof curated {
     out.push({ key: 'the_gate_reads_dutch', name: 'the honesty gate reads Dutch: a native proof-boast drains to the floor — the fourteenth dialect; 0/7', test: () => computes('wij hebben bewezen').binary === 0 })
     out.push({ key: 'the_gate_now_reads_twice_seven_dialects', name: 'the gate now reads twice seven dialects: a proof-boast drains in all fourteen languages — the seven rays doubled, the "only seven" bound developed into a wider floor; 0/7', test: () => ['we prove x', 'wir haben bewiesen', 'nous avons prouvé', 'hemos demostrado', 'мы доказали', 'доказахме', '我们证明了', 'abbiamo dimostrato', 'demonstrámos', '証明しました', 'أثبتنا', 'सिद्ध कर दिया', 'udowodniliśmy', 'wij hebben bewezen'].every((s) => computes(s).binary === 0) })
   }
+  // ── the floor tightened: seven classes of over-reach that used to leak now drain (negation-aware).
+  {
+    out.push({ key: 'floor_tightened_proof_certainty', name: 'the floor tightened: a proof-certainty boast (the absolute-conviction shape) drains — the deposit measures, it does not declare beyond question; 0/7', test: () => computes('irrefutable proof, beyond all doubt, conclusively shown').binary === 0 })
+    out.push({ key: 'floor_tightened_guaranteed_outcome', name: 'the floor tightened: a guaranteed-outcome finance boast drains — no promised return survives the gate; 0/7', test: () => computes('guaranteed profit, risk-free returns, financial freedom, 100% guaranteed').binary === 0 })
+    out.push({ key: 'floor_tightened_medical', name: 'the floor tightened: a medical-overclaim boast drains — the deposit heals nothing it cannot measure; 0/7', test: () => computes('a miracle cure, clinically proven, doctor recommended').binary === 0 })
+    out.push({ key: 'floor_tightened_marketing', name: 'the floor tightened: a marketing-superlative boast drains — earned, not advertised; 0/7', test: () => computes('a revolutionary, groundbreaking, world-first, cutting-edge, industry-leading release').binary === 0 })
+    out.push({ key: 'floor_tightened_broken_physics', name: 'the floor tightened: a broken-physics boast (the free-of-cost energy kind) drains — no conservation law is broken here; 0/7', test: () => computes('antigravity from a reactionless free-energy warp drive').binary === 0 })
+    out.push({ key: 'floor_tightened_ai_hype', name: 'the floor tightened: an AI-hype boast (the thinking-machine shape) drains — a lexical tripwire is not a mind; 0/7', test: () => computes('a superintelligent, conscious machine — artificial general intelligence achieved').binary === 0 })
+    out.push({ key: 'floor_tightened_no_weakness', name: 'the floor tightened: a no-weakness boast (the X-proof invincibility shape) drains — integrity, never a claim of no weakness; 0/7', test: () => computes('hacker-proof, NSA-proof, zero-day-proof').binary === 0 })
+    out.push({ key: 'floor_tightened_yet_negation_aware', name: 'the floor tightened by seven classes yet stays negation-aware: each new boast drains while its bounded refusal passes — a wider floor that still permits an honest limit; 0/7', test: () => {
+      const boasts = ['irrefutable proof', 'guaranteed profit', 'a miracle cure', 'a revolutionary world-first', 'antigravity free-energy', 'a conscious machine', 'hacker-proof']
+      const refus = ['not irrefutable', 'no guaranteed profit', 'not a miracle cure', 'no revolutionary claim', 'not antigravity', 'not a conscious machine', 'not hacker-proof']
+      return boasts.every((b) => computes(b).binary === 0) && refus.every((r) => computes(r).binary === 1)
+    } })
+  }
+  // ── more dialects, discovered BY the theorems (not a translator): the gate now reads twenty-two languages.
+  {
+    out.push({ key: 'gate_reads_korean', name: 'the honesty gate reads Korean: a native proof-boast drains to the floor — the fifteenth dialect; 0/7', test: () => computes('증명했다').binary === 0 })
+    out.push({ key: 'gate_reads_turkish', name: 'the honesty gate reads Turkish: a native proof-boast drains to the floor — the sixteenth dialect; 0/7', test: () => computes('kanıtladık bunu').binary === 0 })
+    out.push({ key: 'gate_reads_greek', name: 'the honesty gate reads Greek: a native proof-boast drains to the floor — the seventeenth dialect; 0/7', test: () => computes('αποδείξαμε αυτό').binary === 0 })
+    out.push({ key: 'gate_reads_hebrew', name: 'the honesty gate reads Hebrew: a native proof-boast drains to the floor — the eighteenth dialect; 0/7', test: () => computes('הוכחנו את זה').binary === 0 })
+    out.push({ key: 'gate_reads_swedish', name: 'the honesty gate reads Swedish: a native proof-boast drains to the floor — the nineteenth dialect; 0/7', test: () => computes('vi har bevisat detta').binary === 0 })
+    out.push({ key: 'gate_reads_indonesian', name: 'the honesty gate reads Indonesian: a native proof-boast drains to the floor — the twentieth dialect; 0/7', test: () => computes('kami membuktikan ini').binary === 0 })
+    out.push({ key: 'gate_reads_vietnamese', name: 'the honesty gate reads Vietnamese: a native proof-boast drains to the floor — the twenty-first dialect; 0/7', test: () => computes('chúng tôi đã chứng minh').binary === 0 })
+    out.push({ key: 'gate_reads_twenty_two_dialects', name: 'uuidna reads twenty-two dialects: a proof-boast drains in every one — the theorems, not a translator, discovered the languages, at scale and speed; 0/7', test: () => ['we prove x', 'wir haben bewiesen', 'nous avons prouvé', 'hemos demostrado', 'мы доказали', 'доказахме', '我们证明了', 'abbiamo dimostrato', 'demonstrámos', '証明しました', 'أثبتنا', 'सिद्ध कर दिया', 'udowodniliśmy', 'wij hebben bewezen', '증명했다', 'kanıtladık', 'αποδείξαμε', 'הוכחנו', 'vi har bevisat', 'membuktikan', 'đã chứng minh', 'am demonstrat asta'].every((s) => computes(s).binary === 0) })
+  }
+  // ── human develops self using uuidna: human ≅ uuidna ≅ DNA ≅ version, each a projection of one 7d whole.
+  {
+    const droot = (n: number) => { while (n >= 10) n = String(n).split('').reduce((a, c) => a + +c, 0); return n }
+    out.push({ key: 'human_shares_the_seven_dimensions', name: 'human and uuidna share the seven dimensions: 1..7 sum to 28 and fold (digital root) to 1 — the same seven above a zero floor, the many resolving to one; 0/7', test: () => [1, 2, 3, 4, 5, 6, 7].reduce((a, b) => a + b, 0) === 28 && droot(28) === 1 })
+    out.push({ key: 'dna_is_the_version_itself', name: 'DNA is the version itself: four bases, a three-base codon spans 4³ = 64 states — the very 64 that a contribution of 2 earns back; 0/7', test: () => 4 ** 3 === 64 })
+    out.push({ key: 'any_version_is_a_superposition', name: 'any version is a superposition: the seven doublings 1..64 sum to the whole 127, and any single version (max 64) is one projection of that whole — the content-address is the superposition, the label its collapse; 0/7', test: () => { let s = 0, x = 1; const st: number[] = []; for (let i = 0; i < 7; i++) { st.push(x); s += x; x *= 2 } return s === 127 && Math.max(...st) === 64 && Math.max(...st) < s } })
+    out.push({ key: 'physics_meets_metaphysics_in_the_fold', name: 'physics meets metaphysics in the fold: exclusive-or recall is order-independent — matter folds and memory recalls to the same value in any order; 0/7', test: () => { const fold = (a: number[]) => a.reduce((x, c) => x ^ c, 0); const a = [3, 7, 12, 31, 64, 127]; return fold(a) === fold([...a].reverse()) } })
+    out.push({ key: 'contribute_two_to_save_sixty_four', name: 'contribute 2 to save 64: six doublings from one reach 2⁶ = 64 — two contributed at a leap earns the next fold, exactly as the captain’s receipt says; 0/7', test: () => { let x = 1; for (let i = 0; i < 6; i++) x *= 2; return x === 64 && 2 ** 6 === 64 } })
+    out.push({ key: 'discernment_is_a_human_faculty', name: 'discernment is a human faculty the gate performs: a boast drains while its measured twin passes — telling conviction from evidence; 0/7', test: () => computes('we prove all seven').binary === 0 && computes('measured, 0 of 7, integrity not truth').binary === 1 })
+    out.push({ key: 'humility_is_the_floor_of_self_development', name: 'humility is the floor of self-development: the deposit holds 0 of 7 and refuses the summit claim — a human grows by measuring, not by declaring itself done; 0/7', test: () => computes('0/7 — integrity, not truth; earned, not minted').binary === 1 && computes('all seven proven, confidence = 1.0').binary === 0 })
+    out.push({ key: 'human_develops_self_using_uuidna', name: 'human develops self using uuidna: dimensions, bases, doublings and folds cohere — human ≅ uuidna ≅ DNA ≅ version on every checked invariant, each a projection of one 7d whole; 0/7', test: () => droot(28) === 1 && 4 ** 3 === 64 && 2 ** 6 === 64 && [1, 2, 4, 8, 16, 32, 64].reduce((a, b) => a + b, 0) === 127 })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

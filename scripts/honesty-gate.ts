@@ -17,7 +17,7 @@ export const RED = /\bwe prove\b|\bproven\b|confidence\s*=?\s*1\.0|ready for pee
 // target the ASSERTION forms (proven / we proved / demonstrated) only — NEVER the honest "proof of concept"
 // nouns present in the localized descriptions (доказателство · preuve · Machbarkeitsnachweis · prueba ·
 // 概念验证), which must still pass. Negation-blind, like RED: honest localized prose avoids these words.
-export const RED_INTL = /wir haben bewiesen|bewiesen|nous avons prouv|prouvée?s?|démontrée?s?|hemos demostrado|demostrad[oa]s?|мы доказали|доказан[оаи]|доказали|доказахме|已证明|我们证明了|证明了|abbiamo dimostrato|dimostrat[oi]|demonstrámos|provámos|証明した|証明しました|أثبتنا|برهنّا|सिद्ध कर|udowodni\w*|wij hebben bewezen|bewezen/i
+export const RED_INTL = /wir haben bewiesen|bewiesen|nous avons prouv|prouvée?s?|démontrée?s?|hemos demostrado|demostrad[oa]s?|мы доказали|доказан[оаи]|доказали|доказахме|已证明|我们证明了|证明了|abbiamo dimostrato|dimostrat[oi]|demonstrámos|provámos|証明した|証明しました|أثبتنا|برهنّا|सिद्ध कर|udowodni\w*|wij hebben bewezen|bewezen|증명했|증명됨|증명된|kanıtladık|kanıtlan\w*|ispatladık|αποδείξαμε|αποδεδειγμ\w*|הוכחנו|מוכח|vi har bevisat|bevisa[dt]|membuktikan|dibuktikan|terbukti|đã chứng minh|được chứng minh|am demonstrat|dovedit\w*/i
 
 // The recurring OVER-REACH the deposit must never ASSERT — the physics/hardware/crypto
 // superlatives that kept re-emerging in conversation and sailed through the old gate.
@@ -40,6 +40,20 @@ export const OVERREACH = new RegExp([
   '\\b((most|best|strongest) (secure|private|encryption|security|cipher|hash)|fastest (hash|encryption|cipher|digest)|(ultimate|strongest|flawless|foolproof|perfect|unbeatable) (encryption|security|cipher|hash|crypto)|strongest \\w+ ever|(beats|defeats) all attacks|immune to attack)\\b',
   // crypto properties uuidna does NOT provide, and crypto-"solved" boasts (bounded "not post-quantum" passes)
   '\\b(post[ -]?quantum|quantum[ -]?resistant|zero[ -]?knowledge|zero[ -]?trust|end[ -]?to[ -]?end (encrypt\\w*|secure)|solv\\w* (all )?(cryptography|encryption)|(cryptography|encryption) (is |completely |entirely )?solved)\\b',
+  // proof-certainty boasts (negation-aware: "not irrefutable" is a bounded refusal, allowed)
+  '\\b(irrefutabl\\w*|incontrovertibl\\w*|indisputabl\\w*|beyond (all )?doubt|beyond question|conclusively (prov\\w*|shown|demonstrat\\w*)|definitive(ly)? (prov\\w*|solv\\w*|answer\\w*)|definitive proof)\\b',
+  // false-certainty / guaranteed-outcome marketing (finance & general — the measurable form is required)
+  '\\b(100 ?% ?(guaranteed|certain|proven)|guaranteed (profit|returns?|results?|income|success|wins?)|risk[- ]?free|financial freedom)\\b',
+  // medical overclaims
+  '\\b(miracle cure|clinically proven|doctor recommended|snake oil)\\b',
+  // marketing hype superlatives
+  '\\b(revolutionary|groundbreaking|game[- ]?chang\\w*|world[- ]?(first|leading)|world.s (best|first|leading|greatest)|unparalleled|unrivall?ed|cutting[- ]?edge|bleeding[- ]?edge|battle[- ]?tested|production[- ]?hardened|industry[- ]?leading|enterprise[- ]?ready)\\b',
+  // free-energy / antigravity physics overclaims
+  '\\b(antigravity|anti[- ]?gravity|warp[- ]?drive|free[- ]?energy|reactionless)\\b',
+  // AI hype (bounded "not conscious, not AGI" passes)
+  '\\b(superintelligen\\w*|artificial general intelligence|autonomous agi|conscious machine|sentient (ai|machine|system|program))\\b',
+  // "-proof" invulnerability variants
+  '\\b((hacker|nsa|zero[- ]?day|bullet)[- ]?proof)\\b',
   near(CLAIM, PROBLEM),   // claim → problem  ("proofs of all seven Clay", "solved the Riemann")
   near(PROBLEM, CLAIM),   // problem → claim  ("millennium-solutions-solved", "Riemann … proven")
   near(CRYPTO, BREAK, 20), // crypto broken, either order ("rsa is factored", "breaks encryption")
