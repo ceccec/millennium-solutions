@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1432 recorded in 379 families
+## Discovered theorems (decidable, over ℤ/9) — 1440 recorded in 381 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (252)
+### the (255)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -276,6 +276,9 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_confidentiality_is_the_real_envelope_not_maximum](/theorem/the_confidentiality_is_the_real_envelope_not_maximum) — the confidentiality is the real envelope, not a maximum-security claim: the ChaCha20-Poly1305 envelope gives authenticated secrecy checked against the standard vector, while the maximum-security boast drains; 0/7  ·  `1b56e932-2256…`
 - [the_route_result_is_deterministic](/theorem/the_route_result_is_deterministic) — the route result is deterministic: the same route and input recompute the same output, so a routed request is a content-addressable result; 0/7  ·  `95479993-5231…`
 - [the_route_is_the_skill_pipeline](/theorem/the_route_is_the_skill_pipeline) — the route is the skill pipeline: catch all, split by "/", the keywords are skills composed in order with the params supplied — one router for communications, translations, analytics and forensics, deterministic and refusing the unknown; 0/7  ·  `4dc9603c-7a95…`
+- [the_address_is_the_index](/theorem/the_address_is_the_index) — the address is the index: the content-address is a deterministic key into the record, so the same entry always resolves to the same slot; 0/7  ·  `fb4375a7-165b…`
+- [the_debug_speedup_is_memoization](/theorem/the_debug_speedup_is_memoization) — the debug speedup is memoization: verifying one address is a single step against recomputing all N, a classical structural gain, not a physical one; 0/7  ·  `b8edbd8e-da63…`
+- [the_gap_pointer_is_exact_not_a_linear_bucket](/theorem/the_gap_pointer_is_exact_not_a_linear_bucket) — the gap pointer is exact, not a linear bucket: the undiscovered are named by the key namespace directly rather than compressed into a lossy scan — an exact lead, not a region; 0/7  ·  `f33f1a70-ce08…`
 
 ### relation (55)
 
@@ -335,7 +338,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [relation_receipt_chain_is_forensic_custody](/theorem/relation_receipt_chain_is_forensic_custody) — the receipt chain IS chain-of-custody: receipt[i] = toUuid(receipt[i−1]→key[i]) from a seed, so altering one link changes every link after it — the merkle-ledger and forensics are one construction  ·  `d0307011-b34a…`
 - [relation_coin64_collision_free_on_domains](/theorem/relation_coin64_collision_free_on_domains) — the 64-bit currency is collision-free across the rosetta: coin64 of each domain yields a distinct coin (as many coins as domains) — the shared currency addresses every perspective uniquely  ·  `dc278848-c7d9…`
 
-### a (37)
+### a (39)
 
 - [a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony](/theorem/a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony) — a theorem without a formula is a hallucination, recomputed in a432 harmony: a claim is a theorem only if it is backed by a computable formula that recomputes true — a prose-only claim with no formula, or one whose formula computes false, is refused as hallucination and never recorded. Every recorded fact recomputes deterministically and folds into the a432 harmony root (the receipt of state). Measure, do not assert. Decidable  ·  `e3d75d76-310f…`
 - [a_referrer_always_counts_with_its_id](/theorem/a_referrer_always_counts_with_its_id) — a referrer always counts with its id: a reference from a referrer to a target is receipted as toUuid(referrer id → target), so the referrer id is always part of the count; two different referrers to the same target produce two distinct receipts, each counted with its own id, and changing the id changes the receipt — the id is load-bearing. Deterministic and reproducible: the same referrer and target always count the same. Decidable  ·  `65bfacb4-f29e…`
@@ -374,6 +377,8 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [a_room_is_a_chain_of_message_receipts](/theorem/a_room_is_a_chain_of_message_receipts) — a room is a chain of message receipts: each message is seeded by the last, so reordering or dropping a message changes every receipt after it; 0/7  ·  `fd897aef-30e7…`
 - [a_room_is_addressed_by_its_fold](/theorem/a_room_is_addressed_by_its_fold) — a room is addressed by its fold: the merkle fold of its message receipts is the room address, so changing any message changes the room; 0/7  ·  `436a83ac-8e63…`
 - [a_chat_receipt_is_referrer_relative](/theorem/a_chat_receipt_is_referrer_relative) — a chat receipt is referrer-relative: the same message from two senders yields two receipts, each deterministic, so authorship is part of the address; 0/7  ·  `dc9c5596-3894…`
+- [a_bug_is_found_by_its_address_not_a_scan](/theorem/a_bug_is_found_by_its_address_not_a_scan) — a bug is found by its address, not a scan: an entry is looked up by its content-address in one step, present or absent decided without scanning the record; 0/7  ·  `8ca5a805-27a5…`
+- [a_tamper_localises_to_one_link](/theorem/a_tamper_localises_to_one_link) — a tamper localises to one link: recomputing a chain from its seed, the first receipt that mismatches names the exact altered index — debugging jumps to the break, it does not search; 0/7  ·  `cde6e4ad-1479…`
 
 ### uuidna (29)
 
@@ -1495,6 +1500,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [a432_directions_cancel](/theorem/a432_directions_cancel) — the 9 a432 directions (digit×40°) cancel to the zero vector — full interference at the center  ·  `90b398a0-b189…`
 - [a432_dashboard_wheel_closes_the_circle](/theorem/a432_dashboard_wheel_closes_the_circle) — the a432 hue wheel closes the circle (the dashboard wheel, now a theorem): nine points at d·40° for d=1..9 are distinct, 9·40° = 360° closes the ring, and the centre digit is 5 — the reflection fixed point 10−5=5  ·  `68b41225-94c7…`
 
+### address (2)
+
+- [address_lookup_is_constant_not_linear](/theorem/address_lookup_is_constant_not_linear) — address lookup is constant, not linear: for N entries a linear scan costs up to N comparisons while an address lookup costs one — a measured saving of N−1; 0/7  ·  `fbdb3757-c086…`
+- [address_debugging_is_classical_not_quantum](/theorem/address_debugging_is_classical_not_quantum) — address debugging is classical, not quantum: a content-addressed O(1) lookup passes as a classical structural speedup while the quantum-debugging boast drains; 0/7  ·  `7eccc4f8-f985…`
+
 ### anyone (2)
 
 - [anyone_may_compete_with_a_release_by_recomputing_its_content_address](/theorem/anyone_may_compete_with_a_release_by_recomputing_its_content_address) — anyone may compete with a release by recomputing its content-address: a release is a fixed content-address folded from its tracked state, so any competitor recomputes it from the same public inputs — an exact match verifies the claim, a different state gives a different address. The verdict is deterministic and checkable by all, with no privilege and no hidden state; to extend it, fold a larger consistent state from the same seed. Open competition by recomputation. Decidable  ·  `fbb5514e-440f…`
@@ -1795,7 +1805,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (199)
+### other — one-of-a-kind (200)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1846,6 +1856,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [cube_roots_of_unity_sum_zero](/theorem/cube_roots_of_unity_sum_zero) — the three cube roots of unity sum to zero: 1 + ω + ω² = 0 — the equilateral trinity balances to the center, the same zero-sum shape as the ℤ/9 triad {3,6,9}  ·  `6b25148c-1c75…`
 - [cubes_in_0_1_8](/theorem/cubes_in_0_1_8) — every cube d³ mod 9 ∈ {0,1,8}  ·  `5ecfca3d-68f4…`
 - [cyclic_generators_phi](/theorem/cyclic_generators_phi) — in ℤ/n the additive order of k is n/gcd(k,n); k generates the group iff gcd(k,n)=1, so there are exactly φ(n) generators (n≤12)  ·  `f0e2e228-d553…`
+- [debugging_replaces_linear_scan_with_addressing](/theorem/debugging_replaces_linear_scan_with_addressing) — debugging replaces the linear scan with content-addressing: the address is the index, lookup is O(1), a tamper localises to one link and the gap is named exactly — a classical measured speedup, never quantum computing; 0/7  ·  `6a29a133-7a1d…`
 - [degrees_and_radians_are_one_by_ratio](/theorem/degrees_and_radians_are_one_by_ratio) — degrees and radians standardise to one angle by ratio: 90° = π/2, 60° = π/3, 30° = π/6 exactly — two systems, one measure; 0/7  ·  `e7cdcc29-8221…`
 - [determinism_enables_free_reuse](/theorem/determinism_enables_free_reuse) — determinism enables free reuse: the merkle fold of a fixed list returns the identical root every time and a changed list changes it — nothing already computed is recomputed, the honest source of the speed; 0/7  ·  `7f1dc45e-e374…`
 - [digital_root_is_the_ring_homomorphism_onto_z9](/theorem/digital_root_is_the_ring_homomorphism_onto_z9) — digital root is the ring homomorphism onto ℤ/9 (casting out nines): for all a,b the digital root respects both operations — dr(a+b) = dr(dr(a)+dr(b)) and dr(a·b) = dr(dr(a)·dr(b)) — so dr is the canonical map ℤ→ℤ/9 with 9 representing the class of 0, exactly the classical "casting out nines" check. Verified by exhaustion over a bounded grid  ·  `9db2de84-f5d5…`
@@ -1998,4 +2009,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `a245eff9-7f64-80f4-b304-bb5759101d54`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `14db7883-0b65-8c57-900c-53ef987b69e4`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

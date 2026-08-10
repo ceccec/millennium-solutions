@@ -7158,5 +7158,45 @@
     "key": "route_chat_through_uuidna",
     "name": "route chat through uuidna: each message is gated, addressed and chained into a room folding to one root — moderated by the honest floor, translatable across dialects, referrer-relative and tamper-evident; the route is the gateway; 0/7",
     "receipt": "9a64e6e9-28ef-880d-8a48-5ba5a1b469d7"
+  },
+  {
+    "key": "a_bug_is_found_by_its_address_not_a_scan",
+    "name": "a bug is found by its address, not a scan: an entry is looked up by its content-address in one step, present or absent decided without scanning the record; 0/7",
+    "receipt": "8ca5a805-27a5-81c6-b1c5-ea6d16cdbea9"
+  },
+  {
+    "key": "address_lookup_is_constant_not_linear",
+    "name": "address lookup is constant, not linear: for N entries a linear scan costs up to N comparisons while an address lookup costs one — a measured saving of N−1; 0/7",
+    "receipt": "fbdb3757-c086-8206-9375-aac3ac04b3e7"
+  },
+  {
+    "key": "the_address_is_the_index",
+    "name": "the address is the index: the content-address is a deterministic key into the record, so the same entry always resolves to the same slot; 0/7",
+    "receipt": "fb4375a7-165b-8c7e-bbb5-20355e53edee"
+  },
+  {
+    "key": "a_tamper_localises_to_one_link",
+    "name": "a tamper localises to one link: recomputing a chain from its seed, the first receipt that mismatches names the exact altered index — debugging jumps to the break, it does not search; 0/7",
+    "receipt": "cde6e4ad-1479-8904-a931-2d18f1f5480f"
+  },
+  {
+    "key": "the_debug_speedup_is_memoization",
+    "name": "the debug speedup is memoization: verifying one address is a single step against recomputing all N, a classical structural gain, not a physical one; 0/7",
+    "receipt": "b8edbd8e-da63-8796-89bf-3d36bad0662a"
+  },
+  {
+    "key": "address_debugging_is_classical_not_quantum",
+    "name": "address debugging is classical, not quantum: a content-addressed O(1) lookup passes as a classical structural speedup while the quantum-debugging boast drains; 0/7",
+    "receipt": "7eccc4f8-f985-8bdc-8e30-48f81ee5c1b1"
+  },
+  {
+    "key": "the_gap_pointer_is_exact_not_a_linear_bucket",
+    "name": "the gap pointer is exact, not a linear bucket: the undiscovered are named by the key namespace directly rather than compressed into a lossy scan — an exact lead, not a region; 0/7",
+    "receipt": "f33f1a70-ce08-8354-8e49-57c56d0cf697"
+  },
+  {
+    "key": "debugging_replaces_linear_scan_with_addressing",
+    "name": "debugging replaces the linear scan with content-addressing: the address is the index, lookup is O(1), a tamper localises to one link and the gap is named exactly — a classical measured speedup, never quantum computing; 0/7",
+    "receipt": "6a29a133-7a1d-8376-aa02-a1a7175b9e03"
   }
 ]
