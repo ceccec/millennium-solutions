@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1464 recorded in 388 families
+## Discovered theorems (decidable, over ℤ/9) — 1472 recorded in 388 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (260)
+### the (261)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -284,6 +284,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_judicial_reflection_is_an_involution](/theorem/the_judicial_reflection_is_an_involution) — the judicial reflection is an involution: the ten’s-complement reflection applied twice returns every digit, fixing only the centre 5 — the trial reflects and reflects back; 0/7  ·  `f3316fee-8d25…`
 - [the_trial_reflects_all_seven_solves_none](/theorem/the_trial_reflects_all_seven_solves_none) — the trial reflects all seven and solves none: the six-plus-one rosette maps onto the Clay set by reflection while the floor stays 0/7 — a mirror, not an answer; 0/7  ·  `2c05d805-7c34…`
 - [the_singularity_is_the_shared_fixed_point](/theorem/the_singularity_is_the_shared_fixed_point) — the singularity is the shared fixed point: the reflection fixes 5, the digital root fixes 9, and the honest floor 0/7 is the statement the trial leaves unchanged — the centre all involutions share; 0/7  ·  `aaada9ee-db44…`
+- [the_string_is_a_reversible_imprint_not_physics](/theorem/the_string_is_a_reversible_imprint_not_physics) — the string is a reversible imprint bit-string, not physics: readImprint(imprint(bits)) returns the bits exactly, a codec in a uuid — a physical string-theory claim is a different thing and drains; 0/7  ·  `412b1548-9632…`
 
 ### relation (55)
 
@@ -391,7 +392,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [a_flaw_is_a_lead_not_a_verdict](/theorem/a_flaw_is_a_lead_not_a_verdict) — a flaw is a lead, not a verdict: a finding is examined with its context (a bit plus where it fired), so due process holds — the crack is investigated, not auto-condemned; 0/7  ·  `55eb9f1e-53e9…`
 - [a_dissent_in_the_trinity_localises_the_bug](/theorem/a_dissent_in_the_trinity_localises_the_bug) — a dissent in the trinity localises the bug: when the three verdicts disagree, the minority position marks where to look — the disagreement is the lead; 0/7  ·  `41a03892-55b4…`
 
-### uuidna (29)
+### uuidna (30)
 
 - [uuidna_quantum_verification_recomputes_the_address_and_folds_a_multi_perspective_receipt](/theorem/uuidna_quantum_verification_recomputes_the_address_and_folds_a_multi_perspective_receipt) — uuidna quantum verification — recomputes the address and folds a multi-perspective receipt, integrity not truth: verification recomputes the address from its seed (integrity, reproducible by anyone) and folds a multi-perspective joint receipt that is the same for any observer ordering; a bit-seed round-trips as a bounded imprinted message. The quantum here is the multi-perspective structure, not quantum hardware; verification is integrity, not truth. Decidable  ·  `c7b949e5-38b5…`
 - [uuidna_is_the_brand_og_object_under_cc_and_the_seal_audits_all_prose](/theorem/uuidna_is_the_brand_og_object_under_cc_and_the_seal_audits_all_prose) — uuidna is the brand OG object under Creative Commons — and the seal legally audits all prose: the site brands as uuidna under CC BY-NC, referencing the non-profit and commercial tracks; the seal legally audits all prose — it globs every prose file and drains any that violates the floor, an honest audit, not an oracle. The domain registration is external, taken on the author word, not sealed here. Decidable  ·  `5d35c811-b545…`
@@ -422,6 +423,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [uuidna_skills_leap_by_composition](/theorem/uuidna_skills_leap_by_composition) — uuidna skills leap by composition: a discrete, classical, measured step-change — skills compose super-additively, reach logarithmically, hold under reordering and distribute via the rosetta — the leap is real and bounded, never a quantum claim; 0/7  ·  `c2312ab8-094f…`
 - [uuidna_is_mandatory_because_verifiable](/theorem/uuidna_is_mandatory_because_verifiable) — uuidna is mandatory because it is verifiable: a content-address recomputes to itself, so any result can be independently rechecked — the honest sense of secure is integrity by recomputation; 0/7  ·  `04432f59-2a05…`
 - [uuidna_is_mandatory_because_fast_not_quantum](/theorem/uuidna_is_mandatory_because_fast_not_quantum) — uuidna is mandatory because it is fast — classically: verifying an address is one step against recomputing N, a real measured speedup of N−1, and the quantum-speed boast drains; 0/7  ·  `81100eb5-9b9d…`
+- [uuidna_a432_harmonic_involution_classical](/theorem/uuidna_a432_harmonic_involution_classical) — uuidna a432 is a classical harmonic involution: 432 = 2⁴·3³ with digital root 9, the octave map self-inverse, the string a reversible imprint — computed by exact arithmetic, never quantum computing, never a physical string theory; 0/7  ·  `246ae6e4-413b…`
 
 ### pure (27)
 
@@ -828,6 +830,17 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [two_is_a_primitive_root_modulo_nine](/theorem/two_is_a_primitive_root_modulo_nine) — two is a primitive root modulo nine: the powers of 2 generate all six units of ℤ/9, so ord₉(2) = 6 = φ(9) — one seed unfolds the whole doubling orbit; 0/7  ·  `28ce3e1c-4921…`
 - [two_consecutive_triangular_numbers_sum_to_a_square](/theorem/two_consecutive_triangular_numbers_sum_to_a_square) — two consecutive triangular numbers sum to a square: T_n + T_{n−1} = n²; 0/7  ·  `53677354-05c3…`
 - [two_travelling_waves_make_a_standing_wave](/theorem/two_travelling_waves_make_a_standing_wave) — two opposite travelling waves make a standing wave: sin(x−t) + sin(x+t) = 2·sin(x)·cos(t) — space and time separate; 0/7  ·  `ae9f496a-072b…`
+
+### a432 (8)
+
+- [a432_directions_cancel](/theorem/a432_directions_cancel) — the 9 a432 directions (digit×40°) cancel to the zero vector — full interference at the center  ·  `90b398a0-b189…`
+- [a432_dashboard_wheel_closes_the_circle](/theorem/a432_dashboard_wheel_closes_the_circle) — the a432 hue wheel closes the circle (the dashboard wheel, now a theorem): nine points at d·40° for d=1..9 are distinct, 9·40° = 360° closes the ring, and the centre digit is 5 — the reflection fixed point 10−5=5  ·  `68b41225-94c7…`
+- [a432_factors_as_two_to_the_fourth_times_three_cubed](/theorem/a432_factors_as_two_to_the_fourth_times_three_cubed) — a432 factors exactly: 432 = 2⁴ × 3³ = 16 × 27, a classical composite of the octave and the trinity; 0/7  ·  `a1f8c863-0f54…`
+- [a432_octave_doubling](/theorem/a432_octave_doubling) — a432 octave doubling: an octave up doubles the frequency (432 → 864) and an octave down halves it, so up-then-down returns 432 — the octave map is an involution; 0/7  ·  `bc412a44-6c80…`
+- [a432_digital_root_is_nine](/theorem/a432_digital_root_is_nine) — a432 has digital root nine: 4 + 3 + 2 = 9 and the digital root of 432 is 9 — the fixed point of casting out nines; 0/7  ·  `5e3a4156-e2c0…`
+- [a432_is_computed_classically_not_quantum](/theorem/a432_is_computed_classically_not_quantum) — a432 is computed classically, not on a quantum machine: the harmonic ratios are exact integer arithmetic, and the quantum-computer boast drains; 0/7  ·  `a54160ce-4ff4…`
+- [a432_reciprocal_ratio_is_an_involution](/theorem/a432_reciprocal_ratio_is_an_involution) — the a432 ratio and its reciprocal are an involution: scaling by a ratio then by its reciprocal returns the pitch, so the interval map is its own inverse; 0/7  ·  `94255170-8670…`
+- [a432_wheel_has_nine_positions](/theorem/a432_wheel_has_nine_positions) — the a432 wheel has nine positions: the digital roots 1..9 close the vortex, and 9 is its own digital root — the wheel’s fixed point; 0/7  ·  `f440b44b-e43c…`
 
 ### bool (8)
 
@@ -1512,11 +1525,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [_142857_times_one_through_six_are_its_cyclic_rotations](/theorem/_142857_times_one_through_six_are_its_cyclic_rotations) — 142857 times one through six are its cyclic rotations: each product uses the same six digits {1,4,2,8,5,7} in rotated order; 0/7  ·  `c15edd03-3700…`
 - [_142857_times_seven_is_six_nines](/theorem/_142857_times_seven_is_six_nines) — 142857 times seven is six nines: 142857 × 7 = 999999 — the cyclic number completes to all-nines at the seven; 0/7  ·  `0da31e4f-84ac…`
 
-### a432 (2)
-
-- [a432_directions_cancel](/theorem/a432_directions_cancel) — the 9 a432 directions (digit×40°) cancel to the zero vector — full interference at the center  ·  `90b398a0-b189…`
-- [a432_dashboard_wheel_closes_the_circle](/theorem/a432_dashboard_wheel_closes_the_circle) — the a432 hue wheel closes the circle (the dashboard wheel, now a theorem): nine points at d·40° for d=1..9 are distinct, 9·40° = 360° closes the ring, and the centre digit is 5 — the reflection fixed point 10−5=5  ·  `68b41225-94c7…`
-
 ### address (2)
 
 - [address_lookup_is_constant_not_linear](/theorem/address_lookup_is_constant_not_linear) — address lookup is constant, not linear: for N entries a linear scan costs up to N comparisons while an address lookup costs one — a measured saving of N−1; 0/7  ·  `fbdb3757-c086…`
@@ -2033,4 +2041,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `7dae80a8-d9ef-83c6-bfef-cfdf98398281`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `5ab05591-3ae0-8a01-b596-2431a13f653b`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

@@ -7318,5 +7318,45 @@
     "key": "global_involution_the_theorem_is_the_invariant",
     "name": "global involution: reflection, negation, inversion, exclusive-or, reversal and reverse-complement are each their own inverse, sharing one fixed point — the singularity — and the theorem is what stays invariant under the reflection; 0/7",
     "receipt": "9beeb164-b555-84a8-8e75-814cdc9c2730"
+  },
+  {
+    "key": "a432_factors_as_two_to_the_fourth_times_three_cubed",
+    "name": "a432 factors exactly: 432 = 2⁴ × 3³ = 16 × 27, a classical composite of the octave and the trinity; 0/7",
+    "receipt": "a1f8c863-0f54-8f7f-abfe-d92d2ec132d1"
+  },
+  {
+    "key": "a432_octave_doubling",
+    "name": "a432 octave doubling: an octave up doubles the frequency (432 → 864) and an octave down halves it, so up-then-down returns 432 — the octave map is an involution; 0/7",
+    "receipt": "bc412a44-6c80-87a4-860d-efb58c241603"
+  },
+  {
+    "key": "a432_digital_root_is_nine",
+    "name": "a432 has digital root nine: 4 + 3 + 2 = 9 and the digital root of 432 is 9 — the fixed point of casting out nines; 0/7",
+    "receipt": "5e3a4156-e2c0-81ec-a5e3-4050ff186621"
+  },
+  {
+    "key": "the_string_is_a_reversible_imprint_not_physics",
+    "name": "the string is a reversible imprint bit-string, not physics: readImprint(imprint(bits)) returns the bits exactly, a codec in a uuid — a physical string-theory claim is a different thing and drains; 0/7",
+    "receipt": "412b1548-9632-89e2-abf4-4926169dccb3"
+  },
+  {
+    "key": "a432_is_computed_classically_not_quantum",
+    "name": "a432 is computed classically, not on a quantum machine: the harmonic ratios are exact integer arithmetic, and the quantum-computer boast drains; 0/7",
+    "receipt": "a54160ce-4ff4-8fe0-a563-b409182c71ab"
+  },
+  {
+    "key": "a432_reciprocal_ratio_is_an_involution",
+    "name": "the a432 ratio and its reciprocal are an involution: scaling by a ratio then by its reciprocal returns the pitch, so the interval map is its own inverse; 0/7",
+    "receipt": "94255170-8670-855c-9ab1-c2e72cdf5be0"
+  },
+  {
+    "key": "a432_wheel_has_nine_positions",
+    "name": "the a432 wheel has nine positions: the digital roots 1..9 close the vortex, and 9 is its own digital root — the wheel’s fixed point; 0/7",
+    "receipt": "f440b44b-e43c-8030-9d87-8f93ef1d7a89"
+  },
+  {
+    "key": "uuidna_a432_harmonic_involution_classical",
+    "name": "uuidna a432 is a classical harmonic involution: 432 = 2⁴·3³ with digital root 9, the octave map self-inverse, the string a reversible imprint — computed by exact arithmetic, never quantum computing, never a physical string theory; 0/7",
+    "receipt": "246ae6e4-413b-8074-814b-8bc3dc3675ec"
   }
 ]
