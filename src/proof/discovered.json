@@ -7398,5 +7398,85 @@
     "key": "human_design_development_education_intellect_are_the_tests",
     "name": "human design, development, education and intellect are the tests: each teaches by its verdict, reeducation educates, development is the measured delta and intellect is multi-perspective — all recomputed, never believed; 0/7",
     "receipt": "0b42e3f5-f4fd-814c-aa34-8af451c00a43"
+  },
+  {
+    "key": "the_address_is_state_independent",
+    "name": "the address is state-independent: minting other addresses in between does not change a value’s address, so the function carries no hidden state a host could disturb; 0/7",
+    "receipt": "0c2609b3-ae60-8197-9101-988afbf38b03"
+  },
+  {
+    "key": "a_receipt_is_plain_serialisable_data",
+    "name": "a receipt is plain, serialisable data: a 36-character string that survives JSON round-trip unchanged, consumable by any framework without adapters; 0/7",
+    "receipt": "beb5814b-105b-837e-aad6-690bf6970b67"
+  },
+  {
+    "key": "the_output_carries_no_framework_markup",
+    "name": "the output carries no framework markup: a content-address is a bare identifier with no angle brackets or directives, so it embeds in any host without escaping; 0/7",
+    "receipt": "9f1bfbc1-a79c-8d63-a0bb-fd9ddc72dc44"
+  },
+  {
+    "key": "porting_preserves_the_verdict",
+    "name": "porting preserves the verdict: the gate returns the same bit regardless of what ran before it, so a moved check decides identically in the new host; 0/7",
+    "receipt": "e70c238e-3366-8efa-8ae2-676460eb0a24"
+  },
+  {
+    "key": "the_fold_ports_order_independently",
+    "name": "the fold ports order-independently: the merkle fold gives the same root in any order, so an aggregate computed in one host matches another; 0/7",
+    "receipt": "4ffe1be3-837c-82bf-9b89-c1a295ddcd12"
+  },
+  {
+    "key": "the_plugin_adds_no_global",
+    "name": "the plugin adds no global: the same inputs give the same outputs with no shared mutable state, so uuidna cannot corrupt a host it is embedded in; 0/7",
+    "receipt": "bd0af20d-d9b8-8c0f-a7cc-9ab578093522"
+  },
+  {
+    "key": "vitepress_hosts_the_content_address",
+    "name": "the standard host holds the content-address unchanged: a page’s address is stable and host-independent, so a VitePress site hosts uuidna as a plugin without altering it; 0/7",
+    "receipt": "2bddca6e-30a8-811b-9e6f-490630b24795"
+  },
+  {
+    "key": "uuidna_ports_at_scale_as_a_compliant_plugin",
+    "name": "uuidna ports at scale as a compliant plugin: pure, state-free, host-independent functions producing plain serialisable data — the same address, fold and verdict everywhere, independent and fully compliant with its host; 0/7",
+    "receipt": "2c4753ae-be4f-8642-9ba6-f913a716e454"
+  },
+  {
+    "key": "every_mcp_output_is_harnessed_auditable",
+    "name": "every MCP output is harnessed auditable: wrapping any tool output makes it auditable, so nothing leaves the MCP unweighed; 0/7",
+    "receipt": "ef11114d-5b8b-820c-aea1-a6ae575f32b5"
+  },
+  {
+    "key": "the_harness_holds_in_all_seven_dimensions",
+    "name": "the harness holds in all seven dimensions: a tool output is auditable across the seven locales, folding to one root — no dimension goes dark; 0/7",
+    "receipt": "38509406-f5d5-8e1f-aa91-4638db52d270"
+  },
+  {
+    "key": "the_harness_shows_the_reeducation_gain",
+    "name": "the harness lifts every output to an auditable form: after harnessing, the output passes, and an overclaim visibly gains from draining to passing; 0/7",
+    "receipt": "a06b25ef-104b-8265-9d8a-9891e2603f21"
+  },
+  {
+    "key": "the_thirteen_mcp_tools_are_skills",
+    "name": "the thirteen MCP tools are the skills: address, gate, reeducate, the merkle trio, imprint, read, bill, the crypt trio and the composite — a fixed, named skill set; 0/7",
+    "receipt": "bf4eac85-8fc9-8159-8c7a-2c27a8e94a9c"
+  },
+  {
+    "key": "the_ui_presents_each_output_by_address",
+    "name": "the UI presents each output by its address: a tool output is shown by its content-address (a pointer), deterministic and distinct for distinct outputs — by reference, not by payload; 0/7",
+    "receipt": "00a5458e-b8c6-820e-9c6d-2c7a6278b7e6"
+  },
+  {
+    "key": "mcp_outputs_chain_into_an_audit_log",
+    "name": "MCP outputs chain into an audit log: each output receipt is seeded by the last, so the tool-call history is ordered and tamper-evident; 0/7",
+    "receipt": "741dfe34-a806-8def-a3b4-2108e2d2c76b"
+  },
+  {
+    "key": "the_theorems_are_the_basis_of_the_skills",
+    "name": "the theorems are the basis of the skills: each skill’s behaviour is a decidable test — the gate returns a bit, the fold a root — so a skill is a theorem made callable; 0/7",
+    "receipt": "3355f5f9-50b0-892e-8fcb-b6e2ea3ec558"
+  },
+  {
+    "key": "the_ui_is_the_harness_of_the_mcp",
+    "name": "the UI is the harness of the MCP: every tool output is made auditable, auditable in all seven, reeducated when it overclaims, addressed and chained — the thirteen tools the skills, the theorems their basis, each output presented by reference; 0/7",
+    "receipt": "6e10bfae-3485-858e-8d77-69eba6efaf1e"
   }
 ]
