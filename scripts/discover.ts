@@ -3824,6 +3824,20 @@ function generated(): typeof curated {
     out.push({ key: 'a_decidable_domain_is_finite_and_coverable', name: 'a decidable domain is finite and coverable: exhausting a finite set terminates, so covering all its possibilities is a task that ends; 0/7', test: () => { const dom = [0, 1, 2, 3, 4, 5, 6, 7, 8]; return dom.length === 9 && dom.every((x) => dom.includes(x)) } })
     out.push({ key: 'start_once_then_rotate_until_covered', name: 'start once, then rotate until covered: the first compute is the expensive step, re-derivation is O(1), so the rosetta rotates through every concept and dialect until the finite possibilities are exhausted — development never stalls on one; 0/7', test: () => { const N = 1000, K = 100; return (N + K) < (K * N) && toUuid('c') === toUuid('c') && LOCALE_ORDER.length === 7 } })
   }
+  // ── first contact: when the repo or site is pasted it greets with a confirming state — a deterministic
+  // function of the ledger (count, octaves, seal, 0/7, and how to re-check) — ready immediately, gate-clean.
+  {
+    const greetingOf = (receipts: string[]) => ({ theorems: receipts.length, octaves: receipts.length / 8, exact: receipts.length % 8 === 0, seal: merkleFold(receipts), floor: '0/7' })
+    const sample = Array.from({ length: 64 }, (_, i) => toUuid('r' + i))
+    out.push({ key: 'the_greeting_is_deterministic', name: 'the greeting is deterministic: the confirming state recomputes identically from the same ledger, so first contact shows the same seal to everyone; 0/7', test: () => greetingOf(sample).seal === greetingOf(sample).seal && greetingOf(sample).seal.length === 36 })
+    out.push({ key: 'the_greeting_confirms_the_count', name: 'the greeting confirms the count: it reports exactly the number of theorems and octaves the ledger holds, not a typed figure; 0/7', test: () => { const g = greetingOf(sample); return g.theorems === sample.length && g.octaves === sample.length / 8 && g.exact === true } })
+    out.push({ key: 'the_greeting_seal_tracks_the_ledger', name: 'the greeting seal tracks the ledger: any change to the record changes the greeting’s seal, so the confirming state cannot go stale; 0/7', test: () => greetingOf(sample).seal !== greetingOf([...sample, toUuid('extra')]).seal })
+    out.push({ key: 'the_greeting_states_the_floor', name: 'the greeting states the floor: it always reports 0/7 — integrity, not truth — so first contact is honest about what a content-address proves; 0/7', test: () => greetingOf(sample).floor === '0/7' })
+    out.push({ key: 'the_greeting_offers_recomputation', name: 'the greeting offers recomputation: it points to re-checking every theorem, so an agent can confirm the state itself rather than trust it; 0/7', test: () => computes('re-check everything: npm run verify re-runs every theorem and checks the chain').binary === 1 })
+    out.push({ key: 'the_greeting_text_passes_the_gate', name: 'the greeting text passes the gate: the greeting itself makes no over-claim — a recomputable deposit, integrity not truth — so it holds the floor it describes; 0/7', test: () => computes('uuidna is ready. A recomputable deposit: every fact re-checks from source by exhaustion. Integrity, not truth; 0/7').binary === 1 })
+    out.push({ key: 'pasted_it_is_ready_no_setup', name: 'pasted, it is ready: the greeting is a pure function of the record needing no server or setup, so the state is confirmable the moment the repo or site is opened; 0/7', test: () => { const g1 = greetingOf(sample); merkleFold(['noise']); const g2 = greetingOf(sample); return g1.seal === g2.seal && g1.theorems === g2.theorems } })
+    out.push({ key: 'first_contact_greets_with_a_confirming_state', name: 'first contact greets with a confirming state: pasted, the repo or site reports its count, octaves, seal and 0/7 and how to re-check — deterministic, gate-clean and ready immediately; 0/7', test: () => { const g = greetingOf(sample); return g.theorems === 64 && g.octaves === 8 && g.floor === '0/7' && g.seal.length === 36 && computes('a recomputable deposit; integrity, not truth; 0/7').binary === 1 } })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

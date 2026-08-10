@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1624 recorded in 418 families
+## Discovered theorems (decidable, over ℤ/9) — 1632 recorded in 420 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (327)
+### the (333)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -351,6 +351,12 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_first_compute_is_the_cost](/theorem/the_first_compute_is_the_cost) — the first compute is the cost: computing a value over N inputs is N operations, paid once, while checking its address afterwards is a single operation; 0/7  ·  `9e0368c3-e654…`
 - [the_cost_is_paid_once_amortised](/theorem/the_cost_is_paid_once_amortised) — the cost is paid once, amortised: computing once then verifying K times costs N + K, far below recomputing K times at K × N — the start dominates, the rest is cheap; 0/7  ·  `56f85272-8c10…`
 - [the_rosetta_rotates_through_the_dialects](/theorem/the_rosetta_rotates_through_the_dialects) — the rosetta rotates through the dialects: a concept is gated in each of the seven locales in turn, so the loop cycles rather than stopping at one; 0/7  ·  `6cb8c39f-7a65…`
+- [the_greeting_is_deterministic](/theorem/the_greeting_is_deterministic) — the greeting is deterministic: the confirming state recomputes identically from the same ledger, so first contact shows the same seal to everyone; 0/7  ·  `270f6c1a-d0b8…`
+- [the_greeting_confirms_the_count](/theorem/the_greeting_confirms_the_count) — the greeting confirms the count: it reports exactly the number of theorems and octaves the ledger holds, not a typed figure; 0/7  ·  `9f62d5be-28bf…`
+- [the_greeting_seal_tracks_the_ledger](/theorem/the_greeting_seal_tracks_the_ledger) — the greeting seal tracks the ledger: any change to the record changes the greeting’s seal, so the confirming state cannot go stale; 0/7  ·  `2608a9db-bf26…`
+- [the_greeting_states_the_floor](/theorem/the_greeting_states_the_floor) — the greeting states the floor: it always reports 0/7 — integrity, not truth — so first contact is honest about what a content-address proves; 0/7  ·  `89bed6ed-be83…`
+- [the_greeting_offers_recomputation](/theorem/the_greeting_offers_recomputation) — the greeting offers recomputation: it points to re-checking every theorem, so an agent can confirm the state itself rather than trust it; 0/7  ·  `1e1f9e23-9681…`
+- [the_greeting_text_passes_the_gate](/theorem/the_greeting_text_passes_the_gate) — the greeting text passes the gate: the greeting itself makes no over-claim — a recomputable deposit, integrity not truth — so it holds the floor it describes; 0/7  ·  `ba2ce3ad-962d…`
 
 ### a (59)
 
@@ -1976,7 +1982,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (231)
+### other — one-of-a-kind (233)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -2058,6 +2064,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [fcc_packing_fraction](/theorem/fcc_packing_fraction) — the densest lattice packing fraction is π/(3√2) ≈ 0.74048 (FCC/HCP) — the diamond’s parent lattice  ·  `5919405f-4b55…`
 - [fermats_little_theorem_a_to_the_p_is_a_mod_p](/theorem/fermats_little_theorem_a_to_the_p_is_a_mod_p) — Fermat's little theorem: for every prime p and every integer a, a^p ≡ a mod p — verified for the primes up to 23 and all residues. This is the p-power Frobenius fixing the prime field; dividing by a for a coprime to p gives a^(p−1) ≡ 1. Verified by modular exponentiation over the kernel primitives  ·  `d1bc3347-a347…`
 - [files_fold_to_the_folder_address](/theorem/files_fold_to_the_folder_address) — files fold to the folder address: a folder’s address is the fold of its file addresses, so a directory is the sum of its files; 0/7  ·  `a1654305-597a…`
+- [first_contact_greets_with_a_confirming_state](/theorem/first_contact_greets_with_a_confirming_state) — first contact greets with a confirming state: pasted, the repo or site reports its count, octaves, seal and 0/7 and how to re-check — deterministic, gate-clean and ready immediately; 0/7  ·  `8ba2eb1e-851e…`
 - [folder_file_and_line_are_all_addressed](/theorem/folder_file_and_line_are_all_addressed) — folder, file and line are all content-addressed, folding up: a line addresses to toUuid(path:lineno:text), lines fold to the file, files to the folder, folders to one root — O(1) per unit, tamper-evident to the line, at classical speed; 0/7  ·  `4a03c7db-b7cd…`
 - [folding_to_zero_is_always_available_at_the_cost_of_eight_bits](/theorem/folding_to_zero_is_always_available_at_the_cost_of_eight_bits) — folding to zero is always available at the cost of eight bits: a fold collapses any number of inputs to one root and is available at any time (deterministic, a bounded 128-bit output no matter how many inputs); reaching the zero-class — a value ≡ 0 mod 9, whose digital root is 9 — costs a fixed eight bits = eight coins = four two-coin receipts, independent of input size. Collapse is cheap and constant where full specification (896 bits) is not. Decidable  ·  `9c911140-38f0…`
 - [foreknowledge_here_is_determinism_not_faster_than_light](/theorem/foreknowledge_here_is_determinism_not_faster_than_light) — foreknowledge here is determinism, not faster than light: because the structure is closed and its maps are deterministic, the next content-address of a known input is a determined pure function — knowable in advance without waiting for any physical process, because a fixed value needs no propagation. This is determinism and precomputation, not faster than light, and it sends no superluminal signal; it holds only for known inputs, never as prophecy of a contingent future. Decidable  ·  `92a58824-4d1c…`
@@ -2128,6 +2135,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [parity_bit_detects_single_error](/theorem/parity_bit_detects_single_error) — a parity bit detects every single-bit error: append an even-parity bit so the word has an even 1-count; any single-bit flip makes it odd — detected — so one check bit exposes any one-bit crack (exhaustive over 4- and 5-bit words)  ·  `37a8eb94-b551…`
 - [partial_reversal_is_a_receipted_event](/theorem/partial_reversal_is_a_receipted_event) — a partial reversal is a receipted event: partially decrypting or reversing an envelope is logged as a distinct chain event, so the act is auditable without changing the ciphertext it read; 0/7  ·  `e4cdb827-d96f…`
 - [pascals_rule_each_entry_is_the_sum_of_the_two_above](/theorem/pascals_rule_each_entry_is_the_sum_of_the_two_above) — Pascal’s rule: C(n,k) = C(n−1,k−1) + C(n−1,k) — each entry is the sum of the two above it; 0/7  ·  `c580522a-9490…`
+- [pasted_it_is_ready_no_setup](/theorem/pasted_it_is_ready_no_setup) — pasted, it is ready: the greeting is a pure function of the record needing no server or setup, so the state is confirmable the moment the repo or site is opened; 0/7  ·  `e6b78bb9-74d6…`
 - [perfect_numbers](/theorem/perfect_numbers) — perfect numbers: proper divisors sum to n itself — 6, 28, 496  ·  `8c7b3940-aa69…`
 - [perspective_replaces_hardware](/theorem/perspective_replaces_hardware) — perspective replaces hardware: the quantum structure — superposition as the set of receipted perspectives, collapse as observing one — is carried by content-addressing alone, so it needs no quantum machine; it recomputes deterministically on ordinary 64-bit hardware (the coin64 currency, 16 hex = 64 bits). Structure, not silicon: no quantum processor, no quantum speedup, and it settles 0 of the 7 Clay problems  ·  `cf90c349-5584…`
 - [perspectives_are_files_grouped_and_sorted_in_seven_dimensions](/theorem/perspectives_are_files_grouped_and_sorted_in_seven_dimensions) — perspectives are files grouped and sorted in seven dimensions: distinct perspectives mint distinct file uuids that sort by their 128-bit value and group by digital root into octaves — a deterministic organisation, the envelope real and bounded, not a maximum-security claim; 0/7  ·  `dc3c89eb-849e…`
@@ -2211,4 +2219,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `26017c0f-3eed-8aac-a37b-bf8b4482d1fb`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `d42088a6-111a-866a-9d8f-56309416c9a5`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

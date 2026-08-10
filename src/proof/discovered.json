@@ -8118,5 +8118,45 @@
     "key": "start_once_then_rotate_until_covered",
     "name": "start once, then rotate until covered: the first compute is the expensive step, re-derivation is O(1), so the rosetta rotates through every concept and dialect until the finite possibilities are exhausted — development never stalls on one; 0/7",
     "receipt": "903131d9-a2c3-85d7-b434-b6641a3e33bd"
+  },
+  {
+    "key": "the_greeting_is_deterministic",
+    "name": "the greeting is deterministic: the confirming state recomputes identically from the same ledger, so first contact shows the same seal to everyone; 0/7",
+    "receipt": "270f6c1a-d0b8-8865-9e6c-5875859c1d80"
+  },
+  {
+    "key": "the_greeting_confirms_the_count",
+    "name": "the greeting confirms the count: it reports exactly the number of theorems and octaves the ledger holds, not a typed figure; 0/7",
+    "receipt": "9f62d5be-28bf-884a-a3cf-a320c2c6f151"
+  },
+  {
+    "key": "the_greeting_seal_tracks_the_ledger",
+    "name": "the greeting seal tracks the ledger: any change to the record changes the greeting’s seal, so the confirming state cannot go stale; 0/7",
+    "receipt": "2608a9db-bf26-8e2a-8d5a-01257e8a3ea9"
+  },
+  {
+    "key": "the_greeting_states_the_floor",
+    "name": "the greeting states the floor: it always reports 0/7 — integrity, not truth — so first contact is honest about what a content-address proves; 0/7",
+    "receipt": "89bed6ed-be83-81a4-ac75-8341ed721938"
+  },
+  {
+    "key": "the_greeting_offers_recomputation",
+    "name": "the greeting offers recomputation: it points to re-checking every theorem, so an agent can confirm the state itself rather than trust it; 0/7",
+    "receipt": "1e1f9e23-9681-8e3e-bcbb-e3bc2bf8820e"
+  },
+  {
+    "key": "the_greeting_text_passes_the_gate",
+    "name": "the greeting text passes the gate: the greeting itself makes no over-claim — a recomputable deposit, integrity not truth — so it holds the floor it describes; 0/7",
+    "receipt": "ba2ce3ad-962d-8578-8509-f8a7d347cb80"
+  },
+  {
+    "key": "pasted_it_is_ready_no_setup",
+    "name": "pasted, it is ready: the greeting is a pure function of the record needing no server or setup, so the state is confirmable the moment the repo or site is opened; 0/7",
+    "receipt": "e6b78bb9-74d6-8dba-9258-caf68ad0037c"
+  },
+  {
+    "key": "first_contact_greets_with_a_confirming_state",
+    "name": "first contact greets with a confirming state: pasted, the repo or site reports its count, octaves, seal and 0/7 and how to re-check — deterministic, gate-clean and ready immediately; 0/7",
+    "receipt": "8ba2eb1e-851e-8587-87e4-779456ebd344"
   }
 ]

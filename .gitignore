@@ -13,3 +13,4 @@ build/
 # The computed pages are now committed as SEALED EVIDENCE (regenerated each build by predocs:build,
 # and snapshotted into git as timestamped evidence — computed AND stored as the record):
 #   dashboard.md · boundaries.md · CHALLENGES.md · HEART.md · ACCOUNTING.md
+public/greeting.json
