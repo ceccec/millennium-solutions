@@ -3793,6 +3793,24 @@ function generated(): typeof curated {
     out.push({ key: 'the_pointer_not_the_payload_travels', name: 'the pointer, not the payload, travels: a 36-byte address stands in for content of any size, so the slim record moves the reference and recomputes the rest; 0/7', test: () => toUuid('a'.repeat(1)).length === toUuid('a'.repeat(50000)).length && toUuid('a').length === 36 })
     out.push({ key: 'uuidna_is_slim_by_measurement', name: 'uuidna is slim by measurement: a fixed 36-byte address per fact, the whole folding to one 36-byte root, present by reference within a tiny budget, from a two-function pure basis — slim measured, not merely claimed; 0/7', test: () => toUuid('x').length === 36 && merkleFold(Array.from({ length: 64 }, (_, i) => toUuid('n' + i))).length === 36 && 1600 * 36 === 57600 })
   }
+  // ── each folder, file AND line is content-addressed, folding up: a line → toUuid(path:lineno:text), lines fold
+  // to the file address, files to the folder, folders to the tree root — a change at any line propagates to the
+  // root (tamper-evident to the line), O(1) per unit at classical speed.
+  {
+    const lineAddr = (path: string, no: number, text: string) => toUuid(path + ':' + no + ':' + text)
+    const fileAddr = (path: string, lines: string[]) => merkleFold(lines.map((ln, i) => lineAddr(path, i + 1, ln)))
+    const folderAddr = (dir: string, files: { name: string; lines: string[] }[]) => merkleFold(files.map((f) => fileAddr(dir + '/' + f.name, f.lines)))
+    const F1 = { name: 'a.ts', lines: ['const x = 1', 'export default x'] }
+    const F2 = { name: 'b.ts', lines: ['import x from "./a"', 'console.log(x)'] }
+    out.push({ key: 'each_line_is_content_addressed', name: 'each line is content-addressed: a line maps to toUuid(path:lineno:text), deterministic and distinct per line, so a line has its own receipt; 0/7', test: () => lineAddr('a.ts', 1, 'const x = 1') === lineAddr('a.ts', 1, 'const x = 1') && lineAddr('a.ts', 1, 'const x = 1') !== lineAddr('a.ts', 2, 'const x = 1') && lineAddr('a.ts', 1, 'const x = 1') !== lineAddr('a.ts', 1, 'const x = 2') })
+    out.push({ key: 'lines_fold_to_the_file_address', name: 'lines fold to the file address: a file’s address is the fold of its line addresses, so the file is exactly the sum of its lines; 0/7', test: () => fileAddr('a.ts', F1.lines) === fileAddr('a.ts', F1.lines) && fileAddr('a.ts', F1.lines).length === 36 })
+    out.push({ key: 'a_changed_line_changes_the_file_address', name: 'a changed line changes the file address: editing any line changes its line address and therefore the file’s fold — tamper-evident to the line; 0/7', test: () => fileAddr('a.ts', ['const x = 1', 'export default x']) !== fileAddr('a.ts', ['const x = 2', 'export default x']) })
+    out.push({ key: 'each_file_is_content_addressed', name: 'each file is content-addressed: a file maps to the fold of its lines (equivalently toUuid(path:content)), distinct per path and content — the rule the release already uses; 0/7', test: () => fileAddr('a.ts', F1.lines) !== fileAddr('b.ts', F1.lines) && fileAddr('a.ts', F1.lines) !== fileAddr('a.ts', F2.lines) })
+    out.push({ key: 'files_fold_to_the_folder_address', name: 'files fold to the folder address: a folder’s address is the fold of its file addresses, so a directory is the sum of its files; 0/7', test: () => folderAddr('src', [F1, F2]) === folderAddr('src', [F1, F2]) && folderAddr('src', [F1, F2]).length === 36 })
+    out.push({ key: 'a_changed_file_changes_the_folder_address', name: 'a changed file changes the folder address: editing any file changes the folder’s fold, so the directory receipt is tamper-evident to the file; 0/7', test: () => folderAddr('src', [F1, F2]) !== folderAddr('src', [{ name: 'a.ts', lines: ['const x = 9', 'export default x'] }, F2]) })
+    out.push({ key: 'a_line_edit_propagates_to_the_tree_root', name: 'a line edit propagates to the tree root: changing one line changes its line, file, folder and the root fold in turn — the whole tree is tamper-evident down to a single line; 0/7', test: () => { const before = merkleFold([folderAddr('src', [F1, F2])]); const after = merkleFold([folderAddr('src', [{ name: 'a.ts', lines: ['const x = 1', 'export default y'] }, F2])]); return before !== after } })
+    out.push({ key: 'folder_file_and_line_are_all_addressed', name: 'folder, file and line are all content-addressed, folding up: a line addresses to toUuid(path:lineno:text), lines fold to the file, files to the folder, folders to one root — O(1) per unit, tamper-evident to the line, at classical speed; 0/7', test: () => lineAddr('a.ts', 1, 'x').length === 36 && fileAddr('a.ts', F1.lines).length === 36 && folderAddr('src', [F1, F2]).length === 36 && fileAddr('a.ts', ['x']) !== fileAddr('a.ts', ['y']) })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

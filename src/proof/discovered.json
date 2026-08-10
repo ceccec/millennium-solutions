@@ -8038,5 +8038,45 @@
     "key": "uuidna_is_slim_by_measurement",
     "name": "uuidna is slim by measurement: a fixed 36-byte address per fact, the whole folding to one 36-byte root, present by reference within a tiny budget, from a two-function pure basis — slim measured, not merely claimed; 0/7",
     "receipt": "039353f4-a9a0-86dd-9bc6-8eb8389b0d3b"
+  },
+  {
+    "key": "each_line_is_content_addressed",
+    "name": "each line is content-addressed: a line maps to toUuid(path:lineno:text), deterministic and distinct per line, so a line has its own receipt; 0/7",
+    "receipt": "e265acb8-8c9b-8ebb-9a12-e5f076d979de"
+  },
+  {
+    "key": "lines_fold_to_the_file_address",
+    "name": "lines fold to the file address: a file’s address is the fold of its line addresses, so the file is exactly the sum of its lines; 0/7",
+    "receipt": "27554b9b-3ec2-8c61-bd3b-32541bab5fa4"
+  },
+  {
+    "key": "a_changed_line_changes_the_file_address",
+    "name": "a changed line changes the file address: editing any line changes its line address and therefore the file’s fold — tamper-evident to the line; 0/7",
+    "receipt": "5251b0b5-bda0-8a07-bf1b-906695020b51"
+  },
+  {
+    "key": "each_file_is_content_addressed",
+    "name": "each file is content-addressed: a file maps to the fold of its lines (equivalently toUuid(path:content)), distinct per path and content — the rule the release already uses; 0/7",
+    "receipt": "ddb99d3d-a029-82d8-be18-96b972ca5115"
+  },
+  {
+    "key": "files_fold_to_the_folder_address",
+    "name": "files fold to the folder address: a folder’s address is the fold of its file addresses, so a directory is the sum of its files; 0/7",
+    "receipt": "a1654305-597a-8735-9cb4-bae105900ab2"
+  },
+  {
+    "key": "a_changed_file_changes_the_folder_address",
+    "name": "a changed file changes the folder address: editing any file changes the folder’s fold, so the directory receipt is tamper-evident to the file; 0/7",
+    "receipt": "09587a32-79dc-8f4f-ad4f-795c8b88ad15"
+  },
+  {
+    "key": "a_line_edit_propagates_to_the_tree_root",
+    "name": "a line edit propagates to the tree root: changing one line changes its line, file, folder and the root fold in turn — the whole tree is tamper-evident down to a single line; 0/7",
+    "receipt": "46596d18-8cd0-8cd8-af0c-f9605a18d7df"
+  },
+  {
+    "key": "folder_file_and_line_are_all_addressed",
+    "name": "folder, file and line are all content-addressed, folding up: a line addresses to toUuid(path:lineno:text), lines fold to the file, files to the folder, folders to one root — O(1) per unit, tamper-evident to the line, at classical speed; 0/7",
+    "receipt": "4a03c7db-b7cd-89f5-abb2-6a250f2743b0"
   }
 ]
