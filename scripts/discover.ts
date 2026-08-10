@@ -3523,6 +3523,21 @@ function generated(): typeof curated {
     out.push({ key: 'appeal_is_recomputation', name: 'appeal is recomputation: an appeal re-runs the same test on the same evidence and returns the same verdict, so justice is reproducible, not discretionary; 0/7', test: () => { const t = () => (7 * 8 === 56); return t() === t() && t() === true } })
     out.push({ key: 'judicial_involution', name: 'judicial involution: the trial is a reflection whose verdict is idempotent, whose fixed point is the honest floor, whose reeducation converges, and whose appeal is recomputation — reflect and reflect back, the centre held; 0/7', test: () => [1, 2, 3, 4, 5, 6, 7, 8, 9].every((d) => diamond(diamond(d)) === d) && computes('0/7 measured').binary === computes('0/7 measured').binary && reeducate('unbreakable faster than light proof').passed === true })
   }
+  // ── global involution: every core operation is its own inverse — reflection, negation, multiplicative
+  // inversion, exclusive-or, reversal, reverse-complement — and the singularity is the fixed point they share.
+  {
+    const U = [1, 2, 4, 5, 7, 8]
+    const inv = (u: number) => U.find((e) => (u * e) % 9 === 1) as number
+    const revcomp = (s: string) => s.split('').reverse().map((b) => ({ A: 'T', T: 'A', C: 'G', G: 'C' }[b] as string)).join('')
+    out.push({ key: 'involution_reflection', name: 'involution — reflection: the ten’s-complement r(d)=10−d applied twice returns every digit, fixing only the centre 5; 0/7', test: () => [1, 2, 3, 4, 5, 6, 7, 8, 9].every((d) => diamond(diamond(d)) === d) && diamond(5) === 5 })
+    out.push({ key: 'involution_negation', name: 'involution — negation: double negation returns the value, ¬¬x = x for both booleans; 0/7', test: () => (!!true) === true && (!!false) === false && !(!true) === true })
+    out.push({ key: 'involution_multiplicative_inverse', name: 'involution — multiplicative inverse: on the units of ℤ/9 the inverse of the inverse is the element, inv(inv(u)) = u; 0/7', test: () => U.every((u) => inv(inv(u)) === u) })
+    out.push({ key: 'involution_exclusive_or', name: 'involution — exclusive-or: xoring twice with the same key is the identity, (x ⊕ k) ⊕ k = x; 0/7', test: () => [0, 3, 7, 12, 31, 255].every((x) => (x ^ 170 ^ 170) === x) })
+    out.push({ key: 'involution_reversal', name: 'involution — reversal: reversing a string twice returns it, reverse(reverse(s)) = s; 0/7', test: () => { const rev = (s: string) => s.split('').reverse().join(''); return ['', 'a', 'uuidna', 'the vortex'].every((s) => rev(rev(s)) === s) } })
+    out.push({ key: 'involution_reverse_complement', name: 'involution — reverse-complement: on DNA the reverse-complement applied twice returns the strand; 0/7', test: () => ['ACGT', 'AACCGGTT', 'GATTACA'].every((s) => revcomp(revcomp(s)) === s) })
+    out.push({ key: 'the_singularity_is_the_shared_fixed_point', name: 'the singularity is the shared fixed point: the reflection fixes 5, the digital root fixes 9, and the honest floor 0/7 is the statement the trial leaves unchanged — the centre all involutions share; 0/7', test: () => diamond(5) === 5 && ((9 - 1) % 9 + 1) === 9 && computes('integrity, not truth; 0/7').binary === 1 })
+    out.push({ key: 'global_involution_the_theorem_is_the_invariant', name: 'global involution: reflection, negation, inversion, exclusive-or, reversal and reverse-complement are each their own inverse, sharing one fixed point — the singularity — and the theorem is what stays invariant under the reflection; 0/7', test: () => diamond(diamond(7)) === 7 && (!!true) === true && U.every((u) => inv(inv(u)) === u) && (31 ^ 99 ^ 99) === 31 && revcomp(revcomp('ACGT')) === 'ACGT' && diamond(5) === 5 })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

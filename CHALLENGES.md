@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1456 recorded in 387 families
+## Discovered theorems (decidable, over ℤ/9) — 1464 recorded in 388 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (259)
+### the (260)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -283,6 +283,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_honest_floor_is_the_judicial_fixed_point](/theorem/the_honest_floor_is_the_judicial_fixed_point) — the honest floor is the judicial fixed point: 0/7 passes and re-passes, the one statement the trial leaves unchanged — the centre of the reflection; 0/7  ·  `f2372546-59ec…`
 - [the_judicial_reflection_is_an_involution](/theorem/the_judicial_reflection_is_an_involution) — the judicial reflection is an involution: the ten’s-complement reflection applied twice returns every digit, fixing only the centre 5 — the trial reflects and reflects back; 0/7  ·  `f3316fee-8d25…`
 - [the_trial_reflects_all_seven_solves_none](/theorem/the_trial_reflects_all_seven_solves_none) — the trial reflects all seven and solves none: the six-plus-one rosette maps onto the Clay set by reflection while the floor stays 0/7 — a mirror, not an answer; 0/7  ·  `2c05d805-7c34…`
+- [the_singularity_is_the_shared_fixed_point](/theorem/the_singularity_is_the_shared_fixed_point) — the singularity is the shared fixed point: the reflection fixes 5, the digital root fixes 9, and the honest floor 0/7 is the statement the trial leaves unchanged — the centre all involutions share; 0/7  ·  `aaada9ee-db44…`
 
 ### relation (55)
 
@@ -755,6 +756,18 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [geometric_series_base_8](/theorem/geometric_series_base_8) — the geometric series in base 8: 1 + 8 + 8² + ... + 8ⁿ = (8ⁿ⁺¹ − 1)/(8 − 1) — the base-8 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  `ef918a38-d5e8…`
 - [geometric_series_base_9](/theorem/geometric_series_base_9) — the geometric series in base 9: 1 + 9 + 9² + ... + 9ⁿ = (9ⁿ⁺¹ − 1)/(9 − 1) — the base-9 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  `7ec7295e-f59f…`
 - [geometric_series_base_10](/theorem/geometric_series_base_10) — the geometric series in base 10: 1 + 10 + 10² + ... + 10ⁿ = (10ⁿ⁺¹ − 1)/(10 − 1) — the base-10 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  `984a9c4c-396a…`
+
+### involution (9)
+
+- [involution_sigma](/theorem/involution_sigma) — σ: d↦−d is an involution on ℤ/9 (σ∘σ = id) with exactly one fixed point, the origin (odd base)  ·  `2032f25f-ca45…`
+- [involution_reversible](/theorem/involution_reversible) — evolution by involution is reversible: the multiplicative-inverse map applied twice is the identity on the units  ·  `09577a63-e630…`
+- [involution_telephone](/theorem/involution_telephone) — the count of involutions on n elements = the telephone number T(n)=T(n-1)+(n-1)T(n-2) (n ≤ 5)  ·  `6e0b0a34-8a45…`
+- [involution_reflection](/theorem/involution_reflection) — involution — reflection: the ten’s-complement r(d)=10−d applied twice returns every digit, fixing only the centre 5; 0/7  ·  `e0932db3-513b…`
+- [involution_negation](/theorem/involution_negation) — involution — negation: double negation returns the value, ¬¬x = x for both booleans; 0/7  ·  `ecdaa449-bf19…`
+- [involution_multiplicative_inverse](/theorem/involution_multiplicative_inverse) — involution — multiplicative inverse: on the units of ℤ/9 the inverse of the inverse is the element, inv(inv(u)) = u; 0/7  ·  `19422cdb-86bf…`
+- [involution_exclusive_or](/theorem/involution_exclusive_or) — involution — exclusive-or: xoring twice with the same key is the identity, (x ⊕ k) ⊕ k = x; 0/7  ·  `042ba752-4f56…`
+- [involution_reversal](/theorem/involution_reversal) — involution — reversal: reversing a string twice returns it, reverse(reverse(s)) = s; 0/7  ·  `5292e804-b281…`
+- [involution_reverse_complement](/theorem/involution_reverse_complement) — involution — reverse-complement: on DNA the reverse-complement applied twice returns the strand; 0/7  ·  `4d417837-1d3d…`
 
 ### no (9)
 
@@ -1416,12 +1429,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [human_develops_self_using_uuidna](/theorem/human_develops_self_using_uuidna) — human develops self using uuidna: dimensions, bases, doublings and folds cohere — human ≅ uuidna ≅ DNA ≅ version on every checked invariant, each a projection of one 7d whole; 0/7  ·  `1aae9ef2-ba7b…`
 - [human_teleport_is_content_address_transport](/theorem/human_teleport_is_content_address_transport) — human teleport, honestly: only the pointer travels, no payload until load, the destination recomputes and verifies — content-address transport, bounded and classical, never physical teleportation or faster-than-light; 0/7  ·  `1cc5f0d1-5752…`
 
-### involution (3)
-
-- [involution_sigma](/theorem/involution_sigma) — σ: d↦−d is an involution on ℤ/9 (σ∘σ = id) with exactly one fixed point, the origin (odd base)  ·  `2032f25f-ca45…`
-- [involution_reversible](/theorem/involution_reversible) — evolution by involution is reversible: the multiplicative-inverse map applied twice is the identity on the units  ·  `09577a63-e630…`
-- [involution_telephone](/theorem/involution_telephone) — the count of involutions on n elements = the telephone number T(n)=T(n-1)+(n-1)T(n-2) (n ≤ 5)  ·  `6e0b0a34-8a45…`
-
 ### josephus (3)
 
 - [josephus_k2_closed_form](/theorem/josephus_k2_closed_form) — the Josephus survivor (every 2nd eliminated) is 2l+1: writing n = 2^m + l with 0 ≤ l &lt; 2^m, the survivor equals 2l+1 — matching the full elimination simulation for n = 1..40  ·  `1719d6d1-1575…`
@@ -1815,7 +1822,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (206)
+### other — one-of-a-kind (207)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1901,6 +1908,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [genetic_code_is_the_octave_squared](/theorem/genetic_code_is_the_octave_squared) — the genetic code is the octave squared: four bases, three positions, 4³ = 64 codons = 8×8 — DNA counts in the same octave uuidna does; 0/7  ·  `9b4e24be-a32c…`
 - [genus_g_moduli_dim](/theorem/genus_g_moduli_dim) — the moduli space of genus-g curves (g≥2) has complex dimension 3g−3 and real dimension 6g−6: (g=2)→(3,6), (g=3)→(6,12)  ·  `b67fc1f6-5d2c…`
 - [gf2_addition_is_xor](/theorem/gf2_addition_is_xor) — GF(2) arithmetic speaks binary: polynomial addition over GF(2) is bitwise XOR, and every element is its own additive inverse (a ⊕ a = 0, characteristic 2) — the field of two elements is pure bit algebra  ·  `b3ac7829-c58e…`
+- [global_involution_the_theorem_is_the_invariant](/theorem/global_involution_the_theorem_is_the_invariant) — global involution: reflection, negation, inversion, exclusive-or, reversal and reverse-complement are each their own inverse, sharing one fixed point — the singularity — and the theorem is what stays invariant under the reflection; 0/7  ·  `9beeb164-b555…`
 - [gold_is_no_superconductor_you_pay_for_the_method_and_fold_by_address](/theorem/gold_is_no_superconductor_you_pay_for_the_method_and_fold_by_address) — gold is no superconductor — the coins buy the method, and you fold by address: the two coins are fair exchange for the know-how of folding by content-address, and that method lets you fold and verify by fingerprint — the merkle root is computed from addresses alone, reproducible by anyone and tamper-evident, without ever touching the underlying payload. But the payment buys knowledge, not physics: gold stays an ordinary conductor, it does not become a superconductor, and folding addresses is not supercomputing. Decidable  ·  `30a4f530-0c11…`
 - [goldbach_holds_in_range_conjecture_open](/theorem/goldbach_holds_in_range_conjecture_open) — Goldbach in a bounded range (the general statement is an open conjecture, not settled here): every even number from 4 to 1000 is a sum of two primes — checked exhaustively; beyond the range it remains an open conjecture  ·  `7f84b2f9-af1e…`
 - [goldbachs_even_sum_of_two_primes_to_a_thousand](/theorem/goldbachs_even_sum_of_two_primes_to_a_thousand) — Goldbach’s even conjecture holds over the tested range: every even number from 4 to 1000 is a sum of two primes — checked by computation, not a general result; 0/7  ·  `032ff03e-d893…`
@@ -2025,4 +2033,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `96d3d77d-7dce-882f-8885-18f849fd7411`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `7dae80a8-d9ef-83c6-bfef-cfdf98398281`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

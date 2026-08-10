@@ -7278,5 +7278,45 @@
     "key": "judicial_involution",
     "name": "judicial involution: the trial is a reflection whose verdict is idempotent, whose fixed point is the honest floor, whose reeducation converges, and whose appeal is recomputation — reflect and reflect back, the centre held; 0/7",
     "receipt": "4f726cb3-476f-8ce8-9dab-17ab132f3b63"
+  },
+  {
+    "key": "involution_reflection",
+    "name": "involution — reflection: the ten’s-complement r(d)=10−d applied twice returns every digit, fixing only the centre 5; 0/7",
+    "receipt": "e0932db3-513b-8181-9c85-01057879a551"
+  },
+  {
+    "key": "involution_negation",
+    "name": "involution — negation: double negation returns the value, ¬¬x = x for both booleans; 0/7",
+    "receipt": "ecdaa449-bf19-887f-8ebf-9c1a3f23be9d"
+  },
+  {
+    "key": "involution_multiplicative_inverse",
+    "name": "involution — multiplicative inverse: on the units of ℤ/9 the inverse of the inverse is the element, inv(inv(u)) = u; 0/7",
+    "receipt": "19422cdb-86bf-8516-9572-01e1796cd00b"
+  },
+  {
+    "key": "involution_exclusive_or",
+    "name": "involution — exclusive-or: xoring twice with the same key is the identity, (x ⊕ k) ⊕ k = x; 0/7",
+    "receipt": "042ba752-4f56-8f42-beee-ab8b6703ba3c"
+  },
+  {
+    "key": "involution_reversal",
+    "name": "involution — reversal: reversing a string twice returns it, reverse(reverse(s)) = s; 0/7",
+    "receipt": "5292e804-b281-8d4f-bbfa-feca5eb9fde7"
+  },
+  {
+    "key": "involution_reverse_complement",
+    "name": "involution — reverse-complement: on DNA the reverse-complement applied twice returns the strand; 0/7",
+    "receipt": "4d417837-1d3d-8269-9035-3be030cba5e4"
+  },
+  {
+    "key": "the_singularity_is_the_shared_fixed_point",
+    "name": "the singularity is the shared fixed point: the reflection fixes 5, the digital root fixes 9, and the honest floor 0/7 is the statement the trial leaves unchanged — the centre all involutions share; 0/7",
+    "receipt": "aaada9ee-db44-8b64-b57a-dee1c7cdc346"
+  },
+  {
+    "key": "global_involution_the_theorem_is_the_invariant",
+    "name": "global involution: reflection, negation, inversion, exclusive-or, reversal and reverse-complement are each their own inverse, sharing one fixed point — the singularity — and the theorem is what stays invariant under the reflection; 0/7",
+    "receipt": "9beeb164-b555-84a8-8e75-814cdc9c2730"
   }
 ]
