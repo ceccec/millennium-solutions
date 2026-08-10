@@ -13,8 +13,11 @@ const BASE = '/millennium-solutions/'
 const htmls: string[] = []
 ;(function walk(d: string) { for (const n of readdirSync(d)) { const p = join(d, n); if (statSync(p).isDirectory()) walk(p); else if (n.endsWith('.html')) htmls.push(p) } })(DIST)
 
+// Strip a DIRECTORY index.html only (preceded by '/' or the whole name), never the trailing "index" of a
+// slug like "..._fibonacci_index.html" — the bug that mangled the route to "..._fibonacci_" and reported a
+// phantom broken link. Anchor the strip to a slash (or start), then drop the ".html" extension.
 const routeOf = (file: string) =>
-  BASE + relative(DIST, file).split(sep).join('/').replace(/index\.html$/, '').replace(/\.html$/, '')
+  BASE + relative(DIST, file).split(sep).join('/').replace(/(^|\/)index\.html$/, '$1').replace(/\.html$/, '')
 const titleOf = (html: string) => (html.match(/<title>([^<]*)<\/title>/i)?.[1] || '').replace(/\s*\|.*$/, '').trim()
 const norm = (p: string) => p.replace(/\/$/, '') || BASE.replace(/\/$/, '')
 const linksOf = (html: string) => {
@@ -22,7 +25,7 @@ const linksOf = (html: string) => {
   for (const m of html.matchAll(/href="([^"#?]+)/g)) {
     const h = m[1]
     if (/^https?:|^mailto:|\.(css|js|png|svg|ico|xml|json|webmanifest|txt|woff2?|ttf|eot|gif|jpe?g|webp|avif)$/i.test(h)) continue
-    if (h.startsWith(BASE)) out.add(h.replace(/index\.html$/, '').replace(/\.html$/, ''))
+    if (h.startsWith(BASE)) out.add(h.replace(/(^|\/)index\.html$/, '$1').replace(/\.html$/, ''))
   }
   return [...out]
 }
@@ -36,7 +39,27 @@ const known = new Set(nodes.map((n) => norm(n.path)))
 
 let edges = 0, resolved = 0
 const broken: string[] = []
-for (const n of nodes) for (const l of n.links) { edges++; if (known.has(norm(l))) resolved++; else broken.push(n.path + ' → ' + l) }
+// A broken link is a research lead, not just a failure: say WHY. Does a file exist on disk for the target
+// (a route-derivation bug, like the index-strip)? Is there a known route differing only by case or a suffix
+// (a rename/typo)? Naming the cause turns debugging into development.
+const onDisk = (route: string) => {
+  const rel = route.slice(BASE.length)
+  for (const f of [join(DIST, rel + '.html'), join(DIST, rel, 'index.html'), join(DIST, rel.replace(/\/$/, '') + '.html')]) {
+    try { if (statSync(f).isFile()) return f } catch { /* not here */ }
+  }
+  return null
+}
+const diagnose = (l: string) => {
+  const t = norm(l)
+  const disk = onDisk(t)
+  if (disk) return 'target FILE exists on disk but no node has this route — a route-derivation bug (check routeOf/linksOf): ' + relative(DIST, disk)
+  const ci = [...known].find((k) => k.toLowerCase() === t.toLowerCase())
+  if (ci) return 'case mismatch — a node exists differing only in case: ' + ci
+  const near = [...known].find((k) => k.startsWith(t) || t.startsWith(k))
+  if (near) return 'nearest known route (a suffix/rename drift): ' + near
+  return 'no file on disk and no near route — a genuinely missing page or a stale link'
+}
+for (const n of nodes) for (const l of n.links) { edges++; if (known.has(norm(l))) resolved++; else broken.push(n.path + ' → ' + l + '\n      why: ' + diagnose(l)) }
 const linkPct = edges ? (resolved / edges) * 100 : 100
 const root = merkleFold(nodes.map((n) => n.address))
 
