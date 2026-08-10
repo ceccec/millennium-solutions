@@ -102,7 +102,17 @@ function runSkillRoute(url) {
   return new Response(JSON.stringify(receipt), { headers: { 'content-type': 'application/json' } })
 }
 
-const CACHE = 'millennium-v4'
+const CACHE = 'millennium-v5'
+// OFFLINE SHELL — precached on install so the site opens offline on first revisit; the start page doubles as
+// the SPA navigation fallback. A minimal offline page is served only when nothing at all is cached yet.
+const SHELL = ['./', './index.html', './sw-integrity.json']
+const offlineResponse = () => new Response(
+  '<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+  + '<title>Offline — uuidna</title><body style="font:16px/1.6 system-ui,sans-serif;max-width:34rem;margin:12vh auto;padding:0 1.2rem">'
+  + '<h1>Offline</h1><p>This page is not cached yet. Reconnect to load it — verified content is cached for offline use as you browse.</p>'
+  + '<p style="color:#888">A content-address proves integrity, not truth. 0/7.</p>',
+  { headers: { 'content-type': 'text/html; charset=utf-8' }, status: 200 },
+)
 let INTEGRITY = null
 async function manifest() {
   if (INTEGRITY) return INTEGRITY
@@ -122,11 +132,17 @@ async function verified(req, res) {
   return res
 }
 
-self.addEventListener('install', () => self.skipWaiting())
+self.addEventListener('install', (e) => e.waitUntil((async () => {
+  try { await (await caches.open(CACHE)).addAll(SHELL) } catch { /* best-effort precache */ }
+  await self.skipWaiting()
+})()))
 self.addEventListener('activate', (e) => e.waitUntil((async () => {
   for (const k of await caches.keys()) if (k !== CACHE) await caches.delete(k)
   await self.clients.claim()
+  for (const c of await self.clients.matchAll()) c.postMessage({ type: 'uuidna-offline-ready', cache: CACHE }) // the shell is cached; offline works
 })()))
+// clients may ask the worker its status (online/offline is the client's navigator.onLine; the worker reports cache-readiness)
+self.addEventListener('message', (e) => { if (e.data && e.data.type === 'uuidna-status') e.source && e.source.postMessage({ type: 'uuidna-offline-ready', cache: CACHE, signed: SIGNED, warned: WARNED }) })
 self.addEventListener('fetch', (e) => {
   const req = e.request
   // THE ROUTE IS THE GATEWAY: a same-origin GET /skill/... executes as a skill pipeline in the worker — all in the PWA.
@@ -151,7 +167,8 @@ self.addEventListener('fetch', (e) => {
   if (isDoc) {
     e.respondWith(
       fetch(req).then((res) => verified(req, res)).then((res) => { if (res && res.ok) caches.open(CACHE).then((c) => c.put(req, res.clone())); return res })
-        .catch(() => caches.match(req)) // offline OR refused tamper → the last verified cached copy
+        // offline OR refused tamper → the cached page, then the precached shell, then the minimal offline page
+        .catch(async () => (await caches.match(req)) || (await caches.match('./')) || (await caches.match('./index.html')) || offlineResponse())
     )
     return
   }
