@@ -46,7 +46,7 @@
     "harmony-currency": "node scripts/harmony-currency.ts",
     "theorem-gate": "node scripts/theorem-pages-gate.ts",
     "forensics": "node scripts/forensics.ts",
-    "verify": "node scripts/verify.ts",
+    "verify": "node scripts/verify-theorems.ts",
     "next": "node scripts/next.ts",
     "orchestrate": "node scripts/orchestrate.ts",
     "deploy": "node scripts/deploy.ts",

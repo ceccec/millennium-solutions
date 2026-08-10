@@ -172,6 +172,7 @@ export default defineConfig({
       ] },
       { text: 'Build', items: [
         { text: 'Guide (7D)', link: '/guide' },
+        { text: 'Workflows', link: '/WORKFLOWS' },
         { text: 'Develop', link: '/DEVELOP' },
         { text: 'Proofs', link: '/proofs' },
         { text: 'Signature', link: '/SIGNATURE' },
@@ -194,6 +195,7 @@ export default defineConfig({
         items: [
           { text: 'Abstract', link: '/ABSTRACT' },
           { text: 'Guide (7D)', link: '/guide' },
+          { text: 'Workflows', link: '/WORKFLOWS' },
           { text: 'The (concepts)', link: '/the' },
           { text: 'Theorems', link: '/THEOREMS' },
           { text: 'Challenges', link: '/CHALLENGES' },
