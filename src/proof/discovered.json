@@ -7198,5 +7198,85 @@
     "key": "debugging_replaces_linear_scan_with_addressing",
     "name": "debugging replaces the linear scan with content-addressing: the address is the index, lookup is O(1), a tamper localises to one link and the gap is named exactly — a classical measured speedup, never quantum computing; 0/7",
     "receipt": "6a29a133-7a1d-8376-aa02-a1a7175b9e03"
+  },
+  {
+    "key": "a_drained_overclaim_names_its_cure",
+    "name": "a drained overclaim names its cure: the gate returns the exact prose that failed, so the flaw carries the fix, while an honest statement returns none; 0/7",
+    "receipt": "397dead7-5c7b-875f-ade0-d7e49fada54a"
+  },
+  {
+    "key": "a_chain_break_returns_the_tamper_index",
+    "name": "a chain break returns the tamper index: recomputing from the seed, the first mismatching link names the altered position exactly — the flaw discovers forensics; 0/7",
+    "receipt": "7dff25f5-bc14-86d8-9105-c9dc3328c0fc"
+  },
+  {
+    "key": "a_gap_returns_the_missing_key",
+    "name": "a gap returns the missing key: a dense integer-indexed family that skips one index names the exact undiscovered key — the flaw discovers the analytics; 0/7",
+    "receipt": "47b9dad3-230d-8cd7-8f6e-e33925eeb47c"
+  },
+  {
+    "key": "a_failing_invariant_names_itself",
+    "name": "a failing invariant names itself: given a set of labelled checks, the failing labels are returned, so a broken invariant identifies which one it is; 0/7",
+    "receipt": "08e4e6fe-4463-8d27-8f48-97163d842afb"
+  },
+  {
+    "key": "a_flaw_is_a_lead_not_a_verdict",
+    "name": "a flaw is a lead, not a verdict: a finding is examined with its context (a bit plus where it fired), so due process holds — the crack is investigated, not auto-condemned; 0/7",
+    "receipt": "55eb9f1e-53e9-8df5-9cb2-71e9e1521187"
+  },
+  {
+    "key": "theorems_audit_in_trinities",
+    "name": "theorems audit in trinities: three independent verdicts on a claim decide by two-of-three majority, so no single check condemns or clears alone; 0/7",
+    "receipt": "6adc0516-e7d6-8ea3-8881-864213a52320"
+  },
+  {
+    "key": "a_dissent_in_the_trinity_localises_the_bug",
+    "name": "a dissent in the trinity localises the bug: when the three verdicts disagree, the minority position marks where to look — the disagreement is the lead; 0/7",
+    "receipt": "41a03892-55b4-85b1-a57c-70b6a919ac46"
+  },
+  {
+    "key": "let_the_flaws_discover_the_tools",
+    "name": "let the flaws discover the tools: the gate hit, the chain-break index, the missing gap key and the trinity dissent each name the fix, so the record improves by exposing cracks — the flaw is the lead that builds the tool; 0/7",
+    "receipt": "8bc8cc9e-eb8f-81ed-9ddd-f2e1f20886cb"
+  },
+  {
+    "key": "the_verdict_is_idempotent",
+    "name": "the verdict is idempotent: re-running the gate on a statement returns the same bit, so a second trial adds no new condemnation; 0/7",
+    "receipt": "15ee6153-5776-832e-a52f-69b928ebad70"
+  },
+  {
+    "key": "reeducation_converges_to_a_fixed_point",
+    "name": "reeducation converges to a fixed point: an overclaim reeducated passes, and an already-honest statement passes unchanged — the bounded form is stable; 0/7",
+    "receipt": "31d7231b-37d2-8d21-b8a0-580120d630d6"
+  },
+  {
+    "key": "the_honest_floor_is_the_judicial_fixed_point",
+    "name": "the honest floor is the judicial fixed point: 0/7 passes and re-passes, the one statement the trial leaves unchanged — the centre of the reflection; 0/7",
+    "receipt": "f2372546-59ec-89cb-8b84-a0755f512f4c"
+  },
+  {
+    "key": "the_judicial_reflection_is_an_involution",
+    "name": "the judicial reflection is an involution: the ten’s-complement reflection applied twice returns every digit, fixing only the centre 5 — the trial reflects and reflects back; 0/7",
+    "receipt": "f3316fee-8d25-8396-bfb3-8187d0015563"
+  },
+  {
+    "key": "the_trial_reflects_all_seven_solves_none",
+    "name": "the trial reflects all seven and solves none: the six-plus-one rosette maps onto the Clay set by reflection while the floor stays 0/7 — a mirror, not an answer; 0/7",
+    "receipt": "2c05d805-7c34-878b-a44b-9d9fd8a583a4"
+  },
+  {
+    "key": "double_jeopardy_is_barred_by_idempotence",
+    "name": "double jeopardy is barred by idempotence: trying the same statement twice yields the identical verdict, so re-trial cannot manufacture a new offence; 0/7",
+    "receipt": "8b8122a0-b32e-8a86-a184-4aa230b29283"
+  },
+  {
+    "key": "appeal_is_recomputation",
+    "name": "appeal is recomputation: an appeal re-runs the same test on the same evidence and returns the same verdict, so justice is reproducible, not discretionary; 0/7",
+    "receipt": "c3d04015-621b-8679-b223-3a3c45e32c17"
+  },
+  {
+    "key": "judicial_involution",
+    "name": "judicial involution: the trial is a reflection whose verdict is idempotent, whose fixed point is the honest floor, whose reeducation converges, and whose appeal is recomputation — reflect and reflect back, the centre held; 0/7",
+    "receipt": "4f726cb3-476f-8ce8-9dab-17ab132f3b63"
   }
 ]
