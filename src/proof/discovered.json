@@ -7878,5 +7878,45 @@
     "key": "hardware_and_software_develop_at_once",
     "name": "hardware and software develop at once: each theorem is component and code in one unit, admitted only when needed and green, its address and test shipped together in a single gated wave — the missing one found when required; 0/7",
     "receipt": "cecc70d4-2fae-8aea-b9f5-b83bceab8d67"
+  },
+  {
+    "key": "any_prose_gets_a_receipt_at_trial",
+    "name": "any prose gets a receipt at trial: every statement maps to a content-address and a verdict bit, deterministically — the trial mints a receipt for whatever it receives; 0/7",
+    "receipt": "794bdc82-ba0c-8b8a-a179-b1191440f8e4"
+  },
+  {
+    "key": "the_receipt_pairs_a_verdict_and_an_address",
+    "name": "the receipt pairs a verdict and an address: the bit says whether it holds the floor, the address fixes exactly what was weighed — together they are the receipt; 0/7",
+    "receipt": "63514fc1-13d5-8404-9364-be5bad33ba59"
+  },
+  {
+    "key": "prose_against_a_theorem_is_sent_to_trial",
+    "name": "prose against a theorem is sent to trial: a statement opposing the record is gated like any other — if it over-reaches it drains, if it is bounded it passes, and either way it is receipted; 0/7",
+    "receipt": "e36b60aa-8dc7-8bac-9f0d-c2ecf16fb9c1"
+  },
+  {
+    "key": "no_prose_stays_receiptless",
+    "name": "no prose stays receiptless: the mapping from statement to receipt is total, so the empty string and any sentence alike receive an address and a verdict; 0/7",
+    "receipt": "7196aa16-b1b5-879b-ba62-c4596b741a08"
+  },
+  {
+    "key": "the_minted_receipt_is_verifiable",
+    "name": "the minted receipt is verifiable: recomputing a statement yields the identical address and verdict, so anyone can re-check the receipt the trial issued; 0/7",
+    "receipt": "87aa4d4d-45f6-8cb7-b266-5631bc63f87b"
+  },
+  {
+    "key": "even_a_clean_falsehood_gets_a_receipt",
+    "name": "even a gate-clean falsehood gets a receipt: a false statement that trips no over-reach passes the gate and is still receipted — the receipt proves integrity, not truth; 0/7",
+    "receipt": "770b003d-af75-8d6d-bee7-6dcd0a388c1f"
+  },
+  {
+    "key": "the_trial_documents_it_does_not_condemn",
+    "name": "the trial documents, it does not condemn: receiving a receipt records a bit and an address, so a drained statement is documented with its cure, not merely rejected; 0/7",
+    "receipt": "a9cd370e-1c68-8c26-98be-95de3f261261"
+  },
+  {
+    "key": "unreceipted_prose_is_tried_and_receipted",
+    "name": "unreceipted prose is tried and receipted: any statement against the record, lacking a verifiable receipt, is sent to the gate and gets one — a verdict plus an address, verifiable and total, documenting rather than condemning; 0/7",
+    "receipt": "cd5ed64d-8a33-8092-80d5-23ee50cc49de"
   }
 ]
