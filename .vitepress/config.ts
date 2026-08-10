@@ -147,6 +147,7 @@ export default defineConfig({
       { text: 'ceccec ↗', link: 'https://ceccec.psg.bg/' },
       { text: 'Read', items: [
         { text: 'Abstract', link: '/ABSTRACT' },
+        { text: 'How it folds', link: '/folds' },
         { text: 'The organism', link: '/organism' },
         { text: 'The harness', link: '/harness' },
         { text: 'The', link: '/the' },
@@ -197,6 +198,7 @@ export default defineConfig({
         items: [
           { text: 'Abstract', link: '/ABSTRACT' },
           { text: 'Guide (7D)', link: '/guide' },
+          { text: 'How it folds (for everyone)', link: '/folds' },
           { text: 'Workflows', link: '/WORKFLOWS' },
           { text: 'The (concepts)', link: '/the' },
           { text: 'Theorems', link: '/THEOREMS' },
