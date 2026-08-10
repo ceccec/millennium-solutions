@@ -6998,5 +6998,45 @@
     "key": "only_theorems_write_the_guides",
     "name": "only theorems write the guides: a book is composed only of theorems — each names and describes itself, responds in a receipt, and its receipt is its page — so a guide holds nothing that is not a theorem; 0/7",
     "receipt": "297e5944-f910-8fab-877d-6e8549dd08d6"
+  },
+  {
+    "key": "every_page_is_a_receipt_referrer_relative",
+    "name": "every page is a receipt from the referrer: the address is a function of referrer and page, so the same page seen from two referrers yields two receipts, each deterministic; 0/7",
+    "receipt": "5702ea67-172d-8a9b-84e7-4a1a60ae61d4"
+  },
+  {
+    "key": "recomputation_is_stable_without_a_wave",
+    "name": "recomputation is stable without a wave: the same referrer and page recompute the same receipt every time, so nothing drifts unless a new wave changes an input; 0/7",
+    "receipt": "affa72c8-7cf3-8763-9c16-68c0116fed33"
+  },
+  {
+    "key": "a_new_wave_imprints_a_new_chain_receipt",
+    "name": "a new wave imprints a new chain receipt: appending an event to the audit chain advances it to a new address, so an added wave is visible as a changed chain tip; 0/7",
+    "receipt": "d395329c-1e0c-8d14-a69a-c6232de2c47a"
+  },
+  {
+    "key": "observation_imprints_into_the_audit_chain",
+    "name": "observation imprints into the audit chain: observing a page (a fetch, a partial decrypt) is itself an event appended to the chain, so the act of reading advances the observation chain; 0/7",
+    "receipt": "ec4beb35-ee2b-8513-a3fa-94f922fecd64"
+  },
+  {
+    "key": "the_page_content_address_is_invariant_under_observation",
+    "name": "the page content-address is invariant under observation: the page addresses only its own content, so being observed any number of times does not change the page address — only the observation chain advances; 0/7",
+    "receipt": "ef4c9245-93e3-8a0e-8158-99b8a12a0e0c"
+  },
+  {
+    "key": "partial_reversal_is_a_receipted_event",
+    "name": "a partial reversal is a receipted event: partially decrypting or reversing an envelope is logged as a distinct chain event, so the act is auditable without changing the ciphertext it read; 0/7",
+    "receipt": "e4cdb827-d96f-8d98-9cb1-43a635dbba66"
+  },
+  {
+    "key": "the_observation_chain_is_tamper_evident",
+    "name": "the observation chain is tamper-evident: each observation is seeded by the last, so dropping or reordering an observation changes every receipt after it; 0/7",
+    "receipt": "3dbbbf20-6f08-857c-bd5a-0579475a1434"
+  },
+  {
+    "key": "every_page_recomputes_unless_a_wave_imprints",
+    "name": "every page recomputes the same result unless a wave imprints: the referrer-relative receipt is deterministic and the page address invariant, while each observing wave advances a tamper-evident audit chain — logged, not mutated; 0/7",
+    "receipt": "e4e70d71-52c9-818a-b1ec-54da1ffc6077"
   }
 ]
