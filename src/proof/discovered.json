@@ -8598,5 +8598,85 @@
     "key": "the_first_part_is_a_receipt_code_verified_by_content",
     "name": "the first part is a receipt code verified by content: the 32-bit first group approves a receipt by id while the full 128-bit content address verifies it uniquely, and the top 64 bits are the coin; 0/7",
     "receipt": "5f4cc8e2-4cfc-8b29-bb34-a7625311703f"
+  },
+  {
+    "key": "imprint_is_cheap_and_reversible",
+    "name": "imprint is cheap and reversible: bits imprinted into a uuid read back exactly, so imprinting and reading are both cheap — a public codec; 0/7",
+    "receipt": "312843ca-6d0f-819d-b439-de7cbb6a75a8"
+  },
+  {
+    "key": "imprint_is_a_public_codec_not_a_forgery_barrier",
+    "name": "imprint is a public codec, not a forgery barrier: being reversible and keyless it gives transport and integrity, not secrecy — the unbreakable-imprint boast drains; 0/7",
+    "receipt": "71aabbb1-003a-8396-8e2a-bbb52a0cf378"
+  },
+  {
+    "key": "the_address_is_integrity_not_preimage_resistance",
+    "name": "the content-address is integrity, not preimage-resistance: FNV detects any change but is not cryptographic, so the impossible-to-reverse-address boast drains while the integrity claim passes; 0/7",
+    "receipt": "2ac8c70e-ae5f-80ff-8722-cde6e04a1288"
+  },
+  {
+    "key": "the_sha256_preimage_is_the_one_way_layer",
+    "name": "the SHA-256 preimage is the one-way layer: the digest matches the standard vector and computing it is cheap, while inverting it is the expensive step — the real forge-resistance; 0/7",
+    "receipt": "3e57a4e8-9292-8554-901b-7dff9e3b2620"
+  },
+  {
+    "key": "the_aead_tag_is_expensive_to_forge_without_the_key",
+    "name": "the AEAD tag is expensive to forge without the key: the right key authenticates and recovers, a wrong key is refused — a forged tag does not pass; 0/7",
+    "receipt": "9797c2d7-390d-8de0-b3e7-2cdac29b2428"
+  },
+  {
+    "key": "computing_is_cheap_inverting_is_not",
+    "name": "computing is cheap, inverting is not: the digest is one forward pass while reversing a hash to break a cipher drains as an over-reach — the honest asymmetry; 0/7",
+    "receipt": "8e620ec8-c319-8b21-9058-5eced9fd0ca7"
+  },
+  {
+    "key": "more_fused_data_adds_verification_constraints",
+    "name": "more fused data adds verification constraints: a fuller imprint means more bits must match to verify, up to the capacity, but this is verification-strength, not FNV becoming cryptographic; 0/7",
+    "receipt": "75135a2f-22df-8fe9-920b-2b5f6c3b3f2b"
+  },
+  {
+    "key": "cheap_to_imprint_expensive_to_fake_at_the_crypto_layer",
+    "name": "cheap to imprint, expensive to fake at the crypto layer: imprint is a cheap reversible codec and the address is integrity, while only the SHA-256 preimage and the Poly1305 tag are expensive to fake — the honest floor, the overclaims drained; 0/7",
+    "receipt": "f76a4b78-3436-87ba-8b60-e9e257c39723"
+  },
+  {
+    "key": "a_sensor_reading_addresses_to_a_uuid",
+    "name": "a sensor reading addresses to a uuid: a live value mints a deterministic content-address, so a reading becomes a receipt; 0/7",
+    "receipt": "35b6a3bc-8275-85e8-8d0e-7cdb4c0af068"
+  },
+  {
+    "key": "a_reading_imprints_into_the_uuid_stream",
+    "name": "a reading imprints into the uuid stream: a reading of any length round-trips through a uuid chain exactly, so live data is fused into the address stream; 0/7",
+    "receipt": "fec57995-ef91-8d46-9514-be9d5ca43607"
+  },
+  {
+    "key": "the_ui_hue_is_computed_from_the_reading",
+    "name": "the UI hue is computed from the reading: the reading’s address maps to a hue in 0..359, so the interface colour is a function of live data; 0/7",
+    "receipt": "159c27f3-c368-8f80-9693-edfbf79fec2e"
+  },
+  {
+    "key": "a_changed_reading_changes_the_ui",
+    "name": "a changed reading changes the UI: a different reading gives a different address and generally a different hue, so the interface is responsive to live data; 0/7",
+    "receipt": "12fa3766-0742-8421-907b-ba70a3be96c9"
+  },
+  {
+    "key": "the_dynamics_are_deterministic_and_replayable",
+    "name": "the dynamics are deterministic and replayable: the same reading yields the same UI state, so a sequence of readings replays identically; 0/7",
+    "receipt": "a1575c17-c2b5-850c-8417-a7f181fe9a06"
+  },
+  {
+    "key": "thermophysics_is_a_design_metaphor_not_a_simulation",
+    "name": "thermophysics is a design metaphor, not a simulation: the dynamics are inspired by flow and equilibrium as a design language, while a claim to simulate real thermodynamics as a physical theory drains; 0/7",
+    "receipt": "effc3fa0-9194-883d-b236-ad314e9432f7"
+  },
+  {
+    "key": "the_reading_maps_to_a_bounded_ui_value",
+    "name": "the reading maps to a bounded UI value: the hue is taken modulo 360, so however large the reading, the interface value stays in range; 0/7",
+    "receipt": "4c8c2eb0-d99c-8c0d-bfcf-f54300a09593"
+  },
+  {
+    "key": "sensors_power_the_ui_via_the_uuid",
+    "name": "sensors power the UI via the uuid: a live reading addresses and imprints into the stream, its hue and dynamics computed deterministically and bounded from that address — responsive and replayable, a thermophysics-inspired design, never a physics-simulation claim; 0/7",
+    "receipt": "2bffae8a-39a8-8e80-b281-ffbd9e92bb33"
   }
 ]
