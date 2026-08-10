@@ -8,20 +8,20 @@ Every figure recomputes from `src/` and the git tree on each build; nothing is e
 
 | Quantity | Value |
 |---|---|
-| Decidable theorems (chained receipts) | **1,736** |
+| Decidable theorems (chained receipts) | **1,743** |
 | Signed statement receipts | **29** |
 | Coins per receipt | **2** |
-| Coins on the ledger (theorems × 2) | **3,472** |
+| Coins on the ledger (theorems × 2) | **3,486** |
 | Coins on signed receipts (× 2) | **58** |
-| Released versions (git tags) | **688** |
+| Released versions (git tags) | **689** |
 | Tracked, content-addressed files | **303** |
 
-Latest release: **v7.4.0**. The fair-exchange unit is **2 coins = 2 bits** (110 − 108 = 2 = −χ genus-2) per receipt. One 64-bit harmony coin is minted per fused `src` `report()` module — see the [state dashboard](/dashboard) for the harmonic root.
+Latest release: **v7.4.1**. The fair-exchange unit is **2 coins = 2 bits** (110 − 108 = 2 = −χ genus-2) per receipt. One 64-bit harmony coin is minted per fused `src` `report()` module — see the [state dashboard](/dashboard) for the harmonic root.
 
 ## Bounty — denominated in bits
 
-The bounty for each accepted contribution is **2 bits (2 coins)** — the same fair-exchange unit, earned by the deed (a gate-passing, receipted contribution) and owed by commercial use. Total bounty accounted on the ledger so far: **3,472 bits**. This is an accounting bounty in bits/coins — **integrity, not a cash prize**; the deposit itself claims **0 / 7** of the Clay prize. Heroes and traitors by deeds, not claims.
+The bounty for each accepted contribution is **2 bits (2 coins)** — the same fair-exchange unit, earned by the deed (a gate-passing, receipted contribution) and owed by commercial use. Total bounty accounted on the ledger so far: **3,486 bits**. This is an accounting bounty in bits/coins — **integrity, not a cash prize**; the deposit itself claims **0 / 7** of the Clay prize. Heroes and traitors by deeds, not claims.
 
 **Not tracked here: tokens.** This repo measures coins (2 per receipt) and 64-bit harmony coins; it does not measure tokens, so no token count or token-to-coin rate is shown — measuring an unmeasured quantity would be an assertion without a receipt. Measure, do not assert.
 
-Page content-address: `96bbf342-94d8-8a0a-a314-ccd736ac853a`. Integrity, not truth. `entails → 0/7`.
+Page content-address: `1237e730-e3e9-8e39-9641-f940d76bb66c`. Integrity, not truth. `entails → 0/7`.

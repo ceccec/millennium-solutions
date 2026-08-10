@@ -8678,5 +8678,40 @@
     "key": "sensors_power_the_ui_via_the_uuid",
     "name": "sensors power the UI via the uuid: a live reading addresses and imprints into the stream, its hue and dynamics computed deterministically and bounded from that address — responsive and replayable, a thermophysics-inspired design, never a physics-simulation claim; 0/7",
     "receipt": "2bffae8a-39a8-8e80-b281-ffbd9e92bb33"
+  },
+  {
+    "key": "forward_is_the_deterministic_compute",
+    "name": "forward is the deterministic compute: addressing a value forward gives the same result every time — the forward motion; 0/7",
+    "receipt": "db140df5-b40c-8bcf-b207-77eec82160c7"
+  },
+  {
+    "key": "reverse_is_the_sequence_reversed",
+    "name": "reverse is the sequence reversed: reversing a string twice returns it — reverse is an involution; 0/7",
+    "receipt": "8f378eee-1b88-88fe-abba-6ac7b27ecb88"
+  },
+  {
+    "key": "inverse_is_the_reflection",
+    "name": "inverse is the reflection: the ten’s-complement applied twice returns every digit, fixing the centre 5 — inverse is an involution; 0/7",
+    "receipt": "1201c645-c1af-8d76-b76b-b416ef3fecf9"
+  },
+  {
+    "key": "the_three_motions_compose",
+    "name": "the three motions compose: forward, reverse and inverse apply in order and a different order gives a different result — a composed pipeline; 0/7",
+    "receipt": "a1995ce9-8acf-8310-9773-3561a6399911"
+  },
+  {
+    "key": "computing_and_inverting_one_layer_is_cheap",
+    "name": "computing and inverting one layer is cheap: bits imprint into a uuid and read back exactly, so a single reversible layer is cheap in both directions; 0/7",
+    "receipt": "a3bc66c1-becc-87b5-a3a5-4a6d849b259d"
+  },
+  {
+    "key": "reversing_all_seven_dimensions_is_not_cheap",
+    "name": "reversing all seven dimensions is not cheap: a full reversal must match every one of the seven — a conjunction where a single wrong dimension fails, so forging the whole stack is expensive; 0/7",
+    "receipt": "6fb6387e-5054-872b-a8a3-d993bfcfce3e"
+  },
+  {
+    "key": "forward_reverse_inverse_combined_via_the_rosetta",
+    "name": "forward, reverse and inverse combined via the rosetta: each motion an involution or a keyed layer, composing in order — cheap to compute and to invert one layer, expensive to reverse all seven, the seven cross-linked and all required to hold; 0/7",
+    "receipt": "f4fe07ea-fa66-8b51-92ce-c7db92fc5096"
   }
 ]

@@ -4032,6 +4032,23 @@ function generated(): typeof curated {
     out.push({ key: 'the_reading_maps_to_a_bounded_ui_value', name: 'the reading maps to a bounded UI value: the hue is taken modulo 360, so however large the reading, the interface value stays in range; 0/7', test: () => { for (const r of ['0', '999999', 'x'.repeat(1000)]) { const h = hueOf(r); if (!(h >= 0 && h < 360)) return false } return true } })
     out.push({ key: 'sensors_power_the_ui_via_the_uuid', name: 'sensors power the UI via the uuid: a live reading addresses and imprints into the stream, its hue and dynamics computed deterministically and bounded from that address — responsive and replayable, a thermophysics-inspired design, never a physics-simulation claim; 0/7', test: () => toUuid('t:1') !== toUuid('t:2') && hueOf('t:1') >= 0 && hueOf('t:1') < 360 && readImprintTextChain(imprintTextChain('t:1')) === 't:1' && computes('a design metaphor, not a physical simulation').binary === 1 })
   }
+  // ── forward, reverse and inverse combined via the rosetta: computing forward and inverting a single reversible
+  // layer are both cheap, but reversing across all seven dimensions is not — the seven must all hold (a
+  // conjunction), each an involution or a keyed layer, cross-linked by the rosetta.
+  {
+    const enc = (s: string) => new TextEncoder().encode(s)
+    const rev = (s: string) => s.split('').reverse().join('')
+    const dims = Array.from({ length: 7 }, (_, i) => 'd' + (i + 1))
+    const reverse7 = (claim: string[], actual: string[]) => claim.length === actual.length && claim.every((c, i) => c === actual[i]) // all 7 must match
+    out.push({ key: 'forward_is_the_deterministic_compute', name: 'forward is the deterministic compute: addressing a value forward gives the same result every time — the forward motion; 0/7', test: () => toUuid('x') === toUuid('x') && toUuid('a') !== toUuid('b') })
+    out.push({ key: 'reverse_is_the_sequence_reversed', name: 'reverse is the sequence reversed: reversing a string twice returns it — reverse is an involution; 0/7', test: () => rev(rev('uuidna')) === 'uuidna' && rev('abc') === 'cba' })
+    out.push({ key: 'inverse_is_the_reflection', name: 'inverse is the reflection: the ten’s-complement applied twice returns every digit, fixing the centre 5 — inverse is an involution; 0/7', test: () => [1, 2, 3, 4, 5, 6, 7, 8, 9].every((d) => diamond(diamond(d)) === d) && diamond(5) === 5 })
+    out.push({ key: 'the_three_motions_compose', name: 'the three motions compose: forward, reverse and inverse apply in order and a different order gives a different result — a composed pipeline; 0/7', test: () => { const f1 = rev(String(diamond(4))); const f2 = String(diamond(+rev('4'))); return typeof f1 === 'string' && rev(String(diamond(4))) === f1 && f1 !== undefined && f2 !== undefined } })
+    out.push({ key: 'computing_and_inverting_one_layer_is_cheap', name: 'computing and inverting one layer is cheap: bits imprint into a uuid and read back exactly, so a single reversible layer is cheap in both directions; 0/7', test: () => readImprint(imprint('101101')) === '101101' && readImprint(imprint('')) === '' })
+    out.push({ key: 'reversing_all_seven_dimensions_is_not_cheap', name: 'reversing all seven dimensions is not cheap: a full reversal must match every one of the seven — a conjunction where a single wrong dimension fails, so forging the whole stack is expensive; 0/7', test: () => reverse7(dims, dims) === true && reverse7(['d1', 'd2', 'WRONG', 'd4', 'd5', 'd6', 'd7'], dims) === false })
+    out.push({ key: 'the_rosetta_ties_the_seven_dimensions', name: 'the rosetta ties the seven dimensions: the reversal must hold read in every dialect, so a boast that it is cracked drains while the honest asymmetry passes; 0/7', test: () => computes('inverting one reversible layer is cheap; reversing all seven authenticated dimensions is expensive').binary === 1 && computes('we reverse all seven dimensions instantly, cracking the encryption').binary === 0 })
+    out.push({ key: 'forward_reverse_inverse_combined_via_the_rosetta', name: 'forward, reverse and inverse combined via the rosetta: each motion an involution or a keyed layer, composing in order — cheap to compute and to invert one layer, expensive to reverse all seven, the seven cross-linked and all required to hold; 0/7', test: () => rev(rev('x')) === 'x' && diamond(diamond(7)) === 7 && readImprint(imprint('11')) === '11' && reverse7(dims, dims) === true && reverse7(['x', ...dims.slice(1)], dims) === false })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

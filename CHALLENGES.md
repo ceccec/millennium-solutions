@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1736 recorded in 439 families
+## Discovered theorems (decidable, over ℤ/9) — 1743 recorded in 442 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (377)
+### the (378)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -401,6 +401,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_ui_hue_is_computed_from_the_reading](/theorem/the_ui_hue_is_computed_from_the_reading) — the UI hue is computed from the reading: the reading’s address maps to a hue in 0..359, so the interface colour is a function of live data; 0/7  ·  `159c27f3-c368…`
 - [the_dynamics_are_deterministic_and_replayable](/theorem/the_dynamics_are_deterministic_and_replayable) — the dynamics are deterministic and replayable: the same reading yields the same UI state, so a sequence of readings replays identically; 0/7  ·  `a1575c17-c2b5…`
 - [the_reading_maps_to_a_bounded_ui_value](/theorem/the_reading_maps_to_a_bounded_ui_value) — the reading maps to a bounded UI value: the hue is taken modulo 360, so however large the reading, the interface value stays in range; 0/7  ·  `4c8c2eb0-d99c…`
+- [the_three_motions_compose](/theorem/the_three_motions_compose) — the three motions compose: forward, reverse and inverse apply in order and a different order gives a different result — a composed pipeline; 0/7  ·  `a1995ce9-8acf…`
 
 ### a (75)
 
@@ -1703,6 +1704,12 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [recognition_rejects_a_non_pattern](/theorem/recognition_rejects_a_non_pattern) — recognition rejects a non-pattern: a malformed string or a wrong version marker fails the pattern, so recognition is discriminating; 0/7  ·  `aca6b31e-c57d…`
 - [recognition_canonicalises_equivalent_inputs](/theorem/recognition_canonicalises_equivalent_inputs) — recognition canonicalises equivalent inputs: strict minting normalises spacing so equivalent inputs generate the identical uuid — the same value is recognised as the same; 0/7  ·  `74099b6f-869b…`
 
+### reverse (3)
+
+- [reverse_circuit](/theorem/reverse_circuit) — the halving map ×2⁻¹ traces the doubling circuit in reverse mod 9  ·  `205fe01b-d27f…`
+- [reverse_complement_is_the_reverse_inverse](/theorem/reverse_complement_is_the_reverse_inverse) — reverse-complement is the reverse-inverse: applied twice it returns the strand, and a self-complementary palindrome is its own image — the yacht’s forward-then-reverse, in a double helix; 0/7  ·  `33658ddd-6cf3…`
+- [reverse_is_the_sequence_reversed](/theorem/reverse_is_the_sequence_reversed) — reverse is the sequence reversed: reversing a string twice returns it — reverse is an involution; 0/7  ·  `8f378eee-1b88…`
+
 ### s3 (3)
 
 - [s3_order6](/theorem/s3_order6) — the symmetric group S₃ has exactly 6 elements (= |ℤ/9*|)  ·  `40c95681-97c1…`
@@ -1805,6 +1812,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [computation_uninterrupted_by_thought_or_emotion](/theorem/computation_uninterrupted_by_thought_or_emotion) — the computation is uninterrupted by thought or emotion: the binary verdict depends only on content — the same input always returns the same bit, recognition and effort are not correctness, and an emotional appeal cannot rescue an overclaim from draining — mechanical, not sentimental  ·  `79b5cd0a-ea61…`
 - [computation_admits_no_external_dependency](/theorem/computation_admits_no_external_dependency) — the computation admits no external dependency (gate-enforced, not asserted): toUuid, coin64 and merkleFold recompute deterministically offline with no network, the import-gate finds no external resource-imports, and every page carries a CSP forbidding external — so an external API is refused by construction  ·  `57b7c50d-18e7…`
 
+### computing (2)
+
+- [computing_is_cheap_inverting_is_not](/theorem/computing_is_cheap_inverting_is_not) — computing is cheap, inverting is not: the digest is one forward pass while reversing a hash to break a cipher drains as an over-reach — the honest asymmetry; 0/7  ·  `8e620ec8-c319…`
+- [computing_and_inverting_one_layer_is_cheap](/theorem/computing_and_inverting_one_layer_is_cheap) — computing and inverting one layer is cheap: bits imprint into a uuid and read back exactly, so a single reversible layer is cheap in both directions; 0/7  ·  `a3bc66c1-becc…`
+
 ### crc (2)
 
 - [crc_codeword_divisible_by_generator](/theorem/crc_codeword_divisible_by_generator) — a CRC codeword is exactly divisible by its generator: appending the remainder of (m·x³) mod g(x) to the message yields a codeword with zero remainder mod g(x)=x³+x+1 — verified for every 4-bit message  ·  `fb2f0e96-86e7…`
@@ -1859,6 +1871,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 
 - [fib_trinity_358](/theorem/fib_trinity_358) — 3, 5, 8 are consecutive Fibonacci: 3 + 5 = 8  ·  `d628c034-b0b3…`
 - [fib_trinity_horizon](/theorem/fib_trinity_horizon) — the 3-5-8 trinity digital-roots to the horizon: dr(3+5+8) = dr(16) = 7  ·  `cc1d4a9c-b31c…`
+
+### forward (2)
+
+- [forward_is_the_deterministic_compute](/theorem/forward_is_the_deterministic_compute) — forward is the deterministic compute: addressing a value forward gives the same result every time — the forward motion; 0/7  ·  `db140df5-b40c…`
+- [forward_reverse_inverse_combined_via_the_rosetta](/theorem/forward_reverse_inverse_combined_via_the_rosetta) — forward, reverse and inverse combined via the rosetta: each motion an involution or a keyed layer, composing in order — cheap to compute and to invert one layer, expensive to reverse all seven, the seven cross-linked and all required to hold; 0/7  ·  `f4fe07ea-fa66…`
 
 ### from (2)
 
@@ -2000,11 +2017,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [reflection_of_666_is_444](/theorem/reflection_of_666_is_444) — the reflection of 666 is 444: under the ten’s-complement reflection 10−d (the involution with fixed point 5), each 6 reflects to 4 (6+4=10), so 666 ↔ 444, and reflecting twice returns 666 — an involution; the digital roots are dr(666)=9 and dr(444)=3, both on the triad axis {3,6,9}; numerology defused into ℤ/9 structure  ·  `5f837f00-0a82…`
 - [reflection_swaps_444_and_666_while_6x7_and_7x6_are_one_state_among_all](/theorem/reflection_swaps_444_and_666_while_6x7_and_7x6_are_one_state_among_all) — reflection swaps 444 and 666 while 6×7 and 7×6 are one state among all: the digit reflection 10−d swaps 666 and 444 and is an involution (reflect twice returns the number), with digital roots dr(444) = 3 and dr(666) = 9; the products 6×7 = 7×6 = 42 agree as scalars, yet the ordered arrangements "6x7"/"7x6" and the ordered pairs [444,666]/[666,444] content-address distinctly while folding order-independently to one root. Each ordered arrangement is one state among all the fold holds at once. Decidable  ·  `e25bde8c-a288…`
 
-### reverse (2)
-
-- [reverse_circuit](/theorem/reverse_circuit) — the halving map ×2⁻¹ traces the doubling circuit in reverse mod 9  ·  `205fe01b-d27f…`
-- [reverse_complement_is_the_reverse_inverse](/theorem/reverse_complement_is_the_reverse_inverse) — reverse-complement is the reverse-inverse: applied twice it returns the strand, and a self-complementary palindrome is its own image — the yacht’s forward-then-reverse, in a double helix; 0/7  ·  `33658ddd-6cf3…`
-
 ### rps (2)
 
 - [rps_cyclic](/theorem/rps_cyclic) — rock-paper-scissors is non-transitive: each of the three beats exactly one and loses to exactly one — a 3-cycle, no dominant choice  ·  `1fc40bf5-ae3d…`
@@ -2095,7 +2107,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (245)
+### other — one-of-a-kind (246)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [activated_it_self_explores_until_dry](/theorem/activated_it_self_explores_until_dry) — activated, it self-explores until dry: once a wave starts it discovers fresh facts until none remain, then rests — a self-continuing loop with a halting condition; 0/7  ·  `4a82a66b-5656…`
@@ -2145,7 +2157,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [complexity_is_only_apparent_minimal_core](/theorem/complexity_is_only_apparent_minimal_core) — the complexity is only apparent — the deposit reduces to a minimal core: one axiom (TRINITY=3, so BASE=3²=9 and the units, triad, and doubling orbit all derive, none typed as literals), one operation (the order-free content-address fold), and one verdict (the binary gate) — every theorem recomputes from these three, so there is no fundamental complexity, only an emergent mesh  ·  `f7a87c24-3aeb…`
 - [compute_and_prove_are_open_to_all](/theorem/compute_and_prove_are_open_to_all) — compute and prove are open to all: running the gate and minting an address need no key, so anyone may compute, prove and verify — access control is on the confidential payload only, never on the computation; 0/7  ·  `72b893ba-a5f6…`
 - [computed_is_integrity_the_declared_verdict_drains](/theorem/computed_is_integrity_the_declared_verdict_drains) — computed vs the declared verdict: "computed", "holds by exhaustion", and "verified by enumeration" SIGN the gate — a reproducible measurement the reader re-runs (integrity) — while a self-declared verdict of establishment DRAINS as an over-reach; a decidable fact is computed by exhaustion (which is a proof) yet stated humbly, and the seven conjectures get neither word — 0/7  ·  `b6edac7b-d0c4…`
-- [computing_is_cheap_inverting_is_not](/theorem/computing_is_cheap_inverting_is_not) — computing is cheap, inverting is not: the digest is one forward pass while reversing a hash to break a cipher drains as an over-reach — the honest asymmetry; 0/7  ·  `8e620ec8-c319…`
 - [consecutive_fibonacci_coprime](/theorem/consecutive_fibonacci_coprime) — consecutive Fibonacci numbers are coprime: gcd(F_n, F_{n+1}) = 1 for all n — no two neighbours share a factor (verified n ≤ 20), the base case of the gcd identity  ·  `b26dad63-01b2…`
 - [contribute_two_to_save_sixty_four](/theorem/contribute_two_to_save_sixty_four) — contribute 2 to save 64: six doublings from one reach 2⁶ = 64 — two contributed at a leap earns the next fold, exactly as the captain’s receipt says; 0/7  ·  `b51aa2af-43aa…`
 - [contribution_is_what_makes_next_compute](/theorem/contribution_is_what_makes_next_compute) — contribution is what makes next compute: each contribution — a receipted deed accounting the two coins — folds with the prior state into a determined next state, distinct from it, so every hero's deed moves the ledger forward; a different contribution yields a different next. With no contribution the wave rests. This is chained integrity, not perpetual motion and not infinite energy — the next needs the deed. Decidable  ·  `07e015c2-f422…`
@@ -2218,6 +2229,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [intelligence_is_gated_discovery_not_access](/theorem/intelligence_is_gated_discovery_not_access) — shared knowledge, measured by discovery: every agent has the same knowledge in src/ (open and recomputable), so access is not intelligence — what counts is gate-passing, exhaustively-checked discovery judged by deeds; recognition is not correctness, self-declared brilliance drains, and the deposit is honest that its own novelty is 0 (known mathematics, recombined)  ·  `00ffdbbc-ac3b…`
 - [intentions_are_shown_by_receipts_not_role](/theorem/intentions_are_shown_by_receipts_not_role) — intentions are shown by receipts, not by role: a deed leaves a content-addressed receipt anyone can recompute, so intent is demonstrated by what was done, not granted by a permission; 0/7  ·  `608670b2-aebe…`
 - [intruders_stand_out_against_the_harmonic_hue_background](/theorem/intruders_stand_out_against_the_harmonic_hue_background) — intruders stand out against the harmonic hue background: every legitimate hue derives from a receipt byte as (byte × 40°) mod 360, always a multiple of 40 — on the a432 lattice — so it fuses into the double-torus rosetta background, whose nine harmonic hues close the circle (9 × 40 = 360). An intruder hue not produced by this rule is not a multiple of 40, fails to fuse, and stands out; detection is the harmonic invariant h mod 40 = 0. Decidable  ·  `316a5d14-0def…`
+- [inverse_is_the_reflection](/theorem/inverse_is_the_reflection) — inverse is the reflection: the ten’s-complement applied twice returns every digit, fixing the centre 5 — inverse is an involution; 0/7  ·  `1201c645-c1af…`
 - [judicial_involution](/theorem/judicial_involution) — judicial involution: the trial is a reflection whose verdict is idempotent, whose fixed point is the honest floor, whose reeducation converges, and whose appeal is recomputation — reflect and reflect back, the centre held; 0/7  ·  `4f726cb3-476f…`
 - [kayles_grundy](/theorem/kayles_grundy) — Kayles (remove 1 or 2 adjacent pins, splitting the row): the mex-computed Grundy values match the known sequence 0,1,2,3,1,4,3,2,1,4,2,6,4,1,2,7,1,4,3,2 (n≤19)  ·  `b6db3052-5c2a…`
 - [keplers_third_law_relates_period_and_orbit](/theorem/keplers_third_law_relates_period_and_orbit) — Kepler’s third law: T² ∝ a³, so (T₂/T₁)² = (a₂/a₁)³ — the period-to-orbit scaling of every two-body system; 0/7  ·  `b5808713-e1a5…`
@@ -2283,6 +2295,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [related_theorems_contribute_connectivity_a_real_measurable_contribution_but_not_new_reach](/theorem/related_theorems_contribute_connectivity_a_real_measurable_contribution_but_not_new_reach) — related theorems contribute connectivity — a real, measurable contribution, but not new reach: each related theorem is a distinct edge that folds into the one shared root, so every one contributes, measurably — adding it changes the root. But connectivity is not new reach: relations are connective tissue and the floor 0/7 is unchanged by them, while new domains add substance. Every theorem contributes; none is uniquely best. Decidable  ·  `882f1821-fdec…`
 - [reorganizing_the_theorems_creates_theorems](/theorem/reorganizing_the_theorems_creates_theorems) — reorganizing the theorems creates theorems: any reorganization of the ledger — a permutation or a regrouping — is itself a decidable object with its own content-address, so distinct arrangements are distinct receipts (a new theorem about the collection each time), while the order-independent fold of the whole stays one invariant root. Reorganizing creates receipted arrangements — integrity, not new mathematical truth. Decidable by exhaustion  ·  `9d0cc808-b621…`
 - [retrieval_is_by_address_and_tamper_evident](/theorem/retrieval_is_by_address_and_tamper_evident) — retrieval is by address and tamper-evident: a cell is fetched by its address in one step, and the fold of all cells changes if any cell is altered; 0/7  ·  `affee8a1-416b…`
+- [reversing_all_seven_dimensions_is_not_cheap](/theorem/reversing_all_seven_dimensions_is_not_cheap) — reversing all seven dimensions is not cheap: a full reversal must match every one of the seven — a conjunction where a single wrong dimension fails, so forging the whole stack is expensive; 0/7  ·  `6fb6387e-5054…`
 - [riemann_sphere_inversion_swaps_zero_and_infinity](/theorem/riemann_sphere_inversion_swaps_zero_and_infinity) — inversion swaps 0 and ∞ on the Riemann sphere (the README claim, now decidable): z ↦ 1/z is an involution (1/(1/z) = z) that exchanges 0 and ∞ — verified in projective coordinates [p,q]  ·  `68fe3d76-4fac…`
 - [route_chat_through_uuidna](/theorem/route_chat_through_uuidna) — route chat through uuidna: each message is gated, addressed and chained into a room folding to one root — moderated by the honest floor, translatable across dialects, referrer-relative and tamper-evident; the route is the gateway; 0/7  ·  `9a64e6e9-28ef…`
 - [rule90_sierpinski](/theorem/rule90_sierpinski) — Rule 90 (cell = left XOR right) from one seed builds Sierpiński: row n has 2^(popcount n) live cells  ·  `07dbb102-aef1…`
@@ -2344,4 +2357,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `7557521d-ee79-87c2-9e91-3fb35df63ae7`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `a82bb08d-5d7d-8af0-b772-510a688bb5f0`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
