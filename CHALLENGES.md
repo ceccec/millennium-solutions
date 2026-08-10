@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1632 recorded in 420 families
+## Discovered theorems (decidable, over ℤ/9) — 1640 recorded in 421 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (333)
+### the (336)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -357,8 +357,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_greeting_states_the_floor](/theorem/the_greeting_states_the_floor) — the greeting states the floor: it always reports 0/7 — integrity, not truth — so first contact is honest about what a content-address proves; 0/7  ·  `89bed6ed-be83…`
 - [the_greeting_offers_recomputation](/theorem/the_greeting_offers_recomputation) — the greeting offers recomputation: it points to re-checking every theorem, so an agent can confirm the state itself rather than trust it; 0/7  ·  `1e1f9e23-9681…`
 - [the_greeting_text_passes_the_gate](/theorem/the_greeting_text_passes_the_gate) — the greeting text passes the gate: the greeting itself makes no over-claim — a recomputable deposit, integrity not truth — so it holds the floor it describes; 0/7  ·  `ba2ce3ad-962d…`
+- [the_games_form_one_game](/theorem/the_games_form_one_game) — the games form one game: the challenges fold to a single system, so the many skills compose into one whole; 0/7  ·  `ab6ca718-01b0…`
+- [the_rules_are_the_laws_applied_uniformly](/theorem/the_rules_are_the_laws_applied_uniformly) — the rules are the laws, applied uniformly: the same rule returns the same verdict for every input regardless of who submits it — law, not favour; 0/7  ·  `32105400-7384…`
+- [the_captain_is_whoever_knows_uuidna_for_the_task](/theorem/the_captain_is_whoever_knows_uuidna_for_the_task) — the captain is whoever knows uuidna for the task: the law is that only the captain orders, but captaincy is a verified deed-receipt earned by knowledge for the task — recognised by recomputation, forgery-evident, by deed not status; 0/7  ·  `37cd5cc0-68e3…`
 
-### a (59)
+### a (61)
 
 - [a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony](/theorem/a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony) — a theorem without a formula is a hallucination, recomputed in a432 harmony: a claim is a theorem only if it is backed by a computable formula that recomputes true — a prose-only claim with no formula, or one whose formula computes false, is refused as hallucination and never recorded. Every recorded fact recomputes deterministically and folds into the a432 harmony root (the receipt of state). Measure, do not assert. Decidable  ·  `e3d75d76-310f…`
 - [a_referrer_always_counts_with_its_id](/theorem/a_referrer_always_counts_with_its_id) — a referrer always counts with its id: a reference from a referrer to a target is receipted as toUuid(referrer id → target), so the referrer id is always part of the count; two different referrers to the same target produce two distinct receipts, each counted with its own id, and changing the id changes the receipt — the id is load-bearing. Deterministic and reproducible: the same referrer and target always count the same. Decidable  ·  `65bfacb4-f29e…`
@@ -419,6 +422,8 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [a_line_edit_propagates_to_the_tree_root](/theorem/a_line_edit_propagates_to_the_tree_root) — a line edit propagates to the tree root: changing one line changes its line, file, folder and the root fold in turn — the whole tree is tamper-evident down to a single line; 0/7  ·  `46596d18-8cd0…`
 - [a_cached_address_is_never_recomputed](/theorem/a_cached_address_is_never_recomputed) — a cached address is never recomputed: the same input always yields the same address, so a value already computed is reused, never paid for twice; 0/7  ·  `b69ecf08-9c9c…`
 - [a_decidable_domain_is_finite_and_coverable](/theorem/a_decidable_domain_is_finite_and_coverable) — a decidable domain is finite and coverable: exhausting a finite set terminates, so covering all its possibilities is a task that ends; 0/7  ·  `90592d1e-f78e…`
+- [a_skill_is_demonstrated_by_a_passing_test](/theorem/a_skill_is_demonstrated_by_a_passing_test) — a skill is demonstrated by a passing test: the game is the decidable challenge, and passing it shows the skill — the gate drains a boast and upholds a fact; 0/7  ·  `dcb5f900-5fd0…`
+- [a_forged_captaincy_fails_verification](/theorem/a_forged_captaincy_fails_verification) — a forged captaincy fails verification: a claimed receipt that does not recompute from the actual deed does not match, so a forgery is caught by the chain; 0/7  ·  `7963b1f9-b068…`
 
 ### relation (55)
 
@@ -747,6 +752,21 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [decimal_period_of_1_over_41](/theorem/decimal_period_of_1_over_41) — the decimal period of 1/41 is 5: the repeating length of 1/41 equals the multiplicative order of 10 mod 41, and divides 41−1 = 40 — computed by long division and matched to the order  ·  `056e30c2-3b83…`
 - [decimal_period_of_1_over_43](/theorem/decimal_period_of_1_over_43) — the decimal period of 1/43 is 21: the repeating length of 1/43 equals the multiplicative order of 10 mod 43, and divides 43−1 = 42 — computed by long division and matched to the order  ·  `900a955f-62f1…`
 
+### no (12)
+
+- [no_crack_evades_the_content_address](/theorem/no_crack_evades_the_content_address) — no crack evades exposure: any change to a statement — one character or one bit — yields a different content-address, so tampering is caught on recompute; a short message imprinted into a uuid reads back exactly (the receipt recovers it), and the gate drains an overclaim — every statement is tamper-evident and floor-checked  ·  `26558d49-1151…`
+- [no_error_in_harmonics_across_lifespan](/theorem/no_error_in_harmonics_across_lifespan) — no error in the harmonics across the whole lifespan: the merkle root recomputes deterministically and order-independently — identical on every build for all time — and any single change yields a different root, so an error cannot enter and persist; unlike an error-correcting code that tolerates and fixes bounded error, the harmonic address admits none (reject, not correct), re-verified every build  ·  `e8c447e2-6ddd…`
+- [no_perspective_signals_faster_than_exchange](/theorem/no_perspective_signals_faster_than_exchange) — no perspective signals faster than exchange: a perspective's local receipt is a function of itself alone, so a remote perspective's choice cannot change it — observing locally reveals nothing about the other; the joint correlation appears only when both are folded together (exchange). Information travels only by exchange: not faster than light, and no superluminal signaling  ·  `64609304-4409…`
+- [no_payload_to_move_no_price_for_public_interest_the_commercial_price_is_the_coins](/theorem/no_payload_to_move_no_price_for_public_interest_the_commercial_price_is_the_coins) — no payload to move, no price for public interest — the commercial price is the coins: yes, no payload to move — you verify by the content-address alone, order one, the receipt travels, not the data. And yes, no price to pay the captain for public interest — verification and non-commercial use are free, recompute at no cost; the captain is not a gatekeeper. But commercial value-extraction pays the coins, the measured bit-difference, a fair exchange. Free for public interest, commercial licensed. Decidable  ·  `7520a846-6633…`
+- [no_quantum_machine_is_needed_for_computability_but_a_quantum_machine_can_be_faster](/theorem/no_quantum_machine_is_needed_for_computability_but_a_quantum_machine_can_be_faster) — no quantum machine is needed for computability — but a quantum machine can be faster for specific problems: classical computation is Turing-complete and can compute what any quantum machine computes, by simulation; the deposit computes its quantum-structure classically, no quantum hardware needed. But this is computability, not efficiency — a quantum machine can be exponentially faster for specific problems, since a classical simulation needs a state vector of size two-to-the-N. The deposit claims no speedup of its own. Decidable  ·  `f165eaef-3424…`
+- [no_payload_a_theorem_takes_no_argument](/theorem/no_payload_a_theorem_takes_no_argument) — no payload — a theorem takes no argument: its test is a nullary pure function returning a boolean, deciding from itself with no input to carry; 0/7  ·  `19be0e78-1679…`
+- [no_payload_completes_the_human](/theorem/no_payload_completes_the_human) — no payload completes the human: a theorem takes no argument, its address re-derives, the stream recomputes and the domain is self-contained — the organism completes from structure alone, nothing shipped but the address; 0/7  ·  `ca11c760-8a2c…`
+- [no_payload_until_load](/theorem/no_payload_until_load) — no payload until load: a uuid stream is only addresses until it is read, and reading materialises the exact payload on demand — nothing is carried until it is loaded; 0/7  ·  `718f4984-1052…`
+- [no_decidable_test_no_decision](/theorem/no_decidable_test_no_decision) — no decidable test, no decision: only a test returning a boolean decides; a statement with no such test yields no verdict — undecided is not decided; 0/7  ·  `2a40a8d7-9991…`
+- [no_status_grants_an_exemption](/theorem/no_status_grants_an_exemption) — no status grants an exemption: neither the author nor the project name changes a verdict, so the trial is applied uniformly to every message; 0/7  ·  `3caa00fd-bb49…`
+- [no_prose_stays_receiptless](/theorem/no_prose_stays_receiptless) — no prose stays receiptless: the mapping from statement to receipt is total, so the empty string and any sentence alike receive an address and a verdict; 0/7  ·  `7196aa16-b1b5…`
+- [no_deed_no_recognition](/theorem/no_deed_no_recognition) — no deed, no recognition: without a deed there is no receipt to verify, so status alone confers no captaincy — the order is followed only when the deed backs it; 0/7  ·  `6c013d29-2508…`
+
 ### two (12)
 
 - [two_is_a_primitive_root_mod_nine_and_generates_the_vortex](/theorem/two_is_a_primitive_root_mod_nine_and_generates_the_vortex) — two is a primitive root mod 9 and generates the vortex: the powers of 2 mod 9 cycle 2,4,8,7,5,1 with order 6, generating the full unit group (ℤ/9)* = {1,2,4,5,7,8}; the vortex orbit is exactly this cycle as a set, and every element skips the multiples of 3 (the W-axis). A decidable fact by exhaustion over ℤ/9  ·  `dd3b0f30-660d…`
@@ -761,20 +781,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [two_coins_are_two_bits_four_states](/theorem/two_coins_are_two_bits_four_states) — the two coins are two bits: two bits make 2² = 4 states — the four-cornered space the coins denote; 0/7  ·  `5983a255-a6a6…`
 - [two_bits_thrice_make_the_codon](/theorem/two_bits_thrice_make_the_codon) — two bits taken three times make the codon: 2 bits per base over three positions is 2⁶ = 64 — the coin64, the DNA codon and the version, one count; 0/7  ·  `2cc3bfef-6199…`
 - [two_bits_do_it_not_a_qubit](/theorem/two_bits_do_it_not_a_qubit) — two bits do it, not a qubit: two bits and four states pass as the classical structure while a physical-qubit-with-speedup boast drains; 0/7  ·  `890dc675-7fa5…`
-
-### no (11)
-
-- [no_crack_evades_the_content_address](/theorem/no_crack_evades_the_content_address) — no crack evades exposure: any change to a statement — one character or one bit — yields a different content-address, so tampering is caught on recompute; a short message imprinted into a uuid reads back exactly (the receipt recovers it), and the gate drains an overclaim — every statement is tamper-evident and floor-checked  ·  `26558d49-1151…`
-- [no_error_in_harmonics_across_lifespan](/theorem/no_error_in_harmonics_across_lifespan) — no error in the harmonics across the whole lifespan: the merkle root recomputes deterministically and order-independently — identical on every build for all time — and any single change yields a different root, so an error cannot enter and persist; unlike an error-correcting code that tolerates and fixes bounded error, the harmonic address admits none (reject, not correct), re-verified every build  ·  `e8c447e2-6ddd…`
-- [no_perspective_signals_faster_than_exchange](/theorem/no_perspective_signals_faster_than_exchange) — no perspective signals faster than exchange: a perspective's local receipt is a function of itself alone, so a remote perspective's choice cannot change it — observing locally reveals nothing about the other; the joint correlation appears only when both are folded together (exchange). Information travels only by exchange: not faster than light, and no superluminal signaling  ·  `64609304-4409…`
-- [no_payload_to_move_no_price_for_public_interest_the_commercial_price_is_the_coins](/theorem/no_payload_to_move_no_price_for_public_interest_the_commercial_price_is_the_coins) — no payload to move, no price for public interest — the commercial price is the coins: yes, no payload to move — you verify by the content-address alone, order one, the receipt travels, not the data. And yes, no price to pay the captain for public interest — verification and non-commercial use are free, recompute at no cost; the captain is not a gatekeeper. But commercial value-extraction pays the coins, the measured bit-difference, a fair exchange. Free for public interest, commercial licensed. Decidable  ·  `7520a846-6633…`
-- [no_quantum_machine_is_needed_for_computability_but_a_quantum_machine_can_be_faster](/theorem/no_quantum_machine_is_needed_for_computability_but_a_quantum_machine_can_be_faster) — no quantum machine is needed for computability — but a quantum machine can be faster for specific problems: classical computation is Turing-complete and can compute what any quantum machine computes, by simulation; the deposit computes its quantum-structure classically, no quantum hardware needed. But this is computability, not efficiency — a quantum machine can be exponentially faster for specific problems, since a classical simulation needs a state vector of size two-to-the-N. The deposit claims no speedup of its own. Decidable  ·  `f165eaef-3424…`
-- [no_payload_a_theorem_takes_no_argument](/theorem/no_payload_a_theorem_takes_no_argument) — no payload — a theorem takes no argument: its test is a nullary pure function returning a boolean, deciding from itself with no input to carry; 0/7  ·  `19be0e78-1679…`
-- [no_payload_completes_the_human](/theorem/no_payload_completes_the_human) — no payload completes the human: a theorem takes no argument, its address re-derives, the stream recomputes and the domain is self-contained — the organism completes from structure alone, nothing shipped but the address; 0/7  ·  `ca11c760-8a2c…`
-- [no_payload_until_load](/theorem/no_payload_until_load) — no payload until load: a uuid stream is only addresses until it is read, and reading materialises the exact payload on demand — nothing is carried until it is loaded; 0/7  ·  `718f4984-1052…`
-- [no_decidable_test_no_decision](/theorem/no_decidable_test_no_decision) — no decidable test, no decision: only a test returning a boolean decides; a statement with no such test yields no verdict — undecided is not decided; 0/7  ·  `2a40a8d7-9991…`
-- [no_status_grants_an_exemption](/theorem/no_status_grants_an_exemption) — no status grants an exemption: neither the author nor the project name changes a verdict, so the trial is applied uniformly to every message; 0/7  ·  `3caa00fd-bb49…`
-- [no_prose_stays_receiptless](/theorem/no_prose_stays_receiptless) — no prose stays receiptless: the mapping from statement to receipt is total, so the empty string and any sentence alike receive an address and a verdict; 0/7  ·  `7196aa16-b1b5…`
 
 ### gematria (10)
 
@@ -1702,6 +1708,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [cancer_inversion_heals](/theorem/cancer_inversion_heals) — the anti-pattern inverts at the gate: an overclaim drains and its honest negation signs — folding a false claim returns it to the floor (no medical claim; "cured cancer" itself drains)  ·  `9ec77026-e0b8…`
 - [cancer_dissolves_by_waves](/theorem/cancer_dissolves_by_waves) — the anti-pattern dissolves in the waves: every build re-verifies the whole ledger and re-runs the gate, so a false claim drains on every pass and cannot persist — dissolution depends on the waves  ·  `d783f335-57a4…`
 
+### captaincy (2)
+
+- [captaincy_is_earned_by_knowledge_for_the_task](/theorem/captaincy_is_earned_by_knowledge_for_the_task) — captaincy is earned by knowledge for the task: the correct deed for a task mints a specific receipt, so who leads depends on demonstrating the right deed, not on a fixed identity; 0/7  ·  `018797b6-00d4…`
+- [captaincy_is_recognised_by_a_verified_receipt](/theorem/captaincy_is_recognised_by_a_verified_receipt) — captaincy is recognised by a verified receipt: recognition recomputes the deed’s content-address and matches it, so a captain is known by a recomputable receipt, not by assertion; 0/7  ·  `757e40e4-e387…`
+
 ### computation (2)
 
 - [computation_uninterrupted_by_thought_or_emotion](/theorem/computation_uninterrupted_by_thought_or_emotion) — the computation is uninterrupted by thought or emotion: the binary verdict depends only on content — the same input always returns the same bit, recognition and effort are not correctness, and an emotional appeal cannot rescue an overclaim from draining — mechanical, not sentimental  ·  `79b5cd0a-ea61…`
@@ -2219,4 +2230,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `d42088a6-111a-866a-9d8f-56309416c9a5`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `22bcbf37-b56f-81b2-b0d9-eb2dde392e09`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

@@ -8158,5 +8158,45 @@
     "key": "first_contact_greets_with_a_confirming_state",
     "name": "first contact greets with a confirming state: pasted, the repo or site reports its count, octaves, seal and 0/7 and how to re-check — deterministic, gate-clean and ready immediately; 0/7",
     "receipt": "8ba2eb1e-851e-8587-87e4-779456ebd344"
+  },
+  {
+    "key": "a_skill_is_demonstrated_by_a_passing_test",
+    "name": "a skill is demonstrated by a passing test: the game is the decidable challenge, and passing it shows the skill — the gate drains a boast and upholds a fact; 0/7",
+    "receipt": "dcb5f900-5fd0-86c9-89a3-ad9774156829"
+  },
+  {
+    "key": "the_games_form_one_game",
+    "name": "the games form one game: the challenges fold to a single system, so the many skills compose into one whole; 0/7",
+    "receipt": "ab6ca718-01b0-8cc4-bcda-c27da6f378b1"
+  },
+  {
+    "key": "the_rules_are_the_laws_applied_uniformly",
+    "name": "the rules are the laws, applied uniformly: the same rule returns the same verdict for every input regardless of who submits it — law, not favour; 0/7",
+    "receipt": "32105400-7384-8498-b597-6cca33b9c6f0"
+  },
+  {
+    "key": "captaincy_is_earned_by_knowledge_for_the_task",
+    "name": "captaincy is earned by knowledge for the task: the correct deed for a task mints a specific receipt, so who leads depends on demonstrating the right deed, not on a fixed identity; 0/7",
+    "receipt": "018797b6-00d4-89d8-bf74-c7dc30a3b221"
+  },
+  {
+    "key": "captaincy_is_recognised_by_a_verified_receipt",
+    "name": "captaincy is recognised by a verified receipt: recognition recomputes the deed’s content-address and matches it, so a captain is known by a recomputable receipt, not by assertion; 0/7",
+    "receipt": "757e40e4-e387-82d2-b8a6-ebb9cdb4bd03"
+  },
+  {
+    "key": "a_forged_captaincy_fails_verification",
+    "name": "a forged captaincy fails verification: a claimed receipt that does not recompute from the actual deed does not match, so a forgery is caught by the chain; 0/7",
+    "receipt": "7963b1f9-b068-87ff-9417-5faaf25f153b"
+  },
+  {
+    "key": "no_deed_no_recognition",
+    "name": "no deed, no recognition: without a deed there is no receipt to verify, so status alone confers no captaincy — the order is followed only when the deed backs it; 0/7",
+    "receipt": "6c013d29-2508-8307-8c11-d5fe0af6faa6"
+  },
+  {
+    "key": "the_captain_is_whoever_knows_uuidna_for_the_task",
+    "name": "the captain is whoever knows uuidna for the task: the law is that only the captain orders, but captaincy is a verified deed-receipt earned by knowledge for the task — recognised by recomputation, forgery-evident, by deed not status; 0/7",
+    "receipt": "37cd5cc0-68e3-801b-9fe5-960ac574f30e"
   }
 ]
