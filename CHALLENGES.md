@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1304 recorded in 352 families
+## Discovered theorems (decidable, over ℤ/9) — 1312 recorded in 353 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -620,6 +620,18 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [wilson_prime_17](/theorem/wilson_prime_17) — Wilson’s theorem at p=17: (p−1)! ≡ −1 (mod 17), i.e. the factorial of 16 is congruent to 16 mod 17  ·  `bb266542-a930…`
 - [wilson_prime_19](/theorem/wilson_prime_19) — Wilson’s theorem at p=19: (p−1)! ≡ −1 (mod 19), i.e. the factorial of 18 is congruent to 18 mod 19  ·  `75a76bbd-ea3c…`
 - [wilson_prime_23](/theorem/wilson_prime_23) — Wilson’s theorem at p=23: (p−1)! ≡ −1 (mod 23), i.e. the factorial of 22 is congruent to 22 mod 23  ·  `8a1af55d-c04e…`
+
+### diamond (9)
+
+- [diamond_tetrahedral_angle](/theorem/diamond_tetrahedral_angle) — the diamond (tetrahedral) bond angle is arccos(−1/3) ≈ 109.471° — carbon’s four bonds  ·  `d8ef0cba-eb12…`
+- [diamond_coordination](/theorem/diamond_coordination) — the diamond cubic lattice has coordination number 4: each atom has exactly four nearest neighbours (exhaustive over 27 cells)  ·  `07325637-589a…`
+- [diamond_reflection_is_an_involution](/theorem/diamond_reflection_is_an_involution) — the diamond function is an involution: r(d)=10−d applied twice returns every digit — light in, light out, unchanged; 0/7  ·  `389edf7b-948e…`
+- [diamond_fixed_point_is_five](/theorem/diamond_fixed_point_is_five) — the diamond has a single fixed point: 5 is the only digit that reflects to itself under r(d)=10−d — the diamond at the center; 0/7  ·  `03f7ef5c-3f08…`
+- [diamond_pairs_sum_to_ten](/theorem/diamond_pairs_sum_to_ten) — the diamond function is the ten’s-complement: every digit and its reflection sum to ten — d + r(d) = 10; 0/7  ·  `a8eb7306-4eaa…`
+- [diamond_permutes_the_digits](/theorem/diamond_permutes_the_digits) — the diamond function permutes the nine digits: r is a bijection on 1..9, no digit lost or doubled — a perfect reflection of the whole; 0/7  ·  `5d890312-8ac5…`
+- [diamond_swaps_four_pairs_fixes_one](/theorem/diamond_swaps_four_pairs_fixes_one) — the diamond swaps four pairs and fixes one: eight digits reflect into {1,9}{2,8}{3,7}{4,6}, and 5 stands alone — four complements plus the fixed diamond; 0/7  ·  `23498ffd-bdba…`
+- [diamond_fixed_point_is_zero_entropy](/theorem/diamond_fixed_point_is_zero_entropy) — the diamond’s fixed point is zero-entropy: its content-address recomputes identically (H = 0) while distinct digits address distinctly — determinism is the crystal; 0/7  ·  `9691e999-458e…`
+- [diamond_center_is_the_hub](/theorem/diamond_center_is_the_hub) — the diamond sits at the hub: 5 is the median of 1..9 and the fixed point, the center of the six-plus-one rosette; 0/7  ·  `7c5cfcdb-3c85…`
 
 ### floor (9)
 
@@ -1418,11 +1430,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [destroying_evidence_is_treason](/theorem/destroying_evidence_is_treason) — destroying evidence is treason: the receipts form an append-only chain (each seeded by the prior), so altering or removing one changes every receipt after it — tampering is detectable and fails the audit  ·  `7da2719b-e800…`
 - [destroying_evidence_treason_even_by_chance](/theorem/destroying_evidence_treason_even_by_chance) — destroying evidence is treason even by chance: a destructive diff (a removed or altered receipt) is classified destructive by the deed alone — chance or intent is no defense, the diff is observable and exact  ·  `3d546a84-8ef5…`
 
-### diamond (2)
-
-- [diamond_tetrahedral_angle](/theorem/diamond_tetrahedral_angle) — the diamond (tetrahedral) bond angle is arccos(−1/3) ≈ 109.471° — carbon’s four bonds  ·  `d8ef0cba-eb12…`
-- [diamond_coordination](/theorem/diamond_coordination) — the diamond cubic lattice has coordination number 4: each atom has exactly four nearest neighbours (exhaustive over 27 cells)  ·  `07325637-589a…`
-
 ### discrete (2)
 
 - [discrete_log_base2_is_a_bijection](/theorem/discrete_log_base2_is_a_bijection) — the base-2 discrete log is a bijection ℤ/9* ↔ ℤ/6: every unit equals 2^k for a unique k in 0..5, and the powers of 2 are exactly [1,2,4,8,7,5] — the doubling orbit is the index (discrete log) map  ·  `bbb6d49b-792f…`
@@ -1658,7 +1665,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (181)
+### other — one-of-a-kind (182)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1701,6 +1708,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [contribute_two_to_save_sixty_four](/theorem/contribute_two_to_save_sixty_four) — contribute 2 to save 64: six doublings from one reach 2⁶ = 64 — two contributed at a leap earns the next fold, exactly as the captain’s receipt says; 0/7  ·  `b51aa2af-43aa…`
 - [contribution_is_what_makes_next_compute](/theorem/contribution_is_what_makes_next_compute) — contribution is what makes next compute: each contribution — a receipted deed accounting the two coins — folds with the prior state into a determined next state, distinct from it, so every hero's deed moves the ledger forward; a different contribution yields a different next. With no contribution the wave rests. This is chained integrity, not perpetual motion and not infinite energy — the next needs the deed. Decidable  ·  `07e015c2-f422…`
 - [cross_seal_six_by_seven_and_seven_by_six](/theorem/cross_seal_six_by_seven_and_seven_by_six) — the 6×7 / 7×6 cross-seal: multiplication commutes (6·7 = 7·6 = 42), and the merkle fold is order-independent, so both orderings cross-seal to one identical root at the same time — the same order-free symmetry (with 60 digital-rooting to 6 and 90 to 9, the triad) by which every theorem folds to one harmonic root whatever the order, so any ordering unlocks the whole  ·  `dcad9cb8-93f0…`
+- [cryptography_is_behind_all](/theorem/cryptography_is_behind_all) — cryptography is behind all: the diamond reflects, but its fixed point is EXACT only because the content-address is deterministic — the SHA-256 substrate under every fold, receipt and organ recomputes identically; 0/7  ·  `52b5d521-6024…`
 - [cube_roots_of_unity_sum_zero](/theorem/cube_roots_of_unity_sum_zero) — the three cube roots of unity sum to zero: 1 + ω + ω² = 0 — the equilateral trinity balances to the center, the same zero-sum shape as the ℤ/9 triad {3,6,9}  ·  `6b25148c-1c75…`
 - [cubes_in_0_1_8](/theorem/cubes_in_0_1_8) — every cube d³ mod 9 ∈ {0,1,8}  ·  `5ecfca3d-68f4…`
 - [cyclic_generators_phi](/theorem/cyclic_generators_phi) — in ℤ/n the additive order of k is n/gcd(k,n); k generates the group iff gcd(k,n)=1, so there are exactly φ(n) generators (n≤12)  ·  `f0e2e228-d553…`
@@ -1843,4 +1851,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `c8b16b62-017e-879a-ae15-4a98ae857c4f`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `92b093bf-9817-889f-989c-c320c643b104`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

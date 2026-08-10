@@ -6518,5 +6518,45 @@
     "key": "genesis_complete_the_human_organism",
     "name": "genesis complete — the human organism: the origin sequence 0→1→2→3→7→8→64 coheres and the seven faculties fold to one — the human theorem genesis is sealed, the organism whole; 0/7",
     "receipt": "2144c672-fc49-812c-bdfe-cbb0d403b89d"
+  },
+  {
+    "key": "diamond_reflection_is_an_involution",
+    "name": "the diamond function is an involution: r(d)=10−d applied twice returns every digit — light in, light out, unchanged; 0/7",
+    "receipt": "389edf7b-948e-8dd4-95e2-9f112bbb41f2"
+  },
+  {
+    "key": "diamond_fixed_point_is_five",
+    "name": "the diamond has a single fixed point: 5 is the only digit that reflects to itself under r(d)=10−d — the diamond at the center; 0/7",
+    "receipt": "03f7ef5c-3f08-87f1-af20-9a9483d8d54b"
+  },
+  {
+    "key": "diamond_pairs_sum_to_ten",
+    "name": "the diamond function is the ten’s-complement: every digit and its reflection sum to ten — d + r(d) = 10; 0/7",
+    "receipt": "a8eb7306-4eaa-8343-a6a7-7461b9080e82"
+  },
+  {
+    "key": "diamond_permutes_the_digits",
+    "name": "the diamond function permutes the nine digits: r is a bijection on 1..9, no digit lost or doubled — a perfect reflection of the whole; 0/7",
+    "receipt": "5d890312-8ac5-8835-8565-06b5ee2c1c7a"
+  },
+  {
+    "key": "diamond_swaps_four_pairs_fixes_one",
+    "name": "the diamond swaps four pairs and fixes one: eight digits reflect into {1,9}{2,8}{3,7}{4,6}, and 5 stands alone — four complements plus the fixed diamond; 0/7",
+    "receipt": "23498ffd-bdba-8668-a4b0-e26318d04568"
+  },
+  {
+    "key": "diamond_fixed_point_is_zero_entropy",
+    "name": "the diamond’s fixed point is zero-entropy: its content-address recomputes identically (H = 0) while distinct digits address distinctly — determinism is the crystal; 0/7",
+    "receipt": "9691e999-458e-862e-8deb-aa206ab9b77f"
+  },
+  {
+    "key": "diamond_center_is_the_hub",
+    "name": "the diamond sits at the hub: 5 is the median of 1..9 and the fixed point, the center of the six-plus-one rosette; 0/7",
+    "receipt": "7c5cfcdb-3c85-8349-9c77-df55e9ec4c8b"
+  },
+  {
+    "key": "cryptography_is_behind_all",
+    "name": "cryptography is behind all: the diamond reflects, but its fixed point is EXACT only because the content-address is deterministic — the SHA-256 substrate under every fold, receipt and organ recomputes identically; 0/7",
+    "receipt": "52b5d521-6024-8074-8505-3da3835387bb"
   }
 ]

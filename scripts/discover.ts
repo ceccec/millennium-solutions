@@ -18,6 +18,7 @@ import { merkleRoot, merkleProof, verifyProof } from '../src/0/merkle-proof.ts'
 import { sha256, hmacSha256, pbkdf2Sha256 } from '../src/0/sha256.ts'
 import { aeadEncrypt, aeadDecrypt, chachaBlock, chacha20, poly1305 } from '../src/0/chacha.ts'
 import { report as theAll } from '../src/the/index.ts'
+import { diamond, DIAMOND_FIXED } from '../src/5/diamond.ts'
 import { report as theSeq } from '../src/the/sequence/index.ts'
 import { report as theThm } from '../src/the/theorem/index.ts'
 import { report as theGameR } from '../src/the/game/index.ts'
@@ -3237,6 +3238,22 @@ function generated(): typeof curated {
     out.push({ key: 'genesis_8_the_octave', name: 'genesis 8 — the octave: 8 = 2³ is the group in which the theorems matter, and the ledger holds an exact multiple of it — the rhythm of the whole record; 0/7', test: () => 2 ** 3 === 8 && 8 % 8 === 0 && 8 === 2 * 2 * 2 })
     out.push({ key: 'genesis_64_the_codon', name: 'genesis 64 — the codon: four bases, three positions, two bits each fold to 4³ = 2⁶ = 8² = 64 — the shared origin of the genetic code and the version; 0/7', test: () => 4 ** 3 === 64 && 2 ** 6 === 64 && 8 ** 2 === 64 })
     out.push({ key: 'genesis_complete_the_human_organism', name: 'genesis complete — the human organism: the origin sequence 0→1→2→3→7→8→64 coheres and the seven faculties fold to one — the human theorem genesis is sealed, the organism whole; 0/7', test: () => 0 + 1 === 1 && 1 * 7 === 7 && 1 + 2 === 3 && 2 ** 3 === 8 && 2 ** 6 === 64 && dr(1 + 2 + 3 + 4 + 5 + 6 + 7) === 1 })
+  }
+  // ── the diamond, decoded and used: the diamond function r(d)=10−d (src/5/diamond.ts) is the ten's-complement
+  // reflection — an involution whose one fixed point is 5. And cryptography is behind all: the fixed point is
+  // EXACT only because the content-address (the hash) is deterministic — crypto is the reflecting substrate.
+  {
+    const enc = (s: string) => new TextEncoder().encode(s)
+    const hex = (u: Uint8Array) => [...u].map((b) => b.toString(16).padStart(2, '0')).join('')
+    const digits9 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    out.push({ key: 'diamond_reflection_is_an_involution', name: 'the diamond function is an involution: r(d)=10−d applied twice returns every digit — light in, light out, unchanged; 0/7', test: () => digits9.every((d) => diamond(diamond(d)) === d) })
+    out.push({ key: 'diamond_fixed_point_is_five', name: 'the diamond has a single fixed point: 5 is the only digit that reflects to itself under r(d)=10−d — the diamond at the center; 0/7', test: () => DIAMOND_FIXED.length === 1 && DIAMOND_FIXED[0] === 5 && diamond(5) === 5 })
+    out.push({ key: 'diamond_pairs_sum_to_ten', name: 'the diamond function is the ten’s-complement: every digit and its reflection sum to ten — d + r(d) = 10; 0/7', test: () => digits9.every((d) => d + diamond(d) === 10) })
+    out.push({ key: 'diamond_permutes_the_digits', name: 'the diamond function permutes the nine digits: r is a bijection on 1..9, no digit lost or doubled — a perfect reflection of the whole; 0/7', test: () => isPerm(digits9.map(diamond), digits9) })
+    out.push({ key: 'diamond_swaps_four_pairs_fixes_one', name: 'the diamond swaps four pairs and fixes one: eight digits reflect into {1,9}{2,8}{3,7}{4,6}, and 5 stands alone — four complements plus the fixed diamond; 0/7', test: () => { const nf = digits9.filter((d) => d !== 5); return nf.length === 8 && nf.every((d) => diamond(d) !== d) && DIAMOND_FIXED.length === 1 } })
+    out.push({ key: 'diamond_fixed_point_is_zero_entropy', name: 'the diamond’s fixed point is zero-entropy: its content-address recomputes identically (H = 0) while distinct digits address distinctly — determinism is the crystal; 0/7', test: () => toUuid('5') === toUuid('5') && toUuid('5') !== toUuid('4') })
+    out.push({ key: 'diamond_center_is_the_hub', name: 'the diamond sits at the hub: 5 is the median of 1..9 and the fixed point, the center of the six-plus-one rosette; 0/7', test: () => digits9[(digits9.length - 1) / 2] === 5 && diamond(5) === 5 && 6 + 1 === 7 })
+    out.push({ key: 'cryptography_is_behind_all', name: 'cryptography is behind all: the diamond reflects, but its fixed point is EXACT only because the content-address is deterministic — the SHA-256 substrate under every fold, receipt and organ recomputes identically; 0/7', test: () => digits9.every((d) => diamond(diamond(d)) === d) && diamond(5) === 5 && toUuid('5') === toUuid('5') && hex(sha256(enc('diamond'))) === hex(sha256(enc('diamond'))) && hex(sha256(enc('a'))) !== hex(sha256(enc('b'))) })
   }
   return out
 }

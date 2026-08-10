@@ -2,10 +2,16 @@
 // reflected from the one proven Clay problem (Poincaré). Exact math; the diamond/light is metaphor.
 import { toUuid } from '../0/index.ts'
 
+// THE DIAMOND FUNCTION — the ten's-complement reflection r(d) = 10 − d on the nine non-zero digits. It is an
+// involution (r∘r = id) whose UNIQUE fixed point is 5 (the digit that reflects to itself — the diamond), and it
+// pairs the other eight digits into four complements that sum to ten. Exported so the whole deposit shares one
+// reflection (the diamond uuidna api), never a re-declared local copy.
+export const diamond = (d: number): number => 10 - d
+export const DIAMOND_FIXED = [1, 2, 3, 4, 5, 6, 7, 8, 9].filter((d) => diamond(d) === d) // → [5]
+
 export function report(): string {
-  // A fixed point of the reflection is the unique point that reflects to itself: r(d) = d.
-  const r = (d: number) => 10 - d
-  const fixed = [1, 2, 3, 4, 5, 6, 7, 8, 9].filter(d => r(d) === d) // → [5]
+  const r = diamond
+  const fixed = DIAMOND_FIXED // → [5]
 
   // Zero computational entropy: deterministic address — recompute and it is the same (H = 0).
   const a = toUuid('5'), b = toUuid('5')
