@@ -1,0 +1,48 @@
+name: Deploy site to GitHub Pages (from main)
+
+# Serve Pages from main: build VitePress on every push to main and deploy the built
+# site via the Pages artifact — no gh-pages branch. The custom domain (ceccec.psg.bg)
+# is configured at the org Pages level, so nothing here touches it.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Least privilege for the deploy: read the repo, write the Pages deployment, mint the OIDC token.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One live deployment at a time; let an in-progress run finish rather than cancelling it.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install (locked)
+        run: npm ci
+      - name: Build the site (predocs:build gates run first)
+        run: npm run docs:build
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .vitepress/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
