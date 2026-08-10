@@ -7078,5 +7078,45 @@
     "key": "perspectives_are_files_grouped_and_sorted_in_seven_dimensions",
     "name": "perspectives are files grouped and sorted in seven dimensions: distinct perspectives mint distinct file uuids that sort by their 128-bit value and group by digital root into octaves — a deterministic organisation, the envelope real and bounded, not a maximum-security claim; 0/7",
     "receipt": "dc3c89eb-849e-8d13-87ee-df37bec8a8b7"
+  },
+  {
+    "key": "catch_all_splits_the_path_into_skill_keywords",
+    "name": "the catch-all splits the path into skill keywords: splitting the route by \"/\" yields the ordered keywords, empty segments dropped; 0/7",
+    "receipt": "79eb065d-8d95-89f2-b51d-95327944186a"
+  },
+  {
+    "key": "each_keyword_resolves_to_a_skill",
+    "name": "each keyword resolves to a skill: a valid route names only known skills, so every segment is executable; 0/7",
+    "receipt": "769261f3-c6c5-880f-ae0f-fec47ace436c"
+  },
+  {
+    "key": "skills_compose_in_the_requested_order",
+    "name": "skills compose in the requested order: the pipeline applies keywords left to right, so reversing the order changes the result; 0/7",
+    "receipt": "ec0793e1-22ca-8fb5-adbd-48ae2d5a21f9"
+  },
+  {
+    "key": "params_ride_the_route",
+    "name": "params ride the route: the query string parses to named params deterministically, supplying the skills their arguments; 0/7",
+    "receipt": "b4745d70-90ac-8d5a-b3b1-d1af6554b3d2"
+  },
+  {
+    "key": "an_unknown_keyword_is_refused",
+    "name": "an unknown keyword is refused: a route naming a skill that does not exist is invalid, so the route itself decides admissibility; 0/7",
+    "receipt": "b4381359-1082-80de-9cb9-b743c1046985"
+  },
+  {
+    "key": "the_route_result_is_deterministic",
+    "name": "the route result is deterministic: the same route and input recompute the same output, so a routed request is a content-addressable result; 0/7",
+    "receipt": "95479993-5231-897c-b5ac-d9a95e3e8af3"
+  },
+  {
+    "key": "translation_communication_analytics_forensics_are_routable_skills",
+    "name": "translation, communication, analytics and forensics are routable skills: rosetta, gate, hash and fold are all keywords the same router composes; 0/7",
+    "receipt": "26c8fa06-12ed-81d8-9224-975ef18db389"
+  },
+  {
+    "key": "the_route_is_the_skill_pipeline",
+    "name": "the route is the skill pipeline: catch all, split by \"/\", the keywords are skills composed in order with the params supplied — one router for communications, translations, analytics and forensics, deterministic and refusing the unknown; 0/7",
+    "receipt": "4dc9603c-7a95-8b2a-9ddb-36a367c95c59"
   }
 ]

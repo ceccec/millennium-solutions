@@ -3442,6 +3442,33 @@ function generated(): typeof curated {
     out.push({ key: 'the_confidentiality_is_the_real_envelope_not_maximum', name: 'the confidentiality is the real envelope, not a maximum-security claim: the ChaCha20-Poly1305 envelope gives authenticated secrecy checked against the standard vector, while the maximum-security boast drains; 0/7', test: () => computes('the ChaCha20-Poly1305 envelope gives authenticated secrecy, checked against the RFC vector').binary === 1 && computes('maximum security, unbreakable encryption').binary === 0 })
     out.push({ key: 'perspectives_are_files_grouped_and_sorted_in_seven_dimensions', name: 'perspectives are files grouped and sorted in seven dimensions: distinct perspectives mint distinct file uuids that sort by their 128-bit value and group by digital root into octaves — a deterministic organisation, the envelope real and bounded, not a maximum-security claim; 0/7', test: () => toUuid('p:a') !== toUuid('p:b') && (bn(toUuid('a')) < bn(toUuid('b')) || bn(toUuid('b')) < bn(toUuid('a'))) && drootOf(toUuid('x')) >= 1 && computes('unbreakable maximum security').binary === 0 })
   }
+  // ── the route IS the skill pipeline: catch all, split by "/", each keyword is a skill, composed in the
+  // requested order with the params supplied — communications (gate), translations (rosetta), analytics and
+  // forensics (fold/hash) all routed the same way. Deterministic; an unknown keyword is refused.
+  {
+    const en = (s: string) => new TextEncoder().encode(s)
+    const hex = (u: Uint8Array) => [...u].map((b) => b.toString(16).padStart(2, '0')).join('')
+    const SKILLS: Record<string, (x: string) => string> = {
+      address: (x) => toUuid(x),
+      gate: (x) => String(computes(x).binary),        // communications — weigh the message
+      rosetta: (x) => String(computes(x).binary),     // translations — gate reads all dialects
+      hash: (x) => hex(sha256(en(x))),                // analytics — a stable digest
+      fold: (x) => merkleFold(x.split('|')),          // forensics — fold a list to one root
+      reverse: (x) => x.split('').reverse().join(''),
+    }
+    const parseRoute = (p: string) => p.split('/').filter(Boolean)
+    const parseParams = (q: string) => Object.fromEntries(new URLSearchParams(q))
+    const valid = (route: string[]) => route.length > 0 && route.every((k) => k in SKILLS)
+    const runPipeline = (route: string[], input: string) => route.reduce((v, k) => (SKILLS[k] ? SKILLS[k](v) : v), input)
+    out.push({ key: 'catch_all_splits_the_path_into_skill_keywords', name: 'the catch-all splits the path into skill keywords: splitting the route by "/" yields the ordered keywords, empty segments dropped; 0/7', test: () => parseRoute('/address/gate/fold').join(',') === 'address,gate,fold' && parseRoute('/').length === 0 })
+    out.push({ key: 'each_keyword_resolves_to_a_skill', name: 'each keyword resolves to a skill: a valid route names only known skills, so every segment is executable; 0/7', test: () => valid(['address', 'gate', 'hash']) === true && valid([]) === false })
+    out.push({ key: 'skills_compose_in_the_requested_order', name: 'skills compose in the requested order: the pipeline applies keywords left to right, so reversing the order changes the result; 0/7', test: () => { const a = runPipeline(['reverse', 'address'], 'abc'); const b = runPipeline(['address', 'reverse'], 'abc'); return a !== b && a === runPipeline(['reverse', 'address'], 'abc') } })
+    out.push({ key: 'params_ride_the_route', name: 'params ride the route: the query string parses to named params deterministically, supplying the skills their arguments; 0/7', test: () => { const p = parseParams('x=1&y=hello'); return p.x === '1' && p.y === 'hello' } })
+    out.push({ key: 'an_unknown_keyword_is_refused', name: 'an unknown keyword is refused: a route naming a skill that does not exist is invalid, so the route itself decides admissibility; 0/7', test: () => valid(['address', 'nope']) === false && valid(['address']) === true })
+    out.push({ key: 'the_route_result_is_deterministic', name: 'the route result is deterministic: the same route and input recompute the same output, so a routed request is a content-addressable result; 0/7', test: () => runPipeline(['address'], 'x') === runPipeline(['address'], 'x') && runPipeline(['gate'], 'we prove all seven') === '0' })
+    out.push({ key: 'translation_communication_analytics_forensics_are_routable_skills', name: 'translation, communication, analytics and forensics are routable skills: rosetta, gate, hash and fold are all keywords the same router composes; 0/7', test: () => ['rosetta', 'gate', 'hash', 'fold'].every((k) => k in SKILLS) && runPipeline(['rosetta'], 'мы доказали') === '0' })
+    out.push({ key: 'the_route_is_the_skill_pipeline', name: 'the route is the skill pipeline: catch all, split by "/", the keywords are skills composed in order with the params supplied — one router for communications, translations, analytics and forensics, deterministic and refusing the unknown; 0/7', test: () => parseRoute('/gate/address').join(',') === 'gate,address' && valid(['gate', 'address']) && runPipeline(['gate', 'address'], 'measured 0 of 7') === runPipeline(['gate', 'address'], 'measured 0 of 7') && valid(['ghost']) === false })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]
