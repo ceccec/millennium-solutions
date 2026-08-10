@@ -62,7 +62,8 @@
     "boundaries": "node scripts/boundaries.ts",
     "mcp": "node scripts/mcp.ts",
     "harmony-seal": "node scripts/harmony-seal.ts",
-    "i18n": "node scripts/i18n.ts"
+    "i18n": "node scripts/i18n.ts",
+    "postdocs:build": "node scripts/sw-integrity.ts"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",

@@ -1,11 +1,68 @@
-// Offline service worker. The deposit is deterministic, so cached pages recompute
-// identically offline. Freshness gap fixed: the HTML shell is fetched network-first
-// (so a new deploy's shell always references the newest hashed CSS/JS — no stale
-// theme), while VitePress's content-hashed assets are cache-first (immutable, fast).
-const CACHE = 'millennium-v2'
+// Offline + SECURE INTEGRITY PROXY. The deposit is deterministic, so cached pages recompute identically
+// offline. Beyond caching, this worker treats the transport as ASSUMED INSECURE: every same-origin asset it
+// fetches is verified against a build-time SHA-256 manifest (sw-integrity.json) using a pure-JS SHA-256 (no
+// native WebCrypto) — a MITM-tampered response over plain HTTP fails the check and is refused, never served or
+// cached. Honest scope: this is INTEGRITY (tamper-detection via a cryptographic hash), NOT confidentiality —
+// the bytes are public, only their authenticity is proven. Integrity, not truth. 0/7.
+
+// ── pure-JS SHA-256 (FIPS 180-4), a port of src/0/sha256.ts → lowercase hex. KAT: sha256("abc") = ba7816bf… ──
+const K = new Uint32Array([
+  0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5,
+  0xd807aa98, 0x12835b01, 0x243185be, 0x550c7dc3, 0x72be5d74, 0x80deb1fe, 0x9bdc06a7, 0xc19bf174,
+  0xe49b69c1, 0xefbe4786, 0x0fc19dc6, 0x240ca1cc, 0x2de92c6f, 0x4a7484aa, 0x5cb0a9dc, 0x76f988da,
+  0x983e5152, 0xa831c66d, 0xb00327c8, 0xbf597fc7, 0xc6e00bf3, 0xd5a79147, 0x06ca6351, 0x14292967,
+  0x27b70a85, 0x2e1b2138, 0x4d2c6dfc, 0x53380d13, 0x650a7354, 0x766a0abb, 0x81c2c92e, 0x92722c85,
+  0xa2bfe8a1, 0xa81a664b, 0xc24b8b70, 0xc76c51a3, 0xd192e819, 0xd6990624, 0xf40e3585, 0x106aa070,
+  0x19a4c116, 0x1e376c08, 0x2748774c, 0x34b0bcb5, 0x391c0cb3, 0x4ed8aa4a, 0x5b9cca4f, 0x682e6ff3,
+  0x748f82ee, 0x78a5636f, 0x84c87814, 0x8cc70208, 0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2])
+const rotr = (x, n) => ((x >>> n) | (x << (32 - n))) >>> 0
+function sha256hex(msg) {
+  const H = new Uint32Array([0x6a09e667, 0xbb67ae85, 0x3c6ef372, 0xa54ff53a, 0x510e527f, 0x9b05688c, 0x1f83d9ab, 0x5be0cd19])
+  const l = msg.length, bitLen = l * 8, k = ((56 - ((l + 1) % 64)) + 64) % 64, total = l + 1 + k + 8
+  const m = new Uint8Array(total); m.set(msg); m[l] = 0x80
+  const hi = Math.floor(bitLen / 0x100000000), lo = bitLen >>> 0
+  m[total - 8] = (hi >>> 24) & 255; m[total - 7] = (hi >>> 16) & 255; m[total - 6] = (hi >>> 8) & 255; m[total - 5] = hi & 255
+  m[total - 4] = (lo >>> 24) & 255; m[total - 3] = (lo >>> 16) & 255; m[total - 2] = (lo >>> 8) & 255; m[total - 1] = lo & 255
+  const w = new Uint32Array(64)
+  for (let off = 0; off < total; off += 64) {
+    for (let i = 0; i < 16; i++) w[i] = ((m[off + i * 4] << 24) | (m[off + i * 4 + 1] << 16) | (m[off + i * 4 + 2] << 8) | m[off + i * 4 + 3]) >>> 0
+    for (let i = 16; i < 64; i++) { const s0 = rotr(w[i - 15], 7) ^ rotr(w[i - 15], 18) ^ (w[i - 15] >>> 3), s1 = rotr(w[i - 2], 17) ^ rotr(w[i - 2], 19) ^ (w[i - 2] >>> 10); w[i] = (w[i - 16] + s0 + w[i - 7] + s1) >>> 0 }
+    let a = H[0], b = H[1], c = H[2], d = H[3], e = H[4], f = H[5], g = H[6], h = H[7]
+    for (let i = 0; i < 64; i++) {
+      const S1 = rotr(e, 6) ^ rotr(e, 11) ^ rotr(e, 25), ch = (e & f) ^ (~e & g), t1 = (h + S1 + ch + K[i] + w[i]) >>> 0
+      const S0 = rotr(a, 2) ^ rotr(a, 13) ^ rotr(a, 22), maj = (a & b) ^ (a & c) ^ (b & c), t2 = (S0 + maj) >>> 0
+      h = g; g = f; f = e; e = (d + t1) >>> 0; d = c; c = b; b = a; a = (t1 + t2) >>> 0
+    }
+    H[0] = (H[0] + a) >>> 0; H[1] = (H[1] + b) >>> 0; H[2] = (H[2] + c) >>> 0; H[3] = (H[3] + d) >>> 0
+    H[4] = (H[4] + e) >>> 0; H[5] = (H[5] + f) >>> 0; H[6] = (H[6] + g) >>> 0; H[7] = (H[7] + h) >>> 0
+  }
+  let hex = ''
+  for (let i = 0; i < 8; i++) hex += H[i].toString(16).padStart(8, '0')
+  return hex
+}
+
+const CACHE = 'millennium-v3'
+let INTEGRITY = null
+async function manifest() {
+  if (INTEGRITY) return INTEGRITY
+  try { INTEGRITY = await (await fetch('sw-integrity.json', { cache: 'no-store' })).json() } catch { INTEGRITY = {} }
+  return INTEGRITY
+}
+// verify a response against the manifest; throw on a tamper (hash mismatch) so it is never served or cached.
+async function verified(req, res) {
+  if (!res || !res.ok) return res
+  const m = await manifest()
+  const want = m[new URL(req.url).pathname]
+  if (want) {
+    const got = sha256hex(new Uint8Array(await res.clone().arrayBuffer()))
+    if (got !== want) throw new Error('integrity mismatch — refusing tampered asset: ' + new URL(req.url).pathname)
+  }
+  return res
+}
+
 self.addEventListener('install', () => self.skipWaiting())
 self.addEventListener('activate', (e) => e.waitUntil((async () => {
-  for (const k of await caches.keys()) if (k !== CACHE) await caches.delete(k) // evict stale caches
+  for (const k of await caches.keys()) if (k !== CACHE) await caches.delete(k)
   await self.clients.claim()
 })()))
 self.addEventListener('fetch', (e) => {
@@ -13,21 +70,19 @@ self.addEventListener('fetch', (e) => {
   if (req.method !== 'GET' || new URL(req.url).origin !== self.location.origin) return
   const isDoc = req.mode === 'navigate' || req.destination === 'document'
   if (isDoc) {
-    // network-first: newest shell → newest hashed assets; fall back to cache offline
     e.respondWith(
-      fetch(req).then((res) => { if (res && res.ok) caches.open(CACHE).then((c) => c.put(req, res.clone())); return res })
-        .catch(() => caches.match(req).then((r) => r || caches.match(req)))
+      fetch(req).then((res) => verified(req, res)).then((res) => { if (res && res.ok) caches.open(CACHE).then((c) => c.put(req, res.clone())); return res })
+        .catch(() => caches.match(req)) // offline OR refused tamper → the last verified cached copy
     )
     return
   }
-  // content-hashed assets are immutable → cache-first (fast); network fills on miss
   e.respondWith(
     caches.open(CACHE).then(async (cache) => {
       const cached = await cache.match(req)
-      if (cached) return cached
-      const res = await fetch(req)
+      if (cached) return cached // already verified when first cached
+      const res = await verified(req, await fetch(req))
       if (res && res.ok) cache.put(req, res.clone())
       return res
-    })
+    }).catch(() => caches.match(req))
   )
 })
