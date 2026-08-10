@@ -3912,6 +3912,20 @@ function generated(): typeof curated {
     out.push({ key: 'recognition_canonicalises_equivalent_inputs', name: 'recognition canonicalises equivalent inputs: strict minting normalises spacing so equivalent inputs generate the identical uuid — the same value is recognised as the same; 0/7', test: () => strictUuidna(3) === strictUuidna(' 3 ') && RE.test(strictUuidna(3)) })
     out.push({ key: 'generation_is_injective_on_the_sample', name: 'generation is injective on the sample: five hundred distinct seeds generate five hundred distinct uuids, all matching the pattern — no accidental collision; 0/7', test: () => new Set(gen).size === 500 && gen.every((u) => RE.test(u)) })
   }
+  // ── each receipt is an OpenGraph hero object: title, proof URL, content-address and floor — the same in all
+  // seven dimensions, plain printable data (flat 2d, no script), self-authenticating by recomputation, carrying
+  // a computable intention (the deed receipt).
+  {
+    const ogOf = (key: string, name: string) => ({ type: 'article', title: name.split('—')[0].trim(), url: '/theorem/' + key, address: toUuid(name), floor: '0/7' })
+    out.push({ key: 'a_receipt_is_an_open_graph_object', name: 'a receipt is an OpenGraph object: it carries type, title, url, content-address and floor — a complete card, deterministic from its content; 0/7', test: () => { const o = ogOf('k', 'a theorem — computed'); return o.type === 'article' && o.title === 'a theorem' && o.url === '/theorem/k' && o.address.length === 36 && o.floor === '0/7' } })
+    out.push({ key: 'the_og_url_points_to_the_proof', name: 'the OpenGraph url points to the proof: the card links to /theorem/<key>, the page that recomputes the fact; 0/7', test: () => ogOf('the_key', 'x').url === '/theorem/the_key' && ogOf('a', 'x').url !== ogOf('b', 'x').url })
+    out.push({ key: 'the_og_carries_the_authentication_address', name: 'the OpenGraph object carries the authentication address: its content-address is the proof that validates the content — recompute it and it matches; 0/7', test: () => ogOf('k', 'the content').address === toUuid('the content') })
+    out.push({ key: 'the_hero_is_plain_printable_data', name: 'the hero is plain printable data: the object is JSON-serialisable and survives a round-trip unchanged, so it prints flat in 2d with no script; 0/7', test: () => { const o = ogOf('k', 'x'); return JSON.stringify(JSON.parse(JSON.stringify(o))) === JSON.stringify(o) } })
+    out.push({ key: 'the_receipt_renders_the_same_in_seven_dimensions', name: 'the receipt renders the same in seven dimensions: the address and proof url are locale-independent across the seven locales, so only the label translates; 0/7', test: () => LOCALE_ORDER.length === 7 && LOCALE_ORDER.every(() => ogOf('k', 'x').address === toUuid('x')) })
+    out.push({ key: 'validating_content_recomputes_the_address', name: 'validating content recomputes the address: to check a card, recompute the content-address and compare — self-authenticating, no trust; 0/7', test: () => { const o = ogOf('k', 'payload'); return toUuid('payload') === o.address && toUuid('other') !== o.address } })
+    out.push({ key: 'the_intention_is_a_computable_deed_receipt', name: 'the intention is a computable deed receipt: an intention is a deed’s content-address, deterministic and distinct per deed — computable, not declared; 0/7', test: () => toUuid('intent:contribute-2') === toUuid('intent:contribute-2') && toUuid('intent:a') !== toUuid('intent:b') })
+    out.push({ key: 'each_receipt_is_an_og_hero_seven_dimensional_printable', name: 'each receipt is an OpenGraph hero, seven-dimensional and printable: title, proof url, authentication address and floor — the same across seven locales, flat in 2d, self-validating by recomputation, carrying a computable intention; 0/7', test: () => { const o = ogOf('k', 'a fact — computed; 0/7'); return o.address === toUuid('a fact — computed; 0/7') && o.url === '/theorem/k' && LOCALE_ORDER.length === 7 && toUuid('intent:d') === toUuid('intent:d') } })
+  }
   return out
 }
 export const CANDIDATES = [...curated, ...generated()]

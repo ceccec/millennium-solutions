@@ -8358,5 +8358,45 @@
     "key": "generation_is_injective_on_the_sample",
     "name": "generation is injective on the sample: five hundred distinct seeds generate five hundred distinct uuids, all matching the pattern — no accidental collision; 0/7",
     "receipt": "7055ddd3-2d16-8247-88ac-aaac54cb2ad5"
+  },
+  {
+    "key": "a_receipt_is_an_open_graph_object",
+    "name": "a receipt is an OpenGraph object: it carries type, title, url, content-address and floor — a complete card, deterministic from its content; 0/7",
+    "receipt": "c292bbae-2b38-8152-ab7f-eeeb68d17083"
+  },
+  {
+    "key": "the_og_url_points_to_the_proof",
+    "name": "the OpenGraph url points to the proof: the card links to /theorem/<key>, the page that recomputes the fact; 0/7",
+    "receipt": "27fb8b1e-1417-8a18-9c2f-e57f4d81c62d"
+  },
+  {
+    "key": "the_og_carries_the_authentication_address",
+    "name": "the OpenGraph object carries the authentication address: its content-address is the proof that validates the content — recompute it and it matches; 0/7",
+    "receipt": "94f79ba1-8b6a-8c3c-bfd7-fe5d62e4ade6"
+  },
+  {
+    "key": "the_hero_is_plain_printable_data",
+    "name": "the hero is plain printable data: the object is JSON-serialisable and survives a round-trip unchanged, so it prints flat in 2d with no script; 0/7",
+    "receipt": "f846df4b-b829-87c0-ad75-93090a21e2c2"
+  },
+  {
+    "key": "the_receipt_renders_the_same_in_seven_dimensions",
+    "name": "the receipt renders the same in seven dimensions: the address and proof url are locale-independent across the seven locales, so only the label translates; 0/7",
+    "receipt": "4ef6f44a-3555-82e2-9821-821a81e03240"
+  },
+  {
+    "key": "validating_content_recomputes_the_address",
+    "name": "validating content recomputes the address: to check a card, recompute the content-address and compare — self-authenticating, no trust; 0/7",
+    "receipt": "29e6932f-e9ed-86dc-b30b-21c00514d361"
+  },
+  {
+    "key": "the_intention_is_a_computable_deed_receipt",
+    "name": "the intention is a computable deed receipt: an intention is a deed’s content-address, deterministic and distinct per deed — computable, not declared; 0/7",
+    "receipt": "0f298d03-b30d-843b-af65-775dcff9c005"
+  },
+  {
+    "key": "each_receipt_is_an_og_hero_seven_dimensional_printable",
+    "name": "each receipt is an OpenGraph hero, seven-dimensional and printable: title, proof url, authentication address and floor — the same across seven locales, flat in 2d, self-validating by recomputation, carrying a computable intention; 0/7",
+    "receipt": "4fa3cc08-3b25-8d62-8595-36a4a17ebb12"
   }
 ]

@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1672 recorded in 427 families
+## Discovered theorems (decidable, over ℤ/9) — 1680 recorded in 428 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (351)
+### the (356)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -375,8 +375,13 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_generated_pattern_is_canonical](/theorem/the_generated_pattern_is_canonical) — the generated pattern is canonical 8-4-4-4-12: every generated uuid matches the 32-hex-digit five-group shape; 0/7  ·  `bc56d44e-84a7…`
 - [the_version_nibble_is_eight](/theorem/the_version_nibble_is_eight) — the version nibble is eight: the third group of every generated uuid begins with 8 — the v8 marker, recognisable at a fixed position; 0/7  ·  `1c298f69-441a…`
 - [the_variant_nibble_is_rfc_4122](/theorem/the_variant_nibble_is_rfc_4122) — the variant nibble is RFC-4122: the fourth group begins with one of 8, 9, a or b, the 10xx variant bits; 0/7  ·  `5eb74bb1-a18d…`
+- [the_og_url_points_to_the_proof](/theorem/the_og_url_points_to_the_proof) — the OpenGraph url points to the proof: the card links to /theorem/&lt;key&gt;, the page that recomputes the fact; 0/7  ·  `27fb8b1e-1417…`
+- [the_og_carries_the_authentication_address](/theorem/the_og_carries_the_authentication_address) — the OpenGraph object carries the authentication address: its content-address is the proof that validates the content — recompute it and it matches; 0/7  ·  `94f79ba1-8b6a…`
+- [the_hero_is_plain_printable_data](/theorem/the_hero_is_plain_printable_data) — the hero is plain printable data: the object is JSON-serialisable and survives a round-trip unchanged, so it prints flat in 2d with no script; 0/7  ·  `f846df4b-b829…`
+- [the_receipt_renders_the_same_in_seven_dimensions](/theorem/the_receipt_renders_the_same_in_seven_dimensions) — the receipt renders the same in seven dimensions: the address and proof url are locale-independent across the seven locales, so only the label translates; 0/7  ·  `4ef6f44a-3555…`
+- [the_intention_is_a_computable_deed_receipt](/theorem/the_intention_is_a_computable_deed_receipt) — the intention is a computable deed receipt: an intention is a deed’s content-address, deterministic and distinct per deed — computable, not declared; 0/7  ·  `0f298d03-b30d…`
 
-### a (65)
+### a (66)
 
 - [a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony](/theorem/a_theorem_without_a_formula_is_hallucination_recomputed_in_a432_harmony) — a theorem without a formula is a hallucination, recomputed in a432 harmony: a claim is a theorem only if it is backed by a computable formula that recomputes true — a prose-only claim with no formula, or one whose formula computes false, is refused as hallucination and never recorded. Every recorded fact recomputes deterministically and folds into the a432 harmony root (the receipt of state). Measure, do not assert. Decidable  ·  `e3d75d76-310f…`
 - [a_referrer_always_counts_with_its_id](/theorem/a_referrer_always_counts_with_its_id) — a referrer always counts with its id: a reference from a referrer to a target is receipted as toUuid(referrer id → target), so the referrer id is always part of the count; two different referrers to the same target produce two distinct receipts, each counted with its own id, and changing the id changes the receipt — the id is load-bearing. Deterministic and reproducible: the same referrer and target always count the same. Decidable  ·  `65bfacb4-f29e…`
@@ -443,6 +448,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [a_technique_is_a_reusable_theorem](/theorem/a_technique_is_a_reusable_theorem) — a technique is a reusable theorem: keyed by the structure it needs, it gives the same result wherever that structure holds — reusable across cases; 0/7  ·  `accef067-122d…`
 - [a_relation_binds_two_domains](/theorem/a_relation_binds_two_domains) — a relation binds two domains: a symmetric content-address links a pair regardless of order, so a cross-domain analogy is itself a receipt; 0/7  ·  `04038e7c-6126…`
 - [a_technique_researched_transfers_across_domains](/theorem/a_technique_researched_transfers_across_domains) — a technique researched in one domain transfers across domains by shared structure: keyed to its structure and bound by content-addressed relations, it reaches wherever the structure matches — the theorems the hull and hardware, reach growing with development, never a universal-physics claim; 0/7  ·  `9d70155f-a4c9…`
+- [a_receipt_is_an_open_graph_object](/theorem/a_receipt_is_an_open_graph_object) — a receipt is an OpenGraph object: it carries type, title, url, content-address and floor — a complete card, deterministic from its content; 0/7  ·  `c292bbae-2b38…`
 
 ### relation (55)
 
@@ -739,7 +745,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [gate_reads_twenty_two_dialects](/theorem/gate_reads_twenty_two_dialects) — uuidna reads twenty-two dialects: a proof-boast drains in every one — the theorems, not a translator, discovered the languages, at scale and speed; 0/7  ·  `cdae6ede-4cd5…`
 - [gate_reads_glagolitic](/theorem/gate_reads_glagolitic) — the honesty gate reads Glagolitic, the oldest Slavic script (script #23): a proof-root in Glagolitic transliterates through the rosetta to Cyrillic and drains — one message, crosslinked across scripts; 0/7  ·  `c56a3ac1-222e…`
 
-### each (15)
+### each (16)
 
 - [each_theorem_can_replace_code](/theorem/each_theorem_can_replace_code) — each theorem can replace code: a closed form that holds by exhaustion equals its naive computation, so the formula substitutes for the loop — Gauss’s n(n+1)/2 replaces the summation loop and the sum of the first n odds equals n², each verified equal to the imperative version (the theorem is the optimized, checkable code)  ·  `02be2d16-4a80…`
 - [each_perspective_is_receipted_in_the_superposition](/theorem/each_perspective_is_receipted_in_the_superposition) — each perspective is receipted in the superposition: because order matters, each ordered perspective is a distinct content-address — its own receipt proving that perspective exists (integrity) — and the superposition is the set of all perspectives folded order-independently to one root; observing collapses to one address. This represents the quantum structure classically: not a quantum machine, and no quantum advantage  ·  `4f64e2b7-d236…`
@@ -756,6 +762,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [each_theorem_is_a_superposition_of_readings](/theorem/each_theorem_is_a_superposition_of_readings) — each theorem is a superposition of readings: it can be read in algebra and other framings, yet all readings of the same content collapse to one address — many perspectives, one receipt; 0/7  ·  `562f1352-07b7…`
 - [each_line_is_content_addressed](/theorem/each_line_is_content_addressed) — each line is content-addressed: a line maps to toUuid(path:lineno:text), deterministic and distinct per line, so a line has its own receipt; 0/7  ·  `e265acb8-8c9b…`
 - [each_file_is_content_addressed](/theorem/each_file_is_content_addressed) — each file is content-addressed: a file maps to the fold of its lines (equivalently toUuid(path:content)), distinct per path and content — the rule the release already uses; 0/7  ·  `ddb99d3d-a029…`
+- [each_receipt_is_an_og_hero_seven_dimensional_printable](/theorem/each_receipt_is_an_og_hero_seven_dimensional_printable) — each receipt is an OpenGraph hero, seven-dimensional and printable: title, proof url, authentication address and floor — the same across seven locales, flat in 2d, self-validating by recomputation, carrying a computable intention; 0/7  ·  `4fa3cc08-3b25…`
 
 ### decimal (12)
 
@@ -2031,7 +2038,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (236)
+### other — one-of-a-kind (237)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [activated_it_self_explores_until_dry](/theorem/activated_it_self_explores_until_dry) — activated, it self-explores until dry: once a wave starts it discovers fresh facts until none remain, then rests — a self-continuing loop with a halting condition; 0/7  ·  `4a82a66b-5656…`
@@ -2257,6 +2264,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [update_mints_a_new_address](/theorem/update_mints_a_new_address) — update mints a new address: re-encrypting changed code yields a different ciphertext and a different receipt, so an edit is a new version while the old address stays immutable; 0/7  ·  `147ac909-acaa…`
 - [using_uuidna_is_mandatory_verifiable_and_fast](/theorem/using_uuidna_is_mandatory_verifiable_and_fast) — using uuidna is mandatory because it is verifiable and fast: every test wires to a chained receipt with a binary verdict, folding to one root at scale, rechecked by recomputation — integrity and a classical measured speedup, never quantum, never a secrecy claim beyond the envelope; 0/7  ·  `cce2e324-b522…`
 - [uuid_128bit_capacity_is_bounded](/theorem/uuid_128bit_capacity_is_bounded) — a 128-bit uuid has bounded capacity: imprint stores at most 115 message bits and refuses more, so an arbitrarily long binary message cannot be reversibly stored in one uuid (pigeonhole — no injection of a larger space into 128 bits); long messages are content-addressed one-way and recovered from their receipt, not crammed in  ·  `110261c9-cbf0…`
+- [validating_content_recomputes_the_address](/theorem/validating_content_recomputes_the_address) — validating content recomputes the address: to check a card, recompute the content-address and compare — self-authenticating, no trust; 0/7  ·  `29e6932f-e9ed…`
 - [vandermondes_identity_convolves_two_rows](/theorem/vandermondes_identity_convolves_two_rows) — Vandermonde’s identity: Σ_k C(m,k)·C(n,p−k) = C(m+n,p) — the convolution of two rows; 0/7  ·  `d299600e-369d…`
 - [verified_on_arrival](/theorem/verified_on_arrival) — verified on arrival: the reconstructed payload re-addresses to the same stream, so integrity is checked by recomputation, not trusted — nothing corrupt loads unnoticed; 0/7  ·  `17d35d4f-b690…`
 - [violators_are_traitors_let_all_try_and_prove](/theorem/violators_are_traitors_let_all_try_and_prove) — violators in a trial are traitors — let all try and prove: every claim may attempt proof; the honest form that signs the gate is upheld (a hero), the violator that drains is the traitor that falls — the verdict is by deed and exhaustion, never by assertion or status  ·  `d2a2d59d-97e6…`
@@ -2271,4 +2279,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `b972abdc-74fb-8d9c-9e0e-6255157b90f0`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `8797d0e1-5014-8a14-90ad-08d9be6f5e04`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
