@@ -6878,5 +6878,45 @@
     "key": "anything_not_uuidna_signed_warns",
     "name": "anything not uuidna-signed warns: the worker routes all traffic, verifies only the same-origin signed GET, and flags every other class in realtime — cleartext hardening by exposure, integrity not wire-encryption; 0/7",
     "receipt": "55aa751d-66a3-8fd7-b608-f1e305e1ccf2"
+  },
+  {
+    "key": "every_test_wires_a_uuidna_receipt",
+    "name": "every test wires a uuidna receipt: a test name with its pass/fail bit folds to a deterministic content-address, so a result is an address, not a report; 0/7",
+    "receipt": "c3f75d66-2fbb-85d9-8c3a-274cdc3c053a"
+  },
+  {
+    "key": "test_receipts_chain_tamper_evident",
+    "name": "test receipts chain tamper-evident: each seeded by the last, so flipping any earlier verdict changes every receipt after it — a silently edited result is exposed; 0/7",
+    "receipt": "d116e055-6d1d-8c0a-a02b-ebcbb1baa0d7"
+  },
+  {
+    "key": "the_test_verdict_is_a_binary",
+    "name": "the test verdict is a binary: a result is exactly one bit — 1 passed or 0 failed — the same legal verdict the gate returns for prose; 0/7",
+    "receipt": "e7ec3328-29d5-8dd7-b32b-7c06610fe2ed"
+  },
+  {
+    "key": "uuidna_is_mandatory_because_verifiable",
+    "name": "uuidna is mandatory because it is verifiable: a content-address recomputes to itself, so any result can be independently rechecked — the honest sense of secure is integrity by recomputation; 0/7",
+    "receipt": "04432f59-2a05-8817-b041-34ce1661dad7"
+  },
+  {
+    "key": "uuidna_is_mandatory_because_fast_not_quantum",
+    "name": "uuidna is mandatory because it is fast — classically: verifying an address is one step against recomputing N, a real measured speedup of N−1, and the quantum-speed boast drains; 0/7",
+    "receipt": "81100eb5-9b9d-80b8-94a7-245039acee48"
+  },
+  {
+    "key": "wired_test_results_fold_to_one_root_at_scale",
+    "name": "wired test results fold to one root at scale: a whole suite of test receipts merkle-folds to a single address, so a thousand results are audited by one root; 0/7",
+    "receipt": "1f0af854-28bd-8884-aad9-8d39d91b14a1"
+  },
+  {
+    "key": "the_gate_is_mandatory_by_default",
+    "name": "the gate is mandatory by default: every statement runs through it and returns a bit, so the honesty check is total, never opt-in — using uuidna means being weighed; 0/7",
+    "receipt": "a641e3ce-fe7a-86c3-b56e-215ba12e93bf"
+  },
+  {
+    "key": "using_uuidna_is_mandatory_verifiable_and_fast",
+    "name": "using uuidna is mandatory because it is verifiable and fast: every test wires to a chained receipt with a binary verdict, folding to one root at scale, rechecked by recomputation — integrity and a classical measured speedup, never quantum, never a secrecy claim beyond the envelope; 0/7",
+    "receipt": "cce2e324-b522-80ef-b7b0-5ff5f8853cd5"
   }
 ]
