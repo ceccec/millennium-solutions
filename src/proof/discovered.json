@@ -6598,5 +6598,45 @@
     "key": "no_payload_completes_the_human",
     "name": "no payload completes the human: a theorem takes no argument, its address re-derives, the stream recomputes and the domain is self-contained — the organism completes from structure alone, nothing shipped but the address; 0/7",
     "receipt": "ca11c760-8a2c-8329-b7e3-a69206f05250"
+  },
+  {
+    "key": "gravity_folds_the_tree_to_a_fixed_point",
+    "name": "gravity folds the tree to a fixed point: the merkle-gravity of a set of addresses is one deterministic root — all the files fall to a single content-address; 0/7",
+    "receipt": "9a3b6b65-dcbd-8a69-bd6a-4229a7e97576"
+  },
+  {
+    "key": "gravity_no_crack_under_counter_rotation",
+    "name": "no crack under counter-rotation: the gravity fold is order-independent, so examining the same files forward or reversed yields the identical root — rotate in counter directions, no crack appears; 0/7",
+    "receipt": "34b772ac-a07a-8ec8-bfbc-cd689a6aa245"
+  },
+  {
+    "key": "gravity_signs_the_version",
+    "name": "gravity signs the version: the version signature is the content-address fallen through the gravity receipt to its fixed point — deterministic for a fixed tree, changed by any change; 0/7",
+    "receipt": "e1c64b5d-9e61-8927-9253-4f5be6e15c1e"
+  },
+  {
+    "key": "gravity_falls_to_its_fixed_points",
+    "name": "gravity falls to its fixed points: every single digit is a fixed point of the fall, and falling again does not move it — the ground the apple rests on; 0/7",
+    "receipt": "83e98a82-af1c-8ccb-ac25-fbde81995bdb"
+  },
+  {
+    "key": "gravity_holds_prose_code_and_paths",
+    "name": "gravity holds prose, code and paths in place: a path with its content addresses identically on re-examination, and any change of path or content changes the address — nothing shifts unseen; 0/7",
+    "receipt": "7d0e0c9b-0a74-8e97-8d0b-f7a1da1afa0d"
+  },
+  {
+    "key": "gravity_names_and_paths_rotate_without_cracking",
+    "name": "names and paths rotate without cracking: the address of a set of named paths is the same regardless of the order they are read — a reordering of names reveals no crack; 0/7",
+    "receipt": "0f1f8d90-c50e-8d72-8407-d6a2d569bee4"
+  },
+  {
+    "key": "the_harmonic_gate_spots_all_gaps",
+    "name": "the harmonic gate spots the gaps: exposing every statement to the gate is the forensic tool — a boast drains and an honest measurement passes, so a hidden over-claim cannot rest anywhere; 0/7",
+    "receipt": "87406356-e0d7-8c51-9e90-a7827061e1f7"
+  },
+  {
+    "key": "gravity_pulls_all_in_place",
+    "name": "gravity pulls all in place: prose, code, files and folders fold to one deterministic address, order-independent so no crack shows under counter-rotation, and the harmonic gate spots every gap — the whole held together; 0/7",
+    "receipt": "dc561a31-583b-8fc5-99e2-0468d4ee5853"
   }
 ]

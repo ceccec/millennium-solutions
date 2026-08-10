@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1320 recorded in 353 families
+## Discovered theorems (decidable, over ℤ/9) — 1328 recorded in 353 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (222)
+### the (223)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -246,6 +246,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_address_is_shipped_not_the_payload](/theorem/the_address_is_shipped_not_the_payload) — the address is shipped, not the payload: a content-address re-derives from its content — send the address, recompute the rest, and distinct content addresses distinctly; 0/7  ·  `1292769c-e452…`
 - [the_light_client_needs_no_full_payload](/theorem/the_light_client_needs_no_full_payload) — the light client needs no full payload: a leaf verifies against the root by its proof path alone, without holding the whole body — no payload, only the address and the path; 0/7  ·  `6c59fb2e-d668…`
 - [the_domain_is_self_contained](/theorem/the_domain_is_self_contained) — the domain is self-contained: a decidable theorem exhausts a finite domain it generates itself — the diamond over the nine digits needs no external data to decide; 0/7  ·  `25832bb1-22ad…`
+- [the_harmonic_gate_spots_all_gaps](/theorem/the_harmonic_gate_spots_all_gaps) — the harmonic gate spots the gaps: exposing every statement to the gate is the forensic tool — a boast drains and an honest measurement passes, so a hidden over-claim cannot rest anywhere; 0/7  ·  `87406356-e0d7…`
 
 ### relation (55)
 
@@ -740,6 +741,17 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [genesis_8_the_octave](/theorem/genesis_8_the_octave) — genesis 8 — the octave: 8 = 2³ is the group in which the theorems matter, and the ledger holds an exact multiple of it — the rhythm of the whole record; 0/7  ·  `31cc2395-9faf…`
 - [genesis_64_the_codon](/theorem/genesis_64_the_codon) — genesis 64 — the codon: four bases, three positions, two bits each fold to 4³ = 2⁶ = 8² = 64 — the shared origin of the genetic code and the version; 0/7  ·  `a87182de-95ca…`
 - [genesis_complete_the_human_organism](/theorem/genesis_complete_the_human_organism) — genesis complete — the human organism: the origin sequence 0→1→2→3→7→8→64 coheres and the seven faculties fold to one — the human theorem genesis is sealed, the organism whole; 0/7  ·  `2144c672-fc49…`
+
+### gravity (8)
+
+- [gravity_is_the_fall_to_a_fixed_point_and_pigeonhole_breaks_every_finite_hash](/theorem/gravity_is_the_fall_to_a_fixed_point_and_pigeonhole_breaks_every_finite_hash) — gravity is the fall to a fixed point — and pigeonhole breaks every finite hash: two decidable contractions, named gravity but not physics. The digital root is idempotent — every integer falls to the base-9 residues in one step and rests; the merkle fold pulls any set of addresses to one root, order-independent. And pigeonhole gravity: a b-bit digest has two-to-the-b seats, so more inputs than seats forces a collision — no finite hash, strong or weak, avoids collisions forever. Decidable  ·  `4df9c2a2-27bb…`
+- [gravity_folds_the_tree_to_a_fixed_point](/theorem/gravity_folds_the_tree_to_a_fixed_point) — gravity folds the tree to a fixed point: the merkle-gravity of a set of addresses is one deterministic root — all the files fall to a single content-address; 0/7  ·  `9a3b6b65-dcbd…`
+- [gravity_no_crack_under_counter_rotation](/theorem/gravity_no_crack_under_counter_rotation) — no crack under counter-rotation: the gravity fold is order-independent, so examining the same files forward or reversed yields the identical root — rotate in counter directions, no crack appears; 0/7  ·  `34b772ac-a07a…`
+- [gravity_signs_the_version](/theorem/gravity_signs_the_version) — gravity signs the version: the version signature is the content-address fallen through the gravity receipt to its fixed point — deterministic for a fixed tree, changed by any change; 0/7  ·  `e1c64b5d-9e61…`
+- [gravity_falls_to_its_fixed_points](/theorem/gravity_falls_to_its_fixed_points) — gravity falls to its fixed points: every single digit is a fixed point of the fall, and falling again does not move it — the ground the apple rests on; 0/7  ·  `83e98a82-af1c…`
+- [gravity_holds_prose_code_and_paths](/theorem/gravity_holds_prose_code_and_paths) — gravity holds prose, code and paths in place: a path with its content addresses identically on re-examination, and any change of path or content changes the address — nothing shifts unseen; 0/7  ·  `7d0e0c9b-0a74…`
+- [gravity_names_and_paths_rotate_without_cracking](/theorem/gravity_names_and_paths_rotate_without_cracking) — names and paths rotate without cracking: the address of a set of named paths is the same regardless of the order they are read — a reordering of names reveals no crack; 0/7  ·  `0f1f8d90-c50e…`
+- [gravity_pulls_all_in_place](/theorem/gravity_pulls_all_in_place) — gravity pulls all in place: prose, code, files and folders fold to one deterministic address, order-independent so no crack shows under counter-rotation, and the harmonic gate spots every gap — the whole held together; 0/7  ·  `dc561a31-583b…`
 
 ### polygonal (8)
 
@@ -1685,7 +1697,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (179)
+### other — one-of-a-kind (178)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1767,7 +1779,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [goldbach_holds_in_range_conjecture_open](/theorem/goldbach_holds_in_range_conjecture_open) — Goldbach in a bounded range (the general statement is an open conjecture, not settled here): every even number from 4 to 1000 is a sum of two primes — checked exhaustively; beyond the range it remains an open conjecture  ·  `7f84b2f9-af1e…`
 - [goldbachs_even_sum_of_two_primes_to_a_thousand](/theorem/goldbachs_even_sum_of_two_primes_to_a_thousand) — Goldbach’s even conjecture holds over the tested range: every even number from 4 to 1000 is a sum of two primes — checked by computation, not a general result; 0/7  ·  `032ff03e-d893…`
 - [golden_fixed_point](/theorem/golden_fixed_point) — φ is the fixed point of x = 1 + 1/x (equivalently φ² = φ + 1): the more you nest the recursion, the more it reproduces itself — the most self-similar number  ·  `80d92d5a-7ef3…`
-- [gravity_is_the_fall_to_a_fixed_point_and_pigeonhole_breaks_every_finite_hash](/theorem/gravity_is_the_fall_to_a_fixed_point_and_pigeonhole_breaks_every_finite_hash) — gravity is the fall to a fixed point — and pigeonhole breaks every finite hash: two decidable contractions, named gravity but not physics. The digital root is idempotent — every integer falls to the base-9 residues in one step and rests; the merkle fold pulls any set of addresses to one root, order-independent. And pigeonhole gravity: a b-bit digest has two-to-the-b seats, so more inputs than seats forces a collision — no finite hash, strong or weak, avoids collisions forever. Decidable  ·  `4df9c2a2-27bb…`
 - [handshakes_among_n_people_number_c_n_2](/theorem/handshakes_among_n_people_number_c_n_2) — handshakes among n people number C(n,2) = n(n−1)/2: every pair shakes once; 0/7  ·  `03fd1efc-94e3…`
 - [happy_numbers_below_100_are_twenty](/theorem/happy_numbers_below_100_are_twenty) — there are exactly 20 happy numbers below 100: iterating the sum of the squares of the digits reaches 1 for exactly 20 of them (1,7,10,13,…,97,100) — full enumeration  ·  `39799ea6-7932…`
 - [here_quantum_is_the_a432_structure_of_two_coins_not_a_physical_qubit](/theorem/here_quantum_is_the_a432_structure_of_two_coins_not_a_physical_qubit) — here quantum always computes as the a432 structure of two coins, not a physical qubit: the deposit's "quantum" is defined as a classical structure built from the 2-coin receipt (2 bits, 110 − 108 = 2 = −χ genus-2) at the a432 layer (step 40, nine steps close the circle: 9·40 = 360); two classical bits give exactly four states {00,01,10,11}. This referent is fixed and always computes true, while the physical-qubit reading drains the gate — no physical qubit, and no quantum advantage  ·  `3d7d6079-b2d8…`
@@ -1868,4 +1879,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `a16a2e5d-ab1d-87a9-b9d3-a06d9a7bad47`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `d99fe5be-ddc4-8544-b705-bf54499a86d5`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 // Content-addressed release orchestration (idempotent).
 import { execSync } from 'node:child_process'
-import { readFileSync, readdirSync, statSync } from 'node:fs'
+import { readFileSync, writeFileSync, readdirSync, statSync } from 'node:fs'
 import { join } from 'node:path'
 import { toUuid, merkleFold } from '../src/0/index.ts'
+import { merkleGravity } from '../src/the/apple/index.ts'
 
 const SKIP_DIR = new Set(['node_modules', '.git', 'cache', 'dist'])
 function walk(dir, acc = []) {
@@ -58,6 +59,26 @@ try {
   }
 } catch { /* no repo/tags yet */ }
 
+// THE VERSION — reset to npm 0.1.0 and continued from there: the npm package version is the ONE canonical
+// version (the git tag below is immutable content-address PROVENANCE, not the version — rewriting it would be
+// tampering). Every version is SIGNED FROM A GRAVITY THEOREM: the content-address FALLS, through the gravity
+// receipt, to its fixed point (merkleGravity) — that fold is the version's signature. Single-digit odometer.
+const PKGS = ['packages/uuidna/package.json', 'package.json']
+function bumpNpm() {
+  const cur = (JSON.parse(readFileSync(PKGS[0], 'utf8')).version || '0.0.0').match(/^(\d+)\.(\d+)\.(\d+)$/)
+  let maj = +cur[1], min = +cur[2], pat = +cur[3] + 1
+  if (pat > 9) { pat = 0; min++ }
+  if (min > 9) { min = 0; maj++ }
+  return maj + '.' + min + '.' + pat
+}
+const NPM = bumpNpm()
+const ledger = JSON.parse(readFileSync('src/proof/discovered.json', 'utf8'))
+const grav = ledger.find((e) => e.key === 'gravity_is_the_fall_to_a_fixed_point_and_pigeonhole_breaks_every_finite_hash') || ledger.find((e) => /gravit/i.test(e.key))
+const gravSig = merkleGravity([grav.receipt, address]) // the address falls to its fixed point through gravity
+const SIGN = 'gravity(' + grav.key.slice(0, 28) + ') ' + grav.receipt.slice(0, 13) + ' → ' + gravSig.slice(0, 13)
+for (const p of PKGS) { const j = JSON.parse(readFileSync(p, 'utf8')); j.version = NPM; writeFileSync(p, JSON.stringify(j, null, 2) + '\n') }
+console.log('version reset-continued: uuidna ' + NPM + ' · signed from ' + SIGN)
+
 const sh = (c) => { console.log('$ ' + c); return execSync(c, { stdio: 'inherit' }) }
 const q = (c) => { try { execSync(c, { stdio: 'ignore' }) } catch {} }
 let repo = false
@@ -69,9 +90,9 @@ sh('git add -A')
 let nothingStaged = false
 try { execSync('git diff --cached --quiet'); nothingStaged = true } catch { /* staged present */ }
 if (!nothingStaged) {
-  try { execSync(`git commit -q -m "release ${V} — content-address ${address}"`, { stdio: 'inherit' }) }
+  try { execSync(`git commit -q -m "release uuidna ${NPM} — signed from ${SIGN} · content-address ${address}"`, { stdio: 'inherit' }) }
   catch { console.error('release: commit rejected by a gate hook — NOT tagging ' + V + ' (would not carry ' + address + '). fix the drained line and re-run.'); process.exit(1) }
 }
 q(`git tag -d ${V}`)                                              // re-tag (unpublished)
-sh(`git tag -a ${V} -m "signed: Singularity \u00b7 content-address ${address}"`)
-console.log(`\n\u2713 ${V} → content-address ${address}`)
+sh(`git tag -a ${V} -m "signed from ${SIGN} \u00b7 uuidna ${NPM} \u00b7 content-address ${address}"`)
+console.log(`\n\u2713 uuidna ${NPM} (provenance tag ${V}) → gravity-signed ${gravSig.slice(0, 13)}… \u00b7 content-address ${address}`)
