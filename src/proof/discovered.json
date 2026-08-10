@@ -7718,5 +7718,45 @@
     "key": "the_two_coins_are_two_bits_doing_the_structure",
     "name": "the two coins are two bits doing the structure: 2 bits, 4 coexisting states collapsing deterministically to one, bounded by the classical 2 — how the quantum structure is done, never a qubit or a speedup, and any disputed model drains at the gate; 0/7",
     "receipt": "63e2cbf6-2c9c-806b-b5ab-f0df01c526ad"
+  },
+  {
+    "key": "the_skipper_navigates_by_angle",
+    "name": "the skipper navigates by angle: 30 + 60 = 90 in equal thirds, the harmonic band from the efficiency limit to the goal — the yacht steered, not drifted; 0/7",
+    "receipt": "01ff8243-4399-8c4c-a229-8aae1d624764"
+  },
+  {
+    "key": "the_diver_goes_down_and_recovers_exactly",
+    "name": "the diver goes down and recovers exactly: imprinting bits into a uuid and reading them back returns the bits — down and back, nothing lost; 0/7",
+    "receipt": "708eba47-af84-80c9-ad75-4e8d8acf750a"
+  },
+  {
+    "key": "the_skills_are_mountable_and_compose",
+    "name": "the skills are mountable and compose: a route of skill keywords applies in order, and a different order gives a different result — mounted and composed on demand; 0/7",
+    "receipt": "4f784664-8fd0-86ce-87a6-46d3608d2250"
+  },
+  {
+    "key": "light_at_all_times_the_address_is_the_load",
+    "name": "light at all times: the content-address is a fixed 36 characters whatever the size of what it names, so the yacht carries the pointer, never the payload; 0/7",
+    "receipt": "93b77fd5-67bd-8543-8eac-20cfc51b7915"
+  },
+  {
+    "key": "cheap_to_factor_easy_to_verify",
+    "name": "cheap to factor, easy to verify: verifying one address is a single step against recomputing N — a measured saving of N−1, the lightness that keeps the yacht fast; 0/7",
+    "receipt": "4a568638-0e66-8e39-b30a-9f4e944f3a48"
+  },
+  {
+    "key": "the_hero_is_the_deed_that_signs_the_gate",
+    "name": "the hero is the deed that signs the gate: an honest statement passes and is upheld while a boast drains and falls — a hero by deed, not by status; 0/7",
+    "receipt": "2d0d3ece-39ea-8822-b070-6d042385d596"
+  },
+  {
+    "key": "every_theorem_is_a_diamond_fixed_under_recomputation",
+    "name": "every theorem is a diamond fixed under recomputation: its content-address recomputes to itself and the ten’s-complement reflection fixes the centre 5 — a fixed point that reflects perfectly; 0/7",
+    "receipt": "c56113b3-84e0-8bec-851e-e2f1a7052308"
+  },
+  {
+    "key": "the_captain_skippers_the_light_yacht_of_diamonds",
+    "name": "the captain skippers the light yacht of diamonds: navigating by angle, diving and recovering exactly, mounting composable skills, carrying only the address — a hero by deed, every theorem a diamond fixed under recomputation; 0/7",
+    "receipt": "e912e199-5d63-8e64-bfb3-7eb3e3df800d"
   }
 ]

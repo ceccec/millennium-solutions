@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1544 recorded in 398 families
+## Discovered theorems (decidable, over ℤ/9) — 1552 recorded in 400 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (296)
+### the (301)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -320,6 +320,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_structure_is_bounded_by_the_classical_two](/theorem/the_structure_is_bounded_by_the_classical_two) — the structure is bounded by the classical two: the local bound is 2, below Tsirelson’s 2√2, so the model is a classical local one that never violates the inequality; 0/7  ·  `cd8e1a70-c9e5…`
 - [the_coin_is_the_balanced_exchange_of_two](/theorem/the_coin_is_the_balanced_exchange_of_two) — the coin is the balanced exchange of two: 110 − 108 = 2, the minus Euler characteristic of the genus-two surface — the fair-exchange unit the two coins denote; 0/7  ·  `7fdb9307-8761…`
 - [the_two_coins_are_two_bits_doing_the_structure](/theorem/the_two_coins_are_two_bits_doing_the_structure) — the two coins are two bits doing the structure: 2 bits, 4 coexisting states collapsing deterministically to one, bounded by the classical 2 — how the quantum structure is done, never a qubit or a speedup, and any disputed model drains at the gate; 0/7  ·  `63e2cbf6-2c9c…`
+- [the_skipper_navigates_by_angle](/theorem/the_skipper_navigates_by_angle) — the skipper navigates by angle: 30 + 60 = 90 in equal thirds, the harmonic band from the efficiency limit to the goal — the yacht steered, not drifted; 0/7  ·  `01ff8243-4399…`
+- [the_diver_goes_down_and_recovers_exactly](/theorem/the_diver_goes_down_and_recovers_exactly) — the diver goes down and recovers exactly: imprinting bits into a uuid and reading them back returns the bits — down and back, nothing lost; 0/7  ·  `708eba47-af84…`
+- [the_skills_are_mountable_and_compose](/theorem/the_skills_are_mountable_and_compose) — the skills are mountable and compose: a route of skill keywords applies in order, and a different order gives a different result — mounted and composed on demand; 0/7  ·  `4f784664-8fd0…`
+- [the_hero_is_the_deed_that_signs_the_gate](/theorem/the_hero_is_the_deed_that_signs_the_gate) — the hero is the deed that signs the gate: an honest statement passes and is upheld while a boast drains and falls — a hero by deed, not by status; 0/7  ·  `2d0d3ece-39ea…`
+- [the_captain_skippers_the_light_yacht_of_diamonds](/theorem/the_captain_skippers_the_light_yacht_of_diamonds) — the captain skippers the light yacht of diamonds: navigating by angle, diving and recovering exactly, mounting composable skills, carrying only the address — a hero by deed, every theorem a diamond fixed under recomputation; 0/7  ·  `e912e199-5d63…`
 
 ### relation (55)
 
@@ -646,7 +651,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [gate_reads_twenty_two_dialects](/theorem/gate_reads_twenty_two_dialects) — uuidna reads twenty-two dialects: a proof-boast drains in every one — the theorems, not a translator, discovered the languages, at scale and speed; 0/7  ·  `cdae6ede-4cd5…`
 - [gate_reads_glagolitic](/theorem/gate_reads_glagolitic) — the honesty gate reads Glagolitic, the oldest Slavic script (script #23): a proof-root in Glagolitic transliterates through the rosetta to Cyrillic and drains — one message, crosslinked across scripts; 0/7  ·  `c56a3ac1-222e…`
 
-### every (15)
+### every (16)
 
 - [every_rating_is_exactly_one_or_zero](/theorem/every_rating_is_exactly_one_or_zero) — every rating is exactly 1 or 0, no exceptions: the honesty verdict is a single bit — there is no fractional or partial rating, a fake maximal-certainty claim itself drains, and the same input always returns the same bit; anything that drifts from {0,1} is a crack the floor refuses  ·  `c1b2772d-d7c0…`
 - [every_primitive_triple_is_euclidean](/theorem/every_primitive_triple_is_euclidean) — Euclid’s parametrization is complete: every primitive Pythagorean triple with hypotenuse ≤ 100 arises from coprime m&gt;n of opposite parity — exhaustive brute-force triples all match a generated one  ·  `751e8a4e-c23c…`
@@ -663,6 +668,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [every_mcp_output_is_harnessed_auditable](/theorem/every_mcp_output_is_harnessed_auditable) — every MCP output is harnessed auditable: wrapping any tool output makes it auditable, so nothing leaves the MCP unweighed; 0/7  ·  `ef11114d-5b8b…`
 - [every_locale_matches_the_english_nav_shape](/theorem/every_locale_matches_the_english_nav_shape) — every locale matches the English nav shape: each locale carries exactly the English navigation keys, so no dimension goes dark or drifts; 0/7  ·  `4fd0a0e1-0628…`
 - [every_register_is_handled_by_one_function](/theorem/every_register_is_handled_by_one_function) — every register is handled by one function: hype, formal, slang and shouting are all weighed by the same gate, so no register is judged more leniently than another; 0/7  ·  `e93c24b3-fb4a…`
+- [every_theorem_is_a_diamond_fixed_under_recomputation](/theorem/every_theorem_is_a_diamond_fixed_under_recomputation) — every theorem is a diamond fixed under recomputation: its content-address recomputes to itself and the ten’s-complement reflection fixes the centre 5 — a fixed point that reflects perfectly; 0/7  ·  `c56113b3-84e0…`
 
 ### decimal (12)
 
@@ -1904,7 +1910,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (214)
+### other — one-of-a-kind (216)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [add_group](/theorem/add_group) — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
@@ -1937,6 +1943,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [challenging_the_entropy_the_address_is_near_uniform_but_not_cryptographic](/theorem/challenging_the_entropy_the_address_is_near_uniform_but_not_cryptographic) — challenging the entropy: the content-address is near-uniform but not cryptographic: measured over thousands of distinct inputs there are no accidental collisions and the hex-digit entropy is about 3.985 of 4 bits — near-uniform, sub-maximal because six format bits are fixed (the version nibble is always 8, plus the variant), documented design not a flaw. Near-uniformity bounds accidental collisions only; it does not imply cryptographic security — FNV is not preimage- or collision-resistant against an adversary. Measured, adversarially challenged, not assumed. Decidable  ·  `96c4404a-9bd4…`
 - [chaos_deterministic_unpredictable](/theorem/chaos_deterministic_unpredictable) — chaos is deterministic yet unpredictable: the logistic map is a function (same input, same output) yet nearby orbits diverge (sensitive dependence) — computable ≠ predictable, as computable ≠ solved  ·  `a3b2af5b-1f1b…`
 - [chat_is_moderated_across_dialects](/theorem/chat_is_moderated_across_dialects) — chat is moderated across dialects: a proof-boast is flagged in any language via the rosetta, so a translated overclaim cannot slip past the room; 0/7  ·  `04330526-c573…`
+- [cheap_to_factor_easy_to_verify](/theorem/cheap_to_factor_easy_to_verify) — cheap to factor, easy to verify: verifying one address is a single step against recomputing N — a measured saving of N−1, the lightness that keeps the yacht fast; 0/7  ·  `4a568638-0e66…`
 - [chinese_remainder](/theorem/chinese_remainder) — the Chinese remainder theorem: for coprime m,n the map x↦(x mod m, x mod n) is a bijection ℤ/mn → ℤ/m×ℤ/n  ·  `d051f54b-5713…`
 - [citation_is_reach_not_solving_more_cited_grows_the_graph_but_does_not_solve_a_theorem](/theorem/citation_is_reach_not_solving_more_cited_grows_the_graph_but_does_not_solve_a_theorem) — citation is reach, not solving — the more uuidna is cited the more its theorems are reused and the graph grows, but a citation does not solve a theorem: each citation is a new receipt so reach and the living graph compound with citation, yet a theorem is decided by its exhaustive test whose result is invariant to how many times it is cited; recognition is not correctness, and citations never solve a Clay problem; integrity not truth; 0/7  ·  `26b9ce08-5781…`
 - [clay_defines_the_infinite_uuidna_infinitely_computes_decidable_theorems_reflecting_not_solving](/theorem/clay_defines_the_infinite_uuidna_infinitely_computes_decidable_theorems_reflecting_not_solving) — Clay defines the infinite, uuidna infinitely computes decidable theorems — reflecting, not solving: the seven Clay problems open onto infinitely many instances, and uuidna computes an unbounded stream of decidable theorems, always a next one (like Euclid’s next prime), each a millennium solution in this deposit’s sense — a decidable contribution, its name — reflecting that infinite territory; but an infinite stream of decidable facts reflects the seven, it does not solve them, and 0/7 holds at any count; integrity not truth; 0/7  ·  `7456a487-bcc1…`
@@ -2023,6 +2030,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [legendre_a_prime_lies_between_consecutive_squares](/theorem/legendre_a_prime_lies_between_consecutive_squares) — Legendre’s conjecture holds over the tested range: a prime lies between n² and (n+1)² for every n ≤ 60 — checked by computation, not a general result; 0/7  ·  `558f62ef-2176…`
 - [legendres_three_square_theorem](/theorem/legendres_three_square_theorem) — Legendre's three-square theorem: a non-negative integer is a sum of three squares if and only if it is not of the form 4^a·(8b + 7) — verified for every n up to 300. So 7 = 4⁰·7 is not a sum of three squares (it needs four), matching the four-square theorem. Verified by exhaustive search  ·  `ec266737-e9ab…`
 - [let_the_flaws_discover_the_tools](/theorem/let_the_flaws_discover_the_tools) — let the flaws discover the tools: the gate hit, the chain-break index, the missing gap key and the trinity dissent each name the fix, so the record improves by exposing cracks — the flaw is the lead that builds the tool; 0/7  ·  `8bc8cc9e-eb8f…`
+- [light_at_all_times_the_address_is_the_load](/theorem/light_at_all_times_the_address_is_the_load) — light at all times: the content-address is a fixed 36 characters whatever the size of what it names, so the yacht carries the pointer, never the payload; 0/7  ·  `93b77fd5-67bd…`
 - [lines_dividing_the_plane_regions](/theorem/lines_dividing_the_plane_regions) — lines dividing the plane — n lines in general position make 1 + n(n+1)/2 regions: each new line crosses all previous ones and adds n new regions, so n lines give R(n) = R(n−1) + n = 1 + n + C(n,2) = 1 + n(n+1)/2 regions. Verified exhaustively for n up to 100. Decidable  ·  `ef5e926d-4bfd…`
 - [machins_formula_computes_pi_over_four](/theorem/machins_formula_computes_pi_over_four) — Machin’s formula: π/4 = 4·arctan(1/5) − arctan(1/239) — a fast-converging identity, verified numerically; 0/7  ·  `91876258-030b…`
 - [mcp_outputs_chain_into_an_audit_log](/theorem/mcp_outputs_chain_into_an_audit_log) — MCP outputs chain into an audit log: each output receipt is seeded by the last, so the tool-call history is ordered and tamper-evident; 0/7  ·  `741dfe34-a806…`
@@ -2122,4 +2130,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `463e7b04-fa87-8dae-a84b-21ed9b077430`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `17eccee9-f708-87c5-abb6-790a8bd76088`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
