@@ -1,0 +1,29 @@
+✔ content-address is deterministic and context-free (1.12175ms)
+✔ the Lean 4 formal layer — its asserted ℤ/9 facts recompute true (toolchain-independent) (1.078125ms)
+✔ imprint codec round-trips arbitrary text (0.520166ms)
+✔ merkle proof is sound — the true leaf verifies, a forgery fails (3.273208ms)
+✔ the honesty gate drains overclaims and signs the honest floor (9.878167ms)
+✔ harness makes any output auditable; reeducate bounds overclaims until they hold (3.144959ms)
+✔ render presents by reference — pure TS+CSS, address in every card, no framework (0.729208ms)
+✔ billing measures bits saved; coins are conserved; public interest is free (0.086792ms)
+✔ crypt: pure-TS ChaCha20-Poly1305 round-trips; wrong key and tamper fail; deterministic; 7d-fold envelope verifies (8439.36ms)
+✔ 777 · encrypt→decrypt round-trips bidirectionally for all seven dimension streams (23660.756291ms)
+✔ 777 · each stream seals to a distinct address; the same stream is convergent (36566.780584ms)
+✔ 777 · the wrong passphrase fails on every stream (the reverse direction is guarded) (24746.439542ms)
+✔ 777 · tampering any stream fails Poly1305 authentication (24340.94325ms)
+✔ 777 · the public envelope verifies for every stream (12304.584667ms)
+✔ 777 · cross-key isolation — one stream key does not open another stream (5264.001959ms)
+✔ 777 · the uuid stream carries each dimension both ways (imprint ⇄ read) (0.462541ms)
+✔ 777 · a sealed stream transports through the uuid stream and decrypts on arrival (24763.026083ms)
+✔ 777 · empty and large streams round-trip both ways (7074.870125ms)
+✔ 777 · multilingual streams round-trip bidirectionally (the rosetta dimension) (24840.426208ms)
+✔ 777 · the honest floor holds across every stream — no ciphertext boast leaks (12453.188917ms)
+✔ 777 · the same tests generate the UI — shadcn microdata cards, each statement linked to its proof (0.673125ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 204586.621833
