@@ -1,0 +1,98 @@
+name: uuidna — cross-runtime conformance (DRY matrix)
+
+# C14 — ONE suite, every first-class runtime. The core is Web-standard only (enforced by
+# lint-agnostic.mjs), and the vectors live in exactly one file (test/vectors.mjs), so each job below
+# runs the SAME checks and must produce the SAME bytes. A runtime that diverges fails here.
+#
+# Deno and Bun are installed by their official install scripts rather than a setup action: this repo
+# allows GitHub-owned actions only, so third-party setup actions cannot run. Every action used is
+# pinned to a full commit SHA (the repo requires SHA pinning).
+on:
+  push:
+    branches: [main]
+    paths: ['packages/uuidna/**', '.github/workflows/uuidna-matrix.yml']
+  pull_request:
+    paths: ['packages/uuidna/**', '.github/workflows/uuidna-matrix.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    working-directory: packages/uuidna
+
+jobs:
+  # The authoritative build: lint (agnosticism) → tsc → bundle → node:test (smoke + KAT).
+  node:
+    name: Node ${{ matrix.node }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [18, 20, 22]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm ci --ignore-scripts
+        working-directory: .
+      - name: build (agnosticism lint + tsc + bundle)
+        run: npm run build
+      - name: node:test — smoke + KAT
+        run: node --test test/*.test.mjs
+      - name: conformance (Node)
+        run: node test/conformance.mjs
+
+  # The same conformance file, unmodified, on the Web-native runtimes.
+  deno:
+    name: Deno
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+      - run: npm ci --ignore-scripts
+        working-directory: .
+      - run: npm run build
+      - name: install Deno (official script — third-party actions are not permitted here)
+        run: |
+          curl -fsSL https://deno.land/install.sh | DENO_INSTALL="$HOME/.deno" sh -s -- --yes
+          echo "$HOME/.deno/bin" >> "$GITHUB_PATH"
+      - name: conformance (Deno)
+        run: deno run --allow-read test/conformance.mjs
+
+  bun:
+    name: Bun
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+      - run: npm ci --ignore-scripts
+        working-directory: .
+      - run: npm run build
+      - name: install Bun (official script — third-party actions are not permitted here)
+        run: |
+          curl -fsSL https://bun.sh/install | bash
+          echo "$HOME/.bun/bin" >> "$GITHUB_PATH"
+      - name: conformance (Bun)
+        run: bun test/conformance.mjs
+
+  # The browser channel: the built bundle must run the same checks inside a real page.
+  browser:
+    name: Browser (headless Chrome)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+      - run: npm ci --ignore-scripts
+        working-directory: .
+      - run: npm run build
+      - name: conformance (headless Chrome, via the ESM bundle)
+        run: node test/browser-conformance.mjs

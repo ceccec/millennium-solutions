@@ -30,6 +30,8 @@
   ],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "unpkg": "./dist/uuidna.min.js",
+  "jsdelivr": "./dist/uuidna.min.js",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -71,12 +73,18 @@
   },
   "scripts": {
     "lint:agnostic": "node lint-agnostic.mjs",
-    "build": "npm run lint:agnostic && tsc -p tsconfig.json",
-    "test": "npm run build && node --test test/smoke.test.mjs",
+    "bundle": "node bundle.mjs",
+    "build": "npm run lint:agnostic && tsc -p tsconfig.json && npm run bundle",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "conformance": "node test/conformance.mjs",
+    "conformance:deno": "deno run --allow-read test/conformance.mjs",
+    "conformance:bun": "bun test/conformance.mjs",
+    "conformance:browser": "node test/browser-conformance.mjs",
     "mcp": "node mcp.mjs",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
+    "esbuild": "^0.28.2",
     "typescript": "^5.5.0"
   }
 }
