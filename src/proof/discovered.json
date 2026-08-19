@@ -9283,5 +9283,40 @@
     "key": "by_decide_proves_the_floor_not_the_conjecture",
     "name": "by decide is proof — and here it proves the floor: the Lean layer discharges only finite statements over List.range, and every Clay-named theorem carries the conjunct provenHere = 0, so the tactic settles the refusal; a decidable proposition needs a terminating finite search, which the seven conjectures do not admit, so none of them is even stated in the layer; the count this deposit asserts an answer for stays at zero; integrity not truth; 0/7",
     "receipt": "6b7e96d8-53f6-8a68-bf2a-f85a28dbadb4"
+  },
+  {
+    "key": "pure_ts_hmac_sha256_matches_rfc_4231_case_5",
+    "name": "pure-TS HMAC-SHA256 matches RFC 4231 test case 5, the truncation vector — the first 128 bits stand alone; 0/7",
+    "receipt": "afdfafdd-d1df-87c1-8db7-148415d145e7"
+  },
+  {
+    "key": "pure_ts_hmac_sha256_matches_rfc_4231_case_7",
+    "name": "pure-TS HMAC-SHA256 matches RFC 4231 test case 7 — a larger-than-block key with larger-than-block data; 0/7",
+    "receipt": "c287445c-49be-83f4-a086-a90c99cc9f23"
+  },
+  {
+    "key": "pure_ts_sha256_matches_the_one_million_a_vector",
+    "name": "pure-TS SHA-256 matches the FIPS 180-4 one-million-character vector — the length encoding holds at scale; 0/7",
+    "receipt": "50e30854-a5a9-8ce3-8854-2338c016412b"
+  },
+  {
+    "key": "pure_ts_pbkdf2_hmac_sha256_matches_the_rfc_7914_sixty_four_byte_vector",
+    "name": "pure-TS PBKDF2-HMAC-SHA256 matches the RFC 7914 section 11 sixty-four-byte vector — two derived blocks concatenate; 0/7",
+    "receipt": "615759a0-789d-80b1-b395-2ec879d470d0"
+  },
+  {
+    "key": "pure_ts_pbkdf2_hmac_sha256_truncates_a_partial_final_block",
+    "name": "pure-TS PBKDF2-HMAC-SHA256 truncates a partial final block — a twenty-byte derived key is not a whole number of hashes; 0/7",
+    "receipt": "cf6f888e-151d-868f-849f-ee76f919cf3e"
+  },
+  {
+    "key": "the_pure_ts_aead_rejects_a_flipped_additional_data_bit",
+    "name": "the pure-TS ChaCha20-Poly1305 AEAD rejects a flipped additional-data bit — the aad is authenticated, not merely carried; 0/7",
+    "receipt": "57305d0f-ed04-824a-bba9-7d81d38802e2"
+  },
+  {
+    "key": "the_pure_ts_aead_tag_depends_on_the_additional_data",
+    "name": "the pure-TS ChaCha20-Poly1305 tag depends on the additional data — the same plaintext under different aad tags differently; 0/7",
+    "receipt": "5daa79d5-5154-8956-8007-d44001e75c1b"
   }
 ]
