@@ -15,6 +15,10 @@ permissions:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    # Only run when the token actually exists. Releases are minted automatically now (release.yml), and
+    # without this guard every release would spawn a publish run that fails at authentication — red marks
+    # that mean nothing. Set the NPM_TOKEN secret to enable publishing; until then this job is skipped.
+    if: ${{ secrets.NPM_TOKEN != '' }}
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4

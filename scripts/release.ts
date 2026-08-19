@@ -79,14 +79,32 @@ const q = (c) => { try { execSync(c, { stdio: 'ignore' }) } catch {} }
 let repo = false
 try { execSync('git rev-parse --is-inside-work-tree', { stdio: 'ignore' }); repo = true } catch {}
 if (!repo) { sh('git init -q'); sh('git config user.name "Tsvetan Rouschev"'); sh('git config user.email "ceci@psg.bg"') }
-sh('git add -A')
-// Distinguish "nothing staged" (idempotent re-tag, fine) from a hook REJECTION (abort — never tag a
-// commit that does not carry `address`; that mints a lying tag, the v1.6.3 failure mode, now closed).
-let nothingStaged = false
-try { execSync('git diff --cached --quiet'); nothingStaged = true } catch { /* staged present */ }
-if (!nothingStaged) {
-  try { execSync(`git commit -q -m "release uuidna ${NPM} — signed from ${SIGN} · content-address ${address}"`, { stdio: 'inherit' }) }
-  catch { console.error('release: commit rejected by a gate hook — NOT tagging ' + V + ' (would not carry ' + address + '). fix the drained line and re-run.'); process.exit(1) }
+// TAG-ONLY (CI): main is a protected branch — signed commits and pull requests are required, and the
+// Actions token cannot bypass either — so a bot must never attempt a commit. In this mode the provenance
+// tag is minted on the EXISTING HEAD, whose content-address is exactly what was just gated. Locally
+// (`npm run next`) the default path still commits the regenerated tree, unchanged.
+const TAG_ONLY = process.env.RELEASE_TAG_ONLY === '1' || process.argv.includes('--tag-only')
+if (TAG_ONLY) {
+  // The address above is folded from the WORKING TREE. In tag-only mode the tag lands on HEAD, so a dirty
+  // tree would mint a tag claiming an address HEAD does not carry — a lying tag, the same failure the commit
+  // path guards against. CI checks out clean; refuse anywhere else.
+  const dirty = execSync('git status --porcelain', { encoding: 'utf8' }).trim()
+  if (dirty) {
+    console.error('release: tag-only refuses a dirty tree — the tag would claim ' + address.slice(0, 13) + '…, which HEAD does not carry:')
+    console.error(dirty.split('\n').slice(0, 10).map((l) => '  ' + l).join('\n'))
+    process.exit(1)
+  }
+  console.log('tag-only: not committing (protected branch) — tagging HEAD, which already carries ' + address.slice(0, 13) + '…')
+} else {
+  sh('git add -A')
+  // Distinguish "nothing staged" (idempotent re-tag, fine) from a hook REJECTION (abort — never tag a
+  // commit that does not carry `address`; that mints a lying tag, the v1.6.3 failure mode, now closed).
+  let nothingStaged = false
+  try { execSync('git diff --cached --quiet'); nothingStaged = true } catch { /* staged present */ }
+  if (!nothingStaged) {
+    try { execSync(`git commit -q -m "release uuidna ${NPM} — signed from ${SIGN} · content-address ${address}"`, { stdio: 'inherit' }) }
+    catch { console.error('release: commit rejected by a gate hook — NOT tagging ' + V + ' (would not carry ' + address + '). fix the drained line and re-run.'); process.exit(1) }
+  }
 }
 q(`git tag -d ${V}`)                                              // re-tag (unpublished)
 sh(`git tag -a ${V} -m "signed from ${SIGN} \u00b7 uuidna ${NPM} \u00b7 content-address ${address}"`)

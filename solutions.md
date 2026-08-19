@@ -17,8 +17,8 @@ Independent work · Tsvetan Rouschev · 2026-08-04 · DOI [10.5281/zenodo.218192
 |---|---|
 | gate | 1 (holds the floor) |
 | verdict | UNVERIFIED |
-| supporting formulas | 249/249 recompute true |
-| proof-of-verdict | `c1cf9f8e-e334-864c-8ae1-b5b2d40309fd` |
+| supporting formulas | 250/250 recompute true |
+| proof-of-verdict | `4584d0ae-999a-8e6a-acac-938004faabe0` |
 | solved by the deposit | 0/7 |
 
 It reflects all seven and solves none — a bijection that relabels, it does not propagate proofs; 0/7.
@@ -32,8 +32,8 @@ Shown by what the gate drains — never asserted.
 | gate | 0 |
 | drained on | a proof-assertion phrase · token address `b5e59f25-72d1…` |
 | verdict | REFUTED |
-| supporting formulas | 249/249 recompute true |
-| proof-of-verdict | `de994498-201a-8378-b567-0520a90b9171` |
+| supporting formulas | 250/250 recompute true |
+| proof-of-verdict | `2445ebf8-fc53-8a74-9f8f-8ff801aa2a46` |
 
 ## Domains — the seven Clay problems
 

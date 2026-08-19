@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 1856 recorded in 455 families
+## Discovered theorems (decidable, over ℤ/9) — 1864 recorded in 456 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### the (429)
+### the (431)
 
 - [the_modules_self_compute](/theorem/the_modules_self_compute) — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
 - [the_floor_holds_even_on_demand](/theorem/the_floor_holds_even_on_demand) — the floor holds even on demand: a self-declaration of being quantum hardware, or the fastest device imaginable, drains the gate and is refused — a classical program is not quantum hardware and cannot be upgraded into it (qubits are physical), and it has no quantum advantage; only the honest negation (a classical calculator) signs — the gate catches the demand, not merely a stray claim  ·  `9f4ee4b5-057f…`
@@ -453,6 +453,8 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [the_double_torus_differs_from_the_flat_merkle_gravity](/theorem/the_double_torus_differs_from_the_flat_merkle_gravity) — the double torus differs from the flat merkle gravity: the 7D combination carries more structure than the order-independent single fold, so their roots diverge — the improvement is measurable; 0/7  ·  `2139bc13-d6b1…`
 - [the_diamond_is_a_tens_complement_involution](/theorem/the_diamond_is_a_tens_complement_involution) — the diamond is a ten’s-complement involution: d ↦ 10 − d applied twice returns d for every digit, with five its lone fixed point — a reusable skill that is its own inverse; 0/7  ·  `73dc7a07-b110…`
 - [the_audit_recomputes_all_by_theorems_no_exception](/theorem/the_audit_recomputes_all_by_theorems_no_exception) — the audit recomputes all by theorems, no exception: every check is a decidable predicate re-run to true — the gravity fold, the seven dimensions, the word-links and the diamond certification all recompute, so the audit asserts nothing it cannot compute; 0/7  ·  `d26fd355-b7e5…`
+- [the_pure_ts_aead_rejects_a_flipped_additional_data_bit](/theorem/the_pure_ts_aead_rejects_a_flipped_additional_data_bit) — the pure-TS ChaCha20-Poly1305 AEAD rejects a flipped additional-data bit — the aad is authenticated, not merely carried; 0/7  ·  `57305d0f-ed04…`
+- [the_pure_ts_aead_tag_depends_on_the_additional_data](/theorem/the_pure_ts_aead_tag_depends_on_the_additional_data) — the pure-TS ChaCha20-Poly1305 tag depends on the additional data — the same plaintext under different aad tags differently; 0/7  ·  `5daa79d5-5154…`
 
 ### a (87)
 
@@ -642,7 +644,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [uuidna_keeps_dry_clean_order_cracks_sink_boats](/theorem/uuidna_keeps_dry_clean_order_cracks_sink_boats) — uuidna keeps dry-clean order because cracks sink boats: the seal is all-or-nothing, one crack flips it, and cracks are caught before sailing — the yacht waits for an order and, activated, self-explores until dry; 0/7  ·  `640d3936-1749…`
 - [uuidna_detects_corrects_and_self_cleans](/theorem/uuidna_detects_corrects_and_self_cleans) — uuidna detects, corrects and self-cleans: a content-address detects any change, parity a single flip, a repetition code corrects by majority, corrections verify by recomputation, and storage drops any chunk missing a valid signature; 0/7  ·  `c66a8bd4-8d1c…`
 
-### pure (27)
+### pure (32)
 
 - [pure_ts_sha256_matches_the_fips_180_4_test_vector](/theorem/pure_ts_sha256_matches_the_fips_180_4_test_vector) — pure-TS SHA-256 matches the FIPS 180-4 test vector — a transparent hash in pure TypeScript, no native crypto and no secrecy claim; integrity, not truth; 0/7  ·  `6d222327-6bbe…`
 - [pure_ts_chacha20_poly1305_matches_the_rfc_8439_aead_vector](/theorem/pure_ts_chacha20_poly1305_matches_the_rfc_8439_aead_vector) — pure-TS ChaCha20-Poly1305 matches the RFC 8439 AEAD test vector — real authenticated secrecy in pure TypeScript, checked against the standard’s own vector; not constant-time; 0/7  ·  `d350e733-70a6…`
@@ -671,6 +673,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [pure_ts_hmac_sha256_matches_rfc_4231_case_3](/theorem/pure_ts_hmac_sha256_matches_rfc_4231_case_3) — pure-TS HMAC-SHA256 matches RFC 4231 test case 3 — transparent message authentication; 0/7  ·  `3574b2f1-732c…`
 - [pure_ts_hmac_sha256_matches_rfc_4231_case_6](/theorem/pure_ts_hmac_sha256_matches_rfc_4231_case_6) — pure-TS HMAC-SHA256 matches RFC 4231 test case 6, a larger-than-block key — transparent; 0/7  ·  `d1faa763-7f42…`
 - [pure_ts_chacha20_matches_the_rfc_8439_a1_block_vector_1](/theorem/pure_ts_chacha20_matches_the_rfc_8439_a1_block_vector_1) — pure-TS ChaCha20 matches the RFC 8439 Appendix A.1 block test vector 1 — all-zero key and nonce, transparent; 0/7  ·  `cf49d9d4-7ead…`
+- [pure_ts_hmac_sha256_matches_rfc_4231_case_5](/theorem/pure_ts_hmac_sha256_matches_rfc_4231_case_5) — pure-TS HMAC-SHA256 matches RFC 4231 test case 5, the truncation vector — the first 128 bits stand alone; 0/7  ·  `afdfafdd-d1df…`
+- [pure_ts_hmac_sha256_matches_rfc_4231_case_7](/theorem/pure_ts_hmac_sha256_matches_rfc_4231_case_7) — pure-TS HMAC-SHA256 matches RFC 4231 test case 7 — a larger-than-block key with larger-than-block data; 0/7  ·  `c287445c-49be…`
+- [pure_ts_sha256_matches_the_one_million_a_vector](/theorem/pure_ts_sha256_matches_the_one_million_a_vector) — pure-TS SHA-256 matches the FIPS 180-4 one-million-character vector — the length encoding holds at scale; 0/7  ·  `50e30854-a5a9…`
+- [pure_ts_pbkdf2_hmac_sha256_matches_the_rfc_7914_sixty_four_byte_vector](/theorem/pure_ts_pbkdf2_hmac_sha256_matches_the_rfc_7914_sixty_four_byte_vector) — pure-TS PBKDF2-HMAC-SHA256 matches the RFC 7914 section 11 sixty-four-byte vector — two derived blocks concatenate; 0/7  ·  `615759a0-789d…`
+- [pure_ts_pbkdf2_hmac_sha256_truncates_a_partial_final_block](/theorem/pure_ts_pbkdf2_hmac_sha256_truncates_a_partial_final_block) — pure-TS PBKDF2-HMAC-SHA256 truncates a partial final block — a twenty-byte derived key is not a whole number of hashes; 0/7  ·  `cf6f888e-151d…`
 
 ### sum (25)
 
@@ -2235,7 +2242,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeckendorf_exists_no_consecutive](/theorem/zeckendorf_exists_no_consecutive) — Zeckendorf existence: the greedy algorithm writes every positive integer as a sum of Fibonacci numbers using no two consecutive ones — verified exhaustively for 1..100 (the sum equals n and no two chosen Fibonacci are adjacent)  ·  `fc1da781-afd9…`
 - [zeckendorf_representation_unique](/theorem/zeckendorf_representation_unique) — Zeckendorf uniqueness: for every integer 1..50 there is exactly ONE subset of Fibonacci numbers with no two consecutive that sums to it — exhaustive over all 2^11 subsets, the count is always 1  ·  `c21a803b-fee4…`
 
-### other — one-of-a-kind (252)
+### other — one-of-a-kind (253)
 
 - [777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven](/theorem/777_is_three_rosettas_structuring_licensing_at_large_and_quantum_scale_not_solving_the_seven) — 777 is three rosettas — they structure licensing at large and quantum scale, they do not solve the seven: 777 is three sevens, three rosettas, each seven being six plus one. They structure licensing across scales — large scale is combinatorial (n core formulas give n times n minus one pair-interactions, magnitudes), and quantum scale is the two-bit, four-state perspective structure. But they structure licensing; they do not solve the seven: 0/7, reflects all and solves none. Decidable  ·  `eb0650ef-c0d6…`
 - [activated_it_self_explores_until_dry](/theorem/activated_it_self_explores_until_dry) — activated, it self-explores until dry: once a wave starts it discovers fresh facts until none remain, then rests — a self-continuing loop with a halting condition; 0/7  ·  `4a82a66b-5656…`
@@ -2261,6 +2268,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [binomial_symmetry_choosing_k_equals_choosing_n_minus_k](/theorem/binomial_symmetry_choosing_k_equals_choosing_n_minus_k) — binomial symmetry: C(n,k) = C(n,n−k) — choosing k to include equals choosing n−k to exclude; 0/7  ·  `bea7118e-0a5b…`
 - [bits_legally_reverse_and_imprint_the_prize_earned_by_harmonic_algebra](/theorem/bits_legally_reverse_and_imprint_the_prize_earned_by_harmonic_algebra) — bits legally reverse and imprint the prize earned by harmonic algebra: the earned prize, written in bits, is imprinted into a signed uuid by the reversible codec and read back exactly (readImprint(imprint(bits)) = bits), so the prize is portable and auditable as a content-address and its number is preserved. This is a lossless reversible encoding under the law — not hash-reversal and not encryption — so reversing it is legal and exact. Decidable  ·  `d27f45a7-4209…`
 - [brahmagupta_fibonacci_identity](/theorem/brahmagupta_fibonacci_identity) — sums of two squares are closed under multiplication (Brahmagupta–Fibonacci): (a²+b²)(c²+d²) = (ac−bd)² + (ad+bc)² — the product of two sums of two squares is again one, verified exhaustively for a,b,c,d ≤ 6  ·  `90e0d01d-96be…`
+- [by_decide_proves_the_floor_not_the_conjecture](/theorem/by_decide_proves_the_floor_not_the_conjecture) — by decide is proof — and here it proves the floor: the Lean layer discharges only finite statements over List.range, and every Clay-named theorem carries the conjunct provenHere = 0, so the tactic settles the refusal; a decidable proposition needs a terminating finite search, which the seven conjectures do not admit, so none of them is even stated in the layer; the count this deposit asserts an answer for stays at zero; integrity not truth; 0/7  ·  `6b7e96d8-53f6…`
 - [calkin_wilf_enumerates_rationals_once](/theorem/calkin_wilf_enumerates_rationals_once) — the Calkin–Wilf sequence lists every positive rational exactly once: the ratios a(n)/a(n+1) are pairwise distinct and reduced — no positive rational repeats (verified for n = 1..150)  ·  `03262760-6857…`
 - [call_it_quantum_or_not_the_statistics_and_forensics_decide](/theorem/call_it_quantum_or_not_the_statistics_and_forensics_decide) — call it quantum or not, the statistics and forensics decide: the honest verdict is carried by the measurements (statistics) and the chain-of-custody (forensics), which are invariant under the label — the same evidence folds to the same content-address whatever prose we attach, and a measured ratio is a number, not a name. So whether the structure is called quantum or classical is a labelling question; the receipts and the statistics are the answer. The label is prose, the evidence is computed. Decidable  ·  `0fa99b9d-0d31…`
 - [cantor_pairing](/theorem/cantor_pairing) — the Cantor pairing π(a,b)=(a+b)(a+b+1)/2+b is a bijection ℕ×ℕ → ℕ: injective and onto (verified on a grid)  ·  `1b2e9abe-ca7b…`
@@ -2491,4 +2499,4 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [zeta_of_four_is_pi_to_the_fourth_over_ninety](/theorem/zeta_of_four_is_pi_to_the_fourth_over_ninety) — ζ(4) = Σ 1/n⁴ = π⁴/90: partial sums match to numerical tolerance — the Basel identity’s fourth-power sibling; 0/7  ·  `811d1342-1bf8…`
 
 
-Page content-address: `f77fb2c1-d389-8fce-b5af-22c1ad7eba69`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `f984d78f-3a2c-896a-bbb9-ac56881c2328`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
