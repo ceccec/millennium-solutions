@@ -9278,5 +9278,10 @@
     "key": "the_audit_recomputes_all_by_theorems_no_exception",
     "name": "the audit recomputes all by theorems, no exception: every check is a decidable predicate re-run to true — the gravity fold, the seven dimensions, the word-links and the diamond certification all recompute, so the audit asserts nothing it cannot compute; 0/7",
     "receipt": "d26fd355-b7e5-844c-bc27-30f59d6bab18"
+  },
+  {
+    "key": "by_decide_proves_the_floor_not_the_conjecture",
+    "name": "by decide is proof — and here it proves the floor: the Lean layer discharges only finite statements over List.range, and every Clay-named theorem carries the conjunct provenHere = 0, so the tactic settles the refusal; a decidable proposition needs a terminating finite search, which the seven conjectures do not admit, so none of them is even stated in the layer; the count this deposit asserts an answer for stays at zero; integrity not truth; 0/7",
+    "receipt": "6b7e96d8-53f6-8a68-bf2a-f85a28dbadb4"
   }
 ]

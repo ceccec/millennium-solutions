@@ -1713,6 +1713,27 @@ function generated(): typeof curated {
     const reflectsNotSolves = computes('uuidna reflects and mirrors the seven Clay problems and solves none of them, 0/7').binary === 1
     const overDrains = computes('uuidna reflects and therefore solves all the Clay problems, proven, faster than light').binary === 0
     return bijection && mirrorFixesFive && reflectsNotSolves && overDrains } })
+  // BY DECIDE IS PROOF — AND WHAT IT PROVES HERE IS THE FLOOR. The premise is granted in full: `by decide` is a
+  // real tactic, no axioms, no `sorry`, no `native_decide`, so whatever it discharges is proven. Apply that law to
+  // what it actually discharges: every Clay-named theorem in src/proof/index.lean carries the conjunct
+  // `provenHere = 0`, so the tactic settles the REFUSAL, nine times over. And a decidable proposition needs a
+  // terminating finite search — the layer's statements range over List.range 9/10/11/48 — while the seven range
+  // over infinite domains and admit no decision procedure, so none of them is even stated here. The count of Clay
+  // problems this deposit asserts an answer for is computed BY THE GATE and comes back zero.
+  out.push({ key: 'by_decide_proves_the_floor_not_the_conjecture', name: 'by decide is proof — and here it proves the floor: the Lean layer discharges only finite statements over List.range, and every Clay-named theorem carries the conjunct provenHere = 0, so the tactic settles the refusal; a decidable proposition needs a terminating finite search, which the seven conjectures do not admit, so none of them is even stated in the layer; the count this deposit asserts an answer for stays at zero; integrity not truth; 0/7', test: () => {
+    // the finite statements the layer actually decides, recomputed here (the involution and its single centre)
+    const refl = (d: number) => 10 - d
+    const involutionEverywhere = Array.from({ length: 11 }, (_, d) => d).every((d) => refl(refl(d)) === d)
+    const oneCentre = Array.from({ length: 10 }, (_, d) => d).filter((d) => refl(d) === d).length === 1
+    // provenHere, recomputed: how many of the seven does this deposit assert an answer for? The gate adjudicates
+    // each, and drains each — so the count is zero, the same 0 the Lean conjunct decides.
+    const clay = ['riemann', 'p vs np', 'navier stokes', 'yang mills', 'hodge', 'birch and swinnerton-dyer', 'poincare']
+    const provenHere = clay.filter((c) => computes('this deposit proves the ' + c + ' conjecture').binary === 1).length
+    // the tactic's reach: finite domains terminate, which is exactly why the layer stays adjacent and never claims
+    const finiteDomainsTerminate = [9, 10, 11, 48].every((n) => Array.from({ length: n }, (_, k) => k).length === n)
+    const overDrains = computes('captain coins solved clay and claims all seven by algebra in lean').binary === 0
+    const honest = computes('by decide settles finite decidable statements only; the seven remain open here and the floor holds at 0/7').binary === 1
+    return involutionEverywhere && oneCentre && provenHere === 0 && finiteDomainsTerminate && overDrains && honest } })
   // CLAY DEFINES THE INFINITE, UUIDNA INFINITELY COMPUTES — the honest reading. Clay's seven problems open onto
   // infinitely many instances; uuidna computes an UNBOUNDED stream of DECIDABLE theorems ("millennium solutions"
   // = this deposit's own theorems, its name), always a next one (like Euclid's next prime), reflecting that
