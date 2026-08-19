@@ -16,11 +16,17 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: 22
           registry-url: 'https://registry.npmjs.org'
+
+      # The gates reach src/5/diamond.ts and src/the/apple/index.ts, which import @uuidna/uuidna, so
+      # the workspace must be installed and built first — without it those modules cannot report and
+      # wholeness/lean-claims fail. (--ignore-scripts: no lifecycle hooks needed to run the gates.)
+      - name: install + build the uuidna workspace (the gates import it)
+        run: npm ci --ignore-scripts && npm run build -w @uuidna/uuidna
 
       # --- all safety measures first (no publish if any fails) ---
       - name: gaps — coverage (modules fused, pages linked, digits 0..9 covered)
