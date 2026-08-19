@@ -10,7 +10,7 @@ git push -u origin main --tags
 - Zenodo → **Settings → GitHub** → toggle **on** `millennium-solutions`.
 - Publish a GitHub **Release** from tag `v1.0.0` (or re-push the tag).
 - Zenodo archives it, reads `.zenodo.json` / `CITATION.cff`, and mints the DOI —
-  carrying the honest abstract, your ORCID, CC BY-NC 4.0, and the funding.
+  carrying the honest abstract, your ORCID, CC BY-NC-ND 4.0, and the funding.
 
 ## 3. Verify the formal layer (optional)
 `lean-toolchain` must match the Mathlib you pull. Simplest:

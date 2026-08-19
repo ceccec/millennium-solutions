@@ -4,7 +4,7 @@
 
 Content-addressed identity, honest by construction — mint + mind, holographic merkle proofs, a reversible imprint codec, a reeducating harness, a measured billing model, pure-TypeScript ChaCha20-Poly1305 encryption (no native crypto) under a 7d-fold envelope, and an MCP server to fuse it into any harness. Integrity, not truth. 0/7.
 
-**Version** `0.1.1` (a held label — the content-address is the true latest) · **License** CC-BY-NC-4.0 · ESM-only, zero runtime dependencies.
+**Version** `0.1.1` (a held label — the content-address is the true latest) · **License** CC-BY-NC-ND-4.0 · ESM-only, zero runtime dependencies.
 
 ```js
 import { toUuid, computes, encrypt } from '@uuidna/uuidna'
@@ -192,4 +192,4 @@ SHA-256, HMAC-SHA-256 and PBKDF2 — pure TypeScript, KAT-verified.
 
 ---
 
-*83 exports across 13 modules · receipt `6a7c69b3-8af3-8cc8-8a61-93ed8f0a0cf1` · integrity, not truth · 0/7*
+*83 exports across 13 modules · receipt `e5bf1e62-6a4d-8e10-ae5f-b42414e6f1b0` · integrity, not truth · 0/7*

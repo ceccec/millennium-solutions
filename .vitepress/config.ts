@@ -54,7 +54,7 @@ const LD = {
   name: 'Millennium Solutions — the ℤ/9 Vortex Framework',
   description: L.description,
   author: { '@type': 'Person', name: 'Tsvetan Rouschev', '@id': 'https://orcid.org/0009-0000-7312-9778' },
-  license: 'https://creativecommons.org/licenses/by-nc/4.0/',
+  license: 'https://creativecommons.org/licenses/by-nc-nd/4.0/',
   codeRepository: REPO,
   url: SITE,
   identifier: 'https://doi.org/10.5281/zenodo.21819217',
@@ -92,8 +92,8 @@ export default defineConfig({
     ['meta', { name: 'application-name', content: 'uuidna' }],
     ['meta', { property: 'og:see_also', content: 'https://uuidna.org' }],
     ['meta', { name: 'uuidna:tracks', content: 'https://uuidna.org (non-profit) · https://uuidna.com (commercial)' }],
-    ['meta', { name: 'license', content: 'CC BY-NC 4.0 — free for public interest and independent research; commercial via uuidna.com' }],
-    ['link', { rel: 'license', href: 'https://creativecommons.org/licenses/by-nc/4.0/' }],
+    ['meta', { name: 'license', content: 'CC BY-NC-ND 4.0 — free for public interest and independent research; commercial via uuidna.com' }],
+    ['link', { rel: 'license', href: 'https://creativecommons.org/licenses/by-nc-nd/4.0/' }],
     ['script', { type: 'application/ld+json' }, JSON.stringify(LD)],
   ],
 
@@ -247,7 +247,7 @@ export default defineConfig({
     ],
 
     footer: {
-      message: 'computed: entailment 0/7 · self-seal = 1 · reflection involutive · CC BY-NC 4.0 — free for non-commercial use (attribution Tsvetan Rouschev); commercial = the two coins (110 − 108 = 2 = −χ genus-2)',
+      message: 'computed: entailment 0/7 · self-seal = 1 · reflection involutive · CC BY-NC-ND 4.0 — free for non-commercial use (attribution Tsvetan Rouschev); commercial = the two coins (110 − 108 = 2 = −χ genus-2)',
       copyright: 'Source: <a href="https://github.com/ceccec/millennium-solutions" target="_blank" rel="noopener">github.com/ceccec/millennium-solutions</a> · Support: <a href="https://revolut.me/ceccec?note=uuid" target="_blank" rel="noopener">revolut.me/ceccec</a> · <a href="mailto:ceccec@psg.bg">ceccec@psg.bg</a> · © Tsvetan Rouschev',
     },
   },

@@ -1,7 +1,7 @@
 // Funding + license as computed data — fused, recomputable, usable across the UI.
 import { toUuid } from '../0/index.ts'
 export const FUNDING = {
-  license: 'CC BY-NC 4.0',
+  license: 'CC BY-NC-ND 4.0',
   author: 'Tsvetan Rouschev',
   revolut: 'https://revolut.me/ceccec',
   contact: 'ceccec@psg.bg',
@@ -32,7 +32,7 @@ export function report(): string {
 export function results(): string {
   const selfSeal = (1 / 2) * (1 / 2) * (1 / 2) * (8 / 7) * (7 / 5) * (5 / 3) * (1 / 2) * (2 / 3) * 9 // = 1
   const solved = 0 // entailment: each of 7 statements holds even when its conjecture is false → 0/7
-  return `computed: entailment ${solved}/7 · self-seal = ${Math.round(selfSeal)} · reflection involutive · CC BY-NC 4.0`
+  return `computed: entailment ${solved}/7 · self-seal = ${Math.round(selfSeal)} · reflection involutive · CC BY-NC-ND 4.0`
 }
 
 // The public endpoints, content-addressed — a uuidna per URL. The CURRENT domain is computed at runtime

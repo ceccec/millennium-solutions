@@ -1,6 +1,6 @@
 /**
  * Theorem 7: Poincaré Conjecture (SOLVED — Perelman 2003)
- * Licensed under CC BY-NC 4.0
+ * Licensed under CC BY-NC-ND 4.0
  * Attribution: Tsvetan Rouschev (framework); Grigori Perelman (proof)
  */
 

@@ -1,7 +1,7 @@
 // uuidna — the content-addressed core. Dependency-free, exact integer arithmetic (no Math.*).
 // A content-address proves INTEGRITY, not truth: the same input always mints the same address, for
 // anyone, with no key. FNV-1a is NON-cryptographic by design — public and reproducible, not secret.
-// Licensed CC BY-NC 4.0 · Attribution: Tsvetan Rouschev (ceccec@psg.bg).
+// Licensed CC BY-NC-ND 4.0 · Attribution: Tsvetan Rouschev (ceccec@psg.bg).
 
 const BYTE_MASK = 0xff
 const MASK_32 = 0xffffffffn

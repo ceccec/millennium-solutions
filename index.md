@@ -8,7 +8,7 @@ title: Millennium Solutions
 
 # The ℤ/9 Vortex Framework
 
-**Author:** Tsvetan Rouschev · License: CC BY-NC 4.0 · a recomputable proof-of-concept
+**Author:** Tsvetan Rouschev · License: CC BY-NC-ND 4.0 · a recomputable proof-of-concept
 
 > ## Millennium Quantum Solutions on 64-bit hardware
 >
@@ -144,6 +144,6 @@ each remains **0 / 7**.
 ## Cite / support
 **DOI:** [10.5281/zenodo.21819217](https://doi.org/10.5281/zenodo.21819217) · archived on Zenodo (honest abstract: *entailment 0/7*).
 
-CC BY-NC 4.0 — free for non-commercial use (attribution Tsvetan Rouschev).
+CC BY-NC-ND 4.0 — free for non-commercial use (attribution Tsvetan Rouschev).
 Commercial use = the two coins (`110 − 108 = 2 = −χ` genus-2): ceccec@psg.bg.
 Support development (non-obligatory): [revolut.me/ceccec](https://revolut.me/ceccec).

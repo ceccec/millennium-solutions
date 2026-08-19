@@ -27,7 +27,7 @@ development honest.
 
 ## What you keep
 
-- **Attribution** (CC BY-NC 4.0). Your content-address is your provenance — it can't be quietly lost.
+- **Attribution** (CC BY-NC-ND 4.0). Your content-address is your provenance — it can't be quietly lost.
 - **Commercial use** = the two coins (`110 − 108 = 2`), reinvested in development.
 
 > Honest: contribution here is public and verifiable, and the gates keep it truthful. Nothing lets

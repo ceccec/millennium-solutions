@@ -1,6 +1,6 @@
 /**
  * Quantum Proofs — Core Kernel (Minimal)
- * Licensed under CC BY-NC 4.0
+ * Licensed under CC BY-NC-ND 4.0
  * Attribution: Tsvetan Rouschev (ceccec@psg.bg)
  *
  * Dependency-free primitives for all proofs.

@@ -1,6 +1,6 @@
 /**
  * Theorem 3: Navier-Stokes Regularity
- * Licensed under CC BY-NC 4.0
+ * Licensed under CC BY-NC-ND 4.0
  * Attribution: Tsvetan Rouschev
  */
 

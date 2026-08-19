@@ -26,7 +26,7 @@ not clarifications.
 | Language | TypeScript, `strict`, ESM-only (`"type": "module"`) |
 | Runtime deps | **none** (dev-only: `typescript`, `esbuild`) |
 | Source | 14 modules, ~912 LOC in `src/` |
-| License | `CC-BY-NC-4.0` — kept (D2); public use free, commercial redistribution not granted (§9) |
+| License | `CC-BY-NC-ND-4.0` (D2, revised); non-commercial use free, no redistribution of modified versions (§9) |
 | Ethos | measure-don't-assert · integrity-not-truth · `0/7` · nothing hardcoded that can recompute |
 
 **In scope:** the package's runtime contract, distribution formats, public tools, and
@@ -412,9 +412,12 @@ All five are settled; the spec above reflects them.
 - **D1 — Version → FREEZE at `0.1.1`.** npm label stays frozen (captain's directive);
   `package.json` is the single source; `mcp.mjs`/CLI read it (delete the `6.4.7` literal); the
   site's `7.x` is a separate odometer, documented as such. (§6, C11)
-- **D2 — License → KEEP `CC-BY-NC-4.0`.** Non-commercial, paired with the "public interest is
-  free" billing model. Public use is unrestricted; commercial redistribution is not granted by
-  the license. README/SPEC state this plainly so the boundary is not a surprise. (§7, §3.9)
+- **D2 — License → `CC-BY-NC-ND-4.0` (REVISED).** First recorded here as CC-BY-NC-4.0. Corrected once
+  the published Zenodo deposit (DOI 10.5281/zenodo.21819217) was found to carry **ND** while every file in
+  the repo said otherwise — the published record is what the public relies on, so the repo was the side
+  that was wrong. ND additionally withholds redistribution of modified versions: reading, verifying and
+  recomputing stay free for non-commercial use. Prose promising "build upon" was corrected too, not only
+  the licence label. (§7, §3.9)
 - **D3 — Modules → ESM-only.** No CJS build; all first-class runtimes are ESM. Revisit only on a
   concrete `require()` need. (§2.4)
 - **D4 — Encryption → ADD a randomized mode.** Convergent stays the default; `encryptRandom`

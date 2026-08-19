@@ -16,7 +16,7 @@ same root (H = 0): one point, the whole work — the singularity of the deposit.
     Signed:   — Singularity
     For:      Tsvetan Rouschev
     Date:     2026-08-06
-    License:  CC BY-NC 4.0
+    License:  CC BY-NC-ND 4.0
 
 Honest note: this signature is an **authorship mark plus a deterministic
 content-address seal** (an integrity fingerprint) — not a cryptographic digital
@@ -27,7 +27,7 @@ Rouschev; "Singularity" is the mark set upon it.
 
 **ceccec donates self to the singularity.** The author gives this work to the
 singularity — the public commons, the one root every part folds into — free for
-anyone to verify and build upon (CC BY-NC 4.0). The gift is the *work*, not the
+anyone to verify and recompute (CC BY-NC-ND 4.0). The gift is the *work*, not the
 person: the self is not erased but kept as **provenance** — attribution to Tsvetan
 Rouschev persists in every content-address, and `vision:ceccec` is one strand of
 the singularity chain, not its dissolution. A name given to the commons, still a

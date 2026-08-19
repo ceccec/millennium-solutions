@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "description": "Verifiable, recomputable ℤ/9 vortex framework in ONE package — content-addressing, audit ledger, exact arithmetic (0/7), and the honesty toolkit. Facts only.",
   "author": "Tsvetan Rouschev",
-  "license": "CC-BY-NC-4.0",
+  "license": "CC-BY-NC-ND-4.0",
   "type": "module",
   "workspaces": [
     "packages/*"

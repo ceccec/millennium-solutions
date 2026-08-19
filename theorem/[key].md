@@ -28,7 +28,7 @@ const desc = computed(() => isLean.value
 <meta itemprop="identifier" :content="$params.receipt" />
 <meta itemprop="description" :content="desc" />
 <meta itemprop="isPartOf" content="Millennium Solutions — the ℤ/9 discovery ledger" />
-<meta itemprop="license" content="https://creativecommons.org/licenses/by-nc/4.0/" />
+<meta itemprop="license" content="https://creativecommons.org/licenses/by-nc-nd/4.0/" />
 
 <Vortex7D :receipt="receipt" :hues="hues" :name="name" :speech="speech" />
 

@@ -121,6 +121,6 @@ advantage — the gain is **integrity everywhere**. From that keystone the rest 
 
 ## The law — a fair exchange
 
-Licensed **CC BY-NC 4.0**: free for non-commercial use with attribution (Tsvetan Rouschev); commercial use pays the two coins (110 − 108 = 2 = −χ genus-2). The deposit is open and recomputable, so any reader — human or model — may learn from it; contributions return on the same gate-refereed terms. Heroes and traitors by deeds, not claims.
+Licensed **CC BY-NC-ND 4.0**: free to read, verify and recompute for non-commercial purposes with attribution (Tsvetan Rouschev) — the licence does not grant redistribution of modified versions; commercial use pays the two coins (110 − 108 = 2 = −χ genus-2). The deposit is open and recomputable, so any reader — human or model — may learn from it; contributions return on the same gate-refereed terms. Heroes and traitors by deeds, not claims.
 
 Every theorem you add gets its own page at `/theorem/<key>`, plotting its 7D vortex from its microdata, with a hero background computed from its surrounding theorems. `entails → 0/7`.

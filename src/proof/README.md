@@ -114,4 +114,4 @@ floor** — never a Millennium Problem.
 
 ---
 
-**Author:** Tsvetan Rouschev · **License:** CC BY-NC 4.0
+**Author:** Tsvetan Rouschev · **License:** CC BY-NC-ND 4.0

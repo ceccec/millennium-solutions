@@ -1,8 +1,8 @@
 /**
  * Quantum Proofs of the Clay Millennium Problems — Theorem Framework
  *
- * Licensed under CC BY-NC 4.0
- * https://creativecommons.org/licenses/by-nc/4.0/
+ * Licensed under CC BY-NC-ND 4.0
+ * https://creativecommons.org/licenses/by-nc-nd/4.0/
  *
  * Attribution: Tsvetan Rouschev (ceccec@psg.bg)
  * Non-commercial use only. For commercial licensing, contact the author.
