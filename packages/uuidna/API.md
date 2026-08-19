@@ -136,7 +136,7 @@ Make any output auditable; bound an overclaim until it holds.
 | Export | Signature | Notes |
 |---|---|---|
 | `Harnessed` | `Harnessed =` |  |
-| `DIMENSIONS` | `DIMENSIONS: readonly ["en", "bg", "de", "fr", "es", "ru", "zh"]` | The seven dimensions (the locale rays) — the structural "quantum" sense, NOT a physical qubit. |
+| `DIMENSIONS` | `DIMENSIONS: readonly ['en', 'bg', 'de', 'fr', 'es', 'ru', 'zh']` | The seven dimensions (the locale rays) — the structural "quantum" sense, NOT a physical qubit. |
 | `harness` | `harness(output: string): Harnessed` | Content-address an output, confirm the address reproduces, gate-check it. `auditable` = it reproduces. |
 | `opaque` | `opaque(output: string):` | The untreated baseline: opaque bytes with no address, nothing to verify. |
 | `harnessGain` | `harnessGain(output: string):` | The measurable difference: harnessing turns an unauditable output into an auditable one (+1 dimension). |
@@ -192,4 +192,4 @@ SHA-256, HMAC-SHA-256 and PBKDF2 — pure TypeScript, KAT-verified.
 
 ---
 
-*83 exports across 13 modules · receipt `a5cf4751-009a-8288-b848-b7152b99f1ce` · integrity, not truth · 0/7*
+*83 exports across 13 modules · receipt `6a7c69b3-8af3-8cc8-8a61-93ed8f0a0cf1` · integrity, not truth · 0/7*
