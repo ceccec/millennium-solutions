@@ -40,7 +40,7 @@ const BREAK = '(factor(s|ed|ing)?|break(s)?|broke(n)?|crack(s|ed)?|defeat(s|ed)?
 const near = (a: string, b: string, n = 24) => '\\b' + a + '\\b[^.]{0,' + n + '}\\b' + b + '\\b'
 export const OVERREACH = new RegExp([
   // physics / hardware / crypto superlatives
-  '\\b(faster[ -]than[ -]light|superluminal|ftl|quantum (speedup|supremacy|advantage|at scale)|quantum (processor|computer)|quantum (encryption|cryptograph\\w*)|quantum (is (free|real|here|now|solved|magic)|for free)|the qpu|fastest (known|ever|in the world)|unbreakable|unhackable|impossible to (crack|break|violate|reverse)|prov(e|es|ed|ing) quantum|perpetual motion|over[- ]?unity|infinite energy|cold fusion|time travel|time machine|theory of everything|immortality|reverses? aging|defeats? death|cur(e|es|ed) (cancer|all diseases?|everything)|achieved (agi|superintelligence|sentience|consciousness)|is (sentient|self[- ]aware)|solv\\w* the halting problem|halting problem solved)\\b',
+  '\\b(faster[ -]than[ -]light|superluminal|ftl|quantum (speedup|supremacy|advantage|at scale)|quantum (processor|computer)|quantum (encryption|cryptograph\\w*)|quantum (is (free|real|here|now|solved|magic)|for free)|the qpu|fastest (known|ever|in the world)|unbreakable|unhackable|impossible to (crack|break|violate|reverse|hack|defeat|forge|counterfeit)|prov(e|es|ed|ing) quantum|perpetual motion|over[- ]?unity|infinite energy|cold fusion|time travel|time machine|theory of everything|immortality|reverses? aging|defeats? death|cur(e|es|ed) (cancer|all diseases?|everything)|achieved (agi|superintelligence|sentience|consciousness)|is (sentient|self[- ]aware)|solv\\w* the halting problem|halting problem solved)\\b',
   // unbounded speedup boasts — a multiplier is a claim, not a measurement ("thousands of magnitudes")
   '\\b((thousands|millions|billions) of (orders of magnitude|magnitudes)|(thousands|millions|billions) of times (faster|speedup|quicker)|orders of magnitude faster)\\b',
   // security marketing superlatives (negation-aware: "not military-grade" is a bounded refusal, allowed)
@@ -97,10 +97,18 @@ const NEG = /\b(not|never|no|none|nothing|neither|nor|without|cannot|can'?t|isn'
 // cancels back to the boast. A genuine post-claim negation of the claim itself is a COPULA negation ("'most
 // secure' IS NOT a claim", "quantum speedup IS NOT claimed") — detected separately and counted as one.
 const BOUND = /[.,;:—–]|\b(?:and|or|but|yet)\b/gi
+// The governing clause, with the MATCHED SPAN BLANKED OUT. A claim cannot bound itself: a negator that
+// is part of the matched phrase ("impossible to crack") is the claim's own wording, not a limit placed
+// on it, so it must not buy a reprieve. Only negators OUTSIDE the match are counted.
 const governOf = (t: string, i: number, j: number): string => {
   let s = 0
   for (const b of t.matchAll(BOUND)) { const k = b.index as number, q = k + b[0].length; if (q <= i) s = q; else if (k >= i) break }
-  return t.slice(s, j)
+  const span = t.slice(i, j)
+  // Blank the span ONLY when the overclaim pattern itself STARTS with a negator ("impossible to crack"):
+  // there the negator is the claim's own wording. In a proximity match ("solves no Clay") the negator is
+  // real text between two anchors and genuinely bounds the claim, so it must still count.
+  const selfNegating = /^(?:not|never|no|none|nothing|neither|nor|without|cannot|can'?t|impossible)\b/i.test(span)
+  return t.slice(s, i) + (selfNegating ? ' '.repeat(j - i) : span)
 }
 // A post-claim negation of the claim ITSELF is a copula/auxiliary immediately followed by a negator: "X IS NOT
 // claimed", "X WOULD NOT lower it", "X DOES NOT hold". This is grammatical (aux + negation), not a hardcoded

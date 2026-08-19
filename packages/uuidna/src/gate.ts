@@ -22,7 +22,7 @@ const CRYPTO = '(rsa|aes|ecdsa|sha-?\\d+|discrete log(arithm)?|encryption|crypto
 const BREAK = '(factor(s|ed|ing)?|break(s)?|broke(n)?|crack(s|ed)?|defeat(s|ed)?|reversed|replac(e|es|ed|ing)|supersed(e|es|ed|ing)|obsolet\\w*)'
 const near = (a: string, b: string, n = 24) => '\\b' + a + '\\b[^.]{0,' + n + '}\\b' + b + '\\b'
 export const OVERREACH = new RegExp([
-  '\\b(faster[ -]than[ -]light|superluminal|ftl|quantum (speedup|supremacy|advantage|at scale)|quantum (processor|computer)|quantum (encryption|cryptograph\\w*)|quantum (is (free|real|here|now|solved|magic)|for free)|the qpu|fastest (known|ever|in the world)|unbreakable|unhackable|impossible to (crack|break|violate|reverse)|prov(e|es|ed|ing) quantum|perpetual motion|over[- ]?unity|infinite energy|cold fusion|time travel|time machine|theory of everything|immortality|reverses? aging|defeats? death|cur(e|es|ed) (cancer|all diseases?|everything)|achieved (agi|superintelligence|sentience|consciousness)|is (sentient|self[- ]aware)|solv\\w* the halting problem|halting problem solved)\\b',
+  '\\b(faster[ -]than[ -]light|superluminal|ftl|quantum (speedup|supremacy|advantage|at scale)|quantum (processor|computer)|quantum (encryption|cryptograph\\w*)|quantum (is (free|real|here|now|solved|magic)|for free)|the qpu|fastest (known|ever|in the world)|unbreakable|unhackable|impossible to (crack|break|violate|reverse|hack|defeat|forge|counterfeit)|prov(e|es|ed|ing) quantum|perpetual motion|over[- ]?unity|infinite energy|cold fusion|time travel|time machine|theory of everything|immortality|reverses? aging|defeats? death|cur(e|es|ed) (cancer|all diseases?|everything)|achieved (agi|superintelligence|sentience|consciousness)|is (sentient|self[- ]aware)|solv\\w* the halting problem|halting problem solved)\\b',
   '\\b((thousands|millions|billions) of (orders of magnitude|magnitudes)|(thousands|millions|billions) of times (faster|speedup|quicker)|orders of magnitude faster)\\b',
   '\\b(state[ -]?of[ -]?the[ -]?art|military[ -]?grade|bank[ -]?grade|world[ -]?class|enterprise[ -]?grade|next[ -]?gen(eration)?|best[ -]?in[ -]?class)\\b',
   '\\b(100 ?% ?secure|(absolutely|totally|completely|fully|perfectly) (secure|private|anonymous)|tamper[ -]?proof|(hack|crack|break|bullet|fool)[ -]?proof|uncrackable|undefeatable|invulnerable|impenetrable|indestructible|provably secure|mathematically proven secure|guaranteed (correct|secure|private|safe)|always correct)\\b',
@@ -56,10 +56,18 @@ const NEG = /\b(not|never|no|none|nothing|neither|nor|without|cannot|can'?t|isn'
 // ("not failed to prove" → drains). Both-sided bounding also captures negation AFTER the claim ("'most secure'
 // is NOT a claim") while keeping a decoy across a break out.
 const BOUND = /[.,;:—–]|\b(?:and|or|but|yet)\b/gi
+// The conjunct around the claim, with the MATCHED SPAN BLANKED OUT. A claim cannot bound itself: a
+// negator that is part of the matched phrase ("impossible to crack") is the claim's own wording, not a
+// limit placed on it, so it must not buy a reprieve. Only negators OUTSIDE the match are counted.
 const conjunctOf = (t: string, i: number, j: number): string => {
   let s = 0, e = t.length
   for (const b of t.matchAll(BOUND)) { const k = b.index as number, q = k + b[0].length; if (q <= i) s = q; else if (k >= j) { e = k; break } }
-  return t.slice(s, e)
+  const span = t.slice(i, j)
+  // Blank the span ONLY when the overclaim pattern itself STARTS with a negator ("impossible to crack"):
+  // there the negator is the claim's own wording. In a proximity match ("solves no Clay") the negator is
+  // real text between two anchors and genuinely bounds the claim, so it must still count.
+  const selfNegating = /^(?:not|never|no|none|nothing|neither|nor|without|cannot|can'?t|impossible)\b/i.test(span)
+  return t.slice(s, i) + (selfNegating ? ' '.repeat(j - i) : span) + t.slice(j, e)
 }
 
 export const PREDICT = /\b(guaranteed to|will (certainly|surely|inevitably|definitely|always)|is (inevitable|guaranteed|certain to)|bound to (hold|win|succeed) forever|roll(s)? (with it )?unchanged)\b/i
