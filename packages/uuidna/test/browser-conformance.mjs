@@ -91,7 +91,13 @@ try {
   clearTimeout(timer)
   child.kill('SIGKILL')
   server.close()
-  await rm(profile, { recursive: true, force: true })
+  // Best-effort cleanup ONLY. Chrome's helper processes can still be writing into the profile after the
+  // parent is killed, so an immediate rmdir races them and throws ENOTEMPTY. The temp profile is disposable
+  // and the OS reclaims it — never let tidying up decide the conformance verdict. Retry briefly, then shrug.
+  for (let attempt = 0; attempt < 5; attempt++) {
+    try { await rm(profile, { recursive: true, force: true }); break }
+    catch { await new Promise((r) => setTimeout(r, 200)) }
+  }
 }
 
 // Detail is printed on success too: the anchors (addresses, roots) are how a cross-runtime byte
