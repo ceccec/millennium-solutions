@@ -60,17 +60,28 @@ const BOUND = /[.,;:—–]|\b(?:and|or|but|yet)\b/gi
 // negator that is part of the matched phrase ("impossible to crack") is the claim's own wording, not a
 // limit placed on it, so it must not buy a reprieve. Only negators OUTSIDE the match are counted.
 const conjunctOf = (t: string, i: number, j: number): string => {
-  let s = 0, e = t.length
-  for (const b of t.matchAll(BOUND)) { const k = b.index as number, q = k + b[0].length; if (q <= i) s = q; else if (k >= j) { e = k; break } }
+  let s = 0
+  for (const b of t.matchAll(BOUND)) { const k = b.index as number, q = k + b[0].length; if (q <= i) s = q; else if (k >= i) break }
   const span = t.slice(i, j)
   // Blank the span ONLY when the overclaim pattern itself STARTS with a negator ("impossible to crack"):
   // there the negator is the claim's own wording. In a proximity match ("solves no Clay") the negator is
   // real text between two anchors and genuinely bounds the claim, so it must still count.
   const selfNegating = /^(?:not|never|no|none|nothing|neither|nor|without|cannot|can'?t|impossible)\b/i.test(span)
-  return t.slice(s, i) + (selfNegating ? ' '.repeat(j - i) : span) + t.slice(j, e)
+  // BACKWARD-ONLY, deliberately. Including the text AFTER the match lets an incidental trailing negator
+  // reprieve a boast that has nothing to do with it: "unbreakable at no cost" would hold, because "no"
+  // lands in the conjunct. The governing clause therefore ends at the match. (Measured, not assumed: the
+  // deposit's own gate scoped this way, and collapsing the two copies onto the looser rule flipped two
+  // sealed theorems from PASS to FAIL.)
+  return t.slice(s, i) + (selfNegating ? ' '.repeat(j - i) : span)
 }
 
-export const PREDICT = /\b(guaranteed to|will (certainly|surely|inevitably|definitely|always)|is (inevitable|guaranteed|certain to)|bound to (hold|win|succeed) forever|roll(s)? (with it )?unchanged)\b/i
+// A copula negation immediately AFTER the claim negates it just as a preceding negator would
+// ("'most secure' is NOT a claim we make"). The governing clause ends at the match, so this is checked
+// separately against the text that follows it — otherwise the whole trailing clause would be pulled in
+// and an incidental negator ("unbreakable at no cost") would reprieve the boast.
+const COPULA_NEG = /^[\s"'’)\]]*\b(is|are|was|were|be|been|being|remains?|stays?|would|could|should|does|do|did|will|wo|ca|can|may|might|must|has|have|had)\b\s*(not|never|no|n['’]?t)\b/i
+
+export const PREDICT = /\b(guaranteed to|will (certainly|surely|inevitably|definitely|always)|is (inevitable|guaranteed|certain to)|bound to (hold|win|succeed) forever|roll(s)? (with it )?unchanged|absolutely proven)\b/i
 const NEGATOR_WORD = /\b(not|no|never|isn'?t|won'?t|will not|cannot|can'?t|without|neither|nor)\b/i
 
 // THE ROSETTA — Glagolitic (oldest Slavic script, U+2C00–U+2C5E) crosslinked to Cyrillic via a declared
@@ -94,8 +105,10 @@ export const computes = (text: string): { binary: 0 | 1; hit: string | null } =>
   const re = new RegExp(OVERREACH.source, 'gi')
   let m: RegExpExecArray | null
   while ((m = re.exec(text))) {
-    const win = text.slice(Math.max(0, m.index - 48), m.index + m[0].length + 40)
-    const negs = (conjunctOf(text, m.index, m.index + m[0].length).match(NEG) || []).length
+    const mEnd = m.index + m[0].length
+    const win = text.slice(Math.max(0, m.index - 48), mEnd + 40)
+    const copula = COPULA_NEG.test(text.slice(mEnd, mEnd + 24)) ? 1 : 0
+    const negs = (conjunctOf(text, m.index, mEnd).match(NEG) || []).length + copula
     const idiom = /\b(or not|whether)\b/i.test(text.slice(Math.max(0, m.index - 12), m.index + m[0].length + 10)) // "ftl or not" dismisses as hypothetical
     if (!(SOLUTION.test(win) || negs % 2 === 1 || idiom)) return { binary: 0, hit: m[0] }
   }
