@@ -123,6 +123,12 @@ axioms** (pure `by decide`); `#print axioms` reports *does not depend on any axi
 | 6 | [Birch–Swinnerton-Dyer](/theorem/birch_swinnerton_dyer_vanishing) | `Σ span ≡ Σ units ≡ 0 (mod 9)` | a digit-sum vanishing (27 ≡ 0) — not rank ↔ L-order |
 | 7 | [Poincaré](/theorem/poincare_single_closed_loop) | `orbit 6 = orbit 0, six distinct steps` | one closed simple loop — not the 3-sphere (Perelman's theorem) |
 
+**What `by decide` settles here.** The tactic is real proof — and every statement above ranges over a
+finite domain (`List.range 9/10/11/48`), which is what makes it decidable at all. The seven conjectures
+range over infinite domains and admit no decision procedure, so none of them is even stated in the layer.
+An eighth sealed theorem records exactly this: `by_decide_proves_the_floor_not_the_conjecture`. The count
+of the seven this deposit asserts an answer for is computed by the gate, and it comes back zero.
+
 Each problem links to its **theorem page** — the Lean proof in publication form with a citation to the
 qualified outlet (Clay Mathematics Institute; Perelman's arXiv for Poincaré). The full Lean, every
 `by decide` proof sorry-free and axiom-free, is in

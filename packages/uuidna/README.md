@@ -71,15 +71,26 @@ KAT-verified against the standards' own vectors. Deterministic (convergent): sam
 import { encrypt, decrypt, verifyEnvelope } from '@uuidna/uuidna'
 
 const sealed = encrypt('beat to windward at 30°', 'a-strong-passphrase')
-// { v:1, alg:'ChaCha20-Poly1305', kdf:'PBKDF2-SHA256', iter:600000, salt, nonce, ct, tag, address }
+// { v:2, alg:'ChaCha20-Poly1305', kdf:'PBKDF2-SHA256', mode:'convergent', iter:600000, salt, nonce, ct, tag, address }
 decrypt(sealed, 'a-strong-passphrase')   // 'beat to windward at 30°'
 decrypt(sealed, 'wrong')                        // throws — Poly1305 authentication (wrong key or tamper)
 verifyEnvelope(sealed)                          // true — public integrity, no key needed
 ```
 
-Honest scope: strength is **ChaCha20-Poly1305 + your passphrase entropy** — measured, not asserted. The content-address
-(FNV) stays non-cryptographic; secrecy comes from AES, integrity from the fold. Private/RBAC messaging builds
-on this (encrypt to a shared key; a key per role). `0/7`.
+Two modes, one shared AEAD path. `encrypt` is **convergent**: the same (plaintext, passphrase) always seals to
+the same envelope, so it stays reproducible and content-addressable — the trade is that an observer can see when
+two envelopes hold the same plaintext. `encryptRandom` takes a per-message random salt and nonce, so equal
+plaintexts seal differently and that equality is hidden; it needs an entropy source, and throws rather than
+weaken silently if none is available.
+
+```js
+import { encryptRandom } from '@uuidna/uuidna'
+encryptRandom('same', 'pw').address !== encryptRandom('same', 'pw').address   // true — equality hidden
+```
+
+Honest scope: strength is **ChaCha20-Poly1305 + your passphrase entropy** — measured, not asserted. Secrecy comes
+from that AEAD; integrity comes from the fold; the content-address (FNV) stays non-cryptographic and is never the
+secret. Pure JS is **not** constant-time, so timing side-channels are possible. `0/7`.
 
 ## What it is — and isn't
 
@@ -92,6 +103,11 @@ on this (encrypt to a shared key; a key per role). `0/7`.
 
 ## API
 
+The **complete reference — every export, with its signature — is generated from the built `.d.ts` into
+[`API.md`](API.md)**, so it cannot drift from the shipped types. A live playground (the real functions,
+running in the page) is in [`site/index.html`](site/index.html). The summary below is the short tour.
+
+
 | export | what |
 |---|---|
 | `toUuid`, `strictUuidna`, `merge`, `coin64` | content-address (mint) |
@@ -101,9 +117,24 @@ on this (encrypt to a shared key; a key per role). `0/7`.
 | `harness`, `opaque`, `harnessGain`, `harness7`, `reeducate`, `DIMENSIONS` | the auditing harness |
 | `billUuidna`, `coins` | measured billing |
 | `renderTheorem`, `renderList` | present by reference — pure TS + CSS card(s), no framework |
-| `encrypt`, `decrypt`, `verifyEnvelope` | pure-TS ChaCha20-Poly1305 encryption under a 7d-fold envelope |
+| `encrypt`, `encryptRandom`, `decrypt`, `verifyEnvelope` | pure-TS ChaCha20-Poly1305 — convergent or randomized — under a 7d-fold envelope |
 | `sha256`, `hmacSha256`, `pbkdf2Sha256`, `aeadEncrypt`, `aeadDecrypt` | pure-TS crypto primitives (FIPS/RFC, KAT-verified) |
 | `digitalRoot`, `units`, `triad`, `vortexOrbit`, `gcd`, `isPrime`, `modpow`, `TRINITY`, `BASE`, `A432_STEP` | ℤ/9 primitives |
+
+## CLI and browser
+
+```bash
+npx @uuidna/uuidna address "hello"      # the content-address
+npx @uuidna/uuidna gate "some prose"    # {binary,hit}; exit 1 if it drains
+```
+
+In a page, load the self-contained bundle — no build step, no network call at runtime:
+
+```html
+<script type="module">
+  import { toUuid } from 'https://unpkg.com/@uuidna/uuidna/dist/uuidna.esm.js'
+</script>
+```
 
 ## Provenance
 

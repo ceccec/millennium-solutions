@@ -19,6 +19,33 @@ in VitePress. Observations, each computed:
 - A **7 = 6 + 1 bijection** maps the rosette onto the Clay set.
 - A mechanical **entailment test** reports **0 / 7**.
 
+## The seven, computed to the floor — one theorem per problem
+
+Each Clay problem gets **one** Lean theorem that **computes** from the ℤ/9 doubling sequence
+(`orbit k = 2ᵏ mod 9`, the reflection `refl d = 10 − d`, the derived `isUnit`). Every one carries
+`provenHere = 0`: the computed fact is *adjacent* to the problem, never the conjecture. No anchors,
+no axioms — pure `by decide`, no `sorry`, no `native_decide`, no Mathlib.
+
+| # | Problem | Computed formula (from the sequence) | Honest bound — not the prize |
+|---|---------|--------------------------------------|------------------------------|
+| 1 | [Riemann](https://ceccec.psg.bg/millennium-solutions/theorem/riemann_reflection_and_heart) | `refl ∘ refl = id ∧ #{d : refl d = d} = 1` | the symmetry and its one heart (the ½-analogue) — not the zeros' place |
+| 2 | [P vs NP](https://ceccec.psg.bg/millennium-solutions/theorem/p_vs_np_inverse_is_unique) | `∀ d, #{e : d·e ≡ 1 (mod 9)} = (isUnit d ? 1 : 0)` | a unique inverse (verify in one step) — not a separation |
+| 3 | [Navier–Stokes](https://ceccec.psg.bg/millennium-solutions/theorem/navier_stokes_flow_is_bounded) | `∀ k, 2ᵏ mod 9 ∈ span⟨2⟩` | a bounded 6-cycle forever — not global smoothness |
+| 4 | [Yang–Mills](https://ceccec.psg.bg/millennium-solutions/theorem/yang_mills_spectral_gap) | `2ᵏ ≢ 1 for 0 < k < 6, and 2⁶ ≡ 1` | an order-6 spectral gap — not the mass gap |
+| 5 | [Hodge](https://ceccec.psg.bg/millennium-solutions/theorem/hodge_span_is_the_units) | `span⟨2⟩ = units ∧ non-units ∉ span` | algebraic generation/containment — not (p,p) ⇒ algebraic |
+| 6 | [Birch–Swinnerton-Dyer](https://ceccec.psg.bg/millennium-solutions/theorem/birch_swinnerton_dyer_vanishing) | `Σ span ≡ Σ units ≡ 0 (mod 9)` | a digit-sum vanishing (27 ≡ 0) — not rank ↔ L-order |
+| 7 | [Poincaré](https://ceccec.psg.bg/millennium-solutions/theorem/poincare_single_closed_loop) | `orbit 6 = orbit 0, six distinct steps` | one closed simple loop — not the 3-sphere (Perelman's theorem) |
+
+**What `by decide` settles here.** The tactic is real proof — and every statement above ranges over a
+finite domain (`List.range 9/10/11/48`), which is what makes it decidable at all. The seven conjectures
+range over infinite domains and admit no decision procedure, so none of them is even stated in the layer.
+An eighth sealed theorem records exactly this: `by_decide_proves_the_floor_not_the_conjecture`. The count
+of the seven this deposit asserts an answer for is computed by the gate, and it comes back zero.
+
+The full Lean — every proof sorry-free and axiom-free — is in
+[`src/proof/index.lean`](src/proof/index.lean), closing with
+`theorem the_floor_is_zero_of_seven : provenHere = 0 := rfl`. It stays **0 / 7**.
+
 ## uuidna — the content-addressed identity
 
 **uuidna** is the deposit's content-addressed identity: **mint** (integrity) and **mind**

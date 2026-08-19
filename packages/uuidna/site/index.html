@@ -67,7 +67,47 @@
   600k) under a uuidna <b>7d-fold</b> envelope for public integrity. Secrecy from AES, integrity from the fold;
   the content-address never carries the secret.</p>
 
-  <div class="links">
+  
+<h2 style="font-size:1.15rem;margin:2rem 0 .5rem;">Try it — the real functions, in your browser</h2>
+<p style="color:var(--mut);margin:.25rem 0 1rem;">
+  This runs the shipped bundle (<code>dist/uuidna.esm.js</code>) on this page — no server, no network call.
+  Same input, same address, for anyone. Integrity, not truth.
+</p>
+<div class="card" id="uuidna-playground">
+  <label for="pg-in" style="display:block;font-size:.85rem;color:var(--mut);">input</label>
+  <input id="pg-in" value="uuidna" style="width:100%;padding:.55rem .7rem;margin:.35rem 0 .9rem;border:1px solid var(--line);border-radius:.4rem;background:var(--bg);color:var(--fg);font:inherit;" />
+  <div style="display:grid;grid-template-columns:auto 1fr;gap:.4rem .8rem;font-size:.92rem;">
+    <span style="color:var(--mut);">address</span><code id="pg-addr">—</code>
+    <span style="color:var(--mut);">coin64</span><code id="pg-coin">—</code>
+    <span style="color:var(--mut);">honesty gate</span><span id="pg-gate">—</span>
+    <span style="color:var(--mut);">imprint ⇄ read</span><code id="pg-imp">—</code>
+  </div>
+  <p id="pg-err" style="display:none;color:#c0392b;font-size:.85rem;margin:.8rem 0 0;"></p>
+</div>
+<script type="module">
+  import { toUuid, coin64, computes, imprintTextChain, readImprintTextChain } from '../dist/uuidna.esm.js'
+  const $ = (id) => document.getElementById(id)
+  const run = () => {
+    const v = $('pg-in').value
+    try {
+      $('pg-addr').textContent = toUuid(v)
+      $('pg-coin').textContent = coin64(v)
+      const g = computes(v)
+      $('pg-gate').textContent = g.binary === 1 ? 'holds (1)' : 'drains (0) — ' + JSON.stringify(g.hit)
+      $('pg-gate').style.color = g.binary === 1 ? 'inherit' : '#c0392b'
+      const chain = imprintTextChain(v)
+      $('pg-imp').textContent = readImprintTextChain(chain) === v ? 'round-trips · ' + chain.length + ' uuid(s)' : 'did not round-trip'
+      $('pg-err').style.display = 'none'
+    } catch (e) {
+      $('pg-err').textContent = String(e && e.message || e)
+      $('pg-err').style.display = 'block'
+    }
+  }
+  $('pg-in').addEventListener('input', run)
+  run()
+</script>
+
+<div class="links">
     <a href="https://www.npmjs.com/package/@uuidna/uuidna">npm: @uuidna/uuidna</a>
     <a href="https://github.com/uuidna/uuidna">github: uuidna/uuidna</a>
     <a href="https://ceccec.psg.bg/millennium-solutions/">millennium-solutions</a>

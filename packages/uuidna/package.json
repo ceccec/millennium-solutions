@@ -63,6 +63,7 @@
     "dist",
     "cli.mjs",
     "mcp.mjs",
+    "API.md",
     "README.md",
     "LICENSE",
     "reserved.uuidna"
@@ -75,7 +76,8 @@
     "lint:agnostic": "node lint-agnostic.mjs",
     "gate:prose": "node gate-prose.mjs",
     "bundle": "node bundle.mjs",
-    "build": "npm run lint:agnostic && tsc -p tsconfig.json && npm run gate:prose && npm run bundle",
+    "docs": "node docs.mjs",
+    "build": "npm run lint:agnostic && tsc -p tsconfig.json && npm run gate:prose && npm run bundle && npm run docs",
     "test": "npm run build && node --test test/*.test.mjs",
     "conformance": "node test/conformance.mjs",
     "conformance:deno": "deno run --allow-read test/conformance.mjs",
