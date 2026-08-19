@@ -1,0 +1,41 @@
+# Automated dependency updates.
+#
+# Dependabot rather than a bot Action: this repo allows GitHub-owned actions only, requires every action
+# pinned to a full commit SHA, and requires signed commits with a pull request on main. Dependabot is not
+# an Action (nothing to pin), its commits are signed by GitHub, and it proposes changes as PRs — so it
+# fits all three rules instead of fighting them.
+#
+# Nothing here merges itself. Every bump arrives as a PR that must pass the same gates as any other change:
+# the cross-runtime matrix, the release gate chain, and the Pages build.
+version: 2
+updates:
+  # ── npm, from the workspace root (covers packages/uuidna too) ──
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    versioning-strategy: increase
+    commit-message:
+      prefix: "deps"
+    groups:
+      # One PR for routine movement, so the queue stays readable.
+      routine:
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
+    # A major bump on the compiler or the site generator changes what BUILDS the shipped artifacts, so it
+    # arrives on its own and gets read, not swept in with a group. TypeScript 5.9 → 7 was emit-identical,
+    # but that was a measured result, not an assumption to repeat blindly.
+    # (majors are ungrouped by default — listed here as the reason, not as config)
+
+  # ── the pinned action SHAs ──
+  # SHA pinning is required here, which means a pinned action never updates on its own and silently rots.
+  # Dependabot rewrites the SHA and keeps the trailing `# v4` comment accurate, so pinning stays a
+  # security property instead of becoming a staleness problem.
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "ci"
