@@ -50,6 +50,12 @@ jobs:
       - name: forensics (chain of custody, tamper-evident)
         run: node scripts/forensics.ts
 
+      # An ANNOTATED tag carries an author, so the runner needs an identity or `git tag -a` fails.
+      - name: identity for the annotated tag
+        run: |
+          git config user.name  'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
       # --- mint the tag only if the content-address moved ---
       - name: release — mint the provenance tag if there is a delta
         id: rel
