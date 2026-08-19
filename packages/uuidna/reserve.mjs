@@ -6,11 +6,17 @@ import { execSync } from 'node:child_process'
 import { writeFileSync } from 'node:fs'
 import { toUuid } from './dist/index.js'
 
-const TARGET = 65536
+// The target is DERIVED, never typed: the smallest power of two that fits the package. A hardcoded 64 KiB
+// held only while the content was smaller than it, and broke silently the moment the CLI, the bundles and the
+// generated reference pushed the base past it — an alignment that cannot be met is not an invariant. The
+// declared property is now "aligned to an exact power of two", which survives growth: when the base outgrows
+// one boundary the next is taken, and the file still lands on the byte.
 const RESERVED = 'reserved.uuidna'
-// ASCII-only header (1 char == 1 byte, so a byte-exact truncation is a char-exact slice).
-const HEADER =
-`# uuidna reserved space - this package is aligned to EXACTLY 64 KiB (65536 bytes) unpacked.
+const nextPow2 = (n) => { let p = 1; while (p < n) p *= 2; return p }
+const KiB = (n) => (n / 1024).toFixed(0) + ' KiB'
+
+const header = (target) =>
+`# uuidna reserved space - this package is aligned to EXACTLY ${KiB(target)} (${target} bytes) unpacked, a power of two.
 # Below: reproducible content-addresses (toUuid of "uuidna:reserve:<i>"), a self-hosted reserve for the
 # cryptography-goal development - NOT random padding; every line recomputes. Regenerate with reserve.mjs.
 `
@@ -22,15 +28,19 @@ writeFileSync(RESERVED, '')
 let j = measure()
 const rEntry = j.files.find((f) => f.path === RESERVED)
 const base = j.unpackedSize - (rEntry ? rEntry.size : 0)
-const R = TARGET - base
-if (R < HEADER.length) throw new Error('reserve smaller than header: ' + R)
 
+// the boundary: the smallest power of two that leaves room for the reserve's own header
+let TARGET = nextPow2(base)
+const HEADER = () => header(TARGET)
+while (TARGET - base < HEADER().length) TARGET *= 2
+
+const R = TARGET - base
 // fill: header + content-addresses, ASCII (1 char = 1 byte), truncated to EXACTLY R bytes
-let body = HEADER
+let body = HEADER()
 for (let i = 0; body.length < R; i++) body += toUuid('uuidna:reserve:' + i) + '\n'
 body = body.slice(0, R)
 writeFileSync(RESERVED, body)
 
 j = measure()
-console.log('base:', base, '· reserve:', R, '· unpacked:', j.unpackedSize, '· exact 64 KiB:', j.unpackedSize === TARGET)
-if (j.unpackedSize !== TARGET) { throw new Error('NOT exact: ' + j.unpackedSize) }
+console.log('base:', base, '· reserve:', R, '· unpacked:', j.unpackedSize, '· exact', KiB(TARGET) + ':', j.unpackedSize === TARGET)
+if (j.unpackedSize !== TARGET) throw new Error('NOT exact: ' + j.unpackedSize + ' (target ' + TARGET + ')')

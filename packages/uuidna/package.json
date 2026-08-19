@@ -77,6 +77,8 @@
     "gate:prose": "node gate-prose.mjs",
     "bundle": "node bundle.mjs",
     "docs": "node docs.mjs",
+    "reserve": "node reserve.mjs",
+    "pack:check": "node pack-check.mjs",
     "build": "npm run lint:agnostic && tsc -p tsconfig.json && npm run gate:prose && npm run bundle && npm run docs",
     "test": "npm run build && node --test test/*.test.mjs",
     "conformance": "node test/conformance.mjs",
@@ -84,7 +86,7 @@
     "conformance:bun": "bun test/conformance.mjs",
     "conformance:browser": "node test/browser-conformance.mjs",
     "mcp": "node mcp.mjs",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build && npm run reserve && npm run pack:check"
   },
   "devDependencies": {
     "esbuild": "^0.28.2",

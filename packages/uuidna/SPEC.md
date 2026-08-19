@@ -22,9 +22,9 @@ not clarifications.
 | | |
 |---|---|
 | Package | `@uuidna/uuidna` |
-| Kind | Library + MCP server + (planned) CLI + (planned) browser bundle |
+| Kind | Library + MCP server + CLI + browser/CDN bundle + generated API reference |
 | Language | TypeScript, `strict`, ESM-only (`"type": "module"`) |
-| Runtime deps | **none** (dev-only: `typescript`) |
+| Runtime deps | **none** (dev-only: `typescript`, `esbuild`) |
 | Source | 14 modules, ~912 LOC in `src/` |
 | License | `CC-BY-NC-4.0` — kept (D2); public use free, commercial redistribution not granted (§9) |
 | Ethos | measure-don't-assert · integrity-not-truth · `0/7` · nothing hardcoded that can recompute |
@@ -108,7 +108,7 @@ Only these ambient globals may be used in `src/`:
 |---|---|---|
 | `mcp.mjs` | `process.stdin/stdout` (JSON-RPC over stdio) | `bin`, never imported by `src/index` |
 | `reserve.mjs` | `node:child_process`, `node:fs` | dev tool, not shipped in entry |
-| `cli.mjs` (planned) | `process.argv`, stdio | `bin`, separate from core |
+| `cli.mjs` | `process.argv`, stdio | `bin`, separate from core |
 
 **Guard (C1):** a CI lint asserts `grep -rE "from 'node:|require\('node:" src/` is empty.
 
@@ -341,8 +341,10 @@ the content-address is the "true latest," and git tags are immutable provenance.
   distinction so they stop looking like a bug.
 - **Provenance:** publish with npm provenance (`--provenance`), signed git tags (the repo's
   ruleset already requires verified signatures), SLSA attestation optional. `reserve.mjs` keeps
-  the unpacked tarball byte-aligned to **exactly 64 KiB** (verify: `npm pack --dry-run --json`
-  → `unpackedSize === 65536`).
+  the unpacked tarball byte-aligned to **an exact power of two** — the target is DERIVED as the smallest
+  power of two that fits, so the discipline survives growth (a hardcoded 64 KiB held only while the content
+  was smaller than it, and the CLI, bundles and generated reference pushed the base past it). Currently
+  2^18 = 262 144 bytes. Verify: `npm run pack:check`, which is also a publish gate.
 - **SemVer contract:** the §3.10 consumer surface defines "breaking." Removing/retyping any of
   those exports ⇒ major. Frozen-label means we express change via content-address + tag, not the
   npm minor — document this so SemVer expectations are explicit, not silently violated.
@@ -387,7 +389,9 @@ State the model plainly; overclaiming here would fail the package's own gate.
 **C10** Generate the API reference from `.d.ts`; wire the `site/` playground to the C6 bundle.
 **C11** Versioning (D1): make `package.json` the single source; delete the `6.4.7` literal;
 document frozen-label (`0.1.1`) vs site odometer (`7.x`).
-**C12** Publish with `--provenance` + signed tag; re-run `reserve.mjs`; assert 64 KiB unpacked.
+**C12** Publish with `--provenance` (needs `id-token: write`) + signed tag; `prepublishOnly` chains
+build → `reserve` → `pack:check`, so the tarball is re-padded and asserted on an exact power of two at
+publish time rather than left to whoever remembers.
 **C13** Add the `randomized` encryption mode (D4): `encryptRandom` + injectable entropy, `Sealed`
 `v:2` + `mode` tag, mode-agnostic `decrypt`/`verifyEnvelope`, KATs for both modes.
 **C14** DRY CI (D5): one reusable workflow runs the single test suite across Node 18/20/22 +

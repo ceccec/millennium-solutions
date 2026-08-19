@@ -11,6 +11,7 @@ on:
 
 permissions:
   contents: read
+  id-token: write   # npm provenance: the registry verifies this workflow built the tarball
 
 jobs:
   publish:
@@ -36,6 +37,9 @@ jobs:
       - name: wholeness — the aura is whole (all compute + floor)
         run: node scripts/wholeness.ts
 
+      - name: alignment — the tarball must land on an exact power of two
+        run: npm run pack:check -w @uuidna/uuidna
+
       # --- publish (automation token → no OTP). Dependency first, then the scoped trinity. ---
       # Releases are minted automatically now (release.yml), so this workflow fires on every release. The
       # token may not be set — publish only when it is, and say so plainly otherwise rather than failing on
@@ -49,4 +53,4 @@ jobs:
             echo "NPM_TOKEN is not set — nothing published. Set the secret to enable publishing."
             exit 0
           fi
-          npm publish --access public
+          npm publish --access public --provenance
