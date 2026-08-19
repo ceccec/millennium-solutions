@@ -24,6 +24,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Actions pinned to full commit SHAs — this repo requires SHA pinning (tag refs are rejected).
+      # NB: upload-pages-artifact must be v4 or newer. v3 calls actions/upload-artifact@v4 by TAG inside its
+      # own composite action, and this repo requires every action pinned to a full commit SHA — a nested tag
+      # ref cannot be pinned from here, so v3 is rejected at startup. v5 pins its internal ref to a SHA.
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
@@ -31,10 +34,15 @@ jobs:
           cache: npm
       - name: Install (locked)
         run: npm ci
+      # src/0/{chacha,crypt,sha256,merkle-proof}.ts and src/the/apple import @uuidna/uuidna, and
+      # scripts/greeting.ts reads its package.json, so the workspace must be BUILT before the site build —
+      # otherwise dist/index.js is missing and predocs:build dies resolving the package.
+      - name: Build the uuidna workspace (the site imports it)
+        run: npm run build -w @uuidna/uuidna
       - name: Build the site (predocs:build gates run first)
         run: npm run docs:build
-      - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
-      - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
+      - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: .vitepress/dist
 
@@ -46,4 +54,4 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
