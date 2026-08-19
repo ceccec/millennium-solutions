@@ -101,8 +101,13 @@ function generated(): typeof curated {
   for (const d of digits()) out.push({ key: 'hasinv_d' + d, name: d + ' has a multiplicative inverse mod ' + BASE, test: () => digits().some((e) => m9(d * e) === 1) })
   // self-inverse: u ≡ u⁻¹ (u²≡1) — true for {1,8}, false for the rest.
   for (const u of U) out.push({ key: 'selfinv_u' + u, name: u + ' is its own inverse mod ' + BASE, test: () => m9(u * u) === 1 })
-  // inverse via Euler: u⁻¹ ≡ u^(|units|−1) — holds for every unit (u · u⁵ = u⁶ ≡ 1).
-  for (const u of U) out.push({ key: 'invpow_u' + u, name: 'the inverse of ' + u + ' is u^(|units|−1) = u⁵ mod ' + BASE, test: () => { const inv = U.find((e) => m9(u * e) === 1); return inv !== undefined && modpow(u, U.length - 1, BASE) === inv } })
+  // inverse via Euler: u⁻¹ ≡ u^(|units|−1) — holds for every unit (u · u⁵ = u⁶ ≡ 1). Proposed at EVERY
+  // residue, not only the units: at 3 and 6 the proposition is simply FALSE (a non-unit has no inverse, so
+  // no power of it is one), and the test says so. Restricting the loop to the units skipped those indices
+  // entirely, which left the family dense-but-holed and its absence UNEXPLAINED — the generator emitted
+  // nothing there, so forensics could not tell a missing theorem from a false proposition. hasinv_d* has
+  // always worked this way; invpow_u* now matches it, and the two gaps become documented non-theorems.
+  for (const u of digits()) out.push({ key: 'invpow_u' + u, name: 'the inverse of ' + u + ' is u^(|units|−1) = u⁵ mod ' + BASE, test: () => { const inv = U.find((e) => m9(u * e) === 1); return inv !== undefined && modpow(u, U.length - 1, BASE) === inv } })
   // additive inverse (negation): ℤ/BASE is an additive group; negation is an involution.
   out.push({ key: 'add_group', name: 'every residue has an additive inverse mod ' + BASE, test: () => digits().every((d) => digits().some((e) => m9(d + e) === 0)) })
   out.push({ key: 'neg_involution', name: 'negation −(−d) ≡ d is an involution on ℤ/' + BASE, test: () => digits().every((d) => m9(-m9(-d)) === m9(d)) })
