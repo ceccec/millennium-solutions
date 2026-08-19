@@ -15,10 +15,6 @@ permissions:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    # Only run when the token actually exists. Releases are minted automatically now (release.yml), and
-    # without this guard every release would spawn a publish run that fails at authentication — red marks
-    # that mean nothing. Set the NPM_TOKEN secret to enable publishing; until then this job is skipped.
-    if: ${{ secrets.NPM_TOKEN != '' }}
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
@@ -41,7 +37,16 @@ jobs:
         run: node scripts/wholeness.ts
 
       # --- publish (automation token → no OTP). Dependency first, then the scoped trinity. ---
-      - name: publish @ceccec/millennium-solutions
-        run: npm publish --access public
+      # Releases are minted automatically now (release.yml), so this workflow fires on every release. The
+      # token may not be set — publish only when it is, and say so plainly otherwise rather than failing on
+      # an authentication error that means nothing. NB: the `secrets` context is unavailable in a job-level
+      # `if`, so the check belongs here, in the step.
+      - name: publish @ceccec/millennium-solutions (only when NPM_TOKEN is set)
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          if [ -z "$NODE_AUTH_TOKEN" ]; then
+            echo "NPM_TOKEN is not set — nothing published. Set the secret to enable publishing."
+            exit 0
+          fi
+          npm publish --access public
