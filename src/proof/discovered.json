@@ -15523,5 +15523,325 @@
     "key": "lean_merkaba_stacked_triangles_are_tetrahedral",
     "name": "lean merkaba.lean: stacked_triangles_are_tetrahedral — (List.range' 1 40).all (fun n => sumTri n == n * (n + 1) * (n + 2) / 6) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "4611383b-7ebe-8301-9917-056c55afdb8e"
+  },
+  {
+    "key": "lean_imagined_units_is_closed_under_double",
+    "name": "lean imagined.lean: units_is_closed_under_double — [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (2 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "74b1c18a-9944-8da9-b1da-6f3f8886cd32"
+  },
+  {
+    "key": "lean_imagined_orbit_is_closed_under_double",
+    "name": "lean imagined.lean: orbit_is_closed_under_double — [1, 2, 4, 8, 7, 5].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (2 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "43137a9a-a239-8fb3-8a16-3baba8f64fd9"
+  },
+  {
+    "key": "lean_imagined_all_is_closed_under_double",
+    "name": "lean imagined.lean: all_is_closed_under_double — [0,1,2,3,4,5,6,7,8].all (fun d => [0,1,2,3,4,5,6,7,8].contains (m9 (2 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a484e31e-4061-848a-8146-978420eecd9e"
+  },
+  {
+    "key": "lean_imagined_triad_is_closed_under_triple",
+    "name": "lean imagined.lean: triad_is_closed_under_triple — [3, 6, 0].all (fun d => [3, 6, 0].contains (m9 (3 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8a09c26a-d00f-8de1-9163-f2028507f9b1"
+  },
+  {
+    "key": "lean_imagined_all_is_closed_under_triple",
+    "name": "lean imagined.lean: all_is_closed_under_triple — [0,1,2,3,4,5,6,7,8].all (fun d => [0,1,2,3,4,5,6,7,8].contains (m9 (3 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6721ec81-d9dc-8be5-afd6-92606fee93d7"
+  },
+  {
+    "key": "lean_imagined_units_is_closed_under_negate",
+    "name": "lean imagined.lean: units_is_closed_under_negate — [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (9 - d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ade6add5-ed3b-8575-a7a8-70a0c8e5d86f"
+  },
+  {
+    "key": "lean_imagined_triad_is_closed_under_negate",
+    "name": "lean imagined.lean: triad_is_closed_under_negate — [3, 6, 0].all (fun d => [3, 6, 0].contains (m9 (9 - d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5866147f-e850-88bd-91c3-f5d4cc30b298"
+  },
+  {
+    "key": "lean_imagined_orbit_is_closed_under_negate",
+    "name": "lean imagined.lean: orbit_is_closed_under_negate — [1, 2, 4, 8, 7, 5].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (9 - d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2648891c-b6ac-834e-9e3d-6e6b3bdf1af1"
+  },
+  {
+    "key": "lean_imagined_all_is_closed_under_negate",
+    "name": "lean imagined.lean: all_is_closed_under_negate — [0,1,2,3,4,5,6,7,8].all (fun d => [0,1,2,3,4,5,6,7,8].contains (m9 (9 - d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "488239aa-b8c4-814d-b652-e7592199fb2f"
+  },
+  {
+    "key": "lean_imagined_units_is_closed_under_square",
+    "name": "lean imagined.lean: units_is_closed_under_square — [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (d * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6d29a3cd-f0c8-84b5-b9f3-5f9a2b268c49"
+  },
+  {
+    "key": "lean_imagined_triad_is_closed_under_square",
+    "name": "lean imagined.lean: triad_is_closed_under_square — [3, 6, 0].all (fun d => [3, 6, 0].contains (m9 (d * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "72db3295-a708-8323-bf96-ba0007a564b5"
+  },
+  {
+    "key": "lean_imagined_orbit_is_closed_under_square",
+    "name": "lean imagined.lean: orbit_is_closed_under_square — [1, 2, 4, 8, 7, 5].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (d * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a001d862-2860-8dc6-9898-9460c48430e5"
+  },
+  {
+    "key": "lean_imagined_tetA_is_closed_under_square",
+    "name": "lean imagined.lean: tetA_is_closed_under_square — [1, 4, 7].all (fun d => [1, 4, 7].contains (m9 (d * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1af8a50e-a0f9-8c62-b6c7-71ddf3007c6e"
+  },
+  {
+    "key": "lean_imagined_all_is_closed_under_square",
+    "name": "lean imagined.lean: all_is_closed_under_square — [0,1,2,3,4,5,6,7,8].all (fun d => [0,1,2,3,4,5,6,7,8].contains (m9 (d * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "eb6c5699-9bf8-8b7b-b534-039e59998627"
+  },
+  {
+    "key": "lean_imagined_units_is_closed_under_quintuple",
+    "name": "lean imagined.lean: units_is_closed_under_quintuple — [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (5 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "23146a0e-4f1a-8640-a6c5-e6725a1d0dd9"
+  },
+  {
+    "key": "lean_imagined_triad_is_closed_under_quintuple",
+    "name": "lean imagined.lean: triad_is_closed_under_quintuple — [3, 6, 0].all (fun d => [3, 6, 0].contains (m9 (5 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "0c782557-1e79-85bc-8ea3-adef8e642344"
+  },
+  {
+    "key": "lean_imagined_orbit_is_closed_under_quintuple",
+    "name": "lean imagined.lean: orbit_is_closed_under_quintuple — [1, 2, 4, 8, 7, 5].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (5 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "36f80355-f5c0-8229-a28d-ce26643631e2"
+  },
+  {
+    "key": "lean_imagined_all_is_closed_under_quintuple",
+    "name": "lean imagined.lean: all_is_closed_under_quintuple — [0,1,2,3,4,5,6,7,8].all (fun d => [0,1,2,3,4,5,6,7,8].contains (m9 (5 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "dae19453-3390-822a-a58b-97795d6dcff4"
+  },
+  {
+    "key": "lean_imagined_quadruple_is_involutive_on_triad",
+    "name": "lean imagined.lean: quadruple_is_involutive_on_triad — [3, 6, 0].all (fun d => (fun x => m9 (4 * x)) (m9 (4 * d)) == d) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "4633b9bd-d5d5-8a68-a491-673c8a17424f"
+  },
+  {
+    "key": "lean_imagined_square_is_involutive_on_tetA",
+    "name": "lean imagined.lean: square_is_involutive_on_tetA — [1, 4, 7].all (fun d => (fun x => m9 (x * x)) (m9 (d * d)) == d) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e13716ed-0ac5-8a87-90c2-b0f14dc21975"
+  },
+  {
+    "key": "lean_imagined_quintuple_is_involutive_on_triad",
+    "name": "lean imagined.lean: quintuple_is_involutive_on_triad — [3, 6, 0].all (fun d => (fun x => m9 (5 * x)) (m9 (5 * d)) == d) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "98dcf6c8-a85e-8669-bb2c-fb127b761cc3"
+  },
+  {
+    "key": "lean_imagined_double_carries_units_onto_orbit",
+    "name": "lean imagined.lean: double_carries_units_onto_orbit — [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (2 * d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d => m9 (2 * d))).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9c9d13f8-a0b4-8118-95bd-9b50824d43de"
+  },
+  {
+    "key": "lean_imagined_double_carries_orbit_onto_units",
+    "name": "lean imagined.lean: double_carries_orbit_onto_units — [1, 2, 4, 8, 7, 5].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (2 * d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d => m9 (2 * d))).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1fe514e5-9af2-8510-b144-4b796c98c947"
+  },
+  {
+    "key": "lean_imagined_triple_carries_all_onto_triad",
+    "name": "lean imagined.lean: triple_carries_all_onto_triad — [0,1,2,3,4,5,6,7,8].all (fun d => [3, 6, 0].contains (m9 (3 * d))) ∧ ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (3 * d))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "99968f56-31e3-8069-b9a6-8d1b044c1cd4"
+  },
+  {
+    "key": "lean_imagined_quadruple_carries_units_onto_orbit",
+    "name": "lean imagined.lean: quadruple_carries_units_onto_orbit — [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (4 * d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d => m9 (4 * d))).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d37065ab-bac3-81ab-be7b-ec649e22ec69"
+  },
+  {
+    "key": "lean_imagined_quadruple_carries_orbit_onto_units",
+    "name": "lean imagined.lean: quadruple_carries_orbit_onto_units — [1, 2, 4, 8, 7, 5].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (4 * d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d => m9 (4 * d))).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a8560589-8c23-8411-8228-e95b36dd1e73"
+  },
+  {
+    "key": "lean_imagined_negate_carries_units_onto_orbit",
+    "name": "lean imagined.lean: negate_carries_units_onto_orbit — [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (9 - d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d => m9 (9 - d))).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "026d098c-a7ed-8bd6-8416-ed14fa6dff57"
+  },
+  {
+    "key": "lean_imagined_negate_carries_orbit_onto_units",
+    "name": "lean imagined.lean: negate_carries_orbit_onto_units — [1, 2, 4, 8, 7, 5].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (9 - d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d => m9 (9 - d))).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9785d5df-38fb-866e-a27a-1a665febfb9e"
+  },
+  {
+    "key": "lean_imagined_negate_carries_tetA_onto_tetB",
+    "name": "lean imagined.lean: negate_carries_tetA_onto_tetB — [1, 4, 7].all (fun d => [2, 5, 8].contains (m9 (9 - d))) ∧ ([1, 4, 7].map (fun d => m9 (9 - d))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "cd1a8234-fa1f-8867-951f-3f3971557eed"
+  },
+  {
+    "key": "lean_imagined_negate_carries_tetB_onto_tetA",
+    "name": "lean imagined.lean: negate_carries_tetB_onto_tetA — [2, 5, 8].all (fun d => [1, 4, 7].contains (m9 (9 - d))) ∧ ([2, 5, 8].map (fun d => m9 (9 - d))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2d5f2887-07ff-8ebe-95a4-c10d7997eb62"
+  },
+  {
+    "key": "lean_imagined_square_carries_units_onto_tetA",
+    "name": "lean imagined.lean: square_carries_units_onto_tetA — [1, 2, 4, 5, 7, 8].all (fun d => [1, 4, 7].contains (m9 (d * d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d => m9 (d * d))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f57e0f22-217a-81d3-9842-dd6ca8949412"
+  },
+  {
+    "key": "lean_imagined_square_carries_orbit_onto_tetA",
+    "name": "lean imagined.lean: square_carries_orbit_onto_tetA — [1, 2, 4, 8, 7, 5].all (fun d => [1, 4, 7].contains (m9 (d * d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d => m9 (d * d))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "fce1a3af-47fc-8b3c-885e-081d69f2a8b9"
+  },
+  {
+    "key": "lean_imagined_square_carries_tetB_onto_tetA",
+    "name": "lean imagined.lean: square_carries_tetB_onto_tetA — [2, 5, 8].all (fun d => [1, 4, 7].contains (m9 (d * d))) ∧ ([2, 5, 8].map (fun d => m9 (d * d))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "bebc2b15-1fa2-8f51-8153-62d850bad5db"
+  },
+  {
+    "key": "lean_imagined_quintuple_carries_units_onto_orbit",
+    "name": "lean imagined.lean: quintuple_carries_units_onto_orbit — [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (5 * d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d => m9 (5 * d))).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "dadc55f1-9dd3-8371-a2ee-e1e452d6547b"
+  },
+  {
+    "key": "lean_imagined_quintuple_carries_orbit_onto_units",
+    "name": "lean imagined.lean: quintuple_carries_orbit_onto_units — [1, 2, 4, 8, 7, 5].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (5 * d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d => m9 (5 * d))).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "65c0d9be-2315-8c0a-8a63-fd631c8ee290"
+  },
+  {
+    "key": "lean_imagined_quintuple_carries_tetA_onto_tetB",
+    "name": "lean imagined.lean: quintuple_carries_tetA_onto_tetB — [1, 4, 7].all (fun d => [2, 5, 8].contains (m9 (5 * d))) ∧ ([1, 4, 7].map (fun d => m9 (5 * d))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "083aec67-2d52-89a6-8ba6-dbf5ee8439ce"
+  },
+  {
+    "key": "lean_imagined_quintuple_carries_tetB_onto_tetA",
+    "name": "lean imagined.lean: quintuple_carries_tetB_onto_tetA — [2, 5, 8].all (fun d => [1, 4, 7].contains (m9 (5 * d))) ∧ ([2, 5, 8].map (fun d => m9 (5 * d))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "20e8affd-97c5-8bb8-9468-36841a2c4b37"
+  },
+  {
+    "key": "lean_imagined_triple_collapses_triad_to_one_value",
+    "name": "lean imagined.lean: triple_collapses_triad_to_one_value — ([3, 6, 0].map (fun d => m9 (3 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b69711cf-680d-83a7-a057-317cad5ed5f6"
+  },
+  {
+    "key": "lean_imagined_triple_collapses_tetA_to_one_value",
+    "name": "lean imagined.lean: triple_collapses_tetA_to_one_value — ([1, 4, 7].map (fun d => m9 (3 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "09f1a817-8fcf-8bf0-aae2-d93b0d64a0e2"
+  },
+  {
+    "key": "lean_imagined_triple_collapses_tetB_to_one_value",
+    "name": "lean imagined.lean: triple_collapses_tetB_to_one_value — ([2, 5, 8].map (fun d => m9 (3 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "56e120e9-368e-80da-9992-70a2601addc7"
+  },
+  {
+    "key": "lean_imagined_square_collapses_triad_to_one_value",
+    "name": "lean imagined.lean: square_collapses_triad_to_one_value — ([3, 6, 0].map (fun d => m9 (d * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "cbca5886-4508-8207-8bb0-e50ce252be83"
+  },
+  {
+    "key": "lean_imagined_cube_collapses_triad_to_one_value",
+    "name": "lean imagined.lean: cube_collapses_triad_to_one_value — ([3, 6, 0].map (fun d => m9 (d * d * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1878b27c-8b5d-8b95-ad33-2e7534d11141"
+  },
+  {
+    "key": "lean_imagined_cube_collapses_tetA_to_one_value",
+    "name": "lean imagined.lean: cube_collapses_tetA_to_one_value — ([1, 4, 7].map (fun d => m9 (d * d * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "89b479b2-bb01-8913-bd7b-66030015b96c"
+  },
+  {
+    "key": "lean_imagined_cube_collapses_tetB_to_one_value",
+    "name": "lean imagined.lean: cube_collapses_tetB_to_one_value — ([2, 5, 8].map (fun d => m9 (d * d * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f0c171ba-5dd3-81da-8800-53c2d8b06d6b"
+  },
+  {
+    "key": "lean_imagined_triad_is_closed_under_sextuple",
+    "name": "lean imagined.lean: triad_is_closed_under_sextuple — [3, 6, 0].all (fun d => [3, 6, 0].contains (m9 (6 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c6a3004b-4600-8d68-adf3-e6bba2d097ff"
+  },
+  {
+    "key": "lean_imagined_all_is_closed_under_sextuple",
+    "name": "lean imagined.lean: all_is_closed_under_sextuple — [0,1,2,3,4,5,6,7,8].all (fun d => [0,1,2,3,4,5,6,7,8].contains (m9 (6 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "487c1f28-9559-8b4e-9e92-a0e4a4ad74d5"
+  },
+  {
+    "key": "lean_imagined_units_is_closed_under_octuple",
+    "name": "lean imagined.lean: units_is_closed_under_octuple — [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (8 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a7229156-86a5-8529-9651-05816f066031"
+  },
+  {
+    "key": "lean_imagined_triad_is_closed_under_octuple",
+    "name": "lean imagined.lean: triad_is_closed_under_octuple — [3, 6, 0].all (fun d => [3, 6, 0].contains (m9 (8 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "03033716-02a9-86f5-a9da-25907548cd37"
+  },
+  {
+    "key": "lean_imagined_orbit_is_closed_under_octuple",
+    "name": "lean imagined.lean: orbit_is_closed_under_octuple — [1, 2, 4, 8, 7, 5].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (8 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "4f278f65-1bde-8a6e-9922-ff8de87dd174"
+  },
+  {
+    "key": "lean_imagined_all_is_closed_under_octuple",
+    "name": "lean imagined.lean: all_is_closed_under_octuple — [0,1,2,3,4,5,6,7,8].all (fun d => [0,1,2,3,4,5,6,7,8].contains (m9 (8 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9188cd9f-002a-8023-b923-b5c736e07ca5"
+  },
+  {
+    "key": "lean_imagined_septuple_is_involutive_on_triad",
+    "name": "lean imagined.lean: septuple_is_involutive_on_triad — [3, 6, 0].all (fun d => (fun x => m9 (7 * x)) (m9 (7 * d)) == d) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "172d9674-4d63-879b-9a2c-b120feca3149"
+  },
+  {
+    "key": "lean_imagined_sextuple_carries_all_onto_triad",
+    "name": "lean imagined.lean: sextuple_carries_all_onto_triad — [0,1,2,3,4,5,6,7,8].all (fun d => [3, 6, 0].contains (m9 (6 * d))) ∧ ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (6 * d))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "626b20bb-2221-85ac-bfe8-93732bf8a87f"
+  },
+  {
+    "key": "lean_imagined_septuple_carries_units_onto_orbit",
+    "name": "lean imagined.lean: septuple_carries_units_onto_orbit — [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (7 * d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d => m9 (7 * d))).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a8f55b84-94b6-8e4d-89b5-b3649f195a36"
+  },
+  {
+    "key": "lean_imagined_septuple_carries_orbit_onto_units",
+    "name": "lean imagined.lean: septuple_carries_orbit_onto_units — [1, 2, 4, 8, 7, 5].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (7 * d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d => m9 (7 * d))).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8df83d0f-2bed-8ffc-836e-256f1f8dd802"
+  },
+  {
+    "key": "lean_imagined_octuple_carries_units_onto_orbit",
+    "name": "lean imagined.lean: octuple_carries_units_onto_orbit — [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (8 * d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d => m9 (8 * d))).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "cee59fa8-fb75-8016-b297-1fb6a38bd280"
+  },
+  {
+    "key": "lean_imagined_octuple_carries_orbit_onto_units",
+    "name": "lean imagined.lean: octuple_carries_orbit_onto_units — [1, 2, 4, 8, 7, 5].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (8 * d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d => m9 (8 * d))).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d133706e-bd8c-8b49-9c00-e53c8d702218"
+  },
+  {
+    "key": "lean_imagined_octuple_carries_tetA_onto_tetB",
+    "name": "lean imagined.lean: octuple_carries_tetA_onto_tetB — [1, 4, 7].all (fun d => [2, 5, 8].contains (m9 (8 * d))) ∧ ([1, 4, 7].map (fun d => m9 (8 * d))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "dfecc1ef-d81b-8200-97ed-eb4057e5dc76"
+  },
+  {
+    "key": "lean_imagined_octuple_carries_tetB_onto_tetA",
+    "name": "lean imagined.lean: octuple_carries_tetB_onto_tetA — [2, 5, 8].all (fun d => [1, 4, 7].contains (m9 (8 * d))) ∧ ([2, 5, 8].map (fun d => m9 (8 * d))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "74ad9bcf-f22c-8d04-be0e-4e4779184739"
+  },
+  {
+    "key": "lean_imagined_sextuple_collapses_triad_to_one_value",
+    "name": "lean imagined.lean: sextuple_collapses_triad_to_one_value — ([3, 6, 0].map (fun d => m9 (6 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6c5bf198-bd89-8098-81a6-d42f29563384"
+  },
+  {
+    "key": "lean_imagined_sextuple_collapses_tetA_to_one_value",
+    "name": "lean imagined.lean: sextuple_collapses_tetA_to_one_value — ([1, 4, 7].map (fun d => m9 (6 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d29da6cf-62b5-8be7-b25e-87c08e8a8b90"
+  },
+  {
+    "key": "lean_imagined_sextuple_collapses_tetB_to_one_value",
+    "name": "lean imagined.lean: sextuple_collapses_tetB_to_one_value — ([2, 5, 8].map (fun d => m9 (6 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ee2a3939-17c8-8b44-b9c7-8f797f28f490"
+  },
+  {
+    "key": "lean_energy_the_loop_returns_less_than_it_took",
+    "name": "lean energy.lean: the_loop_returns_less_than_it_took — burnYield < splitCost ∧ burnYield * 100 / splitCost = 23 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8229c511-d4bd-8878-9abb-f498760675f7"
+  },
+  {
+    "key": "lean_energy_a_chain_of_efficiencies_can_only_lose",
+    "name": "lean energy.lean: a_chain_of_efficiencies_can_only_lose — (List.range 101).all (fun a => (List.range 101).all (fun b => a * b ≤ 100 * a && a * b ≤ 100 * b)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "34cbdadb-77a7-8a04-a8a1-a80d59f29376"
+  },
+  {
+    "key": "lean_energy_as_a_purifier_the_loop_costs_a_thousandfold",
+    "name": "lean energy.lean: as_a_purifier_the_loop_costs_a_thousandfold — splitCost / waterOut = 5777 ∧ splitCost / waterOut > roPerLitre * 1000 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "840c66b6-b891-8807-a71e-eee3f14306a3"
   }
 ]

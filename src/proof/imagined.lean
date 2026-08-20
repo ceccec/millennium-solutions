@@ -1,0 +1,258 @@
+import Z9
+set_option maxRecDepth 8000000
+-- IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets
+-- statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that
+-- also holds for all its siblings. A property true of everything names nothing. What is left is what the
+-- kernel accepted; whatever it refused is reported by the generator and is not in this file.
+--
+-- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0 · No axioms, no Mathlib, no sorry.
+
+namespace Imagined
+
+open Z9
+
+-- the units is closed under doubling
+theorem units_is_closed_under_double :
+  [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (2 * d))) := by decide
+
+-- the doubling orbit is closed under doubling
+theorem orbit_is_closed_under_double :
+  [1, 2, 4, 8, 7, 5].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (2 * d))) := by decide
+
+-- the whole ring is closed under doubling
+theorem all_is_closed_under_double :
+  [0,1,2,3,4,5,6,7,8].all (fun d => [0,1,2,3,4,5,6,7,8].contains (m9 (2 * d))) := by decide
+
+-- the triad is closed under tripling
+theorem triad_is_closed_under_triple :
+  [3, 6, 0].all (fun d => [3, 6, 0].contains (m9 (3 * d))) := by decide
+
+-- the whole ring is closed under tripling
+theorem all_is_closed_under_triple :
+  [0,1,2,3,4,5,6,7,8].all (fun d => [0,1,2,3,4,5,6,7,8].contains (m9 (3 * d))) := by decide
+
+-- the units is closed under negation
+theorem units_is_closed_under_negate :
+  [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (9 - d))) := by decide
+
+-- the triad is closed under negation
+theorem triad_is_closed_under_negate :
+  [3, 6, 0].all (fun d => [3, 6, 0].contains (m9 (9 - d))) := by decide
+
+-- the doubling orbit is closed under negation
+theorem orbit_is_closed_under_negate :
+  [1, 2, 4, 8, 7, 5].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (9 - d))) := by decide
+
+-- the whole ring is closed under negation
+theorem all_is_closed_under_negate :
+  [0,1,2,3,4,5,6,7,8].all (fun d => [0,1,2,3,4,5,6,7,8].contains (m9 (9 - d))) := by decide
+
+-- the units is closed under squaring
+theorem units_is_closed_under_square :
+  [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (d * d))) := by decide
+
+-- the triad is closed under squaring
+theorem triad_is_closed_under_square :
+  [3, 6, 0].all (fun d => [3, 6, 0].contains (m9 (d * d))) := by decide
+
+-- the doubling orbit is closed under squaring
+theorem orbit_is_closed_under_square :
+  [1, 2, 4, 8, 7, 5].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (d * d))) := by decide
+
+-- the first tetrahedron is closed under squaring
+theorem tetA_is_closed_under_square :
+  [1, 4, 7].all (fun d => [1, 4, 7].contains (m9 (d * d))) := by decide
+
+-- the whole ring is closed under squaring
+theorem all_is_closed_under_square :
+  [0,1,2,3,4,5,6,7,8].all (fun d => [0,1,2,3,4,5,6,7,8].contains (m9 (d * d))) := by decide
+
+-- the units is closed under multiplication by five
+theorem units_is_closed_under_quintuple :
+  [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (5 * d))) := by decide
+
+-- the triad is closed under multiplication by five
+theorem triad_is_closed_under_quintuple :
+  [3, 6, 0].all (fun d => [3, 6, 0].contains (m9 (5 * d))) := by decide
+
+-- the doubling orbit is closed under multiplication by five
+theorem orbit_is_closed_under_quintuple :
+  [1, 2, 4, 8, 7, 5].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (5 * d))) := by decide
+
+-- the whole ring is closed under multiplication by five
+theorem all_is_closed_under_quintuple :
+  [0,1,2,3,4,5,6,7,8].all (fun d => [0,1,2,3,4,5,6,7,8].contains (m9 (5 * d))) := by decide
+
+-- the triad is closed under multiplication by six
+theorem triad_is_closed_under_sextuple :
+  [3, 6, 0].all (fun d => [3, 6, 0].contains (m9 (6 * d))) := by decide
+
+-- the whole ring is closed under multiplication by six
+theorem all_is_closed_under_sextuple :
+  [0,1,2,3,4,5,6,7,8].all (fun d => [0,1,2,3,4,5,6,7,8].contains (m9 (6 * d))) := by decide
+
+-- the units is closed under multiplication by eight
+theorem units_is_closed_under_octuple :
+  [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (8 * d))) := by decide
+
+-- the triad is closed under multiplication by eight
+theorem triad_is_closed_under_octuple :
+  [3, 6, 0].all (fun d => [3, 6, 0].contains (m9 (8 * d))) := by decide
+
+-- the doubling orbit is closed under multiplication by eight
+theorem orbit_is_closed_under_octuple :
+  [1, 2, 4, 8, 7, 5].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (8 * d))) := by decide
+
+-- the whole ring is closed under multiplication by eight
+theorem all_is_closed_under_octuple :
+  [0,1,2,3,4,5,6,7,8].all (fun d => [0,1,2,3,4,5,6,7,8].contains (m9 (8 * d))) := by decide
+
+-- quadrupling is its own inverse on the triad
+theorem quadruple_is_involutive_on_triad :
+  [3, 6, 0].all (fun d => (fun x => m9 (4 * x)) (m9 (4 * d)) == d) := by decide
+
+-- squaring is its own inverse on the first tetrahedron
+theorem square_is_involutive_on_tetA :
+  [1, 4, 7].all (fun d => (fun x => m9 (x * x)) (m9 (d * d)) == d) := by decide
+
+-- multiplication by five is its own inverse on the triad
+theorem quintuple_is_involutive_on_triad :
+  [3, 6, 0].all (fun d => (fun x => m9 (5 * x)) (m9 (5 * d)) == d) := by decide
+
+-- multiplication by seven is its own inverse on the triad
+theorem septuple_is_involutive_on_triad :
+  [3, 6, 0].all (fun d => (fun x => m9 (7 * x)) (m9 (7 * d)) == d) := by decide
+
+-- doubling carries the units onto the doubling orbit
+theorem double_carries_units_onto_orbit :
+  [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (2 * d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d => m9 (2 * d))).eraseDups.length = 6 := by decide
+
+-- doubling carries the doubling orbit onto the units
+theorem double_carries_orbit_onto_units :
+  [1, 2, 4, 8, 7, 5].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (2 * d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d => m9 (2 * d))).eraseDups.length = 6 := by decide
+
+-- tripling carries the whole ring onto the triad
+theorem triple_carries_all_onto_triad :
+  [0,1,2,3,4,5,6,7,8].all (fun d => [3, 6, 0].contains (m9 (3 * d))) ∧ ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (3 * d))).eraseDups.length = 3 := by decide
+
+-- quadrupling carries the units onto the doubling orbit
+theorem quadruple_carries_units_onto_orbit :
+  [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (4 * d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d => m9 (4 * d))).eraseDups.length = 6 := by decide
+
+-- quadrupling carries the doubling orbit onto the units
+theorem quadruple_carries_orbit_onto_units :
+  [1, 2, 4, 8, 7, 5].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (4 * d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d => m9 (4 * d))).eraseDups.length = 6 := by decide
+
+-- negation carries the units onto the doubling orbit
+theorem negate_carries_units_onto_orbit :
+  [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (9 - d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d => m9 (9 - d))).eraseDups.length = 6 := by decide
+
+-- negation carries the doubling orbit onto the units
+theorem negate_carries_orbit_onto_units :
+  [1, 2, 4, 8, 7, 5].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (9 - d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d => m9 (9 - d))).eraseDups.length = 6 := by decide
+
+-- negation carries the first tetrahedron onto the second tetrahedron
+theorem negate_carries_tetA_onto_tetB :
+  [1, 4, 7].all (fun d => [2, 5, 8].contains (m9 (9 - d))) ∧ ([1, 4, 7].map (fun d => m9 (9 - d))).eraseDups.length = 3 := by decide
+
+-- negation carries the second tetrahedron onto the first tetrahedron
+theorem negate_carries_tetB_onto_tetA :
+  [2, 5, 8].all (fun d => [1, 4, 7].contains (m9 (9 - d))) ∧ ([2, 5, 8].map (fun d => m9 (9 - d))).eraseDups.length = 3 := by decide
+
+-- squaring carries the units onto the first tetrahedron
+theorem square_carries_units_onto_tetA :
+  [1, 2, 4, 5, 7, 8].all (fun d => [1, 4, 7].contains (m9 (d * d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d => m9 (d * d))).eraseDups.length = 3 := by decide
+
+-- squaring carries the doubling orbit onto the first tetrahedron
+theorem square_carries_orbit_onto_tetA :
+  [1, 2, 4, 8, 7, 5].all (fun d => [1, 4, 7].contains (m9 (d * d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d => m9 (d * d))).eraseDups.length = 3 := by decide
+
+-- squaring carries the second tetrahedron onto the first tetrahedron
+theorem square_carries_tetB_onto_tetA :
+  [2, 5, 8].all (fun d => [1, 4, 7].contains (m9 (d * d))) ∧ ([2, 5, 8].map (fun d => m9 (d * d))).eraseDups.length = 3 := by decide
+
+-- multiplication by five carries the units onto the doubling orbit
+theorem quintuple_carries_units_onto_orbit :
+  [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (5 * d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d => m9 (5 * d))).eraseDups.length = 6 := by decide
+
+-- multiplication by five carries the doubling orbit onto the units
+theorem quintuple_carries_orbit_onto_units :
+  [1, 2, 4, 8, 7, 5].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (5 * d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d => m9 (5 * d))).eraseDups.length = 6 := by decide
+
+-- multiplication by five carries the first tetrahedron onto the second tetrahedron
+theorem quintuple_carries_tetA_onto_tetB :
+  [1, 4, 7].all (fun d => [2, 5, 8].contains (m9 (5 * d))) ∧ ([1, 4, 7].map (fun d => m9 (5 * d))).eraseDups.length = 3 := by decide
+
+-- multiplication by five carries the second tetrahedron onto the first tetrahedron
+theorem quintuple_carries_tetB_onto_tetA :
+  [2, 5, 8].all (fun d => [1, 4, 7].contains (m9 (5 * d))) ∧ ([2, 5, 8].map (fun d => m9 (5 * d))).eraseDups.length = 3 := by decide
+
+-- multiplication by six carries the whole ring onto the triad
+theorem sextuple_carries_all_onto_triad :
+  [0,1,2,3,4,5,6,7,8].all (fun d => [3, 6, 0].contains (m9 (6 * d))) ∧ ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (6 * d))).eraseDups.length = 3 := by decide
+
+-- multiplication by seven carries the units onto the doubling orbit
+theorem septuple_carries_units_onto_orbit :
+  [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (7 * d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d => m9 (7 * d))).eraseDups.length = 6 := by decide
+
+-- multiplication by seven carries the doubling orbit onto the units
+theorem septuple_carries_orbit_onto_units :
+  [1, 2, 4, 8, 7, 5].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (7 * d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d => m9 (7 * d))).eraseDups.length = 6 := by decide
+
+-- multiplication by eight carries the units onto the doubling orbit
+theorem octuple_carries_units_onto_orbit :
+  [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (8 * d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d => m9 (8 * d))).eraseDups.length = 6 := by decide
+
+-- multiplication by eight carries the doubling orbit onto the units
+theorem octuple_carries_orbit_onto_units :
+  [1, 2, 4, 8, 7, 5].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (8 * d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d => m9 (8 * d))).eraseDups.length = 6 := by decide
+
+-- multiplication by eight carries the first tetrahedron onto the second tetrahedron
+theorem octuple_carries_tetA_onto_tetB :
+  [1, 4, 7].all (fun d => [2, 5, 8].contains (m9 (8 * d))) ∧ ([1, 4, 7].map (fun d => m9 (8 * d))).eraseDups.length = 3 := by decide
+
+-- multiplication by eight carries the second tetrahedron onto the first tetrahedron
+theorem octuple_carries_tetB_onto_tetA :
+  [2, 5, 8].all (fun d => [1, 4, 7].contains (m9 (8 * d))) ∧ ([2, 5, 8].map (fun d => m9 (8 * d))).eraseDups.length = 3 := by decide
+
+-- tripling sends every element of the triad to a single value
+theorem triple_collapses_triad_to_one_value :
+  ([3, 6, 0].map (fun d => m9 (3 * d))).eraseDups.length = 1 := by decide
+
+-- tripling sends every element of the first tetrahedron to a single value
+theorem triple_collapses_tetA_to_one_value :
+  ([1, 4, 7].map (fun d => m9 (3 * d))).eraseDups.length = 1 := by decide
+
+-- tripling sends every element of the second tetrahedron to a single value
+theorem triple_collapses_tetB_to_one_value :
+  ([2, 5, 8].map (fun d => m9 (3 * d))).eraseDups.length = 1 := by decide
+
+-- squaring sends every element of the triad to a single value
+theorem square_collapses_triad_to_one_value :
+  ([3, 6, 0].map (fun d => m9 (d * d))).eraseDups.length = 1 := by decide
+
+-- cubing sends every element of the triad to a single value
+theorem cube_collapses_triad_to_one_value :
+  ([3, 6, 0].map (fun d => m9 (d * d * d))).eraseDups.length = 1 := by decide
+
+-- cubing sends every element of the first tetrahedron to a single value
+theorem cube_collapses_tetA_to_one_value :
+  ([1, 4, 7].map (fun d => m9 (d * d * d))).eraseDups.length = 1 := by decide
+
+-- cubing sends every element of the second tetrahedron to a single value
+theorem cube_collapses_tetB_to_one_value :
+  ([2, 5, 8].map (fun d => m9 (d * d * d))).eraseDups.length = 1 := by decide
+
+-- multiplication by six sends every element of the triad to a single value
+theorem sextuple_collapses_triad_to_one_value :
+  ([3, 6, 0].map (fun d => m9 (6 * d))).eraseDups.length = 1 := by decide
+
+-- multiplication by six sends every element of the first tetrahedron to a single value
+theorem sextuple_collapses_tetA_to_one_value :
+  ([1, 4, 7].map (fun d => m9 (6 * d))).eraseDups.length = 1 := by decide
+
+-- multiplication by six sends every element of the second tetrahedron to a single value
+theorem sextuple_collapses_tetB_to_one_value :
+  ([2, 5, 8].map (fun d => m9 (6 * d))).eraseDups.length = 1 := by decide
+
+end Imagined

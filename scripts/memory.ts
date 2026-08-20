@@ -13,7 +13,9 @@
 //   node scripts/memory.ts --write    write it into the memory file, replacing only the generated block
 import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs'
 
-const MEM = '/Users/ceci/.claude/projects/-Users-ceci-github-ceccec-millennium-solutions/memory/deposit-state.md'
+const MEMDIR = '/Users/ceci/.claude/projects/-Users-ceci-github-ceccec-millennium-solutions/memory'
+const MEM = MEMDIR + '/deposit-state.md'
+const INDEX = MEMDIR + '/MEMORY.md'
 const BEGIN = '<!-- derived:begin -->', END = '<!-- derived:end -->'
 
 const led = JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) as
@@ -56,5 +58,35 @@ if (process.argv.includes('--write')) {
   const head = `---\nname: deposit-state\ndescription: Measured state of the millennium-solutions deposit — ledger, Lean layer, gate, automation\nmetadata:\n  type: project\n---\n\n# Deposit state\n\n`
   const tail = prior.includes(END) ? prior.slice(prior.indexOf(END) + END.length) : `\n\n## Judgement (hand-written, never generated)\n\n- Only theorems count; a TypeScript test reports one run, the kernel checks a proposition. See [[only-theorems-write-all-to-trial]].\n- Pairing prose with a test is unsound — the test can pass while the sentence says something else. Derive the sentence from the artefact instead. This failed four times in one session before it was fixed.\n- "Not generatable" needs the same scrutiny as "proved": digit reversal was dismissed as string manipulation when digits are arithmetic. See [[honest-floor-discipline]].\n- npm @uuidna/uuidna 0.2.6 passes every overclaim its predecessor drained. Never adopt a gate without probing it first.\n`
   writeFileSync(MEM, head + block + tail)
+
+  // ── DRAIN THE INDEX. MEMORY.md is what loads into context every session, so a stale number there is read
+  //    as current every time — the deposit-state line had been asserting a ledger size that was 504 theorems
+  //    out of date, and a gate that no longer exists. Hand-editing is what let it drift, so the line is
+  //    derived here instead. Only the deposit-state pointer is owned; every other line is left alone.
+  if (existsSync(INDEX)) {
+    const idx = readFileSync(INDEX, 'utf8')
+    const line = `- [Deposit state](deposit-state.md) — MEASURED, self-derived (run: node scripts/memory.ts --write): ledger ${led.length} = ${led.length / 8} × 8, ${live.length} live / ${led.length - live.length} revoked · ${leanFiles.length} Lean files, ${theorems} theorems, ${byDecide} by decide · gate ${gateLines} line(s), a re-export that checks citations and does NOT drain overclaims. Trust this over any figure written elsewhere in this index; for live numbers call ledger_status.`
+    const next = idx.split('\n').map((l) => l.startsWith('- [Deposit state]') ? line : l).join('\n')
+    if (next !== idx) { writeFileSync(INDEX, next); console.log('✓ memory: MEMORY.md — deposit-state pointer re-derived') }
+  }
+
+  // ── REPORT STALE NUMBERS ELSEWHERE. Other memory files are hand-written judgement and are NOT rewritten:
+  //    a note may legitimately record what was true when it was written. But a figure presented as CURRENT
+  //    that contradicts measurement is a drain, and silence about it is how the index went stale. Named, not
+  //    edited — the distinction between a dated record and a false claim is the author's to make.
+  const stale: string[] = []
+  for (const f of readdirSync(MEMDIR).filter((x) => x.endsWith('.md') && x !== 'deposit-state.md')) {
+    const txt = readFileSync(MEMDIR + '/' + f, 'utf8')
+    for (const m of txt.matchAll(/ledger (\d{3,5})\b/g)) {
+      const n = Number(m[1])
+      if (n !== led.length && !/histor|superseded|was |earlier|→/i.test(txt.slice(Math.max(0, m.index - 120), m.index)))
+        stale.push(f + ': "ledger ' + n + '" — measured ' + led.length)
+    }
+  }
+  if (stale.length) {
+    console.log('· memory: ' + stale.length + ' figure(s) presented as current that measurement contradicts —')
+    for (const t of stale) console.log('    ' + t)
+    console.log('  not rewritten: a note may record what was true when written. Mark it historical or correct it.')
+  }
   console.log(`✓ memory: ${MEM.split('/').pop()} — derived block written, judgement preserved`)
 } else console.log(block)
