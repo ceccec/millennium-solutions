@@ -5,9 +5,6 @@
   "author": "Tsvetan Rouschev",
   "license": "CC-BY-NC-ND-4.0",
   "type": "module",
-  "workspaces": [
-    "packages/*"
-  ],
   "exports": {
     ".": "./mod.core.ts"
   },
@@ -84,5 +81,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "@uuidna/uuidna": "^0.2.6"
   }
 }

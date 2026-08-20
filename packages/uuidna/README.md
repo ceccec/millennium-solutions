@@ -57,6 +57,8 @@ npm install @uuidna/uuidna
   <sub>SEALED · `6c3770f3-2de8-864f-9a3b-83cd16e0945c`</sub>
 - Reeducate replaces the phrases the gate matched with a placeholder and returns passed when the result is gate-clean; passed therefore means gate-clean, and an overclaim the gate did not match survives untouched.
   <sub>SEALED · `6aad1f87-20cd-8118-88f5-bfe17060e653`</sub>
+- This trial is only as strong as the tests written: a gate-clean sentence paired with a test that cannot fail would seal it, so the generator rejects a constant-true test outright.
+  <sub>SEALED · `a9665e29-d467-8185-b143-208cc75b5c48`</sub>
 
 ## Billing
 
@@ -94,4 +96,4 @@ billed on the two coins (110 − 108 = 2). Contact: ceccec@psg.bg.
 
 ---
 
-*21 claims, 21 SEALED, 0 unsealed · trial root `f0b5dc3e-00a8-8dfe-a24c-2e52341850f7` · integrity, not truth · 0/7*
+*22 claims, 22 SEALED, 0 unsealed · trial root `e27577a5-7fbe-8bd4-aa54-bafb4ea721bc` · integrity, not truth · 0/7*

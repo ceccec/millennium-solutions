@@ -10,15 +10,11 @@
 import { execSync } from 'node:child_process'
 import { readFileSync, existsSync } from 'node:fs'
 import { toUuid } from '../src/0/index.ts'
-import { computes, RED, OVERREACH, PREDICT } from './honesty-gate.ts'
+import { audit } from './audit.ts'
 
-// which statute matched — cited by NAME in the case record, so the block is never a summary killing.
-// Every drained line gets a trial: evidence, the named statute, a reproducible verdict, and a remedy.
-const statute = (hit: string) =>
-  RED.test(hit) ? 'RED (unconditional overclaim)'
-    : PREDICT.test(hit) ? 'PREDICT (prediction/expectation — not measurement)'
-      : new RegExp(OVERREACH.source, 'i').test(hit) ? 'OVERREACH (negation-aware overclaim shape)'
-        : 'gate'
+// The statute is whatever the shared audit names — it no longer guesses from a lexicon of its own. The
+// lexical statutes (RED / OVERREACH / PREDICT) were removed with the layer that defined them; naming one
+// here would have been that layer growing back in a second place.
 
 // staged, added/copied/modified, PROSE only — mirrors seal.ts's scope exactly: .md files audited,
 // source excluded. Source (.ts) is not a claim to the reader, and the gate's own definition MUST
@@ -27,16 +23,17 @@ const staged = execSync('git diff --cached --name-only --diff-filter=ACM', { enc
   .trim().split('\n').filter(Boolean)
   .filter((f) => f.endsWith('.md') && existsSync(f))
 
-// WHOLE-FILE computes — identical semantics to seal.ts, so the two gates cannot disagree (seal green
-// ⇒ precommit green). Per-line reading diverged from seal and minted the v1.6.3 lying tag; fixed here.
-const drained: { file: string; line: number; hit: string; text: string }[] = []
+// WHOLE-FILE audit, from the SAME MODULE seal.ts uses, so the two gates cannot disagree (seal green ⇒
+// precommit green). Per-line reading diverged from seal and minted the v1.6.3 lying tag; a second copy of
+// seal's logic diverged again the moment seal learned about citations. One module, imported twice.
+const drained: { file: string; line: number; hit: string; why: string; text: string }[] = []
 for (const f of staged) {
   const txt = readFileSync(f, 'utf8')
-  const { binary, hit } = computes(txt)
+  const { binary, hit, why } = audit(txt)
   if (binary === 0 && hit) {
     const idx = txt.indexOf(hit)
     const line = idx >= 0 ? txt.slice(0, idx).split('\n').length : 0
-    drained.push({ file: f, line, hit, text: (txt.split('\n')[line - 1] || '').trim().slice(0, 90) })
+    drained.push({ file: f, line, hit, why, text: (txt.split('\n')[line - 1] || '').trim().slice(0, 90) })
   }
 }
 
@@ -48,10 +45,10 @@ if (drained.length) {
     const caseId = toUuid('case:' + d.file + ':' + d.line + ':' + d.hit)
     console.error('\n  case ' + caseId.slice(0, 13) + '…')
     console.error('    evidence: ' + d.file + ':' + d.line + '  "' + d.text + '"')
-    console.error('    statute:  ' + statute(d.hit) + ' matched "' + d.hit + '"')
-    console.error('    defense:  every legal means was tried — a bounded negation acquits, a floor-marker (0/7) reprieves, a receipt establishes; none held for this line.')
+    console.error('    statute:  ' + d.why + ' — "' + d.hit + '"')
+    console.error('    defense:  every legal means was tried — a live theorem in the ledger establishes a citation, the 0/7 floor reprieves a bounded claim; none held for this line.')
     console.error('    verdict:  computes 0 — reproducible by anyone (the defence may re-run): npm run next "<the line>"')
-    console.error('    remedy:   reword until it computes 1, then re-stage — reeducation, not death.')
+    console.error('    remedy:   cite a theorem that stands, or drop the citation and keep the words; then re-stage.')
   }
   console.error('\nrecorded, reproducible, then blocked. no override — the boundary holds.')
   process.exit(1)

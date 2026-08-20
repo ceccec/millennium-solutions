@@ -14,3 +14,6 @@ build/
 # and snapshotted into git as timestamped evidence — computed AND stored as the record):
 #   dashboard.md · boundaries.md · CHALLENGES.md · HEART.md · ACCOUNTING.md
 public/greeting.json
+
+# Lean build artefacts — oleans are rebuilt by scripts/lean.ts from the .lean sources
+*.olean

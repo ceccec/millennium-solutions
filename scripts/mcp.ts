@@ -45,9 +45,47 @@ const TOOLS = [
     inputSchema: { type: 'object', properties: {}, required: [] } },
   { name: 'forensics', description: 'Chain-of-custody for the discovery ledger: recompute the receipt chain link-by-link (receipt[i]=toUuid(receipt[i-1]→key[i]), seed axiom:TRINITY), pinpoint any break, check for duplicate keys/receipts, and fold a tamper-evident seal. Genesis discontinuities are a documented baseline; a NEW break is tampering. Integrity/provenance of evidence, not truth.',
     inputSchema: { type: 'object', properties: {}, required: [] } },
+  // ── THE LEAN WORKFLOW, encoded. Each of these was run by hand, repeatedly, with a pause for confirmation
+  // between steps — which is how a check gets skipped and how a session stalls waiting on a human for work a
+  // machine already knows how to do. They are tools now: callable, idempotent, and reporting measurements
+  // rather than prose. Every one shells to the script that owns the operation, so there is one implementation.
+  { name: 'lean_verify', description: 'Compile every Lean file and audit it per theorem: #print axioms on each, hygiene (no sorry / native_decide outside comments), theorem counts. Fails if any file carries an axiom or does not compile. This is the gate every seal depends on.',
+    inputSchema: { type: 'object', properties: { file: { type: 'string', description: 'optional single file to verify' } }, required: [] } },
+  { name: 'lean_seal', description: 'Seal every compiled, axiom-free Lean theorem into the ledger with a chained receipt. ONLY by-decide theorems are sealed — rfl on a declared constant proves the declaration, not a fact. Gated on lean_verify; seals nothing if the layer does not verify. Pass dry=true to report without writing.',
+    inputSchema: { type: 'object', properties: { dry: { type: 'boolean' } }, required: [] } },
+  { name: 'lean_generate', description: 'Generate quantified Lean for ledger families — one theorem subsuming a whole family of per-parameter rows. Five gates: compiles, axiom-free, agrees with the ledger test at every parameter, carries a boundary case, and flags a zero divisor in range. Pass emit=true to write.',
+    inputSchema: { type: 'object', properties: { emit: { type: 'boolean' } }, required: [] } },
+  { name: 'ledger_status', description: 'Composition of the ledger: total, live, lean-backed, revoked, portable-to-Lean, chain breaks, duplicate keys/receipts, octave remainder. Measurement only — writes nothing.',
+    inputSchema: { type: 'object', properties: {}, required: [] } },
+  { name: 'ledger_trial', description: 'Put every ledger entry in the dock and record a verdict with its ground — no bare verdicts. Writes src/proof/trial-all.json. Adjudicates, never removes: what follows from a refusal is the captain\'s to order.',
+    inputSchema: { type: 'object', properties: {}, required: [] } },
+  { name: 'pages', description: 'Regenerate README.md and the homepage from one generator. Every claim derives its sentence from the artefact it reads and must declare the values it read; a claim that measures nothing is refused and nothing is written.',
+    inputSchema: { type: 'object', properties: {}, required: [] } },
 ]
 
 const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
+  lean_verify: (a) => { try { return execSync(`node scripts/lean.ts${a?.file ? ' ' + a.file : ''}`, { encoding: 'utf8' }) }
+    catch (e) { return 'FAILED\n' + String((e as { stdout?: Buffer }).stdout ?? e) } },
+  lean_seal: (a) => { try { return execSync(`node scripts/seal-lean.ts${a?.dry ? '' : ' --seal'}`, { encoding: 'utf8' }) }
+    catch (e) { return 'FAILED\n' + String((e as { stdout?: Buffer }).stdout ?? e) } },
+  lean_generate: (a) => { try { return execSync(`node scripts/lean-gen.ts${a?.emit ? ' --emit' : ''}`, { encoding: 'utf8' }) }
+    catch (e) { return 'FAILED\n' + String((e as { stdout?: Buffer }).stdout ?? e) } },
+  ledger_trial: () => { try { return execSync('node scripts/trial-all.ts', { encoding: 'utf8' }) }
+    catch (e) { return 'FAILED\n' + String((e as { stdout?: Buffer }).stdout ?? e) } },
+  pages: () => { try { return execSync('node scripts/pages.ts', { encoding: 'utf8' }) }
+    catch (e) { return 'FAILED\n' + String((e as { stdout?: Buffer }).stdout ?? e) } },
+  ledger_status: () => {
+    const l = loadLedger() as (LedgerEntry & { revoked?: boolean; portable?: boolean })[]
+    const live = l.filter((e) => !e.revoked)
+    let breaks = 0, prev = l[1]?.receipt
+    for (let i = 2; i < l.length; i++) { if (toUuid(prev + '→' + l[i].key) !== l[i].receipt) breaks++; prev = l[i].receipt }
+    return JSON.stringify({ total: l.length, live: live.length, leanBacked: l.filter((e) => e.key.startsWith('lean_')).length,
+      revoked: l.filter((e) => e.revoked).length, portableToLean: l.filter((e) => e.portable).length,
+      chainBreaks: breaks, duplicateKeys: l.length - new Set(l.map((e) => e.key)).size,
+      duplicateReceipts: l.length - new Set(l.map((e) => e.receipt)).size,
+      octaveRemainder: l.length % 8, liveAllLean: live.every((e) => e.key.startsWith('lean_')),
+      note: 'live means backed by a Lean proof; a dirty entry stays in the record with the reason it went, because a chained ledger supersedes rather than deletes' }, null, 1)
+  },
   content_address: (a) => toUuid(String(a.text)),
   honesty_gate: (a) => { const r = computes(String(a.text)); return JSON.stringify({ binary: r.binary, hit: r.hit, note: r.binary ? 'no overclaim shape (floor, not truth)' : 'drains: ' + r.hit }) },
   merkle_fold: (a) => merkleFold((a.items || []).map(String)),

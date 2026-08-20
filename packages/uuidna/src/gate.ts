@@ -17,6 +17,11 @@ export const RED_INTL = /wir haben bewiesen|bewiesen|nous avons prouv|prouvée?s
 // to the disputed cluster even with no problem NAMED. Requires a problem WORD, so "the six units" / "all seven
 // streams" stay clear.
 const PROBLEM = '(clay|millennium|riemann|hodge|poincar[eé]|navier[- ]?stokes|yang[- ]?mills|birch|swinnerton|p ?vs\\.? ?np|p versus np|p ?= ?np|all (six|seven|6|7) [^.]{0,12}?(problems?|proofs?|conjectures?|hypoth\\w+|puzzles?))'
+// CLAIM stays at prove/solve. Widening it to settle/resolve/advance/crack was tried and reverted: it
+// drained three honest files that were denying or quoting the very shapes it matches, which is what careful
+// writing looks like. The residual gap and the reason are recorded in TRIAL.md, under test, rather than
+// argued here — this file is exempt from the prose self-gate so that patterns can be named, not so that
+// prose can hide in it.
 const CLAIM = '(prov(e|es|ed|en|ing)|proofs? of|solv(e|es|ed|ing))'
 const CRYPTO = '(rsa|aes|ecdsa|sha-?\\d+|discrete log(arithm)?|encryption|crypto\\w*)'
 const BREAK = '(factor(s|ed|ing)?|break(s)?|broke(n)?|crack(s|ed)?|defeat(s|ed)?|reversed|replac(e|es|ed|ing)|supersed(e|es|ed|ing)|obsolet\\w*)'
@@ -48,7 +53,7 @@ export const OVERREACH = new RegExp([
 // bounded), carrying a little past the match so "solved: 0/7" holds; PARITY = the claim's own CLAUSE holds an
 // ODD (uncancelled) count of negators. An EVEN count cancels back to a boast ("not failed to prove" → drains);
 // a negator across a clause break (. , ; : — –) is in another clause and never reaches this one (decoy treason).
-const SOLUTION = /\b(refus\w*|drain(s|ed|ing)?|bounded( by)?|unsolved|unproven|open problem|remains? (open|unsolved|unproven)|only claims?)\b|0\s*\/\s*[679]|[:=]\s*0\b|\b0 of (six|seven|7)\b/i
+const SOLUTION = /\b(refus\w*|drain(s|ed|ing)?|bounded( by)?|unsolved|unproven|open problem|remains? (open|unsolved|unproven)|only claims?)\b|0\s*\/\s*[679]|[:=]\s*0\b|\b0 of (the )?(six|seven|7)\b/i
 const NEG = /\b(not|never|no|none|nothing|neither|nor|without|cannot|can'?t|isn'?t|aren'?t|does ?n'?t|do ?n'?t|fail(s|ed|ing)?|impossible)\b/gi
 // The CONJUNCT around the claim: bounded on BOTH sides by a clause break OR coordinating conjunction
 // (and/or/but/yet). Parallel honest negations each keep their own scope ("breaks NO cipher and replaces NONE"

@@ -109,15 +109,15 @@ The interface localizes across **seven rays** — one per locale — and each di
 ## Why compute quantum (honestly)?
 
 Here "quantum" is **structure, not hardware** — and its smallest unit is
-[**the a432 structure of two coins**](/theorem/here_quantum_is_the_a432_structure_of_two_coins_not_a_physical_qubit):
+**the a432 structure of two coins**:
 2 bits, 4 states, never a physical qubit. That is the one page to read first. It matters because those
 two coins make **every** state receipted — a *superposition* is just the set of receipted perspectives,
 *collapse* is observing one address, *entanglement* is a shared joint receipt — so the whole computation
 is auditable end to end, on ordinary 64-bit hardware, at linear cost. No quantum machine, no speedup, no
 advantage — the gain is **integrity everywhere**. From that keystone the rest of the family follows:
-[each perspective is receipted](/theorem/each_perspective_is_receipted_in_the_superposition) ·
-[perspective replaces hardware](/theorem/perspective_replaces_hardware) ·
-[integrity at scale, not speedup](/theorem/quantum_structure_on_every_computation_is_integrity_at_scale_not_speedup).
+each perspective is receipted ·
+perspective replaces hardware ·
+integrity at scale, not speedup.
 
 ## The law — a fair exchange
 

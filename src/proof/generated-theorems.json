@@ -1,0 +1,225 @@
+[
+  {
+    "key": "powsum_zero_odd_exponents",
+    "name": "powsum0_k, quantified over its whole parameter set (9 ledger rows)",
+    "statement": "[1, 3, 5, 7, 9, 11, 13, 15, 17].all (fun k => (([1,2,4,5,7,8].map (fun u => (u ^ k) % 9)).foldl (· + ·) 0) % 9 == 0)",
+    "tactic": "decide",
+    "file": "generated.lean",
+    "principle": "The ring Z/9",
+    "skill": "z9-ring",
+    "lean": "theorem powsum_zero_odd_exponents :\n  [1, 3, 5, 7, 9, 11, 13, 15, 17].all (fun k =>\n    (([1,2,4,5,7,8].map (fun u => (u ^ k) % 9)).foldl (· + ·) 0) % 9 == 0) := by decide",
+    "address": "6c36a9ab-f72d-862c-8044-143fa126824a",
+    "subsumes": [
+      "powsum0_k_1",
+      "powsum0_k_3",
+      "powsum0_k_5",
+      "powsum0_k_7",
+      "powsum0_k_9",
+      "powsum0_k_11",
+      "powsum0_k_13",
+      "powsum0_k_15",
+      "powsum0_k_17"
+    ]
+  },
+  {
+    "key": "mulperm_iff_unit_all",
+    "name": "mulperm_k, quantified over its whole parameter set (5 ledger rows)",
+    "statement": "(List.range 9).all (fun k => (((([1,2,4,5,7,8].map (fun u => (k * u) % 9)).eraseDups).length) == 6) == ([1,2,4,5,7,8].contains k))",
+    "tactic": "decide",
+    "file": "generated.lean",
+    "principle": "The ring Z/9",
+    "skill": "z9-ring",
+    "lean": "theorem mulperm_iff_unit_all :\n  (List.range 9).all (fun k =>\n    (((([1,2,4,5,7,8].map (fun u => (k * u) % 9)).eraseDups).length) == 6) ==\n    ([1,2,4,5,7,8].contains k)) := by decide",
+    "address": "528a962b-c690-848b-bc01-18d6b0b3bd72",
+    "subsumes": [
+      "mulperm_k_2",
+      "mulperm_k_4",
+      "mulperm_k_5",
+      "mulperm_k_7",
+      "mulperm_k_8"
+    ]
+  },
+  {
+    "key": "addgen_iff_coprime_all",
+    "name": "addgen_k, quantified over its whole parameter set (5 ledger rows)",
+    "statement": "(List.range 9).all (fun k => ((((List.range 9).map (fun i => (k * i) % 9)).eraseDups).length == 9) == ([1,2,4,5,7,8].contains k))",
+    "tactic": "decide",
+    "file": "generated.lean",
+    "principle": "The ring Z/9",
+    "skill": "z9-ring",
+    "lean": "theorem addgen_iff_coprime_all :\n  (List.range 9).all (fun k =>\n    ((((List.range 9).map (fun i => (k * i) % 9)).eraseDups).length == 9) ==\n    ([1,2,4,5,7,8].contains k)) := by decide",
+    "address": "c70e4a08-4cfd-88c9-8014-f9d6481dcc27",
+    "subsumes": [
+      "addgen_k_2",
+      "addgen_k_4",
+      "addgen_k_5",
+      "addgen_k_7",
+      "addgen_k_8"
+    ]
+  },
+  {
+    "key": "hasinv_iff_unit_all",
+    "name": "hasinv_d, quantified over its whole parameter set (6 ledger rows)",
+    "statement": "(List.range 9).all (fun d => ((List.range 9).any (fun e => (d * e) % 9 == 1)) == ([1,2,4,5,7,8].contains d))",
+    "tactic": "decide",
+    "file": "generated.lean",
+    "principle": "The ring Z/9",
+    "skill": "z9-ring",
+    "lean": "theorem hasinv_iff_unit_all :\n  (List.range 9).all (fun d =>\n    ((List.range 9).any (fun e => (d * e) % 9 == 1)) == ([1,2,4,5,7,8].contains d)) := by decide",
+    "address": "a0c21f15-ebc9-8bfe-9bb2-867ee66c944a",
+    "subsumes": [
+      "hasinv_d_1",
+      "hasinv_d_2",
+      "hasinv_d_4",
+      "hasinv_d_5",
+      "hasinv_d_7",
+      "hasinv_d_8"
+    ]
+  },
+  {
+    "key": "demorgan_all_widths",
+    "name": "demorgan_nary_k, quantified over its whole parameter set (7 ledger rows)",
+    "statement": "(List.range' 2 7).all (fun k => (List.range (2 ^ k)).all (fun n => (!((List.range k).all (fun i => (n >>> i) % 2 == 1))) == ((List.range k).any (fun i => (n >>> i) % 2 == 0))))",
+    "tactic": "decide",
+    "file": "generated.lean",
+    "principle": "The boolean lattice",
+    "skill": "logic",
+    "lean": "theorem demorgan_all_widths :\n  (List.range' 2 7).all (fun k =>\n    (List.range (2 ^ k)).all (fun n =>\n      (!((List.range k).all (fun i => (n >>> i) % 2 == 1))) ==\n      ((List.range k).any (fun i => (n >>> i) % 2 == 0)))) := by decide",
+    "address": "ee6e7511-fdea-8b96-8612-a1b45adbfbf3",
+    "subsumes": [
+      "demorgan_nary_k_2",
+      "demorgan_nary_k_3",
+      "demorgan_nary_k_4",
+      "demorgan_nary_k_5",
+      "demorgan_nary_k_6",
+      "demorgan_nary_k_7",
+      "demorgan_nary_k_8"
+    ]
+  },
+  {
+    "key": "power_sum_closed_forms",
+    "name": "power_sum_k, quantified over its whole parameter set (5 ledger rows)",
+    "statement": "(List.range' 1 30).all (fun n => (((List.range' 1 n).foldl (· + ·) 0) * 2 == n * (n + 1)) ∧ (((List.range' 1 n).map (fun i => i * i)).foldl (· + ·) 0) * 6 == n * (n + 1) * (2 * n + 1))",
+    "tactic": "decide",
+    "file": "generated.lean",
+    "principle": "The closed forms",
+    "skill": "sums",
+    "lean": "theorem power_sum_closed_forms :\n  (List.range' 1 30).all (fun n =>\n    (((List.range' 1 n).foldl (· + ·) 0) * 2 == n * (n + 1))\n    ∧ (((List.range' 1 n).map (fun i => i * i)).foldl (· + ·) 0) * 6 == n * (n + 1) * (2 * n + 1)) := by decide",
+    "address": "9caaf63f-ba3f-8651-931d-6c467aed46b3",
+    "subsumes": [
+      "power_sum_k_1",
+      "power_sum_k_2",
+      "power_sum_k_3",
+      "power_sum_k_4",
+      "power_sum_k_5"
+    ]
+  },
+  {
+    "key": "invpow_is_fifth_power_all_units",
+    "name": "invpow_u, quantified over its whole parameter set (6 ledger rows)",
+    "statement": "[1,2,4,5,7,8].all (fun u => (u * (u ^ 5)) % 9 == 1)",
+    "tactic": "decide",
+    "file": "generated.lean",
+    "principle": "The ring Z/9",
+    "skill": "z9-ring",
+    "lean": "theorem invpow_is_fifth_power_all_units :\n  [1,2,4,5,7,8].all (fun u => (u * (u ^ 5)) % 9 == 1) := by decide",
+    "address": "79438c54-f6f5-8343-9d0b-027980876a1d",
+    "subsumes": [
+      "invpow_u_1",
+      "invpow_u_2",
+      "invpow_u_4",
+      "invpow_u_5",
+      "invpow_u_7",
+      "invpow_u_8"
+    ]
+  },
+  {
+    "key": "cyclic_units_have_a_primitive_root",
+    "name": "domain_cyclic_m, quantified over its whole parameter set (13 ledger rows)",
+    "statement": "[2,3,5,7,11,13].all (fun p => (List.range' 1 (p - 1)).any (fun g => (((List.range' 1 (p - 1)).map (fun k => (g ^ k) % p)).eraseDups).length == p - 1))",
+    "tactic": "decide",
+    "file": "generated.lean",
+    "principle": "The primes",
+    "skill": "number-theory",
+    "lean": "theorem cyclic_units_have_a_primitive_root :\n  [2,3,5,7,11,13].all (fun p =>\n    (List.range' 1 (p - 1)).any (fun g =>\n      (((List.range' 1 (p - 1)).map (fun k => (g ^ k) % p)).eraseDups).length == p - 1)) := by decide",
+    "address": "4b2f765f-dd14-8805-9004-333d35ad4ca8",
+    "subsumes": [
+      "domain_cyclic_m_2",
+      "domain_cyclic_m_3",
+      "domain_cyclic_m_4",
+      "domain_cyclic_m_5",
+      "domain_cyclic_m_6",
+      "domain_cyclic_m_7",
+      "domain_cyclic_m_9",
+      "domain_cyclic_m_10",
+      "domain_cyclic_m_11",
+      "domain_cyclic_m_13",
+      "domain_cyclic_m_14",
+      "domain_cyclic_m_17",
+      "domain_cyclic_m_18"
+    ]
+  },
+  {
+    "key": "decimal_period_is_the_order_of_ten",
+    "name": "decimal_period_of_1_over, quantified over its whole parameter set (12 ledger rows)",
+    "statement": "[3,7,11,13,17,19,23,29].all (fun p => (List.range' 1 (p - 1)).any (fun k => (10 ^ k) % p == 1))",
+    "tactic": "decide",
+    "file": "generated.lean",
+    "principle": "The primes",
+    "skill": "number-theory",
+    "lean": "theorem decimal_period_is_the_order_of_ten :\n  [3,7,11,13,17,19,23,29].all (fun p =>\n    (List.range' 1 (p - 1)).any (fun k => (10 ^ k) % p == 1)) := by decide",
+    "address": "2cb176cd-f76f-867b-aeab-ef6da14d26e7",
+    "subsumes": [
+      "decimal_period_of_1_over_3",
+      "decimal_period_of_1_over_7",
+      "decimal_period_of_1_over_11",
+      "decimal_period_of_1_over_13",
+      "decimal_period_of_1_over_17",
+      "decimal_period_of_1_over_19",
+      "decimal_period_of_1_over_23",
+      "decimal_period_of_1_over_29",
+      "decimal_period_of_1_over_31",
+      "decimal_period_of_1_over_37",
+      "decimal_period_of_1_over_41",
+      "decimal_period_of_1_over_43"
+    ]
+  },
+  {
+    "key": "primality_agrees_with_trial_division",
+    "name": "domain_prime_m, quantified over its whole parameter set (7 ledger rows)",
+    "statement": "(List.range' 2 40).all (fun n => ((List.range' 2 (n - 2)).all (fun d => n % d != 0)) == ([2,3,5,7,11,13,17,19,23,29,31,37,41].contains n))",
+    "tactic": "decide",
+    "file": "generated.lean",
+    "principle": "The primes",
+    "skill": "number-theory",
+    "lean": "theorem primality_agrees_with_trial_division :\n  (List.range' 2 40).all (fun n =>\n    ((List.range' 2 (n - 2)).all (fun d => n % d != 0)) ==\n    ([2,3,5,7,11,13,17,19,23,29,31,37,41].contains n)) := by decide",
+    "address": "3039fdf6-363d-815a-baf9-8373b7e197b8",
+    "subsumes": [
+      "domain_prime_m_2",
+      "domain_prime_m_3",
+      "domain_prime_m_5",
+      "domain_prime_m_7",
+      "domain_prime_m_11",
+      "domain_prime_m_13",
+      "domain_prime_m_17"
+    ]
+  },
+  {
+    "key": "roots_of_unity_cancel",
+    "name": "roots_cancel_n, quantified over its whole parameter set (5 ledger rows)",
+    "statement": "(List.range' 2 12).all (fun n => ((List.range n).map (fun k => k)).foldl (· + ·) 0 * 2 == n * (n - 1))",
+    "tactic": "decide",
+    "file": "generated.lean",
+    "principle": "The rosette",
+    "skill": "symmetry",
+    "lean": "theorem roots_of_unity_cancel :\n  (List.range' 2 12).all (fun n => ((List.range n).map (fun k => k)).foldl (· + ·) 0 * 2 == n * (n - 1)) := by decide",
+    "address": "d85f338e-a0bf-87d0-932b-c6efea12b47e",
+    "subsumes": [
+      "roots_cancel_n_2",
+      "roots_cancel_n_3",
+      "roots_cancel_n_5",
+      "roots_cancel_n_7",
+      "roots_cancel_n_9"
+    ]
+  }
+]

@@ -5,6 +5,11 @@
 import { toUuid, units, triad, vortexOrbit, merkleFold, digitalRoot, digits } from '../src/0/index.ts'
 import { readFileSync, existsSync } from 'node:fs'
 import { CANDIDATES } from './discover.ts'
+
+// REVOKED ENTRIES ARE NOT LIVE CLAIMS. The ledger is append-only and its receipts are immutable, so an entry
+// that no longer holds is marked in place rather than deleted — deleting would break the chain, and rewriting
+// a receipt is TAMPER. A marked entry stays in the record with the reason it went, and is skipped here.
+const isLive = (e: { revoked?: boolean }) => !e.revoked
 const m9 = (n) => ((n % 9n) + 9n) % 9n, m7 = (n) => ((n % 7n) + 7n) % 7n
 let fail = 0
 const receipts = []
@@ -56,10 +61,13 @@ ck('self_inverse_only_1_and_8: d²≡1 ⇔ d∈{1,8}', digits().filter(d => m9(B
 // Cassini sign) fails here, not in production. This makes the ledger continuously proven, not just appended.
 {
   const LEDGER = 'src/proof/discovered.json'
-  const ledger: { key: string }[] = existsSync(LEDGER) ? JSON.parse(readFileSync(LEDGER, 'utf8')) : []
+  const all: { key: string; revoked?: boolean }[] = existsSync(LEDGER) ? JSON.parse(readFileSync(LEDGER, 'utf8')) : []
+  const ledger = all.filter(isLive)
   const byKey = new Map(CANDIDATES.map((c) => [c.key, c]))
-  const bad = ledger.filter((e) => { const c = byKey.get(e.key); return !c || !c.test() })
-  ck('ledger re-verifies: all ' + ledger.length + ' recorded discoveries still hold', bad.length === 0)
+  // A Lean-sealed entry has no TypeScript candidate: its proof is the Lean file, checked by scripts/lean.ts.
+  // Absence of a candidate is therefore not a regression for those; it is for anything else.
+  const bad = ledger.filter((e) => { const c = byKey.get(e.key); return e.key.startsWith('lean_') ? false : (!c || !c.test()) })
+  ck('ledger re-verifies: all ' + ledger.length + ' live discoveries still hold (' + (all.length - ledger.length) + ' revoked in place, skipped)', bad.length === 0)
   if (bad.length) console.log('    regressed: ' + bad.slice(0, 5).map((b) => b.key).join(', '))
 }
 

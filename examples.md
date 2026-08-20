@@ -18,8 +18,8 @@ Treat any output as a **receipted structure**, not opaque bytes: it becomes cont
 and, if it drains the honesty floor, it is **reeducated** — each overclaim bounded until the text holds.
 Max free work, max auditability — harmonic and efficient, by default. This runs the exact `harness` and
 `reeducate` functions the build uses ([scripts/harness.ts](https://github.com/ceccec/millennium-solutions/blob/main/scripts/harness.ts)) —
-verified by [the difference is decidable](/theorem/the_difference_is_decidable_harnessing_makes_any_output_auditable_not_intelligent)
-and [reeducate until it holds](/theorem/reeducate_a_failing_output_is_bounded_until_it_holds_max_free_work_max_auditability).
+verified by the difference is decidable
+and reeducate until it holds.
 
 <Reeducate />
 
@@ -29,8 +29,8 @@ The more complex the case, the more receipts — yet each seal is a fixed **128 
 verifications), and verifying one receipt's membership costs only **2·⌈log₂N⌉ bits**. So you verify the whole
 case cheaply yet bill on the full value the customer would otherwise recompute — earning the measured saving,
 the two coins conserved. Choose the case size and read the math, from
-[each seal is 128 bits](/theorem/each_seal_is_128_bits_and_membership_verifies_in_two_log2_n_bits_logarithmic_not_linear)
-and [the 967-receipt case](/theorem/the_967_receipt_case_verify_20_bits_bill_on_the_967_computation_value_earn_the_947_bit_saving).
+[each seal is 128 bits](/theorem/lean_ledgerclaims_membership_is_logarithmic_not_linear)
+and [the 967-receipt case](/theorem/lean_ledgerclaims_the_967_receipt_case).
 
 <SealMath />
 
@@ -41,7 +41,7 @@ cost and the vivid word drains: a uuid is 128 bits and carries at most **115**, 
 larger on the wire than the message** — nothing is teleported cheaper than sending the bytes. uuidna does not
 teleport; it **addresses**. Either a reversible container (exact, but bigger) or a content-address that
 **recalls** a payload only where it is already reconstructible — [a pointer, not the
-payload](/theorem/a_content_address_is_a_pointer_not_the_payload). Not faster-than-light, not quantum, not
+payload](/theorem/lean_ledgerclaims_the_address_does_not_determine_the_payload). Not faster-than-light, not quantum, not
 compression. Integrity, not magic. `0/7`.
 
 <Teleporter />

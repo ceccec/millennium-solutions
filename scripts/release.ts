@@ -78,7 +78,7 @@ const sh = (c) => { console.log('$ ' + c); return execSync(c, { stdio: 'inherit'
 const q = (c) => { try { execSync(c, { stdio: 'ignore' }) } catch {} }
 let repo = false
 try { execSync('git rev-parse --is-inside-work-tree', { stdio: 'ignore' }); repo = true } catch {}
-if (!repo) { sh('git init -q'); sh('git config user.name "Tsvetan Rouschev"'); sh('git config user.email "ceci@psg.bg"') }
+if (!repo) { sh('git init -q'); sh('git config user.name "Tsvetan Rouschev"'); sh('git config user.email "ceccec@psg.bg"') }
 // TAG-ONLY (CI): main is a protected branch — signed commits and pull requests are required, and the
 // Actions token cannot bypass either — so a bot must never attempt a commit. In this mode the provenance
 // tag is minted on the EXISTING HEAD, whose content-address is exactly what was just gated. Locally

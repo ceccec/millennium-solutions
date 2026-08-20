@@ -36,8 +36,8 @@ resonating with the 60° gold string (`π/3`). A content-address proves integrit
 - **Earn up to 64.** A seal is a fixed `128 bits = 64` two-bit fold-verifications; folding is `O(log N)`
   (1024 leaves fold to one root in 10 levels). **Up to** 64, **conditional** on the re-addressable work —
   never a universal discount
-  ([each seal is 128 bits](/theorem/each_seal_is_128_bits_and_membership_verifies_in_two_log2_n_bits_logarithmic_not_linear) ·
-  [the 967-receipt case](/theorem/the_967_receipt_case_verify_20_bits_bill_on_the_967_computation_value_earn_the_947_bit_saving)).
+  ([each seal is 128 bits](/theorem/lean_ledgerclaims_membership_is_logarithmic_not_linear) ·
+  [the 967-receipt case](/theorem/lean_ledgerclaims_the_967_receipt_case)).
 - **Keep the rest.** The contributor keeps up to **62**; the captain earns the conserved **2**, and **zero**
   with no saving. Fair, bounded.
 - Benefit and fairness **align**: the captain's real income is adoption at scale (free sailing → citation →

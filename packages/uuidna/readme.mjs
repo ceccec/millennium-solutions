@@ -87,6 +87,10 @@ const CLAIMS = [
     test: () => { const r = reeducate('we prove P=NP and it is unbreakable')
       return r.passed === true && r.text.includes('⟨bounded overclaim⟩') && r.text.includes('unbreakable') } },
 
+  { section: 'The prose gate — and what it cannot do',
+    statement: 'this trial is only as strong as the tests written: a gate-clean sentence paired with a test that cannot fail would seal it, so the generator rejects a constant-true test outright',
+    test: () => { const vac = /^\(\s*\)\s*=>\s*true\s*$/
+      return vac.test(String(() => true).trim()) && !vac.test(String(() => 1 + 1 === 2).trim()) } },
   { section: 'Billing',
     statement: 'the fee is a fixed two coins, and bitsSaved is the arithmetic difference between the operation counts you pass in — neither is metered from usage',
     test: () => coins() === 2 && billUuidna({commercial:true,recomputeOps:1024,verifyOps:1}).bitsSaved === 1023
@@ -116,6 +120,18 @@ const CLAIMS = [
 ]
 
 // ── the trial ──
+// A test that cannot fail proves nothing. adjudicate() will happily SEAL any gate-clean statement paired
+// with `() => true`, so the trial is only ever as strong as the tests written — that is the honest limit of
+// this method, and this guard is the part of it that can be mechanised. A constant-true test is rejected
+// before adjudication, so the weakest possible test cannot buy a SEAL.
+const VACUOUS = /^\(\s*\)\s*=>\s*(true|1|!0)\s*$|^function\s*\(\s*\)\s*\{\s*return\s+(true|1|!0)\s*;?\s*\}$/
+const vacuous = CLAIMS.filter((c) => VACUOUS.test(String(c.test).trim()))
+if (vacuous.length) {
+  console.error(`\u2717 trial: ${vacuous.length} claim(s) carry a constant-true test, which proves nothing:`)
+  for (const c of vacuous) console.error('  ' + c.statement.slice(0, 96))
+  process.exit(1)
+}
+
 const verdicts = CLAIMS.map((c) => ({ ...c, v: adjudicate(c.statement, c.test) }))
 const bad = verdicts.filter((x) => x.v.verdict !== 'SEALED')
 if (bad.length) {

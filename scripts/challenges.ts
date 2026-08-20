@@ -17,7 +17,7 @@ const CLAY = [
 ]
 const settled = CLAY.filter((c) => c.status === 'settled').length
 const open = CLAY.length - settled
-const ledger: { key: string; name: string; receipt: string }[] =
+const ledger: { key: string; name: string; receipt: string; revoked?: boolean; reason?: string }[] =
   existsSync('src/proof/discovered.json') ? JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) : []
 
 let o = '---\ntitle: Challenges\n---\n\n# Millennium challenges — computed status\n\n'
@@ -27,8 +27,12 @@ CLAY.forEach((c, i) => { o += '| ' + (i + 1) + ' | ' + c.name + ' | ' + (c.statu
 o += '\n**Humanity: ' + settled + ' / 7** (' + open + ' open). **This deposit: 0 / 7** — it settles none of the seven itself.\n\n'
 // group by family (the key's first token) so theorems are easy to spot; each is its own monograph page.
 const catOf = (k: string) => k.replace(/^REF_/, '').split('_')[0]
+// The record is append-only: a revoked entry is never deleted (that would break the chain), but it is no
+// longer a live theorem, so it is rendered WITHOUT a /theorem/ citation — marked history, with its reason.
+const liveL = ledger.filter((e) => !e.revoked)
+const goneL = ledger.filter((e) => e.revoked)
 const groups: Record<string, typeof ledger> = {}
-for (const e of ledger) (groups[catOf(e.key)] ??= []).push(e)
+for (const e of liveL) (groups[catOf(e.key)] ??= []).push(e)
 const cats = Object.keys(groups).sort()
 const multi = cats.filter((c) => groups[c].length >= 2)
 const singles = cats.filter((c) => groups[c].length === 1)
@@ -36,7 +40,7 @@ const singles = cats.filter((c) => groups[c].length === 1)
 // broken build — prose cannot poison the reproducible material.
 const esc = (s: string) => s.replace(/</g, '&lt;').replace(/>/g, '&gt;')
 const line = (e: typeof ledger[number]) => '- [' + e.key + '](/theorem/' + e.key + ') — ' + esc(e.name) + '  ·  `' + e.receipt.slice(0, 13) + '…`\n'
-o += '## Discovered theorems (decidable, over ℤ/9) — ' + ledger.length + ' recorded in ' + cats.length + ' families\n\n'
+o += '## Discovered theorems (decidable, over ℤ/9) — ' + ledger.length + ' standing in ' + cats.length + ' families\n\n'
 o += 'Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:\n\n'
 for (const c of multi.sort((a, b) => groups[b].length - groups[a].length || a.localeCompare(b))) {
   o += '### ' + c + ' (' + groups[c].length + ')\n\n'
@@ -46,6 +50,17 @@ for (const c of multi.sort((a, b) => groups[b].length - groups[a].length || a.lo
 o += '### other — one-of-a-kind (' + singles.length + ')\n\n'
 for (const c of singles.sort()) o += line(groups[c][0])
 o += '\n'
+if (goneL.length) {
+  const why: Record<string, number> = {}
+  for (const e of goneL) why[(e.reason ?? 'revoked').split('.')[0]] = (why[(e.reason ?? 'revoked').split('.')[0]] ?? 0) + 1
+  o += '\n## Revoked — ' + goneL.length + ' entries that no longer stand\n\n'
+  o += 'The ledger is append-only: an entry that stops holding is marked in place, never deleted — deleting would break the receipt chain, and rewriting a receipt is tamper. These keep their receipts and stay in the record, but they are **not citable** and have no `/theorem/` page. Grouped by the reason they went:\n\n'
+  for (const [r, n] of Object.entries(why).sort((a, b) => b[1] - a[1])) o += '- **' + n + '** — ' + esc(r) + '\n'
+  o += '\n<details><summary>List all ' + goneL.length + ' revoked keys</summary>\n\n'
+  for (const e of goneL) o += '- ~~`' + e.key + '`~~ — ' + esc(e.name) + '  ·  `' + e.receipt.slice(0, 13) + '…`\n'
+  o += '\n</details>\n'
+}
+
 const root = merkleFold(ledger.map((e) => e.receipt).concat(CLAY.map((c) => toUuid(c.name + ':' + c.status))))
 o += '\nPage content-address: `' + root + '`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.\n'
 writeFileSync('CHALLENGES.md', o)

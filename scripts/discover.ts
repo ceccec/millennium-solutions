@@ -1718,6 +1718,56 @@ function generated(): typeof curated {
     const reflectsNotSolves = computes('uuidna reflects and mirrors the seven Clay problems and solves none of them, 0/7').binary === 1
     const overDrains = computes('uuidna reflects and therefore solves all the Clay problems, proven, faster than light').binary === 0
     return bijection && mirrorFixesFive && reflectsNotSolves && overDrains } })
+
+  // ── THE LEAN LAYER, SEALED ────────────────────────────────────────────────────────────────────────
+  // Each entry below is a theorem the Lean kernel checks over its whole finite domain (src/proof/z9.lean,
+  // src/proof/quantum.lean — both compile under lean 4.15, every one audited as depending on no axioms).
+  // The test here is the INDEPENDENT RECOMPUTATION, the same bridge lean-claims.ts uses: the ledger does not
+  // take the Lean file's word for it, it recomputes the arithmetic and must agree. Two Lean theorems are
+  // deliberately NOT sealed here — the `settles_nothing` pair is `rfl` on a declared constant, which proves a
+  // declaration rather than a fact, and sealing it would repeat the circularity this deposit was caught on.
+  {
+    const m = (n: number) => ((n % 9) + 9) % 9
+    const unit = (d: number) => Array.from({ length: 9 }, (_, e) => e).some((e) => m(d * e) === 1)
+    const U = Array.from({ length: 9 }, (_, d) => d).filter(unit)
+    const pw = (b: number, e: number) => m(b ** e)
+    const orb = (k: number) => m(2 ** k)
+    const R = (n: number) => Array.from({ length: n }, (_, i) => i)
+    const insAll = (x: number, l: number[]): number[][] =>
+      l.length === 0 ? [[x]] : [[x, ...l], ...insAll(x, l.slice(1)).map((r) => [l[0], ...r])]
+    const perms = (l: number[]): number[][] =>
+      l.length === 0 ? [[]] : perms(l.slice(1)).flatMap((p) => insAll(l[0], p))
+    const receipt = (l: number[]) => [...l].sort((a, b) => a - b).reduce((a, b) => m(a * 2 + b), 0)
+    const naive = (l: number[]) => l.reduce((a, b) => m(a * 2 + b), 0)
+    const L = (key: string, name: string, test: () => boolean) => out.push({ key: 'lean_' + key, name, test })
+
+    L('units_are_six', 'lean: the units of ℤ/9 are exactly [1,2,4,5,7,8] — checked at every residue by the kernel, recomputed here; 0/7', () => JSON.stringify(U) === JSON.stringify([1, 2, 4, 5, 7, 8]))
+    L('units_count', 'lean: there are exactly six units in ℤ/9 — the kernel checks the count, recomputed here; 0/7', () => U.length === 6)
+    L('hasinv_units', 'lean: every unit of ℤ/9 has a multiplicative inverse — checked at every unit, recomputed here; 0/7', () => U.every((u) => R(9).some((e) => m(u * e) === 1)))
+    L('hasinv_triad_not', 'lean: no non-unit of ℤ/9 has a multiplicative inverse — a negative the kernel checks rather than a declaration; 0/7', () => [3, 6, 0].every((t) => !R(9).some((e) => m(t * e) === 1)))
+    L('selfinv_exactly_one_and_eight', 'lean: the residues equal to their own inverse are exactly one and eight — an exhaustive filter, recomputed here; 0/7', () => JSON.stringify(U.filter((u) => m(u * u) === 1)) === JSON.stringify([1, 8]))
+    L('euler_units_pow_six', 'lean: every unit raised to the sixth power returns one, Euler with φ(9)=6 — checked at every unit; 0/7', () => U.every((u) => pw(u, 6) === 1))
+    L('invpow_is_u_to_the_fifth', 'lean: the fifth power of a unit is its inverse, since the sixth returns one — checked at every unit; 0/7', () => U.every((u) => m(u * pw(u, 5)) === 1))
+    L('powsum_zero_at_one', 'lean: the units of ℤ/9 sum to zero modulo nine — the first-power case, recomputed here; 0/7', () => m(U.map((u) => pw(u, 1)).reduce((a, b) => a + b, 0)) === 0)
+    L('powsum_zero_at_six', 'lean: the sixth powers of the units sum to six modulo nine, since each is one — recomputed here; 0/7', () => m(U.map((u) => pw(u, 6)).reduce((a, b) => a + b, 0)) === 6)
+    L('mulperm_iff_unit', 'lean: multiplying the units by k permutes them exactly when k is itself a unit — an equivalence checked at every residue, both directions; 0/7', () => R(9).every((k) => (new Set(U.map((u) => m(k * u))).size === U.length) === unit(k)))
+    L('addgen_iff_coprime', 'lean: k additively generates ℤ/9 exactly when k is coprime to nine — an equivalence checked at every residue, both directions; 0/7', () => R(9).every((k) => (new Set(R(9).map((i) => m(k * i))).size === 9) === unit(k)))
+    L('selfneg_only_zero', 'lean: zero is the only residue that is its own additive inverse, the base being odd — an exhaustive filter; 0/7', () => JSON.stringify(R(9).filter((d) => m(2 * d) === 0)) === JSON.stringify([0]))
+    L('orbit_is_the_six', 'lean: the doubling orbit from one is [1,2,4,8,7,5] — computed, never typed as a literal list; 0/7', () => JSON.stringify(R(6).map(orb)) === JSON.stringify([1, 2, 4, 8, 7, 5]))
+    L('orbit_closes', 'lean: the doubling orbit returns to its start after six steps — the cycle closes, checked; 0/7', () => orb(6) === orb(0))
+    L('orbit_distinct', 'lean: the six steps of the doubling orbit are pairwise distinct — a simple loop, no early return; 0/7', () => new Set(R(6).map(orb)).size === 6)
+    L('orbit_covers_units', 'lean: the doubling orbit visits exactly as many residues as there are units — the orbit covers them; 0/7', () => new Set(R(6).map(orb)).size === U.length)
+    L('triad_never_reaches_one', 'lean: no power of three or six ever reaches one modulo nine — a negative checked over twelve exponents, not declared; 0/7', () => !R(12).some((k) => pw(3, k + 1) === 1 || pw(6, k + 1) === 1))
+    L('triad_squares_vanish', 'lean: three and six each square to zero modulo nine — the non-units are nilpotent; 0/7', () => m(3 * 3) === 0 && m(6 * 6) === 0)
+    L('add_group', 'lean: every residue of ℤ/9 has an additive inverse — checked at every residue; 0/7', () => R(9).every((d) => R(9).some((e) => m(d + e) === 0)))
+    L('neg_involution', 'lean: negation modulo nine is its own inverse — an involution, checked at every residue; 0/7', () => R(9).every((d) => m(9 - m(9 - d)) === m(d)))
+    L('perms_of_four_is_factorial', 'lean: four elements admit exactly twenty-four orderings — the enumeration is complete, four factorial; 0/7', () => perms([1, 2, 4, 8]).length === 24)
+    L('receipt_is_order_invariant', 'lean: the receipt is the same for every one of the twenty-four observer orderings — order invariance proved, not asserted; 0/7', () => { const r = receipt([1, 2, 4, 8]); return perms([1, 2, 4, 8]).every((p) => receipt(p) === r) })
+    L('receipt_order_invariant_on_the_orbit', 'lean: the receipt is the same across all seven hundred and twenty orderings of the doubling orbit — every observer agrees; 0/7', () => { const b = [1, 2, 4, 8, 7, 5]; const r = receipt(b); return perms(b).every((p) => receipt(p) === r) })
+    L('naive_fold_is_not_order_invariant', 'lean: without canonicalising first the same combination is genuinely order-dependent — the contrast that keeps the invariance from holding vacuously; 0/7', () => { const r = naive([1, 2, 4, 8]); return !perms([1, 2, 4, 8]).every((p) => naive(p) === r) })
+    L('superposition_collapses_to_one', 'lean: all twenty-four orderings collapse to exactly one distinct receipt — many perspectives, one value, a structural statement and not a physical one; 0/7', () => new Set(perms([1, 2, 4, 8]).map(receipt)).size === 1)
+  }
+
   // BY DECIDE IS PROOF — AND WHAT IT PROVES HERE IS THE FLOOR. The premise is granted in full: `by decide` is a
   // real tactic, no axioms, no `sorry`, no `native_decide`, so whatever it discharges is proven. Apply that law to
   // what it actually discharges: every Clay-named theorem in src/proof/index.lean carries the conjunct

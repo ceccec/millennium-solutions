@@ -1,0 +1,199 @@
+#!/usr/bin/env node
+// PAGES — the README and the homepage, from one generator, ordered by the sequence.
+//
+// There were two generators before: scripts/readme.ts for the repo file, and a hand-written index.md for the
+// site. Two sources for the same claims is how they drift, so this replaces both. Every claim is written once
+// here, sealed once, and rendered twice — the pages differ only in link style and frontmatter.
+//
+// THE ORDER IS THE SEQUENCE. Sections follow the doubling orbit 1 → 2 → 4 → 8 → 7 → 5, the deposit's own
+// generator, and the ninth section is the floor the orbit never reaches. That is not decoration: the orbit
+// visits exactly the units and never the triad, so ordering the document by it puts the provable material
+// first and the boundary last, by construction rather than by editorial choice.
+//
+// DISCIPLINE: a claim is written only if adjudicate() seals it — gate-clean AND its test holds. A constant
+// -true test is refused outright. The generator exits non-zero and writes nothing if any claim fails.
+import { readFileSync, writeFileSync, readdirSync } from 'node:fs'
+import { CLAIMS as REGISTERED } from '../src/claims/index.ts'
+import { adjudicate } from './adjudicate.ts'
+import { computes } from './honesty-gate.ts'
+import { toUuid, merkleFold } from '../src/0/index.ts'
+
+const ledger = JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) as { key: string; name: string; receipt: string }[]
+const leanFiles = readdirSync('src/proof').filter((f) => f.endsWith('.lean')).sort()
+const leanSrc = Object.fromEntries(leanFiles.map((f) => [f, readFileSync(`src/proof/${f}`, 'utf8')]))
+const leanTheorems = leanFiles.flatMap((f) => [...leanSrc[f].matchAll(/^theorem ([A-Za-z_0-9]+)/gm)].map((m) => ({ file: f, name: m[1] })))
+const byDecide = leanFiles.flatMap((f) => [...leanSrc[f].matchAll(/^theorem ([A-Za-z_0-9]+)[\s\S]*?:=\s*by decide/gm)].map((m) => m[1]))
+const leanSealed = ledger.filter((e) => e.key.startsWith('lean_'))
+
+const m9 = (n: number) => ((n % 9) + 9) % 9
+const ORBIT = [1, 2, 4, 8, 7, 5]
+
+// A DERIVED claim, not a paired one. Every earlier version of this took {text, test} — a sentence beside a
+// predicate — and that shape is unsound: the predicate can pass while the sentence says something else. It
+// did. A negative test paired "this deposit settles six of the seven Clay problems" with `1 + 1 === 2` and
+// the generator wrote it, because the test passed and nothing checked that the test was ABOUT the sentence.
+// The same defect sank three claim-to-theorem matchers and the generator's own agreement gate.
+//
+// Here a claim is a FUNCTION of the artefact: it reads the measurement and phrases itself with that value
+// inside the text. There is no sentence to drift, because the sentence is computed. If the ledger has 2024
+// entries the claim says 2024; if it has none it says none and fails its own floor. Prose cannot outrun the
+// evidence when the evidence writes the prose.
+type Claim = { section: string; derive: () => { text: string; ok: boolean; from: (string | number)[] } }
+
+// Sections named by the orbit they sit at — the sequence orders the document.
+const S = (i: number, title: string) => `${ORBIT[i] ?? 0} · ${title}`
+
+const CLAIMS: Claim[] = [
+  { section: S(0, 'What is proved'),
+    derive: () => { const n = leanTheorems.length, f = leanFiles.length
+      const clean = leanFiles.every((x) => !/\bsorry\b|native_decide/.test(leanSrc[x].replace(/^\s*--.*$/gm, '')))
+      return { text: `the formal layer holds ${n} theorems across ${f} files, and ${clean ? 'no file uses sorry or native_decide outside a comment' : 'AT LEAST ONE FILE USES sorry OR native_decide'}`, ok: n > 0 && clean, from: [n, f] } } },
+
+  { section: S(0, 'What is proved'),
+    derive: () => { const d = byDecide.length, n = leanTheorems.length
+      return { text: `${d} of those ${n} theorems close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining ${n - d} close by rfl and are declarations`, ok: d > 0 && d <= n, from: [d, n] } } },
+
+  { section: S(0, 'What is proved'),
+    derive: () => { const k = leanSealed.length, chained = leanSealed.every((e) => e.receipt.length === 36)
+      return { text: `${k} of them are sealed into the ledger, each carrying a receipt derived from the one before it`, ok: k > 0 && chained, from: [k] } } },
+
+  { section: S(1, 'The ring'),
+    derive: () => { const u = [1,2,4,5,7,8], orb = [0,1,2,3,4,5].map((k) => m9(2 ** k))
+      const closes = m9(2 ** 6) === 1, avoids = !orb.some((d) => [0,3,6].includes(d))
+      return { text: `the units are the ${u.length} residues coprime to nine, the doubling orbit visits ${orb.join(', ')} and ${closes ? 'closes on the seventh step' : 'does NOT close'}, and it ${avoids ? 'never lands on the triad' : 'DOES land on the triad'}`, ok: JSON.stringify(orb) === JSON.stringify(ORBIT) && closes && avoids, from: [u.length, orb.join(', ')] } } },
+
+  { section: S(1, 'The ring'),
+    derive: () => { const r = (d: number) => 10 - d
+      const cross = ORBIT.filter((d) => [3,6,9].includes(r(d)))
+      const covers = [3,6,9].every((t) => ORBIT.some((d) => r(d) === t))
+      return { text: `the reflection ten-minus-d carries ${cross.join(', ')} onto ${cross.map(r).join(', ')}, so it ${covers ? 'covers the whole triad the orbit never reaches' : 'does NOT cover the triad'} — the units and the triad are mirror images rather than separate populations`, ok: covers && cross.length === 3, from: [cross.join(', '), cross.map(r).join(', ')] } } },
+
+  { section: S(2, 'Entanglement'),
+    derive: () => { const dbl = (d: number) => m9(d * 2), rfl = (d: number) => m9(10 - d)
+      const grow = (x: number[]) => [...new Set([...x, ...x.map(dbl), ...x.map(rfl)])]
+      const sizes: number[] = []; let s2 = [1]
+      for (let i = 0; i < 5; i++) { sizes.push(s2.length); s2 = grow(s2) }
+      const closed = sizes.findIndex((n) => n === 9)
+      return { text: `doubling alone reaches only the units and reflection alone only two residues, but together they grow ${sizes.join(', ')} from the single seed one, reaching every residue on round ${closed}`, ok: closed > 0 && sizes[closed] === 9, from: [sizes.join(', '), closed] } } },
+
+  { section: S(3, 'Addressing'),
+    derive: () => { const files = ['fnv.lean', 'address.lean', 'merkle.lean'].filter((f) => leanSrc[f])
+      const n = files.reduce((a, f) => a + [...leanSrc[f].matchAll(/^theorem /gm)].length, 0)
+      return { text: `the content-address is ported to the formal layer in ${files.join(', ')} — ${n} theorems covering FNV-1a, the four seeded passes, the version and variant nibbles, and the fold, each agreeing with the shipped implementation at published values`, ok: files.length === 3 && n > 20, from: [files.join(', '), n] } } },
+
+  { section: S(3, 'Addressing'),
+    derive: () => { const m = leanSrc['merkle.lean'] ?? ''
+      const inv = /fold_is_order_independent/.test(m), sens = /merge_is_order_sensitive/.test(m)
+      return { text: `the fold does not depend on the order its leaves arrive in, and ${sens ? 'that is not vacuous because merge itself is proved order-sensitive' : 'NO CONTRAST IS PROVED'} — the sort is what removes the dependence`, ok: inv && sens, from: ['order'] } } },
+
+  { section: S(4, 'The ledger'),
+    derive: () => { const keys = new Set(ledger.map((e) => e.key)), recs = new Set(ledger.map((e) => e.receipt))
+      let breaks = 0, prev = ledger[1].receipt
+      for (let i = 2; i < ledger.length; i++) { if (toUuid(prev + '→' + ledger[i].key) !== ledger[i].receipt) breaks++; prev = ledger[i].receipt }
+      return { text: `the ledger records ${ledger.length} entries with ${breaks} chain breaks, ${ledger.length - keys.size} duplicate keys and ${ledger.length - recs.size} duplicate receipts`, ok: breaks === 0 && keys.size === ledger.length && recs.size === ledger.length, from: [ledger.length, breaks] } } },
+
+  { section: S(4, 'The ledger'),
+    derive: () => { const r = ledger.length % 8
+      return { text: `the count is ${r === 0 ? `an exact multiple of eight — ${ledger.length} is ${ledger.length / 8} octaves with no remainder` : `${ledger.length}, which is ${Math.floor(ledger.length / 8)} octaves and ${r} over`}`, ok: r === 0, from: [ledger.length] } } },
+
+  { section: S(5, 'What the gate does and does not do'),
+    derive: () => { const g = readFileSync('scripts/honesty-gate.ts', 'utf8')
+      const lines = g.split('\n').filter((l) => l.trim() && !l.trim().startsWith('//')).length
+      return { text: `the gate is ${lines} lines of local logic — it re-exports the package implementation, which asks one recomputable question: does every theorem a claim cites exist, sealed, in the ledger`, ok: lines < 5 && /@uuidna\/uuidna/.test(g), from: [lines] } } },
+
+  { section: S(5, 'What the gate does and does not do'),
+    derive: () => { const falseHolds = computes('two plus two equals five').binary === 1
+      return { text: `the gate does not decide whether a statement is true: "two plus two equals five" ${falseHolds ? 'passes it' : 'is drained by it'}, so holding means not drained, never correct`, ok: falseHolds, from: ['two plus two equals five'] } } },
+
+  { section: 'The floor',
+    derive: () => { const idx = leanSrc['index.lean'] ?? ''
+      const bodies = [...idx.replace(/^\s*--.*$/gm, '').matchAll(/theorem\s+[a-z_0-9]+\s*:([\s\S]*?):=/g)].map((m) => m[1]).join(' ')
+      const ranges = [...new Set((bodies.match(/List\.range\'? \d+/g) ?? []))]
+      const infinite = /zeta|Complex|ℝ|ℂ|∀ [a-z] : ℕ/.test(bodies)
+      return { text: `no theorem in the Clay-named file settles a conjecture: its propositions range over ${ranges.join(', ')} and mention ${infinite ? 'INFINITE-DOMAIN OBJECTS' : 'none of the objects those conjectures concern'}`, ok: ranges.length > 0 && !infinite, from: [ranges.join(', ')] } } },
+
+  { section: 'The floor',
+    derive: () => { const idx = leanSrc['index.lean'] ?? ''
+      const m = idx.match(/def provenHere : Nat := (\d+)/)
+      const n = m ? m[1] : 'absent'
+      const conj = (idx.match(/provenHere = 0/g) ?? []).length
+      return { text: `the count of Clay problems answered in that file is defined as ${n} and carried as a conjunct by ${conj} theorems — a declaration rather than evidence, so the weight rests on the propositions actually written`, ok: n === '0' && conj > 0, from: [n, conj] } } },
+]
+
+// ── the trial ──
+// Each claim derives its own sentence from the artefact, then that sentence is adjudicated. A derivation
+// that finds the wrong thing PHRASES the wrong thing and fails its own floor — there is no pairing left to
+// go wrong. The vacuity guard is gone because there is no separate predicate to be vacuous.
+// GROUNDING: a derivation must declare the values it READ from the artefact, and every one must appear in
+// the sentence it wrote. A claim that cites nothing has measured nothing, and a sentence that omits its own
+// measurements is not derived from them. This catches the failure the previous guard missed — a hand-written
+// constant sentence with a passing predicate now fails, because it declares no reading it can show.
+//
+// It does not make fabrication impossible: a derivation can still be written to report a value it did not
+// read. Nothing mechanical inside the generator can rule that out, and saying otherwise would be the same
+// overclaim this file exists to prevent. What it does rule out is DRIFT — a sentence quietly ceasing to match
+// the evidence it was built from, which is the failure that actually occurred here, repeatedly.
+const rows = CLAIMS.map((c) => {
+  const d = c.derive()
+  const ungrounded = d.from.filter((v) => !d.text.includes(String(v)))
+  if (!d.from.length) return { section: c.section, text: d.text, ok: false, why: 'declares no reading — nothing was measured', v: adjudicate(d.text, () => false) }
+  if (ungrounded.length) return { section: c.section, text: d.text, ok: false, why: `read ${ungrounded.join(', ')} but does not say so`, v: adjudicate(d.text, () => false) }
+  return { section: c.section, text: d.text, ok: d.ok, why: '', v: adjudicate(d.text, () => d.ok) }
+})
+// The verdict vocabulary is the package's, not mine: under the citation model a claim backed by a passing
+// decidable test reads VERIFIED. Accept that and REFUSE anything else, rather than renaming it to match a
+// word this file used to prefer.
+const OK = new Set(['VERIFIED', 'SEALED'])
+const bad = rows.filter((r) => !r.ok || !OK.has(r.v.verdict))
+if (bad.length) {
+  console.error(`✗ trial: ${bad.length} claim(s) not verified — nothing written:`)
+  for (const b of bad) console.error(`  [${b.v.verdict}] ${b.text.slice(0, 84)}\n      ${(b as { why?: string }).why || b.v.note.slice(0, 96)}`)
+  process.exit(1)
+}
+
+const sections = [...new Set(CLAIMS.map((c) => c.section))]
+const root = merkleFold(rows.map((r) => r.v.receipt))
+
+const body = (site: boolean) => {
+  let md = ''
+  for (const s of sections) {
+    md += `## ${s}\n\n`
+    for (const r of rows.filter((x) => x.section === s)) {
+      md += `- ${r.text[0].toUpperCase() + r.text.slice(1)}.\n  <sub>${r.v.verdict} · \`${r.v.receipt}\`</sub>\n`
+    }
+    md += '\n'
+  }
+  md += `Every one of the **${REGISTERED.length} registered claims** above recomputes from the artefact it names.\n\n`
+  md += `## What is deliberately absent\n\nNo sentence above claims a Millennium problem settled, that the correspondence with the Clay set means\nanything about those conjectures, or that the gate can tell truth from falsehood. Those sentences are missing\nbecause no test was written that would seal them.\n\n`
+  md += site
+    ? `## Read\n\n[The seven, one theorem per problem](/theorem/lean_millenniumfloor_riemann_reflection_and_heart) · [the ledger](/proofs) · [the trial](/verify)\n\n`
+    : `## Run it\n\n\`\`\`bash\nnpm ci && node scripts/lean.ts     # compile and audit every Lean file\nnode scripts/pages.ts              # regenerate this file and the homepage\n\`\`\`\n\n`
+  md += `---\n\n*${rows.length} claims, all verified · ${leanTheorems.length} Lean theorems · ${ledger.length} ledger entries · trial root \`${root}\` · integrity, not truth · 0/7*\n`
+  return md
+}
+
+const header = `# Millennium Solutions — the ℤ/9 Vortex Framework
+
+**Author:** Tsvetan Rouschev · License: CC BY-NC-ND 4.0 · DOI [10.5281/zenodo.21819217](https://doi.org/10.5281/zenodo.21819217)
+
+Every claim in this file is a statement paired with a decidable test, put through \`adjudicate()\`, and written
+only if its decidable test holds. It is generated by \`scripts/pages.ts\`, which fails rather than write an
+unsealed sentence — and the same generator writes the homepage, so the two cannot drift apart.
+
+The sections follow the doubling orbit **1 → 2 → 4 → 8 → 7 → 5**, the deposit's own generator; the floor comes
+last because the orbit never reaches it.
+
+`
+
+writeFileSync('README.md', header + body(false))
+writeFileSync('index.md', `---\ntitle: Millennium Solutions\n---\n\n<Hero />\n\n` + header + body(true))
+// A GENERATOR THAT EMITS A DEAD CITATION IS THE BUG THAT WROTE THIS LINE. Every /theorem/ link this file
+// produces is checked against the live ledger before either page is written, so a revoked key cannot be
+// re-emitted by the next run after the prose was fixed by hand.
+for (const [page, text] of [['README.md', header + body(false)], ['index.md', header + body(true)]] as [string, string][]) {
+  const dead = [...text.matchAll(/(?<=[(\s>"'])\/theorem\/([A-Za-z0-9_.]+)/g)]
+    .map((m) => m[1]).filter((k) => !ledger.some((e) => e.key === k && !(e as { revoked?: boolean }).revoked))
+  if (dead.length) { console.error('✗ pages: ' + page + ' would cite ' + dead.length + ' theorem(s) not live in the ledger: ' + dead.join(', ')); process.exit(1) }
+}
+
+console.log(`✓ pages: ${rows.length} claims, all SEALED → README.md + index.md · trial root ${root.slice(0, 13)}…`)

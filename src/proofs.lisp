@@ -1,6 +1,6 @@
 ;; Quantum Proofs — Scheme/Lisp Version (Minimal)
 ;; Licensed under CC BY-NC 4.0
-;; Attribution: Tsvetan Rouschev (ceci@psg.bg)
+;; Attribution: Tsvetan Rouschev (ceccec@psg.bg)
 
 ;; ============================================================================
 ;; CORE PRIMITIVES

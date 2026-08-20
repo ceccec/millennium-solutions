@@ -14,8 +14,8 @@ head:
 
 - The deposit's `toUuid` is a **content-address**, built on FNV-1a — a **non-cryptographic** hash by design. It is deterministic and public: anyone can recompute it with no key. That is its strength for *identity and integrity*, and exactly why it offers **no** secrecy.
 - It is **not** a messaging system and **not** encryption. For confidentiality use AES; for authentication use HMAC; for private messaging use a protocol like Signal. The deposit does not compete there — it is a different tool.
-- A single address **cannot store** an unbounded state — 128 bits is a fixed-width fingerprint, so by the pigeonhole principle it *references* a state, it does not *contain* it. You still need the data to recover it. ([proof](/theorem/a_content_address_is_a_pointer_not_the_payload))
-- Standards **break** — MD5 fell to collisions, SHA-1 fell (SHAttered). That is why "most secure" is not a claim anyone can make: security is provisional, always subject to the next cryptanalysis. And every finite digest — strong or weak — must eventually collide by pigeonhole. ([proof](/theorem/gravity_is_the_fall_to_a_fixed_point_and_pigeonhole_breaks_every_finite_hash))
+- A single address **cannot store** an unbounded state — 128 bits is a fixed-width fingerprint, so by the pigeonhole principle it *references* a state, it does not *contain* it. You still need the data to recover it. ([proof](/theorem/lean_ledgerclaims_the_address_does_not_determine_the_payload))
+- Standards **break** — MD5 fell to collisions, SHA-1 fell (SHAttered). That is why "most secure" is not a claim anyone can make: security is provisional, always subject to the next cryptanalysis. And every finite digest — strong or weak — must eventually collide by pigeonhole. ([proof](/theorem/lean_ledgerclaims_more_payloads_than_addresses_must_collide))
 
 The deposit claims **fitness for content-addressing**, not supremacy. A content-address proves **integrity, not truth**. `entails → 0/7`.
 
@@ -27,8 +27,8 @@ saved. Real gold (1 troy oz) and bitcoin (1 BTC = 100,000,000 sat) carry **live 
 your browser for measurable scale — volatile, non-reproducible, never sealed, never advice. uuidna's own value
 is real **savings** (bits of work not repeated), which at global scale become materially large (modeled,
 conditional on adoption). Verified by
-[the coins are a conserved measure, not a market price](/theorem/the_coins_are_a_conserved_measure_not_a_market_price_units_reproducible_prices_are_not)
-and [anyone chooses the terms and currency](/theorem/anyone_chooses_the_terms_and_currency_and_uuidna_computes_deterministically).
+the coins are a conserved measure, not a market price
+and [anyone chooses the terms and currency](/theorem/lean_address_addressing_is_deterministic).
 
 <Coins />
 
