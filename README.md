@@ -11,12 +11,12 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 183 theorems across 15 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `ba51254d-a145-8f52-b2c8-5a8e5b8446a2`</sub>
-- 175 of those 183 theorems close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
-  <sub>SEALED · `1b5a8e0c-fd7d-8f8b-bab6-9497bcb2b3ac`</sub>
-- 200 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `995f505c-444f-8784-a04a-b73f3b1310ba`</sub>
+- The formal layer holds 199 theorems across 16 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `73353bac-d027-87cb-8f97-f4f293aace6e`</sub>
+- 191 of those 199 theorems close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
+  <sub>SEALED · `b65beb4a-f4d4-8618-a038-a33f356266e1`</sub>
+- 216 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `6f9286c9-6c61-83e7-92a1-6523a5759e1f`</sub>
 
 ## 2 · The ring
 
@@ -32,17 +32,17 @@ last because the orbit never reaches it.
 
 ## 8 · Addressing
 
-- The content-address is ported to the formal layer in fnv.lean, address.lean, merkle.lean — 33 theorems covering FNV-1a, the four seeded passes, the version and variant nibbles, and the fold, each agreeing with the shipped implementation at published values.
-  <sub>SEALED · `13a63edf-9bbe-8e7e-a2f0-2acd17211b37`</sub>
+- The content-address is ported to the formal layer in fnv.lean, address.lean, merkle.lean — 36 theorems covering FNV-1a, the four seeded passes, the version and variant nibbles, and the fold, each agreeing with the shipped implementation at published values.
+  <sub>SEALED · `9ed7fd82-e52c-824d-80f1-d55cbaf1426a`</sub>
 - The fold does not depend on the order its leaves arrive in, and that is not vacuous because merge itself is proved order-sensitive — the sort is what removes the dependence.
   <sub>SEALED · `7ee1de7d-d218-88d4-8dc9-6eec451ced72`</sub>
 
 ## 7 · The ledger
 
-- The ledger records 2064 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `6ca71006-077b-8a3b-80ea-8a2e6dd5fcbb`</sub>
-- The count is an exact multiple of eight — 2064 is 258 octaves with no remainder.
-  <sub>SEALED · `2f062bcb-2c6d-8c21-b6cb-f035b20f8e6f`</sub>
+- The ledger records 2080 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `3fb6cca2-2ddd-8699-aed9-71f0cf26e393`</sub>
+- The count is an exact multiple of eight — 2080 is 260 octaves with no remainder.
+  <sub>SEALED · `4b4d1e90-596e-88b9-ae39-c5e8340eeee3`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -53,10 +53,10 @@ last because the orbit never reaches it.
 
 ## The floor
 
-- No theorem in the Clay-named file settles a conjecture: its propositions range over List.range 10, List.range 9, List.range 48, List.range 6 and mention none of the objects those conjectures concern.
-  <sub>SEALED · `b06c70a8-b009-8dbe-ab0a-f7fc45f7c9c7`</sub>
-- The count of Clay problems answered in that file is defined as 0 and carried as a conjunct by 9 theorems — a declaration rather than evidence, so the weight rests on the propositions actually written.
-  <sub>SEALED · `7b7a6c2e-00b1-8736-9e6f-6bf31b9d4c01`</sub>
+- No theorem in the Clay-named file settles a conjecture: its propositions range over List.range 10, List.range 9, List.range 48, List.range 6, List.range' 1 and mention none of the objects those conjectures concern.
+  <sub>SEALED · `3fa2f8ab-3367-8d44-8340-9bf1c0a420c4`</sub>
+- The count of Clay problems answered in that file is defined as 0 and carried as a conjunct by 10 theorems — a declaration rather than evidence, so the weight rests on the propositions actually written.
+  <sub>SEALED · `4e3a7975-55ec-84da-94fb-502bfcd452a8`</sub>
 
 Every one of the **15 registered claims** above recomputes from the artefact it names.
 
@@ -75,4 +75,4 @@ node scripts/pages.ts              # regenerate this file and the homepage
 
 ---
 
-*14 claims, all verified · 183 Lean theorems · 2064 ledger entries · trial root `afdebd73-0190-8f76-ba5d-aff5040ac3a0` · integrity, not truth · 0/7*
+*14 claims, all verified · 199 Lean theorems · 2080 ledger entries · trial root `3d237a49-ba60-8dd8-9389-dcb213f124c7` · integrity, not truth · 0/7*

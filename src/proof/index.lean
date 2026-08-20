@@ -76,6 +76,18 @@ theorem poincare_single_closed_loop :
   ∧ provenHere = 0 := by decide
 
 -- ── the ledger — the floor is exactly zero of seven ───────────────────────────────────────────────────────
+-- ── THE SEVEN REST ON ONE FINITE STRUCTURE, and it is small enough to state in full. Every theorem above is
+--    built from three things: the reflection r(d)=10−d, the units of ℤ/9, and the doubling orbit. Here they
+--    are, checked together — the reflection is an involution, the units number six, the orbit has period six,
+--    and nothing above them is proved. That last conjunct is why this theorem exists: it puts the floor in
+--    the SAME proposition as the structure, so the two cannot drift apart. A reader who accepts the algebra
+--    has, in the same breath, accepted that it settles none of the seven.
+theorem the_seven_rest_on_one_finite_structure :
+  ((List.range' 1 9).all (fun d => refl (refl d) == d)) ∧
+  (((List.range' 1 9).filter isUnit).length = 6) ∧
+  (span.eraseDups.length = 6) ∧
+  provenHere = 0 := by decide
+
 theorem the_floor_is_zero_of_seven : provenHere = 0 := rfl
 
 end MillenniumFloor

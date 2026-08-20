@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2064 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2080 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (200)
+### lean (216)
 
 - [lean_units_are_six](/theorem/lean_units_are_six) — lean: the units of ℤ/9 are exactly [1,2,4,5,7,8] — checked at every residue by the kernel, recomputed here; 0/7  ·  `031c89bf-e1e0…`
 - [lean_units_count](/theorem/lean_units_count) — lean: there are exactly six units in ℤ/9 — the kernel checks the count, recomputed here; 0/7  ·  `104e8965-ebfb…`
@@ -224,6 +224,22 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_ledgerclaims_more_payloads_than_addresses_must_collide](/theorem/lean_ledgerclaims_more_payloads_than_addresses_must_collide) — lean ledgerclaims.lean: more_payloads_than_addresses_must_collide — ((List.range 17).map addr4).eraseDups.length &lt; 17 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `83447fc9-2e89…`
 - [lean_ledgerclaims_the_address_does_not_determine_the_payload](/theorem/lean_ledgerclaims_the_address_does_not_determine_the_payload) — lean ledgerclaims.lean: the_address_does_not_determine_the_payload — ((List.range 17).any (fun a =&gt; (List.range 17).any (fun b =&gt; a != b && addr4 a == addr4 b))) = true — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `4dbd784f-cd12…`
 - [lean_ledgerclaims_a_proof_is_smaller_than_its_set_across_the_octave](/theorem/lean_ledgerclaims_a_proof_is_smaller_than_its_set_across_the_octave) — lean ledgerclaims.lean: a_proof_is_smaller_than_its_set_across_the_octave — (List.range' 2 255).all (fun n =&gt; rounds 40 n &lt; n) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `bd52bf4d-20ac…`
+- [lean_merkle_fold_is_order_independent_on_three](/theorem/lean_merkle_fold_is_order_independent_on_three) — lean merkle.lean: fold_is_order_independent_on_three — merkleFold [A, B, C] = merkleFold [A, C, B] ∧ merkleFold [A, B, C] = merkleFold [B, A, C] ∧ merkleFold [A, B, C] = merkleFold [B, C, A] ∧ merkleFold [A, B, C] = merkleFold [C, A, B] ∧ merkleFold [A, B, C] = merkleFold [C, B, A] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d127c5dd-11ea…`
+- [lean_quantum_the_invariance_is_canonicalisation_not_physics](/theorem/lean_quantum_the_invariance_is_canonicalisation_not_physics) — lean quantum.lean: the_invariance_is_canonicalisation_not_physics — (perms [1, 2, 4, 8]).all (fun p =&gt; sort p == sort [1, 2, 4, 8]) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `8fc67bd3-13d9…`
+- [lean_quantum_the_receipt_is_not_injective](/theorem/lean_quantum_the_receipt_is_not_injective) — lean quantum.lean: the_receipt_is_not_injective — pairsOverNine.length = 45 ∧ (pairsOverNine.map receipt).eraseDups.length = 9 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e341b19b-3658…`
+- [lean_quantum_the_uncanonicalised_fold_gives_many_answers](/theorem/lean_quantum_the_uncanonicalised_fold_gives_many_answers) — lean quantum.lean: the_uncanonicalised_fold_gives_many_answers — ((perms [1, 2, 4, 8]).map naive).eraseDups.length = 5 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `35063521-90d0…`
+- [lean_reversal_reversal_is_involutive_exactly_off_the_trailing_zeros](/theorem/lean_reversal_reversal_is_involutive_exactly_off_the_trailing_zeros) — lean reversal.lean: reversal_is_involutive_exactly_off_the_trailing_zeros — (List.range' 1 300).all (fun n =&gt; (reverseNum (reverseNum n) == n) == (n % 10 != 0)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7c3f81f9-1ab8…`
+- [lean_fnv_the_hash_is_order_sensitive](/theorem/lean_fnv_the_hash_is_order_sensitive) — lean fnv.lean: the_hash_is_order_sensitive — hash32 0 [97, 98] ≠ hash32 0 [98, 97] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9ebfd1f3-a326…`
+- [lean_fnv_the_empty_input_is_still_mixed](/theorem/lean_fnv_the_empty_input_is_still_mixed) — lean fnv.lean: the_empty_input_is_still_mixed — hash32 0 [] = 2872998923 ∧ hash32 FNV_OFFSET [] = 0 ∧ avalanche 0 = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a295a883-8e7e…`
+- [lean_millenniumfloor_the_seven_rest_on_one_finite_structure](/theorem/lean_millenniumfloor_the_seven_rest_on_one_finite_structure) — lean index.lean: the_seven_rest_on_one_finite_structure — ((List.range' 1 9).all (fun d =&gt; refl (refl d) == d)) ∧ (((List.range' 1 9).filter isUnit).length = 6) ∧ (span.eraseDups.length = 6) ∧ provenHere = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c4430b4b-f081…`
+- [lean_merkaba_the_three_classes_partition_z9](/theorem/lean_merkaba_the_three_classes_partition_z9) — lean merkaba.lean: the_three_classes_partition_z9 — axis.length = 3 ∧ tetA.length = 3 ∧ tetB.length = 3 ∧ (axis ++ tetA ++ tetB).eraseDups.length = 9 ∧ ((List.range 9).all (fun d =&gt; (axis ++ tetA ++ tetB).contains d)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `347bb6f8-bba6…`
+- [lean_merkaba_the_axis_is_closed_under_doubling](/theorem/lean_merkaba_the_axis_is_closed_under_doubling) — lean merkaba.lean: the_axis_is_closed_under_doubling — (dbl axis).all (fun d =&gt; axis.contains d) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9de5030e-7ecd…`
+- [lean_merkaba_doubling_counter_rotates_the_two_tetrahedra](/theorem/lean_merkaba_doubling_counter_rotates_the_two_tetrahedra) — lean merkaba.lean: doubling_counter_rotates_the_two_tetrahedra — (dbl tetA).eraseDups.length = 3 ∧ (dbl tetA).all (fun d =&gt; tetB.contains d) ∧ (dbl tetB).eraseDups.length = 3 ∧ (dbl tetB).all (fun d =&gt; tetA.contains d) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a409ff11-15ca…`
+- [lean_merkaba_the_counter_rotation_has_period_two](/theorem/lean_merkaba_the_counter_rotation_has_period_two) — lean merkaba.lean: the_counter_rotation_has_period_two — (dbl (dbl tetA)).all (fun d =&gt; tetA.contains d) ∧ (dbl (dbl tetB)).all (fun d =&gt; tetB.contains d) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7261ab56-ed9b…`
+- [lean_merkaba_the_tetrahedra_residue_sums_cancel](/theorem/lean_merkaba_the_tetrahedra_residue_sums_cancel) — lean merkaba.lean: the_tetrahedra_residue_sums_cancel — m9 (tetA.foldl (· + ·) 0) = 3 ∧ m9 (tetB.foldl (· + ·) 0) = 6 ∧ m9 (tetA.foldl (· + ·) 0 + tetB.foldl (· + ·) 0) = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `8e4fb3a9-f5aa…`
+- [lean_merkaba_one_tetrahedron_covers_half_the_units](/theorem/lean_merkaba_one_tetrahedron_covers_half_the_units) — lean merkaba.lean: one_tetrahedron_covers_half_the_units — (units.filter (fun d =&gt; tetA.contains d)).length = 3 ∧ (units.filter (fun d =&gt; tetB.contains d)).length = 3 ∧ units.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c5305e5f-2386…`
+- [lean_merkaba_the_cube_and_the_tetrahedron_count_out](/theorem/lean_merkaba_the_cube_and_the_tetrahedron_count_out) — lean merkaba.lean: the_cube_and_the_tetrahedron_count_out — 2 ^ 3 = 8 ∧ 3 * 2 ^ 2 = 12 ∧ 4 + 4 - 6 = 2 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `18accb6b-20e6…`
+- [lean_merkaba_stacked_triangles_are_tetrahedral](/theorem/lean_merkaba_stacked_triangles_are_tetrahedral) — lean merkaba.lean: stacked_triangles_are_tetrahedral — (List.range' 1 40).all (fun n =&gt; sumTri n == n * (n + 1) * (n + 2) / 6) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `4611383b-7ebe…`
 
 ### other — one-of-a-kind (0)
 
@@ -2107,4 +2123,4 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 
 </details>
 
-Page content-address: `ca8def40-6c2d-86a3-b55c-9c0de87d5d5a`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `94ae2c71-9033-8172-942f-f2b2c9906d84`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

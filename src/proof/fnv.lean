@@ -75,4 +75,20 @@ theorem hash_is_thirty_two_bit :
 def settledHere : Nat := 10
 theorem fnv_settles_its_range : settledHere = 10 := rfl
 
+-- ── THE ADDRESS IS A SEQUENCE HASH, NOT A SET HASH. Swapping two bytes changes it, so the input's ORDER is
+--    part of what is addressed. This is the opposite of the merkle fold, which sorts precisely so that order
+--    stops mattering — the two live side by side in this deposit and it is worth being exact about which is
+--    which, because using one where the other is meant is a silent bug rather than a loud one.
+theorem the_hash_is_order_sensitive :
+  hash32 0 [97, 98] ≠ hash32 0 [98, 97] := by decide
+
+-- ── THE EMPTY INPUT IS STILL MIXED, AND ONE SEED SENDS IT TO ZERO. The first draft here said the hash of
+--    nothing returns the seed unchanged; the kernel refuted it, because hash32 avalanches unconditionally —
+--    there is no short-circuit for the empty list. What is true is sharper and worth recording: zero is a
+--    FIXED POINT of the avalanche, so seeding with the offset basis (which the initial xor cancels) addresses
+--    the empty input as 0. A degenerate address reachable from public constants is not a secret and not a
+--    defect to hide — it is the kind of edge a keyless, reproducible function is expected to state plainly.
+theorem the_empty_input_is_still_mixed :
+  hash32 0 [] = 2872998923 ∧ hash32 FNV_OFFSET [] = 0 ∧ avalanche 0 = 0 := by decide
+
 end Fnv

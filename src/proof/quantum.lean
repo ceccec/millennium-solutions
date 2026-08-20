@@ -62,6 +62,30 @@ theorem naive_fold_is_not_order_invariant :
 theorem superposition_collapses_to_one :
   ((perms [1, 2, 4, 8]).map receipt).eraseDups.length = 1 := by decide
 
+-- ── 6 · THE MECHANISM, named. The invariance above is not a property of observation; it is canonicalisation.
+--        Every ordering sorts to the SAME list, and the receipt reads only that. Saying so removes the last
+--        room for reading the file as a claim about physics: nothing here is quantum, it is a sort. ──
+theorem the_invariance_is_canonicalisation_not_physics :
+  (perms [1, 2, 4, 8]).all (fun p => sort p == sort [1, 2, 4, 8]) := by decide
+
+-- ── 7 · THE LIMIT, proved rather than admitted. The receipt lands in ℤ/9, so nine values must cover every
+--        possible set — by pigeonhole it CANNOT identify one. Here are two different multisets sharing a
+--        receipt. Counted exactly: 45 distinct two-element multisets over the digits produce 9 receipts, so
+--        five sets share each value on average. Order-invariant does not mean collision-free, and a receipt
+--        that cannot tell 45 things apart must never be read as naming one of them. ──
+def pairsOverNine : List (List Nat) :=
+  ((List.range' 1 9).flatMap (fun a => (List.range' 1 9).map (fun b => sort [a, b]))).eraseDups
+
+theorem the_receipt_is_not_injective :
+  pairsOverNine.length = 45 ∧ (pairsOverNine.map receipt).eraseDups.length = 9 := by decide
+
+-- ── 8 · HOW BADLY order matters without the sort — counted, not gestured at. Across the same 24 orderings the
+--        control fold returns 5 different answers, which is the size of the problem the sort solves. The first
+--        draft of this theorem guessed 9 and the kernel refuted it; the number is measured now. A contrast
+--        stated as a measured number cannot be softened later. ──
+theorem the_uncanonicalised_fold_gives_many_answers :
+  ((perms [1, 2, 4, 8]).map naive).eraseDups.length = 5 := by decide
+
 -- ── WHAT THIS FILE SETTLES, stated positively. Two earlier names here were wrong in the same direction:
 --    "quantum_settles_nothing" is refuted by the file itself, and "settles_no_clay_conjecture" states a negative
 --    where the true statement is positive. Every theorem above is EXHAUSTIVE over its domain — every residue,

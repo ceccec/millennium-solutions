@@ -59,6 +59,7 @@ def merkleFold (leaves : List (List Nat)) : List Nat :=
   else (foldF (leaves.length + 1) (sortB leaves)).getD 0 []
 
 def A : List Nat := toUuidBytes [97]     -- address of "a"
+def C : List Nat := toUuidBytes [99]     -- address of "c"
 def B : List Nat := toUuidBytes [98]     -- address of "b"
 
 -- ── AGREEMENT with the shipped implementation ──
@@ -85,5 +86,13 @@ theorem sorting_is_what_makes_the_fold_order_free :
 
 def settledHere : Nat := 7
 theorem merkle_settles_its_range : settledHere = 7 := rfl
+
+-- ── ORDER-INDEPENDENCE ON AN ODD NUMBER OF LEAVES. Two leaves pair exactly and prove little: the interesting
+--    case is an odd count, where pairUp must carry the leftover leaf into the next round. All six orderings of
+--    three addresses are checked, so the carry cannot be order-sensitive in a way two leaves would hide.
+theorem fold_is_order_independent_on_three :
+  merkleFold [A, B, C] = merkleFold [A, C, B] ∧ merkleFold [A, B, C] = merkleFold [B, A, C] ∧
+  merkleFold [A, B, C] = merkleFold [B, C, A] ∧ merkleFold [A, B, C] = merkleFold [C, A, B] ∧
+  merkleFold [A, B, C] = merkleFold [C, B, A] := by decide
 
 end Merkle

@@ -15443,5 +15443,85 @@
     "key": "lean_ledgerclaims_a_proof_is_smaller_than_its_set_across_the_octave",
     "name": "lean ledgerclaims.lean: a_proof_is_smaller_than_its_set_across_the_octave — (List.range' 2 255).all (fun n => rounds 40 n < n) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "bd52bf4d-20ac-8435-9336-a9b4750b615f"
+  },
+  {
+    "key": "lean_merkle_fold_is_order_independent_on_three",
+    "name": "lean merkle.lean: fold_is_order_independent_on_three — merkleFold [A, B, C] = merkleFold [A, C, B] ∧ merkleFold [A, B, C] = merkleFold [B, A, C] ∧ merkleFold [A, B, C] = merkleFold [B, C, A] ∧ merkleFold [A, B, C] = merkleFold [C, A, B] ∧ merkleFold [A, B, C] = merkleFold [C, B, A] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d127c5dd-11ea-86e4-8c94-0be07e223002"
+  },
+  {
+    "key": "lean_quantum_the_invariance_is_canonicalisation_not_physics",
+    "name": "lean quantum.lean: the_invariance_is_canonicalisation_not_physics — (perms [1, 2, 4, 8]).all (fun p => sort p == sort [1, 2, 4, 8]) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8fc67bd3-13d9-8531-b642-7a9e33eaf5fa"
+  },
+  {
+    "key": "lean_quantum_the_receipt_is_not_injective",
+    "name": "lean quantum.lean: the_receipt_is_not_injective — pairsOverNine.length = 45 ∧ (pairsOverNine.map receipt).eraseDups.length = 9 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e341b19b-3658-80bb-8b69-b8f129eaa260"
+  },
+  {
+    "key": "lean_quantum_the_uncanonicalised_fold_gives_many_answers",
+    "name": "lean quantum.lean: the_uncanonicalised_fold_gives_many_answers — ((perms [1, 2, 4, 8]).map naive).eraseDups.length = 5 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "35063521-90d0-8445-9f40-36b1a218fbca"
+  },
+  {
+    "key": "lean_reversal_reversal_is_involutive_exactly_off_the_trailing_zeros",
+    "name": "lean reversal.lean: reversal_is_involutive_exactly_off_the_trailing_zeros — (List.range' 1 300).all (fun n => (reverseNum (reverseNum n) == n) == (n % 10 != 0)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7c3f81f9-1ab8-8281-bec8-d121dbadc6e7"
+  },
+  {
+    "key": "lean_fnv_the_hash_is_order_sensitive",
+    "name": "lean fnv.lean: the_hash_is_order_sensitive — hash32 0 [97, 98] ≠ hash32 0 [98, 97] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9ebfd1f3-a326-8cf9-984d-1a76a1f2a974"
+  },
+  {
+    "key": "lean_fnv_the_empty_input_is_still_mixed",
+    "name": "lean fnv.lean: the_empty_input_is_still_mixed — hash32 0 [] = 2872998923 ∧ hash32 FNV_OFFSET [] = 0 ∧ avalanche 0 = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a295a883-8e7e-81e3-8266-635f26e28109"
+  },
+  {
+    "key": "lean_millenniumfloor_the_seven_rest_on_one_finite_structure",
+    "name": "lean index.lean: the_seven_rest_on_one_finite_structure — ((List.range' 1 9).all (fun d => refl (refl d) == d)) ∧ (((List.range' 1 9).filter isUnit).length = 6) ∧ (span.eraseDups.length = 6) ∧ provenHere = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c4430b4b-f081-804c-b4f1-29fca82f3f61"
+  },
+  {
+    "key": "lean_merkaba_the_three_classes_partition_z9",
+    "name": "lean merkaba.lean: the_three_classes_partition_z9 — axis.length = 3 ∧ tetA.length = 3 ∧ tetB.length = 3 ∧ (axis ++ tetA ++ tetB).eraseDups.length = 9 ∧ ((List.range 9).all (fun d => (axis ++ tetA ++ tetB).contains d)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "347bb6f8-bba6-8ef7-9051-7686f4047ac7"
+  },
+  {
+    "key": "lean_merkaba_the_axis_is_closed_under_doubling",
+    "name": "lean merkaba.lean: the_axis_is_closed_under_doubling — (dbl axis).all (fun d => axis.contains d) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9de5030e-7ecd-8f0b-aad1-75d9027b3c70"
+  },
+  {
+    "key": "lean_merkaba_doubling_counter_rotates_the_two_tetrahedra",
+    "name": "lean merkaba.lean: doubling_counter_rotates_the_two_tetrahedra — (dbl tetA).eraseDups.length = 3 ∧ (dbl tetA).all (fun d => tetB.contains d) ∧ (dbl tetB).eraseDups.length = 3 ∧ (dbl tetB).all (fun d => tetA.contains d) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a409ff11-15ca-8047-8e2b-a641e7bdc712"
+  },
+  {
+    "key": "lean_merkaba_the_counter_rotation_has_period_two",
+    "name": "lean merkaba.lean: the_counter_rotation_has_period_two — (dbl (dbl tetA)).all (fun d => tetA.contains d) ∧ (dbl (dbl tetB)).all (fun d => tetB.contains d) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7261ab56-ed9b-821c-a526-bbf8783d5c61"
+  },
+  {
+    "key": "lean_merkaba_the_tetrahedra_residue_sums_cancel",
+    "name": "lean merkaba.lean: the_tetrahedra_residue_sums_cancel — m9 (tetA.foldl (· + ·) 0) = 3 ∧ m9 (tetB.foldl (· + ·) 0) = 6 ∧ m9 (tetA.foldl (· + ·) 0 + tetB.foldl (· + ·) 0) = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8e4fb3a9-f5aa-8436-943b-647de30dcf50"
+  },
+  {
+    "key": "lean_merkaba_one_tetrahedron_covers_half_the_units",
+    "name": "lean merkaba.lean: one_tetrahedron_covers_half_the_units — (units.filter (fun d => tetA.contains d)).length = 3 ∧ (units.filter (fun d => tetB.contains d)).length = 3 ∧ units.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c5305e5f-2386-8654-bec0-f17bbe1bb273"
+  },
+  {
+    "key": "lean_merkaba_the_cube_and_the_tetrahedron_count_out",
+    "name": "lean merkaba.lean: the_cube_and_the_tetrahedron_count_out — 2 ^ 3 = 8 ∧ 3 * 2 ^ 2 = 12 ∧ 4 + 4 - 6 = 2 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "18accb6b-20e6-8d68-b44a-382db7ee0cfe"
+  },
+  {
+    "key": "lean_merkaba_stacked_triangles_are_tetrahedral",
+    "name": "lean merkaba.lean: stacked_triangles_are_tetrahedral — (List.range' 1 40).all (fun n => sumTri n == n * (n + 1) * (n + 2) / 6) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "4611383b-7ebe-8301-9917-056c55afdb8e"
   }
 ]

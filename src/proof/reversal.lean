@@ -54,6 +54,14 @@ theorem emirps_exist_below_one_hundred :
 theorem reversal_does_not_preserve_primality :
   ¬ ((List.range' 10 90).all (fun n => isPrime n == isPrime (reverseNum n))) := by decide
 
+-- ── WHERE REVERSAL STOPS BEING AN INVOLUTION. Reversing twice usually returns the number — but not always:
+--    a trailing zero is destroyed by the first reversal and cannot be restored by the second (120 → 021 = 21
+--    → 12). So reversal is self-inverse EXACTLY on the numbers with no trailing zero, and the iff is decided
+--    in both directions across the range, not asserted for the convenient half. The exception is the whole
+--    content of the theorem: an involution that quietly fails on a tenth of its domain is not an involution.
+theorem reversal_is_involutive_exactly_off_the_trailing_zeros :
+  (List.range' 1 300).all (fun n => (reverseNum (reverseNum n) == n) == (n % 10 != 0)) := by decide
+
 def settledHere : Nat := 7
 theorem reversal_settles_its_range : settledHere = 7 := rfl
 
