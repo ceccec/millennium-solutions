@@ -21,6 +21,9 @@ def rounds : Nat → Nat → Nat
   | _, 1 => 0
   | Nat.succ f, n => 1 + rounds f ((n + 1) / 2)
 
+-- A seal is a uuid and a uuid is sixteen bytes, so a seal is 128 bits. Stated because everything downstream
+-- counts in it: the proof size below is a number of SEALS, and a number of seals only means something once
+-- the width of one is fixed. The multiplication is trivial; naming the unit is not.
 theorem a_seal_is_128_bits : (toUuidBytes [97]).length * 8 = 128 := by decide
 
 -- doubling the set adds exactly ONE sibling — the signature of a logarithm, checked across an octave.

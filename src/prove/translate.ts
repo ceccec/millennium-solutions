@@ -17,6 +17,17 @@
 // REFUSE meant `join(` was rejected before the rewrite that eliminates it could fire — the refusal list was
 // reading a form the translator no longer produces. Anything these do not consume is still refused below.
 const PRE_RULES: [RegExp, string | ((...a: string[]) => string)][] = [
+  // toUuid OF AN ASCII LITERAL IS toUuidBytes OF ITS CHARACTER CODES. The Lean port is pinned to the shipped
+  // implementation at published values (address.lean: to_uuid_bytes_of_a, to_uuid_bytes_of_uuidna), and the
+  // dashed-hex rendering is injective, so comparing two address STRINGS is comparing their byte lists. Only
+  // ASCII literals are rewritten: a character above 127 encodes to more than one byte and guessing which
+  // would be inventing the claim rather than reading it.
+  // the class EXCLUDES the apostrophe (0x27). Including it let the match run straight past the closing quote
+  // and swallow the rest of the expression, so `toUuid('a') === toUuid('a')` rendered as one enormous literal
+  // that happened to type-check. A greedy literal is worse than a refusal: it produces a theorem about the
+  // wrong string with no sign anything went wrong.
+  [/\btoUuid\('([\x20-\x26\x28-\x7e]*)'\)/g, ((_m: string, lit: string) =>
+    `Address.toUuidBytes [${[...lit].map((c) => c.charCodeAt(0)).join(', ')}]`) as unknown as string],
   // COMPARING JOINED LISTS IS COMPARING THE LISTS. `a.join(',') === b.join(',')` holds exactly when a and b
   // are equal, PROVIDED no element's rendering contains the separator — and every element here is a natural
   // number, so none does. The join is a way of comparing lists in JavaScript, not part of the claim; keeping
@@ -54,6 +65,14 @@ const RULES: [RegExp, string][] = [
 
 /** Constructs that have no faithful mechanical rendering — presence means refuse. */
 const REFUSE = [
+  // merkleFold IS NOT THE SAME FUNCTION ON BOTH SIDES, and the difference is invisible in the name. The
+  // TypeScript merkleFold takes RAW STRINGS, sorts them as strings and merges them directly; the Lean port
+  // takes uuid BYTE-LISTS and renders each as dashed hex before merging. They agree only when every leaf is
+  // already an address. Measured over this ledger: of the fold claims written with an array literal, ZERO
+  // pass addresses and all thirteen pass raw strings — so translating any of them would produce a theorem
+  // that compiles, passes the agreement check on its truth value, and states something else. Refused by name,
+  // with the reason, which is the only version of this that helps anybody.
+  /\bmerkleFold\b/,
   /\bsort\(/, /\bjoin\(/, /\bJSON\b/, /\bSet\b/, /\bMap\b/, /\bString\b/, /\bNumber\b/,
   /\btoUuid\b/, /\bcomputes\b/, /\bmerkleFold\b/, /\bimprint/, /\breduce\(/, /\bflatMap\(/,
   /\bmatch\(/, /\breplace\(/, /=>\s*\{/, /\bcls\(/,
@@ -148,7 +167,7 @@ export function translate(body: string): Translation {
   // binder it introduced. The previous check was a regex that let `nonHarmonic` and array indexing through;
   // both compiled into nonsense the kernel rejected. Anything unrecognised is refused by name, so a failure
   // is legible instead of mysterious.
-  const ALLOWED = new Set(['List', 'range', 'all', 'any', 'contains', 'length', 'fun', 'M9', 'DR', 'true', 'false', 'let', 'eraseDups', 'filter', 'map', 'take', 'drop'])
+  const ALLOWED = new Set(['List', 'range', 'all', 'any', 'contains', 'length', 'fun', 'M9', 'DR', 'true', 'false', 'let', 'eraseDups', 'filter', 'map', 'take', 'drop', 'Address', 'toUuidBytes'])
   const binders = new Set([
     ...[...out.matchAll(/fun ([a-z][a-zA-Z0-9]*) =>/g)].map((m) => m[1]),
     ...[...out.matchAll(/let ([A-Za-z_][A-Za-z0-9_]*) :=/g)].map((m) => m[1]),
@@ -193,6 +212,11 @@ export function fixChains(t: string): string {
   }
   return t
 }
+
+/** Which Lean modules the rendered statement needs. Emitted as imports so the port is USED rather than
+ *  restated — a second copy of toUuid inside the generated file would be one more thing to drift. */
+export const importsFor = (lean: string): string[] =>
+  lean.includes('Address.') ? ['Address'] : []
 
 export const PREAMBLE = `def M9 (n : Nat) : Nat := n % 9
 

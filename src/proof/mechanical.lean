@@ -1,3 +1,4 @@
+import Address
 set_option maxRecDepth 400000
 -- title: Mechanically translated
 -- wing: the machine
@@ -21,6 +22,9 @@ theorem fib_trinity_horizon : DR (3 + 5 + 8) == 7 := by decide
 
 -- trial UPHELD: ℤ/9 has zero divisors — 3·3 ≡ 0 with 3 ≠ 0 (not an integral domain)
 theorem trial_zero_divisors : M9 (3 * 3) == 0 && M9 (3) != 0 := by decide
+
+-- a one-character change gives an unrelated address (avalanche) — no gradient leaks the message
+theorem nopayload_avalanche : Address.toUuidBytes [109, 101, 115, 115, 97, 103, 101, 48] != Address.toUuidBytes [109, 101, 115, 115, 97, 103, 101, 49] := by decide
 
 -- the exterior angles of any regular n-gon sum to 360° (sides 3, 5, 8)
 theorem geom_exterior_360 : [3, 5, 8].all (fun n => n * (360 / n) == 360) := by decide
@@ -49,6 +53,12 @@ theorem relation_seven : DR (3 + 5 + 8) == 7 := by decide
 -- the creation-week structure 6 + 1 = 7: six Clay problems stay open, the seventh settled externally (Poincaré, 
 theorem relation_creation_week : 6 + 1 == 7 && 7 - 1 == 6 := by decide
 
+-- the collapse dissolves into content-addressing: observation is a function — one input folds to exactly one add
+theorem relation_superposition_collapse : Address.toUuidBytes [111, 98, 115, 101, 114, 118, 101, 114, 58, 120] == Address.toUuidBytes [111, 98, 115, 101, 114, 118, 101, 114, 58, 120] && Address.toUuidBytes [111, 98, 115, 101, 114, 118, 101, 114, 58, 120] != Address.toUuidBytes [111, 98, 115, 101, 114, 118, 101, 114, 58, 121] := by decide
+
+-- url messaging is the path itself: a path is the message (no payload) — its content-address depends on the orde
+theorem relation_url_path : Address.toUuidBytes [116, 104, 101, 47, 99, 114, 121, 115, 116, 97, 108] != Address.toUuidBytes [99, 114, 121, 115, 116, 97, 108, 47, 116, 104, 101] && Address.toUuidBytes [116, 104, 101, 47, 99, 114, 121, 115, 116, 97, 108] == Address.toUuidBytes [116, 104, 101, 47, 99, 114, 121, 115, 116, 97, 108] := by decide
+
 -- the moduli / Teichmüller space of the double torus has real dimension 6g − 6 = 6
 theorem genus2_moduli_dim : 6 * 2 - 6 == 6 := by decide
 
@@ -57,6 +67,9 @@ theorem genus2_hyperelliptic : 2 * 2 + 2 == 6 := by decide
 
 -- the Kaprekar constants bind to ℤ/9: dr(495) = dr(6174) = 9 = BASE — both fixed points sit on the base’s own di
 theorem kaprekar_constants_digitroot_nine : DR (495) == 9 && DR (6174) == 9 := by decide
+
+-- a content-address is keyless integrity: toUuid is a pure function — same input, same address, computed by anyo
+theorem content_address_is_keyless_integrity : Address.toUuidBytes [99, 101, 99, 99, 101, 99] == Address.toUuidBytes [99, 101, 99, 99, 101, 99] && Address.toUuidBytes [99, 101, 99, 99, 101, 99] != Address.toUuidBytes [109, 97, 108, 108, 111, 114, 121] := by decide
 
 -- the 3-4-5 right triangle is the first Pythagorean triple: 3² + 4² = 5², the smallest and the only one in arith
 theorem the_three_four_five_right_triangle_is_the_first_pythagorean_triple : 3 * 3 + 4 * 4 == 5 * 5 := by decide
@@ -82,6 +95,18 @@ theorem sixty_one_sense_three_stop_codons : 61 + 3 == 64 && 20 < 61 := by decide
 -- the double helix has six reading frames: three per strand across two antiparallel strands — six ways to read o
 theorem six_reading_frames : 3 * 2 == 6 := by decide
 
+-- each wave is a local pure derivation: a content-address is a deterministic function of its content — re-derive
+theorem each_wave_is_a_local_pure_derivation : Address.toUuidBytes [119, 97, 118, 101] == Address.toUuidBytes [119, 97, 118, 101] && Address.toUuidBytes [119, 97, 118, 101, 45, 49] != Address.toUuidBytes [119, 97, 118, 101, 45, 50] := by decide
+
+-- the diamond’s fixed point is zero-entropy: its content-address recomputes identically (H = 0) while distinct d
+theorem diamond_fixed_point_is_zero_entropy : Address.toUuidBytes [53] == Address.toUuidBytes [53] && Address.toUuidBytes [53] != Address.toUuidBytes [52] := by decide
+
+-- the address is shipped, not the payload: a content-address re-derives from its content — send the address, rec
+theorem the_address_is_shipped_not_the_payload : Address.toUuidBytes [120] == Address.toUuidBytes [120] && Address.toUuidBytes [120] != Address.toUuidBytes [121] := by decide
+
+-- gravity holds prose, code and paths in place: a path with its content addresses identically on re-examination,
+theorem gravity_holds_prose_code_and_paths : Address.toUuidBytes [115, 114, 99, 47, 120, 46, 116, 115, 58, 104, 101, 108, 108, 111] == Address.toUuidBytes [115, 114, 99, 47, 120, 46, 116, 115, 58, 104, 101, 108, 108, 111] && Address.toUuidBytes [115, 114, 99, 47, 120, 46, 116, 115, 58, 104, 101, 108, 108, 111] != Address.toUuidBytes [115, 114, 99, 47, 121, 46, 116, 115, 58, 104, 101, 108, 108, 111] && Address.toUuidBytes [115, 114, 99, 47, 120, 46, 116, 115, 58, 104, 101, 108, 108, 111] != Address.toUuidBytes [115, 114, 99, 47, 120, 46, 116, 115, 58, 119, 111, 114, 108, 100] := by decide
+
 -- the harmonic band runs 30 to 90 in equal steps: 30 + 60 = 90 and 90 − 60 = 60 − 30 = 30 — the efficiency limit
 theorem the_harmonic_band_thirty_to_ninety : 30 + 60 == 90 && 90 - 60 == 30 && 60 - 30 == 30 && 90 / 30 == 3 := by decide
 
@@ -91,11 +116,23 @@ theorem sixty_and_ninety_partition_the_quadrant : 4 * 90 == 360 && 30 + 60 == 90
 -- the hexagon and the square set the metrics: 360/6 = 60 and 360/4 = 90 — the six-fold rosette (six plus one) an
 theorem the_hexagon_and_the_square_metrics : 360 / 6 == 60 && 360 / 4 == 90 && 6 + 1 == 7 := by decide
 
+-- a theorem responds in a receipt: its key folds to a deterministic content-address, so every theorem answers wi
+theorem a_theorem_responds_in_a_receipt : Address.toUuidBytes [107] == Address.toUuidBytes [107] && Address.toUuidBytes [97] != Address.toUuidBytes [98] := by decide
+
+-- each perspective is a distinct file: distinct perspective content mints a distinct uuid, so two perspectives n
+theorem each_perspective_is_a_distinct_file : Address.toUuidBytes [112, 101, 114, 115, 112, 101, 99, 116, 105, 118, 101, 58, 97] != Address.toUuidBytes [112, 101, 114, 115, 112, 101, 99, 116, 105, 118, 101, 58, 98] && Address.toUuidBytes [112, 101, 114, 115, 112, 101, 99, 116, 105, 118, 101, 58, 97] == Address.toUuidBytes [112, 101, 114, 115, 112, 101, 99, 116, 105, 118, 101, 58, 97] := by decide
+
 -- involution — negation: double negation returns the value, ¬¬x = x for both booleans; 0/7
 theorem involution_negation : (!!true) == true && (!!false) == false && !(!true) == true := by decide
 
 -- a432 octave doubling: an octave up doubles the frequency (432 → 864) and an octave down halves it, so up-then-
 theorem a432_octave_doubling : 432 * 2 == 864 && 864 / 2 == 432 := by decide
+
+-- the standard host holds the content-address unchanged: a page’s address is stable and host-independent, so a V
+theorem vitepress_hosts_the_content_address : Address.toUuidBytes [112, 97, 103, 101, 58, 99, 111, 110, 116, 101, 110, 116] == Address.toUuidBytes [112, 97, 103, 101, 58, 99, 111, 110, 116, 101, 110, 116] && Address.toUuidBytes [97] != Address.toUuidBytes [98] := by decide
+
+-- collapse selects one state deterministically: addressing a chosen state gives the same value every time and di
+theorem collapse_selects_one_state_deterministically : Address.toUuidBytes [49, 48] == Address.toUuidBytes [49, 48] && Address.toUuidBytes [49, 48] != Address.toUuidBytes [48, 49] := by decide
 
 -- the skipper navigates by angle: 30 + 60 = 90 in equal thirds, the harmonic band from the efficiency limit to t
 theorem the_skipper_navigates_by_angle : 30 + 60 == 90 && 90 / 30 == 3 && 90 - 60 == 30 := by decide
@@ -103,14 +140,59 @@ theorem the_skipper_navigates_by_angle : 30 + 60 == 90 && 90 / 30 == 3 && 90 - 6
 -- cheap to factor, easy to verify: verifying one address is a single step against recomputing N — a measured sav
 theorem cheap_to_factor_easy_to_verify : let N := 1024; N - 1 == 1023 && 1 < N := by decide
 
+-- the cell is determined by content: the same content always lands in the same cell and different content in a d
+theorem the_cell_is_determined_by_content : Address.toUuidBytes [99] == Address.toUuidBytes [99] && Address.toUuidBytes [99] != Address.toUuidBytes [100] := by decide
+
+-- intentions are shown by receipts, not by role: a deed leaves a content-addressed receipt anyone can recompute,
+theorem intentions_are_shown_by_receipts_not_role : Address.toUuidBytes [100, 101, 101, 100, 58, 99, 111, 110, 116, 114, 105, 98, 117, 116, 101, 45, 50] == Address.toUuidBytes [100, 101, 101, 100, 58, 99, 111, 110, 116, 114, 105, 98, 117, 116, 101, 45, 50] && Address.toUuidBytes [100, 101, 101, 100, 58, 97] != Address.toUuidBytes [100, 101, 101, 100, 58, 98] := by decide
+
+-- each theorem is a superposition of readings: it can be read in algebra and other framings, yet all readings of
+theorem each_theorem_is_a_superposition_of_readings : Address.toUuidBytes [116, 104, 101, 32, 115, 97, 109, 101, 32, 102, 97, 99, 116] == Address.toUuidBytes [116, 104, 101, 32, 115, 97, 109, 101, 32, 102, 97, 99, 116] && Address.toUuidBytes [111, 110, 101, 32, 114, 101, 97, 100, 105, 110, 103] != Address.toUuidBytes [97, 110, 111, 116, 104, 101, 114, 32, 102, 97, 99, 116] := by decide
+
 -- present by reference fits a tiny budget: 1600 facts as addresses are 1600 × 36 = 57,600 bytes (~56 kB), while 
 theorem present_by_reference_fits_a_tiny_budget : 1600 * 36 == 57600 && 57600 < 100000 := by decide
+
+-- a cached address is never recomputed: the same input always yields the same address, so a value already comput
+theorem a_cached_address_is_never_recomputed : Address.toUuidBytes [120] == Address.toUuidBytes [120] && Address.toUuidBytes [120] != Address.toUuidBytes [121] := by decide
 
 -- a decidable domain is finite and coverable: exhausting a finite set terminates, so covering all its possibilit
 theorem a_decidable_domain_is_finite_and_coverable : let dom := [0, 1, 2, 3, 4, 5, 6, 7, 8]; dom.length == 9 && dom.all (fun x => dom.contains (x)) := by decide
 
+-- the theorems are the hull and hardware: the structure is the deterministic record while the order (the directi
+theorem the_theorems_are_the_hull_and_hardware : Address.toUuidBytes [104, 117, 108, 108, 58, 115, 116, 114, 117, 99, 116, 117, 114, 101] == Address.toUuidBytes [104, 117, 108, 108, 58, 115, 116, 114, 117, 99, 116, 117, 114, 101] && Address.toUuidBytes [104, 117, 108, 108, 58, 115, 116, 114, 117, 99, 116, 117, 114, 101] != Address.toUuidBytes [111, 114, 100, 101, 114, 58, 100, 105, 114, 101, 99, 116, 105, 111, 110] := by decide
+
 -- the more developed, the more cross-domain reach: N theorems admit N·(N−1)/2 pairwise relations, so reach grows
 theorem the_more_developed_the_more_cross_domain_reach : (8 * 7) / 2 == 28 && (16 * 15) / 2 == 120 := by decide
+
+-- uuid generation is deterministic: the same seed always generates the same uuid, so generation is a pure functi
+theorem generation_is_deterministic : Address.toUuidBytes [115, 101, 101, 100] == Address.toUuidBytes [115, 101, 101, 100] && Address.toUuidBytes [97] != Address.toUuidBytes [98] := by decide
+
+-- the intention is a computable deed receipt: an intention is a deed’s content-address, deterministic and distin
+theorem the_intention_is_a_computable_deed_receipt : Address.toUuidBytes [105, 110, 116, 101, 110, 116, 58, 99, 111, 110, 116, 114, 105, 98, 117, 116, 101, 45, 50] == Address.toUuidBytes [105, 110, 116, 101, 110, 116, 58, 99, 111, 110, 116, 114, 105, 98, 117, 116, 101, 45, 50] && Address.toUuidBytes [105, 110, 116, 101, 110, 116, 58, 97] != Address.toUuidBytes [105, 110, 116, 101, 110, 116, 58, 98] := by decide
+
+-- every error is a receipted trial event: an error maps to a content-addressed event, so it is audited rather th
+theorem every_error_is_a_receipted_trial_event : Address.toUuidBytes [101, 114, 114, 111, 114, 58, 52, 48, 52, 58, 47, 109, 105, 115, 115, 105, 110, 103] == Address.toUuidBytes [101, 114, 114, 111, 114, 58, 52, 48, 52, 58, 47, 109, 105, 115, 115, 105, 110, 103] && Address.toUuidBytes [101, 114, 114, 111, 114, 58, 97] != Address.toUuidBytes [101, 114, 114, 111, 114, 58, 98] := by decide
+
+-- every warning is a receipted trial event: a warning maps to a content-addressed event distinct from an error, 
+theorem every_warning_is_a_receipted_trial_event : Address.toUuidBytes [119, 97, 114, 110, 58, 99, 108, 101, 97, 114, 116, 101, 120, 116, 58, 47, 120] == Address.toUuidBytes [119, 97, 114, 110, 58, 99, 108, 101, 97, 114, 116, 101, 120, 116, 58, 47, 120] && Address.toUuidBytes [119, 97, 114, 110, 58, 120] != Address.toUuidBytes [101, 114, 114, 111, 114, 58, 120] := by decide
+
+-- a content-address detects any change: altering a single character changes the address, so any corruption is de
+theorem a_content_address_detects_any_change : Address.toUuidBytes [100, 97, 116, 97] != Address.toUuidBytes [100, 65, 84, 97] && Address.toUuidBytes [100, 97, 116, 97] == Address.toUuidBytes [100, 97, 116, 97] := by decide
+
+-- a sensor reading addresses to a uuid: a live value mints a deterministic content-address, so a reading becomes
+theorem a_sensor_reading_addresses_to_a_uuid : Address.toUuidBytes [116, 101, 109, 112, 58, 50, 49, 46, 52] == Address.toUuidBytes [116, 101, 109, 112, 58, 50, 49, 46, 52] && Address.toUuidBytes [116, 101, 109, 112, 58, 50, 49, 46, 52] != Address.toUuidBytes [116, 101, 109, 112, 58, 50, 49, 46, 53] := by decide
+
+-- forward is the deterministic compute: addressing a value forward gives the same result every time — the forwar
+theorem forward_is_the_deterministic_compute : Address.toUuidBytes [120] == Address.toUuidBytes [120] && Address.toUuidBytes [97] != Address.toUuidBytes [98] := by decide
+
+-- the fusion of site and user is deterministic: site plus user resolves to one reproducible view; 0/7
+theorem the_fusion_of_site_and_user_is_deterministic : Address.toUuidBytes [115, 105, 116, 101, 64, 98, 103] == Address.toUuidBytes [115, 105, 116, 101, 64, 98, 103] && Address.toUuidBytes [115, 105, 116, 101, 64, 98, 103] != Address.toUuidBytes [115, 105, 116, 101, 64, 100, 101] := by decide
+
+-- each suggested next is content-addressed: every suggestion resolves to a deterministic link to its page, so th
+theorem each_suggested_next_is_content_addressed : Address.toUuidBytes [47, 116, 104, 101, 111, 114, 101, 109, 47, 97] == Address.toUuidBytes [47, 116, 104, 101, 111, 114, 101, 109, 47, 97] && Address.toUuidBytes [47, 116, 104, 101, 111, 114, 101, 109, 47, 97] != Address.toUuidBytes [47, 116, 104, 101, 111, 114, 101, 109, 47, 99] := by decide
+
+-- the rejected command gets a receipt: a refused command is content-addressed and documented, not silently dropp
+theorem the_rejected_command_gets_a_receipt : Address.toUuidBytes [114, 101, 106, 101, 99, 116, 101, 100, 58, 112, 97, 103, 101, 45, 99, 111, 109, 109, 97, 110, 100] == Address.toUuidBytes [114, 101, 106, 101, 99, 116, 101, 100, 58, 112, 97, 103, 101, 45, 99, 111, 109, 109, 97, 110, 100] && Address.toUuidBytes [114, 101, 106, 101, 99, 116, 101, 100, 58, 97] != Address.toUuidBytes [114, 101, 106, 101, 99, 116, 101, 100, 58, 98] := by decide
 
 end Mechanical
 

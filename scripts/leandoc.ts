@@ -19,10 +19,11 @@ import { readFileSync, readdirSync } from 'node:fs'
 
 const DIR = 'src/proof'
 
-export type Theorem = { name: string; doc: string; statement: string; tactic: string; cases: number }
+export type Theorem = { name: string; doc: string; docFrom: 'own' | 'section' | 'none'; statement: string; tactic: string; cases: number }
+export type Def = { name: string; value: string }
 export type LeanDoc = {
   file: string; namespace: string; title: string; wing: string
-  frontmatter: Record<string, string>; summary: string; theorems: Theorem[]
+  frontmatter: Record<string, string>; summary: string; theorems: Theorem[]; defs: Def[]
 }
 
 /** The domain `by decide` actually walked, read off the statement — the count of cases the kernel exhausted. */
@@ -57,17 +58,32 @@ export function read(file: string): LeanDoc {
   const summary = stripComment(headComment.split('\n').slice(fmLines).join('\n'))
     .replace(/^Author:.*$/gm, '').trim()
 
-  // each theorem, with the comment block immediately above it
+  // Each theorem, with the comment block immediately above it — OR, failing that, the section heading it
+  // sits under. Files here group related theorems beneath one `-- ── HEADING ──` and let the group speak for
+  // all of them, which is good writing and was being counted as 17 undocumented theorems. Reporting a parser
+  // limitation as a documentation gap would have been answered by writing 17 redundant comments to satisfy a
+  // number — describing the same thing twice so a count came out right. The provenance is recorded instead:
+  // 'own' is a comment written for this theorem, 'section' is the heading it inherits, 'none' is a real gap.
   const theorems: Theorem[] = []
-  for (const m of src.matchAll(/((?:^\s*--.*\n)*)^theorem\s+([A-Za-z_0-9]+)\s*:([\s\S]*?):=\s*(by decide|rfl|by\s+\w+)/gm)) {
+  let lastSection = ''
+  for (const m of src.matchAll(/((?:^[ \t]*--.*\n)*)^theorem\s+([A-Za-z_0-9]+)\s*:([\s\S]*?):=\s*(by decide|rfl|by\s+\w+)/gm)) {
     const statement = m[3].replace(/^\s*--.*$/gm, '').replace(/\s+/g, ' ').trim()
+    const own = stripComment(m[1])
+    if (own) lastSection = own
     theorems.push({
-      name: m[2], doc: stripComment(m[1]), statement, tactic: m[4], cases: domainOf(statement),
+      name: m[2],
+      doc: own || lastSection,
+      docFrom: own ? 'own' : lastSection ? 'section' : 'none',
+      statement, tactic: m[4], cases: domainOf(statement),
     })
   }
 
+  // the file's own definitions, so a constant can be compared against the one the runtime uses
+  const defs: Def[] = [...src.matchAll(/^def\s+([A-Za-z_0-9]+)\s*(?::\s*[^:=]+)?:=\s*([^\n]+)$/gm)]
+    .map((m) => ({ name: m[1], value: m[2].trim() }))
+
   return {
-    file, namespace: ns,
+    file, namespace: ns, defs,
     title: frontmatter.title ?? file.replace('.lean', ''),
     wing: frontmatter.wing ?? '',
     frontmatter, summary, theorems,
@@ -82,11 +98,13 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const withFm = docs.filter((d) => Object.keys(d.frontmatter).length)
   const withSummary = docs.filter((d) => d.summary)
   const thms = docs.flatMap((d) => d.theorems)
-  const documented = thms.filter((t) => t.doc)
+  const documented = thms.filter((t) => t.docFrom === 'own')
+  const inherited = thms.filter((t) => t.docFrom === 'section')
   console.log(`leandoc — ${docs.length} files · ${thms.length} theorems`)
   console.log(`  frontmatter   : ${withFm.length}/${docs.length} files`)
   console.log(`  file summary  : ${withSummary.length}/${docs.length} files`)
-  console.log(`  theorem doc   : ${documented.length}/${thms.length} theorems carry a comment of their own`)
-  console.log(`  undocumented  : ${thms.length - documented.length} — shown as a gap, never filled with a template`)
+  console.log(`  theorem doc   : ${documented.length}/${thms.length} carry a comment of their own`)
+  console.log(`  inherited     : ${inherited.length} sit under a section heading that covers them`)
+  console.log(`  undocumented  : ${thms.length - documented.length - inherited.length} — a real gap, never filled with a template`)
   for (const d of docs) console.log(`    ${d.file.padEnd(18)} ${String(d.theorems.length).padStart(3)} thm · ${d.summary ? 'summary' : 'NO SUMMARY'} · ${Object.keys(d.frontmatter).length ? 'frontmatter' : 'no frontmatter'}`)
 }
