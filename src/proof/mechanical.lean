@@ -10,6 +10,10 @@ namespace Mechanical
 
 def M9 (n : Nat) : Nat := n % 9
 
+-- the digital root: 0 for 0, otherwise the residue mod 9 taken in 1..9 rather than 0..8. Written without
+-- recursion so the kernel evaluates it directly.
+def DR (n : Nat) : Nat := if n == 0 then 0 else 1 + (n - 1) % 9
+
 -- every residue has an additive inverse mod 9
 theorem add_group : (List.range' 1 9).all (fun d => (List.range' 1 9).any (fun e => M9 (d + e) == 0)) := by decide
 
@@ -25,6 +29,9 @@ theorem trial_zero_no_inverse : !(List.range' 1 9).any (fun e => M9 (0 * e) == 1
 -- 𝔽_4 = GF(2²) has p^k = 2² = 4 elements {0, 1, x, x+1}
 theorem gf4_size : [0, 1, 2, 3].length == 2 ^ 2 := by decide
 
+-- the digital root (mod 9) RELATES the div-by-3 rule · primes-ride-units · the tarot counts · ceccec
+theorem relation_digital_root : DR (78) == 6 && DR (12) == DR (21) && [1,2,4,5,7,8].contains (DR (7)) := by decide
+
 -- the Pythagorean comma: 12 fifths ≠ 7 octaves — 3^12 = 531441 ≠ 2^19 = 524288
 theorem harmonic_pythagorean_comma : 3 ^ 12 == 531441 && 2 ^ 19 == 524288 && 3 ^ 12 != 2 ^ 19 := by decide
 
@@ -36,6 +43,9 @@ theorem genus2_h1_symplectic : let rank := 2 * 2; rank == 4 && rank % 2 == 0 := 
 
 -- the 7 = 6+1 bijection binds the units to the Clay set: |units of ℤ/9| = 6, plus the identity = 7, mirroring 6 
 theorem relation_seven_is_six_plus_one : [1,2,4,5,7,8].length == 6 && 6 + 1 == 7 && 7 - 1 == 6 := by decide
+
+-- a432 factors into the trinity and the octave: 432 = 16·27 = 2⁴·3³, and its digital root is the base (dr(432)=9
+theorem relation_432_factors : 432 == 16 * 27 && 432 == 2 ^ 4 * 3 ^ 3 && DR (432) == 9 := by decide
 
 -- the cyclic number 142857 is the repetend of 1/7: (10^6 − 1)/7 = 999999/7 = 142857 — the seven unfolds the cycl
 theorem the_cyclic_number_142857_is_the_repetend_of_one_seventh : 999999 % 7 == 0 && 999999 / 7 == 142857 := by decide

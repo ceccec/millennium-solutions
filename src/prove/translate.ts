@@ -12,7 +12,24 @@
 // which is the exact failure this deposit has been cleaning out all along.
 
 /** The vocabulary. Order matters: longer patterns first. */
+// PRE-RULES run BEFORE the refusal list. They are structural rewrites that REMOVE a construct rather than
+// translate it, so the refusal list must judge what is left instead of what was written. Ordering them after
+// REFUSE meant `join(` was rejected before the rewrite that eliminates it could fire — the refusal list was
+// reading a form the translator no longer produces. Anything these do not consume is still refused below.
+const PRE_RULES: [RegExp, string | ((...a: string[]) => string)][] = [
+  // COMPARING JOINED LISTS IS COMPARING THE LISTS. `a.join(',') === b.join(',')` holds exactly when a and b
+  // are equal, PROVIDED no element's rendering contains the separator — and every element here is a natural
+  // number, so none does. The join is a way of comparing lists in JavaScript, not part of the claim; keeping
+  // it would mean rendering string concatenation into Lean to say something about numbers.
+  [/\.join\('[^']*'\)\s*===\s*([\s\S]+?)\.join\('[^']*'\)/g, ' == $1'],
+  // slice(a,b) on a list is drop-then-take. Both bounds are literals wherever this fires, so the rewrite is
+  // exact rather than a guess about what the ends might be.
+  [/([A-Za-z_]\w*)\.slice\((\d+),\s*(\d+)\)/g, (_m: string, l: string, a: string, b: string) =>
+    `(List.take ${Number(b) - Number(a)} (List.drop ${a} ${l}))` as string] as unknown as [RegExp, string],
+]
+
 const RULES: [RegExp, string][] = [
+  [/\bdigitalRoot\(/g, 'DR ('],                   // defined in the emitted preamble
   [/\bdigits\(\)/g, "(List.range' 1 9)"],          // the residues 1..9, as the deposit defines them
   [/\bunits\(\)/g, '[1,2,4,5,7,8]'],
   [/\btriad\(\)/g, '[3,6,9]'],
@@ -59,13 +76,45 @@ export type Translation = { ok: true; lean: string } | { ok: false; why: string 
  *  that, so the shape is mechanical — the earlier version refused every such body and lost ~57 claims to a
  *  limitation of the reader rather than of the claims. Only simple `const NAME = EXPR;` bindings qualify;
  *  anything else (destructuring, functions, reassignment) still refuses. */
+/** A BOUNDED FOR-PUSH LOOP IS A LIST COMPREHENSION. `const s = []; for (let k = A; k < B; k++) s.push(E)`
+ *  builds exactly the list `(List.range' A (B-A)).map (fun k => E)` — same elements, same order, and the
+ *  bound is a literal so the length is known. Refusing this shape as "control flow" was the same error as
+ *  calling digit reversal string manipulation: the loop is not doing anything a map cannot say. Only the
+ *  literal-bounded, single-push, no-branch form is rewritten; anything with a condition, an early exit, a
+ *  second push or a non-literal bound is left refused, because those are genuinely not maps. */
+function loopToMap(b: string): string | null {
+  // One pattern, matched whole: `const s = []; for (let k = A; k < B; k++) s.push(E);` followed by the rest.
+  // The push is anchored on `);` so a call inside E (digitalRoot(2 ** k)) is kept intact rather than cut at
+  // its first bracket — splitting the head from the push across two matches is what made the first version
+  // silently never fire.
+  const m = b.match(/^const\s+([A-Za-z_]\w*)\s*=\s*\[\s*\]\s*;\s*for\s*\(\s*(?:let|var)\s+([A-Za-z_]\w*)\s*=\s*(\d+)\s*;\s*\2\s*<\s*(\d+)\s*;\s*\2\+\+\s*\)\s*\{?\s*\1\.push\(([\s\S]*?)\)\s*;\s*\}?\s*([\s\S]*)$/)
+  if (!m) return null
+  const [, name, v, from, to, expr, after] = m
+  if (/\bfor\b|\bwhile\b|\.push\(/.test(after)) return null   // a second loop or push is not this shape
+  const n = Number(to) - Number(from)
+  if (!(n > 0)) return null
+  const list = from === '0' ? `(List.range ${to})` : `(List.range' ${from} ${n})`
+  return `const ${name} = ${list}.map (fun ${v} => ${expr.trim()}); ${after.trim()}`
+}
+
 function unwrapBindings(b: string): { lets: [string, string][]; expr: string } | null {
   const lets: [string, string][] = []
   let rest = b
   for (;;) {
     const m = rest.match(/^(?:const|let)\s+([A-Za-z_][A-Za-z0-9_]*)\s*(?::\s*[^=]+)?=\s*([^;]+);\s*/)
     if (!m) break
-    if (/=>|\bfunction\b/.test(m[2])) return null      // a bound function is not a value binding
+    // A bound FUNCTION is not a value binding and is still refused. A `.map (fun k => …)` is a value — the
+    // list — and the `=>` inside it belongs to the map, not to the binding. Distinguishing them is the
+    // difference between refusing a whole shape and refusing what actually cannot be rendered.
+    if (/\bfunction\b/.test(m[2])) return null
+    // A SINGLE-PARAMETER ARROW WITH AN EXPRESSION BODY IS A LEAN `fun`. `const f = (x: number) => E` is
+    // `let f := fun x => E` — same binder, same body, no statement sequence to lose. Only that exact form:
+    // a braced body, a second parameter, a default, or a rest parameter is a different construct and stays
+    // refused. Whatever the body turns out to contain is judged by the refusal list and the whitelist below
+    // like any other expression, so widening the binding shape does not widen what may appear inside it.
+    const arrow = m[2].match(/^\(\s*([A-Za-z_]\w*)\s*(?::\s*[A-Za-z_<>\[\]]+\s*)?\)\s*=>\s*([\s\S]+)$/)
+    if (arrow && !/^\s*\{/.test(arrow[2])) { lets.push([m[1], `fun ${arrow[1]} => ${arrow[2].trim()}`]); rest = rest.slice(m[0].length); continue }
+    if (/=>/.test(m[2]) && !/\.map \(fun /.test(m[2])) return null
     lets.push([m[1], m[2].trim()])
     rest = rest.slice(m[0].length)
   }
@@ -82,12 +131,15 @@ export function translate(body: string): Translation {
   const block = b.match(/^\{\s*([\s\S]*?)\s*\}$/)
   let prefix = ''
   if (block || /^(?:const|let)\s/.test(b)) {
-    const inner = block ? block[1] : b
+    let inner = block ? block[1] : b
+    const looped = loopToMap(inner)
+    if (looped) inner = looped
     const u = unwrapBindings(inner)
     if (!u) return { ok: false, why: 'body is not a chain of simple bindings over one expression' }
     prefix = u.lets.map(([n, v]) => `let ${n} := ${v}; `).join('')
     b = prefix + u.expr
   }
+  for (const [re, to] of PRE_RULES) b = b.replace(re, to as string)
   for (const r of REFUSE) if (r.test(b)) return { ok: false, why: 'uses ' + String(r).slice(1, 24) + ' — no faithful mechanical rendering' }
   let out = b
   for (const [re, to] of RULES) out = out.replace(re, to)
@@ -95,7 +147,7 @@ export function translate(body: string): Translation {
   // binder it introduced. The previous check was a regex that let `nonHarmonic` and array indexing through;
   // both compiled into nonsense the kernel rejected. Anything unrecognised is refused by name, so a failure
   // is legible instead of mysterious.
-  const ALLOWED = new Set(['List', 'range', 'all', 'any', 'contains', 'length', 'fun', 'M9', 'true', 'false', 'let', 'eraseDups', 'filter'])
+  const ALLOWED = new Set(['List', 'range', 'all', 'any', 'contains', 'length', 'fun', 'M9', 'DR', 'true', 'false', 'let', 'eraseDups', 'filter', 'map', 'take', 'drop'])
   const binders = new Set([
     ...[...out.matchAll(/fun ([a-z][a-zA-Z0-9]*) =>/g)].map((m) => m[1]),
     ...[...out.matchAll(/let ([A-Za-z_][A-Za-z0-9_]*) :=/g)].map((m) => m[1]),
@@ -107,4 +159,8 @@ export function translate(body: string): Translation {
 }
 
 /** The preamble every emitted file needs: the deposit's own definitions, in Lean. */
-export const PREAMBLE = `def M9 (n : Nat) : Nat := n % 9`
+export const PREAMBLE = `def M9 (n : Nat) : Nat := n % 9
+
+-- the digital root: 0 for 0, otherwise the residue mod 9 taken in 1..9 rather than 0..8. Written without
+-- recursion so the kernel evaluates it directly.
+def DR (n : Nat) : Nat := if n == 0 then 0 else 1 + (n - 1) % 9`

@@ -16045,5 +16045,15 @@
     "key": "lean_energy_what_the_feedwater_leaves_behind_decides_the_maintenance",
     "name": "lean energy.lean: what_the_feedwater_leaves_behind_decides_the_maintenance — 100 * tdsSeawater / 1000 = 3500 ∧ 100 * tdsTapWater / 1000 = 5 ∧ tdsSeawater / tdsTapWater = 700 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "2c3cf0b0-2ea7-80c7-916f-cdbefc6ac125"
+  },
+  {
+    "key": "lean_mechanical_relation_digital_root",
+    "name": "lean mechanical.lean: relation_digital_root — DR (78) == 6 && DR (12) == DR (21) && [1,2,4,5,7,8].contains (DR (7)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d07323c6-683c-866d-be2f-9f3f81ea6459"
+  },
+  {
+    "key": "lean_mechanical_relation_432_factors",
+    "name": "lean mechanical.lean: relation_432_factors — 432 == 16 * 27 && 432 == 2 ^ 4 * 3 ^ 3 && DR (432) == 9 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "34d3073f-7f81-8363-8152-589888681b10"
   }
 ]

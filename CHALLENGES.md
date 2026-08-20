@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2184 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2186 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (319)
+### lean (321)
 
 - [lean_units_are_six](/theorem/lean_units_are_six) — lean: the units of ℤ/9 are exactly [1,2,4,5,7,8] — checked at every residue by the kernel, recomputed here; 0/7  ·  `031c89bf-e1e0…`
 - [lean_units_count](/theorem/lean_units_count) — lean: there are exactly six units in ℤ/9 — the kernel checks the count, recomputed here; 0/7  ·  `104e8965-ebfb…`
@@ -343,6 +343,8 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_energy_each_delivered_kilowatt_hour_costs_four_and_cycles_a_litre](/theorem/lean_energy_each_delivered_kilowatt_hour_costs_four_and_cycles_a_litre) — lean energy.lean: each_delivered_kilowatt_hour_costs_four_and_cycles_a_litre — splitCost * 100 / burnYield = 433 ∧ 9 * 1000 / (burnYield / 1000) = 750 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `574b2b86-71c5…`
 - [lean_energy_three_quarters_of_the_input_leaves_as_heat](/theorem/lean_energy_three_quarters_of_the_input_leaves_as_heat) — lean energy.lean: three_quarters_of_the_input_leaves_as_heat — splitCost - burnYield = 40000 ∧ (splitCost - burnYield) * 100 / splitCost = 76 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `35c25641-5b8d…`
 - [lean_energy_what_the_feedwater_leaves_behind_decides_the_maintenance](/theorem/lean_energy_what_the_feedwater_leaves_behind_decides_the_maintenance) — lean energy.lean: what_the_feedwater_leaves_behind_decides_the_maintenance — 100 * tdsSeawater / 1000 = 3500 ∧ 100 * tdsTapWater / 1000 = 5 ∧ tdsSeawater / tdsTapWater = 700 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2c3cf0b0-2ea7…`
+- [lean_mechanical_relation_digital_root](/theorem/lean_mechanical_relation_digital_root) — lean mechanical.lean: relation_digital_root — DR (78) == 6 && DR (12) == DR (21) && [1,2,4,5,7,8].contains (DR (7)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d07323c6-683c…`
+- [lean_mechanical_relation_432_factors](/theorem/lean_mechanical_relation_432_factors) — lean mechanical.lean: relation_432_factors — 432 == 16 * 27 && 432 == 2 ^ 4 * 3 ^ 3 && DR (432) == 9 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `34d3073f-7f81…`
 
 ### other — one-of-a-kind (0)
 
@@ -2228,4 +2230,4 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 
 </details>
 
-Page content-address: `cfc1bffe-436d-8933-b162-95dd4f382625`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `11012e03-04d7-8170-a55b-63e84858ac55`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

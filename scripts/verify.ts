@@ -12,11 +12,21 @@
 //   node scripts/verify.ts          report only
 //   node scripts/verify.ts --cite   report, then add the citations that are earned
 import { readFileSync, writeFileSync } from 'node:fs'
-import { THEOREMS, reveal } from './honesty-gate.ts'
+import { reveal } from './audit.ts'
+
+// THE SEALED LEAN THEOREMS ARE THIS DEPOSIT'S OWN, not the package's. Reading THEOREMS from @uuidna/uuidna
+// compared 2184 entries against a ledger of 1329 mul9_* keys that shares NOTHING with ours, so every entry
+// came back UNVERIFIED — a category error reported as a result, and the same one seal.ts carried until it
+// was found. The authority is src/proof/discovered.json: the lean_* entries are exactly the theorems the
+// kernel checks on every run of scripts/lean.ts, and a revoked one is not sealed.
+type Entry = { key: string; name: string; statement?: string; revoked?: boolean }
+const ALL: Entry[] = JSON.parse(readFileSync('src/proof/discovered.json', 'utf8'))
+const THEOREMS = ALL.filter((e) => !e.revoked && e.key.startsWith('lean_'))
+  .map((e) => ({ key: e.key, name: e.name, statement: e.statement ?? e.name }))
 import { toUuid, merkleFold } from '../src/0/index.ts'
 
 const LEDGER = 'src/proof/discovered.json'
-const led = JSON.parse(readFileSync(LEDGER, 'utf8')) as { key: string; name: string; receipt: string }[]
+const led = JSON.parse(readFileSync(LEDGER, 'utf8')) as { key: string; name: string; receipt: string; revoked?: boolean }[]
 const sealed = new Set(THEOREMS.map((t: { key: string }) => t.key))
 
 // THE MATCH IS AT STATEMENT LEVEL. Two earlier versions failed here and both failures are instructive: a
@@ -34,6 +44,13 @@ const signature = (text: string): Sig => {
   const mods = new Set<number>()
   for (const m of text.matchAll(/(?:mod|%)\s*([0-9]{1,3})/gi)) mods.add(Number(m[1]))
   for (const m of text.matchAll(/ℤ\s*\/\s*([0-9]{1,3})/g)) mods.add(Number(m[1]))
+  // THE DEPOSIT SPELLS ITS MODULUS AS A FUNCTION. Lean statements here write `M9 (…)` or `m9(…)`, never
+  // "mod 9", so a matcher looking only for the words found no modulus on the theorem side and could never
+  // agree with anything — every entry came back UNVERIFIED for a reason that had nothing to do with the
+  // entries. The modulus is the most discriminating fact in this deposit; failing to read the form it is
+  // actually written in disabled the whole check while leaving it looking like it ran.
+  for (const m of text.matchAll(/\b[Mm]([0-9]{1,3})\b/g)) mods.add(Number(m[1]))
+  for (const m of text.matchAll(/\bBASE\b/g)) mods.add(9)
   const nums = new Set<number>()
   for (const m of text.matchAll(/(?<![a-z0-9_])([0-9]{1,4})(?![0-9])/gi)) {
     const n = Number(m[1])
@@ -63,9 +80,17 @@ const earned = (name: string): string[] => {
   return scored.slice(0, 2).map(([k]) => k).filter((k) => sealed.has(k))
 }
 
+// AN ENTRY THAT *IS* A THEOREM DOES NOT NEED TO CITE ONE. The verdict was decided purely by citation, so the
+// 319 lean_* entries — the only entries in this deposit the kernel actually checks, on every run of
+// scripts/lean.ts — were counted UNVERIFIED alongside the 1865 that were revoked for having no proof at all.
+// That reading put the deposit's strongest evidence in the same bucket as its withdrawn claims. A live lean_*
+// entry is verified BY IDENTITY: it is the proof. Everything else is still judged by what it cites.
 const tally = () => {
   const c: Record<string, number> = { VERIFIED: 0, UNVERIFIED: 0, DRAINED: 0 }
-  for (const e of led) c[reveal(e.name).verdict]++
+  for (const e of led) {
+    const isKernelChecked = !e.revoked && e.key.startsWith('lean_') && sealed.has(e.key)
+    c[isKernelChecked ? 'VERIFIED' : reveal(e.name).verdict]++
+  }
   return c
 }
 

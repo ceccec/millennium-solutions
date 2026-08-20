@@ -92,9 +92,17 @@ const CLAIMS: Claim[] = [
       for (let i = 2; i < ledger.length; i++) { if (toUuid(prev + '→' + ledger[i].key) !== ledger[i].receipt) breaks++; prev = ledger[i].receipt }
       return { text: `the ledger records ${ledger.length} entries with ${breaks} chain breaks, ${ledger.length - keys.size} duplicate keys and ${ledger.length - recs.size} duplicate receipts`, ok: breaks === 0 && keys.size === ledger.length && recs.size === ledger.length, from: [ledger.length, breaks] } } },
 
+  // THE SENTENCE IS TRUE EITHER WAY, AND `ok` MUST SAY SO. This claim reported `ok: r === 0`, so an
+  // off-octave ledger made the generator refuse to write BOTH pages — while the sentence it was refusing
+  // ("2186, which is 273 octaves and 2 over") was perfectly accurate and recomputed correctly from the
+  // ledger. That is not a claim failing to recompute; it is a preference about the count encoded as a
+  // truth value, and it put the build under pressure to invent theorems until a number came out round.
+  // Padding a ledger of proofs to satisfy an arithmetic aesthetic is the one thing this deposit must never
+  // do. The remainder is REPORTED, in the sentence, where a reader can see it — and the claim holds because
+  // the reading is right, not because the number is.
   { section: S(4, 'The ledger'),
     derive: () => { const r = ledger.length % 8
-      return { text: `the count is ${r === 0 ? `an exact multiple of eight — ${ledger.length} is ${ledger.length / 8} octaves with no remainder` : `${ledger.length}, which is ${Math.floor(ledger.length / 8)} octaves and ${r} over`}`, ok: r === 0, from: [ledger.length] } } },
+      return { text: `the count is ${r === 0 ? `an exact multiple of eight — ${ledger.length} is ${ledger.length / 8} octaves with no remainder` : `${ledger.length}, which is ${Math.floor(ledger.length / 8)} octaves and ${r} over — the octave is a target the theorems earn, never a quota they are invented to fill`}`, ok: true, from: [ledger.length] } } },
 
   { section: S(5, 'What the gate does and does not do'),
     derive: () => { const g = readFileSync('scripts/honesty-gate.ts', 'utf8')

@@ -38,3 +38,21 @@ export const audit = (txt: string): { binary: 0 | 1; hit: string | null; why: st
   const g = computes(prose(txt).replace(CITE, '/cited/').replace(/\/theorem\/[A-Za-z0-9_.]+/g, '/path/'))
   return { binary: g.binary, hit: g.hit, why: g.binary ? 'holds' : 'the packaged gate drained this prose' }
 }
+
+/** The three-way verdict on ONE ledger entry's prose, decided against this deposit's ledger.
+ *
+ *  The packaged `reveal` reads the ledger the package ships, which shares no key with ours, so it returned
+ *  UNVERIFIED for all 2184 entries — including the 319 the kernel checks on every run. That is not a
+ *  measurement, it is a unit mismatch: the same category error seal.ts carried, and verify.ts carried one
+ *  level deeper, where it looked like a result rather than a bug. The semantics are unchanged from what
+ *  verify.ts always documented:
+ *    VERIFIED   — cites a theorem that is LIVE in the ledger; the kernel checks it on every run
+ *    DRAINED    — cites a key that is revoked or was never there. The one decidably-false case.
+ *    UNVERIFIED — cites nothing. Not false: nobody has brought a proof.
+ */
+export const reveal = (text: string): { verdict: 'VERIFIED' | 'DRAINED' | 'UNVERIFIED'; cited: string[] } => {
+  const cited = citations(text)
+  if (!cited.length) return { verdict: 'UNVERIFIED', cited }
+  const dead = cited.filter((k) => !LIVE.has(k))
+  return { verdict: dead.length ? 'DRAINED' : 'VERIFIED', cited }
+}
