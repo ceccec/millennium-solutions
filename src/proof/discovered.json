@@ -15319,117 +15319,163 @@
   {
     "key": "lean_mechanical_merkaba_cube_q3",
     "name": "lean mechanical.lean: merkaba_cube_q3 — 2 ^ 3 == 8 && 3 * 2 ^ 2 == 12 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "6963c8ac-e3e6-8214-9861-a29b5b5b6529"
+    "receipt": "6963c8ac-e3e6-8214-9861-a29b5b5b6529",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_mechanical_trial_zero_no_inverse",
     "name": "lean mechanical.lean: trial_zero_no_inverse — !(List.range' 1 9).any (fun e => M9 (0 * e) == 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "f336fdf5-76ee-8a96-9bd1-db04c2e7823e"
+    "receipt": "f336fdf5-76ee-8a96-9bd1-db04c2e7823e",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_mechanical_gf4_size",
     "name": "lean mechanical.lean: gf4_size — [0, 1, 2, 3].length == 2 ^ 2 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "daf893bd-dc5f-8e49-8df1-9488f88a4f86"
+    "receipt": "daf893bd-dc5f-8e49-8df1-9488f88a4f86",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_mechanical_harmonic_pythagorean_comma",
     "name": "lean mechanical.lean: harmonic_pythagorean_comma — 3 ^ 12 == 531441 && 2 ^ 19 == 524288 && 3 ^ 12 != 2 ^ 19 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "eb59929b-c67e-85e2-bcbd-571a868e8609"
+    "receipt": "eb59929b-c67e-85e2-bcbd-571a868e8609",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_mechanical_relation_eight",
     "name": "lean mechanical.lean: relation_eight — 2 ^ 3 == 8 && 8 * 8 == 64 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "a39da385-334c-8a73-b832-13c9e28f6680"
+    "receipt": "a39da385-334c-8a73-b832-13c9e28f6680",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_mechanical_relation_seven_is_six_plus_one",
     "name": "lean mechanical.lean: relation_seven_is_six_plus_one — [1,2,4,5,7,8].length == 6 && 6 + 1 == 7 && 7 - 1 == 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "4cc8e257-5368-82a1-8160-851a259b6613"
+    "receipt": "4cc8e257-5368-82a1-8160-851a259b6613",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_mechanical_the_cyclic_number_142857_is_the_repetend_of_one_seventh",
     "name": "lean mechanical.lean: the_cyclic_number_142857_is_the_repetend_of_one_seventh — 999999 % 7 == 0 && 999999 / 7 == 142857 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "84678499-42cd-8a49-b3f4-3b4e7c0bdc79"
+    "receipt": "84678499-42cd-8a49-b3f4-3b4e7c0bdc79",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_mechanical_the_digital_root_of_seven_to_the_k_has_period_three",
     "name": "lean mechanical.lean: the_digital_root_of_seven_to_the_k_has_period_three — 7 ^ 1 % 9 == 7 && 7 ^ 2 % 9 == 4 && 7 ^ 3 % 9 == 1 && 7 ^ 4 % 9 == 7 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "35da1bae-5b79-8935-876a-b67346e27819"
+    "receipt": "35da1bae-5b79-8935-876a-b67346e27819",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_mechanical_seven_divides_the_repunit_of_length_six",
     "name": "lean mechanical.lean: seven_divides_the_repunit_of_length_six — 111111 % 7 == 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "5de46f3e-a628-8b87-b794-3ecae7927b41"
+    "receipt": "5de46f3e-a628-8b87-b794-3ecae7927b41",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_mechanical_two_to_the_eighth_is_two_hundred_fifty_six_a_byte",
     "name": "lean mechanical.lean: two_to_the_eighth_is_two_hundred_fifty_six_a_byte — 2 ^ 8 == 256 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "34caada8-dd09-8da6-8637-3ade9c093e95"
+    "receipt": "34caada8-dd09-8da6-8637-3ade9c093e95",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_mechanical_two_to_the_tenth_is_1024_the_harmonic_ledger",
     "name": "lean mechanical.lean: two_to_the_tenth_is_1024_the_harmonic_ledger — 2 ^ 10 == 1024 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "04218536-2a34-8e86-baa9-ed7071a31ab8"
+    "receipt": "04218536-2a34-8e86-baa9-ed7071a31ab8",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_mechanical_nine_is_the_base_and_the_trinity_squared",
     "name": "lean mechanical.lean: nine_is_the_base_and_the_trinity_squared — 9 == 9 && 9 == 3 ^ 2 && 3 == 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "f0b0a052-058c-8147-8cca-7caf6ba309b7"
+    "receipt": "f0b0a052-058c-8147-8cca-7caf6ba309b7",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_mechanical_five_is_the_inverse_of_two_so_halving_reverses_the_orbit",
     "name": "lean mechanical.lean: five_is_the_inverse_of_two_so_halving_reverses_the_orbit — (2 * 5) % 9 == 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "32ceaab8-afe0-8a44-8646-8ffbc9248217"
+    "receipt": "32ceaab8-afe0-8a44-8646-8ffbc9248217",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_mechanical_dna_is_the_version_itself",
     "name": "lean mechanical.lean: dna_is_the_version_itself — 4 ^ 3 == 64 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "1527985d-54ef-8b25-807b-3d3b0a1e109e"
+    "receipt": "1527985d-54ef-8b25-807b-3d3b0a1e109e",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_mechanical_genetic_code_is_the_octave_squared",
     "name": "lean mechanical.lean: genetic_code_is_the_octave_squared — 4 ^ 3 == 64 && 64 == 8 * 8 && 64 % 8 == 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "a4bd830f-54a6-8a86-b874-d82826f18ebe"
+    "receipt": "a4bd830f-54a6-8a86-b874-d82826f18ebe",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_mechanical_genesis_1_the_unit",
     "name": "lean mechanical.lean: genesis_1_the_unit — [1, 2, 3, 4, 5, 6, 7, 8, 9].all (fun n => 1 * n == n) && 1 ^ 7 == 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "b5cc42a3-c620-8cdf-bd54-6c5e055b2590"
+    "receipt": "b5cc42a3-c620-8cdf-bd54-6c5e055b2590",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_mechanical_genesis_8_the_octave",
     "name": "lean mechanical.lean: genesis_8_the_octave — 2 ^ 3 == 8 && 8 % 8 == 0 && 8 == 2 * 2 * 2 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "3484a89d-0551-825f-93d1-7ce42f22f72d"
+    "receipt": "3484a89d-0551-825f-93d1-7ce42f22f72d",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_mechanical_genesis_64_the_codon",
     "name": "lean mechanical.lean: genesis_64_the_codon — 4 ^ 3 == 64 && 2 ^ 6 == 64 && 8 ^ 2 == 64 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "5bc3c52a-0484-87c6-98f1-53d28c24edca"
+    "receipt": "5bc3c52a-0484-87c6-98f1-53d28c24edca",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_mechanical_a432_factors_as_two_to_the_fourth_times_three_cubed",
     "name": "lean mechanical.lean: a432_factors_as_two_to_the_fourth_times_three_cubed — 2 ^ 4 * 3 ^ 3 == 432 && 16 * 27 == 432 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "ace5e026-76f2-8a9c-9297-c9491690d6ee"
+    "receipt": "ace5e026-76f2-8a9c-9297-c9491690d6ee",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_mechanical_two_bits_thrice_make_the_codon",
     "name": "lean mechanical.lean: two_bits_thrice_make_the_codon — 2 ^ 6 == 64 && (2 ^ 2) ^ 3 == 64 && 4 ^ 3 == 64 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "d7a6008c-4238-8a87-8793-40f4056ca7e7"
+    "receipt": "d7a6008c-4238-8a87-8793-40f4056ca7e7",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_mechanical_the_full_superposition_has_nine_states",
     "name": "lean mechanical.lean: the_full_superposition_has_nine_states — (List.range' 1 9).length == 9 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "fcdb464a-6436-8f64-a399-316e136bdb56"
+    "receipt": "fcdb464a-6436-8f64-a399-316e136bdb56",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_mechanical_trial_units_group",
     "name": "lean mechanical.lean: trial_units_group — let U9 := [1,2,4,5,7,8]; U9.all (fun u => U9.all (fun v => U9.contains (M9 (u * v)))) && U9.contains (1) && U9.all (fun u => U9.any (fun w => M9 (u * w) == 1)) — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "15329fd6-4630-8744-9936-b1aef10dd69f"
+    "receipt": "15329fd6-4630-8744-9936-b1aef10dd69f",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_mechanical_genus2_h1_symplectic",
     "name": "lean mechanical.lean: genus2_h1_symplectic — let rank := 2 * 2; rank == 4 && rank % 2 == 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "d8a36344-ce56-875e-9f6f-acc685b5de2e"
+    "receipt": "d8a36344-ce56-875e-9f6f-acc685b5de2e",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_ledgerclaims_a_seal_is_128_bits",
@@ -16076,11 +16122,175 @@
   {
     "key": "lean_mechanical_relation_digital_root",
     "name": "lean mechanical.lean: relation_digital_root — DR (78) == 6 && DR (12) == DR (21) && [1,2,4,5,7,8].contains (DR (7)) — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "d07323c6-683c-866d-be2f-9f3f81ea6459"
+    "receipt": "d07323c6-683c-866d-be2f-9f3f81ea6459",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_mechanical_relation_432_factors",
     "name": "lean mechanical.lean: relation_432_factors — 432 == 16 * 27 && 432 == 2 ^ 4 * 3 ^ 3 && DR (432) == 9 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "34d3073f-7f81-8363-8152-589888681b10"
+    "receipt": "34d3073f-7f81-8363-8152-589888681b10",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
+  },
+  {
+    "key": "lean_mechanical_fib_trinity_horizon",
+    "name": "lean mechanical.lean: fib_trinity_horizon — DR (3 + 5 + 8) == 7 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "458420c0-010d-8995-9382-e1f1239a4105"
+  },
+  {
+    "key": "lean_mechanical_trial_zero_divisors",
+    "name": "lean mechanical.lean: trial_zero_divisors — M9 (3 * 3) == 0 && M9 (3) != 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "fdd05138-da57-8d35-91ed-dee1b001bf69"
+  },
+  {
+    "key": "lean_mechanical_geom_exterior_360",
+    "name": "lean mechanical.lean: geom_exterior_360 — [3, 5, 8].all (fun n => n * (360 / n) == 360) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b484eaf3-88c5-80cb-9535-e0e25770ef7b"
+  },
+  {
+    "key": "lean_mechanical_chess_diagonals_15",
+    "name": "lean mechanical.lean: chess_diagonals_15 — 2 * 8 - 1 == 15 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "120f9fa4-00be-8a7d-b875-90ad959bd680"
+  },
+  {
+    "key": "lean_mechanical_tarot_78_cards",
+    "name": "lean mechanical.lean: tarot_78_cards — 22 + 56 == 78 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1b4474e3-f5f2-8384-b819-131b2279538b"
+  },
+  {
+    "key": "lean_mechanical_tarot_minor_4x14",
+    "name": "lean mechanical.lean: tarot_minor_4x14 — 4 * 14 == 56 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9a2afdef-23ab-8a9e-8080-fa4af2b83238"
+  },
+  {
+    "key": "lean_mechanical_tarot_major_0_21",
+    "name": "lean mechanical.lean: tarot_major_0_21 — ((List.range 22).filter (fun n => n >= 0 && n <= 21)).length == 22 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7fbea55e-c8ea-8d7f-a8cb-bc8a3b1dad84"
+  },
+  {
+    "key": "lean_mechanical_tarot_digital_roots",
+    "name": "lean mechanical.lean: tarot_digital_roots — DR (78) == 6 && DR (22) == 4 && DR (56) == 2 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a93fffd5-b931-8b59-9939-d68769931a79"
+  },
+  {
+    "key": "lean_mechanical_harmonic_octave_2_1",
+    "name": "lean mechanical.lean: harmonic_octave_2_1 — 2 / 1 == 2 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d8be9dbf-75d7-87ef-8b9a-1cec079a3b10"
+  },
+  {
+    "key": "lean_mechanical_relation_seven",
+    "name": "lean mechanical.lean: relation_seven — DR (3 + 5 + 8) == 7 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a377293b-d196-8374-9fe1-9425d421e4d8"
+  },
+  {
+    "key": "lean_mechanical_relation_creation_week",
+    "name": "lean mechanical.lean: relation_creation_week — 6 + 1 == 7 && 7 - 1 == 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ae9f2086-1710-864a-a4d9-d88c65998191"
+  },
+  {
+    "key": "lean_mechanical_genus2_moduli_dim",
+    "name": "lean mechanical.lean: genus2_moduli_dim — 6 * 2 - 6 == 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6e2f681f-7646-824c-9775-f1be76e7ea5c"
+  },
+  {
+    "key": "lean_mechanical_genus2_hyperelliptic",
+    "name": "lean mechanical.lean: genus2_hyperelliptic — 2 * 2 + 2 == 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a72f1f27-910f-8a9e-af0c-61c605cf1e15"
+  },
+  {
+    "key": "lean_mechanical_kaprekar_constants_digitroot_nine",
+    "name": "lean mechanical.lean: kaprekar_constants_digitroot_nine — DR (495) == 9 && DR (6174) == 9 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "84d92b7e-3a80-800d-b96e-bc1dca6ca059"
+  },
+  {
+    "key": "lean_mechanical_the_three_four_five_right_triangle_is_the_first_pythagorean_triple",
+    "name": "lean mechanical.lean: the_three_four_five_right_triangle_is_the_first_pythagorean_triple — 3 * 3 + 4 * 4 == 5 * 5 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "87d49914-23e5-8f61-a7a8-af06cc1ecc82"
+  },
+  {
+    "key": "lean_mechanical_the_regular_pentagon_angles_are_the_heart_seventy_two_and_hundred_eight",
+    "name": "lean mechanical.lean: the_regular_pentagon_angles_are_the_heart_seventy_two_and_hundred_eight — 360 / 5 == 72 && 180 - 72 == 108 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e6591784-57c2-85b2-892a-d29ea216686a"
+  },
+  {
+    "key": "lean_mechanical__142857_times_seven_is_six_nines",
+    "name": "lean mechanical.lean: _142857_times_seven_is_six_nines — 142857 * 7 == 999999 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "00c5b8a3-fb44-8e60-bddb-89ca470f90b2"
+  },
+  {
+    "key": "lean_mechanical_midy_the_two_halves_of_142857_sum_to_nines",
+    "name": "lean mechanical.lean: midy_the_two_halves_of_142857_sum_to_nines — 142 + 857 == 999 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "91b99327-ba9e-8b06-a520-28d18f32d84a"
+  },
+  {
+    "key": "lean_mechanical_the_regular_hexagon_exterior_angle_is_the_gold_string",
+    "name": "lean mechanical.lean: the_regular_hexagon_exterior_angle_is_the_gold_string — 360 / 6 == 60 && 180 - 60 == 120 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6b502008-d50d-84c4-9553-ee1bfb9be3fd"
+  },
+  {
+    "key": "lean_mechanical_the_doubling_orbit_reflection_pairs_sum_to_nine",
+    "name": "lean mechanical.lean: the_doubling_orbit_reflection_pairs_sum_to_nine — 1 + 8 == 9 && 2 + 7 == 9 && 4 + 5 == 9 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "cb1ef520-8b5b-89ce-b0e2-a471293fd9e2"
+  },
+  {
+    "key": "lean_mechanical_sixty_one_sense_three_stop_codons",
+    "name": "lean mechanical.lean: sixty_one_sense_three_stop_codons — 61 + 3 == 64 && 20 < 61 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5f266656-8ca4-8c77-8ef4-97068d2774b8"
+  },
+  {
+    "key": "lean_mechanical_six_reading_frames",
+    "name": "lean mechanical.lean: six_reading_frames — 3 * 2 == 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5327b139-3836-8e0f-84ed-f2553fc9cf75"
+  },
+  {
+    "key": "lean_mechanical_the_harmonic_band_thirty_to_ninety",
+    "name": "lean mechanical.lean: the_harmonic_band_thirty_to_ninety — 30 + 60 == 90 && 90 - 60 == 30 && 60 - 30 == 30 && 90 / 30 == 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "de50f2dd-ac6d-8861-845b-bc5a0f03c522"
+  },
+  {
+    "key": "lean_mechanical_sixty_and_ninety_partition_the_quadrant",
+    "name": "lean mechanical.lean: sixty_and_ninety_partition_the_quadrant — 4 * 90 == 360 && 30 + 60 == 90 && 90 - 60 == 30 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "db2d6d16-039e-87e7-97ce-83c95f5976cc"
+  },
+  {
+    "key": "lean_mechanical_the_hexagon_and_the_square_metrics",
+    "name": "lean mechanical.lean: the_hexagon_and_the_square_metrics — 360 / 6 == 60 && 360 / 4 == 90 && 6 + 1 == 7 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "beb9f1e9-299b-8922-8a1b-79eae3314de0"
+  },
+  {
+    "key": "lean_mechanical_involution_negation",
+    "name": "lean mechanical.lean: involution_negation — (!!true) == true && (!!false) == false && !(!true) == true — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "67372188-da81-84ab-a200-f023724a551c"
+  },
+  {
+    "key": "lean_mechanical_a432_octave_doubling",
+    "name": "lean mechanical.lean: a432_octave_doubling — 432 * 2 == 864 && 864 / 2 == 432 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "64dd8027-6e07-8a67-bfce-ef5a250e4063"
+  },
+  {
+    "key": "lean_mechanical_the_skipper_navigates_by_angle",
+    "name": "lean mechanical.lean: the_skipper_navigates_by_angle — 30 + 60 == 90 && 90 / 30 == 3 && 90 - 60 == 30 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c9178921-032b-86e3-b142-c7db40bcac11"
+  },
+  {
+    "key": "lean_mechanical_cheap_to_factor_easy_to_verify",
+    "name": "lean mechanical.lean: cheap_to_factor_easy_to_verify — let N := 1024; N - 1 == 1023 && 1 < N — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "4df047e4-3dac-8861-bf87-bfdd8e6a4f54"
+  },
+  {
+    "key": "lean_mechanical_present_by_reference_fits_a_tiny_budget",
+    "name": "lean mechanical.lean: present_by_reference_fits_a_tiny_budget — 1600 * 36 == 57600 && 57600 < 100000 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7ad8e402-83df-8759-a41c-d615166ccce2"
+  },
+  {
+    "key": "lean_mechanical_a_decidable_domain_is_finite_and_coverable",
+    "name": "lean mechanical.lean: a_decidable_domain_is_finite_and_coverable — let dom := [0, 1, 2, 3, 4, 5, 6, 7, 8]; dom.length == 9 && dom.all (fun x => dom.contains (x)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d2cbf3ec-7937-8654-94cb-55a464caa912"
+  },
+  {
+    "key": "lean_mechanical_the_more_developed_the_more_cross_domain_reach",
+    "name": "lean mechanical.lean: the_more_developed_the_more_cross_domain_reach — (8 * 7) / 2 == 28 && (16 * 15) / 2 == 120 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6069717b-4ba9-84b4-9aa6-21ecf4677327"
   }
 ]

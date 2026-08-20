@@ -143,6 +143,7 @@ export function translate(body: string): Translation {
   for (const r of REFUSE) if (r.test(b)) return { ok: false, why: 'uses ' + String(r).slice(1, 24) + ' — no faithful mechanical rendering' }
   let out = b
   for (const [re, to] of RULES) out = out.replace(re, to)
+  out = fixChains(out)
   // WHITELIST, not a heuristic. Every identifier surviving translation must be one this file put there or a
   // binder it introduced. The previous check was a regex that let `nonHarmonic` and array indexing through;
   // both compiled into nonsense the kernel rejected. Anything unrecognised is refused by name, so a failure
@@ -159,6 +160,40 @@ export function translate(body: string): Translation {
 }
 
 /** The preamble every emitted file needs: the deposit's own definitions, in Lean. */
+/** JS METHOD CHAINS ARE NOT LEAN APPLICATION CHAINS. `xs.filter(f).length` needs no brackets in JavaScript,
+ *  but its literal rendering `xs.filter (f).length` parses in Lean as `xs.filter ((f).length)` — the projection
+ *  binds to the FUNCTION instead of to the filtered list, and the kernel reports a type error somewhere that
+ *  looks nothing like the cause. This walks the brackets and wraps the call so the chain means what it meant:
+ *  `(xs.filter (f)).length`. Paren-aware rather than a regex, because the predicate contains brackets of its
+ *  own and counting them is the whole job. */
+export function fixChains(t: string): string {
+  for (const head of ['.filter (', '.map (', '.all (', '.any (']) {
+    for (;;) {
+      const i = t.indexOf(head)
+      if (i < 0) break
+      let d = 0, j = i + head.length - 1
+      for (; j < t.length; j++) { if (t[j] === '(') d++; else if (t[j] === ')') { d--; if (d === 0) break } }
+      if (j >= t.length) break
+      const after = t.slice(j + 1)
+      const proj = after.match(/^\.(length|eraseDups|reverse)\b/)
+      if (!proj) { // nothing to fix here; neutralise this head so the scan advances
+        t = t.slice(0, i) + head.replace('.', '\u0000') + t.slice(i + head.length)
+        continue
+      }
+      // find the start of the receiver expression: back over a balanced bracketed term or an identifier
+      let k = i - 1
+      if (t[k] === ')' || t[k] === ']') {
+        const open = t[k] === ')' ? '(' : '[', close = t[k]
+        let e = 0
+        for (; k >= 0; k--) { if (t[k] === close) e++; else if (t[k] === open) { e--; if (e === 0) break } }
+      } else { while (k >= 0 && /[A-Za-z0-9_.']/.test(t[k])) k-- ; k++ }
+      t = t.slice(0, k) + '(' + t.slice(k, j + 1) + ')' + t.slice(j + 1)
+    }
+    t = t.replace(/\u0000/g, '.')
+  }
+  return t
+}
+
 export const PREAMBLE = `def M9 (n : Nat) : Nat := n % 9
 
 -- the digital root: 0 for 0, otherwise the residue mod 9 taken in 1..9 rather than 0..8. Written without

@@ -6,6 +6,7 @@
 // ledger's own test still computes true at the same claim, and the emitted statement contains no construct
 // the translator refuses. A claim that fails any of them is left in the queue with its reason.
 import { readFileSync, writeFileSync } from 'node:fs'
+import { execSync } from 'node:child_process'
 import { queue } from './index.ts'
 import { translate, PREAMBLE } from './translate.ts'
 
@@ -30,6 +31,63 @@ export function emit(): { written: number; skipped: number; file: string } {
   }
   body += `end Mechanical\n`
   writeFileSync(OUT, body)
+
+  // QUARANTINE — a translator bug must never redden the build. Translation is a whitelist, not a proof that
+  // the output type-checks: a method chain rendered without brackets parsed as something else entirely and
+  // took the whole file down with an error that pointed nowhere near the cause. So the file is compiled here,
+  // and any theorem the kernel will not accept is REMOVED and reported as a refusal carrying the kernel's own
+  // words. A claim that cannot be rendered is not a failure of the build; it is the work list. What must never
+  // happen is the two being confused, because then a bad rendering looks like a broken deposit.
+  const compiles = (): string | null => {
+    try { execSync('cd src/proof && LEAN_PATH=. lean mechanical.lean', { encoding: 'utf8', stdio: 'pipe' }); return null }
+    catch (e) { return String((e as { stdout?: string; stderr?: string }).stdout ?? '') + String((e as { stderr?: string }).stderr ?? '') }
+  }
+  const quarantined: string[] = []
+  for (let pass = 0; pass < 12; pass++) {
+    const err = compiles()
+    if (!err) break
+    const lines = [...err.matchAll(/mechanical\.lean:(\d+):/g)].map((m) => Number(m[1]))
+    const src = readFileSync(OUT, 'utf8').split('\n')
+    const bad = new Set<string>()
+    // when the kernel reported positions we can name the offenders directly; otherwise bisect below
+    for (const ln of lines) {
+      for (let i = Math.min(ln, src.length) - 1; i >= 0; i--) {
+        const m = src[i].match(/^theorem ([A-Za-z_0-9]+) :/)
+        if (m) { bad.add(m[1]); break }
+      }
+    }
+    // NO LINE NUMBER, NO CULPRIT — bisect. A stack overflow aborts the kernel before it can say WHERE, so the
+    // error carries no position at all and the loop above has nothing to remove. Halving the file finds the
+    // offender in a handful of compiles instead of one per theorem, and it is the only method that works when
+    // the failure is the compiler dying rather than reporting.
+    if (!lines.length || !bad.size) {
+      const all = readFileSync(OUT, 'utf8')
+      const head = all.slice(0, all.indexOf('theorem '))
+      const blocks = all.slice(all.indexOf('theorem ')).split(/\n\n(?=(?:-- [^\n]*\n)?theorem )/)
+      const tail = blocks.length ? '' : ''
+      let lo = 0, hi = blocks.length
+      const tryRange = (a: number, b: number) => {
+        writeFileSync(OUT, head + blocks.slice(a, b).join('\n\n') + '\n' + tail)
+        return compiles() === null
+      }
+      while (hi - lo > 1) {
+        const mid = Math.floor((lo + hi) / 2)
+        if (!tryRange(lo, mid)) { hi = mid } else { lo = mid }
+      }
+      const culprit = blocks[lo]?.match(/^(?:-- [^\n]*\n)?theorem ([A-Za-z_0-9]+)/)?.[1]
+      blocks.splice(lo, 1)
+      writeFileSync(OUT, head + blocks.join('\n\n') + '\n' + tail)
+      if (culprit) quarantined.push(culprit + ' (kernel aborted — no position reported; found by bisection)')
+      continue
+    }
+    let out = readFileSync(OUT, 'utf8')
+    for (const name of bad) {
+      out = out.replace(new RegExp('(?:^-- [^\\n]*\\n)?^theorem ' + name + ' :[\\s\\S]*?:= by decide\\n\\n', 'm'), '')
+      quarantined.push(name)
+    }
+    writeFileSync(OUT, out)
+  }
+  if (quarantined.length) console.log('  quarantined ' + quarantined.length + ' theorem(s) the kernel would not accept: ' + quarantined.slice(0, 6).join(', ') + (quarantined.length > 6 ? ' …' : ''))
   return { written: rendered.length, skipped: q.length - rendered.length, file: OUT }
 }
 

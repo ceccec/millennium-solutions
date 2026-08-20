@@ -27,16 +27,30 @@ const DISCOVER = 'scripts/discover.ts'
 export type Portable = { key: string; name: string; body: string; shape: Shape }
 export type Shape = 'modular-identity' | 'range-predicate' | 'exact-set' | 'unknown'
 
-/** Read each portable entry's TEST BODY — the claim's own computation, not its prose. */
+/** Read each candidate entry's TEST BODY — the claim's own computation, not its prose.
+ *
+ *  THE QUEUE IS NOT A FLAG. It used to be `led.filter(e => e.portable)`, and that flag was written once and
+ *  never recomputed: 176 entries carried it while 1688 withdrawn claims with perfectly runnable tests were
+ *  never asked. A stale marker had become the thing deciding what could be proved, so a claim was outside the
+ *  prover's reach for no reason anyone had checked — the same fault as revoking before folding, one level up.
+ *
+ *  Every entry with a test body is queued now, and the translator's refusal list does the filtering WITH A
+ *  REASON. That is the only honest place for the decision: a refusal that names what it cannot read is a work
+ *  list, where a missing flag is silence. Entries already superseded by a Lean theorem are skipped because
+ *  they are done, not because they were filtered.
+ */
 export function queue(): Portable[] {
-  const led = JSON.parse(readFileSync(LEDGER, 'utf8')) as { key: string; name: string; portable?: boolean }[]
+  const led = JSON.parse(readFileSync(LEDGER, 'utf8')) as
+    { key: string; name: string; revoked?: boolean; supersededBy?: string }[]
   const src = readFileSync(DISCOVER, 'utf8')
   const bodies = new Map([...src.matchAll(/out\.push\(\{ key: '([a-z_0-9]+)'[\s\S]*?test: \(\) => ([\s\S]*?)\}\)\n/g)]
     .map((m) => [m[1], m[2]] as [string, string]))
-  return led.filter((e) => e.portable).map((e) => {
-    const body = bodies.get(e.key) ?? ''
-    return { key: e.key, name: e.name, body, shape: classify(body) }
-  })
+  return led
+    .filter((e) => !e.supersededBy && bodies.has(e.key))
+    .map((e) => {
+      const body = bodies.get(e.key) ?? ''
+      return { key: e.key, name: e.name, body, shape: classify(body) }
+    })
 }
 
 /** The shape of a claim decides whether it can be translated without judgement. */

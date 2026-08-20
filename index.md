@@ -17,12 +17,12 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 304 theorems across 18 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `6777135d-71c1-816b-aaa9-12a2ce231ce8`</sub>
-- 296 of those 304 theorems close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
-  <sub>SEALED · `eaef65b2-0333-8846-bbda-66ccf14fec9d`</sub>
-- 322 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `19421ef0-0e6a-8f36-9312-660714e6a3d9`</sub>
+- The formal layer holds 310 theorems across 18 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `86fe81ec-c48a-8621-b8d6-042c4d27e01e`</sub>
+- 302 of those 310 theorems close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
+  <sub>SEALED · `722f5ec3-96d3-806c-8b3a-1bf2383931f0`</sub>
+- 354 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `02fb49ff-022a-83e5-b8cf-86ad82972d25`</sub>
 
 ## 2 · The ring
 
@@ -45,10 +45,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 2186 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `15436f1d-9ef9-81ff-82a1-ff57f8dd725f`</sub>
-- The count is 2186, which is 273 octaves and 2 over — the octave is a target the theorems earn, never a quota they are invented to fill.
-  <sub>SEALED · `5d2f5689-fc13-8996-bfb9-6851acd255d1`</sub>
+- The ledger records 2218 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `cfce1f9a-bf12-84f5-8927-b28a007e3841`</sub>
+- The count is 2218, which is 277 octaves and 2 over — the octave is a target the theorems earn, never a quota they are invented to fill.
+  <sub>SEALED · `cda94ded-a643-8eae-ba50-360a256e6347`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -100,4 +100,4 @@ because no test was written that would seal them.
 
 ---
 
-*14 claims, all verified · 304 Lean theorems · 2186 ledger entries · trial root `2935d96f-6bb8-8947-be1a-8f93dcc8dd32` · integrity, not truth · 0/7*
+*14 claims, all verified · 310 Lean theorems · 2218 ledger entries · trial root `177c0e1d-32c5-8fa4-a05f-cdc9268b8352` · integrity, not truth · 0/7*
