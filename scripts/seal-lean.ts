@@ -66,6 +66,17 @@ const orphans = sealedLean.filter((e) => {
 if (orphans.length) {
   console.log(`\n✗ ${orphans.length} sealed theorem(s) have NO source — the kernel has not checked these on any recent run:`)
   for (const o of orphans) console.log('    ' + o.key)
+  // NOTHING IS PURGED BEFORE THE FOLD HAS HAD ITS TURN. An entry that a Lean theorem now carries must never
+  // be withdrawn — that is the mistake the dry clean made in the other direction, revoking 1865 claims before
+  // the prover had been asked whether it could render them, after which nothing ever asked again. A claim
+  // with a living successor is superseded, not gone, and scripts/fold.ts records the link.
+  const liveKeys = new Set(ledger.filter((e) => !e.revoked).map((e) => e.key))
+  const carried = orphans.filter((o) => [...liveKeys].some((k) => k !== o.key && k.endsWith('_' + o.key.replace(/^lean_/, ''))))
+  if (carried.length) {
+    console.log(`  ✗ ${carried.length} of these are carried by a live theorem — refusing to withdraw them; run scripts/fold.ts to record the supersession instead:`)
+    for (const c of carried) console.log('      ' + c.key)
+    process.exit(1)
+  }
   if (process.argv.includes('--revoke-orphans')) {
     for (const o of orphans) {
       const e = ledger.find((x) => x.key === o.key)!

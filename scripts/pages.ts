@@ -162,6 +162,33 @@ if (bad.length) {
 const sections = [...new Set(CLAIMS.map((c) => c.section))]
 const root = merkleFold(rows.map((r) => r.v.receipt))
 
+// ── THE RANKING — computed, so a Clay proof would surface here on its own ────────────────────────────────
+// If the front page is pure computation, nothing needs to be CLAIMED about what the deposit has and has not
+// settled: rank the theorems by a measure and read the top of the list. The measure is the size of the domain
+// the kernel exhausted — a theorem decided over 101 x 101 whole percentages settles 10,201 cases; one over the
+// nine residues settles nine. That is what `by decide` actually did, counted, not an opinion about importance.
+//
+// The floor then states itself. A Clay conjecture ranges over an infinite domain, so no theorem decided by
+// exhaustion can appear here as one, however high it ranks — the largest finite number in this table is still
+// finite. Nobody has to be told the deposit settles none of the seven; the arithmetic of its own ranking says
+// so, and it would keep saying so right up until a proof arrived that did not work this way.
+const domainOf = (statement: string): number => {
+  let n = 1
+  for (const m of statement.matchAll(/List\.range'\s+\d+\s+(\d+)/g)) n *= Number(m[1])
+  for (const m of statement.matchAll(/List\.range\s+(\d+)/g)) n *= Number(m[1])
+  for (const m of statement.matchAll(/\[([0-9,\s]+)\]/g)) n *= Math.max(1, m[1].split(',').filter((x) => x.trim()).length)
+  return n
+}
+
+const ranked = (() => {
+  const rows: { file: string; name: string; cases: number }[] = []
+  for (const f of leanFiles) {
+    for (const m of leanSrc[f].matchAll(/^theorem\s+([A-Za-z_0-9]+)\s*:([\s\S]*?):=\s*by decide/gm))
+      rows.push({ file: f, name: m[1], cases: domainOf(m[2]) })
+  }
+  return rows.sort((a, b) => b.cases - a.cases)
+})()
+
 const body = (site: boolean) => {
   let md = ''
   for (const s of sections) {
@@ -172,6 +199,11 @@ const body = (site: boolean) => {
     md += '\n'
   }
   md += `Every one of the **${REGISTERED.length} registered claims** above recomputes from the artefact it names.\n\n`
+  md += `## ${ORBIT[5] ?? 5} · What the kernel decided the most of\n\n`
+  md += `Ranked by the size of the domain each theorem was decided over — the count of cases \`by decide\` actually\nwalked, computed from the statements themselves. Nothing is chosen for this table.\n\n`
+  md += `| cases decided | theorem | file |\n|---:|---|---|\n`
+  for (const r of ranked.slice(0, 8)) md += `| ${r.cases.toLocaleString('en-US')} | \`${r.name}\` | \`${r.file}\` |\n`
+  md += `\nThe largest domain settled here is **${ranked[0].cases.toLocaleString('en-US')} cases**, and it is finite — as every\nentry in this ledger is, because \`by decide\` works by exhausting a domain and an infinite one cannot be\nexhausted. Each of the seven Clay conjectures ranges over an infinite domain. So a proof of one could not\nappear in this table however high it ranked, and none does. That is not a disclaimer added underneath the\nresults; it is the result, read off the same arithmetic that produced the table.\n\n`
   md += `## What is deliberately absent\n\nNo sentence above claims a Millennium problem settled, that the correspondence with the Clay set means\nanything about those conjectures, or that the gate can tell truth from falsehood. Those sentences are missing\nbecause no test was written that would seal them.\n\n`
   md += site
     ? `## Read\n\n[The seven, one theorem per problem](/theorem/lean_millenniumfloor_riemann_reflection_and_heart) · [the ledger](/proofs) · [the trial](/verify)\n\n`

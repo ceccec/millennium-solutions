@@ -66,6 +66,28 @@ last because the orbit never reaches it.
 
 Every one of the **15 registered claims** above recomputes from the artefact it names.
 
+## 5 · What the kernel decided the most of
+
+Ranked by the size of the domain each theorem was decided over — the count of cases `by decide` actually
+walked, computed from the statements themselves. Nothing is chosen for this table.
+
+| cases decided | theorem | file |
+|---:|---|---|
+| 10,201 | `a_chain_of_efficiencies_can_only_lose` | `energy.lean` |
+| 10,000 | `mass_is_conserved_at_every_scale_so_the_loop_cannot_make_water` | `energy.lean` |
+| 4,096 | `sums_of_two_squares_are_closed` | `sequences.lean` |
+| 2,304 | `navier_stokes_flow_is_bounded` | `index.lean` |
+| 1,600 | `a_saving_never_exceeds_its_value` | `ledgerclaims.lean` |
+| 1,296 | `the_unit_table_is_a_latin_square` | `z9plus.lean` |
+| 729 | `the_two_to_one_is_forced_by_the_oxygen` | `energy.lean` |
+| 520 | `primality_agrees_with_trial_division` | `generated.lean` |
+
+The largest domain settled here is **10,201 cases**, and it is finite — as every
+entry in this ledger is, because `by decide` works by exhausting a domain and an infinite one cannot be
+exhausted. Each of the seven Clay conjectures ranges over an infinite domain. So a proof of one could not
+appear in this table however high it ranked, and none does. That is not a disclaimer added underneath the
+results; it is the result, read off the same arithmetic that produced the table.
+
 ## What is deliberately absent
 
 No sentence above claims a Millennium problem settled, that the correspondence with the Clay set means

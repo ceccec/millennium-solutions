@@ -445,7 +445,8 @@
     "receipt": "7c5b01de-e813-81ce-a774-d14fe8bdead3",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_add_group"
   },
   {
     "key": "neg_involution",
@@ -453,7 +454,8 @@
     "receipt": "5eb8cd1f-9e06-83c8-8968-78b19e8a93b7",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_neg_involution"
   },
   {
     "key": "selfneg_d9",
@@ -988,7 +990,8 @@
     "receipt": "9f00a7e0-ffab-89c8-b815-e2f415086009",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_merkaba_cube_q3"
   },
   {
     "key": "merkaba_field_max_null",
@@ -1419,7 +1422,8 @@
     "receipt": "ccadf52c-98f9-89a4-bbb3-a38040263fbe",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_trial_units_group"
   },
   {
     "key": "trial_zero_divisors",
@@ -1435,7 +1439,8 @@
     "receipt": "3d77bde4-f30b-8331-bfbd-af69388a3205",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_trial_zero_no_inverse"
   },
   {
     "key": "trial_overclaim_drained",
@@ -1935,7 +1940,8 @@
     "receipt": "775976e0-3eb7-803c-b119-7cc5d92126f3",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_gf4_size"
   },
   {
     "key": "gf4_frobenius_fixes",
@@ -2046,7 +2052,8 @@
     "receipt": "d708c933-0c92-8e57-a4a7-9d15fd14d320",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_relation_digital_root"
   },
   {
     "key": "the_modules_self_compute",
@@ -2078,7 +2085,8 @@
     "receipt": "6cf3004c-0bb3-8d33-8ba1-8206d36d51fa",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_harmonic_pythagorean_comma"
   },
   {
     "key": "harmonic_convention_bound",
@@ -2302,7 +2310,8 @@
     "receipt": "c3a6a141-363b-88ee-b0d6-99ffe3631bfc",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_relation_eight"
   },
   {
     "key": "catalan_numbers",
@@ -2622,7 +2631,8 @@
     "receipt": "a7a7d584-5220-80c6-bc83-9037693d7d53",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_genus2_h1_symplectic"
   },
   {
     "key": "genus_g_moduli_dim",
@@ -3143,7 +3153,8 @@
     "receipt": "e8d6cb47-625d-8a1f-8dc8-914b72514922",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_relation_seven_is_six_plus_one"
   },
   {
     "key": "relation_units_are_coprime_to_base",
@@ -3183,7 +3194,8 @@
     "receipt": "534f4384-ac9f-8d92-84f2-803eb32dbd17",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_relation_432_factors"
   },
   {
     "key": "relation_imprint_capacity_structure",
@@ -8447,7 +8459,8 @@
     "receipt": "fc728400-b9b2-8e14-aa4c-cc9c8259cc4e",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_the_cyclic_number_142857_is_the_repetend_of_one_seventh"
   },
   {
     "key": "_142857_times_one_through_six_are_its_cyclic_rotations",
@@ -8487,7 +8500,8 @@
     "receipt": "a54691b2-880f-897a-9d13-78bd4785c7f7",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_the_digital_root_of_seven_to_the_k_has_period_three"
   },
   {
     "key": "seven_divides_the_repunit_of_length_six",
@@ -8495,7 +8509,8 @@
     "receipt": "8ac0b06d-5eee-8c9a-801a-d3f18d30d5ae",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_seven_divides_the_repunit_of_length_six"
   },
   {
     "key": "eight_and_nine_are_the_only_consecutive_perfect_powers",
@@ -8543,7 +8558,8 @@
     "receipt": "a716f358-f9d7-82ff-b949-41760dcab695",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_two_to_the_eighth_is_two_hundred_fifty_six_a_byte"
   },
   {
     "key": "a_mersenne_prime_forces_a_prime_exponent",
@@ -8559,7 +8575,8 @@
     "receipt": "568ccd10-1bb6-85ed-8976-15065052f6fb",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_two_to_the_tenth_is_1024_the_harmonic_ledger"
   },
   {
     "key": "the_nine_times_table_always_digital_roots_to_nine",
@@ -8615,7 +8632,8 @@
     "receipt": "932fbd24-4bae-8013-bbf7-a40721be2635",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_nine_is_the_base_and_the_trinity_squared"
   },
   {
     "key": "a_number_is_divisible_by_nine_iff_its_digit_sum_is",
@@ -8719,7 +8737,8 @@
     "receipt": "c206b19f-08e1-8fae-a9f2-a18fa67066f5",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_five_is_the_inverse_of_two_so_halving_reverses_the_orbit"
   },
   {
     "key": "the_nine_residues_split_into_the_unit_orbit_and_the_triad",
@@ -9632,7 +9651,8 @@
     "receipt": "72de6de5-a746-8328-ba41-a1e3786c0cce",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_dna_is_the_version_itself"
   },
   {
     "key": "any_version_is_a_superposition",
@@ -9801,7 +9821,8 @@
     "receipt": "9b4e24be-a32c-8d70-99af-2e831551abb7",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_genetic_code_is_the_octave_squared"
   },
   {
     "key": "sixty_one_sense_three_stop_codons",
@@ -10054,7 +10075,8 @@
     "receipt": "68522679-1ca3-8acb-87ed-8b3538da37ed",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_genesis_1_the_unit"
   },
   {
     "key": "genesis_2_the_bit_and_the_pair",
@@ -10086,7 +10108,8 @@
     "receipt": "31cc2395-9faf-8cc8-9ffb-74108f51a2a3",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_genesis_8_the_octave"
   },
   {
     "key": "genesis_64_the_codon",
@@ -10094,7 +10117,8 @@
     "receipt": "a87182de-95ca-8fbe-b25a-d41345c0c468",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_genesis_64_the_codon"
   },
   {
     "key": "genesis_complete_the_human_organism",
@@ -11347,7 +11371,8 @@
     "receipt": "a1f8c863-0f54-8f7f-abfe-d92d2ec132d1",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_a432_factors_as_two_to_the_fourth_times_three_cubed"
   },
   {
     "key": "a432_octave_doubling",
@@ -11920,7 +11945,8 @@
     "receipt": "2cc3bfef-6199-893a-929d-d3f0814d9904",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_two_bits_thrice_make_the_codon"
   },
   {
     "key": "the_structure_is_bounded_by_the_classical_two",
@@ -12831,7 +12857,8 @@
     "receipt": "19031e6e-37d4-8145-81d5-77b75f79e39f",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_the_full_superposition_has_nine_states"
   },
   {
     "key": "the_harmonic_solutions_number_six",
