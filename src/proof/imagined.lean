@@ -31,6 +31,34 @@ theorem triad_is_closed_under_triple :
 theorem all_is_closed_under_triple :
   [0,1,2,3,4,5,6,7,8].all (fun d => [0,1,2,3,4,5,6,7,8].contains (m9 (3 * d))) := by decide
 
+-- the units is closed under quadrupling
+theorem units_is_closed_under_quadruple :
+  [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (4 * d))) := by decide
+
+-- the triad is closed under quadrupling
+theorem triad_is_closed_under_quadruple :
+  [3, 6, 0].all (fun d => [3, 6, 0].contains (m9 (4 * d))) := by decide
+
+-- the doubling orbit is closed under quadrupling
+theorem orbit_is_closed_under_quadruple :
+  [1, 2, 4, 8, 7, 5].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (4 * d))) := by decide
+
+-- the first tetrahedron is closed under quadrupling
+theorem tetA_is_closed_under_quadruple :
+  [1, 4, 7].all (fun d => [1, 4, 7].contains (m9 (4 * d))) := by decide
+
+-- the second tetrahedron is closed under quadrupling
+theorem tetB_is_closed_under_quadruple :
+  [2, 5, 8].all (fun d => [2, 5, 8].contains (m9 (4 * d))) := by decide
+
+-- the whole ring is closed under quadrupling
+theorem all_is_closed_under_quadruple :
+  [0,1,2,3,4,5,6,7,8].all (fun d => [0,1,2,3,4,5,6,7,8].contains (m9 (4 * d))) := by decide
+
+-- the squares mod nine is closed under quadrupling
+theorem squares_is_closed_under_quadruple :
+  [0, 1, 4, 7].all (fun d => [0, 1, 4, 7].contains (m9 (4 * d))) := by decide
+
 -- the units is closed under negation
 theorem units_is_closed_under_negate :
   [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (9 - d))) := by decide
@@ -46,6 +74,10 @@ theorem orbit_is_closed_under_negate :
 -- the whole ring is closed under negation
 theorem all_is_closed_under_negate :
   [0,1,2,3,4,5,6,7,8].all (fun d => [0,1,2,3,4,5,6,7,8].contains (m9 (9 - d))) := by decide
+
+-- the cubes mod nine is closed under negation
+theorem cubes_is_closed_under_negate :
+  [0, 1, 8].all (fun d => [0, 1, 8].contains (m9 (9 - d))) := by decide
 
 -- the units is closed under squaring
 theorem units_is_closed_under_square :
@@ -66,6 +98,14 @@ theorem tetA_is_closed_under_square :
 -- the whole ring is closed under squaring
 theorem all_is_closed_under_square :
   [0,1,2,3,4,5,6,7,8].all (fun d => [0,1,2,3,4,5,6,7,8].contains (m9 (d * d))) := by decide
+
+-- the squares mod nine is closed under squaring
+theorem squares_is_closed_under_square :
+  [0, 1, 4, 7].all (fun d => [0, 1, 4, 7].contains (m9 (d * d))) := by decide
+
+-- the cubes mod nine is closed under squaring
+theorem cubes_is_closed_under_square :
+  [0, 1, 8].all (fun d => [0, 1, 8].contains (m9 (d * d))) := by decide
 
 -- the units is closed under multiplication by five
 theorem units_is_closed_under_quintuple :
@@ -91,6 +131,34 @@ theorem triad_is_closed_under_sextuple :
 theorem all_is_closed_under_sextuple :
   [0,1,2,3,4,5,6,7,8].all (fun d => [0,1,2,3,4,5,6,7,8].contains (m9 (6 * d))) := by decide
 
+-- the units is closed under multiplication by seven
+theorem units_is_closed_under_septuple :
+  [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (7 * d))) := by decide
+
+-- the triad is closed under multiplication by seven
+theorem triad_is_closed_under_septuple :
+  [3, 6, 0].all (fun d => [3, 6, 0].contains (m9 (7 * d))) := by decide
+
+-- the doubling orbit is closed under multiplication by seven
+theorem orbit_is_closed_under_septuple :
+  [1, 2, 4, 8, 7, 5].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (7 * d))) := by decide
+
+-- the first tetrahedron is closed under multiplication by seven
+theorem tetA_is_closed_under_septuple :
+  [1, 4, 7].all (fun d => [1, 4, 7].contains (m9 (7 * d))) := by decide
+
+-- the second tetrahedron is closed under multiplication by seven
+theorem tetB_is_closed_under_septuple :
+  [2, 5, 8].all (fun d => [2, 5, 8].contains (m9 (7 * d))) := by decide
+
+-- the whole ring is closed under multiplication by seven
+theorem all_is_closed_under_septuple :
+  [0,1,2,3,4,5,6,7,8].all (fun d => [0,1,2,3,4,5,6,7,8].contains (m9 (7 * d))) := by decide
+
+-- the squares mod nine is closed under multiplication by seven
+theorem squares_is_closed_under_septuple :
+  [0, 1, 4, 7].all (fun d => [0, 1, 4, 7].contains (m9 (7 * d))) := by decide
+
 -- the units is closed under multiplication by eight
 theorem units_is_closed_under_octuple :
   [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (8 * d))) := by decide
@@ -107,6 +175,10 @@ theorem orbit_is_closed_under_octuple :
 theorem all_is_closed_under_octuple :
   [0,1,2,3,4,5,6,7,8].all (fun d => [0,1,2,3,4,5,6,7,8].contains (m9 (8 * d))) := by decide
 
+-- the cubes mod nine is closed under multiplication by eight
+theorem cubes_is_closed_under_octuple :
+  [0, 1, 8].all (fun d => [0, 1, 8].contains (m9 (8 * d))) := by decide
+
 -- quadrupling is its own inverse on the triad
 theorem quadruple_is_involutive_on_triad :
   [3, 6, 0].all (fun d => (fun x => m9 (4 * x)) (m9 (4 * d)) == d) := by decide
@@ -114,6 +186,14 @@ theorem quadruple_is_involutive_on_triad :
 -- squaring is its own inverse on the first tetrahedron
 theorem square_is_involutive_on_tetA :
   [1, 4, 7].all (fun d => (fun x => m9 (x * x)) (m9 (d * d)) == d) := by decide
+
+-- squaring is its own inverse on the squares mod nine
+theorem square_is_involutive_on_squares :
+  [0, 1, 4, 7].all (fun d => (fun x => m9 (x * x)) (m9 (d * d)) == d) := by decide
+
+-- cubing is its own inverse on the cubes mod nine
+theorem cube_is_involutive_on_cubes :
+  [0, 1, 8].all (fun d => (fun x => m9 (x * x * x)) (m9 (d * d * d)) == d) := by decide
 
 -- multiplication by five is its own inverse on the triad
 theorem quintuple_is_involutive_on_triad :
@@ -134,6 +214,10 @@ theorem double_carries_orbit_onto_units :
 -- tripling carries the whole ring onto the triad
 theorem triple_carries_all_onto_triad :
   [0,1,2,3,4,5,6,7,8].all (fun d => [3, 6, 0].contains (m9 (3 * d))) ∧ ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (3 * d))).eraseDups.length = 3 := by decide
+
+-- tripling carries the cubes mod nine onto the triad
+theorem triple_carries_cubes_onto_triad :
+  [0, 1, 8].all (fun d => [3, 6, 0].contains (m9 (3 * d))) ∧ ([0, 1, 8].map (fun d => m9 (3 * d))).eraseDups.length = 3 := by decide
 
 -- quadrupling carries the units onto the doubling orbit
 theorem quadruple_carries_units_onto_orbit :
@@ -171,6 +255,14 @@ theorem square_carries_orbit_onto_tetA :
 theorem square_carries_tetB_onto_tetA :
   [2, 5, 8].all (fun d => [1, 4, 7].contains (m9 (d * d))) ∧ ([2, 5, 8].map (fun d => m9 (d * d))).eraseDups.length = 3 := by decide
 
+-- squaring carries the whole ring onto the squares mod nine
+theorem square_carries_all_onto_squares :
+  [0,1,2,3,4,5,6,7,8].all (fun d => [0, 1, 4, 7].contains (m9 (d * d))) ∧ ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (d * d))).eraseDups.length = 4 := by decide
+
+-- cubing carries the whole ring onto the cubes mod nine
+theorem cube_carries_all_onto_cubes :
+  [0,1,2,3,4,5,6,7,8].all (fun d => [0, 1, 8].contains (m9 (d * d * d))) ∧ ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (d * d * d))).eraseDups.length = 3 := by decide
+
 -- multiplication by five carries the units onto the doubling orbit
 theorem quintuple_carries_units_onto_orbit :
   [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (5 * d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d => m9 (5 * d))).eraseDups.length = 6 := by decide
@@ -190,6 +282,10 @@ theorem quintuple_carries_tetB_onto_tetA :
 -- multiplication by six carries the whole ring onto the triad
 theorem sextuple_carries_all_onto_triad :
   [0,1,2,3,4,5,6,7,8].all (fun d => [3, 6, 0].contains (m9 (6 * d))) ∧ ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (6 * d))).eraseDups.length = 3 := by decide
+
+-- multiplication by six carries the cubes mod nine onto the triad
+theorem sextuple_carries_cubes_onto_triad :
+  [0, 1, 8].all (fun d => [3, 6, 0].contains (m9 (6 * d))) ∧ ([0, 1, 8].map (fun d => m9 (6 * d))).eraseDups.length = 3 := by decide
 
 -- multiplication by seven carries the units onto the doubling orbit
 theorem septuple_carries_units_onto_orbit :

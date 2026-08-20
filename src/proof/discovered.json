@@ -15843,5 +15843,207 @@
     "key": "lean_energy_as_a_purifier_the_loop_costs_a_thousandfold",
     "name": "lean energy.lean: as_a_purifier_the_loop_costs_a_thousandfold — splitCost / waterOut = 5777 ∧ splitCost / waterOut > roPerLitre * 1000 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "840c66b6-b891-8807-a71e-eee3f14306a3"
+  },
+  {
+    "key": "lean_energy_the_equation_balances_by_atom_count",
+    "name": "lean energy.lean: the_equation_balances_by_atom_count — (2 * 2 = 2 * 2) ∧ (2 * 1 = 1 * 2) ∧ 4 = 2 * 2 ∧ 2 = 1 * 2 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ecfd70b1-b35b-89d8-a1b0-18ed0d051f27",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
+  },
+  {
+    "key": "lean_energy_the_equation_balances_by_mass",
+    "name": "lean energy.lean: the_equation_balances_by_mass — 2 * mgH2O = 2 * mgH2 + mgO2 ∧ 2 * mgH2O = 36030 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "debf920f-a945-870b-83c0-84614ef723bc"
+  },
+  {
+    "key": "lean_energy_the_gases_are_two_to_one_and_consume_each_other_exactly",
+    "name": "lean energy.lean: the_gases_are_two_to_one_and_consume_each_other_exactly — 2 * 1 = 2 ∧ (2 * 100 / 3 = 66) ∧ (1 * 100 / 3 = 33) ∧ ¬ (1 * 1 = 2) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "4411df61-18c7-8743-be2e-2efa6bdefd79"
+  },
+  {
+    "key": "lean_energy_hydrogen_is_a_ninth_of_the_mass_and_oxygen_the_rest",
+    "name": "lean energy.lean: hydrogen_is_a_ninth_of_the_mass_and_oxygen_the_rest — mgO2 * 100 / (2 * mgH2) = 793 ∧ (2 * mgH2) * 10000 / (2 * mgH2O) = 1119 ∧ mgO2 * 10000 / (2 * mgH2O) = 8880 ∧ 1119 + 8880 = 9999 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "585ebc79-3eac-8bd9-83ab-1bae798a3662"
+  },
+  {
+    "key": "lean_energy_mass_is_conserved_at_every_scale_so_the_loop_cannot_make_water",
+    "name": "lean energy.lean: mass_is_conserved_at_every_scale_so_the_loop_cannot_make_water — (List.range' 1 100).all (fun n => 2 * n * mgH2O == 2 * n * mgH2 + n * mgO2) ∧ ¬ ((List.range' 1 100).all (fun n => n * mgH2O == n * mgH2 + n * mgO2)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "55429cd8-2b19-887d-bfb7-1e03f593165d"
+  },
+  {
+    "key": "lean_energy_one_litre_split_returns_one_litre_burnt",
+    "name": "lean energy.lean: one_litre_split_returns_one_litre_burnt — 111900 + 888100 = 1000000 ∧ 888100 * 100 / 111900 = 793 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e88c70d6-0123-8f6c-bcc5-b9121ddefd74"
+  },
+  {
+    "key": "lean_energy_only_oxy_hydrogen_burns_without_admitting_nitrogen",
+    "name": "lean energy.lean: only_oxy_hydrogen_burns_without_admitting_nitrogen — 7808 * 100 / 2095 = 372 ∧ 0 * 372 = 0 ∧ ¬ (372 = 0) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "69997ab3-1d7e-8948-bac2-5ba58c943acf"
+  },
+  {
+    "key": "lean_energy_the_ideal_round_trip_is_exactly_zero",
+    "name": "lean energy.lean: the_ideal_round_trip_is_exactly_zero — 28583 - 28583 = 0 ∧ 28583 ≤ 28583 ∧ burnYield * 100 / splitCost = 23 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "181481c2-3745-806e-a705-38e157a3e345"
+  },
+  {
+    "key": "lean_energy_the_two_to_one_is_forced_by_the_oxygen",
+    "name": "lean energy.lean: the_two_to_one_is_forced_by_the_oxygen — balances 2 2 1 = true ∧ balances 1 1 1 = false ∧ (((List.range' 1 9).flatMap (fun a => (List.range' 1 9).flatMap (fun b => (List.range' 1 9).filter (fun c => balances a b c)))).length = 4) ∧ balances 4 4 2 = true ∧ balances 6 6 3 = true ∧ b… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "75828bd9-1d34-87c8-a5ec-22a9df3c45af"
+  },
+  {
+    "key": "lean_imagined_units_is_closed_under_quadruple",
+    "name": "lean imagined.lean: units_is_closed_under_quadruple — [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (4 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e90978b5-a350-8187-9288-c690421f8a13"
+  },
+  {
+    "key": "lean_imagined_triad_is_closed_under_quadruple",
+    "name": "lean imagined.lean: triad_is_closed_under_quadruple — [3, 6, 0].all (fun d => [3, 6, 0].contains (m9 (4 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6d2f140d-6eff-8703-b647-f39541a79884"
+  },
+  {
+    "key": "lean_imagined_orbit_is_closed_under_quadruple",
+    "name": "lean imagined.lean: orbit_is_closed_under_quadruple — [1, 2, 4, 8, 7, 5].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (4 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f889d728-465d-8fe2-89be-30cd50878b45"
+  },
+  {
+    "key": "lean_imagined_tetA_is_closed_under_quadruple",
+    "name": "lean imagined.lean: tetA_is_closed_under_quadruple — [1, 4, 7].all (fun d => [1, 4, 7].contains (m9 (4 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f9075b8c-6548-8937-8943-71608879fe7a"
+  },
+  {
+    "key": "lean_imagined_tetB_is_closed_under_quadruple",
+    "name": "lean imagined.lean: tetB_is_closed_under_quadruple — [2, 5, 8].all (fun d => [2, 5, 8].contains (m9 (4 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d15e7f2a-be1e-8c5a-98fe-b36380cc1aa6"
+  },
+  {
+    "key": "lean_imagined_all_is_closed_under_quadruple",
+    "name": "lean imagined.lean: all_is_closed_under_quadruple — [0,1,2,3,4,5,6,7,8].all (fun d => [0,1,2,3,4,5,6,7,8].contains (m9 (4 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9fdde539-0c75-83f0-b14f-ff31326b26fe"
+  },
+  {
+    "key": "lean_imagined_squares_is_closed_under_quadruple",
+    "name": "lean imagined.lean: squares_is_closed_under_quadruple — [0, 1, 4, 7].all (fun d => [0, 1, 4, 7].contains (m9 (4 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "12d7a596-c1f8-8929-8cc9-9b67c3f285ca"
+  },
+  {
+    "key": "lean_imagined_cubes_is_closed_under_negate",
+    "name": "lean imagined.lean: cubes_is_closed_under_negate — [0, 1, 8].all (fun d => [0, 1, 8].contains (m9 (9 - d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "78ef83db-c595-833e-8da7-3e8c027c0dbc"
+  },
+  {
+    "key": "lean_imagined_squares_is_closed_under_square",
+    "name": "lean imagined.lean: squares_is_closed_under_square — [0, 1, 4, 7].all (fun d => [0, 1, 4, 7].contains (m9 (d * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "be288202-61e8-8f7a-b76e-08efcd94f773"
+  },
+  {
+    "key": "lean_imagined_cubes_is_closed_under_square",
+    "name": "lean imagined.lean: cubes_is_closed_under_square — [0, 1, 8].all (fun d => [0, 1, 8].contains (m9 (d * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "827d987b-f6c7-826b-86d6-5e1ae949890a"
+  },
+  {
+    "key": "lean_imagined_units_is_closed_under_septuple",
+    "name": "lean imagined.lean: units_is_closed_under_septuple — [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (7 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "33c6b2af-ea05-806b-8d39-4860464b3e8a"
+  },
+  {
+    "key": "lean_imagined_triad_is_closed_under_septuple",
+    "name": "lean imagined.lean: triad_is_closed_under_septuple — [3, 6, 0].all (fun d => [3, 6, 0].contains (m9 (7 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "64ea3fd6-5235-8408-aba2-8f83b37f28bd"
+  },
+  {
+    "key": "lean_imagined_orbit_is_closed_under_septuple",
+    "name": "lean imagined.lean: orbit_is_closed_under_septuple — [1, 2, 4, 8, 7, 5].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (7 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7a790873-2c87-8c14-afdf-e2e7870858df"
+  },
+  {
+    "key": "lean_imagined_tetA_is_closed_under_septuple",
+    "name": "lean imagined.lean: tetA_is_closed_under_septuple — [1, 4, 7].all (fun d => [1, 4, 7].contains (m9 (7 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d0845a96-1990-85d5-8fe0-a7bcdd13f384"
+  },
+  {
+    "key": "lean_imagined_tetB_is_closed_under_septuple",
+    "name": "lean imagined.lean: tetB_is_closed_under_septuple — [2, 5, 8].all (fun d => [2, 5, 8].contains (m9 (7 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "94ca3492-fc0f-87fb-b3cf-52868f28b875"
+  },
+  {
+    "key": "lean_imagined_all_is_closed_under_septuple",
+    "name": "lean imagined.lean: all_is_closed_under_septuple — [0,1,2,3,4,5,6,7,8].all (fun d => [0,1,2,3,4,5,6,7,8].contains (m9 (7 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "360040f3-1afb-86b6-a1fb-bc6a29eed61e"
+  },
+  {
+    "key": "lean_imagined_squares_is_closed_under_septuple",
+    "name": "lean imagined.lean: squares_is_closed_under_septuple — [0, 1, 4, 7].all (fun d => [0, 1, 4, 7].contains (m9 (7 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "929df56e-f860-87ec-b689-0226958ea7c1"
+  },
+  {
+    "key": "lean_imagined_cubes_is_closed_under_octuple",
+    "name": "lean imagined.lean: cubes_is_closed_under_octuple — [0, 1, 8].all (fun d => [0, 1, 8].contains (m9 (8 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "91dcd0db-2571-8202-81e1-ac0cd0588248"
+  },
+  {
+    "key": "lean_imagined_square_is_involutive_on_squares",
+    "name": "lean imagined.lean: square_is_involutive_on_squares — [0, 1, 4, 7].all (fun d => (fun x => m9 (x * x)) (m9 (d * d)) == d) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b71b08a8-b238-80d4-ad42-bb50ae0f4cd1"
+  },
+  {
+    "key": "lean_imagined_cube_is_involutive_on_cubes",
+    "name": "lean imagined.lean: cube_is_involutive_on_cubes — [0, 1, 8].all (fun d => (fun x => m9 (x * x * x)) (m9 (d * d * d)) == d) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d607231e-ecb2-8c11-b3a5-39beae477728"
+  },
+  {
+    "key": "lean_imagined_triple_carries_cubes_onto_triad",
+    "name": "lean imagined.lean: triple_carries_cubes_onto_triad — [0, 1, 8].all (fun d => [3, 6, 0].contains (m9 (3 * d))) ∧ ([0, 1, 8].map (fun d => m9 (3 * d))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "07183390-0375-82a5-880d-33d20b2ff1c3"
+  },
+  {
+    "key": "lean_imagined_square_carries_all_onto_squares",
+    "name": "lean imagined.lean: square_carries_all_onto_squares — [0,1,2,3,4,5,6,7,8].all (fun d => [0, 1, 4, 7].contains (m9 (d * d))) ∧ ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (d * d))).eraseDups.length = 4 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "95bfa2f5-30af-8c12-ab74-ac19ed93fcaa"
+  },
+  {
+    "key": "lean_imagined_cube_carries_all_onto_cubes",
+    "name": "lean imagined.lean: cube_carries_all_onto_cubes — [0,1,2,3,4,5,6,7,8].all (fun d => [0, 1, 8].contains (m9 (d * d * d))) ∧ ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (d * d * d))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "614b5517-fe8e-8adc-91c6-e29fdf91517d"
+  },
+  {
+    "key": "lean_imagined_sextuple_carries_cubes_onto_triad",
+    "name": "lean imagined.lean: sextuple_carries_cubes_onto_triad — [0, 1, 8].all (fun d => [3, 6, 0].contains (m9 (6 * d))) ∧ ([0, 1, 8].map (fun d => m9 (6 * d))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8d1758c9-e43d-804d-bf53-92286d30e662"
+  },
+  {
+    "key": "lean_energy_the_gases_are_eighteen_hundred_times_the_water_they_came_from",
+    "name": "lean energy.lean: the_gases_are_eighteen_hundred_times_the_water_they_came_from — molH2 * mLperMol / 1000 = 11117 ∧ molO2 * mLperMol / 1000 = 5558 ∧ (molH2 * mLperMol / 1000 + molO2 * mLperMol / 1000) / 9 = 1852 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "033b4a15-d8ee-8506-939c-a8ccbb3e2888"
+  },
+  {
+    "key": "lean_energy_two_thirds_of_the_volume_carries_a_ninth_of_the_mass",
+    "name": "lean energy.lean: two_thirds_of_the_volume_carries_a_ninth_of_the_mass — molH2 * 100 / (molH2 + molO2) = 66 ∧ (2 * mgH2) * 100 / (2 * mgH2O) = 11 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f8780f77-c9ef-885b-bf7c-41d9e25555fa"
+  },
+  {
+    "key": "lean_energy_uncompressed_hydrogen_is_three_thousandfold_worse_by_volume",
+    "name": "lean energy.lean: uncompressed_hydrogen_is_three_thousandfold_worse_by_volume — whPerKgH2 * 100 / (molH2 * mLperMol / 1000) = 299 ∧ petrolWhL * 100 / 299 = 3244 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9c0e0943-6e5a-8989-b048-611a90ff1895"
+  },
+  {
+    "key": "lean_energy_even_at_seven_hundred_bar_it_is_sevenfold_worse_by_volume",
+    "name": "lean energy.lean: even_at_seven_hundred_bar_it_is_sevenfold_worse_by_volume — 42 * whPerKgH2 / 1000 = 1398 ∧ petrolWhL / 1398 = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a1413809-d6e9-820e-92c4-129ffb67272d"
+  },
+  {
+    "key": "lean_energy_each_delivered_kilowatt_hour_costs_four_and_cycles_a_litre",
+    "name": "lean energy.lean: each_delivered_kilowatt_hour_costs_four_and_cycles_a_litre — splitCost * 100 / burnYield = 433 ∧ 9 * 1000 / (burnYield / 1000) = 750 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "574b2b86-71c5-8424-9cb9-b41f1f6744ed"
+  },
+  {
+    "key": "lean_energy_three_quarters_of_the_input_leaves_as_heat",
+    "name": "lean energy.lean: three_quarters_of_the_input_leaves_as_heat — splitCost - burnYield = 40000 ∧ (splitCost - burnYield) * 100 / splitCost = 76 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "35c25641-5b8d-8825-aa5f-94f0e2792339"
+  },
+  {
+    "key": "lean_energy_what_the_feedwater_leaves_behind_decides_the_maintenance",
+    "name": "lean energy.lean: what_the_feedwater_leaves_behind_decides_the_maintenance — 100 * tdsSeawater / 1000 = 3500 ∧ 100 * tdsTapWater / 1000 = 5 ∧ tdsSeawater / tdsTapWater = 700 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2c3cf0b0-2ea7-80c7-916f-cdbefc6ac125"
   }
 ]

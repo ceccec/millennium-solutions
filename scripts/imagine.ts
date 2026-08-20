@@ -50,6 +50,11 @@ const SETS: { id: string; lean: string; say: string; s: number[] }[] = [
   { id: 'tetA',  lean: '[1, 4, 7]',          say: 'the first tetrahedron',    s: [1, 4, 7] },
   { id: 'tetB',  lean: '[2, 5, 8]',          say: 'the second tetrahedron',   s: [2, 5, 8] },
   { id: 'all',   lean: '[0,1,2,3,4,5,6,7,8]',say: 'the whole ring',           s: [0, 1, 2, 3, 4, 5, 6, 7, 8] },
+  // the residues that are squares, and the ones that are cubes — the images of the two maps already in the
+  // table above. A map's image is a structure in its own right, and asking what the OTHER maps do to it is a
+  // question the generator could always have asked and was never given the vocabulary for.
+  { id: 'squares', lean: '[0, 1, 4, 7]', say: 'the squares mod nine', s: [0, 1, 4, 7] },
+  { id: 'cubes',   lean: '[0, 1, 8]',    say: 'the cubes mod nine',   s: [0, 1, 8] },
 ]
 
 type Cand = { key: string; prop: string; say: string; kind: string; holds: boolean }

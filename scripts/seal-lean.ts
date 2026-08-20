@@ -21,7 +21,7 @@ const DIR = 'src/proof', LEDGER = 'src/proof/discovered.json'
 try { execSync('node scripts/lean.ts', { stdio: 'pipe' }) }
 catch (e) { console.error('✗ the Lean layer does not verify — nothing sealed\n' + String((e as { stdout?: Buffer }).stdout ?? '')); process.exit(1) }
 
-const ledger = JSON.parse(readFileSync(LEDGER, 'utf8')) as { key: string; name: string; receipt: string }[]
+const ledger = JSON.parse(readFileSync(LEDGER, 'utf8')) as { key: string; name: string; receipt: string; revoked?: boolean; reason?: string }[]
 const known = new Set(ledger.map((e) => e.key))
 const revoked = new Set((JSON.parse(readFileSync(`${DIR}/revoked.json`, 'utf8')) as { key: string }[]).map((r) => r.key))
 
@@ -46,6 +46,39 @@ const fresh = algebraic.filter((t) => !known.has(t.key) && !revoked.has(t.key))
 console.log(`lean theorems: ${found.length} · algebraic (by decide): ${algebraic.length} · declarations (rfl, not sealed): ${declared.length}`)
 for (const d of declared) console.log(`    excluded: ${d.key.padEnd(46)} ${d.tactic} — a declaration, not algebra`)
 console.log(`already sealed: ${algebraic.length - fresh.length} · fresh: ${fresh.length}`)
+
+// ── ORPHANS — a sealed theorem whose source is GONE. Sealing was one-way: it noticed new theorems and never
+// noticed disappearing ones, so deleting or renaming a proof left its key standing in the ledger as though
+// the kernel still checked it every run. Nothing did. That is the same defect as a page claiming to be
+// re-verified when it is not, one layer down and harder to see. The ledger is append-only, so an orphan is
+// REVOKED IN PLACE with its reason, never deleted — and the build stops until that is done, because a key
+// nobody can recompute is exactly what the deposit promises cannot exist.
+// Matched on the THEOREM IDENTIFIER, not the composed key. Older entries were sealed as `lean_<theorem>` and
+// current ones as `lean_<namespace>_<theorem>`; comparing whole keys called 25 living theorems orphans on the
+// first run. A check that cannot survive its own naming history is worse than no check — it would have taught
+// the next person to ignore it.
+const sealedLean = ledger.filter((e) => !e.revoked && e.key.startsWith('lean_'))
+const liveNames = found.map((t) => t.name)
+const orphans = sealedLean.filter((e) => {
+  const rest = e.key.slice('lean_'.length)
+  return !liveNames.some((n) => rest === n || rest.endsWith('_' + n) || rest.endsWith('.' + n))
+})
+if (orphans.length) {
+  console.log(`\n✗ ${orphans.length} sealed theorem(s) have NO source — the kernel has not checked these on any recent run:`)
+  for (const o of orphans) console.log('    ' + o.key)
+  if (process.argv.includes('--revoke-orphans')) {
+    for (const o of orphans) {
+      const e = ledger.find((x) => x.key === o.key)!
+      e.revoked = true
+      e.reason = 'orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand.'
+    }
+    writeFileSync('src/proof/discovered.json', JSON.stringify(ledger, null, 2) + '\n')
+    console.log(`  ✓ revoked ${orphans.length} in place — receipts kept, claims withdrawn`)
+  } else {
+    console.log('  run with --revoke-orphans to withdraw them (receipts kept, chain intact)')
+    process.exit(1)
+  }
+}
 
 if (process.argv.includes('--seal') && fresh.length) {
   let prev = ledger[ledger.length - 1].receipt

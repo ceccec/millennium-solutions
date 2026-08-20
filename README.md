@@ -11,12 +11,12 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 263 theorems across 18 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `6449af3b-2b71-87cd-a3c8-117f9cfa1d05`</sub>
-- 255 of those 263 theorems close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
-  <sub>SEALED · `6d195472-5203-822b-85a6-a8eac38ebdc3`</sub>
-- 280 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `c7f46277-3794-8931-b3e8-48a889617c7a`</sub>
+- The formal layer holds 302 theorems across 18 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `8019bbc4-f7b8-87de-a312-37269215c712`</sub>
+- 294 of those 302 theorems close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
+  <sub>SEALED · `bb8a1815-a3e3-8802-94ac-d3fe689698f9`</sub>
+- 320 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `4287d8e6-3167-8744-a8a3-341d2d44e7ab`</sub>
 
 ## 2 · The ring
 
@@ -39,10 +39,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 2144 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `053c5756-dedd-8dc2-ab9c-56f473bed77f`</sub>
-- The count is an exact multiple of eight — 2144 is 268 octaves with no remainder.
-  <sub>SEALED · `a1c3aae3-29a1-84ed-b5af-f80bcd56024d`</sub>
+- The ledger records 2184 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `2b8f7248-b671-8bb4-a787-baf12fe6f4fe`</sub>
+- The count is an exact multiple of eight — 2184 is 273 octaves with no remainder.
+  <sub>SEALED · `af908b29-f9f7-81e2-9dd4-335a71ec81f9`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -75,4 +75,4 @@ node scripts/pages.ts              # regenerate this file and the homepage
 
 ---
 
-*14 claims, all verified · 263 Lean theorems · 2144 ledger entries · trial root `7541368b-71f5-8c16-93f3-89cfc786c73d` · integrity, not truth · 0/7*
+*14 claims, all verified · 302 Lean theorems · 2184 ledger entries · trial root `5339185a-c6cb-84a7-a3f1-0225f8cde9d1` · integrity, not truth · 0/7*
