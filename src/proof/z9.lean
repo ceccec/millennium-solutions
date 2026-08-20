@@ -1,3 +1,5 @@
+-- title: The ring ℤ/9
+-- wing: the ring
 -- The ℤ/9 families — mechanically generated theorems, proved by decide rather than tested in TypeScript.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --

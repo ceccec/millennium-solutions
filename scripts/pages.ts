@@ -14,6 +14,7 @@
 // -true test is refused outright. The generator exits non-zero and writes nothing if any claim fails.
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs'
 import { CLAIMS as REGISTERED } from '../src/claims/index.ts'
+import { all as leanDocs } from './leandoc.ts'
 import { adjudicate } from './adjudicate.ts'
 import { computes } from './honesty-gate.ts'
 import { toUuid, merkleFold } from '../src/0/index.ts'
@@ -204,6 +205,28 @@ const body = (site: boolean) => {
   md += `| cases decided | theorem | file |\n|---:|---|---|\n`
   for (const r of ranked.slice(0, 8)) md += `| ${r.cases.toLocaleString('en-US')} | \`${r.name}\` | \`${r.file}\` |\n`
   md += `\nThe largest domain settled here is **${ranked[0].cases.toLocaleString('en-US')} cases**, and it is finite — as every\nentry in this ledger is, because \`by decide\` works by exhausting a domain and an infinite one cannot be\nexhausted. Each of the seven Clay conjectures ranges over an infinite domain. So a proof of one could not\nappear in this table however high it ranked, and none does. That is not a disclaimer added underneath the\nresults; it is the result, read off the same arithmetic that produced the table.\n\n`
+  // ── THE WINGS, WRITTEN BY THE PROOFS THEMSELVES ────────────────────────────────────────────────────────
+  // Every line below is read out of src/proof: the frontmatter names the wing and the title, the header
+  // comment is the summary, and each theorem's own comment is its description. Nothing here is authored in
+  // TypeScript, which is the point — a second place describing the deposit is a second place to drift, and
+  // every drift found in this repo came from exactly that. A file with no summary says so; a theorem with no
+  // comment is listed bare rather than given a generated sentence, because an invented description is worse
+  // than an absent one.
+  const docs = leanDocs()
+  const wings = [...new Set(docs.map((d) => d.wing || 'unfiled'))]
+  md += `## ${ORBIT[4] ?? 7} · The proofs, as they document themselves\n\n`
+  md += `${docs.length} Lean files in ${wings.length} wings, ${docs.reduce((n, d) => n + d.theorems.length, 0)} theorems. The prose in this section is read out of the\nsources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits\nthis page; there is nowhere else to keep the description in step.\n\n`
+  for (const w of wings) {
+    md += `### ${w}\n\n`
+    for (const d of docs.filter((x) => (x.wing || 'unfiled') === w)) {
+      const first = d.summary.split(/\n\n/)[0].replace(/\n/g, ' ').trim()
+      md += `**${d.title}** — \`${d.file}\`, ${d.theorems.length} theorem(s)`
+      md += first ? `. ${first}\n\n` : ` — *no summary in the source*\n\n`
+    }
+  }
+  const undoc = docs.flatMap((d) => d.theorems).filter((t) => !t.doc).length
+  md += `${undoc} of ${docs.reduce((n, d) => n + d.theorems.length, 0)} theorems carry no comment of their own and are shown here as the gap they are, not\nfilled with a template.\n\n`
+
   md += `## What is deliberately absent\n\nNo sentence above claims a Millennium problem settled, that the correspondence with the Clay set means\nanything about those conjectures, or that the gate can tell truth from falsehood. Those sentences are missing\nbecause no test was written that would seal them.\n\n`
   md += site
     ? `## Read\n\n[The seven, one theorem per problem](/theorem/lean_millenniumfloor_riemann_reflection_and_heart) · [the ledger](/proofs) · [the trial](/verify)\n\n`

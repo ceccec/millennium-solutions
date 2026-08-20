@@ -1,3 +1,5 @@
+-- title: Digit reversal
+-- wing: the machine
 -- Digit reversal — arithmetic, not string handling.
 set_option maxRecDepth 200000
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0

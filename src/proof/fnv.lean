@@ -1,4 +1,6 @@
 set_option maxRecDepth 1000000
+-- title: FNV-1a, the address function
+-- wing: the address
 -- FNV-1a, ported to Lean — the hash the whole deposit's addressing rests on.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --

@@ -1,5 +1,7 @@
 import Z9
 set_option maxRecDepth 8000000
+-- title: The merkaba
+-- wing: the ring
 -- The merkaba, as THIS deposit constructs it — ported to Lean so it stands on the kernel instead of on a
 -- TypeScript test. Six entries under this name were revoked as dirty; every one of them that states finite
 -- algebra is re-proved here, and the two that do not (a cosine field, a bond angle in degrees) are absent on

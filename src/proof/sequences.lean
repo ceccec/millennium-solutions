@@ -1,5 +1,7 @@
 import Fnv
 set_option maxRecDepth 4000000
+-- title: Sequences
+-- wing: the ring
 -- Sequences and identities — Cassini, Lucas, Brahmagupta–Fibonacci, and Pascal mod two.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --

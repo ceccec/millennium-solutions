@@ -1,3 +1,5 @@
+-- title: Families over the ring
+-- wing: the ring
 -- The families, quantified. Proving at scale.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --

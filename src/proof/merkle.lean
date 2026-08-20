@@ -1,5 +1,7 @@
 import Address
 set_option maxRecDepth 8000000
+-- title: The fold
+-- wing: the address
 -- The fold, ported to Lean — merge, merkleFold, and the order-independence the deposit calls its receipt.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --

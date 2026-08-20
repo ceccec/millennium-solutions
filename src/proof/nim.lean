@@ -1,6 +1,8 @@
 import Fnv
 set_option maxRecDepth 2000000
 set_option maxHeartbeats 2000000
+-- title: Nim
+-- wing: the machine
 -- Nim — Bouton's theorem and Sprague–Grundy, decided.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --

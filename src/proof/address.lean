@@ -1,5 +1,7 @@
 import Fnv
 set_option maxRecDepth 4000000
+-- title: Addressing
+-- wing: the address
 -- The content-address itself, ported to Lean — toUuid, merge, the fold, and their properties.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --

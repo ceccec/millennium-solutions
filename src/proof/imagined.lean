@@ -1,5 +1,7 @@
 import Z9
 set_option maxRecDepth 8000000
+-- title: Imagined
+-- wing: the machine
 -- IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets
 -- statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that
 -- also holds for all its siblings. A property true of everything names nothing. What is left is what the

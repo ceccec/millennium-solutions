@@ -67,7 +67,8 @@
     "lean": "node scripts/lean.ts",
     "imagine": "node scripts/imagine.ts",
     "memory": "node scripts/memory.ts",
-    "fold": "node scripts/fold.ts"
+    "fold": "node scripts/fold.ts",
+    "leandoc": "node scripts/leandoc.ts"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",

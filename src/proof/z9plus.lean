@@ -1,5 +1,7 @@
 import Reversal
 set_option maxRecDepth 4000000
+-- title: Entanglement in the ring
+-- wing: the ring
 -- ℤ/9, the second batch — powers, digital roots, primitive roots, and the orbit's period.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --
