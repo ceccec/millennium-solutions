@@ -12,13 +12,23 @@ const receipt = computed(() => params.value?.receipt || '')
 const hues = computed(() => params.value?.hues || '')
 const name = computed(() => params.value?.name || '')
 const isLean = computed(() => !!params.value?.lean)
+// A withdrawn theorem keeps its URL and its receipt — the record is append-only — but every standing claim
+// on this page is false of it, so they are suppressed and the withdrawal is stated instead.
+const isRevoked = computed(() => params.value?.revoked === true)
+// Sealed FROM Lean: the kernel checked it over the whole domain. The "computed by exhaustion in
+// discover.ts" story below is true of the enumerated entries and false of these.
+const isKernel = computed(() => String(params.value?.key || '').startsWith('lean_'))
 // microdata → speech: the frame's narration in the infinite movie (the ledger, read aloud)
 const speech = computed(() => isLean.value
   ? (params.value?.name || 'A theorem') + '. A Lean 4 fact, machine-checked and axiom-free, computed from the sequence — adjacent to a Clay problem, not the conjecture. Integrity, not truth. Zero of seven.'
-  : (params.value?.name || 'A theorem') + '. Achieved by exhaustive computation, gate-checked, receipted, and re-verified on every build. Integrity, not truth. Zero of seven.')
+  : isRevoked.value
+    ? (params.value?.name || 'A theorem') + '. WITHDRAWN. This entry no longer stands. It keeps its receipt in the append-only record, and it is not a live theorem of this deposit. Integrity, not truth. Zero of seven.'
+    : (params.value?.name || 'A theorem') + '. Achieved by exhaustive computation, gate-checked, receipted, and re-verified on every build. Integrity, not truth. Zero of seven.')
 const desc = computed(() => isLean.value
   ? 'A Lean 4 theorem computed from the ℤ/9 doubling sequence, machine-checked sorry-free and axiom-free — adjacent to a Clay Millennium Problem, and not the conjecture. Integrity, not truth. entails → 0/7.'
-  : 'Achieved by exhaustive computation over a finite domain in scripts/discover.ts, gate-checked against the honesty floor, receipted and chained, and re-verified on every build. Integrity, not truth. entails → 0/7.')
+  : isRevoked.value
+    ? 'WITHDRAWN — this entry no longer stands as a theorem of the deposit. Its receipt remains in the append-only record so the chain still verifies, but it is not re-verified on every build and must not be cited. Integrity, not truth. entails → 0/7.'
+    : 'Achieved by exhaustive computation over a finite domain in scripts/discover.ts, gate-checked against the honesty floor, receipted and chained, and re-verified on every build. Integrity, not truth. entails → 0/7.')
 </script>
 
 # {{ $params.name }}
@@ -36,7 +46,8 @@ const desc = computed(() => isLean.value
 
 - **theorem key** · `{{ $params.key }}`
 - **content-address (receipt)** · `{{ $params.receipt }}`
-- **status** · decidable, re-verified on every build — recomputes from `src/`
+- **status** · <span v-if="isRevoked">**WITHDRAWN — no longer stands, and must not be cited.** The receipt above is still in the append-only record and still verifies as a link in the chain; the statement is not a live theorem of this deposit.</span><span v-else>decidable, re-verified on every build — recomputes from <code>src/</code></span>
+- <span v-if="isRevoked">**why it was withdrawn** · {{ $params.reason }}</span><span v-else>**entails** · <code>0/7</code></span>
 
 </div>
 
@@ -60,7 +71,35 @@ const desc = computed(() => isLean.value
 The **7D rosetta-ray vortex** is plotted from this theorem's microdata (its content-address); the slowly rotating **hero background** is computed from its seven surrounding theorems' hues — the mesh, seen locally, in analog rotation of dimensions. Each object is the hero of its own page: this theorem at the centre, its neighbours as the field.
 
 <!-- ── the discovery-ledger theorems: computed by exhaustion in discover.ts ── -->
-<div v-if="!isLean">
+<div v-if="isRevoked">
+
+## Why this page still exists
+
+This entry was **withdrawn**. It is kept, with its receipt, because the ledger is **append-only**: deleting a
+link would break the chain that lets anyone verify every other entry, and rewriting a receipt would be tamper.
+So the URL stays resolvable and the record stays honest about its own history — what changed is that this
+statement is no longer offered as a theorem, and nothing in the deposit may cite it.
+
+The live record: [the standing theorems](/CHALLENGES) · [the ledger](/proofs). Verify the chain yourself with
+`npm run forensics`. A content-address proves integrity, not truth. `entails → 0/7`.
+
+</div>
+
+<div v-if="isKernel && !isRevoked">
+
+## How it was achieved
+
+This is a **Lean 4 theorem**, checked by the kernel over its whole domain — `sorry`-free and axiom-free, which
+`scripts/lean.ts` re-verifies per theorem on every run. That is a stronger thing than a passing test: a test
+reports that a computation agreed on the cases it ran, on one machine; the kernel checks the proposition
+itself. It was then receipted and chained append-only by `scripts/seal-lean.ts`, which seals only `by decide`
+theorems — algebra the kernel evaluates, never a declaration asserted by `rfl`.
+
+The source: [the Lean proofs](https://github.com/ceccec/millennium-solutions/tree/main/src/proof) · [the standing theorems](/CHALLENGES). Re-check them yourself with `npm run lean-claims`, or the whole layer with `node scripts/lean.ts`. A content-address proves integrity, not truth. `entails → 0/7`.
+
+</div>
+
+<div v-if="!isLean && !isRevoked && !isKernel">
 
 ## How it was achieved
 

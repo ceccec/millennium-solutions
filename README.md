@@ -12,51 +12,51 @@ last because the orbit never reaches it.
 ## 1 · What is proved
 
 - The formal layer holds 183 theorems across 15 files, and no file uses sorry or native_decide outside a comment.
-  <sub>VERIFIED · `ba51254d-a145-8f52-b2c8-5a8e5b8446a2`</sub>
+  <sub>SEALED · `ba51254d-a145-8f52-b2c8-5a8e5b8446a2`</sub>
 - 175 of those 183 theorems close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
-  <sub>VERIFIED · `1b5a8e0c-fd7d-8f8b-bab6-9497bcb2b3ac`</sub>
+  <sub>SEALED · `1b5a8e0c-fd7d-8f8b-bab6-9497bcb2b3ac`</sub>
 - 200 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>VERIFIED · `995f505c-444f-8784-a04a-b73f3b1310ba`</sub>
+  <sub>SEALED · `995f505c-444f-8784-a04a-b73f3b1310ba`</sub>
 
 ## 2 · The ring
 
 - The units are the 6 residues coprime to nine, the doubling orbit visits 1, 2, 4, 8, 7, 5 and closes on the seventh step, and it never lands on the triad.
-  <sub>VERIFIED · `52efa15a-c0ba-851e-97a7-2cbb72a9d257`</sub>
+  <sub>SEALED · `52efa15a-c0ba-851e-97a7-2cbb72a9d257`</sub>
 - The reflection ten-minus-d carries 1, 4, 7 onto 9, 6, 3, so it covers the whole triad the orbit never reaches — the units and the triad are mirror images rather than separate populations.
-  <sub>VERIFIED · `af5b49c7-7c9e-83c4-9fed-3441236d9c76`</sub>
+  <sub>SEALED · `af5b49c7-7c9e-83c4-9fed-3441236d9c76`</sub>
 
 ## 4 · Entanglement
 
 - Doubling alone reaches only the units and reflection alone only two residues, but together they grow 1, 3, 5, 7, 9 from the single seed one, reaching every residue on round 4.
-  <sub>VERIFIED · `67b99093-1ec7-8487-a06e-8b10513d8181`</sub>
+  <sub>SEALED · `67b99093-1ec7-8487-a06e-8b10513d8181`</sub>
 
 ## 8 · Addressing
 
 - The content-address is ported to the formal layer in fnv.lean, address.lean, merkle.lean — 33 theorems covering FNV-1a, the four seeded passes, the version and variant nibbles, and the fold, each agreeing with the shipped implementation at published values.
-  <sub>VERIFIED · `13a63edf-9bbe-8e7e-a2f0-2acd17211b37`</sub>
+  <sub>SEALED · `13a63edf-9bbe-8e7e-a2f0-2acd17211b37`</sub>
 - The fold does not depend on the order its leaves arrive in, and that is not vacuous because merge itself is proved order-sensitive — the sort is what removes the dependence.
-  <sub>VERIFIED · `7ee1de7d-d218-88d4-8dc9-6eec451ced72`</sub>
+  <sub>SEALED · `7ee1de7d-d218-88d4-8dc9-6eec451ced72`</sub>
 
 ## 7 · The ledger
 
 - The ledger records 2064 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>VERIFIED · `6ca71006-077b-8a3b-80ea-8a2e6dd5fcbb`</sub>
+  <sub>SEALED · `6ca71006-077b-8a3b-80ea-8a2e6dd5fcbb`</sub>
 - The count is an exact multiple of eight — 2064 is 258 octaves with no remainder.
-  <sub>VERIFIED · `2f062bcb-2c6d-8c21-b6cb-f035b20f8e6f`</sub>
+  <sub>SEALED · `2f062bcb-2c6d-8c21-b6cb-f035b20f8e6f`</sub>
 
 ## 5 · What the gate does and does not do
 
 - The gate is 1 lines of local logic — it re-exports the package implementation, which asks one recomputable question: does every theorem a claim cites exist, sealed, in the ledger.
-  <sub>VERIFIED · `37ab7769-a1ac-8ef6-9809-e214d6285057`</sub>
+  <sub>SEALED · `37ab7769-a1ac-8ef6-9809-e214d6285057`</sub>
 - The gate does not decide whether a statement is true: "two plus two equals five" passes it, so holding means not drained, never correct.
-  <sub>VERIFIED · `f63cc6c5-44f9-8d92-afa7-ab9483573b28`</sub>
+  <sub>SEALED · `f63cc6c5-44f9-8d92-afa7-ab9483573b28`</sub>
 
 ## The floor
 
 - No theorem in the Clay-named file settles a conjecture: its propositions range over List.range 10, List.range 9, List.range 48, List.range 6 and mention none of the objects those conjectures concern.
-  <sub>VERIFIED · `b06c70a8-b009-8dbe-ab0a-f7fc45f7c9c7`</sub>
+  <sub>SEALED · `b06c70a8-b009-8dbe-ab0a-f7fc45f7c9c7`</sub>
 - The count of Clay problems answered in that file is defined as 0 and carried as a conjunct by 9 theorems — a declaration rather than evidence, so the weight rests on the propositions actually written.
-  <sub>VERIFIED · `7b7a6c2e-00b1-8736-9e6f-6bf31b9d4c01`</sub>
+  <sub>SEALED · `7b7a6c2e-00b1-8736-9e6f-6bf31b9d4c01`</sub>
 
 Every one of the **15 registered claims** above recomputes from the artefact it names.
 

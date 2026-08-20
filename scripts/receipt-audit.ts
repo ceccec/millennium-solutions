@@ -14,8 +14,21 @@ import { computes } from './honesty-gate.ts'
 import { CANDIDATES } from './discover.ts'
 
 const byKey = new Map(CANDIDATES.map((c) => [c.key, c])) // for verifying invited theorems still hold
+// A receipt is IMMUTABLE — rewriting one is tamper — so when a theorem it invited is later withdrawn, the
+// receipt cannot be corrected and must not be called FALSE. FALSE means forgery: the uuid does not match its
+// message, the filename lies, the observer is missing. That is a different accusation from "a claim this
+// receipt referenced was withdrawn afterwards", and collapsing the two would either brand honest evidence as
+// forged or teach the build to shrug at forgery. They are separated:
+//   invited key live  + test true  → backing holds
+//   invited key live  + test FALSE → FALSE (a standing theorem stopped holding — a real regression)
+//   invited key absent             → FALSE (it invited something that never existed)
+//   invited key REVOKED            → WITHDRAWN BACKING — reported and counted, never fatal, no remedy exists
+const ledgerState = new Map(
+  (JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) as { key: string; revoked?: boolean }[])
+    .map((e) => [e.key, e.revoked === true]))
 const dir = 'src/receipts'
 let bad = 0
+let stale = 0
 
 // COMPLETENESS — a MISSING receipt is a traitor: destroyed evidence. Every git-tracked receipt must
 // still be present on disk. Evidence is append-only; deletion (git rm, manual) is the traitor act.
@@ -36,13 +49,33 @@ for (const f of files) {
   const c3 = typeof r.message === 'string' && r.message.length > 0 && computes(r.message).binary === 1
   const c4 = typeof r.agent === 'string' && r.agent.length > 0 && typeof r.role === 'string' && r.role.length > 0
   // c5 — every INVITED theorem must exist in the ledger AND still hold (ungameable backing).
-  const c5 = !r.invites || r.invites.every((k) => { const t = byKey.get(k); return !!t && t.test() })
+  const withdrawn: string[] = []
+  const broken: string[] = []
+  for (const k of r.invites ?? []) {
+    const t = byKey.get(k)
+    let held = false
+    try { held = !!t && t.test() === true } catch { held = false }
+    if (held) continue
+    if (ledgerState.get(k) === true) withdrawn.push(k)   // documented revocation — not the receipt's fault
+    else broken.push(k)                                  // live-but-failing, or never existed
+  }
+  const c5 = broken.length === 0
   const ok = c1 && c2 && c3 && c4 && c5
   const back = r.invites && r.invites.length ? ' · backed by ' + r.invites.length + ' theorem(s)' : ''
-  console.log((ok ? '  ✓ ' : '  ✗ FALSE ') + f.slice(0, 18) + '…' + (ok ? '  ' + r.agent + ' as ' + r.role + back : ' — uuid:' + c1 + ' name:' + c2 + ' floor:' + c3 + ' observer:' + c4 + ' invites:' + c5))
-  if (ok) roots.push(r.uuid!); else bad++
+  if (!ok) {
+    console.log('  ✗ FALSE ' + f.slice(0, 18) + '… — uuid:' + c1 + ' name:' + c2 + ' floor:' + c3 + ' observer:' + c4 + (broken.length ? ' · invited but not standing: ' + broken.join(', ') : ''))
+    bad++
+  } else if (withdrawn.length) {
+    console.log('  · WITHDRAWN BACKING ' + f.slice(0, 18) + '…  ' + r.agent + ' as ' + r.role + ' — the receipt is authentic; ' + withdrawn.length + ' theorem(s) it invited were withdrawn after it was written: ' + withdrawn.join(', '))
+    stale++
+    roots.push(r.uuid!)
+  } else {
+    console.log('  ✓ ' + f.slice(0, 18) + '…  ' + r.agent + ' as ' + r.role + back)
+    roots.push(r.uuid!)
+  }
 }
+const staleNote = stale ? '\n  · ' + stale + ' receipt(s) carry WITHDRAWN BACKING — authentic evidence whose invited theorems were later withdrawn. A receipt is immutable, so there is no remedy and none is pretended: the record says what it says, and what it leaned on is gone.' : ''
 console.log(bad
-  ? '\n✗ ' + bad + ' of ' + files.length + ' receipt(s) FALSE — cross-check failed; the observer experience is invalid'
-  : '\n✓ ' + files.length + ' receipt(s) cross-check (uuid = core message · payload names observer + role) → root ' + (roots.length ? merkleFold(roots).slice(0, 13) + '…' : 'none'))
+  ? '\n✗ ' + bad + ' of ' + files.length + ' receipt(s) FALSE — cross-check failed; the observer experience is invalid' + staleNote
+  : '\n✓ ' + files.length + ' receipt(s) cross-check (uuid = core message · payload names observer + role) → root ' + (roots.length ? merkleFold(roots).slice(0, 13) + '…' : 'none') + staleNote)
 process.exit(bad ? 1 : 0)

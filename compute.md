@@ -94,6 +94,7 @@ import { report as infinite } from './src/8/infinite'
 import { report as claims } from './src/claims/index'
 import { report as imprint } from './src/0/imprint'
 import { report as boundariesFloor } from './src/honesty/boundaries'
+import { report as prove } from './src/prove/index'
 </script>
 
 > Descend: **page → digit → module → its computation → the floor.** Fold into any digit,
@@ -148,6 +149,14 @@ digit to its partner (fixed point **5**), so the folders below are laid out arou
 ### The theorem · `src/the/theorem/index.ts`
 
 <pre>{{ theTheorem() }}</pre>
+
+### The prover · `src/prove/index.ts`
+
+Renders the deposit's own test vocabulary into Lean for the kernel to check, and reports the claims it
+**cannot** render as needing an author rather than faking them. The second list is the honest half: a prover
+that silently skipped what it could not translate would look complete and be worthless.
+
+<pre>{{ prove() }}</pre>
 
 ### The game · `src/the/game/index.ts`
 

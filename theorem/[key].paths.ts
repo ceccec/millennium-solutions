@@ -75,11 +75,19 @@ const extractLean = (key: string): string => {
 export default {
   paths() {
     // 1 · the discovery ledger — unchanged
-    const ledger: { key: string; name: string; receipt: string }[] =
+    const ledger: { key: string; name: string; receipt: string; revoked?: boolean; reason?: string }[] =
       JSON.parse(readFileSync('src/proof/discovered.json', 'utf8'))
     const N = ledger.length
+    // A REVOKED ENTRY KEEPS ITS PAGE AND MUST SAY SO. The record is append-only, so the URL stays resolvable
+    // and the receipt stays checkable — but the template's standing claims ("re-verified on every build", "if
+    // it ever stopped holding the build would fail") are FALSE of an entry that stopped holding. The page
+    // carries the revocation and its reason, and the template suppresses those claims. A page that presents a
+    // withdrawn theorem as live is the exact overclaim this deposit exists to refuse.
     const discovered = ledger.map((e, i) => ({
-      params: { key: e.key, name: e.name, receipt: e.receipt, hues: withHues(ledger, i, N) },
+      params: {
+        key: e.key, name: e.name, receipt: e.receipt, hues: withHues(ledger, i, N),
+        revoked: e.revoked === true, reason: e.reason ?? '',
+      },
     }))
 
     // 2 · the seven Millennium-floor theorems — Lean proof (from index.lean) + qualified outlet, one template

@@ -100,10 +100,19 @@ export default defineConfig({
   transformPageData(pageData) {
     // Each object is the hero of its own page: a dynamic /theorem/<key> page takes its OG title and
     // description from its own params — the theorem's name, and how it was achieved.
-    const p = (pageData as { params?: { key?: string; name?: string; receipt?: string; problem?: string; outletName?: string } }).params
+    const p = (pageData as { params?: { key?: string; name?: string; receipt?: string; problem?: string; outletName?: string; revoked?: boolean; reason?: string } }).params
     if (p?.key) {
       pageData.title = p.name
-      pageData.description = p.problem
+      // A WITHDRAWN ENTRY MUST NOT BE DESCRIBED AS STANDING. The OG/meta description is what a search result
+      // and a shared link show — the one line most people ever read — so it is the last place a stale claim
+      // may survive. An entry that no longer holds says so here first.
+      pageData.description = p.revoked
+        ? 'WITHDRAWN — this entry no longer stands as a theorem of the deposit and must not be cited. Its receipt (' + p.receipt + ') remains in the append-only record so the chain still verifies, but the statement is not re-verified on every build. Integrity, not truth. entails → 0/7.'
+        : p.key.startsWith('lean_')
+        // Established by the Lean kernel, not by enumeration in discover.ts. Saying "computed by exhaustion"
+        // of a machine-checked proof misdescribes the strongest evidence in the deposit as the weaker kind.
+        ? 'A Lean 4 theorem, machine-checked sorry-free and axiom-free by the kernel over its whole domain — not sampled, and not a TypeScript test that agreed once (content-address ' + p.receipt + '). A standing theorem of the ℤ/9 ledger. Integrity, not truth. entails → 0/7.'
+        : p.problem
         ? 'A Lean 4 theorem computed from the ℤ/9 doubling sequence, machine-checked sorry-free and axiom-free (content-address ' + p.receipt + '). Adjacent to the Clay problem “' + p.problem + '” — and NOT the conjecture. Reference: ' + p.outletName + '. Integrity, not truth. entails → 0/7.'
         : 'Achieved by exhaustive computation over a finite domain in scripts/discover.ts, gate-checked against the honesty floor, receipted and chained, and re-verified on every build (content-address ' + p.receipt + '). A decidable fact in the ℤ/9 ledger — integrity, not truth. entails → 0/7.'
     }
@@ -174,6 +183,7 @@ export default defineConfig({
         { text: 'Real advantage', link: '/speedup' },
         { text: 'Verify', link: '/verify' },
         { text: 'Solutions (adjudicated)', link: '/solutions' },
+        { text: 'The public trial', link: '/TRIAL' },
         { text: L.nav.decode, link: '/SEQUENCE-DECODE' },
         { text: 'Physics scales', link: '/PHYSICS-SCALES' },
       ] },
@@ -234,6 +244,7 @@ export default defineConfig({
           { text: 'Examples (live)', link: '/examples' },
           { text: 'Verify (live app)', link: '/verify' },
           { text: 'Solutions (adjudicated)', link: '/solutions' },
+          { text: 'The public trial', link: '/TRIAL' },
         ],
       },
       {
