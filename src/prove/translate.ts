@@ -116,6 +116,21 @@ function loopToMap(b: string): string | null {
   return `const ${name} = ${list}.map (fun ${v} => ${expr.trim()}); ${after.trim()}`
 }
 
+/** A NESTED COUNTING LOOP IS A COUNT OVER A PRODUCT. `let a = 0, b = 0; for (r) for (c) COND ? a++ : b++`
+ *  walks every (r,c) pair once and sorts each into one of two buckets, which is exactly
+ *  `((range N).flatMap fun r => (range M).map fun c => COND)` counted by truth — same pairs, same order, and
+ *  the two totals sum to the product because every pair lands in exactly one bucket. Only the literal-bounded,
+ *  two-counter, single-ternary form is rewritten: a break, a third counter or a condition on the loop bounds
+ *  is a different program and stays refused. */
+function countingLoop(b: string): string | null {
+  const m = b.match(/^let\s+([A-Za-z_]\w*)\s*=\s*0\s*,\s*([A-Za-z_]\w*)\s*=\s*0\s*;\s*for\s*\(\s*(?:let|var)\s+([A-Za-z_]\w*)\s*=\s*0\s*;\s*\3\s*<\s*(\d+)\s*;\s*\3\+\+\s*\)\s*for\s*\(\s*(?:let|var)\s+([A-Za-z_]\w*)\s*=\s*0\s*;\s*\5\s*<\s*(\d+)\s*;\s*\5\+\+\s*\)\s*(.+?)\s*\?\s*\1\+\+\s*:\s*\2\+\+\s*;\s*([\s\S]*)$/)
+  if (!m) return null
+  const [, a, bb, r, n, c, mm, cond, after] = m
+  if (/\bfor\b|\bwhile\b|\+\+/.test(after)) return null
+  const pairs = `((List.range ${n}).flatMap (fun ${r} => (List.range ${mm}).map (fun ${c} => ${cond.trim()})))`
+  return `const __p = ${pairs}; const ${a} = (__p.filter (fun z => z)).length; const ${bb} = __p.length - (__p.filter (fun z => z)).length; ${after.trim()}`
+}
+
 function unwrapBindings(b: string): { lets: [string, string][]; expr: string } | null {
   const lets: [string, string][] = []
   let rest = b
@@ -133,7 +148,11 @@ function unwrapBindings(b: string): { lets: [string, string][]; expr: string } |
     // like any other expression, so widening the binding shape does not widen what may appear inside it.
     const arrow = m[2].match(/^\(\s*([A-Za-z_]\w*)\s*(?::\s*[A-Za-z_<>\[\]]+\s*)?\)\s*=>\s*([\s\S]+)$/)
     if (arrow && !/^\s*\{/.test(arrow[2])) { lets.push([m[1], `fun ${arrow[1]} => ${arrow[2].trim()}`]); rest = rest.slice(m[0].length); continue }
-    if (/=>/.test(m[2]) && !/\.map \(fun /.test(m[2])) return null
+    // The guard exists to keep BOUND FUNCTIONS out, not arrows in general. A value like
+    // `(xs.filter (fun z => z)).length` is a number that happens to contain an arrow inside a call, and
+    // rejecting it threw away every binding produced by the loop rewrites above. Only a binding whose value
+    // IS an arrow is refused, and the parenthesised form is handled just above; this catches the bare one.
+    if (/^\s*[A-Za-z_]\w*\s*=>/.test(m[2])) return null
     lets.push([m[1], m[2].trim()])
     rest = rest.slice(m[0].length)
   }
@@ -151,6 +170,8 @@ export function translate(body: string): Translation {
   let prefix = ''
   if (block || /^(?:const|let)\s/.test(b)) {
     let inner = block ? block[1] : b
+    const counted = countingLoop(inner)
+    if (counted) inner = counted
     const looped = loopToMap(inner)
     if (looped) inner = looped
     const u = unwrapBindings(inner)
@@ -167,7 +188,7 @@ export function translate(body: string): Translation {
   // binder it introduced. The previous check was a regex that let `nonHarmonic` and array indexing through;
   // both compiled into nonsense the kernel rejected. Anything unrecognised is refused by name, so a failure
   // is legible instead of mysterious.
-  const ALLOWED = new Set(['List', 'range', 'all', 'any', 'contains', 'length', 'fun', 'M9', 'DR', 'true', 'false', 'let', 'eraseDups', 'filter', 'map', 'take', 'drop', 'Address', 'toUuidBytes'])
+  const ALLOWED = new Set(['List', 'range', 'all', 'any', 'contains', 'length', 'fun', 'M9', 'DR', 'true', 'false', 'let', 'eraseDups', 'filter', 'map', 'take', 'drop', 'Address', 'toUuidBytes', 'flatMap', '__p'])
   const binders = new Set([
     ...[...out.matchAll(/fun ([a-z][a-zA-Z0-9]*) =>/g)].map((m) => m[1]),
     ...[...out.matchAll(/let ([A-Za-z_][A-Za-z0-9_]*) :=/g)].map((m) => m[1]),

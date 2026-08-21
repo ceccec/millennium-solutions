@@ -29,6 +29,9 @@ theorem nopayload_avalanche : Address.toUuidBytes [109, 101, 115, 115, 97, 103, 
 -- the exterior angles of any regular n-gon sum to 360° (sides 3, 5, 8)
 theorem geom_exterior_360 : [3, 5, 8].all (fun n => n * (360 / n) == 360) := by decide
 
+-- the 8×8 board has 64 squares, 32 light and 32 dark
+theorem chess_board_64 : let __p := ((List.range 8).flatMap (fun r => (List.range 8).map (fun c => (r + c) % 2 == 0))); let l := (__p.filter (fun z => z)).length; let d := __p.length - (__p.filter (fun z => z)).length; l == 32 && d == 32 := by decide
+
 -- the 8×8 board has 2·8 − 1 = 15 diagonals in each direction
 theorem chess_diagonals_15 : 2 * 8 - 1 == 15 := by decide
 

@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2245 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2246 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (355)
+### lean (356)
 
 - [lean_units_are_six](/theorem/lean_units_are_six) — lean: the units of ℤ/9 are exactly [1,2,4,5,7,8] — checked at every residue by the kernel, recomputed here; 0/7  ·  `031c89bf-e1e0…`
 - [lean_units_count](/theorem/lean_units_count) — lean: there are exactly six units in ℤ/9 — the kernel checks the count, recomputed here; 0/7  ·  `104e8965-ebfb…`
@@ -379,6 +379,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_mechanical_the_fusion_of_site_and_user_is_deterministic](/theorem/lean_mechanical_the_fusion_of_site_and_user_is_deterministic) — lean mechanical.lean: the_fusion_of_site_and_user_is_deterministic — Address.toUuidBytes [115, 105, 116, 101, 64, 98, 103] == Address.toUuidBytes [115, 105, 116, 101, 64, 98, 103] && Address.toUuidBytes [115, 105, 116, 101, 64, 98, 103] != Address.toUuidBytes [115, 105, 116, 101, 64, 100, 101] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `114b3cd3-7aa9…`
 - [lean_mechanical_each_suggested_next_is_content_addressed](/theorem/lean_mechanical_each_suggested_next_is_content_addressed) — lean mechanical.lean: each_suggested_next_is_content_addressed — Address.toUuidBytes [47, 116, 104, 101, 111, 114, 101, 109, 47, 97] == Address.toUuidBytes [47, 116, 104, 101, 111, 114, 101, 109, 47, 97] && Address.toUuidBytes [47, 116, 104, 101, 111, 114, 101, 109, 47, 97] != Address.toUuidBytes [47, 11… — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7b2d24ee-fbc9…`
 - [lean_mechanical_the_rejected_command_gets_a_receipt](/theorem/lean_mechanical_the_rejected_command_gets_a_receipt) — lean mechanical.lean: the_rejected_command_gets_a_receipt — Address.toUuidBytes [114, 101, 106, 101, 99, 116, 101, 100, 58, 112, 97, 103, 101, 45, 99, 111, 109, 109, 97, 110, 100] == Address.toUuidBytes [114, 101, 106, 101, 99, 116, 101, 100, 58, 112, 97, 103, 101, 45, 99, 111, 109, 109, 97, 110, 10… — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `74670847-26bf…`
+- [lean_mechanical_chess_board_64](/theorem/lean_mechanical_chess_board_64) — lean mechanical.lean: chess_board_64 — let __p := ((List.range 8).flatMap (fun r =&gt; (List.range 8).map (fun c =&gt; (r + c) % 2 == 0))); let l := (__p.filter (fun z =&gt; z)).length; let d := __p.length - (__p.filter (fun z =&gt; z)).length; l == 32 && d == 32 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `bc937383-b7bb…`
 
 ### other — one-of-a-kind (0)
 
@@ -2289,4 +2290,4 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 
 </details>
 
-Page content-address: `def37188-feec-87d6-8f3c-78d7166784ef`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `804b08d3-bc06-81f8-8294-c1cb0bf94541`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

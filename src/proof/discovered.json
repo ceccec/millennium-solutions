@@ -16427,5 +16427,10 @@
     "key": "lean_mechanical_the_rejected_command_gets_a_receipt",
     "name": "lean mechanical.lean: the_rejected_command_gets_a_receipt — Address.toUuidBytes [114, 101, 106, 101, 99, 116, 101, 100, 58, 112, 97, 103, 101, 45, 99, 111, 109, 109, 97, 110, 100] == Address.toUuidBytes [114, 101, 106, 101, 99, 116, 101, 100, 58, 112, 97, 103, 101, 45, 99, 111, 109, 109, 97, 110, 10… — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "74670847-26bf-89c5-9ef3-a0fc57d5ec34"
+  },
+  {
+    "key": "lean_mechanical_chess_board_64",
+    "name": "lean mechanical.lean: chess_board_64 — let __p := ((List.range 8).flatMap (fun r => (List.range 8).map (fun c => (r + c) % 2 == 0))); let l := (__p.filter (fun z => z)).length; let d := __p.length - (__p.filter (fun z => z)).length; l == 32 && d == 32 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "bc937383-b7bb-8f34-ac22-50050aa56b70"
   }
 ]
