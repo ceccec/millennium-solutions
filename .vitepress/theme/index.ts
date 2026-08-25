@@ -2,6 +2,7 @@ import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import Funding from './Funding.vue'
+import Sponsor from './Sponsor.vue'
 import Hero from './Hero.vue'
 import NextObserver from './NextObserver.vue'
 import TheConcepts from './TheConcepts.vue'
@@ -26,9 +27,15 @@ export default {
   extends: DefaultTheme,
   // Funding — the captain's message with the donation link — is fused under EVERY page (layout-bottom renders
   // on all layouts: home, doc, and custom), and usable as <Funding/> in any prose.
-  Layout: () => h(DefaultTheme.Layout, null, { 'layout-bottom': () => h(Funding) }),
+  // Funding sits under every page; Sponsor takes the aside slot VitePress reserves for carbonAds — served
+  // from this repo rather than from a third-party ad network, for the reasons in Sponsor.vue.
+  Layout: () => h(DefaultTheme.Layout, null, {
+    'layout-bottom': () => h(Funding),
+    'aside-bottom': () => h(Sponsor),
+  }),
   enhanceApp({ app }) {
     app.component('Funding', Funding)
+    app.component('Sponsor', Sponsor)
     app.component('Hero', Hero)
     app.component('NextObserver', NextObserver)
     app.component('TheConcepts', TheConcepts)
