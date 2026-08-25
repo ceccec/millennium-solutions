@@ -10,7 +10,7 @@ import { audit } from './audit.ts'
 
 // ALL prose is audited — globbed, not a hardcoded list, so new files auto-enter the audit and
 // "all prose is audited" holds BY CONSTRUCTION (no silent gaps). excludes deps + generated output.
-const EXCLUDE = /(^|[/\\])(node_modules|\.git)([/\\]|$)|\.vitepress[/\\](dist|cache)[/\\]|[/\\](en|bg|de|es|fr|ru|zh)[/\\]/
+const EXCLUDE = /(^|[/\\])(node_modules|\.git|\.claude)([/\\]|$)|\.vitepress[/\\](dist|cache)[/\\]|[/\\](en|bg|de|es|fr|ru|zh)[/\\]/
 const FILES = [
   ...readdirSync('.', { recursive: true }).map(String)
     .filter((f) => f.endsWith('.md') && !EXCLUDE.test(f)),

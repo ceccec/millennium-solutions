@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2254 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2257 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (364)
+### lean (366)
 
 - [lean_units_are_six](/theorem/lean_units_are_six) — lean: the units of ℤ/9 are exactly [1,2,4,5,7,8] — checked at every residue by the kernel, recomputed here; 0/7  ·  `031c89bf-e1e0…`
 - [lean_units_count](/theorem/lean_units_count) — lean: there are exactly six units in ℤ/9 — the kernel checks the count, recomputed here; 0/7  ·  `104e8965-ebfb…`
@@ -322,7 +322,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_energy_what_the_feedwater_leaves_behind_decides_the_maintenance](/theorem/lean_energy_what_the_feedwater_leaves_behind_decides_the_maintenance) — lean energy.lean: what_the_feedwater_leaves_behind_decides_the_maintenance — 100 * tdsSeawater / 1000 = 3500 ∧ 100 * tdsTapWater / 1000 = 5 ∧ tdsSeawater / tdsTapWater = 700 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2c3cf0b0-2ea7…`
 - [lean_mechanical_fib_trinity_horizon](/theorem/lean_mechanical_fib_trinity_horizon) — lean mechanical.lean: fib_trinity_horizon — DR (3 + 5 + 8) == 7 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `458420c0-010d…`
 - [lean_mechanical_trial_zero_divisors](/theorem/lean_mechanical_trial_zero_divisors) — lean mechanical.lean: trial_zero_divisors — M9 (3 * 3) == 0 && M9 (3) != 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `fdd05138-da57…`
-- [lean_mechanical_geom_exterior_360](/theorem/lean_mechanical_geom_exterior_360) — lean mechanical.lean: geom_exterior_360 — [3, 5, 8].all (fun n =&gt; n * (360 / n) == 360) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `b484eaf3-88c5…`
 - [lean_mechanical_chess_diagonals_15](/theorem/lean_mechanical_chess_diagonals_15) — lean mechanical.lean: chess_diagonals_15 — 2 * 8 - 1 == 15 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `120f9fa4-00be…`
 - [lean_mechanical_tarot_78_cards](/theorem/lean_mechanical_tarot_78_cards) — lean mechanical.lean: tarot_78_cards — 22 + 56 == 78 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1b4474e3-f5f2…`
 - [lean_mechanical_tarot_minor_4x14](/theorem/lean_mechanical_tarot_minor_4x14) — lean mechanical.lean: tarot_minor_4x14 — 4 * 14 == 56 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9a2afdef-23ab…`
@@ -388,22 +387,25 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_demand_the_parity_of_popcount_is_the_xor_of_the_bits](/theorem/lean_demand_the_parity_of_popcount_is_the_xor_of_the_bits) — lean demand.lean: the_parity_of_popcount_is_the_xor_of_the_bits — (List.range 128).all (fun n =&gt; bitsF 10 n % 2 == (List.range' 0 8).foldl (fun acc i =&gt; (acc + (n / (2 ^ i)) % 2) % 2) 0) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `45a32a61-3a94…`
 - [lean_demand_factorial_seven_is_five_thousand_and_forty](/theorem/lean_demand_factorial_seven_is_five_thousand_and_forty) — lean demand.lean: factorial_seven_is_five_thousand_and_forty — Sequences.fact 7 = 5040 ∧ Sequences.fact 6 = 720 ∧ Sequences.fact 8 = 40320 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `17a14eb5-3126…`
 - [lean_demand_mantels_bound_is_n_squared_over_four](/theorem/lean_demand_mantels_bound_is_n_squared_over_four) — lean demand.lean: mantels_bound_is_n_squared_over_four — (List.range' 1 20).all (fun n =&gt; (n / 2) * (n - n / 2) == n * n / 4) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `0100456e-42f6…`
+- [lean_mechanical_cover_rotation_full_circle](/theorem/lean_mechanical_cover_rotation_full_circle) — lean mechanical.lean: cover_rotation_full_circle — ((List.range' 1 9).map (fun d =&gt; (d * 40) % 360)).eraseDups.length == 9 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `fffbffca-689e…`
+- [lean_mechanical_arts_nine_hues_distinct](/theorem/lean_mechanical_arts_nine_hues_distinct) — lean mechanical.lean: arts_nine_hues_distinct — ((List.range' 1 9).map (fun d =&gt; (d * 40) % 360)).eraseDups.length == 9 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `3deb3d73-18a6…`
+- [lean_mechanical_the_regular_nonagon_exterior_angle_is_the_a432_step](/theorem/lean_mechanical_the_regular_nonagon_exterior_angle_is_the_a432_step) — lean mechanical.lean: the_regular_nonagon_exterior_angle_is_the_a432_step — 360 / 9 == 40 && 40 == 40 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7671bab1-a28d…`
 
 ### other — one-of-a-kind (0)
 
 
 
-## Revoked — 1890 entries that no longer stand
+## Revoked — 1891 entries that no longer stand
 
 The ledger is append-only: an entry that stops holding is marked in place, never deleted — deleting would break the receipt chain, and rewriting a receipt is tamper. These keep their receipts and stay in the record, but they are **not citable** and have no `/theorem/` page. Grouped by the reason they went:
 
 - **1397** — dirty: not backed by a Lean proof
 - **445** — revoked in place: its test asserted a lexical drain (computes(boast)
-- **26** — orphaned: the theorem this key was sealed from is no longer in src/proof
+- **27** — orphaned: the theorem this key was sealed from is no longer in src/proof
 - **12** — revoked in place: circular by construction AND dependent on the removed lexical gate
 - **10** — revoked in place: circular by construction — the test defines the answer it checks, proving a declaration rather than a fact
 
-<details><summary>List all 1890 revoked keys</summary>
+<details><summary>List all 1891 revoked keys</summary>
 
 - ~~`euler_units_pow6`~~ — every unit u⁶ ≡ 1 mod 9 (Euler, φ(9)=6)  ·  `e70a44b2-6eb8…`
 - ~~`units_sum_zero`~~ — the units sum to 0 mod 9 (1+2+4+5+7+8=27)  ·  `ec43f3d8-7595…`
@@ -2295,7 +2297,8 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`lean_energy_the_equation_balances_by_atom_count`~~ — lean energy.lean: the_equation_balances_by_atom_count — (2 * 2 = 2 * 2) ∧ (2 * 1 = 1 * 2) ∧ 4 = 2 * 2 ∧ 2 = 1 * 2 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `ecfd70b1-b35b…`
 - ~~`lean_mechanical_relation_digital_root`~~ — lean mechanical.lean: relation_digital_root — DR (78) == 6 && DR (12) == DR (21) && [1,2,4,5,7,8].contains (DR (7)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d07323c6-683c…`
 - ~~`lean_mechanical_relation_432_factors`~~ — lean mechanical.lean: relation_432_factors — 432 == 16 * 27 && 432 == 2 ^ 4 * 3 ^ 3 && DR (432) == 9 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `34d3073f-7f81…`
+- ~~`lean_mechanical_geom_exterior_360`~~ — lean mechanical.lean: geom_exterior_360 — [3, 5, 8].all (fun n =&gt; n * (360 / n) == 360) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `b484eaf3-88c5…`
 
 </details>
 
-Page content-address: `2d2aa36e-ada6-8d7b-afc0-4c8935119462`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `f04db6e5-95dc-8217-ac89-160be2a1fdca`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

@@ -37,7 +37,110 @@ const PRE_RULES: [RegExp, string | ((...a: string[]) => string)][] = [
   // exact rather than a guess about what the ends might be.
   [/([A-Za-z_]\w*)\.slice\((\d+),\s*(\d+)\)/g, (_m: string, l: string, a: string, b: string) =>
     `(List.take ${Number(b) - Number(a)} (List.drop ${a} ${l}))` as string] as unknown as [RegExp, string],
+  // THE IMPORTED CONSTANTS ARE NUMBERS, NOT CONSTRUCTS, and they fold HERE rather than in the table below so
+  // that the refusal list and the exactness check below both see what the test actually computes. `360 / BASE` is a
+  // division of two literals; `360 / <an identifier>` is not, and the difference decides whether the division
+  // may be kept at all. Read from src/0/index.ts: TRINITY = 3, BASE = TRINITY ** 2 = 9, and
+  // A432_STEP = 360 / BASE = 40 — exact in binary floating point, so the constant every test sees is the
+  // integer 40. Checked at the definition rather than guessed from the name.
+  // They come AFTER the toUuid rule on purpose: rewriting a literal first means a constant's name can never
+  // be substituted inside the string whose bytes are being taken.
+  [/\bA432_STEP\b/g, '40'],
+  [/\bBASE\b/g, '9'],
+  [/\bTRINITY\b/g, '3'],
 ]
+
+/** JAVASCRIPT DIVISION IS NOT LEAN'S NAT DIVISION, and the gap is silent. `9 / 2` is 4.5 in the test and 4
+ *  in the kernel, so `9 / 2 === 4` is FALSE where the ledger runs it and TRUE where the kernel checks it —
+ *  the exact failure this file exists to prevent: a theorem that compiles, passes the agreement check on its
+ *  truth value, and states something else. Measured before touching it: thirteen already-translated claims
+ *  carried a `/`, and among them `3 / 2 == 1.5` and `4 / 3 > 1.333` were being emitted, which are not even
+ *  well-typed over Nat. Nothing here was ever right; it was surviving on the kernel throwing it out — and a
+ *  rendering that depends on the kernel disagreeing is not a whitelist, it is a coin toss with a safety net.
+ *
+ *  WHAT IS SAFE IS EXACTLY THIS: a division whose numerator and denominator are both CLOSED literal
+ *  arithmetic and which leaves no remainder. `360 / 9` and `(8 * 7) / 2` are 40 and 28 under both readings,
+ *  because truncation can only differ from real division when something is actually truncated. Anything else
+ *  — a non-literal operand like `n * (360 / n)` or `f * 3 / 2`, or a literal pair with a remainder — keeps
+ *  its slash and is refused by name below. Deciding whether a general JS division happens to land on an
+ *  integer would mean evaluating the claim instead of reading it, which is not this translator's job.
+ *
+ *  VERIFIED AND KEPT, NOT FOLDED AWAY. The first version replaced `360 / 9` with `40`, and that quietly made
+ *  the theorem worse: `the_regular_nonagon_exterior_angle_is_the_a432_step` became `40 == 40 && 40 == 40`,
+ *  a tautology where the ledger claims an arithmetic fact about the nonagon. A rendering may not weaken the
+ *  claim any more than it may strengthen it. So the division is checked and then LEFT IN, with the slash
+ *  parked on a marker character while the refusal list runs — the same neutralise-and-restore trick
+ *  `fixChains` uses to advance a scan. The arithmetic is only ever used to decide, never to substitute.
+ */
+const EXACT_DIV = '\u0001'
+
+/** The value of closed literal arithmetic over `+` and `*`, or null if it is anything else. Deliberately
+ *  excludes `-`: Nat subtraction truncates at zero, so a numerator written with a minus is not a value the
+ *  two languages are guaranteed to agree on, and this function exists precisely to decide agreement. */
+function litValue(s: string): number | null {
+  if (!/^[\d\s+*]+$/.test(s) || !/\d/.test(s)) return null
+  let total = 0
+  for (const term of s.split('+')) {
+    let prod = 1
+    for (const f of term.split('*')) {
+      const n = Number(f.trim())
+      if (!Number.isSafeInteger(n)) return null
+      prod *= n
+    }
+    total += prod
+  }
+  return Number.isSafeInteger(total) ? total : null
+}
+
+function markExactDivision(b: string): string {
+  return b.replace(/(?:\(([\d\s+*]+)\)|(?<![\d.])(\d+))\s*\/\s*(\d+)(?![\d.])/g,
+    (m: string, paren: string | undefined, bare: string | undefined, den: string) => {
+      const n = litValue(paren ?? bare ?? ''), d = Number(den)
+      return n === null || d === 0 || n % d !== 0 ? m : m.replace('/', EXACT_DIV)
+    })
+}
+
+/** `new Set(xs).size` IS `xs.eraseDups.length`, and it belongs in the PRE phase for the same reason `join`
+ *  does: the rewrite REMOVES the construct, so it has to run before the refusal list judges what is left.
+ *
+ *  THE RULE THAT COULD NOT FIRE. There was already an entry for this shape in the table below, and it had
+ *  never once fired in the whole ledger. Two independent reasons, either of them fatal: `Set` is on the
+ *  refusal list, so every body carrying it was rejected before the table was reached; and its argument
+ *  pattern `[^)]+` cannot cross a nested call, so `new Set(digits().map(…)).size` — the form almost every
+ *  claim actually uses — would not have matched even if it had been reached. A rule that cannot fire is not
+ *  a rule, it is a comment that looks like code, and counting it as coverage is how a translator comes to
+ *  believe it reads more than it does. Bracket-walking rather than a regex, because counting the brackets
+ *  is the entire job.
+ *
+ *  WHY THE TWO ARE THE SAME NUMBER. A JavaScript Set keeps one member per SameValueZero class; Lean's
+ *  `List.eraseDups` keeps the first occurrence of each `BEq` class and drops the rest. On the values that
+ *  can survive this translator — naturals built from literals, `+ * %` and the deposit's own lists, with
+ *  negative literals and every string-producing call already refused — SameValueZero and Nat equality are
+ *  the same relation, so the two keep the same elements and `.size` and `.length` count the same thing.
+ *  Only the count is read, so the one difference that does exist — a Set has no order, eraseDups keeps
+ *  first-seen order — is not observable in the claim. `new Set(xs).size === xs.length` therefore states
+ *  distinctness on both sides, which is what the ledger's tests use it for.
+ *
+ *  ONLY `new Set(E).size` IS CONSUMED, and that is what makes widening this safe. `.has(...)`, a Set bound
+ *  to a name and read later, a `Set<number>` annotation, union or intersection built from spreads — none of
+ *  them are touched, so the word `Set` is still in the text when the refusal list runs and they are still
+ *  refused by name. The rewrite either eliminates the construct completely or leaves it to be refused;
+ *  there is no third outcome where a Set survives half-translated.
+ */
+function setSizeToLength(b: string): string {
+  let from = 0
+  for (;;) {
+    const i = b.indexOf('new Set(', from)
+    if (i < 0) return b
+    let d = 0, j = i + 'new Set'.length
+    for (; j < b.length; j++) { if (b[j] === '(') d++; else if (b[j] === ')') { d--; if (d === 0) break } }
+    if (j >= b.length) return b                       // unbalanced: leave it for the refusal list
+    // `.size` and nothing else. `.sizeOf` or a bare `new Set(x)` keeps the word Set and stays refused.
+    if (b.slice(j + 1, j + 6) !== '.size' || /[A-Za-z0-9_]/.test(b[j + 6] ?? '')) { from = i + 8; continue }
+    b = b.slice(0, i) + '(' + b.slice(i + 8, j) + ').eraseDups.length' + b.slice(j + 6)
+    from = i
+  }
+}
 
 const RULES: [RegExp, string][] = [
   [/\bdigitalRoot\(/g, 'DR ('],                   // defined in the emitted preamble
@@ -46,13 +149,19 @@ const RULES: [RegExp, string][] = [
   [/\btriad\(\)/g, '[3,6,9]'],
   [/\bvortexOrbit\(\)/g, '[1,2,4,8,7,5]'],
   [/\bm9\(/g, 'M9 ('],                              // wrapper defined in the emitted preamble
-  [/\bBASE\b/g, '9'],
-  [/\bTRINITY\b/g, '3'],
+  // BASE, TRINITY and A432_STEP fold in the PRE phase now — see the note there
   [/\.every\(/g, '.all ('],
   [/\.some\(/g, '.any ('],
   [/\.includes\(/g, '.contains ('],
-  [/new Set\(([^)]+)\)\.size/g, '($1).eraseDups.length'],   // the deposit's distinct-count idiom
+  // the distinct-count idiom used to be a rule HERE and had never once fired; see setSizeToLength above
   [/\.filter\(/g, '.filter ('],
+  // `.map(` NEEDS THE SPACE, and it was the one method in the vocabulary that never got a rule. Lean has no
+  // call-parenthesis syntax: `xs.map(f)` is a parse error (`unexpected token '('`), not a call. Every other
+  // method here — every, some, includes, filter — had its space inserted; map only ever appeared in output
+  // built by the loop rewrites, which write the space themselves, so the gap stayed invisible until a claim
+  // arrived with `.map(` written by hand. It reached the kernel, failed to parse, and was quarantined, which
+  // is the safety net doing its job and not a substitute for the rule.
+  [/\.map\(/g, '.map ('],
   [/\.length\b/g, '.length'],
   [/\(([a-z][a-zA-Z0-9]*)\)\s*=>/g, 'fun $1 =>'],   // arrow to lambda, any single binder
   [/\bArray\.from\(\{ ?length: ?(\d+) ?\}, ?\(_, ?([a-z])\) => \2\)/g, '(List.range $1)'],
@@ -73,6 +182,29 @@ const REFUSE = [
   // that compiles, passes the agreement check on its truth value, and states something else. Refused by name,
   // with the reason, which is the only version of this that helps anybody.
   /\bmerkleFold\b/,
+  // `.find(...)` — REFUSED BY NAME, and the reason is the `!` rather than the Option.
+  //
+  // `List.find?` is the obvious counterpart and the Option is not the hard part: at depth one,
+  // `xs.find(p) === v` renders exactly as `xs.find? p == some v`, since a JS `undefined` is never equal to a
+  // number and `none` is never equal to `some v`. What the ledger actually writes is depth TWO —
+  // `const inv = (u) => U.find((w) => m9(u * w) === 1)!; return U.every((u) => inv(inv(u)) === u)` — and
+  // there the two languages part company. TypeScript's `!` is ERASED at runtime; it asserts, it does not
+  // check. So when the inner find misses, JavaScript does not stop: it calls `inv(undefined)` and runs the
+  // predicate again with `undefined` as an operand. Lean's `Option.bind` short-circuits to `none`.
+  //
+  // Those agree only when the predicate propagates the miss, which is a fact about the PREDICATE, not about
+  // the shape. `(w) => m9(u * w) === 1` does propagate — `undefined * w` is NaN and every comparison with
+  // NaN is false — but `(w) => w === 1` does not: JavaScript would find 1 and could return true where
+  // `none.bind` is false. A rule keyed on the shape would render both the same way and be wrong about the
+  // second, which is the "compiles and states something else" failure this file is built to avoid.
+  //
+  // Measured before deciding, over the whole queue: FIVE bodies contain `.find(`. Three are already refused
+  // for something unrelated (a negative literal, a JSON round-trip, an `undefined` sentinel compared
+  // directly), and the remaining two are both the depth-two involution above. So a depth-one rule would
+  // fire on nothing — the same dead rule as the `new Set` entry noted above — and a depth-two rule would
+  // need a side condition on the predicate's behaviour at `undefined`. Refused by name until a claim exists
+  // that a shape rule can read honestly.
+  /\.find\(/,
   /\bsort\(/, /\bjoin\(/, /\bJSON\b/, /\bSet\b/, /\bMap\b/, /\bString\b/, /\bNumber\b/,
   /\btoUuid\b/, /\bcomputes\b/, /\bmerkleFold\b/, /\bimprint/, /\breduce\(/, /\bflatMap\(/,
   /\bmatch\(/, /\breplace\(/, /=>\s*\{/, /\bcls\(/,
@@ -85,6 +217,50 @@ const REFUSE = [
   // untranslated and change meaning silently.
   /\(\s*\[[^\]]*\]\s*\)\s*=>/,
   /\([a-z][a-zA-Z0-9]*\s*,\s*[a-z]/,               // multi-parameter arrow: (x, i) => has no single-binder form
+  // ANY SLASH LEFT AFTER THE EXACTNESS CHECK. markExactDivision has already parked the slash of every
+  // literal-over-literal division that leaves no remainder on a marker character, so a surviving `/` is one
+  // of exactly two things: a division whose value differs between the test (real) and the kernel (Nat,
+  // truncating), or a regular-expression literal, which has no rendering here at all. Both must be refused,
+  // and refusing the character is the only check that cannot be fooled by which of the two it was.
+  /\//,
+  // A DECIMAL LITERAL IS NOT A NAT. `1.5` and `1.333` appeared in emitted statements and were only ever kept
+  // out of the sealed file by the kernel rejecting them; a rendering that relies on the kernel to catch it is
+  // not a whitelist. Refused where it is written, so the reason is the literal instead of a type error.
+  /\d\.\d/,
+  // `^` IS XOR IN JAVASCRIPT AND POWER IN LEAN, and the collision was live. The table below rewrites `**`
+  // into `^`, so by the time a statement is emitted the two are indistinguishable — and a claim written with
+  // the XOR operator was being rendered as exponentiation. It shipped as
+  // `(1 ^ 1) == 0 && (5 ^ 5) == 0 && ((3 ^ 5) ^ 0) == (3 ^ 5)`, which reads as 1¹ = 0, and the only thing
+  // that stopped it was `decide` proving it false. A rendering caught by the kernel disagreeing is not a
+  // whitelist working; it is a whitelist that missed and got lucky about the direction.
+  // This check runs BEFORE the table, which is what makes it exact: at this point `**` is still `**`, so a
+  // `^` in the text can only be the JavaScript XOR, and there is nothing to disambiguate.
+  /\^/,
+  // `toUuid(x).length` IS THE LENGTH OF A STRING, AND THE PORT RETURNS BYTES. This is the merkleFold lesson
+  // again, one method call further in. The address rewrite above is sound for COMPARING addresses, because
+  // the dashed-hex rendering is injective and two byte lists are equal exactly when their renderings are;
+  // but `.length` does not survive that argument. The JavaScript reads 36, the character count of
+  // `8-4-4-4-12` with its four dashes. `Address.toUuidBytes` (address.lean:49) returns `List Nat`, sixteen
+  // bytes, so the Lean side reads 16. Two claims were being emitted with `== 36` against a list of length
+  // sixteen — and one of them multiplied it out to `1000 * one == 36000`. They failed to parse before they
+  // could be false, which is the sort of near miss that gets recorded here rather than quietly fixed.
+  // Matched on the rewrite's own output, which is the only place the pair can be seen together: by the time
+  // the refusal list runs, `toUuid('out:a')` has already become `Address.toUuidBytes [111, …]`.
+  //
+  // The match is the CO-OCCURRENCE of the port and any `.length`, not the two written next to each other,
+  // because the first version of this rule only caught the adjacent form and a third claim slipped past it
+  // by binding the address to a name first (`let a := Address.toUuidBytes […]; … a.length == 36`). Once a
+  // value can be bound, "next to each other" stops being a property of the text. Coarse on purpose: it will
+  // refuse a body that takes the length of some unrelated list while also comparing addresses, and refusing
+  // more than necessary is the side a whitelist is supposed to err on.
+  /^(?=[\s\S]*toUuidBytes)(?=[\s\S]*\.length)/,
+  // THE TERNARY AND THE ZERO-ARGUMENT ARROW have no rendering here and were reaching the kernel as syntax
+  // errors — `(b ? 1 : 0)` and `let t := () => 7 % 3 == 1; t() == t()`. Lean's `if … then … else` would need
+  // the condition lifted to a Decidable proposition and the thunk would need a unit binder; neither is a
+  // rewrite, both are decisions about what the claim means. Refused where they are written so the reason is
+  // the construct rather than a parse error pointing at a column.
+  /\?/,
+  /\(\s*\)\s*=>/,
   /<<|>>/,                                          // bit shifts: Nat's are well-founded and pull in propext
   /\[\s*[a-z]\w*\s*[\]\[]/,                        // indexing a[i]: Lean needs get!/getD and a bound proof
 ]
@@ -180,7 +356,11 @@ export function translate(body: string): Translation {
     b = prefix + u.expr
   }
   for (const [re, to] of PRE_RULES) b = b.replace(re, to as string)
+  // pre-phase: both REMOVE a construct, so both run before the refusal list judges what is left
+  b = setSizeToLength(b)
+  b = markExactDivision(b)
   for (const r of REFUSE) if (r.test(b)) return { ok: false, why: 'uses ' + String(r).slice(1, 24) + ' — no faithful mechanical rendering' }
+  b = b.split(EXACT_DIV).join('/')                    // the divisions that were checked, put back as written
   let out = b
   for (const [re, to] of RULES) out = out.replace(re, to)
   out = fixChains(out)

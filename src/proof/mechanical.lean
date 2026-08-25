@@ -17,17 +17,20 @@ def M9 (n : Nat) : Nat := n % 9
 -- recursion so the kernel evaluates it directly.
 def DR (n : Nat) : Nat := if n == 0 then 0 else 1 + (n - 1) % 9
 
+-- rotation by the a432 step (40°) visits all 9 angular positions — the full circle, no gap
+theorem cover_rotation_full_circle : ((List.range' 1 9).map (fun d => (d * 40) % 360)).eraseDups.length == 9 := by decide
+
 -- the 3-5-8 trinity digital-roots to the horizon: dr(3+5+8) = dr(16) = 7
 theorem fib_trinity_horizon : DR (3 + 5 + 8) == 7 := by decide
+
+-- the nine a432 hues (digit×40°) are distinct and equally spaced around the wheel
+theorem arts_nine_hues_distinct : ((List.range' 1 9).map (fun d => (d * 40) % 360)).eraseDups.length == 9 := by decide
 
 -- trial UPHELD: ℤ/9 has zero divisors — 3·3 ≡ 0 with 3 ≠ 0 (not an integral domain)
 theorem trial_zero_divisors : M9 (3 * 3) == 0 && M9 (3) != 0 := by decide
 
 -- a one-character change gives an unrelated address (avalanche) — no gradient leaks the message
 theorem nopayload_avalanche : Address.toUuidBytes [109, 101, 115, 115, 97, 103, 101, 48] != Address.toUuidBytes [109, 101, 115, 115, 97, 103, 101, 49] := by decide
-
--- the exterior angles of any regular n-gon sum to 360° (sides 3, 5, 8)
-theorem geom_exterior_360 : [3, 5, 8].all (fun n => n * (360 / n) == 360) := by decide
 
 -- the 8×8 board has 64 squares, 32 light and 32 dark
 theorem chess_board_64 : let __p := ((List.range 8).flatMap (fun r => (List.range 8).map (fun c => (r + c) % 2 == 0))); let l := (__p.filter (fun z => z)).length; let d := __p.length - (__p.filter (fun z => z)).length; l == 32 && d == 32 := by decide
@@ -85,6 +88,9 @@ theorem _142857_times_seven_is_six_nines : 142857 * 7 == 999999 := by decide
 
 -- Midy’s theorem on 1/7: the two halves of the repetend sum to nines — 142 + 857 = 999; 0/7
 theorem midy_the_two_halves_of_142857_sum_to_nines : 142 + 857 == 999 := by decide
+
+-- the regular nonagon’s exterior angle is 360/9 = 40° = the a432 step — the base draws the nine-point circle at 
+theorem the_regular_nonagon_exterior_angle_is_the_a432_step : 360 / 9 == 40 && 40 == 40 := by decide
 
 -- the regular hexagon’s exterior angle is 360/6 = 60° = the gold string (π/3), its interior 120° — six tiles the
 theorem the_regular_hexagon_exterior_angle_is_the_gold_string : 360 / 6 == 60 && 180 - 60 == 120 := by decide
@@ -198,4 +204,3 @@ theorem each_suggested_next_is_content_addressed : Address.toUuidBytes [47, 116,
 theorem the_rejected_command_gets_a_receipt : Address.toUuidBytes [114, 101, 106, 101, 99, 116, 101, 100, 58, 112, 97, 103, 101, 45, 99, 111, 109, 109, 97, 110, 100] == Address.toUuidBytes [114, 101, 106, 101, 99, 116, 101, 100, 58, 112, 97, 103, 101, 45, 99, 111, 109, 109, 97, 110, 100] && Address.toUuidBytes [114, 101, 106, 101, 99, 116, 101, 100, 58, 97] != Address.toUuidBytes [114, 101, 106, 101, 99, 116, 101, 100, 58, 98] := by decide
 
 end Mechanical
-

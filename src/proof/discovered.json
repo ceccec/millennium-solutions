@@ -16154,7 +16154,9 @@
   {
     "key": "lean_mechanical_geom_exterior_360",
     "name": "lean mechanical.lean: geom_exterior_360 — [3, 5, 8].all (fun n => n * (360 / n) == 360) — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "b484eaf3-88c5-80cb-9535-e0e25770ef7b"
+    "receipt": "b484eaf3-88c5-80cb-9535-e0e25770ef7b",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_mechanical_chess_diagonals_15",
@@ -16480,5 +16482,20 @@
     "key": "lean_demand_mantels_bound_is_n_squared_over_four",
     "name": "lean demand.lean: mantels_bound_is_n_squared_over_four — (List.range' 1 20).all (fun n => (n / 2) * (n - n / 2) == n * n / 4) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "0100456e-42f6-8f87-ac03-61f38d12e5e0"
+  },
+  {
+    "key": "lean_mechanical_cover_rotation_full_circle",
+    "name": "lean mechanical.lean: cover_rotation_full_circle — ((List.range' 1 9).map (fun d => (d * 40) % 360)).eraseDups.length == 9 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "fffbffca-689e-8a05-985f-3561eb5a5308"
+  },
+  {
+    "key": "lean_mechanical_arts_nine_hues_distinct",
+    "name": "lean mechanical.lean: arts_nine_hues_distinct — ((List.range' 1 9).map (fun d => (d * 40) % 360)).eraseDups.length == 9 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "3deb3d73-18a6-857e-b742-673858dfb8af"
+  },
+  {
+    "key": "lean_mechanical_the_regular_nonagon_exterior_angle_is_the_a432_step",
+    "name": "lean mechanical.lean: the_regular_nonagon_exterior_angle_is_the_a432_step — 360 / 9 == 40 && 40 == 40 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7671bab1-a28d-8d05-8779-b101e3c5772b"
   }
 ]

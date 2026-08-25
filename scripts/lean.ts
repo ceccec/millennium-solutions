@@ -98,7 +98,12 @@ const verify = async (f: string, at: number) => {
   // for a file that decides ten thousand cases that is the whole cost paid over again for nothing. A failure
   // here is a compile failure, reported exactly as before.
   const ns = src.match(/^namespace\s+([A-Za-z_0-9.]+)/m)?.[1]
-  const probe = `/tmp/lean_audit_${f}`
+  // The probe path carries the PROCESS ID. Keyed on the filename alone it was unique across the lanes within
+  // one run but IDENTICAL across concurrent runs, so a second `lean.ts` in another shell overwrote this one's
+  // probe mid-elaboration and a passing file reported as failing. That surfaced as an intermittent
+  // ledgerclaims.lean failure that passed on its own — a flake introduced by the parallelism I added, and
+  // exactly the kind that gets blamed on the file rather than on the harness.
+  const probe = `/tmp/lean_audit_${process.pid}_${f}`
   const audit = names.map((n) => `#print axioms ${n}`).join('\n')
   writeFileSync(probe, ns ? src.replace(new RegExp(`end ${ns}\\s*$`), `${audit}\n\nend ${ns}\n`) : src + '\n' + audit + '\n')
   let out = ''

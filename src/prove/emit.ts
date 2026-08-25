@@ -54,6 +54,16 @@ export function emit(): { written: number; skipped: number; file: string } {
   for (let pass = 0; pass < 12; pass++) {
     const err = compiles()
     if (!err) break
+    // A MISSING MODULE IS NOT A BAD THEOREM. `import Address` failing on line 1 yields no theorem position, so
+    // the attribution below finds nothing and the bisection starts deleting — removing innocent theorems and
+    // reporting them as kernel-rejected. The failure is environmental (the .olean is not built yet); say so
+    // and stop, rather than mutilating the file to make a build error go away.
+    if (/unknown module prefix|no such file or directory.*olean|No directory .* or file .*\.olean/i.test(err)) {
+      console.error('✗ emit: a module this file imports is not built — run `node scripts/lean.ts` first so the .oleans exist.')
+      console.error('  ' + err.split('\n').filter(Boolean).slice(0, 2).join('\n  '))
+      console.error('  Nothing was quarantined: this is not a theorem failing, it is the import path.')
+      process.exit(1)
+    }
     const lines = [...err.matchAll(/mechanical\.lean:(\d+):/g)].map((m) => Number(m[1]))
     const src = readFileSync(OUT, 'utf8').split('\n')
     const bad = new Set<string>()
