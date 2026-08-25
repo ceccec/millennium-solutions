@@ -16497,5 +16497,45 @@
     "key": "lean_mechanical_the_regular_nonagon_exterior_angle_is_the_a432_step",
     "name": "lean mechanical.lean: the_regular_nonagon_exterior_angle_is_the_a432_step — 360 / 9 == 40 && 40 == 40 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "7671bab1-a28d-8d05-8779-b101e3c5772b"
+  },
+  {
+    "key": "lean_demand2_nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number",
+    "name": "lean demand2.lean: nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number — (List.range' 1 40).all (fun n => sumPow 3 n == tri n * tri n) ∧ (List.range' 1 40).all (fun n => sumPow 3 n == sumPow 1 n * sumPow 1 n) ∧ (List.range' 2 19).all (fun n => ¬ isSquareBelow 900 (sumPow 4 n)) ∧ isSquareBelow 900 (sumPow 4 1) = … — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "3b484663-0655-8c36-8640-a4a336a1fd68"
+  },
+  {
+    "key": "lean_demand2_picks_theorem_holds_for_every_lattice_triangle_in_the_four_grid",
+    "name": "lean demand2.lean: picks_theorem_holds_for_every_lattice_triangle_in_the_four_grid — pts.all (fun a => pts.all (fun b => pts.all (fun c => cross a b c ≤ 0 || cross a b c == 2 * interiorCount a b c + boundaryCount a b c - 2))) ∧ ¬ pts.any (fun a => pts.any (fun b => pts.any (fun c => cross a b c > 0 && cross a b c == 2 * int… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ac670737-b847-8ea9-a2c5-214c7e139b04"
+  },
+  {
+    "key": "lean_demand2_bezouts_identity_is_attained_and_no_smaller_combination_exists",
+    "name": "lean demand2.lean: bezouts_identity_is_attained_and_no_smaller_combination_exists — (List.range' 1 30).all (fun a => (List.range' 1 30).all (fun b => (List.range 31).any (fun x => (List.range 31).any (fun y => a * x == b * y + Families.gcd' a b)))) ∧ (List.range' 1 20).all (fun a => (List.range' 1 20).all (fun b => (List.r… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a9aa5970-442e-8c86-89ba-640685cab703"
+  },
+  {
+    "key": "lean_demand2_the_latin_squares_of_order_four_number_five_hundred_and_seventy_six",
+    "name": "lean demand2.lean: the_latin_squares_of_order_four_number_five_hundred_and_seventy_six — latinSquares 4 = 576 ∧ latinSquares 3 = 12 ∧ latinSquares 2 = 2 ∧ latinSquares 1 = 1 ∧ ¬ (latinSquares 4 = 24 * 24 * 24) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b84aa4c6-2924-832d-827f-99854a8d0cd5"
+  },
+  {
+    "key": "lean_demand2_the_sum_of_fifth_powers_has_the_closed_form_asked_for",
+    "name": "lean demand2.lean: the_sum_of_fifth_powers_has_the_closed_form_asked_for — (List.range' 1 20).all (fun n => 12 * sumPow 5 n == n * n * (n + 1) * (n + 1) * (2 * n * n + 2 * n - 1)) ∧ (List.range' 2 19).all (fun n => ¬ (sumPow 5 n == tri n * tri n * tri n)) ∧ sumPow 5 1 = 1 ∧ sumPow 5 2 = 33 ∧ sumPow 5 4 = 1300 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "bf3d9ddf-5a0f-84f1-a62d-9263b94c451d"
+  },
+  {
+    "key": "lean_demand2_the_chinese_remainder_theorem_holds_exactly_when_the_moduli_are_coprime",
+    "name": "lean demand2.lean: the_chinese_remainder_theorem_holds_exactly_when_the_moduli_are_coprime — (List.range' 1 9).all (fun m => (List.range' 1 9).all (fun n => crtCoversAllPairs m n == (Families.gcd' m n == 1))) ∧ (List.range 105).filter (fun x => x % 3 == 2 && x % 5 == 3 && x % 7 == 2) = [23] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "46f32b7d-4c3d-87ef-8be6-81f9ef41e6cf"
+  },
+  {
+    "key": "lean_demand2_eight_and_nine_are_the_only_consecutive_perfect_powers_below_two_thousand",
+    "name": "lean demand2.lean: eight_and_nine_are_the_only_consecutive_perfect_powers_below_two_thousand — (List.range' 1 1999).filter (fun n => pp2000.contains n && pp2000.contains (n + 1)) = [8] ∧ pp2000.length = 55 ∧ pp2000.contains 8 = true ∧ pp2000.contains 9 = true — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "4fc867ea-77dd-884a-807c-b98d75ea646c"
+  },
+  {
+    "key": "lean_demand2_two_twenty_and_two_eighty_four_are_the_smallest_amicable_pair",
+    "name": "lean demand2.lean: two_twenty_and_two_eighty_four_are_the_smallest_amicable_pair — aliquot 220 = 284 ∧ aliquot 284 = 220 ∧ (List.range' 2 218).all (fun a => ¬ (aliquot (aliquot a) == a && ¬ (aliquot a == a))) ∧ (List.range' 2 218).filter (fun a => aliquot a == a) = [6, 28] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6b124e14-b9d0-84ae-a594-85fca6c26b4a"
   }
 ]

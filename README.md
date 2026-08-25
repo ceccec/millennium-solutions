@@ -11,12 +11,12 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 348 theorems across 19 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `ec529041-4a77-8f9b-9148-a3234a876f55`</sub>
-- 340 of those 348 theorems close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
-  <sub>SEALED · `087a0178-b838-8009-9584-50286e463237`</sub>
-- 393 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `6fc796b6-9d2e-81ce-81a3-295de05e5bab`</sub>
+- The formal layer holds 356 theorems across 20 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `74726848-6e65-8c7a-9d78-8ad1dc64e7f4`</sub>
+- 348 of those 356 theorems close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
+  <sub>SEALED · `fd6d57d8-0cdd-88fc-ae11-b7da0571730f`</sub>
+- 401 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `1299c16a-3d0e-878c-8d6f-b1813b07ad21`</sub>
 
 ## 2 · The ring
 
@@ -39,10 +39,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 2257 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `3e43891b-74c2-8951-808b-57379728df79`</sub>
-- The count is 2257, which is 282 octaves and 1 over — the octave is a target the theorems earn, never a quota they are invented to fill.
-  <sub>SEALED · `7542a35f-4232-81af-b15a-10aa909274a1`</sub>
+- The ledger records 2265 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `883efe31-7174-8c9b-b802-a31479560144`</sub>
+- The count is 2265, which is 283 octaves and 1 over — the octave is a target the theorems earn, never a quota they are invented to fill.
+  <sub>SEALED · `5c4b7b1a-e754-8b4f-bb57-997fcd987ff5`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -67,16 +67,16 @@ walked, computed from the statements themselves. Nothing is chosen for this tabl
 
 | cases decided | theorem | file |
 |---:|---|---|
+| 152,568,360,000 | `bezouts_identity_is_attained_and_no_smaller_combination_exists` | `demand2.lean` |
 | 7,529,536 | `gravity_holds_prose_code_and_paths` | `mechanical.lean` |
+| 95,048 | `two_twenty_and_two_eighty_four_are_the_smallest_amicable_pair` | `demand2.lean` |
 | 44,100 | `the_rejected_command_gets_a_receipt` | `mechanical.lean` |
 | 41,160 | `the_theorems_are_the_hull_and_hardware` | `mechanical.lean` |
+| 30,400 | `nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number` | `demand2.lean` |
 | 28,561 | `each_perspective_is_a_distinct_file` | `mechanical.lean` |
 | 23,104 | `the_intention_is_a_computable_deed_receipt` | `mechanical.lean` |
-| 22,308 | `each_theorem_is_a_superposition_of_readings` | `mechanical.lean` |
-| 15,876 | `every_error_is_a_receipted_trial_event` | `mechanical.lean` |
-| 14,641 | `relation_url_path` | `mechanical.lean` |
 
-The largest domain settled here is **7,529,536 cases**, and it is finite — as every
+The largest domain settled here is **152,568,360,000 cases**, and it is finite — as every
 entry in this ledger is, because `by decide` works by exhausting a domain and an infinite one cannot be
 exhausted. Each of the seven Clay conjectures ranges over an infinite domain. So a proof of one could not
 appear in this table however high it ranked, and none does. That is not a disclaimer added underneath the
@@ -84,7 +84,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-19 Lean files in 4 wings, 348 theorems. The prose in this section is read out of the
+20 Lean files in 4 wings, 356 theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -101,6 +101,8 @@ this page; there is nowhere else to keep the description in step.
 ### the floor
 
 **What is actually being asked for** — `demand.lean`, 8 theorem(s). THE ONE WING THAT DID NOT COME FROM THIS DEPOSIT'S OWN INTERESTS. Every other file here proves what the ℤ/9 construction led to. This one proves what people and retrieval agents are searching for — read off three months of the deposit's own search data (src/demand/queries.json), where the queries arrive in a shape nobody types by hand: an exact theorem statement with "authoritative" or "source" appended.
+
+**The next tier of what is asked for** — `demand2.lean`, 8 theorem(s). THE SECOND COURSE OF THE SAME FLOOR. `demand.lean` closed the top eight topics in src/demand/queries.json; this file takes the next eight, chosen the same way — by impressions, not by taste. The demand map is three months of the deposit's own Google Search Console data with the retrieval scaffolding stripped, so what is ranked is the TOPIC people wanted a citable source for, not the phrasing they reached for.
 
 **The water loop** — `energy.lean`, 18 theorem(s). THE WATER LOOP, ACCOUNTED. Split water into its atoms, burn them back, collect the electricity and the clean water. Every step of that is real and buildable. The question is only ever the ledger, so here it is.
 
@@ -134,7 +136,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Theorems** — `theorems.lean`, 1 theorem(s). The universal property — honestly, and COMPUTED from the sequence.
 
-0 of 348 theorems carry no comment of their own and are shown here as the gap they are, not
+2 of 356 theorems carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## What is deliberately absent
@@ -152,4 +154,4 @@ node scripts/pages.ts              # regenerate this file and the homepage
 
 ---
 
-*14 claims, all verified · 348 Lean theorems · 2257 ledger entries · trial root `cfd53fcc-4cba-8cac-8c69-a81e28f0a1c6` · integrity, not truth · 0/7*
+*14 claims, all verified · 356 Lean theorems · 2265 ledger entries · trial root `cfee7e7b-0c86-8486-977f-8a4650bae50f` · integrity, not truth · 0/7*

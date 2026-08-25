@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2257 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2265 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (366)
+### lean (374)
 
 - [lean_units_are_six](/theorem/lean_units_are_six) — lean: the units of ℤ/9 are exactly [1,2,4,5,7,8] — checked at every residue by the kernel, recomputed here; 0/7  ·  `031c89bf-e1e0…`
 - [lean_units_count](/theorem/lean_units_count) — lean: there are exactly six units in ℤ/9 — the kernel checks the count, recomputed here; 0/7  ·  `104e8965-ebfb…`
@@ -390,6 +390,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_mechanical_cover_rotation_full_circle](/theorem/lean_mechanical_cover_rotation_full_circle) — lean mechanical.lean: cover_rotation_full_circle — ((List.range' 1 9).map (fun d =&gt; (d * 40) % 360)).eraseDups.length == 9 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `fffbffca-689e…`
 - [lean_mechanical_arts_nine_hues_distinct](/theorem/lean_mechanical_arts_nine_hues_distinct) — lean mechanical.lean: arts_nine_hues_distinct — ((List.range' 1 9).map (fun d =&gt; (d * 40) % 360)).eraseDups.length == 9 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `3deb3d73-18a6…`
 - [lean_mechanical_the_regular_nonagon_exterior_angle_is_the_a432_step](/theorem/lean_mechanical_the_regular_nonagon_exterior_angle_is_the_a432_step) — lean mechanical.lean: the_regular_nonagon_exterior_angle_is_the_a432_step — 360 / 9 == 40 && 40 == 40 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7671bab1-a28d…`
+- [lean_demand2_nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number](/theorem/lean_demand2_nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number) — lean demand2.lean: nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number — (List.range' 1 40).all (fun n =&gt; sumPow 3 n == tri n * tri n) ∧ (List.range' 1 40).all (fun n =&gt; sumPow 3 n == sumPow 1 n * sumPow 1 n) ∧ (List.range' 2 19).all (fun n =&gt; ¬ isSquareBelow 900 (sumPow 4 n)) ∧ isSquareBelow 900 (sumPow 4 1) = … — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `3b484663-0655…`
+- [lean_demand2_picks_theorem_holds_for_every_lattice_triangle_in_the_four_grid](/theorem/lean_demand2_picks_theorem_holds_for_every_lattice_triangle_in_the_four_grid) — lean demand2.lean: picks_theorem_holds_for_every_lattice_triangle_in_the_four_grid — pts.all (fun a =&gt; pts.all (fun b =&gt; pts.all (fun c =&gt; cross a b c ≤ 0 || cross a b c == 2 * interiorCount a b c + boundaryCount a b c - 2))) ∧ ¬ pts.any (fun a =&gt; pts.any (fun b =&gt; pts.any (fun c =&gt; cross a b c &gt; 0 && cross a b c == 2 * int… — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `ac670737-b847…`
+- [lean_demand2_bezouts_identity_is_attained_and_no_smaller_combination_exists](/theorem/lean_demand2_bezouts_identity_is_attained_and_no_smaller_combination_exists) — lean demand2.lean: bezouts_identity_is_attained_and_no_smaller_combination_exists — (List.range' 1 30).all (fun a =&gt; (List.range' 1 30).all (fun b =&gt; (List.range 31).any (fun x =&gt; (List.range 31).any (fun y =&gt; a * x == b * y + Families.gcd' a b)))) ∧ (List.range' 1 20).all (fun a =&gt; (List.range' 1 20).all (fun b =&gt; (List.r… — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a9aa5970-442e…`
+- [lean_demand2_the_latin_squares_of_order_four_number_five_hundred_and_seventy_six](/theorem/lean_demand2_the_latin_squares_of_order_four_number_five_hundred_and_seventy_six) — lean demand2.lean: the_latin_squares_of_order_four_number_five_hundred_and_seventy_six — latinSquares 4 = 576 ∧ latinSquares 3 = 12 ∧ latinSquares 2 = 2 ∧ latinSquares 1 = 1 ∧ ¬ (latinSquares 4 = 24 * 24 * 24) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `b84aa4c6-2924…`
+- [lean_demand2_the_sum_of_fifth_powers_has_the_closed_form_asked_for](/theorem/lean_demand2_the_sum_of_fifth_powers_has_the_closed_form_asked_for) — lean demand2.lean: the_sum_of_fifth_powers_has_the_closed_form_asked_for — (List.range' 1 20).all (fun n =&gt; 12 * sumPow 5 n == n * n * (n + 1) * (n + 1) * (2 * n * n + 2 * n - 1)) ∧ (List.range' 2 19).all (fun n =&gt; ¬ (sumPow 5 n == tri n * tri n * tri n)) ∧ sumPow 5 1 = 1 ∧ sumPow 5 2 = 33 ∧ sumPow 5 4 = 1300 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `bf3d9ddf-5a0f…`
+- [lean_demand2_the_chinese_remainder_theorem_holds_exactly_when_the_moduli_are_coprime](/theorem/lean_demand2_the_chinese_remainder_theorem_holds_exactly_when_the_moduli_are_coprime) — lean demand2.lean: the_chinese_remainder_theorem_holds_exactly_when_the_moduli_are_coprime — (List.range' 1 9).all (fun m =&gt; (List.range' 1 9).all (fun n =&gt; crtCoversAllPairs m n == (Families.gcd' m n == 1))) ∧ (List.range 105).filter (fun x =&gt; x % 3 == 2 && x % 5 == 3 && x % 7 == 2) = [23] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `46f32b7d-4c3d…`
+- [lean_demand2_eight_and_nine_are_the_only_consecutive_perfect_powers_below_two_thousand](/theorem/lean_demand2_eight_and_nine_are_the_only_consecutive_perfect_powers_below_two_thousand) — lean demand2.lean: eight_and_nine_are_the_only_consecutive_perfect_powers_below_two_thousand — (List.range' 1 1999).filter (fun n =&gt; pp2000.contains n && pp2000.contains (n + 1)) = [8] ∧ pp2000.length = 55 ∧ pp2000.contains 8 = true ∧ pp2000.contains 9 = true — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `4fc867ea-77dd…`
+- [lean_demand2_two_twenty_and_two_eighty_four_are_the_smallest_amicable_pair](/theorem/lean_demand2_two_twenty_and_two_eighty_four_are_the_smallest_amicable_pair) — lean demand2.lean: two_twenty_and_two_eighty_four_are_the_smallest_amicable_pair — aliquot 220 = 284 ∧ aliquot 284 = 220 ∧ (List.range' 2 218).all (fun a =&gt; ¬ (aliquot (aliquot a) == a && ¬ (aliquot a == a))) ∧ (List.range' 2 218).filter (fun a =&gt; aliquot a == a) = [6, 28] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `6b124e14-b9d0…`
 
 ### other — one-of-a-kind (0)
 
@@ -2301,4 +2309,4 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 
 </details>
 
-Page content-address: `f04db6e5-95dc-8217-ac89-160be2a1fdca`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `5b88012e-a9e1-8709-9c3d-661c7123da5f`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
