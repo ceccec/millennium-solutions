@@ -38,9 +38,13 @@ jobs:
       # part of this repo and a build failure in it should be visible — but it is guarded, so its absence
       # is not fatal to a workflow that does not depend on it.
       - name: Build the uuidna workspace (the gates import it)
+      # --no-package-lock: this is an ad-hoc build of a directory that is not an npm workspace, and a
+      # lockfile written here is an untracked artefact. release.yml's tag-only mode refuses a dirty tree
+      # — correctly, since the tag claims a content-address HEAD must carry — so generating one broke the
+      # release a second time, one layer past the first break.
         run: |
           if [ -f packages/uuidna/package.json ]; then
-            (cd packages/uuidna && npm install --ignore-scripts && npm run build)
+            (cd packages/uuidna && npm install --ignore-scripts --no-package-lock && npm run build)
           else
             echo 'packages/uuidna absent — the gates use the registry package'
           fi

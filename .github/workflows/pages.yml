@@ -46,7 +46,7 @@ jobs:
       - name: Build the uuidna workspace (the site imports it)
         run: |
           if [ -f packages/uuidna/package.json ]; then
-            (cd packages/uuidna && npm install --ignore-scripts && npm run build)
+            (cd packages/uuidna && npm install --ignore-scripts --no-package-lock && npm run build)
           else
             echo 'packages/uuidna absent — the gates use the registry package'
           fi

@@ -31,7 +31,7 @@ jobs:
         run: |
           npm ci --ignore-scripts
           if [ -f packages/uuidna/package.json ]; then
-            (cd packages/uuidna && npm install --ignore-scripts && npm run build)
+            (cd packages/uuidna && npm install --ignore-scripts --no-package-lock && npm run build)
           else
             echo 'packages/uuidna absent — nothing to build; the gates use the registry package'
           fi
