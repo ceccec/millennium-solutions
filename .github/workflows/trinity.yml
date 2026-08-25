@@ -21,8 +21,20 @@ jobs:
       # The gates reach src/5/diamond.ts and src/the/apple/index.ts, which import @uuidna/uuidna, so
       # the workspace must be installed and built first — without it those modules cannot report and
       # wholeness/lean-claims fail. (--ignore-scripts: no lifecycle hooks needed to run the gates.)
+      # packages/uuidna is COMMITTED but is not an npm workspace — package.json declares no `workspaces`
+      # field, so `-w @uuidna/uuidna` fails with "No workspaces found" and took three workflows down with
+      # it. The gates do not need that directory built: @uuidna/uuidna is a REGISTRY dependency (^0.2.6 in
+      # the lockfile) and `npm ci` installs it. The directory is still built here, by path, because it is
+      # part of this repo and a build failure in it should be visible — but it is guarded, so its absence
+      # is not fatal to a workflow that does not depend on it.
       - name: install + build the uuidna workspace (the gates import it)
-        run: npm ci --ignore-scripts && npm run build -w @uuidna/uuidna
+        run: |
+          npm ci --ignore-scripts
+          if [ -f packages/uuidna/package.json ]; then
+            (cd packages/uuidna && npm install --ignore-scripts && npm run build)
+          else
+            echo 'packages/uuidna absent — nothing to build; the gates use the registry package'
+          fi
       - name: gaps (coverage)
         run: node scripts/gaps.ts
       - name: seal (consistency, 0/7)

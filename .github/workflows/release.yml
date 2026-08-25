@@ -31,8 +31,19 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      # packages/uuidna is COMMITTED but is not an npm workspace — package.json declares no `workspaces`
+      # field, so `-w @uuidna/uuidna` fails with "No workspaces found" and took three workflows down with
+      # it. The gates do not need that directory built: @uuidna/uuidna is a REGISTRY dependency (^0.2.6 in
+      # the lockfile) and `npm ci` installs it. The directory is still built here, by path, because it is
+      # part of this repo and a build failure in it should be visible — but it is guarded, so its absence
+      # is not fatal to a workflow that does not depend on it.
       - name: Build the uuidna workspace (the gates import it)
-        run: npm run build -w @uuidna/uuidna
+        run: |
+          if [ -f packages/uuidna/package.json ]; then
+            (cd packages/uuidna && npm install --ignore-scripts && npm run build)
+          else
+            echo 'packages/uuidna absent — the gates use the registry package'
+          fi
 
       # --- the gates: nothing is tagged unless every one of them holds ---
       - name: gaps (coverage)
