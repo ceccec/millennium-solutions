@@ -20,3 +20,6 @@ public/greeting.json
 
 # verification cache — a record of what the kernel said about exact bytes, rebuilt on demand
 src/proof/.lean-cache.json
+
+# agent worktrees — transient, removed when the agent finishes
+.claude/worktrees/
