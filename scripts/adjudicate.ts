@@ -1,11 +1,16 @@
 #!/usr/bin/env node
-// The forensic tool — for any statement, a recomputable verdict. It NEVER claims absolute truth:
-// the honesty gate is a floor, not an oracle (a gate-clean falsehood like "2+2=5" still passes it).
-// So the verdict is three-way and honest about its own limit:
-//   REFUTED    — the gate drains a named overclaim, OR a supplied decidable test fails (counterexample).
-//   SEALED     — gate-clean AND a decidable test holds → recomputable, admissible.
-//   UNVERIFIED — gate-clean but no recomputable receipt supplied → the floor is not an oracle; it may
-//                still be true or false. Bring a decidable test to move it to SEALED or REFUTED.
+// The forensic tool — for any statement, a recomputable verdict. It NEVER claims absolute truth: the gate is
+// a floor, not an oracle (a gate-clean falsehood like "2+2=5" passes it). The verdict is three-way, and it is
+// decided ENTIRELY by the supplied test:
+//   SEALED     — a decidable test recomputes true → recomputable, admissible.
+//   REFUTED    — a decidable test recomputes FALSE → a counterexample stands against the statement as written.
+//   UNVERIFIED — no decidable test was supplied. Not false: nobody has brought a proof.
+//
+// This header used to say REFUTED could also come from "the gate draining a named overclaim". That path has
+// been unreachable since the lexical layer was removed — the gate no longer drains overclaims, and all three
+// returns below decide on the test before any gate result is consulted. The sentence described an era, not
+// the code, and a stale doc-comment is worse than none because it reads exactly like a live contract. Found
+// by measurement, not by rereading: an audit of the ledger's own gate-dependent claims turned it up.
 // Integrity, not truth. Everything content-addressed. 0/7.
 import { toUuid } from '../src/0/index.ts'
 // The trial lives canonically in @uuidna/uuidna — one implementation, no duplication. adjudicate returns the
