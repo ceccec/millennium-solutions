@@ -100,13 +100,19 @@ export default defineConfig({
   transformPageData(pageData) {
     // Each object is the hero of its own page: a dynamic /theorem/<key> page takes its OG title and
     // description from its own params — the theorem's name, and how it was achieved.
-    const p = (pageData as { params?: { key?: string; name?: string; receipt?: string; problem?: string; outletName?: string; revoked?: boolean; reason?: string } }).params
+    const p = (pageData as { params?: { key?: string; name?: string; receipt?: string; problem?: string; outletName?: string; revoked?: boolean; reason?: string; supersededBy?: string } }).params
     if (p?.key) {
       pageData.title = p.name
       // A WITHDRAWN ENTRY MUST NOT BE DESCRIBED AS STANDING. The OG/meta description is what a search result
       // and a shared link show — the one line most people ever read — so it is the last place a stale claim
       // may survive. An entry that no longer holds says so here first.
-      pageData.description = p.revoked
+      // A page that ranks for a fact the deposit HAS PROVED must not tell the searcher it cannot be cited.
+      // These are the deposit's highest-traffic pages: every one was withdrawn for lacking a Lean proof, and
+      // the proofs now exist. The description is what a search result shows, so it is the first place the
+      // correction has to land.
+      pageData.description = p.revoked && p.supersededBy
+        ? 'RE-ESTABLISHED — withdrawn for lacking a proof, and now carried by the Lean theorem ' + p.supersededBy + ', machine-checked sorry-free and axiom-free over its whole domain. Integrity, not truth. entails → 0/7.'
+        : p.revoked
         ? 'WITHDRAWN — this entry no longer stands as a theorem of the deposit and must not be cited. Its receipt (' + p.receipt + ') remains in the append-only record so the chain still verifies, but the statement is not re-verified on every build. Integrity, not truth. entails → 0/7.'
         : p.key.startsWith('lean_')
         // Established by the Lean kernel, not by enumeration in discover.ts. Saying "computed by exhaustion"

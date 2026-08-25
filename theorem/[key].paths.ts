@@ -75,7 +75,7 @@ const extractLean = (key: string): string => {
 export default {
   paths() {
     // 1 · the discovery ledger — unchanged
-    const ledger: { key: string; name: string; receipt: string; revoked?: boolean; reason?: string }[] =
+    const ledger: { key: string; name: string; receipt: string; revoked?: boolean; reason?: string; supersededBy?: string }[] =
       JSON.parse(readFileSync('src/proof/discovered.json', 'utf8'))
     const N = ledger.length
     // A REVOKED ENTRY KEEPS ITS PAGE AND MUST SAY SO. The record is append-only, so the URL stays resolvable
@@ -86,7 +86,7 @@ export default {
     const discovered = ledger.map((e, i) => ({
       params: {
         key: e.key, name: e.name, receipt: e.receipt, hues: withHues(ledger, i, N),
-        revoked: e.revoked === true, reason: e.reason ?? '',
+        revoked: e.revoked === true, reason: e.reason ?? '', supersededBy: e.supersededBy ?? '',
       },
     }))
 

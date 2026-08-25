@@ -1,0 +1,1764 @@
+{
+  "source": "Google Search Console, Web search, last 3 months (aggregate query data for the deposit's own site)",
+  "note": "Retrieval scaffolding (authoritative/source/proof/-filetype:) is stripped so the TOPIC is what is demanded, not how it was asked for.",
+  "totalQueries": 287,
+  "topics": [
+    {
+      "topic": "7! factorial 5040 hurwitz number degree",
+      "impressions": 67,
+      "clicks": 0,
+      "queries": 1,
+      "best": 7.57
+    },
+    {
+      "topic": "hyper cube length 7 flips problem reachable only one gift",
+      "impressions": 51,
+      "clicks": 0,
+      "queries": 1,
+      "best": 5.51
+    },
+    {
+      "topic": "fibonacci gcd identity gcd(f_m,f_n)=f_gcd(m,n)",
+      "impressions": 48,
+      "clicks": 0,
+      "queries": 4,
+      "best": 6.55
+    },
+    {
+      "topic": "gcd(f_m,f_n)=f_gcd(m,n) fibonacci identity",
+      "impressions": 42,
+      "clicks": 0,
+      "queries": 4,
+      "best": 8.45
+    },
+    {
+      "topic": "derangement recurrence d_n = (n-1)(d_{n-1}+d_{n-2})",
+      "impressions": 39,
+      "clicks": 0,
+      "queries": 6,
+      "best": 7.0
+    },
+    {
+      "topic": "gcd(f_m, f_n) = f_gcd(m,n) fibonacci identity",
+      "impressions": 38,
+      "clicks": 0,
+      "queries": 5,
+      "best": 6.0
+    },
+    {
+      "topic": "tarot guidance not deterministic",
+      "impressions": 22,
+      "clicks": 0,
+      "queries": 1,
+      "best": 7.27
+    },
+    {
+      "topic": "n^{3/8}\" exponential sum quadratic phase",
+      "impressions": 20,
+      "clicks": 0,
+      "queries": 1,
+      "best": 8.7
+    },
+    {
+      "topic": "trinity pi",
+      "impressions": 16,
+      "clicks": 0,
+      "queries": 1,
+      "best": 8.06
+    },
+    {
+      "topic": "site:github.io \"revolut",
+      "impressions": 14,
+      "clicks": 0,
+      "queries": 1,
+      "best": 121.71
+    },
+    {
+      "topic": "non-degenerate triangles\" \"blue\" \"red\" \"white\" k indices",
+      "impressions": 13,
+      "clicks": 0,
+      "queries": 1,
+      "best": 4.69
+    },
+    {
+      "topic": "ceccec",
+      "impressions": 13,
+      "clicks": 0,
+      "queries": 1,
+      "best": 17.38
+    },
+    {
+      "topic": "fibonacci gcd identity",
+      "impressions": 13,
+      "clicks": 0,
+      "queries": 3,
+      "best": 5.0
+    },
+    {
+      "topic": "fibonacci gcd identity gcd(f_m, f_n) = f_gcd(m,n)",
+      "impressions": 13,
+      "clicks": 0,
+      "queries": 3,
+      "best": 7.71
+    },
+    {
+      "topic": "smallest carmichael number 561",
+      "impressions": 13,
+      "clicks": 0,
+      "queries": 3,
+      "best": 5.83
+    },
+    {
+      "topic": "möbius function sum over divisors equals 1 if n=1 0 otherwise",
+      "impressions": 12,
+      "clicks": 0,
+      "queries": 2,
+      "best": 5.78
+    },
+    {
+      "topic": "gcd fibonacci numbers identity gcd(f_m,f_n)=f_gcd(m,n)",
+      "impressions": 11,
+      "clicks": 0,
+      "queries": 3,
+      "best": 5.0
+    },
+    {
+      "topic": "derangement recurrence d_n=(n-1)(d_{n-1}+d_{n-2})",
+      "impressions": 11,
+      "clicks": 0,
+      "queries": 4,
+      "best": 8.0
+    },
+    {
+      "topic": "parity of popcount xor equals xor of parities",
+      "impressions": 10,
+      "clicks": 0,
+      "queries": 2,
+      "best": 3.0
+    },
+    {
+      "topic": "theorem seq7\" \"decides_run_false_to_not_in",
+      "impressions": 9,
+      "clicks": 0,
+      "queries": 1,
+      "best": 6.44
+    },
+    {
+      "topic": "exponential sum\" \"n^{3/8}",
+      "impressions": 9,
+      "clicks": 0,
+      "queries": 1,
+      "best": 8.44
+    },
+    {
+      "topic": "n^{3/8}\" \"exponential sum",
+      "impressions": 9,
+      "clicks": 0,
+      "queries": 1,
+      "best": 8.78
+    },
+    {
+      "topic": "tarot reading guidance not deterministic",
+      "impressions": 8,
+      "clicks": 0,
+      "queries": 1,
+      "best": 9.38
+    },
+    {
+      "topic": "n^{3/8}\" \"measure\" \"exponential sum",
+      "impressions": 7,
+      "clicks": 0,
+      "queries": 1,
+      "best": 6.43
+    },
+    {
+      "topic": "u⁶",
+      "impressions": 7,
+      "clicks": 0,
+      "queries": 1,
+      "best": 9.29
+    },
+    {
+      "topic": "u⁵",
+      "impressions": 7,
+      "clicks": 0,
+      "queries": 1,
+      "best": 9.43
+    },
+    {
+      "topic": "n^{3/8}\" exponential sum quadratic phase measure",
+      "impressions": 7,
+      "clicks": 0,
+      "queries": 1,
+      "best": 9.57
+    },
+    {
+      "topic": "nicomachus's theorem",
+      "impressions": 6,
+      "clicks": 1,
+      "queries": 2,
+      "best": 45.8
+    },
+    {
+      "topic": "what are the collider detection limits for the d₄×ℤ₄ neutrino model -site:youtube.com -site:tiktok.com -site:instagram.com -site:ebay.com -site:jd.com -site:amazon.com -site:iqiyi.com -site:bilibili.com -site:t.me -site:douyin.com -site:douban.com -site:apple.com -site:reddit.com -site:researchgate.net -site:academia.edu -site:dokumen.pub -site:en.wikipedia.org -site:quora.com -site:sciencedirect.com -site:cambridge.org -site:mdpi.com -site:link.springer.com -site:zhuanlan.zhihu.com -site:journals.sagepub.com -site:imdb.com -site:tandfonline.com -site:onlinelibrary.wiley.com -site:brill.com -site:getyourguide.com -site:academic.oup.com -site:www.emerald.com -site:eresources.nlb.gov.sg -site:www.govinfo.gov",
+      "impressions": 6,
+      "clicks": 0,
+      "queries": 1,
+      "best": 1.0
+    },
+    {
+      "topic": "quadratic exponential sum\" \"n^{3/8}",
+      "impressions": 6,
+      "clicks": 0,
+      "queries": 1,
+      "best": 2.0
+    },
+    {
+      "topic": "n^{3/8}\" \"exponential sum\" \"quadratic",
+      "impressions": 6,
+      "clicks": 0,
+      "queries": 1,
+      "best": 7.67
+    },
+    {
+      "topic": "riemann zeta function zeta(-1) = -1/12",
+      "impressions": 6,
+      "clicks": 0,
+      "queries": 1,
+      "best": 8.33
+    },
+    {
+      "topic": "c6'\" \"six-cycle\" \"antipodal\" graph",
+      "impressions": 6,
+      "clicks": 0,
+      "queries": 1,
+      "best": 9.83
+    },
+    {
+      "topic": "in x₀(n) model construction, what replaces φ_n(j,j') when the latter is not available -site:youtube.com -site:tiktok.com -site:instagram.com -site:ebay.com -site:jd.com -site:amazon.com -site:iqiyi.com -site:bilibili.com -site:t.me -site:douyin.com -site:douban.com -site:apple.com -site:reddit.com -site:researchgate.net -site:academia.edu -site:dokumen.pub -site:en.wikipedia.org -site:quora.com -site:sciencedirect.com -site:cambridge.org -site:mdpi.com -site:link.springer.com -site:zhuanlan.zhihu.com -site:journals.sagepub.com -site:imdb.com -site:tandfonline.com -site:onlinelibrary.wiley.com -site:brill.com -site:getyourguide.com -site:academic.oup.com -site:www.emerald.com -site:eresources.nlb.gov.sg -site:www.govinfo.gov",
+      "impressions": 5,
+      "clicks": 0,
+      "queries": 1,
+      "best": 11.0
+    },
+    {
+      "topic": "named established method that ensures the uniqueness of polynomial p in the space c_e^α(x₀) -site:youtube.com -site:tiktok.com -site:instagram.com -site:ebay.com -site:jd.com -site:amazon.com -site:iqiyi.com -site:bilibili.com -site:t.me -site:douyin.com -site:douban.com -site:apple.com -site:reddit.com -site:researchgate.net -site:academia.edu -site:dokumen.pub -site:en.wikipedia.org -site:quora.com -site:sciencedirect.com -site:cambridge.org -site:mdpi.com -site:link.springer.com -site:zhuanlan.zhihu.com -site:journals.sagepub.com -site:imdb.com -site:tandfonline.com -site:onlinelibrary.wiley.com -site:brill.com -site:getyourguide.com -site:academic.oup.com -site:www.emerald.com -site:eresources.nlb.gov.sg -site:www.govinfo.gov",
+      "impressions": 5,
+      "clicks": 0,
+      "queries": 1,
+      "best": 23.4
+    },
+    {
+      "topic": "n^{3/8}\" \"exponential sum\" \"measure",
+      "impressions": 4,
+      "clicks": 0,
+      "queries": 1,
+      "best": 6.75
+    },
+    {
+      "topic": "z[√-d]\" \"half-factorial",
+      "impressions": 4,
+      "clicks": 0,
+      "queries": 1,
+      "best": 6.75
+    },
+    {
+      "topic": "mantel theorem triangle-free graph maximum edges floor n^2/4",
+      "impressions": 4,
+      "clicks": 0,
+      "queries": 1,
+      "best": 6.75
+    },
+    {
+      "topic": "ⰳⰾⰰⰳⱁⰾⰻⱌⰰ",
+      "impressions": 4,
+      "clicks": 0,
+      "queries": 1,
+      "best": 6.75
+    },
+    {
+      "topic": "tarot not deterministic",
+      "impressions": 4,
+      "clicks": 0,
+      "queries": 1,
+      "best": 7.25
+    },
+    {
+      "topic": "561 smallest carmichael number",
+      "impressions": 4,
+      "clicks": 0,
+      "queries": 1,
+      "best": 9.75
+    },
+    {
+      "topic": "legendre's three-square theorem",
+      "impressions": 4,
+      "clicks": 0,
+      "queries": 1,
+      "best": 11.25
+    },
+    {
+      "topic": "8 mod 9",
+      "impressions": 4,
+      "clicks": 0,
+      "queries": 1,
+      "best": 12.5
+    },
+    {
+      "topic": "quantum console",
+      "impressions": 4,
+      "clicks": 0,
+      "queries": 1,
+      "best": 14.0
+    },
+    {
+      "topic": "bezout's identity",
+      "impressions": 4,
+      "clicks": 0,
+      "queries": 1,
+      "best": 50.5
+    },
+    {
+      "topic": "legendre three-square theorem 4^a(8b+7)",
+      "impressions": 4,
+      "clicks": 0,
+      "queries": 2,
+      "best": 7.0
+    },
+    {
+      "topic": "fibonacci modulo 9 period 24",
+      "impressions": 3,
+      "clicks": 0,
+      "queries": 1,
+      "best": 4.33
+    },
+    {
+      "topic": "4³",
+      "impressions": 3,
+      "clicks": 0,
+      "queries": 1,
+      "best": 4.67
+    },
+    {
+      "topic": "mantel's theorem triangle-free graph maximum edges floor n^2/4",
+      "impressions": 3,
+      "clicks": 0,
+      "queries": 1,
+      "best": 6.0
+    },
+    {
+      "topic": "gcd(f_m,f_n)=f_gcd(m,n)",
+      "impressions": 3,
+      "clicks": 0,
+      "queries": 1,
+      "best": 8.0
+    },
+    {
+      "topic": "1 mod 9",
+      "impressions": 3,
+      "clicks": 0,
+      "queries": 1,
+      "best": 8.67
+    },
+    {
+      "topic": "legendre three square theorem",
+      "impressions": 3,
+      "clicks": 0,
+      "queries": 1,
+      "best": 8.67
+    },
+    {
+      "topic": "6⁶",
+      "impressions": 3,
+      "clicks": 0,
+      "queries": 1,
+      "best": 9.0
+    },
+    {
+      "topic": "legendre three-square theorem excluded form 4^a(8b+7)",
+      "impressions": 3,
+      "clicks": 0,
+      "queries": 1,
+      "best": 9.33
+    },
+    {
+      "topic": "tarot reading guidance not deterministic prediction",
+      "impressions": 3,
+      "clicks": 0,
+      "queries": 1,
+      "best": 10.0
+    },
+    {
+      "topic": "archimedes bounds pi 223/71 22/7",
+      "impressions": 3,
+      "clicks": 0,
+      "queries": 1,
+      "best": 10.33
+    },
+    {
+      "topic": "cassini identity fibonacci",
+      "impressions": 3,
+      "clicks": 0,
+      "queries": 1,
+      "best": 33.0
+    },
+    {
+      "topic": "euler characteristic closed orientable surface genus g 2-2g",
+      "impressions": 3,
+      "clicks": 0,
+      "queries": 2,
+      "best": 9.0
+    },
+    {
+      "topic": "sum of fifth powers formula n^2(n+1)^2(2n^2+2n-1)/12",
+      "impressions": 3,
+      "clicks": 0,
+      "queries": 2,
+      "best": 11.0
+    },
+    {
+      "topic": "mantel theorem triangle-free graph n^2/4",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 1,
+      "best": 3.0
+    },
+    {
+      "topic": "number of latin squares of order 4 576",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 1,
+      "best": 4.0
+    },
+    {
+      "topic": "disresonance",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 1,
+      "best": 5.0
+    },
+    {
+      "topic": "7! = 5040",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 1,
+      "best": 5.5
+    },
+    {
+      "topic": "mantel theorem triangle-free graph maximum floor n^2/4 edges",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 1,
+      "best": 5.5
+    },
+    {
+      "topic": "6/720",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 1,
+      "best": 7.5
+    },
+    {
+      "topic": "möbius function sum over divisors equals 1 if n=1 else 0",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 1,
+      "best": 7.5
+    },
+    {
+      "topic": "n^{3/8}\" \"quadratic\" \"exponential sum",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 1,
+      "best": 8.0
+    },
+    {
+      "topic": "half-factorial\" \"z[√-d]",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 1,
+      "best": 8.5
+    },
+    {
+      "topic": "mihăilescu theorem only consecutive perfect powers 8 and 9",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 1,
+      "best": 8.5
+    },
+    {
+      "topic": "sigma^k is an n-cycle iff gcd(k,n)=1",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 1,
+      "best": 8.5
+    },
+    {
+      "topic": "legendre three-square theorem integer not of form 4^a(8b+7) sum of three squares",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 1,
+      "best": 9.5
+    },
+    {
+      "topic": "legendre three-square theorem not of form 4^a(8b+7)",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 1,
+      "best": 9.5
+    },
+    {
+      "topic": "number of latin squares of order 4 is 576",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 1,
+      "best": 9.5
+    },
+    {
+      "topic": "tarot reflection not deterministic",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 1,
+      "best": 9.5
+    },
+    {
+      "topic": "8³",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 1,
+      "best": 10.0
+    },
+    {
+      "topic": "archimedes pi bounds 223/71 22/7",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 1,
+      "best": 10.0
+    },
+    {
+      "topic": "sum of fifth powers formula n^2 (n+1)^2 (2n^2+2n-1)/12",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 1,
+      "best": 10.0
+    },
+    {
+      "topic": "n^{3/8} \" exponential sum quadratic phase measure",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 1,
+      "best": 11.5
+    },
+    {
+      "topic": "no communication theorem",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 1,
+      "best": 26.5
+    },
+    {
+      "topic": "5040/7",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 1,
+      "best": 29.0
+    },
+    {
+      "topic": "recomputation",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 1,
+      "best": 29.0
+    },
+    {
+      "topic": "hockey stick identity",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 1,
+      "best": 31.5
+    },
+    {
+      "topic": "double torus",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 1,
+      "best": 47.0
+    },
+    {
+      "topic": "havel hakimi theorem in graph theory",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 1,
+      "best": 52.0
+    },
+    {
+      "topic": "picks theorem",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 1,
+      "best": 58.5
+    },
+    {
+      "topic": "pick’s theorem",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 1,
+      "best": 62.0
+    },
+    {
+      "topic": "3/6 element",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 1,
+      "best": 70.0
+    },
+    {
+      "topic": "honeycomb conjecture",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 1,
+      "best": 77.5
+    },
+    {
+      "topic": "trunclade",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 1,
+      "best": 79.5
+    },
+    {
+      "topic": "order 4 latin squares 576",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 2,
+      "best": 1.0
+    },
+    {
+      "topic": "closed orientable surface genus g euler characteristic 2-2g",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 2,
+      "best": 2.0
+    },
+    {
+      "topic": "mantel theorem triangle-free graph maximum edges n^2/4",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 2,
+      "best": 5.0
+    },
+    {
+      "topic": "chinese remainder theorem coprime moduli",
+      "impressions": 2,
+      "clicks": 0,
+      "queries": 2,
+      "best": 6.0
+    },
+    {
+      "topic": "repunit divisibility 3 divides r_n iff 3 divides n 7 divides r_n iff 6 divides n",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 1.0
+    },
+    {
+      "topic": "cantor pairing function formula pi(a,b) = (a+b)(a+b+1)/2 + b",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 2.0
+    },
+    {
+      "topic": "si grazie tutto",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 2.0
+    },
+    {
+      "topic": "815e\" \"o(log n)",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 4.0
+    },
+    {
+      "topic": "number of divisors odd if and only if perfect square",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 4.0
+    },
+    {
+      "topic": "fibonacci numbers gcd identity gcd(f_m,f_n)=f_gcd(m,n)",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 5.0
+    },
+    {
+      "topic": "mantel theorem triangle-free graph at most floor(n^2/4)",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 5.0
+    },
+    {
+      "topic": "mantel's theorem triangle-free graph maximum edges floor(n^2/4)",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 5.0
+    },
+    {
+      "topic": "mantel's theorem triangle-free graph maximum number of edges floor(n^2/4)",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 5.0
+    },
+    {
+      "topic": "number of latin squares order 4 576",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 5.0
+    },
+    {
+      "topic": "powers of 2 modulo 9 cycle",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 5.0
+    },
+    {
+      "topic": "tarot guidance not deterministic reflection",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 5.0
+    },
+    {
+      "topic": "tarot is for guidance not deterministic",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 5.0
+    },
+    {
+      "topic": "triangle-free graph maximum edges floor(n^2/4) mantel theorem",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 5.0
+    },
+    {
+      "topic": "6!=720",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 6.0
+    },
+    {
+      "topic": "mantel's theorem maximum edges triangle-free graph floor n^2/4",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 6.0
+    },
+    {
+      "topic": "odd number of divisors iff perfect square",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 6.0
+    },
+    {
+      "topic": "223/71",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 7.0
+    },
+    {
+      "topic": "mantel theorem maximum edges triangle-free graph floor(n^2/4)",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 7.0
+    },
+    {
+      "topic": "mantel theorem triangle-free graph at most n^2/4 edges",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 7.0
+    },
+    {
+      "topic": "tarot guidance not deterministic prediction",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 7.0
+    },
+    {
+      "topic": "2 mod 9",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 8.0
+    },
+    {
+      "topic": "4 digit narcissistic numbers",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 8.0
+    },
+    {
+      "topic": "7 mod 9",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 8.0
+    },
+    {
+      "topic": "digital root modulo 9",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 8.0
+    },
+    {
+      "topic": "gcd(f_m, f_n) = f_gcd(m,n) fibonacci theorem",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 8.0
+    },
+    {
+      "topic": "mantel's theorem triangle-free graph maximum edges n^2/4",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 8.0
+    },
+    {
+      "topic": "pick's theorem lattice polygon area interior boundary points formula",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 8.0
+    },
+    {
+      "topic": "pisano period modulo 9 fibonacci 24",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 8.0
+    },
+    {
+      "topic": "tarot guidance not deterministic predictions",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 8.0
+    },
+    {
+      "topic": "паир дроп",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 8.0
+    },
+    {
+      "topic": "c6'\" \"six-cycle\" \"antipodal",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 9.0
+    },
+    {
+      "topic": "n^{3/8}\" exponential sum measure",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 9.0
+    },
+    {
+      "topic": "8! = 40320",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 9.0
+    },
+    {
+      "topic": "bouton's theorem nim xor zero",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 9.0
+    },
+    {
+      "topic": "gcd of fibonacci numbers identity gcd(f_m,f_n)=f_gcd(m,n)",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 9.0
+    },
+    {
+      "topic": "quantum state vector simulation memory 2^n amplitudes",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 9.0
+    },
+    {
+      "topic": "rfc 8439 chacha20 block function test vector e4e7f110 15593bd1",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 9.0
+    },
+    {
+      "topic": "shoriso",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 9.0
+    },
+    {
+      "topic": "sum of first 12 odd numbers",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 9.0
+    },
+    {
+      "topic": "tarot for reflection not deterministic",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 9.0
+    },
+    {
+      "topic": "wallis product pi over 2 product (2n)^2 / ((2n-1)(2n+1))",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 9.0
+    },
+    {
+      "topic": "y²=x³-x+1",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 9.0
+    },
+    {
+      "topic": "10.8934338",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 10.0
+    },
+    {
+      "topic": "3!=6",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 10.0
+    },
+    {
+      "topic": "4 mod 9",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 10.0
+    },
+    {
+      "topic": "9 factorial 362880",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 10.0
+    },
+    {
+      "topic": "cannot update this protected ref.",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 10.0
+    },
+    {
+      "topic": "catalan's theorem only consecutive perfect powers 8 and 9",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 10.0
+    },
+    {
+      "topic": "fold mcp",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 10.0
+    },
+    {
+      "topic": "for prime p, (p-2)! ≡ 1 mod p wilson theorem",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 10.0
+    },
+    {
+      "topic": "legendre three-square theorem",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 10.0
+    },
+    {
+      "topic": "legendre three-square theorem integer sum of three squares iff not 4^a(8b+7)",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 10.0
+    },
+    {
+      "topic": "legendre three-square theorem integer sum of three squares iff not of form 4^a(8b+7)",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 10.0
+    },
+    {
+      "topic": "legendre three-square theorem integers not of form 4^a(8b+7)",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 10.0
+    },
+    {
+      "topic": "machin identity pi/4 = 4 arctan(1/5) - arctan(1/239)",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 10.0
+    },
+    {
+      "topic": "mantel's theorem triangle-free graph floor n^2/4 edges",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 10.0
+    },
+    {
+      "topic": "number of divisors odd if and only if square",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 10.0
+    },
+    {
+      "topic": "order of element k in additive group z_n is n/gcd(k,n)",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 10.0
+    },
+    {
+      "topic": "n^{3/8} \" exponential sum quadratic phase measure set",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 11.0
+    },
+    {
+      "topic": "c6'\" graph six-cycle antipodal",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 11.0
+    },
+    {
+      "topic": "220 and 284",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 11.0
+    },
+    {
+      "topic": "4x4 latin squares count 576",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 11.0
+    },
+    {
+      "topic": "archimedes pi 223/71 22/7",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 11.0
+    },
+    {
+      "topic": "catalan mihailescu theorem only consecutive perfect powers 8 and 9",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 11.0
+    },
+    {
+      "topic": "legendre's three square theorem",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 11.0
+    },
+    {
+      "topic": "machin formula pi/4 4 arctan 1/5 arctan 1/239",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 11.0
+    },
+    {
+      "topic": "nicomachus theorem",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 11.0
+    },
+    {
+      "topic": "pentagon heart",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 11.0
+    },
+    {
+      "topic": "plasma thunder",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 11.0
+    },
+    {
+      "topic": "squares modulo 9 are 0 1 4 7",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 11.0
+    },
+    {
+      "topic": "diamond cubic coordination number",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 12.0
+    },
+    {
+      "topic": "quantum lens",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 13.0
+    },
+    {
+      "topic": "divisors of 284",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 18.0
+    },
+    {
+      "topic": "graph k7",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 19.0
+    },
+    {
+      "topic": "squares mod 9",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 20.0
+    },
+    {
+      "topic": "three-distance theorem",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 21.0
+    },
+    {
+      "topic": "diamonds chat",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 23.0
+    },
+    {
+      "topic": "no-communication theorem",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 25.0
+    },
+    {
+      "topic": "rotating cleartext",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 25.0
+    },
+    {
+      "topic": "midy's theorem",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 27.0
+    },
+    {
+      "topic": "1/23 decimal",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 28.0
+    },
+    {
+      "topic": "bernoulli numbers",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 29.0
+    },
+    {
+      "topic": "express 64 as the sum of 8 odd numbers",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 29.0
+    },
+    {
+      "topic": "recursion",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 30.0
+    },
+    {
+      "topic": "smallest carmichael number",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 31.0
+    },
+    {
+      "topic": "137.5 angle",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 33.0
+    },
+    {
+      "topic": "am-gm",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 34.0
+    },
+    {
+      "topic": "circular gap theorem",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 34.0
+    },
+    {
+      "topic": "the sum of cube roots of unity is zero",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 34.0
+    },
+    {
+      "topic": "euclid's formula pythagorean triples",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 35.0
+    },
+    {
+      "topic": "no signaling theorem",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 35.0
+    },
+    {
+      "topic": "sum of consecutive cubes",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 35.0
+    },
+    {
+      "topic": "sum of consecutive cubes formula",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 35.0
+    },
+    {
+      "topic": "freshman's dream",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 36.0
+    },
+    {
+      "topic": "bell's triangle",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 37.0
+    },
+    {
+      "topic": "hockey stick theorem",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 37.0
+    },
+    {
+      "topic": "220 284",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 38.0
+    },
+    {
+      "topic": "euler pentagonal theorem",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 39.0
+    },
+    {
+      "topic": "fibonacci vortex math",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 41.0
+    },
+    {
+      "topic": "freshmans dream theorem",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 43.0
+    },
+    {
+      "topic": "havel hakimi",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 43.0
+    },
+    {
+      "topic": "thue morse sequence",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 43.0
+    },
+    {
+      "topic": "cantor's pairing function",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 44.0
+    },
+    {
+      "topic": "thue-morse sequence",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 45.0
+    },
+    {
+      "topic": "havel hakimi theorem",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 46.0
+    },
+    {
+      "topic": "freshman's dream theorem",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 47.0
+    },
+    {
+      "topic": "square wave odd harmonics",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 47.0
+    },
+    {
+      "topic": "pedersen hash",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 48.0
+    },
+    {
+      "topic": "is 561 prime",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 49.0
+    },
+    {
+      "topic": "lagrange four square theorem",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 50.0
+    },
+    {
+      "topic": "three gap theorem",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 50.0
+    },
+    {
+      "topic": "chromatic index of petersen graph",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 51.0
+    },
+    {
+      "topic": "is xor associative",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 51.0
+    },
+    {
+      "topic": "pbkdf2 iterations",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 51.0
+    },
+    {
+      "topic": "pbkdf2:sha256",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 51.0
+    },
+    {
+      "topic": "1 sqrt 5 2",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 52.0
+    },
+    {
+      "topic": "euler's pentagonal number theorem",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 52.0
+    },
+    {
+      "topic": "four square theorem",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 52.0
+    },
+    {
+      "topic": "genus 2 torus",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 52.0
+    },
+    {
+      "topic": "thue system",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 52.0
+    },
+    {
+      "topic": "8th triangular number",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 53.0
+    },
+    {
+      "topic": "am gm",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 53.0
+    },
+    {
+      "topic": "edge chromatic number of petersen graph",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 53.0
+    },
+    {
+      "topic": "merkle inclusion",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 53.0
+    },
+    {
+      "topic": "pentagon golden ratio",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 53.0
+    },
+    {
+      "topic": "wythoff sequence",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 53.0
+    },
+    {
+      "topic": "256^1/8",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 54.0
+    },
+    {
+      "topic": "bezout's theorem gcd",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 54.0
+    },
+    {
+      "topic": "inverse square of the distance",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 55.0
+    },
+    {
+      "topic": "1.3.10",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 56.0
+    },
+    {
+      "topic": "samuel lavenir",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 56.0
+    },
+    {
+      "topic": "4 square theorem",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 57.0
+    },
+    {
+      "topic": "bézout's identity",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 57.0
+    },
+    {
+      "topic": "chinese remainder theorem java",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 57.0
+    },
+    {
+      "topic": "double torus shape",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 57.0
+    },
+    {
+      "topic": "smallest amicable numbers",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 59.0
+    },
+    {
+      "topic": "pbkdf2-hmac-sha256",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 61.0
+    },
+    {
+      "topic": "chinese remainder theorem pseudocode",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 62.0
+    },
+    {
+      "topic": "1-r^2",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 63.0
+    },
+    {
+      "topic": "graph k4",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 63.0
+    },
+    {
+      "topic": "can dead man vote twice",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 66.0
+    },
+    {
+      "topic": "what is the sixth triangular number",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 66.0
+    },
+    {
+      "topic": "sonegation",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 67.0
+    },
+    {
+      "topic": "pick's theorem",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 69.0
+    },
+    {
+      "topic": "pick theorem",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 71.0
+    },
+    {
+      "topic": "error chain",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 72.0
+    },
+    {
+      "topic": "76 x 0.9",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 73.0
+    },
+    {
+      "topic": "petersen graph planar",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 73.0
+    },
+    {
+      "topic": "sunzi's theorem",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 73.0
+    },
+    {
+      "topic": "the honeycomb conjecture",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 74.0
+    },
+    {
+      "topic": "the trail must not be countenanced",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 77.0
+    },
+    {
+      "topic": "2π/5",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 78.0
+    },
+    {
+      "topic": "consecutive triangular",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 84.0
+    },
+    {
+      "topic": "purets one",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 86.0
+    },
+    {
+      "topic": "www.equilibrium360.com.br",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 86.0
+    },
+    {
+      "topic": "3 6 9 vortex math",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 88.0
+    },
+    {
+      "topic": "vironit —å–∫–∞–ω–¥–∞–ª",
+      "impressions": 1,
+      "clicks": 0,
+      "queries": 1,
+      "best": 88.0
+    }
+  ]
+}

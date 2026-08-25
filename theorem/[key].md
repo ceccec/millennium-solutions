@@ -15,6 +15,9 @@ const isLean = computed(() => !!params.value?.lean)
 // A withdrawn theorem keeps its URL and its receipt — the record is append-only — but every standing claim
 // on this page is false of it, so they are suppressed and the withdrawal is stated instead.
 const isRevoked = computed(() => params.value?.revoked === true)
+// A withdrawn statement that a Lean theorem has since re-established is not simply gone, and the page a
+// reader actually lands on is the place that has to say so.
+const superseded = computed(() => String(params.value?.supersededBy || ''))
 // Sealed FROM Lean: the kernel checked it over the whole domain. The "computed by exhaustion in
 // discover.ts" story below is true of the enumerated entries and false of these.
 const isKernel = computed(() => String(params.value?.key || '').startsWith('lean_'))
@@ -26,6 +29,8 @@ const speech = computed(() => isLean.value
     : (params.value?.name || 'A theorem') + '. Achieved by exhaustive computation, gate-checked, receipted, and re-verified on every build. Integrity, not truth. Zero of seven.')
 const desc = computed(() => isLean.value
   ? 'A Lean 4 theorem computed from the ℤ/9 doubling sequence, machine-checked sorry-free and axiom-free — adjacent to a Clay Millennium Problem, and not the conjecture. Integrity, not truth. entails → 0/7.'
+  : isRevoked.value && superseded.value
+    ? 'RE-ESTABLISHED — this statement was withdrawn for lacking a proof and is now carried by a Lean theorem, machine-checked sorry-free and axiom-free over its whole domain. Cite ' + superseded.value + '. Integrity, not truth. entails → 0/7.'
   : isRevoked.value
     ? 'WITHDRAWN — this entry no longer stands as a theorem of the deposit. Its receipt remains in the append-only record so the chain still verifies, but it is not re-verified on every build and must not be cited. Integrity, not truth. entails → 0/7.'
     : 'Achieved by exhaustive computation over a finite domain in scripts/discover.ts, gate-checked against the honesty floor, receipted and chained, and re-verified on every build. Integrity, not truth. entails → 0/7.')
@@ -47,7 +52,7 @@ const desc = computed(() => isLean.value
 - **theorem key** · `{{ $params.key }}`
 - **content-address (receipt)** · `{{ $params.receipt }}`
 - **status** · <span v-if="isRevoked">**WITHDRAWN — no longer stands, and must not be cited.** The receipt above is still in the append-only record and still verifies as a link in the chain; the statement is not a live theorem of this deposit.</span><span v-else>decidable, re-verified on every build — recomputes from <code>src/</code></span>
-- <span v-if="isRevoked">**why it was withdrawn** · {{ $params.reason }}</span><span v-else>**entails** · <code>0/7</code></span>
+- <span v-if="isRevoked && superseded">**re-established** · this statement is now carried by a Lean theorem, machine-checked over its whole domain: <a :href="'/theorem/' + superseded"><code>{{ superseded }}</code></a>. Cite that one.</span><span v-else-if="isRevoked">**why it was withdrawn** · {{ $params.reason }}</span><span v-else>**entails** · <code>0/7</code></span>
 
 </div>
 

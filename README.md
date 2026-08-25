@@ -11,12 +11,12 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 338 theorems across 18 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `386f8982-5db7-897f-95a4-d038c1241c37`</sub>
-- 330 of those 338 theorems close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
-  <sub>SEALED · `4993d1e0-e52e-87fc-83fa-024c2c634ebd`</sub>
-- 382 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `868b89c1-82a9-822c-bfcd-15f5222b5bbf`</sub>
+- The formal layer holds 346 theorems across 19 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `dec9da68-83e9-8a98-be34-d236f178d192`</sub>
+- 338 of those 346 theorems close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
+  <sub>SEALED · `549711d6-9b53-8625-aafe-237daf1eb22d`</sub>
+- 390 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `53561903-cdde-80a5-baf3-87bd43333001`</sub>
 
 ## 2 · The ring
 
@@ -39,10 +39,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 2246 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `d0961a85-a421-8c62-b10b-43bd2e23915a`</sub>
-- The count is 2246, which is 280 octaves and 6 over — the octave is a target the theorems earn, never a quota they are invented to fill.
-  <sub>SEALED · `a3722b44-da06-8673-aad5-d9709c7a9a8b`</sub>
+- The ledger records 2254 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `db393532-3f0d-8d22-98f7-52c11c1a666b`</sub>
+- The count is 2254, which is 281 octaves and 6 over — the octave is a target the theorems earn, never a quota they are invented to fill.
+  <sub>SEALED · `6e877164-0648-8736-b2fe-18fdeaf454fb`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -84,7 +84,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-18 Lean files in 4 wings, 338 theorems. The prose in this section is read out of the
+19 Lean files in 4 wings, 346 theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -99,6 +99,8 @@ this page; there is nowhere else to keep the description in step.
 **The fold** — `merkle.lean`, 9 theorem(s). The fold, ported to Lean — merge, merkleFold, and the order-independence the deposit calls its receipt.
 
 ### the floor
+
+**What is actually being asked for** — `demand.lean`, 8 theorem(s). THE ONE WING THAT DID NOT COME FROM THIS DEPOSIT'S OWN INTERESTS. Every other file here proves what the ℤ/9 construction led to. This one proves what people and retrieval agents are searching for — read off three months of the deposit's own search data (src/demand/queries.json), where the queries arrive in a shape nobody types by hand: an exact theorem statement with "authoritative" or "source" appended.
 
 **The water loop** — `energy.lean`, 18 theorem(s). THE WATER LOOP, ACCOUNTED. Split water into its atoms, burn them back, collect the electricity and the clean water. Every step of that is real and buildable. The question is only ever the ledger, so here it is.
 
@@ -132,7 +134,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Theorems** — `theorems.lean`, 1 theorem(s). The universal property — honestly, and COMPUTED from the sequence.
 
-0 of 338 theorems carry no comment of their own and are shown here as the gap they are, not
+0 of 346 theorems carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## What is deliberately absent
@@ -150,4 +152,4 @@ node scripts/pages.ts              # regenerate this file and the homepage
 
 ---
 
-*14 claims, all verified · 338 Lean theorems · 2246 ledger entries · trial root `bd4fb88b-5bce-8d1b-8446-0ec30c085bb1` · integrity, not truth · 0/7*
+*14 claims, all verified · 346 Lean theorems · 2254 ledger entries · trial root `35aca541-e9f1-8dce-90aa-01fe298c8405` · integrity, not truth · 0/7*

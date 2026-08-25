@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2246 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2254 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (356)
+### lean (364)
 
 - [lean_units_are_six](/theorem/lean_units_are_six) — lean: the units of ℤ/9 are exactly [1,2,4,5,7,8] — checked at every residue by the kernel, recomputed here; 0/7  ·  `031c89bf-e1e0…`
 - [lean_units_count](/theorem/lean_units_count) — lean: there are exactly six units in ℤ/9 — the kernel checks the count, recomputed here; 0/7  ·  `104e8965-ebfb…`
@@ -380,6 +380,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_mechanical_each_suggested_next_is_content_addressed](/theorem/lean_mechanical_each_suggested_next_is_content_addressed) — lean mechanical.lean: each_suggested_next_is_content_addressed — Address.toUuidBytes [47, 116, 104, 101, 111, 114, 101, 109, 47, 97] == Address.toUuidBytes [47, 116, 104, 101, 111, 114, 101, 109, 47, 97] && Address.toUuidBytes [47, 116, 104, 101, 111, 114, 101, 109, 47, 97] != Address.toUuidBytes [47, 11… — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7b2d24ee-fbc9…`
 - [lean_mechanical_the_rejected_command_gets_a_receipt](/theorem/lean_mechanical_the_rejected_command_gets_a_receipt) — lean mechanical.lean: the_rejected_command_gets_a_receipt — Address.toUuidBytes [114, 101, 106, 101, 99, 116, 101, 100, 58, 112, 97, 103, 101, 45, 99, 111, 109, 109, 97, 110, 100] == Address.toUuidBytes [114, 101, 106, 101, 99, 116, 101, 100, 58, 112, 97, 103, 101, 45, 99, 111, 109, 109, 97, 110, 10… — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `74670847-26bf…`
 - [lean_mechanical_chess_board_64](/theorem/lean_mechanical_chess_board_64) — lean mechanical.lean: chess_board_64 — let __p := ((List.range 8).flatMap (fun r =&gt; (List.range 8).map (fun c =&gt; (r + c) % 2 == 0))); let l := (__p.filter (fun z =&gt; z)).length; let d := __p.length - (__p.filter (fun z =&gt; z)).length; l == 32 && d == 32 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `bc937383-b7bb…`
+- [lean_demand_fibonacci_gcd_is_the_fibonacci_of_the_gcd](/theorem/lean_demand_fibonacci_gcd_is_the_fibonacci_of_the_gcd) — lean demand.lean: fibonacci_gcd_is_the_fibonacci_of_the_gcd — (List.range' 1 14).all (fun m =&gt; (List.range' 1 14).all (fun n =&gt; Families.gcd' (Sequences.fib m) (Sequences.fib n) == Sequences.fib (Families.gcd' m n))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `790d9f7e-f479…`
+- [lean_demand_the_mobius_divisor_sum_is_the_identity](/theorem/lean_demand_the_mobius_divisor_sum_is_the_identity) — lean demand.lean: the_mobius_divisor_sum_is_the_identity — (List.range' 1 30).all (fun n =&gt; ((divisors n).map mu).foldl (· + ·) 0 == (if n == 1 then (1 : Int) else 0)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a67ddaf7-8fbe…`
+- [lean_demand_the_derangement_recurrence_holds](/theorem/lean_demand_the_derangement_recurrence_holds) — lean demand.lean: the_derangement_recurrence_holds — (List.range' 2 11).all (fun n =&gt; derange n == (n - 1) * (derange (n - 1) + derange (n - 2))) ∧ derange 4 = 9 ∧ derange 5 = 44 ∧ derange 6 = 265 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `f6514d06-2d6a…`
+- [lean_demand_legendres_three_square_theorem](/theorem/lean_demand_legendres_three_square_theorem) — lean demand.lean: legendres_three_square_theorem — (List.range 200).all (fun n =&gt; isSumOfThreeSquares n == ¬ isExcludedForm n) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a7f81e65-e2dc…`
+- [lean_demand_five_six_one_is_the_smallest_carmichael_number](/theorem/lean_demand_five_six_one_is_the_smallest_carmichael_number) — lean demand.lean: five_six_one_is_the_smallest_carmichael_number — isCarmichael 561 = true ∧ (List.range' 2 559).all (fun n =&gt; ¬ isCarmichael n) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `47c1ca71-9ee1…`
+- [lean_demand_the_parity_of_popcount_is_the_xor_of_the_bits](/theorem/lean_demand_the_parity_of_popcount_is_the_xor_of_the_bits) — lean demand.lean: the_parity_of_popcount_is_the_xor_of_the_bits — (List.range 128).all (fun n =&gt; bitsF 10 n % 2 == (List.range' 0 8).foldl (fun acc i =&gt; (acc + (n / (2 ^ i)) % 2) % 2) 0) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `45a32a61-3a94…`
+- [lean_demand_factorial_seven_is_five_thousand_and_forty](/theorem/lean_demand_factorial_seven_is_five_thousand_and_forty) — lean demand.lean: factorial_seven_is_five_thousand_and_forty — Sequences.fact 7 = 5040 ∧ Sequences.fact 6 = 720 ∧ Sequences.fact 8 = 40320 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `17a14eb5-3126…`
+- [lean_demand_mantels_bound_is_n_squared_over_four](/theorem/lean_demand_mantels_bound_is_n_squared_over_four) — lean demand.lean: mantels_bound_is_n_squared_over_four — (List.range' 1 20).all (fun n =&gt; (n / 2) * (n - n / 2) == n * n / 4) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `0100456e-42f6…`
 
 ### other — one-of-a-kind (0)
 
@@ -2290,4 +2298,4 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 
 </details>
 
-Page content-address: `804b08d3-bc06-81f8-8294-c1cb0bf94541`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `2d2aa36e-ada6-8d7b-afc0-4c8935119462`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

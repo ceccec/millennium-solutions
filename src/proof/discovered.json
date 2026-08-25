@@ -4104,7 +4104,8 @@
     "receipt": "e0bbc47c-3270-8bba-81ce-b07729547ae8",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_demand_the_mobius_divisor_sum_is_the_identity"
   },
   {
     "key": "mobius_inversion_recovers_totient",
@@ -4674,7 +4675,8 @@
     "receipt": "2424697a-8d56-8afa-a1f0-d2b88ab34bf5",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_demand_fibonacci_gcd_is_the_fibonacci_of_the_gcd"
   },
   {
     "key": "fibonacci_divides_iff_index_divides",
@@ -4818,7 +4820,8 @@
     "receipt": "58104ecc-d979-81b5-8ff1-dfab71fb24ca",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_demand_the_parity_of_popcount_is_the_xor_of_the_bits"
   },
   {
     "key": "demorgan_nary_k7",
@@ -5654,7 +5657,8 @@
     "receipt": "99c81baf-9350-892a-9223-ade4bf90bc9b",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_demand_the_mobius_divisor_sum_is_the_identity"
   },
   {
     "key": "five_six_one_is_the_smallest_carmichael_number",
@@ -5662,7 +5666,8 @@
     "receipt": "109b8dc3-b6f7-8b36-ac72-8d0b91563fa0",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_demand_five_six_one_is_the_smallest_carmichael_number"
   },
   {
     "key": "wilsons_theorem_characterizes_the_primes_exactly",
@@ -5938,7 +5943,8 @@
     "receipt": "ec266737-e9ab-8115-b76b-84c9a8d8c5f8",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_demand_legendres_three_square_theorem"
   },
   {
     "key": "a_decidable_theorem_must_halt_the_infinite_loop_was_a_bug_not_a_quantum_necessity",
@@ -7947,7 +7953,8 @@
     "receipt": "f9f89b0b-4e92-8305-b83f-d5085929d490",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_demand_factorial_seven_is_five_thousand_and_forty"
   },
   {
     "key": "factorial_8_is_40320",
@@ -9074,7 +9081,8 @@
     "receipt": "068f1309-f0bd-81d2-92a2-bc3a2a21b4c8",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_demand_the_derangement_recurrence_holds"
   },
   {
     "key": "handshakes_among_n_people_number_c_n_2",
@@ -16432,5 +16440,45 @@
     "key": "lean_mechanical_chess_board_64",
     "name": "lean mechanical.lean: chess_board_64 — let __p := ((List.range 8).flatMap (fun r => (List.range 8).map (fun c => (r + c) % 2 == 0))); let l := (__p.filter (fun z => z)).length; let d := __p.length - (__p.filter (fun z => z)).length; l == 32 && d == 32 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "bc937383-b7bb-8f34-ac22-50050aa56b70"
+  },
+  {
+    "key": "lean_demand_fibonacci_gcd_is_the_fibonacci_of_the_gcd",
+    "name": "lean demand.lean: fibonacci_gcd_is_the_fibonacci_of_the_gcd — (List.range' 1 14).all (fun m => (List.range' 1 14).all (fun n => Families.gcd' (Sequences.fib m) (Sequences.fib n) == Sequences.fib (Families.gcd' m n))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "790d9f7e-f479-8d85-8523-5f65a5b55e30"
+  },
+  {
+    "key": "lean_demand_the_mobius_divisor_sum_is_the_identity",
+    "name": "lean demand.lean: the_mobius_divisor_sum_is_the_identity — (List.range' 1 30).all (fun n => ((divisors n).map mu).foldl (· + ·) 0 == (if n == 1 then (1 : Int) else 0)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a67ddaf7-8fbe-8f57-98d5-c385e295cbec"
+  },
+  {
+    "key": "lean_demand_the_derangement_recurrence_holds",
+    "name": "lean demand.lean: the_derangement_recurrence_holds — (List.range' 2 11).all (fun n => derange n == (n - 1) * (derange (n - 1) + derange (n - 2))) ∧ derange 4 = 9 ∧ derange 5 = 44 ∧ derange 6 = 265 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f6514d06-2d6a-8434-8550-a8d8e6e590bb"
+  },
+  {
+    "key": "lean_demand_legendres_three_square_theorem",
+    "name": "lean demand.lean: legendres_three_square_theorem — (List.range 200).all (fun n => isSumOfThreeSquares n == ¬ isExcludedForm n) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a7f81e65-e2dc-8225-9ede-b477ba21d340"
+  },
+  {
+    "key": "lean_demand_five_six_one_is_the_smallest_carmichael_number",
+    "name": "lean demand.lean: five_six_one_is_the_smallest_carmichael_number — isCarmichael 561 = true ∧ (List.range' 2 559).all (fun n => ¬ isCarmichael n) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "47c1ca71-9ee1-8904-8ed6-f2ecb42266d3"
+  },
+  {
+    "key": "lean_demand_the_parity_of_popcount_is_the_xor_of_the_bits",
+    "name": "lean demand.lean: the_parity_of_popcount_is_the_xor_of_the_bits — (List.range 128).all (fun n => bitsF 10 n % 2 == (List.range' 0 8).foldl (fun acc i => (acc + (n / (2 ^ i)) % 2) % 2) 0) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "45a32a61-3a94-8a8a-91d3-b658b6911d83"
+  },
+  {
+    "key": "lean_demand_factorial_seven_is_five_thousand_and_forty",
+    "name": "lean demand.lean: factorial_seven_is_five_thousand_and_forty — Sequences.fact 7 = 5040 ∧ Sequences.fact 6 = 720 ∧ Sequences.fact 8 = 40320 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "17a14eb5-3126-87ee-a765-6a9096ca97b3"
+  },
+  {
+    "key": "lean_demand_mantels_bound_is_n_squared_over_four",
+    "name": "lean demand.lean: mantels_bound_is_n_squared_over_four — (List.range' 1 20).all (fun n => (n / 2) * (n - n / 2) == n * n / 4) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "0100456e-42f6-8f87-ac03-61f38d12e5e0"
   }
 ]
