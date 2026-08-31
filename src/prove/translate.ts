@@ -307,6 +307,70 @@ function countingLoop(b: string): string | null {
   return `const __p = ${pairs}; const ${a} = (__p.filter (fun z => z)).length; const ${bb} = __p.length - (__p.filter (fun z => z)).length; ${after.trim()}`
 }
 
+/** BOUNDED STATE ITERATION IS A FOLD. `let s = init; for (let k = 0; k < N; k++) s = f(s)` applies f exactly
+ *  N times to init, which is `(List.range N).foldl (fun s _ => f s) init` — same function, same count, same
+ *  order, and the bound is a literal so the count is known. I previously reported 327 for-loop claims as
+ *  needing judgement to render; measuring the shapes instead of asserting them showed the largest bucket was
+ *  this one, and it needs no judgement at all. The loop variable is unused in the body of every case this
+ *  fires on, which is checked — if the body reads k it is a different construct and stays refused. */
+function stateIteration(b: string): string | null {
+  const m = b.match(/^(?:let|const)\s+([A-Za-z_]\w*)\s*(?::\s*[^=]+)?=\s*([^;]+);\s*([\s\S]*?)for\s*\(\s*(?:let|var)\s+([A-Za-z_]\w*)\s*=\s*0\s*;\s*\4\s*<\s*(\d+)\s*;\s*\4\+\+\s*\)\s*\1\s*=\s*([^;]+);\s*([\s\S]*)$/)
+  if (!m) return null
+  const [, name, init, between, k, n, step, after] = m
+  if (new RegExp('\\b' + k + '\\b').test(step)) return null   // the body reads the index: not a plain iteration
+  if (/\bfor\b|\bwhile\b/.test(after)) return null
+  return `${between}const ${name} = (List.range ${n}).foldl (fun ${name} _ => ${step.trim()}) (${init.trim()}); ${after.trim()}`
+}
+
+/** A CONDITIONAL PUSH OVER A RANGE IS A FILTER. `const t = []; for (let v = a; v <= b; v++) if (C) t.push(v)`
+ *  collects exactly the values in the range satisfying C, in order — `(List.range' a (b-a+1)).filter (fun v => C)`.
+ *  Only the form that pushes the loop VARIABLE itself is rewritten; pushing an expression of it is a map over
+ *  the filter and is left alone rather than guessed at. */
+function conditionalPush(b: string): string | null {
+  const m = b.match(/^const\s+([A-Za-z_]\w*)\s*(?::\s*[^=]+)?=\s*\[\s*\]\s*;\s*for\s*\(\s*(?:let|var)\s+([A-Za-z_]\w*)\s*=\s*(\d+)\s*;\s*\2\s*(<=?)\s*(\d+)\s*;\s*\2\+\+\s*\)\s*if\s*\(([\s\S]*?)\)\s*\1\.push\(\s*\2\s*\)\s*;\s*([\s\S]*)$/)
+  if (!m) return null
+  const [, name, v, from, cmp, to, cond, after] = m
+  if (/\bfor\b|\bwhile\b|\.push\(/.test(after)) return null
+  const len = Number(to) - Number(from) + (cmp === '<=' ? 1 : 0)
+  if (!(len > 0)) return null
+  const list = from === '0' && cmp === '<' ? `(List.range ${to})` : `(List.range' ${from} ${len})`
+  return `const ${name} = ${list}.filter (fun ${v} => ${cond.trim()}); ${after.trim()}`
+}
+
+/** AN EARLY-RETURN VALIDATION LOOP IS A UNIVERSAL QUANTIFIER. `for (let v = a; v <= b; v++) if (C) return
+ *  false; return true` says exactly "no v in the range satisfies C", which is `(range).all (fun v => ¬ C)` —
+ *  same range, same predicate, and the early exit is what `all` does. The two-level form nests the same way.
+ *
+ *  This is the shape I twice reported as needing judgement. The first time I asserted it without measuring;
+ *  the second time I measured with a classifier that matched the `v++` in the loop HEADER and filed 259 of
+ *  these under "counter accumulation". Both readings were wrong, and the loop needs no judgement at all. A
+ *  measurement is only as good as the thing doing the measuring, which is not a lesson I expected to need
+ *  twice in one file. */
+function validationLoop(b: string): string | null {
+  const one = /^for\s*\(\s*(?:let|var)\s+([A-Za-z_]\w*)\s*=\s*(\d+)\s*;\s*\1\s*(<=?)\s*(\d+)\s*;\s*\1\+\+\s*\)\s*if\s*\(([\s\S]*?)\)\s*return\s+false\s*;\s*return\s+true\s*;?\s*$/
+  const two = /^for\s*\(\s*(?:let|var)\s+([A-Za-z_]\w*)\s*=\s*(\d+)\s*;\s*\1\s*(<=?)\s*(\d+)\s*;\s*\1\+\+\s*\)\s*for\s*\(\s*(?:let|var)\s+([A-Za-z_]\w*)\s*=\s*(\d+)\s*;\s*\5\s*(<=?)\s*(\d+)\s*;\s*\5\+\+\s*\)\s*if\s*\(([\s\S]*?)\)\s*return\s+false\s*;\s*return\s+true\s*;?\s*$/
+  const span = (from: string, cmp: string, to: string) => {
+    const len = Number(to) - Number(from) + (cmp === '<=' ? 1 : 0)
+    if (!(len > 0)) return null
+    return from === '0' && cmp === '<' ? `(List.range ${to})` : `(List.range' ${from} ${len})`
+  }
+  const m2 = b.match(two)
+  if (m2) {
+    const [, v1, a1, c1, b1, v2, a2, c2, b2, cond] = m2
+    const s1 = span(a1, c1, b1), s2 = span(a2, c2, b2)
+    if (!s1 || !s2) return null
+    return `${s1}.all (fun ${v1} => ${s2}.all (fun ${v2} => ¬ (${cond.trim()})))`
+  }
+  const m1 = b.match(one)
+  if (m1) {
+    const [, v, from, cmp, to, cond] = m1
+    const sp = span(from, cmp, to)
+    if (!sp) return null
+    return `${sp}.all (fun ${v} => ¬ (${cond.trim()}))`
+  }
+  return null
+}
+
 function unwrapBindings(b: string): { lets: [string, string][]; expr: string } | null {
   const lets: [string, string][] = []
   let rest = b
@@ -348,6 +412,12 @@ export function translate(body: string): Translation {
     let inner = block ? block[1] : b
     const counted = countingLoop(inner)
     if (counted) inner = counted
+    const validated = validationLoop(inner)
+    if (validated) inner = validated
+    const iterated = stateIteration(inner)
+    if (iterated) inner = iterated
+    const pushed = conditionalPush(inner)
+    if (pushed) inner = pushed
     const looped = loopToMap(inner)
     if (looped) inner = looped
     const u = unwrapBindings(inner)
@@ -368,7 +438,7 @@ export function translate(body: string): Translation {
   // binder it introduced. The previous check was a regex that let `nonHarmonic` and array indexing through;
   // both compiled into nonsense the kernel rejected. Anything unrecognised is refused by name, so a failure
   // is legible instead of mysterious.
-  const ALLOWED = new Set(['List', 'range', 'all', 'any', 'contains', 'length', 'fun', 'M9', 'DR', 'true', 'false', 'let', 'eraseDups', 'filter', 'map', 'take', 'drop', 'Address', 'toUuidBytes', 'flatMap', '__p'])
+  const ALLOWED = new Set(['List', 'range', 'all', 'any', 'contains', 'length', 'fun', 'M9', 'DR', 'true', 'false', 'let', 'eraseDups', 'filter', 'map', 'take', 'drop', 'Address', 'toUuidBytes', 'flatMap', '__p', 'foldl', '_'])
   const binders = new Set([
     ...[...out.matchAll(/fun ([a-z][a-zA-Z0-9]*) =>/g)].map((m) => m[1]),
     ...[...out.matchAll(/let ([A-Za-z_][A-Za-z0-9_]*) :=/g)].map((m) => m[1]),

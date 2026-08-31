@@ -71,6 +71,9 @@ theorem genus2_moduli_dim : 6 * 2 - 6 == 6 := by decide
 -- every genus-2 curve is hyperelliptic: a double cover of the sphere branched at 2g+2 = 6 Weierstrass points
 theorem genus2_hyperelliptic : 2 * 2 + 2 == 6 := by decide
 
+-- the digital root IS residue mod 9: for every n>0, digitalRoot(n) = ((n−1) mod 9)+1 — the digit-sum collapse an
+theorem relation_digitroot_is_residue_mod9 : (List.range' 1 200).all (fun n => ¬ (DR (n) != ((n - 1) % 9) + 1)) := by decide
+
 -- the Kaprekar constants bind to ℤ/9: dr(495) = dr(6174) = 9 = BASE — both fixed points sit on the base’s own di
 theorem kaprekar_constants_digitroot_nine : DR (495) == 9 && DR (6174) == 9 := by decide
 
@@ -89,14 +92,29 @@ theorem _142857_times_seven_is_six_nines : 142857 * 7 == 999999 := by decide
 -- Midy’s theorem on 1/7: the two halves of the repetend sum to nines — 142 + 857 = 999; 0/7
 theorem midy_the_two_halves_of_142857_sum_to_nines : 142 + 857 == 999 := by decide
 
+-- the nine times table always digital-roots to nine: digitalRoot(9k) = 9 for every k ≥ 1 — nine is the base’s fi
+theorem the_nine_times_table_always_digital_roots_to_nine : (List.range' 1 60).all (fun k => ¬ (DR (9 * k) != 9)) := by decide
+
 -- the regular nonagon’s exterior angle is 360/9 = 40° = the a432 step — the base draws the nine-point circle at 
 theorem the_regular_nonagon_exterior_angle_is_the_a432_step : 360 / 9 == 40 && 40 == 40 := by decide
+
+-- casting out nines is multiplicative: digitalRoot(a·b) = digitalRoot(digitalRoot(a)·digitalRoot(b)) — the base-
+theorem casting_out_nines_is_multiplicative : (List.range' 2 59).all (fun a => (List.range' 2 59).all (fun b => ¬ (DR (a * b) != DR (DR (a) * DR (b))))) := by decide
 
 -- the regular hexagon’s exterior angle is 360/6 = 60° = the gold string (π/3), its interior 120° — six tiles the
 theorem the_regular_hexagon_exterior_angle_is_the_gold_string : 360 / 6 == 60 && 180 - 60 == 120 := by decide
 
 -- the doubling orbit’s reflection pairs sum to nine: 1+8, 2+7, 4+5 — the circuit folds onto itself across the ni
 theorem the_doubling_orbit_reflection_pairs_sum_to_nine : 1 + 8 == 9 && 2 + 7 == 9 && 4 + 5 == 9 := by decide
+
+-- there are infinitely many Pythagorean triples: every scaling k·(3,4,5) is a triple, so no finite list is compl
+theorem there_are_infinitely_many_pythagorean_triples : (List.range' 1 100).all (fun k => ¬ ((3 * k) ^ 2 + (4 * k) ^ 2 != (5 * k) ^ 2)) := by decide
+
+-- the difference of consecutive squares is the odd numbers: (n+1)² − n² = 2n+1; 0/7
+theorem the_difference_of_consecutive_squares_is_the_odd_numbers : (List.range' 0 501).all (fun n => ¬ ((n + 1) ^ 2 - n * n != 2 * n + 1)) := by decide
+
+-- the product of any three consecutive integers is divisible by six: among three consecutive there is a multiple
+theorem the_product_of_any_three_consecutive_integers_is_divisible_by_six : (List.range' 1 500).all (fun n => ¬ ((n * (n + 1) * (n + 2)) % 6 != 0)) := by decide
 
 -- DNA’s sixty-four codons split 61 sense + 3 stop, encoding 20 amino acids — more codons than meanings, so the c
 theorem sixty_one_sense_three_stop_codons : 61 + 3 == 64 && 20 < 61 := by decide

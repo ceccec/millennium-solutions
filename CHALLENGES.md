@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2307 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2313 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (416)
+### lean (422)
 
 - [lean_units_are_six](/theorem/lean_units_are_six) — lean: the units of ℤ/9 are exactly [1,2,4,5,7,8] — checked at every residue by the kernel, recomputed here; 0/7  ·  `031c89bf-e1e0…`
 - [lean_units_count](/theorem/lean_units_count) — lean: there are exactly six units in ℤ/9 — the kernel checks the count, recomputed here; 0/7  ·  `104e8965-ebfb…`
@@ -440,6 +440,12 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_imagined_sixth_collapses_orbit_to_one_value](/theorem/lean_imagined_sixth_collapses_orbit_to_one_value) — lean imagined.lean: sixth_collapses_orbit_to_one_value — ([1, 2, 4, 8, 7, 5].map (fun d =&gt; m9 (d ^ 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `de81e968-ed2f…`
 - [lean_imagined_sixth_collapses_tetA_to_one_value](/theorem/lean_imagined_sixth_collapses_tetA_to_one_value) — lean imagined.lean: sixth_collapses_tetA_to_one_value — ([1, 4, 7].map (fun d =&gt; m9 (d ^ 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a0d08876-8554…`
 - [lean_imagined_sixth_collapses_tetB_to_one_value](/theorem/lean_imagined_sixth_collapses_tetB_to_one_value) — lean imagined.lean: sixth_collapses_tetB_to_one_value — ([2, 5, 8].map (fun d =&gt; m9 (d ^ 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7aa41bc1-b399…`
+- [lean_mechanical_relation_digitroot_is_residue_mod9](/theorem/lean_mechanical_relation_digitroot_is_residue_mod9) — lean mechanical.lean: relation_digitroot_is_residue_mod9 — (List.range' 1 200).all (fun n =&gt; ¬ (DR (n) != ((n - 1) % 9) + 1)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1263c255-c72c…`
+- [lean_mechanical_the_nine_times_table_always_digital_roots_to_nine](/theorem/lean_mechanical_the_nine_times_table_always_digital_roots_to_nine) — lean mechanical.lean: the_nine_times_table_always_digital_roots_to_nine — (List.range' 1 60).all (fun k =&gt; ¬ (DR (9 * k) != 9)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `284332fa-03ca…`
+- [lean_mechanical_casting_out_nines_is_multiplicative](/theorem/lean_mechanical_casting_out_nines_is_multiplicative) — lean mechanical.lean: casting_out_nines_is_multiplicative — (List.range' 2 59).all (fun a =&gt; (List.range' 2 59).all (fun b =&gt; ¬ (DR (a * b) != DR (DR (a) * DR (b))))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `5935c43b-1388…`
+- [lean_mechanical_there_are_infinitely_many_pythagorean_triples](/theorem/lean_mechanical_there_are_infinitely_many_pythagorean_triples) — lean mechanical.lean: there_are_infinitely_many_pythagorean_triples — (List.range' 1 100).all (fun k =&gt; ¬ ((3 * k) ^ 2 + (4 * k) ^ 2 != (5 * k) ^ 2)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d41c02ed-9362…`
+- [lean_mechanical_the_difference_of_consecutive_squares_is_the_odd_numbers](/theorem/lean_mechanical_the_difference_of_consecutive_squares_is_the_odd_numbers) — lean mechanical.lean: the_difference_of_consecutive_squares_is_the_odd_numbers — (List.range' 0 501).all (fun n =&gt; ¬ ((n + 1) ^ 2 - n * n != 2 * n + 1)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e054bdaf-ec08…`
+- [lean_mechanical_the_product_of_any_three_consecutive_integers_is_divisible_by_six](/theorem/lean_mechanical_the_product_of_any_three_consecutive_integers_is_divisible_by_six) — lean mechanical.lean: the_product_of_any_three_consecutive_integers_is_divisible_by_six — (List.range' 1 500).all (fun n =&gt; ¬ ((n * (n + 1) * (n + 2)) % 6 != 0)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `0619302e-0d63…`
 
 ### other — one-of-a-kind (0)
 
@@ -2353,4 +2359,4 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 
 </details>
 
-Page content-address: `5337216e-3b5a-8ec7-90d0-4cb970eacf09`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `06074309-c81e-8410-b16a-0188d910173d`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

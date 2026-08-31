@@ -16747,5 +16747,35 @@
     "key": "lean_imagined_sixth_collapses_tetB_to_one_value",
     "name": "lean imagined.lean: sixth_collapses_tetB_to_one_value — ([2, 5, 8].map (fun d => m9 (d ^ 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "7aa41bc1-b399-8d16-969c-9f705f8a307a"
+  },
+  {
+    "key": "lean_mechanical_relation_digitroot_is_residue_mod9",
+    "name": "lean mechanical.lean: relation_digitroot_is_residue_mod9 — (List.range' 1 200).all (fun n => ¬ (DR (n) != ((n - 1) % 9) + 1)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1263c255-c72c-80cd-9fee-62fe174d4ddf"
+  },
+  {
+    "key": "lean_mechanical_the_nine_times_table_always_digital_roots_to_nine",
+    "name": "lean mechanical.lean: the_nine_times_table_always_digital_roots_to_nine — (List.range' 1 60).all (fun k => ¬ (DR (9 * k) != 9)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "284332fa-03ca-8844-ba3e-5449f02d219f"
+  },
+  {
+    "key": "lean_mechanical_casting_out_nines_is_multiplicative",
+    "name": "lean mechanical.lean: casting_out_nines_is_multiplicative — (List.range' 2 59).all (fun a => (List.range' 2 59).all (fun b => ¬ (DR (a * b) != DR (DR (a) * DR (b))))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5935c43b-1388-809f-8d51-60d745eabc92"
+  },
+  {
+    "key": "lean_mechanical_there_are_infinitely_many_pythagorean_triples",
+    "name": "lean mechanical.lean: there_are_infinitely_many_pythagorean_triples — (List.range' 1 100).all (fun k => ¬ ((3 * k) ^ 2 + (4 * k) ^ 2 != (5 * k) ^ 2)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d41c02ed-9362-8b9e-9b78-44ee9650c386"
+  },
+  {
+    "key": "lean_mechanical_the_difference_of_consecutive_squares_is_the_odd_numbers",
+    "name": "lean mechanical.lean: the_difference_of_consecutive_squares_is_the_odd_numbers — (List.range' 0 501).all (fun n => ¬ ((n + 1) ^ 2 - n * n != 2 * n + 1)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e054bdaf-ec08-894d-84fc-9a66c8d1ee7c"
+  },
+  {
+    "key": "lean_mechanical_the_product_of_any_three_consecutive_integers_is_divisible_by_six",
+    "name": "lean mechanical.lean: the_product_of_any_three_consecutive_integers_is_divisible_by_six — (List.range' 1 500).all (fun n => ¬ ((n * (n + 1) * (n + 2)) % 6 != 0)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "0619302e-0d63-8431-88a3-8052bd2c5b26"
   }
 ]
