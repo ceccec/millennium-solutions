@@ -74,6 +74,9 @@ theorem genus2_hyperelliptic : 2 * 2 + 2 == 6 := by decide
 -- the digital root IS residue mod 9: for every n>0, digitalRoot(n) = ((n−1) mod 9)+1 — the digit-sum collapse an
 theorem relation_digitroot_is_residue_mod9 : (List.range' 1 200).all (fun n => ¬ (DR (n) != ((n - 1) % 9) + 1)) := by decide
 
+-- the ninth triangular number binds figurate numbers to the base: 1+2+…+9 = 45 and dr(45) = 9 = BASE — summing t
+theorem relation_triangular_45_is_base : let s := ((List.range' 1 9).map (fun i => i)).foldl (fun x y => x + y) 0; s == 45 && DR (45) == 9 && DR (s) == 9 := by decide
+
 -- the Kaprekar constants bind to ℤ/9: dr(495) = dr(6174) = 9 = BASE — both fixed points sit on the base’s own di
 theorem kaprekar_constants_digitroot_nine : DR (495) == 9 && DR (6174) == 9 := by decide
 
@@ -100,6 +103,12 @@ theorem the_regular_nonagon_exterior_angle_is_the_a432_step : 360 / 9 == 40 && 4
 
 -- casting out nines is multiplicative: digitalRoot(a·b) = digitalRoot(digitalRoot(a)·digitalRoot(b)) — the base-
 theorem casting_out_nines_is_multiplicative : (List.range' 2 59).all (fun a => (List.range' 2 59).all (fun b => ¬ (DR (a * b) != DR (DR (a) * DR (b))))) := by decide
+
+-- the digits one to nine sum to 45, whose digital root is 9: 1+2+…+9 = 45, dr(45)=9 — the whole returns to the b
+theorem the_digits_one_to_nine_sum_to_forty_five_rooting_to_nine : let s := ((List.range' 1 9).map (fun d => d)).foldl (fun x y => x + y) 0; s == 45 && DR (45) == 9 := by decide
+
+-- six is the third triangular number: T₃ = 1 + 2 + 3 = 6 — triangular and perfect at once; 0/7
+theorem six_is_the_third_triangular_number : let t := ((List.range' 1 3).map (fun i => i)).foldl (fun x y => x + y) 0; t == 6 := by decide
 
 -- the regular hexagon’s exterior angle is 360/6 = 60° = the gold string (π/3), its interior 120° — six tiles the
 theorem the_regular_hexagon_exterior_angle_is_the_gold_string : 360 / 6 == 60 && 180 - 60 == 120 := by decide

@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2313 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2316 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (422)
+### lean (425)
 
 - [lean_units_are_six](/theorem/lean_units_are_six) — lean: the units of ℤ/9 are exactly [1,2,4,5,7,8] — checked at every residue by the kernel, recomputed here; 0/7  ·  `031c89bf-e1e0…`
 - [lean_units_count](/theorem/lean_units_count) — lean: there are exactly six units in ℤ/9 — the kernel checks the count, recomputed here; 0/7  ·  `104e8965-ebfb…`
@@ -446,6 +446,9 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_mechanical_there_are_infinitely_many_pythagorean_triples](/theorem/lean_mechanical_there_are_infinitely_many_pythagorean_triples) — lean mechanical.lean: there_are_infinitely_many_pythagorean_triples — (List.range' 1 100).all (fun k =&gt; ¬ ((3 * k) ^ 2 + (4 * k) ^ 2 != (5 * k) ^ 2)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d41c02ed-9362…`
 - [lean_mechanical_the_difference_of_consecutive_squares_is_the_odd_numbers](/theorem/lean_mechanical_the_difference_of_consecutive_squares_is_the_odd_numbers) — lean mechanical.lean: the_difference_of_consecutive_squares_is_the_odd_numbers — (List.range' 0 501).all (fun n =&gt; ¬ ((n + 1) ^ 2 - n * n != 2 * n + 1)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e054bdaf-ec08…`
 - [lean_mechanical_the_product_of_any_three_consecutive_integers_is_divisible_by_six](/theorem/lean_mechanical_the_product_of_any_three_consecutive_integers_is_divisible_by_six) — lean mechanical.lean: the_product_of_any_three_consecutive_integers_is_divisible_by_six — (List.range' 1 500).all (fun n =&gt; ¬ ((n * (n + 1) * (n + 2)) % 6 != 0)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `0619302e-0d63…`
+- [lean_mechanical_relation_triangular_45_is_base](/theorem/lean_mechanical_relation_triangular_45_is_base) — lean mechanical.lean: relation_triangular_45_is_base — let s := ((List.range' 1 9).map (fun i =&gt; i)).foldl (fun x y =&gt; x + y) 0; s == 45 && DR (45) == 9 && DR (s) == 9 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9ffbcbfc-5d5c…`
+- [lean_mechanical_the_digits_one_to_nine_sum_to_forty_five_rooting_to_nine](/theorem/lean_mechanical_the_digits_one_to_nine_sum_to_forty_five_rooting_to_nine) — lean mechanical.lean: the_digits_one_to_nine_sum_to_forty_five_rooting_to_nine — let s := ((List.range' 1 9).map (fun d =&gt; d)).foldl (fun x y =&gt; x + y) 0; s == 45 && DR (45) == 9 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `3571db11-dbe1…`
+- [lean_mechanical_six_is_the_third_triangular_number](/theorem/lean_mechanical_six_is_the_third_triangular_number) — lean mechanical.lean: six_is_the_third_triangular_number — let t := ((List.range' 1 3).map (fun i =&gt; i)).foldl (fun x y =&gt; x + y) 0; t == 6 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `90e6ae62-8d06…`
 
 ### other — one-of-a-kind (0)
 
@@ -2359,4 +2362,4 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 
 </details>
 
-Page content-address: `06074309-c81e-8410-b16a-0188d910173d`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `a52c6f57-4031-89f6-b662-2fde353feffa`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

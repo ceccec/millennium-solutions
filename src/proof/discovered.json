@@ -16777,5 +16777,20 @@
     "key": "lean_mechanical_the_product_of_any_three_consecutive_integers_is_divisible_by_six",
     "name": "lean mechanical.lean: the_product_of_any_three_consecutive_integers_is_divisible_by_six — (List.range' 1 500).all (fun n => ¬ ((n * (n + 1) * (n + 2)) % 6 != 0)) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "0619302e-0d63-8431-88a3-8052bd2c5b26"
+  },
+  {
+    "key": "lean_mechanical_relation_triangular_45_is_base",
+    "name": "lean mechanical.lean: relation_triangular_45_is_base — let s := ((List.range' 1 9).map (fun i => i)).foldl (fun x y => x + y) 0; s == 45 && DR (45) == 9 && DR (s) == 9 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9ffbcbfc-5d5c-8eea-a716-d0907623d2e7"
+  },
+  {
+    "key": "lean_mechanical_the_digits_one_to_nine_sum_to_forty_five_rooting_to_nine",
+    "name": "lean mechanical.lean: the_digits_one_to_nine_sum_to_forty_five_rooting_to_nine — let s := ((List.range' 1 9).map (fun d => d)).foldl (fun x y => x + y) 0; s == 45 && DR (45) == 9 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "3571db11-dbe1-82d7-a333-e3948736bef2"
+  },
+  {
+    "key": "lean_mechanical_six_is_the_third_triangular_number",
+    "name": "lean mechanical.lean: six_is_the_third_triangular_number — let t := ((List.range' 1 3).map (fun i => i)).foldl (fun x y => x + y) 0; t == 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "90e6ae62-8d06-815a-bbfb-a019ca83404e"
   }
 ]

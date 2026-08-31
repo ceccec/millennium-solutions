@@ -92,6 +92,36 @@ export function run(opts: { emit?: boolean } = {}): string {
     try { lines.push(execSync('node scripts/seal-lean.ts --seal', { encoding: 'utf8' }).trim().split('\n').slice(-2).join('\n')) }
     catch (e) { lines.push('seal FAILED: ' + String((e as { stdout?: Buffer }).stdout ?? e).slice(0, 200)) }
   }
+  // SHAPE REFUSALS, BUCKETED. "not a chain of simple bindings" was reported as one number, and a single
+  // number is not a work list — it hides whether the blocker is one tractable pattern or a hundred different
+  // programs. Twice I read that number as a shape problem and was wrong both times: the early-return
+  // validation loop was hiding in it and needed no judgement at all. Bucketing is what surfaced it, so the
+  // buckets stay, and each names an example so the next reader can check rather than trust the label.
+  const shapes: Record<string, { n: number; eg: string }> = {}
+  for (const p of q) {
+    const t = translate(p.body)
+    const why = 'why' in t ? t.why : null
+    if (!why || !why.includes('simple bindings')) continue
+    const b = p.body.replace(/\s+/g, ' ').replace(/^\{\s*|\s*\}$/g, '')
+    const k =
+      /\w+\s*\[\s*\w+\s*\]\s*=/.test(b) ? 'builds a table by index assignment (a recurrence — needs the recurrence named)'
+      : /\bnew Map\b|\bmemo\b/.test(b) ? 'memoised closure (state across calls)'
+      : /const\s*\[/.test(b) ? 'array destructuring'
+      : /=>\s*\{/.test(b) ? 'binds a function with a statement body'
+      : /\bfor\s*\(\s*const\b/.test(b) ? 'for-of over a computed list'
+      : /\bwhile\b|\bdo\s*\{/.test(b) ? 'unbounded while/do'
+      : 'other'
+    shapes[k] = shapes[k] ?? { n: 0, eg: b.slice(0, 96) }
+    shapes[k].n++
+  }
+  const shapeTotal = Object.values(shapes).reduce((a, x) => a + x.n, 0)
+  if (shapeTotal) {
+    lines.push('')
+    lines.push(`the ${shapeTotal} refused on SHAPE, by what the body actually is:`)
+    for (const [k, v] of Object.entries(shapes).sort((a, b) => b[1].n - a[1].n))
+      lines.push(`  ${String(v.n).padStart(4)}  ${k}\n        e.g. ${v.eg}`)
+  }
+
   return lines.join('\n')
 }
 

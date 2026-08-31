@@ -371,6 +371,25 @@ function validationLoop(b: string): string | null {
   return null
 }
 
+/** AN ACCUMULATOR LOOP IS A MAP THEN A FOLD. `let s = 0; for (let k = a; k <= b; k++) s += f(k)` sums f over
+ *  the range, which is `((range).map (fun k => f k)).foldl (·+·) 0` — same terms, same order, and addition
+ *  associates so the grouping does not matter. `*=` with an initial 1 is the same statement for products.
+ *  Found by bucketing the catch-all: 343 claims were sitting in "other", and this was the shape leading them.
+ *  A bucket named "other" is where tractable work goes to be overlooked. */
+function accumulatorLoop(b: string): string | null {
+  const m = b.match(/^let\s+([A-Za-z_]\w*)\s*(?::\s*[^=]+)?=\s*(0|1)\s*;\s*for\s*\(\s*(?:let|var)\s+([A-Za-z_]\w*)\s*=\s*(\d+)\s*;\s*\3\s*(<=?)\s*(\d+)\s*;\s*\3\+\+\s*\)\s*\1\s*(\+=|\*=)\s*([^;]+);\s*([\s\S]*)$/)
+  if (!m) return null
+  const [, acc, init, v, from, cmp, to, op, term, after] = m
+  if (/\bfor\b|\bwhile\b|\+=|\*=/.test(after)) return null
+  // the identity must match the operation, or the fold starts from the wrong place
+  if ((op === '+=' && init !== '0') || (op === '*=' && init !== '1')) return null
+  const len = Number(to) - Number(from) + (cmp === '<=' ? 1 : 0)
+  if (!(len > 0)) return null
+  const list = from === '0' && cmp === '<' ? `(List.range ${to})` : `(List.range' ${from} ${len})`
+  const fold = op === '+=' ? `.foldl (fun x y => x + y) 0` : `.foldl (fun x y => x * y) 1`
+  return `const ${acc} = (${list}.map (fun ${v} => ${term.trim()}))${fold}; ${after.trim()}`
+}
+
 function unwrapBindings(b: string): { lets: [string, string][]; expr: string } | null {
   const lets: [string, string][] = []
   let rest = b
@@ -412,6 +431,8 @@ export function translate(body: string): Translation {
     let inner = block ? block[1] : b
     const counted = countingLoop(inner)
     if (counted) inner = counted
+    const accumulated = accumulatorLoop(inner)
+    if (accumulated) inner = accumulated
     const validated = validationLoop(inner)
     if (validated) inner = validated
     const iterated = stateIteration(inner)
@@ -438,7 +459,7 @@ export function translate(body: string): Translation {
   // binder it introduced. The previous check was a regex that let `nonHarmonic` and array indexing through;
   // both compiled into nonsense the kernel rejected. Anything unrecognised is refused by name, so a failure
   // is legible instead of mysterious.
-  const ALLOWED = new Set(['List', 'range', 'all', 'any', 'contains', 'length', 'fun', 'M9', 'DR', 'true', 'false', 'let', 'eraseDups', 'filter', 'map', 'take', 'drop', 'Address', 'toUuidBytes', 'flatMap', '__p', 'foldl', '_'])
+  const ALLOWED = new Set(['List', 'range', 'all', 'any', 'contains', 'length', 'fun', 'M9', 'DR', 'true', 'false', 'let', 'eraseDups', 'filter', 'map', 'take', 'drop', 'Address', 'toUuidBytes', 'flatMap', '__p', 'foldl', '_', 'x', 'y'])
   const binders = new Set([
     ...[...out.matchAll(/fun ([a-z][a-zA-Z0-9]*) =>/g)].map((m) => m[1]),
     ...[...out.matchAll(/let ([A-Za-z_][A-Za-z0-9_]*) :=/g)].map((m) => m[1]),
