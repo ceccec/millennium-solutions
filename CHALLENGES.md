@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2265 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2272 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (374)
+### lean (381)
 
 - [lean_units_are_six](/theorem/lean_units_are_six) — lean: the units of ℤ/9 are exactly [1,2,4,5,7,8] — checked at every residue by the kernel, recomputed here; 0/7  ·  `031c89bf-e1e0…`
 - [lean_units_count](/theorem/lean_units_count) — lean: there are exactly six units in ℤ/9 — the kernel checks the count, recomputed here; 0/7  ·  `104e8965-ebfb…`
@@ -398,6 +398,13 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_demand2_the_chinese_remainder_theorem_holds_exactly_when_the_moduli_are_coprime](/theorem/lean_demand2_the_chinese_remainder_theorem_holds_exactly_when_the_moduli_are_coprime) — lean demand2.lean: the_chinese_remainder_theorem_holds_exactly_when_the_moduli_are_coprime — (List.range' 1 9).all (fun m =&gt; (List.range' 1 9).all (fun n =&gt; crtCoversAllPairs m n == (Families.gcd' m n == 1))) ∧ (List.range 105).filter (fun x =&gt; x % 3 == 2 && x % 5 == 3 && x % 7 == 2) = [23] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `46f32b7d-4c3d…`
 - [lean_demand2_eight_and_nine_are_the_only_consecutive_perfect_powers_below_two_thousand](/theorem/lean_demand2_eight_and_nine_are_the_only_consecutive_perfect_powers_below_two_thousand) — lean demand2.lean: eight_and_nine_are_the_only_consecutive_perfect_powers_below_two_thousand — (List.range' 1 1999).filter (fun n =&gt; pp2000.contains n && pp2000.contains (n + 1)) = [8] ∧ pp2000.length = 55 ∧ pp2000.contains 8 = true ∧ pp2000.contains 9 = true — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `4fc867ea-77dd…`
 - [lean_demand2_two_twenty_and_two_eighty_four_are_the_smallest_amicable_pair](/theorem/lean_demand2_two_twenty_and_two_eighty_four_are_the_smallest_amicable_pair) — lean demand2.lean: two_twenty_and_two_eighty_four_are_the_smallest_amicable_pair — aliquot 220 = 284 ∧ aliquot 284 = 220 ∧ (List.range' 2 218).all (fun a =&gt; ¬ (aliquot (aliquot a) == a && ¬ (aliquot a == a))) ∧ (List.range' 2 218).filter (fun a =&gt; aliquot a == a) = [6, 28] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `6b124e14-b9d0…`
+- [lean_demand3_wilsons_theorem_and_its_converse](/theorem/lean_demand3_wilsons_theorem_and_its_converse) — lean demand3.lean: wilsons_theorem_and_its_converse — ((List.range' 2 18).all (fun p =&gt; ¬ isPrime p || Sequences.fact (p - 1) % p == p - 1)) ∧ ((List.range' 5 15).all (fun n =&gt; isPrime n || Sequences.fact (n - 1) % n == 0)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `54bf9d36-b87e…`
+- [lean_demand3_every_number_is_a_sum_of_four_squares](/theorem/lean_demand3_every_number_is_a_sum_of_four_squares) — lean demand3.lean: every_number_is_a_sum_of_four_squares — (List.range 60).all isSumOfFour ∧ isSumOfThree 7 = false ∧ isSumOfFour 7 = true — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `73942437-7c53…`
+- [lean_demand3_the_cantor_pairing_is_injective_and_covers_an_initial_segment](/theorem/lean_demand3_the_cantor_pairing_is_injective_and_covers_an_initial_segment) — lean demand3.lean: the_cantor_pairing_is_injective_and_covers_an_initial_segment — block.eraseDups.length = 64 ∧ ((List.range 36).all (fun n =&gt; block.contains n)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d52b8296-0821…`
+- [lean_demand3_repunit_divisibility_by_three_and_seven](/theorem/lean_demand3_repunit_divisibility_by_three_and_seven) — lean demand3.lean: repunit_divisibility_by_three_and_seven — ((List.range' 1 18).all (fun n =&gt; (repunit n % 3 == 0) == (n % 3 == 0))) ∧ ((List.range' 1 18).all (fun n =&gt; (repunit n % 7 == 0) == (n % 6 == 0))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `010beefb-a8b6…`
+- [lean_demand3_the_euler_characteristic_of_a_genus_g_surface](/theorem/lean_demand3_the_euler_characteristic_of_a_genus_g_surface) — lean demand3.lean: the_euler_characteristic_of_a_genus_g_surface — ((List.range 12).all (fun g =&gt; chi g + 2 * (g : Int) == 2)) ∧ chi 0 = 2 ∧ chi 1 = 0 ∧ chi 2 = -2 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `8dee9c95-bc06…`
+- [lean_demand3_odd_divisor_count_iff_perfect_square](/theorem/lean_demand3_odd_divisor_count_iff_perfect_square) — lean demand3.lean: odd_divisor_count_iff_perfect_square — (List.range' 1 120).all (fun n =&gt; ((divisors n).length % 2 == 1) == isSquare n) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `78bbf0d9-a9ad…`
+- [lean_demand3_havel_hakimi_decides_graphical_sequences](/theorem/lean_demand3_havel_hakimi_decides_graphical_sequences) — lean demand3.lean: havel_hakimi_decides_graphical_sequences — hh 12 [3, 3, 3, 3] = true ∧ hh 12 [2, 2, 2] = true ∧ hh 12 [3, 3, 1, 1] = false ∧ hh 12 [4, 1, 1, 1, 1] = true ∧ hh 12 [5, 1, 1, 1, 1] = false — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1b884f34-ff37…`
 
 ### other — one-of-a-kind (0)
 
@@ -2309,4 +2316,4 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 
 </details>
 
-Page content-address: `5b88012e-a9e1-8709-9c3d-661c7123da5f`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `82808724-6d61-8630-bb3c-8ce9c8303ff1`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

@@ -11,12 +11,12 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 356 theorems across 20 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `74726848-6e65-8c7a-9d78-8ad1dc64e7f4`</sub>
-- 348 of those 356 theorems close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
-  <sub>SEALED · `fd6d57d8-0cdd-88fc-ae11-b7da0571730f`</sub>
-- 401 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `1299c16a-3d0e-878c-8d6f-b1813b07ad21`</sub>
+- The formal layer holds 363 theorems across 21 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `c3490328-cc1d-8ee9-af93-c7f907952af8`</sub>
+- 355 of those 363 theorems close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
+  <sub>SEALED · `8d0eb40d-a26f-8f3e-b322-a868bbcef39d`</sub>
+- 408 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `ca314a04-0f02-8dd0-a1de-948d4ba21e0f`</sub>
 
 ## 2 · The ring
 
@@ -39,10 +39,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 2265 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `883efe31-7174-8c9b-b802-a31479560144`</sub>
-- The count is 2265, which is 283 octaves and 1 over — the octave is a target the theorems earn, never a quota they are invented to fill.
-  <sub>SEALED · `5c4b7b1a-e754-8b4f-bb57-997fcd987ff5`</sub>
+- The ledger records 2272 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `2a0a78c9-e170-85a4-9aa5-2de8d7ec2135`</sub>
+- The count is an exact multiple of eight — 2272 is 284 octaves with no remainder.
+  <sub>SEALED · `79b53878-b1a8-8fd7-a80a-eb8012054721`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -84,7 +84,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-20 Lean files in 4 wings, 356 theorems. The prose in this section is read out of the
+21 Lean files in 4 wings, 363 theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -103,6 +103,8 @@ this page; there is nowhere else to keep the description in step.
 **What is actually being asked for** — `demand.lean`, 8 theorem(s). THE ONE WING THAT DID NOT COME FROM THIS DEPOSIT'S OWN INTERESTS. Every other file here proves what the ℤ/9 construction led to. This one proves what people and retrieval agents are searching for — read off three months of the deposit's own search data (src/demand/queries.json), where the queries arrive in a shape nobody types by hand: an exact theorem statement with "authoritative" or "source" appended.
 
 **The next tier of what is asked for** — `demand2.lean`, 8 theorem(s). THE SECOND COURSE OF THE SAME FLOOR. `demand.lean` closed the top eight topics in src/demand/queries.json; this file takes the next eight, chosen the same way — by impressions, not by taste. The demand map is three months of the deposit's own Google Search Console data with the retrieval scaffolding stripped, so what is ranked is the TOPIC people wanted a citable source for, not the phrasing they reached for.
+
+**The named theorems people ask for** — `demand3.lean`, 7 theorem(s). The third and last tier the search data supports. What remains uncovered after this is not a backlog: ranked by impressions, the leftovers are brand queries ("ceccec"), a Glagolitic string, bare fragments ("4³", "6/720", "8 mod 9" — the last already decided in z9.lean), and the real-analysis cluster that was refused in demand2.lean and stays refused. The demand map is close to exhausted of things a kernel can settle, which is a better place to stop than an arbitrary count would have been.
 
 **The water loop** — `energy.lean`, 18 theorem(s). THE WATER LOOP, ACCOUNTED. Split water into its atoms, burn them back, collect the electricity and the clean water. Every step of that is real and buildable. The question is only ever the ledger, so here it is.
 
@@ -136,7 +138,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Theorems** — `theorems.lean`, 1 theorem(s). The universal property — honestly, and COMPUTED from the sequence.
 
-2 of 356 theorems carry no comment of their own and are shown here as the gap they are, not
+2 of 363 theorems carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## What is deliberately absent
@@ -154,4 +156,4 @@ node scripts/pages.ts              # regenerate this file and the homepage
 
 ---
 
-*14 claims, all verified · 356 Lean theorems · 2265 ledger entries · trial root `cfee7e7b-0c86-8486-977f-8a4650bae50f` · integrity, not truth · 0/7*
+*14 claims, all verified · 363 Lean theorems · 2272 ledger entries · trial root `7995ecdc-dd52-81a0-88b3-d275d8ed7cdd` · integrity, not truth · 0/7*

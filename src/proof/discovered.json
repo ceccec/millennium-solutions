@@ -16537,5 +16537,40 @@
     "key": "lean_demand2_two_twenty_and_two_eighty_four_are_the_smallest_amicable_pair",
     "name": "lean demand2.lean: two_twenty_and_two_eighty_four_are_the_smallest_amicable_pair — aliquot 220 = 284 ∧ aliquot 284 = 220 ∧ (List.range' 2 218).all (fun a => ¬ (aliquot (aliquot a) == a && ¬ (aliquot a == a))) ∧ (List.range' 2 218).filter (fun a => aliquot a == a) = [6, 28] — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "6b124e14-b9d0-84ae-a594-85fca6c26b4a"
+  },
+  {
+    "key": "lean_demand3_wilsons_theorem_and_its_converse",
+    "name": "lean demand3.lean: wilsons_theorem_and_its_converse — ((List.range' 2 18).all (fun p => ¬ isPrime p || Sequences.fact (p - 1) % p == p - 1)) ∧ ((List.range' 5 15).all (fun n => isPrime n || Sequences.fact (n - 1) % n == 0)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "54bf9d36-b87e-8d3c-af20-bcc479090f71"
+  },
+  {
+    "key": "lean_demand3_every_number_is_a_sum_of_four_squares",
+    "name": "lean demand3.lean: every_number_is_a_sum_of_four_squares — (List.range 60).all isSumOfFour ∧ isSumOfThree 7 = false ∧ isSumOfFour 7 = true — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "73942437-7c53-86ac-8459-b005a10d6e6b"
+  },
+  {
+    "key": "lean_demand3_the_cantor_pairing_is_injective_and_covers_an_initial_segment",
+    "name": "lean demand3.lean: the_cantor_pairing_is_injective_and_covers_an_initial_segment — block.eraseDups.length = 64 ∧ ((List.range 36).all (fun n => block.contains n)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d52b8296-0821-8877-ab1e-6a8951b71a93"
+  },
+  {
+    "key": "lean_demand3_repunit_divisibility_by_three_and_seven",
+    "name": "lean demand3.lean: repunit_divisibility_by_three_and_seven — ((List.range' 1 18).all (fun n => (repunit n % 3 == 0) == (n % 3 == 0))) ∧ ((List.range' 1 18).all (fun n => (repunit n % 7 == 0) == (n % 6 == 0))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "010beefb-a8b6-8f1a-93cb-b22584906c3b"
+  },
+  {
+    "key": "lean_demand3_the_euler_characteristic_of_a_genus_g_surface",
+    "name": "lean demand3.lean: the_euler_characteristic_of_a_genus_g_surface — ((List.range 12).all (fun g => chi g + 2 * (g : Int) == 2)) ∧ chi 0 = 2 ∧ chi 1 = 0 ∧ chi 2 = -2 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8dee9c95-bc06-862f-808e-993ecd509ac7"
+  },
+  {
+    "key": "lean_demand3_odd_divisor_count_iff_perfect_square",
+    "name": "lean demand3.lean: odd_divisor_count_iff_perfect_square — (List.range' 1 120).all (fun n => ((divisors n).length % 2 == 1) == isSquare n) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "78bbf0d9-a9ad-8f56-8739-296d9cdb52c6"
+  },
+  {
+    "key": "lean_demand3_havel_hakimi_decides_graphical_sequences",
+    "name": "lean demand3.lean: havel_hakimi_decides_graphical_sequences — hh 12 [3, 3, 3, 3] = true ∧ hh 12 [2, 2, 2] = true ∧ hh 12 [3, 3, 1, 1] = false ∧ hh 12 [4, 1, 1, 1, 1] = true ∧ hh 12 [5, 1, 1, 1, 1] = false — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1b884f34-ff37-8e9b-bcef-0f23e6391a31"
   }
 ]
