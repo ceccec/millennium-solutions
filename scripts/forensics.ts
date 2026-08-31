@@ -8,7 +8,7 @@
 // DUE PROCESS: a break is EVIDENCE, examined — not auto-condemned. The two GENESIS entries predate strict
 // chaining (promoted from lean-claims); they are a DOCUMENTED baseline discontinuity, not tampering. The
 // build fails only on a NEW break (outside the baseline) or a collision — tampering caught, history kept.
-import { readFileSync } from 'node:fs'
+import { readFileSync, readdirSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 import { toUuid, merkleFold, digitalRoot } from '../src/0/index.ts'
 import { computes } from './honesty-gate.ts'
@@ -130,18 +130,43 @@ console.log('  gap — to the next full octave: ' + (toNextOctave === 0
 // (5d) DOMAIN ANALYTICS — the map read across domains: partition the ledger by key FAMILY (the first meaningful
 // token, skipping generic prefixes), report the distribution (richest and thinnest domains) and the single-family
 // concentration. An analytic skill over the whole uuidna map — reporting only, a lead, never a verdict.
-const STOP = new Set(['the', 'a', 'an', 'is', 'are', 'of', 'in', 'to', 'and', 'each', 'all', 'no', 'not', 'one', 'two', 'six', 'seven'])
-const familyOf = (key: string) => { for (const t of key.split('_')) if (!STOP.has(t)) return t; return key.split('_')[0] }
+// THE FAMILY IS READ FROM THE SOURCE, NOT PARSED OUT OF THE KEY. Splitting key text invented a family per
+// theorem for every entry sealed under the older `lean_<theorem>` convention, and reported them as singleton
+// domains "not yet grown to an octave" — when each is an ordinary theorem sitting in z9.lean or quantum.lean
+// alongside twenty others. The metric was measuring NAMING HISTORY and calling it domain structure, which is
+// worse than reporting nothing: it pointed at work that does not exist. The unit work is actually organised
+// by is the file, so the file is what is counted, by matching each key against the theorem names on disk.
+const STOP = new Set(['the', 'a', 'an', 'is', 'are', 'of', 'in', 'to', 'and', 'each', 'all', 'no', 'not', 'one', 'two', 'six', 'seven', 'lean'])
+const fileOfTheorem = new Map<string, string>()
+try {
+  for (const lf of readdirSync('src/proof').filter((x) => x.endsWith('.lean'))) {
+    const txt = readFileSync('src/proof/' + lf, 'utf8')
+    for (const m of txt.matchAll(/^theorem\s+([A-Za-z_0-9]+)/gm)) fileOfTheorem.set(m[1], lf.replace('.lean', ''))
+  }
+} catch { /* no proofs on disk — fall back to the key */ }
+const familyOf = (key: string) => {
+  const rest = key.replace(/^lean_/, '')
+  for (const [name, file] of fileOfTheorem) if (rest === name || rest.endsWith('_' + name) || rest.endsWith('.' + name)) return file
+  for (const t of key.split('_')) if (!STOP.has(t)) return t
+  return key.split('_')[0]
+}
+// PARTITIONED OVER LIVE ENTRIES, NOT THE WHOLE RECORD. Counting every entry made this line report 1026
+// singleton families as "a candidate to develop" when 1014 of them are WITHDRAWN claims — a withdrawn claim
+// is not a fact waiting to grow into an octave, it is a fact that stopped standing, and calling it a lead
+// pointed every reader at work that must not be done. The live count is 12, which is the honest size of the
+// lead. The revoked entries are still counted separately below, where they are described as what they are.
 const fam = new Map<string, number>()
-for (const e of ledger) { const t = familyOf(e.key); fam.set(t, (fam.get(t) ?? 0) + 1) }
+const liveEntries = ledger.filter((e) => !(e as { revoked?: boolean }).revoked)
+for (const e of liveEntries) { const t = familyOf(e.key); fam.set(t, (fam.get(t) ?? 0) + 1) }
 const byCount = [...fam.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
 const top = byCount[0]
-console.log('  domains (by key family): ' + fam.size + ' families over ' + ledger.length + ' theorems'
+console.log('  domains (by key family, LIVE only): ' + fam.size + ' families over ' + liveEntries.length + ' live theorems'
   + ' · richest ' + byCount.slice(0, 6).map(([t, n]) => t + ':' + n).join(' ')
-  + ' · largest family ' + top[0] + ' holds ' + (top[1] / ledger.length * 100).toFixed(1) + '%')
+  + ' · largest family ' + top[0] + ' holds ' + (top[1] / liveEntries.length * 100).toFixed(1) + '%')
 const singletons = byCount.filter(([, n]) => n === 1).length
-console.log('  domain spread: ' + singletons + ' singleton families (a fact not yet grown to an octave — a candidate to develop), '
-  + byCount.filter(([, n]) => n >= 8).length + ' families at octave scale (≥8)')
+console.log('  domain spread: ' + singletons + ' live singleton families (a standing fact not yet grown to an octave — a real candidate), '
+  + byCount.filter(([, n]) => n >= 8).length + ' families at octave scale (≥8)'
+  + ' · ' + (ledger.length - liveEntries.length) + ' withdrawn entries are excluded: a claim that stopped standing is not a lead')
 
 // (5b) OCTAVE analysis — the theorems matter in GROUPS OF 8. Partition the receipts into octaves (groups of 8),
 // fold each to an octave-seal, then fold the 128 octave-seals to one octave-root: the hierarchical 8-ary

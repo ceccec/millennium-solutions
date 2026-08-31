@@ -1,5 +1,5 @@
 ;; Quantum Proofs — Scheme/Lisp Version (Minimal)
-;; Licensed under CC BY-NC 4.0
+;; Licensed under CC BY-NC-ND 4.0
 ;; Attribution: Tsvetan Rouschev (ceccec@psg.bg)
 
 ;; ============================================================================
@@ -154,7 +154,7 @@
 
   (display "╔════════════════════════════════════════════════════════╗\n")
   (display "║  QUANTUM PROOFS — SCHEME VERSION                      ║\n")
-  (display "║  Licensed CC BY-NC 4.0                                ║\n")
+  (display "║  Licensed CC BY-NC-ND 4.0                                ║\n")
   (display "╚════════════════════════════════════════════════════════╝\n\n")
 
   (for-each print-theorem all-theorems)

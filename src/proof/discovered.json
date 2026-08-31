@@ -9763,7 +9763,7 @@
     "name": "the rosetta manifests messaging in seven dimensions: twenty-three scripts and dialects fold to one floor — every proof-boast drains while the honest noun passes, so the message survives translation crosslinked; 0/7",
     "receipt": "87d82c54-5a74-84b4-8412-01e2c5cb596e",
     "revoked": true,
-    "reason": "revoked in place: its test asserted a lexical drain (computes(boast).binary === 0). The word-list gate was removed by order, so there is no lexicon to drain and the assertion tests nothing."
+    "reason": "revoked in place: its test asserts that a list of proof-boasts written across many scripts and languages ALL drain the gate — a lexical drain assertion, and the word-list gate was removed by order, so there is no lexicon to drain and the assertion tests nothing. Measured: the test returns false today, and the body is `[...nineScripts, 'abbiamo dimostrato', ..., 'доказали'].every(s => computes(s).binary === 0)`. It carries no mechanical witness only because it feeds the gate more texts than the counterfactual search enumerates, not because the cause is in doubt."
   },
   {
     "key": "vibe_hype_still_drains",
@@ -14040,7 +14040,7 @@
     "name": "the verdict is deterministic and receipted: the same input yields the same verdict and content-address for anyone, reproducible; 0/7",
     "receipt": "987e82ba-fcd6-8c7f-a44c-248c5d98e714",
     "revoked": true,
-    "reason": "revoked in place: its test asserted a lexical drain (computes(boast).binary === 0). The word-list gate was removed by order, so there is no lexicon to drain and the assertion tests nothing."
+    "reason": "revoked in place: it asserts adjudicate('we prove all seven').verdict === 'REFUTED'. The removed lexical gate is WHY that once held — it drained the boast, and the verdict followed the drain — but the proximate reason it fails now is structural and will not change if a lexicon ever returns: adjudicate decides on the SUPPLIED TEST alone, and a statement carrying no decidable test is UNVERIFIED by construction, never REFUTED. Measured: verdict UNVERIFIED, gateBinary 1. The determinism half of the claim still holds; only the expected verdict does not. Recorded precisely because 'the lexicon went' would send the next reader looking for a gate to restore, when no gate can satisfy this claim."
   },
   {
     "key": "the_bounded_critique_survives_the_over_claim_falls",
@@ -16572,5 +16572,180 @@
     "key": "lean_demand3_havel_hakimi_decides_graphical_sequences",
     "name": "lean demand3.lean: havel_hakimi_decides_graphical_sequences — hh 12 [3, 3, 3, 3] = true ∧ hh 12 [2, 2, 2] = true ∧ hh 12 [3, 3, 1, 1] = false ∧ hh 12 [4, 1, 1, 1, 1] = true ∧ hh 12 [5, 1, 1, 1, 1] = false — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "1b884f34-ff37-8e9b-bcef-0f23e6391a31"
+  },
+  {
+    "key": "lean_imagined_units_is_closed_under_fourth",
+    "name": "lean imagined.lean: units_is_closed_under_fourth — [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (d ^ 4))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e62b450f-f422-8860-8401-51a75f40d72b"
+  },
+  {
+    "key": "lean_imagined_triad_is_closed_under_fourth",
+    "name": "lean imagined.lean: triad_is_closed_under_fourth — [3, 6, 0].all (fun d => [3, 6, 0].contains (m9 (d ^ 4))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1017e978-805a-8ce7-b002-b5dc7834cc3b"
+  },
+  {
+    "key": "lean_imagined_orbit_is_closed_under_fourth",
+    "name": "lean imagined.lean: orbit_is_closed_under_fourth — [1, 2, 4, 8, 7, 5].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (d ^ 4))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1c5048f1-1d5c-8f43-b369-439b90ad5b79"
+  },
+  {
+    "key": "lean_imagined_tetA_is_closed_under_fourth",
+    "name": "lean imagined.lean: tetA_is_closed_under_fourth — [1, 4, 7].all (fun d => [1, 4, 7].contains (m9 (d ^ 4))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "42ad521c-63f7-87b7-b8d7-77f2a40ae54f"
+  },
+  {
+    "key": "lean_imagined_all_is_closed_under_fourth",
+    "name": "lean imagined.lean: all_is_closed_under_fourth — [0,1,2,3,4,5,6,7,8].all (fun d => [0,1,2,3,4,5,6,7,8].contains (m9 (d ^ 4))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "fbc0fcef-adf2-8760-ab92-ddf92e0ac1b8"
+  },
+  {
+    "key": "lean_imagined_squares_is_closed_under_fourth",
+    "name": "lean imagined.lean: squares_is_closed_under_fourth — [0, 1, 4, 7].all (fun d => [0, 1, 4, 7].contains (m9 (d ^ 4))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "768ef872-3044-8e87-9af0-e8fed5bf2982"
+  },
+  {
+    "key": "lean_imagined_cubes_is_closed_under_fourth",
+    "name": "lean imagined.lean: cubes_is_closed_under_fourth — [0, 1, 8].all (fun d => [0, 1, 8].contains (m9 (d ^ 4))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "670e160d-fd21-858d-b4fe-060405374b25"
+  },
+  {
+    "key": "lean_imagined_units_is_closed_under_sixth",
+    "name": "lean imagined.lean: units_is_closed_under_sixth — [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (d ^ 6))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1dbd6da1-32b9-8d00-bb0f-ce605919310a"
+  },
+  {
+    "key": "lean_imagined_triad_is_closed_under_sixth",
+    "name": "lean imagined.lean: triad_is_closed_under_sixth — [3, 6, 0].all (fun d => [3, 6, 0].contains (m9 (d ^ 6))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b93546d2-9531-8ab9-a7cc-a9c9d2764267"
+  },
+  {
+    "key": "lean_imagined_orbit_is_closed_under_sixth",
+    "name": "lean imagined.lean: orbit_is_closed_under_sixth — [1, 2, 4, 8, 7, 5].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (d ^ 6))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a2a52787-4d4e-8447-b8f5-a4efaa4df172"
+  },
+  {
+    "key": "lean_imagined_tetA_is_closed_under_sixth",
+    "name": "lean imagined.lean: tetA_is_closed_under_sixth — [1, 4, 7].all (fun d => [1, 4, 7].contains (m9 (d ^ 6))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a68dde53-ad43-8796-aa06-57479b87f743"
+  },
+  {
+    "key": "lean_imagined_all_is_closed_under_sixth",
+    "name": "lean imagined.lean: all_is_closed_under_sixth — [0,1,2,3,4,5,6,7,8].all (fun d => [0,1,2,3,4,5,6,7,8].contains (m9 (d ^ 6))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ed6c5c3b-9687-8486-a0e3-dc441a9e37aa"
+  },
+  {
+    "key": "lean_imagined_squares_is_closed_under_sixth",
+    "name": "lean imagined.lean: squares_is_closed_under_sixth — [0, 1, 4, 7].all (fun d => [0, 1, 4, 7].contains (m9 (d ^ 6))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a48e0ab3-eb47-8a8f-b37e-e5b115ab2eb7"
+  },
+  {
+    "key": "lean_imagined_cubes_is_closed_under_sixth",
+    "name": "lean imagined.lean: cubes_is_closed_under_sixth — [0, 1, 8].all (fun d => [0, 1, 8].contains (m9 (d ^ 6))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6a43dc75-95e0-8c4b-ae30-d1c3a79a2971"
+  },
+  {
+    "key": "lean_imagined_fourth_is_involutive_on_tetA",
+    "name": "lean imagined.lean: fourth_is_involutive_on_tetA — [1, 4, 7].all (fun d => (fun x => m9 (x ^ 4)) (m9 (d ^ 4)) == d) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "43393838-ec36-8fcf-9cfc-17cf29908436"
+  },
+  {
+    "key": "lean_imagined_fourth_is_involutive_on_squares",
+    "name": "lean imagined.lean: fourth_is_involutive_on_squares — [0, 1, 4, 7].all (fun d => (fun x => m9 (x ^ 4)) (m9 (d ^ 4)) == d) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a3ee8c20-db18-8bf2-a197-09fbfc4cc1f5"
+  },
+  {
+    "key": "lean_imagined_fifth_is_involutive_on_units",
+    "name": "lean imagined.lean: fifth_is_involutive_on_units — [1, 2, 4, 5, 7, 8].all (fun d => (fun x => m9 (x ^ 5)) (m9 (d ^ 5)) == d) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "3a789bf2-cabe-8cec-9a91-98e069a0edb9"
+  },
+  {
+    "key": "lean_imagined_fifth_is_involutive_on_orbit",
+    "name": "lean imagined.lean: fifth_is_involutive_on_orbit — [1, 2, 4, 8, 7, 5].all (fun d => (fun x => m9 (x ^ 5)) (m9 (d ^ 5)) == d) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "eeec5b2a-8d70-84e8-9ea1-f2e749ecbc2a"
+  },
+  {
+    "key": "lean_imagined_fifth_is_involutive_on_tetA",
+    "name": "lean imagined.lean: fifth_is_involutive_on_tetA — [1, 4, 7].all (fun d => (fun x => m9 (x ^ 5)) (m9 (d ^ 5)) == d) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "aaaa889e-0c3c-8526-a766-ba7ea835efcc"
+  },
+  {
+    "key": "lean_imagined_fifth_is_involutive_on_tetB",
+    "name": "lean imagined.lean: fifth_is_involutive_on_tetB — [2, 5, 8].all (fun d => (fun x => m9 (x ^ 5)) (m9 (d ^ 5)) == d) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "189b526b-4404-862a-8b8b-f9ea9816e6e2"
+  },
+  {
+    "key": "lean_imagined_fifth_is_involutive_on_squares",
+    "name": "lean imagined.lean: fifth_is_involutive_on_squares — [0, 1, 4, 7].all (fun d => (fun x => m9 (x ^ 5)) (m9 (d ^ 5)) == d) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1ee82ca5-7d95-84c4-b4f8-bf28c370757c"
+  },
+  {
+    "key": "lean_imagined_fifth_is_involutive_on_cubes",
+    "name": "lean imagined.lean: fifth_is_involutive_on_cubes — [0, 1, 8].all (fun d => (fun x => m9 (x ^ 5)) (m9 (d ^ 5)) == d) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2c96e301-9226-84b1-b341-f494e626da9e"
+  },
+  {
+    "key": "lean_imagined_fourth_carries_units_onto_tetA",
+    "name": "lean imagined.lean: fourth_carries_units_onto_tetA — [1, 2, 4, 5, 7, 8].all (fun d => [1, 4, 7].contains (m9 (d ^ 4))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d => m9 (d ^ 4))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9a0e8af0-1198-8a6a-813b-79b42ba01e98"
+  },
+  {
+    "key": "lean_imagined_fourth_carries_orbit_onto_tetA",
+    "name": "lean imagined.lean: fourth_carries_orbit_onto_tetA — [1, 2, 4, 8, 7, 5].all (fun d => [1, 4, 7].contains (m9 (d ^ 4))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d => m9 (d ^ 4))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "dbfe517b-9aaa-8016-8c6c-fafbc29a3f77"
+  },
+  {
+    "key": "lean_imagined_fourth_carries_tetB_onto_tetA",
+    "name": "lean imagined.lean: fourth_carries_tetB_onto_tetA — [2, 5, 8].all (fun d => [1, 4, 7].contains (m9 (d ^ 4))) ∧ ([2, 5, 8].map (fun d => m9 (d ^ 4))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ddad11d4-8b84-87ad-80bc-858c8f2bac1a"
+  },
+  {
+    "key": "lean_imagined_fourth_carries_all_onto_squares",
+    "name": "lean imagined.lean: fourth_carries_all_onto_squares — [0,1,2,3,4,5,6,7,8].all (fun d => [0, 1, 4, 7].contains (m9 (d ^ 4))) ∧ ([0,1,2,3,4,5,6,7,8].map (fun d => m9 (d ^ 4))).eraseDups.length = 4 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c3155f14-97e7-8a69-bd1b-b81a0f068231"
+  },
+  {
+    "key": "lean_imagined_fifth_carries_units_onto_orbit",
+    "name": "lean imagined.lean: fifth_carries_units_onto_orbit — [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (d ^ 5))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d => m9 (d ^ 5))).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "471b59e8-a71d-83ae-97cd-1e3bd6cafd3d"
+  },
+  {
+    "key": "lean_imagined_fifth_carries_orbit_onto_units",
+    "name": "lean imagined.lean: fifth_carries_orbit_onto_units — [1, 2, 4, 8, 7, 5].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (d ^ 5))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d => m9 (d ^ 5))).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "18030dd3-d18b-8d6f-ab22-fa0fe48033a8"
+  },
+  {
+    "key": "lean_imagined_fourth_collapses_triad_to_one_value",
+    "name": "lean imagined.lean: fourth_collapses_triad_to_one_value — ([3, 6, 0].map (fun d => m9 (d ^ 4))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "be64302a-8dfa-8f21-b70e-1b87a899fa63"
+  },
+  {
+    "key": "lean_imagined_fifth_collapses_triad_to_one_value",
+    "name": "lean imagined.lean: fifth_collapses_triad_to_one_value — ([3, 6, 0].map (fun d => m9 (d ^ 5))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2d057c2b-e5b9-802c-91dc-45aef8cdeefc"
+  },
+  {
+    "key": "lean_imagined_sixth_collapses_units_to_one_value",
+    "name": "lean imagined.lean: sixth_collapses_units_to_one_value — ([1, 2, 4, 5, 7, 8].map (fun d => m9 (d ^ 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "99c8c3b8-5956-8f83-a092-c9f95f1ae2a3"
+  },
+  {
+    "key": "lean_imagined_sixth_collapses_triad_to_one_value",
+    "name": "lean imagined.lean: sixth_collapses_triad_to_one_value — ([3, 6, 0].map (fun d => m9 (d ^ 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "05659250-db6e-890b-9455-073cdbfd9791"
+  },
+  {
+    "key": "lean_imagined_sixth_collapses_orbit_to_one_value",
+    "name": "lean imagined.lean: sixth_collapses_orbit_to_one_value — ([1, 2, 4, 8, 7, 5].map (fun d => m9 (d ^ 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "de81e968-ed2f-8350-980a-0aeabce48b3c"
+  },
+  {
+    "key": "lean_imagined_sixth_collapses_tetA_to_one_value",
+    "name": "lean imagined.lean: sixth_collapses_tetA_to_one_value — ([1, 4, 7].map (fun d => m9 (d ^ 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a0d08876-8554-8810-923d-a0a90d4ca659"
+  },
+  {
+    "key": "lean_imagined_sixth_collapses_tetB_to_one_value",
+    "name": "lean imagined.lean: sixth_collapses_tetB_to_one_value — ([2, 5, 8].map (fun d => m9 (d ^ 6))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7aa41bc1-b399-8d16-969c-9f705f8a307a"
   }
 ]

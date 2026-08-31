@@ -188,10 +188,25 @@ console.log(`  witness COUNTERFACTUAL (satisfiable only by a draining gate):    
 console.log(`  already carry the reason: ${already.length} · missing it: ${missing.length}`)
 console.log(`\nLEAVE ALONE — revoked, and their test still HOLDS under the live gate: ${holds.length}`)
 console.log(`  these were withdrawn for lacking a Lean proof (or for circularity), which is a different and still-correct reason.`)
-if (unexplained.length) {
-  console.log(`\nUNEXPLAINED — fails today, no witness: ${unexplained.length} (reported, never auto-written)`)
-  for (const r of unexplained.slice(0, 20)) console.log(`    ${r.key}`)
-  if (unexplained.length > 20) console.log(`    … and ${unexplained.length - 20} more`)
+const reasonOf = (k: string): string | undefined => ledger.find((e) => e.key === k)?.reason
+
+// A REASON THAT NAMES A MEASURED CAUSE IS AN EXPLANATION, even when no mechanical witness can be produced.
+// Two entries fail with no witness the search can construct — one asserts a verdict adjudicate cannot return
+// for a structural reason, the other feeds the gate more texts than the counterfactual search enumerates.
+// Both were investigated by hand and their reasons record what was actually measured. Left in the open list
+// they would be reported as unresolved on every run for ever, and a permanent false lead is exactly the kind
+// of noise that teaches people to skim past a real one. They are separated, not silenced: still listed, and
+// still counted, under what they are.
+const explained = unexplained.filter((r) => /measured:/i.test(reasonOf(r.key) ?? ''))
+const stillOpen = unexplained.filter((r) => !/measured:/i.test(reasonOf(r.key) ?? ''))
+if (stillOpen.length) {
+  console.log(`\nUNEXPLAINED — fails today, no witness, no recorded cause: ${stillOpen.length} (reported, never auto-written)`)
+  for (const r of stillOpen.slice(0, 20)) console.log(`    ${r.key}`)
+  if (stillOpen.length > 20) console.log(`    … and ${stillOpen.length - 20} more`)
+}
+if (explained.length) {
+  console.log(`\nEXPLAINED BY HAND — no mechanical witness, but the reason records a measured cause: ${explained.length}`)
+  for (const r of explained) console.log(`    ${r.key}`)
 }
 if (overstated.length) {
   console.log(`\n✗ THE REASON NOW OVERSTATES ${overstated.length} entr(y/ies) — they carry the lexical reason and their test PASSES today.`)

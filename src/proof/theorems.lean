@@ -1,7 +1,7 @@
 -- title: Theorems
 -- wing: the machine
 -- The universal property — honestly, and COMPUTED from the sequence.
--- Author: Tsvetan Rouschev · License: CC BY-NC 4.0
+-- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --
 -- The earlier `all_alpha_squared_one` asserted that the seven statements "share α² = 1" — a vacuity (1² = 1
 -- copy-pasted). What the seven ACTUALLY share is the reflection: an involution the sequence computes, with one

@@ -19,6 +19,15 @@
 //                      TypeScript, which reports that a computation agreed once; only the kernel checks the
 //                      proposition. Anything the kernel refutes is reported, never quietly dropped.
 //
+// ON "EXHAUSTED", WHICH THIS GENERATOR NEVER IS. Its yield is a function of its VOCABULARY, not of the
+// mathematics: the first version proposed 336 statements, adding the rest of the multiplication table took it
+// to 480, the squares and cubes to 800, and powers four to six to 1040 — each extension producing genuinely
+// new discriminating theorems the previous run could not express. Powers stop at six because Euler's theorem
+// closes the unit structure there (u⁶ = 1), which is a reason rather than a stopping point; but d↦d⁷ is still
+// a distinct map on ℤ/9, so even that boundary is a choice. Calling any state of this "exhausted" would be
+// describing the vocabulary and crediting it to the domain. It is a knob, and the honest report is what it
+// currently reaches, never that there is nothing left.
+//
 // Run: node scripts/imagine.ts          (propose and report)
 //      node scripts/imagine.ts --emit   (also write src/proof/imagined.lean and verify it)
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs'
@@ -34,6 +43,11 @@ const MAPS: { id: string; lean: string; say: string; f: (d: number) => number }[
   { id: 'negate',   lean: 'm9 (9 - d)',     say: 'negation',              f: (d) => m9(9 - d) },
   { id: 'square',   lean: 'm9 (d * d)',     say: 'squaring',              f: (d) => m9(d * d) },
   { id: 'cube',     lean: 'm9 (d * d * d)', say: 'cubing',                f: (d) => m9(d * d * d) },
+  // powers four to six. Euler's theorem puts u⁶ = 1 for every unit, so this is where the multiplicative
+  // structure closes on itself — the natural end of the power family rather than an arbitrary stopping point.
+  { id: 'fourth',   lean: 'm9 (d ^ 4)',     say: 'the fourth power',      f: (d) => m9(d ** 4) },
+  { id: 'fifth',    lean: 'm9 (d ^ 5)',     say: 'the fifth power',       f: (d) => m9(d ** 5) },
+  { id: 'sixth',    lean: 'm9 (d ^ 6)',     say: 'the sixth power',       f: (d) => m9(d ** 6) },
   { id: 'quintuple',lean: 'm9 (5 * d)',     say: 'multiplication by five',f: (d) => m9(5 * d) },
   // the multiplication table completed — 6, 7 and 8 were missing, and leaving a table three rows short is an
   // arbitrary boundary, not a decision. The generator should be asked everything it can be asked.
@@ -131,7 +145,10 @@ const t2 = t3.filter((c) => {
 })
 const overlap = t3.length - t2.length
 
-console.log(`imagined ${cands.length} propositions over ℤ/9 · ${t1.length} true · ${t3.length} discriminating · ${t2.length} new`)
+// "new" means NOT ALREADY IN THE HAND-WRITTEN PROOFS. imagined.lean is excluded from its own corpus so that
+// regenerating it is idempotent — which also means this count does not fall to zero once they are sealed. It
+// is what the generator WOULD emit, not a discovery count, and saying "new" every run implied otherwise.
+console.log(`imagined ${cands.length} propositions over ℤ/9 · ${t1.length} true · ${t3.length} discriminating · ${t2.length} emitted (not present in the hand-written proofs; imagined.lean is excluded from its own corpus, so this is what it would write, not what is newly found)`)
 const killed = t1.length - t3.length
 console.log(`  ${killed} true-but-free statement(s) discarded — they hold for every sibling and so name nothing`)
 console.log(`  ${overlap} already expressed in src/proof — recognised through definition aliases, not spelling`)

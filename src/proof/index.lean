@@ -1,7 +1,7 @@
 -- title: The Millennium floor
 -- wing: the floor
 -- The Millennium floor — seven honest theorems, one per problem, COMPUTED from the sequence.
--- Author: Tsvetan Rouschev · License: CC BY-NC 4.0
+-- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --
 -- Each Clay problem gets ONE theorem here. None proves the conjecture — each states a TRUE fact that COMPUTES
 -- from the ℤ/9 doubling sequence (the orbit 2^k, the reflection 10−d, the derived units) and is genuinely
