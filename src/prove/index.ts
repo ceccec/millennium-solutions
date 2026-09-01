@@ -45,8 +45,14 @@ export function queue(): Portable[] {
   const src = readFileSync(DISCOVER, 'utf8')
   const bodies = new Map([...src.matchAll(/out\.push\(\{ key: '([a-z_0-9]+)'[\s\S]*?test: \(\) => ([\s\S]*?)\}\)\n/g)]
     .map((m) => [m[1], m[2]] as [string, string]))
+  // A SUPERSEDED CLAIM STAYS IN THE QUEUE, and skipping it was circular. `supersededBy` means "a Lean
+  // theorem now carries this" — and for the mechanically rendered ones, that theorem IS the one emit writes
+  // into mechanical.lean. Filtering them out stopped emit rendering them, mechanical.lean shrank from 75
+  // theorems to 2, and 75 sealed keys instantly had no source: the successors were orphaned by the very
+  // link that recorded their success. Being done is not a reason to stop regenerating the artefact that
+  // makes it true.
   return led
-    .filter((e) => !e.supersededBy && bodies.has(e.key))
+    .filter((e) => bodies.has(e.key))
     .map((e) => {
       const body = bodies.get(e.key) ?? ''
       return { key: e.key, name: e.name, body, shape: classify(body) }

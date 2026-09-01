@@ -13966,5 +13966,17 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "2ab2aa2c-03a3-8731-917d-78f66b3c6721"
+  },
+  {
+    "key": "lean_mechanical_relation_units_sum_and_product",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "55a81791-db87-8172-8601-65d79bb39e2a"
+  },
+  {
+    "key": "lean_mechanical_contribute_two_to_save_sixty_four",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4e24f24d-fc54-8beb-8c20-8541b68f54dc"
   }
 ]

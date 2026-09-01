@@ -506,6 +506,16 @@ export function translate(body: string): Translation {
   // binder it introduced. The previous check was a regex that let `nonHarmonic` and array indexing through;
   // both compiled into nonsense the kernel rejected. Anything unrecognised is refused by name, so a failure
   // is legible instead of mysterious.
+  // LEAN HAS NO CALL-PAREN SYNTAX. A bound function invoked as `rot(z)` is a parse error, and a parse error
+  // takes the WHOLE FILE down — after which the emitter's position-based attribution blames whichever theorem
+  // the reported line lands in. That is how an innocent rendering came to be quarantined: it compiled
+  // perfectly on its own and was collateral from a syntax error three theorems away. Refusing the shape here
+  // means the file never breaks, so nothing has to be blamed. Method calls are already rewritten to `.m (`
+  // with a space, so anything left in `name(` form is a JS call this translator cannot render.
+  const jsCall = out.match(/(?<![.\w])[a-z]\w*\(/)
+  if (jsCall && !/^(fun|let|if|then|else)\(/.test(jsCall[0]))
+    return { ok: false, why: `calls ${jsCall[0]}…) in JavaScript form — Lean applies by juxtaposition, and a parse error here breaks every theorem in the file` }
+
   const ALLOWED = new Set(['List', 'range', 'all', 'any', 'contains', 'length', 'fun', 'M9', 'DR', 'true', 'false', 'let', 'eraseDups', 'filter', 'map', 'take', 'drop', 'Address', 'toUuidBytes', 'flatMap', '__p', 'foldl', '_', 'x', 'y', 'a', 'b'])
   const binders = new Set([
     ...[...out.matchAll(/fun ([a-z][a-zA-Z0-9]*) =>/g)].map((m) => m[1]),

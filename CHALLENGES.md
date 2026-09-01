@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2328 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2330 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (437)
+### lean (439)
 
 - [lean_units_are_six](/theorem/lean_units_are_six) — lean: the units of ℤ/9 are exactly [1,2,4,5,7,8] — checked at every residue by the kernel, recomputed here; 0/7  ·  `031c89bf-e1e0…`
 - [lean_units_count](/theorem/lean_units_count) — lean: there are exactly six units in ℤ/9 — the kernel checks the count, recomputed here; 0/7  ·  `104e8965-ebfb…`
@@ -461,6 +461,8 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_speed_the_verify_is_thirty_eight_thousand_nanoseconds_not_one](/theorem/lean_speed_the_verify_is_thirty_eight_thousand_nanoseconds_not_one) — lean speed.lean: the_verify_is_thirty_eight_thousand_nanoseconds_not_one — nsPerVerify = 38000 ∧ nsPerVerify &gt; 1 ∧ nsPerVerify &gt; 10000 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `8eb1b99d-9b78…`
 - [lean_speed_the_advantage_is_the_count_not_the_operation](/theorem/lean_speed_the_advantage_is_the_count_not_the_operation) — lean speed.lean: the_advantage_is_the_count_not_the_operation — 1048576 - 20 = 1048556 ∧ 1048576 / 20 = 52428 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `dc213511-7bcd…`
 - [lean_speed_the_break_even_is_the_ratio_of_verifications](/theorem/lean_speed_the_break_even_is_the_ratio_of_verifications) — lean speed.lean: the_break_even_is_the_ratio_of_verifications — 1048576 / 20 = 52428 ∧ 52428 * 20 ≤ 1048576 ∧ 1048576 &lt; 52429 * 20 + 20 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2ab2aa2c-03a3…`
+- [lean_mechanical_relation_units_sum_and_product](/theorem/lean_mechanical_relation_units_sum_and_product) — lean mechanical.lean: relation_units_sum_and_product — let m9 := fun n =&gt; ((n % 9) + 9) % 9; let U := [1,2,4,5,7,8]; M9 (U.foldl (fun a b =&gt; a + b) 0) == 0 && M9 (U.foldl (fun a b =&gt; a * b) 1) == 8 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `55a81791-db87…`
+- [lean_mechanical_contribute_two_to_save_sixty_four](/theorem/lean_mechanical_contribute_two_to_save_sixty_four) — lean mechanical.lean: contribute_two_to_save_sixty_four — let x := ((List.range 6).map (fun i =&gt; 2)).foldl (fun x y =&gt; x * y) 1; x == 64 && 2 ^ 6 == 64 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `4e24f24d-fc54…`
 
 ### other — one-of-a-kind (0)
 
@@ -2374,4 +2376,4 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 
 </details>
 
-Page content-address: `4eb44efa-7aa2-81ae-8d92-feb5904a071a`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `80f939a7-791a-88b7-8112-fa35d15a7e51`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

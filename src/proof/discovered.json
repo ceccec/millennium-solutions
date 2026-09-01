@@ -3209,7 +3209,8 @@
     "receipt": "6f0228a8-6083-80c9-9c88-38d6896193e5",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_relation_units_sum_and_product"
   },
   {
     "key": "relation_432_factors",
@@ -9725,7 +9726,8 @@
     "receipt": "b51aa2af-43aa-8a73-b9d1-bfa17d9ea6fa",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_contribute_two_to_save_sixty_four"
   },
   {
     "key": "discernment_is_a_human_faculty",
@@ -16928,5 +16930,15 @@
     "key": "lean_speed_the_break_even_is_the_ratio_of_verifications",
     "name": "lean speed.lean: the_break_even_is_the_ratio_of_verifications — 1048576 / 20 = 52428 ∧ 52428 * 20 ≤ 1048576 ∧ 1048576 < 52429 * 20 + 20 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "2ab2aa2c-03a3-8731-917d-78f66b3c6721"
+  },
+  {
+    "key": "lean_mechanical_relation_units_sum_and_product",
+    "name": "lean mechanical.lean: relation_units_sum_and_product — let m9 := fun n => ((n % 9) + 9) % 9; let U := [1,2,4,5,7,8]; M9 (U.foldl (fun a b => a + b) 0) == 0 && M9 (U.foldl (fun a b => a * b) 1) == 8 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "55a81791-db87-8172-8601-65d79bb39e2a"
+  },
+  {
+    "key": "lean_mechanical_contribute_two_to_save_sixty_four",
+    "name": "lean mechanical.lean: contribute_two_to_save_sixty_four — let x := ((List.range 6).map (fun i => 2)).foldl (fun x y => x * y) 1; x == 64 && 2 ^ 6 == 64 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "4e24f24d-fc54-8beb-8c20-8541b68f54dc"
   }
 ]

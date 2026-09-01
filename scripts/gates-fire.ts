@@ -174,6 +174,12 @@ const CONTROLS: Control[] = [
       if (e) e.name += ' — proved by /theorem/a_key_that_was_never_sealed'
       return JSON.stringify(l, null, 2) + '\n' } },
 
+  // the control reintroduces the exact bug that nearly sealed a false statement: a shadow guard that matches
+  // `=` but not the `:=` the binding chain has already been rewritten into.
+  { gate: 'translate-gate', cmd: 'node scripts/translate-gate.ts', file: 'src/prove/translate.ts',
+    what: 'a rendering that substitutes a rebound name and still type-checks',
+    mutate: (s) => s.replace('\\\\s*:?=`)', '\\\\s*=`)') },
+
   { gate: 'gaps', cmd: 'node scripts/gaps.ts', file: '.vitepress/config.ts',
     what: 'a published page dropped from the sidebar',
     mutate: (s) => s.replace(/\{ text: 'Verify \(live app\)', link: '\/verify' \},/, '') },

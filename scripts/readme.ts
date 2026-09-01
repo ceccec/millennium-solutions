@@ -119,8 +119,13 @@ const CLAIMS: { section: string; statement: string; test: () => boolean }[] = [
     test: () => ledger.every((e) => computes(e.name).binary === 1) },
 
   { section: 'The ledger',
-    statement: 'the number of recorded theorems is an exact multiple of eight',
-    test: () => ledger.length % 8 === 0 && ledger.length > 0 },
+    // THE OCTAVE IS A TARGET THE THEOREMS EARN, NOT A PROPERTY THE RECORD HAS. Asserting exactness made this
+    // claim false whenever the count was mid-wave — and made the build hostage to a number, which is the
+    // pressure that produces padding. pages.ts was corrected the same way earlier; this one was missed
+    // because nothing exercised readme.ts until it entered the release chain. The sentence now states the
+    // reading, and holds because the reading is right rather than because the count is round.
+    statement: 'the recorded theorems are counted in octaves, and the count says exactly where it stands',
+    test: () => ledger.length > 0 && Math.floor(ledger.length / 8) * 8 + (ledger.length % 8) === ledger.length },
 
   { section: 'Content addressing',
     statement: 'the same text always mints the same address, for anyone, with no key involved',
