@@ -249,15 +249,16 @@ const body = (site: boolean) => {
   md += `Read from the artefacts at build time, never carried between runs.\n\n`
   md += `| measure | value |\n|---|---|\n`
   md += `| ledger entries | ${A.ledger.total.toLocaleString('en-US')}${A.ledger.octaveExact ? ` — ${A.ledger.octaves} octaves exactly` : ` — ${A.ledger.octaves} octaves and ${A.ledger.remainder} over`} |\n`
-  md += `| standing | **${A.ledger.live}** |\n`
-  md += `| withdrawn, kept in the record | ${A.ledger.withdrawn.toLocaleString('en-US')} |\n`
-  md += `| withdrawn but since re-proved | ${A.ledger.superseded} |\n`
+  md += `| standing — carries its own proof | **${A.ledger.live}** |\n`
+  md += `| carried — withdrawn on its own evidence, proved by a live theorem | **${A.ledger.carried}** |\n`
+  md += `| withdrawn — nothing proves it | ${A.ledger.neverProved.toLocaleString('en-US')} |\n`
+  md += `| proved in total | **${A.ledger.proved}** of ${A.ledger.total.toLocaleString('en-US')} |\n`
   md += `| Lean files · theorems | ${A.lean.files} · ${A.lean.theorems}, all axiom-free |\n`
   md += `| proved \`by decide\` | ${A.lean.byDecide} of ${A.lean.theorems} |\n`
   md += `| claims a machine can render | ${renderable} of ${q.length.toLocaleString('en-US')} |\n`
   md += `| claims needing an author | ${(q.length - renderable).toLocaleString('en-US')} — reported, never faked |\n\n`
 
-  md += `**Why the withdrawn were withdrawn.** ${Object.entries(A.ledger.reasons).sort((a, b) => b[1] - a[1]).map(([k, n]) => `${n.toLocaleString('en-US')} ${k}`).join(' · ')}. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.\n\n`
+  md += `**On \`carried\`.** ${A.ledger.carried} entries were withdrawn for want of a Lean proof and have since been given one, at a new key. Nothing is un-revoked: the original's own evidence is still a TypeScript test, and rewriting its status would erase the fact that it did not hold on what it had. The record says both — withdrawn on its own evidence, standing through the theorem that carries it.\n\n**Why the withdrawn were withdrawn.** ${Object.entries(A.ledger.reasons).sort((a, b) => b[1] - a[1]).map(([k, n]) => `${n.toLocaleString('en-US')} ${k}`).join(' · ')}. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.\n\n`
 
   // OPERATIONS, NOT MILLISECONDS. I first printed the measured timings, which rewrote both pages on every
   // build; then rounded the ratio to one significant figure, which still swung between 900x and 2,000x

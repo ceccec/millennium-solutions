@@ -111,7 +111,7 @@ export default defineConfig({
       // the proofs now exist. The description is what a search result shows, so it is the first place the
       // correction has to land.
       pageData.description = p.revoked && p.supersededBy
-        ? 'RE-ESTABLISHED — withdrawn for lacking a proof, and now carried by the Lean theorem ' + p.supersededBy + ', machine-checked sorry-free and axiom-free over its whole domain. Integrity, not truth. entails → 0/7.'
+        ? 'CARRIED — withdrawn on its own evidence for lacking a proof, and now carried by the Lean theorem ' + p.supersededBy + ', machine-checked sorry-free and axiom-free over its whole domain. Integrity, not truth. entails → 0/7.'
         : p.revoked
         ? 'WITHDRAWN — this entry no longer stands as a theorem of the deposit and must not be cited. Its receipt (' + p.receipt + ') remains in the append-only record so the chain still verifies, but the statement is not re-verified on every build. Integrity, not truth. entails → 0/7.'
         : p.key.startsWith('lean_')

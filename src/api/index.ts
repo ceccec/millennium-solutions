@@ -15,6 +15,22 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs'
 export const LEDGER_PATH = 'src/proof/discovered.json'
 export const PROOF_DIR = 'src/proof'
 
+/** THE RECORD HAS FOUR STATES, NOT TWO. `revoked` was carrying two different meanings: a claim that stopped
+ *  holding, and a claim that was withdrawn for want of a proof and has since been given one. Reporting the
+ *  second as merely withdrawn understates the record — 113 entries whose statement the kernel now checks were
+ *  being counted with the 1778 that nobody proved.
+ *
+ *  Nothing is un-revoked. The original entry's own evidence is still a TypeScript test, and rewriting its
+ *  status would erase the fact that it did not hold on what it had. What changes is that the record can now
+ *  say both things at once: withdrawn on its own evidence, and STANDING through the theorem that carries it.
+ *
+ *    standing    — live, kernel-checked, nothing withdrawn
+ *    carried     — withdrawn on its own evidence, and its statement is proved by a live theorem
+ *    withdrawn   — withdrawn, and nothing proves it
+ *    (revoked)   — the raw flag, kept because the chain and every receipt were written against it
+ */
+export type Status = 'standing' | 'carried' | 'withdrawn'
+
 export interface Entry {
   key: string
   name: string
@@ -94,6 +110,16 @@ export const frontmatter = (file: string): Record<string, string> => {
  *  withdrawn entry that later grows a third state (superseded is already one) would need finding in eight
  *  places, and this session has twice watched a private copy answer differently from its siblings. */
 export const isLive = (e: Entry): boolean => !e.revoked
+
+/** The state of one entry, as the record can actually justify it. */
+export const statusOf = (e: Entry): Status =>
+  !e.revoked ? 'standing' : e.supersededBy ? 'carried' : 'withdrawn'
+
+/** Entries whose statement stands, whether by their own seal or through the theorem that carries it. This is
+ *  the honest answer to "how much of this deposit is proved" — it is NOT the same as `live`, which counts
+ *  only the entries that carry their own proof, and both numbers are worth reporting separately. */
+export const carried = (l: Entry[] = ledger()): Entry[] => l.filter((e) => statusOf(e) === 'carried')
+export const proved = (l: Entry[] = ledger()): Entry[] => l.filter((e) => statusOf(e) !== 'withdrawn')
 export const isWithdrawn = (e: Entry): boolean => e.revoked === true
 
 // ── THE ℤ/9 SETS, COMPUTED AND CHECKED AGAINST THE THEOREM THAT PROVES THEM ────────────────────────────────

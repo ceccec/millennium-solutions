@@ -11,7 +11,7 @@
 // figure is passed in and none is remembered between runs, so a stale number cannot survive a rebuild. The
 // one measured timing is labelled as belonging to the machine that produced it, because it does.
 import { readFileSync, writeFileSync } from 'node:fs'
-import { ledger as loadLedger, live as liveOf, withdrawn as goneOf, superseded as supOf, octave, leanFiles, leanSource } from '../src/api/index.ts'
+import { ledger as loadLedger, live as liveOf, withdrawn as goneOf, superseded as supOf, carried as carriedOf, proved as provedOf, octave, leanFiles, leanSource } from '../src/api/index.ts'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 
 export type Analytics = ReturnType<typeof analytics>
@@ -60,6 +60,10 @@ export function analytics() {
     ledger: {
       total: led.length, live: live.length, withdrawn: gone.length,
       superseded: supOf(led).length,
+      // the record's four states — `revoked` alone conflated "stopped holding" with "proved elsewhere"
+      carried: carriedOf(led).length,
+      neverProved: goneOf(led).length - carriedOf(led).length,
+      proved: provedOf(led).length,
       octaveExact: octave(led).exact, octaves: octave(led).octaves, remainder: octave(led).remainder,
       reasons,
     },
@@ -82,7 +86,7 @@ export function analytics() {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const a = analytics()
   writeFileSync('src/analytics.json', JSON.stringify(a, null, 2) + '\n')
-  console.log(`analytics — ledger ${a.ledger.total} (${a.ledger.live} live, ${a.ledger.withdrawn} withdrawn, ${a.ledger.superseded} superseded)`)
+  console.log(`analytics — ledger ${a.ledger.total}: ${a.ledger.live} standing · ${a.ledger.carried} carried · ${a.ledger.neverProved} withdrawn · ${a.ledger.proved} proved in total`)
   console.log(`  lean: ${a.lean.files} files · ${a.lean.theorems} theorems · ${a.lean.byDecide} by decide · ${a.lean.wings.length} wings`)
   console.log(`  verify vs recompute at 2^14: ${a.verification.recomputeMs} ms vs ${a.verification.verifyUs} µs = ${a.verification.ratio}× over ${a.verification.pathNodes} nodes`)
   console.log(`  withdrawn by reason: ${Object.entries(a.ledger.reasons).map(([k, n]) => n + ' ' + k).join(' · ')}`)

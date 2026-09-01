@@ -52,7 +52,7 @@ const desc = computed(() => isLean.value
 - **theorem key** · `{{ $params.key }}`
 - **content-address (receipt)** · `{{ $params.receipt }}`
 - **status** · <span v-if="isRevoked">**WITHDRAWN — no longer stands, and must not be cited.** The receipt above is still in the append-only record and still verifies as a link in the chain; the statement is not a live theorem of this deposit.</span><span v-else>decidable, re-verified on every build — recomputes from <code>src/</code></span>
-- <span v-if="isRevoked && superseded">**re-established** · this statement is now carried by a Lean theorem, machine-checked over its whole domain: <a :href="'/theorem/' + superseded"><code>{{ superseded }}</code></a>. Cite that one.</span><span v-else-if="isRevoked">**why it was withdrawn** · {{ $params.reason }}</span><span v-else>**entails** · <code>0/7</code></span>
+- <span v-if="isRevoked && superseded">**carried** · this statement was withdrawn on its own evidence and is now carried by a Lean theorem, machine-checked over its whole domain: <a :href="'/theorem/' + superseded"><code>{{ superseded }}</code></a>. Cite that one.</span><span v-else-if="isRevoked">**why it was withdrawn** · {{ $params.reason }}</span><span v-else>**entails** · <code>0/7</code></span>
 
 </div>
 
