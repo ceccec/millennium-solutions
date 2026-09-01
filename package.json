@@ -80,7 +80,8 @@
     "hardcode-gate": "node scripts/hardcode-gate.ts",
     "one-author-gate": "node scripts/one-author-gate.ts",
     "gates-fire": "node scripts/gates-fire.ts",
-    "attribution-gate": "node scripts/attribution-gate.ts"
+    "attribution-gate": "node scripts/attribution-gate.ts",
+    "wave": "node scripts/wave.ts"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",

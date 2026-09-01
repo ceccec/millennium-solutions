@@ -38,6 +38,13 @@ jobs:
           node-version: ${{ matrix.node }}
       - run: npm ci --ignore-scripts
         working-directory: .
+      # packages/uuidna is NOT a declared npm workspace — package.json has no `workspaces` field — so the
+      # root `npm ci` above installs nothing for it, and `npm run build` below reaches for esbuild and
+      # typescript that were never fetched. This job has been red since 2026-08-19 for exactly that. Same
+      # root cause as the four workflows fixed earlier, missed here because this one never used the -w flag.
+      # --no-package-lock: an ad-hoc install of a directory that is not a workspace should leave no lockfile.
+      - name: install the package's own devDependencies (esbuild, typescript)
+        run: npm install --ignore-scripts --no-package-lock
       - name: build (agnosticism lint + tsc + bundle)
         run: npm run build
       - name: node:test — smoke + KAT
@@ -56,6 +63,13 @@ jobs:
           node-version: 22
       - run: npm ci --ignore-scripts
         working-directory: .
+      # packages/uuidna is NOT a declared npm workspace — package.json has no `workspaces` field — so the
+      # root `npm ci` above installs nothing for it, and `npm run build` below reaches for esbuild and
+      # typescript that were never fetched. This job has been red since 2026-08-19 for exactly that. Same
+      # root cause as the four workflows fixed earlier, missed here because this one never used the -w flag.
+      # --no-package-lock: an ad-hoc install of a directory that is not a workspace should leave no lockfile.
+      - name: install the package's own devDependencies (esbuild, typescript)
+        run: npm install --ignore-scripts --no-package-lock
       - run: npm run build
       - name: install Deno (official script — third-party actions are not permitted here)
         run: |
@@ -74,6 +88,13 @@ jobs:
           node-version: 22
       - run: npm ci --ignore-scripts
         working-directory: .
+      # packages/uuidna is NOT a declared npm workspace — package.json has no `workspaces` field — so the
+      # root `npm ci` above installs nothing for it, and `npm run build` below reaches for esbuild and
+      # typescript that were never fetched. This job has been red since 2026-08-19 for exactly that. Same
+      # root cause as the four workflows fixed earlier, missed here because this one never used the -w flag.
+      # --no-package-lock: an ad-hoc install of a directory that is not a workspace should leave no lockfile.
+      - name: install the package's own devDependencies (esbuild, typescript)
+        run: npm install --ignore-scripts --no-package-lock
       - run: npm run build
       - name: install Bun (official script — third-party actions are not permitted here)
         run: |
@@ -93,6 +114,13 @@ jobs:
           node-version: 22
       - run: npm ci --ignore-scripts
         working-directory: .
+      # packages/uuidna is NOT a declared npm workspace — package.json has no `workspaces` field — so the
+      # root `npm ci` above installs nothing for it, and `npm run build` below reaches for esbuild and
+      # typescript that were never fetched. This job has been red since 2026-08-19 for exactly that. Same
+      # root cause as the four workflows fixed earlier, missed here because this one never used the -w flag.
+      # --no-package-lock: an ad-hoc install of a directory that is not a workspace should leave no lockfile.
+      - name: install the package's own devDependencies (esbuild, typescript)
+        run: npm install --ignore-scripts --no-package-lock
       - run: npm run build
       - name: conformance (headless Chrome, via the ESM bundle)
         run: node test/browser-conformance.mjs
