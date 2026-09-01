@@ -10,7 +10,7 @@ import { readFileSync, writeFileSync } from 'node:fs'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 import { adjudicate, proveVerdict } from './adjudicate.ts'
 import { computes } from './honesty-gate.ts'
-import { ledger as __ledger } from '../src/api/index.ts'
+import { ledger as __ledger, orbit, units } from '../src/api/index.ts'
 
 const lean = readFileSync('src/proof/index.lean', 'utf8')
 const ledger = __ledger() as { key: string; name: string; receipt: string }[]
@@ -93,7 +93,7 @@ const FINDINGS: { statement: string; test: () => boolean }[] = [
   { statement: 'finding eighteen — the weight rests instead on non-entailment, which is checkable without this file: each of the seven propositions is a closed computation over finite lists whose value is fixed by arithmetic alone, so its truth is the same whichever way the corresponding conjecture goes, and a statement whose truth cannot vary with a conjecture carries no information about it',
     test: () => { const m9 = (n: number) => ((n % 9) + 9) % 9, rf = (d: number) => 10 - d
       const orb = (k: number) => { let x = 1; for (let i = 0; i < k; i++) x = m9(x * 2); return x }
-      const uni = (d: number) => [1, 2, 4, 5, 7, 8].includes(d), sp = [1, 2, 4, 8, 7, 5]
+      const uni = (d: number) => units().includes(d), sp = orbit()
       const R = (n: number) => Array.from({ length: n }, (_, i) => i)
       return R(10).every((d) => rf(rf(d)) === d) && R(10).filter((d) => rf(d) === d).length === 1
         && R(9).every((d) => R(9).filter((e) => m9(d * e) === 1).length === (uni(d) ? 1 : 0))

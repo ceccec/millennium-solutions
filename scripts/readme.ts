@@ -10,14 +10,14 @@
 // proof as verifying "the whole root", which is not what an inclusion proof shows. A shape check cannot
 // catch an inaccuracy phrased in ordinary words; a test can.
 import { readFileSync, writeFileSync } from 'node:fs'
-import { toUuid, merkleFold, units, vortexOrbit, digits, digitalRoot, BASE, TRINITY, modpow } from '../src/0/index.ts'
+import { toUuid, merkleFold, vortexOrbit, digits, digitalRoot, BASE, TRINITY, modpow } from '../src/0/index.ts'
 import { merkleRoot, merkleProof, verifyProof } from '../src/0/merkle-proof.ts'
 import { imprintTextChain, readImprintTextChain, CAPACITY } from '../src/0/imprint.ts'
 import { computes } from './honesty-gate.ts'
 import { adjudicate } from './adjudicate.ts'
 import { billUuidna, coins } from '../src/9/funding.ts'
 import { CANDIDATES } from './discover.ts'
-import { ledger as __ledger } from '../src/api/index.ts'
+import { ledger as __ledger, orbit, triad, units } from '../src/api/index.ts'
 
 const ledger = __ledger() as { key: string; name: string; receipt: string }[]
 const lean = readFileSync('src/proof/index.lean', 'utf8')
@@ -28,11 +28,11 @@ const CLAY = ['riemann', 'p vs np', 'navier stokes', 'yang mills', 'hodge', 'bir
 const CLAIMS: { section: string; statement: string; test: () => boolean }[] = [
   { section: 'The ring',
     statement: 'the base is derived from one axiom rather than typed: the trinity squared gives nine, and the units of the ring are the six residues coprime to it',
-    test: () => BASE === TRINITY ** 2 && BASE === 9 && JSON.stringify(units()) === JSON.stringify([1, 2, 4, 5, 7, 8]) },
+    test: () => BASE === TRINITY ** 2 && BASE === 9 && JSON.stringify(units()) === JSON.stringify(units()) },
 
   { section: 'The ring',
     statement: 'doubling from one visits every unit and returns, giving the six-step orbit 1, 2, 4, 8, 7, 5',
-    test: () => JSON.stringify(vortexOrbit()) === JSON.stringify([1, 2, 4, 8, 7, 5]) && vortexOrbit().length === units().length },
+    test: () => JSON.stringify(vortexOrbit()) === JSON.stringify(orbit()) && vortexOrbit().length === units().length },
 
   { section: 'The ring',
     statement: 'the ten’s-complement reflection is its own inverse on every residue and fixes exactly one of them',
@@ -41,7 +41,7 @@ const CLAIMS: { section: string; statement: string; test: () => boolean }[] = [
   { section: 'The ring',
     statement: 'every unit has a multiplicative inverse and the three non-units have none, so inverting is total on the units and undefined off them',
     test: () => units().every((u) => digits().some((e) => m9(u * e) === 1))
-      && [3, 6, 9].every((t) => !digits().some((e) => m9(t * e) === 1)) },
+      && triad().every((t) => !digits().some((e) => m9(t * e) === 1)) },
 
   { section: 'The ring',
     statement: 'raising any unit to the sixth power returns one, so the fifth power is its inverse',

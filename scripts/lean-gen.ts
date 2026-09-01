@@ -26,7 +26,7 @@
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 import { toUuid, digitalRoot, units as uUnits, modpow, merkleFold, gcd as uGcd, isPrime, vortexOrbit, BASE } from '@uuidna/uuidna'
-import { ledger as __ledger } from '../src/api/index.ts'
+import { ledger as __ledger, units as apiUnits, axis } from '../src/api/index.ts'
 
 // LEARNED FROM uuidna's own Lean corpus (1329 theorems, read from the package): a theorem there carries more
 // than its source. It is CONTENT-ADDRESSED (address, lineAddress), CLASSIFIED (principle, skill), records HOW
@@ -48,7 +48,9 @@ const paramsOf = (prefix: string): number[] =>
 // helper written here. A helper of mine could agree with my own Lean and both be wrong together; the package
 // is the independent side of the comparison.
 const m9 = (n: number) => ((n % BASE) + BASE) % BASE
-const units = uUnits()
+// bound once from the API — same values as uUnits(), and additionally refused if the theorem proving
+// them stops standing. The call sites below want an array, not the accessor.
+const units = apiUnits()
 
 // Each family declares: the quantified Lean, and the SAME computation in TypeScript. Gate 3 runs both.
 const FAMILIES: Record<string, Fam> = {
@@ -56,30 +58,30 @@ const FAMILIES: Record<string, Fam> = {
     principle: 'The ring Z/9', skill: 'z9-ring',
     name: 'powsum_zero_odd_exponents',
     params: paramsOf('powsum0_k'),
-    lean: `theorem powsum_zero_odd_exponents :\n  [1, 3, 5, 7, 9, 11, 13, 15, 17].all (fun k =>\n    (([1,2,4,5,7,8].map (fun u => (u ^ k) % 9)).foldl (· + ·) 0) % 9 == 0) := by decide`,
+    lean: `theorem powsum_zero_odd_exponents :\n  [1, 3, 5, 7, 9, 11, 13, 15, 17].all (fun k =>\n    ((units().map (fun u => (u ^ k) % 9)).foldl (· + ·) 0) % 9 == 0) := by decide`,
     ts: (k) => m9(units.map((u) => m9(u ** k)).reduce((a, b) => a + b, 0)) === 0,
-    negative: `theorem powsum_nonzero_at_even_exponents :\n  ¬ ([2, 4, 6].all (fun k =>\n    (([1,2,4,5,7,8].map (fun u => (u ^ k) % 9)).foldl (· + ·) 0) % 9 == 0)) := by decide`,
+    negative: `theorem powsum_nonzero_at_even_exponents :\n  ¬ ([2, 4, 6].all (fun k =>\n    ((units().map (fun u => (u ^ k) % 9)).foldl (· + ·) 0) % 9 == 0)) := by decide`,
   },
   mulperm_k: {
     principle: 'The ring Z/9', skill: 'z9-ring',
     name: 'mulperm_iff_unit_all',
     params: paramsOf('mulperm_k'),
-    lean: `theorem mulperm_iff_unit_all :\n  (List.range 9).all (fun k =>\n    (((([1,2,4,5,7,8].map (fun u => (k * u) % 9)).eraseDups).length) == 6) ==\n    ([1,2,4,5,7,8].contains k)) := by decide`,
+    lean: `theorem mulperm_iff_unit_all :\n  (List.range 9).all (fun k =>\n    ((((units().map (fun u => (k * u) % 9)).eraseDups).length) == 6) ==\n    (units().contains k)) := by decide`,
     ts: (k) => (new Set(units.map((u) => m9(k * u))).size === 6) === units.includes(k),
-    negative: `theorem mulperm_fails_at_the_triad :\n  ¬ ([3, 6, 0].any (fun k =>\n    ((([1,2,4,5,7,8].map (fun u => (k * u) % 9)).eraseDups).length) == 6)) := by decide`,
+    negative: `theorem mulperm_fails_at_the_triad :\n  ¬ (axis().any (fun k =>\n    (((units().map (fun u => (k * u) % 9)).eraseDups).length) == 6)) := by decide`,
   },
   addgen_k: {
     principle: 'The ring Z/9', skill: 'z9-ring',
     name: 'addgen_iff_coprime_all',
     params: paramsOf('addgen_k'),
-    lean: `theorem addgen_iff_coprime_all :\n  (List.range 9).all (fun k =>\n    ((((List.range 9).map (fun i => (k * i) % 9)).eraseDups).length == 9) ==\n    ([1,2,4,5,7,8].contains k)) := by decide`,
+    lean: `theorem addgen_iff_coprime_all :\n  (List.range 9).all (fun k =>\n    ((((List.range 9).map (fun i => (k * i) % 9)).eraseDups).length == 9) ==\n    (units().contains k)) := by decide`,
     ts: (k) => (new Set(Array.from({ length: 9 }, (_, i) => m9(k * i))).size === 9) === units.includes(k),
   },
   hasinv_d: {
     principle: 'The ring Z/9', skill: 'z9-ring',
     name: 'hasinv_iff_unit_all',
     params: paramsOf('hasinv_d'),
-    lean: `theorem hasinv_iff_unit_all :\n  (List.range 9).all (fun d =>\n    ((List.range 9).any (fun e => (d * e) % 9 == 1)) == ([1,2,4,5,7,8].contains d)) := by decide`,
+    lean: `theorem hasinv_iff_unit_all :\n  (List.range 9).all (fun d =>\n    ((List.range 9).any (fun e => (d * e) % 9 == 1)) == (units().contains d)) := by decide`,
     ts: (d) => Array.from({ length: 9 }, (_, e) => e).some((e) => m9(d * e) === 1) === units.includes(d),
   },
   demorgan_nary_k: {
@@ -107,7 +109,7 @@ const FAMILIES: Record<string, Fam> = {
     principle: 'The ring Z/9', skill: 'z9-ring',
     name: 'invpow_is_fifth_power_all_units',
     params: paramsOf('invpow_u'),
-    lean: `theorem invpow_is_fifth_power_all_units :\n  [1,2,4,5,7,8].all (fun u => (u * (u ^ 5)) % 9 == 1) := by decide`,
+    lean: `theorem invpow_is_fifth_power_all_units :\n  units().all (fun u => (u * (u ^ 5)) % 9 == 1) := by decide`,
     ts: (u) => m9(u * modpow(u, units.length - 1, BASE)) === 1,
     negative: `theorem invpow_fails_off_the_units :\n  ¬ ([3, 6].any (fun t => (List.range 9).any (fun e => (t * e) % 9 == 1))) := by decide`,
   },

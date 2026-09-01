@@ -32,7 +32,7 @@
 //      node scripts/imagine.ts --emit   (also write src/proof/imagined.lean and verify it)
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs'
 import { execSync } from 'node:child_process'
-import { units as apiUnits, triad as apiTriad, orbit as apiOrbit } from '../src/api/index.ts'
+import { units as apiUnits, triad as apiTriad, orbit as apiOrbit, tetA as apiTetA, tetB as apiTetB } from '../src/api/index.ts'
 
 const m9 = (n: number) => ((n % 9) + 9) % 9
 
@@ -67,8 +67,8 @@ const SETS: { id: string; lean: string; say: string; s: number[] }[] = [
   { id: 'units', lean: asLean(apiUnits()),   say: 'the units',                s: apiUnits().map(m9) },
   { id: 'triad', lean: asLean(apiTriad()),   say: 'the triad',                s: apiTriad().map(m9) },
   { id: 'orbit', lean: asLean(apiOrbit()),   say: 'the doubling orbit',       s: apiOrbit().map(m9) },
-  { id: 'tetA',  lean: '[1, 4, 7]',          say: 'the first tetrahedron',    s: [1, 4, 7] },
-  { id: 'tetB',  lean: '[2, 5, 8]',          say: 'the second tetrahedron',   s: [2, 5, 8] },
+  { id: 'tetA',  lean: asLean(apiTetA()),    say: 'the first tetrahedron',    s: apiTetA() },
+  { id: 'tetB',  lean: asLean(apiTetB()),    say: 'the second tetrahedron',   s: apiTetB() },
   { id: 'all',   lean: '[0,1,2,3,4,5,6,7,8]',say: 'the whole ring',           s: [0, 1, 2, 3, 4, 5, 6, 7, 8] },
   // the residues that are squares, and the ones that are cubes — the images of the two maps already in the
   // table above. A map's image is a structure in its own right, and asking what the OTHER maps do to it is a
@@ -131,7 +131,7 @@ const t3 = t1.filter((c) => (byKind.get(c.kind) ?? []).some((o) => !o.holds))
 const ALIAS: [RegExp, string][] = [
   // the alias table's right-hand sides are computed for the same reason the sets are
   [/\bdbl\b/g, 'm9(2*d)'], [/\baxis\b/g, asLean(apiTriad()).replace(/ /g, '')],
-  [/\btetA\b/g, '[1,4,7]'], [/\btetB\b/g, '[2,5,8]'],
+  [/\btetA\b/g, asLean(apiTetA()).replace(/ /g, '')], [/\btetB\b/g, asLean(apiTetB()).replace(/ /g, '')],
   [/\bunits\b/g, asLean(apiUnits()).replace(/ /g, '')], [/\btriad\b/g, asLean(apiTriad()).replace(/ /g, '')],
   [/\brefl\b/g, 'm9(9-d)'],
 ]

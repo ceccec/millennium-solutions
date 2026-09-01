@@ -21,7 +21,7 @@ import { translate } from '../src/prove/translate.ts'
 import { adjudicate } from './adjudicate.ts'
 import { computes } from './honesty-gate.ts'
 import { toUuid, merkleFold } from '../src/0/index.ts'
-import { ledger as __ledger } from '../src/api/index.ts'
+import { ledger as __ledger, triad, units, axis } from '../src/api/index.ts'
 import { orbit } from '../src/api/index.ts'
 
 const ledger = __ledger() as { key: string; name: string; receipt: string }[]
@@ -66,14 +66,14 @@ const CLAIMS: Claim[] = [
       return { text: `${k} of them are sealed into the ledger, each carrying a receipt derived from the one before it`, ok: k > 0 && chained, from: [k] } } },
 
   { section: S(1, 'The ring'),
-    derive: () => { const u = [1,2,4,5,7,8], orb = [0,1,2,3,4,5].map((k) => m9(2 ** k))
-      const closes = m9(2 ** 6) === 1, avoids = !orb.some((d) => [0,3,6].includes(d))
+    derive: () => { const u = units(), orb = [0,1,2,3,4,5].map((k) => m9(2 ** k))
+      const closes = m9(2 ** 6) === 1, avoids = !orb.some((d) => axis().includes(d))
       return { text: `the units are the ${u.length} residues coprime to nine, the doubling orbit visits ${orb.join(', ')} and ${closes ? 'closes on the seventh step' : 'does NOT close'}, and it ${avoids ? 'never lands on the triad' : 'DOES land on the triad'}`, ok: JSON.stringify(orb) === JSON.stringify(ORBIT) && closes && avoids, from: [u.length, orb.join(', ')] } } },
 
   { section: S(1, 'The ring'),
     derive: () => { const r = (d: number) => 10 - d
-      const cross = ORBIT.filter((d) => [3,6,9].includes(r(d)))
-      const covers = [3,6,9].every((t) => ORBIT.some((d) => r(d) === t))
+      const cross = ORBIT.filter((d) => triad().includes(r(d)))
+      const covers = triad().every((t) => ORBIT.some((d) => r(d) === t))
       return { text: `the reflection ten-minus-d carries ${cross.join(', ')} onto ${cross.map(r).join(', ')}, so it ${covers ? 'covers the whole triad the orbit never reaches' : 'does NOT cover the triad'} — the units and the triad are mirror images rather than separate populations`, ok: covers && cross.length === 3, from: [cross.join(', '), cross.map(r).join(', ')] } } },
 
   { section: S(2, 'Entanglement'),

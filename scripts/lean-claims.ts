@@ -5,7 +5,7 @@
 import { toUuid, units, triad, vortexOrbit, merkleFold, digitalRoot, digits } from '../src/0/index.ts'
 import { readFileSync, existsSync } from 'node:fs'
 import { CANDIDATES } from './discover.ts'
-import { ledger as __ledger } from '../src/api/index.ts'
+import { ledger as __ledger, orbit } from '../src/api/index.ts'
 
 // REVOKED ENTRIES ARE NOT LIVE CLAIMS. The ledger is append-only and its receipts are immutable, so an entry
 // that no longer holds is marked in place rather than deleted — deleting would break the chain, and rewriting
@@ -23,7 +23,7 @@ ck('three_no_inverse mod9', !digits().some(x => m9(3n * BigInt(x)) === 1n))
 ck('two_mul_five: 2·5≡1 mod9', m9(10n) === 1n)
 ck('four_mul_seven: 4·7≡1 mod9', m9(28n) === 1n)
 ck('eight_self_inv: 8·8≡1 mod9', m9(64n) === 1n)
-{ let s = [], x = 1n; for (let k = 0; k < 6; k++) { s.push((x % 9n).toString()); x = (x * 2n) % 9n } ck('doubling_circuit [1,2,4,8,7,5]', s.join(',') === '1,2,4,8,7,5') }
+{ let s = [], x = 1n; for (let k = 0; k < 6; k++) { s.push((x % 9n).toString()); x = (x * 2n) % 9n } ck('doubling_circuit orbit()', s.join(',') === '1,2,4,8,7,5') }
 ck('two_order_six: 2⁶≡1 mod9', m9(64n) === 1n)
 ck('tens_complement involutive (d≤10)', [...Array(11).keys()].every(d => 10 - (10 - d) === d))
 ck('rosette_pow_six: 3⁶≡1 mod7', m7(729n) === 1n)

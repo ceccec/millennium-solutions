@@ -126,3 +126,20 @@ export const triad = (): number[] => backedBy('lean_units_are_six', runtimeTriad
 /** The doubling orbit 1,2,4,8,7,5 — six turns before it returns to where it began. */
 export const orbit = (): number[] =>
   backedBy('lean_millenniumfloor_riemann_reflection_and_heart', runtimeOrbit(), 'the doubling orbit')
+
+/** THE MOD-3 CLASSES — the merkaba's axis and its two tetrahedra, computed from the partition rather than
+ *  typed. These were the literals I missed when I claimed the tooling held no hardcoded ℤ/9 sets: the claim
+ *  was scoped to the three patterns I had grepped for, which is how a check confirms what it was told to look
+ *  for and nothing else. Backed by the theorem that proves the classes partition the ring 3+3+3. */
+export const tetA = (): number[] =>
+  backedBy('lean_merkaba_the_three_classes_partition_z9',
+    Array.from({ length: 9 }, (_, d) => d).filter((d) => d % 3 === 1), 'the first tetrahedron')
+
+export const tetB = (): number[] =>
+  backedBy('lean_merkaba_the_three_classes_partition_z9',
+    Array.from({ length: 9 }, (_, d) => d).filter((d) => d % 3 === 2), 'the second tetrahedron')
+
+/** The axis {3,6,0} — the same partition's third class, and the triad by another name. */
+export const axis = (): number[] =>
+  backedBy('lean_merkaba_the_three_classes_partition_z9',
+    Array.from({ length: 9 }, (_, d) => d).filter((d) => d % 3 === 0), 'the axis')
