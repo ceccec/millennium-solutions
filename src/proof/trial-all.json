@@ -11332,5 +11332,2639 @@
     "verdict": "SEALED",
     "ground": "recomputes true, cites nothing fabricated",
     "receipt": "12db3f3c-fc3a-85d8-b2b1-db183ad32165"
+  },
+  {
+    "key": "lean_address_raw_bytes_of_a",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "211de25d-e843-857c-bbcc-3e7238f6e310"
+  },
+  {
+    "key": "lean_address_to_uuid_bytes_of_a",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c3f88cb7-dd38-8c40-88f4-fe6194fec385"
+  },
+  {
+    "key": "lean_address_to_uuid_bytes_of_uuidna",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6a4f78d3-a979-8002-b6ec-abe85a6b7a79"
+  },
+  {
+    "key": "lean_address_address_is_sixteen_bytes",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e8ffe03d-7ef1-8e86-b2f9-7b4a1f0ade22"
+  },
+  {
+    "key": "lean_address_address_bytes_are_bytes",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3fc96e27-7831-8003-a245-d239bc096bfa"
+  },
+  {
+    "key": "lean_address_version_nibble_is_forced",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "47e811ae-f5e4-81be-9f44-186a751daae4"
+  },
+  {
+    "key": "lean_address_variant_bits_are_forced",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "02c6e2b5-afb6-805b-a371-65ef6b013887"
+  },
+  {
+    "key": "lean_address_addressing_is_deterministic",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e62c309b-6bab-8ca7-a7cd-aa5d51c97b3d"
+  },
+  {
+    "key": "lean_address_distinct_seeds_give_distinct_addresses",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d35a8b2c-29ad-84bf-8039-0e51740eb7d8"
+  },
+  {
+    "key": "lean_address_addressing_is_injective_on_single_characters",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a6887d02-4deb-8704-ad58-cd8376a42afc"
+  },
+  {
+    "key": "lean_address_addressing_is_not_the_identity",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d0637879-af00-8dfd-a401-87b9a5dd6683"
+  },
+  {
+    "key": "lean_address_addressing_is_not_constant",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9c84b2cd-2a3a-8890-a40e-a5601513d99e"
+  },
+  {
+    "key": "lean_address_the_four_seeds_are_distinct",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1362d7ac-a87d-8c3c-b183-8713c1f8c124"
+  },
+  {
+    "key": "lean_families_flt_all_primes_under_thirty",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "fbeecfea-5cbf-837e-9726-90d3632ff9b9"
+  },
+  {
+    "key": "lean_families_wilson_all_primes_under_thirty",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "db3c3609-244e-80ff-8df7-b051de503139"
+  },
+  {
+    "key": "lean_families_wilson_fails_at_composites",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e9964842-9392-86e6-86fc-9684178f54ad"
+  },
+  {
+    "key": "lean_families_pascal_rows_sum_to_powers_of_two",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "92b5cdee-0ce0-8d47-9317-f2b130732e89"
+  },
+  {
+    "key": "lean_families_pascal_alternating_sums_vanish",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "521b9062-dba3-8b82-9c33-d5709aa5553e"
+  },
+  {
+    "key": "lean_families_totient_at_prime_powers",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "034c0066-ef85-8775-b9be-254604d1207d"
+  },
+  {
+    "key": "lean_families_geometric_series_all_bases",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a1a0d8de-3069-8a76-ab13-12ec6360f56b"
+  },
+  {
+    "key": "lean_families_xor_is_parity_up_to_eight_bits",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c643bfcf-2a91-80a3-8191-528ee2735187"
+  },
+  {
+    "key": "lean_families_nat_div_is_a_total_function_returning_zero_at_a_zero_divisor",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "99ffd597-6911-8fd6-99fb-fb70d3b0bad0"
+  },
+  {
+    "key": "lean_families_division_identity_holds_across_the_range",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1101f928-77e3-8a21-9b02-16f181190831"
+  },
+  {
+    "key": "lean_families_at_a_zero_divisor_the_identity_is_carried_by_the_remainder",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "fb105eb9-c500-87fd-8561-149ecdecf0ab"
+  },
+  {
+    "key": "lean_fnv_hash_a_seed_zero",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6217ca32-aa73-8425-b216-6c577792cd5d"
+  },
+  {
+    "key": "lean_fnv_hash_ab_seed_zero",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "488d0227-0d40-89a8-81fe-e6cbff3da208"
+  },
+  {
+    "key": "lean_fnv_hash_a_seed_golden",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1a33880c-45f6-8840-9253-94e3f5720270"
+  },
+  {
+    "key": "lean_fnv_hash_uuidna_seed_zero",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "171433dd-5f27-8af9-bd63-6ef7002bc225"
+  },
+  {
+    "key": "lean_fnv_hash_is_deterministic",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6bb8e484-c440-86c8-9333-1ef6a6a13366"
+  },
+  {
+    "key": "lean_fnv_hash_is_injective_on_single_characters",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c3f18ca2-78a4-8057-ad1f-37521c921c12"
+  },
+  {
+    "key": "lean_fnv_the_seed_separates",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "34c9dd31-1c39-8549-9257-f598251a93a6"
+  },
+  {
+    "key": "lean_fnv_hash_is_not_the_identity",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "34be52dc-c3a2-80e9-90bc-7d978d520768"
+  },
+  {
+    "key": "lean_fnv_hash_is_not_constant",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d65e7c3e-8771-8ed2-a985-0d84c734cbca"
+  },
+  {
+    "key": "lean_fnv_hash_is_thirty_two_bit",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6adee6ac-01b5-8d97-8fda-58b4a26b5159"
+  },
+  {
+    "key": "lean_generated_powsum_zero_odd_exponents",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ce4748ab-7b90-8775-ae26-d1bd85e95262"
+  },
+  {
+    "key": "lean_generated_powsum_nonzero_at_even_exponents",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "da7dc7ce-01ec-8c75-a920-6b67e3a32cd7"
+  },
+  {
+    "key": "lean_generated_mulperm_iff_unit_all",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "01a44bcc-6ae1-8698-a61d-b294a372838f"
+  },
+  {
+    "key": "lean_generated_mulperm_fails_at_the_triad",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7f6f60f3-d775-82ff-baf3-d8251ae62ce1"
+  },
+  {
+    "key": "lean_generated_addgen_iff_coprime_all",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d23bb6f4-2735-8551-b11f-8533497b7f22"
+  },
+  {
+    "key": "lean_generated_hasinv_iff_unit_all",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "24020c39-2817-8f01-8f9f-3d786c28f252"
+  },
+  {
+    "key": "lean_generated_demorgan_all_widths",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "45878828-7434-8fdc-871d-c814f83193c2"
+  },
+  {
+    "key": "lean_generated_power_sum_closed_forms",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4830f31e-7833-8ea3-a870-aa2530d029fd"
+  },
+  {
+    "key": "lean_generated_invpow_is_fifth_power_all_units",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "848e4a2c-b65a-875e-b4c5-284679dfae26"
+  },
+  {
+    "key": "lean_generated_invpow_fails_off_the_units",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9cd0abb7-c3dc-84d7-9f08-7a624048e1b8"
+  },
+  {
+    "key": "lean_generated_cyclic_units_have_a_primitive_root",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "21d5e557-5625-857a-a13c-dcbb7dd088de"
+  },
+  {
+    "key": "lean_generated_decimal_period_is_the_order_of_ten",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "85e474a6-76c3-8df2-84d7-c224d096fa0b"
+  },
+  {
+    "key": "lean_generated_primality_agrees_with_trial_division",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "86e633b3-cc43-82b0-8a89-8f2f3e83f4e1"
+  },
+  {
+    "key": "lean_generated_roots_of_unity_cancel",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "90647c22-6e5d-8cbe-8018-b2b59a2dda23"
+  },
+  {
+    "key": "lean_millenniumfloor_riemann_reflection_and_heart",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "bed99ddf-9717-89b7-ab41-044197938855"
+  },
+  {
+    "key": "lean_millenniumfloor_p_vs_np_inverse_is_unique",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "61ed32b1-0fcf-81bc-b255-71f39404187e"
+  },
+  {
+    "key": "lean_millenniumfloor_navier_stokes_flow_is_bounded",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "dafe2bb3-c1f5-8197-a981-5092d81bf85f"
+  },
+  {
+    "key": "lean_millenniumfloor_yang_mills_spectral_gap",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1152fb8f-f7d8-8ded-a8fb-e9f718974e4b"
+  },
+  {
+    "key": "lean_millenniumfloor_hodge_span_is_the_units",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "dd0efc5b-a2ff-8eb8-977c-d18a4ae47986"
+  },
+  {
+    "key": "lean_millenniumfloor_birch_swinnerton_dyer_vanishing",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "57ed1964-529c-8f22-b06b-51b840edacf8"
+  },
+  {
+    "key": "lean_millenniumfloor_poincare_single_closed_loop",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7b9dd11f-6b04-8c0c-a2b1-541c328d2f0d"
+  },
+  {
+    "key": "lean_merkle_merge_agrees",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4298a48c-8e29-8717-a137-1728316bcb55"
+  },
+  {
+    "key": "lean_merkle_empty_fold_agrees",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f96bc0ca-dac7-8c35-bc2b-8c8599c94272"
+  },
+  {
+    "key": "lean_merkle_singleton_fold_is_the_leaf",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a1f8cb03-417c-841f-b767-79d2de4d8abb"
+  },
+  {
+    "key": "lean_merkle_pair_fold_agrees",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7651bd48-d395-8e13-b5d6-978cdb51a335"
+  },
+  {
+    "key": "lean_merkle_fold_is_order_independent_on_two",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "26e3535b-82bd-8850-a739-809e01a06d65"
+  },
+  {
+    "key": "lean_merkle_merge_is_order_sensitive",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3eda96b0-7e65-8894-8f87-17c5392014c3"
+  },
+  {
+    "key": "lean_merkle_sorting_is_what_makes_the_fold_order_free",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "fd6f4d99-6f2e-89ce-8662-c3d0d7016b3f"
+  },
+  {
+    "key": "lean_quantum_perms_of_four_is_factorial",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4fabbd78-28ba-8065-b1d8-0d706b39a14e"
+  },
+  {
+    "key": "lean_quantum_receipt_is_order_invariant",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "832611b4-9363-82ec-9e32-4271f9bb0427"
+  },
+  {
+    "key": "lean_quantum_receipt_order_invariant_on_the_orbit",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6b255389-9fe6-8d91-aae3-646f180e4731"
+  },
+  {
+    "key": "lean_quantum_naive_fold_is_not_order_invariant",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "eb661483-6694-856c-8629-639828c54a2e"
+  },
+  {
+    "key": "lean_quantum_superposition_collapses_to_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c2ab5a2f-9fd5-86b8-b7bf-05a4989c0da0"
+  },
+  {
+    "key": "lean_reversal_reversal_preserves_digit_sum",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "db894765-359f-85de-8aff-3eff36322423"
+  },
+  {
+    "key": "lean_reversal_digital_root_is_invariant_under_reversal",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "352d594d-dd9a-8c04-8584-b0af433c5a42"
+  },
+  {
+    "key": "lean_reversal_the_ledger_reversal_cases",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4bd3536b-805f-89ac-9e72-105ec8fcf69e"
+  },
+  {
+    "key": "lean_reversal_reversal_is_not_the_identity",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "991f3d96-06d2-8f32-8e63-f94aaf6bb492"
+  },
+  {
+    "key": "lean_reversal_palindromes_are_the_fixed_points",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "38c163fc-15bd-8358-8838-fa94b1bbf41b"
+  },
+  {
+    "key": "lean_reversal_emirps_exist_below_one_hundred",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b9e6b77a-b12d-8a44-a67c-97df92e1da11"
+  },
+  {
+    "key": "lean_reversal_reversal_does_not_preserve_primality",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3d5c8208-367c-8e04-abb4-af97c5735904"
+  },
+  {
+    "key": "lean_millenniumfloor.universal_universal_reflection_involution",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "09141102-ade1-8d1a-b5ff-78bda3063955"
+  },
+  {
+    "key": "lean_z9_units_are_six",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "76d332a5-ee8e-8ba2-b98f-7f25343f9d5c"
+  },
+  {
+    "key": "lean_z9_units_count",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8b673ca0-cbd0-88ce-b015-547d272557eb"
+  },
+  {
+    "key": "lean_z9_hasinv_units",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c37ff607-4bbc-8a32-99a5-de2eb575f5a1"
+  },
+  {
+    "key": "lean_z9_hasinv_triad_not",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "898e137c-9445-8bfb-bed8-67af6aa7e9a9"
+  },
+  {
+    "key": "lean_z9_selfinv_exactly_one_and_eight",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7b3bc7e3-d34e-8cac-a0c8-2d0a59fc37a6"
+  },
+  {
+    "key": "lean_z9_euler_units_pow_six",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1e4c6abe-a1c3-8699-a281-5d9f47cb0dcf"
+  },
+  {
+    "key": "lean_z9_invpow_is_u_to_the_fifth",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "480f158b-6a1e-82c0-8721-56ade53f2914"
+  },
+  {
+    "key": "lean_z9_powsum_zero_at_six",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9b3b882a-90d8-8604-b495-e7e0012872e5"
+  },
+  {
+    "key": "lean_z9_powsum_zero_at_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f5741c78-6ec5-8e17-b589-9fe1b31e3967"
+  },
+  {
+    "key": "lean_z9_mulperm_iff_unit",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "37bbadd2-ef0c-8630-9185-bbb9084292a5"
+  },
+  {
+    "key": "lean_z9_addgen_iff_coprime",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "dfdf7fc0-4363-8e80-9d1c-b10b7270aad0"
+  },
+  {
+    "key": "lean_z9_selfneg_only_zero",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "afe717ff-dd57-862d-acbb-1d50690f98a6"
+  },
+  {
+    "key": "lean_z9_orbit_is_the_six",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "71ca27b5-036d-8c29-8119-03fc715e7942"
+  },
+  {
+    "key": "lean_z9_orbit_closes",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e49fb8ec-3651-853e-841f-53f71194cb10"
+  },
+  {
+    "key": "lean_z9_orbit_distinct",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d373ad1a-9798-806f-a86d-d3432e66174c"
+  },
+  {
+    "key": "lean_z9_orbit_covers_units",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "293a198a-6c28-87ed-b83e-a7a9fa49028c"
+  },
+  {
+    "key": "lean_z9_triad_never_reaches_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "20a9047b-0651-807e-9ceb-0e043949cdbb"
+  },
+  {
+    "key": "lean_z9_triad_squares_vanish",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5ce961f4-660b-87da-a147-f8d7a3267e2d"
+  },
+  {
+    "key": "lean_z9_add_group",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "312d6755-c2a1-88eb-9912-144b2b078df0"
+  },
+  {
+    "key": "lean_z9_neg_involution",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e72bcc08-9e1e-88b8-90b6-c10d6c4fc57e"
+  },
+  {
+    "key": "lean_nim_bouton_two_heaps_lost_iff_xor_zero",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d35edb15-4b67-8c0b-9ad3-f2d3ab178279"
+  },
+  {
+    "key": "lean_nim_bouton_lost_iff_heaps_equal",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c2f9d531-b836-895c-a0da-4a643b6d32e6"
+  },
+  {
+    "key": "lean_nim_lost_positions_are_exactly_the_diagonal",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "86e0163f-596b-89fe-b209-2baa88e99ad3"
+  },
+  {
+    "key": "lean_nim_grundy_of_a_single_heap_is_its_size",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e08987d5-7608-8a84-9351-0d5d3b9f698e"
+  },
+  {
+    "key": "lean_nim_grundy_of_two_heaps_is_the_xor",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7ab70de7-b5fd-88fa-b5df-5bcf4ecfbcd9"
+  },
+  {
+    "key": "lean_nim_xor_is_its_own_inverse",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f9930902-3aa3-8836-8e4e-b1468f9a2522"
+  },
+  {
+    "key": "lean_nim_xor_is_commutative",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4be000e0-cf35-8867-ad95-590164684584"
+  },
+  {
+    "key": "lean_nim_xor_zero_is_identity",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "59c8e95e-eaf1-8a73-8468-2a74b84b1c7a"
+  },
+  {
+    "key": "lean_z9plus_squares_land_exactly_in_zero_one_four_seven",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0a46c7d9-795d-8f7f-ade3-28c318fc0eba"
+  },
+  {
+    "key": "lean_z9plus_five_is_not_a_square_mod_nine",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "20c33bf7-1bbe-8c48-98a2-e50016fca9aa"
+  },
+  {
+    "key": "lean_z9plus_cubes_land_exactly_in_zero_one_eight",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a0413156-e553-8396-bec6-88003c17f9b8"
+  },
+  {
+    "key": "lean_z9plus_primitive_roots_are_exactly_two_and_five",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8832fb36-edb0-8477-bda4-08af9ea5ce59"
+  },
+  {
+    "key": "lean_z9plus_primitive_root_iff_generates_the_units",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1d8d6e36-1984-8730-b410-e64643d65344"
+  },
+  {
+    "key": "lean_z9plus_doubling_has_period_six",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "59e48172-1f6a-884c-9b87-bda4334d1488"
+  },
+  {
+    "key": "lean_z9plus_no_period_smaller_than_six",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e94365d4-1888-8fec-9ccf-bd22c30aeab1"
+  },
+  {
+    "key": "lean_z9plus_digital_root_agrees_with_the_residue",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1696d96c-33a3-845b-b0eb-d504623df299"
+  },
+  {
+    "key": "lean_z9plus_digital_root_is_the_digit_sum_residue",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "14fd1431-bf05-8f57-8581-a3869db64322"
+  },
+  {
+    "key": "lean_z9plus_reversal_cannot_change_the_digital_root",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "08720a64-6950-823e-a625-2fb5d71ea7f7"
+  },
+  {
+    "key": "lean_z9plus_orbit_digital_roots_have_period_six",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "543f48a9-f482-8931-ba29-722f3acde821"
+  },
+  {
+    "key": "lean_z9plus_units_and_triad_partition_the_ring",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "56d4fbda-6f25-8b50-a840-a33bfa680e52"
+  },
+  {
+    "key": "lean_z9plus_both_parts_sum_to_zero",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b30de9fd-1e1a-83a8-87cf-eda56d9b0afd"
+  },
+  {
+    "key": "lean_z9plus_the_orders_of_the_units_are_exact",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "48685f29-1bc3-8ea9-8eda-b2717636c32d"
+  },
+  {
+    "key": "lean_z9plus_the_unit_table_is_a_latin_square",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1e106c4a-3816-877b-81d0-efe20005539b"
+  },
+  {
+    "key": "lean_z9plus_the_orbit_never_meets_the_triad",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "38726843-73a6-8bb1-a4f1-d6a97ba65855"
+  },
+  {
+    "key": "lean_z9plus_the_reflected_orbit_covers_the_whole_triad",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8c5d3165-37d8-84d4-bbec-a721cf05885b"
+  },
+  {
+    "key": "lean_z9plus_reflection_splits_the_orbit_in_half",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2ee0d0dc-45d4-821b-82fe-c9bae6d7b636"
+  },
+  {
+    "key": "lean_z9plus_the_crossing_pairs_are_one_four_seven",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "fd5ff6f1-1655-86e6-85d2-112bb66bc2ce"
+  },
+  {
+    "key": "lean_z9plus_reflection_is_injective_on_the_orbit",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e63ebd6e-bace-80af-9db1-1a539c707d8b"
+  },
+  {
+    "key": "lean_z9plus_doubling_alone_reaches_only_the_units",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8fb1adf8-9b65-838a-af5c-7622473bf5d3"
+  },
+  {
+    "key": "lean_z9plus_reflection_alone_reaches_only_two",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "dd50d767-7566-8c4a-8596-2f455e5f1f67"
+  },
+  {
+    "key": "lean_z9plus_doubling_and_reflection_together_reach_every_residue",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5c55b180-d10e-8368-8540-7347a323c58e"
+  },
+  {
+    "key": "lean_z9plus_every_residue_is_reachable_from_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e7433a57-1934-8cbc-bbc1-886db438fa3a"
+  },
+  {
+    "key": "lean_z9plus_the_diameter_is_exactly_four",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "479589da-0e75-8e74-a251-d0de43f8c094"
+  },
+  {
+    "key": "lean_z9plus_the_frontier_grows_by_two_each_round",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b338c80b-1898-8a5c-bc96-42f5ea6b55ad"
+  },
+  {
+    "key": "lean_z9plus_product_of_the_units_is_minus_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b731fc18-fee2-8e3c-8f13-075aaf6b31d8"
+  },
+  {
+    "key": "lean_z9plus_pisano_period_mod_nine_is_twenty_four",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "87f22860-4386-8fbb-879c-8a6edbd893b6"
+  },
+  {
+    "key": "lean_z9plus_no_proper_divisor_of_twenty_four_is_a_period",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2ffb3f99-d850-8839-b6aa-0f149996a712"
+  },
+  {
+    "key": "lean_z9plus_fibonacci_recurrence_holds",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2953f153-67e8-8aa1-95bb-840999dbe138"
+  },
+  {
+    "key": "lean_z9plus_consecutive_fibonacci_are_coprime",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e8906360-31c5-8ee0-87f6-4ffb00589680"
+  },
+  {
+    "key": "lean_z9plus_three_five_eight_are_consecutive_fibonacci",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7575c9eb-fd7f-823e-b244-1d9cc07a4045"
+  },
+  {
+    "key": "lean_sequences_cassini_at_even_indices",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a618d9ae-8af7-86e3-ace1-dcacf4fe47f4"
+  },
+  {
+    "key": "lean_sequences_cassini_at_odd_indices",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b42d7ae9-ec74-8bce-9462-a7ea052bbc88"
+  },
+  {
+    "key": "lean_sequences_cassini_deviation_is_exactly_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8563fd0c-91ef-8d33-8d22-729cd932e76e"
+  },
+  {
+    "key": "lean_sequences_lucas_mod_two_is_the_and_rule",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2396c70a-73a7-86ec-867f-a02415d908ea"
+  },
+  {
+    "key": "lean_sequences_pascal_has_both_parities",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "fc910b31-5054-8221-be13-3fbacd06d5ce"
+  },
+  {
+    "key": "lean_sequences_sums_of_two_squares_are_closed",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "fca198ef-9b8b-86dc-96d6-304cf7c4e578"
+  },
+  {
+    "key": "lean_sequences_three_five_eight_are_consecutive",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2c1fb60c-6564-8c2f-b657-72d66052de1e"
+  },
+  {
+    "key": "lean_sequences_pisano_twentyfour_is_four_sixes",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "780bfeec-e476-8461-a4a6-60609a455cec"
+  },
+  {
+    "key": "lean_mechanical_add_group",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0bf99a9b-8d78-8cff-9bbf-11d64f020f9f"
+  },
+  {
+    "key": "lean_mechanical_merkaba_cube_q3",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6963c8ac-e3e6-8214-9861-a29b5b5b6529"
+  },
+  {
+    "key": "lean_mechanical_trial_zero_no_inverse",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f336fdf5-76ee-8a96-9bd1-db04c2e7823e"
+  },
+  {
+    "key": "lean_mechanical_gf4_size",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "daf893bd-dc5f-8e49-8df1-9488f88a4f86"
+  },
+  {
+    "key": "lean_mechanical_harmonic_pythagorean_comma",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "eb59929b-c67e-85e2-bcbd-571a868e8609"
+  },
+  {
+    "key": "lean_mechanical_relation_eight",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a39da385-334c-8a73-b832-13c9e28f6680"
+  },
+  {
+    "key": "lean_mechanical_relation_seven_is_six_plus_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4cc8e257-5368-82a1-8160-851a259b6613"
+  },
+  {
+    "key": "lean_mechanical_the_cyclic_number_142857_is_the_repetend_of_one_seventh",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "84678499-42cd-8a49-b3f4-3b4e7c0bdc79"
+  },
+  {
+    "key": "lean_mechanical_the_digital_root_of_seven_to_the_k_has_period_three",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "35da1bae-5b79-8935-876a-b67346e27819"
+  },
+  {
+    "key": "lean_mechanical_seven_divides_the_repunit_of_length_six",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5de46f3e-a628-8b87-b794-3ecae7927b41"
+  },
+  {
+    "key": "lean_mechanical_two_to_the_eighth_is_two_hundred_fifty_six_a_byte",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "34caada8-dd09-8da6-8637-3ade9c093e95"
+  },
+  {
+    "key": "lean_mechanical_two_to_the_tenth_is_1024_the_harmonic_ledger",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "04218536-2a34-8e86-baa9-ed7071a31ab8"
+  },
+  {
+    "key": "lean_mechanical_nine_is_the_base_and_the_trinity_squared",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f0b0a052-058c-8147-8cca-7caf6ba309b7"
+  },
+  {
+    "key": "lean_mechanical_five_is_the_inverse_of_two_so_halving_reverses_the_orbit",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "32ceaab8-afe0-8a44-8646-8ffbc9248217"
+  },
+  {
+    "key": "lean_mechanical_dna_is_the_version_itself",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1527985d-54ef-8b25-807b-3d3b0a1e109e"
+  },
+  {
+    "key": "lean_mechanical_genetic_code_is_the_octave_squared",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a4bd830f-54a6-8a86-b874-d82826f18ebe"
+  },
+  {
+    "key": "lean_mechanical_genesis_1_the_unit",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b5cc42a3-c620-8cdf-bd54-6c5e055b2590"
+  },
+  {
+    "key": "lean_mechanical_genesis_8_the_octave",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3484a89d-0551-825f-93d1-7ce42f22f72d"
+  },
+  {
+    "key": "lean_mechanical_genesis_64_the_codon",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5bc3c52a-0484-87c6-98f1-53d28c24edca"
+  },
+  {
+    "key": "lean_mechanical_a432_factors_as_two_to_the_fourth_times_three_cubed",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ace5e026-76f2-8a9c-9297-c9491690d6ee"
+  },
+  {
+    "key": "lean_mechanical_two_bits_thrice_make_the_codon",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d7a6008c-4238-8a87-8793-40f4056ca7e7"
+  },
+  {
+    "key": "lean_mechanical_the_full_superposition_has_nine_states",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "fcdb464a-6436-8f64-a399-316e136bdb56"
+  },
+  {
+    "key": "lean_mechanical_trial_units_group",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "15329fd6-4630-8744-9936-b1aef10dd69f"
+  },
+  {
+    "key": "lean_mechanical_genus2_h1_symplectic",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d8a36344-ce56-875e-9f6f-acc685b5de2e"
+  },
+  {
+    "key": "lean_ledgerclaims_a_seal_is_128_bits",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c552c1db-5200-8530-b1cb-3d18679b9eb1"
+  },
+  {
+    "key": "lean_ledgerclaims_membership_grows_by_one_seal_per_doubling",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0f753f22-7a7e-8ef5-af52-45bdc66a6a8e"
+  },
+  {
+    "key": "lean_ledgerclaims_membership_is_logarithmic_not_linear",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c45f3e11-aa53-80f8-b07b-af78d0fb5300"
+  },
+  {
+    "key": "lean_ledgerclaims_the_967_receipt_case",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "94cd508a-bbf3-8cff-b315-81b144e6eeef"
+  },
+  {
+    "key": "lean_ledgerclaims_a_saving_never_exceeds_its_value",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c6d64f4f-b2d8-898b-b944-3c822f19303b"
+  },
+  {
+    "key": "lean_ledgerclaims_more_payloads_than_addresses_must_collide",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "83447fc9-2e89-88f9-8429-fbe83f8d3f9e"
+  },
+  {
+    "key": "lean_ledgerclaims_the_address_does_not_determine_the_payload",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4dbd784f-cd12-80b2-96ac-3fc43eed1f44"
+  },
+  {
+    "key": "lean_ledgerclaims_a_proof_is_smaller_than_its_set_across_the_octave",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "bd52bf4d-20ac-8435-9336-a9b4750b615f"
+  },
+  {
+    "key": "lean_merkle_fold_is_order_independent_on_three",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d127c5dd-11ea-86e4-8c94-0be07e223002"
+  },
+  {
+    "key": "lean_quantum_the_invariance_is_canonicalisation_not_physics",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8fc67bd3-13d9-8531-b642-7a9e33eaf5fa"
+  },
+  {
+    "key": "lean_quantum_the_receipt_is_not_injective",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e341b19b-3658-80bb-8b69-b8f129eaa260"
+  },
+  {
+    "key": "lean_quantum_the_uncanonicalised_fold_gives_many_answers",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "35063521-90d0-8445-9f40-36b1a218fbca"
+  },
+  {
+    "key": "lean_reversal_reversal_is_involutive_exactly_off_the_trailing_zeros",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7c3f81f9-1ab8-8281-bec8-d121dbadc6e7"
+  },
+  {
+    "key": "lean_fnv_the_hash_is_order_sensitive",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9ebfd1f3-a326-8cf9-984d-1a76a1f2a974"
+  },
+  {
+    "key": "lean_fnv_the_empty_input_is_still_mixed",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a295a883-8e7e-81e3-8266-635f26e28109"
+  },
+  {
+    "key": "lean_millenniumfloor_the_seven_rest_on_one_finite_structure",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c4430b4b-f081-804c-b4f1-29fca82f3f61"
+  },
+  {
+    "key": "lean_merkaba_the_three_classes_partition_z9",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "347bb6f8-bba6-8ef7-9051-7686f4047ac7"
+  },
+  {
+    "key": "lean_merkaba_the_axis_is_closed_under_doubling",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9de5030e-7ecd-8f0b-aad1-75d9027b3c70"
+  },
+  {
+    "key": "lean_merkaba_doubling_counter_rotates_the_two_tetrahedra",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a409ff11-15ca-8047-8e2b-a641e7bdc712"
+  },
+  {
+    "key": "lean_merkaba_the_counter_rotation_has_period_two",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7261ab56-ed9b-821c-a526-bbf8783d5c61"
+  },
+  {
+    "key": "lean_merkaba_the_tetrahedra_residue_sums_cancel",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8e4fb3a9-f5aa-8436-943b-647de30dcf50"
+  },
+  {
+    "key": "lean_merkaba_one_tetrahedron_covers_half_the_units",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c5305e5f-2386-8654-bec0-f17bbe1bb273"
+  },
+  {
+    "key": "lean_merkaba_the_cube_and_the_tetrahedron_count_out",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "18accb6b-20e6-8d68-b44a-382db7ee0cfe"
+  },
+  {
+    "key": "lean_merkaba_stacked_triangles_are_tetrahedral",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4611383b-7ebe-8301-9917-056c55afdb8e"
+  },
+  {
+    "key": "lean_imagined_units_is_closed_under_double",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "74b1c18a-9944-8da9-b1da-6f3f8886cd32"
+  },
+  {
+    "key": "lean_imagined_orbit_is_closed_under_double",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "43137a9a-a239-8fb3-8a16-3baba8f64fd9"
+  },
+  {
+    "key": "lean_imagined_all_is_closed_under_double",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a484e31e-4061-848a-8146-978420eecd9e"
+  },
+  {
+    "key": "lean_imagined_triad_is_closed_under_triple",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8a09c26a-d00f-8de1-9163-f2028507f9b1"
+  },
+  {
+    "key": "lean_imagined_all_is_closed_under_triple",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6721ec81-d9dc-8be5-afd6-92606fee93d7"
+  },
+  {
+    "key": "lean_imagined_units_is_closed_under_negate",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ade6add5-ed3b-8575-a7a8-70a0c8e5d86f"
+  },
+  {
+    "key": "lean_imagined_triad_is_closed_under_negate",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5866147f-e850-88bd-91c3-f5d4cc30b298"
+  },
+  {
+    "key": "lean_imagined_orbit_is_closed_under_negate",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2648891c-b6ac-834e-9e3d-6e6b3bdf1af1"
+  },
+  {
+    "key": "lean_imagined_all_is_closed_under_negate",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "488239aa-b8c4-814d-b652-e7592199fb2f"
+  },
+  {
+    "key": "lean_imagined_units_is_closed_under_square",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6d29a3cd-f0c8-84b5-b9f3-5f9a2b268c49"
+  },
+  {
+    "key": "lean_imagined_triad_is_closed_under_square",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "72db3295-a708-8323-bf96-ba0007a564b5"
+  },
+  {
+    "key": "lean_imagined_orbit_is_closed_under_square",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a001d862-2860-8dc6-9898-9460c48430e5"
+  },
+  {
+    "key": "lean_imagined_tetA_is_closed_under_square",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1af8a50e-a0f9-8c62-b6c7-71ddf3007c6e"
+  },
+  {
+    "key": "lean_imagined_all_is_closed_under_square",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "eb6c5699-9bf8-8b7b-b534-039e59998627"
+  },
+  {
+    "key": "lean_imagined_units_is_closed_under_quintuple",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "23146a0e-4f1a-8640-a6c5-e6725a1d0dd9"
+  },
+  {
+    "key": "lean_imagined_triad_is_closed_under_quintuple",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0c782557-1e79-85bc-8ea3-adef8e642344"
+  },
+  {
+    "key": "lean_imagined_orbit_is_closed_under_quintuple",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "36f80355-f5c0-8229-a28d-ce26643631e2"
+  },
+  {
+    "key": "lean_imagined_all_is_closed_under_quintuple",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "dae19453-3390-822a-a58b-97795d6dcff4"
+  },
+  {
+    "key": "lean_imagined_quadruple_is_involutive_on_triad",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4633b9bd-d5d5-8a68-a491-673c8a17424f"
+  },
+  {
+    "key": "lean_imagined_square_is_involutive_on_tetA",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e13716ed-0ac5-8a87-90c2-b0f14dc21975"
+  },
+  {
+    "key": "lean_imagined_quintuple_is_involutive_on_triad",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "98dcf6c8-a85e-8669-bb2c-fb127b761cc3"
+  },
+  {
+    "key": "lean_imagined_double_carries_units_onto_orbit",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9c9d13f8-a0b4-8118-95bd-9b50824d43de"
+  },
+  {
+    "key": "lean_imagined_double_carries_orbit_onto_units",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1fe514e5-9af2-8510-b144-4b796c98c947"
+  },
+  {
+    "key": "lean_imagined_triple_carries_all_onto_triad",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "99968f56-31e3-8069-b9a6-8d1b044c1cd4"
+  },
+  {
+    "key": "lean_imagined_quadruple_carries_units_onto_orbit",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d37065ab-bac3-81ab-be7b-ec649e22ec69"
+  },
+  {
+    "key": "lean_imagined_quadruple_carries_orbit_onto_units",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a8560589-8c23-8411-8228-e95b36dd1e73"
+  },
+  {
+    "key": "lean_imagined_negate_carries_units_onto_orbit",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "026d098c-a7ed-8bd6-8416-ed14fa6dff57"
+  },
+  {
+    "key": "lean_imagined_negate_carries_orbit_onto_units",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9785d5df-38fb-866e-a27a-1a665febfb9e"
+  },
+  {
+    "key": "lean_imagined_negate_carries_tetA_onto_tetB",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "cd1a8234-fa1f-8867-951f-3f3971557eed"
+  },
+  {
+    "key": "lean_imagined_negate_carries_tetB_onto_tetA",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2d5f2887-07ff-8ebe-95a4-c10d7997eb62"
+  },
+  {
+    "key": "lean_imagined_square_carries_units_onto_tetA",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f57e0f22-217a-81d3-9842-dd6ca8949412"
+  },
+  {
+    "key": "lean_imagined_square_carries_orbit_onto_tetA",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "fce1a3af-47fc-8b3c-885e-081d69f2a8b9"
+  },
+  {
+    "key": "lean_imagined_square_carries_tetB_onto_tetA",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "bebc2b15-1fa2-8f51-8153-62d850bad5db"
+  },
+  {
+    "key": "lean_imagined_quintuple_carries_units_onto_orbit",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "dadc55f1-9dd3-8371-a2ee-e1e452d6547b"
+  },
+  {
+    "key": "lean_imagined_quintuple_carries_orbit_onto_units",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "65c0d9be-2315-8c0a-8a63-fd631c8ee290"
+  },
+  {
+    "key": "lean_imagined_quintuple_carries_tetA_onto_tetB",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "083aec67-2d52-89a6-8ba6-dbf5ee8439ce"
+  },
+  {
+    "key": "lean_imagined_quintuple_carries_tetB_onto_tetA",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "20e8affd-97c5-8bb8-9468-36841a2c4b37"
+  },
+  {
+    "key": "lean_imagined_triple_collapses_triad_to_one_value",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b69711cf-680d-83a7-a057-317cad5ed5f6"
+  },
+  {
+    "key": "lean_imagined_triple_collapses_tetA_to_one_value",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "09f1a817-8fcf-8bf0-aae2-d93b0d64a0e2"
+  },
+  {
+    "key": "lean_imagined_triple_collapses_tetB_to_one_value",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "56e120e9-368e-80da-9992-70a2601addc7"
+  },
+  {
+    "key": "lean_imagined_square_collapses_triad_to_one_value",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "cbca5886-4508-8207-8bb0-e50ce252be83"
+  },
+  {
+    "key": "lean_imagined_cube_collapses_triad_to_one_value",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1878b27c-8b5d-8b95-ad33-2e7534d11141"
+  },
+  {
+    "key": "lean_imagined_cube_collapses_tetA_to_one_value",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "89b479b2-bb01-8913-bd7b-66030015b96c"
+  },
+  {
+    "key": "lean_imagined_cube_collapses_tetB_to_one_value",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f0c171ba-5dd3-81da-8800-53c2d8b06d6b"
+  },
+  {
+    "key": "lean_imagined_triad_is_closed_under_sextuple",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c6a3004b-4600-8d68-adf3-e6bba2d097ff"
+  },
+  {
+    "key": "lean_imagined_all_is_closed_under_sextuple",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "487c1f28-9559-8b4e-9e92-a0e4a4ad74d5"
+  },
+  {
+    "key": "lean_imagined_units_is_closed_under_octuple",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a7229156-86a5-8529-9651-05816f066031"
+  },
+  {
+    "key": "lean_imagined_triad_is_closed_under_octuple",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "03033716-02a9-86f5-a9da-25907548cd37"
+  },
+  {
+    "key": "lean_imagined_orbit_is_closed_under_octuple",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4f278f65-1bde-8a6e-9922-ff8de87dd174"
+  },
+  {
+    "key": "lean_imagined_all_is_closed_under_octuple",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9188cd9f-002a-8023-b923-b5c736e07ca5"
+  },
+  {
+    "key": "lean_imagined_septuple_is_involutive_on_triad",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "172d9674-4d63-879b-9a2c-b120feca3149"
+  },
+  {
+    "key": "lean_imagined_sextuple_carries_all_onto_triad",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "626b20bb-2221-85ac-bfe8-93732bf8a87f"
+  },
+  {
+    "key": "lean_imagined_septuple_carries_units_onto_orbit",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a8f55b84-94b6-8e4d-89b5-b3649f195a36"
+  },
+  {
+    "key": "lean_imagined_septuple_carries_orbit_onto_units",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8df83d0f-2bed-8ffc-836e-256f1f8dd802"
+  },
+  {
+    "key": "lean_imagined_octuple_carries_units_onto_orbit",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "cee59fa8-fb75-8016-b297-1fb6a38bd280"
+  },
+  {
+    "key": "lean_imagined_octuple_carries_orbit_onto_units",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d133706e-bd8c-8b49-9c00-e53c8d702218"
+  },
+  {
+    "key": "lean_imagined_octuple_carries_tetA_onto_tetB",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "dfecc1ef-d81b-8200-97ed-eb4057e5dc76"
+  },
+  {
+    "key": "lean_imagined_octuple_carries_tetB_onto_tetA",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "74ad9bcf-f22c-8d04-be0e-4e4779184739"
+  },
+  {
+    "key": "lean_imagined_sextuple_collapses_triad_to_one_value",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6c5bf198-bd89-8098-81a6-d42f29563384"
+  },
+  {
+    "key": "lean_imagined_sextuple_collapses_tetA_to_one_value",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d29da6cf-62b5-8be7-b25e-87c08e8a8b90"
+  },
+  {
+    "key": "lean_imagined_sextuple_collapses_tetB_to_one_value",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ee2a3939-17c8-8b44-b9c7-8f797f28f490"
+  },
+  {
+    "key": "lean_energy_the_loop_returns_less_than_it_took",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8229c511-d4bd-8878-9abb-f498760675f7"
+  },
+  {
+    "key": "lean_energy_a_chain_of_efficiencies_can_only_lose",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "34cbdadb-77a7-8a04-a8a1-a80d59f29376"
+  },
+  {
+    "key": "lean_energy_as_a_purifier_the_loop_costs_a_thousandfold",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "840c66b6-b891-8807-a71e-eee3f14306a3"
+  },
+  {
+    "key": "lean_energy_the_equation_balances_by_atom_count",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ecfd70b1-b35b-89d8-a1b0-18ed0d051f27"
+  },
+  {
+    "key": "lean_energy_the_equation_balances_by_mass",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "debf920f-a945-870b-83c0-84614ef723bc"
+  },
+  {
+    "key": "lean_energy_the_gases_are_two_to_one_and_consume_each_other_exactly",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4411df61-18c7-8743-be2e-2efa6bdefd79"
+  },
+  {
+    "key": "lean_energy_hydrogen_is_a_ninth_of_the_mass_and_oxygen_the_rest",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "585ebc79-3eac-8bd9-83ab-1bae798a3662"
+  },
+  {
+    "key": "lean_energy_mass_is_conserved_at_every_scale_so_the_loop_cannot_make_water",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "55429cd8-2b19-887d-bfb7-1e03f593165d"
+  },
+  {
+    "key": "lean_energy_one_litre_split_returns_one_litre_burnt",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e88c70d6-0123-8f6c-bcc5-b9121ddefd74"
+  },
+  {
+    "key": "lean_energy_only_oxy_hydrogen_burns_without_admitting_nitrogen",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "69997ab3-1d7e-8948-bac2-5ba58c943acf"
+  },
+  {
+    "key": "lean_energy_the_ideal_round_trip_is_exactly_zero",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "181481c2-3745-806e-a705-38e157a3e345"
+  },
+  {
+    "key": "lean_energy_the_two_to_one_is_forced_by_the_oxygen",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "75828bd9-1d34-87c8-a5ec-22a9df3c45af"
+  },
+  {
+    "key": "lean_imagined_units_is_closed_under_quadruple",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e90978b5-a350-8187-9288-c690421f8a13"
+  },
+  {
+    "key": "lean_imagined_triad_is_closed_under_quadruple",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6d2f140d-6eff-8703-b647-f39541a79884"
+  },
+  {
+    "key": "lean_imagined_orbit_is_closed_under_quadruple",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f889d728-465d-8fe2-89be-30cd50878b45"
+  },
+  {
+    "key": "lean_imagined_tetA_is_closed_under_quadruple",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f9075b8c-6548-8937-8943-71608879fe7a"
+  },
+  {
+    "key": "lean_imagined_tetB_is_closed_under_quadruple",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d15e7f2a-be1e-8c5a-98fe-b36380cc1aa6"
+  },
+  {
+    "key": "lean_imagined_all_is_closed_under_quadruple",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9fdde539-0c75-83f0-b14f-ff31326b26fe"
+  },
+  {
+    "key": "lean_imagined_squares_is_closed_under_quadruple",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "12d7a596-c1f8-8929-8cc9-9b67c3f285ca"
+  },
+  {
+    "key": "lean_imagined_cubes_is_closed_under_negate",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "78ef83db-c595-833e-8da7-3e8c027c0dbc"
+  },
+  {
+    "key": "lean_imagined_squares_is_closed_under_square",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "be288202-61e8-8f7a-b76e-08efcd94f773"
+  },
+  {
+    "key": "lean_imagined_cubes_is_closed_under_square",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "827d987b-f6c7-826b-86d6-5e1ae949890a"
+  },
+  {
+    "key": "lean_imagined_units_is_closed_under_septuple",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "33c6b2af-ea05-806b-8d39-4860464b3e8a"
+  },
+  {
+    "key": "lean_imagined_triad_is_closed_under_septuple",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "64ea3fd6-5235-8408-aba2-8f83b37f28bd"
+  },
+  {
+    "key": "lean_imagined_orbit_is_closed_under_septuple",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7a790873-2c87-8c14-afdf-e2e7870858df"
+  },
+  {
+    "key": "lean_imagined_tetA_is_closed_under_septuple",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d0845a96-1990-85d5-8fe0-a7bcdd13f384"
+  },
+  {
+    "key": "lean_imagined_tetB_is_closed_under_septuple",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "94ca3492-fc0f-87fb-b3cf-52868f28b875"
+  },
+  {
+    "key": "lean_imagined_all_is_closed_under_septuple",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "360040f3-1afb-86b6-a1fb-bc6a29eed61e"
+  },
+  {
+    "key": "lean_imagined_squares_is_closed_under_septuple",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "929df56e-f860-87ec-b689-0226958ea7c1"
+  },
+  {
+    "key": "lean_imagined_cubes_is_closed_under_octuple",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "91dcd0db-2571-8202-81e1-ac0cd0588248"
+  },
+  {
+    "key": "lean_imagined_square_is_involutive_on_squares",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b71b08a8-b238-80d4-ad42-bb50ae0f4cd1"
+  },
+  {
+    "key": "lean_imagined_cube_is_involutive_on_cubes",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d607231e-ecb2-8c11-b3a5-39beae477728"
+  },
+  {
+    "key": "lean_imagined_triple_carries_cubes_onto_triad",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "07183390-0375-82a5-880d-33d20b2ff1c3"
+  },
+  {
+    "key": "lean_imagined_square_carries_all_onto_squares",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "95bfa2f5-30af-8c12-ab74-ac19ed93fcaa"
+  },
+  {
+    "key": "lean_imagined_cube_carries_all_onto_cubes",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "614b5517-fe8e-8adc-91c6-e29fdf91517d"
+  },
+  {
+    "key": "lean_imagined_sextuple_carries_cubes_onto_triad",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8d1758c9-e43d-804d-bf53-92286d30e662"
+  },
+  {
+    "key": "lean_energy_the_gases_are_eighteen_hundred_times_the_water_they_came_from",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "033b4a15-d8ee-8506-939c-a8ccbb3e2888"
+  },
+  {
+    "key": "lean_energy_two_thirds_of_the_volume_carries_a_ninth_of_the_mass",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f8780f77-c9ef-885b-bf7c-41d9e25555fa"
+  },
+  {
+    "key": "lean_energy_uncompressed_hydrogen_is_three_thousandfold_worse_by_volume",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9c0e0943-6e5a-8989-b048-611a90ff1895"
+  },
+  {
+    "key": "lean_energy_even_at_seven_hundred_bar_it_is_sevenfold_worse_by_volume",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a1413809-d6e9-820e-92c4-129ffb67272d"
+  },
+  {
+    "key": "lean_energy_each_delivered_kilowatt_hour_costs_four_and_cycles_a_litre",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "574b2b86-71c5-8424-9cb9-b41f1f6744ed"
+  },
+  {
+    "key": "lean_energy_three_quarters_of_the_input_leaves_as_heat",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "35c25641-5b8d-8825-aa5f-94f0e2792339"
+  },
+  {
+    "key": "lean_energy_what_the_feedwater_leaves_behind_decides_the_maintenance",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2c3cf0b0-2ea7-80c7-916f-cdbefc6ac125"
+  },
+  {
+    "key": "lean_mechanical_relation_digital_root",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d07323c6-683c-866d-be2f-9f3f81ea6459"
+  },
+  {
+    "key": "lean_mechanical_relation_432_factors",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "34d3073f-7f81-8363-8152-589888681b10"
+  },
+  {
+    "key": "lean_mechanical_fib_trinity_horizon",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "458420c0-010d-8995-9382-e1f1239a4105"
+  },
+  {
+    "key": "lean_mechanical_trial_zero_divisors",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "fdd05138-da57-8d35-91ed-dee1b001bf69"
+  },
+  {
+    "key": "lean_mechanical_geom_exterior_360",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b484eaf3-88c5-80cb-9535-e0e25770ef7b"
+  },
+  {
+    "key": "lean_mechanical_chess_diagonals_15",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "120f9fa4-00be-8a7d-b875-90ad959bd680"
+  },
+  {
+    "key": "lean_mechanical_tarot_78_cards",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1b4474e3-f5f2-8384-b819-131b2279538b"
+  },
+  {
+    "key": "lean_mechanical_tarot_minor_4x14",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9a2afdef-23ab-8a9e-8080-fa4af2b83238"
+  },
+  {
+    "key": "lean_mechanical_tarot_major_0_21",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7fbea55e-c8ea-8d7f-a8cb-bc8a3b1dad84"
+  },
+  {
+    "key": "lean_mechanical_tarot_digital_roots",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a93fffd5-b931-8b59-9939-d68769931a79"
+  },
+  {
+    "key": "lean_mechanical_harmonic_octave_2_1",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d8be9dbf-75d7-87ef-8b9a-1cec079a3b10"
+  },
+  {
+    "key": "lean_mechanical_relation_seven",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a377293b-d196-8374-9fe1-9425d421e4d8"
+  },
+  {
+    "key": "lean_mechanical_relation_creation_week",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ae9f2086-1710-864a-a4d9-d88c65998191"
+  },
+  {
+    "key": "lean_mechanical_genus2_moduli_dim",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6e2f681f-7646-824c-9775-f1be76e7ea5c"
+  },
+  {
+    "key": "lean_mechanical_genus2_hyperelliptic",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a72f1f27-910f-8a9e-af0c-61c605cf1e15"
+  },
+  {
+    "key": "lean_mechanical_kaprekar_constants_digitroot_nine",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "84d92b7e-3a80-800d-b96e-bc1dca6ca059"
+  },
+  {
+    "key": "lean_mechanical_the_three_four_five_right_triangle_is_the_first_pythagorean_triple",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "87d49914-23e5-8f61-a7a8-af06cc1ecc82"
+  },
+  {
+    "key": "lean_mechanical_the_regular_pentagon_angles_are_the_heart_seventy_two_and_hundred_eight",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e6591784-57c2-85b2-892a-d29ea216686a"
+  },
+  {
+    "key": "lean_mechanical__142857_times_seven_is_six_nines",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "00c5b8a3-fb44-8e60-bddb-89ca470f90b2"
+  },
+  {
+    "key": "lean_mechanical_midy_the_two_halves_of_142857_sum_to_nines",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "91b99327-ba9e-8b06-a520-28d18f32d84a"
+  },
+  {
+    "key": "lean_mechanical_the_regular_hexagon_exterior_angle_is_the_gold_string",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6b502008-d50d-84c4-9553-ee1bfb9be3fd"
+  },
+  {
+    "key": "lean_mechanical_the_doubling_orbit_reflection_pairs_sum_to_nine",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "cb1ef520-8b5b-89ce-b0e2-a471293fd9e2"
+  },
+  {
+    "key": "lean_mechanical_sixty_one_sense_three_stop_codons",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5f266656-8ca4-8c77-8ef4-97068d2774b8"
+  },
+  {
+    "key": "lean_mechanical_six_reading_frames",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5327b139-3836-8e0f-84ed-f2553fc9cf75"
+  },
+  {
+    "key": "lean_mechanical_the_harmonic_band_thirty_to_ninety",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "de50f2dd-ac6d-8861-845b-bc5a0f03c522"
+  },
+  {
+    "key": "lean_mechanical_sixty_and_ninety_partition_the_quadrant",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "db2d6d16-039e-87e7-97ce-83c95f5976cc"
+  },
+  {
+    "key": "lean_mechanical_the_hexagon_and_the_square_metrics",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "beb9f1e9-299b-8922-8a1b-79eae3314de0"
+  },
+  {
+    "key": "lean_mechanical_involution_negation",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "67372188-da81-84ab-a200-f023724a551c"
+  },
+  {
+    "key": "lean_mechanical_a432_octave_doubling",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "64dd8027-6e07-8a67-bfce-ef5a250e4063"
+  },
+  {
+    "key": "lean_mechanical_the_skipper_navigates_by_angle",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c9178921-032b-86e3-b142-c7db40bcac11"
+  },
+  {
+    "key": "lean_mechanical_cheap_to_factor_easy_to_verify",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4df047e4-3dac-8861-bf87-bfdd8e6a4f54"
+  },
+  {
+    "key": "lean_mechanical_present_by_reference_fits_a_tiny_budget",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7ad8e402-83df-8759-a41c-d615166ccce2"
+  },
+  {
+    "key": "lean_mechanical_a_decidable_domain_is_finite_and_coverable",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d2cbf3ec-7937-8654-94cb-55a464caa912"
+  },
+  {
+    "key": "lean_mechanical_the_more_developed_the_more_cross_domain_reach",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6069717b-4ba9-84b4-9aa6-21ecf4677327"
+  },
+  {
+    "key": "lean_mechanical_nopayload_avalanche",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c8aa76f2-c987-8e0e-8f44-91dbd2df362f"
+  },
+  {
+    "key": "lean_mechanical_relation_superposition_collapse",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "47f9abbe-d535-8d7f-be56-375e4c25a835"
+  },
+  {
+    "key": "lean_mechanical_relation_url_path",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9c79746f-8f94-854c-859f-7fdfde763edd"
+  },
+  {
+    "key": "lean_mechanical_content_address_is_keyless_integrity",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "aedc7910-dfd1-8c44-98e2-e8bc3b963937"
+  },
+  {
+    "key": "lean_mechanical_each_wave_is_a_local_pure_derivation",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1702773c-dae2-82fe-ab33-2438a8a923a4"
+  },
+  {
+    "key": "lean_mechanical_diamond_fixed_point_is_zero_entropy",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4896d3c9-128c-83ed-8218-ca58404a2819"
+  },
+  {
+    "key": "lean_mechanical_the_address_is_shipped_not_the_payload",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b9aa64f6-b868-87f5-80fd-1291d62d34a4"
+  },
+  {
+    "key": "lean_mechanical_gravity_holds_prose_code_and_paths",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5e7217c0-1b07-8ccb-92c1-5205adc94b9b"
+  },
+  {
+    "key": "lean_mechanical_a_theorem_responds_in_a_receipt",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f8d957fa-5819-8eb2-8a64-252a0707d3f2"
+  },
+  {
+    "key": "lean_mechanical_each_perspective_is_a_distinct_file",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5b285365-21c6-8bfe-9082-e21bbd958118"
+  },
+  {
+    "key": "lean_mechanical_vitepress_hosts_the_content_address",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "01f20f4f-dff2-8081-ba6c-7bad404d8fc6"
+  },
+  {
+    "key": "lean_mechanical_collapse_selects_one_state_deterministically",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "de068a94-6ded-868e-a20b-e9e3014daf9a"
+  },
+  {
+    "key": "lean_mechanical_the_cell_is_determined_by_content",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "156c851c-8638-8abe-9d7c-73d92ad49ad5"
+  },
+  {
+    "key": "lean_mechanical_intentions_are_shown_by_receipts_not_role",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "abaeffdd-b34c-80ab-a07b-0d81fdcb36f8"
+  },
+  {
+    "key": "lean_mechanical_each_theorem_is_a_superposition_of_readings",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ce377411-c670-8d53-bb20-8b8fe04ba2f9"
+  },
+  {
+    "key": "lean_mechanical_a_cached_address_is_never_recomputed",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "fd3cb7e1-0300-83a9-a99b-e6c5bda47139"
+  },
+  {
+    "key": "lean_mechanical_the_theorems_are_the_hull_and_hardware",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0cc2a8d4-3210-8337-8da6-78220b06f500"
+  },
+  {
+    "key": "lean_mechanical_generation_is_deterministic",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b78f143e-b089-8df4-a3c8-9b04e90483d3"
+  },
+  {
+    "key": "lean_mechanical_the_intention_is_a_computable_deed_receipt",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1aa38387-32c0-8444-ae76-7372b96941ce"
+  },
+  {
+    "key": "lean_mechanical_every_error_is_a_receipted_trial_event",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c3e79c78-1bbc-8351-957b-98f12d8078d8"
+  },
+  {
+    "key": "lean_mechanical_every_warning_is_a_receipted_trial_event",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "89572856-b0bd-80a9-b600-622666f1c7db"
+  },
+  {
+    "key": "lean_mechanical_a_content_address_detects_any_change",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f79b6785-ac1e-8a8a-82d7-2acd8ade3087"
+  },
+  {
+    "key": "lean_mechanical_a_sensor_reading_addresses_to_a_uuid",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "85a41c41-cc0c-8a7b-b05c-07b625ceb640"
+  },
+  {
+    "key": "lean_mechanical_forward_is_the_deterministic_compute",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "40b96db4-f602-8b74-960c-d413747ada88"
+  },
+  {
+    "key": "lean_mechanical_the_fusion_of_site_and_user_is_deterministic",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "114b3cd3-7aa9-8144-bdcf-8d1e9faa65dc"
+  },
+  {
+    "key": "lean_mechanical_each_suggested_next_is_content_addressed",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7b2d24ee-fbc9-8e69-9a95-714119bd3ef9"
+  },
+  {
+    "key": "lean_mechanical_the_rejected_command_gets_a_receipt",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "74670847-26bf-89c5-9ef3-a0fc57d5ec34"
+  },
+  {
+    "key": "lean_mechanical_chess_board_64",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "bc937383-b7bb-8f34-ac22-50050aa56b70"
+  },
+  {
+    "key": "lean_demand_fibonacci_gcd_is_the_fibonacci_of_the_gcd",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "790d9f7e-f479-8d85-8523-5f65a5b55e30"
+  },
+  {
+    "key": "lean_demand_the_mobius_divisor_sum_is_the_identity",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a67ddaf7-8fbe-8f57-98d5-c385e295cbec"
+  },
+  {
+    "key": "lean_demand_the_derangement_recurrence_holds",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f6514d06-2d6a-8434-8550-a8d8e6e590bb"
+  },
+  {
+    "key": "lean_demand_legendres_three_square_theorem",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a7f81e65-e2dc-8225-9ede-b477ba21d340"
+  },
+  {
+    "key": "lean_demand_five_six_one_is_the_smallest_carmichael_number",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "47c1ca71-9ee1-8904-8ed6-f2ecb42266d3"
+  },
+  {
+    "key": "lean_demand_the_parity_of_popcount_is_the_xor_of_the_bits",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "45a32a61-3a94-8a8a-91d3-b658b6911d83"
+  },
+  {
+    "key": "lean_demand_factorial_seven_is_five_thousand_and_forty",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "17a14eb5-3126-87ee-a765-6a9096ca97b3"
+  },
+  {
+    "key": "lean_demand_mantels_bound_is_n_squared_over_four",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0100456e-42f6-8f87-ac03-61f38d12e5e0"
+  },
+  {
+    "key": "lean_mechanical_cover_rotation_full_circle",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "fffbffca-689e-8a05-985f-3561eb5a5308"
+  },
+  {
+    "key": "lean_mechanical_arts_nine_hues_distinct",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3deb3d73-18a6-857e-b742-673858dfb8af"
+  },
+  {
+    "key": "lean_mechanical_the_regular_nonagon_exterior_angle_is_the_a432_step",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7671bab1-a28d-8d05-8779-b101e3c5772b"
+  },
+  {
+    "key": "lean_demand2_nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3b484663-0655-8c36-8640-a4a336a1fd68"
+  },
+  {
+    "key": "lean_demand2_picks_theorem_holds_for_every_lattice_triangle_in_the_four_grid",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ac670737-b847-8ea9-a2c5-214c7e139b04"
+  },
+  {
+    "key": "lean_demand2_bezouts_identity_is_attained_and_no_smaller_combination_exists",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a9aa5970-442e-8c86-89ba-640685cab703"
+  },
+  {
+    "key": "lean_demand2_the_latin_squares_of_order_four_number_five_hundred_and_seventy_six",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b84aa4c6-2924-832d-827f-99854a8d0cd5"
+  },
+  {
+    "key": "lean_demand2_the_sum_of_fifth_powers_has_the_closed_form_asked_for",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "bf3d9ddf-5a0f-84f1-a62d-9263b94c451d"
+  },
+  {
+    "key": "lean_demand2_the_chinese_remainder_theorem_holds_exactly_when_the_moduli_are_coprime",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "46f32b7d-4c3d-87ef-8be6-81f9ef41e6cf"
+  },
+  {
+    "key": "lean_demand2_eight_and_nine_are_the_only_consecutive_perfect_powers_below_two_thousand",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4fc867ea-77dd-884a-807c-b98d75ea646c"
+  },
+  {
+    "key": "lean_demand2_two_twenty_and_two_eighty_four_are_the_smallest_amicable_pair",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6b124e14-b9d0-84ae-a594-85fca6c26b4a"
+  },
+  {
+    "key": "lean_demand3_wilsons_theorem_and_its_converse",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "54bf9d36-b87e-8d3c-af20-bcc479090f71"
+  },
+  {
+    "key": "lean_demand3_every_number_is_a_sum_of_four_squares",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "73942437-7c53-86ac-8459-b005a10d6e6b"
+  },
+  {
+    "key": "lean_demand3_the_cantor_pairing_is_injective_and_covers_an_initial_segment",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d52b8296-0821-8877-ab1e-6a8951b71a93"
+  },
+  {
+    "key": "lean_demand3_repunit_divisibility_by_three_and_seven",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "010beefb-a8b6-8f1a-93cb-b22584906c3b"
+  },
+  {
+    "key": "lean_demand3_the_euler_characteristic_of_a_genus_g_surface",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8dee9c95-bc06-862f-808e-993ecd509ac7"
+  },
+  {
+    "key": "lean_demand3_odd_divisor_count_iff_perfect_square",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "78bbf0d9-a9ad-8f56-8739-296d9cdb52c6"
+  },
+  {
+    "key": "lean_demand3_havel_hakimi_decides_graphical_sequences",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1b884f34-ff37-8e9b-bcef-0f23e6391a31"
+  },
+  {
+    "key": "lean_imagined_units_is_closed_under_fourth",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e62b450f-f422-8860-8401-51a75f40d72b"
+  },
+  {
+    "key": "lean_imagined_triad_is_closed_under_fourth",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1017e978-805a-8ce7-b002-b5dc7834cc3b"
+  },
+  {
+    "key": "lean_imagined_orbit_is_closed_under_fourth",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1c5048f1-1d5c-8f43-b369-439b90ad5b79"
+  },
+  {
+    "key": "lean_imagined_tetA_is_closed_under_fourth",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "42ad521c-63f7-87b7-b8d7-77f2a40ae54f"
+  },
+  {
+    "key": "lean_imagined_all_is_closed_under_fourth",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "fbc0fcef-adf2-8760-ab92-ddf92e0ac1b8"
+  },
+  {
+    "key": "lean_imagined_squares_is_closed_under_fourth",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "768ef872-3044-8e87-9af0-e8fed5bf2982"
+  },
+  {
+    "key": "lean_imagined_cubes_is_closed_under_fourth",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "670e160d-fd21-858d-b4fe-060405374b25"
+  },
+  {
+    "key": "lean_imagined_units_is_closed_under_sixth",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1dbd6da1-32b9-8d00-bb0f-ce605919310a"
+  },
+  {
+    "key": "lean_imagined_triad_is_closed_under_sixth",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b93546d2-9531-8ab9-a7cc-a9c9d2764267"
+  },
+  {
+    "key": "lean_imagined_orbit_is_closed_under_sixth",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a2a52787-4d4e-8447-b8f5-a4efaa4df172"
+  },
+  {
+    "key": "lean_imagined_tetA_is_closed_under_sixth",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a68dde53-ad43-8796-aa06-57479b87f743"
+  },
+  {
+    "key": "lean_imagined_all_is_closed_under_sixth",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ed6c5c3b-9687-8486-a0e3-dc441a9e37aa"
+  },
+  {
+    "key": "lean_imagined_squares_is_closed_under_sixth",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a48e0ab3-eb47-8a8f-b37e-e5b115ab2eb7"
+  },
+  {
+    "key": "lean_imagined_cubes_is_closed_under_sixth",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6a43dc75-95e0-8c4b-ae30-d1c3a79a2971"
+  },
+  {
+    "key": "lean_imagined_fourth_is_involutive_on_tetA",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "43393838-ec36-8fcf-9cfc-17cf29908436"
+  },
+  {
+    "key": "lean_imagined_fourth_is_involutive_on_squares",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a3ee8c20-db18-8bf2-a197-09fbfc4cc1f5"
+  },
+  {
+    "key": "lean_imagined_fifth_is_involutive_on_units",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3a789bf2-cabe-8cec-9a91-98e069a0edb9"
+  },
+  {
+    "key": "lean_imagined_fifth_is_involutive_on_orbit",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "eeec5b2a-8d70-84e8-9ea1-f2e749ecbc2a"
+  },
+  {
+    "key": "lean_imagined_fifth_is_involutive_on_tetA",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "aaaa889e-0c3c-8526-a766-ba7ea835efcc"
+  },
+  {
+    "key": "lean_imagined_fifth_is_involutive_on_tetB",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "189b526b-4404-862a-8b8b-f9ea9816e6e2"
+  },
+  {
+    "key": "lean_imagined_fifth_is_involutive_on_squares",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1ee82ca5-7d95-84c4-b4f8-bf28c370757c"
+  },
+  {
+    "key": "lean_imagined_fifth_is_involutive_on_cubes",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2c96e301-9226-84b1-b341-f494e626da9e"
+  },
+  {
+    "key": "lean_imagined_fourth_carries_units_onto_tetA",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9a0e8af0-1198-8a6a-813b-79b42ba01e98"
+  },
+  {
+    "key": "lean_imagined_fourth_carries_orbit_onto_tetA",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "dbfe517b-9aaa-8016-8c6c-fafbc29a3f77"
+  },
+  {
+    "key": "lean_imagined_fourth_carries_tetB_onto_tetA",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ddad11d4-8b84-87ad-80bc-858c8f2bac1a"
+  },
+  {
+    "key": "lean_imagined_fourth_carries_all_onto_squares",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c3155f14-97e7-8a69-bd1b-b81a0f068231"
+  },
+  {
+    "key": "lean_imagined_fifth_carries_units_onto_orbit",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "471b59e8-a71d-83ae-97cd-1e3bd6cafd3d"
+  },
+  {
+    "key": "lean_imagined_fifth_carries_orbit_onto_units",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "18030dd3-d18b-8d6f-ab22-fa0fe48033a8"
+  },
+  {
+    "key": "lean_imagined_fourth_collapses_triad_to_one_value",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "be64302a-8dfa-8f21-b70e-1b87a899fa63"
+  },
+  {
+    "key": "lean_imagined_fifth_collapses_triad_to_one_value",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2d057c2b-e5b9-802c-91dc-45aef8cdeefc"
+  },
+  {
+    "key": "lean_imagined_sixth_collapses_units_to_one_value",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "99c8c3b8-5956-8f83-a092-c9f95f1ae2a3"
+  },
+  {
+    "key": "lean_imagined_sixth_collapses_triad_to_one_value",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "05659250-db6e-890b-9455-073cdbfd9791"
+  },
+  {
+    "key": "lean_imagined_sixth_collapses_orbit_to_one_value",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "de81e968-ed2f-8350-980a-0aeabce48b3c"
+  },
+  {
+    "key": "lean_imagined_sixth_collapses_tetA_to_one_value",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a0d08876-8554-8810-923d-a0a90d4ca659"
+  },
+  {
+    "key": "lean_imagined_sixth_collapses_tetB_to_one_value",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7aa41bc1-b399-8d16-969c-9f705f8a307a"
+  },
+  {
+    "key": "lean_mechanical_relation_digitroot_is_residue_mod9",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1263c255-c72c-80cd-9fee-62fe174d4ddf"
+  },
+  {
+    "key": "lean_mechanical_the_nine_times_table_always_digital_roots_to_nine",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "284332fa-03ca-8844-ba3e-5449f02d219f"
+  },
+  {
+    "key": "lean_mechanical_casting_out_nines_is_multiplicative",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5935c43b-1388-809f-8d51-60d745eabc92"
+  },
+  {
+    "key": "lean_mechanical_there_are_infinitely_many_pythagorean_triples",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d41c02ed-9362-8b9e-9b78-44ee9650c386"
+  },
+  {
+    "key": "lean_mechanical_the_difference_of_consecutive_squares_is_the_odd_numbers",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e054bdaf-ec08-894d-84fc-9a66c8d1ee7c"
+  },
+  {
+    "key": "lean_mechanical_the_product_of_any_three_consecutive_integers_is_divisible_by_six",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0619302e-0d63-8431-88a3-8052bd2c5b26"
+  },
+  {
+    "key": "lean_mechanical_relation_triangular_45_is_base",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9ffbcbfc-5d5c-8eea-a716-d0907623d2e7"
+  },
+  {
+    "key": "lean_mechanical_the_digits_one_to_nine_sum_to_forty_five_rooting_to_nine",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3571db11-dbe1-82d7-a333-e3948736bef2"
+  },
+  {
+    "key": "lean_mechanical_six_is_the_third_triangular_number",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "90e6ae62-8d06-815a-bbfb-a019ca83404e"
+  },
+  {
+    "key": "lean_mechanical_bool_demorgan1",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "35040ffc-0a3f-8f08-bdb8-96aa48069e5b"
+  },
+  {
+    "key": "lean_mechanical_bool_demorgan2",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c522c78b-a627-87e0-9547-2b582a68f410"
+  },
+  {
+    "key": "lean_mechanical_bool_distributivity",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2dd98f84-6b96-80b4-82ef-43e9fb301139"
+  },
+  {
+    "key": "lean_mechanical_bool_absorption",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "bb75ca44-dda0-847d-8403-6e311a97c21f"
+  },
+  {
+    "key": "lean_speed_the_verify_path_is_the_exponent",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6fb8b2f6-095f-8e21-a84a-645676ccead8"
+  },
+  {
+    "key": "lean_speed_the_gap_widens_with_every_doubling",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "81082913-b396-8d3b-93b7-c3d2fa1abf9c"
+  },
+  {
+    "key": "lean_speed_no_constant_factor_accounts_for_the_gap",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ca47080d-22fb-88aa-842d-ad0d5350cfff"
+  },
+  {
+    "key": "lean_speed_the_measured_ratio_at_a_million_leaves",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "167a92e0-5d27-87aa-8735-a420d02b2705"
+  },
+  {
+    "key": "lean_speed_verification_grows_it_is_not_constant",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "05461a91-454a-85f6-990e-333d0af4e6a4"
+  },
+  {
+    "key": "lean_speed_the_verify_is_thirty_eight_thousand_nanoseconds_not_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8eb1b99d-9b78-8ac4-bb29-7455c8437987"
+  },
+  {
+    "key": "lean_speed_the_advantage_is_the_count_not_the_operation",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "dc213511-7bcd-80af-a195-0e4abd7adfd5"
+  },
+  {
+    "key": "lean_speed_the_break_even_is_the_ratio_of_verifications",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2ab2aa2c-03a3-8731-917d-78f66b3c6721"
   }
 ]

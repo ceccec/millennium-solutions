@@ -156,6 +156,10 @@ const CONTROLS: Control[] = [
     mutate: (s) => s.replace('/theorem/lean_millenniumfloor_riemann_reflection_and_heart', '/theorem/a_key_that_was_never_sealed'),
     restore: 'node scripts/pages.ts' },
 
+  { gate: 'orphan-gate', cmd: 'node scripts/orphan-gate.ts', file: 'package.json',
+    what: 'a script nothing can reach',
+    mutate: (s) => s.replace(/"wave": "node scripts\/wave\.ts",?\n?/, '') },
+
   { gate: 'gaps', cmd: 'node scripts/gaps.ts', file: '.vitepress/config.ts',
     what: 'a published page dropped from the sidebar',
     mutate: (s) => s.replace(/\{ text: 'Verify \(live app\)', link: '\/verify' \},/, '') },
