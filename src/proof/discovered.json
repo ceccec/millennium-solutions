@@ -16812,5 +16812,45 @@
     "key": "lean_mechanical_bool_absorption",
     "name": "lean mechanical.lean: bool_absorption — [0,1].all (fun a => [0,1].all (fun b => (a + (a * b) - a * (a * b)) == a)) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "bb75ca44-dda0-847d-8403-6e311a97c21f"
+  },
+  {
+    "key": "lean_speed_the_verify_path_is_the_exponent",
+    "name": "lean speed.lean: the_verify_path_is_the_exponent — rounds 40 1024 = 10 ∧ rounds 40 16384 = 14 ∧ rounds 40 262144 = 18 ∧ rounds 40 1048576 = 20 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6fb8b2f6-095f-8e21-a84a-645676ccead8"
+  },
+  {
+    "key": "lean_speed_the_gap_widens_with_every_doubling",
+    "name": "lean speed.lean: the_gap_widens_with_every_doubling — 1024 / 10 < 16384 / 14 ∧ 16384 / 14 < 262144 / 18 ∧ 262144 / 18 < 1048576 / 20 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "81082913-b396-8d3b-93b7-c3d2fa1abf9c"
+  },
+  {
+    "key": "lean_speed_no_constant_factor_accounts_for_the_gap",
+    "name": "lean speed.lean: no_constant_factor_accounts_for_the_gap — ¬ (10000 * 20 ≥ 1048576) ∧ 100 * 10 ≥ 1024 - 24 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ca47080d-22fb-88aa-842d-ad0d5350cfff"
+  },
+  {
+    "key": "lean_speed_the_measured_ratio_at_a_million_leaves",
+    "name": "lean speed.lean: the_measured_ratio_at_a_million_leaves — recomputeUs / verifyUs = 567971 ∧ recomputeUs > verifyUs * 500000 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "167a92e0-5d27-87aa-8735-a420d02b2705"
+  },
+  {
+    "key": "lean_speed_verification_grows_it_is_not_constant",
+    "name": "lean speed.lean: verification_grows_it_is_not_constant — rounds 40 1024 < rounds 40 1048576 ∧ ((List.range' 1 10).all (fun k => rounds 40 (2 ^ k) == k)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "05461a91-454a-85f6-990e-333d0af4e6a4"
+  },
+  {
+    "key": "lean_speed_the_verify_is_thirty_eight_thousand_nanoseconds_not_one",
+    "name": "lean speed.lean: the_verify_is_thirty_eight_thousand_nanoseconds_not_one — nsPerVerify = 38000 ∧ nsPerVerify > 1 ∧ nsPerVerify > 10000 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8eb1b99d-9b78-8ac4-bb29-7455c8437987"
+  },
+  {
+    "key": "lean_speed_the_advantage_is_the_count_not_the_operation",
+    "name": "lean speed.lean: the_advantage_is_the_count_not_the_operation — 1048576 - 20 = 1048556 ∧ 1048576 / 20 = 52428 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "dc213511-7bcd-80af-a195-0e4abd7adfd5"
+  },
+  {
+    "key": "lean_speed_the_break_even_is_the_ratio_of_verifications",
+    "name": "lean speed.lean: the_break_even_is_the_ratio_of_verifications — 1048576 / 20 = 52428 ∧ 52428 * 20 ≤ 1048576 ∧ 1048576 < 52429 * 20 + 20 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2ab2aa2c-03a3-8731-917d-78f66b3c6721"
   }
 ]

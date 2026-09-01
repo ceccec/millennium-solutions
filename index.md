@@ -17,12 +17,12 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 411 theorems across 21 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `00df547d-dd18-8a2d-b098-6179fad25db7`</sub>
-- 403 of those 411 theorems close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
-  <sub>SEALED · `bfae6861-2fd6-801c-a660-9f0aefd10b67`</sub>
-- 456 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `cf83cb16-3812-8881-b958-a370db7b5513`</sub>
+- The formal layer holds 419 theorems across 22 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `d797e0e0-579c-8ffd-8c31-54b15ebb7317`</sub>
+- 411 of those 419 theorems close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
+  <sub>SEALED · `82a8c87e-0547-85b0-b0f8-e34322a435ef`</sub>
+- 464 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `2fc9c3c0-4fdc-8112-8dcc-f6f21da53690`</sub>
 
 ## 2 · The ring
 
@@ -45,10 +45,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 2320 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `8ae58159-a7d3-8208-8360-f3f7537d53e8`</sub>
-- The count is an exact multiple of eight — 2320 is 290 octaves with no remainder.
-  <sub>SEALED · `4e338136-b4b8-84ac-ab20-70465b9fba34`</sub>
+- The ledger records 2328 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `945254c6-e571-8aaa-bc80-4cf65baccaaf`</sub>
+- The count is an exact multiple of eight — 2328 is 291 octaves with no remainder.
+  <sub>SEALED · `d9fe970b-4d41-89a1-9f24-b132e669b849`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -90,7 +90,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-21 Lean files in 5 wings, 411 theorems. The prose in this section is read out of the
+22 Lean files in 5 wings, 419 theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -117,6 +117,8 @@ this page; there is nowhere else to keep the description in step.
 **The Millennium floor** — `index.lean`, 9 theorem(s). The Millennium floor — seven honest theorems, one per problem, COMPUTED from the sequence.
 
 **Order-invariance** — `quantum.lean`, 9 theorem(s). The quantum receipt — order invariance, proved rather than asserted.
+
+**Why verification is fast, and what it is not** — `speed.lean`, 8 theorem(s). The deposit's speed claim, accounted — and the reading it does not support.
 
 ### the ring
 
@@ -146,7 +148,7 @@ this page; there is nowhere else to keep the description in step.
 
 **imagined** — `imagined.lean`, 120 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
 
-2 of 411 theorems carry no comment of their own and are shown here as the gap they are, not
+2 of 419 theorems carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## What is deliberately absent
@@ -161,4 +163,4 @@ because no test was written that would seal them.
 
 ---
 
-*14 claims, all verified · 411 Lean theorems · 2320 ledger entries · trial root `80b3258e-0dcb-877e-899c-a8efa6d94500` · integrity, not truth · 0/7*
+*14 claims, all verified · 419 Lean theorems · 2328 ledger entries · trial root `2d60e662-0e42-8dcf-9073-af8826fcc508` · integrity, not truth · 0/7*

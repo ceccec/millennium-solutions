@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2320 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2328 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (429)
+### lean (437)
 
 - [lean_units_are_six](/theorem/lean_units_are_six) — lean: the units of ℤ/9 are exactly [1,2,4,5,7,8] — checked at every residue by the kernel, recomputed here; 0/7  ·  `031c89bf-e1e0…`
 - [lean_units_count](/theorem/lean_units_count) — lean: there are exactly six units in ℤ/9 — the kernel checks the count, recomputed here; 0/7  ·  `104e8965-ebfb…`
@@ -453,6 +453,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_mechanical_bool_demorgan2](/theorem/lean_mechanical_bool_demorgan2) — lean mechanical.lean: bool_demorgan2 — [0,1].all (fun a =&gt; [0,1].all (fun b =&gt; (1 - (a + b - a * b)) == ((1 - a) * (1 - b)))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c522c78b-a627…`
 - [lean_mechanical_bool_distributivity](/theorem/lean_mechanical_bool_distributivity) — lean mechanical.lean: bool_distributivity — [0,1].all (fun a =&gt; [0,1].all (fun b =&gt; [0,1].all (fun c =&gt; (a * (b + c - b * c)) == ((a * b) + (a * c) - (a * b) * (a * c))))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2dd98f84-6b96…`
 - [lean_mechanical_bool_absorption](/theorem/lean_mechanical_bool_absorption) — lean mechanical.lean: bool_absorption — [0,1].all (fun a =&gt; [0,1].all (fun b =&gt; (a + (a * b) - a * (a * b)) == a)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `bb75ca44-dda0…`
+- [lean_speed_the_verify_path_is_the_exponent](/theorem/lean_speed_the_verify_path_is_the_exponent) — lean speed.lean: the_verify_path_is_the_exponent — rounds 40 1024 = 10 ∧ rounds 40 16384 = 14 ∧ rounds 40 262144 = 18 ∧ rounds 40 1048576 = 20 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `6fb8b2f6-095f…`
+- [lean_speed_the_gap_widens_with_every_doubling](/theorem/lean_speed_the_gap_widens_with_every_doubling) — lean speed.lean: the_gap_widens_with_every_doubling — 1024 / 10 &lt; 16384 / 14 ∧ 16384 / 14 &lt; 262144 / 18 ∧ 262144 / 18 &lt; 1048576 / 20 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `81082913-b396…`
+- [lean_speed_no_constant_factor_accounts_for_the_gap](/theorem/lean_speed_no_constant_factor_accounts_for_the_gap) — lean speed.lean: no_constant_factor_accounts_for_the_gap — ¬ (10000 * 20 ≥ 1048576) ∧ 100 * 10 ≥ 1024 - 24 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `ca47080d-22fb…`
+- [lean_speed_the_measured_ratio_at_a_million_leaves](/theorem/lean_speed_the_measured_ratio_at_a_million_leaves) — lean speed.lean: the_measured_ratio_at_a_million_leaves — recomputeUs / verifyUs = 567971 ∧ recomputeUs &gt; verifyUs * 500000 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `167a92e0-5d27…`
+- [lean_speed_verification_grows_it_is_not_constant](/theorem/lean_speed_verification_grows_it_is_not_constant) — lean speed.lean: verification_grows_it_is_not_constant — rounds 40 1024 &lt; rounds 40 1048576 ∧ ((List.range' 1 10).all (fun k =&gt; rounds 40 (2 ^ k) == k)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `05461a91-454a…`
+- [lean_speed_the_verify_is_thirty_eight_thousand_nanoseconds_not_one](/theorem/lean_speed_the_verify_is_thirty_eight_thousand_nanoseconds_not_one) — lean speed.lean: the_verify_is_thirty_eight_thousand_nanoseconds_not_one — nsPerVerify = 38000 ∧ nsPerVerify &gt; 1 ∧ nsPerVerify &gt; 10000 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `8eb1b99d-9b78…`
+- [lean_speed_the_advantage_is_the_count_not_the_operation](/theorem/lean_speed_the_advantage_is_the_count_not_the_operation) — lean speed.lean: the_advantage_is_the_count_not_the_operation — 1048576 - 20 = 1048556 ∧ 1048576 / 20 = 52428 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `dc213511-7bcd…`
+- [lean_speed_the_break_even_is_the_ratio_of_verifications](/theorem/lean_speed_the_break_even_is_the_ratio_of_verifications) — lean speed.lean: the_break_even_is_the_ratio_of_verifications — 1048576 / 20 = 52428 ∧ 52428 * 20 ≤ 1048576 ∧ 1048576 &lt; 52429 * 20 + 20 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2ab2aa2c-03a3…`
 
 ### other — one-of-a-kind (0)
 
@@ -2366,4 +2374,4 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 
 </details>
 
-Page content-address: `fcb17aa3-f2dd-84e9-b375-9e4c2cb682c2`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `4eb44efa-7aa2-81ae-8d92-feb5904a071a`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
