@@ -131,6 +131,10 @@ const CONTROLS: Control[] = [
     what: 'a page linking to a route that was never built',
     mutate: (s) => s.replace('</body>', '<a href="/millennium-solutions/a-route-that-does-not-exist">control</a></body>') },
 
+  { gate: 'attribution-gate', cmd: 'node scripts/attribution-gate.ts', file: 'CITATION.cff',
+    what: 'a citable surface naming the author without their ORCID',
+    mutate: (s) => s.replace(/0009-0000-7312-9778/g, '') },
+
   { gate: 'gaps', cmd: 'node scripts/gaps.ts', file: '.vitepress/config.ts',
     what: 'a published page dropped from the sidebar',
     mutate: (s) => s.replace(/\{ text: 'Verify \(live app\)', link: '\/verify' \},/, '') },

@@ -2,7 +2,11 @@
   "name": "@ceccec/millennium-solutions",
   "version": "0.1.1",
   "description": "Verifiable, recomputable ℤ/9 vortex framework in ONE package — content-addressing, audit ledger, exact arithmetic (0/7), and the honesty toolkit. Facts only.",
-  "author": "Tsvetan Rouschev",
+  "author": {
+    "name": "Tsvetan Rouschev",
+    "email": "ceccec@psg.bg",
+    "url": "https://orcid.org/0009-0000-7312-9778"
+  },
   "license": "CC-BY-NC-ND-4.0",
   "type": "module",
   "exports": {
@@ -27,7 +31,7 @@
     "docs:preview": "vitepress preview",
     "seal": "node scripts/seal.ts",
     "typecheck": "tsc --noEmit",
-    "release": "tsc --noEmit && node scripts/lean.ts && node scripts/lean-agree.ts && node scripts/hardcode-gate.ts && node scripts/one-author-gate.ts && node scripts/gates-fire.ts && node scripts/parallel-seal.ts && node scripts/retire-lexical.ts && node scripts/seal-lean.ts && node scripts/imagine.ts && node scripts/analytics.ts && node scripts/pages.ts && node scripts/gaps.ts && node scripts/dashboard.ts && node scripts/boundaries.ts && node scripts/challenges.ts && node scripts/heart.ts && node scripts/accounting.ts && node scripts/speedup.ts && npm run docs:build && node scripts/import-gate.ts && node scripts/locale-fold.ts && node scripts/security-gate.ts && node scripts/sitemap-mesh.ts && node scripts/theorem-pages-gate.ts && node scripts/receipt-audit.ts && node scripts/forensics.ts && node scripts/claims-gate.ts && node scripts/harmony-currency.ts && node scripts/gate-corpus.ts && node scripts/seal.ts && node scripts/readme.ts && node scripts/trial.ts && node scripts/wholeness.ts && node scripts/lean-claims.ts && node scripts/discover.ts && node scripts/release.ts",
+    "release": "tsc --noEmit && node scripts/lean.ts && node scripts/lean-agree.ts && node scripts/hardcode-gate.ts && node scripts/one-author-gate.ts && node scripts/attribution-gate.ts && node scripts/gates-fire.ts && node scripts/parallel-seal.ts && node scripts/retire-lexical.ts && node scripts/seal-lean.ts && node scripts/imagine.ts && node scripts/analytics.ts && node scripts/pages.ts && node scripts/gaps.ts && node scripts/dashboard.ts && node scripts/boundaries.ts && node scripts/challenges.ts && node scripts/heart.ts && node scripts/accounting.ts && node scripts/speedup.ts && npm run docs:build && node scripts/import-gate.ts && node scripts/locale-fold.ts && node scripts/security-gate.ts && node scripts/sitemap-mesh.ts && node scripts/theorem-pages-gate.ts && node scripts/receipt-audit.ts && node scripts/forensics.ts && node scripts/claims-gate.ts && node scripts/harmony-currency.ts && node scripts/gate-corpus.ts && node scripts/seal.ts && node scripts/readme.ts && node scripts/trial.ts && node scripts/wholeness.ts && node scripts/lean-claims.ts && node scripts/discover.ts && node scripts/release.ts",
     "prepublishOnly": "node scripts/seal.ts",
     "gaps": "node scripts/gaps.ts",
     "harmony": "node scripts/gaps.ts && node scripts/seal.ts && node scripts/wholeness.ts && npm run docs:build && node scripts/seo.ts",
@@ -75,7 +79,8 @@
     "analytics": "node scripts/analytics.ts",
     "hardcode-gate": "node scripts/hardcode-gate.ts",
     "one-author-gate": "node scripts/one-author-gate.ts",
-    "gates-fire": "node scripts/gates-fire.ts"
+    "gates-fire": "node scripts/gates-fire.ts",
+    "attribution-gate": "node scripts/attribution-gate.ts"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",
