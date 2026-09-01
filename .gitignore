@@ -23,3 +23,6 @@ src/proof/.lean-cache.json
 
 # agent worktrees — transient, removed when the agent finishes
 .claude/worktrees/
+
+# build analytics — recomputed on every build from artefacts; never carried between runs
+src/analytics.json

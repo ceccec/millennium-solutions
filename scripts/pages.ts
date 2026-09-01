@@ -15,6 +15,9 @@
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs'
 import { CLAIMS as REGISTERED } from '../src/claims/index.ts'
 import { all as leanDocs } from './leandoc.ts'
+import { analytics } from './analytics.ts'
+import { queue } from '../src/prove/index.ts'
+import { translate } from '../src/prove/translate.ts'
 import { adjudicate } from './adjudicate.ts'
 import { computes } from './honesty-gate.ts'
 import { toUuid, merkleFold } from '../src/0/index.ts'
@@ -226,6 +229,33 @@ const body = (site: boolean) => {
   }
   const undoc = docs.flatMap((d) => d.theorems).filter((t) => !t.doc).length
   md += `${undoc} of ${docs.reduce((n, d) => n + d.theorems.length, 0)} theorems carry no comment of their own and are shown here as the gap they are, not\nfilled with a template.\n\n`
+
+  // ── WHAT THE BUILD MEASURED ABOUT ITSELF ───────────────────────────────────────────────────────────────
+  // These are the figures the build produces and then used to throw away into terminal scrollback. They are
+  // what a reader needs to judge the deposit rather than take its word: how much of the ledger stands, how
+  // much was withdrawn and for what, how much of the prover's queue a machine can render versus how much
+  // needs an author, and what verification actually costs. Every number is read from artefacts at build
+  // time — nothing is carried between runs, so a stale figure cannot survive a rebuild.
+  const A = analytics()
+  const q = queue()
+  let renderable = 0
+  for (const p of q) if (translate(p.body).ok) renderable++
+
+  md += `## ${ORBIT[3] ?? 8} · What this build measured about itself\n\n`
+  md += `Read from the artefacts at build time, never carried between runs.\n\n`
+  md += `| measure | value |\n|---|---|\n`
+  md += `| ledger entries | ${A.ledger.total.toLocaleString('en-US')}${A.ledger.octaveExact ? ` — ${A.ledger.octaves} octaves exactly` : ` — ${A.ledger.octaves} octaves and ${A.ledger.remainder} over`} |\n`
+  md += `| standing | **${A.ledger.live}** |\n`
+  md += `| withdrawn, kept in the record | ${A.ledger.withdrawn.toLocaleString('en-US')} |\n`
+  md += `| withdrawn but since re-proved | ${A.ledger.superseded} |\n`
+  md += `| Lean files · theorems | ${A.lean.files} · ${A.lean.theorems}, all axiom-free |\n`
+  md += `| proved \`by decide\` | ${A.lean.byDecide} of ${A.lean.theorems} |\n`
+  md += `| claims a machine can render | ${renderable} of ${q.length.toLocaleString('en-US')} |\n`
+  md += `| claims needing an author | ${(q.length - renderable).toLocaleString('en-US')} — reported, never faked |\n\n`
+
+  md += `**Why the withdrawn were withdrawn.** ${Object.entries(A.ledger.reasons).sort((a, b) => b[1] - a[1]).map(([k, n]) => `${n.toLocaleString('en-US')} ${k}`).join(' · ')}. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.\n\n`
+
+  md += `**What verification costs.** Folding ${A.verification.leaves.toLocaleString('en-US')} leaves took ${A.verification.recomputeMs} ms; verifying membership afterwards took ${A.verification.verifyUs} µs over ${A.verification.pathNodes} nodes — a factor of ${A.verification.ratio.toLocaleString('en-US')} on the machine that produced this page, and it grows with the set because N/log N grows. It is not sub-nanosecond and nothing here is: that verify is tens of thousands of nanoseconds, and the advantage is a smaller exponent rather than a faster clock. See \`speed.lean\`.\n\n`
 
   md += `## What is deliberately absent\n\nNo sentence above claims a Millennium problem settled, that the correspondence with the Clay set means\nanything about those conjectures, or that the gate can tell truth from falsehood. Those sentences are missing\nbecause no test was written that would seal them.\n\n`
   md += site

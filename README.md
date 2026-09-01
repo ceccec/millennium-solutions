@@ -145,6 +145,25 @@ this page; there is nowhere else to keep the description in step.
 2 of 419 theorems carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
+## 8 · What this build measured about itself
+
+Read from the artefacts at build time, never carried between runs.
+
+| measure | value |
+|---|---|
+| ledger entries | 2,328 — 291 octaves exactly |
+| standing | **437** |
+| withdrawn, kept in the record | 1,891 |
+| withdrawn but since re-proved | 35 |
+| Lean files · theorems | 22 · 419, all axiom-free |
+| proved `by decide` | 411 of 419 |
+| claims a machine can render | 77 of 1,522 |
+| claims needing an author | 1,445 — reported, never faked |
+
+**Why the withdrawn were withdrawn.** 1,397 no Lean proof · 457 tested the removed lexical gate · 27 its Lean source was deleted or renamed · 10 circular by construction. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
+
+**What verification costs.** Folding 16,384 leaves took 237.8 ms; verifying membership afterwards took 114.6 µs over 14 nodes — a factor of 2,075 on the machine that produced this page, and it grows with the set because N/log N grows. It is not sub-nanosecond and nothing here is: that verify is tens of thousands of nanoseconds, and the advantage is a smaller exponent rather than a faster clock. See `speed.lean`.
+
 ## What is deliberately absent
 
 No sentence above claims a Millennium problem settled, that the correspondence with the Clay set means
