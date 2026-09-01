@@ -95,3 +95,34 @@ export const frontmatter = (file: string): Record<string, string> => {
  *  places, and this session has twice watched a private copy answer differently from its siblings. */
 export const isLive = (e: Entry): boolean => !e.revoked
 export const isWithdrawn = (e: Entry): boolean => e.revoked === true
+
+// ── THE ℤ/9 SETS, COMPUTED AND CHECKED AGAINST THE THEOREM THAT PROVES THEM ────────────────────────────────
+//
+// The tooling had these written out as literals — `[1,2,4,5,7,8]` for the units, `[3,6,0]` for the triad,
+// `[1,2,4,8,7,5]` for the orbit — in imagine.ts, fold.ts and pages.ts. Every one of them is COMPUTED in
+// src/0 and PROVED in src/proof, so the literal was a third copy that no gate was checking: change the
+// modulus and the runtime and the kernel would both follow while the tooling silently kept describing ℤ/9.
+//
+// These compute the set and then refuse to return it unless the sealed theorem that proves it is live in the
+// ledger. That is the whole point — not that the numbers are right today, but that the tooling cannot go on
+// using them after the proof behind them stops standing.
+import { units as runtimeUnits, triad as runtimeTriad, vortexOrbit as runtimeOrbit } from '../0/index.ts'
+
+const backedBy = (key: string, value: number[], what: string): number[] => {
+  if (!liveKeys().has(key)) {
+    throw new Error(
+      `api: refusing to serve ${what} — the theorem that proves it (${key}) is not live in the ledger. ` +
+      `The value would still compute; what is missing is the reason to trust it. Prove it, or stop using it.`)
+  }
+  return value
+}
+
+/** The six units of ℤ/9 — computed, and served only while lean_units_are_six stands. */
+export const units = (): number[] => backedBy('lean_units_are_six', runtimeUnits(), 'the units')
+
+/** The triad {3,6,9} — the non-units, the merkaba's axis. */
+export const triad = (): number[] => backedBy('lean_units_are_six', runtimeTriad(), 'the triad')
+
+/** The doubling orbit 1,2,4,8,7,5 — six turns before it returns to where it began. */
+export const orbit = (): number[] =>
+  backedBy('lean_millenniumfloor_riemann_reflection_and_heart', runtimeOrbit(), 'the doubling orbit')

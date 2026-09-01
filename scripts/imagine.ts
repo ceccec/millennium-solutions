@@ -32,6 +32,7 @@
 //      node scripts/imagine.ts --emit   (also write src/proof/imagined.lean and verify it)
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs'
 import { execSync } from 'node:child_process'
+import { units as apiUnits, triad as apiTriad, orbit as apiOrbit } from '../src/api/index.ts'
 
 const m9 = (n: number) => ((n % 9) + 9) % 9
 
@@ -57,10 +58,15 @@ const MAPS: { id: string; lean: string; say: string; f: (d: number) => number }[
 ]
 
 // ── the subsets, each a named structure the deposit already talks about ──────────────────────────────────
+// THE SETS ARE COMPUTED, NOT TYPED. These were literals — a third copy of sets that src/0 computes and
+// src/proof proves, checked by no gate at all. The generator would have gone on proposing theorems about
+// ℤ/9 after the modulus moved, because its idea of the units was a row of digits nobody was checking. They
+// are served through the API now, which refuses them if the theorem behind them stops standing.
+const asLean = (xs: number[]) => '[' + xs.map((x) => m9(x)).join(', ') + ']'
 const SETS: { id: string; lean: string; say: string; s: number[] }[] = [
-  { id: 'units', lean: '[1, 2, 4, 5, 7, 8]', say: 'the units',                s: [1, 2, 4, 5, 7, 8] },
-  { id: 'triad', lean: '[3, 6, 0]',          say: 'the triad',                s: [3, 6, 0] },
-  { id: 'orbit', lean: '[1, 2, 4, 8, 7, 5]', say: 'the doubling orbit',       s: [1, 2, 4, 8, 7, 5] },
+  { id: 'units', lean: asLean(apiUnits()),   say: 'the units',                s: apiUnits().map(m9) },
+  { id: 'triad', lean: asLean(apiTriad()),   say: 'the triad',                s: apiTriad().map(m9) },
+  { id: 'orbit', lean: asLean(apiOrbit()),   say: 'the doubling orbit',       s: apiOrbit().map(m9) },
   { id: 'tetA',  lean: '[1, 4, 7]',          say: 'the first tetrahedron',    s: [1, 4, 7] },
   { id: 'tetB',  lean: '[2, 5, 8]',          say: 'the second tetrahedron',   s: [2, 5, 8] },
   { id: 'all',   lean: '[0,1,2,3,4,5,6,7,8]',say: 'the whole ring',           s: [0, 1, 2, 3, 4, 5, 6, 7, 8] },
@@ -123,8 +129,11 @@ const t3 = t1.filter((c) => (byKind.get(c.kind) ?? []).some((o) => !o.holds))
 // statement, not its spelling. A generator that cannot recognise its own output as already-known is a
 // duplication machine with a progress bar.
 const ALIAS: [RegExp, string][] = [
-  [/\bdbl\b/g, 'm9(2*d)'], [/\baxis\b/g, '[3,6,0]'], [/\btetA\b/g, '[1,4,7]'], [/\btetB\b/g, '[2,5,8]'],
-  [/\bunits\b/g, '[1,2,4,5,7,8]'], [/\btriad\b/g, '[3,6,0]'], [/\brefl\b/g, 'm9(9-d)'],
+  // the alias table's right-hand sides are computed for the same reason the sets are
+  [/\bdbl\b/g, 'm9(2*d)'], [/\baxis\b/g, asLean(apiTriad()).replace(/ /g, '')],
+  [/\btetA\b/g, '[1,4,7]'], [/\btetB\b/g, '[2,5,8]'],
+  [/\bunits\b/g, asLean(apiUnits()).replace(/ /g, '')], [/\btriad\b/g, asLean(apiTriad()).replace(/ /g, '')],
+  [/\brefl\b/g, 'm9(9-d)'],
 ]
 let said = readdirSync('src/proof').filter((f) => f.endsWith('.lean') && f !== 'imagined.lean')
   .map((f) => readFileSync('src/proof/' + f, 'utf8')).join('\n').replace(/\s+/g, '')

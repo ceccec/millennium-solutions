@@ -22,6 +22,7 @@ import { adjudicate } from './adjudicate.ts'
 import { computes } from './honesty-gate.ts'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 import { ledger as __ledger } from '../src/api/index.ts'
+import { orbit } from '../src/api/index.ts'
 
 const ledger = __ledger() as { key: string; name: string; receipt: string }[]
 const leanFiles = readdirSync('src/proof').filter((f) => f.endsWith('.lean')).sort()
@@ -31,7 +32,9 @@ const byDecide = leanFiles.flatMap((f) => [...leanSrc[f].matchAll(/^theorem ([A-
 const leanSealed = ledger.filter((e) => e.key.startsWith('lean_'))
 
 const m9 = (n: number) => ((n % 9) + 9) % 9
-const ORBIT = [1, 2, 4, 8, 7, 5]
+// the orbit is COMPUTED and served only while the theorem proving it stands — it was a literal here,
+// a third copy of a set that src/0 computes and src/proof proves, checked by nothing.
+const ORBIT = orbit()
 
 // A DERIVED claim, not a paired one. Every earlier version of this took {text, test} — a sentence beside a
 // predicate — and that shape is unsound: the predicate can pass while the sentence says something else. It

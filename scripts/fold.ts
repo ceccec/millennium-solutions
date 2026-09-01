@@ -30,10 +30,13 @@ import { writeFileSync } from 'node:fs'
 import { ledger as loadLedger, live as liveOf, type Entry } from '../src/api/index.ts'
 import { execSync } from 'node:child_process'
 import { isLive as __isLive, isWithdrawn as __isWithdrawn } from '../src/api/index.ts'
+import { orbit } from '../src/api/index.ts'
 
 const LEDGER = 'src/proof/discovered.json'
 
-const ORBIT = [1, 2, 4, 8, 7, 5]        // the doubling orbit: six turns, then it repeats
+// the orbit is COMPUTED and served only while the theorem proving it stands — it was a literal here,
+// a third copy of a set that src/0 computes and src/proof proves, checked by nothing.
+const ORBIT = orbit()
 const write = process.argv.includes('--write')
 
 const load = (): Entry[] => loadLedger()
