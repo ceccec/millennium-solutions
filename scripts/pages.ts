@@ -259,7 +259,15 @@ const body = (site: boolean) => {
 
   md += `**Why the withdrawn were withdrawn.** ${Object.entries(A.ledger.reasons).sort((a, b) => b[1] - a[1]).map(([k, n]) => `${n.toLocaleString('en-US')} ${k}`).join(' · ')}. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.\n\n`
 
-  md += `**What verification costs.** Folding ${A.verification.leaves.toLocaleString('en-US')} leaves took ${A.verification.recomputeMs} ms; verifying membership afterwards took ${A.verification.verifyUs} µs over ${A.verification.pathNodes} nodes — a factor of ${A.verification.ratio.toLocaleString('en-US')} on the machine that produced this page, and it grows with the set because N/log N grows. It is not sub-nanosecond and nothing here is: that verify is tens of thousands of nanoseconds, and the advantage is a smaller exponent rather than a faster clock. See \`speed.lean\`.\n\n`
+  // OPERATIONS, NOT MILLISECONDS. I first printed the measured timings, which rewrote both pages on every
+  // build; then rounded the ratio to one significant figure, which still swung between 900x and 2,000x
+  // because wall-clock under load varies by more than an order of magnitude. A number that unstable does not
+  // belong on a committed page — it is noise in every diff and it invites the reader to trust a precision
+  // that is not there. What is stable is what the two paths actually DO: fold every leaf, or walk one
+  // sibling per level. That ratio is exact, machine-independent, and the thing the claim rests on. The
+  // wall-clock measurement stays in the build output, where a figure that moves belongs.
+  const ops = Math.round(A.verification.leaves / A.verification.pathNodes)
+  md += `**What verification costs.** Proving the set touches all ${A.verification.leaves.toLocaleString('en-US')} leaves; verifying membership afterwards touches ${A.verification.pathNodes} — one sibling per level. That is **${ops.toLocaleString('en-US')}× less work**, exactly, and the factor grows with the set because N/log N grows. Wall-clock varies with the machine and is left in the build output rather than pinned here. It is not sub-nanosecond and nothing here is: the advantage is a smaller exponent, not a faster clock. The counting is proved in \`speed.lean\`.\n\n`
 
   md += `## What is deliberately absent\n\nNo sentence above claims a Millennium problem settled, that the correspondence with the Clay set means\nanything about those conjectures, or that the gate can tell truth from falsehood. Those sentences are missing\nbecause no test was written that would seal them.\n\n`
   md += site

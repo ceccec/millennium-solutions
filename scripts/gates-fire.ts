@@ -18,13 +18,18 @@
 // at the end. If it ever exits leaving a mutation in place, `git checkout` restores it: nothing here touches
 // receipts or the chain.
 import { readFileSync, writeFileSync, existsSync, copyFileSync, unlinkSync } from 'node:fs'
+import { createHash } from 'node:crypto'
 import { execSync } from 'node:child_process'
 
 const run = (cmd: string): boolean => {
   try { execSync(cmd, { stdio: 'pipe' }); return true } catch { return false }
 }
 
-type Control = { gate: string; cmd: string; what: string; file: string; mutate: (s: string) => string }
+// `restore` re-derives what a control's gate WROTE before it failed. pages.ts writes README.md and index.md
+// and only then checks its citations, so a mutated run leaves those two files behind — restoring the script
+// does not restore its output. A control that cleans up its input but not its consequences is a control that
+// dirties the tree, which this file's own leftover check then reports as a failure. Correctly.
+type Control = { gate: string; cmd: string; what: string; file: string; mutate: (s: string) => string; restore?: string }
 
 // ORDER MATTERS FOR SOME GATES, and running one alone is not the same as running it in the chain.
 // sitemap-mesh reported 14202 broken links and failed at HEAD — which looked like a pre-existing broken gate
@@ -135,6 +140,22 @@ const CONTROLS: Control[] = [
     what: 'a citable surface naming the author without their ORCID',
     mutate: (s) => s.replace(/0009-0000-7312-9778/g, '') },
 
+  { gate: 'parallel-seal', cmd: 'node scripts/parallel-seal.ts', file: 'src/0/index.ts',
+    what: 'a fold whose root depends on the order its segments arrive in',
+    mutate: (s) => s.replace('let layer = [...leaves].sort()', 'let layer = [...leaves]') },
+
+  { gate: 'retire-lexical', cmd: 'node scripts/retire-lexical.ts', file: 'src/proof/discovered.json',
+    what: 'an entry filed as testing the removed gate whose test now passes',
+    mutate: (s) => { const l = JSON.parse(s)
+      const holds = l.find((e: { key: string; reason?: string }) => e.key === 'the_seven_locales_all_hold_the_honest_floor')
+      if (holds) holds.reason = 'revoked in place: its test asserted a lexical drain and the word-list gate was removed'
+      return JSON.stringify(l, null, 2) + '\n' } },
+
+  { gate: 'pages', cmd: 'node scripts/pages.ts', file: 'scripts/pages.ts',
+    what: 'the front page citing a theorem that is not live in the ledger',
+    mutate: (s) => s.replace('/theorem/lean_millenniumfloor_riemann_reflection_and_heart', '/theorem/a_key_that_was_never_sealed'),
+    restore: 'node scripts/pages.ts' },
+
   { gate: 'gaps', cmd: 'node scripts/gaps.ts', file: '.vitepress/config.ts',
     what: 'a published page dropped from the sidebar',
     mutate: (s) => s.replace(/\{ text: 'Verify \(live app\)', link: '\/verify' \},/, '') },
@@ -158,8 +179,21 @@ const rescue = () => {
   unlinkSync(RESTORE_MARK)
 }
 
-const snapshot = (): Set<string> =>
-  new Set(execSync('git status --porcelain', { encoding: 'utf8' }).split('\n').filter(Boolean))
+// CONTENT, NOT STATUS. `git status --porcelain` encodes staged-versus-worktree in its two-character prefix,
+// so re-running a generator flips ` M` to `MM` for a file whose CONTENT never changed — and comparing status
+// lines read that as a leftover mutation. It reported a failure whose entire cause was that I had staged two
+// files earlier. What a restore has to guarantee is that the bytes are as they were, so the bytes are what is
+// compared: every path git mentions, mapped to a hash of what is on disk.
+const snapshot = (): Map<string, string> => {
+  const m = new Map<string, string>()
+  for (const line of execSync('git status --porcelain', { encoding: 'utf8' }).split('\n').filter(Boolean)) {
+    const path = line.slice(3).trim().replace(/^"|"$/g, '')
+    let h = 'absent'
+    try { h = createHash('sha256').update(readFileSync(path)).digest('hex').slice(0, 16) } catch { /* deleted */ }
+    m.set(path, h)
+  }
+  return m
+}
 rescue()
 // bring the tree to the state the chain would have it in before judging any gate that reads dist/
 try { execSync(PREREQ, { stdio: 'pipe' }) } catch { /* dist may not exist yet; the controls report that */ }
@@ -183,6 +217,7 @@ for (const c of CONTROLS) {
     else { broken++; console.log(`  ✗ ${c.gate.padEnd(17)} ACCEPTS ${c.what} — this gate is not protecting anything`) }
   } finally {
     copyFileSync(backup, c.file); unlinkSync(backup)
+    if (c.restore) { try { execSync(c.restore, { stdio: 'pipe' }) } catch { /* reported by the leftover check */ } }
     if (existsSync(RESTORE_MARK)) unlinkSync(RESTORE_MARK)
   }
 }
@@ -193,7 +228,10 @@ for (const c of CONTROLS) {
 // be a mutation this script failed to undo. Testing the difference rather than the level.
 
 const after = snapshot()
-const leftover = [...after].filter((l) => !before.has(l))
+// a path is leftover only when its CONTENT differs from before, or it appeared and is not this run's own doing
+const leftover = [...after.entries()]
+  .filter(([path, h]) => before.has(path) ? before.get(path) !== h : !path.endsWith('gates-fire.ts'))
+  .map(([path]) => path)
 if (leftover.length) {
   console.log(`\n✗ gates-fire changed the tree and did not restore it:\n${leftover.slice(0, 5).join('\n')}`)
   process.exit(1)
@@ -206,10 +244,24 @@ if (leftover.length) {
 const chain = readFileSync('package.json', 'utf8')
 const inChain = [...(JSON.parse(chain).scripts.release as string).matchAll(/node scripts\/([a-z-]+)\.ts/g)].map((m) => m[1])
 const controlled = new Set(CONTROLS.map((c) => c.gate))
-const uncontrolled = inChain.filter((g) => !controlled.has(g) && g !== 'gates-fire' && g !== 'release')
+// A GENERATOR IS NOT A GATE, and demanding a negative control from one is a category error. Nine of the
+// thirteen I was reporting as "trusted only because they pass" never pass or fail at all — they produce a
+// file and exit 0 unconditionally. Listing them as untested gates overstated the gap and would have sent
+// someone looking for a way to make challenges.ts reject something. Which is which is MEASURED, by looking
+// for a non-zero exit path in the source, rather than judged from the name.
+const canFail = (g: string): boolean => {
+  try { return /process\.exit\((?!0\))/.test(readFileSync(`scripts/${g}.ts`, 'utf8')) } catch { return false }
+}
+const rest = inChain.filter((g) => !controlled.has(g) && g !== 'gates-fire' && g !== 'release')
+const uncontrolled = rest.filter(canFail)
+const generators = rest.filter((g) => !canFail(g))
 if (uncontrolled.length) {
-  console.log(`\n· ${controlled.size} of ${inChain.length - 2} release gates have a negative control. Without one, trusted only because they pass:`)
+  console.log(`\n· ${controlled.size} of ${controlled.size + uncontrolled.length} release GATES have a negative control. Without one, trusted only because they pass:`)
   console.log('    ' + uncontrolled.join(' '))
+}
+if (generators.length) {
+  console.log(`· ${generators.length} chain steps are GENERATORS, not gates — they exit 0 unconditionally, so there is nothing for them to reject:`)
+  console.log('    ' + generators.join(' '))
 }
 
 console.log(broken
