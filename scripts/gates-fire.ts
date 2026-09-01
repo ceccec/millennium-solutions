@@ -50,6 +50,36 @@ const CONTROLS: Control[] = [
   { gate: 'lean', cmd: 'node scripts/lean.ts src/proof/theorems.lean', file: 'src/proof/theorems.lean',
     what: 'a theorem that does not hold',   // no --full: the cache keys on content, so a mutated file re-verifies and an untouched one does not
     mutate: (s) => s.replace('.length = 1', '.length = 2') },
+
+  { gate: 'lean-agree', cmd: 'node scripts/lean-agree.ts', file: 'src/proof/merkaba.lean',
+    what: 'a constant the proofs reason about drifting from the one the runtime uses',
+    mutate: (s) => s.replace('def axis  : List Nat := [3, 6, 0]', 'def axis  : List Nat := [3, 6, 1]') },
+
+  { gate: 'theorem-pages-gate', cmd: 'node scripts/theorem-pages-gate.ts', file: '.vitepress/dist/theorem/lean_units_are_six.html',
+    what: 'a sealed theorem whose public page has lost its microdata',
+    mutate: (s) => s.replace(/itemprop="identifier"/g, 'itemprop="removed-by-control"') },
+
+  { gate: 'receipt-audit', cmd: 'node scripts/receipt-audit.ts', file: 'src/receipts/a1d33966-7bbd-84ca-902b-49e315af60e0.json',
+    what: 'a receipt whose uuid no longer addresses its own message',
+    mutate: (s) => { const r = JSON.parse(s); r.message = r.message + ' (altered by control)'; return JSON.stringify(r, null, 2) + '\n' } },
+
+  { gate: 'gate-corpus', cmd: 'node scripts/gate-corpus.ts', file: 'scripts/gate-corpus.ts',
+    what: 'an honest sentence being asserted to drain',
+    mutate: (s) => s.replace("export const CASES: [string, 0 | 1, string][] = [",
+      "export const CASES: [string, 0 | 1, string][] = [\n  ['a content-address proves integrity, not truth; 0/7', 0, 'control: honest prose asserted to drain'],") },
+
+  // THE CONTROL WAS WRONG, NOT THE GATE — the fifth instrument of mine to be wrong before its subject was.
+  // I pointed this at index.md, which wholeness never opens: it computes the floor by RUNNING src/7/entails,
+  // whose report counts how many of the seven statements entail their conjecture and prints "0 / 7". A
+  // control that mutates a file the gate does not read proves nothing about the gate, and reported it as
+  // protecting nothing when it was protecting exactly what it claims.
+  { gate: 'wholeness', cmd: 'node scripts/wholeness.ts', file: 'src/7/entails.ts',
+    what: 'the entailment count no longer computing zero of seven',
+    mutate: (s) => s.replace('const s = !trueWhenFalse; if (s) solved++', 'const s = !trueWhenFalse; solved++; void s') },
+
+  { gate: 'gaps', cmd: 'node scripts/gaps.ts', file: '.vitepress/config.ts',
+    what: 'a published page dropped from the sidebar',
+    mutate: (s) => s.replace(/\{ text: 'Verify \(live app\)', link: '\/verify' \},/, '') },
 ]
 
 // A KILLED RUN LEAVES A MUTATION, because `finally` does not survive SIGTERM. That is not hypothetical: a
@@ -107,6 +137,19 @@ const leftover = [...after].filter((l) => !before.has(l))
 if (leftover.length) {
   console.log(`\n✗ gates-fire changed the tree and did not restore it:\n${leftover.slice(0, 5).join('\n')}`)
   process.exit(1)
+}
+
+// WHICH GATES HAVE NO CONTROL — named, because a coverage figure nobody prints is a coverage figure nobody
+// raises. Twelve of the release chain's gates are demonstrated to fail when they should; the rest are trusted
+// on the strength of passing, which is exactly the standing this file exists to withdraw. They are listed so
+// the gap is a work item rather than an assumption.
+const chain = readFileSync('package.json', 'utf8')
+const inChain = [...(JSON.parse(chain).scripts.release as string).matchAll(/node scripts\/([a-z-]+)\.ts/g)].map((m) => m[1])
+const controlled = new Set(CONTROLS.map((c) => c.gate))
+const uncontrolled = inChain.filter((g) => !controlled.has(g) && g !== 'gates-fire' && g !== 'release')
+if (uncontrolled.length) {
+  console.log(`\n· ${controlled.size} of ${inChain.length - 2} release gates have a negative control. Without one, trusted only because they pass:`)
+  console.log('    ' + uncontrolled.join(' '))
 }
 
 console.log(broken
