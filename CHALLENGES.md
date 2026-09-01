@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2337 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2344 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (469)
+### lean (476)
 
 - [lean_units_are_six](/theorem/lean_units_are_six) — lean: the units of ℤ/9 are exactly [1,2,4,5,7,8] — checked at every residue by the kernel, recomputed here; 0/7  ·  `031c89bf-e1e0…`
 - [lean_units_count](/theorem/lean_units_count) — lean: there are exactly six units in ℤ/9 — the kernel checks the count, recomputed here; 0/7  ·  `104e8965-ebfb…`
@@ -493,6 +493,13 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_millenniumfloor.universal_universal_z9_reflection_permutes_the_units](/theorem/lean_millenniumfloor.universal_universal_z9_reflection_permutes_the_units) — lean theorems.lean: universal_z9_reflection_permutes_the_units — ([1, 2, 4, 5, 7, 8].map (fun d =&gt; (9 - d) % 9)) = [8, 7, 5, 4, 2, 1] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c108d1b2-5b61…`
 - [lean_millenniumfloor.universal_universal_millennium_reflection_escapes_the_units](/theorem/lean_millenniumfloor.universal_universal_millennium_reflection_escapes_the_units) — lean theorems.lean: universal_millennium_reflection_escapes_the_units — ¬ ([1, 2, 4, 5, 7, 8].all (fun u =&gt; [1, 2, 4, 5, 7, 8].contains (refl u))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `42cffd21-8daa…`
 - [lean_millenniumfloor.universal_universal_reflection_is_the_vortex_reflection_shifted](/theorem/lean_millenniumfloor.universal_universal_reflection_is_the_vortex_reflection_shifted) — lean theorems.lean: universal_reflection_is_the_vortex_reflection_shifted — (List.range 10).all (fun d =&gt; (10 - d) % 9 == ((9 - d) % 9 + 1) % 9) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e27a695c-fcb5…`
+- [lean_rights_claims_exactly_what_arises_without_formality](/theorem/lean_rights_claims_exactly_what_arises_without_formality) — lean rights.lean: claims_exactly_what_arises_without_formality — instruments.all (fun r =&gt; auto r == claim r) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9fe1d10f-1cdd…`
+- [lean_rights_the_claimed_are_copyright_moral_rights_and_the_database](/theorem/lean_rights_the_claimed_are_copyright_moral_rights_and_the_database) — lean rights.lean: the_claimed_are_copyright_moral_rights_and_the_database — (instruments.filter claim).map idOf = [1, 2, 3] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2e8fa33b-ff33…`
+- [lean_rights_the_unclaimed_are_the_registry_the_excluded_and_the_unownable](/theorem/lean_rights_the_unclaimed_are_the_registry_the_excluded_and_the_unownable) — lean rights.lean: the_unclaimed_are_the_registry_the_excluded_and_the_unownable — (instruments.filter (fun r =&gt; ¬ claim r)).map idOf = [4, 5, 6, 7] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `b31064ef-87ef…`
+- [lean_rights_no_right_that_needs_a_registry_act_is_claimed](/theorem/lean_rights_no_right_that_needs_a_registry_act_is_claimed) — lean rights.lean: no_right_that_needs_a_registry_act_is_claimed — (instruments.filter (fun r =&gt; kindOf r == 1)).all (fun r =&gt; claim r == false) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2a02ce35-a713…`
+- [lean_rights_no_excluded_subject_matter_is_claimed](/theorem/lean_rights_no_excluded_subject_matter_is_claimed) — lean rights.lean: no_excluded_subject_matter_is_claimed — (instruments.filter (fun r =&gt; kindOf r == 2)).all (fun r =&gt; claim r == false) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c716ee16-0ced…`
+- [lean_rights_nothing_incapable_of_ownership_is_claimed](/theorem/lean_rights_nothing_incapable_of_ownership_is_claimed) — lean rights.lean: nothing_incapable_of_ownership_is_claimed — (instruments.filter (fun r =&gt; kindOf r == 3)).all (fun r =&gt; claim r == false) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `90674107-b9a9…`
+- [lean_rights_the_enumeration_is_complete_and_unduplicated](/theorem/lean_rights_the_enumeration_is_complete_and_unduplicated) — lean rights.lean: the_enumeration_is_complete_and_unduplicated — instruments.map idOf = [1, 2, 3, 4, 5, 6, 7] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `235960b5-8710…`
 
 ### other — one-of-a-kind (0)
 
@@ -2315,4 +2322,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `8e3013da-be3a-8a90-a301-4278b8334fce`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `83796daf-9572-8462-b629-fe600a4287b7`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

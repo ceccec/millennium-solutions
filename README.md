@@ -11,12 +11,12 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 452 theorems across 22 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `db42a25e-45aa-8880-97b4-5a4edffbfb02`</sub>
-- 444 of those 452 theorems close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
-  <sub>SEALED · `efc86b54-0f2e-8618-bb41-e112f912c516`</sub>
-- 473 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `a5b80bb4-2765-85df-a554-dcb6b2099889`</sub>
+- The formal layer holds 460 theorems across 23 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `48b92d90-e021-8be4-b90d-8375f0617d81`</sub>
+- 451 of those 460 theorems close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 9 close by rfl and are declarations.
+  <sub>SEALED · `9f71a877-416b-80b6-b2f4-49f0d548f309`</sub>
+- 480 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `c6f226d6-c45d-8f4d-b51c-28d20fb6ebe3`</sub>
 
 ## 2 · The ring
 
@@ -39,10 +39,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 2337 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `7e73a4e9-865e-8f69-9c95-6f7e2882ea24`</sub>
-- The count is 2337, which is 292 octaves and 1 over — the octave is a target the theorems earn, never a quota they are invented to fill.
-  <sub>SEALED · `0b50dde1-7755-8c98-a025-08d9d8b86500`</sub>
+- The ledger records 2344 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `30cede0c-e8c7-8bc9-9660-ca1d8183cb18`</sub>
+- The count is an exact multiple of eight — 2344 is 293 octaves with no remainder.
+  <sub>SEALED · `d9d073b0-b3de-8ff6-91ca-5eb687c8a1cb`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -84,7 +84,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-22 Lean files in 5 wings, 452 theorems. The prose in this section is read out of the
+23 Lean files in 6 wings, 460 theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -142,7 +142,11 @@ this page; there is nowhere else to keep the description in step.
 
 **imagined** — `imagined.lean`, 118 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
 
-2 of 452 theorems carry no comment of their own and are shown here as the gap they are, not
+### the record
+
+**Rights** — `rights.lean`, 8 theorem(s). What this deposit claims under international law — and, in the same table, what it does not.
+
+2 of 460 theorems carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -151,13 +155,13 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 2,337 — 292 octaves and 1 over |
-| standing — carries its own proof | **469** |
+| ledger entries | 2,344 — 293 octaves exactly |
+| standing — carries its own proof | **476** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **115** |
 | withdrawn — nothing proves it | 1,753 |
-| proved in total | **584** of 2,337 |
-| Lean files · theorems | 22 · 452, all axiom-free |
-| proved `by decide` | 444 of 452 |
+| proved in total | **591** of 2,344 |
+| Lean files · theorems | 23 · 460, all axiom-free |
+| proved `by decide` | 451 of 460 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -182,4 +186,4 @@ node scripts/pages.ts              # regenerate this file and the homepage
 
 ---
 
-*14 claims, all verified · 452 Lean theorems · 2337 ledger entries · trial root `bd58531b-fb15-8807-a5b7-ce1ed4e51336` · integrity, not truth · 0/7*
+*14 claims, all verified · 460 Lean theorems · 2344 ledger entries · trial root `c8331713-3113-8060-9738-01457b8368fb` · integrity, not truth · 0/7*

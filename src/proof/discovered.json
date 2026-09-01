@@ -16956,5 +16956,40 @@
     "key": "lean_millenniumfloor.universal_universal_reflection_is_the_vortex_reflection_shifted",
     "name": "lean theorems.lean: universal_reflection_is_the_vortex_reflection_shifted — (List.range 10).all (fun d => (10 - d) % 9 == ((9 - d) % 9 + 1) % 9) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "e27a695c-fcb5-8abc-86af-eb64c401bbef"
+  },
+  {
+    "key": "lean_rights_claims_exactly_what_arises_without_formality",
+    "name": "lean rights.lean: claims_exactly_what_arises_without_formality — instruments.all (fun r => auto r == claim r) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9fe1d10f-1cdd-8cd6-85ef-e1e4735a79ee"
+  },
+  {
+    "key": "lean_rights_the_claimed_are_copyright_moral_rights_and_the_database",
+    "name": "lean rights.lean: the_claimed_are_copyright_moral_rights_and_the_database — (instruments.filter claim).map idOf = [1, 2, 3] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2e8fa33b-ff33-8fad-93c3-330b6bf7625a"
+  },
+  {
+    "key": "lean_rights_the_unclaimed_are_the_registry_the_excluded_and_the_unownable",
+    "name": "lean rights.lean: the_unclaimed_are_the_registry_the_excluded_and_the_unownable — (instruments.filter (fun r => ¬ claim r)).map idOf = [4, 5, 6, 7] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b31064ef-87ef-8d16-b578-31f68049a873"
+  },
+  {
+    "key": "lean_rights_no_right_that_needs_a_registry_act_is_claimed",
+    "name": "lean rights.lean: no_right_that_needs_a_registry_act_is_claimed — (instruments.filter (fun r => kindOf r == 1)).all (fun r => claim r == false) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2a02ce35-a713-8c8b-8266-f46c7f6e2aee"
+  },
+  {
+    "key": "lean_rights_no_excluded_subject_matter_is_claimed",
+    "name": "lean rights.lean: no_excluded_subject_matter_is_claimed — (instruments.filter (fun r => kindOf r == 2)).all (fun r => claim r == false) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c716ee16-0ced-8c15-98fe-9f3d9506c715"
+  },
+  {
+    "key": "lean_rights_nothing_incapable_of_ownership_is_claimed",
+    "name": "lean rights.lean: nothing_incapable_of_ownership_is_claimed — (instruments.filter (fun r => kindOf r == 3)).all (fun r => claim r == false) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "90674107-b9a9-8437-acb6-603f44ae19a8"
+  },
+  {
+    "key": "lean_rights_the_enumeration_is_complete_and_unduplicated",
+    "name": "lean rights.lean: the_enumeration_is_complete_and_unduplicated — instruments.map idOf = [1, 2, 3, 4, 5, 6, 7] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "235960b5-8710-8a99-86b2-b2a2836fe3bc"
   }
 ]
