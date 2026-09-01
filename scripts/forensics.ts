@@ -8,7 +8,8 @@
 // DUE PROCESS: a break is EVIDENCE, examined — not auto-condemned. The two GENESIS entries predate strict
 // chaining (promoted from lean-claims); they are a DOCUMENTED baseline discontinuity, not tampering. The
 // build fails only on a NEW break (outside the baseline) or a collision — tampering caught, history kept.
-import { readFileSync, readdirSync } from 'node:fs'
+import { readFileSync } from 'node:fs'
+import { leanTheorems, fileOfKey } from '../src/api/index.ts'
 import { execSync } from 'node:child_process'
 import { toUuid, merkleFold, digitalRoot } from '../src/0/index.ts'
 import { computes } from './honesty-gate.ts'
@@ -137,16 +138,13 @@ console.log('  gap — to the next full octave: ' + (toNextOctave === 0
 // worse than reporting nothing: it pointed at work that does not exist. The unit work is actually organised
 // by is the file, so the file is what is counted, by matching each key against the theorem names on disk.
 const STOP = new Set(['the', 'a', 'an', 'is', 'are', 'of', 'in', 'to', 'and', 'each', 'all', 'no', 'not', 'one', 'two', 'six', 'seven', 'lean'])
-const fileOfTheorem = new Map<string, string>()
-try {
-  for (const lf of readdirSync('src/proof').filter((x) => x.endsWith('.lean'))) {
-    const txt = readFileSync('src/proof/' + lf, 'utf8')
-    for (const m of txt.matchAll(/^theorem\s+([A-Za-z_0-9]+)/gm)) fileOfTheorem.set(m[1], lf.replace('.lean', ''))
-  }
-} catch { /* no proofs on disk — fall back to the key */ }
+// via the shared API: ONE definition of which file carries a sealed key, surviving both naming conventions.
+// The private copy that stood here silently fell back to key-splitting when its import was missing, and
+// reported the same wrong family count with no sign it had failed.
+const THMS = leanTheorems()
 const familyOf = (key: string) => {
-  const rest = key.replace(/^lean_/, '')
-  for (const [name, file] of fileOfTheorem) if (rest === name || rest.endsWith('_' + name) || rest.endsWith('.' + name)) return file
+  const f = fileOfKey(key, THMS)
+  if (f) return f.replace('.lean', '')
   for (const t of key.split('_')) if (!STOP.has(t)) return t
   return key.split('_')[0]
 }

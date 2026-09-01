@@ -126,11 +126,11 @@ this page; there is nowhere else to keep the description in step.
 
 **The merkaba** — `merkaba.lean`, 8 theorem(s). The merkaba, as THIS deposit constructs it — ported to Lean so it stands on the kernel instead of on a TypeScript test. Six entries under this name were revoked as dirty; every one of them that states finite algebra is re-proved here, and the two that do not (a cosine field, a bond angle in degrees) are absent on purpose — they are real trigonometry, not decidable arithmetic over ℤ/9, and padding them in would be the exact dishonesty the revocation was for.
 
-**Sequences** — `sequences.lean`, 8 theorem(s). Sequences and identities — Cassini, Lucas, Brahmagupta–Fibonacci, and Pascal mod two.
+**Sequences** — `sequences.lean`, 8 theorem(s). The ledger held these as TypeScript tests. Each is a classical identity with a real proof; what is done here is to DECIDE each over a stated finite range, which is what `decide` can honestly deliver — the range is named in every theorem rather than implied, and no theorem claims the general case.
 
 **The ring ℤ/9** — `z9.lean`, 21 theorem(s). The ℤ/9 families — mechanically generated theorems, proved by decide rather than tested in TypeScript.
 
-**Entanglement in the ring** — `z9plus.lean`, 32 theorem(s). ℤ/9, the second batch — powers, digital roots, primitive roots, and the orbit's period.
+**Entanglement in the ring** — `z9plus.lean`, 32 theorem(s). z9.lean settled the families exhaustively. This settles the claims the ledger stated individually and never generalised: which residues squares and cubes can be, which residues are primitive roots, the period of the doubling orbit's digital root, and the identity behind digit-reversal invariance. Each is stated as an EQUIVALENCE or an exact set where the ledger stated instances, so the negative half is proved too.
 
 ### the machine
 
@@ -168,7 +168,7 @@ Read from the artefacts at build time, never carried between runs.
 
 **Why the withdrawn were withdrawn.** 1,397 no Lean proof · 457 tested the removed lexical gate · 27 its Lean source was deleted or renamed · 10 circular by construction. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
 
-**What verification costs.** Folding 16,384 leaves took 8.7 ms; verifying membership afterwards took 5 µs over 14 nodes — a factor of 1,750 on the machine that produced this page, and it grows with the set because N/log N grows. It is not sub-nanosecond and nothing here is: that verify is tens of thousands of nanoseconds, and the advantage is a smaller exponent rather than a faster clock. See `speed.lean`.
+**What verification costs.** Folding 16,384 leaves took 8 ms; verifying membership afterwards took 6.4 µs over 14 nodes — a factor of 1,249 on the machine that produced this page, and it grows with the set because N/log N grows. It is not sub-nanosecond and nothing here is: that verify is tens of thousands of nanoseconds, and the advantage is a smaller exponent rather than a faster clock. See `speed.lean`.
 
 ## What is deliberately absent
 

@@ -17,18 +17,16 @@
 // So parallel sealing is licensed by the fold and blocked by the file. Sharding the ledger per segment would
 // remove the second constraint too; that is a real change to the record's shape and is not made here on the
 // strength of a convenience. This script measures the claim so the option rests on a number.
-import { readFileSync } from 'node:fs'
 import { merkleFold } from '../src/0/index.ts'
+import { ledger, live as liveOf, fileOfKey } from '../src/api/index.ts'
 
-const led = JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) as
-  { key: string; receipt: string; revoked?: boolean }[]
-const live = led.filter((e) => !e.revoked)
+const live = liveOf(ledger())
 
 // segment by the Lean file each theorem came from — the natural unit of independent work
 const segs = new Map<string, string[]>()
 for (const e of live) {
-  const m = e.key.match(/^lean_([a-z0-9]+)_/)
-  const s = m ? m[1] : 'other'
+  // the file that carries it, via the shared API — not a guess parsed out of the key
+  const s = fileOfKey(e.key)?.replace('.lean', '') ?? 'other'
   ;(segs.get(s) ?? segs.set(s, []).get(s)!).push(e.receipt)
 }
 const names = [...segs.keys()].sort()

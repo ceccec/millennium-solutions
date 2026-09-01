@@ -13,15 +13,15 @@
 //   node scripts/verify.ts --cite   report, then add the citations that are earned
 import { readFileSync, writeFileSync } from 'node:fs'
 import { reveal } from './audit.ts'
+import { ledger as ledgerOf, live as liveOf } from '../src/api/index.ts'
 
 // THE SEALED LEAN THEOREMS ARE THIS DEPOSIT'S OWN, not the package's. Reading THEOREMS from @uuidna/uuidna
 // compared 2184 entries against a ledger of 1329 mul9_* keys that shares NOTHING with ours, so every entry
 // came back UNVERIFIED — a category error reported as a result, and the same one seal.ts carried until it
 // was found. The authority is src/proof/discovered.json: the lean_* entries are exactly the theorems the
 // kernel checks on every run of scripts/lean.ts, and a revoked one is not sealed.
-type Entry = { key: string; name: string; statement?: string; revoked?: boolean }
-const ALL: Entry[] = JSON.parse(readFileSync('src/proof/discovered.json', 'utf8'))
-const THEOREMS = ALL.filter((e) => !e.revoked && e.key.startsWith('lean_'))
+const ALL = ledgerOf()
+const THEOREMS = liveOf(ALL).filter((e) => e.key.startsWith('lean_'))
   .map((e) => ({ key: e.key, name: e.name, statement: e.statement ?? e.name }))
 import { toUuid, merkleFold } from '../src/0/index.ts'
 

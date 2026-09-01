@@ -10,21 +10,21 @@
 // Everything here is READ FROM ARTEFACTS on disk — the ledger, the Lean sources, the prover's own queue. No
 // figure is passed in and none is remembered between runs, so a stale number cannot survive a rebuild. The
 // one measured timing is labelled as belonging to the machine that produced it, because it does.
-import { readFileSync, readdirSync, writeFileSync, existsSync } from 'node:fs'
+import { readFileSync, writeFileSync } from 'node:fs'
+import { ledger as loadLedger, live as liveOf, withdrawn as goneOf, superseded as supOf, octave, leanFiles, leanSource } from '../src/api/index.ts'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 
 export type Analytics = ReturnType<typeof analytics>
 
 export function analytics() {
-  const led = JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) as
-    { key: string; name: string; revoked?: boolean; reason?: string; supersededBy?: string }[]
-  const live = led.filter((e) => !e.revoked)
-  const gone = led.filter((e) => e.revoked)
+  const led = loadLedger()
+  const live = liveOf(led)
+  const gone = goneOf(led)
 
   // the Lean layer, counted from source rather than from a note about the source
-  const files = readdirSync('src/proof').filter((f) => f.endsWith('.lean')).sort()
+  const files = leanFiles()
   const perFile = files.map((f) => {
-    const src = readFileSync('src/proof/' + f, 'utf8')
+    const src = leanSource(f)
     return {
       file: f,
       title: src.match(/^--\s*title:\s*(.+)$/m)?.[1] ?? f.replace('.lean', ''),
@@ -59,8 +59,8 @@ export function analytics() {
   return {
     ledger: {
       total: led.length, live: live.length, withdrawn: gone.length,
-      superseded: led.filter((e) => e.supersededBy).length,
-      octaveExact: led.length % 8 === 0, octaves: Math.floor(led.length / 8), remainder: led.length % 8,
+      superseded: supOf(led).length,
+      octaveExact: octave(led).exact, octaves: octave(led).octaves, remainder: octave(led).remainder,
       reasons,
     },
     lean: {

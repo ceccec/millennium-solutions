@@ -15,9 +15,10 @@
 // FRONTMATTER is the explicit part — `-- key: value` lines in a leading block, before the prose. Only `title`
 // and `wing` are read; anything else is carried through untouched so a field can be added without editing
 // this file. A file without frontmatter falls back to its own name, which is honest but plainer.
-import { readFileSync, readdirSync } from 'node:fs'
+import { readFileSync } from 'node:fs'
+import { leanFiles, leanSource, frontmatter as fmOf, PROOF_DIR } from '../src/api/index.ts'
 
-const DIR = 'src/proof'
+const DIR = PROOF_DIR
 
 export type Theorem = { name: string; doc: string; docFrom: 'own' | 'section' | 'none'; statement: string; tactic: string; cases: number }
 export type Def = { name: string; value: string }
@@ -40,7 +41,7 @@ const stripComment = (block: string) =>
     .replace(/\n{3,}/g, '\n\n').trim()
 
 export function read(file: string): LeanDoc {
-  const src = readFileSync(`${DIR}/${file}`, 'utf8')
+  const src = leanSource(file)
   const ns = src.match(/^namespace\s+([A-Za-z_0-9.]+)/m)?.[1] ?? file.replace('.lean', '')
 
   // the header: the run of comment lines before the first namespace/def/theorem
@@ -48,12 +49,8 @@ export function read(file: string): LeanDoc {
   const headComment = head.split('\n').filter((l) => /^\s*--/.test(l)).join('\n')
 
   // frontmatter — `-- key: value` lines at the top of the header, stopping at the first prose line
-  const frontmatter: Record<string, string> = {}
-  for (const line of headComment.split('\n')) {
-    const m = line.match(/^\s*--\s*([a-z][a-z0-9_]*):\s*(.+?)\s*$/)
-    if (!m) break
-    frontmatter[m[1]] = m[2]
-  }
+  // frontmatter comes from the shared reader — one definition of what a `-- key: value` head is
+  const frontmatter = fmOf(file)
   const fmLines = Object.keys(frontmatter).length
   const summary = stripComment(headComment.split('\n').slice(fmLines).join('\n'))
     .replace(/^Author:.*$/gm, '').trim()
@@ -90,8 +87,7 @@ export function read(file: string): LeanDoc {
   }
 }
 
-export const all = (): LeanDoc[] =>
-  readdirSync(DIR).filter((f) => f.endsWith('.lean')).sort().map(read)
+export const all = (): LeanDoc[] => leanFiles().map(read)
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   const docs = all()

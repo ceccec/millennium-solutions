@@ -13,12 +13,12 @@
 //   (2) PROSE — whatever the packaged gate can still judge, on text with the citations and fenced source
 //       removed. A code fence is source, not an assertion: showing a proof is not making a claim, and the
 //       gate reads Lean declaration syntax (`theorem foo :`) as a citation.
-import { readFileSync } from 'node:fs'
+import { ledger, liveKeys, withdrawn } from '../src/api/index.ts'
 import { computes } from './honesty-gate.ts'
 
-const LEDGER: { key: string; revoked?: boolean }[] = JSON.parse(readFileSync('src/proof/discovered.json', 'utf8'))
-export const LIVE = new Set(LEDGER.filter((e) => !e.revoked).map((e) => e.key))
-export const GONE = new Set(LEDGER.filter((e) => e.revoked).map((e) => e.key))
+const LEDGER = ledger()
+export const LIVE = liveKeys(LEDGER)
+export const GONE = new Set(withdrawn(LEDGER).map((e) => e.key))
 
 // A citation is /theorem/KEY in URL POSITION — after "(", whitespace, ">" or a quote. That excludes a path
 // segment like ./src/the/theorem/index.ts, where "/theorem/" follows a word character. Markdown links and

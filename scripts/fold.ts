@@ -26,16 +26,16 @@
 //
 // Run: node scripts/fold.ts           (fold and report)
 //      node scripts/fold.ts --write   (also write the supersededBy links)
-import { readFileSync, writeFileSync } from 'node:fs'
+import { writeFileSync } from 'node:fs'
+import { ledger as loadLedger, live as liveOf, type Entry } from '../src/api/index.ts'
 import { execSync } from 'node:child_process'
 
 const LEDGER = 'src/proof/discovered.json'
-type Entry = { key: string; name: string; receipt: string; revoked?: boolean; reason?: string; supersededBy?: string }
 
 const ORBIT = [1, 2, 4, 8, 7, 5]        // the doubling orbit: six turns, then it repeats
 const write = process.argv.includes('--write')
 
-const load = (): Entry[] => JSON.parse(readFileSync(LEDGER, 'utf8'))
+const load = (): Entry[] => loadLedger()
 const sh = (cmd: string) => { try { return execSync(cmd, { encoding: 'utf8', stdio: 'pipe' }) } catch (e) {
   return String((e as { stdout?: string }).stdout ?? '') } }
 
@@ -52,7 +52,7 @@ if (/FAILING/.test(lean)) {
 if (write) sh('node scripts/seal-lean.ts --seal')
 
 const after = load()
-const live = new Set(after.filter((e) => !e.revoked).map((e) => e.key))
+const live = new Set(liveOf(after).map((e) => e.key))
 
 // LINK: a revoked claim whose statement is now carried by a Lean theorem is superseded, not merely gone.
 // Matched on the claim's own key appearing as the theorem's suffix, which is how the prover names what it
