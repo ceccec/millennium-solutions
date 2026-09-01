@@ -247,7 +247,7 @@ export default defineConfig({
           { text: 'State dashboard', link: '/dashboard' },
           { text: 'Accounting', link: '/ACCOUNTING' },
           { text: 'Boundaries', link: '/boundaries' },
-        { text: 'Rights', link: '/rights' },
+          { text: 'Rights', link: '/rights' },
           { text: 'Compare (standards)', link: '/compare' },
           { text: 'Examples (live)', link: '/examples' },
           { text: 'Verify (live app)', link: '/verify' },
