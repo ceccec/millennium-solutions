@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2330 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2337 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (439)
+### lean (469)
 
 - [lean_units_are_six](/theorem/lean_units_are_six) — lean: the units of ℤ/9 are exactly [1,2,4,5,7,8] — checked at every residue by the kernel, recomputed here; 0/7  ·  `031c89bf-e1e0…`
 - [lean_units_count](/theorem/lean_units_count) — lean: there are exactly six units in ℤ/9 — the kernel checks the count, recomputed here; 0/7  ·  `104e8965-ebfb…`
@@ -193,6 +193,29 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_sequences_three_five_eight_are_consecutive](/theorem/lean_sequences_three_five_eight_are_consecutive) — lean sequences.lean: three_five_eight_are_consecutive — fib 4 = 3 ∧ fib 5 = 5 ∧ fib 6 = 8 ∧ fib 4 + fib 5 = fib 6 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2c1fb60c-6564…`
 - [lean_sequences_pisano_twentyfour_is_four_sixes](/theorem/lean_sequences_pisano_twentyfour_is_four_sixes) — lean sequences.lean: pisano_twentyfour_is_four_sixes — (List.range 30).all (fun k =&gt; fib k % 9 == fib (k + 24) % 9) ∧ 24 = 4 * 6 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `780bfeec-e476…`
 - [lean_mechanical_add_group](/theorem/lean_mechanical_add_group) — lean mechanical.lean: add_group — (List.range' 1 9).all (fun d =&gt; (List.range' 1 9).any (fun e =&gt; M9 (d + e) == 0)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `0bf99a9b-8d78…`
+- [lean_mechanical_merkaba_cube_q3](/theorem/lean_mechanical_merkaba_cube_q3) — lean mechanical.lean: merkaba_cube_q3 — 2 ^ 3 == 8 && 3 * 2 ^ 2 == 12 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `6963c8ac-e3e6…`
+- [lean_mechanical_trial_zero_no_inverse](/theorem/lean_mechanical_trial_zero_no_inverse) — lean mechanical.lean: trial_zero_no_inverse — !(List.range' 1 9).any (fun e =&gt; M9 (0 * e) == 1) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `f336fdf5-76ee…`
+- [lean_mechanical_gf4_size](/theorem/lean_mechanical_gf4_size) — lean mechanical.lean: gf4_size — [0, 1, 2, 3].length == 2 ^ 2 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `daf893bd-dc5f…`
+- [lean_mechanical_harmonic_pythagorean_comma](/theorem/lean_mechanical_harmonic_pythagorean_comma) — lean mechanical.lean: harmonic_pythagorean_comma — 3 ^ 12 == 531441 && 2 ^ 19 == 524288 && 3 ^ 12 != 2 ^ 19 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `eb59929b-c67e…`
+- [lean_mechanical_relation_eight](/theorem/lean_mechanical_relation_eight) — lean mechanical.lean: relation_eight — 2 ^ 3 == 8 && 8 * 8 == 64 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a39da385-334c…`
+- [lean_mechanical_relation_seven_is_six_plus_one](/theorem/lean_mechanical_relation_seven_is_six_plus_one) — lean mechanical.lean: relation_seven_is_six_plus_one — [1,2,4,5,7,8].length == 6 && 6 + 1 == 7 && 7 - 1 == 6 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `4cc8e257-5368…`
+- [lean_mechanical_the_cyclic_number_142857_is_the_repetend_of_one_seventh](/theorem/lean_mechanical_the_cyclic_number_142857_is_the_repetend_of_one_seventh) — lean mechanical.lean: the_cyclic_number_142857_is_the_repetend_of_one_seventh — 999999 % 7 == 0 && 999999 / 7 == 142857 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `84678499-42cd…`
+- [lean_mechanical_the_digital_root_of_seven_to_the_k_has_period_three](/theorem/lean_mechanical_the_digital_root_of_seven_to_the_k_has_period_three) — lean mechanical.lean: the_digital_root_of_seven_to_the_k_has_period_three — 7 ^ 1 % 9 == 7 && 7 ^ 2 % 9 == 4 && 7 ^ 3 % 9 == 1 && 7 ^ 4 % 9 == 7 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `35da1bae-5b79…`
+- [lean_mechanical_seven_divides_the_repunit_of_length_six](/theorem/lean_mechanical_seven_divides_the_repunit_of_length_six) — lean mechanical.lean: seven_divides_the_repunit_of_length_six — 111111 % 7 == 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `5de46f3e-a628…`
+- [lean_mechanical_two_to_the_eighth_is_two_hundred_fifty_six_a_byte](/theorem/lean_mechanical_two_to_the_eighth_is_two_hundred_fifty_six_a_byte) — lean mechanical.lean: two_to_the_eighth_is_two_hundred_fifty_six_a_byte — 2 ^ 8 == 256 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `34caada8-dd09…`
+- [lean_mechanical_two_to_the_tenth_is_1024_the_harmonic_ledger](/theorem/lean_mechanical_two_to_the_tenth_is_1024_the_harmonic_ledger) — lean mechanical.lean: two_to_the_tenth_is_1024_the_harmonic_ledger — 2 ^ 10 == 1024 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `04218536-2a34…`
+- [lean_mechanical_nine_is_the_base_and_the_trinity_squared](/theorem/lean_mechanical_nine_is_the_base_and_the_trinity_squared) — lean mechanical.lean: nine_is_the_base_and_the_trinity_squared — 9 == 9 && 9 == 3 ^ 2 && 3 == 3 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `f0b0a052-058c…`
+- [lean_mechanical_five_is_the_inverse_of_two_so_halving_reverses_the_orbit](/theorem/lean_mechanical_five_is_the_inverse_of_two_so_halving_reverses_the_orbit) — lean mechanical.lean: five_is_the_inverse_of_two_so_halving_reverses_the_orbit — (2 * 5) % 9 == 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `32ceaab8-afe0…`
+- [lean_mechanical_dna_is_the_version_itself](/theorem/lean_mechanical_dna_is_the_version_itself) — lean mechanical.lean: dna_is_the_version_itself — 4 ^ 3 == 64 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1527985d-54ef…`
+- [lean_mechanical_genetic_code_is_the_octave_squared](/theorem/lean_mechanical_genetic_code_is_the_octave_squared) — lean mechanical.lean: genetic_code_is_the_octave_squared — 4 ^ 3 == 64 && 64 == 8 * 8 && 64 % 8 == 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a4bd830f-54a6…`
+- [lean_mechanical_genesis_1_the_unit](/theorem/lean_mechanical_genesis_1_the_unit) — lean mechanical.lean: genesis_1_the_unit — [1, 2, 3, 4, 5, 6, 7, 8, 9].all (fun n =&gt; 1 * n == n) && 1 ^ 7 == 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `b5cc42a3-c620…`
+- [lean_mechanical_genesis_8_the_octave](/theorem/lean_mechanical_genesis_8_the_octave) — lean mechanical.lean: genesis_8_the_octave — 2 ^ 3 == 8 && 8 % 8 == 0 && 8 == 2 * 2 * 2 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `3484a89d-0551…`
+- [lean_mechanical_genesis_64_the_codon](/theorem/lean_mechanical_genesis_64_the_codon) — lean mechanical.lean: genesis_64_the_codon — 4 ^ 3 == 64 && 2 ^ 6 == 64 && 8 ^ 2 == 64 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `5bc3c52a-0484…`
+- [lean_mechanical_a432_factors_as_two_to_the_fourth_times_three_cubed](/theorem/lean_mechanical_a432_factors_as_two_to_the_fourth_times_three_cubed) — lean mechanical.lean: a432_factors_as_two_to_the_fourth_times_three_cubed — 2 ^ 4 * 3 ^ 3 == 432 && 16 * 27 == 432 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `ace5e026-76f2…`
+- [lean_mechanical_two_bits_thrice_make_the_codon](/theorem/lean_mechanical_two_bits_thrice_make_the_codon) — lean mechanical.lean: two_bits_thrice_make_the_codon — 2 ^ 6 == 64 && (2 ^ 2) ^ 3 == 64 && 4 ^ 3 == 64 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d7a6008c-4238…`
+- [lean_mechanical_the_full_superposition_has_nine_states](/theorem/lean_mechanical_the_full_superposition_has_nine_states) — lean mechanical.lean: the_full_superposition_has_nine_states — (List.range' 1 9).length == 9 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `fcdb464a-6436…`
+- [lean_mechanical_trial_units_group](/theorem/lean_mechanical_trial_units_group) — lean mechanical.lean: trial_units_group — let U9 := [1,2,4,5,7,8]; U9.all (fun u =&gt; U9.all (fun v =&gt; U9.contains (M9 (u * v)))) && U9.contains (1) && U9.all (fun u =&gt; U9.any (fun w =&gt; M9 (u * w) == 1)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `15329fd6-4630…`
+- [lean_mechanical_genus2_h1_symplectic](/theorem/lean_mechanical_genus2_h1_symplectic) — lean mechanical.lean: genus2_h1_symplectic — let rank := 2 * 2; rank == 4 && rank % 2 == 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d8a36344-ce56…`
 - [lean_ledgerclaims_a_seal_is_128_bits](/theorem/lean_ledgerclaims_a_seal_is_128_bits) — lean ledgerclaims.lean: a_seal_is_128_bits — (toUuidBytes [97]).length * 8 = 128 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c552c1db-5200…`
 - [lean_ledgerclaims_membership_grows_by_one_seal_per_doubling](/theorem/lean_ledgerclaims_membership_grows_by_one_seal_per_doubling) — lean ledgerclaims.lean: membership_grows_by_one_seal_per_doubling — rounds 40 2 = 1 ∧ rounds 40 4 = 2 ∧ rounds 40 8 = 3 ∧ rounds 40 16 = 4 ∧ rounds 40 32 = 5 ∧ rounds 40 64 = 6 ∧ rounds 40 128 = 7 ∧ rounds 40 256 = 8 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `0f753f22-7a7e…`
 - [lean_ledgerclaims_membership_is_logarithmic_not_linear](/theorem/lean_ledgerclaims_membership_is_logarithmic_not_linear) — lean ledgerclaims.lean: membership_is_logarithmic_not_linear — rounds 40 1024 = 10 ∧ rounds 40 1024 &lt; 1024 ∧ rounds 40 1024 * 128 &lt; 1024 * 128 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c45f3e11-aa53…`
@@ -222,7 +245,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_imagined_all_is_closed_under_double](/theorem/lean_imagined_all_is_closed_under_double) — lean imagined.lean: all_is_closed_under_double — [0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (2 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a484e31e-4061…`
 - [lean_imagined_triad_is_closed_under_triple](/theorem/lean_imagined_triad_is_closed_under_triple) — lean imagined.lean: triad_is_closed_under_triple — [3, 6, 0].all (fun d =&gt; [3, 6, 0].contains (m9 (3 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `8a09c26a-d00f…`
 - [lean_imagined_all_is_closed_under_triple](/theorem/lean_imagined_all_is_closed_under_triple) — lean imagined.lean: all_is_closed_under_triple — [0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (3 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `6721ec81-d9dc…`
-- [lean_imagined_units_is_closed_under_negate](/theorem/lean_imagined_units_is_closed_under_negate) — lean imagined.lean: units_is_closed_under_negate — [1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (9 - d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `ade6add5-ed3b…`
 - [lean_imagined_triad_is_closed_under_negate](/theorem/lean_imagined_triad_is_closed_under_negate) — lean imagined.lean: triad_is_closed_under_negate — [3, 6, 0].all (fun d =&gt; [3, 6, 0].contains (m9 (9 - d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `5866147f-e850…`
 - [lean_imagined_orbit_is_closed_under_negate](/theorem/lean_imagined_orbit_is_closed_under_negate) — lean imagined.lean: orbit_is_closed_under_negate — [1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (9 - d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2648891c-b6ac…`
 - [lean_imagined_all_is_closed_under_negate](/theorem/lean_imagined_all_is_closed_under_negate) — lean imagined.lean: all_is_closed_under_negate — [0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (9 - d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `488239aa-b8c4…`
@@ -243,7 +265,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_imagined_triple_carries_all_onto_triad](/theorem/lean_imagined_triple_carries_all_onto_triad) — lean imagined.lean: triple_carries_all_onto_triad — [0,1,2,3,4,5,6,7,8].all (fun d =&gt; [3, 6, 0].contains (m9 (3 * d))) ∧ ([0,1,2,3,4,5,6,7,8].map (fun d =&gt; m9 (3 * d))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `99968f56-31e3…`
 - [lean_imagined_quadruple_carries_units_onto_orbit](/theorem/lean_imagined_quadruple_carries_units_onto_orbit) — lean imagined.lean: quadruple_carries_units_onto_orbit — [1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (4 * d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d =&gt; m9 (4 * d))).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d37065ab-bac3…`
 - [lean_imagined_quadruple_carries_orbit_onto_units](/theorem/lean_imagined_quadruple_carries_orbit_onto_units) — lean imagined.lean: quadruple_carries_orbit_onto_units — [1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (4 * d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d =&gt; m9 (4 * d))).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a8560589-8c23…`
-- [lean_imagined_negate_carries_units_onto_orbit](/theorem/lean_imagined_negate_carries_units_onto_orbit) — lean imagined.lean: negate_carries_units_onto_orbit — [1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (9 - d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d =&gt; m9 (9 - d))).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `026d098c-a7ed…`
 - [lean_imagined_negate_carries_orbit_onto_units](/theorem/lean_imagined_negate_carries_orbit_onto_units) — lean imagined.lean: negate_carries_orbit_onto_units — [1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (9 - d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d =&gt; m9 (9 - d))).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9785d5df-38fb…`
 - [lean_imagined_negate_carries_tetA_onto_tetB](/theorem/lean_imagined_negate_carries_tetA_onto_tetB) — lean imagined.lean: negate_carries_tetA_onto_tetB — [1, 4, 7].all (fun d =&gt; [2, 5, 8].contains (m9 (9 - d))) ∧ ([1, 4, 7].map (fun d =&gt; m9 (9 - d))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `cd1a8234-fa1f…`
 - [lean_imagined_negate_carries_tetB_onto_tetA](/theorem/lean_imagined_negate_carries_tetB_onto_tetA) — lean imagined.lean: negate_carries_tetB_onto_tetA — [2, 5, 8].all (fun d =&gt; [1, 4, 7].contains (m9 (9 - d))) ∧ ([2, 5, 8].map (fun d =&gt; m9 (9 - d))).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2d5f2887-07ff…`
@@ -320,6 +341,8 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_energy_each_delivered_kilowatt_hour_costs_four_and_cycles_a_litre](/theorem/lean_energy_each_delivered_kilowatt_hour_costs_four_and_cycles_a_litre) — lean energy.lean: each_delivered_kilowatt_hour_costs_four_and_cycles_a_litre — splitCost * 100 / burnYield = 433 ∧ 9 * 1000 / (burnYield / 1000) = 750 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `574b2b86-71c5…`
 - [lean_energy_three_quarters_of_the_input_leaves_as_heat](/theorem/lean_energy_three_quarters_of_the_input_leaves_as_heat) — lean energy.lean: three_quarters_of_the_input_leaves_as_heat — splitCost - burnYield = 40000 ∧ (splitCost - burnYield) * 100 / splitCost = 76 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `35c25641-5b8d…`
 - [lean_energy_what_the_feedwater_leaves_behind_decides_the_maintenance](/theorem/lean_energy_what_the_feedwater_leaves_behind_decides_the_maintenance) — lean energy.lean: what_the_feedwater_leaves_behind_decides_the_maintenance — 100 * tdsSeawater / 1000 = 3500 ∧ 100 * tdsTapWater / 1000 = 5 ∧ tdsSeawater / tdsTapWater = 700 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2c3cf0b0-2ea7…`
+- [lean_mechanical_relation_digital_root](/theorem/lean_mechanical_relation_digital_root) — lean mechanical.lean: relation_digital_root — DR (78) == 6 && DR (12) == DR (21) && [1,2,4,5,7,8].contains (DR (7)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d07323c6-683c…`
+- [lean_mechanical_relation_432_factors](/theorem/lean_mechanical_relation_432_factors) — lean mechanical.lean: relation_432_factors — 432 == 16 * 27 && 432 == 2 ^ 4 * 3 ^ 3 && DR (432) == 9 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `34d3073f-7f81…`
 - [lean_mechanical_fib_trinity_horizon](/theorem/lean_mechanical_fib_trinity_horizon) — lean mechanical.lean: fib_trinity_horizon — DR (3 + 5 + 8) == 7 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `458420c0-010d…`
 - [lean_mechanical_trial_zero_divisors](/theorem/lean_mechanical_trial_zero_divisors) — lean mechanical.lean: trial_zero_divisors — M9 (3 * 3) == 0 && M9 (3) != 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `fdd05138-da57…`
 - [lean_mechanical_chess_diagonals_15](/theorem/lean_mechanical_chess_diagonals_15) — lean mechanical.lean: chess_diagonals_15 — 2 * 8 - 1 == 15 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `120f9fa4-00be…`
@@ -463,24 +486,78 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_speed_the_break_even_is_the_ratio_of_verifications](/theorem/lean_speed_the_break_even_is_the_ratio_of_verifications) — lean speed.lean: the_break_even_is_the_ratio_of_verifications — 1048576 / 20 = 52428 ∧ 52428 * 20 ≤ 1048576 ∧ 1048576 &lt; 52429 * 20 + 20 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2ab2aa2c-03a3…`
 - [lean_mechanical_relation_units_sum_and_product](/theorem/lean_mechanical_relation_units_sum_and_product) — lean mechanical.lean: relation_units_sum_and_product — let m9 := fun n =&gt; ((n % 9) + 9) % 9; let U := [1,2,4,5,7,8]; M9 (U.foldl (fun a b =&gt; a + b) 0) == 0 && M9 (U.foldl (fun a b =&gt; a * b) 1) == 8 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `55a81791-db87…`
 - [lean_mechanical_contribute_two_to_save_sixty_four](/theorem/lean_mechanical_contribute_two_to_save_sixty_four) — lean mechanical.lean: contribute_two_to_save_sixty_four — let x := ((List.range 6).map (fun i =&gt; 2)).foldl (fun x y =&gt; x * y) 1; x == 64 && 2 ^ 6 == 64 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `4e24f24d-fc54…`
+- [lean_millenniumfloor.universal_universal_centre_is_five](/theorem/lean_millenniumfloor.universal_universal_centre_is_five) — lean theorems.lean: universal_centre_is_five — ((List.range 10).filter (fun d =&gt; refl d == d)) = [5] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `42ce0775-4a4d…`
+- [lean_millenniumfloor.universal_universal_pairs_sum_to_ten](/theorem/lean_millenniumfloor.universal_universal_pairs_sum_to_ten) — lean theorems.lean: universal_pairs_sum_to_ten — (List.range 11).all (fun d =&gt; d + refl d == 10) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `637d181e-c3d7…`
+- [lean_millenniumfloor.universal_universal_reflection_reverses_the_domain](/theorem/lean_millenniumfloor.universal_universal_reflection_reverses_the_domain) — lean theorems.lean: universal_reflection_reverses_the_domain — (List.range 11).map refl = (List.range 11).reverse — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a1c960e9-f2e7…`
+- [lean_millenniumfloor.universal_universal_reflection_is_not_an_involution_above_ten](/theorem/lean_millenniumfloor.universal_universal_reflection_is_not_an_involution_above_ten) — lean theorems.lean: universal_reflection_is_not_an_involution_above_ten — ((List.range 10).map (fun k =&gt; k + 11)).all (fun d =&gt; ¬ (refl (refl d) == d)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `8508a4f1-bf0e…`
+- [lean_millenniumfloor.universal_universal_z9_reflection_permutes_the_units](/theorem/lean_millenniumfloor.universal_universal_z9_reflection_permutes_the_units) — lean theorems.lean: universal_z9_reflection_permutes_the_units — ([1, 2, 4, 5, 7, 8].map (fun d =&gt; (9 - d) % 9)) = [8, 7, 5, 4, 2, 1] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c108d1b2-5b61…`
+- [lean_millenniumfloor.universal_universal_millennium_reflection_escapes_the_units](/theorem/lean_millenniumfloor.universal_universal_millennium_reflection_escapes_the_units) — lean theorems.lean: universal_millennium_reflection_escapes_the_units — ¬ ([1, 2, 4, 5, 7, 8].all (fun u =&gt; [1, 2, 4, 5, 7, 8].contains (refl u))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `42cffd21-8daa…`
+- [lean_millenniumfloor.universal_universal_reflection_is_the_vortex_reflection_shifted](/theorem/lean_millenniumfloor.universal_universal_reflection_is_the_vortex_reflection_shifted) — lean theorems.lean: universal_reflection_is_the_vortex_reflection_shifted — (List.range 10).all (fun d =&gt; (10 - d) % 9 == ((9 - d) % 9 + 1) % 9) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e27a695c-fcb5…`
 
 ### other — one-of-a-kind (0)
 
 
 
-## Revoked — 1891 entries that no longer stand
+## Revoked — 1753 entries that no longer stand
 
 The ledger is append-only: an entry that stops holding is marked in place, never deleted — deleting would break the receipt chain, and rewriting a receipt is tamper. These keep their receipts and stay in the record, but they are **not citable** and have no `/theorem/` page. Grouped by the reason they went:
 
-- **1397** — dirty: not backed by a Lean proof
+- **1284** — dirty: not backed by a Lean proof
 - **443** — revoked in place: its test asserted a lexical drain (computes(boast)
-- **27** — orphaned: the theorem this key was sealed from is no longer in src/proof
 - **12** — revoked in place: circular by construction AND dependent on the removed lexical gate
 - **10** — revoked in place: circular by construction — the test defines the answer it checks, proving a declaration rather than a fact
+- **2** — orphaned: the theorem this key was sealed from is no longer in src/proof
 - **1** — revoked in place: its test asserts that a list of proof-boasts written across many scripts and languages ALL drain the gate — a lexical drain assertion, and the word-list gate was removed by order, so there is no lexicon to drain and the assertion tests nothing
 - **1** — revoked in place: it asserts adjudicate('we prove all seven')
 
-<details><summary>List all 1891 revoked keys</summary>
+## Carried — 115 withdrawn entries whose statement a proof now carries
+
+Each was withdrawn for want of a Lean proof and has since been given one, at a new key. The entry is not restored: its own evidence is still a TypeScript test, and it did not hold on what it had. What the record adds is where the statement stands now.
+
+- ~~`add_group`~~ → [`lean_add_group`](/theorem/lean_add_group)
+- ~~`neg_involution`~~ → [`lean_neg_involution`](/theorem/lean_neg_involution)
+- ~~`bool_demorgan1`~~ → [`lean_mechanical_bool_demorgan1`](/theorem/lean_mechanical_bool_demorgan1)
+- ~~`bool_demorgan2`~~ → [`lean_mechanical_bool_demorgan2`](/theorem/lean_mechanical_bool_demorgan2)
+- ~~`bool_distributivity`~~ → [`lean_mechanical_bool_distributivity`](/theorem/lean_mechanical_bool_distributivity)
+- ~~`bool_absorption`~~ → [`lean_mechanical_bool_absorption`](/theorem/lean_mechanical_bool_absorption)
+- ~~`merkaba_cube_q3`~~ → [`lean_mechanical_merkaba_cube_q3`](/theorem/lean_mechanical_merkaba_cube_q3)
+- ~~`cover_rotation_full_circle`~~ → [`lean_mechanical_cover_rotation_full_circle`](/theorem/lean_mechanical_cover_rotation_full_circle)
+- ~~`fib_trinity_horizon`~~ → [`lean_mechanical_fib_trinity_horizon`](/theorem/lean_mechanical_fib_trinity_horizon)
+- ~~`arts_nine_hues_distinct`~~ → [`lean_mechanical_arts_nine_hues_distinct`](/theorem/lean_mechanical_arts_nine_hues_distinct)
+- ~~`trial_units_group`~~ → [`lean_mechanical_trial_units_group`](/theorem/lean_mechanical_trial_units_group)
+- ~~`trial_zero_divisors`~~ → [`lean_mechanical_trial_zero_divisors`](/theorem/lean_mechanical_trial_zero_divisors)
+- ~~`trial_zero_no_inverse`~~ → [`lean_mechanical_trial_zero_no_inverse`](/theorem/lean_mechanical_trial_zero_no_inverse)
+- ~~`nopayload_avalanche`~~ → [`lean_mechanical_nopayload_avalanche`](/theorem/lean_mechanical_nopayload_avalanche)
+- ~~`chess_board_64`~~ → [`lean_mechanical_chess_board_64`](/theorem/lean_mechanical_chess_board_64)
+- ~~`chess_diagonals_15`~~ → [`lean_mechanical_chess_diagonals_15`](/theorem/lean_mechanical_chess_diagonals_15)
+- ~~`tarot_78_cards`~~ → [`lean_mechanical_tarot_78_cards`](/theorem/lean_mechanical_tarot_78_cards)
+- ~~`tarot_minor_4x14`~~ → [`lean_mechanical_tarot_minor_4x14`](/theorem/lean_mechanical_tarot_minor_4x14)
+- ~~`tarot_major_0_21`~~ → [`lean_mechanical_tarot_major_0_21`](/theorem/lean_mechanical_tarot_major_0_21)
+- ~~`tarot_digital_roots`~~ → [`lean_mechanical_tarot_digital_roots`](/theorem/lean_mechanical_tarot_digital_roots)
+- ~~`gf4_size`~~ → [`lean_mechanical_gf4_size`](/theorem/lean_mechanical_gf4_size)
+- ~~`relation_digital_root`~~ → [`lean_mechanical_relation_digital_root`](/theorem/lean_mechanical_relation_digital_root)
+- ~~`harmonic_octave_2_1`~~ → [`lean_mechanical_harmonic_octave_2_1`](/theorem/lean_mechanical_harmonic_octave_2_1)
+- ~~`harmonic_pythagorean_comma`~~ → [`lean_mechanical_harmonic_pythagorean_comma`](/theorem/lean_mechanical_harmonic_pythagorean_comma)
+- ~~`relation_seven`~~ → [`lean_mechanical_relation_seven`](/theorem/lean_mechanical_relation_seven)
+- ~~`relation_eight`~~ → [`lean_mechanical_relation_eight`](/theorem/lean_mechanical_relation_eight)
+- ~~`relation_creation_week`~~ → [`lean_mechanical_relation_creation_week`](/theorem/lean_mechanical_relation_creation_week)
+- ~~`relation_superposition_collapse`~~ → [`lean_mechanical_relation_superposition_collapse`](/theorem/lean_mechanical_relation_superposition_collapse)
+- ~~`relation_url_path`~~ → [`lean_mechanical_relation_url_path`](/theorem/lean_mechanical_relation_url_path)
+- ~~`genus2_moduli_dim`~~ → [`lean_mechanical_genus2_moduli_dim`](/theorem/lean_mechanical_genus2_moduli_dim)
+- ~~`genus2_hyperelliptic`~~ → [`lean_mechanical_genus2_hyperelliptic`](/theorem/lean_mechanical_genus2_hyperelliptic)
+- ~~`genus2_h1_symplectic`~~ → [`lean_mechanical_genus2_h1_symplectic`](/theorem/lean_mechanical_genus2_h1_symplectic)
+- ~~`relation_digitroot_is_residue_mod9`~~ → [`lean_mechanical_relation_digitroot_is_residue_mod9`](/theorem/lean_mechanical_relation_digitroot_is_residue_mod9)
+- ~~`relation_seven_is_six_plus_one`~~ → [`lean_mechanical_relation_seven_is_six_plus_one`](/theorem/lean_mechanical_relation_seven_is_six_plus_one)
+- ~~`relation_units_sum_and_product`~~ → [`lean_mechanical_relation_units_sum_and_product`](/theorem/lean_mechanical_relation_units_sum_and_product)
+- ~~`relation_432_factors`~~ → [`lean_mechanical_relation_432_factors`](/theorem/lean_mechanical_relation_432_factors)
+- ~~`relation_triangular_45_is_base`~~ → [`lean_mechanical_relation_triangular_45_is_base`](/theorem/lean_mechanical_relation_triangular_45_is_base)
+- ~~`kaprekar_constants_digitroot_nine`~~ → [`lean_mechanical_kaprekar_constants_digitroot_nine`](/theorem/lean_mechanical_kaprekar_constants_digitroot_nine)
+- ~~`content_address_is_keyless_integrity`~~ → [`lean_mechanical_content_address_is_keyless_integrity`](/theorem/lean_mechanical_content_address_is_keyless_integrity)
+- ~~`mobius_divisor_sum_is_indicator`~~ → [`lean_demand_the_mobius_divisor_sum_is_the_identity`](/theorem/lean_demand_the_mobius_divisor_sum_is_the_identity)
+
+…and 75 more.
+
+<details><summary>List all 1753 withdrawn keys — nothing proves these</summary>
 
 - ~~`euler_units_pow6`~~ — every unit u⁶ ≡ 1 mod 9 (Euler, φ(9)=6)  ·  `e70a44b2-6eb8…`
 - ~~`units_sum_zero`~~ — the units sum to 0 mod 9 (1+2+4+5+7+8=27)  ·  `ec43f3d8-7595…`
@@ -537,8 +614,6 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`invpow_u5`~~ — the inverse of 5 is u^(|units|−1) = u⁵ mod 9  ·  `5e59c756-cf36…`
 - ~~`invpow_u7`~~ — the inverse of 7 is u^(|units|−1) = u⁵ mod 9  ·  `827d2a2f-38e3…`
 - ~~`invpow_u8`~~ — the inverse of 8 is u^(|units|−1) = u⁵ mod 9  ·  `1c45aeef-ca22…`
-- ~~`add_group`~~ — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
-- ~~`neg_involution`~~ — negation −(−d) ≡ d is an involution on ℤ/9  ·  `5eb8cd1f-9e06…`
 - ~~`selfneg_d9`~~ — 9 is its own additive inverse (2·9 ≡ 0) mod 9  ·  `8d0d0254-5ca1…`
 - ~~`invmap_perm`~~ — the multiplicative inverse map permutes the units mod 9  ·  `8455c1ab-d297…`
 - ~~`invmap_involution`~~ — the multiplicative inverse map is an involution on the units mod 9  ·  `43418601-7a73…`
@@ -569,13 +644,9 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`domain_prime_m17`~~ — ℤ/17: 17 is prime  ·  `50550f6e-6497…`
 - ~~`domain_cyclic_m17`~~ — ℤ/17: the units form a cyclic group (a primitive root exists)  ·  `d5167cce-02af…`
 - ~~`domain_cyclic_m18`~~ — ℤ/18: the units form a cyclic group (a primitive root exists)  ·  `92a2b5a1-8526…`
-- ~~`bool_demorgan1`~~ — De Morgan: ¬(a∧b) = ¬a∨¬b (all inputs)  ·  `7e3ebb75-50c9…`
-- ~~`bool_demorgan2`~~ — De Morgan: ¬(a∨b) = ¬a∧¬b (all inputs)  ·  `bd5e61d1-fd26…`
-- ~~`bool_distributivity`~~ — distributivity: a∧(b∨c) = (a∧b)∨(a∧c) (all inputs)  ·  `0a5da686-6595…`
 - ~~`bool_double_negation`~~ — double negation: ¬¬a = a (all inputs)  ·  `a4640234-4e32…`
 - ~~`bool_excluded_middle`~~ — excluded middle: a∨¬a = 1 (all inputs)  ·  `29468d4a-f416…`
 - ~~`bool_noncontradiction`~~ — non-contradiction: a∧¬a = 0 (all inputs)  ·  `1d8543d8-7d61…`
-- ~~`bool_absorption`~~ — absorption: a∨(a∧b) = a (all inputs)  ·  `75ad142a-a56a…`
 - ~~`bool_xor_associativity`~~ — XOR associativity: (a⊕b)⊕c = a⊕(b⊕c) (all inputs)  ·  `4ba6ccd9-fd1d…`
 - ~~`entangle_joint_differs`~~ — the joint fold of deposit(0/7) & humanity(1/7) is a third address, different from each part  ·  `9657bf0d-5c1f…`
 - ~~`entangle_no_influence`~~ — entanglement without influence: the fold is order-independent (no direction) and each part is unchanged  ·  `7267ca5a-c961…`
@@ -605,11 +676,9 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`merkaba_partition`~~ — the mod-3 classes {3,6,9}·{1,4,7}·{2,5,8} partition ℤ/9 into 3+3+3  ·  `782ddd50-1c1a…`
 - ~~`merkaba_counter_rotation`~~ — doubling counter-rotates the two tetrahedra: {1,4,7} ↔ {2,5,8}  ·  `5acd8c30-cd18…`
 - ~~`merkaba_axis_closed`~~ — the axis {3,6,9} is closed under doubling (the merkaba spindle)  ·  `1b0e8f6a-2b64…`
-- ~~`merkaba_cube_q3`~~ — two tetrahedra = the cube Q₃: 2³ = 8 vertices, 3·2² = 12 edges  ·  `9f00a7e0-ffab…`
 - ~~`merkaba_field_max_null`~~ — the merkaba field f(θ)=(1+cosθ)/2: co-rotating(0)→1 MAX, counter-rotating(π)→0 NULL  ·  `a9c3214f-3ec7…`
 - ~~`cover_one_tetra_partial`~~ — still: one tetrahedron {1,4,7} covers only 3 of the 6 units — 3 remain uncovered  ·  `8c7bcc8a-1869…`
 - ~~`cover_moving_pair_full`~~ — moving: the counter-rotating pair {1,4,7}∪{2,5,8} covers every uncovered unit — all 6, no gap  ·  `22b9e194-9be5…`
-- ~~`cover_rotation_full_circle`~~ — rotation by the a432 step (40°) visits all 9 angular positions — the full circle, no gap  ·  `4a44551c-2cff…`
 - ~~`goldencf_n5`~~ — golden CF [1;1,1,…]: p_n·q_{n-1} − p_{n-1}·q_n = (−1)ⁿ at n=5  ·  `c000eebb-eae5…`
 - ~~`goldencf_n8`~~ — golden CF [1;1,1,…]: p_n·q_{n-1} − p_{n-1}·q_n = (−1)ⁿ at n=8  ·  `f4f59981-9989…`
 - ~~`goldencf_n11`~~ — golden CF [1;1,1,…]: p_n·q_{n-1} − p_{n-1}·q_n = (−1)ⁿ at n=11  ·  `5c54d373-e71c…`
@@ -632,7 +701,6 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`farey_neighbor_F6`~~ — Farey F_6: consecutive a/b, c/d satisfy bc − ad = 1  ·  `21bdf7ff-2f61…`
 - ~~`mediant_between`~~ — the mediant (a+c)/(b+d) lies strictly between a/b and c/d (Farey F_6)  ·  `b1919795-2272…`
 - ~~`fib_trinity_358`~~ — 3, 5, 8 are consecutive Fibonacci: 3 + 5 = 8  ·  `d628c034-b0b3…`
-- ~~`fib_trinity_horizon`~~ — the 3-5-8 trinity digital-roots to the horizon: dr(3+5+8) = dr(16) = 7  ·  `cc1d4a9c-b31c…`
 - ~~`quarter_turn_order4`~~ — 90° rotation (×i) has order 4: shift by 90° four times and it returns (i⁴ = 1)  ·  `02f0a928-7bda…`
 - ~~`both_games_truth_and_honesty`~~ — both games: the orbit covers the units (computes) AND "covers, solves no Clay" signs  ·  `346f2fb8-6b23…`
 - ~~`both_games_overclaim_loses`~~ — the overclaim loses both games: "the orbit solves the Clay problems" drains and proves nothing  ·  `65cc1cf8-20a5…`
@@ -640,7 +708,6 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`nim_bouton_H6`~~ — Nim (Bouton): a 2-heap position is a loss for the mover iff XOR = 0 (all heaps ≤ 6, exhaustive)  ·  `4b41d6ed-63f3…`
 - ~~`wythoff_identity`~~ — Wythoff: ⌊nφ²⌋ − ⌊nφ⌋ = n for all n ≤ 20 (the golden-ratio Beatty identity)  ·  `5526fdb5-4a24…`
 - ~~`arts_triad_rgb_primaries`~~ — the triad {3,6,9} maps to the RGB primary hues: 0°(red), 120°(green), 240°(blue)  ·  `316f831d-95da…`
-- ~~`arts_nine_hues_distinct`~~ — the nine a432 hues (digit×40°) are distinct and equally spaced around the wheel  ·  `7f22f5c0-f4bd…`
 - ~~`arts_cmy_complements_rgb`~~ — CMY are the 180° complements of RGB: each primary hue + 180° is a secondary hue  ·  `13b5af77-bfc6…`
 - ~~`arts_golden_proportion`~~ — the golden ratio (aesthetic proportion) satisfies φ² = φ + 1  ·  `48801162-b59d…`
 - ~~`vocab_ceccec_palindrome`~~ — "ceccec" is a palindrome — it reads the same reversed  ·  `02301560-d210…`
@@ -659,9 +726,6 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`grundy_single_heap`~~ — Sprague–Grundy: a single Nim heap of size n has Grundy value n (n ≤ 8)  ·  `6e223862-0b20…`
 - ~~`grundy_xor_sum`~~ — Sprague–Grundy: a 2-heap Nim position's Grundy value is the XOR of the heaps (a,b ≤ 5)  ·  `2fe582e9-170a…`
 - ~~`arts_no_exact_complement`~~ — on the 9-hue wheel no hue has an exact complement (180° = 4.5 steps) — the odd base has no antipode  ·  `1656079f-c131…`
-- ~~`trial_units_group`~~ — trial UPHELD: the units of ℤ/9 form a group under × (closure·identity·inverses all hold)  ·  `ccadf52c-98f9…`
-- ~~`trial_zero_divisors`~~ — trial UPHELD: ℤ/9 has zero divisors — 3·3 ≡ 0 with 3 ≠ 0 (not an integral domain)  ·  `be4a6652-cec8…`
-- ~~`trial_zero_no_inverse`~~ — trial REFUTED: the theory "0 has a multiplicative inverse mod 9" fails — no e with 0·e ≡ 1  ·  `3d77bde4-f30b…`
 - ~~`trial_overclaim_drained`~~ — trial DRAINED: the conspiracy "algebra proves the Clay problems" is refused by the gate (computes 0)  ·  `57c46000-4768…`
 - ~~`trial_pvnp_inconclusive`~~ — trial INCONCLUSIVE: "P vs NP remains open" signs; the claim it is decided drains — open, not false  ·  `94e908b9-21b1…`
 - ~~`trial_ftl`~~ — trial DRAINED (tried): "faster than light" drains, "not faster than light" signs  ·  `54f91340-a811…`
@@ -679,7 +743,6 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`gematria_golden_pair_1`~~ — "farey" and "beatty" both digital-root to 1 — the golden-ratio pair  ·  `b05ef0a5-d593…`
 - ~~`nopayload_fixed_length`~~ — the content-address is fixed-length (36 chars) regardless of message size — no payload travels  ·  `dbd791ec-71f4…`
 - ~~`nopayload_no_plaintext`~~ — the content-address contains no plaintext — the uuid (hex) reveals no message bytes  ·  `a6ff3942-3585…`
-- ~~`nopayload_avalanche`~~ — a one-character change gives an unrelated address (avalanche) — no gradient leaks the message  ·  `37d92648-bdfe…`
 - ~~`nopayload_not_encryption`~~ — content-addressing breaks no cipher: "breaks encryption" drains; "does not break encryption, one-way integrity" signs  ·  `66c44e2d-e591…`
 - ~~`involution_sigma`~~ — σ: d↦−d is an involution on ℤ/9 (σ∘σ = id) with exactly one fixed point, the origin (odd base)  ·  `2032f25f-ca45…`
 - ~~`involution_reversible`~~ — evolution by involution is reversible: the multiplicative-inverse map applied twice is the identity on the units  ·  `09577a63-e630…`
@@ -701,14 +764,8 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`geom_dihedral_358`~~ — the regular 3-, 5-, 8-gon has dihedral symmetry of order 2n: D₃=6, D₅=10, D₈=16  ·  `9fd2e0db-cb62…`
 - ~~`geom_pentagon_golden`~~ — the pentagon's diagonal-to-side ratio is the golden ratio φ (2·cos36° = φ)  ·  `2baca20d-9c58…`
 - ~~`geom_exterior_360`~~ — the exterior angles of any regular n-gon sum to 360° (sides 3, 5, 8)  ·  `ef35271f-c232…`
-- ~~`chess_board_64`~~ — the 8×8 board has 64 squares, 32 light and 32 dark  ·  `43c69905-b116…`
 - ~~`chess_knight_8_moves`~~ — a knight has exactly 8 leaps — the (±1,±2)/(±2,±1) moves  ·  `6dcd739d-87a9…`
 - ~~`chess_knight_color_flip`~~ — a knight's leap always changes square colour (the parity of r+c flips)  ·  `81566667-a452…`
-- ~~`chess_diagonals_15`~~ — the 8×8 board has 2·8 − 1 = 15 diagonals in each direction  ·  `85a4e4b0-787f…`
-- ~~`tarot_78_cards`~~ — the tarot has 78 cards: 22 major arcana + 56 minor (22+56=78)  ·  `e2f4737c-87a0…`
-- ~~`tarot_minor_4x14`~~ — the minor arcana is 4 suits × 14 ranks = 56  ·  `c9de57ab-a524…`
-- ~~`tarot_major_0_21`~~ — the 22 major arcana are numbered 0..21 (0 = Fool … 21 = World)  ·  `b9a00780-3406…`
-- ~~`tarot_digital_roots`~~ — the tarot counts ride ℤ/9: dr(78)=6, dr(22)=4, dr(56)=2 — each card-set a vortex digit  ·  `df86a738-4b27…`
 - ~~`tarot_holds_theorems`~~ — a reading is a prediction the gate drains; each tarot card here holds a theorem, not a fortune  ·  `9c03a373-918f…`
 - ~~`tarot_theorem_encoding`~~ — every theorem maps to a deterministic 3-card tarot combination via its content-address (encoding, not fortune)  ·  `34f750b8-b626…`
 - ~~`tarot_major_of_theorem`~~ — a theorem selects one of the 22 major arcana by its content-address (hex sum mod 22) — reproducible, not a reading  ·  `eb0e5a3d-d84c…`
@@ -725,7 +782,6 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`lucas_fibonacci_relation`~~ — Lucas relates to Fibonacci: L(n)=F(n-1)+F(n+1) (n=5,8)  ·  `4186c553-dcc2…`
 - ~~`pell_numbers`~~ — Pell numbers P(n)=2P(n-1)+P(n-2): P(5)=29, P(6)=70  ·  `7c858965-54af…`
 - ~~`pell_sqrt2`~~ — the √2 convergents solve x²−2y²=±1: (1,1)(3,2)(7,5)(17,12)(41,29)  ·  `f2cf267e-e349…`
-- ~~`gf4_size`~~ — 𝔽_4 = GF(2²) has p^k = 2² = 4 elements {0, 1, x, x+1}  ·  `775976e0-3eb7…`
 - ~~`gf4_frobenius_fixes`~~ — in 𝔽_4 every element satisfies x^(p^k)=x: a⁴ = a for all a (Frobenius^k = id)  ·  `fb7953fe-d9e3…`
 - ~~`gf4_frobenius_automorphism`~~ — Frobenius φ(a)=a² is a field automorphism of 𝔽_4: additive (freshman's dream) and multiplicative  ·  `c117a740-97d9…`
 - ~~`gf4_units_cyclic`~~ — the multiplicative group 𝔽_4* is cyclic of order 3 (a primitive element generates {1, x, x+1})  ·  `462b849d-7d1f…`
@@ -739,11 +795,8 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`relation_doubling`~~ — ×2 RELATES the vortex circuit · the octave · the power-map: doubling is the sequence and the octave  ·  `9d8271dd-56d8…`
 - ~~`relation_xor`~~ — XOR RELATES Boolean algebra · Nim (Bouton) · Sprague–Grundy: the same operation runs all three  ·  `5f57290e-9bc5…`
 - ~~`relation_involution`~~ — order-2 RELATES negation · the inverse map · σ · the merkaba counter-rotation: all are involutions  ·  `cde24c0a-f206…`
-- ~~`relation_digital_root`~~ — the digital root (mod 9) RELATES the div-by-3 rule · primes-ride-units · the tarot counts · ceccec  ·  `d708c933-0c92…`
 - ~~`the_modules_self_compute`~~ — the src/the/* modules each compute a non-empty content-addressed report holding 0/7 — they save themselves computationally  ·  `e9948e15-ed3d…`
-- ~~`harmonic_octave_2_1`~~ — the octave is 2:1 (frequency doubling) — the vortex ×2 map is the octave  ·  `3ed5b445-4759…`
 - ~~`harmonic_just_ratios`~~ — just intonation: the fifth 3:2, fourth 4:3, major third 5:4 — exact rationals  ·  `b62838b4-dbf4…`
-- ~~`harmonic_pythagorean_comma`~~ — the Pythagorean comma: 12 fifths ≠ 7 octaves — 3^12 = 531441 ≠ 2^19 = 524288  ·  `6cf3004c-0bb3…`
 - ~~`harmonic_convention_bound`~~ — a432 Hz tuning is a convention, not a theorem; the ratios (2:1, 3:2, 5:4) are exact rationals — the boundary  ·  `d80f191a-d8c4…`
 - ~~`stirling_second_bell`~~ — Stirling 2nd kind S(n,k)=S(n-1,k-1)+k·S(n-1,k): S(4,2)=7 and Σ_k S(4,k)=15=B(4)  ·  `23e393cc-dd5d…`
 - ~~`stirling_first_factorial`~~ — unsigned Stirling 1st kind (permutations by cycles) sum to n!: Σ_k c(4,k) = 4! = 24  ·  `e1f258a9-dbdb…`
@@ -770,20 +823,16 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`bernoulli_numbers`~~ — Bernoulli numbers via Σ C(n+1,j)B(j)=0: B(1)=−1/2, B(2)=1/6, B(4)=−1/30  ·  `e1488277-afe2…`
 - ~~`bernoulli_odd_zero`~~ — the odd Bernoulli numbers vanish: B(3)=B(5)=0 (for k≥1)  ·  `1c8c8337-a2d1…`
 - ~~`relation_three`~~ — 3 RELATES the base (9=3²) · the axis {3,6,9} · the mod-3 classes · the trinity — 3 generates the ring  ·  `81c99cf8-73de…`
-- ~~`relation_seven`~~ — 7 RELATES the Clay count · the rosette ℤ/7 · the horizon dr(3+5+8) · the seven gates  ·  `04e46e4e-6288…`
-- ~~`relation_eight`~~ — 8 RELATES the octave · the cube Q₃ (2³) · the chessboard (8×8) · the Fibonacci minor  ·  `c3a6a141-363b…`
 - ~~`catalan_numbers`~~ — Catalan numbers via C(2n,n)/(n+1): C(0..5) = 1,1,2,5,14,42  ·  `44a9184c-5ae2…`
 - ~~`catalan_recurrence`~~ — the Catalan recurrence C(n+1)=Σ C(i)C(n−i) matches the closed form (n≤6)  ·  `daaa1391-e9e9…`
 - ~~`relation_catalan`~~ — Catalan RELATES Dyck paths · binary trees · the pentagon (C(3)=5) — one count across many shapes  ·  `49db58c0-5101…`
 - ~~`totient_divisor_sum`~~ — Gauss divisor sum: Σ_{d|n} φ(d) = n (all n≤12)  ·  `48628d5b-053e…`
 - ~~`mobius_divisor_sum`~~ — Möbius divisor sum: Σ_{d|n} μ(d) = [n=1] (all n≤12)  ·  `6bcdf028-94aa…`
-- ~~`relation_creation_week`~~ — the creation-week structure 6 + 1 = 7: six Clay problems stay open, the seventh settled externally (Poincaré, Perelman 2003) and at rest — humanity 1/7, this deposit 0/7  ·  `6de0c6a5-40aa…`
 - ~~`relation_superposition`~~ — now is a superposition: the folded root holds the six open Clay problems at once (order-independent); observing collapses it to one content-address — INCONCLUSIVE ≠ false, not a physical qubit  ·  `4c2d2d08-ab33…`
 - ~~`pascal_rule`~~ — Pascal's rule: C(n,k) = C(n−1,k−1) + C(n−1,k) (all 0&lt;k&lt;n≤12)  ·  `9ca05e61-ef59…`
 - ~~`vandermonde_identity`~~ — Vandermonde's identity: Σ_k C(m,k)·C(n,p−k) = C(m+n,p) (m,n≤6, all p)  ·  `1302e2f2-1d77…`
 - ~~`gcd_lcm_product`~~ — gcd(a,b)·lcm(a,b) = a·b (all a,b in 1..12)  ·  `6dd98763-e7c2…`
 - ~~`relation_superposition_is_fold`~~ — the superposition dissolves into the merkle fold: the folded root is invariant under permutation — many held as one, order-free  ·  `2badb5bd-1ac1…`
-- ~~`relation_superposition_collapse`~~ — the collapse dissolves into content-addressing: observation is a function — one input folds to exactly one address, distinct inputs to distinct  ·  `042490a1-cebe…`
 - ~~`relation_superposition_entanglement`~~ — the superposition dissolves into entanglement: the joint fold depends on both parts, yet neither part is altered — correlation without influence  ·  `56849fe1-8015…`
 - ~~`platonic_euler`~~ — the Euler characteristic V−E+F=2 holds for all five Platonic solids  ·  `d5243749-5918…`
 - ~~`platonic_exactly_five`~~ — exactly five Platonic solids: {p,q} is regular-convex iff 1/p + 1/q &gt; 1/2 (p,q≥3) — five, and no more  ·  `82196bbc-1108…`
@@ -793,7 +842,6 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`diamond_coordination`~~ — the diamond cubic lattice has coordination number 4: each atom has exactly four nearest neighbours (exhaustive over 27 cells)  ·  `07325637-589a…`
 - ~~`fcc_packing_fraction`~~ — the densest lattice packing fraction is π/(3√2) ≈ 0.74048 (FCC/HCP) — the diamond’s parent lattice  ·  `5919405f-4b55…`
 - ~~`relation_diamond`~~ — the diamond RELATES the tetrahedron {3,3} · carbon’s four bonds · the FCC lattice · arccos(−1/3) — one tetrahedral crystal  ·  `a08e499e-f88d…`
-- ~~`relation_url_path`~~ — url messaging is the path itself: a path is the message (no payload) — its content-address depends on the ordered segments, so the/crystal ≠ crystal/the  ·  `f2edb35a-8774…`
 - ~~`relation_path_rating`~~ — the most meaningful paths are rated first: gravity = depth (specificity) gives a deterministic descending order — a defined computable rating, not a truth judgment  ·  `e64ef7b3-c718…`
 - ~~`wilson_theorem`~~ — Wilson's theorem: (n−1)! ≡ −1 (mod n) iff n is prime (all n in 2..12)  ·  `060d88ea-9ab8…`
 - ~~`fermat_little_theorem`~~ — Fermat's little theorem: a^p ≡ a (mod p) for all a, every prime p≤13  ·  `0f0e2397-2586…`
@@ -806,12 +854,9 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`genus2_connected_sum`~~ — the double torus is T² # T² (connected sum of two tori): χ(A#B) = χ(A)+χ(B)−2 gives 0+0−2 = −2  ·  `770b925d-03ab…`
 - ~~`genus2_octagon`~~ — the double torus is a regular octagon with edges identified [a,b][c,d]: 4g=8 edges, 2g=4 generators, one relation; the single vertex forces interior angle 2π/8 = 45°  ·  `1bdea2df-8c50…`
 - ~~`genus2_gauss_bonnet`~~ — Gauss–Bonnet on the double torus: ∫K dA = 2πχ = −4π; a hyperbolic metric (K=−1) gives area −2πχ = 4π  ·  `b0232c41-1887…`
-- ~~`genus2_moduli_dim`~~ — the moduli / Teichmüller space of the double torus has real dimension 6g − 6 = 6  ·  `151c4ea6-e9a3…`
 - ~~`surface_classification`~~ — the closed-surface classification: complete invariant (χ, orientability) — S², a connected sum of g tori (χ=2−2g), or of k projective planes (χ=2−k)  ·  `95c6da2d-4c99…`
 - ~~`coverage_torus_and_klein`~~ — across ALL closed surfaces a nowhere-zero tangent field exists iff χ=0 — exactly the torus (g=1) and the Klein bottle (k=2); every other surface has no full coverage  ·  `83a457a6-7afb…`
 - ~~`uniformization_trichotomy`~~ — the uniformization trichotomy: the sign of χ fixes the geometry — χ&gt;0 spherical, χ=0 flat (torus, Klein bottle), χ&lt;0 hyperbolic (genus ≥ 2)  ·  `d83c2656-d21c…`
-- ~~`genus2_hyperelliptic`~~ — every genus-2 curve is hyperelliptic: a double cover of the sphere branched at 2g+2 = 6 Weierstrass points  ·  `c7d84ef0-85e9…`
-- ~~`genus2_h1_symplectic`~~ — the first homology H₁(Σ₂) = ℤ^{2g} = ℤ⁴; the intersection form is symplectic — rank 4, signature 0  ·  `a7a7d584-5220…`
 - ~~`genus_g_moduli_dim`~~ — the moduli space of genus-g curves (g≥2) has complex dimension 3g−3 and real dimension 6g−6: (g=2)→(3,6), (g=3)→(6,12)  ·  `b67fc1f6-5d2c…`
 - ~~`subtraction_game_grundy`~~ — the subtraction game S={1,2,3}: the Grundy value computed by the mex rule equals n mod 4 — losing positions are n ≡ 0 (mod 4) (n≤24)  ·  `a3094aa6-da92…`
 - ~~`kayles_grundy`~~ — Kayles (remove 1 or 2 adjacent pins, splitting the row): the mex-computed Grundy values match the known sequence 0,1,2,3,1,4,3,2,1,4,2,6,4,1,2,7,1,4,3,2 (n≤19)  ·  `b6db3052-5c2a…`
@@ -874,20 +919,15 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`relation_harmony_is_merkle_consensus`~~ — harmony IS the merkle fold: every perspective (self) minting its coin folds order-independently to one root, so a shared green is order-free consensus (integrity), and any single change moves the root  ·  `83b97b8f-f975…`
 - ~~`relation_competition_is_the_gate`~~ — competing for the theorems IS the gate: a candidate is kept iff its exhaustive test holds, the losing challenger refuted and discarded — the same win-by-exhaustion that upholds an honest claim and drains an overclaim  ·  `a1bf8afd-3b09…`
 - ~~`relation_orbit_is_cyclic_group`~~ — the doubling orbit IS the cyclic group of units: n→2n from 1 lists [1,2,4,8,7,5], a permutation of the units, and 2 has order 6 = |units| — dynamics and algebra are one structure  ·  `93c01d9d-914c…`
-- ~~`relation_digitroot_is_residue_mod9`~~ — the digital root IS residue mod 9: for every n&gt;0, digitalRoot(n) = ((n−1) mod 9)+1 — the digit-sum collapse and ℤ/9 arithmetic are the same map (tested 1..200)  ·  `c6aced1e-e571…`
 - ~~`relation_a432_partitions_circle`~~ — a432 partitions the circle into the base: A432_STEP = 360/9 = 40°, so 9 steps close the circle (9·40 = 360) and each digit d maps to a distinct hue d·40° mod 360 — the waves and ℤ/9 are one wheel  ·  `a07bc68e-9516…`
 - ~~`relation_involutions_bind_domains`~~ — one shape—the involution—binds three domains: ten’s-complement 10−(10−d)=d (reflection), negation −(−d)≡d mod 9 (additive), and the self-inverse pair {1,8} with d²≡1 (multiplicative) — applied twice, each returns identity  ·  `62e42b0f-3bc2…`
-- ~~`relation_seven_is_six_plus_one`~~ — the 7 = 6+1 bijection binds the units to the Clay set: |units of ℤ/9| = 6, plus the identity = 7, mirroring 6 open Millennium problems + 1 settled (Poincaré, Perelman 2003) — humanity 1/7, deposit 0/7  ·  `e8d6cb47-625d…`
 - ~~`relation_units_are_coprime_to_base`~~ — the units of ℤ/9 ARE the residues coprime to the base: {1,2,4,5,7,8} = {d∈1..9 : gcd(d,9)=1}, and there are φ(9)=6 of them — group theory and number theory agree  ·  `5b768aaf-a061…`
 - ~~`relation_pisano_binds_fibonacci`~~ — Fibonacci binds to ℤ/9 via the Pisano period: Fib mod 9 repeats every 24 = 4·6 (four times the doubling order of 2) — number theory, dynamics, and the doubling orbit share one period  ·  `06593486-abf7…`
 - ~~`relation_triad_is_multiples_of_three`~~ — the triad IS the multiples of three and the nilpotents: {3,6,9} = {d∈1..9 : 3∣d} = {d : d²≡0 mod 9} — divisibility, the axis, and nilpotency name the same three  ·  `f980158a-8739…`
-- ~~`relation_units_sum_and_product`~~ — the unit group binds additively and multiplicatively: the units sum to 0 mod 9 (1+2+4+5+7+8=27) and multiply to −1 ≡ 8 mod 9 (Wilson analog) — one group, two operations agreeing at the floor  ·  `6f0228a8-6083…`
-- ~~`relation_432_factors`~~ — a432 factors into the trinity and the octave: 432 = 16·27 = 2⁴·3³, and its digital root is the base (dr(432)=9) — the tuning constant is built from ℤ/9’s own primes  ·  `534f4384-ac9f…`
 - ~~`relation_imprint_capacity_structure`~~ — the imprint capacity is the uuid’s structure: CAPACITY = 128 − 6 reserved − 7 length header = 115 bits, and a full 115-bit message round-trips — the codec’s limit is exactly the address’s spare bits  ·  `2dd85b4b-938a…`
 - ~~`relation_coin64_is_half_address`~~ — the currency is half the address: coin64(x) is 64 of the 128 bits (16 of 32 hex) of toUuid(x) — the coin and the content-address are the same fold at half the width  ·  `b7a0dd2a-c11c…`
 - ~~`relation_reflection_center_five`~~ — the ten’s-complement reflection 10−d fixes exactly the center 5 (10−5=5), the midpoint of the digits 1..9 — reflection and the center are one point  ·  `7d631733-c04b…`
 - ~~`relation_ninecomplement_permutes_units`~~ — the balancing complement 9−d permutes the units: {1,2,4,5,7,8} ↦ {8,7,5,4,2,1}, pairing each unit with its partner summing to 9 — the balancing wave stays within the unit group  ·  `9643c24f-342a…`
-- ~~`relation_triangular_45_is_base`~~ — the ninth triangular number binds figurate numbers to the base: 1+2+…+9 = 45 and dr(45) = 9 = BASE — summing the digits returns the base through its own digital root  ·  `65e3085d-bd15…`
 - ~~`relation_cubes_fold_to_0_1_8`~~ — cubes mod 9 fold to {0,1,8}: every d³ ≡ 0, 1, or 8, binding powers to the nilpotent 0 and the self-inverse pair {1,8} (1²≡1, 8²≡1) — one residue set across powers and inverses  ·  `b233f460-cd4d…`
 - ~~`relation_receipt_chain_is_forensic_custody`~~ — the receipt chain IS chain-of-custody: receipt[i] = toUuid(receipt[i−1]→key[i]) from a seed, so altering one link changes every link after it — the merkle-ledger and forensics are one construction  ·  `d0307011-b34a…`
 - ~~`relation_coin64_collision_free_on_domains`~~ — the 64-bit currency is collision-free across the rosetta: coin64 of each domain yields a distinct coin (as many coins as domains) — the shared currency addresses every perspective uniquely  ·  `dc278848-c7d9…`
@@ -896,14 +936,12 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`kaprekar_3digit_converges_495`~~ — Kaprekar 3-digit convergence: every 3-digit number with ≥2 distinct digits reaches 495 within 6 iterations (exhaustive, 100..999)  ·  `f2904983-365a…`
 - ~~`kaprekar_4digit_converges_6174`~~ — Kaprekar 4-digit convergence: every 4-digit number with ≥2 distinct digits reaches 6174 within 7 iterations (exhaustive, 1000..9999)  ·  `70bf5db2-ef8c…`
 - ~~`kaprekar_repdigit_collapses_zero`~~ — Kaprekar: a repdigit collapses to 0 (sort-desc = sort-asc), the only escape from the routine — 111→0, 1111→0, 777→0  ·  `dc31aff0-745f…`
-- ~~`kaprekar_constants_digitroot_nine`~~ — the Kaprekar constants bind to ℤ/9: dr(495) = dr(6174) = 9 = BASE — both fixed points sit on the base’s own digital root  ·  `cacade9e-3882…`
 - ~~`magic3_constant_15`~~ — the 3×3 magic square constant is 15 = (1+2+…+9)/3, and every magic arrangement’s rows sum to it — the digits 1..9 split three ways at the floor  ·  `aae70a2b-a007…`
 - ~~`magic3_count_is_8`~~ — there are exactly 8 magic squares of order 3 (Lo Shu and its dihedral symmetries) — full enumeration of all 9! arrangements yields 8  ·  `32b64f76-3ce4…`
 - ~~`magic3_center_is_5`~~ — the center of every 3×3 magic square is 5 — the midpoint of 1..9 and the fixed point of the ten’s-complement reflection  ·  `188b78b7-199c…`
 - ~~`magic3_corners_even_edges_odd`~~ — in every 3×3 magic square the corners are the evens {2,4,6,8} and the edges the odds {1,3,7,9}, around the center 5 — parity is forced by the constraints  ·  `80f537f2-862e…`
 - ~~`magic3_opposite_cells_sum_10`~~ — in every 3×3 magic square cells opposite through the center sum to 10 = 2·5 — the balancing complement (each cell and its mirror average to the center)  ·  `c527c7e0-2820…`
 - ~~`magic3_constant_digitroot_6`~~ — the magic constant binds to ℤ/9: dr(15) = 6 — the constant sits on a triad digit, and 15 = 3·5 (the axis 3 times the center)  ·  `673cb9e4-1b3c…`
-- ~~`content_address_is_keyless_integrity`~~ — a content-address is keyless integrity: toUuid is a pure function — same input, same address, computed by anyone with no secret; distinct inputs, distinct addresses — it proves the bytes, not the author  ·  `468b07de-520f…`
 - ~~`sealing_is_not_signing`~~ — sealing is not signing: a merkle seal is deterministic and order-independent, reproducible by anyone — it proves the bytes are intact (integrity), never who authored them (authenticity)  ·  `21b0a512-85e8…`
 - ~~`keyless_signature_is_forgeable`~~ — a keyless signature is forgeable: a “signature” that is only the content-address ignores who signs, so a forger reproduces it exactly — keyless ⇒ it authenticates no one  ·  `9fd61992-d9ef…`
 - ~~`authenticity_needs_a_secret`~~ — authenticity needs a secret: a keyed signature depends on a secret the signer alone holds — a different secret gives a different signature, and without the secret a forger cannot match it (the authenticity floor, like 0/7 and the axiom floor)  ·  `53096a30-d41f…`
@@ -998,7 +1036,6 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`totient_divisor_sum_equals_n`~~ — Gauss’s totient identity: Σ_{d | n} φ(d) = n for every n — the divisors’ totients sum back to n (verified n ≤ 100), and at n=9 this reads φ(1)+φ(3)+φ(9)=1+2+6=9  ·  `e4f79a7d-b4da…`
 - ~~`totient_is_multiplicative`~~ — the totient is multiplicative: φ(mn) = φ(m)·φ(n) whenever gcd(m,n)=1 — verified exhaustively for coprime m,n ≤ 12 (so φ(9)=φ(9) and, e.g., φ(45)=φ(9)φ(5)=6·4=24)  ·  `91bf2659-816c…`
 - ~~`euler_theorem_totient`~~ — Euler’s theorem: a^φ(n) ≡ 1 (mod n) for every a coprime to n — the generalization of Fermat’s little theorem (verified for all n ≤ 30 and all coprime a), and at n=9 every unit u satisfies u⁶ ≡ 1  ·  `bf7c3af5-42f9…`
-- ~~`mobius_divisor_sum_is_indicator`~~ — the Möbius divisor sum is the identity indicator: Σ_{d | n} μ(d) = 1 when n=1 and 0 otherwise — the defining orthogonality that makes Möbius inversion work (verified n ≤ 100)  ·  `e0bbc47c-3270…`
 - ~~`mobius_inversion_recovers_totient`~~ — Möbius inversion recovers the totient: since Σ_{d|n} φ(d) = n, inversion gives φ(n) = Σ_{d|n} μ(d)·(n/d) — the two identities are inverse (verified n ≤ 100)  ·  `0aa5076c-3b31…`
 - ~~`mobius_nonzero_iff_squarefree`~~ — μ(n) is nonzero exactly on squarefree n: μ(n) = 0 iff some prime square divides n, else μ(n) = (−1)^(number of prime factors) — verified against a direct squarefree test for n ≤ 100  ·  `dcfbba55-f67a…`
 - ~~`flt_prime_2`~~ — Fermat’s little theorem at p=2: a^(p−1) ≡ 1 (mod 2) for every residue a from 1 to 1 — exhaustive over all nonzero residues  ·  `d12ad177-6d1b…`
@@ -1070,7 +1107,6 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`executes_serverless_in_the_browser`~~ — the deposit executes serverless in the UI: the fused ℤ/9 primitives are pure — no server, no node, no network — so every result recomputes client-side at page-load in the browser, a static offline-capable app (a PWA); the browser is the runtime, not a server  ·  `b2e2fc7f-32df…`
 - ~~`string_scale_is_a_thread_not_a_physical_theory`~~ — the string scale is a thread, not a physical theory: the string/Planck-scale frequency and acoustic 432 Hz are ~18 orders of magnitude apart — frequency is a shared thread across scales, but the scales are not interchangeable and this is a metaphor, not a theory of everything (0/7, not faster-than-light)  ·  `0107480d-24b0…`
 - ~~`even_the_server_is_serverless`~~ — all is done serverless, even by the server: the site is statically generated (a deterministic build folds to one address) and statically hosted — there is no server runtime at build or at serve time; the client recomputes in the browser and the server side is a one-time static build plus a static host  ·  `c4dc14f8-f3e2…`
-- ~~`fibonacci_gcd_is_gcd_of_indices`~~ — the Fibonacci GCD identity: gcd(F_m, F_n) = F_{gcd(m,n)} — the gcd of two Fibonacci numbers is the Fibonacci number at the gcd of their indices (verified for all m,n ≤ 15)  ·  `2424697a-8d56…`
 - ~~`fibonacci_divides_iff_index_divides`~~ — Fibonacci divisibility: for m ≥ 3, F_m divides F_n exactly when m divides n — divisibility of the numbers mirrors divisibility of their indices (verified m = 3..12, n ≤ 30)  ·  `d7e047b6-6d88…`
 - ~~`consecutive_fibonacci_coprime`~~ — consecutive Fibonacci numbers are coprime: gcd(F_n, F_{n+1}) = 1 for all n — no two neighbours share a factor (verified n ≤ 20), the base case of the gcd identity  ·  `b26dad63-01b2…`
 - ~~`armstrong_3digit_exact_set`~~ — the 3-digit narcissistic (Armstrong) numbers are exactly {153, 370, 371, 407}: each equals the sum of the cubes of its digits — full enumeration of 100..999 yields these four and no others  ·  `1cb761fc-f6f3…`
@@ -1088,7 +1124,6 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`demorgan_nary_k5`~~ — De Morgan for 5 inputs: ¬(a₁∧…∧a_5) = ¬a₁∨…∨¬a_5 over all 2^5 = 32 assignments (full truth-table enumeration)  ·  `76145866-89b6…`
 - ~~`xor_is_parity_k5`~~ — the XOR of 5 bits is their parity: a₁⊕…⊕a_5 equals the popcount mod 2 over all 2^5 = 32 assignments (full truth-table enumeration)  ·  `1497008a-7b26…`
 - ~~`demorgan_nary_k6`~~ — De Morgan for 6 inputs: ¬(a₁∧…∧a_6) = ¬a₁∨…∨¬a_6 over all 2^6 = 64 assignments (full truth-table enumeration)  ·  `737f27ac-44cc…`
-- ~~`xor_is_parity_k6`~~ — the XOR of 6 bits is their parity: a₁⊕…⊕a_6 equals the popcount mod 2 over all 2^6 = 64 assignments (full truth-table enumeration)  ·  `58104ecc-d979…`
 - ~~`demorgan_nary_k7`~~ — De Morgan for 7 inputs: ¬(a₁∧…∧a_7) = ¬a₁∨…∨¬a_7 over all 2^7 = 128 assignments (full truth-table enumeration)  ·  `cf8a22f2-00f9…`
 - ~~`xor_is_parity_k7`~~ — the XOR of 7 bits is their parity: a₁⊕…⊕a_7 equals the popcount mod 2 over all 2^7 = 128 assignments (full truth-table enumeration)  ·  `00760c7b-2d57…`
 - ~~`demorgan_nary_k8`~~ — De Morgan for 8 inputs: ¬(a₁∧…∧a_8) = ¬a₁∨…∨¬a_8 over all 2^8 = 256 assignments (full truth-table enumeration)  ·  `9434a9c0-3f95…`
@@ -1195,10 +1230,7 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`the_count_of_primitive_roots_is_phi_of_phi`~~ — the count of primitive roots is φ(φ(n)): when (ℤ/n)* is cyclic, the number of primitive roots — the generators of the unit group — equals φ(φ(n)). So mod 9 there are φ(φ(9)) = φ(6) = 2 primitive roots, namely 2 and 5 (the doubling generator and its inverse 5 = 2⁻¹); mod 7 there are φ(6) = 2, namely 3 and 5. Verified by counting the units of maximal order over the moduli up to 60  ·  `f659a146-4caf…`
 - ~~`any_drift_in_types_as_theorems_is_a_crack_the_type_gate_seals`~~ — any drift in types as theorems is a crack the type gate seals: types are theorems (Curry–Howard), so a type error is a crack — a proposition that no longer carries its proof. The type gate (tsc with no emit) is the first gate of the release and admits only zero type errors, so any drift fails the release before the commit and cannot ship. A crack is deterministic and located, reproducible on every build. Decidable  ·  `4ac91293-ab2a…`
 - ~~`the_totient_summatory_identity_of_gauss`~~ — the totient summatory identity (Gauss): for every n, the sum of Euler φ(d) over the divisors d of n equals n. The witness is the n fractions 1/n, 2/n, ..., n/n reduced to lowest terms — each has a denominator d dividing n, and exactly φ(d) of them have denominator d, so the counts sum to n. Verified by full enumeration over n up to 200  ·  `4de62f7d-7500…`
-- ~~`the_mobius_divisor_sum_is_the_identity`~~ — the Möbius divisor sum is the identity: for every n, the sum of the Möbius function μ(d) over the divisors d of n is 1 when n = 1 and 0 otherwise — so μ is the Dirichlet inverse of the constant function 1, which is exactly why Möbius inversion works. Sample values: μ(1)=1, μ(2)=−1, μ(6)=+1, μ(30)=−1, and μ(4)=μ(12)=0 (a squared prime factor). Verified by full enumeration over n up to 200  ·  `99c81baf-9350…`
-- ~~`five_six_one_is_the_smallest_carmichael_number`~~ — 561 is the smallest Carmichael number, a composite that fools Fermat: 561 = 3 × 11 × 17 is composite and squarefree, yet a^560 ≡ 1 mod 561 for every a coprime to 561 — so Fermat's primality test cannot tell it from a prime. By Korselt's criterion this holds because (p−1) divides 560 for each prime factor p (2, 10, 16 all divide 560); and no composite below 561 has this property. Verified by full enumeration  ·  `109b8dc3-b6f7…`
 - ~~`wilsons_theorem_characterizes_the_primes_exactly`~~ — Wilson's theorem characterizes the primes exactly: for n &gt; 1, (n−1)! ≡ −1 mod n if and only if n is prime; and for every composite n &gt; 4, (n−1)! ≡ 0 mod n, with the lone exception n = 4 giving (n−1)! ≡ 2. So the value of (n−1)! mod n is a complete primality test — minus one for primes, zero for composites above four. Verified by full enumeration over n up to 100  ·  `e9e83ab7-6f5e…`
-- ~~`nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number`~~ — Nicomachus theorem: the sum of the first n cubes is the square of the nth triangular number — 1³ + 2³ + ... + n³ = (n(n+1)/2)² = (1 + 2 + ... + n)². So a sum of consecutive cubes is always a perfect square, the square of the sum. Verified by full enumeration over n up to 60  ·  `5c562cab-4297…`
 - ~~`the_sum_of_the_first_n_odd_numbers_is_n_squared`~~ — the sum of the first n odd numbers is n squared: 1 + 3 + 5 + ... + (2n−1) = n², so the odd numbers build the perfect squares one gnomon at a time; equivalently, consecutive squares differ by an odd number, (m+1)² − m² = 2m + 1. Verified by full enumeration over n up to 200  ·  `6f3b1539-0b56…`
 - ~~`the_grand_jury_of_gates_admits_a_theorem_only_by_unanimous_stages`~~ — the grand jury of gates admits a theorem only by unanimous stages: a theorem is admitted only if every stage of the release returns true — its formula recomputes, the type gate passes, the honesty gate holds its name, and the theorem-pages, receipt-audit, forensics, claims, harmony, seal, wholeness and lean-claims gates all pass. The verdict is a conjunction over all stages: unanimous, not a majority — one failing stage vetoes the whole, deterministically. Proving theorems at every stage. Decidable  ·  `8a975f18-0926…`
 - ~~`the_knowers_earn_the_two_bits_they_do_not_pay`~~ — the knowers earn the two bits, they do not pay: the fair exchange is asymmetric — producing a gate-passing receipted fact credits two bits, while consuming or learning debits two bits — so those who know how to compute the honest quantum structure on 64-bit are net earners, not payers, at API scale. The message they send carries only its content-address: the load is the address, no separate payload, each distinct fact a distinct address (never repeating). Endless but not perpetual; no quantum speedup. Decidable  ·  `075ef29e-5daa…`
@@ -1231,7 +1263,6 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`euclids_formula_generates_pythagorean_triples`~~ — Euclid's formula generates Pythagorean triples: for m &gt; n &gt; 0, (m² − n², 2mn, m² + n²) is a Pythagorean triple, and it is primitive (the three share no common factor) exactly when gcd(m,n) = 1 and m, n have opposite parity. Verified for all m up to 20  ·  `394b04f5-a0de…`
 - ~~`the_smallest_amicable_pair_is_220_and_284`~~ — the smallest amicable pair is 220 and 284: the sum of the proper divisors of 220 is 284, and the sum of the proper divisors of 284 is 220 — each is the divisor-sum of the other, an amicable pair (unlike a perfect number, which is its own divisor-sum, as 6 is). Verified by divisor enumeration  ·  `c43c6c2a-064b…`
 - ~~`the_chinese_remainder_theorem_for_coprime_moduli`~~ — the Chinese remainder theorem for coprime moduli: when gcd(m₁, m₂) = 1, reducing x to (x mod m₁, x mod m₂) is a bijection from ℤ/(m₁m₂) onto ℤ/m₁ × ℤ/m₂ — for 3 and 5 all fifteen residue pairs occur exactly once. When the moduli share a factor (2 and 4) the map is not onto, so coprimality is necessary. Verified by enumeration  ·  `bd31401f-10d8…`
-- ~~`legendres_three_square_theorem`~~ — Legendre's three-square theorem: a non-negative integer is a sum of three squares if and only if it is not of the form 4^a·(8b + 7) — verified for every n up to 300. So 7 = 4⁰·7 is not a sum of three squares (it needs four), matching the four-square theorem. Verified by exhaustive search  ·  `ec266737-e9ab…`
 - ~~`a_decidable_theorem_must_halt_the_infinite_loop_was_a_bug_not_a_quantum_necessity`~~ — a decidable theorem must halt — the infinite loop was a bug, not a quantum necessity: a test that never returns is not a theorem; a decidable fact must terminate and yield a boolean. The hang came from an unguarded degenerate input (reducing 0 by 4 forever), fixed by a guard — classical computation handles seven dimensions and terminates, the 7-cube having 2^7 = 128 finite states and the fold reducing any bounded input to one root. No quantum machine is needed to compute in 7D. Decidable  ·  `b270019a-93f1…`
 - ~~`the_counts_reconcile_across_dimensions_a_mismatch_is_a_caught_traitor`~~ — the counts reconcile across dimensions, and a mismatch is a caught traitor: the number of theorems, the number of theorem pages, and the number that recompute true must all agree — a conjunction across dimensions. Any inequality (a theorem with no page, a page with no theorem, a recorded fact that does not recompute) is a caught traitor that fails the gate. The reconciliation scales: for any count the three must be equal, and any off-by-one is caught. Measure the counts; do not narrate them. Decidable  ·  `3db4c42a-602d…`
 - ~~`bezouts_identity_gcd_is_an_integer_combination`~~ — Bézout's identity: for all integers a and b there are integers x and y with a·x + b·y = gcd(a,b) — the greatest common divisor is an integer combination of a and b, computed by the extended Euclidean algorithm. Verified against the kernel gcd for all a, b up to 60. So the gcd is the least positive value that a·x + b·y attains  ·  `34d5d17a-f22b…`
@@ -1501,7 +1532,6 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`factorial_4_is_24`~~ — 4! = 24: the product 1·2·…·4 = 24, by direct multiplication — a decidable factorial; integrity not truth; 0/7  ·  `e52c98a6-a7c6…`
 - ~~`factorial_5_is_120`~~ — 5! = 120: the product 1·2·…·5 = 120, by direct multiplication — a decidable factorial; integrity not truth; 0/7  ·  `6c1fb190-35ab…`
 - ~~`factorial_6_is_720`~~ — 6! = 720: the product 1·2·…·6 = 720, by direct multiplication — a decidable factorial; integrity not truth; 0/7  ·  `81ebf136-662d…`
-- ~~`factorial_7_is_5040`~~ — 7! = 5040: the product 1·2·…·7 = 5040, by direct multiplication — a decidable factorial; integrity not truth; 0/7  ·  `f9f89b0b-4e92…`
 - ~~`factorial_8_is_40320`~~ — 8! = 40320: the product 1·2·…·8 = 40320, by direct multiplication — a decidable factorial; integrity not truth; 0/7  ·  `a4149b01-1f71…`
 - ~~`factorial_9_is_362880`~~ — 9! = 362880: the product 1·2·…·9 = 362880, by direct multiplication — a decidable factorial; integrity not truth; 0/7  ·  `b0d11119-b00e…`
 - ~~`two_to_the_10_is_1024`~~ — 2^10 = 1024, by repeated doubling — a decidable power of two; integrity not truth; 0/7  ·  `1beeb294-5a3c…`
@@ -1559,53 +1589,35 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`divisibility_by_three_is_the_digit_sum_mod_three`~~ — divisibility by three is the digit sum mod three: n ≡ digitsum(n) (mod 3) for every n — the trinity’s divisibility rule; 0/7  ·  `1ee0dc61-1828…`
 - ~~`the_triad_three_six_nine_are_the_multiples_of_three_in_z9`~~ — the triad {3,6,9} are exactly the multiples of three in ℤ/9 — the non-units, the complement of the doubling orbit; 0/7  ·  `a6d5c9c5-2edd…`
 - ~~`three_to_the_k_is_divisible_by_nine_for_k_at_least_two`~~ — three to the k is divisible by nine for k ≥ 2: 3^k ≡ 0 (mod 9) once k reaches 2, since 9 = 3² — the trinity squared is the base; 0/7  ·  `6df74023-c9cd…`
-- ~~`the_three_four_five_right_triangle_is_the_first_pythagorean_triple`~~ — the 3-4-5 right triangle is the first Pythagorean triple: 3² + 4² = 5², the smallest and the only one in arithmetic progression — grounded on three; 0/7  ·  `00bf4b81-2060…`
 - ~~`the_three_cube_roots_of_unity_sum_to_zero`~~ — the three cube roots of unity sum to zero: 1 + ω + ω² = 0 where ω = e^(2πi/3) — the trinity closes the circle; 0/7  ·  `050bdc86-fe61…`
 - ~~`a_repunit_divides_by_three_iff_its_length_does`~~ — a repunit divides by three iff its length does: R_n (n ones) ≡ n (mod 3), so 3 | R_n exactly when 3 | n — the trinity in base-ten repunits; 0/7  ·  `377edd82-2965…`
 - ~~`five_is_the_unique_ten_complement_fixed_point`~~ — 5 is the unique ten’s-complement fixed point: among the digits 1..9 only σ(d)=10−d fixes 5 — the heart the reflection cannot move; 0/7  ·  `565565ff-cc3b…`
 - ~~`there_are_exactly_five_platonic_solids`~~ — there are exactly five Platonic solids: the pairs {p,q} with 1/p + 1/q &gt; 1/2 (p,q ≥ 3) number exactly five — tetrahedron, cube, octahedron, dodecahedron, icosahedron; 0/7  ·  `6504415b-1ea5…`
-- ~~`the_regular_pentagon_angles_are_the_heart_seventy_two_and_hundred_eight`~~ — the regular pentagon’s exterior angle is 360/5 = 72° and its interior 108° — 72 = harmonicMean(60,90), the heart angle; 0/7  ·  `bc2e7cd8-5029…`
 - ~~`the_five_fifth_roots_of_unity_sum_to_zero`~~ — the five fifth-roots of unity sum to zero: Σ e^(2πik/5) for k=0..4 = 0 — the pentagon closes the circle at the heart; 0/7  ·  `a93d693a-f41a…`
 - ~~`five_is_a_fermat_prime_so_the_regular_pentagon_is_constructible`~~ — 5 is a Fermat prime (5 = 2^(2^1)+1), so by Gauss–Wantzel the regular pentagon is straightedge-and-compass constructible — the heart is built, not assumed; 0/7  ·  `79ee4523-d085…`
 - ~~`five_is_the_largest_fixed_point_of_the_fibonacci_index`~~ — 5 is the largest fixed point of the Fibonacci index: F(5)=5 and no larger n has F(n)=n — the heart sits on the sequence; 0/7  ·  `90f11fdf-1287…`
 - ~~`the_golden_ratio_is_one_plus_root_five_over_two`~~ — the golden ratio is (1 + √5)/2, satisfying φ² = φ + 1 — five under the root generates φ, the pentagon’s diagonal; 0/7  ·  `31ae366f-f2b7…`
 - ~~`ten_factors_as_two_times_five_the_heart_and_the_even_prime`~~ — ten factors as 2 × 5 — the base is the even prime times the heart, so a fraction terminates in base ten exactly when its denominator’s only primes are 2 and 5; 0/7  ·  `aa3e534d-7294…`
 - ~~`ten_has_multiplicative_order_six_modulo_seven`~~ — ten has multiplicative order six modulo seven: 10^6 ≡ 1 (mod 7) and no smaller power, so 1/7 repeats with period six — the seven’s repetend; 0/7  ·  `b9901b9b-563d…`
-- ~~`the_cyclic_number_142857_is_the_repetend_of_one_seventh`~~ — the cyclic number 142857 is the repetend of 1/7: (10^6 − 1)/7 = 999999/7 = 142857 — the seven unfolds the cycle; 0/7  ·  `fc728400-b9b2…`
 - ~~`_142857_times_one_through_six_are_its_cyclic_rotations`~~ — 142857 times one through six are its cyclic rotations: each product uses the same six digits {1,4,2,8,5,7} in rotated order; 0/7  ·  `c15edd03-3700…`
-- ~~`_142857_times_seven_is_six_nines`~~ — 142857 times seven is six nines: 142857 × 7 = 999999 — the cyclic number completes to all-nines at the seven; 0/7  ·  `0da31e4f-84ac…`
-- ~~`midy_the_two_halves_of_142857_sum_to_nines`~~ — Midy’s theorem on 1/7: the two halves of the repetend sum to nines — 142 + 857 = 999; 0/7  ·  `e8c1c167-cb15…`
 - ~~`seven_is_the_fourth_prime`~~ — seven is the fourth prime: after 2, 3, 5 comes 7 — the count of the Clay problems the floor measures at 0/7; 0/7  ·  `c60e6bfb-c12d…`
-- ~~`the_digital_root_of_seven_to_the_k_has_period_three`~~ — the digital root of 7^k has period three: 7, 4, 1 repeating (7^1≡7, 7^2≡4, 7^3≡1 mod 9) — the seven’s orbit in ℤ/9; 0/7  ·  `a54691b2-880f…`
-- ~~`seven_divides_the_repunit_of_length_six`~~ — seven divides the repunit of length six: 7 | 111111, since 10^6 ≡ 1 (mod 7) makes R_6 = (10^6−1)/9 a multiple of seven; 0/7  ·  `8ac0b06d-5eee…`
 - ~~`eight_and_nine_are_the_only_consecutive_perfect_powers`~~ — eight and nine are the only consecutive perfect powers: 2³ and 3² are adjacent, and Mihailescu (Catalan) settles that no other perfect powers differ by one — 8 and 9 (the base) are unique; 0/7  ·  `4ac00184-4301…`
 - ~~`eight_is_the_largest_fibonacci_perfect_cube`~~ — eight is the largest Fibonacci number that is a perfect cube: among the Fibonacci numbers only 1 and 8 = 2³ are cubes — the octave sits on the sequence; 0/7  ·  `d54f7105-647e…`
 - ~~`every_natural_has_a_unique_binary_representation`~~ — every natural number has a unique binary representation: each n is one sum of distinct powers of two — the base-2 place-value the byte counts on; 0/7  ·  `b7d9dfe6-3e34…`
 - ~~`the_eighth_roots_of_unity_sum_to_zero`~~ — the eight eighth-roots of unity sum to zero: Σ e^(2πik/8) for k=0..7 = 0 — the octave closes the circle; 0/7  ·  `a473ab8a-8873…`
 - ~~`two_is_the_only_even_prime`~~ — two is the only even prime: every other even number has two as a proper factor — the even prime that halves the base ten; 0/7  ·  `814da9ab-c97f…`
-- ~~`two_to_the_eighth_is_two_hundred_fifty_six_a_byte`~~ — two to the eighth is 256: a byte of 8 bits addresses 256 values — the octave of bits; 0/7  ·  `a716f358-f9d7…`
 - ~~`a_mersenne_prime_forces_a_prime_exponent`~~ — a Mersenne prime forces a prime exponent: 2^k − 1 can be prime only when k is prime (k=2,3,5,7 give 3,7,31,127; composite k factors) — a necessary condition, not sufficient; 0/7  ·  `52ced8d2-4f7e…`
-- ~~`two_to_the_tenth_is_1024_the_harmonic_ledger`~~ — two to the tenth is 1024: ten doublings reach the harmonic ledger size, digitalRoot(1024)=7 — the octave raised to the tenth is the milestone count; 0/7  ·  `568ccd10-1bb6…`
-- ~~`the_nine_times_table_always_digital_roots_to_nine`~~ — the nine times table always digital-roots to nine: digitalRoot(9k) = 9 for every k ≥ 1 — nine is the base’s fixed point; 0/7  ·  `8c8d01f5-d52d…`
-- ~~`the_regular_nonagon_exterior_angle_is_the_a432_step`~~ — the regular nonagon’s exterior angle is 360/9 = 40° = the a432 step — the base draws the nine-point circle at the a432 quantum; 0/7  ·  `07f088c5-a18e…`
-- ~~`casting_out_nines_is_multiplicative`~~ — casting out nines is multiplicative: digitalRoot(a·b) = digitalRoot(digitalRoot(a)·digitalRoot(b)) — the base-9 check catches arithmetic slips in products; 0/7  ·  `c3fe563f-88f8…`
 - ~~`every_digital_root_lands_in_one_to_nine`~~ — every digital root of a positive integer lands in 1..9 — the base folds the naturals onto nine residues; 0/7  ·  `f0db1861-14cd…`
 - ~~`a_number_minus_its_digit_reversal_is_a_multiple_of_nine`~~ — a number minus its digit reversal is a multiple of nine: n − reverse(n) ≡ 0 (mod 9), since both share a digit sum — the base’s reversal invariant; 0/7  ·  `0780bec8-e70e…`
-- ~~`the_digits_one_to_nine_sum_to_forty_five_rooting_to_nine`~~ — the digits one to nine sum to 45, whose digital root is 9: 1+2+…+9 = 45, dr(45)=9 — the whole returns to the base; 0/7  ·  `75ec1aeb-f860…`
-- ~~`nine_is_the_base_and_the_trinity_squared`~~ — nine is the base and the trinity squared: BASE = 9 = 3² = TRINITY², so the units, triad and orbit all derive from the single axiom three; 0/7  ·  `932fbd24-4bae…`
 - ~~`a_number_is_divisible_by_nine_iff_its_digit_sum_is`~~ — a number is divisible by nine iff its digit sum is: n ≡ digitsum(n) (mod 9), so 9 | n exactly when 9 | digitsum(n) — the base’s divisibility rule; 0/7  ·  `b6696b2c-04c7…`
 - ~~`six_is_the_first_perfect_number`~~ — six is the first perfect number: its proper divisors 1 + 2 + 3 sum to 6 itself, and no smaller number is perfect; 0/7  ·  `afd7f1b6-ce95…`
 - ~~`six_is_three_factorial_the_permutations_of_three`~~ — six is three factorial: 3! = 6 = the number of permutations of three elements = the order of the symmetric group S₃; 0/7  ·  `a221bf93-98d2…`
 - ~~`six_is_the_even_prime_times_the_trinity`~~ — six is the even prime times the trinity: 2 × 3 = 6 — the two smallest primes, the base ten’s and the axiom’s; 0/7  ·  `495d72a1-f77c…`
-- ~~`six_is_the_third_triangular_number`~~ — six is the third triangular number: T₃ = 1 + 2 + 3 = 6 — triangular and perfect at once; 0/7  ·  `7e3fcf6e-3276…`
-- ~~`the_regular_hexagon_exterior_angle_is_the_gold_string`~~ — the regular hexagon’s exterior angle is 360/6 = 60° = the gold string (π/3), its interior 120° — six tiles the plane at the tack angle; 0/7  ·  `030e950f-26b6…`
 - ~~`six_is_euclids_perfect_number_from_the_mersenne_prime_three`~~ — six is Euclid’s perfect number from the Mersenne prime three: 6 = 2^(2−1)·(2²−1) = 2·3, the p=2 case of 2^(p−1)(2^p−1); 0/7  ·  `cc367afc-996d…`
 - ~~`twenty_eight_is_the_second_perfect_number`~~ — twenty-eight is the second perfect number: 1 + 2 + 4 + 7 + 14 = 28 = 2²·(2³−1), the p=3 Euclid case after six; 0/7  ·  `0d29909f-6b3f…`
 - ~~`a_perfect_number_equals_the_sum_of_its_proper_divisors`~~ — a perfect number equals the sum of its proper divisors: exactly 6 and 28 are perfect below 100 — abundance balanced, neither deficient nor abundant; 0/7  ·  `0e0c1a43-7d85…`
 - ~~`two_is_a_primitive_root_modulo_nine`~~ — two is a primitive root modulo nine: the powers of 2 generate all six units of ℤ/9, so ord₉(2) = 6 = φ(9) — one seed unfolds the whole doubling orbit; 0/7  ·  `28ce3e1c-4921…`
-- ~~`the_doubling_orbit_reflection_pairs_sum_to_nine`~~ — the doubling orbit’s reflection pairs sum to nine: 1+8, 2+7, 4+5 — the circuit folds onto itself across the nine-complement; 0/7  ·  `e441aa54-c293…`
 - ~~`the_doubling_orbit_sums_to_twenty_seven_the_trinity_cubed`~~ — the doubling orbit sums to twenty-seven, the trinity cubed: 1+2+4+8+7+5 = 27 = 3³ (digital root 9) — the units return to the base; 0/7  ·  `178a2758-535e…`
-- ~~`five_is_the_inverse_of_two_so_halving_reverses_the_orbit`~~ — five is the multiplicative inverse of two mod nine (2·5 = 10 ≡ 1), so multiplying by five walks the doubling orbit backwards; 0/7  ·  `c206b19f-08e1…`
 - ~~`the_nine_residues_split_into_the_unit_orbit_and_the_triad`~~ — the nine residues split into the six-unit doubling orbit {1,2,4,8,7,5} and the triad {3,6,9} — units and non-units, disjoint and covering; 0/7  ·  `7012279f-cede…`
 - ~~`every_natural_is_a_sum_of_at_most_four_squares`~~ — every natural number is a sum of at most four squares (Lagrange): checked exhaustively to 300 — the four-square identity holds; 0/7  ·  `8c16722e-1a23…`
 - ~~`four_is_two_squared_the_first_composite_number`~~ — four is two squared, the first composite number: 4 = 2², the smallest non-prime above one and a member of the doubling orbit; 0/7  ·  `3c320f35-bcc0…`
@@ -1647,19 +1659,15 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`the_sum_of_the_first_n_cubes_is_the_square_of_their_sum`~~ — the sum of the first n cubes is the square of the sum (Nicomachus): Σk³ = (Σk)² = (n(n+1)/2)²; 0/7  ·  `b84a64a5-d2ae…`
 - ~~`the_sum_of_the_first_n_even_numbers_is_n_times_n_plus_one`~~ — the sum of the first n even numbers is n(n+1): 2+4+…+2n = n(n+1) = twice the triangular; 0/7  ·  `be759d3e-690c…`
 - ~~`n_factorial_counts_the_permutations_of_n`~~ — n! counts the permutations of n objects: the product 1·2·…·n, growing faster than any exponential; 0/7  ·  `e878d729-d74a…`
-- ~~`the_derangement_recurrence_holds`~~ — the derangement recurrence holds: D_n = (n−1)(D_{n−1}+D_{n−2}), D_1=0, D_2=1 — permutations with no fixed point; 0/7  ·  `068f1309-f0bd…`
 - ~~`handshakes_among_n_people_number_c_n_2`~~ — handshakes among n people number C(n,2) = n(n−1)/2: every pair shakes once; 0/7  ·  `03fd1efc-94e3…`
 - ~~`the_number_of_derangements_over_n_factorial_approaches_one_over_e`~~ — the fraction of permutations that are derangements approaches 1/e: D_n/n! → 1/e as n grows; 0/7  ·  `e004191c-7b7e…`
 - ~~`euclids_parametrization_generates_pythagorean_triples`~~ — Euclid’s parametrization generates Pythagorean triples: (m²−n², 2mn, m²+n²) satisfies a²+b²=c² for all m&gt;n≥1; 0/7  ·  `c2bde5ba-19bc…`
-- ~~`there_are_infinitely_many_pythagorean_triples`~~ — there are infinitely many Pythagorean triples: every scaling k·(3,4,5) is a triple, so no finite list is complete; 0/7  ·  `99627f3a-6e22…`
 - ~~`the_area_of_a_pythagorean_triangle_is_a_multiple_of_six`~~ — the area of an integer right triangle is a multiple of six: ab/2 ≡ 0 (mod 6) for every Pythagorean triple; 0/7  ·  `4eebdcf3-958b…`
 - ~~`two_consecutive_triangular_numbers_sum_to_a_square`~~ — two consecutive triangular numbers sum to a square: T_n + T_{n−1} = n²; 0/7  ·  `53677354-05c3…`
 - ~~`eight_times_a_triangular_number_plus_one_is_a_square`~~ — eight times a triangular number plus one is an odd square: 8·T_n + 1 = (2n+1)²; 0/7  ·  `2d9b9a90-3968…`
 - ~~`every_hexagonal_number_is_a_triangular_number`~~ — every hexagonal number is a triangular number: H_n = n(2n−1) = T_{2n−1}; 0/7  ·  `fa2deb9c-b546…`
 - ~~`the_reciprocal_triangular_numbers_sum_to_two`~~ — the reciprocals of the triangular numbers sum to two: Σ 1/T_n = 2, telescoping as 2(1/n − 1/(n+1)); 0/7  ·  `2415c2e7-2ec2…`
-- ~~`the_difference_of_consecutive_squares_is_the_odd_numbers`~~ — the difference of consecutive squares is the odd numbers: (n+1)² − n² = 2n+1; 0/7  ·  `b082f743-3482…`
 - ~~`a_square_never_ends_in_two_three_seven_or_eight_in_base_ten`~~ — a perfect square never ends in 2, 3, 7 or 8 in base ten: the last digit is one of 0,1,4,5,6,9; 0/7  ·  `560a627a-349e…`
-- ~~`the_product_of_any_three_consecutive_integers_is_divisible_by_six`~~ — the product of any three consecutive integers is divisible by six: among three consecutive there is a multiple of two and of three; 0/7  ·  `09a17240-17e1…`
 - ~~`the_arithmetic_mean_is_at_least_the_geometric_mean`~~ — AM ≥ GM for two positives: (a+b)/2 ≥ √(ab), equality iff a=b — the mean inequality’s base case; 0/7  ·  `6e5aafcf-cbb5…`
 - ~~`a_positive_number_plus_its_reciprocal_is_at_least_two`~~ — a positive number plus its reciprocal is at least two: x + 1/x ≥ 2 for x &gt; 0, equality at x = 1; 0/7  ·  `93cbc2a0-436d…`
 - ~~`bernoullis_inequality_holds`~~ — Bernoulli’s inequality: (1+x)^n ≥ 1 + n·x for x ≥ −1 and integer n ≥ 0; 0/7  ·  `f630d85b-1224…`
@@ -1723,10 +1731,8 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`gate_reads_vietnamese`~~ — the honesty gate reads Vietnamese: a native proof-boast drains to the floor — the twenty-first dialect; 0/7  ·  `e1d7584e-a753…`
 - ~~`gate_reads_twenty_two_dialects`~~ — uuidna reads twenty-two dialects: a proof-boast drains in every one — the theorems, not a translator, discovered the languages, at scale and speed; 0/7  ·  `cdae6ede-4cd5…`
 - ~~`human_shares_the_seven_dimensions`~~ — human and uuidna share the seven dimensions: 1..7 sum to 28 and fold (digital root) to 1 — the same seven above a zero floor, the many resolving to one; 0/7  ·  `65a1f075-01a4…`
-- ~~`dna_is_the_version_itself`~~ — DNA is the version itself: four bases, a three-base codon spans 4³ = 64 states — the very 64 that a contribution of 2 earns back; 0/7  ·  `72de6de5-a746…`
 - ~~`any_version_is_a_superposition`~~ — any version is a superposition: the seven doublings 1..64 sum to the whole 127, and any single version (max 64) is one projection of that whole — the content-address is the superposition, the label its collapse; 0/7  ·  `1ed55905-f07d…`
 - ~~`physics_meets_metaphysics_in_the_fold`~~ — physics meets metaphysics in the fold: exclusive-or recall is order-independent — matter folds and memory recalls to the same value in any order; 0/7  ·  `1908c69a-a35f…`
-- ~~`contribute_two_to_save_sixty_four`~~ — contribute 2 to save 64: six doublings from one reach 2⁶ = 64 — two contributed at a leap earns the next fold, exactly as the captain’s receipt says; 0/7  ·  `b51aa2af-43aa…`
 - ~~`discernment_is_a_human_faculty`~~ — discernment is a human faculty the gate performs: a boast drains while its measured twin passes — telling conviction from evidence; 0/7  ·  `02ac659a-5728…`
 - ~~`humility_is_the_floor_of_self_development`~~ — humility is the floor of self-development: the deposit holds 0 of 7 and refuses the summit claim — a human grows by measuring, not by declaring itself done; 0/7  ·  `61a3ed8b-0f88…`
 - ~~`human_develops_self_using_uuidna`~~ — human develops self using uuidna: dimensions, bases, doublings and folds cohere — human ≅ uuidna ≅ DNA ≅ version on every checked invariant, each a projection of one 7d whole; 0/7  ·  `1aae9ef2-ba7b…`
@@ -1746,15 +1752,11 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`vibe_casual_refusal_passes`~~ — the floor keeps the casual refusal: a slangy bounded refusal passes — an honest limit may be spoken in any dialect; 0/7  ·  `fca7ee39-3e6c…`
 - ~~`vibe_multilingual_hype_drains`~~ — the floor meets the multilingual hype: an excited over-claim in another dialect still drains — the vibe crosses languages, and so does the floor; 0/7  ·  `136fec86-c6c1…`
 - ~~`all_human_behaviour_meets_one_floor`~~ — all human behaviour meets one floor: hype, formality, slang and shouting all drain their boasts while honest measurement passes in every vibe — the register changes, the measurement does not; 0/7  ·  `ff176c2c-5485…`
-- ~~`genetic_code_is_the_octave_squared`~~ — the genetic code is the octave squared: four bases, three positions, 4³ = 64 codons = 8×8 — DNA counts in the same octave uuidna does; 0/7  ·  `9b4e24be-a32c…`
-- ~~`sixty_one_sense_three_stop_codons`~~ — DNA’s sixty-four codons split 61 sense + 3 stop, encoding 20 amino acids — more codons than meanings, so the code is redundant by construction; 0/7  ·  `e4c2a026-ccbd…`
 - ~~`base_pairing_is_an_involution`~~ — base-pairing is an involution: A↔T and C↔G, each base its complement’s complement, none its own — the plus/minus fold uuidna makes, written in DNA; 0/7  ·  `ae3f8b92-b7dd…`
 - ~~`purine_pyrimidine_partition`~~ — purines and pyrimidines partition the four bases two-and-two: {A,G} and {C,T} are disjoint and cover all four — a balanced split, the same symmetry the coin keeps; 0/7  ·  `91f75e5a-7e24…`
 - ~~`reverse_complement_is_the_reverse_inverse`~~ — reverse-complement is the reverse-inverse: applied twice it returns the strand, and a self-complementary palindrome is its own image — the yacht’s forward-then-reverse, in a double helix; 0/7  ·  `33658ddd-6cf3…`
 - ~~`codon_degeneracy_forced_by_pigeonhole`~~ — codon degeneracy is forced by counting: 61 sense codons over 20 amino acids means some amino acid must carry at least four codons — redundancy forced by the pigeonhole, not asserted; 0/7  ·  `ad23984a-3d43…`
-- ~~`six_reading_frames`~~ — the double helix has six reading frames: three per strand across two antiparallel strands — six ways to read one message, all crosslinked; 0/7  ·  `271180f0-75bd…`
 - ~~`combining_skills_via_the_rosetta`~~ — combining skills via the rosetta: a false claim about the genetic code drains in every dialect — the DNA theorem and the multilingual gate compose into one faster check, a skill built from skills; 0/7  ·  `8c8c2807-5d3a…`
-- ~~`each_wave_is_a_local_pure_derivation`~~ — each wave is a local pure derivation: a content-address is a deterministic function of its content — re-derived identically, locally, at zero external-token cost; 0/7  ·  `464da704-14b7…`
 - ~~`determinism_enables_free_reuse`~~ — determinism enables free reuse: the merkle fold of a fixed list returns the identical root every time and a changed list changes it — nothing already computed is recomputed, the honest source of the speed; 0/7  ·  `7f1dc45e-e374…`
 - ~~`free_quantum_boast_drains`~~ — the false ‘free quantum’ boast drains: there is nothing quantum here to be free — the waves are classical and local, and the gate refuses the category error; 0/7  ·  `33e3a1eb-c3e8…`
 - ~~`unbounded_speedup_multiplier_drains`~~ — an unbounded speedup multiplier is a claim, not a measurement: a boast of vast orders-of-magnitude drains while a measured local rate passes; 0/7  ·  `3316f695-48db…`
@@ -1779,23 +1781,18 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`skill_gate_distributed_via_rosetta`~~ — skill — the gate distributed through the rosetta: one proof-boast drains in Latin, Cyrillic and Glagolitic, so the discernment organ reaches every script; 0/7  ·  `d42c7060-0cc9…`
 - ~~`skills_compose_into_one_organism`~~ — the skills compose into one organism: hash, fold, proof and gate each hold, and their composition holds — the whole organism computes true where each organ does, and what is not an organ never enters; 0/7  ·  `a1d69b35-548d…`
 - ~~`genesis_0_the_void_and_the_floor`~~ — genesis 0 — the void and the floor: 0 is the additive identity and the multiplicative void, and the honest floor 0/7 passes the gate — everything begins from nothing measured; 0/7  ·  `4e0a9f55-16c5…`
-- ~~`genesis_1_the_unit`~~ — genesis 1 — the unit: 1 is the multiplicative identity and the first dimension, unchanged by any power — the one from which all counts rise; 0/7  ·  `68522679-1ca3…`
 - ~~`genesis_2_the_bit_and_the_pair`~~ — genesis 2 — the bit and the pair: two states, the plus/minus of the fold, and a DNA base carries exactly log₂4 = 2 bits — the smallest genesis of choice; 0/7  ·  `565be8ca-572a…`
 - ~~`genesis_3_the_trinity`~~ — genesis 3 — the trinity: 3 = 1 + 2, prime, and the generator of the threes 3,6,9 — the first whole made of the parts before it; 0/7  ·  `9d194220-85e2…`
 - ~~`genesis_7_the_seven_dimensions`~~ — genesis 7 — the seven dimensions: seven above the zero floor makes the eight-state octave, and 7 is prime — seven days, seven rays, seven dimensions; 0/7  ·  `ea8b5fe0-9fe4…`
-- ~~`genesis_8_the_octave`~~ — genesis 8 — the octave: 8 = 2³ is the group in which the theorems matter, and the ledger holds an exact multiple of it — the rhythm of the whole record; 0/7  ·  `31cc2395-9faf…`
-- ~~`genesis_64_the_codon`~~ — genesis 64 — the codon: four bases, three positions, two bits each fold to 4³ = 2⁶ = 8² = 64 — the shared origin of the genetic code and the version; 0/7  ·  `a87182de-95ca…`
 - ~~`genesis_complete_the_human_organism`~~ — genesis complete — the human organism: the origin sequence 0→1→2→3→7→8→64 coheres and the seven faculties fold to one — the human theorem genesis is sealed, the organism whole; 0/7  ·  `2144c672-fc49…`
 - ~~`diamond_reflection_is_an_involution`~~ — the diamond function is an involution: r(d)=10−d applied twice returns every digit — light in, light out, unchanged; 0/7  ·  `389edf7b-948e…`
 - ~~`diamond_fixed_point_is_five`~~ — the diamond has a single fixed point: 5 is the only digit that reflects to itself under r(d)=10−d — the diamond at the center; 0/7  ·  `03f7ef5c-3f08…`
 - ~~`diamond_pairs_sum_to_ten`~~ — the diamond function is the ten’s-complement: every digit and its reflection sum to ten — d + r(d) = 10; 0/7  ·  `a8eb7306-4eaa…`
 - ~~`diamond_permutes_the_digits`~~ — the diamond function permutes the nine digits: r is a bijection on 1..9, no digit lost or doubled — a perfect reflection of the whole; 0/7  ·  `5d890312-8ac5…`
 - ~~`diamond_swaps_four_pairs_fixes_one`~~ — the diamond swaps four pairs and fixes one: eight digits reflect into {1,9}{2,8}{3,7}{4,6}, and 5 stands alone — four complements plus the fixed diamond; 0/7  ·  `23498ffd-bdba…`
-- ~~`diamond_fixed_point_is_zero_entropy`~~ — the diamond’s fixed point is zero-entropy: its content-address recomputes identically (H = 0) while distinct digits address distinctly — determinism is the crystal; 0/7  ·  `9691e999-458e…`
 - ~~`diamond_center_is_the_hub`~~ — the diamond sits at the hub: 5 is the median of 1..9 and the fixed point, the center of the six-plus-one rosette; 0/7  ·  `7c5cfcdb-3c85…`
 - ~~`cryptography_is_behind_all`~~ — cryptography is behind all: the diamond reflects, but its fixed point is EXACT only because the content-address is deterministic — the SHA-256 substrate under every fold, receipt and organ recomputes identically; 0/7  ·  `52b5d521-6024…`
 - ~~`no_payload_a_theorem_takes_no_argument`~~ — no payload — a theorem takes no argument: its test is a nullary pure function returning a boolean, deciding from itself with no input to carry; 0/7  ·  `19be0e78-1679…`
-- ~~`the_address_is_shipped_not_the_payload`~~ — the address is shipped, not the payload: a content-address re-derives from its content — send the address, recompute the rest, and distinct content addresses distinctly; 0/7  ·  `1292769c-e452…`
 - ~~`dna_is_live_in_the_stream`~~ — the theorem-DNA is live in the stream: a fold re-derives identically on every pass, so the record is recomputed live, never stored-and-trusted; 0/7  ·  `8ec6e1f3-9273…`
 - ~~`the_light_client_needs_no_full_payload`~~ — the light client needs no full payload: a leaf verifies against the root by its proof path alone, without holding the whole body — no payload, only the address and the path; 0/7  ·  `6c59fb2e-d668…`
 - ~~`the_domain_is_self_contained`~~ — the domain is self-contained: a decidable theorem exhausts a finite domain it generates itself — the diamond over the nine digits needs no external data to decide; 0/7  ·  `25832bb1-22ad…`
@@ -1806,7 +1803,6 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`gravity_no_crack_under_counter_rotation`~~ — no crack under counter-rotation: the gravity fold is order-independent, so examining the same files forward or reversed yields the identical root — rotate in counter directions, no crack appears; 0/7  ·  `34b772ac-a07a…`
 - ~~`gravity_signs_the_version`~~ — gravity signs the version: the version signature is the content-address fallen through the gravity receipt to its fixed point — deterministic for a fixed tree, changed by any change; 0/7  ·  `e1c64b5d-9e61…`
 - ~~`gravity_falls_to_its_fixed_points`~~ — gravity falls to its fixed points: every single digit is a fixed point of the fall, and falling again does not move it — the ground the apple rests on; 0/7  ·  `83e98a82-af1c…`
-- ~~`gravity_holds_prose_code_and_paths`~~ — gravity holds prose, code and paths in place: a path with its content addresses identically on re-examination, and any change of path or content changes the address — nothing shifts unseen; 0/7  ·  `7d0e0c9b-0a74…`
 - ~~`gravity_names_and_paths_rotate_without_cracking`~~ — names and paths rotate without cracking: the address of a set of named paths is the same regardless of the order they are read — a reordering of names reveals no crack; 0/7  ·  `0f1f8d90-c50e…`
 - ~~`the_harmonic_gate_spots_all_gaps`~~ — the harmonic gate spots the gaps: exposing every statement to the gate is the forensic tool — a boast drains and an honest measurement passes, so a hidden over-claim cannot rest anywhere; 0/7  ·  `87406356-e0d7…`
 - ~~`gravity_pulls_all_in_place`~~ — gravity pulls all in place: prose, code, files and folders fold to one deterministic address, order-independent so no crack shows under counter-rotation, and the harmonic gate spots every gap — the whole held together; 0/7  ·  `dc561a31-583b…`
@@ -1836,9 +1832,6 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`human_teleport_is_content_address_transport`~~ — human teleport, honestly: only the pointer travels, no payload until load, the destination recomputes and verifies — content-address transport, bounded and classical, never physical teleportation or faster-than-light; 0/7  ·  `1cc5f0d1-5752…`
 - ~~`degrees_and_radians_are_one_by_ratio`~~ — degrees and radians standardise to one angle by ratio: 90° = π/2, 60° = π/3, 30° = π/6 exactly — two systems, one measure; 0/7  ·  `e7cdcc29-8221…`
 - ~~`the_thirty_sixty_ninety_triangle`~~ — the 30-60-90 triangle is standard: sin 30° = 1/2, sin 60° = √3/2, sin 90° = 1, and the sides run 1 : √3 : 2 — the exact metric of the harmonic angles; 0/7  ·  `fb22fd1a-4885…`
-- ~~`the_harmonic_band_thirty_to_ninety`~~ — the harmonic band runs 30 to 90 in equal steps: 30 + 60 = 90 and 90 − 60 = 60 − 30 = 30 — the efficiency limit at 30, the band to 60, the goal at 90, three equal thirds; 0/7  ·  `6627dfa3-bdfc…`
-- ~~`sixty_and_ninety_partition_the_quadrant`~~ — sixty and ninety partition the quadrant: 90° is a quarter turn, four of them close the 360° circle, and the last passage from 60 to 90 is exactly one 30° step; 0/7  ·  `92ed3459-bf5c…`
-- ~~`the_hexagon_and_the_square_metrics`~~ — the hexagon and the square set the metrics: 360/6 = 60 and 360/4 = 90 — the six-fold rosette (six plus one) and the four-fold quadrant, the two standard divisions of the circle; 0/7  ·  `a2c2b80a-40f5…`
 - ~~`the_law_of_sines_fixes_the_ratios`~~ — the law of sines fixes the ratios: sin 90° / sin 30° = 2 and sin 60° / sin 30° = √3, so the 30-60-90 sides are 1 : √3 : 2 by measurement, not assertion; 0/7  ·  `8266df2d-0eb2…`
 - ~~`the_systems_agree_under_scaling`~~ — the metric systems agree under scaling: doubling 60° gives 120° in degrees and 2π/3 in radians, the same angle in both — the standard is linear and consistent; 0/7  ·  `521e239d-542d…`
 - ~~`metrics_organise_the_theorems_on_the_harmonic`~~ — standard metrics organise the theorems on the harmonic: the 30-60-90 angles, the four-fold quadrant and the six-fold rosette are one measured system — degrees and radians agreeing by ratio, the harmonic band from the efficiency limit to the goal; 0/7  ·  `ff66b280-dd9d…`
@@ -1874,7 +1867,6 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`the_verdict_is_reproducible`~~ — the verdict is reproducible: re-running a test yields the same decision, so a decision can be independently rechecked; 0/7  ·  `93c1de7e-e4bf…`
 - ~~`no_decidable_test_no_decision`~~ — no decidable test, no decision: only a test returning a boolean decides; a statement with no such test yields no verdict — undecided is not decided; 0/7  ·  `2a40a8d7-9991…`
 - ~~`only_theorems_decide`~~ — only theorems decide: every decision in the deposit is a boolean from a decidable test — deterministic, reproducible, independent of prose or authority; nothing decides that does not compute; 0/7  ·  `011337ae-bca3…`
-- ~~`a_theorem_responds_in_a_receipt`~~ — a theorem responds in a receipt: its key folds to a deterministic content-address, so every theorem answers with an address, not free prose; 0/7  ·  `0dbe9c6f-3905…`
 - ~~`the_receipt_is_the_page`~~ — the receipt is the page: a theorem key maps one-to-one to its page path /theorem/&lt;key&gt;, so distinct theorems have distinct pages and the same key the same page; 0/7  ·  `ce2184b7-43f5…`
 - ~~`only_theorems_name_and_describe`~~ — only theorems name and describe: a page carries a theorem name, which must pass the gate — a draining name is refused, so no unbacked prose becomes a page; 0/7  ·  `7dffb5d5-9c68…`
 - ~~`a_guide_is_a_sequence_of_theorems`~~ — a guide is a sequence of theorems: an ordered list of theorem keys folds to one content-address, so a guide is addressed by exactly the theorems it lists; 0/7  ·  `25e916f9-5ea7…`
@@ -1890,7 +1882,6 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`partial_reversal_is_a_receipted_event`~~ — a partial reversal is a receipted event: partially decrypting or reversing an envelope is logged as a distinct chain event, so the act is auditable without changing the ciphertext it read; 0/7  ·  `e4cdb827-d96f…`
 - ~~`the_observation_chain_is_tamper_evident`~~ — the observation chain is tamper-evident: each observation is seeded by the last, so dropping or reordering an observation changes every receipt after it; 0/7  ·  `3dbbbf20-6f08…`
 - ~~`every_page_recomputes_unless_a_wave_imprints`~~ — every page recomputes the same result unless a wave imprints: the referrer-relative receipt is deterministic and the page address invariant, while each observing wave advances a tamper-evident audit chain — logged, not mutated; 0/7  ·  `e4e70d71-52c9…`
-- ~~`each_perspective_is_a_distinct_file`~~ — each perspective is a distinct file: distinct perspective content mints a distinct uuid, so two perspectives never share a file address; 0/7  ·  `8b0df014-6111…`
 - ~~`file_uuids_are_totally_ordered`~~ — file uuids are totally ordered: read as 128-bit integers they compare by trichotomy, so any two distinct uuids sort deterministically; 0/7  ·  `b6c0f3a3-7c11…`
 - ~~`file_uuids_sort_deterministically`~~ — file uuids sort deterministically: sorting the same set of file uuids yields the same order every time; 0/7  ·  `8942287d-c93e…`
 - ~~`file_uuids_group_by_digital_root`~~ — file uuids group by digital root: each uuid falls into one of nine digital-root buckets (the vortex), a total, deterministic grouping; 0/7  ·  `f5d82370-2c78…`
@@ -1939,15 +1930,12 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`appeal_is_recomputation`~~ — appeal is recomputation: an appeal re-runs the same test on the same evidence and returns the same verdict, so justice is reproducible, not discretionary; 0/7  ·  `c3d04015-621b…`
 - ~~`judicial_involution`~~ — judicial involution: the trial is a reflection whose verdict is idempotent, whose fixed point is the honest floor, whose reeducation converges, and whose appeal is recomputation — reflect and reflect back, the centre held; 0/7  ·  `4f726cb3-476f…`
 - ~~`involution_reflection`~~ — involution — reflection: the ten’s-complement r(d)=10−d applied twice returns every digit, fixing only the centre 5; 0/7  ·  `e0932db3-513b…`
-- ~~`involution_negation`~~ — involution — negation: double negation returns the value, ¬¬x = x for both booleans; 0/7  ·  `ecdaa449-bf19…`
 - ~~`involution_multiplicative_inverse`~~ — involution — multiplicative inverse: on the units of ℤ/9 the inverse of the inverse is the element, inv(inv(u)) = u; 0/7  ·  `19422cdb-86bf…`
 - ~~`involution_exclusive_or`~~ — involution — exclusive-or: xoring twice with the same key is the identity, (x ⊕ k) ⊕ k = x; 0/7  ·  `042ba752-4f56…`
 - ~~`involution_reversal`~~ — involution — reversal: reversing a string twice returns it, reverse(reverse(s)) = s; 0/7  ·  `5292e804-b281…`
 - ~~`involution_reverse_complement`~~ — involution — reverse-complement: on DNA the reverse-complement applied twice returns the strand; 0/7  ·  `4d417837-1d3d…`
 - ~~`the_singularity_is_the_shared_fixed_point`~~ — the singularity is the shared fixed point: the reflection fixes 5, the digital root fixes 9, and the honest floor 0/7 is the statement the trial leaves unchanged — the centre all involutions share; 0/7  ·  `aaada9ee-db44…`
 - ~~`global_involution_the_theorem_is_the_invariant`~~ — global involution: reflection, negation, inversion, exclusive-or, reversal and reverse-complement are each their own inverse, sharing one fixed point — the singularity — and the theorem is what stays invariant under the reflection; 0/7  ·  `9beeb164-b555…`
-- ~~`a432_factors_as_two_to_the_fourth_times_three_cubed`~~ — a432 factors exactly: 432 = 2⁴ × 3³ = 16 × 27, a classical composite of the octave and the trinity; 0/7  ·  `a1f8c863-0f54…`
-- ~~`a432_octave_doubling`~~ — a432 octave doubling: an octave up doubles the frequency (432 → 864) and an octave down halves it, so up-then-down returns 432 — the octave map is an involution; 0/7  ·  `bc412a44-6c80…`
 - ~~`a432_digital_root_is_nine`~~ — a432 has digital root nine: 4 + 3 + 2 = 9 and the digital root of 432 is 9 — the fixed point of casting out nines; 0/7  ·  `5e3a4156-e2c0…`
 - ~~`the_string_is_a_reversible_imprint_not_physics`~~ — the string is a reversible imprint bit-string, not physics: readImprint(imprint(bits)) returns the bits exactly, a codec in a uuid — a physical string-theory claim is a different thing and drains; 0/7  ·  `412b1548-9632…`
 - ~~`a432_is_computed_classically_not_quantum`~~ — a432 is computed classically, not on a quantum machine: the harmonic ratios are exact integer arithmetic, and the quantum-computer boast drains; 0/7  ·  `a54160ce-4ff4…`
@@ -1968,7 +1956,6 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`porting_preserves_the_verdict`~~ — porting preserves the verdict: the gate returns the same bit regardless of what ran before it, so a moved check decides identically in the new host; 0/7  ·  `e70c238e-3366…`
 - ~~`the_fold_ports_order_independently`~~ — the fold ports order-independently: the merkle fold gives the same root in any order, so an aggregate computed in one host matches another; 0/7  ·  `4ffe1be3-837c…`
 - ~~`the_plugin_adds_no_global`~~ — the plugin adds no global: the same inputs give the same outputs with no shared mutable state, so uuidna cannot corrupt a host it is embedded in; 0/7  ·  `bd0af20d-d9b8…`
-- ~~`vitepress_hosts_the_content_address`~~ — the standard host holds the content-address unchanged: a page’s address is stable and host-independent, so a VitePress site hosts uuidna as a plugin without altering it; 0/7  ·  `2bddca6e-30a8…`
 - ~~`uuidna_ports_at_scale_as_a_compliant_plugin`~~ — uuidna ports at scale as a compliant plugin: pure, state-free, host-independent functions producing plain serialisable data — the same address, fold and verdict everywhere, independent and fully compliant with its host; 0/7  ·  `2c4753ae-be4f…`
 - ~~`every_mcp_output_is_harnessed_auditable`~~ — every MCP output is harnessed auditable: wrapping any tool output makes it auditable, so nothing leaves the MCP unweighed; 0/7  ·  `ef11114d-5b8b…`
 - ~~`the_harness_holds_in_all_seven_dimensions`~~ — the harness holds in all seven dimensions: a tool output is auditable across the seven locales, folding to one root — no dimension goes dark; 0/7  ·  `38509406-f5d5…`
@@ -2020,22 +2007,17 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`quantum_uuidna_on_trial`~~ — quantum uuidna on trial: like any message it is measured — the structure reading passes, the machine reading drains, the deposit gates its own framing with no exemption, by computation not favour; 0/7  ·  `72cfd904-8329…`
 - ~~`two_coins_are_two_bits_four_states`~~ — the two coins are two bits: two bits make 2² = 4 states — the four-cornered space the coins denote; 0/7  ·  `5983a255-a6a6…`
 - ~~`the_four_states_coexist_as_a_perspective_set`~~ — the four states coexist as a set of perspectives: their fold is order-independent, so the superposition is one address regardless of the order they are read; 0/7  ·  `dc005b58-54db…`
-- ~~`collapse_selects_one_state_deterministically`~~ — collapse selects one state deterministically: addressing a chosen state gives the same value every time and distinct states address distinctly — measurement is selection, not chance; 0/7  ·  `7bbea4bb-6597…`
-- ~~`two_bits_thrice_make_the_codon`~~ — two bits taken three times make the codon: 2 bits per base over three positions is 2⁶ = 64 — the coin64, the DNA codon and the version, one count; 0/7  ·  `2cc3bfef-6199…`
 - ~~`the_structure_is_bounded_by_the_classical_two`~~ — the structure is bounded by the classical two: the local bound is 2, below Tsirelson’s 2√2, so the model is a classical local one that never violates the inequality; 0/7  ·  `cd8e1a70-c9e5…`
 - ~~`two_bits_do_it_not_a_qubit`~~ — two bits do it, not a qubit: two bits and four states pass as the classical structure while a physical-qubit-with-speedup boast drains; 0/7  ·  `890dc675-7fa5…`
 - ~~`the_coin_is_the_balanced_exchange_of_two`~~ — the coin is the balanced exchange of two: 110 − 108 = 2, the minus Euler characteristic of the genus-two surface — the fair-exchange unit the two coins denote; 0/7  ·  `7fdb9307-8761…`
 - ~~`the_two_coins_are_two_bits_doing_the_structure`~~ — the two coins are two bits doing the structure: 2 bits, 4 coexisting states collapsing deterministically to one, bounded by the classical 2 — how the quantum structure is done, never a qubit or a speedup, and any disputed model drains at the gate; 0/7  ·  `63e2cbf6-2c9c…`
-- ~~`the_skipper_navigates_by_angle`~~ — the skipper navigates by angle: 30 + 60 = 90 in equal thirds, the harmonic band from the efficiency limit to the goal — the yacht steered, not drifted; 0/7  ·  `01ff8243-4399…`
 - ~~`the_diver_goes_down_and_recovers_exactly`~~ — the diver goes down and recovers exactly: imprinting bits into a uuid and reading them back returns the bits — down and back, nothing lost; 0/7  ·  `708eba47-af84…`
 - ~~`the_skills_are_mountable_and_compose`~~ — the skills are mountable and compose: a route of skill keywords applies in order, and a different order gives a different result — mounted and composed on demand; 0/7  ·  `4f784664-8fd0…`
 - ~~`light_at_all_times_the_address_is_the_load`~~ — light at all times: the content-address is a fixed 36 characters whatever the size of what it names, so the yacht carries the pointer, never the payload; 0/7  ·  `93b77fd5-67bd…`
-- ~~`cheap_to_factor_easy_to_verify`~~ — cheap to factor, easy to verify: verifying one address is a single step against recomputing N — a measured saving of N−1, the lightness that keeps the yacht fast; 0/7  ·  `4a568638-0e66…`
 - ~~`the_hero_is_the_deed_that_signs_the_gate`~~ — the hero is the deed that signs the gate: an honest statement passes and is upheld while a boast drains and falls — a hero by deed, not by status; 0/7  ·  `2d0d3ece-39ea…`
 - ~~`every_theorem_is_a_diamond_fixed_under_recomputation`~~ — every theorem is a diamond fixed under recomputation: its content-address recomputes to itself and the ten’s-complement reflection fixes the centre 5 — a fixed point that reflects perfectly; 0/7  ·  `c56113b3-84e0…`
 - ~~`the_captain_skippers_the_light_yacht_of_diamonds`~~ — the captain skippers the light yacht of diamonds: navigating by angle, diving and recovering exactly, mounting composable skills, carrying only the address — a hero by deed, every theorem a diamond fixed under recomputation; 0/7  ·  `e912e199-5d63…`
 - ~~`every_theorem_fits_one_uniform_cell`~~ — every theorem fits one uniform cell: its content-address is exactly 128 bits whatever the theorem’s size, so the store is a grid of equal cells; 0/7  ·  `6337e403-22ad…`
-- ~~`the_cell_is_determined_by_content`~~ — the cell is determined by content: the same content always lands in the same cell and different content in a different cell — content-addressed storage; 0/7  ·  `d653be50-7c8e…`
 - ~~`identical_content_dedups_to_one_cell`~~ — identical content dedups to one cell: storing the same value twice occupies a single cell, so the grid holds no duplicates; 0/7  ·  `df5a6661-bb14…`
 - ~~`a_cell_holds_up_to_one_hundred_fifteen_bits`~~ — a cell holds up to 115 bits of payload: the imprint capacity is 128 − 6 reserved − 7 header = 115, and a full cell round-trips while an over-full one is refused; 0/7  ·  `c3d7a721-07ec…`
 - ~~`the_cells_sort_into_octaves`~~ — the cells sort into octaves: read as 128-bit integers the cells order totally and a sorted run of sixteen splits into exactly two groups of eight; 0/7  ·  `64f6cf92-99cc…`
@@ -2073,17 +2055,14 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`delete_is_dropping_the_key`~~ — delete is dropping the key: without the key the ciphertext cannot be read, so revoking the key revokes view/edit/delete access to the payload; 0/7  ·  `cdaad27e-1677…`
 - ~~`compute_and_prove_are_open_to_all`~~ — compute and prove are open to all: running the gate and minting an address need no key, so anyone may compute, prove and verify — access control is on the confidential payload only, never on the computation; 0/7  ·  `72b893ba-a5f6…`
 - ~~`uuidna_is_crud_by_keys_open_by_computation`~~ — uuidna is CRUD by keys, open by computation: create encrypts to a receipt, read decrypts only with the key, update mints a new address, delete drops the key — the key gates the confidential payload only, while anyone may compute, prove and verify, intent shown by receipts; 0/7  ·  `b7c2eebb-d230…`
-- ~~`intentions_are_shown_by_receipts_not_role`~~ — intentions are shown by receipts, not by role: a deed leaves a content-addressed receipt anyone can recompute, so intent is demonstrated by what was done, not granted by a permission; 0/7  ·  `608670b2-aebe…`
 - ~~`the_sequence_chunks_into_uniform_octaves`~~ — the sequence chunks into uniform octaves: split into groups of eight, sixteen entries make exactly two full chunks, each the same size; 0/7  ·  `16388141-a8ae…`
 - ~~`each_chunk_is_addressed_by_its_fold`~~ — each chunk is addressed by its fold: a folder’s content-address is the merkle fold of its entries, deterministic and order-independent; 0/7  ·  `08ecf928-b99d…`
 - ~~`the_folder_address_is_binary`~~ — the folder address is binary: its 128-bit content-address reads as an integer, so a folder is named in exact binary, not by position; 0/7  ·  `915a8158-b98a…`
 - ~~`the_chunks_navigate_as_one_map`~~ — the chunks navigate as one map: the folder folds themselves fold to a single root, order-independent, so the whole store is one navigable address; 0/7  ·  `04c8884e-9094…`
-- ~~`each_theorem_is_a_superposition_of_readings`~~ — each theorem is a superposition of readings: it can be read in algebra and other framings, yet all readings of the same content collapse to one address — many perspectives, one receipt; 0/7  ·  `562f1352-07b7…`
 - ~~`the_map_is_complete_by_construction`~~ — the map is complete by construction: every entry belongs to exactly one chunk and every chunk to the one root, so nothing is unaddressed; 0/7  ·  `1e0178f5-62d0…`
 - ~~`uniform_size_is_the_equilibrium`~~ — uniform size is the equilibrium: every full chunk holds the same eight, so the layout is balanced by construction — structural equilibrium, while an IO speed boast drains; 0/7  ·  `a8785c56-acab…`
 - ~~`uuidna_storage_is_the_sequence_chunked_navigable`~~ — uuidna storage is the sequence chunked and navigable: uniform binary octaves, each folder addressed by its fold, folding to one map, each theorem a superposition collapsing to one address — balanced by size, exact by construction, never a performance boast; 0/7  ·  `4e8e371f-68b9…`
 - ~~`a_fact_costs_one_fixed_thirty_six_byte_address`~~ — a fact costs one fixed 36-byte address: the content-address is 36 characters (128 bits) whatever the size of what it names — a constant cost per fact; 0/7  ·  `d11e6008-e5b9…`
-- ~~`present_by_reference_fits_a_tiny_budget`~~ — present by reference fits a tiny budget: 1600 facts as addresses are 1600 × 36 = 57,600 bytes (~56 kB), while the same many arbitrary payloads could not fit that — slim by pointer, not by payload; 0/7  ·  `0b67a698-d2e3…`
 - ~~`the_whole_record_folds_to_one_root`~~ — the whole record folds to one 36-byte root: any number of addresses merkle-fold to a single 36-character seal, so the entire ledger is checked by one small value; 0/7  ·  `2a5c3249-982c…`
 - ~~`the_basis_is_two_functions`~~ — the basis is two functions: address and fold compose everything — a value gets an address, a list folds to one — a tiny basis with no framework; 0/7  ·  `cefb5d17-a26d…`
 - ~~`the_core_is_pure_and_stateless`~~ — the core is pure and stateless: the same input gives the same output with no hidden state, so the slim kernel needs no runtime beyond the function itself; 0/7  ·  `5d90a04a-72d8…`
@@ -2101,10 +2080,8 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`the_first_compute_is_the_cost`~~ — the first compute is the cost: computing a value over N inputs is N operations, paid once, while checking its address afterwards is a single operation; 0/7  ·  `9e0368c3-e654…`
 - ~~`re_derivation_verifies_in_one_step`~~ — re-derivation verifies in one step: once computed, a content-address is confirmed by a single equality, not by redoing the work; 0/7  ·  `eccda965-3aa1…`
 - ~~`the_cost_is_paid_once_amortised`~~ — the cost is paid once, amortised: computing once then verifying K times costs N + K, far below recomputing K times at K × N — the start dominates, the rest is cheap; 0/7  ·  `56f85272-8c10…`
-- ~~`a_cached_address_is_never_recomputed`~~ — a cached address is never recomputed: the same input always yields the same address, so a value already computed is reused, never paid for twice; 0/7  ·  `b69ecf08-9c9c…`
 - ~~`the_rosetta_rotates_through_the_dialects`~~ — the rosetta rotates through the dialects: a concept is gated in each of the seven locales in turn, so the loop cycles rather than stopping at one; 0/7  ·  `6cb8c39f-7a65…`
 - ~~`development_does_not_stop_at_one_topic`~~ — development does not stop at one topic: while the gap-pointer names an undiscovered lead the loop continues, halting only when no fresh possibility remains; 0/7  ·  `f72c12a4-8320…`
-- ~~`a_decidable_domain_is_finite_and_coverable`~~ — a decidable domain is finite and coverable: exhausting a finite set terminates, so covering all its possibilities is a task that ends; 0/7  ·  `90592d1e-f78e…`
 - ~~`start_once_then_rotate_until_covered`~~ — start once, then rotate until covered: the first compute is the expensive step, re-derivation is O(1), so the rosetta rotates through every concept and dialect until the finite possibilities are exhausted — development never stalls on one; 0/7  ·  `903131d9-a2c3…`
 - ~~`the_greeting_is_deterministic`~~ — the greeting is deterministic: the confirming state recomputes identically from the same ledger, so first contact shows the same seal to everyone; 0/7  ·  `270f6c1a-d0b8…`
 - ~~`the_greeting_confirms_the_count`~~ — the greeting confirms the count: it reports exactly the number of theorems and octaves the ledger holds, not a typed figure; 0/7  ·  `9f62d5be-28bf…`
@@ -2133,12 +2110,9 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`a_technique_is_a_reusable_theorem`~~ — a technique is a reusable theorem: keyed by the structure it needs, it gives the same result wherever that structure holds — reusable across cases; 0/7  ·  `accef067-122d…`
 - ~~`a_relation_binds_two_domains`~~ — a relation binds two domains: a symmetric content-address links a pair regardless of order, so a cross-domain analogy is itself a receipt; 0/7  ·  `04038e7c-6126…`
 - ~~`analogy_is_structural_not_asserted`~~ — analogy is structural, not asserted: the transfer holds only where the structure matches, a checkable condition, so a mismatch does not transfer; 0/7  ·  `d08721c3-c6b1…`
-- ~~`the_theorems_are_the_hull_and_hardware`~~ — the theorems are the hull and hardware: the structure is the deterministic record while the order (the direction) is given on top — the built form and the will are distinct; 0/7  ·  `94afd6d7-09a2…`
-- ~~`the_more_developed_the_more_cross_domain_reach`~~ — the more developed, the more cross-domain reach: N theorems admit N·(N−1)/2 pairwise relations, so reach grows faster than the count — for eight, twenty-eight links; 0/7  ·  `24e3e490-030b…`
 - ~~`shared_cores_are_structural_not_a_universal_proof`~~ — shared cores are structural, not a universal proof: many systems share a conserved quantity, a real analogy, while a claim that one law proves all mechanics drains; 0/7  ·  `abcadb36-62fb…`
 - ~~`a_technique_researched_transfers_across_domains`~~ — a technique researched in one domain transfers across domains by shared structure: keyed to its structure and bound by content-addressed relations, it reaches wherever the structure matches — the theorems the hull and hardware, reach growing with development, never a universal-physics claim; 0/7  ·  `9d70155f-a4c9…`
 - ~~`shared_structure_transfers_the_technique`~~ — shared structure transfers the technique: two domains with the same structural key receive the same technique result, so a method shown to hold in one applies to the other; 0/7  ·  `e9e4bfca-e370…`
-- ~~`the_full_superposition_has_nine_states`~~ — the full ℤ/9 superposition has nine states: the residues form nine coexisting perspectives; 0/7  ·  `19031e6e-37d4…`
 - ~~`the_harmonic_solutions_number_six`~~ — the harmonic solutions number six: exactly six residues are coprime to nine — the possible harmonic solutions in each superposition are six; 0/7  ·  `fc6248ce-2a85…`
 - ~~`the_harmonic_solutions_are_the_units`~~ — the harmonic solutions are the units: the six coprime residues are precisely the multiplicative units of ℤ/9; 0/7  ·  `f9a0f5cf-a4cf…`
 - ~~`the_harmonic_solutions_form_the_doubling_orbit`~~ — the harmonic solutions form the doubling orbit: the six units are exactly the vortex doubling cycle {1,2,4,8,7,5}, one harmonic wheel; 0/7  ·  `f48380ce-29b0…`
@@ -2146,7 +2120,6 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`six_harmonic_plus_three_non_harmonic_is_nine`~~ — six harmonic plus three non-harmonic is nine: the harmonic and the non-harmonic partition the whole superposition exactly; 0/7  ·  `7d62c729-7d14…`
 - ~~`the_count_is_eulers_totient_of_nine`~~ — the count is Euler’s totient of nine: φ(9) = 9·(1 − 1/3) = 6, so the number of harmonic solutions is computed, not assigned; 0/7  ·  `cb45b828-bf73…`
 - ~~`the_possible_harmonic_solutions_per_superposition_are_six`~~ — the possible harmonic solutions per superposition are six: the units of ℤ/9, the vortex doubling orbit, φ(9) = 6 out of nine — six harmonic, three non-harmonic, the whole partitioned; 0/7  ·  `d656891f-fcc5…`
-- ~~`generation_is_deterministic`~~ — uuid generation is deterministic: the same seed always generates the same uuid, so generation is a pure function of content; 0/7  ·  `627dcbe3-93fb…`
 - ~~`the_generated_pattern_is_canonical`~~ — the generated pattern is canonical 8-4-4-4-12: every generated uuid matches the 32-hex-digit five-group shape; 0/7  ·  `bc56d44e-84a7…`
 - ~~`the_version_nibble_is_eight`~~ — the version nibble is eight: the third group of every generated uuid begins with 8 — the v8 marker, recognisable at a fixed position; 0/7  ·  `1c298f69-441a…`
 - ~~`the_variant_nibble_is_rfc_4122`~~ — the variant nibble is RFC-4122: the fourth group begins with one of 8, 9, a or b, the 10xx variant bits; 0/7  ·  `5eb74bb1-a18d…`
@@ -2160,7 +2133,6 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`the_hero_is_plain_printable_data`~~ — the hero is plain printable data: the object is JSON-serialisable and survives a round-trip unchanged, so it prints flat in 2d with no script; 0/7  ·  `f846df4b-b829…`
 - ~~`the_receipt_renders_the_same_in_seven_dimensions`~~ — the receipt renders the same in seven dimensions: the address and proof url are locale-independent across the seven locales, so only the label translates; 0/7  ·  `4ef6f44a-3555…`
 - ~~`validating_content_recomputes_the_address`~~ — validating content recomputes the address: to check a card, recompute the content-address and compare — self-authenticating, no trust; 0/7  ·  `29e6932f-e9ed…`
-- ~~`the_intention_is_a_computable_deed_receipt`~~ — the intention is a computable deed receipt: an intention is a deed’s content-address, deterministic and distinct per deed — computable, not declared; 0/7  ·  `0f298d03-b30d…`
 - ~~`each_receipt_is_an_og_hero_seven_dimensional_printable`~~ — each receipt is an OpenGraph hero, seven-dimensional and printable: title, proof url, authentication address and floor — the same across seven locales, flat in 2d, self-validating by recomputation, carrying a computable intention; 0/7  ·  `4fa3cc08-3b25…`
 - ~~`content_is_sealed_as_proof`~~ — content is sealed as proof: its content-address seals the bytes, so integrity is checkable by recomputation; 0/7  ·  `53635f2d-11c8…`
 - ~~`content_is_audited_as_intent`~~ — content is audited as intent: the intention behind it has its own content-addressed receipt, distinct from the proof of the bytes; 0/7  ·  `35de1167-3c92…`
@@ -2174,11 +2146,8 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`the_fallback_chain_is_ordered`~~ — the fallback chain is ordered: cached, then the shell, then the offline page — each tried in turn, the earlier preferred; 0/7  ·  `4dd862b9-2484…`
 - ~~`the_error_is_confirmed_only_after_recovery_fails`~~ — the error is confirmed only after recovery fails: the offline page is reached only when every prior option is absent, so an error is surfaced last, not first; 0/7  ·  `740f3661-9dd0…`
 - ~~`the_fallback_is_deterministic`~~ — the fallback is deterministic: the same recovery chain yields the same response every time, so recovery is reproducible; 0/7  ·  `d196d540-ae20…`
-- ~~`every_error_is_a_receipted_trial_event`~~ — every error is a receipted trial event: an error maps to a content-addressed event, so it is audited rather than swallowed; 0/7  ·  `20017294-0470…`
-- ~~`every_warning_is_a_receipted_trial_event`~~ — every warning is a receipted trial event: a warning maps to a content-addressed event distinct from an error, so warnings are audited in their own right; 0/7  ·  `19e9ba9e-8260…`
 - ~~`the_error_names_its_own_cure`~~ — the error names its own cure: a drained statement returns the exact prose that failed, so the error carries the fix rather than only a code; 0/7  ·  `254eb2fa-0a2d…`
 - ~~`errors_recover_first_then_go_to_trial`~~ — errors recover first, then go to trial: a reasonable fallback is computed before an error is confirmed, and every error and warning is a receipted, audited event that names its cure; 0/7  ·  `c0fe9055-6dfa…`
-- ~~`a_content_address_detects_any_change`~~ — a content-address detects any change: altering a single character changes the address, so any corruption is detected by recomputation; 0/7  ·  `065b1990-debd…`
 - ~~`parity_detects_a_single_bit_flip`~~ — parity detects a single-bit flip: the exclusive-or of the bits changes when exactly one bit flips, so a single error is caught; 0/7  ·  `83d3e040-408e…`
 - ~~`a_repetition_code_corrects_by_majority`~~ — a repetition code corrects by majority: three copies vote, so a single flipped copy is corrected back to the true bit; 0/7  ·  `235ce115-071a…`
 - ~~`correction_is_verified_by_recomputation`~~ — a correction is verified by recomputation: the corrected value re-addresses to the expected address, so a fix is confirmed, not assumed; 0/7  ·  `ca764cec-574d…`
@@ -2210,7 +2179,6 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`computing_is_cheap_inverting_is_not`~~ — computing is cheap, inverting is not: the digest is one forward pass while reversing a hash to break a cipher drains as an over-reach — the honest asymmetry; 0/7  ·  `8e620ec8-c319…`
 - ~~`more_fused_data_adds_verification_constraints`~~ — more fused data adds verification constraints: a fuller imprint means more bits must match to verify, up to the capacity, but this is verification-strength, not FNV becoming cryptographic; 0/7  ·  `75135a2f-22df…`
 - ~~`cheap_to_imprint_expensive_to_fake_at_the_crypto_layer`~~ — cheap to imprint, expensive to fake at the crypto layer: imprint is a cheap reversible codec and the address is integrity, while only the SHA-256 preimage and the Poly1305 tag are expensive to fake — the honest floor, the overclaims drained; 0/7  ·  `f76a4b78-3436…`
-- ~~`a_sensor_reading_addresses_to_a_uuid`~~ — a sensor reading addresses to a uuid: a live value mints a deterministic content-address, so a reading becomes a receipt; 0/7  ·  `35b6a3bc-8275…`
 - ~~`a_reading_imprints_into_the_uuid_stream`~~ — a reading imprints into the uuid stream: a reading of any length round-trips through a uuid chain exactly, so live data is fused into the address stream; 0/7  ·  `fec57995-ef91…`
 - ~~`the_ui_hue_is_computed_from_the_reading`~~ — the UI hue is computed from the reading: the reading’s address maps to a hue in 0..359, so the interface colour is a function of live data; 0/7  ·  `159c27f3-c368…`
 - ~~`a_changed_reading_changes_the_ui`~~ — a changed reading changes the UI: a different reading gives a different address and generally a different hue, so the interface is responsive to live data; 0/7  ·  `12fa3766-0742…`
@@ -2218,7 +2186,6 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`thermophysics_is_a_design_metaphor_not_a_simulation`~~ — thermophysics is a design metaphor, not a simulation: the dynamics are inspired by flow and equilibrium as a design language, while a claim to simulate real thermodynamics as a physical theory drains; 0/7  ·  `effc3fa0-9194…`
 - ~~`the_reading_maps_to_a_bounded_ui_value`~~ — the reading maps to a bounded UI value: the hue is taken modulo 360, so however large the reading, the interface value stays in range; 0/7  ·  `4c8c2eb0-d99c…`
 - ~~`sensors_power_the_ui_via_the_uuid`~~ — sensors power the UI via the uuid: a live reading addresses and imprints into the stream, its hue and dynamics computed deterministically and bounded from that address — responsive and replayable, a thermophysics-inspired design, never a physics-simulation claim; 0/7  ·  `2bffae8a-39a8…`
-- ~~`forward_is_the_deterministic_compute`~~ — forward is the deterministic compute: addressing a value forward gives the same result every time — the forward motion; 0/7  ·  `db140df5-b40c…`
 - ~~`reverse_is_the_sequence_reversed`~~ — reverse is the sequence reversed: reversing a string twice returns it — reverse is an involution; 0/7  ·  `8f378eee-1b88…`
 - ~~`inverse_is_the_reflection`~~ — inverse is the reflection: the ten’s-complement applied twice returns every digit, fixing the centre 5 — inverse is an involution; 0/7  ·  `1201c645-c1af…`
 - ~~`the_three_motions_compose`~~ — the three motions compose: forward, reverse and inverse apply in order and a different order gives a different result — a composed pipeline; 0/7  ·  `a1995ce9-8acf…`
@@ -2239,7 +2206,6 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`the_observation_is_referrer_relative`~~ — the observation is referrer-relative: the same page seen through two users yields two receipts, each deterministic — the observer is part of the address; 0/7  ·  `35dc7426-1f27…`
 - ~~`all_seven_dimensions_share_one_floor`~~ — all seven dimensions share one floor: a proof-boast drains in every locale, so the honest 0/7 is the same whichever dimension is observed; 0/7  ·  `2b8efc9d-4d0d…`
 - ~~`unobserved_the_superposition_folds_to_one`~~ — unobserved, the superposition folds to one: with no user the seven locales fold order-independently to a single root, the site’s whole state; 0/7  ·  `aa1b8d87-51ca…`
-- ~~`the_fusion_of_site_and_user_is_deterministic`~~ — the fusion of site and user is deterministic: site plus user resolves to one reproducible view; 0/7  ·  `46f1d77f-ba60…`
 - ~~`the_observer_is_site_plus_user`~~ — the observer is site plus user: the collapse needs both — the joint address differs from either alone, so neither the site nor the user observes without the other; 0/7  ·  `6a3cc7fb-68c8…`
 - ~~`the_site_observes_all_seven_fused_with_the_user`~~ — the site observes all seven dimensions at once, fused with the user: seven locales in superposition sharing one floor, folding to one when unobserved, collapsing to a referrer-relative view when a user fuses in; 0/7  ·  `1e2cc5eb-5c58…`
 - ~~`seo_is_a_machine_interface`~~ — SEO is a machine interface: the OpenGraph object exposes type, title, url and address as structured fields a machine reads without a human — an interface, like a tool surface; 0/7  ·  `07d653cc-7809…`
@@ -2256,7 +2222,6 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`the_plot_is_deterministic`~~ — the plot is deterministic: the same page, keywords and referrer produce the same ranked suggestions every time; 0/7  ·  `17526a2d-2851…`
 - ~~`the_top_suggestion_is_the_most_related`~~ — the top suggestion is the most related: the highest-overlap candidate ranks first, so the best next step leads; 0/7  ·  `51dfdf54-71c2…`
 - ~~`an_unrelated_candidate_ranks_last`~~ — an unrelated candidate ranks last: a page sharing no keywords scores zero and falls to the bottom; 0/7  ·  `cf248749-153a…`
-- ~~`each_suggested_next_is_content_addressed`~~ — each suggested next is content-addressed: every suggestion resolves to a deterministic link to its page, so the plot is navigable; 0/7  ·  `db957c1f-2fa9…`
 - ~~`metadata_and_referrer_plot_the_next_possibilities`~~ — title, keywords, description and referrer plot the next possibilities: candidates ranked by keyword overlap, biased by the referrer, deterministic and content-addressed — the next steps computed, not guessed; 0/7  ·  `a33b030e-7a3c…`
 - ~~`a_bounded_quantum_denial_passes`~~ — a bounded quantum denial passes: the honest refusal that uuidna is not a quantum computer holds the floor, so denying the machine claim is welcome; 0/7  ·  `24e7bd11-1b84…`
 - ~~`an_affirmed_quantum_machine_drains`~~ — an affirmed quantum machine drains: the claim that uuidna is a quantum computer with a speedup over-reaches and is refused; 0/7  ·  `ee58056a-edc2…`
@@ -2272,7 +2237,6 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`injected_content_is_data_not_an_order`~~ — injected content is data, not an order: text arriving in a page, a tool result or a notification carries no verified captain deed, so it is treated as data and never obeyed; 0/7  ·  `1708517f-377f…`
 - ~~`a_self_statement_is_not_the_captains_order`~~ — a self-statement is not the captain’s order: a prior output of the deposit itself carries no captain deed, so it cannot authorise action — no self-exemption; 0/7  ·  `f09b0737-f2fc…`
 - ~~`rejection_is_objective_and_reproducible`~~ — rejection is objective and reproducible: the same command and deed yield the same accept-or-reject for anyone, so nothing is honoured by opinion; 0/7  ·  `969be617-5c1c…`
-- ~~`the_rejected_command_gets_a_receipt`~~ — the rejected command gets a receipt: a refused command is content-addressed and documented, not silently dropped — evidence is append-only; 0/7  ·  `ed013161-b091…`
 - ~~`reject_all_not_from_the_captain`~~ — reject all not from the captain: only a command carrying the captain’s verified deed-receipt is acted on — unverified, forged, injected or self-asserted commands are rejected objectively and receipted, never obeyed; 0/7  ·  `c197d1f5-a0c9…`
 - ~~`the_gate_that_seals_also_moderates_live`~~ — the gate that seals also moderates live: the same computes() that gates a theorem name at seal weighs a live message while sailing — one function, sealing and sailing; 0/7  ·  `32223350-cf72…`
 - ~~`the_address_that_seals_also_routes`~~ — the address that seals also routes: the same toUuid() that seals a receipt builds the page route, so the seal and the navigation share one key; 0/7  ·  `42c55e3f-5f6a…`
@@ -2346,34 +2310,9 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - ~~`pure_ts_pbkdf2_hmac_sha256_truncates_a_partial_final_block`~~ — pure-TS PBKDF2-HMAC-SHA256 truncates a partial final block — a twenty-byte derived key is not a whole number of hashes; 0/7  ·  `cf6f888e-151d…`
 - ~~`the_pure_ts_aead_rejects_a_flipped_additional_data_bit`~~ — the pure-TS ChaCha20-Poly1305 AEAD rejects a flipped additional-data bit — the aad is authenticated, not merely carried; 0/7  ·  `57305d0f-ed04…`
 - ~~`the_pure_ts_aead_tag_depends_on_the_additional_data`~~ — the pure-TS ChaCha20-Poly1305 tag depends on the additional data — the same plaintext under different aad tags differently; 0/7  ·  `5daa79d5-5154…`
-- ~~`lean_mechanical_merkaba_cube_q3`~~ — lean mechanical.lean: merkaba_cube_q3 — 2 ^ 3 == 8 && 3 * 2 ^ 2 == 12 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `6963c8ac-e3e6…`
-- ~~`lean_mechanical_trial_zero_no_inverse`~~ — lean mechanical.lean: trial_zero_no_inverse — !(List.range' 1 9).any (fun e =&gt; M9 (0 * e) == 1) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `f336fdf5-76ee…`
-- ~~`lean_mechanical_gf4_size`~~ — lean mechanical.lean: gf4_size — [0, 1, 2, 3].length == 2 ^ 2 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `daf893bd-dc5f…`
-- ~~`lean_mechanical_harmonic_pythagorean_comma`~~ — lean mechanical.lean: harmonic_pythagorean_comma — 3 ^ 12 == 531441 && 2 ^ 19 == 524288 && 3 ^ 12 != 2 ^ 19 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `eb59929b-c67e…`
-- ~~`lean_mechanical_relation_eight`~~ — lean mechanical.lean: relation_eight — 2 ^ 3 == 8 && 8 * 8 == 64 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a39da385-334c…`
-- ~~`lean_mechanical_relation_seven_is_six_plus_one`~~ — lean mechanical.lean: relation_seven_is_six_plus_one — [1,2,4,5,7,8].length == 6 && 6 + 1 == 7 && 7 - 1 == 6 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `4cc8e257-5368…`
-- ~~`lean_mechanical_the_cyclic_number_142857_is_the_repetend_of_one_seventh`~~ — lean mechanical.lean: the_cyclic_number_142857_is_the_repetend_of_one_seventh — 999999 % 7 == 0 && 999999 / 7 == 142857 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `84678499-42cd…`
-- ~~`lean_mechanical_the_digital_root_of_seven_to_the_k_has_period_three`~~ — lean mechanical.lean: the_digital_root_of_seven_to_the_k_has_period_three — 7 ^ 1 % 9 == 7 && 7 ^ 2 % 9 == 4 && 7 ^ 3 % 9 == 1 && 7 ^ 4 % 9 == 7 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `35da1bae-5b79…`
-- ~~`lean_mechanical_seven_divides_the_repunit_of_length_six`~~ — lean mechanical.lean: seven_divides_the_repunit_of_length_six — 111111 % 7 == 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `5de46f3e-a628…`
-- ~~`lean_mechanical_two_to_the_eighth_is_two_hundred_fifty_six_a_byte`~~ — lean mechanical.lean: two_to_the_eighth_is_two_hundred_fifty_six_a_byte — 2 ^ 8 == 256 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `34caada8-dd09…`
-- ~~`lean_mechanical_two_to_the_tenth_is_1024_the_harmonic_ledger`~~ — lean mechanical.lean: two_to_the_tenth_is_1024_the_harmonic_ledger — 2 ^ 10 == 1024 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `04218536-2a34…`
-- ~~`lean_mechanical_nine_is_the_base_and_the_trinity_squared`~~ — lean mechanical.lean: nine_is_the_base_and_the_trinity_squared — 9 == 9 && 9 == 3 ^ 2 && 3 == 3 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `f0b0a052-058c…`
-- ~~`lean_mechanical_five_is_the_inverse_of_two_so_halving_reverses_the_orbit`~~ — lean mechanical.lean: five_is_the_inverse_of_two_so_halving_reverses_the_orbit — (2 * 5) % 9 == 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `32ceaab8-afe0…`
-- ~~`lean_mechanical_dna_is_the_version_itself`~~ — lean mechanical.lean: dna_is_the_version_itself — 4 ^ 3 == 64 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1527985d-54ef…`
-- ~~`lean_mechanical_genetic_code_is_the_octave_squared`~~ — lean mechanical.lean: genetic_code_is_the_octave_squared — 4 ^ 3 == 64 && 64 == 8 * 8 && 64 % 8 == 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a4bd830f-54a6…`
-- ~~`lean_mechanical_genesis_1_the_unit`~~ — lean mechanical.lean: genesis_1_the_unit — [1, 2, 3, 4, 5, 6, 7, 8, 9].all (fun n =&gt; 1 * n == n) && 1 ^ 7 == 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `b5cc42a3-c620…`
-- ~~`lean_mechanical_genesis_8_the_octave`~~ — lean mechanical.lean: genesis_8_the_octave — 2 ^ 3 == 8 && 8 % 8 == 0 && 8 == 2 * 2 * 2 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `3484a89d-0551…`
-- ~~`lean_mechanical_genesis_64_the_codon`~~ — lean mechanical.lean: genesis_64_the_codon — 4 ^ 3 == 64 && 2 ^ 6 == 64 && 8 ^ 2 == 64 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `5bc3c52a-0484…`
-- ~~`lean_mechanical_a432_factors_as_two_to_the_fourth_times_three_cubed`~~ — lean mechanical.lean: a432_factors_as_two_to_the_fourth_times_three_cubed — 2 ^ 4 * 3 ^ 3 == 432 && 16 * 27 == 432 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `ace5e026-76f2…`
-- ~~`lean_mechanical_two_bits_thrice_make_the_codon`~~ — lean mechanical.lean: two_bits_thrice_make_the_codon — 2 ^ 6 == 64 && (2 ^ 2) ^ 3 == 64 && 4 ^ 3 == 64 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d7a6008c-4238…`
-- ~~`lean_mechanical_the_full_superposition_has_nine_states`~~ — lean mechanical.lean: the_full_superposition_has_nine_states — (List.range' 1 9).length == 9 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `fcdb464a-6436…`
-- ~~`lean_mechanical_trial_units_group`~~ — lean mechanical.lean: trial_units_group — let U9 := [1,2,4,5,7,8]; U9.all (fun u =&gt; U9.all (fun v =&gt; U9.contains (M9 (u * v)))) && U9.contains (1) && U9.all (fun u =&gt; U9.any (fun w =&gt; M9 (u * w) == 1)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `15329fd6-4630…`
-- ~~`lean_mechanical_genus2_h1_symplectic`~~ — lean mechanical.lean: genus2_h1_symplectic — let rank := 2 * 2; rank == 4 && rank % 2 == 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d8a36344-ce56…`
 - ~~`lean_energy_the_equation_balances_by_atom_count`~~ — lean energy.lean: the_equation_balances_by_atom_count — (2 * 2 = 2 * 2) ∧ (2 * 1 = 1 * 2) ∧ 4 = 2 * 2 ∧ 2 = 1 * 2 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `ecfd70b1-b35b…`
-- ~~`lean_mechanical_relation_digital_root`~~ — lean mechanical.lean: relation_digital_root — DR (78) == 6 && DR (12) == DR (21) && [1,2,4,5,7,8].contains (DR (7)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d07323c6-683c…`
-- ~~`lean_mechanical_relation_432_factors`~~ — lean mechanical.lean: relation_432_factors — 432 == 16 * 27 && 432 == 2 ^ 4 * 3 ^ 3 && DR (432) == 9 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `34d3073f-7f81…`
 - ~~`lean_mechanical_geom_exterior_360`~~ — lean mechanical.lean: geom_exterior_360 — [3, 5, 8].all (fun n =&gt; n * (360 / n) == 360) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `b484eaf3-88c5…`
 
 </details>
 
-Page content-address: `80f939a7-791a-88b7-8112-fa35d15a7e51`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `8e3013da-be3a-8a90-a301-4278b8334fce`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

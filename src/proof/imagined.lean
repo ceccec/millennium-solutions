@@ -59,10 +59,6 @@ theorem all_is_closed_under_quadruple :
 theorem squares_is_closed_under_quadruple :
   [0, 1, 4, 7].all (fun d => [0, 1, 4, 7].contains (m9 (4 * d))) := by decide
 
--- the units is closed under negation
-theorem units_is_closed_under_negate :
-  [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (9 - d))) := by decide
-
 -- the triad is closed under negation
 theorem triad_is_closed_under_negate :
   [3, 6, 0].all (fun d => [3, 6, 0].contains (m9 (9 - d))) := by decide
@@ -314,10 +310,6 @@ theorem quadruple_carries_units_onto_orbit :
 -- quadrupling carries the doubling orbit onto the units
 theorem quadruple_carries_orbit_onto_units :
   [1, 2, 4, 8, 7, 5].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (4 * d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d => m9 (4 * d))).eraseDups.length = 6 := by decide
-
--- negation carries the units onto the doubling orbit
-theorem negate_carries_units_onto_orbit :
-  [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (9 - d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d => m9 (9 - d))).eraseDups.length = 6 := by decide
 
 -- negation carries the doubling orbit onto the units
 theorem negate_carries_orbit_onto_units :

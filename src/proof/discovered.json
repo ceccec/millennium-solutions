@@ -15406,162 +15406,139 @@
     "key": "lean_mechanical_merkaba_cube_q3",
     "name": "lean mechanical.lean: merkaba_cube_q3 — 2 ^ 3 == 8 && 3 * 2 ^ 2 == 12 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "6963c8ac-e3e6-8214-9861-a29b5b5b6529",
-    "revoked": true,
-    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
+    "reason": "reinstated: this entry was withdrawn as orphaned when a regenerated file briefly lacked its theorem. The theorem is in src/proof again and the kernel decides it on every run, so the withdrawal no longer describes anything true. The receipt is untouched and the withdrawal is recorded here rather than erased."
   },
   {
     "key": "lean_mechanical_trial_zero_no_inverse",
     "name": "lean mechanical.lean: trial_zero_no_inverse — !(List.range' 1 9).any (fun e => M9 (0 * e) == 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "f336fdf5-76ee-8a96-9bd1-db04c2e7823e",
-    "revoked": true,
-    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
+    "reason": "reinstated: this entry was withdrawn as orphaned when a regenerated file briefly lacked its theorem. The theorem is in src/proof again and the kernel decides it on every run, so the withdrawal no longer describes anything true. The receipt is untouched and the withdrawal is recorded here rather than erased."
   },
   {
     "key": "lean_mechanical_gf4_size",
     "name": "lean mechanical.lean: gf4_size — [0, 1, 2, 3].length == 2 ^ 2 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "daf893bd-dc5f-8e49-8df1-9488f88a4f86",
-    "revoked": true,
-    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
+    "reason": "reinstated: this entry was withdrawn as orphaned when a regenerated file briefly lacked its theorem. The theorem is in src/proof again and the kernel decides it on every run, so the withdrawal no longer describes anything true. The receipt is untouched and the withdrawal is recorded here rather than erased."
   },
   {
     "key": "lean_mechanical_harmonic_pythagorean_comma",
     "name": "lean mechanical.lean: harmonic_pythagorean_comma — 3 ^ 12 == 531441 && 2 ^ 19 == 524288 && 3 ^ 12 != 2 ^ 19 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "eb59929b-c67e-85e2-bcbd-571a868e8609",
-    "revoked": true,
-    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
+    "reason": "reinstated: this entry was withdrawn as orphaned when a regenerated file briefly lacked its theorem. The theorem is in src/proof again and the kernel decides it on every run, so the withdrawal no longer describes anything true. The receipt is untouched and the withdrawal is recorded here rather than erased."
   },
   {
     "key": "lean_mechanical_relation_eight",
     "name": "lean mechanical.lean: relation_eight — 2 ^ 3 == 8 && 8 * 8 == 64 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "a39da385-334c-8a73-b832-13c9e28f6680",
-    "revoked": true,
-    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
+    "reason": "reinstated: this entry was withdrawn as orphaned when a regenerated file briefly lacked its theorem. The theorem is in src/proof again and the kernel decides it on every run, so the withdrawal no longer describes anything true. The receipt is untouched and the withdrawal is recorded here rather than erased."
   },
   {
     "key": "lean_mechanical_relation_seven_is_six_plus_one",
     "name": "lean mechanical.lean: relation_seven_is_six_plus_one — [1,2,4,5,7,8].length == 6 && 6 + 1 == 7 && 7 - 1 == 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "4cc8e257-5368-82a1-8160-851a259b6613",
-    "revoked": true,
-    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
+    "reason": "reinstated: this entry was withdrawn as orphaned when a regenerated file briefly lacked its theorem. The theorem is in src/proof again and the kernel decides it on every run, so the withdrawal no longer describes anything true. The receipt is untouched and the withdrawal is recorded here rather than erased."
   },
   {
     "key": "lean_mechanical_the_cyclic_number_142857_is_the_repetend_of_one_seventh",
     "name": "lean mechanical.lean: the_cyclic_number_142857_is_the_repetend_of_one_seventh — 999999 % 7 == 0 && 999999 / 7 == 142857 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "84678499-42cd-8a49-b3f4-3b4e7c0bdc79",
-    "revoked": true,
-    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
+    "reason": "reinstated: this entry was withdrawn as orphaned when a regenerated file briefly lacked its theorem. The theorem is in src/proof again and the kernel decides it on every run, so the withdrawal no longer describes anything true. The receipt is untouched and the withdrawal is recorded here rather than erased."
   },
   {
     "key": "lean_mechanical_the_digital_root_of_seven_to_the_k_has_period_three",
     "name": "lean mechanical.lean: the_digital_root_of_seven_to_the_k_has_period_three — 7 ^ 1 % 9 == 7 && 7 ^ 2 % 9 == 4 && 7 ^ 3 % 9 == 1 && 7 ^ 4 % 9 == 7 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "35da1bae-5b79-8935-876a-b67346e27819",
-    "revoked": true,
-    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
+    "reason": "reinstated: this entry was withdrawn as orphaned when a regenerated file briefly lacked its theorem. The theorem is in src/proof again and the kernel decides it on every run, so the withdrawal no longer describes anything true. The receipt is untouched and the withdrawal is recorded here rather than erased."
   },
   {
     "key": "lean_mechanical_seven_divides_the_repunit_of_length_six",
     "name": "lean mechanical.lean: seven_divides_the_repunit_of_length_six — 111111 % 7 == 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "5de46f3e-a628-8b87-b794-3ecae7927b41",
-    "revoked": true,
-    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
+    "reason": "reinstated: this entry was withdrawn as orphaned when a regenerated file briefly lacked its theorem. The theorem is in src/proof again and the kernel decides it on every run, so the withdrawal no longer describes anything true. The receipt is untouched and the withdrawal is recorded here rather than erased."
   },
   {
     "key": "lean_mechanical_two_to_the_eighth_is_two_hundred_fifty_six_a_byte",
     "name": "lean mechanical.lean: two_to_the_eighth_is_two_hundred_fifty_six_a_byte — 2 ^ 8 == 256 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "34caada8-dd09-8da6-8637-3ade9c093e95",
-    "revoked": true,
-    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
+    "reason": "reinstated: this entry was withdrawn as orphaned when a regenerated file briefly lacked its theorem. The theorem is in src/proof again and the kernel decides it on every run, so the withdrawal no longer describes anything true. The receipt is untouched and the withdrawal is recorded here rather than erased."
   },
   {
     "key": "lean_mechanical_two_to_the_tenth_is_1024_the_harmonic_ledger",
     "name": "lean mechanical.lean: two_to_the_tenth_is_1024_the_harmonic_ledger — 2 ^ 10 == 1024 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "04218536-2a34-8e86-baa9-ed7071a31ab8",
-    "revoked": true,
-    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
+    "reason": "reinstated: this entry was withdrawn as orphaned when a regenerated file briefly lacked its theorem. The theorem is in src/proof again and the kernel decides it on every run, so the withdrawal no longer describes anything true. The receipt is untouched and the withdrawal is recorded here rather than erased."
   },
   {
     "key": "lean_mechanical_nine_is_the_base_and_the_trinity_squared",
     "name": "lean mechanical.lean: nine_is_the_base_and_the_trinity_squared — 9 == 9 && 9 == 3 ^ 2 && 3 == 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "f0b0a052-058c-8147-8cca-7caf6ba309b7",
-    "revoked": true,
-    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
+    "reason": "reinstated: this entry was withdrawn as orphaned when a regenerated file briefly lacked its theorem. The theorem is in src/proof again and the kernel decides it on every run, so the withdrawal no longer describes anything true. The receipt is untouched and the withdrawal is recorded here rather than erased."
   },
   {
     "key": "lean_mechanical_five_is_the_inverse_of_two_so_halving_reverses_the_orbit",
     "name": "lean mechanical.lean: five_is_the_inverse_of_two_so_halving_reverses_the_orbit — (2 * 5) % 9 == 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "32ceaab8-afe0-8a44-8646-8ffbc9248217",
-    "revoked": true,
-    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
+    "reason": "reinstated: this entry was withdrawn as orphaned when a regenerated file briefly lacked its theorem. The theorem is in src/proof again and the kernel decides it on every run, so the withdrawal no longer describes anything true. The receipt is untouched and the withdrawal is recorded here rather than erased."
   },
   {
     "key": "lean_mechanical_dna_is_the_version_itself",
     "name": "lean mechanical.lean: dna_is_the_version_itself — 4 ^ 3 == 64 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "1527985d-54ef-8b25-807b-3d3b0a1e109e",
-    "revoked": true,
-    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
+    "reason": "reinstated: this entry was withdrawn as orphaned when a regenerated file briefly lacked its theorem. The theorem is in src/proof again and the kernel decides it on every run, so the withdrawal no longer describes anything true. The receipt is untouched and the withdrawal is recorded here rather than erased."
   },
   {
     "key": "lean_mechanical_genetic_code_is_the_octave_squared",
     "name": "lean mechanical.lean: genetic_code_is_the_octave_squared — 4 ^ 3 == 64 && 64 == 8 * 8 && 64 % 8 == 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "a4bd830f-54a6-8a86-b874-d82826f18ebe",
-    "revoked": true,
-    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
+    "reason": "reinstated: this entry was withdrawn as orphaned when a regenerated file briefly lacked its theorem. The theorem is in src/proof again and the kernel decides it on every run, so the withdrawal no longer describes anything true. The receipt is untouched and the withdrawal is recorded here rather than erased."
   },
   {
     "key": "lean_mechanical_genesis_1_the_unit",
     "name": "lean mechanical.lean: genesis_1_the_unit — [1, 2, 3, 4, 5, 6, 7, 8, 9].all (fun n => 1 * n == n) && 1 ^ 7 == 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "b5cc42a3-c620-8cdf-bd54-6c5e055b2590",
-    "revoked": true,
-    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
+    "reason": "reinstated: this entry was withdrawn as orphaned when a regenerated file briefly lacked its theorem. The theorem is in src/proof again and the kernel decides it on every run, so the withdrawal no longer describes anything true. The receipt is untouched and the withdrawal is recorded here rather than erased."
   },
   {
     "key": "lean_mechanical_genesis_8_the_octave",
     "name": "lean mechanical.lean: genesis_8_the_octave — 2 ^ 3 == 8 && 8 % 8 == 0 && 8 == 2 * 2 * 2 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "3484a89d-0551-825f-93d1-7ce42f22f72d",
-    "revoked": true,
-    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
+    "reason": "reinstated: this entry was withdrawn as orphaned when a regenerated file briefly lacked its theorem. The theorem is in src/proof again and the kernel decides it on every run, so the withdrawal no longer describes anything true. The receipt is untouched and the withdrawal is recorded here rather than erased."
   },
   {
     "key": "lean_mechanical_genesis_64_the_codon",
     "name": "lean mechanical.lean: genesis_64_the_codon — 4 ^ 3 == 64 && 2 ^ 6 == 64 && 8 ^ 2 == 64 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "5bc3c52a-0484-87c6-98f1-53d28c24edca",
-    "revoked": true,
-    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
+    "reason": "reinstated: this entry was withdrawn as orphaned when a regenerated file briefly lacked its theorem. The theorem is in src/proof again and the kernel decides it on every run, so the withdrawal no longer describes anything true. The receipt is untouched and the withdrawal is recorded here rather than erased."
   },
   {
     "key": "lean_mechanical_a432_factors_as_two_to_the_fourth_times_three_cubed",
     "name": "lean mechanical.lean: a432_factors_as_two_to_the_fourth_times_three_cubed — 2 ^ 4 * 3 ^ 3 == 432 && 16 * 27 == 432 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "ace5e026-76f2-8a9c-9297-c9491690d6ee",
-    "revoked": true,
-    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
+    "reason": "reinstated: this entry was withdrawn as orphaned when a regenerated file briefly lacked its theorem. The theorem is in src/proof again and the kernel decides it on every run, so the withdrawal no longer describes anything true. The receipt is untouched and the withdrawal is recorded here rather than erased."
   },
   {
     "key": "lean_mechanical_two_bits_thrice_make_the_codon",
     "name": "lean mechanical.lean: two_bits_thrice_make_the_codon — 2 ^ 6 == 64 && (2 ^ 2) ^ 3 == 64 && 4 ^ 3 == 64 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "d7a6008c-4238-8a87-8793-40f4056ca7e7",
-    "revoked": true,
-    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
+    "reason": "reinstated: this entry was withdrawn as orphaned when a regenerated file briefly lacked its theorem. The theorem is in src/proof again and the kernel decides it on every run, so the withdrawal no longer describes anything true. The receipt is untouched and the withdrawal is recorded here rather than erased."
   },
   {
     "key": "lean_mechanical_the_full_superposition_has_nine_states",
     "name": "lean mechanical.lean: the_full_superposition_has_nine_states — (List.range' 1 9).length == 9 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "fcdb464a-6436-8f64-a399-316e136bdb56",
-    "revoked": true,
-    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
+    "reason": "reinstated: this entry was withdrawn as orphaned when a regenerated file briefly lacked its theorem. The theorem is in src/proof again and the kernel decides it on every run, so the withdrawal no longer describes anything true. The receipt is untouched and the withdrawal is recorded here rather than erased."
   },
   {
     "key": "lean_mechanical_trial_units_group",
     "name": "lean mechanical.lean: trial_units_group — let U9 := [1,2,4,5,7,8]; U9.all (fun u => U9.all (fun v => U9.contains (M9 (u * v)))) && U9.contains (1) && U9.all (fun u => U9.any (fun w => M9 (u * w) == 1)) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "15329fd6-4630-8744-9936-b1aef10dd69f",
-    "revoked": true,
-    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
+    "reason": "reinstated: this entry was withdrawn as orphaned when a regenerated file briefly lacked its theorem. The theorem is in src/proof again and the kernel decides it on every run, so the withdrawal no longer describes anything true. The receipt is untouched and the withdrawal is recorded here rather than erased."
   },
   {
     "key": "lean_mechanical_genus2_h1_symplectic",
     "name": "lean mechanical.lean: genus2_h1_symplectic — let rank := 2 * 2; rank == 4 && rank % 2 == 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "d8a36344-ce56-875e-9f6f-acc685b5de2e",
-    "revoked": true,
-    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
+    "reason": "reinstated: this entry was withdrawn as orphaned when a regenerated file briefly lacked its theorem. The theorem is in src/proof again and the kernel decides it on every run, so the withdrawal no longer describes anything true. The receipt is untouched and the withdrawal is recorded here rather than erased."
   },
   {
     "key": "lean_ledgerclaims_a_seal_is_128_bits",
@@ -15711,7 +15688,10 @@
   {
     "key": "lean_imagined_units_is_closed_under_negate",
     "name": "lean imagined.lean: units_is_closed_under_negate — [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (9 - d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "ade6add5-ed3b-8575-a7a8-70a0c8e5d86f"
+    "receipt": "ade6add5-ed3b-8575-a7a8-70a0c8e5d86f",
+    "revoked": true,
+    "supersededBy": "lean_millenniumfloor.universal_universal_z9_reflection_permutes_the_units",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_millenniumfloor.universal_universal_z9_reflection_permutes_the_units now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_triad_is_closed_under_negate",
@@ -15816,7 +15796,10 @@
   {
     "key": "lean_imagined_negate_carries_units_onto_orbit",
     "name": "lean imagined.lean: negate_carries_units_onto_orbit — [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (9 - d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d => m9 (9 - d))).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "026d098c-a7ed-8bd6-8416-ed14fa6dff57"
+    "receipt": "026d098c-a7ed-8bd6-8416-ed14fa6dff57",
+    "revoked": true,
+    "supersededBy": "lean_millenniumfloor.universal_universal_z9_reflection_permutes_the_units",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_millenniumfloor.universal_universal_z9_reflection_permutes_the_units now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_negate_carries_orbit_onto_units",
@@ -16209,15 +16192,13 @@
     "key": "lean_mechanical_relation_digital_root",
     "name": "lean mechanical.lean: relation_digital_root — DR (78) == 6 && DR (12) == DR (21) && [1,2,4,5,7,8].contains (DR (7)) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "d07323c6-683c-866d-be2f-9f3f81ea6459",
-    "revoked": true,
-    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
+    "reason": "reinstated: this entry was withdrawn as orphaned when a regenerated file briefly lacked its theorem. The theorem is in src/proof again and the kernel decides it on every run, so the withdrawal no longer describes anything true. The receipt is untouched and the withdrawal is recorded here rather than erased."
   },
   {
     "key": "lean_mechanical_relation_432_factors",
     "name": "lean mechanical.lean: relation_432_factors — 432 == 16 * 27 && 432 == 2 ^ 4 * 3 ^ 3 && DR (432) == 9 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "34d3073f-7f81-8363-8152-589888681b10",
-    "revoked": true,
-    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
+    "reason": "reinstated: this entry was withdrawn as orphaned when a regenerated file briefly lacked its theorem. The theorem is in src/proof again and the kernel decides it on every run, so the withdrawal no longer describes anything true. The receipt is untouched and the withdrawal is recorded here rather than erased."
   },
   {
     "key": "lean_mechanical_fib_trinity_horizon",
@@ -16940,5 +16921,40 @@
     "key": "lean_mechanical_contribute_two_to_save_sixty_four",
     "name": "lean mechanical.lean: contribute_two_to_save_sixty_four — let x := ((List.range 6).map (fun i => 2)).foldl (fun x y => x * y) 1; x == 64 && 2 ^ 6 == 64 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "4e24f24d-fc54-8beb-8c20-8541b68f54dc"
+  },
+  {
+    "key": "lean_millenniumfloor.universal_universal_centre_is_five",
+    "name": "lean theorems.lean: universal_centre_is_five — ((List.range 10).filter (fun d => refl d == d)) = [5] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "42ce0775-4a4d-8489-bb30-7fcc5a550bff"
+  },
+  {
+    "key": "lean_millenniumfloor.universal_universal_pairs_sum_to_ten",
+    "name": "lean theorems.lean: universal_pairs_sum_to_ten — (List.range 11).all (fun d => d + refl d == 10) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "637d181e-c3d7-8e3a-8711-c77142b83f68"
+  },
+  {
+    "key": "lean_millenniumfloor.universal_universal_reflection_reverses_the_domain",
+    "name": "lean theorems.lean: universal_reflection_reverses_the_domain — (List.range 11).map refl = (List.range 11).reverse — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a1c960e9-f2e7-82bc-9c5e-a116f3b14161"
+  },
+  {
+    "key": "lean_millenniumfloor.universal_universal_reflection_is_not_an_involution_above_ten",
+    "name": "lean theorems.lean: universal_reflection_is_not_an_involution_above_ten — ((List.range 10).map (fun k => k + 11)).all (fun d => ¬ (refl (refl d) == d)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8508a4f1-bf0e-8327-9893-8a1f0f662caa"
+  },
+  {
+    "key": "lean_millenniumfloor.universal_universal_z9_reflection_permutes_the_units",
+    "name": "lean theorems.lean: universal_z9_reflection_permutes_the_units — ([1, 2, 4, 5, 7, 8].map (fun d => (9 - d) % 9)) = [8, 7, 5, 4, 2, 1] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c108d1b2-5b61-87b8-8362-2c25afe59d18"
+  },
+  {
+    "key": "lean_millenniumfloor.universal_universal_millennium_reflection_escapes_the_units",
+    "name": "lean theorems.lean: universal_millennium_reflection_escapes_the_units — ¬ ([1, 2, 4, 5, 7, 8].all (fun u => [1, 2, 4, 5, 7, 8].contains (refl u))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "42cffd21-8daa-8c57-b20c-485af9bc2174"
+  },
+  {
+    "key": "lean_millenniumfloor.universal_universal_reflection_is_the_vortex_reflection_shifted",
+    "name": "lean theorems.lean: universal_reflection_is_the_vortex_reflection_shifted — (List.range 10).all (fun d => (10 - d) % 9 == ((9 - d) % 9 + 1) % 9) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e27a695c-fcb5-8abc-86af-eb64c401bbef"
   }
 ]

@@ -111,15 +111,26 @@ export const frontmatter = (file: string): Record<string, string> => {
  *  places, and this session has twice watched a private copy answer differently from its siblings. */
 export const isLive = (e: Entry): boolean => !e.revoked
 
-/** The state of one entry, as the record can actually justify it. */
-export const statusOf = (e: Entry): Status =>
-  !e.revoked ? 'standing' : e.supersededBy ? 'carried' : 'withdrawn'
+/** The state of one entry, as the record can actually justify it.
+ *
+ *  THE SUCCESSOR MUST ITSELF STAND. The first version of this read `e.supersededBy ? 'carried' : 'withdrawn'`
+ *  — the mere PRESENCE of a forwarding key was taken as proof that the statement survives. Twenty-five entries
+ *  forward to a key that is itself withdrawn, and every one of them was being reported as carried: the record
+ *  claimed a live proof at the far end of a link that leads nowhere. CHALLENGES.md published those links, and
+ *  the seal gate caught a page citing a withdrawn theorem, which is how this was found rather than shipped.
+ *  A carry is a claim about where the proof is now, so it is only a carry when there is a proof there. */
+export const statusOf = (e: Entry, l: Entry[] = ledger()): Status => {
+  if (!e.revoked) return 'standing'
+  if (!e.supersededBy) return 'withdrawn'
+  const heir = l.find((x) => x.key === e.supersededBy)
+  return heir && !heir.revoked ? 'carried' : 'withdrawn'
+}
 
 /** Entries whose statement stands, whether by their own seal or through the theorem that carries it. This is
  *  the honest answer to "how much of this deposit is proved" — it is NOT the same as `live`, which counts
  *  only the entries that carry their own proof, and both numbers are worth reporting separately. */
-export const carried = (l: Entry[] = ledger()): Entry[] => l.filter((e) => statusOf(e) === 'carried')
-export const proved = (l: Entry[] = ledger()): Entry[] => l.filter((e) => statusOf(e) !== 'withdrawn')
+export const carried = (l: Entry[] = ledger()): Entry[] => l.filter((e) => statusOf(e, l) === 'carried')
+export const proved = (l: Entry[] = ledger()): Entry[] => l.filter((e) => statusOf(e, l) !== 'withdrawn')
 export const isWithdrawn = (e: Entry): boolean => e.revoked === true
 
 // ── THE ℤ/9 SETS, COMPUTED AND CHECKED AGAINST THE THEOREM THAT PROVES THEM ────────────────────────────────

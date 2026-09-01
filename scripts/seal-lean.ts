@@ -11,7 +11,7 @@
 //
 //   node scripts/seal-lean.ts          report what would be sealed
 //   node scripts/seal-lean.ts --seal   seal it
-import { readFileSync, writeFileSync, readdirSync } from 'node:fs'
+import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 import { toUuid } from '../src/0/index.ts'
 import { ledger as __ledger } from '../src/api/index.ts'
@@ -23,7 +23,7 @@ const DIR = 'src/proof', LEDGER = 'src/proof/discovered.json'
 try { execSync('node scripts/lean.ts', { stdio: 'pipe' }) }
 catch (e) { console.error('✗ the Lean layer does not verify — nothing sealed\n' + String((e as { stdout?: Buffer }).stdout ?? '')); process.exit(1) }
 
-const ledger = __ledger() as { key: string; name: string; receipt: string; revoked?: boolean; reason?: string }[]
+const ledger = __ledger() as { key: string; name: string; receipt: string; revoked?: boolean; reason?: string; supersededBy?: string }[]
 const known = new Set(ledger.map((e) => e.key))
 const revoked = new Set((JSON.parse(readFileSync(`${DIR}/revoked.json`, 'utf8')) as { key: string }[]).map((r) => r.key))
 
@@ -61,6 +61,38 @@ console.log(`already sealed: ${algebraic.length - fresh.length} · fresh: ${fres
 // the next person to ignore it.
 const sealedLean = ledger.filter((e) => !e.revoked && e.key.startsWith('lean_'))
 const liveNames = found.map((t) => t.name)
+
+// ── RETURNED FROM ORPHANAGE ─────────────────────────────────────────────────────────────────────────────
+// The orphan check below is one-directional, and that is a hole. A generated file regenerated without one of
+// its theorems orphans the sealed key; when a later run puts the theorem BACK, nothing notices. The entry is
+// invisible to `fresh` (its key is already in the ledger) and invisible to the orphan sweep (it is already
+// revoked), so it stays withdrawn forever while the kernel checks the statement on every single run. Twenty-
+// five entries were in exactly that state — every one of them a mechanical.lean theorem that compiles today,
+// filed as "no longer in src/proof". Nothing is withdrawn while Lean is green, so the reason is tested against
+// the source rather than trusted, and an entry the source contradicts is reinstated with its history kept.
+const nameLives = (key: string) => liveNames.some((n) => {
+  const rest = key.slice('lean_'.length)
+  return rest === n || rest.endsWith('_' + n) || rest.endsWith('.' + n)
+})
+const returned = ledger.filter((e) => e.revoked && /^orphaned:/.test(e.reason ?? '') && e.key.startsWith('lean_') && nameLives(e.key))
+if (returned.length) {
+  console.log(`\n! ${returned.length} entr(ies) are withdrawn as orphaned while their theorem IS in src/proof — the reason is contradicted by the source:`)
+  for (const r of returned.slice(0, 8)) console.log('    ' + r.key)
+  if (returned.length > 8) console.log(`    …and ${returned.length - 8} more`)
+  if (process.argv.includes('--seal')) {
+    for (const r of returned) {
+      const e = ledger.find((x) => x.key === r.key)!
+      delete e.revoked
+      e.reason = 'reinstated: this entry was withdrawn as orphaned when a regenerated file briefly lacked its theorem. The theorem is in src/proof again and the kernel decides it on every run, so the withdrawal no longer describes anything true. The receipt is untouched and the withdrawal is recorded here rather than erased.'
+    }
+    writeFileSync('src/proof/discovered.json', JSON.stringify(ledger, null, 2) + '\n')
+    console.log(`  ✓ reinstated ${returned.length} — receipts untouched, the withdrawal recorded in the reason`)
+  } else {
+    console.log('  re-run with --seal to reinstate them')
+    process.exit(1)
+  }
+}
+
 const orphans = sealedLean.filter((e) => {
   const rest = e.key.slice('lean_'.length)
   return !liveNames.some((n) => rest === n || rest.endsWith('_' + n) || rest.endsWith('.' + n))
@@ -73,21 +105,58 @@ if (orphans.length) {
   // the prover had been asked whether it could render them, after which nothing ever asked again. A claim
   // with a living successor is superseded, not gone, and scripts/fold.ts records the link.
   const liveKeys = new Set(ledger.filter(__isLive).map((e) => e.key))
-  const carried = orphans.filter((o) => [...liveKeys].some((k) => k !== o.key && k.endsWith('_' + o.key.replace(/^lean_/, ''))))
-  if (carried.length) {
-    console.log(`  ✗ ${carried.length} of these are carried by a live theorem — refusing to withdraw them; run scripts/fold.ts to record the supersession instead:`)
-    for (const c of carried) console.log('      ' + c.key)
-    process.exit(1)
+  // TWO WAYS A STATEMENT SURVIVES ITS NAME. The first is lexical: the same theorem name reappears under a
+  // different file prefix, which the suffix match below finds. The second is SEMANTIC, and this check was
+  // blind to it — imagine.ts drops a candidate when a hand-written theorem already expresses the same fact,
+  // and that theorem carries a name of its own choosing. Two sealed entries were orphaned exactly that way,
+  // and this gate offered to withdraw two facts the kernel checks on every run. imagine.ts now writes down
+  // which theorem covered what it dropped, and that record is read here: a covered orphan is superseded.
+  const covered: Record<string, string> = existsSync('src/proof/covered.json')
+    ? JSON.parse(readFileSync('src/proof/covered.json', 'utf8')) : {}
+  const bare = (k: string) => k.replace(/^lean_/, '')
+  const keyFor = (name: string) => [...liveKeys].find((k) => bare(k) === name || bare(k).endsWith('_' + name) || bare(k).endsWith('.' + name))
+  const successorOf = (o: { key: string }): string | undefined => {
+    const lex = [...liveKeys].find((k) => k !== o.key && k.endsWith('_' + bare(o.key)))
+    if (lex) return lex
+    for (const [cand, by] of Object.entries(covered)) {
+      if (!by || !bare(o.key).endsWith(cand)) continue
+      const k = keyFor(by)
+      if (k && k !== o.key && liveNames.some((n) => n === by)) return k
+    }
+    return undefined
   }
-  if (process.argv.includes('--revoke-orphans')) {
-    for (const o of orphans) {
+  const carried = orphans.filter((o) => successorOf(o))
+  if (carried.length) {
+    // CARRYING IS NOT WITHDRAWAL, so it does not wait for --revoke-orphans. The statement is still proved and
+    // still kernel-checked; what changed is the key it is proved at. Writing that link is the only way the
+    // record can say so — leaving the entry standing would claim a source that is gone, and withdrawing it
+    // would claim the fact is unproved. Receipts are untouched: the entry is marked in place, as ever.
+    if (process.argv.includes('--seal')) {
+      for (const c of carried) {
+        const e = ledger.find((x) => x.key === c.key)!
+        e.revoked = true
+        e.supersededBy = successorOf(c)
+        e.reason = `carried: the theorem this key was sealed from is no longer in src/proof, because ${e.supersededBy} now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain.`
+      }
+      writeFileSync('src/proof/discovered.json', JSON.stringify(ledger, null, 2) + '\n')
+      console.log(`  ✓ ${carried.length} carried — marked in place with the key that now proves them:`)
+      for (const c of carried) console.log(`      ${c.key} → ${ledger.find((x) => x.key === c.key)!.supersededBy}`)
+    } else {
+      console.log(`  ✗ ${carried.length} of these are carried by a live theorem — refusing to withdraw them; re-run with --seal to record the supersession:`)
+      for (const c of carried) console.log(`      ${c.key} → ${successorOf(c)}`)
+      process.exit(1)
+    }
+  }
+  const stillOrphaned = orphans.filter((o) => !successorOf(o))
+  if (stillOrphaned.length && process.argv.includes('--revoke-orphans')) {
+    for (const o of stillOrphaned) {
       const e = ledger.find((x) => x.key === o.key)!
       e.revoked = true
       e.reason = 'orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand.'
     }
     writeFileSync('src/proof/discovered.json', JSON.stringify(ledger, null, 2) + '\n')
-    console.log(`  ✓ revoked ${orphans.length} in place — receipts kept, claims withdrawn`)
-  } else {
+    console.log(`  ✓ revoked ${stillOrphaned.length} in place — receipts kept, claims withdrawn`)
+  } else if (stillOrphaned.length) {
     console.log('  run with --revoke-orphans to withdraw them (receipts kept, chain intact)')
     process.exit(1)
   }

@@ -140,18 +140,30 @@ let said = readdirSync('src/proof').filter((f) => f.endsWith('.lean') && f !== '
 for (const [re, to] of ALIAS) said = said.replace(re, to)
 const setOf = new Map(SETS.map((S) => [S.id, S.lean.replace(/\s+/g, '')]))
 const mulOf: Record<string, string> = { double: '2*d', triple: '3*d', quadruple: '4*d', quintuple: '5*d', sextuple: '6*d', septuple: '7*d', octuple: '8*d', negate: '9-d', square: 'd*d', cube: 'd*d*d' }
+// WHO COVERS IT — recorded, not just counted. Dropping a candidate because the deposit already proves it is
+// correct; dropping it SILENTLY is not. Two entries sealed from earlier runs of this generator were orphaned
+// the moment a hand-written theorem expressed the same fact under a different name: the source vanished, the
+// ledger still held the key, and nothing in the tree said where the statement had gone. seal-lean then offered
+// to withdraw two facts that are, right now, checked by the kernel. The name of the covering theorem is the
+// missing evidence, so it is written down and seal-lean reads it to mark supersession instead of loss.
+const nameOf = (chunk: string) => chunk.match(/^([A-Za-z_][A-Za-z0-9_'.]*)/)?.[1] ?? ''
+const chunks = said.split('theorem')
+const coveredBy = new Map<string, string>()
 const t2 = t3.filter((c) => {
-  if (said.includes(c.prop.replace(/\s+/g, ''))) return false
+  const flat = c.prop.replace(/\s+/g, '')
+  const verbatim = chunks.find((t) => t.includes(flat))
+  if (verbatim) { coveredBy.set(c.key, nameOf(verbatim)); return false }
   const [, mapId] = c.kind.split(':')
   const setId = c.key.match(/(units|triad|orbit|tetA|tetB|all)/)?.[1]
   const lit = setId ? setOf.get(setId) : undefined
   const mul = mulOf[mapId]
   // both ingredients present in one existing theorem body ⇒ treat as already covered
   if (lit && mul && said.includes(lit) && said.includes(mul)) {
-    for (const t of said.split('theorem')) if (t.includes(lit) && t.includes(mul)) return false
+    for (const t of chunks) if (t.includes(lit) && t.includes(mul)) { coveredBy.set(c.key, nameOf(t)); return false }
   }
   return true
 })
+writeFileSync('src/proof/covered.json', JSON.stringify(Object.fromEntries([...coveredBy].sort()), null, 2) + '\n')
 const overlap = t3.length - t2.length
 
 // "new" means NOT ALREADY IN THE HAND-WRITTEN PROOFS. imagined.lean is excluded from its own corpus so that
@@ -161,6 +173,7 @@ console.log(`imagined ${cands.length} propositions over ℤ/9 · ${t1.length} tr
 const killed = t1.length - t3.length
 console.log(`  ${killed} true-but-free statement(s) discarded — they hold for every sibling and so name nothing`)
 console.log(`  ${overlap} already expressed in src/proof — recognised through definition aliases, not spelling`)
+console.log(`  covering theorem named for ${coveredBy.size} of them in src/proof/covered.json — a dropped candidate whose key is still sealed is superseded, not lost`)
 
 if (!process.argv.includes('--emit')) {
   for (const c of t2.slice(0, 40)) console.log('  · ' + c.say)

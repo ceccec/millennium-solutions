@@ -9,7 +9,7 @@
 // chaining (promoted from lean-claims); they are a DOCUMENTED baseline discontinuity, not tampering. The
 // build fails only on a NEW break (outside the baseline) or a collision — tampering caught, history kept.
 import { readFileSync } from 'node:fs'
-import { leanTheorems, fileOfKey } from '../src/api/index.ts'
+import { leanTheorems, fileOfKey, isLive, statusOf } from '../src/api/index.ts'
 import { execSync } from 'node:child_process'
 import { toUuid, merkleFold, digitalRoot } from '../src/0/index.ts'
 import { computes } from './honesty-gate.ts'
@@ -154,17 +154,29 @@ const familyOf = (key: string) => {
 // pointed every reader at work that must not be done. The live count is 12, which is the honest size of the
 // lead. The revoked entries are still counted separately below, where they are described as what they are.
 const fam = new Map<string, number>()
-const liveEntries = ledger.filter((e) => !(e as { revoked?: boolean }).revoked)
+// through the shared predicate, and reporting the record's FOUR states rather than the raw flag's two. This
+// line said "1891 withdrawn entries are excluded" while 113 of them are carried — withdrawn on their own
+// evidence and proved by a live theorem. Counting a proved statement among the unproved understates the
+// deposit in its own forensic report, which is the last place that should happen.
+const liveEntries = ledger.filter(isLive)
+const carriedCount = ledger.filter((e) => statusOf(e as never, ledger as never) === 'carried').length
+const neverProved = ledger.filter((e) => statusOf(e as never, ledger as never) === 'withdrawn').length
 for (const e of liveEntries) { const t = familyOf(e.key); fam.set(t, (fam.get(t) ?? 0) + 1) }
 const byCount = [...fam.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
 const top = byCount[0]
 console.log('  domains (by key family, LIVE only): ' + fam.size + ' families over ' + liveEntries.length + ' live theorems'
   + ' · richest ' + byCount.slice(0, 6).map(([t, n]) => t + ':' + n).join(' ')
   + ' · largest family ' + top[0] + ' holds ' + (top[1] / liveEntries.length * 100).toFixed(1) + '%')
-const singletons = byCount.filter(([, n]) => n === 1).length
-console.log('  domain spread: ' + singletons + ' live singleton families (a standing fact not yet grown to an octave — a real candidate), '
+// NAMED, NOT COUNTED. "1 singleton family is a real candidate" points at nothing a reader can act on; the
+// whole worth of the line is telling the next wave where to dig, so it says which family and which theorem
+// stands alone in it.
+const singles = byCount.filter(([, n]) => n === 1).map(([f]) => f)
+const singleNames = singles.map((f) => f + ' (' + (liveEntries.find((e) => familyOf(e.key) === f)?.key ?? '?') + ')')
+console.log('  domain spread: ' + singles.length + ' live singleton families (a standing fact not yet grown to an octave — a real candidate'
+  + (singles.length ? ': ' + singleNames.join(', ') : '') + '), '
   + byCount.filter(([, n]) => n >= 8).length + ' families at octave scale (≥8)'
-  + ' · ' + (ledger.length - liveEntries.length) + ' withdrawn entries are excluded: a claim that stopped standing is not a lead')
+  + ' · excluded: ' + neverProved + ' withdrawn (nothing proves them — not a lead) and '
+  + carriedCount + ' carried (withdrawn on their own evidence, proved by a live theorem — not a lead either, they are done)')
 
 // (5b) OCTAVE analysis — the theorems matter in GROUPS OF 8. Partition the receipts into octaves (groups of 8),
 // fold each to an octave-seal, then fold the 128 octave-seals to one octave-root: the hierarchical 8-ary

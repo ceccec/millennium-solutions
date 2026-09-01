@@ -19,7 +19,9 @@ import { createRequire } from 'node:module'
 // REVOKED ENTRIES ARE NOT LIVE CLAIMS. The ledger is append-only and its receipts are immutable, so an entry
 // that no longer holds is marked in place rather than deleted — deleting would break the chain, and rewriting
 // a receipt is TAMPER. A marked entry stays in the record with the reason it went, and is skipped here.
-const isLive = (e: { revoked?: boolean }) => !e.revoked
+// The predicate comes from the API rather than being spelled again: two copies of "what standing means" can
+// drift apart, and the one inside a gate is the copy that must not.
+import { isLive } from '../src/api/index.ts'
 
 export const CASES: [string, 0 | 1, string][] = [
   // ── boasts: no negation, must drain ──

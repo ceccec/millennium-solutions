@@ -5,7 +5,7 @@
 // build), so it never enters the content-address and never churns a phantom version.
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { toUuid, merkleFold } from '../src/0/index.ts'
-import { ledger as __ledger } from '../src/api/index.ts'
+import { ledger as __ledger, statusOf as __statusOf } from '../src/api/index.ts'
 import { isLive as __isLive, isWithdrawn as __isWithdrawn } from '../src/api/index.ts'
 
 const CLAY = [
@@ -32,7 +32,11 @@ const catOf = (k: string) => k.replace(/^REF_/, '').split('_')[0]
 // The record is append-only: a revoked entry is never deleted (that would break the chain), but it is no
 // longer a live theorem, so it is rendered WITHOUT a /theorem/ citation — marked history, with its reason.
 const liveL = ledger.filter(__isLive)
-const goneL = ledger.filter(__isWithdrawn)
+// SPLIT BY WHAT THE RECORD CAN JUSTIFY. A carried entry — withdrawn on its own evidence, proved by a live
+// theorem — is not the same as one nothing proves, and listing 1891 keys under a single "revoked" heading
+// told a reader the weaker of two true things about 113 of them.
+const goneL = ledger.filter((e) => __statusOf(e, ledger) === 'withdrawn')
+const carriedL = ledger.filter((e) => __statusOf(e, ledger) === 'carried')
 const groups: Record<string, typeof ledger> = {}
 for (const e of liveL) (groups[catOf(e.key)] ??= []).push(e)
 const cats = Object.keys(groups).sort()
@@ -58,7 +62,13 @@ if (goneL.length) {
   o += '\n## Revoked — ' + goneL.length + ' entries that no longer stand\n\n'
   o += 'The ledger is append-only: an entry that stops holding is marked in place, never deleted — deleting would break the receipt chain, and rewriting a receipt is tamper. These keep their receipts and stay in the record, but they are **not citable** and have no `/theorem/` page. Grouped by the reason they went:\n\n'
   for (const [r, n] of Object.entries(why).sort((a, b) => b[1] - a[1])) o += '- **' + n + '** — ' + esc(r) + '\n'
-  o += '\n<details><summary>List all ' + goneL.length + ' revoked keys</summary>\n\n'
+  if (carriedL.length) {
+    o += '\n## Carried — ' + carriedL.length + ' withdrawn entries whose statement a proof now carries\n\n'
+    o += 'Each was withdrawn for want of a Lean proof and has since been given one, at a new key. The entry is not restored: its own evidence is still a TypeScript test, and it did not hold on what it had. What the record adds is where the statement stands now.\n\n'
+    for (const e of carriedL.slice(0, 40)) o += '- ~~`' + e.key + '`~~ → [`' + (e as { supersededBy?: string }).supersededBy + '`](/theorem/' + (e as { supersededBy?: string }).supersededBy + ')\n'
+    if (carriedL.length > 40) o += '\n…and ' + (carriedL.length - 40) + ' more.\n'
+  }
+  o += '\n<details><summary>List all ' + goneL.length + ' withdrawn keys — nothing proves these</summary>\n\n'
   for (const e of goneL) o += '- ~~`' + e.key + '`~~ — ' + esc(e.name) + '  ·  `' + e.receipt.slice(0, 13) + '…`\n'
   o += '\n</details>\n'
 }

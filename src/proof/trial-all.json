@@ -13978,5 +13978,47 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "4e24f24d-fc54-8beb-8c20-8541b68f54dc"
+  },
+  {
+    "key": "lean_millenniumfloor.universal_universal_centre_is_five",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "42ce0775-4a4d-8489-bb30-7fcc5a550bff"
+  },
+  {
+    "key": "lean_millenniumfloor.universal_universal_pairs_sum_to_ten",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "637d181e-c3d7-8e3a-8711-c77142b83f68"
+  },
+  {
+    "key": "lean_millenniumfloor.universal_universal_reflection_reverses_the_domain",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a1c960e9-f2e7-82bc-9c5e-a116f3b14161"
+  },
+  {
+    "key": "lean_millenniumfloor.universal_universal_reflection_is_not_an_involution_above_ten",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8508a4f1-bf0e-8327-9893-8a1f0f662caa"
+  },
+  {
+    "key": "lean_millenniumfloor.universal_universal_z9_reflection_permutes_the_units",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c108d1b2-5b61-87b8-8362-2c25afe59d18"
+  },
+  {
+    "key": "lean_millenniumfloor.universal_universal_millennium_reflection_escapes_the_units",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "42cffd21-8daa-8c57-b20c-485af9bc2174"
+  },
+  {
+    "key": "lean_millenniumfloor.universal_universal_reflection_is_the_vortex_reflection_shifted",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e27a695c-fcb5-8abc-86af-eb64c401bbef"
   }
 ]

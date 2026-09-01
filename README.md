@@ -11,12 +11,12 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 447 theorems across 22 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `c9a2236a-286f-8e1d-9b31-95fe7a8df310`</sub>
-- 439 of those 447 theorems close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
-  <sub>SEALED · `70fe5fe1-4b0d-81eb-a2a8-9a2a5625aa65`</sub>
-- 466 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `fde17c81-7173-818d-b0b0-ca8220d9152a`</sub>
+- The formal layer holds 452 theorems across 22 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `db42a25e-45aa-8880-97b4-5a4edffbfb02`</sub>
+- 444 of those 452 theorems close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
+  <sub>SEALED · `efc86b54-0f2e-8618-bb41-e112f912c516`</sub>
+- 473 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `a5b80bb4-2765-85df-a554-dcb6b2099889`</sub>
 
 ## 2 · The ring
 
@@ -39,10 +39,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 2330 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `62cd9ec6-abb9-83da-88b8-8090e06abbbc`</sub>
-- The count is 2330, which is 291 octaves and 2 over — the octave is a target the theorems earn, never a quota they are invented to fill.
-  <sub>SEALED · `bad641f1-5c95-833f-8477-a092e1879eaa`</sub>
+- The ledger records 2337 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `7e73a4e9-865e-8f69-9c95-6f7e2882ea24`</sub>
+- The count is 2337, which is 292 octaves and 1 over — the octave is a target the theorems earn, never a quota they are invented to fill.
+  <sub>SEALED · `0b50dde1-7755-8c98-a025-08d9d8b86500`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -84,7 +84,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-22 Lean files in 5 wings, 447 theorems. The prose in this section is read out of the
+22 Lean files in 5 wings, 452 theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -136,13 +136,13 @@ this page; there is nowhere else to keep the description in step.
 
 **Digit reversal** — `reversal.lean`, 9 theorem(s). Digit reversal — arithmetic, not string handling.
 
-**Theorems** — `theorems.lean`, 1 theorem(s). The universal property — honestly, and COMPUTED from the sequence.
+**Theorems** — `theorems.lean`, 8 theorem(s). The universal property — honestly, and COMPUTED from the sequence.
 
 ### unfiled
 
-**imagined** — `imagined.lean`, 120 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+**imagined** — `imagined.lean`, 118 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
 
-2 of 447 theorems carry no comment of their own and are shown here as the gap they are, not
+2 of 452 theorems carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -151,19 +151,19 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 2,330 — 291 octaves and 2 over |
-| standing — carries its own proof | **439** |
-| carried — withdrawn on its own evidence, proved by a live theorem | **113** |
-| withdrawn — nothing proves it | 1,778 |
-| proved in total | **552** of 2,330 |
-| Lean files · theorems | 22 · 447, all axiom-free |
-| proved `by decide` | 439 of 447 |
+| ledger entries | 2,337 — 292 octaves and 1 over |
+| standing — carries its own proof | **469** |
+| carried — withdrawn on its own evidence, proved by a live theorem | **115** |
+| withdrawn — nothing proves it | 1,753 |
+| proved in total | **584** of 2,337 |
+| Lean files · theorems | 22 · 452, all axiom-free |
+| proved `by decide` | 444 of 452 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
-**On `carried`.** 113 entries were withdrawn for want of a Lean proof and have since been given one, at a new key. Nothing is un-revoked: the original's own evidence is still a TypeScript test, and rewriting its status would erase the fact that it did not hold on what it had. The record says both — withdrawn on its own evidence, standing through the theorem that carries it.
+**On `carried`.** 115 entries were withdrawn for want of a Lean proof and have since been given one, at a new key. Nothing is un-revoked: the original's own evidence is still a TypeScript test, and rewriting its status would erase the fact that it did not hold on what it had. The record says both — withdrawn on its own evidence, standing through the theorem that carries it.
 
-**Why the withdrawn were withdrawn.** 1,397 no Lean proof · 457 tested the removed lexical gate · 27 its Lean source was deleted or renamed · 10 circular by construction. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
+**Why the withdrawn were withdrawn.** 1,397 no Lean proof · 457 tested the removed lexical gate · 10 circular by construction · 2 other · 2 its Lean source was deleted or renamed. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
 
 **What verification costs.** Proving the set touches all 16,384 leaves; verifying membership afterwards touches 14 — one sibling per level. That is **1,170× less work**, exactly, and the factor grows with the set because N/log N grows. Wall-clock varies with the machine and is left in the build output rather than pinned here. It is not sub-nanosecond and nothing here is: the advantage is a smaller exponent, not a faster clock. The counting is proved in `speed.lean`.
 
@@ -182,4 +182,4 @@ node scripts/pages.ts              # regenerate this file and the homepage
 
 ---
 
-*14 claims, all verified · 447 Lean theorems · 2330 ledger entries · trial root `30b136c9-347d-82a7-9c6e-6c9aad2eb149` · integrity, not truth · 0/7*
+*14 claims, all verified · 452 Lean theorems · 2337 ledger entries · trial root `bd58531b-fb15-8807-a5b7-ce1ed4e51336` · integrity, not truth · 0/7*
