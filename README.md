@@ -162,7 +162,7 @@ Read from the artefacts at build time, never carried between runs.
 
 **Why the withdrawn were withdrawn.** 1,397 no Lean proof · 457 tested the removed lexical gate · 27 its Lean source was deleted or renamed · 10 circular by construction. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
 
-**What verification costs.** Folding 16,384 leaves took 232.7 ms; verifying membership afterwards took 115.7 µs over 14 nodes — a factor of 2,012 on the machine that produced this page, and it grows with the set because N/log N grows. It is not sub-nanosecond and nothing here is: that verify is tens of thousands of nanoseconds, and the advantage is a smaller exponent rather than a faster clock. See `speed.lean`.
+**What verification costs.** Folding 16,384 leaves took 229.4 ms; verifying membership afterwards took 117.2 µs over 14 nodes — a factor of 1,958 on the machine that produced this page, and it grows with the set because N/log N grows. It is not sub-nanosecond and nothing here is: that verify is tens of thousands of nanoseconds, and the advantage is a smaller exponent rather than a faster clock. See `speed.lean`.
 
 ## What is deliberately absent
 

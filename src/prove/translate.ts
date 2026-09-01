@@ -11,6 +11,12 @@
 // best-effort — a translation that guesses would produce a theorem that compiles and states the wrong thing,
 // which is the exact failure this deposit has been cleaning out all along.
 
+import { units as apiUnits, triad as apiTriad, orbit as apiOrbit } from '../api/index.ts'
+import { BASE, TRINITY, A432_STEP } from '../0/index.ts'
+
+/** the set literal a rendered theorem will carry — built from the computed set, never typed out */
+const asSet = (xs: number[]) => '[' + xs.join(',') + ']'
+
 /** The vocabulary. Order matters: longer patterns first. */
 // PRE-RULES run BEFORE the refusal list. They are structural rewrites that REMOVE a construct rather than
 // translate it, so the refusal list must judge what is left instead of what was written. Ordering them after
@@ -51,9 +57,9 @@ const PRE_RULES: [RegExp, string | ((...a: string[]) => string)][] = [
   // integer 40. Checked at the definition rather than guessed from the name.
   // They come AFTER the toUuid rule on purpose: rewriting a literal first means a constant's name can never
   // be substituted inside the string whose bytes are being taken.
-  [/\bA432_STEP\b/g, '40'],
-  [/\bBASE\b/g, '9'],
-  [/\bTRINITY\b/g, '3'],
+  [/\bA432_STEP\b/g, String(A432_STEP)],
+  [/\bBASE\b/g, String(BASE)],
+  [/\bTRINITY\b/g, String(TRINITY)],
 ]
 
 /** JAVASCRIPT DIVISION IS NOT LEAN'S NAT DIVISION, and the gap is silent. `9 / 2` is 4.5 in the test and 4
@@ -150,10 +156,16 @@ function setSizeToLength(b: string): string {
 
 const RULES: [RegExp, string][] = [
   [/\bdigitalRoot\(/g, 'DR ('],                   // defined in the emitted preamble
-  [/\bdigits\(\)/g, "(List.range' 1 9)"],          // the residues 1..9, as the deposit defines them
-  [/\bunits\(\)/g, '[1,2,4,5,7,8]'],
-  [/\btriad\(\)/g, '[3,6,9]'],
-  [/\bvortexOrbit\(\)/g, '[1,2,4,8,7,5]'],
+  // THE VOCABULARY'S SETS ARE COMPUTED, NOT TYPED. These four were literals, which made the translator a
+  // second opinion about what ℤ/9 is: it would have gone on rendering `units()` as [1,2,4,5,7,8] after the
+  // modulus moved, producing theorems that compile, pass the agreement check on their truth value, and state
+  // something about a ring nobody uses. Of every hardcoded set in this repo these were the dangerous ones,
+  // because they end up INSIDE sealed theorems rather than in a report. The API serves them computed and
+  // refuses them outright if the theorem proving them stops standing.
+  [/\bdigits\(\)/g, `(List.range' 1 ${BASE})`],
+  [/\bunits\(\)/g, asSet(apiUnits())],
+  [/\btriad\(\)/g, asSet(apiTriad().map((d) => (d === 0 ? 9 : d)))],   // the deposit's prose writes 9 for 0
+  [/\bvortexOrbit\(\)/g, asSet(apiOrbit())],
   [/\bm9\(/g, 'M9 ('],                              // wrapper defined in the emitted preamble
   // BASE, TRINITY and A432_STEP fold in the PRE phase now — see the note there
   [/\.every\(/g, '.all ('],
