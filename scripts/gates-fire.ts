@@ -26,6 +26,14 @@ const run = (cmd: string): boolean => {
 
 type Control = { gate: string; cmd: string; what: string; file: string; mutate: (s: string) => string }
 
+// ORDER MATTERS FOR SOME GATES, and running one alone is not the same as running it in the chain.
+// sitemap-mesh reported 14202 broken links and failed at HEAD — which looked like a pre-existing broken gate
+// until the cause turned out to be that locale-fold had not run. It builds the locale pages every page links
+// to; without it, every page in six languages is a dangling link, and the count is exactly 2335 pages times
+// six. Nothing was broken. I had been running gates individually all session and had simply left one out.
+// A gate with a prerequisite must have it stated, so the controls that need a built, folded dist say so.
+const PREREQ = 'node scripts/locale-fold.ts'
+
 const CONTROLS: Control[] = [
   { gate: 'hardcode-gate', cmd: 'node scripts/hardcode-gate.ts', file: 'scripts/gaps.ts',
     what: 'a ℤ/9 set written out as a literal',
@@ -77,6 +85,52 @@ const CONTROLS: Control[] = [
     what: 'the entailment count no longer computing zero of seven',
     mutate: (s) => s.replace('const s = !trueWhenFalse; if (s) solved++', 'const s = !trueWhenFalse; solved++; void s') },
 
+  { gate: 'seal-lean', cmd: 'node scripts/seal-lean.ts', file: 'src/proof/theorems.lean',
+    what: 'a sealed theorem whose source has been removed',
+    mutate: (s) => s.replace('theorem universal_reflection_involution', 'theorem renamed_by_control') },
+
+  // WRONG CONTROL, TWICE OVER — the sixth of mine to be aimed at something its gate does not check. I first
+  // broke a receipt, but lean-claims verifies the tamper-evidence MECHANISM (falsify a link and every
+  // downstream receipt changes), which is a property of the construction and is not violated by an actually
+  // broken chain. The current chain is forensics' job, and its control passes. What lean-claims does check is
+  // the ARITHMETIC the Lean theorems assert, recomputed independently of any Lean toolchain — so the control
+  // breaks the arithmetic.
+  { gate: 'lean-claims', cmd: 'node scripts/lean-claims.ts', file: 'src/0/index.ts',
+    what: 'the runtime computing a doubling orbit that is not the one the proofs assert',
+    mutate: (s) => s.replace('do { orbit.push(x); x = (x * 2) % BASE } while (x !== 1)',
+                             'do { orbit.push(x); x = (x * 4) % BASE } while (x !== 1)') },
+
+  { gate: 'import-gate', cmd: 'node scripts/import-gate.ts', file: '.vitepress/dist/compare.html',
+    what: 'a page loading a third-party resource',
+    mutate: (s) => s.replace('</head>', '<script src="https://cdn.example.com/tracker.js"></script></head>') },
+
+  { gate: 'trial', cmd: 'node scripts/trial.ts', file: 'README.md',
+    what: 'the page losing the sentence the trial records it as carrying',
+    mutate: (s) => s.replace('No sentence above claims a Millennium problem settled', 'REMOVED BY CONTROL') },
+
+  { gate: 'readme', cmd: 'node scripts/readme.ts', file: 'src/proof/index.lean',
+    what: 'the Lean floor no longer declaring zero',
+    mutate: (s) => s.replace('def provenHere : Nat := 0', 'def provenHere : Nat := 1') },
+
+  // My first mutation renamed the header to "Content-Security-Policy-Removed-By-Control", which still
+  // CONTAINS the string the gate greps for, so the gate passed and I read that as the gate being broken. The
+  // seventh control of mine aimed wrong. It also shows what the gate really tests: the presence of that
+  // substring anywhere in the page, not a well-formed policy — true of most CSP checks, and worth knowing it
+  // is what is being claimed.
+  { gate: 'security-gate', cmd: 'node scripts/security-gate.ts', file: '.vitepress/dist/compare.html',
+    what: 'a built page served with no Content-Security-Policy at all',
+    mutate: (s) => s.replace(/Content-Security-Policy/g, 'X-Control-Removed-Header') },
+
+  { gate: 'harmony-currency', cmd: 'node scripts/harmony-currency.ts', file: 'src/9/security.ts',
+    what: 'a reporting module that no longer computes',
+    mutate: (s) => s.replace('export function report(): string {', 'export function report(): string {\n  if (true) throw new Error("control")') },
+
+  // Emptying the file left the ROUTE intact, and this gate checks that link targets resolve, not what they
+  // contain — so an empty page is still a perfectly good destination. The control has to break a LINK.
+  { gate: 'sitemap-mesh', cmd: 'node scripts/sitemap-mesh.ts', file: '.vitepress/dist/verify.html',
+    what: 'a page linking to a route that was never built',
+    mutate: (s) => s.replace('</body>', '<a href="/millennium-solutions/a-route-that-does-not-exist">control</a></body>') },
+
   { gate: 'gaps', cmd: 'node scripts/gaps.ts', file: '.vitepress/config.ts',
     what: 'a published page dropped from the sidebar',
     mutate: (s) => s.replace(/\{ text: 'Verify \(live app\)', link: '\/verify' \},/, '') },
@@ -103,6 +157,8 @@ const rescue = () => {
 const snapshot = (): Set<string> =>
   new Set(execSync('git status --porcelain', { encoding: 'utf8' }).split('\n').filter(Boolean))
 rescue()
+// bring the tree to the state the chain would have it in before judging any gate that reads dist/
+try { execSync(PREREQ, { stdio: 'pipe' }) } catch { /* dist may not exist yet; the controls report that */ }
 const before = snapshot()
 
 let broken = 0, checked = 0
