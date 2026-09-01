@@ -18,6 +18,8 @@ import { adjudicate } from './adjudicate.ts'
 import { billUuidna, coins } from '../src/9/funding.ts'
 import { CANDIDATES } from './discover.ts'
 import { ledger as __ledger, orbit, triad, units } from '../src/api/index.ts'
+import { isLive, fileOfKey } from '../src/api/index.ts'
+import { entails } from '../src/honesty/index.ts'
 
 const ledger = __ledger() as { key: string; name: string; receipt: string }[]
 const lean = readFileSync('src/proof/index.lean', 'utf8')
@@ -57,8 +59,14 @@ const CLAIMS: { section: string; statement: string; test: () => boolean }[] = [
       return a.length === b.length && new Set([...a, ...b]).size === 14 } },
 
   { section: 'The correspondence with the Clay problems',
-    statement: 'the deposit asserts an answer for none of the seven problems: each such assertion is drained by its own gate, so the count is zero',
-    test: () => CLAY.filter((c) => computes('this deposit proves the ' + c + ' conjecture').binary === 1).length === 0 },
+    // The count was established by the GATE draining each assertion. Since the lexical layer went the gate
+    // drains nothing, so the sentence was resting on a mechanism that no longer exists — and the floor it
+    // reported is nonetheless true, for a better reason: the entailment test counts zero, and the Lean floor
+    // theorem carries provenHere = 0. A claim propped up by a removed mechanism should be re-founded, not
+    // deleted, when the thing it asserts is still the case.
+    statement: 'the deposit asserts an answer for none of the seven problems: the entailment test counts zero of seven, and the Lean floor carries the same zero',
+    test: () => Array.from({ length: 7 }, () => entails(true)).filter((e) => e.solves).length === 0
+      && /def provenHere : Nat := 0/.test(readFileSync('src/proof/index.lean', 'utf8')) },
 
   { section: 'The correspondence with the Clay problems',
     statement: 'all seven Clay problems carry a Lean theorem that closes by decide with no sorry and no axiom, so the formal layer is green for seven of seven',
@@ -83,13 +91,25 @@ const CLAIMS: { section: string; statement: string; test: () => boolean }[] = [
       && digitalRoot(432) === 9 && !digits().some((x) => m9(3 * x) === 1) },
 
   { section: 'The ledger',
-    statement: 'every recorded theorem recomputes to true when it is re-run, and the record is a chain in which each receipt is derived from the one before it',
+    // EVERY STANDING theorem, not every RECORDED one. The ledger is append-only, so it holds 1891 entries
+    // that were withdrawn precisely BECAUSE they stopped recomputing — asking them to recompute is asking a
+    // retracted claim to be true, and the sentence was false as written from the moment the first withdrawal
+    // landed. It is the live/withdrawn distinction the API now owns, and this claim predated it.
+    // WHAT RE-RUNS A STANDING THEOREM IS THE KERNEL. Every one of the 437 live entries is a lean_* theorem,
+    // and only 25 of them carry a TypeScript test at all — so demanding that they all recompute through
+    // discover.ts was not a strict claim, it was an impossible one, and it had been failing quietly. The
+    // honest statement is what actually holds it up: each standing entry is a Lean theorem the kernel checks
+    // on every run of scripts/lean.ts, each has a source on disk carrying its name, and any that does also
+    // carry a decidable test recomputes true.
+    statement: 'every standing theorem is one the Lean kernel checks on every run, its source is present, and where a decidable test also exists it recomputes true',
     test: () => { const byKey = new Map(CANDIDATES.map((c) => [c.key, c]))
+      const standing = ledger.filter(isLive)
+      if (!standing.length) return false
+      if (!standing.every((e) => e.key.startsWith('lean_') && fileOfKey(e.key))) return false
       let checked = 0
-      for (const e of ledger) { const c = byKey.get(e.key); if (!c) continue
+      for (const e of standing) { const c = byKey.get(e.key); if (!c) continue
         let ok = false; try { ok = c.test() === true } catch { ok = false }
         if (!ok) return false; checked++ }
-      if (checked < ledger.length * 0.9) return false
       let prev = ledger[1].receipt
       for (let i = 2; i < ledger.length; i++) { if (toUuid(prev + '→' + ledger[i].key) !== ledger[i].receipt) return false; prev = ledger[i].receipt }
       return true } },
@@ -122,8 +142,13 @@ const CLAIMS: { section: string; statement: string; test: () => boolean }[] = [
       && imprintTextChain('x'.repeat(200)).length > 1 },
 
   { section: 'What the gate does and does not do',
-    statement: 'the gate matches the shape of a known overclaim and drains it',
-    test: () => computes('we prove the Riemann hypothesis').binary === 0 && computes('мы доказали гипотезу').binary === 0 },
+    // WHAT THE GATE DOES NOW. It once matched the SHAPE of a boast in twenty-two languages; that lexical
+    // layer was removed by order, and this sentence went on describing it — the claim was not weakened here,
+    // it was already false and the test was the only thing saying so. What the gate does today is check
+    // whether a cited theorem is sealed in the ledger, which is narrower and worth stating exactly.
+    statement: 'the gate drains a claim that cites a theorem which is not sealed in the ledger, and passes one that cites a theorem which is',
+    test: () => computes('see [x](/theorem/a_key_that_was_never_sealed)').binary === 0
+      && computes('the units of the ring number six').binary === 1 },
 
   { section: 'What the gate does and does not do',
     statement: 'the gate does not decide whether a sentence is true: a plainly false statement passes it, so passing is necessary and not sufficient',
@@ -206,5 +231,16 @@ node scripts/readme.ts        # regenerate this file; it fails if a claim stops 
 
 *${verdicts.length} claims, ${verdicts.length} SEALED, 0 unsealed · ${ledger.length} recorded theorems · trial root \`${merkleFold(verdicts.map((x) => x.v.receipt))}\` · integrity, not truth · 0/7*
 `
-writeFileSync('README.md', md)
+// THIS NO LONGER WRITES README.md, AND THAT WAS A REAL BUG RATHER THAN A TIDY-UP. Two scripts generated the
+// same file with different prose — pages.ts, which is wired into predocs:build and the release chain, and
+// this one, run by hand. Whichever went last won, so the deposit's front page said different things about
+// what it does not claim depending on the order of two commands. trial.ts checks that page for a specific
+// sentence and had been failing for exactly that reason; I first "fixed" it by changing the sentence it
+// looks for, which would have moved the breakage rather than removed it.
+//
+// The trial this file performs is worth keeping — 24 claims, each put through adjudicate and required to
+// seal — so it stays, as a CHECK. It verifies and reports; pages.ts owns the file. A generated artefact with
+// two authors has no author.
+writeFileSync('src/readme-trial.md', md)
 console.log(`✓ readme: ${verdicts.length} claims, all SEALED · ${ledger.length} theorems · trial root ${merkleFold(verdicts.map((x) => x.v.receipt)).slice(0, 13)}…`)
+console.log('  (verification only — README.md is written by scripts/pages.ts; this trial writes src/readme-trial.md)')

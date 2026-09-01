@@ -2,7 +2,7 @@
 
 Recompute this file with `node scripts/trial.ts`. It writes nothing unless every finding below is SEALED.
 
-**Verdict on the claim: REFUTED.** gate-clean but its decidable test fails — refuted by counterexample
+**Verdict on the claim: REFUTED.** its decidable test recomputes FALSE — a counterexample stands against the statement AS WRITTEN. That refutes this statement, not its subject: a wrong test refutes itself, so read the test before believing the verdict.
 
 The refusal is not recorded as a bare verdict. Each finding below is a theorem with a decidable test, sealed
 in its own right, so the verdict rests on facts that recompute rather than on anyone's judgement.
@@ -61,5 +61,5 @@ No file in this deposit, and no verdict in this trial, substitutes for that.
 ---
 
 *18 findings, 18 SEALED · claim receipt `d60b8e85-43c0-8b4c-8ed4-9bb16f356da7` · proof-of-verdict root
-`96a994cc-7017-8c8e-a7b1-e434c57d919f` (order-invariant: the same root for any ordering of the findings) · findings fold
+`a4ab3701-71cc-87aa-83f9-e41f05b56045` (order-invariant: the same root for any ordering of the findings) · findings fold
 `8ff34694-1a2b-8387-904b-8c80cf75e15a` · integrity, not truth · 0/7*

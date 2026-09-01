@@ -32,7 +32,10 @@ const FINDINGS: { statement: string; test: () => boolean }[] = [
     test: () => /List\.range/.test(lean) && !/∀ [a-z] : ℕ/.test(lean) && !/∃ [a-z] : ℕ/.test(lean) },
 
   { statement: 'finding four — the gate does not catch this claim: worded with settles rather than proves, it passes the shape rules, so the verdict here rests on the decidable test and not on the gate',
-    test: () => computes(CLAIM).binary === 1 && computes('the deposit proves all seven Clay problems').binary === 0 },
+    // the second half asserted the removed lexical gate drains a boast. It does not, and has not since the
+    // layer went; the finding's POINT survives intact and is now made by what the gate actually does.
+    test: () => computes(CLAIM).binary === 1
+      && computes('see [x](/theorem/a_key_that_was_never_sealed)').binary === 0 },
 
   { statement: 'finding five — the claim under trial fails its own decidable test, because the count it asserts is seven while the count the source defines is zero',
     test: () => { const asserted = 7; return asserted !== provenHere && provenHere === 0 } },
@@ -49,7 +52,10 @@ const FINDINGS: { statement: string; test: () => boolean }[] = [
     test: () => /contrary readings/i.test(readFileSync('ABSTRACT.md', 'utf8')) && /settled Clay conjecture/i.test(readFileSync('ABSTRACT.md', 'utf8')) },
 
   { statement: 'finding nine — the sentence recording that it drained a denial holds: the root readme carries a sentence denying any such claim',
-    test: () => /No sentence here says the framework/i.test(readFileSync('README.md', 'utf8')) },
+    // Matching the sentence pages.ts — the sole owner of README.md — actually writes. When this first failed
+    // there were TWO generators for that file and the winner depended on command order; the fix was to stop
+    // the second one writing, not to keep re-tuning the wording this looks for.
+    test: () => /No sentence above claims a Millennium problem settled/i.test(readFileSync('README.md', 'utf8')) },
 
   { statement: 'finding ten — the residual gap recorded in the gate comment is real: a boast worded with settles near a problem name still passes the gate, which is why no claim here rests on the gate alone',
     test: () => computes('this settles P vs NP').binary === 1 && /adjudicate\(f\.statement, f\.test\)/.test(readFileSync('scripts/trial.ts', 'utf8')) },

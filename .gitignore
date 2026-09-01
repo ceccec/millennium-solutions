@@ -26,3 +26,6 @@ src/proof/.lean-cache.json
 
 # build analytics — recomputed on every build from artefacts; never carried between runs
 src/analytics.json
+
+# the readme trial's rendering — a verification artefact, not the published page
+src/readme-trial.md
