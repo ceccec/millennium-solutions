@@ -96,6 +96,17 @@ if (unseen.length) items.push({ n: unseen.length, tractable: false,
   how: 'trigger them, or accept that their state is unknown; publish fires on a release and trinity on a schedule',
   source: 'node scripts/ci-health.ts' })
 
+// ── the artefacts, against what the tree says they are ──
+const pub = out('node scripts/published.ts')
+for (const m of pub.matchAll(/^\s+·\s+(\S+)\s+tree (\S+)\s+registry (\S+)\s+← differ/gm))
+  items.push({ n: 1, tractable: false,
+    what: `${m[1]} is ${m[2]} in the tree and ${m[3]} on the registry — and it is the registry copy the gates import`,
+    how: 'the tree copy is not what runs; deciding which should be authoritative changes which gate this deposit uses',
+    source: 'node scripts/published.ts' })
+for (const m of pub.matchAll(/^\s+✗ live site\s+(.+)$/gm))
+  items.push({ n: 1, tractable: true, what: `the live site does not serve this ledger: ${m[1].trim()}`,
+    how: 'the deploy succeeded but the content is stale — rebuild and redeploy', source: 'node scripts/published.ts' })
+
 items.sort((a, b) => Number(b.tractable) - Number(a.tractable) || b.n - a.n)
 
 console.log(`wave — read from the instruments, ${new Date === undefined ? '' : ''}not chosen from memory\n`)
