@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2316 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2320 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (425)
+### lean (429)
 
 - [lean_units_are_six](/theorem/lean_units_are_six) — lean: the units of ℤ/9 are exactly [1,2,4,5,7,8] — checked at every residue by the kernel, recomputed here; 0/7  ·  `031c89bf-e1e0…`
 - [lean_units_count](/theorem/lean_units_count) — lean: there are exactly six units in ℤ/9 — the kernel checks the count, recomputed here; 0/7  ·  `104e8965-ebfb…`
@@ -449,6 +449,10 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_mechanical_relation_triangular_45_is_base](/theorem/lean_mechanical_relation_triangular_45_is_base) — lean mechanical.lean: relation_triangular_45_is_base — let s := ((List.range' 1 9).map (fun i =&gt; i)).foldl (fun x y =&gt; x + y) 0; s == 45 && DR (45) == 9 && DR (s) == 9 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9ffbcbfc-5d5c…`
 - [lean_mechanical_the_digits_one_to_nine_sum_to_forty_five_rooting_to_nine](/theorem/lean_mechanical_the_digits_one_to_nine_sum_to_forty_five_rooting_to_nine) — lean mechanical.lean: the_digits_one_to_nine_sum_to_forty_five_rooting_to_nine — let s := ((List.range' 1 9).map (fun d =&gt; d)).foldl (fun x y =&gt; x + y) 0; s == 45 && DR (45) == 9 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `3571db11-dbe1…`
 - [lean_mechanical_six_is_the_third_triangular_number](/theorem/lean_mechanical_six_is_the_third_triangular_number) — lean mechanical.lean: six_is_the_third_triangular_number — let t := ((List.range' 1 3).map (fun i =&gt; i)).foldl (fun x y =&gt; x + y) 0; t == 6 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `90e6ae62-8d06…`
+- [lean_mechanical_bool_demorgan1](/theorem/lean_mechanical_bool_demorgan1) — lean mechanical.lean: bool_demorgan1 — [0,1].all (fun a =&gt; [0,1].all (fun b =&gt; (1 - (a * b)) == ((1 - a) + (1 - b) - (1 - a) * (1 - b)))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `35040ffc-0a3f…`
+- [lean_mechanical_bool_demorgan2](/theorem/lean_mechanical_bool_demorgan2) — lean mechanical.lean: bool_demorgan2 — [0,1].all (fun a =&gt; [0,1].all (fun b =&gt; (1 - (a + b - a * b)) == ((1 - a) * (1 - b)))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c522c78b-a627…`
+- [lean_mechanical_bool_distributivity](/theorem/lean_mechanical_bool_distributivity) — lean mechanical.lean: bool_distributivity — [0,1].all (fun a =&gt; [0,1].all (fun b =&gt; [0,1].all (fun c =&gt; (a * (b + c - b * c)) == ((a * b) + (a * c) - (a * b) * (a * c))))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2dd98f84-6b96…`
+- [lean_mechanical_bool_absorption](/theorem/lean_mechanical_bool_absorption) — lean mechanical.lean: bool_absorption — [0,1].all (fun a =&gt; [0,1].all (fun b =&gt; (a + (a * b) - a * (a * b)) == a)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `bb75ca44-dda0…`
 
 ### other — one-of-a-kind (0)
 
@@ -2362,4 +2366,4 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 
 </details>
 
-Page content-address: `a52c6f57-4031-89f6-b662-2fde353feffa`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `fcb17aa3-f2dd-84e9-b375-9e4c2cb682c2`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

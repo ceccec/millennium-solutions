@@ -17,6 +17,12 @@
 // REFUSE meant `join(` was rejected before the rewrite that eliminates it could fire — the refusal list was
 // reading a form the translator no longer produces. Anything these do not consume is still refused below.
 const PRE_RULES: [RegExp, string | ((...a: string[]) => string)][] = [
+  // the bit operators, in their exact arithmetic form on {0,1} — see boolQuantifiers above for why this is
+  // sound only under the [0,1] binder it travels with.
+  [/\bNOT\(([^()]*)\)/g, '(1 - $1)'],
+  [/\bAND\(([^(),]*),\s*([^(),]*)\)/g, '($1 * $2)'],
+  [/\bOR\(([^(),]*),\s*([^(),]*)\)/g, '($1 + $2 - $1 * $2)'],
+  [/\bXOR\(([^(),]*),\s*([^(),]*)\)/g, '(($1 + $2) % 2)'],
   // toUuid OF AN ASCII LITERAL IS toUuidBytes OF ITS CHARACTER CODES. The Lean port is pinned to the shipped
   // implementation at published values (address.lean: to_uuid_bytes_of_a, to_uuid_bytes_of_uuidna), and the
   // dashed-hex rendering is injective, so comparing two address STRINGS is comparing their byte lists. Only
@@ -446,6 +452,7 @@ export function translate(body: string): Translation {
     prefix = u.lets.map(([n, v]) => `let ${n} := ${v}; `).join('')
     b = prefix + u.expr
   }
+  b = bitOps(boolQuantifiers(b))
   for (const [re, to] of PRE_RULES) b = b.replace(re, to as string)
   // pre-phase: both REMOVE a construct, so both run before the refusal list judges what is left
   b = setSizeToLength(b)
@@ -509,6 +516,70 @@ export function fixChains(t: string): string {
  *  restated — a second copy of toUuid inside the generated file would be one more thing to drift. */
 export const importsFor = (lean: string): string[] =>
   lean.includes('Address.') ? ['Address'] : []
+
+/** THE BOOLEAN HELPERS, ON BITS. discover.ts defines B = [0,1] and quantifies with
+ *  `all2(p) = B.every(a => B.every(b => p(a,b)))`, using bitwise NOT/AND/OR/XOR on those bits. Over {0,1}
+ *  each has an exact arithmetic form — 1−x, a·b, a+b−a·b, (a+b)%2 — so the claims render without a single
+ *  bitwise operator, which matters because Nat's `^^^` and `>>>` are well-founded and would cost the file its
+ *  axiom-free status. The rewrite is sound ONLY because the binder ranges over [0,1] and nothing else; that
+ *  is why the quantifier and the operators are rewritten together, and why a loose `NOT(` outside an all2 is
+ *  left alone rather than assumed to be on a bit. */
+/** The bit operators, rewritten INNERMOST-FIRST with balanced brackets. A pattern that cannot see nested
+ *  calls leaves `NOT(AND(a,b))` half-translated and the whitelist then reports "unknown identifier: NOT",
+ *  which is a true statement about a self-inflicted problem. This walks the arguments properly and repeats
+ *  until nothing changes. */
+function bitOps(t: string): string {
+  const arity: Record<string, number> = { NOT: 1, AND: 2, OR: 2, XOR: 2 }
+  for (let pass = 0; pass < 24; pass++) {
+    let hit = false
+    for (const name of ['NOT', 'AND', 'OR', 'XOR']) {
+      const i = t.indexOf(name + '(')
+      if (i < 0) continue
+      let d = 0, j = i + name.length
+      for (; j < t.length; j++) { if (t[j] === '(') d++; else if (t[j] === ')') { d--; if (d === 0) break } }
+      if (j >= t.length) continue
+      const inner = t.slice(i + name.length + 1, j)
+      if (/\b(NOT|AND|OR|XOR)\(/.test(inner)) continue        // rewrite the inside first
+      const parts: string[] = []
+      let depth = 0, cur = ''
+      for (const ch of inner) {
+        if (ch === '(') depth++
+        if (ch === ')') depth--
+        if (ch === ',' && depth === 0) { parts.push(cur); cur = '' } else cur += ch
+      }
+      parts.push(cur)
+      if (parts.length !== arity[name]) continue
+      const [a, b] = parts.map((x) => x.trim())
+      const out = name === 'NOT' ? `(1 - ${a})`
+        : name === 'AND' ? `(${a} * ${b})`
+        : name === 'OR' ? `(${a} + ${b} - ${a} * ${b})`
+        : `((${a} + ${b}) % 2)`
+      t = t.slice(0, i) + out + t.slice(j + 1)
+      hit = true
+    }
+    if (!hit) break
+  }
+  return t
+}
+
+function boolQuantifiers(t: string): string {
+  for (const [name, vars] of [['all3', ['a', 'b', 'c']], ['all2', ['a', 'b']]] as [string, string[]][]) {
+    for (;;) {
+      const i = t.indexOf(name + '((')
+      if (i < 0) break
+      // find the arrow, then the balanced end of the call
+      const arrow = t.indexOf('=>', i)
+      if (arrow < 0) break
+      let d = 0, j = i + name.length
+      for (; j < t.length; j++) { if (t[j] === '(') d++; else if (t[j] === ')') { d--; if (d === 0) break } }
+      if (j >= t.length) break
+      const body = t.slice(arrow + 2, j).trim()
+      const open = vars.map((v) => `[0,1].all (fun ${v} => `).join('')
+      t = t.slice(0, i) + open + body + ')'.repeat(vars.length) + t.slice(j + 1)
+    }
+  }
+  return t
+}
 
 export const PREAMBLE = `def M9 (n : Nat) : Nat := n % 9
 

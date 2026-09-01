@@ -17,6 +17,18 @@ def M9 (n : Nat) : Nat := n % 9
 -- recursion so the kernel evaluates it directly.
 def DR (n : Nat) : Nat := if n == 0 then 0 else 1 + (n - 1) % 9
 
+-- De Morgan: ¬(a∧b) = ¬a∨¬b (all inputs)
+theorem bool_demorgan1 : [0,1].all (fun a => [0,1].all (fun b => (1 - (a * b)) == ((1 - a) + (1 - b) - (1 - a) * (1 - b)))) := by decide
+
+-- De Morgan: ¬(a∨b) = ¬a∧¬b (all inputs)
+theorem bool_demorgan2 : [0,1].all (fun a => [0,1].all (fun b => (1 - (a + b - a * b)) == ((1 - a) * (1 - b)))) := by decide
+
+-- distributivity: a∧(b∨c) = (a∧b)∨(a∧c) (all inputs)
+theorem bool_distributivity : [0,1].all (fun a => [0,1].all (fun b => [0,1].all (fun c => (a * (b + c - b * c)) == ((a * b) + (a * c) - (a * b) * (a * c))))) := by decide
+
+-- absorption: a∨(a∧b) = a (all inputs)
+theorem bool_absorption : [0,1].all (fun a => [0,1].all (fun b => (a + (a * b) - a * (a * b)) == a)) := by decide
+
 -- rotation by the a432 step (40°) visits all 9 angular positions — the full circle, no gap
 theorem cover_rotation_full_circle : ((List.range' 1 9).map (fun d => (d * 40) % 360)).eraseDups.length == 9 := by decide
 

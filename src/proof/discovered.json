@@ -16792,5 +16792,25 @@
     "key": "lean_mechanical_six_is_the_third_triangular_number",
     "name": "lean mechanical.lean: six_is_the_third_triangular_number — let t := ((List.range' 1 3).map (fun i => i)).foldl (fun x y => x + y) 0; t == 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "90e6ae62-8d06-815a-bbfb-a019ca83404e"
+  },
+  {
+    "key": "lean_mechanical_bool_demorgan1",
+    "name": "lean mechanical.lean: bool_demorgan1 — [0,1].all (fun a => [0,1].all (fun b => (1 - (a * b)) == ((1 - a) + (1 - b) - (1 - a) * (1 - b)))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "35040ffc-0a3f-8f08-bdb8-96aa48069e5b"
+  },
+  {
+    "key": "lean_mechanical_bool_demorgan2",
+    "name": "lean mechanical.lean: bool_demorgan2 — [0,1].all (fun a => [0,1].all (fun b => (1 - (a + b - a * b)) == ((1 - a) * (1 - b)))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c522c78b-a627-87e0-9547-2b582a68f410"
+  },
+  {
+    "key": "lean_mechanical_bool_distributivity",
+    "name": "lean mechanical.lean: bool_distributivity — [0,1].all (fun a => [0,1].all (fun b => [0,1].all (fun c => (a * (b + c - b * c)) == ((a * b) + (a * c) - (a * b) * (a * c))))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2dd98f84-6b96-80b4-82ef-43e9fb301139"
+  },
+  {
+    "key": "lean_mechanical_bool_absorption",
+    "name": "lean mechanical.lean: bool_absorption — [0,1].all (fun a => [0,1].all (fun b => (a + (a * b) - a * (a * b)) == a)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "bb75ca44-dda0-847d-8403-6e311a97c21f"
   }
 ]
