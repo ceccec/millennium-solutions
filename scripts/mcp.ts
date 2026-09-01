@@ -15,6 +15,7 @@ import { apiFetch } from './api.ts'
 import { CANDIDATES, provable } from './discover.ts'
 import { CORE as ROSETTA_CORE, DOMAINS as ROSETTA_DOMAINS } from '../src/the/rosetta/index.ts'
 import { ledger as __ledger } from '../src/api/index.ts'
+import { isLive as __isLive, isWithdrawn as __isWithdrawn } from '../src/api/index.ts'
 
 const version = (() => { try { return execSync('git tag --sort=version:refname', { encoding: 'utf8' }).trim().split('\n').pop() || 'v0' } catch { return 'v0' } })()
 type LedgerEntry = { key: string; name: string; receipt: string }
@@ -77,11 +78,11 @@ const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
     catch (e) { return 'FAILED\n' + String((e as { stdout?: Buffer }).stdout ?? e) } },
   ledger_status: () => {
     const l = loadLedger() as (LedgerEntry & { revoked?: boolean; portable?: boolean })[]
-    const live = l.filter((e) => !e.revoked)
+    const live = l.filter(__isLive)
     let breaks = 0, prev = l[1]?.receipt
     for (let i = 2; i < l.length; i++) { if (toUuid(prev + '→' + l[i].key) !== l[i].receipt) breaks++; prev = l[i].receipt }
     return JSON.stringify({ total: l.length, live: live.length, leanBacked: l.filter((e) => e.key.startsWith('lean_')).length,
-      revoked: l.filter((e) => e.revoked).length, portableToLean: l.filter((e) => e.portable).length,
+      revoked: l.filter(__isWithdrawn).length, portableToLean: l.filter((e) => e.portable).length,
       chainBreaks: breaks, duplicateKeys: l.length - new Set(l.map((e) => e.key)).size,
       duplicateReceipts: l.length - new Set(l.map((e) => e.receipt)).size,
       octaveRemainder: l.length % 8, liveAllLean: live.every((e) => e.key.startsWith('lean_')),

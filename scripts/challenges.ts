@@ -6,6 +6,7 @@
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 import { ledger as __ledger } from '../src/api/index.ts'
+import { isLive as __isLive, isWithdrawn as __isWithdrawn } from '../src/api/index.ts'
 
 const CLAY = [
   { name: 'Poincaré conjecture', status: 'settled', by: 'Perelman, 2003 (external)' },
@@ -30,8 +31,8 @@ o += '\n**Humanity: ' + settled + ' / 7** (' + open + ' open). **This deposit: 0
 const catOf = (k: string) => k.replace(/^REF_/, '').split('_')[0]
 // The record is append-only: a revoked entry is never deleted (that would break the chain), but it is no
 // longer a live theorem, so it is rendered WITHOUT a /theorem/ citation — marked history, with its reason.
-const liveL = ledger.filter((e) => !e.revoked)
-const goneL = ledger.filter((e) => e.revoked)
+const liveL = ledger.filter(__isLive)
+const goneL = ledger.filter(__isWithdrawn)
 const groups: Record<string, typeof ledger> = {}
 for (const e of liveL) (groups[catOf(e.key)] ??= []).push(e)
 const cats = Object.keys(groups).sort()

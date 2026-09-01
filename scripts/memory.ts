@@ -13,6 +13,7 @@
 //   node scripts/memory.ts --write    write it into the memory file, replacing only the generated block
 import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs'
 import { ledger as __ledger } from '../src/api/index.ts'
+import { isLive as __isLive, isWithdrawn as __isWithdrawn } from '../src/api/index.ts'
 
 const MEMDIR = '/Users/ceci/.claude/projects/-Users-ceci-github-ceccec-millennium-solutions/memory'
 const MEM = MEMDIR + '/deposit-state.md'
@@ -21,7 +22,7 @@ const BEGIN = '<!-- derived:begin -->', END = '<!-- derived:end -->'
 
 const led = __ledger() as
   { key: string; revoked?: boolean; portable?: boolean }[]
-const live = led.filter((e) => !e.revoked)
+const live = led.filter(__isLive)
 const leanFiles = readdirSync('src/proof').filter((f) => f.endsWith('.lean')).sort()
 const src = Object.fromEntries(leanFiles.map((f) => [f, readFileSync(`src/proof/${f}`, 'utf8')]))
 const theorems = leanFiles.flatMap((f) => [...src[f].matchAll(/^theorem /gm)]).length
@@ -36,7 +37,7 @@ const block = `${BEGIN}
 *Derived by \`node scripts/memory.ts\` — do not hand-edit inside this block; re-run it. Hand-written judgement
 belongs below the end marker, where nothing overwrites it.*
 
-**Ledger** ${led.length} entries · **${live.length} live** · ${led.filter((e) => e.key.startsWith('lean_')).length} Lean-backed · ${led.filter((e) => e.revoked).length} revoked in place · ${led.filter((e) => e.portable).length} marked portable to Lean.
+**Ledger** ${led.length} entries · **${live.length} live** · ${led.filter((e) => e.key.startsWith('lean_')).length} Lean-backed · ${led.filter(__isWithdrawn).length} revoked in place · ${led.filter((e) => e.portable).length} marked portable to Lean.
 Live means backed by a Lean proof and nothing else. Dirty entries are marked with their reason and kept —
 a chained ledger supersedes, never deletes, because a removal breaks the chain and a rewritten receipt is tamper.
 

@@ -87,3 +87,11 @@ export const frontmatter = (file: string): Record<string, string> => {
   }
   return fm
 }
+
+/** THE TWO QUESTIONS, ASKED ONE WAY. Eight scripts spelled "does this entry stand" as their own inline
+ *  predicate — `!e.revoked` here, `filter((e) => e.revoked)` there, `e.revoked === true` elsewhere. The
+ *  predicates happened to agree, but agreement by coincidence is what a shared definition removes: a
+ *  withdrawn entry that later grows a third state (superseded is already one) would need finding in eight
+ *  places, and this session has twice watched a private copy answer differently from its siblings. */
+export const isLive = (e: Entry): boolean => !e.revoked
+export const isWithdrawn = (e: Entry): boolean => e.revoked === true

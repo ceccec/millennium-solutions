@@ -15,6 +15,7 @@ import { readFileSync, writeFileSync, readdirSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 import { toUuid } from '../src/0/index.ts'
 import { ledger as __ledger } from '../src/api/index.ts'
+import { isLive as __isLive, isWithdrawn as __isWithdrawn } from '../src/api/index.ts'
 
 const DIR = 'src/proof', LEDGER = 'src/proof/discovered.json'
 
@@ -71,7 +72,7 @@ if (orphans.length) {
   // be withdrawn — that is the mistake the dry clean made in the other direction, revoking 1865 claims before
   // the prover had been asked whether it could render them, after which nothing ever asked again. A claim
   // with a living successor is superseded, not gone, and scripts/fold.ts records the link.
-  const liveKeys = new Set(ledger.filter((e) => !e.revoked).map((e) => e.key))
+  const liveKeys = new Set(ledger.filter(__isLive).map((e) => e.key))
   const carried = orphans.filter((o) => [...liveKeys].some((k) => k !== o.key && k.endsWith('_' + o.key.replace(/^lean_/, ''))))
   if (carried.length) {
     console.log(`  ✗ ${carried.length} of these are carried by a live theorem — refusing to withdraw them; run scripts/fold.ts to record the supersession instead:`)

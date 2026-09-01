@@ -29,6 +29,7 @@
 import { writeFileSync } from 'node:fs'
 import { ledger as loadLedger, live as liveOf, type Entry } from '../src/api/index.ts'
 import { execSync } from 'node:child_process'
+import { isLive as __isLive, isWithdrawn as __isWithdrawn } from '../src/api/index.ts'
 
 const LEDGER = 'src/proof/discovered.json'
 
@@ -41,7 +42,7 @@ const sh = (cmd: string) => { try { return execSync(cmd, { encoding: 'utf8', std
 
 const ORBIT_TURNS = ORBIT.length
 const before = load()
-const liveBefore = before.filter((e) => !e.revoked).length
+const liveBefore = before.filter(__isLive).length
 
 sh('node -e "import(\'./src/prove/emit.ts\').then(m => m.emit())"')
 const lean = sh('node scripts/lean.ts')
@@ -67,8 +68,8 @@ for (const e of after) {
 }
 if (linked && write) writeFileSync(LEDGER, JSON.stringify(after, null, 2) + '\n')
 
-const gained = after.filter((e) => !e.revoked).length - liveBefore
-console.log(`fold 1 of at most ${ORBIT_TURNS} (the orbit's length) — sealed ${after.filter((e) => !e.revoked).length} live (${gained >= 0 ? '+' : ''}${gained}) · linked ${linked} withdrawn claim(s) to the theorem that re-established them`)
+const gained = after.filter(__isLive).length - liveBefore
+console.log(`fold 1 of at most ${ORBIT_TURNS} (the orbit's length) — sealed ${after.filter(__isLive).length} live (${gained >= 0 ? '+' : ''}${gained}) · linked ${linked} withdrawn claim(s) to the theorem that re-established them`)
 console.log(`  a second fold is skipped, not omitted: the translator is deterministic over an unchanged ledger, so it would render exactly this again. Folding resumes when the translator learns a shape it cannot read today.`)
 
 // WHAT REMAINS, and why — reported per reason, never as a single number. A count of failures teaches nothing;

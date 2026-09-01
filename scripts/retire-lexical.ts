@@ -48,6 +48,7 @@
 import { readFileSync, writeFileSync } from 'node:fs'
 import { registerHooks, type LoadFnOutput, type LoadHookContext } from 'node:module'
 import { ledger as __ledger } from '../src/api/index.ts'
+import { isLive as __isLive, isWithdrawn as __isWithdrawn } from '../src/api/index.ts'
 
 // INSTRUMENT THE GATE, DO NOT EDIT IT. scripts/honesty-gate.ts is a bare re-export of the packaged gate; this
 // hook swaps in a wrapper that records each text and, when an oracle is installed, answers from the oracle
@@ -182,7 +183,7 @@ const already = retire.filter((r) => isLexicalReason(r.entry.reason))
 const missing = retire.filter((r) => !isLexicalReason(r.entry.reason))
 const overstated = ledger.filter((e) => isLexicalReason(e.reason) && holds.some((h) => h.key === e.key))
 
-console.log(`ledger ${ledger.length} · live ${ledger.filter((e) => !e.revoked).length} · revoked ${ledger.filter((e) => e.revoked).length} (${noCandidate} of them have no candidate left to run)`)
+console.log(`ledger ${ledger.length} · live ${ledger.filter(__isLive).length} · revoked ${ledger.filter(__isWithdrawn).length} (${noCandidate} of them have no candidate left to run)`)
 console.log(`\nRETIRE — asserts the removed lexical gate's behaviour: ${retire.length}`)
 console.log(`  witness FALSIFIED (a literal drain assertion the live gate answers 1): ${retire.filter((r) => r.witness === 'FALSIFIED').length}`)
 console.log(`  witness COUNTERFACTUAL (satisfiable only by a draining gate):          ${retire.filter((r) => r.witness === 'COUNTERFACTUAL').length}`)
