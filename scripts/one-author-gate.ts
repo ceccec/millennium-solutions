@@ -20,7 +20,10 @@
 import { readFileSync, readdirSync } from 'node:fs'
 
 const FILES = [
-  ...readdirSync('scripts').filter((f) => f.endsWith('.ts')).map((f) => 'scripts/' + f),
+// gates-fire.ts is excluded BY NECESSITY, not by convenience: it is the file of negative controls, so
+// it must contain the very things this gate rejects. Scanning it made this gate fail on a clean tree —
+// which gates-fire caught, on its first run, about the gate it was written to test.
+  ...readdirSync('scripts').filter((f) => f.endsWith('.ts') && f !== 'gates-fire.ts').map((f) => 'scripts/' + f),
   ...readdirSync('src/prove').filter((f) => f.endsWith('.ts')).map((f) => 'src/prove/' + f),
 ]
 

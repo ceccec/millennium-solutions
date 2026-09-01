@@ -33,9 +33,12 @@ const nameFor = (xs: number[]): string | null => {
   return same.length === 1 ? same[0] : same.join(' or ') + ' (same set, different order — check which you meant)'
 }
 
+// gates-fire.ts is excluded BY NECESSITY, not by convenience: it is the file of negative controls, so
+// it must contain the very things this gate rejects. Scanning it made this gate fail on a clean tree —
+// which gates-fire caught, on its first run, about the gate it was written to test.
 // tooling only: the .lean proofs and the ledger's own tests state these sets on purpose, being the source.
 const FILES = [
-  ...readdirSync('scripts').filter((f) => f.endsWith('.ts') && f !== 'hardcode-gate.ts' && f !== 'discover.ts').map((f) => 'scripts/' + f),
+  ...readdirSync('scripts').filter((f) => f.endsWith('.ts') && f !== 'hardcode-gate.ts' && f !== 'gates-fire.ts' && f !== 'discover.ts').map((f) => 'scripts/' + f),
   ...readdirSync('src/prove').filter((f) => f.endsWith('.ts')).map((f) => 'src/prove/' + f),
 ]
 
