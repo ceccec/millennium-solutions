@@ -160,6 +160,20 @@ const CONTROLS: Control[] = [
     what: 'a script nothing can reach',
     mutate: (s) => s.replace(/"wave": "node scripts\/wave\.ts",?\n?/, '') },
 
+  // imagine only judges when it EMITS: without --emit it proposes and exits 0, so the control has to run the
+  // emitting path and put a false proposition to the kernel.
+  { gate: 'imagine', cmd: 'node scripts/imagine.ts --emit', file: 'scripts/imagine.ts',
+    what: 'a proposition the kernel refuses',
+    mutate: (s) => s.replace("{ id: 'double',   lean: 'm9 (2 * d)',", "{ id: 'double',   lean: 'm9 (2 * d) + 1',"),
+    restore: 'node scripts/imagine.ts --emit' },
+
+  { gate: 'verify', cmd: 'node scripts/verify.ts', file: 'src/proof/discovered.json',
+    what: 'an entry citing a theorem that is not sealed',
+    mutate: (s) => { const l = JSON.parse(s)
+      const e = l.find((x: { key: string; revoked?: boolean }) => !x.revoked && x.key.startsWith('lean_'))
+      if (e) e.name += ' — proved by /theorem/a_key_that_was_never_sealed'
+      return JSON.stringify(l, null, 2) + '\n' } },
+
   { gate: 'gaps', cmd: 'node scripts/gaps.ts', file: '.vitepress/config.ts',
     what: 'a published page dropped from the sidebar',
     mutate: (s) => s.replace(/\{ text: 'Verify \(live app\)', link: '\/verify' \},/, '') },

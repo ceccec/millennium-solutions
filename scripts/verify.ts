@@ -89,7 +89,13 @@ const tally = () => {
   const c: Record<string, number> = { VERIFIED: 0, UNVERIFIED: 0, DRAINED: 0 }
   for (const e of led) {
     const isKernelChecked = !e.revoked && e.key.startsWith('lean_') && sealed.has(e.key)
-    c[isKernelChecked ? 'VERIFIED' : reveal(e.name).verdict]++
+    // BEING A PROOF DOES NOT EXCUSE A FABRICATED CITATION. Verified-by-identity skipped reveal() entirely, so
+    // a live theorem whose NAME cited a key that was never sealed passed unexamined — the strongest entries
+    // in the ledger were the only ones whose prose nobody checked. Identity settles whether the statement
+    // holds; it says nothing about what the sentence points at. A dangling citation drains either way.
+    const cited = reveal(e.name)
+    if (isKernelChecked && cited.verdict !== 'DRAINED') { c.VERIFIED++; continue }
+    c[cited.verdict]++
   }
   return c
 }
