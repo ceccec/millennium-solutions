@@ -18,13 +18,14 @@ import { toUuid, merkleFold } from '../src/0/index.ts'
 import { computes } from './honesty-gate.ts'
 import { provable } from './discover.ts'
 import { report as rosettaReport } from '../src/the/rosetta/index.ts'
+import { ledger as __ledger } from '../src/api/index.ts'
 
 const message = process.argv.slice(2).join(' ').trim()
 
 // ── status mode: a read-only health report — version, ledger, chain-of-custody, floor. No ship. ──
 if (message === '--status' || message === 'status') {
   const ver = (() => { try { return execSync('git describe --tags --abbrev=0', { encoding: 'utf8' }).trim() } catch { return 'v0' } })()
-  const led: { key: string; receipt: string }[] = existsSync('src/proof/discovered.json') ? JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) : []
+  const led: { key: string; receipt: string }[] = existsSync('src/proof/discovered.json') ? __ledger() : []
   const GENESIS = new Set(['euler_units_pow6', 'units_sum_zero'])
   let prev = 'axiom:TRINITY', newBreaks = 0
   for (const e of led) { if (toUuid(prev + '→' + e.key) !== e.receipt && !GENESIS.has(e.key)) newBreaks++; prev = e.receipt }
@@ -99,7 +100,7 @@ if (message) {
 {
   const LEDGER = 'src/proof/discovered.json'
   const ledger: { key: string; name: string; receipt: string }[] =
-    existsSync(LEDGER) ? JSON.parse(readFileSync(LEDGER, 'utf8')) : []
+    existsSync(LEDGER) ? __ledger() : []
   const known = new Set(ledger.map((e) => e.key))
   // CAP LIFTED (the captain's order: "lift the cap and finish the full pure-TS crypto"). The ledger grows
   // again — every provable fact is discovered. The revocation ledger still excludes merged keys (the forged
@@ -151,7 +152,7 @@ if (address === lastAddr) {
   // exhausted, the yacht comes about — reverse-verify the chain tail→genesis, invert to the sparsest region.
   console.log('next — forward is WHOLE (content-address = ' + lastTag + ' · ' + address.slice(0, 13) + '…). the procedure inverts.')
   console.log('\n' + rosettaReport().split('\n').map((l) => '  ' + l).join('\n'))
-  const led = JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) as { key: string; receipt: string }[]
+  const led = __ledger() as { key: string; receipt: string }[]
   // REVERSE — recompute the chain forward and confirm it re-seals; a reverse traversal reaches the same seal.
   const GEN = new Set(['euler_units_pow6', 'units_sum_zero'])
   let revOk = true, prev = 'axiom:TRINITY'

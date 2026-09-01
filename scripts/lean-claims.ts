@@ -5,6 +5,7 @@
 import { toUuid, units, triad, vortexOrbit, merkleFold, digitalRoot, digits } from '../src/0/index.ts'
 import { readFileSync, existsSync } from 'node:fs'
 import { CANDIDATES } from './discover.ts'
+import { ledger as __ledger } from '../src/api/index.ts'
 
 // REVOKED ENTRIES ARE NOT LIVE CLAIMS. The ledger is append-only and its receipts are immutable, so an entry
 // that no longer holds is marked in place rather than deleted — deleting would break the chain, and rewriting
@@ -61,7 +62,7 @@ ck('self_inverse_only_1_and_8: d²≡1 ⇔ d∈{1,8}', digits().filter(d => m9(B
 // Cassini sign) fails here, not in production. This makes the ledger continuously proven, not just appended.
 {
   const LEDGER = 'src/proof/discovered.json'
-  const all: { key: string; revoked?: boolean }[] = existsSync(LEDGER) ? JSON.parse(readFileSync(LEDGER, 'utf8')) : []
+  const all: { key: string; revoked?: boolean }[] = existsSync(LEDGER) ? __ledger() : []
   const ledger = all.filter(isLive)
   const byKey = new Map(CANDIDATES.map((c) => [c.key, c]))
   // A Lean-sealed entry has no TypeScript candidate: its proof is the Lean file, checked by scripts/lean.ts.

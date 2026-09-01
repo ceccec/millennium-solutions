@@ -18,6 +18,7 @@
 // The honesty of this file rests on that second list being reported, not hidden. A prover that silently skips
 // what it cannot do looks complete and is not.
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
+import { ledger as loadLedger } from '../api/index.ts'
 import { execSync } from 'node:child_process'
 import { translate } from './translate.ts'
 
@@ -40,8 +41,7 @@ export type Shape = 'modular-identity' | 'range-predicate' | 'exact-set' | 'unkn
  *  they are done, not because they were filtered.
  */
 export function queue(): Portable[] {
-  const led = JSON.parse(readFileSync(LEDGER, 'utf8')) as
-    { key: string; name: string; revoked?: boolean; supersededBy?: string }[]
+  const led = loadLedger()
   const src = readFileSync(DISCOVER, 'utf8')
   const bodies = new Map([...src.matchAll(/out\.push\(\{ key: '([a-z_0-9]+)'[\s\S]*?test: \(\) => ([\s\S]*?)\}\)\n/g)]
     .map((m) => [m[1], m[2]] as [string, string]))

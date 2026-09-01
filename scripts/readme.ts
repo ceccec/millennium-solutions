@@ -17,8 +17,9 @@ import { computes } from './honesty-gate.ts'
 import { adjudicate } from './adjudicate.ts'
 import { billUuidna, coins } from '../src/9/funding.ts'
 import { CANDIDATES } from './discover.ts'
+import { ledger as __ledger } from '../src/api/index.ts'
 
-const ledger = JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) as { key: string; name: string; receipt: string }[]
+const ledger = __ledger() as { key: string; name: string; receipt: string }[]
 const lean = readFileSync('src/proof/index.lean', 'utf8')
 const m9 = (n: number) => ((n % BASE) + BASE) % BASE
 const refl = (d: number) => 10 - d

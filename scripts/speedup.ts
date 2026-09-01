@@ -6,9 +6,10 @@
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { digitalRoot } from '../src/0/index.ts'
 import { report as rosetta } from '../src/the/rosetta/index.ts'
+import { ledger as __ledger } from '../src/api/index.ts'
 
 const ledger: { key: string; receipt: string }[] = existsSync('src/proof/discovered.json')
-  ? JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) : []
+  ? __ledger() : []
 const N = ledger.length
 
 const rows = [8, 64, 967, 1024, 1_000_000].map((n) => {

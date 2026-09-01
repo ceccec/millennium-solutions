@@ -12,9 +12,10 @@ import { CANDIDATES } from './discover.ts'
 import { doubleTorusGravity } from '../src/the/apple/index.ts'
 import { toUuid } from '../src/0/index.ts'
 import { readFileSync, existsSync } from 'node:fs'
+import { ledger as __ledger } from '../src/api/index.ts'
 
 const ledger = (): { key: string; name: string; receipt: string }[] =>
-  existsSync('src/proof/discovered.json') ? JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) : []
+  existsSync('src/proof/discovered.json') ? __ledger() : []
 
 // A supporting formula is a ledger theorem whose predicate establishes the FLOOR relevant to the statement: the
 // trial theorems always apply; the disputed-cluster theorems apply when the statement names a disputed problem.

@@ -7,11 +7,12 @@
 import { readFileSync, readdirSync, existsSync, writeFileSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 import { toUuid, merkleFold } from '../src/0/index.ts'
+import { ledger as __ledger } from '../src/api/index.ts'
 
 const COINS_PER_RECEIPT = 2 // 110 − 108 = 2 = −χ(genus-2); the fair-exchange unit (2 coins = 2 bits)
 const cap = (c: string, fallback = '') => { try { return execSync(c, { encoding: 'utf8' }).trim() } catch { return fallback } }
 
-const ledger: { key: string }[] = existsSync('src/proof/discovered.json') ? JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) : []
+const ledger: { key: string }[] = existsSync('src/proof/discovered.json') ? __ledger() : []
 const theorems = ledger.length
 const signed = existsSync('src/receipts') ? readdirSync('src/receipts').filter((f) => f.endsWith('.json')).length : 0
 const tags = cap('git tag').split('\n').filter(Boolean).length

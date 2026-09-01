@@ -26,6 +26,7 @@
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 import { toUuid, digitalRoot, units as uUnits, modpow, merkleFold, gcd as uGcd, isPrime, vortexOrbit, BASE } from '@uuidna/uuidna'
+import { ledger as __ledger } from '../src/api/index.ts'
 
 // LEARNED FROM uuidna's own Lean corpus (1329 theorems, read from the package): a theorem there carries more
 // than its source. It is CONTENT-ADDRESSED (address, lineAddress), CLASSIFIED (principle, skill), records HOW
@@ -39,7 +40,7 @@ type Fam = { name: string; params: number[]; lean: string; ts: (p: number) => bo
 type Rec = { key: string; name: string; statement: string; tactic: string; file: string
              principle: string; skill: string; lean: string; address: string; subsumes: string[] }
 
-const led = JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) as { key: string; name: string }[]
+const led = __ledger() as { key: string; name: string }[]
 const paramsOf = (prefix: string): number[] =>
   led.map((e) => e.key.match(new RegExp('^' + prefix + '_?([0-9]+)$'))).filter(Boolean).map((m) => Number(m![1])).sort((a, b) => a - b)
 

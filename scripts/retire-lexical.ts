@@ -47,6 +47,7 @@
 //      node scripts/retire-lexical.ts --write   also record the reason on entries that lack it
 import { readFileSync, writeFileSync } from 'node:fs'
 import { registerHooks, type LoadFnOutput, type LoadHookContext } from 'node:module'
+import { ledger as __ledger } from '../src/api/index.ts'
 
 // INSTRUMENT THE GATE, DO NOT EDIT IT. scripts/honesty-gate.ts is a bare re-export of the packaged gate; this
 // hook swaps in a wrapper that records each text and, when an oracle is installed, answers from the oracle
@@ -79,7 +80,7 @@ const { computes } = await import('./honesty-gate.ts') as { computes: (t: string
 
 const LEDGER = 'src/proof/discovered.json'
 type Entry = { key: string; name: string; receipt: string; revoked?: boolean; reason?: string; supersededBy?: string }
-const ledger: Entry[] = JSON.parse(readFileSync(LEDGER, 'utf8'))
+const ledger: Entry[] = __ledger()
 const byKey = new Map(ledger.map((e) => [e.key, e]))
 const write = process.argv.includes('--write')
 

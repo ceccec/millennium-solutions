@@ -4,9 +4,10 @@
 // animation (animateTransform). The build fails if any theorem lacks its page/microdata/animation.
 // Runs after docs:build (needs the rendered dist).
 import { readFileSync, existsSync } from 'node:fs'
+import { ledger as __ledger } from '../src/api/index.ts'
 
 const DIST = '.vitepress/dist/theorem'
-const ledger: { key: string }[] = JSON.parse(readFileSync('src/proof/discovered.json', 'utf8'))
+const ledger: { key: string }[] = __ledger()
 
 let bad = 0
 for (const e of ledger) {

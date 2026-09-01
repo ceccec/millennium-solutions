@@ -12,6 +12,7 @@ import { execSync } from 'node:child_process'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 import { computes } from './honesty-gate.ts'
 import { CANDIDATES } from './discover.ts'
+import { ledger as __ledger } from '../src/api/index.ts'
 
 const byKey = new Map(CANDIDATES.map((c) => [c.key, c])) // for verifying invited theorems still hold
 // A receipt is IMMUTABLE — rewriting one is tamper — so when a theorem it invited is later withdrawn, the
@@ -24,7 +25,7 @@ const byKey = new Map(CANDIDATES.map((c) => [c.key, c])) // for verifying invite
 //   invited key absent             → FALSE (it invited something that never existed)
 //   invited key REVOKED            → WITHDRAWN BACKING — reported and counted, never fatal, no remedy exists
 const ledgerState = new Map(
-  (JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) as { key: string; revoked?: boolean }[])
+  (__ledger() as { key: string; revoked?: boolean }[])
     .map((e) => [e.key, e.revoked === true]))
 const dir = 'src/receipts'
 let bad = 0

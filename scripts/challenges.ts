@@ -5,6 +5,7 @@
 // build), so it never enters the content-address and never churns a phantom version.
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { toUuid, merkleFold } from '../src/0/index.ts'
+import { ledger as __ledger } from '../src/api/index.ts'
 
 const CLAY = [
   { name: 'Poincaré conjecture', status: 'settled', by: 'Perelman, 2003 (external)' },
@@ -18,7 +19,7 @@ const CLAY = [
 const settled = CLAY.filter((c) => c.status === 'settled').length
 const open = CLAY.length - settled
 const ledger: { key: string; name: string; receipt: string; revoked?: boolean; reason?: string }[] =
-  existsSync('src/proof/discovered.json') ? JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) : []
+  existsSync('src/proof/discovered.json') ? __ledger() : []
 
 let o = '---\ntitle: Challenges\n---\n\n# Millennium challenges — computed status\n\n'
 o += '<NextObserver />\n\n' // when no next is defined, next computes from the observer\'s referrer\n

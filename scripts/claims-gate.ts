@@ -13,8 +13,9 @@ import { readFileSync, readdirSync } from 'node:fs'
 import { addressed, root, CLAIMS } from '../src/claims/index.ts'
 import { coins } from '../src/9/funding.ts'
 import { computes } from './honesty-gate.ts'
+import { ledger as __ledger } from '../src/api/index.ts'
 
-const ledger: { key: string }[] = JSON.parse(readFileSync('src/proof/discovered.json', 'utf8'))
+const ledger: { key: string }[] = __ledger()
 const ledgerKeys = new Set(ledger.map((e) => e.key))
 
 let bad = 0

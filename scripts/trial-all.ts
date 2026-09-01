@@ -16,8 +16,9 @@ import { readFileSync, writeFileSync } from 'node:fs'
 import { CANDIDATES } from './discover.ts'
 import { computes } from './honesty-gate.ts'
 import { toUuid, merkleFold } from '../src/0/index.ts'
+import { ledger as __ledger } from '../src/api/index.ts'
 
-const ledger = JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) as { key: string; name: string; receipt: string }[]
+const ledger = __ledger() as { key: string; name: string; receipt: string }[]
 const byKey = new Map(CANDIDATES.map((c) => [c.key, c]))
 const src = readFileSync('scripts/discover.ts', 'utf8')
 const bodyOf = new Map([...src.matchAll(/out\.push\(\{ key: '([a-z_0-9]+)'[\s\S]*?test: \(\) => ([\s\S]*?)\}\)\n/g)].map((m) => [m[1], m[2]]))

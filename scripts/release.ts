@@ -5,6 +5,7 @@ import { readFileSync, writeFileSync, readdirSync, statSync } from 'node:fs'
 import { join } from 'node:path'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 import { merkleGravity } from '../src/the/apple/index.ts'
+import { ledger as __ledger } from '../src/api/index.ts'
 
 const SKIP_DIR = new Set(['node_modules', '.git', 'cache', 'dist'])
 function walk(dir, acc = []) {
@@ -67,7 +68,7 @@ const PKGS = ['package.json'] // uuidna now lives in its own repo (github:uuidna
 // FROZEN at the captain's directive — "stay at v0.1.1". The npm version is a held label; the content-address
 // (and the gravity-signed provenance tag) is the true latest, advancing every release while the label holds.
 const NPM = (JSON.parse(readFileSync(PKGS[0], 'utf8')).version || '0.1.1')
-const ledger = JSON.parse(readFileSync('src/proof/discovered.json', 'utf8'))
+const ledger = __ledger()
 const grav = ledger.find((e) => e.key === 'gravity_is_the_fall_to_a_fixed_point_and_pigeonhole_breaks_every_finite_hash') || ledger.find((e) => /gravit/i.test(e.key))
 const gravSig = merkleGravity([grav.receipt, address]) // the address falls to its fixed point through gravity
 const SIGN = 'gravity(' + grav.key.slice(0, 28) + ') ' + grav.receipt.slice(0, 13) + ' → ' + gravSig.slice(0, 13)

@@ -12,13 +12,14 @@
 //   node scripts/memory.ts            print the derived block
 //   node scripts/memory.ts --write    write it into the memory file, replacing only the generated block
 import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs'
+import { ledger as __ledger } from '../src/api/index.ts'
 
 const MEMDIR = '/Users/ceci/.claude/projects/-Users-ceci-github-ceccec-millennium-solutions/memory'
 const MEM = MEMDIR + '/deposit-state.md'
 const INDEX = MEMDIR + '/MEMORY.md'
 const BEGIN = '<!-- derived:begin -->', END = '<!-- derived:end -->'
 
-const led = JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) as
+const led = __ledger() as
   { key: string; revoked?: boolean; portable?: boolean }[]
 const live = led.filter((e) => !e.revoked)
 const leanFiles = readdirSync('src/proof').filter((f) => f.endsWith('.lean')).sort()

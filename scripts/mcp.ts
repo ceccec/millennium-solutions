@@ -14,10 +14,11 @@ import { proveVerdict } from './verdict.ts'
 import { apiFetch } from './api.ts'
 import { CANDIDATES, provable } from './discover.ts'
 import { CORE as ROSETTA_CORE, DOMAINS as ROSETTA_DOMAINS } from '../src/the/rosetta/index.ts'
+import { ledger as __ledger } from '../src/api/index.ts'
 
 const version = (() => { try { return execSync('git tag --sort=version:refname', { encoding: 'utf8' }).trim().split('\n').pop() || 'v0' } catch { return 'v0' } })()
 type LedgerEntry = { key: string; name: string; receipt: string }
-const loadLedger = (): LedgerEntry[] => existsSync('src/proof/discovered.json') ? JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) : []
+const loadLedger = (): LedgerEntry[] => existsSync('src/proof/discovered.json') ? __ledger() : []
 const send = (m: unknown) => process.stdout.write(JSON.stringify(m) + '\n')
 const reply = (id: unknown, result: unknown) => send({ jsonrpc: '2.0', id, result })
 const fail = (id: unknown, code: number, message: string) => send({ jsonrpc: '2.0', id, error: { code, message } })

@@ -5,9 +5,10 @@
 // structure; the life is the observer's to bring — the page explains geometry, not consciousness. 0/7.
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { toUuid, merkleFold, A432_STEP } from '../src/0/index.ts'
+import { ledger as __ledger } from '../src/api/index.ts'
 
 const ledger: { key: string; name: string; receipt: string }[] =
-  existsSync('src/proof/discovered.json') ? JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) : []
+  existsSync('src/proof/discovered.json') ? __ledger() : []
 const pick = (pred: (k: string) => boolean) => ledger.filter((e) => pred(e.key))
 const games = pick((k) => /^(nim|wythoff|grundy|chess|both_games|duel|trial)/.test(k))
 const arts = pick((k) => /^(arts|geom|harmonic|gematria)/.test(k))

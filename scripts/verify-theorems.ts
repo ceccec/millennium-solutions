@@ -7,8 +7,9 @@ import { readFileSync } from 'node:fs'
 import { provable } from './discover.ts'
 import { computes } from './honesty-gate.ts'
 import { toUuid } from '../src/0/index.ts'
+import { ledger as __ledger } from '../src/api/index.ts'
 
-const ledger: { key: string; name: string; receipt: string }[] = JSON.parse(readFileSync('src/proof/discovered.json', 'utf8'))
+const ledger: { key: string; name: string; receipt: string }[] = __ledger()
 const cand = new Map(provable().map((c) => [c.key, c]))
 const GENESIS = new Set(['euler_units_pow6', 'units_sum_zero'])
 

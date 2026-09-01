@@ -14,6 +14,7 @@
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 import { toUuid } from '../src/0/index.ts'
+import { ledger as __ledger } from '../src/api/index.ts'
 
 const DIR = 'src/proof', LEDGER = 'src/proof/discovered.json'
 
@@ -21,7 +22,7 @@ const DIR = 'src/proof', LEDGER = 'src/proof/discovered.json'
 try { execSync('node scripts/lean.ts', { stdio: 'pipe' }) }
 catch (e) { console.error('✗ the Lean layer does not verify — nothing sealed\n' + String((e as { stdout?: Buffer }).stdout ?? '')); process.exit(1) }
 
-const ledger = JSON.parse(readFileSync(LEDGER, 'utf8')) as { key: string; name: string; receipt: string; revoked?: boolean; reason?: string }[]
+const ledger = __ledger() as { key: string; name: string; receipt: string; revoked?: boolean; reason?: string }[]
 const known = new Set(ledger.map((e) => e.key))
 const revoked = new Set((JSON.parse(readFileSync(`${DIR}/revoked.json`, 'utf8')) as { key: string }[]).map((r) => r.key))
 

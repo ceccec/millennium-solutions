@@ -10,9 +10,10 @@ import { readFileSync, writeFileSync } from 'node:fs'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 import { adjudicate, proveVerdict } from './adjudicate.ts'
 import { computes } from './honesty-gate.ts'
+import { ledger as __ledger } from '../src/api/index.ts'
 
 const lean = readFileSync('src/proof/index.lean', 'utf8')
-const ledger = JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) as { key: string; name: string; receipt: string }[]
+const ledger = __ledger() as { key: string; name: string; receipt: string }[]
 const CLAY = ['riemann', 'p_vs_np', 'navier_stokes', 'yang_mills', 'hodge', 'birch_swinnerton_dyer', 'poincare']
 const green = (k: string) => new RegExp('theorem ' + k + '[\\s\\S]*?:= by decide').test(lean)
 const provenHere = Number((lean.match(/def provenHere : Nat := (\d+)/) as RegExpMatchArray)[1])

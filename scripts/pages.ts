@@ -21,8 +21,9 @@ import { translate } from '../src/prove/translate.ts'
 import { adjudicate } from './adjudicate.ts'
 import { computes } from './honesty-gate.ts'
 import { toUuid, merkleFold } from '../src/0/index.ts'
+import { ledger as __ledger } from '../src/api/index.ts'
 
-const ledger = JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) as { key: string; name: string; receipt: string }[]
+const ledger = __ledger() as { key: string; name: string; receipt: string }[]
 const leanFiles = readdirSync('src/proof').filter((f) => f.endsWith('.lean')).sort()
 const leanSrc = Object.fromEntries(leanFiles.map((f) => [f, readFileSync(`src/proof/${f}`, 'utf8')]))
 const leanTheorems = leanFiles.flatMap((f) => [...leanSrc[f].matchAll(/^theorem ([A-Za-z_0-9]+)/gm)].map((m) => ({ file: f, name: m[1] })))

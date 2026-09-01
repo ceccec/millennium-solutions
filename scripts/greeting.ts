@@ -4,8 +4,9 @@
 // content-address proves integrity, not truth. 0/7.
 import { readFileSync, writeFileSync } from 'node:fs'
 import { merkleFold } from '../src/0/index.ts'
+import { ledger as __ledger } from '../src/api/index.ts'
 
-const ledger = JSON.parse(readFileSync('src/proof/discovered.json', 'utf8')) as { receipt: string }[]
+const ledger = __ledger() as { receipt: string }[]
 const pkg = JSON.parse(readFileSync('node_modules/@uuidna/uuidna/package.json', 'utf8'))
 const n = ledger.length
 const seal = merkleFold(ledger.map((e) => e.receipt))
