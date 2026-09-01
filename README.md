@@ -154,11 +154,11 @@ Read from the artefacts at build time, never carried between runs.
 | ledger entries | 2,328 — 291 octaves exactly |
 | standing | **437** |
 | withdrawn, kept in the record | 1,891 |
-| withdrawn but since re-proved | 35 |
+| withdrawn but since re-proved | 111 |
 | Lean files · theorems | 22 · 419, all axiom-free |
 | proved `by decide` | 411 of 419 |
-| claims a machine can render | 77 of 1,522 |
-| claims needing an author | 1,445 — reported, never faked |
+| claims a machine can render | 3 of 1,446 |
+| claims needing an author | 1,443 — reported, never faked |
 
 **Why the withdrawn were withdrawn.** 1,397 no Lean proof · 457 tested the removed lexical gate · 27 its Lean source was deleted or renamed · 10 circular by construction. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
 

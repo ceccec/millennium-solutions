@@ -703,7 +703,8 @@
     "receipt": "7e3ebb75-50c9-8d2c-9e59-ee8931741046",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_bool_demorgan1"
   },
   {
     "key": "bool_demorgan2",
@@ -711,7 +712,8 @@
     "receipt": "bd5e61d1-fd26-8466-8f17-c9691e9390a7",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_bool_demorgan2"
   },
   {
     "key": "bool_distributivity",
@@ -719,7 +721,8 @@
     "receipt": "0a5da686-6595-8d4f-acc4-0289bc2e451f",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_bool_distributivity"
   },
   {
     "key": "bool_double_negation",
@@ -751,7 +754,8 @@
     "receipt": "75ad142a-a56a-89de-8e2b-dade084e4bcf",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_bool_absorption"
   },
   {
     "key": "bool_xor_associativity",
@@ -1023,7 +1027,8 @@
     "receipt": "4a44551c-2cff-84bd-a62f-4d2940d3179e",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_cover_rotation_full_circle"
   },
   {
     "key": "goldencf_n5",
@@ -1207,7 +1212,8 @@
     "receipt": "cc1d4a9c-b31c-8f4b-bf47-4f9fb8f0d1d8",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_fib_trinity_horizon"
   },
   {
     "key": "quarter_turn_order4",
@@ -1270,7 +1276,8 @@
     "receipt": "7f22f5c0-f4bd-8c47-a3eb-cd1b4e72a468",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_arts_nine_hues_distinct"
   },
   {
     "key": "arts_cmy_complements_rgb",
@@ -1431,7 +1438,8 @@
     "receipt": "be4a6652-cec8-87ff-8d15-07b54bdb77a0",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_trial_zero_divisors"
   },
   {
     "key": "trial_zero_no_inverse",
@@ -1574,7 +1582,8 @@
     "receipt": "37d92648-bdfe-85d4-914b-631699f1eea0",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_nopayload_avalanche"
   },
   {
     "key": "nopayload_not_encryption",
@@ -1749,7 +1758,8 @@
     "receipt": "43c69905-b116-83f6-af61-77316cc0a7a3",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_chess_board_64"
   },
   {
     "key": "chess_knight_8_moves",
@@ -1773,7 +1783,8 @@
     "receipt": "85a4e4b0-787f-8d51-961e-b06105d4b7a7",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_chess_diagonals_15"
   },
   {
     "key": "tarot_78_cards",
@@ -1781,7 +1792,8 @@
     "receipt": "e2f4737c-87a0-8f9b-aa46-9fe1c43f32a9",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_tarot_78_cards"
   },
   {
     "key": "tarot_minor_4x14",
@@ -1789,7 +1801,8 @@
     "receipt": "c9de57ab-a524-8dcc-a537-6cbb1970be8f",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_tarot_minor_4x14"
   },
   {
     "key": "tarot_major_0_21",
@@ -1797,7 +1810,8 @@
     "receipt": "b9a00780-3406-8423-85f5-6b7fd0ff8cc2",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_tarot_major_0_21"
   },
   {
     "key": "tarot_digital_roots",
@@ -1805,7 +1819,8 @@
     "receipt": "df86a738-4b27-8b24-bbe4-14afbe44a12c",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_tarot_digital_roots"
   },
   {
     "key": "tarot_holds_theorems",
@@ -2069,7 +2084,8 @@
     "receipt": "3ed5b445-4759-8aff-b695-85e6b93dbb7d",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_harmonic_octave_2_1"
   },
   {
     "key": "harmonic_just_ratios",
@@ -2302,7 +2318,8 @@
     "receipt": "04e46e4e-6288-8ed5-8e79-ec7b8a294c5b",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_relation_seven"
   },
   {
     "key": "relation_eight",
@@ -2359,7 +2376,8 @@
     "receipt": "6de0c6a5-40aa-8a06-984a-6515e4768a29",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_relation_creation_week"
   },
   {
     "key": "relation_superposition",
@@ -2407,7 +2425,8 @@
     "receipt": "042490a1-cebe-899d-a7b4-ed7268c7b94e",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_relation_superposition_collapse"
   },
   {
     "key": "relation_superposition_entanglement",
@@ -2487,7 +2506,8 @@
     "receipt": "f2edb35a-8774-8279-8a01-72df67607cf8",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_relation_url_path"
   },
   {
     "key": "relation_path_rating",
@@ -2591,7 +2611,8 @@
     "receipt": "151c4ea6-e9a3-8f87-9f9e-4f747c90db86",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_genus2_moduli_dim"
   },
   {
     "key": "surface_classification",
@@ -2623,7 +2644,8 @@
     "receipt": "c7d84ef0-85e9-84e7-a6a8-8d1c04e2574c",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_genus2_hyperelliptic"
   },
   {
     "key": "genus2_h1_symplectic",
@@ -3129,7 +3151,8 @@
     "receipt": "c6aced1e-e571-848d-8bbb-12e7eac09651",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_relation_digitroot_is_residue_mod9"
   },
   {
     "key": "relation_a432_partitions_circle",
@@ -3235,7 +3258,8 @@
     "receipt": "65e3085d-bd15-8cb2-835b-89ab5051b585",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_relation_triangular_45_is_base"
   },
   {
     "key": "relation_cubes_fold_to_0_1_8",
@@ -3307,7 +3331,8 @@
     "receipt": "cacade9e-3882-855d-8c3a-517f4f13a957",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_kaprekar_constants_digitroot_nine"
   },
   {
     "key": "magic3_constant_15",
@@ -3363,7 +3388,8 @@
     "receipt": "468b07de-520f-8681-97e1-63ccd5ba4185",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_content_address_is_keyless_integrity"
   },
   {
     "key": "sealing_is_not_signing",
@@ -5683,7 +5709,8 @@
     "receipt": "5c562cab-4297-8d38-9310-90d6b4195e17",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_demand2_nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number"
   },
   {
     "key": "the_sum_of_the_first_n_odd_numbers_is_n_squared",
@@ -8370,7 +8397,8 @@
     "receipt": "00bf4b81-2060-8109-b452-3e4eeee4bd48",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_the_three_four_five_right_triangle_is_the_first_pythagorean_triple"
   },
   {
     "key": "the_three_cube_roots_of_unity_sum_to_zero",
@@ -8410,7 +8438,8 @@
     "receipt": "bc2e7cd8-5029-852d-9548-026f4a332532",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_the_regular_pentagon_angles_are_the_heart_seventy_two_and_hundred_eight"
   },
   {
     "key": "the_five_fifth_roots_of_unity_sum_to_zero",
@@ -8483,7 +8512,8 @@
     "receipt": "0da31e4f-84ac-8af4-afd4-342023445081",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical__142857_times_seven_is_six_nines"
   },
   {
     "key": "midy_the_two_halves_of_142857_sum_to_nines",
@@ -8491,7 +8521,8 @@
     "receipt": "e8c1c167-cb15-8008-b731-ecedfae6cc18",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_midy_the_two_halves_of_142857_sum_to_nines"
   },
   {
     "key": "seven_is_the_fourth_prime",
@@ -8591,7 +8622,8 @@
     "receipt": "8c8d01f5-d52d-8575-aa03-89d309896180",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_the_nine_times_table_always_digital_roots_to_nine"
   },
   {
     "key": "the_regular_nonagon_exterior_angle_is_the_a432_step",
@@ -8599,7 +8631,8 @@
     "receipt": "07f088c5-a18e-8014-9fbc-a94f47faffbd",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_the_regular_nonagon_exterior_angle_is_the_a432_step"
   },
   {
     "key": "casting_out_nines_is_multiplicative",
@@ -8607,7 +8640,8 @@
     "receipt": "c3fe563f-88f8-8f0e-9f1c-11d96fc5a191",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_casting_out_nines_is_multiplicative"
   },
   {
     "key": "every_digital_root_lands_in_one_to_nine",
@@ -8631,7 +8665,8 @@
     "receipt": "75ec1aeb-f860-8308-9c0a-4011f35c4524",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_the_digits_one_to_nine_sum_to_forty_five_rooting_to_nine"
   },
   {
     "key": "nine_is_the_base_and_the_trinity_squared",
@@ -8680,7 +8715,8 @@
     "receipt": "7e3fcf6e-3276-813d-8bdc-91c68a9f449c",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_six_is_the_third_triangular_number"
   },
   {
     "key": "the_regular_hexagon_exterior_angle_is_the_gold_string",
@@ -8688,7 +8724,8 @@
     "receipt": "030e950f-26b6-8e14-9c5b-6329f80cd909",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_the_regular_hexagon_exterior_angle_is_the_gold_string"
   },
   {
     "key": "six_is_euclids_perfect_number_from_the_mersenne_prime_three",
@@ -8728,7 +8765,8 @@
     "receipt": "e441aa54-c293-846a-909f-f3de1525e31b",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_the_doubling_orbit_reflection_pairs_sum_to_nine"
   },
   {
     "key": "the_doubling_orbit_sums_to_twenty_seven_the_trinity_cubed",
@@ -9114,7 +9152,8 @@
     "receipt": "99627f3a-6e22-8832-8245-d740d3733591",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_there_are_infinitely_many_pythagorean_triples"
   },
   {
     "key": "the_area_of_a_pythagorean_triangle_is_a_multiple_of_six",
@@ -9162,7 +9201,8 @@
     "receipt": "b082f743-3482-8744-96c0-0839ea4f7f77",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_the_difference_of_consecutive_squares_is_the_odd_numbers"
   },
   {
     "key": "a_square_never_ends_in_two_three_seven_or_eight_in_base_ten",
@@ -9178,7 +9218,8 @@
     "receipt": "09a17240-17e1-86b5-9235-cf63a416c554",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "portable": true,
+    "supersededBy": "lean_mechanical_the_product_of_any_three_consecutive_integers_is_divisible_by_six"
   },
   {
     "key": "the_arithmetic_mean_is_at_least_the_geometric_mean",
@@ -9838,7 +9879,8 @@
     "receipt": "e4c2a026-ccbd-8b21-ac2e-82a58ebfef09",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_sixty_one_sense_three_stop_codons"
   },
   {
     "key": "base_pairing_is_an_involution",
@@ -9878,7 +9920,8 @@
     "receipt": "271180f0-75bd-84ed-832c-18036eebeb9e",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_six_reading_frames"
   },
   {
     "key": "combining_skills_via_the_rosetta",
@@ -9893,7 +9936,8 @@
     "receipt": "464da704-14b7-8b7b-bc07-6ba43f5f61f7",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_each_wave_is_a_local_pure_derivation"
   },
   {
     "key": "determinism_enables_free_reuse",
@@ -10182,7 +10226,8 @@
     "receipt": "9691e999-458e-862e-8deb-aa206ab9b77f",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_diamond_fixed_point_is_zero_entropy"
   },
   {
     "key": "diamond_center_is_the_hub",
@@ -10213,7 +10258,8 @@
     "receipt": "1292769c-e452-8bd7-b485-8def3d4dba82",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_the_address_is_shipped_not_the_payload"
   },
   {
     "key": "dna_is_live_in_the_stream",
@@ -10300,7 +10346,8 @@
     "receipt": "7d0e0c9b-0a74-8e97-8d0b-f7a1da1afa0d",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_gravity_holds_prose_code_and_paths"
   },
   {
     "key": "gravity_names_and_paths_rotate_without_cracking",
@@ -10529,7 +10576,8 @@
     "receipt": "6627dfa3-bdfc-8655-a59d-2c1567076091",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_the_harmonic_band_thirty_to_ninety"
   },
   {
     "key": "sixty_and_ninety_partition_the_quadrant",
@@ -10537,7 +10585,8 @@
     "receipt": "92ed3459-bf5c-82b2-94aa-0b5449c00718",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_sixty_and_ninety_partition_the_quadrant"
   },
   {
     "key": "the_hexagon_and_the_square_metrics",
@@ -10545,7 +10594,8 @@
     "receipt": "a2c2b80a-40f5-8b8d-a01b-5dcb03e026de",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_the_hexagon_and_the_square_metrics"
   },
   {
     "key": "the_law_of_sines_fixes_the_ratios",
@@ -10820,7 +10870,8 @@
     "receipt": "0dbe9c6f-3905-8367-89fc-5bfc68e4847c",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_a_theorem_responds_in_a_receipt"
   },
   {
     "key": "the_receipt_is_the_page",
@@ -10946,7 +10997,8 @@
     "receipt": "8b0df014-6111-884b-86be-786d2a6ec3af",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_each_perspective_is_a_distinct_file"
   },
   {
     "key": "file_uuids_are_totally_ordered",
@@ -11323,7 +11375,8 @@
     "receipt": "ecdaa449-bf19-887f-8ebf-9c1a3f23be9d",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_involution_negation"
   },
   {
     "key": "involution_multiplicative_inverse",
@@ -11388,7 +11441,8 @@
     "receipt": "bc412a44-6c80-87a4-860d-efb58c241603",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_a432_octave_doubling"
   },
   {
     "key": "a432_digital_root_is_nine",
@@ -11550,7 +11604,8 @@
     "receipt": "2bddca6e-30a8-811b-9e6f-490630b24795",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_vitepress_hosts_the_content_address"
   },
   {
     "key": "uuidna_ports_at_scale_as_a_compliant_plugin",
@@ -11945,7 +12000,8 @@
     "receipt": "7bbea4bb-6597-8162-9e9e-64588f144ed1",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_collapse_selects_one_state_deterministically"
   },
   {
     "key": "two_bits_thrice_make_the_codon",
@@ -11992,7 +12048,8 @@
     "receipt": "01ff8243-4399-8c4c-a229-8aae1d624764",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_the_skipper_navigates_by_angle"
   },
   {
     "key": "the_diver_goes_down_and_recovers_exactly",
@@ -12024,7 +12081,8 @@
     "receipt": "4a568638-0e66-8e39-b30a-9f4e944f3a48",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_cheap_to_factor_easy_to_verify"
   },
   {
     "key": "the_hero_is_the_deed_that_signs_the_gate",
@@ -12063,7 +12121,8 @@
     "receipt": "d653be50-7c8e-8ae1-8893-d2eec634bb82",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_the_cell_is_determined_by_content"
   },
   {
     "key": "identical_content_dedups_to_one_cell",
@@ -12353,7 +12412,8 @@
     "receipt": "608670b2-aebe-8370-8771-320358898684",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_intentions_are_shown_by_receipts_not_role"
   },
   {
     "key": "the_sequence_chunks_into_uniform_octaves",
@@ -12393,7 +12453,8 @@
     "receipt": "562f1352-07b7-82f0-8081-343fa49bb519",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_each_theorem_is_a_superposition_of_readings"
   },
   {
     "key": "the_map_is_complete_by_construction",
@@ -12431,7 +12492,8 @@
     "receipt": "0b67a698-d2e3-8159-932d-8bcb987a13ae",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_present_by_reference_fits_a_tiny_budget"
   },
   {
     "key": "the_whole_record_folds_to_one_root",
@@ -12575,7 +12637,8 @@
     "receipt": "b69ecf08-9c9c-84a6-892a-fc4190c84cc7",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_a_cached_address_is_never_recomputed"
   },
   {
     "key": "the_rosetta_rotates_through_the_dialects",
@@ -12599,7 +12662,8 @@
     "receipt": "90592d1e-f78e-8592-b730-ee63560e97d4",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_a_decidable_domain_is_finite_and_coverable"
   },
   {
     "key": "start_once_then_rotate_until_covered",
@@ -12827,7 +12891,8 @@
     "receipt": "94afd6d7-09a2-8ae7-b3da-9a8c62def0f0",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_the_theorems_are_the_hull_and_hardware"
   },
   {
     "key": "the_more_developed_the_more_cross_domain_reach",
@@ -12835,7 +12900,8 @@
     "receipt": "24e3e490-030b-89c6-8c6d-bfbd9a4f981c",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_the_more_developed_the_more_cross_domain_reach"
   },
   {
     "key": "shared_cores_are_structural_not_a_universal_proof",
@@ -12930,7 +12996,8 @@
     "receipt": "627dcbe3-93fb-894b-a959-b79850db4e7c",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_generation_is_deterministic"
   },
   {
     "key": "the_generated_pattern_is_canonical",
@@ -13042,7 +13109,8 @@
     "receipt": "0f298d03-b30d-843b-af65-775dcff9c005",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_the_intention_is_a_computable_deed_receipt"
   },
   {
     "key": "each_receipt_is_an_og_hero_seven_dimensional_printable",
@@ -13154,7 +13222,8 @@
     "receipt": "20017294-0470-8dd9-b025-ff260eb43bd2",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_every_error_is_a_receipted_trial_event"
   },
   {
     "key": "every_warning_is_a_receipted_trial_event",
@@ -13162,7 +13231,8 @@
     "receipt": "19e9ba9e-8260-8959-bcca-d07dd8dd476d",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_every_warning_is_a_receipted_trial_event"
   },
   {
     "key": "the_error_names_its_own_cure",
@@ -13184,7 +13254,8 @@
     "receipt": "065b1990-debd-8d5d-8d6c-61275e756709",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_a_content_address_detects_any_change"
   },
   {
     "key": "parity_detects_a_single_bit_flip",
@@ -13436,7 +13507,8 @@
     "receipt": "35b6a3bc-8275-85e8-8d0e-7cdb4c0af068",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_a_sensor_reading_addresses_to_a_uuid"
   },
   {
     "key": "a_reading_imprints_into_the_uuid_stream",
@@ -13499,7 +13571,8 @@
     "receipt": "db140df5-b40c-8bcf-b207-77eec82160c7",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_forward_is_the_deterministic_compute"
   },
   {
     "key": "reverse_is_the_sequence_reversed",
@@ -13665,7 +13738,8 @@
     "receipt": "46f1d77f-ba60-89d6-b90f-cd295011f60e",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_the_fusion_of_site_and_user_is_deterministic"
   },
   {
     "key": "the_observer_is_site_plus_user",
@@ -13800,7 +13874,8 @@
     "receipt": "db957c1f-2fa9-8d61-bccf-d01f61c2aae8",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_each_suggested_next_is_content_addressed"
   },
   {
     "key": "metadata_and_referrer_plot_the_next_possibilities",
@@ -13924,7 +13999,8 @@
     "receipt": "ed013161-b091-8527-b003-92cbf589b79d",
     "revoked": true,
     "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "portable": false,
+    "supersededBy": "lean_mechanical_the_rejected_command_gets_a_receipt"
   },
   {
     "key": "reject_all_not_from_the_captain",

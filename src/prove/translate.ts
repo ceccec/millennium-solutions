@@ -23,6 +23,11 @@ const asSet = (xs: number[]) => '[' + xs.join(',') + ']'
 // REFUSE meant `join(` was rejected before the rewrite that eliminates it could fire — the refusal list was
 // reading a form the translator no longer produces. Anything these do not consume is still refused below.
 const PRE_RULES: [RegExp, string | ((...a: string[]) => string)][] = [
+  // `.reduce((a, b) => E, init)` is `.foldl (fun a b => E) init` — same order, same seed. It belongs BEFORE
+  // the refusal list, which rejects the word `reduce` outright; sitting after it, the rule could never fire.
+  // An earlier probe of mine also reported zero claims of this shape, looking for a pattern the bodies do not
+  // use — two ways of concluding "nothing here" about something that was there all along.
+  [/\.reduce\(\s*\(\s*([a-z]\w*)\s*,\s*([a-z]\w*)\s*\)\s*=>\s*([^,]+?),\s*([^)]+)\)/g, '.foldl (fun $1 $2 => $3) $4'],
   // the bit operators, in their exact arithmetic form on {0,1} — see boolQuantifiers above for why this is
   // sound only under the [0,1] binder it travels with.
   [/\bNOT\(([^()]*)\)/g, '(1 - $1)'],
@@ -408,6 +413,28 @@ function accumulatorLoop(b: string): string | null {
   return `const ${acc} = (${list}.map (fun ${v} => ${term.trim()}))${fold}; ${after.trim()}`
 }
 
+/** THE DEPOSIT'S SHARED CONSTANTS — resolved, but only when the body has not rebound them.
+ *  discover.ts binds `const U = units()` and `const ALL = digits()` at file scope, so tests written against
+ *  them reach the translator with a name it cannot see. Resolving those two is the same move as rendering
+ *  `units()` itself.
+ *
+ *  The guard is the whole of it. One test binds its OWN `const U = [ONE, NEG(ONE), I, ...]` for the
+ *  quaternions, and substituting the ℤ/9 units there would produce a theorem that compiles, passes the
+ *  agreement check on its truth value, and states something about a completely different group. A shadowed
+ *  name is a different name; a rewrite that cannot see the shadow is exactly the class of error this file
+ *  exists to prevent. */
+function sharedConstants(b: string, sets: { U: string; ALL: string }): string {
+  let out = b
+  // `:=` as well as `=`. By the time this runs the binding chain has already been rewritten into Lean form,
+  // so a shadowed name reads `let U := [...]` — and a guard matching only `=` did not see it. Tested with a
+  // body that rebinds U: without this it produced `let [1,2,4,5,7,8] := [1, 2]`, which is not a mistranslation
+  // that any later stage would have caught, because it type-checks.
+  const rebinds = (n: string) => new RegExp(`\\b(?:const|let)\\s+${n}\\s*:?=`).test(b)
+  if (!rebinds('U')) out = out.replace(/\bU\b/g, sets.U)
+  if (!rebinds('ALL')) out = out.replace(/\bALL\b/g, sets.ALL)
+  return out
+}
+
 function unwrapBindings(b: string): { lets: [string, string][]; expr: string } | null {
   const lets: [string, string][] = []
   let rest = b
@@ -464,6 +491,7 @@ export function translate(body: string): Translation {
     prefix = u.lets.map(([n, v]) => `let ${n} := ${v}; `).join('')
     b = prefix + u.expr
   }
+  b = sharedConstants(b, { U: asSet(apiUnits()), ALL: `(List.range' 1 ${BASE})` })
   b = bitOps(boolQuantifiers(b))
   for (const [re, to] of PRE_RULES) b = b.replace(re, to as string)
   // pre-phase: both REMOVE a construct, so both run before the refusal list judges what is left
@@ -478,7 +506,7 @@ export function translate(body: string): Translation {
   // binder it introduced. The previous check was a regex that let `nonHarmonic` and array indexing through;
   // both compiled into nonsense the kernel rejected. Anything unrecognised is refused by name, so a failure
   // is legible instead of mysterious.
-  const ALLOWED = new Set(['List', 'range', 'all', 'any', 'contains', 'length', 'fun', 'M9', 'DR', 'true', 'false', 'let', 'eraseDups', 'filter', 'map', 'take', 'drop', 'Address', 'toUuidBytes', 'flatMap', '__p', 'foldl', '_', 'x', 'y'])
+  const ALLOWED = new Set(['List', 'range', 'all', 'any', 'contains', 'length', 'fun', 'M9', 'DR', 'true', 'false', 'let', 'eraseDups', 'filter', 'map', 'take', 'drop', 'Address', 'toUuidBytes', 'flatMap', '__p', 'foldl', '_', 'x', 'y', 'a', 'b'])
   const binders = new Set([
     ...[...out.matchAll(/fun ([a-z][a-zA-Z0-9]*) =>/g)].map((m) => m[1]),
     ...[...out.matchAll(/let ([A-Za-z_][A-Za-z0-9_]*) :=/g)].map((m) => m[1]),
