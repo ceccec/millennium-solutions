@@ -80,6 +80,22 @@ if (!oct.exact) items.push({ n: 8 - oct.remainder, tractable: true,
   how: 'only ever as a side effect of work that earns them — never padded to reach the number',
   source: 'node scripts/forensics.ts' })
 
+// ── what happened AFTER the push, which no instrument here used to look at ──
+// Every other source in this file reads the tree. The conformance matrix was red for two weeks and the way
+// it surfaced was the owner asking. A reader that only looks inward cannot see the half of the deposit that
+// meets anyone else.
+const ci = out('node scripts/ci-health.ts')
+const ciFail = [...ci.matchAll(/^\s+(.+?) — (\d+) consecutive failure/gm)]
+for (const m of ciFail) items.push({ n: Number(m[2]), tractable: true,
+  what: `workflow red for ${m[2]} consecutive run(s): ${m[1]}`,
+  how: 'read the failing log and fix the cause — a red workflow is the deposit failing in public',
+  source: 'node scripts/ci-health.ts' })
+const unseen = ci.match(/declared workflow\(s\) with no run/) ? (ci.match(/no run in the last \d+[\s\S]*?(?=\n\n|\n✓|\n✗)/)?.[0].split('\n').slice(1).map((l) => l.trim()).filter(Boolean) ?? []) : []
+if (unseen.length) items.push({ n: unseen.length, tractable: false,
+  what: `declared workflows with no recent run — unobserved, not green: ${unseen.join(', ').slice(0, 70)}`,
+  how: 'trigger them, or accept that their state is unknown; publish fires on a release and trinity on a schedule',
+  source: 'node scripts/ci-health.ts' })
+
 items.sort((a, b) => Number(b.tractable) - Number(a.tractable) || b.n - a.n)
 
 console.log(`wave — read from the instruments, ${new Date === undefined ? '' : ''}not chosen from memory\n`)

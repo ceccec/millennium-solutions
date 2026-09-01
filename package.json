@@ -85,7 +85,8 @@
     "trial-all": "node scripts/trial-all.ts",
     "citations": "node scripts/verify.ts",
     "lean-gen": "node scripts/lean-gen.ts",
-    "orphan-gate": "node scripts/orphan-gate.ts"
+    "orphan-gate": "node scripts/orphan-gate.ts",
+    "ci-health": "node scripts/ci-health.ts"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",
