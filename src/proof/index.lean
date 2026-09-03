@@ -111,4 +111,34 @@ theorem the_three_non_units_are_exactly_the_unreachable :
   ∧ ((List.range 9).filter isUnit).length + ((List.range 9).filter (fun d => ! isUnit d)).length = 9
   := by decide
 
+
+-- ── THE TENTH AND ELEVENTH: the origin, and the return that closes the sequence ──────────────────────────
+-- The sequence this deposit is built on is `1 2 4 8 7 5 3 6 9 0 1` — eleven positions. The seven Clay
+-- theorems and the involution settle the first eight (the doubling circuit 1,2,4,8,7,5 and the first two of
+-- the trinity, 3 and 6); the ninth settles the trinity as a set, including 9 ≡ 0. That left the last two
+-- positions unstated: the origin, and the return.
+--
+-- THE ORIGIN. 0 is the one digit with no multiplicative inverse of any kind — not merely absent from the
+-- unit group but annihilating: 0·e is never 1, for any e in the ring. It is also additively neutral, which
+-- is why it is the origin and not just another non-unit. The doubling circuit never reaches it.
+theorem the_origin_annihilates_and_never_joins_the_circuit :
+  ((List.range 9).all (fun e => (0 * e) % 9 != 1))
+  ∧ (! span.contains 0)
+  ∧ ((List.range 9).all (fun d => (d + 0) % 9 == d % 9))
+  := by decide
+
+-- THE RETURN. The eleventh position is a 1 again, and that is not decoration: the sequence is exactly its
+-- named parts in order — the doubling circuit, the trinity cross, the origin, the return — and it closes,
+-- first digit equal to last. Written with any other decomposition on the right the kernel refuses it, which
+-- is what distinguishes this from a restatement of the literal.
+def sequence : List Nat := [1, 2, 4, 8, 7, 5, 3, 6, 9, 0, 1]
+
+theorem the_sequence_is_its_named_parts_and_closes :
+  sequence = span ++ [3, 6, 9] ++ [0] ++ [1]
+  ∧ sequence.length = 11
+  ∧ sequence.head? = sequence.getLast?
+  ∧ 9 % 9 = 0
+  := by decide
+
+
 end MillenniumFloor

@@ -14152,5 +14152,17 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "a26af379-71ef-89f8-a964-40a35713534c"
+  },
+  {
+    "key": "lean_millenniumfloor_the_origin_annihilates_and_never_joins_the_circuit",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3846d34b-b045-84e9-81e8-1f394c089b57"
+  },
+  {
+    "key": "lean_millenniumfloor_the_sequence_is_its_named_parts_and_closes",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "11e07809-0f98-862b-8fca-4784591eb19f"
   }
 ]

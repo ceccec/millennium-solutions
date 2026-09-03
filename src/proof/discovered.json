@@ -17074,5 +17074,15 @@
     "key": "lean_millenniumfloor_the_three_non_units_are_exactly_the_unreachable",
     "name": "lean index.lean: the_three_non_units_are_exactly_the_unreachable — ((List.range 9).filter (fun d => ! isUnit d)) = [0, 3, 6] ∧ ((List.range 9).filter (fun d => ! isUnit d)).all (fun d => ! span.contains d) ∧ ((List.range 9).filter isUnit).length + ((List.range 9).filter (fun d => ! isUnit d)).length = 9 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "a26af379-71ef-89f8-a964-40a35713534c"
+  },
+  {
+    "key": "lean_millenniumfloor_the_origin_annihilates_and_never_joins_the_circuit",
+    "name": "lean index.lean: the_origin_annihilates_and_never_joins_the_circuit — ((List.range 9).all (fun e => (0 * e) % 9 != 1)) ∧ (! span.contains 0) ∧ ((List.range 9).all (fun d => (d + 0) % 9 == d % 9)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "3846d34b-b045-84e9-81e8-1f394c089b57"
+  },
+  {
+    "key": "lean_millenniumfloor_the_sequence_is_its_named_parts_and_closes",
+    "name": "lean index.lean: the_sequence_is_its_named_parts_and_closes — sequence = span ++ [3, 6, 9] ++ [0] ++ [1] ∧ sequence.length = 11 ∧ sequence.head? = sequence.getLast? ∧ 9 % 9 = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "11e07809-0f98-862b-8fca-4784591eb19f"
   }
 ]

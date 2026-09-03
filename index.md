@@ -17,12 +17,12 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 470 theorems across 24 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `cfc290b9-a401-8bee-98e7-c8f66986da0d`</sub>
-- 462 of those 470 theorems close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
-  <sub>SEALED · `720a7915-5fc1-8a05-a247-43cab221aa67`</sub>
-- 495 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `2ea63298-edae-84d2-8edf-afb1c99e7ce0`</sub>
+- The formal layer holds 472 theorems across 24 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `e6e1791e-1099-8c6f-905e-7fd3c02211ea`</sub>
+- 464 of those 472 theorems close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
+  <sub>SEALED · `3ab45b3e-f0ca-8dd4-bae6-3171069b6fc4`</sub>
+- 497 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `3e992511-89dc-8a57-a320-bff025222683`</sub>
 
 ## 2 · The ring
 
@@ -45,10 +45,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 2359 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `901be666-5b7f-82a4-a6a6-f9da586da34d`</sub>
-- The count is 2359, which is 294 octaves and 7 over — the octave is a target the theorems earn, never a quota they are invented to fill.
-  <sub>SEALED · `a3db2a19-b085-83be-a780-b3ad06906046`</sub>
+- The ledger records 2361 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `d7d2d8b0-e5a3-85aa-8ff8-e4fdb3c28065`</sub>
+- The count is 2361, which is 295 octaves and 1 over — the octave is a target the theorems earn, never a quota they are invented to fill.
+  <sub>SEALED · `17ca0bff-3392-851c-a559-d9ddbe8908d0`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -61,8 +61,8 @@ last because the orbit never reaches it.
 
 - No theorem in the Clay-named file settles a conjecture: its propositions range over List.range 10, List.range 9, List.range 48, List.range 6, List.range' 1 and mention none of the objects those conjectures concern.
   <sub>SEALED · `3fa2f8ab-3367-8d44-8340-9bf1c0a420c4`</sub>
-- The count of Clay problems answered in that file is declared nowhere and carried as a conjunct by no theorem — a declared constant is not evidence, so the weight rests entirely on the propositions actually written: 7 Clay-named theorems among 9 in the file, every one closed by decide, the largest walking 19683 cases, and 0 of them reaching any object those conjectures concern.
-  <sub>SEALED · `d794a12e-9b3d-8bbf-a3b2-743400d02be5`</sub>
+- The count of Clay problems answered in that file is declared nowhere and carried as a conjunct by no theorem — a declared constant is not evidence, so the weight rests entirely on the propositions actually written: 7 Clay-named theorems among 11 in the file, every one closed by decide, the largest walking 19683 cases, and 0 of them reaching any object those conjectures concern.
+  <sub>SEALED · `0727b3fc-606f-8828-8c44-d5e122cb9d44`</sub>
 
 Every one of the **15 registered claims** above recomputes from the artefact it names.
 
@@ -90,7 +90,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-24 Lean files in 6 wings, 470 theorems. The prose in this section is read out of the
+24 Lean files in 6 wings, 472 theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -114,7 +114,7 @@ this page; there is nowhere else to keep the description in step.
 
 **The water loop** — `energy.lean`, 18 theorem(s). THE WATER LOOP, ACCOUNTED. Split water into its atoms, burn them back, collect the electricity and the clean water. Every step of that is real and buildable. The question is only ever the ledger, so here it is.
 
-**The Millennium floor** — `index.lean`, 9 theorem(s). The Millennium floor — seven honest theorems, one per problem, COMPUTED from the sequence.
+**The Millennium floor** — `index.lean`, 11 theorem(s). The Millennium floor — seven honest theorems, one per problem, COMPUTED from the sequence.
 
 **Order-invariance** — `quantum.lean`, 9 theorem(s). The quantum receipt — order invariance, proved rather than asserted.
 
@@ -154,7 +154,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Rights** — `rights.lean`, 8 theorem(s). What this deposit claims under international law — and, in the same table, what it does not.
 
-2 of 470 theorems carry no comment of their own and are shown here as the gap they are, not
+2 of 472 theorems carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -163,14 +163,14 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 2,359 — 294 octaves and 7 over |
-| standing — carries its own proof | **487** |
+| ledger entries | 2,361 — 295 octaves and 1 over |
+| standing — carries its own proof | **489** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **115** |
 | withdrawn — nothing proves it | 1,757 |
-| proved in total | **602** of 2,359 |
-| standing keys → distinct theorems | 462 sealed, 24 of them keyed twice, 1 unresolvable |
-| Lean files · theorems | 24 · 470, all axiom-free |
-| proved `by decide` | 462 of 470 |
+| proved in total | **604** of 2,361 |
+| standing keys → distinct theorems | 464 sealed, 24 of them keyed twice, 1 unresolvable |
+| Lean files · theorems | 24 · 472, all axiom-free |
+| proved `by decide` | 464 of 472 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -192,4 +192,4 @@ because no test was written that would seal them.
 
 ---
 
-*14 claims, all verified · 470 Lean theorems · 2359 ledger entries · trial root `b2e5359b-c3e7-8de8-b65a-8c5253609180` · integrity, not truth · 0/7*
+*14 claims, all verified · 472 Lean theorems · 2361 ledger entries · trial root `c998f487-1229-853f-96f4-2f872d3260c8` · integrity, not truth · 0/7*
