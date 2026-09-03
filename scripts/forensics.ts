@@ -182,7 +182,7 @@ const neverProved = ledger.filter((e) => statusOf(e as never, ledger as never) =
 for (const e of liveEntries) { const t = familyOf(e.key); fam.set(t, (fam.get(t) ?? 0) + 1) }
 const byCount = [...fam.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
 const top = byCount[0]
-console.log('  domains (by key family, LIVE only): ' + fam.size + ' families over ' + liveEntries.length + ' live theorems'
+console.log('  domains (by key family, LIVE only): ' + fam.size + ' families over ' + liveEntries.length + ' live ledger keys'
   + ' · richest ' + byCount.slice(0, 6).map(([t, n]) => t + ':' + n).join(' ')
   + ' · largest family ' + top[0] + ' holds ' + (top[1] / liveEntries.length * 100).toFixed(1) + '%')
 // NAMED, NOT COUNTED. "1 singleton family is a real candidate" points at nothing a reader can act on; the

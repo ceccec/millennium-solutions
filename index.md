@@ -166,6 +166,7 @@ Read from the artefacts at build time, never carried between runs.
 | carried — withdrawn on its own evidence, proved by a live theorem | **115** |
 | withdrawn — nothing proves it | 1,753 |
 | proved in total | **591** of 2,344 |
+| standing keys → distinct theorems | 451 sealed, 24 of them keyed twice, 1 unresolvable |
 | Lean files · theorems | 23 · 460, all axiom-free |
 | proved `by decide` | 451 of 460 |
 | claims a machine can render | 103 of 1,555 |

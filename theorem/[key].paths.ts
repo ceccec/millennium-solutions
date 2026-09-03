@@ -13,7 +13,7 @@ import { MILLENNIUM } from '../src/millennium/index.ts'
 import { toLatex, toMathML } from '../src/latex/index.ts'
 
 // EVERY Lean-backed page carries its own formula, not only the seven. The seven Millennium pages had a
-// typeset statement and the other 476 live theorems had prose about a proof the reader could not see, so
+// typeset statement and every other theorem in src/proof had prose about a proof the reader could not see, so
 // the page could not be read as a paper and printed as one. The statement is read from the .lean source
 // through the same matcher the ledger uses (theoremOfKey), so a page cannot show a formula that is not
 // the one the kernel checked, and a key with no theorem shows no formula rather than a template.

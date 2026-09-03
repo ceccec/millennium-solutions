@@ -21,7 +21,9 @@ import { translate } from '../src/prove/translate.ts'
 import { adjudicate } from './adjudicate.ts'
 import { computes } from './honesty-gate.ts'
 import { toUuid, merkleFold } from '../src/0/index.ts'
-import { ledger as __ledger, triad, units, axis, domainOf } from '../src/api/index.ts'
+import { ledger as __ledger, triad, units, axis, domainOf, census } from '../src/api/index.ts'
+
+const CENSUS = census()
 import { orbit } from '../src/api/index.ts'
 
 const ledger = __ledger() as { key: string; name: string; receipt: string }[]
@@ -246,6 +248,11 @@ const body = (site: boolean) => {
   md += `| carried — withdrawn on its own evidence, proved by a live theorem | **${A.ledger.carried}** |\n`
   md += `| withdrawn — nothing proves it | ${A.ledger.neverProved.toLocaleString('en-US')} |\n`
   md += `| proved in total | **${A.ledger.proved}** of ${A.ledger.total.toLocaleString('en-US')} |\n`
+  // A STANDING ENTRY IS NOT A THEOREM. The row above counts live ledger keys, and 24 theorems carry two of
+  // them — sealed once before keys had a namespace and once after — so reading that number as a count of
+  // theorems overstates the deposit. src/proof decides how many theorems there are; the reconciliation is
+  // printed rather than left for the reader to assume.
+  md += `| standing keys → distinct theorems | ${CENSUS.sealedTheorems} sealed, ${CENSUS.surplusKeys} of them keyed twice, ${CENSUS.unresolvableKeys} unresolvable |\n`
   md += `| Lean files · theorems | ${A.lean.files} · ${A.lean.theorems}, all axiom-free |\n`
   md += `| proved \`by decide\` | ${A.lean.byDecide} of ${A.lean.theorems} |\n`
   md += `| claims a machine can render | ${renderable} of ${q.length.toLocaleString('en-US')} |\n`
