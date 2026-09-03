@@ -81,8 +81,26 @@ if (!hollow) console.log('  hollow-prose check: all ' + ledger.length + ' names 
 // held in check by a negator. These are the honest boundary theorems (a bounded refusal), NOT offenses; reporting
 // only (never fails the build). The count is the automated audit of "how many boundaries the deposit holds".
 const HARD = /faster.than.light|superluminal|unbreakable|unhackable|quantum (computer|speedup|advantage|at scale)|perpetual motion|infinite energy/i
-const boundedRefusals = ledger.filter((e) => HARD.test(e.name)).length
-console.log('  bounded refusals (a hard token reprieved by a negator — honest boundary theorems, not offenses): ' + boundedRefusals + ' / ' + ledger.length)
+// THE LABEL SAID "REPRIEVED BY A NEGATOR" AND THE CHECK NEVER LOOKED FOR ONE. It counted names carrying a
+// hard token and called every one of them a bounded refusal — an honest boundary theorem rather than an
+// offence. Measured when the check was added: all 45 do carry a negator, so the label has been accurate by
+// luck. Nothing turned red the day one did not, and an unnegated "unbreakable" would have been counted as a
+// boundary the deposit holds instead of an overclaim it admitted.
+//
+// The negator is now tested. Bounded and unbounded are separate counts, and an unbounded hard token FAILS:
+// a name asserting faster-than-light or a quantum speedup with nothing holding it in check is the exact
+// thing this record exists to refuse, and reporting it beside the boundaries would file the offence as a
+// virtue. Zero today, so this can only fire on something new.
+const NEGATOR = /\b(not|no|never|cannot|can't|without|refus\w*|denie[sd]|drains?|false|absent|nothing|neither|nor|un\w+able is)\b/i
+const hardNamed = ledger.filter((e) => HARD.test(e.name))
+const boundedRefusals = hardNamed.filter((e) => NEGATOR.test(e.name)).length
+const unbounded = hardNamed.filter((e) => !NEGATOR.test(e.name))
+console.log('  bounded refusals (a hard token AND a negator holding it — tested, not assumed): ' + boundedRefusals + ' / ' + ledger.length)
+if (unbounded.length) {
+  console.log('\n✗ ' + unbounded.length + ' hard token(s) with NO negator — an overclaim filed as a boundary:')
+  for (const u of unbounded.slice(0, 5)) console.log('    ' + u.key + ' — ' + u.name.slice(0, 130))
+  process.exit(1)
+}
 
 // (5) cluster analysis — group receipts by the digital root of their leading bytes (9 buckets). Clusters
 // are a HINT of where the record concentrates or thins; the SPARSEST bucket is a candidate region for
