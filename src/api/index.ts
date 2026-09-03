@@ -72,13 +72,22 @@ export const leanSource = (file: string): string => readFileSync(`${PROOF_DIR}/$
 
 /** Every theorem on disk, with the file that carries it and the tactic that closed it. ONE parse of the
  *  `theorem` syntax, so a change to how proofs are written is a change in one place. */
+/** A theorem's statement text, with comments removed and whitespace flattened.
+ *
+ *  A TRAILING COMMENT IS NOT PART OF THE FORMULA. Stripping only whole-line comments (`^\s*--`) left a
+ *  comment that trailed a CONTINUED line embedded in the statement, and the page then printed
+ *  `... == d) -- σ ∘ σ = id everywhere — the shared involution ∧ ((List.range 10)...` — English spliced
+ *  between two conjuncts, published as mathematics. A comment runs to end of line wherever it starts. */
+export const normalizeStatement = (raw: string): string =>
+  raw.split('\n').map((l) => l.replace(/(^|\s)--.*$/, '')).join(' ').replace(/\s+/g, ' ').trim()
+
 export const leanTheorems = (): LeanTheorem[] => {
   const out: LeanTheorem[] = []
   for (const file of leanFiles()) {
     const src = leanSource(file)
     const ns = src.match(/^namespace\s+([A-Za-z_0-9.]+)/m)?.[1] ?? file.replace('.lean', '')
     for (const m of src.matchAll(/^theorem\s+([A-Za-z_0-9]+)\s*:([\s\S]*?):=\s*(by decide|rfl|by\s+\w+)/gm))
-      out.push({ name: m[1], file, namespace: ns, tactic: m[3], statement: m[2].replace(/^\s*--.*$/gm, '').replace(/\s+/g, ' ').trim() })
+      out.push({ name: m[1], file, namespace: ns, tactic: m[3], statement: normalizeStatement(m[2]) })
   }
   return out
 }

@@ -8,7 +8,7 @@ aside: false
 <div class="paper-masthead">
 <div class="paper-title">The collected theorems of the ℤ/9 vortex framework</div>
 <div class="paper-byline">Rouschev, T. · <em>Millennium Solutions</em> · DOI <a href="https://doi.org/10.5281/zenodo.21819217">10.5281/zenodo.21819217</a> · CC BY-NC-ND 4.0</div>
-<div class="paper-addr">460 theorems · 23 sources · content-address <code>0b5ca216-f66b-8c92-aac2-1d4316f4badc</code></div>
+<div class="paper-addr">460 theorems · 23 sources · content-address <code>c9030bd6-6584-82c0-af9f-c651f9cd1eca</code></div>
 </div>
 
 <h2 class="paper-h">Abstract</h2>
@@ -103,91 +103,119 @@ settledHere := 13</code></pre>
 
 <div class="thm" id="thm-address-raw_bytes_of_a">
 <p class="thm-label"><strong>Theorem 1</strong> (<code>raw_bytes_of_a</code>)<a class="thm-cite" href="/theorem/lean_address_raw_bytes_of_a">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>rawBytes</mi><mo>(</mo><mi>A</mi><mo>)</mo></mrow><mo>=</mo><mrow><mo>[</mo><mn>88</mn><mo>,</mo><mn>118</mn><mo>,</mo><mn>248</mn><mo>,</mo><mn>251</mn><mo>,</mo><mn>63</mn><mo>,</mo><mn>149</mn><mo>,</mo><mn>14</mn><mo>,</mo><mn>202</mn><mo>,</mo><mn>10</mn><mo>,</mo><mn>251</mn><mo>,</mo><mn>189</mn><mo>,</mo><mn>97</mn><mo>,</mo><mn>221</mn><mo>,</mo><mn>134</mn><mo>,</mo><mn>206</mn><mo>,</mo><mn>204</mn><mo>]</mo></mrow></mrow></math></div>
 <pre class="thm-statement"><code>rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{rawBytes}\mathopen{}\left(A\right) = [88,\,118,\,248,\,251,\,63,\,149,\,14,\,202,\,10,\,251,\,189,\,97,\,221,\,134,\,206,\,204]</code></pre></details>
 </div>
 <p class="thm-remark">── AGREEMENT with the shipped implementation, byte for byte ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-address-to_uuid_bytes_of_a">
 <p class="thm-label"><strong>Theorem 2</strong> (<code>to_uuid_bytes_of_a</code>)<a class="thm-cite" href="/theorem/lean_address_to_uuid_bytes_of_a">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>toUuidBytes</mi><mo>(</mo><mi>A</mi><mo>)</mo></mrow><mo>=</mo><mrow><mo>[</mo><mn>88</mn><mo>,</mo><mn>118</mn><mo>,</mo><mn>248</mn><mo>,</mo><mn>251</mn><mo>,</mo><mn>63</mn><mo>,</mo><mn>149</mn><mo>,</mo><mn>142</mn><mo>,</mo><mn>202</mn><mo>,</mo><mn>138</mn><mo>,</mo><mn>251</mn><mo>,</mo><mn>189</mn><mo>,</mo><mn>97</mn><mo>,</mo><mn>221</mn><mo>,</mo><mn>134</mn><mo>,</mo><mn>206</mn><mo>,</mo><mn>204</mn><mo>]</mo></mrow></mrow></math></div>
 <pre class="thm-statement"><code>toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{toUuidBytes}\mathopen{}\left(A\right) = [88,\,118,\,248,\,251,\,63,\,149,\,142,\,202,\,138,\,251,\,189,\,97,\,221,\,134,\,206,\,204]</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-address-to_uuid_bytes_of_uuidna">
 <p class="thm-label"><strong>Theorem 3</strong> (<code>to_uuid_bytes_of_uuidna</code>)<a class="thm-cite" href="/theorem/lean_address_to_uuid_bytes_of_uuidna">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>toUuidBytes</mi><mo>(</mo><mi>UUIDNA</mi><mo>)</mo></mrow><mo>=</mo><mrow><mo>[</mo><mn>252</mn><mo>,</mo><mn>81</mn><mo>,</mo><mn>21</mn><mo>,</mo><mn>50</mn><mo>,</mo><mn>110</mn><mo>,</mo><mn>138</mn><mo>,</mo><mn>132</mn><mo>,</mo><mn>24</mn><mo>,</mo><mn>165</mn><mo>,</mo><mn>34</mn><mo>,</mo><mn>165</mn><mo>,</mo><mn>27</mn><mo>,</mo><mn>29</mn><mo>,</mo><mn>70</mn><mo>,</mo><mn>167</mn><mo>,</mo><mn>12</mn><mo>]</mo></mrow></mrow></math></div>
 <pre class="thm-statement"><code>toUuidBytes UUIDNA = [252, 81, 21, 50, 110, 138, 132, 24, 165, 34, 165, 27, 29, 70, 167, 12]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{toUuidBytes}\mathopen{}\left(\mathrm{UUIDNA}\right) = [252,\,81,\,21,\,50,\,110,\,138,\,132,\,24,\,165,\,34,\,165,\,27,\,29,\,70,\,167,\,12]</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-address-address_is_sixteen_bytes">
 <p class="thm-label"><strong>Theorem 4</strong> (<code>address_is_sixteen_bytes</code>)<a class="thm-cite" href="/theorem/lean_address_address_is_sixteen_bytes">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mi>toUuidBytes</mi><mo>(</mo><mi>UUIDNA</mi><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>16</mn></mrow></math></div>
 <pre class="thm-statement"><code>(toUuidBytes UUIDNA).length = 16</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\mathrm{toUuidBytes}\mathopen{}\left(\mathrm{UUIDNA}\right)\right| = 16</code></pre></details>
 </div>
 <p class="thm-remark">── the shape a uuid must have: sixteen bytes, each below 256 ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-address-address_bytes_are_bytes">
 <p class="thm-label"><strong>Theorem 5</strong> (<code>address_bytes_are_bytes</code>)<a class="thm-cite" href="/theorem/lean_address_address_bytes_are_bytes">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>b</mi><mo>∈</mo><mrow><mi>toUuidBytes</mi><mo>(</mo><mi>UUIDNA</mi><mo>)</mo></mrow><mo>,</mo><mrow><mi>b</mi><mo>&lt;</mo><mn>256</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(toUuidBytes UUIDNA).all (fun b =&gt; b &lt; 256)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall b \in \mathrm{toUuidBytes}\mathopen{}\left(\mathrm{UUIDNA}\right),\; b &lt; 256</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-address-version_nibble_is_forced">
 <p class="thm-label"><strong>Theorem 6</strong> (<code>version_nibble_is_forced</code>)<a class="thm-cite" href="/theorem/lean_address_version_nibble_is_forced">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mfrac><msub><mrow><mi>toUuidBytes</mi><mo>(</mo><mi>A</mi><mo>)</mo></mrow><mn>6</mn></msub><mn>16</mn></mfrac><mo>=</mo><mn>8</mn></mrow><mo>∧</mo><mrow><mfrac><msub><mrow><mi>toUuidBytes</mi><mo>(</mo><mi>UUIDNA</mi><mo>)</mo></mrow><mn>6</mn></msub><mn>16</mn></mfrac><mo>=</mo><mn>8</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>((toUuidBytes A).get! 6) / 16 = 8 ∧ ((toUuidBytes UUIDNA).get! 6) / 16 = 8</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\frac{\mathrm{toUuidBytes}\mathopen{}\left(A\right)_{6}}{16} = 8 \land \frac{\mathrm{toUuidBytes}\mathopen{}\left(\mathrm{UUIDNA}\right)_{6}}{16} = 8</code></pre></details>
 </div>
 <p class="thm-remark">── the version and variant nibbles are FORCED, whatever the hash produced ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-address-variant_bits_are_forced">
 <p class="thm-label"><strong>Theorem 7</strong> (<code>variant_bits_are_forced</code>)<a class="thm-cite" href="/theorem/lean_address_variant_bits_are_forced">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mfrac><msub><mrow><mi>toUuidBytes</mi><mo>(</mo><mi>A</mi><mo>)</mo></mrow><mn>8</mn></msub><mn>64</mn></mfrac><mo>=</mo><mn>2</mn></mrow><mo>∧</mo><mrow><mfrac><msub><mrow><mi>toUuidBytes</mi><mo>(</mo><mi>UUIDNA</mi><mo>)</mo></mrow><mn>8</mn></msub><mn>64</mn></mfrac><mo>=</mo><mn>2</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>((toUuidBytes A).get! 8) / 64 = 2 ∧ ((toUuidBytes UUIDNA).get! 8) / 64 = 2</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\frac{\mathrm{toUuidBytes}\mathopen{}\left(A\right)_{8}}{64} = 2 \land \frac{\mathrm{toUuidBytes}\mathopen{}\left(\mathrm{UUIDNA}\right)_{8}}{64} = 2</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-address-addressing_is_deterministic">
 <p class="thm-label"><strong>Theorem 8</strong> (<code>addressing_is_deterministic</code>)<a class="thm-cite" href="/theorem/lean_address_addressing_is_deterministic">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>toUuidBytes</mi><mo>(</mo><mi>A</mi><mo>)</mo></mrow><mo>=</mo><mrow><mi>toUuidBytes</mi><mo>(</mo><mi>A</mi><mo>)</mo></mrow></mrow></math></div>
 <pre class="thm-statement"><code>toUuidBytes A = toUuidBytes A</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{toUuidBytes}\mathopen{}\left(A\right) = \mathrm{toUuidBytes}\mathopen{}\left(A\right)</code></pre></details>
 </div>
 <p class="thm-remark">── DETERMINISM and DISTINCTNESS, proved rather than tested ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-address-distinct_seeds_give_distinct_addresses">
 <p class="thm-label"><strong>Theorem 9</strong> (<code>distinct_seeds_give_distinct_addresses</code>)<a class="thm-cite" href="/theorem/lean_address_distinct_seeds_give_distinct_addresses">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>toUuidBytes</mi><mo>(</mo><mi>A</mi><mo>)</mo></mrow><mo>≠</mo><mrow><mi>toUuidBytes</mi><mo>(</mo><mi>UUIDNA</mi><mo>)</mo></mrow></mrow></math></div>
 <pre class="thm-statement"><code>toUuidBytes A ≠ toUuidBytes UUIDNA</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{toUuidBytes}\mathopen{}\left(A\right) \neq \mathrm{toUuidBytes}\mathopen{}\left(\mathrm{UUIDNA}\right)</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-address-addressing_is_injective_on_single_characters">
 <p class="thm-label"><strong>Theorem 10</strong> (<code>addressing_is_injective_on_single_characters</code>)<a class="thm-cite" href="/theorem/lean_address_addressing_is_injective_on_single_characters">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mi>c</mi><mo>]</mo></mrow><mo>)</mo></mrow><mo>∣</mo><mi>c</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>23</mn><mo>}</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>24</mn></mrow></math></div>
 <pre class="thm-statement"><code>(((List.range 24).map (fun c =&gt; toUuidBytes [c])).eraseDups).length = 24</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\operatorname{dedup}\left(\{\, \mathrm{toUuidBytes}\mathopen{}\left([c]\right) \mid c \in \{0,\dots,23\} \,\}\right)\right| = 24</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 24 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-address-addressing_is_not_the_identity">
 <p class="thm-label"><strong>Theorem 11</strong> (<code>addressing_is_not_the_identity</code>)<a class="thm-cite" href="/theorem/lean_address_addressing_is_not_the_identity">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>7</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mo>[</mo><mn>7</mn><mo>]</mo></mrow></mrow></math></div>
 <pre class="thm-statement"><code>toUuidBytes [7] ≠ [7]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{toUuidBytes}\mathopen{}\left([7]\right) \neq [7]</code></pre></details>
 </div>
 <p class="thm-remark">── the address is NOT the input: it is not the identity, and it is not constant ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-address-addressing_is_not_constant">
 <p class="thm-label"><strong>Theorem 12</strong> (<code>addressing_is_not_constant</code>)<a class="thm-cite" href="/theorem/lean_address_addressing_is_not_constant">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>1</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mi>toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>2</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></math></div>
 <pre class="thm-statement"><code>toUuidBytes [1] ≠ toUuidBytes [2]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{toUuidBytes}\mathopen{}\left([1]\right) \neq \mathrm{toUuidBytes}\mathopen{}\left([2]\right)</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-address-the_four_seeds_are_distinct">
 <p class="thm-label"><strong>Theorem 13</strong> (<code>the_four_seeds_are_distinct</code>)<a class="thm-cite" href="/theorem/lean_address_the_four_seeds_are_distinct">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mi>SEEDS.eraseDups</mi><mo>|</mo></mrow><mo>=</mo><mn>4</mn></mrow></math></div>
 <pre class="thm-statement"><code>(SEEDS.eraseDups).length = 4</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\mathrm{SEEDS.eraseDups}\right| = 4</code></pre></details>
 </div>
 <p class="thm-remark">── the four seeds genuinely differ, so the four words are independent draws ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-address-address_settles_its_range">
 <p class="thm-label"><strong>Theorem 14</strong> (<code>address_settles_its_range</code>)<span class="thm-uncited">not sealed — settled by <code>rfl</code>, not exhausted</span>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>settledHere</mi><mo>=</mo><mn>13</mn></mrow></math></div>
 <pre class="thm-statement"><code>settledHere = 13</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{settledHere} = 13</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>rfl</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
@@ -220,86 +248,112 @@ settledHere := 10</code></pre>
 
 <div class="thm" id="thm-fnv-hash_a_seed_zero">
 <p class="thm-label"><strong>Theorem 15</strong> (<code>hash_a_seed_zero</code>)<a class="thm-cite" href="/theorem/lean_fnv_hash_a_seed_zero">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>hash32</mi><mo>(</mo><mn>0</mn><mo>,</mo><mrow><mo>[</mo><mn>97</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mn>1484191995</mn></mrow></math></div>
 <pre class="thm-statement"><code>hash32 0 [97] = 1484191995</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{hash32}\mathopen{}\left(0,\,[97]\right) = 1484191995</code></pre></details>
 </div>
 <p class="thm-remark">── AGREEMENT with the shipped implementation, at published values ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-fnv-hash_ab_seed_zero">
 <p class="thm-label"><strong>Theorem 16</strong> (<code>hash_ab_seed_zero</code>)<a class="thm-cite" href="/theorem/lean_fnv_hash_ab_seed_zero">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>hash32</mi><mo>(</mo><mn>0</mn><mo>,</mo><mrow><mo>[</mo><mn>97</mn><mo>,</mo><mn>98</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mn>2049961697</mn></mrow></math></div>
 <pre class="thm-statement"><code>hash32 0 [97, 98] = 2049961697</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{hash32}\mathopen{}\left(0,\,[97,\,98]\right) = 2049961697</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 2 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-fnv-hash_a_seed_golden">
 <p class="thm-label"><strong>Theorem 17</strong> (<code>hash_a_seed_golden</code>)<a class="thm-cite" href="/theorem/lean_fnv_hash_a_seed_golden">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>hash32</mi><mo>(</mo><mn>2654435769</mn><mo>,</mo><mrow><mo>[</mo><mn>97</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mn>1066733258</mn></mrow></math></div>
 <pre class="thm-statement"><code>hash32 2654435769 [97] = 1066733258</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{hash32}\mathopen{}\left(2654435769,\,[97]\right) = 1066733258</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-fnv-hash_uuidna_seed_zero">
 <p class="thm-label"><strong>Theorem 18</strong> (<code>hash_uuidna_seed_zero</code>)<a class="thm-cite" href="/theorem/lean_fnv_hash_uuidna_seed_zero">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>hash32</mi><mo>(</mo><mn>0</mn><mo>,</mo><mrow><mo>[</mo><mn>117</mn><mo>,</mo><mn>117</mn><mo>,</mo><mn>105</mn><mo>,</mo><mn>100</mn><mo>,</mo><mn>110</mn><mo>,</mo><mn>97</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mn>4233172274</mn></mrow></math></div>
 <pre class="thm-statement"><code>hash32 0 [117, 117, 105, 100, 110, 97] = 4233172274</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{hash32}\mathopen{}\left(0,\,[117,\,117,\,105,\,100,\,110,\,97]\right) = 4233172274</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 6 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-fnv-hash_is_deterministic">
 <p class="thm-label"><strong>Theorem 19</strong> (<code>hash_is_deterministic</code>)<a class="thm-cite" href="/theorem/lean_fnv_hash_is_deterministic">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>c</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>31</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>hash32</mi><mo>(</mo><mn>0</mn><mo>,</mo><mrow><mo>[</mo><mi>c</mi><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>hash32</mi><mo>(</mo><mn>0</mn><mo>,</mo><mrow><mo>[</mo><mi>c</mi><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range 32).all (fun c =&gt; hash32 0 [c] == hash32 0 [c])</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall c \in \{0,\dots,31\},\; \mathrm{hash32}\mathopen{}\left(0,\,[c]\right) = \mathrm{hash32}\mathopen{}\left(0,\,[c]\right)</code></pre></details>
 </div>
 <p class="thm-remark">── DETERMINISM, proved rather than observed ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 32 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-fnv-hash_is_injective_on_single_characters">
 <p class="thm-label"><strong>Theorem 20</strong> (<code>hash_is_injective_on_single_characters</code>)<a class="thm-cite" href="/theorem/lean_fnv_hash_is_injective_on_single_characters">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>hash32</mi><mo>(</mo><mn>0</mn><mo>,</mo><mrow><mo>[</mo><mi>c</mi><mo>]</mo></mrow><mo>)</mo></mrow><mo>∣</mo><mi>c</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>63</mn><mo>}</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>64</mn></mrow></math></div>
 <pre class="thm-statement"><code>(((List.range 64).map (fun c =&gt; hash32 0 [c])).eraseDups).length = 64</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\operatorname{dedup}\left(\{\, \mathrm{hash32}\mathopen{}\left(0,\,[c]\right) \mid c \in \{0,\dots,63\} \,\}\right)\right| = 64</code></pre></details>
 </div>
 <p class="thm-remark">── INJECTIVITY on a named finite domain: distinct single characters give distinct hashes ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 64 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-fnv-the_seed_separates">
 <p class="thm-label"><strong>Theorem 21</strong> (<code>the_seed_separates</code>)<a class="thm-cite" href="/theorem/lean_fnv_the_seed_separates">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>c</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>15</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>hash32</mi><mo>(</mo><mn>0</mn><mo>,</mo><mrow><mo>[</mo><mi>c</mi><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mi>hash32</mi><mo>(</mo><mn>2654435769</mn><mo>,</mo><mrow><mo>[</mo><mi>c</mi><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range 16).all (fun c =&gt; hash32 0 [c] != hash32 2654435769 [c])</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall c \in \{0,\dots,15\},\; \mathrm{hash32}\mathopen{}\left(0,\,[c]\right) \neq \mathrm{hash32}\mathopen{}\left(2654435769,\,[c]\right)</code></pre></details>
 </div>
 <p class="thm-remark">── the seed genuinely separates: the same input under different seeds gives different hashes ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-fnv-hash_is_not_the_identity">
 <p class="thm-label"><strong>Theorem 22</strong> (<code>hash_is_not_the_identity</code>)<a class="thm-cite" href="/theorem/lean_fnv_hash_is_not_the_identity">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>hash32</mi><mo>(</mo><mn>0</mn><mo>,</mo><mrow><mo>[</mo><mn>7</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mn>7</mn></mrow></math></div>
 <pre class="thm-statement"><code>hash32 0 [7] != 7</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{hash32}\mathopen{}\left(0,\,[7]\right) \neq 7</code></pre></details>
 </div>
 <p class="thm-remark">── NON-VACUITY: the hash is not the identity and not constant ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-fnv-hash_is_not_constant">
 <p class="thm-label"><strong>Theorem 23</strong> (<code>hash_is_not_constant</code>)<a class="thm-cite" href="/theorem/lean_fnv_hash_is_not_constant">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>hash32</mi><mo>(</mo><mn>0</mn><mo>,</mo><mrow><mo>[</mo><mn>1</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mi>hash32</mi><mo>(</mo><mn>0</mn><mo>,</mo><mrow><mo>[</mo><mn>2</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></math></div>
 <pre class="thm-statement"><code>hash32 0 [1] != hash32 0 [2]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{hash32}\mathopen{}\left(0,\,[1]\right) \neq \mathrm{hash32}\mathopen{}\left(0,\,[2]\right)</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-fnv-hash_is_thirty_two_bit">
 <p class="thm-label"><strong>Theorem 24</strong> (<code>hash_is_thirty_two_bit</code>)<a class="thm-cite" href="/theorem/lean_fnv_hash_is_thirty_two_bit">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>c</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>39</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>hash32</mi><mo>(</mo><mn>0</mn><mo>,</mo><mrow><mo>[</mo><mi>c</mi><mo>]</mo></mrow><mo>)</mo></mrow><mo>&lt;</mo><mi>M32</mi></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range 40).all (fun c =&gt; hash32 0 [c] &lt; M32)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall c \in \{0,\dots,39\},\; \mathrm{hash32}\mathopen{}\left(0,\,[c]\right) &lt; \mathrm{M32}</code></pre></details>
 </div>
 <p class="thm-remark">── the output is bounded to 32 bits, as the whole construction requires ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 40 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-fnv-fnv_settles_its_range">
 <p class="thm-label"><strong>Theorem 25</strong> (<code>fnv_settles_its_range</code>)<span class="thm-uncited">not sealed — settled by <code>rfl</code>, not exhausted</span>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>settledHere</mi><mo>=</mo><mn>10</mn></mrow></math></div>
 <pre class="thm-statement"><code>settledHere = 10</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{settledHere} = 10</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>rfl</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-fnv-the_hash_is_order_sensitive">
 <p class="thm-label"><strong>Theorem 26</strong> (<code>the_hash_is_order_sensitive</code>)<a class="thm-cite" href="/theorem/lean_fnv_the_hash_is_order_sensitive">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>hash32</mi><mo>(</mo><mn>0</mn><mo>,</mo><mrow><mo>[</mo><mn>97</mn><mo>,</mo><mn>98</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mi>hash32</mi><mo>(</mo><mn>0</mn><mo>,</mo><mrow><mo>[</mo><mn>98</mn><mo>,</mo><mn>97</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></math></div>
 <pre class="thm-statement"><code>hash32 0 [97, 98] ≠ hash32 0 [98, 97]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{hash32}\mathopen{}\left(0,\,[97,\,98]\right) \neq \mathrm{hash32}\mathopen{}\left(0,\,[98,\,97]\right)</code></pre></details>
 </div>
 <p class="thm-remark">── THE ADDRESS IS A SEQUENCE HASH, NOT A SET HASH. Swapping two bytes changes it, so the input's ORDER is part of what is addressed. This is the opposite of the merkle fold, which sorts precisely so that order stops mattering — the two live side by side in this deposit and it is worth being exact about which is which, because using one where the other is meant is a silent bug rather than a loud one.</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 4 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-fnv-the_empty_input_is_still_mixed">
 <p class="thm-label"><strong>Theorem 27</strong> (<code>the_empty_input_is_still_mixed</code>)<a class="thm-cite" href="/theorem/lean_fnv_the_empty_input_is_still_mixed">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mi>hash32</mi><mo>(</mo><mn>0</mn><mo>,</mo><mrow><mo>[</mo><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mn>2872998923</mn></mrow><mo>∧</mo><mrow><mrow><mi>hash32</mi><mo>(</mo><mi>FNV_OFFSET</mi><mo>,</mo><mrow><mo>[</mo><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mi>avalanche</mi><mo>(</mo><mn>0</mn><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>hash32 0 [] = 2872998923 ∧ hash32 FNV_OFFSET [] = 0 ∧ avalanche 0 = 0</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{hash32}\mathopen{}\left(0,\,[]\right) = 2872998923 \land \mathrm{hash32}\mathopen{}\left(\mathrm{FNV\_OFFSET},\,[]\right) = 0 \land \mathrm{avalanche}\mathopen{}\left(0\right) = 0</code></pre></details>
 </div>
 <p class="thm-remark">── THE EMPTY INPUT IS STILL MIXED, AND ONE SEED SENDS IT TO ZERO. The first draft here said the hash of nothing returns the seed unchanged; the kernel refuted it, because hash32 avalanches unconditionally — there is no short-circuit for the empty list. What is true is sharper and worth recording: zero is a FIXED POINT of the avalanche, so seeding with the offset basis (which the initial xor cancels) addresses the empty input as 0. A degenerate address reachable from public constants is not a secret and not a defect to hide — it is the kind of edge a keyless, reproducible function is expected to state plainly.</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
@@ -317,53 +371,69 @@ No axioms, no Mathlib, no sorry. Merkle (and through it Address, Fnv) is importe
 
 <div class="thm" id="thm-ledgerclaims-a_seal_is_128_bits">
 <p class="thm-label"><strong>Theorem 28</strong> (<code>a_seal_is_128_bits</code>)<a class="thm-cite" href="/theorem/lean_ledgerclaims_a_seal_is_128_bits">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mo>|</mo><mrow><mi>toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>97</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>⋅</mo><mn>8</mn></mrow><mo>=</mo><mn>128</mn></mrow></math></div>
 <pre class="thm-statement"><code>(toUuidBytes [97]).length * 8 = 128</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\mathrm{toUuidBytes}\mathopen{}\left([97]\right)\right| \cdot 8 = 128</code></pre></details>
 </div>
 <p class="thm-remark">A seal is a uuid and a uuid is sixteen bytes, so a seal is 128 bits. Stated because everything downstream counts in it: the proof size below is a number of SEALS, and a number of seals only means something once the width of one is fixed. The multiplication is trivial; naming the unit is not.</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-ledgerclaims-membership_grows_by_one_seal_per_doubling">
 <p class="thm-label"><strong>Theorem 29</strong> (<code>membership_grows_by_one_seal_per_doubling</code>)<a class="thm-cite" href="/theorem/lean_ledgerclaims_membership_grows_by_one_seal_per_doubling">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mrow><mrow><mrow><mrow><mrow><mi>rounds</mi><mo>(</mo><mn>40</mn><mo>,</mo><mn>2</mn><mo>)</mo></mrow><mo>=</mo><mn>1</mn></mrow><mo>∧</mo><mrow><mrow><mi>rounds</mi><mo>(</mo><mn>40</mn><mo>,</mo><mn>4</mn><mo>)</mo></mrow><mo>=</mo><mn>2</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mi>rounds</mi><mo>(</mo><mn>40</mn><mo>,</mo><mn>8</mn><mo>)</mo></mrow><mo>=</mo><mn>3</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mi>rounds</mi><mo>(</mo><mn>40</mn><mo>,</mo><mn>16</mn><mo>)</mo></mrow><mo>=</mo><mn>4</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mi>rounds</mi><mo>(</mo><mn>40</mn><mo>,</mo><mn>32</mn><mo>)</mo></mrow><mo>=</mo><mn>5</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mi>rounds</mi><mo>(</mo><mn>40</mn><mo>,</mo><mn>64</mn><mo>)</mo></mrow><mo>=</mo><mn>6</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mi>rounds</mi><mo>(</mo><mn>40</mn><mo>,</mo><mn>128</mn><mo>)</mo></mrow><mo>=</mo><mn>7</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mi>rounds</mi><mo>(</mo><mn>40</mn><mo>,</mo><mn>256</mn><mo>)</mo></mrow><mo>=</mo><mn>8</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>rounds 40 2 = 1 ∧ rounds 40 4 = 2 ∧ rounds 40 8 = 3 ∧ rounds 40 16 = 4 ∧ rounds 40 32 = 5 ∧ rounds 40 64 = 6 ∧ rounds 40 128 = 7 ∧ rounds 40 256 = 8</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{rounds}\mathopen{}\left(40,\,2\right) = 1 \land \mathrm{rounds}\mathopen{}\left(40,\,4\right) = 2 \land \mathrm{rounds}\mathopen{}\left(40,\,8\right) = 3 \land \mathrm{rounds}\mathopen{}\left(40,\,16\right) = 4 \land \mathrm{rounds}\mathopen{}\left(40,\,32\right) = 5 \land \mathrm{rounds}\mathopen{}\left(40,\,64\right) = 6 \land \mathrm{rounds}\mathopen{}\left(40,\,128\right) = 7 \land \mathrm{rounds}\mathopen{}\left(40,\,256\right) = 8</code></pre></details>
 </div>
 <p class="thm-remark">doubling the set adds exactly ONE sibling — the signature of a logarithm, checked across an octave.</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-ledgerclaims-membership_is_logarithmic_not_linear">
 <p class="thm-label"><strong>Theorem 30</strong> (<code>membership_is_logarithmic_not_linear</code>)<a class="thm-cite" href="/theorem/lean_ledgerclaims_membership_is_logarithmic_not_linear">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mi>rounds</mi><mo>(</mo><mn>40</mn><mo>,</mo><mn>1024</mn><mo>)</mo></mrow><mo>=</mo><mn>10</mn></mrow><mo>∧</mo><mrow><mrow><mi>rounds</mi><mo>(</mo><mn>40</mn><mo>,</mo><mn>1024</mn><mo>)</mo></mrow><mo>&lt;</mo><mn>1024</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mrow><mi>rounds</mi><mo>(</mo><mn>40</mn><mo>,</mo><mn>1024</mn><mo>)</mo></mrow><mo>⋅</mo><mn>128</mn></mrow><mo>&lt;</mo><mrow><mn>1024</mn><mo>⋅</mo><mn>128</mn></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>rounds 40 1024 = 10 ∧ rounds 40 1024 &lt; 1024 ∧ rounds 40 1024 * 128 &lt; 1024 * 128</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{rounds}\mathopen{}\left(40,\,1024\right) = 10 \land \mathrm{rounds}\mathopen{}\left(40,\,1024\right) &lt; 1024 \land \mathrm{rounds}\mathopen{}\left(40,\,1024\right) \cdot 128 &lt; 1024 \cdot 128</code></pre></details>
 </div>
 <p class="thm-remark">and it is genuinely sublinear: at 1024 leaves a proof carries 10 seals, not 1024 — 1280 bits, not 131072. (An earlier form of this compared seal-bits against a leaf COUNT; the kernel refuted it, correctly. Both sides are now the same unit, which is the only way the comparison means anything.)</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-ledgerclaims-the_967_receipt_case">
 <p class="thm-label"><strong>Theorem 31</strong> (<code>the_967_receipt_case</code>)<a class="thm-cite" href="/theorem/lean_ledgerclaims_the_967_receipt_case">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>saving</mi><mo>(</mo><mn>967</mn><mo>,</mo><mn>20</mn><mo>)</mo></mrow><mo>=</mo><mn>947</mn></mrow><mo>∧</mo><mrow><mrow><mn>20</mn><mo>+</mo><mn>947</mn></mrow><mo>=</mo><mn>967</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>saving 967 20 = 947 ∧ 20 + 947 = 967</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{saving}\mathopen{}\left(967,\,20\right) = 947 \land 20 + 947 = 967</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-ledgerclaims-a_saving_never_exceeds_its_value">
 <p class="thm-label"><strong>Theorem 32</strong> (<code>a_saving_never_exceeds_its_value</code>)<a class="thm-cite" href="/theorem/lean_ledgerclaims_a_saving_never_exceeds_its_value">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>v</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>39</mn><mo>}</mo></mrow><mo>,</mo><mrow><mo>∀</mo><mi>w</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>39</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>saving</mi><mo>(</mo><mi>v</mi><mo>,</mo><mi>w</mi><mo>)</mo></mrow><mo>≤</mo><mi>v</mi></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range 40).all (fun v =&gt; (List.range 40).all (fun w =&gt; saving v w ≤ v))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall v \in \{0,\dots,39\},\; \forall w \in \{0,\dots,39\},\; \mathrm{saving}\mathopen{}\left(v,\,w\right) \le v</code></pre></details>
 </div>
 <p class="thm-remark">the saving is never more than the value, at any size — an accounting identity, not a promise.</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 1,600 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-ledgerclaims-more_payloads_than_addresses_must_collide">
 <p class="thm-label"><strong>Theorem 33</strong> (<code>more_payloads_than_addresses_must_collide</code>)<a class="thm-cite" href="/theorem/lean_ledgerclaims_more_payloads_than_addresses_must_collide">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mi>addr4</mi><mo>[</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>16</mn><mo>}</mo></mrow><mo>]</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>&lt;</mo><mn>17</mn></mrow></math></div>
 <pre class="thm-statement"><code>((List.range 17).map addr4).eraseDups.length &lt; 17</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\operatorname{dedup}\left(\mathrm{addr4}[\{0,\dots,16\}]\right)\right| &lt; 17</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 17 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-ledgerclaims-the_address_does_not_determine_the_payload">
 <p class="thm-label"><strong>Theorem 34</strong> (<code>the_address_does_not_determine_the_payload</code>)<a class="thm-cite" href="/theorem/lean_ledgerclaims_the_address_does_not_determine_the_payload">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∃</mo><mi>a</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>16</mn><mo>}</mo></mrow><mo>:</mo><mrow><mo>∃</mo><mi>b</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>16</mn><mo>}</mo></mrow><mo>:</mo><mrow><mrow><mi>a</mi><mo>≠</mo><mi>b</mi></mrow><mo>∧</mo><mrow><mrow><mi>addr4</mi><mo>(</mo><mi>a</mi><mo>)</mo></mrow><mo>=</mo><mrow><mi>addr4</mi><mo>(</mo><mi>b</mi><mo>)</mo></mrow></mrow></mrow></mrow></mrow><mo>=</mo><mi>true</mi></mrow></math></div>
 <pre class="thm-statement"><code>((List.range 17).any (fun a =&gt; (List.range 17).any (fun b =&gt; a != b &amp;&amp; addr4 a == addr4 b))) = true</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\exists a \in \{0,\dots,16\} : \exists b \in \{0,\dots,16\} : a \neq b \land \mathrm{addr4}\mathopen{}\left(a\right) = \mathrm{addr4}\mathopen{}\left(b\right) = \mathrm{true}</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 289 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-ledgerclaims-a_proof_is_smaller_than_its_set_across_the_octave">
 <p class="thm-label"><strong>Theorem 35</strong> (<code>a_proof_is_smaller_than_its_set_across_the_octave</code>)<a class="thm-cite" href="/theorem/lean_ledgerclaims_a_proof_is_smaller_than_its_set_across_the_octave">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>2</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>256</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>rounds</mi><mo>(</mo><mn>40</mn><mo>,</mo><mi>n</mi><mo>)</mo></mrow><mo>&lt;</mo><mi>n</mi></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 2 255).all (fun n =&gt; rounds 40 n &lt; n)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in \{2,\dots,256\},\; \mathrm{rounds}\mathopen{}\left(40,\,n\right) &lt; n</code></pre></details>
 </div>
 <p class="thm-remark">not just at 1024: across the whole octave of set sizes, a proof is strictly smaller than the set it proves membership in. Decided over every n from 2 to 256, not sampled at one convenient point.</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 255 cases. <span class="qed">□</span></p>
@@ -394,58 +464,76 @@ settledHere := 7</code></pre>
 
 <div class="thm" id="thm-merkle-merge_agrees">
 <p class="thm-label"><strong>Theorem 36</strong> (<code>merge_agrees</code>)<a class="thm-cite" href="/theorem/lean_merkle_merge_agrees">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>merge</mi><mo>(</mo><mi>A</mi><mo>,</mo><mi>B</mi><mo>)</mo></mrow><mo>=</mo><mrow><mo>[</mo><mn>181</mn><mo>,</mo><mn>59</mn><mo>,</mo><mn>237</mn><mo>,</mo><mn>190</mn><mo>,</mo><mn>211</mn><mo>,</mo><mn>88</mn><mo>,</mo><mn>129</mn><mo>,</mo><mn>103</mn><mo>,</mo><mn>143</mn><mo>,</mo><mn>231</mn><mo>,</mo><mn>158</mn><mo>,</mo><mn>123</mn><mo>,</mo><mn>139</mn><mo>,</mo><mn>178</mn><mo>,</mo><mn>38</mn><mo>,</mo><mn>2</mn><mo>]</mo></mrow></mrow></math></div>
 <pre class="thm-statement"><code>merge A B = [181, 59, 237, 190, 211, 88, 129, 103, 143, 231, 158, 123, 139, 178, 38, 2]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{merge}\mathopen{}\left(A,\,B\right) = [181,\,59,\,237,\,190,\,211,\,88,\,129,\,103,\,143,\,231,\,158,\,123,\,139,\,178,\,38,\,2]</code></pre></details>
 </div>
 <p class="thm-remark">── AGREEMENT with the shipped implementation ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-merkle-empty_fold_agrees">
 <p class="thm-label"><strong>Theorem 37</strong> (<code>empty_fold_agrees</code>)<a class="thm-cite" href="/theorem/lean_merkle_empty_fold_agrees">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>merkleFold</mi><mo>(</mo><mrow><mo>[</mo><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mo>[</mo><mn>147</mn><mo>,</mo><mn>146</mn><mo>,</mo><mn>154</mn><mo>,</mo><mn>45</mn><mo>,</mo><mn>72</mn><mo>,</mo><mn>16</mn><mo>,</mo><mn>138</mn><mo>,</mo><mn>198</mn><mo>,</mo><mn>159</mn><mo>,</mo><mn>50</mn><mo>,</mo><mn>78</mn><mo>,</mo><mn>208</mn><mo>,</mo><mn>125</mn><mo>,</mo><mn>158</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>108</mn><mo>]</mo></mrow></mrow></math></div>
 <pre class="thm-statement"><code>merkleFold [] = [147, 146, 154, 45, 72, 16, 138, 198, 159, 50, 78, 208, 125, 158, 1, 108]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{merkleFold}\mathopen{}\left([]\right) = [147,\,146,\,154,\,45,\,72,\,16,\,138,\,198,\,159,\,50,\,78,\,208,\,125,\,158,\,1,\,108]</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-merkle-singleton_fold_is_the_leaf">
 <p class="thm-label"><strong>Theorem 38</strong> (<code>singleton_fold_is_the_leaf</code>)<a class="thm-cite" href="/theorem/lean_merkle_singleton_fold_is_the_leaf">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>merkleFold</mi><mo>(</mo><mrow><mo>[</mo><mi>A</mi><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mi>A</mi></mrow></math></div>
 <pre class="thm-statement"><code>merkleFold [A] = A</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{merkleFold}\mathopen{}\left([A]\right) = A</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-merkle-pair_fold_agrees">
 <p class="thm-label"><strong>Theorem 39</strong> (<code>pair_fold_agrees</code>)<a class="thm-cite" href="/theorem/lean_merkle_pair_fold_agrees">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>merkleFold</mi><mo>(</mo><mrow><mo>[</mo><mi>A</mi><mo>,</mo><mi>B</mi><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mo>[</mo><mn>181</mn><mo>,</mo><mn>59</mn><mo>,</mo><mn>237</mn><mo>,</mo><mn>190</mn><mo>,</mo><mn>211</mn><mo>,</mo><mn>88</mn><mo>,</mo><mn>129</mn><mo>,</mo><mn>103</mn><mo>,</mo><mn>143</mn><mo>,</mo><mn>231</mn><mo>,</mo><mn>158</mn><mo>,</mo><mn>123</mn><mo>,</mo><mn>139</mn><mo>,</mo><mn>178</mn><mo>,</mo><mn>38</mn><mo>,</mo><mn>2</mn><mo>]</mo></mrow></mrow></math></div>
 <pre class="thm-statement"><code>merkleFold [A, B] = [181, 59, 237, 190, 211, 88, 129, 103, 143, 231, 158, 123, 139, 178, 38, 2]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{merkleFold}\mathopen{}\left([A,\,B]\right) = [181,\,59,\,237,\,190,\,211,\,88,\,129,\,103,\,143,\,231,\,158,\,123,\,139,\,178,\,38,\,2]</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-merkle-fold_is_order_independent_on_two">
 <p class="thm-label"><strong>Theorem 40</strong> (<code>fold_is_order_independent_on_two</code>)<a class="thm-cite" href="/theorem/lean_merkle_fold_is_order_independent_on_two">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>merkleFold</mi><mo>(</mo><mrow><mo>[</mo><mi>A</mi><mo>,</mo><mi>B</mi><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>merkleFold</mi><mo>(</mo><mrow><mo>[</mo><mi>B</mi><mo>,</mo><mi>A</mi><mo>]</mo></mrow><mo>)</mo></mrow></mrow></math></div>
 <pre class="thm-statement"><code>merkleFold [A, B] = merkleFold [B, A]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{merkleFold}\mathopen{}\left([A,\,B]\right) = \mathrm{merkleFold}\mathopen{}\left([B,\,A]\right)</code></pre></details>
 </div>
 <p class="thm-remark">── THE ORDER-INDEPENDENCE: the receipt does not depend on the order the leaves arrive in ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-merkle-merge_is_order_sensitive">
 <p class="thm-label"><strong>Theorem 41</strong> (<code>merge_is_order_sensitive</code>)<a class="thm-cite" href="/theorem/lean_merkle_merge_is_order_sensitive">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>merge</mi><mo>(</mo><mi>A</mi><mo>,</mo><mi>B</mi><mo>)</mo></mrow><mo>≠</mo><mrow><mi>merge</mi><mo>(</mo><mi>B</mi><mo>,</mo><mi>A</mi><mo>)</mo></mrow></mrow></math></div>
 <pre class="thm-statement"><code>merge A B ≠ merge B A</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{merge}\mathopen{}\left(A,\,B\right) \neq \mathrm{merge}\mathopen{}\left(B,\,A\right)</code></pre></details>
 </div>
 <p class="thm-remark">── and it is not vacuous: merge itself IS order-sensitive; the sort is what removes the dependence ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-merkle-sorting_is_what_makes_the_fold_order_free">
 <p class="thm-label"><strong>Theorem 42</strong> (<code>sorting_is_what_makes_the_fold_order_free</code>)<a class="thm-cite" href="/theorem/lean_merkle_sorting_is_what_makes_the_fold_order_free">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>sortB</mi><mo>(</mo><mrow><mo>[</mo><mi>A</mi><mo>,</mo><mi>B</mi><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>sortB</mi><mo>(</mo><mrow><mo>[</mo><mi>B</mi><mo>,</mo><mi>A</mi><mo>]</mo></mrow><mo>)</mo></mrow></mrow><mo>∧</mo><mrow><mrow><mo>[</mo><mi>A</mi><mo>,</mo><mi>B</mi><mo>]</mo></mrow><mo>≠</mo><mrow><mo>[</mo><mi>B</mi><mo>,</mo><mi>A</mi><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>sortB [A, B] = sortB [B, A] ∧ [A, B] ≠ [B, A]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{sortB}\mathopen{}\left([A,\,B]\right) = \mathrm{sortB}\mathopen{}\left([B,\,A]\right) \land [A,\,B] \neq [B,\,A]</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-merkle-merkle_settles_its_range">
 <p class="thm-label"><strong>Theorem 43</strong> (<code>merkle_settles_its_range</code>)<span class="thm-uncited">not sealed — settled by <code>rfl</code>, not exhausted</span>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>settledHere</mi><mo>=</mo><mn>7</mn></mrow></math></div>
 <pre class="thm-statement"><code>settledHere = 7</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{settledHere} = 7</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>rfl</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-merkle-fold_is_order_independent_on_three">
 <p class="thm-label"><strong>Theorem 44</strong> (<code>fold_is_order_independent_on_three</code>)<a class="thm-cite" href="/theorem/lean_merkle_fold_is_order_independent_on_three">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mrow><mrow><mi>merkleFold</mi><mo>(</mo><mrow><mo>[</mo><mi>A</mi><mo>,</mo><mi>B</mi><mo>,</mo><mi>C</mi><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>merkleFold</mi><mo>(</mo><mrow><mo>[</mo><mi>A</mi><mo>,</mo><mi>C</mi><mo>,</mo><mi>B</mi><mo>]</mo></mrow><mo>)</mo></mrow></mrow><mo>∧</mo><mrow><mrow><mi>merkleFold</mi><mo>(</mo><mrow><mo>[</mo><mi>A</mi><mo>,</mo><mi>B</mi><mo>,</mo><mi>C</mi><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>merkleFold</mi><mo>(</mo><mrow><mo>[</mo><mi>B</mi><mo>,</mo><mi>A</mi><mo>,</mo><mi>C</mi><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mi>merkleFold</mi><mo>(</mo><mrow><mo>[</mo><mi>A</mi><mo>,</mo><mi>B</mi><mo>,</mo><mi>C</mi><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>merkleFold</mi><mo>(</mo><mrow><mo>[</mo><mi>B</mi><mo>,</mo><mi>C</mi><mo>,</mo><mi>A</mi><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mi>merkleFold</mi><mo>(</mo><mrow><mo>[</mo><mi>A</mi><mo>,</mo><mi>B</mi><mo>,</mo><mi>C</mi><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>merkleFold</mi><mo>(</mo><mrow><mo>[</mo><mi>C</mi><mo>,</mo><mi>A</mi><mo>,</mo><mi>B</mi><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mi>merkleFold</mi><mo>(</mo><mrow><mo>[</mo><mi>A</mi><mo>,</mo><mi>B</mi><mo>,</mo><mi>C</mi><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>merkleFold</mi><mo>(</mo><mrow><mo>[</mo><mi>C</mi><mo>,</mo><mi>B</mi><mo>,</mo><mi>A</mi><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>merkleFold [A, B, C] = merkleFold [A, C, B] ∧ merkleFold [A, B, C] = merkleFold [B, A, C] ∧ merkleFold [A, B, C] = merkleFold [B, C, A] ∧ merkleFold [A, B, C] = merkleFold [C, A, B] ∧ merkleFold [A, B, C] = merkleFold [C, B, A]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{merkleFold}\mathopen{}\left([A,\,B,\,C]\right) = \mathrm{merkleFold}\mathopen{}\left([A,\,C,\,B]\right) \land \mathrm{merkleFold}\mathopen{}\left([A,\,B,\,C]\right) = \mathrm{merkleFold}\mathopen{}\left([B,\,A,\,C]\right) \land \mathrm{merkleFold}\mathopen{}\left([A,\,B,\,C]\right) = \mathrm{merkleFold}\mathopen{}\left([B,\,C,\,A]\right) \land \mathrm{merkleFold}\mathopen{}\left([A,\,B,\,C]\right) = \mathrm{merkleFold}\mathopen{}\left([C,\,A,\,B]\right) \land \mathrm{merkleFold}\mathopen{}\left([A,\,B,\,C]\right) = \mathrm{merkleFold}\mathopen{}\left([C,\,B,\,A]\right)</code></pre></details>
 </div>
 <p class="thm-remark">── ORDER-INDEPENDENCE ON AN ODD NUMBER OF LEAVES. Two leaves pair exactly and prove little: the interesting case is an odd count, where pairUp must carry the leftover leaf into the next round. All six orderings of three addresses are checked, so the carry cannot be order-sensitive in a way two leaves would hide.</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
@@ -471,7 +559,9 @@ facts, which is the one gap that can simply be closed rather than argued about.
 
 <div class="thm" id="thm-demand-fibonacci_gcd_is_the_fibonacci_of_the_gcd">
 <p class="thm-label"><strong>Theorem 45</strong> (<code>fibonacci_gcd_is_the_fibonacci_of_the_gcd</code>)<a class="thm-cite" href="/theorem/lean_demand_fibonacci_gcd_is_the_fibonacci_of_the_gcd">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>m</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>14</mn><mo>}</mo></mrow><mo>,</mo><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>14</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>Families.gcd'</mi><mo>(</mo><mrow><mi>Sequences.fib</mi><mo>(</mo><mi>m</mi><mo>)</mo></mrow><mo>,</mo><mrow><mi>Sequences.fib</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>Sequences.fib</mi><mo>(</mo><mrow><mi>Families.gcd'</mi><mo>(</mo><mi>m</mi><mo>,</mo><mi>n</mi><mo>)</mo></mrow><mo>)</mo></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 1 14).all (fun m =&gt; (List.range' 1 14).all (fun n =&gt; Families.gcd' (Sequences.fib m) (Sequences.fib n) == Sequences.fib (Families.gcd' m n)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall m \in \{1,\dots,14\},\; \forall n \in \{1,\dots,14\},\; \mathrm{Families.gcd'}\mathopen{}\left(\mathrm{Sequences.fib}\mathopen{}\left(m\right),\,\mathrm{Sequences.fib}\mathopen{}\left(n\right)\right) = \mathrm{Sequences.fib}\mathopen{}\left(\mathrm{Families.gcd'}\mathopen{}\left(m,\,n\right)\right)</code></pre></details>
 </div>
 <p class="thm-remark">── 1 · gcd(F_m, F_n) = F_gcd(m,n) — the most-asked fact on the site, 167 impressions across 24 phrasings. Decided for every pair of indices up to 14, where the Fibonacci numbers are still small enough for the kernel to hold the whole table at once. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 196 cases. <span class="qed">□</span></p>
@@ -484,19 +574,25 @@ facts, which is the one gap that can simply be closed rather than argued about.
 
 <div class="thm" id="thm-demand-the_derangement_recurrence_holds">
 <p class="thm-label"><strong>Theorem 47</strong> (<code>the_derangement_recurrence_holds</code>)<a class="thm-cite" href="/theorem/lean_demand_the_derangement_recurrence_holds">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>2</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>12</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>derange</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><mo>=</mo><mrow><mrow><mi>n</mi><mo>-</mo><mn>1</mn></mrow><mo>⋅</mo><mrow><mrow><mi>derange</mi><mo>(</mo><mrow><mi>n</mi><mo>-</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>+</mo><mrow><mi>derange</mi><mo>(</mo><mrow><mi>n</mi><mo>-</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mi>derange</mi><mo>(</mo><mn>4</mn><mo>)</mo></mrow><mo>=</mo><mn>9</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mi>derange</mi><mo>(</mo><mn>5</mn><mo>)</mo></mrow><mo>=</mo><mn>44</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mi>derange</mi><mo>(</mo><mn>6</mn><mo>)</mo></mrow><mo>=</mo><mn>265</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 2 11).all (fun n =&gt; derange n == (n - 1) * (derange (n - 1) + derange (n - 2))) ∧ derange 4 = 9 ∧ derange 5 = 44 ∧ derange 6 = 265</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in \{2,\dots,12\},\; \mathrm{derange}\mathopen{}\left(n\right) = n - 1 \cdot \mathrm{derange}\mathopen{}\left(n - 1\right) + \mathrm{derange}\mathopen{}\left(n - 2\right) \land \mathrm{derange}\mathopen{}\left(4\right) = 9 \land \mathrm{derange}\mathopen{}\left(5\right) = 44 \land \mathrm{derange}\mathopen{}\left(6\right) = 265</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 11 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-demand-legendres_three_square_theorem">
 <p class="thm-label"><strong>Theorem 48</strong> (<code>legendres_three_square_theorem</code>)<a class="thm-cite" href="/theorem/lean_demand_legendres_three_square_theorem">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>199</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>isSumOfThreeSquares</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><mo>=</mo><mrow><mo>¬</mo><mrow><mi>isExcludedForm</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range 200).all (fun n =&gt; isSumOfThreeSquares n == ¬ isExcludedForm n)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in \{0,\dots,199\},\; \mathrm{isSumOfThreeSquares}\mathopen{}\left(n\right) = \lnot \mathrm{isExcludedForm}\mathopen{}\left(n\right)</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 200 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-demand-five_six_one_is_the_smallest_carmichael_number">
 <p class="thm-label"><strong>Theorem 49</strong> (<code>five_six_one_is_the_smallest_carmichael_number</code>)<a class="thm-cite" href="/theorem/lean_demand_five_six_one_is_the_smallest_carmichael_number">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>isCarmichael</mi><mo>(</mo><mn>561</mn><mo>)</mo></mrow><mo>=</mo><mi>true</mi></mrow><mo>∧</mo><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>2</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>560</mn><mo>}</mo></mrow><mo>,</mo><mrow><mo>¬</mo><mrow><mi>isCarmichael</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>isCarmichael 561 = true ∧ (List.range' 2 559).all (fun n =&gt; ¬ isCarmichael n)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{isCarmichael}\mathopen{}\left(561\right) = \mathrm{true} \land \forall n \in \{2,\dots,560\},\; \lnot \mathrm{isCarmichael}\mathopen{}\left(n\right)</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 559 cases. <span class="qed">□</span></p>
 
@@ -508,14 +604,18 @@ facts, which is the one gap that can simply be closed rather than argued about.
 
 <div class="thm" id="thm-demand-factorial_seven_is_five_thousand_and_forty">
 <p class="thm-label"><strong>Theorem 51</strong> (<code>factorial_seven_is_five_thousand_and_forty</code>)<a class="thm-cite" href="/theorem/lean_demand_factorial_seven_is_five_thousand_and_forty">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mi>Sequences.fact</mi><mo>(</mo><mn>7</mn><mo>)</mo></mrow><mo>=</mo><mn>5040</mn></mrow><mo>∧</mo><mrow><mrow><mi>Sequences.fact</mi><mo>(</mo><mn>6</mn><mo>)</mo></mrow><mo>=</mo><mn>720</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mi>Sequences.fact</mi><mo>(</mo><mn>8</mn><mo>)</mo></mrow><mo>=</mo><mn>40320</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>Sequences.fact 7 = 5040 ∧ Sequences.fact 6 = 720 ∧ Sequences.fact 8 = 40320</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{Sequences.fact}\mathopen{}\left(7\right) = 5040 \land \mathrm{Sequences.fact}\mathopen{}\left(6\right) = 720 \land \mathrm{Sequences.fact}\mathopen{}\left(8\right) = 40320</code></pre></details>
 </div>
 <p class="thm-remark">── 7 · 7! = 5040, asked for by name. Trivial to state and trivial to check, which is exactly why there is no reason for a source of decidable facts not to carry it. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-demand-mantels_bound_is_n_squared_over_four">
 <p class="thm-label"><strong>Theorem 52</strong> (<code>mantels_bound_is_n_squared_over_four</code>)<a class="thm-cite" href="/theorem/lean_demand_mantels_bound_is_n_squared_over_four">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>20</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mfrac><mi>n</mi><mn>2</mn></mfrac><mo>⋅</mo><mrow><mi>n</mi><mo>-</mo><mfrac><mi>n</mi><mn>2</mn></mfrac></mrow></mrow><mo>=</mo><mfrac><mrow><mi>n</mi><mo>⋅</mo><mi>n</mi></mrow><mn>4</mn></mfrac></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 1 20).all (fun n =&gt; (n / 2) * (n - n / 2) == n * n / 4)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in \{1,\dots,20\},\; \frac{n}{2} \cdot n - \frac{n}{2} = \frac{n \cdot n}{4}</code></pre></details>
 </div>
 <p class="thm-remark">── 8 · Mantel's theorem at the sizes the kernel can exhaust: a triangle-free graph on n vertices has at most ⌊n²/4⌋ edges, and the complete balanced bipartite graph attains it. Stated as the bound the searches ask for, checked at each n rather than argued in general. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 20 cases. <span class="qed">□</span></p>
@@ -547,7 +647,9 @@ pp2000 := perfectPowersUpTo 2000</code></pre>
 
 <div class="thm" id="thm-demand2-nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number">
 <p class="thm-label"><strong>Theorem 53</strong> (<code>nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number</code>)<a class="thm-cite" href="/theorem/lean_demand2_nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>40</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>sumPow</mi><mo>(</mo><mn>3</mn><mo>,</mo><mi>n</mi><mo>)</mo></mrow><mo>=</mo><mrow><mrow><mi>tri</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><mo>⋅</mo><mrow><mi>tri</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow></mrow></mrow></mrow><mo>∧</mo><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>40</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>sumPow</mi><mo>(</mo><mn>3</mn><mo>,</mo><mi>n</mi><mo>)</mo></mrow><mo>=</mo><mrow><mrow><mi>sumPow</mi><mo>(</mo><mn>1</mn><mo>,</mo><mi>n</mi><mo>)</mo></mrow><mo>⋅</mo><mrow><mi>sumPow</mi><mo>(</mo><mn>1</mn><mo>,</mo><mi>n</mi><mo>)</mo></mrow></mrow></mrow></mrow></mrow><mo>∧</mo><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>2</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>20</mn><mo>}</mo></mrow><mo>,</mo><mrow><mo>¬</mo><mrow><mi>isSquareBelow</mi><mo>(</mo><mn>900</mn><mo>,</mo><mrow><mi>sumPow</mi><mo>(</mo><mn>4</mn><mo>,</mo><mi>n</mi><mo>)</mo></mrow><mo>)</mo></mrow></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mi>isSquareBelow</mi><mo>(</mo><mn>900</mn><mo>,</mo><mrow><mi>sumPow</mi><mo>(</mo><mn>4</mn><mo>,</mo><mn>1</mn><mo>)</mo></mrow><mo>)</mo></mrow><mo>=</mo><mi>true</mi></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 1 40).all (fun n =&gt; sumPow 3 n == tri n * tri n) ∧ (List.range' 1 40).all (fun n =&gt; sumPow 3 n == sumPow 1 n * sumPow 1 n) ∧ (List.range' 2 19).all (fun n =&gt; ¬ isSquareBelow 900 (sumPow 4 n)) ∧ isSquareBelow 900 (sumPow 4 1) = true</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in \{1,\dots,40\},\; \mathrm{sumPow}\mathopen{}\left(3,\,n\right) = \mathrm{tri}\mathopen{}\left(n\right) \cdot \mathrm{tri}\mathopen{}\left(n\right) \land \forall n \in \{1,\dots,40\},\; \mathrm{sumPow}\mathopen{}\left(3,\,n\right) = \mathrm{sumPow}\mathopen{}\left(1,\,n\right) \cdot \mathrm{sumPow}\mathopen{}\left(1,\,n\right) \land \forall n \in \{2,\dots,20\},\; \lnot \mathrm{isSquareBelow}\mathopen{}\left(900,\,\mathrm{sumPow}\mathopen{}\left(4,\,n\right)\right) \land \mathrm{isSquareBelow}\mathopen{}\left(900,\,\mathrm{sumPow}\mathopen{}\left(4,\,1\right)\right) = \mathrm{true}</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 30,400 cases. <span class="qed">□</span></p>
 
@@ -559,39 +661,51 @@ pp2000 := perfectPowersUpTo 2000</code></pre>
 
 <div class="thm" id="thm-demand2-bezouts_identity_is_attained_and_no_smaller_combination_exists">
 <p class="thm-label"><strong>Theorem 55</strong> (<code>bezouts_identity_is_attained_and_no_smaller_combination_exists</code>)<a class="thm-cite" href="/theorem/lean_demand2_bezouts_identity_is_attained_and_no_smaller_combination_exists">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mo>∀</mo><mi>a</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>30</mn><mo>}</mo></mrow><mo>,</mo><mrow><mo>∀</mo><mi>b</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>30</mn><mo>}</mo></mrow><mo>,</mo><mrow><mo>∃</mo><mi>x</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>30</mn><mo>}</mo></mrow><mo>:</mo><mrow><mo>∃</mo><mi>y</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>30</mn><mo>}</mo></mrow><mo>:</mo><mrow><mrow><mi>a</mi><mo>⋅</mo><mi>x</mi></mrow><mo>=</mo><mrow><mrow><mi>b</mi><mo>⋅</mo><mi>y</mi></mrow><mo>+</mo><mrow><mi>Families.gcd'</mi><mo>(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>)</mo></mrow></mrow></mrow></mrow></mrow></mrow></mrow><mo>∧</mo><mrow><mo>∀</mo><mi>a</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>20</mn><mo>}</mo></mrow><mo>,</mo><mrow><mo>∀</mo><mi>b</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>20</mn><mo>}</mo></mrow><mo>,</mo><mrow><mo>∀</mo><mi>x</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>20</mn><mo>}</mo></mrow><mo>,</mo><mrow><mo>∀</mo><mi>y</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>20</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mrow><mi>a</mi><mo>⋅</mo><mi>x</mi></mrow><mo>&lt;</mo><mrow><mi>b</mi><mo>⋅</mo><mi>y</mi></mrow></mrow><mo>∨</mo><mrow><mrow><mrow><mrow><mi>a</mi><mo>⋅</mo><mi>x</mi></mrow><mo>-</mo><mrow><mi>b</mi><mo>⋅</mo><mi>y</mi></mrow></mrow><mo>mod</mo><mrow><mi>Families.gcd'</mi><mo>(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></mrow></mrow></mrow></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mi>Families.gcd'</mi><mo>(</mo><mn>240</mn><mo>,</mo><mn>46</mn><mo>)</mo></mrow><mo>=</mo><mn>2</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mn>46</mn><mo>⋅</mo><mn>47</mn></mrow><mo>=</mo><mrow><mrow><mn>240</mn><mo>⋅</mo><mn>9</mn></mrow><mo>+</mo><mn>2</mn></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 1 30).all (fun a =&gt; (List.range' 1 30).all (fun b =&gt; (List.range 31).any (fun x =&gt; (List.range 31).any (fun y =&gt; a * x == b * y + Families.gcd' a b)))) ∧ (List.range' 1 20).all (fun a =&gt; (List.range' 1 20).all (fun b =&gt; (List.range 21).all (fun x =&gt; (List.range 21).all (fun y =&gt; a * x &lt; b * y || (a * x - b * y) % Families.gcd' a b == 0)))) ∧ Families.gcd' 240 46 = 2 ∧ 46 * 47 = 240 * 9 + 2</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall a \in \{1,\dots,30\},\; \forall b \in \{1,\dots,30\},\; \exists x \in \{0,\dots,30\} : \exists y \in \{0,\dots,30\} : a \cdot x = b \cdot y + \mathrm{Families.gcd'}\mathopen{}\left(a,\,b\right) \land \forall a \in \{1,\dots,20\},\; \forall b \in \{1,\dots,20\},\; \forall x \in \{0,\dots,20\},\; \forall y \in \{0,\dots,20\},\; a \cdot x &lt; b \cdot y \lor a \cdot x - b \cdot y \bmod \mathrm{Families.gcd'}\mathopen{}\left(a,\,b\right) = 0 \land \mathrm{Families.gcd'}\mathopen{}\left(240,\,46\right) = 2 \land 46 \cdot 47 = 240 \cdot 9 + 2</code></pre></details>
 </div>
 <p class="thm-remark">── 3 · Bézout's identity — 6 impressions across three phrasings. Both halves of the statement are decided, because only together do they say that gcd is the LEAST positive combination rather than merely SOME combination. Attainment: for every pair of a, b up to 30 there are coefficients under 31 with a·x = b·y + gcd(a,b). Minimality: for every a, b, x, y up to 20, whenever a·x ≥ b·y the difference is a multiple of gcd(a,b) — so nothing smaller and positive is ever reachable. The subtraction is guarded by the inequality rather than performed, since ℕ subtraction truncates and a truncated 0 would satisfy the divisibility test for the wrong reason. The named instance is the textbook one: gcd(240, 46) = 2 attained as 46·47 − 240·9. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 152,568,360,000 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-demand2-the_latin_squares_of_order_four_number_five_hundred_and_seventy_six">
 <p class="thm-label"><strong>Theorem 56</strong> (<code>the_latin_squares_of_order_four_number_five_hundred_and_seventy_six</code>)<a class="thm-cite" href="/theorem/lean_demand2_the_latin_squares_of_order_four_number_five_hundred_and_seventy_six">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mrow><mrow><mi>latinSquares</mi><mo>(</mo><mn>4</mn><mo>)</mo></mrow><mo>=</mo><mn>576</mn></mrow><mo>∧</mo><mrow><mrow><mi>latinSquares</mi><mo>(</mo><mn>3</mn><mo>)</mo></mrow><mo>=</mo><mn>12</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mi>latinSquares</mi><mo>(</mo><mn>2</mn><mo>)</mo></mrow><mo>=</mo><mn>2</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mi>latinSquares</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><mo>=</mo><mn>1</mn></mrow></mrow><mo>∧</mo><mrow><mo>¬</mo><mrow><mrow><mi>latinSquares</mi><mo>(</mo><mn>4</mn><mo>)</mo></mrow><mo>=</mo><mrow><mrow><mn>24</mn><mo>⋅</mo><mn>24</mn></mrow><mo>⋅</mo><mn>24</mn></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>latinSquares 4 = 576 ∧ latinSquares 3 = 12 ∧ latinSquares 2 = 2 ∧ latinSquares 1 = 1 ∧ ¬ (latinSquares 4 = 24 * 24 * 24)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{latinSquares}\mathopen{}\left(4\right) = 576 \land \mathrm{latinSquares}\mathopen{}\left(3\right) = 12 \land \mathrm{latinSquares}\mathopen{}\left(2\right) = 2 \land \mathrm{latinSquares}\mathopen{}\left(1\right) = 1 \land \lnot \mathrm{latinSquares}\mathopen{}\left(4\right) = 24 \cdot 24 \cdot 24</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-demand2-the_sum_of_fifth_powers_has_the_closed_form_asked_for">
 <p class="thm-label"><strong>Theorem 57</strong> (<code>the_sum_of_fifth_powers_has_the_closed_form_asked_for</code>)<a class="thm-cite" href="/theorem/lean_demand2_the_sum_of_fifth_powers_has_the_closed_form_asked_for">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>20</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mn>12</mn><mo>⋅</mo><mrow><mi>sumPow</mi><mo>(</mo><mn>5</mn><mo>,</mo><mi>n</mi><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mrow><mi>n</mi><mo>⋅</mo><mi>n</mi></mrow><mo>⋅</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></mrow><mo>⋅</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></mrow><mo>⋅</mo><mrow><mrow><mrow><mrow><mn>2</mn><mo>⋅</mo><mi>n</mi></mrow><mo>⋅</mo><mi>n</mi></mrow><mo>+</mo><mrow><mn>2</mn><mo>⋅</mo><mi>n</mi></mrow></mrow><mo>-</mo><mn>1</mn></mrow></mrow></mrow></mrow><mo>∧</mo><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>2</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>20</mn><mo>}</mo></mrow><mo>,</mo><mrow><mo>¬</mo><mrow><mrow><mi>sumPow</mi><mo>(</mo><mn>5</mn><mo>,</mo><mi>n</mi><mo>)</mo></mrow><mo>=</mo><mrow><mrow><mrow><mi>tri</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><mo>⋅</mo><mrow><mi>tri</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow></mrow><mo>⋅</mo><mrow><mi>tri</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow></mrow></mrow></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mi>sumPow</mi><mo>(</mo><mn>5</mn><mo>,</mo><mn>1</mn><mo>)</mo></mrow><mo>=</mo><mn>1</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mi>sumPow</mi><mo>(</mo><mn>5</mn><mo>,</mo><mn>2</mn><mo>)</mo></mrow><mo>=</mo><mn>33</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mi>sumPow</mi><mo>(</mo><mn>5</mn><mo>,</mo><mn>4</mn><mo>)</mo></mrow><mo>=</mo><mn>1300</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 1 20).all (fun n =&gt; 12 * sumPow 5 n == n * n * (n + 1) * (n + 1) * (2 * n * n + 2 * n - 1)) ∧ (List.range' 2 19).all (fun n =&gt; ¬ (sumPow 5 n == tri n * tri n * tri n)) ∧ sumPow 5 1 = 1 ∧ sumPow 5 2 = 33 ∧ sumPow 5 4 = 1300</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in \{1,\dots,20\},\; 12 \cdot \mathrm{sumPow}\mathopen{}\left(5,\,n\right) = n \cdot n \cdot n + 1 \cdot n + 1 \cdot 2 \cdot n \cdot n + 2 \cdot n - 1 \land \forall n \in \{2,\dots,20\},\; \lnot \mathrm{sumPow}\mathopen{}\left(5,\,n\right) = \mathrm{tri}\mathopen{}\left(n\right) \cdot \mathrm{tri}\mathopen{}\left(n\right) \cdot \mathrm{tri}\mathopen{}\left(n\right) \land \mathrm{sumPow}\mathopen{}\left(5,\,1\right) = 1 \land \mathrm{sumPow}\mathopen{}\left(5,\,2\right) = 33 \land \mathrm{sumPow}\mathopen{}\left(5,\,4\right) = 1300</code></pre></details>
 </div>
 <p class="thm-remark">── 5 · The closed form for the sum of fifth powers — 5 impressions across two phrasings, both of which quote it as n²(n+1)²(2n²+2n−1)/12. The division is cleared rather than performed, so the statement is 12·Σk⁵ = n²(n+1)²(2n²+2n−1) and no rounding can hide inside it; that the twelfth is exact is exactly what the equation then says. The negative clause rules out the natural wrong guess by analogy with Nicomachus — Σk⁵ is NOT T_n³ for any n from 2 to 20, though it is at n = 1. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 380 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-demand2-the_chinese_remainder_theorem_holds_exactly_when_the_moduli_are_coprime">
 <p class="thm-label"><strong>Theorem 58</strong> (<code>the_chinese_remainder_theorem_holds_exactly_when_the_moduli_are_coprime</code>)<a class="thm-cite" href="/theorem/lean_demand2_the_chinese_remainder_theorem_holds_exactly_when_the_moduli_are_coprime">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>m</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>9</mn><mo>}</mo></mrow><mo>,</mo><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>9</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>crtCoversAllPairs</mi><mo>(</mo><mi>m</mi><mo>,</mo><mi>n</mi><mo>)</mo></mrow><mo>=</mo><mrow><mrow><mi>Families.gcd'</mi><mo>(</mo><mi>m</mi><mo>,</mo><mi>n</mi><mo>)</mo></mrow><mo>=</mo><mn>1</mn></mrow></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>{</mo><mi>x</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>104</mn><mo>}</mo></mrow><mo>∣</mo><mrow><mrow><mrow><mrow><mi>x</mi><mo>mod</mo><mn>3</mn></mrow><mo>=</mo><mn>2</mn></mrow><mo>∧</mo><mrow><mrow><mi>x</mi><mo>mod</mo><mn>5</mn></mrow><mo>=</mo><mn>3</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mi>x</mi><mo>mod</mo><mn>7</mn></mrow><mo>=</mo><mn>2</mn></mrow></mrow><mo>}</mo></mrow><mo>=</mo><mrow><mo>[</mo><mn>23</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 1 9).all (fun m =&gt; (List.range' 1 9).all (fun n =&gt; crtCoversAllPairs m n == (Families.gcd' m n == 1))) ∧ (List.range 105).filter (fun x =&gt; x % 3 == 2 &amp;&amp; x % 5 == 3 &amp;&amp; x % 7 == 2) = [23]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall m \in \{1,\dots,9\},\; \forall n \in \{1,\dots,9\},\; \mathrm{crtCoversAllPairs}\mathopen{}\left(m,\,n\right) = \mathrm{Families.gcd'}\mathopen{}\left(m,\,n\right) = 1 \land \{\, x \in \{0,\dots,104\} \mid x \bmod 3 = 2 \land x \bmod 5 = 3 \land x \bmod 7 = 2 \,\} = [23]</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 8,505 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-demand2-eight_and_nine_are_the_only_consecutive_perfect_powers_below_two_thousand">
 <p class="thm-label"><strong>Theorem 59</strong> (<code>eight_and_nine_are_the_only_consecutive_perfect_powers_below_two_thousand</code>)<a class="thm-cite" href="/theorem/lean_demand2_eight_and_nine_are_the_only_consecutive_perfect_powers_below_two_thousand">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mrow><mo>{</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>1999</mn><mo>}</mo></mrow><mo>∣</mo><mrow><mrow><mi>n</mi><mo>∈</mo><mi>pp2000</mi></mrow><mo>∧</mo><mrow><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo>∈</mo><mi>pp2000</mi></mrow></mrow><mo>}</mo></mrow><mo>=</mo><mrow><mo>[</mo><mn>8</mn><mo>]</mo></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mi>pp2000</mi><mo>|</mo></mrow><mo>=</mo><mn>55</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mn>8</mn><mo>∈</mo><mi>pp2000</mi></mrow><mo>=</mo><mi>true</mi></mrow></mrow><mo>∧</mo><mrow><mrow><mn>9</mn><mo>∈</mo><mi>pp2000</mi></mrow><mo>=</mo><mi>true</mi></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 1 1999).filter (fun n =&gt; pp2000.contains n &amp;&amp; pp2000.contains (n + 1)) = [8] ∧ pp2000.length = 55 ∧ pp2000.contains 8 = true ∧ pp2000.contains 9 = true</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\{\, n \in \{1,\dots,1999\} \mid n \in \mathrm{pp2000} \land n + 1 \in \mathrm{pp2000} \,\} = [8] \land \left|\mathrm{pp2000}\right| = 55 \land 8 \in \mathrm{pp2000} = \mathrm{true} \land 9 \in \mathrm{pp2000} = \mathrm{true}</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 1,999 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-demand2-two_twenty_and_two_eighty_four_are_the_smallest_amicable_pair">
 <p class="thm-label"><strong>Theorem 60</strong> (<code>two_twenty_and_two_eighty_four_are_the_smallest_amicable_pair</code>)<a class="thm-cite" href="/theorem/lean_demand2_two_twenty_and_two_eighty_four_are_the_smallest_amicable_pair">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mrow><mi>aliquot</mi><mo>(</mo><mn>220</mn><mo>)</mo></mrow><mo>=</mo><mn>284</mn></mrow><mo>∧</mo><mrow><mrow><mi>aliquot</mi><mo>(</mo><mn>284</mn><mo>)</mo></mrow><mo>=</mo><mn>220</mn></mrow></mrow><mo>∧</mo><mrow><mo>∀</mo><mi>a</mi><mo>∈</mo><mrow><mo>{</mo><mn>2</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>219</mn><mo>}</mo></mrow><mo>,</mo><mrow><mo>¬</mo><mrow><mrow><mrow><mi>aliquot</mi><mo>(</mo><mrow><mi>aliquot</mi><mo>(</mo><mi>a</mi><mo>)</mo></mrow><mo>)</mo></mrow><mo>=</mo><mi>a</mi></mrow><mo>∧</mo><mrow><mo>¬</mo><mrow><mrow><mi>aliquot</mi><mo>(</mo><mi>a</mi><mo>)</mo></mrow><mo>=</mo><mi>a</mi></mrow></mrow></mrow></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>{</mo><mi>a</mi><mo>∈</mo><mrow><mo>{</mo><mn>2</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>219</mn><mo>}</mo></mrow><mo>∣</mo><mrow><mrow><mi>aliquot</mi><mo>(</mo><mi>a</mi><mo>)</mo></mrow><mo>=</mo><mi>a</mi></mrow><mo>}</mo></mrow><mo>=</mo><mrow><mo>[</mo><mn>6</mn><mo>,</mo><mn>28</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>aliquot 220 = 284 ∧ aliquot 284 = 220 ∧ (List.range' 2 218).all (fun a =&gt; ¬ (aliquot (aliquot a) == a &amp;&amp; ¬ (aliquot a == a))) ∧ (List.range' 2 218).filter (fun a =&gt; aliquot a == a) = [6, 28]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{aliquot}\mathopen{}\left(220\right) = 284 \land \mathrm{aliquot}\mathopen{}\left(284\right) = 220 \land \forall a \in \{2,\dots,219\},\; \lnot \mathrm{aliquot}\mathopen{}\left(\mathrm{aliquot}\mathopen{}\left(a\right)\right) = a \land \lnot \mathrm{aliquot}\mathopen{}\left(a\right) = a \land \{\, a \in \{2,\dots,219\} \mid \mathrm{aliquot}\mathopen{}\left(a\right) = a \,\} = [6,\,28]</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 95,048 cases. <span class="qed">□</span></p>
 
@@ -616,7 +730,9 @@ statement true of everything in its range establishes nothing about the range.
 
 <div class="thm" id="thm-demand3-wilsons_theorem_and_its_converse">
 <p class="thm-label"><strong>Theorem 61</strong> (<code>wilsons_theorem_and_its_converse</code>)<a class="thm-cite" href="/theorem/lean_demand3_wilsons_theorem_and_its_converse">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>p</mi><mo>∈</mo><mrow><mo>{</mo><mn>2</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>19</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mo>¬</mo><mrow><mi>isPrime</mi><mo>(</mo><mi>p</mi><mo>)</mo></mrow></mrow><mo>∨</mo><mrow><mrow><mrow><mi>Sequences.fact</mi><mo>(</mo><mrow><mi>p</mi><mo>-</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>mod</mo><mi>p</mi></mrow><mo>=</mo><mrow><mi>p</mi><mo>-</mo><mn>1</mn></mrow></mrow></mrow></mrow><mo>∧</mo><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>5</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>19</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>isPrime</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><mo>∨</mo><mrow><mrow><mrow><mi>Sequences.fact</mi><mo>(</mo><mrow><mi>n</mi><mo>-</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>mod</mo><mi>n</mi></mrow><mo>=</mo><mn>0</mn></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>((List.range' 2 18).all (fun p =&gt; ¬ isPrime p || Sequences.fact (p - 1) % p == p - 1)) ∧ ((List.range' 5 15).all (fun n =&gt; isPrime n || Sequences.fact (n - 1) % n == 0))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall p \in \{2,\dots,19\},\; \lnot \mathrm{isPrime}\mathopen{}\left(p\right) \lor \mathrm{Sequences.fact}\mathopen{}\left(p - 1\right) \bmod p = p - 1 \land \forall n \in \{5,\dots,19\},\; \mathrm{isPrime}\mathopen{}\left(n\right) \lor \mathrm{Sequences.fact}\mathopen{}\left(n - 1\right) \bmod n = 0</code></pre></details>
 </div>
 <p class="thm-remark">── 1 · WILSON'S THEOREM, and its converse, which is the half that makes it a test. (p−1)! ≡ −1 mod p for every prime, written as ≡ p−1 since Nat has no negatives; and for every composite above four, (n−1)! ≡ 0. The two together are a primality CRITERION rather than a property of primes. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 270 cases. <span class="qed">□</span></p>
@@ -629,13 +745,17 @@ statement true of everything in its range establishes nothing about the range.
 
 <div class="thm" id="thm-demand3-the_cantor_pairing_is_injective_and_covers_an_initial_segment">
 <p class="thm-label"><strong>Theorem 63</strong> (<code>the_cantor_pairing_is_injective_and_covers_an_initial_segment</code>)<a class="thm-cite" href="/theorem/lean_demand3_the_cantor_pairing_is_injective_and_covers_an_initial_segment">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mi>block</mi><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>64</mn></mrow><mo>∧</mo><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>35</mn><mo>}</mo></mrow><mo>,</mo><mrow><mi>n</mi><mo>∈</mo><mi>block</mi></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>block.eraseDups.length = 64 ∧ ((List.range 36).all (fun n =&gt; block.contains n))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\operatorname{dedup}\left(\mathrm{block}\right)\right| = 64 \land \forall n \in \{0,\dots,35\},\; n \in \mathrm{block}</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-demand3-repunit_divisibility_by_three_and_seven">
 <p class="thm-label"><strong>Theorem 64</strong> (<code>repunit_divisibility_by_three_and_seven</code>)<a class="thm-cite" href="/theorem/lean_demand3_repunit_divisibility_by_three_and_seven">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>18</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mrow><mrow><mi>repunit</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><mo>mod</mo><mn>3</mn></mrow><mo>=</mo><mn>0</mn></mrow><mo>=</mo><mrow><mrow><mi>n</mi><mo>mod</mo><mn>3</mn></mrow><mo>=</mo><mn>0</mn></mrow></mrow></mrow><mo>∧</mo><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>18</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mrow><mrow><mi>repunit</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><mo>mod</mo><mn>7</mn></mrow><mo>=</mo><mn>0</mn></mrow><mo>=</mo><mrow><mrow><mi>n</mi><mo>mod</mo><mn>6</mn></mrow><mo>=</mo><mn>0</mn></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>((List.range' 1 18).all (fun n =&gt; (repunit n % 3 == 0) == (n % 3 == 0))) ∧ ((List.range' 1 18).all (fun n =&gt; (repunit n % 7 == 0) == (n % 6 == 0)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in \{1,\dots,18\},\; \mathrm{repunit}\mathopen{}\left(n\right) \bmod 3 = 0 = n \bmod 3 = 0 \land \forall n \in \{1,\dots,18\},\; \mathrm{repunit}\mathopen{}\left(n\right) \bmod 7 = 0 = n \bmod 6 = 0</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 324 cases. <span class="qed">□</span></p>
 
@@ -647,13 +767,17 @@ statement true of everything in its range establishes nothing about the range.
 
 <div class="thm" id="thm-demand3-odd_divisor_count_iff_perfect_square">
 <p class="thm-label"><strong>Theorem 66</strong> (<code>odd_divisor_count_iff_perfect_square</code>)<a class="thm-cite" href="/theorem/lean_demand3_odd_divisor_count_iff_perfect_square">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>120</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mrow><mrow><mo>|</mo><mrow><mi>divisors</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><mo>|</mo></mrow><mo>mod</mo><mn>2</mn></mrow><mo>=</mo><mn>1</mn></mrow><mo>=</mo><mrow><mi>isSquare</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 1 120).all (fun n =&gt; ((divisors n).length % 2 == 1) == isSquare n)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in \{1,\dots,120\},\; \left|\mathrm{divisors}\mathopen{}\left(n\right)\right| \bmod 2 = 1 = \mathrm{isSquare}\mathopen{}\left(n\right)</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 120 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-demand3-havel_hakimi_decides_graphical_sequences">
 <p class="thm-label"><strong>Theorem 67</strong> (<code>havel_hakimi_decides_graphical_sequences</code>)<a class="thm-cite" href="/theorem/lean_demand3_havel_hakimi_decides_graphical_sequences">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mrow><mrow><mi>hh</mi><mo>(</mo><mn>12</mn><mo>,</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>3</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mi>true</mi></mrow><mo>∧</mo><mrow><mrow><mi>hh</mi><mo>(</mo><mn>12</mn><mo>,</mo><mrow><mo>[</mo><mn>2</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>2</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mi>true</mi></mrow></mrow><mo>∧</mo><mrow><mrow><mi>hh</mi><mo>(</mo><mn>12</mn><mo>,</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mi>false</mi></mrow></mrow><mo>∧</mo><mrow><mrow><mi>hh</mi><mo>(</mo><mn>12</mn><mo>,</mo><mrow><mo>[</mo><mn>4</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mi>true</mi></mrow></mrow><mo>∧</mo><mrow><mrow><mi>hh</mi><mo>(</mo><mn>12</mn><mo>,</mo><mrow><mo>[</mo><mn>5</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mi>false</mi></mrow></mrow></math></div>
 <pre class="thm-statement"><code>hh 12 [3, 3, 3, 3] = true ∧ hh 12 [2, 2, 2] = true ∧ hh 12 [3, 3, 1, 1] = false ∧ hh 12 [4, 1, 1, 1, 1] = true ∧ hh 12 [5, 1, 1, 1, 1] = false</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{hh}\mathopen{}\left(12,\,[3,\,3,\,3,\,3]\right) = \mathrm{true} \land \mathrm{hh}\mathopen{}\left(12,\,[2,\,2,\,2]\right) = \mathrm{true} \land \mathrm{hh}\mathopen{}\left(12,\,[3,\,3,\,1,\,1]\right) = \mathrm{false} \land \mathrm{hh}\mathopen{}\left(12,\,[4,\,1,\,1,\,1,\,1]\right) = \mathrm{true} \land \mathrm{hh}\mathopen{}\left(12,\,[5,\,1,\,1,\,1,\,1]\right) = \mathrm{false}</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 1,200 cases. <span class="qed">□</span></p>
 
@@ -695,21 +819,27 @@ tdsTapWater := 50     -- mg per litre, ordinary supply</code></pre>
 
 <div class="thm" id="thm-energy-the_loop_returns_less_than_it_took">
 <p class="thm-label"><strong>Theorem 68</strong> (<code>the_loop_returns_less_than_it_took</code>)<a class="thm-cite" href="/theorem/lean_energy_the_loop_returns_less_than_it_took">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>burnYield</mi><mo>&lt;</mo><mi>splitCost</mi></mrow><mo>∧</mo><mrow><mfrac><mrow><mi>burnYield</mi><mo>⋅</mo><mn>100</mn></mrow><mi>splitCost</mi></mfrac><mo>=</mo><mn>23</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>burnYield &lt; splitCost ∧ burnYield * 100 / splitCost = 23</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{burnYield} &lt; \mathrm{splitCost} \land \frac{\mathrm{burnYield} \cdot 100}{\mathrm{splitCost}} = 23</code></pre></details>
 </div>
 <p class="thm-remark">── 1 · THE LOOP RETURNS LESS THAN IT TOOK. Not a little less — under a quarter. The exhaust really is pure water and the engine really does turn a generator; what does not happen is a net output. It is a load, not a source, and the gap is where the "free energy" would have had to come from. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-energy-a_chain_of_efficiencies_can_only_lose">
 <p class="thm-label"><strong>Theorem 69</strong> (<code>a_chain_of_efficiencies_can_only_lose</code>)<a class="thm-cite" href="/theorem/lean_energy_a_chain_of_efficiencies_can_only_lose">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>a</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>100</mn><mo>}</mo></mrow><mo>,</mo><mrow><mo>∀</mo><mi>b</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>100</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mrow><mi>a</mi><mo>⋅</mo><mi>b</mi></mrow><mo>≤</mo><mrow><mn>100</mn><mo>⋅</mo><mi>a</mi></mrow></mrow><mo>∧</mo><mrow><mrow><mi>a</mi><mo>⋅</mo><mi>b</mi></mrow><mo>≤</mo><mrow><mn>100</mn><mo>⋅</mo><mi>b</mi></mrow></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range 101).all (fun a =&gt; (List.range 101).all (fun b =&gt; a * b ≤ 100 * a &amp;&amp; a * b ≤ 100 * b))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall a \in \{0,\dots,100\},\; \forall b \in \{0,\dots,100\},\; a \cdot b \le 100 \cdot a \land a \cdot b \le 100 \cdot b</code></pre></details>
 </div>
 <p class="thm-remark">── 2 · AND NO CHAIN OF STAGES FIXES IT. Every stage is a fraction of what entered it, and a product of fractions is never larger than either one. Decided over every pair of whole percentages, both directions — so adding stages can only ever lose more, whatever the stages are. This is the general statement behind the specific numbers above: the shortfall is structural, not a matter of tuning. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 10,201 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-energy-as_a_purifier_the_loop_costs_a_thousandfold">
 <p class="thm-label"><strong>Theorem 70</strong> (<code>as_a_purifier_the_loop_costs_a_thousandfold</code>)<a class="thm-cite" href="/theorem/lean_energy_as_a_purifier_the_loop_costs_a_thousandfold">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mfrac><mi>splitCost</mi><mi>waterOut</mi></mfrac><mo>=</mo><mn>5777</mn></mrow><mo>∧</mo><mrow><mfrac><mi>splitCost</mi><mi>waterOut</mi></mfrac><mo>&gt;</mo><mrow><mi>roPerLitre</mi><mo>⋅</mo><mn>1000</mn></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>splitCost / waterOut = 5777 ∧ splitCost / waterOut &gt; roPerLitre * 1000</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\frac{\mathrm{splitCost}}{\mathrm{waterOut}} = 5777 \land \frac{\mathrm{splitCost}}{\mathrm{waterOut}} &gt; \mathrm{roPerLitre} \cdot 1000</code></pre></details>
 </div>
 <p class="thm-remark">── 3 · AS A PURIFIER IT IS BEATEN BY A THOUSANDFOLD. Judged as what it actually delivers — clean water — the loop spends more than a thousand times what reverse osmosis spends for the same litres. The purification is genuine. It is simply the most expensive way to do it that anyone has built. Stated as a ratio so it cannot be read as a preference. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
@@ -722,98 +852,126 @@ tdsTapWater := 50     -- mg per litre, ordinary supply</code></pre>
 
 <div class="thm" id="thm-energy-the_equation_balances_by_mass">
 <p class="thm-label"><strong>Theorem 72</strong> (<code>the_equation_balances_by_mass</code>)<a class="thm-cite" href="/theorem/lean_energy_the_equation_balances_by_mass">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mn>2</mn><mo>⋅</mo><mi>mgH2O</mi></mrow><mo>=</mo><mrow><mrow><mn>2</mn><mo>⋅</mo><mi>mgH2</mi></mrow><mo>+</mo><mi>mgO2</mi></mrow></mrow><mo>∧</mo><mrow><mrow><mn>2</mn><mo>⋅</mo><mi>mgH2O</mi></mrow><mo>=</mo><mn>36030</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>2 * mgH2O = 2 * mgH2 + mgO2 ∧ 2 * mgH2O = 36030</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>2 \cdot \mathrm{mgH2O} = 2 \cdot \mathrm{mgH2} + \mathrm{mgO2} \land 2 \cdot \mathrm{mgH2O} = 36030</code></pre></details>
 </div>
 <p class="thm-remark">── 5 · and it balances by MASS, exactly — two moles of water weigh precisely what the gases they split into weigh together. The equality is exact in integers; nothing is rounded away here ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-energy-the_gases_are_two_to_one_and_consume_each_other_exactly">
 <p class="thm-label"><strong>Theorem 73</strong> (<code>the_gases_are_two_to_one_and_consume_each_other_exactly</code>)<a class="thm-cite" href="/theorem/lean_energy_the_gases_are_two_to_one_and_consume_each_other_exactly">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mrow><mn>2</mn><mo>⋅</mo><mn>1</mn></mrow><mo>=</mo><mn>2</mn></mrow><mo>∧</mo><mrow><mfrac><mrow><mn>2</mn><mo>⋅</mo><mn>100</mn></mrow><mn>3</mn></mfrac><mo>=</mo><mn>66</mn></mrow></mrow><mo>∧</mo><mrow><mfrac><mrow><mn>1</mn><mo>⋅</mo><mn>100</mn></mrow><mn>3</mn></mfrac><mo>=</mo><mn>33</mn></mrow></mrow><mo>∧</mo><mrow><mo>¬</mo><mrow><mrow><mn>1</mn><mo>⋅</mo><mn>1</mn></mrow><mo>=</mo><mn>2</mn></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>2 * 1 = 2 ∧ (2 * 100 / 3 = 66) ∧ (1 * 100 / 3 = 33) ∧ ¬ (1 * 1 = 2)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>2 \cdot 1 = 2 \land \frac{2 \cdot 100}{3} = 66 \land \frac{1 \cdot 100}{3} = 33 \land \lnot 1 \cdot 1 = 2</code></pre></details>
 </div>
 <p class="thm-remark">── 6 · THE TWO-TO-ONE, by volume. Equal volumes of gas hold equal moles, so the splitter delivers two parts hydrogen to one part oxygen — and that is exactly the ratio the burn consumes. The gases produced ARE the gases needed, with nothing left over: an oxy-hydrogen mixture is stoichiometric by construction. Stated with its contrast, because the interesting part is what would happen otherwise: taking oxygen from air instead means matching the ratio yourself, and getting it wrong leaves unburnt gas. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-energy-hydrogen_is_a_ninth_of_the_mass_and_oxygen_the_rest">
 <p class="thm-label"><strong>Theorem 74</strong> (<code>hydrogen_is_a_ninth_of_the_mass_and_oxygen_the_rest</code>)<a class="thm-cite" href="/theorem/lean_energy_hydrogen_is_a_ninth_of_the_mass_and_oxygen_the_rest">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mfrac><mrow><mi>mgO2</mi><mo>⋅</mo><mn>100</mn></mrow><mrow><mn>2</mn><mo>⋅</mo><mi>mgH2</mi></mrow></mfrac><mo>=</mo><mn>793</mn></mrow><mo>∧</mo><mrow><mfrac><mrow><mrow><mn>2</mn><mo>⋅</mo><mi>mgH2</mi></mrow><mo>⋅</mo><mn>10000</mn></mrow><mrow><mn>2</mn><mo>⋅</mo><mi>mgH2O</mi></mrow></mfrac><mo>=</mo><mn>1119</mn></mrow></mrow><mo>∧</mo><mrow><mfrac><mrow><mi>mgO2</mi><mo>⋅</mo><mn>10000</mn></mrow><mrow><mn>2</mn><mo>⋅</mo><mi>mgH2O</mi></mrow></mfrac><mo>=</mo><mn>8880</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mn>1119</mn><mo>+</mo><mn>8880</mn></mrow><mo>=</mo><mn>9999</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>mgO2 * 100 / (2 * mgH2) = 793 ∧ (2 * mgH2) * 10000 / (2 * mgH2O) = 1119 ∧ mgO2 * 10000 / (2 * mgH2O) = 8880 ∧ 1119 + 8880 = 9999</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\frac{\mathrm{mgO2} \cdot 100}{2 \cdot \mathrm{mgH2}} = 793 \land \frac{2 \cdot \mathrm{mgH2} \cdot 10000}{2 \cdot \mathrm{mgH2O}} = 1119 \land \frac{\mathrm{mgO2} \cdot 10000}{2 \cdot \mathrm{mgH2O}} = 8880 \land 1119 + 8880 = 9999</code></pre></details>
 </div>
 <p class="thm-remark">── 7 · THE EIGHT-TO-ONE, by mass. A kilogram of hydrogen never arrives alone: it comes with 7.93 kilograms of oxygen, because that is what it was split from. Hydrogen is 11.19% of the mass and oxygen the remaining 88.80%. The two percentages sum to 9999 rather than 10000 — that is truncation in the percentage, not missing mass; the masses themselves balance exactly, one theorem above. Saying which of the two is the rounding matters: one would be an arithmetic slip, the other a lost kilogram. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-energy-mass_is_conserved_at_every_scale_so_the_loop_cannot_make_water">
 <p class="thm-label"><strong>Theorem 75</strong> (<code>mass_is_conserved_at_every_scale_so_the_loop_cannot_make_water</code>)<a class="thm-cite" href="/theorem/lean_energy_mass_is_conserved_at_every_scale_so_the_loop_cannot_make_water">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>100</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mrow><mn>2</mn><mo>⋅</mo><mi>n</mi></mrow><mo>⋅</mo><mi>mgH2O</mi></mrow><mo>=</mo><mrow><mrow><mrow><mn>2</mn><mo>⋅</mo><mi>n</mi></mrow><mo>⋅</mo><mi>mgH2</mi></mrow><mo>+</mo><mrow><mi>n</mi><mo>⋅</mo><mi>mgO2</mi></mrow></mrow></mrow></mrow><mo>∧</mo><mrow><mo>¬</mo><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>100</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>n</mi><mo>⋅</mo><mi>mgH2O</mi></mrow><mo>=</mo><mrow><mrow><mi>n</mi><mo>⋅</mo><mi>mgH2</mi></mrow><mo>+</mo><mrow><mi>n</mi><mo>⋅</mo><mi>mgO2</mi></mrow></mrow></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 1 100).all (fun n =&gt; 2 * n * mgH2O == 2 * n * mgH2 + n * mgO2) ∧ ¬ ((List.range' 1 100).all (fun n =&gt; n * mgH2O == n * mgH2 + n * mgO2))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in \{1,\dots,100\},\; 2 \cdot n \cdot \mathrm{mgH2O} = 2 \cdot n \cdot \mathrm{mgH2} + n \cdot \mathrm{mgO2} \land \lnot \forall n \in \{1,\dots,100\},\; n \cdot \mathrm{mgH2O} = n \cdot \mathrm{mgH2} + n \cdot \mathrm{mgO2}</code></pre></details>
 </div>
 <p class="thm-remark">── 8 · MASS IS CONSERVED AT EVERY SCALE — so the loop CANNOT MAKE WATER. Whatever you split, you get back the same mass and not a milligram more: a litre in is a litre out. This is the statement that fixes what the machine is. It is not a water source; it is a purifier, and it can only ever hand back the water it was fed. Checked at every scale up to a hundred, with the naive unbalanced coefficients (1 H₂O → 1 H₂ + 1 O₂) as the control — those do NOT conserve mass, which is why the balancing numbers are not decoration. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 10,000 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-energy-one_litre_split_returns_one_litre_burnt">
 <p class="thm-label"><strong>Theorem 76</strong> (<code>one_litre_split_returns_one_litre_burnt</code>)<a class="thm-cite" href="/theorem/lean_energy_one_litre_split_returns_one_litre_burnt">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mn>111900</mn><mo>+</mo><mn>888100</mn></mrow><mo>=</mo><mn>1000000</mn></mrow><mo>∧</mo><mrow><mfrac><mrow><mn>888100</mn><mo>⋅</mo><mn>100</mn></mrow><mn>111900</mn></mfrac><mo>=</mo><mn>793</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>111900 + 888100 = 1000000 ∧ 888100 * 100 / 111900 = 793</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>111900 + 888100 = 1000000 \land \frac{888100 \cdot 100}{111900} = 793</code></pre></details>
 </div>
 <p class="thm-remark">── 9 · ONE LITRE IN, ONE LITRE OUT, in milligrams: a kilogram of water splits into 111.9 g of hydrogen and 888.1 g of oxygen, and burning those returns the kilogram. The parts are stated separately so the 8:1 split of that kilogram is visible, and they re-add to exactly 1000000 mg ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-energy-only_oxy_hydrogen_burns_without_admitting_nitrogen">
 <p class="thm-label"><strong>Theorem 77</strong> (<code>only_oxy_hydrogen_burns_without_admitting_nitrogen</code>)<a class="thm-cite" href="/theorem/lean_energy_only_oxy_hydrogen_burns_without_admitting_nitrogen">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mfrac><mrow><mn>7808</mn><mo>⋅</mo><mn>100</mn></mrow><mn>2095</mn></mfrac><mo>=</mo><mn>372</mn></mrow><mo>∧</mo><mrow><mrow><mn>0</mn><mo>⋅</mo><mn>372</mn></mrow><mo>=</mo><mn>0</mn></mrow></mrow><mo>∧</mo><mrow><mo>¬</mo><mrow><mn>372</mn><mo>=</mo><mn>0</mn></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>7808 * 100 / 2095 = 372 ∧ 0 * 372 = 0 ∧ ¬ (372 = 0)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\frac{7808 \cdot 100}{2095} = 372 \land 0 \cdot 372 = 0 \land \lnot 372 = 0</code></pre></details>
 </div>
 <p class="thm-remark">── 10 · WHY THE EXHAUST IS ONLY WATER — and the single condition on it. Burning in the co-produced oxygen admits no nitrogen at all. Burning in AIR drags 3.72 moles of N₂ through the flame for every mole of oxygen used (air is 78.08% N₂ against 20.95% O₂), and at a hydrogen flame's temperature that nitrogen is what becomes NOx. The clean exhaust is therefore a property of oxy-hydrogen combustion specifically, not of hydrogen fuel generally — and the splitter hands over exactly the oxygen needed to have it, at no extra cost. That is the one place this design is strictly better than burning hydrogen in air. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-energy-the_ideal_round_trip_is_exactly_zero">
 <p class="thm-label"><strong>Theorem 78</strong> (<code>the_ideal_round_trip_is_exactly_zero</code>)<a class="thm-cite" href="/theorem/lean_energy_the_ideal_round_trip_is_exactly_zero">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mn>28583</mn><mo>-</mo><mn>28583</mn></mrow><mo>=</mo><mn>0</mn></mrow><mo>∧</mo><mrow><mn>28583</mn><mo>≤</mo><mn>28583</mn></mrow></mrow><mo>∧</mo><mrow><mfrac><mrow><mi>burnYield</mi><mo>⋅</mo><mn>100</mn></mrow><mi>splitCost</mi></mfrac><mo>=</mo><mn>23</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>28583 - 28583 = 0 ∧ 28583 ≤ 28583 ∧ burnYield * 100 / splitCost = 23</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>28583 - 28583 = 0 \land 28583 \le 28583 \land \frac{\mathrm{burnYield} \cdot 100}{\mathrm{splitCost}} = 23</code></pre></details>
 </div>
 <p class="thm-remark">── 11 · THE SYMMETRY, stated as the reason there is nothing to extract. Splitting costs 285.83 kJ per mole and burning returns at most the same 285.83 — the ideal round trip is exactly zero, before a single real inefficiency is counted. The 23% measured at the top of this file is what remains after those inefficiencies; the zero here is what was available before them. A loop cannot be tuned into a source when its best case is break-even. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-energy-the_gases_are_eighteen_hundred_times_the_water_they_came_from">
 <p class="thm-label"><strong>Theorem 79</strong> (<code>the_gases_are_eighteen_hundred_times_the_water_they_came_from</code>)<a class="thm-cite" href="/theorem/lean_energy_the_gases_are_eighteen_hundred_times_the_water_they_came_from">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mfrac><mrow><mi>molH2</mi><mo>⋅</mo><mi>mLperMol</mi></mrow><mn>1000</mn></mfrac><mo>=</mo><mn>11117</mn></mrow><mo>∧</mo><mrow><mfrac><mrow><mi>molO2</mi><mo>⋅</mo><mi>mLperMol</mi></mrow><mn>1000</mn></mfrac><mo>=</mo><mn>5558</mn></mrow></mrow><mo>∧</mo><mrow><mfrac><mrow><mfrac><mrow><mi>molH2</mi><mo>⋅</mo><mi>mLperMol</mi></mrow><mn>1000</mn></mfrac><mo>+</mo><mfrac><mrow><mi>molO2</mi><mo>⋅</mo><mi>mLperMol</mi></mrow><mn>1000</mn></mfrac></mrow><mn>9</mn></mfrac><mo>=</mo><mn>1852</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>molH2 * mLperMol / 1000 = 11117 ∧ molO2 * mLperMol / 1000 = 5558 ∧ (molH2 * mLperMol / 1000 + molO2 * mLperMol / 1000) / 9 = 1852</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\frac{\mathrm{molH2} \cdot \mathrm{mLperMol}}{1000} = 11117 \land \frac{\mathrm{molO2} \cdot \mathrm{mLperMol}}{1000} = 5558 \land \frac{\frac{\mathrm{molH2} \cdot \mathrm{mLperMol}}{1000} + \frac{\mathrm{molO2} \cdot \mathrm{mLperMol}}{1000}}{9} = 1852</code></pre></details>
 </div>
 <p class="thm-remark">── 12 · THE EXPANSION. Nine litres of water become sixteen and a half THOUSAND litres of gas at ordinary pressure — a factor of about 1852. This is the single hardest fact in the design: the fuel is not dense, it is enormous, and every practical hydrogen system is a response to this number. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-energy-two_thirds_of_the_volume_carries_a_ninth_of_the_mass">
 <p class="thm-label"><strong>Theorem 80</strong> (<code>two_thirds_of_the_volume_carries_a_ninth_of_the_mass</code>)<a class="thm-cite" href="/theorem/lean_energy_two_thirds_of_the_volume_carries_a_ninth_of_the_mass">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mfrac><mrow><mi>molH2</mi><mo>⋅</mo><mn>100</mn></mrow><mrow><mi>molH2</mi><mo>+</mo><mi>molO2</mi></mrow></mfrac><mo>=</mo><mn>66</mn></mrow><mo>∧</mo><mrow><mfrac><mrow><mrow><mn>2</mn><mo>⋅</mo><mi>mgH2</mi></mrow><mo>⋅</mo><mn>100</mn></mrow><mrow><mn>2</mn><mo>⋅</mo><mi>mgH2O</mi></mrow></mfrac><mo>=</mo><mn>11</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>molH2 * 100 / (molH2 + molO2) = 66 ∧ (2 * mgH2) * 100 / (2 * mgH2O) = 11</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\frac{\mathrm{molH2} \cdot 100}{\mathrm{molH2} + \mathrm{molO2}} = 66 \land \frac{2 \cdot \mathrm{mgH2} \cdot 100}{2 \cdot \mathrm{mgH2O}} = 11</code></pre></details>
 </div>
 <p class="thm-remark">── 13 · AND THE VOLUME IS MOSTLY THE LIGHT HALF. Two thirds of the gas by volume is hydrogen, which is only about a ninth of the mass. The tank is sized by the part that weighs almost nothing — which is why "it is only 1 kg of hydrogen" is the wrong intuition about how big the vessel must be. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-energy-uncompressed_hydrogen_is_three_thousandfold_worse_by_volume">
 <p class="thm-label"><strong>Theorem 81</strong> (<code>uncompressed_hydrogen_is_three_thousandfold_worse_by_volume</code>)<a class="thm-cite" href="/theorem/lean_energy_uncompressed_hydrogen_is_three_thousandfold_worse_by_volume">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mfrac><mrow><mi>whPerKgH2</mi><mo>⋅</mo><mn>100</mn></mrow><mfrac><mrow><mi>molH2</mi><mo>⋅</mo><mi>mLperMol</mi></mrow><mn>1000</mn></mfrac></mfrac><mo>=</mo><mn>299</mn></mrow><mo>∧</mo><mrow><mfrac><mrow><mi>petrolWhL</mi><mo>⋅</mo><mn>100</mn></mrow><mn>299</mn></mfrac><mo>=</mo><mn>3244</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>whPerKgH2 * 100 / (molH2 * mLperMol / 1000) = 299 ∧ petrolWhL * 100 / 299 = 3244</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\frac{\mathrm{whPerKgH2} \cdot 100}{\frac{\mathrm{molH2} \cdot \mathrm{mLperMol}}{1000}} = 299 \land \frac{\mathrm{petrolWhL} \cdot 100}{299} = 3244</code></pre></details>
 </div>
 <p class="thm-remark">── 14 · UNCOMPRESSED, IT IS HOPELESS BY VOLUME — about 2.99 Wh per litre against petrol's 9700, a factor of over three thousand. Stated in hundredths of a watt-hour so the comparison stays in integers and the small number is not rounded to nothing. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-energy-even_at_seven_hundred_bar_it_is_sevenfold_worse_by_volume">
 <p class="thm-label"><strong>Theorem 82</strong> (<code>even_at_seven_hundred_bar_it_is_sevenfold_worse_by_volume</code>)<a class="thm-cite" href="/theorem/lean_energy_even_at_seven_hundred_bar_it_is_sevenfold_worse_by_volume">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mfrac><mrow><mn>42</mn><mo>⋅</mo><mi>whPerKgH2</mi></mrow><mn>1000</mn></mfrac><mo>=</mo><mn>1398</mn></mrow><mo>∧</mo><mrow><mfrac><mi>petrolWhL</mi><mn>1398</mn></mfrac><mo>=</mo><mn>6</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>42 * whPerKgH2 / 1000 = 1398 ∧ petrolWhL / 1398 = 6</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\frac{42 \cdot \mathrm{whPerKgH2}}{1000} = 1398 \land \frac{\mathrm{petrolWhL}}{1398} = 6</code></pre></details>
 </div>
 <p class="thm-remark">── 15 · COMPRESSED TO 700 BAR it becomes practical but not competitive: about 1398 Wh per litre, still roughly seven times worse than petrol by volume — and that is before the tank, which must hold 700 atmospheres and weighs more than what it contains. Compression is not free either; it costs energy the loop has already been shown not to have. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-energy-each_delivered_kilowatt_hour_costs_four_and_cycles_a_litre">
 <p class="thm-label"><strong>Theorem 83</strong> (<code>each_delivered_kilowatt_hour_costs_four_and_cycles_a_litre</code>)<a class="thm-cite" href="/theorem/lean_energy_each_delivered_kilowatt_hour_costs_four_and_cycles_a_litre">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mfrac><mrow><mi>splitCost</mi><mo>⋅</mo><mn>100</mn></mrow><mi>burnYield</mi></mfrac><mo>=</mo><mn>433</mn></mrow><mo>∧</mo><mrow><mfrac><mrow><mn>9</mn><mo>⋅</mo><mn>1000</mn></mrow><mfrac><mi>burnYield</mi><mn>1000</mn></mfrac></mfrac><mo>=</mo><mn>750</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>splitCost * 100 / burnYield = 433 ∧ 9 * 1000 / (burnYield / 1000) = 750</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\frac{\mathrm{splitCost} \cdot 100}{\mathrm{burnYield}} = 433 \land \frac{9 \cdot 1000}{\frac{\mathrm{burnYield}}{1000}} = 750</code></pre></details>
 </div>
 <p class="thm-remark">── 16 · THE THROUGHPUT, per unit actually delivered. Every kilowatt-hour out of the engine costs 4.33 kilowatt-hours in and cycles three quarters of a litre of water. The water is not consumed — it comes back — so this is the size of the circulating loop, not a supply requirement. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-energy-three_quarters_of_the_input_leaves_as_heat">
 <p class="thm-label"><strong>Theorem 84</strong> (<code>three_quarters_of_the_input_leaves_as_heat</code>)<a class="thm-cite" href="/theorem/lean_energy_three_quarters_of_the_input_leaves_as_heat">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>splitCost</mi><mo>-</mo><mi>burnYield</mi></mrow><mo>=</mo><mn>40000</mn></mrow><mo>∧</mo><mrow><mfrac><mrow><mrow><mi>splitCost</mi><mo>-</mo><mi>burnYield</mi></mrow><mo>⋅</mo><mn>100</mn></mrow><mi>splitCost</mi></mfrac><mo>=</mo><mn>76</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>splitCost - burnYield = 40000 ∧ (splitCost - burnYield) * 100 / splitCost = 76</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{splitCost} - \mathrm{burnYield} = 40000 \land \frac{\mathrm{splitCost} - \mathrm{burnYield} \cdot 100}{\mathrm{splitCost}} = 76</code></pre></details>
 </div>
 <p class="thm-remark">── 17 · WHERE THE REST GOES. Forty of every fifty-two kilowatt-hours leave as heat — 76% of the input. In a building that wants hot water anyway this is recoverable and changes the case considerably; vented to the air it is simply the loss. Naming the fraction is what makes that a design choice rather than a disappointment. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-energy-what_the_feedwater_leaves_behind_decides_the_maintenance">
 <p class="thm-label"><strong>Theorem 85</strong> (<code>what_the_feedwater_leaves_behind_decides_the_maintenance</code>)<a class="thm-cite" href="/theorem/lean_energy_what_the_feedwater_leaves_behind_decides_the_maintenance">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mfrac><mrow><mn>100</mn><mo>⋅</mo><mi>tdsSeawater</mi></mrow><mn>1000</mn></mfrac><mo>=</mo><mn>3500</mn></mrow><mo>∧</mo><mrow><mfrac><mrow><mn>100</mn><mo>⋅</mo><mi>tdsTapWater</mi></mrow><mn>1000</mn></mfrac><mo>=</mo><mn>5</mn></mrow></mrow><mo>∧</mo><mrow><mfrac><mi>tdsSeawater</mi><mi>tdsTapWater</mi></mfrac><mo>=</mo><mn>700</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>100 * tdsSeawater / 1000 = 3500 ∧ 100 * tdsTapWater / 1000 = 5 ∧ tdsSeawater / tdsTapWater = 700</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\frac{100 \cdot \mathrm{tdsSeawater}}{1000} = 3500 \land \frac{100 \cdot \mathrm{tdsTapWater}}{1000} = 5 \land \frac{\mathrm{tdsSeawater}}{\mathrm{tdsTapWater}} = 700</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
@@ -839,7 +997,9 @@ provenHere := 0</code></pre>
 
 <div class="thm" id="thm-index-riemann_reflection_and_heart">
 <p class="thm-label"><strong>Theorem 86</strong> (<code>riemann_reflection_and_heart</code>)<a class="thm-cite" href="/theorem/lean_millenniumfloor_riemann_reflection_and_heart">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>9</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>refl</mi><mo>(</mo><mrow><mi>refl</mi><mo>(</mo><mi>d</mi><mo>)</mo></mrow><mo>)</mo></mrow><mo>=</mo><mi>d</mi></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mo>{</mo><mi>d</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>9</mn><mo>}</mo></mrow><mo>∣</mo><mrow><mrow><mi>refl</mi><mo>(</mo><mi>d</mi><mo>)</mo></mrow><mo>=</mo><mi>d</mi></mrow><mo>}</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>1</mn></mrow></mrow><mo>∧</mo><mrow><mi>provenHere</mi><mo>=</mo><mn>0</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range 10).all (fun d =&gt; refl (refl d) == d) ∧ ((List.range 10).filter (fun d =&gt; refl d == d)).length = 1 ∧ provenHere = 0</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in \{0,\dots,9\},\; \mathrm{refl}\mathopen{}\left(\mathrm{refl}\mathopen{}\left(d\right)\right) = d \land \left|\{\, d \in \{0,\dots,9\} \mid \mathrm{refl}\mathopen{}\left(d\right) = d \,\}\right| = 1 \land \mathrm{provenHere} = 0</code></pre></details>
 </div>
 <p class="thm-millennium"><strong>Millennium floor — Riemann Hypothesis.</strong> Adjacent to the problem, and <strong>not</strong> the conjecture: the functional-equation symmetry axis and its ½-analogue centre (the heart, computed as the reflection’s unique fixed point) — not where the ζ-zeros lie. Proved here: <strong>0</strong>. The authoritative statement is <a href="https://www.claymath.org/millennium/riemann-hypothesis/">Clay Mathematics Institute — Riemann Hypothesis</a>.</p>
 <p class="thm-remark">── 1 · Riemann — the reflection's symmetry and its single computed heart ───────────────────────────────── The functional-equation reflection is a total involution; its fixed-point set has length ONE — the heart emerges (never typed as "5"), the ½-analogue of the critical-line centre. The SYMMETRY, not the zeros' place.</p>
@@ -847,7 +1007,9 @@ provenHere := 0</code></pre>
 
 <div class="thm" id="thm-index-p_vs_np_inverse_is_unique">
 <p class="thm-label"><strong>Theorem 87</strong> (<code>p_vs_np_inverse_is_unique</code>)<a class="thm-cite" href="/theorem/lean_millenniumfloor_p_vs_np_inverse_is_unique">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>8</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mo>|</mo><mrow><mo>{</mo><mi>e</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>8</mn><mo>}</mo></mrow><mo>∣</mo><mrow><mrow><mrow><mi>d</mi><mo>⋅</mo><mi>e</mi></mrow><mo>mod</mo><mn>9</mn></mrow><mo>=</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>|</mo></mrow><mo>=</mo><mrow><mo>(</mo><mn>1</mn><mo>if</mo><mrow><mi>isUnit</mi><mo>(</mo><mi>d</mi><mo>)</mo></mrow><mo>;</mo><mo>otherwise</mo><mn>0</mn><mo>)</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mi>provenHere</mi><mo>=</mo><mn>0</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range 9).all (fun d =&gt; ((List.range 9).filter (fun e =&gt; (d * e) % 9 == 1)).length == (if isUnit d then 1 else 0)) ∧ provenHere = 0</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in \{0,\dots,8\},\; \left|\{\, e \in \{0,\dots,8\} \mid d \cdot e \bmod 9 = 1 \,\}\right| = \begin{cases}1 &amp; \text{if } \mathrm{isUnit}\mathopen{}\left(d\right)\\ 0 &amp; \text{otherwise}\end{cases} \land \mathrm{provenHere} = 0</code></pre></details>
 </div>
 <p class="thm-millennium"><strong>Millennium floor — P versus NP.</strong> Adjacent to the problem, and <strong>not</strong> the conjecture: each unit has exactly one inverse (verify in one multiply), non-units none — a cheap-verification fact, not a separation of the classes. Proved here: <strong>0</strong>. The authoritative statement is <a href="https://www.claymath.org/millennium/p-vs-np/">Clay Mathematics Institute — P vs NP</a>.</p>
 <p class="thm-remark">── 2 · P versus NP — verification is one step, computed ─────────────────────────────────────────────────── Each unit has EXACTLY ONE inverse and each non-unit none: to VERIFY a proposed inverse is a single multiply, while the map d ↦ d⁻¹ permutes the units. Cheap verification is not a separation; P vs NP is not decided.</p>
@@ -855,7 +1017,9 @@ provenHere := 0</code></pre>
 
 <div class="thm" id="thm-index-navier_stokes_flow_is_bounded">
 <p class="thm-label"><strong>Theorem 88</strong> (<code>navier_stokes_flow_is_bounded</code>)<a class="thm-cite" href="/theorem/lean_millenniumfloor_navier_stokes_flow_is_bounded">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mo>∀</mo><mi>v</mi><mo>∈</mo><mrow><mi>orbit</mi><mo>[</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>47</mn><mo>}</mo></mrow><mo>]</mo></mrow><mo>,</mo><mrow><mi>v</mi><mo>&lt;</mo><mn>9</mn></mrow></mrow><mo>∧</mo><mrow><mo>∀</mo><mi>k</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>47</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>orbit</mi><mo>(</mo><mi>k</mi><mo>)</mo></mrow><mo>∈</mo><mi>span</mi></mrow></mrow></mrow><mo>∧</mo><mrow><mi>provenHere</mi><mo>=</mo><mn>0</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>((List.range 48).map orbit).all (fun v =&gt; v &lt; 9) ∧ (List.range 48).all (fun k =&gt; span.contains (orbit k)) ∧ provenHere = 0</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall v \in \mathrm{orbit}[\{0,\dots,47\}],\; v &lt; 9 \land \forall k \in \{0,\dots,47\},\; \mathrm{orbit}\mathopen{}\left(k\right) \in \mathrm{span} \land \mathrm{provenHere} = 0</code></pre></details>
 </div>
 <p class="thm-millennium"><strong>Millennium floor — Navier–Stokes Existence &amp; Smoothness.</strong> Adjacent to the problem, and <strong>not</strong> the conjecture: every iterate stays inside a bounded 6-cycle forever (no blowup) — bounded evolution, not global existence &amp; smoothness. Proved here: <strong>0</strong>. The authoritative statement is <a href="https://www.claymath.org/millennium/navier-stokes-equation/">Clay Mathematics Institute — Navier–Stokes Equation</a>.</p>
 <p class="thm-remark">── 3 · Navier–Stokes — the flow is bounded for all time, computed ──────────────────────────────────────── Every iterate of the doubling flow is a residue &lt; 9 and stays inside the 6-cycle forever — a bounded invariant set, no blowup. Bounded evolution is not global existence &amp; smoothness; Navier–Stokes is not decided.</p>
@@ -863,7 +1027,9 @@ provenHere := 0</code></pre>
 
 <div class="thm" id="thm-index-yang_mills_spectral_gap">
 <p class="thm-label"><strong>Theorem 89</strong> (<code>yang_mills_spectral_gap</code>)<a class="thm-cite" href="/theorem/lean_millenniumfloor_yang_mills_spectral_gap">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mo>∀</mo><mi>k</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>5</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mo>∨</mo><mrow><mrow><mi>orbit</mi><mo>(</mo><mi>k</mi><mo>)</mo></mrow><mo>≠</mo><mn>1</mn></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mi>orbit</mi><mo>(</mo><mn>6</mn><mo>)</mo></mrow><mo>=</mo><mn>1</mn></mrow></mrow><mo>∧</mo><mrow><mi>provenHere</mi><mo>=</mo><mn>0</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range 6).all (fun k =&gt; k == 0 || orbit k != 1) ∧ orbit 6 == 1 ∧ provenHere = 0</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall k \in \{0,\dots,5\},\; k = 0 \lor \mathrm{orbit}\mathopen{}\left(k\right) \neq 1 \land \mathrm{orbit}\mathopen{}\left(6\right) = 1 \land \mathrm{provenHere} = 0</code></pre></details>
 </div>
 <p class="thm-millennium"><strong>Millennium floor — Yang–Mills Existence &amp; Mass Gap.</strong> Adjacent to the problem, and <strong>not</strong> the conjecture: the doubling has order exactly 6 — a discrete gap in the cyclic spectrum, not the Yang–Mills mass gap. Proved here: <strong>0</strong>. The authoritative statement is <a href="https://www.claymath.org/millennium/yang-mills-the-maths-gap/">Clay Mathematics Institute — Yang–Mills &amp; the Mass Gap</a>.</p>
 <p class="thm-remark">── 4 · Yang–Mills — a discrete spectral gap, computed ──────────────────────────────────────────────────── The doubling has order exactly 6: it never returns to 1 before step 6, then closes at step 6 — a gap in the cyclic spectrum. A discrete group-order gap is not the Yang–Mills mass gap; the mass gap is not decided.</p>
@@ -887,7 +1053,9 @@ provenHere := 0</code></pre>
 
 <div class="thm" id="thm-index-poincare_single_closed_loop">
 <p class="thm-label"><strong>Theorem 92</strong> (<code>poincare_single_closed_loop</code>)<a class="thm-cite" href="/theorem/lean_millenniumfloor_poincare_single_closed_loop">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mi>orbit</mi><mo>(</mo><mn>6</mn><mo>)</mo></mrow><mo>=</mo><mrow><mi>orbit</mi><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow><mo>∧</mo><mrow><mo>∀</mo><mi>i</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>5</mn><mo>}</mo></mrow><mo>,</mo><mrow><mo>∀</mo><mi>j</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>5</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mrow><mi>orbit</mi><mo>(</mo><mi>i</mi><mo>)</mo></mrow><mo>=</mo><mrow><mi>orbit</mi><mo>(</mo><mi>j</mi><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mi>i</mi><mo>=</mo><mi>j</mi></mrow></mrow></mrow></mrow></mrow><mo>∧</mo><mrow><mi>provenHere</mi><mo>=</mo><mn>0</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>orbit 6 == orbit 0 ∧ (List.range 6).all (fun i =&gt; (List.range 6).all (fun j =&gt; (orbit i == orbit j) == (i == j))) ∧ provenHere = 0</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{orbit}\mathopen{}\left(6\right) = \mathrm{orbit}\mathopen{}\left(0\right) \land \forall i \in \{0,\dots,5\},\; \forall j \in \{0,\dots,5\},\; \mathrm{orbit}\mathopen{}\left(i\right) = \mathrm{orbit}\mathopen{}\left(j\right) = i = j \land \mathrm{provenHere} = 0</code></pre></details>
 </div>
 <p class="thm-millennium"><strong>Millennium floor — Poincaré Conjecture (resolved).</strong> Adjacent to the problem, and <strong>not</strong> the conjecture: the sequence closes into a single simple loop of six distinct steps — not the 3-sphere characterization; Poincaré is Perelman's theorem (2003), not proved here. Proved here: <strong>0</strong>. The authoritative statement is <a href="https://www.claymath.org/millennium/poincare-conjecture/">Clay Mathematics Institute — Poincaré Conjecture</a>.</p>
 <p class="thm-remark">── 7 · Poincaré — one closed loop, no holes, computed ──────────────────────────────────────────────────── The sequence closes (orbit 6 = orbit 0) after six pairwise-distinct steps — a single simple loop. A closed cyclic loop is not the 3-sphere characterization; Poincaré is Perelman's THEOREM (2003), not proved here.</p>
@@ -902,7 +1070,9 @@ provenHere := 0</code></pre>
 
 <div class="thm" id="thm-index-the_floor_is_zero_of_seven">
 <p class="thm-label"><strong>Theorem 94</strong> (<code>the_floor_is_zero_of_seven</code>)<span class="thm-uncited">not sealed — settled by <code>rfl</code>, not exhausted</span>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>provenHere</mi><mo>=</mo><mn>0</mn></mrow></math></div>
 <pre class="thm-statement"><code>provenHere = 0</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{provenHere} = 0</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>rfl</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
@@ -931,61 +1101,79 @@ settledHere := 6</code></pre>
 
 <div class="thm" id="thm-quantum-perms_of_four_is_factorial">
 <p class="thm-label"><strong>Theorem 95</strong> (<code>perms_of_four_is_factorial</code>)<a class="thm-cite" href="/theorem/lean_quantum_perms_of_four_is_factorial">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mi>perms</mi><mo>(</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>24</mn></mrow></math></div>
 <pre class="thm-statement"><code>(perms [1, 2, 4, 8]).length = 24</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\mathrm{perms}\mathopen{}\left([1,\,2,\,4,\,8]\right)\right| = 24</code></pre></details>
 </div>
 <p class="thm-remark">── 1 · the enumeration is complete: four elements have 4! = 24 orderings ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 4 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-quantum-receipt_is_order_invariant">
 <p class="thm-label"><strong>Theorem 96</strong> (<code>receipt_is_order_invariant</code>)<a class="thm-cite" href="/theorem/lean_quantum_receipt_is_order_invariant">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>p</mi><mo>∈</mo><mrow><mi>perms</mi><mo>(</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>,</mo><mrow><mrow><mi>receipt</mi><mo>(</mo><mi>p</mi><mo>)</mo></mrow><mo>=</mo><mrow><mi>receipt</mi><mo>(</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(perms [1, 2, 4, 8]).all (fun p =&gt; receipt p == receipt [1, 2, 4, 8])</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall p \in \mathrm{perms}\mathopen{}\left([1,\,2,\,4,\,8]\right),\; \mathrm{receipt}\mathopen{}\left(p\right) = \mathrm{receipt}\mathopen{}\left([1,\,2,\,4,\,8]\right)</code></pre></details>
 </div>
 <p class="thm-remark">── 2 · THE QUANTUM RECEIPT: every observer order yields the same receipt ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-quantum-receipt_order_invariant_on_the_orbit">
 <p class="thm-label"><strong>Theorem 97</strong> (<code>receipt_order_invariant_on_the_orbit</code>)<a class="thm-cite" href="/theorem/lean_quantum_receipt_order_invariant_on_the_orbit">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>p</mi><mo>∈</mo><mrow><mi>perms</mi><mo>(</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>,</mo><mrow><mrow><mi>receipt</mi><mo>(</mo><mi>p</mi><mo>)</mo></mrow><mo>=</mo><mrow><mi>receipt</mi><mo>(</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(perms [1, 2, 4, 8, 7, 5]).all (fun p =&gt; receipt p == receipt [1, 2, 4, 8, 7, 5])</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall p \in \mathrm{perms}\mathopen{}\left([1,\,2,\,4,\,8,\,7,\,5]\right),\; \mathrm{receipt}\mathopen{}\left(p\right) = \mathrm{receipt}\mathopen{}\left([1,\,2,\,4,\,8,\,7,\,5]\right)</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-quantum-naive_fold_is_not_order_invariant">
 <p class="thm-label"><strong>Theorem 98</strong> (<code>naive_fold_is_not_order_invariant</code>)<a class="thm-cite" href="/theorem/lean_quantum_naive_fold_is_not_order_invariant">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>¬</mo><mrow><mo>∀</mo><mi>p</mi><mo>∈</mo><mrow><mi>perms</mi><mo>(</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>,</mo><mrow><mrow><mi>naive</mi><mo>(</mo><mi>p</mi><mo>)</mo></mrow><mo>=</mo><mrow><mi>naive</mi><mo>(</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>¬ ((perms [1, 2, 4, 8]).all (fun p =&gt; naive p == naive [1, 2, 4, 8]))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\lnot \forall p \in \mathrm{perms}\mathopen{}\left([1,\,2,\,4,\,8]\right),\; \mathrm{naive}\mathopen{}\left(p\right) = \mathrm{naive}\mathopen{}\left([1,\,2,\,4,\,8]\right)</code></pre></details>
 </div>
 <p class="thm-remark">── 4 · THE CONTRAST — the invariance is not vacuous: drop canonicalisation and it fails ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-quantum-superposition_collapses_to_one">
 <p class="thm-label"><strong>Theorem 99</strong> (<code>superposition_collapses_to_one</code>)<a class="thm-cite" href="/theorem/lean_quantum_superposition_collapses_to_one">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mi>receipt</mi><mo>[</mo><mrow><mi>perms</mi><mo>(</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>]</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>1</mn></mrow></math></div>
 <pre class="thm-statement"><code>((perms [1, 2, 4, 8]).map receipt).eraseDups.length = 1</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\operatorname{dedup}\left(\mathrm{receipt}[\mathrm{perms}\mathopen{}\left([1,\,2,\,4,\,8]\right)]\right)\right| = 1</code></pre></details>
 </div>
 <p class="thm-remark">── 5 · superposition and collapse, stated exactly: many perspectives, one receipt, and the count of distinct receipts across all orderings is one ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 4 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-quantum-the_invariance_is_canonicalisation_not_physics">
 <p class="thm-label"><strong>Theorem 100</strong> (<code>the_invariance_is_canonicalisation_not_physics</code>)<a class="thm-cite" href="/theorem/lean_quantum_the_invariance_is_canonicalisation_not_physics">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>p</mi><mo>∈</mo><mrow><mi>perms</mi><mo>(</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>,</mo><mrow><mrow><mi>sort</mi><mo>(</mo><mi>p</mi><mo>)</mo></mrow><mo>=</mo><mrow><mi>sort</mi><mo>(</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(perms [1, 2, 4, 8]).all (fun p =&gt; sort p == sort [1, 2, 4, 8])</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall p \in \mathrm{perms}\mathopen{}\left([1,\,2,\,4,\,8]\right),\; \mathrm{sort}\mathopen{}\left(p\right) = \mathrm{sort}\mathopen{}\left([1,\,2,\,4,\,8]\right)</code></pre></details>
 </div>
 <p class="thm-remark">── 6 · THE MECHANISM, named. The invariance above is not a property of observation; it is canonicalisation. Every ordering sorts to the SAME list, and the receipt reads only that. Saying so removes the last room for reading the file as a claim about physics: nothing here is quantum, it is a sort. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-quantum-the_receipt_is_not_injective">
 <p class="thm-label"><strong>Theorem 101</strong> (<code>the_receipt_is_not_injective</code>)<a class="thm-cite" href="/theorem/lean_quantum_the_receipt_is_not_injective">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mo>|</mo><mi>pairsOverNine</mi><mo>|</mo></mrow><mo>=</mo><mn>45</mn></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mi>receipt</mi><mo>[</mo><mi>pairsOverNine</mi><mo>]</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>9</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>pairsOverNine.length = 45 ∧ (pairsOverNine.map receipt).eraseDups.length = 9</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\mathrm{pairsOverNine}\right| = 45 \land \left|\operatorname{dedup}\left(\mathrm{receipt}[\mathrm{pairsOverNine}]\right)\right| = 9</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-quantum-the_uncanonicalised_fold_gives_many_answers">
 <p class="thm-label"><strong>Theorem 102</strong> (<code>the_uncanonicalised_fold_gives_many_answers</code>)<a class="thm-cite" href="/theorem/lean_quantum_the_uncanonicalised_fold_gives_many_answers">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mi>naive</mi><mo>[</mo><mrow><mi>perms</mi><mo>(</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>]</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>5</mn></mrow></math></div>
 <pre class="thm-statement"><code>((perms [1, 2, 4, 8]).map naive).eraseDups.length = 5</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\operatorname{dedup}\left(\mathrm{naive}[\mathrm{perms}\mathopen{}\left([1,\,2,\,4,\,8]\right)]\right)\right| = 5</code></pre></details>
 </div>
 <p class="thm-remark">── 8 · HOW BADLY order matters without the sort — counted, not gestured at. Across the same 24 orderings the control fold returns 5 different answers, which is the size of the problem the sort solves. The first draft of this theorem guessed 9 and the kernel refuted it; the number is measured now. A contrast stated as a measured number cannot be softened later. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 4 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-quantum-quantum_settles_its_domain_totally">
 <p class="thm-label"><strong>Theorem 103</strong> (<code>quantum_settles_its_domain_totally</code>)<span class="thm-uncited">not sealed — settled by <code>rfl</code>, not exhausted</span>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>settledHere</mi><mo>=</mo><mn>6</mn></mrow></math></div>
 <pre class="thm-statement"><code>settledHere = 6</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{settledHere} = 6</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>rfl</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
@@ -1019,56 +1207,72 @@ nsPerVerify := 38000      -- the same verify, in nanoseconds</code></pre>
 
 <div class="thm" id="thm-speed-the_verify_path_is_the_exponent">
 <p class="thm-label"><strong>Theorem 104</strong> (<code>the_verify_path_is_the_exponent</code>)<a class="thm-cite" href="/theorem/lean_speed_the_verify_path_is_the_exponent">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mrow><mi>rounds</mi><mo>(</mo><mn>40</mn><mo>,</mo><mn>1024</mn><mo>)</mo></mrow><mo>=</mo><mn>10</mn></mrow><mo>∧</mo><mrow><mrow><mi>rounds</mi><mo>(</mo><mn>40</mn><mo>,</mo><mn>16384</mn><mo>)</mo></mrow><mo>=</mo><mn>14</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mi>rounds</mi><mo>(</mo><mn>40</mn><mo>,</mo><mn>262144</mn><mo>)</mo></mrow><mo>=</mo><mn>18</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mi>rounds</mi><mo>(</mo><mn>40</mn><mo>,</mo><mn>1048576</mn><mo>)</mo></mrow><mo>=</mo><mn>20</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>rounds 40 1024 = 10 ∧ rounds 40 16384 = 14 ∧ rounds 40 262144 = 18 ∧ rounds 40 1048576 = 20</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{rounds}\mathopen{}\left(40,\,1024\right) = 10 \land \mathrm{rounds}\mathopen{}\left(40,\,16384\right) = 14 \land \mathrm{rounds}\mathopen{}\left(40,\,262144\right) = 18 \land \mathrm{rounds}\mathopen{}\left(40,\,1048576\right) = 20</code></pre></details>
 </div>
 <p class="thm-remark">── 1 · THE PATH IS LOGARITHMIC. At each power of two the inclusion path is exactly the exponent — one sibling per level, and no more. This is the whole mechanism. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-speed-the_gap_widens_with_every_doubling">
 <p class="thm-label"><strong>Theorem 105</strong> (<code>the_gap_widens_with_every_doubling</code>)<a class="thm-cite" href="/theorem/lean_speed_the_gap_widens_with_every_doubling">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mfrac><mn>1024</mn><mn>10</mn></mfrac><mo>&lt;</mo><mfrac><mn>16384</mn><mn>14</mn></mfrac></mrow><mo>∧</mo><mrow><mfrac><mn>16384</mn><mn>14</mn></mfrac><mo>&lt;</mo><mfrac><mn>262144</mn><mn>18</mn></mfrac></mrow></mrow><mo>∧</mo><mrow><mfrac><mn>262144</mn><mn>18</mn></mfrac><mo>&lt;</mo><mfrac><mn>1048576</mn><mn>20</mn></mfrac></mrow></mrow></math></div>
 <pre class="thm-statement"><code>1024 / 10 &lt; 16384 / 14 ∧ 16384 / 14 &lt; 262144 / 18 ∧ 262144 / 18 &lt; 1048576 / 20</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\frac{1024}{10} &lt; \frac{16384}{14} \land \frac{16384}{14} &lt; \frac{262144}{18} \land \frac{262144}{18} &lt; \frac{1048576}{20}</code></pre></details>
 </div>
 <p class="thm-remark">── 2 · AND THE GAP GROWS. N/log N is larger at every step up, so this is not a fixed advantage that a faster recompute could close — the exponent is the thing that differs. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-speed-no_constant_factor_accounts_for_the_gap">
 <p class="thm-label"><strong>Theorem 106</strong> (<code>no_constant_factor_accounts_for_the_gap</code>)<a class="thm-cite" href="/theorem/lean_speed_no_constant_factor_accounts_for_the_gap">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>¬</mo><mrow><mrow><mn>10000</mn><mo>⋅</mo><mn>20</mn></mrow><mo>≥</mo><mn>1048576</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mn>100</mn><mo>⋅</mo><mn>10</mn></mrow><mo>≥</mo><mrow><mn>1024</mn><mo>-</mo><mn>24</mn></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>¬ (10000 * 20 ≥ 1048576) ∧ 100 * 10 ≥ 1024 - 24</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\lnot 10000 \cdot 20 \ge 1048576 \land 100 \cdot 10 \ge 1024 - 24</code></pre></details>
 </div>
 <p class="thm-remark">── 3 · NO CONSTANT FACTOR EXPLAINS IT. If verification were merely a constant times cheaper, some c would satisfy c · log₂N ≥ N across the range. Ten thousand does not, at a million leaves. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-speed-the_measured_ratio_at_a_million_leaves">
 <p class="thm-label"><strong>Theorem 107</strong> (<code>the_measured_ratio_at_a_million_leaves</code>)<a class="thm-cite" href="/theorem/lean_speed_the_measured_ratio_at_a_million_leaves">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mfrac><mi>recomputeUs</mi><mi>verifyUs</mi></mfrac><mo>=</mo><mn>567971</mn></mrow><mo>∧</mo><mrow><mi>recomputeUs</mi><mo>&gt;</mo><mrow><mi>verifyUs</mi><mo>⋅</mo><mn>500000</mn></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>recomputeUs / verifyUs = 567971 ∧ recomputeUs &gt; verifyUs * 500000</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\frac{\mathrm{recomputeUs}}{\mathrm{verifyUs}} = 567971 \land \mathrm{recomputeUs} &gt; \mathrm{verifyUs} \cdot 500000</code></pre></details>
 </div>
 <p class="thm-remark">── 4 · THE MEASURED RATIO, from the declared inputs, in the same unit on both sides — the mistake that made an earlier theorem in this deposit compare seal-bits against a leaf count. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-speed-verification_grows_it_is_not_constant">
 <p class="thm-label"><strong>Theorem 108</strong> (<code>verification_grows_it_is_not_constant</code>)<a class="thm-cite" href="/theorem/lean_speed_verification_grows_it_is_not_constant">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>rounds</mi><mo>(</mo><mn>40</mn><mo>,</mo><mn>1024</mn><mo>)</mo></mrow><mo>&lt;</mo><mrow><mi>rounds</mi><mo>(</mo><mn>40</mn><mo>,</mo><mn>1048576</mn><mo>)</mo></mrow></mrow><mo>∧</mo><mrow><mo>∀</mo><mi>k</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>10</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>rounds</mi><mo>(</mo><mn>40</mn><mo>,</mo><msup><mn>2</mn><mi>k</mi></msup><mo>)</mo></mrow><mo>=</mo><mi>k</mi></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>rounds 40 1024 &lt; rounds 40 1048576 ∧ ((List.range' 1 10).all (fun k =&gt; rounds 40 (2 ^ k) == k))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{rounds}\mathopen{}\left(40,\,1024\right) &lt; \mathrm{rounds}\mathopen{}\left(40,\,1048576\right) \land \forall k \in \{1,\dots,10\},\; \mathrm{rounds}\mathopen{}\left(40,\,2^{k}\right) = k</code></pre></details>
 </div>
 <p class="thm-remark">── 5 · VERIFY IS NOT FREE, and calling it O(1) would be the easy overclaim. It grows — slowly, and without bound — so a large enough set costs a longer path. Logarithmic is not constant. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 10 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-speed-the_verify_is_thirty_eight_thousand_nanoseconds_not_one">
 <p class="thm-label"><strong>Theorem 109</strong> (<code>the_verify_is_thirty_eight_thousand_nanoseconds_not_one</code>)<a class="thm-cite" href="/theorem/lean_speed_the_verify_is_thirty_eight_thousand_nanoseconds_not_one">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>nsPerVerify</mi><mo>=</mo><mn>38000</mn></mrow><mo>∧</mo><mrow><mi>nsPerVerify</mi><mo>&gt;</mo><mn>1</mn></mrow></mrow><mo>∧</mo><mrow><mi>nsPerVerify</mi><mo>&gt;</mo><mn>10000</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>nsPerVerify = 38000 ∧ nsPerVerify &gt; 1 ∧ nsPerVerify &gt; 10000</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{nsPerVerify} = 38000 \land \mathrm{nsPerVerify} &gt; 1 \land \mathrm{nsPerVerify} &gt; 10000</code></pre></details>
 </div>
 <p class="thm-remark">── 6 · NOTHING HERE IS SUB-NANOSECOND. The measured verify is 38000 nanoseconds. The claim that it is under one is off by four and a half orders of magnitude, and this theorem exists so that number sits in the ledger next to the impressive one rather than only the impressive one being quotable. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-speed-the_advantage_is_the_count_not_the_operation">
 <p class="thm-label"><strong>Theorem 110</strong> (<code>the_advantage_is_the_count_not_the_operation</code>)<a class="thm-cite" href="/theorem/lean_speed_the_advantage_is_the_count_not_the_operation">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mn>1048576</mn><mo>-</mo><mn>20</mn></mrow><mo>=</mo><mn>1048556</mn></mrow><mo>∧</mo><mrow><mfrac><mn>1048576</mn><mn>20</mn></mfrac><mo>=</mo><mn>52428</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>1048576 - 20 = 1048556 ∧ 1048576 / 20 = 52428</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>1048576 - 20 = 1048556 \land \frac{1048576}{20} = 52428</code></pre></details>
 </div>
 <p class="thm-remark">── 7 · THE WORK PER NODE IS THE SAME on both paths. Recompute and verify run the identical hash; only the COUNT differs. That is what makes this arithmetic rather than a claim about hardware. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-speed-the_break_even_is_the_ratio_of_verifications">
 <p class="thm-label"><strong>Theorem 111</strong> (<code>the_break_even_is_the_ratio_of_verifications</code>)<a class="thm-cite" href="/theorem/lean_speed_the_break_even_is_the_ratio_of_verifications">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mfrac><mn>1048576</mn><mn>20</mn></mfrac><mo>=</mo><mn>52428</mn></mrow><mo>∧</mo><mrow><mrow><mn>52428</mn><mo>⋅</mo><mn>20</mn></mrow><mo>≤</mo><mn>1048576</mn></mrow></mrow><mo>∧</mo><mrow><mn>1048576</mn><mo>&lt;</mo><mrow><mrow><mn>52429</mn><mo>⋅</mo><mn>20</mn></mrow><mo>+</mo><mn>20</mn></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>1048576 / 20 = 52428 ∧ 52428 * 20 ≤ 1048576 ∧ 1048576 &lt; 52429 * 20 + 20</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\frac{1048576}{20} = 52428 \land 52428 \cdot 20 \le 1048576 \land 1048576 &lt; 52429 \cdot 20 + 20</code></pre></details>
 </div>
 <p class="thm-remark">── 8 · PROVE ONCE, VERIFY FOREVER — stated as the break-even it actually is. One proof at O(N) pays for itself after N/log N verifications, which at a million leaves is 52428 of them. Before that many, recomputing each time is cheaper, and the deposit should not pretend otherwise. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
@@ -1099,14 +1303,18 @@ settledHere := 11</code></pre>
 
 <div class="thm" id="thm-families-flt_all_primes_under_thirty">
 <p class="thm-label"><strong>Theorem 112</strong> (<code>flt_all_primes_under_thirty</code>)<a class="thm-cite" href="/theorem/lean_families_flt_all_primes_under_thirty">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>p</mi><mo>∈</mo><mi>primesUpTo30</mi><mo>,</mo><mrow><mo>∀</mo><mi>a</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mrow><mn>1</mn><mo>+</mo><mrow><mi>p</mi><mo>-</mo><mn>1</mn></mrow><mo>−</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>,</mo><mrow><mrow><msup><mi>a</mi><mrow><mi>p</mi><mo>-</mo><mn>1</mn></mrow></msup><mo>mod</mo><mi>p</mi></mrow><mo>=</mo><mn>1</mn></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>primesUpTo30.all (fun p =&gt; (List.range' 1 (p - 1)).all (fun a =&gt; (a ^ (p - 1)) % p == 1))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall p \in \mathrm{primesUpTo30},\; \forall a \in \{1,\dots,1+p - 1-1\},\; a^{p - 1} \bmod p = 1</code></pre></details>
 </div>
 <p class="thm-remark">── Fermat's little theorem, over every prime below thirty and every nonzero residue ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-families-wilson_all_primes_under_thirty">
 <p class="thm-label"><strong>Theorem 113</strong> (<code>wilson_all_primes_under_thirty</code>)<a class="thm-cite" href="/theorem/lean_families_wilson_all_primes_under_thirty">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>p</mi><mo>∈</mo><mi>primesUpTo30</mi><mo>,</mo><mrow><mrow><mrow><mi>fact</mi><mo>(</mo><mrow><mi>p</mi><mo>-</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>mod</mo><mi>p</mi></mrow><mo>=</mo><mrow><mi>p</mi><mo>-</mo><mn>1</mn></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>primesUpTo30.all (fun p =&gt; fact (p - 1) % p == p - 1)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall p \in \mathrm{primesUpTo30},\; \mathrm{fact}\mathopen{}\left(p - 1\right) \bmod p = p - 1</code></pre></details>
 </div>
 <p class="thm-remark">── Wilson's theorem, same range: (p−1)! ≡ p−1 (mod p) ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
@@ -1120,27 +1328,35 @@ settledHere := 11</code></pre>
 
 <div class="thm" id="thm-families-pascal_rows_sum_to_powers_of_two">
 <p class="thm-label"><strong>Theorem 115</strong> (<code>pascal_rows_sum_to_powers_of_two</code>)<a class="thm-cite" href="/theorem/lean_families_pascal_rows_sum_to_powers_of_two">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>11</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mo>∑</mo><mrow><mo>{</mo><mrow><mi>choose</mi><mo>(</mo><mi>n</mi><mo>,</mo><mi>k</mi><mo>)</mo></mrow><mo>∣</mo><mi>k</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mrow><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo>−</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>}</mo></mrow></mrow><mo>=</mo><msup><mn>2</mn><mi>n</mi></msup></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range 12).all (fun n =&gt; ((List.range (n + 1)).map (fun k =&gt; choose n k)).foldl (· + ·) 0 == 2 ^ n)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in \{0,\dots,11\},\; \sum \{\, \mathrm{choose}\mathopen{}\left(n,\,k\right) \mid k \in \{0,\dots,n + 1-1\} \,\} = 2^{n}</code></pre></details>
 </div>
 <p class="thm-remark">── Pascal: every row sums to a power of two ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 12 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-families-pascal_alternating_sums_vanish">
 <p class="thm-label"><strong>Theorem 116</strong> (<code>pascal_alternating_sums_vanish</code>)<a class="thm-cite" href="/theorem/lean_families_pascal_alternating_sums_vanish">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>11</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mo>∑</mo><mrow><mo>{</mo><mrow><mo>(</mo><mrow><mi>choose</mi><mo>(</mo><mi>n</mi><mo>,</mo><mi>k</mi><mo>)</mo></mrow><mo>if</mo><mrow><mrow><mi>k</mi><mo>mod</mo><mn>2</mn></mrow><mo>=</mo><mn>0</mn></mrow><mo>;</mo><mo>otherwise</mo><mn>0</mn><mo>)</mo></mrow><mo>∣</mo><mi>k</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mrow><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo>−</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>}</mo></mrow></mrow><mo>=</mo><mrow><mo>∑</mo><mrow><mo>{</mo><mrow><mo>(</mo><mrow><mi>choose</mi><mo>(</mo><mi>n</mi><mo>,</mo><mi>k</mi><mo>)</mo></mrow><mo>if</mo><mrow><mrow><mi>k</mi><mo>mod</mo><mn>2</mn></mrow><mo>=</mo><mn>1</mn></mrow><mo>;</mo><mo>otherwise</mo><mn>0</mn><mo>)</mo></mrow><mo>∣</mo><mi>k</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mrow><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo>−</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>}</mo></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 1 11).all (fun n =&gt; ((List.range (n + 1)).map (fun k =&gt; if k % 2 == 0 then choose n k else 0)).foldl (· + ·) 0 == ((List.range (n + 1)).map (fun k =&gt; if k % 2 == 1 then choose n k else 0)).foldl (· + ·) 0)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in \{1,\dots,11\},\; \sum \{\, \begin{cases}\mathrm{choose}\mathopen{}\left(n,\,k\right) &amp; \text{if } k \bmod 2 = 0\\ 0 &amp; \text{otherwise}\end{cases} \mid k \in \{0,\dots,n + 1-1\} \,\} = \sum \{\, \begin{cases}\mathrm{choose}\mathopen{}\left(n,\,k\right) &amp; \text{if } k \bmod 2 = 1\\ 0 &amp; \text{otherwise}\end{cases} \mid k \in \{0,\dots,n + 1-1\} \,\}</code></pre></details>
 </div>
 <p class="thm-remark">── Pascal: the alternating sum vanishes on every row but the zeroth ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 11 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-families-totient_at_prime_powers">
 <p class="thm-label"><strong>Theorem 117</strong> (<code>totient_at_prime_powers</code>)<a class="thm-cite" href="/theorem/lean_families_totient_at_prime_powers">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>p</mi><mo>∈</mo><mrow><mo>[</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow><mo>,</mo><mrow><mo>∀</mo><mi>k</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>3</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>totient</mi><mo>(</mo><msup><mi>p</mi><mi>k</mi></msup><mo>)</mo></mrow><mo>=</mo><mrow><msup><mi>p</mi><mi>k</mi></msup><mo>-</mo><msup><mi>p</mi><mrow><mi>k</mi><mo>-</mo><mn>1</mn></mrow></msup></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[2, 3, 5, 7].all (fun p =&gt; (List.range' 1 3).all (fun k =&gt; totient (p ^ k) == p ^ k - p ^ (k - 1)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall p \in [2,\,3,\,5,\,7],\; \forall k \in \{1,\dots,3\},\; \mathrm{totient}\mathopen{}\left(p^{k}\right) = p^{k} - p^{k - 1}</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 12 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-families-geometric_series_all_bases">
 <p class="thm-label"><strong>Theorem 118</strong> (<code>geometric_series_all_bases</code>)<a class="thm-cite" href="/theorem/lean_families_geometric_series_all_bases">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>b</mi><mo>∈</mo><mrow><mo>{</mo><mn>2</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>9</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mrow><mo>∑</mo><mrow><mo>{</mo><msup><mi>b</mi><mi>i</mi></msup><mo>∣</mo><mi>i</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>4</mn><mo>}</mo></mrow><mo>}</mo></mrow></mrow><mo>⋅</mo><mrow><mi>b</mi><mo>-</mo><mn>1</mn></mrow></mrow><mo>=</mo><mrow><msup><mi>b</mi><mn>5</mn></msup><mo>-</mo><mn>1</mn></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 2 8).all (fun b =&gt; ((List.range 5).map (fun i =&gt; b ^ i)).foldl (· + ·) 0 * (b - 1) == b ^ 5 - 1)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall b \in \{2,\dots,9\},\; \sum \{\, b^{i} \mid i \in \{0,\dots,4\} \,\} \cdot b - 1 = b^{5} - 1</code></pre></details>
 </div>
 <p class="thm-remark">── the geometric series in every base 2..9, to the fourth power ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 40 cases. <span class="qed">□</span></p>
@@ -1153,27 +1369,35 @@ settledHere := 11</code></pre>
 
 <div class="thm" id="thm-families-nat_div_is_a_total_function_returning_zero_at_a_zero_divisor">
 <p class="thm-label"><strong>Theorem 120</strong> (<code>nat_div_is_a_total_function_returning_zero_at_a_zero_divisor</code>)<a class="thm-cite" href="/theorem/lean_families_nat_div_is_a_total_function_returning_zero_at_a_zero_divisor">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mfrac><mn>7</mn><mn>0</mn></mfrac><mo>=</mo><mn>0</mn></mrow><mo>∧</mo><mrow><mfrac><mn>0</mn><mn>0</mn></mfrac><mo>=</mo><mn>0</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mn>7</mn><mo>mod</mo><mn>0</mn></mrow><mo>=</mo><mn>7</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(7 / 0) = 0 ∧ (0 / 0) = 0 ∧ (7 % 0) = 7</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\frac{7}{0} = 0 \land \frac{0}{0} = 0 \land 7 \bmod 0 = 7</code></pre></details>
 </div>
 <p class="thm-remark">── THE CONVENTION AT ZERO, stated as a convention and not as arithmetic. Division by zero is UNDEFINED in mathematics: there is no quotient, and nothing below claims otherwise. What is recorded here is a property of Lean's FUNCTION `Nat.div`, which is total — every pair of naturals is mapped somewhere, including a zero divisor, where the definition returns 0. That is a choice made so the function is total and `decide` never faults on a side condition; it is not a claim that dividing by zero yields zero, and an earlier name here ("division_by_zero_is_zero") said exactly that and was wrong. The deposit reads division by zero as a CHANGE OF DOMAIN, which is the same point put positively: the value is not found in the arithmetic, it is supplied by the definition — a different domain entirely. Naming this precisely matters, because a reader who takes `7 / 0 = 0` for arithmetic has been misled by a theorem that is green. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-families-division_identity_holds_across_the_range">
 <p class="thm-label"><strong>Theorem 121</strong> (<code>division_identity_holds_across_the_range</code>)<a class="thm-cite" href="/theorem/lean_families_division_identity_holds_across_the_range">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>12</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mrow><mfrac><mn>12</mn><mi>d</mi></mfrac><mo>⋅</mo><mi>d</mi></mrow><mo>+</mo><mrow><mn>12</mn><mo>mod</mo><mi>d</mi></mrow></mrow><mo>=</mo><mn>12</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range 13).all (fun d =&gt; (12 / d) * d + (12 % d) == 12)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in \{0,\dots,12\},\; \frac{12}{d} \cdot d + 12 \bmod d = 12</code></pre></details>
 </div>
 <p class="thm-remark">the division identity holds across a range INCLUDING zero — but at zero it is carried entirely by the remainder, because the quotient was supplied by the convention rather than computed</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 13 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-families-at_a_zero_divisor_the_identity_is_carried_by_the_remainder">
 <p class="thm-label"><strong>Theorem 122</strong> (<code>at_a_zero_divisor_the_identity_is_carried_by_the_remainder</code>)<a class="thm-cite" href="/theorem/lean_families_at_a_zero_divisor_the_identity_is_carried_by_the_remainder">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mfrac><mn>12</mn><mn>0</mn></mfrac><mo>=</mo><mn>0</mn></mrow><mo>∧</mo><mrow><mrow><mn>12</mn><mo>mod</mo><mn>0</mn></mrow><mo>=</mo><mn>12</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mrow><mfrac><mn>12</mn><mn>0</mn></mfrac><mo>⋅</mo><mn>0</mn></mrow><mo>+</mo><mrow><mn>12</mn><mo>mod</mo><mn>0</mn></mrow></mrow><mo>=</mo><mn>12</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(12 / 0) = 0 ∧ (12 % 0) = 12 ∧ (12 / 0) * 0 + (12 % 0) == 12</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\frac{12}{0} = 0 \land 12 \bmod 0 = 12 \land \frac{12}{0} \cdot 0 + 12 \bmod 0 = 12</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-families-families_settle_their_ranges">
 <p class="thm-label"><strong>Theorem 123</strong> (<code>families_settle_their_ranges</code>)<span class="thm-uncited">not sealed — settled by <code>rfl</code>, not exhausted</span>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>settledHere</mi><mo>=</mo><mn>11</mn></mrow></math></div>
 <pre class="thm-statement"><code>settledHere = 11</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{settledHere} = 11</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>rfl</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
@@ -1200,56 +1424,72 @@ tetB := [2, 5, 8]</code></pre>
 
 <div class="thm" id="thm-merkaba-the_three_classes_partition_z9">
 <p class="thm-label"><strong>Theorem 124</strong> (<code>the_three_classes_partition_z9</code>)<a class="thm-cite" href="/theorem/lean_merkaba_the_three_classes_partition_z9">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mrow><mrow><mo>|</mo><mi>axis</mi><mo>|</mo></mrow><mo>=</mo><mn>3</mn></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mi>tetA</mi><mo>|</mo></mrow><mo>=</mo><mn>3</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mi>tetB</mi><mo>|</mo></mrow><mo>=</mo><mn>3</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mrow><mi>axis</mi><mo>⧺</mo><mi>tetA</mi></mrow><mo>⧺</mo><mi>tetB</mi></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>9</mn></mrow></mrow><mo>∧</mo><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>8</mn><mo>}</mo></mrow><mo>,</mo><mrow><mi>d</mi><mo>∈</mo><mrow><mrow><mi>axis</mi><mo>⧺</mo><mi>tetA</mi></mrow><mo>⧺</mo><mi>tetB</mi></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>axis.length = 3 ∧ tetA.length = 3 ∧ tetB.length = 3 ∧ (axis ++ tetA ++ tetB).eraseDups.length = 9 ∧ ((List.range 9).all (fun d =&gt; (axis ++ tetA ++ tetB).contains d))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\mathrm{axis}\right| = 3 \land \left|\mathrm{tetA}\right| = 3 \land \left|\mathrm{tetB}\right| = 3 \land \left|\operatorname{dedup}\left(\mathrm{axis} \mathbin{+\!\!+} \mathrm{tetA} \mathbin{+\!\!+} \mathrm{tetB}\right)\right| = 9 \land \forall d \in \{0,\dots,8\},\; d \in \mathrm{axis} \mathbin{+\!\!+} \mathrm{tetA} \mathbin{+\!\!+} \mathrm{tetB}</code></pre></details>
 </div>
 <p class="thm-remark">── 1 · the three classes partition ℤ/9 into 3+3+3 — disjoint, and together the whole ring ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-merkaba-the_axis_is_closed_under_doubling">
 <p class="thm-label"><strong>Theorem 125</strong> (<code>the_axis_is_closed_under_doubling</code>)<a class="thm-cite" href="/theorem/lean_merkaba_the_axis_is_closed_under_doubling">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mi>dbl</mi><mo>(</mo><mi>axis</mi><mo>)</mo></mrow><mo>,</mo><mrow><mi>d</mi><mo>∈</mo><mi>axis</mi></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(dbl axis).all (fun d =&gt; axis.contains d)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in \mathrm{dbl}\mathopen{}\left(\mathrm{axis}\right),\; d \in \mathrm{axis}</code></pre></details>
 </div>
 <p class="thm-remark">── 2 · the axis is CLOSED under doubling — the spindle turns into itself, which is what makes it an axis ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-merkaba-doubling_counter_rotates_the_two_tetrahedra">
 <p class="thm-label"><strong>Theorem 126</strong> (<code>doubling_counter_rotates_the_two_tetrahedra</code>)<a class="thm-cite" href="/theorem/lean_merkaba_doubling_counter_rotates_the_two_tetrahedra">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mi>dbl</mi><mo>(</mo><mi>tetA</mi><mo>)</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>3</mn></mrow><mo>∧</mo><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mi>dbl</mi><mo>(</mo><mi>tetA</mi><mo>)</mo></mrow><mo>,</mo><mrow><mi>d</mi><mo>∈</mo><mi>tetB</mi></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mi>dbl</mi><mo>(</mo><mi>tetB</mi><mo>)</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>3</mn></mrow></mrow><mo>∧</mo><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mi>dbl</mi><mo>(</mo><mi>tetB</mi><mo>)</mo></mrow><mo>,</mo><mrow><mi>d</mi><mo>∈</mo><mi>tetA</mi></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(dbl tetA).eraseDups.length = 3 ∧ (dbl tetA).all (fun d =&gt; tetB.contains d) ∧ (dbl tetB).eraseDups.length = 3 ∧ (dbl tetB).all (fun d =&gt; tetA.contains d)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\operatorname{dedup}\left(\mathrm{dbl}\mathopen{}\left(\mathrm{tetA}\right)\right)\right| = 3 \land \forall d \in \mathrm{dbl}\mathopen{}\left(\mathrm{tetA}\right),\; d \in \mathrm{tetB} \land \left|\operatorname{dedup}\left(\mathrm{dbl}\mathopen{}\left(\mathrm{tetB}\right)\right)\right| = 3 \land \forall d \in \mathrm{dbl}\mathopen{}\left(\mathrm{tetB}\right),\; d \in \mathrm{tetA}</code></pre></details>
 </div>
 <p class="thm-remark">── 3 · and the two tetrahedra do NOT close: doubling carries each ONTO THE OTHER. That exchange is the counter-rotation the name refers to — stated as two set equalities, in both directions, so it is a swap and not merely an inclusion that might collapse. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-merkaba-the_counter_rotation_has_period_two">
 <p class="thm-label"><strong>Theorem 127</strong> (<code>the_counter_rotation_has_period_two</code>)<a class="thm-cite" href="/theorem/lean_merkaba_the_counter_rotation_has_period_two">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mi>dbl</mi><mo>(</mo><mrow><mi>dbl</mi><mo>(</mo><mi>tetA</mi><mo>)</mo></mrow><mo>)</mo></mrow><mo>,</mo><mrow><mi>d</mi><mo>∈</mo><mi>tetA</mi></mrow></mrow><mo>∧</mo><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mi>dbl</mi><mo>(</mo><mrow><mi>dbl</mi><mo>(</mo><mi>tetB</mi><mo>)</mo></mrow><mo>)</mo></mrow><mo>,</mo><mrow><mi>d</mi><mo>∈</mo><mi>tetB</mi></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(dbl (dbl tetA)).all (fun d =&gt; tetA.contains d) ∧ (dbl (dbl tetB)).all (fun d =&gt; tetB.contains d)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in \mathrm{dbl}\mathopen{}\left(\mathrm{dbl}\mathopen{}\left(\mathrm{tetA}\right)\right),\; d \in \mathrm{tetA} \land \forall d \in \mathrm{dbl}\mathopen{}\left(\mathrm{dbl}\mathopen{}\left(\mathrm{tetB}\right)\right),\; d \in \mathrm{tetB}</code></pre></details>
 </div>
 <p class="thm-remark">── 4 · doubling twice returns each tetrahedron to itself — the rotation has period two, so the pair really does turn against each other rather than drift ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-merkaba-the_tetrahedra_residue_sums_cancel">
 <p class="thm-label"><strong>Theorem 128</strong> (<code>the_tetrahedra_residue_sums_cancel</code>)<a class="thm-cite" href="/theorem/lean_merkaba_the_tetrahedra_residue_sums_cancel">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mo>∑</mo><mi>tetA</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>3</mn></mrow><mo>∧</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mo>∑</mo><mi>tetB</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>6</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mrow><mo>∑</mo><mi>tetA</mi></mrow><mo>+</mo><mrow><mo>∑</mo><mi>tetB</mi></mrow></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>m9 (tetA.foldl (· + ·) 0) = 3 ∧ m9 (tetB.foldl (· + ·) 0) = 6 ∧ m9 (tetA.foldl (· + ·) 0 + tetB.foldl (· + ·) 0) = 0</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{m9}\mathopen{}\left(\sum \mathrm{tetA}\right) = 3 \land \mathrm{m9}\mathopen{}\left(\sum \mathrm{tetB}\right) = 6 \land \mathrm{m9}\mathopen{}\left(\sum \mathrm{tetA} + \sum \mathrm{tetB}\right) = 0</code></pre></details>
 </div>
 <p class="thm-remark">── 5 · the two tetrahedra's residue sums cancel: 1+4+7 ≡ 3, 2+5+8 ≡ 6, and 3+6 ≡ 0 ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-merkaba-one_tetrahedron_covers_half_the_units">
 <p class="thm-label"><strong>Theorem 129</strong> (<code>one_tetrahedron_covers_half_the_units</code>)<a class="thm-cite" href="/theorem/lean_merkaba_one_tetrahedron_covers_half_the_units">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mo>|</mo><mrow><mo>{</mo><mi>d</mi><mo>∈</mo><mi>units</mi><mo>∣</mo><mrow><mi>d</mi><mo>∈</mo><mi>tetA</mi></mrow><mo>}</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>3</mn></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mo>{</mo><mi>d</mi><mo>∈</mo><mi>units</mi><mo>∣</mo><mrow><mi>d</mi><mo>∈</mo><mi>tetB</mi></mrow><mo>}</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>3</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mi>units</mi><mo>|</mo></mrow><mo>=</mo><mn>6</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(units.filter (fun d =&gt; tetA.contains d)).length = 3 ∧ (units.filter (fun d =&gt; tetB.contains d)).length = 3 ∧ units.length = 6</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\{\, d \in \mathrm{units} \mid d \in \mathrm{tetA} \,\}\right| = 3 \land \left|\{\, d \in \mathrm{units} \mid d \in \mathrm{tetB} \,\}\right| = 3 \land \left|\mathrm{units}\right| = 6</code></pre></details>
 </div>
 <p class="thm-remark">── 6 · ONE tetrahedron is not enough. It meets exactly three of the six units — half — so a claim resting on a single tetrahedron covers half the group and leaves the other half untouched. The revoked entry said "3 remain uncovered"; here that is both halves, counted. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-merkaba-the_cube_and_the_tetrahedron_count_out">
 <p class="thm-label"><strong>Theorem 130</strong> (<code>the_cube_and_the_tetrahedron_count_out</code>)<a class="thm-cite" href="/theorem/lean_merkaba_the_cube_and_the_tetrahedron_count_out">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><msup><mn>2</mn><mn>3</mn></msup><mo>=</mo><mn>8</mn></mrow><mo>∧</mo><mrow><mrow><mn>3</mn><mo>⋅</mo><msup><mn>2</mn><mn>2</mn></msup></mrow><mo>=</mo><mn>12</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mrow><mn>4</mn><mo>+</mo><mn>4</mn></mrow><mo>-</mo><mn>6</mn></mrow><mo>=</mo><mn>2</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>2 ^ 3 = 8 ∧ 3 * 2 ^ 2 = 12 ∧ 4 + 4 - 6 = 2</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>2^{3} = 8 \land 3 \cdot 2^{2} = 12 \land 4 + 4 - 6 = 2</code></pre></details>
 </div>
 <p class="thm-remark">── 7 · the two tetrahedra as the cube Q₃ — 2³ = 8 vertices, 3·2² = 12 edges — and the tetrahedron's own Euler characteristic V − E + F = 2, the self-dual solid on the sphere. Written V + F − E, not V − E + F: ℕ subtraction TRUNCATES, so 4 − 6 evaluates to 0 and the honest formula would have "proved" 4 = 2. The kernel caught exactly that here. Same lesson as the seal-bits theorem earlier — a comparison is only worth what its operands are.</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-merkaba-stacked_triangles_are_tetrahedral">
 <p class="thm-label"><strong>Theorem 131</strong> (<code>stacked_triangles_are_tetrahedral</code>)<a class="thm-cite" href="/theorem/lean_merkaba_stacked_triangles_are_tetrahedral">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>40</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>sumTri</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mrow><mi>n</mi><mo>⋅</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></mrow><mo>⋅</mo><mrow><mi>n</mi><mo>+</mo><mn>2</mn></mrow></mrow><mn>6</mn></mfrac></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 1 40).all (fun n =&gt; sumTri n == n * (n + 1) * (n + 2) / 6)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in \{1,\dots,40\},\; \mathrm{sumTri}\mathopen{}\left(n\right) = \frac{n \cdot n + 1 \cdot n + 2}{6}</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 40 cases. <span class="qed">□</span></p>
 
@@ -1268,27 +1508,35 @@ as a single subtraction would truncate at zero and quietly hold for the wrong re
 
 <div class="thm" id="thm-sequences-cassini_at_even_indices">
 <p class="thm-label"><strong>Theorem 132</strong> (<code>cassini_at_even_indices</code>)<a class="thm-cite" href="/theorem/lean_sequences_cassini_at_even_indices">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>20</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mrow><mi>n</mi><mo>mod</mo><mn>2</mn></mrow><mo>=</mo><mn>1</mn></mrow><mo>∨</mo><mrow><mrow><mrow><mi>fib</mi><mo>(</mo><mrow><mi>n</mi><mo>-</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>⋅</mo><mrow><mi>fib</mi><mo>(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mi>fib</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><mo>⋅</mo><mrow><mi>fib</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow></mrow><mo>+</mo><mn>1</mn></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 1 20).all (fun n =&gt; n % 2 == 1 || fib (n - 1) * fib (n + 1) == fib n * fib n + 1)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in \{1,\dots,20\},\; n \bmod 2 = 1 \lor \mathrm{fib}\mathopen{}\left(n - 1\right) \cdot \mathrm{fib}\mathopen{}\left(n + 1\right) = \mathrm{fib}\mathopen{}\left(n\right) \cdot \mathrm{fib}\mathopen{}\left(n\right) + 1</code></pre></details>
 </div>
 <p class="thm-remark">── CASSINI: F(n−1)·F(n+1) − F(n)² = ±1, alternating. Stated in both directions over 1..20. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 20 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-sequences-cassini_at_odd_indices">
 <p class="thm-label"><strong>Theorem 133</strong> (<code>cassini_at_odd_indices</code>)<a class="thm-cite" href="/theorem/lean_sequences_cassini_at_odd_indices">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>20</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mrow><mi>n</mi><mo>mod</mo><mn>2</mn></mrow><mo>=</mo><mn>0</mn></mrow><mo>∨</mo><mrow><mrow><mrow><mrow><mi>fib</mi><mo>(</mo><mrow><mi>n</mi><mo>-</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>⋅</mo><mrow><mi>fib</mi><mo>(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mo>+</mo><mn>1</mn></mrow><mo>=</mo><mrow><mrow><mi>fib</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><mo>⋅</mo><mrow><mi>fib</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 1 20).all (fun n =&gt; n % 2 == 0 || fib (n - 1) * fib (n + 1) + 1 == fib n * fib n)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in \{1,\dots,20\},\; n \bmod 2 = 0 \lor \mathrm{fib}\mathopen{}\left(n - 1\right) \cdot \mathrm{fib}\mathopen{}\left(n + 1\right) + 1 = \mathrm{fib}\mathopen{}\left(n\right) \cdot \mathrm{fib}\mathopen{}\left(n\right)</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 20 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-sequences-cassini_deviation_is_exactly_one">
 <p class="thm-label"><strong>Theorem 134</strong> (<code>cassini_deviation_is_exactly_one</code>)<a class="thm-cite" href="/theorem/lean_sequences_cassini_deviation_is_exactly_one">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>20</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mrow><mrow><mi>fib</mi><mo>(</mo><mrow><mi>n</mi><mo>-</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>⋅</mo><mrow><mi>fib</mi><mo>(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mi>fib</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><mo>⋅</mo><mrow><mi>fib</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow></mrow><mo>+</mo><mn>1</mn></mrow></mrow><mo>∨</mo><mrow><mrow><mrow><mrow><mi>fib</mi><mo>(</mo><mrow><mi>n</mi><mo>-</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>⋅</mo><mrow><mi>fib</mi><mo>(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mo>+</mo><mn>1</mn></mrow><mo>=</mo><mrow><mrow><mi>fib</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><mo>⋅</mo><mrow><mi>fib</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 1 20).all (fun n =&gt; (fib (n - 1) * fib (n + 1) == fib n * fib n + 1) || (fib (n - 1) * fib (n + 1) + 1 == fib n * fib n))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in \{1,\dots,20\},\; \mathrm{fib}\mathopen{}\left(n - 1\right) \cdot \mathrm{fib}\mathopen{}\left(n + 1\right) = \mathrm{fib}\mathopen{}\left(n\right) \cdot \mathrm{fib}\mathopen{}\left(n\right) + 1 \lor \mathrm{fib}\mathopen{}\left(n - 1\right) \cdot \mathrm{fib}\mathopen{}\left(n + 1\right) + 1 = \mathrm{fib}\mathopen{}\left(n\right) \cdot \mathrm{fib}\mathopen{}\left(n\right)</code></pre></details>
 </div>
 <p class="thm-remark">── and the deviation is never more than one, in either direction — the identity is tight ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 20 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-sequences-lucas_mod_two_is_the_and_rule">
 <p class="thm-label"><strong>Theorem 135</strong> (<code>lucas_mod_two_is_the_and_rule</code>)<a class="thm-cite" href="/theorem/lean_sequences_lucas_mod_two_is_the_and_rule">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>13</mn><mo>}</mo></mrow><mo>,</mo><mrow><mo>∀</mo><mi>k</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mrow><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo>−</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mrow><mrow><mi>choose</mi><mo>(</mo><mi>n</mi><mo>,</mo><mi>k</mi><mo>)</mo></mrow><mo>mod</mo><mn>2</mn></mrow><mo>=</mo><mn>1</mn></mrow><mo>=</mo><mrow><mrow><mi>andN</mi><mo>(</mo><mi>k</mi><mo>,</mo><mi>n</mi><mo>)</mo></mrow><mo>=</mo><mi>k</mi></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range 14).all (fun n =&gt; (List.range (n + 1)).all (fun k =&gt; (choose n k % 2 == 1) == (andN k n == k)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in \{0,\dots,13\},\; \forall k \in \{0,\dots,n + 1-1\},\; \mathrm{choose}\mathopen{}\left(n,\,k\right) \bmod 2 = 1 = \mathrm{andN}\mathopen{}\left(k,\,n\right) = k</code></pre></details>
 </div>
 <p class="thm-remark">── LUCAS mod two: C(n,k) is odd exactly when k AND n = k — the Sierpiński rule behind Rule 90 ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 14 cases. <span class="qed">□</span></p>
@@ -1302,21 +1550,27 @@ as a single subtraction would truncate at zero and quietly hold for the wrong re
 
 <div class="thm" id="thm-sequences-sums_of_two_squares_are_closed">
 <p class="thm-label"><strong>Theorem 137</strong> (<code>sums_of_two_squares_are_closed</code>)<a class="thm-cite" href="/theorem/lean_sequences_sums_of_two_squares_are_closed">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>a</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>7</mn><mo>}</mo></mrow><mo>,</mo><mrow><mo>∀</mo><mi>b</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>7</mn><mo>}</mo></mrow><mo>,</mo><mrow><mo>∀</mo><mi>c</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>7</mn><mo>}</mo></mrow><mo>,</mo><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>7</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mrow><mrow><mrow><mi>a</mi><mo>⋅</mo><mi>a</mi></mrow><mo>+</mo><mrow><mi>b</mi><mo>⋅</mo><mi>b</mi></mrow></mrow><mo>⋅</mo><mrow><mrow><mi>c</mi><mo>⋅</mo><mi>c</mi></mrow><mo>+</mo><mrow><mi>d</mi><mo>⋅</mo><mi>d</mi></mrow></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mrow><mi>a</mi><mo>⋅</mo><mi>c</mi></mrow><mo>-</mo><mrow><mi>b</mi><mo>⋅</mo><mi>d</mi></mrow></mrow><mo>⋅</mo><mrow><mrow><mi>a</mi><mo>⋅</mo><mi>c</mi></mrow><mo>-</mo><mrow><mi>b</mi><mo>⋅</mo><mi>d</mi></mrow></mrow></mrow><mo>+</mo><mrow><mrow><mrow><mi>a</mi><mo>⋅</mo><mi>d</mi></mrow><mo>+</mo><mrow><mi>b</mi><mo>⋅</mo><mi>c</mi></mrow></mrow><mo>⋅</mo><mrow><mrow><mi>a</mi><mo>⋅</mo><mi>d</mi></mrow><mo>+</mo><mrow><mi>b</mi><mo>⋅</mo><mi>c</mi></mrow></mrow></mrow></mrow></mrow><mo>∨</mo><mrow><mrow><mi>a</mi><mo>⋅</mo><mi>c</mi></mrow><mo>&lt;</mo><mrow><mi>b</mi><mo>⋅</mo><mi>d</mi></mrow></mrow></mrow></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range 8).all (fun a =&gt; (List.range 8).all (fun b =&gt; (List.range 8).all (fun c =&gt; (List.range 8).all (fun d =&gt; (a*a + b*b) * (c*c + d*d) == (a*c - b*d) * (a*c - b*d) + (a*d + b*c) * (a*d + b*c) || (a*c) &lt; (b*d)))))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall a \in \{0,\dots,7\},\; \forall b \in \{0,\dots,7\},\; \forall c \in \{0,\dots,7\},\; \forall d \in \{0,\dots,7\},\; a \cdot a + b \cdot b \cdot c \cdot c + d \cdot d = a \cdot c - b \cdot d \cdot a \cdot c - b \cdot d + a \cdot d + b \cdot c \cdot a \cdot d + b \cdot c \lor a \cdot c &lt; b \cdot d</code></pre></details>
 </div>
 <p class="thm-remark">── BRAHMAGUPTA–FIBONACCI: sums of two squares are closed under multiplication ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 4,096 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-sequences-three_five_eight_are_consecutive">
 <p class="thm-label"><strong>Theorem 138</strong> (<code>three_five_eight_are_consecutive</code>)<a class="thm-cite" href="/theorem/lean_sequences_three_five_eight_are_consecutive">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mrow><mi>fib</mi><mo>(</mo><mn>4</mn><mo>)</mo></mrow><mo>=</mo><mn>3</mn></mrow><mo>∧</mo><mrow><mrow><mi>fib</mi><mo>(</mo><mn>5</mn><mo>)</mo></mrow><mo>=</mo><mn>5</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mi>fib</mi><mo>(</mo><mn>6</mn><mo>)</mo></mrow><mo>=</mo><mn>8</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mrow><mi>fib</mi><mo>(</mo><mn>4</mn><mo>)</mo></mrow><mo>+</mo><mrow><mi>fib</mi><mo>(</mo><mn>5</mn><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mi>fib</mi><mo>(</mo><mn>6</mn><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>fib 4 = 3 ∧ fib 5 = 5 ∧ fib 6 = 8 ∧ fib 4 + fib 5 = fib 6</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{fib}\mathopen{}\left(4\right) = 3 \land \mathrm{fib}\mathopen{}\left(5\right) = 5 \land \mathrm{fib}\mathopen{}\left(6\right) = 8 \land \mathrm{fib}\mathopen{}\left(4\right) + \mathrm{fib}\mathopen{}\left(5\right) = \mathrm{fib}\mathopen{}\left(6\right)</code></pre></details>
 </div>
 <p class="thm-remark">── the Fibonacci triple three, five, eight — consecutive, and summing as the recurrence requires ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-sequences-pisano_twentyfour_is_four_sixes">
 <p class="thm-label"><strong>Theorem 139</strong> (<code>pisano_twentyfour_is_four_sixes</code>)<a class="thm-cite" href="/theorem/lean_sequences_pisano_twentyfour_is_four_sixes">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>k</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>29</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mrow><mi>fib</mi><mo>(</mo><mi>k</mi><mo>)</mo></mrow><mo>mod</mo><mn>9</mn></mrow><mo>=</mo><mrow><mrow><mi>fib</mi><mo>(</mo><mrow><mi>k</mi><mo>+</mo><mn>24</mn></mrow><mo>)</mo></mrow><mo>mod</mo><mn>9</mn></mrow></mrow></mrow><mo>∧</mo><mrow><mn>24</mn><mo>=</mo><mrow><mn>4</mn><mo>⋅</mo><mn>6</mn></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range 30).all (fun k =&gt; fib k % 9 == fib (k + 24) % 9) ∧ 24 = 4 * 6</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall k \in \{0,\dots,29\},\; \mathrm{fib}\mathopen{}\left(k\right) \bmod 9 = \mathrm{fib}\mathopen{}\left(k + 24\right) \bmod 9 \land 24 = 4 \cdot 6</code></pre></details>
 </div>
 <p class="thm-remark">── the Pisano period binds Fibonacci to the ring: mod 9 it repeats every 24, four times the doubling six ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 30 cases. <span class="qed">□</span></p>
@@ -1345,139 +1599,181 @@ settledHere := 21</code></pre>
 
 <div class="thm" id="thm-z9-units_are_six">
 <p class="thm-label"><strong>Theorem 140</strong> (<code>units_are_six</code>)<a class="thm-cite" href="/theorem/lean_z9_units_are_six">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>units</mi><mo>=</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></math></div>
 <pre class="thm-statement"><code>units = [1, 2, 4, 5, 7, 8]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{units} = [1,\,2,\,4,\,5,\,7,\,8]</code></pre></details>
 </div>
 <p class="thm-remark">── the units: exactly the six residues coprime to nine ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 6 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9-units_count">
 <p class="thm-label"><strong>Theorem 141</strong> (<code>units_count</code>)<a class="thm-cite" href="/theorem/lean_z9_units_count">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mi>units</mi><mo>|</mo></mrow><mo>=</mo><mn>6</mn></mrow></math></div>
 <pre class="thm-statement"><code>units.length = 6</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\mathrm{units}\right| = 6</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9-hasinv_units">
 <p class="thm-label"><strong>Theorem 142</strong> (<code>hasinv_units</code>)<a class="thm-cite" href="/theorem/lean_z9_hasinv_units">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>u</mi><mo>∈</mo><mi>units</mi><mo>,</mo><mrow><mo>∃</mo><mi>e</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mrow><mi>B</mi><mo>−</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>:</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mi>u</mi><mo>⋅</mo><mi>e</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>1</mn></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>units.all (fun u =&gt; (List.range B).any (fun e =&gt; m9 (u * e) == 1))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall u \in \mathrm{units},\; \exists e \in \{0,\dots,B-1\} : \mathrm{m9}\mathopen{}\left(u \cdot e\right) = 1</code></pre></details>
 </div>
 <p class="thm-remark">── hasinv: which residues have a multiplicative inverse — stated for every residue, positive and negative ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9-hasinv_triad_not">
 <p class="thm-label"><strong>Theorem 143</strong> (<code>hasinv_triad_not</code>)<a class="thm-cite" href="/theorem/lean_z9_hasinv_triad_not">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>¬</mo><mrow><mo>∃</mo><mi>t</mi><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow><mo>:</mo><mrow><mo>∃</mo><mi>e</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mrow><mi>B</mi><mo>−</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>:</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mi>t</mi><mo>⋅</mo><mi>e</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>1</mn></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>¬ ([3, 6, 0].any (fun t =&gt; (List.range B).any (fun e =&gt; m9 (t * e) == 1)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\lnot \exists t \in [3,\,6,\,0] : \exists e \in \{0,\dots,B-1\} : \mathrm{m9}\mathopen{}\left(t \cdot e\right) = 1</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9-selfinv_exactly_one_and_eight">
 <p class="thm-label"><strong>Theorem 144</strong> (<code>selfinv_exactly_one_and_eight</code>)<a class="thm-cite" href="/theorem/lean_z9_selfinv_exactly_one_and_eight">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>{</mo><mi>u</mi><mo>∈</mo><mi>units</mi><mo>∣</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mi>u</mi><mo>⋅</mo><mi>u</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>=</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(units.filter (fun u =&gt; m9 (u * u) == 1)) = [1, 8]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\{\, u \in \mathrm{units} \mid \mathrm{m9}\mathopen{}\left(u \cdot u\right) = 1 \,\} = [1,\,8]</code></pre></details>
 </div>
 <p class="thm-remark">── selfinv: u² ≡ 1 holds exactly at 1 and 8 ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 2 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9-euler_units_pow_six">
 <p class="thm-label"><strong>Theorem 145</strong> (<code>euler_units_pow_six</code>)<a class="thm-cite" href="/theorem/lean_z9_euler_units_pow_six">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>u</mi><mo>∈</mo><mi>units</mi><mo>,</mo><mrow><mrow><mi>pow9</mi><mo>(</mo><mi>u</mi><mo>,</mo><mn>6</mn><mo>)</mo></mrow><mo>=</mo><mn>1</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>units.all (fun u =&gt; pow9 u 6 == 1)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall u \in \mathrm{units},\; \mathrm{pow9}\mathopen{}\left(u,\,6\right) = 1</code></pre></details>
 </div>
 <p class="thm-remark">── invpow: Euler — u⁶ ≡ 1, so u⁵ is the inverse, for every unit ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9-invpow_is_u_to_the_fifth">
 <p class="thm-label"><strong>Theorem 146</strong> (<code>invpow_is_u_to_the_fifth</code>)<a class="thm-cite" href="/theorem/lean_z9_invpow_is_u_to_the_fifth">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>u</mi><mo>∈</mo><mi>units</mi><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mi>u</mi><mo>⋅</mo><mrow><mi>pow9</mi><mo>(</mo><mi>u</mi><mo>,</mo><mn>5</mn><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mo>=</mo><mn>1</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>units.all (fun u =&gt; m9 (u * pow9 u 5) == 1)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall u \in \mathrm{units},\; \mathrm{m9}\mathopen{}\left(u \cdot \mathrm{pow9}\mathopen{}\left(u,\,5\right)\right) = 1</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9-powsum_zero_at_six">
 <p class="thm-label"><strong>Theorem 147</strong> (<code>powsum_zero_at_six</code>)<a class="thm-cite" href="/theorem/lean_z9_powsum_zero_at_six">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mo>∑</mo><mrow><mo>{</mo><mrow><mi>pow9</mi><mo>(</mo><mi>u</mi><mo>,</mo><mn>6</mn><mo>)</mo></mrow><mo>∣</mo><mi>u</mi><mo>∈</mo><mi>units</mi><mo>}</mo></mrow></mrow><mo>)</mo></mrow><mo>=</mo><mn>6</mn></mrow></math></div>
 <pre class="thm-statement"><code>m9 ((units.map (fun u =&gt; pow9 u 6)).foldl (· + ·) 0) = 6</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{m9}\mathopen{}\left(\sum \{\, \mathrm{pow9}\mathopen{}\left(u,\,6\right) \mid u \in \mathrm{units} \,\}\right) = 6</code></pre></details>
 </div>
 <p class="thm-remark">── powsum: the sum of the k-th powers of the units, at every exponent 1..9 ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9-powsum_zero_at_one">
 <p class="thm-label"><strong>Theorem 148</strong> (<code>powsum_zero_at_one</code>)<a class="thm-cite" href="/theorem/lean_z9_powsum_zero_at_one">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mo>∑</mo><mrow><mo>{</mo><mrow><mi>pow9</mi><mo>(</mo><mi>u</mi><mo>,</mo><mn>1</mn><mo>)</mo></mrow><mo>∣</mo><mi>u</mi><mo>∈</mo><mi>units</mi><mo>}</mo></mrow></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></div>
 <pre class="thm-statement"><code>m9 ((units.map (fun u =&gt; pow9 u 1)).foldl (· + ·) 0) = 0</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{m9}\mathopen{}\left(\sum \{\, \mathrm{pow9}\mathopen{}\left(u,\,1\right) \mid u \in \mathrm{units} \,\}\right) = 0</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9-mulperm_iff_unit">
 <p class="thm-label"><strong>Theorem 149</strong> (<code>mulperm_iff_unit</code>)<a class="thm-cite" href="/theorem/lean_z9_mulperm_iff_unit">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>k</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mrow><mi>B</mi><mo>−</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mi>k</mi><mo>⋅</mo><mi>u</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>u</mi><mo>∈</mo><mi>units</mi><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mrow><mo>|</mo><mi>units</mi><mo>|</mo></mrow></mrow><mo>=</mo><mrow><mi>isUnit</mi><mo>(</mo><mi>k</mi><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range B).all (fun k =&gt; ((units.map (fun u =&gt; m9 (k * u))).eraseDups.length == units.length) == isUnit k)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall k \in \{0,\dots,B-1\},\; \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(k \cdot u\right) \mid u \in \mathrm{units} \,\}\right)\right| = \left|\mathrm{units}\right| = \mathrm{isUnit}\mathopen{}\left(k\right)</code></pre></details>
 </div>
 <p class="thm-remark">── mulperm: multiplication by k permutes the units exactly when k is a unit ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9-addgen_iff_coprime">
 <p class="thm-label"><strong>Theorem 150</strong> (<code>addgen_iff_coprime</code>)<a class="thm-cite" href="/theorem/lean_z9_addgen_iff_coprime">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>k</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mrow><mi>B</mi><mo>−</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mi>k</mi><mo>⋅</mo><mi>i</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>i</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mrow><mi>B</mi><mo>−</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mi>B</mi></mrow><mo>=</mo><mrow><mi>isUnit</mi><mo>(</mo><mi>k</mi><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range B).all (fun k =&gt; (((List.range B).map (fun i =&gt; m9 (k * i))).eraseDups.length == B) == isUnit k)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall k \in \{0,\dots,B-1\},\; \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(k \cdot i\right) \mid i \in \{0,\dots,B-1\} \,\}\right)\right| = B = \mathrm{isUnit}\mathopen{}\left(k\right)</code></pre></details>
 </div>
 <p class="thm-remark">── addgen: k additively generates ℤ/9 exactly when k is coprime to 9 ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9-selfneg_only_zero">
 <p class="thm-label"><strong>Theorem 151</strong> (<code>selfneg_only_zero</code>)<a class="thm-cite" href="/theorem/lean_z9_selfneg_only_zero">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>{</mo><mi>d</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mrow><mi>B</mi><mo>−</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>∣</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>2</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow><mo>}</mo></mrow><mo>=</mo><mrow><mo>[</mo><mn>0</mn><mo>]</mo></mrow></mrow></math></div>
 <pre class="thm-statement"><code>((List.range B).filter (fun d =&gt; m9 (2 * d) == 0)) = [0]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\{\, d \in \{0,\dots,B-1\} \mid \mathrm{m9}\mathopen{}\left(2 \cdot d\right) = 0 \,\} = [0]</code></pre></details>
 </div>
 <p class="thm-remark">── selfneg: 2d ≡ 0 only at zero, the base being odd ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9-orbit_is_the_six">
 <p class="thm-label"><strong>Theorem 152</strong> (<code>orbit_is_the_six</code>)<a class="thm-cite" href="/theorem/lean_z9_orbit_is_the_six">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>orbit</mi><mo>[</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>5</mn><mo>}</mo></mrow><mo>]</mo></mrow><mo>=</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range 6).map orbit = [1, 2, 4, 8, 7, 5]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{orbit}[\{0,\dots,5\}] = [1,\,2,\,4,\,8,\,7,\,5]</code></pre></details>
 </div>
 <p class="thm-remark">── the doubling orbit: six steps, closing, all distinct ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9-orbit_closes">
 <p class="thm-label"><strong>Theorem 153</strong> (<code>orbit_closes</code>)<a class="thm-cite" href="/theorem/lean_z9_orbit_closes">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>orbit</mi><mo>(</mo><mn>6</mn><mo>)</mo></mrow><mo>=</mo><mrow><mi>orbit</mi><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow></math></div>
 <pre class="thm-statement"><code>orbit 6 = orbit 0</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{orbit}\mathopen{}\left(6\right) = \mathrm{orbit}\mathopen{}\left(0\right)</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9-orbit_distinct">
 <p class="thm-label"><strong>Theorem 154</strong> (<code>orbit_distinct</code>)<a class="thm-cite" href="/theorem/lean_z9_orbit_distinct">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mi>orbit</mi><mo>[</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>5</mn><mo>}</mo></mrow><mo>]</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>6</mn></mrow></math></div>
 <pre class="thm-statement"><code>((List.range 6).map orbit).eraseDups.length = 6</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\operatorname{dedup}\left(\mathrm{orbit}[\{0,\dots,5\}]\right)\right| = 6</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 6 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9-orbit_covers_units">
 <p class="thm-label"><strong>Theorem 155</strong> (<code>orbit_covers_units</code>)<a class="thm-cite" href="/theorem/lean_z9_orbit_covers_units">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mi>orbit</mi><mo>[</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>5</mn><mo>}</mo></mrow><mo>]</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mrow><mo>|</mo><mi>units</mi><mo>|</mo></mrow></mrow></math></div>
 <pre class="thm-statement"><code>((List.range 6).map orbit).eraseDups.length = units.length</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\operatorname{dedup}\left(\mathrm{orbit}[\{0,\dots,5\}]\right)\right| = \left|\mathrm{units}\right|</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 6 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9-triad_never_reaches_one">
 <p class="thm-label"><strong>Theorem 156</strong> (<code>triad_never_reaches_one</code>)<a class="thm-cite" href="/theorem/lean_z9_triad_never_reaches_one">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>¬</mo><mrow><mo>∃</mo><mi>k</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>11</mn><mo>}</mo></mrow><mo>:</mo><mrow><mrow><mrow><mi>pow9</mi><mo>(</mo><mn>3</mn><mo>,</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>1</mn></mrow><mo>∨</mo><mrow><mrow><mi>pow9</mi><mo>(</mo><mn>6</mn><mo>,</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>1</mn></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>¬ ((List.range 12).any (fun k =&gt; pow9 3 (k + 1) == 1 || pow9 6 (k + 1) == 1))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\lnot \exists k \in \{0,\dots,11\} : \mathrm{pow9}\mathopen{}\left(3,\,k + 1\right) = 1 \lor \mathrm{pow9}\mathopen{}\left(6,\,k + 1\right) = 1</code></pre></details>
 </div>
 <p class="thm-remark">── the triad {3,6,9} is off the circuit: no power of 3 or 6 ever reaches one ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 12 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9-triad_squares_vanish">
 <p class="thm-label"><strong>Theorem 157</strong> (<code>triad_squares_vanish</code>)<a class="thm-cite" href="/theorem/lean_z9_triad_squares_vanish">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>3</mn><mo>⋅</mo><mn>3</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow><mo>∧</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>6</mn><mo>⋅</mo><mn>6</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>m9 (3 * 3) = 0 ∧ m9 (6 * 6) = 0</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{m9}\mathopen{}\left(3 \cdot 3\right) = 0 \land \mathrm{m9}\mathopen{}\left(6 \cdot 6\right) = 0</code></pre></details>
 </div>
 <p class="thm-remark">── nilpotence: the non-units square to zero ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9-add_group">
 <p class="thm-label"><strong>Theorem 158</strong> (<code>add_group</code>)<a class="thm-cite" href="/theorem/lean_z9_add_group">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mrow><mi>B</mi><mo>−</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>,</mo><mrow><mo>∃</mo><mi>e</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mrow><mi>B</mi><mo>−</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>:</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mi>d</mi><mo>+</mo><mi>e</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range B).all (fun d =&gt; (List.range B).any (fun e =&gt; m9 (d + e) == 0))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in \{0,\dots,B-1\},\; \exists e \in \{0,\dots,B-1\} : \mathrm{m9}\mathopen{}\left(d + e\right) = 0</code></pre></details>
 </div>
 <p class="thm-remark">── the additive group: every residue has an additive inverse; negation is an involution ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9-neg_involution">
 <p class="thm-label"><strong>Theorem 159</strong> (<code>neg_involution</code>)<a class="thm-cite" href="/theorem/lean_z9_neg_involution">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mrow><mi>B</mi><mo>−</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mi>B</mi><mo>-</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mi>B</mi><mo>-</mo><mi>d</mi></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>m9</mi><mo>(</mo><mi>d</mi><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range B).all (fun d =&gt; m9 (B - m9 (B - d)) == m9 d)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in \{0,\dots,B-1\},\; \mathrm{m9}\mathopen{}\left(B - \mathrm{m9}\mathopen{}\left(B - d\right)\right) = \mathrm{m9}\mathopen{}\left(d\right)</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9-z9_settles_its_domain_totally">
 <p class="thm-label"><strong>Theorem 160</strong> (<code>z9_settles_its_domain_totally</code>)<span class="thm-uncited">not sealed — settled by <code>rfl</code>, not exhausted</span>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>settledHere</mi><mo>=</mo><mn>21</mn></mrow></math></div>
 <pre class="thm-statement"><code>settledHere = 21</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{settledHere} = 21</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>rfl</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
@@ -1500,84 +1796,110 @@ orbit6 := (List.range 6).map (fun k =&gt; pw 2 k)</code></pre>
 
 <div class="thm" id="thm-z9plus-squares_land_exactly_in_zero_one_four_seven">
 <p class="thm-label"><strong>Theorem 161</strong> (<code>squares_land_exactly_in_zero_one_four_seven</code>)<a class="thm-cite" href="/theorem/lean_z9plus_squares_land_exactly_in_zero_one_four_seven">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>R.all</mi><mo>(</mo><mrow><mi>d</mi><mo>↦</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mi>d</mi><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow></mrow></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mo>∀</mo><mi>s</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow><mo>,</mo><mrow><mi>R.any</mi><mo>(</mo><mrow><mi>d</mi><mo>↦</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mi>d</mi><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>=</mo><mi>s</mi></mrow></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>R.all (fun d =&gt; [0, 1, 4, 7].contains (m9 (d * d))) ∧ [0, 1, 4, 7].all (fun s =&gt; R.any (fun d =&gt; m9 (d * d) == s))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{R.all}\mathopen{}\left(d \mapsto \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [0,\,1,\,4,\,7]\right) \land \forall s \in [0,\,1,\,4,\,7],\; \mathrm{R.any}\mathopen{}\left(d \mapsto \mathrm{m9}\mathopen{}\left(d \cdot d\right) = s\right)</code></pre></details>
 </div>
 <p class="thm-remark">── SQUARES: the exact image of d ↦ d² is {0,1,4,7}, and nothing else is reachable ── stated in BOTH directions rather than by sorting: every square lands in the set, and every member of the set is actually reached. (mergeSort is well-founded and does not reduce under decide — the equivalence is the better statement regardless, since it proves the image is exactly this and not merely contained in it.)</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9plus-five_is_not_a_square_mod_nine">
 <p class="thm-label"><strong>Theorem 162</strong> (<code>five_is_not_a_square_mod_nine</code>)<a class="thm-cite" href="/theorem/lean_z9plus_five_is_not_a_square_mod_nine">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>¬</mo><mrow><mi>R.any</mi><mo>(</mo><mrow><mi>d</mi><mo>↦</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mi>d</mi><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>5</mn></mrow></mrow><mo>)</mo></mrow></mrow></math></div>
 <pre class="thm-statement"><code>¬ (R.any (fun d =&gt; m9 (d * d) == 5))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\lnot \mathrm{R.any}\mathopen{}\left(d \mapsto \mathrm{m9}\mathopen{}\left(d \cdot d\right) = 5\right)</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9plus-cubes_land_exactly_in_zero_one_eight">
 <p class="thm-label"><strong>Theorem 163</strong> (<code>cubes_land_exactly_in_zero_one_eight</code>)<a class="thm-cite" href="/theorem/lean_z9plus_cubes_land_exactly_in_zero_one_eight">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>R.all</mi><mo>(</mo><mrow><mi>d</mi><mo>↦</mo><mrow><mrow><mi>pw</mi><mo>(</mo><mi>d</mi><mo>,</mo><mn>3</mn><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mo>∀</mo><mi>c</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mi>R.any</mi><mo>(</mo><mrow><mi>d</mi><mo>↦</mo><mrow><mrow><mi>pw</mi><mo>(</mo><mi>d</mi><mo>,</mo><mn>3</mn><mo>)</mo></mrow><mo>=</mo><mi>c</mi></mrow></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>R.all (fun d =&gt; [0, 1, 8].contains (pw d 3)) ∧ [0, 1, 8].all (fun c =&gt; R.any (fun d =&gt; pw d 3 == c))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{R.all}\mathopen{}\left(d \mapsto \mathrm{pw}\mathopen{}\left(d,\,3\right) \in [0,\,1,\,8]\right) \land \forall c \in [0,\,1,\,8],\; \mathrm{R.any}\mathopen{}\left(d \mapsto \mathrm{pw}\mathopen{}\left(d,\,3\right) = c\right)</code></pre></details>
 </div>
 <p class="thm-remark">── CUBES: the exact image is {0,1,8} — the nilpotent and the two self-inverse units ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9plus-primitive_roots_are_exactly_two_and_five">
 <p class="thm-label"><strong>Theorem 164</strong> (<code>primitive_roots_are_exactly_two_and_five</code>)<a class="thm-cite" href="/theorem/lean_z9plus_primitive_roots_are_exactly_two_and_five">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>R.filter</mi><mo>(</mo><mi>generates</mi><mo>)</mo></mrow><mo>=</mo><mrow><mo>[</mo><mn>2</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(R.filter generates) = [2, 5]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{R.filter}\mathopen{}\left(\mathrm{generates}\right) = [2,\,5]</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 2 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9plus-primitive_root_iff_generates_the_units">
 <p class="thm-label"><strong>Theorem 165</strong> (<code>primitive_root_iff_generates_the_units</code>)<a class="thm-cite" href="/theorem/lean_z9plus_primitive_root_iff_generates_the_units">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>R.all</mi><mo>(</mo><mrow><mi>g</mi><mo>↦</mo><mrow><mrow><mi>generates</mi><mo>(</mo><mi>g</mi><mo>)</mo></mrow><mo>=</mo><mrow><mi>g</mi><mo>∈</mo><mrow><mo>[</mo><mn>2</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow></mrow></mrow></mrow><mo>)</mo></mrow></math></div>
 <pre class="thm-statement"><code>R.all (fun g =&gt; generates g == ([2, 5].contains g))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{R.all}\mathopen{}\left(g \mapsto \mathrm{generates}\mathopen{}\left(g\right) = g \in [2,\,5]\right)</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 2 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9plus-doubling_has_period_six">
 <p class="thm-label"><strong>Theorem 166</strong> (<code>doubling_has_period_six</code>)<a class="thm-cite" href="/theorem/lean_z9plus_doubling_has_period_six">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>k</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>29</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>pw</mi><mo>(</mo><mn>2</mn><mo>,</mo><mi>k</mi><mo>)</mo></mrow><mo>=</mo><mrow><mi>pw</mi><mo>(</mo><mn>2</mn><mo>,</mo><mrow><mi>k</mi><mo>+</mo><mn>6</mn></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range 30).all (fun k =&gt; pw 2 k == pw 2 (k + 6))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall k \in \{0,\dots,29\},\; \mathrm{pw}\mathopen{}\left(2,\,k\right) = \mathrm{pw}\mathopen{}\left(2,\,k + 6\right)</code></pre></details>
 </div>
 <p class="thm-remark">── THE ORBIT'S PERIOD: 2^k mod 9 repeats with period exactly 6, and no smaller period divides it ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 30 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9plus-no_period_smaller_than_six">
 <p class="thm-label"><strong>Theorem 167</strong> (<code>no_period_smaller_than_six</code>)<a class="thm-cite" href="/theorem/lean_z9plus_no_period_smaller_than_six">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>¬</mo><mrow><mo>∃</mo><mi>p</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow><mo>:</mo><mrow><mo>∀</mo><mi>k</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>11</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>pw</mi><mo>(</mo><mn>2</mn><mo>,</mo><mi>k</mi><mo>)</mo></mrow><mo>=</mo><mrow><mi>pw</mi><mo>(</mo><mn>2</mn><mo>,</mo><mrow><mi>k</mi><mo>+</mo><mi>p</mi></mrow><mo>)</mo></mrow></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>¬ ([1, 2, 3, 4, 5].any (fun p =&gt; (List.range 12).all (fun k =&gt; pw 2 k == pw 2 (k + p))))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\lnot \exists p \in [1,\,2,\,3,\,4,\,5] : \forall k \in \{0,\dots,11\},\; \mathrm{pw}\mathopen{}\left(2,\,k\right) = \mathrm{pw}\mathopen{}\left(2,\,k + p\right)</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 60 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9plus-digital_root_agrees_with_the_residue">
 <p class="thm-label"><strong>Theorem 168</strong> (<code>digital_root_agrees_with_the_residue</code>)<a class="thm-cite" href="/theorem/lean_z9plus_digital_root_agrees_with_the_residue">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>300</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mrow><mi>dr</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><mo>=</mo><mn>9</mn></mrow><mo>=</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 1 300).all (fun n =&gt; (dr n == 9) == (m9 n == 0))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in \{1,\dots,300\},\; \mathrm{dr}\mathopen{}\left(n\right) = 9 = \mathrm{m9}\mathopen{}\left(n\right) = 0</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 300 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9plus-digital_root_is_the_digit_sum_residue">
 <p class="thm-label"><strong>Theorem 169</strong> (<code>digital_root_is_the_digit_sum_residue</code>)<a class="thm-cite" href="/theorem/lean_z9plus_digital_root_is_the_digit_sum_residue">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>300</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mi>digitSum</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>m9</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 1 300).all (fun n =&gt; m9 (digitSum n) == m9 n)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in \{1,\dots,300\},\; \mathrm{m9}\mathopen{}\left(\mathrm{digitSum}\mathopen{}\left(n\right)\right) = \mathrm{m9}\mathopen{}\left(n\right)</code></pre></details>
 </div>
 <p class="thm-remark">── and the digit SUM is what carries it — which is why reversal cannot change it ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 300 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9plus-reversal_cannot_change_the_digital_root">
 <p class="thm-label"><strong>Theorem 170</strong> (<code>reversal_cannot_change_the_digital_root</code>)<a class="thm-cite" href="/theorem/lean_z9plus_reversal_cannot_change_the_digital_root">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>300</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>dr</mi><mo>(</mo><mrow><mi>reverseNum</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>dr</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 1 300).all (fun n =&gt; dr (reverseNum n) == dr n)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in \{1,\dots,300\},\; \mathrm{dr}\mathopen{}\left(\mathrm{reverseNum}\mathopen{}\left(n\right)\right) = \mathrm{dr}\mathopen{}\left(n\right)</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 300 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9plus-orbit_digital_roots_have_period_six">
 <p class="thm-label"><strong>Theorem 171</strong> (<code>orbit_digital_roots_have_period_six</code>)<a class="thm-cite" href="/theorem/lean_z9plus_orbit_digital_roots_have_period_six">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>k</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>23</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>dr</mi><mo>(</mo><mrow><mi>pw</mi><mo>(</mo><mn>2</mn><mo>,</mo><mi>k</mi><mo>)</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>dr</mi><mo>(</mo><mrow><mi>pw</mi><mo>(</mo><mn>2</mn><mo>,</mo><mrow><mi>k</mi><mo>+</mo><mn>6</mn></mrow><mo>)</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range 24).all (fun k =&gt; dr (pw 2 k) == dr (pw 2 (k + 6)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall k \in \{0,\dots,23\},\; \mathrm{dr}\mathopen{}\left(\mathrm{pw}\mathopen{}\left(2,\,k\right)\right) = \mathrm{dr}\mathopen{}\left(\mathrm{pw}\mathopen{}\left(2,\,k + 6\right)\right)</code></pre></details>
 </div>
 <p class="thm-remark">── the orbit's digital roots also cycle with period six ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 24 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9plus-the_orders_of_the_units_are_exact">
 <p class="thm-label"><strong>Theorem 172</strong> (<code>the_orders_of_the_units_are_exact</code>)<a class="thm-cite" href="/theorem/lean_z9plus_the_orders_of_the_units_are_exact">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mrow><mrow><mrow><mi>ord</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><mo>=</mo><mn>1</mn></mrow><mo>∧</mo><mrow><mrow><mi>ord</mi><mo>(</mo><mn>8</mn><mo>)</mo></mrow><mo>=</mo><mn>2</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mi>ord</mi><mo>(</mo><mn>4</mn><mo>)</mo></mrow><mo>=</mo><mn>3</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mi>ord</mi><mo>(</mo><mn>7</mn><mo>)</mo></mrow><mo>=</mo><mn>3</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mi>ord</mi><mo>(</mo><mn>2</mn><mo>)</mo></mrow><mo>=</mo><mn>6</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mi>ord</mi><mo>(</mo><mn>5</mn><mo>)</mo></mrow><mo>=</mo><mn>6</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>ord 1 = 1 ∧ ord 8 = 2 ∧ ord 4 = 3 ∧ ord 7 = 3 ∧ ord 2 = 6 ∧ ord 5 = 6</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{ord}\mathopen{}\left(1\right) = 1 \land \mathrm{ord}\mathopen{}\left(8\right) = 2 \land \mathrm{ord}\mathopen{}\left(4\right) = 3 \land \mathrm{ord}\mathopen{}\left(7\right) = 3 \land \mathrm{ord}\mathopen{}\left(2\right) = 6 \land \mathrm{ord}\mathopen{}\left(5\right) = 6</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9plus-the_unit_table_is_a_latin_square">
 <p class="thm-label"><strong>Theorem 173</strong> (<code>the_unit_table_is_a_latin_square</code>)<a class="thm-cite" href="/theorem/lean_z9plus_the_unit_table_is_a_latin_square">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>a</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mi>a</mi><mo>⋅</mo><mi>b</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>b</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>6</mn></mrow><mo>∧</mo><mrow><mo>∀</mo><mi>c</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mo>∃</mo><mi>b</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>:</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mi>a</mi><mo>⋅</mo><mi>b</mi></mrow><mo>)</mo></mrow><mo>=</mo><mi>c</mi></mrow></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1,2,4,5,7,8].all (fun a =&gt; (([1,2,4,5,7,8].map (fun b =&gt; m9 (a * b))).eraseDups).length == 6 ∧ [1,2,4,5,7,8].all (fun c =&gt; [1,2,4,5,7,8].any (fun b =&gt; m9 (a * b) == c)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall a \in [1,\,2,\,4,\,5,\,7,\,8],\; \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(a \cdot b\right) \mid b \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right)\right| = 6 \land \forall c \in [1,\,2,\,4,\,5,\,7,\,8],\; \exists b \in [1,\,2,\,4,\,5,\,7,\,8] : \mathrm{m9}\mathopen{}\left(a \cdot b\right) = c</code></pre></details>
 </div>
 <p class="thm-remark">── the multiplication table on the units is a LATIN SQUARE: every row is a permutation of the units, which is the group axiom made visible at every entry ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 1,296 cases. <span class="qed">□</span></p>
@@ -1591,7 +1913,9 @@ orbit6 := (List.range 6).map (fun k =&gt; pw 2 k)</code></pre>
 
 <div class="thm" id="thm-z9plus-the_reflected_orbit_covers_the_whole_triad">
 <p class="thm-label"><strong>Theorem 175</strong> (<code>the_reflected_orbit_covers_the_whole_triad</code>)<a class="thm-cite" href="/theorem/lean_z9plus_the_reflected_orbit_covers_the_whole_triad">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>t</mi><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>9</mn><mo>]</mo></mrow><mo>,</mo><mrow><mo>∃</mo><mi>d</mi><mo>∈</mo><mi>orbit6</mi><mo>:</mo><mrow><mrow><mi>refl</mi><mo>(</mo><mi>d</mi><mo>)</mo></mrow><mo>=</mo><mi>t</mi></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[3, 6, 9].all (fun t =&gt; orbit6.any (fun d =&gt; refl d == t))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall t \in [3,\,6,\,9],\; \exists d \in \mathrm{orbit6} : \mathrm{refl}\mathopen{}\left(d\right) = t</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
 
@@ -1604,14 +1928,18 @@ orbit6 := (List.range 6).map (fun k =&gt; pw 2 k)</code></pre>
 
 <div class="thm" id="thm-z9plus-the_crossing_pairs_are_one_four_seven">
 <p class="thm-label"><strong>Theorem 177</strong> (<code>the_crossing_pairs_are_one_four_seven</code>)<a class="thm-cite" href="/theorem/lean_z9plus_the_crossing_pairs_are_one_four_seven">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mrow><mo>{</mo><mi>d</mi><mo>∈</mo><mi>orbit6</mi><mo>∣</mo><mrow><mrow><mi>refl</mi><mo>(</mo><mi>d</mi><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>9</mn><mo>]</mo></mrow></mrow><mo>}</mo></mrow><mo>=</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow></mrow><mo>∧</mo><mrow><mrow><mi>refl</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><mo>=</mo><mn>9</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mi>refl</mi><mo>(</mo><mn>4</mn><mo>)</mo></mrow><mo>=</mo><mn>6</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mi>refl</mi><mo>(</mo><mn>7</mn><mo>)</mo></mrow><mo>=</mo><mn>3</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(orbit6.filter (fun d =&gt; [3, 6, 9].contains (refl d))) = [1, 4, 7] ∧ refl 1 = 9 ∧ refl 4 = 6 ∧ refl 7 = 3</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\{\, d \in \mathrm{orbit6} \mid \mathrm{refl}\mathopen{}\left(d\right) \in [3,\,6,\,9] \,\} = [1,\,4,\,7] \land \mathrm{refl}\mathopen{}\left(1\right) = 9 \land \mathrm{refl}\mathopen{}\left(4\right) = 6 \land \mathrm{refl}\mathopen{}\left(7\right) = 3</code></pre></details>
 </div>
 <p class="thm-remark">── the three that cross, named exactly ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9plus-reflection_is_injective_on_the_orbit">
 <p class="thm-label"><strong>Theorem 178</strong> (<code>reflection_is_injective_on_the_orbit</code>)<a class="thm-cite" href="/theorem/lean_z9plus_reflection_is_injective_on_the_orbit">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mi>refl</mi><mo>[</mo><mi>orbit6</mi><mo>]</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>6</mn></mrow></math></div>
 <pre class="thm-statement"><code>((orbit6.map refl).eraseDups).length = 6</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\operatorname{dedup}\left(\mathrm{refl}[\mathrm{orbit6}]\right)\right| = 6</code></pre></details>
 </div>
 <p class="thm-remark">── reflection is injective on the orbit, so the mirror image is six distinct residues, not a collapse ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
@@ -1625,34 +1953,44 @@ orbit6 := (List.range 6).map (fun k =&gt; pw 2 k)</code></pre>
 
 <div class="thm" id="thm-z9plus-reflection_alone_reaches_only_two">
 <p class="thm-label"><strong>Theorem 180</strong> (<code>reflection_alone_reaches_only_two</code>)<a class="thm-cite" href="/theorem/lean_z9plus_reflection_alone_reaches_only_two">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mo>|</mo><mrow><mi>closure</mi><mo>(</mo><mn>6</mn><mo>,</mo><mrow><mo>[</mo><mn>1</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>≥</mo><mn>2</mn></mrow><mo>∧</mo><mrow><mrow><mi>rfl9</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mi>rfl9</mi><mo>(</mo><mrow><mi>rfl9</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><mo>)</mo></mrow><mo>=</mo><mn>1</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(closure 6 [1]).length ≥ 2 ∧ rfl9 1 = 0 ∧ rfl9 (rfl9 1) = 1</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\mathrm{closure}\mathopen{}\left(6,\,[1]\right)\right| \ge 2 \land \mathrm{rfl9}\mathopen{}\left(1\right) = 0 \land \mathrm{rfl9}\mathopen{}\left(\mathrm{rfl9}\mathopen{}\left(1\right)\right) = 1</code></pre></details>
 </div>
 <p class="thm-remark">── REFLECTION ALONE is not enough either: from 1 it only ever sees two residues ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9plus-doubling_and_reflection_together_reach_every_residue">
 <p class="thm-label"><strong>Theorem 181</strong> (<code>doubling_and_reflection_together_reach_every_residue</code>)<a class="thm-cite" href="/theorem/lean_z9plus_doubling_and_reflection_together_reach_every_residue">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mi>closure</mi><mo>(</mo><mn>4</mn><mo>,</mo><mrow><mo>[</mo><mn>1</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>9</mn></mrow></math></div>
 <pre class="thm-statement"><code>(closure 4 [1]).length = 9</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\mathrm{closure}\mathopen{}\left(4,\,[1]\right)\right| = 9</code></pre></details>
 </div>
 <p class="thm-remark">── TOGETHER they reach the whole ring: every residue of ℤ/9, from the single seed 1 ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9plus-every_residue_is_reachable_from_one">
 <p class="thm-label"><strong>Theorem 182</strong> (<code>every_residue_is_reachable_from_one</code>)<a class="thm-cite" href="/theorem/lean_z9plus_every_residue_is_reachable_from_one">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>8</mn><mo>}</mo></mrow><mo>,</mo><mrow><mi>d</mi><mo>∈</mo><mrow><mi>closure</mi><mo>(</mo><mn>4</mn><mo>,</mo><mrow><mo>[</mo><mn>1</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range 9).all (fun d =&gt; (closure 4 [1]).contains d)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in \{0,\dots,8\},\; d \in \mathrm{closure}\mathopen{}\left(4,\,[1]\right)</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9plus-the_diameter_is_exactly_four">
 <p class="thm-label"><strong>Theorem 183</strong> (<code>the_diameter_is_exactly_four</code>)<a class="thm-cite" href="/theorem/lean_z9plus_the_diameter_is_exactly_four">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mo>|</mo><mrow><mi>closure</mi><mo>(</mo><mn>4</mn><mo>,</mo><mrow><mo>[</mo><mn>1</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>9</mn></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>closure</mi><mo>(</mo><mn>3</mn><mo>,</mo><mrow><mo>[</mo><mn>1</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>7</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(closure 4 [1]).length = 9 ∧ (closure 3 [1]).length = 7</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\mathrm{closure}\mathopen{}\left(4,\,[1]\right)\right| = 9 \land \left|\mathrm{closure}\mathopen{}\left(3,\,[1]\right)\right| = 7</code></pre></details>
 </div>
 <p class="thm-remark">── the diameter is EXACTLY four: four rounds reach every residue, three do not. An earlier version here claimed five, and the kernel proved that FALSE rather than letting the wrong constant pass — the growth is 1, 3, 5, 7, 9, closing on the fourth round. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9plus-the_frontier_grows_by_two_each_round">
 <p class="thm-label"><strong>Theorem 184</strong> (<code>the_frontier_grows_by_two_each_round</code>)<a class="thm-cite" href="/theorem/lean_z9plus_the_frontier_grows_by_two_each_round">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mrow><mrow><mo>|</mo><mrow><mi>closure</mi><mo>(</mo><mn>0</mn><mo>,</mo><mrow><mo>[</mo><mn>1</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>1</mn></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>closure</mi><mo>(</mo><mn>1</mn><mo>,</mo><mrow><mo>[</mo><mn>1</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>3</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>closure</mi><mo>(</mo><mn>2</mn><mo>,</mo><mrow><mo>[</mo><mn>1</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>5</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>closure</mi><mo>(</mo><mn>3</mn><mo>,</mo><mrow><mo>[</mo><mn>1</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>7</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>closure</mi><mo>(</mo><mn>4</mn><mo>,</mo><mrow><mo>[</mo><mn>1</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>9</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(closure 0 [1]).length = 1 ∧ (closure 1 [1]).length = 3 ∧ (closure 2 [1]).length = 5 ∧ (closure 3 [1]).length = 7 ∧ (closure 4 [1]).length = 9</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\mathrm{closure}\mathopen{}\left(0,\,[1]\right)\right| = 1 \land \left|\mathrm{closure}\mathopen{}\left(1,\,[1]\right)\right| = 3 \land \left|\mathrm{closure}\mathopen{}\left(2,\,[1]\right)\right| = 5 \land \left|\mathrm{closure}\mathopen{}\left(3,\,[1]\right)\right| = 7 \land \left|\mathrm{closure}\mathopen{}\left(4,\,[1]\right)\right| = 9</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
@@ -1665,32 +2003,42 @@ orbit6 := (List.range 6).map (fun k =&gt; pw 2 k)</code></pre>
 
 <div class="thm" id="thm-z9plus-pisano_period_mod_nine_is_twenty_four">
 <p class="thm-label"><strong>Theorem 186</strong> (<code>pisano_period_mod_nine_is_twenty_four</code>)<a class="thm-cite" href="/theorem/lean_z9plus_pisano_period_mod_nine_is_twenty_four">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>k</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>29</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>fib9</mi><mo>(</mo><mi>k</mi><mo>)</mo></mrow><mo>=</mo><mrow><mi>fib9</mi><mo>(</mo><mrow><mi>k</mi><mo>+</mo><mn>24</mn></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range 30).all (fun k =&gt; fib9 k == fib9 (k + 24))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall k \in \{0,\dots,29\},\; \mathrm{fib9}\mathopen{}\left(k\right) = \mathrm{fib9}\mathopen{}\left(k + 24\right)</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 30 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9plus-no_proper_divisor_of_twenty_four_is_a_period">
 <p class="thm-label"><strong>Theorem 187</strong> (<code>no_proper_divisor_of_twenty_four_is_a_period</code>)<a class="thm-cite" href="/theorem/lean_z9plus_no_proper_divisor_of_twenty_four_is_a_period">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>¬</mo><mrow><mo>∃</mo><mi>p</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>12</mn><mo>]</mo></mrow><mo>:</mo><mrow><mo>∀</mo><mi>k</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>25</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>fib9</mi><mo>(</mo><mi>k</mi><mo>)</mo></mrow><mo>=</mo><mrow><mi>fib9</mi><mo>(</mo><mrow><mi>k</mi><mo>+</mo><mi>p</mi></mrow><mo>)</mo></mrow></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>¬ ([1, 2, 3, 4, 6, 8, 12].any (fun p =&gt; (List.range 26).all (fun k =&gt; fib9 k == fib9 (k + p))))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\lnot \exists p \in [1,\,2,\,3,\,4,\,6,\,8,\,12] : \forall k \in \{0,\dots,25\},\; \mathrm{fib9}\mathopen{}\left(k\right) = \mathrm{fib9}\mathopen{}\left(k + p\right)</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 182 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9plus-fibonacci_recurrence_holds">
 <p class="thm-label"><strong>Theorem 188</strong> (<code>fibonacci_recurrence_holds</code>)<a class="thm-cite" href="/theorem/lean_z9plus_fibonacci_recurrence_holds">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>19</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>fib</mi><mo>(</mo><mrow><mi>n</mi><mo>+</mo><mn>2</mn></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mrow><mi>fib</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><mo>+</mo><mrow><mi>fib</mi><mo>(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range 20).all (fun n =&gt; fib (n + 2) == fib n + fib (n + 1))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in \{0,\dots,19\},\; \mathrm{fib}\mathopen{}\left(n + 2\right) = \mathrm{fib}\mathopen{}\left(n\right) + \mathrm{fib}\mathopen{}\left(n + 1\right)</code></pre></details>
 </div>
 <p class="thm-remark">── the Fibonacci recurrence itself, over a stated range ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 20 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9plus-consecutive_fibonacci_are_coprime">
 <p class="thm-label"><strong>Theorem 189</strong> (<code>consecutive_fibonacci_are_coprime</code>)<a class="thm-cite" href="/theorem/lean_z9plus_consecutive_fibonacci_are_coprime">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>15</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>gcd9</mi><mo>(</mo><mrow><mi>fib</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><mo>,</mo><mrow><mi>fib</mi><mo>(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>)</mo></mrow><mo>=</mo><mn>1</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 1 15).all (fun n =&gt; gcd9 (fib n) (fib (n + 1)) == 1)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in \{1,\dots,15\},\; \mathrm{gcd9}\mathopen{}\left(\mathrm{fib}\mathopen{}\left(n\right),\,\mathrm{fib}\mathopen{}\left(n + 1\right)\right) = 1</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 15 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-z9plus-three_five_eight_are_consecutive_fibonacci">
 <p class="thm-label"><strong>Theorem 190</strong> (<code>three_five_eight_are_consecutive_fibonacci</code>)<a class="thm-cite" href="/theorem/lean_z9plus_three_five_eight_are_consecutive_fibonacci">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mrow><mi>fib</mi><mo>(</mo><mn>4</mn><mo>)</mo></mrow><mo>=</mo><mn>3</mn></mrow><mo>∧</mo><mrow><mrow><mi>fib</mi><mo>(</mo><mn>5</mn><mo>)</mo></mrow><mo>=</mo><mn>5</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mi>fib</mi><mo>(</mo><mn>6</mn><mo>)</mo></mrow><mo>=</mo><mn>8</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mrow><mi>fib</mi><mo>(</mo><mn>4</mn><mo>)</mo></mrow><mo>+</mo><mrow><mi>fib</mi><mo>(</mo><mn>5</mn><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mi>fib</mi><mo>(</mo><mn>6</mn><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>fib 4 = 3 ∧ fib 5 = 5 ∧ fib 6 = 8 ∧ fib 4 + fib 5 = fib 6</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{fib}\mathopen{}\left(4\right) = 3 \land \mathrm{fib}\mathopen{}\left(5\right) = 5 \land \mathrm{fib}\mathopen{}\left(6\right) = 8 \land \mathrm{fib}\mathopen{}\left(4\right) + \mathrm{fib}\mathopen{}\left(5\right) = \mathrm{fib}\mathopen{}\left(6\right)</code></pre></details>
 </div>
 <p class="thm-remark">── and the sum of two consecutive Fibonacci digits lands back in the sequence: 3 + 5 = 8 ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
@@ -1722,42 +2070,54 @@ checked to compute what the ledger's own tests compute at every parameter of its
 
 <div class="thm" id="thm-generated-powsum_zero_odd_exponents">
 <p class="thm-label"><strong>Theorem 193</strong> (<code>powsum_zero_odd_exponents</code>)<a class="thm-cite" href="/theorem/lean_generated_powsum_zero_odd_exponents">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>k</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>9</mn><mo>,</mo><mn>11</mn><mo>,</mo><mn>13</mn><mo>,</mo><mn>15</mn><mo>,</mo><mn>17</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mrow><mo>∑</mo><mrow><mo>{</mo><mrow><msup><mi>u</mi><mi>k</mi></msup><mo>mod</mo><mn>9</mn></mrow><mo>∣</mo><mi>u</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>}</mo></mrow></mrow><mo>mod</mo><mn>9</mn></mrow><mo>=</mo><mn>0</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 3, 5, 7, 9, 11, 13, 15, 17].all (fun k =&gt; (([1,2,4,5,7,8].map (fun u =&gt; (u ^ k) % 9)).foldl (· + ·) 0) % 9 == 0)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall k \in [1,\,3,\,5,\,7,\,9,\,11,\,13,\,15,\,17],\; \sum \{\, u^{k} \bmod 9 \mid u \in [1,\,2,\,4,\,5,\,7,\,8] \,\} \bmod 9 = 0</code></pre></details>
 </div>
 <p class="thm-remark">powsum0_k: 9 ledger rows (params 1, 3, 5, 7, 9, 11, 13, 15, 17) → one quantified theorem</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 54 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-generated-powsum_nonzero_at_even_exponents">
 <p class="thm-label"><strong>Theorem 194</strong> (<code>powsum_nonzero_at_even_exponents</code>)<a class="thm-cite" href="/theorem/lean_generated_powsum_nonzero_at_even_exponents">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>¬</mo><mrow><mo>∀</mo><mi>k</mi><mo>∈</mo><mrow><mo>[</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>6</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mrow><mo>∑</mo><mrow><mo>{</mo><mrow><msup><mi>u</mi><mi>k</mi></msup><mo>mod</mo><mn>9</mn></mrow><mo>∣</mo><mi>u</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>}</mo></mrow></mrow><mo>mod</mo><mn>9</mn></mrow><mo>=</mo><mn>0</mn></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>¬ ([2, 4, 6].all (fun k =&gt; (([1,2,4,5,7,8].map (fun u =&gt; (u ^ k) % 9)).foldl (· + ·) 0) % 9 == 0))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\lnot \forall k \in [2,\,4,\,6],\; \sum \{\, u^{k} \bmod 9 \mid u \in [1,\,2,\,4,\,5,\,7,\,8] \,\} \bmod 9 = 0</code></pre></details>
 </div>
 <p class="thm-remark">the boundary: where the property genuinely fails</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 18 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-generated-mulperm_iff_unit_all">
 <p class="thm-label"><strong>Theorem 195</strong> (<code>mulperm_iff_unit_all</code>)<a class="thm-cite" href="/theorem/lean_generated_mulperm_iff_unit_all">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>k</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>8</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mrow><mi>k</mi><mo>⋅</mo><mi>u</mi></mrow><mo>mod</mo><mn>9</mn></mrow><mo>∣</mo><mi>u</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>6</mn></mrow><mo>=</mo><mrow><mi>k</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range 9).all (fun k =&gt; (((([1,2,4,5,7,8].map (fun u =&gt; (k * u) % 9)).eraseDups).length) == 6) == ([1,2,4,5,7,8].contains k))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall k \in \{0,\dots,8\},\; \left|\operatorname{dedup}\left(\{\, k \cdot u \bmod 9 \mid u \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right)\right| = 6 = k \in [1,\,2,\,4,\,5,\,7,\,8]</code></pre></details>
 </div>
 <p class="thm-remark">mulperm_k: 5 ledger rows (params 2, 4, 5, 7, 8) → one quantified theorem</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 324 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-generated-mulperm_fails_at_the_triad">
 <p class="thm-label"><strong>Theorem 196</strong> (<code>mulperm_fails_at_the_triad</code>)<a class="thm-cite" href="/theorem/lean_generated_mulperm_fails_at_the_triad">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>¬</mo><mrow><mo>∃</mo><mi>k</mi><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow><mo>:</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mrow><mi>k</mi><mo>⋅</mo><mi>u</mi></mrow><mo>mod</mo><mn>9</mn></mrow><mo>∣</mo><mi>u</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>6</mn></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>¬ ([3, 6, 0].any (fun k =&gt; ((([1,2,4,5,7,8].map (fun u =&gt; (k * u) % 9)).eraseDups).length) == 6))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\lnot \exists k \in [3,\,6,\,0] : \left|\operatorname{dedup}\left(\{\, k \cdot u \bmod 9 \mid u \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right)\right| = 6</code></pre></details>
 </div>
 <p class="thm-remark">the boundary: where the property genuinely fails</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 18 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-generated-addgen_iff_coprime_all">
 <p class="thm-label"><strong>Theorem 197</strong> (<code>addgen_iff_coprime_all</code>)<a class="thm-cite" href="/theorem/lean_generated_addgen_iff_coprime_all">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>k</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>8</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mrow><mi>k</mi><mo>⋅</mo><mi>i</mi></mrow><mo>mod</mo><mn>9</mn></mrow><mo>∣</mo><mi>i</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>8</mn><mo>}</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>9</mn></mrow><mo>=</mo><mrow><mi>k</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range 9).all (fun k =&gt; ((((List.range 9).map (fun i =&gt; (k * i) % 9)).eraseDups).length == 9) == ([1,2,4,5,7,8].contains k))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall k \in \{0,\dots,8\},\; \left|\operatorname{dedup}\left(\{\, k \cdot i \bmod 9 \mid i \in \{0,\dots,8\} \,\}\right)\right| = 9 = k \in [1,\,2,\,4,\,5,\,7,\,8]</code></pre></details>
 </div>
 <p class="thm-remark">addgen_k: 5 ledger rows (params 2, 4, 5, 7, 8) → one quantified theorem</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 486 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-generated-hasinv_iff_unit_all">
 <p class="thm-label"><strong>Theorem 198</strong> (<code>hasinv_iff_unit_all</code>)<a class="thm-cite" href="/theorem/lean_generated_hasinv_iff_unit_all">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>8</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mo>∃</mo><mi>e</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>8</mn><mo>}</mo></mrow><mo>:</mo><mrow><mrow><mrow><mi>d</mi><mo>⋅</mo><mi>e</mi></mrow><mo>mod</mo><mn>9</mn></mrow><mo>=</mo><mn>1</mn></mrow></mrow><mo>=</mo><mrow><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range 9).all (fun d =&gt; ((List.range 9).any (fun e =&gt; (d * e) % 9 == 1)) == ([1,2,4,5,7,8].contains d))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in \{0,\dots,8\},\; \exists e \in \{0,\dots,8\} : d \cdot e \bmod 9 = 1 = d \in [1,\,2,\,4,\,5,\,7,\,8]</code></pre></details>
 </div>
 <p class="thm-remark">hasinv_d: 6 ledger rows (params 1, 2, 4, 5, 7, 8) → one quantified theorem</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 486 cases. <span class="qed">□</span></p>
@@ -1771,49 +2131,63 @@ checked to compute what the ledger's own tests compute at every parameter of its
 
 <div class="thm" id="thm-generated-power_sum_closed_forms">
 <p class="thm-label"><strong>Theorem 200</strong> (<code>power_sum_closed_forms</code>)<a class="thm-cite" href="/theorem/lean_generated_power_sum_closed_forms">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>30</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mrow><mrow><mo>∑</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mrow><mn>1</mn><mo>+</mo><mi>n</mi><mo>−</mo><mn>1</mn></mrow><mo>}</mo></mrow></mrow><mo>⋅</mo><mn>2</mn></mrow><mo>=</mo><mrow><mi>n</mi><mo>⋅</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mrow><mo>∑</mo><mrow><mo>{</mo><mrow><mi>i</mi><mo>⋅</mo><mi>i</mi></mrow><mo>∣</mo><mi>i</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mrow><mn>1</mn><mo>+</mo><mi>n</mi><mo>−</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>}</mo></mrow></mrow><mo>⋅</mo><mn>6</mn></mrow><mo>=</mo><mrow><mrow><mi>n</mi><mo>⋅</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></mrow><mo>⋅</mo><mrow><mrow><mn>2</mn><mo>⋅</mo><mi>n</mi></mrow><mo>+</mo><mn>1</mn></mrow></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 1 30).all (fun n =&gt; (((List.range' 1 n).foldl (· + ·) 0) * 2 == n * (n + 1)) ∧ (((List.range' 1 n).map (fun i =&gt; i * i)).foldl (· + ·) 0) * 6 == n * (n + 1) * (2 * n + 1))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in \{1,\dots,30\},\; \sum \{1,\dots,1+n-1\} \cdot 2 = n \cdot n + 1 \land \sum \{\, i \cdot i \mid i \in \{1,\dots,1+n-1\} \,\} \cdot 6 = n \cdot n + 1 \cdot 2 \cdot n + 1</code></pre></details>
 </div>
 <p class="thm-remark">power_sum_k: 5 ledger rows (params 1, 2, 3, 4, 5) → one quantified theorem</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 30 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-generated-invpow_is_fifth_power_all_units">
 <p class="thm-label"><strong>Theorem 201</strong> (<code>invpow_is_fifth_power_all_units</code>)<a class="thm-cite" href="/theorem/lean_generated_invpow_is_fifth_power_all_units">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>u</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mrow><mi>u</mi><mo>⋅</mo><msup><mi>u</mi><mn>5</mn></msup></mrow><mo>mod</mo><mn>9</mn></mrow><mo>=</mo><mn>1</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1,2,4,5,7,8].all (fun u =&gt; (u * (u ^ 5)) % 9 == 1)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall u \in [1,\,2,\,4,\,5,\,7,\,8],\; u \cdot u^{5} \bmod 9 = 1</code></pre></details>
 </div>
 <p class="thm-remark">invpow_u: 6 ledger rows (params 1, 2, 4, 5, 7, 8) → one quantified theorem</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 6 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-generated-invpow_fails_off_the_units">
 <p class="thm-label"><strong>Theorem 202</strong> (<code>invpow_fails_off_the_units</code>)<a class="thm-cite" href="/theorem/lean_generated_invpow_fails_off_the_units">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>¬</mo><mrow><mo>∃</mo><mi>t</mi><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>]</mo></mrow><mo>:</mo><mrow><mo>∃</mo><mi>e</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>8</mn><mo>}</mo></mrow><mo>:</mo><mrow><mrow><mrow><mi>t</mi><mo>⋅</mo><mi>e</mi></mrow><mo>mod</mo><mn>9</mn></mrow><mo>=</mo><mn>1</mn></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>¬ ([3, 6].any (fun t =&gt; (List.range 9).any (fun e =&gt; (t * e) % 9 == 1)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\lnot \exists t \in [3,\,6] : \exists e \in \{0,\dots,8\} : t \cdot e \bmod 9 = 1</code></pre></details>
 </div>
 <p class="thm-remark">the boundary: where the property genuinely fails</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 18 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-generated-cyclic_units_have_a_primitive_root">
 <p class="thm-label"><strong>Theorem 203</strong> (<code>cyclic_units_have_a_primitive_root</code>)<a class="thm-cite" href="/theorem/lean_generated_cyclic_units_have_a_primitive_root">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>p</mi><mo>∈</mo><mrow><mo>[</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>11</mn><mo>,</mo><mn>13</mn><mo>]</mo></mrow><mo>,</mo><mrow><mo>∃</mo><mi>g</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mrow><mn>1</mn><mo>+</mo><mrow><mi>p</mi><mo>-</mo><mn>1</mn></mrow><mo>−</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>:</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><msup><mi>g</mi><mi>k</mi></msup><mo>mod</mo><mi>p</mi></mrow><mo>∣</mo><mi>k</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mrow><mn>1</mn><mo>+</mo><mrow><mi>p</mi><mo>-</mo><mn>1</mn></mrow><mo>−</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mrow><mi>p</mi><mo>-</mo><mn>1</mn></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[2,3,5,7,11,13].all (fun p =&gt; (List.range' 1 (p - 1)).any (fun g =&gt; (((List.range' 1 (p - 1)).map (fun k =&gt; (g ^ k) % p)).eraseDups).length == p - 1))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall p \in [2,\,3,\,5,\,7,\,11,\,13],\; \exists g \in \{1,\dots,1+p - 1-1\} : \left|\operatorname{dedup}\left(\{\, g^{k} \bmod p \mid k \in \{1,\dots,1+p - 1-1\} \,\}\right)\right| = p - 1</code></pre></details>
 </div>
 <p class="thm-remark">domain_cyclic_m: 13 ledger rows (params 2, 3, 4, 5, 6, 7, 9, 10, 11, 13, 14, 17, 18) → one quantified theorem</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 6 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-generated-decimal_period_is_the_order_of_ten">
 <p class="thm-label"><strong>Theorem 204</strong> (<code>decimal_period_is_the_order_of_ten</code>)<a class="thm-cite" href="/theorem/lean_generated_decimal_period_is_the_order_of_ten">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>p</mi><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>11</mn><mo>,</mo><mn>13</mn><mo>,</mo><mn>17</mn><mo>,</mo><mn>19</mn><mo>,</mo><mn>23</mn><mo>,</mo><mn>29</mn><mo>]</mo></mrow><mo>,</mo><mrow><mo>∃</mo><mi>k</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mrow><mn>1</mn><mo>+</mo><mrow><mi>p</mi><mo>-</mo><mn>1</mn></mrow><mo>−</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>:</mo><mrow><mrow><msup><mn>10</mn><mi>k</mi></msup><mo>mod</mo><mi>p</mi></mrow><mo>=</mo><mn>1</mn></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[3,7,11,13,17,19,23,29].all (fun p =&gt; (List.range' 1 (p - 1)).any (fun k =&gt; (10 ^ k) % p == 1))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall p \in [3,\,7,\,11,\,13,\,17,\,19,\,23,\,29],\; \exists k \in \{1,\dots,1+p - 1-1\} : 10^{k} \bmod p = 1</code></pre></details>
 </div>
 <p class="thm-remark">decimal_period_of_1_over: 12 ledger rows (params 3, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43) → one quantified theorem</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 8 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-generated-primality_agrees_with_trial_division">
 <p class="thm-label"><strong>Theorem 205</strong> (<code>primality_agrees_with_trial_division</code>)<a class="thm-cite" href="/theorem/lean_generated_primality_agrees_with_trial_division">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>2</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>41</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>{</mo><mn>2</mn><mo>,</mo><mo>…</mo><mo>,</mo><mrow><mn>2</mn><mo>+</mo><mrow><mi>n</mi><mo>-</mo><mn>2</mn></mrow><mo>−</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>n</mi><mo>mod</mo><mi>d</mi></mrow><mo>≠</mo><mn>0</mn></mrow></mrow><mo>=</mo><mrow><mi>n</mi><mo>∈</mo><mrow><mo>[</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>11</mn><mo>,</mo><mn>13</mn><mo>,</mo><mn>17</mn><mo>,</mo><mn>19</mn><mo>,</mo><mn>23</mn><mo>,</mo><mn>29</mn><mo>,</mo><mn>31</mn><mo>,</mo><mn>37</mn><mo>,</mo><mn>41</mn><mo>]</mo></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 2 40).all (fun n =&gt; ((List.range' 2 (n - 2)).all (fun d =&gt; n % d != 0)) == ([2,3,5,7,11,13,17,19,23,29,31,37,41].contains n))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in \{2,\dots,41\},\; \forall d \in \{2,\dots,2+n - 2-1\},\; n \bmod d \neq 0 = n \in [2,\,3,\,5,\,7,\,11,\,13,\,17,\,19,\,23,\,29,\,31,\,37,\,41]</code></pre></details>
 </div>
 <p class="thm-remark">domain_prime_m: 7 ledger rows (params 2, 3, 5, 7, 11, 13, 17) → one quantified theorem</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 520 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-generated-roots_of_unity_cancel">
 <p class="thm-label"><strong>Theorem 206</strong> (<code>roots_of_unity_cancel</code>)<a class="thm-cite" href="/theorem/lean_generated_roots_of_unity_cancel">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>2</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>13</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mrow><mo>∑</mo><mrow><mo>{</mo><mi>k</mi><mo>∣</mo><mi>k</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>}</mo></mrow></mrow><mo>⋅</mo><mn>2</mn></mrow><mo>=</mo><mrow><mi>n</mi><mo>⋅</mo><mrow><mi>n</mi><mo>-</mo><mn>1</mn></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 2 12).all (fun n =&gt; ((List.range n).map (fun k =&gt; k)).foldl (· + ·) 0 * 2 == n * (n - 1))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in \{2,\dots,13\},\; \sum \{\, k \mid k \in \{0,\dots,n-1\} \,\} \cdot 2 = n \cdot n - 1</code></pre></details>
 </div>
 <p class="thm-remark">roots_cancel_n: 5 ledger rows (params 2, 3, 5, 7, 9) → one quantified theorem</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 12 cases. <span class="qed">□</span></p>
@@ -1832,63 +2206,81 @@ else. What the kernel adds is what a test cannot give — the proposition checke
 
 <div class="thm" id="thm-mechanical-add_group">
 <p class="thm-label"><strong>Theorem 207</strong> (<code>add_group</code>)<a class="thm-cite" href="/theorem/lean_mechanical_add_group">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>9</mn><mo>}</mo></mrow><mo>,</mo><mrow><mo>∃</mo><mi>e</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>9</mn><mo>}</mo></mrow><mo>:</mo><mrow><mrow><mi>M9</mi><mo>(</mo><mrow><mi>d</mi><mo>+</mo><mi>e</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 1 9).all (fun d =&gt; (List.range' 1 9).any (fun e =&gt; M9 (d + e) == 0))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in \{1,\dots,9\},\; \exists e \in \{1,\dots,9\} : \mathrm{M9}\mathopen{}\left(d + e\right) = 0</code></pre></details>
 </div>
 <p class="thm-remark">every residue has an additive inverse mod 9</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 81 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-bool_demorgan1">
 <p class="thm-label"><strong>Theorem 208</strong> (<code>bool_demorgan1</code>)<a class="thm-cite" href="/theorem/lean_mechanical_bool_demorgan1">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>a</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>]</mo></mrow><mo>,</mo><mrow><mo>∀</mo><mi>b</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mn>1</mn><mo>-</mo><mrow><mi>a</mi><mo>⋅</mo><mi>b</mi></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mn>1</mn><mo>-</mo><mi>a</mi></mrow><mo>+</mo><mrow><mn>1</mn><mo>-</mo><mi>b</mi></mrow></mrow><mo>-</mo><mrow><mrow><mn>1</mn><mo>-</mo><mi>a</mi></mrow><mo>⋅</mo><mrow><mn>1</mn><mo>-</mo><mi>b</mi></mrow></mrow></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0,1].all (fun a =&gt; [0,1].all (fun b =&gt; (1 - (a * b)) == ((1 - a) + (1 - b) - (1 - a) * (1 - b))))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall a \in [0,\,1],\; \forall b \in [0,\,1],\; 1 - a \cdot b = 1 - a + 1 - b - 1 - a \cdot 1 - b</code></pre></details>
 </div>
 <p class="thm-remark">De Morgan: ¬(a∧b) = ¬a∨¬b (all inputs)</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 4 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-bool_demorgan2">
 <p class="thm-label"><strong>Theorem 209</strong> (<code>bool_demorgan2</code>)<a class="thm-cite" href="/theorem/lean_mechanical_bool_demorgan2">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>a</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>]</mo></mrow><mo>,</mo><mrow><mo>∀</mo><mi>b</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mn>1</mn><mo>-</mo><mrow><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow><mo>-</mo><mrow><mi>a</mi><mo>⋅</mo><mi>b</mi></mrow></mrow></mrow><mo>=</mo><mrow><mrow><mn>1</mn><mo>-</mo><mi>a</mi></mrow><mo>⋅</mo><mrow><mn>1</mn><mo>-</mo><mi>b</mi></mrow></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0,1].all (fun a =&gt; [0,1].all (fun b =&gt; (1 - (a + b - a * b)) == ((1 - a) * (1 - b))))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall a \in [0,\,1],\; \forall b \in [0,\,1],\; 1 - a + b - a \cdot b = 1 - a \cdot 1 - b</code></pre></details>
 </div>
 <p class="thm-remark">De Morgan: ¬(a∨b) = ¬a∧¬b (all inputs)</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 4 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-bool_distributivity">
 <p class="thm-label"><strong>Theorem 210</strong> (<code>bool_distributivity</code>)<a class="thm-cite" href="/theorem/lean_mechanical_bool_distributivity">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>a</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>]</mo></mrow><mo>,</mo><mrow><mo>∀</mo><mi>b</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>]</mo></mrow><mo>,</mo><mrow><mo>∀</mo><mi>c</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>a</mi><mo>⋅</mo><mrow><mrow><mi>b</mi><mo>+</mo><mi>c</mi></mrow><mo>-</mo><mrow><mi>b</mi><mo>⋅</mo><mi>c</mi></mrow></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mi>a</mi><mo>⋅</mo><mi>b</mi></mrow><mo>+</mo><mrow><mi>a</mi><mo>⋅</mo><mi>c</mi></mrow></mrow><mo>-</mo><mrow><mrow><mi>a</mi><mo>⋅</mo><mi>b</mi></mrow><mo>⋅</mo><mrow><mi>a</mi><mo>⋅</mo><mi>c</mi></mrow></mrow></mrow></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0,1].all (fun a =&gt; [0,1].all (fun b =&gt; [0,1].all (fun c =&gt; (a * (b + c - b * c)) == ((a * b) + (a * c) - (a * b) * (a * c)))))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall a \in [0,\,1],\; \forall b \in [0,\,1],\; \forall c \in [0,\,1],\; a \cdot b + c - b \cdot c = a \cdot b + a \cdot c - a \cdot b \cdot a \cdot c</code></pre></details>
 </div>
 <p class="thm-remark">distributivity: a∧(b∨c) = (a∧b)∨(a∧c) (all inputs)</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 8 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-bool_absorption">
 <p class="thm-label"><strong>Theorem 211</strong> (<code>bool_absorption</code>)<a class="thm-cite" href="/theorem/lean_mechanical_bool_absorption">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>a</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>]</mo></mrow><mo>,</mo><mrow><mo>∀</mo><mi>b</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mrow><mi>a</mi><mo>+</mo><mrow><mi>a</mi><mo>⋅</mo><mi>b</mi></mrow></mrow><mo>-</mo><mrow><mi>a</mi><mo>⋅</mo><mrow><mi>a</mi><mo>⋅</mo><mi>b</mi></mrow></mrow></mrow><mo>=</mo><mi>a</mi></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0,1].all (fun a =&gt; [0,1].all (fun b =&gt; (a + (a * b) - a * (a * b)) == a))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall a \in [0,\,1],\; \forall b \in [0,\,1],\; a + a \cdot b - a \cdot a \cdot b = a</code></pre></details>
 </div>
 <p class="thm-remark">absorption: a∨(a∧b) = a (all inputs)</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 4 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-merkaba_cube_q3">
 <p class="thm-label"><strong>Theorem 212</strong> (<code>merkaba_cube_q3</code>)<a class="thm-cite" href="/theorem/lean_mechanical_merkaba_cube_q3">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><msup><mn>2</mn><mn>3</mn></msup><mo>=</mo><mn>8</mn></mrow><mo>∧</mo><mrow><mrow><mn>3</mn><mo>⋅</mo><msup><mn>2</mn><mn>2</mn></msup></mrow><mo>=</mo><mn>12</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>2 ^ 3 == 8 &amp;&amp; 3 * 2 ^ 2 == 12</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>2^{3} = 8 \land 3 \cdot 2^{2} = 12</code></pre></details>
 </div>
 <p class="thm-remark">two tetrahedra = the cube Q₃: 2³ = 8 vertices, 3·2² = 12 edges</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-cover_rotation_full_circle">
 <p class="thm-label"><strong>Theorem 213</strong> (<code>cover_rotation_full_circle</code>)<a class="thm-cite" href="/theorem/lean_mechanical_cover_rotation_full_circle">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mrow><mi>d</mi><mo>⋅</mo><mn>40</mn></mrow><mo>mod</mo><mn>360</mn></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>9</mn><mo>}</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>9</mn></mrow></math></div>
 <pre class="thm-statement"><code>((List.range' 1 9).map (fun d =&gt; (d * 40) % 360)).eraseDups.length == 9</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\operatorname{dedup}\left(\{\, d \cdot 40 \bmod 360 \mid d \in \{1,\dots,9\} \,\}\right)\right| = 9</code></pre></details>
 </div>
 <p class="thm-remark">rotation by the a432 step (40°) visits all 9 angular positions — the full circle, no gap</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-fib_trinity_horizon">
 <p class="thm-label"><strong>Theorem 214</strong> (<code>fib_trinity_horizon</code>)<a class="thm-cite" href="/theorem/lean_mechanical_fib_trinity_horizon">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>DR</mi><mo>(</mo><mrow><mrow><mn>3</mn><mo>+</mo><mn>5</mn></mrow><mo>+</mo><mn>8</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>7</mn></mrow></math></div>
 <pre class="thm-statement"><code>DR (3 + 5 + 8) == 7</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{DR}\mathopen{}\left(3 + 5 + 8\right) = 7</code></pre></details>
 </div>
 <p class="thm-remark">the 3-5-8 trinity digital-roots to the horizon: dr(3+5+8) = dr(16) = 7</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-arts_nine_hues_distinct">
 <p class="thm-label"><strong>Theorem 215</strong> (<code>arts_nine_hues_distinct</code>)<a class="thm-cite" href="/theorem/lean_mechanical_arts_nine_hues_distinct">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mrow><mi>d</mi><mo>⋅</mo><mn>40</mn></mrow><mo>mod</mo><mn>360</mn></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>9</mn><mo>}</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>9</mn></mrow></math></div>
 <pre class="thm-statement"><code>((List.range' 1 9).map (fun d =&gt; (d * 40) % 360)).eraseDups.length == 9</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\operatorname{dedup}\left(\{\, d \cdot 40 \bmod 360 \mid d \in \{1,\dots,9\} \,\}\right)\right| = 9</code></pre></details>
 </div>
 <p class="thm-remark">the nine a432 hues (digit×40°) are distinct and equally spaced around the wheel</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
@@ -1902,7 +2294,9 @@ else. What the kernel adds is what a test cannot give — the proposition checke
 
 <div class="thm" id="thm-mechanical-trial_zero_divisors">
 <p class="thm-label"><strong>Theorem 217</strong> (<code>trial_zero_divisors</code>)<a class="thm-cite" href="/theorem/lean_mechanical_trial_zero_divisors">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>M9</mi><mo>(</mo><mrow><mn>3</mn><mo>⋅</mo><mn>3</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow><mo>∧</mo><mrow><mrow><mi>M9</mi><mo>(</mo><mn>3</mn><mo>)</mo></mrow><mo>≠</mo><mn>0</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>M9 (3 * 3) == 0 &amp;&amp; M9 (3) != 0</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{M9}\mathopen{}\left(3 \cdot 3\right) = 0 \land \mathrm{M9}\mathopen{}\left(3\right) \neq 0</code></pre></details>
 </div>
 <p class="thm-remark">trial UPHELD: ℤ/9 has zero divisors — 3·3 ≡ 0 with 3 ≠ 0 (not an integral domain)</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
@@ -1916,7 +2310,9 @@ else. What the kernel adds is what a test cannot give — the proposition checke
 
 <div class="thm" id="thm-mechanical-nopayload_avalanche">
 <p class="thm-label"><strong>Theorem 219</strong> (<code>nopayload_avalanche</code>)<a class="thm-cite" href="/theorem/lean_mechanical_nopayload_avalanche">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>109</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>115</mn><mo>,</mo><mn>115</mn><mo>,</mo><mn>97</mn><mo>,</mo><mn>103</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>48</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>109</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>115</mn><mo>,</mo><mn>115</mn><mo>,</mo><mn>97</mn><mo>,</mo><mn>103</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>49</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></math></div>
 <pre class="thm-statement"><code>Address.toUuidBytes [109, 101, 115, 115, 97, 103, 101, 48] != Address.toUuidBytes [109, 101, 115, 115, 97, 103, 101, 49]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{Address.toUuidBytes}\mathopen{}\left([109,\,101,\,115,\,115,\,97,\,103,\,101,\,48]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([109,\,101,\,115,\,115,\,97,\,103,\,101,\,49]\right)</code></pre></details>
 </div>
 <p class="thm-remark">a one-character change gives an unrelated address (avalanche) — no gradient leaks the message</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 64 cases. <span class="qed">□</span></p>
@@ -1930,112 +2326,144 @@ else. What the kernel adds is what a test cannot give — the proposition checke
 
 <div class="thm" id="thm-mechanical-chess_diagonals_15">
 <p class="thm-label"><strong>Theorem 221</strong> (<code>chess_diagonals_15</code>)<a class="thm-cite" href="/theorem/lean_mechanical_chess_diagonals_15">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mn>2</mn><mo>⋅</mo><mn>8</mn></mrow><mo>-</mo><mn>1</mn></mrow><mo>=</mo><mn>15</mn></mrow></math></div>
 <pre class="thm-statement"><code>2 * 8 - 1 == 15</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>2 \cdot 8 - 1 = 15</code></pre></details>
 </div>
 <p class="thm-remark">the 8×8 board has 2·8 − 1 = 15 diagonals in each direction</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-tarot_78_cards">
 <p class="thm-label"><strong>Theorem 222</strong> (<code>tarot_78_cards</code>)<a class="thm-cite" href="/theorem/lean_mechanical_tarot_78_cards">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mn>22</mn><mo>+</mo><mn>56</mn></mrow><mo>=</mo><mn>78</mn></mrow></math></div>
 <pre class="thm-statement"><code>22 + 56 == 78</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>22 + 56 = 78</code></pre></details>
 </div>
 <p class="thm-remark">the tarot has 78 cards: 22 major arcana + 56 minor (22+56=78)</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-tarot_minor_4x14">
 <p class="thm-label"><strong>Theorem 223</strong> (<code>tarot_minor_4x14</code>)<a class="thm-cite" href="/theorem/lean_mechanical_tarot_minor_4x14">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mn>4</mn><mo>⋅</mo><mn>14</mn></mrow><mo>=</mo><mn>56</mn></mrow></math></div>
 <pre class="thm-statement"><code>4 * 14 == 56</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>4 \cdot 14 = 56</code></pre></details>
 </div>
 <p class="thm-remark">the minor arcana is 4 suits × 14 ranks = 56</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-tarot_major_0_21">
 <p class="thm-label"><strong>Theorem 224</strong> (<code>tarot_major_0_21</code>)<a class="thm-cite" href="/theorem/lean_mechanical_tarot_major_0_21">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mo>{</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>21</mn><mo>}</mo></mrow><mo>∣</mo><mrow><mrow><mi>n</mi><mo>≥</mo><mn>0</mn></mrow><mo>∧</mo><mrow><mi>n</mi><mo>≤</mo><mn>21</mn></mrow></mrow><mo>}</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>22</mn></mrow></math></div>
 <pre class="thm-statement"><code>((List.range 22).filter (fun n =&gt; n &gt;= 0 &amp;&amp; n &lt;= 21)).length == 22</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\{\, n \in \{0,\dots,21\} \mid n \ge 0 \land n \le 21 \,\}\right| = 22</code></pre></details>
 </div>
 <p class="thm-remark">the 22 major arcana are numbered 0..21 (0 = Fool … 21 = World)</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 22 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-tarot_digital_roots">
 <p class="thm-label"><strong>Theorem 225</strong> (<code>tarot_digital_roots</code>)<a class="thm-cite" href="/theorem/lean_mechanical_tarot_digital_roots">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mi>DR</mi><mo>(</mo><mn>78</mn><mo>)</mo></mrow><mo>=</mo><mn>6</mn></mrow><mo>∧</mo><mrow><mrow><mi>DR</mi><mo>(</mo><mn>22</mn><mo>)</mo></mrow><mo>=</mo><mn>4</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mi>DR</mi><mo>(</mo><mn>56</mn><mo>)</mo></mrow><mo>=</mo><mn>2</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>DR (78) == 6 &amp;&amp; DR (22) == 4 &amp;&amp; DR (56) == 2</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{DR}\mathopen{}\left(78\right) = 6 \land \mathrm{DR}\mathopen{}\left(22\right) = 4 \land \mathrm{DR}\mathopen{}\left(56\right) = 2</code></pre></details>
 </div>
 <p class="thm-remark">the tarot counts ride ℤ/9: dr(78)=6, dr(22)=4, dr(56)=2 — each card-set a vortex digit</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-gf4_size">
 <p class="thm-label"><strong>Theorem 226</strong> (<code>gf4_size</code>)<a class="thm-cite" href="/theorem/lean_mechanical_gf4_size">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>]</mo></mrow><mo>|</mo></mrow><mo>=</mo><msup><mn>2</mn><mn>2</mn></msup></mrow></math></div>
 <pre class="thm-statement"><code>[0, 1, 2, 3].length == 2 ^ 2</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|[0,\,1,\,2,\,3]\right| = 2^{2}</code></pre></details>
 </div>
 <p class="thm-remark">𝔽_4 = GF(2²) has p^k = 2² = 4 elements {0, 1, x, x+1}</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 4 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-relation_digital_root">
 <p class="thm-label"><strong>Theorem 227</strong> (<code>relation_digital_root</code>)<a class="thm-cite" href="/theorem/lean_mechanical_relation_digital_root">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mi>DR</mi><mo>(</mo><mn>78</mn><mo>)</mo></mrow><mo>=</mo><mn>6</mn></mrow><mo>∧</mo><mrow><mrow><mi>DR</mi><mo>(</mo><mn>12</mn><mo>)</mo></mrow><mo>=</mo><mrow><mi>DR</mi><mo>(</mo><mn>21</mn><mo>)</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mi>DR</mi><mo>(</mo><mn>7</mn><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>DR (78) == 6 &amp;&amp; DR (12) == DR (21) &amp;&amp; [1,2,4,5,7,8].contains (DR (7))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{DR}\mathopen{}\left(78\right) = 6 \land \mathrm{DR}\mathopen{}\left(12\right) = \mathrm{DR}\mathopen{}\left(21\right) \land \mathrm{DR}\mathopen{}\left(7\right) \in [1,\,2,\,4,\,5,\,7,\,8]</code></pre></details>
 </div>
 <p class="thm-remark">the digital root (mod 9) RELATES the div-by-3 rule · primes-ride-units · the tarot counts · ceccec</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 6 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-harmonic_octave_2_1">
 <p class="thm-label"><strong>Theorem 228</strong> (<code>harmonic_octave_2_1</code>)<a class="thm-cite" href="/theorem/lean_mechanical_harmonic_octave_2_1">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mfrac><mn>2</mn><mn>1</mn></mfrac><mo>=</mo><mn>2</mn></mrow></math></div>
 <pre class="thm-statement"><code>2 / 1 == 2</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\frac{2}{1} = 2</code></pre></details>
 </div>
 <p class="thm-remark">the octave is 2:1 (frequency doubling) — the vortex ×2 map is the octave</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-harmonic_pythagorean_comma">
 <p class="thm-label"><strong>Theorem 229</strong> (<code>harmonic_pythagorean_comma</code>)<a class="thm-cite" href="/theorem/lean_mechanical_harmonic_pythagorean_comma">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><msup><mn>3</mn><mn>12</mn></msup><mo>=</mo><mn>531441</mn></mrow><mo>∧</mo><mrow><msup><mn>2</mn><mn>19</mn></msup><mo>=</mo><mn>524288</mn></mrow></mrow><mo>∧</mo><mrow><msup><mn>3</mn><mn>12</mn></msup><mo>≠</mo><msup><mn>2</mn><mn>19</mn></msup></mrow></mrow></math></div>
 <pre class="thm-statement"><code>3 ^ 12 == 531441 &amp;&amp; 2 ^ 19 == 524288 &amp;&amp; 3 ^ 12 != 2 ^ 19</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>3^{12} = 531441 \land 2^{19} = 524288 \land 3^{12} \neq 2^{19}</code></pre></details>
 </div>
 <p class="thm-remark">the Pythagorean comma: 12 fifths ≠ 7 octaves — 3^12 = 531441 ≠ 2^19 = 524288</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-relation_seven">
 <p class="thm-label"><strong>Theorem 230</strong> (<code>relation_seven</code>)<a class="thm-cite" href="/theorem/lean_mechanical_relation_seven">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>DR</mi><mo>(</mo><mrow><mrow><mn>3</mn><mo>+</mo><mn>5</mn></mrow><mo>+</mo><mn>8</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>7</mn></mrow></math></div>
 <pre class="thm-statement"><code>DR (3 + 5 + 8) == 7</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{DR}\mathopen{}\left(3 + 5 + 8\right) = 7</code></pre></details>
 </div>
 <p class="thm-remark">7 RELATES the Clay count · the rosette ℤ/7 · the horizon dr(3+5+8) · the seven gates</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-relation_eight">
 <p class="thm-label"><strong>Theorem 231</strong> (<code>relation_eight</code>)<a class="thm-cite" href="/theorem/lean_mechanical_relation_eight">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><msup><mn>2</mn><mn>3</mn></msup><mo>=</mo><mn>8</mn></mrow><mo>∧</mo><mrow><mrow><mn>8</mn><mo>⋅</mo><mn>8</mn></mrow><mo>=</mo><mn>64</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>2 ^ 3 == 8 &amp;&amp; 8 * 8 == 64</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>2^{3} = 8 \land 8 \cdot 8 = 64</code></pre></details>
 </div>
 <p class="thm-remark">8 RELATES the octave · the cube Q₃ (2³) · the chessboard (8×8) · the Fibonacci minor</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-relation_creation_week">
 <p class="thm-label"><strong>Theorem 232</strong> (<code>relation_creation_week</code>)<a class="thm-cite" href="/theorem/lean_mechanical_relation_creation_week">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mn>6</mn><mo>+</mo><mn>1</mn></mrow><mo>=</mo><mn>7</mn></mrow><mo>∧</mo><mrow><mrow><mn>7</mn><mo>-</mo><mn>1</mn></mrow><mo>=</mo><mn>6</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>6 + 1 == 7 &amp;&amp; 7 - 1 == 6</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>6 + 1 = 7 \land 7 - 1 = 6</code></pre></details>
 </div>
 <p class="thm-remark">the creation-week structure 6 + 1 = 7: six Clay problems stay open, the seventh settled externally (Poincaré,</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-relation_superposition_collapse">
 <p class="thm-label"><strong>Theorem 233</strong> (<code>relation_superposition_collapse</code>)<a class="thm-cite" href="/theorem/lean_mechanical_relation_superposition_collapse">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>111</mn><mo>,</mo><mn>98</mn><mo>,</mo><mn>115</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>118</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>120</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>111</mn><mo>,</mo><mn>98</mn><mo>,</mo><mn>115</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>118</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>120</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow><mo>∧</mo><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>111</mn><mo>,</mo><mn>98</mn><mo>,</mo><mn>115</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>118</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>120</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>111</mn><mo>,</mo><mn>98</mn><mo>,</mo><mn>115</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>118</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>121</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>Address.toUuidBytes [111, 98, 115, 101, 114, 118, 101, 114, 58, 120] == Address.toUuidBytes [111, 98, 115, 101, 114, 118, 101, 114, 58, 120] &amp;&amp; Address.toUuidBytes [111, 98, 115, 101, 114, 118, 101, 114, 58, 120] != Address.toUuidBytes [111, 98, 115, 101, 114, 118, 101, 114, 58, 121]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{Address.toUuidBytes}\mathopen{}\left([111,\,98,\,115,\,101,\,114,\,118,\,101,\,114,\,58,\,120]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([111,\,98,\,115,\,101,\,114,\,118,\,101,\,114,\,58,\,120]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([111,\,98,\,115,\,101,\,114,\,118,\,101,\,114,\,58,\,120]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([111,\,98,\,115,\,101,\,114,\,118,\,101,\,114,\,58,\,121]\right)</code></pre></details>
 </div>
 <p class="thm-remark">the collapse dissolves into content-addressing: observation is a function — one input folds to exactly one add</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 10,000 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-relation_url_path">
 <p class="thm-label"><strong>Theorem 234</strong> (<code>relation_url_path</code>)<a class="thm-cite" href="/theorem/lean_mechanical_relation_url_path">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>116</mn><mo>,</mo><mn>104</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>47</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>121</mn><mo>,</mo><mn>115</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>97</mn><mo>,</mo><mn>108</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>99</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>121</mn><mo>,</mo><mn>115</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>97</mn><mo>,</mo><mn>108</mn><mo>,</mo><mn>47</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>104</mn><mo>,</mo><mn>101</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow><mo>∧</mo><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>116</mn><mo>,</mo><mn>104</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>47</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>121</mn><mo>,</mo><mn>115</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>97</mn><mo>,</mo><mn>108</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>116</mn><mo>,</mo><mn>104</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>47</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>121</mn><mo>,</mo><mn>115</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>97</mn><mo>,</mo><mn>108</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>Address.toUuidBytes [116, 104, 101, 47, 99, 114, 121, 115, 116, 97, 108] != Address.toUuidBytes [99, 114, 121, 115, 116, 97, 108, 47, 116, 104, 101] &amp;&amp; Address.toUuidBytes [116, 104, 101, 47, 99, 114, 121, 115, 116, 97, 108] == Address.toUuidBytes [116, 104, 101, 47, 99, 114, 121, 115, 116, 97, 108]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{Address.toUuidBytes}\mathopen{}\left([116,\,104,\,101,\,47,\,99,\,114,\,121,\,115,\,116,\,97,\,108]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([99,\,114,\,121,\,115,\,116,\,97,\,108,\,47,\,116,\,104,\,101]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([116,\,104,\,101,\,47,\,99,\,114,\,121,\,115,\,116,\,97,\,108]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([116,\,104,\,101,\,47,\,99,\,114,\,121,\,115,\,116,\,97,\,108]\right)</code></pre></details>
 </div>
 <p class="thm-remark">url messaging is the path itself: a path is the message (no payload) — its content-address depends on the orde</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 14,641 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-genus2_moduli_dim">
 <p class="thm-label"><strong>Theorem 235</strong> (<code>genus2_moduli_dim</code>)<a class="thm-cite" href="/theorem/lean_mechanical_genus2_moduli_dim">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mn>6</mn><mo>⋅</mo><mn>2</mn></mrow><mo>-</mo><mn>6</mn></mrow><mo>=</mo><mn>6</mn></mrow></math></div>
 <pre class="thm-statement"><code>6 * 2 - 6 == 6</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>6 \cdot 2 - 6 = 6</code></pre></details>
 </div>
 <p class="thm-remark">the moduli / Teichmüller space of the double torus has real dimension 6g − 6 = 6</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-genus2_hyperelliptic">
 <p class="thm-label"><strong>Theorem 236</strong> (<code>genus2_hyperelliptic</code>)<a class="thm-cite" href="/theorem/lean_mechanical_genus2_hyperelliptic">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mn>2</mn><mo>⋅</mo><mn>2</mn></mrow><mo>+</mo><mn>2</mn></mrow><mo>=</mo><mn>6</mn></mrow></math></div>
 <pre class="thm-statement"><code>2 * 2 + 2 == 6</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>2 \cdot 2 + 2 = 6</code></pre></details>
 </div>
 <p class="thm-remark">every genus-2 curve is hyperelliptic: a double cover of the sphere branched at 2g+2 = 6 Weierstrass points</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
@@ -2049,14 +2477,18 @@ else. What the kernel adds is what a test cannot give — the proposition checke
 
 <div class="thm" id="thm-mechanical-relation_digitroot_is_residue_mod9">
 <p class="thm-label"><strong>Theorem 238</strong> (<code>relation_digitroot_is_residue_mod9</code>)<a class="thm-cite" href="/theorem/lean_mechanical_relation_digitroot_is_residue_mod9">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>200</mn><mo>}</mo></mrow><mo>,</mo><mrow><mo>¬</mo><mrow><mrow><mi>DR</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><mo>≠</mo><mrow><mrow><mrow><mi>n</mi><mo>-</mo><mn>1</mn></mrow><mo>mod</mo><mn>9</mn></mrow><mo>+</mo><mn>1</mn></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 1 200).all (fun n =&gt; ¬ (DR (n) != ((n - 1) % 9) + 1))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in \{1,\dots,200\},\; \lnot \mathrm{DR}\mathopen{}\left(n\right) \neq n - 1 \bmod 9 + 1</code></pre></details>
 </div>
 <p class="thm-remark">the digital root IS residue mod 9: for every n&gt;0, digitalRoot(n) = ((n−1) mod 9)+1 — the digit-sum collapse an</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 200 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-relation_seven_is_six_plus_one">
 <p class="thm-label"><strong>Theorem 239</strong> (<code>relation_seven_is_six_plus_one</code>)<a class="thm-cite" href="/theorem/lean_mechanical_relation_seven_is_six_plus_one">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mo>|</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>6</mn></mrow><mo>∧</mo><mrow><mrow><mn>6</mn><mo>+</mo><mn>1</mn></mrow><mo>=</mo><mn>7</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mn>7</mn><mo>-</mo><mn>1</mn></mrow><mo>=</mo><mn>6</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1,2,4,5,7,8].length == 6 &amp;&amp; 6 + 1 == 7 &amp;&amp; 7 - 1 == 6</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|[1,\,2,\,4,\,5,\,7,\,8]\right| = 6 \land 6 + 1 = 7 \land 7 - 1 = 6</code></pre></details>
 </div>
 <p class="thm-remark">the 7 = 6+1 bijection binds the units to the Clay set: |units of ℤ/9| = 6, plus the identity = 7, mirroring 6</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 6 cases. <span class="qed">□</span></p>
@@ -2070,7 +2502,9 @@ else. What the kernel adds is what a test cannot give — the proposition checke
 
 <div class="thm" id="thm-mechanical-relation_432_factors">
 <p class="thm-label"><strong>Theorem 241</strong> (<code>relation_432_factors</code>)<a class="thm-cite" href="/theorem/lean_mechanical_relation_432_factors">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mn>432</mn><mo>=</mo><mrow><mn>16</mn><mo>⋅</mo><mn>27</mn></mrow></mrow><mo>∧</mo><mrow><mn>432</mn><mo>=</mo><mrow><msup><mn>2</mn><mn>4</mn></msup><mo>⋅</mo><msup><mn>3</mn><mn>3</mn></msup></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mi>DR</mi><mo>(</mo><mn>432</mn><mo>)</mo></mrow><mo>=</mo><mn>9</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>432 == 16 * 27 &amp;&amp; 432 == 2 ^ 4 * 3 ^ 3 &amp;&amp; DR (432) == 9</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>432 = 16 \cdot 27 \land 432 = 2^{4} \cdot 3^{3} \land \mathrm{DR}\mathopen{}\left(432\right) = 9</code></pre></details>
 </div>
 <p class="thm-remark">a432 factors into the trinity and the octave: 432 = 16·27 = 2⁴·3³, and its digital root is the base (dr(432)=9</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
@@ -2084,98 +2518,126 @@ else. What the kernel adds is what a test cannot give — the proposition checke
 
 <div class="thm" id="thm-mechanical-kaprekar_constants_digitroot_nine">
 <p class="thm-label"><strong>Theorem 243</strong> (<code>kaprekar_constants_digitroot_nine</code>)<a class="thm-cite" href="/theorem/lean_mechanical_kaprekar_constants_digitroot_nine">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>DR</mi><mo>(</mo><mn>495</mn><mo>)</mo></mrow><mo>=</mo><mn>9</mn></mrow><mo>∧</mo><mrow><mrow><mi>DR</mi><mo>(</mo><mn>6174</mn><mo>)</mo></mrow><mo>=</mo><mn>9</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>DR (495) == 9 &amp;&amp; DR (6174) == 9</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{DR}\mathopen{}\left(495\right) = 9 \land \mathrm{DR}\mathopen{}\left(6174\right) = 9</code></pre></details>
 </div>
 <p class="thm-remark">the Kaprekar constants bind to ℤ/9: dr(495) = dr(6174) = 9 = BASE — both fixed points sit on the base’s own di</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-content_address_is_keyless_integrity">
 <p class="thm-label"><strong>Theorem 244</strong> (<code>content_address_is_keyless_integrity</code>)<a class="thm-cite" href="/theorem/lean_mechanical_content_address_is_keyless_integrity">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>99</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>99</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>99</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>99</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow><mo>∧</mo><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>99</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>99</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>109</mn><mo>,</mo><mn>97</mn><mo>,</mo><mn>108</mn><mo>,</mo><mn>108</mn><mo>,</mo><mn>111</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>121</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>Address.toUuidBytes [99, 101, 99, 99, 101, 99] == Address.toUuidBytes [99, 101, 99, 99, 101, 99] &amp;&amp; Address.toUuidBytes [99, 101, 99, 99, 101, 99] != Address.toUuidBytes [109, 97, 108, 108, 111, 114, 121]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{Address.toUuidBytes}\mathopen{}\left([99,\,101,\,99,\,99,\,101,\,99]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([99,\,101,\,99,\,99,\,101,\,99]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([99,\,101,\,99,\,99,\,101,\,99]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([109,\,97,\,108,\,108,\,111,\,114,\,121]\right)</code></pre></details>
 </div>
 <p class="thm-remark">a content-address is keyless integrity: toUuid is a pure function — same input, same address, computed by anyo</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 1,512 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-the_three_four_five_right_triangle_is_the_first_pythagorean_triple">
 <p class="thm-label"><strong>Theorem 245</strong> (<code>the_three_four_five_right_triangle_is_the_first_pythagorean_triple</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_three_four_five_right_triangle_is_the_first_pythagorean_triple">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mn>3</mn><mo>⋅</mo><mn>3</mn></mrow><mo>+</mo><mrow><mn>4</mn><mo>⋅</mo><mn>4</mn></mrow></mrow><mo>=</mo><mrow><mn>5</mn><mo>⋅</mo><mn>5</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>3 * 3 + 4 * 4 == 5 * 5</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>3 \cdot 3 + 4 \cdot 4 = 5 \cdot 5</code></pre></details>
 </div>
 <p class="thm-remark">the 3-4-5 right triangle is the first Pythagorean triple: 3² + 4² = 5², the smallest and the only one in arith</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-the_regular_pentagon_angles_are_the_heart_seventy_two_and_hundred_eight">
 <p class="thm-label"><strong>Theorem 246</strong> (<code>the_regular_pentagon_angles_are_the_heart_seventy_two_and_hundred_eight</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_regular_pentagon_angles_are_the_heart_seventy_two_and_hundred_eight">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mfrac><mn>360</mn><mn>5</mn></mfrac><mo>=</mo><mn>72</mn></mrow><mo>∧</mo><mrow><mrow><mn>180</mn><mo>-</mo><mn>72</mn></mrow><mo>=</mo><mn>108</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>360 / 5 == 72 &amp;&amp; 180 - 72 == 108</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\frac{360}{5} = 72 \land 180 - 72 = 108</code></pre></details>
 </div>
 <p class="thm-remark">the regular pentagon’s exterior angle is 360/5 = 72° and its interior 108° — 72 = harmonicMean(60,90), the hea</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-the_cyclic_number_142857_is_the_repetend_of_one_seventh">
 <p class="thm-label"><strong>Theorem 247</strong> (<code>the_cyclic_number_142857_is_the_repetend_of_one_seventh</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_cyclic_number_142857_is_the_repetend_of_one_seventh">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mn>999999</mn><mo>mod</mo><mn>7</mn></mrow><mo>=</mo><mn>0</mn></mrow><mo>∧</mo><mrow><mfrac><mn>999999</mn><mn>7</mn></mfrac><mo>=</mo><mn>142857</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>999999 % 7 == 0 &amp;&amp; 999999 / 7 == 142857</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>999999 \bmod 7 = 0 \land \frac{999999}{7} = 142857</code></pre></details>
 </div>
 <p class="thm-remark">the cyclic number 142857 is the repetend of 1/7: (10^6 − 1)/7 = 999999/7 = 142857 — the seven unfolds the cycl</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-_142857_times_seven_is_six_nines">
 <p class="thm-label"><strong>Theorem 248</strong> (<code>_142857_times_seven_is_six_nines</code>)<a class="thm-cite" href="/theorem/lean_mechanical__142857_times_seven_is_six_nines">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mn>142857</mn><mo>⋅</mo><mn>7</mn></mrow><mo>=</mo><mn>999999</mn></mrow></math></div>
 <pre class="thm-statement"><code>142857 * 7 == 999999</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>142857 \cdot 7 = 999999</code></pre></details>
 </div>
 <p class="thm-remark">142857 times seven is six nines: 142857 × 7 = 999999 — the cyclic number completes to all-nines at the seven;</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-midy_the_two_halves_of_142857_sum_to_nines">
 <p class="thm-label"><strong>Theorem 249</strong> (<code>midy_the_two_halves_of_142857_sum_to_nines</code>)<a class="thm-cite" href="/theorem/lean_mechanical_midy_the_two_halves_of_142857_sum_to_nines">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mn>142</mn><mo>+</mo><mn>857</mn></mrow><mo>=</mo><mn>999</mn></mrow></math></div>
 <pre class="thm-statement"><code>142 + 857 == 999</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>142 + 857 = 999</code></pre></details>
 </div>
 <p class="thm-remark">Midy’s theorem on 1/7: the two halves of the repetend sum to nines — 142 + 857 = 999; 0/7</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-the_digital_root_of_seven_to_the_k_has_period_three">
 <p class="thm-label"><strong>Theorem 250</strong> (<code>the_digital_root_of_seven_to_the_k_has_period_three</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_digital_root_of_seven_to_the_k_has_period_three">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mrow><msup><mn>7</mn><mn>1</mn></msup><mo>mod</mo><mn>9</mn></mrow><mo>=</mo><mn>7</mn></mrow><mo>∧</mo><mrow><mrow><msup><mn>7</mn><mn>2</mn></msup><mo>mod</mo><mn>9</mn></mrow><mo>=</mo><mn>4</mn></mrow></mrow><mo>∧</mo><mrow><mrow><msup><mn>7</mn><mn>3</mn></msup><mo>mod</mo><mn>9</mn></mrow><mo>=</mo><mn>1</mn></mrow></mrow><mo>∧</mo><mrow><mrow><msup><mn>7</mn><mn>4</mn></msup><mo>mod</mo><mn>9</mn></mrow><mo>=</mo><mn>7</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>7 ^ 1 % 9 == 7 &amp;&amp; 7 ^ 2 % 9 == 4 &amp;&amp; 7 ^ 3 % 9 == 1 &amp;&amp; 7 ^ 4 % 9 == 7</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>7^{1} \bmod 9 = 7 \land 7^{2} \bmod 9 = 4 \land 7^{3} \bmod 9 = 1 \land 7^{4} \bmod 9 = 7</code></pre></details>
 </div>
 <p class="thm-remark">the digital root of 7^k has period three: 7, 4, 1 repeating (7^1≡7, 7^2≡4, 7^3≡1 mod 9) — the seven’s orbit in</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-seven_divides_the_repunit_of_length_six">
 <p class="thm-label"><strong>Theorem 251</strong> (<code>seven_divides_the_repunit_of_length_six</code>)<a class="thm-cite" href="/theorem/lean_mechanical_seven_divides_the_repunit_of_length_six">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mn>111111</mn><mo>mod</mo><mn>7</mn></mrow><mo>=</mo><mn>0</mn></mrow></math></div>
 <pre class="thm-statement"><code>111111 % 7 == 0</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>111111 \bmod 7 = 0</code></pre></details>
 </div>
 <p class="thm-remark">seven divides the repunit of length six: 7 | 111111, since 10^6 ≡ 1 (mod 7) makes R_6 = (10^6−1)/9 a multiple</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-two_to_the_eighth_is_two_hundred_fifty_six_a_byte">
 <p class="thm-label"><strong>Theorem 252</strong> (<code>two_to_the_eighth_is_two_hundred_fifty_six_a_byte</code>)<a class="thm-cite" href="/theorem/lean_mechanical_two_to_the_eighth_is_two_hundred_fifty_six_a_byte">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msup><mn>2</mn><mn>8</mn></msup><mo>=</mo><mn>256</mn></mrow></math></div>
 <pre class="thm-statement"><code>2 ^ 8 == 256</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>2^{8} = 256</code></pre></details>
 </div>
 <p class="thm-remark">two to the eighth is 256: a byte of 8 bits addresses 256 values — the octave of bits; 0/7</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-two_to_the_tenth_is_1024_the_harmonic_ledger">
 <p class="thm-label"><strong>Theorem 253</strong> (<code>two_to_the_tenth_is_1024_the_harmonic_ledger</code>)<a class="thm-cite" href="/theorem/lean_mechanical_two_to_the_tenth_is_1024_the_harmonic_ledger">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msup><mn>2</mn><mn>10</mn></msup><mo>=</mo><mn>1024</mn></mrow></math></div>
 <pre class="thm-statement"><code>2 ^ 10 == 1024</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>2^{10} = 1024</code></pre></details>
 </div>
 <p class="thm-remark">two to the tenth is 1024: ten doublings reach the harmonic ledger size, digitalRoot(1024)=7 — the octave raise</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-the_nine_times_table_always_digital_roots_to_nine">
 <p class="thm-label"><strong>Theorem 254</strong> (<code>the_nine_times_table_always_digital_roots_to_nine</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_nine_times_table_always_digital_roots_to_nine">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>k</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>60</mn><mo>}</mo></mrow><mo>,</mo><mrow><mo>¬</mo><mrow><mrow><mi>DR</mi><mo>(</mo><mrow><mn>9</mn><mo>⋅</mo><mi>k</mi></mrow><mo>)</mo></mrow><mo>≠</mo><mn>9</mn></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 1 60).all (fun k =&gt; ¬ (DR (9 * k) != 9))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall k \in \{1,\dots,60\},\; \lnot \mathrm{DR}\mathopen{}\left(9 \cdot k\right) \neq 9</code></pre></details>
 </div>
 <p class="thm-remark">the nine times table always digital-roots to nine: digitalRoot(9k) = 9 for every k ≥ 1 — nine is the base’s fi</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 60 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-the_regular_nonagon_exterior_angle_is_the_a432_step">
 <p class="thm-label"><strong>Theorem 255</strong> (<code>the_regular_nonagon_exterior_angle_is_the_a432_step</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_regular_nonagon_exterior_angle_is_the_a432_step">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mfrac><mn>360</mn><mn>9</mn></mfrac><mo>=</mo><mn>40</mn></mrow><mo>∧</mo><mrow><mn>40</mn><mo>=</mo><mn>40</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>360 / 9 == 40 &amp;&amp; 40 == 40</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\frac{360}{9} = 40 \land 40 = 40</code></pre></details>
 </div>
 <p class="thm-remark">the regular nonagon’s exterior angle is 360/9 = 40° = the a432 step — the base draws the nine-point circle at</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-casting_out_nines_is_multiplicative">
 <p class="thm-label"><strong>Theorem 256</strong> (<code>casting_out_nines_is_multiplicative</code>)<a class="thm-cite" href="/theorem/lean_mechanical_casting_out_nines_is_multiplicative">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>a</mi><mo>∈</mo><mrow><mo>{</mo><mn>2</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>60</mn><mo>}</mo></mrow><mo>,</mo><mrow><mo>∀</mo><mi>b</mi><mo>∈</mo><mrow><mo>{</mo><mn>2</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>60</mn><mo>}</mo></mrow><mo>,</mo><mrow><mo>¬</mo><mrow><mrow><mi>DR</mi><mo>(</mo><mrow><mi>a</mi><mo>⋅</mo><mi>b</mi></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mi>DR</mi><mo>(</mo><mrow><mrow><mi>DR</mi><mo>(</mo><mi>a</mi><mo>)</mo></mrow><mo>⋅</mo><mrow><mi>DR</mi><mo>(</mo><mi>b</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 2 59).all (fun a =&gt; (List.range' 2 59).all (fun b =&gt; ¬ (DR (a * b) != DR (DR (a) * DR (b)))))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall a \in \{2,\dots,60\},\; \forall b \in \{2,\dots,60\},\; \lnot \mathrm{DR}\mathopen{}\left(a \cdot b\right) \neq \mathrm{DR}\mathopen{}\left(\mathrm{DR}\mathopen{}\left(a\right) \cdot \mathrm{DR}\mathopen{}\left(b\right)\right)</code></pre></details>
 </div>
 <p class="thm-remark">casting out nines is multiplicative: digitalRoot(a·b) = digitalRoot(digitalRoot(a)·digitalRoot(b)) — the base-</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3,481 cases. <span class="qed">□</span></p>
@@ -2189,7 +2651,9 @@ else. What the kernel adds is what a test cannot give — the proposition checke
 
 <div class="thm" id="thm-mechanical-nine_is_the_base_and_the_trinity_squared">
 <p class="thm-label"><strong>Theorem 258</strong> (<code>nine_is_the_base_and_the_trinity_squared</code>)<a class="thm-cite" href="/theorem/lean_mechanical_nine_is_the_base_and_the_trinity_squared">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mn>9</mn><mo>=</mo><mn>9</mn></mrow><mo>∧</mo><mrow><mn>9</mn><mo>=</mo><msup><mn>3</mn><mn>2</mn></msup></mrow></mrow><mo>∧</mo><mrow><mn>3</mn><mo>=</mo><mn>3</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>9 == 9 &amp;&amp; 9 == 3 ^ 2 &amp;&amp; 3 == 3</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>9 = 9 \land 9 = 3^{2} \land 3 = 3</code></pre></details>
 </div>
 <p class="thm-remark">nine is the base and the trinity squared: BASE = 9 = 3² = TRINITY², so the units, triad and orbit all derive f</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
@@ -2203,49 +2667,63 @@ else. What the kernel adds is what a test cannot give — the proposition checke
 
 <div class="thm" id="thm-mechanical-the_regular_hexagon_exterior_angle_is_the_gold_string">
 <p class="thm-label"><strong>Theorem 260</strong> (<code>the_regular_hexagon_exterior_angle_is_the_gold_string</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_regular_hexagon_exterior_angle_is_the_gold_string">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mfrac><mn>360</mn><mn>6</mn></mfrac><mo>=</mo><mn>60</mn></mrow><mo>∧</mo><mrow><mrow><mn>180</mn><mo>-</mo><mn>60</mn></mrow><mo>=</mo><mn>120</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>360 / 6 == 60 &amp;&amp; 180 - 60 == 120</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\frac{360}{6} = 60 \land 180 - 60 = 120</code></pre></details>
 </div>
 <p class="thm-remark">the regular hexagon’s exterior angle is 360/6 = 60° = the gold string (π/3), its interior 120° — six tiles the</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-the_doubling_orbit_reflection_pairs_sum_to_nine">
 <p class="thm-label"><strong>Theorem 261</strong> (<code>the_doubling_orbit_reflection_pairs_sum_to_nine</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_doubling_orbit_reflection_pairs_sum_to_nine">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mn>1</mn><mo>+</mo><mn>8</mn></mrow><mo>=</mo><mn>9</mn></mrow><mo>∧</mo><mrow><mrow><mn>2</mn><mo>+</mo><mn>7</mn></mrow><mo>=</mo><mn>9</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mn>4</mn><mo>+</mo><mn>5</mn></mrow><mo>=</mo><mn>9</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>1 + 8 == 9 &amp;&amp; 2 + 7 == 9 &amp;&amp; 4 + 5 == 9</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>1 + 8 = 9 \land 2 + 7 = 9 \land 4 + 5 = 9</code></pre></details>
 </div>
 <p class="thm-remark">the doubling orbit’s reflection pairs sum to nine: 1+8, 2+7, 4+5 — the circuit folds onto itself across the ni</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-five_is_the_inverse_of_two_so_halving_reverses_the_orbit">
 <p class="thm-label"><strong>Theorem 262</strong> (<code>five_is_the_inverse_of_two_so_halving_reverses_the_orbit</code>)<a class="thm-cite" href="/theorem/lean_mechanical_five_is_the_inverse_of_two_so_halving_reverses_the_orbit">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mn>2</mn><mo>⋅</mo><mn>5</mn></mrow><mo>mod</mo><mn>9</mn></mrow><mo>=</mo><mn>1</mn></mrow></math></div>
 <pre class="thm-statement"><code>(2 * 5) % 9 == 1</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>2 \cdot 5 \bmod 9 = 1</code></pre></details>
 </div>
 <p class="thm-remark">five is the multiplicative inverse of two mod nine (2·5 = 10 ≡ 1), so multiplying by five walks the doubling o</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-there_are_infinitely_many_pythagorean_triples">
 <p class="thm-label"><strong>Theorem 263</strong> (<code>there_are_infinitely_many_pythagorean_triples</code>)<a class="thm-cite" href="/theorem/lean_mechanical_there_are_infinitely_many_pythagorean_triples">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>k</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>100</mn><mo>}</mo></mrow><mo>,</mo><mrow><mo>¬</mo><mrow><mrow><msup><mrow><mn>3</mn><mo>⋅</mo><mi>k</mi></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mn>4</mn><mo>⋅</mo><mi>k</mi></mrow><mn>2</mn></msup></mrow><mo>≠</mo><msup><mrow><mn>5</mn><mo>⋅</mo><mi>k</mi></mrow><mn>2</mn></msup></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 1 100).all (fun k =&gt; ¬ ((3 * k) ^ 2 + (4 * k) ^ 2 != (5 * k) ^ 2))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall k \in \{1,\dots,100\},\; \lnot 3 \cdot k^{2} + 4 \cdot k^{2} \neq 5 \cdot k^{2}</code></pre></details>
 </div>
 <p class="thm-remark">there are infinitely many Pythagorean triples: every scaling k·(3,4,5) is a triple, so no finite list is compl</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 100 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-the_difference_of_consecutive_squares_is_the_odd_numbers">
 <p class="thm-label"><strong>Theorem 264</strong> (<code>the_difference_of_consecutive_squares_is_the_odd_numbers</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_difference_of_consecutive_squares_is_the_odd_numbers">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>500</mn><mo>}</mo></mrow><mo>,</mo><mrow><mo>¬</mo><mrow><mrow><msup><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mn>2</mn></msup><mo>-</mo><mrow><mi>n</mi><mo>⋅</mo><mi>n</mi></mrow></mrow><mo>≠</mo><mrow><mrow><mn>2</mn><mo>⋅</mo><mi>n</mi></mrow><mo>+</mo><mn>1</mn></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 0 501).all (fun n =&gt; ¬ ((n + 1) ^ 2 - n * n != 2 * n + 1))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in \{0,\dots,500\},\; \lnot n + 1^{2} - n \cdot n \neq 2 \cdot n + 1</code></pre></details>
 </div>
 <p class="thm-remark">the difference of consecutive squares is the odd numbers: (n+1)² − n² = 2n+1; 0/7</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 501 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-the_product_of_any_three_consecutive_integers_is_divisible_by_six">
 <p class="thm-label"><strong>Theorem 265</strong> (<code>the_product_of_any_three_consecutive_integers_is_divisible_by_six</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_product_of_any_three_consecutive_integers_is_divisible_by_six">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>500</mn><mo>}</mo></mrow><mo>,</mo><mrow><mo>¬</mo><mrow><mrow><mrow><mrow><mi>n</mi><mo>⋅</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></mrow><mo>⋅</mo><mrow><mi>n</mi><mo>+</mo><mn>2</mn></mrow></mrow><mo>mod</mo><mn>6</mn></mrow><mo>≠</mo><mn>0</mn></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 1 500).all (fun n =&gt; ¬ ((n * (n + 1) * (n + 2)) % 6 != 0))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in \{1,\dots,500\},\; \lnot n \cdot n + 1 \cdot n + 2 \bmod 6 \neq 0</code></pre></details>
 </div>
 <p class="thm-remark">the product of any three consecutive integers is divisible by six: among three consecutive there is a multiple</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 500 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-dna_is_the_version_itself">
 <p class="thm-label"><strong>Theorem 266</strong> (<code>dna_is_the_version_itself</code>)<a class="thm-cite" href="/theorem/lean_mechanical_dna_is_the_version_itself">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msup><mn>4</mn><mn>3</mn></msup><mo>=</mo><mn>64</mn></mrow></math></div>
 <pre class="thm-statement"><code>4 ^ 3 == 64</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>4^{3} = 64</code></pre></details>
 </div>
 <p class="thm-remark">DNA is the version itself: four bases, a three-base codon spans 4³ = 64 states — the very 64 that a contributi</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
@@ -2259,105 +2737,135 @@ else. What the kernel adds is what a test cannot give — the proposition checke
 
 <div class="thm" id="thm-mechanical-genetic_code_is_the_octave_squared">
 <p class="thm-label"><strong>Theorem 268</strong> (<code>genetic_code_is_the_octave_squared</code>)<a class="thm-cite" href="/theorem/lean_mechanical_genetic_code_is_the_octave_squared">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><msup><mn>4</mn><mn>3</mn></msup><mo>=</mo><mn>64</mn></mrow><mo>∧</mo><mrow><mn>64</mn><mo>=</mo><mrow><mn>8</mn><mo>⋅</mo><mn>8</mn></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mn>64</mn><mo>mod</mo><mn>8</mn></mrow><mo>=</mo><mn>0</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>4 ^ 3 == 64 &amp;&amp; 64 == 8 * 8 &amp;&amp; 64 % 8 == 0</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>4^{3} = 64 \land 64 = 8 \cdot 8 \land 64 \bmod 8 = 0</code></pre></details>
 </div>
 <p class="thm-remark">the genetic code is the octave squared: four bases, three positions, 4³ = 64 codons = 8×8 — DNA counts in the</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-sixty_one_sense_three_stop_codons">
 <p class="thm-label"><strong>Theorem 269</strong> (<code>sixty_one_sense_three_stop_codons</code>)<a class="thm-cite" href="/theorem/lean_mechanical_sixty_one_sense_three_stop_codons">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mn>61</mn><mo>+</mo><mn>3</mn></mrow><mo>=</mo><mn>64</mn></mrow><mo>∧</mo><mrow><mn>20</mn><mo>&lt;</mo><mn>61</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>61 + 3 == 64 &amp;&amp; 20 &lt; 61</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>61 + 3 = 64 \land 20 &lt; 61</code></pre></details>
 </div>
 <p class="thm-remark">DNA’s sixty-four codons split 61 sense + 3 stop, encoding 20 amino acids — more codons than meanings, so the c</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-six_reading_frames">
 <p class="thm-label"><strong>Theorem 270</strong> (<code>six_reading_frames</code>)<a class="thm-cite" href="/theorem/lean_mechanical_six_reading_frames">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mn>3</mn><mo>⋅</mo><mn>2</mn></mrow><mo>=</mo><mn>6</mn></mrow></math></div>
 <pre class="thm-statement"><code>3 * 2 == 6</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>3 \cdot 2 = 6</code></pre></details>
 </div>
 <p class="thm-remark">the double helix has six reading frames: three per strand across two antiparallel strands — six ways to read o</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-each_wave_is_a_local_pure_derivation">
 <p class="thm-label"><strong>Theorem 271</strong> (<code>each_wave_is_a_local_pure_derivation</code>)<a class="thm-cite" href="/theorem/lean_mechanical_each_wave_is_a_local_pure_derivation">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>119</mn><mo>,</mo><mn>97</mn><mo>,</mo><mn>118</mn><mo>,</mo><mn>101</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>119</mn><mo>,</mo><mn>97</mn><mo>,</mo><mn>118</mn><mo>,</mo><mn>101</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow><mo>∧</mo><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>119</mn><mo>,</mo><mn>97</mn><mo>,</mo><mn>118</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>45</mn><mo>,</mo><mn>49</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>119</mn><mo>,</mo><mn>97</mn><mo>,</mo><mn>118</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>45</mn><mo>,</mo><mn>50</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>Address.toUuidBytes [119, 97, 118, 101] == Address.toUuidBytes [119, 97, 118, 101] &amp;&amp; Address.toUuidBytes [119, 97, 118, 101, 45, 49] != Address.toUuidBytes [119, 97, 118, 101, 45, 50]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{Address.toUuidBytes}\mathopen{}\left([119,\,97,\,118,\,101]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([119,\,97,\,118,\,101]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([119,\,97,\,118,\,101,\,45,\,49]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([119,\,97,\,118,\,101,\,45,\,50]\right)</code></pre></details>
 </div>
 <p class="thm-remark">each wave is a local pure derivation: a content-address is a deterministic function of its content — re-derive</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 576 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-genesis_1_the_unit">
 <p class="thm-label"><strong>Theorem 272</strong> (<code>genesis_1_the_unit</code>)<a class="thm-cite" href="/theorem/lean_mechanical_genesis_1_the_unit">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>9</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mn>1</mn><mo>⋅</mo><mi>n</mi></mrow><mo>=</mo><mi>n</mi></mrow></mrow><mo>∧</mo><mrow><msup><mn>1</mn><mn>7</mn></msup><mo>=</mo><mn>1</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 3, 4, 5, 6, 7, 8, 9].all (fun n =&gt; 1 * n == n) &amp;&amp; 1 ^ 7 == 1</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in [1,\,2,\,3,\,4,\,5,\,6,\,7,\,8,\,9],\; 1 \cdot n = n \land 1^{7} = 1</code></pre></details>
 </div>
 <p class="thm-remark">genesis 1 — the unit: 1 is the multiplicative identity and the first dimension, unchanged by any power — the o</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-genesis_8_the_octave">
 <p class="thm-label"><strong>Theorem 273</strong> (<code>genesis_8_the_octave</code>)<a class="thm-cite" href="/theorem/lean_mechanical_genesis_8_the_octave">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><msup><mn>2</mn><mn>3</mn></msup><mo>=</mo><mn>8</mn></mrow><mo>∧</mo><mrow><mrow><mn>8</mn><mo>mod</mo><mn>8</mn></mrow><mo>=</mo><mn>0</mn></mrow></mrow><mo>∧</mo><mrow><mn>8</mn><mo>=</mo><mrow><mrow><mn>2</mn><mo>⋅</mo><mn>2</mn></mrow><mo>⋅</mo><mn>2</mn></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>2 ^ 3 == 8 &amp;&amp; 8 % 8 == 0 &amp;&amp; 8 == 2 * 2 * 2</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>2^{3} = 8 \land 8 \bmod 8 = 0 \land 8 = 2 \cdot 2 \cdot 2</code></pre></details>
 </div>
 <p class="thm-remark">genesis 8 — the octave: 8 = 2³ is the group in which the theorems matter, and the ledger holds an exact multip</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-genesis_64_the_codon">
 <p class="thm-label"><strong>Theorem 274</strong> (<code>genesis_64_the_codon</code>)<a class="thm-cite" href="/theorem/lean_mechanical_genesis_64_the_codon">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><msup><mn>4</mn><mn>3</mn></msup><mo>=</mo><mn>64</mn></mrow><mo>∧</mo><mrow><msup><mn>2</mn><mn>6</mn></msup><mo>=</mo><mn>64</mn></mrow></mrow><mo>∧</mo><mrow><msup><mn>8</mn><mn>2</mn></msup><mo>=</mo><mn>64</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>4 ^ 3 == 64 &amp;&amp; 2 ^ 6 == 64 &amp;&amp; 8 ^ 2 == 64</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>4^{3} = 64 \land 2^{6} = 64 \land 8^{2} = 64</code></pre></details>
 </div>
 <p class="thm-remark">genesis 64 — the codon: four bases, three positions, two bits each fold to 4³ = 2⁶ = 8² = 64 — the shared orig</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-diamond_fixed_point_is_zero_entropy">
 <p class="thm-label"><strong>Theorem 275</strong> (<code>diamond_fixed_point_is_zero_entropy</code>)<a class="thm-cite" href="/theorem/lean_mechanical_diamond_fixed_point_is_zero_entropy">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>53</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>53</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow><mo>∧</mo><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>53</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>52</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>Address.toUuidBytes [53] == Address.toUuidBytes [53] &amp;&amp; Address.toUuidBytes [53] != Address.toUuidBytes [52]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{Address.toUuidBytes}\mathopen{}\left([53]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([53]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([53]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([52]\right)</code></pre></details>
 </div>
 <p class="thm-remark">the diamond’s fixed point is zero-entropy: its content-address recomputes identically (H = 0) while distinct d</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-the_address_is_shipped_not_the_payload">
 <p class="thm-label"><strong>Theorem 276</strong> (<code>the_address_is_shipped_not_the_payload</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_address_is_shipped_not_the_payload">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>120</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>120</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow><mo>∧</mo><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>120</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>121</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>Address.toUuidBytes [120] == Address.toUuidBytes [120] &amp;&amp; Address.toUuidBytes [120] != Address.toUuidBytes [121]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{Address.toUuidBytes}\mathopen{}\left([120]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([120]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([120]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([121]\right)</code></pre></details>
 </div>
 <p class="thm-remark">the address is shipped, not the payload: a content-address re-derives from its content — send the address, rec</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-gravity_holds_prose_code_and_paths">
 <p class="thm-label"><strong>Theorem 277</strong> (<code>gravity_holds_prose_code_and_paths</code>)<a class="thm-cite" href="/theorem/lean_mechanical_gravity_holds_prose_code_and_paths">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>115</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>47</mn><mo>,</mo><mn>120</mn><mo>,</mo><mn>46</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>115</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>104</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>108</mn><mo>,</mo><mn>108</mn><mo>,</mo><mn>111</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>115</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>47</mn><mo>,</mo><mn>120</mn><mo>,</mo><mn>46</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>115</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>104</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>108</mn><mo>,</mo><mn>108</mn><mo>,</mo><mn>111</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow><mo>∧</mo><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>115</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>47</mn><mo>,</mo><mn>120</mn><mo>,</mo><mn>46</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>115</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>104</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>108</mn><mo>,</mo><mn>108</mn><mo>,</mo><mn>111</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>115</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>47</mn><mo>,</mo><mn>121</mn><mo>,</mo><mn>46</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>115</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>104</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>108</mn><mo>,</mo><mn>108</mn><mo>,</mo><mn>111</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>115</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>47</mn><mo>,</mo><mn>120</mn><mo>,</mo><mn>46</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>115</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>104</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>108</mn><mo>,</mo><mn>108</mn><mo>,</mo><mn>111</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>115</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>47</mn><mo>,</mo><mn>120</mn><mo>,</mo><mn>46</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>115</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>119</mn><mo>,</mo><mn>111</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>108</mn><mo>,</mo><mn>100</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>Address.toUuidBytes [115, 114, 99, 47, 120, 46, 116, 115, 58, 104, 101, 108, 108, 111] == Address.toUuidBytes [115, 114, 99, 47, 120, 46, 116, 115, 58, 104, 101, 108, 108, 111] &amp;&amp; Address.toUuidBytes [115, 114, 99, 47, 120, 46, 116, 115, 58, 104, 101, 108, 108, 111] != Address.toUuidBytes [115, 114, 99, 47, 121, 46, 116, 115, 58, 104, 101, 108, 108, 111] &amp;&amp; Address.toUuidBytes [115, 114, 99, 47, 120, 46, 116, 115, 58, 104, 101, 108, 108, 111] != Address.toUuidBytes [115, 114, 99, 47, 120, 46, 116, 115, 58, 119, 111, 114, 108, 100]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{Address.toUuidBytes}\mathopen{}\left([115,\,114,\,99,\,47,\,120,\,46,\,116,\,115,\,58,\,104,\,101,\,108,\,108,\,111]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([115,\,114,\,99,\,47,\,120,\,46,\,116,\,115,\,58,\,104,\,101,\,108,\,108,\,111]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([115,\,114,\,99,\,47,\,120,\,46,\,116,\,115,\,58,\,104,\,101,\,108,\,108,\,111]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([115,\,114,\,99,\,47,\,121,\,46,\,116,\,115,\,58,\,104,\,101,\,108,\,108,\,111]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([115,\,114,\,99,\,47,\,120,\,46,\,116,\,115,\,58,\,104,\,101,\,108,\,108,\,111]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([115,\,114,\,99,\,47,\,120,\,46,\,116,\,115,\,58,\,119,\,111,\,114,\,108,\,100]\right)</code></pre></details>
 </div>
 <p class="thm-remark">gravity holds prose, code and paths in place: a path with its content addresses identically on re-examination,</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 7,529,536 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-the_harmonic_band_thirty_to_ninety">
 <p class="thm-label"><strong>Theorem 278</strong> (<code>the_harmonic_band_thirty_to_ninety</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_harmonic_band_thirty_to_ninety">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mrow><mn>30</mn><mo>+</mo><mn>60</mn></mrow><mo>=</mo><mn>90</mn></mrow><mo>∧</mo><mrow><mrow><mn>90</mn><mo>-</mo><mn>60</mn></mrow><mo>=</mo><mn>30</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mn>60</mn><mo>-</mo><mn>30</mn></mrow><mo>=</mo><mn>30</mn></mrow></mrow><mo>∧</mo><mrow><mfrac><mn>90</mn><mn>30</mn></mfrac><mo>=</mo><mn>3</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>30 + 60 == 90 &amp;&amp; 90 - 60 == 30 &amp;&amp; 60 - 30 == 30 &amp;&amp; 90 / 30 == 3</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>30 + 60 = 90 \land 90 - 60 = 30 \land 60 - 30 = 30 \land \frac{90}{30} = 3</code></pre></details>
 </div>
 <p class="thm-remark">the harmonic band runs 30 to 90 in equal steps: 30 + 60 = 90 and 90 − 60 = 60 − 30 = 30 — the efficiency limit</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-sixty_and_ninety_partition_the_quadrant">
 <p class="thm-label"><strong>Theorem 279</strong> (<code>sixty_and_ninety_partition_the_quadrant</code>)<a class="thm-cite" href="/theorem/lean_mechanical_sixty_and_ninety_partition_the_quadrant">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mn>4</mn><mo>⋅</mo><mn>90</mn></mrow><mo>=</mo><mn>360</mn></mrow><mo>∧</mo><mrow><mrow><mn>30</mn><mo>+</mo><mn>60</mn></mrow><mo>=</mo><mn>90</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mn>90</mn><mo>-</mo><mn>60</mn></mrow><mo>=</mo><mn>30</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>4 * 90 == 360 &amp;&amp; 30 + 60 == 90 &amp;&amp; 90 - 60 == 30</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>4 \cdot 90 = 360 \land 30 + 60 = 90 \land 90 - 60 = 30</code></pre></details>
 </div>
 <p class="thm-remark">sixty and ninety partition the quadrant: 90° is a quarter turn, four of them close the 360° circle, and the la</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-the_hexagon_and_the_square_metrics">
 <p class="thm-label"><strong>Theorem 280</strong> (<code>the_hexagon_and_the_square_metrics</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_hexagon_and_the_square_metrics">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mfrac><mn>360</mn><mn>6</mn></mfrac><mo>=</mo><mn>60</mn></mrow><mo>∧</mo><mrow><mfrac><mn>360</mn><mn>4</mn></mfrac><mo>=</mo><mn>90</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mn>6</mn><mo>+</mo><mn>1</mn></mrow><mo>=</mo><mn>7</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>360 / 6 == 60 &amp;&amp; 360 / 4 == 90 &amp;&amp; 6 + 1 == 7</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\frac{360}{6} = 60 \land \frac{360}{4} = 90 \land 6 + 1 = 7</code></pre></details>
 </div>
 <p class="thm-remark">the hexagon and the square set the metrics: 360/6 = 60 and 360/4 = 90 — the six-fold rosette (six plus one) an</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-a_theorem_responds_in_a_receipt">
 <p class="thm-label"><strong>Theorem 281</strong> (<code>a_theorem_responds_in_a_receipt</code>)<a class="thm-cite" href="/theorem/lean_mechanical_a_theorem_responds_in_a_receipt">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>107</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>107</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow><mo>∧</mo><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>97</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>98</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>Address.toUuidBytes [107] == Address.toUuidBytes [107] &amp;&amp; Address.toUuidBytes [97] != Address.toUuidBytes [98]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{Address.toUuidBytes}\mathopen{}\left([107]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([107]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([97]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([98]\right)</code></pre></details>
 </div>
 <p class="thm-remark">a theorem responds in a receipt: its key folds to a deterministic content-address, so every theorem answers wi</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-each_perspective_is_a_distinct_file">
 <p class="thm-label"><strong>Theorem 282</strong> (<code>each_perspective_is_a_distinct_file</code>)<a class="thm-cite" href="/theorem/lean_mechanical_each_perspective_is_a_distinct_file">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>112</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>115</mn><mo>,</mo><mn>112</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>105</mn><mo>,</mo><mn>118</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>97</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>112</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>115</mn><mo>,</mo><mn>112</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>105</mn><mo>,</mo><mn>118</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>98</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow><mo>∧</mo><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>112</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>115</mn><mo>,</mo><mn>112</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>105</mn><mo>,</mo><mn>118</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>97</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>112</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>115</mn><mo>,</mo><mn>112</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>105</mn><mo>,</mo><mn>118</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>97</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>Address.toUuidBytes [112, 101, 114, 115, 112, 101, 99, 116, 105, 118, 101, 58, 97] != Address.toUuidBytes [112, 101, 114, 115, 112, 101, 99, 116, 105, 118, 101, 58, 98] &amp;&amp; Address.toUuidBytes [112, 101, 114, 115, 112, 101, 99, 116, 105, 118, 101, 58, 97] == Address.toUuidBytes [112, 101, 114, 115, 112, 101, 99, 116, 105, 118, 101, 58, 97]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{Address.toUuidBytes}\mathopen{}\left([112,\,101,\,114,\,115,\,112,\,101,\,99,\,116,\,105,\,118,\,101,\,58,\,97]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([112,\,101,\,114,\,115,\,112,\,101,\,99,\,116,\,105,\,118,\,101,\,58,\,98]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([112,\,101,\,114,\,115,\,112,\,101,\,99,\,116,\,105,\,118,\,101,\,58,\,97]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([112,\,101,\,114,\,115,\,112,\,101,\,99,\,116,\,105,\,118,\,101,\,58,\,97]\right)</code></pre></details>
 </div>
 <p class="thm-remark">each perspective is a distinct file: distinct perspective content mints a distinct uuid, so two perspectives n</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 28,561 cases. <span class="qed">□</span></p>
@@ -2371,42 +2879,54 @@ else. What the kernel adds is what a test cannot give — the proposition checke
 
 <div class="thm" id="thm-mechanical-a432_factors_as_two_to_the_fourth_times_three_cubed">
 <p class="thm-label"><strong>Theorem 284</strong> (<code>a432_factors_as_two_to_the_fourth_times_three_cubed</code>)<a class="thm-cite" href="/theorem/lean_mechanical_a432_factors_as_two_to_the_fourth_times_three_cubed">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><msup><mn>2</mn><mn>4</mn></msup><mo>⋅</mo><msup><mn>3</mn><mn>3</mn></msup></mrow><mo>=</mo><mn>432</mn></mrow><mo>∧</mo><mrow><mrow><mn>16</mn><mo>⋅</mo><mn>27</mn></mrow><mo>=</mo><mn>432</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>2 ^ 4 * 3 ^ 3 == 432 &amp;&amp; 16 * 27 == 432</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>2^{4} \cdot 3^{3} = 432 \land 16 \cdot 27 = 432</code></pre></details>
 </div>
 <p class="thm-remark">a432 factors exactly: 432 = 2⁴ × 3³ = 16 × 27, a classical composite of the octave and the trinity; 0/7</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-a432_octave_doubling">
 <p class="thm-label"><strong>Theorem 285</strong> (<code>a432_octave_doubling</code>)<a class="thm-cite" href="/theorem/lean_mechanical_a432_octave_doubling">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mn>432</mn><mo>⋅</mo><mn>2</mn></mrow><mo>=</mo><mn>864</mn></mrow><mo>∧</mo><mrow><mfrac><mn>864</mn><mn>2</mn></mfrac><mo>=</mo><mn>432</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>432 * 2 == 864 &amp;&amp; 864 / 2 == 432</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>432 \cdot 2 = 864 \land \frac{864}{2} = 432</code></pre></details>
 </div>
 <p class="thm-remark">a432 octave doubling: an octave up doubles the frequency (432 → 864) and an octave down halves it, so up-then-</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-vitepress_hosts_the_content_address">
 <p class="thm-label"><strong>Theorem 286</strong> (<code>vitepress_hosts_the_content_address</code>)<a class="thm-cite" href="/theorem/lean_mechanical_vitepress_hosts_the_content_address">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>112</mn><mo>,</mo><mn>97</mn><mo>,</mo><mn>103</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>111</mn><mo>,</mo><mn>110</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>110</mn><mo>,</mo><mn>116</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>112</mn><mo>,</mo><mn>97</mn><mo>,</mo><mn>103</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>111</mn><mo>,</mo><mn>110</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>110</mn><mo>,</mo><mn>116</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow><mo>∧</mo><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>97</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>98</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>Address.toUuidBytes [112, 97, 103, 101, 58, 99, 111, 110, 116, 101, 110, 116] == Address.toUuidBytes [112, 97, 103, 101, 58, 99, 111, 110, 116, 101, 110, 116] &amp;&amp; Address.toUuidBytes [97] != Address.toUuidBytes [98]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{Address.toUuidBytes}\mathopen{}\left([112,\,97,\,103,\,101,\,58,\,99,\,111,\,110,\,116,\,101,\,110,\,116]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([112,\,97,\,103,\,101,\,58,\,99,\,111,\,110,\,116,\,101,\,110,\,116]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([97]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([98]\right)</code></pre></details>
 </div>
 <p class="thm-remark">the standard host holds the content-address unchanged: a page’s address is stable and host-independent, so a V</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 144 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-collapse_selects_one_state_deterministically">
 <p class="thm-label"><strong>Theorem 287</strong> (<code>collapse_selects_one_state_deterministically</code>)<a class="thm-cite" href="/theorem/lean_mechanical_collapse_selects_one_state_deterministically">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>49</mn><mo>,</mo><mn>48</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>49</mn><mo>,</mo><mn>48</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow><mo>∧</mo><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>49</mn><mo>,</mo><mn>48</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>48</mn><mo>,</mo><mn>49</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>Address.toUuidBytes [49, 48] == Address.toUuidBytes [49, 48] &amp;&amp; Address.toUuidBytes [49, 48] != Address.toUuidBytes [48, 49]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{Address.toUuidBytes}\mathopen{}\left([49,\,48]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([49,\,48]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([49,\,48]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([48,\,49]\right)</code></pre></details>
 </div>
 <p class="thm-remark">collapse selects one state deterministically: addressing a chosen state gives the same value every time and di</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-two_bits_thrice_make_the_codon">
 <p class="thm-label"><strong>Theorem 288</strong> (<code>two_bits_thrice_make_the_codon</code>)<a class="thm-cite" href="/theorem/lean_mechanical_two_bits_thrice_make_the_codon">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><msup><mn>2</mn><mn>6</mn></msup><mo>=</mo><mn>64</mn></mrow><mo>∧</mo><mrow><msup><msup><mn>2</mn><mn>2</mn></msup><mn>3</mn></msup><mo>=</mo><mn>64</mn></mrow></mrow><mo>∧</mo><mrow><msup><mn>4</mn><mn>3</mn></msup><mo>=</mo><mn>64</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>2 ^ 6 == 64 &amp;&amp; (2 ^ 2) ^ 3 == 64 &amp;&amp; 4 ^ 3 == 64</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>2^{6} = 64 \land 2^{2}^{3} = 64 \land 4^{3} = 64</code></pre></details>
 </div>
 <p class="thm-remark">two bits taken three times make the codon: 2 bits per base over three positions is 2⁶ = 64 — the coin64, the D</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-the_skipper_navigates_by_angle">
 <p class="thm-label"><strong>Theorem 289</strong> (<code>the_skipper_navigates_by_angle</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_skipper_navigates_by_angle">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mn>30</mn><mo>+</mo><mn>60</mn></mrow><mo>=</mo><mn>90</mn></mrow><mo>∧</mo><mrow><mfrac><mn>90</mn><mn>30</mn></mfrac><mo>=</mo><mn>3</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mn>90</mn><mo>-</mo><mn>60</mn></mrow><mo>=</mo><mn>30</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>30 + 60 == 90 &amp;&amp; 90 / 30 == 3 &amp;&amp; 90 - 60 == 30</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>30 + 60 = 90 \land \frac{90}{30} = 3 \land 90 - 60 = 30</code></pre></details>
 </div>
 <p class="thm-remark">the skipper navigates by angle: 30 + 60 = 90 in equal thirds, the harmonic band from the efficiency limit to t</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
@@ -2420,35 +2940,45 @@ else. What the kernel adds is what a test cannot give — the proposition checke
 
 <div class="thm" id="thm-mechanical-the_cell_is_determined_by_content">
 <p class="thm-label"><strong>Theorem 291</strong> (<code>the_cell_is_determined_by_content</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_cell_is_determined_by_content">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>99</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>99</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow><mo>∧</mo><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>99</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>100</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>Address.toUuidBytes [99] == Address.toUuidBytes [99] &amp;&amp; Address.toUuidBytes [99] != Address.toUuidBytes [100]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{Address.toUuidBytes}\mathopen{}\left([99]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([99]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([99]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([100]\right)</code></pre></details>
 </div>
 <p class="thm-remark">the cell is determined by content: the same content always lands in the same cell and different content in a d</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-intentions_are_shown_by_receipts_not_role">
 <p class="thm-label"><strong>Theorem 292</strong> (<code>intentions_are_shown_by_receipts_not_role</code>)<a class="thm-cite" href="/theorem/lean_mechanical_intentions_are_shown_by_receipts_not_role">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>100</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>100</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>111</mn><mo>,</mo><mn>110</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>105</mn><mo>,</mo><mn>98</mn><mo>,</mo><mn>117</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>45</mn><mo>,</mo><mn>50</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>100</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>100</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>111</mn><mo>,</mo><mn>110</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>105</mn><mo>,</mo><mn>98</mn><mo>,</mo><mn>117</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>45</mn><mo>,</mo><mn>50</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow><mo>∧</mo><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>100</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>100</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>97</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>100</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>100</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>98</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>Address.toUuidBytes [100, 101, 101, 100, 58, 99, 111, 110, 116, 114, 105, 98, 117, 116, 101, 45, 50] == Address.toUuidBytes [100, 101, 101, 100, 58, 99, 111, 110, 116, 114, 105, 98, 117, 116, 101, 45, 50] &amp;&amp; Address.toUuidBytes [100, 101, 101, 100, 58, 97] != Address.toUuidBytes [100, 101, 101, 100, 58, 98]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{Address.toUuidBytes}\mathopen{}\left([100,\,101,\,101,\,100,\,58,\,99,\,111,\,110,\,116,\,114,\,105,\,98,\,117,\,116,\,101,\,45,\,50]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([100,\,101,\,101,\,100,\,58,\,99,\,111,\,110,\,116,\,114,\,105,\,98,\,117,\,116,\,101,\,45,\,50]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([100,\,101,\,101,\,100,\,58,\,97]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([100,\,101,\,101,\,100,\,58,\,98]\right)</code></pre></details>
 </div>
 <p class="thm-remark">intentions are shown by receipts, not by role: a deed leaves a content-addressed receipt anyone can recompute,</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 10,404 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-each_theorem_is_a_superposition_of_readings">
 <p class="thm-label"><strong>Theorem 293</strong> (<code>each_theorem_is_a_superposition_of_readings</code>)<a class="thm-cite" href="/theorem/lean_mechanical_each_theorem_is_a_superposition_of_readings">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>116</mn><mo>,</mo><mn>104</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>32</mn><mo>,</mo><mn>115</mn><mo>,</mo><mn>97</mn><mo>,</mo><mn>109</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>32</mn><mo>,</mo><mn>102</mn><mo>,</mo><mn>97</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>116</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>116</mn><mo>,</mo><mn>104</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>32</mn><mo>,</mo><mn>115</mn><mo>,</mo><mn>97</mn><mo>,</mo><mn>109</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>32</mn><mo>,</mo><mn>102</mn><mo>,</mo><mn>97</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>116</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow><mo>∧</mo><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>111</mn><mo>,</mo><mn>110</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>32</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>97</mn><mo>,</mo><mn>100</mn><mo>,</mo><mn>105</mn><mo>,</mo><mn>110</mn><mo>,</mo><mn>103</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>97</mn><mo>,</mo><mn>110</mn><mo>,</mo><mn>111</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>104</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>32</mn><mo>,</mo><mn>102</mn><mo>,</mo><mn>97</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>116</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>Address.toUuidBytes [116, 104, 101, 32, 115, 97, 109, 101, 32, 102, 97, 99, 116] == Address.toUuidBytes [116, 104, 101, 32, 115, 97, 109, 101, 32, 102, 97, 99, 116] &amp;&amp; Address.toUuidBytes [111, 110, 101, 32, 114, 101, 97, 100, 105, 110, 103] != Address.toUuidBytes [97, 110, 111, 116, 104, 101, 114, 32, 102, 97, 99, 116]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{Address.toUuidBytes}\mathopen{}\left([116,\,104,\,101,\,32,\,115,\,97,\,109,\,101,\,32,\,102,\,97,\,99,\,116]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([116,\,104,\,101,\,32,\,115,\,97,\,109,\,101,\,32,\,102,\,97,\,99,\,116]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([111,\,110,\,101,\,32,\,114,\,101,\,97,\,100,\,105,\,110,\,103]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([97,\,110,\,111,\,116,\,104,\,101,\,114,\,32,\,102,\,97,\,99,\,116]\right)</code></pre></details>
 </div>
 <p class="thm-remark">each theorem is a superposition of readings: it can be read in algebra and other framings, yet all readings of</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 22,308 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-present_by_reference_fits_a_tiny_budget">
 <p class="thm-label"><strong>Theorem 294</strong> (<code>present_by_reference_fits_a_tiny_budget</code>)<a class="thm-cite" href="/theorem/lean_mechanical_present_by_reference_fits_a_tiny_budget">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mn>1600</mn><mo>⋅</mo><mn>36</mn></mrow><mo>=</mo><mn>57600</mn></mrow><mo>∧</mo><mrow><mn>57600</mn><mo>&lt;</mo><mn>100000</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>1600 * 36 == 57600 &amp;&amp; 57600 &lt; 100000</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>1600 \cdot 36 = 57600 \land 57600 &lt; 100000</code></pre></details>
 </div>
 <p class="thm-remark">present by reference fits a tiny budget: 1600 facts as addresses are 1600 × 36 = 57,600 bytes (~56 kB), while</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-a_cached_address_is_never_recomputed">
 <p class="thm-label"><strong>Theorem 295</strong> (<code>a_cached_address_is_never_recomputed</code>)<a class="thm-cite" href="/theorem/lean_mechanical_a_cached_address_is_never_recomputed">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>120</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>120</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow><mo>∧</mo><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>120</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>121</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>Address.toUuidBytes [120] == Address.toUuidBytes [120] &amp;&amp; Address.toUuidBytes [120] != Address.toUuidBytes [121]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{Address.toUuidBytes}\mathopen{}\left([120]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([120]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([120]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([121]\right)</code></pre></details>
 </div>
 <p class="thm-remark">a cached address is never recomputed: the same input always yields the same address, so a value already comput</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
@@ -2462,91 +2992,117 @@ else. What the kernel adds is what a test cannot give — the proposition checke
 
 <div class="thm" id="thm-mechanical-the_theorems_are_the_hull_and_hardware">
 <p class="thm-label"><strong>Theorem 297</strong> (<code>the_theorems_are_the_hull_and_hardware</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_theorems_are_the_hull_and_hardware">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>104</mn><mo>,</mo><mn>117</mn><mo>,</mo><mn>108</mn><mo>,</mo><mn>108</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>115</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>117</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>117</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>101</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>104</mn><mo>,</mo><mn>117</mn><mo>,</mo><mn>108</mn><mo>,</mo><mn>108</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>115</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>117</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>117</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>101</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow><mo>∧</mo><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>104</mn><mo>,</mo><mn>117</mn><mo>,</mo><mn>108</mn><mo>,</mo><mn>108</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>115</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>117</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>117</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>101</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>111</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>100</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>100</mn><mo>,</mo><mn>105</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>105</mn><mo>,</mo><mn>111</mn><mo>,</mo><mn>110</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>Address.toUuidBytes [104, 117, 108, 108, 58, 115, 116, 114, 117, 99, 116, 117, 114, 101] == Address.toUuidBytes [104, 117, 108, 108, 58, 115, 116, 114, 117, 99, 116, 117, 114, 101] &amp;&amp; Address.toUuidBytes [104, 117, 108, 108, 58, 115, 116, 114, 117, 99, 116, 117, 114, 101] != Address.toUuidBytes [111, 114, 100, 101, 114, 58, 100, 105, 114, 101, 99, 116, 105, 111, 110]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{Address.toUuidBytes}\mathopen{}\left([104,\,117,\,108,\,108,\,58,\,115,\,116,\,114,\,117,\,99,\,116,\,117,\,114,\,101]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([104,\,117,\,108,\,108,\,58,\,115,\,116,\,114,\,117,\,99,\,116,\,117,\,114,\,101]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([104,\,117,\,108,\,108,\,58,\,115,\,116,\,114,\,117,\,99,\,116,\,117,\,114,\,101]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([111,\,114,\,100,\,101,\,114,\,58,\,100,\,105,\,114,\,101,\,99,\,116,\,105,\,111,\,110]\right)</code></pre></details>
 </div>
 <p class="thm-remark">the theorems are the hull and hardware: the structure is the deterministic record while the order (the directi</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 41,160 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-the_more_developed_the_more_cross_domain_reach">
 <p class="thm-label"><strong>Theorem 298</strong> (<code>the_more_developed_the_more_cross_domain_reach</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_more_developed_the_more_cross_domain_reach">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mfrac><mrow><mn>8</mn><mo>⋅</mo><mn>7</mn></mrow><mn>2</mn></mfrac><mo>=</mo><mn>28</mn></mrow><mo>∧</mo><mrow><mfrac><mrow><mn>16</mn><mo>⋅</mo><mn>15</mn></mrow><mn>2</mn></mfrac><mo>=</mo><mn>120</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(8 * 7) / 2 == 28 &amp;&amp; (16 * 15) / 2 == 120</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\frac{8 \cdot 7}{2} = 28 \land \frac{16 \cdot 15}{2} = 120</code></pre></details>
 </div>
 <p class="thm-remark">the more developed, the more cross-domain reach: N theorems admit N·(N−1)/2 pairwise relations, so reach grows</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-the_full_superposition_has_nine_states">
 <p class="thm-label"><strong>Theorem 299</strong> (<code>the_full_superposition_has_nine_states</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_full_superposition_has_nine_states">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>9</mn><mo>}</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>9</mn></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 1 9).length == 9</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\{1,\dots,9\}\right| = 9</code></pre></details>
 </div>
 <p class="thm-remark">the full ℤ/9 superposition has nine states: the residues form nine coexisting perspectives; 0/7</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-generation_is_deterministic">
 <p class="thm-label"><strong>Theorem 300</strong> (<code>generation_is_deterministic</code>)<a class="thm-cite" href="/theorem/lean_mechanical_generation_is_deterministic">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>115</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>100</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>115</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>100</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow><mo>∧</mo><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>97</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>98</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>Address.toUuidBytes [115, 101, 101, 100] == Address.toUuidBytes [115, 101, 101, 100] &amp;&amp; Address.toUuidBytes [97] != Address.toUuidBytes [98]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{Address.toUuidBytes}\mathopen{}\left([115,\,101,\,101,\,100]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([115,\,101,\,101,\,100]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([97]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([98]\right)</code></pre></details>
 </div>
 <p class="thm-remark">uuid generation is deterministic: the same seed always generates the same uuid, so generation is a pure functi</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-the_intention_is_a_computable_deed_receipt">
 <p class="thm-label"><strong>Theorem 301</strong> (<code>the_intention_is_a_computable_deed_receipt</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_intention_is_a_computable_deed_receipt">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>105</mn><mo>,</mo><mn>110</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>110</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>111</mn><mo>,</mo><mn>110</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>105</mn><mo>,</mo><mn>98</mn><mo>,</mo><mn>117</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>45</mn><mo>,</mo><mn>50</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>105</mn><mo>,</mo><mn>110</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>110</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>111</mn><mo>,</mo><mn>110</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>105</mn><mo>,</mo><mn>98</mn><mo>,</mo><mn>117</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>45</mn><mo>,</mo><mn>50</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow><mo>∧</mo><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>105</mn><mo>,</mo><mn>110</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>110</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>97</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>105</mn><mo>,</mo><mn>110</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>110</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>98</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>Address.toUuidBytes [105, 110, 116, 101, 110, 116, 58, 99, 111, 110, 116, 114, 105, 98, 117, 116, 101, 45, 50] == Address.toUuidBytes [105, 110, 116, 101, 110, 116, 58, 99, 111, 110, 116, 114, 105, 98, 117, 116, 101, 45, 50] &amp;&amp; Address.toUuidBytes [105, 110, 116, 101, 110, 116, 58, 97] != Address.toUuidBytes [105, 110, 116, 101, 110, 116, 58, 98]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{Address.toUuidBytes}\mathopen{}\left([105,\,110,\,116,\,101,\,110,\,116,\,58,\,99,\,111,\,110,\,116,\,114,\,105,\,98,\,117,\,116,\,101,\,45,\,50]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([105,\,110,\,116,\,101,\,110,\,116,\,58,\,99,\,111,\,110,\,116,\,114,\,105,\,98,\,117,\,116,\,101,\,45,\,50]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([105,\,110,\,116,\,101,\,110,\,116,\,58,\,97]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([105,\,110,\,116,\,101,\,110,\,116,\,58,\,98]\right)</code></pre></details>
 </div>
 <p class="thm-remark">the intention is a computable deed receipt: an intention is a deed’s content-address, deterministic and distin</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 23,104 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-every_error_is_a_receipted_trial_event">
 <p class="thm-label"><strong>Theorem 302</strong> (<code>every_error_is_a_receipted_trial_event</code>)<a class="thm-cite" href="/theorem/lean_mechanical_every_error_is_a_receipted_trial_event">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>101</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>111</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>52</mn><mo>,</mo><mn>48</mn><mo>,</mo><mn>52</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>47</mn><mo>,</mo><mn>109</mn><mo>,</mo><mn>105</mn><mo>,</mo><mn>115</mn><mo>,</mo><mn>115</mn><mo>,</mo><mn>105</mn><mo>,</mo><mn>110</mn><mo>,</mo><mn>103</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>101</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>111</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>52</mn><mo>,</mo><mn>48</mn><mo>,</mo><mn>52</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>47</mn><mo>,</mo><mn>109</mn><mo>,</mo><mn>105</mn><mo>,</mo><mn>115</mn><mo>,</mo><mn>115</mn><mo>,</mo><mn>105</mn><mo>,</mo><mn>110</mn><mo>,</mo><mn>103</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow><mo>∧</mo><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>101</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>111</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>97</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>101</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>111</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>98</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>Address.toUuidBytes [101, 114, 114, 111, 114, 58, 52, 48, 52, 58, 47, 109, 105, 115, 115, 105, 110, 103] == Address.toUuidBytes [101, 114, 114, 111, 114, 58, 52, 48, 52, 58, 47, 109, 105, 115, 115, 105, 110, 103] &amp;&amp; Address.toUuidBytes [101, 114, 114, 111, 114, 58, 97] != Address.toUuidBytes [101, 114, 114, 111, 114, 58, 98]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{Address.toUuidBytes}\mathopen{}\left([101,\,114,\,114,\,111,\,114,\,58,\,52,\,48,\,52,\,58,\,47,\,109,\,105,\,115,\,115,\,105,\,110,\,103]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([101,\,114,\,114,\,111,\,114,\,58,\,52,\,48,\,52,\,58,\,47,\,109,\,105,\,115,\,115,\,105,\,110,\,103]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([101,\,114,\,114,\,111,\,114,\,58,\,97]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([101,\,114,\,114,\,111,\,114,\,58,\,98]\right)</code></pre></details>
 </div>
 <p class="thm-remark">every error is a receipted trial event: an error maps to a content-addressed event, so it is audited rather th</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 15,876 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-every_warning_is_a_receipted_trial_event">
 <p class="thm-label"><strong>Theorem 303</strong> (<code>every_warning_is_a_receipted_trial_event</code>)<a class="thm-cite" href="/theorem/lean_mechanical_every_warning_is_a_receipted_trial_event">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>119</mn><mo>,</mo><mn>97</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>110</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>108</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>97</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>120</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>47</mn><mo>,</mo><mn>120</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>119</mn><mo>,</mo><mn>97</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>110</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>108</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>97</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>120</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>47</mn><mo>,</mo><mn>120</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow><mo>∧</mo><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>119</mn><mo>,</mo><mn>97</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>110</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>120</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>101</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>111</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>120</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>Address.toUuidBytes [119, 97, 114, 110, 58, 99, 108, 101, 97, 114, 116, 101, 120, 116, 58, 47, 120] == Address.toUuidBytes [119, 97, 114, 110, 58, 99, 108, 101, 97, 114, 116, 101, 120, 116, 58, 47, 120] &amp;&amp; Address.toUuidBytes [119, 97, 114, 110, 58, 120] != Address.toUuidBytes [101, 114, 114, 111, 114, 58, 120]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{Address.toUuidBytes}\mathopen{}\left([119,\,97,\,114,\,110,\,58,\,99,\,108,\,101,\,97,\,114,\,116,\,101,\,120,\,116,\,58,\,47,\,120]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([119,\,97,\,114,\,110,\,58,\,99,\,108,\,101,\,97,\,114,\,116,\,101,\,120,\,116,\,58,\,47,\,120]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([119,\,97,\,114,\,110,\,58,\,120]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([101,\,114,\,114,\,111,\,114,\,58,\,120]\right)</code></pre></details>
 </div>
 <p class="thm-remark">every warning is a receipted trial event: a warning maps to a content-addressed event distinct from an error,</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 12,138 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-a_content_address_detects_any_change">
 <p class="thm-label"><strong>Theorem 304</strong> (<code>a_content_address_detects_any_change</code>)<a class="thm-cite" href="/theorem/lean_mechanical_a_content_address_detects_any_change">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>100</mn><mo>,</mo><mn>97</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>97</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>100</mn><mo>,</mo><mn>65</mn><mo>,</mo><mn>84</mn><mo>,</mo><mn>97</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow><mo>∧</mo><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>100</mn><mo>,</mo><mn>97</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>97</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>100</mn><mo>,</mo><mn>97</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>97</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>Address.toUuidBytes [100, 97, 116, 97] != Address.toUuidBytes [100, 65, 84, 97] &amp;&amp; Address.toUuidBytes [100, 97, 116, 97] == Address.toUuidBytes [100, 97, 116, 97]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{Address.toUuidBytes}\mathopen{}\left([100,\,97,\,116,\,97]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([100,\,65,\,84,\,97]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([100,\,97,\,116,\,97]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([100,\,97,\,116,\,97]\right)</code></pre></details>
 </div>
 <p class="thm-remark">a content-address detects any change: altering a single character changes the address, so any corruption is de</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 256 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-a_sensor_reading_addresses_to_a_uuid">
 <p class="thm-label"><strong>Theorem 305</strong> (<code>a_sensor_reading_addresses_to_a_uuid</code>)<a class="thm-cite" href="/theorem/lean_mechanical_a_sensor_reading_addresses_to_a_uuid">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>116</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>109</mn><mo>,</mo><mn>112</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>50</mn><mo>,</mo><mn>49</mn><mo>,</mo><mn>46</mn><mo>,</mo><mn>52</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>116</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>109</mn><mo>,</mo><mn>112</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>50</mn><mo>,</mo><mn>49</mn><mo>,</mo><mn>46</mn><mo>,</mo><mn>52</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow><mo>∧</mo><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>116</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>109</mn><mo>,</mo><mn>112</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>50</mn><mo>,</mo><mn>49</mn><mo>,</mo><mn>46</mn><mo>,</mo><mn>52</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>116</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>109</mn><mo>,</mo><mn>112</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>50</mn><mo>,</mo><mn>49</mn><mo>,</mo><mn>46</mn><mo>,</mo><mn>53</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>Address.toUuidBytes [116, 101, 109, 112, 58, 50, 49, 46, 52] == Address.toUuidBytes [116, 101, 109, 112, 58, 50, 49, 46, 52] &amp;&amp; Address.toUuidBytes [116, 101, 109, 112, 58, 50, 49, 46, 52] != Address.toUuidBytes [116, 101, 109, 112, 58, 50, 49, 46, 53]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{Address.toUuidBytes}\mathopen{}\left([116,\,101,\,109,\,112,\,58,\,50,\,49,\,46,\,52]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([116,\,101,\,109,\,112,\,58,\,50,\,49,\,46,\,52]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([116,\,101,\,109,\,112,\,58,\,50,\,49,\,46,\,52]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([116,\,101,\,109,\,112,\,58,\,50,\,49,\,46,\,53]\right)</code></pre></details>
 </div>
 <p class="thm-remark">a sensor reading addresses to a uuid: a live value mints a deterministic content-address, so a reading becomes</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 6,561 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-forward_is_the_deterministic_compute">
 <p class="thm-label"><strong>Theorem 306</strong> (<code>forward_is_the_deterministic_compute</code>)<a class="thm-cite" href="/theorem/lean_mechanical_forward_is_the_deterministic_compute">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>120</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>120</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow><mo>∧</mo><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>97</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>98</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>Address.toUuidBytes [120] == Address.toUuidBytes [120] &amp;&amp; Address.toUuidBytes [97] != Address.toUuidBytes [98]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{Address.toUuidBytes}\mathopen{}\left([120]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([120]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([97]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([98]\right)</code></pre></details>
 </div>
 <p class="thm-remark">forward is the deterministic compute: addressing a value forward gives the same result every time — the forwar</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-the_fusion_of_site_and_user_is_deterministic">
 <p class="thm-label"><strong>Theorem 307</strong> (<code>the_fusion_of_site_and_user_is_deterministic</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_fusion_of_site_and_user_is_deterministic">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>115</mn><mo>,</mo><mn>105</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>64</mn><mo>,</mo><mn>98</mn><mo>,</mo><mn>103</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>115</mn><mo>,</mo><mn>105</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>64</mn><mo>,</mo><mn>98</mn><mo>,</mo><mn>103</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow><mo>∧</mo><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>115</mn><mo>,</mo><mn>105</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>64</mn><mo>,</mo><mn>98</mn><mo>,</mo><mn>103</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>115</mn><mo>,</mo><mn>105</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>64</mn><mo>,</mo><mn>100</mn><mo>,</mo><mn>101</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>Address.toUuidBytes [115, 105, 116, 101, 64, 98, 103] == Address.toUuidBytes [115, 105, 116, 101, 64, 98, 103] &amp;&amp; Address.toUuidBytes [115, 105, 116, 101, 64, 98, 103] != Address.toUuidBytes [115, 105, 116, 101, 64, 100, 101]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{Address.toUuidBytes}\mathopen{}\left([115,\,105,\,116,\,101,\,64,\,98,\,103]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([115,\,105,\,116,\,101,\,64,\,98,\,103]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([115,\,105,\,116,\,101,\,64,\,98,\,103]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([115,\,105,\,116,\,101,\,64,\,100,\,101]\right)</code></pre></details>
 </div>
 <p class="thm-remark">the fusion of site and user is deterministic: site plus user resolves to one reproducible view; 0/7</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 2,401 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-each_suggested_next_is_content_addressed">
 <p class="thm-label"><strong>Theorem 308</strong> (<code>each_suggested_next_is_content_addressed</code>)<a class="thm-cite" href="/theorem/lean_mechanical_each_suggested_next_is_content_addressed">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>47</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>104</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>111</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>109</mn><mo>,</mo><mn>47</mn><mo>,</mo><mn>97</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>47</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>104</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>111</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>109</mn><mo>,</mo><mn>47</mn><mo>,</mo><mn>97</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow><mo>∧</mo><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>47</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>104</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>111</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>109</mn><mo>,</mo><mn>47</mn><mo>,</mo><mn>97</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>47</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>104</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>111</mn><mo>,</mo><mn>114</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>109</mn><mo>,</mo><mn>47</mn><mo>,</mo><mn>99</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>Address.toUuidBytes [47, 116, 104, 101, 111, 114, 101, 109, 47, 97] == Address.toUuidBytes [47, 116, 104, 101, 111, 114, 101, 109, 47, 97] &amp;&amp; Address.toUuidBytes [47, 116, 104, 101, 111, 114, 101, 109, 47, 97] != Address.toUuidBytes [47, 116, 104, 101, 111, 114, 101, 109, 47, 99]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{Address.toUuidBytes}\mathopen{}\left([47,\,116,\,104,\,101,\,111,\,114,\,101,\,109,\,47,\,97]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([47,\,116,\,104,\,101,\,111,\,114,\,101,\,109,\,47,\,97]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([47,\,116,\,104,\,101,\,111,\,114,\,101,\,109,\,47,\,97]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([47,\,116,\,104,\,101,\,111,\,114,\,101,\,109,\,47,\,99]\right)</code></pre></details>
 </div>
 <p class="thm-remark">each suggested next is content-addressed: every suggestion resolves to a deterministic link to its page, so th</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 10,000 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-the_rejected_command_gets_a_receipt">
 <p class="thm-label"><strong>Theorem 309</strong> (<code>the_rejected_command_gets_a_receipt</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_rejected_command_gets_a_receipt">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>114</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>106</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>100</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>112</mn><mo>,</mo><mn>97</mn><mo>,</mo><mn>103</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>45</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>111</mn><mo>,</mo><mn>109</mn><mo>,</mo><mn>109</mn><mo>,</mo><mn>97</mn><mo>,</mo><mn>110</mn><mo>,</mo><mn>100</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>114</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>106</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>100</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>112</mn><mo>,</mo><mn>97</mn><mo>,</mo><mn>103</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>45</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>111</mn><mo>,</mo><mn>109</mn><mo>,</mo><mn>109</mn><mo>,</mo><mn>97</mn><mo>,</mo><mn>110</mn><mo>,</mo><mn>100</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow><mo>∧</mo><mrow><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>114</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>106</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>100</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>97</mn><mo>]</mo></mrow><mo>)</mo></mrow><mo>≠</mo><mrow><mi>Address.toUuidBytes</mi><mo>(</mo><mrow><mo>[</mo><mn>114</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>106</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>99</mn><mo>,</mo><mn>116</mn><mo>,</mo><mn>101</mn><mo>,</mo><mn>100</mn><mo>,</mo><mn>58</mn><mo>,</mo><mn>98</mn><mo>]</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>Address.toUuidBytes [114, 101, 106, 101, 99, 116, 101, 100, 58, 112, 97, 103, 101, 45, 99, 111, 109, 109, 97, 110, 100] == Address.toUuidBytes [114, 101, 106, 101, 99, 116, 101, 100, 58, 112, 97, 103, 101, 45, 99, 111, 109, 109, 97, 110, 100] &amp;&amp; Address.toUuidBytes [114, 101, 106, 101, 99, 116, 101, 100, 58, 97] != Address.toUuidBytes [114, 101, 106, 101, 99, 116, 101, 100, 58, 98]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{Address.toUuidBytes}\mathopen{}\left([114,\,101,\,106,\,101,\,99,\,116,\,101,\,100,\,58,\,112,\,97,\,103,\,101,\,45,\,99,\,111,\,109,\,109,\,97,\,110,\,100]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([114,\,101,\,106,\,101,\,99,\,116,\,101,\,100,\,58,\,112,\,97,\,103,\,101,\,45,\,99,\,111,\,109,\,109,\,97,\,110,\,100]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([114,\,101,\,106,\,101,\,99,\,116,\,101,\,100,\,58,\,97]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([114,\,101,\,106,\,101,\,99,\,116,\,101,\,100,\,58,\,98]\right)</code></pre></details>
 </div>
 <p class="thm-remark">the rejected command gets a receipt: a refused command is content-addressed and documented, not silently dropp</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 44,100 cases. <span class="qed">□</span></p>
@@ -2574,14 +3130,18 @@ Nat's bitwise operations are well-founded and would drag `propext` into every th
 
 <div class="thm" id="thm-nim-bouton_two_heaps_lost_iff_xor_zero">
 <p class="thm-label"><strong>Theorem 310</strong> (<code>bouton_two_heaps_lost_iff_xor_zero</code>)<a class="thm-cite" href="/theorem/lean_nim_bouton_two_heaps_lost_iff_xor_zero">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>a</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>,</mo><mrow><mo>∀</mo><mi>b</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>isLost</mi><mo>(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>)</mo></mrow><mo>=</mo><mrow><mrow><mi>xorN</mi><mo>(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range N).all (fun a =&gt; (List.range N).all (fun b =&gt; isLost a b == (xorN a b == 0)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall a \in \{0,\dots,N-1\},\; \forall b \in \{0,\dots,N-1\},\; \mathrm{isLost}\mathopen{}\left(a,\,b\right) = \mathrm{xorN}\mathopen{}\left(a,\,b\right) = 0</code></pre></details>
 </div>
 <p class="thm-remark">── BOUTON: a two-heap position is lost for the mover exactly when the heaps are equal — which is exactly when their XOR is zero. Decided over every position on the 8×8 board. ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-nim-bouton_lost_iff_heaps_equal">
 <p class="thm-label"><strong>Theorem 311</strong> (<code>bouton_lost_iff_heaps_equal</code>)<a class="thm-cite" href="/theorem/lean_nim_bouton_lost_iff_heaps_equal">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>a</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>,</mo><mrow><mo>∀</mo><mi>b</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>isLost</mi><mo>(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>)</mo></mrow><mo>=</mo><mrow><mi>a</mi><mo>=</mo><mi>b</mi></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range N).all (fun a =&gt; (List.range N).all (fun b =&gt; isLost a b == (a == b)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall a \in \{0,\dots,N-1\},\; \forall b \in \{0,\dots,N-1\},\; \mathrm{isLost}\mathopen{}\left(a,\,b\right) = a = b</code></pre></details>
 </div>
 <p class="thm-remark">── the same statement in its familiar form: lost exactly when the heaps are equal ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
@@ -2595,33 +3155,43 @@ Nat's bitwise operations are well-founded and would drag `propext` into every th
 
 <div class="thm" id="thm-nim-grundy_of_a_single_heap_is_its_size">
 <p class="thm-label"><strong>Theorem 313</strong> (<code>grundy_of_a_single_heap_is_its_size</code>)<a class="thm-cite" href="/theorem/lean_nim_grundy_of_a_single_heap_is_its_size">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>grundy1</mi><mo>(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo>,</mo><mi>n</mi><mo>)</mo></mrow><mo>=</mo><mi>n</mi></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range N).all (fun n =&gt; grundy1 (n + 1) n == n)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in \{0,\dots,N-1\},\; \mathrm{grundy1}\mathopen{}\left(n + 1,\,n\right) = n</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-nim-grundy_of_two_heaps_is_the_xor">
 <p class="thm-label"><strong>Theorem 314</strong> (<code>grundy_of_two_heaps_is_the_xor</code>)<a class="thm-cite" href="/theorem/lean_nim_grundy_of_two_heaps_is_the_xor">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>a</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>,</mo><mrow><mo>∀</mo><mi>b</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>xorN</mi><mo>(</mo><mrow><mi>grundy1</mi><mo>(</mo><mrow><mi>a</mi><mo>+</mo><mn>1</mn></mrow><mo>,</mo><mi>a</mi><mo>)</mo></mrow><mo>,</mo><mrow><mi>grundy1</mi><mo>(</mo><mrow><mi>b</mi><mo>+</mo><mn>1</mn></mrow><mo>,</mo><mi>b</mi><mo>)</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>xorN</mi><mo>(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>)</mo></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range N).all (fun a =&gt; (List.range N).all (fun b =&gt; (xorN (grundy1 (a + 1) a) (grundy1 (b + 1) b)) == xorN a b))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall a \in \{0,\dots,N-1\},\; \forall b \in \{0,\dots,N-1\},\; \mathrm{xorN}\mathopen{}\left(\mathrm{grundy1}\mathopen{}\left(a + 1,\,a\right),\,\mathrm{grundy1}\mathopen{}\left(b + 1,\,b\right)\right) = \mathrm{xorN}\mathopen{}\left(a,\,b\right)</code></pre></details>
 </div>
 <p class="thm-remark">── and the two-heap Grundy value is the XOR of the parts ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-nim-xor_is_its_own_inverse">
 <p class="thm-label"><strong>Theorem 315</strong> (<code>xor_is_its_own_inverse</code>)<a class="thm-cite" href="/theorem/lean_nim_xor_is_its_own_inverse">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>a</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>15</mn><mo>}</mo></mrow><mo>,</mo><mrow><mo>∀</mo><mi>b</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>15</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>xorN</mi><mo>(</mo><mrow><mi>xorN</mi><mo>(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>)</mo></mrow><mo>,</mo><mi>b</mi><mo>)</mo></mrow><mo>=</mo><mi>a</mi></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range 16).all (fun a =&gt; (List.range 16).all (fun b =&gt; xorN (xorN a b) b == a))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall a \in \{0,\dots,15\},\; \forall b \in \{0,\dots,15\},\; \mathrm{xorN}\mathopen{}\left(\mathrm{xorN}\mathopen{}\left(a,\,b\right),\,b\right) = a</code></pre></details>
 </div>
 <p class="thm-remark">── XOR's algebra, which is why the theorem takes the form it does ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 256 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-nim-xor_is_commutative">
 <p class="thm-label"><strong>Theorem 316</strong> (<code>xor_is_commutative</code>)<a class="thm-cite" href="/theorem/lean_nim_xor_is_commutative">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>a</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>15</mn><mo>}</mo></mrow><mo>,</mo><mrow><mo>∀</mo><mi>b</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>15</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>xorN</mi><mo>(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>)</mo></mrow><mo>=</mo><mrow><mi>xorN</mi><mo>(</mo><mi>b</mi><mo>,</mo><mi>a</mi><mo>)</mo></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range 16).all (fun a =&gt; (List.range 16).all (fun b =&gt; xorN a b == xorN b a))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall a \in \{0,\dots,15\},\; \forall b \in \{0,\dots,15\},\; \mathrm{xorN}\mathopen{}\left(a,\,b\right) = \mathrm{xorN}\mathopen{}\left(b,\,a\right)</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 256 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-nim-xor_zero_is_identity">
 <p class="thm-label"><strong>Theorem 317</strong> (<code>xor_zero_is_identity</code>)<a class="thm-cite" href="/theorem/lean_nim_xor_zero_is_identity">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>a</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>31</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>xorN</mi><mo>(</mo><mi>a</mi><mo>,</mo><mn>0</mn><mo>)</mo></mrow><mo>=</mo><mi>a</mi></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range 32).all (fun a =&gt; xorN a 0 == a)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall a \in \{0,\dots,31\},\; \mathrm{xorN}\mathopen{}\left(a,\,0\right) = a</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 32 cases. <span class="qed">□</span></p>
 
@@ -2646,62 +3216,80 @@ No axioms, no Mathlib, no sorry.
 
 <div class="thm" id="thm-reversal-reversal_preserves_digit_sum">
 <p class="thm-label"><strong>Theorem 318</strong> (<code>reversal_preserves_digit_sum</code>)<a class="thm-cite" href="/theorem/lean_reversal_reversal_preserves_digit_sum">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>300</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>digitSum</mi><mo>(</mo><mrow><mi>reverseNum</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>digitSum</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 1 300).all (fun n =&gt; digitSum (reverseNum n) == digitSum n)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in \{1,\dots,300\},\; \mathrm{digitSum}\mathopen{}\left(\mathrm{reverseNum}\mathopen{}\left(n\right)\right) = \mathrm{digitSum}\mathopen{}\left(n\right)</code></pre></details>
 </div>
 <p class="thm-remark">── reversal is a permutation of the digits, so it preserves their sum ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 300 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-reversal-digital_root_is_invariant_under_reversal">
 <p class="thm-label"><strong>Theorem 319</strong> (<code>digital_root_is_invariant_under_reversal</code>)<a class="thm-cite" href="/theorem/lean_reversal_digital_root_is_invariant_under_reversal">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>300</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mrow><mi>reverseNum</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><mo>mod</mo><mn>9</mn></mrow><mo>=</mo><mrow><mi>n</mi><mo>mod</mo><mn>9</mn></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 1 300).all (fun n =&gt; (reverseNum n) % 9 == n % 9)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in \{1,\dots,300\},\; \mathrm{reverseNum}\mathopen{}\left(n\right) \bmod 9 = n \bmod 9</code></pre></details>
 </div>
 <p class="thm-remark">── and therefore preserves the residue mod 9 — the digital root is invariant under reversal ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 300 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-reversal-the_ledger_reversal_cases">
 <p class="thm-label"><strong>Theorem 320</strong> (<code>the_ledger_reversal_cases</code>)<a class="thm-cite" href="/theorem/lean_reversal_the_ledger_reversal_cases">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mrow><mrow><mrow><mrow><mrow><mrow><mi>reverseNum</mi><mo>(</mo><mn>12</mn><mo>)</mo></mrow><mo>mod</mo><mn>9</mn></mrow><mo>=</mo><mrow><mn>12</mn><mo>mod</mo><mn>9</mn></mrow></mrow><mo>∧</mo><mrow><mrow><mrow><mi>reverseNum</mi><mo>(</mo><mn>45</mn><mo>)</mo></mrow><mo>mod</mo><mn>9</mn></mrow><mo>=</mo><mrow><mn>45</mn><mo>mod</mo><mn>9</mn></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mrow><mi>reverseNum</mi><mo>(</mo><mn>123</mn><mo>)</mo></mrow><mo>mod</mo><mn>9</mn></mrow><mo>=</mo><mrow><mn>123</mn><mo>mod</mo><mn>9</mn></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mrow><mi>reverseNum</mi><mo>(</mo><mn>1234</mn><mo>)</mo></mrow><mo>mod</mo><mn>9</mn></mrow><mo>=</mo><mrow><mn>1234</mn><mo>mod</mo><mn>9</mn></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mrow><mi>reverseNum</mi><mo>(</mo><mn>4321</mn><mo>)</mo></mrow><mo>mod</mo><mn>9</mn></mrow><mo>=</mo><mrow><mn>4321</mn><mo>mod</mo><mn>9</mn></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mrow><mi>reverseNum</mi><mo>(</mo><mn>9080</mn><mo>)</mo></mrow><mo>mod</mo><mn>9</mn></mrow><mo>=</mo><mrow><mn>9080</mn><mo>mod</mo><mn>9</mn></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(reverseNum 12) % 9 == 12 % 9 ∧ (reverseNum 45) % 9 == 45 % 9 ∧ (reverseNum 123) % 9 == 123 % 9 ∧ (reverseNum 1234) % 9 == 1234 % 9 ∧ (reverseNum 4321) % 9 == 4321 % 9 ∧ (reverseNum 9080) % 9 == 9080 % 9</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{reverseNum}\mathopen{}\left(12\right) \bmod 9 = 12 \bmod 9 \land \mathrm{reverseNum}\mathopen{}\left(45\right) \bmod 9 = 45 \bmod 9 \land \mathrm{reverseNum}\mathopen{}\left(123\right) \bmod 9 = 123 \bmod 9 \land \mathrm{reverseNum}\mathopen{}\left(1234\right) \bmod 9 = 1234 \bmod 9 \land \mathrm{reverseNum}\mathopen{}\left(4321\right) \bmod 9 = 4321 \bmod 9 \land \mathrm{reverseNum}\mathopen{}\left(9080\right) \bmod 9 = 9080 \bmod 9</code></pre></details>
 </div>
 <p class="thm-remark">── the ledger's own cases, now stated rather than asserted ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-reversal-reversal_is_not_the_identity">
 <p class="thm-label"><strong>Theorem 321</strong> (<code>reversal_is_not_the_identity</code>)<a class="thm-cite" href="/theorem/lean_reversal_reversal_is_not_the_identity">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>¬</mo><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>10</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>99</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>reverseNum</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><mo>=</mo><mi>n</mi></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>¬ ((List.range' 10 90).all (fun n =&gt; reverseNum n == n))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\lnot \forall n \in \{10,\dots,99\},\; \mathrm{reverseNum}\mathopen{}\left(n\right) = n</code></pre></details>
 </div>
 <p class="thm-remark">── NON-VACUITY: reversal genuinely moves the number, so the invariance is not about a fixed point ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 90 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-reversal-palindromes_are_the_fixed_points">
 <p class="thm-label"><strong>Theorem 322</strong> (<code>palindromes_are_the_fixed_points</code>)<a class="thm-cite" href="/theorem/lean_reversal_palindromes_are_the_fixed_points">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mo>{</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>10</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>99</mn><mo>}</mo></mrow><mo>∣</mo><mrow><mrow><mi>reverseNum</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><mo>=</mo><mi>n</mi></mrow><mo>}</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>9</mn></mrow></math></div>
 <pre class="thm-statement"><code>((List.range' 10 90).filter (fun n =&gt; reverseNum n == n)).length = 9</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\{\, n \in \{10,\dots,99\} \mid \mathrm{reverseNum}\mathopen{}\left(n\right) = n \,\}\right| = 9</code></pre></details>
 </div>
 <p class="thm-remark">── palindromes are exactly the fixed points, and there are nine of them below 100 ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 90 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-reversal-emirps_exist_below_one_hundred">
 <p class="thm-label"><strong>Theorem 323</strong> (<code>emirps_exist_below_one_hundred</code>)<a class="thm-cite" href="/theorem/lean_reversal_emirps_exist_below_one_hundred">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mo>{</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>10</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>99</mn><mo>}</mo></mrow><mo>∣</mo><mrow><mrow><mrow><mi>isPrime</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><mo>∧</mo><mrow><mi>isPrime</mi><mo>(</mo><mrow><mi>reverseNum</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><mo>)</mo></mrow></mrow><mo>∧</mo><mrow><mrow><mi>reverseNum</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><mo>≠</mo><mi>n</mi></mrow></mrow><mo>}</mo></mrow><mo>|</mo></mrow><mo>&gt;</mo><mn>0</mn></mrow></math></div>
 <pre class="thm-statement"><code>((List.range' 10 90).filter (fun n =&gt; isPrime n &amp;&amp; isPrime (reverseNum n) &amp;&amp; reverseNum n != n)).length &gt; 0</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\{\, n \in \{10,\dots,99\} \mid \mathrm{isPrime}\mathopen{}\left(n\right) \land \mathrm{isPrime}\mathopen{}\left(\mathrm{reverseNum}\mathopen{}\left(n\right)\right) \land \mathrm{reverseNum}\mathopen{}\left(n\right) \neq n \,\}\right| &gt; 0</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 90 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-reversal-reversal_does_not_preserve_primality">
 <p class="thm-label"><strong>Theorem 324</strong> (<code>reversal_does_not_preserve_primality</code>)<a class="thm-cite" href="/theorem/lean_reversal_reversal_does_not_preserve_primality">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>¬</mo><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>10</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>99</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>isPrime</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><mo>=</mo><mrow><mi>isPrime</mi><mo>(</mo><mrow><mi>reverseNum</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><mo>)</mo></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>¬ ((List.range' 10 90).all (fun n =&gt; isPrime n == isPrime (reverseNum n)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\lnot \forall n \in \{10,\dots,99\},\; \mathrm{isPrime}\mathopen{}\left(n\right) = \mathrm{isPrime}\mathopen{}\left(\mathrm{reverseNum}\mathopen{}\left(n\right)\right)</code></pre></details>
 </div>
 <p class="thm-remark">── and reversal does NOT preserve primality in general: the boundary that makes emirps a real class ──</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 90 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-reversal-reversal_is_involutive_exactly_off_the_trailing_zeros">
 <p class="thm-label"><strong>Theorem 325</strong> (<code>reversal_is_involutive_exactly_off_the_trailing_zeros</code>)<a class="thm-cite" href="/theorem/lean_reversal_reversal_is_involutive_exactly_off_the_trailing_zeros">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>n</mi><mo>∈</mo><mrow><mo>{</mo><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>300</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mrow><mi>reverseNum</mi><mo>(</mo><mrow><mi>reverseNum</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><mo>)</mo></mrow><mo>=</mo><mi>n</mi></mrow><mo>=</mo><mrow><mrow><mi>n</mi><mo>mod</mo><mn>10</mn></mrow><mo>≠</mo><mn>0</mn></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range' 1 300).all (fun n =&gt; (reverseNum (reverseNum n) == n) == (n % 10 != 0))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in \{1,\dots,300\},\; \mathrm{reverseNum}\mathopen{}\left(\mathrm{reverseNum}\mathopen{}\left(n\right)\right) = n = n \bmod 10 \neq 0</code></pre></details>
 </div>
 <p class="thm-remark">── WHERE REVERSAL STOPS BEING AN INVOLUTION. Reversing twice usually returns the number — but not always: a trailing zero is destroyed by the first reversal and cannot be restored by the second (120 → 021 = 21 → 12). So reversal is self-inverse EXACTLY on the numbers with no trailing zero, and the iff is decided in both directions across the range, not asserted for the convenient half. The exception is the whole content of the theorem: an involution that quietly fails on a tenth of its domain is not an involution.</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 300 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-reversal-reversal_settles_its_range">
 <p class="thm-label"><strong>Theorem 326</strong> (<code>reversal_settles_its_range</code>)<span class="thm-uncited">not sealed — settled by <code>rfl</code>, not exhausted</span>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>settledHere</mi><mo>=</mo><mn>7</mn></mrow></math></div>
 <pre class="thm-statement"><code>settledHere = 7</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{settledHere} = 7</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>rfl</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
@@ -2720,55 +3308,71 @@ axioms, every proof `by decide`, no Mathlib. The floor holds: 0/7.
 
 <div class="thm" id="thm-theorems-universal_reflection_involution">
 <p class="thm-label"><strong>Theorem 327</strong> (<code>universal_reflection_involution</code>)<a class="thm-cite" href="/theorem/lean_millenniumfloor.universal_universal_reflection_involution">sealed</a>.</p>
-<pre class="thm-statement"><code>(List.range 11).all (fun d =&gt; refl (refl d) == d) -- σ ∘ σ = id everywhere — the shared involution ∧ ((List.range 10).filter (fun d =&gt; refl d == d)).length = 1 -- exactly ONE shared centre (the heart), computed</code></pre>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>10</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>refl</mi><mo>(</mo><mrow><mi>refl</mi><mo>(</mo><mi>d</mi><mo>)</mo></mrow><mo>)</mo></mrow><mo>=</mo><mi>d</mi></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mo>{</mo><mi>d</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>9</mn><mo>}</mo></mrow><mo>∣</mo><mrow><mrow><mi>refl</mi><mo>(</mo><mi>d</mi><mo>)</mo></mrow><mo>=</mo><mi>d</mi></mrow><mo>}</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>1</mn></mrow></mrow></math></div>
+<pre class="thm-statement"><code>(List.range 11).all (fun d =&gt; refl (refl d) == d) ∧ ((List.range 10).filter (fun d =&gt; refl d == d)).length = 1</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in \{0,\dots,10\},\; \mathrm{refl}\mathopen{}\left(\mathrm{refl}\mathopen{}\left(d\right)\right) = d \land \left|\{\, d \in \{0,\dots,9\} \mid \mathrm{refl}\mathopen{}\left(d\right) = d \,\}\right| = 1</code></pre></details>
 </div>
 <p class="thm-remark">The universal law, computed: the reflection is a TOTAL involution on every residue, with exactly one shared fixed centre — the structure every one of the seven framings borrows. It is not "α² = 1", and it is not a proof.</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 110 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-theorems-universal_centre_is_five">
 <p class="thm-label"><strong>Theorem 328</strong> (<code>universal_centre_is_five</code>)<a class="thm-cite" href="/theorem/lean_millenniumfloor.universal_universal_centre_is_five">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>{</mo><mi>d</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>9</mn><mo>}</mo></mrow><mo>∣</mo><mrow><mrow><mi>refl</mi><mo>(</mo><mi>d</mi><mo>)</mo></mrow><mo>=</mo><mi>d</mi></mrow><mo>}</mo></mrow><mo>=</mo><mrow><mo>[</mo><mn>5</mn><mo>]</mo></mrow></mrow></math></div>
 <pre class="thm-statement"><code>((List.range 10).filter (fun d =&gt; refl d == d)) = [5]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\{\, d \in \{0,\dots,9\} \mid \mathrm{refl}\mathopen{}\left(d\right) = d \,\} = [5]</code></pre></details>
 </div>
 <p class="thm-remark">── the centre, NAMED rather than counted ── The theorem above proves there is exactly ONE centre. A count is not an identification: it says a heart exists without saying where it beats. Here it is, computed — the filter returns the singleton [5].</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 10 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-theorems-universal_pairs_sum_to_ten">
 <p class="thm-label"><strong>Theorem 329</strong> (<code>universal_pairs_sum_to_ten</code>)<a class="thm-cite" href="/theorem/lean_millenniumfloor.universal_universal_pairs_sum_to_ten">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>10</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>d</mi><mo>+</mo><mrow><mi>refl</mi><mo>(</mo><mi>d</mi><mo>)</mo></mrow></mrow><mo>=</mo><mn>10</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range 11).all (fun d =&gt; d + refl d == 10)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in \{0,\dots,10\},\; d + \mathrm{refl}\mathopen{}\left(d\right) = 10</code></pre></details>
 </div>
 <p class="thm-remark">── what the reflection conserves ── Every residue and its reflection sum to ten. This is the reason there is exactly one centre: a fixed point needs d + d = 10, and 10 is even, so exactly one d satisfies it. The conservation law is the whole structure.</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 11 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-theorems-universal_reflection_reverses_the_domain">
 <p class="thm-label"><strong>Theorem 330</strong> (<code>universal_reflection_reverses_the_domain</code>)<a class="thm-cite" href="/theorem/lean_millenniumfloor.universal_universal_reflection_reverses_the_domain">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>refl</mi><mo>[</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>10</mn><mo>}</mo></mrow><mo>]</mo></mrow><mo>=</mo><mrow><mi>reverse</mi><mo>(</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>10</mn><mo>}</mo></mrow><mo>)</mo></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range 11).map refl = (List.range 11).reverse</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{refl}[\{0,\dots,10\}] = \operatorname{reverse}\left(\{0,\dots,10\}\right)</code></pre></details>
 </div>
 <p class="thm-remark">── the reflection is a bijection of the domain, computed as an ordering ── Stronger than the involution and cheaper than a permutation argument: the image of 0…10 under the reflection IS 0…10 read backwards. Nothing is lost and nothing is repeated, and the witness is an equation.</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 121 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-theorems-universal_reflection_is_not_an_involution_above_ten">
 <p class="thm-label"><strong>Theorem 331</strong> (<code>universal_reflection_is_not_an_involution_above_ten</code>)<a class="thm-cite" href="/theorem/lean_millenniumfloor.universal_universal_reflection_is_not_an_involution_above_ten">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>{</mo><mrow><mi>k</mi><mo>+</mo><mn>11</mn></mrow><mo>∣</mo><mi>k</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>9</mn><mo>}</mo></mrow><mo>}</mo></mrow><mo>,</mo><mrow><mo>¬</mo><mrow><mrow><mi>refl</mi><mo>(</mo><mrow><mi>refl</mi><mo>(</mo><mi>d</mi><mo>)</mo></mrow><mo>)</mo></mrow><mo>=</mo><mi>d</mi></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>((List.range 10).map (fun k =&gt; k + 11)).all (fun d =&gt; ¬ (refl (refl d) == d))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in \{\, k + 11 \mid k \in \{0,\dots,9\} \,\},\; \lnot \mathrm{refl}\mathopen{}\left(\mathrm{refl}\mathopen{}\left(d\right)\right) = d</code></pre></details>
 </div>
 <p class="thm-remark">── WHERE IT STOPS. The involution is not universal over ℕ, and the boundary is stated, not hidden ── Natural subtraction truncates: above ten, `refl d` is 0 and `refl (refl d)` is 10 for every input. So the involution holds on 0…10 and FAILS at every residue above it. The first theorem says `List.range 11` and means it. A boundary you can compute is a boundary you have not overclaimed past.</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 10 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-theorems-universal_z9_reflection_permutes_the_units">
 <p class="thm-label"><strong>Theorem 332</strong> (<code>universal_z9_reflection_permutes_the_units</code>)<a class="thm-cite" href="/theorem/lean_millenniumfloor.universal_universal_z9_reflection_permutes_the_units">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>{</mo><mrow><mrow><mn>9</mn><mo>-</mo><mi>d</mi></mrow><mo>mod</mo><mn>9</mn></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>=</mo><mrow><mo>[</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>1</mn><mo>]</mo></mrow></mrow></math></div>
 <pre class="thm-statement"><code>([1, 2, 4, 5, 7, 8].map (fun d =&gt; (9 - d) % 9)) = [8, 7, 5, 4, 2, 1]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\{\, 9 - d \bmod 9 \mid d \in [1,\,2,\,4,\,5,\,7,\,8] \,\} = [8,\,7,\,5,\,4,\,2,\,1]</code></pre></details>
 </div>
 <p class="thm-remark">── the vortex has its OWN reflection, and it is a different map ── ℤ/9 reflects by d ↦ (9 − d) mod 9. That map permutes the six units among themselves. The millennium reflection does NOT stay inside them: it sends the unit 1 to 9, which is not a unit. Two reflections, two domains.</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-theorems-universal_millennium_reflection_escapes_the_units">
 <p class="thm-label"><strong>Theorem 333</strong> (<code>universal_millennium_reflection_escapes_the_units</code>)<a class="thm-cite" href="/theorem/lean_millenniumfloor.universal_universal_millennium_reflection_escapes_the_units">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>¬</mo><mrow><mo>∀</mo><mi>u</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>refl</mi><mo>(</mo><mi>u</mi><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>¬ ([1, 2, 4, 5, 7, 8].all (fun u =&gt; [1, 2, 4, 5, 7, 8].contains (refl u)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\lnot \forall u \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{refl}\mathopen{}\left(u\right) \in [1,\,2,\,4,\,5,\,7,\,8]</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-theorems-universal_reflection_is_the_vortex_reflection_shifted">
 <p class="thm-label"><strong>Theorem 334</strong> (<code>universal_reflection_is_the_vortex_reflection_shifted</code>)<a class="thm-cite" href="/theorem/lean_millenniumfloor.universal_universal_reflection_is_the_vortex_reflection_shifted">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>9</mn><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mrow><mn>10</mn><mo>-</mo><mi>d</mi></mrow><mo>mod</mo><mn>9</mn></mrow><mo>=</mo><mrow><mrow><mrow><mrow><mn>9</mn><mo>-</mo><mi>d</mi></mrow><mo>mod</mo><mn>9</mn></mrow><mo>+</mo><mn>1</mn></mrow><mo>mod</mo><mn>9</mn></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(List.range 10).all (fun d =&gt; (10 - d) % 9 == ((9 - d) % 9 + 1) % 9)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in \{0,\dots,9\},\; 10 - d \bmod 9 = 9 - d \bmod 9 + 1 \bmod 9</code></pre></details>
 </div>
 <p class="thm-remark">── and yet they are the SAME map, shifted by one ── This is what the singleton family was standing on alone. Reduced mod nine, the millennium reflection is the vortex reflection plus one, at every residue 0…9. The shared structure the seven framings borrow is not a separate object: it is ℤ/9's own involution, displaced by a single step. Still not a proof of any conjecture.</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 10 cases. <span class="qed">□</span></p>
@@ -2788,826 +3392,1062 @@ kernel accepted; whatever it refused is reported by the generator and is not in 
 
 <div class="thm" id="thm-imagined-units_is_closed_under_double">
 <p class="thm-label"><strong>Theorem 335</strong> (<code>units_is_closed_under_double</code>)<a class="thm-cite" href="/theorem/lean_imagined_units_is_closed_under_double">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>2</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (2 * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(2 \cdot d\right) \in [1,\,2,\,4,\,5,\,7,\,8]</code></pre></details>
 </div>
 <p class="thm-remark">the units is closed under doubling</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-orbit_is_closed_under_double">
 <p class="thm-label"><strong>Theorem 336</strong> (<code>orbit_is_closed_under_double</code>)<a class="thm-cite" href="/theorem/lean_imagined_orbit_is_closed_under_double">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>2</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (2 * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(2 \cdot d\right) \in [1,\,2,\,4,\,8,\,7,\,5]</code></pre></details>
 </div>
 <p class="thm-remark">the doubling orbit is closed under doubling</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-all_is_closed_under_double">
 <p class="thm-label"><strong>Theorem 337</strong> (<code>all_is_closed_under_double</code>)<a class="thm-cite" href="/theorem/lean_imagined_all_is_closed_under_double">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>2</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (2 * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(2 \cdot d\right) \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8]</code></pre></details>
 </div>
 <p class="thm-remark">the whole ring is closed under doubling</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 81 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-triad_is_closed_under_triple">
 <p class="thm-label"><strong>Theorem 338</strong> (<code>triad_is_closed_under_triple</code>)<a class="thm-cite" href="/theorem/lean_imagined_triad_is_closed_under_triple">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>3</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[3, 6, 0].all (fun d =&gt; [3, 6, 0].contains (m9 (3 * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [3,\,6,\,0],\; \mathrm{m9}\mathopen{}\left(3 \cdot d\right) \in [3,\,6,\,0]</code></pre></details>
 </div>
 <p class="thm-remark">the triad is closed under tripling</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-all_is_closed_under_triple">
 <p class="thm-label"><strong>Theorem 339</strong> (<code>all_is_closed_under_triple</code>)<a class="thm-cite" href="/theorem/lean_imagined_all_is_closed_under_triple">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>3</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (3 * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(3 \cdot d\right) \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8]</code></pre></details>
 </div>
 <p class="thm-remark">the whole ring is closed under tripling</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 81 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-units_is_closed_under_quadruple">
 <p class="thm-label"><strong>Theorem 340</strong> (<code>units_is_closed_under_quadruple</code>)<a class="thm-cite" href="/theorem/lean_imagined_units_is_closed_under_quadruple">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>4</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (4 * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \in [1,\,2,\,4,\,5,\,7,\,8]</code></pre></details>
 </div>
 <p class="thm-remark">the units is closed under quadrupling</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-triad_is_closed_under_quadruple">
 <p class="thm-label"><strong>Theorem 341</strong> (<code>triad_is_closed_under_quadruple</code>)<a class="thm-cite" href="/theorem/lean_imagined_triad_is_closed_under_quadruple">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>4</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[3, 6, 0].all (fun d =&gt; [3, 6, 0].contains (m9 (4 * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [3,\,6,\,0],\; \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \in [3,\,6,\,0]</code></pre></details>
 </div>
 <p class="thm-remark">the triad is closed under quadrupling</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-orbit_is_closed_under_quadruple">
 <p class="thm-label"><strong>Theorem 342</strong> (<code>orbit_is_closed_under_quadruple</code>)<a class="thm-cite" href="/theorem/lean_imagined_orbit_is_closed_under_quadruple">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>4</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (4 * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \in [1,\,2,\,4,\,8,\,7,\,5]</code></pre></details>
 </div>
 <p class="thm-remark">the doubling orbit is closed under quadrupling</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-tetA_is_closed_under_quadruple">
 <p class="thm-label"><strong>Theorem 343</strong> (<code>tetA_is_closed_under_quadruple</code>)<a class="thm-cite" href="/theorem/lean_imagined_tetA_is_closed_under_quadruple">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>4</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 4, 7].all (fun d =&gt; [1, 4, 7].contains (m9 (4 * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \in [1,\,4,\,7]</code></pre></details>
 </div>
 <p class="thm-remark">the first tetrahedron is closed under quadrupling</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-tetB_is_closed_under_quadruple">
 <p class="thm-label"><strong>Theorem 344</strong> (<code>tetB_is_closed_under_quadruple</code>)<a class="thm-cite" href="/theorem/lean_imagined_tetB_is_closed_under_quadruple">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>2</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>4</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>2</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[2, 5, 8].all (fun d =&gt; [2, 5, 8].contains (m9 (4 * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [2,\,5,\,8],\; \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \in [2,\,5,\,8]</code></pre></details>
 </div>
 <p class="thm-remark">the second tetrahedron is closed under quadrupling</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-all_is_closed_under_quadruple">
 <p class="thm-label"><strong>Theorem 345</strong> (<code>all_is_closed_under_quadruple</code>)<a class="thm-cite" href="/theorem/lean_imagined_all_is_closed_under_quadruple">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>4</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (4 * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8]</code></pre></details>
 </div>
 <p class="thm-remark">the whole ring is closed under quadrupling</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 81 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-squares_is_closed_under_quadruple">
 <p class="thm-label"><strong>Theorem 346</strong> (<code>squares_is_closed_under_quadruple</code>)<a class="thm-cite" href="/theorem/lean_imagined_squares_is_closed_under_quadruple">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>4</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0, 1, 4, 7].all (fun d =&gt; [0, 1, 4, 7].contains (m9 (4 * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [0,\,1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \in [0,\,1,\,4,\,7]</code></pre></details>
 </div>
 <p class="thm-remark">the squares mod nine is closed under quadrupling</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-triad_is_closed_under_negate">
 <p class="thm-label"><strong>Theorem 347</strong> (<code>triad_is_closed_under_negate</code>)<a class="thm-cite" href="/theorem/lean_imagined_triad_is_closed_under_negate">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>9</mn><mo>-</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[3, 6, 0].all (fun d =&gt; [3, 6, 0].contains (m9 (9 - d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [3,\,6,\,0],\; \mathrm{m9}\mathopen{}\left(9 - d\right) \in [3,\,6,\,0]</code></pre></details>
 </div>
 <p class="thm-remark">the triad is closed under negation</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-orbit_is_closed_under_negate">
 <p class="thm-label"><strong>Theorem 348</strong> (<code>orbit_is_closed_under_negate</code>)<a class="thm-cite" href="/theorem/lean_imagined_orbit_is_closed_under_negate">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>9</mn><mo>-</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (9 - d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(9 - d\right) \in [1,\,2,\,4,\,8,\,7,\,5]</code></pre></details>
 </div>
 <p class="thm-remark">the doubling orbit is closed under negation</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-all_is_closed_under_negate">
 <p class="thm-label"><strong>Theorem 349</strong> (<code>all_is_closed_under_negate</code>)<a class="thm-cite" href="/theorem/lean_imagined_all_is_closed_under_negate">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>9</mn><mo>-</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (9 - d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(9 - d\right) \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8]</code></pre></details>
 </div>
 <p class="thm-remark">the whole ring is closed under negation</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 81 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-cubes_is_closed_under_negate">
 <p class="thm-label"><strong>Theorem 350</strong> (<code>cubes_is_closed_under_negate</code>)<a class="thm-cite" href="/theorem/lean_imagined_cubes_is_closed_under_negate">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>9</mn><mo>-</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0, 1, 8].all (fun d =&gt; [0, 1, 8].contains (m9 (9 - d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [0,\,1,\,8],\; \mathrm{m9}\mathopen{}\left(9 - d\right) \in [0,\,1,\,8]</code></pre></details>
 </div>
 <p class="thm-remark">the cubes mod nine is closed under negation</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-units_is_closed_under_square">
 <p class="thm-label"><strong>Theorem 351</strong> (<code>units_is_closed_under_square</code>)<a class="thm-cite" href="/theorem/lean_imagined_units_is_closed_under_square">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mi>d</mi><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (d * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [1,\,2,\,4,\,5,\,7,\,8]</code></pre></details>
 </div>
 <p class="thm-remark">the units is closed under squaring</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-triad_is_closed_under_square">
 <p class="thm-label"><strong>Theorem 352</strong> (<code>triad_is_closed_under_square</code>)<a class="thm-cite" href="/theorem/lean_imagined_triad_is_closed_under_square">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mi>d</mi><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[3, 6, 0].all (fun d =&gt; [3, 6, 0].contains (m9 (d * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [3,\,6,\,0],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [3,\,6,\,0]</code></pre></details>
 </div>
 <p class="thm-remark">the triad is closed under squaring</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-orbit_is_closed_under_square">
 <p class="thm-label"><strong>Theorem 353</strong> (<code>orbit_is_closed_under_square</code>)<a class="thm-cite" href="/theorem/lean_imagined_orbit_is_closed_under_square">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mi>d</mi><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (d * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [1,\,2,\,4,\,8,\,7,\,5]</code></pre></details>
 </div>
 <p class="thm-remark">the doubling orbit is closed under squaring</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-tetA_is_closed_under_square">
 <p class="thm-label"><strong>Theorem 354</strong> (<code>tetA_is_closed_under_square</code>)<a class="thm-cite" href="/theorem/lean_imagined_tetA_is_closed_under_square">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mi>d</mi><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 4, 7].all (fun d =&gt; [1, 4, 7].contains (m9 (d * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [1,\,4,\,7]</code></pre></details>
 </div>
 <p class="thm-remark">the first tetrahedron is closed under squaring</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-all_is_closed_under_square">
 <p class="thm-label"><strong>Theorem 355</strong> (<code>all_is_closed_under_square</code>)<a class="thm-cite" href="/theorem/lean_imagined_all_is_closed_under_square">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mi>d</mi><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (d * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8]</code></pre></details>
 </div>
 <p class="thm-remark">the whole ring is closed under squaring</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 81 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-squares_is_closed_under_square">
 <p class="thm-label"><strong>Theorem 356</strong> (<code>squares_is_closed_under_square</code>)<a class="thm-cite" href="/theorem/lean_imagined_squares_is_closed_under_square">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mi>d</mi><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0, 1, 4, 7].all (fun d =&gt; [0, 1, 4, 7].contains (m9 (d * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [0,\,1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [0,\,1,\,4,\,7]</code></pre></details>
 </div>
 <p class="thm-remark">the squares mod nine is closed under squaring</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-cubes_is_closed_under_square">
 <p class="thm-label"><strong>Theorem 357</strong> (<code>cubes_is_closed_under_square</code>)<a class="thm-cite" href="/theorem/lean_imagined_cubes_is_closed_under_square">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mi>d</mi><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0, 1, 8].all (fun d =&gt; [0, 1, 8].contains (m9 (d * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [0,\,1,\,8],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [0,\,1,\,8]</code></pre></details>
 </div>
 <p class="thm-remark">the cubes mod nine is closed under squaring</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-units_is_closed_under_fourth">
 <p class="thm-label"><strong>Theorem 358</strong> (<code>units_is_closed_under_fourth</code>)<a class="thm-cite" href="/theorem/lean_imagined_units_is_closed_under_fourth">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>4</mn></msup><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (d ^ 4)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d^{4}\right) \in [1,\,2,\,4,\,5,\,7,\,8]</code></pre></details>
 </div>
 <p class="thm-remark">the units is closed under the fourth power</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-triad_is_closed_under_fourth">
 <p class="thm-label"><strong>Theorem 359</strong> (<code>triad_is_closed_under_fourth</code>)<a class="thm-cite" href="/theorem/lean_imagined_triad_is_closed_under_fourth">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>4</mn></msup><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[3, 6, 0].all (fun d =&gt; [3, 6, 0].contains (m9 (d ^ 4)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [3,\,6,\,0],\; \mathrm{m9}\mathopen{}\left(d^{4}\right) \in [3,\,6,\,0]</code></pre></details>
 </div>
 <p class="thm-remark">the triad is closed under the fourth power</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-orbit_is_closed_under_fourth">
 <p class="thm-label"><strong>Theorem 360</strong> (<code>orbit_is_closed_under_fourth</code>)<a class="thm-cite" href="/theorem/lean_imagined_orbit_is_closed_under_fourth">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>4</mn></msup><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (d ^ 4)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(d^{4}\right) \in [1,\,2,\,4,\,8,\,7,\,5]</code></pre></details>
 </div>
 <p class="thm-remark">the doubling orbit is closed under the fourth power</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-tetA_is_closed_under_fourth">
 <p class="thm-label"><strong>Theorem 361</strong> (<code>tetA_is_closed_under_fourth</code>)<a class="thm-cite" href="/theorem/lean_imagined_tetA_is_closed_under_fourth">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>4</mn></msup><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 4, 7].all (fun d =&gt; [1, 4, 7].contains (m9 (d ^ 4)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(d^{4}\right) \in [1,\,4,\,7]</code></pre></details>
 </div>
 <p class="thm-remark">the first tetrahedron is closed under the fourth power</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-all_is_closed_under_fourth">
 <p class="thm-label"><strong>Theorem 362</strong> (<code>all_is_closed_under_fourth</code>)<a class="thm-cite" href="/theorem/lean_imagined_all_is_closed_under_fourth">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>4</mn></msup><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (d ^ 4)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d^{4}\right) \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8]</code></pre></details>
 </div>
 <p class="thm-remark">the whole ring is closed under the fourth power</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 81 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-squares_is_closed_under_fourth">
 <p class="thm-label"><strong>Theorem 363</strong> (<code>squares_is_closed_under_fourth</code>)<a class="thm-cite" href="/theorem/lean_imagined_squares_is_closed_under_fourth">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>4</mn></msup><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0, 1, 4, 7].all (fun d =&gt; [0, 1, 4, 7].contains (m9 (d ^ 4)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [0,\,1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(d^{4}\right) \in [0,\,1,\,4,\,7]</code></pre></details>
 </div>
 <p class="thm-remark">the squares mod nine is closed under the fourth power</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-cubes_is_closed_under_fourth">
 <p class="thm-label"><strong>Theorem 364</strong> (<code>cubes_is_closed_under_fourth</code>)<a class="thm-cite" href="/theorem/lean_imagined_cubes_is_closed_under_fourth">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>4</mn></msup><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0, 1, 8].all (fun d =&gt; [0, 1, 8].contains (m9 (d ^ 4)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [0,\,1,\,8],\; \mathrm{m9}\mathopen{}\left(d^{4}\right) \in [0,\,1,\,8]</code></pre></details>
 </div>
 <p class="thm-remark">the cubes mod nine is closed under the fourth power</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-units_is_closed_under_sixth">
 <p class="thm-label"><strong>Theorem 365</strong> (<code>units_is_closed_under_sixth</code>)<a class="thm-cite" href="/theorem/lean_imagined_units_is_closed_under_sixth">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>6</mn></msup><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (d ^ 6)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d^{6}\right) \in [1,\,2,\,4,\,5,\,7,\,8]</code></pre></details>
 </div>
 <p class="thm-remark">the units is closed under the sixth power</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-triad_is_closed_under_sixth">
 <p class="thm-label"><strong>Theorem 366</strong> (<code>triad_is_closed_under_sixth</code>)<a class="thm-cite" href="/theorem/lean_imagined_triad_is_closed_under_sixth">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>6</mn></msup><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[3, 6, 0].all (fun d =&gt; [3, 6, 0].contains (m9 (d ^ 6)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [3,\,6,\,0],\; \mathrm{m9}\mathopen{}\left(d^{6}\right) \in [3,\,6,\,0]</code></pre></details>
 </div>
 <p class="thm-remark">the triad is closed under the sixth power</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-orbit_is_closed_under_sixth">
 <p class="thm-label"><strong>Theorem 367</strong> (<code>orbit_is_closed_under_sixth</code>)<a class="thm-cite" href="/theorem/lean_imagined_orbit_is_closed_under_sixth">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>6</mn></msup><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (d ^ 6)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(d^{6}\right) \in [1,\,2,\,4,\,8,\,7,\,5]</code></pre></details>
 </div>
 <p class="thm-remark">the doubling orbit is closed under the sixth power</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-tetA_is_closed_under_sixth">
 <p class="thm-label"><strong>Theorem 368</strong> (<code>tetA_is_closed_under_sixth</code>)<a class="thm-cite" href="/theorem/lean_imagined_tetA_is_closed_under_sixth">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>6</mn></msup><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 4, 7].all (fun d =&gt; [1, 4, 7].contains (m9 (d ^ 6)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(d^{6}\right) \in [1,\,4,\,7]</code></pre></details>
 </div>
 <p class="thm-remark">the first tetrahedron is closed under the sixth power</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-all_is_closed_under_sixth">
 <p class="thm-label"><strong>Theorem 369</strong> (<code>all_is_closed_under_sixth</code>)<a class="thm-cite" href="/theorem/lean_imagined_all_is_closed_under_sixth">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>6</mn></msup><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (d ^ 6)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d^{6}\right) \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8]</code></pre></details>
 </div>
 <p class="thm-remark">the whole ring is closed under the sixth power</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 81 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-squares_is_closed_under_sixth">
 <p class="thm-label"><strong>Theorem 370</strong> (<code>squares_is_closed_under_sixth</code>)<a class="thm-cite" href="/theorem/lean_imagined_squares_is_closed_under_sixth">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>6</mn></msup><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0, 1, 4, 7].all (fun d =&gt; [0, 1, 4, 7].contains (m9 (d ^ 6)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [0,\,1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(d^{6}\right) \in [0,\,1,\,4,\,7]</code></pre></details>
 </div>
 <p class="thm-remark">the squares mod nine is closed under the sixth power</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-cubes_is_closed_under_sixth">
 <p class="thm-label"><strong>Theorem 371</strong> (<code>cubes_is_closed_under_sixth</code>)<a class="thm-cite" href="/theorem/lean_imagined_cubes_is_closed_under_sixth">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>6</mn></msup><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0, 1, 8].all (fun d =&gt; [0, 1, 8].contains (m9 (d ^ 6)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [0,\,1,\,8],\; \mathrm{m9}\mathopen{}\left(d^{6}\right) \in [0,\,1,\,8]</code></pre></details>
 </div>
 <p class="thm-remark">the cubes mod nine is closed under the sixth power</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-units_is_closed_under_quintuple">
 <p class="thm-label"><strong>Theorem 372</strong> (<code>units_is_closed_under_quintuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_units_is_closed_under_quintuple">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>5</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (5 * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \in [1,\,2,\,4,\,5,\,7,\,8]</code></pre></details>
 </div>
 <p class="thm-remark">the units is closed under multiplication by five</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-triad_is_closed_under_quintuple">
 <p class="thm-label"><strong>Theorem 373</strong> (<code>triad_is_closed_under_quintuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_triad_is_closed_under_quintuple">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>5</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[3, 6, 0].all (fun d =&gt; [3, 6, 0].contains (m9 (5 * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [3,\,6,\,0],\; \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \in [3,\,6,\,0]</code></pre></details>
 </div>
 <p class="thm-remark">the triad is closed under multiplication by five</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-orbit_is_closed_under_quintuple">
 <p class="thm-label"><strong>Theorem 374</strong> (<code>orbit_is_closed_under_quintuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_orbit_is_closed_under_quintuple">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>5</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (5 * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \in [1,\,2,\,4,\,8,\,7,\,5]</code></pre></details>
 </div>
 <p class="thm-remark">the doubling orbit is closed under multiplication by five</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-all_is_closed_under_quintuple">
 <p class="thm-label"><strong>Theorem 375</strong> (<code>all_is_closed_under_quintuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_all_is_closed_under_quintuple">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>5</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (5 * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8]</code></pre></details>
 </div>
 <p class="thm-remark">the whole ring is closed under multiplication by five</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 81 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-triad_is_closed_under_sextuple">
 <p class="thm-label"><strong>Theorem 376</strong> (<code>triad_is_closed_under_sextuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_triad_is_closed_under_sextuple">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>6</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[3, 6, 0].all (fun d =&gt; [3, 6, 0].contains (m9 (6 * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [3,\,6,\,0],\; \mathrm{m9}\mathopen{}\left(6 \cdot d\right) \in [3,\,6,\,0]</code></pre></details>
 </div>
 <p class="thm-remark">the triad is closed under multiplication by six</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-all_is_closed_under_sextuple">
 <p class="thm-label"><strong>Theorem 377</strong> (<code>all_is_closed_under_sextuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_all_is_closed_under_sextuple">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>6</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (6 * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(6 \cdot d\right) \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8]</code></pre></details>
 </div>
 <p class="thm-remark">the whole ring is closed under multiplication by six</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 81 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-units_is_closed_under_septuple">
 <p class="thm-label"><strong>Theorem 378</strong> (<code>units_is_closed_under_septuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_units_is_closed_under_septuple">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>7</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (7 * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \in [1,\,2,\,4,\,5,\,7,\,8]</code></pre></details>
 </div>
 <p class="thm-remark">the units is closed under multiplication by seven</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-triad_is_closed_under_septuple">
 <p class="thm-label"><strong>Theorem 379</strong> (<code>triad_is_closed_under_septuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_triad_is_closed_under_septuple">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>7</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[3, 6, 0].all (fun d =&gt; [3, 6, 0].contains (m9 (7 * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [3,\,6,\,0],\; \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \in [3,\,6,\,0]</code></pre></details>
 </div>
 <p class="thm-remark">the triad is closed under multiplication by seven</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-orbit_is_closed_under_septuple">
 <p class="thm-label"><strong>Theorem 380</strong> (<code>orbit_is_closed_under_septuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_orbit_is_closed_under_septuple">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>7</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (7 * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \in [1,\,2,\,4,\,8,\,7,\,5]</code></pre></details>
 </div>
 <p class="thm-remark">the doubling orbit is closed under multiplication by seven</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-tetA_is_closed_under_septuple">
 <p class="thm-label"><strong>Theorem 381</strong> (<code>tetA_is_closed_under_septuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_tetA_is_closed_under_septuple">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>7</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 4, 7].all (fun d =&gt; [1, 4, 7].contains (m9 (7 * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \in [1,\,4,\,7]</code></pre></details>
 </div>
 <p class="thm-remark">the first tetrahedron is closed under multiplication by seven</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-tetB_is_closed_under_septuple">
 <p class="thm-label"><strong>Theorem 382</strong> (<code>tetB_is_closed_under_septuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_tetB_is_closed_under_septuple">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>2</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>7</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>2</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[2, 5, 8].all (fun d =&gt; [2, 5, 8].contains (m9 (7 * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [2,\,5,\,8],\; \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \in [2,\,5,\,8]</code></pre></details>
 </div>
 <p class="thm-remark">the second tetrahedron is closed under multiplication by seven</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-all_is_closed_under_septuple">
 <p class="thm-label"><strong>Theorem 383</strong> (<code>all_is_closed_under_septuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_all_is_closed_under_septuple">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>7</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (7 * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8]</code></pre></details>
 </div>
 <p class="thm-remark">the whole ring is closed under multiplication by seven</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 81 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-squares_is_closed_under_septuple">
 <p class="thm-label"><strong>Theorem 384</strong> (<code>squares_is_closed_under_septuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_squares_is_closed_under_septuple">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>7</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0, 1, 4, 7].all (fun d =&gt; [0, 1, 4, 7].contains (m9 (7 * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [0,\,1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \in [0,\,1,\,4,\,7]</code></pre></details>
 </div>
 <p class="thm-remark">the squares mod nine is closed under multiplication by seven</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-units_is_closed_under_octuple">
 <p class="thm-label"><strong>Theorem 385</strong> (<code>units_is_closed_under_octuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_units_is_closed_under_octuple">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>8</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (8 * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \in [1,\,2,\,4,\,5,\,7,\,8]</code></pre></details>
 </div>
 <p class="thm-remark">the units is closed under multiplication by eight</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-triad_is_closed_under_octuple">
 <p class="thm-label"><strong>Theorem 386</strong> (<code>triad_is_closed_under_octuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_triad_is_closed_under_octuple">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>8</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[3, 6, 0].all (fun d =&gt; [3, 6, 0].contains (m9 (8 * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [3,\,6,\,0],\; \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \in [3,\,6,\,0]</code></pre></details>
 </div>
 <p class="thm-remark">the triad is closed under multiplication by eight</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-orbit_is_closed_under_octuple">
 <p class="thm-label"><strong>Theorem 387</strong> (<code>orbit_is_closed_under_octuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_orbit_is_closed_under_octuple">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>8</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (8 * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \in [1,\,2,\,4,\,8,\,7,\,5]</code></pre></details>
 </div>
 <p class="thm-remark">the doubling orbit is closed under multiplication by eight</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-all_is_closed_under_octuple">
 <p class="thm-label"><strong>Theorem 388</strong> (<code>all_is_closed_under_octuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_all_is_closed_under_octuple">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>8</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (8 * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8]</code></pre></details>
 </div>
 <p class="thm-remark">the whole ring is closed under multiplication by eight</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 81 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-cubes_is_closed_under_octuple">
 <p class="thm-label"><strong>Theorem 389</strong> (<code>cubes_is_closed_under_octuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_cubes_is_closed_under_octuple">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>8</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0, 1, 8].all (fun d =&gt; [0, 1, 8].contains (m9 (8 * d)))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [0,\,1,\,8],\; \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \in [0,\,1,\,8]</code></pre></details>
 </div>
 <p class="thm-remark">the cubes mod nine is closed under multiplication by eight</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-quadruple_is_involutive_on_triad">
 <p class="thm-label"><strong>Theorem 390</strong> (<code>quadruple_is_involutive_on_triad</code>)<a class="thm-cite" href="/theorem/lean_imagined_quadruple_is_involutive_on_triad">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mrow><mi>x</mi><mo>↦</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mn>4</mn><mo>⋅</mo><mi>x</mi></mrow><mo>)</mo></mrow></mrow><mo>(</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mn>4</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>)</mo></mrow><mo>=</mo><mi>d</mi></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[3, 6, 0].all (fun d =&gt; (fun x =&gt; m9 (4 * x)) (m9 (4 * d)) == d)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [3,\,6,\,0],\; x \mapsto \mathrm{m9}\mathopen{}\left(4 \cdot x\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(4 \cdot d\right)\right) = d</code></pre></details>
 </div>
 <p class="thm-remark">quadrupling is its own inverse on the triad</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-square_is_involutive_on_tetA">
 <p class="thm-label"><strong>Theorem 391</strong> (<code>square_is_involutive_on_tetA</code>)<a class="thm-cite" href="/theorem/lean_imagined_square_is_involutive_on_tetA">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mrow><mi>x</mi><mo>↦</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mi>x</mi><mo>⋅</mo><mi>x</mi></mrow><mo>)</mo></mrow></mrow><mo>(</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mi>d</mi><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>)</mo></mrow><mo>=</mo><mi>d</mi></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 4, 7].all (fun d =&gt; (fun x =&gt; m9 (x * x)) (m9 (d * d)) == d)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,4,\,7],\; x \mapsto \mathrm{m9}\mathopen{}\left(x \cdot x\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(d \cdot d\right)\right) = d</code></pre></details>
 </div>
 <p class="thm-remark">squaring is its own inverse on the first tetrahedron</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-square_is_involutive_on_squares">
 <p class="thm-label"><strong>Theorem 392</strong> (<code>square_is_involutive_on_squares</code>)<a class="thm-cite" href="/theorem/lean_imagined_square_is_involutive_on_squares">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mrow><mi>x</mi><mo>↦</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mi>x</mi><mo>⋅</mo><mi>x</mi></mrow><mo>)</mo></mrow></mrow><mo>(</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mi>d</mi><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>)</mo></mrow><mo>=</mo><mi>d</mi></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0, 1, 4, 7].all (fun d =&gt; (fun x =&gt; m9 (x * x)) (m9 (d * d)) == d)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [0,\,1,\,4,\,7],\; x \mapsto \mathrm{m9}\mathopen{}\left(x \cdot x\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(d \cdot d\right)\right) = d</code></pre></details>
 </div>
 <p class="thm-remark">squaring is its own inverse on the squares mod nine</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 4 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-cube_is_involutive_on_cubes">
 <p class="thm-label"><strong>Theorem 393</strong> (<code>cube_is_involutive_on_cubes</code>)<a class="thm-cite" href="/theorem/lean_imagined_cube_is_involutive_on_cubes">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mrow><mi>x</mi><mo>↦</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mrow><mi>x</mi><mo>⋅</mo><mi>x</mi></mrow><mo>⋅</mo><mi>x</mi></mrow><mo>)</mo></mrow></mrow><mo>(</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mrow><mi>d</mi><mo>⋅</mo><mi>d</mi></mrow><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>)</mo></mrow><mo>=</mo><mi>d</mi></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0, 1, 8].all (fun d =&gt; (fun x =&gt; m9 (x * x * x)) (m9 (d * d * d)) == d)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [0,\,1,\,8],\; x \mapsto \mathrm{m9}\mathopen{}\left(x \cdot x \cdot x\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(d \cdot d \cdot d\right)\right) = d</code></pre></details>
 </div>
 <p class="thm-remark">cubing is its own inverse on the cubes mod nine</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-fourth_is_involutive_on_tetA">
 <p class="thm-label"><strong>Theorem 394</strong> (<code>fourth_is_involutive_on_tetA</code>)<a class="thm-cite" href="/theorem/lean_imagined_fourth_is_involutive_on_tetA">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mrow><mi>x</mi><mo>↦</mo><mrow><mi>m9</mi><mo>(</mo><msup><mi>x</mi><mn>4</mn></msup><mo>)</mo></mrow></mrow><mo>(</mo><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>4</mn></msup><mo>)</mo></mrow><mo>)</mo></mrow><mo>=</mo><mi>d</mi></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 4, 7].all (fun d =&gt; (fun x =&gt; m9 (x ^ 4)) (m9 (d ^ 4)) == d)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,4,\,7],\; x \mapsto \mathrm{m9}\mathopen{}\left(x^{4}\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(d^{4}\right)\right) = d</code></pre></details>
 </div>
 <p class="thm-remark">the fourth power is its own inverse on the first tetrahedron</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-fourth_is_involutive_on_squares">
 <p class="thm-label"><strong>Theorem 395</strong> (<code>fourth_is_involutive_on_squares</code>)<a class="thm-cite" href="/theorem/lean_imagined_fourth_is_involutive_on_squares">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mrow><mi>x</mi><mo>↦</mo><mrow><mi>m9</mi><mo>(</mo><msup><mi>x</mi><mn>4</mn></msup><mo>)</mo></mrow></mrow><mo>(</mo><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>4</mn></msup><mo>)</mo></mrow><mo>)</mo></mrow><mo>=</mo><mi>d</mi></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0, 1, 4, 7].all (fun d =&gt; (fun x =&gt; m9 (x ^ 4)) (m9 (d ^ 4)) == d)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [0,\,1,\,4,\,7],\; x \mapsto \mathrm{m9}\mathopen{}\left(x^{4}\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(d^{4}\right)\right) = d</code></pre></details>
 </div>
 <p class="thm-remark">the fourth power is its own inverse on the squares mod nine</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 4 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-fifth_is_involutive_on_units">
 <p class="thm-label"><strong>Theorem 396</strong> (<code>fifth_is_involutive_on_units</code>)<a class="thm-cite" href="/theorem/lean_imagined_fifth_is_involutive_on_units">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mrow><mi>x</mi><mo>↦</mo><mrow><mi>m9</mi><mo>(</mo><msup><mi>x</mi><mn>5</mn></msup><mo>)</mo></mrow></mrow><mo>(</mo><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>5</mn></msup><mo>)</mo></mrow><mo>)</mo></mrow><mo>=</mo><mi>d</mi></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; (fun x =&gt; m9 (x ^ 5)) (m9 (d ^ 5)) == d)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; x \mapsto \mathrm{m9}\mathopen{}\left(x^{5}\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(d^{5}\right)\right) = d</code></pre></details>
 </div>
 <p class="thm-remark">the fifth power is its own inverse on the units</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 6 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-fifth_is_involutive_on_orbit">
 <p class="thm-label"><strong>Theorem 397</strong> (<code>fifth_is_involutive_on_orbit</code>)<a class="thm-cite" href="/theorem/lean_imagined_fifth_is_involutive_on_orbit">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mrow><mi>x</mi><mo>↦</mo><mrow><mi>m9</mi><mo>(</mo><msup><mi>x</mi><mn>5</mn></msup><mo>)</mo></mrow></mrow><mo>(</mo><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>5</mn></msup><mo>)</mo></mrow><mo>)</mo></mrow><mo>=</mo><mi>d</mi></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; (fun x =&gt; m9 (x ^ 5)) (m9 (d ^ 5)) == d)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; x \mapsto \mathrm{m9}\mathopen{}\left(x^{5}\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(d^{5}\right)\right) = d</code></pre></details>
 </div>
 <p class="thm-remark">the fifth power is its own inverse on the doubling orbit</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 6 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-fifth_is_involutive_on_tetA">
 <p class="thm-label"><strong>Theorem 398</strong> (<code>fifth_is_involutive_on_tetA</code>)<a class="thm-cite" href="/theorem/lean_imagined_fifth_is_involutive_on_tetA">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mrow><mi>x</mi><mo>↦</mo><mrow><mi>m9</mi><mo>(</mo><msup><mi>x</mi><mn>5</mn></msup><mo>)</mo></mrow></mrow><mo>(</mo><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>5</mn></msup><mo>)</mo></mrow><mo>)</mo></mrow><mo>=</mo><mi>d</mi></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 4, 7].all (fun d =&gt; (fun x =&gt; m9 (x ^ 5)) (m9 (d ^ 5)) == d)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,4,\,7],\; x \mapsto \mathrm{m9}\mathopen{}\left(x^{5}\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(d^{5}\right)\right) = d</code></pre></details>
 </div>
 <p class="thm-remark">the fifth power is its own inverse on the first tetrahedron</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-fifth_is_involutive_on_tetB">
 <p class="thm-label"><strong>Theorem 399</strong> (<code>fifth_is_involutive_on_tetB</code>)<a class="thm-cite" href="/theorem/lean_imagined_fifth_is_involutive_on_tetB">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>2</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mrow><mi>x</mi><mo>↦</mo><mrow><mi>m9</mi><mo>(</mo><msup><mi>x</mi><mn>5</mn></msup><mo>)</mo></mrow></mrow><mo>(</mo><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>5</mn></msup><mo>)</mo></mrow><mo>)</mo></mrow><mo>=</mo><mi>d</mi></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[2, 5, 8].all (fun d =&gt; (fun x =&gt; m9 (x ^ 5)) (m9 (d ^ 5)) == d)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [2,\,5,\,8],\; x \mapsto \mathrm{m9}\mathopen{}\left(x^{5}\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(d^{5}\right)\right) = d</code></pre></details>
 </div>
 <p class="thm-remark">the fifth power is its own inverse on the second tetrahedron</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-fifth_is_involutive_on_squares">
 <p class="thm-label"><strong>Theorem 400</strong> (<code>fifth_is_involutive_on_squares</code>)<a class="thm-cite" href="/theorem/lean_imagined_fifth_is_involutive_on_squares">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mrow><mi>x</mi><mo>↦</mo><mrow><mi>m9</mi><mo>(</mo><msup><mi>x</mi><mn>5</mn></msup><mo>)</mo></mrow></mrow><mo>(</mo><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>5</mn></msup><mo>)</mo></mrow><mo>)</mo></mrow><mo>=</mo><mi>d</mi></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0, 1, 4, 7].all (fun d =&gt; (fun x =&gt; m9 (x ^ 5)) (m9 (d ^ 5)) == d)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [0,\,1,\,4,\,7],\; x \mapsto \mathrm{m9}\mathopen{}\left(x^{5}\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(d^{5}\right)\right) = d</code></pre></details>
 </div>
 <p class="thm-remark">the fifth power is its own inverse on the squares mod nine</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 4 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-fifth_is_involutive_on_cubes">
 <p class="thm-label"><strong>Theorem 401</strong> (<code>fifth_is_involutive_on_cubes</code>)<a class="thm-cite" href="/theorem/lean_imagined_fifth_is_involutive_on_cubes">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mrow><mi>x</mi><mo>↦</mo><mrow><mi>m9</mi><mo>(</mo><msup><mi>x</mi><mn>5</mn></msup><mo>)</mo></mrow></mrow><mo>(</mo><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>5</mn></msup><mo>)</mo></mrow><mo>)</mo></mrow><mo>=</mo><mi>d</mi></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0, 1, 8].all (fun d =&gt; (fun x =&gt; m9 (x ^ 5)) (m9 (d ^ 5)) == d)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [0,\,1,\,8],\; x \mapsto \mathrm{m9}\mathopen{}\left(x^{5}\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(d^{5}\right)\right) = d</code></pre></details>
 </div>
 <p class="thm-remark">the fifth power is its own inverse on the cubes mod nine</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-quintuple_is_involutive_on_triad">
 <p class="thm-label"><strong>Theorem 402</strong> (<code>quintuple_is_involutive_on_triad</code>)<a class="thm-cite" href="/theorem/lean_imagined_quintuple_is_involutive_on_triad">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mrow><mi>x</mi><mo>↦</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mn>5</mn><mo>⋅</mo><mi>x</mi></mrow><mo>)</mo></mrow></mrow><mo>(</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mn>5</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>)</mo></mrow><mo>=</mo><mi>d</mi></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[3, 6, 0].all (fun d =&gt; (fun x =&gt; m9 (5 * x)) (m9 (5 * d)) == d)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [3,\,6,\,0],\; x \mapsto \mathrm{m9}\mathopen{}\left(5 \cdot x\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(5 \cdot d\right)\right) = d</code></pre></details>
 </div>
 <p class="thm-remark">multiplication by five is its own inverse on the triad</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-septuple_is_involutive_on_triad">
 <p class="thm-label"><strong>Theorem 403</strong> (<code>septuple_is_involutive_on_triad</code>)<a class="thm-cite" href="/theorem/lean_imagined_septuple_is_involutive_on_triad">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mrow><mi>x</mi><mo>↦</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mn>7</mn><mo>⋅</mo><mi>x</mi></mrow><mo>)</mo></mrow></mrow><mo>(</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mn>7</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>)</mo></mrow><mo>=</mo><mi>d</mi></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[3, 6, 0].all (fun d =&gt; (fun x =&gt; m9 (7 * x)) (m9 (7 * d)) == d)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [3,\,6,\,0],\; x \mapsto \mathrm{m9}\mathopen{}\left(7 \cdot x\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(7 \cdot d\right)\right) = d</code></pre></details>
 </div>
 <p class="thm-remark">multiplication by seven is its own inverse on the triad</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-double_carries_units_onto_orbit">
 <p class="thm-label"><strong>Theorem 404</strong> (<code>double_carries_units_onto_orbit</code>)<a class="thm-cite" href="/theorem/lean_imagined_double_carries_units_onto_orbit">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>2</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mn>2</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>6</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (2 * d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d =&gt; m9 (2 * d))).eraseDups.length = 6</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(2 \cdot d\right) \in [1,\,2,\,4,\,8,\,7,\,5] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(2 \cdot d\right) \mid d \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right)\right| = 6</code></pre></details>
 </div>
 <p class="thm-remark">doubling carries the units onto the doubling orbit</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 216 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-double_carries_orbit_onto_units">
 <p class="thm-label"><strong>Theorem 405</strong> (<code>double_carries_orbit_onto_units</code>)<a class="thm-cite" href="/theorem/lean_imagined_double_carries_orbit_onto_units">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>2</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mn>2</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>6</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (2 * d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d =&gt; m9 (2 * d))).eraseDups.length = 6</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(2 \cdot d\right) \in [1,\,2,\,4,\,5,\,7,\,8] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(2 \cdot d\right) \mid d \in [1,\,2,\,4,\,8,\,7,\,5] \,\}\right)\right| = 6</code></pre></details>
 </div>
 <p class="thm-remark">doubling carries the doubling orbit onto the units</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 216 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-triple_carries_all_onto_triad">
 <p class="thm-label"><strong>Theorem 406</strong> (<code>triple_carries_all_onto_triad</code>)<a class="thm-cite" href="/theorem/lean_imagined_triple_carries_all_onto_triad">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>3</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mn>3</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>3</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0,1,2,3,4,5,6,7,8].all (fun d =&gt; [3, 6, 0].contains (m9 (3 * d))) ∧ ([0,1,2,3,4,5,6,7,8].map (fun d =&gt; m9 (3 * d))).eraseDups.length = 3</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(3 \cdot d\right) \in [3,\,6,\,0] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(3 \cdot d\right) \mid d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \,\}\right)\right| = 3</code></pre></details>
 </div>
 <p class="thm-remark">tripling carries the whole ring onto the triad</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 243 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-triple_carries_cubes_onto_triad">
 <p class="thm-label"><strong>Theorem 407</strong> (<code>triple_carries_cubes_onto_triad</code>)<a class="thm-cite" href="/theorem/lean_imagined_triple_carries_cubes_onto_triad">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>3</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mn>3</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>3</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0, 1, 8].all (fun d =&gt; [3, 6, 0].contains (m9 (3 * d))) ∧ ([0, 1, 8].map (fun d =&gt; m9 (3 * d))).eraseDups.length = 3</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [0,\,1,\,8],\; \mathrm{m9}\mathopen{}\left(3 \cdot d\right) \in [3,\,6,\,0] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(3 \cdot d\right) \mid d \in [0,\,1,\,8] \,\}\right)\right| = 3</code></pre></details>
 </div>
 <p class="thm-remark">tripling carries the cubes mod nine onto the triad</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 27 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-quadruple_carries_units_onto_orbit">
 <p class="thm-label"><strong>Theorem 408</strong> (<code>quadruple_carries_units_onto_orbit</code>)<a class="thm-cite" href="/theorem/lean_imagined_quadruple_carries_units_onto_orbit">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>4</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mn>4</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>6</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (4 * d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d =&gt; m9 (4 * d))).eraseDups.length = 6</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \in [1,\,2,\,4,\,8,\,7,\,5] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \mid d \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right)\right| = 6</code></pre></details>
 </div>
 <p class="thm-remark">quadrupling carries the units onto the doubling orbit</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 216 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-quadruple_carries_orbit_onto_units">
 <p class="thm-label"><strong>Theorem 409</strong> (<code>quadruple_carries_orbit_onto_units</code>)<a class="thm-cite" href="/theorem/lean_imagined_quadruple_carries_orbit_onto_units">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>4</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mn>4</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>6</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (4 * d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d =&gt; m9 (4 * d))).eraseDups.length = 6</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \in [1,\,2,\,4,\,5,\,7,\,8] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \mid d \in [1,\,2,\,4,\,8,\,7,\,5] \,\}\right)\right| = 6</code></pre></details>
 </div>
 <p class="thm-remark">quadrupling carries the doubling orbit onto the units</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 216 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-negate_carries_orbit_onto_units">
 <p class="thm-label"><strong>Theorem 410</strong> (<code>negate_carries_orbit_onto_units</code>)<a class="thm-cite" href="/theorem/lean_imagined_negate_carries_orbit_onto_units">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>9</mn><mo>-</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mn>9</mn><mo>-</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>6</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (9 - d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d =&gt; m9 (9 - d))).eraseDups.length = 6</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(9 - d\right) \in [1,\,2,\,4,\,5,\,7,\,8] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(9 - d\right) \mid d \in [1,\,2,\,4,\,8,\,7,\,5] \,\}\right)\right| = 6</code></pre></details>
 </div>
 <p class="thm-remark">negation carries the doubling orbit onto the units</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 216 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-negate_carries_tetA_onto_tetB">
 <p class="thm-label"><strong>Theorem 411</strong> (<code>negate_carries_tetA_onto_tetB</code>)<a class="thm-cite" href="/theorem/lean_imagined_negate_carries_tetA_onto_tetB">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>9</mn><mo>-</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>2</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mn>9</mn><mo>-</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>3</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 4, 7].all (fun d =&gt; [2, 5, 8].contains (m9 (9 - d))) ∧ ([1, 4, 7].map (fun d =&gt; m9 (9 - d))).eraseDups.length = 3</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(9 - d\right) \in [2,\,5,\,8] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(9 - d\right) \mid d \in [1,\,4,\,7] \,\}\right)\right| = 3</code></pre></details>
 </div>
 <p class="thm-remark">negation carries the first tetrahedron onto the second tetrahedron</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 27 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-negate_carries_tetB_onto_tetA">
 <p class="thm-label"><strong>Theorem 412</strong> (<code>negate_carries_tetB_onto_tetA</code>)<a class="thm-cite" href="/theorem/lean_imagined_negate_carries_tetB_onto_tetA">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>2</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>9</mn><mo>-</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mn>9</mn><mo>-</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>2</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>3</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[2, 5, 8].all (fun d =&gt; [1, 4, 7].contains (m9 (9 - d))) ∧ ([2, 5, 8].map (fun d =&gt; m9 (9 - d))).eraseDups.length = 3</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [2,\,5,\,8],\; \mathrm{m9}\mathopen{}\left(9 - d\right) \in [1,\,4,\,7] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(9 - d\right) \mid d \in [2,\,5,\,8] \,\}\right)\right| = 3</code></pre></details>
 </div>
 <p class="thm-remark">negation carries the second tetrahedron onto the first tetrahedron</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 27 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-square_carries_units_onto_tetA">
 <p class="thm-label"><strong>Theorem 413</strong> (<code>square_carries_units_onto_tetA</code>)<a class="thm-cite" href="/theorem/lean_imagined_square_carries_units_onto_tetA">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mi>d</mi><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mi>d</mi><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>3</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 4, 7].contains (m9 (d * d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d =&gt; m9 (d * d))).eraseDups.length = 3</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [1,\,4,\,7] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d \cdot d\right) \mid d \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right)\right| = 3</code></pre></details>
 </div>
 <p class="thm-remark">squaring carries the units onto the first tetrahedron</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 108 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-square_carries_orbit_onto_tetA">
 <p class="thm-label"><strong>Theorem 414</strong> (<code>square_carries_orbit_onto_tetA</code>)<a class="thm-cite" href="/theorem/lean_imagined_square_carries_orbit_onto_tetA">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mi>d</mi><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mi>d</mi><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>3</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 4, 7].contains (m9 (d * d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d =&gt; m9 (d * d))).eraseDups.length = 3</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [1,\,4,\,7] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d \cdot d\right) \mid d \in [1,\,2,\,4,\,8,\,7,\,5] \,\}\right)\right| = 3</code></pre></details>
 </div>
 <p class="thm-remark">squaring carries the doubling orbit onto the first tetrahedron</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 108 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-square_carries_tetB_onto_tetA">
 <p class="thm-label"><strong>Theorem 415</strong> (<code>square_carries_tetB_onto_tetA</code>)<a class="thm-cite" href="/theorem/lean_imagined_square_carries_tetB_onto_tetA">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>2</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mi>d</mi><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mi>d</mi><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>2</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>3</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[2, 5, 8].all (fun d =&gt; [1, 4, 7].contains (m9 (d * d))) ∧ ([2, 5, 8].map (fun d =&gt; m9 (d * d))).eraseDups.length = 3</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [2,\,5,\,8],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [1,\,4,\,7] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d \cdot d\right) \mid d \in [2,\,5,\,8] \,\}\right)\right| = 3</code></pre></details>
 </div>
 <p class="thm-remark">squaring carries the second tetrahedron onto the first tetrahedron</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 27 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-square_carries_all_onto_squares">
 <p class="thm-label"><strong>Theorem 416</strong> (<code>square_carries_all_onto_squares</code>)<a class="thm-cite" href="/theorem/lean_imagined_square_carries_all_onto_squares">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mi>d</mi><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mi>d</mi><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>4</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0, 1, 4, 7].contains (m9 (d * d))) ∧ ([0,1,2,3,4,5,6,7,8].map (fun d =&gt; m9 (d * d))).eraseDups.length = 4</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [0,\,1,\,4,\,7] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d \cdot d\right) \mid d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \,\}\right)\right| = 4</code></pre></details>
 </div>
 <p class="thm-remark">squaring carries the whole ring onto the squares mod nine</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 324 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-cube_carries_all_onto_cubes">
 <p class="thm-label"><strong>Theorem 417</strong> (<code>cube_carries_all_onto_cubes</code>)<a class="thm-cite" href="/theorem/lean_imagined_cube_carries_all_onto_cubes">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mrow><mi>d</mi><mo>⋅</mo><mi>d</mi></mrow><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mrow><mi>d</mi><mo>⋅</mo><mi>d</mi></mrow><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>3</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0, 1, 8].contains (m9 (d * d * d))) ∧ ([0,1,2,3,4,5,6,7,8].map (fun d =&gt; m9 (d * d * d))).eraseDups.length = 3</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d \cdot d \cdot d\right) \in [0,\,1,\,8] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d \cdot d \cdot d\right) \mid d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \,\}\right)\right| = 3</code></pre></details>
 </div>
 <p class="thm-remark">cubing carries the whole ring onto the cubes mod nine</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 243 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-fourth_carries_units_onto_tetA">
 <p class="thm-label"><strong>Theorem 418</strong> (<code>fourth_carries_units_onto_tetA</code>)<a class="thm-cite" href="/theorem/lean_imagined_fourth_carries_units_onto_tetA">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>4</mn></msup><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>4</mn></msup><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>3</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 4, 7].contains (m9 (d ^ 4))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d =&gt; m9 (d ^ 4))).eraseDups.length = 3</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d^{4}\right) \in [1,\,4,\,7] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{4}\right) \mid d \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right)\right| = 3</code></pre></details>
 </div>
 <p class="thm-remark">the fourth power carries the units onto the first tetrahedron</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 108 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-fourth_carries_orbit_onto_tetA">
 <p class="thm-label"><strong>Theorem 419</strong> (<code>fourth_carries_orbit_onto_tetA</code>)<a class="thm-cite" href="/theorem/lean_imagined_fourth_carries_orbit_onto_tetA">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>4</mn></msup><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>4</mn></msup><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>3</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 4, 7].contains (m9 (d ^ 4))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d =&gt; m9 (d ^ 4))).eraseDups.length = 3</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(d^{4}\right) \in [1,\,4,\,7] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{4}\right) \mid d \in [1,\,2,\,4,\,8,\,7,\,5] \,\}\right)\right| = 3</code></pre></details>
 </div>
 <p class="thm-remark">the fourth power carries the doubling orbit onto the first tetrahedron</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 108 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-fourth_carries_tetB_onto_tetA">
 <p class="thm-label"><strong>Theorem 420</strong> (<code>fourth_carries_tetB_onto_tetA</code>)<a class="thm-cite" href="/theorem/lean_imagined_fourth_carries_tetB_onto_tetA">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>2</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>4</mn></msup><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>4</mn></msup><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>2</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>3</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[2, 5, 8].all (fun d =&gt; [1, 4, 7].contains (m9 (d ^ 4))) ∧ ([2, 5, 8].map (fun d =&gt; m9 (d ^ 4))).eraseDups.length = 3</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [2,\,5,\,8],\; \mathrm{m9}\mathopen{}\left(d^{4}\right) \in [1,\,4,\,7] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{4}\right) \mid d \in [2,\,5,\,8] \,\}\right)\right| = 3</code></pre></details>
 </div>
 <p class="thm-remark">the fourth power carries the second tetrahedron onto the first tetrahedron</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 27 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-fourth_carries_all_onto_squares">
 <p class="thm-label"><strong>Theorem 421</strong> (<code>fourth_carries_all_onto_squares</code>)<a class="thm-cite" href="/theorem/lean_imagined_fourth_carries_all_onto_squares">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>4</mn></msup><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>4</mn></msup><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>4</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0, 1, 4, 7].contains (m9 (d ^ 4))) ∧ ([0,1,2,3,4,5,6,7,8].map (fun d =&gt; m9 (d ^ 4))).eraseDups.length = 4</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d^{4}\right) \in [0,\,1,\,4,\,7] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{4}\right) \mid d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \,\}\right)\right| = 4</code></pre></details>
 </div>
 <p class="thm-remark">the fourth power carries the whole ring onto the squares mod nine</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 324 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-fifth_carries_units_onto_orbit">
 <p class="thm-label"><strong>Theorem 422</strong> (<code>fifth_carries_units_onto_orbit</code>)<a class="thm-cite" href="/theorem/lean_imagined_fifth_carries_units_onto_orbit">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>5</mn></msup><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>5</mn></msup><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>6</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (d ^ 5))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d =&gt; m9 (d ^ 5))).eraseDups.length = 6</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d^{5}\right) \in [1,\,2,\,4,\,8,\,7,\,5] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{5}\right) \mid d \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right)\right| = 6</code></pre></details>
 </div>
 <p class="thm-remark">the fifth power carries the units onto the doubling orbit</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 216 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-fifth_carries_orbit_onto_units">
 <p class="thm-label"><strong>Theorem 423</strong> (<code>fifth_carries_orbit_onto_units</code>)<a class="thm-cite" href="/theorem/lean_imagined_fifth_carries_orbit_onto_units">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>5</mn></msup><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>5</mn></msup><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>6</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (d ^ 5))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d =&gt; m9 (d ^ 5))).eraseDups.length = 6</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(d^{5}\right) \in [1,\,2,\,4,\,5,\,7,\,8] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{5}\right) \mid d \in [1,\,2,\,4,\,8,\,7,\,5] \,\}\right)\right| = 6</code></pre></details>
 </div>
 <p class="thm-remark">the fifth power carries the doubling orbit onto the units</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 216 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-quintuple_carries_units_onto_orbit">
 <p class="thm-label"><strong>Theorem 424</strong> (<code>quintuple_carries_units_onto_orbit</code>)<a class="thm-cite" href="/theorem/lean_imagined_quintuple_carries_units_onto_orbit">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>5</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mn>5</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>6</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (5 * d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d =&gt; m9 (5 * d))).eraseDups.length = 6</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \in [1,\,2,\,4,\,8,\,7,\,5] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \mid d \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right)\right| = 6</code></pre></details>
 </div>
 <p class="thm-remark">multiplication by five carries the units onto the doubling orbit</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 216 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-quintuple_carries_orbit_onto_units">
 <p class="thm-label"><strong>Theorem 425</strong> (<code>quintuple_carries_orbit_onto_units</code>)<a class="thm-cite" href="/theorem/lean_imagined_quintuple_carries_orbit_onto_units">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>5</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mn>5</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>6</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (5 * d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d =&gt; m9 (5 * d))).eraseDups.length = 6</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \in [1,\,2,\,4,\,5,\,7,\,8] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \mid d \in [1,\,2,\,4,\,8,\,7,\,5] \,\}\right)\right| = 6</code></pre></details>
 </div>
 <p class="thm-remark">multiplication by five carries the doubling orbit onto the units</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 216 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-quintuple_carries_tetA_onto_tetB">
 <p class="thm-label"><strong>Theorem 426</strong> (<code>quintuple_carries_tetA_onto_tetB</code>)<a class="thm-cite" href="/theorem/lean_imagined_quintuple_carries_tetA_onto_tetB">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>5</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>2</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mn>5</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>3</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 4, 7].all (fun d =&gt; [2, 5, 8].contains (m9 (5 * d))) ∧ ([1, 4, 7].map (fun d =&gt; m9 (5 * d))).eraseDups.length = 3</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \in [2,\,5,\,8] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \mid d \in [1,\,4,\,7] \,\}\right)\right| = 3</code></pre></details>
 </div>
 <p class="thm-remark">multiplication by five carries the first tetrahedron onto the second tetrahedron</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 27 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-quintuple_carries_tetB_onto_tetA">
 <p class="thm-label"><strong>Theorem 427</strong> (<code>quintuple_carries_tetB_onto_tetA</code>)<a class="thm-cite" href="/theorem/lean_imagined_quintuple_carries_tetB_onto_tetA">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>2</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>5</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mn>5</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>2</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>3</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[2, 5, 8].all (fun d =&gt; [1, 4, 7].contains (m9 (5 * d))) ∧ ([2, 5, 8].map (fun d =&gt; m9 (5 * d))).eraseDups.length = 3</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [2,\,5,\,8],\; \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \in [1,\,4,\,7] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \mid d \in [2,\,5,\,8] \,\}\right)\right| = 3</code></pre></details>
 </div>
 <p class="thm-remark">multiplication by five carries the second tetrahedron onto the first tetrahedron</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 27 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-sextuple_carries_all_onto_triad">
 <p class="thm-label"><strong>Theorem 428</strong> (<code>sextuple_carries_all_onto_triad</code>)<a class="thm-cite" href="/theorem/lean_imagined_sextuple_carries_all_onto_triad">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>6</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mn>6</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>3</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0,1,2,3,4,5,6,7,8].all (fun d =&gt; [3, 6, 0].contains (m9 (6 * d))) ∧ ([0,1,2,3,4,5,6,7,8].map (fun d =&gt; m9 (6 * d))).eraseDups.length = 3</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(6 \cdot d\right) \in [3,\,6,\,0] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(6 \cdot d\right) \mid d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \,\}\right)\right| = 3</code></pre></details>
 </div>
 <p class="thm-remark">multiplication by six carries the whole ring onto the triad</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 243 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-sextuple_carries_cubes_onto_triad">
 <p class="thm-label"><strong>Theorem 429</strong> (<code>sextuple_carries_cubes_onto_triad</code>)<a class="thm-cite" href="/theorem/lean_imagined_sextuple_carries_cubes_onto_triad">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>6</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mn>6</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>3</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[0, 1, 8].all (fun d =&gt; [3, 6, 0].contains (m9 (6 * d))) ∧ ([0, 1, 8].map (fun d =&gt; m9 (6 * d))).eraseDups.length = 3</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [0,\,1,\,8],\; \mathrm{m9}\mathopen{}\left(6 \cdot d\right) \in [3,\,6,\,0] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(6 \cdot d\right) \mid d \in [0,\,1,\,8] \,\}\right)\right| = 3</code></pre></details>
 </div>
 <p class="thm-remark">multiplication by six carries the cubes mod nine onto the triad</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 27 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-septuple_carries_units_onto_orbit">
 <p class="thm-label"><strong>Theorem 430</strong> (<code>septuple_carries_units_onto_orbit</code>)<a class="thm-cite" href="/theorem/lean_imagined_septuple_carries_units_onto_orbit">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>7</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mn>7</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>6</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (7 * d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d =&gt; m9 (7 * d))).eraseDups.length = 6</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \in [1,\,2,\,4,\,8,\,7,\,5] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \mid d \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right)\right| = 6</code></pre></details>
 </div>
 <p class="thm-remark">multiplication by seven carries the units onto the doubling orbit</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 216 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-septuple_carries_orbit_onto_units">
 <p class="thm-label"><strong>Theorem 431</strong> (<code>septuple_carries_orbit_onto_units</code>)<a class="thm-cite" href="/theorem/lean_imagined_septuple_carries_orbit_onto_units">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>7</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mn>7</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>6</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (7 * d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d =&gt; m9 (7 * d))).eraseDups.length = 6</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \in [1,\,2,\,4,\,5,\,7,\,8] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \mid d \in [1,\,2,\,4,\,8,\,7,\,5] \,\}\right)\right| = 6</code></pre></details>
 </div>
 <p class="thm-remark">multiplication by seven carries the doubling orbit onto the units</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 216 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-octuple_carries_units_onto_orbit">
 <p class="thm-label"><strong>Theorem 432</strong> (<code>octuple_carries_units_onto_orbit</code>)<a class="thm-cite" href="/theorem/lean_imagined_octuple_carries_units_onto_orbit">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>8</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mn>8</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>6</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (8 * d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d =&gt; m9 (8 * d))).eraseDups.length = 6</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \in [1,\,2,\,4,\,8,\,7,\,5] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \mid d \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right)\right| = 6</code></pre></details>
 </div>
 <p class="thm-remark">multiplication by eight carries the units onto the doubling orbit</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 216 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-octuple_carries_orbit_onto_units">
 <p class="thm-label"><strong>Theorem 433</strong> (<code>octuple_carries_orbit_onto_units</code>)<a class="thm-cite" href="/theorem/lean_imagined_octuple_carries_orbit_onto_units">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>8</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mn>8</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>6</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (8 * d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d =&gt; m9 (8 * d))).eraseDups.length = 6</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \in [1,\,2,\,4,\,5,\,7,\,8] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \mid d \in [1,\,2,\,4,\,8,\,7,\,5] \,\}\right)\right| = 6</code></pre></details>
 </div>
 <p class="thm-remark">multiplication by eight carries the doubling orbit onto the units</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 216 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-octuple_carries_tetA_onto_tetB">
 <p class="thm-label"><strong>Theorem 434</strong> (<code>octuple_carries_tetA_onto_tetB</code>)<a class="thm-cite" href="/theorem/lean_imagined_octuple_carries_tetA_onto_tetB">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>8</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>2</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mn>8</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>3</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[1, 4, 7].all (fun d =&gt; [2, 5, 8].contains (m9 (8 * d))) ∧ ([1, 4, 7].map (fun d =&gt; m9 (8 * d))).eraseDups.length = 3</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \in [2,\,5,\,8] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \mid d \in [1,\,4,\,7] \,\}\right)\right| = 3</code></pre></details>
 </div>
 <p class="thm-remark">multiplication by eight carries the first tetrahedron onto the second tetrahedron</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 27 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-octuple_carries_tetB_onto_tetA">
 <p class="thm-label"><strong>Theorem 435</strong> (<code>octuple_carries_tetB_onto_tetA</code>)<a class="thm-cite" href="/theorem/lean_imagined_octuple_carries_tetB_onto_tetA">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>∀</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>2</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>,</mo><mrow><mrow><mi>m9</mi><mo>(</mo><mrow><mn>8</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow></mrow></mrow><mo>∧</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mn>8</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>2</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>3</mn></mrow></mrow></math></div>
 <pre class="thm-statement"><code>[2, 5, 8].all (fun d =&gt; [1, 4, 7].contains (m9 (8 * d))) ∧ ([2, 5, 8].map (fun d =&gt; m9 (8 * d))).eraseDups.length = 3</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in [2,\,5,\,8],\; \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \in [1,\,4,\,7] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \mid d \in [2,\,5,\,8] \,\}\right)\right| = 3</code></pre></details>
 </div>
 <p class="thm-remark">multiplication by eight carries the second tetrahedron onto the first tetrahedron</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 27 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-triple_collapses_triad_to_one_value">
 <p class="thm-label"><strong>Theorem 436</strong> (<code>triple_collapses_triad_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_triple_collapses_triad_to_one_value">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mn>3</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>1</mn></mrow></math></div>
 <pre class="thm-statement"><code>([3, 6, 0].map (fun d =&gt; m9 (3 * d))).eraseDups.length = 1</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(3 \cdot d\right) \mid d \in [3,\,6,\,0] \,\}\right)\right| = 1</code></pre></details>
 </div>
 <p class="thm-remark">tripling sends every element of the triad to a single value</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-triple_collapses_tetA_to_one_value">
 <p class="thm-label"><strong>Theorem 437</strong> (<code>triple_collapses_tetA_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_triple_collapses_tetA_to_one_value">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mn>3</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>1</mn></mrow></math></div>
 <pre class="thm-statement"><code>([1, 4, 7].map (fun d =&gt; m9 (3 * d))).eraseDups.length = 1</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(3 \cdot d\right) \mid d \in [1,\,4,\,7] \,\}\right)\right| = 1</code></pre></details>
 </div>
 <p class="thm-remark">tripling sends every element of the first tetrahedron to a single value</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-triple_collapses_tetB_to_one_value">
 <p class="thm-label"><strong>Theorem 438</strong> (<code>triple_collapses_tetB_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_triple_collapses_tetB_to_one_value">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mn>3</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>2</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>1</mn></mrow></math></div>
 <pre class="thm-statement"><code>([2, 5, 8].map (fun d =&gt; m9 (3 * d))).eraseDups.length = 1</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(3 \cdot d\right) \mid d \in [2,\,5,\,8] \,\}\right)\right| = 1</code></pre></details>
 </div>
 <p class="thm-remark">tripling sends every element of the second tetrahedron to a single value</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-square_collapses_triad_to_one_value">
 <p class="thm-label"><strong>Theorem 439</strong> (<code>square_collapses_triad_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_square_collapses_triad_to_one_value">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mi>d</mi><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>1</mn></mrow></math></div>
 <pre class="thm-statement"><code>([3, 6, 0].map (fun d =&gt; m9 (d * d))).eraseDups.length = 1</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d \cdot d\right) \mid d \in [3,\,6,\,0] \,\}\right)\right| = 1</code></pre></details>
 </div>
 <p class="thm-remark">squaring sends every element of the triad to a single value</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-cube_collapses_triad_to_one_value">
 <p class="thm-label"><strong>Theorem 440</strong> (<code>cube_collapses_triad_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_cube_collapses_triad_to_one_value">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mrow><mi>d</mi><mo>⋅</mo><mi>d</mi></mrow><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>1</mn></mrow></math></div>
 <pre class="thm-statement"><code>([3, 6, 0].map (fun d =&gt; m9 (d * d * d))).eraseDups.length = 1</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d \cdot d \cdot d\right) \mid d \in [3,\,6,\,0] \,\}\right)\right| = 1</code></pre></details>
 </div>
 <p class="thm-remark">cubing sends every element of the triad to a single value</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-cube_collapses_tetA_to_one_value">
 <p class="thm-label"><strong>Theorem 441</strong> (<code>cube_collapses_tetA_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_cube_collapses_tetA_to_one_value">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mrow><mi>d</mi><mo>⋅</mo><mi>d</mi></mrow><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>1</mn></mrow></math></div>
 <pre class="thm-statement"><code>([1, 4, 7].map (fun d =&gt; m9 (d * d * d))).eraseDups.length = 1</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d \cdot d \cdot d\right) \mid d \in [1,\,4,\,7] \,\}\right)\right| = 1</code></pre></details>
 </div>
 <p class="thm-remark">cubing sends every element of the first tetrahedron to a single value</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-cube_collapses_tetB_to_one_value">
 <p class="thm-label"><strong>Theorem 442</strong> (<code>cube_collapses_tetB_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_cube_collapses_tetB_to_one_value">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mrow><mi>d</mi><mo>⋅</mo><mi>d</mi></mrow><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>2</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>1</mn></mrow></math></div>
 <pre class="thm-statement"><code>([2, 5, 8].map (fun d =&gt; m9 (d * d * d))).eraseDups.length = 1</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d \cdot d \cdot d\right) \mid d \in [2,\,5,\,8] \,\}\right)\right| = 1</code></pre></details>
 </div>
 <p class="thm-remark">cubing sends every element of the second tetrahedron to a single value</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-fourth_collapses_triad_to_one_value">
 <p class="thm-label"><strong>Theorem 443</strong> (<code>fourth_collapses_triad_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_fourth_collapses_triad_to_one_value">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>4</mn></msup><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>1</mn></mrow></math></div>
 <pre class="thm-statement"><code>([3, 6, 0].map (fun d =&gt; m9 (d ^ 4))).eraseDups.length = 1</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{4}\right) \mid d \in [3,\,6,\,0] \,\}\right)\right| = 1</code></pre></details>
 </div>
 <p class="thm-remark">the fourth power sends every element of the triad to a single value</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-fifth_collapses_triad_to_one_value">
 <p class="thm-label"><strong>Theorem 444</strong> (<code>fifth_collapses_triad_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_fifth_collapses_triad_to_one_value">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>5</mn></msup><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>1</mn></mrow></math></div>
 <pre class="thm-statement"><code>([3, 6, 0].map (fun d =&gt; m9 (d ^ 5))).eraseDups.length = 1</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{5}\right) \mid d \in [3,\,6,\,0] \,\}\right)\right| = 1</code></pre></details>
 </div>
 <p class="thm-remark">the fifth power sends every element of the triad to a single value</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-sixth_collapses_units_to_one_value">
 <p class="thm-label"><strong>Theorem 445</strong> (<code>sixth_collapses_units_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_sixth_collapses_units_to_one_value">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>6</mn></msup><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>1</mn></mrow></math></div>
 <pre class="thm-statement"><code>([1, 2, 4, 5, 7, 8].map (fun d =&gt; m9 (d ^ 6))).eraseDups.length = 1</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{6}\right) \mid d \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right)\right| = 1</code></pre></details>
 </div>
 <p class="thm-remark">the sixth power sends every element of the units to a single value</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 6 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-sixth_collapses_triad_to_one_value">
 <p class="thm-label"><strong>Theorem 446</strong> (<code>sixth_collapses_triad_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_sixth_collapses_triad_to_one_value">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>6</mn></msup><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>1</mn></mrow></math></div>
 <pre class="thm-statement"><code>([3, 6, 0].map (fun d =&gt; m9 (d ^ 6))).eraseDups.length = 1</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{6}\right) \mid d \in [3,\,6,\,0] \,\}\right)\right| = 1</code></pre></details>
 </div>
 <p class="thm-remark">the sixth power sends every element of the triad to a single value</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-sixth_collapses_orbit_to_one_value">
 <p class="thm-label"><strong>Theorem 447</strong> (<code>sixth_collapses_orbit_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_sixth_collapses_orbit_to_one_value">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>6</mn></msup><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>5</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>1</mn></mrow></math></div>
 <pre class="thm-statement"><code>([1, 2, 4, 8, 7, 5].map (fun d =&gt; m9 (d ^ 6))).eraseDups.length = 1</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{6}\right) \mid d \in [1,\,2,\,4,\,8,\,7,\,5] \,\}\right)\right| = 1</code></pre></details>
 </div>
 <p class="thm-remark">the sixth power sends every element of the doubling orbit to a single value</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 6 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-sixth_collapses_tetA_to_one_value">
 <p class="thm-label"><strong>Theorem 448</strong> (<code>sixth_collapses_tetA_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_sixth_collapses_tetA_to_one_value">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>6</mn></msup><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>1</mn></mrow></math></div>
 <pre class="thm-statement"><code>([1, 4, 7].map (fun d =&gt; m9 (d ^ 6))).eraseDups.length = 1</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{6}\right) \mid d \in [1,\,4,\,7] \,\}\right)\right| = 1</code></pre></details>
 </div>
 <p class="thm-remark">the sixth power sends every element of the first tetrahedron to a single value</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-sixth_collapses_tetB_to_one_value">
 <p class="thm-label"><strong>Theorem 449</strong> (<code>sixth_collapses_tetB_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_sixth_collapses_tetB_to_one_value">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><msup><mi>d</mi><mn>6</mn></msup><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>2</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>1</mn></mrow></math></div>
 <pre class="thm-statement"><code>([2, 5, 8].map (fun d =&gt; m9 (d ^ 6))).eraseDups.length = 1</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{6}\right) \mid d \in [2,\,5,\,8] \,\}\right)\right| = 1</code></pre></details>
 </div>
 <p class="thm-remark">the sixth power sends every element of the second tetrahedron to a single value</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-sextuple_collapses_triad_to_one_value">
 <p class="thm-label"><strong>Theorem 450</strong> (<code>sextuple_collapses_triad_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_sextuple_collapses_triad_to_one_value">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mn>6</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>1</mn></mrow></math></div>
 <pre class="thm-statement"><code>([3, 6, 0].map (fun d =&gt; m9 (6 * d))).eraseDups.length = 1</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(6 \cdot d\right) \mid d \in [3,\,6,\,0] \,\}\right)\right| = 1</code></pre></details>
 </div>
 <p class="thm-remark">multiplication by six sends every element of the triad to a single value</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-sextuple_collapses_tetA_to_one_value">
 <p class="thm-label"><strong>Theorem 451</strong> (<code>sextuple_collapses_tetA_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_sextuple_collapses_tetA_to_one_value">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mn>6</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>1</mn></mrow></math></div>
 <pre class="thm-statement"><code>([1, 4, 7].map (fun d =&gt; m9 (6 * d))).eraseDups.length = 1</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(6 \cdot d\right) \mid d \in [1,\,4,\,7] \,\}\right)\right| = 1</code></pre></details>
 </div>
 <p class="thm-remark">multiplication by six sends every element of the first tetrahedron to a single value</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-imagined-sextuple_collapses_tetB_to_one_value">
 <p class="thm-label"><strong>Theorem 452</strong> (<code>sextuple_collapses_tetB_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_sextuple_collapses_tetB_to_one_value">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mi>m9</mi><mo>(</mo><mrow><mn>6</mn><mo>⋅</mo><mi>d</mi></mrow><mo>)</mo></mrow><mo>∣</mo><mi>d</mi><mo>∈</mo><mrow><mo>[</mo><mn>2</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>1</mn></mrow></math></div>
 <pre class="thm-statement"><code>([2, 5, 8].map (fun d =&gt; m9 (6 * d))).eraseDups.length = 1</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(6 \cdot d\right) \mid d \in [2,\,5,\,8] \,\}\right)\right| = 1</code></pre></details>
 </div>
 <p class="thm-remark">multiplication by six sends every element of the second tetrahedron to a single value</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
@@ -3644,7 +4484,9 @@ settledHere := 7</code></pre>
 
 <div class="thm" id="thm-rights-claims_exactly_what_arises_without_formality">
 <p class="thm-label"><strong>Theorem 453</strong> (<code>claims_exactly_what_arises_without_formality</code>)<a class="thm-cite" href="/theorem/lean_rights_claims_exactly_what_arises_without_formality">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>r</mi><mo>∈</mo><mi>instruments</mi><mo>,</mo><mrow><mrow><mi>auto</mi><mo>(</mo><mi>r</mi><mo>)</mo></mrow><mo>=</mo><mrow><mi>claim</mi><mo>(</mo><mi>r</mi><mo>)</mo></mrow></mrow></mrow></math></div>
 <pre class="thm-statement"><code>instruments.all (fun r =&gt; auto r == claim r)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall r \in \mathrm{instruments},\; \mathrm{auto}\mathopen{}\left(r\right) = \mathrm{claim}\mathopen{}\left(r\right)</code></pre></details>
 </div>
 <p class="thm-remark">── THE CLAIM. Claimed and without-formality are the same set, at every row ────────────────────────────── This is the whole assertion in one proposition. Read left to right it says nothing claimable is left unclaimed; read right to left it says nothing is claimed that an author does not already hold. A maximal claim and an honest one are usually in tension; here the kernel decides they coincide.</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
@@ -3658,39 +4500,51 @@ settledHere := 7</code></pre>
 
 <div class="thm" id="thm-rights-the_unclaimed_are_the_registry_the_excluded_and_the_unownable">
 <p class="thm-label"><strong>Theorem 455</strong> (<code>the_unclaimed_are_the_registry_the_excluded_and_the_unownable</code>)<a class="thm-cite" href="/theorem/lean_rights_the_unclaimed_are_the_registry_the_excluded_and_the_unownable">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>idOf</mi><mo>[</mo><mrow><mo>{</mo><mi>r</mi><mo>∈</mo><mi>instruments</mi><mo>∣</mo><mrow><mo>¬</mo><mrow><mi>claim</mi><mo>(</mo><mi>r</mi><mo>)</mo></mrow></mrow><mo>}</mo></mrow><mo>]</mo></mrow><mo>=</mo><mrow><mo>[</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(instruments.filter (fun r =&gt; ¬ claim r)).map idOf = [4, 5, 6, 7]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{idOf}[\{\, r \in \mathrm{instruments} \mid \lnot \mathrm{claim}\mathopen{}\left(r\right) \,\}] = [4,\,5,\,6,\,7]</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 4 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-rights-no_right_that_needs_a_registry_act_is_claimed">
 <p class="thm-label"><strong>Theorem 456</strong> (<code>no_right_that_needs_a_registry_act_is_claimed</code>)<a class="thm-cite" href="/theorem/lean_rights_no_right_that_needs_a_registry_act_is_claimed">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>r</mi><mo>∈</mo><mrow><mo>{</mo><mi>r</mi><mo>∈</mo><mi>instruments</mi><mo>∣</mo><mrow><mrow><mi>kindOf</mi><mo>(</mo><mi>r</mi><mo>)</mo></mrow><mo>=</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>claim</mi><mo>(</mo><mi>r</mi><mo>)</mo></mrow><mo>=</mo><mi>false</mi></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(instruments.filter (fun r =&gt; kindOf r == 1)).all (fun r =&gt; claim r == false)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall r \in \{\, r \in \mathrm{instruments} \mid \mathrm{kindOf}\mathopen{}\left(r\right) = 1 \,\},\; \mathrm{claim}\mathopen{}\left(r\right) = \mathrm{false}</code></pre></details>
 </div>
 <p class="thm-remark">── the three reasons a right is NOT claimed, each stated separately so none hides inside another ────────</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-rights-no_excluded_subject_matter_is_claimed">
 <p class="thm-label"><strong>Theorem 457</strong> (<code>no_excluded_subject_matter_is_claimed</code>)<a class="thm-cite" href="/theorem/lean_rights_no_excluded_subject_matter_is_claimed">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>r</mi><mo>∈</mo><mrow><mo>{</mo><mi>r</mi><mo>∈</mo><mi>instruments</mi><mo>∣</mo><mrow><mrow><mi>kindOf</mi><mo>(</mo><mi>r</mi><mo>)</mo></mrow><mo>=</mo><mn>2</mn></mrow><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>claim</mi><mo>(</mo><mi>r</mi><mo>)</mo></mrow><mo>=</mo><mi>false</mi></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(instruments.filter (fun r =&gt; kindOf r == 2)).all (fun r =&gt; claim r == false)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall r \in \{\, r \in \mathrm{instruments} \mid \mathrm{kindOf}\mathopen{}\left(r\right) = 2 \,\},\; \mathrm{claim}\mathopen{}\left(r\right) = \mathrm{false}</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-rights-nothing_incapable_of_ownership_is_claimed">
 <p class="thm-label"><strong>Theorem 458</strong> (<code>nothing_incapable_of_ownership_is_claimed</code>)<a class="thm-cite" href="/theorem/lean_rights_nothing_incapable_of_ownership_is_claimed">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>∀</mo><mi>r</mi><mo>∈</mo><mrow><mo>{</mo><mi>r</mi><mo>∈</mo><mi>instruments</mi><mo>∣</mo><mrow><mrow><mi>kindOf</mi><mo>(</mo><mi>r</mi><mo>)</mo></mrow><mo>=</mo><mn>3</mn></mrow><mo>}</mo></mrow><mo>,</mo><mrow><mrow><mi>claim</mi><mo>(</mo><mi>r</mi><mo>)</mo></mrow><mo>=</mo><mi>false</mi></mrow></mrow></math></div>
 <pre class="thm-statement"><code>(instruments.filter (fun r =&gt; kindOf r == 3)).all (fun r =&gt; claim r == false)</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall r \in \{\, r \in \mathrm{instruments} \mid \mathrm{kindOf}\mathopen{}\left(r\right) = 3 \,\},\; \mathrm{claim}\mathopen{}\left(r\right) = \mathrm{false}</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-rights-the_enumeration_is_complete_and_unduplicated">
 <p class="thm-label"><strong>Theorem 459</strong> (<code>the_enumeration_is_complete_and_unduplicated</code>)<a class="thm-cite" href="/theorem/lean_rights_the_enumeration_is_complete_and_unduplicated">sealed</a>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>idOf</mi><mo>[</mo><mi>instruments</mi><mo>]</mo></mrow><mo>=</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn><mo>]</mo></mrow></mrow></math></div>
 <pre class="thm-statement"><code>instruments.map idOf = [1, 2, 3, 4, 5, 6, 7]</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{idOf}[\mathrm{instruments}] = [1,\,2,\,3,\,4,\,5,\,6,\,7]</code></pre></details>
 </div>
 <p class="thm-remark">── the enumeration is closed: seven instruments, each judged once, none duplicated and none omitted ─────</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 7 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-rights-rights_settles_its_range">
 <p class="thm-label"><strong>Theorem 460</strong> (<code>rights_settles_its_range</code>)<span class="thm-uncited">not sealed — settled by <code>rfl</code>, not exhausted</span>.</p>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>settledHere</mi><mo>=</mo><mn>7</mn></mrow></math></div>
 <pre class="thm-statement"><code>settledHere = 7</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{settledHere} = 7</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>rfl</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 

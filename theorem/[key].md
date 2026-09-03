@@ -33,6 +33,11 @@ const showFormula = computed(() => !!statement.value && !isRevoked.value)
 // which is how the wrong formula reached this page — the page names the keys that do resolve.
 const ambiguous = computed(() => String(params.value?.ambiguous || ''))
 const casesText = computed(() => cases.value ? cases.value.toLocaleString('en-US') : '')
+// The typeset form is a rendering of the statement; the Lean below it is what the kernel checked. A
+// statement the grammar in src/latex does not cover has no typeset form here — the Lean stands alone
+// rather than a partial rendering standing in for it.
+const mathml = computed(() => String(params.value?.mathml || ''))
+const latex = computed(() => String(params.value?.latex || ''))
 const today = computed(() => String(params.value?.receipt || '').slice(0, 8))
 // microdata → speech: the frame's narration in the infinite movie (the ledger, read aloud)
 const speech = computed(() => isLean.value
@@ -111,7 +116,9 @@ do resolve, each to exactly one statement: <code>{{ ambiguous }}</code>. Cite on
 
 <div class="thm">
   <p class="thm-label"><strong>Theorem</strong> (<code>{{ $params.key }}</code>).</p>
-  <pre class="thm-statement"><code itemprop="text">{{ statement }}</code></pre>
+  <div v-if="mathml" class="thm-math" role="math" aria-label="the statement, typeset" v-html="mathml"></div>
+<pre class="thm-statement"><code itemprop="text">{{ statement }}</code></pre>
+<details v-if="latex" class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>{{ latex }}</code></pre></details>
 </div>
 
 <div class="thm-proof">

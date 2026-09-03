@@ -41,6 +41,7 @@ import { all as leanDocs } from './leandoc.ts'
 import { live, theoremOfKey, leanTheorems } from '../src/api/index.ts'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 import { MILLENNIUM } from '../src/millennium/index.ts'
+import { toLatex, toMathML } from '../src/latex/index.ts'
 
 const docs = leanDocs()
 const T = leanTheorems()
@@ -90,6 +91,7 @@ const noExhaustion = theorems.filter((t) => t.cases <= 1).length
 const byDecide = theorems.filter((t) => t.tactic === 'by decide').length
 const rflOnly = theorems.filter((t) => t.tactic !== 'by decide')
 const ownDoc = theorems.filter((t) => t.docFrom === 'own').length
+const typeset = theorems.filter((t) => toMathML(t.statement) !== null).length
 
 const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 const n = (x: number) => x.toLocaleString('en-US')
@@ -225,7 +227,18 @@ for (const w of wings) {
       o += `<p class="thm-label"><strong>Theorem ${k}</strong> (<code>${t.name}</code>)`
       o += key ? `<a class="thm-cite" href="/theorem/${key}">sealed</a>` : '<span class="thm-uncited">not sealed — settled by <code>rfl</code>, not exhausted</span>'
       o += '.</p>\n'
+      // THE TYPESET FORM IS A READING AID; THE LEAN IS THE THEOREM. Both are shown, in that order and
+      // labelled, because the kernel checked the Lean and not this rendering. A statement the grammar
+      // does not cover shows the Lean alone rather than a partial rendering — see src/latex.
+      const mml = toMathML(t.statement)
+      const ltx = toLatex(t.statement)
+      if (mml) o += `<div class="thm-math" role="math" aria-label="the statement, typeset">${mml}</div>\n`
+      // THE LEAN IS ALWAYS VISIBLE. It was inside a <details> and the printed page then carried only the
+      // translation: a <details> cannot be forced open by CSS, so paper showed the rendering and hid the
+      // thing the kernel actually checked — the exact inversion this module is written to prevent. Only
+      // the LaTeX, which is a copy-paste convenience, is behind a disclosure.
       o += `<pre class="thm-statement"><code>${esc(t.statement)}</code></pre>\n`
+      if (ltx) o += `<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>${esc(ltx)}</code></pre></details>\n`
       o += '</div>\n'
       // WHICH THEOREMS SIT AT THE MILLENNIUM FLOOR, and what they do not say. These seven are the closest
       // this framework comes to a Clay problem, which makes them the place an overclaim would do the most

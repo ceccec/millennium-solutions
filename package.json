@@ -26,7 +26,7 @@
   },
   "scripts": {
     "docs:dev": "vitepress dev",
-    "predocs:build": "node scripts/analytics.ts && node scripts/pages.ts && node scripts/dashboard.ts && node scripts/boundaries.ts && node scripts/rights.ts && node scripts/challenges.ts && node scripts/heart.ts && node scripts/accounting.ts && node scripts/speedup.ts && node scripts/greeting.ts && node scripts/solutions.ts && node scripts/paper.ts",
+    "predocs:build": "node scripts/analytics.ts && node scripts/pages.ts && node scripts/dashboard.ts && node scripts/boundaries.ts && node scripts/rights.ts && node scripts/challenges.ts && node scripts/heart.ts && node scripts/accounting.ts && node scripts/speedup.ts && node scripts/greeting.ts && node scripts/solutions.ts && node scripts/latex-gate.ts && node scripts/paper.ts",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview",
     "seal": "node scripts/seal.ts",
@@ -89,7 +89,8 @@
     "ci-health": "node scripts/ci-health.ts",
     "published": "node scripts/published.ts",
     "translate-gate": "node scripts/translate-gate.ts",
-    "paper": "node scripts/paper.ts"
+    "paper": "node scripts/paper.ts",
+    "latex-gate": "node scripts/latex-gate.ts"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",

@@ -16,7 +16,7 @@
 // and `wing` are read; anything else is carried through untouched so a field can be added without editing
 // this file. A file without frontmatter falls back to its own name, which is honest but plainer.
 import { readFileSync } from 'node:fs'
-import { leanFiles, leanSource, frontmatter as fmOf, PROOF_DIR, domainOf } from '../src/api/index.ts'
+import { leanFiles, leanSource, frontmatter as fmOf, PROOF_DIR, domainOf, normalizeStatement } from '../src/api/index.ts'
 
 const DIR = PROOF_DIR
 
@@ -58,7 +58,7 @@ export function read(file: string): LeanDoc {
   const theorems: Theorem[] = []
   let lastSection = ''
   for (const m of src.matchAll(/((?:^[ \t]*--.*\n)*)^theorem\s+([A-Za-z_0-9]+)\s*:([\s\S]*?):=\s*(by decide|rfl|by\s+\w+)/gm)) {
-    const statement = m[3].replace(/^\s*--.*$/gm, '').replace(/\s+/g, ' ').trim()
+    const statement = normalizeStatement(m[3])
     const own = stripComment(m[1])
     if (own) lastSection = own
     theorems.push({

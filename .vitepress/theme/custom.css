@@ -288,3 +288,33 @@
   .paper-index a, .paper-index a span { font-size: 7pt !important; color: #000 !important; }
   .thm-ambiguous { background: #fff !important; font-size: 9pt !important; }
 }
+
+/* ── The typeset statement ──────────────────────────────────────────────────
+   MathML, rendered natively by the browser — no maths library and no CDN, so
+   it works under the same constraints as the rest of the page and prints.
+   The Lean source sits under it in a <details>: the rendering is a reading
+   aid, the Lean is what the kernel checked, and a reader who wants to verify
+   should reach the source in one click. Where the grammar does not cover a
+   statement there is no typeset form and the <details> is open by default. */
+.thm-math {
+  margin: 0.5rem 0 0.4rem; padding: 0.55rem 0.7rem;
+  overflow-x: auto; font-size: 1.06rem; line-height: 1.5;
+}
+.thm-math math { font-size: 1em; }
+.thm-tex > summary {
+  cursor: pointer; font-size: 0.68rem; letter-spacing: 0.05em;
+  color: var(--vp-c-text-3); user-select: none; padding: 0.15rem 0;
+}
+.thm-tex > summary:hover { color: var(--vp-c-brand-1); }
+.thm-latex {
+  margin: 0.4rem 0 0; padding: 0.6rem 0.75rem; overflow-x: auto;
+  background: var(--vp-c-bg-alt); border-radius: 6px;
+  font-family: var(--vp-font-family-mono); font-size: 0.74rem; line-height: 1.55;
+  white-space: pre-wrap; word-break: break-word; color: var(--vp-c-text-2);
+}
+@media print {
+  /* A <details> cannot be forced open by CSS, so nothing that must appear on paper may live inside one.
+     The Lean statement is outside it and always prints; only the LaTeX convenience is hidden. */
+  .thm-tex { display: none !important; }
+  .thm-math { font-size: 10.5pt !important; padding: 0 !important; break-inside: avoid; }
+}

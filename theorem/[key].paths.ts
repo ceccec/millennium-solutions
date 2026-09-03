@@ -10,6 +10,7 @@ import { readFileSync } from 'node:fs'
 import { toUuid } from '../src/0/index.ts'
 import { leanTheorems, theoremOfKey, domainOf } from '../src/api/index.ts'
 import { MILLENNIUM } from '../src/millennium/index.ts'
+import { toLatex, toMathML } from '../src/latex/index.ts'
 
 // EVERY Lean-backed page carries its own formula, not only the seven. The seven Millennium pages had a
 // typeset statement and the other 476 live theorems had prose about a proof the reader could not see, so
@@ -19,14 +20,17 @@ import { MILLENNIUM } from '../src/millennium/index.ts'
 const THMS = leanTheorems()
 const formulaOf = (key: string) => {
   const t = theoremOfKey(key, THMS)
-  if (t) return { statement: t.statement, tactic: t.tactic, leanFile: t.file, cases: domainOf(t.statement), ambiguous: '' }
+  if (t) return {
+    statement: t.statement, tactic: t.tactic, leanFile: t.file, cases: domainOf(t.statement), ambiguous: '',
+    mathml: toMathML(t.statement) ?? '', latex: toLatex(t.statement) ?? '',
+  }
   // A key that predates the namespace convention and names a theorem declared in more than one file cannot
   // be resolved to one statement. Showing nothing is correct and unhelpful; the page says which keys DO
   // resolve, so the reader can cite one of them instead of guessing the way the matcher used to.
   const bare = key.replace(/^lean_/, '')
   const shared = THMS.filter((x) => x.name === bare)
   return {
-    statement: '', tactic: '', leanFile: '', cases: 0,
+    statement: '', tactic: '', leanFile: '', cases: 0, mathml: '', latex: '',
     ambiguous: shared.length > 1 ? shared.map((x) => `lean_${x.namespace.toLowerCase()}_${x.name} (src/proof/${x.file})`).join(' · ') : '',
   }
 }
