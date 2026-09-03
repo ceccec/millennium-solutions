@@ -215,3 +215,40 @@
   .funding code, .funding .res { font-size: 7pt !important; }
   .funding a { font-weight: 400 !important; }
 }
+
+/* ── The collected paper: figures and per-theorem sealing ───────────────────
+   The paper reuses .thm / .thm-statement / .thm-proof from a single theorem
+   page, so one stylesheet prints one theorem or all 460 as the same document.
+   These are only what the collected form adds. */
+.paper-fig { margin: 1.2rem 0 1.6rem; }
+.paper-fig svg { width: 100%; height: auto; display: block; }
+.paper-fig figcaption {
+  font-family: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+  font-size: 0.82rem; line-height: 1.5; color: var(--vp-c-text-2); margin-top: 0.5rem;
+}
+.paper-src { font-size: 0.76rem; color: var(--vp-c-text-3); margin: 0 0 0.6rem; }
+.thm-remark {
+  font-family: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+  font-size: 0.85rem; color: var(--vp-c-text-2); margin: 0.35rem 0 0.2rem;
+}
+/* Sealed or not is part of the claim, so it is on the theorem line, not a footnote. */
+.thm-cite {
+  font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.09em;
+  margin-left: 0.5rem; padding: 0.05rem 0.35rem; border-radius: 3px;
+  background: var(--vp-c-bg-alt); color: var(--vp-c-text-3); text-decoration: none;
+}
+.thm-uncited {
+  font-size: 0.72rem; margin-left: 0.5rem; color: var(--vp-c-text-3); font-style: italic;
+}
+.paper-wing {
+  font-size: 0.9rem !important; letter-spacing: 0.16em;
+  border-top: 1px solid var(--vp-c-divider); padding-top: 1rem !important; margin-top: 2rem !important;
+}
+@media print {
+  .paper-fig { break-inside: avoid; page-break-inside: avoid; }
+  .paper-fig figcaption { font-size: 8pt !important; color: #000 !important; }
+  .thm-remark { font-size: 9pt !important; color: #000 !important; }
+  .thm-cite, .thm-uncited { color: #000 !important; background: none !important; font-size: 7pt !important; }
+  .paper-src { color: #000 !important; font-size: 7.5pt !important; }
+  .paper-wing { break-before: page; page-break-before: always; }
+}

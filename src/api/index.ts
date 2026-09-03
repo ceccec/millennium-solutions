@@ -63,7 +63,7 @@ export const octave = (l: Entry[] = ledger()) => ({
   total: l.length, octaves: Math.floor(l.length / 8), remainder: l.length % 8, exact: l.length % 8 === 0,
 })
 
-export interface LeanTheorem { name: string; file: string; tactic: string; statement: string }
+export interface LeanTheorem { name: string; file: string; tactic: string; statement: string; namespace: string }
 
 export const leanFiles = (): string[] =>
   existsSync(PROOF_DIR) ? readdirSync(PROOF_DIR).filter((f) => f.endsWith('.lean')).sort() : []
@@ -75,8 +75,10 @@ export const leanSource = (file: string): string => readFileSync(`${PROOF_DIR}/$
 export const leanTheorems = (): LeanTheorem[] => {
   const out: LeanTheorem[] = []
   for (const file of leanFiles()) {
-    for (const m of leanSource(file).matchAll(/^theorem\s+([A-Za-z_0-9]+)\s*:([\s\S]*?):=\s*(by decide|rfl|by\s+\w+)/gm))
-      out.push({ name: m[1], file, tactic: m[3], statement: m[2].replace(/^\s*--.*$/gm, '').replace(/\s+/g, ' ').trim() })
+    const src = leanSource(file)
+    const ns = src.match(/^namespace\s+([A-Za-z_0-9.]+)/m)?.[1] ?? file.replace('.lean', '')
+    for (const m of src.matchAll(/^theorem\s+([A-Za-z_0-9]+)\s*:([\s\S]*?):=\s*(by decide|rfl|by\s+\w+)/gm))
+      out.push({ name: m[1], file, namespace: ns, tactic: m[3], statement: m[2].replace(/^\s*--.*$/gm, '').replace(/\s+/g, ' ').trim() })
   }
   return out
 }
@@ -101,7 +103,20 @@ export const domainOf = (statement: string): number => {
 
 export const theoremOfKey = (key: string, thms: LeanTheorem[] = leanTheorems()): LeanTheorem | null => {
   const rest = key.replace(/^lean_/, '')
-  for (const t of thms) if (rest === t.name || rest.endsWith('_' + t.name) || rest.endsWith('.' + t.name)) return t
+  const flat = (x: string) => x.toLowerCase().replace(/[^a-z0-9]/g, '')
+
+  // A NAME IS NOT AN IDENTIFIER WHEN IT IS NOT UNIQUE. `add_group` is declared in both mechanical.lean and
+  // z9.lean with DIFFERENT statements, so matching on the trailing name alone sent lean_z9_add_group to
+  // mechanical.lean — the page then printed a formula that was not the one its key was minted from. The
+  // namespace the key carries is what separates them, so it is tried first, exactly.
+  const named = thms.filter((t) => rest === t.name || rest.endsWith('_' + t.name) || rest.endsWith('.' + t.name))
+  if (named.length <= 1) return named[0] ?? null
+  for (const t of named) {
+    const prefix = rest.slice(0, rest.length - t.name.length).replace(/[_.]$/, '')
+    if (prefix && (flat(prefix) === flat(t.namespace) || flat(prefix) === flat(t.file.replace('.lean', '')))) return t
+  }
+  // Ambiguous: the name is shared and the key does not say which. Returning one at random is how the wrong
+  // statement got onto a page, so this returns nothing and the caller shows nothing.
   return null
 }
 

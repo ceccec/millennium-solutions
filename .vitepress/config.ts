@@ -226,7 +226,7 @@ export default defineConfig({
           { text: 'Challenges', link: '/CHALLENGES' },
           { text: 'Heart', link: '/HEART' },
           { text: 'Rules', link: '/RULES' },
-          { text: 'Paper', link: '/' },
+          { text: 'Paper', link: '/paper' },
           { text: 'Research', link: '/RESEARCH' },
           { text: 'White paper', link: '/WHITEPAPER' },
           { text: 'Proof of Concept', link: '/PROOF-OF-CONCEPT' },

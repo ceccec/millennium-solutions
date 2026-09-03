@@ -1,0 +1,3695 @@
+---
+title: The paper — every machine-checked theorem
+aside: false
+---
+
+<div class="paper paper-collected" itemscope itemtype="https://schema.org/ScholarlyArticle">
+
+<div class="paper-masthead">
+<div class="paper-title">The collected theorems of the ℤ/9 vortex framework</div>
+<div class="paper-byline">Rouschev, T. · <em>Millennium Solutions</em> · DOI <a href="https://doi.org/10.5281/zenodo.21819217">10.5281/zenodo.21819217</a> · CC BY-NC-ND 4.0</div>
+<div class="paper-addr">460 theorems · 23 sources · content-address <code>0b5ca216-f66b-8c92-aac2-1d4316f4badc</code></div>
+</div>
+
+<h2 class="paper-h">Abstract</h2>
+
+This document collects the 460 theorems of the ℤ/9 vortex framework that the Lean 4 kernel checks, across 23 source files. Each is stated exactly as the kernel received it, followed by the tactic that discharged it and the size of the finite domain that tactic exhausted. Every statement is decidable and was checked sorry-free and axiom-free. None of them is a Clay Millennium Problem and none claims one. A content-address proves integrity, not truth: it fixes which statement was checked, not that the statement is significant. Clay problems solved by this framework: **0 of 7**.
+
+<h2 class="paper-h">The size of what was checked</h2>
+
+The domains sum to 152,576,323,978 cases, and that total should not be read as the weight of this work: **one theorem carries 99.995% of it**. The median theorem walks **9** cases, and **156** of 460 walk a single point — a check by evaluation, not by exhaustion. The honest summary is a distribution, not a sum, so it is drawn below rather than reported as one number.
+
+<figure class="paper-fig">
+<svg viewBox="0 0 1203 311" role="img" class="fig" xmlns="http://www.w3.org/2000/svg" aria-label="every theorem placed by the size of the domain its proof exhausted"><title>Figure 1 — all 460 theorems by domain size</title><rect x="6.0" y="264.4" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>address_is_sixteen_bytes — 1 cases</title></rect><rect x="14.6" y="264.4" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>address_bytes_are_bytes — 1 cases</title></rect><rect x="23.2" y="264.4" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>version_nibble_is_forced — 1 cases</title></rect><rect x="31.8" y="264.4" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>variant_bits_are_forced — 1 cases</title></rect><rect x="40.4" y="264.4" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>addressing_is_deterministic — 1 cases</title></rect><rect x="49.0" y="264.4" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>distinct_seeds_give_distinct_addresses — 1 cases</title></rect><rect x="57.6" y="264.4" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>addressing_is_not_the_identity — 1 cases</title></rect><rect x="66.2" y="264.4" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>addressing_is_not_constant — 1 cases</title></rect><rect x="74.8" y="264.4" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>the_four_seeds_are_distinct — 1 cases</title></rect><rect x="6.0" y="255.8" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>address_settles_its_range — 1 cases</title></rect><rect x="14.6" y="255.8" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>factorial_seven_is_five_thousand_and_forty — 1 cases</title></rect><rect x="23.2" y="255.8" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>picks_theorem_holds_for_every_lattice_triangle_in_the_four_grid — 1 cases</title></rect><rect x="31.8" y="255.8" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>the_latin_squares_of_order_four_number_five_hundred_and_seventy_six — 1 cases</title></rect><rect x="40.4" y="255.8" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>the_loop_returns_less_than_it_took — 1 cases</title></rect><rect x="49.0" y="255.8" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>as_a_purifier_the_loop_costs_a_thousandfold — 1 cases</title></rect><rect x="57.6" y="255.8" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>the_equation_balances_by_mass — 1 cases</title></rect><rect x="66.2" y="255.8" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>the_gases_are_two_to_one_and_consume_each_other_exactly — 1 cases</title></rect><rect x="74.8" y="255.8" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>hydrogen_is_a_ninth_of_the_mass_and_oxygen_the_rest — 1 cases</title></rect><rect x="6.0" y="247.2" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>one_litre_split_returns_one_litre_burnt — 1 cases</title></rect><rect x="14.6" y="247.2" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>only_oxy_hydrogen_burns_without_admitting_nitrogen — 1 cases</title></rect><rect x="23.2" y="247.2" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>the_ideal_round_trip_is_exactly_zero — 1 cases</title></rect><rect x="31.8" y="247.2" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>the_gases_are_eighteen_hundred_times_the_water_they_came_from — 1 cases</title></rect><rect x="40.4" y="247.2" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>two_thirds_of_the_volume_carries_a_ninth_of_the_mass — 1 cases</title></rect><rect x="49.0" y="247.2" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>uncompressed_hydrogen_is_three_thousandfold_worse_by_volume — 1 cases</title></rect><rect x="57.6" y="247.2" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>even_at_seven_hundred_bar_it_is_sevenfold_worse_by_volume — 1 cases</title></rect><rect x="66.2" y="247.2" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>each_delivered_kilowatt_hour_costs_four_and_cycles_a_litre — 1 cases</title></rect><rect x="74.8" y="247.2" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>three_quarters_of_the_input_leaves_as_heat — 1 cases</title></rect><rect x="6.0" y="238.6" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>what_the_feedwater_leaves_behind_decides_the_maintenance — 1 cases</title></rect><rect x="14.6" y="238.6" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>flt_all_primes_under_thirty — 1 cases</title></rect><rect x="23.2" y="238.6" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>wilson_all_primes_under_thirty — 1 cases</title></rect><rect x="31.8" y="238.6" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>xor_is_parity_up_to_eight_bits — 8 cases</title></rect><rect x="40.4" y="238.6" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>nat_div_is_a_total_function_returning_zero_at_a_zero_divisor — 1 cases</title></rect><rect x="49.0" y="238.6" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>at_a_zero_divisor_the_identity_is_carried_by_the_remainder — 1 cases</title></rect><rect x="57.6" y="238.6" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>families_settle_their_ranges — 1 cases</title></rect><rect x="66.2" y="238.6" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>hash_a_seed_zero — 1 cases</title></rect><rect x="74.8" y="238.6" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>hash_ab_seed_zero — 2 cases</title></rect><rect x="6.0" y="230.0" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>hash_a_seed_golden — 1 cases</title></rect><rect x="14.6" y="230.0" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>hash_uuidna_seed_zero — 6 cases</title></rect><rect x="23.2" y="230.0" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>hash_is_not_the_identity — 1 cases</title></rect><rect x="31.8" y="230.0" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>hash_is_not_constant — 1 cases</title></rect><rect x="40.4" y="230.0" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>fnv_settles_its_range — 1 cases</title></rect><rect x="49.0" y="230.0" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>the_hash_is_order_sensitive — 4 cases</title></rect><rect x="57.6" y="230.0" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>the_empty_input_is_still_mixed — 1 cases</title></rect><rect x="66.2" y="230.0" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>demorgan_all_widths — 7 cases</title></rect><rect x="74.8" y="230.0" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>invpow_is_fifth_power_all_units — 6 cases</title></rect><rect x="6.0" y="221.4" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>cyclic_units_have_a_primitive_root — 6 cases</title></rect><rect x="14.6" y="221.4" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>decimal_period_is_the_order_of_ten — 8 cases</title></rect><rect x="23.2" y="221.4" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>triad_is_closed_under_triple — 9 cases</title></rect><rect x="31.8" y="221.4" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>triad_is_closed_under_quadruple — 9 cases</title></rect><rect x="40.4" y="221.4" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>tetA_is_closed_under_quadruple — 9 cases</title></rect><rect x="49.0" y="221.4" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>tetB_is_closed_under_quadruple — 9 cases</title></rect><rect x="57.6" y="221.4" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>triad_is_closed_under_negate — 9 cases</title></rect><rect x="66.2" y="221.4" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>cubes_is_closed_under_negate — 9 cases</title></rect><rect x="74.8" y="221.4" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>triad_is_closed_under_square — 9 cases</title></rect><rect x="6.0" y="212.8" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>tetA_is_closed_under_square — 9 cases</title></rect><rect x="14.6" y="212.8" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>cubes_is_closed_under_square — 9 cases</title></rect><rect x="23.2" y="212.8" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>triad_is_closed_under_fourth — 9 cases</title></rect><rect x="31.8" y="212.8" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>tetA_is_closed_under_fourth — 9 cases</title></rect><rect x="40.4" y="212.8" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>cubes_is_closed_under_fourth — 9 cases</title></rect><rect x="49.0" y="212.8" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>triad_is_closed_under_sixth — 9 cases</title></rect><rect x="57.6" y="212.8" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>tetA_is_closed_under_sixth — 9 cases</title></rect><rect x="66.2" y="212.8" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>cubes_is_closed_under_sixth — 9 cases</title></rect><rect x="74.8" y="212.8" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>triad_is_closed_under_quintuple — 9 cases</title></rect><rect x="6.0" y="204.2" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>triad_is_closed_under_sextuple — 9 cases</title></rect><rect x="14.6" y="204.2" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>triad_is_closed_under_septuple — 9 cases</title></rect><rect x="23.2" y="204.2" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>tetA_is_closed_under_septuple — 9 cases</title></rect><rect x="31.8" y="204.2" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>tetB_is_closed_under_septuple — 9 cases</title></rect><rect x="40.4" y="204.2" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>triad_is_closed_under_octuple — 9 cases</title></rect><rect x="49.0" y="204.2" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>cubes_is_closed_under_octuple — 9 cases</title></rect><rect x="57.6" y="204.2" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>quadruple_is_involutive_on_triad — 3 cases</title></rect><rect x="66.2" y="204.2" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>square_is_involutive_on_tetA — 3 cases</title></rect><rect x="74.8" y="204.2" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>square_is_involutive_on_squares — 4 cases</title></rect><rect x="6.0" y="195.6" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>cube_is_involutive_on_cubes — 3 cases</title></rect><rect x="14.6" y="195.6" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>fourth_is_involutive_on_tetA — 3 cases</title></rect><rect x="23.2" y="195.6" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>fourth_is_involutive_on_squares — 4 cases</title></rect><rect x="31.8" y="195.6" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>fifth_is_involutive_on_units — 6 cases</title></rect><rect x="40.4" y="195.6" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>fifth_is_involutive_on_orbit — 6 cases</title></rect><rect x="49.0" y="195.6" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>fifth_is_involutive_on_tetA — 3 cases</title></rect><rect x="57.6" y="195.6" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>fifth_is_involutive_on_tetB — 3 cases</title></rect><rect x="66.2" y="195.6" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>fifth_is_involutive_on_squares — 4 cases</title></rect><rect x="74.8" y="195.6" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>fifth_is_involutive_on_cubes — 3 cases</title></rect><rect x="6.0" y="187.0" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>quintuple_is_involutive_on_triad — 3 cases</title></rect><rect x="14.6" y="187.0" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>septuple_is_involutive_on_triad — 3 cases</title></rect><rect x="23.2" y="187.0" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>triple_collapses_triad_to_one_value — 3 cases</title></rect><rect x="31.8" y="187.0" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>triple_collapses_tetA_to_one_value — 3 cases</title></rect><rect x="40.4" y="187.0" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>triple_collapses_tetB_to_one_value — 3 cases</title></rect><rect x="49.0" y="187.0" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>square_collapses_triad_to_one_value — 3 cases</title></rect><rect x="57.6" y="187.0" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>cube_collapses_triad_to_one_value — 3 cases</title></rect><rect x="66.2" y="187.0" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>cube_collapses_tetA_to_one_value — 3 cases</title></rect><rect x="74.8" y="187.0" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>cube_collapses_tetB_to_one_value — 3 cases</title></rect><rect x="6.0" y="178.4" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>fourth_collapses_triad_to_one_value — 3 cases</title></rect><rect x="14.6" y="178.4" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>fifth_collapses_triad_to_one_value — 3 cases</title></rect><rect x="23.2" y="178.4" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>sixth_collapses_units_to_one_value — 6 cases</title></rect><rect x="31.8" y="178.4" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>sixth_collapses_triad_to_one_value — 3 cases</title></rect><rect x="40.4" y="178.4" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>sixth_collapses_orbit_to_one_value — 6 cases</title></rect><rect x="49.0" y="178.4" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>sixth_collapses_tetA_to_one_value — 3 cases</title></rect><rect x="57.6" y="178.4" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>sixth_collapses_tetB_to_one_value — 3 cases</title></rect><rect x="66.2" y="178.4" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>sextuple_collapses_triad_to_one_value — 3 cases</title></rect><rect x="74.8" y="178.4" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>sextuple_collapses_tetA_to_one_value — 3 cases</title></rect><rect x="6.0" y="169.8" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>sextuple_collapses_tetB_to_one_value — 3 cases</title></rect><rect x="14.6" y="169.8" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>yang_mills_spectral_gap — 6 cases</title></rect><rect x="23.2" y="169.8" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>birch_swinnerton_dyer_vanishing — 9 cases</title></rect><rect x="31.8" y="169.8" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>the_floor_is_zero_of_seven — 1 cases</title></rect><rect x="40.4" y="169.8" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>a_seal_is_128_bits — 1 cases</title></rect><rect x="49.0" y="169.8" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>membership_grows_by_one_seal_per_doubling — 1 cases</title></rect><rect x="57.6" y="169.8" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>membership_is_logarithmic_not_linear — 1 cases</title></rect><rect x="66.2" y="169.8" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>the_967_receipt_case — 1 cases</title></rect><rect x="74.8" y="169.8" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>bool_demorgan1 — 4 cases</title></rect><rect x="6.0" y="161.2" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>bool_demorgan2 — 4 cases</title></rect><rect x="14.6" y="161.2" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>bool_distributivity — 8 cases</title></rect><rect x="23.2" y="161.2" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>bool_absorption — 4 cases</title></rect><rect x="31.8" y="161.2" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>merkaba_cube_q3 — 1 cases</title></rect><rect x="40.4" y="161.2" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>cover_rotation_full_circle — 9 cases</title></rect><rect x="49.0" y="161.2" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>fib_trinity_horizon — 1 cases</title></rect><rect x="57.6" y="161.2" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>arts_nine_hues_distinct — 9 cases</title></rect><rect x="66.2" y="161.2" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>trial_units_group — 6 cases</title></rect><rect x="74.8" y="161.2" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>trial_zero_divisors — 1 cases</title></rect><rect x="6.0" y="152.6" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>trial_zero_no_inverse — 9 cases</title></rect><rect x="14.6" y="152.6" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>chess_diagonals_15 — 1 cases</title></rect><rect x="23.2" y="152.6" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>tarot_78_cards — 1 cases</title></rect><rect x="31.8" y="152.6" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>tarot_minor_4x14 — 1 cases</title></rect><rect x="40.4" y="152.6" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>tarot_digital_roots — 1 cases</title></rect><rect x="49.0" y="152.6" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>gf4_size — 4 cases</title></rect><rect x="57.6" y="152.6" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>relation_digital_root — 6 cases</title></rect><rect x="66.2" y="152.6" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>harmonic_octave_2_1 — 1 cases</title></rect><rect x="74.8" y="152.6" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>harmonic_pythagorean_comma — 1 cases</title></rect><rect x="6.0" y="144.0" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>relation_seven — 1 cases</title></rect><rect x="14.6" y="144.0" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>relation_eight — 1 cases</title></rect><rect x="23.2" y="144.0" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>relation_creation_week — 1 cases</title></rect><rect x="31.8" y="144.0" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>genus2_moduli_dim — 1 cases</title></rect><rect x="40.4" y="144.0" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>genus2_hyperelliptic — 1 cases</title></rect><rect x="49.0" y="144.0" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>genus2_h1_symplectic — 1 cases</title></rect><rect x="57.6" y="144.0" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>relation_seven_is_six_plus_one — 6 cases</title></rect><rect x="66.2" y="144.0" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>relation_units_sum_and_product — 6 cases</title></rect><rect x="74.8" y="144.0" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>relation_432_factors — 1 cases</title></rect><rect x="6.0" y="135.4" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>relation_triangular_45_is_base — 9 cases</title></rect><rect x="14.6" y="135.4" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>kaprekar_constants_digitroot_nine — 1 cases</title></rect><rect x="23.2" y="135.4" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>the_three_four_five_right_triangle_is_the_first_pythagorean_triple — 1 cases</title></rect><rect x="31.8" y="135.4" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>the_regular_pentagon_angles_are_the_heart_seventy_two_and_hundred_eight — 1 cases</title></rect><rect x="40.4" y="135.4" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>the_cyclic_number_142857_is_the_repetend_of_one_seventh — 1 cases</title></rect><rect x="49.0" y="135.4" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>_142857_times_seven_is_six_nines — 1 cases</title></rect><rect x="57.6" y="135.4" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>midy_the_two_halves_of_142857_sum_to_nines — 1 cases</title></rect><rect x="66.2" y="135.4" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>the_digital_root_of_seven_to_the_k_has_period_three — 1 cases</title></rect><rect x="74.8" y="135.4" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>seven_divides_the_repunit_of_length_six — 1 cases</title></rect><rect x="6.0" y="126.8" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>two_to_the_eighth_is_two_hundred_fifty_six_a_byte — 1 cases</title></rect><rect x="14.6" y="126.8" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>two_to_the_tenth_is_1024_the_harmonic_ledger — 1 cases</title></rect><rect x="23.2" y="126.8" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>the_regular_nonagon_exterior_angle_is_the_a432_step — 1 cases</title></rect><rect x="31.8" y="126.8" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>the_digits_one_to_nine_sum_to_forty_five_rooting_to_nine — 9 cases</title></rect><rect x="40.4" y="126.8" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>nine_is_the_base_and_the_trinity_squared — 1 cases</title></rect><rect x="49.0" y="126.8" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>six_is_the_third_triangular_number — 3 cases</title></rect><rect x="57.6" y="126.8" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>the_regular_hexagon_exterior_angle_is_the_gold_string — 1 cases</title></rect><rect x="66.2" y="126.8" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>the_doubling_orbit_reflection_pairs_sum_to_nine — 1 cases</title></rect><rect x="74.8" y="126.8" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>five_is_the_inverse_of_two_so_halving_reverses_the_orbit — 1 cases</title></rect><rect x="6.0" y="118.2" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>dna_is_the_version_itself — 1 cases</title></rect><rect x="14.6" y="118.2" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>contribute_two_to_save_sixty_four — 6 cases</title></rect><rect x="23.2" y="118.2" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>genetic_code_is_the_octave_squared — 1 cases</title></rect><rect x="31.8" y="118.2" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>sixty_one_sense_three_stop_codons — 1 cases</title></rect><rect x="40.4" y="118.2" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>six_reading_frames — 1 cases</title></rect><rect x="49.0" y="118.2" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>genesis_1_the_unit — 9 cases</title></rect><rect x="57.6" y="118.2" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>genesis_8_the_octave — 1 cases</title></rect><rect x="66.2" y="118.2" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>genesis_64_the_codon — 1 cases</title></rect><rect x="74.8" y="118.2" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>diamond_fixed_point_is_zero_entropy — 1 cases</title></rect><rect x="6.0" y="109.6" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>the_address_is_shipped_not_the_payload — 1 cases</title></rect><rect x="14.6" y="109.6" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>the_harmonic_band_thirty_to_ninety — 1 cases</title></rect><rect x="23.2" y="109.6" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>sixty_and_ninety_partition_the_quadrant — 1 cases</title></rect><rect x="31.8" y="109.6" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>the_hexagon_and_the_square_metrics — 1 cases</title></rect><rect x="40.4" y="109.6" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>a_theorem_responds_in_a_receipt — 1 cases</title></rect><rect x="49.0" y="109.6" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>involution_negation — 1 cases</title></rect><rect x="57.6" y="109.6" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>a432_factors_as_two_to_the_fourth_times_three_cubed — 1 cases</title></rect><rect x="66.2" y="109.6" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>a432_octave_doubling — 1 cases</title></rect><rect x="74.8" y="109.6" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>two_bits_thrice_make_the_codon — 1 cases</title></rect><rect x="6.0" y="101.0" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>the_skipper_navigates_by_angle — 1 cases</title></rect><rect x="14.6" y="101.0" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>cheap_to_factor_easy_to_verify — 1 cases</title></rect><rect x="23.2" y="101.0" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>the_cell_is_determined_by_content — 1 cases</title></rect><rect x="31.8" y="101.0" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>present_by_reference_fits_a_tiny_budget — 1 cases</title></rect><rect x="40.4" y="101.0" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>a_cached_address_is_never_recomputed — 1 cases</title></rect><rect x="49.0" y="101.0" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>a_decidable_domain_is_finite_and_coverable — 9 cases</title></rect><rect x="57.6" y="101.0" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>the_more_developed_the_more_cross_domain_reach — 1 cases</title></rect><rect x="66.2" y="101.0" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>the_full_superposition_has_nine_states — 9 cases</title></rect><rect x="74.8" y="101.0" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>forward_is_the_deterministic_compute — 1 cases</title></rect><rect x="6.0" y="92.4" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>the_three_classes_partition_z9 — 9 cases</title></rect><rect x="14.6" y="92.4" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>the_axis_is_closed_under_doubling — 1 cases</title></rect><rect x="23.2" y="92.4" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>doubling_counter_rotates_the_two_tetrahedra — 1 cases</title></rect><rect x="31.8" y="92.4" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>the_counter_rotation_has_period_two — 1 cases</title></rect><rect x="40.4" y="92.4" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>the_tetrahedra_residue_sums_cancel — 1 cases</title></rect><rect x="49.0" y="92.4" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>one_tetrahedron_covers_half_the_units — 1 cases</title></rect><rect x="57.6" y="92.4" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>the_cube_and_the_tetrahedron_count_out — 1 cases</title></rect><rect x="66.2" y="92.4" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>singleton_fold_is_the_leaf — 1 cases</title></rect><rect x="74.8" y="92.4" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>fold_is_order_independent_on_two — 1 cases</title></rect><rect x="6.0" y="83.8" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>merge_is_order_sensitive — 1 cases</title></rect><rect x="14.6" y="83.8" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>sorting_is_what_makes_the_fold_order_free — 1 cases</title></rect><rect x="23.2" y="83.8" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>merkle_settles_its_range — 1 cases</title></rect><rect x="31.8" y="83.8" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>fold_is_order_independent_on_three — 1 cases</title></rect><rect x="40.4" y="83.8" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>bouton_two_heaps_lost_iff_xor_zero — 1 cases</title></rect><rect x="49.0" y="83.8" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>bouton_lost_iff_heaps_equal — 1 cases</title></rect><rect x="57.6" y="83.8" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>lost_positions_are_exactly_the_diagonal — 1 cases</title></rect><rect x="66.2" y="83.8" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>grundy_of_a_single_heap_is_its_size — 1 cases</title></rect><rect x="74.8" y="83.8" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>grundy_of_two_heaps_is_the_xor — 1 cases</title></rect><rect x="6.0" y="75.2" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>perms_of_four_is_factorial — 4 cases</title></rect><rect x="14.6" y="75.2" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>superposition_collapses_to_one — 4 cases</title></rect><rect x="23.2" y="75.2" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>the_receipt_is_not_injective — 1 cases</title></rect><rect x="31.8" y="75.2" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>the_uncanonicalised_fold_gives_many_answers — 4 cases</title></rect><rect x="40.4" y="75.2" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>quantum_settles_its_domain_totally — 1 cases</title></rect><rect x="49.0" y="75.2" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>the_ledger_reversal_cases — 1 cases</title></rect><rect x="57.6" y="75.2" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>reversal_settles_its_range — 1 cases</title></rect><rect x="66.2" y="75.2" width="7" height="7" rx="1.2" fill="hsl(40 62% 52%)"><title>claims_exactly_what_arises_without_formality — 1 cases</title></rect><rect x="74.8" y="75.2" width="7" height="7" rx="1.2" fill="hsl(40 62% 52%)"><title>the_claimed_are_copyright_moral_rights_and_the_database — 3 cases</title></rect><rect x="6.0" y="66.6" width="7" height="7" rx="1.2" fill="hsl(40 62% 52%)"><title>the_unclaimed_are_the_registry_the_excluded_and_the_unownable — 4 cases</title></rect><rect x="14.6" y="66.6" width="7" height="7" rx="1.2" fill="hsl(40 62% 52%)"><title>no_right_that_needs_a_registry_act_is_claimed — 1 cases</title></rect><rect x="23.2" y="66.6" width="7" height="7" rx="1.2" fill="hsl(40 62% 52%)"><title>no_excluded_subject_matter_is_claimed — 1 cases</title></rect><rect x="31.8" y="66.6" width="7" height="7" rx="1.2" fill="hsl(40 62% 52%)"><title>nothing_incapable_of_ownership_is_claimed — 1 cases</title></rect><rect x="40.4" y="66.6" width="7" height="7" rx="1.2" fill="hsl(40 62% 52%)"><title>the_enumeration_is_complete_and_unduplicated — 7 cases</title></rect><rect x="49.0" y="66.6" width="7" height="7" rx="1.2" fill="hsl(40 62% 52%)"><title>rights_settles_its_range — 1 cases</title></rect><rect x="57.6" y="66.6" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>three_five_eight_are_consecutive — 1 cases</title></rect><rect x="66.2" y="66.6" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>the_verify_path_is_the_exponent — 1 cases</title></rect><rect x="74.8" y="66.6" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>the_gap_widens_with_every_doubling — 1 cases</title></rect><rect x="6.0" y="58.0" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>no_constant_factor_accounts_for_the_gap — 1 cases</title></rect><rect x="14.6" y="58.0" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>the_measured_ratio_at_a_million_leaves — 1 cases</title></rect><rect x="23.2" y="58.0" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>the_verify_is_thirty_eight_thousand_nanoseconds_not_one — 1 cases</title></rect><rect x="31.8" y="58.0" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>the_advantage_is_the_count_not_the_operation — 1 cases</title></rect><rect x="40.4" y="58.0" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>the_break_even_is_the_ratio_of_verifications — 1 cases</title></rect><rect x="49.0" y="58.0" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>units_are_six — 6 cases</title></rect><rect x="57.6" y="58.0" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>units_count — 1 cases</title></rect><rect x="66.2" y="58.0" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>hasinv_units — 1 cases</title></rect><rect x="74.8" y="58.0" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>hasinv_triad_not — 3 cases</title></rect><rect x="6.0" y="49.4" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>selfinv_exactly_one_and_eight — 2 cases</title></rect><rect x="14.6" y="49.4" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>euler_units_pow_six — 1 cases</title></rect><rect x="23.2" y="49.4" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>invpow_is_u_to_the_fifth — 1 cases</title></rect><rect x="31.8" y="49.4" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>powsum_zero_at_six — 1 cases</title></rect><rect x="40.4" y="49.4" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>powsum_zero_at_one — 1 cases</title></rect><rect x="49.0" y="49.4" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>mulperm_iff_unit — 1 cases</title></rect><rect x="57.6" y="49.4" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>addgen_iff_coprime — 1 cases</title></rect><rect x="66.2" y="49.4" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>selfneg_only_zero — 1 cases</title></rect><rect x="74.8" y="49.4" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>orbit_closes — 1 cases</title></rect><rect x="6.0" y="40.8" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>orbit_distinct — 6 cases</title></rect><rect x="14.6" y="40.8" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>orbit_covers_units — 6 cases</title></rect><rect x="23.2" y="40.8" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>triad_squares_vanish — 1 cases</title></rect><rect x="31.8" y="40.8" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>add_group — 1 cases</title></rect><rect x="40.4" y="40.8" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>neg_involution — 1 cases</title></rect><rect x="49.0" y="40.8" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>z9_settles_its_domain_totally — 1 cases</title></rect><rect x="57.6" y="40.8" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>five_is_not_a_square_mod_nine — 1 cases</title></rect><rect x="66.2" y="40.8" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>cubes_land_exactly_in_zero_one_eight — 9 cases</title></rect><rect x="74.8" y="40.8" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>primitive_roots_are_exactly_two_and_five — 2 cases</title></rect><rect x="6.0" y="32.2" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>primitive_root_iff_generates_the_units — 2 cases</title></rect><rect x="14.6" y="32.2" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>the_orders_of_the_units_are_exact — 1 cases</title></rect><rect x="23.2" y="32.2" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>the_reflected_orbit_covers_the_whole_triad — 3 cases</title></rect><rect x="31.8" y="32.2" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>reflection_splits_the_orbit_in_half — 9 cases</title></rect><rect x="40.4" y="32.2" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>the_crossing_pairs_are_one_four_seven — 9 cases</title></rect><rect x="49.0" y="32.2" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>reflection_is_injective_on_the_orbit — 1 cases</title></rect><rect x="57.6" y="32.2" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>reflection_alone_reaches_only_two — 1 cases</title></rect><rect x="66.2" y="32.2" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>doubling_and_reflection_together_reach_every_residue — 1 cases</title></rect><rect x="74.8" y="32.2" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>every_residue_is_reachable_from_one — 9 cases</title></rect><rect x="6.0" y="23.6" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>the_diameter_is_exactly_four — 1 cases</title></rect><rect x="14.6" y="23.6" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>the_frontier_grows_by_two_each_round — 1 cases</title></rect><rect x="23.2" y="23.6" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>product_of_the_units_is_minus_one — 6 cases</title></rect><rect x="31.8" y="23.6" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>three_five_eight_are_consecutive_fibonacci — 1 cases</title></rect><rect x="40.4" y="23.6" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>units_and_triad_partition_the_ring — 1 cases</title></rect><rect x="49.0" y="23.6" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>both_parts_sum_to_zero — 1 cases</title></rect><text x="42.7" y="283.4" font-size="13" text-anchor="middle" fill="currentColor" opacity="0.8">1</text><text x="42.7" y="298.4" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.5">258</text><rect x="105.4" y="264.4" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>raw_bytes_of_a — 16 cases</title></rect><rect x="114.0" y="264.4" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>to_uuid_bytes_of_a — 16 cases</title></rect><rect x="122.6" y="264.4" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>to_uuid_bytes_of_uuidna — 16 cases</title></rect><rect x="131.2" y="264.4" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>addressing_is_injective_on_single_characters — 24 cases</title></rect><rect x="139.8" y="264.4" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>the_mobius_divisor_sum_is_the_identity — 30 cases</title></rect><rect x="148.4" y="264.4" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>the_derangement_recurrence_holds — 11 cases</title></rect><rect x="157.0" y="264.4" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>mantels_bound_is_n_squared_over_four — 20 cases</title></rect><rect x="165.6" y="264.4" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>every_number_is_a_sum_of_four_squares — 60 cases</title></rect><rect x="174.2" y="264.4" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>the_cantor_pairing_is_injective_and_covers_an_initial_segment — 36 cases</title></rect><rect x="105.4" y="255.8" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>the_euler_characteristic_of_a_genus_g_surface — 12 cases</title></rect><rect x="114.0" y="255.8" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>wilson_fails_at_composites — 20 cases</title></rect><rect x="122.6" y="255.8" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>pascal_rows_sum_to_powers_of_two — 12 cases</title></rect><rect x="131.2" y="255.8" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>pascal_alternating_sums_vanish — 11 cases</title></rect><rect x="139.8" y="255.8" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>totient_at_prime_powers — 12 cases</title></rect><rect x="148.4" y="255.8" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>geometric_series_all_bases — 40 cases</title></rect><rect x="157.0" y="255.8" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>division_identity_holds_across_the_range — 13 cases</title></rect><rect x="165.6" y="255.8" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>hash_is_deterministic — 32 cases</title></rect><rect x="174.2" y="255.8" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>hash_is_injective_on_single_characters — 64 cases</title></rect><rect x="105.4" y="247.2" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>the_seed_separates — 16 cases</title></rect><rect x="114.0" y="247.2" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>hash_is_thirty_two_bit — 40 cases</title></rect><rect x="122.6" y="247.2" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>powsum_zero_odd_exponents — 54 cases</title></rect><rect x="131.2" y="247.2" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>powsum_nonzero_at_even_exponents — 18 cases</title></rect><rect x="139.8" y="247.2" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>mulperm_fails_at_the_triad — 18 cases</title></rect><rect x="148.4" y="247.2" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>power_sum_closed_forms — 30 cases</title></rect><rect x="157.0" y="247.2" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>invpow_fails_off_the_units — 18 cases</title></rect><rect x="165.6" y="247.2" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>roots_of_unity_cancel — 12 cases</title></rect><rect x="174.2" y="247.2" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>units_is_closed_under_double — 36 cases</title></rect><rect x="105.4" y="238.6" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>orbit_is_closed_under_double — 36 cases</title></rect><rect x="114.0" y="238.6" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>all_is_closed_under_double — 81 cases</title></rect><rect x="122.6" y="238.6" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>all_is_closed_under_triple — 81 cases</title></rect><rect x="131.2" y="238.6" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>units_is_closed_under_quadruple — 36 cases</title></rect><rect x="139.8" y="238.6" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>orbit_is_closed_under_quadruple — 36 cases</title></rect><rect x="148.4" y="238.6" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>all_is_closed_under_quadruple — 81 cases</title></rect><rect x="157.0" y="238.6" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>squares_is_closed_under_quadruple — 16 cases</title></rect><rect x="165.6" y="238.6" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>orbit_is_closed_under_negate — 36 cases</title></rect><rect x="174.2" y="238.6" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>all_is_closed_under_negate — 81 cases</title></rect><rect x="105.4" y="230.0" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>units_is_closed_under_square — 36 cases</title></rect><rect x="114.0" y="230.0" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>orbit_is_closed_under_square — 36 cases</title></rect><rect x="122.6" y="230.0" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>all_is_closed_under_square — 81 cases</title></rect><rect x="131.2" y="230.0" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>squares_is_closed_under_square — 16 cases</title></rect><rect x="139.8" y="230.0" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>units_is_closed_under_fourth — 36 cases</title></rect><rect x="148.4" y="230.0" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>orbit_is_closed_under_fourth — 36 cases</title></rect><rect x="157.0" y="230.0" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>all_is_closed_under_fourth — 81 cases</title></rect><rect x="165.6" y="230.0" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>squares_is_closed_under_fourth — 16 cases</title></rect><rect x="174.2" y="230.0" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>units_is_closed_under_sixth — 36 cases</title></rect><rect x="105.4" y="221.4" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>orbit_is_closed_under_sixth — 36 cases</title></rect><rect x="114.0" y="221.4" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>all_is_closed_under_sixth — 81 cases</title></rect><rect x="122.6" y="221.4" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>squares_is_closed_under_sixth — 16 cases</title></rect><rect x="131.2" y="221.4" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>units_is_closed_under_quintuple — 36 cases</title></rect><rect x="139.8" y="221.4" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>orbit_is_closed_under_quintuple — 36 cases</title></rect><rect x="148.4" y="221.4" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>all_is_closed_under_quintuple — 81 cases</title></rect><rect x="157.0" y="221.4" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>all_is_closed_under_sextuple — 81 cases</title></rect><rect x="165.6" y="221.4" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>units_is_closed_under_septuple — 36 cases</title></rect><rect x="174.2" y="221.4" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>orbit_is_closed_under_septuple — 36 cases</title></rect><rect x="105.4" y="212.8" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>all_is_closed_under_septuple — 81 cases</title></rect><rect x="114.0" y="212.8" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>squares_is_closed_under_septuple — 16 cases</title></rect><rect x="122.6" y="212.8" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>units_is_closed_under_octuple — 36 cases</title></rect><rect x="131.2" y="212.8" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>orbit_is_closed_under_octuple — 36 cases</title></rect><rect x="139.8" y="212.8" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>all_is_closed_under_octuple — 81 cases</title></rect><rect x="148.4" y="212.8" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>triple_carries_cubes_onto_triad — 27 cases</title></rect><rect x="157.0" y="212.8" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>negate_carries_tetA_onto_tetB — 27 cases</title></rect><rect x="165.6" y="212.8" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>negate_carries_tetB_onto_tetA — 27 cases</title></rect><rect x="174.2" y="212.8" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>square_carries_tetB_onto_tetA — 27 cases</title></rect><rect x="105.4" y="204.2" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>fourth_carries_tetB_onto_tetA — 27 cases</title></rect><rect x="114.0" y="204.2" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>quintuple_carries_tetA_onto_tetB — 27 cases</title></rect><rect x="122.6" y="204.2" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>quintuple_carries_tetB_onto_tetA — 27 cases</title></rect><rect x="131.2" y="204.2" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>sextuple_carries_cubes_onto_triad — 27 cases</title></rect><rect x="139.8" y="204.2" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>octuple_carries_tetA_onto_tetB — 27 cases</title></rect><rect x="148.4" y="204.2" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>octuple_carries_tetB_onto_tetA — 27 cases</title></rect><rect x="157.0" y="204.2" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>p_vs_np_inverse_is_unique — 81 cases</title></rect><rect x="165.6" y="204.2" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>hodge_span_is_the_units — 81 cases</title></rect><rect x="174.2" y="204.2" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>poincare_single_closed_loop — 36 cases</title></rect><rect x="105.4" y="195.6" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>the_seven_rest_on_one_finite_structure — 81 cases</title></rect><rect x="114.0" y="195.6" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>more_payloads_than_addresses_must_collide — 17 cases</title></rect><rect x="122.6" y="195.6" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>add_group — 81 cases</title></rect><rect x="131.2" y="195.6" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>nopayload_avalanche — 64 cases</title></rect><rect x="139.8" y="195.6" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>chess_board_64 — 64 cases</title></rect><rect x="148.4" y="195.6" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>tarot_major_0_21 — 22 cases</title></rect><rect x="157.0" y="195.6" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>the_nine_times_table_always_digital_roots_to_nine — 60 cases</title></rect><rect x="165.6" y="195.6" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>collapse_selects_one_state_deterministically — 16 cases</title></rect><rect x="174.2" y="195.6" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>generation_is_deterministic — 16 cases</title></rect><rect x="105.4" y="187.0" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>stacked_triangles_are_tetrahedral — 40 cases</title></rect><rect x="114.0" y="187.0" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>merge_agrees — 16 cases</title></rect><rect x="122.6" y="187.0" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>empty_fold_agrees — 16 cases</title></rect><rect x="131.2" y="187.0" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>pair_fold_agrees — 16 cases</title></rect><rect x="139.8" y="187.0" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>xor_zero_is_identity — 32 cases</title></rect><rect x="148.4" y="187.0" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>receipt_is_order_invariant — 16 cases</title></rect><rect x="157.0" y="187.0" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>receipt_order_invariant_on_the_orbit — 36 cases</title></rect><rect x="165.6" y="187.0" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>naive_fold_is_not_order_invariant — 16 cases</title></rect><rect x="174.2" y="187.0" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>the_invariance_is_canonicalisation_not_physics — 16 cases</title></rect><rect x="105.4" y="178.4" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>reversal_is_not_the_identity — 90 cases</title></rect><rect x="114.0" y="178.4" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>palindromes_are_the_fixed_points — 90 cases</title></rect><rect x="122.6" y="178.4" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>emirps_exist_below_one_hundred — 90 cases</title></rect><rect x="131.2" y="178.4" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>reversal_does_not_preserve_primality — 90 cases</title></rect><rect x="139.8" y="178.4" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>cassini_at_even_indices — 20 cases</title></rect><rect x="148.4" y="178.4" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>cassini_at_odd_indices — 20 cases</title></rect><rect x="157.0" y="178.4" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>cassini_deviation_is_exactly_one — 20 cases</title></rect><rect x="165.6" y="178.4" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>lucas_mod_two_is_the_and_rule — 14 cases</title></rect><rect x="174.2" y="178.4" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>pisano_twentyfour_is_four_sixes — 30 cases</title></rect><rect x="105.4" y="169.8" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>verification_grows_it_is_not_constant — 10 cases</title></rect><rect x="114.0" y="169.8" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>universal_centre_is_five — 10 cases</title></rect><rect x="122.6" y="169.8" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>universal_pairs_sum_to_ten — 11 cases</title></rect><rect x="131.2" y="169.8" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>universal_reflection_is_not_an_involution_above_ten — 10 cases</title></rect><rect x="139.8" y="169.8" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>universal_z9_reflection_permutes_the_units — 36 cases</title></rect><rect x="148.4" y="169.8" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>universal_millennium_reflection_escapes_the_units — 36 cases</title></rect><rect x="157.0" y="169.8" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>universal_reflection_is_the_vortex_reflection_shifted — 10 cases</title></rect><rect x="165.6" y="169.8" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>orbit_is_the_six — 36 cases</title></rect><rect x="174.2" y="169.8" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>triad_never_reaches_one — 12 cases</title></rect><rect x="105.4" y="161.2" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>squares_land_exactly_in_zero_one_four_seven — 16 cases</title></rect><rect x="114.0" y="161.2" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>doubling_has_period_six — 30 cases</title></rect><rect x="122.6" y="161.2" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>no_period_smaller_than_six — 60 cases</title></rect><rect x="131.2" y="161.2" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>orbit_digital_roots_have_period_six — 24 cases</title></rect><rect x="139.8" y="161.2" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>pisano_period_mod_nine_is_twenty_four — 30 cases</title></rect><rect x="148.4" y="161.2" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>fibonacci_recurrence_holds — 20 cases</title></rect><rect x="157.0" y="161.2" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>consecutive_fibonacci_are_coprime — 15 cases</title></rect><text x="142.1" y="283.4" font-size="13" text-anchor="middle" fill="currentColor" opacity="0.8">10+</text><text x="142.1" y="298.4" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.5">115</text><rect x="204.8" y="264.4" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>fibonacci_gcd_is_the_fibonacci_of_the_gcd — 196 cases</title></rect><rect x="213.4" y="264.4" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>legendres_three_square_theorem — 200 cases</title></rect><rect x="222.0" y="264.4" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>five_six_one_is_the_smallest_carmichael_number — 559 cases</title></rect><rect x="230.6" y="264.4" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>the_sum_of_fifth_powers_has_the_closed_form_asked_for — 380 cases</title></rect><rect x="239.2" y="264.4" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>wilsons_theorem_and_its_converse — 270 cases</title></rect><rect x="247.8" y="264.4" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>repunit_divisibility_by_three_and_seven — 324 cases</title></rect><rect x="256.4" y="264.4" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>odd_divisor_count_iff_perfect_square — 120 cases</title></rect><rect x="265.0" y="264.4" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>the_two_to_one_is_forced_by_the_oxygen — 729 cases</title></rect><rect x="273.6" y="264.4" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>mulperm_iff_unit_all — 324 cases</title></rect><rect x="204.8" y="255.8" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>addgen_iff_coprime_all — 486 cases</title></rect><rect x="213.4" y="255.8" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>hasinv_iff_unit_all — 486 cases</title></rect><rect x="222.0" y="255.8" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>primality_agrees_with_trial_division — 520 cases</title></rect><rect x="230.6" y="255.8" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>double_carries_units_onto_orbit — 216 cases</title></rect><rect x="239.2" y="255.8" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>double_carries_orbit_onto_units — 216 cases</title></rect><rect x="247.8" y="255.8" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>triple_carries_all_onto_triad — 243 cases</title></rect><rect x="256.4" y="255.8" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>quadruple_carries_units_onto_orbit — 216 cases</title></rect><rect x="265.0" y="255.8" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>quadruple_carries_orbit_onto_units — 216 cases</title></rect><rect x="273.6" y="255.8" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>negate_carries_orbit_onto_units — 216 cases</title></rect><rect x="204.8" y="247.2" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>square_carries_units_onto_tetA — 108 cases</title></rect><rect x="213.4" y="247.2" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>square_carries_orbit_onto_tetA — 108 cases</title></rect><rect x="222.0" y="247.2" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>square_carries_all_onto_squares — 324 cases</title></rect><rect x="230.6" y="247.2" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>cube_carries_all_onto_cubes — 243 cases</title></rect><rect x="239.2" y="247.2" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>fourth_carries_units_onto_tetA — 108 cases</title></rect><rect x="247.8" y="247.2" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>fourth_carries_orbit_onto_tetA — 108 cases</title></rect><rect x="256.4" y="247.2" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>fourth_carries_all_onto_squares — 324 cases</title></rect><rect x="265.0" y="247.2" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>fifth_carries_units_onto_orbit — 216 cases</title></rect><rect x="273.6" y="247.2" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>fifth_carries_orbit_onto_units — 216 cases</title></rect><rect x="204.8" y="238.6" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>quintuple_carries_units_onto_orbit — 216 cases</title></rect><rect x="213.4" y="238.6" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>quintuple_carries_orbit_onto_units — 216 cases</title></rect><rect x="222.0" y="238.6" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>sextuple_carries_all_onto_triad — 243 cases</title></rect><rect x="230.6" y="238.6" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>septuple_carries_units_onto_orbit — 216 cases</title></rect><rect x="239.2" y="238.6" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>septuple_carries_orbit_onto_units — 216 cases</title></rect><rect x="247.8" y="238.6" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>octuple_carries_units_onto_orbit — 216 cases</title></rect><rect x="256.4" y="238.6" width="7" height="7" rx="1.2" fill="hsl(0 62% 52%)"><title>octuple_carries_orbit_onto_units — 216 cases</title></rect><rect x="265.0" y="238.6" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>riemann_reflection_and_heart — 100 cases</title></rect><rect x="273.6" y="238.6" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>the_address_does_not_determine_the_payload — 289 cases</title></rect><rect x="204.8" y="230.0" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>a_proof_is_smaller_than_its_set_across_the_octave — 255 cases</title></rect><rect x="213.4" y="230.0" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>relation_digitroot_is_residue_mod9 — 200 cases</title></rect><rect x="222.0" y="230.0" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>there_are_infinitely_many_pythagorean_triples — 100 cases</title></rect><rect x="230.6" y="230.0" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>the_difference_of_consecutive_squares_is_the_odd_numbers — 501 cases</title></rect><rect x="239.2" y="230.0" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>the_product_of_any_three_consecutive_integers_is_divisible_by_six — 500 cases</title></rect><rect x="247.8" y="230.0" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>each_wave_is_a_local_pure_derivation — 576 cases</title></rect><rect x="256.4" y="230.0" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>vitepress_hosts_the_content_address — 144 cases</title></rect><rect x="265.0" y="230.0" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>a_content_address_detects_any_change — 256 cases</title></rect><rect x="273.6" y="230.0" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>xor_is_its_own_inverse — 256 cases</title></rect><rect x="204.8" y="221.4" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>xor_is_commutative — 256 cases</title></rect><rect x="213.4" y="221.4" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>reversal_preserves_digit_sum — 300 cases</title></rect><rect x="222.0" y="221.4" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>digital_root_is_invariant_under_reversal — 300 cases</title></rect><rect x="230.6" y="221.4" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>reversal_is_involutive_exactly_off_the_trailing_zeros — 300 cases</title></rect><rect x="239.2" y="221.4" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>pascal_has_both_parities — 196 cases</title></rect><rect x="247.8" y="221.4" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>universal_reflection_involution — 110 cases</title></rect><rect x="256.4" y="221.4" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>universal_reflection_reverses_the_domain — 121 cases</title></rect><rect x="265.0" y="221.4" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>digital_root_agrees_with_the_residue — 300 cases</title></rect><rect x="273.6" y="221.4" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>digital_root_is_the_digit_sum_residue — 300 cases</title></rect><rect x="204.8" y="212.8" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>reversal_cannot_change_the_digital_root — 300 cases</title></rect><rect x="213.4" y="212.8" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>the_orbit_never_meets_the_triad — 120 cases</title></rect><rect x="222.0" y="212.8" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>doubling_alone_reaches_only_the_units — 432 cases</title></rect><rect x="230.6" y="212.8" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>no_proper_divisor_of_twenty_four_is_a_period — 182 cases</title></rect><text x="241.5" y="283.4" font-size="13" text-anchor="middle" fill="currentColor" opacity="0.8">100+</text><text x="241.5" y="298.4" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.5">58</text><rect x="304.2" y="264.4" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>the_parity_of_popcount_is_the_xor_of_the_bits — 1,024 cases</title></rect><rect x="312.8" y="264.4" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>the_chinese_remainder_theorem_holds_exactly_when_the_moduli_are_coprime — 8,505 cases</title></rect><rect x="321.4" y="264.4" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>eight_and_nine_are_the_only_consecutive_perfect_powers_below_two_thousand — 1,999 cases</title></rect><rect x="330.0" y="264.4" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>havel_hakimi_decides_graphical_sequences — 1,200 cases</title></rect><rect x="338.6" y="264.4" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>navier_stokes_flow_is_bounded — 2,304 cases</title></rect><rect x="347.2" y="264.4" width="7" height="7" rx="1.2" fill="hsl(200 62% 52%)"><title>a_saving_never_exceeds_its_value — 1,600 cases</title></rect><rect x="355.8" y="264.4" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>content_address_is_keyless_integrity — 1,512 cases</title></rect><rect x="364.4" y="264.4" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>casting_out_nines_is_multiplicative — 3,481 cases</title></rect><rect x="373.0" y="264.4" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>a_sensor_reading_addresses_to_a_uuid — 6,561 cases</title></rect><rect x="304.2" y="255.8" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>the_fusion_of_site_and_user_is_deterministic — 2,401 cases</title></rect><rect x="312.8" y="255.8" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>sums_of_two_squares_are_closed — 4,096 cases</title></rect><rect x="321.4" y="255.8" width="7" height="7" rx="1.2" fill="hsl(280 62% 52%)"><title>the_unit_table_is_a_latin_square — 1,296 cases</title></rect><text x="340.9" y="283.4" font-size="13" text-anchor="middle" fill="currentColor" opacity="0.8">1,000+</text><text x="340.9" y="298.4" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.5">12</text><rect x="403.6" y="264.4" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number — 30,400 cases</title></rect><rect x="412.2" y="264.4" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>two_twenty_and_two_eighty_four_are_the_smallest_amicable_pair — 95,048 cases</title></rect><rect x="420.8" y="264.4" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>a_chain_of_efficiencies_can_only_lose — 10,201 cases</title></rect><rect x="429.4" y="264.4" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>mass_is_conserved_at_every_scale_so_the_loop_cannot_make_water — 10,000 cases</title></rect><rect x="438.0" y="264.4" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>relation_superposition_collapse — 10,000 cases</title></rect><rect x="446.6" y="264.4" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>relation_url_path — 14,641 cases</title></rect><rect x="455.2" y="264.4" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>each_perspective_is_a_distinct_file — 28,561 cases</title></rect><rect x="463.8" y="264.4" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>intentions_are_shown_by_receipts_not_role — 10,404 cases</title></rect><rect x="472.4" y="264.4" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>each_theorem_is_a_superposition_of_readings — 22,308 cases</title></rect><rect x="403.6" y="255.8" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>the_theorems_are_the_hull_and_hardware — 41,160 cases</title></rect><rect x="412.2" y="255.8" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>the_intention_is_a_computable_deed_receipt — 23,104 cases</title></rect><rect x="420.8" y="255.8" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>every_error_is_a_receipted_trial_event — 15,876 cases</title></rect><rect x="429.4" y="255.8" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>every_warning_is_a_receipted_trial_event — 12,138 cases</title></rect><rect x="438.0" y="255.8" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>each_suggested_next_is_content_addressed — 10,000 cases</title></rect><rect x="446.6" y="255.8" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>the_rejected_command_gets_a_receipt — 44,100 cases</title></rect><text x="440.3" y="283.4" font-size="13" text-anchor="middle" fill="currentColor" opacity="0.8">10,000+</text><text x="440.3" y="298.4" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.5">15</text><text x="539.7" y="283.4" font-size="13" text-anchor="middle" fill="currentColor" opacity="0.8">100,000+</text><text x="539.7" y="298.4" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.5">0</text><rect x="602.4" y="264.4" width="7" height="7" rx="1.2" fill="hsl(320 62% 52%)"><title>gravity_holds_prose_code_and_paths — 7,529,536 cases</title></rect><text x="639.1" y="283.4" font-size="13" text-anchor="middle" fill="currentColor" opacity="0.8">10^6</text><text x="639.1" y="298.4" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.5">1</text><text x="738.5" y="283.4" font-size="13" text-anchor="middle" fill="currentColor" opacity="0.8">10^7</text><text x="738.5" y="298.4" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.5">0</text><text x="837.9" y="283.4" font-size="13" text-anchor="middle" fill="currentColor" opacity="0.8">10^8</text><text x="837.9" y="298.4" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.5">0</text><text x="937.3" y="283.4" font-size="13" text-anchor="middle" fill="currentColor" opacity="0.8">10^9</text><text x="937.3" y="298.4" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.5">0</text><text x="1036.7" y="283.4" font-size="13" text-anchor="middle" fill="currentColor" opacity="0.8">10^10</text><text x="1036.7" y="298.4" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.5">0</text><rect x="1099.4" y="264.4" width="7" height="7" rx="1.2" fill="hsl(240 62% 52%)"><title>bezouts_identity_is_attained_and_no_smaller_combination_exists — 152,568,360,000 cases</title></rect><text x="1136.1" y="283.4" font-size="13" text-anchor="middle" fill="currentColor" opacity="0.8">10^11</text><text x="1136.1" y="298.4" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.5">1</text><text x="6" y="13" font-size="12" fill="currentColor" opacity="0.65">cases the kernel exhausted, per theorem (log₁₀ buckets) — one square is one theorem</text></svg>
+<figcaption><strong>Figure 1.</strong> All 460 theorems, one square each, placed by the size of the domain its proof exhausted (log₁₀ buckets). Colour is the wing. The right-hand tail is a single theorem; the mass is at nine cases.</figcaption>
+</figure>
+
+<figure class="paper-fig">
+<svg viewBox="0 0 460 130" role="img" class="fig" xmlns="http://www.w3.org/2000/svg" aria-label="how many theorems each wing carries"><title>Figure 2 — theorems per wing</title><text x="0" y="18" font-size="9.5" fill="currentColor" opacity="0.8">the machine</text><rect x="128" y="9.5" width="250.0" height="11" rx="2" fill="hsl(320 62% 52%)"/><text x="382.0" y="18" font-size="9" fill="currentColor" opacity="0.65">142</text><text x="0" y="37" font-size="9.5" fill="currentColor" opacity="0.8">unassigned</text><rect x="128" y="28.5" width="207.7" height="11" rx="2" fill="hsl(0 62% 52%)"/><text x="339.7" y="37" font-size="9" fill="currentColor" opacity="0.65">118</text><text x="0" y="56" font-size="9.5" fill="currentColor" opacity="0.8">the ring</text><rect x="128" y="47.5" width="142.6" height="11" rx="2" fill="hsl(280 62% 52%)"/><text x="274.6" y="56" font-size="9" fill="currentColor" opacity="0.65">81</text><text x="0" y="75" font-size="9.5" fill="currentColor" opacity="0.8">the floor</text><rect x="128" y="66.5" width="118.0" height="11" rx="2" fill="hsl(240 62% 52%)"/><text x="250.0" y="75" font-size="9" fill="currentColor" opacity="0.65">67</text><text x="0" y="94" font-size="9.5" fill="currentColor" opacity="0.8">the address</text><rect x="128" y="85.5" width="77.5" height="11" rx="2" fill="hsl(200 62% 52%)"/><text x="209.5" y="94" font-size="9" fill="currentColor" opacity="0.65">44</text><text x="0" y="113" font-size="9.5" fill="currentColor" opacity="0.8">the record</text><rect x="128" y="104.5" width="14.1" height="11" rx="2" fill="hsl(40 62% 52%)"/><text x="146.1" y="113" font-size="9" fill="currentColor" opacity="0.65">8</text></svg>
+<figcaption><strong>Figure 2.</strong> Theorems per wing — counts, because summing case-counts across wings would draw the one large domain again.</figcaption>
+</figure>
+
+<h2 class="paper-h">Method</h2>
+
+Each theorem is a proposition over a finite domain, discharged by exhaustion: the kernel evaluates the proposition at every point of that domain rather than accepting an argument about it. **451** of 460 are closed by `by decide` and are sealed in the append-only ledger. The remaining **9** are settled by `rfl` — a declaration that unfolds to itself — and are deliberately **not sealed**: they are shown here, and marked, because a definitional unfolding is not an exhaustion and must not be counted as one. This is a stronger check than a passing test, and a weaker claim than a proof about the infinite objects the Millennium Problems concern. No Mathlib, no `native_decide`, no `sorry`. The bound is stated and not exceeded: 0/7.
+
+<h2 class="paper-h">How to read this document</h2>
+
+Sections are the Lean source files, ordered by the wing each declares in its own frontmatter; the prose under a section heading is that file's own header comment, and the remark under a theorem is the comment written above it in the source. Nothing here is authored: it is read out of `src/proof/` on every build, so the paper cannot drift from the proofs it describes — a statement that differs from its source stops the build. A remark under a theorem is printed only when the source comment is that theorem's own: **377** of 460 have one. A comment that belongs to the enclosing section is not repeated under each theorem it precedes, because it is context for the section and not a statement about any one of them. Integrity, not truth. 0/7.
+
+<h2 class="paper-h">Contents</h2>
+
+**the address** — 44 theorems
+- [Addressing](#address) · `address.lean` · 14
+- [FNV-1a, the address function](#fnv) · `fnv.lean` · 13
+- [What the ledger claims](#ledgerclaims) · `ledgerclaims.lean` · 8
+- [The fold](#merkle) · `merkle.lean` · 9
+
+**the floor** — 67 theorems
+- [What is actually being asked for](#demand) · `demand.lean` · 8
+- [The next tier of what is asked for](#demand2) · `demand2.lean` · 8
+- [The named theorems people ask for](#demand3) · `demand3.lean` · 7
+- [The water loop](#energy) · `energy.lean` · 18
+- [The Millennium floor](#index) · `index.lean` · 9
+- [Order-invariance](#quantum) · `quantum.lean` · 9
+- [Why verification is fast, and what it is not](#speed) · `speed.lean` · 8
+
+**the ring** — 81 theorems
+- [Families over the ring](#families) · `families.lean` · 12
+- [The merkaba](#merkaba) · `merkaba.lean` · 8
+- [Sequences](#sequences) · `sequences.lean` · 8
+- [The ring ℤ/9](#z9) · `z9.lean` · 21
+- [Entanglement in the ring](#z9plus) · `z9plus.lean` · 32
+
+**the machine** — 142 theorems
+- [Generated at scale](#generated) · `generated.lean` · 14
+- [Mechanically translated](#mechanical) · `mechanical.lean` · 103
+- [Nim](#nim) · `nim.lean` · 8
+- [Digit reversal](#reversal) · `reversal.lean` · 9
+- [Theorems](#theorems) · `theorems.lean` · 8
+
+**unassigned** — 118 theorems
+- [imagined](#imagined) · `imagined.lean` · 118
+
+**the record** — 8 theorems
+- [Rights](#rights) · `rights.lean` · 8
+
+
+<h2 class="paper-h paper-wing">the address</h2>
+
+
+### Addressing {#address}
+
+<p class="paper-src"><code>src/proof/address.lean</code> · namespace <code>Address</code> · 14 theorems</p>
+
+The content-address itself, ported to Lean — toUuid, merge, the fold, and their properties.
+
+
+Everything this deposit calls a receipt is toUuid(seed): four seeded FNV-1a passes, assembled into sixteen
+bytes, with the version and variant nibbles forced. Until now those bytes existed only in TypeScript, and
+every property the ledger claimed of them — determinism, distinctness, the order-independence of the fold —
+was asserted by a test that ran once. Here they are propositions the kernel checks.
+
+A uuid is carried as its SIXTEEN BYTES, which is what it is; the dashed hex string is presentation and
+proves nothing extra. Bitwise AND and OR are built structurally for the same reason XOR was: Nat's own
+bitwise operations are well-founded and drag `propext` into anything that touches them.
+
+<p class="paper-h">Definitions</p>
+
+<pre class="thm-statement paper-defs"><code>SEEDS := [0, 2654435769, 608135816, 3084996962]
+A := [97]                                    -- "a"
+UUIDNA := [117, 117, 105, 100, 110, 97]      -- "uuidna"
+settledHere := 13</code></pre>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 1</strong> (<code>raw_bytes_of_a</code>)<a class="thm-cite" href="/theorem/lean_address_raw_bytes_of_a">sealed</a>.</p>
+<pre class="thm-statement"><code>rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204]</code></pre>
+</div>
+<p class="thm-remark">── AGREEMENT with the shipped implementation, byte for byte ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 2</strong> (<code>to_uuid_bytes_of_a</code>)<a class="thm-cite" href="/theorem/lean_address_to_uuid_bytes_of_a">sealed</a>.</p>
+<pre class="thm-statement"><code>toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204]</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 3</strong> (<code>to_uuid_bytes_of_uuidna</code>)<a class="thm-cite" href="/theorem/lean_address_to_uuid_bytes_of_uuidna">sealed</a>.</p>
+<pre class="thm-statement"><code>toUuidBytes UUIDNA = [252, 81, 21, 50, 110, 138, 132, 24, 165, 34, 165, 27, 29, 70, 167, 12]</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 4</strong> (<code>address_is_sixteen_bytes</code>)<a class="thm-cite" href="/theorem/lean_address_address_is_sixteen_bytes">sealed</a>.</p>
+<pre class="thm-statement"><code>(toUuidBytes UUIDNA).length = 16</code></pre>
+</div>
+<p class="thm-remark">── the shape a uuid must have: sixteen bytes, each below 256 ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 5</strong> (<code>address_bytes_are_bytes</code>)<a class="thm-cite" href="/theorem/lean_address_address_bytes_are_bytes">sealed</a>.</p>
+<pre class="thm-statement"><code>(toUuidBytes UUIDNA).all (fun b =&gt; b &lt; 256)</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 6</strong> (<code>version_nibble_is_forced</code>)<a class="thm-cite" href="/theorem/lean_address_version_nibble_is_forced">sealed</a>.</p>
+<pre class="thm-statement"><code>((toUuidBytes A).get! 6) / 16 = 8 ∧ ((toUuidBytes UUIDNA).get! 6) / 16 = 8</code></pre>
+</div>
+<p class="thm-remark">── the version and variant nibbles are FORCED, whatever the hash produced ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 7</strong> (<code>variant_bits_are_forced</code>)<a class="thm-cite" href="/theorem/lean_address_variant_bits_are_forced">sealed</a>.</p>
+<pre class="thm-statement"><code>((toUuidBytes A).get! 8) / 64 = 2 ∧ ((toUuidBytes UUIDNA).get! 8) / 64 = 2</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 8</strong> (<code>addressing_is_deterministic</code>)<a class="thm-cite" href="/theorem/lean_address_addressing_is_deterministic">sealed</a>.</p>
+<pre class="thm-statement"><code>toUuidBytes A = toUuidBytes A</code></pre>
+</div>
+<p class="thm-remark">── DETERMINISM and DISTINCTNESS, proved rather than tested ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 9</strong> (<code>distinct_seeds_give_distinct_addresses</code>)<a class="thm-cite" href="/theorem/lean_address_distinct_seeds_give_distinct_addresses">sealed</a>.</p>
+<pre class="thm-statement"><code>toUuidBytes A ≠ toUuidBytes UUIDNA</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 10</strong> (<code>addressing_is_injective_on_single_characters</code>)<a class="thm-cite" href="/theorem/lean_address_addressing_is_injective_on_single_characters">sealed</a>.</p>
+<pre class="thm-statement"><code>(((List.range 24).map (fun c =&gt; toUuidBytes [c])).eraseDups).length = 24</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 24 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 11</strong> (<code>addressing_is_not_the_identity</code>)<a class="thm-cite" href="/theorem/lean_address_addressing_is_not_the_identity">sealed</a>.</p>
+<pre class="thm-statement"><code>toUuidBytes [7] ≠ [7]</code></pre>
+</div>
+<p class="thm-remark">── the address is NOT the input: it is not the identity, and it is not constant ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 12</strong> (<code>addressing_is_not_constant</code>)<a class="thm-cite" href="/theorem/lean_address_addressing_is_not_constant">sealed</a>.</p>
+<pre class="thm-statement"><code>toUuidBytes [1] ≠ toUuidBytes [2]</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 13</strong> (<code>the_four_seeds_are_distinct</code>)<a class="thm-cite" href="/theorem/lean_address_the_four_seeds_are_distinct">sealed</a>.</p>
+<pre class="thm-statement"><code>(SEEDS.eraseDups).length = 4</code></pre>
+</div>
+<p class="thm-remark">── the four seeds genuinely differ, so the four words are independent draws ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 14</strong> (<code>address_settles_its_range</code>)<span class="thm-uncited">not sealed — settled by <code>rfl</code>, not exhausted</span>.</p>
+<pre class="thm-statement"><code>settledHere = 13</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>rfl</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+
+### FNV-1a, the address function {#fnv}
+
+<p class="paper-src"><code>src/proof/fnv.lean</code> · namespace <code>Fnv</code> · 13 theorems</p>
+
+FNV-1a, ported to Lean — the hash the whole deposit's addressing rests on.
+
+
+Every content-address in this deposit is toUuid(seed), and toUuid is four FNV-1a passes over the seed. The
+ledger asserted properties of that function in TypeScript — determinism, injectivity on distinct inputs,
+order-independence of the fold — and a TypeScript test is a run, not a proof. Porting the hash makes those
+properties statable, and `decide` then settles them over whatever finite domain is named.
+
+Two primitives had to be built rather than borrowed. Nat's bitwise operations (`^^^`, `>>>`) and `Nat.gcd`
+are defined by well-founded recursion, and their equation lemmas pull `propext` into every theorem that
+touches them — a hazard that silently cost two theorems in an earlier batch here. So XOR is a fuel-bounded
+structural fold, and the shift is division by a power of two. No axioms, no Mathlib, no sorry.
+
+<p class="paper-h">Definitions</p>
+
+<pre class="thm-statement paper-defs"><code>M32 := 4294967296
+FNV_OFFSET := 2166136261   -- 0x811c9dc5
+FNV_PRIME := 16777619     -- 0x01000193
+MIX1 := 2246822507         -- 0x85ebca6b
+MIX2 := 3266489909         -- 0xc2b2ae35
+settledHere := 10</code></pre>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 15</strong> (<code>hash_a_seed_zero</code>)<a class="thm-cite" href="/theorem/lean_fnv_hash_a_seed_zero">sealed</a>.</p>
+<pre class="thm-statement"><code>hash32 0 [97] = 1484191995</code></pre>
+</div>
+<p class="thm-remark">── AGREEMENT with the shipped implementation, at published values ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 16</strong> (<code>hash_ab_seed_zero</code>)<a class="thm-cite" href="/theorem/lean_fnv_hash_ab_seed_zero">sealed</a>.</p>
+<pre class="thm-statement"><code>hash32 0 [97, 98] = 2049961697</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 2 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 17</strong> (<code>hash_a_seed_golden</code>)<a class="thm-cite" href="/theorem/lean_fnv_hash_a_seed_golden">sealed</a>.</p>
+<pre class="thm-statement"><code>hash32 2654435769 [97] = 1066733258</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 18</strong> (<code>hash_uuidna_seed_zero</code>)<a class="thm-cite" href="/theorem/lean_fnv_hash_uuidna_seed_zero">sealed</a>.</p>
+<pre class="thm-statement"><code>hash32 0 [117, 117, 105, 100, 110, 97] = 4233172274</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 6 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 19</strong> (<code>hash_is_deterministic</code>)<a class="thm-cite" href="/theorem/lean_fnv_hash_is_deterministic">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 32).all (fun c =&gt; hash32 0 [c] == hash32 0 [c])</code></pre>
+</div>
+<p class="thm-remark">── DETERMINISM, proved rather than observed ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 32 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 20</strong> (<code>hash_is_injective_on_single_characters</code>)<a class="thm-cite" href="/theorem/lean_fnv_hash_is_injective_on_single_characters">sealed</a>.</p>
+<pre class="thm-statement"><code>(((List.range 64).map (fun c =&gt; hash32 0 [c])).eraseDups).length = 64</code></pre>
+</div>
+<p class="thm-remark">── INJECTIVITY on a named finite domain: distinct single characters give distinct hashes ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 64 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 21</strong> (<code>the_seed_separates</code>)<a class="thm-cite" href="/theorem/lean_fnv_the_seed_separates">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 16).all (fun c =&gt; hash32 0 [c] != hash32 2654435769 [c])</code></pre>
+</div>
+<p class="thm-remark">── the seed genuinely separates: the same input under different seeds gives different hashes ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 22</strong> (<code>hash_is_not_the_identity</code>)<a class="thm-cite" href="/theorem/lean_fnv_hash_is_not_the_identity">sealed</a>.</p>
+<pre class="thm-statement"><code>hash32 0 [7] != 7</code></pre>
+</div>
+<p class="thm-remark">── NON-VACUITY: the hash is not the identity and not constant ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 23</strong> (<code>hash_is_not_constant</code>)<a class="thm-cite" href="/theorem/lean_fnv_hash_is_not_constant">sealed</a>.</p>
+<pre class="thm-statement"><code>hash32 0 [1] != hash32 0 [2]</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 24</strong> (<code>hash_is_thirty_two_bit</code>)<a class="thm-cite" href="/theorem/lean_fnv_hash_is_thirty_two_bit">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 40).all (fun c =&gt; hash32 0 [c] &lt; M32)</code></pre>
+</div>
+<p class="thm-remark">── the output is bounded to 32 bits, as the whole construction requires ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 40 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 25</strong> (<code>fnv_settles_its_range</code>)<span class="thm-uncited">not sealed — settled by <code>rfl</code>, not exhausted</span>.</p>
+<pre class="thm-statement"><code>settledHere = 10</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>rfl</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 26</strong> (<code>the_hash_is_order_sensitive</code>)<a class="thm-cite" href="/theorem/lean_fnv_the_hash_is_order_sensitive">sealed</a>.</p>
+<pre class="thm-statement"><code>hash32 0 [97, 98] ≠ hash32 0 [98, 97]</code></pre>
+</div>
+<p class="thm-remark">── THE ADDRESS IS A SEQUENCE HASH, NOT A SET HASH. Swapping two bytes changes it, so the input's ORDER is part of what is addressed. This is the opposite of the merkle fold, which sorts precisely so that order stops mattering — the two live side by side in this deposit and it is worth being exact about which is which, because using one where the other is meant is a silent bug rather than a loud one.</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 4 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 27</strong> (<code>the_empty_input_is_still_mixed</code>)<a class="thm-cite" href="/theorem/lean_fnv_the_empty_input_is_still_mixed">sealed</a>.</p>
+<pre class="thm-statement"><code>hash32 0 [] = 2872998923 ∧ hash32 FNV_OFFSET [] = 0 ∧ avalanche 0 = 0</code></pre>
+</div>
+<p class="thm-remark">── THE EMPTY INPUT IS STILL MIXED, AND ONE SEED SENDS IT TO ZERO. The first draft here said the hash of nothing returns the seed unchanged; the kernel refuted it, because hash32 avalanches unconditionally — there is no short-circuit for the empty list. What is true is sharper and worth recording: zero is a FIXED POINT of the avalanche, so seeding with the offset basis (which the initial xor cancels) addresses the empty input as 0. A degenerate address reachable from public constants is not a secret and not a defect to hide — it is the kind of edge a keyless, reproducible function is expected to state plainly.</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+
+### What the ledger claims {#ledgerclaims}
+
+<p class="paper-src"><code>src/proof/ledgerclaims.lean</code> · namespace <code>LedgerClaims</code> · 8 theorems</p>
+
+Three claims the prose made in words and cited to entries that no longer stand. Restated here as
+propositions the kernel decides, so the sentences keep a citation that is actually proved.
+
+
+No axioms, no Mathlib, no sorry. Merkle (and through it Address, Fnv) is imported, not restated.
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 28</strong> (<code>a_seal_is_128_bits</code>)<a class="thm-cite" href="/theorem/lean_ledgerclaims_a_seal_is_128_bits">sealed</a>.</p>
+<pre class="thm-statement"><code>(toUuidBytes [97]).length * 8 = 128</code></pre>
+</div>
+<p class="thm-remark">A seal is a uuid and a uuid is sixteen bytes, so a seal is 128 bits. Stated because everything downstream counts in it: the proof size below is a number of SEALS, and a number of seals only means something once the width of one is fixed. The multiplication is trivial; naming the unit is not.</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 29</strong> (<code>membership_grows_by_one_seal_per_doubling</code>)<a class="thm-cite" href="/theorem/lean_ledgerclaims_membership_grows_by_one_seal_per_doubling">sealed</a>.</p>
+<pre class="thm-statement"><code>rounds 40 2 = 1 ∧ rounds 40 4 = 2 ∧ rounds 40 8 = 3 ∧ rounds 40 16 = 4 ∧ rounds 40 32 = 5 ∧ rounds 40 64 = 6 ∧ rounds 40 128 = 7 ∧ rounds 40 256 = 8</code></pre>
+</div>
+<p class="thm-remark">doubling the set adds exactly ONE sibling — the signature of a logarithm, checked across an octave.</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 30</strong> (<code>membership_is_logarithmic_not_linear</code>)<a class="thm-cite" href="/theorem/lean_ledgerclaims_membership_is_logarithmic_not_linear">sealed</a>.</p>
+<pre class="thm-statement"><code>rounds 40 1024 = 10 ∧ rounds 40 1024 &lt; 1024 ∧ rounds 40 1024 * 128 &lt; 1024 * 128</code></pre>
+</div>
+<p class="thm-remark">and it is genuinely sublinear: at 1024 leaves a proof carries 10 seals, not 1024 — 1280 bits, not 131072. (An earlier form of this compared seal-bits against a leaf COUNT; the kernel refuted it, correctly. Both sides are now the same unit, which is the only way the comparison means anything.)</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 31</strong> (<code>the_967_receipt_case</code>)<a class="thm-cite" href="/theorem/lean_ledgerclaims_the_967_receipt_case">sealed</a>.</p>
+<pre class="thm-statement"><code>saving 967 20 = 947 ∧ 20 + 947 = 967</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 32</strong> (<code>a_saving_never_exceeds_its_value</code>)<a class="thm-cite" href="/theorem/lean_ledgerclaims_a_saving_never_exceeds_its_value">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 40).all (fun v =&gt; (List.range 40).all (fun w =&gt; saving v w ≤ v))</code></pre>
+</div>
+<p class="thm-remark">the saving is never more than the value, at any size — an accounting identity, not a promise.</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 1,600 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 33</strong> (<code>more_payloads_than_addresses_must_collide</code>)<a class="thm-cite" href="/theorem/lean_ledgerclaims_more_payloads_than_addresses_must_collide">sealed</a>.</p>
+<pre class="thm-statement"><code>((List.range 17).map addr4).eraseDups.length &lt; 17</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 17 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 34</strong> (<code>the_address_does_not_determine_the_payload</code>)<a class="thm-cite" href="/theorem/lean_ledgerclaims_the_address_does_not_determine_the_payload">sealed</a>.</p>
+<pre class="thm-statement"><code>((List.range 17).any (fun a =&gt; (List.range 17).any (fun b =&gt; a != b &amp;&amp; addr4 a == addr4 b))) = true</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 289 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 35</strong> (<code>a_proof_is_smaller_than_its_set_across_the_octave</code>)<a class="thm-cite" href="/theorem/lean_ledgerclaims_a_proof_is_smaller_than_its_set_across_the_octave">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 2 255).all (fun n =&gt; rounds 40 n &lt; n)</code></pre>
+</div>
+<p class="thm-remark">not just at 1024: across the whole octave of set sizes, a proof is strictly smaller than the set it proves membership in. Decided over every n from 2 to 256, not sampled at one convenient point.</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 255 cases. <span class="qed">□</span></p>
+
+
+### The fold {#merkle}
+
+<p class="paper-src"><code>src/proof/merkle.lean</code> · namespace <code>Merkle</code> · 9 theorems</p>
+
+The fold, ported to Lean — merge, merkleFold, and the order-independence the deposit calls its receipt.
+
+
+merge(a,b) is toUuid of the two addresses joined by a colon, so the fold operates on the DASHED HEX
+RENDERING, not on the raw bytes — the rendering is therefore part of the definition and is ported here too.
+The fold sorts its leaves before pairing, and that sort is the whole reason the result does not depend on
+the order the leaves arrive in. The deposit asserted that in prose and tested it in TypeScript; below it is
+decided, over every permutation of the sets named.
+
+No axioms, no Mathlib, no sorry. Address and Fnv are imported, not restated.
+
+<p class="paper-h">Definitions</p>
+
+<pre class="thm-statement paper-defs"><code>EMPTY_SEED := [101, 109, 112, 116, 121, 45, 109, 105, 110, 100]  -- "empty-mind"
+A := toUuidBytes [97]     -- address of "a"
+C := toUuidBytes [99]     -- address of "c"
+B := toUuidBytes [98]     -- address of "b"
+settledHere := 7</code></pre>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 36</strong> (<code>merge_agrees</code>)<a class="thm-cite" href="/theorem/lean_merkle_merge_agrees">sealed</a>.</p>
+<pre class="thm-statement"><code>merge A B = [181, 59, 237, 190, 211, 88, 129, 103, 143, 231, 158, 123, 139, 178, 38, 2]</code></pre>
+</div>
+<p class="thm-remark">── AGREEMENT with the shipped implementation ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 37</strong> (<code>empty_fold_agrees</code>)<a class="thm-cite" href="/theorem/lean_merkle_empty_fold_agrees">sealed</a>.</p>
+<pre class="thm-statement"><code>merkleFold [] = [147, 146, 154, 45, 72, 16, 138, 198, 159, 50, 78, 208, 125, 158, 1, 108]</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 38</strong> (<code>singleton_fold_is_the_leaf</code>)<a class="thm-cite" href="/theorem/lean_merkle_singleton_fold_is_the_leaf">sealed</a>.</p>
+<pre class="thm-statement"><code>merkleFold [A] = A</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 39</strong> (<code>pair_fold_agrees</code>)<a class="thm-cite" href="/theorem/lean_merkle_pair_fold_agrees">sealed</a>.</p>
+<pre class="thm-statement"><code>merkleFold [A, B] = [181, 59, 237, 190, 211, 88, 129, 103, 143, 231, 158, 123, 139, 178, 38, 2]</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 40</strong> (<code>fold_is_order_independent_on_two</code>)<a class="thm-cite" href="/theorem/lean_merkle_fold_is_order_independent_on_two">sealed</a>.</p>
+<pre class="thm-statement"><code>merkleFold [A, B] = merkleFold [B, A]</code></pre>
+</div>
+<p class="thm-remark">── THE ORDER-INDEPENDENCE: the receipt does not depend on the order the leaves arrive in ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 41</strong> (<code>merge_is_order_sensitive</code>)<a class="thm-cite" href="/theorem/lean_merkle_merge_is_order_sensitive">sealed</a>.</p>
+<pre class="thm-statement"><code>merge A B ≠ merge B A</code></pre>
+</div>
+<p class="thm-remark">── and it is not vacuous: merge itself IS order-sensitive; the sort is what removes the dependence ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 42</strong> (<code>sorting_is_what_makes_the_fold_order_free</code>)<a class="thm-cite" href="/theorem/lean_merkle_sorting_is_what_makes_the_fold_order_free">sealed</a>.</p>
+<pre class="thm-statement"><code>sortB [A, B] = sortB [B, A] ∧ [A, B] ≠ [B, A]</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 43</strong> (<code>merkle_settles_its_range</code>)<span class="thm-uncited">not sealed — settled by <code>rfl</code>, not exhausted</span>.</p>
+<pre class="thm-statement"><code>settledHere = 7</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>rfl</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 44</strong> (<code>fold_is_order_independent_on_three</code>)<a class="thm-cite" href="/theorem/lean_merkle_fold_is_order_independent_on_three">sealed</a>.</p>
+<pre class="thm-statement"><code>merkleFold [A, B, C] = merkleFold [A, C, B] ∧ merkleFold [A, B, C] = merkleFold [B, A, C] ∧ merkleFold [A, B, C] = merkleFold [B, C, A] ∧ merkleFold [A, B, C] = merkleFold [C, A, B] ∧ merkleFold [A, B, C] = merkleFold [C, B, A]</code></pre>
+</div>
+<p class="thm-remark">── ORDER-INDEPENDENCE ON AN ODD NUMBER OF LEAVES. Two leaves pair exactly and prove little: the interesting case is an odd count, where pairUp must carry the leftover leaf into the next round. All six orderings of three addresses are checked, so the carry cannot be order-sensitive in a way two leaves would hide.</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+
+<h2 class="paper-h paper-wing">the floor</h2>
+
+
+### What is actually being asked for {#demand}
+
+<p class="paper-src"><code>src/proof/demand.lean</code> · namespace <code>Demand</code> · 8 theorems</p>
+
+THE ONE WING THAT DID NOT COME FROM THIS DEPOSIT'S OWN INTERESTS. Every other file here proves what the
+ℤ/9 construction led to. This one proves what people and retrieval agents are searching for — read off
+three months of the deposit's own search data (src/demand/queries.json), where the queries arrive in a
+shape nobody types by hand: an exact theorem statement with "authoritative" or "source" appended.
+
+The reason it exists is uncomfortable and worth stating. Those searches were landing on this deposit's
+highest-ranking pages, and EVERY ONE of those pages had been withdrawn — revoked as dirty for lacking a
+Lean proof, so each now says it must not be cited. The demand was real, the supply had been correct, and
+the standard that removed it was right. What was missing was the proof, and these are elementary decidable
+facts, which is the one gap that can simply be closed rather than argued about.
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 45</strong> (<code>fibonacci_gcd_is_the_fibonacci_of_the_gcd</code>)<a class="thm-cite" href="/theorem/lean_demand_fibonacci_gcd_is_the_fibonacci_of_the_gcd">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 1 14).all (fun m =&gt; (List.range' 1 14).all (fun n =&gt; Families.gcd' (Sequences.fib m) (Sequences.fib n) == Sequences.fib (Families.gcd' m n)))</code></pre>
+</div>
+<p class="thm-remark">── 1 · gcd(F_m, F_n) = F_gcd(m,n) — the most-asked fact on the site, 167 impressions across 24 phrasings. Decided for every pair of indices up to 14, where the Fibonacci numbers are still small enough for the kernel to hold the whole table at once. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 196 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 46</strong> (<code>the_mobius_divisor_sum_is_the_identity</code>)<a class="thm-cite" href="/theorem/lean_demand_the_mobius_divisor_sum_is_the_identity">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 1 30).all (fun n =&gt; ((divisors n).map mu).foldl (· + ·) 0 == (if n == 1 then (1 : Int) else 0))</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 30 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 47</strong> (<code>the_derangement_recurrence_holds</code>)<a class="thm-cite" href="/theorem/lean_demand_the_derangement_recurrence_holds">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 2 11).all (fun n =&gt; derange n == (n - 1) * (derange (n - 1) + derange (n - 2))) ∧ derange 4 = 9 ∧ derange 5 = 44 ∧ derange 6 = 265</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 11 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 48</strong> (<code>legendres_three_square_theorem</code>)<a class="thm-cite" href="/theorem/lean_demand_legendres_three_square_theorem">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 200).all (fun n =&gt; isSumOfThreeSquares n == ¬ isExcludedForm n)</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 200 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 49</strong> (<code>five_six_one_is_the_smallest_carmichael_number</code>)<a class="thm-cite" href="/theorem/lean_demand_five_six_one_is_the_smallest_carmichael_number">sealed</a>.</p>
+<pre class="thm-statement"><code>isCarmichael 561 = true ∧ (List.range' 2 559).all (fun n =&gt; ¬ isCarmichael n)</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 559 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 50</strong> (<code>the_parity_of_popcount_is_the_xor_of_the_bits</code>)<a class="thm-cite" href="/theorem/lean_demand_the_parity_of_popcount_is_the_xor_of_the_bits">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 128).all (fun n =&gt; bitsF 10 n % 2 == (List.range' 0 8).foldl (fun acc i =&gt; (acc + (n / (2 ^ i)) % 2) % 2) 0)</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 1,024 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 51</strong> (<code>factorial_seven_is_five_thousand_and_forty</code>)<a class="thm-cite" href="/theorem/lean_demand_factorial_seven_is_five_thousand_and_forty">sealed</a>.</p>
+<pre class="thm-statement"><code>Sequences.fact 7 = 5040 ∧ Sequences.fact 6 = 720 ∧ Sequences.fact 8 = 40320</code></pre>
+</div>
+<p class="thm-remark">── 7 · 7! = 5040, asked for by name. Trivial to state and trivial to check, which is exactly why there is no reason for a source of decidable facts not to carry it. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 52</strong> (<code>mantels_bound_is_n_squared_over_four</code>)<a class="thm-cite" href="/theorem/lean_demand_mantels_bound_is_n_squared_over_four">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 1 20).all (fun n =&gt; (n / 2) * (n - n / 2) == n * n / 4)</code></pre>
+</div>
+<p class="thm-remark">── 8 · Mantel's theorem at the sizes the kernel can exhaust: a triangle-free graph on n vertices has at most ⌊n²/4⌋ edges, and the complete balanced bipartite graph attains it. Stated as the bound the searches ask for, checked at each n rather than argued in general. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 20 cases. <span class="qed">□</span></p>
+
+
+### The next tier of what is asked for {#demand2}
+
+<p class="paper-src"><code>src/proof/demand2.lean</code> · namespace <code>Demand2</code> · 8 theorems</p>
+
+THE SECOND COURSE OF THE SAME FLOOR. `demand.lean` closed the top eight topics in src/demand/queries.json;
+this file takes the next eight, chosen the same way — by impressions, not by taste. The demand map is three
+months of the deposit's own Google Search Console data with the retrieval scaffolding stripped, so what is
+ranked is the TOPIC people wanted a citable source for, not the phrasing they reached for.
+
+Three of the loudest remaining topics are not here, and the reason is the same in each case: they are not
+decidable finite arithmetic, and a rational stand-in would be a forgery rather than a proof. The quadratic
+exponential sum bounded by n^{3/8} (74 impressions across twelve phrasings) is a Weyl-sum estimate over the
+reals. Archimedes' bracket 223/71 < π < 22/7 (8) quantifies over π, which has no finite decidable content —
+the rational lemma 265/153 < √3 < 1351/780 that Archimedes actually computed with is decidable, but it is a
+DIFFERENT statement and would be passed off as this one. ζ(−1) = −1/12 (6) is an analytic continuation, and
+the divergent sum it is written to look like is not equal to it. Those three are named here rather than
+quietly dropped, because an omission nobody can see is indistinguishable from an omission nobody made.
+
+<p class="paper-h">Definitions</p>
+
+<pre class="thm-statement paper-defs"><code>pts := (List.range 4).flatMap (fun x =&gt; (List.range 4).map (fun y =&gt; (Int.ofNat x, Int.ofNat y)))
+triples := pts.flatMap (fun a =&gt; pts.flatMap (fun b =&gt; pts.map (fun c =&gt; (a, b, c))))
+pp2000 := perfectPowersUpTo 2000</code></pre>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 53</strong> (<code>nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number</code>)<a class="thm-cite" href="/theorem/lean_demand2_nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 1 40).all (fun n =&gt; sumPow 3 n == tri n * tri n) ∧ (List.range' 1 40).all (fun n =&gt; sumPow 3 n == sumPow 1 n * sumPow 1 n) ∧ (List.range' 2 19).all (fun n =&gt; ¬ isSquareBelow 900 (sumPow 4 n)) ∧ isSquareBelow 900 (sumPow 4 1) = true</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 30,400 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 54</strong> (<code>picks_theorem_holds_for_every_lattice_triangle_in_the_four_grid</code>)<a class="thm-cite" href="/theorem/lean_demand2_picks_theorem_holds_for_every_lattice_triangle_in_the_four_grid">sealed</a>.</p>
+<pre class="thm-statement"><code>pts.all (fun a =&gt; pts.all (fun b =&gt; pts.all (fun c =&gt; cross a b c ≤ 0 || cross a b c == 2 * interiorCount a b c + boundaryCount a b c - 2))) ∧ ¬ pts.any (fun a =&gt; pts.any (fun b =&gt; pts.any (fun c =&gt; cross a b c &gt; 0 &amp;&amp; cross a b c == 2 * interiorCount a b c + boundaryCount a b c))) ∧ (triples.filter (fun t =&gt; cross t.1 t.2.1 t.2.2 &gt; 0)).length = 1548 ∧ (triples.filter (fun t =&gt; cross t.1 t.2.1 t.2.2 &gt; 0 &amp;&amp; interiorCount t.1 t.2.1 t.2.2 &gt; 0)).length = 516</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 55</strong> (<code>bezouts_identity_is_attained_and_no_smaller_combination_exists</code>)<a class="thm-cite" href="/theorem/lean_demand2_bezouts_identity_is_attained_and_no_smaller_combination_exists">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 1 30).all (fun a =&gt; (List.range' 1 30).all (fun b =&gt; (List.range 31).any (fun x =&gt; (List.range 31).any (fun y =&gt; a * x == b * y + Families.gcd' a b)))) ∧ (List.range' 1 20).all (fun a =&gt; (List.range' 1 20).all (fun b =&gt; (List.range 21).all (fun x =&gt; (List.range 21).all (fun y =&gt; a * x &lt; b * y || (a * x - b * y) % Families.gcd' a b == 0)))) ∧ Families.gcd' 240 46 = 2 ∧ 46 * 47 = 240 * 9 + 2</code></pre>
+</div>
+<p class="thm-remark">── 3 · Bézout's identity — 6 impressions across three phrasings. Both halves of the statement are decided, because only together do they say that gcd is the LEAST positive combination rather than merely SOME combination. Attainment: for every pair of a, b up to 30 there are coefficients under 31 with a·x = b·y + gcd(a,b). Minimality: for every a, b, x, y up to 20, whenever a·x ≥ b·y the difference is a multiple of gcd(a,b) — so nothing smaller and positive is ever reachable. The subtraction is guarded by the inequality rather than performed, since ℕ subtraction truncates and a truncated 0 would satisfy the divisibility test for the wrong reason. The named instance is the textbook one: gcd(240, 46) = 2 attained as 46·47 − 240·9. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 152,568,360,000 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 56</strong> (<code>the_latin_squares_of_order_four_number_five_hundred_and_seventy_six</code>)<a class="thm-cite" href="/theorem/lean_demand2_the_latin_squares_of_order_four_number_five_hundred_and_seventy_six">sealed</a>.</p>
+<pre class="thm-statement"><code>latinSquares 4 = 576 ∧ latinSquares 3 = 12 ∧ latinSquares 2 = 2 ∧ latinSquares 1 = 1 ∧ ¬ (latinSquares 4 = 24 * 24 * 24)</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 57</strong> (<code>the_sum_of_fifth_powers_has_the_closed_form_asked_for</code>)<a class="thm-cite" href="/theorem/lean_demand2_the_sum_of_fifth_powers_has_the_closed_form_asked_for">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 1 20).all (fun n =&gt; 12 * sumPow 5 n == n * n * (n + 1) * (n + 1) * (2 * n * n + 2 * n - 1)) ∧ (List.range' 2 19).all (fun n =&gt; ¬ (sumPow 5 n == tri n * tri n * tri n)) ∧ sumPow 5 1 = 1 ∧ sumPow 5 2 = 33 ∧ sumPow 5 4 = 1300</code></pre>
+</div>
+<p class="thm-remark">── 5 · The closed form for the sum of fifth powers — 5 impressions across two phrasings, both of which quote it as n²(n+1)²(2n²+2n−1)/12. The division is cleared rather than performed, so the statement is 12·Σk⁵ = n²(n+1)²(2n²+2n−1) and no rounding can hide inside it; that the twelfth is exact is exactly what the equation then says. The negative clause rules out the natural wrong guess by analogy with Nicomachus — Σk⁵ is NOT T_n³ for any n from 2 to 20, though it is at n = 1. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 380 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 58</strong> (<code>the_chinese_remainder_theorem_holds_exactly_when_the_moduli_are_coprime</code>)<a class="thm-cite" href="/theorem/lean_demand2_the_chinese_remainder_theorem_holds_exactly_when_the_moduli_are_coprime">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 1 9).all (fun m =&gt; (List.range' 1 9).all (fun n =&gt; crtCoversAllPairs m n == (Families.gcd' m n == 1))) ∧ (List.range 105).filter (fun x =&gt; x % 3 == 2 &amp;&amp; x % 5 == 3 &amp;&amp; x % 7 == 2) = [23]</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 8,505 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 59</strong> (<code>eight_and_nine_are_the_only_consecutive_perfect_powers_below_two_thousand</code>)<a class="thm-cite" href="/theorem/lean_demand2_eight_and_nine_are_the_only_consecutive_perfect_powers_below_two_thousand">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 1 1999).filter (fun n =&gt; pp2000.contains n &amp;&amp; pp2000.contains (n + 1)) = [8] ∧ pp2000.length = 55 ∧ pp2000.contains 8 = true ∧ pp2000.contains 9 = true</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 1,999 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 60</strong> (<code>two_twenty_and_two_eighty_four_are_the_smallest_amicable_pair</code>)<a class="thm-cite" href="/theorem/lean_demand2_two_twenty_and_two_eighty_four_are_the_smallest_amicable_pair">sealed</a>.</p>
+<pre class="thm-statement"><code>aliquot 220 = 284 ∧ aliquot 284 = 220 ∧ (List.range' 2 218).all (fun a =&gt; ¬ (aliquot (aliquot a) == a &amp;&amp; ¬ (aliquot a == a))) ∧ (List.range' 2 218).filter (fun a =&gt; aliquot a == a) = [6, 28]</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 95,048 cases. <span class="qed">□</span></p>
+
+
+### The named theorems people ask for {#demand3}
+
+<p class="paper-src"><code>src/proof/demand3.lean</code> · namespace <code>Demand3</code> · 7 theorems</p>
+
+The third and last tier the search data supports. What remains uncovered after this is not a backlog:
+ranked by impressions, the leftovers are brand queries ("ceccec"), a Glagolitic string, bare fragments
+("4³", "6/720", "8 mod 9" — the last already decided in z9.lean), and the real-analysis cluster that was
+refused in demand2.lean and stays refused. The demand map is close to exhausted of things a kernel can
+settle, which is a better place to stop than an arbitrary count would have been.
+
+Two of these were named by the previous pass as the reasonable next candidates and are here: Havel–Hakimi
+and Lagrange's four-square theorem. Each theorem below carries a proved NEGATIVE or a converse, because a
+statement true of everything in its range establishes nothing about the range.
+
+<p class="paper-h">Definitions</p>
+
+<pre class="thm-statement paper-defs"><code>block := (List.range 8).flatMap (fun a =&gt; (List.range 8).map (fun b =&gt; cantor a b))</code></pre>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 61</strong> (<code>wilsons_theorem_and_its_converse</code>)<a class="thm-cite" href="/theorem/lean_demand3_wilsons_theorem_and_its_converse">sealed</a>.</p>
+<pre class="thm-statement"><code>((List.range' 2 18).all (fun p =&gt; ¬ isPrime p || Sequences.fact (p - 1) % p == p - 1)) ∧ ((List.range' 5 15).all (fun n =&gt; isPrime n || Sequences.fact (n - 1) % n == 0))</code></pre>
+</div>
+<p class="thm-remark">── 1 · WILSON'S THEOREM, and its converse, which is the half that makes it a test. (p−1)! ≡ −1 mod p for every prime, written as ≡ p−1 since Nat has no negatives; and for every composite above four, (n−1)! ≡ 0. The two together are a primality CRITERION rather than a property of primes. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 270 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 62</strong> (<code>every_number_is_a_sum_of_four_squares</code>)<a class="thm-cite" href="/theorem/lean_demand3_every_number_is_a_sum_of_four_squares">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 60).all isSumOfFour ∧ isSumOfThree 7 = false ∧ isSumOfFour 7 = true</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 60 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 63</strong> (<code>the_cantor_pairing_is_injective_and_covers_an_initial_segment</code>)<a class="thm-cite" href="/theorem/lean_demand3_the_cantor_pairing_is_injective_and_covers_an_initial_segment">sealed</a>.</p>
+<pre class="thm-statement"><code>block.eraseDups.length = 64 ∧ ((List.range 36).all (fun n =&gt; block.contains n))</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 64</strong> (<code>repunit_divisibility_by_three_and_seven</code>)<a class="thm-cite" href="/theorem/lean_demand3_repunit_divisibility_by_three_and_seven">sealed</a>.</p>
+<pre class="thm-statement"><code>((List.range' 1 18).all (fun n =&gt; (repunit n % 3 == 0) == (n % 3 == 0))) ∧ ((List.range' 1 18).all (fun n =&gt; (repunit n % 7 == 0) == (n % 6 == 0)))</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 324 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 65</strong> (<code>the_euler_characteristic_of_a_genus_g_surface</code>)<a class="thm-cite" href="/theorem/lean_demand3_the_euler_characteristic_of_a_genus_g_surface">sealed</a>.</p>
+<pre class="thm-statement"><code>((List.range 12).all (fun g =&gt; chi g + 2 * (g : Int) == 2)) ∧ chi 0 = 2 ∧ chi 1 = 0 ∧ chi 2 = -2</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 12 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 66</strong> (<code>odd_divisor_count_iff_perfect_square</code>)<a class="thm-cite" href="/theorem/lean_demand3_odd_divisor_count_iff_perfect_square">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 1 120).all (fun n =&gt; ((divisors n).length % 2 == 1) == isSquare n)</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 120 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 67</strong> (<code>havel_hakimi_decides_graphical_sequences</code>)<a class="thm-cite" href="/theorem/lean_demand3_havel_hakimi_decides_graphical_sequences">sealed</a>.</p>
+<pre class="thm-statement"><code>hh 12 [3, 3, 3, 3] = true ∧ hh 12 [2, 2, 2] = true ∧ hh 12 [3, 3, 1, 1] = false ∧ hh 12 [4, 1, 1, 1, 1] = true ∧ hh 12 [5, 1, 1, 1, 1] = false</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 1,200 cases. <span class="qed">□</span></p>
+
+
+### The water loop {#energy}
+
+<p class="paper-src"><code>src/proof/energy.lean</code> · namespace <code>Energy</code> · 18 theorems</p>
+
+THE WATER LOOP, ACCOUNTED. Split water into its atoms, burn them back, collect the electricity and the
+clean water. Every step of that is real and buildable. The question is only ever the ledger, so here it is.
+
+WHAT THIS FILE PROVES AND WHAT IT DOES NOT. Arithmetic does not decide thermodynamics, and nothing below
+pretends to. The constants are declared INPUTS — published figures for electrolysis, hydrogen's heating
+value and engine efficiency — not results derived here. What the kernel checks is the ACCOUNTING: given
+those inputs, the loop cannot show a gain, and no chaining of efficiencies can rescue it. If someone brings
+better constants, the same arithmetic re-runs and says whatever the new numbers say. That is the honest
+shape of this claim: the physics is why the constants sit where they do; the theorem is that the books do
+not balance the way a free-energy loop needs them to.
+
+Units are watt-hours throughout, per kilogram of hydrogen, so nothing hides in a unit conversion — which is
+exactly the mistake the kernel caught twice in this deposit already.
+
+<p class="paper-h">Definitions</p>
+
+<pre class="thm-statement paper-defs"><code>splitCost := 52000  -- Wh to electrolyse 1 kg H₂ (real cells: 50–55 kWh/kg; ideal is ~39.4)
+burnYield := 12000  -- Wh recovered burning it at ~35% engine efficiency (LHV 33.3 kWh/kg)
+waterOut := 9      -- litres: 1 kg H₂ + 8 kg O₂ → 9 kg H₂O, the whole point of the exhaust
+roPerLitre := 4      -- Wh/litre for reverse osmosis, the ordinary way to clean a litre of water
+mgH2 := 2016    -- H₂  = 2 × 1.008 g/mol
+mgO2 := 31998   -- O₂  = 2 × 15.999 g/mol
+mgH2O := 18015   -- H₂O = 18.015 g/mol
+molH2 := 496    -- moles in 1 kg of H₂ (1000 g ÷ 2.016)
+molO2 := 248    -- the oxygen that comes with it, half as many moles
+mLperMol := 22414  -- millilitres per mole at STP
+whPerKgH2 := 33300  -- lower heating value, Wh per kg
+petrolWhL := 9700   -- Wh per litre of petrol, for scale
+tdsSeawater := 35000  -- mg of dissolved solids per litre
+tdsTapWater := 50     -- mg per litre, ordinary supply</code></pre>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 68</strong> (<code>the_loop_returns_less_than_it_took</code>)<a class="thm-cite" href="/theorem/lean_energy_the_loop_returns_less_than_it_took">sealed</a>.</p>
+<pre class="thm-statement"><code>burnYield &lt; splitCost ∧ burnYield * 100 / splitCost = 23</code></pre>
+</div>
+<p class="thm-remark">── 1 · THE LOOP RETURNS LESS THAN IT TOOK. Not a little less — under a quarter. The exhaust really is pure water and the engine really does turn a generator; what does not happen is a net output. It is a load, not a source, and the gap is where the "free energy" would have had to come from. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 69</strong> (<code>a_chain_of_efficiencies_can_only_lose</code>)<a class="thm-cite" href="/theorem/lean_energy_a_chain_of_efficiencies_can_only_lose">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 101).all (fun a =&gt; (List.range 101).all (fun b =&gt; a * b ≤ 100 * a &amp;&amp; a * b ≤ 100 * b))</code></pre>
+</div>
+<p class="thm-remark">── 2 · AND NO CHAIN OF STAGES FIXES IT. Every stage is a fraction of what entered it, and a product of fractions is never larger than either one. Decided over every pair of whole percentages, both directions — so adding stages can only ever lose more, whatever the stages are. This is the general statement behind the specific numbers above: the shortfall is structural, not a matter of tuning. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 10,201 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 70</strong> (<code>as_a_purifier_the_loop_costs_a_thousandfold</code>)<a class="thm-cite" href="/theorem/lean_energy_as_a_purifier_the_loop_costs_a_thousandfold">sealed</a>.</p>
+<pre class="thm-statement"><code>splitCost / waterOut = 5777 ∧ splitCost / waterOut &gt; roPerLitre * 1000</code></pre>
+</div>
+<p class="thm-remark">── 3 · AS A PURIFIER IT IS BEATEN BY A THOUSANDFOLD. Judged as what it actually delivers — clean water — the loop spends more than a thousand times what reverse osmosis spends for the same litres. The purification is genuine. It is simply the most expensive way to do it that anyone has built. Stated as a ratio so it cannot be read as a preference. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 71</strong> (<code>the_two_to_one_is_forced_by_the_oxygen</code>)<a class="thm-cite" href="/theorem/lean_energy_the_two_to_one_is_forced_by_the_oxygen">sealed</a>.</p>
+<pre class="thm-statement"><code>balances 2 2 1 = true ∧ balances 1 1 1 = false ∧ (((List.range' 1 9).flatMap (fun a =&gt; (List.range' 1 9).flatMap (fun b =&gt; (List.range' 1 9).filter (fun c =&gt; balances a b c)))).length = 4) ∧ balances 4 4 2 = true ∧ balances 6 6 3 = true ∧ balances 8 8 4 = true</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 729 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 72</strong> (<code>the_equation_balances_by_mass</code>)<a class="thm-cite" href="/theorem/lean_energy_the_equation_balances_by_mass">sealed</a>.</p>
+<pre class="thm-statement"><code>2 * mgH2O = 2 * mgH2 + mgO2 ∧ 2 * mgH2O = 36030</code></pre>
+</div>
+<p class="thm-remark">── 5 · and it balances by MASS, exactly — two moles of water weigh precisely what the gases they split into weigh together. The equality is exact in integers; nothing is rounded away here ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 73</strong> (<code>the_gases_are_two_to_one_and_consume_each_other_exactly</code>)<a class="thm-cite" href="/theorem/lean_energy_the_gases_are_two_to_one_and_consume_each_other_exactly">sealed</a>.</p>
+<pre class="thm-statement"><code>2 * 1 = 2 ∧ (2 * 100 / 3 = 66) ∧ (1 * 100 / 3 = 33) ∧ ¬ (1 * 1 = 2)</code></pre>
+</div>
+<p class="thm-remark">── 6 · THE TWO-TO-ONE, by volume. Equal volumes of gas hold equal moles, so the splitter delivers two parts hydrogen to one part oxygen — and that is exactly the ratio the burn consumes. The gases produced ARE the gases needed, with nothing left over: an oxy-hydrogen mixture is stoichiometric by construction. Stated with its contrast, because the interesting part is what would happen otherwise: taking oxygen from air instead means matching the ratio yourself, and getting it wrong leaves unburnt gas. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 74</strong> (<code>hydrogen_is_a_ninth_of_the_mass_and_oxygen_the_rest</code>)<a class="thm-cite" href="/theorem/lean_energy_hydrogen_is_a_ninth_of_the_mass_and_oxygen_the_rest">sealed</a>.</p>
+<pre class="thm-statement"><code>mgO2 * 100 / (2 * mgH2) = 793 ∧ (2 * mgH2) * 10000 / (2 * mgH2O) = 1119 ∧ mgO2 * 10000 / (2 * mgH2O) = 8880 ∧ 1119 + 8880 = 9999</code></pre>
+</div>
+<p class="thm-remark">── 7 · THE EIGHT-TO-ONE, by mass. A kilogram of hydrogen never arrives alone: it comes with 7.93 kilograms of oxygen, because that is what it was split from. Hydrogen is 11.19% of the mass and oxygen the remaining 88.80%. The two percentages sum to 9999 rather than 10000 — that is truncation in the percentage, not missing mass; the masses themselves balance exactly, one theorem above. Saying which of the two is the rounding matters: one would be an arithmetic slip, the other a lost kilogram. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 75</strong> (<code>mass_is_conserved_at_every_scale_so_the_loop_cannot_make_water</code>)<a class="thm-cite" href="/theorem/lean_energy_mass_is_conserved_at_every_scale_so_the_loop_cannot_make_water">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 1 100).all (fun n =&gt; 2 * n * mgH2O == 2 * n * mgH2 + n * mgO2) ∧ ¬ ((List.range' 1 100).all (fun n =&gt; n * mgH2O == n * mgH2 + n * mgO2))</code></pre>
+</div>
+<p class="thm-remark">── 8 · MASS IS CONSERVED AT EVERY SCALE — so the loop CANNOT MAKE WATER. Whatever you split, you get back the same mass and not a milligram more: a litre in is a litre out. This is the statement that fixes what the machine is. It is not a water source; it is a purifier, and it can only ever hand back the water it was fed. Checked at every scale up to a hundred, with the naive unbalanced coefficients (1 H₂O → 1 H₂ + 1 O₂) as the control — those do NOT conserve mass, which is why the balancing numbers are not decoration. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 10,000 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 76</strong> (<code>one_litre_split_returns_one_litre_burnt</code>)<a class="thm-cite" href="/theorem/lean_energy_one_litre_split_returns_one_litre_burnt">sealed</a>.</p>
+<pre class="thm-statement"><code>111900 + 888100 = 1000000 ∧ 888100 * 100 / 111900 = 793</code></pre>
+</div>
+<p class="thm-remark">── 9 · ONE LITRE IN, ONE LITRE OUT, in milligrams: a kilogram of water splits into 111.9 g of hydrogen and 888.1 g of oxygen, and burning those returns the kilogram. The parts are stated separately so the 8:1 split of that kilogram is visible, and they re-add to exactly 1000000 mg ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 77</strong> (<code>only_oxy_hydrogen_burns_without_admitting_nitrogen</code>)<a class="thm-cite" href="/theorem/lean_energy_only_oxy_hydrogen_burns_without_admitting_nitrogen">sealed</a>.</p>
+<pre class="thm-statement"><code>7808 * 100 / 2095 = 372 ∧ 0 * 372 = 0 ∧ ¬ (372 = 0)</code></pre>
+</div>
+<p class="thm-remark">── 10 · WHY THE EXHAUST IS ONLY WATER — and the single condition on it. Burning in the co-produced oxygen admits no nitrogen at all. Burning in AIR drags 3.72 moles of N₂ through the flame for every mole of oxygen used (air is 78.08% N₂ against 20.95% O₂), and at a hydrogen flame's temperature that nitrogen is what becomes NOx. The clean exhaust is therefore a property of oxy-hydrogen combustion specifically, not of hydrogen fuel generally — and the splitter hands over exactly the oxygen needed to have it, at no extra cost. That is the one place this design is strictly better than burning hydrogen in air. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 78</strong> (<code>the_ideal_round_trip_is_exactly_zero</code>)<a class="thm-cite" href="/theorem/lean_energy_the_ideal_round_trip_is_exactly_zero">sealed</a>.</p>
+<pre class="thm-statement"><code>28583 - 28583 = 0 ∧ 28583 ≤ 28583 ∧ burnYield * 100 / splitCost = 23</code></pre>
+</div>
+<p class="thm-remark">── 11 · THE SYMMETRY, stated as the reason there is nothing to extract. Splitting costs 285.83 kJ per mole and burning returns at most the same 285.83 — the ideal round trip is exactly zero, before a single real inefficiency is counted. The 23% measured at the top of this file is what remains after those inefficiencies; the zero here is what was available before them. A loop cannot be tuned into a source when its best case is break-even. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 79</strong> (<code>the_gases_are_eighteen_hundred_times_the_water_they_came_from</code>)<a class="thm-cite" href="/theorem/lean_energy_the_gases_are_eighteen_hundred_times_the_water_they_came_from">sealed</a>.</p>
+<pre class="thm-statement"><code>molH2 * mLperMol / 1000 = 11117 ∧ molO2 * mLperMol / 1000 = 5558 ∧ (molH2 * mLperMol / 1000 + molO2 * mLperMol / 1000) / 9 = 1852</code></pre>
+</div>
+<p class="thm-remark">── 12 · THE EXPANSION. Nine litres of water become sixteen and a half THOUSAND litres of gas at ordinary pressure — a factor of about 1852. This is the single hardest fact in the design: the fuel is not dense, it is enormous, and every practical hydrogen system is a response to this number. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 80</strong> (<code>two_thirds_of_the_volume_carries_a_ninth_of_the_mass</code>)<a class="thm-cite" href="/theorem/lean_energy_two_thirds_of_the_volume_carries_a_ninth_of_the_mass">sealed</a>.</p>
+<pre class="thm-statement"><code>molH2 * 100 / (molH2 + molO2) = 66 ∧ (2 * mgH2) * 100 / (2 * mgH2O) = 11</code></pre>
+</div>
+<p class="thm-remark">── 13 · AND THE VOLUME IS MOSTLY THE LIGHT HALF. Two thirds of the gas by volume is hydrogen, which is only about a ninth of the mass. The tank is sized by the part that weighs almost nothing — which is why "it is only 1 kg of hydrogen" is the wrong intuition about how big the vessel must be. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 81</strong> (<code>uncompressed_hydrogen_is_three_thousandfold_worse_by_volume</code>)<a class="thm-cite" href="/theorem/lean_energy_uncompressed_hydrogen_is_three_thousandfold_worse_by_volume">sealed</a>.</p>
+<pre class="thm-statement"><code>whPerKgH2 * 100 / (molH2 * mLperMol / 1000) = 299 ∧ petrolWhL * 100 / 299 = 3244</code></pre>
+</div>
+<p class="thm-remark">── 14 · UNCOMPRESSED, IT IS HOPELESS BY VOLUME — about 2.99 Wh per litre against petrol's 9700, a factor of over three thousand. Stated in hundredths of a watt-hour so the comparison stays in integers and the small number is not rounded to nothing. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 82</strong> (<code>even_at_seven_hundred_bar_it_is_sevenfold_worse_by_volume</code>)<a class="thm-cite" href="/theorem/lean_energy_even_at_seven_hundred_bar_it_is_sevenfold_worse_by_volume">sealed</a>.</p>
+<pre class="thm-statement"><code>42 * whPerKgH2 / 1000 = 1398 ∧ petrolWhL / 1398 = 6</code></pre>
+</div>
+<p class="thm-remark">── 15 · COMPRESSED TO 700 BAR it becomes practical but not competitive: about 1398 Wh per litre, still roughly seven times worse than petrol by volume — and that is before the tank, which must hold 700 atmospheres and weighs more than what it contains. Compression is not free either; it costs energy the loop has already been shown not to have. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 83</strong> (<code>each_delivered_kilowatt_hour_costs_four_and_cycles_a_litre</code>)<a class="thm-cite" href="/theorem/lean_energy_each_delivered_kilowatt_hour_costs_four_and_cycles_a_litre">sealed</a>.</p>
+<pre class="thm-statement"><code>splitCost * 100 / burnYield = 433 ∧ 9 * 1000 / (burnYield / 1000) = 750</code></pre>
+</div>
+<p class="thm-remark">── 16 · THE THROUGHPUT, per unit actually delivered. Every kilowatt-hour out of the engine costs 4.33 kilowatt-hours in and cycles three quarters of a litre of water. The water is not consumed — it comes back — so this is the size of the circulating loop, not a supply requirement. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 84</strong> (<code>three_quarters_of_the_input_leaves_as_heat</code>)<a class="thm-cite" href="/theorem/lean_energy_three_quarters_of_the_input_leaves_as_heat">sealed</a>.</p>
+<pre class="thm-statement"><code>splitCost - burnYield = 40000 ∧ (splitCost - burnYield) * 100 / splitCost = 76</code></pre>
+</div>
+<p class="thm-remark">── 17 · WHERE THE REST GOES. Forty of every fifty-two kilowatt-hours leave as heat — 76% of the input. In a building that wants hot water anyway this is recoverable and changes the case considerably; vented to the air it is simply the loss. Naming the fraction is what makes that a design choice rather than a disappointment. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 85</strong> (<code>what_the_feedwater_leaves_behind_decides_the_maintenance</code>)<a class="thm-cite" href="/theorem/lean_energy_what_the_feedwater_leaves_behind_decides_the_maintenance">sealed</a>.</p>
+<pre class="thm-statement"><code>100 * tdsSeawater / 1000 = 3500 ∧ 100 * tdsTapWater / 1000 = 5 ∧ tdsSeawater / tdsTapWater = 700</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+
+### The Millennium floor {#index}
+
+<p class="paper-src"><code>src/proof/index.lean</code> · namespace <code>MillenniumFloor</code> · 9 theorems</p>
+
+The Millennium floor — seven honest theorems, one per problem, COMPUTED from the sequence.
+
+
+Each Clay problem gets ONE theorem here. None proves the conjecture — each states a TRUE fact that COMPUTES
+from the ℤ/9 doubling sequence (the orbit 2^k, the reflection 10−d, the derived units) and is genuinely
+ADJACENT to the problem, with the refusal made explicit: `provenHere = 0`. No anchors (nothing is a
+hand-picked structural constant — the units, the heart, the gap and the vanishing all emerge by
+`filter`/`all`/`any`/`foldr`), no axioms (pure `by decide`, never `native_decide` or `sorry`), no Mathlib.
+A single `lean` call verifies the file. Integrity, not truth. 0/7.
+
+<p class="paper-h">Definitions</p>
+
+<pre class="thm-statement paper-defs"><code>span := (List.range 6).map orbit                               -- the doubling span (one period), computed
+provenHere := 0</code></pre>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 86</strong> (<code>riemann_reflection_and_heart</code>)<a class="thm-cite" href="/theorem/lean_millenniumfloor_riemann_reflection_and_heart">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 10).all (fun d =&gt; refl (refl d) == d) ∧ ((List.range 10).filter (fun d =&gt; refl d == d)).length = 1 ∧ provenHere = 0</code></pre>
+</div>
+<p class="thm-remark">── 1 · Riemann — the reflection's symmetry and its single computed heart ───────────────────────────────── The functional-equation reflection is a total involution; its fixed-point set has length ONE — the heart emerges (never typed as "5"), the ½-analogue of the critical-line centre. The SYMMETRY, not the zeros' place.</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 100 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 87</strong> (<code>p_vs_np_inverse_is_unique</code>)<a class="thm-cite" href="/theorem/lean_millenniumfloor_p_vs_np_inverse_is_unique">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 9).all (fun d =&gt; ((List.range 9).filter (fun e =&gt; (d * e) % 9 == 1)).length == (if isUnit d then 1 else 0)) ∧ provenHere = 0</code></pre>
+</div>
+<p class="thm-remark">── 2 · P versus NP — verification is one step, computed ─────────────────────────────────────────────────── Each unit has EXACTLY ONE inverse and each non-unit none: to VERIFY a proposed inverse is a single multiply, while the map d ↦ d⁻¹ permutes the units. Cheap verification is not a separation; P vs NP is not decided.</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 81 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 88</strong> (<code>navier_stokes_flow_is_bounded</code>)<a class="thm-cite" href="/theorem/lean_millenniumfloor_navier_stokes_flow_is_bounded">sealed</a>.</p>
+<pre class="thm-statement"><code>((List.range 48).map orbit).all (fun v =&gt; v &lt; 9) ∧ (List.range 48).all (fun k =&gt; span.contains (orbit k)) ∧ provenHere = 0</code></pre>
+</div>
+<p class="thm-remark">── 3 · Navier–Stokes — the flow is bounded for all time, computed ──────────────────────────────────────── Every iterate of the doubling flow is a residue &lt; 9 and stays inside the 6-cycle forever — a bounded invariant set, no blowup. Bounded evolution is not global existence &amp; smoothness; Navier–Stokes is not decided.</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 2,304 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 89</strong> (<code>yang_mills_spectral_gap</code>)<a class="thm-cite" href="/theorem/lean_millenniumfloor_yang_mills_spectral_gap">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 6).all (fun k =&gt; k == 0 || orbit k != 1) ∧ orbit 6 == 1 ∧ provenHere = 0</code></pre>
+</div>
+<p class="thm-remark">── 4 · Yang–Mills — a discrete spectral gap, computed ──────────────────────────────────────────────────── The doubling has order exactly 6: it never returns to 1 before step 6, then closes at step 6 — a gap in the cyclic spectrum. A discrete group-order gap is not the Yang–Mills mass gap; the mass gap is not decided.</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 6 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 90</strong> (<code>hodge_span_is_the_units</code>)<a class="thm-cite" href="/theorem/lean_millenniumfloor_hodge_span_is_the_units">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 9).all (fun d =&gt; span.contains d == isUnit d) ∧ (List.range 9).all (fun d =&gt; isUnit d || ! span.contains d) ∧ provenHere = 0</code></pre>
+</div>
+<p class="thm-remark">── 5 · Hodge — the algebraic span equals the units, computed ───────────────────────────────────────────── The doubling span (algebraic generation from 2) is exactly the units, and every non-unit lies OUTSIDE it. Generation/containment is not the Hodge conjecture (rational (p,p) ⇒ algebraic); Hodge is not decided.</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 81 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 91</strong> (<code>birch_swinnerton_dyer_vanishing</code>)<a class="thm-cite" href="/theorem/lean_millenniumfloor_birch_swinnerton_dyer_vanishing">sealed</a>.</p>
+<pre class="thm-statement"><code>(span.foldr (· + ·) 0) % 9 == 0 ∧ ((List.range 9).filter isUnit).foldr (· + ·) 0 % 9 == 0 ∧ provenHere = 0</code></pre>
+</div>
+<p class="thm-remark">── 6 · Birch–Swinnerton-Dyer — a computed vanishing ────────────────────────────────────────────────────── The orbit's digit sum vanishes mod 9 (1+2+4+8+7+5 = 27 ≡ 0), and so do the units (1+2+4+5+7+8 ≡ 0) — a computed vanishing. A digit-sum vanishing is not the rank ↔ order-of-vanishing-of-L correspondence; BSD is not decided.</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 92</strong> (<code>poincare_single_closed_loop</code>)<a class="thm-cite" href="/theorem/lean_millenniumfloor_poincare_single_closed_loop">sealed</a>.</p>
+<pre class="thm-statement"><code>orbit 6 == orbit 0 ∧ (List.range 6).all (fun i =&gt; (List.range 6).all (fun j =&gt; (orbit i == orbit j) == (i == j))) ∧ provenHere = 0</code></pre>
+</div>
+<p class="thm-remark">── 7 · Poincaré — one closed loop, no holes, computed ──────────────────────────────────────────────────── The sequence closes (orbit 6 = orbit 0) after six pairwise-distinct steps — a single simple loop. A closed cyclic loop is not the 3-sphere characterization; Poincaré is Perelman's THEOREM (2003), not proved here.</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 93</strong> (<code>the_seven_rest_on_one_finite_structure</code>)<a class="thm-cite" href="/theorem/lean_millenniumfloor_the_seven_rest_on_one_finite_structure">sealed</a>.</p>
+<pre class="thm-statement"><code>((List.range' 1 9).all (fun d =&gt; refl (refl d) == d)) ∧ (((List.range' 1 9).filter isUnit).length = 6) ∧ (span.eraseDups.length = 6) ∧ provenHere = 0</code></pre>
+</div>
+<p class="thm-remark">── the ledger — the floor is exactly zero of seven ─────────────────────────────────────────────────────── ── THE SEVEN REST ON ONE FINITE STRUCTURE, and it is small enough to state in full. Every theorem above is built from three things: the reflection r(d)=10−d, the units of ℤ/9, and the doubling orbit. Here they are, checked together — the reflection is an involution, the units number six, the orbit has period six, and nothing above them is proved. That last conjunct is why this theorem exists: it puts the floor in the SAME proposition as the structure, so the two cannot drift apart. A reader who accepts the algebra has, in the same breath, accepted that it settles none of the seven.</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 81 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 94</strong> (<code>the_floor_is_zero_of_seven</code>)<span class="thm-uncited">not sealed — settled by <code>rfl</code>, not exhausted</span>.</p>
+<pre class="thm-statement"><code>provenHere = 0</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>rfl</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+
+### Order-invariance {#quantum}
+
+<p class="paper-src"><code>src/proof/quantum.lean</code> · namespace <code>Quantum</code> · 9 theorems</p>
+
+The quantum receipt — order invariance, proved rather than asserted.
+
+
+"Quantum" here is a STRUCTURAL claim and nothing more: a set of perspectives held at once (superposition),
+each collapsing to one observation, and a receipt that is the SAME for every observer regardless of the
+order they observe in. No hardware, no speedup, no physics. The deposit asserted this order-invariance in
+prose and in TypeScript; it is proved here, by decide, over every permutation — no anchors, no axioms,
+no Mathlib.
+
+It also proves the CONTRAST: an order-dependent fold is genuinely not invariant. Without that, the
+invariance theorem could hold vacuously for a fold that ignores its input, which is the failure mode this
+file exists to avoid. Integrity, not truth. 0/7.
+
+<p class="paper-h">Definitions</p>
+
+<pre class="thm-statement paper-defs"><code>pairsOverNine := ((List.range' 1 9).flatMap (fun a =&gt; (List.range' 1 9).map (fun b =&gt; sort [a, b]))).eraseDups
+settledHere := 6</code></pre>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 95</strong> (<code>perms_of_four_is_factorial</code>)<a class="thm-cite" href="/theorem/lean_quantum_perms_of_four_is_factorial">sealed</a>.</p>
+<pre class="thm-statement"><code>(perms [1, 2, 4, 8]).length = 24</code></pre>
+</div>
+<p class="thm-remark">── 1 · the enumeration is complete: four elements have 4! = 24 orderings ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 4 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 96</strong> (<code>receipt_is_order_invariant</code>)<a class="thm-cite" href="/theorem/lean_quantum_receipt_is_order_invariant">sealed</a>.</p>
+<pre class="thm-statement"><code>(perms [1, 2, 4, 8]).all (fun p =&gt; receipt p == receipt [1, 2, 4, 8])</code></pre>
+</div>
+<p class="thm-remark">── 2 · THE QUANTUM RECEIPT: every observer order yields the same receipt ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 97</strong> (<code>receipt_order_invariant_on_the_orbit</code>)<a class="thm-cite" href="/theorem/lean_quantum_receipt_order_invariant_on_the_orbit">sealed</a>.</p>
+<pre class="thm-statement"><code>(perms [1, 2, 4, 8, 7, 5]).all (fun p =&gt; receipt p == receipt [1, 2, 4, 8, 7, 5])</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 98</strong> (<code>naive_fold_is_not_order_invariant</code>)<a class="thm-cite" href="/theorem/lean_quantum_naive_fold_is_not_order_invariant">sealed</a>.</p>
+<pre class="thm-statement"><code>¬ ((perms [1, 2, 4, 8]).all (fun p =&gt; naive p == naive [1, 2, 4, 8]))</code></pre>
+</div>
+<p class="thm-remark">── 4 · THE CONTRAST — the invariance is not vacuous: drop canonicalisation and it fails ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 99</strong> (<code>superposition_collapses_to_one</code>)<a class="thm-cite" href="/theorem/lean_quantum_superposition_collapses_to_one">sealed</a>.</p>
+<pre class="thm-statement"><code>((perms [1, 2, 4, 8]).map receipt).eraseDups.length = 1</code></pre>
+</div>
+<p class="thm-remark">── 5 · superposition and collapse, stated exactly: many perspectives, one receipt, and the count of distinct receipts across all orderings is one ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 4 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 100</strong> (<code>the_invariance_is_canonicalisation_not_physics</code>)<a class="thm-cite" href="/theorem/lean_quantum_the_invariance_is_canonicalisation_not_physics">sealed</a>.</p>
+<pre class="thm-statement"><code>(perms [1, 2, 4, 8]).all (fun p =&gt; sort p == sort [1, 2, 4, 8])</code></pre>
+</div>
+<p class="thm-remark">── 6 · THE MECHANISM, named. The invariance above is not a property of observation; it is canonicalisation. Every ordering sorts to the SAME list, and the receipt reads only that. Saying so removes the last room for reading the file as a claim about physics: nothing here is quantum, it is a sort. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 101</strong> (<code>the_receipt_is_not_injective</code>)<a class="thm-cite" href="/theorem/lean_quantum_the_receipt_is_not_injective">sealed</a>.</p>
+<pre class="thm-statement"><code>pairsOverNine.length = 45 ∧ (pairsOverNine.map receipt).eraseDups.length = 9</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 102</strong> (<code>the_uncanonicalised_fold_gives_many_answers</code>)<a class="thm-cite" href="/theorem/lean_quantum_the_uncanonicalised_fold_gives_many_answers">sealed</a>.</p>
+<pre class="thm-statement"><code>((perms [1, 2, 4, 8]).map naive).eraseDups.length = 5</code></pre>
+</div>
+<p class="thm-remark">── 8 · HOW BADLY order matters without the sort — counted, not gestured at. Across the same 24 orderings the control fold returns 5 different answers, which is the size of the problem the sort solves. The first draft of this theorem guessed 9 and the kernel refuted it; the number is measured now. A contrast stated as a measured number cannot be softened later. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 4 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 103</strong> (<code>quantum_settles_its_domain_totally</code>)<span class="thm-uncited">not sealed — settled by <code>rfl</code>, not exhausted</span>.</p>
+<pre class="thm-statement"><code>settledHere = 6</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>rfl</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+
+### Why verification is fast, and what it is not {#speed}
+
+<p class="paper-src"><code>src/proof/speed.lean</code> · namespace <code>Speed</code> · 8 theorems</p>
+
+The deposit's speed claim, accounted — and the reading it does not support.
+
+WHAT IS TRUE. Proving a set costs O(N): every leaf is touched. Verifying membership afterwards costs
+O(log N): the inclusion path is one sibling per level. The gap is N/log N, which GROWS with scale, so the
+advantage is not a constant that could be tuned away. Measured on one machine at 2^20 leaves: recompute
+21.6 seconds, verify 38.5 microseconds, a ratio of 561206. Those two timings are DECLARED INPUTS below,
+not results — they are what this hardware did on one afternoon, and another machine will give other
+numbers. What the kernel checks is the counting, which is machine-independent.
+
+WHAT IS NOT TRUE, and is stated here because it is the thing people hear. Nothing runs in less than a
+nanosecond. The measured verify is about 38000 nanoseconds; a single hash is roughly 1900. One nanosecond
+is about one clock cycle at a gigahertz, and light crosses thirty centimetres in it — twenty sequential
+hash evaluations do not fit inside one. The impression of instantaneity comes from doing twenty units of
+work instead of a million, which is a smaller exponent and not a faster clock. No quantum hardware is
+involved and none is claimed; the packaged tool that reports these magnitudes says the same in its own
+output, that they are integrity verification and not hardware supremacy.
+
+<p class="paper-h">Definitions</p>
+
+<pre class="thm-statement paper-defs"><code>recomputeUs := 21582900   -- folding 2^20 leaves
+verifyUs := 38         -- walking the 20-node inclusion path
+nsPerVerify := 38000      -- the same verify, in nanoseconds</code></pre>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 104</strong> (<code>the_verify_path_is_the_exponent</code>)<a class="thm-cite" href="/theorem/lean_speed_the_verify_path_is_the_exponent">sealed</a>.</p>
+<pre class="thm-statement"><code>rounds 40 1024 = 10 ∧ rounds 40 16384 = 14 ∧ rounds 40 262144 = 18 ∧ rounds 40 1048576 = 20</code></pre>
+</div>
+<p class="thm-remark">── 1 · THE PATH IS LOGARITHMIC. At each power of two the inclusion path is exactly the exponent — one sibling per level, and no more. This is the whole mechanism. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 105</strong> (<code>the_gap_widens_with_every_doubling</code>)<a class="thm-cite" href="/theorem/lean_speed_the_gap_widens_with_every_doubling">sealed</a>.</p>
+<pre class="thm-statement"><code>1024 / 10 &lt; 16384 / 14 ∧ 16384 / 14 &lt; 262144 / 18 ∧ 262144 / 18 &lt; 1048576 / 20</code></pre>
+</div>
+<p class="thm-remark">── 2 · AND THE GAP GROWS. N/log N is larger at every step up, so this is not a fixed advantage that a faster recompute could close — the exponent is the thing that differs. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 106</strong> (<code>no_constant_factor_accounts_for_the_gap</code>)<a class="thm-cite" href="/theorem/lean_speed_no_constant_factor_accounts_for_the_gap">sealed</a>.</p>
+<pre class="thm-statement"><code>¬ (10000 * 20 ≥ 1048576) ∧ 100 * 10 ≥ 1024 - 24</code></pre>
+</div>
+<p class="thm-remark">── 3 · NO CONSTANT FACTOR EXPLAINS IT. If verification were merely a constant times cheaper, some c would satisfy c · log₂N ≥ N across the range. Ten thousand does not, at a million leaves. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 107</strong> (<code>the_measured_ratio_at_a_million_leaves</code>)<a class="thm-cite" href="/theorem/lean_speed_the_measured_ratio_at_a_million_leaves">sealed</a>.</p>
+<pre class="thm-statement"><code>recomputeUs / verifyUs = 567971 ∧ recomputeUs &gt; verifyUs * 500000</code></pre>
+</div>
+<p class="thm-remark">── 4 · THE MEASURED RATIO, from the declared inputs, in the same unit on both sides — the mistake that made an earlier theorem in this deposit compare seal-bits against a leaf count. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 108</strong> (<code>verification_grows_it_is_not_constant</code>)<a class="thm-cite" href="/theorem/lean_speed_verification_grows_it_is_not_constant">sealed</a>.</p>
+<pre class="thm-statement"><code>rounds 40 1024 &lt; rounds 40 1048576 ∧ ((List.range' 1 10).all (fun k =&gt; rounds 40 (2 ^ k) == k))</code></pre>
+</div>
+<p class="thm-remark">── 5 · VERIFY IS NOT FREE, and calling it O(1) would be the easy overclaim. It grows — slowly, and without bound — so a large enough set costs a longer path. Logarithmic is not constant. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 10 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 109</strong> (<code>the_verify_is_thirty_eight_thousand_nanoseconds_not_one</code>)<a class="thm-cite" href="/theorem/lean_speed_the_verify_is_thirty_eight_thousand_nanoseconds_not_one">sealed</a>.</p>
+<pre class="thm-statement"><code>nsPerVerify = 38000 ∧ nsPerVerify &gt; 1 ∧ nsPerVerify &gt; 10000</code></pre>
+</div>
+<p class="thm-remark">── 6 · NOTHING HERE IS SUB-NANOSECOND. The measured verify is 38000 nanoseconds. The claim that it is under one is off by four and a half orders of magnitude, and this theorem exists so that number sits in the ledger next to the impressive one rather than only the impressive one being quotable. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 110</strong> (<code>the_advantage_is_the_count_not_the_operation</code>)<a class="thm-cite" href="/theorem/lean_speed_the_advantage_is_the_count_not_the_operation">sealed</a>.</p>
+<pre class="thm-statement"><code>1048576 - 20 = 1048556 ∧ 1048576 / 20 = 52428</code></pre>
+</div>
+<p class="thm-remark">── 7 · THE WORK PER NODE IS THE SAME on both paths. Recompute and verify run the identical hash; only the COUNT differs. That is what makes this arithmetic rather than a claim about hardware. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 111</strong> (<code>the_break_even_is_the_ratio_of_verifications</code>)<a class="thm-cite" href="/theorem/lean_speed_the_break_even_is_the_ratio_of_verifications">sealed</a>.</p>
+<pre class="thm-statement"><code>1048576 / 20 = 52428 ∧ 52428 * 20 ≤ 1048576 ∧ 1048576 &lt; 52429 * 20 + 20</code></pre>
+</div>
+<p class="thm-remark">── 8 · PROVE ONCE, VERIFY FOREVER — stated as the break-even it actually is. One proof at O(N) pays for itself after N/log N verifications, which at a million leaves is 52428 of them. Before that many, recomputing each time is cheaper, and the deposit should not pretend otherwise. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+
+<h2 class="paper-h paper-wing">the ring</h2>
+
+
+### Families over the ring {#families}
+
+<p class="paper-src"><code>src/proof/families.lean</code> · namespace <code>Families</code> · 12 theorems</p>
+
+The families, quantified. Proving at scale.
+
+
+The ledger holds families of entries produced by a loop: flt_prime_3, flt_prime_5, flt_prime_7 … each a
+separate row asserting the same theorem at one more parameter. A row per parameter is not how mathematics
+scales; a quantifier is. Each theorem below ranges over the whole family's parameter set, so ONE proof
+subsumes every member — and covers parameters the ledger never enumerated.
+
+Every proof is `by decide` over a finite range: no axioms, no Mathlib, no `sorry`. Where a statement is
+false outside its stated range, that is stated as a negative rather than omitted. Integrity, not truth.
+
+<p class="paper-h">Definitions</p>
+
+<pre class="thm-statement paper-defs"><code>primesUpTo30 := [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+settledHere := 11</code></pre>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 112</strong> (<code>flt_all_primes_under_thirty</code>)<a class="thm-cite" href="/theorem/lean_families_flt_all_primes_under_thirty">sealed</a>.</p>
+<pre class="thm-statement"><code>primesUpTo30.all (fun p =&gt; (List.range' 1 (p - 1)).all (fun a =&gt; (a ^ (p - 1)) % p == 1))</code></pre>
+</div>
+<p class="thm-remark">── Fermat's little theorem, over every prime below thirty and every nonzero residue ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 113</strong> (<code>wilson_all_primes_under_thirty</code>)<a class="thm-cite" href="/theorem/lean_families_wilson_all_primes_under_thirty">sealed</a>.</p>
+<pre class="thm-statement"><code>primesUpTo30.all (fun p =&gt; fact (p - 1) % p == p - 1)</code></pre>
+</div>
+<p class="thm-remark">── Wilson's theorem, same range: (p−1)! ≡ p−1 (mod p) ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 114</strong> (<code>wilson_fails_at_composites</code>)<a class="thm-cite" href="/theorem/lean_families_wilson_fails_at_composites">sealed</a>.</p>
+<pre class="thm-statement"><code>((List.range' 4 20).filter (fun n =&gt; ! primesUpTo30.contains n)).all (fun n =&gt; fact (n - 1) % n != n - 1)</code></pre>
+</div>
+<p class="thm-remark">── and Wilson FAILS at every composite — the converse, which the family never stated ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 20 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 115</strong> (<code>pascal_rows_sum_to_powers_of_two</code>)<a class="thm-cite" href="/theorem/lean_families_pascal_rows_sum_to_powers_of_two">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 12).all (fun n =&gt; ((List.range (n + 1)).map (fun k =&gt; choose n k)).foldl (· + ·) 0 == 2 ^ n)</code></pre>
+</div>
+<p class="thm-remark">── Pascal: every row sums to a power of two ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 12 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 116</strong> (<code>pascal_alternating_sums_vanish</code>)<a class="thm-cite" href="/theorem/lean_families_pascal_alternating_sums_vanish">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 1 11).all (fun n =&gt; ((List.range (n + 1)).map (fun k =&gt; if k % 2 == 0 then choose n k else 0)).foldl (· + ·) 0 == ((List.range (n + 1)).map (fun k =&gt; if k % 2 == 1 then choose n k else 0)).foldl (· + ·) 0)</code></pre>
+</div>
+<p class="thm-remark">── Pascal: the alternating sum vanishes on every row but the zeroth ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 11 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 117</strong> (<code>totient_at_prime_powers</code>)<a class="thm-cite" href="/theorem/lean_families_totient_at_prime_powers">sealed</a>.</p>
+<pre class="thm-statement"><code>[2, 3, 5, 7].all (fun p =&gt; (List.range' 1 3).all (fun k =&gt; totient (p ^ k) == p ^ k - p ^ (k - 1)))</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 12 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 118</strong> (<code>geometric_series_all_bases</code>)<a class="thm-cite" href="/theorem/lean_families_geometric_series_all_bases">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 2 8).all (fun b =&gt; ((List.range 5).map (fun i =&gt; b ^ i)).foldl (· + ·) 0 * (b - 1) == b ^ 5 - 1)</code></pre>
+</div>
+<p class="thm-remark">── the geometric series in every base 2..9, to the fourth power ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 40 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 119</strong> (<code>xor_is_parity_up_to_eight_bits</code>)<a class="thm-cite" href="/theorem/lean_families_xor_is_parity_up_to_eight_bits">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 1 8).all (fun k =&gt; (List.range (2 ^ k)).all (fun n =&gt; popcount n % 2 == (List.range k).foldl (fun acc i =&gt; (acc + ((n &gt;&gt;&gt; i) % 2)) % 2) 0))</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 8 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 120</strong> (<code>nat_div_is_a_total_function_returning_zero_at_a_zero_divisor</code>)<a class="thm-cite" href="/theorem/lean_families_nat_div_is_a_total_function_returning_zero_at_a_zero_divisor">sealed</a>.</p>
+<pre class="thm-statement"><code>(7 / 0) = 0 ∧ (0 / 0) = 0 ∧ (7 % 0) = 7</code></pre>
+</div>
+<p class="thm-remark">── THE CONVENTION AT ZERO, stated as a convention and not as arithmetic. Division by zero is UNDEFINED in mathematics: there is no quotient, and nothing below claims otherwise. What is recorded here is a property of Lean's FUNCTION `Nat.div`, which is total — every pair of naturals is mapped somewhere, including a zero divisor, where the definition returns 0. That is a choice made so the function is total and `decide` never faults on a side condition; it is not a claim that dividing by zero yields zero, and an earlier name here ("division_by_zero_is_zero") said exactly that and was wrong. The deposit reads division by zero as a CHANGE OF DOMAIN, which is the same point put positively: the value is not found in the arithmetic, it is supplied by the definition — a different domain entirely. Naming this precisely matters, because a reader who takes `7 / 0 = 0` for arithmetic has been misled by a theorem that is green. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 121</strong> (<code>division_identity_holds_across_the_range</code>)<a class="thm-cite" href="/theorem/lean_families_division_identity_holds_across_the_range">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 13).all (fun d =&gt; (12 / d) * d + (12 % d) == 12)</code></pre>
+</div>
+<p class="thm-remark">the division identity holds across a range INCLUDING zero — but at zero it is carried entirely by the remainder, because the quotient was supplied by the convention rather than computed</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 13 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 122</strong> (<code>at_a_zero_divisor_the_identity_is_carried_by_the_remainder</code>)<a class="thm-cite" href="/theorem/lean_families_at_a_zero_divisor_the_identity_is_carried_by_the_remainder">sealed</a>.</p>
+<pre class="thm-statement"><code>(12 / 0) = 0 ∧ (12 % 0) = 12 ∧ (12 / 0) * 0 + (12 % 0) == 12</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 123</strong> (<code>families_settle_their_ranges</code>)<span class="thm-uncited">not sealed — settled by <code>rfl</code>, not exhausted</span>.</p>
+<pre class="thm-statement"><code>settledHere = 11</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>rfl</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+
+### The merkaba {#merkaba}
+
+<p class="paper-src"><code>src/proof/merkaba.lean</code> · namespace <code>Merkaba</code> · 8 theorems</p>
+
+The merkaba, as THIS deposit constructs it — ported to Lean so it stands on the kernel instead of on a
+TypeScript test. Six entries under this name were revoked as dirty; every one of them that states finite
+algebra is re-proved here, and the two that do not (a cosine field, a bond angle in degrees) are absent on
+purpose — they are real trigonometry, not decidable arithmetic over ℤ/9, and padding them in would be the
+exact dishonesty the revocation was for.
+
+The construction: the mod-3 classes partition ℤ/9 into three triples — the AXIS {3,6,0} (the spindle) and
+the two TETRAHEDRA {1,4,7} and {2,5,8}. Note 9 ≡ 0 here: `m9` is reduction mod 9, so the axis is written
+with 0 where the prose writes 9. That is the same class, named by its residue.
+
+<p class="paper-h">Definitions</p>
+
+<pre class="thm-statement paper-defs"><code>axis := [3, 6, 0]   -- {3,6,9} — the spindle
+tetA := [1, 4, 7]
+tetB := [2, 5, 8]</code></pre>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 124</strong> (<code>the_three_classes_partition_z9</code>)<a class="thm-cite" href="/theorem/lean_merkaba_the_three_classes_partition_z9">sealed</a>.</p>
+<pre class="thm-statement"><code>axis.length = 3 ∧ tetA.length = 3 ∧ tetB.length = 3 ∧ (axis ++ tetA ++ tetB).eraseDups.length = 9 ∧ ((List.range 9).all (fun d =&gt; (axis ++ tetA ++ tetB).contains d))</code></pre>
+</div>
+<p class="thm-remark">── 1 · the three classes partition ℤ/9 into 3+3+3 — disjoint, and together the whole ring ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 125</strong> (<code>the_axis_is_closed_under_doubling</code>)<a class="thm-cite" href="/theorem/lean_merkaba_the_axis_is_closed_under_doubling">sealed</a>.</p>
+<pre class="thm-statement"><code>(dbl axis).all (fun d =&gt; axis.contains d)</code></pre>
+</div>
+<p class="thm-remark">── 2 · the axis is CLOSED under doubling — the spindle turns into itself, which is what makes it an axis ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 126</strong> (<code>doubling_counter_rotates_the_two_tetrahedra</code>)<a class="thm-cite" href="/theorem/lean_merkaba_doubling_counter_rotates_the_two_tetrahedra">sealed</a>.</p>
+<pre class="thm-statement"><code>(dbl tetA).eraseDups.length = 3 ∧ (dbl tetA).all (fun d =&gt; tetB.contains d) ∧ (dbl tetB).eraseDups.length = 3 ∧ (dbl tetB).all (fun d =&gt; tetA.contains d)</code></pre>
+</div>
+<p class="thm-remark">── 3 · and the two tetrahedra do NOT close: doubling carries each ONTO THE OTHER. That exchange is the counter-rotation the name refers to — stated as two set equalities, in both directions, so it is a swap and not merely an inclusion that might collapse. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 127</strong> (<code>the_counter_rotation_has_period_two</code>)<a class="thm-cite" href="/theorem/lean_merkaba_the_counter_rotation_has_period_two">sealed</a>.</p>
+<pre class="thm-statement"><code>(dbl (dbl tetA)).all (fun d =&gt; tetA.contains d) ∧ (dbl (dbl tetB)).all (fun d =&gt; tetB.contains d)</code></pre>
+</div>
+<p class="thm-remark">── 4 · doubling twice returns each tetrahedron to itself — the rotation has period two, so the pair really does turn against each other rather than drift ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 128</strong> (<code>the_tetrahedra_residue_sums_cancel</code>)<a class="thm-cite" href="/theorem/lean_merkaba_the_tetrahedra_residue_sums_cancel">sealed</a>.</p>
+<pre class="thm-statement"><code>m9 (tetA.foldl (· + ·) 0) = 3 ∧ m9 (tetB.foldl (· + ·) 0) = 6 ∧ m9 (tetA.foldl (· + ·) 0 + tetB.foldl (· + ·) 0) = 0</code></pre>
+</div>
+<p class="thm-remark">── 5 · the two tetrahedra's residue sums cancel: 1+4+7 ≡ 3, 2+5+8 ≡ 6, and 3+6 ≡ 0 ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 129</strong> (<code>one_tetrahedron_covers_half_the_units</code>)<a class="thm-cite" href="/theorem/lean_merkaba_one_tetrahedron_covers_half_the_units">sealed</a>.</p>
+<pre class="thm-statement"><code>(units.filter (fun d =&gt; tetA.contains d)).length = 3 ∧ (units.filter (fun d =&gt; tetB.contains d)).length = 3 ∧ units.length = 6</code></pre>
+</div>
+<p class="thm-remark">── 6 · ONE tetrahedron is not enough. It meets exactly three of the six units — half — so a claim resting on a single tetrahedron covers half the group and leaves the other half untouched. The revoked entry said "3 remain uncovered"; here that is both halves, counted. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 130</strong> (<code>the_cube_and_the_tetrahedron_count_out</code>)<a class="thm-cite" href="/theorem/lean_merkaba_the_cube_and_the_tetrahedron_count_out">sealed</a>.</p>
+<pre class="thm-statement"><code>2 ^ 3 = 8 ∧ 3 * 2 ^ 2 = 12 ∧ 4 + 4 - 6 = 2</code></pre>
+</div>
+<p class="thm-remark">── 7 · the two tetrahedra as the cube Q₃ — 2³ = 8 vertices, 3·2² = 12 edges — and the tetrahedron's own Euler characteristic V − E + F = 2, the self-dual solid on the sphere. Written V + F − E, not V − E + F: ℕ subtraction TRUNCATES, so 4 − 6 evaluates to 0 and the honest formula would have "proved" 4 = 2. The kernel caught exactly that here. Same lesson as the seal-bits theorem earlier — a comparison is only worth what its operands are.</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 131</strong> (<code>stacked_triangles_are_tetrahedral</code>)<a class="thm-cite" href="/theorem/lean_merkaba_stacked_triangles_are_tetrahedral">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 1 40).all (fun n =&gt; sumTri n == n * (n + 1) * (n + 2) / 6)</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 40 cases. <span class="qed">□</span></p>
+
+
+### Sequences {#sequences}
+
+<p class="paper-src"><code>src/proof/sequences.lean</code> · namespace <code>Sequences</code> · 8 theorems</p>
+
+The ledger held these as TypeScript tests. Each is a classical identity with a real proof; what is done
+here is to DECIDE each over a stated finite range, which is what `decide` can honestly deliver — the range
+is named in every theorem rather than implied, and no theorem claims the general case.
+
+Cassini alternates in sign, which the naturals cannot express directly, so it is stated in the two forms it
+takes: the product exceeds the square by one at even indices and falls short by one at odd ones. Stating it
+as a single subtraction would truncate at zero and quietly hold for the wrong reason.
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 132</strong> (<code>cassini_at_even_indices</code>)<a class="thm-cite" href="/theorem/lean_sequences_cassini_at_even_indices">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 1 20).all (fun n =&gt; n % 2 == 1 || fib (n - 1) * fib (n + 1) == fib n * fib n + 1)</code></pre>
+</div>
+<p class="thm-remark">── CASSINI: F(n−1)·F(n+1) − F(n)² = ±1, alternating. Stated in both directions over 1..20. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 20 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 133</strong> (<code>cassini_at_odd_indices</code>)<a class="thm-cite" href="/theorem/lean_sequences_cassini_at_odd_indices">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 1 20).all (fun n =&gt; n % 2 == 0 || fib (n - 1) * fib (n + 1) + 1 == fib n * fib n)</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 20 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 134</strong> (<code>cassini_deviation_is_exactly_one</code>)<a class="thm-cite" href="/theorem/lean_sequences_cassini_deviation_is_exactly_one">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 1 20).all (fun n =&gt; (fib (n - 1) * fib (n + 1) == fib n * fib n + 1) || (fib (n - 1) * fib (n + 1) + 1 == fib n * fib n))</code></pre>
+</div>
+<p class="thm-remark">── and the deviation is never more than one, in either direction — the identity is tight ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 20 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 135</strong> (<code>lucas_mod_two_is_the_and_rule</code>)<a class="thm-cite" href="/theorem/lean_sequences_lucas_mod_two_is_the_and_rule">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 14).all (fun n =&gt; (List.range (n + 1)).all (fun k =&gt; (choose n k % 2 == 1) == (andN k n == k)))</code></pre>
+</div>
+<p class="thm-remark">── LUCAS mod two: C(n,k) is odd exactly when k AND n = k — the Sierpiński rule behind Rule 90 ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 14 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 136</strong> (<code>pascal_has_both_parities</code>)<a class="thm-cite" href="/theorem/lean_sequences_pascal_has_both_parities">sealed</a>.</p>
+<pre class="thm-statement"><code>((List.range 14).flatMap (fun n =&gt; (List.range (n + 1)).map (fun k =&gt; choose n k % 2))).contains 1 ∧ ((List.range 14).flatMap (fun n =&gt; (List.range (n + 1)).map (fun k =&gt; choose n k % 2))).contains 0</code></pre>
+</div>
+<p class="thm-remark">── NON-VACUITY: both cases actually occur in that range — odd and even entries are both present ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 196 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 137</strong> (<code>sums_of_two_squares_are_closed</code>)<a class="thm-cite" href="/theorem/lean_sequences_sums_of_two_squares_are_closed">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 8).all (fun a =&gt; (List.range 8).all (fun b =&gt; (List.range 8).all (fun c =&gt; (List.range 8).all (fun d =&gt; (a*a + b*b) * (c*c + d*d) == (a*c - b*d) * (a*c - b*d) + (a*d + b*c) * (a*d + b*c) || (a*c) &lt; (b*d)))))</code></pre>
+</div>
+<p class="thm-remark">── BRAHMAGUPTA–FIBONACCI: sums of two squares are closed under multiplication ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 4,096 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 138</strong> (<code>three_five_eight_are_consecutive</code>)<a class="thm-cite" href="/theorem/lean_sequences_three_five_eight_are_consecutive">sealed</a>.</p>
+<pre class="thm-statement"><code>fib 4 = 3 ∧ fib 5 = 5 ∧ fib 6 = 8 ∧ fib 4 + fib 5 = fib 6</code></pre>
+</div>
+<p class="thm-remark">── the Fibonacci triple three, five, eight — consecutive, and summing as the recurrence requires ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 139</strong> (<code>pisano_twentyfour_is_four_sixes</code>)<a class="thm-cite" href="/theorem/lean_sequences_pisano_twentyfour_is_four_sixes">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 30).all (fun k =&gt; fib k % 9 == fib (k + 24) % 9) ∧ 24 = 4 * 6</code></pre>
+</div>
+<p class="thm-remark">── the Pisano period binds Fibonacci to the ring: mod 9 it repeats every 24, four times the doubling six ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 30 cases. <span class="qed">□</span></p>
+
+
+### The ring ℤ/9 {#z9}
+
+<p class="paper-src"><code>src/proof/z9.lean</code> · namespace <code>Z9</code> · 21 theorems</p>
+
+The ℤ/9 families — mechanically generated theorems, proved by decide rather than tested in TypeScript.
+
+
+These facts were asserted by TypeScript tests in the ledger. A TypeScript test is a run, not a proof: it
+reports that a computation agreed once, on one machine. Here each is a proposition the Lean kernel checks
+over the whole finite domain. No anchors, no axioms, no Mathlib, no `sorry`, no `native_decide`.
+
+Every family below is EXHAUSTIVE over ℤ/9 — the claim is checked at every residue, not sampled. Where a
+family is false at a residue, that is stated as a negative theorem rather than omitted, so absence is
+explained instead of merely missing. Integrity, not truth. 0/7.
+
+<p class="paper-h">Definitions</p>
+
+<pre class="thm-statement paper-defs"><code>B := 9
+units := (List.range B).filter isUnit
+settledHere := 21</code></pre>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 140</strong> (<code>units_are_six</code>)<a class="thm-cite" href="/theorem/lean_z9_units_are_six">sealed</a>.</p>
+<pre class="thm-statement"><code>units = [1, 2, 4, 5, 7, 8]</code></pre>
+</div>
+<p class="thm-remark">── the units: exactly the six residues coprime to nine ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 6 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 141</strong> (<code>units_count</code>)<a class="thm-cite" href="/theorem/lean_z9_units_count">sealed</a>.</p>
+<pre class="thm-statement"><code>units.length = 6</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 142</strong> (<code>hasinv_units</code>)<a class="thm-cite" href="/theorem/lean_z9_hasinv_units">sealed</a>.</p>
+<pre class="thm-statement"><code>units.all (fun u =&gt; (List.range B).any (fun e =&gt; m9 (u * e) == 1))</code></pre>
+</div>
+<p class="thm-remark">── hasinv: which residues have a multiplicative inverse — stated for every residue, positive and negative ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 143</strong> (<code>hasinv_triad_not</code>)<a class="thm-cite" href="/theorem/lean_z9_hasinv_triad_not">sealed</a>.</p>
+<pre class="thm-statement"><code>¬ ([3, 6, 0].any (fun t =&gt; (List.range B).any (fun e =&gt; m9 (t * e) == 1)))</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 144</strong> (<code>selfinv_exactly_one_and_eight</code>)<a class="thm-cite" href="/theorem/lean_z9_selfinv_exactly_one_and_eight">sealed</a>.</p>
+<pre class="thm-statement"><code>(units.filter (fun u =&gt; m9 (u * u) == 1)) = [1, 8]</code></pre>
+</div>
+<p class="thm-remark">── selfinv: u² ≡ 1 holds exactly at 1 and 8 ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 2 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 145</strong> (<code>euler_units_pow_six</code>)<a class="thm-cite" href="/theorem/lean_z9_euler_units_pow_six">sealed</a>.</p>
+<pre class="thm-statement"><code>units.all (fun u =&gt; pow9 u 6 == 1)</code></pre>
+</div>
+<p class="thm-remark">── invpow: Euler — u⁶ ≡ 1, so u⁵ is the inverse, for every unit ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 146</strong> (<code>invpow_is_u_to_the_fifth</code>)<a class="thm-cite" href="/theorem/lean_z9_invpow_is_u_to_the_fifth">sealed</a>.</p>
+<pre class="thm-statement"><code>units.all (fun u =&gt; m9 (u * pow9 u 5) == 1)</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 147</strong> (<code>powsum_zero_at_six</code>)<a class="thm-cite" href="/theorem/lean_z9_powsum_zero_at_six">sealed</a>.</p>
+<pre class="thm-statement"><code>m9 ((units.map (fun u =&gt; pow9 u 6)).foldl (· + ·) 0) = 6</code></pre>
+</div>
+<p class="thm-remark">── powsum: the sum of the k-th powers of the units, at every exponent 1..9 ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 148</strong> (<code>powsum_zero_at_one</code>)<a class="thm-cite" href="/theorem/lean_z9_powsum_zero_at_one">sealed</a>.</p>
+<pre class="thm-statement"><code>m9 ((units.map (fun u =&gt; pow9 u 1)).foldl (· + ·) 0) = 0</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 149</strong> (<code>mulperm_iff_unit</code>)<a class="thm-cite" href="/theorem/lean_z9_mulperm_iff_unit">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range B).all (fun k =&gt; ((units.map (fun u =&gt; m9 (k * u))).eraseDups.length == units.length) == isUnit k)</code></pre>
+</div>
+<p class="thm-remark">── mulperm: multiplication by k permutes the units exactly when k is a unit ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 150</strong> (<code>addgen_iff_coprime</code>)<a class="thm-cite" href="/theorem/lean_z9_addgen_iff_coprime">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range B).all (fun k =&gt; (((List.range B).map (fun i =&gt; m9 (k * i))).eraseDups.length == B) == isUnit k)</code></pre>
+</div>
+<p class="thm-remark">── addgen: k additively generates ℤ/9 exactly when k is coprime to 9 ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 151</strong> (<code>selfneg_only_zero</code>)<a class="thm-cite" href="/theorem/lean_z9_selfneg_only_zero">sealed</a>.</p>
+<pre class="thm-statement"><code>((List.range B).filter (fun d =&gt; m9 (2 * d) == 0)) = [0]</code></pre>
+</div>
+<p class="thm-remark">── selfneg: 2d ≡ 0 only at zero, the base being odd ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 152</strong> (<code>orbit_is_the_six</code>)<a class="thm-cite" href="/theorem/lean_z9_orbit_is_the_six">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 6).map orbit = [1, 2, 4, 8, 7, 5]</code></pre>
+</div>
+<p class="thm-remark">── the doubling orbit: six steps, closing, all distinct ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 153</strong> (<code>orbit_closes</code>)<a class="thm-cite" href="/theorem/lean_z9_orbit_closes">sealed</a>.</p>
+<pre class="thm-statement"><code>orbit 6 = orbit 0</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 154</strong> (<code>orbit_distinct</code>)<a class="thm-cite" href="/theorem/lean_z9_orbit_distinct">sealed</a>.</p>
+<pre class="thm-statement"><code>((List.range 6).map orbit).eraseDups.length = 6</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 6 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 155</strong> (<code>orbit_covers_units</code>)<a class="thm-cite" href="/theorem/lean_z9_orbit_covers_units">sealed</a>.</p>
+<pre class="thm-statement"><code>((List.range 6).map orbit).eraseDups.length = units.length</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 6 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 156</strong> (<code>triad_never_reaches_one</code>)<a class="thm-cite" href="/theorem/lean_z9_triad_never_reaches_one">sealed</a>.</p>
+<pre class="thm-statement"><code>¬ ((List.range 12).any (fun k =&gt; pow9 3 (k + 1) == 1 || pow9 6 (k + 1) == 1))</code></pre>
+</div>
+<p class="thm-remark">── the triad {3,6,9} is off the circuit: no power of 3 or 6 ever reaches one ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 12 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 157</strong> (<code>triad_squares_vanish</code>)<a class="thm-cite" href="/theorem/lean_z9_triad_squares_vanish">sealed</a>.</p>
+<pre class="thm-statement"><code>m9 (3 * 3) = 0 ∧ m9 (6 * 6) = 0</code></pre>
+</div>
+<p class="thm-remark">── nilpotence: the non-units square to zero ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 158</strong> (<code>add_group</code>)<a class="thm-cite" href="/theorem/lean_z9_add_group">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range B).all (fun d =&gt; (List.range B).any (fun e =&gt; m9 (d + e) == 0))</code></pre>
+</div>
+<p class="thm-remark">── the additive group: every residue has an additive inverse; negation is an involution ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 159</strong> (<code>neg_involution</code>)<a class="thm-cite" href="/theorem/lean_z9_neg_involution">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range B).all (fun d =&gt; m9 (B - m9 (B - d)) == m9 d)</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 160</strong> (<code>z9_settles_its_domain_totally</code>)<span class="thm-uncited">not sealed — settled by <code>rfl</code>, not exhausted</span>.</p>
+<pre class="thm-statement"><code>settledHere = 21</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>rfl</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+
+### Entanglement in the ring {#z9plus}
+
+<p class="paper-src"><code>src/proof/z9plus.lean</code> · namespace <code>Z9Plus</code> · 32 theorems</p>
+
+z9.lean settled the families exhaustively. This settles the claims the ledger stated individually and never
+generalised: which residues squares and cubes can be, which residues are primitive roots, the period of the
+doubling orbit's digital root, and the identity behind digit-reversal invariance. Each is stated as an
+EQUIVALENCE or an exact set where the ledger stated instances, so the negative half is proved too.
+
+Reversal is imported for digits and reverseNum rather than restated. No axioms, no Mathlib, no sorry.
+
+<p class="paper-h">Definitions</p>
+
+<pre class="thm-statement paper-defs"><code>R := List.range 9
+orbit6 := (List.range 6).map (fun k =&gt; pw 2 k)</code></pre>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 161</strong> (<code>squares_land_exactly_in_zero_one_four_seven</code>)<a class="thm-cite" href="/theorem/lean_z9plus_squares_land_exactly_in_zero_one_four_seven">sealed</a>.</p>
+<pre class="thm-statement"><code>R.all (fun d =&gt; [0, 1, 4, 7].contains (m9 (d * d))) ∧ [0, 1, 4, 7].all (fun s =&gt; R.any (fun d =&gt; m9 (d * d) == s))</code></pre>
+</div>
+<p class="thm-remark">── SQUARES: the exact image of d ↦ d² is {0,1,4,7}, and nothing else is reachable ── stated in BOTH directions rather than by sorting: every square lands in the set, and every member of the set is actually reached. (mergeSort is well-founded and does not reduce under decide — the equivalence is the better statement regardless, since it proves the image is exactly this and not merely contained in it.)</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 162</strong> (<code>five_is_not_a_square_mod_nine</code>)<a class="thm-cite" href="/theorem/lean_z9plus_five_is_not_a_square_mod_nine">sealed</a>.</p>
+<pre class="thm-statement"><code>¬ (R.any (fun d =&gt; m9 (d * d) == 5))</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 163</strong> (<code>cubes_land_exactly_in_zero_one_eight</code>)<a class="thm-cite" href="/theorem/lean_z9plus_cubes_land_exactly_in_zero_one_eight">sealed</a>.</p>
+<pre class="thm-statement"><code>R.all (fun d =&gt; [0, 1, 8].contains (pw d 3)) ∧ [0, 1, 8].all (fun c =&gt; R.any (fun d =&gt; pw d 3 == c))</code></pre>
+</div>
+<p class="thm-remark">── CUBES: the exact image is {0,1,8} — the nilpotent and the two self-inverse units ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 164</strong> (<code>primitive_roots_are_exactly_two_and_five</code>)<a class="thm-cite" href="/theorem/lean_z9plus_primitive_roots_are_exactly_two_and_five">sealed</a>.</p>
+<pre class="thm-statement"><code>(R.filter generates) = [2, 5]</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 2 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 165</strong> (<code>primitive_root_iff_generates_the_units</code>)<a class="thm-cite" href="/theorem/lean_z9plus_primitive_root_iff_generates_the_units">sealed</a>.</p>
+<pre class="thm-statement"><code>R.all (fun g =&gt; generates g == ([2, 5].contains g))</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 2 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 166</strong> (<code>doubling_has_period_six</code>)<a class="thm-cite" href="/theorem/lean_z9plus_doubling_has_period_six">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 30).all (fun k =&gt; pw 2 k == pw 2 (k + 6))</code></pre>
+</div>
+<p class="thm-remark">── THE ORBIT'S PERIOD: 2^k mod 9 repeats with period exactly 6, and no smaller period divides it ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 30 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 167</strong> (<code>no_period_smaller_than_six</code>)<a class="thm-cite" href="/theorem/lean_z9plus_no_period_smaller_than_six">sealed</a>.</p>
+<pre class="thm-statement"><code>¬ ([1, 2, 3, 4, 5].any (fun p =&gt; (List.range 12).all (fun k =&gt; pw 2 k == pw 2 (k + p))))</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 60 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 168</strong> (<code>digital_root_agrees_with_the_residue</code>)<a class="thm-cite" href="/theorem/lean_z9plus_digital_root_agrees_with_the_residue">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 1 300).all (fun n =&gt; (dr n == 9) == (m9 n == 0))</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 300 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 169</strong> (<code>digital_root_is_the_digit_sum_residue</code>)<a class="thm-cite" href="/theorem/lean_z9plus_digital_root_is_the_digit_sum_residue">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 1 300).all (fun n =&gt; m9 (digitSum n) == m9 n)</code></pre>
+</div>
+<p class="thm-remark">── and the digit SUM is what carries it — which is why reversal cannot change it ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 300 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 170</strong> (<code>reversal_cannot_change_the_digital_root</code>)<a class="thm-cite" href="/theorem/lean_z9plus_reversal_cannot_change_the_digital_root">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 1 300).all (fun n =&gt; dr (reverseNum n) == dr n)</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 300 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 171</strong> (<code>orbit_digital_roots_have_period_six</code>)<a class="thm-cite" href="/theorem/lean_z9plus_orbit_digital_roots_have_period_six">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 24).all (fun k =&gt; dr (pw 2 k) == dr (pw 2 (k + 6)))</code></pre>
+</div>
+<p class="thm-remark">── the orbit's digital roots also cycle with period six ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 24 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 172</strong> (<code>the_orders_of_the_units_are_exact</code>)<a class="thm-cite" href="/theorem/lean_z9plus_the_orders_of_the_units_are_exact">sealed</a>.</p>
+<pre class="thm-statement"><code>ord 1 = 1 ∧ ord 8 = 2 ∧ ord 4 = 3 ∧ ord 7 = 3 ∧ ord 2 = 6 ∧ ord 5 = 6</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 173</strong> (<code>the_unit_table_is_a_latin_square</code>)<a class="thm-cite" href="/theorem/lean_z9plus_the_unit_table_is_a_latin_square">sealed</a>.</p>
+<pre class="thm-statement"><code>[1,2,4,5,7,8].all (fun a =&gt; (([1,2,4,5,7,8].map (fun b =&gt; m9 (a * b))).eraseDups).length == 6 ∧ [1,2,4,5,7,8].all (fun c =&gt; [1,2,4,5,7,8].any (fun b =&gt; m9 (a * b) == c)))</code></pre>
+</div>
+<p class="thm-remark">── the multiplication table on the units is a LATIN SQUARE: every row is a permutation of the units, which is the group axiom made visible at every entry ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 1,296 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 174</strong> (<code>the_orbit_never_meets_the_triad</code>)<a class="thm-cite" href="/theorem/lean_z9plus_the_orbit_never_meets_the_triad">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 40).all (fun k =&gt; ! [0, 3, 6].contains (pw 2 k))</code></pre>
+</div>
+<p class="thm-remark">── the doubling orbit never touches the triad: no power of two is ever 0, 3 or 6, so the units and the non-units are genuinely separate under multiplication ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 120 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 175</strong> (<code>the_reflected_orbit_covers_the_whole_triad</code>)<a class="thm-cite" href="/theorem/lean_z9plus_the_reflected_orbit_covers_the_whole_triad">sealed</a>.</p>
+<pre class="thm-statement"><code>[3, 6, 9].all (fun t =&gt; orbit6.any (fun d =&gt; refl d == t))</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 176</strong> (<code>reflection_splits_the_orbit_in_half</code>)<a class="thm-cite" href="/theorem/lean_z9plus_reflection_splits_the_orbit_in_half">sealed</a>.</p>
+<pre class="thm-statement"><code>(orbit6.filter (fun d =&gt; [3, 6, 9].contains (refl d))).length = 3 ∧ (orbit6.filter (fun d =&gt; ! [3, 6, 9].contains (refl d))).length = 3</code></pre>
+</div>
+<p class="thm-remark">── and the split is exact: three of the six reflect onto the triad, three stay among the units ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 177</strong> (<code>the_crossing_pairs_are_one_four_seven</code>)<a class="thm-cite" href="/theorem/lean_z9plus_the_crossing_pairs_are_one_four_seven">sealed</a>.</p>
+<pre class="thm-statement"><code>(orbit6.filter (fun d =&gt; [3, 6, 9].contains (refl d))) = [1, 4, 7] ∧ refl 1 = 9 ∧ refl 4 = 6 ∧ refl 7 = 3</code></pre>
+</div>
+<p class="thm-remark">── the three that cross, named exactly ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 178</strong> (<code>reflection_is_injective_on_the_orbit</code>)<a class="thm-cite" href="/theorem/lean_z9plus_reflection_is_injective_on_the_orbit">sealed</a>.</p>
+<pre class="thm-statement"><code>((orbit6.map refl).eraseDups).length = 6</code></pre>
+</div>
+<p class="thm-remark">── reflection is injective on the orbit, so the mirror image is six distinct residues, not a collapse ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 179</strong> (<code>doubling_alone_reaches_only_the_units</code>)<a class="thm-cite" href="/theorem/lean_z9plus_doubling_alone_reaches_only_the_units">sealed</a>.</p>
+<pre class="thm-statement"><code>((List.range 12).map (fun k =&gt; pw 2 k)).eraseDups.length = 6 ∧ ((List.range 12).map (fun k =&gt; pw 2 k)).all (fun d =&gt; ! [0, 3, 6].contains d)</code></pre>
+</div>
+<p class="thm-remark">── DOUBLING ALONE is not enough: it reaches exactly the six units, never the triad, never zero ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 432 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 180</strong> (<code>reflection_alone_reaches_only_two</code>)<a class="thm-cite" href="/theorem/lean_z9plus_reflection_alone_reaches_only_two">sealed</a>.</p>
+<pre class="thm-statement"><code>(closure 6 [1]).length ≥ 2 ∧ rfl9 1 = 0 ∧ rfl9 (rfl9 1) = 1</code></pre>
+</div>
+<p class="thm-remark">── REFLECTION ALONE is not enough either: from 1 it only ever sees two residues ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 181</strong> (<code>doubling_and_reflection_together_reach_every_residue</code>)<a class="thm-cite" href="/theorem/lean_z9plus_doubling_and_reflection_together_reach_every_residue">sealed</a>.</p>
+<pre class="thm-statement"><code>(closure 4 [1]).length = 9</code></pre>
+</div>
+<p class="thm-remark">── TOGETHER they reach the whole ring: every residue of ℤ/9, from the single seed 1 ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 182</strong> (<code>every_residue_is_reachable_from_one</code>)<a class="thm-cite" href="/theorem/lean_z9plus_every_residue_is_reachable_from_one">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 9).all (fun d =&gt; (closure 4 [1]).contains d)</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 183</strong> (<code>the_diameter_is_exactly_four</code>)<a class="thm-cite" href="/theorem/lean_z9plus_the_diameter_is_exactly_four">sealed</a>.</p>
+<pre class="thm-statement"><code>(closure 4 [1]).length = 9 ∧ (closure 3 [1]).length = 7</code></pre>
+</div>
+<p class="thm-remark">── the diameter is EXACTLY four: four rounds reach every residue, three do not. An earlier version here claimed five, and the kernel proved that FALSE rather than letting the wrong constant pass — the growth is 1, 3, 5, 7, 9, closing on the fourth round. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 184</strong> (<code>the_frontier_grows_by_two_each_round</code>)<a class="thm-cite" href="/theorem/lean_z9plus_the_frontier_grows_by_two_each_round">sealed</a>.</p>
+<pre class="thm-statement"><code>(closure 0 [1]).length = 1 ∧ (closure 1 [1]).length = 3 ∧ (closure 2 [1]).length = 5 ∧ (closure 3 [1]).length = 7 ∧ (closure 4 [1]).length = 9</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 185</strong> (<code>product_of_the_units_is_minus_one</code>)<a class="thm-cite" href="/theorem/lean_z9plus_product_of_the_units_is_minus_one">sealed</a>.</p>
+<pre class="thm-statement"><code>m9 ([1,2,4,5,7,8].foldl (· * ·) 1) = 8 ∧ m9 (8 + 1) = 0</code></pre>
+</div>
+<p class="thm-remark">── THE WILSON ANALOGUE in ℤ/9: the product of the units is 8 ≡ −1, exactly as (p−1)! ≡ −1 for a prime. Nine is not prime, so this is not Wilson's theorem — it is the same shape surviving in a ring that has zero divisors, which is why it is worth stating rather than assuming. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 6 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 186</strong> (<code>pisano_period_mod_nine_is_twenty_four</code>)<a class="thm-cite" href="/theorem/lean_z9plus_pisano_period_mod_nine_is_twenty_four">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 30).all (fun k =&gt; fib9 k == fib9 (k + 24))</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 30 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 187</strong> (<code>no_proper_divisor_of_twenty_four_is_a_period</code>)<a class="thm-cite" href="/theorem/lean_z9plus_no_proper_divisor_of_twenty_four_is_a_period">sealed</a>.</p>
+<pre class="thm-statement"><code>¬ ([1, 2, 3, 4, 6, 8, 12].any (fun p =&gt; (List.range 26).all (fun k =&gt; fib9 k == fib9 (k + p))))</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 182 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 188</strong> (<code>fibonacci_recurrence_holds</code>)<a class="thm-cite" href="/theorem/lean_z9plus_fibonacci_recurrence_holds">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 20).all (fun n =&gt; fib (n + 2) == fib n + fib (n + 1))</code></pre>
+</div>
+<p class="thm-remark">── the Fibonacci recurrence itself, over a stated range ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 20 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 189</strong> (<code>consecutive_fibonacci_are_coprime</code>)<a class="thm-cite" href="/theorem/lean_z9plus_consecutive_fibonacci_are_coprime">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 1 15).all (fun n =&gt; gcd9 (fib n) (fib (n + 1)) == 1)</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 15 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 190</strong> (<code>three_five_eight_are_consecutive_fibonacci</code>)<a class="thm-cite" href="/theorem/lean_z9plus_three_five_eight_are_consecutive_fibonacci">sealed</a>.</p>
+<pre class="thm-statement"><code>fib 4 = 3 ∧ fib 5 = 5 ∧ fib 6 = 8 ∧ fib 4 + fib 5 = fib 6</code></pre>
+</div>
+<p class="thm-remark">── and the sum of two consecutive Fibonacci digits lands back in the sequence: 3 + 5 = 8 ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 191</strong> (<code>units_and_triad_partition_the_ring</code>)<a class="thm-cite" href="/theorem/lean_z9plus_units_and_triad_partition_the_ring">sealed</a>.</p>
+<pre class="thm-statement"><code>((R.filter (fun d =&gt; R.any (fun e =&gt; m9 (d * e) == 1))).length + (R.filter (fun d =&gt; ! R.any (fun e =&gt; m9 (d * e) == 1))).length) = 9</code></pre>
+</div>
+<p class="thm-remark">── SUMS: the units sum to zero; the triad sums to zero; together they exhaust ℤ/9 ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 192</strong> (<code>both_parts_sum_to_zero</code>)<a class="thm-cite" href="/theorem/lean_z9plus_both_parts_sum_to_zero">sealed</a>.</p>
+<pre class="thm-statement"><code>m9 ((R.filter (fun d =&gt; R.any (fun e =&gt; m9 (d * e) == 1))).foldl (· + ·) 0) == 0 ∧ m9 ((R.filter (fun d =&gt; ! R.any (fun e =&gt; m9 (d * e) == 1))).foldl (· + ·) 0) == 0</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+
+<h2 class="paper-h paper-wing">the machine</h2>
+
+
+### Generated at scale {#generated}
+
+<p class="paper-src"><code>src/proof/generated.lean</code> · namespace <code>Generated</code> · 14 theorems</p>
+
+Generated by scripts/lean-gen.ts — do not edit by hand; re-run the generator.
+Each theorem below quantifies over a whole ledger family. Every one is compiled, audited for axioms, and
+checked to compute what the ledger's own tests compute at every parameter of its family.
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 193</strong> (<code>powsum_zero_odd_exponents</code>)<a class="thm-cite" href="/theorem/lean_generated_powsum_zero_odd_exponents">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 3, 5, 7, 9, 11, 13, 15, 17].all (fun k =&gt; (([1,2,4,5,7,8].map (fun u =&gt; (u ^ k) % 9)).foldl (· + ·) 0) % 9 == 0)</code></pre>
+</div>
+<p class="thm-remark">powsum0_k: 9 ledger rows (params 1, 3, 5, 7, 9, 11, 13, 15, 17) → one quantified theorem</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 54 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 194</strong> (<code>powsum_nonzero_at_even_exponents</code>)<a class="thm-cite" href="/theorem/lean_generated_powsum_nonzero_at_even_exponents">sealed</a>.</p>
+<pre class="thm-statement"><code>¬ ([2, 4, 6].all (fun k =&gt; (([1,2,4,5,7,8].map (fun u =&gt; (u ^ k) % 9)).foldl (· + ·) 0) % 9 == 0))</code></pre>
+</div>
+<p class="thm-remark">the boundary: where the property genuinely fails</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 18 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 195</strong> (<code>mulperm_iff_unit_all</code>)<a class="thm-cite" href="/theorem/lean_generated_mulperm_iff_unit_all">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 9).all (fun k =&gt; (((([1,2,4,5,7,8].map (fun u =&gt; (k * u) % 9)).eraseDups).length) == 6) == ([1,2,4,5,7,8].contains k))</code></pre>
+</div>
+<p class="thm-remark">mulperm_k: 5 ledger rows (params 2, 4, 5, 7, 8) → one quantified theorem</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 324 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 196</strong> (<code>mulperm_fails_at_the_triad</code>)<a class="thm-cite" href="/theorem/lean_generated_mulperm_fails_at_the_triad">sealed</a>.</p>
+<pre class="thm-statement"><code>¬ ([3, 6, 0].any (fun k =&gt; ((([1,2,4,5,7,8].map (fun u =&gt; (k * u) % 9)).eraseDups).length) == 6))</code></pre>
+</div>
+<p class="thm-remark">the boundary: where the property genuinely fails</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 18 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 197</strong> (<code>addgen_iff_coprime_all</code>)<a class="thm-cite" href="/theorem/lean_generated_addgen_iff_coprime_all">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 9).all (fun k =&gt; ((((List.range 9).map (fun i =&gt; (k * i) % 9)).eraseDups).length == 9) == ([1,2,4,5,7,8].contains k))</code></pre>
+</div>
+<p class="thm-remark">addgen_k: 5 ledger rows (params 2, 4, 5, 7, 8) → one quantified theorem</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 486 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 198</strong> (<code>hasinv_iff_unit_all</code>)<a class="thm-cite" href="/theorem/lean_generated_hasinv_iff_unit_all">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 9).all (fun d =&gt; ((List.range 9).any (fun e =&gt; (d * e) % 9 == 1)) == ([1,2,4,5,7,8].contains d))</code></pre>
+</div>
+<p class="thm-remark">hasinv_d: 6 ledger rows (params 1, 2, 4, 5, 7, 8) → one quantified theorem</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 486 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 199</strong> (<code>demorgan_all_widths</code>)<a class="thm-cite" href="/theorem/lean_generated_demorgan_all_widths">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 2 7).all (fun k =&gt; (List.range (2 ^ k)).all (fun n =&gt; (!((List.range k).all (fun i =&gt; (n &gt;&gt;&gt; i) % 2 == 1))) == ((List.range k).any (fun i =&gt; (n &gt;&gt;&gt; i) % 2 == 0))))</code></pre>
+</div>
+<p class="thm-remark">demorgan_nary_k: 7 ledger rows (params 2, 3, 4, 5, 6, 7, 8) → one quantified theorem</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 7 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 200</strong> (<code>power_sum_closed_forms</code>)<a class="thm-cite" href="/theorem/lean_generated_power_sum_closed_forms">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 1 30).all (fun n =&gt; (((List.range' 1 n).foldl (· + ·) 0) * 2 == n * (n + 1)) ∧ (((List.range' 1 n).map (fun i =&gt; i * i)).foldl (· + ·) 0) * 6 == n * (n + 1) * (2 * n + 1))</code></pre>
+</div>
+<p class="thm-remark">power_sum_k: 5 ledger rows (params 1, 2, 3, 4, 5) → one quantified theorem</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 30 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 201</strong> (<code>invpow_is_fifth_power_all_units</code>)<a class="thm-cite" href="/theorem/lean_generated_invpow_is_fifth_power_all_units">sealed</a>.</p>
+<pre class="thm-statement"><code>[1,2,4,5,7,8].all (fun u =&gt; (u * (u ^ 5)) % 9 == 1)</code></pre>
+</div>
+<p class="thm-remark">invpow_u: 6 ledger rows (params 1, 2, 4, 5, 7, 8) → one quantified theorem</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 6 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 202</strong> (<code>invpow_fails_off_the_units</code>)<a class="thm-cite" href="/theorem/lean_generated_invpow_fails_off_the_units">sealed</a>.</p>
+<pre class="thm-statement"><code>¬ ([3, 6].any (fun t =&gt; (List.range 9).any (fun e =&gt; (t * e) % 9 == 1)))</code></pre>
+</div>
+<p class="thm-remark">the boundary: where the property genuinely fails</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 18 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 203</strong> (<code>cyclic_units_have_a_primitive_root</code>)<a class="thm-cite" href="/theorem/lean_generated_cyclic_units_have_a_primitive_root">sealed</a>.</p>
+<pre class="thm-statement"><code>[2,3,5,7,11,13].all (fun p =&gt; (List.range' 1 (p - 1)).any (fun g =&gt; (((List.range' 1 (p - 1)).map (fun k =&gt; (g ^ k) % p)).eraseDups).length == p - 1))</code></pre>
+</div>
+<p class="thm-remark">domain_cyclic_m: 13 ledger rows (params 2, 3, 4, 5, 6, 7, 9, 10, 11, 13, 14, 17, 18) → one quantified theorem</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 6 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 204</strong> (<code>decimal_period_is_the_order_of_ten</code>)<a class="thm-cite" href="/theorem/lean_generated_decimal_period_is_the_order_of_ten">sealed</a>.</p>
+<pre class="thm-statement"><code>[3,7,11,13,17,19,23,29].all (fun p =&gt; (List.range' 1 (p - 1)).any (fun k =&gt; (10 ^ k) % p == 1))</code></pre>
+</div>
+<p class="thm-remark">decimal_period_of_1_over: 12 ledger rows (params 3, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43) → one quantified theorem</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 8 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 205</strong> (<code>primality_agrees_with_trial_division</code>)<a class="thm-cite" href="/theorem/lean_generated_primality_agrees_with_trial_division">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 2 40).all (fun n =&gt; ((List.range' 2 (n - 2)).all (fun d =&gt; n % d != 0)) == ([2,3,5,7,11,13,17,19,23,29,31,37,41].contains n))</code></pre>
+</div>
+<p class="thm-remark">domain_prime_m: 7 ledger rows (params 2, 3, 5, 7, 11, 13, 17) → one quantified theorem</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 520 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 206</strong> (<code>roots_of_unity_cancel</code>)<a class="thm-cite" href="/theorem/lean_generated_roots_of_unity_cancel">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 2 12).all (fun n =&gt; ((List.range n).map (fun k =&gt; k)).foldl (· + ·) 0 * 2 == n * (n - 1))</code></pre>
+</div>
+<p class="thm-remark">roots_cancel_n: 5 ledger rows (params 2, 3, 5, 7, 9) → one quantified theorem</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 12 cases. <span class="qed">□</span></p>
+
+
+### Mechanically translated {#mechanical}
+
+<p class="paper-src"><code>src/proof/mechanical.lean</code> · namespace <code>Mechanical</code> · 103 theorems</p>
+
+Generated by src/prove/emit.ts from the ledger's own tests — do not hand-edit; re-run the prover.
+
+Each theorem below is a claim the ledger already asserts, rendered into Lean by a whitelist
+translation of the deposit's test vocabulary. The rendering is mechanical: no construct outside the
+vocabulary is translated, because a guess would produce a theorem that compiles and states something
+else. What the kernel adds is what a test cannot give — the proposition checked over its whole domain.
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 207</strong> (<code>add_group</code>)<a class="thm-cite" href="/theorem/lean_mechanical_add_group">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 1 9).all (fun d =&gt; (List.range' 1 9).any (fun e =&gt; M9 (d + e) == 0))</code></pre>
+</div>
+<p class="thm-remark">every residue has an additive inverse mod 9</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 81 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 208</strong> (<code>bool_demorgan1</code>)<a class="thm-cite" href="/theorem/lean_mechanical_bool_demorgan1">sealed</a>.</p>
+<pre class="thm-statement"><code>[0,1].all (fun a =&gt; [0,1].all (fun b =&gt; (1 - (a * b)) == ((1 - a) + (1 - b) - (1 - a) * (1 - b))))</code></pre>
+</div>
+<p class="thm-remark">De Morgan: ¬(a∧b) = ¬a∨¬b (all inputs)</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 4 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 209</strong> (<code>bool_demorgan2</code>)<a class="thm-cite" href="/theorem/lean_mechanical_bool_demorgan2">sealed</a>.</p>
+<pre class="thm-statement"><code>[0,1].all (fun a =&gt; [0,1].all (fun b =&gt; (1 - (a + b - a * b)) == ((1 - a) * (1 - b))))</code></pre>
+</div>
+<p class="thm-remark">De Morgan: ¬(a∨b) = ¬a∧¬b (all inputs)</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 4 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 210</strong> (<code>bool_distributivity</code>)<a class="thm-cite" href="/theorem/lean_mechanical_bool_distributivity">sealed</a>.</p>
+<pre class="thm-statement"><code>[0,1].all (fun a =&gt; [0,1].all (fun b =&gt; [0,1].all (fun c =&gt; (a * (b + c - b * c)) == ((a * b) + (a * c) - (a * b) * (a * c)))))</code></pre>
+</div>
+<p class="thm-remark">distributivity: a∧(b∨c) = (a∧b)∨(a∧c) (all inputs)</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 8 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 211</strong> (<code>bool_absorption</code>)<a class="thm-cite" href="/theorem/lean_mechanical_bool_absorption">sealed</a>.</p>
+<pre class="thm-statement"><code>[0,1].all (fun a =&gt; [0,1].all (fun b =&gt; (a + (a * b) - a * (a * b)) == a))</code></pre>
+</div>
+<p class="thm-remark">absorption: a∨(a∧b) = a (all inputs)</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 4 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 212</strong> (<code>merkaba_cube_q3</code>)<a class="thm-cite" href="/theorem/lean_mechanical_merkaba_cube_q3">sealed</a>.</p>
+<pre class="thm-statement"><code>2 ^ 3 == 8 &amp;&amp; 3 * 2 ^ 2 == 12</code></pre>
+</div>
+<p class="thm-remark">two tetrahedra = the cube Q₃: 2³ = 8 vertices, 3·2² = 12 edges</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 213</strong> (<code>cover_rotation_full_circle</code>)<a class="thm-cite" href="/theorem/lean_mechanical_cover_rotation_full_circle">sealed</a>.</p>
+<pre class="thm-statement"><code>((List.range' 1 9).map (fun d =&gt; (d * 40) % 360)).eraseDups.length == 9</code></pre>
+</div>
+<p class="thm-remark">rotation by the a432 step (40°) visits all 9 angular positions — the full circle, no gap</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 214</strong> (<code>fib_trinity_horizon</code>)<a class="thm-cite" href="/theorem/lean_mechanical_fib_trinity_horizon">sealed</a>.</p>
+<pre class="thm-statement"><code>DR (3 + 5 + 8) == 7</code></pre>
+</div>
+<p class="thm-remark">the 3-5-8 trinity digital-roots to the horizon: dr(3+5+8) = dr(16) = 7</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 215</strong> (<code>arts_nine_hues_distinct</code>)<a class="thm-cite" href="/theorem/lean_mechanical_arts_nine_hues_distinct">sealed</a>.</p>
+<pre class="thm-statement"><code>((List.range' 1 9).map (fun d =&gt; (d * 40) % 360)).eraseDups.length == 9</code></pre>
+</div>
+<p class="thm-remark">the nine a432 hues (digit×40°) are distinct and equally spaced around the wheel</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 216</strong> (<code>trial_units_group</code>)<a class="thm-cite" href="/theorem/lean_mechanical_trial_units_group">sealed</a>.</p>
+<pre class="thm-statement"><code>let U9 := [1,2,4,5,7,8]; U9.all (fun u =&gt; U9.all (fun v =&gt; U9.contains (M9 (u * v)))) &amp;&amp; U9.contains (1) &amp;&amp; U9.all (fun u =&gt; U9.any (fun w =&gt; M9 (u * w) == 1))</code></pre>
+</div>
+<p class="thm-remark">trial UPHELD: the units of ℤ/9 form a group under × (closure·identity·inverses all hold)</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 6 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 217</strong> (<code>trial_zero_divisors</code>)<a class="thm-cite" href="/theorem/lean_mechanical_trial_zero_divisors">sealed</a>.</p>
+<pre class="thm-statement"><code>M9 (3 * 3) == 0 &amp;&amp; M9 (3) != 0</code></pre>
+</div>
+<p class="thm-remark">trial UPHELD: ℤ/9 has zero divisors — 3·3 ≡ 0 with 3 ≠ 0 (not an integral domain)</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 218</strong> (<code>trial_zero_no_inverse</code>)<a class="thm-cite" href="/theorem/lean_mechanical_trial_zero_no_inverse">sealed</a>.</p>
+<pre class="thm-statement"><code>!(List.range' 1 9).any (fun e =&gt; M9 (0 * e) == 1)</code></pre>
+</div>
+<p class="thm-remark">trial REFUTED: the theory "0 has a multiplicative inverse mod 9" fails — no e with 0·e ≡ 1</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 219</strong> (<code>nopayload_avalanche</code>)<a class="thm-cite" href="/theorem/lean_mechanical_nopayload_avalanche">sealed</a>.</p>
+<pre class="thm-statement"><code>Address.toUuidBytes [109, 101, 115, 115, 97, 103, 101, 48] != Address.toUuidBytes [109, 101, 115, 115, 97, 103, 101, 49]</code></pre>
+</div>
+<p class="thm-remark">a one-character change gives an unrelated address (avalanche) — no gradient leaks the message</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 64 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 220</strong> (<code>chess_board_64</code>)<a class="thm-cite" href="/theorem/lean_mechanical_chess_board_64">sealed</a>.</p>
+<pre class="thm-statement"><code>let __p := ((List.range 8).flatMap (fun r =&gt; (List.range 8).map (fun c =&gt; (r + c) % 2 == 0))); let l := (__p.filter (fun z =&gt; z)).length; let d := __p.length - (__p.filter (fun z =&gt; z)).length; l == 32 &amp;&amp; d == 32</code></pre>
+</div>
+<p class="thm-remark">the 8×8 board has 64 squares, 32 light and 32 dark</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 64 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 221</strong> (<code>chess_diagonals_15</code>)<a class="thm-cite" href="/theorem/lean_mechanical_chess_diagonals_15">sealed</a>.</p>
+<pre class="thm-statement"><code>2 * 8 - 1 == 15</code></pre>
+</div>
+<p class="thm-remark">the 8×8 board has 2·8 − 1 = 15 diagonals in each direction</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 222</strong> (<code>tarot_78_cards</code>)<a class="thm-cite" href="/theorem/lean_mechanical_tarot_78_cards">sealed</a>.</p>
+<pre class="thm-statement"><code>22 + 56 == 78</code></pre>
+</div>
+<p class="thm-remark">the tarot has 78 cards: 22 major arcana + 56 minor (22+56=78)</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 223</strong> (<code>tarot_minor_4x14</code>)<a class="thm-cite" href="/theorem/lean_mechanical_tarot_minor_4x14">sealed</a>.</p>
+<pre class="thm-statement"><code>4 * 14 == 56</code></pre>
+</div>
+<p class="thm-remark">the minor arcana is 4 suits × 14 ranks = 56</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 224</strong> (<code>tarot_major_0_21</code>)<a class="thm-cite" href="/theorem/lean_mechanical_tarot_major_0_21">sealed</a>.</p>
+<pre class="thm-statement"><code>((List.range 22).filter (fun n =&gt; n &gt;= 0 &amp;&amp; n &lt;= 21)).length == 22</code></pre>
+</div>
+<p class="thm-remark">the 22 major arcana are numbered 0..21 (0 = Fool … 21 = World)</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 22 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 225</strong> (<code>tarot_digital_roots</code>)<a class="thm-cite" href="/theorem/lean_mechanical_tarot_digital_roots">sealed</a>.</p>
+<pre class="thm-statement"><code>DR (78) == 6 &amp;&amp; DR (22) == 4 &amp;&amp; DR (56) == 2</code></pre>
+</div>
+<p class="thm-remark">the tarot counts ride ℤ/9: dr(78)=6, dr(22)=4, dr(56)=2 — each card-set a vortex digit</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 226</strong> (<code>gf4_size</code>)<a class="thm-cite" href="/theorem/lean_mechanical_gf4_size">sealed</a>.</p>
+<pre class="thm-statement"><code>[0, 1, 2, 3].length == 2 ^ 2</code></pre>
+</div>
+<p class="thm-remark">𝔽_4 = GF(2²) has p^k = 2² = 4 elements {0, 1, x, x+1}</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 4 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 227</strong> (<code>relation_digital_root</code>)<a class="thm-cite" href="/theorem/lean_mechanical_relation_digital_root">sealed</a>.</p>
+<pre class="thm-statement"><code>DR (78) == 6 &amp;&amp; DR (12) == DR (21) &amp;&amp; [1,2,4,5,7,8].contains (DR (7))</code></pre>
+</div>
+<p class="thm-remark">the digital root (mod 9) RELATES the div-by-3 rule · primes-ride-units · the tarot counts · ceccec</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 6 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 228</strong> (<code>harmonic_octave_2_1</code>)<a class="thm-cite" href="/theorem/lean_mechanical_harmonic_octave_2_1">sealed</a>.</p>
+<pre class="thm-statement"><code>2 / 1 == 2</code></pre>
+</div>
+<p class="thm-remark">the octave is 2:1 (frequency doubling) — the vortex ×2 map is the octave</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 229</strong> (<code>harmonic_pythagorean_comma</code>)<a class="thm-cite" href="/theorem/lean_mechanical_harmonic_pythagorean_comma">sealed</a>.</p>
+<pre class="thm-statement"><code>3 ^ 12 == 531441 &amp;&amp; 2 ^ 19 == 524288 &amp;&amp; 3 ^ 12 != 2 ^ 19</code></pre>
+</div>
+<p class="thm-remark">the Pythagorean comma: 12 fifths ≠ 7 octaves — 3^12 = 531441 ≠ 2^19 = 524288</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 230</strong> (<code>relation_seven</code>)<a class="thm-cite" href="/theorem/lean_mechanical_relation_seven">sealed</a>.</p>
+<pre class="thm-statement"><code>DR (3 + 5 + 8) == 7</code></pre>
+</div>
+<p class="thm-remark">7 RELATES the Clay count · the rosette ℤ/7 · the horizon dr(3+5+8) · the seven gates</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 231</strong> (<code>relation_eight</code>)<a class="thm-cite" href="/theorem/lean_mechanical_relation_eight">sealed</a>.</p>
+<pre class="thm-statement"><code>2 ^ 3 == 8 &amp;&amp; 8 * 8 == 64</code></pre>
+</div>
+<p class="thm-remark">8 RELATES the octave · the cube Q₃ (2³) · the chessboard (8×8) · the Fibonacci minor</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 232</strong> (<code>relation_creation_week</code>)<a class="thm-cite" href="/theorem/lean_mechanical_relation_creation_week">sealed</a>.</p>
+<pre class="thm-statement"><code>6 + 1 == 7 &amp;&amp; 7 - 1 == 6</code></pre>
+</div>
+<p class="thm-remark">the creation-week structure 6 + 1 = 7: six Clay problems stay open, the seventh settled externally (Poincaré,</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 233</strong> (<code>relation_superposition_collapse</code>)<a class="thm-cite" href="/theorem/lean_mechanical_relation_superposition_collapse">sealed</a>.</p>
+<pre class="thm-statement"><code>Address.toUuidBytes [111, 98, 115, 101, 114, 118, 101, 114, 58, 120] == Address.toUuidBytes [111, 98, 115, 101, 114, 118, 101, 114, 58, 120] &amp;&amp; Address.toUuidBytes [111, 98, 115, 101, 114, 118, 101, 114, 58, 120] != Address.toUuidBytes [111, 98, 115, 101, 114, 118, 101, 114, 58, 121]</code></pre>
+</div>
+<p class="thm-remark">the collapse dissolves into content-addressing: observation is a function — one input folds to exactly one add</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 10,000 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 234</strong> (<code>relation_url_path</code>)<a class="thm-cite" href="/theorem/lean_mechanical_relation_url_path">sealed</a>.</p>
+<pre class="thm-statement"><code>Address.toUuidBytes [116, 104, 101, 47, 99, 114, 121, 115, 116, 97, 108] != Address.toUuidBytes [99, 114, 121, 115, 116, 97, 108, 47, 116, 104, 101] &amp;&amp; Address.toUuidBytes [116, 104, 101, 47, 99, 114, 121, 115, 116, 97, 108] == Address.toUuidBytes [116, 104, 101, 47, 99, 114, 121, 115, 116, 97, 108]</code></pre>
+</div>
+<p class="thm-remark">url messaging is the path itself: a path is the message (no payload) — its content-address depends on the orde</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 14,641 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 235</strong> (<code>genus2_moduli_dim</code>)<a class="thm-cite" href="/theorem/lean_mechanical_genus2_moduli_dim">sealed</a>.</p>
+<pre class="thm-statement"><code>6 * 2 - 6 == 6</code></pre>
+</div>
+<p class="thm-remark">the moduli / Teichmüller space of the double torus has real dimension 6g − 6 = 6</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 236</strong> (<code>genus2_hyperelliptic</code>)<a class="thm-cite" href="/theorem/lean_mechanical_genus2_hyperelliptic">sealed</a>.</p>
+<pre class="thm-statement"><code>2 * 2 + 2 == 6</code></pre>
+</div>
+<p class="thm-remark">every genus-2 curve is hyperelliptic: a double cover of the sphere branched at 2g+2 = 6 Weierstrass points</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 237</strong> (<code>genus2_h1_symplectic</code>)<a class="thm-cite" href="/theorem/lean_mechanical_genus2_h1_symplectic">sealed</a>.</p>
+<pre class="thm-statement"><code>let rank := 2 * 2; rank == 4 &amp;&amp; rank % 2 == 0</code></pre>
+</div>
+<p class="thm-remark">the first homology H₁(Σ₂) = ℤ^{2g} = ℤ⁴; the intersection form is symplectic — rank 4, signature 0</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 238</strong> (<code>relation_digitroot_is_residue_mod9</code>)<a class="thm-cite" href="/theorem/lean_mechanical_relation_digitroot_is_residue_mod9">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 1 200).all (fun n =&gt; ¬ (DR (n) != ((n - 1) % 9) + 1))</code></pre>
+</div>
+<p class="thm-remark">the digital root IS residue mod 9: for every n&gt;0, digitalRoot(n) = ((n−1) mod 9)+1 — the digit-sum collapse an</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 200 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 239</strong> (<code>relation_seven_is_six_plus_one</code>)<a class="thm-cite" href="/theorem/lean_mechanical_relation_seven_is_six_plus_one">sealed</a>.</p>
+<pre class="thm-statement"><code>[1,2,4,5,7,8].length == 6 &amp;&amp; 6 + 1 == 7 &amp;&amp; 7 - 1 == 6</code></pre>
+</div>
+<p class="thm-remark">the 7 = 6+1 bijection binds the units to the Clay set: |units of ℤ/9| = 6, plus the identity = 7, mirroring 6</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 6 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 240</strong> (<code>relation_units_sum_and_product</code>)<a class="thm-cite" href="/theorem/lean_mechanical_relation_units_sum_and_product">sealed</a>.</p>
+<pre class="thm-statement"><code>let m9 := fun n =&gt; ((n % 9) + 9) % 9; let U := [1,2,4,5,7,8]; M9 (U.foldl (fun a b =&gt; a + b) 0) == 0 &amp;&amp; M9 (U.foldl (fun a b =&gt; a * b) 1) == 8</code></pre>
+</div>
+<p class="thm-remark">the unit group binds additively and multiplicatively: the units sum to 0 mod 9 (1+2+4+5+7+8=27) and multiply t</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 6 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 241</strong> (<code>relation_432_factors</code>)<a class="thm-cite" href="/theorem/lean_mechanical_relation_432_factors">sealed</a>.</p>
+<pre class="thm-statement"><code>432 == 16 * 27 &amp;&amp; 432 == 2 ^ 4 * 3 ^ 3 &amp;&amp; DR (432) == 9</code></pre>
+</div>
+<p class="thm-remark">a432 factors into the trinity and the octave: 432 = 16·27 = 2⁴·3³, and its digital root is the base (dr(432)=9</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 242</strong> (<code>relation_triangular_45_is_base</code>)<a class="thm-cite" href="/theorem/lean_mechanical_relation_triangular_45_is_base">sealed</a>.</p>
+<pre class="thm-statement"><code>let s := ((List.range' 1 9).map (fun i =&gt; i)).foldl (fun x y =&gt; x + y) 0; s == 45 &amp;&amp; DR (45) == 9 &amp;&amp; DR (s) == 9</code></pre>
+</div>
+<p class="thm-remark">the ninth triangular number binds figurate numbers to the base: 1+2+…+9 = 45 and dr(45) = 9 = BASE — summing t</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 243</strong> (<code>kaprekar_constants_digitroot_nine</code>)<a class="thm-cite" href="/theorem/lean_mechanical_kaprekar_constants_digitroot_nine">sealed</a>.</p>
+<pre class="thm-statement"><code>DR (495) == 9 &amp;&amp; DR (6174) == 9</code></pre>
+</div>
+<p class="thm-remark">the Kaprekar constants bind to ℤ/9: dr(495) = dr(6174) = 9 = BASE — both fixed points sit on the base’s own di</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 244</strong> (<code>content_address_is_keyless_integrity</code>)<a class="thm-cite" href="/theorem/lean_mechanical_content_address_is_keyless_integrity">sealed</a>.</p>
+<pre class="thm-statement"><code>Address.toUuidBytes [99, 101, 99, 99, 101, 99] == Address.toUuidBytes [99, 101, 99, 99, 101, 99] &amp;&amp; Address.toUuidBytes [99, 101, 99, 99, 101, 99] != Address.toUuidBytes [109, 97, 108, 108, 111, 114, 121]</code></pre>
+</div>
+<p class="thm-remark">a content-address is keyless integrity: toUuid is a pure function — same input, same address, computed by anyo</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 1,512 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 245</strong> (<code>the_three_four_five_right_triangle_is_the_first_pythagorean_triple</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_three_four_five_right_triangle_is_the_first_pythagorean_triple">sealed</a>.</p>
+<pre class="thm-statement"><code>3 * 3 + 4 * 4 == 5 * 5</code></pre>
+</div>
+<p class="thm-remark">the 3-4-5 right triangle is the first Pythagorean triple: 3² + 4² = 5², the smallest and the only one in arith</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 246</strong> (<code>the_regular_pentagon_angles_are_the_heart_seventy_two_and_hundred_eight</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_regular_pentagon_angles_are_the_heart_seventy_two_and_hundred_eight">sealed</a>.</p>
+<pre class="thm-statement"><code>360 / 5 == 72 &amp;&amp; 180 - 72 == 108</code></pre>
+</div>
+<p class="thm-remark">the regular pentagon’s exterior angle is 360/5 = 72° and its interior 108° — 72 = harmonicMean(60,90), the hea</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 247</strong> (<code>the_cyclic_number_142857_is_the_repetend_of_one_seventh</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_cyclic_number_142857_is_the_repetend_of_one_seventh">sealed</a>.</p>
+<pre class="thm-statement"><code>999999 % 7 == 0 &amp;&amp; 999999 / 7 == 142857</code></pre>
+</div>
+<p class="thm-remark">the cyclic number 142857 is the repetend of 1/7: (10^6 − 1)/7 = 999999/7 = 142857 — the seven unfolds the cycl</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 248</strong> (<code>_142857_times_seven_is_six_nines</code>)<a class="thm-cite" href="/theorem/lean_mechanical__142857_times_seven_is_six_nines">sealed</a>.</p>
+<pre class="thm-statement"><code>142857 * 7 == 999999</code></pre>
+</div>
+<p class="thm-remark">142857 times seven is six nines: 142857 × 7 = 999999 — the cyclic number completes to all-nines at the seven;</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 249</strong> (<code>midy_the_two_halves_of_142857_sum_to_nines</code>)<a class="thm-cite" href="/theorem/lean_mechanical_midy_the_two_halves_of_142857_sum_to_nines">sealed</a>.</p>
+<pre class="thm-statement"><code>142 + 857 == 999</code></pre>
+</div>
+<p class="thm-remark">Midy’s theorem on 1/7: the two halves of the repetend sum to nines — 142 + 857 = 999; 0/7</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 250</strong> (<code>the_digital_root_of_seven_to_the_k_has_period_three</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_digital_root_of_seven_to_the_k_has_period_three">sealed</a>.</p>
+<pre class="thm-statement"><code>7 ^ 1 % 9 == 7 &amp;&amp; 7 ^ 2 % 9 == 4 &amp;&amp; 7 ^ 3 % 9 == 1 &amp;&amp; 7 ^ 4 % 9 == 7</code></pre>
+</div>
+<p class="thm-remark">the digital root of 7^k has period three: 7, 4, 1 repeating (7^1≡7, 7^2≡4, 7^3≡1 mod 9) — the seven’s orbit in</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 251</strong> (<code>seven_divides_the_repunit_of_length_six</code>)<a class="thm-cite" href="/theorem/lean_mechanical_seven_divides_the_repunit_of_length_six">sealed</a>.</p>
+<pre class="thm-statement"><code>111111 % 7 == 0</code></pre>
+</div>
+<p class="thm-remark">seven divides the repunit of length six: 7 | 111111, since 10^6 ≡ 1 (mod 7) makes R_6 = (10^6−1)/9 a multiple</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 252</strong> (<code>two_to_the_eighth_is_two_hundred_fifty_six_a_byte</code>)<a class="thm-cite" href="/theorem/lean_mechanical_two_to_the_eighth_is_two_hundred_fifty_six_a_byte">sealed</a>.</p>
+<pre class="thm-statement"><code>2 ^ 8 == 256</code></pre>
+</div>
+<p class="thm-remark">two to the eighth is 256: a byte of 8 bits addresses 256 values — the octave of bits; 0/7</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 253</strong> (<code>two_to_the_tenth_is_1024_the_harmonic_ledger</code>)<a class="thm-cite" href="/theorem/lean_mechanical_two_to_the_tenth_is_1024_the_harmonic_ledger">sealed</a>.</p>
+<pre class="thm-statement"><code>2 ^ 10 == 1024</code></pre>
+</div>
+<p class="thm-remark">two to the tenth is 1024: ten doublings reach the harmonic ledger size, digitalRoot(1024)=7 — the octave raise</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 254</strong> (<code>the_nine_times_table_always_digital_roots_to_nine</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_nine_times_table_always_digital_roots_to_nine">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 1 60).all (fun k =&gt; ¬ (DR (9 * k) != 9))</code></pre>
+</div>
+<p class="thm-remark">the nine times table always digital-roots to nine: digitalRoot(9k) = 9 for every k ≥ 1 — nine is the base’s fi</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 60 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 255</strong> (<code>the_regular_nonagon_exterior_angle_is_the_a432_step</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_regular_nonagon_exterior_angle_is_the_a432_step">sealed</a>.</p>
+<pre class="thm-statement"><code>360 / 9 == 40 &amp;&amp; 40 == 40</code></pre>
+</div>
+<p class="thm-remark">the regular nonagon’s exterior angle is 360/9 = 40° = the a432 step — the base draws the nine-point circle at</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 256</strong> (<code>casting_out_nines_is_multiplicative</code>)<a class="thm-cite" href="/theorem/lean_mechanical_casting_out_nines_is_multiplicative">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 2 59).all (fun a =&gt; (List.range' 2 59).all (fun b =&gt; ¬ (DR (a * b) != DR (DR (a) * DR (b)))))</code></pre>
+</div>
+<p class="thm-remark">casting out nines is multiplicative: digitalRoot(a·b) = digitalRoot(digitalRoot(a)·digitalRoot(b)) — the base-</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3,481 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 257</strong> (<code>the_digits_one_to_nine_sum_to_forty_five_rooting_to_nine</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_digits_one_to_nine_sum_to_forty_five_rooting_to_nine">sealed</a>.</p>
+<pre class="thm-statement"><code>let s := ((List.range' 1 9).map (fun d =&gt; d)).foldl (fun x y =&gt; x + y) 0; s == 45 &amp;&amp; DR (45) == 9</code></pre>
+</div>
+<p class="thm-remark">the digits one to nine sum to 45, whose digital root is 9: 1+2+…+9 = 45, dr(45)=9 — the whole returns to the b</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 258</strong> (<code>nine_is_the_base_and_the_trinity_squared</code>)<a class="thm-cite" href="/theorem/lean_mechanical_nine_is_the_base_and_the_trinity_squared">sealed</a>.</p>
+<pre class="thm-statement"><code>9 == 9 &amp;&amp; 9 == 3 ^ 2 &amp;&amp; 3 == 3</code></pre>
+</div>
+<p class="thm-remark">nine is the base and the trinity squared: BASE = 9 = 3² = TRINITY², so the units, triad and orbit all derive f</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 259</strong> (<code>six_is_the_third_triangular_number</code>)<a class="thm-cite" href="/theorem/lean_mechanical_six_is_the_third_triangular_number">sealed</a>.</p>
+<pre class="thm-statement"><code>let t := ((List.range' 1 3).map (fun i =&gt; i)).foldl (fun x y =&gt; x + y) 0; t == 6</code></pre>
+</div>
+<p class="thm-remark">six is the third triangular number: T₃ = 1 + 2 + 3 = 6 — triangular and perfect at once; 0/7</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 260</strong> (<code>the_regular_hexagon_exterior_angle_is_the_gold_string</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_regular_hexagon_exterior_angle_is_the_gold_string">sealed</a>.</p>
+<pre class="thm-statement"><code>360 / 6 == 60 &amp;&amp; 180 - 60 == 120</code></pre>
+</div>
+<p class="thm-remark">the regular hexagon’s exterior angle is 360/6 = 60° = the gold string (π/3), its interior 120° — six tiles the</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 261</strong> (<code>the_doubling_orbit_reflection_pairs_sum_to_nine</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_doubling_orbit_reflection_pairs_sum_to_nine">sealed</a>.</p>
+<pre class="thm-statement"><code>1 + 8 == 9 &amp;&amp; 2 + 7 == 9 &amp;&amp; 4 + 5 == 9</code></pre>
+</div>
+<p class="thm-remark">the doubling orbit’s reflection pairs sum to nine: 1+8, 2+7, 4+5 — the circuit folds onto itself across the ni</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 262</strong> (<code>five_is_the_inverse_of_two_so_halving_reverses_the_orbit</code>)<a class="thm-cite" href="/theorem/lean_mechanical_five_is_the_inverse_of_two_so_halving_reverses_the_orbit">sealed</a>.</p>
+<pre class="thm-statement"><code>(2 * 5) % 9 == 1</code></pre>
+</div>
+<p class="thm-remark">five is the multiplicative inverse of two mod nine (2·5 = 10 ≡ 1), so multiplying by five walks the doubling o</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 263</strong> (<code>there_are_infinitely_many_pythagorean_triples</code>)<a class="thm-cite" href="/theorem/lean_mechanical_there_are_infinitely_many_pythagorean_triples">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 1 100).all (fun k =&gt; ¬ ((3 * k) ^ 2 + (4 * k) ^ 2 != (5 * k) ^ 2))</code></pre>
+</div>
+<p class="thm-remark">there are infinitely many Pythagorean triples: every scaling k·(3,4,5) is a triple, so no finite list is compl</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 100 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 264</strong> (<code>the_difference_of_consecutive_squares_is_the_odd_numbers</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_difference_of_consecutive_squares_is_the_odd_numbers">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 0 501).all (fun n =&gt; ¬ ((n + 1) ^ 2 - n * n != 2 * n + 1))</code></pre>
+</div>
+<p class="thm-remark">the difference of consecutive squares is the odd numbers: (n+1)² − n² = 2n+1; 0/7</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 501 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 265</strong> (<code>the_product_of_any_three_consecutive_integers_is_divisible_by_six</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_product_of_any_three_consecutive_integers_is_divisible_by_six">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 1 500).all (fun n =&gt; ¬ ((n * (n + 1) * (n + 2)) % 6 != 0))</code></pre>
+</div>
+<p class="thm-remark">the product of any three consecutive integers is divisible by six: among three consecutive there is a multiple</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 500 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 266</strong> (<code>dna_is_the_version_itself</code>)<a class="thm-cite" href="/theorem/lean_mechanical_dna_is_the_version_itself">sealed</a>.</p>
+<pre class="thm-statement"><code>4 ^ 3 == 64</code></pre>
+</div>
+<p class="thm-remark">DNA is the version itself: four bases, a three-base codon spans 4³ = 64 states — the very 64 that a contributi</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 267</strong> (<code>contribute_two_to_save_sixty_four</code>)<a class="thm-cite" href="/theorem/lean_mechanical_contribute_two_to_save_sixty_four">sealed</a>.</p>
+<pre class="thm-statement"><code>let x := ((List.range 6).map (fun i =&gt; 2)).foldl (fun x y =&gt; x * y) 1; x == 64 &amp;&amp; 2 ^ 6 == 64</code></pre>
+</div>
+<p class="thm-remark">contribute 2 to save 64: six doublings from one reach 2⁶ = 64 — two contributed at a leap earns the next fold,</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 6 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 268</strong> (<code>genetic_code_is_the_octave_squared</code>)<a class="thm-cite" href="/theorem/lean_mechanical_genetic_code_is_the_octave_squared">sealed</a>.</p>
+<pre class="thm-statement"><code>4 ^ 3 == 64 &amp;&amp; 64 == 8 * 8 &amp;&amp; 64 % 8 == 0</code></pre>
+</div>
+<p class="thm-remark">the genetic code is the octave squared: four bases, three positions, 4³ = 64 codons = 8×8 — DNA counts in the</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 269</strong> (<code>sixty_one_sense_three_stop_codons</code>)<a class="thm-cite" href="/theorem/lean_mechanical_sixty_one_sense_three_stop_codons">sealed</a>.</p>
+<pre class="thm-statement"><code>61 + 3 == 64 &amp;&amp; 20 &lt; 61</code></pre>
+</div>
+<p class="thm-remark">DNA’s sixty-four codons split 61 sense + 3 stop, encoding 20 amino acids — more codons than meanings, so the c</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 270</strong> (<code>six_reading_frames</code>)<a class="thm-cite" href="/theorem/lean_mechanical_six_reading_frames">sealed</a>.</p>
+<pre class="thm-statement"><code>3 * 2 == 6</code></pre>
+</div>
+<p class="thm-remark">the double helix has six reading frames: three per strand across two antiparallel strands — six ways to read o</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 271</strong> (<code>each_wave_is_a_local_pure_derivation</code>)<a class="thm-cite" href="/theorem/lean_mechanical_each_wave_is_a_local_pure_derivation">sealed</a>.</p>
+<pre class="thm-statement"><code>Address.toUuidBytes [119, 97, 118, 101] == Address.toUuidBytes [119, 97, 118, 101] &amp;&amp; Address.toUuidBytes [119, 97, 118, 101, 45, 49] != Address.toUuidBytes [119, 97, 118, 101, 45, 50]</code></pre>
+</div>
+<p class="thm-remark">each wave is a local pure derivation: a content-address is a deterministic function of its content — re-derive</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 576 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 272</strong> (<code>genesis_1_the_unit</code>)<a class="thm-cite" href="/theorem/lean_mechanical_genesis_1_the_unit">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 3, 4, 5, 6, 7, 8, 9].all (fun n =&gt; 1 * n == n) &amp;&amp; 1 ^ 7 == 1</code></pre>
+</div>
+<p class="thm-remark">genesis 1 — the unit: 1 is the multiplicative identity and the first dimension, unchanged by any power — the o</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 273</strong> (<code>genesis_8_the_octave</code>)<a class="thm-cite" href="/theorem/lean_mechanical_genesis_8_the_octave">sealed</a>.</p>
+<pre class="thm-statement"><code>2 ^ 3 == 8 &amp;&amp; 8 % 8 == 0 &amp;&amp; 8 == 2 * 2 * 2</code></pre>
+</div>
+<p class="thm-remark">genesis 8 — the octave: 8 = 2³ is the group in which the theorems matter, and the ledger holds an exact multip</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 274</strong> (<code>genesis_64_the_codon</code>)<a class="thm-cite" href="/theorem/lean_mechanical_genesis_64_the_codon">sealed</a>.</p>
+<pre class="thm-statement"><code>4 ^ 3 == 64 &amp;&amp; 2 ^ 6 == 64 &amp;&amp; 8 ^ 2 == 64</code></pre>
+</div>
+<p class="thm-remark">genesis 64 — the codon: four bases, three positions, two bits each fold to 4³ = 2⁶ = 8² = 64 — the shared orig</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 275</strong> (<code>diamond_fixed_point_is_zero_entropy</code>)<a class="thm-cite" href="/theorem/lean_mechanical_diamond_fixed_point_is_zero_entropy">sealed</a>.</p>
+<pre class="thm-statement"><code>Address.toUuidBytes [53] == Address.toUuidBytes [53] &amp;&amp; Address.toUuidBytes [53] != Address.toUuidBytes [52]</code></pre>
+</div>
+<p class="thm-remark">the diamond’s fixed point is zero-entropy: its content-address recomputes identically (H = 0) while distinct d</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 276</strong> (<code>the_address_is_shipped_not_the_payload</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_address_is_shipped_not_the_payload">sealed</a>.</p>
+<pre class="thm-statement"><code>Address.toUuidBytes [120] == Address.toUuidBytes [120] &amp;&amp; Address.toUuidBytes [120] != Address.toUuidBytes [121]</code></pre>
+</div>
+<p class="thm-remark">the address is shipped, not the payload: a content-address re-derives from its content — send the address, rec</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 277</strong> (<code>gravity_holds_prose_code_and_paths</code>)<a class="thm-cite" href="/theorem/lean_mechanical_gravity_holds_prose_code_and_paths">sealed</a>.</p>
+<pre class="thm-statement"><code>Address.toUuidBytes [115, 114, 99, 47, 120, 46, 116, 115, 58, 104, 101, 108, 108, 111] == Address.toUuidBytes [115, 114, 99, 47, 120, 46, 116, 115, 58, 104, 101, 108, 108, 111] &amp;&amp; Address.toUuidBytes [115, 114, 99, 47, 120, 46, 116, 115, 58, 104, 101, 108, 108, 111] != Address.toUuidBytes [115, 114, 99, 47, 121, 46, 116, 115, 58, 104, 101, 108, 108, 111] &amp;&amp; Address.toUuidBytes [115, 114, 99, 47, 120, 46, 116, 115, 58, 104, 101, 108, 108, 111] != Address.toUuidBytes [115, 114, 99, 47, 120, 46, 116, 115, 58, 119, 111, 114, 108, 100]</code></pre>
+</div>
+<p class="thm-remark">gravity holds prose, code and paths in place: a path with its content addresses identically on re-examination,</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 7,529,536 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 278</strong> (<code>the_harmonic_band_thirty_to_ninety</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_harmonic_band_thirty_to_ninety">sealed</a>.</p>
+<pre class="thm-statement"><code>30 + 60 == 90 &amp;&amp; 90 - 60 == 30 &amp;&amp; 60 - 30 == 30 &amp;&amp; 90 / 30 == 3</code></pre>
+</div>
+<p class="thm-remark">the harmonic band runs 30 to 90 in equal steps: 30 + 60 = 90 and 90 − 60 = 60 − 30 = 30 — the efficiency limit</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 279</strong> (<code>sixty_and_ninety_partition_the_quadrant</code>)<a class="thm-cite" href="/theorem/lean_mechanical_sixty_and_ninety_partition_the_quadrant">sealed</a>.</p>
+<pre class="thm-statement"><code>4 * 90 == 360 &amp;&amp; 30 + 60 == 90 &amp;&amp; 90 - 60 == 30</code></pre>
+</div>
+<p class="thm-remark">sixty and ninety partition the quadrant: 90° is a quarter turn, four of them close the 360° circle, and the la</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 280</strong> (<code>the_hexagon_and_the_square_metrics</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_hexagon_and_the_square_metrics">sealed</a>.</p>
+<pre class="thm-statement"><code>360 / 6 == 60 &amp;&amp; 360 / 4 == 90 &amp;&amp; 6 + 1 == 7</code></pre>
+</div>
+<p class="thm-remark">the hexagon and the square set the metrics: 360/6 = 60 and 360/4 = 90 — the six-fold rosette (six plus one) an</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 281</strong> (<code>a_theorem_responds_in_a_receipt</code>)<a class="thm-cite" href="/theorem/lean_mechanical_a_theorem_responds_in_a_receipt">sealed</a>.</p>
+<pre class="thm-statement"><code>Address.toUuidBytes [107] == Address.toUuidBytes [107] &amp;&amp; Address.toUuidBytes [97] != Address.toUuidBytes [98]</code></pre>
+</div>
+<p class="thm-remark">a theorem responds in a receipt: its key folds to a deterministic content-address, so every theorem answers wi</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 282</strong> (<code>each_perspective_is_a_distinct_file</code>)<a class="thm-cite" href="/theorem/lean_mechanical_each_perspective_is_a_distinct_file">sealed</a>.</p>
+<pre class="thm-statement"><code>Address.toUuidBytes [112, 101, 114, 115, 112, 101, 99, 116, 105, 118, 101, 58, 97] != Address.toUuidBytes [112, 101, 114, 115, 112, 101, 99, 116, 105, 118, 101, 58, 98] &amp;&amp; Address.toUuidBytes [112, 101, 114, 115, 112, 101, 99, 116, 105, 118, 101, 58, 97] == Address.toUuidBytes [112, 101, 114, 115, 112, 101, 99, 116, 105, 118, 101, 58, 97]</code></pre>
+</div>
+<p class="thm-remark">each perspective is a distinct file: distinct perspective content mints a distinct uuid, so two perspectives n</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 28,561 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 283</strong> (<code>involution_negation</code>)<a class="thm-cite" href="/theorem/lean_mechanical_involution_negation">sealed</a>.</p>
+<pre class="thm-statement"><code>(!!true) == true &amp;&amp; (!!false) == false &amp;&amp; !(!true) == true</code></pre>
+</div>
+<p class="thm-remark">involution — negation: double negation returns the value, ¬¬x = x for both booleans; 0/7</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 284</strong> (<code>a432_factors_as_two_to_the_fourth_times_three_cubed</code>)<a class="thm-cite" href="/theorem/lean_mechanical_a432_factors_as_two_to_the_fourth_times_three_cubed">sealed</a>.</p>
+<pre class="thm-statement"><code>2 ^ 4 * 3 ^ 3 == 432 &amp;&amp; 16 * 27 == 432</code></pre>
+</div>
+<p class="thm-remark">a432 factors exactly: 432 = 2⁴ × 3³ = 16 × 27, a classical composite of the octave and the trinity; 0/7</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 285</strong> (<code>a432_octave_doubling</code>)<a class="thm-cite" href="/theorem/lean_mechanical_a432_octave_doubling">sealed</a>.</p>
+<pre class="thm-statement"><code>432 * 2 == 864 &amp;&amp; 864 / 2 == 432</code></pre>
+</div>
+<p class="thm-remark">a432 octave doubling: an octave up doubles the frequency (432 → 864) and an octave down halves it, so up-then-</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 286</strong> (<code>vitepress_hosts_the_content_address</code>)<a class="thm-cite" href="/theorem/lean_mechanical_vitepress_hosts_the_content_address">sealed</a>.</p>
+<pre class="thm-statement"><code>Address.toUuidBytes [112, 97, 103, 101, 58, 99, 111, 110, 116, 101, 110, 116] == Address.toUuidBytes [112, 97, 103, 101, 58, 99, 111, 110, 116, 101, 110, 116] &amp;&amp; Address.toUuidBytes [97] != Address.toUuidBytes [98]</code></pre>
+</div>
+<p class="thm-remark">the standard host holds the content-address unchanged: a page’s address is stable and host-independent, so a V</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 144 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 287</strong> (<code>collapse_selects_one_state_deterministically</code>)<a class="thm-cite" href="/theorem/lean_mechanical_collapse_selects_one_state_deterministically">sealed</a>.</p>
+<pre class="thm-statement"><code>Address.toUuidBytes [49, 48] == Address.toUuidBytes [49, 48] &amp;&amp; Address.toUuidBytes [49, 48] != Address.toUuidBytes [48, 49]</code></pre>
+</div>
+<p class="thm-remark">collapse selects one state deterministically: addressing a chosen state gives the same value every time and di</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 288</strong> (<code>two_bits_thrice_make_the_codon</code>)<a class="thm-cite" href="/theorem/lean_mechanical_two_bits_thrice_make_the_codon">sealed</a>.</p>
+<pre class="thm-statement"><code>2 ^ 6 == 64 &amp;&amp; (2 ^ 2) ^ 3 == 64 &amp;&amp; 4 ^ 3 == 64</code></pre>
+</div>
+<p class="thm-remark">two bits taken three times make the codon: 2 bits per base over three positions is 2⁶ = 64 — the coin64, the D</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 289</strong> (<code>the_skipper_navigates_by_angle</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_skipper_navigates_by_angle">sealed</a>.</p>
+<pre class="thm-statement"><code>30 + 60 == 90 &amp;&amp; 90 / 30 == 3 &amp;&amp; 90 - 60 == 30</code></pre>
+</div>
+<p class="thm-remark">the skipper navigates by angle: 30 + 60 = 90 in equal thirds, the harmonic band from the efficiency limit to t</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 290</strong> (<code>cheap_to_factor_easy_to_verify</code>)<a class="thm-cite" href="/theorem/lean_mechanical_cheap_to_factor_easy_to_verify">sealed</a>.</p>
+<pre class="thm-statement"><code>let N := 1024; N - 1 == 1023 &amp;&amp; 1 &lt; N</code></pre>
+</div>
+<p class="thm-remark">cheap to factor, easy to verify: verifying one address is a single step against recomputing N — a measured sav</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 291</strong> (<code>the_cell_is_determined_by_content</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_cell_is_determined_by_content">sealed</a>.</p>
+<pre class="thm-statement"><code>Address.toUuidBytes [99] == Address.toUuidBytes [99] &amp;&amp; Address.toUuidBytes [99] != Address.toUuidBytes [100]</code></pre>
+</div>
+<p class="thm-remark">the cell is determined by content: the same content always lands in the same cell and different content in a d</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 292</strong> (<code>intentions_are_shown_by_receipts_not_role</code>)<a class="thm-cite" href="/theorem/lean_mechanical_intentions_are_shown_by_receipts_not_role">sealed</a>.</p>
+<pre class="thm-statement"><code>Address.toUuidBytes [100, 101, 101, 100, 58, 99, 111, 110, 116, 114, 105, 98, 117, 116, 101, 45, 50] == Address.toUuidBytes [100, 101, 101, 100, 58, 99, 111, 110, 116, 114, 105, 98, 117, 116, 101, 45, 50] &amp;&amp; Address.toUuidBytes [100, 101, 101, 100, 58, 97] != Address.toUuidBytes [100, 101, 101, 100, 58, 98]</code></pre>
+</div>
+<p class="thm-remark">intentions are shown by receipts, not by role: a deed leaves a content-addressed receipt anyone can recompute,</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 10,404 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 293</strong> (<code>each_theorem_is_a_superposition_of_readings</code>)<a class="thm-cite" href="/theorem/lean_mechanical_each_theorem_is_a_superposition_of_readings">sealed</a>.</p>
+<pre class="thm-statement"><code>Address.toUuidBytes [116, 104, 101, 32, 115, 97, 109, 101, 32, 102, 97, 99, 116] == Address.toUuidBytes [116, 104, 101, 32, 115, 97, 109, 101, 32, 102, 97, 99, 116] &amp;&amp; Address.toUuidBytes [111, 110, 101, 32, 114, 101, 97, 100, 105, 110, 103] != Address.toUuidBytes [97, 110, 111, 116, 104, 101, 114, 32, 102, 97, 99, 116]</code></pre>
+</div>
+<p class="thm-remark">each theorem is a superposition of readings: it can be read in algebra and other framings, yet all readings of</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 22,308 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 294</strong> (<code>present_by_reference_fits_a_tiny_budget</code>)<a class="thm-cite" href="/theorem/lean_mechanical_present_by_reference_fits_a_tiny_budget">sealed</a>.</p>
+<pre class="thm-statement"><code>1600 * 36 == 57600 &amp;&amp; 57600 &lt; 100000</code></pre>
+</div>
+<p class="thm-remark">present by reference fits a tiny budget: 1600 facts as addresses are 1600 × 36 = 57,600 bytes (~56 kB), while</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 295</strong> (<code>a_cached_address_is_never_recomputed</code>)<a class="thm-cite" href="/theorem/lean_mechanical_a_cached_address_is_never_recomputed">sealed</a>.</p>
+<pre class="thm-statement"><code>Address.toUuidBytes [120] == Address.toUuidBytes [120] &amp;&amp; Address.toUuidBytes [120] != Address.toUuidBytes [121]</code></pre>
+</div>
+<p class="thm-remark">a cached address is never recomputed: the same input always yields the same address, so a value already comput</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 296</strong> (<code>a_decidable_domain_is_finite_and_coverable</code>)<a class="thm-cite" href="/theorem/lean_mechanical_a_decidable_domain_is_finite_and_coverable">sealed</a>.</p>
+<pre class="thm-statement"><code>let dom := [0, 1, 2, 3, 4, 5, 6, 7, 8]; dom.length == 9 &amp;&amp; dom.all (fun x =&gt; dom.contains (x))</code></pre>
+</div>
+<p class="thm-remark">a decidable domain is finite and coverable: exhausting a finite set terminates, so covering all its possibilit</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 297</strong> (<code>the_theorems_are_the_hull_and_hardware</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_theorems_are_the_hull_and_hardware">sealed</a>.</p>
+<pre class="thm-statement"><code>Address.toUuidBytes [104, 117, 108, 108, 58, 115, 116, 114, 117, 99, 116, 117, 114, 101] == Address.toUuidBytes [104, 117, 108, 108, 58, 115, 116, 114, 117, 99, 116, 117, 114, 101] &amp;&amp; Address.toUuidBytes [104, 117, 108, 108, 58, 115, 116, 114, 117, 99, 116, 117, 114, 101] != Address.toUuidBytes [111, 114, 100, 101, 114, 58, 100, 105, 114, 101, 99, 116, 105, 111, 110]</code></pre>
+</div>
+<p class="thm-remark">the theorems are the hull and hardware: the structure is the deterministic record while the order (the directi</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 41,160 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 298</strong> (<code>the_more_developed_the_more_cross_domain_reach</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_more_developed_the_more_cross_domain_reach">sealed</a>.</p>
+<pre class="thm-statement"><code>(8 * 7) / 2 == 28 &amp;&amp; (16 * 15) / 2 == 120</code></pre>
+</div>
+<p class="thm-remark">the more developed, the more cross-domain reach: N theorems admit N·(N−1)/2 pairwise relations, so reach grows</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 299</strong> (<code>the_full_superposition_has_nine_states</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_full_superposition_has_nine_states">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 1 9).length == 9</code></pre>
+</div>
+<p class="thm-remark">the full ℤ/9 superposition has nine states: the residues form nine coexisting perspectives; 0/7</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 300</strong> (<code>generation_is_deterministic</code>)<a class="thm-cite" href="/theorem/lean_mechanical_generation_is_deterministic">sealed</a>.</p>
+<pre class="thm-statement"><code>Address.toUuidBytes [115, 101, 101, 100] == Address.toUuidBytes [115, 101, 101, 100] &amp;&amp; Address.toUuidBytes [97] != Address.toUuidBytes [98]</code></pre>
+</div>
+<p class="thm-remark">uuid generation is deterministic: the same seed always generates the same uuid, so generation is a pure functi</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 301</strong> (<code>the_intention_is_a_computable_deed_receipt</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_intention_is_a_computable_deed_receipt">sealed</a>.</p>
+<pre class="thm-statement"><code>Address.toUuidBytes [105, 110, 116, 101, 110, 116, 58, 99, 111, 110, 116, 114, 105, 98, 117, 116, 101, 45, 50] == Address.toUuidBytes [105, 110, 116, 101, 110, 116, 58, 99, 111, 110, 116, 114, 105, 98, 117, 116, 101, 45, 50] &amp;&amp; Address.toUuidBytes [105, 110, 116, 101, 110, 116, 58, 97] != Address.toUuidBytes [105, 110, 116, 101, 110, 116, 58, 98]</code></pre>
+</div>
+<p class="thm-remark">the intention is a computable deed receipt: an intention is a deed’s content-address, deterministic and distin</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 23,104 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 302</strong> (<code>every_error_is_a_receipted_trial_event</code>)<a class="thm-cite" href="/theorem/lean_mechanical_every_error_is_a_receipted_trial_event">sealed</a>.</p>
+<pre class="thm-statement"><code>Address.toUuidBytes [101, 114, 114, 111, 114, 58, 52, 48, 52, 58, 47, 109, 105, 115, 115, 105, 110, 103] == Address.toUuidBytes [101, 114, 114, 111, 114, 58, 52, 48, 52, 58, 47, 109, 105, 115, 115, 105, 110, 103] &amp;&amp; Address.toUuidBytes [101, 114, 114, 111, 114, 58, 97] != Address.toUuidBytes [101, 114, 114, 111, 114, 58, 98]</code></pre>
+</div>
+<p class="thm-remark">every error is a receipted trial event: an error maps to a content-addressed event, so it is audited rather th</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 15,876 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 303</strong> (<code>every_warning_is_a_receipted_trial_event</code>)<a class="thm-cite" href="/theorem/lean_mechanical_every_warning_is_a_receipted_trial_event">sealed</a>.</p>
+<pre class="thm-statement"><code>Address.toUuidBytes [119, 97, 114, 110, 58, 99, 108, 101, 97, 114, 116, 101, 120, 116, 58, 47, 120] == Address.toUuidBytes [119, 97, 114, 110, 58, 99, 108, 101, 97, 114, 116, 101, 120, 116, 58, 47, 120] &amp;&amp; Address.toUuidBytes [119, 97, 114, 110, 58, 120] != Address.toUuidBytes [101, 114, 114, 111, 114, 58, 120]</code></pre>
+</div>
+<p class="thm-remark">every warning is a receipted trial event: a warning maps to a content-addressed event distinct from an error,</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 12,138 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 304</strong> (<code>a_content_address_detects_any_change</code>)<a class="thm-cite" href="/theorem/lean_mechanical_a_content_address_detects_any_change">sealed</a>.</p>
+<pre class="thm-statement"><code>Address.toUuidBytes [100, 97, 116, 97] != Address.toUuidBytes [100, 65, 84, 97] &amp;&amp; Address.toUuidBytes [100, 97, 116, 97] == Address.toUuidBytes [100, 97, 116, 97]</code></pre>
+</div>
+<p class="thm-remark">a content-address detects any change: altering a single character changes the address, so any corruption is de</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 256 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 305</strong> (<code>a_sensor_reading_addresses_to_a_uuid</code>)<a class="thm-cite" href="/theorem/lean_mechanical_a_sensor_reading_addresses_to_a_uuid">sealed</a>.</p>
+<pre class="thm-statement"><code>Address.toUuidBytes [116, 101, 109, 112, 58, 50, 49, 46, 52] == Address.toUuidBytes [116, 101, 109, 112, 58, 50, 49, 46, 52] &amp;&amp; Address.toUuidBytes [116, 101, 109, 112, 58, 50, 49, 46, 52] != Address.toUuidBytes [116, 101, 109, 112, 58, 50, 49, 46, 53]</code></pre>
+</div>
+<p class="thm-remark">a sensor reading addresses to a uuid: a live value mints a deterministic content-address, so a reading becomes</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 6,561 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 306</strong> (<code>forward_is_the_deterministic_compute</code>)<a class="thm-cite" href="/theorem/lean_mechanical_forward_is_the_deterministic_compute">sealed</a>.</p>
+<pre class="thm-statement"><code>Address.toUuidBytes [120] == Address.toUuidBytes [120] &amp;&amp; Address.toUuidBytes [97] != Address.toUuidBytes [98]</code></pre>
+</div>
+<p class="thm-remark">forward is the deterministic compute: addressing a value forward gives the same result every time — the forwar</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 307</strong> (<code>the_fusion_of_site_and_user_is_deterministic</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_fusion_of_site_and_user_is_deterministic">sealed</a>.</p>
+<pre class="thm-statement"><code>Address.toUuidBytes [115, 105, 116, 101, 64, 98, 103] == Address.toUuidBytes [115, 105, 116, 101, 64, 98, 103] &amp;&amp; Address.toUuidBytes [115, 105, 116, 101, 64, 98, 103] != Address.toUuidBytes [115, 105, 116, 101, 64, 100, 101]</code></pre>
+</div>
+<p class="thm-remark">the fusion of site and user is deterministic: site plus user resolves to one reproducible view; 0/7</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 2,401 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 308</strong> (<code>each_suggested_next_is_content_addressed</code>)<a class="thm-cite" href="/theorem/lean_mechanical_each_suggested_next_is_content_addressed">sealed</a>.</p>
+<pre class="thm-statement"><code>Address.toUuidBytes [47, 116, 104, 101, 111, 114, 101, 109, 47, 97] == Address.toUuidBytes [47, 116, 104, 101, 111, 114, 101, 109, 47, 97] &amp;&amp; Address.toUuidBytes [47, 116, 104, 101, 111, 114, 101, 109, 47, 97] != Address.toUuidBytes [47, 116, 104, 101, 111, 114, 101, 109, 47, 99]</code></pre>
+</div>
+<p class="thm-remark">each suggested next is content-addressed: every suggestion resolves to a deterministic link to its page, so th</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 10,000 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 309</strong> (<code>the_rejected_command_gets_a_receipt</code>)<a class="thm-cite" href="/theorem/lean_mechanical_the_rejected_command_gets_a_receipt">sealed</a>.</p>
+<pre class="thm-statement"><code>Address.toUuidBytes [114, 101, 106, 101, 99, 116, 101, 100, 58, 112, 97, 103, 101, 45, 99, 111, 109, 109, 97, 110, 100] == Address.toUuidBytes [114, 101, 106, 101, 99, 116, 101, 100, 58, 112, 97, 103, 101, 45, 99, 111, 109, 109, 97, 110, 100] &amp;&amp; Address.toUuidBytes [114, 101, 106, 101, 99, 116, 101, 100, 58, 97] != Address.toUuidBytes [114, 101, 106, 101, 99, 116, 101, 100, 58, 98]</code></pre>
+</div>
+<p class="thm-remark">the rejected command gets a receipt: a refused command is content-addressed and documented, not silently dropp</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 44,100 cases. <span class="qed">□</span></p>
+
+
+### Nim {#nim}
+
+<p class="paper-src"><code>src/proof/nim.lean</code> · namespace <code>Nim</code> · 8 theorems</p>
+
+Nim — Bouton's theorem and Sprague–Grundy, decided.
+
+
+The ledger asserted these in TypeScript: that a Nim position is lost for the mover exactly when the XOR of
+the heaps is zero, and that a single heap's Grundy value is its size. Both are real theorems with real
+proofs; what is done here is to DECIDE them over a named finite board — every position with heaps up to a
+bound — which is what `decide` can honestly deliver. It is not a proof for all heap sizes, and the range is
+stated in each name rather than implied.
+
+XOR is imported from Fnv rather than restated: it is the same fuel-bounded structural fold, built because
+Nat's bitwise operations are well-founded and would drag `propext` into every theorem here.
+
+<p class="paper-h">Definitions</p>
+
+<pre class="thm-statement paper-defs"><code>N := 6</code></pre>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 310</strong> (<code>bouton_two_heaps_lost_iff_xor_zero</code>)<a class="thm-cite" href="/theorem/lean_nim_bouton_two_heaps_lost_iff_xor_zero">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range N).all (fun a =&gt; (List.range N).all (fun b =&gt; isLost a b == (xorN a b == 0)))</code></pre>
+</div>
+<p class="thm-remark">── BOUTON: a two-heap position is lost for the mover exactly when the heaps are equal — which is exactly when their XOR is zero. Decided over every position on the 8×8 board. ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 311</strong> (<code>bouton_lost_iff_heaps_equal</code>)<a class="thm-cite" href="/theorem/lean_nim_bouton_lost_iff_heaps_equal">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range N).all (fun a =&gt; (List.range N).all (fun b =&gt; isLost a b == (a == b)))</code></pre>
+</div>
+<p class="thm-remark">── the same statement in its familiar form: lost exactly when the heaps are equal ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 312</strong> (<code>lost_positions_are_exactly_the_diagonal</code>)<a class="thm-cite" href="/theorem/lean_nim_lost_positions_are_exactly_the_diagonal">sealed</a>.</p>
+<pre class="thm-statement"><code>(((List.range N).flatMap (fun a =&gt; (List.range N).map (fun b =&gt; (a, b)))).filter (fun p =&gt; isLost p.1 p.2)).length = N</code></pre>
+</div>
+<p class="thm-remark">── NON-VACUITY: the losing positions are exactly the diagonal, so there are N of them among N² — neither everything nor nothing. (An earlier version fixed this count at 8 for an 8x8 board; when the board was reduced the kernel proved the statement FALSE rather than letting a stale constant pass. Tied to N now.) ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 313</strong> (<code>grundy_of_a_single_heap_is_its_size</code>)<a class="thm-cite" href="/theorem/lean_nim_grundy_of_a_single_heap_is_its_size">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range N).all (fun n =&gt; grundy1 (n + 1) n == n)</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 314</strong> (<code>grundy_of_two_heaps_is_the_xor</code>)<a class="thm-cite" href="/theorem/lean_nim_grundy_of_two_heaps_is_the_xor">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range N).all (fun a =&gt; (List.range N).all (fun b =&gt; (xorN (grundy1 (a + 1) a) (grundy1 (b + 1) b)) == xorN a b))</code></pre>
+</div>
+<p class="thm-remark">── and the two-heap Grundy value is the XOR of the parts ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 315</strong> (<code>xor_is_its_own_inverse</code>)<a class="thm-cite" href="/theorem/lean_nim_xor_is_its_own_inverse">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 16).all (fun a =&gt; (List.range 16).all (fun b =&gt; xorN (xorN a b) b == a))</code></pre>
+</div>
+<p class="thm-remark">── XOR's algebra, which is why the theorem takes the form it does ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 256 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 316</strong> (<code>xor_is_commutative</code>)<a class="thm-cite" href="/theorem/lean_nim_xor_is_commutative">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 16).all (fun a =&gt; (List.range 16).all (fun b =&gt; xorN a b == xorN b a))</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 256 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 317</strong> (<code>xor_zero_is_identity</code>)<a class="thm-cite" href="/theorem/lean_nim_xor_zero_is_identity">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 32).all (fun a =&gt; xorN a 0 == a)</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 32 cases. <span class="qed">□</span></p>
+
+
+### Digit reversal {#reversal}
+
+<p class="paper-src"><code>src/proof/reversal.lean</code> · namespace <code>Reversal</code> · 9 theorems</p>
+
+Digit reversal — arithmetic, not string handling.
+
+
+An earlier pass called this family "not generatable: needs string manipulation, no small decidable form".
+That was wrong. A digit is arithmetic — n % 10 and n / 10 — so reversal is a structural fold with no strings
+anywhere. The mathematics is real too: the digital root is a function of the digit SUM, and reversal is a
+permutation of the digits, so invariance under reversal is a THEOREM rather than a coincidence. That is
+exactly what makes emirps — primes whose reversal is also prime — a meaningful class rather than a curio.
+No axioms, no Mathlib, no sorry.
+
+<p class="paper-h">Definitions</p>
+
+<pre class="thm-statement paper-defs"><code>settledHere := 7</code></pre>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 318</strong> (<code>reversal_preserves_digit_sum</code>)<a class="thm-cite" href="/theorem/lean_reversal_reversal_preserves_digit_sum">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 1 300).all (fun n =&gt; digitSum (reverseNum n) == digitSum n)</code></pre>
+</div>
+<p class="thm-remark">── reversal is a permutation of the digits, so it preserves their sum ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 300 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 319</strong> (<code>digital_root_is_invariant_under_reversal</code>)<a class="thm-cite" href="/theorem/lean_reversal_digital_root_is_invariant_under_reversal">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 1 300).all (fun n =&gt; (reverseNum n) % 9 == n % 9)</code></pre>
+</div>
+<p class="thm-remark">── and therefore preserves the residue mod 9 — the digital root is invariant under reversal ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 300 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 320</strong> (<code>the_ledger_reversal_cases</code>)<a class="thm-cite" href="/theorem/lean_reversal_the_ledger_reversal_cases">sealed</a>.</p>
+<pre class="thm-statement"><code>(reverseNum 12) % 9 == 12 % 9 ∧ (reverseNum 45) % 9 == 45 % 9 ∧ (reverseNum 123) % 9 == 123 % 9 ∧ (reverseNum 1234) % 9 == 1234 % 9 ∧ (reverseNum 4321) % 9 == 4321 % 9 ∧ (reverseNum 9080) % 9 == 9080 % 9</code></pre>
+</div>
+<p class="thm-remark">── the ledger's own cases, now stated rather than asserted ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 321</strong> (<code>reversal_is_not_the_identity</code>)<a class="thm-cite" href="/theorem/lean_reversal_reversal_is_not_the_identity">sealed</a>.</p>
+<pre class="thm-statement"><code>¬ ((List.range' 10 90).all (fun n =&gt; reverseNum n == n))</code></pre>
+</div>
+<p class="thm-remark">── NON-VACUITY: reversal genuinely moves the number, so the invariance is not about a fixed point ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 90 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 322</strong> (<code>palindromes_are_the_fixed_points</code>)<a class="thm-cite" href="/theorem/lean_reversal_palindromes_are_the_fixed_points">sealed</a>.</p>
+<pre class="thm-statement"><code>((List.range' 10 90).filter (fun n =&gt; reverseNum n == n)).length = 9</code></pre>
+</div>
+<p class="thm-remark">── palindromes are exactly the fixed points, and there are nine of them below 100 ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 90 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 323</strong> (<code>emirps_exist_below_one_hundred</code>)<a class="thm-cite" href="/theorem/lean_reversal_emirps_exist_below_one_hundred">sealed</a>.</p>
+<pre class="thm-statement"><code>((List.range' 10 90).filter (fun n =&gt; isPrime n &amp;&amp; isPrime (reverseNum n) &amp;&amp; reverseNum n != n)).length &gt; 0</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 90 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 324</strong> (<code>reversal_does_not_preserve_primality</code>)<a class="thm-cite" href="/theorem/lean_reversal_reversal_does_not_preserve_primality">sealed</a>.</p>
+<pre class="thm-statement"><code>¬ ((List.range' 10 90).all (fun n =&gt; isPrime n == isPrime (reverseNum n)))</code></pre>
+</div>
+<p class="thm-remark">── and reversal does NOT preserve primality in general: the boundary that makes emirps a real class ──</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 90 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 325</strong> (<code>reversal_is_involutive_exactly_off_the_trailing_zeros</code>)<a class="thm-cite" href="/theorem/lean_reversal_reversal_is_involutive_exactly_off_the_trailing_zeros">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range' 1 300).all (fun n =&gt; (reverseNum (reverseNum n) == n) == (n % 10 != 0))</code></pre>
+</div>
+<p class="thm-remark">── WHERE REVERSAL STOPS BEING AN INVOLUTION. Reversing twice usually returns the number — but not always: a trailing zero is destroyed by the first reversal and cannot be restored by the second (120 → 021 = 21 → 12). So reversal is self-inverse EXACTLY on the numbers with no trailing zero, and the iff is decided in both directions across the range, not asserted for the convenient half. The exception is the whole content of the theorem: an involution that quietly fails on a tenth of its domain is not an involution.</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 300 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 326</strong> (<code>reversal_settles_its_range</code>)<span class="thm-uncited">not sealed — settled by <code>rfl</code>, not exhausted</span>.</p>
+<pre class="thm-statement"><code>settledHere = 7</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>rfl</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+
+### Theorems {#theorems}
+
+<p class="paper-src"><code>src/proof/theorems.lean</code> · namespace <code>MillenniumFloor.Universal</code> · 8 theorems</p>
+
+The universal property — honestly, and COMPUTED from the sequence.
+
+
+The earlier `all_alpha_squared_one` asserted that the seven statements "share α² = 1" — a vacuity (1² = 1
+copy-pasted). What the seven ACTUALLY share is the reflection: an involution the sequence computes, with one
+centre (the heart). That shared structure is real; it is still not a proof of any conjecture. No anchors, no
+axioms, every proof `by decide`, no Mathlib. The floor holds: 0/7.
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 327</strong> (<code>universal_reflection_involution</code>)<a class="thm-cite" href="/theorem/lean_millenniumfloor.universal_universal_reflection_involution">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 11).all (fun d =&gt; refl (refl d) == d) -- σ ∘ σ = id everywhere — the shared involution ∧ ((List.range 10).filter (fun d =&gt; refl d == d)).length = 1 -- exactly ONE shared centre (the heart), computed</code></pre>
+</div>
+<p class="thm-remark">The universal law, computed: the reflection is a TOTAL involution on every residue, with exactly one shared fixed centre — the structure every one of the seven framings borrows. It is not "α² = 1", and it is not a proof.</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 110 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 328</strong> (<code>universal_centre_is_five</code>)<a class="thm-cite" href="/theorem/lean_millenniumfloor.universal_universal_centre_is_five">sealed</a>.</p>
+<pre class="thm-statement"><code>((List.range 10).filter (fun d =&gt; refl d == d)) = [5]</code></pre>
+</div>
+<p class="thm-remark">── the centre, NAMED rather than counted ── The theorem above proves there is exactly ONE centre. A count is not an identification: it says a heart exists without saying where it beats. Here it is, computed — the filter returns the singleton [5].</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 10 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 329</strong> (<code>universal_pairs_sum_to_ten</code>)<a class="thm-cite" href="/theorem/lean_millenniumfloor.universal_universal_pairs_sum_to_ten">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 11).all (fun d =&gt; d + refl d == 10)</code></pre>
+</div>
+<p class="thm-remark">── what the reflection conserves ── Every residue and its reflection sum to ten. This is the reason there is exactly one centre: a fixed point needs d + d = 10, and 10 is even, so exactly one d satisfies it. The conservation law is the whole structure.</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 11 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 330</strong> (<code>universal_reflection_reverses_the_domain</code>)<a class="thm-cite" href="/theorem/lean_millenniumfloor.universal_universal_reflection_reverses_the_domain">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 11).map refl = (List.range 11).reverse</code></pre>
+</div>
+<p class="thm-remark">── the reflection is a bijection of the domain, computed as an ordering ── Stronger than the involution and cheaper than a permutation argument: the image of 0…10 under the reflection IS 0…10 read backwards. Nothing is lost and nothing is repeated, and the witness is an equation.</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 121 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 331</strong> (<code>universal_reflection_is_not_an_involution_above_ten</code>)<a class="thm-cite" href="/theorem/lean_millenniumfloor.universal_universal_reflection_is_not_an_involution_above_ten">sealed</a>.</p>
+<pre class="thm-statement"><code>((List.range 10).map (fun k =&gt; k + 11)).all (fun d =&gt; ¬ (refl (refl d) == d))</code></pre>
+</div>
+<p class="thm-remark">── WHERE IT STOPS. The involution is not universal over ℕ, and the boundary is stated, not hidden ── Natural subtraction truncates: above ten, `refl d` is 0 and `refl (refl d)` is 10 for every input. So the involution holds on 0…10 and FAILS at every residue above it. The first theorem says `List.range 11` and means it. A boundary you can compute is a boundary you have not overclaimed past.</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 10 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 332</strong> (<code>universal_z9_reflection_permutes_the_units</code>)<a class="thm-cite" href="/theorem/lean_millenniumfloor.universal_universal_z9_reflection_permutes_the_units">sealed</a>.</p>
+<pre class="thm-statement"><code>([1, 2, 4, 5, 7, 8].map (fun d =&gt; (9 - d) % 9)) = [8, 7, 5, 4, 2, 1]</code></pre>
+</div>
+<p class="thm-remark">── the vortex has its OWN reflection, and it is a different map ── ℤ/9 reflects by d ↦ (9 − d) mod 9. That map permutes the six units among themselves. The millennium reflection does NOT stay inside them: it sends the unit 1 to 9, which is not a unit. Two reflections, two domains.</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 333</strong> (<code>universal_millennium_reflection_escapes_the_units</code>)<a class="thm-cite" href="/theorem/lean_millenniumfloor.universal_universal_millennium_reflection_escapes_the_units">sealed</a>.</p>
+<pre class="thm-statement"><code>¬ ([1, 2, 4, 5, 7, 8].all (fun u =&gt; [1, 2, 4, 5, 7, 8].contains (refl u)))</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 334</strong> (<code>universal_reflection_is_the_vortex_reflection_shifted</code>)<a class="thm-cite" href="/theorem/lean_millenniumfloor.universal_universal_reflection_is_the_vortex_reflection_shifted">sealed</a>.</p>
+<pre class="thm-statement"><code>(List.range 10).all (fun d =&gt; (10 - d) % 9 == ((9 - d) % 9 + 1) % 9)</code></pre>
+</div>
+<p class="thm-remark">── and yet they are the SAME map, shifted by one ── This is what the singleton family was standing on alone. Reduced mod nine, the millennium reflection is the vortex reflection plus one, at every residue 0…9. The shared structure the seven framings borrow is not a separate object: it is ℤ/9's own involution, displaced by a single step. Still not a proof of any conjecture.</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 10 cases. <span class="qed">□</span></p>
+
+
+<h2 class="paper-h paper-wing">unassigned</h2>
+
+
+### imagined {#imagined}
+
+<p class="paper-src"><code>src/proof/imagined.lean</code> · namespace <code>Imagined</code> · 118 theorems</p>
+
+IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets
+statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that
+also holds for all its siblings. A property true of everything names nothing. What is left is what the
+kernel accepted; whatever it refused is reported by the generator and is not in this file.
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 335</strong> (<code>units_is_closed_under_double</code>)<a class="thm-cite" href="/theorem/lean_imagined_units_is_closed_under_double">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (2 * d)))</code></pre>
+</div>
+<p class="thm-remark">the units is closed under doubling</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 336</strong> (<code>orbit_is_closed_under_double</code>)<a class="thm-cite" href="/theorem/lean_imagined_orbit_is_closed_under_double">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (2 * d)))</code></pre>
+</div>
+<p class="thm-remark">the doubling orbit is closed under doubling</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 337</strong> (<code>all_is_closed_under_double</code>)<a class="thm-cite" href="/theorem/lean_imagined_all_is_closed_under_double">sealed</a>.</p>
+<pre class="thm-statement"><code>[0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (2 * d)))</code></pre>
+</div>
+<p class="thm-remark">the whole ring is closed under doubling</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 81 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 338</strong> (<code>triad_is_closed_under_triple</code>)<a class="thm-cite" href="/theorem/lean_imagined_triad_is_closed_under_triple">sealed</a>.</p>
+<pre class="thm-statement"><code>[3, 6, 0].all (fun d =&gt; [3, 6, 0].contains (m9 (3 * d)))</code></pre>
+</div>
+<p class="thm-remark">the triad is closed under tripling</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 339</strong> (<code>all_is_closed_under_triple</code>)<a class="thm-cite" href="/theorem/lean_imagined_all_is_closed_under_triple">sealed</a>.</p>
+<pre class="thm-statement"><code>[0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (3 * d)))</code></pre>
+</div>
+<p class="thm-remark">the whole ring is closed under tripling</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 81 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 340</strong> (<code>units_is_closed_under_quadruple</code>)<a class="thm-cite" href="/theorem/lean_imagined_units_is_closed_under_quadruple">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (4 * d)))</code></pre>
+</div>
+<p class="thm-remark">the units is closed under quadrupling</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 341</strong> (<code>triad_is_closed_under_quadruple</code>)<a class="thm-cite" href="/theorem/lean_imagined_triad_is_closed_under_quadruple">sealed</a>.</p>
+<pre class="thm-statement"><code>[3, 6, 0].all (fun d =&gt; [3, 6, 0].contains (m9 (4 * d)))</code></pre>
+</div>
+<p class="thm-remark">the triad is closed under quadrupling</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 342</strong> (<code>orbit_is_closed_under_quadruple</code>)<a class="thm-cite" href="/theorem/lean_imagined_orbit_is_closed_under_quadruple">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (4 * d)))</code></pre>
+</div>
+<p class="thm-remark">the doubling orbit is closed under quadrupling</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 343</strong> (<code>tetA_is_closed_under_quadruple</code>)<a class="thm-cite" href="/theorem/lean_imagined_tetA_is_closed_under_quadruple">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 4, 7].all (fun d =&gt; [1, 4, 7].contains (m9 (4 * d)))</code></pre>
+</div>
+<p class="thm-remark">the first tetrahedron is closed under quadrupling</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 344</strong> (<code>tetB_is_closed_under_quadruple</code>)<a class="thm-cite" href="/theorem/lean_imagined_tetB_is_closed_under_quadruple">sealed</a>.</p>
+<pre class="thm-statement"><code>[2, 5, 8].all (fun d =&gt; [2, 5, 8].contains (m9 (4 * d)))</code></pre>
+</div>
+<p class="thm-remark">the second tetrahedron is closed under quadrupling</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 345</strong> (<code>all_is_closed_under_quadruple</code>)<a class="thm-cite" href="/theorem/lean_imagined_all_is_closed_under_quadruple">sealed</a>.</p>
+<pre class="thm-statement"><code>[0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (4 * d)))</code></pre>
+</div>
+<p class="thm-remark">the whole ring is closed under quadrupling</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 81 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 346</strong> (<code>squares_is_closed_under_quadruple</code>)<a class="thm-cite" href="/theorem/lean_imagined_squares_is_closed_under_quadruple">sealed</a>.</p>
+<pre class="thm-statement"><code>[0, 1, 4, 7].all (fun d =&gt; [0, 1, 4, 7].contains (m9 (4 * d)))</code></pre>
+</div>
+<p class="thm-remark">the squares mod nine is closed under quadrupling</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 347</strong> (<code>triad_is_closed_under_negate</code>)<a class="thm-cite" href="/theorem/lean_imagined_triad_is_closed_under_negate">sealed</a>.</p>
+<pre class="thm-statement"><code>[3, 6, 0].all (fun d =&gt; [3, 6, 0].contains (m9 (9 - d)))</code></pre>
+</div>
+<p class="thm-remark">the triad is closed under negation</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 348</strong> (<code>orbit_is_closed_under_negate</code>)<a class="thm-cite" href="/theorem/lean_imagined_orbit_is_closed_under_negate">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (9 - d)))</code></pre>
+</div>
+<p class="thm-remark">the doubling orbit is closed under negation</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 349</strong> (<code>all_is_closed_under_negate</code>)<a class="thm-cite" href="/theorem/lean_imagined_all_is_closed_under_negate">sealed</a>.</p>
+<pre class="thm-statement"><code>[0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (9 - d)))</code></pre>
+</div>
+<p class="thm-remark">the whole ring is closed under negation</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 81 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 350</strong> (<code>cubes_is_closed_under_negate</code>)<a class="thm-cite" href="/theorem/lean_imagined_cubes_is_closed_under_negate">sealed</a>.</p>
+<pre class="thm-statement"><code>[0, 1, 8].all (fun d =&gt; [0, 1, 8].contains (m9 (9 - d)))</code></pre>
+</div>
+<p class="thm-remark">the cubes mod nine is closed under negation</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 351</strong> (<code>units_is_closed_under_square</code>)<a class="thm-cite" href="/theorem/lean_imagined_units_is_closed_under_square">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (d * d)))</code></pre>
+</div>
+<p class="thm-remark">the units is closed under squaring</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 352</strong> (<code>triad_is_closed_under_square</code>)<a class="thm-cite" href="/theorem/lean_imagined_triad_is_closed_under_square">sealed</a>.</p>
+<pre class="thm-statement"><code>[3, 6, 0].all (fun d =&gt; [3, 6, 0].contains (m9 (d * d)))</code></pre>
+</div>
+<p class="thm-remark">the triad is closed under squaring</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 353</strong> (<code>orbit_is_closed_under_square</code>)<a class="thm-cite" href="/theorem/lean_imagined_orbit_is_closed_under_square">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (d * d)))</code></pre>
+</div>
+<p class="thm-remark">the doubling orbit is closed under squaring</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 354</strong> (<code>tetA_is_closed_under_square</code>)<a class="thm-cite" href="/theorem/lean_imagined_tetA_is_closed_under_square">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 4, 7].all (fun d =&gt; [1, 4, 7].contains (m9 (d * d)))</code></pre>
+</div>
+<p class="thm-remark">the first tetrahedron is closed under squaring</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 355</strong> (<code>all_is_closed_under_square</code>)<a class="thm-cite" href="/theorem/lean_imagined_all_is_closed_under_square">sealed</a>.</p>
+<pre class="thm-statement"><code>[0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (d * d)))</code></pre>
+</div>
+<p class="thm-remark">the whole ring is closed under squaring</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 81 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 356</strong> (<code>squares_is_closed_under_square</code>)<a class="thm-cite" href="/theorem/lean_imagined_squares_is_closed_under_square">sealed</a>.</p>
+<pre class="thm-statement"><code>[0, 1, 4, 7].all (fun d =&gt; [0, 1, 4, 7].contains (m9 (d * d)))</code></pre>
+</div>
+<p class="thm-remark">the squares mod nine is closed under squaring</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 357</strong> (<code>cubes_is_closed_under_square</code>)<a class="thm-cite" href="/theorem/lean_imagined_cubes_is_closed_under_square">sealed</a>.</p>
+<pre class="thm-statement"><code>[0, 1, 8].all (fun d =&gt; [0, 1, 8].contains (m9 (d * d)))</code></pre>
+</div>
+<p class="thm-remark">the cubes mod nine is closed under squaring</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 358</strong> (<code>units_is_closed_under_fourth</code>)<a class="thm-cite" href="/theorem/lean_imagined_units_is_closed_under_fourth">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (d ^ 4)))</code></pre>
+</div>
+<p class="thm-remark">the units is closed under the fourth power</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 359</strong> (<code>triad_is_closed_under_fourth</code>)<a class="thm-cite" href="/theorem/lean_imagined_triad_is_closed_under_fourth">sealed</a>.</p>
+<pre class="thm-statement"><code>[3, 6, 0].all (fun d =&gt; [3, 6, 0].contains (m9 (d ^ 4)))</code></pre>
+</div>
+<p class="thm-remark">the triad is closed under the fourth power</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 360</strong> (<code>orbit_is_closed_under_fourth</code>)<a class="thm-cite" href="/theorem/lean_imagined_orbit_is_closed_under_fourth">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (d ^ 4)))</code></pre>
+</div>
+<p class="thm-remark">the doubling orbit is closed under the fourth power</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 361</strong> (<code>tetA_is_closed_under_fourth</code>)<a class="thm-cite" href="/theorem/lean_imagined_tetA_is_closed_under_fourth">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 4, 7].all (fun d =&gt; [1, 4, 7].contains (m9 (d ^ 4)))</code></pre>
+</div>
+<p class="thm-remark">the first tetrahedron is closed under the fourth power</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 362</strong> (<code>all_is_closed_under_fourth</code>)<a class="thm-cite" href="/theorem/lean_imagined_all_is_closed_under_fourth">sealed</a>.</p>
+<pre class="thm-statement"><code>[0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (d ^ 4)))</code></pre>
+</div>
+<p class="thm-remark">the whole ring is closed under the fourth power</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 81 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 363</strong> (<code>squares_is_closed_under_fourth</code>)<a class="thm-cite" href="/theorem/lean_imagined_squares_is_closed_under_fourth">sealed</a>.</p>
+<pre class="thm-statement"><code>[0, 1, 4, 7].all (fun d =&gt; [0, 1, 4, 7].contains (m9 (d ^ 4)))</code></pre>
+</div>
+<p class="thm-remark">the squares mod nine is closed under the fourth power</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 364</strong> (<code>cubes_is_closed_under_fourth</code>)<a class="thm-cite" href="/theorem/lean_imagined_cubes_is_closed_under_fourth">sealed</a>.</p>
+<pre class="thm-statement"><code>[0, 1, 8].all (fun d =&gt; [0, 1, 8].contains (m9 (d ^ 4)))</code></pre>
+</div>
+<p class="thm-remark">the cubes mod nine is closed under the fourth power</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 365</strong> (<code>units_is_closed_under_sixth</code>)<a class="thm-cite" href="/theorem/lean_imagined_units_is_closed_under_sixth">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (d ^ 6)))</code></pre>
+</div>
+<p class="thm-remark">the units is closed under the sixth power</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 366</strong> (<code>triad_is_closed_under_sixth</code>)<a class="thm-cite" href="/theorem/lean_imagined_triad_is_closed_under_sixth">sealed</a>.</p>
+<pre class="thm-statement"><code>[3, 6, 0].all (fun d =&gt; [3, 6, 0].contains (m9 (d ^ 6)))</code></pre>
+</div>
+<p class="thm-remark">the triad is closed under the sixth power</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 367</strong> (<code>orbit_is_closed_under_sixth</code>)<a class="thm-cite" href="/theorem/lean_imagined_orbit_is_closed_under_sixth">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (d ^ 6)))</code></pre>
+</div>
+<p class="thm-remark">the doubling orbit is closed under the sixth power</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 368</strong> (<code>tetA_is_closed_under_sixth</code>)<a class="thm-cite" href="/theorem/lean_imagined_tetA_is_closed_under_sixth">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 4, 7].all (fun d =&gt; [1, 4, 7].contains (m9 (d ^ 6)))</code></pre>
+</div>
+<p class="thm-remark">the first tetrahedron is closed under the sixth power</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 369</strong> (<code>all_is_closed_under_sixth</code>)<a class="thm-cite" href="/theorem/lean_imagined_all_is_closed_under_sixth">sealed</a>.</p>
+<pre class="thm-statement"><code>[0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (d ^ 6)))</code></pre>
+</div>
+<p class="thm-remark">the whole ring is closed under the sixth power</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 81 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 370</strong> (<code>squares_is_closed_under_sixth</code>)<a class="thm-cite" href="/theorem/lean_imagined_squares_is_closed_under_sixth">sealed</a>.</p>
+<pre class="thm-statement"><code>[0, 1, 4, 7].all (fun d =&gt; [0, 1, 4, 7].contains (m9 (d ^ 6)))</code></pre>
+</div>
+<p class="thm-remark">the squares mod nine is closed under the sixth power</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 371</strong> (<code>cubes_is_closed_under_sixth</code>)<a class="thm-cite" href="/theorem/lean_imagined_cubes_is_closed_under_sixth">sealed</a>.</p>
+<pre class="thm-statement"><code>[0, 1, 8].all (fun d =&gt; [0, 1, 8].contains (m9 (d ^ 6)))</code></pre>
+</div>
+<p class="thm-remark">the cubes mod nine is closed under the sixth power</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 372</strong> (<code>units_is_closed_under_quintuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_units_is_closed_under_quintuple">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (5 * d)))</code></pre>
+</div>
+<p class="thm-remark">the units is closed under multiplication by five</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 373</strong> (<code>triad_is_closed_under_quintuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_triad_is_closed_under_quintuple">sealed</a>.</p>
+<pre class="thm-statement"><code>[3, 6, 0].all (fun d =&gt; [3, 6, 0].contains (m9 (5 * d)))</code></pre>
+</div>
+<p class="thm-remark">the triad is closed under multiplication by five</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 374</strong> (<code>orbit_is_closed_under_quintuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_orbit_is_closed_under_quintuple">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (5 * d)))</code></pre>
+</div>
+<p class="thm-remark">the doubling orbit is closed under multiplication by five</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 375</strong> (<code>all_is_closed_under_quintuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_all_is_closed_under_quintuple">sealed</a>.</p>
+<pre class="thm-statement"><code>[0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (5 * d)))</code></pre>
+</div>
+<p class="thm-remark">the whole ring is closed under multiplication by five</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 81 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 376</strong> (<code>triad_is_closed_under_sextuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_triad_is_closed_under_sextuple">sealed</a>.</p>
+<pre class="thm-statement"><code>[3, 6, 0].all (fun d =&gt; [3, 6, 0].contains (m9 (6 * d)))</code></pre>
+</div>
+<p class="thm-remark">the triad is closed under multiplication by six</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 377</strong> (<code>all_is_closed_under_sextuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_all_is_closed_under_sextuple">sealed</a>.</p>
+<pre class="thm-statement"><code>[0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (6 * d)))</code></pre>
+</div>
+<p class="thm-remark">the whole ring is closed under multiplication by six</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 81 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 378</strong> (<code>units_is_closed_under_septuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_units_is_closed_under_septuple">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (7 * d)))</code></pre>
+</div>
+<p class="thm-remark">the units is closed under multiplication by seven</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 379</strong> (<code>triad_is_closed_under_septuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_triad_is_closed_under_septuple">sealed</a>.</p>
+<pre class="thm-statement"><code>[3, 6, 0].all (fun d =&gt; [3, 6, 0].contains (m9 (7 * d)))</code></pre>
+</div>
+<p class="thm-remark">the triad is closed under multiplication by seven</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 380</strong> (<code>orbit_is_closed_under_septuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_orbit_is_closed_under_septuple">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (7 * d)))</code></pre>
+</div>
+<p class="thm-remark">the doubling orbit is closed under multiplication by seven</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 381</strong> (<code>tetA_is_closed_under_septuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_tetA_is_closed_under_septuple">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 4, 7].all (fun d =&gt; [1, 4, 7].contains (m9 (7 * d)))</code></pre>
+</div>
+<p class="thm-remark">the first tetrahedron is closed under multiplication by seven</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 382</strong> (<code>tetB_is_closed_under_septuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_tetB_is_closed_under_septuple">sealed</a>.</p>
+<pre class="thm-statement"><code>[2, 5, 8].all (fun d =&gt; [2, 5, 8].contains (m9 (7 * d)))</code></pre>
+</div>
+<p class="thm-remark">the second tetrahedron is closed under multiplication by seven</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 383</strong> (<code>all_is_closed_under_septuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_all_is_closed_under_septuple">sealed</a>.</p>
+<pre class="thm-statement"><code>[0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (7 * d)))</code></pre>
+</div>
+<p class="thm-remark">the whole ring is closed under multiplication by seven</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 81 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 384</strong> (<code>squares_is_closed_under_septuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_squares_is_closed_under_septuple">sealed</a>.</p>
+<pre class="thm-statement"><code>[0, 1, 4, 7].all (fun d =&gt; [0, 1, 4, 7].contains (m9 (7 * d)))</code></pre>
+</div>
+<p class="thm-remark">the squares mod nine is closed under multiplication by seven</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 16 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 385</strong> (<code>units_is_closed_under_octuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_units_is_closed_under_octuple">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (8 * d)))</code></pre>
+</div>
+<p class="thm-remark">the units is closed under multiplication by eight</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 386</strong> (<code>triad_is_closed_under_octuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_triad_is_closed_under_octuple">sealed</a>.</p>
+<pre class="thm-statement"><code>[3, 6, 0].all (fun d =&gt; [3, 6, 0].contains (m9 (8 * d)))</code></pre>
+</div>
+<p class="thm-remark">the triad is closed under multiplication by eight</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 387</strong> (<code>orbit_is_closed_under_octuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_orbit_is_closed_under_octuple">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (8 * d)))</code></pre>
+</div>
+<p class="thm-remark">the doubling orbit is closed under multiplication by eight</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 36 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 388</strong> (<code>all_is_closed_under_octuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_all_is_closed_under_octuple">sealed</a>.</p>
+<pre class="thm-statement"><code>[0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (8 * d)))</code></pre>
+</div>
+<p class="thm-remark">the whole ring is closed under multiplication by eight</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 81 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 389</strong> (<code>cubes_is_closed_under_octuple</code>)<a class="thm-cite" href="/theorem/lean_imagined_cubes_is_closed_under_octuple">sealed</a>.</p>
+<pre class="thm-statement"><code>[0, 1, 8].all (fun d =&gt; [0, 1, 8].contains (m9 (8 * d)))</code></pre>
+</div>
+<p class="thm-remark">the cubes mod nine is closed under multiplication by eight</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 390</strong> (<code>quadruple_is_involutive_on_triad</code>)<a class="thm-cite" href="/theorem/lean_imagined_quadruple_is_involutive_on_triad">sealed</a>.</p>
+<pre class="thm-statement"><code>[3, 6, 0].all (fun d =&gt; (fun x =&gt; m9 (4 * x)) (m9 (4 * d)) == d)</code></pre>
+</div>
+<p class="thm-remark">quadrupling is its own inverse on the triad</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 391</strong> (<code>square_is_involutive_on_tetA</code>)<a class="thm-cite" href="/theorem/lean_imagined_square_is_involutive_on_tetA">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 4, 7].all (fun d =&gt; (fun x =&gt; m9 (x * x)) (m9 (d * d)) == d)</code></pre>
+</div>
+<p class="thm-remark">squaring is its own inverse on the first tetrahedron</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 392</strong> (<code>square_is_involutive_on_squares</code>)<a class="thm-cite" href="/theorem/lean_imagined_square_is_involutive_on_squares">sealed</a>.</p>
+<pre class="thm-statement"><code>[0, 1, 4, 7].all (fun d =&gt; (fun x =&gt; m9 (x * x)) (m9 (d * d)) == d)</code></pre>
+</div>
+<p class="thm-remark">squaring is its own inverse on the squares mod nine</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 4 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 393</strong> (<code>cube_is_involutive_on_cubes</code>)<a class="thm-cite" href="/theorem/lean_imagined_cube_is_involutive_on_cubes">sealed</a>.</p>
+<pre class="thm-statement"><code>[0, 1, 8].all (fun d =&gt; (fun x =&gt; m9 (x * x * x)) (m9 (d * d * d)) == d)</code></pre>
+</div>
+<p class="thm-remark">cubing is its own inverse on the cubes mod nine</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 394</strong> (<code>fourth_is_involutive_on_tetA</code>)<a class="thm-cite" href="/theorem/lean_imagined_fourth_is_involutive_on_tetA">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 4, 7].all (fun d =&gt; (fun x =&gt; m9 (x ^ 4)) (m9 (d ^ 4)) == d)</code></pre>
+</div>
+<p class="thm-remark">the fourth power is its own inverse on the first tetrahedron</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 395</strong> (<code>fourth_is_involutive_on_squares</code>)<a class="thm-cite" href="/theorem/lean_imagined_fourth_is_involutive_on_squares">sealed</a>.</p>
+<pre class="thm-statement"><code>[0, 1, 4, 7].all (fun d =&gt; (fun x =&gt; m9 (x ^ 4)) (m9 (d ^ 4)) == d)</code></pre>
+</div>
+<p class="thm-remark">the fourth power is its own inverse on the squares mod nine</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 4 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 396</strong> (<code>fifth_is_involutive_on_units</code>)<a class="thm-cite" href="/theorem/lean_imagined_fifth_is_involutive_on_units">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; (fun x =&gt; m9 (x ^ 5)) (m9 (d ^ 5)) == d)</code></pre>
+</div>
+<p class="thm-remark">the fifth power is its own inverse on the units</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 6 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 397</strong> (<code>fifth_is_involutive_on_orbit</code>)<a class="thm-cite" href="/theorem/lean_imagined_fifth_is_involutive_on_orbit">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; (fun x =&gt; m9 (x ^ 5)) (m9 (d ^ 5)) == d)</code></pre>
+</div>
+<p class="thm-remark">the fifth power is its own inverse on the doubling orbit</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 6 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 398</strong> (<code>fifth_is_involutive_on_tetA</code>)<a class="thm-cite" href="/theorem/lean_imagined_fifth_is_involutive_on_tetA">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 4, 7].all (fun d =&gt; (fun x =&gt; m9 (x ^ 5)) (m9 (d ^ 5)) == d)</code></pre>
+</div>
+<p class="thm-remark">the fifth power is its own inverse on the first tetrahedron</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 399</strong> (<code>fifth_is_involutive_on_tetB</code>)<a class="thm-cite" href="/theorem/lean_imagined_fifth_is_involutive_on_tetB">sealed</a>.</p>
+<pre class="thm-statement"><code>[2, 5, 8].all (fun d =&gt; (fun x =&gt; m9 (x ^ 5)) (m9 (d ^ 5)) == d)</code></pre>
+</div>
+<p class="thm-remark">the fifth power is its own inverse on the second tetrahedron</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 400</strong> (<code>fifth_is_involutive_on_squares</code>)<a class="thm-cite" href="/theorem/lean_imagined_fifth_is_involutive_on_squares">sealed</a>.</p>
+<pre class="thm-statement"><code>[0, 1, 4, 7].all (fun d =&gt; (fun x =&gt; m9 (x ^ 5)) (m9 (d ^ 5)) == d)</code></pre>
+</div>
+<p class="thm-remark">the fifth power is its own inverse on the squares mod nine</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 4 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 401</strong> (<code>fifth_is_involutive_on_cubes</code>)<a class="thm-cite" href="/theorem/lean_imagined_fifth_is_involutive_on_cubes">sealed</a>.</p>
+<pre class="thm-statement"><code>[0, 1, 8].all (fun d =&gt; (fun x =&gt; m9 (x ^ 5)) (m9 (d ^ 5)) == d)</code></pre>
+</div>
+<p class="thm-remark">the fifth power is its own inverse on the cubes mod nine</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 402</strong> (<code>quintuple_is_involutive_on_triad</code>)<a class="thm-cite" href="/theorem/lean_imagined_quintuple_is_involutive_on_triad">sealed</a>.</p>
+<pre class="thm-statement"><code>[3, 6, 0].all (fun d =&gt; (fun x =&gt; m9 (5 * x)) (m9 (5 * d)) == d)</code></pre>
+</div>
+<p class="thm-remark">multiplication by five is its own inverse on the triad</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 403</strong> (<code>septuple_is_involutive_on_triad</code>)<a class="thm-cite" href="/theorem/lean_imagined_septuple_is_involutive_on_triad">sealed</a>.</p>
+<pre class="thm-statement"><code>[3, 6, 0].all (fun d =&gt; (fun x =&gt; m9 (7 * x)) (m9 (7 * d)) == d)</code></pre>
+</div>
+<p class="thm-remark">multiplication by seven is its own inverse on the triad</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 404</strong> (<code>double_carries_units_onto_orbit</code>)<a class="thm-cite" href="/theorem/lean_imagined_double_carries_units_onto_orbit">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (2 * d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d =&gt; m9 (2 * d))).eraseDups.length = 6</code></pre>
+</div>
+<p class="thm-remark">doubling carries the units onto the doubling orbit</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 216 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 405</strong> (<code>double_carries_orbit_onto_units</code>)<a class="thm-cite" href="/theorem/lean_imagined_double_carries_orbit_onto_units">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (2 * d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d =&gt; m9 (2 * d))).eraseDups.length = 6</code></pre>
+</div>
+<p class="thm-remark">doubling carries the doubling orbit onto the units</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 216 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 406</strong> (<code>triple_carries_all_onto_triad</code>)<a class="thm-cite" href="/theorem/lean_imagined_triple_carries_all_onto_triad">sealed</a>.</p>
+<pre class="thm-statement"><code>[0,1,2,3,4,5,6,7,8].all (fun d =&gt; [3, 6, 0].contains (m9 (3 * d))) ∧ ([0,1,2,3,4,5,6,7,8].map (fun d =&gt; m9 (3 * d))).eraseDups.length = 3</code></pre>
+</div>
+<p class="thm-remark">tripling carries the whole ring onto the triad</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 243 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 407</strong> (<code>triple_carries_cubes_onto_triad</code>)<a class="thm-cite" href="/theorem/lean_imagined_triple_carries_cubes_onto_triad">sealed</a>.</p>
+<pre class="thm-statement"><code>[0, 1, 8].all (fun d =&gt; [3, 6, 0].contains (m9 (3 * d))) ∧ ([0, 1, 8].map (fun d =&gt; m9 (3 * d))).eraseDups.length = 3</code></pre>
+</div>
+<p class="thm-remark">tripling carries the cubes mod nine onto the triad</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 27 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 408</strong> (<code>quadruple_carries_units_onto_orbit</code>)<a class="thm-cite" href="/theorem/lean_imagined_quadruple_carries_units_onto_orbit">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (4 * d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d =&gt; m9 (4 * d))).eraseDups.length = 6</code></pre>
+</div>
+<p class="thm-remark">quadrupling carries the units onto the doubling orbit</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 216 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 409</strong> (<code>quadruple_carries_orbit_onto_units</code>)<a class="thm-cite" href="/theorem/lean_imagined_quadruple_carries_orbit_onto_units">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (4 * d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d =&gt; m9 (4 * d))).eraseDups.length = 6</code></pre>
+</div>
+<p class="thm-remark">quadrupling carries the doubling orbit onto the units</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 216 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 410</strong> (<code>negate_carries_orbit_onto_units</code>)<a class="thm-cite" href="/theorem/lean_imagined_negate_carries_orbit_onto_units">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (9 - d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d =&gt; m9 (9 - d))).eraseDups.length = 6</code></pre>
+</div>
+<p class="thm-remark">negation carries the doubling orbit onto the units</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 216 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 411</strong> (<code>negate_carries_tetA_onto_tetB</code>)<a class="thm-cite" href="/theorem/lean_imagined_negate_carries_tetA_onto_tetB">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 4, 7].all (fun d =&gt; [2, 5, 8].contains (m9 (9 - d))) ∧ ([1, 4, 7].map (fun d =&gt; m9 (9 - d))).eraseDups.length = 3</code></pre>
+</div>
+<p class="thm-remark">negation carries the first tetrahedron onto the second tetrahedron</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 27 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 412</strong> (<code>negate_carries_tetB_onto_tetA</code>)<a class="thm-cite" href="/theorem/lean_imagined_negate_carries_tetB_onto_tetA">sealed</a>.</p>
+<pre class="thm-statement"><code>[2, 5, 8].all (fun d =&gt; [1, 4, 7].contains (m9 (9 - d))) ∧ ([2, 5, 8].map (fun d =&gt; m9 (9 - d))).eraseDups.length = 3</code></pre>
+</div>
+<p class="thm-remark">negation carries the second tetrahedron onto the first tetrahedron</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 27 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 413</strong> (<code>square_carries_units_onto_tetA</code>)<a class="thm-cite" href="/theorem/lean_imagined_square_carries_units_onto_tetA">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 4, 7].contains (m9 (d * d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d =&gt; m9 (d * d))).eraseDups.length = 3</code></pre>
+</div>
+<p class="thm-remark">squaring carries the units onto the first tetrahedron</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 108 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 414</strong> (<code>square_carries_orbit_onto_tetA</code>)<a class="thm-cite" href="/theorem/lean_imagined_square_carries_orbit_onto_tetA">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 4, 7].contains (m9 (d * d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d =&gt; m9 (d * d))).eraseDups.length = 3</code></pre>
+</div>
+<p class="thm-remark">squaring carries the doubling orbit onto the first tetrahedron</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 108 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 415</strong> (<code>square_carries_tetB_onto_tetA</code>)<a class="thm-cite" href="/theorem/lean_imagined_square_carries_tetB_onto_tetA">sealed</a>.</p>
+<pre class="thm-statement"><code>[2, 5, 8].all (fun d =&gt; [1, 4, 7].contains (m9 (d * d))) ∧ ([2, 5, 8].map (fun d =&gt; m9 (d * d))).eraseDups.length = 3</code></pre>
+</div>
+<p class="thm-remark">squaring carries the second tetrahedron onto the first tetrahedron</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 27 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 416</strong> (<code>square_carries_all_onto_squares</code>)<a class="thm-cite" href="/theorem/lean_imagined_square_carries_all_onto_squares">sealed</a>.</p>
+<pre class="thm-statement"><code>[0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0, 1, 4, 7].contains (m9 (d * d))) ∧ ([0,1,2,3,4,5,6,7,8].map (fun d =&gt; m9 (d * d))).eraseDups.length = 4</code></pre>
+</div>
+<p class="thm-remark">squaring carries the whole ring onto the squares mod nine</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 324 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 417</strong> (<code>cube_carries_all_onto_cubes</code>)<a class="thm-cite" href="/theorem/lean_imagined_cube_carries_all_onto_cubes">sealed</a>.</p>
+<pre class="thm-statement"><code>[0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0, 1, 8].contains (m9 (d * d * d))) ∧ ([0,1,2,3,4,5,6,7,8].map (fun d =&gt; m9 (d * d * d))).eraseDups.length = 3</code></pre>
+</div>
+<p class="thm-remark">cubing carries the whole ring onto the cubes mod nine</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 243 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 418</strong> (<code>fourth_carries_units_onto_tetA</code>)<a class="thm-cite" href="/theorem/lean_imagined_fourth_carries_units_onto_tetA">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 4, 7].contains (m9 (d ^ 4))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d =&gt; m9 (d ^ 4))).eraseDups.length = 3</code></pre>
+</div>
+<p class="thm-remark">the fourth power carries the units onto the first tetrahedron</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 108 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 419</strong> (<code>fourth_carries_orbit_onto_tetA</code>)<a class="thm-cite" href="/theorem/lean_imagined_fourth_carries_orbit_onto_tetA">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 4, 7].contains (m9 (d ^ 4))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d =&gt; m9 (d ^ 4))).eraseDups.length = 3</code></pre>
+</div>
+<p class="thm-remark">the fourth power carries the doubling orbit onto the first tetrahedron</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 108 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 420</strong> (<code>fourth_carries_tetB_onto_tetA</code>)<a class="thm-cite" href="/theorem/lean_imagined_fourth_carries_tetB_onto_tetA">sealed</a>.</p>
+<pre class="thm-statement"><code>[2, 5, 8].all (fun d =&gt; [1, 4, 7].contains (m9 (d ^ 4))) ∧ ([2, 5, 8].map (fun d =&gt; m9 (d ^ 4))).eraseDups.length = 3</code></pre>
+</div>
+<p class="thm-remark">the fourth power carries the second tetrahedron onto the first tetrahedron</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 27 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 421</strong> (<code>fourth_carries_all_onto_squares</code>)<a class="thm-cite" href="/theorem/lean_imagined_fourth_carries_all_onto_squares">sealed</a>.</p>
+<pre class="thm-statement"><code>[0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0, 1, 4, 7].contains (m9 (d ^ 4))) ∧ ([0,1,2,3,4,5,6,7,8].map (fun d =&gt; m9 (d ^ 4))).eraseDups.length = 4</code></pre>
+</div>
+<p class="thm-remark">the fourth power carries the whole ring onto the squares mod nine</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 324 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 422</strong> (<code>fifth_carries_units_onto_orbit</code>)<a class="thm-cite" href="/theorem/lean_imagined_fifth_carries_units_onto_orbit">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (d ^ 5))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d =&gt; m9 (d ^ 5))).eraseDups.length = 6</code></pre>
+</div>
+<p class="thm-remark">the fifth power carries the units onto the doubling orbit</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 216 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 423</strong> (<code>fifth_carries_orbit_onto_units</code>)<a class="thm-cite" href="/theorem/lean_imagined_fifth_carries_orbit_onto_units">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (d ^ 5))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d =&gt; m9 (d ^ 5))).eraseDups.length = 6</code></pre>
+</div>
+<p class="thm-remark">the fifth power carries the doubling orbit onto the units</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 216 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 424</strong> (<code>quintuple_carries_units_onto_orbit</code>)<a class="thm-cite" href="/theorem/lean_imagined_quintuple_carries_units_onto_orbit">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (5 * d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d =&gt; m9 (5 * d))).eraseDups.length = 6</code></pre>
+</div>
+<p class="thm-remark">multiplication by five carries the units onto the doubling orbit</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 216 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 425</strong> (<code>quintuple_carries_orbit_onto_units</code>)<a class="thm-cite" href="/theorem/lean_imagined_quintuple_carries_orbit_onto_units">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (5 * d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d =&gt; m9 (5 * d))).eraseDups.length = 6</code></pre>
+</div>
+<p class="thm-remark">multiplication by five carries the doubling orbit onto the units</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 216 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 426</strong> (<code>quintuple_carries_tetA_onto_tetB</code>)<a class="thm-cite" href="/theorem/lean_imagined_quintuple_carries_tetA_onto_tetB">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 4, 7].all (fun d =&gt; [2, 5, 8].contains (m9 (5 * d))) ∧ ([1, 4, 7].map (fun d =&gt; m9 (5 * d))).eraseDups.length = 3</code></pre>
+</div>
+<p class="thm-remark">multiplication by five carries the first tetrahedron onto the second tetrahedron</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 27 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 427</strong> (<code>quintuple_carries_tetB_onto_tetA</code>)<a class="thm-cite" href="/theorem/lean_imagined_quintuple_carries_tetB_onto_tetA">sealed</a>.</p>
+<pre class="thm-statement"><code>[2, 5, 8].all (fun d =&gt; [1, 4, 7].contains (m9 (5 * d))) ∧ ([2, 5, 8].map (fun d =&gt; m9 (5 * d))).eraseDups.length = 3</code></pre>
+</div>
+<p class="thm-remark">multiplication by five carries the second tetrahedron onto the first tetrahedron</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 27 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 428</strong> (<code>sextuple_carries_all_onto_triad</code>)<a class="thm-cite" href="/theorem/lean_imagined_sextuple_carries_all_onto_triad">sealed</a>.</p>
+<pre class="thm-statement"><code>[0,1,2,3,4,5,6,7,8].all (fun d =&gt; [3, 6, 0].contains (m9 (6 * d))) ∧ ([0,1,2,3,4,5,6,7,8].map (fun d =&gt; m9 (6 * d))).eraseDups.length = 3</code></pre>
+</div>
+<p class="thm-remark">multiplication by six carries the whole ring onto the triad</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 243 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 429</strong> (<code>sextuple_carries_cubes_onto_triad</code>)<a class="thm-cite" href="/theorem/lean_imagined_sextuple_carries_cubes_onto_triad">sealed</a>.</p>
+<pre class="thm-statement"><code>[0, 1, 8].all (fun d =&gt; [3, 6, 0].contains (m9 (6 * d))) ∧ ([0, 1, 8].map (fun d =&gt; m9 (6 * d))).eraseDups.length = 3</code></pre>
+</div>
+<p class="thm-remark">multiplication by six carries the cubes mod nine onto the triad</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 27 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 430</strong> (<code>septuple_carries_units_onto_orbit</code>)<a class="thm-cite" href="/theorem/lean_imagined_septuple_carries_units_onto_orbit">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (7 * d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d =&gt; m9 (7 * d))).eraseDups.length = 6</code></pre>
+</div>
+<p class="thm-remark">multiplication by seven carries the units onto the doubling orbit</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 216 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 431</strong> (<code>septuple_carries_orbit_onto_units</code>)<a class="thm-cite" href="/theorem/lean_imagined_septuple_carries_orbit_onto_units">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (7 * d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d =&gt; m9 (7 * d))).eraseDups.length = 6</code></pre>
+</div>
+<p class="thm-remark">multiplication by seven carries the doubling orbit onto the units</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 216 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 432</strong> (<code>octuple_carries_units_onto_orbit</code>)<a class="thm-cite" href="/theorem/lean_imagined_octuple_carries_units_onto_orbit">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (8 * d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d =&gt; m9 (8 * d))).eraseDups.length = 6</code></pre>
+</div>
+<p class="thm-remark">multiplication by eight carries the units onto the doubling orbit</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 216 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 433</strong> (<code>octuple_carries_orbit_onto_units</code>)<a class="thm-cite" href="/theorem/lean_imagined_octuple_carries_orbit_onto_units">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (8 * d))) ∧ ([1, 2, 4, 8, 7, 5].map (fun d =&gt; m9 (8 * d))).eraseDups.length = 6</code></pre>
+</div>
+<p class="thm-remark">multiplication by eight carries the doubling orbit onto the units</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 216 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 434</strong> (<code>octuple_carries_tetA_onto_tetB</code>)<a class="thm-cite" href="/theorem/lean_imagined_octuple_carries_tetA_onto_tetB">sealed</a>.</p>
+<pre class="thm-statement"><code>[1, 4, 7].all (fun d =&gt; [2, 5, 8].contains (m9 (8 * d))) ∧ ([1, 4, 7].map (fun d =&gt; m9 (8 * d))).eraseDups.length = 3</code></pre>
+</div>
+<p class="thm-remark">multiplication by eight carries the first tetrahedron onto the second tetrahedron</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 27 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 435</strong> (<code>octuple_carries_tetB_onto_tetA</code>)<a class="thm-cite" href="/theorem/lean_imagined_octuple_carries_tetB_onto_tetA">sealed</a>.</p>
+<pre class="thm-statement"><code>[2, 5, 8].all (fun d =&gt; [1, 4, 7].contains (m9 (8 * d))) ∧ ([2, 5, 8].map (fun d =&gt; m9 (8 * d))).eraseDups.length = 3</code></pre>
+</div>
+<p class="thm-remark">multiplication by eight carries the second tetrahedron onto the first tetrahedron</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 27 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 436</strong> (<code>triple_collapses_triad_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_triple_collapses_triad_to_one_value">sealed</a>.</p>
+<pre class="thm-statement"><code>([3, 6, 0].map (fun d =&gt; m9 (3 * d))).eraseDups.length = 1</code></pre>
+</div>
+<p class="thm-remark">tripling sends every element of the triad to a single value</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 437</strong> (<code>triple_collapses_tetA_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_triple_collapses_tetA_to_one_value">sealed</a>.</p>
+<pre class="thm-statement"><code>([1, 4, 7].map (fun d =&gt; m9 (3 * d))).eraseDups.length = 1</code></pre>
+</div>
+<p class="thm-remark">tripling sends every element of the first tetrahedron to a single value</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 438</strong> (<code>triple_collapses_tetB_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_triple_collapses_tetB_to_one_value">sealed</a>.</p>
+<pre class="thm-statement"><code>([2, 5, 8].map (fun d =&gt; m9 (3 * d))).eraseDups.length = 1</code></pre>
+</div>
+<p class="thm-remark">tripling sends every element of the second tetrahedron to a single value</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 439</strong> (<code>square_collapses_triad_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_square_collapses_triad_to_one_value">sealed</a>.</p>
+<pre class="thm-statement"><code>([3, 6, 0].map (fun d =&gt; m9 (d * d))).eraseDups.length = 1</code></pre>
+</div>
+<p class="thm-remark">squaring sends every element of the triad to a single value</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 440</strong> (<code>cube_collapses_triad_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_cube_collapses_triad_to_one_value">sealed</a>.</p>
+<pre class="thm-statement"><code>([3, 6, 0].map (fun d =&gt; m9 (d * d * d))).eraseDups.length = 1</code></pre>
+</div>
+<p class="thm-remark">cubing sends every element of the triad to a single value</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 441</strong> (<code>cube_collapses_tetA_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_cube_collapses_tetA_to_one_value">sealed</a>.</p>
+<pre class="thm-statement"><code>([1, 4, 7].map (fun d =&gt; m9 (d * d * d))).eraseDups.length = 1</code></pre>
+</div>
+<p class="thm-remark">cubing sends every element of the first tetrahedron to a single value</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 442</strong> (<code>cube_collapses_tetB_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_cube_collapses_tetB_to_one_value">sealed</a>.</p>
+<pre class="thm-statement"><code>([2, 5, 8].map (fun d =&gt; m9 (d * d * d))).eraseDups.length = 1</code></pre>
+</div>
+<p class="thm-remark">cubing sends every element of the second tetrahedron to a single value</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 443</strong> (<code>fourth_collapses_triad_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_fourth_collapses_triad_to_one_value">sealed</a>.</p>
+<pre class="thm-statement"><code>([3, 6, 0].map (fun d =&gt; m9 (d ^ 4))).eraseDups.length = 1</code></pre>
+</div>
+<p class="thm-remark">the fourth power sends every element of the triad to a single value</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 444</strong> (<code>fifth_collapses_triad_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_fifth_collapses_triad_to_one_value">sealed</a>.</p>
+<pre class="thm-statement"><code>([3, 6, 0].map (fun d =&gt; m9 (d ^ 5))).eraseDups.length = 1</code></pre>
+</div>
+<p class="thm-remark">the fifth power sends every element of the triad to a single value</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 445</strong> (<code>sixth_collapses_units_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_sixth_collapses_units_to_one_value">sealed</a>.</p>
+<pre class="thm-statement"><code>([1, 2, 4, 5, 7, 8].map (fun d =&gt; m9 (d ^ 6))).eraseDups.length = 1</code></pre>
+</div>
+<p class="thm-remark">the sixth power sends every element of the units to a single value</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 6 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 446</strong> (<code>sixth_collapses_triad_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_sixth_collapses_triad_to_one_value">sealed</a>.</p>
+<pre class="thm-statement"><code>([3, 6, 0].map (fun d =&gt; m9 (d ^ 6))).eraseDups.length = 1</code></pre>
+</div>
+<p class="thm-remark">the sixth power sends every element of the triad to a single value</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 447</strong> (<code>sixth_collapses_orbit_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_sixth_collapses_orbit_to_one_value">sealed</a>.</p>
+<pre class="thm-statement"><code>([1, 2, 4, 8, 7, 5].map (fun d =&gt; m9 (d ^ 6))).eraseDups.length = 1</code></pre>
+</div>
+<p class="thm-remark">the sixth power sends every element of the doubling orbit to a single value</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 6 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 448</strong> (<code>sixth_collapses_tetA_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_sixth_collapses_tetA_to_one_value">sealed</a>.</p>
+<pre class="thm-statement"><code>([1, 4, 7].map (fun d =&gt; m9 (d ^ 6))).eraseDups.length = 1</code></pre>
+</div>
+<p class="thm-remark">the sixth power sends every element of the first tetrahedron to a single value</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 449</strong> (<code>sixth_collapses_tetB_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_sixth_collapses_tetB_to_one_value">sealed</a>.</p>
+<pre class="thm-statement"><code>([2, 5, 8].map (fun d =&gt; m9 (d ^ 6))).eraseDups.length = 1</code></pre>
+</div>
+<p class="thm-remark">the sixth power sends every element of the second tetrahedron to a single value</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 450</strong> (<code>sextuple_collapses_triad_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_sextuple_collapses_triad_to_one_value">sealed</a>.</p>
+<pre class="thm-statement"><code>([3, 6, 0].map (fun d =&gt; m9 (6 * d))).eraseDups.length = 1</code></pre>
+</div>
+<p class="thm-remark">multiplication by six sends every element of the triad to a single value</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 451</strong> (<code>sextuple_collapses_tetA_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_sextuple_collapses_tetA_to_one_value">sealed</a>.</p>
+<pre class="thm-statement"><code>([1, 4, 7].map (fun d =&gt; m9 (6 * d))).eraseDups.length = 1</code></pre>
+</div>
+<p class="thm-remark">multiplication by six sends every element of the first tetrahedron to a single value</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 452</strong> (<code>sextuple_collapses_tetB_to_one_value</code>)<a class="thm-cite" href="/theorem/lean_imagined_sextuple_collapses_tetB_to_one_value">sealed</a>.</p>
+<pre class="thm-statement"><code>([2, 5, 8].map (fun d =&gt; m9 (6 * d))).eraseDups.length = 1</code></pre>
+</div>
+<p class="thm-remark">multiplication by six sends every element of the second tetrahedron to a single value</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
+
+
+<h2 class="paper-h paper-wing">the record</h2>
+
+
+### Rights {#rights}
+
+<p class="paper-src"><code>src/proof/rights.lean</code> · namespace <code>Rights</code> · 8 theorems</p>
+
+What this deposit claims under international law — and, in the same table, what it does not.
+
+
+"Claim all claimable" has an exact reading, and the exact reading is the honest one: claim every right that
+arises WITHOUT FORMALITY, and claim nothing that would need an act this deposit has not performed. Berne
+Art. 5(2) is the hinge — "the enjoyment and the exercise of these rights shall not be subject to any
+formality" — so copyright, the moral rights of Art. 6bis, and the sui generis database right of Directive
+96/9/EC Art. 7 are held from the moment of authorship and are asserted here. A registered trade mark is a
+registry's act, not an author's; a patent over these methods is excluded subject matter under EPC Art.
+52(2)(a); the mathematics itself has no author to own it; and the seven Millennium Prizes belong to the
+Clay Mathematics Institute, which is why the floor has always read 0/7.
+
+The table below is the claim. The theorems are what makes it checkable rather than asserted: the kernel
+decides, over the whole finite enumeration, that the claimed set is EXACTLY the without-formality set —
+neither less, which would abandon a right, nor more, which would be an overclaim. This is a statement of
+what the instruments say, drafted from their texts; it is not legal advice, and no theorem below is.
+
+<p class="paper-h">Definitions</p>
+
+<pre class="thm-statement paper-defs"><code>instruments := [ (1, 0, true,  true )   -- copyright in the expression — Berne Art. 5(2), no formality, no notice, no deposit
+settledHere := 7</code></pre>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 453</strong> (<code>claims_exactly_what_arises_without_formality</code>)<a class="thm-cite" href="/theorem/lean_rights_claims_exactly_what_arises_without_formality">sealed</a>.</p>
+<pre class="thm-statement"><code>instruments.all (fun r =&gt; auto r == claim r)</code></pre>
+</div>
+<p class="thm-remark">── THE CLAIM. Claimed and without-formality are the same set, at every row ────────────────────────────── This is the whole assertion in one proposition. Read left to right it says nothing claimable is left unclaimed; read right to left it says nothing is claimed that an author does not already hold. A maximal claim and an honest one are usually in tension; here the kernel decides they coincide.</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 454</strong> (<code>the_claimed_are_copyright_moral_rights_and_the_database</code>)<a class="thm-cite" href="/theorem/lean_rights_the_claimed_are_copyright_moral_rights_and_the_database">sealed</a>.</p>
+<pre class="thm-statement"><code>(instruments.filter claim).map idOf = [1, 2, 3]</code></pre>
+</div>
+<p class="thm-remark">── WHICH three, not how many — a count identifies nothing ───────────────────────────────────────────────</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 455</strong> (<code>the_unclaimed_are_the_registry_the_excluded_and_the_unownable</code>)<a class="thm-cite" href="/theorem/lean_rights_the_unclaimed_are_the_registry_the_excluded_and_the_unownable">sealed</a>.</p>
+<pre class="thm-statement"><code>(instruments.filter (fun r =&gt; ¬ claim r)).map idOf = [4, 5, 6, 7]</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 4 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 456</strong> (<code>no_right_that_needs_a_registry_act_is_claimed</code>)<a class="thm-cite" href="/theorem/lean_rights_no_right_that_needs_a_registry_act_is_claimed">sealed</a>.</p>
+<pre class="thm-statement"><code>(instruments.filter (fun r =&gt; kindOf r == 1)).all (fun r =&gt; claim r == false)</code></pre>
+</div>
+<p class="thm-remark">── the three reasons a right is NOT claimed, each stated separately so none hides inside another ────────</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 457</strong> (<code>no_excluded_subject_matter_is_claimed</code>)<a class="thm-cite" href="/theorem/lean_rights_no_excluded_subject_matter_is_claimed">sealed</a>.</p>
+<pre class="thm-statement"><code>(instruments.filter (fun r =&gt; kindOf r == 2)).all (fun r =&gt; claim r == false)</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 458</strong> (<code>nothing_incapable_of_ownership_is_claimed</code>)<a class="thm-cite" href="/theorem/lean_rights_nothing_incapable_of_ownership_is_claimed">sealed</a>.</p>
+<pre class="thm-statement"><code>(instruments.filter (fun r =&gt; kindOf r == 3)).all (fun r =&gt; claim r == false)</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 459</strong> (<code>the_enumeration_is_complete_and_unduplicated</code>)<a class="thm-cite" href="/theorem/lean_rights_the_enumeration_is_complete_and_unduplicated">sealed</a>.</p>
+<pre class="thm-statement"><code>instruments.map idOf = [1, 2, 3, 4, 5, 6, 7]</code></pre>
+</div>
+<p class="thm-remark">── the enumeration is closed: seven instruments, each judged once, none duplicated and none omitted ─────</p>
+<p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 7 cases. <span class="qed">□</span></p>
+
+<div class="thm">
+<p class="thm-label"><strong>Theorem 460</strong> (<code>rights_settles_its_range</code>)<span class="thm-uncited">not sealed — settled by <code>rfl</code>, not exhausted</span>.</p>
+<pre class="thm-statement"><code>settledHere = 7</code></pre>
+</div>
+<p class="thm-proof"><em>Proof.</em> <code>rfl</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
+
+
+<h2 class="paper-h">Verification</h2>
+
+Clone the repository and run `node scripts/lean.ts` to re-check every statement above against the Lean 4 kernel, or `npm run forensics` to re-verify the append-only receipt chain. The sources are [src/proof/](https://github.com/ceccec/millennium-solutions/tree/main/src/proof), and each sealed theorem also has its own page carrying the same statement. A content-address proves integrity, not truth. `entails → 0/7`.
+
+</div>

@@ -1,7 +1,7 @@
 {
   "name": "@ceccec/millennium-solutions",
   "version": "0.1.1",
-  "description": "Verifiable, recomputable ℤ/9 vortex framework in ONE package — content-addressing, audit ledger, exact arithmetic (0/7), and the honesty toolkit. Facts only.",
+  "description": "Verifiable, recomputable \u2124/9 vortex framework in ONE package \u2014 content-addressing, audit ledger, exact arithmetic (0/7), and the honesty toolkit. Facts only.",
   "author": {
     "name": "Tsvetan Rouschev",
     "email": "ceccec@psg.bg",
@@ -26,7 +26,7 @@
   },
   "scripts": {
     "docs:dev": "vitepress dev",
-    "predocs:build": "node scripts/analytics.ts && node scripts/pages.ts && node scripts/dashboard.ts && node scripts/boundaries.ts && node scripts/rights.ts && node scripts/challenges.ts && node scripts/heart.ts && node scripts/accounting.ts && node scripts/speedup.ts && node scripts/greeting.ts && node scripts/solutions.ts",
+    "predocs:build": "node scripts/analytics.ts && node scripts/pages.ts && node scripts/dashboard.ts && node scripts/boundaries.ts && node scripts/rights.ts && node scripts/challenges.ts && node scripts/heart.ts && node scripts/accounting.ts && node scripts/speedup.ts && node scripts/greeting.ts && node scripts/solutions.ts && node scripts/paper.ts",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview",
     "seal": "node scripts/seal.ts",
@@ -88,7 +88,8 @@
     "orphan-gate": "node scripts/orphan-gate.ts",
     "ci-health": "node scripts/ci-health.ts",
     "published": "node scripts/published.ts",
-    "translate-gate": "node scripts/translate-gate.ts"
+    "translate-gate": "node scripts/translate-gate.ts",
+    "paper": "node scripts/paper.ts"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",
