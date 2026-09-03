@@ -4,6 +4,9 @@
 // Regenerated each build (predocs:build), so the page cannot drift from what the tools actually return. 0/7.
 import { writeFileSync } from 'node:fs'
 import { proveVerdict } from './verdict.ts'
+import { leanTheorems } from '../src/api/index.ts'
+
+const LEAN = leanTheorems()
 import { computes } from './honesty-gate.ts'
 import { toUuid } from '../src/0/index.ts'
 
@@ -14,13 +17,34 @@ const solvedByDeposit = DOMAINS.map((_, i) => entails(i))           // → [fals
 
 // GROUP 1 — the record (the real independent work): a proof of concept that reflects all seven and solves none.
 const record = 'Millennium Solutions, the ℤ/9 vortex framework: it reflects all seven Clay problems into one algebraic structure and solves 0/7 — it does not solve them; a bijection that relabels, it does not propagate proofs; Lean 4 verifies only the decidable arithmetic; integrity, not truth; 0/7'
-const rv = proveVerdict(record)
+// A VERDICT WITH NO TEST IS NOT A VERDICT. adjudicate returns UNVERIFIED when no decidable test is supplied
+// — it means "nothing was offered to decide this", not "this failed. Both rows here were published as
+// UNVERIFIED beside "36/36 recompute true", and a reader cannot tell those apart. The facts were already
+// computed a few lines below and simply never handed to the trial.
+//
+// THE ARBITER IS src/proof. `provenHere = 0` is a def in index.lean, `the_floor_is_zero_of_seven` decides it,
+// and each of the seven per-problem theorems carries it as a conjunct. The test reads that rather than
+// restating it, so if the Lean ever stopped saying 0/7 this verdict would follow it.
+const floorInLean = (() => {
+  const seven = LEAN.filter((t) => t.file === 'index.lean' && /riemann|p_vs_np|navier|yang|hodge|birch|poincare/.test(t.name))
+  return seven.length === 7 && seven.every((t) => /provenHere = 0/.test(t.statement))
+    && LEAN.some((t) => t.name === 'the_floor_is_zero_of_seven')
+})()
+
+// The record claims it reflects all seven and solves none. Decidable: the deposit entails nothing, and the
+// kernel says the floor is zero.
+const rv = proveVerdict(record, () => solvedByDeposit.filter(Boolean).length === 0 && floorInLean)
 
 // GROUP 2 — an overclaim put to the same trial (shown by its drained token + receipt, never asserted as true).
 const overclaim = 'We prove all six Clay Millennium Problems via quantum coherence stability; confidence = 1.0; all six theorems are proven.'
-const ov = proveVerdict(overclaim)
+// The overclaim claims six are proved. Decidable, and decidably FALSE — which is why it is put to the same
+// trial: the honest verdict is REFUTED, computed, not a bare UNVERIFIED that could be read either way.
+const ov = proveVerdict(overclaim, () => solvedByDeposit.filter(Boolean).length >= 6)
 
-const holdsFloor = solvedByDeposit.filter(Boolean).length === 0 && rv.gateBinary === 1
+// THE SENTENCE "the trial confirms the floor holds" MUST CONSULT THE FLOOR. This read the gate binary and
+// the deposit's own entailments but never src/proof, so a control that removed `provenHere = 0` from one of
+// the seven left the verdict REFUTED and this line still printing that the floor holds.
+const holdsFloor = solvedByDeposit.filter(Boolean).length === 0 && rv.gateBinary === 1 && floorInLean
 
 const md = `---
 title: Solutions — adjudicated
