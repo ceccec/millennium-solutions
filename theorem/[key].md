@@ -29,6 +29,9 @@ const tactic = computed(() => String(params.value?.tactic || ''))
 const leanFile = computed(() => String(params.value?.leanFile || ''))
 const cases = computed(() => Number(params.value?.cases || 0))
 const showFormula = computed(() => !!statement.value && !isRevoked.value)
+// Two theorems share this key's name and the key does not say which. Rather than print one at random —
+// which is how the wrong formula reached this page — the page names the keys that do resolve.
+const ambiguous = computed(() => String(params.value?.ambiguous || ''))
 const casesText = computed(() => cases.value ? cases.value.toLocaleString('en-US') : '')
 const today = computed(() => String(params.value?.receipt || '').slice(0, 8))
 // microdata → speech: the frame's narration in the infinite movie (the ledger, read aloud)
@@ -81,6 +84,15 @@ const desc = computed(() => isLean.value
 <li><strong>Source (verify):</strong> <a href="https://github.com/ceccec/millennium-solutions/blob/main/src/proof/index.lean" target="_blank" rel="noopener">src/proof/index.lean</a> — clone and run <code>lean src/proof/index.lean</code>.</li>
 </ul>
 <p>A content-address proves integrity, not truth. <code>entails → 0/7</code>.</p>
+</div>
+
+<div v-if="ambiguous && !isRevoked" class="thm-ambiguous">
+
+**No single formula can be shown for this key.** Its name is declared by more than one theorem in
+`src/proof/`, and this key — minted before keys carried a namespace — does not say which. Showing one of them
+would present a statement the kernel checked under a *different* key as though it were this one. The keys that
+do resolve, each to exactly one statement: <code>{{ ambiguous }}</code>. Cite one of those.
+
 </div>
 
 <!-- ── the formula, in the standard format a formalisation paper prints: the verbatim kernel-checked

@@ -138,9 +138,9 @@ this page; there is nowhere else to keep the description in step.
 
 **Theorems** — `theorems.lean`, 8 theorem(s). The universal property — honestly, and COMPUTED from the sequence.
 
-### unfiled
+### the imagined
 
-**imagined** — `imagined.lean`, 118 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
+**What enumeration proposed and the kernel kept** — `imagined.lean`, 118 theorem(s). IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that also holds for all its siblings. A property true of everything names nothing. What is left is what the kernel accepted; whatever it refused is reported by the generator and is not in this file.
 
 ### the record
 

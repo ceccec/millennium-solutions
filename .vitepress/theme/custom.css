@@ -252,3 +252,39 @@
   .paper-src { color: #000 !important; font-size: 7.5pt !important; }
   .paper-wing { break-before: page; page-break-before: always; }
 }
+
+/* The Millennium floor, marked on the theorem itself. Bordered and set apart because its job is to state
+   what the theorem does NOT say, next to the theorem that might otherwise be read as saying it. */
+.thm-millennium {
+  font-family: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+  font-size: 0.84rem; line-height: 1.55; margin: 0.45rem 0 0.2rem;
+  padding: 0.5rem 0.75rem; border-left: 3px solid var(--vp-c-warning-1, #d97706);
+  background: var(--vp-c-bg-alt); border-radius: 0 4px 4px 0;
+}
+/* No float here. `float: right` on the file label was taken out of flow inside the multi-column
+   layout, so adjacent labels stacked on one line and long names ran under them — the printed index
+   showed "ledgerclaims.leanledgerclaims.lean" and truncated names. The entry is one flex row that
+   wraps instead, with the name allowed to break anywhere it must. */
+.paper-index { column-width: 17rem; column-gap: 1.6rem; margin: 0.8rem 0 1.4rem; }
+.paper-index a {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 0.4rem;
+  break-inside: avoid; font-size: 0.74rem; line-height: 1.55;
+  text-decoration: none; padding: 0.05rem 0;
+}
+.paper-index a code { overflow-wrap: anywhere; min-width: 0; }
+.paper-index a span { color: var(--vp-c-text-3); font-size: 0.66rem; white-space: nowrap; }
+/* A key that cannot be resolved to one theorem says so, rather than showing nothing. */
+.thm-ambiguous {
+  font-family: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+  font-size: 0.86rem; line-height: 1.6; padding: 0.6rem 0.85rem;
+  border-left: 3px solid var(--vp-c-divider); background: var(--vp-c-bg-alt); border-radius: 0 4px 4px 0;
+}
+@media print {
+  .thm-millennium {
+    background: #fff !important; border-left: 2pt solid #000 !important;
+    font-size: 8.5pt !important; break-inside: avoid; page-break-inside: avoid;
+  }
+  .paper-index { column-width: 15rem; }
+  .paper-index a, .paper-index a span { font-size: 7pt !important; color: #000 !important; }
+  .thm-ambiguous { background: #fff !important; font-size: 9pt !important; }
+}

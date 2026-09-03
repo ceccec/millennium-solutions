@@ -40,6 +40,7 @@ import { writeFileSync } from 'node:fs'
 import { all as leanDocs } from './leandoc.ts'
 import { live, theoremOfKey, leanTheorems } from '../src/api/index.ts'
 import { toUuid, merkleFold } from '../src/0/index.ts'
+import { MILLENNIUM } from '../src/millennium/index.ts'
 
 const docs = leanDocs()
 const T = leanTheorems()
@@ -219,12 +220,24 @@ for (const w of wings) {
     for (const t of d.theorems) {
       k++
       const key = sealedKey.get(at(d.file, t.name))
-      o += '<div class="thm">\n'
+      const anchor = 'thm-' + d.file.replace('.lean', '') + '-' + t.name
+      o += `<div class="thm" id="${anchor}">\n`
       o += `<p class="thm-label"><strong>Theorem ${k}</strong> (<code>${t.name}</code>)`
       o += key ? `<a class="thm-cite" href="/theorem/${key}">sealed</a>` : '<span class="thm-uncited">not sealed — settled by <code>rfl</code>, not exhausted</span>'
       o += '.</p>\n'
       o += `<pre class="thm-statement"><code>${esc(t.statement)}</code></pre>\n`
       o += '</div>\n'
+      // WHICH THEOREMS SIT AT THE MILLENNIUM FLOOR, and what they do not say. These seven are the closest
+      // this framework comes to a Clay problem, which makes them the place an overclaim would do the most
+      // damage — so the bound is printed WITH the theorem rather than left to a page the reader may never
+      // open. The wording is the shared one the theorem page shows; it is not restated here, so the two
+      // cannot drift apart.
+      const mil = MILLENNIUM[t.name]
+      if (mil) {
+        o += `<p class="thm-millennium"><strong>Millennium floor — ${esc(mil.problem)}.</strong> `
+        o += `Adjacent to the problem, and <strong>not</strong> the conjecture: ${esc(mil.bound)}. `
+        o += `Proved here: <strong>0</strong>. The authoritative statement is <a href="${mil.outlet}">${esc(mil.outletName)}</a>.</p>\n`
+      }
       // ONLY the theorem's OWN comment. leandoc also reports a comment inherited from the enclosing
       // section (docFrom 'section'), and printing that under each theorem attributed one theorem's remark
       // to its neighbours: `merkle_settles_its_range`, whose statement is `settledHere = 7`, was captioned
@@ -237,6 +250,15 @@ for (const w of wings) {
     }
   }
 }
+
+// An index: a 98-page document had no way to find a theorem by name. Derived from what was printed, so it
+// cannot list a theorem the paper does not contain, and the duplicated name appears twice with its file —
+// the honest rendering of two theorems that share a name.
+o += '\n<h2 class="paper-h">Index of theorems</h2>\n\n<div class="paper-index">\n'
+for (const e of docs.flatMap((d) => d.theorems.map((t) => ({ name: t.name, file: d.file })))
+  .sort((a, b) => a.name.localeCompare(b.name) || a.file.localeCompare(b.file)))
+  o += `<a href="#thm-${e.file.replace('.lean', '')}-${e.name}"><code>${e.name}</code> <span>${e.file}</span></a>\n`
+o += '</div>\n\n'
 
 o += '\n<h2 class="paper-h">Verification</h2>\n\n'
 o += 'Clone the repository and run `node scripts/lean.ts` to re-check every statement above against the Lean 4 kernel, '
