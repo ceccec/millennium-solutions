@@ -1,7 +1,7 @@
 {
   "name": "@ceccec/millennium-solutions",
   "version": "0.1.1",
-  "description": "Verifiable, recomputable \u2124/9 vortex framework in ONE package \u2014 content-addressing, audit ledger, exact arithmetic (0/7), and the honesty toolkit. Facts only.",
+  "description": "Verifiable, recomputable ℤ/9 vortex framework in ONE package — content-addressing, audit ledger, exact arithmetic (0/7), and the honesty toolkit. Facts only.",
   "author": {
     "name": "Tsvetan Rouschev",
     "email": "ceccec@psg.bg",
