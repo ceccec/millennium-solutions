@@ -12,6 +12,7 @@
 //   node scripts/memory.ts            print the derived block
 //   node scripts/memory.ts --write    write it into the memory file, replacing only the generated block
 import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs'
+import { leanTheorems as leanTheoremsShared } from '../src/api/index.ts'
 import { ledger as __ledger } from '../src/api/index.ts'
 import { isLive as __isLive, isWithdrawn as __isWithdrawn } from '../src/api/index.ts'
 
@@ -25,8 +26,9 @@ const led = __ledger() as
 const live = led.filter(__isLive)
 const leanFiles = readdirSync('src/proof').filter((f) => f.endsWith('.lean')).sort()
 const src = Object.fromEntries(leanFiles.map((f) => [f, readFileSync(`src/proof/${f}`, 'utf8')]))
-const theorems = leanFiles.flatMap((f) => [...src[f].matchAll(/^theorem /gm)]).length
-const byDecide = leanFiles.flatMap((f) => [...src[f].matchAll(/^theorem [A-Za-z_0-9]+[\s\S]*?:=\s*by decide/gm)]).length
+const LEAN = leanTheoremsShared()
+const theorems = LEAN.length
+const byDecide = LEAN.filter((t) => t.tactic === 'by decide').length
 const pkg = JSON.parse(readFileSync('package.json', 'utf8'))
 const gate = readFileSync('scripts/honesty-gate.ts', 'utf8')
 const gateLines = gate.split('\n').filter((l) => l.trim() && !l.trim().startsWith('//')).length

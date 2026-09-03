@@ -6,10 +6,11 @@ import { readFileSync, readdirSync, writeFileSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 import { join } from 'node:path'
 import { toUuid } from '../src/0/index.ts'
+import { escapeHtml } from '../src/html/index.ts'
 
 const DIST = '.vitepress/dist'
 const BASE = 'https://ceccec.psg.bg/millennium-solutions/'
-const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+const esc = escapeHtml
 const titleOf = (h: string) => esc((h.match(/<title>([^<]*)<\/title>/i)?.[1] || '').replace(/\s*\|.*$/, '').trim())
 const descOf = (h: string) => esc(h.match(/name="description" content="([^"]*)"/i)?.[1] || '')
 

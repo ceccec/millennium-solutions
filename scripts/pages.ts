@@ -21,7 +21,7 @@ import { translate } from '../src/prove/translate.ts'
 import { adjudicate } from './adjudicate.ts'
 import { computes } from './honesty-gate.ts'
 import { toUuid, merkleFold } from '../src/0/index.ts'
-import { ledger as __ledger, triad, units, axis, domainOf, census } from '../src/api/index.ts'
+import { ledger as __ledger, triad, units, axis, domainOf, census, leanTheorems as leanTheoremsShared } from '../src/api/index.ts'
 
 const CENSUS = census()
 import { orbit } from '../src/api/index.ts'
@@ -29,8 +29,12 @@ import { orbit } from '../src/api/index.ts'
 const ledger = __ledger() as { key: string; name: string; receipt: string }[]
 const leanFiles = readdirSync('src/proof').filter((f) => f.endsWith('.lean')).sort()
 const leanSrc = Object.fromEntries(leanFiles.map((f) => [f, readFileSync(`src/proof/${f}`, 'utf8')]))
-const leanTheorems = leanFiles.flatMap((f) => [...leanSrc[f].matchAll(/^theorem ([A-Za-z_0-9]+)/gm)].map((m) => ({ file: f, name: m[1] })))
-const byDecide = leanFiles.flatMap((f) => [...leanSrc[f].matchAll(/^theorem ([A-Za-z_0-9]+)[\s\S]*?:=\s*by decide/gm)].map((m) => m[1]))
+// ONE READER. Four regexes here parsed src/proof independently of the one in src/api — a whole-theorem
+// match, a by-decide match, a per-file count and a domain ranking — each able to drift from the others and
+// from the kernel. They are all the shared reader now.
+const LEAN = leanTheoremsShared()
+const leanTheorems = LEAN.map((t) => ({ file: t.file, name: t.name }))
+const byDecide = LEAN.filter((t) => t.tactic === 'by decide').map((t) => t.name)
 const leanSealed = ledger.filter((e) => e.key.startsWith('lean_'))
 
 const m9 = (n: number) => ((n % 9) + 9) % 9
@@ -88,7 +92,7 @@ const CLAIMS: Claim[] = [
 
   { section: S(3, 'Addressing'),
     derive: () => { const files = ['fnv.lean', 'address.lean', 'merkle.lean'].filter((f) => leanSrc[f])
-      const n = files.reduce((a, f) => a + [...leanSrc[f].matchAll(/^theorem /gm)].length, 0)
+      const n = LEAN.filter((t) => files.includes(t.file)).length
       return { text: `the content-address is ported to the formal layer in ${files.join(', ')} — ${n} theorems covering FNV-1a, the four seeded passes, the version and variant nibbles, and the fold, each agreeing with the shipped implementation at published values`, ok: files.length === 3 && n > 20, from: [files.join(', '), n] } } },
 
   { section: S(3, 'Addressing'),
@@ -124,8 +128,11 @@ const CLAIMS: Claim[] = [
       return { text: `the gate does not decide whether a statement is true: "two plus two equals five" ${falseHolds ? 'passes it' : 'is drained by it'}, so holding means not drained, never correct`, ok: falseHolds, from: ['two plus two equals five'] } } },
 
   { section: 'The floor',
-    derive: () => { const idx = leanSrc['index.lean'] ?? ''
-      const bodies = [...idx.replace(/^\s*--.*$/gm, '').matchAll(/theorem\s+[a-z_0-9]+\s*:([\s\S]*?):=/g)].map((m) => m[1]).join(' ')
+    derive: () => {
+      // The shared reader. This stripped comments with a line-anchored match, which leaves a comment that
+      // trails a CONTINUED line inside the proposition — so a sentence of English could have decided a test
+      // about whether the propositions mention infinite-domain objects.
+      const bodies = LEAN.filter((t) => t.file === 'index.lean').map((t) => t.statement).join(' ')
       const ranges = [...new Set((bodies.match(/List\.range\'? \d+/g) ?? []))]
       const infinite = /zeta|Complex|ℝ|ℂ|∀ [a-z] : ℕ/.test(bodies)
       return { text: `no theorem in the Clay-named file settles a conjecture: its propositions range over ${ranges.join(', ')} and mention ${infinite ? 'INFINITE-DOMAIN OBJECTS' : 'none of the objects those conjectures concern'}`, ok: ranges.length > 0 && !infinite, from: [ranges.join(', ')] } } },
@@ -184,11 +191,8 @@ const root = merkleFold(rows.map((r) => r.v.receipt))
 // so, and it would keep saying so right up until a proof arrived that did not work this way.
 
 const ranked = (() => {
-  const rows: { file: string; name: string; cases: number }[] = []
-  for (const f of leanFiles) {
-    for (const m of leanSrc[f].matchAll(/^theorem\s+([A-Za-z_0-9]+)\s*:([\s\S]*?):=\s*by decide/gm))
-      rows.push({ file: f, name: m[1], cases: domainOf(m[2]) })
-  }
+  const rows = LEAN.filter((t) => t.tactic === 'by decide')
+    .map((t) => ({ file: t.file, name: t.name, cases: domainOf(t.statement) }))
   return rows.sort((a, b) => b.cases - a.cases)
 })()
 

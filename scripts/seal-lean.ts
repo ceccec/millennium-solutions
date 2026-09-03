@@ -14,7 +14,7 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 import { toUuid } from '../src/0/index.ts'
-import { ledger as __ledger } from '../src/api/index.ts'
+import { leanTheorems, ledger as __ledger } from '../src/api/index.ts'
 import { isLive as __isLive, isWithdrawn as __isWithdrawn } from '../src/api/index.ts'
 
 const DIR = 'src/proof', LEDGER = 'src/proof/discovered.json'
@@ -31,16 +31,17 @@ const revoked = new Set((JSON.parse(readFileSync(`${DIR}/revoked.json`, 'utf8'))
 // domain and the result is a computation, not a convention. `rfl` on a declared constant proves the
 // declaration and nothing else — it is the shape criticised in provenHere = 0, and it is not evidence.
 // Sealing it would put declarations in a ledger of theorems, so it is excluded and counted separately.
+// ONE READER. This file carried its own copy of the theorem regex, byte-identical to the one in src/api,
+// and the copies drifted the moment either was fixed: normalizeStatement stopped a trailing comment being
+// read as part of a formula in src/api and scripts/leandoc, and this reader kept the bug — so the ledger
+// name it sealed for universal_reflection_involution still has `-- σ ∘ σ = id everywhere` inside the
+// statement. That entry stays as it is, because the ledger is append-only and rewriting a sealed name is
+// tamper; what changes here is that there is no longer a second parser to drift.
 type Th = { key: string; file: string; name: string; statement: string; tactic: string }
-const found: Th[] = []
-for (const f of readdirSync(DIR).filter((x) => x.endsWith('.lean')).sort()) {
-  const src = readFileSync(`${DIR}/${f}`, 'utf8')
-  const ns = src.match(/^namespace\s+([A-Za-z_0-9.]+)/m)?.[1] ?? f.replace('.lean', '')
-  for (const m of src.matchAll(/^theorem\s+([A-Za-z_0-9]+)\s*:([\s\S]*?):=\s*(by decide|rfl|by\s+\w+)/gm)) {
-    const statement = m[2].replace(/^\s*--.*$/gm, '').replace(/\s+/g, ' ').trim()
-    found.push({ key: 'lean_' + ns.toLowerCase() + '_' + m[1], file: f, name: m[1], statement, tactic: m[3] })
-  }
-}
+const found: Th[] = leanTheorems().map((t) => ({
+  key: 'lean_' + t.namespace.toLowerCase() + '_' + t.name,
+  file: t.file, name: t.name, statement: t.statement, tactic: t.tactic,
+}))
 
 const algebraic = found.filter((t) => t.tactic === 'by decide')
 const declared = found.filter((t) => t.tactic !== 'by decide')

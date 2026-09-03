@@ -36,6 +36,19 @@ if (C.byDecide + C.rfl !== C.theorems)
 if (C.unsealed !== C.rfl)
   fail(`${C.unsealed} theorems carry no live key but ${C.rfl} are rfl — seal-lean.ts seals \`by decide\` only, so these must be equal`)
 
+// ── 1b · the verifier's reader and the shared reader must agree ──────────────────────────────────────────
+// scripts/lean.ts finds theorem names with its own `^theorem NAME` match, and it keeps that independence
+// deliberately: it is what asks the kernel `#print axioms` for each one, and if it read through the same
+// parser as the reporting layer, one parser bug would hide a theorem from the audit AND from every count
+// at the same time. Duplication that buys a second opinion is worth keeping — but only if the two are
+// actually compared, so they are compared here.
+const broad = leanFiles().flatMap((f) => [...leanSource(f).matchAll(/^theorem\s+([A-Za-z_0-9]+)/gm)].map((m) => f + '::' + m[1]))
+const shared = leanTheorems().map((t) => t.file + '::' + t.name)
+const missed = broad.filter((x) => !shared.includes(x))
+const phantom = shared.filter((x) => !broad.includes(x))
+if (missed.length) fail(`the shared reader misses ${missed.length} theorem(s) the verifier sees: ${missed.slice(0, 4).join(', ')}`)
+if (phantom.length) fail(`the shared reader reports ${phantom.length} theorem(s) the verifier does not see: ${phantom.slice(0, 4).join(', ')}`)
+
 // ── 2 · the hygiene the prose claims, checked in the source ──────────────────────────────────────────────
 // Comments are stripped first: a header that says "no sorry" must not be read as a sorry.
 const code = (f: string) => leanSource(f).split('\n').map((l) => l.replace(/(^|\s)--.*$/, '')).join('\n')

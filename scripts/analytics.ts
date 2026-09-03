@@ -11,6 +11,9 @@
 // figure is passed in and none is remembered between runs, so a stale number cannot survive a rebuild. The
 // one measured timing is labelled as belonging to the machine that produced it, because it does.
 import { readFileSync, writeFileSync } from 'node:fs'
+import { leanTheorems as leanTheoremsShared } from '../src/api/index.ts'
+
+const LEAN = leanTheoremsShared()
 import { ledger as loadLedger, live as liveOf, withdrawn as goneOf, superseded as supOf, carried as carriedOf, proved as provedOf, octave, leanFiles, leanSource } from '../src/api/index.ts'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 
@@ -29,8 +32,8 @@ export function analytics() {
       file: f,
       title: src.match(/^--\s*title:\s*(.+)$/m)?.[1] ?? f.replace('.lean', ''),
       wing: src.match(/^--\s*wing:\s*(.+)$/m)?.[1] ?? '',
-      theorems: [...src.matchAll(/^theorem\s/gm)].length,
-      byDecide: [...src.matchAll(/:=\s*by decide/g)].length,
+      theorems: LEAN.filter((x) => x.file === f).length,
+      byDecide: LEAN.filter((x) => x.file === f && x.tactic === 'by decide').length,
     }
   })
   const theorems = perFile.reduce((n, f) => n + f.theorems, 0)

@@ -7,6 +7,7 @@
 // either abandons a right or claims one that is not held — both are worse than having no notice at all.
 import { readFileSync, writeFileSync } from 'node:fs'
 import { toUuid } from '../src/0/index.ts'
+import { escapeHtml } from '../src/html/index.ts'
 import { computes } from './honesty-gate.ts'
 import { liveKeys } from '../src/api/index.ts'
 
@@ -26,7 +27,7 @@ const KEY = 'lean_rights_claims_exactly_what_arises_without_formality'
 if (!liveKeys().has(KEY)) { console.error(`✗ rights: refusing to write RIGHTS.md — ${KEY} is not live in the ledger, so the claim is unproved`); process.exit(1) }
 
 const WHY = ['held from authorship, no formality', 'a registry grants it — not requested', 'excluded subject matter', 'not capable of being owned']
-const cell = (r: Row) => `<tr><td><code>${toUuid(r.says).slice(0, 13)}</code></td><td>${r.claim ? '<strong>CLAIMED</strong>' : 'not claimed'}</td><td>${r.says.replace(/&/g, '&amp;').replace(/</g, '&lt;')}</td><td>${WHY[r.kind]}</td></tr>`
+const cell = (r: Row) => `<tr><td><code>${toUuid(r.says).slice(0, 13)}</code></td><td>${r.claim ? '<strong>CLAIMED</strong>' : 'not claimed'}</td><td>${escapeHtml(r.says)}</td><td>${WHY[r.kind]}</td></tr>`
 
 const claimed = rows.filter((r) => r.claim)
 const md = `---

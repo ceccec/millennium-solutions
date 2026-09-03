@@ -19,6 +19,8 @@
 // `.contains` (124), `.length` (120), `List.range` (113), `.map` (96), `List.range'` (82), `.eraseDups`
 // (74), `.filter` (36), `.any` (33), `.foldl` (27), and the arithmetic and logical operators.
 
+import { escapeHtml } from '../html/index.ts'
+
 // ── tokens ───────────────────────────────────────────────────────────────────────────────────────────────
 type Tok = { k: 'num' | 'id' | 'op'; v: string }
 
@@ -254,7 +256,7 @@ export function toLatex(statement: string): string | null {
 // ── MathML ───────────────────────────────────────────────────────────────────────────────────────────────
 // Emitted from the SAME tree as the LaTeX, so the typeset page and the copyable LaTeX cannot disagree.
 // MathML is rendered natively by browsers, which keeps the page free of a maths library and a CDN.
-const X = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+const X = escapeHtml
 const mo = (s: string) => `<mo>${X(s)}</mo>`
 const mi = (s: string) => `<mi>${X(s)}</mi>`
 const MOP: Record<string, string> = { '==': '=', '=': '=', '!=': '≠', '≠': '≠', '<=': '≤', '≤': '≤', '>=': '≥', '≥': '≥', '∧': '∧', '∨': '∨', '→': '→', '↔': '↔', '*': '⋅', '%': 'mod', '++': '⧺' }

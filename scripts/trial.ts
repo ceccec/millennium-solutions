@@ -7,12 +7,14 @@
 // decidable test is that the refusal holds. So the verdict is not an opinion about the claim; it is a fact
 // that recomputes, and the trial fails to write if any row is not SEALED.
 import { readFileSync, writeFileSync } from 'node:fs'
+import { leanTheorems } from '../src/api/index.ts'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 import { adjudicate, proveVerdict } from './adjudicate.ts'
 import { computes } from './honesty-gate.ts'
 import { ledger as __ledger, orbit, units } from '../src/api/index.ts'
 
 const lean = readFileSync('src/proof/index.lean', 'utf8')
+const INDEX = leanTheorems().filter((t) => t.file === 'index.lean')
 const ledger = __ledger() as { key: string; name: string; receipt: string }[]
 const CLAY = ['riemann', 'p_vs_np', 'navier_stokes', 'yang_mills', 'hodge', 'birch_swinnerton_dyer', 'poincare']
 const green = (k: string) => new RegExp('theorem ' + k + '[\\s\\S]*?:= by decide').test(lean)
@@ -69,8 +71,10 @@ const FINDINGS: { statement: string; test: () => boolean }[] = [
   { statement: 'finding thirteen — none of the mathematics the seven conjectures concern appears in the statements the file decides: zeta, the complex plane, primes, algorithms, fluid, gauge fields, cohomology, elliptic curves and manifolds occur only in comments, where they name a section or record what is not decided, and never inside a theorem',
     test: () => { // the PROPOSITIONS only: strip comments, then take what sits between the theorem's colon
       // and its proof. A name like navier_stokes_flow_is_bounded is a label; the proposition is what follows.
-      const code = lean.replace(/^\s*--.*$/gm, '')
-      const bodies = [...code.matchAll(/theorem\s+[A-Za-z_0-9]+\s*:([\s\S]*?):=/g)].map((m) => m[1]).join('\n')
+      // The shared reader, so the propositions examined here are the same text every other surface shows,
+      // and comments are stripped by normalizeStatement — this used a line-anchored strip that leaves a
+      // comment trailing a continued line inside the proposition, which is how English reached a formula.
+      const bodies = INDEX.map((t) => t.statement).join('\n')
       return bodies.length > 200
         && ['zeta','complex','critical line','prime','algorithm','polynomial time','navier','fluid','viscosity','gauge','mass gap','quantum field','cohomolog','algebraic cycle','elliptic curve','l-function','manifold','homeomorph','3-sphere']
           .every((term) => !new RegExp(term, 'i').test(bodies))
@@ -86,10 +90,9 @@ const FINDINGS: { statement: string; test: () => boolean }[] = [
         && /def\s+provenHere\s*:\s*Nat\s*:=\s*0/.test(code) && provenHere !== 7 } },
 
   { statement: 'finding sixteen — the same rule keeps the floor inside every per-problem theorem as well, since each of the seven carries the count as a conjunct of the proposition that decide certifies',
-    test: () => { const code = lean.replace(/^\s*--.*$/gm, '')
-      const bodies = [...code.matchAll(/theorem\s+([A-Za-z_0-9]+)\s*:([\s\S]*?):=/g)]
-      const seven = bodies.filter(([, n]) => /riemann|p_vs_np|navier|yang|hodge|birch|poincare/.test(n))
-      return seven.length === 7 && seven.every(([, , b]) => /provenHere = 0/.test(b)) } },
+    test: () => {
+      const seven = INDEX.filter((t) => /riemann|p_vs_np|navier|yang|hodge|birch|poincare/.test(t.name))
+      return seven.length === 7 && seven.every((t) => /provenHere = 0/.test(t.statement)) } },
 
   { statement: 'finding seventeen — the theorem stating the count is zero is closed by reflexivity on a constant this file declares, so it certifies a declaration and is not evidence about the world: written as seven it would be equally green, and therefore it supports neither number',
     test: () => { const code = lean.replace(/^\s*--.*$/gm, '')

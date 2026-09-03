@@ -42,6 +42,7 @@ import { live, theoremOfKey, leanTheorems } from '../src/api/index.ts'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 import { MILLENNIUM } from '../src/millennium/index.ts'
 import { toLatex, toMathML } from '../src/latex/index.ts'
+import { escapeHtml } from '../src/html/index.ts'
 
 const docs = leanDocs()
 const T = leanTheorems()
@@ -93,7 +94,7 @@ const rflOnly = theorems.filter((t) => t.tactic !== 'by decide')
 const ownDoc = theorems.filter((t) => t.docFrom === 'own').length
 const typeset = theorems.filter((t) => toMathML(t.statement) !== null).length
 
-const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+const esc = escapeHtml
 const n = (x: number) => x.toLocaleString('en-US')
 
 // ── Figure 1 — every theorem as one mark, over the domain it walked ──────────────────────────────────────
