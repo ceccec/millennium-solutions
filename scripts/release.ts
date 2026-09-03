@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Content-addressed release orchestration (idempotent).
 import { execSync } from 'node:child_process'
-import { readFileSync, writeFileSync, readdirSync, statSync } from 'node:fs'
+import { existsSync, readFileSync, writeFileSync, readdirSync, statSync } from 'node:fs'
 import { join } from 'node:path'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 import { merkleGravity } from '../src/the/apple/index.ts'
@@ -97,7 +97,23 @@ if (TAG_ONLY) {
   }
   console.log('tag-only: not committing (protected branch) — tagging HEAD, which already carries ' + address.slice(0, 13) + '…')
 } else {
-  sh('git add -A')
+  // STAGE WHAT THE CHAIN CHANGED, NOT EVERYTHING. `git add -A` swept the developer's parallel work into a
+  // generated commit message — measured this session: an authored commit found "nothing to commit" because
+  // the chain had already taken its files. release-snapshot.ts records what was dirty at the head of the
+  // chain; anything dirty now that was NOT dirty then is the chain's own output and is what the tag must
+  // carry. Anything dirty in both is ambiguous and is left alone with a warning rather than guessed at.
+  const beforeDirty: string[] = existsSync('.release-snapshot.json')
+    ? (JSON.parse(readFileSync('.release-snapshot.json', 'utf8')) as { before: string[] }).before
+    : []
+  const nowDirty = execSync('git status --porcelain', { encoding: 'utf8' })
+    .split('\n').filter(Boolean).map((l) => l.slice(3).trim().replace(/^"|"$/g, ''))
+  const chainOutput = nowDirty.filter((f) => !beforeDirty.includes(f))
+  const ambiguous = nowDirty.filter((f) => beforeDirty.includes(f))
+  if (ambiguous.length) {
+    console.warn('release: ' + ambiguous.length + ' path(s) were dirty BEFORE the chain and changed during it — left unstaged, commit them yourself:')
+    for (const a of ambiguous.slice(0, 5)) console.warn('    ' + a)
+  }
+  if (chainOutput.length) sh('git add -- ' + chainOutput.map((f) => JSON.stringify(f)).join(' '))
   // Distinguish "nothing staged" (idempotent re-tag, fine) from a hook REJECTION (abort — never tag a
   // commit that does not carry `address`; that mints a lying tag, the v1.6.3 failure mode, now closed).
   let nothingStaged = false
