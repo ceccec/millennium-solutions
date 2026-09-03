@@ -17069,5 +17069,10 @@
     "key": "lean_priorart_zero_claims_is_not_full_attribution",
     "name": "lean priorart.lean: zero_claims_is_not_full_attribution — (sources.filter novelty).length = 0 ∧ (sources.filter (fun s => kindOf s == 1)).length > 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "7717c95c-0f31-80e2-840d-b07e3b4fb64f"
+  },
+  {
+    "key": "lean_millenniumfloor_the_three_non_units_are_exactly_the_unreachable",
+    "name": "lean index.lean: the_three_non_units_are_exactly_the_unreachable — ((List.range 9).filter (fun d => ! isUnit d)) = [0, 3, 6] ∧ ((List.range 9).filter (fun d => ! isUnit d)).all (fun d => ! span.contains d) ∧ ((List.range 9).filter isUnit).length + ((List.range 9).filter (fun d => ! isUnit d)).length = 9 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a26af379-71ef-89f8-a964-40a35713534c"
   }
 ]

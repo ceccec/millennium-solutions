@@ -125,6 +125,57 @@ export interface Census {
   liveKeys: number; sealedTheorems: number; surplusKeys: number; unresolvableKeys: number; unsealed: number
 }
 
+/** THE CLAY FLOOR, MEASURED OVER THE TREE — not certified by a constant.
+ *
+ *  index.lean used to carry `def provenHere : Nat := 0` with `the_floor_is_zero_of_seven := rfl` beside it,
+ *  and that literal glued as a conjunct onto every theorem. The repo's own trial already said what was wrong
+ *  with it (finding seventeen): "closed by reflexivity on a constant this file declares … written as seven it
+ *  would be equally green, and therefore it supports neither number." A counter the author maintains is an
+ *  arbiter the author writes.
+ *
+ *  An absence is not established by a certificate. It is established by there being no proof that reaches —
+ *  a property of the tree, checkable over the tree, and REFUTABLE: add one theorem quantifying over ℝ, or
+ *  naming the ζ-zeros, and this stops holding. That is what makes it worth running.
+ *
+ *  It measures three things about the Clay-named theorems: that all seven are present and closed by `decide`;
+ *  the largest finite domain any of them walks; and whether any statement reaches for an object the
+ *  conjectures actually concern. */
+export interface ClayFloor {
+  seven: number; inFile: number; allByDecide: boolean; largestDomain: number; reaches: string[]; holds: boolean
+}
+
+/** The objects the seven conjectures are about. A statement mentioning one of these is reaching past the
+ *  finite algebra this deposit decides, which is exactly what must not happen silently. */
+export const CONJECTURE_OBJECTS = [
+  'ℝ', 'ℂ', 'Real', 'Complex', 'zeta', 'critical line', 'polynomial time', 'viscosity', 'gauge',
+  'mass gap', 'quantum field', 'cohomolog', 'algebraic cycle', 'elliptic curve', 'l-function',
+  'manifold', 'homeomorph', '3-sphere',
+]
+
+const CLAY_NAMED = /riemann|p_vs_np|navier|yang|hodge|birch|poincare/
+
+export const clayFloor = (): ClayFloor => {
+  // EVERY THEOREM IN THE CLAY-NAMED FILE, not only the seven that carry a problem's name. index.lean holds
+  // eight: the seven, and `the_seven_rest_on_one_finite_structure`, the involution they share. Scanning only
+  // the name-matched seven left that eighth unmeasured — it could have reached for a conjecture object and
+  // this check would not have seen it, which is the hole the narrow filter opened.
+  const inFile = leanTheorems().filter((t) => t.file === 'index.lean')
+  const seven = inFile.filter((t) => CLAY_NAMED.test(t.name))
+  const text = inFile.map((t) => t.statement).join(' ')
+  const reaches = CONJECTURE_OBJECTS.filter((o) => new RegExp(o.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i').test(text))
+  let largest = 0
+  for (const t of inFile) largest = Math.max(largest, domainOf(t.statement))
+  const allByDecide = inFile.length > 0 && inFile.every((t) => t.tactic === 'by decide')
+  return {
+    seven: seven.length,
+    inFile: inFile.length,
+    allByDecide,
+    largestDomain: largest,
+    reaches,
+    holds: seven.length === 7 && allByDecide && reaches.length === 0,
+  }
+}
+
 export const census = (): Census => {
   const T = leanTheorems()
   const keys = (live() as { key: string }[]).filter((e) => e.key.startsWith('lean_')).map((e) => e.key)

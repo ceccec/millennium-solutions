@@ -117,7 +117,10 @@ theorem zero_claims_is_not_full_attribution :
   (sources.filter novelty).length = 0 ∧ (sources.filter (fun s => kindOf s == 1)).length > 0 := by decide
 
 -- ── THE REFUSAL, stated as a theorem so it is checked and not merely written ─────────────────────────────
--- `provenHere = 0` keeps the Clay floor. This is the same device for the same reason: the number of results
+-- The Clay floor is measured over the tree, not certified by a constant — index.lean used to declare
+-- `provenHere := 0` and prove it by `rfl`, and that was removed because a theorem deciding that a typed
+-- literal equals itself certifies a declaration and not the world. THIS IS DIFFERENT, and the difference is
+-- worth stating so the two are not confused: the number of results
 -- here whose novelty has been ESTABLISHED — shown, by search, to have no earlier statement anywhere — is
 -- zero. "No prior art known to the author" is a fact about the author. "No prior art exists" is a fact about
 -- the world, and nothing in this repository can decide it. A reader who takes the claimed set as a claim of

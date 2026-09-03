@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2358 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2359 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (486)
+### lean (487)
 
 - [lean_units_are_six](/theorem/lean_units_are_six) — lean: the units of ℤ/9 are exactly [1,2,4,5,7,8] — checked at every residue by the kernel, recomputed here; 0/7  ·  `031c89bf-e1e0…`
 - [lean_units_count](/theorem/lean_units_count) — lean: there are exactly six units in ℤ/9 — the kernel checks the count, recomputed here; 0/7  ·  `104e8965-ebfb…`
@@ -510,6 +510,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_priorart_neither_claimed_nor_established](/theorem/lean_priorart_neither_claimed_nor_established) — lean priorart.lean: neither_claimed_nor_established — (sources.filter novelty).length = 0 ∧ noveltyEstablished = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d19158c8-55e8…`
 - [lean_priorart_some_sources_are_unsearched](/theorem/lean_priorart_some_sources_are_unsearched) — lean priorart.lean: some_sources_are_unsearched — (sources.filter (fun s =&gt; kindOf s == 1)).length &gt; 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `611d2fbc-c45a…`
 - [lean_priorart_zero_claims_is_not_full_attribution](/theorem/lean_priorart_zero_claims_is_not_full_attribution) — lean priorart.lean: zero_claims_is_not_full_attribution — (sources.filter novelty).length = 0 ∧ (sources.filter (fun s =&gt; kindOf s == 1)).length &gt; 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7717c95c-0f31…`
+- [lean_millenniumfloor_the_three_non_units_are_exactly_the_unreachable](/theorem/lean_millenniumfloor_the_three_non_units_are_exactly_the_unreachable) — lean index.lean: the_three_non_units_are_exactly_the_unreachable — ((List.range 9).filter (fun d =&gt; ! isUnit d)) = [0, 3, 6] ∧ ((List.range 9).filter (fun d =&gt; ! isUnit d)).all (fun d =&gt; ! span.contains d) ∧ ((List.range 9).filter isUnit).length + ((List.range 9).filter (fun d =&gt; ! isUnit d)).length = 9 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a26af379-71ef…`
 
 ### other — one-of-a-kind (0)
 
@@ -2336,4 +2337,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `b96176e4-005b-8f74-ad67-7315c6c71e00`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `7bc14340-0d0a-87c9-a38b-d4b88f55383a`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

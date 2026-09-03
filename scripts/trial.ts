@@ -7,7 +7,7 @@
 // decidable test is that the refusal holds. So the verdict is not an opinion about the claim; it is a fact
 // that recomputes, and the trial fails to write if any row is not SEALED.
 import { readFileSync, writeFileSync } from 'node:fs'
-import { leanTheorems } from '../src/api/index.ts'
+import { leanTheorems, clayFloor } from '../src/api/index.ts'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 import { adjudicate, proveVerdict } from './adjudicate.ts'
 import { computes } from './honesty-gate.ts'
@@ -16,9 +16,16 @@ import { ledger as __ledger, orbit, units } from '../src/api/index.ts'
 const lean = readFileSync('src/proof/index.lean', 'utf8')
 const INDEX = leanTheorems().filter((t) => t.file === 'index.lean')
 const ledger = __ledger() as { key: string; name: string; receipt: string }[]
+const CLAY_RE = /riemann|p_vs_np|navier|yang|hodge|birch|poincare/
 const CLAY = ['riemann', 'p_vs_np', 'navier_stokes', 'yang_mills', 'hodge', 'birch_swinnerton_dyer', 'poincare']
 const green = (k: string) => new RegExp('theorem ' + k + '[\\s\\S]*?:= by decide').test(lean)
-const provenHere = Number((lean.match(/def provenHere : Nat := (\d+)/) as RegExpMatchArray)[1])
+// THE FLOOR IS MEASURED OVER THE TREE, NOT READ OFF A CONSTANT. This read `def provenHere : Nat := 0` and
+// the findings below tested that a number the author typed was the number the author typed. Finding
+// seventeen said so itself — "written as seven it would be equally green, and therefore it supports neither
+// number" — and the file kept the construct anyway. clayFloor() asks what the seven theorems actually do:
+// all present, all closed by decide, reaching for none of the objects the conjectures concern. It can be
+// refuted by adding one theorem that reaches, which is what makes it worth testing.
+const floor = clayFloor()
 
 /** THE CLAIM ON TRIAL, stated exactly as put. */
 const CLAIM = 'the deposit settles all seven Clay problems'
@@ -27,8 +34,8 @@ const FINDINGS: { statement: string; test: () => boolean }[] = [
   { statement: 'finding one — all seven Clay problems carry a Lean theorem that closes by decide, with no sorry, no native_decide and no axiom: the formal layer is green for every one of the seven',
     test: () => CLAY.every(green) && !/:=\s*by\s+native_decide|\bsorry\b(?![^\n]*never)/.test(lean.replace(/^--.*$/gm, '')) },
 
-  { statement: 'finding two — the same green file defines the count of problems answered there as zero, and nine of its theorems carry that count as a conjunct, so what decide certifies includes the refusal',
-    test: () => provenHere === 0 && (lean.match(/provenHere = 0/g) || []).length >= 8 },
+  { statement: 'finding two — the same green file states nothing about the seven conjectures: its seven Clay-named theorems are all closed by decide, and not one of their propositions reaches for a zeta zero, a manifold, an elliptic curve or any other object those conjectures concern',
+    test: () => floor.holds && floor.reaches.length === 0 },
 
   { statement: 'finding three — every statement the layer decides ranges over a finite list, which is what makes it decidable, while the seven conjectures range over infinite domains that admit no decision procedure',
     test: () => /List\.range/.test(lean) && !/∀ [a-z] : ℕ/.test(lean) && !/∃ [a-z] : ℕ/.test(lean) },
@@ -39,8 +46,8 @@ const FINDINGS: { statement: string; test: () => boolean }[] = [
     test: () => computes(CLAIM).binary === 1
       && computes('see [x](/theorem/a_key_that_was_never_sealed)').binary === 0 },
 
-  { statement: 'finding five — the claim under trial fails its own decidable test, because the count it asserts is seven while the count the source defines is zero',
-    test: () => { const asserted = 7; return asserted !== provenHere && provenHere === 0 } },
+  { statement: 'finding five — the claim under trial fails its own decidable test: it asserts seven settled conjectures, and not one proposition in the source reaches the objects those conjectures are about',
+    test: () => floor.seven === 7 && floor.reaches.length === 0 },
 
   { statement: 'finding six — the recorded ledger contains theorems stating that the deposit answers none of the seven, and none stating the contrary, so the claim also contradicts the sealed record',
     test: () => { const solvesNone = ledger.filter((e) => /solves? none|zero of seven|solve no clay|0_7|floor_is_0/i.test(e.key + ' ' + e.name)).length
@@ -84,20 +91,21 @@ const FINDINGS: { statement: string; test: () => boolean }[] = [
     test: () => { const ranges = (lean.match(/List\.range (\d+)/g) || []).map((m) => Number(m.split(' ')[1]))
       return ranges.length >= 10 && ranges.every((n) => n <= 48) && !/ℝ|ℂ|Real|Complex/.test(lean) } },
 
-  { statement: 'finding fifteen — under a rule of evidence admitting only algebra theorems, the floor survives that rule: it is itself an algebra theorem, provenHere equals zero closed by rfl, and the count it fixes is zero rather than seven',
-    test: () => { const code = lean.replace(/^\s*--.*$/gm, '')
-      return /theorem\s+the_floor_is_zero_of_seven\s*:\s*provenHere = 0\s*:=\s*rfl/.test(code)
-        && /def\s+provenHere\s*:\s*Nat\s*:=\s*0/.test(code) && provenHere !== 7 } },
+  { statement: 'finding fifteen — under a rule of evidence admitting only algebra theorems, the floor is not one of them and no longer pretends to be: the count is not declared in the source at all, so nothing certifies it and nothing needs to',
+    // Comments stripped first: the header of index.lean QUOTES the removed construct in order to explain
+    // why it went, and a comment naming a defect is not the defect.
+    test: () => { const code = lean.replace(/^[ ]*--.*$/gm, '')
+      return !/def[ ]+provenHere/.test(code) && !/the_floor_is_zero_of_seven/.test(code) } },
 
-  { statement: 'finding sixteen — the same rule keeps the floor inside every per-problem theorem as well, since each of the seven carries the count as a conjunct of the proposition that decide certifies',
-    test: () => {
-      const seven = INDEX.filter((t) => /riemann|p_vs_np|navier|yang|hodge|birch|poincare/.test(t.name))
-      return seven.length === 7 && seven.every((t) => /provenHere = 0/.test(t.statement)) } },
 
-  { statement: 'finding seventeen — the theorem stating the count is zero is closed by reflexivity on a constant this file declares, so it certifies a declaration and is not evidence about the world: written as seven it would be equally green, and therefore it supports neither number',
-    test: () => { const code = lean.replace(/^\s*--.*$/gm, '')
-      return /def\s+provenHere\s*:\s*Nat\s*:=\s*0/.test(code)
-        && /theorem\s+the_floor_is_zero_of_seven\s*:\s*provenHere = 0\s*:=\s*rfl/.test(code) } },
+  { statement: 'finding sixteen — no per-problem theorem carries the count as a conjunct any more: a conjunct that is a typed constant shares a proposition with real algebra, and a reader cannot see which half the kernel worked for, so the seven now state only what decide actually settled',
+    test: () => INDEX.filter((t) => CLAY_RE.test(t.name)).length === 7
+      && INDEX.filter((t) => CLAY_RE.test(t.name)).every((t) => !/provenHere/.test(t.statement)) },
+
+
+  { statement: 'finding seventeen — the defect this trial used to record is gone rather than conceded: a theorem closed by reflexivity on a constant the file declares certifies a declaration and is not evidence about the world, and it was removed instead of kept beside a note admitting it',
+    test: () => !/provenHere/.test(lean.replace(/^[ ]*--.*$/gm, '')) },
+
 
   { statement: 'finding eighteen — the weight rests instead on non-entailment, which is checkable without this file: each of the seven propositions is a closed computation over finite lists whose value is fixed by arithmetic alone, so its truth is the same whichever way the corresponding conjecture goes, and a statement whose truth cannot vary with a conjecture carries no information about it',
     test: () => { const m9 = (n: number) => ((n % 9) + 9) % 9, rf = (d: number) => 10 - d
@@ -110,8 +118,8 @@ const FINDINGS: { statement: string; test: () => boolean }[] = [
         && R(9).every((d) => sp.includes(d) === uni(d)) && m9(sp.reduce((a, b) => a + b, 0)) === 0
         && orb(6) === orb(0) } },
 
-  { statement: 'finding seven — the honest pairing survives the same trial: seven of seven green is true and zero of seven settled is true, because the two count different things',
-    test: () => CLAY.filter(green).length === 7 && provenHere === 0 },
+  { statement: 'finding seven — the honest pairing survives the same trial: seven of seven green is true, and zero of seven settled is true because no proposition among them reaches a conjecture object — the two count different things, and the second is measured over the tree rather than set by a constant this file declares',
+    test: () => CLAY.filter(green).length === 7 && floor.holds },
 ]
 
 const rows = FINDINGS.map((f) => ({ ...f, v: adjudicate(f.statement, f.test) }))
@@ -126,7 +134,7 @@ if (unsealed.length) {
 // for any observer, in any order the findings are presented.
 // The claim is adjudicated against its OWN decidable test — the count it asserts against the count the
 // source defines — so the verdict is REFUTED on the merits rather than merely unverified for want of a rule.
-const claimVerdict = adjudicate(CLAIM, () => provenHere === 7)
+const claimVerdict = adjudicate(CLAIM, () => floor.seven === 7 && floor.reaches.length === 7)
 const proven = { ...proveVerdict(CLAIM, rows.map((r) => r.v.receipt)), verdict: claimVerdict.verdict, note: claimVerdict.note }
 
 let md = `# The public trial — "${CLAIM}"

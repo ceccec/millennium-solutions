@@ -19,10 +19,10 @@ last because the orbit never reaches it.
 
 - The formal layer holds 470 theorems across 24 files, and no file uses sorry or native_decide outside a comment.
   <sub>SEALED · `cfc290b9-a401-8bee-98e7-c8f66986da0d`</sub>
-- 461 of those 470 theorems close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 9 close by rfl and are declarations.
-  <sub>SEALED · `0fabdd62-96fa-8bde-b696-7d869d812ea2`</sub>
-- 494 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `87ee6696-d459-8bf7-9de3-c5781b0c30f2`</sub>
+- 462 of those 470 theorems close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
+  <sub>SEALED · `720a7915-5fc1-8a05-a247-43cab221aa67`</sub>
+- 495 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `2ea63298-edae-84d2-8edf-afb1c99e7ce0`</sub>
 
 ## 2 · The ring
 
@@ -45,10 +45,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 2358 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `e529b8c5-6710-845a-84fc-2a929ff66a66`</sub>
-- The count is 2358, which is 294 octaves and 6 over — the octave is a target the theorems earn, never a quota they are invented to fill.
-  <sub>SEALED · `196bf49b-fee9-85e3-bf90-d254c6799ceb`</sub>
+- The ledger records 2359 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `901be666-5b7f-82a4-a6a6-f9da586da34d`</sub>
+- The count is 2359, which is 294 octaves and 7 over — the octave is a target the theorems earn, never a quota they are invented to fill.
+  <sub>SEALED · `a3db2a19-b085-83be-a780-b3ad06906046`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -61,8 +61,8 @@ last because the orbit never reaches it.
 
 - No theorem in the Clay-named file settles a conjecture: its propositions range over List.range 10, List.range 9, List.range 48, List.range 6, List.range' 1 and mention none of the objects those conjectures concern.
   <sub>SEALED · `3fa2f8ab-3367-8d44-8340-9bf1c0a420c4`</sub>
-- The count of Clay problems answered in that file is defined as 0 and carried as a conjunct by 10 theorems — a declaration rather than evidence, so the weight rests on the propositions actually written.
-  <sub>SEALED · `4e3a7975-55ec-84da-94fb-502bfcd452a8`</sub>
+- The count of Clay problems answered in that file is declared nowhere and carried as a conjunct by no theorem — a declared constant is not evidence, so the weight rests entirely on the propositions actually written: 7 Clay-named theorems among 9 in the file, every one closed by decide, the largest walking 19683 cases, and 0 of them reaching any object those conjectures concern.
+  <sub>SEALED · `d794a12e-9b3d-8bbf-a3b2-743400d02be5`</sub>
 
 Every one of the **15 registered claims** above recomputes from the artefact it names.
 
@@ -163,14 +163,14 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 2,358 — 294 octaves and 6 over |
-| standing — carries its own proof | **486** |
+| ledger entries | 2,359 — 294 octaves and 7 over |
+| standing — carries its own proof | **487** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **115** |
 | withdrawn — nothing proves it | 1,757 |
-| proved in total | **601** of 2,358 |
-| standing keys → distinct theorems | 461 sealed, 24 of them keyed twice, 1 unresolvable |
+| proved in total | **602** of 2,359 |
+| standing keys → distinct theorems | 462 sealed, 24 of them keyed twice, 1 unresolvable |
 | Lean files · theorems | 24 · 470, all axiom-free |
-| proved `by decide` | 461 of 470 |
+| proved `by decide` | 462 of 470 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -192,4 +192,4 @@ because no test was written that would seal them.
 
 ---
 
-*14 claims, all verified · 470 Lean theorems · 2358 ledger entries · trial root `4e912d84-500c-80fa-bc05-fc2b99d3ce6b` · integrity, not truth · 0/7*
+*14 claims, all verified · 470 Lean theorems · 2359 ledger entries · trial root `b2e5359b-c3e7-8de8-b65a-8c5253609180` · integrity, not truth · 0/7*

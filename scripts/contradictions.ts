@@ -22,7 +22,7 @@
 //      contradicts it.
 import { readFileSync, readdirSync, statSync } from 'node:fs'
 import { join } from 'node:path'
-import { census, leanFiles, leanSource, leanTheorems } from '../src/api/index.ts'
+import { census, leanFiles, leanSource, leanTheorems, clayFloor } from '../src/api/index.ts'
 
 const C = census()
 let bad = 0
@@ -150,8 +150,15 @@ for (const sub of SUBJECTS) for (const v of VERBS) for (const pr of PROBLEMS) {
 if (slipped.length)
   fail(`${slipped.length} of ${swept} overclaim phrasings pass the Clay check uncaught, e.g. ${JSON.stringify(slipped.slice(0, 3))}`)
 
-const floor = leanTheorems().find((t) => t.name === 'the_floor_is_zero_of_seven')
-if (!floor) fail('the_floor_is_zero_of_seven is not in src/proof — the 0/7 floor is asserted in prose with no theorem behind it')
+// THE FLOOR IS A PROPERTY OF THE TREE, NOT A CERTIFICATE. This required a theorem named
+// the_floor_is_zero_of_seven to exist — a theorem proved by `rfl` on a constant the file declared, which
+// seal-lean.ts already calls "not evidence" and refuses to seal. Requiring its presence made this gate
+// depend on the thing it should have refused. It now asks what the seven theorems reach for, which is
+// refutable: add one quantifying over ℝ or naming the ζ-zeros and this fails.
+const cf = clayFloor()
+if (cf.seven !== 7) fail(`index.lean carries ${cf.seven} Clay-named theorems, not 7`)
+if (!cf.allByDecide) fail('a Clay-named theorem is not closed by `decide`')
+if (cf.reaches.length) fail(`a Clay-named proposition reaches for ${cf.reaches.join(', ')} — objects those conjectures concern, which finite algebra here does not settle`)
 
 console.log(bad
   ? `\n✗ contradictions: ${bad} finding(s) — prose or code disagrees with src/proof`

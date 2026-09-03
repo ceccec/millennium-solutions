@@ -21,9 +21,10 @@ import { translate } from '../src/prove/translate.ts'
 import { adjudicate } from './adjudicate.ts'
 import { computes } from './honesty-gate.ts'
 import { toUuid, merkleFold } from '../src/0/index.ts'
-import { ledger as __ledger, triad, units, axis, domainOf, census, leanTheorems as leanTheoremsShared } from '../src/api/index.ts'
+import { ledger as __ledger, triad, units, axis, domainOf, census, clayFloor, leanTheorems as leanTheoremsShared } from '../src/api/index.ts'
 
 const CENSUS = census()
+const CLAY_FLOOR = clayFloor()
 import { orbit } from '../src/api/index.ts'
 
 const ledger = __ledger() as { key: string; name: string; receipt: string }[]
@@ -138,11 +139,8 @@ const CLAIMS: Claim[] = [
       return { text: `no theorem in the Clay-named file settles a conjecture: its propositions range over ${ranges.join(', ')} and mention ${infinite ? 'INFINITE-DOMAIN OBJECTS' : 'none of the objects those conjectures concern'}`, ok: ranges.length > 0 && !infinite, from: [ranges.join(', ')] } } },
 
   { section: 'The floor',
-    derive: () => { const idx = leanSrc['index.lean'] ?? ''
-      const m = idx.match(/def provenHere : Nat := (\d+)/)
-      const n = m ? m[1] : 'absent'
-      const conj = (idx.match(/provenHere = 0/g) ?? []).length
-      return { text: `the count of Clay problems answered in that file is defined as ${n} and carried as a conjunct by ${conj} theorems — a declaration rather than evidence, so the weight rests on the propositions actually written`, ok: n === '0' && conj > 0, from: [n, conj] } } },
+    derive: () => { const f = CLAY_FLOOR
+      return { text: `the count of Clay problems answered in that file is declared nowhere and carried as a conjunct by no theorem — a declared constant is not evidence, so the weight rests entirely on the propositions actually written: ${f.seven} Clay-named theorems among ${f.inFile} in the file, every one closed by decide, the largest walking ${f.largestDomain} cases, and ${f.reaches.length} of them reaching any object those conjectures concern`, ok: f.holds, from: [f.seven, f.inFile, f.largestDomain, f.reaches.length] } } },
 ]
 
 // ── the trial ──

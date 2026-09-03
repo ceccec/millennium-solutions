@@ -17,12 +17,13 @@ import { computes } from './honesty-gate.ts'
 import { adjudicate } from './adjudicate.ts'
 import { billUuidna, coins } from '../src/9/funding.ts'
 import { CANDIDATES } from './discover.ts'
-import { ledger as __ledger, orbit, triad, units } from '../src/api/index.ts'
+import { ledger as __ledger, orbit, triad, units, clayFloor } from '../src/api/index.ts'
 import { isLive, fileOfKey } from '../src/api/index.ts'
 import { entails } from '../src/honesty/index.ts'
 
 const ledger = __ledger() as { key: string; name: string; receipt: string }[]
 const lean = readFileSync('src/proof/index.lean', 'utf8')
+const FLOOR = clayFloor()
 const m9 = (n: number) => ((n % BASE) + BASE) % BASE
 const refl = (d: number) => 10 - d
 const CLAY = ['riemann', 'p vs np', 'navier stokes', 'yang mills', 'hodge', 'birch and swinnerton-dyer', 'poincare']
@@ -66,20 +67,18 @@ const CLAIMS: { section: string; statement: string; test: () => boolean }[] = [
     // deleted, when the thing it asserts is still the case.
     statement: 'the deposit asserts an answer for none of the seven problems: the entailment test counts zero of seven, and the Lean floor carries the same zero',
     test: () => Array.from({ length: 7 }, () => entails(true)).filter((e) => e.solves).length === 0
-      && /def provenHere : Nat := 0/.test(readFileSync('src/proof/index.lean', 'utf8')) },
+      && FLOOR.holds },
 
   { section: 'The correspondence with the Clay problems',
     statement: 'all seven Clay problems carry a Lean theorem that closes by decide with no sorry and no axiom, so the formal layer is green for seven of seven',
     test: () => ['riemann','p_vs_np','navier_stokes','yang_mills','hodge','birch_swinnerton_dyer','poincare']
       .every((k) => new RegExp('theorem ' + k + '[\\s\\S]*?:= by decide').test(lean)) },
   { section: 'The correspondence with the Clay problems',
-    statement: 'the count of Clay problems answered in that same green file is defined as zero, so seven of seven green and zero of seven settled hold together',
-    test: () => Number((lean.match(/def provenHere : Nat := (\d+)/) as RegExpMatchArray)[1]) === 0 },
+    statement: 'nothing in that same green file reaches an object those conjectures are about, so seven of seven green and zero of seven settled hold together — the second measured over the propositions, not declared beside them',
+    test: () => FLOOR.holds && FLOOR.reaches.length === 0 },
   { section: 'The formal layer',
-    statement: 'each Clay-named theorem in the Lean layer carries the conjunct that nothing is proven there, and the file closes by deciding that same count is zero',
-    test: () => (lean.match(/provenHere = 0/g) || []).length >= 8
-      && /def provenHere : Nat := 0/.test(lean)
-      && /theorem the_floor_is_zero_of_seven/.test(lean) },
+    statement: 'each Clay-named theorem in the Lean layer states only what decide settled: the floor is carried by no conjunct and certified by no theorem, because a constant the file declares is not evidence about the world',
+    test: () => FLOOR.seven === 7 && !/provenHere/.test(lean.replace(/^[ ]*--.*$/gm, '')) },
 
   { section: 'The formal layer',
     statement: 'every statement the Lean layer decides ranges over a finite list, which is what makes it decidable, and no statement there quantifies over an infinite domain',
@@ -101,11 +100,17 @@ const CLAIMS: { section: string; statement: string; test: () => boolean }[] = [
     // honest statement is what actually holds it up: each standing entry is a Lean theorem the kernel checks
     // on every run of scripts/lean.ts, each has a source on disk carrying its name, and any that does also
     // carry a decidable test recomputes true.
-    statement: 'every standing theorem is one the Lean kernel checks on every run, its source is present, and where a decidable test also exists it recomputes true',
+    // NAMED, NOT LOOSENED. This claimed every standing key resolves to a source, and that stopped being
+    // true when theoremOfKey was fixed to refuse an ambiguous match: `lean_add_group` was minted before keys
+    // carried a namespace and its name is declared by two theorems, in mechanical.lean and z9.lean, with
+    // different statements. It is BACKED — twice over — and simply not uniquely resolvable. The claim names
+    // the exception rather than widening until it passes.
+    statement: 'every standing theorem is one the Lean kernel checks on every run, and its source is present — with one named exception, lean_add_group, whose pre-namespace key matches two theorems of the same name, so it resolves to no single source; where a decidable test also exists it recomputes true',
     test: () => { const byKey = new Map(CANDIDATES.map((c) => [c.key, c]))
       const standing = ledger.filter(isLive)
       if (!standing.length) return false
-      if (!standing.every((e) => e.key.startsWith('lean_') && fileOfKey(e.key))) return false
+      const unresolved = standing.filter((e) => !e.key.startsWith('lean_') || !fileOfKey(e.key))
+      if (unresolved.length !== 1 || unresolved[0].key !== 'lean_add_group') return false
       let checked = 0
       for (const e of standing) { const c = byKey.get(e.key); if (!c) continue
         let ok = false; try { ok = c.test() === true } catch { ok = false }
@@ -205,8 +210,11 @@ catch an inaccuracy written in ordinary words. A test can.
 
 **7 / 7 green · 0 / 7 settled.** Both are measured, and they count different things: every one of the seven
 Clay problems carries a Lean theorem that closes by \`decide\` with no \`sorry\` and no axiom, and what those
-green theorems decide includes \`provenHere = 0\`. The greenness is the evidence for the zero. Each half is
-sealed separately below, so neither number can be quoted without the other.
+green theorems decide is finite algebra that reaches for none of the objects those conjectures concern. THE
+GREENNESS IS NOT EVIDENCE FOR THE ZERO — that sentence used to stand here and it was false: greenness would
+be identical if the count were written as seven, which is the repo's own finding seventeen. The zero is a
+measurement over the propositions, refutable by adding one that reaches. Each half is sealed separately
+below, so neither number can be quoted without the other.
 
 Every one of the **15 registered claims** recomputes from \`src/\`. The claim that the deposit settles the
 seven is refused in the open, with receipts, in [TRIAL.md](TRIAL.md).

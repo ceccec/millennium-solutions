@@ -5,6 +5,7 @@
 import { writeFileSync } from 'node:fs'
 import { proveVerdict } from './verdict.ts'
 import { leanTheorems } from '../src/api/index.ts'
+import { clayFloor } from '../src/api/index.ts'
 
 const LEAN = leanTheorems()
 import { computes } from './honesty-gate.ts'
@@ -25,11 +26,11 @@ const record = 'Millennium Solutions, the ℤ/9 vortex framework: it reflects al
 // THE ARBITER IS src/proof. `provenHere = 0` is a def in index.lean, `the_floor_is_zero_of_seven` decides it,
 // and each of the seven per-problem theorems carries it as a conjunct. The test reads that rather than
 // restating it, so if the Lean ever stopped saying 0/7 this verdict would follow it.
-const floorInLean = (() => {
-  const seven = LEAN.filter((t) => t.file === 'index.lean' && /riemann|p_vs_np|navier|yang|hodge|birch|poincare/.test(t.name))
-  return seven.length === 7 && seven.every((t) => /provenHere = 0/.test(t.statement))
-    && LEAN.some((t) => t.name === 'the_floor_is_zero_of_seven')
-})()
+// I wrote this test THIS MORNING keyed on `provenHere = 0` and `the_floor_is_zero_of_seven`, which is a
+// constant the author typed and a theorem that decides the constant equals itself. That is not an arbiter;
+// it is a preferred opinion with a kernel around it. clayFloor() measures the propositions instead, and can
+// be refuted by adding one that reaches for a conjecture object.
+const floorInLean = clayFloor().holds
 
 // The record claims it reflects all seven and solves none. Decidable: the deposit entails nothing, and the
 // kernel says the floor is zero.

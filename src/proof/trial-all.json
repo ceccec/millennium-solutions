@@ -14146,5 +14146,11 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "7717c95c-0f31-80e2-840d-b07e3b4fb64f"
+  },
+  {
+    "key": "lean_millenniumfloor_the_three_non_units_are_exactly_the_unreachable",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a26af379-71ef-89f8-a964-40a35713534c"
   }
 ]
