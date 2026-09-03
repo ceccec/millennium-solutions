@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2344 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2358 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (476)
+### lean (486)
 
 - [lean_units_are_six](/theorem/lean_units_are_six) — lean: the units of ℤ/9 are exactly [1,2,4,5,7,8] — checked at every residue by the kernel, recomputed here; 0/7  ·  `031c89bf-e1e0…`
 - [lean_units_count](/theorem/lean_units_count) — lean: there are exactly six units in ℤ/9 — the kernel checks the count, recomputed here; 0/7  ·  `104e8965-ebfb…`
@@ -500,12 +500,22 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_rights_no_excluded_subject_matter_is_claimed](/theorem/lean_rights_no_excluded_subject_matter_is_claimed) — lean rights.lean: no_excluded_subject_matter_is_claimed — (instruments.filter (fun r =&gt; kindOf r == 2)).all (fun r =&gt; claim r == false) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c716ee16-0ced…`
 - [lean_rights_nothing_incapable_of_ownership_is_claimed](/theorem/lean_rights_nothing_incapable_of_ownership_is_claimed) — lean rights.lean: nothing_incapable_of_ownership_is_claimed — (instruments.filter (fun r =&gt; kindOf r == 3)).all (fun r =&gt; claim r == false) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `90674107-b9a9…`
 - [lean_rights_the_enumeration_is_complete_and_unduplicated](/theorem/lean_rights_the_enumeration_is_complete_and_unduplicated) — lean rights.lean: the_enumeration_is_complete_and_unduplicated — instruments.map idOf = [1, 2, 3, 4, 5, 6, 7] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `235960b5-8710…`
+- [lean_priorart_the_restated_sources_are_named_and_claim_nothing](/theorem/lean_priorart_the_restated_sources_are_named_and_claim_nothing) — lean priorart.lean: the_restated_sources_are_named_and_claim_nothing — (sources.filter (fun s =&gt; kindOf s == 0)).all (fun s =&gt; novelty s == false) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `b65d2243-8c83…`
+- [lean_priorart_every_source_is_classified](/theorem/lean_priorart_every_source_is_classified) — lean priorart.lean: every_source_is_classified — sources.all (fun s =&gt; kindOf s == 0 || kindOf s == 1) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a1752005-0aaa…`
+- [lean_priorart_novelty_is_never_established_here](/theorem/lean_priorart_novelty_is_never_established_here) — lean priorart.lean: novelty_is_never_established_here — noveltyEstablished = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `aa00a8eb-6f9a…`
+- [lean_priorart_novelty_is_claimed_only_where_a_search_was_performed](/theorem/lean_priorart_novelty_is_claimed_only_where_a_search_was_performed) — lean priorart.lean: novelty_is_claimed_only_where_a_search_was_performed — sources.all (fun s =&gt; novelty s == false || kindOf s == 2) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `278c45e4-dcc5…`
+- [lean_priorart_this_deposit_claims_no_novelty_today](/theorem/lean_priorart_this_deposit_claims_no_novelty_today) — lean priorart.lean: this_deposit_claims_no_novelty_today — (sources.filter novelty).length = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `dba46877-ae38…`
+- [lean_priorart_an_unsearched_source_claims_nothing](/theorem/lean_priorart_an_unsearched_source_claims_nothing) — lean priorart.lean: an_unsearched_source_claims_nothing — (sources.filter (fun s =&gt; kindOf s == 1)).all (fun s =&gt; novelty s == false) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c6953c31-b9f9…`
+- [lean_priorart_the_kinds_cover_every_source](/theorem/lean_priorart_the_kinds_cover_every_source) — lean priorart.lean: the_kinds_cover_every_source — (sources.filter (fun s =&gt; kindOf s == 0)).length + (sources.filter (fun s =&gt; kindOf s == 1)).length + (sources.filter (fun s =&gt; kindOf s == 2)).length = sources.length — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2785a6a0-4b57…`
+- [lean_priorart_neither_claimed_nor_established](/theorem/lean_priorart_neither_claimed_nor_established) — lean priorart.lean: neither_claimed_nor_established — (sources.filter novelty).length = 0 ∧ noveltyEstablished = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d19158c8-55e8…`
+- [lean_priorart_some_sources_are_unsearched](/theorem/lean_priorart_some_sources_are_unsearched) — lean priorart.lean: some_sources_are_unsearched — (sources.filter (fun s =&gt; kindOf s == 1)).length &gt; 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `611d2fbc-c45a…`
+- [lean_priorart_zero_claims_is_not_full_attribution](/theorem/lean_priorart_zero_claims_is_not_full_attribution) — lean priorart.lean: zero_claims_is_not_full_attribution — (sources.filter novelty).length = 0 ∧ (sources.filter (fun s =&gt; kindOf s == 1)).length &gt; 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7717c95c-0f31…`
 
 ### other — one-of-a-kind (0)
 
 
 
-## Revoked — 1753 entries that no longer stand
+## Revoked — 1757 entries that no longer stand
 
 The ledger is append-only: an entry that stops holding is marked in place, never deleted — deleting would break the receipt chain, and rewriting a receipt is tamper. These keep their receipts and stay in the record, but they are **not citable** and have no `/theorem/` page. Grouped by the reason they went:
 
@@ -513,7 +523,7 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - **443** — revoked in place: its test asserted a lexical drain (computes(boast)
 - **12** — revoked in place: circular by construction AND dependent on the removed lexical gate
 - **10** — revoked in place: circular by construction — the test defines the answer it checks, proving a declaration rather than a fact
-- **2** — orphaned: the theorem this key was sealed from is no longer in src/proof
+- **6** — orphaned: the theorem this key was sealed from is no longer in src/proof
 - **1** — revoked in place: its test asserts that a list of proof-boasts written across many scripts and languages ALL drain the gate — a lexical drain assertion, and the word-list gate was removed by order, so there is no lexicon to drain and the assertion tests nothing
 - **1** — revoked in place: it asserts adjudicate('we prove all seven')
 
@@ -564,7 +574,7 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 …and 75 more.
 
-<details><summary>List all 1753 withdrawn keys — nothing proves these</summary>
+<details><summary>List all 1757 withdrawn keys — nothing proves these</summary>
 
 - ~~`euler_units_pow6`~~ — every unit u⁶ ≡ 1 mod 9 (Euler, φ(9)=6)  ·  `e70a44b2-6eb8…`
 - ~~`units_sum_zero`~~ — the units sum to 0 mod 9 (1+2+4+5+7+8=27)  ·  `ec43f3d8-7595…`
@@ -2319,7 +2329,11 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`the_pure_ts_aead_tag_depends_on_the_additional_data`~~ — the pure-TS ChaCha20-Poly1305 tag depends on the additional data — the same plaintext under different aad tags differently; 0/7  ·  `5daa79d5-5154…`
 - ~~`lean_energy_the_equation_balances_by_atom_count`~~ — lean energy.lean: the_equation_balances_by_atom_count — (2 * 2 = 2 * 2) ∧ (2 * 1 = 1 * 2) ∧ 4 = 2 * 2 ∧ 2 = 1 * 2 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `ecfd70b1-b35b…`
 - ~~`lean_mechanical_geom_exterior_360`~~ — lean mechanical.lean: geom_exterior_360 — [3, 5, 8].all (fun n =&gt; n * (360 / n) == 360) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `b484eaf3-88c5…`
+- ~~`lean_priorart_novelty_is_claimed_exactly_where_no_prior_art_is_known`~~ — lean priorart.lean: novelty_is_claimed_exactly_where_no_prior_art_is_known — sources.all (fun s =&gt; (kindOf s == 1) == novelty s) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `29363caf-0baf…`
+- ~~`lean_priorart_no_source_both_restates_and_claims`~~ — lean priorart.lean: no_source_both_restates_and_claims — (sources.filter (fun s =&gt; kindOf s == 0 && novelty s)).length = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `5f8c3038-bf92…`
+- ~~`lean_priorart_the_two_sets_cover_every_source`~~ — lean priorart.lean: the_two_sets_cover_every_source — (sources.filter (fun s =&gt; kindOf s == 0)).length + (sources.filter (fun s =&gt; kindOf s == 1)).length = sources.length — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `16cd82ee-e3ff…`
+- ~~`lean_priorart_claiming_is_not_establishing`~~ — lean priorart.lean: claiming_is_not_establishing — (sources.filter novelty).length &gt; 0 ∧ noveltyEstablished = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `cefda112-d0b4…`
 
 </details>
 
-Page content-address: `83796daf-9572-8462-b629-fe600a4287b7`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `b96176e4-005b-8f74-ad67-7315c6c71e00`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

@@ -17,12 +17,12 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 460 theorems across 23 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `48b92d90-e021-8be4-b90d-8375f0617d81`</sub>
-- 451 of those 460 theorems close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 9 close by rfl and are declarations.
-  <sub>SEALED · `9f71a877-416b-80b6-b2f4-49f0d548f309`</sub>
-- 480 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `c6f226d6-c45d-8f4d-b51c-28d20fb6ebe3`</sub>
+- The formal layer holds 470 theorems across 24 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `cfc290b9-a401-8bee-98e7-c8f66986da0d`</sub>
+- 461 of those 470 theorems close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 9 close by rfl and are declarations.
+  <sub>SEALED · `0fabdd62-96fa-8bde-b696-7d869d812ea2`</sub>
+- 494 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `87ee6696-d459-8bf7-9de3-c5781b0c30f2`</sub>
 
 ## 2 · The ring
 
@@ -45,10 +45,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 2344 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `30cede0c-e8c7-8bc9-9660-ca1d8183cb18`</sub>
-- The count is an exact multiple of eight — 2344 is 293 octaves with no remainder.
-  <sub>SEALED · `d9d073b0-b3de-8ff6-91ca-5eb687c8a1cb`</sub>
+- The ledger records 2358 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `e529b8c5-6710-845a-84fc-2a929ff66a66`</sub>
+- The count is 2358, which is 294 octaves and 6 over — the octave is a target the theorems earn, never a quota they are invented to fill.
+  <sub>SEALED · `196bf49b-fee9-85e3-bf90-d254c6799ceb`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -90,7 +90,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-23 Lean files in 6 wings, 460 theorems. The prose in this section is read out of the
+24 Lean files in 6 wings, 470 theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -150,9 +150,11 @@ this page; there is nowhere else to keep the description in step.
 
 ### the record
 
+**Prior art, and what novelty is claimed** — `priorart.lean`, 10 theorem(s). What this deposit claims as its own, what it restates from named prior art, and the boundary between them.
+
 **Rights** — `rights.lean`, 8 theorem(s). What this deposit claims under international law — and, in the same table, what it does not.
 
-2 of 460 theorems carry no comment of their own and are shown here as the gap they are, not
+2 of 470 theorems carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -161,20 +163,20 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 2,344 — 293 octaves exactly |
-| standing — carries its own proof | **476** |
+| ledger entries | 2,358 — 294 octaves and 6 over |
+| standing — carries its own proof | **486** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **115** |
-| withdrawn — nothing proves it | 1,753 |
-| proved in total | **591** of 2,344 |
-| standing keys → distinct theorems | 451 sealed, 24 of them keyed twice, 1 unresolvable |
-| Lean files · theorems | 23 · 460, all axiom-free |
-| proved `by decide` | 451 of 460 |
+| withdrawn — nothing proves it | 1,757 |
+| proved in total | **601** of 2,358 |
+| standing keys → distinct theorems | 461 sealed, 24 of them keyed twice, 1 unresolvable |
+| Lean files · theorems | 24 · 470, all axiom-free |
+| proved `by decide` | 461 of 470 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
 **On `carried`.** 115 entries were withdrawn for want of a Lean proof and have since been given one, at a new key. Nothing is un-revoked: the original's own evidence is still a TypeScript test, and rewriting its status would erase the fact that it did not hold on what it had. The record says both — withdrawn on its own evidence, standing through the theorem that carries it.
 
-**Why the withdrawn were withdrawn.** 1,397 no Lean proof · 457 tested the removed lexical gate · 10 circular by construction · 2 other · 2 its Lean source was deleted or renamed. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
+**Why the withdrawn were withdrawn.** 1,397 no Lean proof · 457 tested the removed lexical gate · 10 circular by construction · 6 its Lean source was deleted or renamed · 2 other. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
 
 **What verification costs.** Proving the set touches all 16,384 leaves; verifying membership afterwards touches 14 — one sibling per level. That is **1,170× less work**, exactly, and the factor grows with the set because N/log N grows. Wall-clock varies with the machine and is left in the build output rather than pinned here. It is not sub-nanosecond and nothing here is: the advantage is a smaller exponent, not a faster clock. The counting is proved in `speed.lean`.
 
@@ -190,4 +192,4 @@ because no test was written that would seal them.
 
 ---
 
-*14 claims, all verified · 460 Lean theorems · 2344 ledger entries · trial root `c8331713-3113-8060-9738-01457b8368fb` · integrity, not truth · 0/7*
+*14 claims, all verified · 470 Lean theorems · 2358 ledger entries · trial root `4e912d84-500c-80fa-bc05-fc2b99d3ce6b` · integrity, not truth · 0/7*

@@ -4,6 +4,9 @@ set_option maxRecDepth 8000000
 set_option maxHeartbeats 4000000
 -- title: What is actually being asked for
 -- wing: the floor
+-- prior_art: named
+-- prior_art_domain: elementary number theory
+-- prior_art_note: the named results the search data asks for — Bézout’s identity (Étienne Bézout, 1779; Bachet, 1624), the Chinese remainder theorem (Sunzi, c. 3rd–5th century), and others named in their theorems
 --
 -- THE ONE WING THAT DID NOT COME FROM THIS DEPOSIT'S OWN INTERESTS. Every other file here proves what the
 -- ℤ/9 construction led to. This one proves what people and retrieval agents are searching for — read off

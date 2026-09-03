@@ -2,6 +2,9 @@ import Fnv
 set_option maxRecDepth 4000000
 -- title: Sequences
 -- wing: the ring
+-- prior_art: named
+-- prior_art_domain: integer sequences and identities
+-- prior_art_note: Cassini’s identity — G. D. Cassini, 1680; Lucas sequences — Édouard Lucas, 1878; the Brahmagupta–Fibonacci identity — Brahmagupta, 628; Pascal’s triangle mod 2 — Blaise Pascal, 1654
 -- Sequences and identities — Cassini, Lucas, Brahmagupta–Fibonacci, and Pascal mod two.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --

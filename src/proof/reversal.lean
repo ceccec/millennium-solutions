@@ -1,5 +1,8 @@
 -- title: Digit reversal
 -- wing: the machine
+-- prior_art: named
+-- prior_art_domain: elementary arithmetic
+-- prior_art_note: digit reversal and digit sums; casting out nines, in use by the 12th century
 -- Digit reversal — arithmetic, not string handling.
 set_option maxRecDepth 200000
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0

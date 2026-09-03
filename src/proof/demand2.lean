@@ -3,6 +3,9 @@ set_option maxRecDepth 8000000
 set_option maxHeartbeats 4000000
 -- title: The next tier of what is asked for
 -- wing: the floor
+-- prior_art: named
+-- prior_art_domain: elementary number theory, second tier
+-- prior_art_note: Wilson’s theorem — John Wilson; first proved by Joseph-Louis Lagrange, 1771; the Catalan conjecture on consecutive perfect powers — Eugène Catalan, 1844; proved by Preda Mihăilescu, 2002
 --
 -- THE SECOND COURSE OF THE SAME FLOOR. `demand.lean` closed the top eight topics in src/demand/queries.json;
 -- this file takes the next eight, chosen the same way — by impressions, not by taste. The demand map is three

@@ -1,6 +1,9 @@
 set_option maxRecDepth 8000000
 -- title: The water loop
 -- wing: the floor
+-- prior_art: named
+-- prior_art_domain: electrochemistry and combustion
+-- prior_art_note: the laws of electrolysis — Michael Faraday, 1834; the enthalpy of combustion of hydrogen, standard physical chemistry
 -- THE WATER LOOP, ACCOUNTED. Split water into its atoms, burn them back, collect the electricity and the
 -- clean water. Every step of that is real and buildable. The question is only ever the ledger, so here it is.
 --

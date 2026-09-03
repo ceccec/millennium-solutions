@@ -1,5 +1,8 @@
 -- title: The ring ℤ/9
 -- wing: the ring
+-- prior_art: named
+-- prior_art_domain: modular arithmetic
+-- prior_art_note: Fermat’s little theorem — Pierre de Fermat, 1640; Euler’s theorem — Leonhard Euler, 1763; primitive roots — Carl Friedrich Gauss, 1801
 -- The ℤ/9 families — mechanically generated theorems, proved by decide rather than tested in TypeScript.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --

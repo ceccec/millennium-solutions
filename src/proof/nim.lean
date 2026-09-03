@@ -3,6 +3,9 @@ set_option maxRecDepth 2000000
 set_option maxHeartbeats 2000000
 -- title: Nim
 -- wing: the machine
+-- prior_art: named
+-- prior_art_domain: combinatorial game theory
+-- prior_art_note: Nim — Charles L. Bouton, 1901; the Sprague–Grundy theorem — Roland Sprague, 1935 and Patrick M. Grundy, 1939
 -- Nim — Bouton's theorem and Sprague–Grundy, decided.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --

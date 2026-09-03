@@ -1,5 +1,8 @@
 -- title: Families over the ring
 -- wing: the ring
+-- prior_art: named
+-- prior_art_domain: modular arithmetic, quantified
+-- prior_art_note: quantifies the ℤ/9 arithmetic above; the underlying results are Fermat’s, Euler’s and Gauss’s
 -- The families, quantified. Proving at scale.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --

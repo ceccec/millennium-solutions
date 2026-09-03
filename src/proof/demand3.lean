@@ -4,6 +4,9 @@ set_option maxRecDepth 8000000
 set_option maxHeartbeats 4000000
 -- title: The named theorems people ask for
 -- wing: the floor
+-- prior_art: named
+-- prior_art_domain: elementary number theory, named results
+-- prior_art_note: Legendre’s three-square theorem — Adrien-Marie Legendre, 1797; Carmichael numbers — Robert Carmichael, 1910; amicable pairs — known to antiquity
 --
 -- The third and last tier the search data supports. What remains uncovered after this is not a backlog:
 -- ranked by impressions, the leftovers are brand queries ("ceccec"), a Glagolitic string, bare fragments

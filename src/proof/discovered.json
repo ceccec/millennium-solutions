@@ -16991,5 +16991,83 @@
     "key": "lean_rights_the_enumeration_is_complete_and_unduplicated",
     "name": "lean rights.lean: the_enumeration_is_complete_and_unduplicated — instruments.map idOf = [1, 2, 3, 4, 5, 6, 7] — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "235960b5-8710-8a99-86b2-b2a2836fe3bc"
+  },
+  {
+    "key": "lean_priorart_novelty_is_claimed_exactly_where_no_prior_art_is_known",
+    "name": "lean priorart.lean: novelty_is_claimed_exactly_where_no_prior_art_is_known — sources.all (fun s => (kindOf s == 1) == novelty s) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "29363caf-0baf-8c1e-afce-1759d4a8f265",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
+  },
+  {
+    "key": "lean_priorart_the_restated_sources_are_named_and_claim_nothing",
+    "name": "lean priorart.lean: the_restated_sources_are_named_and_claim_nothing — (sources.filter (fun s => kindOf s == 0)).all (fun s => novelty s == false) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b65d2243-8c83-820b-8015-524ef4ea1566"
+  },
+  {
+    "key": "lean_priorart_no_source_both_restates_and_claims",
+    "name": "lean priorart.lean: no_source_both_restates_and_claims — (sources.filter (fun s => kindOf s == 0 && novelty s)).length = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5f8c3038-bf92-88cc-bb1a-006b925ab0ea",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
+  },
+  {
+    "key": "lean_priorart_every_source_is_classified",
+    "name": "lean priorart.lean: every_source_is_classified — sources.all (fun s => kindOf s == 0 || kindOf s == 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a1752005-0aaa-846e-a16f-773db55b2290"
+  },
+  {
+    "key": "lean_priorart_the_two_sets_cover_every_source",
+    "name": "lean priorart.lean: the_two_sets_cover_every_source — (sources.filter (fun s => kindOf s == 0)).length + (sources.filter (fun s => kindOf s == 1)).length = sources.length — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "16cd82ee-e3ff-8d6f-8dd4-612c2e166c9e",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
+  },
+  {
+    "key": "lean_priorart_novelty_is_never_established_here",
+    "name": "lean priorart.lean: novelty_is_never_established_here — noveltyEstablished = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "aa00a8eb-6f9a-82eb-937f-42b6197f08af"
+  },
+  {
+    "key": "lean_priorart_claiming_is_not_establishing",
+    "name": "lean priorart.lean: claiming_is_not_establishing — (sources.filter novelty).length > 0 ∧ noveltyEstablished = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "cefda112-d0b4-8eec-b143-3b1d64976076",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
+  },
+  {
+    "key": "lean_priorart_novelty_is_claimed_only_where_a_search_was_performed",
+    "name": "lean priorart.lean: novelty_is_claimed_only_where_a_search_was_performed — sources.all (fun s => novelty s == false || kindOf s == 2) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "278c45e4-dcc5-80d3-b987-d85975e6a506"
+  },
+  {
+    "key": "lean_priorart_this_deposit_claims_no_novelty_today",
+    "name": "lean priorart.lean: this_deposit_claims_no_novelty_today — (sources.filter novelty).length = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "dba46877-ae38-8479-b3c7-1cfd13f47e33"
+  },
+  {
+    "key": "lean_priorart_an_unsearched_source_claims_nothing",
+    "name": "lean priorart.lean: an_unsearched_source_claims_nothing — (sources.filter (fun s => kindOf s == 1)).all (fun s => novelty s == false) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c6953c31-b9f9-813b-a187-eae2efb72437"
+  },
+  {
+    "key": "lean_priorart_the_kinds_cover_every_source",
+    "name": "lean priorart.lean: the_kinds_cover_every_source — (sources.filter (fun s => kindOf s == 0)).length + (sources.filter (fun s => kindOf s == 1)).length + (sources.filter (fun s => kindOf s == 2)).length = sources.length — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2785a6a0-4b57-8776-8b6c-f3ffa2a1cd7b"
+  },
+  {
+    "key": "lean_priorart_neither_claimed_nor_established",
+    "name": "lean priorart.lean: neither_claimed_nor_established — (sources.filter novelty).length = 0 ∧ noveltyEstablished = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d19158c8-55e8-88d8-a22f-0697e81efa00"
+  },
+  {
+    "key": "lean_priorart_some_sources_are_unsearched",
+    "name": "lean priorart.lean: some_sources_are_unsearched — (sources.filter (fun s => kindOf s == 1)).length > 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "611d2fbc-c45a-832c-9db5-597d46b4e680"
+  },
+  {
+    "key": "lean_priorart_zero_claims_is_not_full_attribution",
+    "name": "lean priorart.lean: zero_claims_is_not_full_attribution — (sources.filter novelty).length = 0 ∧ (sources.filter (fun s => kindOf s == 1)).length > 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7717c95c-0f31-80e2-840d-b07e3b4fb64f"
   }
 ]

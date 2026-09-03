@@ -1,5 +1,6 @@
 -- title: Order-invariance
 -- wing: the floor
+-- prior_art: unclassified
 -- The quantum receipt — order invariance, proved rather than asserted.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --

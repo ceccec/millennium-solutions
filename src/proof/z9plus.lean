@@ -2,6 +2,9 @@ import Reversal
 set_option maxRecDepth 4000000
 -- title: Entanglement in the ring
 -- wing: the ring
+-- prior_art: named
+-- prior_art_domain: modular arithmetic and periodicity
+-- prior_art_note: digital roots (casting out nines) — in use by the 12th century; the Pisano period — after Leonardo Pisano; studied by Joseph-Louis Lagrange, 1774
 -- ℤ/9, the second batch — powers, digital roots, primitive roots, and the orbit's period.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --

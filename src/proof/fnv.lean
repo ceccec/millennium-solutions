@@ -1,6 +1,9 @@
 set_option maxRecDepth 1000000
 -- title: FNV-1a, the address function
 -- wing: the address
+-- prior_art: named
+-- prior_art_domain: non-cryptographic hashing
+-- prior_art_note: FNV-1a — Glenn Fowler, Landon Curt Noll and Phong Vo, 1991
 -- FNV-1a, ported to Lean — the hash the whole deposit's addressing rests on.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --

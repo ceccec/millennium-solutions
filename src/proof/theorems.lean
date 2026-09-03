@@ -1,5 +1,6 @@
 -- title: Theorems
 -- wing: the machine
+-- prior_art: unclassified
 -- The universal property — honestly, and COMPUTED from the sequence.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --

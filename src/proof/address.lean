@@ -2,6 +2,9 @@ import Fnv
 set_option maxRecDepth 4000000
 -- title: Addressing
 -- wing: the address
+-- prior_art: named
+-- prior_art_domain: content addressing
+-- prior_art_note: composes FNV-1a (Fowler, Noll, Vo, 1991) with the Merkle hash tree (Merkle, 1979)
 -- The content-address itself, ported to Lean — toUuid, merge, the fold, and their properties.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --

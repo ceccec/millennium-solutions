@@ -1,5 +1,6 @@
 -- title: The Millennium floor
 -- wing: the floor
+-- prior_art: unclassified
 -- The Millennium floor — seven honest theorems, one per problem, COMPUTED from the sequence.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --
