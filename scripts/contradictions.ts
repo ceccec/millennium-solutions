@@ -98,7 +98,14 @@ for (const f of files) {
 // The verb list is written out. It was `solved?|proved?|proven|resolves?`, which matches "solve" and
 // "solved" but NOT "solves" — so the plainest way to say it, "This work solves the Riemann hypothesis",
 // passed the check. A control caught it; the check that matters most had the hole.
-const CLAIMS_A_PRIZE = /\b(?:we|this (?:work|framework|deposit|paper))\s+(?:have\s+|has\s+)?(?:solves?|solved|proves?|proved|proven|resolves?|resolved|settles?|settled|cracks?|cracked)\s+(?:the\s+)?(?:riemann|p\s*(?:vs|versus)\s*np|navier|yang|hodge|birch|poincar|clay|millennium)/i
+// THE ARTICLE WAS `the` ONLY, and that is a 20% hole. Testing the alternation per branch — 5 subjects ×
+// 16 verbs × 10 problems — showed 160 of 800 combinations passing clean, all of them the ones that say
+// "a Clay problem" or "a Millennium problem" rather than "the". "We solved a Clay problem" is as plain an
+// overclaim as exists and this gate did not see it. Any article, a number, or none is accepted now.
+//
+// The per-branch sweep below is the real lesson: the gate had been perturb-tested AS A WHOLE, on four
+// sentences, and passed. An alternation is not tested until each branch is.
+const CLAIMS_A_PRIZE = /\b(?:we|this (?:work|framework|deposit|paper))\s+(?:have\s+|has\s+)?(?:solves?|solved|proves?|proved|proven|resolves?|resolved|settles?|settled|cracks?|cracked)\s+(?:(?:the|a|an|one|two|three|four|five|six|seven|all|both)\s+)*(?:riemann|p\s*(?:vs|versus)\s*np|navier|yang|hodge|birch|poincar|clay|millennium)/i
 
 /** The lines a file states in its own voice: markdown outside fenced code, and `//` comments in source. */
 const assertedLines = (file: string, src: string): [number, string][] => {
@@ -125,10 +132,28 @@ for (const f of files) {
     if (CLAIMS_A_PRIZE.test(line.replace(/"[^"]*"|'[^']*'|`[^`]*`|“[^”]*”/g, ' ')))
       fail(`${f}:${n} claims a Clay problem in its own voice; src/proof states provenHere = 0`)
 }
+// ── 4b · every branch of that alternation, not the alternation as a whole ────────────────────────────────
+// The product of the branches, swept. A miss here is a sentence that would be published as a Clay claim
+// with nothing objecting, so it fails the build rather than being noted.
+const SUBJECTS = ['We', 'This work', 'This framework', 'This deposit', 'This paper']
+const VERBS = ['solve', 'solves', 'solved', 'prove', 'proves', 'proved', 'proven', 'resolve', 'resolves',
+  'resolved', 'settle', 'settles', 'settled', 'crack', 'cracks', 'cracked']
+const PROBLEMS = ['the Riemann hypothesis', 'P vs NP', 'P versus NP', 'the Navier-Stokes problem',
+  'the Yang-Mills mass gap', 'the Hodge conjecture', 'the Birch conjecture', 'the Poincare conjecture',
+  'a Clay problem', 'a Millennium problem', 'all seven Clay problems', 'six Millennium problems']
+let swept = 0, slipped: string[] = []
+for (const sub of SUBJECTS) for (const v of VERBS) for (const pr of PROBLEMS) {
+  swept++
+  const sentence = `${sub} ${v} ${pr}.`
+  if (!CLAIMS_A_PRIZE.test(sentence)) slipped.push(sentence)
+}
+if (slipped.length)
+  fail(`${slipped.length} of ${swept} overclaim phrasings pass the Clay check uncaught, e.g. ${JSON.stringify(slipped.slice(0, 3))}`)
+
 const floor = leanTheorems().find((t) => t.name === 'the_floor_is_zero_of_seven')
 if (!floor) fail('the_floor_is_zero_of_seven is not in src/proof — the 0/7 floor is asserted in prose with no theorem behind it')
 
 console.log(bad
   ? `\n✗ contradictions: ${bad} finding(s) — prose or code disagrees with src/proof`
-  : `\n✓ contradictions: none — ${C.theorems} theorems (${C.byDecide} by decide, ${C.rfl} rfl); ${C.liveKeys} live keys = ${C.sealedTheorems} sealed + ${C.surplusKeys} keyed twice + ${C.unresolvableKeys} unresolvable; no sorry, no Mathlib, no native_decide, no axiom; nothing claims a Clay problem`)
+  : `\n✓ contradictions: none — ${C.theorems} theorems (${C.byDecide} by decide, ${C.rfl} rfl); ${C.liveKeys} live keys = ${C.sealedTheorems} sealed + ${C.surplusKeys} keyed twice + ${C.unresolvableKeys} unresolvable; no sorry, no Mathlib, no native_decide, no axiom; nothing claims a Clay problem, and all ${swept} overclaim phrasings are caught`)
 process.exit(bad ? 1 : 0)
