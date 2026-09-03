@@ -21,7 +21,7 @@ import { translate } from '../src/prove/translate.ts'
 import { adjudicate } from './adjudicate.ts'
 import { computes } from './honesty-gate.ts'
 import { toUuid, merkleFold } from '../src/0/index.ts'
-import { ledger as __ledger, triad, units, axis } from '../src/api/index.ts'
+import { ledger as __ledger, triad, units, axis, domainOf } from '../src/api/index.ts'
 import { orbit } from '../src/api/index.ts'
 
 const ledger = __ledger() as { key: string; name: string; receipt: string }[]
@@ -180,13 +180,6 @@ const root = merkleFold(rows.map((r) => r.v.receipt))
 // exhaustion can appear here as one, however high it ranks — the largest finite number in this table is still
 // finite. Nobody has to be told the deposit settles none of the seven; the arithmetic of its own ranking says
 // so, and it would keep saying so right up until a proof arrived that did not work this way.
-const domainOf = (statement: string): number => {
-  let n = 1
-  for (const m of statement.matchAll(/List\.range'\s+\d+\s+(\d+)/g)) n *= Number(m[1])
-  for (const m of statement.matchAll(/List\.range\s+(\d+)/g)) n *= Number(m[1])
-  for (const m of statement.matchAll(/\[([0-9,\s]+)\]/g)) n *= Math.max(1, m[1].split(',').filter((x) => x.trim()).length)
-  return n
-}
 
 const ranked = (() => {
   const rows: { file: string; name: string; cases: number }[] = []

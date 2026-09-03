@@ -8,6 +8,19 @@
 // every receipt is the content-address of the exact statement (reproducible by anyone via toUuid).
 import { readFileSync } from 'node:fs'
 import { toUuid } from '../src/0/index.ts'
+import { leanTheorems, theoremOfKey, domainOf } from '../src/api/index.ts'
+
+// EVERY Lean-backed page carries its own formula, not only the seven. The seven Millennium pages had a
+// typeset statement and the other 476 live theorems had prose about a proof the reader could not see, so
+// the page could not be read as a paper and printed as one. The statement is read from the .lean source
+// through the same matcher the ledger uses (theoremOfKey), so a page cannot show a formula that is not
+// the one the kernel checked, and a key with no theorem shows no formula rather than a template.
+const THMS = leanTheorems()
+const formulaOf = (key: string) => {
+  const t = theoremOfKey(key, THMS)
+  if (!t) return { statement: '', tactic: '', leanFile: '', cases: 0 }
+  return { statement: t.statement, tactic: t.tactic, leanFile: t.file, cases: domainOf(t.statement) }
+}
 
 const hueOf = (rec: string) => (parseInt(rec.replace(/-/g, '').slice(0, 2), 16) * 40) % 360
 const withHues = <T extends { receipt: string }>(list: T[], i: number, N: number) => {
@@ -87,6 +100,7 @@ export default {
       params: {
         key: e.key, name: e.name, receipt: e.receipt, hues: withHues(ledger, i, N),
         revoked: e.revoked === true, reason: e.reason ?? '', supersededBy: e.supersededBy ?? '',
+        ...formulaOf(e.key),
       },
     }))
 

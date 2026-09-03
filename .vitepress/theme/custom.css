@@ -60,3 +60,158 @@
   --accent:  hsl(var(--a432-hue) 60% 50%);
   --radius:  8px;
 }
+
+/* ── The formula, in publication format ─────────────────────────────────────
+   A theorem page had prose about a proof and no proof on it: only the seven
+   Millennium pages showed a statement, so the other live theorems could be
+   read but not cited, and printing any of them produced a web page rather
+   than a paper. This is the standard formalisation-paper shape — masthead,
+   numbered theorem environment, verbatim kernel statement, proof line closed
+   by □, then the verification block — on screen and on paper from one
+   stylesheet. The statement stays monospace on purpose: for a machine-checked
+   result the source text IS the standard notation, and re-typesetting it into
+   prettier symbols would show the reader something other than what the
+   kernel read. */
+.paper {
+  margin: 2rem 0;
+  padding: 1.5rem 0 0;
+  border-top: 3px double var(--vp-c-divider);
+}
+.paper-masthead { text-align: center; margin-bottom: 1.75rem; }
+.paper-title {
+  font-family: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+  font-size: 1.35rem; font-weight: 600; letter-spacing: 0.01em;
+  /* a long theorem identifier must wrap, but `word-break` split it mid-word in the
+     printed masthead; `anywhere` breaks only where the line actually needs it. */
+  overflow-wrap: anywhere;
+}
+.paper-byline {
+  font-family: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+  font-size: 0.86rem; color: var(--vp-c-text-2); margin-top: 0.4rem;
+}
+.paper-addr { font-size: 0.72rem; color: var(--vp-c-text-3); margin-top: 0.3rem; }
+.paper-addr code { font-size: 0.72rem; }
+.paper-h {
+  font-family: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+  font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.14em;
+  border: 0; padding: 0; margin: 1.6rem 0 0.6rem; color: var(--vp-c-text-2);
+}
+.thm {
+  border-left: 3px solid var(--vp-c-brand-1);
+  padding: 0.1rem 0 0.1rem 1rem;
+  margin: 0.6rem 0 1rem;
+}
+.thm-label {
+  font-family: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+  margin: 0 0 0.5rem; font-size: 0.95rem;
+}
+/* The display equation: centred block, room to breathe, scrolls rather than
+   forcing the page to scroll sideways. */
+.thm-statement {
+  margin: 0; padding: 0.9rem 1rem;
+  background: var(--vp-c-bg-alt); border-radius: 6px;
+  overflow-x: auto; white-space: pre-wrap; word-break: break-word;
+  font-family: var(--vp-font-family-mono); font-size: 0.84rem; line-height: 1.7;
+}
+.thm-proof {
+  font-family: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+  font-size: 0.92rem; line-height: 1.65;
+}
+.thm-proof p { margin: 0; }
+.qed { float: right; font-size: 1.05rem; }
+.paper-verify {
+  font-family: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+  font-size: 0.86rem; line-height: 1.6; color: var(--vp-c-text-2);
+}
+
+/* ── Print: the page becomes the paper ──────────────────────────────────────
+   Nothing here invents content. It removes what is not part of a paper
+   (navigation, the animated vortex, controls), sets a serif at a print size,
+   keeps a theorem and its proof on one page, and prints the destination of
+   every link so a paper copy stays checkable without the screen.
+
+   THREE OF THESE RULES ARE WRITTEN AGAINST MEASURED SELECTORS, not guessed
+   ones, because the first draft guessed and the printed proof showed it:
+     · the vortex is `.vortex7d-wrap`/`svg.vortex7d` — a guessed `.Vortex7D`
+       matched nothing and an animated graphic printed inside the paper;
+     · VitePress pins `.vp-doc p { line-height: 28px }`, a fixed pixel value
+       that double-spaces a 10pt page, so the leading must be overridden;
+     · VitePress draws the ↗ on external links through a ::after mask-image.
+       Setting `content` alone lost to it — the printed page showed an arrow
+       and an 11px gap where the URL should have been, so a printed link was
+       not checkable at all. The mask, background and padding have to be
+       cleared for the href to appear. */
+@media print {
+  @page { margin: 18mm 16mm; }
+
+  html, body, .vp-doc { background: #fff !important; color: #000 !important; }
+
+  /* chrome that is not part of a paper */
+  .VPNav, .VPLocalNav, .VPSidebar, .VPFooter, .VPDocFooter, .VPDocAside,
+  .VPBackdrop, .VPSkipLink, .DocSearch, .VPNavBar, .VPTeamMembers,
+  .vortex7d-wrap, svg.vortex7d, .recompute, .depth,
+  button, input, select, textarea {
+    display: none !important;
+  }
+  .VPContent, .VPDoc, .VPDoc .container, .VPDoc .content, .VPDoc .content-container, .vp-doc {
+    padding: 0 !important; margin: 0 !important; max-width: 100% !important;
+  }
+
+  .vp-doc, .paper, .thm-proof, .paper-verify {
+    font-family: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+    color: #000 !important;
+  }
+  /* VitePress pins p at a literal 28px; unset it or the paper double-spaces */
+  .vp-doc p, .vp-doc li, .vp-doc td, .thm-proof p, .paper-verify {
+    font-size: 10pt !important; line-height: 1.45 !important; margin: 0.4em 0 !important;
+  }
+  .vp-doc h1 { font-size: 15pt !important; line-height: 1.25 !important; margin: 0 0 0.5em !important; }
+  .vp-doc h2 { font-size: 11pt !important; border: 0 !important; padding: 0 !important; margin: 1.1em 0 0.4em !important; }
+  .vp-doc code { font-size: 8.5pt !important; background: none !important; padding: 0 1px !important; }
+
+  .paper { border-top: 1pt solid #000; padding-top: 6mm; }
+  .paper-masthead { margin-bottom: 7mm; }
+  .paper-title { font-size: 13pt; }
+  .paper-byline, .paper-addr, .paper-verify { color: #000 !important; }
+  .paper-h { color: #000 !important; font-size: 8.5pt !important; }
+
+  /* a theorem must not be split across a page break */
+  .thm, .thm-proof, .paper-masthead { break-inside: avoid; page-break-inside: avoid; }
+  .thm { border-left: 2pt solid #000; }
+  .thm-statement {
+    background: #fff !important; border: 0.5pt solid #999; border-radius: 0;
+    font-size: 9pt !important; line-height: 1.5 !important; white-space: pre-wrap;
+  }
+
+  /* a printed link is only checkable if its destination is on the paper. This must
+     out-rank VitePress's icon ::after, mask and all, or it prints an arrow instead. */
+  .vp-doc a[href^="http"]::after {
+    content: " <" attr(href) ">" !important;
+    -webkit-mask-image: none !important; mask-image: none !important;
+    -webkit-mask-size: 0 !important; mask-size: 0 !important;
+    background: none !important; color: #000 !important;
+    margin-left: 0 !important; padding-left: 0 !important;
+    font-family: inherit !important; font-size: 7.5pt !important;
+    vertical-align: baseline !important; word-break: break-all; display: inline !important;
+  }
+  .vp-doc a { color: #000 !important; text-decoration: none; }
+  pre, code { color: #000 !important; }
+
+  /* The funding block STAYS on paper. Funding.vue prints it deliberately —
+     "the licensing formula and the referrer perspective must remain visible" —
+     so this does not hide it; hiding it would drop the licence from every
+     printed copy. It is set as a colophon instead: the same words, in the
+     paper's serif at footnote size, without the card that made a licence
+     notice read as a web widget. */
+  .funding {
+    border: 0 !important; border-top: 0.5pt solid #999 !important;
+    border-radius: 0 !important; background: transparent !important;
+    margin-top: 8mm !important; padding: 3mm 0 0 !important;
+  }
+  .funding, .funding p, .funding div, .funding span, .funding li {
+    font-family: Georgia, 'Iowan Old Style', 'Times New Roman', serif !important;
+    font-size: 7.5pt !important; line-height: 1.4 !important; color: #000 !important;
+  }
+  .funding code, .funding .res { font-size: 7pt !important; }
+  .funding a { font-weight: 400 !important; }
+}

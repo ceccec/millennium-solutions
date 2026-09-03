@@ -87,11 +87,28 @@ export const leanTheorems = (): LeanTheorem[] => {
  *  `lean_<namespace>_<theorem>`. Comparing whole keys called 25 living theorems orphans, and splitting key
  *  text invented a family per theorem. Matching on the theorem IDENTIFIER is what survives both conventions,
  *  and it is the only comparison any caller should be making. */
-export const fileOfKey = (key: string, thms: LeanTheorem[] = leanTheorems()): string | null => {
+/** The domain `by decide` actually walked — the count of cases the kernel exhausted, read off the
+ *  statement. One definition: scripts/leandoc.ts and scripts/pages.ts each had their own copy of this,
+ *  byte-identical, so the number a theorem page prints and the number the front pages rank by could
+ *  drift apart on the next edit to either. */
+export const domainOf = (statement: string): number => {
+  let n = 1
+  for (const m of statement.matchAll(/List\.range'\s+\d+\s+(\d+)/g)) n *= Number(m[1])
+  for (const m of statement.matchAll(/List\.range\s+(\d+)/g)) n *= Number(m[1])
+  for (const m of statement.matchAll(/\[([0-9,\s]+)\]/g)) n *= Math.max(1, m[1].split(',').filter((x) => x.trim()).length)
+  return n
+}
+
+export const theoremOfKey = (key: string, thms: LeanTheorem[] = leanTheorems()): LeanTheorem | null => {
   const rest = key.replace(/^lean_/, '')
-  for (const t of thms) if (rest === t.name || rest.endsWith('_' + t.name) || rest.endsWith('.' + t.name)) return t.file
+  for (const t of thms) if (rest === t.name || rest.endsWith('_' + t.name) || rest.endsWith('.' + t.name)) return t
   return null
 }
+
+/** The file alone, for callers that only need to know where a key was minted from. Delegates to
+ *  theoremOfKey so the two-convention matching above is written once and cannot drift between them. */
+export const fileOfKey = (key: string, thms: LeanTheorem[] = leanTheorems()): string | null =>
+  theoremOfKey(key, thms)?.file ?? null
 
 /** Frontmatter written as `-- key: value` at the head of a Lean file, before its prose. */
 export const frontmatter = (file: string): Record<string, string> => {

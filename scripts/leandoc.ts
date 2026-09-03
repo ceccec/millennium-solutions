@@ -16,9 +16,11 @@
 // and `wing` are read; anything else is carried through untouched so a field can be added without editing
 // this file. A file without frontmatter falls back to its own name, which is honest but plainer.
 import { readFileSync } from 'node:fs'
-import { leanFiles, leanSource, frontmatter as fmOf, PROOF_DIR } from '../src/api/index.ts'
+import { leanFiles, leanSource, frontmatter as fmOf, PROOF_DIR, domainOf } from '../src/api/index.ts'
 
 const DIR = PROOF_DIR
+
+export { domainOf }
 
 export type Theorem = { name: string; doc: string; docFrom: 'own' | 'section' | 'none'; statement: string; tactic: string; cases: number }
 export type Def = { name: string; value: string }
@@ -27,14 +29,6 @@ export type LeanDoc = {
   frontmatter: Record<string, string>; summary: string; theorems: Theorem[]; defs: Def[]
 }
 
-/** The domain `by decide` actually walked, read off the statement — the count of cases the kernel exhausted. */
-export const domainOf = (statement: string): number => {
-  let n = 1
-  for (const m of statement.matchAll(/List\.range'\s+\d+\s+(\d+)/g)) n *= Number(m[1])
-  for (const m of statement.matchAll(/List\.range\s+(\d+)/g)) n *= Number(m[1])
-  for (const m of statement.matchAll(/\[([0-9,\s]+)\]/g)) n *= Math.max(1, m[1].split(',').filter((x) => x.trim()).length)
-  return n
-}
 
 const stripComment = (block: string) =>
   block.split('\n').map((l) => l.replace(/^\s*--\s?/, '').replace(/^[─\s]*$/, '')).join('\n')

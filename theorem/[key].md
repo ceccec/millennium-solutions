@@ -21,6 +21,16 @@ const superseded = computed(() => String(params.value?.supersededBy || ''))
 // Sealed FROM Lean: the kernel checked it over the whole domain. The "computed by exhaustion in
 // discover.ts" story below is true of the enumerated entries and false of these.
 const isKernel = computed(() => String(params.value?.key || '').startsWith('lean_'))
+// The theorem's own formula, as the kernel received it. Shown only when this page is NOT withdrawn: a
+// withdrawn entry that displayed a formula would read as though the formula proved the withdrawn
+// statement, which is the overclaim the withdrawal exists to record.
+const statement = computed(() => String(params.value?.statement || ''))
+const tactic = computed(() => String(params.value?.tactic || ''))
+const leanFile = computed(() => String(params.value?.leanFile || ''))
+const cases = computed(() => Number(params.value?.cases || 0))
+const showFormula = computed(() => !!statement.value && !isRevoked.value)
+const casesText = computed(() => cases.value ? cases.value.toLocaleString('en-US') : '')
+const today = computed(() => String(params.value?.receipt || '').slice(0, 8))
 // microdata → speech: the frame's narration in the infinite movie (the ledger, read aloud)
 const speech = computed(() => isLean.value
   ? (params.value?.name || 'A theorem') + '. A Lean 4 fact, machine-checked and axiom-free, computed from the sequence — adjacent to a Clay problem, not the conjecture. Integrity, not truth. Zero of seven.'
@@ -71,6 +81,39 @@ const desc = computed(() => isLean.value
 <li><strong>Source (verify):</strong> <a href="https://github.com/ceccec/millennium-solutions/blob/main/src/proof/index.lean" target="_blank" rel="noopener">src/proof/index.lean</a> — clone and run <code>lean src/proof/index.lean</code>.</li>
 </ul>
 <p>A content-address proves integrity, not truth. <code>entails → 0/7</code>.</p>
+</div>
+
+<!-- ── the formula, in the standard format a formalisation paper prints: the verbatim kernel-checked
+        statement, its tactic, and the size of the domain that tactic exhausted ── -->
+<div v-if="showFormula" class="paper" itemscope itemtype="https://schema.org/CreativeWork">
+<meta itemprop="name" :content="$params.key" />
+<meta itemprop="identifier" :content="$params.receipt" />
+
+<div class="paper-masthead">
+  <div class="paper-title">{{ $params.key }}</div>
+  <div class="paper-byline">Rouschev, T. · <em>Millennium Solutions — the ℤ/9 vortex framework</em> · DOI <a href="https://doi.org/10.5281/zenodo.21819217">10.5281/zenodo.21819217</a></div>
+  <div class="paper-addr">content-address <code>{{ $params.receipt }}</code></div>
+</div>
+
+<h2 class="paper-h">Theorem</h2>
+
+<div class="thm">
+  <p class="thm-label"><strong>Theorem</strong> (<code>{{ $params.key }}</code>).</p>
+  <pre class="thm-statement"><code itemprop="text">{{ statement }}</code></pre>
+</div>
+
+<div class="thm-proof">
+  <p><em>Proof.</em> <code>{{ tactic }}</code> — the Lean&nbsp;4 kernel evaluated the proposition over its whole
+  finite domain<span v-if="casesText">, exhausting <strong>{{ casesText }}</strong> cases</span>. Checked
+  <code>sorry</code>-free; <code>#print axioms</code> reports no axiom dependency. No Mathlib, no
+  <code>native_decide</code>. <span class="qed">□</span></p>
+</div>
+
+<h2 class="paper-h">Verification</h2>
+<p class="paper-verify">Source: <a :href="'https://github.com/ceccec/millennium-solutions/blob/main/src/proof/' + leanFile"><code>src/proof/{{ leanFile }}</code></a>.
+Clone the repository and run <code>node scripts/lean.ts</code> to re-check this statement, or <code>npm run forensics</code> to re-verify the receipt above against the append-only chain.
+A content-address proves integrity, not truth: it fixes <em>which</em> statement was checked, not that the statement is significant. This framework proves <strong>0 of the 7</strong> Millennium Prize Problems (<code>entails → 0/7</code>).</p>
+
 </div>
 
 The **7D rosetta-ray vortex** is plotted from this theorem's microdata (its content-address); the slowly rotating **hero background** is computed from its seven surrounding theorems' hues — the mesh, seen locally, in analog rotation of dimensions. Each object is the hero of its own page: this theorem at the centre, its neighbours as the field.
