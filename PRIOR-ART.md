@@ -6,8 +6,8 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 499 machine-checked declarations, **167** restate work that already has an author and
-**332** are about this deposit's own construction. Each source file declares which it is, in its own
+Of 503 machine-checked declarations, **167** restate work that already has an author and
+**336** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/proof/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
 
@@ -28,11 +28,11 @@ fact about the world, and this deposit does not assert it.
 | | theorems |
 |---|---|
 | attributed to named earlier work | **167** |
-| unclassified — no search performed, status unknown | **332** |
+| unclassified — no search performed, status unknown | **336** |
 | claimed as novel | **0** |
 
 **Zero claims is not full attribution.** Stated alone, "this deposit claims no novelty" reads as a concession
-that everything here already has an author. It is not that. **332** theorems have had no prior-art
+that everything here already has an author. It is not that. **336** theorems have had no prior-art
 search at all, so their status is unknown rather than conceded — and of the 22 distinct years the
 attributions carry, **21** predate the DOI system (2000); the earliest is 628. "Every
 theorem has registered prior art" is therefore not merely unproven here, it is impossible. The zero has exactly one meaning: **nobody has
@@ -43,7 +43,7 @@ caveat cannot be separated by an edit.
 
 A source may claim novelty only if it names a prior-art search that was actually performed — what was
 searched, where, and when. An earlier version of this page claimed novelty for 13 sources and
-332 theorems on the strength of their own self-description, with nobody having looked. Asserting
+336 theorems on the strength of their own self-description, with nobody having looked. Asserting
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
@@ -91,7 +91,7 @@ is worth saying precisely, because it is both smaller than a discovery claim and
 Author and year are given rather than a resolver identifier. Asserting a DOI for someone else's paper without
 verifying it would be a fabricated citation, and this is the worst document in the deposit to put one in.
 
-## This deposit's own construction — 13 sources, 332 theorems, none claimed
+## This deposit's own construction — 13 sources, 336 theorems, none claimed
 
 The ℤ/9 vortex framework, its ledger, its receipts, and the enumeration its own generators proposed. These are
 **unclassified**: no prior-art search has been performed for them, so nothing is claimed about them either
@@ -102,7 +102,7 @@ To move a source out of this table, add `-- prior_art_search:` to it naming the 
 refuses a `none-known` declaration that does not carry one.
 
 <table><thead><tr><th>source</th><th>theorems</th><th>note</th></tr></thead><tbody>
-<tr><td><code>coin.lean</code></td><td>8</td><td>—</td></tr>
+<tr><td><code>coin.lean</code></td><td>12</td><td>—</td></tr>
 <tr><td><code>generated.lean</code></td><td>14</td><td>—</td></tr>
 <tr><td><code>imagined.lean</code></td><td>118</td><td>—</td></tr>
 <tr><td><code>index.lean</code></td><td>11</td><td>—</td></tr>

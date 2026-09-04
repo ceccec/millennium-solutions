@@ -270,6 +270,18 @@ const PROVED: [string, RegExp, string][] = [
   ['the coin step is 3 x the two coins', new RegExp(`deducts ${split().coinStep} from the token`, 'i'), 'split.lean the_coin_step_is_three_times_the_two_coins'],
   ['a seal buys one turn of the orbit',  /one complete turn of the orbit/i,            'split.lean the_budget_and_the_period_are_one_turn'],
 ]
+// DERIVED, so a new source cannot be added and left unmentioned. The list below is hand-written and says
+// so; this part is not. Every .lean file in src/proof must be NAMED on the front pages — coin.lean and
+// split.lean both reached them only because pages.ts renders a section per source, and nothing was checking
+// that it kept doing so. A file added tomorrow fails here rather than waiting for someone to notice.
+//
+// It is weaker than the rows below — naming a file is not stating its result — and the two are kept apart
+// rather than blended, because a derived check that quietly stands in for a specific one is how a gate
+// starts reporting the health of something other than what it claims.
+const unnamed = leanFiles().filter((f) => !front.includes(f))
+if (unnamed.length)
+  fail(`${unnamed.length} Lean source(s) are named nowhere on the front pages: ${unnamed.join(', ')} — proved and unmentioned`)
+
 for (const [claim, shown, evidence] of PROVED)
   if (!shown.test(front))
     fail(`the front pages do not state "${claim}" — it is established by ${evidence}. Proved and unsaid is an underclaim, and this repo's gates were all pointed the other way`)

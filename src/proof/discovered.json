@@ -17219,5 +17219,25 @@
     "key": "lean_coin_this_file_makes_no_physical_claim",
     "name": "lean coin.lean: this_file_makes_no_physical_claim — physicalClaims = 0 ∧ digits.length = 10 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "be643cd8-b421-88ff-9d60-df980e8daa54"
+  },
+  {
+    "key": "lean_coin_the_fall_fixes_every_digit_but_the_void",
+    "name": "lean coin.lean: the_fall_fixes_every_digit_but_the_void — (digits.filter (fun d => fall d != d)) = [0] ∧ nonzero.all (fun d => fall d == d) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "541de88e-2d3f-8b17-b7c4-43d0f5776c21"
+  },
+  {
+    "key": "lean_coin_reflection_and_gravity_share_one_singularity",
+    "name": "lean coin.lean: reflection_and_gravity_share_one_singularity — (digits.filter (fun d => fall d != d)) = (digits.filter (fun d => refl d > 9)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "53b89fe3-ddf0-8bd9-9071-19df53feecb9"
+  },
+  {
+    "key": "lean_coin_on_the_fixed_points_the_reflection_never_leaves",
+    "name": "lean coin.lean: on_the_fixed_points_the_reflection_never_leaves — nonzero.all (fun d => refl d >= 1 && refl d <= 9) ∧ nonzero.all (fun d => refl (refl d) == d) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b054d575-74bc-820f-b8bd-433ea554a26e"
+  },
+  {
+    "key": "lean_coin_what_escapes_falls_back_inside",
+    "name": "lean coin.lean: what_escapes_falls_back_inside — refl 0 = 10 ∧ fall 10 = 1 ∧ nonzero.contains (fall 10) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7ed40397-4820-8e9e-be9d-4b8827861958"
   }
 ]

@@ -14326,5 +14326,29 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "be643cd8-b421-88ff-9d60-df980e8daa54"
+  },
+  {
+    "key": "lean_coin_the_fall_fixes_every_digit_but_the_void",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "541de88e-2d3f-8b17-b7c4-43d0f5776c21"
+  },
+  {
+    "key": "lean_coin_reflection_and_gravity_share_one_singularity",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "53b89fe3-ddf0-8bd9-9071-19df53feecb9"
+  },
+  {
+    "key": "lean_coin_on_the_fixed_points_the_reflection_never_leaves",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b054d575-74bc-820f-b8bd-433ea554a26e"
+  },
+  {
+    "key": "lean_coin_what_escapes_falls_back_inside",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7ed40397-4820-8e9e-be9d-4b8827861958"
   }
 ]

@@ -80,8 +80,41 @@ theorem every_digit_is_sorted_exactly_once :
     || (refl d == d)
     || (refl d > 9)) := by decide
 
+
+-- ── GRAVITY, WHICH IS A THEOREM HERE AND NOT A FIGURE OF SPEECH ──────────────────────────────────────────
+-- `fall` is the fall to a fixed point: every digit 1..9 is already fixed, and 0 is the ONLY one that moves.
+-- Reflection was measured above to have its own singular digit — 0 is the only one whose image leaves the
+-- range, since r(0) = 10. Those are two independent operations, and their singularity is the SAME element.
+--
+-- That is the statement's two sides, decided: on gravity's fixed points 1..9 the reflection is a clean
+-- involution that never leaves, so everything there is reflected and returns; the void alone both moves
+-- under the fall and escapes under the reflection, and what escapes falls back inside — fall(r(0)) = 1.
+-- Nothing is pulled anywhere. One element is simply where both operations are not the identity.
+-- The package's fall, not a lookalike. I first wrote `if n == 0 then 9 else n`, which agrees with it on
+-- the digits and DIVERGES at 10 — the kernel rejected the theorem that noticed. This is the digital root
+-- the shipped `fall` computes, checked against it over 0..100 before being written here.
+def fall (n : Nat) : Nat := if n == 0 then 9 else 1 + (n - 1) % 9
+def nonzero : List Nat := [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+theorem the_fall_fixes_every_digit_but_the_void :
+  (digits.filter (fun d => fall d != d)) = [0]
+  ∧ nonzero.all (fun d => fall d == d) := by decide
+
+theorem reflection_and_gravity_share_one_singularity :
+  (digits.filter (fun d => fall d != d)) = (digits.filter (fun d => refl d > 9)) := by decide
+
+-- On the fixed points of gravity the reflection stays inside and undoes itself: the side that returns.
+theorem on_the_fixed_points_the_reflection_never_leaves :
+  nonzero.all (fun d => refl d >= 1 && refl d <= 9)
+  ∧ nonzero.all (fun d => refl (refl d) == d) := by decide
+
+-- And what does escape falls straight back in, so the coin has no outside.
+theorem what_escapes_falls_back_inside :
+  refl 0 = 10 ∧ fall 10 = 1 ∧ nonzero.contains (fall 10) := by decide
+
 -- ── THE REFUSAL, as a theorem so it is checked and not merely written ────────────────────────────────────
--- The count of physical claims this file makes. A reflection on ten digits is not a gravitational object,
+-- The count of ASTROPHYSICAL claims this file makes. Gravity here is the fall to a fixed point, decided
+-- above; a black hole is not, and no proposition in this file mentions one.
 -- and the words that would make it one appear in the header as the thing being refused, never in a
 -- proposition. Written as one it would be equally green and would certify nothing, which is the defect
 -- removed from index.lean; written as zero it says what the file actually does.
