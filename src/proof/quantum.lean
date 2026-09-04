@@ -96,7 +96,7 @@ theorem the_uncanonicalised_fold_gives_many_answers :
 --    every ordering of a finite list there is no residual uncertainty: these are settled, totally.
 --    The scope is the limit, not the strength. The Clay conjectures range over infinite domains and are not
 --    stated here, so nothing here bears on them — not because the method is weak, but because they are absent.
-def settledHere : Nat := 6
-theorem quantum_settles_its_domain_totally : settledHere = 6 := rfl
+def settledHere : Nat := 8
+theorem quantum_settles_its_domain_totally : settledHere = 8 := rfl
 
 end Quantum

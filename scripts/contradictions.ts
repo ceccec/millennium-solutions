@@ -309,6 +309,37 @@ for (const f of files) {
   }
 }
 
+
+// ── 4f · the same self-certifying shape, in LEAN, where the check above could not reach ──────────────────
+// The sweep above reads `.ts` only. The identical defect lives in the proof tree as
+// `def settledHere : Nat := N` with `theorem <file>_settles_… : settledHere = N := rfl` beside it — a
+// declaration deciding that a number the author typed equals itself. It is the shape removed from
+// index.lean this session (`provenHere = 0 := rfl`), and it survived in eight files because the sweep
+// written to catch it stopped at the language boundary.
+//
+// These are NOT deleted, because the sentence they carry is a positive one worth stating: within a finite
+// domain, this file leaves no residual uncertainty. What was wrong is that nothing recomputed the number.
+// Five of the eight had drifted — fnv 10 for 12, merkle 7 for 8, quantum 6 for 8, reversal 7 for 8, all
+// understating because the deposit only ever grows, and z9 21 for 20, OVERstating because it counted its
+// own rfl declaration among the theorems it settles.
+//
+// The count is the file's declarations closing by exhaustion — the deposit's definition of a theorem — so
+// the rfl declaration is excluded from its own total. Note what this check does and does not fix: the Lean
+// declaration remains a tautology the kernel cannot refute. Falsifiability comes from HERE, where the
+// number is recomputed from the tree and compared. That it can go red is measured, not assumed: it went
+// red five times on the tree that existed when it was written.
+for (const f of leanFiles()) {
+  const src = leanSource(f)
+  const m = src.match(/^def settledHere : Nat := (\d+)$/m)
+  if (!m) continue
+  const decided = leanTheorems().filter((t) => t.file.endsWith(f) && t.tactic === 'by decide').length
+  if (+m[1] !== decided)
+    fail(`src/proof/${f}: settledHere = ${m[1]} but the file holds ${decided} declarations closing by exhaustion — a hand-typed count, published as typeset mathematics in paper.md, that nothing recomputed`)
+  const named = src.match(/^theorem (\w+) : settledHere = (\d+) := rfl$/m)
+  if (named && +named[2] !== +m[1])
+    fail(`src/proof/${f}: ${named[1]} decides settledHere = ${named[2]} while the def says ${m[1]}`)
+}
+
 console.log(bad
   ? `\n✗ contradictions: ${bad} finding(s) — prose or code disagrees with src/proof`
   : `\n✓ contradictions: none — ${C.byDecide} theorems (closed by exhaustion) + ${C.rfl} rfl declarations = ${C.theorems} kernel-accepted; ${C.liveKeys} live keys = ${C.sealedTheorems} sealed + ${C.surplusKeys} keyed twice + ${C.unresolvableKeys} unresolvable; no sorry, no Mathlib, no native_decide, no axiom; nothing claims a Clay problem, all ${swept} Clay + ${qSwept} quantum overclaim phrasings are caught while ${HONEST.length} honest refusals survive; and ${PROVED.length} proved properties are stated on the pages, not only in the sources`)

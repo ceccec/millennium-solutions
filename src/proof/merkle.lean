@@ -89,8 +89,8 @@ theorem merge_is_order_sensitive : merge A B ≠ merge B A := by decide
 theorem sorting_is_what_makes_the_fold_order_free :
   sortB [A, B] = sortB [B, A] ∧ [A, B] ≠ [B, A] := by decide
 
-def settledHere : Nat := 7
-theorem merkle_settles_its_range : settledHere = 7 := rfl
+def settledHere : Nat := 8
+theorem merkle_settles_its_range : settledHere = 8 := rfl
 
 -- ── ORDER-INDEPENDENCE ON AN ODD NUMBER OF LEAVES. Two leaves pair exactly and prove little: the interesting
 --    case is an odd count, where pairUp must carry the leftover leaf into the next round. All six orderings of

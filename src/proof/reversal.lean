@@ -67,7 +67,7 @@ theorem reversal_does_not_preserve_primality :
 theorem reversal_is_involutive_exactly_off_the_trailing_zeros :
   (List.range' 1 300).all (fun n => (reverseNum (reverseNum n) == n) == (n % 10 != 0)) := by decide
 
-def settledHere : Nat := 7
-theorem reversal_settles_its_range : settledHere = 7 := rfl
+def settledHere : Nat := 8
+theorem reversal_settles_its_range : settledHere = 8 := rfl
 
 end Reversal

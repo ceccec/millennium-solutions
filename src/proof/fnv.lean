@@ -77,8 +77,8 @@ theorem hash_is_not_constant : hash32 0 [1] != hash32 0 [2] := by decide
 theorem hash_is_thirty_two_bit :
   (List.range 40).all (fun c => hash32 0 [c] < M32) := by decide
 
-def settledHere : Nat := 10
-theorem fnv_settles_its_range : settledHere = 10 := rfl
+def settledHere : Nat := 12
+theorem fnv_settles_its_range : settledHere = 12 := rfl
 
 -- ── THE ADDRESS IS A SEQUENCE HASH, NOT A SET HASH. Swapping two bytes changes it, so the input's ORDER is
 --    part of what is addressed. This is the opposite of the merkle fold, which sorts precisely so that order

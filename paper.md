@@ -8,7 +8,7 @@ aside: false
 <div class="paper-masthead">
 <div class="paper-title">The collected theorems of the ℤ/9 vortex framework</div>
 <div class="paper-byline">Rouschev, T. · <em>Millennium Solutions</em> · DOI <a href="https://doi.org/10.5281/zenodo.21819217">10.5281/zenodo.21819217</a> · CC BY-NC-ND 4.0</div>
-<div class="paper-addr">495 theorems + 8 rfl declarations · 26 sources · content-address <code>bb9a895b-f738-8b5e-90f8-ab1a13875a7b</code></div>
+<div class="paper-addr">495 theorems + 8 rfl declarations · 26 sources · content-address <code>78dc698e-0cb5-8e9c-9c86-bf2a4879d1ad</code></div>
 </div>
 
 <h2 class="paper-h">Abstract</h2>
@@ -247,7 +247,7 @@ FNV_OFFSET := 2166136261   -- 0x811c9dc5
 FNV_PRIME := 16777619     -- 0x01000193
 MIX1 := 2246822507         -- 0x85ebca6b
 MIX2 := 3266489909         -- 0xc2b2ae35
-settledHere := 10</code></pre>
+settledHere := 12</code></pre>
 
 <div class="thm" id="thm-fnv-hash_a_seed_zero">
 <p class="thm-label"><strong>Theorem 15</strong> (<code>hash_a_seed_zero</code>)<a class="thm-cite" href="/theorem/lean_fnv_hash_a_seed_zero">sealed</a>.</p>
@@ -337,9 +337,9 @@ settledHere := 10</code></pre>
 
 <div class="thm" id="thm-fnv-fnv_settles_its_range">
 <p class="thm-label"><strong>Theorem 25</strong> (<code>fnv_settles_its_range</code>)<span class="thm-uncited">not sealed — settled by <code>rfl</code>, not exhausted</span>.</p>
-<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>settledHere</mi><mo>=</mo><mn>10</mn></mrow></math></div>
-<pre class="thm-statement"><code>settledHere = 10</code></pre>
-<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{settledHere} = 10</code></pre></details>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>settledHere</mi><mo>=</mo><mn>12</mn></mrow></math></div>
+<pre class="thm-statement"><code>settledHere = 12</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{settledHere} = 12</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>rfl</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
@@ -463,7 +463,7 @@ No axioms, no Mathlib, no sorry. Address and Fnv are imported, not restated.
 A := toUuidBytes [97]     -- address of "a"
 C := toUuidBytes [99]     -- address of "c"
 B := toUuidBytes [98]     -- address of "b"
-settledHere := 7</code></pre>
+settledHere := 8</code></pre>
 
 <div class="thm" id="thm-merkle-merge_agrees">
 <p class="thm-label"><strong>Theorem 36</strong> (<code>merge_agrees</code>)<a class="thm-cite" href="/theorem/lean_merkle_merge_agrees">sealed</a>.</p>
@@ -526,9 +526,9 @@ settledHere := 7</code></pre>
 
 <div class="thm" id="thm-merkle-merkle_settles_its_range">
 <p class="thm-label"><strong>Theorem 43</strong> (<code>merkle_settles_its_range</code>)<span class="thm-uncited">not sealed — settled by <code>rfl</code>, not exhausted</span>.</p>
-<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>settledHere</mi><mo>=</mo><mn>7</mn></mrow></math></div>
-<pre class="thm-statement"><code>settledHere = 7</code></pre>
-<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{settledHere} = 7</code></pre></details>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>settledHere</mi><mo>=</mo><mn>8</mn></mrow></math></div>
+<pre class="thm-statement"><code>settledHere = 8</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{settledHere} = 8</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>rfl</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
@@ -1211,7 +1211,7 @@ explained instead of merely missing. Integrity, not truth. 0/7.
 
 <pre class="thm-statement paper-defs"><code>B := 9
 units := (List.range B).filter isUnit
-settledHere := 21</code></pre>
+settledHere := 20</code></pre>
 
 <div class="thm" id="thm-z9-units_are_six">
 <p class="thm-label"><strong>Theorem 104</strong> (<code>units_are_six</code>)<a class="thm-cite" href="/theorem/lean_z9_units_are_six">sealed</a>.</p>
@@ -1387,9 +1387,9 @@ settledHere := 21</code></pre>
 
 <div class="thm" id="thm-z9-z9_settles_its_domain_totally">
 <p class="thm-label"><strong>Theorem 124</strong> (<code>z9_settles_its_domain_totally</code>)<span class="thm-uncited">not sealed — settled by <code>rfl</code>, not exhausted</span>.</p>
-<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>settledHere</mi><mo>=</mo><mn>21</mn></mrow></math></div>
-<pre class="thm-statement"><code>settledHere = 21</code></pre>
-<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{settledHere} = 21</code></pre></details>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>settledHere</mi><mo>=</mo><mn>20</mn></mrow></math></div>
+<pre class="thm-statement"><code>settledHere = 20</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{settledHere} = 20</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>rfl</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
@@ -2290,7 +2290,7 @@ file exists to avoid. Integrity, not truth. 0/7.
 <p class="paper-h">Definitions</p>
 
 <pre class="thm-statement paper-defs"><code>pairsOverNine := ((List.range' 1 9).flatMap (fun a =&gt; (List.range' 1 9).map (fun b =&gt; sort [a, b]))).eraseDups
-settledHere := 6</code></pre>
+settledHere := 8</code></pre>
 
 <div class="thm" id="thm-quantum-perms_of_four_is_factorial">
 <p class="thm-label"><strong>Theorem 209</strong> (<code>perms_of_four_is_factorial</code>)<a class="thm-cite" href="/theorem/lean_quantum_perms_of_four_is_factorial">sealed</a>.</p>
@@ -2364,9 +2364,9 @@ settledHere := 6</code></pre>
 
 <div class="thm" id="thm-quantum-quantum_settles_its_domain_totally">
 <p class="thm-label"><strong>Theorem 217</strong> (<code>quantum_settles_its_domain_totally</code>)<span class="thm-uncited">not sealed — settled by <code>rfl</code>, not exhausted</span>.</p>
-<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>settledHere</mi><mo>=</mo><mn>6</mn></mrow></math></div>
-<pre class="thm-statement"><code>settledHere = 6</code></pre>
-<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{settledHere} = 6</code></pre></details>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>settledHere</mi><mo>=</mo><mn>8</mn></mrow></math></div>
+<pre class="thm-statement"><code>settledHere = 8</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{settledHere} = 8</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>rfl</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
@@ -3654,7 +3654,7 @@ No axioms, no Mathlib, no sorry.
 
 <p class="paper-h">Definitions</p>
 
-<pre class="thm-statement paper-defs"><code>settledHere := 7</code></pre>
+<pre class="thm-statement paper-defs"><code>settledHere := 8</code></pre>
 
 <div class="thm" id="thm-reversal-reversal_preserves_digit_sum">
 <p class="thm-label"><strong>Theorem 351</strong> (<code>reversal_preserves_digit_sum</code>)<a class="thm-cite" href="/theorem/lean_reversal_reversal_preserves_digit_sum">sealed</a>.</p>
@@ -3729,9 +3729,9 @@ No axioms, no Mathlib, no sorry.
 
 <div class="thm" id="thm-reversal-reversal_settles_its_range">
 <p class="thm-label"><strong>Theorem 359</strong> (<code>reversal_settles_its_range</code>)<span class="thm-uncited">not sealed — settled by <code>rfl</code>, not exhausted</span>.</p>
-<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>settledHere</mi><mo>=</mo><mn>7</mn></mrow></math></div>
-<pre class="thm-statement"><code>settledHere = 7</code></pre>
-<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{settledHere} = 7</code></pre></details>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>settledHere</mi><mo>=</mo><mn>8</mn></mrow></math></div>
+<pre class="thm-statement"><code>settledHere = 8</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{settledHere} = 8</code></pre></details>
 </div>
 <p class="thm-proof"><em>Proof.</em> <code>rfl</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 

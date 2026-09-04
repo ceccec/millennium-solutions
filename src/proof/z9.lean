@@ -83,7 +83,10 @@ theorem neg_involution : (List.range B).all (fun d => m9 (B - m9 (B - d)) == m9 
 --    ℤ/9 there is no residual uncertainty: these are settled, totally.
 --    The scope is the limit, not the strength. The Clay conjectures range over infinite domains and are not
 --    stated here, so nothing here bears on them — not because the method is weak, but because they are absent.
-def settledHere : Nat := 21
-theorem z9_settles_its_domain_totally : settledHere = 21 := rfl
+--    The count is of declarations closing by EXHAUSTION, which is this deposit's definition of a theorem, so
+--    the rfl declaration below is excluded from its own total. It read 21 until the count was recomputed
+--    against the tree: it had been counting itself. A tautology is not one of the things settled here.
+def settledHere : Nat := 20
+theorem z9_settles_its_domain_totally : settledHere = 20 := rfl
 
 end Z9
