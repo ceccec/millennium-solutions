@@ -10,6 +10,7 @@ import { readFileSync } from 'node:fs'
 import { toUuid } from '../src/0/index.ts'
 import { leanTheorems, theoremOfKey, domainOf } from '../src/api/index.ts'
 import { publicationHtml, NOVELTY, kinds, closureOf, creditedIn } from '../src/publication/index.ts'
+import { treeOf } from '../src/quantum/tree.ts'
 import { MILLENNIUM } from '../src/millennium/index.ts'
 import { toLatex, toMathML } from '../src/latex/index.ts'
 
@@ -24,6 +25,9 @@ const formulaOf = (key: string) => {
   if (t) return {
     statement: t.statement, tactic: t.tactic, leanFile: t.file, cases: domainOf(t.statement), ambiguous: '',
     mathml: toMathML(t.statement) ?? '', latex: toLatex(t.statement) ?? '',
+    // The parse tree, serialised for the three.js figure. Derived from the statement, and the same parse
+    // scripts/latex-gate round-trips against the Lean source — so the shape on the page is the proposition.
+    treeNodes: JSON.stringify(treeOf(t.statement) ?? []),
     // THE SAME BODY THE ZENODO RECORD CARRIES. Built once in src/publication and rendered in both places,
     // because two descriptions of one theorem maintained separately had already drifted into disagreeing
     // in public about how many cases it walked. scripts/zenodo-gate.ts compares them byte for byte.
@@ -43,7 +47,7 @@ const formulaOf = (key: string) => {
   const bare = key.replace(/^lean_/, '')
   const shared = THMS.filter((x) => x.name === bare)
   return {
-    statement: '', tactic: '', leanFile: '', cases: 0, mathml: '', latex: '', publication: '',
+    statement: '', tactic: '', leanFile: '', cases: 0, mathml: '', latex: '', publication: '', treeNodes: '[]',
     ambiguous: shared.length > 1 ? shared.map((x) => `lean_${x.namespace.toLowerCase()}_${x.name} (src/proof/${x.file})`).join(' · ') : '',
   }
 }

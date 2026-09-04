@@ -21,6 +21,7 @@
 import { readFileSync } from 'node:fs'
 import { domainOf, leanSource, type LeanTheorem } from '../api/index.ts'
 import { toLatex } from '../latex/index.ts'
+import { treeOf, stats } from '../quantum/tree.ts'
 
 /** THE FUNDING STATEMENT, read from .github/FUNDING.yml so the repository declares it in one place.
  *
@@ -84,6 +85,22 @@ export const publicationHtml = (t: LeanTheorem, opts: { novelty: string; files: 
   + `<p><strong>Statement (Lean):</strong></p><pre><code>${esc(t.statement)}</code></pre>`
   + `<p><strong>Statement (LaTeX):</strong></p><pre><code>${esc(toLatex(t.statement))}</code></pre>`
   + `<p>${proofLine(t)}</p>`
+  // ── THE STATEMENT'S STRUCTURE, carried by the record as well as drawn on the page ──────────────────
+  // The theorem page renders this parse tree in three dimensions. A Zenodo record cannot run a script, so
+  // it carries the same structure as figures instead — the record and the page describe one object, and
+  // the gate compares them. Derived from the parse latex-gate round-trips against the Lean source, so the
+  // shape is the proposition rather than a picture of one.
+  + (() => {
+      const tr = treeOf(t.statement)
+      if (!tr || !tr.length) return ''
+      const s2 = stats(tr)
+      return `<p><strong>Structure.</strong> The statement parses to a tree of <strong>${s2.nodes}</strong> `
+        + `nodes across <strong>${s2.depth}</strong> levels, with <strong>${s2.leaves}</strong> leaves. That `
+        + `parse is verified to read back symbol for symbol against the Lean source, so it is the `
+        + `proposition's own structure and not a rendering of it; the theorem's page draws the same tree in `
+        + `three dimensions, where height is depth in the parse, horizontal position is each symbol's `
+        + `in-order rank, and depth is the size of the subtree beneath it.</p>`
+    })()
   + `<p><strong>What this record establishes.</strong> <strong>A dated, public, citable deposit</strong> of this `
   + `declaration and its machine-checked proof, recomputable from the sources attached to it. That is priority, `
   + `and the record proves it on its own. It is a different proposition from "no one has proved this before", `

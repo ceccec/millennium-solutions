@@ -129,6 +129,10 @@ do resolve, each to exactly one statement: <code>{{ ambiguous }}</code>. Cite on
      compares this rendering with the deposited one byte for byte. -->
 <div class="paper-body" v-html="$params.publication"></div>
 
+<!-- Every theorem is presentable through three.js, and the geometry is the statement's own parse tree —
+     not an ornament that would look identical whatever proposition it was handed. See src/quantum/tree.ts. -->
+<TheoremField v-if="showFormula" :statement="statement" :nodes="String($params.treeNodes || '[]')" />
+
 </div>
 
 The **7D rosetta-ray vortex** is plotted from this theorem's microdata (its content-address); the slowly rotating **hero background** is computed from its seven surrounding theorems' hues — the mesh, seen locally, in analog rotation of dimensions. Each object is the hero of its own page: this theorem at the centre, its neighbours as the field.
