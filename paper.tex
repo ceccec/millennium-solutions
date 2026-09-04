@@ -61,8 +61,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free and axiom-free, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 534 of them across 30 files and
-6 wings; 526 close by exhaustion over a stated finite domain and the
+(\texttt{npm run latex-gate}). There are 533 of them across 30 files and
+6 wings; 525 close by exhaustion over a stated finite domain and the
 remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -1259,13 +1259,8 @@ remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
-\begin{theorem}[\texttt{this\_deposit\_explains\_predicts\_and\_constrains\_nothing}]
-\[ \mathrm{explanations} = 0 \land \mathrm{predictions} = 0 \land \mathrm{theoriesConstrained} = 0 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
-
-\begin{theorem}[\texttt{arithmetic\_on\_a\_definition\_returns\_the\_definition}]
-\[ 299792458 \bmod 9 = 1 \land \mathrm{explanations} = 0 \]
+\begin{theorem}[\texttt{the\_table\_is\_closed\_and\_that\_is\_all\_this\_file\_decides}]
+\[ \forall e \in \mathrm{entries},\; \mathrm{statusOf}\mathopen{}\left(e\right) = 0 \lor \mathrm{statusOf}\mathopen{}\left(e\right) = 1 \land \left|\mathrm{entries}\right| = 9 \land \left|\{\, e \in \mathrm{entries} \mid \mathrm{statusOf}\mathopen{}\left(e\right) = 0 \,\}\right| = 7 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 

@@ -17426,12 +17426,16 @@
   {
     "key": "lean_phenomena_this_deposit_explains_predicts_and_constrains_nothing",
     "name": "lean phenomena.lean: this_deposit_explains_predicts_and_constrains_nothing — explanations = 0 ∧ predictions = 0 ∧ theoriesConstrained = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "f3f2dd32-107d-8815-85bc-dd099697a0cb"
+    "receipt": "f3f2dd32-107d-8815-85bc-dd099697a0cb",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_phenomena_arithmetic_on_a_definition_returns_the_definition",
     "name": "lean phenomena.lean: arithmetic_on_a_definition_returns_the_definition — (299792458 % 9 = 1) ∧ explanations = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "2f338a89-2ef5-8069-810c-fbd636bd938f"
+    "receipt": "2f338a89-2ef5-8069-810c-fbd636bd938f",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_light_the_absent_residues_are_the_primes_below_nine",
@@ -17477,5 +17481,10 @@
     "key": "lean_reach_this_file_settles_none_of_the_seven",
     "name": "lean reach.lean: this_file_settles_none_of_the_seven — (bounds.filter (fun n => (List.range n).contains n)).length = 0 ∧ bounds.length = 50 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "2c8272de-17dd-8800-8a8e-95423c290b0d"
+  },
+  {
+    "key": "lean_phenomena_the_table_is_closed_and_that_is_all_this_file_decides",
+    "name": "lean phenomena.lean: the_table_is_closed_and_that_is_all_this_file_decides — entries.all (fun e => statusOf e == 0 || statusOf e == 1) ∧ entries.length = 9 ∧ (entries.filter (fun e => statusOf e == 0)).length = 7 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d3aba4ab-326f-88e3-8158-db04c46b2d57"
   }
 ]

@@ -132,7 +132,7 @@ export const domainOf = (statement: string): number => {
 /** How many theorems there are, and how many ledger keys name them — which are NOT the same number.
  *
  *  The deposit published its live-key count as though it were a count of theorems. It is not: src/proof holds
- *  526 theorems. The ledger once held more live keys than that, because 24 theorems carried two — one minted
+ *  the theorems; the ledger once held more live keys than that, because 24 carried two — one minted
  *  before keys had a namespace (`lean_units_are_six`) and one after (`lean_z9_units_are_six`). Both were live
  *  and both are legitimate history, but counting a key as a theorem overstates the deposit. Those 24 second
  *  addresses were retired in favour of their namespaced form, so no theorem now carries two. The 8 `rfl`

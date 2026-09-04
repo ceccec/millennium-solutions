@@ -56,8 +56,10 @@ export const PROTOCOL = {
   // describing a stronger property than it has: FNV-1a is a non-cryptographic hash, and naming SHA-256
   // implies collision resistance these addresses do not carry.
   address: 'uuidv8 shaped per RFC 9562 §5.8 (version nibble 8, variant 10x) over FNV-1a — NOT SHA-2: '
-    + 'four 32-bit FNV-1a passes over the UTF-16 code units at seeds 0, 0x9e3779b9, 0x243f6a88, 0xb7e15162, '
-    + 'each with an xor-shift-13 per byte and a two-round murmur finalizer (0x85ebca6b, 0xc2b2ae35), '
+    + 'four 32-bit FNV-1a passes over the UTF-16 code units, each starting at the FNV OFFSET BASIS 0x811c9dc5 '
+    + 'XOR the pass seed — seeds 0, 0x9e3779b9, 0x243f6a88, 0xb7e15162, so h begins at (0x811c9dc5 ^ seed) and '
+    + 'NOT at the seed itself, which is the one line an implementer cannot guess. '
+    + 'with an xor-shift-13 per code unit and a two-round murmur finalizer (0x85ebca6b, 0xc2b2ae35, then >>> 16), '
     + 'concatenated big-endian to 16 octets. Non-cryptographic: integrity against accident, not against an '
     + 'adversary.',
   // ONE ROW, REPRODUCIBLE IN A SINGLE STEP. erpax-94's suggestion, taken: a reader computes this seed and

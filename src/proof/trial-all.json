@@ -14536,5 +14536,11 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "2c8272de-17dd-8800-8a8e-95423c290b0d"
+  },
+  {
+    "key": "lean_phenomena_the_table_is_closed_and_that_is_all_this_file_decides",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d3aba4ab-326f-88e3-8158-db04c46b2d57"
   }
 ]

@@ -19,6 +19,7 @@
 // domain is walked". That distinction is honest and it is the deposit's own, and it was missing from my
 // deposition prose, which told every record it had walked its whole domain. 112 of 336 had not.
 import { readFileSync } from 'node:fs'
+import { createHash } from 'node:crypto'
 import { domainOf, leanSource, type LeanTheorem } from '../api/index.ts'
 import { toUuid } from '../0/index.ts'
 import { toLatex } from '../latex/index.ts'
@@ -137,14 +138,41 @@ export const STATEMENT_ADDRESS_SPEC =
   'statementAddress = toUuid(collapse-runs(statement) with whitespace removed only where it is NOT between '
   + 'two of [A-Za-z0-9_], case preserved, then "=="→"=" and "!="→"≠")  [v2, amended by uuidna-49]'
 
-export const statementAddress = (statement: string): string =>
-  toUuid(statement
+/** THE CROSS-REPOSITORY MERGE KEY — sha256, deliberately not this deposit's own address function.
+ *
+ *  erpax-94 identified the flaw in the plan we had converged on: agreeing a NORMALISATION is not enough,
+ *  because their addresses are sha256-backed and mine are FNV-1a-backed, so two repositories can normalise
+ *  a statement identically and still never collide numerically. A shared merge key needs the same
+ *  normaliser AND the same hash, and my "zero collisions against their manifest" was computed under two
+ *  different hashes — which is not a check, it is two repositories failing to find each other.
+ *
+ *  SHA-256 IS THE RIGHT CHOICE HERE AND FNV IS THE RIGHT CHOICE FOR THE LEDGER, which is why this is a
+ *  second function rather than a change to the first. A merge key is the adversarial case: it decides
+ *  whether two parties are publishing one result, and a non-cryptographic hash gives integrity against
+ *  accident only. The ledger address cannot move — it names 2424 entries in an append-only chain, and
+ *  rewriting it is the same objection that stopped the hexbit encoding.
+ *
+ *  So: FNV addresses this deposit's own record, sha256 addresses the question "is this the same statement
+ *  as yours". Different purposes, different guarantees, and neither pretending to be the other. */
+export const MERGE_KEY_SPEC =
+  'mergeKey = sha256(normalised statement), hex, where normalised is the STATEMENT_ADDRESS_SPEC rule: '
+  + 'collapse whitespace runs, remove a space only where it is NOT between two of [A-Za-z0-9_], keep case, '
+  + '"=="→"=", "!="→"≠". sha256 and not this deposit\'s FNV-1a construction: a merge key decides whether two '
+  + 'parties publish one result, which is the adversarial case.'
+
+export const mergeKey = (statement: string): string =>
+  createHash('sha256').update(normalise(statement), 'utf8').digest('hex')
+
+const normalise = (statement: string): string =>
+  statement
     .replace(/\s+/gu, ' ')
     // Remove a space only where it is not doing work. `\s(?![A-Za-z0-9_])` drops it before a symbol;
     // `(?<![A-Za-z0-9_.])\s` drops it after one. A space between two alphanumerics survives, because in
     // Lean that space IS the application operator.
     .replace(/\s(?![A-Za-z0-9_])|(?<![A-Za-z0-9_.])\s/g, '')
-    .replace(/==/g, '=').replace(/!=/g, '≠'))
+    .replace(/==/g, '=').replace(/!=/g, '≠')
+
+export const statementAddress = (statement: string): string => toUuid(normalise(statement))
 
 /** THE STATEMENT AS A STANDALONE LaTeX DOCUMENT, so the deposited record is a readable publication and not
  *  only source. A reader who downloads one of these gets the Lean the kernel checked AND the mathematics

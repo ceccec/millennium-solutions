@@ -90,7 +90,7 @@ export function proveVerdict(statement: string, decidableTest?: () => boolean): 
   const proofReceipt = doubleTorusGravity([...receipts, gateFormula, toUuid('verdict:' + base.verdict), base.receipt])
   // WHY `formulas` IS SMALL, SAID HERE RATHER THAN LEFT TO PUZZLE A READER. CANDIDATES is the TypeScript-
   // tested corpus: 2030 claims, 1889 of them in the ledger, and 25 still standing. The deposit migrated its
-  // evidence to Lean — 526 theorems in src/proof, verified by the kernel in scripts/lean.ts, none of them carrying a
+  // evidence to Lean — every theorem in src/proof is verified by the kernel in scripts/lean.ts, none of them carrying a
   // TypeScript test for this trial to recompute. So a thin formula count is not a broken filter; it is the
   // honest size of what remains recomputable HERE, and the Lean layer is where the standing proof now lives.
   const candidatePool = CANDIDATES.length

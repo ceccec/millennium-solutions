@@ -5,11 +5,11 @@ title: The axiom index — what is not assumed, and what is
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **534** report the same thing:
+axiom fails the build rather than earning a footnote. All **533** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
-theorems rest on **233** definitions, and every one of them is a choice. A theorem about
+theorems rest on **230** definitions, and every one of them is a choice. A theorem about
 `fall` is a theorem about the digital root only because `fall` is *defined* to be it. Both halves are
 indexed below, and the second is the longer one.
 
@@ -90,7 +90,7 @@ The pins in the control fixture follow the community practice of guarding `#prin
 `#guard_msgs`, which turns the axiom footprint into an executable regression test: the assertion is
 checked by the elaborator, and drift fails the build with a mismatch instead of passing unnoticed.
 
-## What IS assumed: the 233 definitions
+## What IS assumed: the 230 definitions
 
 Each of these is a primitive of this deposit — not derived, not proved, chosen. They are listed in full
 because a reader checking a theorem must be able to read the definition it is about, and because a
@@ -334,15 +334,12 @@ def mex (s : List Nat) : Nat := ((List.range (s.length + 1)).filter (fun m => ! 
 def grundy1 : Nat → Nat → Nat
 ```
 
-### `phenomena.lean` — 6 definition(s), 5 theorem(s)
+### `phenomena.lean` — 3 definition(s), 4 theorem(s)
 
 ```lean
 abbrev Entry := Nat × Nat
 def entries : List Entry :=
 def statusOf (e : Entry) : Nat := e.2
-def explanations : Nat := 0
-def predictions : Nat := 0
-def theoriesConstrained : Nat := 0
 ```
 
 ### `priorart.lean` — 6 definition(s), 10 theorem(s)
@@ -471,6 +468,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**534** declarations, **0** axiom dependencies, **233** definitions they rest on.
+**533** declarations, **0** axiom dependencies, **230** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them. `0/7`.

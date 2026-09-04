@@ -17,12 +17,12 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 534 kernel-accepted declarations across 30 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `704b7c35-9ed5-8cd1-be77-2fd6c518dfef`</sub>
-- 526 of those 534 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
-  <sub>SEALED · `0e10c33c-86a4-844d-b92e-ac84ca08fefe`</sub>
-- 559 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `5eb84cca-c200-8a7b-9a3a-d0f1754465b1`</sub>
+- The formal layer holds 533 kernel-accepted declarations across 30 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `baa97c85-2aa9-8db1-91ac-762473b0861d`</sub>
+- 525 of those 533 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
+  <sub>SEALED · `cef981f3-965f-8e7a-8f4b-ef0e287347e0`</sub>
+- 560 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `d97fd512-05c3-862c-a0f8-d4e02892fa42`</sub>
 
 ## 2 · The ring
 
@@ -45,10 +45,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 2423 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `b4baed1e-5b89-8f95-bdad-23c9e3ecc4c3`</sub>
-- The count is 2423, which is 302 octaves and 7 over — the octave is a target the theorems earn, never a quota they are invented to fill.
-  <sub>SEALED · `0ac974f0-e177-84f9-a213-0389e75bc79b`</sub>
+- The ledger records 2424 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `643ed19e-d3ac-824a-9a2f-c47de6768035`</sub>
+- The count is an exact multiple of eight — 2424 is 303 octaves with no remainder.
+  <sub>SEALED · `0ec780a4-cdac-8e7f-9d63-ac30d85516d5`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -96,7 +96,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-30 Lean files in 6 wings, 534 declarations of which 526 are theorems. The prose in this section is read out of the
+30 Lean files in 6 wings, 533 declarations of which 525 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -142,7 +142,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Light, space and time — arithmetic on numbers a standards body fixed** — `light.lean`, 11 theorem(s). Poids et Mesures, not results of this deposit: the metre from the speed of light (17th CGPM, 1983) and   the seven defining constants fixed exactly in the 2019 revision of the SI, effective 20 May 2019   (BIPM, https://www.bipm.org/en/measurement-units/si-defining-constants). Nothing here measures anything.
 
-**Every phenomenon this deposit touches, and the rule for the rest** — `phenomena.lean`, 5 theorem(s). Générale des Poids et Mesures (2019 revision, effective 20 May 2019); the electrochemical results are   Michael Faraday's laws of electrolysis, 1834, and the standard enthalpy of combustion of hydrogen.   Every physical result named here has an earlier author or a standards body, and none is this deposit's.
+**Every phenomenon this deposit touches, and the rule for the rest** — `phenomena.lean`, 4 theorem(s). Générale des Poids et Mesures (2019 revision, effective 20 May 2019); the electrochemical results are   Michael Faraday's laws of electrolysis, 1834, and the standard enthalpy of combustion of hydrogen.   Every physical result named here has an earlier author or a standards body, and none is this deposit's.
 
 **Order-invariance** — `quantum.lean`, 9 theorem(s). BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: order-invariance of this deposit's receipt The quantum receipt — order invariance, proved rather than asserted.
 
@@ -172,7 +172,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Rights** — `rights.lean`, 8 theorem(s). BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: this deposit's own rights table What this deposit claims under international law — and, in the same table, what it does not.
 
-6 of 534 declarations carry no comment of their own and are shown here as the gap they are, not
+6 of 533 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -181,20 +181,20 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 2,423 — 302 octaves and 7 over |
-| standing — carries its own proof | **527** |
+| ledger entries | 2,424 — 303 octaves exactly |
+| standing — carries its own proof | **526** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **148** |
-| withdrawn — nothing proves it | 1,748 |
-| proved in total | **675** of 2,423 |
-| standing keys → distinct theorems | 526 sealed, 0 of them keyed twice, 1 unresolvable |
-| Lean files · theorems | 30 · 526 theorems (closed by exhaustion) + 8 rfl declarations, all axiom-free |
-| proved `by decide` | 526 of 534 |
+| withdrawn — nothing proves it | 1,750 |
+| proved in total | **674** of 2,424 |
+| standing keys → distinct theorems | 525 sealed, 0 of them keyed twice, 1 unresolvable |
+| Lean files · theorems | 30 · 525 theorems (closed by exhaustion) + 8 rfl declarations, all axiom-free |
+| proved `by decide` | 525 of 533 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
 **On `carried`.** 148 entries were withdrawn for want of a Lean proof and have since been given one, at a new key. Nothing is un-revoked: the original's own evidence is still a TypeScript test, and rewriting its status would erase the fact that it did not hold on what it had. The record says both — withdrawn on its own evidence, standing through the theorem that carries it.
 
-**Why the withdrawn were withdrawn.** 1,386 no Lean proof · 457 tested the removed lexical gate · 37 other · 10 circular by construction · 6 its Lean source was deleted or renamed. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
+**Why the withdrawn were withdrawn.** 1,386 no Lean proof · 457 tested the removed lexical gate · 37 other · 10 circular by construction · 8 its Lean source was deleted or renamed. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
 
 **What verification costs.** Proving the set touches all 16,384 leaves; verifying membership afterwards touches 14 — one sibling per level. That is **1,170× less work**, exactly, and the factor grows with the set because N/log N grows. Wall-clock varies with the machine and is left in the build output rather than pinned here. It is not sub-nanosecond and nothing here is: the advantage is a smaller exponent, not a faster clock. The counting is proved in `speed.lean`.
 
@@ -210,4 +210,4 @@ because no test was written that would seal them.
 
 ---
 
-*17 claims, all verified · 526 Lean theorems · 2423 ledger entries · trial root `0013b8f7-a05b-80d7-a9f3-5e3b6878ff76` · integrity, not truth · 0/7*
+*17 claims, all verified · 525 Lean theorems · 2424 ledger entries · trial root `2faa3c65-9d55-8ec6-925f-6265d85e6bf0` · integrity, not truth · 0/7*

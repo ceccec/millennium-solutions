@@ -65,19 +65,26 @@ theorem seven_definitional_and_two_credited :
 theorem the_definitional_half_is_the_whole_si :
   (entries.filter (fun e => statusOf e == 0)).length = 7 := by decide
 
--- ── WHAT IS CLAIMED ABOUT ANY OF THEM: NOTHING ─────────────────────────────────────────────────────────
--- Explanations offered, predictions made, and physical theories constrained by this deposit. Each is zero,
--- and each is a separate count because they are separate claims and collapsing them would let one hide.
-def explanations : Nat := 0
-def predictions : Nat := 0
-def theoriesConstrained : Nat := 0
+-- ── WHAT THIS FILE CANNOT DECIDE, AND WHY THE ATTEMPT WAS REMOVED ───────────────────────────────────────
+-- This carried three constants — explanations, predictions, theoriesConstrained, each `:= 0` — and a theorem
+-- deciding that each equals zero. That is a number compared to itself: it certifies nothing about what the
+-- deposit claims and cannot go red however much it claims. It is the exact shape removed from index.lean
+-- earlier the same day (`provenHere = 0 := rfl`), written back into this file hours later by the same hand,
+-- and then QUOTED as evidence that the deposit proves zero physical claims.
+--
+-- It was quoted wrongly twice over. The tautology was the first error. The second is that the claim was
+-- false on its own terms: captain.md offers the double torus as EARTH NAVIGATION and states sailing angles,
+-- which are assertions about the world, and no theorem here bears on them. A file about ℤ/9 cannot decide
+-- what a page elsewhere in the repository asserts.
+--
+-- So the refusal is not restated here as arithmetic. Where it belongs is a check that reads the corpus and
+-- can fail — scripts/contradictions.ts sweeps every markdown and source file in the deposit's own voice —
+-- and where THAT is silent, as it is on navigation, the honest record is that nothing checks it yet rather
+-- than a theorem implying something does.
 
-theorem this_deposit_explains_predicts_and_constrains_nothing :
-  explanations = 0 ∧ predictions = 0 ∧ theoriesConstrained = 0 := by decide
-
--- And the arithmetic that IS here cannot become physics by being correct: a decidable statement about an
--- exact defined integer stays a statement about that integer under every reading.
-theorem arithmetic_on_a_definition_returns_the_definition :
-  (299792458 % 9 = 1) ∧ explanations = 0 := by decide
+theorem the_table_is_closed_and_that_is_all_this_file_decides :
+  entries.all (fun e => statusOf e == 0 || statusOf e == 1)
+  ∧ entries.length = 9
+  ∧ (entries.filter (fun e => statusOf e == 0)).length = 7 := by decide
 
 end Phenomena

@@ -47,15 +47,21 @@ if (existsSync(DEP)) {
 let bad = 0, checked = 0
 const unread: [string, string][] = []
 for (const c of cites) {
-  let landed = '', title = ''
+  let landed = '', title = '', publisher = ''
   try {
     const r = await fetch(`https://doi.org/${c.doi}`, { redirect: 'follow', signal: AbortSignal.timeout(20_000) })
-    landed = (r.url.match(/records\/(\d+)/) ?? [])[1] ?? ''
-    if (landed) {
-      const o = await fetch(`https://zenodo.org/oai2d?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:zenodo.org:${landed}`,
-        { signal: AbortSignal.timeout(20_000) })
-      const b = await o.text()
-      title = (b.match(/<dc:title>([\s\S]*?)<\/dc:title>/) ?? [])[1]?.replace(/\s+/g, ' ').trim() ?? ''
+    landed = (r.url.match(/records?\/(\d+)/) ?? [])[1] ?? ''
+    // REGISTRY-AGNOSTIC. This harvested zenodo.org/oai2d, so it could only read identifiers held by ONE
+    // registry — and a repository that cites a DOI from anywhere else would have been reported as unread.
+    // DataCite content negotiation answers for any DataCite DOI through doi.org itself, whoever minted it.
+    // Verified against the CERN Open Data portal, which holds 82,385 records each with a 10.7483/OPENDATA
+    // DOI: one request path resolves any of them and any Zenodo record, with no per-registry code.
+    const meta = await fetch(`https://doi.org/${c.doi}`,
+      { headers: { Accept: 'application/vnd.datacite.datacite+json' }, redirect: 'follow', signal: AbortSignal.timeout(20_000) })
+    if (meta.ok) {
+      const j = await meta.json() as { titles?: { title?: string }[]; publisher?: { name?: string } | string }
+      title = j.titles?.[0]?.title?.replace(/\s+/g, ' ').trim() ?? ''
+      publisher = typeof j.publisher === 'string' ? j.publisher : (j.publisher?.name ?? '')
     }
     checked++
   } catch (e) {
@@ -72,7 +78,7 @@ for (const c of cites) {
   if (flag) bad++
   console.log(`  ${flag ? '✗' : ours ? '·' : '○'} ${c.doi}  [${c.role}, ${c.where}]`)
   console.log(`      resolves to record ${landed || '(none)'}${moved ? '  ← A DIFFERENT RECORD THAN THE ONE CITED' : ''}`)
-  console.log(`      "${title.slice(0, 88)}"`)
+  console.log(`      "${title.slice(0, 76)}"${publisher ? `  [${publisher}]` : ''}`)
   if (flag) console.log(`      cited as ours and does not name "${OURS}" — a citation that does not reach this work`)
 }
 
