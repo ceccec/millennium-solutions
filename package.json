@@ -116,7 +116,8 @@
     "unique": "node scripts/unique.ts",
     "doi-resolve": "node scripts/doi-resolve.ts",
     "bench:hex": "node scripts/bench-hex.ts",
-    "retire:duplicate-keys": "node scripts/retire-duplicate-keys.ts"
+    "retire:duplicate-keys": "node scripts/retire-duplicate-keys.ts",
+    "bench:hexbit": "node scripts/bench-hexbit.ts"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",
