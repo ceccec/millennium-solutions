@@ -114,7 +114,8 @@
     "zenodo:verify": "node scripts/zenodo-verify.ts",
     "metrics:enforce": "node scripts/metrics.ts --enforce",
     "unique": "node scripts/unique.ts",
-    "doi-resolve": "node scripts/doi-resolve.ts"
+    "doi-resolve": "node scripts/doi-resolve.ts",
+    "bench:hex": "node scripts/bench-hex.ts"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",
