@@ -70,6 +70,43 @@ for (const [path, ws] of shared.sort((a, b) => b[1].length - a[1].length)) {
   console.log(`  ${ok ? '·' : '✗'} ${path} — ${ws.length} writers: ${ws.map((w) => w.script.replace('scripts/', '') + (w.mutates ? ' (amends)' : ' (generates)')).join(', ')}`)
   if (!ok) console.log(`      ${generators.length} of them write the whole file, so the last one to run decides what it says`)
 }
+// ── A SCRIPT THAT ENUMERATES A DIRECTORY MUST NOT SILENTLY READ ITS OWN OUTPUT ──────────────────────────
+// zeropoint-node-8a audited this tree and named the shape from their own day: a record written into a
+// directory the same script fingerprints or scans. Theirs was lean/bounds.json living inside the lean/
+// directory being fingerprinted — so the write changed the input, the fast path could never be taken, and
+// it recomputed every run while appearing to work.
+//
+// Measured here: three candidate sites and all three already handle it. lean.ts keys its cache on each
+// .lean file's OWN bytes, so writing .lean-cache.json beside them changes nothing. sw-integrity.ts SKIPs
+// sw.js and sw-integrity.json when building its manifest of dist. imagine.ts reads src/proof/*.lean with
+// `f !== 'imagined.lean'`, excluding the file it is about to write.
+//
+// None of that was held by anything, which is the only reason this exists. A new script enumerating a
+// directory it writes into must say why that is safe, here, rather than be correct by the care of whoever
+// happened to write it.
+const SELF_WRITERS: Record<string, string> = {
+  'imagine.ts': 'reads src/proof/*.lean with `f !== imagined.lean`, excluding the file it writes',
+  'sw-integrity.ts': 'SKIP holds sw.js and sw-integrity.json, so the manifest never covers itself',
+  'lean.ts': 'the cache keys on each .lean file\'s own bytes, not on a listing of the directory',
+}
+{
+  const dirOf = (x: string) => x.replace(/\/[^/]*$/, '') || '.'
+  for (const f of readdirSync('scripts').filter((x) => x.endsWith('.ts'))) {
+    const src = readFileSync(`scripts/${f}`, 'utf8')
+    const reads = new Set<string>(), writes = new Set<string>()
+    for (const m of src.matchAll(/readdirSync\(\s*['`]([^'`]+)/g)) reads.add(m[1].replace(/\/+$/, ''))
+    for (const m of src.matchAll(/writeFileSync\(\s*['`]([^'`$]+)/g)) writes.add(dirOf(m[1]))
+    for (const w of writes) for (const r of reads) {
+      if (w !== r && !w.startsWith(r + '/')) continue
+      if (SELF_WRITERS[f]) continue
+      console.error(`  ✗ ${f} enumerates ${r} and writes into it, with no recorded reason that is safe —`)
+      console.error(`    a script that reads its own output either recomputes forever or reads a stale self.`)
+      process.exitCode = 1
+    }
+  }
+  console.log(`  ✓ ${Object.keys(SELF_WRITERS).length} script(s) write into a directory they read, each with the exclusion that makes it safe recorded`)
+}
+
 console.log(bad
   ? `\n✗ one-author: ${bad} artefact(s) have more than one generator — the winner depends on command order`
   : `\n✓ one-author: every generated artefact has a single generator (${shared.length} path(s) with several writers, each amending a file it reads first)`)
