@@ -1,6 +1,12 @@
 -- title: Theorems
 -- wing: the machine
 -- prior_art: unclassified
+-- prior_art_pool: bounded
+--   a universal property over a finite set; searchable as stated.
+--   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
+--   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
+--   row will stay unclassified however much work is done. They look identical in a count and need
+--   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
 -- prior_art_own: the universal property, computed from this sequence
 -- The universal property — honestly, and COMPUTED from the sequence.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0

@@ -1,6 +1,12 @@
 -- title: The Millennium floor
 -- wing: the floor
 -- prior_art: unclassified
+-- prior_art_pool: bounded
+--   digit arithmetic of the doubling sequence; searchable independently of this deposit.
+--   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
+--   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
+--   row will stay unclassified however much work is done. They look identical in a count and need
+--   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
 -- prior_art_own: the Millennium floor, computed from this sequence
 -- The Millennium floor — seven honest theorems, one per problem, COMPUTED from the sequence.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0

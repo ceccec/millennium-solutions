@@ -3,6 +3,12 @@ set_option maxRecDepth 8000000
 -- title: What enumeration proposed and the kernel kept
 -- wing: the imagined
 -- prior_art: unclassified
+-- prior_art_pool: bounded
+--   118 statements of finite modular arithmetic; each is a searchable proposition.
+--   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
+--   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
+--   row will stay unclassified however much work is done. They look identical in a count and need
+--   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
 -- prior_art_own: enumerated by this deposit's own imagine pass
 -- IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets
 -- statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that

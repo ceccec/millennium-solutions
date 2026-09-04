@@ -3,6 +3,12 @@ set_option maxRecDepth 8000000
 -- title: The merkaba
 -- wing: the ring
 -- prior_art: unclassified
+-- prior_art_pool: bounded
+--   polyhedral and modular arithmetic; one theorem already credits Euler.
+--   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
+--   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
+--   row will stay unclassified however much work is done. They look identical in a count and need
+--   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
 -- prior_art_own: the merkaba as THIS deposit constructs it
 -- prior_art_theorem: the_cube_and_the_tetrahedron_count_out — Euler's polyhedron formula V − E + F = 2
 --   (Leonhard Euler, 1758). The file as a whole is this deposit's own construction, and this ONE

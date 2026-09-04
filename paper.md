@@ -370,6 +370,11 @@ settledHere := 12</code></pre>
 
 <p class="paper-src"><code>src/proof/ledgerclaims.lean</code> · namespace <code>LedgerClaims</code> · 8 theorems</p>
 
+BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
+  nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
+  row will stay unclassified however much work is done. They look identical in a count and need
+  opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
+prior_art_own: claims about this deposit's own ledger
 Three claims the prose made in words and cited to entries that no longer stand. Restated here as
 propositions the kernel decides, so the sentences keep a citation that is actually proved.
 
@@ -553,6 +558,11 @@ settledHere := 8</code></pre>
 
 <p class="paper-src"><code>src/proof/coin.lean</code> · namespace <code>Coin</code> · 12 theorems</p>
 
+BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
+  nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
+  row will stay unclassified however much work is done. They look identical in a count and need
+  opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
+prior_art_own: one involution on ten digits, this deposit's own reading
 One involution on ten digits, two sides, one fixed point, and one digit that leaves.
 
 
@@ -920,7 +930,12 @@ coinLike := [(0, 0), (1, 8), (2, 7), (3, 6), (4, 5)]</code></pre>
 
 <p class="paper-src"><code>src/proof/merkaba.lean</code> · namespace <code>Merkaba</code> · 8 theorems</p>
 
-(Leonhard Euler, 1758). The file as a whole is this deposit's own construction, and this ONE
+nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
+  row will stay unclassified however much work is done. They look identical in a count and need
+  opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
+prior_art_own: the merkaba as THIS deposit constructs it
+prior_art_theorem: the_cube_and_the_tetrahedron_count_out — Euler's polyhedron formula V − E + F = 2
+  (Leonhard Euler, 1758). The file as a whole is this deposit's own construction, and this ONE
   declaration restates a named classical result: its third conjunct 4 + 4 - 6 = 2 IS the Euler
   characteristic of the tetrahedron. The comment above that theorem already named Euler; the register
   did not, because prior art was routed on the FILE and a file-level row cannot say "own work except
@@ -1102,6 +1117,11 @@ as a single subtraction would truncate at zero and quietly hold for the wrong re
 
 <p class="paper-src"><code>src/proof/split.lean</code> · namespace <code>Split</code> · 19 theorems</p>
 
+BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
+  nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
+  row will stay unclassified however much work is done. They look identical in a count and need
+  opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
+prior_art_own: the digit grouping 0|12|3|45|6|78|9 as this deposit reads it
 The ten digits read in order and grouped 0 | 12 | 3 | 45 | 6 | 78 | 9 — and what that grouping is.
 
 
@@ -2247,6 +2267,11 @@ tdsTapWater := 50     -- mg per litre, ordinary supply</code></pre>
 
 <p class="paper-src"><code>src/proof/index.lean</code> · namespace <code>MillenniumFloor</code> · 11 theorems</p>
 
+BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
+  nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
+  row will stay unclassified however much work is done. They look identical in a count and need
+  opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
+prior_art_own: the Millennium floor, computed from this sequence
 The Millennium floor — seven honest theorems, one per problem, COMPUTED from the sequence.
 
 
@@ -2597,6 +2622,11 @@ theoriesConstrained := 0</code></pre>
 
 <p class="paper-src"><code>src/proof/quantum.lean</code> · namespace <code>Quantum</code> · 9 theorems</p>
 
+BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
+  nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
+  row will stay unclassified however much work is done. They look identical in a count and need
+  opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
+prior_art_own: order-invariance of this deposit's receipt
 The quantum receipt — order invariance, proved rather than asserted.
 
 
@@ -2776,6 +2806,12 @@ largestDomainHere := 152568360000</code></pre>
 
 <p class="paper-src"><code>src/proof/speed.lean</code> · namespace <code>Speed</code> · 8 theorems</p>
 
+BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
+  nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
+  row will stay unclassified however much work is done. They look identical in a count and need
+  opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
+prior_art_own: this deposit's own verification cost
+
 The deposit's speed claim, accounted — and the reading it does not support.
 
 WHAT IS TRUE. Proving a set costs O(N): every leaf is touched. Verifying membership afterwards costs
@@ -2879,6 +2915,11 @@ nsPerVerify := 38000      -- the same verify, in nanoseconds</code></pre>
 
 <p class="paper-src"><code>src/proof/generated.lean</code> · namespace <code>Generated</code> · 14 theorems</p>
 
+BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
+  nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
+  row will stay unclassified however much work is done. They look identical in a count and need
+  opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
+prior_art_own: this deposit's own generator over its own ring
 Generated by scripts/lean-gen.ts — do not edit by hand; re-run the generator.
 Each theorem below quantifies over a whole ledger family. Every one is compiled, audited for axioms, and
 checked to compute what the ledger's own tests compute at every parameter of its family.
@@ -3014,6 +3055,10 @@ checked to compute what the ledger's own tests compute at every parameter of its
 
 <p class="paper-src"><code>src/proof/mechanical.lean</code> · namespace <code>Mechanical</code> · 105 theorems</p>
 
+nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
+  row will stay unclassified however much work is done. They look identical in a count and need
+  opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
+prior_art_own: translated from this deposit's own tests
 Generated by src/prove/emit.ts from the ledger's own tests — do not hand-edit; re-run the prover.
 
 Each theorem below is a claim the ledger already asserts, rendered into Lean by a whitelist
@@ -4160,6 +4205,11 @@ No axioms, no Mathlib, no sorry.
 
 <p class="paper-src"><code>src/proof/theorems.lean</code> · namespace <code>MillenniumFloor.Universal</code> · 8 theorems</p>
 
+BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
+  nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
+  row will stay unclassified however much work is done. They look identical in a count and need
+  opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
+prior_art_own: the universal property, computed from this sequence
 The universal property — honestly, and COMPUTED from the sequence.
 
 
@@ -4247,6 +4297,11 @@ axioms, every proof `by decide`, no Mathlib. The floor holds: 0/7.
 
 <p class="paper-src"><code>src/proof/imagined.lean</code> · namespace <code>Imagined</code> · 118 theorems</p>
 
+BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
+  nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
+  row will stay unclassified however much work is done. They look identical in a count and need
+  opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
+prior_art_own: enumerated by this deposit's own imagine pass
 IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets
 statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that
 also holds for all its siblings. A property true of everything names nothing. What is left is what the
@@ -5322,6 +5377,11 @@ kernel accepted; whatever it refused is reported by the generator and is not in 
 
 <p class="paper-src"><code>src/proof/priorart.lean</code> · namespace <code>PriorArt</code> · 10 theorems</p>
 
+BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
+  nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
+  row will stay unclassified however much work is done. They look identical in a count and need
+  opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
+prior_art_own: this file, about this deposit's own claim
 What this deposit claims as its own, what it restates from named prior art, and the boundary between them.
 
 
@@ -5453,6 +5513,11 @@ noveltyEstablished := 0</code></pre>
 
 <p class="paper-src"><code>src/proof/rights.lean</code> · namespace <code>Rights</code> · 8 theorems</p>
 
+BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
+  nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
+  row will stay unclassified however much work is done. They look identical in a count and need
+  opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
+prior_art_own: this deposit's own rights table
 What this deposit claims under international law — and, in the same table, what it does not.
 
 

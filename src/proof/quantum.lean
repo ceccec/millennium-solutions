@@ -1,6 +1,12 @@
 -- title: Order-invariance
 -- wing: the floor
 -- prior_art: unclassified
+-- prior_art_pool: mixed
+--   canonicalisation before folding is a searchable technique; the receipt it folds is ours.
+--   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
+--   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
+--   row will stay unclassified however much work is done. They look identical in a count and need
+--   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
 -- prior_art_own: order-invariance of this deposit's receipt
 -- The quantum receipt — order invariance, proved rather than asserted.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0

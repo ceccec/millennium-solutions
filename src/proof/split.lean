@@ -1,6 +1,12 @@
 -- title: The digit split
 -- wing: the ring
 -- prior_art: unclassified
+-- prior_art_pool: mixed
+--   the digit grouping is generic arithmetic; the coin accounting it feeds is this deposit's.
+--   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
+--   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
+--   row will stay unclassified however much work is done. They look identical in a count and need
+--   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
 -- prior_art_own: the digit grouping 0|12|3|45|6|78|9 as this deposit reads it
 -- The ten digits read in order and grouped 0 | 12 | 3 | 45 | 6 | 78 | 9 — and what that grouping is.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
