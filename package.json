@@ -106,7 +106,8 @@
     "all": "node scripts/all.ts",
     "docs-gate": "node scripts/docs-gate.ts",
     "priorart:gen": "node scripts/priorart-gen.ts",
-    "priorart-check": "node scripts/priorart-gen.ts --check"
+    "priorart-check": "node scripts/priorart-gen.ts --check",
+    "apply": "node scripts/apply.ts"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",
