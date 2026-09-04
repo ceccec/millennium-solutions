@@ -9,6 +9,7 @@
 import { readFileSync } from 'node:fs'
 import { toUuid } from '../src/0/index.ts'
 import { leanTheorems, theoremOfKey, domainOf } from '../src/api/index.ts'
+import { publicationHtml, NOVELTY, kinds, closureOf, creditedIn } from '../src/publication/index.ts'
 import { MILLENNIUM } from '../src/millennium/index.ts'
 import { toLatex, toMathML } from '../src/latex/index.ts'
 
@@ -23,6 +24,18 @@ const formulaOf = (key: string) => {
   if (t) return {
     statement: t.statement, tactic: t.tactic, leanFile: t.file, cases: domainOf(t.statement), ambiguous: '',
     mathml: toMathML(t.statement) ?? '', latex: toLatex(t.statement) ?? '',
+    // THE SAME BODY THE ZENODO RECORD CARRIES. Built once in src/publication and rendered in both places,
+    // because two descriptions of one theorem maintained separately had already drifted into disagreeing
+    // in public about how many cases it walked. scripts/zenodo-gate.ts compares them byte for byte.
+    publication: publicationHtml(t, {
+      novelty: creditedIn(t.file).get(t.name)
+        ? `Prior art: NAMED AND CREDITED for this declaration specifically. ${creditedIn(t.file).get(t.name)} `
+          + `The file it sits in is otherwise this deposit's own construction; this record claims no priority `
+          + `over the earlier work it names.`
+        : (NOVELTY[kinds().get(t.file) ?? '1'] ?? NOVELTY['1']),
+      files: ['src/proof/' + t.file, ...closureOf(t.file).map((f) => 'src/proof/' + f)],
+      key,
+    }),
   }
   // A key that predates the namespace convention and names a theorem declared in more than one file cannot
   // be resolved to one statement. Showing nothing is correct and unhelpful; the page says which keys DO
@@ -30,7 +43,7 @@ const formulaOf = (key: string) => {
   const bare = key.replace(/^lean_/, '')
   const shared = THMS.filter((x) => x.name === bare)
   return {
-    statement: '', tactic: '', leanFile: '', cases: 0, mathml: '', latex: '',
+    statement: '', tactic: '', leanFile: '', cases: 0, mathml: '', latex: '', publication: '',
     ambiguous: shared.length > 1 ? shared.map((x) => `lean_${x.namespace.toLowerCase()}_${x.name} (src/proof/${x.file})`).join(' · ') : '',
   }
 }

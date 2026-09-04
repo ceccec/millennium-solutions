@@ -9,7 +9,7 @@
       "affiliation": "PSG, Bulgaria"
     }
   ],
-  "description": "<p><strong>the measured ratio at a million leaves</strong> — <strong>decided over the whole of its finite domain by exhaustion, every case walked by the Lean 4 kernel.</strong> Not sampled and not argued: within that domain there is no residual uncertainty and no case left untested.</p><p><strong>Statement (Lean):</strong></p><pre><code>recomputeUs / verifyUs = 567971 ∧ recomputeUs > verifyUs * 500000</code></pre><p><strong>Statement (LaTeX):</strong></p><pre><code>\\frac{\\mathrm{recomputeUs}}{\\mathrm{verifyUs}} = 567971 \\land \\mathrm{recomputeUs} > \\mathrm{verifyUs} \\cdot 500000</code></pre><p><strong>What this record establishes.</strong> <strong>A dated, public, citable deposit</strong> of this declaration and its machine-checked proof, recomputable from the source it names — <strong>sorry-free, axiom-free, and free of any Mathlib dependency</strong>. That is priority, and the record proves it on its own. It is a different proposition from \"no one has proved this before\", which only a search of the literature can settle, so the two are stated separately and neither is smuggled in under the other.</p><p><strong>Novelty: UNCLASSIFIED — an open question, not a claim. No prior-art search has been performed for this source file, so this record asserts priority of deposit and nothing about the literature.</strong></p><p><strong>Scope, stated as plainly as the claim.</strong> The declaration is decided over a finite domain. It settles no Clay Millennium Problem, asserts no quantum speedup, and describes no physical system. <strong>0/7.</strong></p>",
+  "description": "<p><strong>the measured ratio at a million leaves</strong> — <strong>a closed identity, evaluated by the Lean 4 kernel.</strong> No domain is walked here — the proposition reduces, and the kernel confirms the reduction. It is checked, not exhausted, and it is not offered as the larger claim.</p><p><strong>Statement (Lean):</strong></p><pre><code>recomputeUs / verifyUs = 567971 ∧ recomputeUs > verifyUs * 500000</code></pre><p><strong>Statement (LaTeX):</strong></p><pre><code>\\frac{\\mathrm{recomputeUs}}{\\mathrm{verifyUs}} = 567971 \\land \\mathrm{recomputeUs} > \\mathrm{verifyUs} \\cdot 500000</code></pre><p><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. Checked sorry-free; <code>#print axioms</code> reports no axiom dependency. No Mathlib, no <code>native_decide</code>. □</p><p><strong>What this record establishes.</strong> <strong>A dated, public, citable deposit</strong> of this declaration and its machine-checked proof, recomputable from the sources attached to it. That is priority, and the record proves it on its own. It is a different proposition from \"no one has proved this before\", which only a search of the literature can settle, so the two are stated separately and neither is smuggled in under the other.</p><p><strong>Novelty: UNCLASSIFIED — an open question, not a claim. No prior-art search has been performed for this source file, so this record asserts priority of deposit and nothing about the literature.</strong></p><p><strong>Verification.</strong> The proof needs 5 files, all attached: <code>src/proof/speed.lean</code>, <code>src/proof/address.lean</code>, <code>src/proof/fnv.lean</code>, <code>src/proof/ledgerclaims.lean</code>, <code>src/proof/merkle.lean</code>. Check it with <code>lake env lean src/proof/speed.lean src/proof/address.lean src/proof/fnv.lean src/proof/ledgerclaims.lean src/proof/merkle.lean</code>, or clone <a href=\"https://github.com/ceccec/millennium-solutions\">https://github.com/ceccec/millennium-solutions</a> and run <code>npm run lean</code>. The content-address of this declaration is recorded as <code>lean_speed_the_measured_ratio_at_a_million_leaves</code> at <a href=\"https://ceccec.github.io/millennium-solutions/theorem/lean_speed_the_measured_ratio_at_a_million_leaves\">https://ceccec.github.io/millennium-solutions/theorem/lean_speed_the_measured_ratio_at_a_million_leaves</a>. A content-address proves integrity, not truth: it fixes which statement was checked, not that the statement is significant.</p><p><strong>Scope, stated as plainly as the claim.</strong> The declaration is decided over a finite domain. It settles no Clay Millennium Problem, asserts no quantum speedup, and describes no physical system. <strong>0/7.</strong></p>",
   "keywords": [
     "Lean 4",
     "machine-checked proof",
@@ -21,6 +21,25 @@
   "license": "cc-by-nc-nd-4.0",
   "access_right": "open",
   "language": "eng",
+  "version": "v8.0.9",
+  "subjects": [
+    {
+      "term": "Formal methods",
+      "identifier": "https://www.wikidata.org/wiki/Q1332293",
+      "scheme": "url"
+    },
+    {
+      "term": "Automated theorem proving",
+      "identifier": "https://www.wikidata.org/wiki/Q1191319",
+      "scheme": "url"
+    },
+    {
+      "term": "Modular arithmetic",
+      "identifier": "https://www.wikidata.org/wiki/Q319400",
+      "scheme": "url"
+    }
+  ],
+  "method": "Declared in Lean 4 and checked by its kernel. Closed by `by decide`, sorry-free, with #print axioms reporting no axiom dependency, no Mathlib and no native_decide. Re-verified on every build by scripts/lean.ts; the statement rendered here is read from the source through the same resolver the ledger uses, so a record cannot show a formula the kernel did not check.",
   "communities": [],
   "related_identifiers": [
     {
@@ -62,6 +81,66 @@
       "identifier": "https://www.npmjs.com/package/@uuidna/uuidna",
       "relation": "isSupplementedBy",
       "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_address_raw_bytes_of_a",
+      "relation": "references",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_address_to_uuid_bytes_of_a",
+      "relation": "references",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_address_to_uuid_bytes_of_uuidna",
+      "relation": "references",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_address_address_is_sixteen_bytes",
+      "relation": "references",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_fnv_hash_a_seed_zero",
+      "relation": "references",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_fnv_hash_ab_seed_zero",
+      "relation": "references",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_fnv_hash_a_seed_golden",
+      "relation": "references",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_fnv_hash_uuidna_seed_zero",
+      "relation": "references",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_ledgerclaims_a_seal_is_128_bits",
+      "relation": "references",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_ledgerclaims_membership_grows_by_one_seal_per_doubling",
+      "relation": "references",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_ledgerclaims_membership_is_logarithmic_not_linear",
+      "relation": "references",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_ledgerclaims_the_967_receipt_case",
+      "relation": "references",
+      "scheme": "url"
     }
   ],
   "references": [
@@ -72,5 +151,12 @@
     "Verifier and recomputation instructions: https://ceccec.github.io/millennium-solutions/verify",
     "Reference implementation, @uuidna/uuidna: https://www.npmjs.com/package/@uuidna/uuidna"
   ],
-  "notes": "key lean_speed_the_measured_ratio_at_a_million_leaves · receipt f85a5ece-1d19-8b13-9cc6-6a0535e9b39a · source file src/proof/speed.lean · namespace Speed · closed by by decide · concept DOI 10.5281/zenodo.21819217 · recompute: git clone https://github.com/ceccec/millennium-solutions && npm ci && npm run lean"
+  "files": [
+    "src/proof/speed.lean",
+    "src/proof/address.lean",
+    "src/proof/fnv.lean",
+    "src/proof/ledgerclaims.lean",
+    "src/proof/merkle.lean"
+  ],
+  "notes": "key lean_speed_the_measured_ratio_at_a_million_leaves · receipt f85a5ece-1d19-8b13-9cc6-6a0535e9b39a · source file src/proof/speed.lean · namespace Speed · closed by by decide · concept DOI 10.5281/zenodo.21819217 · recompute: lake env lean src/proof/speed.lean src/proof/address.lean src/proof/fnv.lean src/proof/ledgerclaims.lean src/proof/merkle.lean — or git clone https://github.com/ceccec/millennium-solutions && npm ci && npm run lean"
 }

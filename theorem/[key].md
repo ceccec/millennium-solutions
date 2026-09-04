@@ -121,17 +121,13 @@ do resolve, each to exactly one statement: <code>{{ ambiguous }}</code>. Cite on
 <details v-if="latex" class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>{{ latex }}</code></pre></details>
 </div>
 
-<div class="thm-proof">
-  <p><em>Proof.</em> <code>{{ tactic }}</code> — the Lean&nbsp;4 kernel evaluated the proposition over its whole
-  finite domain<span v-if="casesText">, exhausting <strong>{{ casesText }}</strong> cases</span>. Checked
-  <code>sorry</code>-free; <code>#print axioms</code> reports no axiom dependency. No Mathlib, no
-  <code>native_decide</code>. <span class="qed">□</span></p>
-</div>
-
-<h2 class="paper-h">Verification</h2>
-<p class="paper-verify">Source: <a :href="'https://github.com/ceccec/millennium-solutions/blob/main/src/proof/' + leanFile"><code>src/proof/{{ leanFile }}</code></a>.
-Clone the repository and run <code>node scripts/lean.ts</code> to re-check this statement, or <code>npm run forensics</code> to re-verify the receipt above against the append-only chain.
-A content-address proves integrity, not truth: it fixes <em>which</em> statement was checked, not that the statement is significant. This framework proves <strong>0 of the 7</strong> Millennium Prize Problems (<code>entails → 0/7</code>).</p>
+<!-- ONE BODY, SHARED WITH THE ZENODO RECORD. This block used to be written here and again in
+     scripts/zenodo-theorems.ts, and the two had drifted: the page told every theorem the kernel had
+     walked its whole finite domain, which is false for the 112 declarations that are closed identities
+     walking none, and it printed the domain size as an exact count when domainOf() returns a lower
+     bound. Both are fixed in src/publication/index.ts, and both surfaces read it. zenodo-gate.ts
+     compares this rendering with the deposited one byte for byte. -->
+<div class="paper-body" v-html="$params.publication"></div>
 
 </div>
 

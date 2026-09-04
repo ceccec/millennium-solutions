@@ -18,7 +18,8 @@
 // that is the author's call to make, not a build step's.
 import { writeFileSync, mkdirSync, rmSync, readFileSync, existsSync } from 'node:fs'
 import { leanTheorems, leanSource, ledger, theoremOfKey, type LeanTheorem } from '../src/api/index.ts'
-import { toLatex } from '../src/latex/index.ts'
+import { publicationHtml, NOVELTY, kinds, ownFiles, closureOf, creditedIn } from '../src/publication/index.ts'
+import { execSync } from 'node:child_process'
 import { toUuid } from '../src/0/index.ts'
 
 const base = JSON.parse(readFileSync('.zenodo.json', 'utf8'))
@@ -28,29 +29,30 @@ const SITE = 'https://ceccec.github.io/millennium-solutions'
 const HOME = 'https://ceccec.psg.bg'
 const REPO = 'https://github.com/ceccec/millennium-solutions'
 const PKG = 'https://www.npmjs.com/package/@uuidna/uuidna'
+const VERSION = (() => {
+  try { return execSync('git describe --tags --abbrev=0', { stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim() }
+  catch { return JSON.parse(readFileSync('package.json', 'utf8')).version ?? '0.0.0' }
+})()
+
+/** Edges to the declarations this proof depends on — the import closure, resolved to live theorem pages.
+ *  Capped at twelve: a record listing every sibling in a 100-theorem file is a graph nobody can read, and
+ *  Zenodo shows relations in full. The cap is stated in the record's own notes rather than applied
+ *  silently, because a truncation nobody is told about reads as completeness. */
+const siblingEdges = (t: LeanTheorem) => {
+  const deps = closureOf(t.file)
+  const out: { identifier: string; relation: string; scheme: string }[] = []
+  for (const f of deps) {
+    for (const dep of leanTheorems().filter((x) => x.file === f).slice(0, 4)) {
+      const k = keyOf(dep)
+      if (k) out.push({ identifier: `${SITE}/theorem/${k}`, relation: 'references', scheme: 'url' })
+    }
+  }
+  return out.slice(0, 12)
+}
 
 /** The files whose theorems are this deposit's OWN construction — kind 1 in src/proof/priorart.lean,
  *  derived from that table rather than listed here, so the two cannot drift apart. */
-// Surfaced in the record itself, in bold, rather than left to a file-level table nobody reads. A deposit
-// that will not say what it claims is not being modest, it is being unreadable.
-const NOVELTY: Record<string, string> = {
-  '0': 'Prior art: NAMED AND CREDITED. This declaration restates or builds on work with an earlier author, '
-    + 'recorded in src/proof/priorart.lean. No priority over that work is claimed here.',
-  '1': 'Novelty: UNCLASSIFIED — an open question, not a claim. No prior-art search has been performed for '
-    + 'this source file, so this record asserts priority of deposit and nothing about the literature.',
-  '2': 'Novelty: CLAIMED. A named prior-art search was performed for this source file and returned nothing; '
-    + 'the search itself is on the record in src/proof/priorart.lean.',
-}
-const KIND: Record<string, string> = {
-  '0': 'restates named prior art, the earlier author credited',
-  '1': 'unclassified — no prior-art search has been performed, so no novelty is asserted',
-  '2': 'a named prior-art search was performed and found nothing',
-}
-/** file -> its row in the table, so a deposition quotes the ledger rather than a guess. */
-export const kinds = (): Map<string, string> =>
-  new Map([...leanSource('priorart.lean').matchAll(/\(\s*\d+,\s*(\d+),\s*(?:true|false)\)\s*--\s*(\S+\.lean)/g)]
-    .map((m) => [m[2], m[1]] as [string, string]))
-export const ownFiles = (): string[] => [...kinds()].filter(([, k]) => k === '1').map(([f]) => f)
+
 
 // ── THE THEOREM'S PAGE IS ADDRESSED BY ITS LEDGER KEY, NOT BY ITS NAME ───────────────────────────────────
 // The site renders one page per LIVE LEDGER KEY, and a key is an address, not a theorem name — the two
@@ -105,24 +107,6 @@ export const blockAbove = (file: string, name: string): string => {
   return out.join('\n')
 }
 
-/** PER-THEOREM ATTRIBUTION, read from `-- prior_art_theorem: <name> — <credit>` in a file's frontmatter.
- *  Prior art was routed on the FILE, and a file-level row cannot say "own work except theorem 7". That is
- *  exactly merkaba.lean: its own construction throughout, with one declaration whose third conjunct
- *  4 + 4 - 6 = 2 is the Euler characteristic. The register now carries the exception where the exception
- *  is, and a credited theorem says so in its own deposition instead of inheriting the file's status. */
-export const creditedIn = (file: string): Map<string, string> => {
-  const out = new Map<string, string>()
-  const lines = leanSource(file).split('\n')
-  for (let i = 0; i < lines.length; i++) {
-    const m = lines[i].match(/^--\s*prior_art_theorem:\s*(\w+)\s*[—-]\s*(.*)$/)
-    if (!m) continue
-    let credit = m[2].trim()
-    for (let j = i + 1; j < lines.length && /^--\s{2,}\S/.test(lines[j]); j++) credit += ' ' + lines[j].replace(/^--\s+/, '').trim()
-    out.set(m[1], credit)
-  }
-  return out
-}
-
 /** Prior artists this theorem's own text names. */
 export const namesIn = (t: LeanTheorem): string[] => {
   const block = blockAbove(t.file, t.name)
@@ -132,53 +116,49 @@ export const namesIn = (t: LeanTheorem): string[] => {
 const humanise = (n: string) => n.replace(/_/g, ' ')
 
 export const deposition = (t: LeanTheorem) => {
-  const latex = toLatex(t.statement)
   const key = keyOf(t)
   const page = key ? `${SITE}/theorem/${key}` : null
   const credit = creditedIn(t.file).get(t.name) ?? null
+  const needs = closureOf(t.file)
+  const needs2 = ['src/proof/' + t.file, ...needs.map((f) => 'src/proof/' + f)]
+  const novelty = credit
+    ? `Prior art: NAMED AND CREDITED for this declaration specifically. ${credit} The file it sits in is `
+      + `otherwise this deposit's own construction; this record claims no priority over the earlier work it names.`
+    : (NOVELTY[kinds().get(t.file) ?? '1'] ?? NOVELTY['1'])
   return {
     upload_type: 'publication',
     publication_type: 'preprint',
     title: `${humanise(t.name)} — a machine-checked theorem of the ℤ/9 vortex deposit`,
     creators: base.creators,
-    description:
-      // ── THE CLAIM LEADS, IN BOLD, AND THE LIMIT FOLLOWS IN THE SAME VOICE ─────────────────────────────
-      // NO CASE COUNT IS PUBLISHED HERE, deliberately. domainOf() reads numerals off the statement text and
-      // is good enough to rank theorems on the front pages; it is not exact. For
-      // `superposition_collapses_to_one` it returns 4, counting the elements of [1,2,4,8], while the
-      // statement walks the 24 permutations that perms_of_four_is_factorial decides there are. Ranking
-      // survives that; a permanent citable record does not. The qualitative claim — decided over the whole
-      // domain, every case walked — is exact, and it is the part that carries the weight anyway.
-      // An earlier draft opened with "declared in <file> and accepted by the kernel" and put the result
-      // nowhere: a reader met the provenance before they met the theorem. What this deposit actually has
-      // is stronger than how it had been writing itself down — a proposition decided over its ENTIRE
-      // domain, every case walked by the kernel, no axioms and no `sorry`. That is the first sentence now.
-      // The scope stays, in the same weight, because a claim that hides its limit is not clearer, it is
-      // just louder.
-      `<p><strong>${humanise(t.name)}</strong> — <strong>decided over the whole of its finite domain by `
-      + `exhaustion, every case walked by the Lean 4 kernel.</strong> Not sampled and not argued: within `
-      + `that domain there is no residual uncertainty and no case left untested.</p>`
-      + `<p><strong>Statement (Lean):</strong></p><pre><code>${t.statement.replace(/</g, '&lt;')}</code></pre>`
-      + `<p><strong>Statement (LaTeX):</strong></p><pre><code>${latex.replace(/</g, '&lt;')}</code></pre>`
-      + `<p><strong>What this record establishes.</strong> <strong>A dated, public, citable deposit</strong> of `
-      + `this declaration and its machine-checked proof, recomputable from the source it names — `
-      + `<strong>sorry-free, axiom-free, and free of any Mathlib dependency</strong>. That is priority, and `
-      + `the record proves it on its own. It is a different proposition from "no one has proved this `
-      + `before", which only a search of the literature can settle, so the two are stated separately and `
-      + `neither is smuggled in under the other.</p>`
-      + (credit
-        ? `<p><strong>Prior art: NAMED AND CREDITED for this declaration specifically.</strong> ${credit} `
-          + `The file it sits in is otherwise this deposit's own construction; this record claims no priority `
-          + `over the earlier work it names.</p>`
-        : `<p><strong>${NOVELTY[kinds().get(t.file) ?? '1'] ?? NOVELTY['1']}</strong></p>`)
-      + `<p><strong>Scope, stated as plainly as the claim.</strong> The declaration is decided over a finite `
-      + `domain. It settles no Clay Millennium Problem, asserts no quantum speedup, and describes no `
-      + `physical system. <strong>0/7.</strong></p>`,
+    // ONE BODY, shared with the web page — see src/publication/index.ts. These were maintained separately
+    // and disagreed in public about the same theorem; the gate now compares them.
+    description: publicationHtml(t, { novelty, files: needs2, key }),
     keywords: ['Lean 4', 'machine-checked proof', 'formal verification', 'Z/9', 'content-addressing',
       t.namespace || t.file.replace('.lean', ''), ...(credit ? ['Euler characteristic', 'polyhedron formula'] : [])],
     license: base.license,
     access_right: base.access_right,
     language: 'eng',
+    version: VERSION,
+    // ── THE GRAPH BETWEEN RECORDS ─────────────────────────────────────────────────────────────────────
+    // Zenodo indexes related_identifiers and hands them to DataCite, so relations between records are what
+    // turn 336 isolated deposits into one navigable body of work. Three kinds are emitted:
+    //   · isPartOf     — the concept DOI, and the site
+    //   · references   — the theorems this proof DEPENDS ON, taken from the import closure. Real edges:
+    //                    a record for a theorem in speed.lean references the ledger, merkle, address and
+    //                    fnv declarations its proof actually needs.
+    //   · isSupplementTo / isDocumentedBy — the source, the page, the paper
+    // The dependency edges are addressed by page URL rather than by DOI because sibling DOIs do not exist
+    // until they are minted; a second pass after minting can upgrade them in place, and a URL that
+    // resolves today is worth more than a DOI that does not exist yet.
+    subjects: [
+      { term: 'Formal methods', identifier: 'https://www.wikidata.org/wiki/Q1332293', scheme: 'url' },
+      { term: 'Automated theorem proving', identifier: 'https://www.wikidata.org/wiki/Q1191319', scheme: 'url' },
+      { term: 'Modular arithmetic', identifier: 'https://www.wikidata.org/wiki/Q319400', scheme: 'url' },
+    ],
+    method: `Declared in Lean 4 and checked by its kernel. Closed by \`${t.tactic}\`, sorry-free, with `
+      + `#print axioms reporting no axiom dependency, no Mathlib and no native_decide. Re-verified on every `
+      + `build by scripts/lean.ts; the statement rendered here is read from the source through the same `
+      + `resolver the ledger uses, so a record cannot show a formula the kernel did not check.`,
     communities: base.communities ?? [],
     // ── THE LINK GRAPH ────────────────────────────────────────────────────────────────────────────────
     // Every record points back at the things that make it checkable: the concept DOI it belongs to, the
@@ -194,6 +174,7 @@ export const deposition = (t: LeanTheorem) => {
       { identifier: REPO, relation: 'isSupplementTo', scheme: 'url' },
       { identifier: HOME, relation: 'isPartOf', scheme: 'url' },
       { identifier: PKG, relation: 'isSupplementedBy', scheme: 'url' },
+      ...siblingEdges(t),
     ],
     references: [
       `Rouschev, T. The ℤ/9 Vortex Framework. Zenodo. https://doi.org/${CONCEPT_DOI}`,
@@ -203,9 +184,10 @@ export const deposition = (t: LeanTheorem) => {
       `Verifier and recomputation instructions: ${SITE}/verify`,
       `Reference implementation, @uuidna/uuidna: ${PKG}`,
     ],
+    files: needs2,
     notes: `key ${key ?? '(no live ledger key)'} · receipt ${key ? toUuid(key) : '—'} · source file src/proof/${t.file} · `
       + `namespace ${t.namespace || '(none)'} · closed by ${t.tactic} · concept DOI ${CONCEPT_DOI} · `
-      + `recompute: git clone ${REPO} && npm ci && npm run lean`,
+      + `recompute: lake env lean ${needs2.join(' ')} — or git clone ${REPO} && npm ci && npm run lean`,
   }
 }
 

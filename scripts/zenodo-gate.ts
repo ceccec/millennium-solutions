@@ -9,7 +9,8 @@
 // .zenodo.json. Three files stating one identifier is three chances for it to drift.
 import { readFileSync, existsSync, readdirSync } from 'node:fs'
 import { leanTheorems } from '../src/api/index.ts'
-import { deposition, ownFiles, namesIn, creditedIn } from './zenodo-theorems.ts'
+import { deposition, namesIn, keyOf } from './zenodo-theorems.ts'
+import { ownFiles, creditedIn, closureOf } from '../src/publication/index.ts'
 
 let bad = 0
 const fail = (m: string) => { console.log('  ✗ ' + m); bad++ }
@@ -44,6 +45,22 @@ for (const t of rows) {
 }
 if (drifted > 5) fail(`…and ${drifted - 5} more depositions have drifted from the tree`)
 
+// ── THE PROOF IN THE RECORD MUST BE CHECKABLE BY WHOEVER DOWNLOADS IT ───────────────────────────────────
+// Measured before this check existed: 245 of 336 records attached one file that opened with `import` and
+// could not compile alone. This deposit's claim is that a stranger recomputes rather than trusts, and a
+// record carrying an unbuildable proof fails that claim at the only point where it is tested.
+for (const t of rows) {
+  const p5 = `${OUT}/lean_${t.name}.json`
+  if (!existsSync(p5)) continue
+  const d = JSON.parse(readFileSync(p5, 'utf8'))
+  const listed: string[] = d.files ?? []
+  if (!listed.length) { fail(`${p5} attaches no source at all`); continue }
+  for (const f of listed) if (!existsSync(f)) fail(`${p5} names ${f}, which is not in the tree`)
+  for (const need of closureOf(t.file))
+    if (!listed.includes('src/proof/' + need))
+      fail(`${p5} omits src/proof/${need}, which its proof imports — the record would not compile for a reader`)
+}
+
 // ── THE LINK GRAPH IS COMPLETE, AND NOTHING IT PUBLISHES IS DEAD ────────────────────────────────────────
 // A permanent record pointing at a URL that 404s is worse than one with no link: it sends a reader, and an
 // indexer, into nothing. The first draft addressed theorem pages as /theorem/lean_<name> and 330 of 336
@@ -75,6 +92,32 @@ for (const t of rows) {
   if (!/(Novelty: (UNCLASSIFIED|CLAIMED))|(Prior art: NAMED AND CREDITED)/.test(desc))
     fail(`${p3} states no novelty status; an unstated status reads as a claim nobody made`)
   if (!/0\/7/.test(desc)) fail(`${p3} omits the scope line`)
+}
+
+const DIST0 = '.vitepress/dist'
+// ── THE PUBLICATION AND THE WEB PAGE ARE THE SAME TEXT ──────────────────────────────────────────────────
+// They were not. Both were maintained, separately and carefully, and they had drifted into disagreeing in
+// public about the same theorem: the page said `superposition_collapses_to_one` was proved "exhausting 4
+// cases" while the deposition omitted the number as inexact, and the page told all 336 the kernel had
+// walked their whole domain when 112 are closed identities that walk none. One body in src/publication
+// now feeds both, and this compares what actually shipped.
+const strip = (x: string) => x.replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<')
+  .replace(/&#39;/g, "'").replace(/&quot;/g, '"').replace(/\s+/g, ' ').trim()
+if (existsSync(DIST0)) {
+  let drift = 0
+  for (const t of rows) {
+    const p6 = `${OUT}/lean_${t.name}.json`
+    const k = keyOf(t)
+    if (!existsSync(p6) || !k) continue
+    const page = `${DIST0}/theorem/${k}.html`
+    if (!existsSync(page)) continue
+    const body = strip(JSON.parse(readFileSync(p6, 'utf8')).description)
+    if (!strip(readFileSync(page, 'utf8')).includes(body)) {
+      drift++
+      if (drift <= 3) fail(`${page} does not carry the text deposited as ${k} — the publication and the page disagree`)
+    }
+  }
+  if (drift > 3) fail(`…and ${drift - 3} more pages differ from what would be deposited for them`)
 }
 
 const DIST = '.vitepress/dist'

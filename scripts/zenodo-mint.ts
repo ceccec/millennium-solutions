@@ -56,14 +56,17 @@ const api = async (path: string, init: RequestInit = {}) => {
 let done = 0
 for (const key of pending.slice(0, LIMIT)) {
   const meta = JSON.parse(readFileSync(`${OUT}/${key}.json`, 'utf8'))
-  const file = (String(meta.notes).match(/source file (src\/proof\/\S+)/) ?? [])[1]
+  // Every file the proof needs, not just the one that declares it: a record whose Lean does not compile
+  // for the person who downloaded it is a citation with nothing behind it.
+  const files: string[] = Array.isArray(meta.files) ? meta.files : []
   try {
     const dep = await api('/deposit/depositions', { method: 'POST', body: '{}' })
     const bucket: string = dep.links.bucket
-    for (const [name, content] of [
-      [file ? file.split('/').pop()! : `${key}.lean`, file && existsSync(file) ? readFileSync(file, 'utf8') : ''],
+    const payload: [string, string][] = [
+      ...files.filter((f) => existsSync(f)).map((f) => [f.split('/').pop()!, readFileSync(f, 'utf8')] as [string, string]),
       [`${key}.deposition.json`, JSON.stringify(meta, null, 2)],
-    ] as [string, string][]) {
+    ]
+    for (const [name, content] of payload) {
       if (!content) continue
       const r = await fetch(`${bucket}/${name}`, { method: 'PUT', headers: { Authorization: `Bearer ${token}` }, body: content })
       if (!r.ok) throw new Error(`file ${name}: ${r.status} ${await r.text()}`)
@@ -72,7 +75,7 @@ for (const key of pending.slice(0, LIMIT)) {
     const pub = await api(`/deposit/depositions/${dep.id}/actions/publish`, { method: 'POST' })
     minted[key] = pub.doi
     writeFileSync(MAP, JSON.stringify(minted, null, 2) + '\n')
-    console.log(`  ✓ ${key} → ${pub.doi}  ${pub.links?.record_html ?? ''}`)
+    console.log(`  ✓ ${key} → ${pub.doi} (${payload.length} files)  ${pub.links?.record_html ?? ''}`)
     done++
   } catch (e) {
     console.error(`  ✗ ${key}: ${(e as Error).message}`)
