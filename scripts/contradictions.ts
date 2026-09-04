@@ -160,6 +160,29 @@ if (cf.seven !== 7) fail(`index.lean carries ${cf.seven} Clay-named theorems, no
 if (!cf.allByDecide) fail('a Clay-named theorem is not closed by `decide`')
 if (cf.reaches.length) fail(`a Clay-named proposition reaches for ${cf.reaches.join(', ')} — objects those conjectures concern, which finite algebra here does not settle`)
 
+// ── 5 · no assertion may certify an assignment ───────────────────────────────────────────────────────────
+// The defect removed from src/proof/index.lean, swept across the tree. `def provenHere : Nat := 0` with a
+// theorem deciding `provenHere = 0` certifies that a number the author typed equals itself; in TypeScript
+// the same shape is `const solved = 0` followed by a test asserting `solved === 0`. erpax-94 found 507 of
+// these in its own tree after I reported mine, which is why this is a standing check and not a one-off:
+// the shape recurs wherever a value is declared and then confirmed rather than derived.
+//
+// It reads every `const NAME = <literal>` in a file and fails on any `NAME === <same literal>` in that same
+// file. Deriving the value instead — from a function, a measurement, the tree — makes the comparison able
+// to report something other than what was typed, which is the whole difference.
+for (const f of files) {
+  if (f.endsWith('contradictions.ts')) continue
+  const src = readFileSync(f, 'utf8')
+  const declared = new Map<string, string>()
+  for (const m of src.matchAll(/^\s*(?:export\s+)?const\s+([A-Za-z_$][\w$]*)\s*(?::\s*[^=]+)?=\s*(-?\d+|'[^']*'|"[^"]*"|true|false)\s*$/gm))
+    declared.set(m[1], m[2].replace(/['"]/g, ''))
+  for (const m of src.matchAll(/([A-Za-z_$][\w$]*)\s*===\s*(-?\d+|'[^']*'|"[^"]*"|true|false)/g)) {
+    const lit = m[2].replace(/['"]/g, '')
+    if (declared.get(m[1]) === lit)
+      fail(`${f}:${src.slice(0, m.index).split('\n').length} asserts ${m[1]} === ${m[2]} where ${m[1]} is declared as that same literal in this file — an assertion certifying an assignment`)
+  }
+}
+
 console.log(bad
   ? `\n✗ contradictions: ${bad} finding(s) — prose or code disagrees with src/proof`
   : `\n✓ contradictions: none — ${C.theorems} theorems (${C.byDecide} by decide, ${C.rfl} rfl); ${C.liveKeys} live keys = ${C.sealedTheorems} sealed + ${C.surplusKeys} keyed twice + ${C.unresolvableKeys} unresolvable; no sorry, no Mathlib, no native_decide, no axiom; nothing claims a Clay problem, and all ${swept} overclaim phrasings are caught`)
