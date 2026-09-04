@@ -17179,5 +17179,45 @@
     "key": "lean_split_the_budget_and_the_period_are_one_turn",
     "name": "lean split.lean: the_budget_and_the_period_are_one_turn — sealBits / coins = 2 ^ 6 ∧ (2 ^ 6) % 9 = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "c595d67b-fa66-8f5f-8077-a3a0c8432c3b"
+  },
+  {
+    "key": "lean_coin_the_reflection_is_an_involution",
+    "name": "lean coin.lean: the_reflection_is_an_involution — digits.all (fun d => refl (refl d) == d) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "cc33eadb-fdd6-8fa8-8094-8e40f58568ee"
+  },
+  {
+    "key": "lean_coin_one_side_is_reflected_onto_itself",
+    "name": "lean coin.lean: one_side_is_reflected_onto_itself — tetB.all (fun d => tetB.contains (refl d)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "fe5f7590-73be-8cd7-9e3a-9a2bcae0442d"
+  },
+  {
+    "key": "lean_coin_the_other_two_swap",
+    "name": "lean coin.lean: the_other_two_swap — tetA.all (fun d => axis.contains (refl d)) ∧ axis.all (fun d => tetA.contains (refl d)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e047e078-69f7-8d51-a3d9-60b8b875c3a0"
+  },
+  {
+    "key": "lean_coin_exactly_one_digit_is_unmoved",
+    "name": "lean coin.lean: exactly_one_digit_is_unmoved — (digits.filter (fun d => refl d == d)) = [5] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "59ddc277-5be7-8d66-9aa5-0168fe1507f5"
+  },
+  {
+    "key": "lean_coin_exactly_one_digit_reflects_out_of_range",
+    "name": "lean coin.lean: exactly_one_digit_reflects_out_of_range — (digits.filter (fun d => refl d > 9)) = [0] ∧ refl 0 = 10 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "047bfad9-df35-8319-8582-323972768f03"
+  },
+  {
+    "key": "lean_coin_the_classes_partition_the_nine",
+    "name": "lean coin.lean: the_classes_partition_the_nine — tetA.length + tetB.length + axis.length = 9 ∧ (tetA ++ tetB ++ axis).eraseDups.length = 9 ∧ digits.length = 10 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8431ea85-8fef-8bd3-ab7d-7fed678374ff"
+  },
+  {
+    "key": "lean_coin_every_digit_is_sorted_exactly_once",
+    "name": "lean coin.lean: every_digit_is_sorted_exactly_once — digits.all (fun d => (tetB.contains d && tetB.contains (refl d)) || (tetA.contains d && axis.contains (refl d)) || (axis.contains d && tetA.contains (refl d)) || (refl d == d) || (refl d > 9)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "96fcb95e-cd1d-8f04-a0dc-802330f7139b"
+  },
+  {
+    "key": "lean_coin_this_file_makes_no_physical_claim",
+    "name": "lean coin.lean: this_file_makes_no_physical_claim — physicalClaims = 0 ∧ digits.length = 10 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "be643cd8-b421-88ff-9d60-df980e8daa54"
   }
 ]

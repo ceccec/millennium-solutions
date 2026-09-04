@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2380 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2388 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (508)
+### lean (516)
 
 - [lean_units_are_six](/theorem/lean_units_are_six) — lean: the units of ℤ/9 are exactly [1,2,4,5,7,8] — checked at every residue by the kernel, recomputed here; 0/7  ·  `031c89bf-e1e0…`
 - [lean_units_count](/theorem/lean_units_count) — lean: there are exactly six units in ℤ/9 — the kernel checks the count, recomputed here; 0/7  ·  `104e8965-ebfb…`
@@ -532,6 +532,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_split_the_seal_affords_sixty_four_payments_of_two](/theorem/lean_split_the_seal_affords_sixty_four_payments_of_two) — lean split.lean: the_seal_affords_sixty_four_payments_of_two — sealBits / coins = 64 ∧ 64 = 2 ^ 6 ∧ sealBits = 64 * coins — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `983dd276-c1a1…`
 - [lean_split_sixty_four_is_where_the_doubling_returns](/theorem/lean_split_sixty_four_is_where_the_doubling_returns) — lean split.lean: sixty_four_is_where_the_doubling_returns — (2 ^ 6) % 9 = 1 ∧ ((List.range 6).map (fun k =&gt; (2 ^ k) % 9)) = [1, 2, 4, 8, 7, 5] ∧ ((List.range' 1 5).all (fun k =&gt; (2 ^ k) % 9 != 1)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `5ebd2134-9a22…`
 - [lean_split_the_budget_and_the_period_are_one_turn](/theorem/lean_split_the_budget_and_the_period_are_one_turn) — lean split.lean: the_budget_and_the_period_are_one_turn — sealBits / coins = 2 ^ 6 ∧ (2 ^ 6) % 9 = 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c595d67b-fa66…`
+- [lean_coin_the_reflection_is_an_involution](/theorem/lean_coin_the_reflection_is_an_involution) — lean coin.lean: the_reflection_is_an_involution — digits.all (fun d =&gt; refl (refl d) == d) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `cc33eadb-fdd6…`
+- [lean_coin_one_side_is_reflected_onto_itself](/theorem/lean_coin_one_side_is_reflected_onto_itself) — lean coin.lean: one_side_is_reflected_onto_itself — tetB.all (fun d =&gt; tetB.contains (refl d)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `fe5f7590-73be…`
+- [lean_coin_the_other_two_swap](/theorem/lean_coin_the_other_two_swap) — lean coin.lean: the_other_two_swap — tetA.all (fun d =&gt; axis.contains (refl d)) ∧ axis.all (fun d =&gt; tetA.contains (refl d)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e047e078-69f7…`
+- [lean_coin_exactly_one_digit_is_unmoved](/theorem/lean_coin_exactly_one_digit_is_unmoved) — lean coin.lean: exactly_one_digit_is_unmoved — (digits.filter (fun d =&gt; refl d == d)) = [5] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `59ddc277-5be7…`
+- [lean_coin_exactly_one_digit_reflects_out_of_range](/theorem/lean_coin_exactly_one_digit_reflects_out_of_range) — lean coin.lean: exactly_one_digit_reflects_out_of_range — (digits.filter (fun d =&gt; refl d &gt; 9)) = [0] ∧ refl 0 = 10 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `047bfad9-df35…`
+- [lean_coin_the_classes_partition_the_nine](/theorem/lean_coin_the_classes_partition_the_nine) — lean coin.lean: the_classes_partition_the_nine — tetA.length + tetB.length + axis.length = 9 ∧ (tetA ++ tetB ++ axis).eraseDups.length = 9 ∧ digits.length = 10 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `8431ea85-8fef…`
+- [lean_coin_every_digit_is_sorted_exactly_once](/theorem/lean_coin_every_digit_is_sorted_exactly_once) — lean coin.lean: every_digit_is_sorted_exactly_once — digits.all (fun d =&gt; (tetB.contains d && tetB.contains (refl d)) || (tetA.contains d && axis.contains (refl d)) || (axis.contains d && tetA.contains (refl d)) || (refl d == d) || (refl d &gt; 9)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `96fcb95e-cd1d…`
+- [lean_coin_this_file_makes_no_physical_claim](/theorem/lean_coin_this_file_makes_no_physical_claim) — lean coin.lean: this_file_makes_no_physical_claim — physicalClaims = 0 ∧ digits.length = 10 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `be643cd8-b421…`
 
 ### other — one-of-a-kind (0)
 
@@ -2358,4 +2366,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `d71fb502-2585-8817-9eba-9bddd73e87ef`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `5339c97e-7df6-8c35-942d-68e8b7a182fb`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

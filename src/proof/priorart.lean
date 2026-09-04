@@ -52,30 +52,31 @@ def novelty (s : Source) : Bool := s.2.2
 -- One row per .lean file, in the order scripts/priorart.ts reads them.
 def sources : List Source :=
   [ (1,  0, false)   -- address.lean      — builds on FNV-1a and the Merkle fold, both prior art
-  , (2,  0, false)   -- demand.lean       — the named results the search data asks for
-  , (3,  0, false)   -- demand2.lean      — the same, second tier
-  , (4,  0, false)   -- demand3.lean      — "the named theorems people ask for", by its own title
-  , (5,  0, false)   -- energy.lean       — the physical chemistry of electrolysis and combustion
-  , (6,  0, false)   -- families.lean     — quantifies the ℤ/9 arithmetic, which is classical
-  , (7,  0, false)   -- fnv.lean          — FNV-1a, Fowler, Noll, Vo, 1991
-  , (8,  1, false)   -- generated.lean    — this deposit's own generator over its own ring
-  , (9,  1, false)   -- imagined.lean     — enumerated by this deposit's own imagine pass
-  , (10, 1, false)   -- index.lean        — the Millennium floor, computed from this sequence
-  , (11, 1, false)   -- ledgerclaims.lean — claims about this deposit's own ledger
-  , (12, 1, false)   -- mechanical.lean   — translated from this deposit's own tests
-  , (13, 1, false)   -- merkaba.lean      — the merkaba as THIS deposit constructs it
-  , (14, 0, false)   -- merkle.lean       — Merkle trees, Merkle, 1979
-  , (15, 0, false)   -- nim.lean          — Bouton 1901; Sprague 1935, Grundy 1939
-  , (16, 1, false)   -- priorart.lean     — this file, about this deposit's own claim
-  , (17, 1, false)   -- quantum.lean      — order-invariance of this deposit's receipt
-  , (18, 0, false)   -- reversal.lean     — digit reversal and digit sums, elementary arithmetic
-  , (19, 1, false)   -- rights.lean       — this deposit's own rights table
-  , (20, 0, false)   -- sequences.lean    — Cassini, Lucas, Brahmagupta–Fibonacci, Pascal mod two
-  , (21, 1, false)   -- speed.lean        — this deposit's own verification cost
-  , (22, 1, false)   -- split.lean        — the digit grouping 0|12|3|45|6|78|9 as this deposit reads it
-  , (23, 1, false)   -- theorems.lean     — the universal property, computed from this sequence
-  , (24, 0, false)   -- z9.lean           — the arithmetic of ℤ/9: Euler, Fermat, primitive roots
-  , (25, 0, false)   -- z9plus.lean       — digital roots, primitive roots, Pisano periods
+  , (2,  1, false)   -- coin.lean         — one involution on ten digits, this deposit's own reading
+  , (3,  0, false)   -- demand.lean       — the named results the search data asks for
+  , (4,  0, false)   -- demand2.lean      — the same, second tier
+  , (5,  0, false)   -- demand3.lean      — "the named theorems people ask for", by its own title
+  , (6,  0, false)   -- energy.lean       — the physical chemistry of electrolysis and combustion
+  , (7,  0, false)   -- families.lean     — quantifies the ℤ/9 arithmetic, which is classical
+  , (8,  0, false)   -- fnv.lean          — FNV-1a, Fowler, Noll, Vo, 1991
+  , (9,  1, false)   -- generated.lean    — this deposit's own generator over its own ring
+  , (10,  1, false)   -- imagined.lean     — enumerated by this deposit's own imagine pass
+  , (11, 1, false)   -- index.lean        — the Millennium floor, computed from this sequence
+  , (12, 1, false)   -- ledgerclaims.lean — claims about this deposit's own ledger
+  , (13, 1, false)   -- mechanical.lean   — translated from this deposit's own tests
+  , (14, 1, false)   -- merkaba.lean      — the merkaba as THIS deposit constructs it
+  , (15, 0, false)   -- merkle.lean       — Merkle trees, Merkle, 1979
+  , (16, 0, false)   -- nim.lean          — Bouton 1901; Sprague 1935, Grundy 1939
+  , (17, 1, false)   -- priorart.lean     — this file, about this deposit's own claim
+  , (18, 1, false)   -- quantum.lean      — order-invariance of this deposit's receipt
+  , (19, 0, false)   -- reversal.lean     — digit reversal and digit sums, elementary arithmetic
+  , (20, 1, false)   -- rights.lean       — this deposit's own rights table
+  , (21, 0, false)   -- sequences.lean    — Cassini, Lucas, Brahmagupta–Fibonacci, Pascal mod two
+  , (22, 1, false)   -- speed.lean        — this deposit's own verification cost
+  , (23, 1, false)   -- split.lean        — the digit grouping 0|12|3|45|6|78|9 as this deposit reads it
+  , (24, 1, false)   -- theorems.lean     — the universal property, computed from this sequence
+  , (25, 0, false)   -- z9.lean           — the arithmetic of ℤ/9: Euler, Fermat, primitive roots
+  , (26, 0, false)   -- z9plus.lean       — digital roots, primitive roots, Pisano periods
   ]
 
 -- ── THE CLAIM. Only a source that names a completed search may claim, and none does ─────────────────────

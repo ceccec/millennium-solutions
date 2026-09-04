@@ -14278,5 +14278,53 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "c595d67b-fa66-8f5f-8077-a3a0c8432c3b"
+  },
+  {
+    "key": "lean_coin_the_reflection_is_an_involution",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "cc33eadb-fdd6-8fa8-8094-8e40f58568ee"
+  },
+  {
+    "key": "lean_coin_one_side_is_reflected_onto_itself",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "fe5f7590-73be-8cd7-9e3a-9a2bcae0442d"
+  },
+  {
+    "key": "lean_coin_the_other_two_swap",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e047e078-69f7-8d51-a3d9-60b8b875c3a0"
+  },
+  {
+    "key": "lean_coin_exactly_one_digit_is_unmoved",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "59ddc277-5be7-8d66-9aa5-0168fe1507f5"
+  },
+  {
+    "key": "lean_coin_exactly_one_digit_reflects_out_of_range",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "047bfad9-df35-8319-8582-323972768f03"
+  },
+  {
+    "key": "lean_coin_the_classes_partition_the_nine",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8431ea85-8fef-8bd3-ab7d-7fed678374ff"
+  },
+  {
+    "key": "lean_coin_every_digit_is_sorted_exactly_once",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "96fcb95e-cd1d-8f04-a0dc-802330f7139b"
+  },
+  {
+    "key": "lean_coin_this_file_makes_no_physical_claim",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "be643cd8-b421-88ff-9d60-df980e8daa54"
   }
 ]
