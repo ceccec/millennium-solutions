@@ -104,6 +104,37 @@ theorem relation_superposition_collapse : Address.toUuidBytes [111, 98, 115, 101
 theorem relation_url_path : Address.toUuidBytes [116, 104, 101, 47, 99, 114, 121, 115, 116, 97, 108] != Address.toUuidBytes [99, 114, 121, 115, 116, 97, 108, 47, 116, 104, 101] && Address.toUuidBytes [116, 104, 101, 47, 99, 114, 121, 115, 116, 97, 108] == Address.toUuidBytes [116, 104, 101, 47, 99, 114, 121, 115, 116, 97, 108] := by decide
 
 -- the moduli / Teichmüller space of the double torus has real dimension 6g − 6 = 6
+-- ── THE MODULI DIMENSIONS AS A FORMULA, not at one flattering value ─────────────────────────────────────
+-- The ledger claims the moduli space of genus-g curves has complex dimension 3g−3 and real dimension 6g−6,
+-- citing g=2 → (3,6) and g=3 → (6,12). `genus2_moduli_dim` below decides one half of one instance, which
+-- is narrower than the claim and so could not carry it. This decides BOTH dimensions across g = 2..20 and
+-- names the two instances the claim cites.
+--
+-- WHAT IS AND IS NOT DECIDED HERE. That 3g−3 and 6g−6 take these values is arithmetic, and the kernel
+-- settles it. That they ARE the dimensions of the moduli space of curves is Riemann's count, prior art of
+-- the deepest kind, and nothing below establishes it. The deposit's convention throughout is that a theorem
+-- named for a geometry decides the arithmetic and credits the geometry.
+def gRange : List Nat := [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+
+theorem the_moduli_dimensions_are_three_g_minus_three_and_six_g_minus_six :
+  gRange.all (fun g => 3 * g - 3 == (6 * g - 6) / 2)
+  ∧ gRange.all (fun g => 6 * g - 6 == 2 * (3 * g - 3))
+  ∧ (3 * 2 - 3 == 3 ∧ 6 * 2 - 6 == 6)
+  ∧ (3 * 3 - 3 == 6 ∧ 6 * 3 - 6 == 12) := by decide
+
+-- ── POWERS OF TWO BY REPEATED DOUBLING, which is how the ledger states them ─────────────────────────────
+-- Two entries claim 2^10 = 1024 and 2^11 = 2048 "by repeated doubling". Neither had a theorem; the token
+-- matcher paired them with one about the repetend of one seventh, on a shared numeral and nothing else.
+-- This decides that doubling from one, k times, IS 2^k — over k = 0..20, which contains both and says the
+-- general thing the two entries were instances of.
+def dbl : Nat → Nat
+  | 0 => 1
+  | n + 1 => 2 * dbl n
+
+theorem repeated_doubling_is_the_power_of_two :
+  (List.range 21).all (fun k => dbl k == 2 ^ k)
+  ∧ dbl 10 == 1024 ∧ dbl 11 == 2048 := by decide
+
 theorem genus2_moduli_dim : 6 * 2 - 6 == 6 := by decide
 
 -- every genus-2 curve is hyperelliptic: a double cover of the sphere branched at 2g+2 = 6 Weierstrass points

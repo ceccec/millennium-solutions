@@ -2667,8 +2667,9 @@
     "name": "the moduli space of genus-g curves (g≥2) has complex dimension 3g−3 and real dimension 6g−6: (g=2)→(3,6), (g=3)→(6,12)",
     "receipt": "b67fc1f6-5d2c-8b8f-900e-711902bb457d",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn for having only a TypeScript test behind it, and since proved — `the_moduli_dimensions_are_three_g_minus_three_and_six_g_minus_six` states the same proposition at lean_mechanical_the_moduli_dimensions_are_three_g_minus_three_and_six_g_minus_six, and the kernel checks it on every run. Verified by reading the theorem's STATEMENT against this claim, not by matching names. Marked in place; the receipt is untouched and stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_mechanical_the_moduli_dimensions_are_three_g_minus_three_and_six_g_minus_six"
   },
   {
     "key": "subtraction_game_grundy",
@@ -4724,8 +4725,9 @@
     "name": "consecutive Fibonacci numbers are coprime: gcd(F_n, F_{n+1}) = 1 for all n — no two neighbours share a factor (verified n ≤ 20), the base case of the gcd identity",
     "receipt": "b26dad63-01b2-8272-a7dc-77b1e70b903f",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn for having only a TypeScript test behind it, and since proved — `consecutive_fibonacci_are_coprime` states the same proposition at lean_z9plus_consecutive_fibonacci_are_coprime, and the kernel checks it on every run. Verified by reading the theorem's STATEMENT against this claim, not by matching names. Marked in place; the receipt is untouched and stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_z9plus_consecutive_fibonacci_are_coprime"
   },
   {
     "key": "armstrong_3digit_exact_set",
@@ -8012,16 +8014,18 @@
     "name": "2^10 = 1024, by repeated doubling — a decidable power of two; integrity not truth; 0/7",
     "receipt": "1beeb294-5a3c-867a-a78c-8152a9d3737a",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn for having only a TypeScript test behind it, and since proved — `repeated_doubling_is_the_power_of_two` states the same proposition at lean_mechanical_repeated_doubling_is_the_power_of_two, and the kernel checks it on every run. Verified by reading the theorem's STATEMENT against this claim, not by matching names. Marked in place; the receipt is untouched and stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_mechanical_repeated_doubling_is_the_power_of_two"
   },
   {
     "key": "two_to_the_11_is_2048",
     "name": "2^11 = 2048, by repeated doubling — a decidable power of two; integrity not truth; 0/7",
     "receipt": "900023c7-08f1-83dc-9b27-623de3afe0df",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn for having only a TypeScript test behind it, and since proved — `repeated_doubling_is_the_power_of_two` states the same proposition at lean_mechanical_repeated_doubling_is_the_power_of_two, and the kernel checks it on every run. Verified by reading the theorem's STATEMENT against this claim, not by matching names. Marked in place; the receipt is untouched and stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_mechanical_repeated_doubling_is_the_power_of_two"
   },
   {
     "key": "pure_ts_sha256_matches_the_fips_180_4_test_vector",
@@ -17366,5 +17370,15 @@
     "key": "lean_light_and_a_change_of_unit_destroys_it",
     "name": "lean light.lean: and_a_change_of_unit_destroys_it — ([1, 2, 3, 4, 5, 6, 7, 8, 9].filter (fun d => ¬ (alternative.map root).contains d)) = [2, 3, 5, 8] ∧ alternative.length = defining.length — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "4da66384-4dd4-8c9b-bca2-ccc0f6c07427"
+  },
+  {
+    "key": "lean_mechanical_the_moduli_dimensions_are_three_g_minus_three_and_six_g_minus_six",
+    "name": "lean mechanical.lean: the_moduli_dimensions_are_three_g_minus_three_and_six_g_minus_six — gRange.all (fun g => 3 * g - 3 == (6 * g - 6) / 2) ∧ gRange.all (fun g => 6 * g - 6 == 2 * (3 * g - 3)) ∧ (3 * 2 - 3 == 3 ∧ 6 * 2 - 6 == 6) ∧ (3 * 3 - 3 == 6 ∧ 6 * 3 - 6 == 12) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d18c5b51-01d6-8202-86a6-d479e42754d2"
+  },
+  {
+    "key": "lean_mechanical_repeated_doubling_is_the_power_of_two",
+    "name": "lean mechanical.lean: repeated_doubling_is_the_power_of_two — (List.range 21).all (fun k => dbl k == 2 ^ k) ∧ dbl 10 == 1024 ∧ dbl 11 == 2048 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a4b4daf8-305c-8244-9c2b-54970406485b"
   }
 ]

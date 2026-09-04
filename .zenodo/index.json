@@ -1,7 +1,7 @@
 {
   "concept_doi": "10.5281/zenodo.21819217",
   "generated_from": "src/proof/priorart.lean kind 1 · src/proof/*.lean",
-  "count": 336,
+  "count": 338,
   "files": [
     "coin.lean",
     "generated.lean",
@@ -200,6 +200,7 @@
     "lean_relation_triangular_45_is_base",
     "lean_relation_units_sum_and_product",
     "lean_relation_url_path",
+    "lean_repeated_doubling_is_the_power_of_two",
     "lean_riemann_reflection_and_heart",
     "lean_rights_settles_its_range",
     "lean_roots_of_unity_cancel",
@@ -279,6 +280,7 @@
     "lean_the_invariance_is_canonicalisation_not_physics",
     "lean_the_kinds_cover_every_source",
     "lean_the_measured_ratio_at_a_million_leaves",
+    "lean_the_moduli_dimensions_are_three_g_minus_three_and_six_g_minus_six",
     "lean_the_more_developed_the_more_cross_domain_reach",
     "lean_the_nine_times_table_always_digital_roots_to_nine",
     "lean_the_origin_annihilates_and_never_joins_the_circuit",

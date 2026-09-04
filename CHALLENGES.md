@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2416 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2418 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (544)
+### lean (546)
 
 - [lean_units_are_six](/theorem/lean_units_are_six) — lean: the units of ℤ/9 are exactly [1,2,4,5,7,8] — checked at every residue by the kernel, recomputed here; 0/7  ·  `031c89bf-e1e0…`
 - [lean_units_count](/theorem/lean_units_count) — lean: there are exactly six units in ℤ/9 — the kernel checks the count, recomputed here; 0/7  ·  `104e8965-ebfb…`
@@ -568,16 +568,18 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_phenomena_arithmetic_on_a_definition_returns_the_definition](/theorem/lean_phenomena_arithmetic_on_a_definition_returns_the_definition) — lean phenomena.lean: arithmetic_on_a_definition_returns_the_definition — (299792458 % 9 = 1) ∧ explanations = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2f338a89-2ef5…`
 - [lean_light_the_absent_residues_are_the_primes_below_nine](/theorem/lean_light_the_absent_residues_are_the_primes_below_nine) — lean light.lean: the_absent_residues_are_the_primes_below_nine — ([1, 2, 3, 4, 5, 6, 7, 8, 9].filter (fun d =&gt; ¬ (defining.map root).contains d)) = [2, 3, 5, 7] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `bab48524-45e9…`
 - [lean_light_and_a_change_of_unit_destroys_it](/theorem/lean_light_and_a_change_of_unit_destroys_it) — lean light.lean: and_a_change_of_unit_destroys_it — ([1, 2, 3, 4, 5, 6, 7, 8, 9].filter (fun d =&gt; ¬ (alternative.map root).contains d)) = [2, 3, 5, 8] ∧ alternative.length = defining.length — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `4da66384-4dd4…`
+- [lean_mechanical_the_moduli_dimensions_are_three_g_minus_three_and_six_g_minus_six](/theorem/lean_mechanical_the_moduli_dimensions_are_three_g_minus_three_and_six_g_minus_six) — lean mechanical.lean: the_moduli_dimensions_are_three_g_minus_three_and_six_g_minus_six — gRange.all (fun g =&gt; 3 * g - 3 == (6 * g - 6) / 2) ∧ gRange.all (fun g =&gt; 6 * g - 6 == 2 * (3 * g - 3)) ∧ (3 * 2 - 3 == 3 ∧ 6 * 2 - 6 == 6) ∧ (3 * 3 - 3 == 6 ∧ 6 * 3 - 6 == 12) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d18c5b51-01d6…`
+- [lean_mechanical_repeated_doubling_is_the_power_of_two](/theorem/lean_mechanical_repeated_doubling_is_the_power_of_two) — lean mechanical.lean: repeated_doubling_is_the_power_of_two — (List.range 21).all (fun k =&gt; dbl k == 2 ^ k) ∧ dbl 10 == 1024 ∧ dbl 11 == 2048 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a4b4daf8-305c…`
 
 ### other — one-of-a-kind (0)
 
 
 
-## Revoked — 1750 entries that no longer stand
+## Revoked — 1746 entries that no longer stand
 
 The ledger is append-only: an entry that stops holding is marked in place, never deleted — deleting would break the receipt chain, and rewriting a receipt is tamper. These keep their receipts and stay in the record, but they are **not citable** and have no `/theorem/` page. Grouped by the reason they went:
 
-- **1277** — dirty: not backed by a Lean proof
+- **1273** — dirty: not backed by a Lean proof
 - **443** — revoked in place: its test asserted a lexical drain (computes(boast)
 - **12** — revoked in place: circular by construction AND dependent on the removed lexical gate
 - **10** — revoked in place: circular by construction — the test defines the answer it checks, proving a declaration rather than a fact
@@ -585,7 +587,7 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - **1** — revoked in place: its test asserts that a list of proof-boasts written across many scripts and languages ALL drain the gate — a lexical drain assertion, and the word-list gate was removed by order, so there is no lexicon to drain and the assertion tests nothing
 - **1** — revoked in place: it asserts adjudicate('we prove all seven')
 
-## Carried — 122 withdrawn entries whose statement a proof now carries
+## Carried — 126 withdrawn entries whose statement a proof now carries
 
 Each was withdrawn for want of a Lean proof and has since been given one, at a new key. The entry is not restored: its own evidence is still a TypeScript test, and it did not hold on what it had. What the record adds is where the statement stands now.
 
@@ -627,12 +629,12 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`genus2_moduli_dim`~~ → [`lean_mechanical_genus2_moduli_dim`](/theorem/lean_mechanical_genus2_moduli_dim)
 - ~~`genus2_hyperelliptic`~~ → [`lean_mechanical_genus2_hyperelliptic`](/theorem/lean_mechanical_genus2_hyperelliptic)
 - ~~`genus2_h1_symplectic`~~ → [`lean_mechanical_genus2_h1_symplectic`](/theorem/lean_mechanical_genus2_h1_symplectic)
+- ~~`genus_g_moduli_dim`~~ → [`lean_mechanical_the_moduli_dimensions_are_three_g_minus_three_and_six_g_minus_six`](/theorem/lean_mechanical_the_moduli_dimensions_are_three_g_minus_three_and_six_g_minus_six)
 - ~~`relation_digitroot_is_residue_mod9`~~ → [`lean_mechanical_relation_digitroot_is_residue_mod9`](/theorem/lean_mechanical_relation_digitroot_is_residue_mod9)
-- ~~`relation_seven_is_six_plus_one`~~ → [`lean_mechanical_relation_seven_is_six_plus_one`](/theorem/lean_mechanical_relation_seven_is_six_plus_one)
 
-…and 82 more.
+…and 86 more.
 
-<details><summary>List all 1750 withdrawn keys — nothing proves these</summary>
+<details><summary>List all 1746 withdrawn keys — nothing proves these</summary>
 
 - ~~`units_sum_zero`~~ — the units sum to 0 mod 9 (1+2+4+5+7+8=27)  ·  `ec43f3d8-7595…`
 - ~~`self_inverse_1_8`~~ — exactly two self-inverse elements d²≡1 mod 9: {1,8}  ·  `91985354-2258…`
@@ -926,7 +928,6 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`surface_classification`~~ — the closed-surface classification: complete invariant (χ, orientability) — S², a connected sum of g tori (χ=2−2g), or of k projective planes (χ=2−k)  ·  `95c6da2d-4c99…`
 - ~~`coverage_torus_and_klein`~~ — across ALL closed surfaces a nowhere-zero tangent field exists iff χ=0 — exactly the torus (g=1) and the Klein bottle (k=2); every other surface has no full coverage  ·  `83a457a6-7afb…`
 - ~~`uniformization_trichotomy`~~ — the uniformization trichotomy: the sign of χ fixes the geometry — χ&gt;0 spherical, χ=0 flat (torus, Klein bottle), χ&lt;0 hyperbolic (genus ≥ 2)  ·  `d83c2656-d21c…`
-- ~~`genus_g_moduli_dim`~~ — the moduli space of genus-g curves (g≥2) has complex dimension 3g−3 and real dimension 6g−6: (g=2)→(3,6), (g=3)→(6,12)  ·  `b67fc1f6-5d2c…`
 - ~~`subtraction_game_grundy`~~ — the subtraction game S={1,2,3}: the Grundy value computed by the mex rule equals n mod 4 — losing positions are n ≡ 0 (mod 4) (n≤24)  ·  `a3094aa6-da92…`
 - ~~`kayles_grundy`~~ — Kayles (remove 1 or 2 adjacent pins, splitting the row): the mex-computed Grundy values match the known sequence 0,1,2,3,1,4,3,2,1,4,2,6,4,1,2,7,1,4,3,2 (n≤19)  ·  `b6db3052-5c2a…`
 - ~~`nim_misere`~~ — misère Nim by minimax matches the closed form: the first player wins iff (some heap ≥2 and nim-sum ≠0) or (every heap ≤1 and nim-sum =0) (heaps ≤3, up to 3 heaps)  ·  `0823bb14-7699…`
@@ -1177,7 +1178,6 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`string_scale_is_a_thread_not_a_physical_theory`~~ — the string scale is a thread, not a physical theory: the string/Planck-scale frequency and acoustic 432 Hz are ~18 orders of magnitude apart — frequency is a shared thread across scales, but the scales are not interchangeable and this is a metaphor, not a theory of everything (0/7, not faster-than-light)  ·  `0107480d-24b0…`
 - ~~`even_the_server_is_serverless`~~ — all is done serverless, even by the server: the site is statically generated (a deterministic build folds to one address) and statically hosted — there is no server runtime at build or at serve time; the client recomputes in the browser and the server side is a one-time static build plus a static host  ·  `c4dc14f8-f3e2…`
 - ~~`fibonacci_divides_iff_index_divides`~~ — Fibonacci divisibility: for m ≥ 3, F_m divides F_n exactly when m divides n — divisibility of the numbers mirrors divisibility of their indices (verified m = 3..12, n ≤ 30)  ·  `d7e047b6-6d88…`
-- ~~`consecutive_fibonacci_coprime`~~ — consecutive Fibonacci numbers are coprime: gcd(F_n, F_{n+1}) = 1 for all n — no two neighbours share a factor (verified n ≤ 20), the base case of the gcd identity  ·  `b26dad63-01b2…`
 - ~~`armstrong_3digit_exact_set`~~ — the 3-digit narcissistic (Armstrong) numbers are exactly {153, 370, 371, 407}: each equals the sum of the cubes of its digits — full enumeration of 100..999 yields these four and no others  ·  `1cb761fc-f6f3…`
 - ~~`armstrong_4digit_exact_set`~~ — the 4-digit narcissistic numbers are exactly {1634, 8208, 9474}: each equals the sum of the fourth powers of its digits — full enumeration of 1000..9999 yields these three and no others  ·  `c917a298-d323…`
 - ~~`single_digits_are_trivially_narcissistic`~~ — every single digit is narcissistic: for 1..9, n = n¹ (one digit raised to the digit-count 1) — the trivial base case of the Armstrong property  ·  `2adc6121-3f63…`
@@ -1602,8 +1602,6 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`factorial_6_is_720`~~ — 6! = 720: the product 1·2·…·6 = 720, by direct multiplication — a decidable factorial; integrity not truth; 0/7  ·  `81ebf136-662d…`
 - ~~`factorial_8_is_40320`~~ — 8! = 40320: the product 1·2·…·8 = 40320, by direct multiplication — a decidable factorial; integrity not truth; 0/7  ·  `a4149b01-1f71…`
 - ~~`factorial_9_is_362880`~~ — 9! = 362880: the product 1·2·…·9 = 362880, by direct multiplication — a decidable factorial; integrity not truth; 0/7  ·  `b0d11119-b00e…`
-- ~~`two_to_the_10_is_1024`~~ — 2^10 = 1024, by repeated doubling — a decidable power of two; integrity not truth; 0/7  ·  `1beeb294-5a3c…`
-- ~~`two_to_the_11_is_2048`~~ — 2^11 = 2048, by repeated doubling — a decidable power of two; integrity not truth; 0/7  ·  `900023c7-08f1…`
 - ~~`pure_ts_sha256_matches_the_fips_180_4_test_vector`~~ — pure-TS SHA-256 matches the FIPS 180-4 test vector — a transparent hash in pure TypeScript, no native crypto and no secrecy claim; integrity, not truth; 0/7  ·  `6d222327-6bbe…`
 - ~~`pure_ts_chacha20_poly1305_matches_the_rfc_8439_aead_vector`~~ — pure-TS ChaCha20-Poly1305 matches the RFC 8439 AEAD test vector — real authenticated secrecy in pure TypeScript, checked against the standard’s own vector; not constant-time; 0/7  ·  `d350e733-70a6…`
 - ~~`pure_ts_pbkdf2_hmac_sha256_matches_the_test_vector`~~ — pure-TS PBKDF2-HMAC-SHA256 matches the published test vector — the key derivation is transparent TypeScript, no native WebCrypto; 0/7  ·  `f0ce4052-5fc1…`
@@ -2387,4 +2385,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `8f44587a-3353-8922-96d6-d38713e0e7db`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `9ea27b7e-ffc5-8c0a-83dc-cd013b1d9941`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

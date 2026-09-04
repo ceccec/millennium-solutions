@@ -187,8 +187,10 @@ def gcdF : Nat → Nat → Nat → Nat
   | Nat.succ f, a, b => gcdF f b (a % b)
 def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
+-- Widened from 15 to 25. The ledger claims this "verified n ≤ 20", so a theorem stopping at 15 was
+-- narrower than the claim and could not carry it — a theorem must cover what it is asked to stand for.
 theorem consecutive_fibonacci_are_coprime :
-  (List.range' 1 15).all (fun n => gcd9 (fib n) (fib (n + 1)) == 1) := by decide
+  (List.range' 1 25).all (fun n => gcd9 (fib n) (fib (n + 1)) == 1) := by decide
 
 -- ── and the sum of two consecutive Fibonacci digits lands back in the sequence: 3 + 5 = 8 ──
 theorem three_five_eight_are_consecutive_fibonacci :

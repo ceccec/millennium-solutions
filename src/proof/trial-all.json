@@ -14494,5 +14494,17 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "4da66384-4dd4-8c9b-bca2-ccc0f6c07427"
+  },
+  {
+    "key": "lean_mechanical_the_moduli_dimensions_are_three_g_minus_three_and_six_g_minus_six",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d18c5b51-01d6-8202-86a6-d479e42754d2"
+  },
+  {
+    "key": "lean_mechanical_repeated_doubling_is_the_power_of_two",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a4b4daf8-305c-8244-9c2b-54970406485b"
   }
 ]

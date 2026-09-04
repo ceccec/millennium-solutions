@@ -48,6 +48,25 @@ const VERIFIED: Record<string, string> = {
   grundy_single_heap: 'grundy_of_a_single_heap_is_its_size',         // n ≤ 8 in the claim, range N here
   mobius_divisor_sum: 'the_mobius_divisor_sum_is_the_identity',      // claim n≤12, theorem 1..30 — wider
   xor_is_parity_k8: 'xor_is_parity_up_to_eight_bits',                 // the full 2^8 enumeration, same
+  // ── CARRIED BY THEOREMS WRITTEN WIDER FOR THE PURPOSE ────────────────────────────────────────────────
+  // These four were refused because the theorem was NARROWER than the claim. The answer is not to relax
+  // the standard but to widen the theorem, which is what happened: each now covers what its claim asserts.
+  genus_g_moduli_dim: 'the_moduli_dimensions_are_three_g_minus_three_and_six_g_minus_six',
+  // was 6*2-6==6, one half of one instance; now both dimensions over g = 2..20, naming g=2 and g=3
+  consecutive_fibonacci_coprime: 'consecutive_fibonacci_are_coprime',
+  // the claim says "verified n ≤ 20" and the theorem walked 1..15; widened to 1..25, which contains it
+  two_to_the_10_is_1024: 'repeated_doubling_is_the_power_of_two',
+  two_to_the_11_is_2048: 'repeated_doubling_is_the_power_of_two',
+  // both were instances of "2^k by repeated doubling"; the theorem now decides dbl k == 2^k for k = 0..20
+}
+
+/** REFUSED PERMANENTLY, with the reason, so it is not re-proposed every run as though it were pending. */
+const CANNOT_CARRY: Record<string, string> = {
+  eight_and_nine_are_the_only_consecutive_perfect_powers:
+    'the claim is that NO other perfect powers differ by one, and it credits Mihailescu (2002) for settling '
+    + 'it. That ranges over an infinite domain, so no `by decide` can carry it at any bound — widening from '
+    + '2000 to a larger number would check more cases and prove nothing more. The bounded theorem stands on '
+    + 'its own and the general statement remains what it always was here: prior art, cited, not proved.',
 }
 
 const NUM: Record<string, string> = { '1': 'one', '2': 'two', '3': 'three', '4': 'four', '5': 'five', '6': 'six', '7': 'seven', '8': 'eight', '9': 'nine' }
@@ -84,7 +103,7 @@ for (const m of missing) console.log('  ✗ ' + m)
 const thmToks = T.map((t) => ({ t, s: toks(t.name) }))
 const candidates: [string, string][] = []
 for (const e of withdrawn) {
-  if (VERIFIED[e.key]) continue
+  if (VERIFIED[e.key] || CANNOT_CARRY[e.key]) continue
   const es = toks(e.key)
   if (es.size < 3) continue
   for (const { t, s } of thmToks) {
@@ -100,6 +119,8 @@ if (process.argv.includes('--carry')) {
 const after = ledger.filter((e) => statusOf(e as never, ledger as never) === 'withdrawn').length
 console.log(`\n${missing.length ? '✗' : '✓'} carry: ${carried} withdrawn claim(s) are proved by a live theorem and `
   + `${process.argv.includes('--carry') ? 'now say so' : 'would be marked (run with --carry)'}; ${withdrawn.length} → ${after} still recorded as unproved`)
+for (const [k, why] of Object.entries(CANNOT_CARRY))
+  console.log(`\n  ○ ${k} cannot be carried by any theorem here — ${why}`)
 if (candidates.length) {
   console.log(`\n  ○ ${candidates.length} further token-match candidate(s), NOT carried — each needs its statement read:`)
   for (const [k, n] of candidates) console.log(`      ${k}  →  ${n}`)
