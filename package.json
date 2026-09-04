@@ -100,7 +100,8 @@
     "metrics:verify": "node scripts/metrics.ts --verify",
     "quantum-field": "node scripts/quantum-field.ts",
     "zenodo": "node scripts/zenodo-gate.ts",
-    "zenodo:write": "node scripts/zenodo-theorems.ts --write"
+    "zenodo:write": "node scripts/zenodo-theorems.ts --write",
+    "zenodo:mint": "node scripts/zenodo-mint.ts"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",
