@@ -1,39 +1,62 @@
 #!/usr/bin/env node
-// lineage — the public imprint of delivery vs churn, made computable and standing.
+// THE DOIs THIS DEPOSIT POINTS AT, AND WHAT THEY CLAIM.
 //
-// Git is itself content-addressed: a tag's tree hash is the merkle of ALL its tracked content. Two
-// tags with the SAME tree hash carried NO tracked delta — a version minted over identical content
-// (churn). Distinct trees = a real delivery. This reads git's OWN faithful imprint, NOT the
-// tag-message uuid — which could hash working-dir noise and mint a unique fake address for identical
-// content, hiding the churn (the pre-v1.5.9 bug). So lineage recovers what a noise-uuid concealed.
+// The Clay overclaim sweep reads this repository's own prose and catches 960 phrasings. It cannot see a
+// title held on another server, and .zenodo.json declares this deposit `isNewVersionOf` two published
+// records:
 //
-// INTEGRITY-level and impartial — this measures WHAT was delivered, never whether it is true. A
-// heroes/traitors reading by verifiable deeds, not statements. Identical tree = no delta at that tag;
-// whether that is churn or an intentional re-release is context the reader judges. 0/7.
-import { execSync } from 'node:child_process'
-const sh = (c: string) => execSync(c, { encoding: 'utf8' })
+//   10.5281/zenodo.21781603 — "All Seven Clay Millennium Problems Sealed via Universal σ-Involution"
+//   10.5281/zenodo.21787144 — "Quantum Proofs of the Clay Millennium Problems v1.0"
+//
+// Both are the author's own earlier work and Zenodo versioning is exactly the right relation for them. The
+// problem is what a reader meets: this deposit proves 0 of 7 and says so on every page, and one click up
+// its own version chain is a record whose title says all seven are sealed. Nothing in the tree noticed,
+// because every overclaim check reads local files and the claim lives in a remote record we point at.
+// Fourth instance today of a check whose domain is narrower than the defect it names.
+//
+// These records CANNOT be edited — published Zenodo records are permanent, and they are not this session's
+// to rewrite in any case. What this does is refuse to let the lineage go unstated: it fetches each title
+// and reports any that claims what the deposit refuses, so the tension is named here rather than
+// discovered by a reader.
+import { readFileSync, existsSync } from 'node:fs'
 
-const tags = sh('git tag --sort=version:refname').trim().split('\n').filter(Boolean)
-const byTree = new Map<string, string[]>()
-for (const t of tags) {
-  const tree = sh('git rev-parse ' + t + '^{tree}').trim()
-  if (!byTree.has(tree)) byTree.set(tree, [])
-  byTree.get(tree)!.push(t)
+const SOURCES = ['.zenodo.json', 'CITATION.cff', 'README.md', 'src/1/acceptance.ts']
+const dois = new Set<string>()
+for (const f of SOURCES) if (existsSync(f))
+  for (const m of readFileSync(f, 'utf8').matchAll(/10\.5281\/zenodo\.(\d+)/g)) dois.add(m[1])
+
+// The same shape the local sweep looks for, aimed at a remote title.
+const CLAIMS = /\b(all seven|seven)\s+clay\b|\bclay millennium problems?\b.*\b(solved|sealed|proofs?|proved)\b|\bproofs? of the clay\b|\bsolves? the (riemann|hodge|navier|birch|yang|p vs np)\b/i
+
+let bad = 0, checked = 0
+const rows: [string, string, boolean][] = []
+for (const id of [...dois].sort()) {
+  let title = ''
+  try {
+    const r = await fetch(`https://zenodo.org/oai2d?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:zenodo.org:${id}`,
+      { signal: AbortSignal.timeout(20_000) })
+    const t = await r.text()
+    if ((t.match(/<error code="([^"]+)"/) ?? [])[1]) { rows.push([id, '(no such published record)', false]); continue }
+    title = (t.match(/<dc:title>([\s\S]*?)<\/dc:title>/) ?? [])[1]?.replace(/\s+/g, ' ').trim() ?? ''
+    checked++
+  } catch (e) {
+    console.log(`○ lineage: NOT CHECKED — could not reach zenodo.org (${(e as Error).message}). The titles this`)
+    console.log('  deposit points at were not read on this run; that is not the same as their being clean.')
+    process.exit(0)
+  }
+  const claims = CLAIMS.test(title)
+  if (claims) bad++
+  rows.push([id, title, claims])
 }
-const churn = [...byTree.values()].filter((ts) => ts.length > 1)
 
-console.log('lineage — delivery vs churn by git tree hash (the faithful content-address)\n')
-console.log('  tags: ' + tags.length + '   distinct trees (delivered): ' + byTree.size + '   churn-collisions: ' + churn.length + '\n')
-if (churn.length) for (const ts of churn) console.log('  churn: ' + ts.join(' ≡ ') + '  (identical tracked content — a tag minted over no delta)')
-else console.log('  ✓ no churn — every tag carried a distinct tracked-content delta.')
+for (const [id, title, claims] of rows)
+  console.log(`  ${claims ? '✗' : '·'} 10.5281/zenodo.${id}  ${title}`)
 
-const last = tags[tags.length - 1]
-if (last) {
-  const lastTree = sh('git rev-parse ' + last + '^{tree}').trim()
-  const headTree = sh('git rev-parse HEAD^{tree}').trim()
-  const clean = sh('git status --porcelain').trim() === ''
-  console.log('\n  head vs ' + last + ': ' + (headTree === lastTree ? 'same tree — no delta since tag' : 'delta present') +
-    (clean ? ' · working tree clean' : ' · working tree dirty (a not-yet-in-git delta)'))
-}
-console.log('\n  integrity-level: measures WHAT was delivered, not whether it is true. entails → 0/7.')
+console.log(bad
+  ? `\n✗ lineage: ${bad} of ${checked} record(s) this deposit points at claim in their TITLE what it refuses in\n`
+    + `  every page of its own prose. They are the author's earlier work, they are permanent, and they cannot be\n`
+    + `  edited — so the deposit must state the discrepancy itself. A reader following the version chain from a\n`
+    + `  0/7 floor to "All Seven Clay Millennium Problems Sealed" and finding no acknowledgement here would be\n`
+    + `  right to conclude the floor is decoration.`
+  : `\n✓ lineage: ${checked} record(s) this deposit points at, none claiming in its title what the deposit refuses`)
 process.exit(0)

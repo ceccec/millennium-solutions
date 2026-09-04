@@ -9,19 +9,43 @@
       "affiliation": "PSG, Bulgaria"
     }
   ],
-  "description": "A free, open, recomputable framework: an exact finite-arithmetic study on the ring Z/9 (the 'vortex') and the group (Z/7)* (the seven-ray Pliska 'rosette'), with a classical simulator of quantum algorithms (TypeScript, formalized in Lean 4, documented in VitePress). Observations: (1) division by zero is treated as a change of domain (n/0 := n^-1 mod 9 on units; 0 <-> infinity on the Riemann sphere); (2) inversion and ten's-complement reflection (10 - d) are involutions; (3) a 7 = 6 + 1 bijection maps the rosette (six units + center) onto the Clay set (six open problems + Poincare); (4) a mechanical entailment test reports 0/7. Conclusion (observed): the framework reflects/maps the Millennium Problems into one algebraic structure; it does NOT solve them and is not a physical theory. It is a proof of concept and a classical simulator. All results recompute from source.",
+  "description": "A free, open, recomputable framework: an exact finite-arithmetic study on the ring Z/9 (the 'vortex') and the group (Z/7)* (the seven-ray Pliska 'rosette'), with a classical simulator of quantum algorithms (TypeScript, formalized in Lean 4, documented in VitePress). Observations: (1) division by zero is treated as a change of domain (n/0 := n^-1 mod 9 on units; 0 <-> infinity on the Riemann sphere); (2) inversion and ten's-complement reflection (10 - d) are involutions; (3) a 7 = 6 + 1 bijection maps the rosette (six units + center) onto the Clay set (six open problems + Poincare); (4) a mechanical entailment test reports 0/7. Conclusion (observed): the framework reflects/maps the Millennium Problems into one algebraic structure; it does NOT solve them and is not a physical theory. It is a proof of concept and a classical simulator. All results recompute from source. EARLIER VERSIONS OF THIS RECORD CLAIMED MORE THAN THIS ONE DOES. The deposits this supersedes are titled 'All Seven Clay Millennium Problems Sealed via Universal sigma-Involution' (10.5281/zenodo.21781603) and 'Quantum Proofs of the Clay Millennium Problems v1.0' (10.5281/zenodo.21787144). Those titles assert what this version explicitly refuses: it proves 0 of the 7, a gate fails the build on any sentence claiming otherwise, and the correspondence with the Clay set is a mapping, not a solution. Published Zenodo records are permanent and cannot be retitled, so the discrepancy is stated here instead. A reader following the version chain should read the earlier titles as superseded by this one.",
   "keywords": [
-    "modular arithmetic", "Z/9", "group theory", "Pliska rosette",
-    "Clay Millennium Problems", "recreational mathematics", "content-addressing",
-    "Lean 4", "VitePress", "quantum algorithm simulation", "sacred geometry (interpretation)"
+    "modular arithmetic",
+    "Z/9",
+    "group theory",
+    "Pliska rosette",
+    "Clay Millennium Problems",
+    "recreational mathematics",
+    "content-addressing",
+    "Lean 4",
+    "VitePress",
+    "quantum algorithm simulation",
+    "sacred geometry (interpretation)"
   ],
   "license": "cc-by-nc-nd-4.0",
   "access_right": "open",
   "version": "1.3.5",
   "related_identifiers": [
-    { "identifier": "10.5281/zenodo.21781603", "relation": "isNewVersionOf", "scheme": "doi" },
-    { "identifier": "10.5281/zenodo.21787144", "relation": "isNewVersionOf", "scheme": "doi" },
-    { "identifier": "10.5281/zenodo.21819217", "relation": "isNewVersionOf", "scheme": "doi" },
-    { "identifier": "https://github.com/ceccec/millennium-solutions", "relation": "isSupplementTo", "scheme": "url" }
+    {
+      "identifier": "10.5281/zenodo.21781603",
+      "relation": "isNewVersionOf",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.21787144",
+      "relation": "isNewVersionOf",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.21819217",
+      "relation": "isNewVersionOf",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "https://github.com/ceccec/millennium-solutions",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
   ]
 }
