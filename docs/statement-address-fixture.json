@@ -1,0 +1,14 @@
+{
+  "spec": "v3 — collapse whitespace runs; remove a space ONLY where it is not between two of [\\p{L}\\p{N}_] with the u flag; keep case; '=='→'='; '!='→'≠'. Then the repository's own address function over that normalised form.",
+  "why_a_fixture": "This rule has been specified in prose three times and been wrong twice — strip-everything (refuted by uuidna-49 against 2539 statements), ASCII-only (refuted by erpax-94 against 832, disagreeing on 211). Each was agreed by three parties before anyone ran it against real statements. A repository should check its implementation against CASES, not against a sentence.",
+  "hash_note": "The normalisation is shared; the hash is not. This deposit addresses its own ledger with FNV-1a (integrity against accident) and computes the CROSS-REPOSITORY merge key with sha256 (the adversarial case: it decides whether two parties publish one result). A zero-collision result computed under two different hashes is two repositories failing to find each other, not a check.",
+  "cases": [
+    { "in": "List.range 7",              "normalised": "List.range 7",          "note": "juxtaposition IS application; the space survives" },
+    { "in": "σ (σ l)",                    "normalised": "σ(σ l)",               "note": "Greek identifiers are letters — the ASCII rule corrupted this to σ(σl)" },
+    { "in": "H₁(Σ₂) = ℤ⁴ with χ = −2",   "normalised": "H₁(Σ₂)=ℤ⁴ with χ=−2",  "note": "blackboard and subscripts are letters and numbers" },
+    { "in": "a  ==  b",                   "normalised": "a=b",                  "note": "runs collapse; '==' becomes '='" },
+    { "in": "a != b",                     "normalised": "a≠b",                  "note": "'!=' becomes '≠'" },
+    { "in": "rawBytes A = [1, 2]",        "normalised": "rawBytes A=[1,2]",     "note": "case preserved; application space kept; list spaces removed" },
+    { "in": "Nat.succ 1",                 "normalised": "Nat.succ 1",           "note": "must NOT equal nat.succ 1 — Lean is case-sensitive" }
+  ]
+}

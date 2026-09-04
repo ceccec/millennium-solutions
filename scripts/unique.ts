@@ -25,6 +25,26 @@ const byAddr = new Map<string, typeof T>()
 for (const t of T) byAddr.set(statementAddress(t.statement), [...(byAddr.get(statementAddress(t.statement)) ?? []), t])
 const dupes = [...byAddr.values()].filter((g) => g.length > 1)
 
+// ── THE FIXTURE IS THE SPECIFICATION ────────────────────────────────────────────────────────────────────
+// This rule has been written in prose three times and been wrong twice, each version agreed by three
+// repositories before anyone ran it against real statements. docs/statement-address-fixture.json carries
+// input/output pairs instead, so an implementation is checked against CASES. Checked here every run: a
+// repository whose normaliser drifts from the shared cases finds out from its own build.
+{
+  const F = JSON.parse(readFileSync('docs/statement-address-fixture.json', 'utf8')) as
+    { cases: { in: string; normalised: string; note: string }[] }
+  const norm = (x: string) => x.replace(/\s+/gu, ' ')
+    .replace(/\s(?![\p{L}\p{N}_])|(?<![\p{L}\p{N}_.])\s/gu, '')
+    .replace(/==/g, '=').replace(/!=/g, '≠')
+  let bad = 0
+  for (const c of F.cases) {
+    const got = norm(c.in)
+    if (got !== c.normalised) { console.log(`  ✗ fixture: ${JSON.stringify(c.in)} → ${JSON.stringify(got)}, expected ${JSON.stringify(c.normalised)}`); bad++ }
+  }
+  if (bad) process.exitCode = 1
+  else console.log(`  ✓ ${F.cases.length} shared normalisation cases hold — including "σ (σ l)", which the ASCII rule corrupted`)
+}
+
 console.log(`  spec: ${STATEMENT_ADDRESS_SPEC}\n`)
 if (dupes.length) {
   console.log(`  ○ ${dupes.length} statement(s) appear more than once in this tree — each is a CANDIDATE for review,`)

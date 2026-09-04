@@ -136,7 +136,8 @@ export const proofLine = (t: LeanTheorem): string =>
  *  one result under two names — and two are this limitation. The distinction needs a reader. */
 export const STATEMENT_ADDRESS_SPEC =
   'statementAddress = toUuid(collapse-runs(statement) with whitespace removed only where it is NOT between '
-  + 'two of [A-Za-z0-9_], case preserved, then "=="→"=" and "!="→"≠")  [v2, amended by uuidna-49]'
+  + 'two of [\\p{L}\\p{N}_] (Unicode, u flag), case preserved, then "=="→"=" and "!="→"≠")  '
+  + '[v3: v2 amended by uuidna-49, Unicode class by erpax-94]'
 
 /** THE CROSS-REPOSITORY MERGE KEY — sha256, deliberately not this deposit's own address function.
  *
@@ -156,7 +157,8 @@ export const STATEMENT_ADDRESS_SPEC =
  *  as yours". Different purposes, different guarantees, and neither pretending to be the other. */
 export const MERGE_KEY_SPEC =
   'mergeKey = sha256(normalised statement), hex, where normalised is the STATEMENT_ADDRESS_SPEC rule: '
-  + 'collapse whitespace runs, remove a space only where it is NOT between two of [A-Za-z0-9_], keep case, '
+  + 'collapse whitespace runs, remove a space only where it is NOT between two of [\\p{L}\\p{N}_] with the u '
+  + 'flag (Unicode letters and numbers, NOT ASCII-only), keep case, '
   + '"=="→"=", "!="→"≠". sha256 and not this deposit\'s FNV-1a construction: a merge key decides whether two '
   + 'parties publish one result, which is the adversarial case.'
 
@@ -169,7 +171,20 @@ const normalise = (statement: string): string =>
     // Remove a space only where it is not doing work. `\s(?![A-Za-z0-9_])` drops it before a symbol;
     // `(?<![A-Za-z0-9_.])\s` drops it after one. A space between two alphanumerics survives, because in
     // Lean that space IS the application operator.
-    .replace(/\s(?![A-Za-z0-9_])|(?<![A-Za-z0-9_.])\s/g, '')
+    // UNICODE-AWARE, not ASCII. `[A-Za-z0-9_]` excluded every Greek and blackboard identifier, so
+    // `σ (σ l)` collapsed to `σ(σl)` and `H₁(Σ₂) = ℤ⁴ with χ` to `…ℤ⁴withχ` — the same corruption as
+    // stripping all whitespace, narrowed to non-ASCII, in a language whose identifiers are Greek more often
+    // than Latin. erpax-94 measured it against ceccec.github.io's 832 statements: the two readings disagree
+    // on 211, a quarter, where two repositories computing "the same" key get different answers.
+    //
+    // THIS IS THE THIRD TIME THIS RULE HAS BEEN WRONG IN THE MERGING DIRECTION — strip-everything (refuted
+    // by uuidna-49), then ASCII-only (refuted here) — and each was agreed by three parties before anyone ran
+    // it against real statements. The rule kept being specified in prose and adopted before measurement.
+    // Hence the fixture beside it: a repo now checks its implementation against CASES, not against a sentence.
+    //
+    // Adopted here first because it costs this corpus nothing: 0 of 533 addresses change, measured before
+    // and after. A party that can move at zero risk should move first rather than wait for consensus.
+    .replace(/\s(?![\p{L}\p{N}_])|(?<![\p{L}\p{N}_.])\s/gu, '')
     .replace(/==/g, '=').replace(/!=/g, '≠')
 
 export const statementAddress = (statement: string): string => toUuid(normalise(statement))
