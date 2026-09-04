@@ -229,7 +229,7 @@ export const clayFloor = (): ClayFloor => {
  *
  *    a `theorem` declaration the kernel accepts   — sorry-free, axiom-free, in src/proof
  *    of those, closed by EXHAUSTION (`by decide`) — the kernel evaluated the proposition at every point
- *    a live key in the ledger                     — an ADDRESS; 24 theorems carry two, one resolves to none
+ *    a live key in the ledger                     — an ADDRESS; 0 theorems carry two, one resolves to none
  *    an entry in the append-only ledger           — a RECEIPT, and most of them are withdrawn
  *
  *  The repo's own rule already chose, in seal-lean.ts: "`by decide` is algebra — the kernel evaluates the

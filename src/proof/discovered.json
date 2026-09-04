@@ -17109,7 +17109,9 @@
   {
     "key": "lean_priorart_novelty_is_never_established_here",
     "name": "lean priorart.lean: novelty_is_never_established_here — noveltyEstablished = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "aa00a8eb-6f9a-82eb-937f-42b6197f08af"
+    "receipt": "aa00a8eb-6f9a-82eb-937f-42b6197f08af",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_priorart_claiming_is_not_establishing",
@@ -17141,7 +17143,10 @@
   {
     "key": "lean_priorart_neither_claimed_nor_established",
     "name": "lean priorart.lean: neither_claimed_nor_established — (sources.filter novelty).length = 0 ∧ noveltyEstablished = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "d19158c8-55e8-88d8-a22f-0697e81efa00"
+    "receipt": "d19158c8-55e8-88d8-a22f-0697e81efa00",
+    "revoked": true,
+    "reason": "carried: this key was sealed from a theorem no longer in src/proof. lean_priorart_novelty_is_claimed_of_no_source now expresses the same checked statement — for the three renames, the identical proposition under a name that does not assert more than it decides; for the rest, the conjunct that was read off a real list, the vacuous one having been deleted. Marked in place; the receipt stays in the append-only chain.",
+    "supersededBy": "lean_priorart_novelty_is_claimed_of_no_source"
   },
   {
     "key": "lean_priorart_some_sources_are_unsearched",
@@ -17301,7 +17306,10 @@
   {
     "key": "lean_coin_this_file_makes_no_physical_claim",
     "name": "lean coin.lean: this_file_makes_no_physical_claim — physicalClaims = 0 ∧ digits.length = 10 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "be643cd8-b421-88ff-9d60-df980e8daa54"
+    "receipt": "be643cd8-b421-88ff-9d60-df980e8daa54",
+    "revoked": true,
+    "reason": "carried: this key was sealed from a theorem no longer in src/proof. lean_coin_the_digits_are_ten now expresses the same checked statement — for the three renames, the identical proposition under a name that does not assert more than it decides; for the rest, the conjunct that was read off a real list, the vacuous one having been deleted. Marked in place; the receipt stays in the append-only chain.",
+    "supersededBy": "lean_coin_the_digits_are_ten"
   },
   {
     "key": "lean_coin_the_fall_fixes_every_digit_but_the_void",
@@ -17311,7 +17319,10 @@
   {
     "key": "lean_coin_reflection_and_gravity_share_one_singularity",
     "name": "lean coin.lean: reflection_and_gravity_share_one_singularity — (digits.filter (fun d => fall d != d)) = (digits.filter (fun d => refl d > 9)) — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "53b89fe3-ddf0-8bd9-9071-19df53feecb9"
+    "receipt": "53b89fe3-ddf0-8bd9-9071-19df53feecb9",
+    "revoked": true,
+    "reason": "carried: this key was sealed from a theorem no longer in src/proof. lean_coin_the_fall_and_the_reflection_share_one_exceptional_digit now expresses the same checked statement — for the three renames, the identical proposition under a name that does not assert more than it decides; for the rest, the conjunct that was read off a real list, the vacuous one having been deleted. Marked in place; the receipt stays in the append-only chain.",
+    "supersededBy": "lean_coin_the_fall_and_the_reflection_share_one_exceptional_digit"
   },
   {
     "key": "lean_coin_on_the_fixed_points_the_reflection_never_leaves",
@@ -17371,12 +17382,18 @@
   {
     "key": "lean_light_one_second_is_c_metres_of_light",
     "name": "lean light.lean: one_second_is_c_metres_of_light — travel 1 = c — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "27fd3471-f8df-8944-bbb0-f765a4676607"
+    "receipt": "27fd3471-f8df-8944-bbb0-f765a4676607",
+    "revoked": true,
+    "reason": "carried: this key was sealed from a theorem no longer in src/proof. lean_light_travel_at_one_returns_the_defined_constant now expresses the same checked statement — for the three renames, the identical proposition under a name that does not assert more than it decides; for the rest, the conjunct that was read off a real list, the vacuous one having been deleted. Marked in place; the receipt stays in the append-only chain.",
+    "supersededBy": "lean_light_travel_at_one_returns_the_defined_constant"
   },
   {
     "key": "lean_light_the_light_second_joins_space_and_time",
     "name": "lean light.lean: the_light_second_joins_space_and_time — travel 1 = 299792458 ∧ periods 1 = 9192631770 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "c99e499a-283b-81c2-ac08-876fecab6971"
+    "receipt": "c99e499a-283b-81c2-ac08-876fecab6971",
+    "revoked": true,
+    "reason": "carried: this key was sealed from a theorem no longer in src/proof. lean_light_travel_and_periods_at_one_return_their_constants now expresses the same checked statement — for the three renames, the identical proposition under a name that does not assert more than it decides; for the rest, the conjunct that was read off a real list, the vacuous one having been deleted. Marked in place; the receipt stays in the append-only chain.",
+    "supersededBy": "lean_light_travel_and_periods_at_one_return_their_constants"
   },
   {
     "key": "lean_light_the_chain_scales",
@@ -17406,7 +17423,10 @@
   {
     "key": "lean_light_this_file_measures_nothing",
     "name": "lean light.lean: this_file_measures_nothing — physicalClaims = 0 ∧ defining.length = 7 ∧ travel 0 = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "c992831b-65f0-8d19-9c65-017d581fabf7"
+    "receipt": "c992831b-65f0-8d19-9c65-017d581fabf7",
+    "revoked": true,
+    "reason": "carried: this key was sealed from a theorem no longer in src/proof. lean_light_the_definitions_are_seven_and_travel_fixes_zero now expresses the same checked statement — for the three renames, the identical proposition under a name that does not assert more than it decides; for the rest, the conjunct that was read off a real list, the vacuous one having been deleted. Marked in place; the receipt stays in the append-only chain.",
+    "supersededBy": "lean_light_the_definitions_are_seven_and_travel_fixes_zero"
   },
   {
     "key": "lean_phenomena_every_phenomenon_is_definitional_or_credited",
@@ -17486,5 +17506,35 @@
     "key": "lean_phenomena_the_table_is_closed_and_that_is_all_this_file_decides",
     "name": "lean phenomena.lean: the_table_is_closed_and_that_is_all_this_file_decides — entries.all (fun e => statusOf e == 0 || statusOf e == 1) ∧ entries.length = 9 ∧ (entries.filter (fun e => statusOf e == 0)).length = 7 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "d3aba4ab-326f-88e3-8158-db04c46b2d57"
+  },
+  {
+    "key": "lean_coin_the_fall_and_the_reflection_share_one_exceptional_digit",
+    "name": "lean coin.lean: the_fall_and_the_reflection_share_one_exceptional_digit — (digits.filter (fun d => fall d != d)) = (digits.filter (fun d => refl d > 9)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ad96432a-9394-8778-bf46-ab484832a5db"
+  },
+  {
+    "key": "lean_coin_the_digits_are_ten",
+    "name": "lean coin.lean: the_digits_are_ten — digits.length = 10 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "bdd50a11-7fb4-82c4-b8ee-d588c40b6cc2"
+  },
+  {
+    "key": "lean_light_travel_at_one_returns_the_defined_constant",
+    "name": "lean light.lean: travel_at_one_returns_the_defined_constant — travel 1 = c — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9dc58fa5-fb1f-85dc-a6e8-3d61b32463e7"
+  },
+  {
+    "key": "lean_light_travel_and_periods_at_one_return_their_constants",
+    "name": "lean light.lean: travel_and_periods_at_one_return_their_constants — travel 1 = 299792458 ∧ periods 1 = 9192631770 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "442f56f7-384d-8919-9d2c-6290f715054a"
+  },
+  {
+    "key": "lean_light_the_definitions_are_seven_and_travel_fixes_zero",
+    "name": "lean light.lean: the_definitions_are_seven_and_travel_fixes_zero — defining.length = 7 ∧ travel 0 = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "660422cc-20f7-8091-b756-186ab019f4cd"
+  },
+  {
+    "key": "lean_priorart_novelty_is_claimed_of_no_source",
+    "name": "lean priorart.lean: novelty_is_claimed_of_no_source — (sources.filter novelty).length = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f7830678-15e8-8b0d-96c9-9290a860b092"
   }
 ]

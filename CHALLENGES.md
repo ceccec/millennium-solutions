@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2424 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2430 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (526)
+### lean (525)
 
 - [lean_add_group](/theorem/lean_add_group) — lean: every residue of ℤ/9 has an additive inverse — checked at every residue; 0/7  ·  `ec7880e6-4ac5…`
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
@@ -478,12 +478,10 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_rights_the_enumeration_is_complete_and_unduplicated](/theorem/lean_rights_the_enumeration_is_complete_and_unduplicated) — lean rights.lean: the_enumeration_is_complete_and_unduplicated — instruments.map idOf = [1, 2, 3, 4, 5, 6, 7] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `235960b5-8710…`
 - [lean_priorart_the_restated_sources_are_named_and_claim_nothing](/theorem/lean_priorart_the_restated_sources_are_named_and_claim_nothing) — lean priorart.lean: the_restated_sources_are_named_and_claim_nothing — (sources.filter (fun s =&gt; kindOf s == 0)).all (fun s =&gt; novelty s == false) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `b65d2243-8c83…`
 - [lean_priorart_every_source_is_classified](/theorem/lean_priorart_every_source_is_classified) — lean priorart.lean: every_source_is_classified — sources.all (fun s =&gt; kindOf s == 0 || kindOf s == 1) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a1752005-0aaa…`
-- [lean_priorart_novelty_is_never_established_here](/theorem/lean_priorart_novelty_is_never_established_here) — lean priorart.lean: novelty_is_never_established_here — noveltyEstablished = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `aa00a8eb-6f9a…`
 - [lean_priorart_novelty_is_claimed_only_where_a_search_was_performed](/theorem/lean_priorart_novelty_is_claimed_only_where_a_search_was_performed) — lean priorart.lean: novelty_is_claimed_only_where_a_search_was_performed — sources.all (fun s =&gt; novelty s == false || kindOf s == 2) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `278c45e4-dcc5…`
 - [lean_priorart_this_deposit_claims_no_novelty_today](/theorem/lean_priorart_this_deposit_claims_no_novelty_today) — lean priorart.lean: this_deposit_claims_no_novelty_today — (sources.filter novelty).length = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `dba46877-ae38…`
 - [lean_priorart_an_unsearched_source_claims_nothing](/theorem/lean_priorart_an_unsearched_source_claims_nothing) — lean priorart.lean: an_unsearched_source_claims_nothing — (sources.filter (fun s =&gt; kindOf s == 1)).all (fun s =&gt; novelty s == false) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c6953c31-b9f9…`
 - [lean_priorart_the_kinds_cover_every_source](/theorem/lean_priorart_the_kinds_cover_every_source) — lean priorart.lean: the_kinds_cover_every_source — (sources.filter (fun s =&gt; kindOf s == 0)).length + (sources.filter (fun s =&gt; kindOf s == 1)).length + (sources.filter (fun s =&gt; kindOf s == 2)).length = sources.length — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2785a6a0-4b57…`
-- [lean_priorart_neither_claimed_nor_established](/theorem/lean_priorart_neither_claimed_nor_established) — lean priorart.lean: neither_claimed_nor_established — (sources.filter novelty).length = 0 ∧ noveltyEstablished = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d19158c8-55e8…`
 - [lean_priorart_some_sources_are_unsearched](/theorem/lean_priorart_some_sources_are_unsearched) — lean priorart.lean: some_sources_are_unsearched — (sources.filter (fun s =&gt; kindOf s == 1)).length &gt; 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `611d2fbc-c45a…`
 - [lean_priorart_zero_claims_is_not_full_attribution](/theorem/lean_priorart_zero_claims_is_not_full_attribution) — lean priorart.lean: zero_claims_is_not_full_attribution — (sources.filter novelty).length = 0 ∧ (sources.filter (fun s =&gt; kindOf s == 1)).length &gt; 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7717c95c-0f31…`
 - [lean_millenniumfloor_the_three_non_units_are_exactly_the_unreachable](/theorem/lean_millenniumfloor_the_three_non_units_are_exactly_the_unreachable) — lean index.lean: the_three_non_units_are_exactly_the_unreachable — ((List.range 9).filter (fun d =&gt; ! isUnit d)) = [0, 3, 6] ∧ ((List.range 9).filter (fun d =&gt; ! isUnit d)).all (fun d =&gt; ! span.contains d) ∧ ((List.range 9).filter isUnit).length + ((List.range 9).filter (fun d =&gt; ! isUnit d)).length = 9 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a26af379-71ef…`
@@ -515,9 +513,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_coin_exactly_one_digit_reflects_out_of_range](/theorem/lean_coin_exactly_one_digit_reflects_out_of_range) — lean coin.lean: exactly_one_digit_reflects_out_of_range — (digits.filter (fun d =&gt; refl d &gt; 9)) = [0] ∧ refl 0 = 10 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `047bfad9-df35…`
 - [lean_coin_the_classes_partition_the_nine](/theorem/lean_coin_the_classes_partition_the_nine) — lean coin.lean: the_classes_partition_the_nine — tetA.length + tetB.length + axis.length = 9 ∧ (tetA ++ tetB ++ axis).eraseDups.length = 9 ∧ digits.length = 10 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `8431ea85-8fef…`
 - [lean_coin_every_digit_is_sorted_exactly_once](/theorem/lean_coin_every_digit_is_sorted_exactly_once) — lean coin.lean: every_digit_is_sorted_exactly_once — digits.all (fun d =&gt; (tetB.contains d && tetB.contains (refl d)) || (tetA.contains d && axis.contains (refl d)) || (axis.contains d && tetA.contains (refl d)) || (refl d == d) || (refl d &gt; 9)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `96fcb95e-cd1d…`
-- [lean_coin_this_file_makes_no_physical_claim](/theorem/lean_coin_this_file_makes_no_physical_claim) — lean coin.lean: this_file_makes_no_physical_claim — physicalClaims = 0 ∧ digits.length = 10 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `be643cd8-b421…`
 - [lean_coin_the_fall_fixes_every_digit_but_the_void](/theorem/lean_coin_the_fall_fixes_every_digit_but_the_void) — lean coin.lean: the_fall_fixes_every_digit_but_the_void — (digits.filter (fun d =&gt; fall d != d)) = [0] ∧ nonzero.all (fun d =&gt; fall d == d) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `541de88e-2d3f…`
-- [lean_coin_reflection_and_gravity_share_one_singularity](/theorem/lean_coin_reflection_and_gravity_share_one_singularity) — lean coin.lean: reflection_and_gravity_share_one_singularity — (digits.filter (fun d =&gt; fall d != d)) = (digits.filter (fun d =&gt; refl d &gt; 9)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `53b89fe3-ddf0…`
 - [lean_coin_on_the_fixed_points_the_reflection_never_leaves](/theorem/lean_coin_on_the_fixed_points_the_reflection_never_leaves) — lean coin.lean: on_the_fixed_points_the_reflection_never_leaves — nonzero.all (fun d =&gt; refl d &gt;= 1 && refl d &lt;= 9) ∧ nonzero.all (fun d =&gt; refl (refl d) == d) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `b054d575-74bc…`
 - [lean_coin_what_escapes_falls_back_inside](/theorem/lean_coin_what_escapes_falls_back_inside) — lean coin.lean: what_escapes_falls_back_inside — refl 0 = 10 ∧ fall 10 = 1 ∧ nonzero.contains (fall 10) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7ed40397-4820…`
 - [lean_involution_there_are_2620_involutions_of_nine](/theorem/lean_involution_there_are_2620_involutions_of_nine) — lean involution.lean: there_are_2620_involutions_of_nine — all.length = 2620 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `62c23be4-3c4e…`
@@ -529,14 +525,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_involution_so_involutions_are_not_all_harmonic_in_that_sense](/theorem/lean_involution_so_involutions_are_not_all_harmonic_in_that_sense) — lean involution.lean: so_involutions_are_not_all_harmonic_in_that_sense — ¬ all.all constantSum — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1b69f98b-1867…`
 - [lean_involution_the_coins_reflection_is_harmonic_and_is_one_of_the_ninety](/theorem/lean_involution_the_coins_reflection_is_harmonic_and_is_one_of_the_ninety) — lean involution.lean: the_coins_reflection_is_harmonic_and_is_one_of_the_ninety — constantSum coinLike = true ∧ fixedPoints coinLike = 1 ∧ (swaps coinLike).all (fun p =&gt; p.1 + p.2 == 9) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `813ea66f-9b19…`
 - [lean_light_the_si_fixes_exactly_seven_constants](/theorem/lean_light_the_si_fixes_exactly_seven_constants) — lean light.lean: the_si_fixes_exactly_seven_constants — defining.length = 7 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `34b3da62-a7f5…`
-- [lean_light_one_second_is_c_metres_of_light](/theorem/lean_light_one_second_is_c_metres_of_light) — lean light.lean: one_second_is_c_metres_of_light — travel 1 = c — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `27fd3471-f8df…`
-- [lean_light_the_light_second_joins_space_and_time](/theorem/lean_light_the_light_second_joins_space_and_time) — lean light.lean: the_light_second_joins_space_and_time — travel 1 = 299792458 ∧ periods 1 = 9192631770 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c99e499a-283b…`
 - [lean_light_the_chain_scales](/theorem/lean_light_the_chain_scales) — lean light.lean: the_chain_scales — ([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].all (fun s =&gt; travel s == c * s)) ∧ ([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].all (fun s =&gt; periods s == dNuCs * s)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `43fea27e-ab9a…`
 - [lean_light_the_roots_of_the_seven](/theorem/lean_light_the_roots_of_the_seven) — lean light.lean: the_roots_of_the_seven — defining.map root = [1, 9, 6, 9, 4, 1, 8] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `6e5b42a1-9c30…`
 - [lean_light_three_on_the_triad_and_four_on_the_units](/theorem/lean_light_three_on_the_triad_and_four_on_the_units) — lean light.lean: three_on_the_triad_and_four_on_the_units — (defining.filter (fun n =&gt; [3, 6, 9].contains (root n))).length = 3 ∧ (defining.filter (fun n =&gt; [1, 2, 4, 5, 7, 8].contains (root n))).length = 4 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d09fac98-79f7…`
 - [lean_light_the_seven_roots_miss_four_residues](/theorem/lean_light_the_seven_roots_miss_four_residues) — lean light.lean: the_seven_roots_miss_four_residues — (defining.map root).eraseDups.length = 5 ∧ ([1, 2, 3, 4, 5, 6, 7, 8, 9].filter (fun d =&gt; ¬ (defining.map root).contains d)) = [2, 3, 5, 7] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1419f65f-b611…`
 - [lean_light_the_root_moves_with_the_unit_so_it_is_not_about_light](/theorem/lean_light_the_root_moves_with_the_unit_so_it_is_not_about_light) — lean light.lean: the_root_moves_with_the_unit_so_it_is_not_about_light — root c = 1 ∧ root (2 * c) = 2 ∧ root (100 * c) = 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1e08e344-2719…`
-- [lean_light_this_file_measures_nothing](/theorem/lean_light_this_file_measures_nothing) — lean light.lean: this_file_measures_nothing — physicalClaims = 0 ∧ defining.length = 7 ∧ travel 0 = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c992831b-65f0…`
 - [lean_phenomena_every_phenomenon_is_definitional_or_credited](/theorem/lean_phenomena_every_phenomenon_is_definitional_or_credited) — lean phenomena.lean: every_phenomenon_is_definitional_or_credited — entries.all (fun e =&gt; statusOf e == 0 || statusOf e == 1) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3e67917-8a63…`
 - [lean_phenomena_seven_definitional_and_two_credited](/theorem/lean_phenomena_seven_definitional_and_two_credited) — lean phenomena.lean: seven_definitional_and_two_credited — (entries.filter (fun e =&gt; statusOf e == 0)).length = 7 ∧ (entries.filter (fun e =&gt; statusOf e == 1)).length = 2 ∧ entries.length = 9 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `b3a76dea-da26…`
 - [lean_phenomena_the_definitional_half_is_the_whole_si](/theorem/lean_phenomena_the_definitional_half_is_the_whole_si) — lean phenomena.lean: the_definitional_half_is_the_whole_si — (entries.filter (fun e =&gt; statusOf e == 0)).length = 7 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9a4d4f35-3121…`
@@ -550,12 +543,18 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_reach_even_the_largest_domain_here_has_an_outside](/theorem/lean_reach_even_the_largest_domain_here_has_an_outside) — lean reach.lean: even_the_largest_domain_here_has_an_outside — largestDomainHere + 1 &gt; largestDomainHere ∧ largestDomainHere % 2 = 0 ∧ (largestDomainHere + 1) % 2 = 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9f25da95-de94…`
 - [lean_reach_this_file_settles_none_of_the_seven](/theorem/lean_reach_this_file_settles_none_of_the_seven) — lean reach.lean: this_file_settles_none_of_the_seven — (bounds.filter (fun n =&gt; (List.range n).contains n)).length = 0 ∧ bounds.length = 50 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2c8272de-17dd…`
 - [lean_phenomena_the_table_is_closed_and_that_is_all_this_file_decides](/theorem/lean_phenomena_the_table_is_closed_and_that_is_all_this_file_decides) — lean phenomena.lean: the_table_is_closed_and_that_is_all_this_file_decides — entries.all (fun e =&gt; statusOf e == 0 || statusOf e == 1) ∧ entries.length = 9 ∧ (entries.filter (fun e =&gt; statusOf e == 0)).length = 7 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d3aba4ab-326f…`
+- [lean_coin_the_fall_and_the_reflection_share_one_exceptional_digit](/theorem/lean_coin_the_fall_and_the_reflection_share_one_exceptional_digit) — lean coin.lean: the_fall_and_the_reflection_share_one_exceptional_digit — (digits.filter (fun d =&gt; fall d != d)) = (digits.filter (fun d =&gt; refl d &gt; 9)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `ad96432a-9394…`
+- [lean_coin_the_digits_are_ten](/theorem/lean_coin_the_digits_are_ten) — lean coin.lean: the_digits_are_ten — digits.length = 10 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `bdd50a11-7fb4…`
+- [lean_light_travel_at_one_returns_the_defined_constant](/theorem/lean_light_travel_at_one_returns_the_defined_constant) — lean light.lean: travel_at_one_returns_the_defined_constant — travel 1 = c — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9dc58fa5-fb1f…`
+- [lean_light_travel_and_periods_at_one_return_their_constants](/theorem/lean_light_travel_and_periods_at_one_return_their_constants) — lean light.lean: travel_and_periods_at_one_return_their_constants — travel 1 = 299792458 ∧ periods 1 = 9192631770 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `442f56f7-384d…`
+- [lean_light_the_definitions_are_seven_and_travel_fixes_zero](/theorem/lean_light_the_definitions_are_seven_and_travel_fixes_zero) — lean light.lean: the_definitions_are_seven_and_travel_fixes_zero — defining.length = 7 ∧ travel 0 = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `660422cc-20f7…`
+- [lean_priorart_novelty_is_claimed_of_no_source](/theorem/lean_priorart_novelty_is_claimed_of_no_source) — lean priorart.lean: novelty_is_claimed_of_no_source — (sources.filter novelty).length = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `f7830678-15e8…`
 
 ### other — one-of-a-kind (0)
 
 
 
-## Revoked — 1750 entries that no longer stand
+## Revoked — 1751 entries that no longer stand
 
 The ledger is append-only: an entry that stops holding is marked in place, never deleted — deleting would break the receipt chain, and rewriting a receipt is tamper. These keep their receipts and stay in the record, but they are **not citable** and have no `/theorem/` page. Grouped by the reason they went:
 
@@ -563,12 +562,12 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - **443** — revoked in place: its test asserted a lexical drain (computes(boast)
 - **12** — revoked in place: circular by construction AND dependent on the removed lexical gate
 - **10** — revoked in place: circular by construction — the test defines the answer it checks, proving a declaration rather than a fact
-- **8** — orphaned: the theorem this key was sealed from is no longer in src/proof
+- **9** — orphaned: the theorem this key was sealed from is no longer in src/proof
 - **1** — carried: withdrawn for having only a TypeScript test behind it, and since proved — `euler_units_pow_six` states the same proposition at lean_euler_units_pow_six, and the kernel checks it on every run
 - **1** — revoked in place: its test asserts that a list of proof-boasts written across many scripts and languages ALL drain the gate — a lexical drain assertion, and the word-list gate was removed by order, so there is no lexicon to drain and the assertion tests nothing
 - **1** — revoked in place: it asserts adjudicate('we prove all seven')
 
-## Carried — 148 withdrawn entries whose statement a proof now carries
+## Carried — 154 withdrawn entries whose statement a proof now carries
 
 Each was withdrawn for want of a Lean proof and has since been given one, at a new key. The entry is not restored: its own evidence is still a TypeScript test, and it did not hold on what it had. What the record adds is where the statement stands now.
 
@@ -613,9 +612,9 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`relation_seven_is_six_plus_one`~~ → [`lean_mechanical_relation_seven_is_six_plus_one`](/theorem/lean_mechanical_relation_seven_is_six_plus_one)
 - ~~`relation_units_sum_and_product`~~ → [`lean_mechanical_relation_units_sum_and_product`](/theorem/lean_mechanical_relation_units_sum_and_product)
 
-…and 108 more.
+…and 114 more.
 
-<details><summary>List all 1750 withdrawn keys — nothing proves these</summary>
+<details><summary>List all 1751 withdrawn keys — nothing proves these</summary>
 
 - ~~`euler_units_pow6`~~ — every unit u⁶ ≡ 1 mod 9 (Euler, φ(9)=6)  ·  `e70a44b2-6eb8…`
 - ~~`units_sum_zero`~~ — the units sum to 0 mod 9 (1+2+4+5+7+8=27)  ·  `ec43f3d8-7595…`
@@ -2364,10 +2363,11 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`lean_priorart_novelty_is_claimed_exactly_where_no_prior_art_is_known`~~ — lean priorart.lean: novelty_is_claimed_exactly_where_no_prior_art_is_known — sources.all (fun s =&gt; (kindOf s == 1) == novelty s) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `29363caf-0baf…`
 - ~~`lean_priorart_no_source_both_restates_and_claims`~~ — lean priorart.lean: no_source_both_restates_and_claims — (sources.filter (fun s =&gt; kindOf s == 0 && novelty s)).length = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `5f8c3038-bf92…`
 - ~~`lean_priorart_the_two_sets_cover_every_source`~~ — lean priorart.lean: the_two_sets_cover_every_source — (sources.filter (fun s =&gt; kindOf s == 0)).length + (sources.filter (fun s =&gt; kindOf s == 1)).length = sources.length — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `16cd82ee-e3ff…`
+- ~~`lean_priorart_novelty_is_never_established_here`~~ — lean priorart.lean: novelty_is_never_established_here — noveltyEstablished = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `aa00a8eb-6f9a…`
 - ~~`lean_priorart_claiming_is_not_establishing`~~ — lean priorart.lean: claiming_is_not_establishing — (sources.filter novelty).length &gt; 0 ∧ noveltyEstablished = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `cefda112-d0b4…`
 - ~~`lean_phenomena_this_deposit_explains_predicts_and_constrains_nothing`~~ — lean phenomena.lean: this_deposit_explains_predicts_and_constrains_nothing — explanations = 0 ∧ predictions = 0 ∧ theoriesConstrained = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `f3f2dd32-107d…`
 - ~~`lean_phenomena_arithmetic_on_a_definition_returns_the_definition`~~ — lean phenomena.lean: arithmetic_on_a_definition_returns_the_definition — (299792458 % 9 = 1) ∧ explanations = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2f338a89-2ef5…`
 
 </details>
 
-Page content-address: `043661b8-b88e-8f7d-8f4d-b4d9b3bbca6e`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `c05483c5-480e-8203-afb5-9a32d396203a`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

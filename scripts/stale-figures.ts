@@ -37,7 +37,7 @@ const NOUN = /\b(\d[\d,]{1,6})\s+(theorems?|declarations?|live keys?|entries|rec
 // conditional about a milestone, not a count; "uuidna's own corpus (1329 theorems)" is about ANOTHER
 // repository. Markers widened, and the script REPORTS rather than fails — a 75% false-positive rate is not
 // something to gate a build on, and the same rate in the carry matcher was why that one reports too.
-const PAST = /\b(measured|was|were|had|before|until|earlier|at the time|then|used to|once|previously|no longer|first draft|it said|said|returned|sat|stood|reported|this line|uuidna|another repo)\b/i
+const PAST = /\b(measured|was|were|had|before|until|earlier|at the time|then|used to|once|previously|no longer|first draft|first version|marked|it said|said|returned|sat|stood|reported|this line|uuidna|another repo)\b/i
 // A figure inside "at N theorems, X holds" states a condition, not a census.
 const CONDITIONAL = /\b(at|reaches?|when|if|once)\s+[\d,]+\s+(theorems?|declarations?|entries|receipts?)\b/i
 

@@ -24,6 +24,13 @@ import { readFileSync, readdirSync, statSync } from 'node:fs'
 import { join } from 'node:path'
 import { census, leanFiles, leanSource, leanTheorems, theoremOfKey, clayFloor, advantage, split, ledger, THEOREM_DEFINITION } from '../src/api/index.ts'
 
+/** Words that turn a theorem NAME into an assertion about the world rather than about a finite domain. This
+ *  is a word list and says so: it is the one part of the check that is not derived, so it is kept short,
+ *  kept beside the check that uses it, and verified by planting a name that must fire. */
+const exempted: string[] = []
+const PHYSICAL_VOCAB = ['light', 'metres', 'metre', 'second', 'seconds', 'mass', 'energy', 'gravity',
+  'spacetime', 'velocity', 'force', 'photon', 'quantum', 'relativity', 'orbit', 'earth', 'star']
+
 const ledgerTotal = (ledger() as unknown[]).length
 
 const C = census()
@@ -338,6 +345,57 @@ for (const f of files) {
 // red five times on the tree that existed when it was written.
 for (const f of leanFiles()) {
   const src = leanSource(f)
+  // BY SHAPE, NOT BY NAME. This matched the literal identifier `settledHere` — so it caught eight instances
+  // and missed four, including `physicalClaims = 0` in two files and `noveltyEstablished = 0` in a third:
+  // refusals that certify themselves, which is the worst place for this defect because a refusal is what a
+  // reader trusts without checking. I wrote `def explanations := 0` into phenomena.lean hours after adding
+  // this very check and then quoted it as evidence; the check could not see it, because I had written the
+  // name I was fixing rather than the shape I was fixing. Sixth instance today of a check whose domain is
+  // narrower than the defect it names, and erpax-94 found it by asking whether my own sweep reads the file.
+  //
+  // A constant USED elsewhere is not self-certifying — it is a definition the rest of the file depends on.
+  // What is caught is a constant that appears nowhere but its own definition and the theorem asserting it
+  // equals its own literal.
+  for (const d of src.matchAll(/^def (\w+) : Nat := (\d+)$/gm)) {
+    const [, name, lit] = d
+    if (name === 'settledHere') continue   // handled below, with its own count check against the tree
+    const asserts = new RegExp(`^theorem\\s+(\\w+)\\s*:[^:]{0,160}?\\b${name}\\s*=\\s*${lit}\\b`, 'm').exec(src)
+    if (!asserts) continue
+    const uses = [...src.matchAll(new RegExp(`\\b${name}\\b`, 'g'))].length
+    if (uses <= 2 + 1) {   // the def, the assertion, and nothing else
+      fail(`src/proof/${f}: \`${name}\` is defined as ${lit} and \`${asserts[1]}\` decides it equals ${lit}, and it is `
+        + `used nowhere else — a number compared to itself. It certifies nothing and cannot go red however much `
+        + `the file claims. Derive it, or delete the declaration and let a check that reads the corpus carry the claim.`)
+    }
+  }
+  // ── A FILE THAT REFUSES PHYSICAL CLAIMS IS CHECKED ON ITS PUBLISHED NAMES ─────────────────────────────
+  // `coin.lean` and `light.lean` each carried `def physicalClaims : Nat := 0` decided against its own
+  // literal. That is green whatever the file says, so the refusal was never checked. The refusal is real and
+  // worth keeping, so it moved here, where the thing it is about — the TEXT — can actually be read.
+  //
+  // It is checked on theorem NAMES, not on propositions, because the name is the published surface: it is
+  // the Zenodo record title, the page heading and the ledger key. `travel 1 = c` decides 299792458 × 1, and
+  // no reader disputes it; a name asserting what a second of light spans is a statement about the world that
+  // the proposition does not reach. The domain is DERIVED from the marker below, not listed here, so a file
+  // that starts refusing physical claims is covered the day it says so.
+  if (/^-- REFUSES: physical-claim$/m.test(src)) {
+    for (const t of src.matchAll(/^theorem\s+(\w+)/gm)) {
+      const hit = PHYSICAL_VOCAB.filter((w) => new RegExp(`(^|_)${w}(_|$)`).test(t[1]))
+      // A name that DENIES the claim is not making it: `..._so_it_is_not_about_light` is the file doing
+      // exactly what the refusal asks. This exemption is COUNTED AND PRINTED rather than applied silently,
+      // because an exemption nobody sees is how a word list quietly stops covering anything.
+      if (hit.length && /(^|_)(not|never|no|nothing|nor)(_|$)/.test(t[1])) {
+        exempted.push(`src/proof/${f}: ${t[1]}`)
+        continue
+      }
+      if (hit.length) {
+        fail(`src/proof/${f}: the file refuses physical claims, and \`${t[1]}\` is published under a name that `
+          + `makes one (${hit.join(', ')}). The proposition decides arithmetic on defined constants; the name `
+          + `is the Zenodo title and the page heading, and it is what a reader is asked to believe.`)
+      }
+    }
+  }
+
   const m = src.match(/^def settledHere : Nat := (\d+)$/m)
   if (!m) continue
   const decided = leanTheorems().filter((t) => t.file.endsWith(f) && t.tactic === 'by decide').length
@@ -382,6 +440,7 @@ for (const f of leanFiles()) {
   if (standing.length) console.log(`  ○ ${standing.length} standing unresolvable key(s), reported not excluded: ${standing.join(' ')}`)
 }
 
+if (exempted.length) console.log(`  ○ ${exempted.length} physical-vocabulary name(s) exempted as denials, reported not hidden: ${exempted.join(' ')}`)
 console.log(bad
   ? `\n✗ contradictions: ${bad} finding(s) — prose or code disagrees with src/proof`
   : `\n✓ contradictions: none — ${C.byDecide} theorems (closed by exhaustion) + ${C.rfl} rfl declarations = ${C.theorems} kernel-accepted; ${C.liveKeys} live keys = ${C.sealedTheorems} sealed + ${C.surplusKeys} keyed twice + ${C.unresolvableKeys} unresolvable; no sorry, no Mathlib, no native_decide, no axiom; nothing claims a Clay problem, all ${swept} Clay + ${qSwept} quantum overclaim phrasings are caught while ${HONEST.length} honest refusals survive; and ${PROVED.length} proved properties are stated on the pages, not only in the sources`)

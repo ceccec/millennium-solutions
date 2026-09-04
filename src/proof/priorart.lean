@@ -138,12 +138,11 @@ theorem zero_claims_is_not_full_attribution :
 -- zero. "No prior art known to the author" is a fact about the author. "No prior art exists" is a fact about
 -- the world, and nothing in this repository can decide it. A reader who takes the claimed set as a claim of
 -- originality has been misled, so the deposit says so here, in the layer that is checked.
-def noveltyEstablished : Nat := 0
-
-theorem novelty_is_never_established_here : noveltyEstablished = 0 := by decide
-
--- Claiming and establishing are different acts, and today the deposit performs neither.
-theorem neither_claimed_nor_established :
-  (sources.filter novelty).length = 0 ∧ noveltyEstablished = 0 := by decide
+-- `def noveltyEstablished : Nat := 0` stood here, decided against its own literal — a refusal certifying
+-- itself, which is the worst place for this defect, because a refusal is the line a reader trusts without
+-- checking it. Establishment is an act performed OUTSIDE this file (a search, with a result), so nothing
+-- declared inside it can witness the count. What survives is the conjunct that reads a real list.
+theorem novelty_is_claimed_of_no_source :
+  (sources.filter novelty).length = 0 := by decide
 
 end PriorArt

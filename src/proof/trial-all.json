@@ -14542,5 +14542,41 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "d3aba4ab-326f-88e3-8158-db04c46b2d57"
+  },
+  {
+    "key": "lean_coin_the_fall_and_the_reflection_share_one_exceptional_digit",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ad96432a-9394-8778-bf46-ab484832a5db"
+  },
+  {
+    "key": "lean_coin_the_digits_are_ten",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "bdd50a11-7fb4-82c4-b8ee-d588c40b6cc2"
+  },
+  {
+    "key": "lean_light_travel_at_one_returns_the_defined_constant",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9dc58fa5-fb1f-85dc-a6e8-3d61b32463e7"
+  },
+  {
+    "key": "lean_light_travel_and_periods_at_one_return_their_constants",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "442f56f7-384d-8919-9d2c-6290f715054a"
+  },
+  {
+    "key": "lean_light_the_definitions_are_seven_and_travel_fixes_zero",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "660422cc-20f7-8091-b756-186ab019f4cd"
+  },
+  {
+    "key": "lean_priorart_novelty_is_claimed_of_no_source",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f7830678-15e8-8b0d-96c9-9290a860b092"
   }
 ]

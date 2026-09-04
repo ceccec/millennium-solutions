@@ -150,7 +150,7 @@ export const STATEMENT_ADDRESS_SPEC =
  *  SHA-256 IS THE RIGHT CHOICE HERE AND FNV IS THE RIGHT CHOICE FOR THE LEDGER, which is why this is a
  *  second function rather than a change to the first. A merge key is the adversarial case: it decides
  *  whether two parties are publishing one result, and a non-cryptographic hash gives integrity against
- *  accident only. The ledger address cannot move — it names 2424 entries in an append-only chain, and
+ *  accident only. The ledger address cannot move — it names every entry in an append-only chain, and
  *  rewriting it is the same objection that stopped the hexbit encoding.
  *
  *  So: FNV addresses this deposit's own record, sha256 addresses the question "is this the same statement

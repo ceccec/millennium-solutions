@@ -5,11 +5,11 @@ title: The axiom index — what is not assumed, and what is
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **533** report the same thing:
+axiom fails the build rather than earning a footnote. All **532** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
-theorems rest on **230** definitions, and every one of them is a choice. A theorem about
+theorems rest on **227** definitions, and every one of them is a choice. A theorem about
 `fall` is a theorem about the digital root only because `fall` is *defined* to be it. Both halves are
 indexed below, and the second is the longer one.
 
@@ -90,7 +90,7 @@ The pins in the control fixture follow the community practice of guarding `#prin
 `#guard_msgs`, which turns the axiom footprint into an executable regression test: the assertion is
 checked by the elaborator, and drift fails the build with a mismatch instead of passing unnoticed.
 
-## What IS assumed: the 230 definitions
+## What IS assumed: the 227 definitions
 
 Each of these is a primitive of this deposit — not derived, not proved, chosen. They are listed in full
 because a reader checking a theorem must be able to read the definition it is about, and because a
@@ -113,7 +113,7 @@ def UUIDNA : List Nat := [117, 117, 105, 100, 110, 97]      -- "uuidna"
 def settledHere : Nat := 13
 ```
 
-### `coin.lean` — 8 definition(s), 12 theorem(s)
+### `coin.lean` — 7 definition(s), 12 theorem(s)
 
 ```lean
 def refl (d : Nat) : Nat := 10 - d
@@ -123,7 +123,6 @@ def axis : List Nat := [3, 6, 9]
 def digits : List Nat := [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 def fall (n : Nat) : Nat := if n == 0 then 9 else 1 + (n - 1) % 9
 def nonzero : List Nat := [1, 2, 3, 4, 5, 6, 7, 8, 9]
-def physicalClaims : Nat := 0
 ```
 
 ### `demand.lean` — 12 definition(s), 8 theorem(s)
@@ -263,7 +262,7 @@ def saving (value verify : Nat) : Nat := value - verify
 def addr4 (x : Nat) : Nat := x % 16
 ```
 
-### `light.lean` — 14 definition(s), 11 theorem(s)
+### `light.lean` — 13 definition(s), 11 theorem(s)
 
 ```lean
 def c : Nat := 299792458      -- m/s, exact
@@ -279,7 +278,6 @@ def periods (seconds : Nat) : Nat := dNuCs * seconds -- caesium periods elapsed 
 def root (n : Nat) : Nat := if n == 0 then 9 else 1 + (n - 1) % 9
 def kcdDoubled : Nat := 1366     -- K_cd expressed against a unit half the size; the same luminous efficacy
 def alternative : List Nat := [c, dNuCs, hDigits, eDigits, kDigits, naDigits, kcdDoubled]
-def physicalClaims : Nat := 0
 ```
 
 ### `mechanical.lean` — 4 definition(s), 105 theorem(s)
@@ -342,7 +340,7 @@ def entries : List Entry :=
 def statusOf (e : Entry) : Nat := e.2
 ```
 
-### `priorart.lean` — 6 definition(s), 10 theorem(s)
+### `priorart.lean` — 5 definition(s), 9 theorem(s)
 
 ```lean
 abbrev Source := Nat × Nat × Bool
@@ -350,7 +348,6 @@ def idOf (s : Source) : Nat  := s.1
 def kindOf (s : Source) : Nat  := s.2.1
 def novelty (s : Source) : Bool := s.2.2
 def sources : List Source :=
-def noveltyEstablished : Nat := 0
 ```
 
 ### `quantum.lean` — 8 definition(s), 9 theorem(s)
@@ -468,6 +465,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**533** declarations, **0** axiom dependencies, **230** definitions they rest on.
+**532** declarations, **0** axiom dependencies, **227** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them. `0/7`.

@@ -1,7 +1,7 @@
 {
   "concept_doi": "10.5281/zenodo.21819217",
   "generated_from": "src/proof/priorart.lean kind 1 · src/proof/*.lean",
-  "count": 87,
+  "count": 86,
   "files": [
     "generated.lean",
     "index.lean",
@@ -43,13 +43,12 @@
     "lean_mulperm_iff_unit_all",
     "lean_naive_fold_is_not_order_invariant",
     "lean_navier_stokes_flow_is_bounded",
-    "lean_neither_claimed_nor_established",
     "lean_no_constant_factor_accounts_for_the_gap",
     "lean_no_excluded_subject_matter_is_claimed",
     "lean_no_right_that_needs_a_registry_act_is_claimed",
     "lean_nothing_incapable_of_ownership_is_claimed",
+    "lean_novelty_is_claimed_of_no_source",
     "lean_novelty_is_claimed_only_where_a_search_was_performed",
-    "lean_novelty_is_never_established_here",
     "lean_p_vs_np_inverse_is_unique",
     "lean_perms_of_four_is_factorial",
     "lean_poincare_single_closed_loop",

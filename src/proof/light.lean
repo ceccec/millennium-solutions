@@ -24,6 +24,7 @@ set_option maxRecDepth 8000000
 -- unit and stays when you change the scale is a property of decimal notation, and reading significance into
 -- it would be the overclaim this deposit exists to refuse.
 
+-- REFUSES: physical-claim
 namespace Light
 
 -- ── THE SEVEN, as exact integers. h, e, k and N_A are recorded as their DIGIT SEQUENCES: their defining
@@ -47,12 +48,12 @@ theorem the_si_fixes_exactly_seven_constants : defining.length = 7 := by decide
 def travel (seconds : Nat) : Nat := c * seconds      -- metres crossed in a whole number of seconds
 def periods (seconds : Nat) : Nat := dNuCs * seconds -- caesium periods elapsed in the same interval
 
-theorem one_second_is_c_metres_of_light : travel 1 = c := by decide
+theorem travel_at_one_returns_the_defined_constant : travel 1 = c := by decide
 
 -- ONE INTERVAL, TWO UNITS: the same second is 299792458 metres of light and 9192631770 caesium periods.
 -- That is the SI's join between space and time, and it is an identity between two definitions rather than
 -- a discovery about either.
-theorem the_light_second_joins_space_and_time :
+theorem travel_and_periods_at_one_return_their_constants :
   travel 1 = 299792458 ∧ periods 1 = 9192631770 := by decide
 
 -- Linear over the whole range checked, so the chain is a scaling and not a coincidence at one point.
@@ -106,9 +107,10 @@ theorem the_root_moves_with_the_unit_so_it_is_not_about_light :
 -- Every number in this file is a definition adopted by a committee. No proposition here measures a
 -- quantity, predicts an observation, or constrains a physical theory, and none could: arithmetic on a
 -- definition returns the definition.
-def physicalClaims : Nat := 0
-
-theorem this_file_measures_nothing :
-  physicalClaims = 0 ∧ defining.length = 7 ∧ travel 0 = 0 := by decide
+-- The refusal is NOT stated here as `physicalClaims = 0`. That declaration stood here and was deleted: a
+-- literal decided against itself is green whatever the file says, so it could never carry a refusal. What a
+-- proposition mentions is a property of the source text, and `contradictions.ts` is where that is checked.
+theorem the_definitions_are_seven_and_travel_fixes_zero :
+  defining.length = 7 ∧ travel 0 = 0 := by decide
 
 end Light

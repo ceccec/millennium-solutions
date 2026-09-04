@@ -29,6 +29,7 @@
 -- The last of those is the one worth stating carefully: the origin is not pulled anywhere, it simply has no
 -- partner inside the set. An absence of a partner is not a force.
 
+-- REFUSES: physical-claim
 namespace Coin
 
 def refl (d : Nat) : Nat := 10 - d
@@ -114,7 +115,7 @@ theorem the_fall_fixes_every_digit_but_the_void :
   (digits.filter (fun d => fall d != d)) = [0]
   ∧ nonzero.all (fun d => fall d == d) := by decide
 
-theorem reflection_and_gravity_share_one_singularity :
+theorem the_fall_and_the_reflection_share_one_exceptional_digit :
   (digits.filter (fun d => fall d != d)) = (digits.filter (fun d => refl d > 9)) := by decide
 
 -- On the fixed points of gravity the reflection stays inside and undoes itself: the side that returns.
@@ -130,11 +131,14 @@ theorem what_escapes_falls_back_inside :
 -- The count of ASTROPHYSICAL claims this file makes. Gravity here is the fall to a fixed point, decided
 -- above; a black hole is not, and no proposition in this file mentions one.
 -- and the words that would make it one appear in the header as the thing being refused, never in a
--- proposition. Written as one it would be equally green and would certify nothing, which is the defect
--- removed from index.lean; written as zero it says what the file actually does.
-def physicalClaims : Nat := 0
-
-theorem this_file_makes_no_physical_claim :
-  physicalClaims = 0 ∧ digits.length = 10 := by decide
+-- proposition.
+--
+-- There was a `def physicalClaims : Nat := 0` here, decided against its own literal. The comment beside it
+-- argued that "written as one it would be equally green" — which is the proof that it certified nothing in
+-- EITHER direction: the number was zero because it was typed as zero, and would stay zero while the file
+-- filled with claims about the sky. Whether a proposition names a physical quantity is a fact about this
+-- file's TEXT, and Lean cannot read its own text. The refusal now lives in `contradictions.ts`, which reads
+-- the propositions and can go red. What is kept here is the conjunct that was always read off a real list.
+theorem the_digits_are_ten : digits.length = 10 := by decide
 
 end Coin
