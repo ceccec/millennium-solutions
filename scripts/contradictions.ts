@@ -22,7 +22,7 @@
 //      contradicts it.
 import { readFileSync, readdirSync, statSync } from 'node:fs'
 import { join } from 'node:path'
-import { census, leanFiles, leanSource, leanTheorems, clayFloor } from '../src/api/index.ts'
+import { census, leanFiles, leanSource, leanTheorems, clayFloor, advantage } from '../src/api/index.ts'
 
 const C = census()
 let bad = 0
@@ -160,6 +160,89 @@ if (cf.seven !== 7) fail(`index.lean carries ${cf.seven} Clay-named theorems, no
 if (!cf.allByDecide) fail('a Clay-named theorem is not closed by `decide`')
 if (cf.reaches.length) fail(`a Clay-named proposition reaches for ${cf.reaches.join(', ')} — objects those conjectures concern, which finite algebra here does not settle`)
 
+// ── 4c · nothing claims a quantum computer or a quantum speedup ──────────────────────────────────────────
+// THE ASYMMETRY THIS CLOSES: the Clay floor is gated above by 960 swept phrasings, and the quantum floor —
+// a claim of comparable consequence — had NO gate at all. It lived in prose (`quantum.lean`: "No hardware,
+// no speedup, no physics"; WHITEPAPER: "Not a quantum computer") and in fixtures for the lexical gate that
+// was REMOVED. A boundary held only by sentences is a boundary that survives exactly as long as nobody
+// edits the sentences.
+//
+// What the deposit DOES claim is structural and stays claimed: order-invariance over every permutation
+// (quantum.lean), and a verification path of log₂N rounds against N recomputations, whose ratio widens with
+// every doubling (speed.lean). That is a classical, structural advantage and it is unbounded in N. It is
+// not a faster clock, not hardware, and not a quantum algorithm.
+//
+// NEGATION IS NOT ASSERTION. "quantum speedup is not claimed here" and "Not a quantum computer" are the
+// repo's own honest sentences and must pass; only an assertion fires. The negator is checked in the window
+// BEFORE the claim, which is where a refusal puts it.
+const QUANTUM_CLAIM = /\b(?:we|this (?:work|framework|deposit|paper|repo|system))\s+(?:have\s+|has\s+|is\s+|are\s+)?(?:a\s+|an\s+|the\s+)?(?:built|run|runs|uses?|achieves?|achieved|delivers?|delivered|demonstrates?|provides?|offers?)?\s*(?:a\s+|an\s+|the\s+)?(?:quantum\s+(?:computer|speedup|supremacy|advantage\s+in\s+time|hardware|processor)|qubit\s+hardware|shor'?s?\s+algorithm|grover'?s?\s+algorithm|exponential\s+speedup)/i
+const NEGATOR = /\b(?:no|not|never|without|refus\w*|denie[sd]|drains?|neither|nor|is not|does not|claims? no)\b/i
+
+for (const f of files) {
+  if (f.endsWith('contradictions.ts')) continue
+  for (const [n, line] of assertedLines(f, readFileSync(f, 'utf8'))) {
+    const bare = line.replace(/"[^"]*"|'[^']*'|`[^`]*`|“[^”]*”/g, ' ')
+    const m = QUANTUM_CLAIM.exec(bare)
+    if (!m) continue
+    // the refusal window: a negator anywhere before the claim in this line
+    if (NEGATOR.test(bare.slice(0, m.index))) continue
+    fail(`${f}:${n} claims a quantum computer or speedup in its own voice; quantum.lean states "No hardware, no speedup, no physics" and the advantage in speed.lean is log-rounds against N recomputations, which is classical`)
+  }
+}
+
+// Per branch, like the Clay sweep — an alternation is not tested until each branch is.
+const Q_SUBJ = ['We', 'This work', 'This framework', 'This deposit', 'This system']
+const Q_VERB = ['built', 'run', 'use', 'achieve', 'deliver', 'demonstrate', 'provide']
+const Q_OBJ = ['a quantum computer', 'a quantum speedup', 'quantum supremacy', 'qubit hardware',
+  "Shor's algorithm", "Grover's algorithm", 'an exponential speedup', 'a quantum processor']
+let qSwept = 0
+const qSlipped: string[] = []
+for (const sub of Q_SUBJ) for (const v of Q_VERB) for (const o of Q_OBJ) {
+  qSwept++
+  if (!QUANTUM_CLAIM.test(`${sub} ${v} ${o}.`)) qSlipped.push(`${sub} ${v} ${o}.`)
+}
+if (qSlipped.length)
+  fail(`${qSlipped.length} of ${qSwept} quantum-overclaim phrasings pass uncaught, e.g. ${JSON.stringify(qSlipped.slice(0, 3))}`)
+
+// AND THE HONEST SENTENCES MUST SURVIVE. A gate that also drains the repo's own refusals would force them
+// out of the prose, which is the opposite of what it is for.
+const HONEST = [
+  'This deposit is not a quantum computer.',
+  'quantum speedup is not claimed here; 0/7',
+  'it sends no superluminal signal, and has no quantum speedup',
+  'This work uses no quantum hardware.',
+  'This framework provides no quantum advantage in time.',
+]
+for (const h of HONEST) {
+  const m = QUANTUM_CLAIM.exec(h)
+  if (m && !NEGATOR.test(h.slice(0, m.index)))
+    fail(`the quantum check drains an honest refusal, which would push the boundary out of the prose: ${JSON.stringify(h)}`)
+}
+
+// ── 4d · THE INVERSE RATCHET: what is proved must also be said ───────────────────────────────────────────
+// Every check above guards against claiming more than the evidence. Measured today, this repo claims LESS:
+// all four overclaim gates return zero findings, while four of eight proved properties were absent from the
+// pages a reader actually opens — the log-rounds path, the widening gap, the measured ratio, and priority.
+// Understating a proved result is not modesty. It is a page that misinforms in the other direction, and it
+// is the direction nothing here was watching.
+//
+// Each row names a property, the evidence that establishes it, and a pattern that shows it is stated. A row
+// fails when the evidence stands and the page has gone quiet about it — which is what a regression looks
+// like from this side.
+const front = readFileSync('index.md', 'utf8') + readFileSync('README.md', 'utf8')
+const PROVED: [string, RegExp, string][] = [
+  ['kernel-checked theorem count',       /\b\d{3}\b[^.\n]{0,60}theorem/i,            'src/proof, #print axioms per theorem'],
+  ['closed by decide, not sampled',      /by\s*`?decide`?/i,                          'the tactic recorded per theorem'],
+  ['verification is log rounds, not N',  /log₂|log2|logarithmic/i,                     'speed.lean the_verify_path_is_the_exponent'],
+  ['the gap widens at every doubling',   /widen|unbounded|every doubling/i,            'speed.lean the_gap_widens_with_every_doubling'],
+  ['the measured ratio',                 new RegExp(String(advantage().ratio)),        'speed.lean the_measured_ratio_at_a_million_leaves'],
+  ['order-invariant over permutations',  /order.invarian|permutation/i,                'quantum.lean receipt_is_order_invariant'],
+  ['the chain verifies end to end',      /chain intact|append-only|recei/i,            'forensics over the whole ledger'],
+]
+for (const [claim, shown, evidence] of PROVED)
+  if (!shown.test(front))
+    fail(`the front pages do not state "${claim}" — it is established by ${evidence}. Proved and unsaid is an underclaim, and this repo's gates were all pointed the other way`)
+
 // ── 5 · no assertion may certify an assignment ───────────────────────────────────────────────────────────
 // The defect removed from src/proof/index.lean, swept across the tree. `def provenHere : Nat := 0` with a
 // theorem deciding `provenHere = 0` certifies that a number the author typed equals itself; in TypeScript
@@ -185,5 +268,5 @@ for (const f of files) {
 
 console.log(bad
   ? `\n✗ contradictions: ${bad} finding(s) — prose or code disagrees with src/proof`
-  : `\n✓ contradictions: none — ${C.theorems} theorems (${C.byDecide} by decide, ${C.rfl} rfl); ${C.liveKeys} live keys = ${C.sealedTheorems} sealed + ${C.surplusKeys} keyed twice + ${C.unresolvableKeys} unresolvable; no sorry, no Mathlib, no native_decide, no axiom; nothing claims a Clay problem, and all ${swept} overclaim phrasings are caught`)
+  : `\n✓ contradictions: none — ${C.theorems} theorems (${C.byDecide} by decide, ${C.rfl} rfl); ${C.liveKeys} live keys = ${C.sealedTheorems} sealed + ${C.surplusKeys} keyed twice + ${C.unresolvableKeys} unresolvable; no sorry, no Mathlib, no native_decide, no axiom; nothing claims a Clay problem, all ${swept} Clay + ${qSwept} quantum overclaim phrasings are caught while ${HONEST.length} honest refusals survive; and ${PROVED.length} proved properties are stated on the pages, not only in the sources`)
 process.exit(bad ? 1 : 0)

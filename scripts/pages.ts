@@ -21,10 +21,11 @@ import { translate } from '../src/prove/translate.ts'
 import { adjudicate } from './adjudicate.ts'
 import { computes } from './honesty-gate.ts'
 import { toUuid, merkleFold } from '../src/0/index.ts'
-import { ledger as __ledger, triad, units, axis, domainOf, census, clayFloor, leanTheorems as leanTheoremsShared } from '../src/api/index.ts'
+import { ledger as __ledger, triad, units, axis, domainOf, census, clayFloor, advantage, leanTheorems as leanTheoremsShared } from '../src/api/index.ts'
 
 const CENSUS = census()
 const CLAY_FLOOR = clayFloor()
+const ADVANTAGE = advantage()
 import { orbit } from '../src/api/index.ts'
 
 const ledger = __ledger() as { key: string; name: string; receipt: string }[]
@@ -127,6 +128,16 @@ const CLAIMS: Claim[] = [
   { section: S(5, 'What the gate does and does not do'),
     derive: () => { const falseHolds = computes('two plus two equals five').binary === 1
       return { text: `the gate does not decide whether a statement is true: "two plus two equals five" ${falseHolds ? 'passes it' : 'is drained by it'}, so holding means not drained, never correct`, ok: falseHolds, from: ['two plus two equals five'] } } },
+
+  // THE ADVANTAGE, SAID WHERE IT IS READ. Measured against the front pages, four of eight proved properties
+  // were stated and the four missing ones were the whole advantage — the log path, the widening gap, the
+  // measured ratio, and priority. Every number here is read off src/proof/speed.lean, which the kernel
+  // decides, so the page cannot drift from the theorem and none of it is typed into prose.
+  { section: 'The floor',
+    derive: () => { const a = ADVANTAGE
+      return { text: `verifying one receipt against a fold of ${a.leaves} leaves walks ${a.rounds} nodes rather than ${a.leaves}: ${a.recomputeUs} µs to recompute against ${a.verifyUs} µs to verify, a ratio of ${a.ratio}×, and the ratio widens at every doubling because the path is log₂ of the leaf count while the recomputation is the count itself. It is structural and classical, and bounded from above in the same file: the verify costs ${a.nsPerVerify} nanoseconds and not one, and what grows is the NUMBER of operations, not their speed`,
+        ok: a.ratio > 500000 && a.rounds === 20 && a.verifyUs > 0,
+        from: [a.leaves, a.rounds, a.recomputeUs, a.verifyUs, a.ratio, a.nsPerVerify] } } },
 
   { section: 'The floor',
     derive: () => {

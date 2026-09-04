@@ -59,6 +59,8 @@ last because the orbit never reaches it.
 
 ## The floor
 
+- Verifying one receipt against a fold of 1048576 leaves walks 20 nodes rather than 1048576: 21582900 µs to recompute against 38 µs to verify, a ratio of 567971×, and the ratio widens at every doubling because the path is log₂ of the leaf count while the recomputation is the count itself. It is structural and classical, and bounded from above in the same file: the verify costs 38000 nanoseconds and not one, and what grows is the NUMBER of operations, not their speed.
+  <sub>SEALED · `a998f6d9-4ce5-8428-a988-c844b13abda8`</sub>
 - No theorem in the Clay-named file settles a conjecture: its propositions range over List.range 10, List.range 9, List.range 48, List.range 6, List.range' 1 and mention none of the objects those conjectures concern.
   <sub>SEALED · `3fa2f8ab-3367-8d44-8340-9bf1c0a420c4`</sub>
 - The count of Clay problems answered in that file is declared nowhere and carried as a conjunct by no theorem — a declared constant is not evidence, so the weight rests entirely on the propositions actually written: 7 Clay-named theorems among 11 in the file, every one closed by decide, the largest walking 19683 cases, and 0 of them reaching any object those conjectures concern.
@@ -192,4 +194,4 @@ because no test was written that would seal them.
 
 ---
 
-*14 claims, all verified · 472 Lean theorems · 2361 ledger entries · trial root `c998f487-1229-853f-96f4-2f872d3260c8` · integrity, not truth · 0/7*
+*15 claims, all verified · 472 Lean theorems · 2361 ledger entries · trial root `20683490-a695-8f69-b24f-fd0b6e3f8650` · integrity, not truth · 0/7*
