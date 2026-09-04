@@ -218,6 +218,11 @@ export default defineConfig({
       {
         text: 'Overview',
         items: [
+          // The homepage reached the sidebar only through the 'Paper' entry, which pointed at `/`.
+          // Repointing Paper to the collected paper left `/` with no sidebar link at all, and
+          // scripts/gaps.ts — which runs in publish and release CI and nowhere a developer sees — had
+          // been failing on a clean tree ever since.
+          { text: 'Home', link: '/' },
           { text: 'Abstract', link: '/ABSTRACT' },
           { text: 'Guide (7D)', link: '/guide' },
           { text: 'How it folds (for everyone)', link: '/folds' },

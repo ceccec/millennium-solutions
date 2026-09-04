@@ -113,9 +113,14 @@ const CONTROLS: Control[] = [
     what: 'the page losing the sentence the trial records it as carrying',
     mutate: (s) => s.replace('No sentence above claims a Millennium problem settled', 'REMOVED BY CONTROL') },
 
+  // THE CONTROL MUST MUTATE WHAT THE GATE NOW READS. This replaced `def provenHere : Nat := 0` with `:= 1`,
+  // and that constant was removed from index.lean — so the mutation matched nothing, the file was unchanged,
+  // the gate passed, and gates-fire correctly reported that readme "ACCEPTS" the mutation. A control whose
+  // edit no longer applies is a control that tests nothing while reading green. The readme gate now asks
+  // clayFloor(), so the mutation takes one of the seven Clay-named theorems out of the count.
   { gate: 'readme', cmd: 'node scripts/readme.ts', file: 'src/proof/index.lean',
-    what: 'the Lean floor no longer declaring zero',
-    mutate: (s) => s.replace('def provenHere : Nat := 0', 'def provenHere : Nat := 1') },
+    what: 'one of the seven Clay theorems no longer being Clay-named, so the floor is measured over six',
+    mutate: (s) => s.replace('theorem hodge_span_is_the_units', 'theorem span_is_the_units') },
 
   // My first mutation renamed the header to "Content-Security-Policy-Removed-By-Control", which still
   // CONTAINS the string the gate greps for, so the gate passed and I read that as the gate being broken. The
