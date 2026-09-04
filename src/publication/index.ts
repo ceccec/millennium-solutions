@@ -45,7 +45,23 @@ export const FUNDING = (() => {
   } catch { return { url: '', statement: 'Independent research; no grant funding is claimed in this record.' } }
 })()
 
-export const SITE = 'https://ceccec.github.io/millennium-solutions'
+/** THE CANONICAL ORIGIN, read from the site's own declaration rather than typed here.
+ *
+ *  This was hardcoded as ceccec.github.io, and that host 301-REDIRECTS to ceccec.psg.bg — which is what
+ *  .vitepress/config.ts declares, what the sitemap uses, and what every page emits as its own
+ *  <link rel="canonical">. So the JSON-LD on 653 pages and the isDocumentedBy and references relations on
+ *  338 deposition records all named a redirect instead of the resource.
+ *
+ *  A citation index following a 301 gets a redirect, not the page; a redirect can lapse or be repointed by
+ *  whoever controls the old host; and a permanent record naming a non-canonical URL cannot be corrected
+ *  once it is minted. Found by resolving a URL rather than reading it — the same lesson the concept DOI
+ *  taught, applied to this deposit's own outbound links, which I had never resolved. */
+export const SITE = (() => {
+  const cfg = readFileSync('.vitepress/config.ts', 'utf8')
+  const m = cfg.match(/^const SITE = '([^']+)'/m)
+  if (!m) throw new Error('publication: .vitepress/config.ts declares no canonical SITE to derive from')
+  return m[1].replace(/\/+$/, '')
+})()
 export const REPO = 'https://github.com/ceccec/millennium-solutions'
 /** READ FROM CITATION.cff, not typed. It was written out in two modules — this one and
  *  scripts/zenodo-theorems.ts — which is two places for the identifier that every deposition names as

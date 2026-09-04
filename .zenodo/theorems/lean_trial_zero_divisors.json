@@ -9,7 +9,7 @@
       "affiliation": "PSG, Bulgaria"
     }
   ],
-  "description": "<p><strong>trial zero divisors</strong> — <strong>a closed identity, evaluated by the Lean 4 kernel.</strong> No domain is walked here — the proposition reduces, and the kernel confirms the reduction. It is checked, not exhausted, and it is not offered as the larger claim.</p><p><strong>Statement (Lean):</strong></p><pre><code>M9 (3 * 3) == 0 &amp;&amp; M9 (3) != 0</code></pre><p><strong>Statement (LaTeX):</strong></p><pre><code>\\mathrm{M9}\\mathopen{}\\left(3 \\cdot 3\\right) = 0 \\land \\mathrm{M9}\\mathopen{}\\left(3\\right) \\neq 0</code></pre><p><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. Checked sorry-free; <code>#print axioms</code> reports no axiom dependency. No Mathlib, no <code>native_decide</code>. □</p><p><strong>Structure.</strong> The statement parses to a tree of <strong>13</strong> nodes across <strong>5</strong> levels, with <strong>7</strong> leaves. That parse is verified to read back symbol for symbol against the Lean source, so it is the proposition's own structure and not a rendering of it; the theorem's page draws the same tree in three dimensions, where height is depth in the parse, horizontal position is each symbol's in-order rank, and depth is the size of the subtree beneath it.</p><p><strong>What this record establishes.</strong> <strong>A dated, public, citable deposit</strong> of this declaration and its machine-checked proof, recomputable from the sources attached to it. That is priority, and the record proves it on its own. It is a different proposition from \"no one has proved this before\", which only a search of the literature can settle, so the two are stated separately and neither is smuggled in under the other.</p><p><strong>Novelty: UNCLASSIFIED — an open question, not a claim. No prior-art search has been performed for this source file, so this record asserts priority of deposit and nothing about the literature.</strong></p><p><strong>Verification.</strong> The proof needs 3 files, all attached: <code>src/proof/mechanical.lean</code>, <code>src/proof/address.lean</code>, <code>src/proof/fnv.lean</code>. Check it with <code>lake env lean src/proof/mechanical.lean src/proof/address.lean src/proof/fnv.lean</code>, or clone <a href=\"https://github.com/ceccec/millennium-solutions\">https://github.com/ceccec/millennium-solutions</a> and run <code>npm run lean</code>. The content-address of this declaration is recorded as <code>lean_mechanical_trial_zero_divisors</code> at <a href=\"https://ceccec.github.io/millennium-solutions/theorem/lean_mechanical_trial_zero_divisors\">https://ceccec.github.io/millennium-solutions/theorem/lean_mechanical_trial_zero_divisors</a>. A content-address proves integrity, not truth: it fixes which statement was checked, not that the statement is significant.</p><p><strong>Funding.</strong> Independent research. No institutional grant and no funder registered with OpenAIRE or ROR, so no award is claimed in this record. Development is supported by direct contribution: https://revolut.me/ceccec</p><p><strong>Scope, stated as plainly as the claim.</strong> The declaration is decided over a finite domain. It settles no Clay Millennium Problem, asserts no quantum speedup, and describes no physical system. <strong>0/7.</strong></p>",
+  "description": "<p><strong>trial zero divisors</strong> — <strong>a closed identity, evaluated by the Lean 4 kernel.</strong> No domain is walked here — the proposition reduces, and the kernel confirms the reduction. It is checked, not exhausted, and it is not offered as the larger claim.</p><p><strong>Statement (Lean):</strong></p><pre><code>M9 (3 * 3) == 0 &amp;&amp; M9 (3) != 0</code></pre><p><strong>Statement (LaTeX):</strong></p><pre><code>\\mathrm{M9}\\mathopen{}\\left(3 \\cdot 3\\right) = 0 \\land \\mathrm{M9}\\mathopen{}\\left(3\\right) \\neq 0</code></pre><p><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. Checked sorry-free; <code>#print axioms</code> reports no axiom dependency. No Mathlib, no <code>native_decide</code>. □</p><p><strong>Structure.</strong> The statement parses to a tree of <strong>13</strong> nodes across <strong>5</strong> levels, with <strong>7</strong> leaves. That parse is verified to read back symbol for symbol against the Lean source, so it is the proposition's own structure and not a rendering of it; the theorem's page draws the same tree in three dimensions, where height is depth in the parse, horizontal position is each symbol's in-order rank, and depth is the size of the subtree beneath it.</p><p><strong>What this record establishes.</strong> <strong>A dated, public, citable deposit</strong> of this declaration and its machine-checked proof, recomputable from the sources attached to it. That is priority, and the record proves it on its own. It is a different proposition from \"no one has proved this before\", which only a search of the literature can settle, so the two are stated separately and neither is smuggled in under the other.</p><p><strong>Novelty: UNCLASSIFIED — an open question, not a claim. No prior-art search has been performed for this source file, so this record asserts priority of deposit and nothing about the literature.</strong></p><p><strong>Verification.</strong> The proof needs 3 files, all attached: <code>src/proof/mechanical.lean</code>, <code>src/proof/address.lean</code>, <code>src/proof/fnv.lean</code>. Check it with <code>lake env lean src/proof/mechanical.lean src/proof/address.lean src/proof/fnv.lean</code>, or clone <a href=\"https://github.com/ceccec/millennium-solutions\">https://github.com/ceccec/millennium-solutions</a> and run <code>npm run lean</code>. The content-address of this declaration is recorded as <code>lean_mechanical_trial_zero_divisors</code> at <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_mechanical_trial_zero_divisors\">https://ceccec.psg.bg/millennium-solutions/theorem/lean_mechanical_trial_zero_divisors</a>. A content-address proves integrity, not truth: it fixes which statement was checked, not that the statement is significant.</p><p><strong>Funding.</strong> Independent research. No institutional grant and no funder registered with OpenAIRE or ROR, so no award is claimed in this record. Development is supported by direct contribution: https://revolut.me/ceccec</p><p><strong>Scope, stated as plainly as the claim.</strong> The declaration is decided over a finite domain. It settles no Clay Millennium Problem, asserts no quantum speedup, and describes no physical system. <strong>0/7.</strong></p>",
   "keywords": [
     "Lean 4",
     "machine-checked proof",
@@ -43,15 +43,15 @@
       "relation": "isPartOf"
     },
     {
-      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_mechanical_trial_zero_divisors",
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_mechanical_trial_zero_divisors",
       "relation": "isDocumentedBy"
     },
     {
-      "identifier": "https://ceccec.github.io/millennium-solutions/paper",
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/paper",
       "relation": "isDocumentedBy"
     },
     {
-      "identifier": "https://ceccec.github.io/millennium-solutions/proofs",
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/proofs",
       "relation": "isDocumentedBy"
     },
     {
@@ -71,44 +71,44 @@
       "relation": "isSupplementedBy"
     },
     {
-      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_address_raw_bytes_of_a",
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_address_raw_bytes_of_a",
       "relation": "references"
     },
     {
-      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_address_to_uuid_bytes_of_a",
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_address_to_uuid_bytes_of_a",
       "relation": "references"
     },
     {
-      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_address_to_uuid_bytes_of_uuidna",
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_address_to_uuid_bytes_of_uuidna",
       "relation": "references"
     },
     {
-      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_address_address_is_sixteen_bytes",
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_address_address_is_sixteen_bytes",
       "relation": "references"
     },
     {
-      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_fnv_hash_a_seed_zero",
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_hash_a_seed_zero",
       "relation": "references"
     },
     {
-      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_fnv_hash_ab_seed_zero",
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_hash_ab_seed_zero",
       "relation": "references"
     },
     {
-      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_fnv_hash_a_seed_golden",
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_hash_a_seed_golden",
       "relation": "references"
     },
     {
-      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_fnv_hash_uuidna_seed_zero",
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_hash_uuidna_seed_zero",
       "relation": "references"
     }
   ],
   "references": [
     "Rouschev, T. The ℤ/9 Vortex Framework. Zenodo. https://doi.org/10.5281/zenodo.21819217",
     "Declaration `trial_zero_divisors`, src/proof/mechanical.lean, Lean 4, closed by by decide. https://github.com/ceccec/millennium-solutions/blob/main/src/proof/mechanical.lean",
-    "Typeset statement and proof census: https://ceccec.github.io/millennium-solutions/paper",
-    "Content-addressed record lean_mechanical_trial_zero_divisors, receipt fedf25c8-630d-8419-9d1b-b14d516244b8: https://ceccec.github.io/millennium-solutions/theorem/lean_mechanical_trial_zero_divisors",
-    "Verifier and recomputation instructions: https://ceccec.github.io/millennium-solutions/verify",
+    "Typeset statement and proof census: https://ceccec.psg.bg/millennium-solutions/paper",
+    "Content-addressed record lean_mechanical_trial_zero_divisors, receipt fedf25c8-630d-8419-9d1b-b14d516244b8: https://ceccec.psg.bg/millennium-solutions/theorem/lean_mechanical_trial_zero_divisors",
+    "Verifier and recomputation instructions: https://ceccec.psg.bg/millennium-solutions/verify",
     "Reference implementation, @uuidna/uuidna: https://www.npmjs.com/package/@uuidna/uuidna"
   ],
   "files": [

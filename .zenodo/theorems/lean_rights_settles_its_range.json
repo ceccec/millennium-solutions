@@ -43,11 +43,11 @@
       "relation": "isPartOf"
     },
     {
-      "identifier": "https://ceccec.github.io/millennium-solutions/paper",
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/paper",
       "relation": "isDocumentedBy"
     },
     {
-      "identifier": "https://ceccec.github.io/millennium-solutions/proofs",
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/proofs",
       "relation": "isDocumentedBy"
     },
     {
@@ -70,8 +70,8 @@
   "references": [
     "Rouschev, T. The ℤ/9 Vortex Framework. Zenodo. https://doi.org/10.5281/zenodo.21819217",
     "Declaration `rights_settles_its_range`, src/proof/rights.lean, Lean 4, closed by rfl. https://github.com/ceccec/millennium-solutions/blob/main/src/proof/rights.lean",
-    "Typeset statement and proof census: https://ceccec.github.io/millennium-solutions/paper",
-    "Verifier and recomputation instructions: https://ceccec.github.io/millennium-solutions/verify",
+    "Typeset statement and proof census: https://ceccec.psg.bg/millennium-solutions/paper",
+    "Verifier and recomputation instructions: https://ceccec.psg.bg/millennium-solutions/verify",
     "Reference implementation, @uuidna/uuidna: https://www.npmjs.com/package/@uuidna/uuidna"
   ],
   "files": [

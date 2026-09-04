@@ -9,7 +9,7 @@
       "affiliation": "PSG, Bulgaria"
     }
   ],
-  "description": "<p><strong>cubes is closed under fourth</strong> — <strong>decided over the whole of its finite domain by exhaustion, every case walked by the Lean 4 kernel.</strong> Not sampled and not argued: within that domain there is no residual uncertainty and no case left untested. The domain read off the statement is 9 cases — a LOWER BOUND, not a count: where a statement generates its own domain the kernel walks more than the numerals name, and this one is read the same way the paper ranks by it.</p><p><strong>Statement (Lean):</strong></p><pre><code>[0, 1, 8].all (fun d => [0, 1, 8].contains (m9 (d ^ 4)))</code></pre><p><strong>Statement (LaTeX):</strong></p><pre><code>\\forall d \\in [0,\\,1,\\,8],\\; \\mathrm{m9}\\mathopen{}\\left(d^{4}\\right) \\in [0,\\,1,\\,8]</code></pre><p><em>Proof.</em> <code>by decide</code> — exhausting its domain, of which the statement names 9 cases. Checked sorry-free; <code>#print axioms</code> reports no axiom dependency. No Mathlib, no <code>native_decide</code>. □</p><p><strong>Structure.</strong> The statement parses to a tree of <strong>3</strong> nodes across <strong>2</strong> levels, with <strong>2</strong> leaves. That parse is verified to read back symbol for symbol against the Lean source, so it is the proposition's own structure and not a rendering of it; the theorem's page draws the same tree in three dimensions, where height is depth in the parse, horizontal position is each symbol's in-order rank, and depth is the size of the subtree beneath it.</p><p><strong>What this record establishes.</strong> <strong>A dated, public, citable deposit</strong> of this declaration and its machine-checked proof, recomputable from the sources attached to it. That is priority, and the record proves it on its own. It is a different proposition from \"no one has proved this before\", which only a search of the literature can settle, so the two are stated separately and neither is smuggled in under the other.</p><p><strong>Novelty: UNCLASSIFIED — an open question, not a claim. No prior-art search has been performed for this source file, so this record asserts priority of deposit and nothing about the literature.</strong></p><p><strong>Verification.</strong> The proof needs 2 files, all attached: <code>src/proof/imagined.lean</code>, <code>src/proof/z9.lean</code>. Check it with <code>lake env lean src/proof/imagined.lean src/proof/z9.lean</code>, or clone <a href=\"https://github.com/ceccec/millennium-solutions\">https://github.com/ceccec/millennium-solutions</a> and run <code>npm run lean</code>. The content-address of this declaration is recorded as <code>lean_imagined_cubes_is_closed_under_fourth</code> at <a href=\"https://ceccec.github.io/millennium-solutions/theorem/lean_imagined_cubes_is_closed_under_fourth\">https://ceccec.github.io/millennium-solutions/theorem/lean_imagined_cubes_is_closed_under_fourth</a>. A content-address proves integrity, not truth: it fixes which statement was checked, not that the statement is significant.</p><p><strong>Funding.</strong> Independent research. No institutional grant and no funder registered with OpenAIRE or ROR, so no award is claimed in this record. Development is supported by direct contribution: https://revolut.me/ceccec</p><p><strong>Scope, stated as plainly as the claim.</strong> The declaration is decided over a finite domain. It settles no Clay Millennium Problem, asserts no quantum speedup, and describes no physical system. <strong>0/7.</strong></p>",
+  "description": "<p><strong>cubes is closed under fourth</strong> — <strong>decided over the whole of its finite domain by exhaustion, every case walked by the Lean 4 kernel.</strong> Not sampled and not argued: within that domain there is no residual uncertainty and no case left untested. The domain read off the statement is 9 cases — a LOWER BOUND, not a count: where a statement generates its own domain the kernel walks more than the numerals name, and this one is read the same way the paper ranks by it.</p><p><strong>Statement (Lean):</strong></p><pre><code>[0, 1, 8].all (fun d => [0, 1, 8].contains (m9 (d ^ 4)))</code></pre><p><strong>Statement (LaTeX):</strong></p><pre><code>\\forall d \\in [0,\\,1,\\,8],\\; \\mathrm{m9}\\mathopen{}\\left(d^{4}\\right) \\in [0,\\,1,\\,8]</code></pre><p><em>Proof.</em> <code>by decide</code> — exhausting its domain, of which the statement names 9 cases. Checked sorry-free; <code>#print axioms</code> reports no axiom dependency. No Mathlib, no <code>native_decide</code>. □</p><p><strong>Structure.</strong> The statement parses to a tree of <strong>3</strong> nodes across <strong>2</strong> levels, with <strong>2</strong> leaves. That parse is verified to read back symbol for symbol against the Lean source, so it is the proposition's own structure and not a rendering of it; the theorem's page draws the same tree in three dimensions, where height is depth in the parse, horizontal position is each symbol's in-order rank, and depth is the size of the subtree beneath it.</p><p><strong>What this record establishes.</strong> <strong>A dated, public, citable deposit</strong> of this declaration and its machine-checked proof, recomputable from the sources attached to it. That is priority, and the record proves it on its own. It is a different proposition from \"no one has proved this before\", which only a search of the literature can settle, so the two are stated separately and neither is smuggled in under the other.</p><p><strong>Novelty: UNCLASSIFIED — an open question, not a claim. No prior-art search has been performed for this source file, so this record asserts priority of deposit and nothing about the literature.</strong></p><p><strong>Verification.</strong> The proof needs 2 files, all attached: <code>src/proof/imagined.lean</code>, <code>src/proof/z9.lean</code>. Check it with <code>lake env lean src/proof/imagined.lean src/proof/z9.lean</code>, or clone <a href=\"https://github.com/ceccec/millennium-solutions\">https://github.com/ceccec/millennium-solutions</a> and run <code>npm run lean</code>. The content-address of this declaration is recorded as <code>lean_imagined_cubes_is_closed_under_fourth</code> at <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_imagined_cubes_is_closed_under_fourth\">https://ceccec.psg.bg/millennium-solutions/theorem/lean_imagined_cubes_is_closed_under_fourth</a>. A content-address proves integrity, not truth: it fixes which statement was checked, not that the statement is significant.</p><p><strong>Funding.</strong> Independent research. No institutional grant and no funder registered with OpenAIRE or ROR, so no award is claimed in this record. Development is supported by direct contribution: https://revolut.me/ceccec</p><p><strong>Scope, stated as plainly as the claim.</strong> The declaration is decided over a finite domain. It settles no Clay Millennium Problem, asserts no quantum speedup, and describes no physical system. <strong>0/7.</strong></p>",
   "keywords": [
     "Lean 4",
     "machine-checked proof",
@@ -43,15 +43,15 @@
       "relation": "isPartOf"
     },
     {
-      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_imagined_cubes_is_closed_under_fourth",
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_imagined_cubes_is_closed_under_fourth",
       "relation": "isDocumentedBy"
     },
     {
-      "identifier": "https://ceccec.github.io/millennium-solutions/paper",
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/paper",
       "relation": "isDocumentedBy"
     },
     {
-      "identifier": "https://ceccec.github.io/millennium-solutions/proofs",
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/proofs",
       "relation": "isDocumentedBy"
     },
     {
@@ -71,28 +71,28 @@
       "relation": "isSupplementedBy"
     },
     {
-      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_z9_units_are_six",
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_z9_units_are_six",
       "relation": "references"
     },
     {
-      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_z9_units_count",
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_z9_units_count",
       "relation": "references"
     },
     {
-      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_z9_hasinv_units",
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_z9_hasinv_units",
       "relation": "references"
     },
     {
-      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_z9_hasinv_triad_not",
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_z9_hasinv_triad_not",
       "relation": "references"
     }
   ],
   "references": [
     "Rouschev, T. The ℤ/9 Vortex Framework. Zenodo. https://doi.org/10.5281/zenodo.21819217",
     "Declaration `cubes_is_closed_under_fourth`, src/proof/imagined.lean, Lean 4, closed by by decide. https://github.com/ceccec/millennium-solutions/blob/main/src/proof/imagined.lean",
-    "Typeset statement and proof census: https://ceccec.github.io/millennium-solutions/paper",
-    "Content-addressed record lean_imagined_cubes_is_closed_under_fourth, receipt 7fdaaa8e-7eaf-84dd-bf18-b4f9e16bc584: https://ceccec.github.io/millennium-solutions/theorem/lean_imagined_cubes_is_closed_under_fourth",
-    "Verifier and recomputation instructions: https://ceccec.github.io/millennium-solutions/verify",
+    "Typeset statement and proof census: https://ceccec.psg.bg/millennium-solutions/paper",
+    "Content-addressed record lean_imagined_cubes_is_closed_under_fourth, receipt 7fdaaa8e-7eaf-84dd-bf18-b4f9e16bc584: https://ceccec.psg.bg/millennium-solutions/theorem/lean_imagined_cubes_is_closed_under_fourth",
+    "Verifier and recomputation instructions: https://ceccec.psg.bg/millennium-solutions/verify",
     "Reference implementation, @uuidna/uuidna: https://www.npmjs.com/package/@uuidna/uuidna"
   ],
   "files": [

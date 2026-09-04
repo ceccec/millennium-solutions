@@ -90,6 +90,35 @@ if (!checked) {
   console.log(`  a pass; it is a run that established nothing, and it says so rather than showing a tick.`)
   process.exit(0)
 }
+// ── AND THE SITE URLS THE RECORDS PUBLISH, WHICH MUST NOT REDIRECT EITHER ───────────────────────────────
+// The deposition records name theorem pages, the paper and the proofs index. Those were pointing at
+// ceccec.github.io, which 301-redirects to ceccec.psg.bg — the origin .vitepress/config.ts declares, the
+// sitemap uses, and every page emits as its own rel=canonical. A citation index following a 301 gets a
+// redirect rather than the page, a redirect can lapse or be repointed by whoever holds the old host, and a
+// minted record naming a non-canonical URL cannot be corrected afterwards.
+//
+// Found by RESOLVING a link instead of reading it. The concept DOI taught that lesson and I had not applied
+// it to this deposit's own outbound links.
+if (existsSync(DEP)) {
+  const one = JSON.parse(readFileSync(`${DEP}/${readdirSync(DEP).find((f) => f.endsWith('.json'))!}`, 'utf8'))
+  const urls = [...new Set((one.related_identifiers ?? [])
+    .map((r: { identifier: string }) => r.identifier)
+    .filter((u: string) => typeof u === 'string' && u.startsWith('http')))] as string[]
+  let redirected = 0
+  for (const u of urls) {
+    try {
+      const r = await fetch(u, { redirect: 'manual', signal: AbortSignal.timeout(20_000) })
+      if (r.status >= 300 && r.status < 400) {
+        redirected++
+        console.log(`  ✗ ${u}`)
+        console.log(`      ${r.status} → ${r.headers.get('location') ?? '(no location)'} — a record should name the resource, not a redirect to it`)
+      }
+    } catch { /* offline: reported by the unread branch above */ }
+  }
+  if (!redirected && urls.length) console.log(`\n  · ${urls.length} site URL(s) the records publish resolve directly, no redirects`)
+  if (redirected) bad += redirected
+}
+
 console.log(bad
   ? `\n✗ doi-resolve: ${bad} of ${checked} identifier(s) cited as this work resolve to something else`
   : `\n✓ doi-resolve: ${checked} identifier(s) resolved. Every DOI cited AS THIS WORK reaches a record naming`
