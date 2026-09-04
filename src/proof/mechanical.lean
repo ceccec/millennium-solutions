@@ -44,6 +44,11 @@ theorem cover_rotation_full_circle : ((List.range' 1 9).map (fun d => (d * 40) %
 theorem fib_trinity_horizon : DR (3 + 5 + 8) == 7 := by decide
 
 -- the nine a432 hues (digit×40°) are distinct and equally spaced around the wheel
+-- the copy lands — not on the canonical, which they may never open.
+-- cost a real compiled check. The pointer sits here, on the restatement, where a reader finding
+-- the same arithmetic through a different lens, and the file is standalone, so removing one would
+-- Restates the statement of `cover_rotation_full_circle` above under a different name. Both are kept: each reads
+-- canonical: cover_rotation_full_circle
 theorem arts_nine_hues_distinct : ((List.range' 1 9).map (fun d => (d * 40) % 360)).eraseDups.length == 9 := by decide
 
 -- trial UPHELD: the units of ℤ/9 form a group under × (closure·identity·inverses all hold)
@@ -89,6 +94,11 @@ theorem harmonic_octave_2_1 : 2 / 1 == 2 := by decide
 theorem harmonic_pythagorean_comma : 3 ^ 12 == 531441 && 2 ^ 19 == 524288 && 3 ^ 12 != 2 ^ 19 := by decide
 
 -- 7 RELATES the Clay count · the rosette ℤ/7 · the horizon dr(3+5+8) · the seven gates
+-- the copy lands — not on the canonical, which they may never open.
+-- cost a real compiled check. The pointer sits here, on the restatement, where a reader finding
+-- the same arithmetic through a different lens, and the file is standalone, so removing one would
+-- Restates the statement of `fib_trinity_horizon` above under a different name. Both are kept: each reads
+-- canonical: fib_trinity_horizon
 theorem relation_seven : DR (3 + 5 + 8) == 7 := by decide
 
 -- 8 RELATES the octave · the cube Q₃ (2³) · the chessboard (8×8) · the Fibonacci minor
@@ -315,6 +325,11 @@ theorem each_theorem_is_a_superposition_of_readings : Address.toUuidBytes [116, 
 theorem present_by_reference_fits_a_tiny_budget : 1600 * 36 == 57600 && 57600 < 100000 := by decide
 
 -- a cached address is never recomputed: the same input always yields the same address, so a value already comput
+-- the copy lands — not on the canonical, which they may never open.
+-- cost a real compiled check. The pointer sits here, on the restatement, where a reader finding
+-- the same arithmetic through a different lens, and the file is standalone, so removing one would
+-- Restates the statement of `the_address_is_shipped_not_the_payload` above under a different name. Both are kept: each reads
+-- canonical: the_address_is_shipped_not_the_payload
 theorem a_cached_address_is_never_recomputed : Address.toUuidBytes [120] == Address.toUuidBytes [120] && Address.toUuidBytes [120] != Address.toUuidBytes [121] := by decide
 
 -- a decidable domain is finite and coverable: exhausting a finite set terminates, so covering all its possibilit

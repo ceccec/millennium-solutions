@@ -14,7 +14,7 @@
 // duplicate is bad; silently merging two distinct results because their text matched would be worse.
 import { readFileSync, readdirSync, existsSync } from 'node:fs'
 import { homedir } from 'node:os'
-import { leanTheorems } from '../src/api/index.ts'
+import { leanTheorems, leanSource } from '../src/api/index.ts'
 import { statementAddress, STATEMENT_ADDRESS_SPEC, ownFiles } from '../src/publication/index.ts'
 
 const T = leanTheorems()
@@ -59,6 +59,42 @@ if (!existsSync(FUSION)) {
   }
   console.log(`\n  ${hits ? '✗' : '·'} ${scanned} claim(s) across sibling repositories scanned, ${hits} sharing an address with one of ours`)
 }
+
+// ── AN UNDECLARED DUPLICATE FAILS; A DECLARED ONE IS A LEDGERED FACT ────────────────────────────────────
+// ceccec.github.io's resolution, adopted. They found golden_ratio_bounds proved byte-identically in two
+// files and did NOT delete either: each of their Lean files is standalone, so a file must carry the bounds
+// it reasons with and removing the restatement would cost a real compiled check. Instead the restating
+// theorem's own doc comment names the canonical one, and their gate fails only on a duplicate that declares
+// nothing.
+//
+// Two refinements of theirs that matter and that I would have got wrong: the pointer belongs in the
+// RESTATING theorem, because that is where a reader lands when they find the copy; and failing on ANY
+// duplicate rather than an UNDECLARED one becomes pressure to delete legitimate restatements.
+//
+// A declaration is `-- canonical: <theorem name>` in the comment block above the restating theorem.
+const canonicalOf = (t: { file: string; name: string }): string | null => {
+  const lines = leanSource(t.file).split('\n')
+  const i = lines.findIndex((l) => new RegExp(`^\\s*theorem\\s+${t.name}\\b`).test(l))
+  if (i < 0) return null
+  for (let j = i - 1; j >= 0 && /^\s*--/.test(lines[j]); j--) {
+    const m = lines[j].match(/^--\s*canonical:\s*(\w+)/)
+    if (m) return m[1]
+  }
+  return null
+}
+
+let undeclared = 0
+for (const g of dupes) {
+  if (new Set(g.map((t) => t.namespace)).size !== 1) continue   // different namespaces: not one proposition
+  const declared = g.filter((t) => canonicalOf(t))
+  if (declared.length) continue                                  // at least one points at the canonical
+  undeclared++
+  console.log(`\n  ✗ ${g.length} theorems share a statement in ${g[0].namespace} and none declares a canonical:`)
+  for (const t of g) console.log(`      ${t.file} · ${t.name}`)
+  console.log(`      add \`-- canonical: <name>\` above the restating one. A known duplicate with a pointer is`)
+  console.log(`      a ledgered fact; an undeclared one is two publications waiting to happen.`)
+}
+if (undeclared) process.exitCode = 1
 
 // ── EVERY SIBLING AUDITED BY THE SAME RULE, INCLUDING US ────────────────────────────────────────────────
 // "Let each repo audit the rest" is only worth having if the audit is reproducible by the audited. This

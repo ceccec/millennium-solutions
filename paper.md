@@ -3103,7 +3103,7 @@ else. What the kernel adds is what a test cannot give — the proposition checke
 <pre class="thm-statement"><code>((List.range' 1 9).map (fun d =&gt; (d * 40) % 360)).eraseDups.length == 9</code></pre>
 <details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\operatorname{dedup}\left(\{\, d \cdot 40 \bmod 360 \mid d \in \{1,\dots,9\} \,\}\right)\right| = 9</code></pre></details>
 </div>
-<p class="thm-remark">the nine a432 hues (digit×40°) are distinct and equally spaced around the wheel</p>
+<p class="thm-remark">the nine a432 hues (digit×40°) are distinct and equally spaced around the wheel the copy lands — not on the canonical, which they may never open. cost a real compiled check. The pointer sits here, on the restatement, where a reader finding the same arithmetic through a different lens, and the file is standalone, so removing one would Restates the statement of `cover_rotation_full_circle` above under a different name. Both are kept: each reads canonical: cover_rotation_full_circle</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-trial_units_group">
@@ -3238,7 +3238,7 @@ else. What the kernel adds is what a test cannot give — the proposition checke
 <pre class="thm-statement"><code>DR (3 + 5 + 8) == 7</code></pre>
 <details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{DR}\mathopen{}\left(3 + 5 + 8\right) = 7</code></pre></details>
 </div>
-<p class="thm-remark">7 RELATES the Clay count · the rosette ℤ/7 · the horizon dr(3+5+8) · the seven gates</p>
+<p class="thm-remark">7 RELATES the Clay count · the rosette ℤ/7 · the horizon dr(3+5+8) · the seven gates the copy lands — not on the canonical, which they may never open. cost a real compiled check. The pointer sits here, on the restatement, where a reader finding the same arithmetic through a different lens, and the file is standalone, so removing one would Restates the statement of `fib_trinity_horizon` above under a different name. Both are kept: each reads canonical: fib_trinity_horizon</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-relation_eight">
@@ -3838,7 +3838,7 @@ else. What the kernel adds is what a test cannot give — the proposition checke
 <pre class="thm-statement"><code>Address.toUuidBytes [120] == Address.toUuidBytes [120] &amp;&amp; Address.toUuidBytes [120] != Address.toUuidBytes [121]</code></pre>
 <details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{Address.toUuidBytes}\mathopen{}\left([120]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([120]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([120]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([121]\right)</code></pre></details>
 </div>
-<p class="thm-remark">a cached address is never recomputed: the same input always yields the same address, so a value already comput</p>
+<p class="thm-remark">a cached address is never recomputed: the same input always yields the same address, so a value already comput the copy lands — not on the canonical, which they may never open. cost a real compiled check. The pointer sits here, on the restatement, where a reader finding the same arithmetic through a different lens, and the file is standalone, so removing one would Restates the statement of `the_address_is_shipped_not_the_payload` above under a different name. Both are kept: each reads canonical: the_address_is_shipped_not_the_payload</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-a_decidable_domain_is_finite_and_coverable">

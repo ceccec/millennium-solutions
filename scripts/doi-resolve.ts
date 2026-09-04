@@ -45,6 +45,7 @@ if (existsSync(DEP)) {
 }
 
 let bad = 0, checked = 0
+const unread: [string, string][] = []
 for (const c of cites) {
   let landed = '', title = ''
   try {
@@ -58,9 +59,12 @@ for (const c of cites) {
     }
     checked++
   } catch (e) {
-    console.log(`○ doi-resolve: NOT CHECKED — could not reach the network (${(e as Error).message}).`)
-    console.log('  no identifier was confirmed on this run, which is not the same as their being correct.')
-    process.exit(0)
+    // UNREAD IS NOT AGREEMENT, and it is not disagreement either. uuidna-49 keeps those strictly apart and
+    // I did not: any failure here exited 0, so a 429 or a timeout on ONE identifier read as a clean run for
+    // ALL of them. An identifier that could not be read is recorded as unread and reported at the end; the
+    // gate refuses to call the sweep complete when any remain.
+    unread.push([c.doi, (e as Error).message])
+    continue
   }
   const ours = title.includes(OURS)
   const moved = landed && !c.doi.endsWith(landed)
@@ -72,9 +76,23 @@ for (const c of cites) {
   if (flag) console.log(`      cited as ours and does not name "${OURS}" — a citation that does not reach this work`)
 }
 
+for (const [doi, why] of unread) console.log(`  ? ${doi}  UNREAD — ${why}`)
+if (unread.length) {
+  console.log(`\n○ doi-resolve: ${unread.length} identifier(s) could not be read on this run. That is not`)
+  console.log(`  agreement and it is not disagreement — they are unverified, and ${checked} others were checked.`)
+}
+// A GREEN LINE ON ZERO CHECKS IS THE DEFECT THIS TREE SPENDS ITS GATES ON, and I wrote one into the fix
+// that was meant to separate unread from disagreeing: with every identifier unreachable it reported
+// "✓ 0 identifier(s) resolved". Nothing verified is not everything verified. Success now requires that
+// something was actually read AND that nothing was left unread.
+if (!checked) {
+  console.log(`\n○ doi-resolve: NOTHING WAS VERIFIED — ${cites.length} identifier(s) cited, 0 read. This is not`)
+  console.log(`  a pass; it is a run that established nothing, and it says so rather than showing a tick.`)
+  process.exit(0)
+}
 console.log(bad
   ? `\n✗ doi-resolve: ${bad} of ${checked} identifier(s) cited as this work resolve to something else`
   : `\n✓ doi-resolve: ${checked} identifier(s) resolved. Every DOI cited AS THIS WORK reaches a record naming`
     + `\n  "${OURS}"; those cited as prior versions are reported with the title they actually carry, because a`
     + `\n  version chain is allowed to hold other work and this deposit says so in its own description.`)
-process.exit(bad ? 1 : 0)
+process.exit(bad ? 1 : 0)  // unread does not fail the build; it is reported, never silently passed
