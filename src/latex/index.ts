@@ -25,8 +25,8 @@ import { escapeHtml } from '../html/index.ts'
 type Tok = { k: 'num' | 'id' | 'op'; v: string }
 
 const OPS3 = ['>>>', '<<<']
-const OPS2 = ['==', '!=', '<=', '>=', '=>', '++', '&&', '||']
-const OPS1 = '+-*/%^<>=()[],.¬∧∨→↔≠≤≥·!'
+const OPS2 = ['==', '!=', '<=', '>=', '=>', '++', '&&', '||', ':=']
+const OPS1 = '+-*/%^<>=()[],.¬∧∨→↔≠≤≥·!:;'
 
 export function lex(src: string): Tok[] {
   const out: Tok[] = []
@@ -66,12 +66,16 @@ export type Node =
   | { t: 'un'; op: string; e: Node }
   | { t: 'app'; f: Node; a: Node }
   | { t: 'dot'; o: Node; name: string }
-  | { t: 'lam'; p: string; b: Node }
+  | { t: 'lam'; ps: string[]; b: Node }
   | { t: 'list'; xs: Node[] }
   | { t: 'ite'; c: Node; a: Node; b: Node }
   | { t: 'hole'; op: string }   // (· + ·) — the operator section
+  | { t: 'asc'; e: Node; ty: Node }        // (1 : Int) — a type ascription; the value is unchanged
+  | { t: 'tuple'; xs: Node[] }             // (a, b)
+  | { t: 'proj'; o: Node; i: string }      // p.1, p.2 — tuple projection
+  | { t: 'let'; name: string; e: Node; b: Node }   // let x := e; body
 
-const KEYWORD = new Set(['then', 'else', 'fun', 'if'])
+const KEYWORD = new Set(['then', 'else', 'fun', 'if', 'let'])
 
 class P {
   i = 0
@@ -85,18 +89,30 @@ class P {
   done() { return this.i >= this.ts.length }
 
   // Precedence, loosest first. Lean's real table is larger; this covers exactly what the statements use.
-  expr(): Node { return this.iff() }
+  expr(): Node {
+    // `let x := e; body` — a local binding. Ten statements use it, and it is written as mathematics the way
+    // mathematics writes it: the body, then "where x = e". The binding is NOT substituted into the body;
+    // substituting would show the reader an expression the source does not contain.
+    if (this.is('let')) {
+      this.i++
+      const n = this.peek(); if (!n || n.k !== 'id') throw new Error('expected a name after let')
+      this.i++; this.eat(':='); const e = this.expr(); this.eat(';')
+      return { t: 'let', name: n.v, e, b: this.expr() }
+    }
+    return this.iff()
+  }
   iff(): Node { let l = this.implies(); while (this.is('↔')) { this.i++; l = { t: 'bin', op: '↔', l, r: this.implies() } } return l }
   implies(): Node { let l = this.or(); if (this.is('→')) { this.i++; return { t: 'bin', op: '→', l, r: this.implies() } } return l }
   or(): Node { let l = this.and(); while (this.is('∨') || this.is('||')) { this.i++; l = { t: 'bin', op: '∨', l, r: this.and() } } return l }
   and(): Node { let l = this.cmp(); while (this.is('∧') || this.is('&&')) { this.i++; l = { t: 'bin', op: '∧', l, r: this.cmp() } } return l }
   cmp(): Node {
-    let l = this.add()
+    let l = this.shift()
     while (['==', '=', '!=', '≠', '<=', '≤', '>=', '≥', '<', '>'].some((o) => this.is(o))) {
-      const op = this.peek()!.v; this.i++; l = { t: 'bin', op, l, r: this.add() }
+      const op = this.peek()!.v; this.i++; l = { t: 'bin', op, l, r: this.shift() }
     }
     return l
   }
+  shift(): Node { let l = this.add(); while (this.is('>>>') || this.is('<<<')) { const op = this.peek()!.v; this.i++; l = { t: 'bin', op, l, r: this.add() } } return l }
   add(): Node { let l = this.mul(); while (this.is('+') || this.is('-') || this.is('++')) { const op = this.peek()!.v; this.i++; l = { t: 'bin', op, l, r: this.mul() } } return l }
   mul(): Node { let l = this.pow(); while (this.is('*') || this.is('/') || this.is('%')) { const op = this.peek()!.v; this.i++; l = { t: 'bin', op, l, r: this.pow() } } return l }
   pow(): Node { const l = this.unary(); if (this.is('^')) { this.i++; return { t: 'bin', op: '^', l, r: this.pow() } } return l }
@@ -118,7 +134,15 @@ class P {
   }
   post(): Node {
     let e = this.atom()
-    while (this.is('.')) { this.i++; const n = this.peek(); if (!n || n.k !== 'id') throw new Error('expected method name'); this.i++; e = { t: 'dot', o: e, name: n.v } }
+    while (this.is('.')) {
+      this.i++
+      const n = this.peek()
+      if (!n) throw new Error('expected method name')
+      // `p.1` is a projection, not a method — the dot is followed by a numeral.
+      if (n.k === 'num') { this.i++; e = { t: 'proj', o: e, i: n.v }; continue }
+      if (n.k !== 'id') throw new Error('expected method name')
+      this.i++; e = { t: 'dot', o: e, name: n.v }
+    }
     return e
   }
   atom(): Node {
@@ -126,10 +150,18 @@ class P {
     if (!t) throw new Error('unexpected end of statement')
     if (t.k === 'num') { this.i++; return { t: 'num', v: t.v } }
     if (t.v === 'fun') {
+      // SEVERAL PARAMETERS. `fun acc i => …` binds two; reading only the first left the second where the
+      // arrow was expected, which is the "expected => got i" this grammar used to fail on. Curried into
+      // nested lambdas, which is what Lean means by it.
       this.i++
-      const p = this.peek(); if (!p || p.k !== 'id') throw new Error('expected lambda parameter')
-      this.i++; this.eat('=>')
-      return { t: 'lam', p: p.v, b: this.expr() }
+      const ps: string[] = []
+      while (this.peek() && this.peek()!.k === 'id' && !this.is('=>')) { ps.push(this.peek()!.v); this.i++ }
+      if (!ps.length) throw new Error('expected lambda parameter')
+      this.eat('=>')
+      // The parameter LIST is kept, not curried into nested lambdas. Currying is what Lean means, but
+      // unparse then writes back an extra `fun` and `=>` per parameter and the round-trip reports a loss
+      // that never happened. The tree records what was written.
+      return { t: 'lam', ps, b: this.expr() }
     }
     if (t.v === 'if') {
       this.i++; const c = this.expr(); this.eat('then'); const a = this.expr(); this.eat('else'); const b = this.expr()
@@ -144,7 +176,17 @@ class P {
         this.i++; this.eat('·'); this.eat(')')
         return { t: 'hole', op: op.v }
       }
-      const e = this.expr(); this.eat(')'); return e
+      const e = this.expr()
+      // `(1 : Int)` — an ascription names the type and leaves the value alone. The type is KEPT in the tree
+      // so unparse can put it back; only the rendering drops it, because a reader of the mathematics wants
+      // the value and the round-trip wants every token.
+      if (this.is(':')) { this.i++; const ty = this.expr(); this.eat(')'); return { t: 'asc', e, ty } }
+      if (this.is(',')) {
+        const xs = [e]
+        while (this.is(',')) { this.i++; xs.push(this.expr()) }
+        this.eat(')'); return { t: 'tuple', xs }
+      }
+      this.eat(')'); return e
     }
     if (t.v === '[') {
       this.i++
@@ -208,14 +250,20 @@ export function tex(n: Node): string {
     case 'id': return idTex(n.v)
     case 'hole': return `(\\cdot\\,${NAME[n.op] ?? n.op}\\,\\cdot)`
     case 'un': return n.op === '¬' ? `\\lnot ${tex(n.e)}` : `-${tex(n.e)}`
-    case 'lam': return `${idTex(n.p)} \\mapsto ${tex(n.b)}`
+    case 'lam': return `${n.ps.map(idTex).join(',\\,')} \\mapsto ${tex(n.b)}`
     case 'list': return `[${n.xs.map(tex).join(',\\,')}]`
+    case 'asc': return tex(n.e)
+    case 'tuple': return `\\left(${n.xs.map(tex).join(',\\,')}\\right)`
+    case 'proj': return `${tex(n.o)}_{${n.i}}`
+    case 'let': return `${tex(n.b)} \\quad \\text{where } ${idTex(n.name)} = ${tex(n.e)}`
     case 'ite': return `\\begin{cases}${tex(n.a)} & \\text{if } ${tex(n.c)}\\\\ ${tex(n.b)} & \\text{otherwise}\\end{cases}`
     case 'bin': {
       const l = tex(n.l), r = tex(n.r)
       if (n.op === '^') return `${l}^{${r}}`
       if (n.op === '/') return `\\frac{${l}}{${r}}`
       if (n.op === '%') return `${l} \\bmod ${r}`
+      if (n.op === '>>>') return `${l} \\gg ${r}`
+      if (n.op === '<<<') return `${l} \\ll ${r}`
       return `${l} ${NAME[n.op] ?? n.op} ${r}`
     }
     case 'dot': return dotTex(n, [])
@@ -232,35 +280,41 @@ export function tex(n: Node): string {
 /** A method call, rendered as the mathematics it means. Unknown methods throw — see the header. */
 function dotTex(d: Extract<Node, { t: 'dot' }>, args: Node[]): string {
   const o = tex(d.o)
-  const lam = (a: Node | undefined) => (a && a.t === 'lam' ? a : null)
+  const lam = (a: Node | undefined) => (a && a.t === 'lam' && a.ps.length === 1 ? a : null)
   switch (d.name) {
     case 'all': { const f = lam(args[0])
-      if (f) return `\\forall ${idTex(f.p)} \\in ${o},\\; ${tex(f.b)}`
+      if (f) return `\\forall ${idTex(f.ps[0])} \\in ${o},\\; ${tex(f.b)}`
       if (args.length === 1) return `\\forall ${BOUND} \\in ${o},\\; ${applied(args[0], tex)}`
       break }
     case 'any': { const f = lam(args[0])
-      if (f) return `\\exists ${idTex(f.p)} \\in ${o} : ${tex(f.b)}`
+      if (f) return `\\exists ${idTex(f.ps[0])} \\in ${o} : ${tex(f.b)}`
       if (args.length === 1) return `\\exists ${BOUND} \\in ${o} : ${applied(args[0], tex)}`
       break }
     case 'filter': { const f = lam(args[0])
-      if (f) return `\\{\\, ${idTex(f.p)} \\in ${o} \\mid ${tex(f.b)} \\,\\}`
+      if (f) return `\\{\\, ${idTex(f.ps[0])} \\in ${o} \\mid ${tex(f.b)} \\,\\}`
       if (args.length === 1) return `\\{\\, ${BOUND} \\in ${o} \\mid ${applied(args[0], tex)} \\,\\}`
       break }
-    case 'map': { const f = lam(args[0]); if (f) return `\\{\\, ${tex(f.b)} \\mid ${idTex(f.p)} \\in ${o} \\,\\}`; if (args.length === 1) return `${tex(args[0])}[${o}]` ; break }
+    case 'map': { const f = lam(args[0]); if (f) return `\\{\\, ${tex(f.b)} \\mid ${idTex(f.ps[0])} \\in ${o} \\,\\}`; if (args.length === 1) return `${tex(args[0])}[${o}]` ; break }
     case 'length': if (!args.length) return `\\left|${o}\\right|`; break
     case 'contains': if (args.length === 1) return `${tex(args[0])} \\in ${o}`; break
     case 'eraseDups': if (!args.length) return `\\operatorname{dedup}\\left(${o}\\right)`; break
     case 'flatMap': { const f = lam(args[0]); if (!f) break
-      return `\\bigcup_{${idTex(f.p)} \\in ${o}} ${tex(f.b)}` }
+      return `\\bigcup_{${idTex(f.ps[0])} \\in ${o}} ${tex(f.b)}` }
     case 'foldr':
     case 'foldl': {
       // foldl (· + ·) 0 is a sum and nothing else here is; anything other than that exact shape falls
       // through to the throw, rather than being rendered as a sum it is not.
       if (args.length === 2 && args[0].t === 'hole' && args[0].op === '+' && args[1].t === 'num' && args[1].v === '0')
         return `\\sum ${o}`
+      // Any other fold is named rather than given a symbol it does not have: an operator and a seed,
+      // applied along the list. Inventing ∑-like notation for an arbitrary combiner would say more than
+      // the statement does.
+      if (args.length === 2) return `\\operatorname{fold}_{${tex(args[0])}}\\left(${o},\\, ${tex(args[1])}\\right)`
       break
     }
     case 'get!': if (args.length === 1) return `${o}_{${tex(args[0])}}`; break
+    case 'head?': if (!args.length) return `\\operatorname{head}\\left(${o}\\right)`; break
+    case 'getLast?': if (!args.length) return `\\operatorname{last}\\left(${o}\\right)`; break
     case 'reverse': if (!args.length) return `\\operatorname{reverse}\\left(${o}\\right)`; break
     case 'sum': if (!args.length) return `\\sum ${o}`; break
   }
@@ -286,14 +340,20 @@ function ml(n: Node): string {
     case 'id': return mi(n.v)
     case 'hole': return `<mrow>${mo('(')}${mo('·')}${mo(MOP[n.op] ?? n.op)}${mo('·')}${mo(')')}</mrow>`
     case 'un': return `<mrow>${mo(n.op === '¬' ? '¬' : '−')}${ml(n.e)}</mrow>`
-    case 'lam': return `<mrow>${mi(n.p)}${mo('↦')}${ml(n.b)}</mrow>`
+    case 'lam': return `<mrow>${n.ps.map(mi).join(mo(','))}${mo('↦')}${ml(n.b)}</mrow>`
     case 'list': return `<mrow>${mo('[')}${n.xs.map(ml).join(mo(','))}${mo(']')}</mrow>`
+    case 'asc': return ml(n.e)
+    case 'tuple': return `<mrow>${mo('(')}${n.xs.map(ml).join(mo(','))}${mo(')')}</mrow>`
+    case 'proj': return `<msub>${ml(n.o)}<mn>${X(n.i)}</mn></msub>`
+    case 'let': return `<mrow>${ml(n.b)}${mo('where')}${mi(n.name)}${mo('=')}${ml(n.e)}</mrow>`
     // Bracketed: unbracketed, `… = 1 if isUnit(d) ; otherwise 0 ∧ provenHere = 0` reads as though the
     // conjunct were part of the else-branch.
     case 'ite': return `<mrow>${mo('(')}${ml(n.a)}${mo('if')}${ml(n.c)}${mo(';')}${mo('otherwise')}${ml(n.b)}${mo(')')}</mrow>`
     case 'bin': {
       if (n.op === '^') return `<msup>${ml(n.l)}${ml(n.r)}</msup>`
       if (n.op === '/') return `<mfrac>${ml(n.l)}${ml(n.r)}</mfrac>`
+      if (n.op === '>>>') return `<mrow>${ml(n.l)}${mo('≫')}${ml(n.r)}</mrow>`
+      if (n.op === '<<<') return `<mrow>${ml(n.l)}${mo('≪')}${ml(n.r)}</mrow>`
       return `<mrow>${ml(n.l)}${mo(MOP[n.op] ?? n.op)}${ml(n.r)}</mrow>`
     }
     case 'dot': return dotMl(n, [])
@@ -321,32 +381,35 @@ function ml(n: Node): string {
 
 function dotMl(d: Extract<Node, { t: 'dot' }>, args: Node[]): string {
   const o = ml(d.o)
-  const lam = (a: Node | undefined) => (a && a.t === 'lam' ? a : null)
+  const lam = (a: Node | undefined) => (a && a.t === 'lam' && a.ps.length === 1 ? a : null)
   switch (d.name) {
     case 'all': { const f = lam(args[0])
-      if (f) return `<mrow>${mo('∀')}${mi(f.p)}${mo('∈')}${o}${mo(',')}${ml(f.b)}</mrow>`
+      if (f) return `<mrow>${mo('∀')}${mi(f.ps[0])}${mo('∈')}${o}${mo(',')}${ml(f.b)}</mrow>`
       if (args.length === 1) return `<mrow>${mo('∀')}${mi(BOUND)}${mo('∈')}${o}${mo(',')}${ml(args[0])}${mo('(')}${mi(BOUND)}${mo(')')}</mrow>`
       break }
     case 'any': { const f = lam(args[0])
-      if (f) return `<mrow>${mo('∃')}${mi(f.p)}${mo('∈')}${o}${mo(':')}${ml(f.b)}</mrow>`
+      if (f) return `<mrow>${mo('∃')}${mi(f.ps[0])}${mo('∈')}${o}${mo(':')}${ml(f.b)}</mrow>`
       if (args.length === 1) return `<mrow>${mo('∃')}${mi(BOUND)}${mo('∈')}${o}${mo(':')}${ml(args[0])}${mo('(')}${mi(BOUND)}${mo(')')}</mrow>`
       break }
     case 'filter': { const f = lam(args[0])
-      if (f) return `<mrow>${mo('{')}${mi(f.p)}${mo('∈')}${o}${mo('∣')}${ml(f.b)}${mo('}')}</mrow>`
+      if (f) return `<mrow>${mo('{')}${mi(f.ps[0])}${mo('∈')}${o}${mo('∣')}${ml(f.b)}${mo('}')}</mrow>`
       if (args.length === 1) return `<mrow>${mo('{')}${mi(BOUND)}${mo('∈')}${o}${mo('∣')}${ml(args[0])}${mo('(')}${mi(BOUND)}${mo(')')}${mo('}')}</mrow>`
       break }
-    case 'map': { const f = lam(args[0]); if (f) return `<mrow>${mo('{')}${ml(f.b)}${mo('∣')}${mi(f.p)}${mo('∈')}${o}${mo('}')}</mrow>`; if (args.length === 1) return `<mrow>${ml(args[0])}${mo('[')}${o}${mo(']')}</mrow>`; break }
+    case 'map': { const f = lam(args[0]); if (f) return `<mrow>${mo('{')}${ml(f.b)}${mo('∣')}${mi(f.ps[0])}${mo('∈')}${o}${mo('}')}</mrow>`; if (args.length === 1) return `<mrow>${ml(args[0])}${mo('[')}${o}${mo(']')}</mrow>`; break }
     case 'length': if (!args.length) return `<mrow>${mo('|')}${o}${mo('|')}</mrow>`; break
     case 'contains': if (args.length === 1) return `<mrow>${ml(args[0])}${mo('∈')}${o}</mrow>`; break
     case 'eraseDups': if (!args.length) return `<mrow>${mi('dedup')}${mo('(')}${o}${mo(')')}</mrow>`; break
     case 'flatMap': { const f = lam(args[0]); if (!f) break
-      return `<mrow>${mo('⋃')}${mi(f.p)}${mo('∈')}${o}${mo(',')}${ml(f.b)}</mrow>` }
+      return `<mrow>${mo('⋃')}${mi(f.ps[0])}${mo('∈')}${o}${mo(',')}${ml(f.b)}</mrow>` }
     case 'foldr':
     case 'foldl':
       if (args.length === 2 && args[0].t === 'hole' && args[0].op === '+' && args[1].t === 'num' && args[1].v === '0')
         return `<mrow>${mo('∑')}${o}</mrow>`
+      if (args.length === 2) return `<mrow>${mi('fold')}${mo('(')}${ml(args[0])}${mo(',')}${o}${mo(',')}${ml(args[1])}${mo(')')}</mrow>`
       break
     case 'get!': if (args.length === 1) return `<msub>${o}${ml(args[0])}</msub>`; break
+    case 'head?': if (!args.length) return `<mrow>${mi('head')}${mo('(')}${o}${mo(')')}</mrow>`; break
+    case 'getLast?': if (!args.length) return `<mrow>${mi('last')}${mo('(')}${o}${mo(')')}</mrow>`; break
     case 'reverse': if (!args.length) return `<mrow>${mi('reverse')}${mo('(')}${o}${mo(')')}</mrow>`; break
     case 'sum': if (!args.length) return `<mrow>${mo('∑')}${o}</mrow>`; break
   }
@@ -374,8 +437,12 @@ export function unparse(n: Node): string {
     case 'id': return n.v
     case 'hole': return `(· ${n.op} ·)`
     case 'un': return `(${n.op} ${unparse(n.e)})`
-    case 'lam': return `(fun ${n.p} => ${unparse(n.b)})`
+    case 'lam': return `(fun ${n.ps.join(' ')} => ${unparse(n.b)})`
     case 'list': return `[${n.xs.map(unparse).join(', ')}]`
+    case 'asc': return `(${unparse(n.e)} : ${unparse(n.ty)})`
+    case 'tuple': return `(${n.xs.map(unparse).join(', ')})`
+    case 'proj': return `(${unparse(n.o)}).${n.i}`
+    case 'let': return `let ${n.name} := ${unparse(n.e)}; ${unparse(n.b)}`
     case 'ite': return `(if ${unparse(n.c)} then ${unparse(n.a)} else ${unparse(n.b)})`
     case 'bin': return `(${unparse(n.l)} ${n.op} ${unparse(n.r)})`
     case 'dot': return `(${unparse(n.o)}).${n.name}`
