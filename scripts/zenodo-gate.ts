@@ -9,7 +9,7 @@
 // .zenodo.json. Three files stating one identifier is three chances for it to drift.
 import { readFileSync, existsSync, readdirSync } from 'node:fs'
 import { leanTheorems } from '../src/api/index.ts'
-import { deposition, ownFiles, namesIn } from './zenodo-theorems.ts'
+import { deposition, ownFiles, namesIn, creditedIn } from './zenodo-theorems.ts'
 
 let bad = 0
 const fail = (m: string) => { console.log('  ✗ ' + m); bad++ }
@@ -98,6 +98,21 @@ if (!existsSync(DIST)) {
     }
   }
   if (dead > 5) fail(`…and ${dead - 5} more published URLs do not resolve in the built site`)
+}
+
+// ── A PER-THEOREM CREDIT MUST NAME A REAL THEOREM, AND MUST REACH ITS RECORD ────────────────────────────
+// `prior_art_theorem:` credits one declaration inside a file whose row says own work. A credit naming a
+// theorem that does not exist credits nobody, and one that never reaches the deposition is a credit the
+// citable record does not carry — which is the only place it matters.
+for (const f of new Set(leanTheorems().map((t) => t.file))) {
+  for (const [name, credit] of creditedIn(f)) {
+    const t = leanTheorems().find((x) => x.file === f && x.name === name)
+    if (!t) { fail(`src/proof/${f} credits prior art to \`${name}\`, which is not a theorem in that file`); continue }
+    if (!credit.trim()) { fail(`src/proof/${f}: the credit for ${name} is empty`); continue }
+    const p4 = `${OUT}/lean_${name}.json`
+    if (existsSync(p4) && !readFileSync(p4, 'utf8').includes('NAMED AND CREDITED for this declaration'))
+      fail(`${p4} does not carry the per-theorem credit its source declares`)
+  }
 }
 
 // ── SURFACED, NOT ACTED ON: own-work theorems whose OWN TEXT names an earlier author ────────────────────

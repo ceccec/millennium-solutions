@@ -105,6 +105,24 @@ export const blockAbove = (file: string, name: string): string => {
   return out.join('\n')
 }
 
+/** PER-THEOREM ATTRIBUTION, read from `-- prior_art_theorem: <name> — <credit>` in a file's frontmatter.
+ *  Prior art was routed on the FILE, and a file-level row cannot say "own work except theorem 7". That is
+ *  exactly merkaba.lean: its own construction throughout, with one declaration whose third conjunct
+ *  4 + 4 - 6 = 2 is the Euler characteristic. The register now carries the exception where the exception
+ *  is, and a credited theorem says so in its own deposition instead of inheriting the file's status. */
+export const creditedIn = (file: string): Map<string, string> => {
+  const out = new Map<string, string>()
+  const lines = leanSource(file).split('\n')
+  for (let i = 0; i < lines.length; i++) {
+    const m = lines[i].match(/^--\s*prior_art_theorem:\s*(\w+)\s*[—-]\s*(.*)$/)
+    if (!m) continue
+    let credit = m[2].trim()
+    for (let j = i + 1; j < lines.length && /^--\s{2,}\S/.test(lines[j]); j++) credit += ' ' + lines[j].replace(/^--\s+/, '').trim()
+    out.set(m[1], credit)
+  }
+  return out
+}
+
 /** Prior artists this theorem's own text names. */
 export const namesIn = (t: LeanTheorem): string[] => {
   const block = blockAbove(t.file, t.name)
@@ -117,6 +135,7 @@ export const deposition = (t: LeanTheorem) => {
   const latex = toLatex(t.statement)
   const key = keyOf(t)
   const page = key ? `${SITE}/theorem/${key}` : null
+  const credit = creditedIn(t.file).get(t.name) ?? null
   return {
     upload_type: 'publication',
     publication_type: 'preprint',
@@ -147,12 +166,16 @@ export const deposition = (t: LeanTheorem) => {
       + `the record proves it on its own. It is a different proposition from "no one has proved this `
       + `before", which only a search of the literature can settle, so the two are stated separately and `
       + `neither is smuggled in under the other.</p>`
-      + `<p><strong>${NOVELTY[kinds().get(t.file) ?? '1'] ?? NOVELTY['1']}</strong></p>`
+      + (credit
+        ? `<p><strong>Prior art: NAMED AND CREDITED for this declaration specifically.</strong> ${credit} `
+          + `The file it sits in is otherwise this deposit's own construction; this record claims no priority `
+          + `over the earlier work it names.</p>`
+        : `<p><strong>${NOVELTY[kinds().get(t.file) ?? '1'] ?? NOVELTY['1']}</strong></p>`)
       + `<p><strong>Scope, stated as plainly as the claim.</strong> The declaration is decided over a finite `
       + `domain. It settles no Clay Millennium Problem, asserts no quantum speedup, and describes no `
       + `physical system. <strong>0/7.</strong></p>`,
     keywords: ['Lean 4', 'machine-checked proof', 'formal verification', 'Z/9', 'content-addressing',
-      t.namespace || t.file.replace('.lean', '')],
+      t.namespace || t.file.replace('.lean', ''), ...(credit ? ['Euler characteristic', 'polyhedron formula'] : [])],
     license: base.license,
     access_right: base.access_right,
     language: 'eng',

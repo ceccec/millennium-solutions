@@ -3,6 +3,13 @@ set_option maxRecDepth 8000000
 -- title: The merkaba
 -- wing: the ring
 -- prior_art: unclassified
+-- prior_art_theorem: the_cube_and_the_tetrahedron_count_out — Euler's polyhedron formula V − E + F = 2
+--   (Leonhard Euler, 1758). The file as a whole is this deposit's own construction, and this ONE
+--   declaration restates a named classical result: its third conjunct 4 + 4 - 6 = 2 IS the Euler
+--   characteristic of the tetrahedron. The comment above that theorem already named Euler; the register
+--   did not, because prior art was routed on the FILE and a file-level row cannot say "own work except
+--   theorem 7". No priority over Euler is claimed. What is this deposit's own here is the pairing of the
+--   two tetrahedra with the cube Q₃ and the vertex and edge counts around it, not the characteristic.
 -- The merkaba, as THIS deposit constructs it — ported to Lean so it stands on the kernel instead of on a
 -- TypeScript test. Six entries under this name were revoked as dirty; every one of them that states finite
 -- algebra is re-proved here, and the two that do not (a cosine field, a bond angle in degrees) are absent on
