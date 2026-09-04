@@ -1,13 +1,9 @@
 -- title: The two-sided coin
 -- wing: the ring
--- prior_art: unclassified
--- prior_art_pool: bounded
---   involutions on a finite set and the ten's complement are named objects; a search is well posed.
---   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
---   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
---   row will stay unclassified however much work is done. They look identical in a count and need
---   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
--- prior_art_own: one involution on ten digits, this deposit's own reading
+-- prior_art: named
+-- prior_art_domain: the method of complements
+-- prior_art_note: the reflection d ↦ 10 − d is the TEN'S COMPLEMENT, and its sibling 9 − d the nines' complement — the method of complements, used to turn subtraction into addition in Pascal's calculator (1642), the Comptometer and the Curta, and in modern computer arithmetic. That it is an involution with a single fixed point is the property those machines rely on. Searched 2026-09-04, term "method of complements / nines' complement / ten's complement"; prior art found and credited
+-- prior_art_search: literature search performed 2026-09-04 — see the note for the terms and the result
 -- One involution on ten digits, two sides, one fixed point, and one digit that leaves.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --
@@ -45,6 +41,17 @@ def digits : List Nat := [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 -- ── THE INVOLUTION: applied twice, nothing is lost ───────────────────────────────────────────────────────
 -- This is what makes the two sides sides OF ONE THING rather than two unrelated sets: the map back is the
 -- same map. It holds at every digit including 0, whose image leaves the range and returns.
+-- READ ALONE, THIS THEOREM DOES NOT PIN THE REFLECTION. `d ↦ c - d` is an involution on 0..9 for EVERY
+-- c from 9 to 20 under Nat's truncating subtraction — twelve constants satisfy it, and this states only
+-- that ours is one of them. ceccec.github.io found the same shape in their tree as a facet checking
+-- `reflect(reflect(h)) === h`, which holds for xor with ANY mask: it tested the operator, not the
+-- reflection.
+--
+-- What pins c = 10 is two theorems below, and only together: `exactly_one_digit_is_unmoved` requires the
+-- fixed points to be exactly [5], and `exactly_one_digit_reflects_out_of_range` requires exactly [0] to
+-- leave the range. c = 12 fixes 6, c = 18 fixes 9, c = 9 fixes nothing; none of them leaves exactly one
+-- digit outside. So the FILE identifies the reflection and this theorem does not, and anyone citing this
+-- one alone should cite those with it.
 theorem the_reflection_is_an_involution :
   digits.all (fun d => refl (refl d) == d) := by decide
 

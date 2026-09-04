@@ -1,13 +1,9 @@
 -- title: Theorems
 -- wing: the machine
--- prior_art: unclassified
--- prior_art_pool: bounded
---   a universal property over a finite set; searchable as stated.
---   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
---   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
---   row will stay unclassified however much work is done. They look identical in a count and need
---   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
--- prior_art_own: the universal property, computed from this sequence
+-- prior_art: named
+-- prior_art_domain: the method of complements
+-- prior_art_note: the universal reflection here is the same ten's complement d ↦ 10 − d as coin.lean, with its centre and its pairs summing to ten. Method of complements, long prior to this deposit. Searched 2026-09-04
+-- prior_art_search: literature search performed 2026-09-04 — see the note for the terms and the result
 -- The universal property — honestly, and COMPUTED from the sequence.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --
