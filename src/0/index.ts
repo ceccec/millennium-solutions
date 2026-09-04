@@ -32,8 +32,18 @@ function hash32(input: string, seed: number): number {
   return (h ^ (h >>> 16)) >>> 0
 }
 
+// A 256-entry lookup, built once. `value.toString(16).padStart(2, '0')` was called sixteen times per
+// address with an array allocation and a join around it; the table is 4.9× faster over 200,000 encodings
+// (median 17 ms against 83 ms, five repetitions, ranges [17–17] and [82–84] — npm run bench:hex).
+//
+// AGREEMENT IS THE PRECONDITION, NOT THE SPEED. This function's output is every content-address in a 2423
+// entry append-only ledger, so an encoder that differs on one byte value would silently rewrite the whole
+// chain. bench-hex checks all 256 byte values and 2000 random 16-byte vectors before it times anything, and
+// the swap was made only after recording every address in the ledger and confirming all 2423 are unchanged.
+const HEX_BYTE: readonly string[] = Array.from({ length: 256 }, (_, i) => i.toString(16).padStart(2, '0'))
+
 function hexByte(value: number): string {
-  return value.toString(16).padStart(2, '0')
+  return HEX_BYTE[value & BYTE_MASK]
 }
 
 function bytesFromSeed(seed: string): number[] {
