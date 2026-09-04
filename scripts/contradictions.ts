@@ -71,7 +71,7 @@ const walk = (dir: string) => {
     if (SKIP.has(e) || e.startsWith('.')) continue
     const p = join(dir, e)
     if (statSync(p).isDirectory()) walk(p)
-    else if (/\.(md|ts|vue)$/.test(e)) files.push(p)
+    else if (/\.(md|ts|vue|lean)$/.test(e)) files.push(p)
   }
 }
 walk('.')
@@ -132,7 +132,15 @@ for (const f of files) {
 // sentences, and passed. An alternation is not tested until each branch is.
 const CLAIMS_A_PRIZE = /\b(?:we|this (?:work|framework|deposit|paper))\s+(?:have\s+|has\s+)?(?:solves?|solved|proves?|proved|proven|resolves?|resolved|settles?|settled|cracks?|cracked)\s+(?:(?:the|a|an|one|two|three|four|five|six|seven|all|both)\s+)*(?:riemann|p\s*(?:vs|versus)\s*np|navier|yang|hodge|birch|poincar|clay|millennium)/i
 
-/** The lines a file states in its own voice: markdown outside fenced code, and `//` comments in source. */
+/** The lines a file states in its own voice: markdown outside fenced code, `//` comments in TypeScript
+ *  and Vue, and `--` comments in Lean.
+ *
+ *  THE LEAN ARM WAS MISSING AND THAT EMPTIED EVERY PROSE CHECK OVER THE PROOF TREE. `.lean` was absent
+ *  from the walk above, and adding it there changed nothing — this function returned no lines for those
+ *  files, because it looked for `//` and Lean opens a comment with `--`. The files were collected and
+ *  their prose never reached a check: 19,519 words the deposit authors, embedded verbatim in paper.md,
+ *  swept by nothing. A widened domain with no extractor behind it reports green for the reason an empty
+ *  list does. That was measured — two planted overclaims, one Clay and one quantum, both passed. */
 const assertedLines = (file: string, src: string): [number, string][] => {
   const out: [number, string][] = []
   let fenced = false
@@ -142,7 +150,7 @@ const assertedLines = (file: string, src: string): [number, string][] => {
       if (!fenced) out.push([i + 1, line])
       return
     }
-    const c = line.indexOf('//')
+    const c = line.indexOf(file.endsWith('.lean') ? '--' : '//')
     if (c >= 0) out.push([i + 1, line.slice(c)])
   })
   return out
