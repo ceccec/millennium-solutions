@@ -43,6 +43,7 @@ const STEPS: Step[] = [
 
 const SKIPPED: Step[] = [
   { name: 'seal.ts',    cmd: 'node scripts/seal.ts',    why: 'appends to the append-only ledger' },
+  { name: 'zenodo-mint.ts', cmd: 'node scripts/zenodo-mint.ts --production', why: 'publishes permanent public DOIs that the depositor cannot delete' },
   { name: 'release.ts', cmd: 'node scripts/release.ts', why: 'tags and stages a release' },
   { name: 'npm publish', cmd: '(publish.yml)',          why: 'reaches the registry; runs only on a published GitHub Release' },
   { name: 'gates-fire', cmd: 'node scripts/gates-fire.ts', why: 'mutates files in place — run it explicitly with `npm run gates:fire`' },
