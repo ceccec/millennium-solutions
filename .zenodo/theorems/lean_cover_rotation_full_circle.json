@@ -21,22 +21,18 @@
   "license": "cc-by-nc-nd-4.0",
   "access_right": "open",
   "language": "eng",
-  "notes_funding": "Independent research. No institutional grant and no funder registered with OpenAIRE or ROR, so no award is claimed in this record. Development is supported by direct contribution: https://revolut.me/ceccec",
   "subjects": [
     {
       "term": "Formal methods",
-      "identifier": "https://www.wikidata.org/wiki/Q1332293",
-      "scheme": "url"
+      "identifier": "https://www.wikidata.org/wiki/Q1332293"
     },
     {
       "term": "Automated theorem proving",
-      "identifier": "https://www.wikidata.org/wiki/Q1191319",
-      "scheme": "url"
+      "identifier": "https://www.wikidata.org/wiki/Q1191319"
     },
     {
       "term": "Modular arithmetic",
-      "identifier": "https://www.wikidata.org/wiki/Q319400",
-      "scheme": "url"
+      "identifier": "https://www.wikidata.org/wiki/Q319400"
     }
   ],
   "method": "Declared in Lean 4 and checked by its kernel. Closed by `by decide`, sorry-free, with #print axioms reporting no axiom dependency, no Mathlib and no native_decide. Re-verified on every build by scripts/lean.ts; the statement rendered here is read from the source through the same resolver the ledger uses, so a record cannot show a formula the kernel did not check.",
@@ -44,83 +40,67 @@
   "related_identifiers": [
     {
       "identifier": "10.5281/zenodo.21819217",
-      "relation": "isPartOf",
-      "scheme": "doi"
+      "relation": "isPartOf"
     },
     {
       "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_mechanical_cover_rotation_full_circle",
-      "relation": "isDocumentedBy",
-      "scheme": "url"
+      "relation": "isDocumentedBy"
     },
     {
       "identifier": "https://ceccec.github.io/millennium-solutions/paper",
-      "relation": "isDocumentedBy",
-      "scheme": "url"
+      "relation": "isDocumentedBy"
     },
     {
       "identifier": "https://ceccec.github.io/millennium-solutions/proofs",
-      "relation": "isDocumentedBy",
-      "scheme": "url"
+      "relation": "isDocumentedBy"
     },
     {
       "identifier": "https://github.com/ceccec/millennium-solutions/blob/main/src/proof/mechanical.lean",
-      "relation": "isSupplementTo",
-      "scheme": "url"
+      "relation": "isSupplementTo"
     },
     {
       "identifier": "https://github.com/ceccec/millennium-solutions",
-      "relation": "isSupplementTo",
-      "scheme": "url"
+      "relation": "isSupplementTo"
     },
     {
       "identifier": "https://ceccec.psg.bg",
-      "relation": "isPartOf",
-      "scheme": "url"
+      "relation": "isPartOf"
     },
     {
       "identifier": "https://www.npmjs.com/package/@uuidna/uuidna",
-      "relation": "isSupplementedBy",
-      "scheme": "url"
+      "relation": "isSupplementedBy"
     },
     {
       "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_address_raw_bytes_of_a",
-      "relation": "references",
-      "scheme": "url"
+      "relation": "references"
     },
     {
       "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_address_to_uuid_bytes_of_a",
-      "relation": "references",
-      "scheme": "url"
+      "relation": "references"
     },
     {
       "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_address_to_uuid_bytes_of_uuidna",
-      "relation": "references",
-      "scheme": "url"
+      "relation": "references"
     },
     {
       "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_address_address_is_sixteen_bytes",
-      "relation": "references",
-      "scheme": "url"
+      "relation": "references"
     },
     {
       "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_fnv_hash_a_seed_zero",
-      "relation": "references",
-      "scheme": "url"
+      "relation": "references"
     },
     {
       "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_fnv_hash_ab_seed_zero",
-      "relation": "references",
-      "scheme": "url"
+      "relation": "references"
     },
     {
       "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_fnv_hash_a_seed_golden",
-      "relation": "references",
-      "scheme": "url"
+      "relation": "references"
     },
     {
       "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_fnv_hash_uuidna_seed_zero",
-      "relation": "references",
-      "scheme": "url"
+      "relation": "references"
     }
   ],
   "references": [
@@ -136,5 +116,5 @@
     "src/proof/address.lean",
     "src/proof/fnv.lean"
   ],
-  "notes": "key lean_mechanical_cover_rotation_full_circle · receipt 78b1dcc7-d4f9-8922-a468-63e1eaaceceb · source file src/proof/mechanical.lean · namespace Mechanical · closed by by decide · concept DOI 10.5281/zenodo.21819217 · recompute: lake env lean src/proof/mechanical.lean src/proof/address.lean src/proof/fnv.lean — or git clone https://github.com/ceccec/millennium-solutions && npm ci && npm run lean"
+  "notes": "Independent research. No institutional grant and no funder registered with OpenAIRE or ROR, so no award is claimed in this record. Development is supported by direct contribution: https://revolut.me/ceccec · key lean_mechanical_cover_rotation_full_circle · receipt 78b1dcc7-d4f9-8922-a468-63e1eaaceceb · source file src/proof/mechanical.lean · namespace Mechanical · closed by by decide · concept DOI 10.5281/zenodo.21819217 · recompute: lake env lean src/proof/mechanical.lean src/proof/address.lean src/proof/fnv.lean — or git clone https://github.com/ceccec/millennium-solutions && npm ci && npm run lean"
 }

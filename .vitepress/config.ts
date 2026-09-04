@@ -100,8 +100,15 @@ export default defineConfig({
   transformPageData(pageData) {
     // Each object is the hero of its own page: a dynamic /theorem/<key> page takes its OG title and
     // description from its own params — the theorem's name, and how it was achieved.
-    const p = (pageData as { params?: { key?: string; name?: string; receipt?: string; problem?: string; outletName?: string; revoked?: boolean; reason?: string; supersededBy?: string } }).params
+    const p = (pageData as { params?: { key?: string; name?: string; receipt?: string; problem?: string; outletName?: string; revoked?: boolean; reason?: string; supersededBy?: string; jsonld?: string } }).params
     if (p?.key) {
+      // PER-THEOREM STRUCTURED DATA, injected here because a template cannot do it: Vue refuses to render a
+      // <script> tag, so `<component :is="'script'">` built cleanly and emitted nothing — 2425 pages kept
+      // carrying one identical site-level blob that described the repository and said nothing about the
+      // theorem on the page. transformPageData runs at build time, which is also the only place that helps
+      // a search engine. Built in src/publication from the same values as the prose body and the Zenodo
+      // record, so the three cannot disagree.
+      if (p.jsonld) (pageData.frontmatter.head ??= []).push(['script', { type: 'application/ld+json' }, p.jsonld])
       pageData.title = p.name
       // A WITHDRAWN ENTRY MUST NOT BE DESCRIBED AS STANDING. The OG/meta description is what a search result
       // and a shared link show — the one line most people ever read — so it is the last place a stale claim

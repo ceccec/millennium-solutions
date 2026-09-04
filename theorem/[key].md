@@ -127,6 +127,9 @@ do resolve, each to exactly one statement: <code>{{ ambiguous }}</code>. Cite on
      walking none, and it printed the domain size as an exact count when domainOf() returns a lower
      bound. Both are fixed in src/publication/index.ts, and both surfaces read it. zenodo-gate.ts
      compares this rendering with the deposited one byte for byte. -->
+<!-- Per-theorem structured data, built from the same source as the body above and the Zenodo record. -->
+<component :is="'script'" v-if="$params.jsonld" type="application/ld+json" v-html="String($params.jsonld)" />
+
 <div class="paper-body" v-html="$params.publication"></div>
 
 <!-- Every theorem is presentable through three.js, and the geometry is the statement's own parse tree —

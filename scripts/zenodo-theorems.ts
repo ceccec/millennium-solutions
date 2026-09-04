@@ -32,11 +32,11 @@ const PKG = 'https://www.npmjs.com/package/@uuidna/uuidna'
  *  silently, because a truncation nobody is told about reads as completeness. */
 const siblingEdges = (t: LeanTheorem) => {
   const deps = closureOf(t.file)
-  const out: { identifier: string; relation: string; scheme: string }[] = []
+  const out: { identifier: string; relation: string }[] = []
   for (const f of deps) {
     for (const dep of leanTheorems().filter((x) => x.file === f).slice(0, 4)) {
       const k = keyOf(dep)
-      if (k) out.push({ identifier: `${SITE}/theorem/${k}`, relation: 'references', scheme: 'url' })
+      if (k) out.push({ identifier: `${SITE}/theorem/${k}`, relation: 'references' })
     }
   }
   return out.slice(0, 12)
@@ -130,8 +130,10 @@ export const deposition = (t: LeanTheorem) => {
     license: base.license,
     access_right: base.access_right,
     language: 'eng',
-    // No `grants` key: see FUNDING in src/publication — an unregistered funder cannot be named truthfully.
-    notes_funding: FUNDING.statement,
+    // NO `notes_funding` KEY. I invented that name and it is not in the Zenodo schema — checked against
+    // developers.zenodo.org, which lists the deposit attributes and has no such field. Funding belongs in
+    // `grants`, and `grants` accepts only OpenAIRE/ROR-registered awards, which this work has none of. So
+    // the statement goes in `notes`, which IS a documented field, and no grant is claimed.
     // NO REPOSITORY VERSION HERE, deliberately. It was `git describe --tags`, and the release
     // workflow mints a tag on every push whose content-address moved — so all 336 records went
     // stale the moment CI tagged v8.1.0, with no theorem having changed. A record about a theorem
@@ -150,9 +152,9 @@ export const deposition = (t: LeanTheorem) => {
     // until they are minted; a second pass after minting can upgrade them in place, and a URL that
     // resolves today is worth more than a DOI that does not exist yet.
     subjects: [
-      { term: 'Formal methods', identifier: 'https://www.wikidata.org/wiki/Q1332293', scheme: 'url' },
-      { term: 'Automated theorem proving', identifier: 'https://www.wikidata.org/wiki/Q1191319', scheme: 'url' },
-      { term: 'Modular arithmetic', identifier: 'https://www.wikidata.org/wiki/Q319400', scheme: 'url' },
+      { term: 'Formal methods', identifier: 'https://www.wikidata.org/wiki/Q1332293' },
+      { term: 'Automated theorem proving', identifier: 'https://www.wikidata.org/wiki/Q1191319' },
+      { term: 'Modular arithmetic', identifier: 'https://www.wikidata.org/wiki/Q319400' },
     ],
     method: `Declared in Lean 4 and checked by its kernel. Closed by \`${t.tactic}\`, sorry-free, with `
       + `#print axioms reporting no axiom dependency, no Mathlib and no native_decide. Re-verified on every `
@@ -165,14 +167,14 @@ export const deposition = (t: LeanTheorem) => {
     // and the repository. These are the relations Zenodo exposes to indexers and to DataCite, so a search
     // for the theorem's own name reaches the deposit rather than dead-ending at a bare record.
     related_identifiers: [
-      { identifier: CONCEPT_DOI, relation: 'isPartOf', scheme: 'doi' },
-      ...(page ? [{ identifier: page, relation: 'isDocumentedBy', scheme: 'url' }] : []),
-      { identifier: `${SITE}/paper`, relation: 'isDocumentedBy', scheme: 'url' },
-      { identifier: `${SITE}/proofs`, relation: 'isDocumentedBy', scheme: 'url' },
-      { identifier: `${REPO}/blob/main/src/proof/${t.file}`, relation: 'isSupplementTo', scheme: 'url' },
-      { identifier: REPO, relation: 'isSupplementTo', scheme: 'url' },
-      { identifier: HOME, relation: 'isPartOf', scheme: 'url' },
-      { identifier: PKG, relation: 'isSupplementedBy', scheme: 'url' },
+      { identifier: CONCEPT_DOI, relation: 'isPartOf' },
+      ...(page ? [{ identifier: page, relation: 'isDocumentedBy' }] : []),
+      { identifier: `${SITE}/paper`, relation: 'isDocumentedBy' },
+      { identifier: `${SITE}/proofs`, relation: 'isDocumentedBy' },
+      { identifier: `${REPO}/blob/main/src/proof/${t.file}`, relation: 'isSupplementTo' },
+      { identifier: REPO, relation: 'isSupplementTo' },
+      { identifier: HOME, relation: 'isPartOf' },
+      { identifier: PKG, relation: 'isSupplementedBy' },
       ...siblingEdges(t),
     ],
     references: [
@@ -184,7 +186,7 @@ export const deposition = (t: LeanTheorem) => {
       `Reference implementation, @uuidna/uuidna: ${PKG}`,
     ],
     files: needs2,
-    notes: `key ${key ?? '(no live ledger key)'} · receipt ${key ? toUuid(key) : '—'} · source file src/proof/${t.file} · `
+    notes: `${FUNDING.statement} · key ${key ?? '(no live ledger key)'} · receipt ${key ? toUuid(key) : '—'} · source file src/proof/${t.file} · `
       + `namespace ${t.namespace || '(none)'} · closed by ${t.tactic} · concept DOI ${CONCEPT_DOI} · `
       + `recompute: lake env lean ${needs2.join(' ')} — or git clone ${REPO} && npm ci && npm run lean`,
   }

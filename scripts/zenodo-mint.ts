@@ -71,7 +71,11 @@ for (const key of pending.slice(0, LIMIT)) {
       const r = await fetch(`${bucket}/${name}`, { method: 'PUT', headers: { Authorization: `Bearer ${token}` }, body: content })
       if (!r.ok) throw new Error(`file ${name}: ${r.status} ${await r.text()}`)
     }
-    await api(`/deposit/depositions/${dep.id}`, { method: 'PUT', body: JSON.stringify({ metadata: meta }) })
+    // STRIP LOCAL BOOKKEEPING. `files` records which sources the proof needs so this script knows what to
+    // upload; it is not a Zenodo metadata attribute and sending it would put an unknown key in a permanent
+    // record. Everything else in the file is a documented field, checked by scripts/zenodo-gate.ts.
+    const { files: _local, ...metadata } = meta as Record<string, unknown>
+    await api(`/deposit/depositions/${dep.id}`, { method: 'PUT', body: JSON.stringify({ metadata }) })
     const pub = await api(`/deposit/depositions/${dep.id}/actions/publish`, { method: 'POST' })
     minted[key] = pub.doi
     writeFileSync(MAP, JSON.stringify(minted, null, 2) + '\n')

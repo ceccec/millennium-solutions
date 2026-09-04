@@ -9,7 +9,7 @@
 import { readFileSync } from 'node:fs'
 import { toUuid } from '../src/0/index.ts'
 import { leanTheorems, theoremOfKey, domainOf } from '../src/api/index.ts'
-import { publicationHtml, NOVELTY, kinds, closureOf, creditedIn } from '../src/publication/index.ts'
+import { publicationHtml, structuredData, NOVELTY, kinds, closureOf, creditedIn } from '../src/publication/index.ts'
 import { treeOf } from '../src/quantum/tree.ts'
 import { MILLENNIUM } from '../src/millennium/index.ts'
 import { toLatex, toMathML } from '../src/latex/index.ts'
@@ -31,6 +31,17 @@ const formulaOf = (key: string) => {
     // THE SAME BODY THE ZENODO RECORD CARRIES. Built once in src/publication and rendered in both places,
     // because two descriptions of one theorem maintained separately had already drifted into disagreeing
     // in public about how many cases it walked. scripts/zenodo-gate.ts compares them byte for byte.
+    // ONE DESCRIPTION, THREE RENDERINGS: the prose body below, this structured data, and the Zenodo record
+    // are built from the same values, so a reader, a search engine and a citation index cannot be told
+    // different things about the same declaration. Every theorem page used to carry one identical site-level
+    // blob describing the repository — 2425 pages saying nothing about their own subject.
+    jsonld: JSON.stringify(structuredData(t, {
+      novelty: creditedIn(t.file).get(t.name)
+        ? `Prior art: NAMED AND CREDITED for this declaration specifically.`
+        : (NOVELTY[kinds().get(t.file) ?? '1'] ?? NOVELTY['1']),
+      files: ['src/proof/' + t.file, ...closureOf(t.file).map((f) => 'src/proof/' + f)],
+      key,
+    })),
     publication: publicationHtml(t, {
       novelty: creditedIn(t.file).get(t.name)
         ? `Prior art: NAMED AND CREDITED for this declaration specifically. ${creditedIn(t.file).get(t.name)} `
@@ -47,7 +58,7 @@ const formulaOf = (key: string) => {
   const bare = key.replace(/^lean_/, '')
   const shared = THMS.filter((x) => x.name === bare)
   return {
-    statement: '', tactic: '', leanFile: '', cases: 0, mathml: '', latex: '', publication: '', treeNodes: '[]',
+    statement: '', tactic: '', leanFile: '', cases: 0, mathml: '', latex: '', publication: '', treeNodes: '[]', jsonld: '',
     ambiguous: shared.length > 1 ? shared.map((x) => `lean_${x.namespace.toLowerCase()}_${x.name} (src/proof/${x.file})`).join(' · ') : '',
   }
 }

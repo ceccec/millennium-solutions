@@ -61,6 +61,45 @@ for (const t of rows) {
       fail(`${p5} omits src/proof/${need}, which its proof imports — the record would not compile for a reader`)
 }
 
+// ── EVERY FIELD IS ONE ZENODO DOCUMENTS, AND EVERY RELATION IS ONE IT ACCEPTS ───────────────────────────
+// I invented `notes_funding` and 338 records carried it until developers.zenodo.org was read. It is not in
+// the schema; funding belongs in `grants`, which accepts only OpenAIRE/ROR-registered awards. An unknown
+// field is not a harmless extra — it is either dropped on ingest, leaving the record saying less than it
+// appears to, or it is rejected, and either way the author finds out after minting.
+//
+// The lists below are transcribed from the API documentation. A field or relation not on them fails here
+// rather than at the registry.
+const FIELDS = new Set(['upload_type', 'publication_type', 'image_type', 'publication_date', 'title',
+  'creators', 'description', 'access_right', 'license', 'embargo_date', 'access_conditions', 'doi',
+  'prereserve_doi', 'keywords', 'notes', 'related_identifiers', 'contributors', 'references', 'communities',
+  'grants', 'journal_title', 'journal_volume', 'journal_issue', 'journal_pages', 'conference_title',
+  'conference_acronym', 'conference_dates', 'conference_place', 'conference_url', 'conference_session',
+  'conference_session_part', 'imprint_publisher', 'imprint_isbn', 'imprint_place', 'partof_title',
+  'partof_pages', 'thesis_supervisors', 'thesis_university', 'subjects', 'version', 'language', 'locations',
+  'dates', 'method'])
+// `files` is NOT a Zenodo metadata attribute. It is this repository's own bookkeeping — which sources the
+// proof needs — and zenodo-mint strips it before sending. Listing it as valid would have hidden that: an
+// allowlist that grows to accommodate whatever is present stops being a check.
+const LOCAL_ONLY = new Set(['files'])
+const RELATIONS = new Set(['isCitedBy', 'cites', 'isSupplementTo', 'isSupplementedBy', 'isContinuedBy',
+  'continues', 'isDescribedBy', 'describes', 'hasMetadata', 'isMetadataFor', 'isNewVersionOf',
+  'isPreviousVersionOf', 'isPartOf', 'hasPart', 'isReferencedBy', 'references', 'isDocumentedBy',
+  'documents', 'isCompiledBy', 'compiles', 'isVariantFormOf', 'isOriginalFormof', 'isIdenticalTo',
+  'isAlternateIdentifier', 'isReviewedBy', 'reviews', 'isDerivedFrom', 'isSourceOf', 'requires',
+  'isRequiredBy', 'isObsoletedBy', 'obsoletes'])
+{
+  const seenBad = new Set<string>()
+  for (const t of rows) {
+    const pf = `${OUT}/lean_${t.name}.json`
+    if (!existsSync(pf)) continue
+    const d = JSON.parse(readFileSync(pf, 'utf8')) as Record<string, unknown>
+    for (const k of Object.keys(d))
+      if (!FIELDS.has(k) && !LOCAL_ONLY.has(k) && !seenBad.has(k)) { seenBad.add(k); fail(`depositions carry \`${k}\`, which is not a field Zenodo documents — it will be dropped or rejected on ingest`) }
+    for (const r of (d.related_identifiers ?? []) as { relation: string }[])
+      if (!RELATIONS.has(r.relation) && !seenBad.has(r.relation)) { seenBad.add(r.relation); fail(`relation \`${r.relation}\` is not one Zenodo accepts`) }
+  }
+}
+
 // ── THE LINK GRAPH IS COMPLETE, AND NOTHING IT PUBLISHES IS DEAD ────────────────────────────────────────
 // A permanent record pointing at a URL that 404s is worse than one with no link: it sends a reader, and an
 // indexer, into nothing. The first draft addressed theorem pages as /theorem/lean_<name> and 330 of 336

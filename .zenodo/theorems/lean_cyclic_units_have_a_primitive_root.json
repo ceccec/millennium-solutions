@@ -21,22 +21,18 @@
   "license": "cc-by-nc-nd-4.0",
   "access_right": "open",
   "language": "eng",
-  "notes_funding": "Independent research. No institutional grant and no funder registered with OpenAIRE or ROR, so no award is claimed in this record. Development is supported by direct contribution: https://revolut.me/ceccec",
   "subjects": [
     {
       "term": "Formal methods",
-      "identifier": "https://www.wikidata.org/wiki/Q1332293",
-      "scheme": "url"
+      "identifier": "https://www.wikidata.org/wiki/Q1332293"
     },
     {
       "term": "Automated theorem proving",
-      "identifier": "https://www.wikidata.org/wiki/Q1191319",
-      "scheme": "url"
+      "identifier": "https://www.wikidata.org/wiki/Q1191319"
     },
     {
       "term": "Modular arithmetic",
-      "identifier": "https://www.wikidata.org/wiki/Q319400",
-      "scheme": "url"
+      "identifier": "https://www.wikidata.org/wiki/Q319400"
     }
   ],
   "method": "Declared in Lean 4 and checked by its kernel. Closed by `by decide`, sorry-free, with #print axioms reporting no axiom dependency, no Mathlib and no native_decide. Re-verified on every build by scripts/lean.ts; the statement rendered here is read from the source through the same resolver the ledger uses, so a record cannot show a formula the kernel did not check.",
@@ -44,43 +40,35 @@
   "related_identifiers": [
     {
       "identifier": "10.5281/zenodo.21819217",
-      "relation": "isPartOf",
-      "scheme": "doi"
+      "relation": "isPartOf"
     },
     {
       "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_generated_cyclic_units_have_a_primitive_root",
-      "relation": "isDocumentedBy",
-      "scheme": "url"
+      "relation": "isDocumentedBy"
     },
     {
       "identifier": "https://ceccec.github.io/millennium-solutions/paper",
-      "relation": "isDocumentedBy",
-      "scheme": "url"
+      "relation": "isDocumentedBy"
     },
     {
       "identifier": "https://ceccec.github.io/millennium-solutions/proofs",
-      "relation": "isDocumentedBy",
-      "scheme": "url"
+      "relation": "isDocumentedBy"
     },
     {
       "identifier": "https://github.com/ceccec/millennium-solutions/blob/main/src/proof/generated.lean",
-      "relation": "isSupplementTo",
-      "scheme": "url"
+      "relation": "isSupplementTo"
     },
     {
       "identifier": "https://github.com/ceccec/millennium-solutions",
-      "relation": "isSupplementTo",
-      "scheme": "url"
+      "relation": "isSupplementTo"
     },
     {
       "identifier": "https://ceccec.psg.bg",
-      "relation": "isPartOf",
-      "scheme": "url"
+      "relation": "isPartOf"
     },
     {
       "identifier": "https://www.npmjs.com/package/@uuidna/uuidna",
-      "relation": "isSupplementedBy",
-      "scheme": "url"
+      "relation": "isSupplementedBy"
     }
   ],
   "references": [
@@ -94,5 +82,5 @@
   "files": [
     "src/proof/generated.lean"
   ],
-  "notes": "key lean_generated_cyclic_units_have_a_primitive_root · receipt 0d608a23-b221-8039-a597-f4ca6b01b760 · source file src/proof/generated.lean · namespace Generated · closed by by decide · concept DOI 10.5281/zenodo.21819217 · recompute: lake env lean src/proof/generated.lean — or git clone https://github.com/ceccec/millennium-solutions && npm ci && npm run lean"
+  "notes": "Independent research. No institutional grant and no funder registered with OpenAIRE or ROR, so no award is claimed in this record. Development is supported by direct contribution: https://revolut.me/ceccec · key lean_generated_cyclic_units_have_a_primitive_root · receipt 0d608a23-b221-8039-a597-f4ca6b01b760 · source file src/proof/generated.lean · namespace Generated · closed by by decide · concept DOI 10.5281/zenodo.21819217 · recompute: lake env lean src/proof/generated.lean — or git clone https://github.com/ceccec/millennium-solutions && npm ci && npm run lean"
 }

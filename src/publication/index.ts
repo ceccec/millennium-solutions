@@ -79,6 +79,39 @@ export const proofLine = (t: LeanTheorem): string =>
   + (walksADomain(t) ? ` — exhausting its domain, of which the statement names ${domainOf(t.statement).toLocaleString('en')} cases.` : ' — by evaluation; no domain is walked.')
   + ` Checked sorry-free; <code>#print axioms</code> reports no axiom dependency. No Mathlib, no <code>native_decide</code>. □`
 
+/** THE SAME RECORD AS STRUCTURED DATA — one theorem, one description, three renderings.
+ *
+ *  Measured before this existed: all 2425 theorem pages carried ONE identical ld+json blob describing the
+ *  repository as a software project. Every page told an indexer the same thing and nothing about the
+ *  theorem on it — structured data that cannot vary with its subject is carrying no information about that
+ *  subject, which is the failure a generic 3D scene would have been.
+ *
+ *  Built from the same values the page renders and the Zenodo record deposits, so the three cannot drift:
+ *  a reader, a search engine and a citation index are told the same thing about the same declaration.
+ *  `sameAs` is deliberately absent until a DOI is minted — a link to a record that does not exist yet is
+ *  worse than none. */
+export const structuredData = (t: LeanTheorem, opts: { novelty: string; files: string[]; key: string | null }) => ({
+  '@context': 'https://schema.org',
+  '@type': 'ScholarlyArticle',
+  headline: humanise(t.name),
+  name: t.name,
+  description: `${t.statement} — ${walksADomain(t) ? 'decided by exhaustion over its whole finite domain' : 'a closed identity, evaluated'} by the Lean 4 kernel, sorry-free and axiom-free.`,
+  ...(opts.key ? { identifier: opts.key, url: `${SITE}/theorem/${opts.key}` } : {}),
+  author: { '@type': 'Person', name: 'Tsvetan Rouschev', '@id': 'https://orcid.org/0009-0000-7312-9778' },
+  license: 'https://creativecommons.org/licenses/by-nc-nd/4.0/',
+  inLanguage: 'en',
+  isPartOf: { '@type': 'Dataset', name: 'Millennium Solutions — the ℤ/9 vortex framework', identifier: `https://doi.org/${CONCEPT_DOI}` },
+  citation: [
+    { '@type': 'CreativeWork', name: `src/proof/${t.file}`, url: `${REPO}/blob/main/src/proof/${t.file}` },
+    { '@type': 'CreativeWork', name: 'The paper — every statement typeset', url: `${SITE}/paper` },
+    { '@type': 'CreativeWork', name: 'The axiom index', url: `${SITE}/AXIOMS` },
+  ],
+  // The proof is the material; naming the files makes the claim checkable rather than merely stated.
+  material: opts.files,
+  creativeWorkStatus: opts.novelty.split('.')[0],
+  about: { '@type': 'DefinedTerm', name: t.namespace || t.file.replace('.lean', ''), inDefinedTermSet: `${SITE}/proofs` },
+})
+
 /** The canonical body. `novelty` and `files` come from the register and the import closure. */
 export const publicationHtml = (t: LeanTheorem, opts: { novelty: string; files: string[]; key: string | null }): string =>
   `<p><strong>${humanise(t.name)}</strong> — ${claimLine(t)}</p>`
