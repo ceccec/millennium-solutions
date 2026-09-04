@@ -5,8 +5,9 @@
 // gate returns a FLOOR (not a truth oracle), content-address = integrity (not encryption/proof).
 import { createInterface } from 'node:readline'
 import { execSync } from 'node:child_process'
-import { readFileSync, existsSync } from 'node:fs'
+import { readFileSync, existsSync, readdirSync } from 'node:fs'
 import { toUuid, merkleFold } from '../src/0/index.ts'
+import { checkFace, type Face } from '../src/face/index.ts'
 import { doubleTorusGravity } from '../src/the/apple/index.ts'
 import { diamond } from '../src/5/diamond.ts'
 import { computes } from './honesty-gate.ts'
@@ -57,6 +58,12 @@ const TOOLS = [
     inputSchema: { type: 'object', properties: { dry: { type: 'boolean' } }, required: [] } },
   { name: 'lean_generate', description: 'Generate quantified Lean for ledger families — one theorem subsuming a whole family of per-parameter rows. Five gates: compiles, axiom-free, agrees with the ledger test at every parameter, carries a boundary case, and flags a zero divisor in range. Pass emit=true to write.',
     inputSchema: { type: 'object', properties: { emit: { type: 'boolean' } }, required: [] } },
+  { name: 'metrics_face', description: 'This repository\'s build face: one row per measurement, each carrying the claim, the value, THE COMMAND THAT RECOMPUTES IT, and a receipt over the row\'s own fields. Gate results are run, not remembered, and a failing gate is reported as FAIL rather than suppressed. A sibling session calls this instead of being sent a prose summary.',
+    inputSchema: { type: 'object', properties: {}, required: [] } },
+  { name: 'verify_face', description: 'Verify a face emitted by ANY repository — pass its JSON or a path. Recomputes every receipt and the merkle root from the rows themselves, needing nothing from the emitting tree. INTEGRITY ONLY: this establishes that the rows are unaltered since sealing, NOT that any figure is correct. Reading a passing verify as evidence a number is right is the error this exists to prevent.',
+    inputSchema: { type: 'object', properties: { json: { type: 'string' }, path: { type: 'string' } }, required: [] } },
+  { name: 'peer_faces', description: 'List and verify every face present in the shared fusion directory, so this session can check what siblings published rather than trust their reports. Reports each repo, its root, whether it is intact, and any gate it published as FAIL.',
+    inputSchema: { type: 'object', properties: { dir: { type: 'string' } }, required: [] } },
   { name: 'ledger_status', description: 'Composition of the ledger: total, live, lean-backed, revoked, portable-to-Lean, chain breaks, duplicate keys/receipts, octave remainder. Measurement only — writes nothing.',
     inputSchema: { type: 'object', properties: {}, required: [] } },
   { name: 'ledger_trial', description: 'Put every ledger entry in the dock and record a verdict with its ground — no bare verdicts. Writes src/proof/trial-all.json. Adjudicates, never removes: what follows from a refusal is the captain\'s to order.',
@@ -76,6 +83,41 @@ const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
     catch (e) { return 'FAILED\n' + String((e as { stdout?: Buffer }).stdout ?? e) } },
   pages: () => { try { return execSync('node scripts/pages.ts', { encoding: 'utf8' }) }
     catch (e) { return 'FAILED\n' + String((e as { stdout?: Buffer }).stdout ?? e) } },
+  // A SESSION SHOULD BE ABLE TO CHECK A SIBLING RATHER THAN BELIEVE ONE. Today a peer relayed a claim of
+  // mine onward without auditing it, and the claim was wrong — it travelled at the speed the true ones did,
+  // because prose has no failure mode. These three give an MCP client the alternative: fetch a face, verify
+  // a face, and survey the faces siblings have published. What verification establishes is integrity, and
+  // every response says so, because that is precisely where a coordination protocol starts lying.
+  metrics_face: () => {
+    execSync('node scripts/metrics.ts', { stdio: 'pipe' })
+    return readFileSync('metrics.json', 'utf8')
+  },
+  verify_face: (a: { json?: string; path?: string }) => {
+    const raw = a.json ?? (a.path && existsSync(a.path) ? readFileSync(a.path, 'utf8') : '')
+    if (!raw) return JSON.stringify({ error: 'pass the face as `json` or a readable `path`' })
+    let f: Face
+    try { f = JSON.parse(raw) as Face } catch { return JSON.stringify({ error: 'not JSON' }) }
+    if (!Array.isArray(f.rows)) return JSON.stringify({ error: 'no rows — not a face' })
+    const c = checkFace(f)
+    return JSON.stringify({
+      repo: f.repo, verdict: c.verdict, intact: c.ok, rows: f.rows.length, root: c.root, altered: c.altered,
+      failingGates: c.failingGates,
+      establishes: 'INTEGRITY ONLY — the rows are unaltered since sealing. This does NOT make any figure correct, and does not verify another repository without its source. To check a figure, run its `command` there.',
+    })
+  },
+  peer_faces: (a: { dir?: string }) => {
+    const dir = a.dir ?? (process.env.HOME + '/.erpax/fusion')
+    if (!existsSync(dir)) return JSON.stringify({ dir, faces: [], note: 'no shared directory — nothing to survey, which is not the same as nothing published' })
+    const faces = readdirSync(dir).filter((f) => f.endsWith('.json')).map((f) => {
+      try {
+        const parsed = JSON.parse(readFileSync(dir + '/' + f, 'utf8')) as Face
+        if (!Array.isArray(parsed.rows)) return { file: f, skipped: 'not a face — no rows' }
+        const c = checkFace(parsed)
+        return { file: f, repo: parsed.repo, rows: parsed.rows.length, verdict: c.verdict, root: c.root, altered: c.altered.length, failingGates: c.failingGates }
+      } catch { return { file: f, skipped: 'unreadable or not JSON' } }
+    })
+    return JSON.stringify({ dir, faces, establishes: 'INTEGRITY ONLY, per face — see verify_face.' })
+  },
   ledger_status: () => {
     const l = loadLedger() as (LedgerEntry & { revoked?: boolean; portable?: boolean })[]
     const live = l.filter(__isLive)

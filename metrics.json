@@ -1,6 +1,7 @@
 {
   "repo": "millennium-solutions",
   "definition": "a declaration in src/proof that the Lean kernel accepts — sorry-free, axiom-free — and closes by exhaustion over a stated finite domain",
+  "protocol": "receipt = toUuid(key + LF + claim + LF + value); root = merkleFold(receipts in row order)",
   "rows": [
     {
       "key": "theorems",

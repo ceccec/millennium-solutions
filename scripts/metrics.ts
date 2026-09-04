@@ -29,15 +29,12 @@
 // receiving session runs, and it needs no access to this repository at all.
 import { writeFileSync, readFileSync, existsSync } from 'node:fs'
 import { execSync } from 'node:child_process'
-import { toUuid, merkleFold } from '../src/0/index.ts'
+import { receiptOf, rootOf, checkFace, PROTOCOL, type Metric, type Face } from '../src/face/index.ts'
 import { census, clayFloor, advantage, split, ledger, leanFiles, THEOREM_DEFINITION } from '../src/api/index.ts'
 
-export type Metric = { key: string; claim: string; value: string; command: string; receipt: string }
-export type Face = { repo: string; definition: string; rows: Metric[]; root: string }
-
-/** The receipt is over the row's OWN fields, so it can be recomputed from the file with nothing else. */
-export const receiptOf = (key: string, claim: string, value: string): string =>
-  toUuid(key + '\n' + claim + '\n' + value)
+// The shape and its checker live in src/face — a leaf that imports only the address primitives, so the MCP
+// server can verify a face without importing THIS file, whose top level runs the gates.
+export type { Metric, Face } from '../src/face/index.ts'
 
 const rows: Metric[] = []
 const add = (key: string, claim: string, value: string | number, command: string) => {
@@ -94,8 +91,9 @@ for (const g of GATES) {
 const face: Face = {
   repo: 'millennium-solutions',
   definition: THEOREM_DEFINITION,
+  protocol: PROTOCOL,
   rows,
-  root: merkleFold(rows.map((r) => r.receipt)),
+  root: rootOf(rows),
 }
 
 // ── verify mode: the part a RECEIVING session runs, needing nothing from this repository ─────────────────
@@ -104,14 +102,18 @@ if (arg === '--verify') {
   const path = process.argv[3]
   if (!path) { console.error('✗ metrics --verify <face.json>'); process.exit(1) }
   const f = JSON.parse(readFileSync(path, 'utf8')) as Face
-  let bad = 0
-  for (const r of f.rows) {
-    const want = receiptOf(r.key, r.claim, r.value)
-    if (want !== r.receipt) { console.log(`  ✗ ${r.key}: receipt does not match its own claim and value`); bad++ }
-  }
-  const root = merkleFold(f.rows.map((r) => r.receipt))
-  if (root !== f.root) { console.log(`  ✗ root ${f.root} ≠ ${root} recomputed from the rows`); bad++ }
+  const c = checkFace(f)
+  let bad = c.altered.length + (c.root === f.root ? 0 : 1)
+  for (const k of c.altered) console.log(`  ✗ ${k}: receipt does not match its own claim and value`)
+  if (c.root !== f.root) console.log(`  ✗ root ${f.root} ≠ ${c.root} recomputed from the rows`)
   const failing = f.rows.filter((r) => r.value === 'FAIL')
+  if (c.verdict === 'different-convention') {
+    console.log(`\n○ ${f.repo}: sealed under a DIFFERENT convention, not altered — every row and the root`)
+    console.log(`  disagree, which is the signature of another formula rather than of tampering.`)
+    console.log(`  this checker uses: ${PROTOCOL}`)
+    console.log(`  the face declares: ${f.protocol ?? '(no protocol field)'}`)
+    process.exit(0)
+  }
   console.log(bad
     ? `\n✗ ${f.repo}: ${bad} row(s) altered since sealing — the face is not what it was sealed as`
     : `\n✓ ${f.repo}: ${f.rows.length} rows intact, root ${f.root.slice(0, 13)}… recomputed`)
