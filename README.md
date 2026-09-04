@@ -11,10 +11,10 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 491 theorems across 25 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `28269438-5698-8937-9280-4ce40771cfab`</sub>
-- 483 of those 491 theorems close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
-  <sub>SEALED · `7ac34a72-3da0-85d8-9946-8a02ff1dbc8c`</sub>
+- The formal layer holds 491 kernel-accepted declarations across 25 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `5ca0f72c-8fb7-8cff-a4b3-398570b5bff5`</sub>
+- 483 of those 491 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
+  <sub>SEALED · `a6238a33-2033-873c-96c1-459dacbe857c`</sub>
 - 516 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
   <sub>SEALED · `79b06cea-1533-85a6-8cd0-58de8b70d1ec`</sub>
 
@@ -86,7 +86,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-25 Lean files in 6 wings, 491 theorems. The prose in this section is read out of the
+25 Lean files in 6 wings, 491 declarations of which 483 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -152,7 +152,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Rights** — `rights.lean`, 8 theorem(s). What this deposit claims under international law — and, in the same table, what it does not.
 
-4 of 491 theorems carry no comment of their own and are shown here as the gap they are, not
+4 of 491 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -167,7 +167,7 @@ Read from the artefacts at build time, never carried between runs.
 | withdrawn — nothing proves it | 1,757 |
 | proved in total | **623** of 2,380 |
 | standing keys → distinct theorems | 483 sealed, 24 of them keyed twice, 1 unresolvable |
-| Lean files · theorems | 25 · 491, all axiom-free |
+| Lean files · theorems | 25 · 483 theorems (closed by exhaustion) + 8 rfl declarations, all axiom-free |
 | proved `by decide` | 483 of 491 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
@@ -193,4 +193,4 @@ node scripts/pages.ts              # regenerate this file and the homepage
 
 ---
 
-*15 claims, all verified · 491 Lean theorems · 2380 ledger entries · trial root `61ad54f5-d20b-8b06-b68c-dbf5b72d7d3c` · integrity, not truth · 0/7*
+*15 claims, all verified · 483 Lean theorems · 2380 ledger entries · trial root `e3830a1b-3da4-8e1a-9b50-f1a56844075b` · integrity, not truth · 0/7*

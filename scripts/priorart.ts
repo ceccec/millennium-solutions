@@ -107,7 +107,7 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of ${n(T.length)} machine-checked theorems, **${n(namedThms)}** restate work that already has an author and
+Of ${n(T.length)} machine-checked declarations, **${n(namedThms)}** restate work that already has an author and
 **${n(ownThms)}** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [\`src/proof/priorart.lean\`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.

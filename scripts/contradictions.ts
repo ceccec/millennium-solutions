@@ -88,7 +88,13 @@ walk('.')
 const NOT_THEOREM_COUNTS: [number, string][] = [
   [C.liveKeys, `the live KEY count — an address, and ${C.surplusKeys} theorems carry two`],
   [ledgerTotal, `the LEDGER ENTRY count — a receipt, and ${ledgerTotal - C.liveKeys} of them are withdrawn`],
+  [C.theorems, `the KERNEL-ACCEPTED DECLARATION count — ${C.rfl} of those close by rfl, which seal-lean.ts calls "a declaration, not algebra"`],
 ]
+
+/** A PARTITIVE IS NOT A MISCOUNT. "483 of those 491 are THEOREMS" names the smaller number as the subject
+ *  and the larger as the pool it is drawn from — which is the correct sentence, and the one this deposit
+ *  should be writing. Only a number that is itself being quantified as theorems fires. */
+const partitive = (line: string, at: number) => /\bof\s+(those\s+)?$/i.test(line.slice(Math.max(0, at - 12), at))
 for (const f of files) {
   if (f.endsWith('contradictions.ts')) continue
   const src = readFileSync(f, 'utf8')
@@ -99,7 +105,8 @@ for (const f of files) {
       // punctuation flagged "the ledger is held at 2380 (the captain's cap): improving a theorem's name…",
       // where 2380 counts entries and the later clause is about something else entirely. Clause breaks end
       // the window, so only an adjectival run between the number and the noun counts.
-      if (new RegExp(`\\b${n}\\b[^.\\n:;()\\[\\]]{0,25}?\\btheorem`, 'i').test(line))
+      const hit = new RegExp(`\\b${n}\\b[^.\\n:;()\\[\\]]{0,25}?\\btheorem`, 'i').exec(line)
+      if (hit && !partitive(line, hit.index))
         fail(`${f}:${i + 1} calls ${n} a theorem count — that is ${what}. Theorems: ${C.byDecide} (${THEOREM_DEFINITION})`)
     }
   })

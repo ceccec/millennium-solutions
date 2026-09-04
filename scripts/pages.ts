@@ -63,11 +63,11 @@ const CLAIMS: Claim[] = [
   { section: S(0, 'What is proved'),
     derive: () => { const n = leanTheorems.length, f = leanFiles.length
       const clean = leanFiles.every((x) => !/\bsorry\b|native_decide/.test(leanSrc[x].replace(/^\s*--.*$/gm, '')))
-      return { text: `the formal layer holds ${n} theorems across ${f} files, and ${clean ? 'no file uses sorry or native_decide outside a comment' : 'AT LEAST ONE FILE USES sorry OR native_decide'}`, ok: n > 0 && clean, from: [n, f] } } },
+      return { text: `the formal layer holds ${n} kernel-accepted declarations across ${f} files, and ${clean ? 'no file uses sorry or native_decide outside a comment' : 'AT LEAST ONE FILE USES sorry OR native_decide'}`, ok: n > 0 && clean, from: [n, f] } } },
 
   { section: S(0, 'What is proved'),
     derive: () => { const d = byDecide.length, n = leanTheorems.length
-      return { text: `${d} of those ${n} theorems close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining ${n - d} close by rfl and are declarations`, ok: d > 0 && d <= n, from: [d, n] } } },
+      return { text: `${d} of those ${n} are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining ${n - d} close by rfl and are declarations`, ok: d > 0 && d <= n, from: [d, n] } } },
 
   { section: S(0, 'What is proved'),
     derive: () => { const k = leanSealed.length, chained = leanSealed.every((e) => e.receipt.length === 36)
@@ -230,7 +230,7 @@ const body = (site: boolean) => {
   const docs = leanDocs()
   const wings = [...new Set(docs.map((d) => d.wing || 'unfiled'))]
   md += `## ${ORBIT[4] ?? 7} · The proofs, as they document themselves\n\n`
-  md += `${docs.length} Lean files in ${wings.length} wings, ${docs.reduce((n, d) => n + d.theorems.length, 0)} theorems. The prose in this section is read out of the\nsources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits\nthis page; there is nowhere else to keep the description in step.\n\n`
+  md += `${docs.length} Lean files in ${wings.length} wings, ${docs.reduce((n, d) => n + d.theorems.length, 0)} declarations of which ${CENSUS.byDecide} are theorems. The prose in this section is read out of the\nsources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits\nthis page; there is nowhere else to keep the description in step.\n\n`
   for (const w of wings) {
     md += `### ${w}\n\n`
     for (const d of docs.filter((x) => (x.wing || 'unfiled') === w)) {
@@ -240,7 +240,7 @@ const body = (site: boolean) => {
     }
   }
   const undoc = docs.flatMap((d) => d.theorems).filter((t) => !t.doc).length
-  md += `${undoc} of ${docs.reduce((n, d) => n + d.theorems.length, 0)} theorems carry no comment of their own and are shown here as the gap they are, not\nfilled with a template.\n\n`
+  md += `${undoc} of ${docs.reduce((n, d) => n + d.theorems.length, 0)} declarations carry no comment of their own and are shown here as the gap they are, not\nfilled with a template.\n\n`
 
   // ── WHAT THE BUILD MEASURED ABOUT ITSELF ───────────────────────────────────────────────────────────────
   // These are the figures the build produces and then used to throw away into terminal scrollback. They are
@@ -266,7 +266,7 @@ const body = (site: boolean) => {
   // theorems overstates the deposit. src/proof decides how many theorems there are; the reconciliation is
   // printed rather than left for the reader to assume.
   md += `| standing keys → distinct theorems | ${CENSUS.sealedTheorems} sealed, ${CENSUS.surplusKeys} of them keyed twice, ${CENSUS.unresolvableKeys} unresolvable |\n`
-  md += `| Lean files · theorems | ${A.lean.files} · ${A.lean.theorems}, all axiom-free |\n`
+  md += `| Lean files · theorems | ${A.lean.files} · ${CENSUS.byDecide} theorems (closed by exhaustion) + ${CENSUS.rfl} rfl declarations, all axiom-free |\n`
   md += `| proved \`by decide\` | ${A.lean.byDecide} of ${A.lean.theorems} |\n`
   md += `| claims a machine can render | ${renderable} of ${q.length.toLocaleString('en-US')} |\n`
   md += `| claims needing an author | ${(q.length - renderable).toLocaleString('en-US')} — reported, never faked |\n\n`
@@ -287,7 +287,7 @@ const body = (site: boolean) => {
   md += site
     ? `## Read\n\n[The seven, one theorem per problem](/theorem/lean_millenniumfloor_riemann_reflection_and_heart) · [the ledger](/proofs) · [the trial](/verify)\n\n`
     : `## Run it\n\n\`\`\`bash\nnpm ci && node scripts/lean.ts     # compile and audit every Lean file\nnode scripts/pages.ts              # regenerate this file and the homepage\n\`\`\`\n\n`
-  md += `---\n\n*${rows.length} claims, all verified · ${leanTheorems.length} Lean theorems · ${ledger.length} ledger entries · trial root \`${root}\` · integrity, not truth · 0/7*\n`
+  md += `---\n\n*${rows.length} claims, all verified · ${CENSUS.byDecide} Lean theorems · ${ledger.length} ledger entries · trial root \`${root}\` · integrity, not truth · 0/7*\n`
   return md
 }
 

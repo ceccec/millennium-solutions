@@ -118,7 +118,7 @@ const figure1 = (): string => {
   const maxRows = Math.max(...bucketed.map((b) => Math.ceil(b.length / perRow)))
   const H = maxRows * (cell + gap) + 62, W = cols * colW + 10
   let s = `<svg viewBox="0 0 ${Math.round(W)} ${Math.round(H)}" role="img" class="fig" xmlns="http://www.w3.org/2000/svg" aria-label="every theorem placed by the size of the domain its proof exhausted">`
-  s += `<title>Figure 1 — all ${theorems.length} theorems by domain size</title>`
+  s += `<title>Figure 1 — all ${theorems.length} declarations by domain size</title>`
   bucketed.forEach((b, i) => {
     const x0 = i * colW + 6
     b.forEach((t, j) => {
@@ -159,11 +159,11 @@ o += '<div class="paper paper-collected" itemscope itemtype="https://schema.org/
 o += '<div class="paper-masthead">\n'
 o += '<div class="paper-title">The collected theorems of the ℤ/9 vortex framework</div>\n'
 o += '<div class="paper-byline">Rouschev, T. · <em>Millennium Solutions</em> · DOI <a href="https://doi.org/10.5281/zenodo.21819217">10.5281/zenodo.21819217</a> · CC BY-NC-ND 4.0</div>\n'
-o += `<div class="paper-addr">${n(theorems.length)} theorems · ${docs.length} sources · content-address <code>${seal}</code></div>\n`
+o += `<div class="paper-addr">${n(byDecide)} theorems + ${n(theorems.length - byDecide)} rfl declarations · ${docs.length} sources · content-address <code>${seal}</code></div>\n`
 o += '</div>\n\n'
 
 o += '<h2 class="paper-h">Abstract</h2>\n\n'
-o += `This document collects the ${n(theorems.length)} theorems of the ℤ/9 vortex framework that the Lean 4 kernel checks, `
+o += `This document collects the ${n(theorems.length)} declarations of the ℤ/9 vortex framework that the Lean 4 kernel accepts — ${n(byDecide)} of them THEOREMS by this deposit's rule, closing by exhaustion, and ${n(theorems.length - byDecide)} rfl declarations shown and marked as such, `
 o += `across ${docs.length} source files. Each is stated exactly as the kernel received it, followed by the tactic that `
 o += `discharged it and the size of the finite domain that tactic exhausted. Every statement is decidable and was checked `
 o += `sorry-free and axiom-free. None of them is a Clay Millennium Problem and none claims one. A content-address proves `
@@ -177,7 +177,7 @@ o += `**${n(noExhaustion)}** of ${n(theorems.length)} walk a single point — a 
 o += `The honest summary is a distribution, not a sum, so it is drawn below rather than reported as one number.\n\n`
 
 o += '<figure class="paper-fig">\n' + figure1() + '\n'
-o += `<figcaption><strong>Figure 1.</strong> All ${n(theorems.length)} theorems, one square each, placed by the size of the domain its proof exhausted (log₁₀ buckets). Colour is the wing. The right-hand tail is a single theorem; the mass is at nine cases.</figcaption>\n</figure>\n\n`
+o += `<figcaption><strong>Figure 1.</strong> All ${n(theorems.length)} declarations, one square each, placed by the size of the domain its proof exhausted (log₁₀ buckets). Colour is the wing. The right-hand tail is a single theorem; the mass is at nine cases.</figcaption>\n</figure>\n\n`
 
 o += '<figure class="paper-fig">\n' + figure2() + '\n'
 o += `<figcaption><strong>Figure 2.</strong> Theorems per wing — counts, because summing case-counts across wings would draw the one large domain again.</figcaption>\n</figure>\n\n`
