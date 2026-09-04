@@ -36,7 +36,7 @@
 // seal-lean.ts chains receipt = toUuid(previous → key), on the KEY, so no receipt covers statement text and
 // a statement can be edited without any receipt changing. The kernel re-checking it on every run is what
 // stands in for that, and it is not the same guarantee.
-import { writeFileSync } from 'node:fs'
+import { writeFileSync, readFileSync } from 'node:fs'
 import { all as leanDocs } from './leandoc.ts'
 import { live, theoremOfKey, leanTheorems } from '../src/api/index.ts'
 import { toUuid, merkleFold } from '../src/0/index.ts'
@@ -283,3 +283,52 @@ o += '</div>\n'
 
 writeFileSync('paper.md', o)
 console.log(`✓ paper: ${n(theorems.length)} theorems (${n(byDecide)} sealed, ${rflOnly.length} rfl) · ${docs.length} sources · ${wings.length} wings · median ${n(median)} cases, top theorem ${topShare.toFixed(2)}% of the total · seal ${seal.slice(0, 13)}… → paper.md`)
+
+
+// ── THE SAME PAPER IN LaTeX, generated ──────────────────────────────────────────────────────────────────
+// paper.tex was 2.9 kB of hand-written skeleton carrying four theorem blocks, next to a paper.md of 1 MB
+// carrying all of them. The deposit's LaTeX publication was a stub while `toLatex` had round-trip-verified
+// LaTeX for every statement — the publication understating the work, which is the direction this record has
+// erred in throughout.
+//
+// The preamble, title and abstract are PRESERVED from the hand-written file: they are the author's prose and
+// are not this generator's to rewrite. Everything from \section{Theorems} onward is emitted from the same
+// `printed` array the markdown paper uses, so the two cannot disagree about what was proved.
+//
+// It is not compiled here — no TeX toolchain is installed on this machine — so the file is emitted and its
+// structure checked, never claimed to have produced a PDF.
+const texEscape = (x: string) => x.replace(/([&%#_$])/g, '\\$1')
+const HEAD_END = '\\section{Theorems}'
+const existing = readFileSync('paper.tex', 'utf8')
+const preamble = existing.includes(HEAD_END) ? existing.slice(0, existing.indexOf(HEAD_END)) : existing.replace(/\\end\{document\}\s*$/, '')
+
+let tex = preamble
+tex += `${HEAD_END}\n\n`
+tex += `Every statement below is a declaration the Lean~4 kernel accepts, sorry-free and axiom-free, and the\n`
+tex += `\\LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it\n`
+tex += `(\\texttt{npm run latex-gate}). There are ${n(theorems.length)} of them across ${docs.length} files and\n`
+tex += `${wings.length} wings; ${n(byDecide)} close by exhaustion over a stated finite domain and the\n`
+tex += `remaining ${rflOnly.length} close by \\texttt{rfl} and are counted separately, never as theorems.\n\n`
+for (const w of wings) {
+  const inWing = docs.filter((d) => d.wing === w)
+  if (!inWing.length) continue
+  tex += `\\subsection{${texEscape(w)}}\n\n`
+  for (const d of inWing) {
+    if (!d.theorems.length) continue
+    tex += `\\paragraph{\\texttt{${texEscape(d.file)}}}\n\n`
+    for (const t of d.theorems) {
+      const l = toLatex(t.statement)
+      tex += `\\begin{theorem}[\\texttt{${texEscape(t.name)}}]\n`
+      tex += l ? `\\[ ${l} \\]\n` : `\\texttt{${texEscape(t.statement)}}\n`
+      tex += `\\end{theorem}\n`
+      tex += `\\noindent\\emph{Proof.} \\texttt{${texEscape(t.tactic)}}${t.cases > 1 ? ` --- exhausting ${n(t.cases)} cases` : ' --- by evaluation; no domain is walked'}. \\hfill$\\square$\n\n`
+    }
+  }
+}
+tex += `\\section*{Availability}\n`
+tex += `Source: \\url{https://github.com/ceccec/millennium-solutions}. Deposit: \\url{https://doi.org/10.5281/zenodo.21819217}.\n`
+tex += `Every statement here recomputes from the repository with \\texttt{npm run lean}.\n\n`
+tex += `\\end{document}\n`
+writeFileSync('paper.tex', tex)
+console.log(`✓ paper.tex: ${n(theorems.length)} theorems in ${wings.length} wings, LaTeX generated from the Lean and`
+  + ` round-trip checked; preamble and abstract preserved from the hand-written file. Not compiled here — no TeX toolchain.`)

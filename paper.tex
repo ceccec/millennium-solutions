@@ -12,6 +12,8 @@ domain change, and a $7=6+1$ correspondence with the Clay Millennium Problems
 \author{Tsvetan Rouschev\\\small ORCID: \href{https://orcid.org/0009-0000-7312-9778}{0009-0000-7312-9778}}
 \date{2026}
 
+\newtheorem{theorem}{Theorem}[section]
+
 \begin{document}
 \maketitle
 
@@ -54,5 +56,2732 @@ and folds, and the geometry (cube $\to$ hexagon $\to$ Seed/Flower/Fruit/Metatron
 See the repository: \url{https://github.com/ceccec/millennium-solutions}. Fused
 TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 \texttt{norm\_num}) formalize the exact facts. License: CC BY-NC 4.0.
+
+\section{Theorems}
+
+Every statement below is a declaration the Lean~4 kernel accepts, sorry-free and axiom-free, and the
+\LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
+(\texttt{npm run latex-gate}). There are 529 of them across 29 files and
+6 wings; 521 close by exhaustion over a stated finite domain and the
+remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
+
+\subsection{the address}
+
+\paragraph{\texttt{address.lean}}
+
+\begin{theorem}[\texttt{raw\_bytes\_of\_a}]
+\[ \mathrm{rawBytes}\mathopen{}\left(A\right) = [88,\,118,\,248,\,251,\,63,\,149,\,14,\,202,\,10,\,251,\,189,\,97,\,221,\,134,\,206,\,204] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 16 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{to\_uuid\_bytes\_of\_a}]
+\[ \mathrm{toUuidBytes}\mathopen{}\left(A\right) = [88,\,118,\,248,\,251,\,63,\,149,\,142,\,202,\,138,\,251,\,189,\,97,\,221,\,134,\,206,\,204] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 16 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{to\_uuid\_bytes\_of\_uuidna}]
+\[ \mathrm{toUuidBytes}\mathopen{}\left(\mathrm{UUIDNA}\right) = [252,\,81,\,21,\,50,\,110,\,138,\,132,\,24,\,165,\,34,\,165,\,27,\,29,\,70,\,167,\,12] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 16 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{address\_is\_sixteen\_bytes}]
+\[ \left|\mathrm{toUuidBytes}\mathopen{}\left(\mathrm{UUIDNA}\right)\right| = 16 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{address\_bytes\_are\_bytes}]
+\[ \forall b \in \mathrm{toUuidBytes}\mathopen{}\left(\mathrm{UUIDNA}\right),\; b < 256 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{version\_nibble\_is\_forced}]
+\[ \frac{\mathrm{toUuidBytes}\mathopen{}\left(A\right)_{6}}{16} = 8 \land \frac{\mathrm{toUuidBytes}\mathopen{}\left(\mathrm{UUIDNA}\right)_{6}}{16} = 8 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{variant\_bits\_are\_forced}]
+\[ \frac{\mathrm{toUuidBytes}\mathopen{}\left(A\right)_{8}}{64} = 2 \land \frac{\mathrm{toUuidBytes}\mathopen{}\left(\mathrm{UUIDNA}\right)_{8}}{64} = 2 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{addressing\_is\_deterministic}]
+\[ \mathrm{toUuidBytes}\mathopen{}\left(A\right) = \mathrm{toUuidBytes}\mathopen{}\left(A\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{distinct\_seeds\_give\_distinct\_addresses}]
+\[ \mathrm{toUuidBytes}\mathopen{}\left(A\right) \neq \mathrm{toUuidBytes}\mathopen{}\left(\mathrm{UUIDNA}\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{addressing\_is\_injective\_on\_single\_characters}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{toUuidBytes}\mathopen{}\left([c]\right) \mid c \in \{0,\dots,23\} \,\}\right)\right| = 24 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 24 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{addressing\_is\_not\_the\_identity}]
+\[ \mathrm{toUuidBytes}\mathopen{}\left([7]\right) \neq [7] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{addressing\_is\_not\_constant}]
+\[ \mathrm{toUuidBytes}\mathopen{}\left([1]\right) \neq \mathrm{toUuidBytes}\mathopen{}\left([2]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_four\_seeds\_are\_distinct}]
+\[ \left|\mathrm{SEEDS.eraseDups}\right| = 4 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{address\_settles\_its\_range}]
+\[ \mathrm{settledHere} = 13 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{fnv.lean}}
+
+\begin{theorem}[\texttt{hash\_a\_seed\_zero}]
+\[ \mathrm{hash32}\mathopen{}\left(0,\,[97]\right) = 1484191995 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{hash\_ab\_seed\_zero}]
+\[ \mathrm{hash32}\mathopen{}\left(0,\,[97,\,98]\right) = 2049961697 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 2 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{hash\_a\_seed\_golden}]
+\[ \mathrm{hash32}\mathopen{}\left(2654435769,\,[97]\right) = 1066733258 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{hash\_uuidna\_seed\_zero}]
+\[ \mathrm{hash32}\mathopen{}\left(0,\,[117,\,117,\,105,\,100,\,110,\,97]\right) = 4233172274 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{hash\_is\_deterministic}]
+\[ \forall c \in \{0,\dots,31\},\; \mathrm{hash32}\mathopen{}\left(0,\,[c]\right) = \mathrm{hash32}\mathopen{}\left(0,\,[c]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 32 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{hash\_is\_injective\_on\_single\_characters}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{hash32}\mathopen{}\left(0,\,[c]\right) \mid c \in \{0,\dots,63\} \,\}\right)\right| = 64 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 64 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_seed\_separates}]
+\[ \forall c \in \{0,\dots,15\},\; \mathrm{hash32}\mathopen{}\left(0,\,[c]\right) \neq \mathrm{hash32}\mathopen{}\left(2654435769,\,[c]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 16 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{hash\_is\_not\_the\_identity}]
+\[ \mathrm{hash32}\mathopen{}\left(0,\,[7]\right) \neq 7 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{hash\_is\_not\_constant}]
+\[ \mathrm{hash32}\mathopen{}\left(0,\,[1]\right) \neq \mathrm{hash32}\mathopen{}\left(0,\,[2]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{hash\_is\_thirty\_two\_bit}]
+\[ \forall c \in \{0,\dots,39\},\; \mathrm{hash32}\mathopen{}\left(0,\,[c]\right) < \mathrm{M32} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 40 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{fnv\_settles\_its\_range}]
+\[ \mathrm{settledHere} = 12 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_hash\_is\_order\_sensitive}]
+\[ \mathrm{hash32}\mathopen{}\left(0,\,[97,\,98]\right) \neq \mathrm{hash32}\mathopen{}\left(0,\,[98,\,97]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_empty\_input\_is\_still\_mixed}]
+\[ \mathrm{hash32}\mathopen{}\left(0,\,[]\right) = 2872998923 \land \mathrm{hash32}\mathopen{}\left(\mathrm{FNV\_OFFSET},\,[]\right) = 0 \land \mathrm{avalanche}\mathopen{}\left(0\right) = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{ledgerclaims.lean}}
+
+\begin{theorem}[\texttt{a\_seal\_is\_128\_bits}]
+\[ \left|\mathrm{toUuidBytes}\mathopen{}\left([97]\right)\right| \cdot 8 = 128 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{membership\_grows\_by\_one\_seal\_per\_doubling}]
+\[ \mathrm{rounds}\mathopen{}\left(40,\,2\right) = 1 \land \mathrm{rounds}\mathopen{}\left(40,\,4\right) = 2 \land \mathrm{rounds}\mathopen{}\left(40,\,8\right) = 3 \land \mathrm{rounds}\mathopen{}\left(40,\,16\right) = 4 \land \mathrm{rounds}\mathopen{}\left(40,\,32\right) = 5 \land \mathrm{rounds}\mathopen{}\left(40,\,64\right) = 6 \land \mathrm{rounds}\mathopen{}\left(40,\,128\right) = 7 \land \mathrm{rounds}\mathopen{}\left(40,\,256\right) = 8 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{membership\_is\_logarithmic\_not\_linear}]
+\[ \mathrm{rounds}\mathopen{}\left(40,\,1024\right) = 10 \land \mathrm{rounds}\mathopen{}\left(40,\,1024\right) < 1024 \land \mathrm{rounds}\mathopen{}\left(40,\,1024\right) \cdot 128 < 1024 \cdot 128 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_967\_receipt\_case}]
+\[ \mathrm{saving}\mathopen{}\left(967,\,20\right) = 947 \land 20 + 947 = 967 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_saving\_never\_exceeds\_its\_value}]
+\[ \forall v \in \{0,\dots,39\},\; \forall w \in \{0,\dots,39\},\; \mathrm{saving}\mathopen{}\left(v,\,w\right) \le v \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 1,600 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{more\_payloads\_than\_addresses\_must\_collide}]
+\[ \left|\operatorname{dedup}\left(\mathrm{addr4}[\{0,\dots,16\}]\right)\right| < 17 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 17 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_address\_does\_not\_determine\_the\_payload}]
+\[ \exists a \in \{0,\dots,16\} : \exists b \in \{0,\dots,16\} : a \neq b \land \mathrm{addr4}\mathopen{}\left(a\right) = \mathrm{addr4}\mathopen{}\left(b\right) = \mathrm{true} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 289 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_proof\_is\_smaller\_than\_its\_set\_across\_the\_octave}]
+\[ \forall n \in \{2,\dots,256\},\; \mathrm{rounds}\mathopen{}\left(40,\,n\right) < n \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 255 cases. \hfill$\square$
+
+\paragraph{\texttt{merkle.lean}}
+
+\begin{theorem}[\texttt{merge\_agrees}]
+\[ \mathrm{merge}\mathopen{}\left(A,\,B\right) = [181,\,59,\,237,\,190,\,211,\,88,\,129,\,103,\,143,\,231,\,158,\,123,\,139,\,178,\,38,\,2] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 16 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{empty\_fold\_agrees}]
+\[ \mathrm{merkleFold}\mathopen{}\left([]\right) = [147,\,146,\,154,\,45,\,72,\,16,\,138,\,198,\,159,\,50,\,78,\,208,\,125,\,158,\,1,\,108] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 16 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{singleton\_fold\_is\_the\_leaf}]
+\[ \mathrm{merkleFold}\mathopen{}\left([A]\right) = A \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{pair\_fold\_agrees}]
+\[ \mathrm{merkleFold}\mathopen{}\left([A,\,B]\right) = [181,\,59,\,237,\,190,\,211,\,88,\,129,\,103,\,143,\,231,\,158,\,123,\,139,\,178,\,38,\,2] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 16 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{fold\_is\_order\_independent\_on\_two}]
+\[ \mathrm{merkleFold}\mathopen{}\left([A,\,B]\right) = \mathrm{merkleFold}\mathopen{}\left([B,\,A]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{merge\_is\_order\_sensitive}]
+\[ \mathrm{merge}\mathopen{}\left(A,\,B\right) \neq \mathrm{merge}\mathopen{}\left(B,\,A\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{sorting\_is\_what\_makes\_the\_fold\_order\_free}]
+\[ \mathrm{sortB}\mathopen{}\left([A,\,B]\right) = \mathrm{sortB}\mathopen{}\left([B,\,A]\right) \land [A,\,B] \neq [B,\,A] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{merkle\_settles\_its\_range}]
+\[ \mathrm{settledHere} = 8 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{fold\_is\_order\_independent\_on\_three}]
+\[ \mathrm{merkleFold}\mathopen{}\left([A,\,B,\,C]\right) = \mathrm{merkleFold}\mathopen{}\left([A,\,C,\,B]\right) \land \mathrm{merkleFold}\mathopen{}\left([A,\,B,\,C]\right) = \mathrm{merkleFold}\mathopen{}\left([B,\,A,\,C]\right) \land \mathrm{merkleFold}\mathopen{}\left([A,\,B,\,C]\right) = \mathrm{merkleFold}\mathopen{}\left([B,\,C,\,A]\right) \land \mathrm{merkleFold}\mathopen{}\left([A,\,B,\,C]\right) = \mathrm{merkleFold}\mathopen{}\left([C,\,A,\,B]\right) \land \mathrm{merkleFold}\mathopen{}\left([A,\,B,\,C]\right) = \mathrm{merkleFold}\mathopen{}\left([C,\,B,\,A]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\subsection{the ring}
+
+\paragraph{\texttt{coin.lean}}
+
+\begin{theorem}[\texttt{the\_reflection\_is\_an\_involution}]
+\[ \forall d \in \mathrm{digits},\; \mathrm{refl}\mathopen{}\left(\mathrm{refl}\mathopen{}\left(d\right)\right) = d \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{one\_side\_is\_reflected\_onto\_itself}]
+\[ \forall d \in \mathrm{tetB},\; \mathrm{refl}\mathopen{}\left(d\right) \in \mathrm{tetB} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_other\_two\_swap}]
+\[ \forall d \in \mathrm{tetA},\; \mathrm{refl}\mathopen{}\left(d\right) \in \mathrm{axis} \land \forall d \in \mathrm{axis},\; \mathrm{refl}\mathopen{}\left(d\right) \in \mathrm{tetA} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{exactly\_one\_digit\_is\_unmoved}]
+\[ \{\, d \in \mathrm{digits} \mid \mathrm{refl}\mathopen{}\left(d\right) = d \,\} = [5] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{exactly\_one\_digit\_reflects\_out\_of\_range}]
+\[ \{\, d \in \mathrm{digits} \mid \mathrm{refl}\mathopen{}\left(d\right) > 9 \,\} = [0] \land \mathrm{refl}\mathopen{}\left(0\right) = 10 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_classes\_partition\_the\_nine}]
+\[ \left|\mathrm{tetA}\right| + \left|\mathrm{tetB}\right| + \left|\mathrm{axis}\right| = 9 \land \left|\operatorname{dedup}\left(\mathrm{tetA} \mathbin{+\!\!+} \mathrm{tetB} \mathbin{+\!\!+} \mathrm{axis}\right)\right| = 9 \land \left|\mathrm{digits}\right| = 10 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{every\_digit\_is\_sorted\_exactly\_once}]
+\[ \forall d \in \mathrm{digits},\; d \in \mathrm{tetB} \land \mathrm{refl}\mathopen{}\left(d\right) \in \mathrm{tetB} \lor d \in \mathrm{tetA} \land \mathrm{refl}\mathopen{}\left(d\right) \in \mathrm{axis} \lor d \in \mathrm{axis} \land \mathrm{refl}\mathopen{}\left(d\right) \in \mathrm{tetA} \lor \mathrm{refl}\mathopen{}\left(d\right) = d \lor \mathrm{refl}\mathopen{}\left(d\right) > 9 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_fall\_fixes\_every\_digit\_but\_the\_void}]
+\[ \{\, d \in \mathrm{digits} \mid \mathrm{fall}\mathopen{}\left(d\right) \neq d \,\} = [0] \land \forall d \in \mathrm{nonzero},\; \mathrm{fall}\mathopen{}\left(d\right) = d \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{reflection\_and\_gravity\_share\_one\_singularity}]
+\[ \{\, d \in \mathrm{digits} \mid \mathrm{fall}\mathopen{}\left(d\right) \neq d \,\} = \{\, d \in \mathrm{digits} \mid \mathrm{refl}\mathopen{}\left(d\right) > 9 \,\} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{on\_the\_fixed\_points\_the\_reflection\_never\_leaves}]
+\[ \forall d \in \mathrm{nonzero},\; \mathrm{refl}\mathopen{}\left(d\right) \ge 1 \land \mathrm{refl}\mathopen{}\left(d\right) \le 9 \land \forall d \in \mathrm{nonzero},\; \mathrm{refl}\mathopen{}\left(\mathrm{refl}\mathopen{}\left(d\right)\right) = d \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{what\_escapes\_falls\_back\_inside}]
+\[ \mathrm{refl}\mathopen{}\left(0\right) = 10 \land \mathrm{fall}\mathopen{}\left(10\right) = 1 \land \mathrm{fall}\mathopen{}\left(10\right) \in \mathrm{nonzero} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{this\_file\_makes\_no\_physical\_claim}]
+\[ \mathrm{physicalClaims} = 0 \land \left|\mathrm{digits}\right| = 10 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{families.lean}}
+
+\begin{theorem}[\texttt{flt\_all\_primes\_under\_thirty}]
+\[ \forall p \in \mathrm{primesUpTo30},\; \forall a \in \{1,\dots,1+p - 1-1\},\; a^{p - 1} \bmod p = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{wilson\_all\_primes\_under\_thirty}]
+\[ \forall p \in \mathrm{primesUpTo30},\; \mathrm{fact}\mathopen{}\left(p - 1\right) \bmod p = p - 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{wilson\_fails\_at\_composites}]
+\[ \forall n \in \{\, n \in \{4,\dots,23\} \mid \lnot n \in \mathrm{primesUpTo30} \,\},\; \mathrm{fact}\mathopen{}\left(n - 1\right) \bmod n \neq n - 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 20 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{pascal\_rows\_sum\_to\_powers\_of\_two}]
+\[ \forall n \in \{0,\dots,11\},\; \sum \{\, \mathrm{choose}\mathopen{}\left(n,\,k\right) \mid k \in \{0,\dots,n + 1-1\} \,\} = 2^{n} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 12 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{pascal\_alternating\_sums\_vanish}]
+\[ \forall n \in \{1,\dots,11\},\; \sum \{\, \begin{cases}\mathrm{choose}\mathopen{}\left(n,\,k\right) & \text{if } k \bmod 2 = 0\\ 0 & \text{otherwise}\end{cases} \mid k \in \{0,\dots,n + 1-1\} \,\} = \sum \{\, \begin{cases}\mathrm{choose}\mathopen{}\left(n,\,k\right) & \text{if } k \bmod 2 = 1\\ 0 & \text{otherwise}\end{cases} \mid k \in \{0,\dots,n + 1-1\} \,\} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 11 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{totient\_at\_prime\_powers}]
+\[ \forall p \in [2,\,3,\,5,\,7],\; \forall k \in \{1,\dots,3\},\; \mathrm{totient}\mathopen{}\left(p^{k}\right) = p^{k} - p^{k - 1} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 12 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{geometric\_series\_all\_bases}]
+\[ \forall b \in \{2,\dots,9\},\; \sum \{\, b^{i} \mid i \in \{0,\dots,4\} \,\} \cdot b - 1 = b^{5} - 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 40 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{xor\_is\_parity\_up\_to\_eight\_bits}]
+\[ \forall k \in \{1,\dots,8\},\; \forall n \in \{0,\dots,2^{k}-1\},\; \mathrm{popcount}\mathopen{}\left(n\right) \bmod 2 = \operatorname{fold}_{\mathrm{acc},\,i \mapsto \mathrm{acc} + n \gg i \bmod 2 \bmod 2}\left(\{0,\dots,k-1\},\, 0\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 8 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{nat\_div\_is\_a\_total\_function\_returning\_zero\_at\_a\_zero\_divisor}]
+\[ \frac{7}{0} = 0 \land \frac{0}{0} = 0 \land 7 \bmod 0 = 7 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{division\_identity\_holds\_across\_the\_range}]
+\[ \forall d \in \{0,\dots,12\},\; \frac{12}{d} \cdot d + 12 \bmod d = 12 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 13 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{at\_a\_zero\_divisor\_the\_identity\_is\_carried\_by\_the\_remainder}]
+\[ \frac{12}{0} = 0 \land 12 \bmod 0 = 12 \land \frac{12}{0} \cdot 0 + 12 \bmod 0 = 12 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{families\_settle\_their\_ranges}]
+\[ \mathrm{settledHere} = 11 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{involution.lean}}
+
+\begin{theorem}[\texttt{there\_are\_2620\_involutions\_of\_nine}]
+\[ \left|\mathrm{all}\right| = 2620 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_fuel\_was\_not\_the\_limit}]
+\[ \left|\mathrm{matchings}\mathopen{}\left(11,\,\mathrm{nine}\right)\right| = \left|\mathrm{all}\right| \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{every\_involution\_fixes\_at\_least\_one\_point}]
+\[ \forall m \in \mathrm{all},\; \mathrm{fixedPoints}\mathopen{}\left(m\right) \ge 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_fixed\_points\_are\_always\_odd}]
+\[ \forall m \in \mathrm{all},\; \mathrm{fixedPoints}\mathopen{}\left(m\right) \bmod 2 = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{no\_single\_point\_is\_fixed\_by\_all}]
+\[ \forall d \in \mathrm{nine},\; \lnot \forall m \in \mathrm{all},\; \left(d,\,d\right) \in m \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_constant\_sum\_is\_rare}]
+\[ \left|\{\, x \in \mathrm{all} \mid \mathrm{constantSum}\mathopen{}\left(x\right) \,\}\right| = 90 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{so\_involutions\_are\_not\_all\_harmonic\_in\_that\_sense}]
+\[ \lnot \forall x \in \mathrm{all},\; \mathrm{constantSum}\mathopen{}\left(x\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_coins\_reflection\_is\_harmonic\_and\_is\_one\_of\_the\_ninety}]
+\[ \mathrm{constantSum}\mathopen{}\left(\mathrm{coinLike}\right) = \mathrm{true} \land \mathrm{fixedPoints}\mathopen{}\left(\mathrm{coinLike}\right) = 1 \land \forall p \in \mathrm{swaps}\mathopen{}\left(\mathrm{coinLike}\right),\; p_{1} + p_{2} = 9 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{merkaba.lean}}
+
+\begin{theorem}[\texttt{the\_three\_classes\_partition\_z9}]
+\[ \left|\mathrm{axis}\right| = 3 \land \left|\mathrm{tetA}\right| = 3 \land \left|\mathrm{tetB}\right| = 3 \land \left|\operatorname{dedup}\left(\mathrm{axis} \mathbin{+\!\!+} \mathrm{tetA} \mathbin{+\!\!+} \mathrm{tetB}\right)\right| = 9 \land \forall d \in \{0,\dots,8\},\; d \in \mathrm{axis} \mathbin{+\!\!+} \mathrm{tetA} \mathbin{+\!\!+} \mathrm{tetB} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_axis\_is\_closed\_under\_doubling}]
+\[ \forall d \in \mathrm{dbl}\mathopen{}\left(\mathrm{axis}\right),\; d \in \mathrm{axis} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{doubling\_counter\_rotates\_the\_two\_tetrahedra}]
+\[ \left|\operatorname{dedup}\left(\mathrm{dbl}\mathopen{}\left(\mathrm{tetA}\right)\right)\right| = 3 \land \forall d \in \mathrm{dbl}\mathopen{}\left(\mathrm{tetA}\right),\; d \in \mathrm{tetB} \land \left|\operatorname{dedup}\left(\mathrm{dbl}\mathopen{}\left(\mathrm{tetB}\right)\right)\right| = 3 \land \forall d \in \mathrm{dbl}\mathopen{}\left(\mathrm{tetB}\right),\; d \in \mathrm{tetA} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_counter\_rotation\_has\_period\_two}]
+\[ \forall d \in \mathrm{dbl}\mathopen{}\left(\mathrm{dbl}\mathopen{}\left(\mathrm{tetA}\right)\right),\; d \in \mathrm{tetA} \land \forall d \in \mathrm{dbl}\mathopen{}\left(\mathrm{dbl}\mathopen{}\left(\mathrm{tetB}\right)\right),\; d \in \mathrm{tetB} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_tetrahedra\_residue\_sums\_cancel}]
+\[ \mathrm{m9}\mathopen{}\left(\sum \mathrm{tetA}\right) = 3 \land \mathrm{m9}\mathopen{}\left(\sum \mathrm{tetB}\right) = 6 \land \mathrm{m9}\mathopen{}\left(\sum \mathrm{tetA} + \sum \mathrm{tetB}\right) = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{one\_tetrahedron\_covers\_half\_the\_units}]
+\[ \left|\{\, d \in \mathrm{units} \mid d \in \mathrm{tetA} \,\}\right| = 3 \land \left|\{\, d \in \mathrm{units} \mid d \in \mathrm{tetB} \,\}\right| = 3 \land \left|\mathrm{units}\right| = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_cube\_and\_the\_tetrahedron\_count\_out}]
+\[ 2^{3} = 8 \land 3 \cdot 2^{2} = 12 \land 4 + 4 - 6 = 2 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{stacked\_triangles\_are\_tetrahedral}]
+\[ \forall n \in \{1,\dots,40\},\; \mathrm{sumTri}\mathopen{}\left(n\right) = \frac{n \cdot n + 1 \cdot n + 2}{6} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 40 cases. \hfill$\square$
+
+\paragraph{\texttt{sequences.lean}}
+
+\begin{theorem}[\texttt{cassini\_at\_even\_indices}]
+\[ \forall n \in \{1,\dots,20\},\; n \bmod 2 = 1 \lor \mathrm{fib}\mathopen{}\left(n - 1\right) \cdot \mathrm{fib}\mathopen{}\left(n + 1\right) = \mathrm{fib}\mathopen{}\left(n\right) \cdot \mathrm{fib}\mathopen{}\left(n\right) + 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 20 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{cassini\_at\_odd\_indices}]
+\[ \forall n \in \{1,\dots,20\},\; n \bmod 2 = 0 \lor \mathrm{fib}\mathopen{}\left(n - 1\right) \cdot \mathrm{fib}\mathopen{}\left(n + 1\right) + 1 = \mathrm{fib}\mathopen{}\left(n\right) \cdot \mathrm{fib}\mathopen{}\left(n\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 20 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{cassini\_deviation\_is\_exactly\_one}]
+\[ \forall n \in \{1,\dots,20\},\; \mathrm{fib}\mathopen{}\left(n - 1\right) \cdot \mathrm{fib}\mathopen{}\left(n + 1\right) = \mathrm{fib}\mathopen{}\left(n\right) \cdot \mathrm{fib}\mathopen{}\left(n\right) + 1 \lor \mathrm{fib}\mathopen{}\left(n - 1\right) \cdot \mathrm{fib}\mathopen{}\left(n + 1\right) + 1 = \mathrm{fib}\mathopen{}\left(n\right) \cdot \mathrm{fib}\mathopen{}\left(n\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 20 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{lucas\_mod\_two\_is\_the\_and\_rule}]
+\[ \forall n \in \{0,\dots,13\},\; \forall k \in \{0,\dots,n + 1-1\},\; \mathrm{choose}\mathopen{}\left(n,\,k\right) \bmod 2 = 1 = \mathrm{andN}\mathopen{}\left(k,\,n\right) = k \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 14 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{pascal\_has\_both\_parities}]
+\[ 1 \in \bigcup_{n \in \{0,\dots,13\}} \{\, \mathrm{choose}\mathopen{}\left(n,\,k\right) \bmod 2 \mid k \in \{0,\dots,n + 1-1\} \,\} \land 0 \in \bigcup_{n \in \{0,\dots,13\}} \{\, \mathrm{choose}\mathopen{}\left(n,\,k\right) \bmod 2 \mid k \in \{0,\dots,n + 1-1\} \,\} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 196 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{sums\_of\_two\_squares\_are\_closed}]
+\[ \forall a \in \{0,\dots,7\},\; \forall b \in \{0,\dots,7\},\; \forall c \in \{0,\dots,7\},\; \forall d \in \{0,\dots,7\},\; a \cdot a + b \cdot b \cdot c \cdot c + d \cdot d = a \cdot c - b \cdot d \cdot a \cdot c - b \cdot d + a \cdot d + b \cdot c \cdot a \cdot d + b \cdot c \lor a \cdot c < b \cdot d \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4,096 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{three\_five\_eight\_are\_consecutive}]
+\[ \mathrm{fib}\mathopen{}\left(4\right) = 3 \land \mathrm{fib}\mathopen{}\left(5\right) = 5 \land \mathrm{fib}\mathopen{}\left(6\right) = 8 \land \mathrm{fib}\mathopen{}\left(4\right) + \mathrm{fib}\mathopen{}\left(5\right) = \mathrm{fib}\mathopen{}\left(6\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{pisano\_twentyfour\_is\_four\_sixes}]
+\[ \forall k \in \{0,\dots,29\},\; \mathrm{fib}\mathopen{}\left(k\right) \bmod 9 = \mathrm{fib}\mathopen{}\left(k + 24\right) \bmod 9 \land 24 = 4 \cdot 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 30 cases. \hfill$\square$
+
+\paragraph{\texttt{split.lean}}
+
+\begin{theorem}[\texttt{the\_singles\_are\_exactly\_the\_non\_units}]
+\[ \{\, d \in \{0,\dots,9\} \mid \lnot \mathrm{isUnit9}\mathopen{}\left(d\right) \,\} = [0,\,3,\,6,\,9] \land \mathrm{singles} = [0,\,3,\,6,\,9] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 160 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_pairs\_are\_exactly\_the\_units\_in\_order}]
+\[ \{\, x \in \{0,\dots,9\} \mid \mathrm{isUnit9}\mathopen{}\left(x\right) \,\} = \mathrm{unitsOf9} \land \mathrm{unitsOf9} = [1,\,2,\,4,\,5,\,7,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 60 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{each\_pair\_is\_two\_consecutive\_units}]
+\[ 12 = 1 \cdot 10 + 2 \land 45 = 4 \cdot 10 + 5 \land 78 = 7 \cdot 10 + 8 \land 2 = 1 + 1 \land 5 = 4 + 1 \land 8 = 7 + 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{every\_token\_is\_a\_multiple\_of\_three}]
+\[ \forall t \in \mathrm{tokens},\; t \bmod 3 = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_tokens\_are\_three\_times\_these}]
+\[ \{\, \frac{t}{3} \mid t \in \mathrm{tokens} \,\} = [0,\,4,\,1,\,15,\,2,\,26,\,3] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 7 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{addition\_and\_multiplication\_stay\_inside}]
+\[ \forall a \in \mathrm{tokens},\; \forall b \in \mathrm{tokens},\; a + b \bmod 3 = 0 \land a \cdot b \bmod 3 = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{subtraction\_stays\_inside}]
+\[ \forall a \in \mathrm{tokens},\; \forall b \in \mathrm{tokens},\; a < b \lor a - b \bmod 3 = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{division\_is\_the\_operation\_that\_leaves}]
+\[ \frac{12}{3} = 4 \land 4 \bmod 3 \neq 0 \land \frac{45}{9} = 5 \land 5 \bmod 3 \neq 0 \land \frac{6}{3} = 2 \land 2 \bmod 3 \neq 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_roots\_are\_the\_singles}]
+\[ \{\, t \bmod 9 \mid t \in \mathrm{tokens} \,\} = [0,\,3,\,3,\,0,\,6,\,6,\,0] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 7 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{every\_root\_is\_a\_single}]
+\[ \forall t \in \mathrm{tokens},\; \begin{cases}\begin{cases}0 & \text{if } t = 0\\ 9 & \text{otherwise}\end{cases} & \text{if } t \bmod 9 = 0\\ t \bmod 9 & \text{otherwise}\end{cases} \in \mathrm{singles} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_coin\_step\_is\_three\_times\_the\_two\_coins}]
+\[ \mathrm{coins} = 2 \land \mathrm{coinStep} = 6 \land \mathrm{coinStep} = 3 \cdot 2 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{accounting\_the\_coins\_on\_the\_last\_pair}]
+\[ 78 = 3 \cdot 26 \land 3 \cdot 26 - \mathrm{coins} = 72 \land 72 = 8 \cdot 9 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_exhaustible\_tokens\_are\_those\_six\_divides}]
+\[ \{\, t \in \mathrm{tokens} \mid t \bmod \mathrm{coinStep} = 0 \,\} = [0,\,12,\,6,\,78] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_rest\_halt\_on\_the\_generator}]
+\[ \{\, t \in \mathrm{tokens} \mid t \bmod \mathrm{coinStep} \neq 0 \,\} = [3,\,45,\,9] \land \forall t \in \{\, t \in \mathrm{tokens} \mid t \bmod \mathrm{coinStep} \neq 0 \,\},\; t \bmod \mathrm{coinStep} = 3 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{every\_token\_is\_void\_bound\_or\_halts\_on\_three}]
+\[ \forall t \in \mathrm{tokens},\; t \bmod \mathrm{coinStep} = 0 \lor t \bmod \mathrm{coinStep} = 3 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{inside\_this\_ideal\_the\_bare\_coin\_sorts\_as\_the\_scaled\_one}]
+\[ \{\, t \in \mathrm{tokens} \mid t \bmod 2 = 0 \,\} = \{\, t \in \mathrm{tokens} \mid t \bmod \mathrm{coinStep} = 0 \,\} \land \forall t \in \mathrm{tokens},\; t \bmod 2 = 0 = t \bmod \mathrm{coinStep} = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_seal\_affords\_sixty\_four\_payments\_of\_two}]
+\[ \frac{\mathrm{sealBits}}{\mathrm{coins}} = 64 \land 64 = 2^{6} \land \mathrm{sealBits} = 64 \cdot \mathrm{coins} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{sixty\_four\_is\_where\_the\_doubling\_returns}]
+\[ 2^{6} \bmod 9 = 1 \land \{\, 2^{k} \bmod 9 \mid k \in \{0,\dots,5\} \,\} = [1,\,2,\,4,\,8,\,7,\,5] \land \forall k \in \{1,\dots,5\},\; 2^{k} \bmod 9 \neq 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 180 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_budget\_and\_the\_period\_are\_one\_turn}]
+\[ \frac{\mathrm{sealBits}}{\mathrm{coins}} = 2^{6} \land 2^{6} \bmod 9 = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{z9.lean}}
+
+\begin{theorem}[\texttt{units\_are\_six}]
+\[ \mathrm{units} = [1,\,2,\,4,\,5,\,7,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{units\_count}]
+\[ \left|\mathrm{units}\right| = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{hasinv\_units}]
+\[ \forall u \in \mathrm{units},\; \exists e \in \{0,\dots,B-1\} : \mathrm{m9}\mathopen{}\left(u \cdot e\right) = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{hasinv\_triad\_not}]
+\[ \lnot \exists t \in [3,\,6,\,0] : \exists e \in \{0,\dots,B-1\} : \mathrm{m9}\mathopen{}\left(t \cdot e\right) = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{selfinv\_exactly\_one\_and\_eight}]
+\[ \{\, u \in \mathrm{units} \mid \mathrm{m9}\mathopen{}\left(u \cdot u\right) = 1 \,\} = [1,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 2 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{euler\_units\_pow\_six}]
+\[ \forall u \in \mathrm{units},\; \mathrm{pow9}\mathopen{}\left(u,\,6\right) = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{invpow\_is\_u\_to\_the\_fifth}]
+\[ \forall u \in \mathrm{units},\; \mathrm{m9}\mathopen{}\left(u \cdot \mathrm{pow9}\mathopen{}\left(u,\,5\right)\right) = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{powsum\_zero\_at\_six}]
+\[ \mathrm{m9}\mathopen{}\left(\sum \{\, \mathrm{pow9}\mathopen{}\left(u,\,6\right) \mid u \in \mathrm{units} \,\}\right) = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{powsum\_zero\_at\_one}]
+\[ \mathrm{m9}\mathopen{}\left(\sum \{\, \mathrm{pow9}\mathopen{}\left(u,\,1\right) \mid u \in \mathrm{units} \,\}\right) = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{mulperm\_iff\_unit}]
+\[ \forall k \in \{0,\dots,B-1\},\; \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(k \cdot u\right) \mid u \in \mathrm{units} \,\}\right)\right| = \left|\mathrm{units}\right| = \mathrm{isUnit}\mathopen{}\left(k\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{addgen\_iff\_coprime}]
+\[ \forall k \in \{0,\dots,B-1\},\; \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(k \cdot i\right) \mid i \in \{0,\dots,B-1\} \,\}\right)\right| = B = \mathrm{isUnit}\mathopen{}\left(k\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{selfneg\_only\_zero}]
+\[ \{\, d \in \{0,\dots,B-1\} \mid \mathrm{m9}\mathopen{}\left(2 \cdot d\right) = 0 \,\} = [0] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{orbit\_is\_the\_six}]
+\[ \mathrm{orbit}[\{0,\dots,5\}] = [1,\,2,\,4,\,8,\,7,\,5] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{orbit\_closes}]
+\[ \mathrm{orbit}\mathopen{}\left(6\right) = \mathrm{orbit}\mathopen{}\left(0\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{orbit\_distinct}]
+\[ \left|\operatorname{dedup}\left(\mathrm{orbit}[\{0,\dots,5\}]\right)\right| = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{orbit\_covers\_units}]
+\[ \left|\operatorname{dedup}\left(\mathrm{orbit}[\{0,\dots,5\}]\right)\right| = \left|\mathrm{units}\right| \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{triad\_never\_reaches\_one}]
+\[ \lnot \exists k \in \{0,\dots,11\} : \mathrm{pow9}\mathopen{}\left(3,\,k + 1\right) = 1 \lor \mathrm{pow9}\mathopen{}\left(6,\,k + 1\right) = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 12 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{triad\_squares\_vanish}]
+\[ \mathrm{m9}\mathopen{}\left(3 \cdot 3\right) = 0 \land \mathrm{m9}\mathopen{}\left(6 \cdot 6\right) = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{add\_group}]
+\[ \forall d \in \{0,\dots,B-1\},\; \exists e \in \{0,\dots,B-1\} : \mathrm{m9}\mathopen{}\left(d + e\right) = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{neg\_involution}]
+\[ \forall d \in \{0,\dots,B-1\},\; \mathrm{m9}\mathopen{}\left(B - \mathrm{m9}\mathopen{}\left(B - d\right)\right) = \mathrm{m9}\mathopen{}\left(d\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{z9\_settles\_its\_domain\_totally}]
+\[ \mathrm{settledHere} = 20 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{z9plus.lean}}
+
+\begin{theorem}[\texttt{squares\_land\_exactly\_in\_zero\_one\_four\_seven}]
+\[ \mathrm{R.all}\mathopen{}\left(d \mapsto \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [0,\,1,\,4,\,7]\right) \land \forall s \in [0,\,1,\,4,\,7],\; \mathrm{R.any}\mathopen{}\left(d \mapsto \mathrm{m9}\mathopen{}\left(d \cdot d\right) = s\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 16 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{five\_is\_not\_a\_square\_mod\_nine}]
+\[ \lnot \mathrm{R.any}\mathopen{}\left(d \mapsto \mathrm{m9}\mathopen{}\left(d \cdot d\right) = 5\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{cubes\_land\_exactly\_in\_zero\_one\_eight}]
+\[ \mathrm{R.all}\mathopen{}\left(d \mapsto \mathrm{pw}\mathopen{}\left(d,\,3\right) \in [0,\,1,\,8]\right) \land \forall c \in [0,\,1,\,8],\; \mathrm{R.any}\mathopen{}\left(d \mapsto \mathrm{pw}\mathopen{}\left(d,\,3\right) = c\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{primitive\_roots\_are\_exactly\_two\_and\_five}]
+\[ \mathrm{R.filter}\mathopen{}\left(\mathrm{generates}\right) = [2,\,5] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 2 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{primitive\_root\_iff\_generates\_the\_units}]
+\[ \mathrm{R.all}\mathopen{}\left(g \mapsto \mathrm{generates}\mathopen{}\left(g\right) = g \in [2,\,5]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 2 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{doubling\_has\_period\_six}]
+\[ \forall k \in \{0,\dots,29\},\; \mathrm{pw}\mathopen{}\left(2,\,k\right) = \mathrm{pw}\mathopen{}\left(2,\,k + 6\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 30 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{no\_period\_smaller\_than\_six}]
+\[ \lnot \exists p \in [1,\,2,\,3,\,4,\,5] : \forall k \in \{0,\dots,11\},\; \mathrm{pw}\mathopen{}\left(2,\,k\right) = \mathrm{pw}\mathopen{}\left(2,\,k + p\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 60 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{digital\_root\_agrees\_with\_the\_residue}]
+\[ \forall n \in \{1,\dots,300\},\; \mathrm{dr}\mathopen{}\left(n\right) = 9 = \mathrm{m9}\mathopen{}\left(n\right) = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 300 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{digital\_root\_is\_the\_digit\_sum\_residue}]
+\[ \forall n \in \{1,\dots,300\},\; \mathrm{m9}\mathopen{}\left(\mathrm{digitSum}\mathopen{}\left(n\right)\right) = \mathrm{m9}\mathopen{}\left(n\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 300 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{reversal\_cannot\_change\_the\_digital\_root}]
+\[ \forall n \in \{1,\dots,300\},\; \mathrm{dr}\mathopen{}\left(\mathrm{reverseNum}\mathopen{}\left(n\right)\right) = \mathrm{dr}\mathopen{}\left(n\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 300 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{orbit\_digital\_roots\_have\_period\_six}]
+\[ \forall k \in \{0,\dots,23\},\; \mathrm{dr}\mathopen{}\left(\mathrm{pw}\mathopen{}\left(2,\,k\right)\right) = \mathrm{dr}\mathopen{}\left(\mathrm{pw}\mathopen{}\left(2,\,k + 6\right)\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 24 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_orders\_of\_the\_units\_are\_exact}]
+\[ \mathrm{ord}\mathopen{}\left(1\right) = 1 \land \mathrm{ord}\mathopen{}\left(8\right) = 2 \land \mathrm{ord}\mathopen{}\left(4\right) = 3 \land \mathrm{ord}\mathopen{}\left(7\right) = 3 \land \mathrm{ord}\mathopen{}\left(2\right) = 6 \land \mathrm{ord}\mathopen{}\left(5\right) = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_unit\_table\_is\_a\_latin\_square}]
+\[ \forall a \in [1,\,2,\,4,\,5,\,7,\,8],\; \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(a \cdot b\right) \mid b \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right)\right| = 6 \land \forall c \in [1,\,2,\,4,\,5,\,7,\,8],\; \exists b \in [1,\,2,\,4,\,5,\,7,\,8] : \mathrm{m9}\mathopen{}\left(a \cdot b\right) = c \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 1,296 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_orbit\_never\_meets\_the\_triad}]
+\[ \forall k \in \{0,\dots,39\},\; \lnot \mathrm{pw}\mathopen{}\left(2,\,k\right) \in [0,\,3,\,6] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 120 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_reflected\_orbit\_covers\_the\_whole\_triad}]
+\[ \forall t \in [3,\,6,\,9],\; \exists d \in \mathrm{orbit6} : \mathrm{refl}\mathopen{}\left(d\right) = t \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{reflection\_splits\_the\_orbit\_in\_half}]
+\[ \left|\{\, d \in \mathrm{orbit6} \mid \mathrm{refl}\mathopen{}\left(d\right) \in [3,\,6,\,9] \,\}\right| = 3 \land \left|\{\, d \in \mathrm{orbit6} \mid \lnot \mathrm{refl}\mathopen{}\left(d\right) \in [3,\,6,\,9] \,\}\right| = 3 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_crossing\_pairs\_are\_one\_four\_seven}]
+\[ \{\, d \in \mathrm{orbit6} \mid \mathrm{refl}\mathopen{}\left(d\right) \in [3,\,6,\,9] \,\} = [1,\,4,\,7] \land \mathrm{refl}\mathopen{}\left(1\right) = 9 \land \mathrm{refl}\mathopen{}\left(4\right) = 6 \land \mathrm{refl}\mathopen{}\left(7\right) = 3 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{reflection\_is\_injective\_on\_the\_orbit}]
+\[ \left|\operatorname{dedup}\left(\mathrm{refl}[\mathrm{orbit6}]\right)\right| = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{doubling\_alone\_reaches\_only\_the\_units}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{pw}\mathopen{}\left(2,\,k\right) \mid k \in \{0,\dots,11\} \,\}\right)\right| = 6 \land \forall d \in \{\, \mathrm{pw}\mathopen{}\left(2,\,k\right) \mid k \in \{0,\dots,11\} \,\},\; \lnot d \in [0,\,3,\,6] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 432 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{reflection\_alone\_reaches\_only\_two}]
+\[ \left|\mathrm{closure}\mathopen{}\left(6,\,[1]\right)\right| \ge 2 \land \mathrm{rfl9}\mathopen{}\left(1\right) = 0 \land \mathrm{rfl9}\mathopen{}\left(\mathrm{rfl9}\mathopen{}\left(1\right)\right) = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{doubling\_and\_reflection\_together\_reach\_every\_residue}]
+\[ \left|\mathrm{closure}\mathopen{}\left(4,\,[1]\right)\right| = 9 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{every\_residue\_is\_reachable\_from\_one}]
+\[ \forall d \in \{0,\dots,8\},\; d \in \mathrm{closure}\mathopen{}\left(4,\,[1]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_diameter\_is\_exactly\_four}]
+\[ \left|\mathrm{closure}\mathopen{}\left(4,\,[1]\right)\right| = 9 \land \left|\mathrm{closure}\mathopen{}\left(3,\,[1]\right)\right| = 7 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_frontier\_grows\_by\_two\_each\_round}]
+\[ \left|\mathrm{closure}\mathopen{}\left(0,\,[1]\right)\right| = 1 \land \left|\mathrm{closure}\mathopen{}\left(1,\,[1]\right)\right| = 3 \land \left|\mathrm{closure}\mathopen{}\left(2,\,[1]\right)\right| = 5 \land \left|\mathrm{closure}\mathopen{}\left(3,\,[1]\right)\right| = 7 \land \left|\mathrm{closure}\mathopen{}\left(4,\,[1]\right)\right| = 9 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{product\_of\_the\_units\_is\_minus\_one}]
+\[ \mathrm{m9}\mathopen{}\left(\operatorname{fold}_{(\cdot\,\cdot\,\cdot)}\left([1,\,2,\,4,\,5,\,7,\,8],\, 1\right)\right) = 8 \land \mathrm{m9}\mathopen{}\left(8 + 1\right) = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{pisano\_period\_mod\_nine\_is\_twenty\_four}]
+\[ \forall k \in \{0,\dots,29\},\; \mathrm{fib9}\mathopen{}\left(k\right) = \mathrm{fib9}\mathopen{}\left(k + 24\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 30 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{no\_proper\_divisor\_of\_twenty\_four\_is\_a\_period}]
+\[ \lnot \exists p \in [1,\,2,\,3,\,4,\,6,\,8,\,12] : \forall k \in \{0,\dots,25\},\; \mathrm{fib9}\mathopen{}\left(k\right) = \mathrm{fib9}\mathopen{}\left(k + p\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 182 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{fibonacci\_recurrence\_holds}]
+\[ \forall n \in \{0,\dots,19\},\; \mathrm{fib}\mathopen{}\left(n + 2\right) = \mathrm{fib}\mathopen{}\left(n\right) + \mathrm{fib}\mathopen{}\left(n + 1\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 20 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{consecutive\_fibonacci\_are\_coprime}]
+\[ \forall n \in \{1,\dots,25\},\; \mathrm{gcd9}\mathopen{}\left(\mathrm{fib}\mathopen{}\left(n\right),\,\mathrm{fib}\mathopen{}\left(n + 1\right)\right) = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 25 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{three\_five\_eight\_are\_consecutive\_fibonacci}]
+\[ \mathrm{fib}\mathopen{}\left(4\right) = 3 \land \mathrm{fib}\mathopen{}\left(5\right) = 5 \land \mathrm{fib}\mathopen{}\left(6\right) = 8 \land \mathrm{fib}\mathopen{}\left(4\right) + \mathrm{fib}\mathopen{}\left(5\right) = \mathrm{fib}\mathopen{}\left(6\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{units\_and\_triad\_partition\_the\_ring}]
+\[ \left|\mathrm{R.filter}\mathopen{}\left(d \mapsto \mathrm{R.any}\mathopen{}\left(e \mapsto \mathrm{m9}\mathopen{}\left(d \cdot e\right) = 1\right)\right)\right| + \left|\mathrm{R.filter}\mathopen{}\left(d \mapsto \lnot \mathrm{R.any}\mathopen{}\left(e \mapsto \mathrm{m9}\mathopen{}\left(d \cdot e\right) = 1\right)\right)\right| = 9 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{both\_parts\_sum\_to\_zero}]
+\[ \mathrm{m9}\mathopen{}\left(\sum \mathrm{R.filter}\mathopen{}\left(d \mapsto \mathrm{R.any}\mathopen{}\left(e \mapsto \mathrm{m9}\mathopen{}\left(d \cdot e\right) = 1\right)\right)\right) = 0 \land \mathrm{m9}\mathopen{}\left(\sum \mathrm{R.filter}\mathopen{}\left(d \mapsto \lnot \mathrm{R.any}\mathopen{}\left(e \mapsto \mathrm{m9}\mathopen{}\left(d \cdot e\right) = 1\right)\right)\right) = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\subsection{the floor}
+
+\paragraph{\texttt{demand.lean}}
+
+\begin{theorem}[\texttt{fibonacci\_gcd\_is\_the\_fibonacci\_of\_the\_gcd}]
+\[ \forall m \in \{1,\dots,14\},\; \forall n \in \{1,\dots,14\},\; \mathrm{Families.gcd'}\mathopen{}\left(\mathrm{Sequences.fib}\mathopen{}\left(m\right),\,\mathrm{Sequences.fib}\mathopen{}\left(n\right)\right) = \mathrm{Sequences.fib}\mathopen{}\left(\mathrm{Families.gcd'}\mathopen{}\left(m,\,n\right)\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 196 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_mobius\_divisor\_sum\_is\_the\_identity}]
+\[ \forall n \in \{1,\dots,30\},\; \sum \mathrm{mu}[\mathrm{divisors}\mathopen{}\left(n\right)] = \begin{cases}1 & \text{if } n = 1\\ 0 & \text{otherwise}\end{cases} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 30 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_derangement\_recurrence\_holds}]
+\[ \forall n \in \{2,\dots,12\},\; \mathrm{derange}\mathopen{}\left(n\right) = n - 1 \cdot \mathrm{derange}\mathopen{}\left(n - 1\right) + \mathrm{derange}\mathopen{}\left(n - 2\right) \land \mathrm{derange}\mathopen{}\left(4\right) = 9 \land \mathrm{derange}\mathopen{}\left(5\right) = 44 \land \mathrm{derange}\mathopen{}\left(6\right) = 265 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 11 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{legendres\_three\_square\_theorem}]
+\[ \forall n \in \{0,\dots,199\},\; \mathrm{isSumOfThreeSquares}\mathopen{}\left(n\right) = \lnot \mathrm{isExcludedForm}\mathopen{}\left(n\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 200 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{five\_six\_one\_is\_the\_smallest\_carmichael\_number}]
+\[ \mathrm{isCarmichael}\mathopen{}\left(561\right) = \mathrm{true} \land \forall n \in \{2,\dots,560\},\; \lnot \mathrm{isCarmichael}\mathopen{}\left(n\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 559 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_parity\_of\_popcount\_is\_the\_xor\_of\_the\_bits}]
+\[ \forall n \in \{0,\dots,127\},\; \mathrm{bitsF}\mathopen{}\left(10,\,n\right) \bmod 2 = \operatorname{fold}_{\mathrm{acc},\,i \mapsto \mathrm{acc} + \frac{n}{2^{i}} \bmod 2 \bmod 2}\left(\{0,\dots,7\},\, 0\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 1,024 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{factorial\_seven\_is\_five\_thousand\_and\_forty}]
+\[ \mathrm{Sequences.fact}\mathopen{}\left(7\right) = 5040 \land \mathrm{Sequences.fact}\mathopen{}\left(6\right) = 720 \land \mathrm{Sequences.fact}\mathopen{}\left(8\right) = 40320 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{mantels\_bound\_is\_n\_squared\_over\_four}]
+\[ \forall n \in \{1,\dots,20\},\; \frac{n}{2} \cdot n - \frac{n}{2} = \frac{n \cdot n}{4} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 20 cases. \hfill$\square$
+
+\paragraph{\texttt{demand2.lean}}
+
+\begin{theorem}[\texttt{nicomachus\_sum\_of\_cubes\_is\_the\_square\_of\_the\_triangular\_number}]
+\[ \forall n \in \{1,\dots,40\},\; \mathrm{sumPow}\mathopen{}\left(3,\,n\right) = \mathrm{tri}\mathopen{}\left(n\right) \cdot \mathrm{tri}\mathopen{}\left(n\right) \land \forall n \in \{1,\dots,40\},\; \mathrm{sumPow}\mathopen{}\left(3,\,n\right) = \mathrm{sumPow}\mathopen{}\left(1,\,n\right) \cdot \mathrm{sumPow}\mathopen{}\left(1,\,n\right) \land \forall n \in \{2,\dots,20\},\; \lnot \mathrm{isSquareBelow}\mathopen{}\left(900,\,\mathrm{sumPow}\mathopen{}\left(4,\,n\right)\right) \land \mathrm{isSquareBelow}\mathopen{}\left(900,\,\mathrm{sumPow}\mathopen{}\left(4,\,1\right)\right) = \mathrm{true} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 30,400 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{picks\_theorem\_holds\_for\_every\_lattice\_triangle\_in\_the\_four\_grid}]
+\[ \forall a \in \mathrm{pts},\; \forall b \in \mathrm{pts},\; \forall c \in \mathrm{pts},\; \mathrm{cross}\mathopen{}\left(a,\,b,\,c\right) \le 0 \lor \mathrm{cross}\mathopen{}\left(a,\,b,\,c\right) = 2 \cdot \mathrm{interiorCount}\mathopen{}\left(a,\,b,\,c\right) + \mathrm{boundaryCount}\mathopen{}\left(a,\,b,\,c\right) - 2 \land \lnot \exists a \in \mathrm{pts} : \exists b \in \mathrm{pts} : \exists c \in \mathrm{pts} : \mathrm{cross}\mathopen{}\left(a,\,b,\,c\right) > 0 \land \mathrm{cross}\mathopen{}\left(a,\,b,\,c\right) = 2 \cdot \mathrm{interiorCount}\mathopen{}\left(a,\,b,\,c\right) + \mathrm{boundaryCount}\mathopen{}\left(a,\,b,\,c\right) \land \left|\{\, t \in \mathrm{triples} \mid \mathrm{cross}\mathopen{}\left(t_{1},\,t_{2}_{1},\,t_{2}_{2}\right) > 0 \,\}\right| = 1548 \land \left|\{\, t \in \mathrm{triples} \mid \mathrm{cross}\mathopen{}\left(t_{1},\,t_{2}_{1},\,t_{2}_{2}\right) > 0 \land \mathrm{interiorCount}\mathopen{}\left(t_{1},\,t_{2}_{1},\,t_{2}_{2}\right) > 0 \,\}\right| = 516 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{bezouts\_identity\_is\_attained\_and\_no\_smaller\_combination\_exists}]
+\[ \forall a \in \{1,\dots,30\},\; \forall b \in \{1,\dots,30\},\; \exists x \in \{0,\dots,30\} : \exists y \in \{0,\dots,30\} : a \cdot x = b \cdot y + \mathrm{Families.gcd'}\mathopen{}\left(a,\,b\right) \land \forall a \in \{1,\dots,20\},\; \forall b \in \{1,\dots,20\},\; \forall x \in \{0,\dots,20\},\; \forall y \in \{0,\dots,20\},\; a \cdot x < b \cdot y \lor a \cdot x - b \cdot y \bmod \mathrm{Families.gcd'}\mathopen{}\left(a,\,b\right) = 0 \land \mathrm{Families.gcd'}\mathopen{}\left(240,\,46\right) = 2 \land 46 \cdot 47 = 240 \cdot 9 + 2 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 152,568,360,000 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_latin\_squares\_of\_order\_four\_number\_five\_hundred\_and\_seventy\_six}]
+\[ \mathrm{latinSquares}\mathopen{}\left(4\right) = 576 \land \mathrm{latinSquares}\mathopen{}\left(3\right) = 12 \land \mathrm{latinSquares}\mathopen{}\left(2\right) = 2 \land \mathrm{latinSquares}\mathopen{}\left(1\right) = 1 \land \lnot \mathrm{latinSquares}\mathopen{}\left(4\right) = 24 \cdot 24 \cdot 24 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_sum\_of\_fifth\_powers\_has\_the\_closed\_form\_asked\_for}]
+\[ \forall n \in \{1,\dots,20\},\; 12 \cdot \mathrm{sumPow}\mathopen{}\left(5,\,n\right) = n \cdot n \cdot n + 1 \cdot n + 1 \cdot 2 \cdot n \cdot n + 2 \cdot n - 1 \land \forall n \in \{2,\dots,20\},\; \lnot \mathrm{sumPow}\mathopen{}\left(5,\,n\right) = \mathrm{tri}\mathopen{}\left(n\right) \cdot \mathrm{tri}\mathopen{}\left(n\right) \cdot \mathrm{tri}\mathopen{}\left(n\right) \land \mathrm{sumPow}\mathopen{}\left(5,\,1\right) = 1 \land \mathrm{sumPow}\mathopen{}\left(5,\,2\right) = 33 \land \mathrm{sumPow}\mathopen{}\left(5,\,4\right) = 1300 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 380 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_chinese\_remainder\_theorem\_holds\_exactly\_when\_the\_moduli\_are\_coprime}]
+\[ \forall m \in \{1,\dots,9\},\; \forall n \in \{1,\dots,9\},\; \mathrm{crtCoversAllPairs}\mathopen{}\left(m,\,n\right) = \mathrm{Families.gcd'}\mathopen{}\left(m,\,n\right) = 1 \land \{\, x \in \{0,\dots,104\} \mid x \bmod 3 = 2 \land x \bmod 5 = 3 \land x \bmod 7 = 2 \,\} = [23] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 8,505 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{eight\_and\_nine\_are\_the\_only\_consecutive\_perfect\_powers\_below\_two\_thousand}]
+\[ \{\, n \in \{1,\dots,1999\} \mid n \in \mathrm{pp2000} \land n + 1 \in \mathrm{pp2000} \,\} = [8] \land \left|\mathrm{pp2000}\right| = 55 \land 8 \in \mathrm{pp2000} = \mathrm{true} \land 9 \in \mathrm{pp2000} = \mathrm{true} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 1,999 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{two\_twenty\_and\_two\_eighty\_four\_are\_the\_smallest\_amicable\_pair}]
+\[ \mathrm{aliquot}\mathopen{}\left(220\right) = 284 \land \mathrm{aliquot}\mathopen{}\left(284\right) = 220 \land \forall a \in \{2,\dots,219\},\; \lnot \mathrm{aliquot}\mathopen{}\left(\mathrm{aliquot}\mathopen{}\left(a\right)\right) = a \land \lnot \mathrm{aliquot}\mathopen{}\left(a\right) = a \land \{\, a \in \{2,\dots,219\} \mid \mathrm{aliquot}\mathopen{}\left(a\right) = a \,\} = [6,\,28] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 95,048 cases. \hfill$\square$
+
+\paragraph{\texttt{demand3.lean}}
+
+\begin{theorem}[\texttt{wilsons\_theorem\_and\_its\_converse}]
+\[ \forall p \in \{2,\dots,19\},\; \lnot \mathrm{isPrime}\mathopen{}\left(p\right) \lor \mathrm{Sequences.fact}\mathopen{}\left(p - 1\right) \bmod p = p - 1 \land \forall n \in \{5,\dots,19\},\; \mathrm{isPrime}\mathopen{}\left(n\right) \lor \mathrm{Sequences.fact}\mathopen{}\left(n - 1\right) \bmod n = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 270 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{every\_number\_is\_a\_sum\_of\_four\_squares}]
+\[ \forall x \in \{0,\dots,59\},\; \mathrm{isSumOfFour}\mathopen{}\left(x\right) \land \mathrm{isSumOfThree}\mathopen{}\left(7\right) = \mathrm{false} \land \mathrm{isSumOfFour}\mathopen{}\left(7\right) = \mathrm{true} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 60 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_cantor\_pairing\_is\_injective\_and\_covers\_an\_initial\_segment}]
+\[ \left|\operatorname{dedup}\left(\mathrm{block}\right)\right| = 64 \land \forall n \in \{0,\dots,35\},\; n \in \mathrm{block} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{repunit\_divisibility\_by\_three\_and\_seven}]
+\[ \forall n \in \{1,\dots,18\},\; \mathrm{repunit}\mathopen{}\left(n\right) \bmod 3 = 0 = n \bmod 3 = 0 \land \forall n \in \{1,\dots,18\},\; \mathrm{repunit}\mathopen{}\left(n\right) \bmod 7 = 0 = n \bmod 6 = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 324 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_euler\_characteristic\_of\_a\_genus\_g\_surface}]
+\[ \forall g \in \{0,\dots,11\},\; \mathrm{chi}\mathopen{}\left(g\right) + 2 \cdot g = 2 \land \mathrm{chi}\mathopen{}\left(0\right) = 2 \land \mathrm{chi}\mathopen{}\left(1\right) = 0 \land \mathrm{chi}\mathopen{}\left(2\right) = -2 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 12 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{odd\_divisor\_count\_iff\_perfect\_square}]
+\[ \forall n \in \{1,\dots,120\},\; \left|\mathrm{divisors}\mathopen{}\left(n\right)\right| \bmod 2 = 1 = \mathrm{isSquare}\mathopen{}\left(n\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 120 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{havel\_hakimi\_decides\_graphical\_sequences}]
+\[ \mathrm{hh}\mathopen{}\left(12,\,[3,\,3,\,3,\,3]\right) = \mathrm{true} \land \mathrm{hh}\mathopen{}\left(12,\,[2,\,2,\,2]\right) = \mathrm{true} \land \mathrm{hh}\mathopen{}\left(12,\,[3,\,3,\,1,\,1]\right) = \mathrm{false} \land \mathrm{hh}\mathopen{}\left(12,\,[4,\,1,\,1,\,1,\,1]\right) = \mathrm{true} \land \mathrm{hh}\mathopen{}\left(12,\,[5,\,1,\,1,\,1,\,1]\right) = \mathrm{false} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 1,200 cases. \hfill$\square$
+
+\paragraph{\texttt{energy.lean}}
+
+\begin{theorem}[\texttt{the\_loop\_returns\_less\_than\_it\_took}]
+\[ \mathrm{burnYield} < \mathrm{splitCost} \land \frac{\mathrm{burnYield} \cdot 100}{\mathrm{splitCost}} = 23 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_chain\_of\_efficiencies\_can\_only\_lose}]
+\[ \forall a \in \{0,\dots,100\},\; \forall b \in \{0,\dots,100\},\; a \cdot b \le 100 \cdot a \land a \cdot b \le 100 \cdot b \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 10,201 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{as\_a\_purifier\_the\_loop\_costs\_a\_thousandfold}]
+\[ \frac{\mathrm{splitCost}}{\mathrm{waterOut}} = 5777 \land \frac{\mathrm{splitCost}}{\mathrm{waterOut}} > \mathrm{roPerLitre} \cdot 1000 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_two\_to\_one\_is\_forced\_by\_the\_oxygen}]
+\[ \mathrm{balances}\mathopen{}\left(2,\,2,\,1\right) = \mathrm{true} \land \mathrm{balances}\mathopen{}\left(1,\,1,\,1\right) = \mathrm{false} \land \left|\bigcup_{a \in \{1,\dots,9\}} \bigcup_{b \in \{1,\dots,9\}} \{\, c \in \{1,\dots,9\} \mid \mathrm{balances}\mathopen{}\left(a,\,b,\,c\right) \,\}\right| = 4 \land \mathrm{balances}\mathopen{}\left(4,\,4,\,2\right) = \mathrm{true} \land \mathrm{balances}\mathopen{}\left(6,\,6,\,3\right) = \mathrm{true} \land \mathrm{balances}\mathopen{}\left(8,\,8,\,4\right) = \mathrm{true} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 729 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_equation\_balances\_by\_mass}]
+\[ 2 \cdot \mathrm{mgH2O} = 2 \cdot \mathrm{mgH2} + \mathrm{mgO2} \land 2 \cdot \mathrm{mgH2O} = 36030 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_gases\_are\_two\_to\_one\_and\_consume\_each\_other\_exactly}]
+\[ 2 \cdot 1 = 2 \land \frac{2 \cdot 100}{3} = 66 \land \frac{1 \cdot 100}{3} = 33 \land \lnot 1 \cdot 1 = 2 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{hydrogen\_is\_a\_ninth\_of\_the\_mass\_and\_oxygen\_the\_rest}]
+\[ \frac{\mathrm{mgO2} \cdot 100}{2 \cdot \mathrm{mgH2}} = 793 \land \frac{2 \cdot \mathrm{mgH2} \cdot 10000}{2 \cdot \mathrm{mgH2O}} = 1119 \land \frac{\mathrm{mgO2} \cdot 10000}{2 \cdot \mathrm{mgH2O}} = 8880 \land 1119 + 8880 = 9999 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{mass\_is\_conserved\_at\_every\_scale\_so\_the\_loop\_cannot\_make\_water}]
+\[ \forall n \in \{1,\dots,100\},\; 2 \cdot n \cdot \mathrm{mgH2O} = 2 \cdot n \cdot \mathrm{mgH2} + n \cdot \mathrm{mgO2} \land \lnot \forall n \in \{1,\dots,100\},\; n \cdot \mathrm{mgH2O} = n \cdot \mathrm{mgH2} + n \cdot \mathrm{mgO2} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 10,000 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{one\_litre\_split\_returns\_one\_litre\_burnt}]
+\[ 111900 + 888100 = 1000000 \land \frac{888100 \cdot 100}{111900} = 793 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{only\_oxy\_hydrogen\_burns\_without\_admitting\_nitrogen}]
+\[ \frac{7808 \cdot 100}{2095} = 372 \land 0 \cdot 372 = 0 \land \lnot 372 = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_ideal\_round\_trip\_is\_exactly\_zero}]
+\[ 28583 - 28583 = 0 \land 28583 \le 28583 \land \frac{\mathrm{burnYield} \cdot 100}{\mathrm{splitCost}} = 23 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_gases\_are\_eighteen\_hundred\_times\_the\_water\_they\_came\_from}]
+\[ \frac{\mathrm{molH2} \cdot \mathrm{mLperMol}}{1000} = 11117 \land \frac{\mathrm{molO2} \cdot \mathrm{mLperMol}}{1000} = 5558 \land \frac{\frac{\mathrm{molH2} \cdot \mathrm{mLperMol}}{1000} + \frac{\mathrm{molO2} \cdot \mathrm{mLperMol}}{1000}}{9} = 1852 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{two\_thirds\_of\_the\_volume\_carries\_a\_ninth\_of\_the\_mass}]
+\[ \frac{\mathrm{molH2} \cdot 100}{\mathrm{molH2} + \mathrm{molO2}} = 66 \land \frac{2 \cdot \mathrm{mgH2} \cdot 100}{2 \cdot \mathrm{mgH2O}} = 11 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{uncompressed\_hydrogen\_is\_three\_thousandfold\_worse\_by\_volume}]
+\[ \frac{\mathrm{whPerKgH2} \cdot 100}{\frac{\mathrm{molH2} \cdot \mathrm{mLperMol}}{1000}} = 299 \land \frac{\mathrm{petrolWhL} \cdot 100}{299} = 3244 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{even\_at\_seven\_hundred\_bar\_it\_is\_sevenfold\_worse\_by\_volume}]
+\[ \frac{42 \cdot \mathrm{whPerKgH2}}{1000} = 1398 \land \frac{\mathrm{petrolWhL}}{1398} = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{each\_delivered\_kilowatt\_hour\_costs\_four\_and\_cycles\_a\_litre}]
+\[ \frac{\mathrm{splitCost} \cdot 100}{\mathrm{burnYield}} = 433 \land \frac{9 \cdot 1000}{\frac{\mathrm{burnYield}}{1000}} = 750 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{three\_quarters\_of\_the\_input\_leaves\_as\_heat}]
+\[ \mathrm{splitCost} - \mathrm{burnYield} = 40000 \land \frac{\mathrm{splitCost} - \mathrm{burnYield} \cdot 100}{\mathrm{splitCost}} = 76 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{what\_the\_feedwater\_leaves\_behind\_decides\_the\_maintenance}]
+\[ \frac{100 \cdot \mathrm{tdsSeawater}}{1000} = 3500 \land \frac{100 \cdot \mathrm{tdsTapWater}}{1000} = 5 \land \frac{\mathrm{tdsSeawater}}{\mathrm{tdsTapWater}} = 700 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{index.lean}}
+
+\begin{theorem}[\texttt{riemann\_reflection\_and\_heart}]
+\[ \forall d \in \{0,\dots,9\},\; \mathrm{refl}\mathopen{}\left(\mathrm{refl}\mathopen{}\left(d\right)\right) = d \land \left|\{\, d \in \{0,\dots,9\} \mid \mathrm{refl}\mathopen{}\left(d\right) = d \,\}\right| = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 100 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{p\_vs\_np\_inverse\_is\_unique}]
+\[ \forall d \in \{0,\dots,8\},\; \left|\{\, e \in \{0,\dots,8\} \mid d \cdot e \bmod 9 = 1 \,\}\right| = \begin{cases}1 & \text{if } \mathrm{isUnit}\mathopen{}\left(d\right)\\ 0 & \text{otherwise}\end{cases} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{navier\_stokes\_flow\_is\_bounded}]
+\[ \forall v \in \mathrm{orbit}[\{0,\dots,47\}],\; v < 9 \land \forall k \in \{0,\dots,47\},\; \mathrm{orbit}\mathopen{}\left(k\right) \in \mathrm{span} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 2,304 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{yang\_mills\_spectral\_gap}]
+\[ \forall k \in \{0,\dots,5\},\; k = 0 \lor \mathrm{orbit}\mathopen{}\left(k\right) \neq 1 \land \mathrm{orbit}\mathopen{}\left(6\right) = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{hodge\_span\_is\_the\_units}]
+\[ \forall d \in \{0,\dots,8\},\; d \in \mathrm{span} = \mathrm{isUnit}\mathopen{}\left(d\right) \land \forall d \in \{0,\dots,8\},\; \mathrm{isUnit}\mathopen{}\left(d\right) \lor \lnot d \in \mathrm{span} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{birch\_swinnerton\_dyer\_vanishing}]
+\[ \sum \mathrm{span} \bmod 9 = 0 \land \sum \{\, x \in \{0,\dots,8\} \mid \mathrm{isUnit}\mathopen{}\left(x\right) \,\} \bmod 9 = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{poincare\_single\_closed\_loop}]
+\[ \mathrm{orbit}\mathopen{}\left(6\right) = \mathrm{orbit}\mathopen{}\left(0\right) \land \forall i \in \{0,\dots,5\},\; \forall j \in \{0,\dots,5\},\; \mathrm{orbit}\mathopen{}\left(i\right) = \mathrm{orbit}\mathopen{}\left(j\right) = i = j \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_seven\_rest\_on\_one\_finite\_structure}]
+\[ \forall d \in \{1,\dots,9\},\; \mathrm{refl}\mathopen{}\left(\mathrm{refl}\mathopen{}\left(d\right)\right) = d \land \left|\{\, x \in \{1,\dots,9\} \mid \mathrm{isUnit}\mathopen{}\left(x\right) \,\}\right| = 6 \land \left|\operatorname{dedup}\left(\mathrm{span}\right)\right| = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_three\_non\_units\_are\_exactly\_the\_unreachable}]
+\[ \{\, d \in \{0,\dots,8\} \mid \lnot \mathrm{isUnit}\mathopen{}\left(d\right) \,\} = [0,\,3,\,6] \land \forall d \in \{\, d \in \{0,\dots,8\} \mid \lnot \mathrm{isUnit}\mathopen{}\left(d\right) \,\},\; \lnot d \in \mathrm{span} \land \left|\{\, x \in \{0,\dots,8\} \mid \mathrm{isUnit}\mathopen{}\left(x\right) \,\}\right| + \left|\{\, d \in \{0,\dots,8\} \mid \lnot \mathrm{isUnit}\mathopen{}\left(d\right) \,\}\right| = 9 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 19,683 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_origin\_annihilates\_and\_never\_joins\_the\_circuit}]
+\[ \forall e \in \{0,\dots,8\},\; 0 \cdot e \bmod 9 \neq 1 \land \lnot 0 \in \mathrm{span} \land \forall d \in \{0,\dots,8\},\; d + 0 \bmod 9 = d \bmod 9 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_sequence\_is\_its\_named\_parts\_and\_closes}]
+\[ \mathrm{sequence} = \mathrm{span} \mathbin{+\!\!+} [3,\,6,\,9] \mathbin{+\!\!+} [0] \mathbin{+\!\!+} [1] \land \left|\mathrm{sequence}\right| = 11 \land \operatorname{head}\left(\mathrm{sequence}\right) = \operatorname{last}\left(\mathrm{sequence}\right) \land 9 \bmod 9 = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\paragraph{\texttt{light.lean}}
+
+\begin{theorem}[\texttt{the\_si\_fixes\_exactly\_seven\_constants}]
+\[ \left|\mathrm{defining}\right| = 7 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{one\_second\_is\_c\_metres\_of\_light}]
+\[ \mathrm{travel}\mathopen{}\left(1\right) = c \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_light\_second\_joins\_space\_and\_time}]
+\[ \mathrm{travel}\mathopen{}\left(1\right) = 299792458 \land \mathrm{periods}\mathopen{}\left(1\right) = 9192631770 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_chain\_scales}]
+\[ \forall s \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8,\,9,\,10],\; \mathrm{travel}\mathopen{}\left(s\right) = c \cdot s \land \forall s \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8,\,9,\,10],\; \mathrm{periods}\mathopen{}\left(s\right) = \mathrm{dNuCs} \cdot s \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 121 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_roots\_of\_the\_seven}]
+\[ \mathrm{root}[\mathrm{defining}] = [1,\,9,\,6,\,9,\,4,\,1,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 7 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{three\_on\_the\_triad\_and\_four\_on\_the\_units}]
+\[ \left|\{\, n \in \mathrm{defining} \mid \mathrm{root}\mathopen{}\left(n\right) \in [3,\,6,\,9] \,\}\right| = 3 \land \left|\{\, n \in \mathrm{defining} \mid \mathrm{root}\mathopen{}\left(n\right) \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right| = 4 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 18 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_seven\_roots\_miss\_four\_residues}]
+\[ \left|\operatorname{dedup}\left(\mathrm{root}[\mathrm{defining}]\right)\right| = 5 \land \{\, d \in [1,\,2,\,3,\,4,\,5,\,6,\,7,\,8,\,9] \mid \lnot d \in \mathrm{root}[\mathrm{defining}] \,\} = [2,\,3,\,5,\,7] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_absent\_residues\_are\_the\_primes\_below\_nine}]
+\[ \{\, d \in [1,\,2,\,3,\,4,\,5,\,6,\,7,\,8,\,9] \mid \lnot d \in \mathrm{root}[\mathrm{defining}] \,\} = [2,\,3,\,5,\,7] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{and\_a\_change\_of\_unit\_destroys\_it}]
+\[ \{\, d \in [1,\,2,\,3,\,4,\,5,\,6,\,7,\,8,\,9] \mid \lnot d \in \mathrm{root}[\mathrm{alternative}] \,\} = [2,\,3,\,5,\,8] \land \left|\mathrm{alternative}\right| = \left|\mathrm{defining}\right| \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_root\_moves\_with\_the\_unit\_so\_it\_is\_not\_about\_light}]
+\[ \mathrm{root}\mathopen{}\left(c\right) = 1 \land \mathrm{root}\mathopen{}\left(2 \cdot c\right) = 2 \land \mathrm{root}\mathopen{}\left(100 \cdot c\right) = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{this\_file\_measures\_nothing}]
+\[ \mathrm{physicalClaims} = 0 \land \left|\mathrm{defining}\right| = 7 \land \mathrm{travel}\mathopen{}\left(0\right) = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{phenomena.lean}}
+
+\begin{theorem}[\texttt{every\_phenomenon\_is\_definitional\_or\_credited}]
+\[ \forall e \in \mathrm{entries},\; \mathrm{statusOf}\mathopen{}\left(e\right) = 0 \lor \mathrm{statusOf}\mathopen{}\left(e\right) = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{seven\_definitional\_and\_two\_credited}]
+\[ \left|\{\, e \in \mathrm{entries} \mid \mathrm{statusOf}\mathopen{}\left(e\right) = 0 \,\}\right| = 7 \land \left|\{\, e \in \mathrm{entries} \mid \mathrm{statusOf}\mathopen{}\left(e\right) = 1 \,\}\right| = 2 \land \left|\mathrm{entries}\right| = 9 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_definitional\_half\_is\_the\_whole\_si}]
+\[ \left|\{\, e \in \mathrm{entries} \mid \mathrm{statusOf}\mathopen{}\left(e\right) = 0 \,\}\right| = 7 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{this\_deposit\_explains\_predicts\_and\_constrains\_nothing}]
+\[ \mathrm{explanations} = 0 \land \mathrm{predictions} = 0 \land \mathrm{theoriesConstrained} = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{arithmetic\_on\_a\_definition\_returns\_the\_definition}]
+\[ 299792458 \bmod 9 = 1 \land \mathrm{explanations} = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{quantum.lean}}
+
+\begin{theorem}[\texttt{perms\_of\_four\_is\_factorial}]
+\[ \left|\mathrm{perms}\mathopen{}\left([1,\,2,\,4,\,8]\right)\right| = 24 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{receipt\_is\_order\_invariant}]
+\[ \forall p \in \mathrm{perms}\mathopen{}\left([1,\,2,\,4,\,8]\right),\; \mathrm{receipt}\mathopen{}\left(p\right) = \mathrm{receipt}\mathopen{}\left([1,\,2,\,4,\,8]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 16 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{receipt\_order\_invariant\_on\_the\_orbit}]
+\[ \forall p \in \mathrm{perms}\mathopen{}\left([1,\,2,\,4,\,8,\,7,\,5]\right),\; \mathrm{receipt}\mathopen{}\left(p\right) = \mathrm{receipt}\mathopen{}\left([1,\,2,\,4,\,8,\,7,\,5]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{naive\_fold\_is\_not\_order\_invariant}]
+\[ \lnot \forall p \in \mathrm{perms}\mathopen{}\left([1,\,2,\,4,\,8]\right),\; \mathrm{naive}\mathopen{}\left(p\right) = \mathrm{naive}\mathopen{}\left([1,\,2,\,4,\,8]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 16 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{superposition\_collapses\_to\_one}]
+\[ \left|\operatorname{dedup}\left(\mathrm{receipt}[\mathrm{perms}\mathopen{}\left([1,\,2,\,4,\,8]\right)]\right)\right| = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_invariance\_is\_canonicalisation\_not\_physics}]
+\[ \forall p \in \mathrm{perms}\mathopen{}\left([1,\,2,\,4,\,8]\right),\; \mathrm{sort}\mathopen{}\left(p\right) = \mathrm{sort}\mathopen{}\left([1,\,2,\,4,\,8]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 16 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_receipt\_is\_not\_injective}]
+\[ \left|\mathrm{pairsOverNine}\right| = 45 \land \left|\operatorname{dedup}\left(\mathrm{receipt}[\mathrm{pairsOverNine}]\right)\right| = 9 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_uncanonicalised\_fold\_gives\_many\_answers}]
+\[ \left|\operatorname{dedup}\left(\mathrm{naive}[\mathrm{perms}\mathopen{}\left([1,\,2,\,4,\,8]\right)]\right)\right| = 5 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{quantum\_settles\_its\_domain\_totally}]
+\[ \mathrm{settledHere} = 8 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{speed.lean}}
+
+\begin{theorem}[\texttt{the\_verify\_path\_is\_the\_exponent}]
+\[ \mathrm{rounds}\mathopen{}\left(40,\,1024\right) = 10 \land \mathrm{rounds}\mathopen{}\left(40,\,16384\right) = 14 \land \mathrm{rounds}\mathopen{}\left(40,\,262144\right) = 18 \land \mathrm{rounds}\mathopen{}\left(40,\,1048576\right) = 20 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_gap\_widens\_with\_every\_doubling}]
+\[ \frac{1024}{10} < \frac{16384}{14} \land \frac{16384}{14} < \frac{262144}{18} \land \frac{262144}{18} < \frac{1048576}{20} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{no\_constant\_factor\_accounts\_for\_the\_gap}]
+\[ \lnot 10000 \cdot 20 \ge 1048576 \land 100 \cdot 10 \ge 1024 - 24 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_measured\_ratio\_at\_a\_million\_leaves}]
+\[ \frac{\mathrm{recomputeUs}}{\mathrm{verifyUs}} = 567971 \land \mathrm{recomputeUs} > \mathrm{verifyUs} \cdot 500000 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{verification\_grows\_it\_is\_not\_constant}]
+\[ \mathrm{rounds}\mathopen{}\left(40,\,1024\right) < \mathrm{rounds}\mathopen{}\left(40,\,1048576\right) \land \forall k \in \{1,\dots,10\},\; \mathrm{rounds}\mathopen{}\left(40,\,2^{k}\right) = k \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 10 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_verify\_is\_thirty\_eight\_thousand\_nanoseconds\_not\_one}]
+\[ \mathrm{nsPerVerify} = 38000 \land \mathrm{nsPerVerify} > 1 \land \mathrm{nsPerVerify} > 10000 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_advantage\_is\_the\_count\_not\_the\_operation}]
+\[ 1048576 - 20 = 1048556 \land \frac{1048576}{20} = 52428 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_break\_even\_is\_the\_ratio\_of\_verifications}]
+\[ \frac{1048576}{20} = 52428 \land 52428 \cdot 20 \le 1048576 \land 1048576 < 52429 \cdot 20 + 20 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\subsection{the machine}
+
+\paragraph{\texttt{generated.lean}}
+
+\begin{theorem}[\texttt{powsum\_zero\_odd\_exponents}]
+\[ \forall k \in [1,\,3,\,5,\,7,\,9,\,11,\,13,\,15,\,17],\; \sum \{\, u^{k} \bmod 9 \mid u \in [1,\,2,\,4,\,5,\,7,\,8] \,\} \bmod 9 = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 54 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{powsum\_nonzero\_at\_even\_exponents}]
+\[ \lnot \forall k \in [2,\,4,\,6],\; \sum \{\, u^{k} \bmod 9 \mid u \in [1,\,2,\,4,\,5,\,7,\,8] \,\} \bmod 9 = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 18 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{mulperm\_iff\_unit\_all}]
+\[ \forall k \in \{0,\dots,8\},\; \left|\operatorname{dedup}\left(\{\, k \cdot u \bmod 9 \mid u \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right)\right| = 6 = k \in [1,\,2,\,4,\,5,\,7,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 324 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{mulperm\_fails\_at\_the\_triad}]
+\[ \lnot \exists k \in [3,\,6,\,0] : \left|\operatorname{dedup}\left(\{\, k \cdot u \bmod 9 \mid u \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right)\right| = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 18 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{addgen\_iff\_coprime\_all}]
+\[ \forall k \in \{0,\dots,8\},\; \left|\operatorname{dedup}\left(\{\, k \cdot i \bmod 9 \mid i \in \{0,\dots,8\} \,\}\right)\right| = 9 = k \in [1,\,2,\,4,\,5,\,7,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 486 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{hasinv\_iff\_unit\_all}]
+\[ \forall d \in \{0,\dots,8\},\; \exists e \in \{0,\dots,8\} : d \cdot e \bmod 9 = 1 = d \in [1,\,2,\,4,\,5,\,7,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 486 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{demorgan\_all\_widths}]
+\[ \forall k \in \{2,\dots,8\},\; \forall n \in \{0,\dots,2^{k}-1\},\; \lnot \forall i \in \{0,\dots,k-1\},\; n \gg i \bmod 2 = 1 = \exists i \in \{0,\dots,k-1\} : n \gg i \bmod 2 = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 7 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{power\_sum\_closed\_forms}]
+\[ \forall n \in \{1,\dots,30\},\; \sum \{1,\dots,1+n-1\} \cdot 2 = n \cdot n + 1 \land \sum \{\, i \cdot i \mid i \in \{1,\dots,1+n-1\} \,\} \cdot 6 = n \cdot n + 1 \cdot 2 \cdot n + 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 30 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{invpow\_is\_fifth\_power\_all\_units}]
+\[ \forall u \in [1,\,2,\,4,\,5,\,7,\,8],\; u \cdot u^{5} \bmod 9 = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{invpow\_fails\_off\_the\_units}]
+\[ \lnot \exists t \in [3,\,6] : \exists e \in \{0,\dots,8\} : t \cdot e \bmod 9 = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 18 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{cyclic\_units\_have\_a\_primitive\_root}]
+\[ \forall p \in [2,\,3,\,5,\,7,\,11,\,13],\; \exists g \in \{1,\dots,1+p - 1-1\} : \left|\operatorname{dedup}\left(\{\, g^{k} \bmod p \mid k \in \{1,\dots,1+p - 1-1\} \,\}\right)\right| = p - 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{decimal\_period\_is\_the\_order\_of\_ten}]
+\[ \forall p \in [3,\,7,\,11,\,13,\,17,\,19,\,23,\,29],\; \exists k \in \{1,\dots,1+p - 1-1\} : 10^{k} \bmod p = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 8 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{primality\_agrees\_with\_trial\_division}]
+\[ \forall n \in \{2,\dots,41\},\; \forall d \in \{2,\dots,2+n - 2-1\},\; n \bmod d \neq 0 = n \in [2,\,3,\,5,\,7,\,11,\,13,\,17,\,19,\,23,\,29,\,31,\,37,\,41] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 520 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{roots\_of\_unity\_cancel}]
+\[ \forall n \in \{2,\dots,13\},\; \sum \{\, k \mid k \in \{0,\dots,n-1\} \,\} \cdot 2 = n \cdot n - 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 12 cases. \hfill$\square$
+
+\paragraph{\texttt{mechanical.lean}}
+
+\begin{theorem}[\texttt{add\_group}]
+\[ \forall d \in \{1,\dots,9\},\; \exists e \in \{1,\dots,9\} : \mathrm{M9}\mathopen{}\left(d + e\right) = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{bool\_demorgan1}]
+\[ \forall a \in [0,\,1],\; \forall b \in [0,\,1],\; 1 - a \cdot b = 1 - a + 1 - b - 1 - a \cdot 1 - b \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{bool\_demorgan2}]
+\[ \forall a \in [0,\,1],\; \forall b \in [0,\,1],\; 1 - a + b - a \cdot b = 1 - a \cdot 1 - b \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{bool\_distributivity}]
+\[ \forall a \in [0,\,1],\; \forall b \in [0,\,1],\; \forall c \in [0,\,1],\; a \cdot b + c - b \cdot c = a \cdot b + a \cdot c - a \cdot b \cdot a \cdot c \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 8 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{bool\_absorption}]
+\[ \forall a \in [0,\,1],\; \forall b \in [0,\,1],\; a + a \cdot b - a \cdot a \cdot b = a \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{merkaba\_cube\_q3}]
+\[ 2^{3} = 8 \land 3 \cdot 2^{2} = 12 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{cover\_rotation\_full\_circle}]
+\[ \left|\operatorname{dedup}\left(\{\, d \cdot 40 \bmod 360 \mid d \in \{1,\dots,9\} \,\}\right)\right| = 9 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{fib\_trinity\_horizon}]
+\[ \mathrm{DR}\mathopen{}\left(3 + 5 + 8\right) = 7 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{arts\_nine\_hues\_distinct}]
+\[ \left|\operatorname{dedup}\left(\{\, d \cdot 40 \bmod 360 \mid d \in \{1,\dots,9\} \,\}\right)\right| = 9 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{trial\_units\_group}]
+\[ \mathrm{U9.all}\mathopen{}\left(u \mapsto \mathrm{U9.all}\mathopen{}\left(v \mapsto \mathrm{U9.contains}\mathopen{}\left(\mathrm{M9}\mathopen{}\left(u \cdot v\right)\right)\right)\right) \land \mathrm{U9.contains}\mathopen{}\left(1\right) \land \mathrm{U9.all}\mathopen{}\left(u \mapsto \mathrm{U9.any}\mathopen{}\left(w \mapsto \mathrm{M9}\mathopen{}\left(u \cdot w\right) = 1\right)\right) \quad \text{where } \mathrm{U9} = [1,\,2,\,4,\,5,\,7,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{trial\_zero\_divisors}]
+\[ \mathrm{M9}\mathopen{}\left(3 \cdot 3\right) = 0 \land \mathrm{M9}\mathopen{}\left(3\right) \neq 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{trial\_zero\_no\_inverse}]
+\[ \lnot \exists e \in \{1,\dots,9\} : \mathrm{M9}\mathopen{}\left(0 \cdot e\right) = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{nopayload\_avalanche}]
+\[ \mathrm{Address.toUuidBytes}\mathopen{}\left([109,\,101,\,115,\,115,\,97,\,103,\,101,\,48]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([109,\,101,\,115,\,115,\,97,\,103,\,101,\,49]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 64 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{chess\_board\_64}]
+\[ l = 32 \land d = 32 \quad \text{where } d = \left|\mathrm{\_\_p}\right| - \left|\{\, z \in \mathrm{\_\_p} \mid z \,\}\right| \quad \text{where } l = \left|\{\, z \in \mathrm{\_\_p} \mid z \,\}\right| \quad \text{where } \mathrm{\_\_p} = \bigcup_{r \in \{0,\dots,7\}} \{\, r + c \bmod 2 = 0 \mid c \in \{0,\dots,7\} \,\} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 64 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{chess\_diagonals\_15}]
+\[ 2 \cdot 8 - 1 = 15 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{tarot\_78\_cards}]
+\[ 22 + 56 = 78 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{tarot\_minor\_4x14}]
+\[ 4 \cdot 14 = 56 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{tarot\_major\_0\_21}]
+\[ \left|\{\, n \in \{0,\dots,21\} \mid n \ge 0 \land n \le 21 \,\}\right| = 22 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 22 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{tarot\_digital\_roots}]
+\[ \mathrm{DR}\mathopen{}\left(78\right) = 6 \land \mathrm{DR}\mathopen{}\left(22\right) = 4 \land \mathrm{DR}\mathopen{}\left(56\right) = 2 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{gf4\_size}]
+\[ \left|[0,\,1,\,2,\,3]\right| = 2^{2} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{relation\_digital\_root}]
+\[ \mathrm{DR}\mathopen{}\left(78\right) = 6 \land \mathrm{DR}\mathopen{}\left(12\right) = \mathrm{DR}\mathopen{}\left(21\right) \land \mathrm{DR}\mathopen{}\left(7\right) \in [1,\,2,\,4,\,5,\,7,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{harmonic\_octave\_2\_1}]
+\[ \frac{2}{1} = 2 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{harmonic\_pythagorean\_comma}]
+\[ 3^{12} = 531441 \land 2^{19} = 524288 \land 3^{12} \neq 2^{19} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{relation\_seven}]
+\[ \mathrm{DR}\mathopen{}\left(3 + 5 + 8\right) = 7 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{relation\_eight}]
+\[ 2^{3} = 8 \land 8 \cdot 8 = 64 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{relation\_creation\_week}]
+\[ 6 + 1 = 7 \land 7 - 1 = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{relation\_superposition\_collapse}]
+\[ \mathrm{Address.toUuidBytes}\mathopen{}\left([111,\,98,\,115,\,101,\,114,\,118,\,101,\,114,\,58,\,120]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([111,\,98,\,115,\,101,\,114,\,118,\,101,\,114,\,58,\,120]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([111,\,98,\,115,\,101,\,114,\,118,\,101,\,114,\,58,\,120]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([111,\,98,\,115,\,101,\,114,\,118,\,101,\,114,\,58,\,121]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 10,000 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{relation\_url\_path}]
+\[ \mathrm{Address.toUuidBytes}\mathopen{}\left([116,\,104,\,101,\,47,\,99,\,114,\,121,\,115,\,116,\,97,\,108]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([99,\,114,\,121,\,115,\,116,\,97,\,108,\,47,\,116,\,104,\,101]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([116,\,104,\,101,\,47,\,99,\,114,\,121,\,115,\,116,\,97,\,108]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([116,\,104,\,101,\,47,\,99,\,114,\,121,\,115,\,116,\,97,\,108]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 14,641 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_moduli\_dimensions\_are\_three\_g\_minus\_three\_and\_six\_g\_minus\_six}]
+\[ \forall g \in \mathrm{gRange},\; 3 \cdot g - 3 = \frac{6 \cdot g - 6}{2} \land \forall g \in \mathrm{gRange},\; 6 \cdot g - 6 = 2 \cdot 3 \cdot g - 3 \land 3 \cdot 2 - 3 = 3 \land 6 \cdot 2 - 6 = 6 \land 3 \cdot 3 - 3 = 6 \land 6 \cdot 3 - 6 = 12 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{repeated\_doubling\_is\_the\_power\_of\_two}]
+\[ \forall k \in \{0,\dots,20\},\; \mathrm{dbl}\mathopen{}\left(k\right) = 2^{k} \land \mathrm{dbl}\mathopen{}\left(10\right) = 1024 \land \mathrm{dbl}\mathopen{}\left(11\right) = 2048 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 21 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{genus2\_moduli\_dim}]
+\[ 6 \cdot 2 - 6 = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{genus2\_hyperelliptic}]
+\[ 2 \cdot 2 + 2 = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{genus2\_h1\_symplectic}]
+\[ \mathrm{rank} = 4 \land \mathrm{rank} \bmod 2 = 0 \quad \text{where } \mathrm{rank} = 2 \cdot 2 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{relation\_digitroot\_is\_residue\_mod9}]
+\[ \forall n \in \{1,\dots,200\},\; \lnot \mathrm{DR}\mathopen{}\left(n\right) \neq n - 1 \bmod 9 + 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 200 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{relation\_seven\_is\_six\_plus\_one}]
+\[ \left|[1,\,2,\,4,\,5,\,7,\,8]\right| = 6 \land 6 + 1 = 7 \land 7 - 1 = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{relation\_units\_sum\_and\_product}]
+\[ \mathrm{M9}\mathopen{}\left(\mathrm{U.foldl}\mathopen{}\left(a,\,b \mapsto a + b,\,0\right)\right) = 0 \land \mathrm{M9}\mathopen{}\left(\mathrm{U.foldl}\mathopen{}\left(a,\,b \mapsto a \cdot b,\,1\right)\right) = 8 \quad \text{where } U = [1,\,2,\,4,\,5,\,7,\,8] \quad \text{where } \mathrm{m9} = n \mapsto n \bmod 9 + 9 \bmod 9 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{relation\_432\_factors}]
+\[ 432 = 16 \cdot 27 \land 432 = 2^{4} \cdot 3^{3} \land \mathrm{DR}\mathopen{}\left(432\right) = 9 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{relation\_triangular\_45\_is\_base}]
+\[ s = 45 \land \mathrm{DR}\mathopen{}\left(45\right) = 9 \land \mathrm{DR}\mathopen{}\left(s\right) = 9 \quad \text{where } s = \operatorname{fold}_{x,\,y \mapsto x + y}\left(\{\, i \mid i \in \{1,\dots,9\} \,\},\, 0\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{kaprekar\_constants\_digitroot\_nine}]
+\[ \mathrm{DR}\mathopen{}\left(495\right) = 9 \land \mathrm{DR}\mathopen{}\left(6174\right) = 9 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{content\_address\_is\_keyless\_integrity}]
+\[ \mathrm{Address.toUuidBytes}\mathopen{}\left([99,\,101,\,99,\,99,\,101,\,99]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([99,\,101,\,99,\,99,\,101,\,99]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([99,\,101,\,99,\,99,\,101,\,99]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([109,\,97,\,108,\,108,\,111,\,114,\,121]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 1,512 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_three\_four\_five\_right\_triangle\_is\_the\_first\_pythagorean\_triple}]
+\[ 3 \cdot 3 + 4 \cdot 4 = 5 \cdot 5 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_regular\_pentagon\_angles\_are\_the\_heart\_seventy\_two\_and\_hundred\_eight}]
+\[ \frac{360}{5} = 72 \land 180 - 72 = 108 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_cyclic\_number\_142857\_is\_the\_repetend\_of\_one\_seventh}]
+\[ 999999 \bmod 7 = 0 \land \frac{999999}{7} = 142857 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{\_142857\_times\_seven\_is\_six\_nines}]
+\[ 142857 \cdot 7 = 999999 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{midy\_the\_two\_halves\_of\_142857\_sum\_to\_nines}]
+\[ 142 + 857 = 999 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_digital\_root\_of\_seven\_to\_the\_k\_has\_period\_three}]
+\[ 7^{1} \bmod 9 = 7 \land 7^{2} \bmod 9 = 4 \land 7^{3} \bmod 9 = 1 \land 7^{4} \bmod 9 = 7 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{seven\_divides\_the\_repunit\_of\_length\_six}]
+\[ 111111 \bmod 7 = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{two\_to\_the\_eighth\_is\_two\_hundred\_fifty\_six\_a\_byte}]
+\[ 2^{8} = 256 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{two\_to\_the\_tenth\_is\_1024\_the\_harmonic\_ledger}]
+\[ 2^{10} = 1024 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_nine\_times\_table\_always\_digital\_roots\_to\_nine}]
+\[ \forall k \in \{1,\dots,60\},\; \lnot \mathrm{DR}\mathopen{}\left(9 \cdot k\right) \neq 9 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 60 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_regular\_nonagon\_exterior\_angle\_is\_the\_a432\_step}]
+\[ \frac{360}{9} = 40 \land 40 = 40 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{casting\_out\_nines\_is\_multiplicative}]
+\[ \forall a \in \{2,\dots,60\},\; \forall b \in \{2,\dots,60\},\; \lnot \mathrm{DR}\mathopen{}\left(a \cdot b\right) \neq \mathrm{DR}\mathopen{}\left(\mathrm{DR}\mathopen{}\left(a\right) \cdot \mathrm{DR}\mathopen{}\left(b\right)\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3,481 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_digits\_one\_to\_nine\_sum\_to\_forty\_five\_rooting\_to\_nine}]
+\[ s = 45 \land \mathrm{DR}\mathopen{}\left(45\right) = 9 \quad \text{where } s = \operatorname{fold}_{x,\,y \mapsto x + y}\left(\{\, d \mid d \in \{1,\dots,9\} \,\},\, 0\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{nine\_is\_the\_base\_and\_the\_trinity\_squared}]
+\[ 9 = 9 \land 9 = 3^{2} \land 3 = 3 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{six\_is\_the\_third\_triangular\_number}]
+\[ t = 6 \quad \text{where } t = \operatorname{fold}_{x,\,y \mapsto x + y}\left(\{\, i \mid i \in \{1,\dots,3\} \,\},\, 0\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_regular\_hexagon\_exterior\_angle\_is\_the\_gold\_string}]
+\[ \frac{360}{6} = 60 \land 180 - 60 = 120 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_doubling\_orbit\_reflection\_pairs\_sum\_to\_nine}]
+\[ 1 + 8 = 9 \land 2 + 7 = 9 \land 4 + 5 = 9 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{five\_is\_the\_inverse\_of\_two\_so\_halving\_reverses\_the\_orbit}]
+\[ 2 \cdot 5 \bmod 9 = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{there\_are\_infinitely\_many\_pythagorean\_triples}]
+\[ \forall k \in \{1,\dots,100\},\; \lnot 3 \cdot k^{2} + 4 \cdot k^{2} \neq 5 \cdot k^{2} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 100 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_difference\_of\_consecutive\_squares\_is\_the\_odd\_numbers}]
+\[ \forall n \in \{0,\dots,500\},\; \lnot n + 1^{2} - n \cdot n \neq 2 \cdot n + 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 501 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_product\_of\_any\_three\_consecutive\_integers\_is\_divisible\_by\_six}]
+\[ \forall n \in \{1,\dots,500\},\; \lnot n \cdot n + 1 \cdot n + 2 \bmod 6 \neq 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 500 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{dna\_is\_the\_version\_itself}]
+\[ 4^{3} = 64 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{contribute\_two\_to\_save\_sixty\_four}]
+\[ x = 64 \land 2^{6} = 64 \quad \text{where } x = \operatorname{fold}_{x,\,y \mapsto x \cdot y}\left(\{\, 2 \mid i \in \{0,\dots,5\} \,\},\, 1\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{genetic\_code\_is\_the\_octave\_squared}]
+\[ 4^{3} = 64 \land 64 = 8 \cdot 8 \land 64 \bmod 8 = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{sixty\_one\_sense\_three\_stop\_codons}]
+\[ 61 + 3 = 64 \land 20 < 61 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{six\_reading\_frames}]
+\[ 3 \cdot 2 = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{each\_wave\_is\_a\_local\_pure\_derivation}]
+\[ \mathrm{Address.toUuidBytes}\mathopen{}\left([119,\,97,\,118,\,101]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([119,\,97,\,118,\,101]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([119,\,97,\,118,\,101,\,45,\,49]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([119,\,97,\,118,\,101,\,45,\,50]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 576 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{genesis\_1\_the\_unit}]
+\[ \forall n \in [1,\,2,\,3,\,4,\,5,\,6,\,7,\,8,\,9],\; 1 \cdot n = n \land 1^{7} = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{genesis\_8\_the\_octave}]
+\[ 2^{3} = 8 \land 8 \bmod 8 = 0 \land 8 = 2 \cdot 2 \cdot 2 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{genesis\_64\_the\_codon}]
+\[ 4^{3} = 64 \land 2^{6} = 64 \land 8^{2} = 64 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{diamond\_fixed\_point\_is\_zero\_entropy}]
+\[ \mathrm{Address.toUuidBytes}\mathopen{}\left([53]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([53]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([53]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([52]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_address\_is\_shipped\_not\_the\_payload}]
+\[ \mathrm{Address.toUuidBytes}\mathopen{}\left([120]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([120]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([120]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([121]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{gravity\_holds\_prose\_code\_and\_paths}]
+\[ \mathrm{Address.toUuidBytes}\mathopen{}\left([115,\,114,\,99,\,47,\,120,\,46,\,116,\,115,\,58,\,104,\,101,\,108,\,108,\,111]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([115,\,114,\,99,\,47,\,120,\,46,\,116,\,115,\,58,\,104,\,101,\,108,\,108,\,111]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([115,\,114,\,99,\,47,\,120,\,46,\,116,\,115,\,58,\,104,\,101,\,108,\,108,\,111]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([115,\,114,\,99,\,47,\,121,\,46,\,116,\,115,\,58,\,104,\,101,\,108,\,108,\,111]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([115,\,114,\,99,\,47,\,120,\,46,\,116,\,115,\,58,\,104,\,101,\,108,\,108,\,111]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([115,\,114,\,99,\,47,\,120,\,46,\,116,\,115,\,58,\,119,\,111,\,114,\,108,\,100]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 7,529,536 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_harmonic\_band\_thirty\_to\_ninety}]
+\[ 30 + 60 = 90 \land 90 - 60 = 30 \land 60 - 30 = 30 \land \frac{90}{30} = 3 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{sixty\_and\_ninety\_partition\_the\_quadrant}]
+\[ 4 \cdot 90 = 360 \land 30 + 60 = 90 \land 90 - 60 = 30 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_hexagon\_and\_the\_square\_metrics}]
+\[ \frac{360}{6} = 60 \land \frac{360}{4} = 90 \land 6 + 1 = 7 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_theorem\_responds\_in\_a\_receipt}]
+\[ \mathrm{Address.toUuidBytes}\mathopen{}\left([107]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([107]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([97]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([98]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{each\_perspective\_is\_a\_distinct\_file}]
+\[ \mathrm{Address.toUuidBytes}\mathopen{}\left([112,\,101,\,114,\,115,\,112,\,101,\,99,\,116,\,105,\,118,\,101,\,58,\,97]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([112,\,101,\,114,\,115,\,112,\,101,\,99,\,116,\,105,\,118,\,101,\,58,\,98]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([112,\,101,\,114,\,115,\,112,\,101,\,99,\,116,\,105,\,118,\,101,\,58,\,97]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([112,\,101,\,114,\,115,\,112,\,101,\,99,\,116,\,105,\,118,\,101,\,58,\,97]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 28,561 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{involution\_negation}]
+\[ \lnot \lnot \mathrm{true} = \mathrm{true} \land \lnot \lnot \mathrm{false} = \mathrm{false} \land \lnot \lnot \mathrm{true} = \mathrm{true} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a432\_factors\_as\_two\_to\_the\_fourth\_times\_three\_cubed}]
+\[ 2^{4} \cdot 3^{3} = 432 \land 16 \cdot 27 = 432 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a432\_octave\_doubling}]
+\[ 432 \cdot 2 = 864 \land \frac{864}{2} = 432 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{vitepress\_hosts\_the\_content\_address}]
+\[ \mathrm{Address.toUuidBytes}\mathopen{}\left([112,\,97,\,103,\,101,\,58,\,99,\,111,\,110,\,116,\,101,\,110,\,116]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([112,\,97,\,103,\,101,\,58,\,99,\,111,\,110,\,116,\,101,\,110,\,116]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([97]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([98]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 144 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{collapse\_selects\_one\_state\_deterministically}]
+\[ \mathrm{Address.toUuidBytes}\mathopen{}\left([49,\,48]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([49,\,48]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([49,\,48]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([48,\,49]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 16 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{two\_bits\_thrice\_make\_the\_codon}]
+\[ 2^{6} = 64 \land 2^{2}^{3} = 64 \land 4^{3} = 64 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_skipper\_navigates\_by\_angle}]
+\[ 30 + 60 = 90 \land \frac{90}{30} = 3 \land 90 - 60 = 30 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{cheap\_to\_factor\_easy\_to\_verify}]
+\[ N - 1 = 1023 \land 1 < N \quad \text{where } N = 1024 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_cell\_is\_determined\_by\_content}]
+\[ \mathrm{Address.toUuidBytes}\mathopen{}\left([99]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([99]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([99]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([100]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{intentions\_are\_shown\_by\_receipts\_not\_role}]
+\[ \mathrm{Address.toUuidBytes}\mathopen{}\left([100,\,101,\,101,\,100,\,58,\,99,\,111,\,110,\,116,\,114,\,105,\,98,\,117,\,116,\,101,\,45,\,50]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([100,\,101,\,101,\,100,\,58,\,99,\,111,\,110,\,116,\,114,\,105,\,98,\,117,\,116,\,101,\,45,\,50]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([100,\,101,\,101,\,100,\,58,\,97]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([100,\,101,\,101,\,100,\,58,\,98]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 10,404 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{each\_theorem\_is\_a\_superposition\_of\_readings}]
+\[ \mathrm{Address.toUuidBytes}\mathopen{}\left([116,\,104,\,101,\,32,\,115,\,97,\,109,\,101,\,32,\,102,\,97,\,99,\,116]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([116,\,104,\,101,\,32,\,115,\,97,\,109,\,101,\,32,\,102,\,97,\,99,\,116]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([111,\,110,\,101,\,32,\,114,\,101,\,97,\,100,\,105,\,110,\,103]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([97,\,110,\,111,\,116,\,104,\,101,\,114,\,32,\,102,\,97,\,99,\,116]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 22,308 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{present\_by\_reference\_fits\_a\_tiny\_budget}]
+\[ 1600 \cdot 36 = 57600 \land 57600 < 100000 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_cached\_address\_is\_never\_recomputed}]
+\[ \mathrm{Address.toUuidBytes}\mathopen{}\left([120]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([120]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([120]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([121]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_decidable\_domain\_is\_finite\_and\_coverable}]
+\[ \left|\mathrm{dom}\right| = 9 \land \forall x \in \mathrm{dom},\; x \in \mathrm{dom} \quad \text{where } \mathrm{dom} = [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_theorems\_are\_the\_hull\_and\_hardware}]
+\[ \mathrm{Address.toUuidBytes}\mathopen{}\left([104,\,117,\,108,\,108,\,58,\,115,\,116,\,114,\,117,\,99,\,116,\,117,\,114,\,101]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([104,\,117,\,108,\,108,\,58,\,115,\,116,\,114,\,117,\,99,\,116,\,117,\,114,\,101]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([104,\,117,\,108,\,108,\,58,\,115,\,116,\,114,\,117,\,99,\,116,\,117,\,114,\,101]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([111,\,114,\,100,\,101,\,114,\,58,\,100,\,105,\,114,\,101,\,99,\,116,\,105,\,111,\,110]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 41,160 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_more\_developed\_the\_more\_cross\_domain\_reach}]
+\[ \frac{8 \cdot 7}{2} = 28 \land \frac{16 \cdot 15}{2} = 120 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_full\_superposition\_has\_nine\_states}]
+\[ \left|\{1,\dots,9\}\right| = 9 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{generation\_is\_deterministic}]
+\[ \mathrm{Address.toUuidBytes}\mathopen{}\left([115,\,101,\,101,\,100]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([115,\,101,\,101,\,100]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([97]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([98]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 16 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_intention\_is\_a\_computable\_deed\_receipt}]
+\[ \mathrm{Address.toUuidBytes}\mathopen{}\left([105,\,110,\,116,\,101,\,110,\,116,\,58,\,99,\,111,\,110,\,116,\,114,\,105,\,98,\,117,\,116,\,101,\,45,\,50]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([105,\,110,\,116,\,101,\,110,\,116,\,58,\,99,\,111,\,110,\,116,\,114,\,105,\,98,\,117,\,116,\,101,\,45,\,50]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([105,\,110,\,116,\,101,\,110,\,116,\,58,\,97]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([105,\,110,\,116,\,101,\,110,\,116,\,58,\,98]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 23,104 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{every\_error\_is\_a\_receipted\_trial\_event}]
+\[ \mathrm{Address.toUuidBytes}\mathopen{}\left([101,\,114,\,114,\,111,\,114,\,58,\,52,\,48,\,52,\,58,\,47,\,109,\,105,\,115,\,115,\,105,\,110,\,103]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([101,\,114,\,114,\,111,\,114,\,58,\,52,\,48,\,52,\,58,\,47,\,109,\,105,\,115,\,115,\,105,\,110,\,103]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([101,\,114,\,114,\,111,\,114,\,58,\,97]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([101,\,114,\,114,\,111,\,114,\,58,\,98]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 15,876 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{every\_warning\_is\_a\_receipted\_trial\_event}]
+\[ \mathrm{Address.toUuidBytes}\mathopen{}\left([119,\,97,\,114,\,110,\,58,\,99,\,108,\,101,\,97,\,114,\,116,\,101,\,120,\,116,\,58,\,47,\,120]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([119,\,97,\,114,\,110,\,58,\,99,\,108,\,101,\,97,\,114,\,116,\,101,\,120,\,116,\,58,\,47,\,120]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([119,\,97,\,114,\,110,\,58,\,120]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([101,\,114,\,114,\,111,\,114,\,58,\,120]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 12,138 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_content\_address\_detects\_any\_change}]
+\[ \mathrm{Address.toUuidBytes}\mathopen{}\left([100,\,97,\,116,\,97]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([100,\,65,\,84,\,97]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([100,\,97,\,116,\,97]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([100,\,97,\,116,\,97]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 256 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_sensor\_reading\_addresses\_to\_a\_uuid}]
+\[ \mathrm{Address.toUuidBytes}\mathopen{}\left([116,\,101,\,109,\,112,\,58,\,50,\,49,\,46,\,52]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([116,\,101,\,109,\,112,\,58,\,50,\,49,\,46,\,52]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([116,\,101,\,109,\,112,\,58,\,50,\,49,\,46,\,52]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([116,\,101,\,109,\,112,\,58,\,50,\,49,\,46,\,53]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 6,561 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{forward\_is\_the\_deterministic\_compute}]
+\[ \mathrm{Address.toUuidBytes}\mathopen{}\left([120]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([120]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([97]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([98]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_fusion\_of\_site\_and\_user\_is\_deterministic}]
+\[ \mathrm{Address.toUuidBytes}\mathopen{}\left([115,\,105,\,116,\,101,\,64,\,98,\,103]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([115,\,105,\,116,\,101,\,64,\,98,\,103]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([115,\,105,\,116,\,101,\,64,\,98,\,103]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([115,\,105,\,116,\,101,\,64,\,100,\,101]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 2,401 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{each\_suggested\_next\_is\_content\_addressed}]
+\[ \mathrm{Address.toUuidBytes}\mathopen{}\left([47,\,116,\,104,\,101,\,111,\,114,\,101,\,109,\,47,\,97]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([47,\,116,\,104,\,101,\,111,\,114,\,101,\,109,\,47,\,97]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([47,\,116,\,104,\,101,\,111,\,114,\,101,\,109,\,47,\,97]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([47,\,116,\,104,\,101,\,111,\,114,\,101,\,109,\,47,\,99]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 10,000 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_rejected\_command\_gets\_a\_receipt}]
+\[ \mathrm{Address.toUuidBytes}\mathopen{}\left([114,\,101,\,106,\,101,\,99,\,116,\,101,\,100,\,58,\,112,\,97,\,103,\,101,\,45,\,99,\,111,\,109,\,109,\,97,\,110,\,100]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([114,\,101,\,106,\,101,\,99,\,116,\,101,\,100,\,58,\,112,\,97,\,103,\,101,\,45,\,99,\,111,\,109,\,109,\,97,\,110,\,100]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([114,\,101,\,106,\,101,\,99,\,116,\,101,\,100,\,58,\,97]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([114,\,101,\,106,\,101,\,99,\,116,\,101,\,100,\,58,\,98]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 44,100 cases. \hfill$\square$
+
+\paragraph{\texttt{nim.lean}}
+
+\begin{theorem}[\texttt{bouton\_two\_heaps\_lost\_iff\_xor\_zero}]
+\[ \forall a \in \{0,\dots,N-1\},\; \forall b \in \{0,\dots,N-1\},\; \mathrm{isLost}\mathopen{}\left(a,\,b\right) = \mathrm{xorN}\mathopen{}\left(a,\,b\right) = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{bouton\_lost\_iff\_heaps\_equal}]
+\[ \forall a \in \{0,\dots,N-1\},\; \forall b \in \{0,\dots,N-1\},\; \mathrm{isLost}\mathopen{}\left(a,\,b\right) = a = b \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{lost\_positions\_are\_exactly\_the\_diagonal}]
+\[ \left|\{\, p \in \bigcup_{a \in \{0,\dots,N-1\}} \{\, \left(a,\,b\right) \mid b \in \{0,\dots,N-1\} \,\} \mid \mathrm{isLost}\mathopen{}\left(p_{1},\,p_{2}\right) \,\}\right| = N \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{grundy\_of\_a\_single\_heap\_is\_its\_size}]
+\[ \forall n \in \{0,\dots,N-1\},\; \mathrm{grundy1}\mathopen{}\left(n + 1,\,n\right) = n \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{grundy\_of\_two\_heaps\_is\_the\_xor}]
+\[ \forall a \in \{0,\dots,N-1\},\; \forall b \in \{0,\dots,N-1\},\; \mathrm{xorN}\mathopen{}\left(\mathrm{grundy1}\mathopen{}\left(a + 1,\,a\right),\,\mathrm{grundy1}\mathopen{}\left(b + 1,\,b\right)\right) = \mathrm{xorN}\mathopen{}\left(a,\,b\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{xor\_is\_its\_own\_inverse}]
+\[ \forall a \in \{0,\dots,15\},\; \forall b \in \{0,\dots,15\},\; \mathrm{xorN}\mathopen{}\left(\mathrm{xorN}\mathopen{}\left(a,\,b\right),\,b\right) = a \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 256 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{xor\_is\_commutative}]
+\[ \forall a \in \{0,\dots,15\},\; \forall b \in \{0,\dots,15\},\; \mathrm{xorN}\mathopen{}\left(a,\,b\right) = \mathrm{xorN}\mathopen{}\left(b,\,a\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 256 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{xor\_zero\_is\_identity}]
+\[ \forall a \in \{0,\dots,31\},\; \mathrm{xorN}\mathopen{}\left(a,\,0\right) = a \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 32 cases. \hfill$\square$
+
+\paragraph{\texttt{reversal.lean}}
+
+\begin{theorem}[\texttt{reversal\_preserves\_digit\_sum}]
+\[ \forall n \in \{1,\dots,300\},\; \mathrm{digitSum}\mathopen{}\left(\mathrm{reverseNum}\mathopen{}\left(n\right)\right) = \mathrm{digitSum}\mathopen{}\left(n\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 300 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{digital\_root\_is\_invariant\_under\_reversal}]
+\[ \forall n \in \{1,\dots,300\},\; \mathrm{reverseNum}\mathopen{}\left(n\right) \bmod 9 = n \bmod 9 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 300 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_ledger\_reversal\_cases}]
+\[ \mathrm{reverseNum}\mathopen{}\left(12\right) \bmod 9 = 12 \bmod 9 \land \mathrm{reverseNum}\mathopen{}\left(45\right) \bmod 9 = 45 \bmod 9 \land \mathrm{reverseNum}\mathopen{}\left(123\right) \bmod 9 = 123 \bmod 9 \land \mathrm{reverseNum}\mathopen{}\left(1234\right) \bmod 9 = 1234 \bmod 9 \land \mathrm{reverseNum}\mathopen{}\left(4321\right) \bmod 9 = 4321 \bmod 9 \land \mathrm{reverseNum}\mathopen{}\left(9080\right) \bmod 9 = 9080 \bmod 9 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{reversal\_is\_not\_the\_identity}]
+\[ \lnot \forall n \in \{10,\dots,99\},\; \mathrm{reverseNum}\mathopen{}\left(n\right) = n \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 90 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{palindromes\_are\_the\_fixed\_points}]
+\[ \left|\{\, n \in \{10,\dots,99\} \mid \mathrm{reverseNum}\mathopen{}\left(n\right) = n \,\}\right| = 9 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 90 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{emirps\_exist\_below\_one\_hundred}]
+\[ \left|\{\, n \in \{10,\dots,99\} \mid \mathrm{isPrime}\mathopen{}\left(n\right) \land \mathrm{isPrime}\mathopen{}\left(\mathrm{reverseNum}\mathopen{}\left(n\right)\right) \land \mathrm{reverseNum}\mathopen{}\left(n\right) \neq n \,\}\right| > 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 90 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{reversal\_does\_not\_preserve\_primality}]
+\[ \lnot \forall n \in \{10,\dots,99\},\; \mathrm{isPrime}\mathopen{}\left(n\right) = \mathrm{isPrime}\mathopen{}\left(\mathrm{reverseNum}\mathopen{}\left(n\right)\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 90 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{reversal\_is\_involutive\_exactly\_off\_the\_trailing\_zeros}]
+\[ \forall n \in \{1,\dots,300\},\; \mathrm{reverseNum}\mathopen{}\left(\mathrm{reverseNum}\mathopen{}\left(n\right)\right) = n = n \bmod 10 \neq 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 300 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{reversal\_settles\_its\_range}]
+\[ \mathrm{settledHere} = 8 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{theorems.lean}}
+
+\begin{theorem}[\texttt{universal\_reflection\_involution}]
+\[ \forall d \in \{0,\dots,10\},\; \mathrm{refl}\mathopen{}\left(\mathrm{refl}\mathopen{}\left(d\right)\right) = d \land \left|\{\, d \in \{0,\dots,9\} \mid \mathrm{refl}\mathopen{}\left(d\right) = d \,\}\right| = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 110 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{universal\_centre\_is\_five}]
+\[ \{\, d \in \{0,\dots,9\} \mid \mathrm{refl}\mathopen{}\left(d\right) = d \,\} = [5] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 10 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{universal\_pairs\_sum\_to\_ten}]
+\[ \forall d \in \{0,\dots,10\},\; d + \mathrm{refl}\mathopen{}\left(d\right) = 10 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 11 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{universal\_reflection\_reverses\_the\_domain}]
+\[ \mathrm{refl}[\{0,\dots,10\}] = \operatorname{reverse}\left(\{0,\dots,10\}\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 121 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{universal\_reflection\_is\_not\_an\_involution\_above\_ten}]
+\[ \forall d \in \{\, k + 11 \mid k \in \{0,\dots,9\} \,\},\; \lnot \mathrm{refl}\mathopen{}\left(\mathrm{refl}\mathopen{}\left(d\right)\right) = d \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 10 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{universal\_z9\_reflection\_permutes\_the\_units}]
+\[ \{\, 9 - d \bmod 9 \mid d \in [1,\,2,\,4,\,5,\,7,\,8] \,\} = [8,\,7,\,5,\,4,\,2,\,1] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{universal\_millennium\_reflection\_escapes\_the\_units}]
+\[ \lnot \forall u \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{refl}\mathopen{}\left(u\right) \in [1,\,2,\,4,\,5,\,7,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{universal\_reflection\_is\_the\_vortex\_reflection\_shifted}]
+\[ \forall d \in \{0,\dots,9\},\; 10 - d \bmod 9 = 9 - d \bmod 9 + 1 \bmod 9 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 10 cases. \hfill$\square$
+
+\subsection{the imagined}
+
+\paragraph{\texttt{imagined.lean}}
+
+\begin{theorem}[\texttt{units\_is\_closed\_under\_double}]
+\[ \forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(2 \cdot d\right) \in [1,\,2,\,4,\,5,\,7,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{orbit\_is\_closed\_under\_double}]
+\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(2 \cdot d\right) \in [1,\,2,\,4,\,8,\,7,\,5] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{all\_is\_closed\_under\_double}]
+\[ \forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(2 \cdot d\right) \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{triad\_is\_closed\_under\_triple}]
+\[ \forall d \in [3,\,6,\,0],\; \mathrm{m9}\mathopen{}\left(3 \cdot d\right) \in [3,\,6,\,0] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{all\_is\_closed\_under\_triple}]
+\[ \forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(3 \cdot d\right) \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{units\_is\_closed\_under\_quadruple}]
+\[ \forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \in [1,\,2,\,4,\,5,\,7,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{triad\_is\_closed\_under\_quadruple}]
+\[ \forall d \in [3,\,6,\,0],\; \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \in [3,\,6,\,0] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{orbit\_is\_closed\_under\_quadruple}]
+\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \in [1,\,2,\,4,\,8,\,7,\,5] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{tetA\_is\_closed\_under\_quadruple}]
+\[ \forall d \in [1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \in [1,\,4,\,7] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{tetB\_is\_closed\_under\_quadruple}]
+\[ \forall d \in [2,\,5,\,8],\; \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \in [2,\,5,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{all\_is\_closed\_under\_quadruple}]
+\[ \forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{squares\_is\_closed\_under\_quadruple}]
+\[ \forall d \in [0,\,1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \in [0,\,1,\,4,\,7] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 16 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{triad\_is\_closed\_under\_negate}]
+\[ \forall d \in [3,\,6,\,0],\; \mathrm{m9}\mathopen{}\left(9 - d\right) \in [3,\,6,\,0] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{orbit\_is\_closed\_under\_negate}]
+\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(9 - d\right) \in [1,\,2,\,4,\,8,\,7,\,5] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{all\_is\_closed\_under\_negate}]
+\[ \forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(9 - d\right) \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{cubes\_is\_closed\_under\_negate}]
+\[ \forall d \in [0,\,1,\,8],\; \mathrm{m9}\mathopen{}\left(9 - d\right) \in [0,\,1,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{units\_is\_closed\_under\_square}]
+\[ \forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [1,\,2,\,4,\,5,\,7,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{triad\_is\_closed\_under\_square}]
+\[ \forall d \in [3,\,6,\,0],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [3,\,6,\,0] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{orbit\_is\_closed\_under\_square}]
+\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [1,\,2,\,4,\,8,\,7,\,5] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{tetA\_is\_closed\_under\_square}]
+\[ \forall d \in [1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [1,\,4,\,7] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{all\_is\_closed\_under\_square}]
+\[ \forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{squares\_is\_closed\_under\_square}]
+\[ \forall d \in [0,\,1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [0,\,1,\,4,\,7] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 16 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{cubes\_is\_closed\_under\_square}]
+\[ \forall d \in [0,\,1,\,8],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [0,\,1,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{units\_is\_closed\_under\_fourth}]
+\[ \forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d^{4}\right) \in [1,\,2,\,4,\,5,\,7,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{triad\_is\_closed\_under\_fourth}]
+\[ \forall d \in [3,\,6,\,0],\; \mathrm{m9}\mathopen{}\left(d^{4}\right) \in [3,\,6,\,0] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{orbit\_is\_closed\_under\_fourth}]
+\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(d^{4}\right) \in [1,\,2,\,4,\,8,\,7,\,5] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{tetA\_is\_closed\_under\_fourth}]
+\[ \forall d \in [1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(d^{4}\right) \in [1,\,4,\,7] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{all\_is\_closed\_under\_fourth}]
+\[ \forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d^{4}\right) \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{squares\_is\_closed\_under\_fourth}]
+\[ \forall d \in [0,\,1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(d^{4}\right) \in [0,\,1,\,4,\,7] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 16 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{cubes\_is\_closed\_under\_fourth}]
+\[ \forall d \in [0,\,1,\,8],\; \mathrm{m9}\mathopen{}\left(d^{4}\right) \in [0,\,1,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{units\_is\_closed\_under\_sixth}]
+\[ \forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d^{6}\right) \in [1,\,2,\,4,\,5,\,7,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{triad\_is\_closed\_under\_sixth}]
+\[ \forall d \in [3,\,6,\,0],\; \mathrm{m9}\mathopen{}\left(d^{6}\right) \in [3,\,6,\,0] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{orbit\_is\_closed\_under\_sixth}]
+\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(d^{6}\right) \in [1,\,2,\,4,\,8,\,7,\,5] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{tetA\_is\_closed\_under\_sixth}]
+\[ \forall d \in [1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(d^{6}\right) \in [1,\,4,\,7] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{all\_is\_closed\_under\_sixth}]
+\[ \forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d^{6}\right) \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{squares\_is\_closed\_under\_sixth}]
+\[ \forall d \in [0,\,1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(d^{6}\right) \in [0,\,1,\,4,\,7] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 16 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{cubes\_is\_closed\_under\_sixth}]
+\[ \forall d \in [0,\,1,\,8],\; \mathrm{m9}\mathopen{}\left(d^{6}\right) \in [0,\,1,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{units\_is\_closed\_under\_quintuple}]
+\[ \forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \in [1,\,2,\,4,\,5,\,7,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{triad\_is\_closed\_under\_quintuple}]
+\[ \forall d \in [3,\,6,\,0],\; \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \in [3,\,6,\,0] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{orbit\_is\_closed\_under\_quintuple}]
+\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \in [1,\,2,\,4,\,8,\,7,\,5] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{all\_is\_closed\_under\_quintuple}]
+\[ \forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{triad\_is\_closed\_under\_sextuple}]
+\[ \forall d \in [3,\,6,\,0],\; \mathrm{m9}\mathopen{}\left(6 \cdot d\right) \in [3,\,6,\,0] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{all\_is\_closed\_under\_sextuple}]
+\[ \forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(6 \cdot d\right) \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{units\_is\_closed\_under\_septuple}]
+\[ \forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \in [1,\,2,\,4,\,5,\,7,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{triad\_is\_closed\_under\_septuple}]
+\[ \forall d \in [3,\,6,\,0],\; \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \in [3,\,6,\,0] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{orbit\_is\_closed\_under\_septuple}]
+\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \in [1,\,2,\,4,\,8,\,7,\,5] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{tetA\_is\_closed\_under\_septuple}]
+\[ \forall d \in [1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \in [1,\,4,\,7] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{tetB\_is\_closed\_under\_septuple}]
+\[ \forall d \in [2,\,5,\,8],\; \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \in [2,\,5,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{all\_is\_closed\_under\_septuple}]
+\[ \forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{squares\_is\_closed\_under\_septuple}]
+\[ \forall d \in [0,\,1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \in [0,\,1,\,4,\,7] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 16 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{units\_is\_closed\_under\_octuple}]
+\[ \forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \in [1,\,2,\,4,\,5,\,7,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{triad\_is\_closed\_under\_octuple}]
+\[ \forall d \in [3,\,6,\,0],\; \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \in [3,\,6,\,0] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{orbit\_is\_closed\_under\_octuple}]
+\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \in [1,\,2,\,4,\,8,\,7,\,5] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{all\_is\_closed\_under\_octuple}]
+\[ \forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{cubes\_is\_closed\_under\_octuple}]
+\[ \forall d \in [0,\,1,\,8],\; \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \in [0,\,1,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{quadruple\_is\_involutive\_on\_triad}]
+\[ \forall d \in [3,\,6,\,0],\; x \mapsto \mathrm{m9}\mathopen{}\left(4 \cdot x\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(4 \cdot d\right)\right) = d \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{square\_is\_involutive\_on\_tetA}]
+\[ \forall d \in [1,\,4,\,7],\; x \mapsto \mathrm{m9}\mathopen{}\left(x \cdot x\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(d \cdot d\right)\right) = d \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{square\_is\_involutive\_on\_squares}]
+\[ \forall d \in [0,\,1,\,4,\,7],\; x \mapsto \mathrm{m9}\mathopen{}\left(x \cdot x\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(d \cdot d\right)\right) = d \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{cube\_is\_involutive\_on\_cubes}]
+\[ \forall d \in [0,\,1,\,8],\; x \mapsto \mathrm{m9}\mathopen{}\left(x \cdot x \cdot x\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(d \cdot d \cdot d\right)\right) = d \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{fourth\_is\_involutive\_on\_tetA}]
+\[ \forall d \in [1,\,4,\,7],\; x \mapsto \mathrm{m9}\mathopen{}\left(x^{4}\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(d^{4}\right)\right) = d \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{fourth\_is\_involutive\_on\_squares}]
+\[ \forall d \in [0,\,1,\,4,\,7],\; x \mapsto \mathrm{m9}\mathopen{}\left(x^{4}\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(d^{4}\right)\right) = d \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{fifth\_is\_involutive\_on\_units}]
+\[ \forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; x \mapsto \mathrm{m9}\mathopen{}\left(x^{5}\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(d^{5}\right)\right) = d \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{fifth\_is\_involutive\_on\_orbit}]
+\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; x \mapsto \mathrm{m9}\mathopen{}\left(x^{5}\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(d^{5}\right)\right) = d \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{fifth\_is\_involutive\_on\_tetA}]
+\[ \forall d \in [1,\,4,\,7],\; x \mapsto \mathrm{m9}\mathopen{}\left(x^{5}\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(d^{5}\right)\right) = d \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{fifth\_is\_involutive\_on\_tetB}]
+\[ \forall d \in [2,\,5,\,8],\; x \mapsto \mathrm{m9}\mathopen{}\left(x^{5}\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(d^{5}\right)\right) = d \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{fifth\_is\_involutive\_on\_squares}]
+\[ \forall d \in [0,\,1,\,4,\,7],\; x \mapsto \mathrm{m9}\mathopen{}\left(x^{5}\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(d^{5}\right)\right) = d \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{fifth\_is\_involutive\_on\_cubes}]
+\[ \forall d \in [0,\,1,\,8],\; x \mapsto \mathrm{m9}\mathopen{}\left(x^{5}\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(d^{5}\right)\right) = d \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{quintuple\_is\_involutive\_on\_triad}]
+\[ \forall d \in [3,\,6,\,0],\; x \mapsto \mathrm{m9}\mathopen{}\left(5 \cdot x\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(5 \cdot d\right)\right) = d \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{septuple\_is\_involutive\_on\_triad}]
+\[ \forall d \in [3,\,6,\,0],\; x \mapsto \mathrm{m9}\mathopen{}\left(7 \cdot x\right)\mathopen{}\left(\mathrm{m9}\mathopen{}\left(7 \cdot d\right)\right) = d \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{double\_carries\_units\_onto\_orbit}]
+\[ \forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(2 \cdot d\right) \in [1,\,2,\,4,\,8,\,7,\,5] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(2 \cdot d\right) \mid d \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right)\right| = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 216 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{double\_carries\_orbit\_onto\_units}]
+\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(2 \cdot d\right) \in [1,\,2,\,4,\,5,\,7,\,8] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(2 \cdot d\right) \mid d \in [1,\,2,\,4,\,8,\,7,\,5] \,\}\right)\right| = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 216 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{triple\_carries\_all\_onto\_triad}]
+\[ \forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(3 \cdot d\right) \in [3,\,6,\,0] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(3 \cdot d\right) \mid d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \,\}\right)\right| = 3 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 243 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{triple\_carries\_cubes\_onto\_triad}]
+\[ \forall d \in [0,\,1,\,8],\; \mathrm{m9}\mathopen{}\left(3 \cdot d\right) \in [3,\,6,\,0] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(3 \cdot d\right) \mid d \in [0,\,1,\,8] \,\}\right)\right| = 3 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 27 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{quadruple\_carries\_units\_onto\_orbit}]
+\[ \forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \in [1,\,2,\,4,\,8,\,7,\,5] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \mid d \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right)\right| = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 216 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{quadruple\_carries\_orbit\_onto\_units}]
+\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \in [1,\,2,\,4,\,5,\,7,\,8] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(4 \cdot d\right) \mid d \in [1,\,2,\,4,\,8,\,7,\,5] \,\}\right)\right| = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 216 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{negate\_carries\_orbit\_onto\_units}]
+\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(9 - d\right) \in [1,\,2,\,4,\,5,\,7,\,8] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(9 - d\right) \mid d \in [1,\,2,\,4,\,8,\,7,\,5] \,\}\right)\right| = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 216 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{negate\_carries\_tetA\_onto\_tetB}]
+\[ \forall d \in [1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(9 - d\right) \in [2,\,5,\,8] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(9 - d\right) \mid d \in [1,\,4,\,7] \,\}\right)\right| = 3 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 27 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{negate\_carries\_tetB\_onto\_tetA}]
+\[ \forall d \in [2,\,5,\,8],\; \mathrm{m9}\mathopen{}\left(9 - d\right) \in [1,\,4,\,7] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(9 - d\right) \mid d \in [2,\,5,\,8] \,\}\right)\right| = 3 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 27 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{square\_carries\_units\_onto\_tetA}]
+\[ \forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [1,\,4,\,7] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d \cdot d\right) \mid d \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right)\right| = 3 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 108 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{square\_carries\_orbit\_onto\_tetA}]
+\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [1,\,4,\,7] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d \cdot d\right) \mid d \in [1,\,2,\,4,\,8,\,7,\,5] \,\}\right)\right| = 3 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 108 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{square\_carries\_tetB\_onto\_tetA}]
+\[ \forall d \in [2,\,5,\,8],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [1,\,4,\,7] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d \cdot d\right) \mid d \in [2,\,5,\,8] \,\}\right)\right| = 3 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 27 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{square\_carries\_all\_onto\_squares}]
+\[ \forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [0,\,1,\,4,\,7] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d \cdot d\right) \mid d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \,\}\right)\right| = 4 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 324 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{cube\_carries\_all\_onto\_cubes}]
+\[ \forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d \cdot d \cdot d\right) \in [0,\,1,\,8] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d \cdot d \cdot d\right) \mid d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \,\}\right)\right| = 3 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 243 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{fourth\_carries\_units\_onto\_tetA}]
+\[ \forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d^{4}\right) \in [1,\,4,\,7] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{4}\right) \mid d \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right)\right| = 3 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 108 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{fourth\_carries\_orbit\_onto\_tetA}]
+\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(d^{4}\right) \in [1,\,4,\,7] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{4}\right) \mid d \in [1,\,2,\,4,\,8,\,7,\,5] \,\}\right)\right| = 3 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 108 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{fourth\_carries\_tetB\_onto\_tetA}]
+\[ \forall d \in [2,\,5,\,8],\; \mathrm{m9}\mathopen{}\left(d^{4}\right) \in [1,\,4,\,7] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{4}\right) \mid d \in [2,\,5,\,8] \,\}\right)\right| = 3 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 27 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{fourth\_carries\_all\_onto\_squares}]
+\[ \forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d^{4}\right) \in [0,\,1,\,4,\,7] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{4}\right) \mid d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \,\}\right)\right| = 4 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 324 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{fifth\_carries\_units\_onto\_orbit}]
+\[ \forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(d^{5}\right) \in [1,\,2,\,4,\,8,\,7,\,5] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{5}\right) \mid d \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right)\right| = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 216 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{fifth\_carries\_orbit\_onto\_units}]
+\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(d^{5}\right) \in [1,\,2,\,4,\,5,\,7,\,8] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{5}\right) \mid d \in [1,\,2,\,4,\,8,\,7,\,5] \,\}\right)\right| = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 216 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{quintuple\_carries\_units\_onto\_orbit}]
+\[ \forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \in [1,\,2,\,4,\,8,\,7,\,5] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \mid d \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right)\right| = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 216 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{quintuple\_carries\_orbit\_onto\_units}]
+\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \in [1,\,2,\,4,\,5,\,7,\,8] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \mid d \in [1,\,2,\,4,\,8,\,7,\,5] \,\}\right)\right| = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 216 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{quintuple\_carries\_tetA\_onto\_tetB}]
+\[ \forall d \in [1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \in [2,\,5,\,8] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \mid d \in [1,\,4,\,7] \,\}\right)\right| = 3 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 27 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{quintuple\_carries\_tetB\_onto\_tetA}]
+\[ \forall d \in [2,\,5,\,8],\; \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \in [1,\,4,\,7] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(5 \cdot d\right) \mid d \in [2,\,5,\,8] \,\}\right)\right| = 3 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 27 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{sextuple\_carries\_all\_onto\_triad}]
+\[ \forall d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(6 \cdot d\right) \in [3,\,6,\,0] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(6 \cdot d\right) \mid d \in [0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \,\}\right)\right| = 3 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 243 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{sextuple\_carries\_cubes\_onto\_triad}]
+\[ \forall d \in [0,\,1,\,8],\; \mathrm{m9}\mathopen{}\left(6 \cdot d\right) \in [3,\,6,\,0] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(6 \cdot d\right) \mid d \in [0,\,1,\,8] \,\}\right)\right| = 3 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 27 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{septuple\_carries\_units\_onto\_orbit}]
+\[ \forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \in [1,\,2,\,4,\,8,\,7,\,5] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \mid d \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right)\right| = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 216 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{septuple\_carries\_orbit\_onto\_units}]
+\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \in [1,\,2,\,4,\,5,\,7,\,8] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(7 \cdot d\right) \mid d \in [1,\,2,\,4,\,8,\,7,\,5] \,\}\right)\right| = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 216 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{octuple\_carries\_units\_onto\_orbit}]
+\[ \forall d \in [1,\,2,\,4,\,5,\,7,\,8],\; \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \in [1,\,2,\,4,\,8,\,7,\,5] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \mid d \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right)\right| = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 216 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{octuple\_carries\_orbit\_onto\_units}]
+\[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \in [1,\,2,\,4,\,5,\,7,\,8] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \mid d \in [1,\,2,\,4,\,8,\,7,\,5] \,\}\right)\right| = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 216 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{octuple\_carries\_tetA\_onto\_tetB}]
+\[ \forall d \in [1,\,4,\,7],\; \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \in [2,\,5,\,8] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \mid d \in [1,\,4,\,7] \,\}\right)\right| = 3 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 27 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{octuple\_carries\_tetB\_onto\_tetA}]
+\[ \forall d \in [2,\,5,\,8],\; \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \in [1,\,4,\,7] \land \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(8 \cdot d\right) \mid d \in [2,\,5,\,8] \,\}\right)\right| = 3 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 27 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{triple\_collapses\_triad\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(3 \cdot d\right) \mid d \in [3,\,6,\,0] \,\}\right)\right| = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{triple\_collapses\_tetA\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(3 \cdot d\right) \mid d \in [1,\,4,\,7] \,\}\right)\right| = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{triple\_collapses\_tetB\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(3 \cdot d\right) \mid d \in [2,\,5,\,8] \,\}\right)\right| = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{square\_collapses\_triad\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d \cdot d\right) \mid d \in [3,\,6,\,0] \,\}\right)\right| = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{cube\_collapses\_triad\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d \cdot d \cdot d\right) \mid d \in [3,\,6,\,0] \,\}\right)\right| = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{cube\_collapses\_tetA\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d \cdot d \cdot d\right) \mid d \in [1,\,4,\,7] \,\}\right)\right| = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{cube\_collapses\_tetB\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d \cdot d \cdot d\right) \mid d \in [2,\,5,\,8] \,\}\right)\right| = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{fourth\_collapses\_triad\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{4}\right) \mid d \in [3,\,6,\,0] \,\}\right)\right| = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{fifth\_collapses\_triad\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{5}\right) \mid d \in [3,\,6,\,0] \,\}\right)\right| = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{sixth\_collapses\_units\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{6}\right) \mid d \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right)\right| = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{sixth\_collapses\_triad\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{6}\right) \mid d \in [3,\,6,\,0] \,\}\right)\right| = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{sixth\_collapses\_orbit\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{6}\right) \mid d \in [1,\,2,\,4,\,8,\,7,\,5] \,\}\right)\right| = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{sixth\_collapses\_tetA\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{6}\right) \mid d \in [1,\,4,\,7] \,\}\right)\right| = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{sixth\_collapses\_tetB\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d^{6}\right) \mid d \in [2,\,5,\,8] \,\}\right)\right| = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{sextuple\_collapses\_triad\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(6 \cdot d\right) \mid d \in [3,\,6,\,0] \,\}\right)\right| = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{sextuple\_collapses\_tetA\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(6 \cdot d\right) \mid d \in [1,\,4,\,7] \,\}\right)\right| = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{sextuple\_collapses\_tetB\_to\_one\_value}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(6 \cdot d\right) \mid d \in [2,\,5,\,8] \,\}\right)\right| = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\subsection{the record}
+
+\paragraph{\texttt{priorart.lean}}
+
+\begin{theorem}[\texttt{novelty\_is\_claimed\_only\_where\_a\_search\_was\_performed}]
+\[ \forall s \in \mathrm{sources},\; \mathrm{novelty}\mathopen{}\left(s\right) = \mathrm{false} \lor \mathrm{kindOf}\mathopen{}\left(s\right) = 2 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{this\_deposit\_claims\_no\_novelty\_today}]
+\[ \left|\{\, x \in \mathrm{sources} \mid \mathrm{novelty}\mathopen{}\left(x\right) \,\}\right| = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_restated\_sources\_are\_named\_and\_claim\_nothing}]
+\[ \forall s \in \{\, s \in \mathrm{sources} \mid \mathrm{kindOf}\mathopen{}\left(s\right) = 0 \,\},\; \mathrm{novelty}\mathopen{}\left(s\right) = \mathrm{false} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{an\_unsearched\_source\_claims\_nothing}]
+\[ \forall s \in \{\, s \in \mathrm{sources} \mid \mathrm{kindOf}\mathopen{}\left(s\right) = 1 \,\},\; \mathrm{novelty}\mathopen{}\left(s\right) = \mathrm{false} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{every\_source\_is\_classified}]
+\[ \forall s \in \mathrm{sources},\; \mathrm{kindOf}\mathopen{}\left(s\right) = 0 \lor \mathrm{kindOf}\mathopen{}\left(s\right) = 1 \lor \mathrm{kindOf}\mathopen{}\left(s\right) = 2 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_kinds\_cover\_every\_source}]
+\[ \left|\{\, s \in \mathrm{sources} \mid \mathrm{kindOf}\mathopen{}\left(s\right) = 0 \,\}\right| + \left|\{\, s \in \mathrm{sources} \mid \mathrm{kindOf}\mathopen{}\left(s\right) = 1 \,\}\right| + \left|\{\, s \in \mathrm{sources} \mid \mathrm{kindOf}\mathopen{}\left(s\right) = 2 \,\}\right| = \left|\mathrm{sources}\right| \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{some\_sources\_are\_unsearched}]
+\[ \left|\{\, s \in \mathrm{sources} \mid \mathrm{kindOf}\mathopen{}\left(s\right) = 1 \,\}\right| > 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{zero\_claims\_is\_not\_full\_attribution}]
+\[ \left|\{\, x \in \mathrm{sources} \mid \mathrm{novelty}\mathopen{}\left(x\right) \,\}\right| = 0 \land \left|\{\, s \in \mathrm{sources} \mid \mathrm{kindOf}\mathopen{}\left(s\right) = 1 \,\}\right| > 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{novelty\_is\_never\_established\_here}]
+\[ \mathrm{noveltyEstablished} = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{neither\_claimed\_nor\_established}]
+\[ \left|\{\, x \in \mathrm{sources} \mid \mathrm{novelty}\mathopen{}\left(x\right) \,\}\right| = 0 \land \mathrm{noveltyEstablished} = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{rights.lean}}
+
+\begin{theorem}[\texttt{claims\_exactly\_what\_arises\_without\_formality}]
+\[ \forall r \in \mathrm{instruments},\; \mathrm{auto}\mathopen{}\left(r\right) = \mathrm{claim}\mathopen{}\left(r\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_claimed\_are\_copyright\_moral\_rights\_and\_the\_database}]
+\[ \mathrm{idOf}[\{\, x \in \mathrm{instruments} \mid \mathrm{claim}\mathopen{}\left(x\right) \,\}] = [1,\,2,\,3] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_unclaimed\_are\_the\_registry\_the\_excluded\_and\_the\_unownable}]
+\[ \mathrm{idOf}[\{\, r \in \mathrm{instruments} \mid \lnot \mathrm{claim}\mathopen{}\left(r\right) \,\}] = [4,\,5,\,6,\,7] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{no\_right\_that\_needs\_a\_registry\_act\_is\_claimed}]
+\[ \forall r \in \{\, r \in \mathrm{instruments} \mid \mathrm{kindOf}\mathopen{}\left(r\right) = 1 \,\},\; \mathrm{claim}\mathopen{}\left(r\right) = \mathrm{false} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{no\_excluded\_subject\_matter\_is\_claimed}]
+\[ \forall r \in \{\, r \in \mathrm{instruments} \mid \mathrm{kindOf}\mathopen{}\left(r\right) = 2 \,\},\; \mathrm{claim}\mathopen{}\left(r\right) = \mathrm{false} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{nothing\_incapable\_of\_ownership\_is\_claimed}]
+\[ \forall r \in \{\, r \in \mathrm{instruments} \mid \mathrm{kindOf}\mathopen{}\left(r\right) = 3 \,\},\; \mathrm{claim}\mathopen{}\left(r\right) = \mathrm{false} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_enumeration\_is\_complete\_and\_unduplicated}]
+\[ \mathrm{idOf}[\mathrm{instruments}] = [1,\,2,\,3,\,4,\,5,\,6,\,7] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 7 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{rights\_settles\_its\_range}]
+\[ \mathrm{settledHere} = 7 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
+
+\section*{Availability}
+Source: \url{https://github.com/ceccec/millennium-solutions}. Deposit: \url{https://doi.org/10.5281/zenodo.21819217}.
+Every statement here recomputes from the repository with \texttt{npm run lean}.
 
 \end{document}

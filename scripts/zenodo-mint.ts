@@ -13,6 +13,8 @@
 // source that declares the theorem, and the deposition JSON itself. A record whose files do not contain
 // the proof would be a citation with nothing behind it.
 import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs'
+import { leanTheorems } from '../src/api/index.ts'
+import { theoremTex } from '../src/publication/index.ts'
 import { homedir } from 'node:os'
 import { join } from 'node:path'
 
@@ -62,7 +64,11 @@ for (const key of pending.slice(0, LIMIT)) {
   try {
     const dep = await api('/deposit/depositions', { method: 'POST', body: '{}' })
     const bucket: string = dep.links.bucket
+    // The typeset statement travels with the proof: a deposited record should be readable as mathematics,
+    // not only compilable as Lean. Synthesised here from the same translator latex-gate round-trips.
+    const thm = leanTheorems().find((x) => 'lean_' + x.name === key || key.endsWith('_' + x.name))
     const payload: [string, string][] = [
+      ...(thm ? [[`${key}.tex`, theoremTex(thm, { key: (meta.notes.match(/key (\S+)/) ?? [])[1] ?? null })] as [string, string]] : []),
       ...files.filter((f) => existsSync(f)).map((f) => [f.split('/').pop()!, readFileSync(f, 'utf8')] as [string, string]),
       [`${key}.deposition.json`, JSON.stringify(meta, null, 2)],
     ]
