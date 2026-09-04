@@ -156,8 +156,17 @@ const CLAIMS: { section: string; statement: string; test: () => boolean }[] = [
     // layer was removed by order, and this sentence went on describing it — the claim was not weakened here,
     // it was already false and the test was the only thing saying so. What the gate does today is check
     // whether a cited theorem is sealed in the ledger, which is narrower and worth stating exactly.
-    statement: 'the gate drains a claim that cites a theorem which is not sealed in the ledger, and passes one that cites a theorem which is',
+    // THE SECOND HALF OF THIS CLAIM WAS FALSE, and its test never checked it. It said the gate "passes one
+    // that cites a theorem which is [sealed]", and then tested a sentence carrying NO CITATION AT ALL.
+    // Measured: a claim citing lean_units_are_six — real, live, sealed here — drains exactly as a
+    // fabricated key does. The gate ships with the frozen ledger of @uuidna/uuidna 0.1.1, so every key
+    // minted in this deposit looks fabricated to it, and it cannot tell a true citation from an invented
+    // one. The claim now says that, and the test checks the real key rather than a sentence that dodges
+    // the question. If the package ever ships a current ledger this test will fail — correctly, because
+    // the behaviour it describes will have changed.
+    statement: 'the gate drains ANY claim carrying a /theorem/ citation — a fabricated key and a genuinely sealed one alike — because it ships the frozen ledger of the published package and cannot see keys minted here; text without a citation passes',
     test: () => computes('see [x](/theorem/a_key_that_was_never_sealed)').binary === 0
+      && computes('see [x](/theorem/lean_units_are_six)').binary === 0
       && computes('the units of the ring number six').binary === 1 },
 
   { section: 'What the gate does and does not do',
@@ -255,5 +264,5 @@ node scripts/readme.ts        # regenerate this file; it fails if a claim stops 
 // seal — so it stays, as a CHECK. It verifies and reports; pages.ts owns the file. A generated artefact with
 // two authors has no author.
 writeFileSync('src/readme-trial.md', md)
-console.log(`✓ readme: ${verdicts.length} claims, all SEALED · ${ledger.length} theorems · trial root ${merkleFold(verdicts.map((x) => x.v.receipt)).slice(0, 13)}…`)
+console.log(`✓ readme: ${verdicts.length} claims, all SEALED · ${ledger.length} ledger entries · trial root ${merkleFold(verdicts.map((x) => x.v.receipt)).slice(0, 13)}…`)
 console.log('  (verification only — README.md is written by scripts/pages.ts; this trial writes src/readme-trial.md)')
