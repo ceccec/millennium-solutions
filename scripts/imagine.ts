@@ -185,6 +185,9 @@ if (!process.argv.includes('--emit')) {
 const body = t2.map((c) => `-- ${c.say}\ntheorem ${c.key} :\n  ${c.prop} := by decide`).join('\n\n')
 writeFileSync('src/proof/imagined.lean', `import Z9
 set_option maxRecDepth 8000000
+-- title: What enumeration proposed and the kernel kept
+-- wing: the imagined
+-- prior_art: unclassified
 -- IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets
 -- statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that
 -- also holds for all its siblings. A property true of everything names nothing. What is left is what the
