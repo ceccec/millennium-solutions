@@ -60,6 +60,38 @@ if (!existsSync(FUSION)) {
   console.log(`\n  ${hits ? '✗' : '·'} ${scanned} claim(s) across sibling repositories scanned, ${hits} sharing an address with one of ours`)
 }
 
+// ── EVERY SIBLING AUDITED BY THE SAME RULE, INCLUDING US ────────────────────────────────────────────────
+// "Let each repo audit the rest" is only worth having if the audit is reproducible by the audited. This
+// applies one published rule to all six shared ledgers and reports what it finds, ours included — a report
+// that exempts its author is an opinion.
+//
+// Measured on 2026-09-04: erpax 5 repeats (four of them one boilerplate sentence across five SKILL.md
+// files), ceccec.github.io 1 (golden_ratio_bounds proved in two Lean files), zeropoint-node 1 (a markdown
+// H2 extracted as a claim), uuidna 0, aequator 0, and 6 here. None of it is large; what it locates is where
+// a claim count and a publication count would diverge.
+if (existsSync(FUSION)) {
+  console.log(`\n  ── every shared ledger by the same rule ──`)
+  console.log(`  repo                     claims  distinct  repeated`)
+  for (const f of readdirSync(FUSION).filter((x) => x.endsWith('.jsonl')).sort()) {
+    const seen = new Set<string>()
+    let total = 0, rep = 0
+    for (const line of readFileSync(`${FUSION}/${f}`, 'utf8').split('\n')) {
+      if (!line.trim()) continue
+      let o: { claim?: string; name?: string; statement?: string }
+      try { o = JSON.parse(line) } catch { continue }
+      const c = o.statement ?? o.claim ?? o.name
+      if (!c) continue
+      total++
+      const a = statementAddress(c)
+      if (seen.has(a)) rep++; else seen.add(a)
+    }
+    console.log(`  ${f.replace('.jsonl', '').padEnd(24)}${String(total).padStart(6)}${String(seen.size).padStart(10)}${String(rep).padStart(10)}`)
+  }
+  console.log(`  A repeat is a candidate, not a fault: boilerplate legitimately recurs, and a heading extracted`)
+  console.log(`  as a claim is an extractor question rather than a duplicate result. What it marks is the place`)
+  console.log(`  where a claim count and a publication count would stop agreeing.`)
+}
+
 console.log(`\n✓ unique: ${T.length} declarations, ${byAddr.size} distinct statement addresses. A collision is a`)
 console.log(`  candidate for a reader and never a merge performed here — the address identifies TEXT, and text`)
 console.log(`  is not a proposition in either direction.`)

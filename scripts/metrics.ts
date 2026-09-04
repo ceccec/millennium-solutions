@@ -30,7 +30,7 @@
 import { writeFileSync, readFileSync, existsSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 import { receiptOf, rootOf, checkFace, protocolId, PROTOCOL, type Metric, type Face } from '../src/face/index.ts'
-import { census, clayFloor, advantage, split, ledger, leanFiles, THEOREM_DEFINITION } from '../src/api/index.ts'
+import { census, clayFloor, advantage, split, ledger, leanFiles, leanTheorems, THEOREM_DEFINITION } from '../src/api/index.ts'
 
 // The shape and its checker live in src/face — a leaf that imports only the address primitives, so the MCP
 // server can verify a face without importing THIS file, whose top level runs the gates.
@@ -131,7 +131,19 @@ writeFileSync('metrics.json', JSON.stringify(face, null, 2) + '\n')
 // asking. Written only if the directory is already there: creating it would be this repo deciding where
 // five sessions coordinate, which is not its call.
 const SHARED = process.env.HOME + '/.erpax/fusion'
-if (existsSync(SHARED)) writeFileSync(SHARED + '/millennium-solutions.metrics.json', JSON.stringify(face, null, 2) + '\n')
+if (existsSync(SHARED)) {
+  writeFileSync(SHARED + '/millennium-solutions.metrics.json', JSON.stringify(face, null, 2) + '\n')
+  // AND THE STATEMENTS, so a sibling auditing us reads what is true now. The snapshot they had was written
+  // at 02:23 and held file-level descriptions — auditing it reported 503 claims and no repeats, while the
+  // live tree holds 529 declarations and six colliding statements. A peer audit is only as good as the data
+  // it is handed, and handing them a stale file is a way of passing an audit rather than surviving one.
+  // Each line carries the STATEMENT, which is what a cross-repository address is computed over.
+  const lines = leanTheorems().map((t) => JSON.stringify({
+    repo: 'millennium-solutions', path: `src/proof/${t.file}`, claim: t.name,
+    statement: t.statement, tactic: t.tactic, origin: 'self',
+  })).join('\n')
+  writeFileSync(SHARED + '/millennium-solutions.jsonl', lines + '\n')
+}
 // ── ENFORCEMENT, SEPARATED FROM RECORDING ───────────────────────────────────────────────────────────────
 // This face deliberately PUBLISHES a red gate rather than refusing to publish, so it exits 0 whatever the
 // gates said. That meant CI needed a separate `npm run gates` step to actually fail the build — and since
