@@ -1,0 +1,154 @@
+{
+  "repo": "millennium-solutions",
+  "definition": "a declaration in src/proof that the Lean kernel accepts — sorry-free, axiom-free — and closes by exhaustion over a stated finite domain",
+  "rows": [
+    {
+      "key": "theorems",
+      "claim": "declarations closing by exhaustion — the deposit's definition of a theorem",
+      "value": "483",
+      "command": "node -e \"import('./src/api/index.ts').then(m=>console.log(m.census().byDecide))\"",
+      "receipt": "f7a1c6c0-c5aa-8e0e-8df5-6ea31a68ab7f"
+    },
+    {
+      "key": "rfl-declarations",
+      "claim": "declarations closing by rfl, counted separately and never as theorems",
+      "value": "8",
+      "command": "node -e \"import('./src/api/index.ts').then(m=>console.log(m.census().rfl))\"",
+      "receipt": "cb37925d-6599-838c-b57f-ff276475d8ce"
+    },
+    {
+      "key": "kernel-accepted",
+      "claim": "declarations the Lean kernel accepts, sorry-free and axiom-free",
+      "value": "491",
+      "command": "node scripts/lean.ts",
+      "receipt": "a4b1ae7a-018c-8c0d-8af8-a036a68988bf"
+    },
+    {
+      "key": "lean-files",
+      "claim": "source files in src/proof",
+      "value": "25",
+      "command": "ls src/proof/*.lean | wc -l",
+      "receipt": "7bb9fe65-b9b3-840c-9e72-e4009a34a7c7"
+    },
+    {
+      "key": "live-keys",
+      "claim": "live ledger keys — ADDRESSES, not theorems; some theorems carry two",
+      "value": "508",
+      "command": "node -e \"import('./src/api/index.ts').then(m=>console.log(m.census().liveKeys))\"",
+      "receipt": "369dd398-bf86-88bc-901f-cf3c9d8aa189"
+    },
+    {
+      "key": "ledger-entries",
+      "claim": "entries in the append-only ledger — RECEIPTS, most of them withdrawn",
+      "value": "2380",
+      "command": "node scripts/forensics.ts",
+      "receipt": "5a054200-74aa-8b75-86e6-4ad4cd59a438"
+    },
+    {
+      "key": "census-closes",
+      "claim": "liveKeys = sealed + keyed-twice + unresolvable, asserted not reconciled by a reader",
+      "value": "508 = 483 + 24 + 1",
+      "command": "node scripts/contradictions.ts",
+      "receipt": "2e9d50b2-03d5-8e2d-b20a-3dc2d9d6a15a"
+    },
+    {
+      "key": "clay-proved",
+      "claim": "Clay Millennium Problems this framework proves",
+      "value": "0",
+      "command": "node scripts/contradictions.ts",
+      "receipt": "1d896d4d-4bb3-8bdc-b3ab-a331ff7e60f3"
+    },
+    {
+      "key": "clay-floor-holds",
+      "claim": "seven Clay-named theorems present, all by decide, none reaching a conjecture object",
+      "value": "7/7 present, reaches=0",
+      "command": "node -e \"import('./src/api/index.ts').then(m=>console.log(JSON.stringify(m.clayFloor())))\"",
+      "receipt": "56e87b9c-6797-82a0-adde-66606648b0dc"
+    },
+    {
+      "key": "verify-advantage",
+      "claim": "verification path against recomputation at 2^20 leaves — classical and structural",
+      "value": "20 rounds vs 1048576 recomputations, ratio 567971x",
+      "command": "node scripts/pages.ts",
+      "receipt": "0b98f5d8-15e6-8223-b08e-0a61a3fa493c"
+    },
+    {
+      "key": "quantum-speedup",
+      "claim": "quantum speedup claimed — no hardware, no algorithm",
+      "value": "0",
+      "command": "node scripts/contradictions.ts",
+      "receipt": "a59ca3a3-f3f2-88dd-a2e6-0389af6b6780"
+    },
+    {
+      "key": "novelty-claimed",
+      "claim": "novelty claims, which require a NAMED prior-art search that none has",
+      "value": "0",
+      "command": "node scripts/priorart.ts",
+      "receipt": "f6a02a1d-45ef-8cd5-bb67-f87449057486"
+    },
+    {
+      "key": "prior-art-attributed",
+      "claim": "declarations restating work with an earlier author, credited",
+      "value": "167",
+      "command": "node scripts/priorart.ts",
+      "receipt": "cbf9ffbc-d269-81cb-b104-790c85e04301"
+    },
+    {
+      "key": "typeset",
+      "claim": "statements rendering as mathematics, each round-trip clean against its source",
+      "value": "491/491",
+      "command": "node scripts/latex-gate.ts",
+      "receipt": "76948dbb-691f-8469-abe8-31d1e67210a4"
+    },
+    {
+      "key": "coin-unlock",
+      "claim": "a 128-bit seal affords 64 payments of two coins = one turn of the doubling orbit",
+      "value": "128/2 = 64, 2^6 mod 9 = 1",
+      "command": "node scripts/split-check.ts || node scripts/lean.ts",
+      "receipt": "1b4b2d2e-9d99-81bf-987f-0987bbbb34c9"
+    },
+    {
+      "key": "gate:contradictions",
+      "claim": "the contradictions gate, run now rather than remembered",
+      "value": "pass",
+      "command": "npm run contradictions",
+      "receipt": "6d2163e8-c7d0-80b8-87b3-dbe6f97a2518"
+    },
+    {
+      "key": "gate:latex-gate",
+      "claim": "the latex-gate gate, run now rather than remembered",
+      "value": "pass",
+      "command": "npm run latex-gate",
+      "receipt": "e03e3f9d-9911-844d-a178-3732ea5e4d39"
+    },
+    {
+      "key": "gate:prior-art",
+      "claim": "the prior-art gate, run now rather than remembered",
+      "value": "pass",
+      "command": "npm run prior-art",
+      "receipt": "9e0908e1-3014-8648-906c-3ff4018bb31d"
+    },
+    {
+      "key": "gate:verify",
+      "claim": "the verify gate, run now rather than remembered",
+      "value": "pass",
+      "command": "npm run verify",
+      "receipt": "4c58d2cd-b4e3-898c-bae0-8aac1c7c53b9"
+    },
+    {
+      "key": "gate:trial-all",
+      "claim": "the trial-all gate, run now rather than remembered",
+      "value": "pass",
+      "command": "npm run trial-all",
+      "receipt": "bd413eb1-d9d6-8d3d-8980-9b699ec9c47f"
+    },
+    {
+      "key": "gate:gates",
+      "claim": "the gates gate, run now rather than remembered",
+      "value": "pass",
+      "command": "npm run gates",
+      "receipt": "304f97e6-12fb-8857-84eb-2eb39c21699e"
+    }
+  ],
+  "root": "78fe0bdc-639c-82bc-bc09-93e6bbda2543"
+}

@@ -54,6 +54,10 @@ jobs:
         # 11 gate scripts were wired into nothing. Running them found gaps failing on a clean tree
         # and lean-gen emitting Lean the kernel rejects. A gate nobody runs is a gate nobody has.
         run: npm run gates
+      - name: Emit the verifiable metrics face
+        # Each row carries the command that recomputes it and a receipt over its own fields, so a
+        # peer session checks integrity with `npm run metrics:verify` and needs nothing from here.
+        run: npm run metrics
       - name: Build the site (predocs:build gates run first)
         run: npm run docs:build
       - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
