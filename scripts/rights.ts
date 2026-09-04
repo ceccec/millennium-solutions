@@ -26,6 +26,20 @@ if (rows.length !== 7) { console.error(`✗ rights: parsed ${rows.length} instru
 const KEY = 'lean_rights_claims_exactly_what_arises_without_formality'
 if (!liveKeys().has(KEY)) { console.error(`✗ rights: refusing to write RIGHTS.md — ${KEY} is not live in the ledger, so the claim is unproved`); process.exit(1) }
 
+// AND THE PROPERTY ITSELF, ON THE ROWS JUST PARSED — not a proxy for it. The check above asks whether a KEY
+// is live, and a seal covers the key, never the statement text: seal-lean.ts chains
+// receipt = toUuid(previous → key). So rights.lean's table could drift to claim a right that does not arise
+// without formality, the key would stay live on its old seal, and this file would render the overclaim as a
+// legal notice. The theorem is named for the property; the property is checked here against the table this
+// script actually read.
+const mismatched = rows.filter((r) => r.auto !== r.claim)
+if (mismatched.length) {
+  console.error(`✗ rights: refusing to write RIGHTS.md — ${mismatched.length} instrument(s) claim differently from what arises without formality:`)
+  for (const r of mismatched) console.error(`    id ${r.id}: automatic=${r.auto} claimed=${r.claim} — ${r.says.slice(0, 90)}`)
+  console.error('  claiming a right that needs an act this deposit has not performed is the overclaim; leaving an automatic right unclaimed abandons it.')
+  process.exit(1)
+}
+
 const WHY = ['held from authorship, no formality', 'a registry grants it — not requested', 'excluded subject matter', 'not capable of being owned']
 const cell = (r: Row) => `<tr><td><code>${toUuid(r.says).slice(0, 13)}</code></td><td>${r.claim ? '<strong>CLAIMED</strong>' : 'not claimed'}</td><td>${escapeHtml(r.says)}</td><td>${WHY[r.kind]}</td></tr>`
 

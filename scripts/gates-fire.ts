@@ -118,6 +118,16 @@ const CONTROLS: Control[] = [
   // the gate passed, and gates-fire correctly reported that readme "ACCEPTS" the mutation. A control whose
   // edit no longer applies is a control that tests nothing while reading green. The readme gate now asks
   // clayFloor(), so the mutation takes one of the seven Clay-named theorems out of the count.
+  // rights was the ONE release gate this harness reported as having no negative control — "trusted only
+  // because it passes". It had a real gap behind that: it parsed the instrument table and then verified a
+  // ledger KEY, and a seal covers the key and never the statement text, so a drifted table would have
+  // rendered as a legal notice on the strength of an old seal. It checks the property on the rows it parsed
+  // now, and this is the control: claiming a registered trade mark, which a registry grants and an author
+  // cannot, must stop the page being written.
+  { gate: 'rights', cmd: 'node scripts/rights.ts', file: 'src/proof/rights.lean',
+    what: 'a right claimed that does not arise without formality — a registry\'s act asserted as an author\'s',
+    mutate: (s) => s.replace('  , (4, 1, false, false)', '  , (4, 1, false, true )') },
+
   { gate: 'readme', cmd: 'node scripts/readme.ts', file: 'src/proof/index.lean',
     what: 'one of the seven Clay theorems no longer being Clay-named, so the floor is measured over six',
     mutate: (s) => s.replace('theorem hodge_span_is_the_units', 'theorem span_is_the_units') },
