@@ -15,7 +15,7 @@ import { spawn } from 'node:child_process'
 
 const GATES = [
   'lean', 'contradictions', 'latex-gate', 'prior-art', 'verify', 'trial-all',
-  'gates', 'quantum-field', 'zenodo', 'axiom-index', 'lean-claims', 'claims', 'docs-gate', 'priorart-check', 'apply',
+  'gates', 'quantum-field', 'zenodo', 'axiom-index', 'lean-claims', 'claims', 'docs-gate', 'priorart-check', 'apply', 'ci-drift',
 ]
 
 const run = (name: string) => new Promise<{ name: string; ok: boolean; ms: number; tail: string }>((res) => {
