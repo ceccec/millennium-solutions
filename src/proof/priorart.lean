@@ -72,9 +72,10 @@ def sources : List Source :=
   , (19, 1, false)   -- rights.lean       — this deposit's own rights table
   , (20, 0, false)   -- sequences.lean    — Cassini, Lucas, Brahmagupta–Fibonacci, Pascal mod two
   , (21, 1, false)   -- speed.lean        — this deposit's own verification cost
-  , (22, 1, false)   -- theorems.lean     — the universal property, computed from this sequence
-  , (23, 0, false)   -- z9.lean           — the arithmetic of ℤ/9: Euler, Fermat, primitive roots
-  , (24, 0, false)   -- z9plus.lean       — digital roots, primitive roots, Pisano periods
+  , (22, 1, false)   -- split.lean        — the digit grouping 0|12|3|45|6|78|9 as this deposit reads it
+  , (23, 1, false)   -- theorems.lean     — the universal property, computed from this sequence
+  , (24, 0, false)   -- z9.lean           — the arithmetic of ℤ/9: Euler, Fermat, primitive roots
+  , (25, 0, false)   -- z9plus.lean       — digital roots, primitive roots, Pisano periods
   ]
 
 -- ── THE CLAIM. Only a source that names a completed search may claim, and none does ─────────────────────

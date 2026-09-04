@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2361 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2377 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (489)
+### lean (505)
 
 - [lean_units_are_six](/theorem/lean_units_are_six) — lean: the units of ℤ/9 are exactly [1,2,4,5,7,8] — checked at every residue by the kernel, recomputed here; 0/7  ·  `031c89bf-e1e0…`
 - [lean_units_count](/theorem/lean_units_count) — lean: there are exactly six units in ℤ/9 — the kernel checks the count, recomputed here; 0/7  ·  `104e8965-ebfb…`
@@ -513,6 +513,22 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_millenniumfloor_the_three_non_units_are_exactly_the_unreachable](/theorem/lean_millenniumfloor_the_three_non_units_are_exactly_the_unreachable) — lean index.lean: the_three_non_units_are_exactly_the_unreachable — ((List.range 9).filter (fun d =&gt; ! isUnit d)) = [0, 3, 6] ∧ ((List.range 9).filter (fun d =&gt; ! isUnit d)).all (fun d =&gt; ! span.contains d) ∧ ((List.range 9).filter isUnit).length + ((List.range 9).filter (fun d =&gt; ! isUnit d)).length = 9 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a26af379-71ef…`
 - [lean_millenniumfloor_the_origin_annihilates_and_never_joins_the_circuit](/theorem/lean_millenniumfloor_the_origin_annihilates_and_never_joins_the_circuit) — lean index.lean: the_origin_annihilates_and_never_joins_the_circuit — ((List.range 9).all (fun e =&gt; (0 * e) % 9 != 1)) ∧ (! span.contains 0) ∧ ((List.range 9).all (fun d =&gt; (d + 0) % 9 == d % 9)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `3846d34b-b045…`
 - [lean_millenniumfloor_the_sequence_is_its_named_parts_and_closes](/theorem/lean_millenniumfloor_the_sequence_is_its_named_parts_and_closes) — lean index.lean: the_sequence_is_its_named_parts_and_closes — sequence = span ++ [3, 6, 9] ++ [0] ++ [1] ∧ sequence.length = 11 ∧ sequence.head? = sequence.getLast? ∧ 9 % 9 = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `11e07809-0f98…`
+- [lean_split_the_singles_are_exactly_the_non_units](/theorem/lean_split_the_singles_are_exactly_the_non_units) — lean split.lean: the_singles_are_exactly_the_non_units — ((List.range 10).filter (fun d =&gt; ! isUnit9 d)) = [0, 3, 6, 9] ∧ singles = [0, 3, 6, 9] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d1d29750-bd67…`
+- [lean_split_the_pairs_are_exactly_the_units_in_order](/theorem/lean_split_the_pairs_are_exactly_the_units_in_order) — lean split.lean: the_pairs_are_exactly_the_units_in_order — ((List.range 10).filter isUnit9) = unitsOf9 ∧ unitsOf9 = [1, 2, 4, 5, 7, 8] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e41230cc-32f2…`
+- [lean_split_each_pair_is_two_consecutive_units](/theorem/lean_split_each_pair_is_two_consecutive_units) — lean split.lean: each_pair_is_two_consecutive_units — 12 = 1 * 10 + 2 ∧ 45 = 4 * 10 + 5 ∧ 78 = 7 * 10 + 8 ∧ 2 = 1 + 1 ∧ 5 = 4 + 1 ∧ 8 = 7 + 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `5b2f142f-f390…`
+- [lean_split_every_token_is_a_multiple_of_three](/theorem/lean_split_every_token_is_a_multiple_of_three) — lean split.lean: every_token_is_a_multiple_of_three — tokens.all (fun t =&gt; t % 3 == 0) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `f2842318-1719…`
+- [lean_split_the_tokens_are_three_times_these](/theorem/lean_split_the_tokens_are_three_times_these) — lean split.lean: the_tokens_are_three_times_these — tokens.map (fun t =&gt; t / 3) = [0, 4, 1, 15, 2, 26, 3] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `b50457b2-5391…`
+- [lean_split_addition_and_multiplication_stay_inside](/theorem/lean_split_addition_and_multiplication_stay_inside) — lean split.lean: addition_and_multiplication_stay_inside — tokens.all (fun a =&gt; tokens.all (fun b =&gt; (a + b) % 3 == 0 && (a * b) % 3 == 0)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c0b824b4-e091…`
+- [lean_split_subtraction_stays_inside](/theorem/lean_split_subtraction_stays_inside) — lean split.lean: subtraction_stays_inside — tokens.all (fun a =&gt; tokens.all (fun b =&gt; a &lt; b || (a - b) % 3 == 0)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `49bf0950-7191…`
+- [lean_split_division_is_the_operation_that_leaves](/theorem/lean_split_division_is_the_operation_that_leaves) — lean split.lean: division_is_the_operation_that_leaves — 12 / 3 = 4 ∧ 4 % 3 != 0 ∧ 45 / 9 = 5 ∧ 5 % 3 != 0 ∧ 6 / 3 = 2 ∧ 2 % 3 != 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `b9159d44-811b…`
+- [lean_split_the_roots_are_the_singles](/theorem/lean_split_the_roots_are_the_singles) — lean split.lean: the_roots_are_the_singles — tokens.map (fun t =&gt; t % 9) = [0, 3, 3, 0, 6, 6, 0] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7c878aea-818e…`
+- [lean_split_every_root_is_a_single](/theorem/lean_split_every_root_is_a_single) — lean split.lean: every_root_is_a_single — tokens.all (fun t =&gt; singles.contains (if t % 9 == 0 then (if t == 0 then 0 else 9) else t % 9)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `282584c6-2ad7…`
+- [lean_split_the_coin_step_is_three_times_the_two_coins](/theorem/lean_split_the_coin_step_is_three_times_the_two_coins) — lean split.lean: the_coin_step_is_three_times_the_two_coins — coins = 2 ∧ coinStep = 6 ∧ coinStep = 3 * 2 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9b87b34f-1d05…`
+- [lean_split_accounting_the_coins_on_the_last_pair](/theorem/lean_split_accounting_the_coins_on_the_last_pair) — lean split.lean: accounting_the_coins_on_the_last_pair — 78 = 3 * 26 ∧ 3 * (26 - coins) = 72 ∧ 72 = 8 * 9 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `758b6f0c-0b43…`
+- [lean_split_the_exhaustible_tokens_are_those_six_divides](/theorem/lean_split_the_exhaustible_tokens_are_those_six_divides) — lean split.lean: the_exhaustible_tokens_are_those_six_divides — (tokens.filter (fun t =&gt; t % coinStep == 0)) = [0, 12, 6, 78] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `516917be-eea3…`
+- [lean_split_the_rest_halt_on_the_generator](/theorem/lean_split_the_rest_halt_on_the_generator) — lean split.lean: the_rest_halt_on_the_generator — (tokens.filter (fun t =&gt; t % coinStep != 0)) = [3, 45, 9] ∧ (tokens.filter (fun t =&gt; t % coinStep != 0)).all (fun t =&gt; t % coinStep == 3) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `88e1ca63-b3a4…`
+- [lean_split_every_token_is_void_bound_or_halts_on_three](/theorem/lean_split_every_token_is_void_bound_or_halts_on_three) — lean split.lean: every_token_is_void_bound_or_halts_on_three — tokens.all (fun t =&gt; t % coinStep == 0 || t % coinStep == 3) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `19e9ea2d-fe3a…`
+- [lean_split_inside_this_ideal_the_bare_coin_sorts_as_the_scaled_one](/theorem/lean_split_inside_this_ideal_the_bare_coin_sorts_as_the_scaled_one) — lean split.lean: inside_this_ideal_the_bare_coin_sorts_as_the_scaled_one — (tokens.filter (fun t =&gt; t % 2 == 0)) = (tokens.filter (fun t =&gt; t % coinStep == 0)) ∧ tokens.all (fun t =&gt; (t % 2 == 0) == (t % coinStep == 0)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c397ec15-180f…`
 
 ### other — one-of-a-kind (0)
 
@@ -2339,4 +2355,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `b35d5d59-424e-839d-8e3c-0eb3e56b3245`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `ce834b2f-56d3-8813-a102-af7194e99066`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

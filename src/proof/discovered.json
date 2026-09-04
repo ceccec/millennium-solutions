@@ -17084,5 +17084,85 @@
     "key": "lean_millenniumfloor_the_sequence_is_its_named_parts_and_closes",
     "name": "lean index.lean: the_sequence_is_its_named_parts_and_closes — sequence = span ++ [3, 6, 9] ++ [0] ++ [1] ∧ sequence.length = 11 ∧ sequence.head? = sequence.getLast? ∧ 9 % 9 = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "11e07809-0f98-862b-8fca-4784591eb19f"
+  },
+  {
+    "key": "lean_split_the_singles_are_exactly_the_non_units",
+    "name": "lean split.lean: the_singles_are_exactly_the_non_units — ((List.range 10).filter (fun d => ! isUnit9 d)) = [0, 3, 6, 9] ∧ singles = [0, 3, 6, 9] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d1d29750-bd67-85fd-8bbe-5742f2c4a87f"
+  },
+  {
+    "key": "lean_split_the_pairs_are_exactly_the_units_in_order",
+    "name": "lean split.lean: the_pairs_are_exactly_the_units_in_order — ((List.range 10).filter isUnit9) = unitsOf9 ∧ unitsOf9 = [1, 2, 4, 5, 7, 8] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e41230cc-32f2-8970-ad6b-1b1585d2f952"
+  },
+  {
+    "key": "lean_split_each_pair_is_two_consecutive_units",
+    "name": "lean split.lean: each_pair_is_two_consecutive_units — 12 = 1 * 10 + 2 ∧ 45 = 4 * 10 + 5 ∧ 78 = 7 * 10 + 8 ∧ 2 = 1 + 1 ∧ 5 = 4 + 1 ∧ 8 = 7 + 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5b2f142f-f390-8a45-b7c8-58897dcff8b7"
+  },
+  {
+    "key": "lean_split_every_token_is_a_multiple_of_three",
+    "name": "lean split.lean: every_token_is_a_multiple_of_three — tokens.all (fun t => t % 3 == 0) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f2842318-1719-87cc-ade4-e04f9de1f1ca"
+  },
+  {
+    "key": "lean_split_the_tokens_are_three_times_these",
+    "name": "lean split.lean: the_tokens_are_three_times_these — tokens.map (fun t => t / 3) = [0, 4, 1, 15, 2, 26, 3] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b50457b2-5391-891e-b77a-62716b9b2ccc"
+  },
+  {
+    "key": "lean_split_addition_and_multiplication_stay_inside",
+    "name": "lean split.lean: addition_and_multiplication_stay_inside — tokens.all (fun a => tokens.all (fun b => (a + b) % 3 == 0 && (a * b) % 3 == 0)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c0b824b4-e091-8d65-aa83-345e851689ba"
+  },
+  {
+    "key": "lean_split_subtraction_stays_inside",
+    "name": "lean split.lean: subtraction_stays_inside — tokens.all (fun a => tokens.all (fun b => a < b || (a - b) % 3 == 0)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "49bf0950-7191-8b48-8a46-5d42dc260951"
+  },
+  {
+    "key": "lean_split_division_is_the_operation_that_leaves",
+    "name": "lean split.lean: division_is_the_operation_that_leaves — 12 / 3 = 4 ∧ 4 % 3 != 0 ∧ 45 / 9 = 5 ∧ 5 % 3 != 0 ∧ 6 / 3 = 2 ∧ 2 % 3 != 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b9159d44-811b-8a4d-865b-b95cccf34652"
+  },
+  {
+    "key": "lean_split_the_roots_are_the_singles",
+    "name": "lean split.lean: the_roots_are_the_singles — tokens.map (fun t => t % 9) = [0, 3, 3, 0, 6, 6, 0] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7c878aea-818e-8253-8f02-9db69089b16e"
+  },
+  {
+    "key": "lean_split_every_root_is_a_single",
+    "name": "lean split.lean: every_root_is_a_single — tokens.all (fun t => singles.contains (if t % 9 == 0 then (if t == 0 then 0 else 9) else t % 9)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "282584c6-2ad7-868d-8de5-1cdf669c552a"
+  },
+  {
+    "key": "lean_split_the_coin_step_is_three_times_the_two_coins",
+    "name": "lean split.lean: the_coin_step_is_three_times_the_two_coins — coins = 2 ∧ coinStep = 6 ∧ coinStep = 3 * 2 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9b87b34f-1d05-8b8c-b1df-35651fcf5da9"
+  },
+  {
+    "key": "lean_split_accounting_the_coins_on_the_last_pair",
+    "name": "lean split.lean: accounting_the_coins_on_the_last_pair — 78 = 3 * 26 ∧ 3 * (26 - coins) = 72 ∧ 72 = 8 * 9 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "758b6f0c-0b43-8808-ab33-9680674d78b2"
+  },
+  {
+    "key": "lean_split_the_exhaustible_tokens_are_those_six_divides",
+    "name": "lean split.lean: the_exhaustible_tokens_are_those_six_divides — (tokens.filter (fun t => t % coinStep == 0)) = [0, 12, 6, 78] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "516917be-eea3-8ecb-acbb-2338720980ab"
+  },
+  {
+    "key": "lean_split_the_rest_halt_on_the_generator",
+    "name": "lean split.lean: the_rest_halt_on_the_generator — (tokens.filter (fun t => t % coinStep != 0)) = [3, 45, 9] ∧ (tokens.filter (fun t => t % coinStep != 0)).all (fun t => t % coinStep == 3) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "88e1ca63-b3a4-8937-8a80-09e2fa13984d"
+  },
+  {
+    "key": "lean_split_every_token_is_void_bound_or_halts_on_three",
+    "name": "lean split.lean: every_token_is_void_bound_or_halts_on_three — tokens.all (fun t => t % coinStep == 0 || t % coinStep == 3) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "19e9ea2d-fe3a-82c3-9cd3-de067ee40d4d"
+  },
+  {
+    "key": "lean_split_inside_this_ideal_the_bare_coin_sorts_as_the_scaled_one",
+    "name": "lean split.lean: inside_this_ideal_the_bare_coin_sorts_as_the_scaled_one — (tokens.filter (fun t => t % 2 == 0)) = (tokens.filter (fun t => t % coinStep == 0)) ∧ tokens.all (fun t => (t % 2 == 0) == (t % coinStep == 0)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c397ec15-180f-8b5d-b382-cb116045089a"
   }
 ]

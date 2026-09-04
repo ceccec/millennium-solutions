@@ -17,12 +17,12 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 472 theorems across 24 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `e6e1791e-1099-8c6f-905e-7fd3c02211ea`</sub>
-- 464 of those 472 theorems close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
-  <sub>SEALED · `3ab45b3e-f0ca-8dd4-bae6-3171069b6fc4`</sub>
-- 497 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `3e992511-89dc-8a57-a320-bff025222683`</sub>
+- The formal layer holds 488 theorems across 25 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `010bd590-a685-80dd-8dbd-784063c8df6b`</sub>
+- 480 of those 488 theorems close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
+  <sub>SEALED · `c0a99203-d5a2-85e9-a329-b86dd1b15635`</sub>
+- 513 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `a17b8c47-9222-85d3-a682-79d7c26ebc8d`</sub>
 
 ## 2 · The ring
 
@@ -45,10 +45,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 2361 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `d7d2d8b0-e5a3-85aa-8ff8-e4fdb3c28065`</sub>
-- The count is 2361, which is 295 octaves and 1 over — the octave is a target the theorems earn, never a quota they are invented to fill.
-  <sub>SEALED · `17ca0bff-3392-851c-a559-d9ddbe8908d0`</sub>
+- The ledger records 2377 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `1eb70d89-ab4f-84ed-9718-002839f37833`</sub>
+- The count is 2377, which is 297 octaves and 1 over — the octave is a target the theorems earn, never a quota they are invented to fill.
+  <sub>SEALED · `ab3b295f-9789-8ec2-b4f7-5ee0a0d357d4`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -92,7 +92,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-24 Lean files in 6 wings, 472 theorems. The prose in this section is read out of the
+25 Lean files in 6 wings, 488 theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -130,6 +130,8 @@ this page; there is nowhere else to keep the description in step.
 
 **Sequences** — `sequences.lean`, 8 theorem(s). The ledger held these as TypeScript tests. Each is a classical identity with a real proof; what is done here is to DECIDE each over a stated finite range, which is what `decide` can honestly deliver — the range is named in every theorem rather than implied, and no theorem claims the general case.
 
+**The digit split** — `split.lean`, 16 theorem(s). The ten digits read in order and grouped 0 | 12 | 3 | 45 | 6 | 78 | 9 — and what that grouping is.
+
 **The ring ℤ/9** — `z9.lean`, 21 theorem(s). The ℤ/9 families — mechanically generated theorems, proved by decide rather than tested in TypeScript.
 
 **Entanglement in the ring** — `z9plus.lean`, 32 theorem(s). z9.lean settled the families exhaustively. This settles the claims the ledger stated individually and never generalised: which residues squares and cubes can be, which residues are primitive roots, the period of the doubling orbit's digital root, and the identity behind digit-reversal invariance. Each is stated as an EQUIVALENCE or an exact set where the ledger stated instances, so the negative half is proved too.
@@ -156,7 +158,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Rights** — `rights.lean`, 8 theorem(s). What this deposit claims under international law — and, in the same table, what it does not.
 
-2 of 472 theorems carry no comment of their own and are shown here as the gap they are, not
+4 of 488 theorems carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -165,14 +167,14 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 2,361 — 295 octaves and 1 over |
-| standing — carries its own proof | **489** |
+| ledger entries | 2,377 — 297 octaves and 1 over |
+| standing — carries its own proof | **505** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **115** |
 | withdrawn — nothing proves it | 1,757 |
-| proved in total | **604** of 2,361 |
-| standing keys → distinct theorems | 464 sealed, 24 of them keyed twice, 1 unresolvable |
-| Lean files · theorems | 24 · 472, all axiom-free |
-| proved `by decide` | 464 of 472 |
+| proved in total | **620** of 2,377 |
+| standing keys → distinct theorems | 480 sealed, 24 of them keyed twice, 1 unresolvable |
+| Lean files · theorems | 25 · 488, all axiom-free |
+| proved `by decide` | 480 of 488 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -194,4 +196,4 @@ because no test was written that would seal them.
 
 ---
 
-*15 claims, all verified · 472 Lean theorems · 2361 ledger entries · trial root `20683490-a695-8f69-b24f-fd0b6e3f8650` · integrity, not truth · 0/7*
+*15 claims, all verified · 488 Lean theorems · 2377 ledger entries · trial root `53a67c6f-d459-8747-b310-200a17cf3fbf` · integrity, not truth · 0/7*

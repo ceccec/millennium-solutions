@@ -14164,5 +14164,101 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "11e07809-0f98-862b-8fca-4784591eb19f"
+  },
+  {
+    "key": "lean_split_the_singles_are_exactly_the_non_units",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d1d29750-bd67-85fd-8bbe-5742f2c4a87f"
+  },
+  {
+    "key": "lean_split_the_pairs_are_exactly_the_units_in_order",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e41230cc-32f2-8970-ad6b-1b1585d2f952"
+  },
+  {
+    "key": "lean_split_each_pair_is_two_consecutive_units",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5b2f142f-f390-8a45-b7c8-58897dcff8b7"
+  },
+  {
+    "key": "lean_split_every_token_is_a_multiple_of_three",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f2842318-1719-87cc-ade4-e04f9de1f1ca"
+  },
+  {
+    "key": "lean_split_the_tokens_are_three_times_these",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b50457b2-5391-891e-b77a-62716b9b2ccc"
+  },
+  {
+    "key": "lean_split_addition_and_multiplication_stay_inside",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c0b824b4-e091-8d65-aa83-345e851689ba"
+  },
+  {
+    "key": "lean_split_subtraction_stays_inside",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "49bf0950-7191-8b48-8a46-5d42dc260951"
+  },
+  {
+    "key": "lean_split_division_is_the_operation_that_leaves",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b9159d44-811b-8a4d-865b-b95cccf34652"
+  },
+  {
+    "key": "lean_split_the_roots_are_the_singles",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7c878aea-818e-8253-8f02-9db69089b16e"
+  },
+  {
+    "key": "lean_split_every_root_is_a_single",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "282584c6-2ad7-868d-8de5-1cdf669c552a"
+  },
+  {
+    "key": "lean_split_the_coin_step_is_three_times_the_two_coins",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9b87b34f-1d05-8b8c-b1df-35651fcf5da9"
+  },
+  {
+    "key": "lean_split_accounting_the_coins_on_the_last_pair",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "758b6f0c-0b43-8808-ab33-9680674d78b2"
+  },
+  {
+    "key": "lean_split_the_exhaustible_tokens_are_those_six_divides",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "516917be-eea3-8ecb-acbb-2338720980ab"
+  },
+  {
+    "key": "lean_split_the_rest_halt_on_the_generator",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "88e1ca63-b3a4-8937-8a80-09e2fa13984d"
+  },
+  {
+    "key": "lean_split_every_token_is_void_bound_or_halts_on_three",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "19e9ea2d-fe3a-82c3-9cd3-de067ee40d4d"
+  },
+  {
+    "key": "lean_split_inside_this_ideal_the_bare_coin_sorts_as_the_scaled_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c397ec15-180f-8b5d-b382-cb116045089a"
   }
 ]
