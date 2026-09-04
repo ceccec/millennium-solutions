@@ -82,5 +82,5 @@
   "files": [
     "src/proof/index.lean"
   ],
-  "notes": "Independent research. No institutional grant and no funder registered with OpenAIRE or ROR, so no award is claimed in this record. Development is supported by direct contribution: https://revolut.me/ceccec · key lean_millenniumfloor_hodge_span_is_the_units · receipt 64e4d444-59de-8a71-9434-80bf3f3b9374 · source file src/proof/index.lean · namespace MillenniumFloor · closed by by decide · concept DOI 10.5281/zenodo.21819217 · recompute: lake env lean src/proof/index.lean — or git clone https://github.com/ceccec/millennium-solutions && npm ci && npm run lean"
+  "notes": "statement-address 319f7415-15cf-8503-a16c-55d0e103fc92 (statementAddress = toUuid(lowercase(strip-all-whitespace(statement)).replace(\"==\",\"=\").replace(\"!=\",\"≠\"))) · Independent research. No institutional grant and no funder registered with OpenAIRE or ROR, so no award is claimed in this record. Development is supported by direct contribution: https://revolut.me/ceccec · key lean_millenniumfloor_hodge_span_is_the_units · receipt 64e4d444-59de-8a71-9434-80bf3f3b9374 · source file src/proof/index.lean · namespace MillenniumFloor · closed by by decide · concept DOI 10.5281/zenodo.21819217 · recompute: lake env lean src/proof/index.lean — or git clone https://github.com/ceccec/millennium-solutions && npm ci && npm run lean"
 }

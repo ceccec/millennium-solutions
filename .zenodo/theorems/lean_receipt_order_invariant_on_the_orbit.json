@@ -82,5 +82,5 @@
   "files": [
     "src/proof/quantum.lean"
   ],
-  "notes": "Independent research. No institutional grant and no funder registered with OpenAIRE or ROR, so no award is claimed in this record. Development is supported by direct contribution: https://revolut.me/ceccec · key lean_quantum_receipt_order_invariant_on_the_orbit · receipt 8fdaf8be-7f02-8c52-918a-9de135c13383 · source file src/proof/quantum.lean · namespace Quantum · closed by by decide · concept DOI 10.5281/zenodo.21819217 · recompute: lake env lean src/proof/quantum.lean — or git clone https://github.com/ceccec/millennium-solutions && npm ci && npm run lean"
+  "notes": "statement-address 995f54bf-53b1-8195-a146-092299ef73c4 (statementAddress = toUuid(lowercase(strip-all-whitespace(statement)).replace(\"==\",\"=\").replace(\"!=\",\"≠\"))) · Independent research. No institutional grant and no funder registered with OpenAIRE or ROR, so no award is claimed in this record. Development is supported by direct contribution: https://revolut.me/ceccec · key lean_quantum_receipt_order_invariant_on_the_orbit · receipt 8fdaf8be-7f02-8c52-918a-9de135c13383 · source file src/proof/quantum.lean · namespace Quantum · closed by by decide · concept DOI 10.5281/zenodo.21819217 · recompute: lake env lean src/proof/quantum.lean — or git clone https://github.com/ceccec/millennium-solutions && npm ci && npm run lean"
 }

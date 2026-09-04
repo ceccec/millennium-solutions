@@ -112,7 +112,8 @@
     "carry": "node scripts/carry.ts",
     "carry:apply": "node scripts/carry.ts --carry",
     "zenodo:verify": "node scripts/zenodo-verify.ts",
-    "metrics:enforce": "node scripts/metrics.ts --enforce"
+    "metrics:enforce": "node scripts/metrics.ts --enforce",
+    "unique": "node scripts/unique.ts"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",

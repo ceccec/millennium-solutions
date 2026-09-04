@@ -18,7 +18,7 @@
 // that is the author's call to make, not a build step's.
 import { writeFileSync, mkdirSync, rmSync, readFileSync, existsSync } from 'node:fs'
 import { leanTheorems, leanSource, ledger, theoremOfKey, type LeanTheorem } from '../src/api/index.ts'
-import { publicationHtml, NOVELTY, kinds, ownFiles, closureOf, creditedIn, SITE, REPO, CONCEPT_DOI, FUNDING } from '../src/publication/index.ts'
+import { publicationHtml, NOVELTY, kinds, ownFiles, closureOf, creditedIn, SITE, REPO, CONCEPT_DOI, FUNDING, statementAddress, STATEMENT_ADDRESS_SPEC } from '../src/publication/index.ts'
 import { toUuid } from '../src/0/index.ts'
 
 const base = JSON.parse(readFileSync('.zenodo.json', 'utf8'))
@@ -186,7 +186,12 @@ export const deposition = (t: LeanTheorem) => {
       `Reference implementation, @uuidna/uuidna: ${PKG}`,
     ],
     files: needs2,
-    notes: `${FUNDING.statement} · key ${key ?? '(no live ledger key)'} · receipt ${key ? toUuid(key) : '—'} · source file src/proof/${t.file} · `
+    // THE CROSS-REPOSITORY IDENTITY OF THIS PROPOSITION. Five repositories deposit into one registry; two
+    // of them proving the same thing and minting two DOIs publishes one result twice with neither record
+    // aware of the other. This address is computed from the statement alone by a published rule, so any
+    // repository reproduces it — and a match is a candidate for `isIdenticalTo`, judged by a reader rather
+    // than merged here. Carried in `notes`, which is a documented Zenodo field; `alternateName` is not one.
+    notes: `statement-address ${statementAddress(t.statement)} (${STATEMENT_ADDRESS_SPEC}) · ${FUNDING.statement} · key ${key ?? '(no live ledger key)'} · receipt ${key ? toUuid(key) : '—'} · source file src/proof/${t.file} · `
       + `namespace ${t.namespace || '(none)'} · closed by ${t.tactic} · concept DOI ${CONCEPT_DOI} · `
       + `recompute: lake env lean ${needs2.join(' ')} — or git clone ${REPO} && npm ci && npm run lean`,
   }

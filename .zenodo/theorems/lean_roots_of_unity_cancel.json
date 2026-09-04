@@ -82,5 +82,5 @@
   "files": [
     "src/proof/generated.lean"
   ],
-  "notes": "Independent research. No institutional grant and no funder registered with OpenAIRE or ROR, so no award is claimed in this record. Development is supported by direct contribution: https://revolut.me/ceccec · key lean_generated_roots_of_unity_cancel · receipt 7d4714e2-2776-8f60-bcda-2af9c6e0e1d2 · source file src/proof/generated.lean · namespace Generated · closed by by decide · concept DOI 10.5281/zenodo.21819217 · recompute: lake env lean src/proof/generated.lean — or git clone https://github.com/ceccec/millennium-solutions && npm ci && npm run lean"
+  "notes": "statement-address 74d9f96c-1c82-81eb-a74f-9a6dacd01f1a (statementAddress = toUuid(lowercase(strip-all-whitespace(statement)).replace(\"==\",\"=\").replace(\"!=\",\"≠\"))) · Independent research. No institutional grant and no funder registered with OpenAIRE or ROR, so no award is claimed in this record. Development is supported by direct contribution: https://revolut.me/ceccec · key lean_generated_roots_of_unity_cancel · receipt 7d4714e2-2776-8f60-bcda-2af9c6e0e1d2 · source file src/proof/generated.lean · namespace Generated · closed by by decide · concept DOI 10.5281/zenodo.21819217 · recompute: lake env lean src/proof/generated.lean — or git clone https://github.com/ceccec/millennium-solutions && npm ci && npm run lean"
 }

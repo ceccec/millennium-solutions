@@ -82,5 +82,5 @@
   "files": [
     "src/proof/coin.lean"
   ],
-  "notes": "Independent research. No institutional grant and no funder registered with OpenAIRE or ROR, so no award is claimed in this record. Development is supported by direct contribution: https://revolut.me/ceccec · key lean_coin_the_other_two_swap · receipt 3e2bf4b1-b0fc-8ff1-99f1-a0c620fc090f · source file src/proof/coin.lean · namespace Coin · closed by by decide · concept DOI 10.5281/zenodo.21819217 · recompute: lake env lean src/proof/coin.lean — or git clone https://github.com/ceccec/millennium-solutions && npm ci && npm run lean"
+  "notes": "statement-address 4027ea13-f747-82b5-a346-ecad954bf519 (statementAddress = toUuid(lowercase(strip-all-whitespace(statement)).replace(\"==\",\"=\").replace(\"!=\",\"≠\"))) · Independent research. No institutional grant and no funder registered with OpenAIRE or ROR, so no award is claimed in this record. Development is supported by direct contribution: https://revolut.me/ceccec · key lean_coin_the_other_two_swap · receipt 3e2bf4b1-b0fc-8ff1-99f1-a0c620fc090f · source file src/proof/coin.lean · namespace Coin · closed by by decide · concept DOI 10.5281/zenodo.21819217 · recompute: lake env lean src/proof/coin.lean — or git clone https://github.com/ceccec/millennium-solutions && npm ci && npm run lean"
 }

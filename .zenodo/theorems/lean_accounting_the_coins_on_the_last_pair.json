@@ -82,5 +82,5 @@
   "files": [
     "src/proof/split.lean"
   ],
-  "notes": "Independent research. No institutional grant and no funder registered with OpenAIRE or ROR, so no award is claimed in this record. Development is supported by direct contribution: https://revolut.me/ceccec · key lean_split_accounting_the_coins_on_the_last_pair · receipt 42a0f02b-d055-865b-8609-f996a162078a · source file src/proof/split.lean · namespace Split · closed by by decide · concept DOI 10.5281/zenodo.21819217 · recompute: lake env lean src/proof/split.lean — or git clone https://github.com/ceccec/millennium-solutions && npm ci && npm run lean"
+  "notes": "statement-address 1a8b2610-0823-8378-9ad1-9e0453906ed1 (statementAddress = toUuid(lowercase(strip-all-whitespace(statement)).replace(\"==\",\"=\").replace(\"!=\",\"≠\"))) · Independent research. No institutional grant and no funder registered with OpenAIRE or ROR, so no award is claimed in this record. Development is supported by direct contribution: https://revolut.me/ceccec · key lean_split_accounting_the_coins_on_the_last_pair · receipt 42a0f02b-d055-865b-8609-f996a162078a · source file src/proof/split.lean · namespace Split · closed by by decide · concept DOI 10.5281/zenodo.21819217 · recompute: lake env lean src/proof/split.lean — or git clone https://github.com/ceccec/millennium-solutions && npm ci && npm run lean"
 }
