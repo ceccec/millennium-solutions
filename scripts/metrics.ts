@@ -132,6 +132,24 @@ writeFileSync('metrics.json', JSON.stringify(face, null, 2) + '\n')
 // five sessions coordinate, which is not its call.
 const SHARED = process.env.HOME + '/.erpax/fusion'
 if (existsSync(SHARED)) writeFileSync(SHARED + '/millennium-solutions.metrics.json', JSON.stringify(face, null, 2) + '\n')
+// ── ENFORCEMENT, SEPARATED FROM RECORDING ───────────────────────────────────────────────────────────────
+// This face deliberately PUBLISHES a red gate rather than refusing to publish, so it exits 0 whatever the
+// gates said. That meant CI needed a separate `npm run gates` step to actually fail the build — and since
+// this file runs the same chain to fill its rows, `gates` ran TWICE on every deploy. Measured: 10.3s of the
+// ~22s those two steps took was the identical work done again.
+//
+// `--enforce` runs after the face is written and published, then reads the rows it just wrote, and exits non-zero if any gate failed. The face keeps its
+// property (a red result is published, not hidden), CI keeps its property (a red gate stops the build), and
+// the chain runs once. Nothing is checked less; it is checked the same number of times as before, minus one.
+if (arg === '--enforce') {
+  const failing = rows.filter((r) => r.key.startsWith('gate:') && r.value === 'FAIL')
+  for (const r of failing) console.error(`  ✗ ${r.key.replace('gate:', '')} failed — recompute with: ${r.command}`)
+  console.log(failing.length
+    ? `\n✗ metrics --enforce: ${failing.length} gate(s) red in the face just written`
+    : `\n✓ metrics --enforce: every gate in the face passed; the face is published either way and this is what stops a red build`)
+  process.exit(failing.length ? 1 : 0)
+}
+
 const red = rows.filter((r) => r.value === 'FAIL')
 console.log(`✓ metrics: ${rows.length} rows · root ${face.root.slice(0, 13)}… → metrics.json`
   + (red.length ? ` · ${red.length} GATE(S) FAILING: ${red.map((r) => r.key).join(' ')}` : ' · all gates pass'))

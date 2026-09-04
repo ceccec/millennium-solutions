@@ -57,14 +57,13 @@ jobs:
         # developer always has dist/ lying around from the last build; CI starts clean, which is the
         # environment the check is actually for.
         run: npm run docs:build
-      - name: Gates that ran in no chain
-        # 11 gate scripts were wired into nothing. Running them found gaps failing on a clean tree
-        # and lean-gen emitting Lean the kernel rejects. A gate nobody runs is a gate nobody has.
-        run: npm run gates
-      - name: Emit the verifiable metrics face
-        # Each row carries the command that recomputes it and a receipt over its own fields, so a
-        # peer session checks integrity with `npm run metrics:verify` and needs nothing from here.
-        run: npm run metrics
+      - name: Emit the verifiable metrics face, and fail on any red gate
+        # ONE RUN, NOT TWO. This step used to be preceded by `npm run gates`, and metrics runs that same
+        # chain to fill its rows — so the eleven gates ran twice on every deploy, 10.3s of the ~22s those
+        # two steps took being the identical work done again. The face still PUBLISHES a red gate rather
+        # than hiding it, which is why it exits 0; `--enforce` reads the rows it just wrote and fails the
+        # build on any FAIL. Both properties kept, the chain run once.
+        run: npm run metrics:enforce
       - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:

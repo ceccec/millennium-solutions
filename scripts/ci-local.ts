@@ -29,8 +29,7 @@ const STEPS: Step[] = [
   // seconds while passing locally every time, because a developer always has dist/ from the last build.
   // Mirroring CI means mirroring its ORDER, not only its commands.
   { name: 'docs:build (the site)',           cmd: 'npm run -s docs:build' },
-  { name: 'gates (11 that ran in no chain)', cmd: 'npm run -s gates' },
-  { name: 'metrics (the verifiable face)',   cmd: 'npm run -s metrics' },
+  { name: 'metrics face + red-gate enforce', cmd: 'npm run -s metrics:enforce' },
   { name: 'lean kernel + axioms',            cmd: 'node scripts/lean.ts' },
   { name: 'lean-claims',                     cmd: 'node scripts/lean-claims.ts' },
   { name: 'claims-gate',                     cmd: 'node scripts/claims-gate.ts' },

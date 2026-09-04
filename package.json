@@ -111,7 +111,8 @@
     "ci-drift": "node scripts/ci-drift.ts",
     "carry": "node scripts/carry.ts",
     "carry:apply": "node scripts/carry.ts --carry",
-    "zenodo:verify": "node scripts/zenodo-verify.ts"
+    "zenodo:verify": "node scripts/zenodo-verify.ts",
+    "metrics:enforce": "node scripts/metrics.ts --enforce"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",
