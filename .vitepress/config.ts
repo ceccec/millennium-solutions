@@ -167,6 +167,7 @@ export default defineConfig({
         { text: 'Abstract', link: '/ABSTRACT' },
         { text: 'How it folds', link: '/folds' },
         { text: 'The organism', link: '/organism' },
+        { text: 'The quantum field', link: '/quantum' },
         { text: 'The harness', link: '/harness' },
         { text: 'The', link: '/the' },
         { text: 'Theorems', link: '/THEOREMS' },
@@ -266,6 +267,7 @@ export default defineConfig({
         text: 'Decode',
         items: [
           { text: 'The organism', link: '/organism' },
+          { text: 'The quantum field', link: '/quantum' },
           { text: 'Sequence decode (ℤ/9)', link: '/SEQUENCE-DECODE' },
           { text: 'Physics scales', link: '/PHYSICS-SCALES' },
         ],
