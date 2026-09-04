@@ -18,12 +18,22 @@
 // `cases > 1` — "exhausting N cases" — from a single-case declaration, which it calls "by evaluation; no
 // domain is walked". That distinction is honest and it is the deposit's own, and it was missing from my
 // deposition prose, which told every record it had walked its whole domain. 112 of 336 had not.
+import { readFileSync } from 'node:fs'
 import { domainOf, leanSource, type LeanTheorem } from '../api/index.ts'
 import { toLatex } from '../latex/index.ts'
 
 export const SITE = 'https://ceccec.github.io/millennium-solutions'
 export const REPO = 'https://github.com/ceccec/millennium-solutions'
-export const CONCEPT_DOI = '10.5281/zenodo.21819217'
+/** READ FROM CITATION.cff, not typed. It was written out in two modules — this one and
+ *  scripts/zenodo-theorems.ts — which is two places for the identifier that every deposition names as
+ *  isPartOf and that the page prints. Two copies of a DOI is one drift away from a record citing a
+ *  publication that is not the one it belongs to. zenodo-gate.ts already treats CITATION.cff as the
+ *  authority and cross-checks README.md and .zenodo.json against it; this makes the code agree. */
+export const CONCEPT_DOI = (() => {
+  const m = readFileSync('CITATION.cff', 'utf8').match(/^doi:\s*"?(10\.\d{4,}\/[^\s"]+)"?/m)
+  if (!m) throw new Error('CITATION.cff states no concept DOI — every deposition needs something to be part of')
+  return m[1]
+})()
 
 const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;')
 export const humanise = (n: string) => n.replace(/_/g, ' ')

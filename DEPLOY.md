@@ -26,7 +26,7 @@ lake-buildable consolidation — numeric dir names are not valid Lean modules.)
 npm ci && npm run docs:build     # build the whole site (fused modules render)
 node scripts/seal.ts            # review every abstract (must all seal, 0/7)
 node scripts/release.ts         # content-addressed release + signed v1.0.0 tag
-node scripts/ledger-sha256.ts   # SHA-256 tamper-evident ledger demo
+node scripts/forensics.ts       # re-verify the chain: tamper-evident ledger seal
 ```
 
 ## 4. npm (your account) — publishing is fused to the seal gate

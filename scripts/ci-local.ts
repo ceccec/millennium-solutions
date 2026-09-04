@@ -30,6 +30,7 @@ const STEPS: Step[] = [
   { name: 'claims-gate',                     cmd: 'node scripts/claims-gate.ts' },
   { name: 'quantum-field',                   cmd: 'node scripts/quantum-field.ts' },
   { name: 'axiom-index (+ control)',         cmd: 'node scripts/axiom-index.ts' },
+  { name: 'docs-gate (commands resolve)',    cmd: 'node scripts/docs-gate.ts' },
   { name: 'zenodo (per-theorem DOIs)',        cmd: 'node scripts/zenodo-gate.ts' },
   { name: 'gate-corpus',                     cmd: 'node scripts/gate-corpus.ts' },
   { name: 'forensics (chain of custody)',    cmd: 'node scripts/forensics.ts' },

@@ -18,16 +18,13 @@
 // that is the author's call to make, not a build step's.
 import { writeFileSync, mkdirSync, rmSync, readFileSync, existsSync } from 'node:fs'
 import { leanTheorems, leanSource, ledger, theoremOfKey, type LeanTheorem } from '../src/api/index.ts'
-import { publicationHtml, NOVELTY, kinds, ownFiles, closureOf, creditedIn } from '../src/publication/index.ts'
+import { publicationHtml, NOVELTY, kinds, ownFiles, closureOf, creditedIn, SITE, REPO, CONCEPT_DOI } from '../src/publication/index.ts'
 import { execSync } from 'node:child_process'
 import { toUuid } from '../src/0/index.ts'
 
 const base = JSON.parse(readFileSync('.zenodo.json', 'utf8'))
-const CONCEPT_DOI = '10.5281/zenodo.21819217'
 const OUT = '.zenodo/theorems'
-const SITE = 'https://ceccec.github.io/millennium-solutions'
 const HOME = 'https://ceccec.psg.bg'
-const REPO = 'https://github.com/ceccec/millennium-solutions'
 const PKG = 'https://www.npmjs.com/package/@uuidna/uuidna'
 const VERSION = (() => {
   try { return execSync('git describe --tags --abbrev=0', { stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim() }

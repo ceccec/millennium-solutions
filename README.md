@@ -194,10 +194,24 @@ because no test was written that would seal them.
 
 ## Run it
 
+Everything here recomputes. Nothing below needs a key, an account or a network — clone the tree and run
+it, and the numbers on this page reappear or the command fails.
+
 ```bash
-npm ci && node scripts/lean.ts     # compile and audit every Lean file
-node scripts/pages.ts              # regenerate this file and the homepage
+npm ci
+npm run all               # every gate at once, with the parallel ratio measured on your machine
+npm run lean              # compile and audit every Lean file: sorry-free, axiom-free, no Mathlib
+npm run axiom-index       # what is NOT assumed, checked against a control, and the definitions that are
+npm run contradictions    # the prose and the proof tree must agree
+npm run zenodo            # the per-theorem deposition records, held to the tree and the published DOI
+node scripts/forensics.ts # re-verify the append-only chain from its first receipt
+node scripts/pages.ts     # regenerate this file and the homepage
 ```
+
+**Where to read next.** [The axiom index](/AXIOMS) states what this deposit does not assume and, at
+greater length, the definitions it does. [The quantum field](/quantum) renders quantum.lean in three
+dimensions with every coordinate read from a theorem. [Prior art](/PRIOR-ART) records, per source file,
+whether the work restates someone earlier. [The paper](/paper) typesets every statement.
 
 ---
 
