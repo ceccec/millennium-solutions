@@ -20,6 +20,11 @@ import { execSync } from 'node:child_process'
 import { leanTheorems, leanFiles, leanSource } from '../src/api/index.ts'
 
 const CONTROL = 'src/proof/fixtures/axiom-control.lean'
+const TOOLCHAIN = (() => {
+  for (const c of ['src/proof/lean-toolchain', 'lean-toolchain'])
+    if (existsSync(c)) return readFileSync(c, 'utf8').trim()
+  return '(unknown)'
+})()
 const EXPECT_FREE = "'axiom_free_by_decision' does not depend on any axioms"
 const EXPECT_ALL3 = "'needs_all_three' depends on axioms: [propext, Classical.choice, Quot.sound]"
 
@@ -46,12 +51,28 @@ let bad = 0
 const fail = (m: string) => { console.log('  ✗ ' + m); bad++ }
 
 // ── the control, run before the report is believed ───────────────────────────────────────────────────────
+// The pins in the fixture are `#guard_msgs`-guarded, so Lean CONSUMES the info line when they match and
+// raises a mismatch error when they do not. The check is therefore "does the fixture elaborate", not
+// "does it print what I expected" — my first version searched for the printed text and failed the moment
+// the pin started working, which is a good reminder that a check must be re-read after the thing it
+// checks changes shape.
+//
+// Compiling proves the footprints are exactly as pinned. Reading the source proves the pins still SAY the
+// right thing: a fixture whose assertions were deleted or weakened would compile just as quietly.
 let control = ''
-try { control = execSync('lake env lean axiom-control.lean', { cwd: 'src/proof/fixtures', encoding: 'utf8' }) }
-catch (e) { control = String((e as { stdout?: string }).stdout ?? '') }
-const controlOk = control.includes(EXPECT_FREE) && control.includes(EXPECT_ALL3)
-if (!controlOk) fail(`the negative control did not report as expected — \`#print axioms\` cannot be trusted here, `
-  + `so "no theorem depends on an axiom" would be an unchecked claim. Got:\n      ${control.trim().split('\n').join('\n      ')}`)
+let compiles = true
+try { execSync('lake env lean axiom-control.lean', { cwd: 'src/proof/fixtures', encoding: 'utf8' }) }
+catch (e) { compiles = false; control = String((e as { stdout?: string }).stdout ?? (e as Error).message) }
+const fixture = existsSync(CONTROL) ? readFileSync(CONTROL, 'utf8') : ''
+const pinnedFree = fixture.includes(`/-- info: ${EXPECT_FREE} -/`)
+const pinnedAll3 = fixture.includes(`/-- info: ${EXPECT_ALL3} -/`)
+const guards = (fixture.match(/#guard_msgs in/g) ?? []).length
+if (!compiles) fail(`the negative control does not elaborate — a pinned axiom footprint no longer matches, so `
+  + `"no theorem depends on an axiom" cannot be relied on until this is understood:\n      ${control.trim().split('\n').slice(0, 4).join('\n      ')}`)
+if (!pinnedFree) fail(`${CONTROL} no longer pins the axiom-free footprint`)
+if (!pinnedAll3) fail(`${CONTROL} no longer pins the all-three footprint — the control cannot show the check distinguishes`)
+if (guards < 2) fail(`${CONTROL} has ${guards} \`#guard_msgs\` guard(s); both footprints must be pinned or the fixture only compiles, it does not assert`)
+const controlOk = compiles && pinnedFree && pinnedAll3 && guards >= 2
 
 // ── every declaration in the tree, and every definition under them ───────────────────────────────────────
 const T = leanTheorems()
@@ -93,6 +114,38 @@ for (const a of AXIOMS) {
 o += `There is no fourth. Lean 4's axiom base is exactly these three, so an index of them is complete rather\n`
 o += `than a selection — and "depends on no axioms" means depends on none of these three, which is the whole\n`
 o += `of what could have been depended on.\n\n`
+
+o += `## What this check cannot see, and why it does not bite here\n\n`
+o += `\`#print axioms\` had a known gap: \`Lean.collectAxioms\` did not collect axioms referenced *by other\n`
+o += `axioms' types*, so a declaration could report a shorter list than it truly depended on — the reported\n`
+o += `example is a \`native_decide\` proof showing \`[Lean.ofReduceBool]\` while missing \`[Lean.trustCompiler]\`\n`
+o += `([leanprover/lean4#8840](https://github.com/leanprover/lean4/issues/8840), fixed by\n`
+o += `[#8842](https://github.com/leanprover/lean4/pull/8842), merged 8 July 2025).\n\n`
+o += `**This tree is pinned to \`${TOOLCHAIN}\`, which predates that fix.** Stating it plainly rather than\n`
+o += `leaving it out: the tool this deposit's central claim rests on had a bug, and the toolchain here is on\n`
+o += `the wrong side of it.\n\n`
+o += `It cannot hide anything here, and the reason is structural rather than lucky. The gap is about axioms\n`
+o += `referenced by OTHER AXIOMS. This tree declares no axioms of its own — checked — and forbids\n`
+o += `\`native_decide\`, which is the one route in the reported example by which a stock axiom acquires a\n`
+o += `dependency of its own. With zero axioms anywhere in the picture there is no transitive edge to miss.\n`
+o += `That argument would collapse the moment a single \`axiom\` or one \`native_decide\` entered the tree, which\n`
+o += `is why both are build failures and not conventions.\n\n`
+
+o += `## Prior art, and the practice this follows\n\n`
+o += `Auditing a Lean library's axiom footprint is established practice and this deposit did not invent it.\n`
+o += `[\`leanprover-community/axiom-audit\`](https://github.com/leanprover-community/axiom-audit) does exactly\n`
+o += `what \`scripts/lean.ts\` does — fails CI when a declaration transitively depends on an axiom outside an\n`
+o += `allowlist, catching \`sorry\` (as \`sorryAx\`), \`native_decide\` (as \`Lean.ofReduceBool\`) and home-rolled\n`
+o += `axioms — with the same default allowlist of the three above. Its documentation credits Robin Arnez for a\n`
+o += `Mathlib-wide collection and Kim Morrison for an earlier library audit.\n\n`
+o += `One thing it does better, recorded here as a lead rather than a claim: it inspects the **kernel\n`
+o += `environment** from compiled \`.olean\` files instead of parsing source, which catches what a text search\n`
+o += `misses. This deposit's per-theorem check is a real \`#print axioms\` elaboration and so is sound, but its\n`
+o += `"declares no axiom of its own" test is a source-text match, and that is the weaker method by exactly the\n`
+o += `margin that tool names.\n\n`
+o += `The pins in the control fixture follow the community practice of guarding \`#print axioms\` with\n`
+o += `\`#guard_msgs\`, which turns the axiom footprint into an executable regression test: the assertion is\n`
+o += `checked by the elaborator, and drift fails the build with a mismatch instead of passing unnoticed.\n\n`
 
 o += `## What IS assumed: the ${n(defs.length)} definitions\n\n`
 o += `Each of these is a primitive of this deposit — not derived, not proved, chosen. They are listed in full\n`

@@ -52,6 +52,44 @@ There is no fourth. Lean 4's axiom base is exactly these three, so an index of t
 than a selection — and "depends on no axioms" means depends on none of these three, which is the whole
 of what could have been depended on.
 
+## What this check cannot see, and why it does not bite here
+
+`#print axioms` had a known gap: `Lean.collectAxioms` did not collect axioms referenced *by other
+axioms' types*, so a declaration could report a shorter list than it truly depended on — the reported
+example is a `native_decide` proof showing `[Lean.ofReduceBool]` while missing `[Lean.trustCompiler]`
+([leanprover/lean4#8840](https://github.com/leanprover/lean4/issues/8840), fixed by
+[#8842](https://github.com/leanprover/lean4/pull/8842), merged 8 July 2025).
+
+**This tree is pinned to `leanprover/lean4:v4.15.0`, which predates that fix.** Stating it plainly rather than
+leaving it out: the tool this deposit's central claim rests on had a bug, and the toolchain here is on
+the wrong side of it.
+
+It cannot hide anything here, and the reason is structural rather than lucky. The gap is about axioms
+referenced by OTHER AXIOMS. This tree declares no axioms of its own — checked — and forbids
+`native_decide`, which is the one route in the reported example by which a stock axiom acquires a
+dependency of its own. With zero axioms anywhere in the picture there is no transitive edge to miss.
+That argument would collapse the moment a single `axiom` or one `native_decide` entered the tree, which
+is why both are build failures and not conventions.
+
+## Prior art, and the practice this follows
+
+Auditing a Lean library's axiom footprint is established practice and this deposit did not invent it.
+[`leanprover-community/axiom-audit`](https://github.com/leanprover-community/axiom-audit) does exactly
+what `scripts/lean.ts` does — fails CI when a declaration transitively depends on an axiom outside an
+allowlist, catching `sorry` (as `sorryAx`), `native_decide` (as `Lean.ofReduceBool`) and home-rolled
+axioms — with the same default allowlist of the three above. Its documentation credits Robin Arnez for a
+Mathlib-wide collection and Kim Morrison for an earlier library audit.
+
+One thing it does better, recorded here as a lead rather than a claim: it inspects the **kernel
+environment** from compiled `.olean` files instead of parsing source, which catches what a text search
+misses. This deposit's per-theorem check is a real `#print axioms` elaboration and so is sound, but its
+"declares no axiom of its own" test is a source-text match, and that is the weaker method by exactly the
+margin that tool names.
+
+The pins in the control fixture follow the community practice of guarding `#print axioms` with
+`#guard_msgs`, which turns the axiom footprint into an executable regression test: the assertion is
+checked by the elaborator, and drift fails the build with a mismatch instead of passing unnoticed.
+
 ## What IS assumed: the 209 definitions
 
 Each of these is a primitive of this deposit — not derived, not proved, chosen. They are listed in full

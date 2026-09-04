@@ -22,5 +22,18 @@ theorem axiom_free_by_decision : [1, 2, 3, 4].all (fun d => refl' (refl' d) == d
 -- The same shape of fact, obtained classically. One appeal to excluded middle pulls in all three.
 theorem needs_all_three : ∀ p : Prop, p ∨ ¬p := fun p => Classical.em p
 
+-- PINNED WITH `#guard_msgs`, so the assertion is checked by the elaborator rather than by a script reading
+-- this file's output. If either footprint ever changes — a tactic quietly pulling in choice, a toolchain
+-- altering what `#print axioms` reports — THIS FILE STOPS COMPILING. The technique is standard practice in
+-- the Lean community: axiom hygiene as an executable regression test, pinned so drift fails the build with
+-- a mismatch rather than passing unnoticed.
+--
+-- Note the pins CONSUME the info line when they match, so a reader running this file sees silence. That is
+-- the assertion holding, not the check being absent.
+/-- info: 'axiom_free_by_decision' does not depend on any axioms -/
+#guard_msgs in
 #print axioms axiom_free_by_decision
+
+/-- info: 'needs_all_three' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
 #print axioms needs_all_three
