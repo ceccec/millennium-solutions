@@ -108,7 +108,9 @@
     "priorart:gen": "node scripts/priorart-gen.ts",
     "priorart-check": "node scripts/priorart-gen.ts --check",
     "apply": "node scripts/apply.ts",
-    "ci-drift": "node scripts/ci-drift.ts"
+    "ci-drift": "node scripts/ci-drift.ts",
+    "carry": "node scripts/carry.ts",
+    "carry:apply": "node scripts/carry.ts --carry"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",

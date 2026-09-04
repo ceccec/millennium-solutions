@@ -4,8 +4,9 @@
     "name": "every unit u⁶ ≡ 1 mod 9 (Euler, φ(9)=6)",
     "receipt": "e70a44b2-6eb8-8441-acc5-9e33a053bb0b",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn for having only a TypeScript test behind it, and since proved — `euler_units_pow_six` states the same proposition at lean_euler_units_pow_six, and the kernel checks it on every run. Verified by reading the theorem's STATEMENT against this claim, not by matching names. Marked in place; the receipt is untouched and stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_euler_units_pow_six"
   },
   {
     "key": "units_sum_zero",
@@ -60,16 +61,18 @@
     "name": "every cube d³ mod 9 ∈ {0,1,8}",
     "receipt": "5ecfca3d-68f4-822d-9893-ded794ac37da",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn for having only a TypeScript test behind it, and since proved — `cubes_land_exactly_in_zero_one_eight` states the same proposition at lean_z9plus_cubes_land_exactly_in_zero_one_eight, and the kernel checks it on every run. Verified by reading the theorem's STATEMENT against this claim, not by matching names. Marked in place; the receipt is untouched and stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_z9plus_cubes_land_exactly_in_zero_one_eight"
   },
   {
     "key": "squares_in_0_1_4_7",
     "name": "every square d² mod 9 ∈ {0,1,4,7}",
     "receipt": "6f43410e-08c3-875a-bf9f-7c54a5ff5b1d",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn for having only a TypeScript test behind it, and since proved — `squares_land_exactly_in_zero_one_four_seven` states the same proposition at lean_z9plus_squares_land_exactly_in_zero_one_four_seven, and the kernel checks it on every run. Verified by reading the theorem's STATEMENT against this claim, not by matching names. Marked in place; the receipt is untouched and stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_z9plus_squares_land_exactly_in_zero_one_four_seven"
   },
   {
     "key": "order_of_2_is_6",
@@ -1163,8 +1166,9 @@
     "name": "the two tetrahedra residue-sums cancel: (1+4+7)+(2+5+8) ≡ 0 mod 9",
     "receipt": "62f28936-0000-8ab8-95a9-791fea47acb2",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn for having only a TypeScript test behind it, and since proved — `the_tetrahedra_residue_sums_cancel` states the same proposition at lean_merkaba_the_tetrahedra_residue_sums_cancel, and the kernel checks it on every run. Verified by reading the theorem's STATEMENT against this claim, not by matching names. Marked in place; the receipt is untouched and stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_merkaba_the_tetrahedra_residue_sums_cancel"
   },
   {
     "key": "farey_neighbor_F4",
@@ -1404,8 +1408,9 @@
     "name": "Sprague–Grundy: a single Nim heap of size n has Grundy value n (n ≤ 8)",
     "receipt": "6e223862-0b20-8210-9e37-de2f38bcbdd4",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn for having only a TypeScript test behind it, and since proved — `grundy_of_a_single_heap_is_its_size` states the same proposition at lean_nim_grundy_of_a_single_heap_is_its_size, and the kernel checks it on every run. Verified by reading the theorem's STATEMENT against this claim, not by matching names. Marked in place; the receipt is untouched and stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_nim_grundy_of_a_single_heap_is_its_size"
   },
   {
     "key": "grundy_xor_sum",
@@ -2367,8 +2372,9 @@
     "name": "Möbius divisor sum: Σ_{d|n} μ(d) = [n=1] (all n≤12)",
     "receipt": "6bcdf028-94aa-8371-a659-0d34861101a4",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn for having only a TypeScript test behind it, and since proved — `the_mobius_divisor_sum_is_the_identity` states the same proposition at lean_demand_the_mobius_divisor_sum_is_the_identity, and the kernel checks it on every run. Verified by reading the theorem's STATEMENT against this claim, not by matching names. Marked in place; the receipt is untouched and stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_demand_the_mobius_divisor_sum_is_the_identity"
   },
   {
     "key": "relation_creation_week",
@@ -4879,8 +4885,9 @@
     "name": "the XOR of 8 bits is their parity: a₁⊕…⊕a_8 equals the popcount mod 2 over all 2^8 = 256 assignments (full truth-table enumeration)",
     "receipt": "64ac8102-9aa0-8a46-b3e9-378482471a66",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn for having only a TypeScript test behind it, and since proved — `xor_is_parity_up_to_eight_bits` states the same proposition at lean_families_xor_is_parity_up_to_eight_bits, and the kernel checks it on every run. Verified by reading the theorem's STATEMENT against this claim, not by matching names. Marked in place; the receipt is untouched and stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_xor_is_parity_up_to_eight_bits"
   },
   {
     "key": "heroes_write_the_guides",

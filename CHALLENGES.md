@@ -573,11 +573,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 
 
 
-## Revoked — 1757 entries that no longer stand
+## Revoked — 1750 entries that no longer stand
 
 The ledger is append-only: an entry that stops holding is marked in place, never deleted — deleting would break the receipt chain, and rewriting a receipt is tamper. These keep their receipts and stay in the record, but they are **not citable** and have no `/theorem/` page. Grouped by the reason they went:
 
-- **1284** — dirty: not backed by a Lean proof
+- **1277** — dirty: not backed by a Lean proof
 - **443** — revoked in place: its test asserted a lexical drain (computes(boast)
 - **12** — revoked in place: circular by construction AND dependent on the removed lexical gate
 - **10** — revoked in place: circular by construction — the test defines the answer it checks, proving a declaration rather than a fact
@@ -585,10 +585,13 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - **1** — revoked in place: its test asserts that a list of proof-boasts written across many scripts and languages ALL drain the gate — a lexical drain assertion, and the word-list gate was removed by order, so there is no lexicon to drain and the assertion tests nothing
 - **1** — revoked in place: it asserts adjudicate('we prove all seven')
 
-## Carried — 115 withdrawn entries whose statement a proof now carries
+## Carried — 122 withdrawn entries whose statement a proof now carries
 
 Each was withdrawn for want of a Lean proof and has since been given one, at a new key. The entry is not restored: its own evidence is still a TypeScript test, and it did not hold on what it had. What the record adds is where the statement stands now.
 
+- ~~`euler_units_pow6`~~ → [`lean_euler_units_pow_six`](/theorem/lean_euler_units_pow_six)
+- ~~`cubes_in_0_1_8`~~ → [`lean_z9plus_cubes_land_exactly_in_zero_one_eight`](/theorem/lean_z9plus_cubes_land_exactly_in_zero_one_eight)
+- ~~`squares_in_0_1_4_7`~~ → [`lean_z9plus_squares_land_exactly_in_zero_one_four_seven`](/theorem/lean_z9plus_squares_land_exactly_in_zero_one_four_seven)
 - ~~`add_group`~~ → [`lean_add_group`](/theorem/lean_add_group)
 - ~~`neg_involution`~~ → [`lean_neg_involution`](/theorem/lean_neg_involution)
 - ~~`bool_demorgan1`~~ → [`lean_mechanical_bool_demorgan1`](/theorem/lean_mechanical_bool_demorgan1)
@@ -597,8 +600,10 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`bool_absorption`~~ → [`lean_mechanical_bool_absorption`](/theorem/lean_mechanical_bool_absorption)
 - ~~`merkaba_cube_q3`~~ → [`lean_mechanical_merkaba_cube_q3`](/theorem/lean_mechanical_merkaba_cube_q3)
 - ~~`cover_rotation_full_circle`~~ → [`lean_mechanical_cover_rotation_full_circle`](/theorem/lean_mechanical_cover_rotation_full_circle)
+- ~~`tetrahedra_sums_cancel`~~ → [`lean_merkaba_the_tetrahedra_residue_sums_cancel`](/theorem/lean_merkaba_the_tetrahedra_residue_sums_cancel)
 - ~~`fib_trinity_horizon`~~ → [`lean_mechanical_fib_trinity_horizon`](/theorem/lean_mechanical_fib_trinity_horizon)
 - ~~`arts_nine_hues_distinct`~~ → [`lean_mechanical_arts_nine_hues_distinct`](/theorem/lean_mechanical_arts_nine_hues_distinct)
+- ~~`grundy_single_heap`~~ → [`lean_nim_grundy_of_a_single_heap_is_its_size`](/theorem/lean_nim_grundy_of_a_single_heap_is_its_size)
 - ~~`trial_units_group`~~ → [`lean_mechanical_trial_units_group`](/theorem/lean_mechanical_trial_units_group)
 - ~~`trial_zero_divisors`~~ → [`lean_mechanical_trial_zero_divisors`](/theorem/lean_mechanical_trial_zero_divisors)
 - ~~`trial_zero_no_inverse`~~ → [`lean_mechanical_trial_zero_no_inverse`](/theorem/lean_mechanical_trial_zero_no_inverse)
@@ -615,6 +620,7 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`harmonic_pythagorean_comma`~~ → [`lean_mechanical_harmonic_pythagorean_comma`](/theorem/lean_mechanical_harmonic_pythagorean_comma)
 - ~~`relation_seven`~~ → [`lean_mechanical_relation_seven`](/theorem/lean_mechanical_relation_seven)
 - ~~`relation_eight`~~ → [`lean_mechanical_relation_eight`](/theorem/lean_mechanical_relation_eight)
+- ~~`mobius_divisor_sum`~~ → [`lean_demand_the_mobius_divisor_sum_is_the_identity`](/theorem/lean_demand_the_mobius_divisor_sum_is_the_identity)
 - ~~`relation_creation_week`~~ → [`lean_mechanical_relation_creation_week`](/theorem/lean_mechanical_relation_creation_week)
 - ~~`relation_superposition_collapse`~~ → [`lean_mechanical_relation_superposition_collapse`](/theorem/lean_mechanical_relation_superposition_collapse)
 - ~~`relation_url_path`~~ → [`lean_mechanical_relation_url_path`](/theorem/lean_mechanical_relation_url_path)
@@ -623,26 +629,17 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`genus2_h1_symplectic`~~ → [`lean_mechanical_genus2_h1_symplectic`](/theorem/lean_mechanical_genus2_h1_symplectic)
 - ~~`relation_digitroot_is_residue_mod9`~~ → [`lean_mechanical_relation_digitroot_is_residue_mod9`](/theorem/lean_mechanical_relation_digitroot_is_residue_mod9)
 - ~~`relation_seven_is_six_plus_one`~~ → [`lean_mechanical_relation_seven_is_six_plus_one`](/theorem/lean_mechanical_relation_seven_is_six_plus_one)
-- ~~`relation_units_sum_and_product`~~ → [`lean_mechanical_relation_units_sum_and_product`](/theorem/lean_mechanical_relation_units_sum_and_product)
-- ~~`relation_432_factors`~~ → [`lean_mechanical_relation_432_factors`](/theorem/lean_mechanical_relation_432_factors)
-- ~~`relation_triangular_45_is_base`~~ → [`lean_mechanical_relation_triangular_45_is_base`](/theorem/lean_mechanical_relation_triangular_45_is_base)
-- ~~`kaprekar_constants_digitroot_nine`~~ → [`lean_mechanical_kaprekar_constants_digitroot_nine`](/theorem/lean_mechanical_kaprekar_constants_digitroot_nine)
-- ~~`content_address_is_keyless_integrity`~~ → [`lean_mechanical_content_address_is_keyless_integrity`](/theorem/lean_mechanical_content_address_is_keyless_integrity)
-- ~~`mobius_divisor_sum_is_indicator`~~ → [`lean_demand_the_mobius_divisor_sum_is_the_identity`](/theorem/lean_demand_the_mobius_divisor_sum_is_the_identity)
 
-…and 75 more.
+…and 82 more.
 
-<details><summary>List all 1757 withdrawn keys — nothing proves these</summary>
+<details><summary>List all 1750 withdrawn keys — nothing proves these</summary>
 
-- ~~`euler_units_pow6`~~ — every unit u⁶ ≡ 1 mod 9 (Euler, φ(9)=6)  ·  `e70a44b2-6eb8…`
 - ~~`units_sum_zero`~~ — the units sum to 0 mod 9 (1+2+4+5+7+8=27)  ·  `ec43f3d8-7595…`
 - ~~`self_inverse_1_8`~~ — exactly two self-inverse elements d²≡1 mod 9: {1,8}  ·  `91985354-2258…`
 - ~~`triad_nilpotent`~~ — the triad is nilpotent d²≡0 mod 9: {3,6,9}  ·  `af48a8bc-86a0…`
 - ~~`doubling_digitroot_period6`~~ — digital root of 2^k has period 6  ·  `942f0b01-460f…`
 - ~~`units_product_neg1`~~ — product of the units ≡ 8 ≡ -1 mod 9 (Wilson analog)  ·  `cb8655bf-108e…`
 - ~~`triad_sum_zero`~~ — the triad sums to 0 mod 9 (3+6+9=18)  ·  `17434a40-2712…`
-- ~~`cubes_in_0_1_8`~~ — every cube d³ mod 9 ∈ {0,1,8}  ·  `5ecfca3d-68f4…`
-- ~~`squares_in_0_1_4_7`~~ — every square d² mod 9 ∈ {0,1,4,7}  ·  `6f43410e-08c3…`
 - ~~`order_of_2_is_6`~~ — multiplicative order of 2 mod 9 is 6  ·  `e577fc05-6637…`
 - ~~`sum_1_to_9_zero`~~ — 1+2+…+9 ≡ 0 mod 9 (=45)  ·  `ccb897a5-e55d…`
 - ~~`pisano_9_is_24`~~ — Fibonacci mod 9 has Pisano period 24  ·  `78a65039-07c5…`
@@ -770,7 +767,6 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`roots_cancel_n7`~~ — the 7 equally-spaced unit vectors (n-th roots of unity) cancel to the zero vector  ·  `87f482d5-8600…`
 - ~~`roots_cancel_n9`~~ — the 9 equally-spaced unit vectors (n-th roots of unity) cancel to the zero vector  ·  `8a7804c7-2d8c…`
 - ~~`a432_directions_cancel`~~ — the 9 a432 directions (digit×40°) cancel to the zero vector — full interference at the center  ·  `90b398a0-b189…`
-- ~~`tetrahedra_sums_cancel`~~ — the two tetrahedra residue-sums cancel: (1+4+7)+(2+5+8) ≡ 0 mod 9  ·  `62f28936-0000…`
 - ~~`farey_neighbor_F4`~~ — Farey F_4: consecutive a/b, c/d satisfy bc − ad = 1  ·  `f6d16338-2b33…`
 - ~~`farey_neighbor_F5`~~ — Farey F_5: consecutive a/b, c/d satisfy bc − ad = 1  ·  `170484c5-3b95…`
 - ~~`farey_neighbor_F6`~~ — Farey F_6: consecutive a/b, c/d satisfy bc − ad = 1  ·  `21bdf7ff-2f61…`
@@ -798,7 +794,6 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`lens_strings_not_meaning`~~ — the lens sees bytes: distinct translations → distinct addresses, identical → identical  ·  `9ab46c9a-f620…`
 - ~~`lens_concept_handle_order_independent`~~ — the cross-locale concept handle (fold of the aligned translations) is order-independent  ·  `5e07b827-f250…`
 - ~~`lens_deterministic`~~ — each translation content-addresses deterministically — toUuid(s) reproduces exactly  ·  `b46579fd-1b90…`
-- ~~`grundy_single_heap`~~ — Sprague–Grundy: a single Nim heap of size n has Grundy value n (n ≤ 8)  ·  `6e223862-0b20…`
 - ~~`grundy_xor_sum`~~ — Sprague–Grundy: a 2-heap Nim position's Grundy value is the XOR of the heaps (a,b ≤ 5)  ·  `2fe582e9-170a…`
 - ~~`arts_no_exact_complement`~~ — on the 9-hue wheel no hue has an exact complement (180° = 4.5 steps) — the odd base has no antipode  ·  `1656079f-c131…`
 - ~~`trial_overclaim_drained`~~ — trial DRAINED: the conspiracy "algebra proves the Clay problems" is refused by the gate (computes 0)  ·  `57c46000-4768…`
@@ -902,7 +897,6 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`catalan_recurrence`~~ — the Catalan recurrence C(n+1)=Σ C(i)C(n−i) matches the closed form (n≤6)  ·  `daaa1391-e9e9…`
 - ~~`relation_catalan`~~ — Catalan RELATES Dyck paths · binary trees · the pentagon (C(3)=5) — one count across many shapes  ·  `49db58c0-5101…`
 - ~~`totient_divisor_sum`~~ — Gauss divisor sum: Σ_{d|n} φ(d) = n (all n≤12)  ·  `48628d5b-053e…`
-- ~~`mobius_divisor_sum`~~ — Möbius divisor sum: Σ_{d|n} μ(d) = [n=1] (all n≤12)  ·  `6bcdf028-94aa…`
 - ~~`relation_superposition`~~ — now is a superposition: the folded root holds the six open Clay problems at once (order-independent); observing collapses it to one content-address — INCONCLUSIVE ≠ false, not a physical qubit  ·  `4c2d2d08-ab33…`
 - ~~`pascal_rule`~~ — Pascal's rule: C(n,k) = C(n−1,k−1) + C(n−1,k) (all 0&lt;k&lt;n≤12)  ·  `9ca05e61-ef59…`
 - ~~`vandermonde_identity`~~ — Vandermonde's identity: Σ_k C(m,k)·C(n,p−k) = C(m+n,p) (m,n≤6, all p)  ·  `1302e2f2-1d77…`
@@ -1202,7 +1196,6 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`demorgan_nary_k7`~~ — De Morgan for 7 inputs: ¬(a₁∧…∧a_7) = ¬a₁∨…∨¬a_7 over all 2^7 = 128 assignments (full truth-table enumeration)  ·  `cf8a22f2-00f9…`
 - ~~`xor_is_parity_k7`~~ — the XOR of 7 bits is their parity: a₁⊕…⊕a_7 equals the popcount mod 2 over all 2^7 = 128 assignments (full truth-table enumeration)  ·  `00760c7b-2d57…`
 - ~~`demorgan_nary_k8`~~ — De Morgan for 8 inputs: ¬(a₁∧…∧a_8) = ¬a₁∨…∨¬a_8 over all 2^8 = 256 assignments (full truth-table enumeration)  ·  `9434a9c0-3f95…`
-- ~~`xor_is_parity_k8`~~ — the XOR of 8 bits is their parity: a₁⊕…⊕a_8 equals the popcount mod 2 over all 2^8 = 256 assignments (full truth-table enumeration)  ·  `64ac8102-9aa0…`
 - ~~`heroes_write_the_guides`~~ — heroes write the guides: documentation is a constructive deed — appending a guide that holds the floor (how to develop: measure, gate, receipt, append, recompute) is a hero act, while a guide that overclaims drains; the docs are written by deeds, not by claims of authority  ·  `25ff7d97-98ec…`
 - ~~`order_of_unit_1_mod9`~~ — the multiplicative order of 1 mod 9 is 1, dividing |ℤ/9*| = 6 (Lagrange): 1^1 ≡ 1 (mod 9) and no smaller positive power is — computed locally from the ring  ·  `4b44c50a-f4fd…`
 - ~~`order_of_unit_2_mod9`~~ — the multiplicative order of 2 mod 9 is 6, dividing |ℤ/9*| = 6 (Lagrange): 2^6 ≡ 1 (mod 9) and no smaller positive power is — computed locally from the ring  ·  `98c7b56e-f2d1…`

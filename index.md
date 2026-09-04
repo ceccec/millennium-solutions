@@ -181,18 +181,18 @@ Read from the artefacts at build time, never carried between runs.
 |---|---|
 | ledger entries | 2,416 — 302 octaves exactly |
 | standing — carries its own proof | **544** |
-| carried — withdrawn on its own evidence, proved by a live theorem | **115** |
-| withdrawn — nothing proves it | 1,757 |
-| proved in total | **659** of 2,416 |
+| carried — withdrawn on its own evidence, proved by a live theorem | **122** |
+| withdrawn — nothing proves it | 1,750 |
+| proved in total | **666** of 2,416 |
 | standing keys → distinct theorems | 519 sealed, 24 of them keyed twice, 1 unresolvable |
 | Lean files · theorems | 29 · 519 theorems (closed by exhaustion) + 8 rfl declarations, all axiom-free |
 | proved `by decide` | 519 of 527 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
-**On `carried`.** 115 entries were withdrawn for want of a Lean proof and have since been given one, at a new key. Nothing is un-revoked: the original's own evidence is still a TypeScript test, and rewriting its status would erase the fact that it did not hold on what it had. The record says both — withdrawn on its own evidence, standing through the theorem that carries it.
+**On `carried`.** 122 entries were withdrawn for want of a Lean proof and have since been given one, at a new key. Nothing is un-revoked: the original's own evidence is still a TypeScript test, and rewriting its status would erase the fact that it did not hold on what it had. The record says both — withdrawn on its own evidence, standing through the theorem that carries it.
 
-**Why the withdrawn were withdrawn.** 1,397 no Lean proof · 457 tested the removed lexical gate · 10 circular by construction · 6 its Lean source was deleted or renamed · 2 other. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
+**Why the withdrawn were withdrawn.** 1,390 no Lean proof · 457 tested the removed lexical gate · 10 circular by construction · 9 other · 6 its Lean source was deleted or renamed. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
 
 **What verification costs.** Proving the set touches all 16,384 leaves; verifying membership afterwards touches 14 — one sibling per level. That is **1,170× less work**, exactly, and the factor grows with the set because N/log N grows. Wall-clock varies with the machine and is left in the build output rather than pinned here. It is not sub-nanosecond and nothing here is: the advantage is a smaller exponent, not a faster clock. The counting is proved in `speed.lean`.
 
