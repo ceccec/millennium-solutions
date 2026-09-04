@@ -18,7 +18,12 @@ const mods = [...md.matchAll(re)].map(m => ({ name: m[1], path: '..' + m[2].slic
 // Kept, because a question about text is honestly answered by a text search — the same reason a
 // prize-claim detector or a slug matcher is legitimate. What changed is the label: this reported
 // "show an honest boundary", which is a property of the module's reasoning, not of its wording.
-const BOUNDARY_WORD = /HONEST|OBSERVED|honest|coincidence|curve-fit|metaphor|interpretation|debated|not a (proof|derivation|prediction|claim|resolution)|NOT /
+// AN ADJECTIVE BETWEEN THE ARTICLE AND THE NOUN IS STILL A REFUSAL. This required `not a` to sit directly
+// against the noun, so src/the/gold/compass — which says in as many words "not a physics claim" — was
+// counted as carrying NO boundary. The figure this prints therefore UNDERSTATED how many reports hedge,
+// which is the wrong direction for a measurement of honesty to be wrong in. Up to three words may sit
+// between, which covers "not a physics claim", "not a derivation of", "not an exact prediction".
+const BOUNDARY_WORD = /HONEST|OBSERVED|honest|coincidence|curve-fit|metaphor|interpretation|debated|not an? (?:\w+ ){0,3}(proof|derivation|prediction|claim|resolution|finding|result)|NOT /
 
 let allCompute = true, boundary = 0, floorOK = false
 const empties = []
