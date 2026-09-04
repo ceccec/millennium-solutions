@@ -386,8 +386,41 @@ export const isWithdrawn = (e: Entry): boolean => e.revoked === true
 // using them after the proof behind them stops standing.
 import { units as runtimeUnits, triad as runtimeTriad, vortexOrbit as runtimeOrbit } from '../0/index.ts'
 
+/** Is a live key addressing this THEOREM, whatever key it is filed under?
+ *
+ *  The check used to require one exact key string, and retiring 24 duplicate addresses broke it instantly:
+ *  `lean_units_are_six` was withdrawn in favour of `lean_z9_units_are_six`, the theorem never stopped being
+ *  proved, and the API refused to serve the units. The guarantee is meant to be "a live theorem proves
+ *  this", and a key is an ADDRESS — the same distinction that put 330 dead URLs in the deposition records
+ *  this morning, here in the one place that decides whether the tooling may use a value at all.
+ *
+ *  Resolving through theoremOfKey means the guarantee survives a rename or a re-address and still fails
+ *  when the proof itself goes — which is what it was for. */
+// MEMOISED, because the first version was O(live keys × theorems) PER CALL and units() is called from
+// everywhere: it resolved every live key against every kernel-accepted declaration on each invocation
+// and took `npm run ci:local` past ten minutes. The set of names reachable from a live key is built once,
+// on the same mtime+size key the ledger cache uses, so a script that writes the ledger and reads it back
+// still sees its own append.
+let _provenCache: { key: string; names: Set<string> } | null = null
+const provenNames = (): Set<string> => {
+  const st = existsSync(LEDGER_PATH) ? statSync(LEDGER_PATH) : null
+  const ck = st ? `${st.mtimeMs}:${st.size}` : 'none'
+  if (_provenCache && _provenCache.key === ck) return _provenCache.names
+  const thms = leanTheorems()
+  const names = new Set<string>()
+  for (const k of liveKeys()) { const t = theoremOfKey(k, thms); if (t) names.add(t.name) }
+  _provenCache = { key: ck, names }
+  return names
+}
+
+const provenLive = (key: string): boolean => {
+  if (liveKeys().has(key)) return true
+  const want = theoremOfKey(key, leanTheorems())
+  return want ? provenNames().has(want.name) : false
+}
+
 const backedBy = (key: string, value: number[], what: string): number[] => {
-  if (!liveKeys().has(key)) {
+  if (!provenLive(key)) {
     throw new Error(
       `api: refusing to serve ${what} — the theorem that proves it (${key}) is not live in the ledger. ` +
       `The value would still compute; what is missing is the reason to trust it. Prove it, or stop using it.`)

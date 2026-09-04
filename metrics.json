@@ -48,9 +48,9 @@
     {
       "key": "live-keys",
       "claim": "live ledger keys — ADDRESSES, not theorems; some theorems carry two",
-      "value": "551",
+      "value": "527",
       "command": "node -e \"import('./src/api/index.ts').then(m=>console.log(m.census().liveKeys))\"",
-      "receipt": "0754871b-a1a7-8466-9b60-8c4e6de841df"
+      "receipt": "d1cc94ed-b05b-8996-9db7-a074c157b46e"
     },
     {
       "key": "ledger-entries",
@@ -62,9 +62,9 @@
     {
       "key": "census-closes",
       "claim": "liveKeys = sealed + keyed-twice + unresolvable, asserted not reconciled by a reader",
-      "value": "551 = 526 + 24 + 1",
+      "value": "527 = 526 + 0 + 1",
       "command": "node scripts/contradictions.ts",
-      "receipt": "32c77f24-c0d5-8a1e-a29d-f87fb6f5f97d"
+      "receipt": "d05bf293-bd58-8d4d-929f-a5eaa93000b6"
     },
     {
       "key": "clay-proved",
@@ -165,5 +165,5 @@
       "receipt": "14c3168a-49d2-82b3-becf-5fb228c872ff"
     }
   ],
-  "root": "344aabfd-eeec-884e-bc74-34e965fb95c9"
+  "root": "925c15c0-74d1-82a8-a1a6-600cf88cf601"
 }

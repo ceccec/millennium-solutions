@@ -71,19 +71,19 @@
       "relation": "isSupplementedBy"
     },
     {
-      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_units_are_six",
+      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_z9_units_are_six",
       "relation": "references"
     },
     {
-      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_units_count",
+      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_z9_units_count",
       "relation": "references"
     },
     {
-      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_hasinv_units",
+      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_z9_hasinv_units",
       "relation": "references"
     },
     {
-      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_hasinv_triad_not",
+      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_z9_hasinv_triad_not",
       "relation": "references"
     }
   ],

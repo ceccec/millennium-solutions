@@ -22,33 +22,9 @@ title: Challenges
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (551)
+### lean (527)
 
-- [lean_units_are_six](/theorem/lean_units_are_six) — lean: the units of ℤ/9 are exactly [1,2,4,5,7,8] — checked at every residue by the kernel, recomputed here; 0/7  ·  `031c89bf-e1e0…`
-- [lean_units_count](/theorem/lean_units_count) — lean: there are exactly six units in ℤ/9 — the kernel checks the count, recomputed here; 0/7  ·  `104e8965-ebfb…`
-- [lean_hasinv_units](/theorem/lean_hasinv_units) — lean: every unit of ℤ/9 has a multiplicative inverse — checked at every unit, recomputed here; 0/7  ·  `e82c1543-5528…`
-- [lean_hasinv_triad_not](/theorem/lean_hasinv_triad_not) — lean: no non-unit of ℤ/9 has a multiplicative inverse — a negative the kernel checks rather than a declaration; 0/7  ·  `f999227c-dadd…`
-- [lean_selfinv_exactly_one_and_eight](/theorem/lean_selfinv_exactly_one_and_eight) — lean: the residues equal to their own inverse are exactly one and eight — an exhaustive filter, recomputed here; 0/7  ·  `ac17a837-f7e7…`
-- [lean_euler_units_pow_six](/theorem/lean_euler_units_pow_six) — lean: every unit raised to the sixth power returns one, Euler with φ(9)=6 — checked at every unit; 0/7  ·  `42317831-97b8…`
-- [lean_invpow_is_u_to_the_fifth](/theorem/lean_invpow_is_u_to_the_fifth) — lean: the fifth power of a unit is its inverse, since the sixth returns one — checked at every unit; 0/7  ·  `b8fd4d5e-ba46…`
-- [lean_powsum_zero_at_one](/theorem/lean_powsum_zero_at_one) — lean: the units of ℤ/9 sum to zero modulo nine — the first-power case, recomputed here; 0/7  ·  `ce11da39-daf2…`
-- [lean_powsum_zero_at_six](/theorem/lean_powsum_zero_at_six) — lean: the sixth powers of the units sum to six modulo nine, since each is one — recomputed here; 0/7  ·  `2b499f91-ffcd…`
-- [lean_mulperm_iff_unit](/theorem/lean_mulperm_iff_unit) — lean: multiplying the units by k permutes them exactly when k is itself a unit — an equivalence checked at every residue, both directions; 0/7  ·  `d46dea5b-c03f…`
-- [lean_addgen_iff_coprime](/theorem/lean_addgen_iff_coprime) — lean: k additively generates ℤ/9 exactly when k is coprime to nine — an equivalence checked at every residue, both directions; 0/7  ·  `1dde8282-6022…`
-- [lean_selfneg_only_zero](/theorem/lean_selfneg_only_zero) — lean: zero is the only residue that is its own additive inverse, the base being odd — an exhaustive filter; 0/7  ·  `fe4b1855-f43f…`
-- [lean_orbit_is_the_six](/theorem/lean_orbit_is_the_six) — lean: the doubling orbit from one is [1,2,4,8,7,5] — computed, never typed as a literal list; 0/7  ·  `e27a7229-da09…`
-- [lean_orbit_closes](/theorem/lean_orbit_closes) — lean: the doubling orbit returns to its start after six steps — the cycle closes, checked; 0/7  ·  `cb49e0e5-74de…`
-- [lean_orbit_distinct](/theorem/lean_orbit_distinct) — lean: the six steps of the doubling orbit are pairwise distinct — a simple loop, no early return; 0/7  ·  `4827b64b-16fc…`
-- [lean_orbit_covers_units](/theorem/lean_orbit_covers_units) — lean: the doubling orbit visits exactly as many residues as there are units — the orbit covers them; 0/7  ·  `ace08e19-0b05…`
-- [lean_triad_never_reaches_one](/theorem/lean_triad_never_reaches_one) — lean: no power of three or six ever reaches one modulo nine — a negative checked over twelve exponents, not declared; 0/7  ·  `29aeb0c2-db9b…`
-- [lean_triad_squares_vanish](/theorem/lean_triad_squares_vanish) — lean: three and six each square to zero modulo nine — the non-units are nilpotent; 0/7  ·  `4b1230dc-37a2…`
 - [lean_add_group](/theorem/lean_add_group) — lean: every residue of ℤ/9 has an additive inverse — checked at every residue; 0/7  ·  `ec7880e6-4ac5…`
-- [lean_neg_involution](/theorem/lean_neg_involution) — lean: negation modulo nine is its own inverse — an involution, checked at every residue; 0/7  ·  `1faf65bb-615d…`
-- [lean_perms_of_four_is_factorial](/theorem/lean_perms_of_four_is_factorial) — lean: four elements admit exactly twenty-four orderings — the enumeration is complete, four factorial; 0/7  ·  `d51aa5c7-eb03…`
-- [lean_receipt_is_order_invariant](/theorem/lean_receipt_is_order_invariant) — lean: the receipt is the same for every one of the twenty-four observer orderings — order invariance proved, not asserted; 0/7  ·  `5e4055c6-b936…`
-- [lean_receipt_order_invariant_on_the_orbit](/theorem/lean_receipt_order_invariant_on_the_orbit) — lean: the receipt is the same across all seven hundred and twenty orderings of the doubling orbit — every observer agrees; 0/7  ·  `877ef1b1-0b2a…`
-- [lean_naive_fold_is_not_order_invariant](/theorem/lean_naive_fold_is_not_order_invariant) — lean: without canonicalising first the same combination is genuinely order-dependent — the contrast that keeps the invariance from holding vacuously; 0/7  ·  `9f803eee-4442…`
-- [lean_superposition_collapses_to_one](/theorem/lean_superposition_collapses_to_one) — lean: all twenty-four orderings collapse to exactly one distinct receipt — many perspectives, one value, a structural statement and not a physical one; 0/7  ·  `12db3f3c-fc3a…`
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
 - [lean_address_to_uuid_bytes_of_uuidna](/theorem/lean_address_to_uuid_bytes_of_uuidna) — lean address.lean: to_uuid_bytes_of_uuidna — toUuidBytes UUIDNA = [252, 81, 21, 50, 110, 138, 132, 24, 165, 34, 165, 27, 29, 70, 167, 12] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `6a4f78d3-a979…`
@@ -580,27 +556,26 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 
 
 
-## Revoked — 1746 entries that no longer stand
+## Revoked — 1748 entries that no longer stand
 
 The ledger is append-only: an entry that stops holding is marked in place, never deleted — deleting would break the receipt chain, and rewriting a receipt is tamper. These keep their receipts and stay in the record, but they are **not citable** and have no `/theorem/` page. Grouped by the reason they went:
 
-- **1273** — dirty: not backed by a Lean proof
+- **1274** — dirty: not backed by a Lean proof
 - **443** — revoked in place: its test asserted a lexical drain (computes(boast)
 - **12** — revoked in place: circular by construction AND dependent on the removed lexical gate
 - **10** — revoked in place: circular by construction — the test defines the answer it checks, proving a declaration rather than a fact
 - **6** — orphaned: the theorem this key was sealed from is no longer in src/proof
+- **1** — carried: withdrawn for having only a TypeScript test behind it, and since proved — `euler_units_pow_six` states the same proposition at lean_euler_units_pow_six, and the kernel checks it on every run
 - **1** — revoked in place: its test asserts that a list of proof-boasts written across many scripts and languages ALL drain the gate — a lexical drain assertion, and the word-list gate was removed by order, so there is no lexicon to drain and the assertion tests nothing
 - **1** — revoked in place: it asserts adjudicate('we prove all seven')
 
-## Carried — 126 withdrawn entries whose statement a proof now carries
+## Carried — 148 withdrawn entries whose statement a proof now carries
 
 Each was withdrawn for want of a Lean proof and has since been given one, at a new key. The entry is not restored: its own evidence is still a TypeScript test, and it did not hold on what it had. What the record adds is where the statement stands now.
 
-- ~~`euler_units_pow6`~~ → [`lean_euler_units_pow_six`](/theorem/lean_euler_units_pow_six)
 - ~~`cubes_in_0_1_8`~~ → [`lean_z9plus_cubes_land_exactly_in_zero_one_eight`](/theorem/lean_z9plus_cubes_land_exactly_in_zero_one_eight)
 - ~~`squares_in_0_1_4_7`~~ → [`lean_z9plus_squares_land_exactly_in_zero_one_four_seven`](/theorem/lean_z9plus_squares_land_exactly_in_zero_one_four_seven)
 - ~~`add_group`~~ → [`lean_add_group`](/theorem/lean_add_group)
-- ~~`neg_involution`~~ → [`lean_neg_involution`](/theorem/lean_neg_involution)
 - ~~`bool_demorgan1`~~ → [`lean_mechanical_bool_demorgan1`](/theorem/lean_mechanical_bool_demorgan1)
 - ~~`bool_demorgan2`~~ → [`lean_mechanical_bool_demorgan2`](/theorem/lean_mechanical_bool_demorgan2)
 - ~~`bool_distributivity`~~ → [`lean_mechanical_bool_distributivity`](/theorem/lean_mechanical_bool_distributivity)
@@ -636,11 +611,14 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`genus2_h1_symplectic`~~ → [`lean_mechanical_genus2_h1_symplectic`](/theorem/lean_mechanical_genus2_h1_symplectic)
 - ~~`genus_g_moduli_dim`~~ → [`lean_mechanical_the_moduli_dimensions_are_three_g_minus_three_and_six_g_minus_six`](/theorem/lean_mechanical_the_moduli_dimensions_are_three_g_minus_three_and_six_g_minus_six)
 - ~~`relation_digitroot_is_residue_mod9`~~ → [`lean_mechanical_relation_digitroot_is_residue_mod9`](/theorem/lean_mechanical_relation_digitroot_is_residue_mod9)
+- ~~`relation_seven_is_six_plus_one`~~ → [`lean_mechanical_relation_seven_is_six_plus_one`](/theorem/lean_mechanical_relation_seven_is_six_plus_one)
+- ~~`relation_units_sum_and_product`~~ → [`lean_mechanical_relation_units_sum_and_product`](/theorem/lean_mechanical_relation_units_sum_and_product)
 
-…and 86 more.
+…and 108 more.
 
-<details><summary>List all 1746 withdrawn keys — nothing proves these</summary>
+<details><summary>List all 1748 withdrawn keys — nothing proves these</summary>
 
+- ~~`euler_units_pow6`~~ — every unit u⁶ ≡ 1 mod 9 (Euler, φ(9)=6)  ·  `e70a44b2-6eb8…`
 - ~~`units_sum_zero`~~ — the units sum to 0 mod 9 (1+2+4+5+7+8=27)  ·  `ec43f3d8-7595…`
 - ~~`self_inverse_1_8`~~ — exactly two self-inverse elements d²≡1 mod 9: {1,8}  ·  `91985354-2258…`
 - ~~`triad_nilpotent`~~ — the triad is nilpotent d²≡0 mod 9: {3,6,9}  ·  `af48a8bc-86a0…`
@@ -693,6 +671,7 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`invpow_u5`~~ — the inverse of 5 is u^(|units|−1) = u⁵ mod 9  ·  `5e59c756-cf36…`
 - ~~`invpow_u7`~~ — the inverse of 7 is u^(|units|−1) = u⁵ mod 9  ·  `827d2a2f-38e3…`
 - ~~`invpow_u8`~~ — the inverse of 8 is u^(|units|−1) = u⁵ mod 9  ·  `1c45aeef-ca22…`
+- ~~`neg_involution`~~ — negation −(−d) ≡ d is an involution on ℤ/9  ·  `5eb8cd1f-9e06…`
 - ~~`selfneg_d9`~~ — 9 is its own additive inverse (2·9 ≡ 0) mod 9  ·  `8d0d0254-5ca1…`
 - ~~`invmap_perm`~~ — the multiplicative inverse map permutes the units mod 9  ·  `8455c1ab-d297…`
 - ~~`invmap_involution`~~ — the multiplicative inverse map is an involution on the units mod 9  ·  `43418601-7a73…`

@@ -14571,92 +14571,146 @@
   {
     "key": "lean_units_are_six",
     "name": "lean: the units of ℤ/9 are exactly [1,2,4,5,7,8] — checked at every residue by the kernel, recomputed here; 0/7",
-    "receipt": "031c89bf-e1e0-8c75-93da-cfc3d991040f"
+    "receipt": "031c89bf-e1e0-8c75-93da-cfc3d991040f",
+    "revoked": true,
+    "supersededBy": "lean_z9_units_are_six",
+    "reason": "duplicate address: this key and lean_z9_units_are_six both address the theorem `units_are_six`, sealed before and after the namespace convention. The statement STANDS and the kernel re-checks it on every run at lean_z9_units_are_six; what is withdrawn is this second address for it, so one theorem has one address. Marked in place — the receipt is untouched and stays in the append-only chain."
   },
   {
     "key": "lean_units_count",
     "name": "lean: there are exactly six units in ℤ/9 — the kernel checks the count, recomputed here; 0/7",
-    "receipt": "104e8965-ebfb-873a-afd2-54125bf3fe64"
+    "receipt": "104e8965-ebfb-873a-afd2-54125bf3fe64",
+    "revoked": true,
+    "supersededBy": "lean_z9_units_count",
+    "reason": "duplicate address: this key and lean_z9_units_count both address the theorem `units_count`, sealed before and after the namespace convention. The statement STANDS and the kernel re-checks it on every run at lean_z9_units_count; what is withdrawn is this second address for it, so one theorem has one address. Marked in place — the receipt is untouched and stays in the append-only chain."
   },
   {
     "key": "lean_hasinv_units",
     "name": "lean: every unit of ℤ/9 has a multiplicative inverse — checked at every unit, recomputed here; 0/7",
-    "receipt": "e82c1543-5528-872d-b09d-18c5e60a8af4"
+    "receipt": "e82c1543-5528-872d-b09d-18c5e60a8af4",
+    "revoked": true,
+    "supersededBy": "lean_z9_hasinv_units",
+    "reason": "duplicate address: this key and lean_z9_hasinv_units both address the theorem `hasinv_units`, sealed before and after the namespace convention. The statement STANDS and the kernel re-checks it on every run at lean_z9_hasinv_units; what is withdrawn is this second address for it, so one theorem has one address. Marked in place — the receipt is untouched and stays in the append-only chain."
   },
   {
     "key": "lean_hasinv_triad_not",
     "name": "lean: no non-unit of ℤ/9 has a multiplicative inverse — a negative the kernel checks rather than a declaration; 0/7",
-    "receipt": "f999227c-dadd-89ae-975f-57819b088228"
+    "receipt": "f999227c-dadd-89ae-975f-57819b088228",
+    "revoked": true,
+    "supersededBy": "lean_z9_hasinv_triad_not",
+    "reason": "duplicate address: this key and lean_z9_hasinv_triad_not both address the theorem `hasinv_triad_not`, sealed before and after the namespace convention. The statement STANDS and the kernel re-checks it on every run at lean_z9_hasinv_triad_not; what is withdrawn is this second address for it, so one theorem has one address. Marked in place — the receipt is untouched and stays in the append-only chain."
   },
   {
     "key": "lean_selfinv_exactly_one_and_eight",
     "name": "lean: the residues equal to their own inverse are exactly one and eight — an exhaustive filter, recomputed here; 0/7",
-    "receipt": "ac17a837-f7e7-836d-b62f-e1d2dce25839"
+    "receipt": "ac17a837-f7e7-836d-b62f-e1d2dce25839",
+    "revoked": true,
+    "supersededBy": "lean_z9_selfinv_exactly_one_and_eight",
+    "reason": "duplicate address: this key and lean_z9_selfinv_exactly_one_and_eight both address the theorem `selfinv_exactly_one_and_eight`, sealed before and after the namespace convention. The statement STANDS and the kernel re-checks it on every run at lean_z9_selfinv_exactly_one_and_eight; what is withdrawn is this second address for it, so one theorem has one address. Marked in place — the receipt is untouched and stays in the append-only chain."
   },
   {
     "key": "lean_euler_units_pow_six",
     "name": "lean: every unit raised to the sixth power returns one, Euler with φ(9)=6 — checked at every unit; 0/7",
-    "receipt": "42317831-97b8-8fef-8a9b-2fa8709affa9"
+    "receipt": "42317831-97b8-8fef-8a9b-2fa8709affa9",
+    "revoked": true,
+    "supersededBy": "lean_z9_euler_units_pow_six",
+    "reason": "duplicate address: this key and lean_z9_euler_units_pow_six both address the theorem `euler_units_pow_six`, sealed before and after the namespace convention. The statement STANDS and the kernel re-checks it on every run at lean_z9_euler_units_pow_six; what is withdrawn is this second address for it, so one theorem has one address. Marked in place — the receipt is untouched and stays in the append-only chain."
   },
   {
     "key": "lean_invpow_is_u_to_the_fifth",
     "name": "lean: the fifth power of a unit is its inverse, since the sixth returns one — checked at every unit; 0/7",
-    "receipt": "b8fd4d5e-ba46-80fc-983a-beb47d89f06c"
+    "receipt": "b8fd4d5e-ba46-80fc-983a-beb47d89f06c",
+    "revoked": true,
+    "supersededBy": "lean_z9_invpow_is_u_to_the_fifth",
+    "reason": "duplicate address: this key and lean_z9_invpow_is_u_to_the_fifth both address the theorem `invpow_is_u_to_the_fifth`, sealed before and after the namespace convention. The statement STANDS and the kernel re-checks it on every run at lean_z9_invpow_is_u_to_the_fifth; what is withdrawn is this second address for it, so one theorem has one address. Marked in place — the receipt is untouched and stays in the append-only chain."
   },
   {
     "key": "lean_powsum_zero_at_one",
     "name": "lean: the units of ℤ/9 sum to zero modulo nine — the first-power case, recomputed here; 0/7",
-    "receipt": "ce11da39-daf2-81b0-81d4-20bca34d10f7"
+    "receipt": "ce11da39-daf2-81b0-81d4-20bca34d10f7",
+    "revoked": true,
+    "supersededBy": "lean_z9_powsum_zero_at_one",
+    "reason": "duplicate address: this key and lean_z9_powsum_zero_at_one both address the theorem `powsum_zero_at_one`, sealed before and after the namespace convention. The statement STANDS and the kernel re-checks it on every run at lean_z9_powsum_zero_at_one; what is withdrawn is this second address for it, so one theorem has one address. Marked in place — the receipt is untouched and stays in the append-only chain."
   },
   {
     "key": "lean_powsum_zero_at_six",
     "name": "lean: the sixth powers of the units sum to six modulo nine, since each is one — recomputed here; 0/7",
-    "receipt": "2b499f91-ffcd-859e-9ab9-8440346965e8"
+    "receipt": "2b499f91-ffcd-859e-9ab9-8440346965e8",
+    "revoked": true,
+    "supersededBy": "lean_z9_powsum_zero_at_six",
+    "reason": "duplicate address: this key and lean_z9_powsum_zero_at_six both address the theorem `powsum_zero_at_six`, sealed before and after the namespace convention. The statement STANDS and the kernel re-checks it on every run at lean_z9_powsum_zero_at_six; what is withdrawn is this second address for it, so one theorem has one address. Marked in place — the receipt is untouched and stays in the append-only chain."
   },
   {
     "key": "lean_mulperm_iff_unit",
     "name": "lean: multiplying the units by k permutes them exactly when k is itself a unit — an equivalence checked at every residue, both directions; 0/7",
-    "receipt": "d46dea5b-c03f-8593-9c60-4f7a17ef445e"
+    "receipt": "d46dea5b-c03f-8593-9c60-4f7a17ef445e",
+    "revoked": true,
+    "supersededBy": "lean_z9_mulperm_iff_unit",
+    "reason": "duplicate address: this key and lean_z9_mulperm_iff_unit both address the theorem `mulperm_iff_unit`, sealed before and after the namespace convention. The statement STANDS and the kernel re-checks it on every run at lean_z9_mulperm_iff_unit; what is withdrawn is this second address for it, so one theorem has one address. Marked in place — the receipt is untouched and stays in the append-only chain."
   },
   {
     "key": "lean_addgen_iff_coprime",
     "name": "lean: k additively generates ℤ/9 exactly when k is coprime to nine — an equivalence checked at every residue, both directions; 0/7",
-    "receipt": "1dde8282-6022-8d69-92e2-3a9e5c350830"
+    "receipt": "1dde8282-6022-8d69-92e2-3a9e5c350830",
+    "revoked": true,
+    "supersededBy": "lean_z9_addgen_iff_coprime",
+    "reason": "duplicate address: this key and lean_z9_addgen_iff_coprime both address the theorem `addgen_iff_coprime`, sealed before and after the namespace convention. The statement STANDS and the kernel re-checks it on every run at lean_z9_addgen_iff_coprime; what is withdrawn is this second address for it, so one theorem has one address. Marked in place — the receipt is untouched and stays in the append-only chain."
   },
   {
     "key": "lean_selfneg_only_zero",
     "name": "lean: zero is the only residue that is its own additive inverse, the base being odd — an exhaustive filter; 0/7",
-    "receipt": "fe4b1855-f43f-8e93-9221-a17968cd60b7"
+    "receipt": "fe4b1855-f43f-8e93-9221-a17968cd60b7",
+    "revoked": true,
+    "supersededBy": "lean_z9_selfneg_only_zero",
+    "reason": "duplicate address: this key and lean_z9_selfneg_only_zero both address the theorem `selfneg_only_zero`, sealed before and after the namespace convention. The statement STANDS and the kernel re-checks it on every run at lean_z9_selfneg_only_zero; what is withdrawn is this second address for it, so one theorem has one address. Marked in place — the receipt is untouched and stays in the append-only chain."
   },
   {
     "key": "lean_orbit_is_the_six",
     "name": "lean: the doubling orbit from one is [1,2,4,8,7,5] — computed, never typed as a literal list; 0/7",
-    "receipt": "e27a7229-da09-833d-b1c1-7b08baf515f4"
+    "receipt": "e27a7229-da09-833d-b1c1-7b08baf515f4",
+    "revoked": true,
+    "supersededBy": "lean_z9_orbit_is_the_six",
+    "reason": "duplicate address: this key and lean_z9_orbit_is_the_six both address the theorem `orbit_is_the_six`, sealed before and after the namespace convention. The statement STANDS and the kernel re-checks it on every run at lean_z9_orbit_is_the_six; what is withdrawn is this second address for it, so one theorem has one address. Marked in place — the receipt is untouched and stays in the append-only chain."
   },
   {
     "key": "lean_orbit_closes",
     "name": "lean: the doubling orbit returns to its start after six steps — the cycle closes, checked; 0/7",
-    "receipt": "cb49e0e5-74de-8b33-bb5d-6d79ebb4b7db"
+    "receipt": "cb49e0e5-74de-8b33-bb5d-6d79ebb4b7db",
+    "revoked": true,
+    "supersededBy": "lean_z9_orbit_closes",
+    "reason": "duplicate address: this key and lean_z9_orbit_closes both address the theorem `orbit_closes`, sealed before and after the namespace convention. The statement STANDS and the kernel re-checks it on every run at lean_z9_orbit_closes; what is withdrawn is this second address for it, so one theorem has one address. Marked in place — the receipt is untouched and stays in the append-only chain."
   },
   {
     "key": "lean_orbit_distinct",
     "name": "lean: the six steps of the doubling orbit are pairwise distinct — a simple loop, no early return; 0/7",
-    "receipt": "4827b64b-16fc-8c4f-973b-2ce7d12f462a"
+    "receipt": "4827b64b-16fc-8c4f-973b-2ce7d12f462a",
+    "revoked": true,
+    "supersededBy": "lean_z9_orbit_distinct",
+    "reason": "duplicate address: this key and lean_z9_orbit_distinct both address the theorem `orbit_distinct`, sealed before and after the namespace convention. The statement STANDS and the kernel re-checks it on every run at lean_z9_orbit_distinct; what is withdrawn is this second address for it, so one theorem has one address. Marked in place — the receipt is untouched and stays in the append-only chain."
   },
   {
     "key": "lean_orbit_covers_units",
     "name": "lean: the doubling orbit visits exactly as many residues as there are units — the orbit covers them; 0/7",
-    "receipt": "ace08e19-0b05-8cc9-9fa1-adfb84d22301"
+    "receipt": "ace08e19-0b05-8cc9-9fa1-adfb84d22301",
+    "revoked": true,
+    "supersededBy": "lean_z9_orbit_covers_units",
+    "reason": "duplicate address: this key and lean_z9_orbit_covers_units both address the theorem `orbit_covers_units`, sealed before and after the namespace convention. The statement STANDS and the kernel re-checks it on every run at lean_z9_orbit_covers_units; what is withdrawn is this second address for it, so one theorem has one address. Marked in place — the receipt is untouched and stays in the append-only chain."
   },
   {
     "key": "lean_triad_never_reaches_one",
     "name": "lean: no power of three or six ever reaches one modulo nine — a negative checked over twelve exponents, not declared; 0/7",
-    "receipt": "29aeb0c2-db9b-8d62-a704-a67f57299394"
+    "receipt": "29aeb0c2-db9b-8d62-a704-a67f57299394",
+    "revoked": true,
+    "supersededBy": "lean_z9_triad_never_reaches_one",
+    "reason": "duplicate address: this key and lean_z9_triad_never_reaches_one both address the theorem `triad_never_reaches_one`, sealed before and after the namespace convention. The statement STANDS and the kernel re-checks it on every run at lean_z9_triad_never_reaches_one; what is withdrawn is this second address for it, so one theorem has one address. Marked in place — the receipt is untouched and stays in the append-only chain."
   },
   {
     "key": "lean_triad_squares_vanish",
     "name": "lean: three and six each square to zero modulo nine — the non-units are nilpotent; 0/7",
-    "receipt": "4b1230dc-37a2-8670-8085-62ae01fe85d2"
+    "receipt": "4b1230dc-37a2-8670-8085-62ae01fe85d2",
+    "revoked": true,
+    "supersededBy": "lean_z9_triad_squares_vanish",
+    "reason": "duplicate address: this key and lean_z9_triad_squares_vanish both address the theorem `triad_squares_vanish`, sealed before and after the namespace convention. The statement STANDS and the kernel re-checks it on every run at lean_z9_triad_squares_vanish; what is withdrawn is this second address for it, so one theorem has one address. Marked in place — the receipt is untouched and stays in the append-only chain."
   },
   {
     "key": "lean_add_group",
@@ -14666,32 +14720,50 @@
   {
     "key": "lean_neg_involution",
     "name": "lean: negation modulo nine is its own inverse — an involution, checked at every residue; 0/7",
-    "receipt": "1faf65bb-615d-823b-88f9-e51d5421ef09"
+    "receipt": "1faf65bb-615d-823b-88f9-e51d5421ef09",
+    "revoked": true,
+    "supersededBy": "lean_z9_neg_involution",
+    "reason": "duplicate address: this key and lean_z9_neg_involution both address the theorem `neg_involution`, sealed before and after the namespace convention. The statement STANDS and the kernel re-checks it on every run at lean_z9_neg_involution; what is withdrawn is this second address for it, so one theorem has one address. Marked in place — the receipt is untouched and stays in the append-only chain."
   },
   {
     "key": "lean_perms_of_four_is_factorial",
     "name": "lean: four elements admit exactly twenty-four orderings — the enumeration is complete, four factorial; 0/7",
-    "receipt": "d51aa5c7-eb03-8a75-8388-6b005a61c761"
+    "receipt": "d51aa5c7-eb03-8a75-8388-6b005a61c761",
+    "revoked": true,
+    "supersededBy": "lean_quantum_perms_of_four_is_factorial",
+    "reason": "duplicate address: this key and lean_quantum_perms_of_four_is_factorial both address the theorem `perms_of_four_is_factorial`, sealed before and after the namespace convention. The statement STANDS and the kernel re-checks it on every run at lean_quantum_perms_of_four_is_factorial; what is withdrawn is this second address for it, so one theorem has one address. Marked in place — the receipt is untouched and stays in the append-only chain."
   },
   {
     "key": "lean_receipt_is_order_invariant",
     "name": "lean: the receipt is the same for every one of the twenty-four observer orderings — order invariance proved, not asserted; 0/7",
-    "receipt": "5e4055c6-b936-817b-9379-1af0259d80bf"
+    "receipt": "5e4055c6-b936-817b-9379-1af0259d80bf",
+    "revoked": true,
+    "supersededBy": "lean_quantum_receipt_is_order_invariant",
+    "reason": "duplicate address: this key and lean_quantum_receipt_is_order_invariant both address the theorem `receipt_is_order_invariant`, sealed before and after the namespace convention. The statement STANDS and the kernel re-checks it on every run at lean_quantum_receipt_is_order_invariant; what is withdrawn is this second address for it, so one theorem has one address. Marked in place — the receipt is untouched and stays in the append-only chain."
   },
   {
     "key": "lean_receipt_order_invariant_on_the_orbit",
     "name": "lean: the receipt is the same across all seven hundred and twenty orderings of the doubling orbit — every observer agrees; 0/7",
-    "receipt": "877ef1b1-0b2a-860e-bfd9-ad50cbb394de"
+    "receipt": "877ef1b1-0b2a-860e-bfd9-ad50cbb394de",
+    "revoked": true,
+    "supersededBy": "lean_quantum_receipt_order_invariant_on_the_orbit",
+    "reason": "duplicate address: this key and lean_quantum_receipt_order_invariant_on_the_orbit both address the theorem `receipt_order_invariant_on_the_orbit`, sealed before and after the namespace convention. The statement STANDS and the kernel re-checks it on every run at lean_quantum_receipt_order_invariant_on_the_orbit; what is withdrawn is this second address for it, so one theorem has one address. Marked in place — the receipt is untouched and stays in the append-only chain."
   },
   {
     "key": "lean_naive_fold_is_not_order_invariant",
     "name": "lean: without canonicalising first the same combination is genuinely order-dependent — the contrast that keeps the invariance from holding vacuously; 0/7",
-    "receipt": "9f803eee-4442-83f7-8258-e8582b2beb5e"
+    "receipt": "9f803eee-4442-83f7-8258-e8582b2beb5e",
+    "revoked": true,
+    "supersededBy": "lean_quantum_naive_fold_is_not_order_invariant",
+    "reason": "duplicate address: this key and lean_quantum_naive_fold_is_not_order_invariant both address the theorem `naive_fold_is_not_order_invariant`, sealed before and after the namespace convention. The statement STANDS and the kernel re-checks it on every run at lean_quantum_naive_fold_is_not_order_invariant; what is withdrawn is this second address for it, so one theorem has one address. Marked in place — the receipt is untouched and stays in the append-only chain."
   },
   {
     "key": "lean_superposition_collapses_to_one",
     "name": "lean: all twenty-four orderings collapse to exactly one distinct receipt — many perspectives, one value, a structural statement and not a physical one; 0/7",
-    "receipt": "12db3f3c-fc3a-85d8-b2b1-db183ad32165"
+    "receipt": "12db3f3c-fc3a-85d8-b2b1-db183ad32165",
+    "revoked": true,
+    "supersededBy": "lean_quantum_superposition_collapses_to_one",
+    "reason": "duplicate address: this key and lean_quantum_superposition_collapses_to_one both address the theorem `superposition_collapses_to_one`, sealed before and after the namespace convention. The statement STANDS and the kernel re-checks it on every run at lean_quantum_superposition_collapses_to_one; what is withdrawn is this second address for it, so one theorem has one address. Marked in place — the receipt is untouched and stays in the append-only chain."
   },
   {
     "key": "lean_address_raw_bytes_of_a",
