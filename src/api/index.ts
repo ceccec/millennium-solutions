@@ -10,7 +10,7 @@
 // Nothing here decides anything. It reads artefacts and returns them typed — the ledger, the Lean sources,
 // and the relation between a sealed key and the theorem on disk that carries it. Judgement stays in the gates
 // that own it.
-import { readFileSync, readdirSync, existsSync } from 'node:fs'
+import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs'
 
 export const LEDGER_PATH = 'src/proof/discovered.json'
 export const PROOF_DIR = 'src/proof'
@@ -42,9 +42,28 @@ export interface Entry {
   statement?: string
 }
 
-/** The whole record, in order. Append-only: withdrawn entries are present and marked, never removed. */
-export const ledger = (): Entry[] =>
-  existsSync(LEDGER_PATH) ? JSON.parse(readFileSync(LEDGER_PATH, 'utf8')) : []
+/** The whole record, in order. Append-only: withdrawn entries are present and marked, never removed.
+ *
+ *  CACHED ON THE FILE'S IDENTITY, because it was read 4252 times in a single `pages.ts` run. Every helper
+ *  below defaults its parameter to `ledger()`, so `live()`, `liveKeys()`, `byKey()` and `statusOf()` each
+ *  re-read and re-parsed the whole 2418-entry file when called without one — and called inside a loop, that
+ *  is megabytes of JSON parsed thousands of times. A CPU profile put 7.1s of pages.ts's 16s in this function
+ *  and 7.5s in readFileSync beneath it; the site build is 80% of a deploy and this was 45% of its pre-build.
+ *
+ *  The key is mtime+size, NOT a plain memo. seal-lean.ts and carry.ts WRITE this file and then read it back,
+ *  and a cache that ignored that would serve them the record as it was before their own append — which in an
+ *  append-only ledger is the one stale read that could cause real damage. A statSync per call is the price,
+ *  and it is a rounding error against a parse. */
+let _lcache: { key: string; rows: Entry[] } | null = null
+export const ledger = (): Entry[] => {
+  if (!existsSync(LEDGER_PATH)) return []
+  const st = statSync(LEDGER_PATH)
+  const key = `${st.mtimeMs}:${st.size}`
+  if (_lcache && _lcache.key === key) return _lcache.rows
+  const rows = JSON.parse(readFileSync(LEDGER_PATH, 'utf8')) as Entry[]
+  _lcache = { key, rows }
+  return rows
+}
 
 /** The entries that STAND. Everything that judges what the deposit currently claims wants this one. */
 export const live = (l: Entry[] = ledger()): Entry[] => l.filter((e) => !e.revoked)
