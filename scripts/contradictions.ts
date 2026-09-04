@@ -22,7 +22,9 @@
 //      contradicts it.
 import { readFileSync, readdirSync, statSync } from 'node:fs'
 import { join } from 'node:path'
-import { census, leanFiles, leanSource, leanTheorems, clayFloor, advantage } from '../src/api/index.ts'
+import { census, leanFiles, leanSource, leanTheorems, clayFloor, advantage, ledger, THEOREM_DEFINITION } from '../src/api/index.ts'
+
+const ledgerTotal = (ledger() as unknown[]).length
 
 const C = census()
 let bad = 0
@@ -76,14 +78,30 @@ walk('.')
 
 // A KEY COUNT MAY NOT BE CALLED A THEOREM COUNT. Derived from the census, so it tracks the real number
 // rather than a literal someone has to remember to update.
-const keyCount = String(C.liveKeys)
-const conflation = new RegExp(`\\b${keyCount}\\b[^.\\n]{0,40}?\\btheorem`, 'i')
+// NOT ONLY THE KEY COUNT. This checked the live-key number and nothing else, and speedup.md was published
+// saying "generated from the 2380 theorems" — the LEDGER ENTRY count, most of which are withdrawn — three
+// lines after the same file said "the 2380 receipts" correctly. Every count that is not the theorem count
+// is forbidden next to the word, and each is named so the failure says which number was mistaken for it.
+//
+// The theorem count itself is THEOREM_DEFINITION in src/api: a declaration the kernel accepts, sorry-free
+// and axiom-free, closed by exhaustion. A key is an address; an entry is a receipt.
+const NOT_THEOREM_COUNTS: [number, string][] = [
+  [C.liveKeys, `the live KEY count — an address, and ${C.surplusKeys} theorems carry two`],
+  [ledgerTotal, `the LEDGER ENTRY count — a receipt, and ${ledgerTotal - C.liveKeys} of them are withdrawn`],
+]
 for (const f of files) {
-  const src = readFileSync(f, 'utf8')
-  // this file names the number in order to forbid it
   if (f.endsWith('contradictions.ts')) continue
+  const src = readFileSync(f, 'utf8')
   src.split('\n').forEach((line, i) => {
-    if (conflation.test(line)) fail(`${f}:${i + 1} calls ${keyCount} a theorem count — that is the live KEY count; there are ${C.theorems} theorems (${C.sealedTheorems} sealed, ${C.surplusKeys} of them keyed twice)`)
+    for (const [n, what] of NOT_THEOREM_COUNTS) {
+      if (n === C.byDecide) continue
+      // The number must be QUANTIFYING the word, not merely near it. A 40-character window that allowed
+      // punctuation flagged "the ledger is held at 2380 (the captain's cap): improving a theorem's name…",
+      // where 2380 counts entries and the later clause is about something else entirely. Clause breaks end
+      // the window, so only an adjectival run between the number and the noun counts.
+      if (new RegExp(`\\b${n}\\b[^.\\n:;()\\[\\]]{0,25}?\\btheorem`, 'i').test(line))
+        fail(`${f}:${i + 1} calls ${n} a theorem count — that is ${what}. Theorems: ${C.byDecide} (${THEOREM_DEFINITION})`)
+    }
   })
 }
 
@@ -268,5 +286,5 @@ for (const f of files) {
 
 console.log(bad
   ? `\n✗ contradictions: ${bad} finding(s) — prose or code disagrees with src/proof`
-  : `\n✓ contradictions: none — ${C.theorems} theorems (${C.byDecide} by decide, ${C.rfl} rfl); ${C.liveKeys} live keys = ${C.sealedTheorems} sealed + ${C.surplusKeys} keyed twice + ${C.unresolvableKeys} unresolvable; no sorry, no Mathlib, no native_decide, no axiom; nothing claims a Clay problem, all ${swept} Clay + ${qSwept} quantum overclaim phrasings are caught while ${HONEST.length} honest refusals survive; and ${PROVED.length} proved properties are stated on the pages, not only in the sources`)
+  : `\n✓ contradictions: none — ${C.byDecide} theorems (closed by exhaustion) + ${C.rfl} rfl declarations = ${C.theorems} kernel-accepted; ${C.liveKeys} live keys = ${C.sealedTheorems} sealed + ${C.surplusKeys} keyed twice + ${C.unresolvableKeys} unresolvable; no sorry, no Mathlib, no native_decide, no axiom; nothing claims a Clay problem, all ${swept} Clay + ${qSwept} quantum overclaim phrasings are caught while ${HONEST.length} honest refusals survive; and ${PROVED.length} proved properties are stated on the pages, not only in the sources`)
 process.exit(bad ? 1 : 0)

@@ -242,7 +242,7 @@ node scripts/readme.ts        # regenerate this file; it fails if a claim stops 
 
 ---
 
-*${verdicts.length} claims, ${verdicts.length} SEALED, 0 unsealed · ${ledger.length} recorded theorems · trial root \`${merkleFold(verdicts.map((x) => x.v.receipt))}\` · integrity, not truth · 0/7*
+*${verdicts.length} claims, ${verdicts.length} SEALED, 0 unsealed · ${ledger.length} recorded entries · trial root \`${merkleFold(verdicts.map((x) => x.v.receipt))}\` · integrity, not truth · 0/7*
 `
 // THIS NO LONGER WRITES README.md, AND THAT WAS A REAL BUG RATHER THAN A TIDY-UP. Two scripts generated the
 // same file with different prose — pages.ts, which is wired into predocs:build and the release chain, and

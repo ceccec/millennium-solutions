@@ -7,7 +7,7 @@ head:
 
 # The real uuidna advantage — measured, in all domains
 
-> Generated from the **2380** theorems and **59** domains, recomputed each build. The advantage is
+> Generated from the **2380** ledger entries and **59** domains, recomputed each build. The advantage is
 > real and **measured**, and honestly bounded: a **verification and reuse** complexity reduction — **not**
 > faster original compute, **not** faster than light, **not** quantum. `0/7`.
 

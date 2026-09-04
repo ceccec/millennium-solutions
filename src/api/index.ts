@@ -201,6 +201,32 @@ export const clayFloor = (): ClayFloor => {
   }
 }
 
+/** WHAT A THEOREM OF THIS DEPOSIT IS — one definition, because the word was carrying four.
+ *
+ *  Asked for the exact definition, the deposit could produce four different numbers, and all four were in
+ *  use in its own pages:
+ *
+ *    a `theorem` declaration the kernel accepts   — sorry-free, axiom-free, in src/proof
+ *    of those, closed by EXHAUSTION (`by decide`) — the kernel evaluated the proposition at every point
+ *    a live key in the ledger                     — an ADDRESS; 24 theorems carry two, one resolves to none
+ *    an entry in the append-only ledger           — a RECEIPT, and most of them are withdrawn
+ *
+ *  The repo's own rule already chose, in seal-lean.ts: "`by decide` is algebra — the kernel evaluates the
+ *  proposition over its whole finite domain and the result is a computation, not a convention. `rfl` on a
+ *  declared constant proves the declaration and nothing else — it is not evidence." That is why seal-lean
+ *  seals `by decide` and refuses `rfl`, and it is the line taken here.
+ *
+ *  A THEOREM OF THIS DEPOSIT is a declaration in src/proof that the Lean kernel accepts, free of `sorry`
+ *  and of axioms, and CLOSED BY EXHAUSTION over a stated finite domain. A declaration closed by `rfl` is a
+ *  definitional unfolding and is counted separately, never as a theorem. A key is an address and an entry
+ *  is a receipt; neither is a theorem, and scripts/contradictions.ts fails the build when either count is
+ *  printed next to the word. */
+export const THEOREM_DEFINITION =
+  'a declaration in src/proof that the Lean kernel accepts — sorry-free, axiom-free — and closes by exhaustion over a stated finite domain'
+
+/** The count that definition yields. Everything reporting "theorems" should read this. */
+export const theoremCount = (): number => census().byDecide
+
 export const census = (): Census => {
   const T = leanTheorems()
   const keys = (live() as { key: string }[]).filter((e) => e.key.startsWith('lean_')).map((e) => e.key)

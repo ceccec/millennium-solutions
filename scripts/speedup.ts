@@ -10,6 +10,9 @@ import { ledger as __ledger } from '../src/api/index.ts'
 
 const ledger: { key: string; receipt: string }[] = existsSync('src/proof/discovered.json')
   ? __ledger() : []
+// N IS A COUNT OF LEDGER ENTRIES, NOT OF THEOREMS. This page said "generated from the N theorems" three
+// lines after saying "the N receipts" correctly — the same number, named two ways in one file. There are
+// far fewer theorems than entries: the ledger is append-only and holds withdrawn and carried entries too.
 const N = ledger.length
 
 const rows = [8, 64, 967, 1024, 1_000_000].map((n) => {
@@ -39,7 +42,7 @@ head:
 
 # The real uuidna advantage — measured, in all domains
 
-> Generated from the **${N}** theorems and **${domCount}** domains, recomputed each build. The advantage is
+> Generated from the **${N}** ledger entries and **${domCount}** domains, recomputed each build. The advantage is
 > real and **measured**, and honestly bounded: a **verification and reuse** complexity reduction — **not**
 > faster original compute, **not** faster than light, **not** quantum. \`0/7\`.
 
@@ -70,4 +73,4 @@ A content-address proves **integrity, not truth**. \`0/7\`.
 `
 
 writeFileSync('speedup.md', md)
-console.log('speedup guide generated: speedup.md · ' + N + ' theorems · ' + domCount + ' domains · sparsest digit ' + sparsest[0])
+console.log('speedup guide generated: speedup.md · ' + N + ' ledger entries · ' + domCount + ' domains · sparsest digit ' + sparsest[0])
