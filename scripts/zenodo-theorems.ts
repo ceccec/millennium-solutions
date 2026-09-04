@@ -19,17 +19,12 @@
 import { writeFileSync, mkdirSync, rmSync, readFileSync, existsSync } from 'node:fs'
 import { leanTheorems, leanSource, ledger, theoremOfKey, type LeanTheorem } from '../src/api/index.ts'
 import { publicationHtml, NOVELTY, kinds, ownFiles, closureOf, creditedIn, SITE, REPO, CONCEPT_DOI, FUNDING } from '../src/publication/index.ts'
-import { execSync } from 'node:child_process'
 import { toUuid } from '../src/0/index.ts'
 
 const base = JSON.parse(readFileSync('.zenodo.json', 'utf8'))
 const OUT = '.zenodo/theorems'
 const HOME = 'https://ceccec.psg.bg'
 const PKG = 'https://www.npmjs.com/package/@uuidna/uuidna'
-const VERSION = (() => {
-  try { return execSync('git describe --tags --abbrev=0', { stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim() }
-  catch { return JSON.parse(readFileSync('package.json', 'utf8')).version ?? '0.0.0' }
-})()
 
 /** Edges to the declarations this proof depends on — the import closure, resolved to live theorem pages.
  *  Capped at twelve: a record listing every sibling in a 100-theorem file is a graph nobody can read, and
@@ -137,7 +132,12 @@ export const deposition = (t: LeanTheorem) => {
     language: 'eng',
     // No `grants` key: see FUNDING in src/publication — an unregistered funder cannot be named truthfully.
     notes_funding: FUNDING.statement,
-    version: VERSION,
+    // NO REPOSITORY VERSION HERE, deliberately. It was `git describe --tags`, and the release
+    // workflow mints a tag on every push whose content-address moved — so all 336 records went
+    // stale the moment CI tagged v8.1.0, with no theorem having changed. A record about a theorem
+    // must not churn because the repository was tagged. Versioning of the deposit is Zenodo's own,
+    // through the concept DOI named below; what identifies THIS record is the theorem's key and
+    // receipt, and neither moves.
     // ── THE GRAPH BETWEEN RECORDS ─────────────────────────────────────────────────────────────────────
     // Zenodo indexes related_identifiers and hands them to DataCite, so relations between records are what
     // turn 336 isolated deposits into one navigable body of work. Three kinds are emitted:
