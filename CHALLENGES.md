@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2377 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2380 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (505)
+### lean (508)
 
 - [lean_units_are_six](/theorem/lean_units_are_six) — lean: the units of ℤ/9 are exactly [1,2,4,5,7,8] — checked at every residue by the kernel, recomputed here; 0/7  ·  `031c89bf-e1e0…`
 - [lean_units_count](/theorem/lean_units_count) — lean: there are exactly six units in ℤ/9 — the kernel checks the count, recomputed here; 0/7  ·  `104e8965-ebfb…`
@@ -529,6 +529,9 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_split_the_rest_halt_on_the_generator](/theorem/lean_split_the_rest_halt_on_the_generator) — lean split.lean: the_rest_halt_on_the_generator — (tokens.filter (fun t =&gt; t % coinStep != 0)) = [3, 45, 9] ∧ (tokens.filter (fun t =&gt; t % coinStep != 0)).all (fun t =&gt; t % coinStep == 3) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `88e1ca63-b3a4…`
 - [lean_split_every_token_is_void_bound_or_halts_on_three](/theorem/lean_split_every_token_is_void_bound_or_halts_on_three) — lean split.lean: every_token_is_void_bound_or_halts_on_three — tokens.all (fun t =&gt; t % coinStep == 0 || t % coinStep == 3) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `19e9ea2d-fe3a…`
 - [lean_split_inside_this_ideal_the_bare_coin_sorts_as_the_scaled_one](/theorem/lean_split_inside_this_ideal_the_bare_coin_sorts_as_the_scaled_one) — lean split.lean: inside_this_ideal_the_bare_coin_sorts_as_the_scaled_one — (tokens.filter (fun t =&gt; t % 2 == 0)) = (tokens.filter (fun t =&gt; t % coinStep == 0)) ∧ tokens.all (fun t =&gt; (t % 2 == 0) == (t % coinStep == 0)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c397ec15-180f…`
+- [lean_split_the_seal_affords_sixty_four_payments_of_two](/theorem/lean_split_the_seal_affords_sixty_four_payments_of_two) — lean split.lean: the_seal_affords_sixty_four_payments_of_two — sealBits / coins = 64 ∧ 64 = 2 ^ 6 ∧ sealBits = 64 * coins — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `983dd276-c1a1…`
+- [lean_split_sixty_four_is_where_the_doubling_returns](/theorem/lean_split_sixty_four_is_where_the_doubling_returns) — lean split.lean: sixty_four_is_where_the_doubling_returns — (2 ^ 6) % 9 = 1 ∧ ((List.range 6).map (fun k =&gt; (2 ^ k) % 9)) = [1, 2, 4, 8, 7, 5] ∧ ((List.range' 1 5).all (fun k =&gt; (2 ^ k) % 9 != 1)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `5ebd2134-9a22…`
+- [lean_split_the_budget_and_the_period_are_one_turn](/theorem/lean_split_the_budget_and_the_period_are_one_turn) — lean split.lean: the_budget_and_the_period_are_one_turn — sealBits / coins = 2 ^ 6 ∧ (2 ^ 6) % 9 = 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c595d67b-fa66…`
 
 ### other — one-of-a-kind (0)
 
@@ -2355,4 +2358,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `ce834b2f-56d3-8813-a102-af7194e99066`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `d71fb502-2585-8817-9eba-9bddd73e87ef`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

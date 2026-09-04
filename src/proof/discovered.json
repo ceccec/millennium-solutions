@@ -17164,5 +17164,20 @@
     "key": "lean_split_inside_this_ideal_the_bare_coin_sorts_as_the_scaled_one",
     "name": "lean split.lean: inside_this_ideal_the_bare_coin_sorts_as_the_scaled_one — (tokens.filter (fun t => t % 2 == 0)) = (tokens.filter (fun t => t % coinStep == 0)) ∧ tokens.all (fun t => (t % 2 == 0) == (t % coinStep == 0)) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "c397ec15-180f-8b5d-b382-cb116045089a"
+  },
+  {
+    "key": "lean_split_the_seal_affords_sixty_four_payments_of_two",
+    "name": "lean split.lean: the_seal_affords_sixty_four_payments_of_two — sealBits / coins = 64 ∧ 64 = 2 ^ 6 ∧ sealBits = 64 * coins — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "983dd276-c1a1-88ba-9892-6904be2c16f4"
+  },
+  {
+    "key": "lean_split_sixty_four_is_where_the_doubling_returns",
+    "name": "lean split.lean: sixty_four_is_where_the_doubling_returns — (2 ^ 6) % 9 = 1 ∧ ((List.range 6).map (fun k => (2 ^ k) % 9)) = [1, 2, 4, 8, 7, 5] ∧ ((List.range' 1 5).all (fun k => (2 ^ k) % 9 != 1)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5ebd2134-9a22-89bb-b8d2-a1b035c3370f"
+  },
+  {
+    "key": "lean_split_the_budget_and_the_period_are_one_turn",
+    "name": "lean split.lean: the_budget_and_the_period_are_one_turn — sealBits / coins = 2 ^ 6 ∧ (2 ^ 6) % 9 = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c595d67b-fa66-8f5f-8077-a3a0c8432c3b"
   }
 ]

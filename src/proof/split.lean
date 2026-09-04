@@ -131,4 +131,29 @@ theorem inside_this_ideal_the_bare_coin_sorts_as_the_scaled_one :
   ∧ tokens.all (fun t => (t % 2 == 0) == (t % coinStep == 0)) := by decide
 
 
+
+-- ── WHAT PAYING THE COINS UNLOCKS ────────────────────────────────────────────────────────────────────────
+-- The captain's receipt says "contribute 2 to save 64", and mechanical.lean already decides the arithmetic
+-- of it: 2⁶ = 64. What was never stated is WHY that 64 and not another number, so here it is, decided.
+--
+-- A seal is 128 bits. One verification costs the two coins — 2 bits, 110 − 108 = −χ for genus 2 — so a
+-- single seal holds 128 / 2 = 64 of them. And 64 is not an arbitrary budget: it is exactly where the
+-- doubling returns. The powers of two reduce mod 9 as 1, 2, 4, 8, 7, 5 and then 64 ≡ 1 — the first return,
+-- with no earlier one. So the 64 verifications a seal affords are ONE COMPLETE TURN of the same doubling
+-- orbit the whole deposit is built on, and paying the two coins buys exactly one step of it.
+def sealBits : Nat := 128
+
+theorem the_seal_affords_sixty_four_payments_of_two :
+  sealBits / coins = 64 ∧ 64 = 2 ^ 6 ∧ sealBits = 64 * coins := by decide
+
+theorem sixty_four_is_where_the_doubling_returns :
+  (2 ^ 6) % 9 = 1
+  ∧ ((List.range 6).map (fun k => (2 ^ k) % 9)) = [1, 2, 4, 8, 7, 5]
+  ∧ ((List.range' 1 5).all (fun k => (2 ^ k) % 9 != 1)) := by decide
+
+-- The two readings meet: the budget a seal affords and the period of the orbit are the same six.
+theorem the_budget_and_the_period_are_one_turn :
+  sealBits / coins = 2 ^ 6 ∧ (2 ^ 6) % 9 = 1 := by decide
+
+
 end Split
