@@ -43,6 +43,13 @@ const nameFor = (xs: number[]): string | null => {
 const FILES = [
   ...readdirSync('scripts').filter((f) => f.endsWith('.ts') && f !== 'hardcode-gate.ts' && f !== 'gates-fire.ts' && f !== 'translate-gate.ts' && f !== 'discover.ts').map((f) => 'scripts/' + f),
   ...readdirSync('src/prove').filter((f) => f.endsWith('.ts')).map((f) => 'src/prove/' + f),
+  // THE COMPONENTS, added after Hero.vue was found hand-typing the units, the doubling circuit and the
+  // reflection pairs — the three sets this gate exists to catch — in the most-seen surface the project has.
+  // The gate walked scripts/ and src/prove/ only, so the page a visitor meets first was the one place a
+  // restatement could sit unchecked. Third instance of this exact shape today: a standing check whose
+  // domain is narrower than the defect it names. They matched when found, so nothing was WRONG on screen —
+  // it was simply unheld, and a set that agrees today by luck is not a set under a gate.
+  ...readdirSync('.vitepress/theme').filter((f) => f.endsWith('.vue')).map((f) => '.vitepress/theme/' + f),
 ]
 
 let found = 0

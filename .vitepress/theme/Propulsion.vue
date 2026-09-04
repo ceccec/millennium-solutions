@@ -5,6 +5,9 @@
 // π/3, port and starboard) to make the ±90° beam (π/2). Every bearing is an integer — no decimal drift.
 // forward / reverse is the tack; inverse is come-about (mirror the bearing). Computed, not asserted. 0/7.
 import { ref, computed, onMounted, onUnmounted } from 'vue'
+// The sequence is computed, not quoted: this panel says what the captain KNOWS, and a known value typed
+// by hand is the one thing it must not contain.
+import { orbit as orbitOf } from '../../src/api/index.ts'
 
 const BASE = 9
 const A432 = 360 / BASE                          // 40° — one ninth of the circle
@@ -86,7 +89,7 @@ const particles = Array.from({ length: 21 }, (_, i) => ({ x: 8 + (i * 37) % 84, 
 
 // what the captain KNOWS — each round-trips through the uuidna codec (verified in the build log).
 const known = [
-  { k: 'sequence', v: '[1,2,4,8,7,5]', uuids: 1 },
+  { k: 'sequence', v: `[${orbitOf().join(',')}]`, uuids: 1 },
   { k: 'angles', v: `±${GOLD} tack → ±${BEAM} beam · step ${A432}`, uuids: 2 },
   { k: 'speed', v: '2 bits / step', uuids: 1 },
 ]

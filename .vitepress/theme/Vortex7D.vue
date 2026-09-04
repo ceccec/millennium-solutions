@@ -15,6 +15,7 @@
 // the animateTransform/animate tags land in the static HTML). Hue drift is CSS. Audio uses the
 // built-in Web Audio + Web Speech APIs — no external assets.
 import { computed, ref, onMounted, onUnmounted, watch } from 'vue'
+import { orbit as orbitOf } from '../../src/api/index.ts'  // the doubling orbit, computed — not retyped here
 
 const props = defineProps({
   receipt: { type: String, default: '' },       // this object's content-address — the microdata the rays plot
@@ -63,7 +64,7 @@ const binaryRing = computed(() => {
 })
 
 // the state engine — the vortex orbit [1,2,4,8,7,5] (powers of 2 mod 9), auto-advancing
-const states = computed(() => [1, 2, 4, 8, 7, 5].map((d, i) => {
+const states = computed(() => orbitOf().map((d, i) => {
   const ang = (i * 360 / 6 - 90) * Math.PI / 180
   return { d, x: (Math.cos(ang) * 30).toFixed(2), y: (Math.sin(ang) * 30).toFixed(2), hue: (d * 40) % 360 }
 }))

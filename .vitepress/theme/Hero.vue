@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
+// Imported, not retyped: these are the sets the API computes and the theorems prove. Hand-typing them here
+// meant the first page a visitor sees could drift from the ring it draws, and hardcode-gate did not walk
+// .vue until it was widened to catch exactly this.
+import { units as unitsOf, orbit as orbitOf } from '../../src/api/index.ts'
 
 // The hero renders the ACTUAL underlying math — not a stock video. Nonagon (ℤ/9), the doubling
 // circuit 1→2→4→8→7→5, reflection pairs (d ↔ 10−d about the centre 5), and the 6×7 = 42
@@ -7,12 +11,12 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 const CX = 200, CY = 150, R = 118
 const node = (d: number) => { const a = -Math.PI / 2 + (d / 9) * 2 * Math.PI; return [CX + R * Math.cos(a), CY + R * Math.sin(a)] }
 const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((d) => ({ d: d % 9, xy: node(d % 9) }))
-const doubling = [1, 2, 4, 8, 7, 5, 1] // the circuit
+const doubling = [...orbitOf(), orbitOf()[0]] // the circuit, closed back on its first element
 const doublingPath = computed(() => doubling.map((d, i) => (i ? 'L' : 'M') + node(d)[0].toFixed(1) + ' ' + node(d)[1].toFixed(1)).join(' '))
 const reflections = [[1, 9], [2, 8], [3, 7], [4, 6]].map(([a, b]) => ({ a: node(a % 9), b: node(b % 9) }))
 
 // the 6×7 = 42 combinations (units × the seven), as chords revealed by the slider
-const units = [1, 2, 4, 5, 7, 8], seven = [1, 2, 3, 4, 5, 6, 0]
+const units = unitsOf(), seven = [1, 2, 3, 4, 5, 6, 0]
 const allChords = units.flatMap((u) => seven.map((r) => ({ a: node(u % 9), b: node(r % 9) })))
 const combos = ref(14)
 const chords = computed(() => allChords.slice(0, combos.value))
