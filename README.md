@@ -53,6 +53,10 @@ last because the orbit never reaches it.
 
 ## The floor
 
+- The ten digits read in order group as 0 | 12 | 3 | 45 | 6 | 78 | 9 — the singles 0,3,6,9 are exactly the non-units of ℤ/9 with the void, the pairs are the units in consecutive order, and every token is a multiple of 3. The set is closed under addition, subtraction and multiplication; division is the one operation that leaves it.
+  <sub>SEALED · `da5176d1-3e25-8421-81be-ddbcd34d988c`</sub>
+- The fair-exchange unit is 2 coins, and deducting them from a token's multiplier deducts 6 from the token: 0, 12, 6, 78 reach the void by repeated payment and 3, 45, 9 halt on 3, the generator the coin cannot spend. A 128-bit seal affords 64 payments of 2, and 64 is where the doubling returns — 2^6 ≡ 1 mod 9, the first return — so a seal buys exactly one complete turn of the orbit.
+  <sub>SEALED · `97eba519-a1b0-85da-a316-3a5050c59281`</sub>
 - Verifying one receipt against a fold of 1048576 leaves walks 20 nodes rather than 1048576: 21582900 µs to recompute against 38 µs to verify, a ratio of 567971×, and the ratio widens at every doubling because the path is log₂ of the leaf count while the recomputation is the count itself. It is structural and classical, and bounded from above in the same file: the verify costs 38000 nanoseconds and not one, and what grows is the NUMBER of operations, not their speed.
   <sub>SEALED · `a998f6d9-4ce5-8428-a988-c844b13abda8`</sub>
 - No theorem in the Clay-named file settles a conjecture: its propositions range over List.range 10, List.range 9, List.range 48, List.range 6, List.range' 1 and mention none of the objects those conjectures concern.
@@ -193,4 +197,4 @@ node scripts/pages.ts              # regenerate this file and the homepage
 
 ---
 
-*15 claims, all verified · 483 Lean theorems · 2380 ledger entries · trial root `e3830a1b-3da4-8e1a-9b50-f1a56844075b` · integrity, not truth · 0/7*
+*17 claims, all verified · 483 Lean theorems · 2380 ledger entries · trial root `fd42637a-a95c-8d8b-9c9f-d8f396bf6af3` · integrity, not truth · 0/7*

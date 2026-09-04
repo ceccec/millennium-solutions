@@ -21,11 +21,12 @@ import { translate } from '../src/prove/translate.ts'
 import { adjudicate } from './adjudicate.ts'
 import { computes } from './honesty-gate.ts'
 import { toUuid, merkleFold } from '../src/0/index.ts'
-import { ledger as __ledger, triad, units, axis, domainOf, census, clayFloor, advantage, leanTheorems as leanTheoremsShared } from '../src/api/index.ts'
+import { ledger as __ledger, triad, units, axis, domainOf, census, clayFloor, advantage, split, leanTheorems as leanTheoremsShared } from '../src/api/index.ts'
 
 const CENSUS = census()
 const CLAY_FLOOR = clayFloor()
 const ADVANTAGE = advantage()
+const SPLIT = split()
 import { orbit } from '../src/api/index.ts'
 
 const ledger = __ledger() as { key: string; name: string; receipt: string }[]
@@ -133,6 +134,21 @@ const CLAIMS: Claim[] = [
   // were stated and the four missing ones were the whole advantage — the log path, the widening gap, the
   // measured ratio, and priority. Every number here is read off src/proof/speed.lean, which the kernel
   // decides, so the page cannot drift from the theorem and none of it is typed into prose.
+  // THE SPLIT AND WHAT THE COINS BUY, on the page a reader opens. Measured after these theorems were
+  // written: zero of five reached the front pages — they were in the hundred-page paper and on their own
+  // theorem pages, and the homepage said nothing. Every figure is read off src/proof/split.lean.
+  { section: 'The floor',
+    derive: () => { const s = SPLIT
+      return { text: `the ten digits read in order group as ${s.tokens.join(' | ')} — the singles ${s.singles.join(',')} are exactly the non-units of ℤ/9 with the void, the pairs are the units in consecutive order, and every token is a multiple of 3. The set is closed under addition, subtraction and multiplication; division is the one operation that leaves it`,
+        ok: s.tokens.every((t) => t % 3 === 0) && s.singles.length === 4,
+        from: [s.tokens.join(' | '), s.singles.join(','), 3] } } },
+
+  { section: 'The floor',
+    derive: () => { const s = SPLIT
+      return { text: `the fair-exchange unit is ${s.coins} coins, and deducting them from a token's multiplier deducts ${s.coinStep} from the token: ${s.exhaustible.join(', ')} reach the void by repeated payment and ${s.halting.join(', ')} halt on 3, the generator the coin cannot spend. A ${s.sealBits}-bit seal affords ${s.payments} payments of ${s.coins}, and ${s.payments} is where the doubling returns — 2^${s.orbitPeriod} ≡ 1 mod 9, the first return — so a seal buys exactly one complete turn of the orbit`,
+        ok: s.payments === s.sealBits / s.coins && s.coinStep === 3 * s.coins && 2 ** s.orbitPeriod % 9 === 1,
+        from: [s.coins, s.coinStep, s.exhaustible.join(', '), s.halting.join(', '), s.sealBits, s.payments, s.orbitPeriod] } } },
+
   { section: 'The floor',
     derive: () => { const a = ADVANTAGE
       return { text: `verifying one receipt against a fold of ${a.leaves} leaves walks ${a.rounds} nodes rather than ${a.leaves}: ${a.recomputeUs} µs to recompute against ${a.verifyUs} µs to verify, a ratio of ${a.ratio}×, and the ratio widens at every doubling because the path is log₂ of the leaf count while the recomputation is the count itself. It is structural and classical, and bounded from above in the same file: the verify costs ${a.nsPerVerify} nanoseconds and not one, and what grows is the NUMBER of operations, not their speed`,

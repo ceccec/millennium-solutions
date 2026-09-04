@@ -22,7 +22,7 @@
 //      contradicts it.
 import { readFileSync, readdirSync, statSync } from 'node:fs'
 import { join } from 'node:path'
-import { census, leanFiles, leanSource, leanTheorems, clayFloor, advantage, ledger, THEOREM_DEFINITION } from '../src/api/index.ts'
+import { census, leanFiles, leanSource, leanTheorems, clayFloor, advantage, split, ledger, THEOREM_DEFINITION } from '../src/api/index.ts'
 
 const ledgerTotal = (ledger() as unknown[]).length
 
@@ -263,6 +263,12 @@ const PROVED: [string, RegExp, string][] = [
   ['the measured ratio',                 new RegExp(String(advantage().ratio)),        'speed.lean the_measured_ratio_at_a_million_leaves'],
   ['order-invariant over permutations',  /order.invarian|permutation/i,                'quantum.lean receipt_is_order_invariant'],
   ['the chain verifies end to end',      /chain intact|append-only|recei/i,            'forensics over the whole ledger'],
+  // Added after measuring that ZERO of this session's five new results reached the front pages. They were
+  // in the hundred-page paper and on their own theorem pages, and the homepage said nothing — including
+  // the answer to what paying the two coins buys.
+  ['the digit split is the ideal 3Z',    /multiple of 3/i,                             'split.lean every_token_is_a_multiple_of_three'],
+  ['the coin step is 3 x the two coins', new RegExp(`deducts ${split().coinStep} from the token`, 'i'), 'split.lean the_coin_step_is_three_times_the_two_coins'],
+  ['a seal buys one turn of the orbit',  /one complete turn of the orbit/i,            'split.lean the_budget_and_the_period_are_one_turn'],
 ]
 for (const [claim, shown, evidence] of PROVED)
   if (!shown.test(front))

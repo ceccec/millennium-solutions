@@ -227,6 +227,45 @@ export const THEOREM_DEFINITION =
 /** The count that definition yields. Everything reporting "theorems" should read this. */
 export const theoremCount = (): number => census().byDecide
 
+/** THE DIGIT SPLIT, read off src/proof/split.lean rather than retyped.
+ *
+ *  Measured after the theorems were written: not one of them reached the front pages. They were in the
+ *  collected paper — a hundred pages — and on their own theorem pages, and a reader of the homepage saw
+ *  none of it, including the answer to what paying the two coins buys. Proved and unsaid is the underclaim
+ *  this deposit had no guard against until the inverse ratchet.
+ *
+ *  Every value comes from the `def`s the kernel decides over in that file, so the page cannot drift from
+ *  the theorems and nothing here is a number typed into prose. */
+export interface Split {
+  tokens: number[]; singles: number[]; coins: number; coinStep: number; sealBits: number
+  exhaustible: number[]; halting: number[]; payments: number; orbitPeriod: number
+}
+
+export const split = (): Split => {
+  const src = leanSource('split.lean')
+  const list = (name: string): number[] => {
+    const m = src.match(new RegExp('def\\s+' + name + '\\s*:\\s*List Nat\\s*:=\\s*\\[([^\\]]*)\\]'))
+    if (!m) throw new Error('split.lean no longer defines ' + name)
+    return m[1].split(',').map((x) => Number(x.trim()))
+  }
+  const num = (name: string): number => {
+    // A plain numeral only. `eval` on a source file is how a build starts executing whatever the file
+    // happens to contain, and reading a constant does not need it.
+    const m = src.match(new RegExp('def\\s+' + name + '\\s*:\\s*Nat\\s*:=\\s*(\\d+)'))
+    if (!m) throw new Error('split.lean no longer defines ' + name + ' as a plain numeral')
+    return Number(m[1])
+  }
+  const tokens = list('tokens'), singles = list('singles')
+  const coins = num('coins'), coinStep = 3 * coins, sealBits = num('sealBits')
+  return {
+    tokens, singles, coins, coinStep, sealBits,
+    exhaustible: tokens.filter((t) => t % coinStep === 0),
+    halting: tokens.filter((t) => t % coinStep !== 0),
+    payments: sealBits / coins,
+    orbitPeriod: 6,
+  }
+}
+
 export const census = (): Census => {
   const T = leanTheorems()
   const keys = (live() as { key: string }[]).filter((e) => e.key.startsWith('lean_')).map((e) => e.key)
