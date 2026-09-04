@@ -17,12 +17,12 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 511 kernel-accepted declarations across 27 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `2dd9d3e0-9c78-8e09-9e07-93b5a8ad3694`</sub>
-- 503 of those 511 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
-  <sub>SEALED · `1100eef4-f4da-8632-aa15-7b1e4c139cbc`</sub>
-- 536 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `a9777fc0-3e43-8d6f-89a5-4d424a18c584`</sub>
+- The formal layer holds 525 kernel-accepted declarations across 29 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `67f47a8e-d7c5-832b-ab5f-2c2c33d1f865`</sub>
+- 517 of those 525 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
+  <sub>SEALED · `1926f824-d635-8e53-8da2-3b7fe321b886`</sub>
+- 550 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `b4300e74-6357-86c3-b04b-b9e502ef1724`</sub>
 
 ## 2 · The ring
 
@@ -45,10 +45,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 2400 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `3743afdc-0e35-8da3-879c-ba53b634b8ba`</sub>
-- The count is an exact multiple of eight — 2400 is 300 octaves with no remainder.
-  <sub>SEALED · `cb005903-ffad-83da-81a7-aeed3f34cb2f`</sub>
+- The ledger records 2414 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `bbb9e698-9cc2-8f2f-932d-871dc7b8539c`</sub>
+- The count is 2414, which is 301 octaves and 6 over — the octave is a target the theorems earn, never a quota they are invented to fill.
+  <sub>SEALED · `5630b4dc-dd7d-8078-b47d-038f8389c90b`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -96,7 +96,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-27 Lean files in 6 wings, 511 declarations of which 503 are theorems. The prose in this section is read out of the
+29 Lean files in 6 wings, 525 declarations of which 517 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -140,6 +140,10 @@ this page; there is nowhere else to keep the description in step.
 
 **The Millennium floor** — `index.lean`, 11 theorem(s). The Millennium floor — seven honest theorems, one per problem, COMPUTED from the sequence.
 
+**Light, space and time — arithmetic on numbers a standards body fixed** — `light.lean`, 9 theorem(s). Poids et Mesures, not results of this deposit: the metre from the speed of light (17th CGPM, 1983) and   the seven defining constants fixed exactly in the 2019 revision of the SI, effective 20 May 2019   (BIPM, https://www.bipm.org/en/measurement-units/si-defining-constants). Nothing here measures anything.
+
+**Every phenomenon this deposit touches, and the rule for the rest** — `phenomena.lean`, 5 theorem(s). Générale des Poids et Mesures (2019 revision, effective 20 May 2019); the electrochemical results are   Michael Faraday's laws of electrolysis, 1834, and the standard enthalpy of combustion of hydrogen.   Every physical result named here has an earlier author or a standards body, and none is this deposit's.
+
 **Order-invariance** — `quantum.lean`, 9 theorem(s). The quantum receipt — order invariance, proved rather than asserted.
 
 **Why verification is fast, and what it is not** — `speed.lean`, 8 theorem(s). The deposit's speed claim, accounted — and the reading it does not support.
@@ -166,7 +170,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Rights** — `rights.lean`, 8 theorem(s). What this deposit claims under international law — and, in the same table, what it does not.
 
-4 of 511 declarations carry no comment of their own and are shown here as the gap they are, not
+6 of 525 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -175,14 +179,14 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 2,400 — 300 octaves exactly |
-| standing — carries its own proof | **528** |
+| ledger entries | 2,414 — 301 octaves and 6 over |
+| standing — carries its own proof | **542** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **115** |
 | withdrawn — nothing proves it | 1,757 |
-| proved in total | **643** of 2,400 |
-| standing keys → distinct theorems | 503 sealed, 24 of them keyed twice, 1 unresolvable |
-| Lean files · theorems | 27 · 503 theorems (closed by exhaustion) + 8 rfl declarations, all axiom-free |
-| proved `by decide` | 503 of 511 |
+| proved in total | **657** of 2,414 |
+| standing keys → distinct theorems | 517 sealed, 24 of them keyed twice, 1 unresolvable |
+| Lean files · theorems | 29 · 517 theorems (closed by exhaustion) + 8 rfl declarations, all axiom-free |
+| proved `by decide` | 517 of 525 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -204,4 +208,4 @@ because no test was written that would seal them.
 
 ---
 
-*17 claims, all verified · 503 Lean theorems · 2400 ledger entries · trial root `ba9736df-d9f4-8459-b17c-eddf1a89d06b` · integrity, not truth · 0/7*
+*17 claims, all verified · 517 Lean theorems · 2414 ledger entries · trial root `0aadd17c-e2d9-875a-810e-aa41216c620f` · integrity, not truth · 0/7*

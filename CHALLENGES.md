@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2400 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2414 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (528)
+### lean (542)
 
 - [lean_units_are_six](/theorem/lean_units_are_six) — lean: the units of ℤ/9 are exactly [1,2,4,5,7,8] — checked at every residue by the kernel, recomputed here; 0/7  ·  `031c89bf-e1e0…`
 - [lean_units_count](/theorem/lean_units_count) — lean: there are exactly six units in ℤ/9 — the kernel checks the count, recomputed here; 0/7  ·  `104e8965-ebfb…`
@@ -552,6 +552,20 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_involution_the_constant_sum_is_rare](/theorem/lean_involution_the_constant_sum_is_rare) — lean involution.lean: the_constant_sum_is_rare — (all.filter constantSum).length = 90 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `08ae4f57-abb2…`
 - [lean_involution_so_involutions_are_not_all_harmonic_in_that_sense](/theorem/lean_involution_so_involutions_are_not_all_harmonic_in_that_sense) — lean involution.lean: so_involutions_are_not_all_harmonic_in_that_sense — ¬ all.all constantSum — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1b69f98b-1867…`
 - [lean_involution_the_coins_reflection_is_harmonic_and_is_one_of_the_ninety](/theorem/lean_involution_the_coins_reflection_is_harmonic_and_is_one_of_the_ninety) — lean involution.lean: the_coins_reflection_is_harmonic_and_is_one_of_the_ninety — constantSum coinLike = true ∧ fixedPoints coinLike = 1 ∧ (swaps coinLike).all (fun p =&gt; p.1 + p.2 == 9) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `813ea66f-9b19…`
+- [lean_light_the_si_fixes_exactly_seven_constants](/theorem/lean_light_the_si_fixes_exactly_seven_constants) — lean light.lean: the_si_fixes_exactly_seven_constants — defining.length = 7 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `34b3da62-a7f5…`
+- [lean_light_one_second_is_c_metres_of_light](/theorem/lean_light_one_second_is_c_metres_of_light) — lean light.lean: one_second_is_c_metres_of_light — travel 1 = c — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `27fd3471-f8df…`
+- [lean_light_the_light_second_joins_space_and_time](/theorem/lean_light_the_light_second_joins_space_and_time) — lean light.lean: the_light_second_joins_space_and_time — travel 1 = 299792458 ∧ periods 1 = 9192631770 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c99e499a-283b…`
+- [lean_light_the_chain_scales](/theorem/lean_light_the_chain_scales) — lean light.lean: the_chain_scales — ([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].all (fun s =&gt; travel s == c * s)) ∧ ([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].all (fun s =&gt; periods s == dNuCs * s)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `43fea27e-ab9a…`
+- [lean_light_the_roots_of_the_seven](/theorem/lean_light_the_roots_of_the_seven) — lean light.lean: the_roots_of_the_seven — defining.map root = [1, 9, 6, 9, 4, 1, 8] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `6e5b42a1-9c30…`
+- [lean_light_three_on_the_triad_and_four_on_the_units](/theorem/lean_light_three_on_the_triad_and_four_on_the_units) — lean light.lean: three_on_the_triad_and_four_on_the_units — (defining.filter (fun n =&gt; [3, 6, 9].contains (root n))).length = 3 ∧ (defining.filter (fun n =&gt; [1, 2, 4, 5, 7, 8].contains (root n))).length = 4 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d09fac98-79f7…`
+- [lean_light_the_seven_roots_miss_four_residues](/theorem/lean_light_the_seven_roots_miss_four_residues) — lean light.lean: the_seven_roots_miss_four_residues — (defining.map root).eraseDups.length = 5 ∧ ([1, 2, 3, 4, 5, 6, 7, 8, 9].filter (fun d =&gt; ¬ (defining.map root).contains d)) = [2, 3, 5, 7] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1419f65f-b611…`
+- [lean_light_the_root_moves_with_the_unit_so_it_is_not_about_light](/theorem/lean_light_the_root_moves_with_the_unit_so_it_is_not_about_light) — lean light.lean: the_root_moves_with_the_unit_so_it_is_not_about_light — root c = 1 ∧ root (2 * c) = 2 ∧ root (100 * c) = 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1e08e344-2719…`
+- [lean_light_this_file_measures_nothing](/theorem/lean_light_this_file_measures_nothing) — lean light.lean: this_file_measures_nothing — physicalClaims = 0 ∧ defining.length = 7 ∧ travel 0 = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c992831b-65f0…`
+- [lean_phenomena_every_phenomenon_is_definitional_or_credited](/theorem/lean_phenomena_every_phenomenon_is_definitional_or_credited) — lean phenomena.lean: every_phenomenon_is_definitional_or_credited — entries.all (fun e =&gt; statusOf e == 0 || statusOf e == 1) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3e67917-8a63…`
+- [lean_phenomena_seven_definitional_and_two_credited](/theorem/lean_phenomena_seven_definitional_and_two_credited) — lean phenomena.lean: seven_definitional_and_two_credited — (entries.filter (fun e =&gt; statusOf e == 0)).length = 7 ∧ (entries.filter (fun e =&gt; statusOf e == 1)).length = 2 ∧ entries.length = 9 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `b3a76dea-da26…`
+- [lean_phenomena_the_definitional_half_is_the_whole_si](/theorem/lean_phenomena_the_definitional_half_is_the_whole_si) — lean phenomena.lean: the_definitional_half_is_the_whole_si — (entries.filter (fun e =&gt; statusOf e == 0)).length = 7 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9a4d4f35-3121…`
+- [lean_phenomena_this_deposit_explains_predicts_and_constrains_nothing](/theorem/lean_phenomena_this_deposit_explains_predicts_and_constrains_nothing) — lean phenomena.lean: this_deposit_explains_predicts_and_constrains_nothing — explanations = 0 ∧ predictions = 0 ∧ theoriesConstrained = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `f3f2dd32-107d…`
+- [lean_phenomena_arithmetic_on_a_definition_returns_the_definition](/theorem/lean_phenomena_arithmetic_on_a_definition_returns_the_definition) — lean phenomena.lean: arithmetic_on_a_definition_returns_the_definition — (299792458 % 9 = 1) ∧ explanations = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2f338a89-2ef5…`
 
 ### other — one-of-a-kind (0)
 
@@ -2378,4 +2392,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `37e1dd42-91ef-84e3-a373-85804ec82988`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `180dad29-bfaa-8105-af3f-3db7ec9b3146`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

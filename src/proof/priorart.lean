@@ -65,20 +65,22 @@ def sources : List Source :=
   , (11, 1, false)   -- index.lean        — the Millennium floor, computed from this sequence
   , (12, 0, false)   -- involution.lean   — that a permutation of order two decomposes a finite set into fixed points and transpositions, and that the number of fixed points therefore matches the parity of the set, is classical and long predates this deposit. It is the orbit-counting argument in any first course. What is this deposit's own here is the EXHAUSTIVE decision over ℤ/9 and the measured refusal below.
   , (13, 1, false)   -- ledgerclaims.lean — claims about this deposit's own ledger
-  , (14, 1, false)   -- mechanical.lean   — translated from this deposit's own tests
-  , (15, 1, false)   -- merkaba.lean      — the merkaba as THIS deposit constructs it
-  , (16, 0, false)   -- merkle.lean       — the hash tree — Ralph Merkle, 1979 (thesis); CRYPTO 1987
-  , (17, 0, false)   -- nim.lean          — Nim — Charles L. Bouton, 1901; the Sprague–Grundy theorem — Roland Sprague, 1935 and Patrick M. Grundy, 1939
-  , (18, 1, false)   -- priorart.lean     — this file, about this deposit's own claim
-  , (19, 1, false)   -- quantum.lean      — order-invariance of this deposit's receipt
-  , (20, 0, false)   -- reversal.lean     — digit reversal and digit sums; casting out nines, in use by the 12th century
-  , (21, 1, false)   -- rights.lean       — this deposit's own rights table
-  , (22, 0, false)   -- sequences.lean    — Cassini’s identity — G. D. Cassini, 1680; Lucas sequences — Édouard Lucas, 1878; the Brahmagupta–Fibonacci identity — Brahmagupta, 628; Pascal’s triangle mod 2 — Blaise Pascal, 1654
-  , (23, 1, false)   -- speed.lean        — this deposit's own verification cost
-  , (24, 1, false)   -- split.lean        — the digit grouping 0|12|3|45|6|78|9 as this deposit reads it
-  , (25, 1, false)   -- theorems.lean     — the universal property, computed from this sequence
-  , (26, 0, false)   -- z9.lean           — Fermat’s little theorem — Pierre de Fermat, 1640; Euler’s theorem — Leonhard Euler, 1763; primitive roots — Carl Friedrich Gauss, 1801
-  , (27, 0, false)   -- z9plus.lean       — digital roots (casting out nines) — in use by the 12th century; the Pisano period — after Leonardo Pisano; studied by Joseph-Louis Lagrange, 1774
+  , (14, 0, false)   -- light.lean        — the exact numerical values below are DEFINITIONS adopted by the Conférence Générale des Poids et Mesures, not results of this deposit: the metre from the speed of light (17th CGPM, 1983) and the seven defining constants fixed exactly in the 2019 revision of the SI, effective 20 May 2019 (BIPM, https://www.bipm.org/en/measurement-units/si-defining-constants). Nothing here measures anything.
+  , (15, 1, false)   -- mechanical.lean   — translated from this deposit's own tests
+  , (16, 1, false)   -- merkaba.lean      — the merkaba as THIS deposit constructs it
+  , (17, 0, false)   -- merkle.lean       — the hash tree — Ralph Merkle, 1979 (thesis); CRYPTO 1987
+  , (18, 0, false)   -- nim.lean          — Nim — Charles L. Bouton, 1901; the Sprague–Grundy theorem — Roland Sprague, 1935 and Patrick M. Grundy, 1939
+  , (19, 0, false)   -- phenomena.lean    — the SI base quantities and their defining constants are definitions of the Conférence Générale des Poids et Mesures (2019 revision, effective 20 May 2019); the electrochemical results are Michael Faraday's laws of electrolysis, 1834, and the standard enthalpy of combustion of hydrogen. Every physical result named here has an earlier author or a standards body, and none is this deposit's.
+  , (20, 1, false)   -- priorart.lean     — this file, about this deposit's own claim
+  , (21, 1, false)   -- quantum.lean      — order-invariance of this deposit's receipt
+  , (22, 0, false)   -- reversal.lean     — digit reversal and digit sums; casting out nines, in use by the 12th century
+  , (23, 1, false)   -- rights.lean       — this deposit's own rights table
+  , (24, 0, false)   -- sequences.lean    — Cassini’s identity — G. D. Cassini, 1680; Lucas sequences — Édouard Lucas, 1878; the Brahmagupta–Fibonacci identity — Brahmagupta, 628; Pascal’s triangle mod 2 — Blaise Pascal, 1654
+  , (25, 1, false)   -- speed.lean        — this deposit's own verification cost
+  , (26, 1, false)   -- split.lean        — the digit grouping 0|12|3|45|6|78|9 as this deposit reads it
+  , (27, 1, false)   -- theorems.lean     — the universal property, computed from this sequence
+  , (28, 0, false)   -- z9.lean           — Fermat’s little theorem — Pierre de Fermat, 1640; Euler’s theorem — Leonhard Euler, 1763; primitive roots — Carl Friedrich Gauss, 1801
+  , (29, 0, false)   -- z9plus.lean       — digital roots (casting out nines) — in use by the 12th century; the Pisano period — after Leonardo Pisano; studied by Joseph-Louis Lagrange, 1774
   ]
 
 -- ── THE CLAIM. Only a source that names a completed search may claim, and none does ─────────────────────

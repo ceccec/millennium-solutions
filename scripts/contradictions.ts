@@ -22,7 +22,7 @@
 //      contradicts it.
 import { readFileSync, readdirSync, statSync } from 'node:fs'
 import { join } from 'node:path'
-import { census, leanFiles, leanSource, leanTheorems, clayFloor, advantage, split, ledger, THEOREM_DEFINITION } from '../src/api/index.ts'
+import { census, leanFiles, leanSource, leanTheorems, theoremOfKey, clayFloor, advantage, split, ledger, THEOREM_DEFINITION } from '../src/api/index.ts'
 
 const ledgerTotal = (ledger() as unknown[]).length
 
@@ -346,6 +346,40 @@ for (const f of leanFiles()) {
   const named = src.match(/^theorem (\w+) : settledHere = (\d+) := rfl$/m)
   if (named && +named[2] !== +m[1])
     fail(`src/proof/${f}: ${named[1]} decides settledHere = ${named[2]} while the def says ${m[1]}`)
+}
+
+// ── 4g · THE LEDGER AND THE PROOF TREE COMPARED AS SETS, NOT COUNTS ──────────────────────────────────────
+// The census above asserts liveKeys = sealed + keyed-twice + unresolvable. That is a COUNT identity, and a
+// count identity survives a rename: swap two keys and the arithmetic still closes while both sides now
+// name something the other does not. A sibling session (uuidna-49) found exactly this shape — three
+// kernel-verified theorems sitting in one ledger while every consumer read another, with nothing failing,
+// because absence does not announce itself the way a bad proof does.
+//
+// So both directions are compared by NAME. A theorem the kernel accepts with no live key is work that was
+// proved and cannot be cited; a live key resolving to no theorem is an address with nothing behind it.
+{
+  const thms = leanTheorems()
+  const decided = thms.filter((t) => t.tactic === 'by decide')
+  const live = [...new Set((ledger() as { key: string; revoked?: boolean; status?: string }[])
+    .filter((e) => e.revoked !== true && e.status !== 'revoked').map((e) => e.key))]
+  const reached = new Set<string>()
+  const dangling: string[] = []
+  for (const k of live) {
+    const t = theoremOfKey(k, thms)
+    if (t) reached.add(t.name); else dangling.push(k)
+  }
+  const unsealed = decided.filter((t) => !reached.has(t.name)).map((t) => t.name)
+  for (const n of unsealed.slice(0, 5))
+    fail(`${n} closes by decide and no live ledger key resolves to it — proved, and not citable`)
+  if (unsealed.length > 5) fail(`…and ${unsealed.length - 5} more theorems are proved with no live key`)
+  // KNOWN AND STANDING: lean_add_group names a theorem declared in two files and cannot be resolved to one.
+  // It is reported every run rather than excluded silently, because an exception that stops being visible
+  // stops being an exception.
+  const KNOWN = ['lean_add_group']
+  for (const k of dangling.filter((k) => !KNOWN.includes(k)))
+    fail(`live key ${k} resolves to no theorem in the tree — an address with nothing behind it`)
+  const standing = dangling.filter((k) => KNOWN.includes(k))
+  if (standing.length) console.log(`  ○ ${standing.length} standing unresolvable key(s), reported not excluded: ${standing.join(' ')}`)
 }
 
 console.log(bad

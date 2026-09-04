@@ -6,7 +6,7 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 511 machine-checked declarations, **175** restate work that already has an author and
+Of 525 machine-checked declarations, **189** restate work that already has an author and
 **336** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/proof/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
@@ -27,7 +27,7 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **175** |
+| attributed to named earlier work | **189** |
 | unclassified — no search performed, status unknown | **336** |
 | claimed as novel | **0** |
 
@@ -47,7 +47,7 @@ searched, where, and when. An earlier version of this page claimed novelty for 1
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 14 sources, 175 theorems
+## Restated from named earlier work — 16 sources, 189 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
@@ -61,8 +61,10 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>families.lean</code></td><td>12</td><td>modular arithmetic, quantified</td><td>quantifies the ℤ/9 arithmetic above; the underlying results are Fermat’s, Euler’s and Gauss’s</td></tr>
 <tr><td><code>fnv.lean</code></td><td>13</td><td>non-cryptographic hashing</td><td>FNV-1a — Glenn Fowler, Landon Curt Noll and Phong Vo, 1991</td></tr>
 <tr><td><code>involution.lean</code></td><td>8</td><td>elementary group theory — orbit decomposition of an order-two permutation</td><td>that a permutation of order two decomposes a finite set into fixed points and</td></tr>
+<tr><td><code>light.lean</code></td><td>9</td><td>metrology — the International System of Units</td><td>the exact numerical values below are DEFINITIONS adopted by the Conférence Générale des</td></tr>
 <tr><td><code>merkle.lean</code></td><td>9</td><td>hash trees and membership proofs</td><td>the hash tree — Ralph Merkle, 1979 (thesis); CRYPTO 1987</td></tr>
 <tr><td><code>nim.lean</code></td><td>8</td><td>combinatorial game theory</td><td>Nim — Charles L. Bouton, 1901; the Sprague–Grundy theorem — Roland Sprague, 1935 and Patrick M. Grundy, 1939</td></tr>
+<tr><td><code>phenomena.lean</code></td><td>5</td><td>metrology and classical physical chemistry</td><td>the SI base quantities and their defining constants are definitions of the Conférence</td></tr>
 <tr><td><code>reversal.lean</code></td><td>9</td><td>elementary arithmetic</td><td>digit reversal and digit sums; casting out nines, in use by the 12th century</td></tr>
 <tr><td><code>sequences.lean</code></td><td>8</td><td>integer sequences and identities</td><td>Cassini’s identity — G. D. Cassini, 1680; Lucas sequences — Édouard Lucas, 1878; the Brahmagupta–Fibonacci identity — Brahmagupta, 628; Pascal’s triangle mod 2 — Blaise Pascal, 1654</td></tr>
 <tr><td><code>z9.lean</code></td><td>21</td><td>modular arithmetic</td><td>Fermat’s little theorem — Pierre de Fermat, 1640; Euler’s theorem — Leonhard Euler, 1763; primitive roots — Carl Friedrich Gauss, 1801</td></tr>
@@ -81,6 +83,8 @@ which is a contribution of verification, not of discovery.
 - **elementary number theory, second tier** — 8 theorems, in `demand2.lean`
 - **hash trees and membership proofs** — 9 theorems, in `merkle.lean`
 - **integer sequences and identities** — 8 theorems, in `sequences.lean`
+- **metrology and classical physical chemistry** — 5 theorems, in `phenomena.lean`
+- **metrology — the International System of Units** — 9 theorems, in `light.lean`
 - **modular arithmetic** — 21 theorems, in `z9.lean`
 - **modular arithmetic and periodicity** — 32 theorems, in `z9plus.lean`
 - **modular arithmetic, quantified** — 12 theorems, in `families.lean`
@@ -128,5 +132,5 @@ priority claim above, and it is the whole of it.
 
 ---
 
-Partition seal `6a4be33e-7013-82e7-b0db-a8a1a907888b` · recompute with `node scripts/priorart.ts` · the kernel re-decides
+Partition seal `d9feba7c-3044-84cc-9274-f86bad45a501` · recompute with `node scripts/priorart.ts` · the kernel re-decides
 `priorart.lean` on every run. A content-address proves integrity, not truth. `entails → 0/7`.

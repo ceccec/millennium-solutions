@@ -5,11 +5,11 @@ title: The axiom index — what is not assumed, and what is
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **511** report the same thing:
+axiom fails the build rather than earning a footnote. All **525** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
-theorems rest on **209** definitions, and every one of them is a choice. A theorem about
+theorems rest on **227** definitions, and every one of them is a choice. A theorem about
 `fall` is a theorem about the digital root only because `fall` is *defined* to be it. Both halves are
 indexed below, and the second is the longer one.
 
@@ -90,7 +90,7 @@ The pins in the control fixture follow the community practice of guarding `#prin
 `#guard_msgs`, which turns the axiom footprint into an executable regression test: the assertion is
 checked by the elaborator, and drift fails the build with a mismatch instead of passing unnoticed.
 
-## What IS assumed: the 209 definitions
+## What IS assumed: the 227 definitions
 
 Each of these is a primitive of this deposit — not derived, not proved, chosen. They are listed in full
 because a reader checking a theorem must be able to read the definition it is about, and because a
@@ -263,6 +263,23 @@ def saving (value verify : Nat) : Nat := value - verify
 def addr4 (x : Nat) : Nat := x % 16
 ```
 
+### `light.lean` — 12 definition(s), 9 theorem(s)
+
+```lean
+def c : Nat := 299792458      -- m/s, exact
+def dNuCs : Nat := 9192631770     -- Hz, exact — the caesium-133 hyperfine transition
+def hDigits : Nat := 662607015     -- h = 6.62607015 × 10⁻³⁴ J s
+def eDigits : Nat := 1602176634    -- e = 1.602176634 × 10⁻¹⁹ C
+def kDigits : Nat := 1380649       -- k = 1.380649 × 10⁻²³ J/K
+def naDigits : Nat := 602214076    -- N_A = 6.02214076 × 10²³ mol⁻¹
+def kcd : Nat := 683            -- K_cd, lm/W, exact
+def defining : List Nat := [c, dNuCs, hDigits, eDigits, kDigits, naDigits, kcd]
+def travel (seconds : Nat) : Nat := c * seconds      -- metres crossed in a whole number of seconds
+def periods (seconds : Nat) : Nat := dNuCs * seconds -- caesium periods elapsed in the same interval
+def root (n : Nat) : Nat := if n == 0 then 9 else 1 + (n - 1) % 9
+def physicalClaims : Nat := 0
+```
+
 ### `mechanical.lean` — 2 definition(s), 103 theorem(s)
 
 ```lean
@@ -311,6 +328,17 @@ def lost : Nat → Nat → Nat → Bool
 def isLost (a b : Nat) : Bool := lost (a + b + 1) a b
 def mex (s : List Nat) : Nat := ((List.range (s.length + 1)).filter (fun m => ! s.contains m)).headD 0
 def grundy1 : Nat → Nat → Nat
+```
+
+### `phenomena.lean` — 6 definition(s), 5 theorem(s)
+
+```lean
+abbrev Entry := Nat × Nat
+def entries : List Entry :=
+def statusOf (e : Entry) : Nat := e.2
+def explanations : Nat := 0
+def predictions : Nat := 0
+def theoriesConstrained : Nat := 0
 ```
 
 ### `priorart.lean` — 6 definition(s), 10 theorem(s)
@@ -432,6 +460,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**511** declarations, **0** axiom dependencies, **209** definitions they rest on.
+**525** declarations, **0** axiom dependencies, **227** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them. `0/7`.
