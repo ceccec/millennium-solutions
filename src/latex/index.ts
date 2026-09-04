@@ -26,7 +26,7 @@ type Tok = { k: 'num' | 'id' | 'op'; v: string }
 
 const OPS3 = ['>>>', '<<<']
 const OPS2 = ['==', '!=', '<=', '>=', '=>', '++', '&&', '||']
-const OPS1 = '+-*/%^<>=()[],.¬∧∨→↔≠≤≥·'
+const OPS1 = '+-*/%^<>=()[],.¬∧∨→↔≠≤≥·!'
 
 export function lex(src: string): Tok[] {
   const out: Tok[] = []
@@ -46,7 +46,7 @@ export function lex(src: string): Tok[] {
       // exists to prevent. A lowercase receiver ends the identifier, so the dot becomes a method call.
       const qualified = /[A-Z]/.test(c)
       let j = i
-      while (j < src.length && (/[A-Za-z0-9_']/.test(src[j]) || src[j] === '!' || (qualified && src[j] === '.' && /[A-Za-z_]/.test(src[j + 1] ?? '')))) j++
+      while (j < src.length && (/[A-Za-z0-9_']/.test(src[j]) || src[j] === '!' || src[j] === '?' || (qualified && src[j] === '.' && /[A-Za-z_]/.test(src[j + 1] ?? '')))) j++
       out.push({ k: 'id', v: src.slice(i, j) }); i = j; continue
     }
     const three = src.slice(i, i + 3), two = src.slice(i, i + 2)
@@ -100,7 +100,7 @@ class P {
   add(): Node { let l = this.mul(); while (this.is('+') || this.is('-') || this.is('++')) { const op = this.peek()!.v; this.i++; l = { t: 'bin', op, l, r: this.mul() } } return l }
   mul(): Node { let l = this.pow(); while (this.is('*') || this.is('/') || this.is('%')) { const op = this.peek()!.v; this.i++; l = { t: 'bin', op, l, r: this.pow() } } return l }
   pow(): Node { const l = this.unary(); if (this.is('^')) { this.i++; return { t: 'bin', op: '^', l, r: this.pow() } } return l }
-  unary(): Node { if (this.is('¬')) { this.i++; return { t: 'un', op: '¬', e: this.unary() } } if (this.is('-')) { this.i++; return { t: 'un', op: '-', e: this.unary() } } return this.appl() }
+  unary(): Node { if (this.is('¬') || this.is('!')) { this.i++; return { t: 'un', op: '¬', e: this.unary() } } if (this.is('-')) { this.i++; return { t: 'un', op: '-', e: this.unary() } } return this.appl() }
 
   /** Application is juxtaposition: `M9 (d + e)`, `List.range 9`, `refl (refl d)`. */
   appl(): Node {
@@ -165,6 +165,13 @@ export function parse(src: string): Node {
   return e
 }
 
+
+/** `.filter f` and `.all f` pass a FUNCTION, not a lambda — `instruments.filter claim`. The set-builder
+ *  needs a bound variable the source never wrote, so one is supplied. `x` is chosen because these
+ *  statements bind d, e, k, n, p, u and t, never x; a collision would shadow a real binder. */
+const BOUND = 'x'
+const applied = (f: Node, texOf: (n: Node) => string) => `${texOf(f)}\\mathopen{}\\left(${BOUND}\\right)`
+
 // ── LaTeX ────────────────────────────────────────────────────────────────────────────────────────────────
 const NAME: Record<string, string> = { '==': '=', '=': '=', '!=': '\\neq', '≠': '\\neq', '<=': '\\le', '≤': '\\le', '>=': '\\ge', '≥': '\\ge', '<': '<', '>': '>', '+': '+', '-': '-', '*': '\\cdot', '/': '/', '%': '\\bmod', '∧': '\\land', '∨': '\\lor', '→': '\\to', '↔': '\\leftrightarrow', '++': '\\mathbin{+\\!\\!+}' }
 
@@ -227,13 +234,25 @@ function dotTex(d: Extract<Node, { t: 'dot' }>, args: Node[]): string {
   const o = tex(d.o)
   const lam = (a: Node | undefined) => (a && a.t === 'lam' ? a : null)
   switch (d.name) {
-    case 'all': { const f = lam(args[0]); if (!f) break; return `\\forall ${idTex(f.p)} \\in ${o},\\; ${tex(f.b)}` }
-    case 'any': { const f = lam(args[0]); if (!f) break; return `\\exists ${idTex(f.p)} \\in ${o} : ${tex(f.b)}` }
-    case 'filter': { const f = lam(args[0]); if (!f) break; return `\\{\\, ${idTex(f.p)} \\in ${o} \\mid ${tex(f.b)} \\,\\}` }
+    case 'all': { const f = lam(args[0])
+      if (f) return `\\forall ${idTex(f.p)} \\in ${o},\\; ${tex(f.b)}`
+      if (args.length === 1) return `\\forall ${BOUND} \\in ${o},\\; ${applied(args[0], tex)}`
+      break }
+    case 'any': { const f = lam(args[0])
+      if (f) return `\\exists ${idTex(f.p)} \\in ${o} : ${tex(f.b)}`
+      if (args.length === 1) return `\\exists ${BOUND} \\in ${o} : ${applied(args[0], tex)}`
+      break }
+    case 'filter': { const f = lam(args[0])
+      if (f) return `\\{\\, ${idTex(f.p)} \\in ${o} \\mid ${tex(f.b)} \\,\\}`
+      if (args.length === 1) return `\\{\\, ${BOUND} \\in ${o} \\mid ${applied(args[0], tex)} \\,\\}`
+      break }
     case 'map': { const f = lam(args[0]); if (f) return `\\{\\, ${tex(f.b)} \\mid ${idTex(f.p)} \\in ${o} \\,\\}`; if (args.length === 1) return `${tex(args[0])}[${o}]` ; break }
     case 'length': if (!args.length) return `\\left|${o}\\right|`; break
     case 'contains': if (args.length === 1) return `${tex(args[0])} \\in ${o}`; break
     case 'eraseDups': if (!args.length) return `\\operatorname{dedup}\\left(${o}\\right)`; break
+    case 'flatMap': { const f = lam(args[0]); if (!f) break
+      return `\\bigcup_{${idTex(f.p)} \\in ${o}} ${tex(f.b)}` }
+    case 'foldr':
     case 'foldl': {
       // foldl (· + ·) 0 is a sum and nothing else here is; anything other than that exact shape falls
       // through to the throw, rather than being rendered as a sum it is not.
@@ -304,13 +323,25 @@ function dotMl(d: Extract<Node, { t: 'dot' }>, args: Node[]): string {
   const o = ml(d.o)
   const lam = (a: Node | undefined) => (a && a.t === 'lam' ? a : null)
   switch (d.name) {
-    case 'all': { const f = lam(args[0]); if (!f) break; return `<mrow>${mo('∀')}${mi(f.p)}${mo('∈')}${o}${mo(',')}${ml(f.b)}</mrow>` }
-    case 'any': { const f = lam(args[0]); if (!f) break; return `<mrow>${mo('∃')}${mi(f.p)}${mo('∈')}${o}${mo(':')}${ml(f.b)}</mrow>` }
-    case 'filter': { const f = lam(args[0]); if (!f) break; return `<mrow>${mo('{')}${mi(f.p)}${mo('∈')}${o}${mo('∣')}${ml(f.b)}${mo('}')}</mrow>` }
+    case 'all': { const f = lam(args[0])
+      if (f) return `<mrow>${mo('∀')}${mi(f.p)}${mo('∈')}${o}${mo(',')}${ml(f.b)}</mrow>`
+      if (args.length === 1) return `<mrow>${mo('∀')}${mi(BOUND)}${mo('∈')}${o}${mo(',')}${ml(args[0])}${mo('(')}${mi(BOUND)}${mo(')')}</mrow>`
+      break }
+    case 'any': { const f = lam(args[0])
+      if (f) return `<mrow>${mo('∃')}${mi(f.p)}${mo('∈')}${o}${mo(':')}${ml(f.b)}</mrow>`
+      if (args.length === 1) return `<mrow>${mo('∃')}${mi(BOUND)}${mo('∈')}${o}${mo(':')}${ml(args[0])}${mo('(')}${mi(BOUND)}${mo(')')}</mrow>`
+      break }
+    case 'filter': { const f = lam(args[0])
+      if (f) return `<mrow>${mo('{')}${mi(f.p)}${mo('∈')}${o}${mo('∣')}${ml(f.b)}${mo('}')}</mrow>`
+      if (args.length === 1) return `<mrow>${mo('{')}${mi(BOUND)}${mo('∈')}${o}${mo('∣')}${ml(args[0])}${mo('(')}${mi(BOUND)}${mo(')')}${mo('}')}</mrow>`
+      break }
     case 'map': { const f = lam(args[0]); if (f) return `<mrow>${mo('{')}${ml(f.b)}${mo('∣')}${mi(f.p)}${mo('∈')}${o}${mo('}')}</mrow>`; if (args.length === 1) return `<mrow>${ml(args[0])}${mo('[')}${o}${mo(']')}</mrow>`; break }
     case 'length': if (!args.length) return `<mrow>${mo('|')}${o}${mo('|')}</mrow>`; break
     case 'contains': if (args.length === 1) return `<mrow>${ml(args[0])}${mo('∈')}${o}</mrow>`; break
     case 'eraseDups': if (!args.length) return `<mrow>${mi('dedup')}${mo('(')}${o}${mo(')')}</mrow>`; break
+    case 'flatMap': { const f = lam(args[0]); if (!f) break
+      return `<mrow>${mo('⋃')}${mi(f.p)}${mo('∈')}${o}${mo(',')}${ml(f.b)}</mrow>` }
+    case 'foldr':
     case 'foldl':
       if (args.length === 2 && args[0].t === 'hole' && args[0].op === '+' && args[1].t === 'num' && args[1].v === '0')
         return `<mrow>${mo('∑')}${o}</mrow>`
@@ -355,7 +386,7 @@ export function unparse(n: Node): string {
 // Lean spells several operators two ways and the parser keeps one of them, so the comparison canonicalises
 // both sides. Without this the check reported 72 failures that were only `||` against `∨` — a check that
 // cries wolf gets switched off, which is its own way of proving nothing.
-const CANON: Record<string, string> = { '||': '∨', '&&': '∧', '==': '=', '!=': '≠', '<=': '≤', '>=': '≥' }
+const CANON: Record<string, string> = { '||': '∨', '&&': '∧', '==': '=', '!=': '≠', '<=': '≤', '>=': '≥', '!': '¬' }
 
 /** The token sequence with grouping removed and spellings canonicalised — what the round-trip compares. */
 export const shape = (src: string): string =>
