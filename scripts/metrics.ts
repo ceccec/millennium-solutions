@@ -29,7 +29,7 @@
 // receiving session runs, and it needs no access to this repository at all.
 import { writeFileSync, readFileSync, existsSync } from 'node:fs'
 import { execSync } from 'node:child_process'
-import { receiptOf, rootOf, checkFace, PROTOCOL, type Metric, type Face } from '../src/face/index.ts'
+import { receiptOf, rootOf, checkFace, protocolId, PROTOCOL, type Metric, type Face } from '../src/face/index.ts'
 import { census, clayFloor, advantage, split, ledger, leanFiles, THEOREM_DEFINITION } from '../src/api/index.ts'
 
 // The shape and its checker live in src/face — a leaf that imports only the address primitives, so the MCP
@@ -39,7 +39,7 @@ export type { Metric, Face } from '../src/face/index.ts'
 const rows: Metric[] = []
 const add = (key: string, claim: string, value: string | number, command: string) => {
   const v = String(value)
-  rows.push({ key, claim, value: v, command, receipt: receiptOf(key, claim, v) })
+  rows.push({ key, claim, value: v, command, receipt: receiptOf(key, claim, v, command) })
 }
 
 // ── the face ─────────────────────────────────────────────────────────────────────────────────────────────
@@ -104,14 +104,14 @@ if (arg === '--verify') {
   const f = JSON.parse(readFileSync(path, 'utf8')) as Face
   const c = checkFace(f)
   let bad = c.altered.length + (c.root === f.root ? 0 : 1)
-  for (const k of c.altered) console.log(`  ✗ ${k}: receipt does not match its own claim and value`)
+  for (const k of c.altered) console.log(`  ✗ ${k}: receipt does not match its own claim, value and command`)
   if (c.root !== f.root) console.log(`  ✗ root ${f.root} ≠ ${c.root} recomputed from the rows`)
   const failing = f.rows.filter((r) => r.value === 'FAIL')
   if (c.verdict === 'different-convention') {
     console.log(`\n○ ${f.repo}: sealed under a DIFFERENT convention, not altered — every row and the root`)
     console.log(`  disagree, which is the signature of another formula rather than of tampering.`)
-    console.log(`  this checker uses: ${PROTOCOL}`)
-    console.log(`  the face declares: ${f.protocol ?? '(no protocol field)'}`)
+    console.log(`  this checker uses: ${PROTOCOL.id}`)
+    console.log(`  the face declares: ${protocolId(f.protocol)}`)
     process.exit(0)
   }
   console.log(bad
