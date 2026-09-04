@@ -9,7 +9,7 @@
       "affiliation": "PSG, Bulgaria"
     }
   ],
-  "description": "<p><strong>chess board 64</strong>, declared in <code>src/proof/mechanical.lean</code> and accepted by the Lean 4 kernel, sorry-free and axiom-free, closing by <code>by decide</code>.</p><p><strong>Statement (Lean):</strong></p><pre><code>let __p := ((List.range 8).flatMap (fun r => (List.range 8).map (fun c => (r + c) % 2 == 0))); let l := (__p.filter (fun z => z)).length; let d := __p.length - (__p.filter (fun z => z)).length; l == 32 && d == 32</code></pre><p><strong>Statement (LaTeX):</strong></p><pre><code>l = 32 \\land d = 32 \\quad \\text{where } d = \\left|\\mathrm{\\_\\_p}\\right| - \\left|\\{\\, z \\in \\mathrm{\\_\\_p} \\mid z \\,\\}\\right| \\quad \\text{where } l = \\left|\\{\\, z \\in \\mathrm{\\_\\_p} \\mid z \\,\\}\\right| \\quad \\text{where } \\mathrm{\\_\\_p} = \\bigcup_{r \\in \\{0,\\dots,7\\}} \\{\\, r + c \\bmod 2 = 0 \\mid c \\in \\{0,\\dots,7\\} \\,\\}</code></pre><p><strong>What this record establishes.</strong> A dated, public, citable deposit of this declaration and its proof, recomputable from the source it names. That is priority. It is not a claim that the result is unknown to the literature: prior art for this file is recorded in <code>src/proof/priorart.lean</code> as <em>unclassified — no prior-art search has been performed, so no novelty is asserted</em>.</p><p><strong>Scope.</strong> The declaration is decided over a finite domain by exhaustion. It settles no Clay Millennium Problem and claims no quantum speedup. 0/7.</p>",
+  "description": "<p><strong>chess board 64</strong> — <strong>decided over the whole of its finite domain by exhaustion, every case walked by the Lean 4 kernel.</strong> Not sampled and not argued: within that domain there is no residual uncertainty and no case left untested.</p><p><strong>Statement (Lean):</strong></p><pre><code>let __p := ((List.range 8).flatMap (fun r => (List.range 8).map (fun c => (r + c) % 2 == 0))); let l := (__p.filter (fun z => z)).length; let d := __p.length - (__p.filter (fun z => z)).length; l == 32 && d == 32</code></pre><p><strong>Statement (LaTeX):</strong></p><pre><code>l = 32 \\land d = 32 \\quad \\text{where } d = \\left|\\mathrm{\\_\\_p}\\right| - \\left|\\{\\, z \\in \\mathrm{\\_\\_p} \\mid z \\,\\}\\right| \\quad \\text{where } l = \\left|\\{\\, z \\in \\mathrm{\\_\\_p} \\mid z \\,\\}\\right| \\quad \\text{where } \\mathrm{\\_\\_p} = \\bigcup_{r \\in \\{0,\\dots,7\\}} \\{\\, r + c \\bmod 2 = 0 \\mid c \\in \\{0,\\dots,7\\} \\,\\}</code></pre><p><strong>What this record establishes.</strong> <strong>A dated, public, citable deposit</strong> of this declaration and its machine-checked proof, recomputable from the source it names — <strong>sorry-free, axiom-free, and free of any Mathlib dependency</strong>. That is priority, and the record proves it on its own. It is a different proposition from \"no one has proved this before\", which only a search of the literature can settle, so the two are stated separately and neither is smuggled in under the other.</p><p><strong>Novelty: UNCLASSIFIED — an open question, not a claim. No prior-art search has been performed for this source file, so this record asserts priority of deposit and nothing about the literature.</strong></p><p><strong>Scope, stated as plainly as the claim.</strong> The declaration is decided over a finite domain. It settles no Clay Millennium Problem, asserts no quantum speedup, and describes no physical system. <strong>0/7.</strong></p>",
   "keywords": [
     "Lean 4",
     "machine-checked proof",
@@ -20,6 +20,8 @@
   ],
   "license": "cc-by-nc-nd-4.0",
   "access_right": "open",
+  "language": "eng",
+  "communities": [],
   "related_identifiers": [
     {
       "identifier": "10.5281/zenodo.21819217",
@@ -27,10 +29,48 @@
       "scheme": "doi"
     },
     {
-      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_chess_board_64",
+      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_mechanical_chess_board_64",
       "relation": "isDocumentedBy",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.github.io/millennium-solutions/paper",
+      "relation": "isDocumentedBy",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.github.io/millennium-solutions/proofs",
+      "relation": "isDocumentedBy",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/ceccec/millennium-solutions/blob/main/src/proof/mechanical.lean",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/ceccec/millennium-solutions",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg",
+      "relation": "isPartOf",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://www.npmjs.com/package/@uuidna/uuidna",
+      "relation": "isSupplementedBy",
       "scheme": "url"
     }
   ],
-  "notes": "key lean_chess_board_64 · receipt 952ddbc6-88b6-898c-976a-03e0152e86e6 · source file mechanical.lean"
+  "references": [
+    "Rouschev, T. The ℤ/9 Vortex Framework. Zenodo. https://doi.org/10.5281/zenodo.21819217",
+    "Declaration `chess_board_64`, src/proof/mechanical.lean, Lean 4, closed by by decide. https://github.com/ceccec/millennium-solutions/blob/main/src/proof/mechanical.lean",
+    "Typeset statement and proof census: https://ceccec.github.io/millennium-solutions/paper",
+    "Content-addressed record lean_mechanical_chess_board_64, receipt b7940b7d-9116-8172-b7ab-47a0d5e742d2: https://ceccec.github.io/millennium-solutions/theorem/lean_mechanical_chess_board_64",
+    "Verifier and recomputation instructions: https://ceccec.github.io/millennium-solutions/verify",
+    "Reference implementation, @uuidna/uuidna: https://www.npmjs.com/package/@uuidna/uuidna"
+  ],
+  "notes": "key lean_mechanical_chess_board_64 · receipt b7940b7d-9116-8172-b7ab-47a0d5e742d2 · source file src/proof/mechanical.lean · namespace Mechanical · closed by by decide · concept DOI 10.5281/zenodo.21819217 · recompute: git clone https://github.com/ceccec/millennium-solutions && npm ci && npm run lean"
 }

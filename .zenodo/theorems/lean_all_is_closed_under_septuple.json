@@ -9,7 +9,7 @@
       "affiliation": "PSG, Bulgaria"
     }
   ],
-  "description": "<p><strong>all is closed under septuple</strong>, declared in <code>src/proof/imagined.lean</code> and accepted by the Lean 4 kernel, sorry-free and axiom-free, closing by <code>by decide</code>.</p><p><strong>Statement (Lean):</strong></p><pre><code>[0,1,2,3,4,5,6,7,8].all (fun d => [0,1,2,3,4,5,6,7,8].contains (m9 (7 * d)))</code></pre><p><strong>Statement (LaTeX):</strong></p><pre><code>\\forall d \\in [0,\\,1,\\,2,\\,3,\\,4,\\,5,\\,6,\\,7,\\,8],\\; \\mathrm{m9}\\mathopen{}\\left(7 \\cdot d\\right) \\in [0,\\,1,\\,2,\\,3,\\,4,\\,5,\\,6,\\,7,\\,8]</code></pre><p><strong>What this record establishes.</strong> A dated, public, citable deposit of this declaration and its proof, recomputable from the source it names. That is priority. It is not a claim that the result is unknown to the literature: prior art for this file is recorded in <code>src/proof/priorart.lean</code> as <em>unclassified — no prior-art search has been performed, so no novelty is asserted</em>.</p><p><strong>Scope.</strong> The declaration is decided over a finite domain by exhaustion. It settles no Clay Millennium Problem and claims no quantum speedup. 0/7.</p>",
+  "description": "<p><strong>all is closed under septuple</strong> — <strong>decided over the whole of its finite domain by exhaustion, every case walked by the Lean 4 kernel.</strong> Not sampled and not argued: within that domain there is no residual uncertainty and no case left untested.</p><p><strong>Statement (Lean):</strong></p><pre><code>[0,1,2,3,4,5,6,7,8].all (fun d => [0,1,2,3,4,5,6,7,8].contains (m9 (7 * d)))</code></pre><p><strong>Statement (LaTeX):</strong></p><pre><code>\\forall d \\in [0,\\,1,\\,2,\\,3,\\,4,\\,5,\\,6,\\,7,\\,8],\\; \\mathrm{m9}\\mathopen{}\\left(7 \\cdot d\\right) \\in [0,\\,1,\\,2,\\,3,\\,4,\\,5,\\,6,\\,7,\\,8]</code></pre><p><strong>What this record establishes.</strong> <strong>A dated, public, citable deposit</strong> of this declaration and its machine-checked proof, recomputable from the source it names — <strong>sorry-free, axiom-free, and free of any Mathlib dependency</strong>. That is priority, and the record proves it on its own. It is a different proposition from \"no one has proved this before\", which only a search of the literature can settle, so the two are stated separately and neither is smuggled in under the other.</p><p><strong>Novelty: UNCLASSIFIED — an open question, not a claim. No prior-art search has been performed for this source file, so this record asserts priority of deposit and nothing about the literature.</strong></p><p><strong>Scope, stated as plainly as the claim.</strong> The declaration is decided over a finite domain. It settles no Clay Millennium Problem, asserts no quantum speedup, and describes no physical system. <strong>0/7.</strong></p>",
   "keywords": [
     "Lean 4",
     "machine-checked proof",
@@ -20,6 +20,8 @@
   ],
   "license": "cc-by-nc-nd-4.0",
   "access_right": "open",
+  "language": "eng",
+  "communities": [],
   "related_identifiers": [
     {
       "identifier": "10.5281/zenodo.21819217",
@@ -27,10 +29,48 @@
       "scheme": "doi"
     },
     {
-      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_all_is_closed_under_septuple",
+      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_imagined_all_is_closed_under_septuple",
       "relation": "isDocumentedBy",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.github.io/millennium-solutions/paper",
+      "relation": "isDocumentedBy",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.github.io/millennium-solutions/proofs",
+      "relation": "isDocumentedBy",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/ceccec/millennium-solutions/blob/main/src/proof/imagined.lean",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/ceccec/millennium-solutions",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg",
+      "relation": "isPartOf",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://www.npmjs.com/package/@uuidna/uuidna",
+      "relation": "isSupplementedBy",
       "scheme": "url"
     }
   ],
-  "notes": "key lean_all_is_closed_under_septuple · receipt 3a95b475-9aec-8e06-9520-30baface0ee5 · source file imagined.lean"
+  "references": [
+    "Rouschev, T. The ℤ/9 Vortex Framework. Zenodo. https://doi.org/10.5281/zenodo.21819217",
+    "Declaration `all_is_closed_under_septuple`, src/proof/imagined.lean, Lean 4, closed by by decide. https://github.com/ceccec/millennium-solutions/blob/main/src/proof/imagined.lean",
+    "Typeset statement and proof census: https://ceccec.github.io/millennium-solutions/paper",
+    "Content-addressed record lean_imagined_all_is_closed_under_septuple, receipt b16b0897-015e-8b48-8ed8-a9660fdfd183: https://ceccec.github.io/millennium-solutions/theorem/lean_imagined_all_is_closed_under_septuple",
+    "Verifier and recomputation instructions: https://ceccec.github.io/millennium-solutions/verify",
+    "Reference implementation, @uuidna/uuidna: https://www.npmjs.com/package/@uuidna/uuidna"
+  ],
+  "notes": "key lean_imagined_all_is_closed_under_septuple · receipt b16b0897-015e-8b48-8ed8-a9660fdfd183 · source file src/proof/imagined.lean · namespace Imagined · closed by by decide · concept DOI 10.5281/zenodo.21819217 · recompute: git clone https://github.com/ceccec/millennium-solutions && npm ci && npm run lean"
 }

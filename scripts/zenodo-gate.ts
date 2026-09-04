@@ -9,7 +9,7 @@
 // .zenodo.json. Three files stating one identifier is three chances for it to drift.
 import { readFileSync, existsSync, readdirSync } from 'node:fs'
 import { leanTheorems } from '../src/api/index.ts'
-import { deposition, ownFiles } from './zenodo-theorems.ts'
+import { deposition, ownFiles, namesIn } from './zenodo-theorems.ts'
 
 let bad = 0
 const fail = (m: string) => { console.log('  ✗ ' + m); bad++ }
@@ -43,6 +43,80 @@ for (const t of rows) {
   if (doi && !JSON.stringify(got.related_identifiers).includes(doi)) fail(`${p} does not name the concept DOI as isPartOf`)
 }
 if (drifted > 5) fail(`…and ${drifted - 5} more depositions have drifted from the tree`)
+
+// ── THE LINK GRAPH IS COMPLETE, AND NOTHING IT PUBLISHES IS DEAD ────────────────────────────────────────
+// A permanent record pointing at a URL that 404s is worse than one with no link: it sends a reader, and an
+// indexer, into nothing. The first draft addressed theorem pages as /theorem/lean_<name> and 330 of 336
+// were dead, because the site serves one page per LEDGER KEY and a key is an address, not a name.
+// Checked against the built site when there is one; when there is not, this says so instead of passing
+// quietly, because a check that skips in silence reports the health of nothing.
+const REQUIRED = ['isPartOf', 'isSupplementTo', 'isSupplementedBy']
+for (const t of rows) {
+  const p2 = `${OUT}/lean_${t.name}.json`
+  if (!existsSync(p2)) continue
+  const d = JSON.parse(readFileSync(p2, 'utf8'))
+  const rels: string[] = (d.related_identifiers ?? []).map((r: { relation: string }) => r.relation)
+  for (const need of REQUIRED)
+    if (!rels.includes(need)) fail(`${p2} publishes no ${need} relation — the record does not reach the repository or the package`)
+  if (!Array.isArray(d.references) || d.references.length < 4)
+    fail(`${p2} carries ${d.references?.length ?? 0} references; a record that cites nothing indexes as nothing`)
+}
+
+// ── EVERY RECORD SAYS WHAT IT CLAIMS, AND SAYS ITS NOVELTY STATUS OUT LOUD ──────────────────────────────
+// A deposit that will not state its claim is not being modest, it is being unreadable — and an
+// unclassified status left implicit reads to a reader as a claim of novelty that was never made. Both
+// must be present, in the record itself, not only in a table in the repository.
+for (const t of rows) {
+  const p3 = `${OUT}/lean_${t.name}.json`
+  if (!existsSync(p3)) continue
+  const d = JSON.parse(readFileSync(p3, 'utf8'))
+  const desc = String(d.description ?? '')
+  if (!/^<p><strong>/.test(desc)) fail(`${p3} does not open with its claim — the reader meets provenance before the theorem`)
+  if (!/(Novelty: (UNCLASSIFIED|CLAIMED))|(Prior art: NAMED AND CREDITED)/.test(desc))
+    fail(`${p3} states no novelty status; an unstated status reads as a claim nobody made`)
+  if (!/0\/7/.test(desc)) fail(`${p3} omits the scope line`)
+}
+
+const DIST = '.vitepress/dist'
+if (!existsSync(DIST)) {
+  console.log('  ○ site not built — the 336 published theorem-page URLs were NOT checked for resolution here;'
+    + ' run `npm run docs:build` then this gate to check them')
+} else {
+  let dead = 0
+  for (const t of rows) {
+    const p2 = `${OUT}/lean_${t.name}.json`
+    if (!existsSync(p2)) continue
+    const d = JSON.parse(readFileSync(p2, 'utf8'))
+    for (const r of d.related_identifiers ?? []) {
+      const m = String(r.identifier).match(/\/millennium-solutions\/(.+)$/)
+      if (!m || String(r.identifier).startsWith('https://github.com')) continue
+      const slug = m[1]
+      if (!existsSync(`${DIST}/${slug}.html`) && !existsSync(`${DIST}/${slug}/index.html`)) {
+        dead++
+        if (dead <= 5) fail(`${p2} publishes ${r.identifier}, which the built site does not serve`)
+      }
+    }
+  }
+  if (dead > 5) fail(`…and ${dead - 5} more published URLs do not resolve in the built site`)
+}
+
+// ── SURFACED, NOT ACTED ON: own-work theorems whose OWN TEXT names an earlier author ────────────────────
+// A sibling session measured that routing attribution on file membership alone left four of nine sources
+// unclassified while the citation sat in the atom's own sentence, and measured the opposite failure too —
+// a surname inside a body is not a citation. Both are true here. Of three candidates this scan raises,
+// one is real: merkaba.lean's `the_cube_and_the_tetrahedron_count_out` decides 4 + 4 - 6 = 2, the Euler
+// characteristic, with Euler named in the comment above it. The other two are the false-positive shape —
+// `relation_eight` says "the Fibonacci MINOR", which is this repo's own version scheme, and priorart.lean
+// names everyone because it IS the attribution table.
+//
+// So this REPORTS and does not classify. Writing an unverified attribution into a permanent DOI record is
+// the failure that cannot be taken back, and which of these is a restatement is the author's call.
+const leads = rows.map((t) => ({ t, names: namesIn(t) })).filter((x) => x.names.length)
+if (leads.length) {
+  console.log(`\n  ○ ${leads.length} own-work theorem(s) name an earlier author in their own source text — for`)
+  console.log('    classification, not automatically credited (a surname in a comment is not a citation):')
+  for (const l of leads) console.log(`      ${l.t.file} · ${l.t.name} → ${l.names.join(', ')}`)
+}
 
 console.log(bad
   ? `\n✗ zenodo: ${bad} finding(s) — a deposition disagrees with the proof tree or the published DOI`

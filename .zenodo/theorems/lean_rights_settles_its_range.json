@@ -9,7 +9,7 @@
       "affiliation": "PSG, Bulgaria"
     }
   ],
-  "description": "<p><strong>rights settles its range</strong>, declared in <code>src/proof/rights.lean</code> and accepted by the Lean 4 kernel, sorry-free and axiom-free, closing by <code>rfl</code>.</p><p><strong>Statement (Lean):</strong></p><pre><code>settledHere = 7</code></pre><p><strong>Statement (LaTeX):</strong></p><pre><code>\\mathrm{settledHere} = 7</code></pre><p><strong>What this record establishes.</strong> A dated, public, citable deposit of this declaration and its proof, recomputable from the source it names. That is priority. It is not a claim that the result is unknown to the literature: prior art for this file is recorded in <code>src/proof/priorart.lean</code> as <em>unclassified — no prior-art search has been performed, so no novelty is asserted</em>.</p><p><strong>Scope.</strong> The declaration is decided over a finite domain by exhaustion. It settles no Clay Millennium Problem and claims no quantum speedup. 0/7.</p>",
+  "description": "<p><strong>rights settles its range</strong> — <strong>decided over the whole of its finite domain by exhaustion, every case walked by the Lean 4 kernel.</strong> Not sampled and not argued: within that domain there is no residual uncertainty and no case left untested.</p><p><strong>Statement (Lean):</strong></p><pre><code>settledHere = 7</code></pre><p><strong>Statement (LaTeX):</strong></p><pre><code>\\mathrm{settledHere} = 7</code></pre><p><strong>What this record establishes.</strong> <strong>A dated, public, citable deposit</strong> of this declaration and its machine-checked proof, recomputable from the source it names — <strong>sorry-free, axiom-free, and free of any Mathlib dependency</strong>. That is priority, and the record proves it on its own. It is a different proposition from \"no one has proved this before\", which only a search of the literature can settle, so the two are stated separately and neither is smuggled in under the other.</p><p><strong>Novelty: UNCLASSIFIED — an open question, not a claim. No prior-art search has been performed for this source file, so this record asserts priority of deposit and nothing about the literature.</strong></p><p><strong>Scope, stated as plainly as the claim.</strong> The declaration is decided over a finite domain. It settles no Clay Millennium Problem, asserts no quantum speedup, and describes no physical system. <strong>0/7.</strong></p>",
   "keywords": [
     "Lean 4",
     "machine-checked proof",
@@ -20,6 +20,8 @@
   ],
   "license": "cc-by-nc-nd-4.0",
   "access_right": "open",
+  "language": "eng",
+  "communities": [],
   "related_identifiers": [
     {
       "identifier": "10.5281/zenodo.21819217",
@@ -27,10 +29,42 @@
       "scheme": "doi"
     },
     {
-      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_rights_settles_its_range",
+      "identifier": "https://ceccec.github.io/millennium-solutions/paper",
       "relation": "isDocumentedBy",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.github.io/millennium-solutions/proofs",
+      "relation": "isDocumentedBy",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/ceccec/millennium-solutions/blob/main/src/proof/rights.lean",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/ceccec/millennium-solutions",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg",
+      "relation": "isPartOf",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://www.npmjs.com/package/@uuidna/uuidna",
+      "relation": "isSupplementedBy",
       "scheme": "url"
     }
   ],
-  "notes": "key lean_rights_settles_its_range · receipt 6b3d9b8f-d2e2-810e-ba4b-47fed0812dc8 · source file rights.lean"
+  "references": [
+    "Rouschev, T. The ℤ/9 Vortex Framework. Zenodo. https://doi.org/10.5281/zenodo.21819217",
+    "Declaration `rights_settles_its_range`, src/proof/rights.lean, Lean 4, closed by rfl. https://github.com/ceccec/millennium-solutions/blob/main/src/proof/rights.lean",
+    "Typeset statement and proof census: https://ceccec.github.io/millennium-solutions/paper",
+    "Verifier and recomputation instructions: https://ceccec.github.io/millennium-solutions/verify",
+    "Reference implementation, @uuidna/uuidna: https://www.npmjs.com/package/@uuidna/uuidna"
+  ],
+  "notes": "key (no live ledger key) · receipt — · source file src/proof/rights.lean · namespace Rights · closed by rfl · concept DOI 10.5281/zenodo.21819217 · recompute: git clone https://github.com/ceccec/millennium-solutions && npm ci && npm run lean"
 }
