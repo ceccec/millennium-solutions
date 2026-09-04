@@ -110,6 +110,9 @@ const commit = (() => {
 const face: Face = {
   repo: 'millennium-solutions',
   generatedFrom: commit,
+  // The seed of row 0, verbatim, beside the receipt it produces. Any reader reproduces the formula in one
+  // step or learns immediately that the spec has drifted from the emitter.
+  specWitness: { seed: rows[0].key + '\n' + rows[0].claim + '\n' + rows[0].value + '\n' + rows[0].command, receipt: rows[0].receipt },
   definition: THEOREM_DEFINITION,
   protocol: PROTOCOL,
   rows,

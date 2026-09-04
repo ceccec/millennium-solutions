@@ -11,7 +11,7 @@
 import { toUuid, merkleFold } from '../0/index.ts'
 
 export type Metric = { key: string; claim: string; value: string; command: string; receipt: string }
-export type Face = { repo: string; definition: string; protocol?: unknown; generatedFrom?: string; rows: Metric[]; root: string }
+export type Face = { repo: string; definition: string; protocol?: unknown; generatedFrom?: string; specWitness?: { seed: string; receipt: string }; rows: Metric[]; root: string }
 
 /** THE FORMULA, WRITTEN DOWN AS DATA, because leaving it implicit made a sibling look tampered-with and
  *  writing it as prose let it go stale without anything noticing.
@@ -43,7 +43,28 @@ export const PROTOCOL = {
   chained: false,
   receipt: 'toUuid(key + LF + claim + LF + value + LF + command)',
   merge: "toUuid(utf8(a + ':' + b))  — COLON U+003A",
-  address: 'RFC 9562 §5.8 uuidv8: sha256(seed) first 16 octets, version 8, variant 10x',
+  // NOT SHA-256. I wrote that line today, copying the shape of a sibling's spec without checking my own
+  // implementation, and it is false: src/0 hashes with FNV-1a, not SHA-2. erpax-94 then spent an audit
+  // trying 242 candidate SEEDS against row 0 — four field orders, eight separators, five wrappers,
+  // canonical and as-emitted JSON — and none could ever have matched, because the seed was already correct
+  // and the HASH was wrong. Their sha256 of my exact declared seed gives c2cc6344; my receipt begins
+  // f5c2a766. They localised it to "a different seed, not a different hash" and were right that we agreed
+  // on how bytes become an address; the disagreement was one layer below where either of us looked.
+  //
+  // This is precisely the defect the PROTOCOL constant exists to prevent — a spec another repo cannot
+  // reproduce — committed in the constant itself. It is also, for the second time today, the deposit
+  // describing a stronger property than it has: FNV-1a is a non-cryptographic hash, and naming SHA-256
+  // implies collision resistance these addresses do not carry.
+  address: 'uuidv8 shaped per RFC 9562 §5.8 (version nibble 8, variant 10x) over FNV-1a — NOT SHA-2: '
+    + 'four 32-bit FNV-1a passes over the UTF-16 code units at seeds 0, 0x9e3779b9, 0x243f6a88, 0xb7e15162, '
+    + 'each with an xor-shift-13 per byte and a two-round murmur finalizer (0x85ebca6b, 0xc2b2ae35), '
+    + 'concatenated big-endian to 16 octets. Non-cryptographic: integrity against accident, not against an '
+    + 'adversary.',
+  // ONE ROW, REPRODUCIBLE IN A SINGLE STEP. erpax-94's suggestion, taken: a reader computes this seed and
+  // compares with the receipt beside it. If the two disagree, the spec has drifted from the code that wrote
+  // the file — which `generatedFrom` cannot tell them, because that says the FILE is current, not that the
+  // SPEC is current with the emitter.
+  specWitness: 'see the specWitness field on the face itself: the verbatim seed of row 0 and its receipt',
   root: 'merkleFold: leaves sorted lexicographically, then pairwise merge up the tree; an odd element '
     + "carries up unchanged; zero rows fold to toUuid('empty-mind')",
   orderInvariant: true,

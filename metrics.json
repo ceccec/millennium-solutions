@@ -1,6 +1,10 @@
 {
   "repo": "millennium-solutions",
-  "generatedFrom": "9988927ab",
+  "generatedFrom": "0c7cf529a",
+  "specWitness": {
+    "seed": "theorems\ndeclarations closing by exhaustion — the deposit's definition of a theorem\n526\nnode -e \"import('./src/api/index.ts').then(m=>console.log(m.census().byDecide))\"",
+    "receipt": "f5c2a766-8e62-8dfc-951b-6ee6f0b021c1"
+  },
   "definition": "a declaration in src/proof that the Lean kernel accepts — sorry-free, axiom-free — and closes by exhaustion over a stated finite domain",
   "protocol": {
     "id": "millennium-solutions/metric-face/2",
@@ -13,7 +17,8 @@
     "chained": false,
     "receipt": "toUuid(key + LF + claim + LF + value + LF + command)",
     "merge": "toUuid(utf8(a + ':' + b))  — COLON U+003A",
-    "address": "RFC 9562 §5.8 uuidv8: sha256(seed) first 16 octets, version 8, variant 10x",
+    "address": "uuidv8 shaped per RFC 9562 §5.8 (version nibble 8, variant 10x) over FNV-1a — NOT SHA-2: four 32-bit FNV-1a passes over the UTF-16 code units at seeds 0, 0x9e3779b9, 0x243f6a88, 0xb7e15162, each with an xor-shift-13 per byte and a two-round murmur finalizer (0x85ebca6b, 0xc2b2ae35), concatenated big-endian to 16 octets. Non-cryptographic: integrity against accident, not against an adversary.",
+    "specWitness": "see the specWitness field on the face itself: the verbatim seed of row 0 and its receipt",
     "root": "merkleFold: leaves sorted lexicographically, then pairwise merge up the tree; an odd element carries up unchanged; zero rows fold to toUuid('empty-mind')",
     "orderInvariant": true
   },
