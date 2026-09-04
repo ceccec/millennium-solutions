@@ -20,9 +20,9 @@
     {
       "key": "theorems",
       "claim": "declarations closing by exhaustion — the deposit's definition of a theorem",
-      "value": "517",
+      "value": "519",
       "command": "node -e \"import('./src/api/index.ts').then(m=>console.log(m.census().byDecide))\"",
-      "receipt": "fc5ca6d6-09aa-8b37-b39c-d8496e6a2b9d"
+      "receipt": "152ca48f-508f-88a9-bb05-3536f3e554ad"
     },
     {
       "key": "rfl-declarations",
@@ -34,9 +34,9 @@
     {
       "key": "kernel-accepted",
       "claim": "declarations the Lean kernel accepts, sorry-free and axiom-free",
-      "value": "525",
+      "value": "527",
       "command": "node scripts/lean.ts",
-      "receipt": "3cbfcb65-a3d2-8adf-a184-11f0f0bb235b"
+      "receipt": "b6a917db-142c-897e-82d4-a08534fcc826"
     },
     {
       "key": "lean-files",
@@ -48,23 +48,23 @@
     {
       "key": "live-keys",
       "claim": "live ledger keys — ADDRESSES, not theorems; some theorems carry two",
-      "value": "542",
+      "value": "544",
       "command": "node -e \"import('./src/api/index.ts').then(m=>console.log(m.census().liveKeys))\"",
-      "receipt": "38073d65-06c8-8a51-bf3a-91237158768e"
+      "receipt": "98ccb0f6-0bb6-8596-9a69-3e4c172c5425"
     },
     {
       "key": "ledger-entries",
       "claim": "entries in the append-only ledger — RECEIPTS, most of them withdrawn",
-      "value": "2414",
+      "value": "2416",
       "command": "node scripts/forensics.ts",
-      "receipt": "0e8559c8-1a5f-8857-9aca-89ea1367dc0a"
+      "receipt": "1ab99135-7b66-8bd1-aecf-79aacf9b540a"
     },
     {
       "key": "census-closes",
       "claim": "liveKeys = sealed + keyed-twice + unresolvable, asserted not reconciled by a reader",
-      "value": "542 = 517 + 24 + 1",
+      "value": "544 = 519 + 24 + 1",
       "command": "node scripts/contradictions.ts",
-      "receipt": "3660d3bc-795a-8972-95a8-a5c4e8787c08"
+      "receipt": "73292230-27ea-8d48-ae28-417b3b5b970f"
     },
     {
       "key": "clay-proved",
@@ -111,9 +111,9 @@
     {
       "key": "typeset",
       "claim": "statements rendering as mathematics, each round-trip clean against its source",
-      "value": "525/525",
+      "value": "527/527",
       "command": "node scripts/latex-gate.ts",
-      "receipt": "378e3ddd-c56d-883b-a1fd-339a3aea7bb3"
+      "receipt": "4ccafd51-516e-8f1f-87a6-8994b9d54be8"
     },
     {
       "key": "coin-unlock",
@@ -165,5 +165,5 @@
       "receipt": "14c3168a-49d2-82b3-becf-5fb228c872ff"
     }
   ],
-  "root": "809cec3c-8d2f-81a5-a406-554bd1b5c8a4"
+  "root": "acfee3bc-5122-8c62-bdd4-eb6dd89f38d4"
 }

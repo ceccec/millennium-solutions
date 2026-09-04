@@ -5,11 +5,11 @@ title: The axiom index — what is not assumed, and what is
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **525** report the same thing:
+axiom fails the build rather than earning a footnote. All **527** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
-theorems rest on **227** definitions, and every one of them is a choice. A theorem about
+theorems rest on **229** definitions, and every one of them is a choice. A theorem about
 `fall` is a theorem about the digital root only because `fall` is *defined* to be it. Both halves are
 indexed below, and the second is the longer one.
 
@@ -90,7 +90,7 @@ The pins in the control fixture follow the community practice of guarding `#prin
 `#guard_msgs`, which turns the axiom footprint into an executable regression test: the assertion is
 checked by the elaborator, and drift fails the build with a mismatch instead of passing unnoticed.
 
-## What IS assumed: the 227 definitions
+## What IS assumed: the 229 definitions
 
 Each of these is a primitive of this deposit — not derived, not proved, chosen. They are listed in full
 because a reader checking a theorem must be able to read the definition it is about, and because a
@@ -263,7 +263,7 @@ def saving (value verify : Nat) : Nat := value - verify
 def addr4 (x : Nat) : Nat := x % 16
 ```
 
-### `light.lean` — 12 definition(s), 9 theorem(s)
+### `light.lean` — 14 definition(s), 11 theorem(s)
 
 ```lean
 def c : Nat := 299792458      -- m/s, exact
@@ -277,6 +277,8 @@ def defining : List Nat := [c, dNuCs, hDigits, eDigits, kDigits, naDigits, kcd]
 def travel (seconds : Nat) : Nat := c * seconds      -- metres crossed in a whole number of seconds
 def periods (seconds : Nat) : Nat := dNuCs * seconds -- caesium periods elapsed in the same interval
 def root (n : Nat) : Nat := if n == 0 then 9 else 1 + (n - 1) % 9
+def kcdDoubled : Nat := 1366     -- K_cd expressed against a unit half the size; the same luminous efficacy
+def alternative : List Nat := [c, dNuCs, hDigits, eDigits, kDigits, naDigits, kcdDoubled]
 def physicalClaims : Nat := 0
 ```
 
@@ -460,6 +462,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**525** declarations, **0** axiom dependencies, **227** definitions they rest on.
+**527** declarations, **0** axiom dependencies, **229** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them. `0/7`.

@@ -78,6 +78,23 @@ theorem the_seven_roots_miss_four_residues :
   (defining.map root).eraseDups.length = 5
   ∧ ([1, 2, 3, 4, 5, 6, 7, 8, 9].filter (fun d => ¬ (defining.map root).contains d)) = [2, 3, 5, 7] := by decide
 
+-- ── THE COINCIDENCE A READER WILL FIND, NAMED AND DEFUSED ──────────────────────────────────────────────
+-- The four residues the seven constants miss are 2, 3, 5 and 7 — exactly the primes below nine. Nobody
+-- reading the theorem above will fail to notice that, and a deposit that states an absence and says nothing
+-- further hands the reader the job of supplying its meaning. So it is stated here as an equality, and then
+-- shown to be an accident of the numerals: doubling ONE of the seven — a choice of unit, not a fact about
+-- anything — moves the missing set to {2,3,5,8}, which is not the primes. A pattern that a change of unit
+-- destroys was never a pattern about the quantities.
+def kcdDoubled : Nat := 1366     -- K_cd expressed against a unit half the size; the same luminous efficacy
+def alternative : List Nat := [c, dNuCs, hDigits, eDigits, kDigits, naDigits, kcdDoubled]
+
+theorem the_absent_residues_are_the_primes_below_nine :
+  ([1, 2, 3, 4, 5, 6, 7, 8, 9].filter (fun d => ¬ (defining.map root).contains d)) = [2, 3, 5, 7] := by decide
+
+theorem and_a_change_of_unit_destroys_it :
+  ([1, 2, 3, 4, 5, 6, 7, 8, 9].filter (fun d => ¬ (alternative.map root).contains d)) = [2, 3, 5, 8]
+  ∧ alternative.length = defining.length := by decide
+
 -- ── THE LIMIT: THE ROOT IS A PROPERTY OF THE NUMERAL, NOT OF LIGHT ──────────────────────────────────────
 -- If the digital root of c said something about light, it could not depend on the unit chosen to write c in.
 -- It does. Doubling the numeral moves the root; scaling by a power of ten does not. So the root tracks

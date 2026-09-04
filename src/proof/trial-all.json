@@ -14482,5 +14482,17 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "2f338a89-2ef5-8069-810c-fbd636bd938f"
+  },
+  {
+    "key": "lean_light_the_absent_residues_are_the_primes_below_nine",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "bab48524-45e9-81dd-b092-140f5f3a6cc6"
+  },
+  {
+    "key": "lean_light_and_a_change_of_unit_destroys_it",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4da66384-4dd4-8c9b-bca2-ccc0f6c07427"
   }
 ]

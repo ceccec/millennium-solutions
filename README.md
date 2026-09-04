@@ -11,12 +11,12 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 525 kernel-accepted declarations across 29 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `67f47a8e-d7c5-832b-ab5f-2c2c33d1f865`</sub>
-- 517 of those 525 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
-  <sub>SEALED · `1926f824-d635-8e53-8da2-3b7fe321b886`</sub>
-- 550 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `b4300e74-6357-86c3-b04b-b9e502ef1724`</sub>
+- The formal layer holds 527 kernel-accepted declarations across 29 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `312a1092-95ef-8c3a-8902-53e8a181b218`</sub>
+- 519 of those 527 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
+  <sub>SEALED · `4e9655e7-9625-8735-a548-13edc6730092`</sub>
+- 552 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `21cd6de8-dacb-8c0e-aa9f-ec37bf4e2a14`</sub>
 
 ## 2 · The ring
 
@@ -39,10 +39,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 2414 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `bbb9e698-9cc2-8f2f-932d-871dc7b8539c`</sub>
-- The count is 2414, which is 301 octaves and 6 over — the octave is a target the theorems earn, never a quota they are invented to fill.
-  <sub>SEALED · `5630b4dc-dd7d-8078-b47d-038f8389c90b`</sub>
+- The ledger records 2416 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `ffc53a49-11ce-8320-94a6-d21a2308bcb4`</sub>
+- The count is an exact multiple of eight — 2416 is 302 octaves with no remainder.
+  <sub>SEALED · `6db7e1ad-f4f4-86b8-b72d-a6c23c866ec3`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -90,7 +90,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-29 Lean files in 6 wings, 525 declarations of which 517 are theorems. The prose in this section is read out of the
+29 Lean files in 6 wings, 527 declarations of which 519 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -134,7 +134,7 @@ this page; there is nowhere else to keep the description in step.
 
 **The Millennium floor** — `index.lean`, 11 theorem(s). The Millennium floor — seven honest theorems, one per problem, COMPUTED from the sequence.
 
-**Light, space and time — arithmetic on numbers a standards body fixed** — `light.lean`, 9 theorem(s). Poids et Mesures, not results of this deposit: the metre from the speed of light (17th CGPM, 1983) and   the seven defining constants fixed exactly in the 2019 revision of the SI, effective 20 May 2019   (BIPM, https://www.bipm.org/en/measurement-units/si-defining-constants). Nothing here measures anything.
+**Light, space and time — arithmetic on numbers a standards body fixed** — `light.lean`, 11 theorem(s). Poids et Mesures, not results of this deposit: the metre from the speed of light (17th CGPM, 1983) and   the seven defining constants fixed exactly in the 2019 revision of the SI, effective 20 May 2019   (BIPM, https://www.bipm.org/en/measurement-units/si-defining-constants). Nothing here measures anything.
 
 **Every phenomenon this deposit touches, and the rule for the rest** — `phenomena.lean`, 5 theorem(s). Générale des Poids et Mesures (2019 revision, effective 20 May 2019); the electrochemical results are   Michael Faraday's laws of electrolysis, 1834, and the standard enthalpy of combustion of hydrogen.   Every physical result named here has an earlier author or a standards body, and none is this deposit's.
 
@@ -164,7 +164,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Rights** — `rights.lean`, 8 theorem(s). What this deposit claims under international law — and, in the same table, what it does not.
 
-6 of 525 declarations carry no comment of their own and are shown here as the gap they are, not
+6 of 527 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -173,14 +173,14 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 2,414 — 301 octaves and 6 over |
-| standing — carries its own proof | **542** |
+| ledger entries | 2,416 — 302 octaves exactly |
+| standing — carries its own proof | **544** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **115** |
 | withdrawn — nothing proves it | 1,757 |
-| proved in total | **657** of 2,414 |
-| standing keys → distinct theorems | 517 sealed, 24 of them keyed twice, 1 unresolvable |
-| Lean files · theorems | 29 · 517 theorems (closed by exhaustion) + 8 rfl declarations, all axiom-free |
-| proved `by decide` | 517 of 525 |
+| proved in total | **659** of 2,416 |
+| standing keys → distinct theorems | 519 sealed, 24 of them keyed twice, 1 unresolvable |
+| Lean files · theorems | 29 · 519 theorems (closed by exhaustion) + 8 rfl declarations, all axiom-free |
+| proved `by decide` | 519 of 527 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -219,4 +219,4 @@ whether the work restates someone earlier. [The paper](/paper) typesets every st
 
 ---
 
-*17 claims, all verified · 517 Lean theorems · 2414 ledger entries · trial root `0aadd17c-e2d9-875a-810e-aa41216c620f` · integrity, not truth · 0/7*
+*17 claims, all verified · 519 Lean theorems · 2416 ledger entries · trial root `2c85e43a-bb0b-8f50-9809-69a7f97e7155` · integrity, not truth · 0/7*

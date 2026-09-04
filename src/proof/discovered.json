@@ -17349,5 +17349,15 @@
     "key": "lean_phenomena_arithmetic_on_a_definition_returns_the_definition",
     "name": "lean phenomena.lean: arithmetic_on_a_definition_returns_the_definition — (299792458 % 9 = 1) ∧ explanations = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "2f338a89-2ef5-8069-810c-fbd636bd938f"
+  },
+  {
+    "key": "lean_light_the_absent_residues_are_the_primes_below_nine",
+    "name": "lean light.lean: the_absent_residues_are_the_primes_below_nine — ([1, 2, 3, 4, 5, 6, 7, 8, 9].filter (fun d => ¬ (defining.map root).contains d)) = [2, 3, 5, 7] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "bab48524-45e9-81dd-b092-140f5f3a6cc6"
+  },
+  {
+    "key": "lean_light_and_a_change_of_unit_destroys_it",
+    "name": "lean light.lean: and_a_change_of_unit_destroys_it — ([1, 2, 3, 4, 5, 6, 7, 8, 9].filter (fun d => ¬ (alternative.map root).contains d)) = [2, 3, 5, 8] ∧ alternative.length = defining.length — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "4da66384-4dd4-8c9b-bca2-ccc0f6c07427"
   }
 ]
