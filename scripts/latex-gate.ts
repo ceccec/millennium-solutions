@@ -69,6 +69,18 @@ for (const t of T) {
   // Digits inside an identifier are not numbers: LaTeX writes `H2O` as \mathrm{H2O}, and counting that 2
   // as a numeral made this check report 173 differences that were entirely its own. Name wrappers are
   // removed before the numerals are read, so both sides count literals only.
+  // WELL-FORMED, not merely present. The numeral comparison below would pass a mismatched or unclosed tag
+  // just as happily, and a browser handed broken MathML renders something other than the theorem. Tags must
+  // nest and close — checked here because a lot of this emitter was written today.
+  const stack: string[] = []
+  for (const tag of mml.matchAll(/<(\/?)([a-zA-Z]+)[^>]*?(\/?)>/g)) {
+    const [, close, name, self] = tag
+    if (self) continue
+    if (close) { if (stack.pop() !== name) { failures.push(`${t.name} (MathML: mismatched </${name}>)`); break } }
+    else stack.push(name)
+  }
+  if (stack.length) failures.push(`${t.name} (MathML: unclosed <${stack[stack.length - 1]}>)`)
+
   const texNums = (tex.replace(/\\(?:mathrm|operatorname|text)\{[^{}]*\}/g, '') .match(/\d+/g) ?? []).join(',')
   const mmlNums = [...mml.matchAll(/<mn>(\d+)<\/mn>/g)].map((m) => m[1]).join(',')
   if (texNums !== mmlNums) failures.push(`${t.name} (emitters disagree: LaTeX ${texNums} vs MathML ${mmlNums})`)
