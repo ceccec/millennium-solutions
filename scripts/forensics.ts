@@ -219,10 +219,27 @@ let sevenBad = 0
 for (const loc of LOCALE_ORDER) {
   const s = LOCALES[loc]
   const blob = [s.title, s.description, s.support, s.fallback.notice, s.fallback.cta, ...Object.values(s.nav)].join(' · ')
-  if (computes(blob).binary !== 1) { console.log('  ✗ DIMENSION ' + loc + ' drains the gate (overclaim hidden in a translation — legal trial): ' + (computes(blob).hit || '')); bad++; sevenBad++ }
+  // THE GATE CHECK THAT USED TO SIT HERE COULD NOT FAIL. It read `computes(blob).binary !== 1`, and
+  // computes() returns 1 for every string in every language — measured: an overclaim in English, German,
+  // Bulgarian and Russian all score 1, as does an honest sentence. It is not a lexicon. So the sweep
+  // certified nothing about translations while the line below claimed "no overclaim hides in any
+  // dimension", which is the same shape as the `provenHere = 0 := rfl` removed from index.lean today.
+  //
+  // No honest language-independent overclaim test exists for 250 characters of nav labels: requiring the
+  // 0/7 floor in UI chrome would be wrong (no locale carries it, and none should), and flagging the
+  // problem names catches "Millennium", which is the project's own title. So the unfalsifiable check is
+  // gone rather than replaced with a weaker one, and what remains is checked and stated exactly.
+  //
+  // WHAT IS CHECKED: no dimension may go dark. Every locale must define every key the English one does,
+  // and none of them empty — a blank string renders as a missing label, which is a dimension going dark
+  // by a different route than a missing key.
+  const blanks = Object.entries(s.nav).filter(([, v]) => !String(v).trim()).map(([k]) => k)
+  if (blanks.length || !String(s.title).trim() || !String(s.description).trim()) {
+    console.log('  ✗ DIMENSION ' + loc + ' has empty strings — a label that renders blank: ' + (blanks.join(' ') || 'title/description')); bad++; sevenBad++
+  }
   if (Object.keys(s.nav).sort().join(',') !== enNav) { console.log('  ✗ DIMENSION ' + loc + ' structural drift — nav shape differs from English (a dimension gone dark)'); bad++; sevenBad++ }
 }
-if (!sevenBad) console.log('  7-dimension sweep: all ' + LOCALE_ORDER.length + ' locales (' + LOCALE_ORDER.join(' ') + ') pass the gate and match the English shape — no overclaim hides in any dimension')
+if (!sevenBad) console.log('  7-dimension sweep: all ' + LOCALE_ORDER.length + ' locales (' + LOCALE_ORDER.join(' ') + ') carry the English nav shape with no empty labels — structural parity, which is what this checks; it does NOT certify what the translations say')
 
 // (6) tamper-evident seal — the fold of all receipts. Any single alteration changes this root.
 const seal = merkleFold(ledger.map((e) => e.receipt))
