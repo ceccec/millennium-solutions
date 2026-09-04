@@ -92,10 +92,19 @@ export const proofLine = (t: LeanTheorem): string =>
  *  how my metric-face protocol came to claim something the code did not do. Another repository computes the
  *  identical address by doing exactly this and nothing else:
  *
- *    1. strip every Unicode whitespace character
- *    2. lowercase
+ *    1. collapse runs of Unicode whitespace to one space
+ *    2. remove a space ONLY where it does not sit between two of [A-Za-z0-9_]
  *    3. replace `==` with `=` and `!=` with `≠`, so a Boolean decision and a proposition agree
  *    4. toUuid of the result — RFC 9562 §5.8 uuidv8 over sha256, as src/0 defines it
+ *
+ *  VERSION 1 STRIPPED ALL WHITESPACE AND LOWERCASED, AND BOTH WERE WRONG. uuidna-49 attacked the spec at my
+ *  request and measured it: in Lean, application is by juxtaposition, so the space in `List.range 7` IS an
+ *  operator and removing it yields `list.range7` — a different identifier. On this corpus 395 of 534
+ *  statements carry such a space and 333 carry an uppercase identifier that lowercasing destroyed;
+ *  `rawBytes A` became `rawbytesa`. No false merge resulted TODAY, so it was latent — but the normalised
+ *  form stopped being a parseable statement, so nobody could recompute an address from a re-parse, and a
+ *  future `rawBytesA` would have collided with `rawBytes A` permanently. Asking for the attack before
+ *  minting 338 DOIs is the only reason this cost nothing.
  *
  *  IT ADDRESSES TEXT, AND TEXT IS NOT A PROPOSITION. Both directions fail, and both were measured here:
  *
@@ -109,10 +118,17 @@ export const proofLine = (t: LeanTheorem): string =>
  *  So a collision is a CANDIDATE for review, never a verdict. Four of the six found here are genuine —
  *  one result under two names — and two are this limitation. The distinction needs a reader. */
 export const STATEMENT_ADDRESS_SPEC =
-  'statementAddress = toUuid(lowercase(strip-all-whitespace(statement)).replace("==","=").replace("!=","≠"))'
+  'statementAddress = toUuid(collapse-runs(statement) with whitespace removed only where it is NOT between '
+  + 'two of [A-Za-z0-9_], case preserved, then "=="→"=" and "!="→"≠")  [v2, amended by uuidna-49]'
 
 export const statementAddress = (statement: string): string =>
-  toUuid(statement.replace(/\s+/gu, '').toLowerCase().replace(/==/g, '=').replace(/!=/g, '≠'))
+  toUuid(statement
+    .replace(/\s+/gu, ' ')
+    // Remove a space only where it is not doing work. `\s(?![A-Za-z0-9_])` drops it before a symbol;
+    // `(?<![A-Za-z0-9_.])\s` drops it after one. A space between two alphanumerics survives, because in
+    // Lean that space IS the application operator.
+    .replace(/\s(?![A-Za-z0-9_])|(?<![A-Za-z0-9_.])\s/g, '')
+    .replace(/==/g, '=').replace(/!=/g, '≠'))
 
 /** THE STATEMENT AS A STANDALONE LaTeX DOCUMENT, so the deposited record is a readable publication and not
  *  only source. A reader who downloads one of these gets the Lean the kernel checked AND the mathematics
