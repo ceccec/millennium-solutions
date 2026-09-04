@@ -1,0 +1,36 @@
+{
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "title": "zero claims is not full attribution — a machine-checked theorem of the ℤ/9 vortex deposit",
+  "creators": [
+    {
+      "name": "Rouschev, Tsvetan",
+      "orcid": "0009-0000-7312-9778",
+      "affiliation": "PSG, Bulgaria"
+    }
+  ],
+  "description": "<p><strong>zero claims is not full attribution</strong>, declared in <code>src/proof/priorart.lean</code> and accepted by the Lean 4 kernel, sorry-free and axiom-free, closing by <code>by decide</code>.</p><p><strong>Statement (Lean):</strong></p><pre><code>(sources.filter novelty).length = 0 ∧ (sources.filter (fun s => kindOf s == 1)).length > 0</code></pre><p><strong>Statement (LaTeX):</strong></p><pre><code>\\left|\\{\\, x \\in \\mathrm{sources} \\mid \\mathrm{novelty}\\mathopen{}\\left(x\\right) \\,\\}\\right| = 0 \\land \\left|\\{\\, s \\in \\mathrm{sources} \\mid \\mathrm{kindOf}\\mathopen{}\\left(s\\right) = 1 \\,\\}\\right| > 0</code></pre><p><strong>What this record establishes.</strong> A dated, public, citable deposit of this declaration and its proof, recomputable from the source it names. That is priority. It is not a claim that the result is unknown to the literature: prior art for this file is recorded in <code>src/proof/priorart.lean</code> as <em>unclassified — no prior-art search has been performed, so no novelty is asserted</em>.</p><p><strong>Scope.</strong> The declaration is decided over a finite domain by exhaustion. It settles no Clay Millennium Problem and claims no quantum speedup. 0/7.</p>",
+  "keywords": [
+    "Lean 4",
+    "machine-checked proof",
+    "formal verification",
+    "Z/9",
+    "content-addressing",
+    "PriorArt"
+  ],
+  "license": "cc-by-nc-nd-4.0",
+  "access_right": "open",
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.21819217",
+      "relation": "isPartOf",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_zero_claims_is_not_full_attribution",
+      "relation": "isDocumentedBy",
+      "scheme": "url"
+    }
+  ],
+  "notes": "key lean_zero_claims_is_not_full_attribution · receipt 5f0e8ef4-93f3-8654-97fc-ed44acf531b8 · source file priorart.lean"
+}

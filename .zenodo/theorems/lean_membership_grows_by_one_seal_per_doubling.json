@@ -1,0 +1,36 @@
+{
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "title": "membership grows by one seal per doubling — a machine-checked theorem of the ℤ/9 vortex deposit",
+  "creators": [
+    {
+      "name": "Rouschev, Tsvetan",
+      "orcid": "0009-0000-7312-9778",
+      "affiliation": "PSG, Bulgaria"
+    }
+  ],
+  "description": "<p><strong>membership grows by one seal per doubling</strong>, declared in <code>src/proof/ledgerclaims.lean</code> and accepted by the Lean 4 kernel, sorry-free and axiom-free, closing by <code>by decide</code>.</p><p><strong>Statement (Lean):</strong></p><pre><code>rounds 40 2 = 1 ∧ rounds 40 4 = 2 ∧ rounds 40 8 = 3 ∧ rounds 40 16 = 4 ∧ rounds 40 32 = 5 ∧ rounds 40 64 = 6 ∧ rounds 40 128 = 7 ∧ rounds 40 256 = 8</code></pre><p><strong>Statement (LaTeX):</strong></p><pre><code>\\mathrm{rounds}\\mathopen{}\\left(40,\\,2\\right) = 1 \\land \\mathrm{rounds}\\mathopen{}\\left(40,\\,4\\right) = 2 \\land \\mathrm{rounds}\\mathopen{}\\left(40,\\,8\\right) = 3 \\land \\mathrm{rounds}\\mathopen{}\\left(40,\\,16\\right) = 4 \\land \\mathrm{rounds}\\mathopen{}\\left(40,\\,32\\right) = 5 \\land \\mathrm{rounds}\\mathopen{}\\left(40,\\,64\\right) = 6 \\land \\mathrm{rounds}\\mathopen{}\\left(40,\\,128\\right) = 7 \\land \\mathrm{rounds}\\mathopen{}\\left(40,\\,256\\right) = 8</code></pre><p><strong>What this record establishes.</strong> A dated, public, citable deposit of this declaration and its proof, recomputable from the source it names. That is priority. It is not a claim that the result is unknown to the literature: prior art for this file is recorded in <code>src/proof/priorart.lean</code> as <em>unclassified — no prior-art search has been performed, so no novelty is asserted</em>.</p><p><strong>Scope.</strong> The declaration is decided over a finite domain by exhaustion. It settles no Clay Millennium Problem and claims no quantum speedup. 0/7.</p>",
+  "keywords": [
+    "Lean 4",
+    "machine-checked proof",
+    "formal verification",
+    "Z/9",
+    "content-addressing",
+    "LedgerClaims"
+  ],
+  "license": "cc-by-nc-nd-4.0",
+  "access_right": "open",
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.21819217",
+      "relation": "isPartOf",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_membership_grows_by_one_seal_per_doubling",
+      "relation": "isDocumentedBy",
+      "scheme": "url"
+    }
+  ],
+  "notes": "key lean_membership_grows_by_one_seal_per_doubling · receipt f17f9fe9-71c7-8040-b350-762b4d603e79 · source file ledgerclaims.lean"
+}

@@ -98,7 +98,9 @@
     "ci:local": "node scripts/ci-local.ts",
     "metrics": "node scripts/metrics.ts",
     "metrics:verify": "node scripts/metrics.ts --verify",
-    "quantum-field": "node scripts/quantum-field.ts"
+    "quantum-field": "node scripts/quantum-field.ts",
+    "zenodo": "node scripts/zenodo-gate.ts",
+    "zenodo:write": "node scripts/zenodo-theorems.ts --write"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",

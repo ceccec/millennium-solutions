@@ -1,0 +1,36 @@
+{
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "title": "generation is deterministic — a machine-checked theorem of the ℤ/9 vortex deposit",
+  "creators": [
+    {
+      "name": "Rouschev, Tsvetan",
+      "orcid": "0009-0000-7312-9778",
+      "affiliation": "PSG, Bulgaria"
+    }
+  ],
+  "description": "<p><strong>generation is deterministic</strong>, declared in <code>src/proof/mechanical.lean</code> and accepted by the Lean 4 kernel, sorry-free and axiom-free, closing by <code>by decide</code>.</p><p><strong>Statement (Lean):</strong></p><pre><code>Address.toUuidBytes [115, 101, 101, 100] == Address.toUuidBytes [115, 101, 101, 100] && Address.toUuidBytes [97] != Address.toUuidBytes [98]</code></pre><p><strong>Statement (LaTeX):</strong></p><pre><code>\\mathrm{Address.toUuidBytes}\\mathopen{}\\left([115,\\,101,\\,101,\\,100]\\right) = \\mathrm{Address.toUuidBytes}\\mathopen{}\\left([115,\\,101,\\,101,\\,100]\\right) \\land \\mathrm{Address.toUuidBytes}\\mathopen{}\\left([97]\\right) \\neq \\mathrm{Address.toUuidBytes}\\mathopen{}\\left([98]\\right)</code></pre><p><strong>What this record establishes.</strong> A dated, public, citable deposit of this declaration and its proof, recomputable from the source it names. That is priority. It is not a claim that the result is unknown to the literature: prior art for this file is recorded in <code>src/proof/priorart.lean</code> as <em>unclassified — no prior-art search has been performed, so no novelty is asserted</em>.</p><p><strong>Scope.</strong> The declaration is decided over a finite domain by exhaustion. It settles no Clay Millennium Problem and claims no quantum speedup. 0/7.</p>",
+  "keywords": [
+    "Lean 4",
+    "machine-checked proof",
+    "formal verification",
+    "Z/9",
+    "content-addressing",
+    "Mechanical"
+  ],
+  "license": "cc-by-nc-nd-4.0",
+  "access_right": "open",
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.21819217",
+      "relation": "isPartOf",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_generation_is_deterministic",
+      "relation": "isDocumentedBy",
+      "scheme": "url"
+    }
+  ],
+  "notes": "key lean_generation_is_deterministic · receipt 9b0f8d4b-20e0-811d-ac73-585d809f4186 · source file mechanical.lean"
+}

@@ -1,0 +1,36 @@
+{
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "title": "power sum closed forms — a machine-checked theorem of the ℤ/9 vortex deposit",
+  "creators": [
+    {
+      "name": "Rouschev, Tsvetan",
+      "orcid": "0009-0000-7312-9778",
+      "affiliation": "PSG, Bulgaria"
+    }
+  ],
+  "description": "<p><strong>power sum closed forms</strong>, declared in <code>src/proof/generated.lean</code> and accepted by the Lean 4 kernel, sorry-free and axiom-free, closing by <code>by decide</code>.</p><p><strong>Statement (Lean):</strong></p><pre><code>(List.range' 1 30).all (fun n => (((List.range' 1 n).foldl (· + ·) 0) * 2 == n * (n + 1)) ∧ (((List.range' 1 n).map (fun i => i * i)).foldl (· + ·) 0) * 6 == n * (n + 1) * (2 * n + 1))</code></pre><p><strong>Statement (LaTeX):</strong></p><pre><code>\\forall n \\in \\{1,\\dots,30\\},\\; \\sum \\{1,\\dots,1+n-1\\} \\cdot 2 = n \\cdot n + 1 \\land \\sum \\{\\, i \\cdot i \\mid i \\in \\{1,\\dots,1+n-1\\} \\,\\} \\cdot 6 = n \\cdot n + 1 \\cdot 2 \\cdot n + 1</code></pre><p><strong>What this record establishes.</strong> A dated, public, citable deposit of this declaration and its proof, recomputable from the source it names. That is priority. It is not a claim that the result is unknown to the literature: prior art for this file is recorded in <code>src/proof/priorart.lean</code> as <em>unclassified — no prior-art search has been performed, so no novelty is asserted</em>.</p><p><strong>Scope.</strong> The declaration is decided over a finite domain by exhaustion. It settles no Clay Millennium Problem and claims no quantum speedup. 0/7.</p>",
+  "keywords": [
+    "Lean 4",
+    "machine-checked proof",
+    "formal verification",
+    "Z/9",
+    "content-addressing",
+    "Generated"
+  ],
+  "license": "cc-by-nc-nd-4.0",
+  "access_right": "open",
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.21819217",
+      "relation": "isPartOf",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "https://ceccec.github.io/millennium-solutions/theorem/lean_power_sum_closed_forms",
+      "relation": "isDocumentedBy",
+      "scheme": "url"
+    }
+  ],
+  "notes": "key lean_power_sum_closed_forms · receipt a02baaa3-d227-8269-92c9-d7a098ce9261 · source file generated.lean"
+}
