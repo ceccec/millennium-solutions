@@ -1,6 +1,7 @@
 -- title: The two-sided coin
 -- wing: the ring
 -- prior_art: unclassified
+-- prior_art_own: one involution on ten digits, this deposit's own reading
 -- One involution on ten digits, two sides, one fixed point, and one digit that leaves.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --

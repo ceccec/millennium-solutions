@@ -3,6 +3,7 @@ set_option maxRecDepth 8000000
 -- title: What enumeration proposed and the kernel kept
 -- wing: the imagined
 -- prior_art: unclassified
+-- prior_art_own: enumerated by this deposit's own imagine pass
 -- IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets
 -- statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that
 -- also holds for all its siblings. A property true of everything names nothing. What is left is what the

@@ -1,6 +1,7 @@
 -- title: Order-invariance
 -- wing: the floor
 -- prior_art: unclassified
+-- prior_art_own: order-invariance of this deposit's receipt
 -- The quantum receipt — order invariance, proved rather than asserted.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --

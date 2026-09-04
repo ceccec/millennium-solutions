@@ -3,6 +3,7 @@ set_option maxRecDepth 8000000
 -- title: What the ledger claims
 -- wing: the address
 -- prior_art: unclassified
+-- prior_art_own: claims about this deposit's own ledger
 -- Three claims the prose made in words and cited to entries that no longer stand. Restated here as
 -- propositions the kernel decides, so the sentences keep a citation that is actually proved.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0

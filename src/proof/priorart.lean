@@ -1,6 +1,7 @@
 -- title: Prior art, and what novelty is claimed
 -- wing: the record
 -- prior_art: unclassified
+-- prior_art_own: this file, about this deposit's own claim
 -- What this deposit claims as its own, what it restates from named prior art, and the boundary between them.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --
@@ -51,33 +52,33 @@ def novelty (s : Source) : Bool := s.2.2
 
 -- One row per .lean file, in the order scripts/priorart.ts reads them.
 def sources : List Source :=
-  [ (1,  0, false)   -- address.lean      — builds on FNV-1a and the Merkle fold, both prior art
+  [ (1,  0, false)   -- address.lean      — composes FNV-1a (Fowler, Noll, Vo, 1991) with the Merkle hash tree (Merkle, 1979)
   , (2,  1, false)   -- coin.lean         — one involution on ten digits, this deposit's own reading
-  , (3,  0, false)   -- demand.lean       — the named results the search data asks for
-  , (4,  0, false)   -- demand2.lean      — the same, second tier
-  , (5,  0, false)   -- demand3.lean      — "the named theorems people ask for", by its own title
-  , (6,  0, false)   -- energy.lean       — the physical chemistry of electrolysis and combustion
-  , (7,  0, false)   -- families.lean     — quantifies the ℤ/9 arithmetic, which is classical
-  , (8,  0, false)   -- fnv.lean          — FNV-1a, Fowler, Noll, Vo, 1991
+  , (3,  0, false)   -- demand.lean       — the named results the search data asks for — Bézout’s identity (Étienne Bézout, 1779; Bachet, 1624), the Chinese remainder theorem (Sunzi, c. 3rd–5th century), and others named in their theorems
+  , (4,  0, false)   -- demand2.lean      — Wilson’s theorem — John Wilson; first proved by Joseph-Louis Lagrange, 1771; the Catalan conjecture on consecutive perfect powers — Eugène Catalan, 1844; proved by Preda Mihăilescu, 2002
+  , (5,  0, false)   -- demand3.lean      — Legendre’s three-square theorem — Adrien-Marie Legendre, 1797; Carmichael numbers — Robert Carmichael, 1910; amicable pairs — known to antiquity
+  , (6,  0, false)   -- energy.lean       — the laws of electrolysis — Michael Faraday, 1834; the enthalpy of combustion of hydrogen, standard physical chemistry
+  , (7,  0, false)   -- families.lean     — quantifies the ℤ/9 arithmetic above; the underlying results are Fermat’s, Euler’s and Gauss’s
+  , (8,  0, false)   -- fnv.lean          — FNV-1a — Glenn Fowler, Landon Curt Noll and Phong Vo, 1991
   , (9,  1, false)   -- generated.lean    — this deposit's own generator over its own ring
-  , (10,  1, false)   -- imagined.lean     — enumerated by this deposit's own imagine pass
+  , (10, 1, false)   -- imagined.lean     — enumerated by this deposit's own imagine pass
   , (11, 1, false)   -- index.lean        — the Millennium floor, computed from this sequence
-  , (12,  0, false)   -- involution.lean   — orbit decomposition of an order-two permutation, classical
+  , (12, 0, false)   -- involution.lean   — that a permutation of order two decomposes a finite set into fixed points and transpositions, and that the number of fixed points therefore matches the parity of the set, is classical and long predates this deposit. It is the orbit-counting argument in any first course. What is this deposit's own here is the EXHAUSTIVE decision over ℤ/9 and the measured refusal below.
   , (13, 1, false)   -- ledgerclaims.lean — claims about this deposit's own ledger
   , (14, 1, false)   -- mechanical.lean   — translated from this deposit's own tests
   , (15, 1, false)   -- merkaba.lean      — the merkaba as THIS deposit constructs it
-  , (16, 0, false)   -- merkle.lean       — Merkle trees, Merkle, 1979
-  , (17, 0, false)   -- nim.lean          — Bouton 1901; Sprague 1935, Grundy 1939
+  , (16, 0, false)   -- merkle.lean       — the hash tree — Ralph Merkle, 1979 (thesis); CRYPTO 1987
+  , (17, 0, false)   -- nim.lean          — Nim — Charles L. Bouton, 1901; the Sprague–Grundy theorem — Roland Sprague, 1935 and Patrick M. Grundy, 1939
   , (18, 1, false)   -- priorart.lean     — this file, about this deposit's own claim
   , (19, 1, false)   -- quantum.lean      — order-invariance of this deposit's receipt
-  , (20, 0, false)   -- reversal.lean     — digit reversal and digit sums, elementary arithmetic
+  , (20, 0, false)   -- reversal.lean     — digit reversal and digit sums; casting out nines, in use by the 12th century
   , (21, 1, false)   -- rights.lean       — this deposit's own rights table
-  , (22, 0, false)   -- sequences.lean    — Cassini, Lucas, Brahmagupta–Fibonacci, Pascal mod two
+  , (22, 0, false)   -- sequences.lean    — Cassini’s identity — G. D. Cassini, 1680; Lucas sequences — Édouard Lucas, 1878; the Brahmagupta–Fibonacci identity — Brahmagupta, 628; Pascal’s triangle mod 2 — Blaise Pascal, 1654
   , (23, 1, false)   -- speed.lean        — this deposit's own verification cost
   , (24, 1, false)   -- split.lean        — the digit grouping 0|12|3|45|6|78|9 as this deposit reads it
   , (25, 1, false)   -- theorems.lean     — the universal property, computed from this sequence
-  , (26, 0, false)   -- z9.lean           — the arithmetic of ℤ/9: Euler, Fermat, primitive roots
-  , (27, 0, false)   -- z9plus.lean       — digital roots, primitive roots, Pisano periods
+  , (26, 0, false)   -- z9.lean           — Fermat’s little theorem — Pierre de Fermat, 1640; Euler’s theorem — Leonhard Euler, 1763; primitive roots — Carl Friedrich Gauss, 1801
+  , (27, 0, false)   -- z9plus.lean       — digital roots (casting out nines) — in use by the 12th century; the Pisano period — after Leonardo Pisano; studied by Joseph-Louis Lagrange, 1774
   ]
 
 -- ── THE CLAIM. Only a source that names a completed search may claim, and none does ─────────────────────

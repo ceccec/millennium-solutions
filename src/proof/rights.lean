@@ -1,6 +1,7 @@
 -- title: Rights
 -- wing: the record
 -- prior_art: unclassified
+-- prior_art_own: this deposit's own rights table
 -- What this deposit claims under international law — and, in the same table, what it does not.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --

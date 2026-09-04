@@ -3,6 +3,7 @@ set_option maxRecDepth 8000000
 -- title: The merkaba
 -- wing: the ring
 -- prior_art: unclassified
+-- prior_art_own: the merkaba as THIS deposit constructs it
 -- prior_art_theorem: the_cube_and_the_tetrahedron_count_out — Euler's polyhedron formula V − E + F = 2
 --   (Leonhard Euler, 1758). The file as a whole is this deposit's own construction, and this ONE
 --   declaration restates a named classical result: its third conjunct 4 + 4 - 6 = 2 IS the Euler

@@ -1,6 +1,7 @@
 -- title: Theorems
 -- wing: the machine
 -- prior_art: unclassified
+-- prior_art_own: the universal property, computed from this sequence
 -- The universal property — honestly, and COMPUTED from the sequence.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --

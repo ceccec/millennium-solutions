@@ -104,7 +104,9 @@
     "zenodo:mint": "node scripts/zenodo-mint.ts",
     "axiom-index": "node scripts/axiom-index.ts",
     "all": "node scripts/all.ts",
-    "docs-gate": "node scripts/docs-gate.ts"
+    "docs-gate": "node scripts/docs-gate.ts",
+    "priorart:gen": "node scripts/priorart-gen.ts",
+    "priorart-check": "node scripts/priorart-gen.ts --check"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",

@@ -4,6 +4,7 @@ set_option maxHeartbeats 4000000
 -- title: Why verification is fast, and what it is not
 -- wing: the floor
 -- prior_art: unclassified
+-- prior_art_own: this deposit's own verification cost
 --
 -- The deposit's speed claim, accounted — and the reading it does not support.
 --

@@ -22,6 +22,27 @@ import { readFileSync } from 'node:fs'
 import { domainOf, leanSource, type LeanTheorem } from '../api/index.ts'
 import { toLatex } from '../latex/index.ts'
 
+/** THE FUNDING STATEMENT, read from .github/FUNDING.yml so the repository declares it in one place.
+ *
+ *  Zenodo's `grants` field accepts only awards registered with OpenAIRE, and its custom-award lookup is
+ *  powered by ROR — a funder must exist in one of those registries to be named. This work has no
+ *  institutional grant and no registered funder, so NO `grants` entry is emitted. Inventing one, or
+ *  attaching an unrelated funder DOI to make the record look institutionally backed, would be a false
+ *  statement in permanent metadata about who paid for the work.
+ *
+ *  What is true is stated instead, in the record's own text: independent, unfunded by any grant, supported
+ *  by direct contribution. That is a funding statement a reader can act on, and it costs nothing to be
+ *  accurate about. */
+export const FUNDING = (() => {
+  try {
+    const y = readFileSync('.github/FUNDING.yml', 'utf8')
+    const url = (y.match(/https?:\/\/[^\s"'\]]+/) ?? [])[0] ?? ''
+    return { url, statement: 'Independent research. No institutional grant and no funder registered with '
+      + 'OpenAIRE or ROR, so no award is claimed in this record'
+      + (url ? `. Development is supported by direct contribution: ${url}` : '.') }
+  } catch { return { url: '', statement: 'Independent research; no grant funding is claimed in this record.' } }
+})()
+
 export const SITE = 'https://ceccec.github.io/millennium-solutions'
 export const REPO = 'https://github.com/ceccec/millennium-solutions'
 /** READ FROM CITATION.cff, not typed. It was written out in two modules — this one and
@@ -75,6 +96,7 @@ export const publicationHtml = (t: LeanTheorem, opts: { novelty: string; files: 
   + `<code>npm run lean</code>.`
   + (opts.key ? ` The content-address of this declaration is recorded as <code>${opts.key}</code> at <a href="${SITE}/theorem/${opts.key}">${SITE}/theorem/${opts.key}</a>.` : '')
   + ` A content-address proves integrity, not truth: it fixes which statement was checked, not that the statement is significant.</p>`
+  + `<p><strong>Funding.</strong> ${FUNDING.statement}</p>`
   + `<p><strong>Scope, stated as plainly as the claim.</strong> The declaration is decided over a finite domain. `
   + `It settles no Clay Millennium Problem, asserts no quantum speedup, and describes no physical system. `
   + `<strong>0/7.</strong></p>`

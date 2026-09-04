@@ -1,6 +1,7 @@
 -- title: The digit split
 -- wing: the ring
 -- prior_art: unclassified
+-- prior_art_own: the digit grouping 0|12|3|45|6|78|9 as this deposit reads it
 -- The ten digits read in order and grouped 0 | 12 | 3 | 45 | 6 | 78 | 9 — and what that grouping is.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --

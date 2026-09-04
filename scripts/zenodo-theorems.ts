@@ -18,7 +18,7 @@
 // that is the author's call to make, not a build step's.
 import { writeFileSync, mkdirSync, rmSync, readFileSync, existsSync } from 'node:fs'
 import { leanTheorems, leanSource, ledger, theoremOfKey, type LeanTheorem } from '../src/api/index.ts'
-import { publicationHtml, NOVELTY, kinds, ownFiles, closureOf, creditedIn, SITE, REPO, CONCEPT_DOI } from '../src/publication/index.ts'
+import { publicationHtml, NOVELTY, kinds, ownFiles, closureOf, creditedIn, SITE, REPO, CONCEPT_DOI, FUNDING } from '../src/publication/index.ts'
 import { execSync } from 'node:child_process'
 import { toUuid } from '../src/0/index.ts'
 
@@ -135,6 +135,8 @@ export const deposition = (t: LeanTheorem) => {
     license: base.license,
     access_right: base.access_right,
     language: 'eng',
+    // No `grants` key: see FUNDING in src/publication — an unregistered funder cannot be named truthfully.
+    notes_funding: FUNDING.statement,
     version: VERSION,
     // ── THE GRAPH BETWEEN RECORDS ─────────────────────────────────────────────────────────────────────
     // Zenodo indexes related_identifiers and hands them to DataCite, so relations between records are what

@@ -5046,7 +5046,7 @@ two cannot drift: a file that changes its declaration and not this table fails t
 
 <p class="paper-h">Definitions</p>
 
-<pre class="thm-statement paper-defs"><code>sources := [ (1,  0, false)   -- address.lean      — builds on FNV-1a and the Merkle fold, both prior art
+<pre class="thm-statement paper-defs"><code>sources := [ (1,  0, false)   -- address.lean      — composes FNV-1a (Fowler, Noll, Vo, 1991) with the Merkle hash tree (Merkle, 1979)
 noveltyEstablished := 0</code></pre>
 
 <div class="thm" id="thm-priorart-novelty_is_claimed_only_where_a_search_was_performed">
