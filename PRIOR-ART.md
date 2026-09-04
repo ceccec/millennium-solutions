@@ -6,7 +6,7 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 503 machine-checked declarations, **167** restate work that already has an author and
+Of 511 machine-checked declarations, **175** restate work that already has an author and
 **336** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/proof/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
@@ -27,7 +27,7 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **167** |
+| attributed to named earlier work | **175** |
 | unclassified — no search performed, status unknown | **336** |
 | claimed as novel | **0** |
 
@@ -47,7 +47,7 @@ searched, where, and when. An earlier version of this page claimed novelty for 1
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 13 sources, 167 theorems
+## Restated from named earlier work — 14 sources, 175 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
@@ -60,6 +60,7 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>energy.lean</code></td><td>18</td><td>electrochemistry and combustion</td><td>the laws of electrolysis — Michael Faraday, 1834; the enthalpy of combustion of hydrogen, standard physical chemistry</td></tr>
 <tr><td><code>families.lean</code></td><td>12</td><td>modular arithmetic, quantified</td><td>quantifies the ℤ/9 arithmetic above; the underlying results are Fermat’s, Euler’s and Gauss’s</td></tr>
 <tr><td><code>fnv.lean</code></td><td>13</td><td>non-cryptographic hashing</td><td>FNV-1a — Glenn Fowler, Landon Curt Noll and Phong Vo, 1991</td></tr>
+<tr><td><code>involution.lean</code></td><td>8</td><td>elementary group theory — orbit decomposition of an order-two permutation</td><td>that a permutation of order two decomposes a finite set into fixed points and</td></tr>
 <tr><td><code>merkle.lean</code></td><td>9</td><td>hash trees and membership proofs</td><td>the hash tree — Ralph Merkle, 1979 (thesis); CRYPTO 1987</td></tr>
 <tr><td><code>nim.lean</code></td><td>8</td><td>combinatorial game theory</td><td>Nim — Charles L. Bouton, 1901; the Sprague–Grundy theorem — Roland Sprague, 1935 and Patrick M. Grundy, 1939</td></tr>
 <tr><td><code>reversal.lean</code></td><td>9</td><td>elementary arithmetic</td><td>digit reversal and digit sums; casting out nines, in use by the 12th century</td></tr>
@@ -74,6 +75,7 @@ which is a contribution of verification, not of discovery.
 - **content addressing** — 14 theorems, in `address.lean`
 - **electrochemistry and combustion** — 18 theorems, in `energy.lean`
 - **elementary arithmetic** — 9 theorems, in `reversal.lean`
+- **elementary group theory — orbit decomposition of an order-two permutation** — 8 theorems, in `involution.lean`
 - **elementary number theory** — 8 theorems, in `demand.lean`
 - **elementary number theory, named results** — 7 theorems, in `demand3.lean`
 - **elementary number theory, second tier** — 8 theorems, in `demand2.lean`
@@ -126,5 +128,5 @@ priority claim above, and it is the whole of it.
 
 ---
 
-Partition seal `736397fd-4163-8b87-a486-921b32a4868d` · recompute with `node scripts/priorart.ts` · the kernel re-decides
+Partition seal `6a4be33e-7013-82e7-b0db-a8a1a907888b` · recompute with `node scripts/priorart.ts` · the kernel re-decides
 `priorart.lean` on every run. A content-address proves integrity, not truth. `entails → 0/7`.

@@ -62,21 +62,22 @@ def sources : List Source :=
   , (9,  1, false)   -- generated.lean    — this deposit's own generator over its own ring
   , (10,  1, false)   -- imagined.lean     — enumerated by this deposit's own imagine pass
   , (11, 1, false)   -- index.lean        — the Millennium floor, computed from this sequence
-  , (12, 1, false)   -- ledgerclaims.lean — claims about this deposit's own ledger
-  , (13, 1, false)   -- mechanical.lean   — translated from this deposit's own tests
-  , (14, 1, false)   -- merkaba.lean      — the merkaba as THIS deposit constructs it
-  , (15, 0, false)   -- merkle.lean       — Merkle trees, Merkle, 1979
-  , (16, 0, false)   -- nim.lean          — Bouton 1901; Sprague 1935, Grundy 1939
-  , (17, 1, false)   -- priorart.lean     — this file, about this deposit's own claim
-  , (18, 1, false)   -- quantum.lean      — order-invariance of this deposit's receipt
-  , (19, 0, false)   -- reversal.lean     — digit reversal and digit sums, elementary arithmetic
-  , (20, 1, false)   -- rights.lean       — this deposit's own rights table
-  , (21, 0, false)   -- sequences.lean    — Cassini, Lucas, Brahmagupta–Fibonacci, Pascal mod two
-  , (22, 1, false)   -- speed.lean        — this deposit's own verification cost
-  , (23, 1, false)   -- split.lean        — the digit grouping 0|12|3|45|6|78|9 as this deposit reads it
-  , (24, 1, false)   -- theorems.lean     — the universal property, computed from this sequence
-  , (25, 0, false)   -- z9.lean           — the arithmetic of ℤ/9: Euler, Fermat, primitive roots
-  , (26, 0, false)   -- z9plus.lean       — digital roots, primitive roots, Pisano periods
+  , (12,  0, false)   -- involution.lean   — orbit decomposition of an order-two permutation, classical
+  , (13, 1, false)   -- ledgerclaims.lean — claims about this deposit's own ledger
+  , (14, 1, false)   -- mechanical.lean   — translated from this deposit's own tests
+  , (15, 1, false)   -- merkaba.lean      — the merkaba as THIS deposit constructs it
+  , (16, 0, false)   -- merkle.lean       — Merkle trees, Merkle, 1979
+  , (17, 0, false)   -- nim.lean          — Bouton 1901; Sprague 1935, Grundy 1939
+  , (18, 1, false)   -- priorart.lean     — this file, about this deposit's own claim
+  , (19, 1, false)   -- quantum.lean      — order-invariance of this deposit's receipt
+  , (20, 0, false)   -- reversal.lean     — digit reversal and digit sums, elementary arithmetic
+  , (21, 1, false)   -- rights.lean       — this deposit's own rights table
+  , (22, 0, false)   -- sequences.lean    — Cassini, Lucas, Brahmagupta–Fibonacci, Pascal mod two
+  , (23, 1, false)   -- speed.lean        — this deposit's own verification cost
+  , (24, 1, false)   -- split.lean        — the digit grouping 0|12|3|45|6|78|9 as this deposit reads it
+  , (25, 1, false)   -- theorems.lean     — the universal property, computed from this sequence
+  , (26, 0, false)   -- z9.lean           — the arithmetic of ℤ/9: Euler, Fermat, primitive roots
+  , (27, 0, false)   -- z9plus.lean       — digital roots, primitive roots, Pisano periods
   ]
 
 -- ── THE CLAIM. Only a source that names a completed search may claim, and none does ─────────────────────

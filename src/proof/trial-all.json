@@ -14350,5 +14350,53 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "7ed40397-4820-8e9e-be9d-4b8827861958"
+  },
+  {
+    "key": "lean_involution_there_are_2620_involutions_of_nine",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "62c23be4-3c4e-844c-b8e4-7a803f55ab3a"
+  },
+  {
+    "key": "lean_involution_the_fuel_was_not_the_limit",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6d2ebc60-b5a6-87ab-9a59-ce8def3e8804"
+  },
+  {
+    "key": "lean_involution_every_involution_fixes_at_least_one_point",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b793c9a6-04ad-8799-af6c-95ee62d317e8"
+  },
+  {
+    "key": "lean_involution_the_fixed_points_are_always_odd",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "bade9095-806a-89cb-bbca-dc6b89b73cc7"
+  },
+  {
+    "key": "lean_involution_no_single_point_is_fixed_by_all",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "33ae65ac-2b00-8b33-a81d-48dd6a910f01"
+  },
+  {
+    "key": "lean_involution_the_constant_sum_is_rare",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "08ae4f57-abb2-8e06-b571-8d87584836df"
+  },
+  {
+    "key": "lean_involution_so_involutions_are_not_all_harmonic_in_that_sense",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1b69f98b-1867-8a62-ae2f-58f7aabe2a5e"
+  },
+  {
+    "key": "lean_involution_the_coins_reflection_is_harmonic_and_is_one_of_the_ninety",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "813ea66f-9b19-8243-a52d-f11d0157c771"
   }
 ]

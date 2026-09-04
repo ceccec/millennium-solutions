@@ -11,12 +11,12 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 503 kernel-accepted declarations across 26 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `c3f4e25d-dbc7-856b-a2ec-58cf60278728`</sub>
-- 495 of those 503 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
-  <sub>SEALED · `7ba9af9f-a3c7-8342-bda2-aa7e2b47029c`</sub>
-- 528 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `9119b1df-aa0f-8173-972a-2471d5fb1fb7`</sub>
+- The formal layer holds 511 kernel-accepted declarations across 27 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `2dd9d3e0-9c78-8e09-9e07-93b5a8ad3694`</sub>
+- 503 of those 511 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
+  <sub>SEALED · `1100eef4-f4da-8632-aa15-7b1e4c139cbc`</sub>
+- 536 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `a9777fc0-3e43-8d6f-89a5-4d424a18c584`</sub>
 
 ## 2 · The ring
 
@@ -39,10 +39,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 2392 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `094ffe19-f88c-841c-8662-c6965069656b`</sub>
-- The count is an exact multiple of eight — 2392 is 299 octaves with no remainder.
-  <sub>SEALED · `cec698c3-1ea0-8689-990e-caf909b78e06`</sub>
+- The ledger records 2400 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `3743afdc-0e35-8da3-879c-ba53b634b8ba`</sub>
+- The count is an exact multiple of eight — 2400 is 300 octaves with no remainder.
+  <sub>SEALED · `cb005903-ffad-83da-81a7-aeed3f34cb2f`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -90,7 +90,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-26 Lean files in 6 wings, 503 declarations of which 495 are theorems. The prose in this section is read out of the
+27 Lean files in 6 wings, 511 declarations of which 503 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -109,6 +109,8 @@ this page; there is nowhere else to keep the description in step.
 **The two-sided coin** — `coin.lean`, 12 theorem(s). One involution on ten digits, two sides, one fixed point, and one digit that leaves.
 
 **Families over the ring** — `families.lean`, 12 theorem(s). The families, quantified. Proving at scale.
+
+**What every involution gives, and what it does not** — `involution.lean`, 8 theorem(s). transpositions, and that the number of fixed points therefore matches the parity of the set, is   classical and long predates this deposit. It is the orbit-counting argument in any first course.   What is this deposit's own here is the EXHAUSTIVE decision over ℤ/9 and the measured refusal below.
 
 **The merkaba** — `merkaba.lean`, 8 theorem(s). (Leonhard Euler, 1758). The file as a whole is this deposit's own construction, and this ONE   declaration restates a named classical result: its third conjunct 4 + 4 - 6 = 2 IS the Euler   characteristic of the tetrahedron. The comment above that theorem already named Euler; the register   did not, because prior art was routed on the FILE and a file-level row cannot say "own work except   theorem 7". No priority over Euler is claimed. What is this deposit's own here is the pairing of the   two tetrahedra with the cube Q₃ and the vertex and edge counts around it, not the characteristic. The merkaba, as THIS deposit constructs it — ported to Lean so it stands on the kernel instead of on a TypeScript test. Six entries under this name were revoked as dirty; every one of them that states finite algebra is re-proved here, and the two that do not (a cosine field, a bond angle in degrees) are absent on purpose — they are real trigonometry, not decidable arithmetic over ℤ/9, and padding them in would be the exact dishonesty the revocation was for.
 
@@ -158,7 +160,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Rights** — `rights.lean`, 8 theorem(s). What this deposit claims under international law — and, in the same table, what it does not.
 
-4 of 503 declarations carry no comment of their own and are shown here as the gap they are, not
+4 of 511 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -167,14 +169,14 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 2,392 — 299 octaves exactly |
-| standing — carries its own proof | **520** |
+| ledger entries | 2,400 — 300 octaves exactly |
+| standing — carries its own proof | **528** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **115** |
 | withdrawn — nothing proves it | 1,757 |
-| proved in total | **635** of 2,392 |
-| standing keys → distinct theorems | 495 sealed, 24 of them keyed twice, 1 unresolvable |
-| Lean files · theorems | 26 · 495 theorems (closed by exhaustion) + 8 rfl declarations, all axiom-free |
-| proved `by decide` | 495 of 503 |
+| proved in total | **643** of 2,400 |
+| standing keys → distinct theorems | 503 sealed, 24 of them keyed twice, 1 unresolvable |
+| Lean files · theorems | 27 · 503 theorems (closed by exhaustion) + 8 rfl declarations, all axiom-free |
+| proved `by decide` | 503 of 511 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -199,4 +201,4 @@ node scripts/pages.ts              # regenerate this file and the homepage
 
 ---
 
-*17 claims, all verified · 495 Lean theorems · 2392 ledger entries · trial root `81870ac5-d2e6-8910-bf0f-963f9c9db452` · integrity, not truth · 0/7*
+*17 claims, all verified · 503 Lean theorems · 2400 ledger entries · trial root `ba9736df-d9f4-8459-b17c-eddf1a89d06b` · integrity, not truth · 0/7*

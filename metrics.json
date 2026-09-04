@@ -20,9 +20,9 @@
     {
       "key": "theorems",
       "claim": "declarations closing by exhaustion — the deposit's definition of a theorem",
-      "value": "495",
+      "value": "503",
       "command": "node -e \"import('./src/api/index.ts').then(m=>console.log(m.census().byDecide))\"",
-      "receipt": "66b6cb04-da5d-8a79-ac41-c49742be73b9"
+      "receipt": "070556ee-ea5f-8b84-ad42-f7ddeefe200e"
     },
     {
       "key": "rfl-declarations",
@@ -34,37 +34,37 @@
     {
       "key": "kernel-accepted",
       "claim": "declarations the Lean kernel accepts, sorry-free and axiom-free",
-      "value": "503",
+      "value": "511",
       "command": "node scripts/lean.ts",
-      "receipt": "4e06f1b6-6ec9-89a4-99bc-85d0989ca129"
+      "receipt": "4bfc1970-b77a-813e-b52d-5f98c4b4878e"
     },
     {
       "key": "lean-files",
       "claim": "source files in src/proof",
-      "value": "26",
+      "value": "27",
       "command": "ls src/proof/*.lean | wc -l",
-      "receipt": "2025f3ec-447e-857c-bbb2-70b5b0f6cea6"
+      "receipt": "8485e9f2-607f-8028-91fa-c529ee251338"
     },
     {
       "key": "live-keys",
       "claim": "live ledger keys — ADDRESSES, not theorems; some theorems carry two",
-      "value": "520",
+      "value": "528",
       "command": "node -e \"import('./src/api/index.ts').then(m=>console.log(m.census().liveKeys))\"",
-      "receipt": "3dbc6167-ee3a-8f27-a65c-877b818e4bf3"
+      "receipt": "686bff10-2996-8cf9-a07a-ec30ae747898"
     },
     {
       "key": "ledger-entries",
       "claim": "entries in the append-only ledger — RECEIPTS, most of them withdrawn",
-      "value": "2392",
+      "value": "2400",
       "command": "node scripts/forensics.ts",
-      "receipt": "f1ccae40-75b7-8f1f-983d-dd521f539049"
+      "receipt": "f4eb5e07-7523-8a96-ab07-6e7e6bad6619"
     },
     {
       "key": "census-closes",
       "claim": "liveKeys = sealed + keyed-twice + unresolvable, asserted not reconciled by a reader",
-      "value": "520 = 495 + 24 + 1",
+      "value": "528 = 503 + 24 + 1",
       "command": "node scripts/contradictions.ts",
-      "receipt": "9e53f1e7-16c5-8039-958d-5acb98d26899"
+      "receipt": "aca5e593-0b92-8ef6-b039-f40ce18825dc"
     },
     {
       "key": "clay-proved",
@@ -111,9 +111,9 @@
     {
       "key": "typeset",
       "claim": "statements rendering as mathematics, each round-trip clean against its source",
-      "value": "503/503",
+      "value": "511/511",
       "command": "node scripts/latex-gate.ts",
-      "receipt": "567c240c-7959-81fc-b6ad-a247934ae4fb"
+      "receipt": "1e76aaeb-f9e3-8e8b-998e-2be0df48b930"
     },
     {
       "key": "coin-unlock",
@@ -165,5 +165,5 @@
       "receipt": "14c3168a-49d2-82b3-becf-5fb228c872ff"
     }
   ],
-  "root": "ef4de1f5-a5d5-8272-9cef-b461887271f8"
+  "root": "5712afe3-f95d-848c-b65a-39294b4a3a84"
 }

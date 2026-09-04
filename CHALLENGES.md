@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2392 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2400 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (520)
+### lean (528)
 
 - [lean_units_are_six](/theorem/lean_units_are_six) — lean: the units of ℤ/9 are exactly [1,2,4,5,7,8] — checked at every residue by the kernel, recomputed here; 0/7  ·  `031c89bf-e1e0…`
 - [lean_units_count](/theorem/lean_units_count) — lean: there are exactly six units in ℤ/9 — the kernel checks the count, recomputed here; 0/7  ·  `104e8965-ebfb…`
@@ -544,6 +544,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_coin_reflection_and_gravity_share_one_singularity](/theorem/lean_coin_reflection_and_gravity_share_one_singularity) — lean coin.lean: reflection_and_gravity_share_one_singularity — (digits.filter (fun d =&gt; fall d != d)) = (digits.filter (fun d =&gt; refl d &gt; 9)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `53b89fe3-ddf0…`
 - [lean_coin_on_the_fixed_points_the_reflection_never_leaves](/theorem/lean_coin_on_the_fixed_points_the_reflection_never_leaves) — lean coin.lean: on_the_fixed_points_the_reflection_never_leaves — nonzero.all (fun d =&gt; refl d &gt;= 1 && refl d &lt;= 9) ∧ nonzero.all (fun d =&gt; refl (refl d) == d) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `b054d575-74bc…`
 - [lean_coin_what_escapes_falls_back_inside](/theorem/lean_coin_what_escapes_falls_back_inside) — lean coin.lean: what_escapes_falls_back_inside — refl 0 = 10 ∧ fall 10 = 1 ∧ nonzero.contains (fall 10) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7ed40397-4820…`
+- [lean_involution_there_are_2620_involutions_of_nine](/theorem/lean_involution_there_are_2620_involutions_of_nine) — lean involution.lean: there_are_2620_involutions_of_nine — all.length = 2620 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `62c23be4-3c4e…`
+- [lean_involution_the_fuel_was_not_the_limit](/theorem/lean_involution_the_fuel_was_not_the_limit) — lean involution.lean: the_fuel_was_not_the_limit — (matchings 11 nine).length = all.length — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `6d2ebc60-b5a6…`
+- [lean_involution_every_involution_fixes_at_least_one_point](/theorem/lean_involution_every_involution_fixes_at_least_one_point) — lean involution.lean: every_involution_fixes_at_least_one_point — all.all (fun m =&gt; fixedPoints m ≥ 1) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `b793c9a6-04ad…`
+- [lean_involution_the_fixed_points_are_always_odd](/theorem/lean_involution_the_fixed_points_are_always_odd) — lean involution.lean: the_fixed_points_are_always_odd — all.all (fun m =&gt; fixedPoints m % 2 == 1) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `bade9095-806a…`
+- [lean_involution_no_single_point_is_fixed_by_all](/theorem/lean_involution_no_single_point_is_fixed_by_all) — lean involution.lean: no_single_point_is_fixed_by_all — nine.all (fun d =&gt; ¬ all.all (fun m =&gt; m.contains (d, d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `33ae65ac-2b00…`
+- [lean_involution_the_constant_sum_is_rare](/theorem/lean_involution_the_constant_sum_is_rare) — lean involution.lean: the_constant_sum_is_rare — (all.filter constantSum).length = 90 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `08ae4f57-abb2…`
+- [lean_involution_so_involutions_are_not_all_harmonic_in_that_sense](/theorem/lean_involution_so_involutions_are_not_all_harmonic_in_that_sense) — lean involution.lean: so_involutions_are_not_all_harmonic_in_that_sense — ¬ all.all constantSum — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1b69f98b-1867…`
+- [lean_involution_the_coins_reflection_is_harmonic_and_is_one_of_the_ninety](/theorem/lean_involution_the_coins_reflection_is_harmonic_and_is_one_of_the_ninety) — lean involution.lean: the_coins_reflection_is_harmonic_and_is_one_of_the_ninety — constantSum coinLike = true ∧ fixedPoints coinLike = 1 ∧ (swaps coinLike).all (fun p =&gt; p.1 + p.2 == 9) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `813ea66f-9b19…`
 
 ### other — one-of-a-kind (0)
 
@@ -2370,4 +2378,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `eb033839-3e2a-81e8-9da5-064da7ad86f0`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `37e1dd42-91ef-84e3-a373-85804ec82988`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
