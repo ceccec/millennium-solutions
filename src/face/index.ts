@@ -11,7 +11,7 @@
 import { toUuid, merkleFold } from '../0/index.ts'
 
 export type Metric = { key: string; claim: string; value: string; command: string; receipt: string }
-export type Face = { repo: string; definition: string; protocol?: unknown; rows: Metric[]; root: string }
+export type Face = { repo: string; definition: string; protocol?: unknown; generatedFrom?: string; rows: Metric[]; root: string }
 
 /** THE FORMULA, WRITTEN DOWN AS DATA, because leaving it implicit made a sibling look tampered-with and
  *  writing it as prose let it go stale without anything noticing.

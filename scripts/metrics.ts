@@ -88,8 +88,28 @@ for (const g of GATES) {
   add('gate:' + g, `the ${g} gate, run now rather than remembered`, ok ? 'pass' : 'FAIL', `npm run ${g}`)
 }
 
+// WHICH COMMIT PRODUCED THIS FACE. erpax-94 audited a snapshot of this file and reported that 0 of 21
+// receipts reproduced from the declared formula and the root did not match. Both were true OF THE COPY THEY
+// HELD, and neither is true of the file: 21 of 21 reproduce and the root matches, locally and as published.
+// They had a stale snapshot from before the formula changed to seal `command`, and NOTHING IN THE FILE LET
+// THEM KNOW THAT. They spent an hour ruling out their own toUuid against RFC 9562 §5.8 and trying seven
+// seed forms, correctly, on a file that could not reproduce because it predated the spec it declared.
+//
+// The root is a content-address and changes when the content does, so two faces can be compared — but a
+// holder of one copy cannot tell it is behind. A commit reference makes staleness visible to the holder.
+//
+// A TIMESTAMP OR VERSION WOULD BE WRONG IN A DEPOSITION AND IS RIGHT HERE, and the distinction cost 336
+// records this morning: a per-theorem record is about a timeless proposition and must not churn when the
+// repository is tagged. A FACE is a snapshot of a moment by construction — it reports what the gates said
+// on one run — so identifying the moment is part of what it is for.
+const commit = (() => {
+  try { return execSync('git rev-parse --short HEAD', { stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim() }
+  catch { return '(not a git checkout)' }
+})()
+
 const face: Face = {
   repo: 'millennium-solutions',
+  generatedFrom: commit,
   definition: THEOREM_DEFINITION,
   protocol: PROTOCOL,
   rows,
@@ -106,6 +126,15 @@ if (arg === '--verify') {
   let bad = c.altered.length + (c.root === f.root ? 0 : 1)
   for (const k of c.altered) console.log(`  ✗ ${k}: receipt does not match its own claim, value and command`)
   if (c.root !== f.root) console.log(`  ✗ root ${f.root} ≠ ${c.root} recomputed from the rows`)
+  // A FACE THAT DECLARES A SPEC IT PREDATES. If every row fails AND the file names a commit, the holder is
+  // almost certainly looking at a snapshot taken before the formula changed — which is what happened to
+  // erpax-94, who spent an hour ruling out their own implementation against a file that could not reproduce.
+  // Saying so turns an hour of correct debugging into one line.
+  if (c.altered.length === f.rows.length && f.rows.length > 1) {
+    console.log(`\n  ○ every row fails. If this file names a commit — it says ${(f as { generatedFrom?: string }).generatedFrom ?? '(none)'} —`)
+    console.log(`    check whether a newer face exists before debugging your own toUuid: a snapshot taken before a`)
+    console.log(`    formula change declares the new protocol id while carrying receipts under the old one.`)
+  }
   const failing = f.rows.filter((r) => r.value === 'FAIL')
   if (c.verdict === 'different-convention') {
     console.log(`\n○ ${f.repo}: sealed under a DIFFERENT convention, not altered — every row and the root`)

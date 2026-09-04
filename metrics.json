@@ -1,5 +1,6 @@
 {
   "repo": "millennium-solutions",
+  "generatedFrom": "9988927ab",
   "definition": "a declaration in src/proof that the Lean kernel accepts — sorry-free, axiom-free — and closes by exhaustion over a stated finite domain",
   "protocol": {
     "id": "millennium-solutions/metric-face/2",
