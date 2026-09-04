@@ -17380,5 +17380,30 @@
     "key": "lean_mechanical_repeated_doubling_is_the_power_of_two",
     "name": "lean mechanical.lean: repeated_doubling_is_the_power_of_two — (List.range 21).all (fun k => dbl k == 2 ^ k) ∧ dbl 10 == 1024 ∧ dbl 11 == 2048 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "a4b4daf8-305c-8244-9c2b-54970406485b"
+  },
+  {
+    "key": "lean_reach_exhaustion_never_reaches_its_own_bound",
+    "name": "lean reach.lean: exhaustion_never_reaches_its_own_bound — bounds.all (fun n => (List.range n).length == n && ¬ (List.range n).contains n) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5ed549ae-bc8e-8c6c-b187-eae6f570a925"
+  },
+  {
+    "key": "lean_reach_the_successor_of_every_bound_lies_outside",
+    "name": "lean reach.lean: the_successor_of_every_bound_lies_outside — bounds.all (fun n => ¬ (List.range n).contains (n + 1)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1741c0fd-b09c-8382-81b8-f9cde1d9e16f"
+  },
+  {
+    "key": "lean_reach_doubling_the_domain_leaves_the_same_hole",
+    "name": "lean reach.lean: doubling_the_domain_leaves_the_same_hole — bounds.all (fun n => ¬ (List.range (2 * n)).contains (2 * n)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ec21ebe8-a25e-8f65-8e12-33171d2fbfe8"
+  },
+  {
+    "key": "lean_reach_even_the_largest_domain_here_has_an_outside",
+    "name": "lean reach.lean: even_the_largest_domain_here_has_an_outside — largestDomainHere + 1 > largestDomainHere ∧ largestDomainHere % 2 = 0 ∧ (largestDomainHere + 1) % 2 = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9f25da95-de94-86b7-90b6-937888a7a0b4"
+  },
+  {
+    "key": "lean_reach_this_file_settles_none_of_the_seven",
+    "name": "lean reach.lean: this_file_settles_none_of_the_seven — (bounds.filter (fun n => (List.range n).contains n)).length = 0 ∧ bounds.length = 50 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2c8272de-17dd-8800-8a8e-95423c290b0d"
   }
 ]

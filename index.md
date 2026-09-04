@@ -17,12 +17,12 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 529 kernel-accepted declarations across 29 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `8934a009-b0a3-8dbd-a080-1324fda35863`</sub>
-- 521 of those 529 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
-  <sub>SEALED · `066e06c2-2807-8ee8-998e-65a1883d7394`</sub>
-- 554 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `1f3aee2f-4f38-8535-a108-40159d507f16`</sub>
+- The formal layer holds 534 kernel-accepted declarations across 30 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `704b7c35-9ed5-8cd1-be77-2fd6c518dfef`</sub>
+- 526 of those 534 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
+  <sub>SEALED · `0e10c33c-86a4-844d-b92e-ac84ca08fefe`</sub>
+- 559 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `5eb84cca-c200-8a7b-9a3a-d0f1754465b1`</sub>
 
 ## 2 · The ring
 
@@ -45,10 +45,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 2418 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `e8e08410-e518-820d-beec-ce6059d4eaff`</sub>
-- The count is 2418, which is 302 octaves and 2 over — the octave is a target the theorems earn, never a quota they are invented to fill.
-  <sub>SEALED · `32eec8c4-afae-8d09-b962-706f7220e08f`</sub>
+- The ledger records 2423 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `b4baed1e-5b89-8f95-bdad-23c9e3ecc4c3`</sub>
+- The count is 2423, which is 302 octaves and 7 over — the octave is a target the theorems earn, never a quota they are invented to fill.
+  <sub>SEALED · `0ac974f0-e177-84f9-a213-0389e75bc79b`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -96,7 +96,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-29 Lean files in 6 wings, 529 declarations of which 521 are theorems. The prose in this section is read out of the
+30 Lean files in 6 wings, 534 declarations of which 526 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -146,6 +146,8 @@ this page; there is nowhere else to keep the description in step.
 
 **Order-invariance** — `quantum.lean`, 9 theorem(s). The quantum receipt — order invariance, proved rather than asserted.
 
+**What exhaustion reaches, and what lies outside it** — `reach.lean`, 5 theorem(s). old as mathematics; the deposit claims none of it. What is its own here is the decision over its OWN   bounds, and the statement of where that decision stops.
+
 **Why verification is fast, and what it is not** — `speed.lean`, 8 theorem(s). The deposit's speed claim, accounted — and the reading it does not support.
 
 ### the machine
@@ -170,7 +172,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Rights** — `rights.lean`, 8 theorem(s). What this deposit claims under international law — and, in the same table, what it does not.
 
-6 of 529 declarations carry no comment of their own and are shown here as the gap they are, not
+6 of 534 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -179,14 +181,14 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 2,418 — 302 octaves and 2 over |
-| standing — carries its own proof | **546** |
+| ledger entries | 2,423 — 302 octaves and 7 over |
+| standing — carries its own proof | **551** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **126** |
 | withdrawn — nothing proves it | 1,746 |
-| proved in total | **672** of 2,418 |
-| standing keys → distinct theorems | 521 sealed, 24 of them keyed twice, 1 unresolvable |
-| Lean files · theorems | 29 · 521 theorems (closed by exhaustion) + 8 rfl declarations, all axiom-free |
-| proved `by decide` | 521 of 529 |
+| proved in total | **677** of 2,423 |
+| standing keys → distinct theorems | 526 sealed, 24 of them keyed twice, 1 unresolvable |
+| Lean files · theorems | 30 · 526 theorems (closed by exhaustion) + 8 rfl declarations, all axiom-free |
+| proved `by decide` | 526 of 534 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -208,4 +210,4 @@ because no test was written that would seal them.
 
 ---
 
-*17 claims, all verified · 521 Lean theorems · 2418 ledger entries · trial root `583a970e-a051-8cb2-8b85-42188dd4807d` · integrity, not truth · 0/7*
+*17 claims, all verified · 526 Lean theorems · 2423 ledger entries · trial root `0013b8f7-a05b-80d7-a9f3-5e3b6878ff76` · integrity, not truth · 0/7*

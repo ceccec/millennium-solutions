@@ -73,14 +73,15 @@ def sources : List Source :=
   , (19, 0, false)   -- phenomena.lean    — the SI base quantities and their defining constants are definitions of the Conférence Générale des Poids et Mesures (2019 revision, effective 20 May 2019); the electrochemical results are Michael Faraday's laws of electrolysis, 1834, and the standard enthalpy of combustion of hydrogen. Every physical result named here has an earlier author or a standards body, and none is this deposit's.
   , (20, 1, false)   -- priorart.lean     — this file, about this deposit's own claim
   , (21, 1, false)   -- quantum.lean      — order-invariance of this deposit's receipt
-  , (22, 0, false)   -- reversal.lean     — digit reversal and digit sums; casting out nines, in use by the 12th century
-  , (23, 1, false)   -- rights.lean       — this deposit's own rights table
-  , (24, 0, false)   -- sequences.lean    — Cassini’s identity — G. D. Cassini, 1680; Lucas sequences — Édouard Lucas, 1878; the Brahmagupta–Fibonacci identity — Brahmagupta, 628; Pascal’s triangle mod 2 — Blaise Pascal, 1654
-  , (25, 1, false)   -- speed.lean        — this deposit's own verification cost
-  , (26, 1, false)   -- split.lean        — the digit grouping 0|12|3|45|6|78|9 as this deposit reads it
-  , (27, 1, false)   -- theorems.lean     — the universal property, computed from this sequence
-  , (28, 0, false)   -- z9.lean           — Fermat’s little theorem — Pierre de Fermat, 1640; Euler’s theorem — Leonhard Euler, 1763; primitive roots — Carl Friedrich Gauss, 1801
-  , (29, 0, false)   -- z9plus.lean       — digital roots (casting out nines) — in use by the 12th century; the Pisano period — after Leonardo Pisano; studied by Joseph-Louis Lagrange, 1774
+  , (22, 0, false)   -- reach.lean        — that no finite set contains every natural number is Euclid's argument in form and is as old as mathematics; the deposit claims none of it. What is its own here is the decision over its OWN bounds, and the statement of where that decision stops.
+  , (23, 0, false)   -- reversal.lean     — digit reversal and digit sums; casting out nines, in use by the 12th century
+  , (24, 1, false)   -- rights.lean       — this deposit's own rights table
+  , (25, 0, false)   -- sequences.lean    — Cassini’s identity — G. D. Cassini, 1680; Lucas sequences — Édouard Lucas, 1878; the Brahmagupta–Fibonacci identity — Brahmagupta, 628; Pascal’s triangle mod 2 — Blaise Pascal, 1654
+  , (26, 1, false)   -- speed.lean        — this deposit's own verification cost
+  , (27, 1, false)   -- split.lean        — the digit grouping 0|12|3|45|6|78|9 as this deposit reads it
+  , (28, 1, false)   -- theorems.lean     — the universal property, computed from this sequence
+  , (29, 0, false)   -- z9.lean           — Fermat’s little theorem — Pierre de Fermat, 1640; Euler’s theorem — Leonhard Euler, 1763; primitive roots — Carl Friedrich Gauss, 1801
+  , (30, 0, false)   -- z9plus.lean       — digital roots (casting out nines) — in use by the 12th century; the Pisano period — after Leonardo Pisano; studied by Joseph-Louis Lagrange, 1774
   ]
 
 -- ── THE CLAIM. Only a source that names a completed search may claim, and none does ─────────────────────

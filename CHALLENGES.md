@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2418 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2423 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (546)
+### lean (551)
 
 - [lean_units_are_six](/theorem/lean_units_are_six) — lean: the units of ℤ/9 are exactly [1,2,4,5,7,8] — checked at every residue by the kernel, recomputed here; 0/7  ·  `031c89bf-e1e0…`
 - [lean_units_count](/theorem/lean_units_count) — lean: there are exactly six units in ℤ/9 — the kernel checks the count, recomputed here; 0/7  ·  `104e8965-ebfb…`
@@ -570,6 +570,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_light_and_a_change_of_unit_destroys_it](/theorem/lean_light_and_a_change_of_unit_destroys_it) — lean light.lean: and_a_change_of_unit_destroys_it — ([1, 2, 3, 4, 5, 6, 7, 8, 9].filter (fun d =&gt; ¬ (alternative.map root).contains d)) = [2, 3, 5, 8] ∧ alternative.length = defining.length — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `4da66384-4dd4…`
 - [lean_mechanical_the_moduli_dimensions_are_three_g_minus_three_and_six_g_minus_six](/theorem/lean_mechanical_the_moduli_dimensions_are_three_g_minus_three_and_six_g_minus_six) — lean mechanical.lean: the_moduli_dimensions_are_three_g_minus_three_and_six_g_minus_six — gRange.all (fun g =&gt; 3 * g - 3 == (6 * g - 6) / 2) ∧ gRange.all (fun g =&gt; 6 * g - 6 == 2 * (3 * g - 3)) ∧ (3 * 2 - 3 == 3 ∧ 6 * 2 - 6 == 6) ∧ (3 * 3 - 3 == 6 ∧ 6 * 3 - 6 == 12) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d18c5b51-01d6…`
 - [lean_mechanical_repeated_doubling_is_the_power_of_two](/theorem/lean_mechanical_repeated_doubling_is_the_power_of_two) — lean mechanical.lean: repeated_doubling_is_the_power_of_two — (List.range 21).all (fun k =&gt; dbl k == 2 ^ k) ∧ dbl 10 == 1024 ∧ dbl 11 == 2048 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a4b4daf8-305c…`
+- [lean_reach_exhaustion_never_reaches_its_own_bound](/theorem/lean_reach_exhaustion_never_reaches_its_own_bound) — lean reach.lean: exhaustion_never_reaches_its_own_bound — bounds.all (fun n =&gt; (List.range n).length == n && ¬ (List.range n).contains n) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `5ed549ae-bc8e…`
+- [lean_reach_the_successor_of_every_bound_lies_outside](/theorem/lean_reach_the_successor_of_every_bound_lies_outside) — lean reach.lean: the_successor_of_every_bound_lies_outside — bounds.all (fun n =&gt; ¬ (List.range n).contains (n + 1)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1741c0fd-b09c…`
+- [lean_reach_doubling_the_domain_leaves_the_same_hole](/theorem/lean_reach_doubling_the_domain_leaves_the_same_hole) — lean reach.lean: doubling_the_domain_leaves_the_same_hole — bounds.all (fun n =&gt; ¬ (List.range (2 * n)).contains (2 * n)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `ec21ebe8-a25e…`
+- [lean_reach_even_the_largest_domain_here_has_an_outside](/theorem/lean_reach_even_the_largest_domain_here_has_an_outside) — lean reach.lean: even_the_largest_domain_here_has_an_outside — largestDomainHere + 1 &gt; largestDomainHere ∧ largestDomainHere % 2 = 0 ∧ (largestDomainHere + 1) % 2 = 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9f25da95-de94…`
+- [lean_reach_this_file_settles_none_of_the_seven](/theorem/lean_reach_this_file_settles_none_of_the_seven) — lean reach.lean: this_file_settles_none_of_the_seven — (bounds.filter (fun n =&gt; (List.range n).contains n)).length = 0 ∧ bounds.length = 50 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2c8272de-17dd…`
 
 ### other — one-of-a-kind (0)
 
@@ -2385,4 +2390,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `9ea27b7e-ffc5-8c0a-83dc-cd013b1d9941`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `dfe773b4-60ce-8643-95cc-46897eb096c9`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
