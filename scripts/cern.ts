@@ -25,6 +25,27 @@
  *  total. That coincidence read as confirmation. It was the most dangerous number produced here, because a
  *  wrong instrument that agrees with an independent source stops being questioned.
  *
+ *  WHERE THE GAP ACTUALLY IS — measured per type, after a prediction of mine failed. I predicted 9.4% of
+ *  REST records would be missing from the OAI ∪ sitemap union and tested it: 0 of 250. The prediction was
+ *  wrong because the sample could not reach past offset 7,000 of 82,385 (the portal refuses deep paging), so
+ *  it covered 8.5% of the corpus from one end. Sampling by TYPE finds it at once, and it is not a spread:
+ *
+ *    Dataset          66,042    0/15 outside the union      covered
+ *    Supplementaries   5,904    0/40                        covered
+ *    Environment          64    0/40                        covered
+ *    Software             55    0/40                        covered
+ *    Documentation     9,272   40/40 outside                NOT carried by either bulk route
+ *    Glossary          1,006   40/40 outside                NOT carried by either bulk route
+ *
+ *  So 10,278 records — 12.5% of the corpus — are reachable ONLY through the REST API, which robots.txt asks
+ *  automation to leave alone. Their ids are pure slugs (`AOD`, `Barn`, `stripping21r1-dy2mumuline3`), which
+ *  is also what the "10,274 records carry no indexed recid" figure was measuring hours earlier, before there
+ *  was any way to say what those records were. The two numbers are the same population seen from two sides.
+ *
+ *  Not established: the ten records the portal counts (82,385) beyond what `type:*` matches (82,375). Every
+ *  negation query that would isolate them — `NOT type:*`, `-type:*`, `NOT _exists_:type` — returns HTTP 502
+ *  from the portal. They are known to exist and are not enumerable through any query available here.
+ *
  *  WHAT IS COMPUTED: the deposit's content-address (`toUuid`, four FNV-1a passes, RFC 9562 §5.8) over every
  *  record URL, the reflection `refl d = 10 - d` applied to each address's digital root, and a count of any
  *  two records sharing an address. `coin.lean` proves `refl (refl d) = d` by decide over ten digits; running
