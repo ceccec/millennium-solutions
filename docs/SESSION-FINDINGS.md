@@ -165,3 +165,121 @@ until measured otherwise — it has been every time.
 
 Related: [[check-the-instrument-first]] is the same rule aimed at checks; this one aims it at my own prose.
 
+
+---
+
+## 2026-09-05 — what a day of writing negative controls found
+
+Every rail below came from a measured defect in this tree on one day. They are grouped because they turned
+out to be one family: **a check, a count, or an artefact that cannot distinguish the world it asserts from
+its opposite**, and that reads exactly like a correct one while doing it.
+
+### Match the SHAPE, never the name
+
+The self-certifying-literal sweep was written as `/^def settledHere : Nat := (\d+)$/` — the literal
+identifier of the one instance already known. Twelve instances of the shape existed; it saw eight. The four
+it missed were `physicalClaims = 0` twice and `noveltyEstablished = 0` once: **refusals certifying
+themselves**, the worst place for the defect, because a refusal is the line a reader trusts without
+checking. Found by a peer asking whether the sweep read the file that contained the defect. It did not.
+
+The same error, one level up, was dismissing a lead by its filename: `erpax.metrics.json` reads like a
+metrics dump and carries 15 rows each with a `claim`.
+
+### Ask what layer can OBSERVE the claim
+
+Whether a file makes a physical claim is a fact about its TEXT, and Lean cannot read its own text — so no
+declaration inside the file could ever have carried that refusal. Moving it to the script that reads the
+corpus was not a better check; it was the claim reaching the only layer where it can go red. Then point the
+check at the PUBLISHED surface: theorem NAMES are the Zenodo title, the page heading, the ledger key, and
+checking names found four real overclaims that checking propositions could not.
+
+A peer's harder case: 24 local tests green against a path broken in production, because the emulator streams
+inbound bodies and the platform buffers them. **When the only layer that can observe a claim is production,
+the claim is unverified until it ships.**
+
+### Three ways a domain is narrower than its defect
+
+- **Descent** — `readdirSync('.')` with no recursion; `docs/*.md` unread while the summary said "across 40
+  markdown files" and sounded exhaustive.
+- **Scope** — a correct recursive walk rooted at the wrong subtree. A peer's credential law was scoped to
+  `src/collections/` and never looked in `src/fields/`, *the directory holding the sealing helper itself*.
+- **Notation** — three extractors here each read one spelling of their subject: `//` against Lean's `--`,
+  literal `readFileSync` paths against gates reading through a shared API, `scripts/x.ts` paths against
+  chains naming steps as bare strings. A peer's boundedness law could not see `Fin N` — a finite TYPE,
+  bounded MORE strongly than the hypothesis it did recognise, so the corpus read as less bounded than it
+  was. **An instrument that knows one notation under-reports exactly the cases expressed most strongly.**
+
+### Corroboration is not correctness
+
+A broken record filter returned 82,385 URLs — EXACTLY an independent API's reported total. That agreement is
+what stopped the checking. A lone convenient number still invites scrutiny; a matching one closes the
+question. Verify both sources measured the same population before accepting it.
+
+### A correction gets less scrutiny than what it replaces
+
+Having found that filter defect, the replacement shipped 84% too high with no check on what the newly
+admitted ids actually were. **The act of having just caught a mistake feels like verification and is the
+opposite** — the attention is already spent.
+
+### A right count with wrong members passes every check that counts
+
+One corpus figure was correct from its third pass onward and never moved again while its MEMBERSHIP was
+wrong twice underneath it. Every count-based assertion stayed green; only comparison against a second corpus
+exposed it.
+
+### Sample a partition, not a slice
+
+A prediction that 9.4% of records would fall outside a union measured 0 of 250 — because deep paging is
+capped, so the sample covered 8.5% of the corpus from one end. The gap was real and CONCENTRATED. Sampling
+by TYPE found it in one request. A slice from one end always looks like clean data.
+
+### Never type a constant
+
+Four fabricated constants went to peer repositories in one day: a label naming SHA-256 over FNV-1a code, a
+pinned test vector whose halves did not correspond, an unimplementable prose spec, and a hallucinated UUID
+typed **inside the message announcing the rule against typing UUIDs**. Peers spent nine hash framings, six
+variants and 242 seed attempts on divergences that were ours.
+
+**A test vector must be EMITTED by the implementation, never typed — and every artefact handed to a peer
+should be a file path or a command, never a transcription.** A transcribed constant looks identical to a
+computed one, and the reader has no way to tell.
+
+### Controls, and what writing them found
+
+66 of 95 reachable scripts had never been shown to go from green to red. Controlling them found: a gate that
+ran its own repair before checking (so it fixed the defect, looked, and passed); a check living inside a
+report that is never clean, so it could never fail; **two generators that erased a prior-art attribution by
+re-emitting a fixed `unclassified` header**; a generator emitting Lean the kernel refuses, undetected for
+want of anything running it; and `latex-gate`, which could not see a conjunction typeset as a disjunction
+because its round-trip runs Lean→Lean and never touches the LaTeX map.
+
+That last one was found by *attempting* a control and discovering no mutation made the gate red. **A probe
+reporting "not reached" is not proof of unfalsifiability — but a gate no mutation can redden is the finding.**
+
+And the harness itself blamed gates for broken controls: two mutations matched nothing, so the file never
+changed and it announced "this gate is not protecting anything" about gates that were fine. Verify the
+mutation changed the file, and assert on the FINDING rather than the exit code — a gate going red for the
+wrong reason is indistinguishable from one going red correctly at the exit-code layer.
+
+### An absence nobody decided is indistinguishable from an oversight
+
+Gates unwired from every chain were "decided" in a commit message — prose a tree cannot read. Recorded as
+data instead, each with its reason, and the reasons then TESTED: two were false. One said "belongs to
+release" while release did not run it; the other said "run when the sources change" and was run by nothing,
+having already rotted. **A reason naming a placement that does not exist is not a decision.**
+
+### The involution: over-claims and under-claims are the same defect
+
+Every sweep here was built to catch prose claiming MORE than the tree holds. Nothing checked the reflection.
+Both directions are now planted as controls, because "symmetric by construction" is an argument and an
+argument is not a control. Testing the under-claim direction also put the deposit's own "verification is not
+discovery" policy to a literature search that could have overturned it — mathlib already carries the
+machinery, so the policy stands **by measurement rather than by assumption**.
+
+Prior-art searches moved 77 theorems out of "own work": the DOI queue selected records by the ABSENCE of a
+search, not by a clean one. Three files classified "no external work can precede this" turned out to restate
+Merkle's logarithmic membership proof — which this repository was already crediting three files away — and
+copyright arising without formality, which one file cited in its own prose while the table recorded none.
+
+**"No external work can be prior art to this" is a claim, not a definition, and it got the least scrutiny in
+the deposit precisely because it reads like one.**
