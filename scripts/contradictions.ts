@@ -368,6 +368,18 @@ for (const f of leanFiles()) {
         + `the file claims. Derive it, or delete the declaration and let a check that reads the corpus carry the claim.`)
     }
   }
+  // ── A CONJUNCTION THAT REPEATS A CONJUNCT ────────────────────────────────────────────────────────────
+  // `A ∧ A` decides exactly what `A` decides, so the repetition adds a conjunct that cannot fail. I wrote
+  // `1048576 / 20 = 52428 ∧ 1048576 / 20 = 52428` into a theorem on the same day I widened the sweep for
+  // self-certifying literals — the identical shape, one notation along, and every check here walked past it.
+  // Cheap to state and cheap to check: split on ∧, compare the parts.
+  for (const t of src.matchAll(/^theorem\s+(\w+)\s*:([\s\S]*?):=\s*by\s+decide/gm)) {
+    const parts = t[2].split('∧').map((x) => x.replace(/\s+/g, ' ').replace(/[()]/g, '').trim()).filter(Boolean)
+    const dup = parts.find((x, i) => parts.indexOf(x) !== i)
+    if (dup) fail(`src/proof/${f}: \`${t[1]}\` conjoins \`${dup}\` with itself — a conjunct that cannot fail, `
+      + `so the theorem decides exactly what it would without it`)
+  }
+
   // ── A FILE THAT REFUSES PHYSICAL CLAIMS IS CHECKED ON ITS PUBLISHED NAMES ─────────────────────────────
   // `coin.lean` and `light.lean` each carried `def physicalClaims : Nat := 0` decided against its own
   // literal. That is green whatever the file says, so the refusal was never checked. The refusal is real and

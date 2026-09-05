@@ -115,16 +115,15 @@ theorem hexbits_are_shorter_than_hex :
 theorem hexbits_are_slower_than_hex :
   hexbitMs > hexMs ∧ hexbitMs * 10 / hexMs = 18 := by decide
 
--- ── THE REFUSAL, as a theorem so it is checked and not merely written. speed.lean has said in PROSE since
---    it was written that no quantum hardware is involved; prose is not checked, and a refusal that is only
---    written is the shape this deposit spent a day removing from its own files.
+-- A theorem named `an_encoding_changes_width_not_the_count_of_operations` stood here and is DELETED. It
+-- decided `22 < 32 ∧ 30 > 16 ∧ (1048576 / 20 = 52428 ∧ 1048576 / 20 = 52428)`. The first two conjuncts are
+-- already proved directly above; the third is X ∧ X, a tautology, written by someone who had spent the day
+-- removing tautologies. And the NAME asserted something about the COUNT OF OPERATIONS that the proposition
+-- never mentions — a name claiming more than its proposition decides, which is the defect this deposit
+-- widened a whole check to catch and then committed anyway.
 --
---    An encoding changes how many characters carry a value. It does not change the COUNT of operations, and
---    the count is the whole of the advantage proved in §7 above. A denser alphabet is a smaller exponent in
---    no sense whatever: 6-bit and 8-bit walk the identical number of nodes on the identical hash. Whatever
---    quantum advantage names, it is not something any choice of alphabet can confer — and here the denser
---    alphabet is measurably the slower one.
-theorem an_encoding_changes_width_not_the_count_of_operations :
-  hexbitChars < hexChars ∧ hexbitMs > hexMs ∧ (1048576 / 20 = 52428 ∧ 1048576 / 20 = 52428) := by decide
+-- The refusal it was trying to make is true and belongs in prose, where it is not dressed as arithmetic: an
+-- encoding changes how many characters carry a value, not how many operations are performed. §7 above proves
+-- the operation-count claim; the two theorems above prove the width and the cost. Nothing was lost.
 
 end Speed

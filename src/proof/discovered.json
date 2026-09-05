@@ -17563,7 +17563,9 @@
   {
     "key": "lean_speed_an_encoding_changes_width_not_the_count_of_operations",
     "name": "lean speed.lean: an_encoding_changes_width_not_the_count_of_operations — hexbitChars < hexChars ∧ hexbitMs > hexMs ∧ (1048576 / 20 = 52428 ∧ 1048576 / 20 = 52428) — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "9227b54d-7b6f-8722-9000-53eea99eada8"
+    "receipt": "9227b54d-7b6f-8722-9000-53eea99eada8",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_quantum_the_ghz_x_support_is_exactly_the_even_parity_strings",
@@ -17583,6 +17585,8 @@
   {
     "key": "lean_quantum_the_witness_is_about_the_state_not_the_machine",
     "name": "lean quantum.lean: the_witness_is_about_the_state_not_the_machine — ghzXSupport.length * 2 = (List.range 8).length ∧ (2:Nat) ^ 3 = 8 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "850e2e33-ed0d-8616-9457-b1e7bea5fd67"
+    "receipt": "850e2e33-ed0d-8616-9457-b1e7bea5fd67",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   }
 ]

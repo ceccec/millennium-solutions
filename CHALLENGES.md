@@ -22,7 +22,7 @@ title: Challenges
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (533)
+### lean (531)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -552,25 +552,23 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_imagined_double_is_involutive_on_triad](/theorem/lean_imagined_double_is_involutive_on_triad) — lean imagined.lean: double_is_involutive_on_triad — [3, 6, 0].all (fun d =&gt; (fun x =&gt; m9 (2 * x)) (m9 (2 * d)) == d) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2745f785-9f44…`
 - [lean_speed_hexbits_are_shorter_than_hex](/theorem/lean_speed_hexbits_are_shorter_than_hex) — lean speed.lean: hexbits_are_shorter_than_hex — hexbitChars &lt; hexChars ∧ hexChars - hexbitChars = 10 ∧ hexbitChars * 100 / hexChars = 68 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d3b171cf-2487…`
 - [lean_speed_hexbits_are_slower_than_hex](/theorem/lean_speed_hexbits_are_slower_than_hex) — lean speed.lean: hexbits_are_slower_than_hex — hexbitMs &gt; hexMs ∧ hexbitMs * 10 / hexMs = 18 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `cf4672e4-0be3…`
-- [lean_speed_an_encoding_changes_width_not_the_count_of_operations](/theorem/lean_speed_an_encoding_changes_width_not_the_count_of_operations) — lean speed.lean: an_encoding_changes_width_not_the_count_of_operations — hexbitChars &lt; hexChars ∧ hexbitMs &gt; hexMs ∧ (1048576 / 20 = 52428 ∧ 1048576 / 20 = 52428) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9227b54d-7b6f…`
 - [lean_quantum_the_ghz_x_support_is_exactly_the_even_parity_strings](/theorem/lean_quantum_the_ghz_x_support_is_exactly_the_even_parity_strings) — lean quantum.lean: the_ghz_x_support_is_exactly_the_even_parity_strings — (List.range 8).filter (fun n =&gt; par3 n == 0) = ghzXSupport — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7fb1069f-54b2…`
 - [lean_quantum_it_is_half_of_the_eight](/theorem/lean_quantum_it_is_half_of_the_eight) — lean quantum.lean: it_is_half_of_the_eight — ghzXSupport.length = 4 ∧ (List.range 8).length = 8 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `8c2ae28f-cbb1…`
 - [lean_quantum_a_classical_mixture_reaches_the_parity_ghz_never_does](/theorem/lean_quantum_a_classical_mixture_reaches_the_parity_ghz_never_does) — lean quantum.lean: a_classical_mixture_reaches_the_parity_ghz_never_does — ((List.range 8).filter (fun n =&gt; par3 n == 1)).length = 4 ∧ ((List.range 8).filter (fun n =&gt; par3 n == 1)).all (fun n =&gt; ¬ ghzXSupport.contains n) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1e0393b3-351a…`
-- [lean_quantum_the_witness_is_about_the_state_not_the_machine](/theorem/lean_quantum_the_witness_is_about_the_state_not_the_machine) — lean quantum.lean: the_witness_is_about_the_state_not_the_machine — ghzXSupport.length * 2 = (List.range 8).length ∧ (2:Nat) ^ 3 = 8 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `850e2e33-ed0d…`
 
 ### other — one-of-a-kind (0)
 
 
 
-## Revoked — 1752 entries that no longer stand
+## Revoked — 1754 entries that no longer stand
 
 The ledger is append-only: an entry that stops holding is marked in place, never deleted — deleting would break the receipt chain, and rewriting a receipt is tamper. These keep their receipts and stay in the record, but they are **not citable** and have no `/theorem/` page. Grouped by the reason they went:
 
 - **1275** — dirty: not backed by a Lean proof
 - **443** — revoked in place: its test asserted a lexical drain (computes(boast)
 - **12** — revoked in place: circular by construction AND dependent on the removed lexical gate
+- **11** — orphaned: the theorem this key was sealed from is no longer in src/proof
 - **10** — revoked in place: circular by construction — the test defines the answer it checks, proving a declaration rather than a fact
-- **9** — orphaned: the theorem this key was sealed from is no longer in src/proof
 - **1** — carried: withdrawn for having only a TypeScript test behind it, and since proved — `euler_units_pow_six` states the same proposition at lean_euler_units_pow_six, and the kernel checks it on every run
 - **1** — revoked in place: its test asserts that a list of proof-boasts written across many scripts and languages ALL drain the gate — a lexical drain assertion, and the word-list gate was removed by order, so there is no lexicon to drain and the assertion tests nothing
 - **1** — revoked in place: it asserts adjudicate('we prove all seven')
@@ -622,7 +620,7 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 …and 114 more.
 
-<details><summary>List all 1752 withdrawn keys — nothing proves these</summary>
+<details><summary>List all 1754 withdrawn keys — nothing proves these</summary>
 
 - ~~`euler_units_pow6`~~ — every unit u⁶ ≡ 1 mod 9 (Euler, φ(9)=6)  ·  `e70a44b2-6eb8…`
 - ~~`units_sum_zero`~~ — the units sum to 0 mod 9 (1+2+4+5+7+8=27)  ·  `ec43f3d8-7595…`
@@ -2376,6 +2374,8 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`lean_priorart_claiming_is_not_establishing`~~ — lean priorart.lean: claiming_is_not_establishing — (sources.filter novelty).length &gt; 0 ∧ noveltyEstablished = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `cefda112-d0b4…`
 - ~~`lean_phenomena_this_deposit_explains_predicts_and_constrains_nothing`~~ — lean phenomena.lean: this_deposit_explains_predicts_and_constrains_nothing — explanations = 0 ∧ predictions = 0 ∧ theoriesConstrained = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `f3f2dd32-107d…`
 - ~~`lean_phenomena_arithmetic_on_a_definition_returns_the_definition`~~ — lean phenomena.lean: arithmetic_on_a_definition_returns_the_definition — (299792458 % 9 = 1) ∧ explanations = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2f338a89-2ef5…`
+- ~~`lean_speed_an_encoding_changes_width_not_the_count_of_operations`~~ — lean speed.lean: an_encoding_changes_width_not_the_count_of_operations — hexbitChars &lt; hexChars ∧ hexbitMs &gt; hexMs ∧ (1048576 / 20 = 52428 ∧ 1048576 / 20 = 52428) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9227b54d-7b6f…`
+- ~~`lean_quantum_the_witness_is_about_the_state_not_the_machine`~~ — lean quantum.lean: the_witness_is_about_the_state_not_the_machine — ghzXSupport.length * 2 = (List.range 8).length ∧ (2:Nat) ^ 3 = 8 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `850e2e33-ed0d…`
 
 </details>
 

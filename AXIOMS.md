@@ -5,7 +5,7 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **541** report the same thing:
+axiom fails the build rather than earning a footnote. All **539** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
@@ -350,7 +350,7 @@ def novelty (s : Source) : Bool := s.2.2
 def sources : List Source :=
 ```
 
-### `quantum.lean` — 11 definition(s), 13 theorem(s)
+### `quantum.lean` — 11 definition(s), 12 theorem(s)
 
 ```lean
 def insertEverywhere (x : Nat) : List Nat → List (List Nat)
@@ -360,7 +360,7 @@ def sort : List Nat → List Nat
 def receipt (l : List Nat) : Nat := (sort l).foldl (fun a b => (a * 2 + b) % 9) 0
 def naive (l : List Nat) : Nat := l.foldl (fun a b => (a * 2 + b) % 9) 0
 def pairsOverNine : List (List Nat) :=
-def settledHere : Nat := 12
+def settledHere : Nat := 11
 def bit (n i : Nat) : Nat := n / (2 ^ i) % 2
 def par3 (n : Nat) : Nat := (bit n 0 + bit n 1 + bit n 2) % 2
 def ghzXSupport : List Nat := [0, 3, 5, 6]
@@ -406,7 +406,7 @@ def andF : Nat → Nat → Nat → Nat
 def andN (a b : Nat) : Nat := andF 33 a b
 ```
 
-### `speed.lean` — 7 definition(s), 11 theorem(s)
+### `speed.lean` — 7 definition(s), 10 theorem(s)
 
 ```lean
 def recomputeUs : Nat := 21582900   -- folding 2^20 leaves
@@ -472,6 +472,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**541** declarations, **0** axiom dependencies, **234** definitions they rest on.
+**539** declarations, **0** axiom dependencies, **234** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them. `0/7`.

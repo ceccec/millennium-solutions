@@ -116,8 +116,8 @@ theorem the_uncanonicalised_fold_gives_many_answers :
 --    every ordering of a finite list there is no residual uncertainty: these are settled, totally.
 --    The scope is the limit, not the strength. The Clay conjectures range over infinite domains and are not
 --    stated here, so nothing here bears on them — not because the method is weak, but because they are absent.
-def settledHere : Nat := 12
-theorem quantum_settles_its_domain_totally : settledHere = 12 := rfl
+def settledHere : Nat := 11
+theorem quantum_settles_its_domain_totally : settledHere = 11 := rfl
 
 -- ── WHAT THE REPORTED STATISTICS CANNOT TELL YOU ────────────────────────────────────────────────────────
 --
@@ -151,10 +151,11 @@ theorem a_classical_mixture_reaches_the_parity_ghz_never_does :
   ((List.range 8).filter (fun n => par3 n == 1)).length = 4
   ∧ ((List.range 8).filter (fun n => par3 n == 1)).all (fun n => ¬ ghzXSupport.contains n) := by decide
 
--- Stated so the limit cannot be read as a boast: this is a property of the SIMULATION, computed classically
--- over 2^n exact amplitudes. It witnesses that the simulated state is entangled. It is not a measurement of
--- hardware, and no part of it is faster than the classical arithmetic that produced it.
-theorem the_witness_is_about_the_state_not_the_machine :
-  ghzXSupport.length * 2 = (List.range 8).length ∧ (2:Nat) ^ 3 = 8 := by decide
+-- A theorem named `the_witness_is_about_the_state_not_the_machine` stood here and is DELETED. It decided
+-- `4 * 2 = 8 ∧ 2 ^ 3 = 8` — trivial arithmetic — under a name making a claim about states versus machines
+-- that the proposition does not touch. The bound it wanted to state is real and is prose: the witness above
+-- is a property of the SIMULATION, computed classically over 2^n exact amplitudes, and nothing in it runs
+-- faster than the arithmetic that produced it. A sentence saying so is honest; the same sentence with
+-- `:= by decide` after unrelated arithmetic is not.
 
 end Quantum
