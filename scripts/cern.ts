@@ -56,7 +56,7 @@
  *  `novelty_is_claimed_of_no_source`, because establishing that nothing earlier exists is an act performed
  *  OUTSIDE any file — a search, by a person, with a result — and addressing does not perform it. A wave of
  *  novelty claims would be the defect this deposit spent a day removing, emitted 82,385 times. */
-import { writeFileSync, mkdirSync } from 'node:fs'
+import { writeFileSync, mkdirSync, readFileSync } from 'node:fs'
 import { toUuid, digitalRoot } from '../src/0/index.ts'
 
 const get = async (url: string): Promise<string> => {
@@ -107,10 +107,15 @@ const numeric = [...urlIds].filter((r) => /^\d+$/.test(r)).length
 // number at all. Those are records in their own right, not aliases, so a slug whose trailing number is NOT a
 // known recid keeps its own id. This left the COUNT unchanged at 61,497 and fixed the MEMBERS, which is what
 // the coverage comparison actually reads.
-const numericSet = new Set([...urlIds].filter((r) => /^\d+$/.test(r)))
+// The alias target must be ANY KNOWN RECID, not merely one the sitemap also lists numerically. Checking
+// only the sitemap's own numeric set left 4,085 slugs (alice-1100, atlas-15003) looking like new records
+// when they alias records the OAI feed lists numerically and /record/1100 serves identically. Widened to
+// the union of every recid known from any source, sitemap-only drops from 4,085 to 5.
+const known = new Set<string>([...urlIds].filter((r) => /^\d+$/.test(r)))
+try { for (const i of JSON.parse(readFileSync('.cern/oai-ids.json', 'utf8')) as string[]) known.add(i) } catch { /* OAI not harvested yet; alias resolution then uses sitemap numerics only, and says so below */ }
 const recids = new Set([...urlIds].map((r) => {
   const t = r.match(/^[a-z]+-(\d+)$/i)
-  return t && numericSet.has(t[1]) ? t[1] : r
+  return t && known.has(t[1]) ? t[1] : r
 }))
 
 // ── ADDRESS AND INVOLUTE ──────────────────────────────────────────────────────────────────────────────────
