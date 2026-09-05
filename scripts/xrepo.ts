@@ -13,6 +13,13 @@ import { mergeKey } from '../src/publication/index.ts'
 
 // erpax shapes its sha256 into a v8 UUID; this is the same shaping src/0/toUuid applies, over sha256 bytes
 // instead of FNV bytes, so the two sides are comparable on the merge key we both adopted.
+const shapeHex = (hex: string): string => {
+  const b = [...Buffer.from(hex, 'hex').subarray(0, 16)]
+  b[6] = (b[6] & 0x0f) | 0x80
+  b[8] = (b[8] & 0x3f) | 0x80
+  const h = b.map((x) => x.toString(16).padStart(2, '0')).join('')
+  return `${h.slice(0, 8)}-${h.slice(8, 12)}-${h.slice(12, 16)}-${h.slice(16, 20)}-${h.slice(20)}`
+}
 const shaped = (statement: string): string => {
   const b = [...Buffer.from(mergeKey(statement), 'hex').subarray(0, 16)]
   b[6] = (b[6] & 0x0f) | 0x80
@@ -27,6 +34,7 @@ const SOURCES: { name: string; path: string }[] = [
   { name: 'erpax', path: homedir() + '/.erpax/fusion/erpax.results.json' },
   { name: 'ceccec.github.io', path: homedir() + '/github/ceccec/ceccec.github.io/src/research/statement-manifest.json' },
   { name: 'zeropoint-node', path: homedir() + '/.erpax/fusion/zeropoint-node.jsonl' },
+  { name: 'uuidna', path: homedir() + '/github/uuidna/uuidna/docs/public/statement-addresses.json' },
 ]
 const theirs = new Map<string, string>()
 const origin = new Map<string, string>()
@@ -43,18 +51,34 @@ for (const src of SOURCES) {
       rows = text.split('\n').filter(Boolean).map((l) => JSON.parse(l))
     } else {
       const raw = JSON.parse(text)
-      rows = Array.isArray(raw) ? raw : (raw.results ?? raw.statements ?? [])
+      rows = Array.isArray(raw) ? raw : (raw.results ?? raw.statements ?? raw.rows ?? [])
     }
   } catch { console.log(`  ○ ${src.name}: no manifest at ${src.path} — not counted, not assumed empty`); continue }
   let n = 0
   for (const r of rows) {
+    // uuidna publishes `sha256` of the normalised bytes rather than a UUID, and its own `address` uses a
+    // different framing (toUuid("proposition:" + normalised)). Only the sha256 column is comparable, so it is
+    // shaped here with the same §5.8 nibbles the others use. Its normaliser was measured against this one
+    // across all 2,626 of its rows before any join: agreement on every row.
     const uuid = r.statementUuidCrossRepo ?? r.statementUuid
+      ?? (r.sha256 ? shapeHex(String(r.sha256)) : undefined)
     if (!uuid) continue
     const text = String(r.claim ?? r.statement ?? r.title ?? '?')
     theirs.set(uuid, text)
     origin.set(uuid, src.name)
     if (!probe) probe = { claim: text, statementUuid: uuid }
     n++
+  }
+  // A SOURCE THAT CONTRIBUTES ZERO IS A MISSING OPERAND, NOT A SMALL CORPUS. uuidna's manifest nests its
+  // rows under `rows`, a key this reader did not know, so it loaded 2,626 statements as 0 and printed that
+  // as an ordinary line. It is the same defect as my first cross-repo zero — 45 addresses compared against
+  // an empty set — one layer up: the file was found, parsed, and silently emptied. A peer file that yields
+  // no addresses now refuses the whole run rather than quietly shrinking the comparison.
+  if (n === 0) {
+    console.log(`✗ xrepo: ${src.name} parsed but yielded 0 statement addresses from ${src.path}`)
+    console.log(`  A readable manifest with no rows is a reader that does not know its shape, not an empty`)
+    console.log(`  corpus. Refusing to report a collision count that silently excludes it.`)
+    process.exit(1)
   }
   console.log(`  ${src.name}: ${n} statement addresses`)
 }
