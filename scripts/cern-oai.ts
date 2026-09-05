@@ -38,6 +38,7 @@ const inBoth = [...oai].filter((i) => site.has(i)).length
 const oaiOnly = oai.size - inBoth
 const siteOnly = site.size - inBoth
 
+writeFileSync('.cern/oai-ids.json', JSON.stringify([...oai]))
 writeFileSync('.cern/oai.json', JSON.stringify({ harvested: ids.length, completeListSize: complete, distinct: oai.size, inBoth, oaiOnly, siteOnly, union: oai.size + siteOnly }, null, 2))
 console.log(`  OAI: ${ids.length.toLocaleString('en')} harvested, ${oai.size.toLocaleString('en')} distinct (completeListSize said ${complete.toLocaleString('en')})`)
 console.log(`  sitemap: ${site.size.toLocaleString('en')} distinct`)
