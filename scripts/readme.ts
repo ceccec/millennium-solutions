@@ -101,16 +101,22 @@ const CLAIMS: { section: string; statement: string; test: () => boolean }[] = [
     // on every run of scripts/lean.ts, each has a source on disk carrying its name, and any that does also
     // carry a decidable test recomputes true.
     // NAMED, NOT LOOSENED. This claimed every standing key resolves to a source, and that stopped being
-    // true when theoremOfKey was fixed to refuse an ambiguous match: `lean_add_group` was minted before keys
-    // carried a namespace and its name is declared by two theorems, in mechanical.lean and z9.lean, with
-    // different statements. It is BACKED — twice over — and simply not uniquely resolvable. The claim names
-    // the exception rather than widening until it passes.
-    statement: 'every standing theorem is one the Lean kernel checks on every run, and its source is present — with one named exception, lean_add_group, whose pre-namespace key matches two theorems of the same name, so it resolves to no single source; where a decidable test also exists it recomputes true',
+    // The named exception is GONE, and this is what removing it took. `lean_add_group` was minted before keys
+    // carried a namespace, and its name is declared twice — mechanical.lean and z9.lean. It was never an
+    // unproved claim: it was BACKED twice over and not UNIQUELY resolvable, which is why the earlier version
+    // of this claim named it rather than widening until it passed. Naming it was right at the time.
+    //
+    // It is now withdrawn as an address and CARRIED by lean_z9_add_group. The disambiguation is on the
+    // statement, not the name: this key says "every residue of ℤ/9", and z9.lean decides over `List.range B`
+    // = 0..8, which is exactly the residues. mechanical.lean's `List.range' 1 9` = 1..9 covers the same
+    // residues in ℤ/9 (9 ≡ 0) and backs the fact too, so the choice of heir is which SOURCE expresses the
+    // statement as written, not which one is true. Both are.
+    statement: 'every standing theorem is one the Lean kernel checks on every run, and its source is present — with no exceptions: the last unresolvable address, lean_add_group, is withdrawn and carried by lean_z9_add_group, so every live key now resolves to exactly one theorem; where a decidable test also exists it recomputes true',
     test: () => { const byKey = new Map(CANDIDATES.map((c) => [c.key, c]))
       const standing = ledger.filter(isLive)
       if (!standing.length) return false
       const unresolved = standing.filter((e) => !e.key.startsWith('lean_') || !fileOfKey(e.key))
-      if (unresolved.length !== 1 || unresolved[0].key !== 'lean_add_group') return false
+      if (unresolved.length !== 0) return false
       let checked = 0
       for (const e of standing) { const c = byKey.get(e.key); if (!c) continue
         let ok = false; try { ok = c.test() === true } catch { ok = false }

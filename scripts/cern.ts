@@ -80,7 +80,17 @@ const numeric = [...urlIds].filter((r) => /^\d+$/.test(r)).length
 // numeric recid. Counting them as records inflated the corpus from 61,497 to 113,229. The first pass here
 // filtered them out and got roughly the right total for the wrong reason; the second pass admitted them and
 // got a worse total for a better reason. Aliases are resolved to their target, which is neither.
-const recids = new Set([...urlIds].map((r) => r.match(/(\d+)$/)?.[1] ?? r))
+// An alias is <experiment>-<recid> where the trailing number IS a known numeric recid — verified by
+// fetching /record/cms-68283 and /record/68283 and comparing titles. Mapping ANY trailing digits to a recid
+// is wrong and was: `stripping21r1-dy2mumuline3` became record "3", and `AOD` / `Barn` (Glossary ids) have no
+// number at all. Those are records in their own right, not aliases, so a slug whose trailing number is NOT a
+// known recid keeps its own id. This left the COUNT unchanged at 61,497 and fixed the MEMBERS, which is what
+// the coverage comparison actually reads.
+const numericSet = new Set([...urlIds].filter((r) => /^\d+$/.test(r)))
+const recids = new Set([...urlIds].map((r) => {
+  const t = r.match(/^[a-z]+-(\d+)$/i)
+  return t && numericSet.has(t[1]) ? t[1] : r
+}))
 
 // ── ADDRESS AND INVOLUTE ──────────────────────────────────────────────────────────────────────────────────
 const refl = (d: number): number => 10 - d          // coin.lean: proved an involution over ten digits

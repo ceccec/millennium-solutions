@@ -22,9 +22,8 @@ title: Challenges
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (525)
+### lean (524)
 
-- [lean_add_group](/theorem/lean_add_group) — lean: every residue of ℤ/9 has an additive inverse — checked at every residue; 0/7  ·  `ec7880e6-4ac5…`
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
 - [lean_address_to_uuid_bytes_of_uuidna](/theorem/lean_address_to_uuid_bytes_of_uuidna) — lean address.lean: to_uuid_bytes_of_uuidna — toUuidBytes UUIDNA = [252, 81, 21, 50, 110, 138, 132, 24, 165, 34, 165, 27, 29, 70, 167, 12] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `6a4f78d3-a979…`
@@ -554,11 +553,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 
 
 
-## Revoked — 1751 entries that no longer stand
+## Revoked — 1752 entries that no longer stand
 
 The ledger is append-only: an entry that stops holding is marked in place, never deleted — deleting would break the receipt chain, and rewriting a receipt is tamper. These keep their receipts and stay in the record, but they are **not citable** and have no `/theorem/` page. Grouped by the reason they went:
 
-- **1274** — dirty: not backed by a Lean proof
+- **1275** — dirty: not backed by a Lean proof
 - **443** — revoked in place: its test asserted a lexical drain (computes(boast)
 - **12** — revoked in place: circular by construction AND dependent on the removed lexical gate
 - **10** — revoked in place: circular by construction — the test defines the answer it checks, proving a declaration rather than a fact
@@ -573,7 +572,6 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 - ~~`cubes_in_0_1_8`~~ → [`lean_z9plus_cubes_land_exactly_in_zero_one_eight`](/theorem/lean_z9plus_cubes_land_exactly_in_zero_one_eight)
 - ~~`squares_in_0_1_4_7`~~ → [`lean_z9plus_squares_land_exactly_in_zero_one_four_seven`](/theorem/lean_z9plus_squares_land_exactly_in_zero_one_four_seven)
-- ~~`add_group`~~ → [`lean_add_group`](/theorem/lean_add_group)
 - ~~`bool_demorgan1`~~ → [`lean_mechanical_bool_demorgan1`](/theorem/lean_mechanical_bool_demorgan1)
 - ~~`bool_demorgan2`~~ → [`lean_mechanical_bool_demorgan2`](/theorem/lean_mechanical_bool_demorgan2)
 - ~~`bool_distributivity`~~ → [`lean_mechanical_bool_distributivity`](/theorem/lean_mechanical_bool_distributivity)
@@ -611,10 +609,11 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`relation_digitroot_is_residue_mod9`~~ → [`lean_mechanical_relation_digitroot_is_residue_mod9`](/theorem/lean_mechanical_relation_digitroot_is_residue_mod9)
 - ~~`relation_seven_is_six_plus_one`~~ → [`lean_mechanical_relation_seven_is_six_plus_one`](/theorem/lean_mechanical_relation_seven_is_six_plus_one)
 - ~~`relation_units_sum_and_product`~~ → [`lean_mechanical_relation_units_sum_and_product`](/theorem/lean_mechanical_relation_units_sum_and_product)
+- ~~`relation_432_factors`~~ → [`lean_mechanical_relation_432_factors`](/theorem/lean_mechanical_relation_432_factors)
 
 …and 114 more.
 
-<details><summary>List all 1751 withdrawn keys — nothing proves these</summary>
+<details><summary>List all 1752 withdrawn keys — nothing proves these</summary>
 
 - ~~`euler_units_pow6`~~ — every unit u⁶ ≡ 1 mod 9 (Euler, φ(9)=6)  ·  `e70a44b2-6eb8…`
 - ~~`units_sum_zero`~~ — the units sum to 0 mod 9 (1+2+4+5+7+8=27)  ·  `ec43f3d8-7595…`
@@ -669,6 +668,7 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`invpow_u5`~~ — the inverse of 5 is u^(|units|−1) = u⁵ mod 9  ·  `5e59c756-cf36…`
 - ~~`invpow_u7`~~ — the inverse of 7 is u^(|units|−1) = u⁵ mod 9  ·  `827d2a2f-38e3…`
 - ~~`invpow_u8`~~ — the inverse of 8 is u^(|units|−1) = u⁵ mod 9  ·  `1c45aeef-ca22…`
+- ~~`add_group`~~ — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
 - ~~`neg_involution`~~ — negation −(−d) ≡ d is an involution on ℤ/9  ·  `5eb8cd1f-9e06…`
 - ~~`selfneg_d9`~~ — 9 is its own additive inverse (2·9 ≡ 0) mod 9  ·  `8d0d0254-5ca1…`
 - ~~`invmap_perm`~~ — the multiplicative inverse map permutes the units mod 9  ·  `8455c1ab-d297…`

@@ -14715,7 +14715,10 @@
   {
     "key": "lean_add_group",
     "name": "lean: every residue of ℤ/9 has an additive inverse — checked at every residue; 0/7",
-    "receipt": "ec7880e6-4ac5-869c-bfbd-db909347c464"
+    "receipt": "ec7880e6-4ac5-869c-bfbd-db909347c464",
+    "revoked": true,
+    "supersededBy": "lean_z9_add_group",
+    "reason": "carried: this key predates the file-prefixed address format, so it resolved to no theorem in the tree while the STATEMENT it names — every residue of ℤ/9 has an additive inverse, checked at every residue — has been proved the whole time at lean_z9_add_group (z9.lean: add_group, decided over List.range B). It was an address in a retired format, not a claim without a proof. Marked in place; the receipt stays in the append-only chain."
   },
   {
     "key": "lean_neg_involution",

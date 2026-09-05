@@ -182,11 +182,11 @@ Read from the artefacts at build time, never carried between runs.
 | measure | value |
 |---|---|
 | ledger entries | 2,430 — 303 octaves and 6 over |
-| standing — carries its own proof | **525** |
+| standing — carries its own proof | **524** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **154** |
-| withdrawn — nothing proves it | 1,751 |
-| proved in total | **679** of 2,430 |
-| standing keys → distinct theorems | 524 sealed, 0 of them keyed twice, 1 unresolvable |
+| withdrawn — nothing proves it | 1,752 |
+| proved in total | **678** of 2,430 |
+| standing keys → distinct theorems | 524 sealed, 0 of them keyed twice, 0 unresolvable |
 | Lean files · theorems | 30 · 524 theorems (closed by exhaustion) + 8 rfl declarations, all axiom-free |
 | proved `by decide` | 524 of 532 |
 | claims a machine can render | 103 of 1,555 |
@@ -194,7 +194,7 @@ Read from the artefacts at build time, never carried between runs.
 
 **On `carried`.** 154 entries were withdrawn for want of a Lean proof and have since been given one, at a new key. Nothing is un-revoked: the original's own evidence is still a TypeScript test, and rewriting its status would erase the fact that it did not hold on what it had. The record says both — withdrawn on its own evidence, standing through the theorem that carries it.
 
-**Why the withdrawn were withdrawn.** 1,386 no Lean proof · 457 tested the removed lexical gate · 43 other · 10 circular by construction · 9 its Lean source was deleted or renamed. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
+**Why the withdrawn were withdrawn.** 1,386 no Lean proof · 457 tested the removed lexical gate · 44 other · 10 circular by construction · 9 its Lean source was deleted or renamed. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
 
 **What verification costs.** Proving the set touches all 16,384 leaves; verifying membership afterwards touches 14 — one sibling per level. That is **1,170× less work**, exactly, and the factor grows with the set because N/log N grows. Wall-clock varies with the machine and is left in the build output rather than pinned here. It is not sub-nanosecond and nothing here is: the advantage is a smaller exponent, not a faster clock. The counting is proved in `speed.lean`.
 
