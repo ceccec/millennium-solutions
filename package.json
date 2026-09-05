@@ -123,7 +123,8 @@
     "cern:oai": "tsx scripts/cern-oai.ts",
     "xrepo": "tsx scripts/xrepo.ts",
     "fixture:addresses": "tsx scripts/fixture-addresses.ts",
-    "constants": "tsx scripts/constants-gate.ts"
+    "constants": "tsx scripts/constants-gate.ts",
+    "leads": "tsx scripts/leads.ts"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",

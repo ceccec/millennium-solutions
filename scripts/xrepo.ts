@@ -30,11 +30,29 @@ const shaped = (statement: string): string => {
 
 // Every peer corpus that publishes the shared key, not just the first one that did. A cross-repo collision
 // check over ONE peer measures one edge; the surface is every pair of repositories addressing claims.
-const SOURCES: { name: string; path: string }[] = [
+const SOURCES: { name: string; path: string; textOnly?: boolean }[] = [
   { name: 'erpax', path: homedir() + '/.erpax/fusion/erpax.results.json' },
   { name: 'ceccec.github.io', path: homedir() + '/github/ceccec/ceccec.github.io/src/research/statement-manifest.json' },
   { name: 'zeropoint-node', path: homedir() + '/.erpax/fusion/zeropoint-node.jsonl' },
   { name: 'uuidna', path: homedir() + '/github/uuidna/uuidna/docs/public/statement-addresses.json' },
+  // TEXT-ONLY manifests: these publish the claim and no address, so the address is computed HERE with this
+  // deposit's rule. That is still a sound comparison — both sides are then one function — but it is a
+  // different kind of evidence from a published pin that a peer independently reproduced, and it is labelled
+  // so. Surfaced by scripts/leads.ts, which found eight manifests on disk that this join had never read.
+  { name: 'aequator', path: homedir() + '/.erpax/fusion/aequator.jsonl', textOnly: true },
+  { name: 'ceccec.github.io (fusion)', path: homedir() + '/.erpax/fusion/ceccec.github.io.jsonl', textOnly: true },
+  { name: 'erpax (fusion)', path: homedir() + '/.erpax/fusion/erpax.jsonl', textOnly: true },
+  { name: 'uuidna (fusion)', path: homedir() + '/.erpax/fusion/uuidna.jsonl', textOnly: true },
+  // A METRICS FACE IS STILL A CLAIM CORPUS. I nearly dismissed this one as noise in the leads report
+  // because the filename says "metrics" — it carries 15 rows each with a `claim`, about erpax's own gates.
+  // The detector was right and my reading of it was wrong; dismissing a lead by its NAME is the same defect
+  // as matching a defect by its name.
+  { name: 'erpax (metrics)', path: homedir() + '/.erpax/fusion/erpax.metrics.json', textOnly: true },
+  // millennium-solutions.jsonl and millennium-solutions.metrics.json are THIS repository's own corpora,
+  // exported by a peer. Joining it would
+  // compare the ledger against itself and report self-matches as cross-repository collisions — a number
+  // that would look alarming and mean nothing. Excluded by name, and the exclusion is stated rather than
+  // silent, because an unexplained absence in a source list is indistinguishable from an oversight.
 ]
 const theirs = new Map<string, string>()
 const origin = new Map<string, string>()
@@ -60,10 +78,10 @@ for (const src of SOURCES) {
     // different framing (toUuid("proposition:" + normalised)). Only the sha256 column is comparable, so it is
     // shaped here with the same §5.8 nibbles the others use. Its normaliser was measured against this one
     // across all 2,626 of its rows before any join: agreement on every row.
-    const uuid = r.statementUuidCrossRepo ?? r.statementUuid
-      ?? (r.sha256 ? shapeHex(String(r.sha256)) : undefined)
-    if (!uuid) continue
     const text = String(r.claim ?? r.statement ?? r.title ?? '?')
+    const uuid = src.textOnly ? shaped(text)
+      : (r.statementUuidCrossRepo ?? r.statementUuid ?? (r.sha256 ? shapeHex(String(r.sha256)) : undefined))
+    if (!uuid) continue
     theirs.set(uuid, text)
     origin.set(uuid, src.name)
     if (!probe) probe = { claim: text, statementUuid: uuid }
