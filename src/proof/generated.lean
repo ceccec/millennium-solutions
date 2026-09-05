@@ -44,7 +44,7 @@ theorem mulperm_iff_unit_all :
 
 -- the boundary: where the property genuinely fails
 theorem mulperm_fails_at_the_triad :
-  ¬ ([3, 6, 0].any (fun k =>
+  ¬ ([0,3,6].any (fun k =>
     ((([1,2,4,5,7,8].map (fun u => (k * u) % 9)).eraseDups).length) == 6)) := by decide
 
 -- addgen_k: 5 ledger rows (params 2, 4, 5, 7, 8) → one quantified theorem

@@ -8,7 +8,7 @@ aside: false
 <div class="paper-masthead">
 <h1 class="paper-title">The collected theorems of the ℤ/9 vortex framework</h1>
 <div class="paper-byline">Rouschev, T. · <em>Millennium Solutions</em> · DOI <a href="https://doi.org/10.5281/zenodo.21819217">10.5281/zenodo.21819217</a> · CC BY-NC-ND 4.0</div>
-<div class="paper-addr">529 theorems + 8 rfl declarations · 30 sources · content-address <code>392d8977-2ddd-8078-911f-24f915b13e28</code></div>
+<div class="paper-addr">529 theorems + 8 rfl declarations · 30 sources · content-address <code>0e81c25a-c378-8411-961f-cfa7a3d3def9</code></div>
 </div>
 
 <h2 class="paper-h">Abstract</h2>
@@ -3013,9 +3013,9 @@ checked to compute what the ledger's own tests compute at every parameter of its
 
 <div class="thm" id="thm-generated-mulperm_fails_at_the_triad">
 <p class="thm-label"><strong>Theorem 260</strong> (<code>mulperm_fails_at_the_triad</code>)<a class="thm-cite" href="/theorem/lean_generated_mulperm_fails_at_the_triad">sealed</a>.</p>
-<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>¬</mo><mrow><mo>∃</mo><mi>k</mi><mo>∈</mo><mrow><mo>[</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow><mo>:</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mrow><mi>k</mi><mo>⋅</mo><mi>u</mi></mrow><mo>mod</mo><mn>9</mn></mrow><mo>∣</mo><mi>u</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>6</mn></mrow></mrow></mrow></math></div>
-<pre class="thm-statement"><code>¬ ([3, 6, 0].any (fun k =&gt; ((([1,2,4,5,7,8].map (fun u =&gt; (k * u) % 9)).eraseDups).length) == 6))</code></pre>
-<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\lnot \exists k \in [3,\,6,\,0] : \left|\operatorname{dedup}\left(\{\, k \cdot u \bmod 9 \mid u \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right)\right| = 6</code></pre></details>
+<div class="thm-math" role="math" aria-label="the statement, typeset"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>¬</mo><mrow><mo>∃</mo><mi>k</mi><mo>∈</mo><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>]</mo></mrow><mo>:</mo><mrow><mrow><mo>|</mo><mrow><mi>dedup</mi><mo>(</mo><mrow><mo>{</mo><mrow><mrow><mi>k</mi><mo>⋅</mo><mi>u</mi></mrow><mo>mod</mo><mn>9</mn></mrow><mo>∣</mo><mi>u</mi><mo>∈</mo><mrow><mo>[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>]</mo></mrow><mo>}</mo></mrow><mo>)</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>6</mn></mrow></mrow></mrow></math></div>
+<pre class="thm-statement"><code>¬ ([0,3,6].any (fun k =&gt; ((([1,2,4,5,7,8].map (fun u =&gt; (k * u) % 9)).eraseDups).length) == 6))</code></pre>
+<details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\lnot \exists k \in [0,\,3,\,6] : \left|\operatorname{dedup}\left(\{\, k \cdot u \bmod 9 \mid u \in [1,\,2,\,4,\,5,\,7,\,8] \,\}\right)\right| = 6</code></pre></details>
 </div>
 <p class="thm-remark">the boundary: where the property genuinely fails</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 18 cases. <span class="qed">□</span></p>
