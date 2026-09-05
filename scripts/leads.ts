@@ -102,6 +102,12 @@ const quiet = (cmd: string, re: RegExp): number => {
 add('figures', quiet('node scripts/stale-figures.ts', /○ stale-figures: (\d+) figure/),
   'figure(s) in comments claim a present that has moved', 'npm run stale-figures — each is either stale or a record of the past')
 
+// ── 5b · WHAT THE LIVE SITE SERVES ───────────────────────────────────────────────────────────────────────
+// Every other lead reads the tree or the built dist. None reads what is actually SERVED, so a deploy that
+// failed or a stale cache leaves every gate green while a reader is handed numbers the tree no longer holds.
+// Reported here as a lead rather than run inline, because it needs the network and this census must not.
+add('deploy', 0, '', 'run `npm run deployed` — it compares the served figures against the tree; an unreachable site is reported as unreachable, never as agreement')
+
 // ── 6 · THE DOI QUEUE, AND WHETHER ANYTHING IS MINTED ────────────────────────────────────────────────────
 const deps = existsSync('.zenodo/theorems') ? readdirSync('.zenodo/theorems').filter((f) => f.endsWith('.json')) : []
 const minted = deps.filter((f) => { try { return Boolean(JSON.parse(readFileSync(`.zenodo/theorems/${f}`, 'utf8')).doi) } catch { return false } })
