@@ -70,4 +70,36 @@ theorem three_five_eight_are_consecutive :
 theorem pisano_twentyfour_is_four_sixes :
   (List.range 30).all (fun k => fib k % 9 == fib (k + 24) % 9) ∧ 24 = 4 * 6 := by decide
 
+-- ── THUE–MORSE, RECOMPUTED AS LEAN ─────────────────────────────────────────────────────────────────────
+-- The ledger carried `thue_morse_doubling_recurrence` and WITHDREW it, with the reason recorded: "not
+-- backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once
+-- on one machine; the kernel checks a proposition over its whole domain. Its content has no stated
+-- decidable form yet."
+--
+-- Withdrawn for want of a proof, not because it is false — and it HAS a decidable form. t(n) is the parity
+-- of the 1-bits of n. Doubling shifts every bit one place and introduces no new one, so the popcount is
+-- unchanged and t(2n) = t(n). 2n+1 sets exactly one further bit, so the parity flips: t(2n+1) = 1 − t(n).
+-- Both are decided below over a stated finite domain, which is what the withdrawal said was missing.
+def popcount (n : Nat) : Nat := (List.range 12).foldl (fun a i => a + n / 2 ^ i % 2) 0
+def tm (n : Nat) : Nat := popcount n % 2
+
+-- Domain: n < 200, so 2n+1 < 400 < 2^12 = 4096 and the twelve-bit popcount is exact over every value the
+-- statement touches. The bound is stated rather than assumed, because a popcount that silently truncated
+-- would make this hold for the wrong reason.
+theorem thue_morse_doubling_recurrence :
+  (List.range 200).all (fun n => tm (2 * n) == tm n && tm (2 * n + 1) == 1 - tm n) := by decide
+
+-- The two halves separately, so a reader can see which one a counterexample would break.
+theorem doubling_preserves_the_parity_of_the_bits :
+  (List.range 200).all (fun n => popcount (2 * n) == popcount n) := by decide
+
+theorem the_odd_step_sets_exactly_one_further_bit :
+  (List.range 200).all (fun n => popcount (2 * n + 1) == popcount n + 1) := by decide
+
+-- And the domain is not vacuous: the sequence actually takes both values inside it, so `all` is not
+-- passing over a set on which the property is trivially true.
+theorem the_sequence_takes_both_values :
+  ((List.range 200).filter (fun n => tm n == 0)).length = 100
+  ∧ ((List.range 200).filter (fun n => tm n == 1)).length = 100 := by decide
+
 end Sequences

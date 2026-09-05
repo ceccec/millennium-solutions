@@ -54,7 +54,7 @@ const desc = computed(() => isLean.value
     : 'Achieved by exhaustive computation over a finite domain in scripts/discover.ts, gate-checked against the honesty floor, receipted and chained, and re-verified on every build. Integrity, not truth. entails → 0/7.')
 </script>
 
-# {{ $params.name }}
+# {{ $params.statusPrefix }}{{ $params.name }}
 
 <div itemscope itemtype="https://schema.org/CreativeWork">
 <meta itemprop="name" :content="$params.name" />

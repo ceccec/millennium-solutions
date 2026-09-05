@@ -14644,5 +14644,29 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "70fdb691-42e1-81fc-8c55-659170bacb6e"
+  },
+  {
+    "key": "lean_sequences_thue_morse_doubling_recurrence",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "be76e25c-6ef7-8b16-a5a3-bbc1769a9a61"
+  },
+  {
+    "key": "lean_sequences_doubling_preserves_the_parity_of_the_bits",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "dd795335-9f48-8c29-9e5f-6f5906f6be1c"
+  },
+  {
+    "key": "lean_sequences_the_odd_step_sets_exactly_one_further_bit",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "64dabbee-8dd2-8e6c-a2c5-23d7b94f60ae"
+  },
+  {
+    "key": "lean_sequences_the_sequence_takes_both_values",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8e989d38-d24c-8699-83ca-001b9971bf6c"
   }
 ]

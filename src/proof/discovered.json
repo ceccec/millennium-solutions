@@ -3693,8 +3693,9 @@
     "name": "the Thue–Morse sequence speaks binary: t(n) = parity of the 1-bits of n satisfies t(2n)=t(n) and t(2n+1)=1−t(n) — the doubling/reflection recurrence, computed exactly (n≤200)",
     "receipt": "84d9ec32-0191-87d4-810a-a1d3bbea0aa4",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn 'not backed by a Lean proof … no stated decidable form yet', which was true of it and is no longer. The recurrence IS decidable — t(n) is the parity of the 1-bits of n, doubling shifts every bit without adding one, and 2n+1 sets exactly one further bit — and lean_sequences_thue_morse_doubling_recurrence now decides it over n < 200 with a twelve-bit popcount that is exact across every value the statement touches. The withdrawal named what was missing; this supplies it. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_sequences_thue_morse_doubling_recurrence"
   },
   {
     "key": "parity_bit_detects_single_error",
@@ -17598,5 +17599,25 @@
     "key": "lean_mechanical_a_reflexive_address_claim_holds_for_a_constant_function",
     "name": "lean mechanical.lean: a_reflexive_address_claim_holds_for_a_constant_function — (fun (_ : Nat) => (0 : Nat)) 5 = (fun (_ : Nat) => (0 : Nat)) 5 ∧ (fun (_ : Nat) => (0 : Nat)) 5 = (fun (_ : Nat) => (0 : Nat)) 7 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "70fdb691-42e1-81fc-8c55-659170bacb6e"
+  },
+  {
+    "key": "lean_sequences_thue_morse_doubling_recurrence",
+    "name": "lean sequences.lean: thue_morse_doubling_recurrence — (List.range 200).all (fun n => tm (2 * n) == tm n && tm (2 * n + 1) == 1 - tm n) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "be76e25c-6ef7-8b16-a5a3-bbc1769a9a61"
+  },
+  {
+    "key": "lean_sequences_doubling_preserves_the_parity_of_the_bits",
+    "name": "lean sequences.lean: doubling_preserves_the_parity_of_the_bits — (List.range 200).all (fun n => popcount (2 * n) == popcount n) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "dd795335-9f48-8c29-9e5f-6f5906f6be1c"
+  },
+  {
+    "key": "lean_sequences_the_odd_step_sets_exactly_one_further_bit",
+    "name": "lean sequences.lean: the_odd_step_sets_exactly_one_further_bit — (List.range 200).all (fun n => popcount (2 * n + 1) == popcount n + 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "64dabbee-8dd2-8e6c-a2c5-23d7b94f60ae"
+  },
+  {
+    "key": "lean_sequences_the_sequence_takes_both_values",
+    "name": "lean sequences.lean: the_sequence_takes_both_values — ((List.range 200).filter (fun n => tm n == 0)).length = 100 ∧ ((List.range 200).filter (fun n => tm n == 1)).length = 100 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8e989d38-d24c-8699-83ca-001b9971bf6c"
   }
 ]

@@ -93,6 +93,16 @@ export default {
       params: {
         key: e.key, name: e.name, receipt: e.receipt, hues: withHues(ledger, i, N),
         revoked: e.revoked === true, reason: e.reason ?? '', supersededBy: e.supersededBy ?? '',
+        // THE STATUS BELONGS IN THE TITLE, NOT ONLY IN THE BODY. 1,754 of 2,441 pages here serve a WITHDRAWN
+        // claim. Each says so in its body — and a search result shows the TITLE. So the URL said /theorem/,
+        // the title stated the claim, and only the body carried the status: two of the three surfaces a
+        // reader meets overclaimed, and the two that overclaimed are the two seen without opening the page.
+        //
+        // The address itself cannot move — the ledger is append-only and a resolvable URL is the point — so
+        // the title is where this is fixable. Interpolated as a PARAM beside the name, because that is what
+        // the title is built from; a Vue conditional in the heading would render for a human and leave the
+        // <title> untouched.
+        statusPrefix: e.revoked === true ? (e.supersededBy ? 'CARRIED — ' : 'WITHDRAWN — ') : '',
         ...formulaOf(e.key),
       },
     }))

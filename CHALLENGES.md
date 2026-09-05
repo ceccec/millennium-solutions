@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2441 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2445 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (533)
+### lean (537)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -557,16 +557,20 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_quantum_a_classical_mixture_reaches_the_parity_ghz_never_does](/theorem/lean_quantum_a_classical_mixture_reaches_the_parity_ghz_never_does) — lean quantum.lean: a_classical_mixture_reaches_the_parity_ghz_never_does — ((List.range 8).filter (fun n =&gt; par3 n == 1)).length = 4 ∧ ((List.range 8).filter (fun n =&gt; par3 n == 1)).all (fun n =&gt; ¬ ghzXSupport.contains n) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1e0393b3-351a…`
 - [lean_mechanical_the_cardinality_claims_hold_of_any_four_symbol_alphabet](/theorem/lean_mechanical_the_cardinality_claims_hold_of_any_four_symbol_alphabet) — lean mechanical.lean: the_cardinality_claims_hold_of_any_four_symbol_alphabet — 4 ^ 3 = 64 ∧ 2 ^ 6 = 64 ∧ 8 ^ 2 = 64 ∧ 4 ^ 3 = 2 ^ 6 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d62d56af-d885…`
 - [lean_mechanical_a_reflexive_address_claim_holds_for_a_constant_function](/theorem/lean_mechanical_a_reflexive_address_claim_holds_for_a_constant_function) — lean mechanical.lean: a_reflexive_address_claim_holds_for_a_constant_function — (fun (_ : Nat) =&gt; (0 : Nat)) 5 = (fun (_ : Nat) =&gt; (0 : Nat)) 5 ∧ (fun (_ : Nat) =&gt; (0 : Nat)) 5 = (fun (_ : Nat) =&gt; (0 : Nat)) 7 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `70fdb691-42e1…`
+- [lean_sequences_thue_morse_doubling_recurrence](/theorem/lean_sequences_thue_morse_doubling_recurrence) — lean sequences.lean: thue_morse_doubling_recurrence — (List.range 200).all (fun n =&gt; tm (2 * n) == tm n && tm (2 * n + 1) == 1 - tm n) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `be76e25c-6ef7…`
+- [lean_sequences_doubling_preserves_the_parity_of_the_bits](/theorem/lean_sequences_doubling_preserves_the_parity_of_the_bits) — lean sequences.lean: doubling_preserves_the_parity_of_the_bits — (List.range 200).all (fun n =&gt; popcount (2 * n) == popcount n) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `dd795335-9f48…`
+- [lean_sequences_the_odd_step_sets_exactly_one_further_bit](/theorem/lean_sequences_the_odd_step_sets_exactly_one_further_bit) — lean sequences.lean: the_odd_step_sets_exactly_one_further_bit — (List.range 200).all (fun n =&gt; popcount (2 * n + 1) == popcount n + 1) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `64dabbee-8dd2…`
+- [lean_sequences_the_sequence_takes_both_values](/theorem/lean_sequences_the_sequence_takes_both_values) — lean sequences.lean: the_sequence_takes_both_values — ((List.range 200).filter (fun n =&gt; tm n == 0)).length = 100 ∧ ((List.range 200).filter (fun n =&gt; tm n == 1)).length = 100 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `8e989d38-d24c…`
 
 ### other — one-of-a-kind (0)
 
 
 
-## Revoked — 1754 entries that no longer stand
+## Revoked — 1753 entries that no longer stand
 
 The ledger is append-only: an entry that stops holding is marked in place, never deleted — deleting would break the receipt chain, and rewriting a receipt is tamper. These keep their receipts and stay in the record, but they are **not citable** and have no `/theorem/` page. Grouped by the reason they went:
 
-- **1275** — dirty: not backed by a Lean proof
+- **1274** — dirty: not backed by a Lean proof
 - **443** — revoked in place: its test asserted a lexical drain (computes(boast)
 - **12** — revoked in place: circular by construction AND dependent on the removed lexical gate
 - **11** — orphaned: the theorem this key was sealed from is no longer in src/proof
@@ -575,7 +579,7 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - **1** — revoked in place: its test asserts that a list of proof-boasts written across many scripts and languages ALL drain the gate — a lexical drain assertion, and the word-list gate was removed by order, so there is no lexicon to drain and the assertion tests nothing
 - **1** — revoked in place: it asserts adjudicate('we prove all seven')
 
-## Carried — 154 withdrawn entries whose statement a proof now carries
+## Carried — 155 withdrawn entries whose statement a proof now carries
 
 Each was withdrawn for want of a Lean proof and has since been given one, at a new key. The entry is not restored: its own evidence is still a TypeScript test, and it did not hold on what it had. What the record adds is where the statement stands now.
 
@@ -620,9 +624,9 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`relation_units_sum_and_product`~~ → [`lean_mechanical_relation_units_sum_and_product`](/theorem/lean_mechanical_relation_units_sum_and_product)
 - ~~`relation_432_factors`~~ → [`lean_mechanical_relation_432_factors`](/theorem/lean_mechanical_relation_432_factors)
 
-…and 114 more.
+…and 115 more.
 
-<details><summary>List all 1754 withdrawn keys — nothing proves these</summary>
+<details><summary>List all 1753 withdrawn keys — nothing proves these</summary>
 
 - ~~`euler_units_pow6`~~ — every unit u⁶ ≡ 1 mod 9 (Euler, φ(9)=6)  ·  `e70a44b2-6eb8…`
 - ~~`units_sum_zero`~~ — the units sum to 0 mod 9 (1+2+4+5+7+8=27)  ·  `ec43f3d8-7595…`
@@ -1041,7 +1045,6 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`bidirectional_encoding_is_the_double_torus`~~ — bidirectional encoding is the double-torus law: a reversible codec has two directions (forward and reverse), a pair whose count 2 = −χ(genus-2) = the two coins (110−108); imprint round-trips (forward∘reverse = identity) and foldPair exposes the two distinct directions — to encode your own statements both ways is to know the genus-2 two-loop structure  ·  `db8365fd-657b…`
 - ~~`gray_code_single_bit_transition`~~ — the reflected binary Gray code changes exactly one bit per step: g(i)=i⊕(i≫1), and popcount(g(i)⊕g(i+1))=1 for every consecutive pair (exhaustive to 6 bits) — a single-bit binary orbit, like the vortex takes one step at a time  ·  `c1f2b63b-cae4…`
 - ~~`gray_code_hamiltonian_cycle`~~ — the Gray code is a Hamiltonian cycle on the n-cube: g visits all 2^n codes exactly once (a bijection) and wraps — the last and first differ by one bit too — a closed single-bit tour of every binary state (exhaustive to 6 bits)  ·  `8329eb98-006e…`
-- ~~`thue_morse_doubling_recurrence`~~ — the Thue–Morse sequence speaks binary: t(n) = parity of the 1-bits of n satisfies t(2n)=t(n) and t(2n+1)=1−t(n) — the doubling/reflection recurrence, computed exactly (n≤200)  ·  `84d9ec32-0191…`
 - ~~`parity_bit_detects_single_error`~~ — a parity bit detects every single-bit error: append an even-parity bit so the word has an even 1-count; any single-bit flip makes it odd — detected — so one check bit exposes any one-bit crack (exhaustive over 4- and 5-bit words)  ·  `37a8eb94-b551…`
 - ~~`hamming74_corrects_any_single_error`~~ — Hamming(7,4) corrects any single-bit error: every 4-bit word encodes to 7 bits with 3 parity checks, and for each of the 16 words and each of the 7 flip positions the 3-bit syndrome equals the error position (0 for none) and the decoder recovers the original — the error names its own location (exhaustive, 16×8)  ·  `8725a6eb-aa41…`
 - ~~`hamming74_minimum_distance_three`~~ — Hamming(7,4) has minimum distance 3: the 16 codewords differ pairwise in at least 3 bits (exactly 3 is the minimum) — one flip changes a single bit, so the nearest codeword stays unique, which is exactly why any single-bit error is correctable (exhaustive over all 120 pairs)  ·  `b108ba72-765e…`
@@ -2381,4 +2384,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `ec4c5900-cdb3-80f9-99a3-76e1d1b5205e`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `28450981-b55d-8994-91e6-f91aa63a3f9a`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

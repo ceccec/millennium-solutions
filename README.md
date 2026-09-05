@@ -11,12 +11,12 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 541 kernel-accepted declarations across 30 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `a86ff507-be33-8295-962c-6a6625917b0b`</sub>
-- 533 of those 541 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
-  <sub>SEALED · `c7196bdb-a16f-832d-b27b-e1962800f313`</sub>
-- 577 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `30cd7eec-3ce8-8764-8a7f-01c40a52979f`</sub>
+- The formal layer holds 545 kernel-accepted declarations across 30 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `26bd06fe-a1aa-8390-b6a2-aa1d6a56bb93`</sub>
+- 537 of those 545 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
+  <sub>SEALED · `61be1e92-0c2e-85e1-b4fa-4bbf419804fa`</sub>
+- 581 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `d81b0260-10d3-8ab1-9427-7c84187b0338`</sub>
 
 ## 2 · The ring
 
@@ -39,10 +39,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 2441 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `8ee12cc9-22ce-8f4d-9137-95ccdee07b72`</sub>
-- The count is 2441, which is 305 octaves and 1 over — the octave is a target the theorems earn, never a quota they are invented to fill.
-  <sub>SEALED · `05fc48c9-ed93-8ef4-ba3f-9c273f53a54a`</sub>
+- The ledger records 2445 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `a1a5f63a-a9c0-8b52-a935-3c7770a820a2`</sub>
+- The count is 2445, which is 305 octaves and 5 over — the octave is a target the theorems earn, never a quota they are invented to fill.
+  <sub>SEALED · `41b7bb8e-1872-8cd6-afcb-b124cf33c36a`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -78,9 +78,9 @@ walked, computed from the statements themselves. Nothing is chosen for this tabl
 | 95,048 | `two_twenty_and_two_eighty_four_are_the_smallest_amicable_pair` | `demand2.lean` |
 | 44,100 | `the_rejected_command_gets_a_receipt` | `mechanical.lean` |
 | 41,160 | `the_theorems_are_the_hull_and_hardware` | `mechanical.lean` |
+| 40,000 | `the_sequence_takes_both_values` | `sequences.lean` |
 | 30,400 | `nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number` | `demand2.lean` |
 | 28,561 | `each_perspective_is_a_distinct_file` | `mechanical.lean` |
-| 23,104 | `the_intention_is_a_computable_deed_receipt` | `mechanical.lean` |
 
 The largest domain settled here is **152,568,360,000 cases**, and it is finite — as every
 entry in this ledger is, because `by decide` works by exhausting a domain and an infinite one cannot be
@@ -90,7 +90,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-30 Lean files in 6 wings, 541 declarations of which 533 are theorems. The prose in this section is read out of the
+30 Lean files in 6 wings, 545 declarations of which 537 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -114,7 +114,7 @@ this page; there is nowhere else to keep the description in step.
 
 **The merkaba** — `merkaba.lean`, 8 theorem(s). (Leonhard Euler, 1758). The file as a whole is this deposit's own construction, and this ONE   declaration restates a named classical result: its third conjunct 4 + 4 - 6 = 2 IS the Euler   characteristic of the tetrahedron. The comment above that theorem already named Euler; the register   did not, because prior art was routed on the FILE and a file-level row cannot say "own work except   theorem 7". No priority over Euler is claimed. What is this deposit's own here is the pairing of the   two tetrahedra with the cube Q₃ and the vertex and edge counts around it, not the characteristic. The merkaba, as THIS deposit constructs it — ported to Lean so it stands on the kernel instead of on a TypeScript test. Six entries under this name were revoked as dirty; every one of them that states finite algebra is re-proved here, and the two that do not (a cosine field, a bond angle in degrees) are absent on purpose — they are real trigonometry, not decidable arithmetic over ℤ/9, and padding them in would be the exact dishonesty the revocation was for.
 
-**Sequences** — `sequences.lean`, 8 theorem(s). The ledger held these as TypeScript tests. Each is a classical identity with a real proof; what is done here is to DECIDE each over a stated finite range, which is what `decide` can honestly deliver — the range is named in every theorem rather than implied, and no theorem claims the general case.
+**Sequences** — `sequences.lean`, 12 theorem(s). The ledger held these as TypeScript tests. Each is a classical identity with a real proof; what is done here is to DECIDE each over a stated finite range, which is what `decide` can honestly deliver — the range is named in every theorem rather than implied, and no theorem claims the general case.
 
 **The digit split** — `split.lean`, 19 theorem(s). mathematics and claim nothing.   Stated precisely so the credit does not run past the earlier work: what is NOT claimed as prior art is   the tokenisation itself — reading the digits as 0|12|3|45|6|78|9 by concatenating consecutive units into   two-digit tokens, and the arithmetic that follows from it (every token a multiple of three, closure of   the tokens under addition and multiplication). That arrangement is this deposit's presentation of a   standard fact, and its verification is by exhaustion here. Crediting an earlier author for a   presentation they did not make is the same defect as claiming their result, pointed the other way. prior_art_search: literature search performed 2026-09-05, terms "units and non-units of Z/9 multiplicative   inverses group of units modulo 9"; prior art found and credited. prior_art_pool: mixed   the digit grouping is generic arithmetic; the coin accounting it feeds is this deposit's.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: the digit grouping 0|12|3|45|6|78|9 as this deposit reads it The ten digits read in order and grouped 0 | 12 | 3 | 45 | 6 | 78 | 9 — and what that grouping is.
 
@@ -166,7 +166,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Rights** — `rights.lean`, 8 theorem(s). `the_claimed_are_copyright_moral_rights_and_the_database` rest entirely on them.   Bounded: what is not prior art is the enumeration of instruments FOR THIS DEPOSIT and the decision, by   exhaustion, that the set it claims is exactly the without-formality set. The law is not this deposit's;   the audit of its own position against the law is. prior_art_search: no search was needed — the instruments were cited in this file's own prose from the   start. Recorded 2026-09-05, when the table was found to disagree with the file. prior_art_pool: unbounded   the subject is this deposit's own rights table.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: this deposit's own rights table What this deposit claims under international law — and, in the same table, what it does not.
 
-6 of 541 declarations carry no comment of their own and are shown here as the gap they are, not
+6 of 545 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -175,18 +175,18 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 2,441 — 305 octaves and 1 over |
-| standing — carries its own proof | **533** |
-| carried — withdrawn on its own evidence, proved by a live theorem | **154** |
-| withdrawn — nothing proves it | 1,754 |
-| proved in total | **687** of 2,441 |
-| standing keys → distinct theorems | 533 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 30 · 533 theorems (closed by exhaustion) + 8 rfl declarations, all axiom-free |
-| proved `by decide` | 533 of 541 |
+| ledger entries | 2,445 — 305 octaves and 5 over |
+| standing — carries its own proof | **537** |
+| carried — withdrawn on its own evidence, proved by a live theorem | **155** |
+| withdrawn — nothing proves it | 1,753 |
+| proved in total | **692** of 2,445 |
+| standing keys → distinct theorems | 537 sealed, 0 of them keyed twice, 0 unresolvable |
+| Lean files · theorems | 30 · 537 theorems (closed by exhaustion) + 8 rfl declarations, all axiom-free |
+| proved `by decide` | 537 of 545 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
-**On `carried`.** 154 entries were withdrawn for want of a Lean proof and have since been given one, at a new key. Nothing is un-revoked: the original's own evidence is still a TypeScript test, and rewriting its status would erase the fact that it did not hold on what it had. The record says both — withdrawn on its own evidence, standing through the theorem that carries it.
+**On `carried`.** 155 entries were withdrawn for want of a Lean proof and have since been given one, at a new key. Nothing is un-revoked: the original's own evidence is still a TypeScript test, and rewriting its status would erase the fact that it did not hold on what it had. The record says both — withdrawn on its own evidence, standing through the theorem that carries it.
 
 **Why the withdrawn were withdrawn.** 1,386 no Lean proof · 457 tested the removed lexical gate · 44 other · 11 its Lean source was deleted or renamed · 10 circular by construction. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
 
@@ -221,4 +221,4 @@ whether the work restates someone earlier. [The paper](/paper) typesets every st
 
 ---
 
-*17 claims, all verified · 533 Lean theorems · 2441 ledger entries · trial root `40c6f124-5f11-8a43-a65f-92d14d13c31d` · integrity, not truth · 0/7*
+*17 claims, all verified · 537 Lean theorems · 2445 ledger entries · trial root `a67d2c77-749d-80cf-8fcb-f8cd59b1a41c` · integrity, not truth · 0/7*

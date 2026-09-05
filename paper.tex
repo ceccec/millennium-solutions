@@ -61,8 +61,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free and axiom-free, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 541 of them across 30 files and
-6 wings; 533 close by exhaustion over a stated finite domain and the
+(\texttt{npm run latex-gate}). There are 545 of them across 30 files and
+6 wings; 537 close by exhaustion over a stated finite domain and the
 remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -546,6 +546,26 @@ remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 \[ \forall k \in \{0,\dots,29\},\; \mathrm{fib}\mathopen{}\left(k\right) \bmod 9 = \mathrm{fib}\mathopen{}\left(k + 24\right) \bmod 9 \land 24 = 4 \cdot 6 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 30 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{thue\_morse\_doubling\_recurrence}]
+\[ \forall n \in \{0,\dots,199\},\; \mathrm{tm}\mathopen{}\left(2 \cdot n\right) = \mathrm{tm}\mathopen{}\left(n\right) \land \mathrm{tm}\mathopen{}\left(2 \cdot n + 1\right) = 1 - \mathrm{tm}\mathopen{}\left(n\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 200 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{doubling\_preserves\_the\_parity\_of\_the\_bits}]
+\[ \forall n \in \{0,\dots,199\},\; \mathrm{popcount}\mathopen{}\left(2 \cdot n\right) = \mathrm{popcount}\mathopen{}\left(n\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 200 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_odd\_step\_sets\_exactly\_one\_further\_bit}]
+\[ \forall n \in \{0,\dots,199\},\; \mathrm{popcount}\mathopen{}\left(2 \cdot n + 1\right) = \mathrm{popcount}\mathopen{}\left(n\right) + 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 200 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_sequence\_takes\_both\_values}]
+\[ \left|\{\, n \in \{0,\dots,199\} \mid \mathrm{tm}\mathopen{}\left(n\right) = 0 \,\}\right| = 100 \land \left|\{\, n \in \{0,\dots,199\} \mid \mathrm{tm}\mathopen{}\left(n\right) = 1 \,\}\right| = 100 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 40,000 cases. \hfill$\square$
 
 \paragraph{\texttt{split.lean}}
 
