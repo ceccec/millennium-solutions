@@ -42,6 +42,25 @@ const PROBES: { name: string; file: string; mutate: (s: string) => string }[] = 
     mutate: (s) => s + '\n\nRun `npm run a-command-that-was-never-wired` to verify.\n' },
 ]
 
+// ── SUBJECT-AWARE PROBES, DERIVED FROM WHAT EACH GATE ACTUALLY READS ─────────────────────────────────────
+// The four generic probes above reached 2 of 13, and the honest note said the rest need a mutation of their
+// own subject. That is derivable rather than hand-written: a script names the files it reads, so the probe
+// reads the SCRIPT, extracts those paths, and perturbs them. A gate about a narrow subject gets a mutation
+// of that subject without anyone deciding what its subject is.
+const readsOf = (script: string): string[] => {
+  const src = readFileSync(`scripts/${script}.ts`, 'utf8')
+  const out = new Set<string>()
+  for (const m of src.matchAll(/readFileSync\(\s*'([^']+\.(?:ts|json|lean|md|yml|html))'/g)) out.add(m[1])
+  for (const m of src.matchAll(/'(\.github\/workflows\/[^']+)'/g)) out.add(m[1])
+  return [...out].filter((f) => existsSync(f) && !f.startsWith('scripts/'))
+}
+// One perturbation per file KIND, chosen to be a shape any honest gate over that kind should reject.
+const perturb = (file: string, s: string): string =>
+  file.endsWith('.json') ? s.replace(/"([a-zA-Z_]+)":\s*"([^"]{4,})"/, '"$1": "PROBE_CORRUPTED_VALUE"')
+  : file.endsWith('.lean') ? s + '\n-- probe\ntheorem probe_unclosable : 1 = 2 := by decide\n'
+  : file.endsWith('.yml') ? s.replace(/run: /, 'run: node scripts/doi-resolve.ts\n        run: ')
+  : s + '\n\nPROBE: `npm run a-command-that-was-never-wired`\n'
+
 console.log(`probing ${targets.length} uncontrolled refusing script(s) with ${PROBES.length} generic perturbations:\n`)
 const falsifiable: string[] = []
 const inert: string[] = []
@@ -59,8 +78,19 @@ for (const g of targets.sort()) {
     copyFileSync(backup, p.file); unlinkSync(backup)
     if (fired) break
   }
+  if (!fired) {
+    for (const f of readsOf(g)) {
+      const backup = `/tmp/cp2_${f.replace(/[\/.]/g, '_')}`
+      copyFileSync(f, backup)
+      const before = readFileSync(f, 'utf8')
+      const after = perturb(f, before)
+      if (after !== before) { writeFileSync(f, after); if (!run(cmd)) fired = `perturbing ${f}, which it reads` }
+      copyFileSync(backup, f); unlinkSync(backup)
+      if (fired) break
+    }
+  }
   if (fired) { falsifiable.push(g); console.log(`  ✓ ${g.padEnd(18)} CAN be made red — by ${fired}`) }
-  else { inert.push(g); console.log(`  ○ ${g.padEnd(18)} no generic perturbation reached it`) }
+  else { inert.push(g); console.log(`  ○ ${g.padEnd(18)} not reached, even by perturbing the files it reads`) }
 }
 
 if (!clean()) { console.log('\n✗ control-probe: the tree did not come back clean'); process.exit(1) }
