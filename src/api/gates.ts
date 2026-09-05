@@ -44,3 +44,35 @@ export const uncontrolledRefusers = (opts: { includeMeta?: boolean; includeNetwo
   }
   return out.sort()
 }
+
+/** Scripts a ROUTINE CHAIN invokes — ci:local, gates, precommit, all, release. Chains name their steps two
+ *  ways: as a path (`scripts/x.ts`) and as a bare npm-script string (all.ts lists 'lean', 'contradictions').
+ *  A path-only extractor reported 42 scripts as unrun including `contradictions`, which ci:local runs on
+ *  every commit — the third extractor in one session that was narrower than the thing it read. */
+export const runByChain = (): Set<string> => {
+  const pkg = JSON.parse(readFileSync('package.json', 'utf8')).scripts as Record<string, string>
+  let text = ['release', 'gates', 'all', 'ci:local'].map((k) => String(pkg[k] ?? '')).join(' ')
+  for (const c of ['scripts/ci-local.ts', 'scripts/gate.ts', 'scripts/precommit.ts', 'scripts/all.ts']) {
+    try { text += readFileSync(c, 'utf8') } catch { /* absent chains are not chains */ }
+  }
+  const reach = reachableScripts()
+  const out = new Set<string>()
+  for (const m of text.matchAll(/scripts\/([a-z0-9-]+)\.ts/g)) out.add(m[1])
+  for (const m of text.matchAll(/'([a-z][a-z0-9:-]*)'/g)) {
+    if (reach.has(m[1])) out.add(m[1])
+    const dashed = m[1].replace(/:/g, '-')
+    if (reach.has(dashed)) out.add(dashed)
+  }
+  return out
+}
+
+/** Gates that REFUSE and that no routine chain runs. `seo` sat here with a real defect — paper.html
+ *  carrying zero <h1> — until a probe happened to run it. A gate nobody runs protects nothing, which is a
+ *  different failure from a gate nobody has controlled, and the involution of it. */
+export const refusersNoChainRuns = (): string[] => {
+  const run = runByChain()
+  return uncontrolledRefusers({ includeMeta: false, includeNetwork: true })
+    .concat([...controlledGates()].filter((g) => existsSync(`scripts/${g}.ts`)))
+    .filter((g, i, a) => a.indexOf(g) === i && !run.has(g) && !META.has(g))
+    .sort()
+}

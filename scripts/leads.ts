@@ -12,7 +12,7 @@ import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs'
 import { homedir } from 'node:os'
 import { execSync } from 'node:child_process'
 import { leanFiles, leanSource, ledger, live, theoremCount } from '../src/api/index.ts'
-import { uncontrolledRefusers } from '../src/api/gates.ts'
+import { uncontrolledRefusers, refusersNoChainRuns } from '../src/api/gates.ts'
 
 type Lead = { area: string; n: number; what: string; how: string }
 const leads: Lead[] = []
@@ -23,6 +23,14 @@ const add = (area: string, n: number, what: string, how: string) => { if (n > 0)
 const refusing = uncontrolledRefusers()
 add('controls', refusing.length, `script(s) that REFUSE but have never been shown to fail: ${refusing.sort().join(' ')}`,
   'add a control to scripts/gates-fire.ts, or name it uncontrolled there with the reason')
+
+// ── 1b · GATES THAT REFUSE AND THAT NOTHING RUNS ─────────────────────────────────────────────────────────
+// The involution of lead 1. A gate with no control may be silently broken; a gate no chain runs protects
+// nothing at all, however well controlled. `seo` sat in this state with a real defect — the deposit's paper
+// carried zero <h1> — until a probe ran it by accident.
+const unrun = refusersNoChainRuns()
+add('unrun', unrun.length, `gate(s) that refuse but no routine chain runs: ${unrun.join(' ')}`,
+  'wire into ci:local, gates or release — or accept that its findings will only be seen by someone who asks')
 
 // ── 2 · SOURCES WHOSE PRIOR ART HAS NEVER BEEN SEARCHED ──────────────────────────────────────────────────
 const unsearched = leanFiles().filter((f) => {

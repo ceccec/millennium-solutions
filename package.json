@@ -93,7 +93,7 @@
     "latex-gate": "node scripts/latex-gate.ts",
     "contradictions": "node scripts/contradictions.ts",
     "prior-art": "node scripts/priorart.ts",
-    "gates": "node scripts/attribution-gate.ts && node scripts/hardcode-gate.ts && node scripts/import-gate.ts && node scripts/one-author-gate.ts && node scripts/orphan-gate.ts && node scripts/security-gate.ts && node scripts/translate-gate.ts && node scripts/lean-agree.ts && node scripts/trial-all.ts && node scripts/readme.ts && node scripts/gaps.ts",
+    "gates": "node scripts/attribution-gate.ts && node scripts/hardcode-gate.ts && node scripts/import-gate.ts && node scripts/one-author-gate.ts && node scripts/orphan-gate.ts && node scripts/security-gate.ts && node scripts/translate-gate.ts && node scripts/lean-agree.ts && node scripts/trial-all.ts && node scripts/readme.ts && node scripts/gaps.ts && node scripts/constants-gate.ts && node scripts/fixture-addresses.ts",
     "gates:fire": "node scripts/gates-fire.ts",
     "ci:local": "node scripts/ci-local.ts",
     "metrics": "node scripts/metrics.ts",
