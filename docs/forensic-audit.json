@@ -1,0 +1,117 @@
+{
+  "produced": "576b252c8",
+  "method": "recomputed from git history of src/proof/discovered.json and the ledger itself; re-runnable with `npm run forensic`",
+  "establishes": "what changed, when, in which commit, and the reason recorded at the time",
+  "doesNotEstablish": [
+    "intent",
+    "authorship beyond the git author field (every commit here carries the repository owner)"
+  ],
+  "ledgerNow": {
+    "entries": 2445,
+    "withdrawn": 1753,
+    "carried": 155,
+    "standing": 537
+  },
+  "chainRecomputed": {
+    "breaks": 0,
+    "verdict": "intact"
+  },
+  "largestWithdrawalEvents": [
+    {
+      "date": "2026-08-20",
+      "commit": "e6bb01bb5",
+      "author": "Tsvetan Rouschev",
+      "subject": "gates: green the three that were red — by fixing the authority, not the ",
+      "entries": 2064,
+      "revoked": 1864,
+      "dRev": 1864,
+      "dEnt": 200
+    },
+    {
+      "date": "2026-08-20",
+      "commit": "959f8af2a",
+      "author": "Tsvetan Rouschev",
+      "subject": "lean: verify once instead of twice, and cache what the kernel already sa",
+      "entries": 2218,
+      "revoked": 1890,
+      "dRev": 25,
+      "dEnt": 32
+    },
+    {
+      "date": "2026-09-04",
+      "commit": "5d319470d",
+      "author": "Tsvetan Rouschev",
+      "subject": "Item 12 executed: 24 duplicate addresses retired, and it broke the API's",
+      "entries": 2423,
+      "revoked": 1896,
+      "dRev": 24,
+      "dEnt": 0
+    },
+    {
+      "date": "2026-09-05",
+      "commit": "43253e80b",
+      "author": "Tsvetan Rouschev",
+      "subject": "The self-certifying check knew one NAME, so it missed four — including t",
+      "entries": 2430,
+      "revoked": 1905,
+      "dRev": 7,
+      "dEnt": 6
+    },
+    {
+      "date": "2026-09-04",
+      "commit": "810b378e5",
+      "author": "Tsvetan Rouschev",
+      "subject": "Prior art: attributed 167, unclassified 303, claimed 0 — and zero is not",
+      "entries": 2358,
+      "revoked": 1872,
+      "dRev": 4,
+      "dEnt": 14
+    },
+    {
+      "date": "2026-09-05",
+      "commit": "05551d04e",
+      "author": "Tsvetan Rouschev",
+      "subject": "The offset basis, a sha256 merge key, and a refusal theorem that certifi",
+      "entries": 2424,
+      "revoked": 1898,
+      "dRev": 2,
+      "dEnt": 1
+    }
+  ],
+  "withdrawalReasonsAsRecorded": [
+    [
+      "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a compu",
+      1274
+    ],
+    [
+      "revoked in place: its test asserted a lexical drain (computes(boast).binary === 0). The word-lis",
+      443
+    ],
+    [
+      "revoked in place: circular by construction AND dependent on the removed lexical gate.",
+      12
+    ],
+    [
+      "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or rena",
+      11
+    ],
+    [
+      "revoked in place: circular by construction — the test defines the answer it checks, proving a de",
+      10
+    ],
+    [
+      "carried: withdrawn for having only a TypeScript test behind it, and since proved — `euler_units_",
+      1
+    ],
+    [
+      "revoked in place: its test asserts that a list of proof-boasts written across many scripts and l",
+      1
+    ],
+    [
+      "revoked in place: it asserts adjudicate('we prove all seven').verdict === 'REFUTED'. The removed",
+      1
+    ]
+  ],
+  "totalStateChangingCommits": 558,
+  "address": "55bcd61a-d2a1-8e37-b268-ed0b194e4948"
+}

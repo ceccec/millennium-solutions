@@ -126,7 +126,8 @@
     "constants": "tsx scripts/constants-gate.ts",
     "leads": "tsx scripts/leads.ts",
     "control-probe": "tsx scripts/control-probe.ts",
-    "deployed": "tsx scripts/deployed.ts"
+    "deployed": "tsx scripts/deployed.ts",
+    "forensic": "tsx scripts/forensic-audit.ts"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",
