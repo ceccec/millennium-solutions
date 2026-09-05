@@ -121,7 +121,8 @@
     "stale-figures": "node scripts/stale-figures.ts",
     "cern": "tsx scripts/cern.ts",
     "cern:oai": "tsx scripts/cern-oai.ts",
-    "xrepo": "tsx scripts/xrepo.ts"
+    "xrepo": "tsx scripts/xrepo.ts",
+    "fixture:addresses": "tsx scripts/fixture-addresses.ts"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",

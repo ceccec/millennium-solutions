@@ -157,9 +157,29 @@ console.log(`  digital roots 1..9: ${roots.slice(1).join(' ')}`)
 console.log(collisions.length
   ? `  ✗ ${collisions.length} address collision(s): ${collisions.slice(0, 3).map(([a, v]) => a + ' ← ' + v.join(' ')).join(' · ')}`
   : `  address collisions: 0 — WEAK evidence of distinctness, not a proof of it`)
+// ── THE DOCUMENT IS CHECKED AGAINST THIS RUN ─────────────────────────────────────────────────────────────
+// docs/CERN-ENUMERATION.md states figures about an EXTERNAL portal, so stale-figures cannot hold them — it
+// compares prose against the proof tree, and none of these numbers live there. Unheld external figures go
+// stale silently, which is the whole failure this document is about. So the figures are re-derived here and
+// the run fails if the prose has drifted from what was just measured.
+const doc = readFileSync('docs/CERN-ENUMERATION.md', 'utf8')
+const stated = (label: string, n: number): void => {
+  if (!doc.includes(n.toLocaleString('en'))) {
+    console.log(`  ✗ docs/CERN-ENUMERATION.md does not state the measured ${label} (${n.toLocaleString('en')})`)
+    drift++
+  }
+}
+let drift = 0
+stated('canonical record count', recids.size)
+stated('sitemap URL id count', urlIds.size)
+stated('slug alias count', urlIds.size - numeric)
+console.log(drift
+  ? `  ✗ cern: ${drift} figure(s) in docs/CERN-ENUMERATION.md disagree with this run`
+  : `  docs/CERN-ENUMERATION.md agrees with this run on every figure re-derived here`)
+
 console.log(`\n○ cern: ${records.length.toLocaleString('en')} record URLs addressed and involuted → ${recids.size.toLocaleString('en')} canonical`)
 console.log(`  records once slug aliases are resolved. The involution is tested per URL, which is right; the`)
 console.log(`  CORPUS is ${recids.size.toLocaleString('en')}, and reporting the URL count as a record count overstated it by ${(records.length - recids.size).toLocaleString('en')}.`)
 console.log(`  NOVELTY ESTABLISHED: 0 · NOVELTY CLAIMED: 0. An address says which bytes were read. It does not`)
 console.log(`  say the statement is new, and no number of waves adds up to a search that nobody performed.`)
-process.exit(collisions.length || notInvolutive ? 1 : 0)
+process.exit(collisions.length || notInvolutive || drift ? 1 : 0)

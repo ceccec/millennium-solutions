@@ -3,12 +3,73 @@
   "why_a_fixture": "This rule has been specified in prose three times and been wrong twice — strip-everything (refuted by uuidna-49 against 2539 statements), ASCII-only (refuted by erpax-94 against 832, disagreeing on 211). Each was agreed by three parties before anyone ran it against real statements. A repository should check its implementation against CASES, not against a sentence.",
   "hash_note": "The normalisation is shared; the hash is not. This deposit addresses its own ledger with FNV-1a (integrity against accident) and computes the CROSS-REPOSITORY merge key with sha256 (the adversarial case: it decides whether two parties publish one result). A zero-collision result computed under two different hashes is two repositories failing to find each other, not a check.",
   "cases": [
-    { "in": "List.range 7",              "normalised": "List.range 7",          "note": "juxtaposition IS application; the space survives" },
-    { "in": "σ (σ l)",                    "normalised": "σ(σ l)",               "note": "Greek identifiers are letters — the ASCII rule corrupted this to σ(σl)" },
-    { "in": "H₁(Σ₂) = ℤ⁴ with χ = −2",   "normalised": "H₁(Σ₂)=ℤ⁴ with χ=−2",  "note": "blackboard and subscripts are letters and numbers" },
-    { "in": "a  ==  b",                   "normalised": "a=b",                  "note": "runs collapse; '==' becomes '='" },
-    { "in": "a != b",                     "normalised": "a≠b",                  "note": "'!=' becomes '≠'" },
-    { "in": "rawBytes A = [1, 2]",        "normalised": "rawBytes A=[1,2]",     "note": "case preserved; application space kept; list spaces removed" },
-    { "in": "Nat.succ 1",                 "normalised": "Nat.succ 1",           "note": "must NOT equal nat.succ 1 — Lean is case-sensitive" }
+    {
+      "in": "List.range 7",
+      "normalised": "List.range 7",
+      "note": "juxtaposition IS application; the space survives"
+    },
+    {
+      "in": "σ (σ l)",
+      "normalised": "σ(σ l)",
+      "note": "Greek identifiers are letters — the ASCII rule corrupted this to σ(σl)"
+    },
+    {
+      "in": "H₁(Σ₂) = ℤ⁴ with χ = −2",
+      "normalised": "H₁(Σ₂)=ℤ⁴ with χ=−2",
+      "note": "blackboard and subscripts are letters and numbers"
+    },
+    {
+      "in": "a  ==  b",
+      "normalised": "a=b",
+      "note": "runs collapse; '==' becomes '='"
+    },
+    {
+      "in": "a != b",
+      "normalised": "a≠b",
+      "note": "'!=' becomes '≠'"
+    },
+    {
+      "in": "rawBytes A = [1, 2]",
+      "normalised": "rawBytes A=[1,2]",
+      "note": "case preserved; application space kept; list spaces removed"
+    },
+    {
+      "in": "Nat.succ 1",
+      "normalised": "Nat.succ 1",
+      "note": "must NOT equal nat.succ 1 — Lean is case-sensitive"
+    }
+  ],
+  "addresses_note": "EMITTED BY scripts/fixture-addresses.ts, never typed. mergeKey = sha256(normalise(s)) is the cross-repository key; statementAddress = FNV-1a over the same normalised form is this deposit's own ledger address. A peer checking compatibility should reproduce `mergeKeyUuid`.",
+  "addresses": [
+    {
+      "statement": "an API operation carries at least the access its collection's strictest standard demands; an endpoint below its legal floor is a gap named before it can be called.",
+      "mergeKeySha256": "9b7cc5631d972dc2b43932322d3b998768c2fd6062988a8e8fab8e764f9d0a19",
+      "mergeKeyUuid": "9b7cc563-1d97-8dc2-b439-32322d3b9987",
+      "localFnvAddress": "5eea4561-3387-8da0-b198-fea48faa89ff"
+    },
+    {
+      "statement": "σ (σ l) = l",
+      "mergeKeySha256": "f920fb2dcf8f1070b09f9f52ff5dae4e6c44c467bf88a82dc47f6bb3452e9dcd",
+      "mergeKeyUuid": "f920fb2d-cf8f-8070-b09f-9f52ff5dae4e",
+      "localFnvAddress": "63cd5a74-08b9-890d-9a52-dd34e8821cef"
+    },
+    {
+      "statement": "H₁(Σ₂) = ℤ⁴ with χ = -2",
+      "mergeKeySha256": "bff563e7c3bdc5b4964a6d31ebe30fe4b624d4f5279da3a8cc0cbb48342bb964",
+      "mergeKeyUuid": "bff563e7-c3bd-85b4-964a-6d31ebe30fe4",
+      "localFnvAddress": "44b24b51-2f74-8d12-a3c6-96ef6ce830d4"
+    },
+    {
+      "statement": "(List.range 9).all (fun d => refl (refl d) == d)",
+      "mergeKeySha256": "8c376b466be709d4103eb908dfab7d09a5f84afb4c5b28f080a7d59c42714362",
+      "mergeKeyUuid": "8c376b46-6be7-89d4-903e-b908dfab7d09",
+      "localFnvAddress": "4b588476-cb88-8105-9452-0cbca64fd217"
+    },
+    {
+      "statement": "every residue of ℤ/9 has an additive inverse",
+      "mergeKeySha256": "b2cfe155c513bf23451a8f14a62527b0a24f0438508fb87a01040f1527c0603c",
+      "mergeKeyUuid": "b2cfe155-c513-8f23-851a-8f14a62527b0",
+      "localFnvAddress": "f323cb00-3fcd-8b67-92bb-80203768efba"
+    }
   ]
 }

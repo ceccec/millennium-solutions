@@ -21,10 +21,31 @@ const shaped = (statement: string): string => {
   return `${h.slice(0, 8)}-${h.slice(8, 12)}-${h.slice(12, 16)}-${h.slice(16, 20)}-${h.slice(20)}`
 }
 
-const raw = JSON.parse(readFileSync(homedir() + '/.erpax/fusion/erpax.results.json', 'utf8'))
-const rows: any[] = Array.isArray(raw) ? raw : (raw.results ?? [])
+// Every peer corpus that publishes the shared key, not just the first one that did. A cross-repo collision
+// check over ONE peer measures one edge; the surface is every pair of repositories addressing claims.
+const SOURCES: { name: string; path: string }[] = [
+  { name: 'erpax', path: homedir() + '/.erpax/fusion/erpax.results.json' },
+  { name: 'ceccec.github.io', path: homedir() + '/github/ceccec/ceccec.github.io/src/research/statement-manifest.json' },
+]
 const theirs = new Map<string, string>()
-for (const r of rows) if (r.statementUuid) theirs.set(r.statementUuid, String(r.claim ?? r.title ?? '?'))
+const origin = new Map<string, string>()
+let probe: { claim: string; statementUuid: string } | null = null
+for (const src of SOURCES) {
+  let raw: any
+  try { raw = JSON.parse(readFileSync(src.path, 'utf8')) } catch { console.log(`  ○ ${src.name}: no manifest at ${src.path} — not counted, not assumed empty`); continue }
+  const rows: any[] = Array.isArray(raw) ? raw : (raw.results ?? raw.statements ?? [])
+  let n = 0
+  for (const r of rows) {
+    if (!r.statementUuid) continue
+    const text = String(r.claim ?? r.statement ?? r.title ?? '?')
+    theirs.set(r.statementUuid, text)
+    origin.set(r.statementUuid, src.name)
+    if (!probe) probe = { claim: text, statementUuid: r.statementUuid }
+    n++
+  }
+  console.log(`  ${src.name}: ${n} statement addresses`)
+}
+if (!probe) { console.log('✗ xrepo: no peer manifest readable — refusing to report a zero over nothing'); process.exit(1) }
 
 const mine = new Map<string, string>()
 for (const e of ledger()) if (e.name) mine.set(shaped(e.name), e.name)
@@ -36,11 +57,10 @@ const hits = collide(theirs, mine)
 
 // ── THE CONTROL: erpax's own first statement, addressed by MY code, must land on THEIR address. If it does
 //    not, the two sides are not computing the same function and a zero above means nothing at all.
-const probe = rows.find((r) => r.claim)
 const probeAddr = shaped(String(probe.claim))
 const agrees = probeAddr === probe.statementUuid
 
-console.log(`  erpax v3: ${theirs.size} statement addresses · this deposit: ${mine.size} from ${ledger().length} ledger names`)
+console.log(`  peers: ${theirs.size} statement addresses · this deposit: ${mine.size} from ${ledger().length} ledger names`)
 console.log(`  control — erpax's own statement re-addressed by THIS code:`)
 console.log(`      theirs ${probe.statementUuid}`)
 console.log(`      mine   ${probeAddr}   ${agrees ? '✓ same function' : '✗ DIFFERENT FUNCTION — the comparison below is meaningless'}`)
@@ -62,6 +82,6 @@ if (!detects) {
 }
 
 console.log(hits.length
-  ? `  ✗ ${hits.length} COLLISION(S):\n${hits.map((h) => `      ${h}\n        erpax : ${theirs.get(h)}\n        ceccec: ${mine.get(h)}`).join('\n')}`
+  ? `  ✗ ${hits.length} COLLISION(S):\n${hits.map((h) => `      ${h}\n        ${origin.get(h)} : ${theirs.get(h)}\n        ceccec: ${mine.get(h)}`).join('\n')}`
   : `  collisions: 0 over ${theirs.size} × ${mine.size} — and the control above proves this zero could have been non-zero`)
 process.exit(hits.length ? 1 : 0)

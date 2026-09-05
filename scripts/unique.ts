@@ -15,7 +15,7 @@
 import { readFileSync, readdirSync, existsSync } from 'node:fs'
 import { homedir } from 'node:os'
 import { leanTheorems, leanSource } from '../src/api/index.ts'
-import { statementAddress, STATEMENT_ADDRESS_SPEC, ownFiles } from '../src/publication/index.ts'
+import { statementAddress, STATEMENT_ADDRESS_SPEC, ownFiles, mergeKey } from '../src/publication/index.ts'
 
 const T = leanTheorems()
 const own = new Set(ownFiles())
@@ -32,7 +32,8 @@ const dupes = [...byAddr.values()].filter((g) => g.length > 1)
 // repository whose normaliser drifts from the shared cases finds out from its own build.
 {
   const F = JSON.parse(readFileSync('docs/statement-address-fixture.json', 'utf8')) as
-    { cases: { in: string; normalised: string; note: string }[] }
+    { cases: { in: string; normalised: string; note: string }[]
+      addresses?: { statement: string; mergeKeySha256: string; mergeKeyUuid: string }[] }
   const norm = (x: string) => x.replace(/\s+/gu, ' ')
     .replace(/\s(?![\p{L}\p{N}_])|(?<![\p{L}\p{N}_.])\s/gu, '')
     .replace(/==/g, '=').replace(/!=/g, '≠')
@@ -43,6 +44,22 @@ const dupes = [...byAddr.values()].filter((g) => g.length > 1)
   }
   if (bad) process.exitCode = 1
   else console.log(`  ✓ ${F.cases.length} shared normalisation cases hold — including "σ (σ l)", which the ASCII rule corrupted`)
+  // THE ADDRESS PINS, not only the normaliser. The cases above prove two repositories normalise alike; they
+  // say nothing about whether they compute the same ADDRESS, which is the value a peer actually compares.
+  // I published a pinned pair whose halves did not correspond and sent it to two repositories as the thing
+  // to check against — the statement was a retyped reconstruction, the UUID came from the real record. These
+  // pins are emitted by scripts/fixture-addresses.ts and verified here, so the published constant is checked
+  // by the same build that produces it.
+  for (const a of F.addresses ?? []) {
+    const got = mergeKey(a.statement)
+    if (got !== a.mergeKeySha256) {
+      console.log(`  ✗ address pin drifted: ${a.statement.slice(0, 48)}`)
+      console.log(`      fixture ${a.mergeKeySha256.slice(0, 32)}`)
+      console.log(`      computed ${got.slice(0, 32)}`)
+      bad++
+    }
+  }
+
 }
 
 console.log(`  spec: ${STATEMENT_ADDRESS_SPEC}\n`)
