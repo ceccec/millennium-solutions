@@ -53,8 +53,21 @@ sitemap, not publicly retrievable, absent from every public API.** Reported, not
 
 ## Not established
 
-The portal reports 82,385 records while `type:*` matches 82,375. Those ten cannot be isolated: `NOT
-type:*`, `-type:*` and `NOT _exists_:type` all return HTTP 502. They exist and are uncharacterised.
+The portal reports 82,385 records while `type:*` matches 82,375. **Those ten cannot be isolated.** Every
+negation the query interface accepts returns HTTP 502, and the one form that answers cannot be trusted:
+
+| query | result |
+|---|---|
+| `NOT type:*`, `-type:*`, `NOT _exists_:type` | 502 |
+| `NOT type.primary:*`, `-type.primary:*`, `type.primary:(NOT *)` | 502 |
+| `NOT _exists_:type.primary`, `*:* -type.primary:*` | 502 |
+| `_missing_:type` | **0** — indistinguishable from unsupported |
+
+That last row is the important one: a `0` from a syntax the server may simply not implement is not a
+measurement, it is a vacuous zero of exactly the kind this document exists to warn about. Set difference
+would find them, but only from a full REST enumeration, which the 10,000-offset cap and `robots.txt`
+both preclude. **They exist, they are uncharacterised, and the search is exhausted at this access level** —
+recorded so it is not repeated.
 
 ## What this cost, and the rules that came out of it
 
