@@ -73,8 +73,14 @@ const other = urls.length - listed.length
 // duplication is reported as its own number instead of being laundered into a collision count.
 const records = [...new Set(listed)]
 const duplicated = listed.length - records.length
-const recids = new Set(records.map((u) => u.match(/\/record\/([^/]+)$/)![1]))
-const numeric = [...recids].filter((r) => /^\d+$/.test(r)).length
+const urlIds = new Set(records.map((u) => u.match(/\/record\/([^/]+)$/)![1]))
+const numeric = [...urlIds].filter((r) => /^\d+$/.test(r)).length
+// SLUG IDS ARE ALIASES, NOT RECORDS. /record/cms-68283 and /record/68283 serve the same record — verified
+// by fetching both and comparing titles — and 92.7% of slug ids end in a number that is already a known
+// numeric recid. Counting them as records inflated the corpus from 61,497 to 113,229. The first pass here
+// filtered them out and got roughly the right total for the wrong reason; the second pass admitted them and
+// got a worse total for a better reason. Aliases are resolved to their target, which is neither.
+const recids = new Set([...urlIds].map((r) => r.match(/(\d+)$/)?.[1] ?? r))
 
 // ── ADDRESS AND INVOLUTE ──────────────────────────────────────────────────────────────────────────────────
 const refl = (d: number): number => 10 - d          // coin.lean: proved an involution over ten digits
@@ -100,13 +106,14 @@ for (const u of listed) { const r = u.match(/\/record\/([^/]+)$/)![1]; mult.set(
 writeFileSync('.cern/recids.json', JSON.stringify({ recids: [...recids], multiplicity: [...mult] }))
 writeFileSync('.cern/corpus.json', JSON.stringify({
   sitemaps: children.length, urls: urls.length, listedRecordUrls: listed.length, duplicatedInSitemap: duplicated, records: records.length, distinctRecids: recids.size,
-  nonRecordUrls: other, numericIds: numeric, slugIds: recids.size - numeric, addresses: byAddr.size, collisions: collisions.length,
+  nonRecordUrls: other, urlIds: urlIds.size, numericIds: numeric, slugAliases: urlIds.size - numeric,
+  canonicalRecords: recids.size, addresses: byAddr.size, collisions: collisions.length,
   notInvolutive, fixed, swapped: records.length - fixed, roots,
   oaiCompleteListSize: 74614, recidIndexed: 72111, apiReportedTotal: 82385,
   noveltyEstablished: 0, noveltyClaimed: 0,
 }, null, 2))
 
-console.log(`  ${listed.length.toLocaleString('en')} record URLs listed, ${duplicated.toLocaleString('en')} of them repeats → ${records.length.toLocaleString('en')} distinct · ${recids.size.toLocaleString('en')} distinct ids (${numeric.toLocaleString('en')} numeric, ${(recids.size - numeric).toLocaleString('en')} slug) · ${other.toLocaleString('en')} non-record URLs`)
+console.log(`  ${listed.length.toLocaleString('en')} record URLs listed, ${duplicated.toLocaleString('en')} of them repeats → ${records.length.toLocaleString('en')} distinct · ${urlIds.size.toLocaleString('en')} URL ids (${numeric.toLocaleString('en')} numeric + ${(urlIds.size - numeric).toLocaleString('en')} slug aliases) → ${recids.size.toLocaleString('en')} CANONICAL records · ${other.toLocaleString('en')} non-record URLs`)
 console.log(`  addressed → ${byAddr.size.toLocaleString('en')} distinct addresses`)
 console.log(`  involution refl(refl(d)) = d over every address: ${notInvolutive} failure(s) in ${records.length.toLocaleString('en')}`)
 console.log(`  fixed by the reflection: ${fixed.toLocaleString('en')} · swapped: ${(records.length - fixed).toLocaleString('en')}`)
@@ -114,7 +121,9 @@ console.log(`  digital roots 1..9: ${roots.slice(1).join(' ')}`)
 console.log(collisions.length
   ? `  ✗ ${collisions.length} address collision(s): ${collisions.slice(0, 3).map(([a, v]) => a + ' ← ' + v.join(' ')).join(' · ')}`
   : `  address collisions: 0 — WEAK evidence of distinctness, not a proof of it`)
-console.log(`\n○ cern: ${records.length.toLocaleString('en')} records addressed and involuted.`)
+console.log(`\n○ cern: ${records.length.toLocaleString('en')} record URLs addressed and involuted → ${recids.size.toLocaleString('en')} canonical`)
+console.log(`  records once slug aliases are resolved. The involution is tested per URL, which is right; the`)
+console.log(`  CORPUS is ${recids.size.toLocaleString('en')}, and reporting the URL count as a record count overstated it by ${(records.length - recids.size).toLocaleString('en')}.`)
 console.log(`  NOVELTY ESTABLISHED: 0 · NOVELTY CLAIMED: 0. An address says which bytes were read. It does not`)
 console.log(`  say the statement is new, and no number of waves adds up to a search that nobody performed.`)
 process.exit(collisions.length || notInvolutive ? 1 : 0)
