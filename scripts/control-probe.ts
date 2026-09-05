@@ -97,6 +97,12 @@ for (const g of targets.sort()) {
       if (fired) break
     }
   }
+  // RESTORE THE CONSEQUENCES, NOT ONLY THE INPUT. Several of these scripts are GENERATORS as well as gates
+  // — axiom-index writes AXIOMS.md, priorart-gen rewrites the attribution table — so merely running one
+  // leaves output behind, and the probe's own cleanliness check then reports that as a failure. Correctly:
+  // gates-fire learned the identical lesson about its controls. The probe refuses to start on a dirty tree,
+  // so anything changed after that point is the probe's doing and is restored.
+  if (!clean()) execSync('git checkout -- .', { stdio: 'pipe' })
   if (fired) { falsifiable.push(g); console.log(`  ✓ ${g.padEnd(18)} CAN be made red — by ${fired}`) }
   else { inert.push(g); console.log(`  ○ ${g.padEnd(18)} not reached, even by perturbing the files it reads`) }
 }
