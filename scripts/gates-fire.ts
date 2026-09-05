@@ -21,8 +21,14 @@ import { readFileSync, writeFileSync, existsSync, copyFileSync, unlinkSync } fro
 import { createHash } from 'node:crypto'
 import { execSync } from 'node:child_process'
 
-const run = (cmd: string): boolean => {
-  try { execSync(cmd, { stdio: 'pipe' }); return true } catch { return false }
+// Returns BOTH the verdict and what the gate said. hitsol-8d's upgrade: a gate going red for the wrong
+// reason is indistinguishable from one going red for the right reason at the exit-code layer, so they assert
+// the specific law id fires. Asserting a per-control expected string would be a hand-written list, and this
+// repository does not keep those — so the expectation is DERIVED: a gate rejecting a mutation must NAME THE
+// FILE THAT WAS MUTATED. Nothing to maintain, and it fails exactly when the failure is unattributed.
+const run = (cmd: string): { ok: boolean; out: string } => {
+  try { const o = execSync(cmd, { stdio: 'pipe' }); return { ok: true, out: String(o) } }
+  catch (e: any) { return { ok: false, out: String(e?.stdout ?? '') + String(e?.stderr ?? '') } }
 }
 
 // `restore` re-derives what a control's gate WROTE before it failed. pages.ts writes README.md and index.md
@@ -291,7 +297,10 @@ rescue()
 try { execSync(PREREQ, { stdio: 'pipe' }) } catch { /* dist may not exist yet; the controls report that */ }
 const before = snapshot()
 
-let broken = 0, checked = 0
+let broken = 0
+let attributed = 0
+const unattributed: string[] = []
+let checked = 0
 console.log('gates-fire — each gate must reject its negative control:\n')
 for (const c of CONTROLS) {
   if (!existsSync(c.file)) { console.log(`  ? ${c.gate.padEnd(17)} ${c.file} absent — cannot control`); continue }
@@ -299,7 +308,8 @@ for (const c of CONTROLS) {
   copyFileSync(c.file, backup)
   writeFileSync(RESTORE_MARK, JSON.stringify({ file: c.file, backup }))   // survives a kill; read on next run
   try {
-    const cleanPasses = run(c.cmd)
+    const clean = run(c.cmd)
+    const cleanPasses = clean.ok
     // A MUTATION THAT CHANGES NOTHING IS A BROKEN CONTROL, NOT A BROKEN GATE. Two controls written in this
     // session had regexes that matched nothing — latex-gate and ci-drift — and both were reported as
     // "ACCEPTS ... this gate is not protecting anything". The gates were fine; the mutations never happened.
@@ -314,10 +324,24 @@ for (const c of CONTROLS) {
       continue
     }
     writeFileSync(c.file, after)
-    const mutatedPasses = run(c.cmd)
+    const mutated = run(c.cmd)
+    const mutatedPasses = mutated.ok
     copyFileSync(backup, c.file)
     checked++
-    if (cleanPasses && !mutatedPasses) console.log(`  ✓ ${c.gate.padEnd(17)} rejects ${c.what}`)
+    if (cleanPasses && !mutatedPasses) {
+      // DERIVED ATTRIBUTION CHECK: does the rejection name the file that was mutated?
+      const base = c.file.split('/').pop()!
+      const attributes = mutated.out.includes(c.file) || mutated.out.includes(base)
+      // AND THE CHECK PROVES ITS OWN DISCRIMINATION. "Names the mutated file" is worthless if the gate's
+      // output would match any name — a verbose gate that lists its whole corpus attributes everything and
+      // nothing. A decoy built from the real name (same shape, same extension, not in the tree) must NOT
+      // appear. Derived per control, so there is nothing to maintain and no case anyone has to remember.
+      const decoy = base.replace(/^[^.]*/, 'a_file_that_is_not_here')
+      if (mutated.out.includes(decoy)) { broken++; console.log(`  ✗ ${c.gate.padEnd(17)} ATTRIBUTION CHECK IS BLIND — its output names a decoy that does not exist`); continue }
+      if (attributes) attributed++
+      else unattributed.push(`${c.gate} (mutated ${c.file})`)
+      console.log(`  ✓ ${c.gate.padEnd(17)} rejects ${c.what}${attributes ? '' : '  ○ but does not name the mutated file'}`)
+    }
     else if (!cleanPasses) { broken++; console.log(`  ✗ ${c.gate.padEnd(17)} FAILS ON A CLEAN TREE — it is not testing what it claims`) }
     else { broken++; console.log(`  ✗ ${c.gate.padEnd(17)} ACCEPTS ${c.what} — this gate is not protecting anything`) }
   } finally {
@@ -369,6 +393,20 @@ if (generators.length) {
   console.log('    ' + generators.join(' '))
 }
 
+// ATTRIBUTION, REPORTED AND NOT ENFORCED, BECAUSE THE CRITERION IS NARROWER THAN THE PROPERTY. hitsol-8d's
+// point is right — a gate going red for the wrong reason looks identical to one going red correctly at the
+// exit-code layer — but "names the mutated file" is only ONE way to attribute a rejection, and measuring it
+// showed 14 of 34. The other 20 attribute correctly by a different route: forensics names the broken
+// RECEIPT, orphan-gate names the orphaned SCRIPT, imagine names the refused PROPOSITION. Failing them would
+// be my criterion accusing working gates, which is the mistake that made the first constants-gate worthless.
+//
+// So it reports. What IS enforced is the decoy above: a gate whose output would match any name attributes
+// nothing, and that is checkable without knowing how each gate phrases itself.
+console.log(unattributed.length
+  ? `  ○ ${attributed} of ${attributed + unattributed.length} rejections name the mutated file outright; the rest`
+    + ` attribute by another route (a receipt, a script name, a proposition) — reported, not enforced, because`
+    + ` "names the file" is one form of attribution and not the property itself`
+  : `  ○ all ${attributed} rejections name the mutated file`)
 console.log(broken
   ? `\n✗ gates-fire: ${broken} of ${checked} gate(s) do not reject what they exist to reject`
   : `\n✓ gates-fire: all ${checked} gates reject their control and pass a clean tree · working tree restored`)
