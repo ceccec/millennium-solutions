@@ -1,3 +1,7 @@
+---
+title: The public trial
+---
+
 # The public trial — "the deposit settles all seven Clay problems"
 
 Recompute this file with `node scripts/trial.ts`. It writes nothing unless every finding below is SEALED.

@@ -1,5 +1,5 @@
 ---
-title: The quantum field — twenty-four orderings, one receipt
+title: The quantum field — one receipt
 head:
   - ['meta', { name: 'robots', content: 'index, follow' }]
 ---

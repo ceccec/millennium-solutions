@@ -154,10 +154,13 @@ const figure2 = (): string => {
 // ── the document ─────────────────────────────────────────────────────────────────────────────────────────
 const seal = merkleFold(theorems.map((t) => toUuid(t.name + '\n' + t.statement)))
 
-let o = '---\ntitle: The paper — every machine-checked theorem\naside: false\n---\n\n'
+let o = '---\ntitle: The paper — the theorems\naside: false\n---\n\n'
 o += '<div class="paper paper-collected" itemscope itemtype="https://schema.org/ScholarlyArticle">\n\n'
 o += '<div class="paper-masthead">\n'
-o += '<div class="paper-title">The collected theorems of the ℤ/9 vortex framework</div>\n'
+// AN <h1>, NOT A <div>. This rendered the page title as a styled div, so paper.html carried ZERO h1
+// elements — invisible to every heading-based reader and navigation tool, and flagged by scripts/seo.ts,
+// which is in no gate chain and had therefore never been run against a clean tree by anyone.
+o += '<h1 class="paper-title">The collected theorems of the ℤ/9 vortex framework</h1>\n'
 o += '<div class="paper-byline">Rouschev, T. · <em>Millennium Solutions</em> · DOI <a href="https://doi.org/10.5281/zenodo.21819217">10.5281/zenodo.21819217</a> · CC BY-NC-ND 4.0</div>\n'
 o += `<div class="paper-addr">${n(byDecide)} theorems + ${n(theorems.length - byDecide)} rfl declarations · ${docs.length} sources · content-address <code>${seal}</code></div>\n`
 o += '</div>\n\n'

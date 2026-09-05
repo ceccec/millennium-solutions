@@ -137,7 +137,14 @@ if (unsealed.length) {
 const claimVerdict = adjudicate(CLAIM, () => floor.seven === 7 && floor.reaches.length === 7)
 const proven = { ...proveVerdict(CLAIM, rows.map((r) => r.v.receipt)), verdict: claimVerdict.verdict, note: claimVerdict.note }
 
-let md = `# The public trial — "${CLAIM}"
+// FRONTMATTER TITLE, because the h1 carries the CLAIM UNDER TRIAL and a claim is as long as it needs to
+// be. Without this VitePress takes the h1 as the page title, and the result ran to 99 characters — a search
+// result would have truncated it mid-claim, which is the one place truncation changes the meaning.
+let md = `---
+title: The public trial
+---
+
+# The public trial — "${CLAIM}"
 
 Recompute this file with \`node scripts/trial.ts\`. It writes nothing unless every finding below is SEALED.
 

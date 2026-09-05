@@ -11,12 +11,12 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 534 kernel-accepted declarations across 30 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `704b7c35-9ed5-8cd1-be77-2fd6c518dfef`</sub>
-- 526 of those 534 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
-  <sub>SEALED · `0e10c33c-86a4-844d-b92e-ac84ca08fefe`</sub>
-- 568 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `289c9402-45fc-8ed5-9545-91800ac542cd`</sub>
+- The formal layer holds 537 kernel-accepted declarations across 30 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `97614e18-14a0-8970-ade7-e2013c658f63`</sub>
+- 529 of those 537 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
+  <sub>SEALED · `7bd9b6c4-3a66-8538-83ff-ebed863d8166`</sub>
+- 571 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `29206049-77fe-897e-b820-0a42486ed0c3`</sub>
 
 ## 2 · The ring
 
@@ -39,10 +39,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 2432 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `569bd4af-8898-8f11-9499-aa84ecafac49`</sub>
-- The count is an exact multiple of eight — 2432 is 304 octaves with no remainder.
-  <sub>SEALED · `cf387e40-b99e-871d-9084-f464f900e51f`</sub>
+- The ledger records 2435 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `71ad5215-90fb-85b6-b597-d50e53272812`</sub>
+- The count is 2435, which is 304 octaves and 3 over — the octave is a target the theorems earn, never a quota they are invented to fill.
+  <sub>SEALED · `f47e7386-c925-8a6b-ae93-43432ad325c3`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -90,7 +90,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-30 Lean files in 6 wings, 534 declarations of which 526 are theorems. The prose in this section is read out of the
+30 Lean files in 6 wings, 537 declarations of which 529 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -142,7 +142,7 @@ this page; there is nowhere else to keep the description in step.
 
 **What exhaustion reaches, and what lies outside it** — `reach.lean`, 5 theorem(s). old as mathematics; the deposit claims none of it. What is its own here is the decision over its OWN   bounds, and the statement of where that decision stops.
 
-**Why verification is fast, and what it is not** — `speed.lean`, 8 theorem(s). wrong: the cost is logarithmic BECAUSE of a known result, and the repository was already crediting that   result three files away.   Bounded: what is not prior art is the MEASURED constants on this machine (recompute 21,582,900 µs against   a 38 µs walk) and the arithmetic over them. A measurement is not a discovery either, and the file says so. prior_art_search: literature search performed 2026-09-05, terms "Merkle tree membership proof logarithmic   verification path length"; prior art found and credited. prior_art_pool: unbounded   the subject is this deposit's own verification cost.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: this deposit's own verification cost
+**Why verification is fast, and what it is not** — `speed.lean`, 11 theorem(s). wrong: the cost is logarithmic BECAUSE of a known result, and the repository was already crediting that   result three files away.   Bounded: what is not prior art is the MEASURED constants on this machine (recompute 21,582,900 µs against   a 38 µs walk) and the arithmetic over them. A measurement is not a discovery either, and the file says so. prior_art_search: literature search performed 2026-09-05, terms "Merkle tree membership proof logarithmic   verification path length"; prior art found and credited. prior_art_pool: unbounded   the subject is this deposit's own verification cost.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: this deposit's own verification cost
 
 ### the machine
 
@@ -166,7 +166,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Rights** — `rights.lean`, 8 theorem(s). `the_claimed_are_copyright_moral_rights_and_the_database` rest entirely on them.   Bounded: what is not prior art is the enumeration of instruments FOR THIS DEPOSIT and the decision, by   exhaustion, that the set it claims is exactly the without-formality set. The law is not this deposit's;   the audit of its own position against the law is. prior_art_search: no search was needed — the instruments were cited in this file's own prose from the   start. Recorded 2026-09-05, when the table was found to disagree with the file. prior_art_pool: unbounded   the subject is this deposit's own rights table.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: this deposit's own rights table What this deposit claims under international law — and, in the same table, what it does not.
 
-6 of 534 declarations carry no comment of their own and are shown here as the gap they are, not
+6 of 537 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -175,14 +175,14 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 2,432 — 304 octaves exactly |
-| standing — carries its own proof | **526** |
+| ledger entries | 2,435 — 304 octaves and 3 over |
+| standing — carries its own proof | **529** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **154** |
 | withdrawn — nothing proves it | 1,752 |
-| proved in total | **680** of 2,432 |
-| standing keys → distinct theorems | 526 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 30 · 526 theorems (closed by exhaustion) + 8 rfl declarations, all axiom-free |
-| proved `by decide` | 526 of 534 |
+| proved in total | **683** of 2,435 |
+| standing keys → distinct theorems | 529 sealed, 0 of them keyed twice, 0 unresolvable |
+| Lean files · theorems | 30 · 529 theorems (closed by exhaustion) + 8 rfl declarations, all axiom-free |
+| proved `by decide` | 529 of 537 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -221,4 +221,4 @@ whether the work restates someone earlier. [The paper](/paper) typesets every st
 
 ---
 
-*17 claims, all verified · 526 Lean theorems · 2432 ledger entries · trial root `39f36bd4-edf8-8adc-8b5e-bfc9c8450d01` · integrity, not truth · 0/7*
+*17 claims, all verified · 529 Lean theorems · 2435 ledger entries · trial root `0aca14a8-8228-8e15-87e0-331b890110c6` · integrity, not truth · 0/7*

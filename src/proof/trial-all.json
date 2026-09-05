@@ -14590,5 +14590,23 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "2745f785-9f44-8ccf-8c23-729f99e7e41b"
+  },
+  {
+    "key": "lean_speed_hexbits_are_shorter_than_hex",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d3b171cf-2487-8772-9d92-573a4f88e84e"
+  },
+  {
+    "key": "lean_speed_hexbits_are_slower_than_hex",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "cf4672e4-0be3-8640-bd5c-2be01c301098"
+  },
+  {
+    "key": "lean_speed_an_encoding_changes_width_not_the_count_of_operations",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9227b54d-7b6f-8722-9000-53eea99eada8"
   }
 ]

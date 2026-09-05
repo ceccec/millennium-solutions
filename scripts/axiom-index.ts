@@ -88,7 +88,7 @@ for (const f of leanFiles())
 
 // ── the page ─────────────────────────────────────────────────────────────────────────────────────────────
 const n = (x: number) => x.toLocaleString('en-US')
-let o = `---\ntitle: The axiom index — what is not assumed, and what is\n---\n\n`
+let o = `---\ntitle: The axiom index — what is assumed\n---\n\n`
 o += `# The axiom index\n\n`
 o += `Every declaration in \`src/proof\` is checked with \`#print axioms\` on each build, and a dependency on any\n`
 o += `axiom fails the build rather than earning a footnote. All **${n(T.length)}** report the same thing:\n`
