@@ -111,8 +111,15 @@ add('deploy', 0, '', 'run `npm run deployed` — it compares the served figures 
 // ── 6 · THE DOI QUEUE, AND WHETHER ANYTHING IS MINTED ────────────────────────────────────────────────────
 const deps = existsSync('.zenodo/theorems') ? readdirSync('.zenodo/theorems').filter((f) => f.endsWith('.json')) : []
 const minted = deps.filter((f) => { try { return Boolean(JSON.parse(readFileSync(`.zenodo/theorems/${f}`, 'utf8')).doi) } catch { return false } })
+// TWO DIFFERENT THINGS, AND THEY WERE ONE LINE UNTIL A RELEASE SHOWED THE DIFFERENCE. Cutting v8.8.4
+// triggered publish.yml, whose own comment calls it "also the Zenodo DOI trigger, if enabled" — and the
+// concept DOI still resolves to the record issued a month earlier, with one version relation. So the
+// webhook is NOT enabled, which is a separate blocker from the missing token and has a separate fix.
 add('deposit', deps.length - minted.length, `deposition(s) staged and not minted (${minted.length} minted)`,
-  'blocked on a Zenodo token with deposit:write and deposit:actions — the depositor\'s to create, not this session\'s')
+  'TWO paths, both the depositor\'s: (a) enable the Zenodo↔GitHub integration for this repo, which mints ONE '
+  + 'DOI per release for the whole deposit — verified NOT active, a release cut today minted nothing; '
+  + '(b) a token with deposit:write and deposit:actions, which mints the per-theorem records individually. '
+  + 'They are different artefacts and "a DOI for all" could mean either.')
 
 // ── REPORT ───────────────────────────────────────────────────────────────────────────────────────────────
 console.log('open leads, derived from the tree:\n')
