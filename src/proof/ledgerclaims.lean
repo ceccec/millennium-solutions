@@ -2,7 +2,16 @@ import Merkle
 set_option maxRecDepth 8000000
 -- title: What the ledger claims
 -- wing: the address
--- prior_art: unclassified
+-- prior_art: named
+-- prior_art_domain: hash trees and membership proofs
+-- prior_art_note: `membership_grows_by_one_seal_per_doubling` and `membership_is_logarithmic_not_linear`
+--   restate the O(log n) membership proof of a hash tree — Ralph Merkle, 1979 (thesis); CRYPTO 1987 — which
+--   merkle.lean in this same deposit already credits. Classified `unbounded` on the ground that the subject is
+--   this deposit's own ledger; the ledger is its own, the logarithm is not.
+--   Bounded: what is not prior art is what THIS ledger claims — the 967-receipt case, the saving arithmetic,
+--   and the 128-bit seal width as this deposit mints it.
+-- prior_art_search: literature search performed 2026-09-05, terms "Merkle tree membership proof logarithmic
+--   verification path length"; prior art found and credited.
 -- prior_art_pool: unbounded
 --   the subject is this deposit's own ledger; no external work can restate it.
 --   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because

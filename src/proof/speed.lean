@@ -3,7 +3,19 @@ set_option maxRecDepth 8000000
 set_option maxHeartbeats 4000000
 -- title: Why verification is fast, and what it is not
 -- wing: the floor
--- prior_art: unclassified
+-- prior_art: named
+-- prior_art_domain: hash trees and membership proofs
+-- prior_art_note: the structural claim is Merkle's and is credited here as merkle.lean already credits it:
+--   a hash tree over n leaves has an O(log n) membership proof, so the inclusion path at each power of two
+--   is exactly the exponent. Ralph Merkle, 1979 (thesis); CRYPTO 1987. `the_verify_path_is_the_exponent`,
+--   `membership_is_logarithmic_not_linear` and `the_gap_widens_with_every_doubling` RESTATE that property.
+--   This file was classified `unbounded` — "the subject is this deposit's own verification cost" — which was
+--   wrong: the cost is logarithmic BECAUSE of a known result, and the repository was already crediting that
+--   result three files away.
+--   Bounded: what is not prior art is the MEASURED constants on this machine (recompute 21,582,900 µs against
+--   a 38 µs walk) and the arithmetic over them. A measurement is not a discovery either, and the file says so.
+-- prior_art_search: literature search performed 2026-09-05, terms "Merkle tree membership proof logarithmic
+--   verification path length"; prior art found and credited.
 -- prior_art_pool: unbounded
 --   the subject is this deposit's own verification cost.
 --   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because

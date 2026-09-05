@@ -370,7 +370,13 @@ settledHere := 12</code></pre>
 
 <p class="paper-src"><code>src/proof/ledgerclaims.lean</code> · namespace <code>LedgerClaims</code> · 8 theorems</p>
 
-BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
+Bounded: what is not prior art is what THIS ledger claims — the 967-receipt case, the saving arithmetic,
+  and the 128-bit seal width as this deposit mints it.
+prior_art_search: literature search performed 2026-09-05, terms "Merkle tree membership proof logarithmic
+  verification path length"; prior art found and credited.
+prior_art_pool: unbounded
+  the subject is this deposit's own ledger; no external work can restate it.
+  BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
   row will stay unclassified however much work is done. They look identical in a count and need
   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
@@ -2814,7 +2820,15 @@ largestDomainHere := 152568360000</code></pre>
 
 <p class="paper-src"><code>src/proof/speed.lean</code> · namespace <code>Speed</code> · 8 theorems</p>
 
-BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
+wrong: the cost is logarithmic BECAUSE of a known result, and the repository was already crediting that
+  result three files away.
+  Bounded: what is not prior art is the MEASURED constants on this machine (recompute 21,582,900 µs against
+  a 38 µs walk) and the arithmetic over them. A measurement is not a discovery either, and the file says so.
+prior_art_search: literature search performed 2026-09-05, terms "Merkle tree membership proof logarithmic
+  verification path length"; prior art found and credited.
+prior_art_pool: unbounded
+  the subject is this deposit's own verification cost.
+  BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
   row will stay unclassified however much work is done. They look identical in a count and need
   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
@@ -5523,7 +5537,15 @@ two cannot drift: a file that changes its declaration and not this table fails t
 
 <p class="paper-src"><code>src/proof/rights.lean</code> · namespace <code>Rights</code> · 8 theorems</p>
 
-BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
+`the_claimed_are_copyright_moral_rights_and_the_database` rest entirely on them.
+  Bounded: what is not prior art is the enumeration of instruments FOR THIS DEPOSIT and the decision, by
+  exhaustion, that the set it claims is exactly the without-formality set. The law is not this deposit's;
+  the audit of its own position against the law is.
+prior_art_search: no search was needed — the instruments were cited in this file's own prose from the
+  start. Recorded 2026-09-05, when the table was found to disagree with the file.
+prior_art_pool: unbounded
+  the subject is this deposit's own rights table.
+  BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
   row will stay unclassified however much work is done. They look identical in a count and need
   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.

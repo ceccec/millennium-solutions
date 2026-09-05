@@ -1,6 +1,17 @@
 -- title: Rights
 -- wing: the record
--- prior_art: unclassified
+-- prior_art: named
+-- prior_art_domain: copyright law — rights arising without formality
+-- prior_art_note: this file already NAMED its prior art in prose while the attribution table recorded none.
+--   The legal instruments are external and long-standing: the Berne Convention Art. 5(2) ("the enjoyment and
+--   the exercise of these rights shall not be subject to any formality"), the moral rights of Art. 6bis, and
+--   the sui generis database right of Directive 96/9/EC. `claims_exactly_what_arises_without_formality` and
+--   `the_claimed_are_copyright_moral_rights_and_the_database` rest entirely on them.
+--   Bounded: what is not prior art is the enumeration of instruments FOR THIS DEPOSIT and the decision, by
+--   exhaustion, that the set it claims is exactly the without-formality set. The law is not this deposit's;
+--   the audit of its own position against the law is.
+-- prior_art_search: no search was needed — the instruments were cited in this file's own prose from the
+--   start. Recorded 2026-09-05, when the table was found to disagree with the file.
 -- prior_art_pool: unbounded
 --   the subject is this deposit's own rights table.
 --   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because

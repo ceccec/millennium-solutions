@@ -1,46 +1,19 @@
 {
   "concept_doi": "10.5281/zenodo.21819217",
   "generated_from": "src/proof/priorart.lean kind 1 · src/proof/*.lean",
-  "count": 33,
+  "count": 9,
   "files": [
-    "ledgerclaims.lean",
-    "priorart.lean",
-    "rights.lean",
-    "speed.lean"
+    "priorart.lean"
   ],
   "depositions": [
-    "lean_a_proof_is_smaller_than_its_set_across_the_octave",
-    "lean_a_saving_never_exceeds_its_value",
-    "lean_a_seal_is_128_bits",
     "lean_an_unsearched_source_claims_nothing",
-    "lean_claims_exactly_what_arises_without_formality",
     "lean_every_source_is_classified",
-    "lean_membership_grows_by_one_seal_per_doubling",
-    "lean_membership_is_logarithmic_not_linear",
-    "lean_more_payloads_than_addresses_must_collide",
-    "lean_no_constant_factor_accounts_for_the_gap",
-    "lean_no_excluded_subject_matter_is_claimed",
-    "lean_no_right_that_needs_a_registry_act_is_claimed",
-    "lean_nothing_incapable_of_ownership_is_claimed",
     "lean_novelty_is_claimed_of_no_source",
     "lean_novelty_is_claimed_only_where_a_search_was_performed",
-    "lean_rights_settles_its_range",
     "lean_some_sources_are_unsearched",
-    "lean_the_967_receipt_case",
-    "lean_the_address_does_not_determine_the_payload",
-    "lean_the_advantage_is_the_count_not_the_operation",
-    "lean_the_break_even_is_the_ratio_of_verifications",
-    "lean_the_claimed_are_copyright_moral_rights_and_the_database",
-    "lean_the_enumeration_is_complete_and_unduplicated",
-    "lean_the_gap_widens_with_every_doubling",
     "lean_the_kinds_cover_every_source",
-    "lean_the_measured_ratio_at_a_million_leaves",
     "lean_the_restated_sources_are_named_and_claim_nothing",
-    "lean_the_unclaimed_are_the_registry_the_excluded_and_the_unownable",
-    "lean_the_verify_is_thirty_eight_thousand_nanoseconds_not_one",
-    "lean_the_verify_path_is_the_exponent",
     "lean_this_deposit_claims_no_novelty_today",
-    "lean_verification_grows_it_is_not_constant",
     "lean_zero_claims_is_not_full_attribution"
   ]
 }
