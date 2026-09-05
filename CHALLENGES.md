@@ -566,11 +566,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 
 
 
-## Revoked — 1753 entries that no longer stand
+## Revoked — 1741 entries that no longer stand
 
 The ledger is append-only: an entry that stops holding is marked in place, never deleted — deleting would break the receipt chain, and rewriting a receipt is tamper. These keep their receipts and stay in the record, but they are **not citable** and have no `/theorem/` page. Grouped by the reason they went:
 
-- **1274** — dirty: not backed by a Lean proof
+- **1262** — dirty: not backed by a Lean proof
 - **443** — revoked in place: its test asserted a lexical drain (computes(boast)
 - **12** — revoked in place: circular by construction AND dependent on the removed lexical gate
 - **11** — orphaned: the theorem this key was sealed from is no longer in src/proof
@@ -579,7 +579,7 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - **1** — revoked in place: its test asserts that a list of proof-boasts written across many scripts and languages ALL drain the gate — a lexical drain assertion, and the word-list gate was removed by order, so there is no lexicon to drain and the assertion tests nothing
 - **1** — revoked in place: it asserts adjudicate('we prove all seven')
 
-## Carried — 155 withdrawn entries whose statement a proof now carries
+## Carried — 167 withdrawn entries whose statement a proof now carries
 
 Each was withdrawn for want of a Lean proof and has since been given one, at a new key. The entry is not restored: its own evidence is still a TypeScript test, and it did not hold on what it had. What the record adds is where the statement stands now.
 
@@ -624,9 +624,9 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`relation_units_sum_and_product`~~ → [`lean_mechanical_relation_units_sum_and_product`](/theorem/lean_mechanical_relation_units_sum_and_product)
 - ~~`relation_432_factors`~~ → [`lean_mechanical_relation_432_factors`](/theorem/lean_mechanical_relation_432_factors)
 
-…and 115 more.
+…and 127 more.
 
-<details><summary>List all 1753 withdrawn keys — nothing proves these</summary>
+<details><summary>List all 1741 withdrawn keys — nothing proves these</summary>
 
 - ~~`euler_units_pow6`~~ — every unit u⁶ ≡ 1 mod 9 (Euler, φ(9)=6)  ·  `e70a44b2-6eb8…`
 - ~~`units_sum_zero`~~ — the units sum to 0 mod 9 (1+2+4+5+7+8=27)  ·  `ec43f3d8-7595…`
@@ -1197,18 +1197,6 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`order_of_unit_5_mod9`~~ — the multiplicative order of 5 mod 9 is 6, dividing |ℤ/9*| = 6 (Lagrange): 5^6 ≡ 1 (mod 9) and no smaller positive power is — computed locally from the ring  ·  `0f86f485-4cee…`
 - ~~`order_of_unit_7_mod9`~~ — the multiplicative order of 7 mod 9 is 3, dividing |ℤ/9*| = 6 (Lagrange): 7^3 ≡ 1 (mod 9) and no smaller positive power is — computed locally from the ring  ·  `cfaa11a0-1154…`
 - ~~`order_of_unit_8_mod9`~~ — the multiplicative order of 8 mod 9 is 2, dividing |ℤ/9*| = 6 (Lagrange): 8^2 ≡ 1 (mod 9) and no smaller positive power is — computed locally from the ring  ·  `88406d2d-0559…`
-- ~~`decimal_period_of_1_over_3`~~ — the decimal period of 1/3 is 1: the repeating length of 1/3 equals the multiplicative order of 10 mod 3, and divides 3−1 = 2 — computed by long division and matched to the order  ·  `69c10779-4688…`
-- ~~`decimal_period_of_1_over_7`~~ — the decimal period of 1/7 is 6: the repeating length of 1/7 equals the multiplicative order of 10 mod 7, and divides 7−1 = 6 — computed by long division and matched to the order  ·  `cce5abd4-51ce…`
-- ~~`decimal_period_of_1_over_11`~~ — the decimal period of 1/11 is 2: the repeating length of 1/11 equals the multiplicative order of 10 mod 11, and divides 11−1 = 10 — computed by long division and matched to the order  ·  `4b3ec02b-3597…`
-- ~~`decimal_period_of_1_over_13`~~ — the decimal period of 1/13 is 6: the repeating length of 1/13 equals the multiplicative order of 10 mod 13, and divides 13−1 = 12 — computed by long division and matched to the order  ·  `88a1f3eb-b04b…`
-- ~~`decimal_period_of_1_over_17`~~ — the decimal period of 1/17 is 16: the repeating length of 1/17 equals the multiplicative order of 10 mod 17, and divides 17−1 = 16 — computed by long division and matched to the order  ·  `66d7ddef-f81e…`
-- ~~`decimal_period_of_1_over_19`~~ — the decimal period of 1/19 is 18: the repeating length of 1/19 equals the multiplicative order of 10 mod 19, and divides 19−1 = 18 — computed by long division and matched to the order  ·  `c57a6ba3-e7a0…`
-- ~~`decimal_period_of_1_over_23`~~ — the decimal period of 1/23 is 22: the repeating length of 1/23 equals the multiplicative order of 10 mod 23, and divides 23−1 = 22 — computed by long division and matched to the order  ·  `dc4d12cc-5c2e…`
-- ~~`decimal_period_of_1_over_29`~~ — the decimal period of 1/29 is 28: the repeating length of 1/29 equals the multiplicative order of 10 mod 29, and divides 29−1 = 28 — computed by long division and matched to the order  ·  `5a5cf05d-82eb…`
-- ~~`decimal_period_of_1_over_31`~~ — the decimal period of 1/31 is 15: the repeating length of 1/31 equals the multiplicative order of 10 mod 31, and divides 31−1 = 30 — computed by long division and matched to the order  ·  `1cae973e-227c…`
-- ~~`decimal_period_of_1_over_37`~~ — the decimal period of 1/37 is 3: the repeating length of 1/37 equals the multiplicative order of 10 mod 37, and divides 37−1 = 36 — computed by long division and matched to the order  ·  `1631d387-ecfb…`
-- ~~`decimal_period_of_1_over_41`~~ — the decimal period of 1/41 is 5: the repeating length of 1/41 equals the multiplicative order of 10 mod 41, and divides 41−1 = 40 — computed by long division and matched to the order  ·  `056e30c2-3b83…`
-- ~~`decimal_period_of_1_over_43`~~ — the decimal period of 1/43 is 21: the repeating length of 1/43 equals the multiplicative order of 10 mod 43, and divides 43−1 = 42 — computed by long division and matched to the order  ·  `900a955f-62f1…`
 - ~~`all_is_manageable_as_monographs`~~ — all is manageable as monographs: every object is a self-contained, uniquely content-addressed, independently recomputable unit — its own page, its own address, citable — so the deposit is a library of monographs, each a hero of self, and they fold to one order-independent root  ·  `828c096f-fc54…`
 - ~~`cross_seal_six_by_seven_and_seven_by_six`~~ — the 6×7 / 7×6 cross-seal: multiplication commutes (6·7 = 7·6 = 42), and the merkle fold is order-independent, so both orderings cross-seal to one identical root at the same time — the same order-free symmetry (with 60 digital-rooting to 6 and 90 to 9, the triad) by which every theorem folds to one harmonic root whatever the order, so any ordering unlocks the whole  ·  `dcad9cb8-93f0…`
 - ~~`reflection_of_666_is_444`~~ — the reflection of 666 is 444: under the ten’s-complement reflection 10−d (the involution with fixed point 5), each 6 reflects to 4 (6+4=10), so 666 ↔ 444, and reflecting twice returns 666 — an involution; the digital roots are dr(666)=9 and dr(444)=3, both on the triad axis {3,6,9}; numerology defused into ℤ/9 structure  ·  `5f837f00-0a82…`

@@ -4952,96 +4952,108 @@
     "name": "the decimal period of 1/3 is 1: the repeating length of 1/3 equals the multiplicative order of 10 mod 3, and divides 3−1 = 2 — computed by long division and matched to the order",
     "receipt": "69c10779-4688-88b3-8e4b-ff5714e78e48",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_generated_decimal_period_is_the_order_of_ten quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. The proof existed; nothing read the subsumption back into the ledger. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_generated_decimal_period_is_the_order_of_ten"
   },
   {
     "key": "decimal_period_of_1_over_7",
     "name": "the decimal period of 1/7 is 6: the repeating length of 1/7 equals the multiplicative order of 10 mod 7, and divides 7−1 = 6 — computed by long division and matched to the order",
     "receipt": "cce5abd4-51ce-879f-b8a4-955306b35b99",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_generated_decimal_period_is_the_order_of_ten quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. The proof existed; nothing read the subsumption back into the ledger. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_generated_decimal_period_is_the_order_of_ten"
   },
   {
     "key": "decimal_period_of_1_over_11",
     "name": "the decimal period of 1/11 is 2: the repeating length of 1/11 equals the multiplicative order of 10 mod 11, and divides 11−1 = 10 — computed by long division and matched to the order",
     "receipt": "4b3ec02b-3597-8dac-be4a-1fcaba367e30",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_generated_decimal_period_is_the_order_of_ten quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. The proof existed; nothing read the subsumption back into the ledger. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_generated_decimal_period_is_the_order_of_ten"
   },
   {
     "key": "decimal_period_of_1_over_13",
     "name": "the decimal period of 1/13 is 6: the repeating length of 1/13 equals the multiplicative order of 10 mod 13, and divides 13−1 = 12 — computed by long division and matched to the order",
     "receipt": "88a1f3eb-b04b-8a66-b258-43ecc4660dc0",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_generated_decimal_period_is_the_order_of_ten quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. The proof existed; nothing read the subsumption back into the ledger. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_generated_decimal_period_is_the_order_of_ten"
   },
   {
     "key": "decimal_period_of_1_over_17",
     "name": "the decimal period of 1/17 is 16: the repeating length of 1/17 equals the multiplicative order of 10 mod 17, and divides 17−1 = 16 — computed by long division and matched to the order",
     "receipt": "66d7ddef-f81e-87e5-a76e-57c839f7d8df",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_generated_decimal_period_is_the_order_of_ten quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. The proof existed; nothing read the subsumption back into the ledger. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_generated_decimal_period_is_the_order_of_ten"
   },
   {
     "key": "decimal_period_of_1_over_19",
     "name": "the decimal period of 1/19 is 18: the repeating length of 1/19 equals the multiplicative order of 10 mod 19, and divides 19−1 = 18 — computed by long division and matched to the order",
     "receipt": "c57a6ba3-e7a0-831d-a417-0f139a0ac6d9",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_generated_decimal_period_is_the_order_of_ten quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. The proof existed; nothing read the subsumption back into the ledger. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_generated_decimal_period_is_the_order_of_ten"
   },
   {
     "key": "decimal_period_of_1_over_23",
     "name": "the decimal period of 1/23 is 22: the repeating length of 1/23 equals the multiplicative order of 10 mod 23, and divides 23−1 = 22 — computed by long division and matched to the order",
     "receipt": "dc4d12cc-5c2e-8b92-82df-06c7bb8999b5",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_generated_decimal_period_is_the_order_of_ten quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. The proof existed; nothing read the subsumption back into the ledger. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_generated_decimal_period_is_the_order_of_ten"
   },
   {
     "key": "decimal_period_of_1_over_29",
     "name": "the decimal period of 1/29 is 28: the repeating length of 1/29 equals the multiplicative order of 10 mod 29, and divides 29−1 = 28 — computed by long division and matched to the order",
     "receipt": "5a5cf05d-82eb-8e63-a2ac-3eab1e3df08c",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_generated_decimal_period_is_the_order_of_ten quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. The proof existed; nothing read the subsumption back into the ledger. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_generated_decimal_period_is_the_order_of_ten"
   },
   {
     "key": "decimal_period_of_1_over_31",
     "name": "the decimal period of 1/31 is 15: the repeating length of 1/31 equals the multiplicative order of 10 mod 31, and divides 31−1 = 30 — computed by long division and matched to the order",
     "receipt": "1cae973e-227c-8ba2-806f-eb4a0cf7ea82",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_generated_decimal_period_is_the_order_of_ten quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. The proof existed; nothing read the subsumption back into the ledger. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_generated_decimal_period_is_the_order_of_ten"
   },
   {
     "key": "decimal_period_of_1_over_37",
     "name": "the decimal period of 1/37 is 3: the repeating length of 1/37 equals the multiplicative order of 10 mod 37, and divides 37−1 = 36 — computed by long division and matched to the order",
     "receipt": "1631d387-ecfb-8405-9112-cdc705688772",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_generated_decimal_period_is_the_order_of_ten quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. The proof existed; nothing read the subsumption back into the ledger. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_generated_decimal_period_is_the_order_of_ten"
   },
   {
     "key": "decimal_period_of_1_over_41",
     "name": "the decimal period of 1/41 is 5: the repeating length of 1/41 equals the multiplicative order of 10 mod 41, and divides 41−1 = 40 — computed by long division and matched to the order",
     "receipt": "056e30c2-3b83-8c1c-b531-fee995542c84",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_generated_decimal_period_is_the_order_of_ten quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. The proof existed; nothing read the subsumption back into the ledger. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_generated_decimal_period_is_the_order_of_ten"
   },
   {
     "key": "decimal_period_of_1_over_43",
     "name": "the decimal period of 1/43 is 21: the repeating length of 1/43 equals the multiplicative order of 10 mod 43, and divides 43−1 = 42 — computed by long division and matched to the order",
     "receipt": "900a955f-62f1-84da-bb5f-2e27393145df",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_generated_decimal_period_is_the_order_of_ten quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. The proof existed; nothing read the subsumption back into the ledger. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_generated_decimal_period_is_the_order_of_ten"
   },
   {
     "key": "all_is_manageable_as_monographs",

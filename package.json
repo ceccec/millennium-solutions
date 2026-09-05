@@ -128,7 +128,8 @@
     "control-probe": "tsx scripts/control-probe.ts",
     "deployed": "tsx scripts/deployed.ts",
     "forensic": "tsx scripts/forensic-audit.ts",
-    "notice": "tsx scripts/notice.ts"
+    "notice": "tsx scripts/notice.ts",
+    "recover": "tsx scripts/recover.ts"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",
