@@ -74,6 +74,13 @@ export const runByChain = (): Set<string> => {
  *  This is a list, and this repository does not keep lists — with one exception, which is exactly this one:
  *  a JUDGEMENT cannot be derived from the tree. What CAN be derived is whether a judgement was recorded, and
  *  that is what the census checks. */
+// TWO ENTRIES WERE REMOVED BECAUSE THEIR REASONS WERE FALSE, and the reasons were checkable prose.
+//   seo      said "belongs to release" — and release did not run it. A reason that names a placement
+//            which does not exist is not a decision, it is a description of one nobody made.
+//   lean-gen said "a generator, run when the sources change" — run by nothing, and it had rotted into
+//            emitting Lean the kernel refuses. The exemption permitted exactly the failure that occurred.
+// Both are in `npm run release` now. The other reasons here were tested the same way and hold: gates-fire
+// and forensics do run in release and ci:local, priorart-gen does run in ci:local.
 export const UNRUN_BY_DESIGN: Record<string, string> = {
   'bench-hex': 'a benchmark: its output is a measurement, not a verdict, and timings vary by machine',
   'bench-hexbit': 'the same — and its result is sealed in speed.lean, which every chain does check',
@@ -81,9 +88,7 @@ export const UNRUN_BY_DESIGN: Record<string, string> = {
   'doi-resolve': 'resolves external DOIs; a registry outage would fail a build about this tree',
   'zenodo-verify': 'reaches Zenodo; same reason',
   xrepo: 'reads peer manifests OUTSIDE this repository — it cannot run where they do not exist, which is any clone but this machine',
-  seo: 'needs a built dist; belongs to release, and is in gates-fire so a regression is caught there',
   paper: 'a generator whose output every chain already checks',
-  'lean-gen': 'a generator, run when the sources change rather than on every commit',
   priorart: 'a generator; priorart-gen is the gate that holds its output',
   'stale-figures': 'REPORTS by design — a 75% false-positive rate is not something to gate a build on',
   'verify-theorems': 'covered by gates-fire, and its subject is re-verified by forensics on every commit',
