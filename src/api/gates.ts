@@ -66,6 +66,29 @@ export const runByChain = (): Set<string> => {
   return out
 }
 
+/** WHY a refusing gate is deliberately absent from every routine chain. A reason recorded here is a
+ *  decision someone took; a gate missing from both the chains AND this map is a decision nobody has taken,
+ *  which is the only kind the census should keep asking about. Same discipline as naming an uncontrolled
+ *  gate in gates-fire rather than giving it a control that lies.
+ *
+ *  This is a list, and this repository does not keep lists — with one exception, which is exactly this one:
+ *  a JUDGEMENT cannot be derived from the tree. What CAN be derived is whether a judgement was recorded, and
+ *  that is what the census checks. */
+export const UNRUN_BY_DESIGN: Record<string, string> = {
+  'bench-hex': 'a benchmark: its output is a measurement, not a verdict, and timings vary by machine',
+  'bench-hexbit': 'the same — and its result is sealed in speed.lean, which every chain does check',
+  cern: 'reaches opendata.cern.ch; ~15 minutes of network, and the portal is not ours to poll on each commit',
+  'doi-resolve': 'resolves external DOIs; a registry outage would fail a build about this tree',
+  'zenodo-verify': 'reaches Zenodo; same reason',
+  xrepo: 'reads peer manifests OUTSIDE this repository — it cannot run where they do not exist, which is any clone but this machine',
+  seo: 'needs a built dist; belongs to release, and is in gates-fire so a regression is caught there',
+  paper: 'a generator whose output every chain already checks',
+  'lean-gen': 'a generator, run when the sources change rather than on every commit',
+  priorart: 'a generator; priorart-gen is the gate that holds its output',
+  'stale-figures': 'REPORTS by design — a 75% false-positive rate is not something to gate a build on',
+  'verify-theorems': 'covered by gates-fire, and its subject is re-verified by forensics on every commit',
+}
+
 /** Gates that REFUSE and that no routine chain runs. `seo` sat here with a real defect — paper.html
  *  carrying zero <h1> — until a probe happened to run it. A gate nobody runs protects nothing, which is a
  *  different failure from a gate nobody has controlled, and the involution of it. */
@@ -76,3 +99,6 @@ export const refusersNoChainRuns = (): string[] => {
     .filter((g, i, a) => a.indexOf(g) === i && !run.has(g) && !META.has(g))
     .sort()
 }
+
+/** Of those, the ones nobody has decided about. */
+export const unrunUndecided = (): string[] => refusersNoChainRuns().filter((g) => !UNRUN_BY_DESIGN[g])

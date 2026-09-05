@@ -12,7 +12,7 @@ import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs'
 import { homedir } from 'node:os'
 import { execSync } from 'node:child_process'
 import { leanFiles, leanSource, ledger, live, theoremCount } from '../src/api/index.ts'
-import { uncontrolledRefusers, refusersNoChainRuns } from '../src/api/gates.ts'
+import { uncontrolledRefusers, refusersNoChainRuns, unrunUndecided, runByChain, UNRUN_BY_DESIGN } from '../src/api/gates.ts'
 
 type Lead = { area: string; n: number; what: string; how: string }
 const leads: Lead[] = []
@@ -28,9 +28,22 @@ add('controls', refusing.length, `script(s) that REFUSE but have never been show
 // The involution of lead 1. A gate with no control may be silently broken; a gate no chain runs protects
 // nothing at all, however well controlled. `seo` sat in this state with a real defect — the deposit's paper
 // carried zero <h1> — until a probe ran it by accident.
-const unrun = refusersNoChainRuns()
-add('unrun', unrun.length, `gate(s) that refuse but no routine chain runs: ${unrun.join(' ')}`,
-  'wire into ci:local, gates or release — or accept that its findings will only be seen by someone who asks')
+const unrun = unrunUndecided()
+const decided = refusersNoChainRuns().length - unrun.length
+add('unrun', unrun.length, `gate(s) that refuse, that no chain runs, and that nobody has decided about: ${unrun.join(' ')}`,
+  'wire it into a chain, or record WHY not in UNRUN_BY_DESIGN — an absence nobody decided is indistinguishable from an oversight')
+if (decided) console.log(`  (${decided} further gate(s) are unrun BY RECORDED DECISION — network, generator, or report-by-design — and are not leads)\n`)
+
+// THE EXEMPTION LIST NEEDS ITS OWN GUARD. UNRUN_BY_DESIGN records WHY a gate is absent from every chain.
+// The moment one is wired in, its recorded reason becomes false — and a stale exemption is worse than none,
+// because it reads as a decision someone is still standing behind. Derived: an entry naming a gate that a
+// chain now runs, or a script that no longer exists, is itself a lead.
+{
+  const run = runByChain()
+  const stale = Object.keys(UNRUN_BY_DESIGN).filter((g) => run.has(g) || !existsSync(`scripts/${g}.ts`))
+  add('exemptions', stale.length, `UNRUN_BY_DESIGN entr(y/ies) that no longer describe the tree: ${stale.join(' ')}`,
+    'the gate is wired now, or gone — delete the exemption rather than leaving a reason nobody holds')
+}
 
 // ── 2 · SOURCES WHOSE PRIOR ART HAS NEVER BEEN SEARCHED ──────────────────────────────────────────────────
 const unsearched = leanFiles().filter((f) => {
