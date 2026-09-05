@@ -123,6 +123,25 @@ theorem the_kinds_cover_every_source :
 --
 -- The zero therefore has exactly one meaning: nobody has looked. It is a statement about work not done, not
 -- about work found. These two propositions must always be read together, so the kernel decides them together.
+--
+-- ── IS CLAIMING NOTHING ITSELF AN UNDERCLAIM? ASKED, SEARCHED, AND ANSWERED NO. ─────────────────────────
+-- Every source here is kind 0 and no source claims novelty, on the stated ground that verification is not
+-- discovery. That policy deserved the same scrutiny as a boast, because an under-claim misrepresents the
+-- record exactly as an over-claim does — it just fails in the direction nobody audits.
+--
+-- The argument against the policy is real: formal verification of KNOWN mathematics is a recognised
+-- contribution in its own right — Flyspeck, the Four Colour Theorem in Coq, mathlib itself — so a deposit
+-- that machine-checks known results and claims nothing might be giving away work it actually did. This
+-- taxonomy has no slot for "restates known mathematics AND contributes a formalisation that did not exist".
+--
+-- So the question was put to the literature on 2026-09-05, terms "Lean 4 mathlib ZMod 9 units group
+-- formalization decide finite modular arithmetic". Mathlib already carries ZMod n, IsUnit, cyclic group
+-- structure and the general machinery these facts follow from, across some 232,000 theorems. The
+-- FORMALISATION is therefore not new either, and the policy stands — not by assumption, which is how it
+-- stood until today, but by a search that could have overturned it and did not.
+--
+-- What remains distinctive here is a METHOD and not a result: axiom-free, Mathlib-free, closing by decide
+-- over stated finite domains. A method is not a discovery, and this file goes on claiming nothing.
 theorem some_sources_are_unsearched :
   (sources.filter (fun s => kindOf s == 1)).length > 0 := by decide
 
