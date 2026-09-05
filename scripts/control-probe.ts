@@ -18,6 +18,7 @@
 import { readFileSync, writeFileSync, copyFileSync, existsSync, unlinkSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 import { leanFiles } from '../src/api/index.ts'
+import { uncontrolledRefusers } from '../src/api/gates.ts'
 
 const run = (cmd: string): boolean => {
   try { execSync(cmd, { stdio: 'pipe', timeout: 180_000 }); return true } catch { return false }
@@ -26,23 +27,7 @@ const clean = (): boolean => execSync('git status --porcelain').toString().trim(
 if (!clean()) { console.log('✗ control-probe: working tree is dirty — refusing to mutate it'); process.exit(1) }
 
 // ── the uncontrolled refusers, DERIVED exactly as leads.ts derives them ──────────────────────────────────
-const pkg = JSON.parse(readFileSync('package.json', 'utf8')).scripts as Record<string, string>
-const reachable = new Set<string>()
-for (const v of Object.values(pkg)) for (const m of String(v).matchAll(/scripts\/([a-z0-9-]+)\.ts/g)) reachable.add(m[1])
-const controlled = new Set([...readFileSync('scripts/gates-fire.ts', 'utf8').matchAll(/gate: '([^' ]+)/g)].map((m) => m[1]))
-// Meta-scripts run other scripts; probing them probes their children and tells you nothing about themselves.
-const META = new Set(['all', 'ci-local', 'gates-fire', 'precommit', 'control-probe', 'leads', 'wire', 'metrics'])
-// Network scripts would be probed against a remote that is not ours to perturb.
-const NETWORK = new Set(['cern', 'cern-oai', 'doi-resolve', 'zenodo-mint', 'zenodo-verify', 'bench-hex', 'bench-hexbit'])
-
-const targets: string[] = []
-for (const g of reachable) {
-  if (controlled.has(g) || META.has(g) || NETWORK.has(g)) continue
-  const p = `scripts/${g}.ts`
-  if (!existsSync(p)) continue
-  const src = readFileSync(p, 'utf8')
-  if (/process\.exit\(\s*(1|bad|drift|Number\(|.*\?\s*1)/.test(src) && /✗/.test(src)) targets.push(g)
-}
+const targets = uncontrolledRefusers()
 
 // ── generic perturbations: each is a shape a deposit of this kind should never accept ────────────────────
 const LEAN = 'src/proof/' + (leanFiles().includes('coin.lean') ? 'coin.lean' : leanFiles()[0])

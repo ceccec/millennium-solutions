@@ -70,6 +70,25 @@ const CONTROLS: Control[] = [
     what: 'a comment claiming FEWER theorems than the tree holds — the same defect reflected',
     mutate: (s) => s.replace('// ── THE ℤ/9 SETS', '// this file rests on 400 theorems\n// ── THE ℤ/9 SETS') },
 
+  // ── FOUND BY scripts/control-probe.ts, not by anyone thinking of them. The probe perturbs every
+  //    uncontrolled refusing script with a few generic mutations and reports which CAN be made red; these
+  //    two fired, and their mutations are lifted here verbatim. A control discovered by probing tests the
+  //    property the gate actually has, rather than the property I imagined it had when writing a mutation.
+  // seo reads the BUILT pages, so its control mutates one. Written the hour after control-probe found this
+  // gate standing red on a clean tree — 1 error, 4 warnings, in no gate chain, never run by anyone: the
+  // deposit's flagship paper.html carried zero <h1> because its title was rendered as a styled <div>.
+  { gate: 'seo', cmd: 'node scripts/seo.ts', file: '.vitepress/dist/paper.html',
+    what: 'a published page with no h1 for a reader to navigate by',
+    mutate: (s) => s.replace(/<h1([^>]*)>/, '<div$1>').replace(/<\/h1>/, '</div>') },
+
+  { gate: 'paper', cmd: 'node scripts/paper.ts', file: 'src/proof/coin.lean',
+    what: 'a declaration the kernel cannot close',
+    mutate: (s) => s.replace(/\nend Coin\s*$/, '\ntheorem probe_false : 1 = 2 := by decide\n$&') },
+
+  { gate: 'verify-theorems', cmd: 'node scripts/verify-theorems.ts', file: 'src/proof/discovered.json',
+    what: 'a ledger entry citing a theorem that is not in the tree',
+    mutate: (s) => s.replace(/\n\]\s*$/, ',\n  { "key": "lean_probe_absent", "name": "lean probe.lean: probe_absent — a key with nothing behind it", "receipt": "00000000-0000-8000-8000-000000000000" }\n]') },
+
   { gate: 'docs-gate', cmd: 'node scripts/docs-gate.ts', file: 'docs/CERN-ENUMERATION.md',
     what: 'prose telling a reader to run a command that does not exist',
     mutate: (s) => s.replace('`npm run cern`', '`npm run a-command-that-was-never-wired`') },

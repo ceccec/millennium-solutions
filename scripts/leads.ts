@@ -12,6 +12,7 @@ import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs'
 import { homedir } from 'node:os'
 import { execSync } from 'node:child_process'
 import { leanFiles, leanSource, ledger, live, theoremCount } from '../src/api/index.ts'
+import { uncontrolledRefusers } from '../src/api/gates.ts'
 
 type Lead = { area: string; n: number; what: string; how: string }
 const leads: Lead[] = []
@@ -19,19 +20,7 @@ const add = (area: string, n: number, what: string, how: string) => { if (n > 0)
 
 // ── 1 · REFUSING SCRIPTS WITH NO NEGATIVE CONTROL ────────────────────────────────────────────────────────
 // A gate nobody has shown can go from green to red is a gate whose next regression is silent.
-const pkg = JSON.parse(readFileSync('package.json', 'utf8')).scripts as Record<string, string>
-const reachable = new Set<string>()
-for (const v of Object.values(pkg)) for (const m of String(v).matchAll(/scripts\/([a-z0-9-]+)\.ts/g)) reachable.add(m[1])
-const fire = readFileSync('scripts/gates-fire.ts', 'utf8')
-const controlled = new Set([...fire.matchAll(/gate: '([^' ]+)/g)].map((m) => m[1]))
-const refusing: string[] = []
-for (const g of reachable) {
-  if (controlled.has(g)) continue
-  const p = `scripts/${g}.ts`
-  if (!existsSync(p)) continue
-  const src = readFileSync(p, 'utf8')
-  if (/process\.exit\(\s*(1|bad|drift|Number\(|.*\?\s*1)/.test(src) && /✗/.test(src)) refusing.push(g)
-}
+const refusing = uncontrolledRefusers()
 add('controls', refusing.length, `script(s) that REFUSE but have never been shown to fail: ${refusing.sort().join(' ')}`,
   'add a control to scripts/gates-fire.ts, or name it uncontrolled there with the reason')
 
