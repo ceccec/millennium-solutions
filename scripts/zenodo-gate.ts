@@ -55,6 +55,19 @@ for (const t of rows) {
   const d = JSON.parse(readFileSync(p5, 'utf8'))
   const listed: string[] = d.files ?? []
   if (!listed.length) { fail(`${p5} attaches no source at all`); continue }
+
+  // EVERY DEPOSITION MUST STATE ITS PRIOR-ART POSITION. A DOI is permanent, and a record that describes a
+  // theorem without saying whether anyone looked for earlier work asserts novelty BY OMISSION — a reader
+  // takes "this deposit's own" for "nobody did this before". All 86 records currently awaiting DOIs come
+  // from files whose prior art has never been searched, and that is not an accident: the selection rule for
+  // "own work" is the ABSENCE of a named attribution, which for these files means no search was performed.
+  //
+  // They all say so today. Nothing made them keep saying so, and the sentence is generated prose that a
+  // template edit could silently drop, which is exactly when it would matter most.
+  const desc = String((d.metadata ?? d).description ?? '')
+  if (!/prior[- ]art/i.test(desc))
+    fail(`${p5} describes a theorem without stating whether a prior-art search was performed — a permanent `
+      + `record that is silent on the literature claims novelty by omission`)
   for (const f of listed) if (!existsSync(f)) fail(`${p5} names ${f}, which is not in the tree`)
   for (const need of closureOf(t.file))
     if (!listed.includes('src/proof/' + need))
