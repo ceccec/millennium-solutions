@@ -5,11 +5,11 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **539** report the same thing:
+axiom fails the build rather than earning a footnote. All **541** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
-theorems rest on **234** definitions, and every one of them is a choice. A theorem about
+theorems rest on **235** definitions, and every one of them is a choice. A theorem about
 `fall` is a theorem about the digital root only because `fall` is *defined* to be it. Both halves are
 indexed below, and the second is the longer one.
 
@@ -90,7 +90,7 @@ The pins in the control fixture follow the community practice of guarding `#prin
 `#guard_msgs`, which turns the axiom footprint into an executable regression test: the assertion is
 checked by the elaborator, and drift fails the build with a mismatch instead of passing unnoticed.
 
-## What IS assumed: the 234 definitions
+## What IS assumed: the 235 definitions
 
 Each of these is a primitive of this deposit — not derived, not proved, chosen. They are listed in full
 because a reader checking a theorem must be able to read the definition it is about, and because a
@@ -280,13 +280,14 @@ def kcdDoubled : Nat := 1366     -- K_cd expressed against a unit half the size;
 def alternative : List Nat := [c, dNuCs, hDigits, eDigits, kDigits, naDigits, kcdDoubled]
 ```
 
-### `mechanical.lean` — 4 definition(s), 105 theorem(s)
+### `mechanical.lean` — 5 definition(s), 107 theorem(s)
 
 ```lean
 def M9 (n : Nat) : Nat := n % 9
 def DR (n : Nat) : Nat := if n == 0 then 0 else 1 + (n - 1) % 9
 def gRange : List Nat := [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 def dbl : Nat → Nat
+def forgetful (_ : Nat) : Nat := 0
 ```
 
 ### `merkaba.lean` — 6 definition(s), 8 theorem(s)
@@ -472,6 +473,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**539** declarations, **0** axiom dependencies, **234** definitions they rest on.
+**541** declarations, **0** axiom dependencies, **235** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them. `0/7`.

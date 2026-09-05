@@ -13,6 +13,7 @@ set_option maxRecDepth 400000
 -- vocabulary is translated, because a guess would produce a theorem that compiles and states something
 -- else. What the kernel adds is what a test cannot give — the proposition checked over its whole domain.
 
+-- CLAIMS: physical
 namespace Mechanical
 
 def M9 (n : Nat) : Nat := n % 9
@@ -375,5 +376,46 @@ theorem each_suggested_next_is_content_addressed : Address.toUuidBytes [47, 116,
 
 -- the rejected command gets a receipt: a refused command is content-addressed and documented, not silently dropp
 theorem the_rejected_command_gets_a_receipt : Address.toUuidBytes [114, 101, 106, 101, 99, 116, 101, 100, 58, 112, 97, 103, 101, 45, 99, 111, 109, 109, 97, 110, 100] == Address.toUuidBytes [114, 101, 106, 101, 99, 116, 101, 100, 58, 112, 97, 103, 101, 45, 99, 111, 109, 109, 97, 110, 100] && Address.toUuidBytes [114, 101, 106, 101, 99, 116, 101, 100, 58, 97] != Address.toUuidBytes [114, 101, 106, 101, 99, 116, 101, 100, 58, 98] := by decide
+
+-- ── THE BOLD CLAIMS OF THIS FILE, AND THE COMPUTATIONS THAT BREAK THEM ─────────────────────────────────
+--
+-- Twenty-six theorems here carry names that CLAIM ABOUT THE WORLD — that DNA is the version itself, that
+-- the genetic code is the octave squared, that gravity holds prose and code and paths, that intentions are
+-- shown by receipts and not by role. They are stated boldly and they stay stated. What follows is the
+-- computation a critic runs against them, published here rather than left for someone to find.
+--
+-- The claims fall into two classes and each class has one defeater, PROVED below rather than described.
+--
+-- CLASS ONE — CARDINALITY. Sixteen decide arithmetic on counts: 4^3 = 64 beside DNA, 6 + 1 = 7 beside the
+-- creation week, 3 * 2 = 6 beside reading frames, 2/1 beside the octave. THE ARITHMETIC IS TRUE OF EVERY
+-- STRUCTURE WITH THOSE COUNTS. Four symbols in triples give sixty-four whether they are nucleotides, DNA
+-- bases, playing-card suits or nothing at all. The theorem decides the count; the NAME supplies the subject,
+-- and the subject is a choice a reader is free to reject. A critic substitutes any other four-symbol
+-- alphabet and the arithmetic does not move.
+--
+-- CLASS TWO — REFLEXIVITY, and this defeater is the harder one. Ten compare an address with itself:
+-- `Address.toUuidBytes x == Address.toUuidBytes x`. THAT HOLDS FOR ANY FUNCTION WHATEVER, INCLUDING A
+-- CONSTANT ONE THAT THROWS ITS INPUT AWAY. It witnesses that addressing is deterministic on one input. It
+-- witnesses nothing about gravity, cells, sensors or intentions, and it would hold unchanged if the address
+-- function were replaced by `fun _ => []`.
+--
+-- Both defeaters are decided here, so the limit is not a caveat in prose but a proposition the kernel checks.
+theorem the_cardinality_claims_hold_of_any_four_symbol_alphabet :
+  4 ^ 3 = 64 ∧ 2 ^ 6 = 64 ∧ 8 ^ 2 = 64 ∧ 4 ^ 3 = 2 ^ 6 := by decide
+
+-- A function that throws its argument away. Named rather than inlined: an anonymous typed lambda in a
+-- statement is not something the publication renderer parses, and it returned null into the page builder.
+def forgetful (_ : Nat) : Nat := 0
+
+theorem a_reflexive_address_claim_holds_for_a_constant_function :
+  forgetful 5 = forgetful 5 ∧ forgetful 5 = forgetful 7 := by decide
+
+-- The second conjunct is the sharp part: a constant function makes DISTINCT inputs equal, so a claim of the
+-- form f a = f a survives even when f has destroyed everything that distinguishes its arguments. Any theorem
+-- of that shape in this file is a statement about determinism and about nothing else it is named for.
+--
+-- WHAT IS NOT WITHDRAWN: the arithmetic is correct, the addresses are deterministic, and both are worth
+-- recording. What is now published beside them is exactly where a critic should aim, which is the whole of
+-- what "claim boldly" can honestly mean — the falsifier travels with the claim.
 
 end Mechanical

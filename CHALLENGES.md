@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2439 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2441 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (531)
+### lean (533)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -555,6 +555,8 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_quantum_the_ghz_x_support_is_exactly_the_even_parity_strings](/theorem/lean_quantum_the_ghz_x_support_is_exactly_the_even_parity_strings) — lean quantum.lean: the_ghz_x_support_is_exactly_the_even_parity_strings — (List.range 8).filter (fun n =&gt; par3 n == 0) = ghzXSupport — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7fb1069f-54b2…`
 - [lean_quantum_it_is_half_of_the_eight](/theorem/lean_quantum_it_is_half_of_the_eight) — lean quantum.lean: it_is_half_of_the_eight — ghzXSupport.length = 4 ∧ (List.range 8).length = 8 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `8c2ae28f-cbb1…`
 - [lean_quantum_a_classical_mixture_reaches_the_parity_ghz_never_does](/theorem/lean_quantum_a_classical_mixture_reaches_the_parity_ghz_never_does) — lean quantum.lean: a_classical_mixture_reaches_the_parity_ghz_never_does — ((List.range 8).filter (fun n =&gt; par3 n == 1)).length = 4 ∧ ((List.range 8).filter (fun n =&gt; par3 n == 1)).all (fun n =&gt; ¬ ghzXSupport.contains n) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1e0393b3-351a…`
+- [lean_mechanical_the_cardinality_claims_hold_of_any_four_symbol_alphabet](/theorem/lean_mechanical_the_cardinality_claims_hold_of_any_four_symbol_alphabet) — lean mechanical.lean: the_cardinality_claims_hold_of_any_four_symbol_alphabet — 4 ^ 3 = 64 ∧ 2 ^ 6 = 64 ∧ 8 ^ 2 = 64 ∧ 4 ^ 3 = 2 ^ 6 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d62d56af-d885…`
+- [lean_mechanical_a_reflexive_address_claim_holds_for_a_constant_function](/theorem/lean_mechanical_a_reflexive_address_claim_holds_for_a_constant_function) — lean mechanical.lean: a_reflexive_address_claim_holds_for_a_constant_function — (fun (_ : Nat) =&gt; (0 : Nat)) 5 = (fun (_ : Nat) =&gt; (0 : Nat)) 5 ∧ (fun (_ : Nat) =&gt; (0 : Nat)) 5 = (fun (_ : Nat) =&gt; (0 : Nat)) 7 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `70fdb691-42e1…`
 
 ### other — one-of-a-kind (0)
 
@@ -2379,4 +2381,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `cb661ea6-b8ce-82a2-b7f2-5bc475417c64`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `ec4c5900-cdb3-80f9-99a3-76e1d1b5205e`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

@@ -14632,5 +14632,17 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "850e2e33-ed0d-8616-9457-b1e7bea5fd67"
+  },
+  {
+    "key": "lean_mechanical_the_cardinality_claims_hold_of_any_four_symbol_alphabet",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d62d56af-d885-8d2c-bbab-edff7f8ddc73"
+  },
+  {
+    "key": "lean_mechanical_a_reflexive_address_claim_holds_for_a_constant_function",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "70fdb691-42e1-81fc-8c55-659170bacb6e"
   }
 ]

@@ -17588,5 +17588,15 @@
     "receipt": "850e2e33-ed0d-8616-9457-b1e7bea5fd67",
     "revoked": true,
     "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
+  },
+  {
+    "key": "lean_mechanical_the_cardinality_claims_hold_of_any_four_symbol_alphabet",
+    "name": "lean mechanical.lean: the_cardinality_claims_hold_of_any_four_symbol_alphabet — 4 ^ 3 = 64 ∧ 2 ^ 6 = 64 ∧ 8 ^ 2 = 64 ∧ 4 ^ 3 = 2 ^ 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d62d56af-d885-8d2c-bbab-edff7f8ddc73"
+  },
+  {
+    "key": "lean_mechanical_a_reflexive_address_claim_holds_for_a_constant_function",
+    "name": "lean mechanical.lean: a_reflexive_address_claim_holds_for_a_constant_function — (fun (_ : Nat) => (0 : Nat)) 5 = (fun (_ : Nat) => (0 : Nat)) 5 ∧ (fun (_ : Nat) => (0 : Nat)) 5 = (fun (_ : Nat) => (0 : Nat)) 7 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "70fdb691-42e1-81fc-8c55-659170bacb6e"
   }
 ]

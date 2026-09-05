@@ -6,7 +6,7 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 539 machine-checked declarations, **530** restate work that already has an author and
+Of 541 machine-checked declarations, **532** restate work that already has an author and
 **9** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/proof/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
@@ -27,7 +27,7 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **530** |
+| attributed to named earlier work | **532** |
 | unclassified — no search performed, status unknown | **9** |
 | claimed as novel | **0** |
 
@@ -47,7 +47,7 @@ searched, where, and when. An earlier version of this page claimed novelty for 1
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 29 sources, 530 theorems
+## Restated from named earlier work — 29 sources, 532 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
@@ -67,7 +67,7 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>involution.lean</code></td><td>8</td><td>elementary group theory — orbit decomposition of an order-two permutation</td><td>that a permutation of order two decomposes a finite set into fixed points and</td></tr>
 <tr><td><code>ledgerclaims.lean</code></td><td>8</td><td>hash trees and membership proofs</td><td>`membership_grows_by_one_seal_per_doubling` and `membership_is_logarithmic_not_linear`</td></tr>
 <tr><td><code>light.lean</code></td><td>11</td><td>metrology — the International System of Units</td><td>the exact numerical values below are DEFINITIONS adopted by the Conférence Générale des</td></tr>
-<tr><td><code>mechanical.lean</code></td><td>105</td><td>Boolean algebra and elementary modular arithmetic</td><td>the Boolean rows are De Morgan's laws — Augustus De Morgan, 1847 — written in the arithmetic of {0,1}; the group rows are the additive group of Z/9. Both long prior. Searched 2026-09-04, terms "De Morgan's laws boolean algebra" and "additive group mod 9"; prior art found and credited</td></tr>
+<tr><td><code>mechanical.lean</code></td><td>107</td><td>Boolean algebra and elementary modular arithmetic</td><td>the Boolean rows are De Morgan's laws — Augustus De Morgan, 1847 — written in the arithmetic of {0,1}; the group rows are the additive group of Z/9. Both long prior. Searched 2026-09-04, terms "De Morgan's laws boolean algebra" and "additive group mod 9"; prior art found and credited</td></tr>
 <tr><td><code>merkaba.lean</code></td><td>8</td><td>elementary group theory — subgroups and cosets of Z/9</td><td>the partition into {3,6,9} and two three-element classes closed under doubling is the subgroup and coset structure of Z/9 under the action of U(9); Lagrange. One theorem already credits Euler for the polyhedron formula. Searched 2026-09-04; prior art found and credited</td></tr>
 <tr><td><code>merkle.lean</code></td><td>9</td><td>hash trees and membership proofs</td><td>the hash tree — Ralph Merkle, 1979 (thesis); CRYPTO 1987</td></tr>
 <tr><td><code>nim.lean</code></td><td>8</td><td>combinatorial game theory</td><td>Nim — Charles L. Bouton, 1901; the Sprague–Grundy theorem — Roland Sprague, 1935 and Patrick M. Grundy, 1939</td></tr>
@@ -86,7 +86,7 @@ which is a contribution of verification, not of discovery.
 
 ### The domains this touches
 
-- **Boolean algebra and elementary modular arithmetic** — 105 theorems, in `mechanical.lean`
+- **Boolean algebra and elementary modular arithmetic** — 107 theorems, in `mechanical.lean`
 - **canonical forms and order-invariant commitments** — 12 theorems, in `quantum.lean`
 - **combinatorial game theory** — 8 theorems, in `nim.lean`
 - **content addressing** — 14 theorems, in `address.lean`

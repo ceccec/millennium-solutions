@@ -61,8 +61,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free and axiom-free, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 539 of them across 30 files and
-6 wings; 531 close by exhaustion over a stated finite domain and the
+(\texttt{npm run latex-gate}). There are 541 of them across 30 files and
+6 wings; 533 close by exhaustion over a stated finite domain and the
 remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -2005,6 +2005,16 @@ remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 \[ \mathrm{Address.toUuidBytes}\mathopen{}\left([114,\,101,\,106,\,101,\,99,\,116,\,101,\,100,\,58,\,112,\,97,\,103,\,101,\,45,\,99,\,111,\,109,\,109,\,97,\,110,\,100]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([114,\,101,\,106,\,101,\,99,\,116,\,101,\,100,\,58,\,112,\,97,\,103,\,101,\,45,\,99,\,111,\,109,\,109,\,97,\,110,\,100]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([114,\,101,\,106,\,101,\,99,\,116,\,101,\,100,\,58,\,97]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([114,\,101,\,106,\,101,\,99,\,116,\,101,\,100,\,58,\,98]\right) \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 44,100 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_cardinality\_claims\_hold\_of\_any\_four\_symbol\_alphabet}]
+\[ 4^{3} = 64 \land 2^{6} = 64 \land 8^{2} = 64 \land 4^{3} = 2^{6} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_reflexive\_address\_claim\_holds\_for\_a\_constant\_function}]
+\[ \mathrm{forgetful}\mathopen{}\left(5\right) = \mathrm{forgetful}\mathopen{}\left(5\right) \land \mathrm{forgetful}\mathopen{}\left(5\right) = \mathrm{forgetful}\mathopen{}\left(7\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \paragraph{\texttt{nim.lean}}
 
