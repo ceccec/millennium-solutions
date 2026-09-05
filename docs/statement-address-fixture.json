@@ -85,6 +85,24 @@
       "mergeKeySha256": "b2cfe155c513bf23451a8f14a62527b0a24f0438508fb87a01040f1527c0603c",
       "mergeKeyUuid": "b2cfe155-c513-8f23-851a-8f14a62527b0",
       "localFnvAddress": "f323cb00-3fcd-8b67-92bb-80203768efba"
+    },
+    {
+      "statement": "α β = γ",
+      "rawLength": 7,
+      "normalised": "α β=γ",
+      "normalisedLength": 5,
+      "mergeKeySha256": "37d46cc4006ecec188a5e168dfc188f7e9daa44cf24cc02101b1bced78acf166",
+      "mergeKeyUuid": "37d46cc4-006e-8ec1-88a5-e168dfc188f7",
+      "localFnvAddress": "27c2f6f4-ae25-827f-85aa-e14697acbb5e"
+    },
+    {
+      "statement": "∀ ℤ x, x = x",
+      "rawLength": 12,
+      "normalised": "∀ℤ x,x=x",
+      "normalisedLength": 8,
+      "mergeKeySha256": "e6b676298faf50607bbc05842dbaea4d893816b7ebe6c0d6178e789ab2d88219",
+      "mergeKeyUuid": "e6b67629-8faf-8060-bbbc-05842dbaea4d",
+      "localFnvAddress": "3d566940-4fbe-8466-9bb8-742ee74f9c9c"
     }
   ]
 }

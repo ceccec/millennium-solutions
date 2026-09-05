@@ -29,6 +29,16 @@ const STATEMENTS = [
   'H₁(Σ₂) = ℤ⁴ with χ = -2',
   '(List.range 9).all (fun d => refl (refl d) == d)',
   'every residue of ℤ/9 has an additive inverse',
+  // MINIMAL HAZARD CASES from uuidna-49, who fixed their own class from [A-Za-z0-9_] to \p{L}\p{N}_ after
+  // measuring: 898 of their 2,626 statements carry a non-ASCII character, yet 0 disagreed between the two
+  // rules, because in that corpus the characters sit inside STRING LITERALS where both rules see a quote as
+  // the neighbour. The class was wrong and the corpus happened not to expose it.
+  //
+  // The corruption needs TWO ADJACENT non-Latin identifiers — under an ASCII class the space between them is
+  // dropped and two identifiers merge into a third. These are the smallest statements that exhibit it, which
+  // is the better probe: a realistic fixture hides boundary bugs, a minimal one is built out of them.
+  'α β = γ',
+  '∀ ℤ x, x = x',
 ]
 
 const P = 'docs/statement-address-fixture.json'
