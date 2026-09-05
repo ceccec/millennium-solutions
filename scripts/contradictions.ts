@@ -29,6 +29,7 @@ import { census, leanFiles, leanSource, leanTheorems, theoremOfKey, clayFloor, a
  *  kept beside the check that uses it, and verified by planting a name that must fire. */
 const exempted: string[] = []
 const worldNamed: string[] = []
+let claimedWithDefeater = 0
 /** A hand-written aid, not a definition of the defect: nouns that make a name a claim about the world. */
 const WORLD_NOUN = /(dna|genetic|gravity|intention|skipper|hull|hardware|entropy|superposition|creation|genesis|cell|sensor|diamond|codon|reading|perspective|harmonic|navigat|develop|cheap|budget)/i
 const PHYSICAL_VOCAB = ['light', 'metres', 'metre', 'second', 'seconds', 'mass', 'energy', 'gravity',
@@ -389,7 +390,14 @@ for (const f of leanFiles()) {
       const st = t[2]
       if ([...defs].some((d) => new RegExp(`\\b${d}\\b`).test(st))) continue
       if (/List\.|\.all|\.any|\.filter|\.map|\.length/.test(st)) continue
-      if (WORLD_NOUN.test(t[1])) worldNamed.push(`${f}:${t[1]}`)
+      if (!WORLD_NOUN.test(t[1])) continue
+      // DECIDED, OR NOT YET. A file that marks itself `-- CLAIMS: physical` and publishes the computation
+      // that breaks its claims has answered this; one that has not is still carrying a name asserting more
+      // than its proposition decides. Counting them together would say the depositor has a decision pending
+      // when the decision is made and published — the same defect as an exemption nobody recorded, pointed
+      // the other way.
+      if (/^-- CLAIMS: physical$/m.test(src) && /falsifier|defeater|destroys it|breaks them/i.test(src)) claimedWithDefeater++
+      else worldNamed.push(`${f}:${t[1]}`)
     }
   }
 
@@ -492,7 +500,8 @@ for (const f of leanFiles()) {
   if (standing.length) console.log(`  ○ ${standing.length} standing unresolvable key(s), reported not excluded: ${standing.join(' ')}`)
 }
 
-if (worldNamed.length) console.log(`  ○ ${worldNamed.length} theorem(s) decide pure arithmetic under a name claiming about the world — reported, not failed: renaming a sealed theorem is a withdrawal and the depositor's call: ${worldNamed.slice(0, 6).join(' ')}${worldNamed.length > 6 ? ' …' : ''}`)
+if (claimedWithDefeater) console.log(`  ○ ${claimedWithDefeater} theorem(s) decide arithmetic under a name claiming about the world, in a file that CLAIMS physical and publishes the computation that breaks it — claimed boldly, falsifier attached, not a lead`)
+if (worldNamed.length) console.log(`  ○ ${worldNamed.length} theorem(s) decide pure arithmetic under a name claiming about the world with NO published defeater — either claim it and publish the computation that breaks it, or let the name say what the proposition decides: ${worldNamed.slice(0, 6).join(' ')}${worldNamed.length > 6 ? ' …' : ''}`)
 if (exempted.length) console.log(`  ○ ${exempted.length} physical-vocabulary name(s) exempted as denials, reported not hidden: ${exempted.join(' ')}`)
 console.log(bad
   ? `\n✗ contradictions: ${bad} finding(s) — prose or code disagrees with src/proof`
