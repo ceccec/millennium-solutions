@@ -187,6 +187,11 @@ const normalise = (statement: string): string =>
     .replace(/\s(?![\p{L}\p{N}_])|(?<![\p{L}\p{N}_.])\s/gu, '')
     .replace(/==/g, '=').replace(/!=/g, '≠')
 
+/** The normaliser, EXPORTED so a peer reimplementing the shared key reads the rule instead of a sentence
+ *  describing it. Sending prose cost zeropoint-node six variants and an exhaustive apostrophe check, because
+ *  "remove a space only where it is not doing lexical work" is an intent, not an algorithm. */
+export const normaliseForFixture = (statement: string): string => normalise(statement)
+
 export const statementAddress = (statement: string): string => toUuid(normalise(statement))
 
 /** THE STATEMENT AS A STANDALONE LaTeX DOCUMENT, so the deposited record is a readable publication and not

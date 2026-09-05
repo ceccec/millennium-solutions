@@ -10,7 +10,7 @@
  *  the only property it has. `npm run fixture:addresses -- --write` regenerates; scripts/unique.ts verifies
  *  on every run, so a drifting normaliser or hash is caught here rather than in someone else's afternoon. */
 import { readFileSync, writeFileSync } from 'node:fs'
-import { mergeKey, statementAddress } from '../src/publication/index.ts'
+import { mergeKey, statementAddress, normaliseForFixture } from '../src/publication/index.ts'
 
 const shaped = (statement: string): string => {
   const b = [...Buffer.from(mergeKey(statement), 'hex').subarray(0, 16)]
@@ -36,12 +36,22 @@ const F = JSON.parse(readFileSync(P, 'utf8'))
 F.addresses_note = 'EMITTED BY scripts/fixture-addresses.ts, never typed. mergeKey = sha256(normalise(s)) '
   + 'is the cross-repository key; statementAddress = FNV-1a over the same normalised form is this deposit\'s '
   + 'own ledger address. A peer checking compatibility should reproduce `mergeKeyUuid`.'
-F.addresses = STATEMENTS.map((s) => ({
-  statement: s,
-  mergeKeySha256: mergeKey(s),
-  mergeKeyUuid: shaped(s),
-  localFnvAddress: statementAddress(s),
-}))
+// The NORMALISED form and both character counts travel with every pin. zeropoint-node diverged from this
+// deposit on a peer claim and proposed the byte count as the diagnostic; it was the ENTIRE answer — this
+// normaliser deletes the space after a semicolon, so 163 characters become 162 and every downstream value
+// differs. A pin carrying only statement→uuid cannot show that. One carrying the length shows it in a line.
+F.addresses = STATEMENTS.map((s) => {
+  const n = normaliseForFixture(s)
+  return {
+    statement: s,
+    rawLength: [...s].length,
+    normalised: n,
+    normalisedLength: [...n].length,
+    mergeKeySha256: mergeKey(s),
+    mergeKeyUuid: shaped(s),
+    localFnvAddress: statementAddress(s),
+  }
+})
 
 if (process.argv.includes('--write')) {
   writeFileSync(P, JSON.stringify(F, null, 2) + '\n')
