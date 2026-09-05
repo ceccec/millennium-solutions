@@ -77,6 +77,13 @@ const CONTROLS: Control[] = [
   // seo reads the BUILT pages, so its control mutates one. Written the hour after control-probe found this
   // gate standing red on a clean tree — 1 error, 4 warnings, in no gate chain, never run by anyone: the
   // deposit's flagship paper.html carried zero <h1> because its title was rendered as a styled <div>.
+  // Third control found by control-probe rather than invented — it reached `carry` only after the probe
+  // learned to derive a gate's subject from its IMPORTS. carry reads the ledger through the shared API and
+  // names no file, so a literal-path extractor found nothing for it and for eight others.
+  { gate: 'carry', cmd: 'node scripts/carry.ts', file: 'src/proof/discovered.json',
+    what: 'a ledger entry whose recorded value has been replaced',
+    mutate: (s) => s.replace(/"([a-zA-Z_]+)":\s*"([^"]{4,})"/, '"$1": "PROBE_CORRUPTED_VALUE"') },
+
   { gate: 'seo', cmd: 'node scripts/seo.ts', file: '.vitepress/dist/paper.html',
     what: 'a published page with no h1 for a reader to navigate by',
     mutate: (s) => s.replace(/<h1([^>]*)>/, '<div$1>').replace(/<\/h1>/, '</div>') },
