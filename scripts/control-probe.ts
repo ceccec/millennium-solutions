@@ -52,6 +52,14 @@ const readsOf = (script: string): string[] => {
   const out = new Set<string>()
   for (const m of src.matchAll(/readFileSync\(\s*'([^']+\.(?:ts|json|lean|md|yml|html))'/g)) out.add(m[1])
   for (const m of src.matchAll(/'(\.github\/workflows\/[^']+)'/g)) out.add(m[1])
+  // MOST GATES HERE DO NOT NAME THEIR FILES. They read through the shared API — leanFiles(), leanSource(),
+  // ledger() — so a literal-path extractor found NOTHING for all nine, and the probe reported "not reached
+  // even by perturbing the files it reads" while perturbing nothing. A vacuous negative, produced by the
+  // instrument built to detect vacuous checks. The subject is derived from the IMPORT instead: what a script
+  // pulls from src/api is what it reads.
+  if (/\bleanFiles\b|\bleanSource\b|\bleanTheorems\b/.test(src)) out.add('src/proof/coin.lean')
+  if (/\bledger\b|\blive\b\(|\bstatusOf\b/.test(src)) out.add('src/proof/discovered.json')
+  if (/\bmergeKey\b|\bstatementAddress\b/.test(src)) out.add('docs/statement-address-fixture.json')
   return [...out].filter((f) => existsSync(f) && !f.startsWith('scripts/'))
 }
 // One perturbation per file KIND, chosen to be a shape any honest gate over that kind should reject.
