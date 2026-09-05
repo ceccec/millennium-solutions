@@ -215,7 +215,7 @@ const BOUND = 'x'
 const applied = (f: Node, texOf: (n: Node) => string) => `${texOf(f)}\\mathopen{}\\left(${BOUND}\\right)`
 
 // ── LaTeX ────────────────────────────────────────────────────────────────────────────────────────────────
-const NAME: Record<string, string> = { '==': '=', '=': '=', '!=': '\\neq', '≠': '\\neq', '<=': '\\le', '≤': '\\le', '>=': '\\ge', '≥': '\\ge', '<': '<', '>': '>', '+': '+', '-': '-', '*': '\\cdot', '/': '/', '%': '\\bmod', '∧': '\\land', '∨': '\\lor', '→': '\\to', '↔': '\\leftrightarrow', '++': '\\mathbin{+\\!\\!+}' }
+export const LATEX_NAME: Record<string, string> = { '==': '=', '=': '=', '!=': '\\neq', '≠': '\\neq', '<=': '\\le', '≤': '\\le', '>=': '\\ge', '≥': '\\ge', '<': '<', '>': '>', '+': '+', '-': '-', '*': '\\cdot', '/': '/', '%': '\\bmod', '∧': '\\land', '∨': '\\lor', '→': '\\to', '↔': '\\leftrightarrow', '++': '\\mathbin{+\\!\\!+}' }
 
 const idTex = (v: string) => (/^[a-zA-Z]$/.test(v) ? v : '\\mathrm{' + v.replace(/_/g, '\\_') + '}')
 
@@ -248,7 +248,7 @@ export function tex(n: Node): string {
   switch (n.t) {
     case 'num': return n.v
     case 'id': return idTex(n.v)
-    case 'hole': return `(\\cdot\\,${NAME[n.op] ?? n.op}\\,\\cdot)`
+    case 'hole': return `(\\cdot\\,${LATEX_NAME[n.op] ?? n.op}\\,\\cdot)`
     case 'un': return n.op === '¬' ? `\\lnot ${tex(n.e)}` : `-${tex(n.e)}`
     case 'lam': return `${n.ps.map(idTex).join(',\\,')} \\mapsto ${tex(n.b)}`
     case 'list': return `[${n.xs.map(tex).join(',\\,')}]`
@@ -264,7 +264,7 @@ export function tex(n: Node): string {
       if (n.op === '%') return `${l} \\bmod ${r}`
       if (n.op === '>>>') return `${l} \\gg ${r}`
       if (n.op === '<<<') return `${l} \\ll ${r}`
-      return `${l} ${NAME[n.op] ?? n.op} ${r}`
+      return `${l} ${LATEX_NAME[n.op] ?? n.op} ${r}`
     }
     case 'dot': return dotTex(n, [])
     case 'app': {

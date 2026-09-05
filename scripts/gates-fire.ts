@@ -80,6 +80,17 @@ const CONTROLS: Control[] = [
   // Third control found by control-probe rather than invented — it reached `carry` only after the probe
   // learned to derive a gate's subject from its IMPORTS. carry reads the ledger through the shared API and
   // names no file, so a literal-path extractor found nothing for it and for eight others.
+  // Written only after ATTEMPTING it exposed that latex-gate could not see a wrong translation at all.
+  { gate: 'latex-gate', cmd: 'node scripts/latex-gate.ts', file: 'src/latex/index.ts',
+    what: 'a conjunction typeset as a disjunction on every published page',
+    mutate: (s) => s.replace("'∧': '\\\\land'", "'∧': '\\\\lor'") },
+
+  // --check, because priorart-gen REGENERATES by default: run plain it rewrote the table to match the
+  // mutation and exited 0, so the control accepted. A generator run in write mode cannot be a gate.
+  { gate: 'priorart-gen', cmd: 'node scripts/priorart-gen.ts --check', file: 'src/proof/merkle.lean',
+    what: 'a source whose recorded attribution no longer matches what the file declares',
+    mutate: (s) => s.replace('-- prior_art: named', '-- prior_art: unclassified') },
+
   { gate: 'carry', cmd: 'node scripts/carry.ts', file: 'src/proof/discovered.json',
     what: 'a ledger entry whose recorded value has been replaced',
     mutate: (s) => s.replace(/"([a-zA-Z_]+)":\s*"([^"]{4,})"/, '"$1": "PROBE_CORRUPTED_VALUE"') },

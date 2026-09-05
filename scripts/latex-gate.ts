@@ -21,9 +21,35 @@
 // Coverage is reported and NOT enforced: a statement this grammar does not know falls back to verbatim
 // Lean, which is correct. What is enforced is that nothing it DOES render is rendered wrongly.
 import { leanTheorems } from '../src/api/index.ts'
-import { toLatex, toMathML, roundTrips, unparse, parse } from '../src/latex/index.ts'
+import { toLatex, toMathML, roundTrips, unparse, parse, LATEX_NAME } from '../src/latex/index.ts'
 
 let bad = 0
+
+// ── 0 · THE TRANSLATION TABLE ITSELF, WHICH NOTHING CHECKED ──────────────────────────────────────────────
+// The round-trip runs Lean → parse → unparse → LEAN and compares tokens. It never touches the LaTeX name
+// map, because that map is used only in the OTHER direction. So renaming ∧ to \lor — typesetting a
+// conjunction as a disjunction on every published page — passed this gate with the round-trip and all 14
+// precedence cases untouched. A gate whose header says "a wrong translation is worse than no translation:
+// it reads as a theorem and is not one" could not see the translation being wrong. Found by trying to write
+// its negative control, which is the argument for writing them.
+//
+// Checked by DISTINCTNESS, not against an expected table, so there is no second copy of the mapping to
+// drift: operators meaning different things must not render alike. ∧ becoming \lor collides with ∨ and
+// fails here. Spellings of ONE meaning (== and =, ≠ and !=) are folded first, so they may share a symbol
+// and nothing else may.
+{
+  const byName = new Map<string, string[]>()
+  const ALIAS: Record<string, string> = { '==': '=', '!=': '≠', '<=': '≤', '>=': '≥' }
+  for (const [op, tex] of Object.entries(LATEX_NAME)) {
+    const meaning = ALIAS[op] ?? op
+    const seen = byName.get(tex) ?? []
+    if (!seen.includes(meaning)) seen.push(meaning)
+    byName.set(tex, seen)
+  }
+  for (const [tex, ops] of byName) {
+    if (ops.length > 1) { console.log(`  ✗ translation: ${ops.join(' and ')} both render as ${tex} — two operators, one symbol`); bad++ }
+  }
+}
 
 // ── 1 · precedence, written out ──────────────────────────────────────────────────────────────────────────
 // `unparse` prints fully parenthesised, so the expected string IS the grouping.
