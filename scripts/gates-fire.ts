@@ -104,6 +104,27 @@ const CONTROLS: Control[] = [
   // PROPOSITION, compared as text. It reads the statement rather than running the kernel, so the mutation
   // is a numeral in the statement — the same "derived must follow source" shape, across the widest gap
   // between the two representations of any gate here.
+  // The last two, restored after a `git checkout -- .` of mine took them with the tree. Both mutations were
+  // established by testing before being written here, and both are recorded in the commit that fixed the
+  // defect lean-gen's control exposed.
+  //
+  // lean-gen's derived artefact is GENERATED LEAN and its source is the generator's own templates, so the
+  // mutation makes it emit something false and the kernel refuses. It needs `lean` on PATH and restores by
+  // regenerating — a control whose subject is a generator has to put the generator's output back.
+  { gate: 'lean-gen', cmd: 'node scripts/lean-gen.ts --emit', file: 'scripts/lean-gen.ts',
+    what: 'a generated theorem the kernel will not accept',
+    mutate: (s) => s.replace('== 6) ==', '== 7) =='),
+    restore: 'node scripts/lean-gen.ts --emit' },
+
+  // xrepo's derived artefact is an ADDRESS and its source is the normaliser. The first mutation tried —
+  // dropping the ==→= clause — was ACCEPTED, and correctly: the peer statement its control re-addresses is
+  // natural language containing no `==`, so that clause never touches it. A weak mutation reads exactly like
+  // a broken gate. The space-removal clause is the one that provably moves that statement, 163 characters to
+  // 162, which is the divergence zeropoint-node's byte-count diagnostic found.
+  { gate: 'xrepo', cmd: 'node scripts/xrepo.ts', file: 'src/publication/index.ts',
+    what: 'a normaliser under which a peer\'s published pin no longer reproduces',
+    mutate: (s) => s.replace("    .replace(/\\s(?![\\p{L}\\p{N}_])|(?<![\\p{L}\\p{N}_.])\\s/gu, '')", '') },
+
   { gate: 'quantum-field', cmd: 'node scripts/quantum-field.ts', file: 'src/proof/quantum.lean',
     what: 'geometry drawn from a number the proposition no longer decides',
     mutate: (s) => s.replace('(perms [1, 2, 4, 8]).length = 24', '(perms [1, 2, 4, 8]).length = 25') },
