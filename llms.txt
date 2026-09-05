@@ -9,7 +9,7 @@ A machine-checked mathematical deposit: 537 theorems across 30 Lean 4 source
 files, each closed by exhaustion over a stated finite domain, sorry-free and axiom-free, with a
 2445-entry append-only ledger whose receipt chain is recomputed on every build.
 
-Author: Tsvetan Rouschev. Licence: **CC BY-NC-ND 4.0**. Concept DOI: 10.5281/zenodo.21819217.
+Author: Tsvetan Rouschev (ORCID https://orcid.org/0009-0000-7312-9778). Licence: **CC BY-NC-ND 4.0**. Concept DOI: 10.5281/zenodo.21819217.
 
 ## Rights that subsist, and how they arise
 

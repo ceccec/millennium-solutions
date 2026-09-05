@@ -1,6 +1,6 @@
 {
   "repo": "millennium-solutions",
-  "generatedFrom": "5b80dee10",
+  "generatedFrom": "c824856d6",
   "specWitness": {
     "seed": "theorems\ndeclarations closing by exhaustion — the deposit's definition of a theorem\n537\nnode -e \"import('./src/api/index.ts').then(m=>console.log(m.census().byDecide))\"",
     "receipt": "bbb21ef7-fa0d-80fa-a0c8-5631683e9f21"
@@ -166,10 +166,10 @@
     {
       "key": "gate:gates",
       "claim": "the gates gate, run now rather than remembered",
-      "value": "FAIL",
+      "value": "pass",
       "command": "npm run gates",
-      "receipt": "576a57a2-120b-835d-93d2-aab1b52c7d4b"
+      "receipt": "14c3168a-49d2-82b3-becf-5fb228c872ff"
     }
   ],
-  "root": "8c0c9587-3b36-8057-88bd-b4efd556053b"
+  "root": "afb42ac0-976c-8629-9927-ec8e9ec4bac9"
 }

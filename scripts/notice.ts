@@ -12,6 +12,14 @@ import { writeFileSync, readFileSync } from 'node:fs'
 import { ledger, statusOf, theoremCount, leanFiles } from '../src/api/index.ts'
 import { toUuid } from '../src/0/index.ts'
 
+// THE ORCID IS READ, NOT TYPED. attribution-gate refused the first version of this file: it named the
+// author with no ORCID, so "a citation from here resolves to nobody" — the correct catch for a notice whose
+// entire purpose is that a citation from it resolves to a person. Read from CITATION.cff, the surface that
+// already carries it, so the notice cannot drift from the citation metadata.
+const cff = readFileSync('CITATION.cff', 'utf8')
+const ORCID = cff.match(/orcid:\s*['"]?(\S+?)['"]?\s*$/m)?.[1] ?? ''
+if (!ORCID) { console.log('✗ notice: no ORCID in CITATION.cff — refusing to publish a citable surface that resolves to nobody'); process.exit(1) }
+
 const rights = readFileSync('src/proof/rights.lean', 'utf8')
 const claimed = [...rights.matchAll(/^--\s{3}kind 0 — (.+)$/gm)].map((m) => m[1])
 const l = ledger()
@@ -29,7 +37,7 @@ A machine-checked mathematical deposit: ${theoremCount()} theorems across ${lean
 files, each closed by exhaustion over a stated finite domain, sorry-free and axiom-free, with a
 ${l.length}-entry append-only ledger whose receipt chain is recomputed on every build.
 
-Author: Tsvetan Rouschev. Licence: **CC BY-NC-ND 4.0**. Concept DOI: ${CONCEPT_DOI}.
+Author: Tsvetan Rouschev (ORCID ${ORCID}). Licence: **CC BY-NC-ND 4.0**. Concept DOI: ${CONCEPT_DOI}.
 
 ## Rights that subsist, and how they arise
 
