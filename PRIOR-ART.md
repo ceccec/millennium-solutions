@@ -130,7 +130,7 @@ To move a source out of this table, add `-- prior_art_search:` to it naming the 
 refuses a `none-known` declaration that does not carry one.
 
 <table><thead><tr><th>source</th><th>theorems</th><th>note</th></tr></thead><tbody>
-<tr><td><code>priorart.lean</code></td><td>9</td><td>—</td></tr>
+<tr><td><code>priorart.lean</code></td><td>9</td><td>THE PRACTICE IS PRIOR ART AND IS CREDITED. Recording provenance and attribution per</td></tr>
 </tbody></table>
 
 ## Defensive publication

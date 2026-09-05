@@ -46,9 +46,17 @@ if (decided) console.log(`  (${decided} further gate(s) are unrun BY RECORDED DE
 }
 
 // ── 2 · SOURCES WHOSE PRIOR ART HAS NEVER BEEN SEARCHED ──────────────────────────────────────────────────
+// UNSEARCHED, not merely unclassified. A file may be kind 1 — claiming nothing — because nobody looked, or
+// because a search WAS run and the taxonomy has no row for what it found. priorart.lean is the second: the
+// practice of recording attribution is long-established prior art (PROV-O, DataCite, Dublin Core, PREMIS),
+// while its propositions decide facts about THIS table that no external work precedes. Kind 0 would be false
+// and kind 2 requires a search that found nothing. Counting the two states alike is what this census exists
+// to prevent, so the presence of a recorded search is what distinguishes them.
 const unsearched = leanFiles().filter((f) => {
-  const m = leanSource(f).match(/^-- prior_art: (\w[\w-]*)/m)
-  return !m || m[1] === 'unclassified'
+  const src = leanSource(f)
+  const m = src.match(/^-- prior_art: (\w[\w-]*)/m)
+  if (m && m[1] !== 'unclassified') return false
+  return !/^-- prior_art_search:/m.test(src)
 })
 add('prior art', unsearched.length, `source file(s) with no prior-art search: ${unsearched.join(' ')}`,
   'search, then record the result in the file frontmatter and run npm run priorart:gen')

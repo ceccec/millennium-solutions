@@ -1,6 +1,26 @@
 -- title: Prior art, and what novelty is claimed
 -- wing: the record
 -- prior_art: unclassified
+-- prior_art_search: literature search PERFORMED 2026-09-05, terms "provenance metadata schema prior art
+--   classification per-file attribution taxonomy research software credit". Prior art found and named below.
+--   This row stays kind 1 — see why, because the taxonomy does not fit and forcing it would be the lie.
+-- prior_art_note: THE PRACTICE IS PRIOR ART AND IS CREDITED. Recording provenance and attribution per
+--   artefact is long established and formalised: W3C PROV-O, the DataCite metadata schema, Dublin Core
+--   Metadata Terms, PREMIS for archived digital objects, the Open Provenance Model, and the software
+--   citation principles' credit-and-attribution requirement. Nothing about keeping an attribution table is
+--   new, and this deposit does not suggest otherwise.
+--
+--   THE PROPOSITIONS ARE NOT RESTATEMENTS OF IT. `every_source_is_classified`, `novelty_is_claimed_of_no_
+--   source` and `zero_claims_is_not_full_attribution` decide facts about THIS table — its rows, its kinds,
+--   its counts. PROV-O does not entail them and could not; no external work precedes a statement about the
+--   contents of this file.
+--
+--   SO THE TAXONOMY HAS A GAP, AND IT IS NAMED RATHER THAN PAPERED OVER. Kind 0 would say these theorems
+--   restate named work, which is false. Kind 2 requires a search that found NOTHING, and this one found a
+--   great deal. Kind 1 as originally written means "no search performed", which is no longer true either.
+--   The row remains kind 1 because kind 1 claims nothing, and claiming nothing is still correct — but it is
+--   now unclassified having been SEARCHED, which is a different state from unclassified for want of looking,
+--   and the deposit should not let those two look alike in a count.
 -- prior_art_pool: unbounded
 --   the subject is this deposit's own attribution table.
 --   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because

@@ -5477,7 +5477,25 @@ kernel accepted; whatever it refused is reported by the generator and is not in 
 
 <p class="paper-src"><code>src/proof/priorart.lean</code> · namespace <code>PriorArt</code> · 9 theorems</p>
 
-BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
+artefact is long established and formalised: W3C PROV-O, the DataCite metadata schema, Dublin Core
+  Metadata Terms, PREMIS for archived digital objects, the Open Provenance Model, and the software
+  citation principles' credit-and-attribution requirement. Nothing about keeping an attribution table is
+  new, and this deposit does not suggest otherwise.
+
+  THE PROPOSITIONS ARE NOT RESTATEMENTS OF IT. `every_source_is_classified`, `novelty_is_claimed_of_no_
+  source` and `zero_claims_is_not_full_attribution` decide facts about THIS table — its rows, its kinds,
+  its counts. PROV-O does not entail them and could not; no external work precedes a statement about the
+  contents of this file.
+
+  SO THE TAXONOMY HAS A GAP, AND IT IS NAMED RATHER THAN PAPERED OVER. Kind 0 would say these theorems
+  restate named work, which is false. Kind 2 requires a search that found NOTHING, and this one found a
+  great deal. Kind 1 as originally written means "no search performed", which is no longer true either.
+  The row remains kind 1 because kind 1 claims nothing, and claiming nothing is still correct — but it is
+  now unclassified having been SEARCHED, which is a different state from unclassified for want of looking,
+  and the deposit should not let those two look alike in a count.
+prior_art_pool: unbounded
+  the subject is this deposit's own attribution table.
+  BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
   row will stay unclassified however much work is done. They look identical in a count and need
   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
