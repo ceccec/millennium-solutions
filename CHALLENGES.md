@@ -566,11 +566,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 
 
 
-## Revoked — 1741 entries that no longer stand
+## Revoked — 1691 entries that no longer stand
 
 The ledger is append-only: an entry that stops holding is marked in place, never deleted — deleting would break the receipt chain, and rewriting a receipt is tamper. These keep their receipts and stay in the record, but they are **not citable** and have no `/theorem/` page. Grouped by the reason they went:
 
-- **1262** — dirty: not backed by a Lean proof
+- **1212** — dirty: not backed by a Lean proof
 - **443** — revoked in place: its test asserted a lexical drain (computes(boast)
 - **12** — revoked in place: circular by construction AND dependent on the removed lexical gate
 - **11** — orphaned: the theorem this key was sealed from is no longer in src/proof
@@ -579,12 +579,27 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - **1** — revoked in place: its test asserts that a list of proof-boasts written across many scripts and languages ALL drain the gate — a lexical drain assertion, and the word-list gate was removed by order, so there is no lexicon to drain and the assertion tests nothing
 - **1** — revoked in place: it asserts adjudicate('we prove all seven')
 
-## Carried — 167 withdrawn entries whose statement a proof now carries
+## Carried — 217 withdrawn entries whose statement a proof now carries
 
 Each was withdrawn for want of a Lean proof and has since been given one, at a new key. The entry is not restored: its own evidence is still a TypeScript test, and it did not hold on what it had. What the record adds is where the statement stands now.
 
 - ~~`cubes_in_0_1_8`~~ → [`lean_z9plus_cubes_land_exactly_in_zero_one_eight`](/theorem/lean_z9plus_cubes_land_exactly_in_zero_one_eight)
 - ~~`squares_in_0_1_4_7`~~ → [`lean_z9plus_squares_land_exactly_in_zero_one_four_seven`](/theorem/lean_z9plus_squares_land_exactly_in_zero_one_four_seven)
+- ~~`powsum0_k1`~~ → [`lean_generated_powsum_zero_odd_exponents`](/theorem/lean_generated_powsum_zero_odd_exponents)
+- ~~`powsum0_k3`~~ → [`lean_generated_powsum_zero_odd_exponents`](/theorem/lean_generated_powsum_zero_odd_exponents)
+- ~~`powsum0_k5`~~ → [`lean_generated_powsum_zero_odd_exponents`](/theorem/lean_generated_powsum_zero_odd_exponents)
+- ~~`powsum0_k7`~~ → [`lean_generated_powsum_zero_odd_exponents`](/theorem/lean_generated_powsum_zero_odd_exponents)
+- ~~`powsum0_k9`~~ → [`lean_generated_powsum_zero_odd_exponents`](/theorem/lean_generated_powsum_zero_odd_exponents)
+- ~~`powsum0_k11`~~ → [`lean_generated_powsum_zero_odd_exponents`](/theorem/lean_generated_powsum_zero_odd_exponents)
+- ~~`powsum0_k13`~~ → [`lean_generated_powsum_zero_odd_exponents`](/theorem/lean_generated_powsum_zero_odd_exponents)
+- ~~`powsum0_k15`~~ → [`lean_generated_powsum_zero_odd_exponents`](/theorem/lean_generated_powsum_zero_odd_exponents)
+- ~~`powsum0_k17`~~ → [`lean_generated_powsum_zero_odd_exponents`](/theorem/lean_generated_powsum_zero_odd_exponents)
+- ~~`domain_cyclic_m2`~~ → [`lean_generated_cyclic_units_have_a_primitive_root`](/theorem/lean_generated_cyclic_units_have_a_primitive_root)
+- ~~`domain_cyclic_m3`~~ → [`lean_generated_cyclic_units_have_a_primitive_root`](/theorem/lean_generated_cyclic_units_have_a_primitive_root)
+- ~~`domain_cyclic_m5`~~ → [`lean_generated_cyclic_units_have_a_primitive_root`](/theorem/lean_generated_cyclic_units_have_a_primitive_root)
+- ~~`domain_cyclic_m7`~~ → [`lean_generated_cyclic_units_have_a_primitive_root`](/theorem/lean_generated_cyclic_units_have_a_primitive_root)
+- ~~`domain_cyclic_m11`~~ → [`lean_generated_cyclic_units_have_a_primitive_root`](/theorem/lean_generated_cyclic_units_have_a_primitive_root)
+- ~~`domain_cyclic_m13`~~ → [`lean_generated_cyclic_units_have_a_primitive_root`](/theorem/lean_generated_cyclic_units_have_a_primitive_root)
 - ~~`bool_demorgan1`~~ → [`lean_mechanical_bool_demorgan1`](/theorem/lean_mechanical_bool_demorgan1)
 - ~~`bool_demorgan2`~~ → [`lean_mechanical_bool_demorgan2`](/theorem/lean_mechanical_bool_demorgan2)
 - ~~`bool_distributivity`~~ → [`lean_mechanical_bool_distributivity`](/theorem/lean_mechanical_bool_distributivity)
@@ -608,25 +623,10 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`gf4_size`~~ → [`lean_mechanical_gf4_size`](/theorem/lean_mechanical_gf4_size)
 - ~~`relation_digital_root`~~ → [`lean_mechanical_relation_digital_root`](/theorem/lean_mechanical_relation_digital_root)
 - ~~`harmonic_octave_2_1`~~ → [`lean_mechanical_harmonic_octave_2_1`](/theorem/lean_mechanical_harmonic_octave_2_1)
-- ~~`harmonic_pythagorean_comma`~~ → [`lean_mechanical_harmonic_pythagorean_comma`](/theorem/lean_mechanical_harmonic_pythagorean_comma)
-- ~~`relation_seven`~~ → [`lean_mechanical_relation_seven`](/theorem/lean_mechanical_relation_seven)
-- ~~`relation_eight`~~ → [`lean_mechanical_relation_eight`](/theorem/lean_mechanical_relation_eight)
-- ~~`mobius_divisor_sum`~~ → [`lean_demand_the_mobius_divisor_sum_is_the_identity`](/theorem/lean_demand_the_mobius_divisor_sum_is_the_identity)
-- ~~`relation_creation_week`~~ → [`lean_mechanical_relation_creation_week`](/theorem/lean_mechanical_relation_creation_week)
-- ~~`relation_superposition_collapse`~~ → [`lean_mechanical_relation_superposition_collapse`](/theorem/lean_mechanical_relation_superposition_collapse)
-- ~~`relation_url_path`~~ → [`lean_mechanical_relation_url_path`](/theorem/lean_mechanical_relation_url_path)
-- ~~`genus2_moduli_dim`~~ → [`lean_mechanical_genus2_moduli_dim`](/theorem/lean_mechanical_genus2_moduli_dim)
-- ~~`genus2_hyperelliptic`~~ → [`lean_mechanical_genus2_hyperelliptic`](/theorem/lean_mechanical_genus2_hyperelliptic)
-- ~~`genus2_h1_symplectic`~~ → [`lean_mechanical_genus2_h1_symplectic`](/theorem/lean_mechanical_genus2_h1_symplectic)
-- ~~`genus_g_moduli_dim`~~ → [`lean_mechanical_the_moduli_dimensions_are_three_g_minus_three_and_six_g_minus_six`](/theorem/lean_mechanical_the_moduli_dimensions_are_three_g_minus_three_and_six_g_minus_six)
-- ~~`relation_digitroot_is_residue_mod9`~~ → [`lean_mechanical_relation_digitroot_is_residue_mod9`](/theorem/lean_mechanical_relation_digitroot_is_residue_mod9)
-- ~~`relation_seven_is_six_plus_one`~~ → [`lean_mechanical_relation_seven_is_six_plus_one`](/theorem/lean_mechanical_relation_seven_is_six_plus_one)
-- ~~`relation_units_sum_and_product`~~ → [`lean_mechanical_relation_units_sum_and_product`](/theorem/lean_mechanical_relation_units_sum_and_product)
-- ~~`relation_432_factors`~~ → [`lean_mechanical_relation_432_factors`](/theorem/lean_mechanical_relation_432_factors)
 
-…and 127 more.
+…and 177 more.
 
-<details><summary>List all 1741 withdrawn keys — nothing proves these</summary>
+<details><summary>List all 1691 withdrawn keys — nothing proves these</summary>
 
 - ~~`euler_units_pow6`~~ — every unit u⁶ ≡ 1 mod 9 (Euler, φ(9)=6)  ·  `e70a44b2-6eb8…`
 - ~~`units_sum_zero`~~ — the units sum to 0 mod 9 (1+2+4+5+7+8=27)  ·  `ec43f3d8-7595…`
@@ -656,15 +656,6 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`addgen_k5`~~ — 5 additively generates ℤ/9  ·  `e5666f9f-43d1…`
 - ~~`addgen_k7`~~ — 7 additively generates ℤ/9  ·  `fda50fef-6d27…`
 - ~~`addgen_k8`~~ — 8 additively generates ℤ/9  ·  `c66fca78-c926…`
-- ~~`powsum0_k1`~~ — Σ (unit)^1 ≡ 0 mod 9  ·  `b4fee774-cdff…`
-- ~~`powsum0_k3`~~ — Σ (unit)^3 ≡ 0 mod 9  ·  `fbfb7f9d-51de…`
-- ~~`powsum0_k5`~~ — Σ (unit)^5 ≡ 0 mod 9  ·  `39495fe4-d242…`
-- ~~`powsum0_k7`~~ — Σ (unit)^7 ≡ 0 mod 9  ·  `cdbccdf3-368a…`
-- ~~`powsum0_k9`~~ — Σ (unit)^9 ≡ 0 mod 9  ·  `67ed08eb-2153…`
-- ~~`powsum0_k11`~~ — Σ (unit)^11 ≡ 0 mod 9  ·  `7ff93c21-5564…`
-- ~~`powsum0_k13`~~ — Σ (unit)^13 ≡ 0 mod 9  ·  `817aa55d-813f…`
-- ~~`powsum0_k15`~~ — Σ (unit)^15 ≡ 0 mod 9  ·  `df354f89-1c7d…`
-- ~~`powsum0_k17`~~ — Σ (unit)^17 ≡ 0 mod 9  ·  `fecb2108-39df…`
 - ~~`powinv_k5`~~ — u↦u^5 is an involution on the units mod 9  ·  `8e327990-c88f…`
 - ~~`powinv_k7`~~ — u↦u^7 is an involution on the units mod 9  ·  `469cfad5-9293…`
 - ~~`hasinv_d1`~~ — 1 has a multiplicative inverse mod 9  ·  `39a9965d-909b…`
@@ -694,21 +685,15 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`digrev_9080`~~ — the digital root of 9080 equals that of its digit-reversal  ·  `e2efb528-c895…`
 - ~~`digrev_4321`~~ — the digital root of 4321 equals that of its digit-reversal  ·  `81d7ec86-3a35…`
 - ~~`domain_prime_m2`~~ — ℤ/2: 2 is prime  ·  `9f76b1b5-8922…`
-- ~~`domain_cyclic_m2`~~ — ℤ/2: the units form a cyclic group (a primitive root exists)  ·  `c3eb14a5-27a7…`
 - ~~`domain_prime_m3`~~ — ℤ/3: 3 is prime  ·  `0b1d1411-c61a…`
-- ~~`domain_cyclic_m3`~~ — ℤ/3: the units form a cyclic group (a primitive root exists)  ·  `c979466b-d761…`
 - ~~`domain_cyclic_m4`~~ — ℤ/4: the units form a cyclic group (a primitive root exists)  ·  `97a008f1-7924…`
 - ~~`domain_prime_m5`~~ — ℤ/5: 5 is prime  ·  `50539929-7d45…`
-- ~~`domain_cyclic_m5`~~ — ℤ/5: the units form a cyclic group (a primitive root exists)  ·  `693c861c-f865…`
 - ~~`domain_cyclic_m6`~~ — ℤ/6: the units form a cyclic group (a primitive root exists)  ·  `b4d4661b-71fb…`
 - ~~`domain_prime_m7`~~ — ℤ/7: 7 is prime  ·  `b53d7fb5-3174…`
-- ~~`domain_cyclic_m7`~~ — ℤ/7: the units form a cyclic group (a primitive root exists)  ·  `86763f93-b89a…`
 - ~~`domain_cyclic_m9`~~ — ℤ/9: the units form a cyclic group (a primitive root exists)  ·  `1c6e43c0-95e1…`
 - ~~`domain_cyclic_m10`~~ — ℤ/10: the units form a cyclic group (a primitive root exists)  ·  `59d8b25c-decc…`
 - ~~`domain_prime_m11`~~ — ℤ/11: 11 is prime  ·  `d561c879-7f37…`
-- ~~`domain_cyclic_m11`~~ — ℤ/11: the units form a cyclic group (a primitive root exists)  ·  `1767a868-d41e…`
 - ~~`domain_prime_m13`~~ — ℤ/13: 13 is prime  ·  `49707801-e26f…`
-- ~~`domain_cyclic_m13`~~ — ℤ/13: the units form a cyclic group (a primitive root exists)  ·  `e56ba879-01b2…`
 - ~~`domain_cyclic_m14`~~ — ℤ/14: the units form a cyclic group (a primitive root exists)  ·  `c25680bf-c169…`
 - ~~`domain_prime_m17`~~ — ℤ/17: 17 is prime  ·  `50550f6e-6497…`
 - ~~`domain_cyclic_m17`~~ — ℤ/17: the units form a cyclic group (a primitive root exists)  ·  `d5167cce-02af…`
@@ -1102,42 +1087,7 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`euler_theorem_totient`~~ — Euler’s theorem: a^φ(n) ≡ 1 (mod n) for every a coprime to n — the generalization of Fermat’s little theorem (verified for all n ≤ 30 and all coprime a), and at n=9 every unit u satisfies u⁶ ≡ 1  ·  `bf7c3af5-42f9…`
 - ~~`mobius_inversion_recovers_totient`~~ — Möbius inversion recovers the totient: since Σ_{d|n} φ(d) = n, inversion gives φ(n) = Σ_{d|n} μ(d)·(n/d) — the two identities are inverse (verified n ≤ 100)  ·  `0aa5076c-3b31…`
 - ~~`mobius_nonzero_iff_squarefree`~~ — μ(n) is nonzero exactly on squarefree n: μ(n) = 0 iff some prime square divides n, else μ(n) = (−1)^(number of prime factors) — verified against a direct squarefree test for n ≤ 100  ·  `dcfbba55-f67a…`
-- ~~`flt_prime_2`~~ — Fermat’s little theorem at p=2: a^(p−1) ≡ 1 (mod 2) for every residue a from 1 to 1 — exhaustive over all nonzero residues  ·  `d12ad177-6d1b…`
-- ~~`wilson_prime_2`~~ — Wilson’s theorem at p=2: (p−1)! ≡ −1 (mod 2), i.e. the factorial of 1 is congruent to 1 mod 2  ·  `e1c811e1-9da7…`
-- ~~`flt_prime_3`~~ — Fermat’s little theorem at p=3: a^(p−1) ≡ 1 (mod 3) for every residue a from 1 to 2 — exhaustive over all nonzero residues  ·  `1db7299b-1252…`
-- ~~`wilson_prime_3`~~ — Wilson’s theorem at p=3: (p−1)! ≡ −1 (mod 3), i.e. the factorial of 2 is congruent to 2 mod 3  ·  `40b4e3f7-5107…`
-- ~~`flt_prime_5`~~ — Fermat’s little theorem at p=5: a^(p−1) ≡ 1 (mod 5) for every residue a from 1 to 4 — exhaustive over all nonzero residues  ·  `1af98c7c-8739…`
-- ~~`wilson_prime_5`~~ — Wilson’s theorem at p=5: (p−1)! ≡ −1 (mod 5), i.e. the factorial of 4 is congruent to 4 mod 5  ·  `f13ef0ee-72c7…`
-- ~~`flt_prime_7`~~ — Fermat’s little theorem at p=7: a^(p−1) ≡ 1 (mod 7) for every residue a from 1 to 6 — exhaustive over all nonzero residues  ·  `08a7edbf-e5d7…`
-- ~~`wilson_prime_7`~~ — Wilson’s theorem at p=7: (p−1)! ≡ −1 (mod 7), i.e. the factorial of 6 is congruent to 6 mod 7  ·  `56980766-f17e…`
-- ~~`flt_prime_11`~~ — Fermat’s little theorem at p=11: a^(p−1) ≡ 1 (mod 11) for every residue a from 1 to 10 — exhaustive over all nonzero residues  ·  `c791c388-f1b1…`
-- ~~`wilson_prime_11`~~ — Wilson’s theorem at p=11: (p−1)! ≡ −1 (mod 11), i.e. the factorial of 10 is congruent to 10 mod 11  ·  `e45be64f-536d…`
-- ~~`flt_prime_13`~~ — Fermat’s little theorem at p=13: a^(p−1) ≡ 1 (mod 13) for every residue a from 1 to 12 — exhaustive over all nonzero residues  ·  `3e4b71c9-9430…`
-- ~~`wilson_prime_13`~~ — Wilson’s theorem at p=13: (p−1)! ≡ −1 (mod 13), i.e. the factorial of 12 is congruent to 12 mod 13  ·  `ff70c030-7a2b…`
-- ~~`flt_prime_17`~~ — Fermat’s little theorem at p=17: a^(p−1) ≡ 1 (mod 17) for every residue a from 1 to 16 — exhaustive over all nonzero residues  ·  `e72bc7f3-a4ed…`
-- ~~`wilson_prime_17`~~ — Wilson’s theorem at p=17: (p−1)! ≡ −1 (mod 17), i.e. the factorial of 16 is congruent to 16 mod 17  ·  `bb266542-a930…`
-- ~~`flt_prime_19`~~ — Fermat’s little theorem at p=19: a^(p−1) ≡ 1 (mod 19) for every residue a from 1 to 18 — exhaustive over all nonzero residues  ·  `428a30df-1f9d…`
-- ~~`wilson_prime_19`~~ — Wilson’s theorem at p=19: (p−1)! ≡ −1 (mod 19), i.e. the factorial of 18 is congruent to 18 mod 19  ·  `75a76bbd-ea3c…`
-- ~~`flt_prime_23`~~ — Fermat’s little theorem at p=23: a^(p−1) ≡ 1 (mod 23) for every residue a from 1 to 22 — exhaustive over all nonzero residues  ·  `8a96231b-3cf5…`
 - ~~`wilson_prime_23`~~ — Wilson’s theorem at p=23: (p−1)! ≡ −1 (mod 23), i.e. the factorial of 22 is congruent to 22 mod 23  ·  `8a1af55d-c04e…`
-- ~~`pascal_row_sum_1`~~ — Pascal row 1 sums to 2^1: Σ_{k=0}^1 C(1,k) = 2 — the binomial theorem at x=1, computed exactly  ·  `c34c371f-b776…`
-- ~~`pascal_alternating_sum_1`~~ — Pascal row 1 alternating sum is zero: Σ_{k=0}^1 (−1)^k C(1,k) = 0 — the binomial theorem at x=−1 (n ≥ 1)  ·  `8c885900-c112…`
-- ~~`pascal_row_sum_2`~~ — Pascal row 2 sums to 2^2: Σ_{k=0}^2 C(2,k) = 4 — the binomial theorem at x=1, computed exactly  ·  `849989d0-c4ac…`
-- ~~`pascal_alternating_sum_2`~~ — Pascal row 2 alternating sum is zero: Σ_{k=0}^2 (−1)^k C(2,k) = 0 — the binomial theorem at x=−1 (n ≥ 1)  ·  `79fad00e-4d38…`
-- ~~`pascal_row_sum_3`~~ — Pascal row 3 sums to 2^3: Σ_{k=0}^3 C(3,k) = 8 — the binomial theorem at x=1, computed exactly  ·  `ce164a7c-0768…`
-- ~~`pascal_alternating_sum_3`~~ — Pascal row 3 alternating sum is zero: Σ_{k=0}^3 (−1)^k C(3,k) = 0 — the binomial theorem at x=−1 (n ≥ 1)  ·  `18228e00-8b92…`
-- ~~`pascal_row_sum_4`~~ — Pascal row 4 sums to 2^4: Σ_{k=0}^4 C(4,k) = 16 — the binomial theorem at x=1, computed exactly  ·  `7ac3eebb-cd9b…`
-- ~~`pascal_alternating_sum_4`~~ — Pascal row 4 alternating sum is zero: Σ_{k=0}^4 (−1)^k C(4,k) = 0 — the binomial theorem at x=−1 (n ≥ 1)  ·  `5988b7b8-1b60…`
-- ~~`pascal_row_sum_5`~~ — Pascal row 5 sums to 2^5: Σ_{k=0}^5 C(5,k) = 32 — the binomial theorem at x=1, computed exactly  ·  `91f49e5b-6798…`
-- ~~`pascal_alternating_sum_5`~~ — Pascal row 5 alternating sum is zero: Σ_{k=0}^5 (−1)^k C(5,k) = 0 — the binomial theorem at x=−1 (n ≥ 1)  ·  `cdb503b1-0123…`
-- ~~`pascal_row_sum_6`~~ — Pascal row 6 sums to 2^6: Σ_{k=0}^6 C(6,k) = 64 — the binomial theorem at x=1, computed exactly  ·  `4a272673-8dda…`
-- ~~`pascal_alternating_sum_6`~~ — Pascal row 6 alternating sum is zero: Σ_{k=0}^6 (−1)^k C(6,k) = 0 — the binomial theorem at x=−1 (n ≥ 1)  ·  `43961bfc-5e90…`
-- ~~`pascal_row_sum_7`~~ — Pascal row 7 sums to 2^7: Σ_{k=0}^7 C(7,k) = 128 — the binomial theorem at x=1, computed exactly  ·  `95d778ca-1031…`
-- ~~`pascal_alternating_sum_7`~~ — Pascal row 7 alternating sum is zero: Σ_{k=0}^7 (−1)^k C(7,k) = 0 — the binomial theorem at x=−1 (n ≥ 1)  ·  `2c0c77bf-c2ce…`
-- ~~`pascal_row_sum_8`~~ — Pascal row 8 sums to 2^8: Σ_{k=0}^8 C(8,k) = 256 — the binomial theorem at x=1, computed exactly  ·  `6e22f039-a988…`
-- ~~`pascal_alternating_sum_8`~~ — Pascal row 8 alternating sum is zero: Σ_{k=0}^8 (−1)^k C(8,k) = 0 — the binomial theorem at x=−1 (n ≥ 1)  ·  `1608e973-e757…`
-- ~~`pascal_row_sum_9`~~ — Pascal row 9 sums to 2^9: Σ_{k=0}^9 C(9,k) = 512 — the binomial theorem at x=1, computed exactly  ·  `85e80c0f-5296…`
-- ~~`pascal_alternating_sum_9`~~ — Pascal row 9 alternating sum is zero: Σ_{k=0}^9 (−1)^k C(9,k) = 0 — the binomial theorem at x=−1 (n ≥ 1)  ·  `0b2aa6fc-7a50…`
 - ~~`merkle_fold_order_independent_k2`~~ — the merkle fold is order-independent for 2 leaves: all 2 permutations of a 2-leaf set fold to one identical root — the fold depends on the set, not the order (exhaustive over permutations)  ·  `7d890155-cfc0…`
 - ~~`merkle_fold_order_independent_k3`~~ — the merkle fold is order-independent for 3 leaves: all 6 permutations of a 3-leaf set fold to one identical root — the fold depends on the set, not the order (exhaustive over permutations)  ·  `4dd3026d-fe0a…`
 - ~~`merkle_fold_order_independent_k4`~~ — the merkle fold is order-independent for 4 leaves: all 24 permutations of a 4-leaf set fold to one identical root — the fold depends on the set, not the order (exhaustive over permutations)  ·  `513fdf6e-56d8…`

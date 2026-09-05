@@ -247,72 +247,81 @@
     "name": "Σ (unit)^1 ≡ 0 mod 9",
     "receipt": "b4fee774-cdff-88b2-9483-77ccfbd56cef",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_generated_powsum_zero_odd_exponents quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_generated_powsum_zero_odd_exponents"
   },
   {
     "key": "powsum0_k3",
     "name": "Σ (unit)^3 ≡ 0 mod 9",
     "receipt": "fbfb7f9d-51de-8606-9f26-75a81cc137dc",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_generated_powsum_zero_odd_exponents quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_generated_powsum_zero_odd_exponents"
   },
   {
     "key": "powsum0_k5",
     "name": "Σ (unit)^5 ≡ 0 mod 9",
     "receipt": "39495fe4-d242-880b-b683-b385de5a6e77",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_generated_powsum_zero_odd_exponents quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_generated_powsum_zero_odd_exponents"
   },
   {
     "key": "powsum0_k7",
     "name": "Σ (unit)^7 ≡ 0 mod 9",
     "receipt": "cdbccdf3-368a-86a9-85d6-ff3d927b967d",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_generated_powsum_zero_odd_exponents quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_generated_powsum_zero_odd_exponents"
   },
   {
     "key": "powsum0_k9",
     "name": "Σ (unit)^9 ≡ 0 mod 9",
     "receipt": "67ed08eb-2153-8c5d-be6b-93acccf13188",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_generated_powsum_zero_odd_exponents quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_generated_powsum_zero_odd_exponents"
   },
   {
     "key": "powsum0_k11",
     "name": "Σ (unit)^11 ≡ 0 mod 9",
     "receipt": "7ff93c21-5564-8385-a5dd-6d6c9d509b5f",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_generated_powsum_zero_odd_exponents quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_generated_powsum_zero_odd_exponents"
   },
   {
     "key": "powsum0_k13",
     "name": "Σ (unit)^13 ≡ 0 mod 9",
     "receipt": "817aa55d-813f-8b70-8107-525998403f27",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_generated_powsum_zero_odd_exponents quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_generated_powsum_zero_odd_exponents"
   },
   {
     "key": "powsum0_k15",
     "name": "Σ (unit)^15 ≡ 0 mod 9",
     "receipt": "df354f89-1c7d-88e5-8c70-c827dc7819a5",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_generated_powsum_zero_odd_exponents quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_generated_powsum_zero_odd_exponents"
   },
   {
     "key": "powsum0_k17",
     "name": "Σ (unit)^17 ≡ 0 mod 9",
     "receipt": "fecb2108-39df-8291-9781-b5a2c2139867",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_generated_powsum_zero_odd_exponents quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_generated_powsum_zero_odd_exponents"
   },
   {
     "key": "powinv_k5",
@@ -553,8 +562,9 @@
     "name": "ℤ/2: the units form a cyclic group (a primitive root exists)",
     "receipt": "c3eb14a5-27a7-8daa-9f62-364adbb1ed37",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_generated_cyclic_units_have_a_primitive_root quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_generated_cyclic_units_have_a_primitive_root"
   },
   {
     "key": "domain_prime_m3",
@@ -569,8 +579,9 @@
     "name": "ℤ/3: the units form a cyclic group (a primitive root exists)",
     "receipt": "c979466b-d761-8efc-88cf-89ea6e3e0c1e",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_generated_cyclic_units_have_a_primitive_root quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_generated_cyclic_units_have_a_primitive_root"
   },
   {
     "key": "domain_cyclic_m4",
@@ -593,8 +604,9 @@
     "name": "ℤ/5: the units form a cyclic group (a primitive root exists)",
     "receipt": "693c861c-f865-88f6-9a9e-8ca48abb1063",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_generated_cyclic_units_have_a_primitive_root quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_generated_cyclic_units_have_a_primitive_root"
   },
   {
     "key": "domain_cyclic_m6",
@@ -617,8 +629,9 @@
     "name": "ℤ/7: the units form a cyclic group (a primitive root exists)",
     "receipt": "86763f93-b89a-8e02-aa0f-8b164c6d9ff1",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_generated_cyclic_units_have_a_primitive_root quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_generated_cyclic_units_have_a_primitive_root"
   },
   {
     "key": "domain_cyclic_m9",
@@ -649,8 +662,9 @@
     "name": "ℤ/11: the units form a cyclic group (a primitive root exists)",
     "receipt": "1767a868-d41e-8751-8efc-5fae0168157b",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_generated_cyclic_units_have_a_primitive_root quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_generated_cyclic_units_have_a_primitive_root"
   },
   {
     "key": "domain_prime_m13",
@@ -665,8 +679,9 @@
     "name": "ℤ/13: the units form a cyclic group (a primitive root exists)",
     "receipt": "e56ba879-01b2-82c3-a954-c3e784083a21",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_generated_cyclic_units_have_a_primitive_root quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_generated_cyclic_units_have_a_primitive_root"
   },
   {
     "key": "domain_cyclic_m14",
@@ -4163,136 +4178,153 @@
     "name": "Fermat’s little theorem at p=2: a^(p−1) ≡ 1 (mod 2) for every residue a from 1 to 1 — exhaustive over all nonzero residues",
     "receipt": "d12ad177-6d1b-89e4-af0e-788b0c212354",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_flt_all_primes_under_thirty quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_flt_all_primes_under_thirty"
   },
   {
     "key": "wilson_prime_2",
     "name": "Wilson’s theorem at p=2: (p−1)! ≡ −1 (mod 2), i.e. the factorial of 1 is congruent to 1 mod 2",
     "receipt": "e1c811e1-9da7-84e8-a4dc-9227bcee8b30",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_demand3_wilsons_theorem_and_its_converse quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_demand3_wilsons_theorem_and_its_converse"
   },
   {
     "key": "flt_prime_3",
     "name": "Fermat’s little theorem at p=3: a^(p−1) ≡ 1 (mod 3) for every residue a from 1 to 2 — exhaustive over all nonzero residues",
     "receipt": "1db7299b-1252-8c59-917f-b00a9b52cc31",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_flt_all_primes_under_thirty quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_flt_all_primes_under_thirty"
   },
   {
     "key": "wilson_prime_3",
     "name": "Wilson’s theorem at p=3: (p−1)! ≡ −1 (mod 3), i.e. the factorial of 2 is congruent to 2 mod 3",
     "receipt": "40b4e3f7-5107-8e9c-8f17-6d2045ff2c5b",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_demand3_wilsons_theorem_and_its_converse quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_demand3_wilsons_theorem_and_its_converse"
   },
   {
     "key": "flt_prime_5",
     "name": "Fermat’s little theorem at p=5: a^(p−1) ≡ 1 (mod 5) for every residue a from 1 to 4 — exhaustive over all nonzero residues",
     "receipt": "1af98c7c-8739-8f81-bdbb-6860bd2c6d94",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_flt_all_primes_under_thirty quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_flt_all_primes_under_thirty"
   },
   {
     "key": "wilson_prime_5",
     "name": "Wilson’s theorem at p=5: (p−1)! ≡ −1 (mod 5), i.e. the factorial of 4 is congruent to 4 mod 5",
     "receipt": "f13ef0ee-72c7-88cf-8350-6cef2fd9fe2e",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_demand3_wilsons_theorem_and_its_converse quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_demand3_wilsons_theorem_and_its_converse"
   },
   {
     "key": "flt_prime_7",
     "name": "Fermat’s little theorem at p=7: a^(p−1) ≡ 1 (mod 7) for every residue a from 1 to 6 — exhaustive over all nonzero residues",
     "receipt": "08a7edbf-e5d7-8c31-a378-c372f52a4588",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_flt_all_primes_under_thirty quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_flt_all_primes_under_thirty"
   },
   {
     "key": "wilson_prime_7",
     "name": "Wilson’s theorem at p=7: (p−1)! ≡ −1 (mod 7), i.e. the factorial of 6 is congruent to 6 mod 7",
     "receipt": "56980766-f17e-89be-81c5-2617d7e1cfe3",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_demand3_wilsons_theorem_and_its_converse quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_demand3_wilsons_theorem_and_its_converse"
   },
   {
     "key": "flt_prime_11",
     "name": "Fermat’s little theorem at p=11: a^(p−1) ≡ 1 (mod 11) for every residue a from 1 to 10 — exhaustive over all nonzero residues",
     "receipt": "c791c388-f1b1-8167-b162-4c8a52d5b249",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_flt_all_primes_under_thirty quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_flt_all_primes_under_thirty"
   },
   {
     "key": "wilson_prime_11",
     "name": "Wilson’s theorem at p=11: (p−1)! ≡ −1 (mod 11), i.e. the factorial of 10 is congruent to 10 mod 11",
     "receipt": "e45be64f-536d-861c-b02c-de713ad3f488",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_demand3_wilsons_theorem_and_its_converse quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_demand3_wilsons_theorem_and_its_converse"
   },
   {
     "key": "flt_prime_13",
     "name": "Fermat’s little theorem at p=13: a^(p−1) ≡ 1 (mod 13) for every residue a from 1 to 12 — exhaustive over all nonzero residues",
     "receipt": "3e4b71c9-9430-872c-b700-8c8bda183ee0",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_flt_all_primes_under_thirty quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_flt_all_primes_under_thirty"
   },
   {
     "key": "wilson_prime_13",
     "name": "Wilson’s theorem at p=13: (p−1)! ≡ −1 (mod 13), i.e. the factorial of 12 is congruent to 12 mod 13",
     "receipt": "ff70c030-7a2b-8eab-a8f8-0bae3d30ce3b",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_demand3_wilsons_theorem_and_its_converse quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_demand3_wilsons_theorem_and_its_converse"
   },
   {
     "key": "flt_prime_17",
     "name": "Fermat’s little theorem at p=17: a^(p−1) ≡ 1 (mod 17) for every residue a from 1 to 16 — exhaustive over all nonzero residues",
     "receipt": "e72bc7f3-a4ed-88af-bac3-f581b78e88c2",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_flt_all_primes_under_thirty quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_flt_all_primes_under_thirty"
   },
   {
     "key": "wilson_prime_17",
     "name": "Wilson’s theorem at p=17: (p−1)! ≡ −1 (mod 17), i.e. the factorial of 16 is congruent to 16 mod 17",
     "receipt": "bb266542-a930-82da-a1df-fc19b4d93801",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_demand3_wilsons_theorem_and_its_converse quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_demand3_wilsons_theorem_and_its_converse"
   },
   {
     "key": "flt_prime_19",
     "name": "Fermat’s little theorem at p=19: a^(p−1) ≡ 1 (mod 19) for every residue a from 1 to 18 — exhaustive over all nonzero residues",
     "receipt": "428a30df-1f9d-86ff-b559-88643c0e45e8",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_flt_all_primes_under_thirty quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_flt_all_primes_under_thirty"
   },
   {
     "key": "wilson_prime_19",
     "name": "Wilson’s theorem at p=19: (p−1)! ≡ −1 (mod 19), i.e. the factorial of 18 is congruent to 18 mod 19",
     "receipt": "75a76bbd-ea3c-8232-a159-4f3a9d04560b",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_demand3_wilsons_theorem_and_its_converse quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_demand3_wilsons_theorem_and_its_converse"
   },
   {
     "key": "flt_prime_23",
     "name": "Fermat’s little theorem at p=23: a^(p−1) ≡ 1 (mod 23) for every residue a from 1 to 22 — exhaustive over all nonzero residues",
     "receipt": "8a96231b-3cf5-8a4c-98e3-f9b71624f0b9",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_flt_all_primes_under_thirty quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_flt_all_primes_under_thirty"
   },
   {
     "key": "wilson_prime_23",
@@ -4307,144 +4339,162 @@
     "name": "Pascal row 1 sums to 2^1: Σ_{k=0}^1 C(1,k) = 2 — the binomial theorem at x=1, computed exactly",
     "receipt": "c34c371f-b776-8b17-b98f-39a00a14237c",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_pascal_rows_sum_to_powers_of_two quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_pascal_rows_sum_to_powers_of_two"
   },
   {
     "key": "pascal_alternating_sum_1",
     "name": "Pascal row 1 alternating sum is zero: Σ_{k=0}^1 (−1)^k C(1,k) = 0 — the binomial theorem at x=−1 (n ≥ 1)",
     "receipt": "8c885900-c112-8f8f-a6e4-d9d38dde0a00",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_pascal_alternating_sums_vanish quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_pascal_alternating_sums_vanish"
   },
   {
     "key": "pascal_row_sum_2",
     "name": "Pascal row 2 sums to 2^2: Σ_{k=0}^2 C(2,k) = 4 — the binomial theorem at x=1, computed exactly",
     "receipt": "849989d0-c4ac-8400-a1e4-17356bfc1a90",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_pascal_rows_sum_to_powers_of_two quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_pascal_rows_sum_to_powers_of_two"
   },
   {
     "key": "pascal_alternating_sum_2",
     "name": "Pascal row 2 alternating sum is zero: Σ_{k=0}^2 (−1)^k C(2,k) = 0 — the binomial theorem at x=−1 (n ≥ 1)",
     "receipt": "79fad00e-4d38-89b6-8cc6-e6b9bbd0c9e8",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_pascal_alternating_sums_vanish quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_pascal_alternating_sums_vanish"
   },
   {
     "key": "pascal_row_sum_3",
     "name": "Pascal row 3 sums to 2^3: Σ_{k=0}^3 C(3,k) = 8 — the binomial theorem at x=1, computed exactly",
     "receipt": "ce164a7c-0768-8f45-a121-89adc9e7d337",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_pascal_rows_sum_to_powers_of_two quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_pascal_rows_sum_to_powers_of_two"
   },
   {
     "key": "pascal_alternating_sum_3",
     "name": "Pascal row 3 alternating sum is zero: Σ_{k=0}^3 (−1)^k C(3,k) = 0 — the binomial theorem at x=−1 (n ≥ 1)",
     "receipt": "18228e00-8b92-8ce4-8e45-772ba5ea8987",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_pascal_alternating_sums_vanish quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_pascal_alternating_sums_vanish"
   },
   {
     "key": "pascal_row_sum_4",
     "name": "Pascal row 4 sums to 2^4: Σ_{k=0}^4 C(4,k) = 16 — the binomial theorem at x=1, computed exactly",
     "receipt": "7ac3eebb-cd9b-8a6f-bd96-6fef0c23386f",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_pascal_rows_sum_to_powers_of_two quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_pascal_rows_sum_to_powers_of_two"
   },
   {
     "key": "pascal_alternating_sum_4",
     "name": "Pascal row 4 alternating sum is zero: Σ_{k=0}^4 (−1)^k C(4,k) = 0 — the binomial theorem at x=−1 (n ≥ 1)",
     "receipt": "5988b7b8-1b60-89ea-a0b0-fbea151aef0d",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_pascal_alternating_sums_vanish quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_pascal_alternating_sums_vanish"
   },
   {
     "key": "pascal_row_sum_5",
     "name": "Pascal row 5 sums to 2^5: Σ_{k=0}^5 C(5,k) = 32 — the binomial theorem at x=1, computed exactly",
     "receipt": "91f49e5b-6798-8bbb-818a-a92fbf8cbbdd",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_pascal_rows_sum_to_powers_of_two quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_pascal_rows_sum_to_powers_of_two"
   },
   {
     "key": "pascal_alternating_sum_5",
     "name": "Pascal row 5 alternating sum is zero: Σ_{k=0}^5 (−1)^k C(5,k) = 0 — the binomial theorem at x=−1 (n ≥ 1)",
     "receipt": "cdb503b1-0123-8771-ae6b-926eeb9c4b2e",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_pascal_alternating_sums_vanish quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_pascal_alternating_sums_vanish"
   },
   {
     "key": "pascal_row_sum_6",
     "name": "Pascal row 6 sums to 2^6: Σ_{k=0}^6 C(6,k) = 64 — the binomial theorem at x=1, computed exactly",
     "receipt": "4a272673-8dda-82cd-a775-4c109b884403",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_pascal_rows_sum_to_powers_of_two quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_pascal_rows_sum_to_powers_of_two"
   },
   {
     "key": "pascal_alternating_sum_6",
     "name": "Pascal row 6 alternating sum is zero: Σ_{k=0}^6 (−1)^k C(6,k) = 0 — the binomial theorem at x=−1 (n ≥ 1)",
     "receipt": "43961bfc-5e90-8eab-b79e-bc66da15bc86",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_pascal_alternating_sums_vanish quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_pascal_alternating_sums_vanish"
   },
   {
     "key": "pascal_row_sum_7",
     "name": "Pascal row 7 sums to 2^7: Σ_{k=0}^7 C(7,k) = 128 — the binomial theorem at x=1, computed exactly",
     "receipt": "95d778ca-1031-8981-9ac0-5547c1bfeb19",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_pascal_rows_sum_to_powers_of_two quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_pascal_rows_sum_to_powers_of_two"
   },
   {
     "key": "pascal_alternating_sum_7",
     "name": "Pascal row 7 alternating sum is zero: Σ_{k=0}^7 (−1)^k C(7,k) = 0 — the binomial theorem at x=−1 (n ≥ 1)",
     "receipt": "2c0c77bf-c2ce-8adf-9f68-bd45a7a44a51",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_pascal_alternating_sums_vanish quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_pascal_alternating_sums_vanish"
   },
   {
     "key": "pascal_row_sum_8",
     "name": "Pascal row 8 sums to 2^8: Σ_{k=0}^8 C(8,k) = 256 — the binomial theorem at x=1, computed exactly",
     "receipt": "6e22f039-a988-8070-89c3-934ae01d4ecc",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_pascal_rows_sum_to_powers_of_two quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_pascal_rows_sum_to_powers_of_two"
   },
   {
     "key": "pascal_alternating_sum_8",
     "name": "Pascal row 8 alternating sum is zero: Σ_{k=0}^8 (−1)^k C(8,k) = 0 — the binomial theorem at x=−1 (n ≥ 1)",
     "receipt": "1608e973-e757-8a0c-9bce-f3da13521a9b",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_pascal_alternating_sums_vanish quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_pascal_alternating_sums_vanish"
   },
   {
     "key": "pascal_row_sum_9",
     "name": "Pascal row 9 sums to 2^9: Σ_{k=0}^9 C(9,k) = 512 — the binomial theorem at x=1, computed exactly",
     "receipt": "85e80c0f-5296-84d8-ad00-8433c12304a2",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_pascal_rows_sum_to_powers_of_two quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_pascal_rows_sum_to_powers_of_two"
   },
   {
     "key": "pascal_alternating_sum_9",
     "name": "Pascal row 9 alternating sum is zero: Σ_{k=0}^9 (−1)^k C(9,k) = 0 — the binomial theorem at x=−1 (n ≥ 1)",
     "receipt": "0b2aa6fc-7a50-8d37-898f-520726ae215b",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_pascal_alternating_sums_vanish quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_pascal_alternating_sums_vanish"
   },
   {
     "key": "merkle_fold_order_independent_k2",

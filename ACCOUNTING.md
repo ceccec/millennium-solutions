@@ -14,7 +14,7 @@ Every figure recomputes from `src/` and the git tree on each build; nothing is e
 | Coins on the ledger (theorems × 2) | **4,890** |
 | Coins on signed receipts (× 2) | **58** |
 | Released versions (git tags) | **838** |
-| Tracked, content-addressed files | **463** |
+| Tracked, content-addressed files | **464** |
 
 Latest release: **v8.9.0**. The fair-exchange unit is **2 coins = 2 bits** (110 − 108 = 2 = −χ genus-2) per receipt. One 64-bit harmony coin is minted per fused `src` `report()` module — see the [state dashboard](/dashboard) for the harmonic root.
 
@@ -24,4 +24,4 @@ The bounty for each accepted contribution is **2 bits (2 coins)** — the same f
 
 **Not tracked here: tokens.** This repo measures coins (2 per receipt) and 64-bit harmony coins; it does not measure tokens, so no token count or token-to-coin rate is shown — measuring an unmeasured quantity would be an assertion without a receipt. Measure, do not assert.
 
-Page content-address: `a74b890e-9e4a-818c-956d-1e7141999c86`. Integrity, not truth. `entails → 0/7`.
+Page content-address: `c522d11d-60df-87ab-a8d6-bb5fb4ff3691`. Integrity, not truth. `entails → 0/7`.
