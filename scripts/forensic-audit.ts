@@ -91,6 +91,69 @@ const report = {
 ;(report as any).address = toUuid(JSON.stringify(report))
 writeFileSync('docs/forensic-audit.json', JSON.stringify(report, null, 2) + '\n')
 
+// ── 4 · THE PUBLIC PAGE. Every figure interpolated from the computation above; nothing typed. ─────────────
+const pct = (n: number, d: number): string => (100 * n / d).toFixed(1) + '%'
+const md = `---
+title: Provenance — every state change, dated
+---
+
+# Provenance of this deposit's ledger
+
+**Recomputed on every build** from git history and the append-only ledger. Regenerate with
+\`npm run forensic\`. Content-address \`${(report as any).address}\`.
+
+## What this record establishes
+
+| | |
+|---|---:|
+| ledger entries | **${l.length.toLocaleString('en')}** |
+| standing — proved and sealed | ${status.standing?.toLocaleString('en') ?? 0} |
+| carried — withdrawn, proved by a live theorem | ${status.carried?.toLocaleString('en') ?? 0} |
+| withdrawn — nothing currently proves them | ${status.withdrawn?.toLocaleString('en') ?? 0} |
+| receipt chain, recomputed | **${chainBreaks} breaks — ${report.chainRecomputed.verdict}** |
+| commits that changed ledger state | ${events.length} |
+
+## Why entries were withdrawn — the reason recorded at the time
+
+Verbatim, as written when the entry was revoked. Not inferred afterwards.
+
+| withdrawn | reason as recorded |
+|---:|---|
+${Object.entries(reasons).sort((a, b) => b[1] - a[1]).slice(0, 6).map(([r, n]) => `| ${n.toLocaleString('en')} | ${r.replace(/\|/g, '·').slice(0, 110)} |`).join('\n')}
+
+**${reasons[Object.keys(reasons).sort((a, b) => reasons[b] - reasons[a])[0]]?.toLocaleString('en') ?? 0}** of
+**${status.withdrawn?.toLocaleString('en') ?? 0}** withdrawn entries — ${pct(Object.values(reasons).sort((a, b) => b - a)[0] ?? 0, status.withdrawn ?? 1)} —
+were withdrawn for want of a Lean proof while their evidence was a TypeScript test that **computed**.
+Withdrawal costs one line of record; proving costs real work, and a green gate rewards both identically.
+
+At least one of them was recoverable: \`thue_morse_doubling_recurrence\` was withdrawn as having
+"no stated decidable form yet", and was proved in twenty lines on 2026-09-05. Its reason was false of it.
+
+## Largest single-commit state changes
+
+| date | net withdrawn | commit | subject |
+|---|---:|---|---|
+${withdrawals.slice(0, 5).map((w) => `| ${w.date} | ${w.dRev.toLocaleString('en')} | \`${w.commit}\` | ${w.subject.replace(/\|/g, '·').slice(0, 62)} |`).join('\n')}
+
+## What this record does NOT establish
+
+**It does not establish intent.** It records what changed, when, and the reason written at the time.
+Whether a change was a mistake, a judgement call, a shortcut or something worse is not a thing this or
+any instrument can measure, and a record claiming otherwise would be worth less than one that says so.
+
+**It does not establish authorship** beyond the git author field. Every commit here carries the
+repository owner, including those made by automated sessions acting on their behalf, so that field
+distinguishes nothing and is reported as such rather than presented as evidence.
+
+**Net deltas hide compensating changes.** The largest withdrawal event above is not a deletion commit:
+it changed 55 files with 24,661 insertions and added 174 Lean theorems in the same change, and its own
+message records that six dangling claims were proved rather than dropped. A record assembled to support
+one reading would be the same defect as a check that cannot fail.
+
+*Integrity, not truth. A content-address fixes which record was produced, not that its subject is significant.*
+`
+writeFileSync('forensic.md', md)
+
 console.log(`forensic audit — ${events.length} ledger state changes across ${commits.length} commits\n`)
 console.log(`  ledger now: ${l.length} entries · ${JSON.stringify(status)}`)
 console.log(`  receipt chain recomputed: ${chainBreaks} break(s) — ${report.chainRecomputed.verdict}\n`)
