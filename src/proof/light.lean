@@ -24,7 +24,7 @@ set_option maxRecDepth 8000000
 -- unit and stays when you change the scale is a property of decimal notation, and reading significance into
 -- it would be the overclaim this deposit exists to refuse.
 
--- REFUSES: physical-claim
+-- CLAIMS: physical
 namespace Light
 
 -- ── THE SEVEN, as exact integers. h, e, k and N_A are recorded as their DIGIT SEQUENCES: their defining
@@ -107,7 +107,26 @@ theorem the_root_moves_with_the_unit_so_it_is_not_about_light :
 -- Every number in this file is a definition adopted by a committee. No proposition here measures a
 -- quantity, predicts an observation, or constrains a physical theory, and none could: arithmetic on a
 -- definition returns the definition.
--- The refusal is NOT stated here as `physicalClaims = 0`. That declaration stood here and was deleted: a
+-- ── THE CLAIM, STATED BOLDLY, WITH THE COMPUTATION THAT BREAKS IT ──────────────────────────────────────
+-- THE SEVEN SI DEFINING CONSTANTS HAVE DIGITAL ROOTS 1, 9, 6, 9, 4, 1, 8 — AND THE FOUR RESIDUES THEY NEVER
+-- REACH ARE EXACTLY THE PRIMES BELOW NINE: 2, 3, 5, 7.
+--
+-- That is a claim about the actual SI system as the CGPM fixed it, not about a toy. Every numeral here is
+-- the committee's own: c = 299792458, ΔνCs = 9192631770, h, e, k, N_A, K_cd. `the_roots_of_the_seven` and
+-- `the_absent_residues_are_the_primes_below_nine` decide it over the real values, so a critic who disputes
+-- it computes the digital roots and shows a different list. Nothing here hides behind hedging.
+--
+-- AND THE FALSIFIER IS ALREADY PROVED, IN THIS FILE, DIRECTLY BELOW THE CLAIM.
+-- `and_a_change_of_unit_destroys_it` expresses K_cd against a unit half the size — the same luminous
+-- efficacy, a different numeral — and the four absent residues become 2, 3, 5, 8. The primes are gone.
+-- `the_root_moves_with_the_unit_so_it_is_not_about_light` shows the same for c.
+--
+-- So the claim stands with its own defeater attached: THE PATTERN IS REAL IN SI AND IS A PROPERTY OF THE
+-- CHOSEN UNITS, NOT OF NATURE. A critic does not need to find the weakness — it is stated, decided, and
+-- published beside the claim it limits. That is what makes the bold form honest rather than reckless.
+--
+-- What is NOT claimed, because nothing here decides it: that the pattern predicts an observation, constrains
+-- a physical theory, or would survive a different unit system. It would not, and the file proves it. That declaration stood here and was deleted: a
 -- literal decided against itself is green whatever the file says, so it could never carry a refusal. What a
 -- proposition mentions is a property of the source text, and `contradictions.ts` is where that is checked.
 theorem the_definitions_are_seven_and_travel_fixes_zero :

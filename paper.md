@@ -588,7 +588,6 @@ gravitational object, and nothing below licenses that reading.
 
 The last of those is the one worth stating carefully: the origin is not pulled anywhere, it simply has no
 partner inside the set. An absence of a partner is not a force.
-REFUSES: physical-claim
 
 <p class="paper-h">Definitions</p>
 
@@ -701,7 +700,7 @@ nonzero := [1, 2, 3, 4, 5, 6, 7, 8, 9]</code></pre>
 <pre class="thm-statement"><code>digits.length = 10</code></pre>
 <details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\mathrm{digits}\right| = 10</code></pre></details>
 </div>
-<p class="thm-remark">── THE REFUSAL, as a theorem so it is checked and not merely written ──────────────────────────────────── The count of ASTROPHYSICAL claims this file makes. Gravity here is the fall to a fixed point, decided above; a black hole is not, and no proposition in this file mentions one. and the words that would make it one appear in the header as the thing being refused, never in a proposition. There was a `def physicalClaims : Nat := 0` here, decided against its own literal. The comment beside it argued that "written as one it would be equally green" — which is the proof that it certified nothing in EITHER direction: the number was zero because it was typed as zero, and would stay zero while the file filled with claims about the sky. Whether a proposition names a physical quantity is a fact about this file's TEXT, and Lean cannot read its own text. The refusal now lives in `contradictions.ts`, which reads the propositions and can go red. What is kept here is the conjunct that was always read off a real list.</p>
+<p class="thm-remark">── THE REFUSAL, as a theorem so it is checked and not merely written ──────────────────────────────────── The count of ASTROPHYSICAL claims this file makes. Gravity here is the fall to a fixed point, decided above; a black hole is not, and no proposition in this file mentions one. and the words that would make it one appear in the header as the thing being refused, never in a proposition. This file carries NO marker either way. It decides a reflection on ten digits; there is no physical claim available to make boldly and none to refuse — inventing one in either direction would be the numerology priorart.lean refuses elsewhere. A file with nothing to claim says nothing, which is not the same as a file that claims nothing. There was a `def physicalClaims : Nat := 0` here, decided against its own literal. The comment beside it argued that "written as one it would be equally green" — which is the proof that it certified nothing in EITHER direction: the number was zero because it was typed as zero, and would stay zero while the file filled with claims about the sky. Whether a proposition names a physical quantity is a fact about this file's TEXT, and Lean cannot read its own text. The refusal now lives in `contradictions.ts`, which reads the propositions and can go red. What is kept here is the conjunct that was always read off a real list.</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 
@@ -2442,7 +2441,7 @@ numeral, in metres per second, and nothing else: doubling the numeral changes th
 multiplying by a hundred leaves it alone. Both are decided below. A root that moves when you change the
 unit and stays when you change the scale is a property of decimal notation, and reading significance into
 it would be the overclaim this deposit exists to refuse.
-REFUSES: physical-claim
+CLAIMS: physical
 
 <p class="paper-h">Definitions</p>
 
@@ -2548,7 +2547,7 @@ alternative := [c, dNuCs, hDigits, eDigits, kDigits, naDigits, kcdDoubled]</code
 <pre class="thm-statement"><code>defining.length = 7 ∧ travel 0 = 0</code></pre>
 <details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\mathrm{defining}\right| = 7 \land \mathrm{travel}\mathopen{}\left(0\right) = 0</code></pre></details>
 </div>
-<p class="thm-remark">── THE REFUSAL, as a theorem so it is checked and not merely written ─────────────────────────────────── Every number in this file is a definition adopted by a committee. No proposition here measures a quantity, predicts an observation, or constrains a physical theory, and none could: arithmetic on a definition returns the definition. The refusal is NOT stated here as `physicalClaims = 0`. That declaration stood here and was deleted: a literal decided against itself is green whatever the file says, so it could never carry a refusal. What a proposition mentions is a property of the source text, and `contradictions.ts` is where that is checked.</p>
+<p class="thm-remark">── THE REFUSAL, as a theorem so it is checked and not merely written ─────────────────────────────────── Every number in this file is a definition adopted by a committee. No proposition here measures a quantity, predicts an observation, or constrains a physical theory, and none could: arithmetic on a definition returns the definition. ── THE CLAIM, STATED BOLDLY, WITH THE COMPUTATION THAT BREAKS IT ────────────────────────────────────── THE SEVEN SI DEFINING CONSTANTS HAVE DIGITAL ROOTS 1, 9, 6, 9, 4, 1, 8 — AND THE FOUR RESIDUES THEY NEVER REACH ARE EXACTLY THE PRIMES BELOW NINE: 2, 3, 5, 7. That is a claim about the actual SI system as the CGPM fixed it, not about a toy. Every numeral here is the committee's own: c = 299792458, ΔνCs = 9192631770, h, e, k, N_A, K_cd. `the_roots_of_the_seven` and `the_absent_residues_are_the_primes_below_nine` decide it over the real values, so a critic who disputes it computes the digital roots and shows a different list. Nothing here hides behind hedging. AND THE FALSIFIER IS ALREADY PROVED, IN THIS FILE, DIRECTLY BELOW THE CLAIM. `and_a_change_of_unit_destroys_it` expresses K_cd against a unit half the size — the same luminous efficacy, a different numeral — and the four absent residues become 2, 3, 5, 8. The primes are gone. `the_root_moves_with_the_unit_so_it_is_not_about_light` shows the same for c. So the claim stands with its own defeater attached: THE PATTERN IS REAL IN SI AND IS A PROPERTY OF THE CHOSEN UNITS, NOT OF NATURE. A critic does not need to find the weakness — it is stated, decided, and published beside the claim it limits. That is what makes the bold form honest rather than reckless. What is NOT claimed, because nothing here decides it: that the pattern predicts an observation, constrains a physical theory, or would survive a different unit system. It would not, and the file proves it. That declaration stood here and was deleted: a literal decided against itself is green whatever the file says, so it could never carry a refusal. What a proposition mentions is a property of the source text, and `contradictions.ts` is where that is checked.</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 

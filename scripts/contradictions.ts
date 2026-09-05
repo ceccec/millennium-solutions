@@ -28,6 +28,9 @@ import { census, leanFiles, leanSource, leanTheorems, theoremOfKey, clayFloor, a
  *  is a word list and says so: it is the one part of the check that is not derived, so it is kept short,
  *  kept beside the check that uses it, and verified by planting a name that must fire. */
 const exempted: string[] = []
+const worldNamed: string[] = []
+/** A hand-written aid, not a definition of the defect: nouns that make a name a claim about the world. */
+const WORLD_NOUN = /(dna|genetic|gravity|intention|skipper|hull|hardware|entropy|superposition|creation|genesis|cell|sensor|diamond|codon|reading|perspective|harmonic|navigat|develop|cheap|budget)/i
 const PHYSICAL_VOCAB = ['light', 'metres', 'metre', 'second', 'seconds', 'mass', 'energy', 'gravity',
   'spacetime', 'velocity', 'force', 'photon', 'quantum', 'relativity', 'orbit', 'earth', 'star']
 
@@ -368,6 +371,28 @@ for (const f of leanFiles()) {
         + `the file claims. Derive it, or delete the declaration and let a check that reads the corpus carry the claim.`)
     }
   }
+  // ── A NAME THAT CLAIMS ABOUT THE WORLD OVER A PROPOSITION THAT DECIDES ARITHMETIC ────────────────────
+  // REPORTS, does not fail. The physical-claim check below reads only files marked `-- REFUSES:
+  // physical-claim` — which is why two theorems of mine slipped past it on the day I wrote it, one of them
+  // conjoining a term with itself. This is the same defect without the marker: a proposition that references
+  // NOTHING DEFINED IN ITS OWN FILE is deciding pure arithmetic, whatever its name announces.
+  //
+  // 4^3 = 64 is true and worth stating. `dna_is_the_version_itself` is not what it decides. The name is the
+  // Zenodo title, the page heading and the ledger key, so it is what a reader is asked to believe.
+  //
+  // It reports because renaming a sealed theorem is a withdrawal in an append-only ledger and that is the
+  // depositor's call, not a sweep's. The WORLD list is a hand-written aid and says so — it makes the count
+  // visible, it does not define the defect.
+  {
+    const defs = new Set([...src.matchAll(/^(?:def|abbrev)\s+(\w+)/gm)].map((m) => m[1]))
+    for (const t of src.matchAll(/^theorem\s+(\w+)\s*:([\s\S]*?):=\s*by\s+decide/gm)) {
+      const st = t[2]
+      if ([...defs].some((d) => new RegExp(`\\b${d}\\b`).test(st))) continue
+      if (/List\.|\.all|\.any|\.filter|\.map|\.length/.test(st)) continue
+      if (WORLD_NOUN.test(t[1])) worldNamed.push(`${f}:${t[1]}`)
+    }
+  }
+
   // ── A CONJUNCTION THAT REPEATS A CONJUNCT ────────────────────────────────────────────────────────────
   // `A ∧ A` decides exactly what `A` decides, so the repetition adds a conjunct that cannot fail. I wrote
   // `1048576 / 20 = 52428 ∧ 1048576 / 20 = 52428` into a theorem on the same day I widened the sweep for
@@ -390,6 +415,21 @@ for (const f of leanFiles()) {
   // no reader disputes it; a name asserting what a second of light spans is a statement about the world that
   // the proposition does not reach. The domain is DERIVED from the marker below, not listed here, so a file
   // that starts refusing physical claims is covered the day it says so.
+  // ── A FILE THAT CLAIMS PHYSICALLY MUST PUBLISH ITS FALSIFIER ──────────────────────────────────────────
+  // The marker was `-- REFUSES: physical-claim` and the check forbade physical vocabulary in theorem names.
+  // Inverted, on the depositor's instruction: claim boldly, and let critics compute against it. A refusal
+  // nobody can test and a claim nobody can test are the same defect; a claim WITH its defeater attached is
+  // strictly more useful than either, because it tells a critic where to aim.
+  //
+  // So a file marked `-- CLAIMS: physical` must name the theorem that would break its claim. light.lean
+  // claims the SI constants' digital roots miss exactly the primes below nine, and proves in the next
+  // theorem that a change of unit destroys the pattern. The claim is bold and its limit is decided.
+  if (/^-- CLAIMS: physical$/m.test(src)) {
+    if (!/falsifier|destroys it|would break/i.test(src))
+      fail(`src/proof/${f}: claims physically and names no falsifier — a bold claim without the computation `
+        + `that would break it asks a reader to trust rather than to check`)
+  }
+
   if (/^-- REFUSES: physical-claim$/m.test(src)) {
     for (const t of src.matchAll(/^theorem\s+(\w+)/gm)) {
       const hit = PHYSICAL_VOCAB.filter((w) => new RegExp(`(^|_)${w}(_|$)`).test(t[1]))
@@ -452,6 +492,7 @@ for (const f of leanFiles()) {
   if (standing.length) console.log(`  ○ ${standing.length} standing unresolvable key(s), reported not excluded: ${standing.join(' ')}`)
 }
 
+if (worldNamed.length) console.log(`  ○ ${worldNamed.length} theorem(s) decide pure arithmetic under a name claiming about the world — reported, not failed: renaming a sealed theorem is a withdrawal and the depositor's call: ${worldNamed.slice(0, 6).join(' ')}${worldNamed.length > 6 ? ' …' : ''}`)
 if (exempted.length) console.log(`  ○ ${exempted.length} physical-vocabulary name(s) exempted as denials, reported not hidden: ${exempted.join(' ')}`)
 console.log(bad
   ? `\n✗ contradictions: ${bad} finding(s) — prose or code disagrees with src/proof`

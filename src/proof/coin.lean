@@ -29,7 +29,6 @@
 -- The last of those is the one worth stating carefully: the origin is not pulled anywhere, it simply has no
 -- partner inside the set. An absence of a partner is not a force.
 
--- REFUSES: physical-claim
 namespace Coin
 
 def refl (d : Nat) : Nat := 10 - d
@@ -132,6 +131,11 @@ theorem what_escapes_falls_back_inside :
 -- above; a black hole is not, and no proposition in this file mentions one.
 -- and the words that would make it one appear in the header as the thing being refused, never in a
 -- proposition.
+--
+-- This file carries NO marker either way. It decides a reflection on ten digits; there is no physical claim
+-- available to make boldly and none to refuse — inventing one in either direction would be the numerology
+-- priorart.lean refuses elsewhere. A file with nothing to claim says nothing, which is not the same as a
+-- file that claims nothing.
 --
 -- There was a `def physicalClaims : Nat := 0` here, decided against its own literal. The comment beside it
 -- argued that "written as one it would be equally green" — which is the proof that it certified nothing in
