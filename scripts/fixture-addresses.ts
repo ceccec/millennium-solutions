@@ -57,6 +57,48 @@ if (process.argv.includes('--write')) {
   writeFileSync(P, JSON.stringify(F, null, 2) + '\n')
   console.log(`✓ fixture-addresses: ${F.addresses.length} pins emitted → ${P}`)
 } else {
-  for (const a of F.addresses) console.log(`  ${a.mergeKeyUuid}  ${a.statement.slice(0, 58)}`)
-  console.log(`\n○ fixture-addresses: ${F.addresses.length} pins computed (run with --write to store)`)
+  // VERIFY, not merely display. The pins were checked inside scripts/unique.ts, which is a REPORT that exits
+  // non-zero whenever it finds same-text candidates for a reader — so it is not in CI and can never be a
+  // clean-tree control. Pin drift therefore had no gate that could go from green to red. It does now.
+  const stored = JSON.parse(readFileSync(P, 'utf8')).addresses as typeof F.addresses | undefined
+  let bad = 0
+  for (const a of F.addresses) {
+    const was = stored?.find((x) => x.statement === a.statement)
+    if (!was) { console.log(`  ✗ no stored pin for: ${a.statement.slice(0, 56)}`); bad++; continue }
+    // EVERY FIELD, not the two I happened to think of. The first version compared only mergeKeyUuid and
+    // normalisedLength, so gates-fire mutated mergeKeySha256 and the gate accepted it: a check narrower than
+    // the record it guards leaves the rest of that record unheld. Compared field by field, derived from the
+    // object itself, so a field added later is covered without anyone remembering to add it here.
+    const differs = (Object.keys(a) as (keyof typeof a)[]).filter((k) => String(was[k]) !== String(a[k]))
+    if (differs.length) {
+      console.log(`  ✗ pin drifted on ${differs.join(', ')}: ${a.statement.slice(0, 44)}`)
+      for (const k of differs) console.log(`      ${String(k)}: stored ${String(was[k]).slice(0, 40)} · computed ${String(a[k]).slice(0, 40)}`)
+      bad++
+    }
+  }
+  // ── THE FIXTURE MUST BE ABLE TO CATCH THE DEFECT IT EXISTS FOR ─────────────────────────────────────────
+  // zeropoint-node showed that the single pin I sent them reproduces IDENTICALLY under `[A-Za-z0-9_]` in
+  // place of `\p{L}` — same byte count, same UUID — while that swap corrupts every Greek identifier, the
+  // 211-of-832 failure the spec warns about in the same sentence. Their pin was thin; the fixture as a whole
+  // is not (3 of 5 pins discriminate). But nothing PROVED that, so trimming the fixture to Latin-only cases
+  // would have left a green gate blind to its own headline defect.
+  //
+  // So the fixture now asserts its own discriminating power: at least one pin must change under the ASCII
+  // class. A fixture that passes under the defect it exists to catch is not a fixture.
+  const ascii = (x: string) => x.replace(/\s+/gu, ' ')
+    .replace(/\s(?![A-Za-z0-9_])|(?<![A-Za-z0-9_.])\s/gu, '')
+    .replace(/==/g, '=').replace(/!=/g, '≠')
+  const discriminating = F.addresses.filter((a) => ascii(a.statement) !== a.normalised)
+  if (!discriminating.length) {
+    console.log(`  ✗ no pin distinguishes \\p{L} from [A-Za-z0-9_] — the fixture cannot detect the very`)
+    console.log(`      regression it documents. Add a statement carrying a non-Latin identifier.`)
+    bad++
+  } else {
+    console.log(`  ${discriminating.length} of ${F.addresses.length} pins change under the ASCII class — the fixture can see that regression`)
+  }
+
+  console.log(bad
+    ? `\n✗ fixture-addresses: ${bad} of ${F.addresses.length} published pin(s) no longer reproduce`
+    : `\n✓ fixture-addresses: all ${F.addresses.length} published pins reproduce, normalised lengths agree`)
+  process.exit(bad ? 1 : 0)
 }

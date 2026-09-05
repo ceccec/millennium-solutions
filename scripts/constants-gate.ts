@@ -17,16 +17,17 @@
  *  the reader to skip it. The honest scope is this one, and the peer-message surface stays a discipline
  *  rather than a check: send the PATH and the FIELD, never the value. */
 import { execSync } from 'node:child_process'
+import { readFileSync } from 'node:fs'
 
 const GENERATED = ['README.md', 'index.md', 'paper.md']
-const dirtyBefore = execSync(`git status --porcelain -- ${GENERATED.join(' ')}`).toString().trim()
-if (dirtyBefore) {
-  console.log('  ○ constants-gate: generated prose has uncommitted edits; comparing against the generator anyway')
-}
+// CAPTURE BEFORE REGENERATING. The first version ran pages.ts and then asked git what had changed — but
+// pages.ts REPAIRS a hand-edited constant, so by the time git was consulted the tree was clean again and the
+// gate passed. gates-fire caught it in one run: "ACCEPTS a hand-written constant — this gate is not
+// protecting anything". A gate that fixes the defect before looking for it reports green, for the same
+// reason an empty extractor does.
+const before = new Map(GENERATED.map((f) => [f, readFileSync(f, 'utf8')]))
 execSync('npx tsx scripts/pages.ts', { stdio: 'ignore' })
-const moved = execSync(`git status --porcelain -- ${GENERATED.join(' ')}`).toString().trim()
-  .split('\n').filter(Boolean).map((l) => l.slice(3))
-const unexpected = moved.filter((f) => !dirtyBefore.includes(f))
+const unexpected = GENERATED.filter((f) => readFileSync(f, 'utf8') !== before.get(f))
 
 if (unexpected.length) {
   console.log(`  ✗ ${unexpected.join(', ')} disagree(s) with scripts/pages.ts`)

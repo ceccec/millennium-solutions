@@ -26,21 +26,34 @@ const shaped = (statement: string): string => {
 const SOURCES: { name: string; path: string }[] = [
   { name: 'erpax', path: homedir() + '/.erpax/fusion/erpax.results.json' },
   { name: 'ceccec.github.io', path: homedir() + '/github/ceccec/ceccec.github.io/src/research/statement-manifest.json' },
+  { name: 'zeropoint-node', path: homedir() + '/.erpax/fusion/zeropoint-node.jsonl' },
 ]
 const theirs = new Map<string, string>()
 const origin = new Map<string, string>()
 let probe: { claim: string; statementUuid: string } | null = null
 for (const src of SOURCES) {
-  let raw: any
-  try { raw = JSON.parse(readFileSync(src.path, 'utf8')) } catch { console.log(`  ○ ${src.name}: no manifest at ${src.path} — not counted, not assumed empty`); continue }
-  const rows: any[] = Array.isArray(raw) ? raw : (raw.results ?? raw.statements ?? [])
+  let rows: any[]
+  try {
+    const text = readFileSync(src.path, 'utf8')
+    // JSONL or JSON. zeropoint-node emits one object per line and publishes BOTH addresses per row —
+    // `statementUuidLocal` under its own normaliser (which lowercases; this one does not) and
+    // `statementUuidCrossRepo` under the rule shared here. Only the cross-repo column may be joined on;
+    // reading the local one would compare two different functions and call the result a collision count.
+    if (src.path.endsWith('.jsonl')) {
+      rows = text.split('\n').filter(Boolean).map((l) => JSON.parse(l))
+    } else {
+      const raw = JSON.parse(text)
+      rows = Array.isArray(raw) ? raw : (raw.results ?? raw.statements ?? [])
+    }
+  } catch { console.log(`  ○ ${src.name}: no manifest at ${src.path} — not counted, not assumed empty`); continue }
   let n = 0
   for (const r of rows) {
-    if (!r.statementUuid) continue
+    const uuid = r.statementUuidCrossRepo ?? r.statementUuid
+    if (!uuid) continue
     const text = String(r.claim ?? r.statement ?? r.title ?? '?')
-    theirs.set(r.statementUuid, text)
-    origin.set(r.statementUuid, src.name)
-    if (!probe) probe = { claim: text, statementUuid: r.statementUuid }
+    theirs.set(uuid, text)
+    origin.set(uuid, src.name)
+    if (!probe) probe = { claim: text, statementUuid: uuid }
     n++
   }
   console.log(`  ${src.name}: ${n} statement addresses`)

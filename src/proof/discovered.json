@@ -17539,5 +17539,15 @@
     "key": "lean_priorart_novelty_is_claimed_of_no_source",
     "name": "lean priorart.lean: novelty_is_claimed_of_no_source — (sources.filter novelty).length = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "f7830678-15e8-8b0d-96c9-9290a860b092"
+  },
+  {
+    "key": "lean_imagined_triad_is_closed_under_double",
+    "name": "lean imagined.lean: triad_is_closed_under_double — [3, 6, 0].all (fun d => [3, 6, 0].contains (m9 (2 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e97a7f4a-5ea2-8307-a8d4-268ea27780f9"
+  },
+  {
+    "key": "lean_imagined_double_is_involutive_on_triad",
+    "name": "lean imagined.lean: double_is_involutive_on_triad — [3, 6, 0].all (fun d => (fun x => m9 (2 * x)) (m9 (2 * d)) == d) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2745f785-9f44-8ccf-8c23-729f99e7e41b"
   }
 ]

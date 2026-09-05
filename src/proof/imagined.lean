@@ -21,6 +21,10 @@ open Z9
 theorem units_is_closed_under_double :
   [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (2 * d))) := by decide
 
+-- the triad is closed under doubling
+theorem triad_is_closed_under_double :
+  [3, 6, 0].all (fun d => [3, 6, 0].contains (m9 (2 * d))) := by decide
+
 -- the doubling orbit is closed under doubling
 theorem orbit_is_closed_under_double :
   [1, 2, 4, 8, 7, 5].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (2 * d))) := by decide
@@ -236,6 +240,10 @@ theorem all_is_closed_under_octuple :
 -- the cubes mod nine is closed under multiplication by eight
 theorem cubes_is_closed_under_octuple :
   [0, 1, 8].all (fun d => [0, 1, 8].contains (m9 (8 * d))) := by decide
+
+-- doubling is its own inverse on the triad
+theorem double_is_involutive_on_triad :
+  [3, 6, 0].all (fun d => (fun x => m9 (2 * x)) (m9 (2 * d)) == d) := by decide
 
 -- quadrupling is its own inverse on the triad
 theorem quadruple_is_involutive_on_triad :

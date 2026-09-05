@@ -1,8 +1,6 @@
 {
-  "double_carries_tetA_onto_tetB": "the_rejected_command_gets_a_receipt",
-  "double_carries_tetB_onto_tetA": "the_rejected_command_gets_a_receipt",
-  "double_is_involutive_on_triad": "the_rejected_command_gets_a_receipt",
+  "double_carries_tetA_onto_tetB": "the_counter_rotation_has_period_two",
+  "double_carries_tetB_onto_tetA": "the_counter_rotation_has_period_two",
   "negate_carries_units_onto_orbit": "universal_z9_reflection_permutes_the_units",
-  "triad_is_closed_under_double": "the_rejected_command_gets_a_receipt",
   "units_is_closed_under_negate": "universal_z9_reflection_permutes_the_units"
 }

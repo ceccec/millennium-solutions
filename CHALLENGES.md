@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2430 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2432 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (524)
+### lean (526)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -548,6 +548,8 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_light_travel_and_periods_at_one_return_their_constants](/theorem/lean_light_travel_and_periods_at_one_return_their_constants) — lean light.lean: travel_and_periods_at_one_return_their_constants — travel 1 = 299792458 ∧ periods 1 = 9192631770 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `442f56f7-384d…`
 - [lean_light_the_definitions_are_seven_and_travel_fixes_zero](/theorem/lean_light_the_definitions_are_seven_and_travel_fixes_zero) — lean light.lean: the_definitions_are_seven_and_travel_fixes_zero — defining.length = 7 ∧ travel 0 = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `660422cc-20f7…`
 - [lean_priorart_novelty_is_claimed_of_no_source](/theorem/lean_priorart_novelty_is_claimed_of_no_source) — lean priorart.lean: novelty_is_claimed_of_no_source — (sources.filter novelty).length = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `f7830678-15e8…`
+- [lean_imagined_triad_is_closed_under_double](/theorem/lean_imagined_triad_is_closed_under_double) — lean imagined.lean: triad_is_closed_under_double — [3, 6, 0].all (fun d =&gt; [3, 6, 0].contains (m9 (2 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e97a7f4a-5ea2…`
+- [lean_imagined_double_is_involutive_on_triad](/theorem/lean_imagined_double_is_involutive_on_triad) — lean imagined.lean: double_is_involutive_on_triad — [3, 6, 0].all (fun d =&gt; (fun x =&gt; m9 (2 * x)) (m9 (2 * d)) == d) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2745f785-9f44…`
 
 ### other — one-of-a-kind (0)
 
@@ -2370,4 +2372,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `c05483c5-480e-8203-afb5-9a32d396203a`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `418e59be-f0a2-821f-a776-4f21f847ea11`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

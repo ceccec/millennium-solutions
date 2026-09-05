@@ -30,7 +30,7 @@
 //
 // Run: node scripts/imagine.ts          (propose and report)
 //      node scripts/imagine.ts --emit   (also write src/proof/imagined.lean and verify it)
-import { readFileSync, writeFileSync, readdirSync } from 'node:fs'
+import { existsSync, readFileSync, writeFileSync, readdirSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 import { units as apiUnits, triad as apiTriad, orbit as apiOrbit, tetA as apiTetA, tetB as apiTetB } from '../src/api/index.ts'
 
@@ -146,7 +146,13 @@ const mulOf: Record<string, string> = { double: '2*d', triple: '3*d', quadruple:
 // ledger still held the key, and nothing in the tree said where the statement had gone. seal-lean then offered
 // to withdraw two facts that are, right now, checked by the kernel. The name of the covering theorem is the
 // missing evidence, so it is written down and seal-lean reads it to mark supersession instead of loss.
-const nameOf = (chunk: string) => chunk.match(/^([A-Za-z_][A-Za-z0-9_'.]*)/)?.[1] ?? ''
+// `said.split('theorem')` leaves every chunk starting with the SPACE that followed the keyword, and this
+// anchored at position 0 — so it named 28 of 558 chunks, and those 28 were the accidents where the split
+// happened to land mid-word. Every real theorem name was lost, and covered.json recorded the accidents:
+// `the_rejected_command_gets_a_receipt` was filed as the covering theorem for three doubling statements it
+// has nothing to do with. A wrong name in a coverage map is worse than an empty one, because "superseded,
+// not lost" is a claim about WHICH theorem carries the fact.
+const nameOf = (chunk: string) => chunk.match(/^\s*([A-Za-z_][A-Za-z0-9_'.]*)/)?.[1] ?? ''
 const chunks = said.split('theorem')
 const coveredBy = new Map<string, string>()
 const t2 = t3.filter((c) => {
@@ -158,8 +164,19 @@ const t2 = t3.filter((c) => {
   const lit = setId ? setOf.get(setId) : undefined
   const mul = mulOf[mapId]
   // both ingredients present in one existing theorem body ⇒ treat as already covered
+  // A COVER MUST BE A NAMED THEOREM. `said.split('theorem')` puts the file PREAMBLE in chunks[0], and the
+  // ingredient match was landing there — so a candidate was excluded as "already covered" by a chunk that is
+  // not a theorem at all, and covered.json recorded an empty name for it. "Superseded, not lost" is a claim
+  // about WHICH theorem carries the fact; with no name there is no claim, only an exclusion. If nothing
+  // named matches, the candidate is not covered and stays in the emitted set.
   if (lit && mul && said.includes(lit) && said.includes(mul)) {
-    for (const t of chunks) if (t.includes(lit) && t.includes(mul)) { coveredBy.set(c.key, nameOf(t)); return false }
+    for (const t of chunks.slice(1)) {
+      if (!t.includes(lit) || !t.includes(mul)) continue
+      const name = nameOf(t)
+      if (!name) continue
+      coveredBy.set(c.key, name)
+      return false
+    }
   }
   return true
 })
@@ -183,11 +200,28 @@ if (!process.argv.includes('--emit')) {
 
 // ── FILTER 4 · the kernel ────────────────────────────────────────────────────────────────────────────────
 const body = t2.map((c) => `-- ${c.say}\ntheorem ${c.key} :\n  ${c.prop} := by decide`).join('\n\n')
+
+// ATTRIBUTION IS CARRIED FORWARD, NEVER REGENERATED AS `unclassified`. This header used to emit a fixed
+// `-- prior_art: unclassified`, so re-running --emit ERASED a prior-art block that a later search had
+// written into the file by hand: the doubling orbit is the unit group U(9), named with its search terms and
+// date. The generator would have replaced a credited attribution with a claim of no known prior art, which
+// is the one direction this repository must never move in — and it went unnoticed because --emit is not in
+// ci:local and the file only drifts when someone runs it. gates-fire found it by running it.
+//
+// A prior-art search is a human act performed outside this program; nothing here can redo it, so nothing
+// here may overwrite its record.
+const PRIOR_ART_KEYS = ['prior_art', 'prior_art_domain', 'prior_art_note', 'prior_art_search']
+const existing = existsSync('src/proof/imagined.lean') ? readFileSync('src/proof/imagined.lean', 'utf8') : ''
+const carried = PRIOR_ART_KEYS
+  .map((k) => existing.match(new RegExp(`^-- ${k}: .*$`, 'm'))?.[0])
+  .filter((l): l is string => Boolean(l) && l !== '-- prior_art: unclassified')
+const priorArt = carried.length ? carried.join('\n') : '-- prior_art: unclassified'
+
 writeFileSync('src/proof/imagined.lean', `import Z9
 set_option maxRecDepth 8000000
 -- title: What enumeration proposed and the kernel kept
 -- wing: the imagined
--- prior_art: unclassified
+${priorArt}
 -- IMAGINED — proposed by scripts/imagine.ts, which enumerated every map-against-subset and map-between-subsets
 -- statement its primitives can express, kept the ones true by exhaustion, and then discarded every one that
 -- also holds for all its siblings. A property true of everything names nothing. What is left is what the

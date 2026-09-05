@@ -40,6 +40,31 @@ type Control = { gate: string; cmd: string; what: string; file: string; mutate: 
 const PREREQ = 'node scripts/locale-fold.ts'
 
 const CONTROLS: Control[] = [
+  // ── ADDED after deriving which gates had never been proven able to fail: 66 of 95 reachable scripts had
+  //    no negative control, and `contradictions` — widened TWICE this session, once for the shape of a
+  //    self-certifying literal and once for physical claims in published theorem names — was among them.
+  //    A gate strengthened by hand and verified by a one-off plant is a gate whose next regression is
+  //    silent. These four were each planted manually when written; the plants are standing now.
+  { gate: 'contradictions (self-certifying literal)', cmd: 'node scripts/contradictions.ts',
+    file: 'src/proof/phenomena.lean',
+    what: 'a constant decided against its own literal and used nowhere else',
+    mutate: (s) => s.replace('end Phenomena', 'def probeClaims : Nat := 0\ntheorem probe_is_zero : probeClaims = 0 := by decide\n\nend Phenomena') },
+
+  { gate: 'contradictions (physical claim in a name)', cmd: 'node scripts/contradictions.ts',
+    file: 'src/proof/coin.lean',
+    what: 'a refusing file publishing a theorem NAME that asserts a physical fact',
+    mutate: (s) => s.replace('end Coin', 'theorem the_reflection_is_the_mass_of_a_star : digits.length = 10 := by decide\n\nend Coin') },
+
+  { gate: 'fixture-addresses (cross-repo pin)', cmd: 'node scripts/fixture-addresses.ts',
+    file: 'docs/statement-address-fixture.json',
+    what: 'a published address pin that no longer matches what the implementation computes',
+    mutate: (s) => s.replace(/"mergeKeySha256": "[0-9a-f]{4}/, '"mergeKeySha256": "dead') },
+
+  { gate: 'constants-gate', cmd: 'node scripts/constants-gate.ts', file: 'README.md',
+    what: 'a hand-written constant in prose that only a generator may write',
+    mutate: (s) => s.replace(/\b[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\b/, 'deadbeef-0000-0000-0000-000000000000'),
+    restore: 'node scripts/pages.ts' },
+
   { gate: 'hardcode-gate', cmd: 'node scripts/hardcode-gate.ts', file: 'scripts/gaps.ts',
     what: 'a ℤ/9 set written out as a literal',
     mutate: (s) => s + '\nconst __probe = [1, 2, 4, 5, 7, 8]\nvoid __probe\n' },

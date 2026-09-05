@@ -5,7 +5,7 @@ title: The axiom index — what is not assumed, and what is
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **532** report the same thing:
+axiom fails the build rather than earning a footnote. All **534** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
@@ -465,6 +465,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**532** declarations, **0** axiom dependencies, **227** definitions they rest on.
+**534** declarations, **0** axiom dependencies, **227** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them. `0/7`.
