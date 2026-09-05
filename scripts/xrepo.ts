@@ -49,6 +49,18 @@ if (!agrees) {
   console.log(`  would be a statement about two unrelated number spaces. Reporting nothing rather than a zero.`)
   process.exit(1)
 }
+// ── SECOND CONTROL: function agreement is not detection. Inject one of erpax's statements into MY set as
+//    though this deposit had made the same claim, and require the comparison to find it. Without this, a
+//    zero proves the two sides agree on a hash — not that a genuinely shared statement would surface.
+const planted = new Map(mine)
+planted.set(shaped(String(probe.claim)), 'PLANTED: ' + String(probe.claim).slice(0, 50))
+const detects = collide(theirs, planted).length
+console.log(`  control — erpax's statement planted into this deposit's set: ${detects ? `✓ detected (${detects})` : '✗ NOT DETECTED'}`)
+if (!detects) {
+  console.log(`\n✗ xrepo: the comparison cannot find a statement both sides make, so a zero means nothing.`)
+  process.exit(1)
+}
+
 console.log(hits.length
   ? `  ✗ ${hits.length} COLLISION(S):\n${hits.map((h) => `      ${h}\n        erpax : ${theirs.get(h)}\n        ceccec: ${mine.get(h)}`).join('\n')}`
   : `  collisions: 0 over ${theirs.size} × ${mine.size} — and the control above proves this zero could have been non-zero`)
