@@ -1,6 +1,20 @@
 -- title: The digit split
 -- wing: the ring
--- prior_art: unclassified
+-- prior_art: named
+-- prior_art_domain: elementary number theory — the unit group of ℤ/9
+-- prior_art_note: the classification this file rests on is standard and is credited: the units of ℤ/9 are
+--   {1,2,4,5,7,8} and the non-units {0,3,6}, exactly the residues coprime to 9. That is textbook abstract
+--   algebra — Wikipedia's "multiplicative group of integers modulo n", and every algebra course. So
+--   `the_singles_are_exactly_the_non_units` and `the_pairs_are_exactly_the_units_in_order` RESTATE known
+--   mathematics and claim nothing.
+--   Stated precisely so the credit does not run past the earlier work: what is NOT claimed as prior art is
+--   the tokenisation itself — reading the digits as 0|12|3|45|6|78|9 by concatenating consecutive units into
+--   two-digit tokens, and the arithmetic that follows from it (every token a multiple of three, closure of
+--   the tokens under addition and multiplication). That arrangement is this deposit's presentation of a
+--   standard fact, and its verification is by exhaustion here. Crediting an earlier author for a
+--   presentation they did not make is the same defect as claiming their result, pointed the other way.
+-- prior_art_search: literature search performed 2026-09-05, terms "units and non-units of Z/9 multiplicative
+--   inverses group of units modulo 9"; prior art found and credited.
 -- prior_art_pool: mixed
 --   the digit grouping is generic arithmetic; the coin accounting it feeds is this deposit's.
 --   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because

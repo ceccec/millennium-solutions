@@ -1108,7 +1108,18 @@ as a single subtraction would truncate at zero and quietly hold for the wrong re
 
 <p class="paper-src"><code>src/proof/split.lean</code> · namespace <code>Split</code> · 19 theorems</p>
 
-BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
+mathematics and claim nothing.
+  Stated precisely so the credit does not run past the earlier work: what is NOT claimed as prior art is
+  the tokenisation itself — reading the digits as 0|12|3|45|6|78|9 by concatenating consecutive units into
+  two-digit tokens, and the arithmetic that follows from it (every token a multiple of three, closure of
+  the tokens under addition and multiplication). That arrangement is this deposit's presentation of a
+  standard fact, and its verification is by exhaustion here. Crediting an earlier author for a
+  presentation they did not make is the same defect as claiming their result, pointed the other way.
+prior_art_search: literature search performed 2026-09-05, terms "units and non-units of Z/9 multiplicative
+  inverses group of units modulo 9"; prior art found and credited.
+prior_art_pool: mixed
+  the digit grouping is generic arithmetic; the coin accounting it feeds is this deposit's.
+  BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
   row will stay unclassified however much work is done. They look identical in a count and need
   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
@@ -2258,7 +2269,14 @@ tdsTapWater := 50     -- mg per litre, ordinary supply</code></pre>
 
 <p class="paper-src"><code>src/proof/index.lean</code> · namespace <code>MillenniumFloor</code> · 11 theorems</p>
 
-BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
+Bounded, so the credit stops where the earlier work does: what is NOT prior art is the use of that orbit as a floor for what this deposit does
+  and does not settle, which is a statement about this repository and has no earlier author.
+  Verification by exhaustion in Lean is this deposit's contribution, and verification is not discovery.
+prior_art_search: literature search performed 2026-09-05, terms "doubling sequence modulo 9 orbit
+  1 2 4 8 7 5 cyclic group generator digital root"; prior art found and credited.
+prior_art_pool: bounded
+  digit arithmetic of the doubling sequence; searchable independently of this deposit.
+  BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
   row will stay unclassified however much work is done. They look identical in a count and need
   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
@@ -2602,7 +2620,17 @@ were considered and excluded, but because no proposition here is about them.
 
 <p class="paper-src"><code>src/proof/quantum.lean</code> · namespace <code>Quantum</code> · 9 theorems</p>
 
-BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
+form is invariant under permutation of its input, which is why `receipt_is_order_invariant` holds. What
+  this file contributes is the Lean verification over a stated finite domain and the negative controls
+  beside it — `naive_fold_is_not_order_invariant` shows the property is bought by the sort and not free,
+  and `the_receipt_is_not_injective` and `the_invariance_is_canonicalisation_not_physics` state its limits.
+  Verification and refusal, not discovery.
+prior_art_search: literature search performed 2026-09-05, terms "sorted Merkle tree order-invariant set
+  commitment canonical ordering leaves"; prior art found and credited. This file was `unclassified` — no
+  search had ever been run for it — and it is one of the 8 files whose 86 theorems are staged for DOIs.
+prior_art_pool: mixed
+  canonicalisation before folding is a searchable technique; the receipt it folds is ours.
+  BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
   row will stay unclassified however much work is done. They look identical in a count and need
   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.
@@ -2895,7 +2923,14 @@ nsPerVerify := 38000      -- the same verify, in nanoseconds</code></pre>
 
 <p class="paper-src"><code>src/proof/generated.lean</code> · namespace <code>Generated</code> · 14 theorems</p>
 
-BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
+Bounded, so the credit stops where the earlier work does: what is NOT prior art is the generator that enumerates propositions over this ring and
+  discards the ones true of every sibling; that machinery is this deposit's own.
+  Verification by exhaustion in Lean is this deposit's contribution, and verification is not discovery.
+prior_art_search: literature search performed 2026-09-05, terms "doubling sequence modulo 9 orbit
+  1 2 4 8 7 5 cyclic group generator digital root"; prior art found and credited.
+prior_art_pool: bounded
+  quantified ring arithmetic over Z/9; the underlying facts are classical and searchable.
+  BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the
   row will stay unclassified however much work is done. They look identical in a count and need
   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn.

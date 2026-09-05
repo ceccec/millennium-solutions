@@ -1,6 +1,19 @@
 -- title: Order-invariance
 -- wing: the floor
--- prior_art: unclassified
+-- prior_art: named
+-- prior_art_domain: canonical forms and order-invariant commitments
+-- prior_art_note: sorting a multiset into a canonical order BEFORE folding it is standard practice, not a
+--   discovery here. Sorted-leaf Merkle trees are the recommended construction for multiproofs and are shipped
+--   that way in OpenZeppelin's merkle-tree library; canonical ordering before hashing is long-established in
+--   cryptographic serialisation generally. The mathematical content is elementary: any function of a canonical
+--   form is invariant under permutation of its input, which is why `receipt_is_order_invariant` holds. What
+--   this file contributes is the Lean verification over a stated finite domain and the negative controls
+--   beside it — `naive_fold_is_not_order_invariant` shows the property is bought by the sort and not free,
+--   and `the_receipt_is_not_injective` and `the_invariance_is_canonicalisation_not_physics` state its limits.
+--   Verification and refusal, not discovery.
+-- prior_art_search: literature search performed 2026-09-05, terms "sorted Merkle tree order-invariant set
+--   commitment canonical ordering leaves"; prior art found and credited. This file was `unclassified` — no
+--   search had ever been run for it — and it is one of the 8 files whose 86 theorems are staged for DOIs.
 -- prior_art_pool: mixed
 --   canonicalisation before folding is a searchable technique; the receipt it folds is ours.
 --   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because
