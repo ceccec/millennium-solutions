@@ -15,23 +15,50 @@ let bad = 0
 const fail = (m: string) => { console.log('  ✗ ' + m); bad++ }
 
 const scripts = Object.keys(JSON.parse(readFileSync('package.json', 'utf8')).scripts ?? {})
-const mds = readdirSync('.').filter((f) => f.endsWith('.md'))
+// ROOT ONLY was the bug: `readdirSync('.')` never descended, so every command written in docs/*.md was
+// unchecked while the summary line said "across 40 markdown files" and sounded exhaustive. The gate exists
+// because DEPLOY.md once told a reader to run a script that does not exist; docs/CERN-ENUMERATION.md tells a
+// reader to run `npm run cern`, and nothing verified that until now. Same root-only domain that left
+// locale-fold blind to docs/ in the same session.
+const walkMd = (dir: string): string[] => {
+  const out: string[] = []
+  for (const e of readdirSync(dir, { withFileTypes: true })) {
+    if (['node_modules', '.git', '.vitepress', 'dist', '.lake', 'packages'].includes(e.name)) continue
+    const p = dir === '.' ? e.name : `${dir}/${e.name}`
+    if (e.isDirectory()) out.push(...walkMd(p))
+    else if (e.name.endsWith('.md')) out.push(p)
+  }
+  return out
+}
+const mds = walkMd('.')
 let cmds = 0, paths = 0
+
+// A command quoted as an EXAMPLE OF A BROKEN COMMAND is not an instruction. docs/SESSION-FINDINGS.md
+// records "ran `npm run build` at the repo root, where no such script exists" — a finding about a command
+// that does not exist, which this gate would otherwise report as a command that does not exist. Same shape
+// stale-figures solved with a past-tense marker, and handled the same way: exempted, COUNTED and PRINTED,
+// because an exemption nobody sees is how a check quietly stops covering anything.
+const DENIED = /\b(no such|does not exist|never existed|not a script|is not in the tree|which does not|nonexistent)\b/i
+const exempt: string[] = []
+const nearby = (src: string, i: number): string => src.slice(Math.max(0, i - 160), i + 160)
 
 for (const f of mds) {
   const src = readFileSync(f, 'utf8')
   const line = (i: number) => src.slice(0, i).split('\n').length
   for (const m of src.matchAll(/npm run (?:-s )?([a-z0-9:_-]+)/g)) {
     cmds++
-    if (!scripts.includes(m[1]))
-      fail(`${f}:${line(m.index!)} tells a reader to run \`npm run ${m[1]}\`, which is not a script in package.json`)
+    if (scripts.includes(m[1])) continue
+    if (DENIED.test(nearby(src, m.index!))) { exempt.push(`${f}:${line(m.index!)} npm run ${m[1]}`); continue }
+    fail(`${f}:${line(m.index!)} tells a reader to run \`npm run ${m[1]}\`, which is not a script in package.json`)
   }
   for (const m of src.matchAll(/node (scripts\/[A-Za-z0-9._/-]+\.ts)/g)) {
     paths++
-    if (!existsSync(m[1]))
-      fail(`${f}:${line(m.index!)} tells a reader to run \`node ${m[1]}\`, which is not in the tree`)
+    if (existsSync(m[1])) continue
+    if (DENIED.test(nearby(src, m.index!))) { exempt.push(`${f}:${line(m.index!)} node ${m[1]}`); continue }
+    fail(`${f}:${line(m.index!)} tells a reader to run \`node ${m[1]}\`, which is not in the tree`)
   }
 }
+if (exempt.length) console.log(`  ○ ${exempt.length} command(s) quoted as examples of broken commands, exempted and named: ${exempt.join(' · ')}`)
 
 // The entry points a newcomer needs must be findable from the README, or the capability may as well not
 // exist. Derived from package.json rather than listed here, so a renamed script fails this instead of

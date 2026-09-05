@@ -45,6 +45,34 @@ const CONTROLS: Control[] = [
   //    self-certifying literal and once for physical claims in published theorem names — was among them.
   //    A gate strengthened by hand and verified by a one-off plant is a gate whose next regression is
   //    silent. These four were each planted manually when written; the plants are standing now.
+  // ── From deriving which REFUSING scripts still had no control: 27 scripts exit non-zero on a finding and
+  //    had never been shown to do so. Two are controlled here. THREE ARE NOT, AND ARE NAMED RATHER THAN
+  //    FAKED — latex-gate reads no files (it exercises in-code fixtures, so a file mutation never reaches
+  //    it), and my ci-drift and axiom-index mutations did not exercise what those gates actually parse. A
+  //    control that fails because the CONTROL is wrong accuses a working gate, which is the 1-in-39 mistake
+  //    that made the first constants-gate worthless. Uncontrolled and named beats controlled and lying.
+  // ── THE INVOLUTION: AN UNDERCLAIM IS AN OVERCLAIM REFLECTED, and both must fire. Every sweep in this repo
+  //    was built to catch prose claiming MORE than the tree holds; nothing proved the opposite direction was
+  //    covered. It is — stale-figures compares by equality, so a figure too LOW fails exactly as one too
+  //    high does — but "it is symmetric by construction" is an argument, and an argument is not a control.
+  //    Both directions are planted here so the day one of them stops firing is the day this says so.
+  { gate: 'stale-figures (overclaim)', cmd: 'node scripts/stale-figures.ts --strict', file: 'src/api/index.ts',
+    what: 'a comment claiming MORE theorems than the tree holds',
+    mutate: (s) => s.replace('// ── THE ℤ/9 SETS', '// this file rests on 9999 theorems\n// ── THE ℤ/9 SETS') },
+
+  { gate: 'stale-figures (underclaim)', cmd: 'node scripts/stale-figures.ts --strict', file: 'src/api/index.ts',
+    what: 'a comment claiming FEWER theorems than the tree holds — the same defect reflected',
+    mutate: (s) => s.replace('// ── THE ℤ/9 SETS', '// this file rests on 400 theorems\n// ── THE ℤ/9 SETS') },
+
+  { gate: 'docs-gate', cmd: 'node scripts/docs-gate.ts', file: 'docs/CERN-ENUMERATION.md',
+    what: 'prose telling a reader to run a command that does not exist',
+    mutate: (s) => s.replace('`npm run cern`', '`npm run a-command-that-was-never-wired`') },
+
+  { gate: 'zenodo-gate', cmd: 'node scripts/zenodo-gate.ts',
+    file: '.zenodo/theorems/lean_a_proof_is_smaller_than_its_set_across_the_octave.json',
+    what: 'a deposition quoting a statement the kernel never accepted',
+    mutate: (s) => s.replace('"description": "', '"description": "FALSIFIED CONTROL — this no longer matches its theorem. ') },
+
   { gate: 'contradictions (self-certifying literal)', cmd: 'node scripts/contradictions.ts',
     file: 'src/proof/phenomena.lean',
     what: 'a constant decided against its own literal and used nowhere else',
@@ -272,7 +300,20 @@ for (const c of CONTROLS) {
   writeFileSync(RESTORE_MARK, JSON.stringify({ file: c.file, backup }))   // survives a kill; read on next run
   try {
     const cleanPasses = run(c.cmd)
-    writeFileSync(c.file, c.mutate(readFileSync(c.file, 'utf8')))
+    // A MUTATION THAT CHANGES NOTHING IS A BROKEN CONTROL, NOT A BROKEN GATE. Two controls written in this
+    // session had regexes that matched nothing — latex-gate and ci-drift — and both were reported as
+    // "ACCEPTS ... this gate is not protecting anything". The gates were fine; the mutations never happened.
+    // Blaming the subject for the instrument is the failure this whole file exists to prevent, so the
+    // instrument now checks itself first: if the file did not move, say so about the CONTROL.
+    const before = readFileSync(c.file, 'utf8')
+    const after = c.mutate(before)
+    if (after === before) {
+      broken++
+      console.log(`  ✗ ${c.gate.padEnd(17)} CONTROL IS A NO-OP — its mutation matched nothing, so this run`)
+      console.log(`      tested the clean tree twice and proved nothing about the gate`)
+      continue
+    }
+    writeFileSync(c.file, after)
     const mutatedPasses = run(c.cmd)
     copyFileSync(backup, c.file)
     checked++

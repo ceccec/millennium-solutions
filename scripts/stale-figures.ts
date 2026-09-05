@@ -80,5 +80,11 @@ console.log(bad
   : `\n✓ stale-figures: ${checked} figure(s) in comments across ${files.length} files agree with the tree, and ${history} more`
     + `\n  are marked as records of the past and left as written — rewriting those to today's number would destroy`
     + `\n  the finding they record.`)
-// Reports; does not fail. See the note on the PAST marker above.
-process.exit(0)
+// Reports; does not fail by default. See the note on the PAST marker above — a 75% false-positive rate is
+// not something to gate a build on.
+//
+// `--strict` exits non-zero on any finding. It exists so gates-fire can prove this sweep still FIRES, in
+// BOTH directions: a figure claiming more than the tree holds and a figure claiming less are the same defect
+// reflected, and a sweep that quietly stopped catching the second would look identical to one that had
+// nothing to catch. The controls plant 9999 and 400 against a tree of 526.
+process.exit(bad && process.argv.includes('--strict') ? 1 : 0)
