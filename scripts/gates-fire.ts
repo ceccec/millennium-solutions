@@ -80,6 +80,38 @@ const CONTROLS: Control[] = [
   // Third control found by control-probe rather than invented — it reached `carry` only after the probe
   // learned to derive a gate's subject from its IMPORTS. carry reads the ledger through the shared API and
   // names no file, so a literal-path extractor found nothing for it and for eight others.
+  // ── A ROSETTA WAVE: ONE PROPERTY, SEVERAL DOMAINS ──────────────────────────────────────────────────────
+  // The repo's rosetta is one structure seen twice — (ℤ/7)* ≅ (ℤ/9)* ≅ C6, the same group in two rings. The
+  // remaining uncontrolled gates guard different subjects and hold the IDENTICAL property: a DERIVED
+  // artefact must agree with the SOURCE it was derived from. So the controls are one mutation shape in
+  // several domains — perturb the source, require the gate to notice the derivation no longer follows.
+  //
+  //   axiom-index    .lean declarations   → AXIOMS.md, the assumption index
+  //   ci-drift       workflow steps       → scripts/ci-local.ts, the local mirror
+  //   priorart       .lean frontmatter    → the attribution table and PRIOR-ART.md
+  //
+  // Written this way they cross-check: one of them failing while the others hold points at that gate, and
+  // all three failing together points at the shape being wrong.
+  { gate: 'axiom-index', cmd: 'node scripts/axiom-index.ts', file: 'src/proof/coin.lean',
+    what: 'an assumption introduced into a source and absent from the published index',
+    mutate: (s) => s.replace('namespace Coin', 'namespace Coin\naxiom probeAssumption : Nat') },
+
+  { gate: 'ci-drift', cmd: 'node scripts/ci-drift.ts', file: '.github/workflows/pages.yml',
+    what: 'a workflow step the local mirror neither runs nor records as skipped',
+    mutate: (s) => s.replace('run: npm ci', 'run: npm ci\n      - name: probe\n        run: node scripts/lineage.ts') },
+
+  // The fourth in the wave, and its two sides are the least alike: TypeScript geometry against a Lean
+  // PROPOSITION, compared as text. It reads the statement rather than running the kernel, so the mutation
+  // is a numeral in the statement — the same "derived must follow source" shape, across the widest gap
+  // between the two representations of any gate here.
+  { gate: 'quantum-field', cmd: 'node scripts/quantum-field.ts', file: 'src/proof/quantum.lean',
+    what: 'geometry drawn from a number the proposition no longer decides',
+    mutate: (s) => s.replace('(perms [1, 2, 4, 8]).length = 24', '(perms [1, 2, 4, 8]).length = 25') },
+
+  { gate: 'priorart', cmd: 'node scripts/priorart.ts', file: 'src/proof/merkle.lean',
+    what: 'a source whose attribution changed without the table following',
+    mutate: (s) => s.replace('-- prior_art: named', '-- prior_art: unclassified') },
+
   // Written only after ATTEMPTING it exposed that latex-gate could not see a wrong translation at all.
   { gate: 'latex-gate', cmd: 'node scripts/latex-gate.ts', file: 'src/latex/index.ts',
     what: 'a conjunction typeset as a disjunction on every published page',
