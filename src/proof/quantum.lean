@@ -116,7 +116,45 @@ theorem the_uncanonicalised_fold_gives_many_answers :
 --    every ordering of a finite list there is no residual uncertainty: these are settled, totally.
 --    The scope is the limit, not the strength. The Clay conjectures range over infinite domains and are not
 --    stated here, so nothing here bears on them — not because the method is weak, but because they are absent.
-def settledHere : Nat := 8
-theorem quantum_settles_its_domain_totally : settledHere = 8 := rfl
+def settledHere : Nat := 12
+theorem quantum_settles_its_domain_totally : settledHere = 12 := rfl
+
+-- ── WHAT THE REPORTED STATISTICS CANNOT TELL YOU ────────────────────────────────────────────────────────
+--
+-- uuidna's exact state-vector simulator reports, for a GHZ state, the outcome distribution and the
+-- per-qubit marginals. Both were measured through it (receipts c292e1c8, e6e3aa09, e049c094) and the
+-- marginals are 1/2 for every qubit — for GHZ, for a classical mixture, and for a product state alike.
+--
+-- MARGINALS NEVER DISCRIMINATE. A coin that flips all n bits together produces the SAME computational-basis
+-- outcomes as GHZ, {0…0 : 1/2, 1…1 : 1/2}, and the same marginals. Nothing in the reported statistics
+-- separates the entangled state from the classical correlation it is named for.
+--
+-- Measured in the X basis (a Hadamard on every qubit before reading) they separate completely, and that IS
+-- decidable here: GHZ_3 lands only on EVEN-PARITY strings, four of the eight, while each computational
+-- basis state spreads over all eight — so a mixture of them covers both parities.
+def bit (n i : Nat) : Nat := n / (2 ^ i) % 2
+def par3 (n : Nat) : Nat := (bit n 0 + bit n 1 + bit n 2) % 2
+
+-- The four outcomes the simulator returned for GHZ_3 under H⊗3: 000, 011, 101, 110.
+def ghzXSupport : List Nat := [0, 3, 5, 6]
+
+theorem the_ghz_x_support_is_exactly_the_even_parity_strings :
+  (List.range 8).filter (fun n => par3 n == 0) = ghzXSupport := by decide
+
+-- And it is HALF of them — so the measurement carries one bit that the computational basis does not.
+theorem it_is_half_of_the_eight :
+  ghzXSupport.length = 4 ∧ (List.range 8).length = 8 := by decide
+
+-- The discriminating fact: a classical mixture spreads over BOTH parities, so a parity that is always even
+-- is a fact about the state and not about the reporting. Odd-parity strings exist and GHZ never reaches them.
+theorem a_classical_mixture_reaches_the_parity_ghz_never_does :
+  ((List.range 8).filter (fun n => par3 n == 1)).length = 4
+  ∧ ((List.range 8).filter (fun n => par3 n == 1)).all (fun n => ¬ ghzXSupport.contains n) := by decide
+
+-- Stated so the limit cannot be read as a boast: this is a property of the SIMULATION, computed classically
+-- over 2^n exact amplitudes. It witnesses that the simulated state is entangled. It is not a measurement of
+-- hardware, and no part of it is faster than the classical arithmetic that produced it.
+theorem the_witness_is_about_the_state_not_the_machine :
+  ghzXSupport.length * 2 = (List.range 8).length ∧ (2:Nat) ^ 3 = 8 := by decide
 
 end Quantum

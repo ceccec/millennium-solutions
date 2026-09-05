@@ -61,8 +61,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free and axiom-free, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 537 of them across 30 files and
-6 wings; 529 close by exhaustion over a stated finite domain and the
+(\texttt{npm run latex-gate}). There are 541 of them across 30 files and
+6 wings; 533 close by exhaustion over a stated finite domain and the
 remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -1307,9 +1307,29 @@ remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{quantum\_settles\_its\_domain\_totally}]
-\[ \mathrm{settledHere} = 8 \]
+\[ \mathrm{settledHere} = 12 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_ghz\_x\_support\_is\_exactly\_the\_even\_parity\_strings}]
+\[ \{\, n \in \{0,\dots,7\} \mid \mathrm{par3}\mathopen{}\left(n\right) = 0 \,\} = \mathrm{ghzXSupport} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 8 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{it\_is\_half\_of\_the\_eight}]
+\[ \left|\mathrm{ghzXSupport}\right| = 4 \land \left|\{0,\dots,7\}\right| = 8 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 8 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_classical\_mixture\_reaches\_the\_parity\_ghz\_never\_does}]
+\[ \left|\{\, n \in \{0,\dots,7\} \mid \mathrm{par3}\mathopen{}\left(n\right) = 1 \,\}\right| = 4 \land \forall n \in \{\, n \in \{0,\dots,7\} \mid \mathrm{par3}\mathopen{}\left(n\right) = 1 \,\},\; \lnot n \in \mathrm{ghzXSupport} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 64 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_witness\_is\_about\_the\_state\_not\_the\_machine}]
+\[ \left|\mathrm{ghzXSupport}\right| \cdot 2 = \left|\{0,\dots,7\}\right| \land 2^{3} = 8 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 8 cases. \hfill$\square$
 
 \paragraph{\texttt{reach.lean}}
 

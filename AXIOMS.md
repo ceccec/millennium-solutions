@@ -5,11 +5,11 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **537** report the same thing:
+axiom fails the build rather than earning a footnote. All **541** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
-theorems rest on **231** definitions, and every one of them is a choice. A theorem about
+theorems rest on **234** definitions, and every one of them is a choice. A theorem about
 `fall` is a theorem about the digital root only because `fall` is *defined* to be it. Both halves are
 indexed below, and the second is the longer one.
 
@@ -90,7 +90,7 @@ The pins in the control fixture follow the community practice of guarding `#prin
 `#guard_msgs`, which turns the axiom footprint into an executable regression test: the assertion is
 checked by the elaborator, and drift fails the build with a mismatch instead of passing unnoticed.
 
-## What IS assumed: the 231 definitions
+## What IS assumed: the 234 definitions
 
 Each of these is a primitive of this deposit — not derived, not proved, chosen. They are listed in full
 because a reader checking a theorem must be able to read the definition it is about, and because a
@@ -350,7 +350,7 @@ def novelty (s : Source) : Bool := s.2.2
 def sources : List Source :=
 ```
 
-### `quantum.lean` — 8 definition(s), 9 theorem(s)
+### `quantum.lean` — 11 definition(s), 13 theorem(s)
 
 ```lean
 def insertEverywhere (x : Nat) : List Nat → List (List Nat)
@@ -360,7 +360,10 @@ def sort : List Nat → List Nat
 def receipt (l : List Nat) : Nat := (sort l).foldl (fun a b => (a * 2 + b) % 9) 0
 def naive (l : List Nat) : Nat := l.foldl (fun a b => (a * 2 + b) % 9) 0
 def pairsOverNine : List (List Nat) :=
-def settledHere : Nat := 8
+def settledHere : Nat := 12
+def bit (n i : Nat) : Nat := n / (2 ^ i) % 2
+def par3 (n : Nat) : Nat := (bit n 0 + bit n 1 + bit n 2) % 2
+def ghzXSupport : List Nat := [0, 3, 5, 6]
 ```
 
 ### `reach.lean` — 2 definition(s), 5 theorem(s)
@@ -469,6 +472,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**537** declarations, **0** axiom dependencies, **231** definitions they rest on.
+**541** declarations, **0** axiom dependencies, **234** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them. `0/7`.

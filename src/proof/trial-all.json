@@ -14608,5 +14608,29 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "9227b54d-7b6f-8722-9000-53eea99eada8"
+  },
+  {
+    "key": "lean_quantum_the_ghz_x_support_is_exactly_the_even_parity_strings",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7fb1069f-54b2-8a5b-8e5e-4639f63595d5"
+  },
+  {
+    "key": "lean_quantum_it_is_half_of_the_eight",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8c2ae28f-cbb1-8fd7-b034-7bdd26533426"
+  },
+  {
+    "key": "lean_quantum_a_classical_mixture_reaches_the_parity_ghz_never_does",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1e0393b3-351a-88a3-b10e-7ba136035001"
+  },
+  {
+    "key": "lean_quantum_the_witness_is_about_the_state_not_the_machine",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "850e2e33-ed0d-8616-9457-b1e7bea5fd67"
   }
 ]

@@ -17564,5 +17564,25 @@
     "key": "lean_speed_an_encoding_changes_width_not_the_count_of_operations",
     "name": "lean speed.lean: an_encoding_changes_width_not_the_count_of_operations — hexbitChars < hexChars ∧ hexbitMs > hexMs ∧ (1048576 / 20 = 52428 ∧ 1048576 / 20 = 52428) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "9227b54d-7b6f-8722-9000-53eea99eada8"
+  },
+  {
+    "key": "lean_quantum_the_ghz_x_support_is_exactly_the_even_parity_strings",
+    "name": "lean quantum.lean: the_ghz_x_support_is_exactly_the_even_parity_strings — (List.range 8).filter (fun n => par3 n == 0) = ghzXSupport — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7fb1069f-54b2-8a5b-8e5e-4639f63595d5"
+  },
+  {
+    "key": "lean_quantum_it_is_half_of_the_eight",
+    "name": "lean quantum.lean: it_is_half_of_the_eight — ghzXSupport.length = 4 ∧ (List.range 8).length = 8 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8c2ae28f-cbb1-8fd7-b034-7bdd26533426"
+  },
+  {
+    "key": "lean_quantum_a_classical_mixture_reaches_the_parity_ghz_never_does",
+    "name": "lean quantum.lean: a_classical_mixture_reaches_the_parity_ghz_never_does — ((List.range 8).filter (fun n => par3 n == 1)).length = 4 ∧ ((List.range 8).filter (fun n => par3 n == 1)).all (fun n => ¬ ghzXSupport.contains n) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1e0393b3-351a-88a3-b10e-7ba136035001"
+  },
+  {
+    "key": "lean_quantum_the_witness_is_about_the_state_not_the_machine",
+    "name": "lean quantum.lean: the_witness_is_about_the_state_not_the_machine — ghzXSupport.length * 2 = (List.range 8).length ∧ (2:Nat) ^ 3 = 8 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "850e2e33-ed0d-8616-9457-b1e7bea5fd67"
   }
 ]

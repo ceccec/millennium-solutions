@@ -6,7 +6,7 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 537 machine-checked declarations, **528** restate work that already has an author and
+Of 541 machine-checked declarations, **532** restate work that already has an author and
 **9** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/proof/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
@@ -27,7 +27,7 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **528** |
+| attributed to named earlier work | **532** |
 | unclassified — no search performed, status unknown | **9** |
 | claimed as novel | **0** |
 
@@ -47,7 +47,7 @@ searched, where, and when. An earlier version of this page claimed novelty for 1
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 29 sources, 528 theorems
+## Restated from named earlier work — 29 sources, 532 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
@@ -72,7 +72,7 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>merkle.lean</code></td><td>9</td><td>hash trees and membership proofs</td><td>the hash tree — Ralph Merkle, 1979 (thesis); CRYPTO 1987</td></tr>
 <tr><td><code>nim.lean</code></td><td>8</td><td>combinatorial game theory</td><td>Nim — Charles L. Bouton, 1901; the Sprague–Grundy theorem — Roland Sprague, 1935 and Patrick M. Grundy, 1939</td></tr>
 <tr><td><code>phenomena.lean</code></td><td>4</td><td>metrology and classical physical chemistry</td><td>the SI base quantities and their defining constants are definitions of the Conférence</td></tr>
-<tr><td><code>quantum.lean</code></td><td>9</td><td>canonical forms and order-invariant commitments</td><td>sorting a multiset into a canonical order BEFORE folding it is standard practice, not a</td></tr>
+<tr><td><code>quantum.lean</code></td><td>13</td><td>canonical forms and order-invariant commitments</td><td>sorting a multiset into a canonical order BEFORE folding it is standard practice, not a</td></tr>
 <tr><td><code>reach.lean</code></td><td>5</td><td>elementary set theory — the naturals are not exhausted by any finite list</td><td>that no finite set contains every natural number is Euclid's argument in form and is as</td></tr>
 <tr><td><code>reversal.lean</code></td><td>9</td><td>elementary arithmetic</td><td>digit reversal and digit sums; casting out nines, in use by the 12th century</td></tr>
 <tr><td><code>rights.lean</code></td><td>8</td><td>copyright law — rights arising without formality</td><td>this file already NAMED its prior art in prose while the attribution table recorded none.</td></tr>
@@ -87,7 +87,7 @@ which is a contribution of verification, not of discovery.
 ### The domains this touches
 
 - **Boolean algebra and elementary modular arithmetic** — 105 theorems, in `mechanical.lean`
-- **canonical forms and order-invariant commitments** — 9 theorems, in `quantum.lean`
+- **canonical forms and order-invariant commitments** — 13 theorems, in `quantum.lean`
 - **combinatorial game theory** — 8 theorems, in `nim.lean`
 - **content addressing** — 14 theorems, in `address.lean`
 - **copyright law — rights arising without formality** — 8 theorems, in `rights.lean`

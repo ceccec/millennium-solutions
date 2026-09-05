@@ -17,12 +17,12 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 537 kernel-accepted declarations across 30 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `97614e18-14a0-8970-ade7-e2013c658f63`</sub>
-- 529 of those 537 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
-  <sub>SEALED · `7bd9b6c4-3a66-8538-83ff-ebed863d8166`</sub>
-- 571 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `29206049-77fe-897e-b820-0a42486ed0c3`</sub>
+- The formal layer holds 541 kernel-accepted declarations across 30 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `a86ff507-be33-8295-962c-6a6625917b0b`</sub>
+- 533 of those 541 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
+  <sub>SEALED · `c7196bdb-a16f-832d-b27b-e1962800f313`</sub>
+- 575 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `6747eab4-5755-8458-bc7c-6811a6e5d851`</sub>
 
 ## 2 · The ring
 
@@ -45,10 +45,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 2435 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `71ad5215-90fb-85b6-b597-d50e53272812`</sub>
-- The count is 2435, which is 304 octaves and 3 over — the octave is a target the theorems earn, never a quota they are invented to fill.
-  <sub>SEALED · `f47e7386-c925-8a6b-ae93-43432ad325c3`</sub>
+- The ledger records 2439 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `4b9c6b4d-9d6e-8961-b6a2-e568f444b74a`</sub>
+- The count is 2439, which is 304 octaves and 7 over — the octave is a target the theorems earn, never a quota they are invented to fill.
+  <sub>SEALED · `401d80e6-ff55-85c0-aa35-2994fcd3cb00`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -96,7 +96,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-30 Lean files in 6 wings, 537 declarations of which 529 are theorems. The prose in this section is read out of the
+30 Lean files in 6 wings, 541 declarations of which 533 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -144,7 +144,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Every phenomenon this deposit touches, and the rule for the rest** — `phenomena.lean`, 4 theorem(s). Générale des Poids et Mesures (2019 revision, effective 20 May 2019); the electrochemical results are   Michael Faraday's laws of electrolysis, 1834, and the standard enthalpy of combustion of hydrogen.   Every physical result named here has an earlier author or a standards body, and none is this deposit's.
 
-**Order-invariance** — `quantum.lean`, 9 theorem(s). form is invariant under permutation of its input, which is why `receipt_is_order_invariant` holds. What   this file contributes is the Lean verification over a stated finite domain and the negative controls   beside it — `naive_fold_is_not_order_invariant` shows the property is bought by the sort and not free,   and `the_receipt_is_not_injective` and `the_invariance_is_canonicalisation_not_physics` state its limits.   Verification and refusal, not discovery. prior_art_search: literature search performed 2026-09-05, terms "sorted Merkle tree order-invariant set   commitment canonical ordering leaves"; prior art found and credited. This file was `unclassified` — no   search had ever been run for it — and it is one of the 8 files whose 86 theorems are staged for DOIs. prior_art_pool: mixed   canonicalisation before folding is a searchable technique; the receipt it folds is ours.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: order-invariance of this deposit's receipt The quantum receipt — order invariance, proved rather than asserted.
+**Order-invariance** — `quantum.lean`, 13 theorem(s). form is invariant under permutation of its input, which is why `receipt_is_order_invariant` holds. What   this file contributes is the Lean verification over a stated finite domain and the negative controls   beside it — `naive_fold_is_not_order_invariant` shows the property is bought by the sort and not free,   and `the_receipt_is_not_injective` and `the_invariance_is_canonicalisation_not_physics` state its limits.   Verification and refusal, not discovery. prior_art_search: literature search performed 2026-09-05, terms "sorted Merkle tree order-invariant set   commitment canonical ordering leaves"; prior art found and credited. This file was `unclassified` — no   search had ever been run for it — and it is one of the 8 files whose 86 theorems are staged for DOIs. prior_art_pool: mixed   canonicalisation before folding is a searchable technique; the receipt it folds is ours.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: order-invariance of this deposit's receipt The quantum receipt — order invariance, proved rather than asserted.
 
 **What exhaustion reaches, and what lies outside it** — `reach.lean`, 5 theorem(s). old as mathematics; the deposit claims none of it. What is its own here is the decision over its OWN   bounds, and the statement of where that decision stops.
 
@@ -172,7 +172,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Rights** — `rights.lean`, 8 theorem(s). `the_claimed_are_copyright_moral_rights_and_the_database` rest entirely on them.   Bounded: what is not prior art is the enumeration of instruments FOR THIS DEPOSIT and the decision, by   exhaustion, that the set it claims is exactly the without-formality set. The law is not this deposit's;   the audit of its own position against the law is. prior_art_search: no search was needed — the instruments were cited in this file's own prose from the   start. Recorded 2026-09-05, when the table was found to disagree with the file. prior_art_pool: unbounded   the subject is this deposit's own rights table.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: this deposit's own rights table What this deposit claims under international law — and, in the same table, what it does not.
 
-6 of 537 declarations carry no comment of their own and are shown here as the gap they are, not
+6 of 541 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -181,14 +181,14 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 2,435 — 304 octaves and 3 over |
-| standing — carries its own proof | **529** |
+| ledger entries | 2,439 — 304 octaves and 7 over |
+| standing — carries its own proof | **533** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **154** |
 | withdrawn — nothing proves it | 1,752 |
-| proved in total | **683** of 2,435 |
-| standing keys → distinct theorems | 529 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 30 · 529 theorems (closed by exhaustion) + 8 rfl declarations, all axiom-free |
-| proved `by decide` | 529 of 537 |
+| proved in total | **687** of 2,439 |
+| standing keys → distinct theorems | 533 sealed, 0 of them keyed twice, 0 unresolvable |
+| Lean files · theorems | 30 · 533 theorems (closed by exhaustion) + 8 rfl declarations, all axiom-free |
+| proved `by decide` | 533 of 541 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -210,4 +210,4 @@ because no test was written that would seal them.
 
 ---
 
-*17 claims, all verified · 529 Lean theorems · 2435 ledger entries · trial root `0aca14a8-8228-8e15-87e0-331b890110c6` · integrity, not truth · 0/7*
+*17 claims, all verified · 533 Lean theorems · 2439 ledger entries · trial root `1e2630bd-c79a-8f32-9d13-eca3923336a9` · integrity, not truth · 0/7*
