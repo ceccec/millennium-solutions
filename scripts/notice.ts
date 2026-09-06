@@ -26,20 +26,34 @@ const rights = readFileSync('src/proof/rights.lean', 'utf8')
 // explaining what kind 0 MEANS — one line, present whatever the table says. It printed "1 right(s) read
 // from rights.lean" while the table claimed three, and went on claiming three after a fourth was added,
 // because the string it read was never the claim. A notice generated from a table must read the table.
-const rows = [...rights.matchAll(/^\s*[[,]\s*\((\d+),\s*\d+,\s*(?:true|false),\s*(true|false)\s*\)\s*--\s*(.+?)\s*$/gm)]
-const claimedRows = rows.filter((m) => m[2] === 'true')
-const claimed = claimedRows.map((m) => m[3])
+const rows = [...rights.matchAll(/^\s*[[,]\s*\((\d+),\s*\d+,\s*(true|false),\s*(true|false)\s*\)\s*--\s*(.+?)\s*$/gm)]
+const claimedRows = rows.filter((m) => m[3] === 'true')
+const claimed = claimedRows.map((m) => m[4])
 
-// AND CHECK THE READ AGAINST WHAT THE KERNEL DECIDED. `the_claimed_are_…` states the claimed ids as a
-// literal that `by decide` refuses if it drifts from the table. Comparing this parse against that literal
-// is the one available check that fires when EITHER side moves: a mis-parse here, or a row edited there.
-const decidedIds = rights.match(/\(instruments\.filter claim\)\.map idOf = \[([\d, ]+)\]/)?.[1]
-const readIds = claimedRows.map((m) => m[1]).join(', ')
-if (!decidedIds) { console.log('✗ notice: rights.lean states no decided claimed-id list to check the parse against'); process.exit(1) }
-if (decidedIds !== readIds) {
-  console.log(`✗ notice: read claimed rows [${readIds}] but the kernel decides [${decidedIds}] — refusing to publish a rights list that disagrees with the proof`)
+// AND CHECK THE READ AGAINST WHAT THE KERNEL DECIDES — twice, because the two checks catch different
+// failures. The first anchored on `(instruments.filter claim).map idOf = [...]`, and broke the moment that
+// theorem was restated as membership: a guard tied to one theorem's SPELLING outlives its subject by
+// accident, not by design. These two are tied to properties instead.
+//
+//  · the ids parsed must equal the enumeration `the_enumeration_is_complete_and_unduplicated` decides —
+//    catches a reader that silently sees fewer rows than the table holds, and names which one went missing.
+//  · the claimed column must equal the automatic column, which is exactly what
+//    `claims_exactly_what_arises_without_formality` decides over the whole table — catches a row that
+//    claims what does not arise without formality, or abandons one that does.
+const decidedIds = rights.match(/^\s*instruments\.map idOf = \[([\d, ]+)\]/m)?.[1]
+if (!decidedIds) { console.log('✗ notice: rights.lean states no decided enumeration to check the parse against'); process.exit(1) }
+const readIds = rows.map((m) => m[1]).join(', ')
+if (readIds !== decidedIds) {
+  console.log(`✗ notice: read instruments [${readIds}] but the kernel decides [${decidedIds}] — refusing to publish a rights notice built on a partial read of the table`)
   process.exit(1)
 }
+const autoIds = rows.filter((m) => m[2] === 'true').map((m) => m[1]).join(', ')
+const claimedIds = claimedRows.map((m) => m[1]).join(', ')
+if (autoIds !== claimedIds) {
+  console.log(`✗ notice: rows arising without formality [${autoIds}] but rows claimed [${claimedIds}] — the kernel decides these are the same set; refusing to publish`)
+  process.exit(1)
+}
+
 const l = ledger()
 const standing = l.filter((e) => statusOf(e, l) === 'standing').length
 const CONCEPT_DOI = '10.5281/zenodo.21819217'

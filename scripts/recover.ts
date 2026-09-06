@@ -38,6 +38,16 @@ for (const g of recs) {
   for (const s of (g.subsumes ?? [])) heirOf.set(String(s), cands[0])
 }
 
+// The predicates the four equivalence theorems quantify over, recomputed here in the same shape the Lean
+// says them — gcd, primality, and Gauss's characterisation of the moduli with a primitive root. Recomputed
+// rather than transcribed: a transcribed answer agrees with whatever it was copied from.
+const gcdJS = (a: number, b: number): number => (b === 0 ? a : gcdJS(b, a % b))
+const isPrimeJS = (n: number): boolean => n >= 2 && ![...Array(n - 2).keys()].some((i) => n % (i + 2) === 0)
+const isOddPrimePowerJS = (n: number): boolean =>
+  [...Array(n).keys()].map((i) => i + 3).some((p) => isPrimeJS(p) && p % 2 === 1 && [1, 2, 3, 4, 5].some((k) => p ** k === n))
+const gaussCyclicJS = (m: number): boolean =>
+  m === 1 || m === 2 || m === 4 || isOddPrimePowerJS(m) || (m % 2 === 0 && isOddPrimePowerJS(m / 2))
+
 // ── FAMILY THEOREMS THAT ALREADY EXIST, AND THE EXACT DOMAIN EACH ONE DECIDES ────────────────────────────
 // These are not name matches. Each entry names a live theorem, reads the parameter out of the withdrawn
 // key, and asks whether that parameter is INSIDE the domain the theorem actually quantifies over — the
@@ -59,6 +69,30 @@ const inDomain: { theorem: string; key: RegExp; covers: (n: number) => boolean; 
     why: 'quantifies over the ODD exponents up to 17 only — an even k is a different statement and is not carried' },
   { theorem: 'cyclic_units_have_a_primitive_root', key: /^domain_cyclic_m(\d+)$/, covers: (n) => [2, 3, 5, 7, 11, 13].includes(n),
     why: 'quantifies over [2,3,5,7,11,13] exactly — a composite modulus is NOT one of its cases' },
+
+  // ── THE SEVEN FAMILIES WRITTEN 2026-09-07, AND WHY FOUR OF THEM NEED A PREDICATE HERE ──────────────────
+  // Four of the new theorems are EQUIVALENCES: they decide, over the whole range, that a property holds at
+  // exactly the units and fails everywhere else. That makes them stronger than the ledger's rows — and it
+  // means the theorem being live does NOT carry every parameter in its range. mulperm_k3 would claim that
+  // d ↦ 3·d permutes ℤ/9, which the theorem decides is FALSE. Carrying it would record a false statement as
+  // proved, which is worse than leaving it withdrawn. So the domain here is the property, computed, not the
+  // range: `covers` recomputes the same predicate the theorem quantifies over rather than listing parameters
+  // read off the ledger — a list read off the ledger would agree with the ledger by construction and could
+  // never catch a row that should not be carried.
+  { theorem: 'primality_is_decided_across_the_range', key: /^domain_prime_m(\d+)$/, covers: (n) => n >= 2 && n <= 18 && isPrimeJS(n),
+    why: 'decides isPrime m over 2…18; a row saying a COMPOSITE m is prime is decided false and is not carried' },
+  { theorem: 'the_units_are_cyclic_at_exactly_the_gauss_moduli', key: /^domain_cyclic_m(\d+)$/, covers: (n) => n >= 2 && n <= 18 && gaussCyclicJS(n),
+    why: 'decides both directions over 2…18, so it carries every modulus that HAS a primitive root — widening the row above, which stopped at [2,3,5,7,11,13]' },
+  { theorem: 'demorgan_holds_at_every_arity_to_eight', key: /^demorgan_nary_k(\d+)$/, covers: (n) => n >= 2 && n <= 8,
+    why: "quantifies over List.range' 2 7 — arities 2 to 8 — and over every assignment of each arity's inputs" },
+  { theorem: 'multiplication_permutes_z9_at_exactly_the_units', key: /^mulperm_k(\d+)$/, covers: (n) => n >= 1 && n <= 8 && gcdJS(n, 9) === 1,
+    why: 'decides that d ↦ k·d permutes ℤ/9 exactly when gcd(k,9)=1; k=3 and k=6 are decided FALSE, not carried' },
+  { theorem: 'addition_generates_z9_at_exactly_the_units', key: /^addgen_k(\d+)$/, covers: (n) => n >= 1 && n <= 8 && gcdJS(n, 9) === 1,
+    why: 'decides that repeated addition of k reaches all of ℤ/9 exactly when gcd(k,9)=1' },
+  { theorem: 'an_inverse_mod_nine_exists_at_exactly_the_units', key: /^hasinv_d(\d+)$/, covers: (n) => n >= 0 && n <= 8 && gcdJS(n, 9) === 1,
+    why: 'decides over all of ℤ/9 including zero that an inverse exists exactly at the units' },
+  { theorem: 'the_inverse_of_a_unit_mod_nine_is_its_fifth_power', key: /^invpow_u(\d+)$/, covers: (n) => n >= 1 && n <= 8 && gcdJS(n, 9) === 1,
+    why: 'quantifies over unitsMod 9, so every unit — and only a unit has a fifth power to be its inverse' },
 ]
 for (const f of inDomain) {
   const heir = [...live].find((k) => k.endsWith('_' + f.theorem) || k === f.theorem)

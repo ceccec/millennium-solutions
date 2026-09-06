@@ -5,9 +5,9 @@
 
 ## What this is
 
-A machine-checked mathematical deposit: 556 theorems across 31 Lean 4 source
+A machine-checked mathematical deposit: 563 theorems across 31 Lean 4 source
 files, each closed by exhaustion over a stated finite domain, sorry-free and axiom-free, with a
-2465-entry append-only ledger whose receipt chain is recomputed on every build.
+2472-entry append-only ledger whose receipt chain is recomputed on every build.
 
 Author: Tsvetan Rouschev (ORCID https://orcid.org/0009-0000-7312-9778). Licence: **CC BY-NC-ND 4.0**. Concept DOI: 10.5281/zenodo.21819217.
 
@@ -21,6 +21,7 @@ claimed as having occurred.
 - moral rights: attribution and integrity — Berne Art. 6bis, independent of the economic rights
 - sui generis database right in the ledger — Directive 96/9/EC Art. 7, substantial investment in verification
 - UNREGISTERED mark rights arising from USE — no registry act, so the hinge applies
+- standing to submit toward the Millennium Problems, and PRIORITY in whatever is proved — earned by doing and dating the work
 
 The deposit claims **exactly** the without-formality set and nothing requiring an act it has not performed.
 That boundary is decided by exhaustion in `src/proof/rights.lean`, not asserted here.
@@ -68,5 +69,5 @@ Machine-readable provenance for every claim is at `/forensic`, and per-theorem r
 statement and LaTeX are under `.zenodo/theorems/`.
 
 ---
-Ledger 2465 entries · 556 standing · chain recomputed on every build.
-Notice content-address `130aa225-a6f8-872c-9329-a1673ca03523`.
+Ledger 2472 entries · 563 standing · chain recomputed on every build.
+Notice content-address `551def2b-6af7-8c80-b7b4-a80c2e447783`.

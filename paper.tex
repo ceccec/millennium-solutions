@@ -61,8 +61,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free and axiom-free, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 564 of them across 31 files and
-7 wings; 556 close by exhaustion over a stated finite domain and the
+(\texttt{npm run latex-gate}). There are 571 of them across 31 files and
+7 wings; 563 close by exhaustion over a stated finite domain and the
 remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -436,8 +436,43 @@ remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
+\begin{theorem}[\texttt{primality\_is\_decided\_across\_the\_range}]
+\[ \forall m \in \{2,\dots,18\},\; \mathrm{isPrime}\mathopen{}\left(m\right) = m \in \mathrm{primesUpTo30} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 17 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_units\_are\_cyclic\_at\_exactly\_the\_gauss\_moduli}]
+\[ \forall m \in \{2,\dots,18\},\; \mathrm{hasPrimitiveRoot}\mathopen{}\left(m\right) = \mathrm{gaussCyclic}\mathopen{}\left(m\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 17 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{demorgan\_holds\_at\_every\_arity\_to\_eight}]
+\[ \forall k \in \{2,\dots,8\},\; \forall n \in \{0,\dots,2^{k}-1\},\; \lnot \forall i \in \{0,\dots,k-1\},\; n \gg i \bmod 2 = 1 = \exists i \in \{0,\dots,k-1\} : n \gg i \bmod 2 = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 7 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{multiplication\_permutes\_z9\_at\_exactly\_the\_units}]
+\[ \forall k \in \{1,\dots,8\},\; \mathrm{permutesZ9}\mathopen{}\left(k\right) = \mathrm{gcd'}\mathopen{}\left(k,\,9\right) = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 8 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{addition\_generates\_z9\_at\_exactly\_the\_units}]
+\[ \forall k \in \{1,\dots,8\},\; \mathrm{addGeneratesZ9}\mathopen{}\left(k\right) = \mathrm{gcd'}\mathopen{}\left(k,\,9\right) = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 8 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{an\_inverse\_mod\_nine\_exists\_at\_exactly\_the\_units}]
+\[ \forall d \in \{0,\dots,8\},\; \exists\,\mathrm{invOf}\mathopen{}\left(d\right) = \mathrm{gcd'}\mathopen{}\left(d,\,9\right) = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_inverse\_of\_a\_unit\_mod\_nine\_is\_its\_fifth\_power}]
+\[ \forall u \in \mathrm{unitsMod}\mathopen{}\left(9\right),\; u \cdot \mathrm{powMod}\mathopen{}\left(u,\,5,\,9\right) \bmod 9 = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
 \begin{theorem}[\texttt{families\_settle\_their\_ranges}]
-\[ \mathrm{settledHere} = 11 \]
+\[ \mathrm{settledHere} = 18 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 
@@ -2848,7 +2883,7 @@ remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_claimed\_set\_is\_exactly\_those\_three\_and\_the\_unregistered\_mark}]
-\[ \mathrm{idOf}[\{\, x \in \mathrm{instruments} \mid \mathrm{claim}\mathopen{}\left(x\right) \,\}] = [1,\,2,\,3,\,8] \]
+\[ \forall i \in [1,\,2,\,3,\,8],\; i \in \mathrm{idOf}[\{\, x \in \mathrm{instruments} \mid \mathrm{claim}\mathopen{}\left(x\right) \,\}] \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
 
@@ -2873,9 +2908,9 @@ remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_enumeration\_is\_complete\_and\_unduplicated}]
-\[ \mathrm{idOf}[\mathrm{instruments}] = [1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \]
+\[ \mathrm{idOf}[\mathrm{instruments}] = [1,\,2,\,3,\,4,\,5,\,6,\,7,\,8,\,9] \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 8 cases. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{rights\_settles\_its\_range}]
 \[ \mathrm{settledHere} = 8 \]

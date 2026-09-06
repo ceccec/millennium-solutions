@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2465 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2472 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (556)
+### lean (563)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -580,16 +580,23 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_recovered_qr_u1](/theorem/lean_recovered_qr_u1) — lean recovered.lean: qr_u1 — (List.range 9).any (fun d =&gt; d * d % 9 == 1) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `3080da33-e7ca…`
 - [lean_recovered_qr_u4](/theorem/lean_recovered_qr_u4) — lean recovered.lean: qr_u4 — (List.range 9).any (fun d =&gt; d * d % 9 == 4) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `38c1594b-92ba…`
 - [lean_rights_the_claimed_set_is_exactly_those_three_and_the_unregistered_mark](/theorem/lean_rights_the_claimed_set_is_exactly_those_three_and_the_unregistered_mark) — lean rights.lean: the_claimed_set_is_exactly_those_three_and_the_unregistered_mark — (instruments.filter claim).map idOf = [1, 2, 3, 8] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9aebde9c-11b6…`
+- [lean_families_primality_is_decided_across_the_range](/theorem/lean_families_primality_is_decided_across_the_range) — lean families.lean: primality_is_decided_across_the_range — (List.range' 2 17).all (fun m =&gt; isPrime m == primesUpTo30.contains m) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `53fbed5c-c1cf…`
+- [lean_families_the_units_are_cyclic_at_exactly_the_gauss_moduli](/theorem/lean_families_the_units_are_cyclic_at_exactly_the_gauss_moduli) — lean families.lean: the_units_are_cyclic_at_exactly_the_gauss_moduli — (List.range' 2 17).all (fun m =&gt; hasPrimitiveRoot m == gaussCyclic m) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9d6ada82-1817…`
+- [lean_families_demorgan_holds_at_every_arity_to_eight](/theorem/lean_families_demorgan_holds_at_every_arity_to_eight) — lean families.lean: demorgan_holds_at_every_arity_to_eight — (List.range' 2 7).all (fun k =&gt; (List.range (2 ^ k)).all (fun n =&gt; (! (List.range k).all (fun i =&gt; (n &gt;&gt;&gt; i) % 2 == 1)) == (List.range k).any (fun i =&gt; (n &gt;&gt;&gt; i) % 2 == 0))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `55d36573-df9e…`
+- [lean_families_multiplication_permutes_z9_at_exactly_the_units](/theorem/lean_families_multiplication_permutes_z9_at_exactly_the_units) — lean families.lean: multiplication_permutes_z9_at_exactly_the_units — (List.range' 1 8).all (fun k =&gt; permutesZ9 k == (gcd' k 9 == 1)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `20d0e4dd-289b…`
+- [lean_families_addition_generates_z9_at_exactly_the_units](/theorem/lean_families_addition_generates_z9_at_exactly_the_units) — lean families.lean: addition_generates_z9_at_exactly_the_units — (List.range' 1 8).all (fun k =&gt; addGeneratesZ9 k == (gcd' k 9 == 1)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `4f5492c2-f4fc…`
+- [lean_families_an_inverse_mod_nine_exists_at_exactly_the_units](/theorem/lean_families_an_inverse_mod_nine_exists_at_exactly_the_units) — lean families.lean: an_inverse_mod_nine_exists_at_exactly_the_units — (List.range 9).all (fun d =&gt; (invOf d).isSome == (gcd' d 9 == 1)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `8ee5fdfa-5e51…`
+- [lean_families_the_inverse_of_a_unit_mod_nine_is_its_fifth_power](/theorem/lean_families_the_inverse_of_a_unit_mod_nine_is_its_fifth_power) — lean families.lean: the_inverse_of_a_unit_mod_nine_is_its_fifth_power — (unitsMod 9).all (fun u =&gt; u * (powMod u 5 9) % 9 == 1) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `3524a556-9929…`
 
 ### other — one-of-a-kind (0)
 
 
 
-## Revoked — 1676 entries that no longer stand
+## Revoked — 1633 entries that no longer stand
 
 The ledger is append-only: an entry that stops holding is marked in place, never deleted — deleting would break the receipt chain, and rewriting a receipt is tamper. These keep their receipts and stay in the record, but they are **not citable** and have no `/theorem/` page. Grouped by the reason they went:
 
-- **1196** — dirty: not backed by a Lean proof
+- **1153** — dirty: not backed by a Lean proof
 - **443** — revoked in place: its test asserted a lexical drain (computes(boast)
 - **12** — revoked in place: circular by construction AND dependent on the removed lexical gate
 - **12** — orphaned: the theorem this key was sealed from is no longer in src/proof
@@ -598,7 +605,7 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - **1** — revoked in place: its test asserts that a list of proof-boasts written across many scripts and languages ALL drain the gate — a lexical drain assertion, and the word-list gate was removed by order, so there is no lexicon to drain and the assertion tests nothing
 - **1** — revoked in place: it asserts adjudicate('we prove all seven')
 
-## Carried — 233 withdrawn entries whose statement a proof now carries
+## Carried — 276 withdrawn entries whose statement a proof now carries
 
 Each was withdrawn for want of a Lean proof and has since been given one, at a new key. The entry is not restored: its own evidence is still a TypeScript test, and it did not hold on what it had. What the record adds is where the statement stands now.
 
@@ -614,11 +621,21 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`sum_1_to_9_zero`~~ → [`lean_recovered_sum_1_to_9_zero`](/theorem/lean_recovered_sum_1_to_9_zero)
 - ~~`powperm_k5`~~ → [`lean_recovered_powperm_k5`](/theorem/lean_recovered_powperm_k5)
 - ~~`powperm_k7`~~ → [`lean_recovered_powperm_k7`](/theorem/lean_recovered_powperm_k7)
+- ~~`mulperm_k2`~~ → [`lean_families_multiplication_permutes_z9_at_exactly_the_units`](/theorem/lean_families_multiplication_permutes_z9_at_exactly_the_units)
+- ~~`mulperm_k4`~~ → [`lean_families_multiplication_permutes_z9_at_exactly_the_units`](/theorem/lean_families_multiplication_permutes_z9_at_exactly_the_units)
+- ~~`mulperm_k5`~~ → [`lean_families_multiplication_permutes_z9_at_exactly_the_units`](/theorem/lean_families_multiplication_permutes_z9_at_exactly_the_units)
+- ~~`mulperm_k7`~~ → [`lean_families_multiplication_permutes_z9_at_exactly_the_units`](/theorem/lean_families_multiplication_permutes_z9_at_exactly_the_units)
+- ~~`mulperm_k8`~~ → [`lean_families_multiplication_permutes_z9_at_exactly_the_units`](/theorem/lean_families_multiplication_permutes_z9_at_exactly_the_units)
 - ~~`unit_exp_id_k6`~~ → [`lean_recovered_unit_exp_id_k6`](/theorem/lean_recovered_unit_exp_id_k6)
 - ~~`unit_exp_id_k12`~~ → [`lean_recovered_unit_exp_id_k12`](/theorem/lean_recovered_unit_exp_id_k12)
 - ~~`unit_exp_id_k18`~~ → [`lean_recovered_unit_exp_id_k18`](/theorem/lean_recovered_unit_exp_id_k18)
 - ~~`qr_u1`~~ → [`lean_recovered_qr_u1`](/theorem/lean_recovered_qr_u1)
 - ~~`qr_u4`~~ → [`lean_recovered_qr_u4`](/theorem/lean_recovered_qr_u4)
+- ~~`addgen_k2`~~ → [`lean_families_addition_generates_z9_at_exactly_the_units`](/theorem/lean_families_addition_generates_z9_at_exactly_the_units)
+- ~~`addgen_k4`~~ → [`lean_families_addition_generates_z9_at_exactly_the_units`](/theorem/lean_families_addition_generates_z9_at_exactly_the_units)
+- ~~`addgen_k5`~~ → [`lean_families_addition_generates_z9_at_exactly_the_units`](/theorem/lean_families_addition_generates_z9_at_exactly_the_units)
+- ~~`addgen_k7`~~ → [`lean_families_addition_generates_z9_at_exactly_the_units`](/theorem/lean_families_addition_generates_z9_at_exactly_the_units)
+- ~~`addgen_k8`~~ → [`lean_families_addition_generates_z9_at_exactly_the_units`](/theorem/lean_families_addition_generates_z9_at_exactly_the_units)
 - ~~`powsum0_k1`~~ → [`lean_generated_powsum_zero_odd_exponents`](/theorem/lean_generated_powsum_zero_odd_exponents)
 - ~~`powsum0_k3`~~ → [`lean_generated_powsum_zero_odd_exponents`](/theorem/lean_generated_powsum_zero_odd_exponents)
 - ~~`powsum0_k5`~~ → [`lean_generated_powsum_zero_odd_exponents`](/theorem/lean_generated_powsum_zero_odd_exponents)
@@ -628,54 +645,22 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`powsum0_k13`~~ → [`lean_generated_powsum_zero_odd_exponents`](/theorem/lean_generated_powsum_zero_odd_exponents)
 - ~~`powsum0_k15`~~ → [`lean_generated_powsum_zero_odd_exponents`](/theorem/lean_generated_powsum_zero_odd_exponents)
 - ~~`powsum0_k17`~~ → [`lean_generated_powsum_zero_odd_exponents`](/theorem/lean_generated_powsum_zero_odd_exponents)
-- ~~`domain_cyclic_m2`~~ → [`lean_generated_cyclic_units_have_a_primitive_root`](/theorem/lean_generated_cyclic_units_have_a_primitive_root)
-- ~~`domain_cyclic_m3`~~ → [`lean_generated_cyclic_units_have_a_primitive_root`](/theorem/lean_generated_cyclic_units_have_a_primitive_root)
-- ~~`domain_cyclic_m5`~~ → [`lean_generated_cyclic_units_have_a_primitive_root`](/theorem/lean_generated_cyclic_units_have_a_primitive_root)
-- ~~`domain_cyclic_m7`~~ → [`lean_generated_cyclic_units_have_a_primitive_root`](/theorem/lean_generated_cyclic_units_have_a_primitive_root)
-- ~~`domain_cyclic_m11`~~ → [`lean_generated_cyclic_units_have_a_primitive_root`](/theorem/lean_generated_cyclic_units_have_a_primitive_root)
-- ~~`domain_cyclic_m13`~~ → [`lean_generated_cyclic_units_have_a_primitive_root`](/theorem/lean_generated_cyclic_units_have_a_primitive_root)
-- ~~`bool_demorgan1`~~ → [`lean_mechanical_bool_demorgan1`](/theorem/lean_mechanical_bool_demorgan1)
-- ~~`bool_demorgan2`~~ → [`lean_mechanical_bool_demorgan2`](/theorem/lean_mechanical_bool_demorgan2)
-- ~~`bool_distributivity`~~ → [`lean_mechanical_bool_distributivity`](/theorem/lean_mechanical_bool_distributivity)
-- ~~`bool_absorption`~~ → [`lean_mechanical_bool_absorption`](/theorem/lean_mechanical_bool_absorption)
-- ~~`merkaba_cube_q3`~~ → [`lean_mechanical_merkaba_cube_q3`](/theorem/lean_mechanical_merkaba_cube_q3)
-- ~~`cover_rotation_full_circle`~~ → [`lean_mechanical_cover_rotation_full_circle`](/theorem/lean_mechanical_cover_rotation_full_circle)
-- ~~`tetrahedra_sums_cancel`~~ → [`lean_merkaba_the_tetrahedra_residue_sums_cancel`](/theorem/lean_merkaba_the_tetrahedra_residue_sums_cancel)
-- ~~`fib_trinity_horizon`~~ → [`lean_mechanical_fib_trinity_horizon`](/theorem/lean_mechanical_fib_trinity_horizon)
+- ~~`hasinv_d1`~~ → [`lean_families_an_inverse_mod_nine_exists_at_exactly_the_units`](/theorem/lean_families_an_inverse_mod_nine_exists_at_exactly_the_units)
+- ~~`hasinv_d2`~~ → [`lean_families_an_inverse_mod_nine_exists_at_exactly_the_units`](/theorem/lean_families_an_inverse_mod_nine_exists_at_exactly_the_units)
+- ~~`hasinv_d4`~~ → [`lean_families_an_inverse_mod_nine_exists_at_exactly_the_units`](/theorem/lean_families_an_inverse_mod_nine_exists_at_exactly_the_units)
+- ~~`hasinv_d5`~~ → [`lean_families_an_inverse_mod_nine_exists_at_exactly_the_units`](/theorem/lean_families_an_inverse_mod_nine_exists_at_exactly_the_units)
 
-…and 193 more.
+…and 236 more.
 
-<details><summary>List all 1676 withdrawn keys — nothing proves these</summary>
+<details><summary>List all 1633 withdrawn keys — nothing proves these</summary>
 
 - ~~`euler_units_pow6`~~ — every unit u⁶ ≡ 1 mod 9 (Euler, φ(9)=6)  ·  `e70a44b2-6eb8…`
 - ~~`pisano_9_is_24`~~ — Fibonacci mod 9 has Pisano period 24  ·  `78a65039-07c5…`
-- ~~`mulperm_k2`~~ — d↦2·d permutes ℤ/9  ·  `fa49923c-924a…`
-- ~~`mulperm_k4`~~ — d↦4·d permutes ℤ/9  ·  `42ce85f4-80cc…`
-- ~~`mulperm_k5`~~ — d↦5·d permutes ℤ/9  ·  `51f75927-42fc…`
-- ~~`mulperm_k7`~~ — d↦7·d permutes ℤ/9  ·  `0ce957cf-c464…`
-- ~~`mulperm_k8`~~ — d↦8·d permutes ℤ/9  ·  `4c6c0c31-87d2…`
 - ~~`qr_u7`~~ — 7 is a quadratic residue mod 9  ·  `2a422f9b-761a…`
-- ~~`addgen_k2`~~ — 2 additively generates ℤ/9  ·  `0bbffa4b-6e1a…`
-- ~~`addgen_k4`~~ — 4 additively generates ℤ/9  ·  `4c1d450d-3580…`
-- ~~`addgen_k5`~~ — 5 additively generates ℤ/9  ·  `e5666f9f-43d1…`
-- ~~`addgen_k7`~~ — 7 additively generates ℤ/9  ·  `fda50fef-6d27…`
-- ~~`addgen_k8`~~ — 8 additively generates ℤ/9  ·  `c66fca78-c926…`
 - ~~`powinv_k5`~~ — u↦u^5 is an involution on the units mod 9  ·  `8e327990-c88f…`
 - ~~`powinv_k7`~~ — u↦u^7 is an involution on the units mod 9  ·  `469cfad5-9293…`
-- ~~`hasinv_d1`~~ — 1 has a multiplicative inverse mod 9  ·  `39a9965d-909b…`
-- ~~`hasinv_d2`~~ — 2 has a multiplicative inverse mod 9  ·  `338a950d-a83b…`
-- ~~`hasinv_d4`~~ — 4 has a multiplicative inverse mod 9  ·  `f1b897ea-42c8…`
-- ~~`hasinv_d5`~~ — 5 has a multiplicative inverse mod 9  ·  `995e282e-39ca…`
-- ~~`hasinv_d7`~~ — 7 has a multiplicative inverse mod 9  ·  `2b653347-eae4…`
-- ~~`hasinv_d8`~~ — 8 has a multiplicative inverse mod 9  ·  `b422110e-e519…`
 - ~~`selfinv_u1`~~ — 1 is its own inverse mod 9  ·  `558f7d79-d3d7…`
 - ~~`selfinv_u8`~~ — 8 is its own inverse mod 9  ·  `3bc79c77-36a1…`
-- ~~`invpow_u1`~~ — the inverse of 1 is u^(|units|−1) = u⁵ mod 9  ·  `09250358-3351…`
-- ~~`invpow_u2`~~ — the inverse of 2 is u^(|units|−1) = u⁵ mod 9  ·  `07dc892f-12fc…`
-- ~~`invpow_u4`~~ — the inverse of 4 is u^(|units|−1) = u⁵ mod 9  ·  `1d1c5f09-e309…`
-- ~~`invpow_u5`~~ — the inverse of 5 is u^(|units|−1) = u⁵ mod 9  ·  `5e59c756-cf36…`
-- ~~`invpow_u7`~~ — the inverse of 7 is u^(|units|−1) = u⁵ mod 9  ·  `827d2a2f-38e3…`
-- ~~`invpow_u8`~~ — the inverse of 8 is u^(|units|−1) = u⁵ mod 9  ·  `1c45aeef-ca22…`
 - ~~`add_group`~~ — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
 - ~~`neg_involution`~~ — negation −(−d) ≡ d is an involution on ℤ/9  ·  `5eb8cd1f-9e06…`
 - ~~`selfneg_d9`~~ — 9 is its own additive inverse (2·9 ≡ 0) mod 9  ·  `8d0d0254-5ca1…`
@@ -688,20 +673,6 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`digrev_1234`~~ — the digital root of 1234 equals that of its digit-reversal  ·  `b9c9d09f-a74a…`
 - ~~`digrev_9080`~~ — the digital root of 9080 equals that of its digit-reversal  ·  `e2efb528-c895…`
 - ~~`digrev_4321`~~ — the digital root of 4321 equals that of its digit-reversal  ·  `81d7ec86-3a35…`
-- ~~`domain_prime_m2`~~ — ℤ/2: 2 is prime  ·  `9f76b1b5-8922…`
-- ~~`domain_prime_m3`~~ — ℤ/3: 3 is prime  ·  `0b1d1411-c61a…`
-- ~~`domain_cyclic_m4`~~ — ℤ/4: the units form a cyclic group (a primitive root exists)  ·  `97a008f1-7924…`
-- ~~`domain_prime_m5`~~ — ℤ/5: 5 is prime  ·  `50539929-7d45…`
-- ~~`domain_cyclic_m6`~~ — ℤ/6: the units form a cyclic group (a primitive root exists)  ·  `b4d4661b-71fb…`
-- ~~`domain_prime_m7`~~ — ℤ/7: 7 is prime  ·  `b53d7fb5-3174…`
-- ~~`domain_cyclic_m9`~~ — ℤ/9: the units form a cyclic group (a primitive root exists)  ·  `1c6e43c0-95e1…`
-- ~~`domain_cyclic_m10`~~ — ℤ/10: the units form a cyclic group (a primitive root exists)  ·  `59d8b25c-decc…`
-- ~~`domain_prime_m11`~~ — ℤ/11: 11 is prime  ·  `d561c879-7f37…`
-- ~~`domain_prime_m13`~~ — ℤ/13: 13 is prime  ·  `49707801-e26f…`
-- ~~`domain_cyclic_m14`~~ — ℤ/14: the units form a cyclic group (a primitive root exists)  ·  `c25680bf-c169…`
-- ~~`domain_prime_m17`~~ — ℤ/17: 17 is prime  ·  `50550f6e-6497…`
-- ~~`domain_cyclic_m17`~~ — ℤ/17: the units form a cyclic group (a primitive root exists)  ·  `d5167cce-02af…`
-- ~~`domain_cyclic_m18`~~ — ℤ/18: the units form a cyclic group (a primitive root exists)  ·  `92a2b5a1-8526…`
 - ~~`bool_double_negation`~~ — double negation: ¬¬a = a (all inputs)  ·  `a4640234-4e32…`
 - ~~`bool_excluded_middle`~~ — excluded middle: a∨¬a = 1 (all inputs)  ·  `29468d4a-f416…`
 - ~~`bool_noncontradiction`~~ — non-contradiction: a∧¬a = 0 (all inputs)  ·  `1d8543d8-7d61…`
@@ -1131,18 +1102,11 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`happy_numbers_below_100_are_twenty`~~ — there are exactly 20 happy numbers below 100: iterating the sum of the squares of the digits reaches 1 for exactly 20 of them (1,7,10,13,…,97,100) — full enumeration  ·  `39799ea6-7932…`
 - ~~`unhappy_numbers_enter_the_eight_cycle`~~ — unhappy numbers enter the unique 8-cycle: 4→16→37→58→89→145→42→20→4 has length 8, and every unhappy number ≤ 100 iterates into it — the only attracting cycle besides the fixed point 1  ·  `77cfb7d4-b77e…`
 - ~~`sum_of_squares_iteration_dichotomy`~~ — the digit-square iteration is a total dichotomy: for every n ≤ 200 the sequence reaches either 1 (happy) or 4 (the entry to the 8-cycle) — it always terminates in exactly one of the two, no other fate  ·  `44bcd916-c0a3…`
-- ~~`demorgan_nary_k2`~~ — De Morgan for 2 inputs: ¬(a₁∧…∧a_2) = ¬a₁∨…∨¬a_2 over all 2^2 = 4 assignments (full truth-table enumeration)  ·  `7012c0af-ef6b…`
 - ~~`xor_is_parity_k2`~~ — the XOR of 2 bits is their parity: a₁⊕…⊕a_2 equals the popcount mod 2 over all 2^2 = 4 assignments (full truth-table enumeration)  ·  `d5de36da-eae5…`
-- ~~`demorgan_nary_k3`~~ — De Morgan for 3 inputs: ¬(a₁∧…∧a_3) = ¬a₁∨…∨¬a_3 over all 2^3 = 8 assignments (full truth-table enumeration)  ·  `3aec23ea-6c9f…`
 - ~~`xor_is_parity_k3`~~ — the XOR of 3 bits is their parity: a₁⊕…⊕a_3 equals the popcount mod 2 over all 2^3 = 8 assignments (full truth-table enumeration)  ·  `1ed9afe8-8929…`
-- ~~`demorgan_nary_k4`~~ — De Morgan for 4 inputs: ¬(a₁∧…∧a_4) = ¬a₁∨…∨¬a_4 over all 2^4 = 16 assignments (full truth-table enumeration)  ·  `b0f7f375-7bed…`
 - ~~`xor_is_parity_k4`~~ — the XOR of 4 bits is their parity: a₁⊕…⊕a_4 equals the popcount mod 2 over all 2^4 = 16 assignments (full truth-table enumeration)  ·  `16c4a6ed-5d55…`
-- ~~`demorgan_nary_k5`~~ — De Morgan for 5 inputs: ¬(a₁∧…∧a_5) = ¬a₁∨…∨¬a_5 over all 2^5 = 32 assignments (full truth-table enumeration)  ·  `76145866-89b6…`
 - ~~`xor_is_parity_k5`~~ — the XOR of 5 bits is their parity: a₁⊕…⊕a_5 equals the popcount mod 2 over all 2^5 = 32 assignments (full truth-table enumeration)  ·  `1497008a-7b26…`
-- ~~`demorgan_nary_k6`~~ — De Morgan for 6 inputs: ¬(a₁∧…∧a_6) = ¬a₁∨…∨¬a_6 over all 2^6 = 64 assignments (full truth-table enumeration)  ·  `737f27ac-44cc…`
-- ~~`demorgan_nary_k7`~~ — De Morgan for 7 inputs: ¬(a₁∧…∧a_7) = ¬a₁∨…∨¬a_7 over all 2^7 = 128 assignments (full truth-table enumeration)  ·  `cf8a22f2-00f9…`
 - ~~`xor_is_parity_k7`~~ — the XOR of 7 bits is their parity: a₁⊕…⊕a_7 equals the popcount mod 2 over all 2^7 = 128 assignments (full truth-table enumeration)  ·  `00760c7b-2d57…`
-- ~~`demorgan_nary_k8`~~ — De Morgan for 8 inputs: ¬(a₁∧…∧a_8) = ¬a₁∨…∨¬a_8 over all 2^8 = 256 assignments (full truth-table enumeration)  ·  `9434a9c0-3f95…`
 - ~~`heroes_write_the_guides`~~ — heroes write the guides: documentation is a constructive deed — appending a guide that holds the floor (how to develop: measure, gate, receipt, append, recompute) is a hero act, while a guide that overclaims drains; the docs are written by deeds, not by claims of authority  ·  `25ff7d97-98ec…`
 - ~~`order_of_unit_1_mod9`~~ — the multiplicative order of 1 mod 9 is 1, dividing |ℤ/9*| = 6 (Lagrange): 1^1 ≡ 1 (mod 9) and no smaller positive power is — computed locally from the ring  ·  `4b44c50a-f4fd…`
 - ~~`order_of_unit_2_mod9`~~ — the multiplicative order of 2 mod 9 is 6, dividing |ℤ/9*| = 6 (Lagrange): 2^6 ≡ 1 (mod 9) and no smaller positive power is — computed locally from the ring  ·  `98c7b56e-f2d1…`
@@ -2326,4 +2290,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `e351a41a-8f69-8f8b-a0ff-2c4b60001887`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `22273aec-7456-8db0-a7c0-1a090f3f0741`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

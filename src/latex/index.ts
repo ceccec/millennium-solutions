@@ -315,6 +315,11 @@ function dotTex(d: Extract<Node, { t: 'dot' }>, args: Node[]): string {
     case 'get!': if (args.length === 1) return `${o}_{${tex(args[0])}}`; break
     case 'head?': if (!args.length) return `\\operatorname{head}\\left(${o}\\right)`; break
     case 'getLast?': if (!args.length) return `\\operatorname{last}\\left(${o}\\right)`; break
+    // Option's two predicates. `(invOf d).isSome` is how a statement says "an inverse EXISTS", and without
+    // notation for it the whole site build died on the one theorem that said so — see the note in
+    // src/publication/index.ts. Rendered as the existence it means, not as the method it is spelled with.
+    case 'isSome': if (!args.length) return `\\exists\\,${o}`; break
+    case 'isNone': if (!args.length) return `\\nexists\\,${o}`; break
     case 'reverse': if (!args.length) return `\\operatorname{reverse}\\left(${o}\\right)`; break
     case 'sum': if (!args.length) return `\\sum ${o}`; break
   }
@@ -411,6 +416,10 @@ function dotMl(d: Extract<Node, { t: 'dot' }>, args: Node[]): string {
     case 'head?': if (!args.length) return `<mrow>${mi('head')}${mo('(')}${o}${mo(')')}</mrow>`; break
     case 'getLast?': if (!args.length) return `<mrow>${mi('last')}${mo('(')}${o}${mo(')')}</mrow>`; break
     case 'reverse': if (!args.length) return `<mrow>${mi('reverse')}${mo('(')}${o}${mo(')')}</mrow>`; break
+    // the Option predicates, in the SAME reading as the LaTeX above — latex-gate exists to catch exactly
+    // the case where one emitter learns a notation and the other does not, and it caught this one
+    case 'isSome': if (!args.length) return `<mrow>${mo('∃')}${o}</mrow>`; break
+    case 'isNone': if (!args.length) return `<mrow>${mo('∄')}${o}</mrow>`; break
     case 'sum': if (!args.length) return `<mrow>${mo('∑')}${o}</mrow>`; break
   }
   throw new Error('no notation for method .' + d.name)

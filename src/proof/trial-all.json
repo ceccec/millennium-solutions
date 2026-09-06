@@ -14788,5 +14788,47 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "9aebde9c-11b6-80a4-b6eb-9da76dd19fd6"
+  },
+  {
+    "key": "lean_families_primality_is_decided_across_the_range",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "53fbed5c-c1cf-8eeb-9fdb-0a9e4b113991"
+  },
+  {
+    "key": "lean_families_the_units_are_cyclic_at_exactly_the_gauss_moduli",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9d6ada82-1817-8919-b51a-0fb60fbb6a74"
+  },
+  {
+    "key": "lean_families_demorgan_holds_at_every_arity_to_eight",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "55d36573-df9e-87a3-a4d2-e924db2509a7"
+  },
+  {
+    "key": "lean_families_multiplication_permutes_z9_at_exactly_the_units",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "20d0e4dd-289b-87e1-a51f-7562956c56e4"
+  },
+  {
+    "key": "lean_families_addition_generates_z9_at_exactly_the_units",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4f5492c2-f4fc-8a04-a7c7-a86c347feba3"
+  },
+  {
+    "key": "lean_families_an_inverse_mod_nine_exists_at_exactly_the_units",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8ee5fdfa-5e51-8fe0-b399-a9777050ec22"
+  },
+  {
+    "key": "lean_families_the_inverse_of_a_unit_mod_nine_is_its_fifth_power",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3524a556-9929-8d1c-afe4-8869c2771a38"
   }
 ]

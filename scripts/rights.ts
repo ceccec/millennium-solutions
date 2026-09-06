@@ -50,7 +50,7 @@ if (mismatched.length) {
   process.exit(1)
 }
 
-const WHY = ['held from authorship, no formality', 'a registry grants it — not requested', 'excluded subject matter', 'not capable of being owned']
+const WHY = ['held from authorship, no formality', 'another body must act — a registry grants it, or a committee awards it', 'excluded subject matter', 'not capable of being owned']
 const cell = (r: Row) => `<tr><td><code>${toUuid(r.says).slice(0, 13)}</code></td><td>${r.claim ? '<strong>CLAIMED</strong>' : 'not claimed'}</td><td>${escapeHtml(r.says)}</td><td>${WHY[r.kind]}</td></tr>`
 
 const claimed = rows.filter((r) => r.claim)

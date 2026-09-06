@@ -129,40 +129,45 @@
     "name": "d↦2·d permutes ℤ/9",
     "receipt": "fa49923c-924a-8a63-b4ee-5d5ea4dc3b55",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_multiplication_permutes_z9_at_exactly_the_units quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_multiplication_permutes_z9_at_exactly_the_units"
   },
   {
     "key": "mulperm_k4",
     "name": "d↦4·d permutes ℤ/9",
     "receipt": "42ce85f4-80cc-888d-98c6-9254109dff44",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_multiplication_permutes_z9_at_exactly_the_units quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_multiplication_permutes_z9_at_exactly_the_units"
   },
   {
     "key": "mulperm_k5",
     "name": "d↦5·d permutes ℤ/9",
     "receipt": "51f75927-42fc-894f-a74f-ec4051104cb9",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_multiplication_permutes_z9_at_exactly_the_units quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_multiplication_permutes_z9_at_exactly_the_units"
   },
   {
     "key": "mulperm_k7",
     "name": "d↦7·d permutes ℤ/9",
     "receipt": "0ce957cf-c464-80ad-90a6-4511349944b8",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_multiplication_permutes_z9_at_exactly_the_units quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_multiplication_permutes_z9_at_exactly_the_units"
   },
   {
     "key": "mulperm_k8",
     "name": "d↦8·d permutes ℤ/9",
     "receipt": "4c6c0c31-87d2-8840-9758-c4ab7a75c3aa",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_multiplication_permutes_z9_at_exactly_the_units quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_multiplication_permutes_z9_at_exactly_the_units"
   },
   {
     "key": "unit_exp_id_k6",
@@ -222,40 +227,45 @@
     "name": "2 additively generates ℤ/9",
     "receipt": "0bbffa4b-6e1a-8b0e-b518-764caaf7b590",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_addition_generates_z9_at_exactly_the_units quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_addition_generates_z9_at_exactly_the_units"
   },
   {
     "key": "addgen_k4",
     "name": "4 additively generates ℤ/9",
     "receipt": "4c1d450d-3580-8c81-819b-a0f72a0d9680",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_addition_generates_z9_at_exactly_the_units quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_addition_generates_z9_at_exactly_the_units"
   },
   {
     "key": "addgen_k5",
     "name": "5 additively generates ℤ/9",
     "receipt": "e5666f9f-43d1-8f3c-b40e-331d179b89d9",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_addition_generates_z9_at_exactly_the_units quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_addition_generates_z9_at_exactly_the_units"
   },
   {
     "key": "addgen_k7",
     "name": "7 additively generates ℤ/9",
     "receipt": "fda50fef-6d27-895e-b874-bb8fd33604d4",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_addition_generates_z9_at_exactly_the_units quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_addition_generates_z9_at_exactly_the_units"
   },
   {
     "key": "addgen_k8",
     "name": "8 additively generates ℤ/9",
     "receipt": "c66fca78-c926-8aed-ba19-9831349a60ad",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_addition_generates_z9_at_exactly_the_units quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_addition_generates_z9_at_exactly_the_units"
   },
   {
     "key": "powsum0_k1",
@@ -359,48 +369,54 @@
     "name": "1 has a multiplicative inverse mod 9",
     "receipt": "39a9965d-909b-8f7d-aa66-411f9d0da11a",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_an_inverse_mod_nine_exists_at_exactly_the_units quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_an_inverse_mod_nine_exists_at_exactly_the_units"
   },
   {
     "key": "hasinv_d2",
     "name": "2 has a multiplicative inverse mod 9",
     "receipt": "338a950d-a83b-825a-870a-7df4cd2b5104",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_an_inverse_mod_nine_exists_at_exactly_the_units quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_an_inverse_mod_nine_exists_at_exactly_the_units"
   },
   {
     "key": "hasinv_d4",
     "name": "4 has a multiplicative inverse mod 9",
     "receipt": "f1b897ea-42c8-8122-a204-3ba684bd9761",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_an_inverse_mod_nine_exists_at_exactly_the_units quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_an_inverse_mod_nine_exists_at_exactly_the_units"
   },
   {
     "key": "hasinv_d5",
     "name": "5 has a multiplicative inverse mod 9",
     "receipt": "995e282e-39ca-8408-8566-372eb4def0e4",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_an_inverse_mod_nine_exists_at_exactly_the_units quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_an_inverse_mod_nine_exists_at_exactly_the_units"
   },
   {
     "key": "hasinv_d7",
     "name": "7 has a multiplicative inverse mod 9",
     "receipt": "2b653347-eae4-8e7f-8bdc-ca88061d1334",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_an_inverse_mod_nine_exists_at_exactly_the_units quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_an_inverse_mod_nine_exists_at_exactly_the_units"
   },
   {
     "key": "hasinv_d8",
     "name": "8 has a multiplicative inverse mod 9",
     "receipt": "b422110e-e519-807f-b747-3514cf67527e",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_an_inverse_mod_nine_exists_at_exactly_the_units quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_an_inverse_mod_nine_exists_at_exactly_the_units"
   },
   {
     "key": "selfinv_u1",
@@ -423,48 +439,54 @@
     "name": "the inverse of 1 is u^(|units|−1) = u⁵ mod 9",
     "receipt": "09250358-3351-8550-bfbe-d320b04c3e07",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_inverse_of_a_unit_mod_nine_is_its_fifth_power quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_inverse_of_a_unit_mod_nine_is_its_fifth_power"
   },
   {
     "key": "invpow_u2",
     "name": "the inverse of 2 is u^(|units|−1) = u⁵ mod 9",
     "receipt": "07dc892f-12fc-8d88-9052-c1b883512e26",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_inverse_of_a_unit_mod_nine_is_its_fifth_power quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_inverse_of_a_unit_mod_nine_is_its_fifth_power"
   },
   {
     "key": "invpow_u4",
     "name": "the inverse of 4 is u^(|units|−1) = u⁵ mod 9",
     "receipt": "1d1c5f09-e309-8106-8e00-5c6fdfbe4fa0",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_inverse_of_a_unit_mod_nine_is_its_fifth_power quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_inverse_of_a_unit_mod_nine_is_its_fifth_power"
   },
   {
     "key": "invpow_u5",
     "name": "the inverse of 5 is u^(|units|−1) = u⁵ mod 9",
     "receipt": "5e59c756-cf36-8cf3-aa11-ef38c3e83163",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_inverse_of_a_unit_mod_nine_is_its_fifth_power quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_inverse_of_a_unit_mod_nine_is_its_fifth_power"
   },
   {
     "key": "invpow_u7",
     "name": "the inverse of 7 is u^(|units|−1) = u⁵ mod 9",
     "receipt": "827d2a2f-38e3-8599-b86f-34db22889101",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_inverse_of_a_unit_mod_nine_is_its_fifth_power quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_inverse_of_a_unit_mod_nine_is_its_fifth_power"
   },
   {
     "key": "invpow_u8",
     "name": "the inverse of 8 is u^(|units|−1) = u⁵ mod 9",
     "receipt": "1c45aeef-ca22-8323-b153-be5c425afa1f",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_inverse_of_a_unit_mod_nine_is_its_fifth_power quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_inverse_of_a_unit_mod_nine_is_its_fifth_power"
   },
   {
     "key": "add_group",
@@ -569,8 +591,9 @@
     "name": "ℤ/2: 2 is prime",
     "receipt": "9f76b1b5-8922-8c0c-b7d2-70085c9e84dc",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_primality_is_decided_across_the_range quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_primality_is_decided_across_the_range"
   },
   {
     "key": "domain_cyclic_m2",
@@ -586,8 +609,9 @@
     "name": "ℤ/3: 3 is prime",
     "receipt": "0b1d1411-c61a-8fcb-8118-532bafb4ee89",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_primality_is_decided_across_the_range quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_primality_is_decided_across_the_range"
   },
   {
     "key": "domain_cyclic_m3",
@@ -603,16 +627,18 @@
     "name": "ℤ/4: the units form a cyclic group (a primitive root exists)",
     "receipt": "97a008f1-7924-8234-ba29-18d5bc5fe55b",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_units_are_cyclic_at_exactly_the_gauss_moduli quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_units_are_cyclic_at_exactly_the_gauss_moduli"
   },
   {
     "key": "domain_prime_m5",
     "name": "ℤ/5: 5 is prime",
     "receipt": "50539929-7d45-8a6c-bad8-a9ef3bbc00fa",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_primality_is_decided_across_the_range quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_primality_is_decided_across_the_range"
   },
   {
     "key": "domain_cyclic_m5",
@@ -628,16 +654,18 @@
     "name": "ℤ/6: the units form a cyclic group (a primitive root exists)",
     "receipt": "b4d4661b-71fb-8c62-adfe-69d762d74e2f",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_units_are_cyclic_at_exactly_the_gauss_moduli quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_units_are_cyclic_at_exactly_the_gauss_moduli"
   },
   {
     "key": "domain_prime_m7",
     "name": "ℤ/7: 7 is prime",
     "receipt": "b53d7fb5-3174-8dd4-9857-d702cd25556b",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_primality_is_decided_across_the_range quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_primality_is_decided_across_the_range"
   },
   {
     "key": "domain_cyclic_m7",
@@ -653,24 +681,27 @@
     "name": "ℤ/9: the units form a cyclic group (a primitive root exists)",
     "receipt": "1c6e43c0-95e1-89b1-9c65-056070d544f4",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_units_are_cyclic_at_exactly_the_gauss_moduli quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_units_are_cyclic_at_exactly_the_gauss_moduli"
   },
   {
     "key": "domain_cyclic_m10",
     "name": "ℤ/10: the units form a cyclic group (a primitive root exists)",
     "receipt": "59d8b25c-decc-8767-b4df-10709e6ca60f",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_units_are_cyclic_at_exactly_the_gauss_moduli quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_units_are_cyclic_at_exactly_the_gauss_moduli"
   },
   {
     "key": "domain_prime_m11",
     "name": "ℤ/11: 11 is prime",
     "receipt": "d561c879-7f37-8b8f-9f86-f5a13bf097b6",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_primality_is_decided_across_the_range quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_primality_is_decided_across_the_range"
   },
   {
     "key": "domain_cyclic_m11",
@@ -686,8 +717,9 @@
     "name": "ℤ/13: 13 is prime",
     "receipt": "49707801-e26f-8c4b-ab34-7def682208f0",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_primality_is_decided_across_the_range quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_primality_is_decided_across_the_range"
   },
   {
     "key": "domain_cyclic_m13",
@@ -703,32 +735,36 @@
     "name": "ℤ/14: the units form a cyclic group (a primitive root exists)",
     "receipt": "c25680bf-c169-8348-b24f-7bff59487379",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_units_are_cyclic_at_exactly_the_gauss_moduli quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_units_are_cyclic_at_exactly_the_gauss_moduli"
   },
   {
     "key": "domain_prime_m17",
     "name": "ℤ/17: 17 is prime",
     "receipt": "50550f6e-6497-8d64-98bb-17495a1ab4d2",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_primality_is_decided_across_the_range quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_primality_is_decided_across_the_range"
   },
   {
     "key": "domain_cyclic_m17",
     "name": "ℤ/17: the units form a cyclic group (a primitive root exists)",
     "receipt": "d5167cce-02af-840d-a405-faaae64de1df",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_units_are_cyclic_at_exactly_the_gauss_moduli quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_units_are_cyclic_at_exactly_the_gauss_moduli"
   },
   {
     "key": "domain_cyclic_m18",
     "name": "ℤ/18: the units form a cyclic group (a primitive root exists)",
     "receipt": "92a2b5a1-8526-8701-8a33-58302b31b6ec",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_units_are_cyclic_at_exactly_the_gauss_moduli quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_units_are_cyclic_at_exactly_the_gauss_moduli"
   },
   {
     "key": "bool_demorgan1",
@@ -4849,8 +4885,9 @@
     "name": "De Morgan for 2 inputs: ¬(a₁∧…∧a_2) = ¬a₁∨…∨¬a_2 over all 2^2 = 4 assignments (full truth-table enumeration)",
     "receipt": "7012c0af-ef6b-8be2-b714-71e06b83aed1",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_demorgan_holds_at_every_arity_to_eight quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_demorgan_holds_at_every_arity_to_eight"
   },
   {
     "key": "xor_is_parity_k2",
@@ -4865,8 +4902,9 @@
     "name": "De Morgan for 3 inputs: ¬(a₁∧…∧a_3) = ¬a₁∨…∨¬a_3 over all 2^3 = 8 assignments (full truth-table enumeration)",
     "receipt": "3aec23ea-6c9f-8d61-8acd-92afaba264ff",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_demorgan_holds_at_every_arity_to_eight quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_demorgan_holds_at_every_arity_to_eight"
   },
   {
     "key": "xor_is_parity_k3",
@@ -4881,8 +4919,9 @@
     "name": "De Morgan for 4 inputs: ¬(a₁∧…∧a_4) = ¬a₁∨…∨¬a_4 over all 2^4 = 16 assignments (full truth-table enumeration)",
     "receipt": "b0f7f375-7bed-8fdc-bc17-37e9d7610325",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_demorgan_holds_at_every_arity_to_eight quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_demorgan_holds_at_every_arity_to_eight"
   },
   {
     "key": "xor_is_parity_k4",
@@ -4897,8 +4936,9 @@
     "name": "De Morgan for 5 inputs: ¬(a₁∧…∧a_5) = ¬a₁∨…∨¬a_5 over all 2^5 = 32 assignments (full truth-table enumeration)",
     "receipt": "76145866-89b6-894f-ad9f-524ccf38528d",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_demorgan_holds_at_every_arity_to_eight quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_demorgan_holds_at_every_arity_to_eight"
   },
   {
     "key": "xor_is_parity_k5",
@@ -4913,8 +4953,9 @@
     "name": "De Morgan for 6 inputs: ¬(a₁∧…∧a_6) = ¬a₁∨…∨¬a_6 over all 2^6 = 64 assignments (full truth-table enumeration)",
     "receipt": "737f27ac-44cc-864a-8b3c-934f4db701e6",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_demorgan_holds_at_every_arity_to_eight quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_demorgan_holds_at_every_arity_to_eight"
   },
   {
     "key": "xor_is_parity_k6",
@@ -4930,8 +4971,9 @@
     "name": "De Morgan for 7 inputs: ¬(a₁∧…∧a_7) = ¬a₁∨…∨¬a_7 over all 2^7 = 128 assignments (full truth-table enumeration)",
     "receipt": "cf8a22f2-00f9-8e4b-8516-9bcb19ef8ec3",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_demorgan_holds_at_every_arity_to_eight quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_demorgan_holds_at_every_arity_to_eight"
   },
   {
     "key": "xor_is_parity_k7",
@@ -4946,8 +4988,9 @@
     "name": "De Morgan for 8 inputs: ¬(a₁∧…∧a_8) = ¬a₁∨…∨¬a_8 over all 2^8 = 256 assignments (full truth-table enumeration)",
     "receipt": "9434a9c0-3f95-87f6-97b1-84708acbe35c",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_demorgan_holds_at_every_arity_to_eight quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_demorgan_holds_at_every_arity_to_eight"
   },
   {
     "key": "xor_is_parity_k8",
@@ -17799,5 +17842,40 @@
     "key": "lean_rights_the_claimed_set_is_exactly_those_three_and_the_unregistered_mark",
     "name": "lean rights.lean: the_claimed_set_is_exactly_those_three_and_the_unregistered_mark — (instruments.filter claim).map idOf = [1, 2, 3, 8] — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "9aebde9c-11b6-80a4-b6eb-9da76dd19fd6"
+  },
+  {
+    "key": "lean_families_primality_is_decided_across_the_range",
+    "name": "lean families.lean: primality_is_decided_across_the_range — (List.range' 2 17).all (fun m => isPrime m == primesUpTo30.contains m) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "53fbed5c-c1cf-8eeb-9fdb-0a9e4b113991"
+  },
+  {
+    "key": "lean_families_the_units_are_cyclic_at_exactly_the_gauss_moduli",
+    "name": "lean families.lean: the_units_are_cyclic_at_exactly_the_gauss_moduli — (List.range' 2 17).all (fun m => hasPrimitiveRoot m == gaussCyclic m) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9d6ada82-1817-8919-b51a-0fb60fbb6a74"
+  },
+  {
+    "key": "lean_families_demorgan_holds_at_every_arity_to_eight",
+    "name": "lean families.lean: demorgan_holds_at_every_arity_to_eight — (List.range' 2 7).all (fun k => (List.range (2 ^ k)).all (fun n => (! (List.range k).all (fun i => (n >>> i) % 2 == 1)) == (List.range k).any (fun i => (n >>> i) % 2 == 0))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "55d36573-df9e-87a3-a4d2-e924db2509a7"
+  },
+  {
+    "key": "lean_families_multiplication_permutes_z9_at_exactly_the_units",
+    "name": "lean families.lean: multiplication_permutes_z9_at_exactly_the_units — (List.range' 1 8).all (fun k => permutesZ9 k == (gcd' k 9 == 1)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "20d0e4dd-289b-87e1-a51f-7562956c56e4"
+  },
+  {
+    "key": "lean_families_addition_generates_z9_at_exactly_the_units",
+    "name": "lean families.lean: addition_generates_z9_at_exactly_the_units — (List.range' 1 8).all (fun k => addGeneratesZ9 k == (gcd' k 9 == 1)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "4f5492c2-f4fc-8a04-a7c7-a86c347feba3"
+  },
+  {
+    "key": "lean_families_an_inverse_mod_nine_exists_at_exactly_the_units",
+    "name": "lean families.lean: an_inverse_mod_nine_exists_at_exactly_the_units — (List.range 9).all (fun d => (invOf d).isSome == (gcd' d 9 == 1)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8ee5fdfa-5e51-8fe0-b399-a9777050ec22"
+  },
+  {
+    "key": "lean_families_the_inverse_of_a_unit_mod_nine_is_its_fifth_power",
+    "name": "lean families.lean: the_inverse_of_a_unit_mod_nine_is_its_fifth_power — (unitsMod 9).all (fun u => u * (powMod u 5 9) % 9 == 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "3524a556-9929-8d1c-afe4-8869c2771a38"
   }
 ]

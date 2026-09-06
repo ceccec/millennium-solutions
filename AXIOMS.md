@@ -5,11 +5,11 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **564** report the same thing:
+axiom fails the build rather than earning a footnote. All **571** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
-theorems rest on **240** definitions, and every one of them is a choice. A theorem about
+theorems rest on **251** definitions, and every one of them is a choice. A theorem about
 `fall` is a theorem about the digital root only because `fall` is *defined* to be it. Both halves are
 indexed below, and the second is the longer one.
 
@@ -90,7 +90,7 @@ The pins in the control fixture follow the community practice of guarding `#prin
 `#guard_msgs`, which turns the axiom footprint into an executable regression test: the assertion is
 checked by the elaborator, and drift fails the build with a mismatch instead of passing unnoticed.
 
-## What IS assumed: the 240 definitions
+## What IS assumed: the 251 definitions
 
 Each of these is a primitive of this deposit — not derived, not proved, chosen. They are listed in full
 because a reader checking a theorem must be able to read the definition it is about, and because a
@@ -201,7 +201,7 @@ def tdsSeawater : Nat := 35000  -- mg of dissolved solids per litre
 def tdsTapWater : Nat := 50     -- mg per litre, ordinary supply
 ```
 
-### `families.lean` — 8 definition(s), 12 theorem(s)
+### `families.lean` — 19 definition(s), 19 theorem(s)
 
 ```lean
 def primesUpTo30 : List Nat := [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
@@ -211,7 +211,18 @@ def gcdFuel : Nat → Nat → Nat → Nat
 def gcd ' (a b : Nat) : Nat := gcdFuel (a + b + 1) a b
 def totient (n : Nat) : Nat := ((List.range n).filter (fun a => gcd' a n == 1)).length
 def popcount (n : Nat) : Nat := ((List.range 16).filter (fun i => (n >>> i) % 2 == 1)).length
-def settledHere : Nat := 11
+def isPrime (n : Nat) : Bool := n ≥ 2 && (List.range' 2 (n - 2)).all (fun d => n % d != 0)
+def unitsMod (m : Nat) : List Nat := (List.range m).filter (fun a => gcd' a m == 1)
+def powMod (g k m : Nat) : Nat := (List.range k).foldl (fun a _ => a * g % m) (1 % m)
+def ordMod (g m : Nat) : Nat := ((List.range' 1 m).find? (fun k => powMod g k m == 1)).getD 0
+def hasPrimitiveRoot (m : Nat) : Bool := (unitsMod m).any (fun g => ordMod g m == (unitsMod m).length)
+def isOddPrimePower (n : Nat) : Bool :=
+def gaussCyclic (m : Nat) : Bool :=
+def permutesZ9 (k : Nat) : Bool := (List.range 9).all (fun y => (List.range 9).any (fun d => k * d % 9 == y))
+def addOrbit (k : Nat) : List Nat := (List.range 9).map (fun t => (List.range t).foldl (fun a _ => (a + k) % 9) 0)
+def addGeneratesZ9 (k : Nat) : Bool := (List.range 9).all (fun y => (addOrbit k).contains y)
+def invOf (d : Nat) : Option Nat := (List.range 9).find? (fun e => d * e % 9 == 1)
+def settledHere : Nat := 18
 ```
 
 ### `fnv.lean` — 13 definition(s), 13 theorem(s)
@@ -483,6 +494,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**564** declarations, **0** axiom dependencies, **240** definitions they rest on.
+**571** declarations, **0** axiom dependencies, **251** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them. `0/7`.

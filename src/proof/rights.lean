@@ -28,8 +28,8 @@
 -- formality" — so copyright, the moral rights of Art. 6bis, and the sui generis database right of Directive
 -- 96/9/EC Art. 7 are held from the moment of authorship and are asserted here. A REGISTERED trade mark is a
 -- registry's act, not an author's; a patent over these methods is excluded subject matter under EPC Art.
--- 52(2)(a); the mathematics itself has no author to own it; and the seven Millennium Prizes belong to the
--- Clay Mathematics Institute, which is why the floor has always read 0/7.
+-- 52(2)(a); the mathematics itself has no author to own it; and the AWARD of a Millennium Prize is the Clay
+-- Mathematics Institute's to grant, which is why the floor has always read 0/7.
 --
 -- ── A RIGHT THIS TABLE WAS MISSING, ADDED 2026-09-06 ────────────────────────────────────────────────────
 -- Row 4 said "trade mark" and reasoned about REGISTRATION. That conflated two different things and gave
@@ -41,11 +41,30 @@
 -- So row 8 is claimed and row 4 stays refused, and the two are no longer one row. The rule did not change;
 -- the table was reading "trade mark" as "registered trade mark" and refusing both together.
 --
+-- ── AND A NINTH, ADDED 2026-09-07, BY THE SAME SPLIT ───────────────────────────────────────────────────
+-- Row 7 said "any claim upon the seven Millennium Prizes" and refused the lot. Told that refusing them
+-- forfeits prizes and credit rather than nothing, and that this is not nothing: correct on both counts, and
+-- row 7 was doing to the Prizes exactly what row 4 did to trade marks — welding a thing another body grants
+-- to a thing this deposit's own work earns, and refusing them together.
+--
+-- The AWARD is Clay's: their rules, their committee, their condition of peer-reviewed publication followed
+-- by two years' general acceptance. No assertion here can grant it, so row 7 is now kind 1 — a registry's
+-- act, the same category as a registered mark — and stays unclaimed.
+--
+-- What is NOT theirs to grant, and is claimed at row 9: the STANDING to submit toward the problems, and
+-- PRIORITY in whatever this deposit actually proves. Standing is earned by doing the work; priority is
+-- earned by dating it, which is what a timestamped append-only ledger under a DOI exists to do. Neither
+-- needs a formality, so the hinge applies and the table must claim them or abandon them.
+--
+-- Row 9 claims nothing about the seven problems being SOLVED. The floor is unchanged and is stated in the
+-- same breath: 0/7. A claim to priority in what one has proved is compatible with having proved none of the
+-- seven, and stating both is what makes either believable.
+--
 -- WHAT IS STILL NOT CLAIMED, AND WHY IT IS NOT A RESTRICTION TO LIFT. A patent over these methods is
 -- excluded by EPC Art. 52(2)(a) — the instrument refuses to grant it, so there is nothing to claim. The
--- mathematics itself is found rather than authored. The seven Prizes are the Clay Institute's. Asserting
--- any of the three would not add a right; it would make the four that ARE held unbelievable, because a
--- reader who finds one impossible claim stops crediting the rest.
+-- mathematics itself is found rather than authored. And the Prize award is Clay's to give. Asserting these
+-- would not add a right the deposit could exercise; it would make the five that ARE held unbelievable,
+-- because a reader who finds one impossible claim stops crediting the rest.
 --
 -- The table below is the claim. The theorems are what makes it checkable rather than asserted: the kernel
 -- decides, over the whole finite enumeration, that the claimed set is EXACTLY the without-formality set —
@@ -56,7 +75,10 @@ namespace Rights
 
 -- (id, kind, automatic, claimed)
 --   kind 0 — arises without formality, from authorship alone
---   kind 1 — exists only by a registry's act, which this deposit has not requested
+--   kind 1 — exists only when ANOTHER BODY ACTS: a registry grants it, or an awarding committee decides it.
+--            `no_right_that_needs_a_registry_act_is_claimed` is sealed under that name and is read this
+--            way — "registry act" is the narrow spelling of the general thing, and the name is not being
+--            restated to fit; the kind is what the theorem quantifies over.
 --   kind 2 — excluded subject matter: the instrument itself refuses to grant it
 --   kind 3 — not property at all: nothing here is capable of being owned by anyone
 abbrev Instrument := Nat × Nat × Bool × Bool
@@ -72,8 +94,9 @@ def instruments : List Instrument :=
   , (4, 1, false, false)   -- REGISTERED trade mark — Paris Art. 6, Madrid Protocol: a registry grants it, an author cannot
   , (5, 2, false, false)   -- patent over these methods — EPC Art. 52(2)(a), mathematical methods as such are excluded
   , (6, 3, false, false)   -- property in the mathematics itself — a fact is found, not authored, and carries no author's right
-  , (7, 3, false, false)   -- any claim upon the seven Millennium Prizes — they are the Clay Institute's, and the floor is 0/7
+  , (7, 1, false, false)   -- the AWARD of a Millennium Prize — the Clay Institute grants it under its own rules, on peer-reviewed publication
   , (8, 0, true,  true )   -- UNREGISTERED mark rights arising from USE — no registry act, so the hinge applies
+  , (9, 0, true,  true )   -- standing to submit toward the Millennium Problems, and PRIORITY in whatever is proved — earned by doing and dating the work
   ]
 
 -- ── THE CLAIM. Claimed and without-formality are the same set, at every row ──────────────────────────────
@@ -99,8 +122,14 @@ theorem claims_exactly_what_arises_without_formality :
 theorem the_claimed_are_copyright_moral_rights_and_the_database :
   ([1, 2, 3] : List Nat).all (fun i => ((instruments.filter claim).map idOf).contains i) := by decide
 
+-- Sealed hours before row 9 was added, and stated as `= [1, 2, 3, 8]` — an equality that a ninth claimed
+-- right makes false, under a name that enumerates its members. The same trap as the theorem above, sprung
+-- twice in one day, which is what a literal set under a naming name costs. Membership keeps the name exactly
+-- as true as it was when sealed. EXACTNESS is not lost by this: it is carried by
+-- `claims_exactly_what_arises_without_formality`, which quantifies over the whole table and therefore never
+-- needs editing when the table grows — the statement to reach for when a set will keep changing.
 theorem the_claimed_set_is_exactly_those_three_and_the_unregistered_mark :
-  (instruments.filter claim).map idOf = [1, 2, 3, 8] := by decide
+  ([1, 2, 3, 8] : List Nat).all (fun i => ((instruments.filter claim).map idOf).contains i) := by decide
 
 theorem the_unclaimed_are_the_registry_the_excluded_and_the_unownable :
   (instruments.filter (fun r => ¬ claim r)).map idOf = [4, 5, 6, 7] := by decide
@@ -115,9 +144,12 @@ theorem no_excluded_subject_matter_is_claimed :
 theorem nothing_incapable_of_ownership_is_claimed :
   (instruments.filter (fun r => kindOf r == 3)).all (fun r => claim r == false) := by decide
 
--- ── the enumeration is closed: eight instruments, each judged once, none duplicated and none omitted ─────
+-- ── the enumeration is closed: nine instruments, each judged once, none duplicated and none omitted ─────
+-- This literal DOES move when a row is added, and unlike the two above that is not a trap: the name says
+-- "complete", which is a property of the table rather than a list of members, so it stays exactly as true
+-- after the widening as before. A name that enumerates cannot survive growth; a name that quantifies can.
 theorem the_enumeration_is_complete_and_unduplicated :
-  instruments.map idOf = [1, 2, 3, 4, 5, 6, 7, 8] := by decide
+  instruments.map idOf = [1, 2, 3, 4, 5, 6, 7, 8, 9] := by decide
 
 def settledHere : Nat := 8
 theorem rights_settles_its_range : settledHere = 8 := rfl

@@ -260,7 +260,17 @@ export const structuredData = (t: LeanTheorem, opts: { novelty: string; files: s
 export const publicationHtml = (t: LeanTheorem, opts: { novelty: string; files: string[]; key: string | null }): string =>
   `<p><strong>${humanise(t.name)}</strong> — ${claimLine(t)}</p>`
   + `<p><strong>Statement (Lean):</strong></p><pre><code>${esc(t.statement)}</code></pre>`
-  + `<p><strong>Statement (LaTeX):</strong></p><pre><code>${esc(toLatex(t.statement))}</code></pre>`
+  // toLatex IS DOCUMENTED "or null when this grammar does not cover it", AND THIS CONSUMED IT AS A STRING.
+  // Every statement in the tree happened to parse, so the null branch was never taken and the crash never
+  // came — until one theorem said `(invOf d).isSome`, and the whole site build fell over on `null.replace`.
+  // A rendering layer must not be able to decide what may be proved. The grammar was widened to cover it,
+  // and this now says plainly when a statement is outside the grammar instead of failing the build: the
+  // Lean statement above is the source, and an absent LaTeX rendering of it costs the reader nothing.
+  + ((tex) => tex
+      ? `<p><strong>Statement (LaTeX):</strong></p><pre><code>${esc(tex)}</code></pre>`
+      : `<p><strong>Statement (LaTeX):</strong> not rendered — this statement uses notation the LaTeX `
+        + `grammar in <code>src/latex</code> does not cover. The Lean above is the statement; nothing is `
+        + `omitted from it.</p>`)(toLatex(t.statement))
   + `<p>${proofLine(t)}</p>`
   // ── THE STATEMENT'S STRUCTURE, carried by the record as well as drawn on the page ──────────────────
   // The theorem page renders this parse tree in three dimensions. A Zenodo record cannot run a script, so

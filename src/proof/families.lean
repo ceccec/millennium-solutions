@@ -93,8 +93,74 @@ theorem division_identity_holds_across_the_range :
 theorem at_a_zero_divisor_the_identity_is_carried_by_the_remainder :
   (12 / 0) = 0 ∧ (12 % 0) = 12 ∧ (12 / 0) * 0 + (12 % 0) == 12 := by decide
 
+-- ── SEVEN FAMILIES THE LEDGER HELD AS SINGLETONS, QUANTIFIED — 2026-09-07 ───────────────────────────────
+--
+--    The ledger carries rows like domain_prime_m2, domain_prime_m3, domain_prime_m5 … one per parameter,
+--    every one of them revoked for want of a proof. Under "involute instead of withdraw" a revoked row whose
+--    statement is TRUE is not a dead entry: it is a carry waiting for the theorem that subsumes it. Each
+--    theorem below quantifies one such family over its whole parameter range, so the withdrawn members come
+--    back proved rather than dropped — and the range extends past whatever the loop happened to enumerate.
+--
+--    Four of the seven are stated as EQUIVALENCES rather than as lists of successes. The ledger's loop wrote
+--    a row only where the property held and simply omitted mulperm_k3, mulperm_k6, addgen_k3, addgen_k6,
+--    hasinv_d3, hasinv_d6 — the parameters where it fails. An omission is not a statement, and the reader
+--    cannot tell a false parameter from one nobody tried. The equivalence says both halves at once: the
+--    property holds at exactly the units and nowhere else, decided over the entire range.
+
+def isPrime (n : Nat) : Bool := n ≥ 2 && (List.range' 2 (n - 2)).all (fun d => n % d != 0)
+def unitsMod (m : Nat) : List Nat := (List.range m).filter (fun a => gcd' a m == 1)
+-- modular powering by repeated reduction — g ^ k over the naturals would build a 22-digit intermediate at
+-- m = 18 and cost the kernel far more than the theorem is worth
+def powMod (g k m : Nat) : Nat := (List.range k).foldl (fun a _ => a * g % m) (1 % m)
+def ordMod (g m : Nat) : Nat := ((List.range' 1 m).find? (fun k => powMod g k m == 1)).getD 0
+def hasPrimitiveRoot (m : Nat) : Bool := (unitsMod m).any (fun g => ordMod g m == (unitsMod m).length)
+def isOddPrimePower (n : Nat) : Bool :=
+  (List.range' 3 n).any (fun p => isPrime p && p % 2 == 1 && (List.range' 1 5).any (fun k => p ^ k == n))
+-- Gauss's characterisation, written as a predicate so the theorem below compares two computations rather
+-- than comparing a computation against a list somebody typed out after looking at the answer
+def gaussCyclic (m : Nat) : Bool :=
+  m == 1 || m == 2 || m == 4 || isOddPrimePower m || (m % 2 == 0 && isOddPrimePower (m / 2))
+
+-- ── primality across the range, decided — and agreeing with the list this file already used ──
+theorem primality_is_decided_across_the_range :
+  (List.range' 2 17).all (fun m => isPrime m == primesUpTo30.contains m) := by decide
+
+-- ── the units are cyclic at exactly the moduli Gauss says, and at no others ──
+set_option maxRecDepth 100000 in
+theorem the_units_are_cyclic_at_exactly_the_gauss_moduli :
+  (List.range' 2 17).all (fun m => hasPrimitiveRoot m == gaussCyclic m) := by decide
+
+-- ── De Morgan at every arity to eight, over every assignment of its inputs ──
+set_option maxRecDepth 100000 in
+theorem demorgan_holds_at_every_arity_to_eight :
+  (List.range' 2 7).all (fun k => (List.range (2 ^ k)).all (fun n =>
+    (! (List.range k).all (fun i => (n >>> i) % 2 == 1)) == (List.range k).any (fun i => (n >>> i) % 2 == 0))) := by decide
+
+def permutesZ9 (k : Nat) : Bool := (List.range 9).all (fun y => (List.range 9).any (fun d => k * d % 9 == y))
+-- the orbit of repeated ADDITION — d ↦ d + k applied t times, which is what "generates additively" means;
+-- writing it as t * k would have made this the same computation as permutesZ9 wearing a different name
+def addOrbit (k : Nat) : List Nat := (List.range 9).map (fun t => (List.range t).foldl (fun a _ => (a + k) % 9) 0)
+def addGeneratesZ9 (k : Nat) : Bool := (List.range 9).all (fun y => (addOrbit k).contains y)
+def invOf (d : Nat) : Option Nat := (List.range 9).find? (fun e => d * e % 9 == 1)
+
+-- ── multiplication permutes ℤ/9 at exactly the units — the failing parameters stated, not omitted ──
+theorem multiplication_permutes_z9_at_exactly_the_units :
+  (List.range' 1 8).all (fun k => permutesZ9 k == (gcd' k 9 == 1)) := by decide
+
+-- ── repeated addition reaches all of ℤ/9 at exactly the same parameters, by a different computation ──
+theorem addition_generates_z9_at_exactly_the_units :
+  (List.range' 1 8).all (fun k => addGeneratesZ9 k == (gcd' k 9 == 1)) := by decide
+
+-- ── an inverse mod 9 exists at exactly the units, across the whole ring including zero ──
+theorem an_inverse_mod_nine_exists_at_exactly_the_units :
+  (List.range 9).all (fun d => (invOf d).isSome == (gcd' d 9 == 1)) := by decide
+
+-- ── and where it exists it is the fifth power: u · u⁵ ≡ 1, since |units mod 9| = 6 ──
+theorem the_inverse_of_a_unit_mod_nine_is_its_fifth_power :
+  (unitsMod 9).all (fun u => u * (powMod u 5 9) % 9 == 1) := by decide
+
 -- ── what these settle ──
-def settledHere : Nat := 11
-theorem families_settle_their_ranges : settledHere = 11 := rfl
+def settledHere : Nat := 18
+theorem families_settle_their_ranges : settledHere = 18 := rfl
 
 end Families
