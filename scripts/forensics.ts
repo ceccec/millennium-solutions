@@ -93,9 +93,20 @@ const HARD = /faster.than.light|superluminal|unbreakable|unhackable|quantum (com
 // virtue. Zero today, so this can only fire on something new.
 const NEGATOR = /\b(not|no|never|cannot|can't|without|refus\w*|denie[sd]|drains?|false|absent|nothing|neither|nor|un\w+able is)\b/i
 const hardNamed = ledger.filter((e) => HARD.test(e.name))
-const boundedRefusals = hardNamed.filter((e) => NEGATOR.test(e.name)).length
+const boundedList = hardNamed.filter((e) => NEGATOR.test(e.name))
+const boundedRefusals = boundedList.length
+// LIVE OR DEAD, REPORTED SEPARATELY. Every one of these 45 is WITHDRAWN, and this line printed the count
+// on every commit as though the deposit held 45 standing boundaries. It holds none: what refuses a
+// faster-than-light or quantum-speedup claim here is scripts/contradictions.ts, which catches 960 Clay and
+// 280 quantum phrasings in the TEXT — the layer that can observe a claim about text. The ledger rows that
+// once recorded those refusals lost their evidence when the word-list gate was removed by order.
+//
+// A count that mixes live boundaries with dead rows files the deposit's dead as its defences.
+const boundedLive = boundedList.filter((e) => e.revoked !== true).length
 const unbounded = hardNamed.filter((e) => !NEGATOR.test(e.name))
-console.log('  bounded refusals (a hard token AND a negator holding it — tested, not assumed): ' + boundedRefusals + ' / ' + ledger.length)
+console.log('  bounded refusals (a hard token AND a negator holding it — tested, not assumed): ' + boundedRefusals + ' / ' + ledger.length
+  + '  —  ' + boundedLive + ' LIVE, ' + (boundedRefusals - boundedLive) + ' withdrawn'
+  + (boundedLive === 0 ? '. NO ledger row currently holds one of these boundaries; contradictions.ts does, in the text.' : ''))
 if (unbounded.length) {
   console.log('\n✗ ' + unbounded.length + ' hard token(s) with NO negator — an overclaim filed as a boundary:')
   for (const u of unbounded.slice(0, 5)) console.log('    ' + u.key + ' — ' + u.name.slice(0, 130))
