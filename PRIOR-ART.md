@@ -6,7 +6,7 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 545 machine-checked declarations, **536** restate work that already has an author and
+Of 549 machine-checked declarations, **540** restate work that already has an author and
 **9** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/proof/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
@@ -27,7 +27,7 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **536** |
+| attributed to named earlier work | **540** |
 | unclassified — no search performed, status unknown | **9** |
 | claimed as novel | **0** |
 
@@ -47,13 +47,13 @@ searched, where, and when. An earlier version of this page claimed novelty for 1
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 29 sources, 536 theorems
+## Restated from named earlier work — 29 sources, 540 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
 
 <table><thead><tr><th>source</th><th>theorems</th><th>domain</th><th>whose work</th></tr></thead><tbody>
-<tr><td><code>address.lean</code></td><td>14</td><td>content addressing</td><td>composes FNV-1a (Fowler, Noll, Vo, 1991) with the Merkle hash tree (Merkle, 1979)</td></tr>
+<tr><td><code>address.lean</code></td><td>18</td><td>content addressing</td><td>composes FNV-1a (Fowler, Noll, Vo, 1991) with the Merkle hash tree (Merkle, 1979)</td></tr>
 <tr><td><code>coin.lean</code></td><td>12</td><td>the method of complements</td><td>the reflection d ↦ 10 − d is the TEN'S COMPLEMENT, and its sibling 9 − d the nines' complement — the method of complements, used to turn subtraction into addition in Pascal's calculator (1642), the Comptometer and the Curta, and in modern computer arithmetic. That it is an involution with a single fixed point is the property those machines rely on. Searched 2026-09-04, term "method of complements / nines' complement / ten's complement"; prior art found and credited</td></tr>
 <tr><td><code>demand.lean</code></td><td>8</td><td>elementary number theory</td><td>the named results the search data asks for — Bézout’s identity (Étienne Bézout, 1779; Bachet, 1624), the Chinese remainder theorem (Sunzi, c. 3rd–5th century), and others named in their theorems</td></tr>
 <tr><td><code>demand2.lean</code></td><td>8</td><td>elementary number theory, second tier</td><td>Wilson’s theorem — John Wilson; first proved by Joseph-Louis Lagrange, 1771; the Catalan conjecture on consecutive perfect powers — Eugène Catalan, 1844; proved by Preda Mihăilescu, 2002</td></tr>
@@ -89,7 +89,7 @@ which is a contribution of verification, not of discovery.
 - **Boolean algebra and elementary modular arithmetic** — 107 theorems, in `mechanical.lean`
 - **canonical forms and order-invariant commitments** — 12 theorems, in `quantum.lean`
 - **combinatorial game theory** — 8 theorems, in `nim.lean`
-- **content addressing** — 14 theorems, in `address.lean`
+- **content addressing** — 18 theorems, in `address.lean`
 - **copyright law — rights arising without formality** — 8 theorems, in `rights.lean`
 - **electrochemistry and combustion** — 18 theorems, in `energy.lean`
 - **elementary arithmetic** — 9 theorems, in `reversal.lean`

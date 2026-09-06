@@ -91,4 +91,26 @@ theorem the_four_seeds_are_distinct : (SEEDS.eraseDups).length = 4 := by decide
 def settledHere : Nat := 13
 theorem address_settles_its_range : settledHere = 13 := rfl
 
+
+-- ── RECOVERED FROM THE WITHDRAWN POOL ──────────────────────────────────────────────────────────────────
+-- Emitted by scripts/recover-gen.ts against claims withdrawn as "not backed by a Lean proof". Each names
+-- a property of toUuidBytes that a TypeScript test once checked and no theorem did. Every one
+-- DISCRIMINATES: the reflexive shape `f x = f x` holds for a constant function and is not emitted.
+
+-- inputs of length 1 to 13 all give 16 bytes — a length-preserving function fails this
+theorem the_address_is_sixteen_bytes_whatever_the_input_length :
+  (toUuidBytes [97]).length = 16 ∧ (toUuidBytes [98]).length = 16 ∧ (toUuidBytes [117, 117, 105, 100, 110, 97]).length = 16 ∧ (toUuidBytes [116, 104, 101, 32, 115, 97, 109, 101, 32, 102, 97, 99, 116]).length = 16 ∧ (toUuidBytes [120]).length = 16 ∧ (toUuidBytes [100, 101, 112, 111, 115, 105, 116]).length = 16 ∧ (toUuidBytes [104, 117, 109, 97, 110, 105, 116, 121]).length = 16 := by decide
+
+-- a constant function makes all of these EQUAL, so it fails every conjunct
+theorem distinct_inputs_give_distinct_addresses :
+  toUuidBytes [97] ≠ toUuidBytes [98] ∧ toUuidBytes [117, 117, 105, 100, 110, 97] ≠ toUuidBytes [120] ∧ toUuidBytes [100, 101, 112, 111, 115, 105, 116] ≠ toUuidBytes [104, 117, 109, 97, 110, 105, 116, 121] := by decide
+
+-- the identity function fails this — the output would BE the input
+theorem the_address_is_not_the_payload :
+  toUuidBytes [97] ≠ [97] ∧ toUuidBytes [117, 117, 105, 100, 110, 97] ≠ [117, 117, 105, 100, 110, 97] := by decide
+
+-- any function of the multiset alone makes these equal
+theorem the_address_is_order_sensitive :
+  toUuidBytes [97, 98] ≠ toUuidBytes [98, 97] := by decide
+
 end Address

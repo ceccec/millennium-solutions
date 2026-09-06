@@ -14668,5 +14668,29 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "8e989d38-d24c-8699-83ca-001b9971bf6c"
+  },
+  {
+    "key": "lean_address_the_address_is_sixteen_bytes_whatever_the_input_length",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5d5a7c61-9c4e-85ef-8840-833c99f712f3"
+  },
+  {
+    "key": "lean_address_distinct_inputs_give_distinct_addresses",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b1d9c3a9-b7d2-8bc1-862b-cbaebfeaa37a"
+  },
+  {
+    "key": "lean_address_the_address_is_not_the_payload",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8e954997-e034-812e-8e8e-dd559bb2adbe"
+  },
+  {
+    "key": "lean_address_the_address_is_order_sensitive",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d739d704-cd78-8330-b706-81d52d66d095"
   }
 ]

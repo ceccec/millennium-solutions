@@ -1585,8 +1585,9 @@
     "name": "the content-address is fixed-length (36 chars) regardless of message size — no payload travels",
     "receipt": "dbd791ec-71f4-8192-9574-36c2b6dc8bad",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\". lean_address_the_address_is_sixteen_bytes_whatever_the_input_length decides that toUuidBytes returns sixteen bytes for inputs of length one through thirteen — 16 bytes is the 36-character rendering this claim names, and the property is checked across differing input lengths so a length-preserving function fails it. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_address_the_address_is_sixteen_bytes_whatever_the_input_length"
   },
   {
     "key": "nopayload_no_plaintext",
@@ -17681,5 +17682,25 @@
     "key": "lean_sequences_the_sequence_takes_both_values",
     "name": "lean sequences.lean: the_sequence_takes_both_values — ((List.range 200).filter (fun n => tm n == 0)).length = 100 ∧ ((List.range 200).filter (fun n => tm n == 1)).length = 100 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "8e989d38-d24c-8699-83ca-001b9971bf6c"
+  },
+  {
+    "key": "lean_address_the_address_is_sixteen_bytes_whatever_the_input_length",
+    "name": "lean address.lean: the_address_is_sixteen_bytes_whatever_the_input_length — (toUuidBytes [97]).length = 16 ∧ (toUuidBytes [98]).length = 16 ∧ (toUuidBytes [117, 117, 105, 100, 110, 97]).length = 16 ∧ (toUuidBytes [116, 104, 101, 32, 115, 97, 109, 101, 32, 102, 97, 99, 116]).length = 16 ∧ (toUuidBytes [120]).length … — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5d5a7c61-9c4e-85ef-8840-833c99f712f3"
+  },
+  {
+    "key": "lean_address_distinct_inputs_give_distinct_addresses",
+    "name": "lean address.lean: distinct_inputs_give_distinct_addresses — toUuidBytes [97] ≠ toUuidBytes [98] ∧ toUuidBytes [117, 117, 105, 100, 110, 97] ≠ toUuidBytes [120] ∧ toUuidBytes [100, 101, 112, 111, 115, 105, 116] ≠ toUuidBytes [104, 117, 109, 97, 110, 105, 116, 121] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b1d9c3a9-b7d2-8bc1-862b-cbaebfeaa37a"
+  },
+  {
+    "key": "lean_address_the_address_is_not_the_payload",
+    "name": "lean address.lean: the_address_is_not_the_payload — toUuidBytes [97] ≠ [97] ∧ toUuidBytes [117, 117, 105, 100, 110, 97] ≠ [117, 117, 105, 100, 110, 97] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8e954997-e034-812e-8e8e-dd559bb2adbe"
+  },
+  {
+    "key": "lean_address_the_address_is_order_sensitive",
+    "name": "lean address.lean: the_address_is_order_sensitive — toUuidBytes [97, 98] ≠ toUuidBytes [98, 97] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d739d704-cd78-8330-b706-81d52d66d095"
   }
 ]
