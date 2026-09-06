@@ -61,8 +61,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free and axiom-free, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 563 of them across 31 files and
-7 wings; 555 close by exhaustion over a stated finite domain and the
+(\texttt{npm run latex-gate}). There are 564 of them across 31 files and
+7 wings; 556 close by exhaustion over a stated finite domain and the
 remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -2843,9 +2843,14 @@ remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_claimed\_are\_copyright\_moral\_rights\_and\_the\_database}]
-\[ \mathrm{idOf}[\{\, x \in \mathrm{instruments} \mid \mathrm{claim}\mathopen{}\left(x\right) \,\}] = [1,\,2,\,3] \]
+\[ \forall i \in [1,\,2,\,3],\; i \in \mathrm{idOf}[\{\, x \in \mathrm{instruments} \mid \mathrm{claim}\mathopen{}\left(x\right) \,\}] \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_claimed\_set\_is\_exactly\_those\_three\_and\_the\_unregistered\_mark}]
+\[ \mathrm{idOf}[\{\, x \in \mathrm{instruments} \mid \mathrm{claim}\mathopen{}\left(x\right) \,\}] = [1,\,2,\,3,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_unclaimed\_are\_the\_registry\_the\_excluded\_and\_the\_unownable}]
 \[ \mathrm{idOf}[\{\, r \in \mathrm{instruments} \mid \lnot \mathrm{claim}\mathopen{}\left(r\right) \,\}] = [4,\,5,\,6,\,7] \]
@@ -2868,12 +2873,12 @@ remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_enumeration\_is\_complete\_and\_unduplicated}]
-\[ \mathrm{idOf}[\mathrm{instruments}] = [1,\,2,\,3,\,4,\,5,\,6,\,7] \]
+\[ \mathrm{idOf}[\mathrm{instruments}] = [1,\,2,\,3,\,4,\,5,\,6,\,7,\,8] \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 7 cases. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 8 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{rights\_settles\_its\_range}]
-\[ \mathrm{settledHere} = 7 \]
+\[ \mathrm{settledHere} = 8 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 

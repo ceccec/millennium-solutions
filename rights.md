@@ -16,13 +16,14 @@ That the claimed set is *exactly* the without-formality set is not an assertion 
 <tr><td><code>4389d60c-c694</code></td><td><strong>CLAIMED</strong></td><td>copyright in the expression — Berne Art. 5(2), no formality, no notice, no deposit</td><td>held from authorship, no formality</td></tr>
 <tr><td><code>261b594c-c029</code></td><td><strong>CLAIMED</strong></td><td>moral rights: attribution and integrity — Berne Art. 6bis, independent of the economic rights</td><td>held from authorship, no formality</td></tr>
 <tr><td><code>2f3d9ec2-4623</code></td><td><strong>CLAIMED</strong></td><td>sui generis database right in the ledger — Directive 96/9/EC Art. 7, substantial investment in verification</td><td>held from authorship, no formality</td></tr>
-<tr><td><code>133129bf-808b</code></td><td>not claimed</td><td>registered trade mark — Paris Art. 6, Madrid Protocol: a registry grants it, an author cannot</td><td>a registry grants it — not requested</td></tr>
+<tr><td><code>deaa7784-ce03</code></td><td>not claimed</td><td>REGISTERED trade mark — Paris Art. 6, Madrid Protocol: a registry grants it, an author cannot</td><td>a registry grants it — not requested</td></tr>
 <tr><td><code>ce36ac04-dc49</code></td><td>not claimed</td><td>patent over these methods — EPC Art. 52(2)(a), mathematical methods as such are excluded</td><td>excluded subject matter</td></tr>
 <tr><td><code>68ad7cd8-0296</code></td><td>not claimed</td><td>property in the mathematics itself — a fact is found, not authored, and carries no author's right</td><td>not capable of being owned</td></tr>
 <tr><td><code>ae93b05a-68a4</code></td><td>not claimed</td><td>any claim upon the seven Millennium Prizes — they are the Clay Institute's, and the floor is 0/7</td><td>not capable of being owned</td></tr>
+<tr><td><code>a6697d40-a893</code></td><td><strong>CLAIMED</strong></td><td>UNREGISTERED mark rights arising from USE — no registry act, so the hinge applies</td><td>held from authorship, no formality</td></tr>
 </tbody></table>
 
-## What follows from the 3 claimed
+## What follows from the 4 claimed
 
 **Attribution and integrity are not waivable here.** Berne Art. 6bis moral rights are independent of the economic rights and survive their transfer. Reuse that strips the author's name, or that presents a modified deposit as this one, is refused on that ground alone — separately from the licence.
 

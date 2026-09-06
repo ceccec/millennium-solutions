@@ -6,7 +6,7 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 563 machine-checked declarations, **554** restate work that already has an author and
+Of 564 machine-checked declarations, **555** restate work that already has an author and
 **9** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/proof/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
@@ -27,7 +27,7 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **554** |
+| attributed to named earlier work | **555** |
 | unclassified — no search performed, status unknown | **9** |
 | claimed as novel | **0** |
 
@@ -47,7 +47,7 @@ searched, where, and when. An earlier version of this page claimed novelty for 1
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 30 sources, 554 theorems
+## Restated from named earlier work — 30 sources, 555 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
@@ -76,7 +76,7 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>reach.lean</code></td><td>4</td><td>elementary set theory — the naturals are not exhausted by any finite list</td><td>that no finite set contains every natural number is Euclid's argument in form and is as</td></tr>
 <tr><td><code>recovered.lean</code></td><td>15</td><td>elementary number theory — the unit group of ℤ/9</td><td>every fact here is standard: the units of ℤ/9 are {1,2,4,5,7,8}, their product is −1</td></tr>
 <tr><td><code>reversal.lean</code></td><td>9</td><td>elementary arithmetic</td><td>digit reversal and digit sums; casting out nines, in use by the 12th century</td></tr>
-<tr><td><code>rights.lean</code></td><td>8</td><td>copyright law — rights arising without formality</td><td>this file already NAMED its prior art in prose while the attribution table recorded none.</td></tr>
+<tr><td><code>rights.lean</code></td><td>9</td><td>copyright law — rights arising without formality</td><td>this file already NAMED its prior art in prose while the attribution table recorded none.</td></tr>
 <tr><td><code>sequences.lean</code></td><td>12</td><td>integer sequences and identities</td><td>Cassini’s identity — G. D. Cassini, 1680; Lucas sequences — Édouard Lucas, 1878; the Brahmagupta–Fibonacci identity — Brahmagupta, 628; Pascal’s triangle mod 2 — Blaise Pascal, 1654</td></tr>
 <tr><td><code>speed.lean</code></td><td>10</td><td>hash trees and membership proofs</td><td>the structural claim is Merkle's and is credited here as merkle.lean already credits it:</td></tr>
 <tr><td><code>split.lean</code></td><td>19</td><td>elementary number theory — the unit group of ℤ/9</td><td>the classification this file rests on is standard and is credited: the units of ℤ/9 are</td></tr>
@@ -91,7 +91,7 @@ which is a contribution of verification, not of discovery.
 - **canonical forms and order-invariant commitments** — 12 theorems, in `quantum.lean`
 - **combinatorial game theory** — 8 theorems, in `nim.lean`
 - **content addressing** — 18 theorems, in `address.lean`
-- **copyright law — rights arising without formality** — 8 theorems, in `rights.lean`
+- **copyright law — rights arising without formality** — 9 theorems, in `rights.lean`
 - **electrochemistry and combustion** — 18 theorems, in `energy.lean`
 - **elementary arithmetic** — 9 theorems, in `reversal.lean`
 - **elementary group theory — orbit decomposition of an order-two permutation** — 8 theorems, in `involution.lean`

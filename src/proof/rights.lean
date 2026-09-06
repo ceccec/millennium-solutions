@@ -26,10 +26,26 @@
 -- arises WITHOUT FORMALITY, and claim nothing that would need an act this deposit has not performed. Berne
 -- Art. 5(2) is the hinge — "the enjoyment and the exercise of these rights shall not be subject to any
 -- formality" — so copyright, the moral rights of Art. 6bis, and the sui generis database right of Directive
--- 96/9/EC Art. 7 are held from the moment of authorship and are asserted here. A registered trade mark is a
+-- 96/9/EC Art. 7 are held from the moment of authorship and are asserted here. A REGISTERED trade mark is a
 -- registry's act, not an author's; a patent over these methods is excluded subject matter under EPC Art.
 -- 52(2)(a); the mathematics itself has no author to own it; and the seven Millennium Prizes belong to the
 -- Clay Mathematics Institute, which is why the floor has always read 0/7.
+--
+-- ── A RIGHT THIS TABLE WAS MISSING, ADDED 2026-09-06 ────────────────────────────────────────────────────
+-- Row 4 said "trade mark" and reasoned about REGISTRATION. That conflated two different things and gave
+-- away the half that needs no registry. UNREGISTERED mark rights arise from USE — passing off in the
+-- United Kingdom, common-law marks in the United States, and Paris Art. 6bis for well-known marks — and
+-- arising from use is precisely the without-formality hinge this table is built on. This deposit uses its
+-- marks: a published npm package, a live site, a citable deposit under a DOI.
+--
+-- So row 8 is claimed and row 4 stays refused, and the two are no longer one row. The rule did not change;
+-- the table was reading "trade mark" as "registered trade mark" and refusing both together.
+--
+-- WHAT IS STILL NOT CLAIMED, AND WHY IT IS NOT A RESTRICTION TO LIFT. A patent over these methods is
+-- excluded by EPC Art. 52(2)(a) — the instrument refuses to grant it, so there is nothing to claim. The
+-- mathematics itself is found rather than authored. The seven Prizes are the Clay Institute's. Asserting
+-- any of the three would not add a right; it would make the four that ARE held unbelievable, because a
+-- reader who finds one impossible claim stops crediting the rest.
 --
 -- The table below is the claim. The theorems are what makes it checkable rather than asserted: the kernel
 -- decides, over the whole finite enumeration, that the claimed set is EXACTLY the without-formality set —
@@ -53,10 +69,11 @@ def instruments : List Instrument :=
   [ (1, 0, true,  true )   -- copyright in the expression — Berne Art. 5(2), no formality, no notice, no deposit
   , (2, 0, true,  true )   -- moral rights: attribution and integrity — Berne Art. 6bis, independent of the economic rights
   , (3, 0, true,  true )   -- sui generis database right in the ledger — Directive 96/9/EC Art. 7, substantial investment in verification
-  , (4, 1, false, false)   -- registered trade mark — Paris Art. 6, Madrid Protocol: a registry grants it, an author cannot
+  , (4, 1, false, false)   -- REGISTERED trade mark — Paris Art. 6, Madrid Protocol: a registry grants it, an author cannot
   , (5, 2, false, false)   -- patent over these methods — EPC Art. 52(2)(a), mathematical methods as such are excluded
   , (6, 3, false, false)   -- property in the mathematics itself — a fact is found, not authored, and carries no author's right
   , (7, 3, false, false)   -- any claim upon the seven Millennium Prizes — they are the Clay Institute's, and the floor is 0/7
+  , (8, 0, true,  true )   -- UNREGISTERED mark rights arising from USE — no registry act, so the hinge applies
   ]
 
 -- ── THE CLAIM. Claimed and without-formality are the same set, at every row ──────────────────────────────
@@ -66,9 +83,24 @@ def instruments : List Instrument :=
 theorem claims_exactly_what_arises_without_formality :
   instruments.all (fun r => auto r == claim r) := by decide
 
--- ── WHICH three, not how many — a count identifies nothing ───────────────────────────────────────────────
+-- ── WHICH ones, not how many — a count identifies nothing ────────────────────────────────────────────────
+-- The next theorem was `= [1, 2, 3]` and the kernel refused it the moment row 8 was claimed. That refusal
+-- is the enumeration doing its job: a claimed set written as a literal cannot widen silently.
+--
+-- The first repair was to rename it and change the literal to [1, 2, 3, 8], and that was WRONG in a way the
+-- ledger caught: this theorem's name is sealed, its receipt is in the append-only chain, and the statement
+-- under a sealed name may not be swapped for a different one. Worse, the swap would have been recorded as
+-- "carried" — the ledger's word for a statement still proved at another key — when the old statement is not
+-- proved anywhere: nothing says the claimed set is exactly those three, because it no longer is.
+--
+-- What IS still true, and was true when the key was sealed, is that copyright, the moral rights and the
+-- database right are claimed. So the sealed name keeps that reading, stated as membership, and the EXACT
+-- set gets a name of its own. Nothing is rewritten and nothing is withdrawn: the record widens.
 theorem the_claimed_are_copyright_moral_rights_and_the_database :
-  (instruments.filter claim).map idOf = [1, 2, 3] := by decide
+  ([1, 2, 3] : List Nat).all (fun i => ((instruments.filter claim).map idOf).contains i) := by decide
+
+theorem the_claimed_set_is_exactly_those_three_and_the_unregistered_mark :
+  (instruments.filter claim).map idOf = [1, 2, 3, 8] := by decide
 
 theorem the_unclaimed_are_the_registry_the_excluded_and_the_unownable :
   (instruments.filter (fun r => ¬ claim r)).map idOf = [4, 5, 6, 7] := by decide
@@ -83,11 +115,11 @@ theorem no_excluded_subject_matter_is_claimed :
 theorem nothing_incapable_of_ownership_is_claimed :
   (instruments.filter (fun r => kindOf r == 3)).all (fun r => claim r == false) := by decide
 
--- ── the enumeration is closed: seven instruments, each judged once, none duplicated and none omitted ─────
+-- ── the enumeration is closed: eight instruments, each judged once, none duplicated and none omitted ─────
 theorem the_enumeration_is_complete_and_unduplicated :
-  instruments.map idOf = [1, 2, 3, 4, 5, 6, 7] := by decide
+  instruments.map idOf = [1, 2, 3, 4, 5, 6, 7, 8] := by decide
 
-def settledHere : Nat := 7
-theorem rights_settles_its_range : settledHere = 7 := rfl
+def settledHere : Nat := 8
+theorem rights_settles_its_range : settledHere = 8 := rfl
 
 end Rights

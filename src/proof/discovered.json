@@ -17794,5 +17794,10 @@
     "key": "lean_recovered_qr_u4",
     "name": "lean recovered.lean: qr_u4 — (List.range 9).any (fun d => d * d % 9 == 4) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "38c1594b-92ba-8859-828d-aaaaa69e7501"
+  },
+  {
+    "key": "lean_rights_the_claimed_set_is_exactly_those_three_and_the_unregistered_mark",
+    "name": "lean rights.lean: the_claimed_set_is_exactly_those_three_and_the_unregistered_mark — (instruments.filter claim).map idOf = [1, 2, 3, 8] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9aebde9c-11b6-80a4-b6eb-9da76dd19fd6"
   }
 ]

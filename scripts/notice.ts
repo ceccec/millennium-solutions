@@ -21,7 +21,25 @@ const ORCID = cff.match(/orcid:\s*['"]?(\S+?)['"]?\s*$/m)?.[1] ?? ''
 if (!ORCID) { console.log('✗ notice: no ORCID in CITATION.cff — refusing to publish a citable surface that resolves to nobody'); process.exit(1) }
 
 const rights = readFileSync('src/proof/rights.lean', 'utf8')
-const claimed = [...rights.matchAll(/^--\s{3}kind 0 — (.+)$/gm)].map((m) => m[1])
+
+// READ THE ROWS, NOT THE LEGEND. The first version of this matched `--   kind 0 — …`, which is the comment
+// explaining what kind 0 MEANS — one line, present whatever the table says. It printed "1 right(s) read
+// from rights.lean" while the table claimed three, and went on claiming three after a fourth was added,
+// because the string it read was never the claim. A notice generated from a table must read the table.
+const rows = [...rights.matchAll(/^\s*[[,]\s*\((\d+),\s*\d+,\s*(?:true|false),\s*(true|false)\s*\)\s*--\s*(.+?)\s*$/gm)]
+const claimedRows = rows.filter((m) => m[2] === 'true')
+const claimed = claimedRows.map((m) => m[3])
+
+// AND CHECK THE READ AGAINST WHAT THE KERNEL DECIDED. `the_claimed_are_…` states the claimed ids as a
+// literal that `by decide` refuses if it drifts from the table. Comparing this parse against that literal
+// is the one available check that fires when EITHER side moves: a mis-parse here, or a row edited there.
+const decidedIds = rights.match(/\(instruments\.filter claim\)\.map idOf = \[([\d, ]+)\]/)?.[1]
+const readIds = claimedRows.map((m) => m[1]).join(', ')
+if (!decidedIds) { console.log('✗ notice: rights.lean states no decided claimed-id list to check the parse against'); process.exit(1) }
+if (decidedIds !== readIds) {
+  console.log(`✗ notice: read claimed rows [${readIds}] but the kernel decides [${decidedIds}] — refusing to publish a rights list that disagrees with the proof`)
+  process.exit(1)
+}
 const l = ledger()
 const standing = l.filter((e) => statusOf(e, l) === 'standing').length
 const CONCEPT_DOI = '10.5281/zenodo.21819217'
@@ -45,7 +63,7 @@ These arise **without formality** — Berne Convention Art. 5(2): "the enjoyment
 rights shall not be subject to any formality." No registration was required for them to exist, and none is
 claimed as having occurred.
 
-${claimed.length ? claimed.map((c) => `- ${c}`).join('\n') : '- copyright in the expression, the moral rights of Berne Art. 6bis, and the sui generis database right of Directive 96/9/EC'}
+${claimed.map((c) => `- ${c}`).join('\n')}
 
 The deposit claims **exactly** the without-formality set and nothing requiring an act it has not performed.
 That boundary is decided by exhaustion in \`src/proof/rights.lean\`, not asserted here.
@@ -98,6 +116,6 @@ Notice content-address \`${toUuid('notice:' + l.length + ':' + standing + ':' + 
 `
 writeFileSync('llms.txt', txt)
 writeFileSync('public/llms.txt', txt)
-console.log(`✓ notice: llms.txt — ${claimed.length || 'the'} right(s) read from rights.lean, ${theoremCount()} theorems, ledger ${l.length}`)
+console.log(`✓ notice: llms.txt — ${claimed.length} right(s) read from rights.lean, ${theoremCount()} theorems, ledger ${l.length}`)
 console.log(`  states what the record CAN establish (content, order, deposit date) and what it CANNOT`)
 console.log(`  (authorship in law, intent, novelty) — a notice that hides its limits is not worth reading.`)

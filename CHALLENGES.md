@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2464 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2465 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (555)
+### lean (556)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -579,6 +579,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_recovered_powperm_k7](/theorem/lean_recovered_powperm_k7) — lean recovered.lean: powperm_k7 — (units.map (fun u =&gt; pow9 u 7)).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `b3c4a97d-cc9f…`
 - [lean_recovered_qr_u1](/theorem/lean_recovered_qr_u1) — lean recovered.lean: qr_u1 — (List.range 9).any (fun d =&gt; d * d % 9 == 1) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `3080da33-e7ca…`
 - [lean_recovered_qr_u4](/theorem/lean_recovered_qr_u4) — lean recovered.lean: qr_u4 — (List.range 9).any (fun d =&gt; d * d % 9 == 4) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `38c1594b-92ba…`
+- [lean_rights_the_claimed_set_is_exactly_those_three_and_the_unregistered_mark](/theorem/lean_rights_the_claimed_set_is_exactly_those_three_and_the_unregistered_mark) — lean rights.lean: the_claimed_set_is_exactly_those_three_and_the_unregistered_mark — (instruments.filter claim).map idOf = [1, 2, 3, 8] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9aebde9c-11b6…`
 
 ### other — one-of-a-kind (0)
 
@@ -2325,4 +2326,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `c0e92f73-defa-82f6-909a-7d19882c1cc8`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `e351a41a-8f69-8f8b-a0ff-2c4b60001887`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

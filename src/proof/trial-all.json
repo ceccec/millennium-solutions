@@ -14782,5 +14782,11 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "38c1594b-92ba-8859-828d-aaaaa69e7501"
+  },
+  {
+    "key": "lean_rights_the_claimed_set_is_exactly_those_three_and_the_unregistered_mark",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9aebde9c-11b6-80a4-b6eb-9da76dd19fd6"
   }
 ]

@@ -18,7 +18,17 @@ const src = readFileSync(LEAN, 'utf8')
 type Row = { id: number; kind: number; auto: boolean; claim: boolean; says: string }
 const rows: Row[] = [...src.matchAll(/^\s*[,[]\s*\((\d+),\s*(\d+),\s*(true|false),\s*(true|false)\s*\)\s*--\s*(.+)$/gm)]
   .map((m) => ({ id: +m[1], kind: +m[2], auto: m[3] === 'true', claim: m[4] === 'true', says: m[5].trim() }))
-if (rows.length !== 7) { console.error(`✗ rights: parsed ${rows.length} instruments from ${LEAN}, expected 7 — the table and its reader have drifted`); process.exit(1) }
+// THE READER IS CHECKED AGAINST THE KERNEL, NOT AGAINST A TYPED NUMBER. This said `rows.length !== 7` and
+// went red the moment an eighth right was claimed — a correct table failing a stale constant, which is the
+// failure mode that teaches people to edit the guard instead of reading it. The enumeration is already
+// decided in the file: `the_enumeration_is_complete_and_unduplicated` states every id as a literal that
+// `by decide` refuses if it drifts from the table. Comparing the parse against THAT catches the defect this
+// guard was for — a reader that silently sees fewer rows than exist — and does not need touching when a row
+// is added, because both sides move together or the kernel refuses.
+const decidedIds = src.match(/^\s*instruments\.map idOf = \[([\d, ]+)\]/m)?.[1]
+if (!decidedIds) { console.error(`✗ rights: ${LEAN} states no decided enumeration to check the parse against`); process.exit(1) }
+const parsedIds = rows.map((r) => r.id).join(', ')
+if (parsedIds !== decidedIds) { console.error(`✗ rights: parsed instruments [${parsedIds}] from ${LEAN} but the kernel decides [${decidedIds}] — the table and its reader have drifted`); process.exit(1) }
 
 // THE CLAIM IS ONLY AS GOOD AS THE THEOREM UNDER IT. If the proposition that the claimed set equals the
 // without-formality set is not live in the ledger, this page must not be written: it would be a rights
