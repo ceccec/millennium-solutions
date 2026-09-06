@@ -88,8 +88,8 @@ theorem addressing_is_not_constant : toUuidBytes [1] ≠ toUuidBytes [2] := by d
 -- ── the four seeds genuinely differ, so the four words are independent draws ──
 theorem the_four_seeds_are_distinct : (SEEDS.eraseDups).length = 4 := by decide
 
-def settledHere : Nat := 13
-theorem address_settles_its_range : settledHere = 13 := rfl
+def settledHere : Nat := 17
+theorem address_settles_its_range : settledHere = 17 := rfl
 
 
 -- ── RECOVERED FROM THE WITHDRAWN POOL ──────────────────────────────────────────────────────────────────

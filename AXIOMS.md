@@ -110,7 +110,7 @@ def stamp (bs : List Nat) : List Nat :=
 def toUuidBytes (cs : List Nat) : List Nat := stamp (rawBytes cs)
 def A : List Nat := [97]                                    -- "a"
 def UUIDNA : List Nat := [117, 117, 105, 100, 110, 97]      -- "uuidna"
-def settledHere : Nat := 13
+def settledHere : Nat := 17
 ```
 
 ### `coin.lean` — 7 definition(s), 12 theorem(s)

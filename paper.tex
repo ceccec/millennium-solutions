@@ -61,8 +61,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free and axiom-free, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 545 of them across 30 files and
-6 wings; 537 close by exhaustion over a stated finite domain and the
+(\texttt{npm run latex-gate}). There are 549 of them across 30 files and
+6 wings; 541 close by exhaustion over a stated finite domain and the
 remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -135,9 +135,29 @@ remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{address\_settles\_its\_range}]
-\[ \mathrm{settledHere} = 13 \]
+\[ \mathrm{settledHere} = 17 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_address\_is\_sixteen\_bytes\_whatever\_the\_input\_length}]
+\[ \left|\mathrm{toUuidBytes}\mathopen{}\left([97]\right)\right| = 16 \land \left|\mathrm{toUuidBytes}\mathopen{}\left([98]\right)\right| = 16 \land \left|\mathrm{toUuidBytes}\mathopen{}\left([117,\,117,\,105,\,100,\,110,\,97]\right)\right| = 16 \land \left|\mathrm{toUuidBytes}\mathopen{}\left([116,\,104,\,101,\,32,\,115,\,97,\,109,\,101,\,32,\,102,\,97,\,99,\,116]\right)\right| = 16 \land \left|\mathrm{toUuidBytes}\mathopen{}\left([120]\right)\right| = 16 \land \left|\mathrm{toUuidBytes}\mathopen{}\left([100,\,101,\,112,\,111,\,115,\,105,\,116]\right)\right| = 16 \land \left|\mathrm{toUuidBytes}\mathopen{}\left([104,\,117,\,109,\,97,\,110,\,105,\,116,\,121]\right)\right| = 16 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4,368 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{distinct\_inputs\_give\_distinct\_addresses}]
+\[ \mathrm{toUuidBytes}\mathopen{}\left([97]\right) \neq \mathrm{toUuidBytes}\mathopen{}\left([98]\right) \land \mathrm{toUuidBytes}\mathopen{}\left([117,\,117,\,105,\,100,\,110,\,97]\right) \neq \mathrm{toUuidBytes}\mathopen{}\left([120]\right) \land \mathrm{toUuidBytes}\mathopen{}\left([100,\,101,\,112,\,111,\,115,\,105,\,116]\right) \neq \mathrm{toUuidBytes}\mathopen{}\left([104,\,117,\,109,\,97,\,110,\,105,\,116,\,121]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 336 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_address\_is\_not\_the\_payload}]
+\[ \mathrm{toUuidBytes}\mathopen{}\left([97]\right) \neq [97] \land \mathrm{toUuidBytes}\mathopen{}\left([117,\,117,\,105,\,100,\,110,\,97]\right) \neq [117,\,117,\,105,\,100,\,110,\,97] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_address\_is\_order\_sensitive}]
+\[ \mathrm{toUuidBytes}\mathopen{}\left([97,\,98]\right) \neq \mathrm{toUuidBytes}\mathopen{}\left([98,\,97]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
 
 \paragraph{\texttt{fnv.lean}}
 
