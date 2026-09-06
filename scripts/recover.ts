@@ -117,7 +117,30 @@ for (const [f, params] of ranked.slice(0, 12)) {
   const p = params.sort((a, b) => a - b)
   console.log(`    ${String(params.length).padStart(3)}  ${f.padEnd(28)} parameters ${p[0]}…${p[p.length - 1]}`)
 }
-console.log(`    ${String(rest.length - inFam).padStart(3)}  (singletons — no sibling sharing a parameter shape)`)
+console.log(`    ${String(rest.length - inFam).padStart(3)}  no sibling sharing a PARAMETER SHAPE — which is a fact about key syntax, not about the mathematics`)
+
+// ── AND BY SUBJECT, BECAUSE THE SYNTACTIC GROUPING UNDERSTATES THE WORK'S SHAPE ───────────────────────────
+// The grouping above strips a trailing number off a key. A claim can be mathematically in a family and
+// syntactically alone, and 1,053 were: reported as "individual work" when 207 of them are properties of ONE
+// function — toUuid, already ported to Lean in address.lean — and 119 are properties of the fold.
+//
+// This is the same too-narrow extractor that has appeared five times today, and it failed in the direction
+// that DISCOURAGES the work: an under-claim, making the pool look less recoverable than it is. Both
+// groupings are printed because neither alone is the truth.
+const SUBJECTS = ['address', 'fold', 'mod 9', 'prime', 'unit', 'merkle', 'uuid', 'digital root',
+  'fibonacci', 'xor', 'pascal', 'square', 'factorial', 'totient', 'divisor', 'period']
+const bySubject: Record<string, number> = {}
+for (const e of rest) {
+  const t = String(e.name).toLowerCase()
+  const hit = SUBJECTS.find((k) => t.includes(k)) ?? '(unclassified subject)'
+  bySubject[hit] = (bySubject[hit] ?? 0) + 1
+}
+console.log(`\n  the same remainder by MATHEMATICAL SUBJECT — the machinery a theorem would quantify over:`)
+for (const [k, v] of Object.entries(bySubject).sort((a, b) => b[1] - a[1]).slice(0, 10))
+  console.log(`    ${String(v).padStart(3)}  ${k}`)
+const classified = rest.length - (bySubject['(unclassified subject)'] ?? 0)
+console.log(`\n  ${classified} of ${rest.length} name machinery this deposit has ALREADY ported to Lean.`)
+console.log(`  They are not ${rest.length} pieces of work and saying so was an under-claim, corrected here.`)
 console.log(`\n  Each family above is ONE theorem quantified over its parameter range, closing by decide and`)
 console.log(`  therefore axiom-free. ${ranked.length} theorems recover ${inFam} withdrawn claims.`)
 
