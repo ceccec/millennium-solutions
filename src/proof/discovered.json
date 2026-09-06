@@ -13,48 +13,54 @@
     "name": "the units sum to 0 mod 9 (1+2+4+5+7+8=27)",
     "receipt": "ec43f3d8-7595-8c1d-90a9-f72ad8da2a7b",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof. Its evidence is a TypeScript test\". lean_recovered_units_sum_zero now decides it in the kernel over its whole stated domain, axiom-free. The claim computed all along; nobody had written the proof. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_recovered_units_sum_zero"
   },
   {
     "key": "self_inverse_1_8",
     "name": "exactly two self-inverse elements d²≡1 mod 9: {1,8}",
     "receipt": "91985354-2258-85f7-bbc7-a89dd39cdeae",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof. Its evidence is a TypeScript test\". lean_recovered_self_inverse_1_8 now decides it in the kernel over its whole stated domain, axiom-free. The claim computed all along; nobody had written the proof. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_recovered_self_inverse_1_8"
   },
   {
     "key": "triad_nilpotent",
     "name": "the triad is nilpotent d²≡0 mod 9: {3,6,9}",
     "receipt": "af48a8bc-86a0-8090-bd46-05dee4b09ac5",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof. Its evidence is a TypeScript test\". lean_recovered_triad_nilpotent now decides it in the kernel over its whole stated domain, axiom-free. The claim computed all along; nobody had written the proof. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_recovered_triad_nilpotent"
   },
   {
     "key": "doubling_digitroot_period6",
     "name": "digital root of 2^k has period 6",
     "receipt": "942f0b01-460f-8056-a301-ddfea9942f0e",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof. Its evidence is a TypeScript test\". lean_recovered_doubling_digitroot_period6 now decides it in the kernel over its whole stated domain, axiom-free. The claim computed all along; nobody had written the proof. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_recovered_doubling_digitroot_period6"
   },
   {
     "key": "units_product_neg1",
     "name": "product of the units ≡ 8 ≡ -1 mod 9 (Wilson analog)",
     "receipt": "cb8655bf-108e-8327-8a17-c4a34e5f1b01",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof. Its evidence is a TypeScript test\". lean_recovered_units_product_neg1 now decides it in the kernel over its whole stated domain, axiom-free. The claim computed all along; nobody had written the proof. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_recovered_units_product_neg1"
   },
   {
     "key": "triad_sum_zero",
     "name": "the triad sums to 0 mod 9 (3+6+9=18)",
     "receipt": "17434a40-2712-80e5-9ea6-9dd6ea25b305",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof. Its evidence is a TypeScript test\". lean_recovered_triad_sum_zero now decides it in the kernel over its whole stated domain, axiom-free. The claim computed all along; nobody had written the proof. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_recovered_triad_sum_zero"
   },
   {
     "key": "cubes_in_0_1_8",
@@ -79,16 +85,18 @@
     "name": "multiplicative order of 2 mod 9 is 6",
     "receipt": "e577fc05-6637-81e3-9f66-5809f583d7dc",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof. Its evidence is a TypeScript test\". lean_recovered_order_of_2_is_6 now decides it in the kernel over its whole stated domain, axiom-free. The claim computed all along; nobody had written the proof. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_recovered_order_of_2_is_6"
   },
   {
     "key": "sum_1_to_9_zero",
     "name": "1+2+…+9 ≡ 0 mod 9 (=45)",
     "receipt": "ccb897a5-e55d-8173-a598-f0878eed957f",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof. Its evidence is a TypeScript test\". lean_recovered_sum_1_to_9_zero now decides it in the kernel over its whole stated domain, axiom-free. The claim computed all along; nobody had written the proof. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_recovered_sum_1_to_9_zero"
   },
   {
     "key": "pisano_9_is_24",
@@ -103,16 +111,18 @@
     "name": "u↦u^5 permutes the units mod 9",
     "receipt": "1f0b4ff1-9082-81cd-ac7a-d6dac80d0124",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof. Its evidence is a TypeScript test\". lean_recovered_powperm_k5 now decides it in the kernel over its whole stated domain, axiom-free. The claim computed all along; nobody had written the proof. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_recovered_powperm_k5"
   },
   {
     "key": "powperm_k7",
     "name": "u↦u^7 permutes the units mod 9",
     "receipt": "18e9b1df-5a0d-88d1-b449-908eb5a281f5",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof. Its evidence is a TypeScript test\". lean_recovered_powperm_k7 now decides it in the kernel over its whole stated domain, axiom-free. The claim computed all along; nobody had written the proof. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_recovered_powperm_k7"
   },
   {
     "key": "mulperm_k2",
@@ -159,40 +169,45 @@
     "name": "every unit u^6 ≡ 1 mod 9",
     "receipt": "6401a9a1-a937-89c1-b6eb-e06c92a7ccb4",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof. Its evidence is a TypeScript test\". lean_recovered_unit_exp_id_k6 now decides it in the kernel over its whole stated domain, axiom-free. The claim computed all along; nobody had written the proof. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_recovered_unit_exp_id_k6"
   },
   {
     "key": "unit_exp_id_k12",
     "name": "every unit u^12 ≡ 1 mod 9",
     "receipt": "17a9eeab-619a-885a-8edc-46531fb04042",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof. Its evidence is a TypeScript test\". lean_recovered_unit_exp_id_k12 now decides it in the kernel over its whole stated domain, axiom-free. The claim computed all along; nobody had written the proof. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_recovered_unit_exp_id_k12"
   },
   {
     "key": "unit_exp_id_k18",
     "name": "every unit u^18 ≡ 1 mod 9",
     "receipt": "2b186dab-e777-8313-84ac-d1468232dc04",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof. Its evidence is a TypeScript test\". lean_recovered_unit_exp_id_k18 now decides it in the kernel over its whole stated domain, axiom-free. The claim computed all along; nobody had written the proof. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_recovered_unit_exp_id_k18"
   },
   {
     "key": "qr_u1",
     "name": "1 is a quadratic residue mod 9",
     "receipt": "14d5f9ba-f63d-8abe-b1a3-0bd857fbab0c",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof. Its evidence is a TypeScript test\". lean_recovered_qr_u1 now decides it in the kernel over its whole stated domain, axiom-free. The claim computed all along; nobody had written the proof. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_recovered_qr_u1"
   },
   {
     "key": "qr_u4",
     "name": "4 is a quadratic residue mod 9",
     "receipt": "b7c96faf-18b7-8740-a24a-00aa5ef259a1",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof. Its evidence is a TypeScript test\". lean_recovered_qr_u4 now decides it in the kernel over its whole stated domain, axiom-free. The claim computed all along; nobody had written the proof. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_recovered_qr_u4"
   },
   {
     "key": "qr_u7",
@@ -17704,5 +17719,80 @@
     "key": "lean_address_the_address_is_order_sensitive",
     "name": "lean address.lean: the_address_is_order_sensitive — toUuidBytes [97, 98] ≠ toUuidBytes [98, 97] — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "d739d704-cd78-8330-b706-81d52d66d095"
+  },
+  {
+    "key": "lean_recovered_units_sum_zero",
+    "name": "lean recovered.lean: units_sum_zero — (units.foldl (· + ·) 0) = 27 ∧ (units.foldl (· + ·) 0) % 9 = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "63ff327e-d101-841c-b88b-75e87d13124b"
+  },
+  {
+    "key": "lean_recovered_self_inverse_1_8",
+    "name": "lean recovered.lean: self_inverse_1_8 — ((List.range 9).filter (fun d => d * d % 9 == 1)) = [1, 8] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "0be47e70-d4a0-8df4-9fcd-b55e99dad2d2"
+  },
+  {
+    "key": "lean_recovered_triad_nilpotent",
+    "name": "lean recovered.lean: triad_nilpotent — triad.all (fun d => d * d % 9 == 0) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "80611403-6d16-8107-ae77-f05b242c1d28"
+  },
+  {
+    "key": "lean_recovered_triad_sum_zero",
+    "name": "lean recovered.lean: triad_sum_zero — (triad.foldl (· + ·) 0) = 18 ∧ (triad.foldl (· + ·) 0) % 9 = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f419f0c0-5806-8468-bf81-e1b0a91b604f"
+  },
+  {
+    "key": "lean_recovered_units_product_neg1",
+    "name": "lean recovered.lean: units_product_neg1 — (units.foldl (· * ·) 1) % 9 = 8 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1cd7cb91-8894-867d-a2a9-ddb5d630762f"
+  },
+  {
+    "key": "lean_recovered_order_of_2_is_6",
+    "name": "lean recovered.lean: order_of_2_is_6 — pow9 2 6 = 1 ∧ ((List.range' 1 5).all (fun k => pow9 2 k != 1)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "85848869-9d9d-8e1c-84af-9eadd785a12e"
+  },
+  {
+    "key": "lean_recovered_sum_1_to_9_zero",
+    "name": "lean recovered.lean: sum_1_to_9_zero — ((List.range' 1 9).foldl (· + ·) 0) = 45 ∧ ((List.range' 1 9).foldl (· + ·) 0) % 9 = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "4ad82610-cf87-884a-a921-8d1f15232530"
+  },
+  {
+    "key": "lean_recovered_doubling_digitroot_period6",
+    "name": "lean recovered.lean: doubling_digitroot_period6 — ((List.range 6).map (fun k => pow9 2 k)) = [1, 2, 4, 8, 7, 5] ∧ pow9 2 6 = pow9 2 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "610d5166-8a72-899a-9475-96bbf861693a"
+  },
+  {
+    "key": "lean_recovered_unit_exp_id_k6",
+    "name": "lean recovered.lean: unit_exp_id_k6 — units.all (fun u => pow9 u 6 == 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7c55bd7f-e94f-8620-9884-9d196a2ff104"
+  },
+  {
+    "key": "lean_recovered_unit_exp_id_k12",
+    "name": "lean recovered.lean: unit_exp_id_k12 — units.all (fun u => pow9 u 12 == 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "84fb8b91-9bdc-8e15-aa36-2afb4f859af6"
+  },
+  {
+    "key": "lean_recovered_unit_exp_id_k18",
+    "name": "lean recovered.lean: unit_exp_id_k18 — units.all (fun u => pow9 u 18 == 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d696c4c6-d5a5-8582-838c-8920fec8323c"
+  },
+  {
+    "key": "lean_recovered_powperm_k5",
+    "name": "lean recovered.lean: powperm_k5 — (units.map (fun u => pow9 u 5)).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "0a22ed21-bb0a-8342-b728-83985a90eecb"
+  },
+  {
+    "key": "lean_recovered_powperm_k7",
+    "name": "lean recovered.lean: powperm_k7 — (units.map (fun u => pow9 u 7)).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b3c4a97d-cc9f-8ac0-a1ed-4559e65d3a3b"
+  },
+  {
+    "key": "lean_recovered_qr_u1",
+    "name": "lean recovered.lean: qr_u1 — (List.range 9).any (fun d => d * d % 9 == 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "3080da33-e7ca-8cf8-ba24-5ce93702a24b"
+  },
+  {
+    "key": "lean_recovered_qr_u4",
+    "name": "lean recovered.lean: qr_u4 — (List.range 9).any (fun d => d * d % 9 == 4) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "38c1594b-92ba-8859-828d-aaaaa69e7501"
   }
 ]

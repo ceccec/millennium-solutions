@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2449 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2464 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (540)
+### lean (555)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -564,16 +564,31 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_address_distinct_inputs_give_distinct_addresses](/theorem/lean_address_distinct_inputs_give_distinct_addresses) — lean address.lean: distinct_inputs_give_distinct_addresses — toUuidBytes [97] ≠ toUuidBytes [98] ∧ toUuidBytes [117, 117, 105, 100, 110, 97] ≠ toUuidBytes [120] ∧ toUuidBytes [100, 101, 112, 111, 115, 105, 116] ≠ toUuidBytes [104, 117, 109, 97, 110, 105, 116, 121] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `b1d9c3a9-b7d2…`
 - [lean_address_the_address_is_not_the_payload](/theorem/lean_address_the_address_is_not_the_payload) — lean address.lean: the_address_is_not_the_payload — toUuidBytes [97] ≠ [97] ∧ toUuidBytes [117, 117, 105, 100, 110, 97] ≠ [117, 117, 105, 100, 110, 97] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `8e954997-e034…`
 - [lean_address_the_address_is_order_sensitive](/theorem/lean_address_the_address_is_order_sensitive) — lean address.lean: the_address_is_order_sensitive — toUuidBytes [97, 98] ≠ toUuidBytes [98, 97] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d739d704-cd78…`
+- [lean_recovered_units_sum_zero](/theorem/lean_recovered_units_sum_zero) — lean recovered.lean: units_sum_zero — (units.foldl (· + ·) 0) = 27 ∧ (units.foldl (· + ·) 0) % 9 = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `63ff327e-d101…`
+- [lean_recovered_self_inverse_1_8](/theorem/lean_recovered_self_inverse_1_8) — lean recovered.lean: self_inverse_1_8 — ((List.range 9).filter (fun d =&gt; d * d % 9 == 1)) = [1, 8] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `0be47e70-d4a0…`
+- [lean_recovered_triad_nilpotent](/theorem/lean_recovered_triad_nilpotent) — lean recovered.lean: triad_nilpotent — triad.all (fun d =&gt; d * d % 9 == 0) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `80611403-6d16…`
+- [lean_recovered_triad_sum_zero](/theorem/lean_recovered_triad_sum_zero) — lean recovered.lean: triad_sum_zero — (triad.foldl (· + ·) 0) = 18 ∧ (triad.foldl (· + ·) 0) % 9 = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `f419f0c0-5806…`
+- [lean_recovered_units_product_neg1](/theorem/lean_recovered_units_product_neg1) — lean recovered.lean: units_product_neg1 — (units.foldl (· * ·) 1) % 9 = 8 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1cd7cb91-8894…`
+- [lean_recovered_order_of_2_is_6](/theorem/lean_recovered_order_of_2_is_6) — lean recovered.lean: order_of_2_is_6 — pow9 2 6 = 1 ∧ ((List.range' 1 5).all (fun k =&gt; pow9 2 k != 1)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `85848869-9d9d…`
+- [lean_recovered_sum_1_to_9_zero](/theorem/lean_recovered_sum_1_to_9_zero) — lean recovered.lean: sum_1_to_9_zero — ((List.range' 1 9).foldl (· + ·) 0) = 45 ∧ ((List.range' 1 9).foldl (· + ·) 0) % 9 = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `4ad82610-cf87…`
+- [lean_recovered_doubling_digitroot_period6](/theorem/lean_recovered_doubling_digitroot_period6) — lean recovered.lean: doubling_digitroot_period6 — ((List.range 6).map (fun k =&gt; pow9 2 k)) = [1, 2, 4, 8, 7, 5] ∧ pow9 2 6 = pow9 2 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `610d5166-8a72…`
+- [lean_recovered_unit_exp_id_k6](/theorem/lean_recovered_unit_exp_id_k6) — lean recovered.lean: unit_exp_id_k6 — units.all (fun u =&gt; pow9 u 6 == 1) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7c55bd7f-e94f…`
+- [lean_recovered_unit_exp_id_k12](/theorem/lean_recovered_unit_exp_id_k12) — lean recovered.lean: unit_exp_id_k12 — units.all (fun u =&gt; pow9 u 12 == 1) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `84fb8b91-9bdc…`
+- [lean_recovered_unit_exp_id_k18](/theorem/lean_recovered_unit_exp_id_k18) — lean recovered.lean: unit_exp_id_k18 — units.all (fun u =&gt; pow9 u 18 == 1) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d696c4c6-d5a5…`
+- [lean_recovered_powperm_k5](/theorem/lean_recovered_powperm_k5) — lean recovered.lean: powperm_k5 — (units.map (fun u =&gt; pow9 u 5)).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `0a22ed21-bb0a…`
+- [lean_recovered_powperm_k7](/theorem/lean_recovered_powperm_k7) — lean recovered.lean: powperm_k7 — (units.map (fun u =&gt; pow9 u 7)).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `b3c4a97d-cc9f…`
+- [lean_recovered_qr_u1](/theorem/lean_recovered_qr_u1) — lean recovered.lean: qr_u1 — (List.range 9).any (fun d =&gt; d * d % 9 == 1) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `3080da33-e7ca…`
+- [lean_recovered_qr_u4](/theorem/lean_recovered_qr_u4) — lean recovered.lean: qr_u4 — (List.range 9).any (fun d =&gt; d * d % 9 == 4) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `38c1594b-92ba…`
 
 ### other — one-of-a-kind (0)
 
 
 
-## Revoked — 1691 entries that no longer stand
+## Revoked — 1676 entries that no longer stand
 
 The ledger is append-only: an entry that stops holding is marked in place, never deleted — deleting would break the receipt chain, and rewriting a receipt is tamper. These keep their receipts and stay in the record, but they are **not citable** and have no `/theorem/` page. Grouped by the reason they went:
 
-- **1211** — dirty: not backed by a Lean proof
+- **1196** — dirty: not backed by a Lean proof
 - **443** — revoked in place: its test asserted a lexical drain (computes(boast)
 - **12** — revoked in place: circular by construction AND dependent on the removed lexical gate
 - **12** — orphaned: the theorem this key was sealed from is no longer in src/proof
@@ -582,12 +597,27 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - **1** — revoked in place: its test asserts that a list of proof-boasts written across many scripts and languages ALL drain the gate — a lexical drain assertion, and the word-list gate was removed by order, so there is no lexicon to drain and the assertion tests nothing
 - **1** — revoked in place: it asserts adjudicate('we prove all seven')
 
-## Carried — 218 withdrawn entries whose statement a proof now carries
+## Carried — 233 withdrawn entries whose statement a proof now carries
 
 Each was withdrawn for want of a Lean proof and has since been given one, at a new key. The entry is not restored: its own evidence is still a TypeScript test, and it did not hold on what it had. What the record adds is where the statement stands now.
 
+- ~~`units_sum_zero`~~ → [`lean_recovered_units_sum_zero`](/theorem/lean_recovered_units_sum_zero)
+- ~~`self_inverse_1_8`~~ → [`lean_recovered_self_inverse_1_8`](/theorem/lean_recovered_self_inverse_1_8)
+- ~~`triad_nilpotent`~~ → [`lean_recovered_triad_nilpotent`](/theorem/lean_recovered_triad_nilpotent)
+- ~~`doubling_digitroot_period6`~~ → [`lean_recovered_doubling_digitroot_period6`](/theorem/lean_recovered_doubling_digitroot_period6)
+- ~~`units_product_neg1`~~ → [`lean_recovered_units_product_neg1`](/theorem/lean_recovered_units_product_neg1)
+- ~~`triad_sum_zero`~~ → [`lean_recovered_triad_sum_zero`](/theorem/lean_recovered_triad_sum_zero)
 - ~~`cubes_in_0_1_8`~~ → [`lean_z9plus_cubes_land_exactly_in_zero_one_eight`](/theorem/lean_z9plus_cubes_land_exactly_in_zero_one_eight)
 - ~~`squares_in_0_1_4_7`~~ → [`lean_z9plus_squares_land_exactly_in_zero_one_four_seven`](/theorem/lean_z9plus_squares_land_exactly_in_zero_one_four_seven)
+- ~~`order_of_2_is_6`~~ → [`lean_recovered_order_of_2_is_6`](/theorem/lean_recovered_order_of_2_is_6)
+- ~~`sum_1_to_9_zero`~~ → [`lean_recovered_sum_1_to_9_zero`](/theorem/lean_recovered_sum_1_to_9_zero)
+- ~~`powperm_k5`~~ → [`lean_recovered_powperm_k5`](/theorem/lean_recovered_powperm_k5)
+- ~~`powperm_k7`~~ → [`lean_recovered_powperm_k7`](/theorem/lean_recovered_powperm_k7)
+- ~~`unit_exp_id_k6`~~ → [`lean_recovered_unit_exp_id_k6`](/theorem/lean_recovered_unit_exp_id_k6)
+- ~~`unit_exp_id_k12`~~ → [`lean_recovered_unit_exp_id_k12`](/theorem/lean_recovered_unit_exp_id_k12)
+- ~~`unit_exp_id_k18`~~ → [`lean_recovered_unit_exp_id_k18`](/theorem/lean_recovered_unit_exp_id_k18)
+- ~~`qr_u1`~~ → [`lean_recovered_qr_u1`](/theorem/lean_recovered_qr_u1)
+- ~~`qr_u4`~~ → [`lean_recovered_qr_u4`](/theorem/lean_recovered_qr_u4)
 - ~~`powsum0_k1`~~ → [`lean_generated_powsum_zero_odd_exponents`](/theorem/lean_generated_powsum_zero_odd_exponents)
 - ~~`powsum0_k3`~~ → [`lean_generated_powsum_zero_odd_exponents`](/theorem/lean_generated_powsum_zero_odd_exponents)
 - ~~`powsum0_k5`~~ → [`lean_generated_powsum_zero_odd_exponents`](/theorem/lean_generated_powsum_zero_odd_exponents)
@@ -611,48 +641,18 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`cover_rotation_full_circle`~~ → [`lean_mechanical_cover_rotation_full_circle`](/theorem/lean_mechanical_cover_rotation_full_circle)
 - ~~`tetrahedra_sums_cancel`~~ → [`lean_merkaba_the_tetrahedra_residue_sums_cancel`](/theorem/lean_merkaba_the_tetrahedra_residue_sums_cancel)
 - ~~`fib_trinity_horizon`~~ → [`lean_mechanical_fib_trinity_horizon`](/theorem/lean_mechanical_fib_trinity_horizon)
-- ~~`arts_nine_hues_distinct`~~ → [`lean_mechanical_arts_nine_hues_distinct`](/theorem/lean_mechanical_arts_nine_hues_distinct)
-- ~~`grundy_single_heap`~~ → [`lean_nim_grundy_of_a_single_heap_is_its_size`](/theorem/lean_nim_grundy_of_a_single_heap_is_its_size)
-- ~~`trial_units_group`~~ → [`lean_mechanical_trial_units_group`](/theorem/lean_mechanical_trial_units_group)
-- ~~`trial_zero_divisors`~~ → [`lean_mechanical_trial_zero_divisors`](/theorem/lean_mechanical_trial_zero_divisors)
-- ~~`trial_zero_no_inverse`~~ → [`lean_mechanical_trial_zero_no_inverse`](/theorem/lean_mechanical_trial_zero_no_inverse)
-- ~~`nopayload_fixed_length`~~ → [`lean_address_the_address_is_sixteen_bytes_whatever_the_input_length`](/theorem/lean_address_the_address_is_sixteen_bytes_whatever_the_input_length)
-- ~~`nopayload_avalanche`~~ → [`lean_mechanical_nopayload_avalanche`](/theorem/lean_mechanical_nopayload_avalanche)
-- ~~`chess_board_64`~~ → [`lean_mechanical_chess_board_64`](/theorem/lean_mechanical_chess_board_64)
-- ~~`chess_diagonals_15`~~ → [`lean_mechanical_chess_diagonals_15`](/theorem/lean_mechanical_chess_diagonals_15)
-- ~~`tarot_78_cards`~~ → [`lean_mechanical_tarot_78_cards`](/theorem/lean_mechanical_tarot_78_cards)
-- ~~`tarot_minor_4x14`~~ → [`lean_mechanical_tarot_minor_4x14`](/theorem/lean_mechanical_tarot_minor_4x14)
-- ~~`tarot_major_0_21`~~ → [`lean_mechanical_tarot_major_0_21`](/theorem/lean_mechanical_tarot_major_0_21)
-- ~~`tarot_digital_roots`~~ → [`lean_mechanical_tarot_digital_roots`](/theorem/lean_mechanical_tarot_digital_roots)
-- ~~`gf4_size`~~ → [`lean_mechanical_gf4_size`](/theorem/lean_mechanical_gf4_size)
-- ~~`relation_digital_root`~~ → [`lean_mechanical_relation_digital_root`](/theorem/lean_mechanical_relation_digital_root)
 
-…and 178 more.
+…and 193 more.
 
-<details><summary>List all 1691 withdrawn keys — nothing proves these</summary>
+<details><summary>List all 1676 withdrawn keys — nothing proves these</summary>
 
 - ~~`euler_units_pow6`~~ — every unit u⁶ ≡ 1 mod 9 (Euler, φ(9)=6)  ·  `e70a44b2-6eb8…`
-- ~~`units_sum_zero`~~ — the units sum to 0 mod 9 (1+2+4+5+7+8=27)  ·  `ec43f3d8-7595…`
-- ~~`self_inverse_1_8`~~ — exactly two self-inverse elements d²≡1 mod 9: {1,8}  ·  `91985354-2258…`
-- ~~`triad_nilpotent`~~ — the triad is nilpotent d²≡0 mod 9: {3,6,9}  ·  `af48a8bc-86a0…`
-- ~~`doubling_digitroot_period6`~~ — digital root of 2^k has period 6  ·  `942f0b01-460f…`
-- ~~`units_product_neg1`~~ — product of the units ≡ 8 ≡ -1 mod 9 (Wilson analog)  ·  `cb8655bf-108e…`
-- ~~`triad_sum_zero`~~ — the triad sums to 0 mod 9 (3+6+9=18)  ·  `17434a40-2712…`
-- ~~`order_of_2_is_6`~~ — multiplicative order of 2 mod 9 is 6  ·  `e577fc05-6637…`
-- ~~`sum_1_to_9_zero`~~ — 1+2+…+9 ≡ 0 mod 9 (=45)  ·  `ccb897a5-e55d…`
 - ~~`pisano_9_is_24`~~ — Fibonacci mod 9 has Pisano period 24  ·  `78a65039-07c5…`
-- ~~`powperm_k5`~~ — u↦u^5 permutes the units mod 9  ·  `1f0b4ff1-9082…`
-- ~~`powperm_k7`~~ — u↦u^7 permutes the units mod 9  ·  `18e9b1df-5a0d…`
 - ~~`mulperm_k2`~~ — d↦2·d permutes ℤ/9  ·  `fa49923c-924a…`
 - ~~`mulperm_k4`~~ — d↦4·d permutes ℤ/9  ·  `42ce85f4-80cc…`
 - ~~`mulperm_k5`~~ — d↦5·d permutes ℤ/9  ·  `51f75927-42fc…`
 - ~~`mulperm_k7`~~ — d↦7·d permutes ℤ/9  ·  `0ce957cf-c464…`
 - ~~`mulperm_k8`~~ — d↦8·d permutes ℤ/9  ·  `4c6c0c31-87d2…`
-- ~~`unit_exp_id_k6`~~ — every unit u^6 ≡ 1 mod 9  ·  `6401a9a1-a937…`
-- ~~`unit_exp_id_k12`~~ — every unit u^12 ≡ 1 mod 9  ·  `17a9eeab-619a…`
-- ~~`unit_exp_id_k18`~~ — every unit u^18 ≡ 1 mod 9  ·  `2b186dab-e777…`
-- ~~`qr_u1`~~ — 1 is a quadratic residue mod 9  ·  `14d5f9ba-f63d…`
-- ~~`qr_u4`~~ — 4 is a quadratic residue mod 9  ·  `b7c96faf-18b7…`
 - ~~`qr_u7`~~ — 7 is a quadratic residue mod 9  ·  `2a422f9b-761a…`
 - ~~`addgen_k2`~~ — 2 additively generates ℤ/9  ·  `0bbffa4b-6e1a…`
 - ~~`addgen_k4`~~ — 4 additively generates ℤ/9  ·  `4c1d450d-3580…`
@@ -2325,4 +2325,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `cfda49da-e995-894c-ae83-63481180b708`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `c0e92f73-defa-82f6-909a-7d19882c1cc8`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

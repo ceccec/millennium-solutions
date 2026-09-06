@@ -61,8 +61,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free and axiom-free, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 548 of them across 30 files and
-6 wings; 540 close by exhaustion over a stated finite domain and the
+(\texttt{npm run latex-gate}). There are 563 of them across 31 files and
+7 wings; 555 close by exhaustion over a stated finite domain and the
 remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -2876,6 +2876,85 @@ remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 \[ \mathrm{settledHere} = 7 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
+
+\subsection{the returned}
+
+\paragraph{\texttt{recovered.lean}}
+
+\begin{theorem}[\texttt{units\_sum\_zero}]
+\[ \sum \mathrm{units} = 27 \land \sum \mathrm{units} \bmod 9 = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{self\_inverse\_1\_8}]
+\[ \{\, d \in \{0,\dots,8\} \mid d \cdot d \bmod 9 = 1 \,\} = [1,\,8] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 18 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{triad\_nilpotent}]
+\[ \forall d \in \mathrm{triad},\; d \cdot d \bmod 9 = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{triad\_sum\_zero}]
+\[ \sum \mathrm{triad} = 18 \land \sum \mathrm{triad} \bmod 9 = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{units\_product\_neg1}]
+\[ \operatorname{fold}_{(\cdot\,\cdot\,\cdot)}\left(\mathrm{units},\, 1\right) \bmod 9 = 8 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{order\_of\_2\_is\_6}]
+\[ \mathrm{pow9}\mathopen{}\left(2,\,6\right) = 1 \land \forall k \in \{1,\dots,5\},\; \mathrm{pow9}\mathopen{}\left(2,\,k\right) \neq 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 5 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{sum\_1\_to\_9\_zero}]
+\[ \sum \{1,\dots,9\} = 45 \land \sum \{1,\dots,9\} \bmod 9 = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{doubling\_digitroot\_period6}]
+\[ \{\, \mathrm{pow9}\mathopen{}\left(2,\,k\right) \mid k \in \{0,\dots,5\} \,\} = [1,\,2,\,4,\,8,\,7,\,5] \land \mathrm{pow9}\mathopen{}\left(2,\,6\right) = \mathrm{pow9}\mathopen{}\left(2,\,0\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{unit\_exp\_id\_k6}]
+\[ \forall u \in \mathrm{units},\; \mathrm{pow9}\mathopen{}\left(u,\,6\right) = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{unit\_exp\_id\_k12}]
+\[ \forall u \in \mathrm{units},\; \mathrm{pow9}\mathopen{}\left(u,\,12\right) = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{unit\_exp\_id\_k18}]
+\[ \forall u \in \mathrm{units},\; \mathrm{pow9}\mathopen{}\left(u,\,18\right) = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{powperm\_k5}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{pow9}\mathopen{}\left(u,\,5\right) \mid u \in \mathrm{units} \,\}\right)\right| = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{powperm\_k7}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{pow9}\mathopen{}\left(u,\,7\right) \mid u \in \mathrm{units} \,\}\right)\right| = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{qr\_u1}]
+\[ \exists d \in \{0,\dots,8\} : d \cdot d \bmod 9 = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{qr\_u4}]
+\[ \exists d \in \{0,\dots,8\} : d \cdot d \bmod 9 = 4 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
 
 \section*{Availability}
 Source: \url{https://github.com/ceccec/millennium-solutions}. Deposit: \url{https://doi.org/10.5281/zenodo.21819217}.

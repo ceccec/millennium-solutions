@@ -6,7 +6,7 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 548 machine-checked declarations, **539** restate work that already has an author and
+Of 563 machine-checked declarations, **554** restate work that already has an author and
 **9** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/proof/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
@@ -27,7 +27,7 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **539** |
+| attributed to named earlier work | **554** |
 | unclassified — no search performed, status unknown | **9** |
 | claimed as novel | **0** |
 
@@ -47,7 +47,7 @@ searched, where, and when. An earlier version of this page claimed novelty for 1
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 29 sources, 539 theorems
+## Restated from named earlier work — 30 sources, 554 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
@@ -74,6 +74,7 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>phenomena.lean</code></td><td>4</td><td>metrology and classical physical chemistry</td><td>the SI base quantities and their defining constants are definitions of the Conférence</td></tr>
 <tr><td><code>quantum.lean</code></td><td>12</td><td>canonical forms and order-invariant commitments</td><td>sorting a multiset into a canonical order BEFORE folding it is standard practice, not a</td></tr>
 <tr><td><code>reach.lean</code></td><td>4</td><td>elementary set theory — the naturals are not exhausted by any finite list</td><td>that no finite set contains every natural number is Euclid's argument in form and is as</td></tr>
+<tr><td><code>recovered.lean</code></td><td>15</td><td>elementary number theory — the unit group of ℤ/9</td><td>every fact here is standard: the units of ℤ/9 are {1,2,4,5,7,8}, their product is −1</td></tr>
 <tr><td><code>reversal.lean</code></td><td>9</td><td>elementary arithmetic</td><td>digit reversal and digit sums; casting out nines, in use by the 12th century</td></tr>
 <tr><td><code>rights.lean</code></td><td>8</td><td>copyright law — rights arising without formality</td><td>this file already NAMED its prior art in prose while the attribution table recorded none.</td></tr>
 <tr><td><code>sequences.lean</code></td><td>12</td><td>integer sequences and identities</td><td>Cassini’s identity — G. D. Cassini, 1680; Lucas sequences — Édouard Lucas, 1878; the Brahmagupta–Fibonacci identity — Brahmagupta, 628; Pascal’s triangle mod 2 — Blaise Pascal, 1654</td></tr>
@@ -97,7 +98,7 @@ which is a contribution of verification, not of discovery.
 - **elementary group theory — subgroups and cosets of Z/9** — 8 theorems, in `merkaba.lean`
 - **elementary number theory** — 8 theorems, in `demand.lean`
 - **elementary number theory — the unit group of Z/9** — 120 theorems, in `imagined.lean`
-- **elementary number theory — the unit group of ℤ/9** — 19 theorems, in `split.lean`
+- **elementary number theory — the unit group of ℤ/9** — 34 theorems, in `recovered.lean`, `split.lean`
 - **elementary number theory — the unit group of ℤ/9 and the doubling orbit** — 25 theorems, in `generated.lean`, `index.lean`
 - **elementary number theory, named results** — 7 theorems, in `demand3.lean`
 - **elementary number theory, second tier** — 8 theorems, in `demand2.lean`
@@ -142,5 +143,5 @@ priority claim above, and it is the whole of it.
 
 ---
 
-Partition seal `b93f0448-5b0e-8a0f-99f8-9efe9388a8b5` · recompute with `node scripts/priorart.ts` · the kernel re-decides
+Partition seal `6fcc7a41-4d0d-8f11-ae95-e9013e6e28a6` · recompute with `node scripts/priorart.ts` · the kernel re-decides
 `priorart.lean` on every run. A content-address proves integrity, not truth. `entails → 0/7`.
