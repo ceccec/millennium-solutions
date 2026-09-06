@@ -13,10 +13,10 @@ Every figure recomputes from `src/` and the git tree on each build; nothing is e
 | Coins per receipt | **2** |
 | Coins on the ledger (theorems × 2) | **4,928** |
 | Coins on signed receipts (× 2) | **58** |
-| Released versions (git tags) | **845** |
-| Tracked, content-addressed files | **465** |
+| Released versions (git tags) | **846** |
+| Tracked, content-addressed files | **466** |
 
-Latest release: **v8.9.7**. The fair-exchange unit is **2 coins = 2 bits** (110 − 108 = 2 = −χ genus-2) per receipt. One 64-bit harmony coin is minted per fused `src` `report()` module — see the [state dashboard](/dashboard) for the harmonic root.
+Latest release: **v8.9.8**. The fair-exchange unit is **2 coins = 2 bits** (110 − 108 = 2 = −χ genus-2) per receipt. One 64-bit harmony coin is minted per fused `src` `report()` module — see the [state dashboard](/dashboard) for the harmonic root.
 
 ## Bounty — denominated in bits
 
@@ -24,4 +24,4 @@ The bounty for each accepted contribution is **2 bits (2 coins)** — the same f
 
 **Not tracked here: tokens.** This repo measures coins (2 per receipt) and 64-bit harmony coins; it does not measure tokens, so no token count or token-to-coin rate is shown — measuring an unmeasured quantity would be an assertion without a receipt. Measure, do not assert.
 
-Page content-address: `7c79f7de-2c92-85be-aea0-10e2aa58f601`. Integrity, not truth. `entails → 0/7`.
+Page content-address: `2e5e5e3c-f1e2-8caa-bacf-21fdd3d2a86d`. Integrity, not truth. `entails → 0/7`.

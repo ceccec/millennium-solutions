@@ -102,7 +102,21 @@ export default {
         // the title is where this is fixable. Interpolated as a PARAM beside the name, because that is what
         // the title is built from; a Vue conditional in the heading would render for a human and leave the
         // <title> untouched.
-        statusPrefix: e.revoked === true ? (e.supersededBy ? 'CARRIED — ' : 'WITHDRAWN — ') : '',
+        // OPEN, NOT WITHDRAWN, AND THE DIFFERENCE IS THE AUDIT. Every revoked row read "WITHDRAWN" — 1,676
+        // of them — which tells a reader the claim is dead. It is not. Audited by the reason recorded at
+        // the time: only 21 rest on FALSITY or CIRCULARITY, where no theorem could ever carry them. The
+        // rest computed, and were revoked because nobody wrote the proof.
+        //
+        // A claim that computes and lacks a proof is OPEN WORK. Publishing it as withdrawn hides the
+        // largest recoverable asset in this deposit behind a word that means the opposite, and fifteen of
+        // them were closed today in one file to show the label was wrong.
+        statusPrefix: e.revoked !== true ? ''
+          : e.supersededBy ? 'CARRIED — '
+          : /circular by construction|no longer in src\/proof|orphaned|recomputes FALSE|does not recompute/i.test(String(e.reason ?? ''))
+            ? 'WITHDRAWN — '
+            : 'OPEN — ',
+        openForProof: e.revoked === true && !e.supersededBy
+          && !/circular by construction|no longer in src\/proof|orphaned|recomputes FALSE|does not recompute/i.test(String(e.reason ?? '')),
         ...formulaOf(e.key),
       },
     }))
