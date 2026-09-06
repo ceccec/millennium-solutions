@@ -1,5 +1,5 @@
 {
-  "produced": "cd161f177",
+  "produced": "1636a23ce",
   "method": "recomputed from git history of src/proof/discovered.json and the ledger itself; re-runnable with `npm run forensic`",
   "establishes": "what changed, when, in which commit, and the reason recorded at the time",
   "doesNotEstablish": [
@@ -8,9 +8,9 @@
   ],
   "ledgerNow": {
     "entries": 2449,
-    "withdrawn": 1690,
+    "withdrawn": 1691,
     "carried": 218,
-    "standing": 541
+    "standing": 540
   },
   "chainRecomputed": {
     "breaks": 0,
@@ -93,7 +93,7 @@
     ],
     [
       "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or rena",
-      11
+      12
     ],
     [
       "revoked in place: circular by construction — the test defines the answer it checks, proving a de",
@@ -113,5 +113,5 @@
     ]
   ],
   "totalStateChangingCommits": 559,
-  "address": "f4c33a9b-64ab-88e7-b10a-96833d327de6"
+  "address": "fa003d78-3e81-8e02-896f-0e35b19d98bc"
 }

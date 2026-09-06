@@ -92,6 +92,7 @@ def settledHere : Nat := 17
 theorem address_settles_its_range : settledHere = 17 := rfl
 
 
+
 -- ── RECOVERED FROM THE WITHDRAWN POOL ──────────────────────────────────────────────────────────────────
 -- Emitted by scripts/recover-gen.ts against claims withdrawn as "not backed by a Lean proof". Each names
 -- a property of toUuidBytes that a TypeScript test once checked and no theorem did. Every one

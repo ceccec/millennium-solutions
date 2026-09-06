@@ -60,12 +60,25 @@ theorem even_the_largest_domain_here_has_an_outside :
   ∧ largestDomainHere % 2 = 0
   ∧ (largestDomainHere + 1) % 2 = 1 := by decide
 
--- ── 5 · WHAT THIS SETTLES ABOUT THE SEVEN: NOTHING, AND THE COUNT IS THE POINT ──────────────────────────
--- The number of Clay conjectures this file settles, and the number any exhaustion in this deposit settles.
--- Written as a decided conjunction with the reach facts above rather than as a bare constant compared to
--- itself — that shape was removed from index.lean earlier and is not coming back through this door.
-theorem this_file_settles_none_of_the_seven :
-  (bounds.filter (fun n => (List.range n).contains n)).length = 0
-  ∧ bounds.length = 50 := by decide
+-- ── 5 · A THEOREM NAMED FOR THE CLAY PROBLEMS THAT DECIDED NOTHING ABOUT THEM — DELETED ─────────────────
+-- `this_file_settles_none_of_the_seven` stood here and decided:
+--
+--     (bounds.filter (fun n => (List.range n).contains n)).length = 0  ∧  bounds.length = 50
+--
+-- `List.range n` is [0 … n-1] and NEVER contains n. The predicate is always false, the filter is always
+-- empty, and the first conjunct holds for ANY list at all — it cannot fail. The second is a count. Nothing
+-- in the proposition mentions a Clay problem, and the NAME asserted that this file settles none of them.
+--
+-- The comment above it argued it was written "rather than as a bare constant compared to itself — that
+-- shape was removed from index.lean earlier and is not coming back through this door." It came back through
+-- that door in a costume: an always-false predicate is a self-certifying literal one notation along, and
+-- recognising the first shape did not confer recognition of the second.
+--
+-- THE FLOOR IS TRUE AND IS HELD WHERE IT CAN BE. That this deposit settles no Clay problem is a fact about
+-- its TEXT — which theorem names and statements appear — and Lean cannot read its own text. It is decided
+-- by scripts/contradictions.ts, which catches 960 Clay overclaim phrasings and is run on every commit, and
+-- by claims-gate and boundaries. A refusal belongs in the layer that can observe it, and a Lean theorem
+-- named for one it cannot observe is worse than no theorem: it reads as a kernel-checked proof of a
+-- statement the kernel never saw.
 
 end Reach

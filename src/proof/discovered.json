@@ -17567,7 +17567,9 @@
   {
     "key": "lean_reach_this_file_settles_none_of_the_seven",
     "name": "lean reach.lean: this_file_settles_none_of_the_seven — (bounds.filter (fun n => (List.range n).contains n)).length = 0 ∧ bounds.length = 50 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "2c8272de-17dd-8800-8a8e-95423c290b0d"
+    "receipt": "2c8272de-17dd-8800-8a8e-95423c290b0d",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_phenomena_the_table_is_closed_and_that_is_all_this_file_decides",

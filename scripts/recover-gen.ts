@@ -48,7 +48,20 @@ if (process.argv.includes('--write')) {
     + `-- DISCRIMINATES: the reflexive shape \`f x = f x\` holds for a constant function and is not emitted.\n\n`
     + cands.map((c) => `-- ${c.discriminates}\ntheorem ${c.name} :\n  ${c.prop} := by decide`).join('\n\n') + '\n'
   const i = src.lastIndexOf('end Address')
-  writeFileSync(target, src.slice(0, i) + block + '\n' + src.slice(i))
+  let next = src.slice(0, i) + block + '\n' + src.slice(i)
+
+  // THE FILE PUBLISHES A COUNT OF ITS OWN THEOREMS, SO EMITTING INTO IT MOVES THAT COUNT. The first run of
+  // this generator added four theorems and left `settledHere` at 13 for a file holding 17; contradictions
+  // caught it, the site build failed behind it, and I committed while it was red. A generator that writes
+  // into a file which counts itself must carry the count, or it hands the next person a red tree.
+  const decides = (next.match(/^theorem [\s\S]*?:= by decide/gm) ?? []).length
+  const before = Number(next.match(/^def settledHere : Nat := (\d+)$/m)?.[1] ?? -1)
+  if (before >= 0 && before !== decides) {
+    next = next.replace(/^def settledHere : Nat := \d+$/m, `def settledHere : Nat := ${decides}`)
+    next = next.replace(/(theorem \w+ : settledHere = )\d+/, `$1${decides}`)
+    console.log(`  settledHere carried ${before} → ${decides} — the file counts itself and the emit moved it`)
+  }
+  writeFileSync(target, next)
   console.log(`\n✓ recover-gen: ${cands.length} theorem(s) written into ${target} — put them to the kernel with`)
   console.log(`  npx tsx scripts/lean.ts ${target}`)
   process.exit(0)

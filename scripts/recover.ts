@@ -95,6 +95,29 @@ if (write && recoverable.length) {
 } else {
   console.log(`\n○ recover: run with --write to carry them.`)
 }
+// ── INVOLUTE INSTEAD OF WITHDRAW ─────────────────────────────────────────────────────────────────────────
+// A withdrawal is one-directional: the claim goes dead and the record says nothing proves it. A CARRY is
+// the involution — the claim maps to the theorem that decides it and back, and both remain reachable.
+//
+// The depositor's rule, and the audit supports it: ABSENCE OF PROOF IS NOT GROUNDS FOR WITHDRAWAL. A claim
+// that computes and has no theorem should be carried to one, or left standing as unproved. Withdrawal is
+// for claims that are FALSE or CIRCULAR — where no theorem could carry them because there is nothing true
+// to carry.
+//
+// Audited over every withdrawal in the ledger, by the reason recorded at the time:
+//
+//   A  computed, no Lean proof written        withdrawal was a CHOICE — proving was available
+//   B  its gate was removed by order          the CLAIM did not die with the gate that tested it
+//   C  circular by construction                correctly withdrawn — the test defines its own answer
+//   D  the theorem it was sealed from is gone  correctly withdrawn — there is nothing left to point at
+//
+// Only C and D are grounds. A and B are the pool this file exists to return.
+const GROUNDS = /circular by construction|no longer in src\/proof|orphaned|recomputes FALSE|does not recompute/i
+const ungrounded = l.filter((e) => statusOf(e, l) === 'withdrawn' && !GROUNDS.test(String(e.reason)))
+console.log(`\n  withdrawn on grounds that are NOT falsity or circularity: ${ungrounded.length}`)
+console.log(`  Those are claims the record says nothing proves, withdrawn because no one wrote the proof.`)
+console.log(`  Under "involute instead of withdraw" each is a carry waiting for its theorem, not a dead entry.`)
+
 // ── THE REMAINDER, ORGANISED INTO FAMILIES ───────────────────────────────────────────────────────────────
 // A family is a set of withdrawn claims differing only in a parameter. One quantified theorem decides the
 // whole set, which is why 1,212 singletons are not 1,212 pieces of work — they are far fewer families, each

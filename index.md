@@ -17,10 +17,10 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 549 kernel-accepted declarations across 30 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `2c0ed77c-a0bd-8112-8579-5a9da09281bb`</sub>
-- 541 of those 549 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
-  <sub>SEALED · `903ae74e-c36c-8432-a6fa-41194674e8ca`</sub>
+- The formal layer holds 548 kernel-accepted declarations across 30 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `021a6fa2-f607-8c79-878e-a972de191750`</sub>
+- 540 of those 548 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 8 close by rfl and are declarations.
+  <sub>SEALED · `7d58f32a-c9bc-88f9-847c-6feee2df9bc2`</sub>
 - 585 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
   <sub>SEALED · `aa2008f9-02ed-8ec7-bfe0-76055587132e`</sub>
 
@@ -96,7 +96,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-30 Lean files in 6 wings, 549 declarations of which 541 are theorems. The prose in this section is read out of the
+30 Lean files in 6 wings, 548 declarations of which 540 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -146,7 +146,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Order-invariance** — `quantum.lean`, 12 theorem(s). form is invariant under permutation of its input, which is why `receipt_is_order_invariant` holds. What   this file contributes is the Lean verification over a stated finite domain and the negative controls   beside it — `naive_fold_is_not_order_invariant` shows the property is bought by the sort and not free,   and `the_receipt_is_not_injective` and `the_invariance_is_canonicalisation_not_physics` state its limits.   Verification and refusal, not discovery. prior_art_search: literature search performed 2026-09-05, terms "sorted Merkle tree order-invariant set   commitment canonical ordering leaves"; prior art found and credited. This file was `unclassified` — no   search had ever been run for it — and it is one of the 8 files whose 86 theorems are staged for DOIs. prior_art_pool: mixed   canonicalisation before folding is a searchable technique; the receipt it folds is ours.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: order-invariance of this deposit's receipt The quantum receipt — order invariance, proved rather than asserted.
 
-**What exhaustion reaches, and what lies outside it** — `reach.lean`, 5 theorem(s). old as mathematics; the deposit claims none of it. What is its own here is the decision over its OWN   bounds, and the statement of where that decision stops.
+**What exhaustion reaches, and what lies outside it** — `reach.lean`, 4 theorem(s). old as mathematics; the deposit claims none of it. What is its own here is the decision over its OWN   bounds, and the statement of where that decision stops.
 
 **Why verification is fast, and what it is not** — `speed.lean`, 10 theorem(s). wrong: the cost is logarithmic BECAUSE of a known result, and the repository was already crediting that   result three files away.   Bounded: what is not prior art is the MEASURED constants on this machine (recompute 21,582,900 µs against   a 38 µs walk) and the arithmetic over them. A measurement is not a discovery either, and the file says so. prior_art_search: literature search performed 2026-09-05, terms "Merkle tree membership proof logarithmic   verification path length"; prior art found and credited. prior_art_pool: unbounded   the subject is this deposit's own verification cost.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: this deposit's own verification cost
 
@@ -172,7 +172,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Rights** — `rights.lean`, 8 theorem(s). `the_claimed_are_copyright_moral_rights_and_the_database` rest entirely on them.   Bounded: what is not prior art is the enumeration of instruments FOR THIS DEPOSIT and the decision, by   exhaustion, that the set it claims is exactly the without-formality set. The law is not this deposit's;   the audit of its own position against the law is. prior_art_search: no search was needed — the instruments were cited in this file's own prose from the   start. Recorded 2026-09-05, when the table was found to disagree with the file. prior_art_pool: unbounded   the subject is this deposit's own rights table.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: this deposit's own rights table What this deposit claims under international law — and, in the same table, what it does not.
 
-6 of 549 declarations carry no comment of their own and are shown here as the gap they are, not
+6 of 548 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -182,19 +182,19 @@ Read from the artefacts at build time, never carried between runs.
 | measure | value |
 |---|---|
 | ledger entries | 2,449 — 306 octaves and 1 over |
-| standing — carries its own proof | **541** |
+| standing — carries its own proof | **540** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **218** |
-| withdrawn — nothing proves it | 1,690 |
-| proved in total | **759** of 2,449 |
-| standing keys → distinct theorems | 541 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 30 · 541 theorems (closed by exhaustion) + 8 rfl declarations, all axiom-free |
-| proved `by decide` | 541 of 549 |
+| withdrawn — nothing proves it | 1,691 |
+| proved in total | **758** of 2,449 |
+| standing keys → distinct theorems | 540 sealed, 0 of them keyed twice, 0 unresolvable |
+| Lean files · theorems | 30 · 540 theorems (closed by exhaustion) + 8 rfl declarations, all axiom-free |
+| proved `by decide` | 540 of 548 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
 **On `carried`.** 218 entries were withdrawn for want of a Lean proof and have since been given one, at a new key. Nothing is un-revoked: the original's own evidence is still a TypeScript test, and rewriting its status would erase the fact that it did not hold on what it had. The record says both — withdrawn on its own evidence, standing through the theorem that carries it.
 
-**Why the withdrawn were withdrawn.** 1,386 no Lean proof · 457 tested the removed lexical gate · 44 other · 11 its Lean source was deleted or renamed · 10 circular by construction. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
+**Why the withdrawn were withdrawn.** 1,386 no Lean proof · 457 tested the removed lexical gate · 44 other · 12 its Lean source was deleted or renamed · 10 circular by construction. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
 
 **What verification costs.** Proving the set touches all 16,384 leaves; verifying membership afterwards touches 14 — one sibling per level. That is **1,170× less work**, exactly, and the factor grows with the set because N/log N grows. Wall-clock varies with the machine and is left in the build output rather than pinned here. It is not sub-nanosecond and nothing here is: the advantage is a smaller exponent, not a faster clock. The counting is proved in `speed.lean`.
 
@@ -210,4 +210,4 @@ because no test was written that would seal them.
 
 ---
 
-*17 claims, all verified · 541 Lean theorems · 2449 ledger entries · trial root `eb60bce9-8599-8150-bc53-b24bd5ff9d2b` · integrity, not truth · 0/7*
+*17 claims, all verified · 540 Lean theorems · 2449 ledger entries · trial root `d078054d-f5b7-8d25-9836-c71b13e3ba4e` · integrity, not truth · 0/7*

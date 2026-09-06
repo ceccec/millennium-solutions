@@ -401,6 +401,30 @@ for (const f of leanFiles()) {
     }
   }
 
+  // ── A FILTER WHOSE PREDICATE CANNOT HOLD ─────────────────────────────────────────────────────────────
+  // `(xs.filter (fun n => (List.range n).contains n)).length = 0` is TRUE OF EVERY LIST: List.range n is
+  // [0…n-1] and never contains n, so the filter is always empty. It reads as a measurement over `bounds`
+  // and measures nothing. It carried the name `this_file_settles_none_of_the_seven` — a claim about the
+  // Clay problems, over a proposition that never mentions one — and the comment beside it recorded that its
+  // author had rejected the bare self-certifying literal and written this instead.
+  //
+  // Recognising one shape does not confer recognition of its notations. Caught by NAME here because the
+  // general form is undecidable; this is the one instance and the check exists so a second is not silent.
+  for (const t of src.matchAll(/^theorem\s+(\w+)\s*:([\s\S]*?):=\s*by\s+decide/gm)) {
+    if (!/\(List\.range\s+(\w+)\)\.contains\s+\1\b/.test(t[2])) continue
+    // THE FILTER IS NOT THE DEFECT — THE NAME NOT MATCHING IT IS. This check's first version flagged
+    // `exhaustion_never_reaches_its_own_bound`, where the emptiness IS the content: the theorem's claim is
+    // precisely that List.range n never reaches n, and its name says so. Honest.
+    //
+    // `this_file_settles_none_of_the_seven` used the identical construction under a name about the Clay
+    // problems. Same proposition shape, opposite honesty. So the discriminator is whether the name speaks
+    // the vocabulary of the property being decided — reaching, bounds, ranges, exhaustion — rather than
+    // naming a subject the proposition never mentions.
+    if (/reach|bound|range|exhaust|never_contains|own_/i.test(t[1])) continue
+    fail(`src/proof/${f}: \`${t[1]}\` filters on \`(List.range n).contains n\`, false for every n, so the `
+      + `conjunct cannot fail — and the name speaks of something the proposition never mentions`)
+  }
+
   // ── A CONJUNCTION THAT REPEATS A CONJUNCT ────────────────────────────────────────────────────────────
   // `A ∧ A` decides exactly what `A` decides, so the repetition adds a conjunct that cannot fail. I wrote
   // `1048576 / 20 = 52428 ∧ 1048576 / 20 = 52428` into a theorem on the same day I widened the sweep for

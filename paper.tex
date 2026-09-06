@@ -61,8 +61,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free and axiom-free, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 549 of them across 30 files and
-6 wings; 541 close by exhaustion over a stated finite domain and the
+(\texttt{npm run latex-gate}). There are 548 of them across 30 files and
+6 wings; 540 close by exhaustion over a stated finite domain and the
 remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -1385,11 +1385,6 @@ remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \begin{theorem}[\texttt{even\_the\_largest\_domain\_here\_has\_an\_outside}]
 \[ \mathrm{largestDomainHere} + 1 > \mathrm{largestDomainHere} \land \mathrm{largestDomainHere} \bmod 2 = 0 \land \mathrm{largestDomainHere} + 1 \bmod 2 = 1 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
-
-\begin{theorem}[\texttt{this\_file\_settles\_none\_of\_the\_seven}]
-\[ \left|\{\, n \in \mathrm{bounds} \mid n \in \{0,\dots,n-1\} \,\}\right| = 0 \land \left|\mathrm{bounds}\right| = 50 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
