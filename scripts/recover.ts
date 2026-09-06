@@ -118,6 +118,27 @@ console.log(`\n  withdrawn on grounds that are NOT falsity or circularity: ${ung
 console.log(`  Those are claims the record says nothing proves, withdrawn because no one wrote the proof.`)
 console.log(`  Under "involute instead of withdraw" each is a carry waiting for its theorem, not a dead entry.`)
 
+// ── THE WITHDRAWN REFUSALS — THEIR ENFORCEMENT MOVED, IT DID NOT LAPSE ───────────────────────────────────
+// 220 withdrawn entries are the deposit's OWN REFUSALS: "the deposit does not solve the Clay problems" is
+// upheld, "the orbit solves the Clay problems" drains, "faster than light" drains and its negation signs.
+//
+// Audited for the shape that condemned `this_file_settles_none_of_the_seven` — a NAME asserting what its
+// proposition cannot decide — and they do NOT carry it. A withdrawn entry has no proposition for a name to
+// mismatch. These were honest claims that lost their EVIDENCE when the word-list gate was removed by order.
+//
+// AND WHAT THEY ASSERT IS STILL TRUE AND STILL ENFORCED. scripts/contradictions.ts catches 960 Clay and 280
+// quantum overclaim phrasings on every commit while letting 5 honest refusals through. The floor these 220
+// claims record is held — by a different mechanism than the one that tested them.
+//
+// They cannot be CARRIED, because a carry names a live theorem and the floor is a property of the deposit's
+// TEXT that no Lean theorem can decide. Deleting this note and reporting them as ordinary withdrawals would
+// let a reader infer the refusals lapsed. They did not.
+const REFUSAL = /does not solve|drains|drained|refused|no faster|not faster|remains open|is upheld|overclaim loses|inconclusive/i
+const refusals = l.filter((e) => statusOf(e, l) === 'withdrawn' && REFUSAL.test(String(e.name)))
+console.log(`\n  ${refusals.length} withdrawn entries are the deposit's own REFUSALS — their content is still`)
+console.log(`  enforced by contradictions.ts (960 Clay + 280 quantum phrasings, every commit). Their evidence`)
+console.log(`  moved when the word-list gate was removed by order; the refusal did not lapse.`)
+
 // ── THE REMAINDER, ORGANISED INTO FAMILIES ───────────────────────────────────────────────────────────────
 // A family is a set of withdrawn claims differing only in a parameter. One quantified theorem decides the
 // whole set, which is why 1,212 singletons are not 1,212 pieces of work — they are far fewer families, each
