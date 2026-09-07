@@ -22,9 +22,17 @@ export const reachableScripts = (): Set<string> => {
   return out
 }
 
-/** The gates gates-fire already controls, by the name it files them under. */
-export const controlledGates = (): Set<string> =>
-  new Set([...readFileSync('scripts/gates-fire.ts', 'utf8').matchAll(/gate: '([^' ]+)/g)].map((m) => m[1]))
+/** The gates gates-fire already controls — BY THE SCRIPT EACH CONTROL RUNS, not by the label it is filed
+ *  under. Reading only the labels made this narrower than its subject: `notice` got two controls, filed as
+ *  `notice-reads-the-whole-table` and `notice-refuses-an-overclaim` because they catch opposite failures,
+ *  and leads.ts went on reporting notice as never shown to fail. A label is a name a human chose; `cmd` is
+ *  what actually runs. Both are read, so a control whose label IS the script name still resolves. */
+export const controlledGates = (): Set<string> => {
+  const src = readFileSync('scripts/gates-fire.ts', 'utf8')
+  const out = new Set([...src.matchAll(/gate: '([^' ]+)/g)].map((m) => m[1]))
+  for (const m of src.matchAll(/cmd: '[^']*scripts\/([a-z0-9-]+)\.ts/g)) out.add(m[1])
+  return out
+}
 
 /** Scripts that refuse — they print a finding and exit non-zero — and have no negative control.
  *  A CLI tool is excluded: `receipt` exits 1 with a usage line when called with no arguments, which
