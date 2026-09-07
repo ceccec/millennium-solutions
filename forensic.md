@@ -5,18 +5,18 @@ title: Every state change, dated
 # Provenance of this deposit's ledger
 
 **Recomputed on every build** from git history and the append-only ledger. Regenerate with
-`npm run forensic`. Content-address `30c0a85d-c6b1-8e8d-a889-c0e97a745ff8`.
+`npm run forensic`. Content-address `4a4db273-1d55-8c96-bb0d-f37d92f9d372`.
 
 ## What this record establishes
 
 | | |
 |---|---:|
-| ledger entries | **2,532** |
-| standing — proved and sealed | 607 |
-| carried — withdrawn, proved by a live theorem | 423 |
-| withdrawn — nothing currently proves them | 1,502 |
+| ledger entries | **2,536** |
+| standing — proved and sealed | 611 |
+| carried — withdrawn, proved by a live theorem | 428 |
+| withdrawn — nothing currently proves them | 1,497 |
 | receipt chain, recomputed | **0 breaks — intact** |
-| commits that changed ledger state | 569 |
+| commits that changed ledger state | 570 |
 
 ## Why entries were withdrawn — the reason recorded at the time
 
@@ -24,15 +24,15 @@ Verbatim, as written when the entry was revoked. Not inferred afterwards.
 
 | withdrawn | reason as recorded |
 |---:|---|
-| 1,023 | dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a compu |
+| 1,018 | dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a compu |
 | 443 | revoked in place: its test asserted a lexical drain (computes(boast).binary === 0). The word-lis |
 | 12 | revoked in place: circular by construction AND dependent on the removed lexical gate. |
 | 12 | orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or rena |
 | 10 | revoked in place: circular by construction — the test defines the answer it checks, proving a de |
 | 1 | revoked in place: its test asserts that a list of proof-boasts written across many scripts and l |
 
-**1,023** of
-**1,502** withdrawn entries — 68.1% —
+**1,018** of
+**1,497** withdrawn entries — 68.0% —
 were withdrawn for want of a Lean proof while their evidence was a TypeScript test that **computed**.
 Withdrawal costs one line of record; proving costs real work, and a green gate rewards both identically.
 
@@ -46,8 +46,8 @@ At least one of them was recoverable: `thue_morse_doubling_recurrence` was withd
 | 2026-08-20 | 1,864 | `e6bb01bb5` | gates: green the three that were red — by fixing the authority |
 | 2026-08-20 | 25 | `959f8af2a` | lean: verify once instead of twice, and cache what the kernel  |
 | 2026-09-04 | 24 | `5d319470d` | Item 12 executed: 24 duplicate addresses retired, and it broke |
+| 2026-09-07 | 13 | `301c67798` | `namespace Classical` shadowed Lean's, in a deposit whose stan |
 | 2026-09-05 | 7 | `43253e80b` | The self-certifying check knew one NAME, so it missed four — i |
-| 2026-09-04 | 4 | `810b378e5` | Prior art: attributed 167, unclassified 303, claimed 0 — and z |
 
 ## What this record does NOT establish
 

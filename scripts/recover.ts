@@ -274,6 +274,18 @@ const EXACT: { key: string; theorem: string; why: string }[] = [
     why: 'the row says "verified exhaustively for r up to 10 and n up to 18"; the theorem decides r = 0…10 and the diagonal length to 18' },
   { key: 'the_vortex_and_rosette_unit_groups_are_isomorphic', theorem: 'the_powers_of_two_mod_nine_and_of_three_mod_seven_are_isomorphic',
     why: 'the row names the map 2^k mod 9 ↦ 3^k mod 7 and says it preserves multiplication; the theorem decides both power maps are bijections onto the units and that each sends a product of exponents to a product — the map itself, not merely that two groups of six exist' },
+
+  // ── Lucas, Pell and Farey — every one of these rows states its own bound, so every one carries ──────────
+  { key: 'lucas_numbers', theorem: 'the_lucas_numbers_follow_their_recurrence_and_reach_their_named_values',
+    why: 'the row names L(0)=2, L(1)=1, L(5)=11 and L(7)=29; the theorem decides all four and the recurrence to n = 29' },
+  { key: 'lucas_fibonacci_relation', theorem: 'the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis',
+    why: 'the row claims L(n) = F(n−1) + F(n+1) at n = 5 and 8; the theorem decides it at every n from 1 to 28 — two independently defined sequences meeting, which neither recurrence says alone' },
+  { key: 'pell_numbers', theorem: 'the_pell_numbers_follow_their_recurrence_and_reach_their_named_values',
+    why: 'the row names P(5)=29 and P(6)=70; the theorem decides both and the doubling recurrence to n = 25' },
+  { key: 'farey_neighbor_F4', theorem: 'consecutive_farey_neighbours_have_unit_determinant_and_bracket_their_mediant',
+    why: 'the first conjunct decides bc − ad = 1 across the whole of F_4, which is the sequence the row names' },
+  { key: 'mediant_between', theorem: 'consecutive_farey_neighbours_have_unit_determinant_and_bracket_their_mediant',
+    why: 'the second conjunct decides that the mediant lies STRICTLY between its parents across F_6, the sequence the row names — cross-multiplied, since Nat division would truncate the comparison into agreeing with itself' },
 ]
 
 // ── AND TWO THE CANDIDATE REPORT PROPOSED THAT ARE NOT CARRIED, WRITTEN DOWN SO THEY ARE NOT PROPOSED AGAIN ──

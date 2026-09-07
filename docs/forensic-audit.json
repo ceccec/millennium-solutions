@@ -1,5 +1,5 @@
 {
-  "produced": "544251fd2",
+  "produced": "301c67798",
   "method": "recomputed from git history of src/proof/discovered.json and the ledger itself; re-runnable with `npm run forensic`",
   "establishes": "what changed, when, in which commit, and the reason recorded at the time",
   "doesNotEstablish": [
@@ -7,10 +7,10 @@
     "authorship beyond the git author field (every commit here carries the repository owner)"
   ],
   "ledgerNow": {
-    "entries": 2532,
-    "carried": 423,
-    "withdrawn": 1502,
-    "standing": 607
+    "entries": 2536,
+    "carried": 428,
+    "withdrawn": 1497,
+    "standing": 611
   },
   "chainRecomputed": {
     "breaks": 0,
@@ -48,6 +48,16 @@
       "dEnt": 0
     },
     {
+      "date": "2026-09-07",
+      "commit": "301c67798",
+      "author": "Tsvetan Rouschev",
+      "subject": "`namespace Classical` shadowed Lean's, in a deposit whose standard is ax",
+      "entries": 2532,
+      "revoked": 1925,
+      "dRev": 13,
+      "dEnt": 20
+    },
+    {
       "date": "2026-09-05",
       "commit": "43253e80b",
       "author": "Tsvetan Rouschev",
@@ -66,22 +76,12 @@
       "revoked": 1872,
       "dRev": 4,
       "dEnt": 14
-    },
-    {
-      "date": "2026-09-05",
-      "commit": "05551d04e",
-      "author": "Tsvetan Rouschev",
-      "subject": "The offset basis, a sha256 merge key, and a refusal theorem that certifi",
-      "entries": 2424,
-      "revoked": 1898,
-      "dRev": 2,
-      "dEnt": 1
     }
   ],
   "withdrawalReasonsAsRecorded": [
     [
       "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a compu",
-      1023
+      1018
     ],
     [
       "revoked in place: its test asserted a lexical drain (computes(boast).binary === 0). The word-lis",
@@ -108,6 +108,6 @@
       1
     ]
   ],
-  "totalStateChangingCommits": 569,
-  "address": "30c0a85d-c6b1-8e8d-a889-c0e97a745ff8"
+  "totalStateChangingCommits": 570,
+  "address": "4a4db273-1d55-8c96-bb0d-f37d92f9d372"
 }

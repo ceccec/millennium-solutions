@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2532 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2536 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (607)
+### lean (611)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -631,16 +631,20 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_elementary_three_is_the_only_prime_one_less_than_a_square_in_this_range](/theorem/lean_elementary_three_is_the_only_prime_one_less_than_a_square_in_this_range) — lean elementary.lean: three_is_the_only_prime_one_less_than_a_square_in_this_range — ((List.range' 2 40).filter (fun n =&gt; isPrime (n * n - 1))) = [2] ∧ (List.range' 3 39).all (fun n =&gt; (n - 1) * (n + 1) == n * n - 1 && n - 1 &gt; 1) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `3ac0fa59-806e…`
 - [lean_elementary_eight_times_a_triangular_number_plus_one_is_an_odd_square](/theorem/lean_elementary_eight_times_a_triangular_number_plus_one_is_an_odd_square) — lean elementary.lean: eight_times_a_triangular_number_plus_one_is_an_odd_square — (List.range 60).all (fun n =&gt; 8 * (n * (n + 1) / 2) + 1 == (2 * n + 1) * (2 * n + 1)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `43411354-f7a7…`
 - [lean_elementary_the_powers_of_two_mod_nine_and_of_three_mod_seven_are_isomorphic](/theorem/lean_elementary_the_powers_of_two_mod_nine_and_of_three_mod_seven_are_isomorphic) — lean elementary.lean: the_powers_of_two_mod_nine_and_of_three_mod_seven_are_isomorphic — ((List.range 6).map (fun k =&gt; powMod 2 k 9)).eraseDups.length = 6 ∧ ((List.range 6).map (fun k =&gt; powMod 3 k 7)).eraseDups.length = 6 ∧ ((List.range 6).map (fun k =&gt; powMod 2 k 9)).all (fun x =&gt; (unitsMod 9).contains x) ∧ ((List.range 6).ma… — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c346c926-7456…`
+- [lean_elementary_the_lucas_numbers_follow_their_recurrence_and_reach_their_named_values](/theorem/lean_elementary_the_lucas_numbers_follow_their_recurrence_and_reach_their_named_values) — lean elementary.lean: the_lucas_numbers_follow_their_recurrence_and_reach_their_named_values — lucas 0 = 2 ∧ lucas 1 = 1 ∧ lucas 5 = 11 ∧ lucas 7 = 29 ∧ (List.range' 2 28).all (fun n =&gt; lucas n == lucas (n - 1) + lucas (n - 2)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `0d1e34e8-eb42…`
+- [lean_elementary_the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis](/theorem/lean_elementary_the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis) — lean elementary.lean: the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis — (List.range' 1 28).all (fun n =&gt; lucas n == fib (n - 1) + fib (n + 1)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `38750851-6260…`
+- [lean_elementary_the_pell_numbers_follow_their_recurrence_and_reach_their_named_values](/theorem/lean_elementary_the_pell_numbers_follow_their_recurrence_and_reach_their_named_values) — lean elementary.lean: the_pell_numbers_follow_their_recurrence_and_reach_their_named_values — pell 5 = 29 ∧ pell 6 = 70 ∧ (List.range' 2 24).all (fun n =&gt; pell n == 2 * pell (n - 1) + pell (n - 2)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `538c5a46-1de6…`
+- [lean_elementary_consecutive_farey_neighbours_have_unit_determinant_and_bracket_their_mediant](/theorem/lean_elementary_consecutive_farey_neighbours_have_unit_determinant_and_bracket_their_mediant) — lean elementary.lean: consecutive_farey_neighbours_have_unit_determinant_and_bracket_their_mediant — (List.range ((farey 4).length - 1)).all (fun i =&gt; let x := (farey 4).getD i (0, 1); let y := (farey 4).getD (i + 1) (0, 1) x.2 * y.1 == x.1 * y.2 + 1) ∧ (List.range ((farey 6).length - 1)).all (fun i =&gt; let x := (farey 6).getD i (0, 1); let… — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9ddbfc15-bc93…`
 
 ### other — one-of-a-kind (0)
 
 
 
-## Revoked — 1502 entries that no longer stand
+## Revoked — 1497 entries that no longer stand
 
 The ledger is append-only: an entry that stops holding is marked in place, never deleted — deleting would break the receipt chain, and rewriting a receipt is tamper. These keep their receipts and stay in the record, but they are **not citable** and have no `/theorem/` page. Grouped by the reason they went:
 
-- **1023** — dirty: not backed by a Lean proof
+- **1018** — dirty: not backed by a Lean proof
 - **443** — revoked in place: its test asserted a lexical drain (computes(boast)
 - **12** — revoked in place: circular by construction AND dependent on the removed lexical gate
 - **12** — orphaned: the theorem this key was sealed from is no longer in src/proof
@@ -648,7 +652,7 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - **1** — revoked in place: its test asserts that a list of proof-boasts written across many scripts and languages ALL drain the gate — a lexical drain assertion, and the word-list gate was removed by order, so there is no lexicon to drain and the assertion tests nothing
 - **1** — revoked in place: it asserts adjudicate('we prove all seven')
 
-## Carried — 423 withdrawn entries whose statement a proof now carries
+## Carried — 428 withdrawn entries whose statement a proof now carries
 
 Each was withdrawn for want of a Lean proof and has since been given one, at a new key. The entry is not restored: its own evidence is still a TypeScript test, and it did not hold on what it had. What the record adds is where the statement stands now.
 
@@ -693,9 +697,9 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`hasinv_d1`~~ → [`lean_families_an_inverse_mod_nine_exists_at_exactly_the_units`](/theorem/lean_families_an_inverse_mod_nine_exists_at_exactly_the_units)
 - ~~`hasinv_d2`~~ → [`lean_families_an_inverse_mod_nine_exists_at_exactly_the_units`](/theorem/lean_families_an_inverse_mod_nine_exists_at_exactly_the_units)
 
-…and 383 more.
+…and 388 more.
 
-<details><summary>List all 1502 withdrawn keys — nothing proves these</summary>
+<details><summary>List all 1497 withdrawn keys — nothing proves these</summary>
 
 - ~~`qr_u7`~~ — 7 is a quadratic residue mod 9  ·  `2a422f9b-761a…`
 - ~~`powinv_k5`~~ — u↦u^5 is an involution on the units mod 9  ·  `8e327990-c88f…`
@@ -737,10 +741,8 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`roots_cancel_n7`~~ — the 7 equally-spaced unit vectors (n-th roots of unity) cancel to the zero vector  ·  `87f482d5-8600…`
 - ~~`roots_cancel_n9`~~ — the 9 equally-spaced unit vectors (n-th roots of unity) cancel to the zero vector  ·  `8a7804c7-2d8c…`
 - ~~`a432_directions_cancel`~~ — the 9 a432 directions (digit×40°) cancel to the zero vector — full interference at the center  ·  `90b398a0-b189…`
-- ~~`farey_neighbor_F4`~~ — Farey F_4: consecutive a/b, c/d satisfy bc − ad = 1  ·  `f6d16338-2b33…`
 - ~~`farey_neighbor_F5`~~ — Farey F_5: consecutive a/b, c/d satisfy bc − ad = 1  ·  `170484c5-3b95…`
 - ~~`farey_neighbor_F6`~~ — Farey F_6: consecutive a/b, c/d satisfy bc − ad = 1  ·  `21bdf7ff-2f61…`
-- ~~`mediant_between`~~ — the mediant (a+c)/(b+d) lies strictly between a/b and c/d (Farey F_6)  ·  `b1919795-2272…`
 - ~~`quarter_turn_order4`~~ — 90° rotation (×i) has order 4: shift by 90° four times and it returns (i⁴ = 1)  ·  `02f0a928-7bda…`
 - ~~`both_games_truth_and_honesty`~~ — both games: the orbit covers the units (computes) AND "covers, solves no Clay" signs  ·  `346f2fb8-6b23…`
 - ~~`both_games_overclaim_loses`~~ — the overclaim loses both games: "the orbit solves the Clay problems" drains and proves nothing  ·  `65cc1cf8-20a5…`
@@ -812,9 +814,6 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`one_art_harmony`~~ — THE ONE ART: all art receipts fold to one order-independent harmonic root — the arts meet in one  ·  `6abed2f1-66f5…`
 - ~~`one_science_harmony`~~ — THE ONE SCIENCE: all science receipts fold to one order-independent harmonic root — the sciences meet in one  ·  `831f5688-1127…`
 - ~~`one_game_all`~~ — THE ONE GAME (all): games, arts and sciences fold to a single order-independent root — all meet in one  ·  `ea90214e-fe97…`
-- ~~`lucas_numbers`~~ — Lucas numbers L(n)=L(n-1)+L(n-2), L(0)=2, L(1)=1: L(5)=11, L(7)=29  ·  `23ba170b-7e7e…`
-- ~~`lucas_fibonacci_relation`~~ — Lucas relates to Fibonacci: L(n)=F(n-1)+F(n+1) (n=5,8)  ·  `4186c553-dcc2…`
-- ~~`pell_numbers`~~ — Pell numbers P(n)=2P(n-1)+P(n-2): P(5)=29, P(6)=70  ·  `7c858965-54af…`
 - ~~`pell_sqrt2`~~ — the √2 convergents solve x²−2y²=±1: (1,1)(3,2)(7,5)(17,12)(41,29)  ·  `f2cf267e-e349…`
 - ~~`gf4_frobenius_fixes`~~ — in 𝔽_4 every element satisfies x^(p^k)=x: a⁴ = a for all a (Frobenius^k = id)  ·  `fb7953fe-d9e3…`
 - ~~`gf4_frobenius_automorphism`~~ — Frobenius φ(a)=a² is a field automorphism of 𝔽_4: additive (freshman's dream) and multiplicative  ·  `c117a740-97d9…`
@@ -2202,4 +2201,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `70bdaa6e-a4f6-8b7b-816f-d9aa66faf651`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `a9c61e4b-f112-8f6c-b61a-4edd0385ad00`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

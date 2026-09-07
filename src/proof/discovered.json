@@ -1268,8 +1268,9 @@
     "name": "Farey F_4: consecutive a/b, c/d satisfy bc − ad = 1",
     "receipt": "f6d16338-2b33-81cc-a85c-75c5facc0cf1",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_elementary_consecutive_farey_neighbours_have_unit_determinant_and_bracket_their_mediant quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_elementary_consecutive_farey_neighbours_have_unit_determinant_and_bracket_their_mediant"
   },
   {
     "key": "farey_neighbor_F5",
@@ -1292,8 +1293,9 @@
     "name": "the mediant (a+c)/(b+d) lies strictly between a/b and c/d (Farey F_6)",
     "receipt": "b1919795-2272-8d24-81b3-9736ab80d085",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_elementary_consecutive_farey_neighbours_have_unit_determinant_and_bracket_their_mediant quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_elementary_consecutive_farey_neighbours_have_unit_determinant_and_bracket_their_mediant"
   },
   {
     "key": "fib_trinity_358",
@@ -2026,24 +2028,27 @@
     "name": "Lucas numbers L(n)=L(n-1)+L(n-2), L(0)=2, L(1)=1: L(5)=11, L(7)=29",
     "receipt": "23ba170b-7e7e-860f-9c0e-000624888dab",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_elementary_the_lucas_numbers_follow_their_recurrence_and_reach_their_named_values quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_elementary_the_lucas_numbers_follow_their_recurrence_and_reach_their_named_values"
   },
   {
     "key": "lucas_fibonacci_relation",
     "name": "Lucas relates to Fibonacci: L(n)=F(n-1)+F(n+1) (n=5,8)",
     "receipt": "4186c553-dcc2-8192-8317-87264b2d13ed",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_elementary_the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_elementary_the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis"
   },
   {
     "key": "pell_numbers",
     "name": "Pell numbers P(n)=2P(n-1)+P(n-2): P(5)=29, P(6)=70",
     "receipt": "7c858965-54af-8ebc-ab4a-3c74c8e0938b",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_elementary_the_pell_numbers_follow_their_recurrence_and_reach_their_named_values quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_elementary_the_pell_numbers_follow_their_recurrence_and_reach_their_named_values"
   },
   {
     "key": "pell_sqrt2",
@@ -18353,5 +18358,25 @@
     "key": "lean_elementary_the_powers_of_two_mod_nine_and_of_three_mod_seven_are_isomorphic",
     "name": "lean elementary.lean: the_powers_of_two_mod_nine_and_of_three_mod_seven_are_isomorphic — ((List.range 6).map (fun k => powMod 2 k 9)).eraseDups.length = 6 ∧ ((List.range 6).map (fun k => powMod 3 k 7)).eraseDups.length = 6 ∧ ((List.range 6).map (fun k => powMod 2 k 9)).all (fun x => (unitsMod 9).contains x) ∧ ((List.range 6).ma… — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "c346c926-7456-8153-b061-abef67496141"
+  },
+  {
+    "key": "lean_elementary_the_lucas_numbers_follow_their_recurrence_and_reach_their_named_values",
+    "name": "lean elementary.lean: the_lucas_numbers_follow_their_recurrence_and_reach_their_named_values — lucas 0 = 2 ∧ lucas 1 = 1 ∧ lucas 5 = 11 ∧ lucas 7 = 29 ∧ (List.range' 2 28).all (fun n => lucas n == lucas (n - 1) + lucas (n - 2)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "0d1e34e8-eb42-8a12-9713-7c7a824079f9"
+  },
+  {
+    "key": "lean_elementary_the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis",
+    "name": "lean elementary.lean: the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis — (List.range' 1 28).all (fun n => lucas n == fib (n - 1) + fib (n + 1)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "38750851-6260-8743-ab82-1b55fc9a624b"
+  },
+  {
+    "key": "lean_elementary_the_pell_numbers_follow_their_recurrence_and_reach_their_named_values",
+    "name": "lean elementary.lean: the_pell_numbers_follow_their_recurrence_and_reach_their_named_values — pell 5 = 29 ∧ pell 6 = 70 ∧ (List.range' 2 24).all (fun n => pell n == 2 * pell (n - 1) + pell (n - 2)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "538c5a46-1de6-8029-b20c-a9e849b952cd"
+  },
+  {
+    "key": "lean_elementary_consecutive_farey_neighbours_have_unit_determinant_and_bracket_their_mediant",
+    "name": "lean elementary.lean: consecutive_farey_neighbours_have_unit_determinant_and_bracket_their_mediant — (List.range ((farey 4).length - 1)).all (fun i => let x := (farey 4).getD i (0, 1); let y := (farey 4).getD (i + 1) (0, 1) x.2 * y.1 == x.1 * y.2 + 1) ∧ (List.range ((farey 6).length - 1)).all (fun i => let x := (farey 6).getD i (0, 1); let… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9ddbfc15-bc93-8519-bc57-3c19b75212ae"
   }
 ]

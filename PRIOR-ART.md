@@ -6,7 +6,7 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 616 machine-checked declarations, **607** restate work that already has an author and
+Of 620 machine-checked declarations, **611** restate work that already has an author and
 **9** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/proof/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
@@ -27,7 +27,7 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **607** |
+| attributed to named earlier work | **611** |
 | unclassified — no search performed, status unknown | **9** |
 | claimed as novel | **0** |
 
@@ -47,7 +47,7 @@ searched, where, and when. An earlier version of this page claimed novelty for 1
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 31 sources, 607 theorems
+## Restated from named earlier work — 31 sources, 611 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
@@ -58,7 +58,7 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>demand.lean</code></td><td>8</td><td>elementary number theory</td><td>the named results the search data asks for — Bézout’s identity (Étienne Bézout, 1779; Bachet, 1624), the Chinese remainder theorem (Sunzi, c. 3rd–5th century), and others named in their theorems</td></tr>
 <tr><td><code>demand2.lean</code></td><td>8</td><td>elementary number theory, second tier</td><td>Wilson’s theorem — John Wilson; first proved by Joseph-Louis Lagrange, 1771; the Catalan conjecture on consecutive perfect powers — Eugène Catalan, 1844; proved by Preda Mihăilescu, 2002</td></tr>
 <tr><td><code>demand3.lean</code></td><td>7</td><td>elementary number theory, named results</td><td>Legendre’s three-square theorem — Adrien-Marie Legendre, 1797; Carmichael numbers — Robert Carmichael, 1910; amicable pairs — known to antiquity</td></tr>
-<tr><td><code>elementary.lean</code></td><td>21</td><td>elementary number theory and combinatorial game theory</td><td>Euclid (Elements IX.36) and Euler for the even perfect numbers; the amicable pair</td></tr>
+<tr><td><code>elementary.lean</code></td><td>25</td><td>elementary number theory and combinatorial game theory</td><td>Euclid (Elements IX.36) and Euler for the even perfect numbers; the amicable pair</td></tr>
 <tr><td><code>energy.lean</code></td><td>18</td><td>electrochemistry and combustion</td><td>the laws of electrolysis — Michael Faraday, 1834; the enthalpy of combustion of hydrogen, standard physical chemistry</td></tr>
 <tr><td><code>families.lean</code></td><td>41</td><td>modular arithmetic, quantified</td><td>quantifies the ℤ/9 arithmetic above; the underlying results are Fermat’s, Euler’s and Gauss’s</td></tr>
 <tr><td><code>fnv.lean</code></td><td>13</td><td>non-cryptographic hashing</td><td>FNV-1a — Glenn Fowler, Landon Curt Noll and Phong Vo, 1991</td></tr>
@@ -98,7 +98,7 @@ which is a contribution of verification, not of discovery.
 - **elementary group theory — orbit decomposition of an order-two permutation** — 8 theorems, in `involution.lean`
 - **elementary group theory — subgroups and cosets of Z/9** — 8 theorems, in `merkaba.lean`
 - **elementary number theory** — 8 theorems, in `demand.lean`
-- **elementary number theory and combinatorial game theory** — 21 theorems, in `elementary.lean`
+- **elementary number theory and combinatorial game theory** — 25 theorems, in `elementary.lean`
 - **elementary number theory — the unit group of Z/9** — 118 theorems, in `imagined.lean`
 - **elementary number theory — the unit group of ℤ/9** — 34 theorems, in `recovered.lean`, `split.lean`
 - **elementary number theory — the unit group of ℤ/9 and the doubling orbit** — 24 theorems, in `generated.lean`, `index.lean`

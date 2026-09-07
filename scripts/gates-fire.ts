@@ -285,6 +285,13 @@ const CONTROLS: Control[] = [
   { gate: 'notice-reads-the-whole-table', cmd: 'node scripts/notice.ts', file: 'scripts/notice.ts',
     what: 'a reader that silently sees fewer instruments than the table holds, publishing a partial rights list',
     mutate: (s) => s.replace('/^\\s*[[,]\\s*\\(', '/^  , \\('), restore: 'node scripts/notice.ts' },
+  // probe.ts is the control harness itself, and a harness that cannot fail is worth nothing. The control
+  // breaks its extraction — the theorem regex is pointed at a name that is not there — and probe must say
+  // so rather than silently testing an empty string.
+  { gate: 'probe', cmd: "node scripts/probe.ts elementary.lean the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis 'fib (n - 1) + fib (n + 1)' 'fib (n - 1) + fib n'", file: 'scripts/probe.ts',
+    what: 'a control harness whose mutation never reaches the theorem, so every control it runs reports a pass',
+    mutate: (s) => s.replace('body = body.replace(find, repl ?? \'\')', 'body = body.replace(find, find)') },
+
   // A generator owns covered.json and, twice in this repository, a generator has overwritten a record a
   // person put in its output. The control reverts imagine.ts to replacing the file instead of merging into
   // it; covered-gate runs the generator and must notice the erasure.

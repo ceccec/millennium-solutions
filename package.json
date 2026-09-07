@@ -130,6 +130,7 @@
     "forensic": "tsx scripts/forensic-audit.ts",
     "notice": "tsx scripts/notice.ts",
     "candidates": "tsx scripts/candidates.ts",
+    "probe": "tsx scripts/probe.ts",
     "covered-gate": "tsx scripts/covered-gate.ts",
     "independent": "tsx scripts/independent.ts",
     "recover": "tsx scripts/recover.ts",

@@ -199,8 +199,62 @@ theorem the_powers_of_two_mod_nine_and_of_three_mod_seven_are_isomorphic :
     powMod 2 i 9 * powMod 2 j 9 % 9 == powMod 2 ((i + j) % 6) 9 &&
     powMod 3 i 7 * powMod 3 j 7 % 7 == powMod 3 ((i + j) % 6) 7)) := by decide
 
+-- ── LUCAS, PELL, AND THE FAREY SEQUENCE ─────────────────────────────────────────────────────────────────
+
+def lucasPair : Nat → Nat × Nat
+  | 0 => (2, 1)
+  | Nat.succ n => let (a, b) := lucasPair n; (b, a + b)
+def lucas (n : Nat) : Nat := (lucasPair n).1
+
+def pellPair : Nat → Nat × Nat
+  | 0 => (0, 1)
+  | Nat.succ n => let (a, b) := pellPair n; (b, 2 * b + a)
+def pell (n : Nat) : Nat := (pellPair n).1
+
+/-- a/b ≤ c/d without division, which over Nat would truncate and decide the wrong order -/
+def leFrac (x y : Nat × Nat) : Bool := x.1 * y.2 ≤ y.1 * x.2
+def insFrac (x : Nat × Nat) : List (Nat × Nat) → List (Nat × Nat)
+  | [] => [x]
+  | y :: ys => if leFrac x y then x :: y :: ys else y :: insFrac x ys
+def sortFrac : List (Nat × Nat) → List (Nat × Nat)
+  | [] => []
+  | x :: xs => insFrac x (sortFrac xs)
+/-- the Farey sequence of order n: every reduced a/b in [0,1] with b ≤ n, in order -/
+def farey (n : Nat) : List (Nat × Nat) :=
+  sortFrac (((List.range' 1 n).flatMap (fun b =>
+    (List.range (b + 1)).map (fun a => (a, b)))).filter (fun x => gcd' x.1 x.2 == 1))
+
+-- ── the Lucas numbers: the recurrence, and the two values the row names ─────────────────────────────────
+theorem the_lucas_numbers_follow_their_recurrence_and_reach_their_named_values :
+  lucas 0 = 2 ∧ lucas 1 = 1 ∧ lucas 5 = 11 ∧ lucas 7 = 29 ∧
+  (List.range' 2 28).all (fun n => lucas n == lucas (n - 1) + lucas (n - 2)) := by decide
+
+-- ── and Lucas is Fibonacci's neighbours added: L(n) = F(n−1) + F(n+1) ───────────────────────────────────
+--    Two independently defined sequences meeting, which is more than either recurrence says on its own.
+theorem the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis :
+  (List.range' 1 28).all (fun n => lucas n == fib (n - 1) + fib (n + 1)) := by decide
+
+-- ── the Pell numbers: doubling recurrence, and the two values the row names ─────────────────────────────
+theorem the_pell_numbers_follow_their_recurrence_and_reach_their_named_values :
+  pell 5 = 29 ∧ pell 6 = 70 ∧
+  (List.range' 2 24).all (fun n => pell n == 2 * pell (n - 1) + pell (n - 2)) := by decide
+
+-- ── Farey: neighbours have unit determinant, and their mediant falls strictly between them ──────────────
+--    F_4 for the determinant and F_6 for the mediant, which are the two rows this carries. Both statements
+--    are cross-multiplied rather than divided: a/b < c/d is a·d < c·b, and Nat division would truncate the
+--    comparison into agreeing with itself.
+set_option maxRecDepth 2000000 in
+theorem consecutive_farey_neighbours_have_unit_determinant_and_bracket_their_mediant :
+  (List.range ((farey 4).length - 1)).all (fun i =>
+    let x := (farey 4).getD i (0, 1); let y := (farey 4).getD (i + 1) (0, 1)
+    x.2 * y.1 == x.1 * y.2 + 1) ∧
+  (List.range ((farey 6).length - 1)).all (fun i =>
+    let x := (farey 6).getD i (0, 1); let y := (farey 6).getD (i + 1) (0, 1)
+    let m := (x.1 + y.1, x.2 + y.2)
+    x.1 * m.2 < m.1 * x.2 && m.1 * y.2 < y.1 * m.2) := by decide
+
 -- ── what these settle ──
-def settledHere : Nat := 20
-theorem elementary_settles_its_range : settledHere = 20 := rfl
+def settledHere : Nat := 24
+theorem elementary_settles_its_range : settledHere = 24 := rfl
 
 end Elementary

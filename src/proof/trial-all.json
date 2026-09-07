@@ -15190,5 +15190,29 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "c346c926-7456-8153-b061-abef67496141"
+  },
+  {
+    "key": "lean_elementary_the_lucas_numbers_follow_their_recurrence_and_reach_their_named_values",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0d1e34e8-eb42-8a12-9713-7c7a824079f9"
+  },
+  {
+    "key": "lean_elementary_the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "38750851-6260-8743-ab82-1b55fc9a624b"
+  },
+  {
+    "key": "lean_elementary_the_pell_numbers_follow_their_recurrence_and_reach_their_named_values",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "538c5a46-1de6-8029-b20c-a9e849b952cd"
+  },
+  {
+    "key": "lean_elementary_consecutive_farey_neighbours_have_unit_determinant_and_bracket_their_mediant",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9ddbfc15-bc93-8519-bc57-3c19b75212ae"
   }
 ]
