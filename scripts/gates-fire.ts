@@ -285,6 +285,14 @@ const CONTROLS: Control[] = [
   { gate: 'notice-reads-the-whole-table', cmd: 'node scripts/notice.ts', file: 'scripts/notice.ts',
     what: 'a reader that silently sees fewer instruments than the table holds, publishing a partial rights list',
     mutate: (s) => s.replace('/^\\s*[[,]\\s*\\(', '/^  , \\('), restore: 'node scripts/notice.ts' },
+  // ALSO FOUND BY scripts/blind.ts: a seeded trial repointed a /theorem/ link at a key that is not live and
+  // the routine chain stayed green, at two separate seeds. The audit existed and ran only at release and on
+  // staged files — so a drifted citation in a file nobody was committing was invisible until release day.
+  { gate: 'cite-audit', cmd: 'node scripts/cite-audit.ts', file: 'CHALLENGES.md',
+    what: 'a published /theorem/ link repointed at a key the ledger does not stand behind',
+    mutate: (s) => s.replace(/\/theorem\/[a-z0-9_]+/, '/theorem/not_a_live_key_at_all'),
+    restore: 'node scripts/challenges.ts' },
+
   // FOUND BY scripts/blind.ts, NOT BY ME. A seeded trial moved one digit in the rights table and the whole
   // chain stayed green: EPC Art. 52 — what may be patented — became Art. 53, a different provision. The
   // control is that exact drift.

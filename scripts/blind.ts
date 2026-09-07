@@ -91,7 +91,12 @@ const mutate = (file: string, src: string): Trial | null => {
   return null
 }
 
-const CHAIN = 'npm run -s gates'
+// WHICH CHAIN IS BEING MEASURED IS PART OF THE RESULT. The first run measured `gates`, which does not run
+// the Lean kernel — so a flag flipped in a table the kernel DECIDES came back as a miss, and the reported
+// rate was about my choice of chain as much as about the gates. `ci:local` is what runs on every commit, so
+// that is the default and the report names it. A detection rate without the chain beside it is not a figure.
+const chainArg = process.argv.indexOf('--chain')
+const CHAIN = chainArg >= 0 ? process.argv[chainArg + 1] : 'npm run -s ci:local'
 const caught: Trial[] = []
 const missed: Trial[] = []
 const skipped: string[] = []
@@ -116,6 +121,7 @@ process.stdout.write('\n\n')
 
 const tried = caught.length + missed.length
 console.log(`blind — a seeded trial of what the gates catch when nobody chooses the defect:\n`)
+console.log(`  chain measured                      ${CHAIN}`)
 console.log(`  seed                                ${SEED}`)
 console.log(`  perturbations applied               ${tried}`)
 console.log(`  caught by \`${CHAIN}\`            ${caught.length}`)
