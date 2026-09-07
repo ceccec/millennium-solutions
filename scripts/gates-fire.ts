@@ -285,6 +285,14 @@ const CONTROLS: Control[] = [
   { gate: 'notice-reads-the-whole-table', cmd: 'node scripts/notice.ts', file: 'scripts/notice.ts',
     what: 'a reader that silently sees fewer instruments than the table holds, publishing a partial rights list',
     mutate: (s) => s.replace('/^\\s*[[,]\\s*\\(', '/^  , \\('), restore: 'node scripts/notice.ts' },
+  // The neighbour probe answers none / some / UNKNOWN, and the third is the one that matters: its first
+  // version caught every failure as zero, so on this host — where macOS pgrep has no -c flag — it reported
+  // an empty machine on every call and the term never fired for a moment. The control collapses unknown
+  // back into zero and requires lanes-check to refuse.
+  { gate: 'lanes-check', cmd: 'node scripts/lanes-check.ts', file: 'src/api/lanes.ts',
+    what: 'a neighbour count that could not be measured reported as zero, so the budget claims a machine somebody else is already using',
+    mutate: (s) => s.replace('return null   // anything else', 'return 0   // anything else') },
+
   // ALSO FOUND BY scripts/blind.ts: a seeded trial repointed a /theorem/ link at a key that is not live and
   // the routine chain stayed green, at two separate seeds. The audit existed and ran only at release and on
   // staged files — so a drifted citation in a file nobody was committing was invisible until release day.

@@ -29,6 +29,7 @@ const leanRun = promisify(execFile)
 import { tmpdir, availableParallelism } from 'node:os'
 import { join } from 'node:path'
 import { leanTheorems, leanFiles } from '../src/api/index.ts'
+import { laneBudget } from '../src/api/lanes.ts'
 
 type T = { name: string; file: string; tactic: string; statement: string; namespace: string }
 const thms = (leanTheorems() as T[]).filter((t) => /decide/.test(t.tactic))
@@ -103,7 +104,10 @@ const messages = (log: string): { line: number; text: string }[] => {
 // The deep half compiled one file at a time and took five and a half minutes on a ten-core machine. Files
 // are independent — each carries its own definitions — so they run in lanes, and a file whose source has not
 // changed reuses its verdict. scripts/lean.ts has done both for a while; this had neither.
-const LANES = Math.max(1, Number(process.env.VACUITY_LANES) || (availableParallelism?.() ?? 4))
+// Bounded by memory and by neighbours, not by cores — see src/api/lanes.ts. These probe files are far
+// lighter than a full source file, so the per-job figure is smaller and the budget is usually the cores.
+const BUDGET = laneBudget({ perJobMB: Number(process.env.VACUITY_JOB_MB) || 700, procName: 'lean', envLanes: process.env.VACUITY_LANES })
+const LANES = Math.max(1, BUDGET.lanes)
 const CACHE = '.vacuity-cache.json'
 type Verdict = { hash: string; empty: string[]; unchecked: [string, string][]; insensitive: string[]; untested: [string, string][]; tried?: number }
 const cache: Record<string, Verdict> = existsSync(CACHE) ? JSON.parse(readFileSync(CACHE, 'utf8')) : {}
@@ -298,6 +302,7 @@ empty.sort((a, b) => byName(a.t, b.t))
 
 console.log(`vacuity — theorems whose quantifier ranges over nothing:\n`)
 console.log(`  theorems closing by decide          ${thms.length}`)
+console.log(`  lanes                               ${LANES} — ${BUDGET.why}`)
 console.log(`  domain readable, and checked        ${readable.length - unchecked.length}`)
 console.log(DEEP
   ? `  no quantifier — falsified instead   ${noQuantifier.length} (${perturbed} had a mutant to try)`

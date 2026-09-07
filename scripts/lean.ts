@@ -30,6 +30,7 @@ type Cached = { hash: string; format: number; ok: boolean; line: string; theorem
 const cache: Record<string, Cached> = !FULL && existsSync(CACHE) ? JSON.parse(readFileSync(CACHE, 'utf8')) : {}
 const sha = (t: string) => createHash('sha256').update(t).digest('hex')
 import { execSync, execFile } from 'node:child_process'
+import { laneBudget } from '../src/api/lanes.ts'
 import { promisify } from 'node:util'
 import { availableParallelism } from 'node:os'
 const run = promisify(execFile)
@@ -69,7 +70,12 @@ const rows: string[] = []
 // imports are already compiled to .olean above — so elaborating them one at a time left every core but one
 // idle for the better part of a minute. Results are collected by index and printed in the original order, so
 // the output is identical to the sequential run and a diff of two builds still means something.
-const LANES = Math.max(1, Math.min(Number(process.env.LEAN_LANES) || (availableParallelism?.() ?? 4), files.length))
+// LANES ARE BOUNDED BY MEMORY, NOT BY CORES. Measured on this host, one lean process elaborating
+// families.lean peaks near 2.9 GB — so ten lanes is 29 GB of demand on a 32 GB machine and the run swaps
+// while every core reads as busy. The budget also subtracts lean processes already running, whoever started
+// them, so two sessions checking at once do not each claim the whole machine. See src/api/lanes.ts.
+const BUDGET = laneBudget({ perJobMB: Number(process.env.LEAN_JOB_MB) || 2900, procName: 'lean', envLanes: process.env.LEAN_LANES })
+const LANES = Math.max(1, Math.min(BUDGET.lanes, files.length))
 const ordered: string[] = new Array(files.length)
 let next = 0
 
@@ -136,4 +142,5 @@ rows.push(...ordered.filter(Boolean))
 writeFileSync(CACHE, JSON.stringify(cache, null, 2) + '\n')
 console.log(rows.join('\n'))
 console.log(`\n  ${files.length} files · ${total} theorems · ${bad ? bad + ' FAILING' : 'all clean'}`)
+console.log(`  ${LANES} lane(s): ${BUDGET.why}`)
 process.exit(bad ? 1 : 0)
