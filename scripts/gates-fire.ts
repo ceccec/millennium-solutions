@@ -285,6 +285,14 @@ const CONTROLS: Control[] = [
   { gate: 'notice-reads-the-whole-table', cmd: 'node scripts/notice.ts', file: 'scripts/notice.ts',
     what: 'a reader that silently sees fewer instruments than the table holds, publishing a partial rights list',
     mutate: (s) => s.replace('/^\\s*[[,]\\s*\\(', '/^  , \\('), restore: 'node scripts/notice.ts' },
+  // A generator owns covered.json and, twice in this repository, a generator has overwritten a record a
+  // person put in its output. The control reverts imagine.ts to replacing the file instead of merging into
+  // it; covered-gate runs the generator and must notice the erasure.
+  { gate: 'covered-gate', cmd: 'node scripts/covered-gate.ts', file: 'scripts/imagine.ts',
+    what: 'a generator silently erasing the record of where a dropped proof went',
+    mutate: (s) => s.replace('const merged = { ...prior, ...Object.fromEntries([...coveredBy]) }', 'const merged = Object.fromEntries([...coveredBy])'),
+    restore: 'node scripts/imagine.ts --emit' },
+
   // The claim is that this deposit can be checked without an account, a key or a model. The control plants
   // a network call on the verification path — if independent.ts does not go red, the claim is unbacked.
   { gate: 'independent', cmd: 'node scripts/independent.ts', file: 'scripts/forensics.ts',

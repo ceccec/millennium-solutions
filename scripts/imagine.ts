@@ -180,7 +180,19 @@ const t2 = t3.filter((c) => {
   }
   return true
 })
-writeFileSync('src/proof/covered.json', JSON.stringify(Object.fromEntries([...coveredBy].sort()), null, 2) + '\n')
+// MERGE, DO NOT REPLACE. This wrote the file from `coveredBy` alone and erased every entry it had not just
+// produced — a hand-written record of what carries `roots_of_unity_cancel` survived exactly until the next
+// `--emit`, and gates-fire found it by running one. That is the SECOND generator here to overwrite a record
+// a person put in its output: lean-gen.ts regenerated a prior-art header and replaced a credited attribution
+// with a claim of no known prior art. Same shape, different file, and fixing the first instance did not fix
+// the shape. An entry this run did not produce is somebody's record of where a proof went; it is kept, and a
+// key this run DOES produce wins, because for that key this run is the newer evidence.
+{
+  const prior: Record<string, string> = existsSync('src/proof/covered.json')
+    ? JSON.parse(readFileSync('src/proof/covered.json', 'utf8')) : {}
+  const merged = { ...prior, ...Object.fromEntries([...coveredBy]) }
+  writeFileSync('src/proof/covered.json', JSON.stringify(Object.fromEntries(Object.entries(merged).sort()), null, 2) + '\n')
+}
 const overlap = t3.length - t2.length
 
 // "new" means NOT ALREADY IN THE HAND-WRITTEN PROOFS. imagined.lean is excluded from its own corpus so that
