@@ -61,8 +61,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free and axiom-free, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 622 of them across 32 files and
-7 wings; 613 close by exhaustion over a stated finite domain and the
+(\texttt{npm run latex-gate}). There are 628 of them across 32 files and
+7 wings; 619 close by exhaustion over a stated finite domain and the
 remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -526,8 +526,33 @@ remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 1,458 cases. \hfill$\square$
 
+\begin{theorem}[\texttt{the\_interior\_and\_exterior\_angles\_are\_n\_straight\_angles}]
+\[ \forall n \in \{3,\dots,32\},\; n - 2 \cdot 180 + 360 = n \cdot 180 \land \frac{180 \cdot 3 - 2}{3} = 60 \land \frac{180 \cdot 5 - 2}{5} = 108 \land \frac{180 \cdot 8 - 2}{8} = 135 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 30 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_knight\_has\_exactly\_eight\_leaps\_and\_every\_one\_flips\_the\_colour}]
+\[ \left|\mathrm{knightSteps}\right| = 8 \land \left|\operatorname{dedup}\left(\mathrm{knightSteps}\right)\right| = 8 \land \forall p \in \mathrm{knightSteps},\; p_{1} + p_{2} \bmod 2 = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_golden\_beatty\_identity\_holds\_across\_the\_range}]
+\[ \forall n \in \{1,\dots,40\},\; \mathrm{upperWythoff}\mathopen{}\left(n\right) - \mathrm{lowerWythoff}\mathopen{}\left(n\right) = n \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 40 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_partition\_and\_bell\_numbers\_count\_what\_they\_claim\_to\_count}]
+\[ \left|\mathrm{partitionsOf}\mathopen{}\left(5\right)\right| = 7 \land \left|\mathrm{partitionsOf}\mathopen{}\left(7\right)\right| = 15 \land \left|\mathrm{partitionsOf}\mathopen{}\left(10\right)\right| = 42 \land \forall n \in \{0,\dots,5\},\; \left|\mathrm{rgs}\mathopen{}\left(n\right)\right| = \mathrm{bellOf}\mathopen{}\left(n\right) \land \mathrm{bellOf}\mathopen{}\left(3\right) = 5 \land \mathrm{bellOf}\mathopen{}\left(4\right) = 15 \land \mathrm{bellOf}\mathopen{}\left(5\right) = 52 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_unit\_graph\_is\_complete\_bipartite\_between\_the\_two\_tetrahedra}]
+\[ \left|\mathrm{tetOf}\mathopen{}\left(1\right)\right| = 3 \land \left|\mathrm{tetOf}\mathopen{}\left(2\right)\right| = 3 \land \forall d \in \mathrm{tetOf}\mathopen{}\left(1\right),\; \left|\mathrm{nbrs}\mathopen{}\left(\mathrm{unitsMod}\mathopen{}\left(9\right),\,d\right)\right| = 3 \land \forall t \in \mathrm{nbrs}\mathopen{}\left(\mathrm{unitsMod}\mathopen{}\left(9\right),\,d\right),\; t \in \mathrm{tetOf}\mathopen{}\left(2\right) \land \forall d \in \mathrm{tetOf}\mathopen{}\left(2\right),\; \left|\mathrm{nbrs}\mathopen{}\left(\mathrm{unitsMod}\mathopen{}\left(9\right),\,d\right)\right| = 3 \land \forall t \in \mathrm{nbrs}\mathopen{}\left(\mathrm{unitsMod}\mathopen{}\left(9\right),\,d\right),\; t \in \mathrm{tetOf}\mathopen{}\left(1\right) \land \forall d \in \mathrm{unitsMod}\mathopen{}\left(9\right),\; \forall x \in \mathrm{nbrs}\mathopen{}\left(\mathrm{unitsMod}\mathopen{}\left(9\right),\,d\right),\; \forall y \in \mathrm{nbrs}\mathopen{}\left(\mathrm{unitsMod}\mathopen{}\left(9\right),\,d\right),\; x = y \lor \lnot y \in \mathrm{nbrs}\mathopen{}\left(\mathrm{unitsMod}\mathopen{}\left(9\right),\,x\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
 \begin{theorem}[\texttt{elementary\_settles\_its\_range}]
-\[ \mathrm{settledHere} = 26 \]
+\[ \mathrm{settledHere} = 31 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 
@@ -1397,6 +1422,11 @@ remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \begin{theorem}[\texttt{the\_equation\_balances\_by\_mass}]
 \[ 2 \cdot \mathrm{mgH2O} = 2 \cdot \mathrm{mgH2} + \mathrm{mgO2} \land 2 \cdot \mathrm{mgH2O} = 36030 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_equation\_balances\_by\_atom\_count}]
+\[ 2 \cdot \mathrm{atomsH2}_{1} + \mathrm{atomsO2}_{1} = 2 \cdot \mathrm{atomsH2O}_{1} \land 2 \cdot \mathrm{atomsH2}_{2} + \mathrm{atomsO2}_{2} = 2 \cdot \mathrm{atomsH2O}_{2} \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 

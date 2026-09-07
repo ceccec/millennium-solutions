@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2538 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2543 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (613)
+### lean (619)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -274,6 +274,7 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_energy_the_loop_returns_less_than_it_took](/theorem/lean_energy_the_loop_returns_less_than_it_took) — lean energy.lean: the_loop_returns_less_than_it_took — burnYield &lt; splitCost ∧ burnYield * 100 / splitCost = 23 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `8229c511-d4bd…`
 - [lean_energy_a_chain_of_efficiencies_can_only_lose](/theorem/lean_energy_a_chain_of_efficiencies_can_only_lose) — lean energy.lean: a_chain_of_efficiencies_can_only_lose — (List.range 101).all (fun a =&gt; (List.range 101).all (fun b =&gt; a * b ≤ 100 * a && a * b ≤ 100 * b)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `34cbdadb-77a7…`
 - [lean_energy_as_a_purifier_the_loop_costs_a_thousandfold](/theorem/lean_energy_as_a_purifier_the_loop_costs_a_thousandfold) — lean energy.lean: as_a_purifier_the_loop_costs_a_thousandfold — splitCost / waterOut = 5777 ∧ splitCost / waterOut &gt; roPerLitre * 1000 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `840c66b6-b891…`
+- [lean_energy_the_equation_balances_by_atom_count](/theorem/lean_energy_the_equation_balances_by_atom_count) — lean energy.lean: the_equation_balances_by_atom_count — (2 * 2 = 2 * 2) ∧ (2 * 1 = 1 * 2) ∧ 4 = 2 * 2 ∧ 2 = 1 * 2 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `ecfd70b1-b35b…`
 - [lean_energy_the_equation_balances_by_mass](/theorem/lean_energy_the_equation_balances_by_mass) — lean energy.lean: the_equation_balances_by_mass — 2 * mgH2O = 2 * mgH2 + mgO2 ∧ 2 * mgH2O = 36030 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `debf920f-a945…`
 - [lean_energy_the_gases_are_two_to_one_and_consume_each_other_exactly](/theorem/lean_energy_the_gases_are_two_to_one_and_consume_each_other_exactly) — lean energy.lean: the_gases_are_two_to_one_and_consume_each_other_exactly — 2 * 1 = 2 ∧ (2 * 100 / 3 = 66) ∧ (1 * 100 / 3 = 33) ∧ ¬ (1 * 1 = 2) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `4411df61-18c7…`
 - [lean_energy_hydrogen_is_a_ninth_of_the_mass_and_oxygen_the_rest](/theorem/lean_energy_hydrogen_is_a_ninth_of_the_mass_and_oxygen_the_rest) — lean energy.lean: hydrogen_is_a_ninth_of_the_mass_and_oxygen_the_rest — mgO2 * 100 / (2 * mgH2) = 793 ∧ (2 * mgH2) * 10000 / (2 * mgH2O) = 1119 ∧ mgO2 * 10000 / (2 * mgH2O) = 8880 ∧ 1119 + 8880 = 9999 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `585ebc79-3eac…`
@@ -637,24 +638,29 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_elementary_consecutive_farey_neighbours_have_unit_determinant_and_bracket_their_mediant](/theorem/lean_elementary_consecutive_farey_neighbours_have_unit_determinant_and_bracket_their_mediant) — lean elementary.lean: consecutive_farey_neighbours_have_unit_determinant_and_bracket_their_mediant — (List.range ((farey 4).length - 1)).all (fun i =&gt; let x := (farey 4).getD i (0, 1); let y := (farey 4).getD (i + 1) (0, 1) x.2 * y.1 == x.1 * y.2 + 1) ∧ (List.range ((farey 6).length - 1)).all (fun i =&gt; let x := (farey 6).getD i (0, 1); let… — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9ddbfc15-bc93…`
 - [lean_elementary_the_units_are_three_regular_under_doubling_halving_and_reflection](/theorem/lean_elementary_the_units_are_three_regular_under_doubling_halving_and_reflection) — lean elementary.lean: the_units_are_three_regular_under_doubling_halving_and_reflection — degreeSet (unitsMod 9) = [3] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `dada3608-c5a8…`
 - [lean_elementary_the_whole_ring_is_not_regular_and_the_triad_is_why](/theorem/lean_elementary_the_whole_ring_is_not_regular_and_the_triad_is_why) — lean elementary.lean: the_whole_ring_is_not_regular_and_the_triad_is_why — degreeSet (List.range 9) ≠ [3] ∧ (nbrs (List.range 9) 0).length = 0 ∧ ([3, 6] : List Nat).all (fun d =&gt; (nbrs (List.range 9) d).length == 1) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `32458786-9afb…`
+- [lean_elementary_the_interior_and_exterior_angles_are_n_straight_angles](/theorem/lean_elementary_the_interior_and_exterior_angles_are_n_straight_angles) — lean elementary.lean: the_interior_and_exterior_angles_are_n_straight_angles — (List.range' 3 30).all (fun n =&gt; (n - 2) * 180 + 360 == n * 180) ∧ 180 * (3 - 2) / 3 = 60 ∧ 180 * (5 - 2) / 5 = 108 ∧ 180 * (8 - 2) / 8 = 135 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c99b0f2c-a4a8…`
+- [lean_elementary_a_knight_has_exactly_eight_leaps_and_every_one_flips_the_colour](/theorem/lean_elementary_a_knight_has_exactly_eight_leaps_and_every_one_flips_the_colour) — lean elementary.lean: a_knight_has_exactly_eight_leaps_and_every_one_flips_the_colour — knightSteps.length = 8 ∧ knightSteps.eraseDups.length = 8 ∧ knightSteps.all (fun p =&gt; (p.1 + p.2) % 2 == 1) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `5b8f3d53-2030…`
+- [lean_elementary_the_golden_beatty_identity_holds_across_the_range](/theorem/lean_elementary_the_golden_beatty_identity_holds_across_the_range) — lean elementary.lean: the_golden_beatty_identity_holds_across_the_range — (List.range' 1 40).all (fun n =&gt; upperWythoff n - lowerWythoff n == n) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `b27a7477-6920…`
+- [lean_elementary_the_partition_and_bell_numbers_count_what_they_claim_to_count](/theorem/lean_elementary_the_partition_and_bell_numbers_count_what_they_claim_to_count) — lean elementary.lean: the_partition_and_bell_numbers_count_what_they_claim_to_count — (partitionsOf 5).length = 7 ∧ (partitionsOf 7).length = 15 ∧ (partitionsOf 10).length = 42 ∧ (List.range 6).all (fun n =&gt; (rgs n).length == bellOf n) ∧ bellOf 3 = 5 ∧ bellOf 4 = 15 ∧ bellOf 5 = 52 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d7dd93f3-efbe…`
+- [lean_elementary_the_unit_graph_is_complete_bipartite_between_the_two_tetrahedra](/theorem/lean_elementary_the_unit_graph_is_complete_bipartite_between_the_two_tetrahedra) — lean elementary.lean: the_unit_graph_is_complete_bipartite_between_the_two_tetrahedra — (tetOf 1).length = 3 ∧ (tetOf 2).length = 3 ∧ (tetOf 1).all (fun d =&gt; (nbrs (unitsMod 9) d).length == 3 && (nbrs (unitsMod 9) d).all (fun t =&gt; (tetOf 2).contains t)) ∧ (tetOf 2).all (fun d =&gt; (nbrs (unitsMod 9) d).length == 3 && (nbrs (unit… — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `19e4c01e-8d78…`
 
 ### other — one-of-a-kind (0)
 
 
 
-## Revoked — 1497 entries that no longer stand
+## Revoked — 1489 entries that no longer stand
 
 The ledger is append-only: an entry that stops holding is marked in place, never deleted — deleting would break the receipt chain, and rewriting a receipt is tamper. These keep their receipts and stay in the record, but they are **not citable** and have no `/theorem/` page. Grouped by the reason they went:
 
-- **1018** — dirty: not backed by a Lean proof
+- **1011** — dirty: not backed by a Lean proof
 - **443** — revoked in place: its test asserted a lexical drain (computes(boast)
 - **12** — revoked in place: circular by construction AND dependent on the removed lexical gate
-- **12** — orphaned: the theorem this key was sealed from is no longer in src/proof
+- **11** — orphaned: the theorem this key was sealed from is no longer in src/proof
 - **10** — revoked in place: circular by construction — the test defines the answer it checks, proving a declaration rather than a fact
 - **1** — revoked in place: its test asserts that a list of proof-boasts written across many scripts and languages ALL drain the gate — a lexical drain assertion, and the word-list gate was removed by order, so there is no lexicon to drain and the assertion tests nothing
 - **1** — revoked in place: it asserts adjudicate('we prove all seven')
 
-## Carried — 428 withdrawn entries whose statement a proof now carries
+## Carried — 435 withdrawn entries whose statement a proof now carries
 
 Each was withdrawn for want of a Lean proof and has since been given one, at a new key. The entry is not restored: its own evidence is still a TypeScript test, and it did not hold on what it had. What the record adds is where the statement stands now.
 
@@ -699,9 +705,9 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`hasinv_d1`~~ → [`lean_families_an_inverse_mod_nine_exists_at_exactly_the_units`](/theorem/lean_families_an_inverse_mod_nine_exists_at_exactly_the_units)
 - ~~`hasinv_d2`~~ → [`lean_families_an_inverse_mod_nine_exists_at_exactly_the_units`](/theorem/lean_families_an_inverse_mod_nine_exists_at_exactly_the_units)
 
-…and 388 more.
+…and 395 more.
 
-<details><summary>List all 1497 withdrawn keys — nothing proves these</summary>
+<details><summary>List all 1489 withdrawn keys — nothing proves these</summary>
 
 - ~~`qr_u7`~~ — 7 is a quadratic residue mod 9  ·  `2a422f9b-761a…`
 - ~~`powinv_k5`~~ — u↦u^5 is an involution on the units mod 9  ·  `8e327990-c88f…`
@@ -749,7 +755,6 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`both_games_truth_and_honesty`~~ — both games: the orbit covers the units (computes) AND "covers, solves no Clay" signs  ·  `346f2fb8-6b23…`
 - ~~`both_games_overclaim_loses`~~ — the overclaim loses both games: "the orbit solves the Clay problems" drains and proves nothing  ·  `65cc1cf8-20a5…`
 - ~~`both_games_358`~~ — the 3-5-8 trinity plays both: 3+5=8 computes AND "3+5=8, proving no open conjecture" signs  ·  `c26cc4c6-7c93…`
-- ~~`wythoff_identity`~~ — Wythoff: ⌊nφ²⌋ − ⌊nφ⌋ = n for all n ≤ 20 (the golden-ratio Beatty identity)  ·  `5526fdb5-4a24…`
 - ~~`arts_triad_rgb_primaries`~~ — the triad {3,6,9} maps to the RGB primary hues: 0°(red), 120°(green), 240°(blue)  ·  `316f831d-95da…`
 - ~~`arts_cmy_complements_rgb`~~ — CMY are the 180° complements of RGB: each primary hue + 180° is a secondary hue  ·  `13b5af77-bfc6…`
 - ~~`arts_golden_proportion`~~ — the golden ratio (aesthetic proportion) satisfies φ² = φ + 1  ·  `48801162-b59d…`
@@ -797,14 +802,8 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`nowaste_order_independent`~~ — a set and any reordering fold to one root — no duplicate root for the same content  ·  `23112077-b200…`
 - ~~`nowaste_memo_recycles`~~ — memoization recycles: keyed by content, a computation runs once and is reused thereafter  ·  `f7698d60-8475…`
 - ~~`discovery_chain`~~ — the discovery chain is tamper-evident: a falsified early link changes every downstream receipt  ·  `b24d6d56-123d…`
-- ~~`partition_p_n`~~ — the partition function p(n) via DP: p(5)=7, p(7)=15, p(10)=42  ·  `d90db9a6-f922…`
-- ~~`bell_numbers`~~ — the Bell numbers via the Bell triangle: B(3)=5, B(4)=15, B(5)=52  ·  `fb027062-15fd…`
-- ~~`geom_interior_angles_358`~~ — regular n-gon interior angle (n−2)·180/n: triangle 60°, pentagon 108°, octagon 135° (sides 3,5,8)  ·  `13cf8dfd-af21…`
 - ~~`geom_dihedral_358`~~ — the regular 3-, 5-, 8-gon has dihedral symmetry of order 2n: D₃=6, D₅=10, D₈=16  ·  `9fd2e0db-cb62…`
 - ~~`geom_pentagon_golden`~~ — the pentagon's diagonal-to-side ratio is the golden ratio φ (2·cos36° = φ)  ·  `2baca20d-9c58…`
-- ~~`geom_exterior_360`~~ — the exterior angles of any regular n-gon sum to 360° (sides 3, 5, 8)  ·  `ef35271f-c232…`
-- ~~`chess_knight_8_moves`~~ — a knight has exactly 8 leaps — the (±1,±2)/(±2,±1) moves  ·  `6dcd739d-87a9…`
-- ~~`chess_knight_color_flip`~~ — a knight's leap always changes square colour (the parity of r+c flips)  ·  `81566667-a452…`
 - ~~`tarot_holds_theorems`~~ — a reading is a prediction the gate drains; each tarot card here holds a theorem, not a fortune  ·  `9c03a373-918f…`
 - ~~`tarot_theorem_encoding`~~ — every theorem maps to a deterministic 3-card tarot combination via its content-address (encoding, not fortune)  ·  `34f750b8-b626…`
 - ~~`tarot_major_of_theorem`~~ — a theorem selects one of the 22 major arcana by its content-address (hex sum mod 22) — reproducible, not a reading  ·  `eb0e5a3d-d84c…`
@@ -2188,7 +2187,6 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`pure_ts_pbkdf2_hmac_sha256_truncates_a_partial_final_block`~~ — pure-TS PBKDF2-HMAC-SHA256 truncates a partial final block — a twenty-byte derived key is not a whole number of hashes; 0/7  ·  `cf6f888e-151d…`
 - ~~`the_pure_ts_aead_rejects_a_flipped_additional_data_bit`~~ — the pure-TS ChaCha20-Poly1305 AEAD rejects a flipped additional-data bit — the aad is authenticated, not merely carried; 0/7  ·  `57305d0f-ed04…`
 - ~~`the_pure_ts_aead_tag_depends_on_the_additional_data`~~ — the pure-TS ChaCha20-Poly1305 tag depends on the additional data — the same plaintext under different aad tags differently; 0/7  ·  `5daa79d5-5154…`
-- ~~`lean_energy_the_equation_balances_by_atom_count`~~ — lean energy.lean: the_equation_balances_by_atom_count — (2 * 2 = 2 * 2) ∧ (2 * 1 = 1 * 2) ∧ 4 = 2 * 2 ∧ 2 = 1 * 2 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `ecfd70b1-b35b…`
 - ~~`lean_mechanical_geom_exterior_360`~~ — lean mechanical.lean: geom_exterior_360 — [3, 5, 8].all (fun n =&gt; n * (360 / n) == 360) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `b484eaf3-88c5…`
 - ~~`lean_priorart_novelty_is_claimed_exactly_where_no_prior_art_is_known`~~ — lean priorart.lean: novelty_is_claimed_exactly_where_no_prior_art_is_known — sources.all (fun s =&gt; (kindOf s == 1) == novelty s) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `29363caf-0baf…`
 - ~~`lean_priorart_no_source_both_restates_and_claims`~~ — lean priorart.lean: no_source_both_restates_and_claims — (sources.filter (fun s =&gt; kindOf s == 0 && novelty s)).length = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `5f8c3038-bf92…`
@@ -2203,4 +2201,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `d63d00d5-6cca-83bb-8e84-ddbe3376c727`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `088f3457-3a66-86cd-bfe8-621aebab6352`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

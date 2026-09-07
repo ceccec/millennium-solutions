@@ -272,6 +272,22 @@ const EXACT: { key: string; theorem: string; why: string }[] = [
     why: 'the third conjunct is inv(inv(u)) = u at every unit; the row and its sibling above are two halves of one theorem' },
   { key: 'hockey_stick_identity_pascal', theorem: 'the_hockey_stick_identity_holds_across_the_range',
     why: 'the row says "verified exhaustively for r up to 10 and n up to 18"; the theorem decides r = 0…10 and the diagonal length to 18' },
+  { key: 'lean_priorart_no_source_both_restates_and_claims', theorem: 'the_restated_sources_are_named_and_claim_nothing',
+    why: 'the orphaned key decided that no kind-0 source claims novelty; the live theorem decides exactly that over the same filter' },
+  { key: 'geom_exterior_360', theorem: 'the_interior_and_exterior_angles_are_n_straight_angles',
+    why: 'the row claims the exterior angles of a regular n-gon sum to 360 at sides 3, 5 and 8; the theorem decides interior + exterior = n straight angles at every n from 3 to 32, with those three angles named' },
+  { key: 'geom_interior_angles_358', theorem: 'the_interior_and_exterior_angles_are_n_straight_angles',
+    why: 'the row names 60, 108 and 135 degrees; the theorem decides all three and the identity they come from' },
+  { key: 'chess_knight_8_moves', theorem: 'a_knight_has_exactly_eight_leaps_and_every_one_flips_the_colour',
+    why: 'the eight offsets are DERIVED from |dr|·|dc| = 2 over −2…2 and counted, not listed' },
+  { key: 'chess_knight_color_flip', theorem: 'a_knight_has_exactly_eight_leaps_and_every_one_flips_the_colour',
+    why: 'colour is the parity of row + column, and every derived step has odd parity' },
+  { key: 'wythoff_identity', theorem: 'the_golden_beatty_identity_holds_across_the_range',
+    why: 'the row claims ⌊nφ²⌋ − ⌊nφ⌋ = n for n ≤ 20; the theorem decides it to n = 40, with both floors computed exactly through the integer square root of 5n²' },
+  { key: 'partition_p_n', theorem: 'the_partition_and_bell_numbers_count_what_they_claim_to_count',
+    why: 'the row names p(5)=7, p(7)=15, p(10)=42; the theorem ENUMERATES the partitions and counts them, rather than checking one recurrence against another' },
+  { key: 'bell_numbers', theorem: 'the_partition_and_bell_numbers_count_what_they_claim_to_count',
+    why: 'the row names B(3)=5, B(4)=15, B(5)=52; the theorem decides the Bell triangle against an enumeration of the set partitions it counts' },
   { key: 'the_vortex_and_rosette_unit_groups_are_isomorphic', theorem: 'the_powers_of_two_mod_nine_and_of_three_mod_seven_are_isomorphic',
     why: 'the row names the map 2^k mod 9 ↦ 3^k mod 7 and says it preserves multiplication; the theorem decides both power maps are bijections onto the units and that each sends a product of exponents to a product — the map itself, not merely that two groups of six exist' },
 
@@ -298,6 +314,34 @@ const EXACT: { key: string; theorem: string; why: string }[] = [
 // carry. The rule is the row's own bound: where a row says how far it was checked, a theorem reaching that
 // far carries it; where a row claims everything, no finite range does.
 //
+// ── THE TWELVE ORPHANS, EACH DECIDED ────────────────────────────────────────────────────────────────────
+// A key is ORPHANED when the theorem it was sealed from left src/proof. Two carried, and the other ten are
+// written down here so no sweep proposes them again — and the reasons fall into three kinds, which is the
+// point of listing them rather than counting them.
+//
+// FALSE TODAY, because the table under them changed. `the_two_sets_cover_every_source` said kinds 0 and 1
+// cover every source; a third kind was added, so the statement is now false and `the_kinds_cover_every_source`
+// says the true thing over three. `novelty_is_claimed_exactly_where_no_prior_art_is_known` tied novelty to
+// kind 1, and novelty is now claimed of nothing at all. `claiming_is_not_establishing` opened with "novelty
+// IS claimed of some source", which stopped being true when the last claim was dropped. None of these is
+// unproved; each is refuted by the record moving, which is a different fate and deserves a different word.
+//
+// SELF-CERTIFYING, and deleted on purpose. `novelty_is_never_established_here` decided `noveltyEstablished = 0`
+// against its own literal, and the phenomena pair did the same with explanations, predictions and
+// theoriesConstrained. A constant declared in a file and then checked in that file witnesses nothing.
+//
+// DELETED AS A LIE, and staying deleted: `this_file_settles_none_of_the_seven`, whose name asserted what its
+// proposition could not decide; `an_encoding_changes_width_not_the_count_of_operations`, which conjoined a
+// term with itself; `the_witness_is_about_the_state_not_the_machine`.
+//
+// AND TWO WERE WORTH HAVING PROPERLY, so they were rewritten rather than carried. `geom_exterior_360` held
+// `[3,5,8].all (fun n => n * (360 / n) == 360)` — true only because those three divide 360, a fact about
+// integer division under a geometry name; the interior/exterior identity now holds at every n.
+// `the_equation_balances_by_atom_count` held four arithmetic identities, the first a term against itself,
+// and read no formula at all — so it could not have caught an unbalanced equation. It reads a table now, and
+// mutating that table makes the kernel refuse. Both old keys stay withdrawn: the new theorems are not what
+// those keys sealed.
+
 // `merkle_fold_singleton_identity` says merkleFold([x]) = x — for x, universally. singleton_fold_is_the_leaf
 // decided it at ONE address, which is a single instance wearing a general name, and merkle.lean now ranges
 // over three. Three is not all: the claim quantifies over an infinite domain and `decide` cannot reach it.

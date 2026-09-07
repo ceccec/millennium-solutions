@@ -5,18 +5,18 @@ title: Every state change, dated
 # Provenance of this deposit's ledger
 
 **Recomputed on every build** from git history and the append-only ledger. Regenerate with
-`npm run forensic`. Content-address `334f969e-b3b8-88c5-abf8-ef3023b1d2d9`.
+`npm run forensic`. Content-address `556ac8c5-93ea-8711-827f-45d425d8510b`.
 
 ## What this record establishes
 
 | | |
 |---|---:|
-| ledger entries | **2,538** |
-| standing — proved and sealed | 613 |
-| carried — withdrawn, proved by a live theorem | 428 |
-| withdrawn — nothing currently proves them | 1,497 |
+| ledger entries | **2,543** |
+| standing — proved and sealed | 619 |
+| carried — withdrawn, proved by a live theorem | 435 |
+| withdrawn — nothing currently proves them | 1,489 |
 | receipt chain, recomputed | **0 breaks — intact** |
-| commits that changed ledger state | 571 |
+| commits that changed ledger state | 572 |
 
 ## Why entries were withdrawn — the reason recorded at the time
 
@@ -24,15 +24,15 @@ Verbatim, as written when the entry was revoked. Not inferred afterwards.
 
 | withdrawn | reason as recorded |
 |---:|---|
-| 1,018 | dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a compu |
+| 1,011 | dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a compu |
 | 443 | revoked in place: its test asserted a lexical drain (computes(boast).binary === 0). The word-lis |
 | 12 | revoked in place: circular by construction AND dependent on the removed lexical gate. |
-| 12 | orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or rena |
+| 11 | orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or rena |
 | 10 | revoked in place: circular by construction — the test defines the answer it checks, proving a de |
 | 1 | revoked in place: its test asserts that a list of proof-boasts written across many scripts and l |
 
-**1,018** of
-**1,497** withdrawn entries — 68.0% —
+**1,011** of
+**1,489** withdrawn entries — 67.9% —
 were withdrawn for want of a Lean proof while their evidence was a TypeScript test that **computed**.
 Withdrawal costs one line of record; proving costs real work, and a green gate rewards both identically.
 

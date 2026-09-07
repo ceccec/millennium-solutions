@@ -285,8 +285,109 @@ theorem the_whole_ring_is_not_regular_and_the_triad_is_why :
   (nbrs (List.range 9) 0).length = 0 ∧
   ([3, 6] : List Nat).all (fun d => (nbrs (List.range 9) d).length == 1) := by decide
 
+-- ── FOUR CLAIMS THE LEDGER HELD AND ONE ORPHANED THEOREM RESTORED PROPERLY ──────────────────────────────
+
+/-- integer square root by search: the largest s with s² ≤ n, over a range wide enough for the uses below -/
+def isqrt (n : Nat) : Nat := ((List.range 200).filter (fun s => s * s ≤ n)).getLast? |>.getD 0
+
+/-- ⌊nφ⌋ and ⌊nφ²⌋ without leaving the naturals: φ = (1 + √5)/2, so nφ = (n + √(5n²))/2 exactly -/
+def lowerWythoff (n : Nat) : Nat := (n + isqrt (5 * n * n)) / 2
+def upperWythoff (n : Nat) : Nat := (3 * n + isqrt (5 * n * n)) / 2
+
+/-- the knight's steps, DERIVED: offsets in −2…2 written as 0…4, kept when |dr|·|dc| = 2 -/
+def knightSteps : List (Nat × Nat) :=
+  ((List.range 5).flatMap (fun a => (List.range 5).map (fun b => (a, b)))).filter (fun p =>
+    (if p.1 ≥ 2 then p.1 - 2 else 2 - p.1) * (if p.2 ≥ 2 then p.2 - 2 else 2 - p.2) == 2)
+
+/-- the partitions of n into non-increasing parts, enumerated — fuel because n − j is not structural -/
+def partsF : Nat → Nat → Nat → List (List Nat)
+  | 0, _, _ => []
+  | _, 0, _ => [[]]
+  | Nat.succ f, n, k => (List.range' 1 (min n k)).flatMap (fun j => (partsF f (n - j) j).map (fun l => j :: l))
+def partitionsOf (n : Nat) : List (List Nat) := partsF (n + 1) n n
+
+/-- restricted growth strings: one per set partition of {0…n−1}, which is what the Bell numbers count -/
+def rgs : Nat → List (List Nat)
+  | 0 => [[]]
+  | Nat.succ n => (rgs n).flatMap (fun p =>
+      (List.range ((p.foldl (fun a x => if x > a then x else a) 0) + (if p.isEmpty then 1 else 2))).map (fun v => p ++ [v]))
+/-- the Bell triangle, built row by row. The textbook recurrence B(n+1) = Σ C(n,k)·B(n−k) recurses on
+    `n − k`, which is not structural: Lean falls back to well-founded recursion, `decide` gets stuck on the
+    unreduced instance, and the equation lemmas would pull `propext` in and cost this file its axiom-free
+    standing. The triangle is structural on the row index and computes the same numbers. -/
+def bellRow : Nat → List Nat
+  | 0 => [1]
+  | Nat.succ n =>
+    let prev := bellRow n
+    (List.range (prev.length + 1)).foldl (fun acc i =>
+      acc ++ [if i == 0 then prev.getLastD 0 else acc.getD (i - 1) 0 + prev.getD (i - 1) 0]) []
+def bellOf (n : Nat) : Nat := (bellRow n).headD 0
+
+-- ── the exterior angles of any regular polygon sum to a full turn ───────────────────────────────────────
+--    `geom_exterior_360` was orphaned holding `[3,5,8].all (fun n => n * (360 / n) == 360)`, which is true
+--    only because 3, 5 and 8 happen to divide 360 — a statement about integer division wearing a geometry
+--    name. The interior angles of an n-gon sum to (n−2)·180 and the exterior to 360, and together they are
+--    n straight angles. That identity needs no division and holds at every n.
+theorem the_interior_and_exterior_angles_are_n_straight_angles :
+  (List.range' 3 30).all (fun n => (n - 2) * 180 + 360 == n * 180) ∧
+  180 * (3 - 2) / 3 = 60 ∧ 180 * (5 - 2) / 5 = 108 ∧ 180 * (8 - 2) / 8 = 135 := by decide
+
+-- ── a knight has exactly eight leaps, and every one changes the colour of its square ────────────────────
+--    Colour is the parity of row + column, and the offsets are written as 0…4 for −2…2. |a−2| ≡ a (mod 2),
+--    so the parity of the shifted pair is the parity of the real step — the check is not an artefact of
+--    the encoding.
+theorem a_knight_has_exactly_eight_leaps_and_every_one_flips_the_colour :
+  knightSteps.length = 8 ∧ knightSteps.eraseDups.length = 8 ∧
+  knightSteps.all (fun p => (p.1 + p.2) % 2 == 1) := by decide
+
+-- ── the Wythoff pair: ⌊nφ²⌋ − ⌊nφ⌋ = n, the golden Beatty identity ──────────────────────────────────────
+theorem the_golden_beatty_identity_holds_across_the_range :
+  (List.range' 1 40).all (fun n => upperWythoff n - lowerWythoff n == n) := by decide
+
+-- ── the partition numbers count the partitions, and the Bell numbers count the set partitions ───────────
+--    Both are checked against an ENUMERATION of the objects rather than against another recurrence, which
+--    is the difference between confirming a formula and confirming what it counts.
+set_option maxRecDepth 2000000 in
+theorem the_partition_and_bell_numbers_count_what_they_claim_to_count :
+  (partitionsOf 5).length = 7 ∧ (partitionsOf 7).length = 15 ∧ (partitionsOf 10).length = 42 ∧
+  (List.range 6).all (fun n => (rgs n).length == bellOf n) ∧
+  bellOf 3 = 5 ∧ bellOf 4 = 15 ∧ bellOf 5 = 52 := by decide
+
+-- ── WHICH GRAPH, NOT JUST WHAT DEGREE — THE TEST A PEER'S MISTAKE MADE ME RUN ───────────────────────────
+--
+--    The zeropoint-node session came back with two corrections to its own result. The first was the one I
+--    had asked for: its undoubled structure was already vertex-transitive, so the polarity bought nothing.
+--    The second it found on its own and is worse — it had counted TWELVE neighbours and called the
+--    structure a vector equilibrium, and then counted the edges AMONG those twelve and found zero. A
+--    cuboctahedron's twelve vertices carry twenty-four edges between them. It had the vertex count of the
+--    solid and none of its geometry: a name fitted to a count.
+--
+--    `the_units_are_three_regular_…` above proves a DEGREE and nothing else, which is exactly the shape of
+--    that error waiting to happen here. So the same test, run on this ring: what is the neighbourhood of a
+--    unit, and does it carry any edges?
+--
+--    It carries none. Every unit's three neighbours are mutually non-adjacent, so this graph is
+--    triangle-free and has no local geometry either — and the reason is structural rather than accidental.
+--    The neighbourhood of a unit is EXACTLY the opposite tetrahedron: doubling, halving and reflection all
+--    carry a residue across the mod-3 classes, so the graph is the complete bipartite one between them.
+--    The merkaba's two tetrahedra, which this deposit already decides are exchanged by doubling, turn out
+--    to be the bipartition. Nothing here is a solid; it is K(3,3) wearing the ring's own split.
+
+/-- the two tetrahedra, DERIVED as the mod-3 classes of the units rather than written out -/
+def tetOf (r : Nat) : List Nat := (unitsMod 9).filter (fun d => d % 3 == r)
+
+theorem the_unit_graph_is_complete_bipartite_between_the_two_tetrahedra :
+  (tetOf 1).length = 3 ∧ (tetOf 2).length = 3 ∧
+  (tetOf 1).all (fun d => (nbrs (unitsMod 9) d).length == 3 &&
+    (nbrs (unitsMod 9) d).all (fun t => (tetOf 2).contains t)) ∧
+  (tetOf 2).all (fun d => (nbrs (unitsMod 9) d).length == 3 &&
+    (nbrs (unitsMod 9) d).all (fun t => (tetOf 1).contains t)) ∧
+  -- and every neighbourhood is an INDEPENDENT set: three vertices, no edge among them
+  (unitsMod 9).all (fun d => (nbrs (unitsMod 9) d).all (fun x =>
+    (nbrs (unitsMod 9) d).all (fun y => x == y || !((nbrs (unitsMod 9) x).contains y)))) := by decide
+
 -- ── what these settle ──
-def settledHere : Nat := 26
-theorem elementary_settles_its_range : settledHere = 26 := rfl
+def settledHere : Nat := 31
+theorem elementary_settles_its_range : settledHere = 31 := rfl
 
 end Elementary

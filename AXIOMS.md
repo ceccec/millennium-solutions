@@ -5,11 +5,11 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **622** report the same thing:
+axiom fails the build rather than earning a footnote. All **628** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
-theorems rest on **293** definitions, and every one of them is a choice. A theorem about
+theorems rest on **306** definitions, and every one of them is a choice. A theorem about
 `fall` is a theorem about the digital root only because `fall` is *defined* to be it. Both halves are
 indexed below, and the second is the longer one.
 
@@ -90,7 +90,7 @@ The pins in the control fixture follow the community practice of guarding `#prin
 `#guard_msgs`, which turns the axiom footprint into an executable regression test: the assertion is
 checked by the elaborator, and drift fails the build with a mismatch instead of passing unnoticed.
 
-## What IS assumed: the 293 definitions
+## What IS assumed: the 306 definitions
 
 Each of these is a primitive of this deposit — not derived, not proved, chosen. They are listed in full
 because a reader checking a theorem must be able to read the definition it is about, and because a
@@ -181,7 +181,7 @@ def step : List Nat → List Nat
 def hh : Nat → List Nat → Bool
 ```
 
-### `elementary.lean` — 14 definition(s), 27 theorem(s)
+### `elementary.lean` — 24 definition(s), 32 theorem(s)
 
 ```lean
 def properDivisorSum (n : Nat) : Nat := ((List.range' 1 (n - 1)).filter (fun d => n % d == 0)).foldl (· + ·) 0
@@ -197,10 +197,20 @@ def sortFrac : List (Nat × Nat) → List (Nat × Nat)
 def farey (n : Nat) : List (Nat × Nat) :=
 def nbrs (S : List Nat) (d : Nat) : List Nat :=
 def degreeSet (S : List Nat) : List Nat := (S.map (fun d => (nbrs S d).length)).eraseDups
-def settledHere : Nat := 26
+def isqrt (n : Nat) : Nat := ((List.range 200).filter (fun s => s * s ≤ n)).getLast? |>.getD 0
+def lowerWythoff (n : Nat) : Nat := (n + isqrt (5 * n * n)) / 2
+def upperWythoff (n : Nat) : Nat := (3 * n + isqrt (5 * n * n)) / 2
+def knightSteps : List (Nat × Nat) :=
+def partsF : Nat → Nat → Nat → List (List Nat)
+def partitionsOf (n : Nat) : List (List Nat) := partsF (n + 1) n n
+def rgs : Nat → List (List Nat)
+def bellRow : Nat → List Nat
+def bellOf (n : Nat) : Nat := (bellRow n).headD 0
+def tetOf (r : Nat) : List Nat := (unitsMod 9).filter (fun d => d % 3 == r)
+def settledHere : Nat := 31
 ```
 
-### `energy.lean` — 15 definition(s), 18 theorem(s)
+### `energy.lean` — 18 definition(s), 19 theorem(s)
 
 ```lean
 def splitCost : Nat := 52000  -- Wh to electrolyse 1 kg H₂ (real cells: 50–55 kWh/kg; ideal is ~39.4)
@@ -211,6 +221,9 @@ def mgH2 : Nat := 2016    -- H₂  = 2 × 1.008 g/mol
 def mgO2 : Nat := 31998   -- O₂  = 2 × 15.999 g/mol
 def mgH2O : Nat := 18015   -- H₂O = 18.015 g/mol
 def balances (a b c : Nat) : Bool := (2 * a == 2 * b) && (a == 2 * c)
+def atomsH2 : Nat × Nat := (2, 0)
+def atomsO2 : Nat × Nat := (0, 2)
+def atomsH2O : Nat × Nat := (2, 1)
 def molH2 : Nat := 496    -- moles in 1 kg of H₂ (1000 g ÷ 2.016)
 def molO2 : Nat := 248    -- the oxygen that comes with it, half as many moles
 def mLperMol : Nat := 22414  -- millilitres per mole at STP
@@ -541,6 +554,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**622** declarations, **0** axiom dependencies, **293** definitions they rest on.
+**628** declarations, **0** axiom dependencies, **306** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them. `0/7`.

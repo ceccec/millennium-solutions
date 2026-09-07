@@ -15226,5 +15226,35 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "32458786-9afb-8ee5-af16-d6253c6fb460"
+  },
+  {
+    "key": "lean_elementary_the_interior_and_exterior_angles_are_n_straight_angles",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c99b0f2c-a4a8-8249-997a-da4c102b6354"
+  },
+  {
+    "key": "lean_elementary_a_knight_has_exactly_eight_leaps_and_every_one_flips_the_colour",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5b8f3d53-2030-8836-8aab-7d8d6ea36e1c"
+  },
+  {
+    "key": "lean_elementary_the_golden_beatty_identity_holds_across_the_range",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b27a7477-6920-8d24-9185-1935732003c3"
+  },
+  {
+    "key": "lean_elementary_the_partition_and_bell_numbers_count_what_they_claim_to_count",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d7dd93f3-efbe-8f4d-ab80-d3064e345428"
+  },
+  {
+    "key": "lean_elementary_the_unit_graph_is_complete_bipartite_between_the_two_tetrahedra",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "19e4c01e-8d78-8ee5-8003-bcbbce30ce79"
   }
 ]

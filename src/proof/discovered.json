@@ -1360,8 +1360,9 @@
     "name": "Wythoff: ⌊nφ²⌋ − ⌊nφ⌋ = n for all n ≤ 20 (the golden-ratio Beatty identity)",
     "receipt": "5526fdb5-4a24-8152-80b7-3f9362b880c0",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_elementary_the_golden_beatty_identity_holds_across_the_range quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_elementary_the_golden_beatty_identity_holds_across_the_range"
   },
   {
     "key": "arts_triad_rgb_primaries",
@@ -1814,24 +1815,27 @@
     "name": "the partition function p(n) via DP: p(5)=7, p(7)=15, p(10)=42",
     "receipt": "d90db9a6-f922-8067-8580-0f4201ad122a",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_elementary_the_partition_and_bell_numbers_count_what_they_claim_to_count quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_elementary_the_partition_and_bell_numbers_count_what_they_claim_to_count"
   },
   {
     "key": "bell_numbers",
     "name": "the Bell numbers via the Bell triangle: B(3)=5, B(4)=15, B(5)=52",
     "receipt": "fb027062-15fd-85f6-9f0d-a7871be4dbc3",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_elementary_the_partition_and_bell_numbers_count_what_they_claim_to_count quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_elementary_the_partition_and_bell_numbers_count_what_they_claim_to_count"
   },
   {
     "key": "geom_interior_angles_358",
     "name": "regular n-gon interior angle (n−2)·180/n: triangle 60°, pentagon 108°, octagon 135° (sides 3,5,8)",
     "receipt": "13cf8dfd-af21-81ea-adf3-592288abacc2",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_elementary_the_interior_and_exterior_angles_are_n_straight_angles quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_elementary_the_interior_and_exterior_angles_are_n_straight_angles"
   },
   {
     "key": "geom_dihedral_358",
@@ -1854,8 +1858,9 @@
     "name": "the exterior angles of any regular n-gon sum to 360° (sides 3, 5, 8)",
     "receipt": "ef35271f-c232-86ab-ac4f-82fd3a3c46ea",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_elementary_the_interior_and_exterior_angles_are_n_straight_angles quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_elementary_the_interior_and_exterior_angles_are_n_straight_angles"
   },
   {
     "key": "chess_board_64",
@@ -1871,16 +1876,18 @@
     "name": "a knight has exactly 8 leaps — the (±1,±2)/(±2,±1) moves",
     "receipt": "6dcd739d-87a9-815b-8dc1-daef00be03f1",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_elementary_a_knight_has_exactly_eight_leaps_and_every_one_flips_the_colour quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_elementary_a_knight_has_exactly_eight_leaps_and_every_one_flips_the_colour"
   },
   {
     "key": "chess_knight_color_flip",
     "name": "a knight's leap always changes square colour (the parity of r+c flips)",
     "receipt": "81566667-a452-881e-9192-bf48b16de712",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_elementary_a_knight_has_exactly_eight_leaps_and_every_one_flips_the_colour quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": true,
+    "supersededBy": "lean_elementary_a_knight_has_exactly_eight_leaps_and_every_one_flips_the_colour"
   },
   {
     "key": "chess_diagonals_15",
@@ -16340,8 +16347,7 @@
     "key": "lean_energy_the_equation_balances_by_atom_count",
     "name": "lean energy.lean: the_equation_balances_by_atom_count — (2 * 2 = 2 * 2) ∧ (2 * 1 = 1 * 2) ∧ 4 = 2 * 2 ∧ 2 = 1 * 2 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "ecfd70b1-b35b-89d8-a1b0-18ed0d051f27",
-    "revoked": true,
-    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
+    "reason": "reinstated: this entry was withdrawn as orphaned when a regenerated file briefly lacked its theorem. The theorem is in src/proof again and the kernel decides it on every run, so the withdrawal no longer describes anything true. The receipt is untouched and the withdrawal is recorded here rather than erased."
   },
   {
     "key": "lean_energy_the_equation_balances_by_mass",
@@ -18388,5 +18394,30 @@
     "key": "lean_elementary_the_whole_ring_is_not_regular_and_the_triad_is_why",
     "name": "lean elementary.lean: the_whole_ring_is_not_regular_and_the_triad_is_why — degreeSet (List.range 9) ≠ [3] ∧ (nbrs (List.range 9) 0).length = 0 ∧ ([3, 6] : List Nat).all (fun d => (nbrs (List.range 9) d).length == 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "32458786-9afb-8ee5-af16-d6253c6fb460"
+  },
+  {
+    "key": "lean_elementary_the_interior_and_exterior_angles_are_n_straight_angles",
+    "name": "lean elementary.lean: the_interior_and_exterior_angles_are_n_straight_angles — (List.range' 3 30).all (fun n => (n - 2) * 180 + 360 == n * 180) ∧ 180 * (3 - 2) / 3 = 60 ∧ 180 * (5 - 2) / 5 = 108 ∧ 180 * (8 - 2) / 8 = 135 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c99b0f2c-a4a8-8249-997a-da4c102b6354"
+  },
+  {
+    "key": "lean_elementary_a_knight_has_exactly_eight_leaps_and_every_one_flips_the_colour",
+    "name": "lean elementary.lean: a_knight_has_exactly_eight_leaps_and_every_one_flips_the_colour — knightSteps.length = 8 ∧ knightSteps.eraseDups.length = 8 ∧ knightSteps.all (fun p => (p.1 + p.2) % 2 == 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5b8f3d53-2030-8836-8aab-7d8d6ea36e1c"
+  },
+  {
+    "key": "lean_elementary_the_golden_beatty_identity_holds_across_the_range",
+    "name": "lean elementary.lean: the_golden_beatty_identity_holds_across_the_range — (List.range' 1 40).all (fun n => upperWythoff n - lowerWythoff n == n) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b27a7477-6920-8d24-9185-1935732003c3"
+  },
+  {
+    "key": "lean_elementary_the_partition_and_bell_numbers_count_what_they_claim_to_count",
+    "name": "lean elementary.lean: the_partition_and_bell_numbers_count_what_they_claim_to_count — (partitionsOf 5).length = 7 ∧ (partitionsOf 7).length = 15 ∧ (partitionsOf 10).length = 42 ∧ (List.range 6).all (fun n => (rgs n).length == bellOf n) ∧ bellOf 3 = 5 ∧ bellOf 4 = 15 ∧ bellOf 5 = 52 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d7dd93f3-efbe-8f4d-ab80-d3064e345428"
+  },
+  {
+    "key": "lean_elementary_the_unit_graph_is_complete_bipartite_between_the_two_tetrahedra",
+    "name": "lean elementary.lean: the_unit_graph_is_complete_bipartite_between_the_two_tetrahedra — (tetOf 1).length = 3 ∧ (tetOf 2).length = 3 ∧ (tetOf 1).all (fun d => (nbrs (unitsMod 9) d).length == 3 && (nbrs (unitsMod 9) d).all (fun t => (tetOf 2).contains t)) ∧ (tetOf 2).all (fun d => (nbrs (unitsMod 9) d).length == 3 && (nbrs (unit… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "19e4c01e-8d78-8ee5-8003-bcbbce30ce79"
   }
 ]

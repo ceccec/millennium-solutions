@@ -79,6 +79,23 @@ theorem the_two_to_one_is_forced_by_the_oxygen :
 theorem the_equation_balances_by_mass :
   2 * mgH2O = 2 * mgH2 + mgO2 ∧ 2 * mgH2O = 36030 := by decide
 
+-- ── AND BY ATOM COUNT, WHICH IS A DIFFERENT CHECK AND WAS ONCE A WORSE THEOREM ──────────────────────────
+--    `the_equation_balances_by_atom_count` stood here and was deleted. Its statement was
+--    `(2 * 2 = 2 * 2) ∧ (2 * 1 = 1 * 2) ∧ 4 = 2 * 2 ∧ 2 = 1 * 2` — four arithmetic identities, the first of
+--    them a term against itself. Nothing in it read a formula, so nothing in it could have caught an
+--    unbalanced equation; it was a chemistry name over a tautology, and its ledger key stays withdrawn.
+--
+--    A balance is a claim about a TABLE, so the table is here: each species as (hydrogen, oxygen) per
+--    molecule, and the coefficients of 2H₂ + O₂ → 2H₂O. Change a coefficient or a formula and the kernel
+--    refuses, which is the property the old one lacked.
+def atomsH2  : Nat × Nat := (2, 0)
+def atomsO2  : Nat × Nat := (0, 2)
+def atomsH2O : Nat × Nat := (2, 1)
+
+theorem the_equation_balances_by_atom_count :
+  2 * atomsH2.1 + atomsO2.1 = 2 * atomsH2O.1 ∧
+  2 * atomsH2.2 + atomsO2.2 = 2 * atomsH2O.2 := by decide
+
 -- ── 6 · THE TWO-TO-ONE, by volume. Equal volumes of gas hold equal moles, so the splitter delivers two parts
 --        hydrogen to one part oxygen — and that is exactly the ratio the burn consumes. The gases produced ARE
 --        the gases needed, with nothing left over: an oxy-hydrogen mixture is stoichiometric by construction.
