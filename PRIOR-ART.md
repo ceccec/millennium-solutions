@@ -6,7 +6,7 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 593 machine-checked declarations, **584** restate work that already has an author and
+Of 602 machine-checked declarations, **593** restate work that already has an author and
 **9** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/proof/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
@@ -27,7 +27,7 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **584** |
+| attributed to named earlier work | **593** |
 | unclassified — no search performed, status unknown | **9** |
 | claimed as novel | **0** |
 
@@ -47,13 +47,14 @@ searched, where, and when. An earlier version of this page claimed novelty for 1
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 30 sources, 584 theorems
+## Restated from named earlier work — 31 sources, 593 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
 
 <table><thead><tr><th>source</th><th>theorems</th><th>domain</th><th>whose work</th></tr></thead><tbody>
 <tr><td><code>address.lean</code></td><td>18</td><td>content addressing</td><td>composes FNV-1a (Fowler, Noll, Vo, 1991) with the Merkle hash tree (Merkle, 1979)</td></tr>
+<tr><td><code>classical.lean</code></td><td>7</td><td>elementary number theory and combinatorial game theory</td><td>Euclid (Elements IX.36) and Euler for the even perfect numbers; the amicable pair</td></tr>
 <tr><td><code>coin.lean</code></td><td>12</td><td>the method of complements</td><td>the reflection d ↦ 10 − d is the TEN'S COMPLEMENT, and its sibling 9 − d the nines' complement — the method of complements, used to turn subtraction into addition in Pascal's calculator (1642), the Comptometer and the Curta, and in modern computer arithmetic. That it is an involution with a single fixed point is the property those machines rely on. Searched 2026-09-04, term "method of complements / nines' complement / ten's complement"; prior art found and credited</td></tr>
 <tr><td><code>demand.lean</code></td><td>8</td><td>elementary number theory</td><td>the named results the search data asks for — Bézout’s identity (Étienne Bézout, 1779; Bachet, 1624), the Chinese remainder theorem (Sunzi, c. 3rd–5th century), and others named in their theorems</td></tr>
 <tr><td><code>demand2.lean</code></td><td>8</td><td>elementary number theory, second tier</td><td>Wilson’s theorem — John Wilson; first proved by Joseph-Louis Lagrange, 1771; the Catalan conjecture on consecutive perfect powers — Eugène Catalan, 1844; proved by Preda Mihăilescu, 2002</td></tr>
@@ -70,7 +71,7 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>mechanical.lean</code></td><td>107</td><td>Boolean algebra and elementary modular arithmetic</td><td>the Boolean rows are De Morgan's laws — Augustus De Morgan, 1847 — written in the arithmetic of {0,1}; the group rows are the additive group of Z/9. Both long prior. Searched 2026-09-04, terms "De Morgan's laws boolean algebra" and "additive group mod 9"; prior art found and credited</td></tr>
 <tr><td><code>merkaba.lean</code></td><td>8</td><td>elementary group theory — subgroups and cosets of Z/9</td><td>the partition into {3,6,9} and two three-element classes closed under doubling is the subgroup and coset structure of Z/9 under the action of U(9); Lagrange. One theorem already credits Euler for the polyhedron formula. Searched 2026-09-04; prior art found and credited</td></tr>
 <tr><td><code>merkle.lean</code></td><td>11</td><td>hash trees and membership proofs</td><td>the hash tree — Ralph Merkle, 1979 (thesis); CRYPTO 1987</td></tr>
-<tr><td><code>nim.lean</code></td><td>8</td><td>combinatorial game theory</td><td>Nim — Charles L. Bouton, 1901; the Sprague–Grundy theorem — Roland Sprague, 1935 and Patrick M. Grundy, 1939</td></tr>
+<tr><td><code>nim.lean</code></td><td>10</td><td>combinatorial game theory</td><td>Nim — Charles L. Bouton, 1901; the Sprague–Grundy theorem — Roland Sprague, 1935 and Patrick M. Grundy, 1939</td></tr>
 <tr><td><code>phenomena.lean</code></td><td>4</td><td>metrology and classical physical chemistry</td><td>the SI base quantities and their defining constants are definitions of the Conférence</td></tr>
 <tr><td><code>quantum.lean</code></td><td>12</td><td>canonical forms and order-invariant commitments</td><td>sorting a multiset into a canonical order BEFORE folding it is standard practice, not a</td></tr>
 <tr><td><code>reach.lean</code></td><td>4</td><td>elementary set theory — the naturals are not exhausted by any finite list</td><td>that no finite set contains every natural number is Euclid's argument in form and is as</td></tr>
@@ -89,7 +90,7 @@ which is a contribution of verification, not of discovery.
 
 - **Boolean algebra and elementary modular arithmetic** — 107 theorems, in `mechanical.lean`
 - **canonical forms and order-invariant commitments** — 12 theorems, in `quantum.lean`
-- **combinatorial game theory** — 8 theorems, in `nim.lean`
+- **combinatorial game theory** — 10 theorems, in `nim.lean`
 - **content addressing** — 18 theorems, in `address.lean`
 - **copyright law — rights arising without formality** — 9 theorems, in `rights.lean`
 - **electrochemistry and combustion** — 18 theorems, in `energy.lean`
@@ -97,6 +98,7 @@ which is a contribution of verification, not of discovery.
 - **elementary group theory — orbit decomposition of an order-two permutation** — 8 theorems, in `involution.lean`
 - **elementary group theory — subgroups and cosets of Z/9** — 8 theorems, in `merkaba.lean`
 - **elementary number theory** — 8 theorems, in `demand.lean`
+- **elementary number theory and combinatorial game theory** — 7 theorems, in `classical.lean`
 - **elementary number theory — the unit group of Z/9** — 118 theorems, in `imagined.lean`
 - **elementary number theory — the unit group of ℤ/9** — 34 theorems, in `recovered.lean`, `split.lean`
 - **elementary number theory — the unit group of ℤ/9 and the doubling orbit** — 25 theorems, in `generated.lean`, `index.lean`
@@ -143,5 +145,5 @@ priority claim above, and it is the whole of it.
 
 ---
 
-Partition seal `6fcc7a41-4d0d-8f11-ae95-e9013e6e28a6` · recompute with `node scripts/priorart.ts` · the kernel re-decides
+Partition seal `4ae6fac2-bdcc-8630-b367-e2729a570d40` · recompute with `node scripts/priorart.ts` · the kernel re-decides
 `priorart.lean` on every run. A content-address proves integrity, not truth. `entails → 0/7`.

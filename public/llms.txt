@@ -5,9 +5,9 @@
 
 ## What this is
 
-A machine-checked mathematical deposit: 585 theorems across 31 Lean 4 source
+A machine-checked mathematical deposit: 593 theorems across 32 Lean 4 source
 files, each closed by exhaustion over a stated finite domain, sorry-free and axiom-free, with a
-2496-entry append-only ledger whose receipt chain is recomputed on every build.
+2504-entry append-only ledger whose receipt chain is recomputed on every build.
 
 Author: Tsvetan Rouschev (ORCID https://orcid.org/0009-0000-7312-9778). Licence: **CC BY-NC-ND 4.0**. Concept DOI: 10.5281/zenodo.21819217.
 
@@ -25,6 +25,21 @@ claimed as having occurred.
 
 The deposit claims **exactly** the without-formality set and nothing requiring an act it has not performed.
 That boundary is decided by exhaustion in `src/proof/rights.lean`, not asserted here.
+
+## Checking this without trusting anyone
+
+The deposit was written with an AI in the loop. Checking it does not need one, and does not need the
+depositor either. Every theorem is decided by the Lean kernel; every figure in the prose is recomputed by a
+script; every receipt is a hash of content that can be rehashed. Required: `lean` and `node`. Not required:
+an account, an API key, a network, or a model.
+
+That separation is enforced rather than asserted — `npm run independent` derives the verification path from
+the chain a checker actually runs, plus everything it imports, and REFUSES if anything on it calls a network,
+reads a credential, or reaches a model endpoint. It runs on every build, and it has a negative control: a
+network call planted on the path turns it red.
+
+It does not say the deposit is correct, or that the AI that wrote it was honest. It says neither question
+has to be settled on trust.
 
 ## Under CC BY-NC-ND 4.0
 
@@ -53,7 +68,7 @@ Independently verifiable by a third party, without trusting the depositor — cl
   them. The git author field on every commit here is the repository owner, including for commits made by
   automated sessions acting on their behalf, so that field distinguishes nothing.
 - **It does not establish intent**, in any direction, about anyone.
-- **It does not establish novelty.** 30 of 31 source files record
+- **It does not establish novelty.** 31 of 32 source files record
   named prior art with the earlier author credited. This deposit claims priority of DEPOSIT, not of idea, and
   its own `priorart.lean` decides that novelty is claimed of no source.
 - **It is not legal advice**, and nothing in this file is a legal conclusion. It states what is recorded and
@@ -69,5 +84,5 @@ Machine-readable provenance for every claim is at `/forensic`, and per-theorem r
 statement and LaTeX are under `.zenodo/theorems/`.
 
 ---
-Ledger 2496 entries · 585 standing · chain recomputed on every build.
-Notice content-address `9e14fd1c-f8c8-8ce6-af52-4b7e8a9eb528`.
+Ledger 2504 entries · 593 standing · chain recomputed on every build.
+Notice content-address `a5d3ac24-c041-8ebf-9437-c20b3c23a102`.

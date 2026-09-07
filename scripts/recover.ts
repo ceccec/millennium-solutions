@@ -201,7 +201,52 @@ const EXACT: { key: string; theorem: string; why: string }[] = [
     why: 'the row claims the recurrence matches the closed form to n ≤ 6; the theorem decides to n = 12' },
   { key: 'catalan_convolution_recurrence', theorem: 'the_catalan_recurrence_matches_the_binomial_formula',
     why: 'the row claims agreement verified to n = 8; the theorem decides to n = 12' },
+
+  // ── FOUND BY scripts/candidates.ts: SEVEN CLAIMS THAT WERE ALREADY DECIDED ──────────────────────────────
+  // Each of these was withdrawn as "not backed by a Lean proof" while a theorem deciding exactly it sat in
+  // the tree, in some cases under nearly the same name. They were found by ranking withdrawn rows against
+  // live theorem names by shared vocabulary and then READING each pair — the ranking proposes, it does not
+  // decide, and several of its top proposals were wrong in ways only the Lean shows.
+  { key: 'add_group', theorem: 'add_group',
+    why: 'the row says every residue has an additive inverse mod 9; z9.lean decides exactly that, over all of ℤ/9' },
+  { key: 'neg_involution', theorem: 'neg_involution',
+    why: 'the row says −(−d) ≡ d; z9.lean decides it over all of ℤ/9' },
+  { key: 'merkaba_partition', theorem: 'the_three_classes_partition_z9',
+    why: 'the row claims {3,6,9}·{1,4,7}·{2,5,8} partition ℤ/9 into 3+3+3; the theorem decides the three lengths, the deduplicated union of nine, and that every residue is covered' },
+  { key: 'merkaba_axis_closed', theorem: 'the_axis_is_closed_under_doubling',
+    why: 'the row claims the axis {3,6,9} is closed under doubling; merkaba.lean names that set the triad, with 9 written as its residue 0, and decides the closure over it' },
+  { key: 'merkaba_counter_rotation', theorem: 'doubling_counter_rotates_the_two_tetrahedra',
+    why: 'the row claims doubling carries {1,4,7} ↔ {2,5,8}; the theorem decides both directions and that each image is three distinct residues' },
+  { key: 'fib_trinity_358', theorem: 'three_five_eight_are_consecutive',
+    why: 'the row claims 3, 5, 8 are consecutive Fibonacci with 3 + 5 = 8; sequences.lean decides the three values and the sum' },
+  { key: 'grundy_xor_sum', theorem: 'grundy_of_two_heaps_is_the_xor',
+    why: 'the row claims a, b ≤ 5; nim.lean ranges over List.range N with N = 6, which is 0…5 exactly' },
+
+  // ── AND TWO THAT NEEDED THE THEOREM WIDENED FIRST, because the near miss was in the RANGE ───────────────
+  { key: 'nim_bouton_H6', theorem: 'bouton_holds_at_every_heap_size_to_six',
+    why: 'the row says "all heaps ≤ 6", which is SEVEN sizes; bouton_two_heaps_lost_iff_xor_zero ranges over 0…5 and would have carried it on a position nobody decided. nim.lean was widened rather than the row trimmed' },
+  { key: 'nim_sum_is_xor_gf2', theorem: 'the_nim_sum_is_a_gf2_vector_addition',
+    why: 'the row claims commutative AND associative AND self-inverse; associativity was missing, and supersededBy names one key, so three quarters spread over three theorems carried nothing. The conjunction was written' },
+
+  // ── the fifth wave's own theorems, in src/proof/classical.lean ──────────────────────────────────────────
+  { key: 'perfect_numbers', theorem: 'euclids_form_is_perfect_at_every_mersenne_prime_to_seven',
+    why: 'the row names 6, 28 and 496 as perfect; the theorem decides the proper-divisor sum for p = 2, 3, 5, 7 — that is 6, 28, 496 and 8128' },
+  { key: 'amicable_220_284', theorem: 'the_amicable_pair_is_mutual_and_neither_is_perfect',
+    why: "the row claims each is the sum of the other's proper divisors; the theorem decides both directions and that neither is its own sum" },
+  { key: 'primitive_roots_mod9_are_2_and_5', theorem: 'the_primitive_roots_mod_nine_are_exactly_two_and_five',
+    why: 'the row claims the primitive roots are EXACTLY {2,5}; families.lean only decides that one exists at 9, so this needed its own theorem — the units of order 6 filtered out, as a list equality' },
+  { key: 'eisenstein_six_units', theorem: 'the_eisenstein_units_are_exactly_six',
+    why: 'the row claims exactly six norm-1 Eisenstein integers; the theorem counts them over the box −3…3, which is wider than any norm-1 element can reach' },
+  { key: 'subtraction_game_mod4', theorem: 'the_subtraction_game_loses_exactly_at_the_multiples_of_four',
+    why: 'the row claims the mover loses iff n ≡ 0 mod 4; the theorem decides both halves — every move from a multiple leaves a non-multiple, and some move from a non-multiple reaches one' },
 ]
+
+// ── AND ONE THE CANDIDATE REPORT PROPOSED THAT IS NOT CARRIED, WRITTEN DOWN SO IT IS NOT PROPOSED AGAIN ──
+// `euclid_euler_perfect` says "even perfect numbers ARE 2^(p−1)(2^p−1) for a Mersenne prime". That is the
+// characterisation — Euclid's direction AND Euler's converse. classical.lean decides Euclid's: the form is
+// perfect whenever the Mersenne number is prime. It says nothing about every even perfect number having
+// that shape, and the examples the row lists are instances of the half that IS proved, which is exactly how
+// a half-proved claim looks fully proved. Left withdrawn.
 // ── A RULE THAT MATCHES NOTHING IS BROKEN, AND LOOKS EXACTLY LIKE A RULE THAT IS FINISHED ────────────────
 // /^digrev(\d+)$/ matched zero keys for a whole run — the ledger spells them `digrev_12` — and the report
 // said "6 recoverable" instead of 12 without a word about the rule that had gone silent. A matcher that

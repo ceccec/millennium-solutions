@@ -1053,24 +1053,27 @@
     "name": "the mod-3 classes {3,6,9}·{1,4,7}·{2,5,8} partition ℤ/9 into 3+3+3",
     "receipt": "782ddd50-1c1a-8cc1-9943-886c4146b22e",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_merkaba_the_three_classes_partition_z9 quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": true,
+    "supersededBy": "lean_merkaba_the_three_classes_partition_z9"
   },
   {
     "key": "merkaba_counter_rotation",
     "name": "doubling counter-rotates the two tetrahedra: {1,4,7} ↔ {2,5,8}",
     "receipt": "5acd8c30-cd18-80bf-9d63-bb48c9d8645d",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_merkaba_doubling_counter_rotates_the_two_tetrahedra quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_merkaba_doubling_counter_rotates_the_two_tetrahedra"
   },
   {
     "key": "merkaba_axis_closed",
     "name": "the axis {3,6,9} is closed under doubling (the merkaba spindle)",
     "receipt": "1b0e8f6a-2b64-824f-ae5a-b4e4cbb73b9b",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_merkaba_the_axis_is_closed_under_doubling quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_merkaba_the_axis_is_closed_under_doubling"
   },
   {
     "key": "merkaba_cube_q3",
@@ -1295,8 +1298,9 @@
     "name": "3, 5, 8 are consecutive Fibonacci: 3 + 5 = 8",
     "receipt": "d628c034-b0b3-88fc-8e94-b51b210b2fbb",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_sequences_three_five_eight_are_consecutive quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_sequences_three_five_eight_are_consecutive"
   },
   {
     "key": "fib_trinity_horizon",
@@ -1343,8 +1347,9 @@
     "name": "Nim (Bouton): a 2-heap position is a loss for the mover iff XOR = 0 (all heaps ≤ 6, exhaustive)",
     "receipt": "4b41d6ed-63f3-89b9-809e-375a6ec07154",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_nim_bouton_holds_at_every_heap_size_to_six quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_nim_bouton_holds_at_every_heap_size_to_six"
   },
   {
     "key": "wythoff_identity",
@@ -1505,8 +1510,9 @@
     "name": "Sprague–Grundy: a 2-heap Nim position's Grundy value is the XOR of the heaps (a,b ≤ 5)",
     "receipt": "2fe582e9-170a-8a5f-a385-9adb3c89ca93",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_nim_grundy_of_two_heaps_is_the_xor quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_nim_grundy_of_two_heaps_is_the_xor"
   },
   {
     "key": "arts_no_exact_complement",
@@ -1977,8 +1983,9 @@
     "name": "the subtraction game {1,2,3}: position n loses for the mover iff n ≡ 0 mod 4",
     "receipt": "821c7911-3c60-8515-8b9d-e857e41feada",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_classical_the_subtraction_game_loses_exactly_at_the_multiples_of_four quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": true,
+    "supersededBy": "lean_classical_the_subtraction_game_loses_exactly_at_the_multiples_of_four"
   },
   {
     "key": "one_game_harmony",
@@ -2082,16 +2089,18 @@
     "name": "perfect numbers: proper divisors sum to n itself — 6, 28, 496",
     "receipt": "8c7b3940-aa69-84f8-85e1-00f4dd6746e0",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_classical_euclids_form_is_perfect_at_every_mersenne_prime_to_seven quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_classical_euclids_form_is_perfect_at_every_mersenne_prime_to_seven"
   },
   {
     "key": "amicable_220_284",
     "name": "the amicable pair (220, 284): each is the sum of the other's proper divisors",
     "receipt": "878c0c52-b4a1-8c38-8c1f-004449495021",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_classical_the_amicable_pair_is_mutual_and_neither_is_perfect quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_classical_the_amicable_pair_is_mutual_and_neither_is_perfect"
   },
   {
     "key": "euclid_euler_perfect",
@@ -3904,8 +3913,9 @@
     "name": "the primitive roots mod 9 are exactly {2,5}: a residue is a primitive root iff its powers generate all six units, and only 2 and 5 do — φ(φ(9)) = φ(6) = 2 primitive roots, verified by enumerating the powers of every unit",
     "receipt": "32f0b1ec-4b58-824f-9d0f-b3944ebc8ffd",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_classical_the_primitive_roots_mod_nine_are_exactly_two_and_five quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": true,
+    "supersededBy": "lean_classical_the_primitive_roots_mod_nine_are_exactly_two_and_five"
   },
   {
     "key": "discrete_log_base2_is_a_bijection",
@@ -3968,8 +3978,9 @@
     "name": "the nim-sum is GF(2) vector addition: it is bitwise XOR — commutative, associative, and self-inverse (x ⊕ x = 0) — so Nim positions form a GF(2) vector space and the game is decided by binary algebra",
     "receipt": "c883cd18-f418-882a-9eba-19c3012e4d05",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_nim_the_nim_sum_is_a_gf2_vector_addition quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_nim_the_nim_sum_is_a_gf2_vector_addition"
   },
   {
     "key": "every_rating_is_exactly_one_or_zero",
@@ -4006,8 +4017,9 @@
     "name": "the Eisenstein integers have exactly six units {±1, ±ω, ±ω²}: the norm-1 elements (norm(a+bω)=a²−ab+b²) number six — the same count as the multiplicative group of ℤ/9",
     "receipt": "8fb3413e-f501-8d4e-a174-49c2725fa79f",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_classical_the_eisenstein_units_are_exactly_six quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_classical_the_eisenstein_units_are_exactly_six"
   },
   {
     "key": "josephus_k2_closed_form",
@@ -18107,5 +18119,45 @@
     "key": "lean_families_the_involutions_are_counted_by_the_telephone_numbers",
     "name": "lean families.lean: the_involutions_are_counted_by_the_telephone_numbers — (List.range 6).all (fun n => ((permsN (List.range n)).filter isInvolution).length == telephone n) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "2e115c82-0778-894a-a5e1-97b4efd0319e"
+  },
+  {
+    "key": "lean_classical_euclids_form_is_perfect_at_every_mersenne_prime_to_seven",
+    "name": "lean classical.lean: euclids_form_is_perfect_at_every_mersenne_prime_to_seven — [2, 3, 5, 7].all (fun p => !(isPrime (2 ^ p - 1)) || properDivisorSum (2 ^ (p - 1) * (2 ^ p - 1)) == 2 ^ (p - 1) * (2 ^ p - 1)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "620f618b-0918-829d-afff-36ad49e31892"
+  },
+  {
+    "key": "lean_classical_the_mersenne_hypothesis_is_real_at_eleven",
+    "name": "lean classical.lean: the_mersenne_hypothesis_is_real_at_eleven — isPrime (2 ^ 11 - 1) = false ∧ 23 * 89 = 2 ^ 11 - 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a2712a9f-e27c-8f1a-b5da-064b0f8a6892"
+  },
+  {
+    "key": "lean_classical_the_amicable_pair_is_mutual_and_neither_is_perfect",
+    "name": "lean classical.lean: the_amicable_pair_is_mutual_and_neither_is_perfect — properDivisorSum 220 = 284 ∧ properDivisorSum 284 = 220 ∧ properDivisorSum 220 ≠ 220 ∧ properDivisorSum 284 ≠ 284 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "55d984af-0eea-8e2c-8a23-0810246412d3"
+  },
+  {
+    "key": "lean_classical_the_primitive_roots_mod_nine_are_exactly_two_and_five",
+    "name": "lean classical.lean: the_primitive_roots_mod_nine_are_exactly_two_and_five — (unitsMod 9).filter (fun g => ordMod g 9 == 6) = [2, 5] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "4a8d743a-91db-80da-b333-7b9127eca430"
+  },
+  {
+    "key": "lean_classical_the_eisenstein_units_are_exactly_six",
+    "name": "lean classical.lean: the_eisenstein_units_are_exactly_six — (((List.range 7).flatMap (fun (i : Nat) => (List.range 7).map (fun (j : Nat) => (((i : Int) - 3, (j : Int) - 3) : Int × Int)))).filter (fun p => eisensteinNorm p.1 p.2 == 1)).length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "eaf5c086-45f7-8d7d-82fb-c48a2e3f3982"
+  },
+  {
+    "key": "lean_classical_the_subtraction_game_loses_exactly_at_the_multiples_of_four",
+    "name": "lean classical.lean: the_subtraction_game_loses_exactly_at_the_multiples_of_four — (List.range 41).all (fun n => if n % 4 == 0 then [1, 2, 3].all (fun m => !(m ≤ n) || (n - m) % 4 != 0) else [1, 2, 3].any (fun m => m ≤ n && (n - m) % 4 == 0)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c63cc11c-7026-8fcc-84d3-e56179ee913c"
+  },
+  {
+    "key": "lean_nim_the_nim_sum_is_a_gf2_vector_addition",
+    "name": "lean nim.lean: the_nim_sum_is_a_gf2_vector_addition — (List.range 16).all (fun a => (List.range 16).all (fun b => xorN a b == xorN b a)) ∧ (List.range 16).all (fun a => (List.range 16).all (fun b => (List.range 16).all (fun c => xorN (xorN a b) c == xorN a (xorN b c)))) ∧ (List.range 16).all (… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ac800514-3881-88ff-a470-dc18e5c04e8f"
+  },
+  {
+    "key": "lean_nim_bouton_holds_at_every_heap_size_to_six",
+    "name": "lean nim.lean: bouton_holds_at_every_heap_size_to_six — (List.range 7).all (fun a => (List.range 7).all (fun b => isLost a b == (xorN a b == 0))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "cecea07f-4f2e-8199-8caf-eb814fc22e55"
   }
 ]

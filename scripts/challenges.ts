@@ -5,7 +5,7 @@
 // build), so it never enters the content-address and never churns a phantom version.
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { toUuid, merkleFold } from '../src/0/index.ts'
-import { ledger as __ledger, statusOf as __statusOf } from '../src/api/index.ts'
+import { ledger as __ledger, statusOf as __statusOf, carrierOf } from '../src/api/index.ts'
 import { isLive as __isLive, isWithdrawn as __isWithdrawn } from '../src/api/index.ts'
 
 const CLAY = [
@@ -65,7 +65,13 @@ if (goneL.length) {
   if (carriedL.length) {
     o += '\n## Carried — ' + carriedL.length + ' withdrawn entries whose statement a proof now carries\n\n'
     o += 'Each was withdrawn for want of a Lean proof and has since been given one, at a new key. The entry is not restored: its own evidence is still a TypeScript test, and it did not hold on what it had. What the record adds is where the statement stands now.\n\n'
-    for (const e of carriedL.slice(0, 40)) o += '- ~~`' + e.key + '`~~ → [`' + (e as { supersededBy?: string }).supersededBy + '`](/theorem/' + (e as { supersededBy?: string }).supersededBy + ')\n'
+    // THE LIVE END OF THE CHAIN, not the first link. This printed `supersededBy` directly and published
+    // `lean_euler_units_pow_six` — an entry that is itself retired and forwards on again. The seal gate
+    // refused the page for citing a revoked key, which is exactly what it exists to do.
+    for (const e of carriedL.slice(0, 40)) {
+      const heir = carrierOf(e, ledger)
+      o += '- ~~`' + e.key + '`~~ → [`' + heir + '`](/theorem/' + heir + ')\n'
+    }
     if (carriedL.length > 40) o += '\n…and ' + (carriedL.length - 40) + ' more.\n'
   }
   o += '\n<details><summary>List all ' + goneL.length + ' withdrawn keys — nothing proves these</summary>\n\n'

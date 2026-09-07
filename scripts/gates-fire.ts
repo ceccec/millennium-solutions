@@ -285,6 +285,12 @@ const CONTROLS: Control[] = [
   { gate: 'notice-reads-the-whole-table', cmd: 'node scripts/notice.ts', file: 'scripts/notice.ts',
     what: 'a reader that silently sees fewer instruments than the table holds, publishing a partial rights list',
     mutate: (s) => s.replace('/^\\s*[[,]\\s*\\(', '/^  , \\('), restore: 'node scripts/notice.ts' },
+  // The claim is that this deposit can be checked without an account, a key or a model. The control plants
+  // a network call on the verification path — if independent.ts does not go red, the claim is unbacked.
+  { gate: 'independent', cmd: 'node scripts/independent.ts', file: 'scripts/forensics.ts',
+    what: 'a network call on the verification path — a remote party standing between a checker and the answer',
+    mutate: (s) => s.replace('import { readFileSync', 'const _probe = async () => fetch(\'https://example.invalid/x\')\nimport { readFileSync') },
+
   // recover.ts's carry table is a set of matchers, and a matcher that hits nothing looks exactly like one
   // whose work is done. This is the control for that: change a rule's spelling and the run must refuse.
   { gate: 'recover-dead-rule', cmd: 'node scripts/recover.ts', file: 'scripts/recover.ts',

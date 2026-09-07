@@ -61,9 +61,9 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free and axiom-free, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 593 of them across 31 files and
-7 wings; 585 close by exhaustion over a stated finite domain and the
-remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
+(\texttt{npm run latex-gate}). There are 602 of them across 32 files and
+7 wings; 593 close by exhaustion over a stated finite domain and the
+remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
 
@@ -326,6 +326,43 @@ remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \subsection{the ring}
+
+\paragraph{\texttt{classical.lean}}
+
+\begin{theorem}[\texttt{euclids\_form\_is\_perfect\_at\_every\_mersenne\_prime\_to\_seven}]
+\[ \forall p \in [2,\,3,\,5,\,7],\; \lnot \mathrm{isPrime}\mathopen{}\left(2^{p} - 1\right) \lor \mathrm{properDivisorSum}\mathopen{}\left(2^{p - 1} \cdot 2^{p} - 1\right) = 2^{p - 1} \cdot 2^{p} - 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_mersenne\_hypothesis\_is\_real\_at\_eleven}]
+\[ \mathrm{isPrime}\mathopen{}\left(2^{11} - 1\right) = \mathrm{false} \land 23 \cdot 89 = 2^{11} - 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_amicable\_pair\_is\_mutual\_and\_neither\_is\_perfect}]
+\[ \mathrm{properDivisorSum}\mathopen{}\left(220\right) = 284 \land \mathrm{properDivisorSum}\mathopen{}\left(284\right) = 220 \land \mathrm{properDivisorSum}\mathopen{}\left(220\right) \neq 220 \land \mathrm{properDivisorSum}\mathopen{}\left(284\right) \neq 284 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_primitive\_roots\_mod\_nine\_are\_exactly\_two\_and\_five}]
+\[ \{\, g \in \mathrm{unitsMod}\mathopen{}\left(9\right) \mid \mathrm{ordMod}\mathopen{}\left(g,\,9\right) = 6 \,\} = [2,\,5] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 2 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_eisenstein\_units\_are\_exactly\_six}]
+\texttt{(((List.range 7).flatMap (fun (i : Nat) => (List.range 7).map (fun (j : Nat) => (((i : Int) - 3, (j : Int) - 3) : Int × Int)))).filter (fun p => eisensteinNorm p.1 p.2 == 1)).length = 6}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 49 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_subtraction\_game\_loses\_exactly\_at\_the\_multiples\_of\_four}]
+\[ \forall n \in \{0,\dots,40\},\; \begin{cases}\forall m \in [1,\,2,\,3],\; \lnot m \le n \lor n - m \bmod 4 \neq 0 & \text{if } n \bmod 4 = 0\\ \exists m \in [1,\,2,\,3] : m \le n \land n - m \bmod 4 = 0 & \text{otherwise}\end{cases} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 369 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{classical\_settles\_its\_range}]
+\[ \mathrm{settledHere} = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 
 \paragraph{\texttt{coin.lean}}
 
@@ -2247,6 +2284,16 @@ remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 \[ \forall a \in \{0,\dots,31\},\; \mathrm{xorN}\mathopen{}\left(a,\,0\right) = a \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 32 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_nim\_sum\_is\_a\_gf2\_vector\_addition}]
+\[ \forall a \in \{0,\dots,15\},\; \forall b \in \{0,\dots,15\},\; \mathrm{xorN}\mathopen{}\left(a,\,b\right) = \mathrm{xorN}\mathopen{}\left(b,\,a\right) \land \forall a \in \{0,\dots,15\},\; \forall b \in \{0,\dots,15\},\; \forall c \in \{0,\dots,15\},\; \mathrm{xorN}\mathopen{}\left(\mathrm{xorN}\mathopen{}\left(a,\,b\right),\,c\right) = \mathrm{xorN}\mathopen{}\left(a,\,\mathrm{xorN}\mathopen{}\left(b,\,c\right)\right) \land \forall a \in \{0,\dots,15\},\; \forall b \in \{0,\dots,15\},\; \mathrm{xorN}\mathopen{}\left(\mathrm{xorN}\mathopen{}\left(a,\,b\right),\,b\right) = a \land \forall a \in \{0,\dots,15\},\; \mathrm{xorN}\mathopen{}\left(a,\,0\right) = a \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4,294,967,296 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{bouton\_holds\_at\_every\_heap\_size\_to\_six}]
+\[ \forall a \in \{0,\dots,6\},\; \forall b \in \{0,\dots,6\},\; \mathrm{isLost}\mathopen{}\left(a,\,b\right) = \mathrm{xorN}\mathopen{}\left(a,\,b\right) = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 49 cases. \hfill$\square$
 
 \paragraph{\texttt{reversal.lean}}
 

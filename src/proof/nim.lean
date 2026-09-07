@@ -79,4 +79,27 @@ theorem xor_is_commutative :
   (List.range 16).all (fun a => (List.range 16).all (fun b => xorN a b == xorN b a)) := by decide
 theorem xor_zero_is_identity : (List.range 32).all (fun a => xorN a 0 == a) := by decide
 
+-- ── THE NIM-SUM AS GF(2) VECTOR ADDITION, IN ONE PROPOSITION ─────────────────────────────────────────────
+--    `nim_sum_is_xor_gf2` claims the nim-sum IS GF(2) vector addition: commutative, associative and
+--    self-inverse. Associativity was the one property missing here — and the other three, though each
+--    decided above, are decided SEPARATELY. A claim is carried by a theorem that decides all of it or by
+--    none, and the ledger's supersededBy names exactly one key, so three quarters of a claim spread over
+--    three theorems carries nothing. The conjunction is the claim; the conjuncts standing alone are its
+--    parts, which is why both forms are here rather than one. Range 16 because the cube of it is walked.
+theorem the_nim_sum_is_a_gf2_vector_addition :
+  (List.range 16).all (fun a => (List.range 16).all (fun b => xorN a b == xorN b a)) ∧
+  (List.range 16).all (fun a => (List.range 16).all (fun b => (List.range 16).all (fun c =>
+    xorN (xorN a b) c == xorN a (xorN b c)))) ∧
+  (List.range 16).all (fun a => (List.range 16).all (fun b => xorN (xorN a b) b == a)) ∧
+  (List.range 16).all (fun a => xorN a 0 == a) := by decide
+
+-- ── BOUTON WITH SEVEN HEAP SIZES, because "heaps ≤ 6" means seven of them and N = 6 gives six ─────────────
+--    The ledger's row says "all heaps ≤ 6, exhaustive". `bouton_two_heaps_lost_iff_xor_zero` ranges over
+--    List.range N with N = 6, which is 0…5 — one short. Carrying the row on it would have claimed a
+--    position nobody decided, over an off-by-one nobody would ever see. The board is widened here instead,
+--    in a theorem of its own, because N is baked into the statements already sealed above.
+set_option maxRecDepth 4000000 in
+theorem bouton_holds_at_every_heap_size_to_six :
+  (List.range 7).all (fun a => (List.range 7).all (fun b => isLost a b == (xorN a b == 0))) := by decide
+
 end Nim

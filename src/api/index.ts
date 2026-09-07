@@ -361,12 +361,42 @@ export const isLive = (e: Entry): boolean => !e.revoked
  *  forward to a key that is itself withdrawn, and every one of them was being reported as carried: the record
  *  claimed a live proof at the far end of a link that leads nowhere. CHALLENGES.md published those links, and
  *  the seal gate caught a page citing a withdrawn theorem, which is how this was found rather than shipped.
- *  A carry is a claim about where the proof is now, so it is only a carry when there is a proof there. */
+ *  A carry is a claim about where the proof is now, so it is only a carry when there is a proof there.
+ *
+ *  AND THE LINK CAN BE MORE THAN ONE HOP. That fix stopped at the first heir, and three claims were reading
+ *  as withdrawn while their proof was two links away: `add_group` forwards to `lean_add_group`, which was
+ *  itself retired when the file-prefixed address format arrived and forwards to `lean_z9_add_group`, which
+ *  is live and decides exactly the claim. The record said where the proof went, twice, and the reader
+ *  stopped after the first sentence. Walking the chain does NOT weaken the check above — a chain ending at
+ *  a revoked entry with nowhere further to go is still withdrawn, which is the whole content of "the
+ *  successor must itself stand". A cycle or an implausibly long chain is withdrawn too: the record has
+ *  stopped making sense at that point, and reporting a carry on it would be trusting a loop. */
+export const CARRY_HOPS = 16
+
+/** The key that actually holds the proof for a carried entry — the LIVE end of the forwarding chain, not
+ *  the first link. CHALLENGES.md published the first link and the seal gate refused the page: `euler_units_pow6`
+ *  forwards to `lean_euler_units_pow_six`, which is retired and forwards on to `lean_z9_euler_units_pow_six`.
+ *  Citing the middle of a chain sends a reader to a page that says the theorem moved. One walk, used by both
+ *  `statusOf` and every surface that prints where the proof went, so the status and the citation cannot
+ *  disagree about which key that is. */
+export const carrierOf = (e: Entry, l: Entry[] = ledger()): string | null => {
+  if (!e.revoked) return null
+  const seen = new Set<string>([e.key])
+  let cur = e
+  for (let hop = 0; hop < CARRY_HOPS; hop++) {
+    if (!cur.supersededBy || seen.has(cur.supersededBy)) return null
+    seen.add(cur.supersededBy)
+    const heir = l.find((x) => x.key === cur.supersededBy)
+    if (!heir) return null
+    if (!heir.revoked) return heir.key
+    cur = heir
+  }
+  return null
+}
+
 export const statusOf = (e: Entry, l: Entry[] = ledger()): Status => {
   if (!e.revoked) return 'standing'
-  if (!e.supersededBy) return 'withdrawn'
-  const heir = l.find((x) => x.key === e.supersededBy)
-  return heir && !heir.revoked ? 'carried' : 'withdrawn'
+  return carrierOf(e, l) ? 'carried' : 'withdrawn'
 }
 
 /** Entries whose statement stands, whether by their own seal or through the theorem that carries it. This is

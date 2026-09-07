@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2496 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2504 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (585)
+### lean (593)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -609,28 +609,36 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_families_the_pisano_period_of_nine_is_twenty_four_and_every_modulus_to_twelve_has_one](/theorem/lean_families_the_pisano_period_of_nine_is_twenty_four_and_every_modulus_to_twelve_has_one) — lean families.lean: the_pisano_period_of_nine_is_twenty_four_and_every_modulus_to_twelve_has_one — pisano 9 = 24 ∧ (List.range' 2 11).all (fun m =&gt; pisano m &gt; 0 && fib (pisano m) % m == 0 && fib (pisano m + 1) % m == 1) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `0383a951-5b56…`
 - [lean_families_the_digit_sum_rules_for_three_and_nine_hold_below_ten_thousand](/theorem/lean_families_the_digit_sum_rules_for_three_and_nine_hold_below_ten_thousand) — lean families.lean: the_digit_sum_rules_for_three_and_nine_hold_below_ten_thousand — (List.range 100).all (fun a =&gt; (List.range 100).all (fun b =&gt; (digitSum (a * 100 + b) % 3 == 0) == ((a * 100 + b) % 3 == 0) && ((digitSum (a * 100 + b) % 9 == 0) == ((a * 100 + b) % 9 == 0)))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d9da6c6c-9711…`
 - [lean_families_the_involutions_are_counted_by_the_telephone_numbers](/theorem/lean_families_the_involutions_are_counted_by_the_telephone_numbers) — lean families.lean: the_involutions_are_counted_by_the_telephone_numbers — (List.range 6).all (fun n =&gt; ((permsN (List.range n)).filter isInvolution).length == telephone n) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2e115c82-0778…`
+- [lean_classical_euclids_form_is_perfect_at_every_mersenne_prime_to_seven](/theorem/lean_classical_euclids_form_is_perfect_at_every_mersenne_prime_to_seven) — lean classical.lean: euclids_form_is_perfect_at_every_mersenne_prime_to_seven — [2, 3, 5, 7].all (fun p =&gt; !(isPrime (2 ^ p - 1)) || properDivisorSum (2 ^ (p - 1) * (2 ^ p - 1)) == 2 ^ (p - 1) * (2 ^ p - 1)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `620f618b-0918…`
+- [lean_classical_the_mersenne_hypothesis_is_real_at_eleven](/theorem/lean_classical_the_mersenne_hypothesis_is_real_at_eleven) — lean classical.lean: the_mersenne_hypothesis_is_real_at_eleven — isPrime (2 ^ 11 - 1) = false ∧ 23 * 89 = 2 ^ 11 - 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a2712a9f-e27c…`
+- [lean_classical_the_amicable_pair_is_mutual_and_neither_is_perfect](/theorem/lean_classical_the_amicable_pair_is_mutual_and_neither_is_perfect) — lean classical.lean: the_amicable_pair_is_mutual_and_neither_is_perfect — properDivisorSum 220 = 284 ∧ properDivisorSum 284 = 220 ∧ properDivisorSum 220 ≠ 220 ∧ properDivisorSum 284 ≠ 284 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `55d984af-0eea…`
+- [lean_classical_the_primitive_roots_mod_nine_are_exactly_two_and_five](/theorem/lean_classical_the_primitive_roots_mod_nine_are_exactly_two_and_five) — lean classical.lean: the_primitive_roots_mod_nine_are_exactly_two_and_five — (unitsMod 9).filter (fun g =&gt; ordMod g 9 == 6) = [2, 5] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `4a8d743a-91db…`
+- [lean_classical_the_eisenstein_units_are_exactly_six](/theorem/lean_classical_the_eisenstein_units_are_exactly_six) — lean classical.lean: the_eisenstein_units_are_exactly_six — (((List.range 7).flatMap (fun (i : Nat) =&gt; (List.range 7).map (fun (j : Nat) =&gt; (((i : Int) - 3, (j : Int) - 3) : Int × Int)))).filter (fun p =&gt; eisensteinNorm p.1 p.2 == 1)).length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `eaf5c086-45f7…`
+- [lean_classical_the_subtraction_game_loses_exactly_at_the_multiples_of_four](/theorem/lean_classical_the_subtraction_game_loses_exactly_at_the_multiples_of_four) — lean classical.lean: the_subtraction_game_loses_exactly_at_the_multiples_of_four — (List.range 41).all (fun n =&gt; if n % 4 == 0 then [1, 2, 3].all (fun m =&gt; !(m ≤ n) || (n - m) % 4 != 0) else [1, 2, 3].any (fun m =&gt; m ≤ n && (n - m) % 4 == 0)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c63cc11c-7026…`
+- [lean_nim_the_nim_sum_is_a_gf2_vector_addition](/theorem/lean_nim_the_nim_sum_is_a_gf2_vector_addition) — lean nim.lean: the_nim_sum_is_a_gf2_vector_addition — (List.range 16).all (fun a =&gt; (List.range 16).all (fun b =&gt; xorN a b == xorN b a)) ∧ (List.range 16).all (fun a =&gt; (List.range 16).all (fun b =&gt; (List.range 16).all (fun c =&gt; xorN (xorN a b) c == xorN a (xorN b c)))) ∧ (List.range 16).all (… — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `ac800514-3881…`
+- [lean_nim_bouton_holds_at_every_heap_size_to_six](/theorem/lean_nim_bouton_holds_at_every_heap_size_to_six) — lean nim.lean: bouton_holds_at_every_heap_size_to_six — (List.range 7).all (fun a =&gt; (List.range 7).all (fun b =&gt; isLost a b == (xorN a b == 0))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `cecea07f-4f2e…`
 
 ### other — one-of-a-kind (0)
 
 
 
-## Revoked — 1529 entries that no longer stand
+## Revoked — 1514 entries that no longer stand
 
 The ledger is append-only: an entry that stops holding is marked in place, never deleted — deleting would break the receipt chain, and rewriting a receipt is tamper. These keep their receipts and stay in the record, but they are **not citable** and have no `/theorem/` page. Grouped by the reason they went:
 
-- **1049** — dirty: not backed by a Lean proof
+- **1035** — dirty: not backed by a Lean proof
 - **443** — revoked in place: its test asserted a lexical drain (computes(boast)
 - **12** — revoked in place: circular by construction AND dependent on the removed lexical gate
 - **12** — orphaned: the theorem this key was sealed from is no longer in src/proof
 - **10** — revoked in place: circular by construction — the test defines the answer it checks, proving a declaration rather than a fact
-- **1** — carried: withdrawn for having only a TypeScript test behind it, and since proved — `euler_units_pow_six` states the same proposition at lean_euler_units_pow_six, and the kernel checks it on every run
 - **1** — revoked in place: its test asserts that a list of proof-boasts written across many scripts and languages ALL drain the gate — a lexical drain assertion, and the word-list gate was removed by order, so there is no lexicon to drain and the assertion tests nothing
 - **1** — revoked in place: it asserts adjudicate('we prove all seven')
 
-## Carried — 382 withdrawn entries whose statement a proof now carries
+## Carried — 397 withdrawn entries whose statement a proof now carries
 
 Each was withdrawn for want of a Lean proof and has since been given one, at a new key. The entry is not restored: its own evidence is still a TypeScript test, and it did not hold on what it had. What the record adds is where the statement stands now.
 
+- ~~`euler_units_pow6`~~ → [`lean_z9_euler_units_pow_six`](/theorem/lean_z9_euler_units_pow_six)
 - ~~`units_sum_zero`~~ → [`lean_recovered_units_sum_zero`](/theorem/lean_recovered_units_sum_zero)
 - ~~`self_inverse_1_8`~~ → [`lean_recovered_self_inverse_1_8`](/theorem/lean_recovered_self_inverse_1_8)
 - ~~`triad_nilpotent`~~ → [`lean_recovered_triad_nilpotent`](/theorem/lean_recovered_triad_nilpotent)
@@ -670,20 +678,16 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`powsum0_k17`~~ → [`lean_generated_powsum_zero_odd_exponents`](/theorem/lean_generated_powsum_zero_odd_exponents)
 - ~~`hasinv_d1`~~ → [`lean_families_an_inverse_mod_nine_exists_at_exactly_the_units`](/theorem/lean_families_an_inverse_mod_nine_exists_at_exactly_the_units)
 - ~~`hasinv_d2`~~ → [`lean_families_an_inverse_mod_nine_exists_at_exactly_the_units`](/theorem/lean_families_an_inverse_mod_nine_exists_at_exactly_the_units)
-- ~~`hasinv_d4`~~ → [`lean_families_an_inverse_mod_nine_exists_at_exactly_the_units`](/theorem/lean_families_an_inverse_mod_nine_exists_at_exactly_the_units)
 
-…and 342 more.
+…and 357 more.
 
-<details><summary>List all 1529 withdrawn keys — nothing proves these</summary>
+<details><summary>List all 1514 withdrawn keys — nothing proves these</summary>
 
-- ~~`euler_units_pow6`~~ — every unit u⁶ ≡ 1 mod 9 (Euler, φ(9)=6)  ·  `e70a44b2-6eb8…`
 - ~~`qr_u7`~~ — 7 is a quadratic residue mod 9  ·  `2a422f9b-761a…`
 - ~~`powinv_k5`~~ — u↦u^5 is an involution on the units mod 9  ·  `8e327990-c88f…`
 - ~~`powinv_k7`~~ — u↦u^7 is an involution on the units mod 9  ·  `469cfad5-9293…`
 - ~~`selfinv_u1`~~ — 1 is its own inverse mod 9  ·  `558f7d79-d3d7…`
 - ~~`selfinv_u8`~~ — 8 is its own inverse mod 9  ·  `3bc79c77-36a1…`
-- ~~`add_group`~~ — every residue has an additive inverse mod 9  ·  `7c5b01de-e813…`
-- ~~`neg_involution`~~ — negation −(−d) ≡ d is an involution on ℤ/9  ·  `5eb8cd1f-9e06…`
 - ~~`selfneg_d9`~~ — 9 is its own additive inverse (2·9 ≡ 0) mod 9  ·  `8d0d0254-5ca1…`
 - ~~`invmap_perm`~~ — the multiplicative inverse map permutes the units mod 9  ·  `8455c1ab-d297…`
 - ~~`invmap_involution`~~ — the multiplicative inverse map is an involution on the units mod 9  ·  `43418601-7a73…`
@@ -709,9 +713,6 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`gauss_i_squared`~~ — in ℤ[i], i² = −1  ·  `185b3eda-935c…`
 - ~~`gauss_norm_multiplicative`~~ — the ℤ[i] norm is multiplicative: N(zw)=N(z)·N(w) (tested set)  ·  `7e709c97-78f3…`
 - ~~`handshake_z9`~~ — handshake on the ×2 Cayley graph of ℤ/9: Σ degrees = 2·|edges|  ·  `44f09f3c-e542…`
-- ~~`merkaba_partition`~~ — the mod-3 classes {3,6,9}·{1,4,7}·{2,5,8} partition ℤ/9 into 3+3+3  ·  `782ddd50-1c1a…`
-- ~~`merkaba_counter_rotation`~~ — doubling counter-rotates the two tetrahedra: {1,4,7} ↔ {2,5,8}  ·  `5acd8c30-cd18…`
-- ~~`merkaba_axis_closed`~~ — the axis {3,6,9} is closed under doubling (the merkaba spindle)  ·  `1b0e8f6a-2b64…`
 - ~~`merkaba_field_max_null`~~ — the merkaba field f(θ)=(1+cosθ)/2: co-rotating(0)→1 MAX, counter-rotating(π)→0 NULL  ·  `a9c3214f-3ec7…`
 - ~~`cover_one_tetra_partial`~~ — still: one tetrahedron {1,4,7} covers only 3 of the 6 units — 3 remain uncovered  ·  `8c7bcc8a-1869…`
 - ~~`cover_moving_pair_full`~~ — moving: the counter-rotating pair {1,4,7}∪{2,5,8} covers every uncovered unit — all 6, no gap  ·  `22b9e194-9be5…`
@@ -728,12 +729,10 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`farey_neighbor_F5`~~ — Farey F_5: consecutive a/b, c/d satisfy bc − ad = 1  ·  `170484c5-3b95…`
 - ~~`farey_neighbor_F6`~~ — Farey F_6: consecutive a/b, c/d satisfy bc − ad = 1  ·  `21bdf7ff-2f61…`
 - ~~`mediant_between`~~ — the mediant (a+c)/(b+d) lies strictly between a/b and c/d (Farey F_6)  ·  `b1919795-2272…`
-- ~~`fib_trinity_358`~~ — 3, 5, 8 are consecutive Fibonacci: 3 + 5 = 8  ·  `d628c034-b0b3…`
 - ~~`quarter_turn_order4`~~ — 90° rotation (×i) has order 4: shift by 90° four times and it returns (i⁴ = 1)  ·  `02f0a928-7bda…`
 - ~~`both_games_truth_and_honesty`~~ — both games: the orbit covers the units (computes) AND "covers, solves no Clay" signs  ·  `346f2fb8-6b23…`
 - ~~`both_games_overclaim_loses`~~ — the overclaim loses both games: "the orbit solves the Clay problems" drains and proves nothing  ·  `65cc1cf8-20a5…`
 - ~~`both_games_358`~~ — the 3-5-8 trinity plays both: 3+5=8 computes AND "3+5=8, proving no open conjecture" signs  ·  `c26cc4c6-7c93…`
-- ~~`nim_bouton_H6`~~ — Nim (Bouton): a 2-heap position is a loss for the mover iff XOR = 0 (all heaps ≤ 6, exhaustive)  ·  `4b41d6ed-63f3…`
 - ~~`wythoff_identity`~~ — Wythoff: ⌊nφ²⌋ − ⌊nφ⌋ = n for all n ≤ 20 (the golden-ratio Beatty identity)  ·  `5526fdb5-4a24…`
 - ~~`arts_triad_rgb_primaries`~~ — the triad {3,6,9} maps to the RGB primary hues: 0°(red), 120°(green), 240°(blue)  ·  `316f831d-95da…`
 - ~~`arts_cmy_complements_rgb`~~ — CMY are the 180° complements of RGB: each primary hue + 180° is a secondary hue  ·  `13b5af77-bfc6…`
@@ -751,7 +750,6 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`lens_strings_not_meaning`~~ — the lens sees bytes: distinct translations → distinct addresses, identical → identical  ·  `9ab46c9a-f620…`
 - ~~`lens_concept_handle_order_independent`~~ — the cross-locale concept handle (fold of the aligned translations) is order-independent  ·  `5e07b827-f250…`
 - ~~`lens_deterministic`~~ — each translation content-addresses deterministically — toUuid(s) reproduces exactly  ·  `b46579fd-1b90…`
-- ~~`grundy_xor_sum`~~ — Sprague–Grundy: a 2-heap Nim position's Grundy value is the XOR of the heaps (a,b ≤ 5)  ·  `2fe582e9-170a…`
 - ~~`arts_no_exact_complement`~~ — on the 9-hue wheel no hue has an exact complement (180° = 4.5 steps) — the odd base has no antipode  ·  `1656079f-c131…`
 - ~~`trial_overclaim_drained`~~ — trial DRAINED: the conspiracy "algebra proves the Clay problems" is refused by the gate (computes 0)  ·  `57c46000-4768…`
 - ~~`trial_pvnp_inconclusive`~~ — trial INCONCLUSIVE: "P vs NP remains open" signs; the claim it is decided drains — open, not false  ·  `94e908b9-21b1…`
@@ -798,7 +796,6 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`tarot_renders_not_divines`~~ — a theorem's tarot combination renders its identity, not its truth — the proof, not the cards, establishes it  ·  `7b2b309b-6b24…`
 - ~~`tarot_encoding_total`~~ — THEOREM: "any theorem may be explained as a tarot combination" — the encoding is total (every content-address → 3 cards in 0..77)  ·  `f7f6254d-4c7e…`
 - ~~`tictactoe_draw`~~ — tic-tac-toe with perfect play is a draw (minimax over all positions = 0)  ·  `95089477-058f…`
-- ~~`subtraction_game_mod4`~~ — the subtraction game {1,2,3}: position n loses for the mover iff n ≡ 0 mod 4  ·  `821c7911-3c60…`
 - ~~`one_game_harmony`~~ — THE ONE GAME: all game receipts fold to one order-independent harmonic root — the games meet in one  ·  `55cb8c5f-73cc…`
 - ~~`one_art_harmony`~~ — THE ONE ART: all art receipts fold to one order-independent harmonic root — the arts meet in one  ·  `6abed2f1-66f5…`
 - ~~`one_science_harmony`~~ — THE ONE SCIENCE: all science receipts fold to one order-independent harmonic root — the sciences meet in one  ·  `831f5688-1127…`
@@ -810,8 +807,6 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`gf4_frobenius_fixes`~~ — in 𝔽_4 every element satisfies x^(p^k)=x: a⁴ = a for all a (Frobenius^k = id)  ·  `fb7953fe-d9e3…`
 - ~~`gf4_frobenius_automorphism`~~ — Frobenius φ(a)=a² is a field automorphism of 𝔽_4: additive (freshman's dream) and multiplicative  ·  `c117a740-97d9…`
 - ~~`gf4_units_cyclic`~~ — the multiplicative group 𝔽_4* is cyclic of order 3 (a primitive element generates {1, x, x+1})  ·  `462b849d-7d1f…`
-- ~~`perfect_numbers`~~ — perfect numbers: proper divisors sum to n itself — 6, 28, 496  ·  `8c7b3940-aa69…`
-- ~~`amicable_220_284`~~ — the amicable pair (220, 284): each is the sum of the other's proper divisors  ·  `878c0c52-b4a1…`
 - ~~`euclid_euler_perfect`~~ — even perfect numbers are 2^(p−1)(2^p−1) for a Mersenne prime 2^p−1: 6=2·3, 28=4·7, 496=16·31  ·  `9f35788a-a976…`
 - ~~`collatz_reaches_1_range`~~ — Collatz: every n &lt; 10^4 reaches 1 — VERIFIED for the range, not settled for all n (the conjecture is open)  ·  `5842dff6-fc0d…`
 - ~~`collatz_27_orbit`~~ — the Collatz orbit of 27 reaches 1 in 111 steps (a specific bounded orbit)  ·  `2b528505-25f6…`
@@ -1015,7 +1010,6 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`farey_neighbours_unimodular`~~ — Farey neighbours are unimodular: consecutive reduced fractions a/b &lt; c/d in the Farey sequence F_n satisfy bc − ad = 1 (determinant one) — verified exhaustively for n ≤ 7  ·  `f122d7de-8779…`
 - ~~`farey_mediant_between_and_reduced`~~ — the mediant of Farey neighbours lies strictly between them and is already reduced: for adjacent a/b &lt; c/d, a/b &lt; (a+c)/(b+d) &lt; c/d and gcd(a+c, b+d) = 1 — the Stern–Brocot construction, exhaustive for n ≤ 7  ·  `863ad7a4-6be9…`
 - ~~`farey_lists_every_reduced_fraction_once`~~ — the Farey sequence lists every reduced fraction exactly once: |F_n| = 1 + Σ φ(q) for q=1..n and no fraction repeats — each rational in lowest terms appears once (exhaustive n ≤ 7), the exact-rational analog of the deposit’s gcd-reduced arithmetic  ·  `bc1bf0aa-1f40…`
-- ~~`primitive_roots_mod9_are_2_and_5`~~ — the primitive roots mod 9 are exactly {2,5}: a residue is a primitive root iff its powers generate all six units, and only 2 and 5 do — φ(φ(9)) = φ(6) = 2 primitive roots, verified by enumerating the powers of every unit  ·  `32f0b1ec-4b58…`
 - ~~`discrete_log_base2_is_a_bijection`~~ — the base-2 discrete log is a bijection ℤ/9* ↔ ℤ/6: every unit equals 2^k for a unique k in 0..5, and the powers of 2 are exactly [1,2,4,8,7,5] — the doubling orbit is the index (discrete log) map  ·  `bbb6d49b-792f…`
 - ~~`discrete_log_is_group_isomorphism`~~ — the discrete log is a group isomorphism ℤ/9* ≅ ℤ/6: with index base 2, ind(u·v mod 9) = (ind(u)+ind(v)) mod 6 for every pair of units — multiplication becomes addition mod 6 (the multiplicative group is cyclic of order 6), exhaustive over all 36 pairs  ·  `66a1d58a-91e9…`
 - ~~`gf2_addition_is_xor`~~ — GF(2) arithmetic speaks binary: polynomial addition over GF(2) is bitwise XOR, and every element is its own additive inverse (a ⊕ a = 0, characteristic 2) — the field of two elements is pure bit algebra  ·  `b3ac7829-c58e…`
@@ -1023,12 +1017,10 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`crc_detects_every_single_bit_error`~~ — the CRC detects every single-bit error: flipping any one of the 7 codeword bits makes the remainder mod g(x)=x³+x+1 nonzero (an error polynomial x^i is never divisible by the primitive generator) — so any one-bit crack is caught, exhaustive over all messages and positions  ·  `13b07ce4-3902…`
 - ~~`nim_loss_iff_zero_nimsum`~~ — Nim (Bouton’s theorem): the player to move loses exactly when the nim-sum — the XOR of the pile sizes — is zero, and wins otherwise; verified against full game-tree analysis for three piles of size ≤ 4  ·  `c1487d07-3fe4…`
 - ~~`nim_winning_move_zeros_the_nimsum`~~ — the Nim winning strategy: from any position with nonzero nim-sum there exists a move to a position with nim-sum zero (handing the loss to the opponent) — exhaustive over three piles of size ≤ 5  ·  `e90ed988-ec04…`
-- ~~`nim_sum_is_xor_gf2`~~ — the nim-sum is GF(2) vector addition: it is bitwise XOR — commutative, associative, and self-inverse (x ⊕ x = 0) — so Nim positions form a GF(2) vector space and the game is decided by binary algebra  ·  `c883cd18-f418…`
 - ~~`every_rating_is_exactly_one_or_zero`~~ — every rating is exactly 1 or 0, no exceptions: the honesty verdict is a single bit — there is no fractional or partial rating, a fake maximal-certainty claim itself drains, and the same input always returns the same bit; anything that drifts from {0,1} is a crack the floor refuses  ·  `c1b2772d-d7c0…`
 - ~~`development_balances_to_binary`~~ — development balances to binary: as metrics accumulate, each resolves to a single bit, and their conjunction balances to exactly one verdict — true iff every metric holds, false if any drifts (a crack); more development refines the metrics but the result never leaves {0,1}  ·  `cf105a78-9a23…`
 - ~~`eisenstein_omega_cubed_is_one`~~ — the Eisenstein cube root of unity: ω (with ω² = −1 − ω) satisfies ω³ = 1 — a primitive cube root, the trinity in the exponent, computed exactly by integer arithmetic in ℤ[ω]  ·  `498200ff-921c…`
 - ~~`cube_roots_of_unity_sum_zero`~~ — the three cube roots of unity sum to zero: 1 + ω + ω² = 0 — the equilateral trinity balances to the center, the same zero-sum shape as the ℤ/9 triad {3,6,9}  ·  `6b25148c-1c75…`
-- ~~`eisenstein_six_units`~~ — the Eisenstein integers have exactly six units {±1, ±ω, ±ω²}: the norm-1 elements (norm(a+bω)=a²−ab+b²) number six — the same count as the multiplicative group of ℤ/9  ·  `8fb3413e-f501…`
 - ~~`josephus_k2_closed_form`~~ — the Josephus survivor (every 2nd eliminated) is 2l+1: writing n = 2^m + l with 0 ≤ l &lt; 2^m, the survivor equals 2l+1 — matching the full elimination simulation for n = 1..40  ·  `1719d6d1-1575…`
 - ~~`josephus_k2_is_left_bit_rotation`~~ — the Josephus survivor is a one-bit left rotation of n: moving the leading 1 of n’s binary to the least-significant position gives the survivor — a counting-out game solved by a single bit shift (n = 1..40)  ·  `cc825255-e0c8…`
 - ~~`josephus_survivor_always_odd`~~ — the Josephus survivor is always an odd position: since the survivor is 2l+1, no even position ever survives when every second is eliminated (n = 1..40)  ·  `c40d916e-c633…`
@@ -2208,4 +2200,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `55608444-9825-8cef-9166-c3ed645cb75d`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `c1645165-1a1c-8027-9754-a97dae057ea3`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

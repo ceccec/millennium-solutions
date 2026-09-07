@@ -82,6 +82,21 @@ ${claimed.map((c) => `- ${c}`).join('\n')}
 The deposit claims **exactly** the without-formality set and nothing requiring an act it has not performed.
 That boundary is decided by exhaustion in \`src/proof/rights.lean\`, not asserted here.
 
+## Checking this without trusting anyone
+
+The deposit was written with an AI in the loop. Checking it does not need one, and does not need the
+depositor either. Every theorem is decided by the Lean kernel; every figure in the prose is recomputed by a
+script; every receipt is a hash of content that can be rehashed. Required: \`lean\` and \`node\`. Not required:
+an account, an API key, a network, or a model.
+
+That separation is enforced rather than asserted — \`npm run independent\` derives the verification path from
+the chain a checker actually runs, plus everything it imports, and REFUSES if anything on it calls a network,
+reads a credential, or reaches a model endpoint. It runs on every build, and it has a negative control: a
+network call planted on the path turns it red.
+
+It does not say the deposit is correct, or that the AI that wrote it was honest. It says neither question
+has to be settled on trust.
+
 ## Under CC BY-NC-ND 4.0
 
 **Permitted**: reading, quoting with attribution, verifying, linking, and reproducing verbatim with credit.

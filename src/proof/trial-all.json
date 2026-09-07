@@ -14974,5 +14974,53 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "2e115c82-0778-894a-a5e1-97b4efd0319e"
+  },
+  {
+    "key": "lean_classical_euclids_form_is_perfect_at_every_mersenne_prime_to_seven",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "620f618b-0918-829d-afff-36ad49e31892"
+  },
+  {
+    "key": "lean_classical_the_mersenne_hypothesis_is_real_at_eleven",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a2712a9f-e27c-8f1a-b5da-064b0f8a6892"
+  },
+  {
+    "key": "lean_classical_the_amicable_pair_is_mutual_and_neither_is_perfect",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "55d984af-0eea-8e2c-8a23-0810246412d3"
+  },
+  {
+    "key": "lean_classical_the_primitive_roots_mod_nine_are_exactly_two_and_five",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4a8d743a-91db-80da-b333-7b9127eca430"
+  },
+  {
+    "key": "lean_classical_the_eisenstein_units_are_exactly_six",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "eaf5c086-45f7-8d7d-82fb-c48a2e3f3982"
+  },
+  {
+    "key": "lean_classical_the_subtraction_game_loses_exactly_at_the_multiples_of_four",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c63cc11c-7026-8fcc-84d3-e56179ee913c"
+  },
+  {
+    "key": "lean_nim_the_nim_sum_is_a_gf2_vector_addition",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ac800514-3881-88ff-a470-dc18e5c04e8f"
+  },
+  {
+    "key": "lean_nim_bouton_holds_at_every_heap_size_to_six",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "cecea07f-4f2e-8199-8caf-eb814fc22e55"
   }
 ]

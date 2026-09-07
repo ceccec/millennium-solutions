@@ -1,5 +1,5 @@
 {
-  "produced": "745f06b42",
+  "produced": "0dad48962",
   "method": "recomputed from git history of src/proof/discovered.json and the ledger itself; re-runnable with `npm run forensic`",
   "establishes": "what changed, when, in which commit, and the reason recorded at the time",
   "doesNotEstablish": [
@@ -7,10 +7,10 @@
     "authorship beyond the git author field (every commit here carries the repository owner)"
   ],
   "ledgerNow": {
-    "entries": 2496,
-    "withdrawn": 1529,
-    "carried": 382,
-    "standing": 585
+    "entries": 2504,
+    "carried": 397,
+    "withdrawn": 1514,
+    "standing": 593
   },
   "chainRecomputed": {
     "breaks": 0,
@@ -81,7 +81,7 @@
   "withdrawalReasonsAsRecorded": [
     [
       "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a compu",
-      1049
+      1035
     ],
     [
       "revoked in place: its test asserted a lexical drain (computes(boast).binary === 0). The word-lis",
@@ -100,10 +100,6 @@
       10
     ],
     [
-      "carried: withdrawn for having only a TypeScript test behind it, and since proved — `euler_units_",
-      1
-    ],
-    [
       "revoked in place: its test asserts that a list of proof-boasts written across many scripts and l",
       1
     ],
@@ -112,6 +108,6 @@
       1
     ]
   ],
-  "totalStateChangingCommits": 566,
-  "address": "642d3b8b-a279-8639-8bd0-bf8a5bd7305b"
+  "totalStateChangingCommits": 567,
+  "address": "aa6d0dfa-07f3-8722-80f0-07d444b9f966"
 }
