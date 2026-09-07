@@ -285,6 +285,13 @@ const CONTROLS: Control[] = [
   { gate: 'notice-reads-the-whole-table', cmd: 'node scripts/notice.ts', file: 'scripts/notice.ts',
     what: 'a reader that silently sees fewer instruments than the table holds, publishing a partial rights list',
     mutate: (s) => s.replace('/^\\s*[[,]\\s*\\(', '/^  , \\('), restore: 'node scripts/notice.ts' },
+  // FOUND BY scripts/blind.ts, NOT BY ME. A seeded trial moved one digit in the rights table and the whole
+  // chain stayed green: EPC Art. 52 — what may be patented — became Art. 53, a different provision. The
+  // control is that exact drift.
+  { gate: 'citations-gate', cmd: 'node scripts/citations-gate.ts', file: 'src/proof/rights.lean',
+    what: 'a legal article number that drifted — the deposit citing a provision it does not mean',
+    mutate: (s) => s.replace('EPC Art. 52(2)(a)', 'EPC Art. 53(2)(a)') },
+
   // A theorem quantified over an empty domain is true and decides nothing. The control plants exactly that
   // and vacuity must find it; without this the sweep is trusted only because it reports zero.
   { gate: 'vacuity', cmd: 'node scripts/vacuity.ts', file: 'src/proof/elementary.lean',
