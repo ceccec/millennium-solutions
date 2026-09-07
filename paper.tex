@@ -61,8 +61,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free and axiom-free, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 609 of them across 32 files and
-7 wings; 600 close by exhaustion over a stated finite domain and the
+(\texttt{npm run latex-gate}). There are 616 of them across 32 files and
+7 wings; 607 close by exhaustion over a stated finite domain and the
 remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -332,7 +332,69 @@ remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the ring}
 
-\paragraph{\texttt{classical.lean}}
+\paragraph{\texttt{coin.lean}}
+
+\begin{theorem}[\texttt{the\_reflection\_is\_an\_involution}]
+\[ \forall d \in \mathrm{digits},\; \mathrm{refl}\mathopen{}\left(\mathrm{refl}\mathopen{}\left(d\right)\right) = d \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{one\_side\_is\_reflected\_onto\_itself}]
+\[ \forall d \in \mathrm{tetB},\; \mathrm{refl}\mathopen{}\left(d\right) \in \mathrm{tetB} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_other\_two\_swap}]
+\[ \forall d \in \mathrm{tetA},\; \mathrm{refl}\mathopen{}\left(d\right) \in \mathrm{axis} \land \forall d \in \mathrm{axis},\; \mathrm{refl}\mathopen{}\left(d\right) \in \mathrm{tetA} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{exactly\_one\_digit\_is\_unmoved}]
+\[ \{\, d \in \mathrm{digits} \mid \mathrm{refl}\mathopen{}\left(d\right) = d \,\} = [5] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{exactly\_one\_digit\_reflects\_out\_of\_range}]
+\[ \{\, d \in \mathrm{digits} \mid \mathrm{refl}\mathopen{}\left(d\right) > 9 \,\} = [0] \land \mathrm{refl}\mathopen{}\left(0\right) = 10 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_classes\_partition\_the\_nine}]
+\[ \left|\mathrm{tetA}\right| + \left|\mathrm{tetB}\right| + \left|\mathrm{axis}\right| = 9 \land \left|\operatorname{dedup}\left(\mathrm{tetA} \mathbin{+\!\!+} \mathrm{tetB} \mathbin{+\!\!+} \mathrm{axis}\right)\right| = 9 \land \left|\mathrm{digits}\right| = 10 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{every\_digit\_is\_sorted\_exactly\_once}]
+\[ \forall d \in \mathrm{digits},\; d \in \mathrm{tetB} \land \mathrm{refl}\mathopen{}\left(d\right) \in \mathrm{tetB} \lor d \in \mathrm{tetA} \land \mathrm{refl}\mathopen{}\left(d\right) \in \mathrm{axis} \lor d \in \mathrm{axis} \land \mathrm{refl}\mathopen{}\left(d\right) \in \mathrm{tetA} \lor \mathrm{refl}\mathopen{}\left(d\right) = d \lor \mathrm{refl}\mathopen{}\left(d\right) > 9 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_fall\_fixes\_every\_digit\_but\_the\_void}]
+\[ \{\, d \in \mathrm{digits} \mid \mathrm{fall}\mathopen{}\left(d\right) \neq d \,\} = [0] \land \forall d \in \mathrm{nonzero},\; \mathrm{fall}\mathopen{}\left(d\right) = d \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_fall\_and\_the\_reflection\_share\_one\_exceptional\_digit}]
+\[ \{\, d \in \mathrm{digits} \mid \mathrm{fall}\mathopen{}\left(d\right) \neq d \,\} = \{\, d \in \mathrm{digits} \mid \mathrm{refl}\mathopen{}\left(d\right) > 9 \,\} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{on\_the\_fixed\_points\_the\_reflection\_never\_leaves}]
+\[ \forall d \in \mathrm{nonzero},\; \mathrm{refl}\mathopen{}\left(d\right) \ge 1 \land \mathrm{refl}\mathopen{}\left(d\right) \le 9 \land \forall d \in \mathrm{nonzero},\; \mathrm{refl}\mathopen{}\left(\mathrm{refl}\mathopen{}\left(d\right)\right) = d \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{what\_escapes\_falls\_back\_inside}]
+\[ \mathrm{refl}\mathopen{}\left(0\right) = 10 \land \mathrm{fall}\mathopen{}\left(10\right) = 1 \land \mathrm{fall}\mathopen{}\left(10\right) \in \mathrm{nonzero} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_digits\_are\_ten}]
+\[ \left|\mathrm{digits}\right| = 10 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{elementary.lean}}
 
 \begin{theorem}[\texttt{euclids\_form\_is\_perfect\_at\_every\_mersenne\_prime\_to\_seven}]
 \[ \forall p \in [2,\,3,\,5,\,7],\; \lnot \mathrm{isPrime}\mathopen{}\left(2^{p} - 1\right) \lor \mathrm{properDivisorSum}\mathopen{}\left(2^{p - 1} \cdot 2^{p} - 1\right) = 2^{p - 1} \cdot 2^{p} - 1 \]
@@ -399,72 +461,45 @@ remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
-\begin{theorem}[\texttt{classical\_settles\_its\_range}]
-\[ \mathrm{settledHere} = 13 \]
+\begin{theorem}[\texttt{an\_odd\_prime\_is\_a\_sum\_of\_two\_squares\_exactly\_when\_it\_is\_one\_mod\_four}]
+\[ \mathrm{isSumOfTwoSquares}\mathopen{}\left(2\right) \land \forall p \in \{\, x \in \{3,\dots,199\} \mid \mathrm{isPrime}\mathopen{}\left(x\right) \,\},\; \mathrm{isSumOfTwoSquares}\mathopen{}\left(p\right) = p \bmod 4 = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 197 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_area\_of\_an\_integer\_right\_triangle\_is\_a\_multiple\_of\_six}]
+\[ \forall a \in \{1,\dots,40\},\; \forall b \in \{1,\dots,40\},\; \lnot \exists c \in \{1,\dots,60\} : a \cdot a + b \cdot b = c \cdot c \lor \frac{a \cdot b}{2} \bmod 6 = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 96,000 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_inverse\_map\_permutes\_the\_units\_and\_is\_an\_involution}]
+\[ \left|\operatorname{dedup}\left(\mathrm{invUnit}[\mathrm{unitsMod}\mathopen{}\left(9\right)]\right)\right| = \left|\mathrm{unitsMod}\mathopen{}\left(9\right)\right| \land \forall x \in \mathrm{invUnit}[\mathrm{unitsMod}\mathopen{}\left(9\right)],\; x \in \mathrm{unitsMod}\mathopen{}\left(9\right) \land \forall u \in \mathrm{unitsMod}\mathopen{}\left(9\right),\; \mathrm{invUnit}\mathopen{}\left(\mathrm{invUnit}\mathopen{}\left(u\right)\right) = u \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_hockey\_stick\_identity\_holds\_across\_the\_range}]
+\[ \forall r \in \{0,\dots,10\},\; \forall m \in \{0,\dots,18\},\; \sum \{\, \mathrm{choose}\mathopen{}\left(i,\,r\right) \mid i \in \{r,\dots,r+m + 1-1\} \,\} = \mathrm{choose}\mathopen{}\left(r + m + 1,\,r + 1\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 209 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{three\_is\_the\_only\_prime\_one\_less\_than\_a\_square\_in\_this\_range}]
+\[ \{\, n \in \{2,\dots,41\} \mid \mathrm{isPrime}\mathopen{}\left(n \cdot n - 1\right) \,\} = [2] \land \forall n \in \{3,\dots,41\},\; n - 1 \cdot n + 1 = n \cdot n - 1 \land n - 1 > 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 1,560 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{eight\_times\_a\_triangular\_number\_plus\_one\_is\_an\_odd\_square}]
+\[ \forall n \in \{0,\dots,59\},\; 8 \cdot \frac{n \cdot n + 1}{2} + 1 = 2 \cdot n + 1 \cdot 2 \cdot n + 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 60 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_powers\_of\_two\_mod\_nine\_and\_of\_three\_mod\_seven\_are\_isomorphic}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{powMod}\mathopen{}\left(2,\,k,\,9\right) \mid k \in \{0,\dots,5\} \,\}\right)\right| = 6 \land \left|\operatorname{dedup}\left(\{\, \mathrm{powMod}\mathopen{}\left(3,\,k,\,7\right) \mid k \in \{0,\dots,5\} \,\}\right)\right| = 6 \land \forall x \in \{\, \mathrm{powMod}\mathopen{}\left(2,\,k,\,9\right) \mid k \in \{0,\dots,5\} \,\},\; x \in \mathrm{unitsMod}\mathopen{}\left(9\right) \land \forall x \in \{\, \mathrm{powMod}\mathopen{}\left(3,\,k,\,7\right) \mid k \in \{0,\dots,5\} \,\},\; x \in \mathrm{unitsMod}\mathopen{}\left(7\right) \land \forall i \in \{0,\dots,5\},\; \forall j \in \{0,\dots,5\},\; \mathrm{powMod}\mathopen{}\left(2,\,i,\,9\right) \cdot \mathrm{powMod}\mathopen{}\left(2,\,j,\,9\right) \bmod 9 = \mathrm{powMod}\mathopen{}\left(2,\,i + j \bmod 6,\,9\right) \land \mathrm{powMod}\mathopen{}\left(3,\,i,\,7\right) \cdot \mathrm{powMod}\mathopen{}\left(3,\,j,\,7\right) \bmod 7 = \mathrm{powMod}\mathopen{}\left(3,\,i + j \bmod 6,\,7\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 46,656 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{elementary\_settles\_its\_range}]
+\[ \mathrm{settledHere} = 20 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
-
-\paragraph{\texttt{coin.lean}}
-
-\begin{theorem}[\texttt{the\_reflection\_is\_an\_involution}]
-\[ \forall d \in \mathrm{digits},\; \mathrm{refl}\mathopen{}\left(\mathrm{refl}\mathopen{}\left(d\right)\right) = d \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
-
-\begin{theorem}[\texttt{one\_side\_is\_reflected\_onto\_itself}]
-\[ \forall d \in \mathrm{tetB},\; \mathrm{refl}\mathopen{}\left(d\right) \in \mathrm{tetB} \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
-
-\begin{theorem}[\texttt{the\_other\_two\_swap}]
-\[ \forall d \in \mathrm{tetA},\; \mathrm{refl}\mathopen{}\left(d\right) \in \mathrm{axis} \land \forall d \in \mathrm{axis},\; \mathrm{refl}\mathopen{}\left(d\right) \in \mathrm{tetA} \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
-
-\begin{theorem}[\texttt{exactly\_one\_digit\_is\_unmoved}]
-\[ \{\, d \in \mathrm{digits} \mid \mathrm{refl}\mathopen{}\left(d\right) = d \,\} = [5] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
-
-\begin{theorem}[\texttt{exactly\_one\_digit\_reflects\_out\_of\_range}]
-\[ \{\, d \in \mathrm{digits} \mid \mathrm{refl}\mathopen{}\left(d\right) > 9 \,\} = [0] \land \mathrm{refl}\mathopen{}\left(0\right) = 10 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
-
-\begin{theorem}[\texttt{the\_classes\_partition\_the\_nine}]
-\[ \left|\mathrm{tetA}\right| + \left|\mathrm{tetB}\right| + \left|\mathrm{axis}\right| = 9 \land \left|\operatorname{dedup}\left(\mathrm{tetA} \mathbin{+\!\!+} \mathrm{tetB} \mathbin{+\!\!+} \mathrm{axis}\right)\right| = 9 \land \left|\mathrm{digits}\right| = 10 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
-
-\begin{theorem}[\texttt{every\_digit\_is\_sorted\_exactly\_once}]
-\[ \forall d \in \mathrm{digits},\; d \in \mathrm{tetB} \land \mathrm{refl}\mathopen{}\left(d\right) \in \mathrm{tetB} \lor d \in \mathrm{tetA} \land \mathrm{refl}\mathopen{}\left(d\right) \in \mathrm{axis} \lor d \in \mathrm{axis} \land \mathrm{refl}\mathopen{}\left(d\right) \in \mathrm{tetA} \lor \mathrm{refl}\mathopen{}\left(d\right) = d \lor \mathrm{refl}\mathopen{}\left(d\right) > 9 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
-
-\begin{theorem}[\texttt{the\_fall\_fixes\_every\_digit\_but\_the\_void}]
-\[ \{\, d \in \mathrm{digits} \mid \mathrm{fall}\mathopen{}\left(d\right) \neq d \,\} = [0] \land \forall d \in \mathrm{nonzero},\; \mathrm{fall}\mathopen{}\left(d\right) = d \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
-
-\begin{theorem}[\texttt{the\_fall\_and\_the\_reflection\_share\_one\_exceptional\_digit}]
-\[ \{\, d \in \mathrm{digits} \mid \mathrm{fall}\mathopen{}\left(d\right) \neq d \,\} = \{\, d \in \mathrm{digits} \mid \mathrm{refl}\mathopen{}\left(d\right) > 9 \,\} \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
-
-\begin{theorem}[\texttt{on\_the\_fixed\_points\_the\_reflection\_never\_leaves}]
-\[ \forall d \in \mathrm{nonzero},\; \mathrm{refl}\mathopen{}\left(d\right) \ge 1 \land \mathrm{refl}\mathopen{}\left(d\right) \le 9 \land \forall d \in \mathrm{nonzero},\; \mathrm{refl}\mathopen{}\left(\mathrm{refl}\mathopen{}\left(d\right)\right) = d \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
-
-\begin{theorem}[\texttt{what\_escapes\_falls\_back\_inside}]
-\[ \mathrm{refl}\mathopen{}\left(0\right) = 10 \land \mathrm{fall}\mathopen{}\left(10\right) = 1 \land \mathrm{fall}\mathopen{}\left(10\right) \in \mathrm{nonzero} \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
-
-\begin{theorem}[\texttt{the\_digits\_are\_ten}]
-\[ \left|\mathrm{digits}\right| = 10 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \paragraph{\texttt{families.lean}}
 

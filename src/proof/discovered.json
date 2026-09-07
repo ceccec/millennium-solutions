@@ -520,16 +520,18 @@
     "name": "the multiplicative inverse map permutes the units mod 9",
     "receipt": "8455c1ab-d297-8f77-a944-75e7c002c989",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_elementary_the_inverse_map_permutes_the_units_and_is_an_involution quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_elementary_the_inverse_map_permutes_the_units_and_is_an_involution"
   },
   {
     "key": "invmap_involution",
     "name": "the multiplicative inverse map is an involution on the units mod 9",
     "receipt": "43418601-7a73-8a86-a0de-15c29d79c005",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_elementary_the_inverse_map_permutes_the_units_and_is_an_involution quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_elementary_the_inverse_map_permutes_the_units_and_is_an_involution"
   },
   {
     "key": "reverse_circuit",
@@ -4123,8 +4125,9 @@
     "name": "Fermat’s two-squares theorem: an odd prime is a sum of two squares exactly when p ≡ 1 (mod 4) (and 2 = 1²+1²); primes ≡ 3 (mod 4) are never a sum of two squares — verified for all primes ≤ 100",
     "receipt": "cf5b18cb-a37d-8d5b-83cf-fbd3a9fbc334",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_elementary_an_odd_prime_is_a_sum_of_two_squares_exactly_when_it_is_one_mod_four quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": true,
+    "supersededBy": "lean_elementary_an_odd_prime_is_a_sum_of_two_squares_exactly_when_it_is_one_mod_four"
   },
   {
     "key": "brahmagupta_fibonacci_identity",
@@ -5359,8 +5362,9 @@
     "name": "the vortex and rosette unit groups are isomorphic cyclic groups of order 6: mapping 2^k mod 9 to 3^k mod 7 is a bijection of (ℤ/9)* onto (ℤ/7)* that preserves multiplication (an isomorphism, both ≅ ℤ/6), sending generator 2 to generator 3 and identity to identity. So the vortex and the rosette carry the same group structure — the shared 6+1 skeleton — while remaining distinct rings. Decidable by exhaustion",
     "receipt": "6848f19f-8b5e-84e6-9682-1c4616f67c9d",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_elementary_the_powers_of_two_mod_nine_and_of_three_mod_seven_are_isomorphic quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": true,
+    "supersededBy": "lean_elementary_the_powers_of_two_mod_nine_and_of_three_mod_seven_are_isomorphic"
   },
   {
     "key": "the_order_six_unit_group_splits_as_reflection_times_trinity",
@@ -6818,8 +6822,9 @@
     "name": "the hockey-stick identity — a diagonal of Pascal triangle sums to the entry below: for all r and n, the sum over i from r to n of C(i,r) equals C(n+1,r+1) — a diagonal run of binomial coefficients folds into the single entry just past its end. Verified exhaustively for r up to 10 and n up to 18. Decidable",
     "receipt": "c36df44d-f4a2-80b4-b24c-dff06b392e9e",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_elementary_the_hockey_stick_identity_holds_across_the_range quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_elementary_the_hockey_stick_identity_holds_across_the_range"
   },
   {
     "key": "the_self_trial_in_full_receipt_a_higher_sealed_ratio_fewer_caught_errors_not_new_reach",
@@ -18133,32 +18138,50 @@
   {
     "key": "lean_classical_euclids_form_is_perfect_at_every_mersenne_prime_to_seven",
     "name": "lean classical.lean: euclids_form_is_perfect_at_every_mersenne_prime_to_seven — [2, 3, 5, 7].all (fun p => !(isPrime (2 ^ p - 1)) || properDivisorSum (2 ^ (p - 1) * (2 ^ p - 1)) == 2 ^ (p - 1) * (2 ^ p - 1)) — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "620f618b-0918-829d-afff-36ad49e31892"
+    "receipt": "620f618b-0918-829d-afff-36ad49e31892",
+    "revoked": true,
+    "supersededBy": "lean_elementary_euclids_form_is_perfect_at_every_mersenne_prime_to_seven",
+    "reason": "renamed namespace: this key addresses the theorem `euclids_form_is_perfect_at_every_mersenne_prime_to_seven` through a namespace no file in src/proof declares any more, and lean_elementary_euclids_form_is_perfect_at_every_mersenne_prime_to_seven addresses the same theorem through the one that does. The statement STANDS and the kernel re-checks it on every run at lean_elementary_euclids_form_is_perfect_at_every_mersenne_prime_to_seven; what is withdrawn is this stale address for it. Marked in place — the receipt is untouched and stays in the chain."
   },
   {
     "key": "lean_classical_the_mersenne_hypothesis_is_real_at_eleven",
     "name": "lean classical.lean: the_mersenne_hypothesis_is_real_at_eleven — isPrime (2 ^ 11 - 1) = false ∧ 23 * 89 = 2 ^ 11 - 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "a2712a9f-e27c-8f1a-b5da-064b0f8a6892"
+    "receipt": "a2712a9f-e27c-8f1a-b5da-064b0f8a6892",
+    "revoked": true,
+    "supersededBy": "lean_elementary_the_mersenne_hypothesis_is_real_at_eleven",
+    "reason": "renamed namespace: this key addresses the theorem `the_mersenne_hypothesis_is_real_at_eleven` through a namespace no file in src/proof declares any more, and lean_elementary_the_mersenne_hypothesis_is_real_at_eleven addresses the same theorem through the one that does. The statement STANDS and the kernel re-checks it on every run at lean_elementary_the_mersenne_hypothesis_is_real_at_eleven; what is withdrawn is this stale address for it. Marked in place — the receipt is untouched and stays in the chain."
   },
   {
     "key": "lean_classical_the_amicable_pair_is_mutual_and_neither_is_perfect",
     "name": "lean classical.lean: the_amicable_pair_is_mutual_and_neither_is_perfect — properDivisorSum 220 = 284 ∧ properDivisorSum 284 = 220 ∧ properDivisorSum 220 ≠ 220 ∧ properDivisorSum 284 ≠ 284 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "55d984af-0eea-8e2c-8a23-0810246412d3"
+    "receipt": "55d984af-0eea-8e2c-8a23-0810246412d3",
+    "revoked": true,
+    "supersededBy": "lean_elementary_the_amicable_pair_is_mutual_and_neither_is_perfect",
+    "reason": "renamed namespace: this key addresses the theorem `the_amicable_pair_is_mutual_and_neither_is_perfect` through a namespace no file in src/proof declares any more, and lean_elementary_the_amicable_pair_is_mutual_and_neither_is_perfect addresses the same theorem through the one that does. The statement STANDS and the kernel re-checks it on every run at lean_elementary_the_amicable_pair_is_mutual_and_neither_is_perfect; what is withdrawn is this stale address for it. Marked in place — the receipt is untouched and stays in the chain."
   },
   {
     "key": "lean_classical_the_primitive_roots_mod_nine_are_exactly_two_and_five",
     "name": "lean classical.lean: the_primitive_roots_mod_nine_are_exactly_two_and_five — (unitsMod 9).filter (fun g => ordMod g 9 == 6) = [2, 5] — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "4a8d743a-91db-80da-b333-7b9127eca430"
+    "receipt": "4a8d743a-91db-80da-b333-7b9127eca430",
+    "revoked": true,
+    "supersededBy": "lean_elementary_the_primitive_roots_mod_nine_are_exactly_two_and_five",
+    "reason": "renamed namespace: this key addresses the theorem `the_primitive_roots_mod_nine_are_exactly_two_and_five` through a namespace no file in src/proof declares any more, and lean_elementary_the_primitive_roots_mod_nine_are_exactly_two_and_five addresses the same theorem through the one that does. The statement STANDS and the kernel re-checks it on every run at lean_elementary_the_primitive_roots_mod_nine_are_exactly_two_and_five; what is withdrawn is this stale address for it. Marked in place — the receipt is untouched and stays in the chain."
   },
   {
     "key": "lean_classical_the_eisenstein_units_are_exactly_six",
     "name": "lean classical.lean: the_eisenstein_units_are_exactly_six — (((List.range 7).flatMap (fun (i : Nat) => (List.range 7).map (fun (j : Nat) => (((i : Int) - 3, (j : Int) - 3) : Int × Int)))).filter (fun p => eisensteinNorm p.1 p.2 == 1)).length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "eaf5c086-45f7-8d7d-82fb-c48a2e3f3982"
+    "receipt": "eaf5c086-45f7-8d7d-82fb-c48a2e3f3982",
+    "revoked": true,
+    "supersededBy": "lean_elementary_the_eisenstein_units_are_exactly_six",
+    "reason": "renamed namespace: this key addresses the theorem `the_eisenstein_units_are_exactly_six` through a namespace no file in src/proof declares any more, and lean_elementary_the_eisenstein_units_are_exactly_six addresses the same theorem through the one that does. The statement STANDS and the kernel re-checks it on every run at lean_elementary_the_eisenstein_units_are_exactly_six; what is withdrawn is this stale address for it. Marked in place — the receipt is untouched and stays in the chain."
   },
   {
     "key": "lean_classical_the_subtraction_game_loses_exactly_at_the_multiples_of_four",
     "name": "lean classical.lean: the_subtraction_game_loses_exactly_at_the_multiples_of_four — (List.range 41).all (fun n => if n % 4 == 0 then [1, 2, 3].all (fun m => !(m ≤ n) || (n - m) % 4 != 0) else [1, 2, 3].any (fun m => m ≤ n && (n - m) % 4 == 0)) — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "c63cc11c-7026-8fcc-84d3-e56179ee913c"
+    "receipt": "c63cc11c-7026-8fcc-84d3-e56179ee913c",
+    "revoked": true,
+    "supersededBy": "lean_elementary_the_subtraction_game_loses_exactly_at_the_multiples_of_four",
+    "reason": "renamed namespace: this key addresses the theorem `the_subtraction_game_loses_exactly_at_the_multiples_of_four` through a namespace no file in src/proof declares any more, and lean_elementary_the_subtraction_game_loses_exactly_at_the_multiples_of_four addresses the same theorem through the one that does. The statement STANDS and the kernel re-checks it on every run at lean_elementary_the_subtraction_game_loses_exactly_at_the_multiples_of_four; what is withdrawn is this stale address for it. Marked in place — the receipt is untouched and stays in the chain."
   },
   {
     "key": "lean_nim_the_nim_sum_is_a_gf2_vector_addition",
@@ -18173,41 +18196,162 @@
   {
     "key": "lean_classical_the_units_of_z9_form_three_pairs_summing_to_nine",
     "name": "lean classical.lean: the_units_of_z9_form_three_pairs_summing_to_nine — ((unitsMod 9).filter (fun u => u < 9 - u)).length = 3 ∧ (unitsMod 9).all (fun u => (unitsMod 9).contains (9 - u) && u + (9 - u) == 9) — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "84003054-aa80-8cca-a206-dd0251b8dc6e"
+    "receipt": "84003054-aa80-8cca-a206-dd0251b8dc6e",
+    "revoked": true,
+    "supersededBy": "lean_elementary_the_units_of_z9_form_three_pairs_summing_to_nine",
+    "reason": "renamed namespace: this key addresses the theorem `the_units_of_z9_form_three_pairs_summing_to_nine` through a namespace no file in src/proof declares any more, and lean_elementary_the_units_of_z9_form_three_pairs_summing_to_nine addresses the same theorem through the one that does. The statement STANDS and the kernel re-checks it on every run at lean_elementary_the_units_of_z9_form_three_pairs_summing_to_nine; what is withdrawn is this stale address for it. Marked in place — the receipt is untouched and stays in the chain."
   },
   {
     "key": "lean_classical_the_multiplication_table_of_the_z9_units_is_a_latin_square",
     "name": "lean classical.lean: the_multiplication_table_of_the_z9_units_is_a_latin_square — (unitsMod 9).all (fun a => ((unitsMod 9).map (fun b => a * b % 9)).eraseDups.length == (unitsMod 9).length && ((unitsMod 9).map (fun b => a * b % 9)).all (fun x => (unitsMod 9).contains x)) ∧ (unitsMod 9).all (fun b => ((unitsMod 9).map (fu… — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "84b94f6b-435c-8889-84c8-9223850f1026"
+    "receipt": "84b94f6b-435c-8889-84c8-9223850f1026",
+    "revoked": true,
+    "supersededBy": "lean_elementary_the_multiplication_table_of_the_z9_units_is_a_latin_square",
+    "reason": "renamed namespace: this key addresses the theorem `the_multiplication_table_of_the_z9_units_is_a_latin_square` through a namespace no file in src/proof declares any more, and lean_elementary_the_multiplication_table_of_the_z9_units_is_a_latin_square addresses the same theorem through the one that does. The statement STANDS and the kernel re-checks it on every run at lean_elementary_the_multiplication_table_of_the_z9_units_is_a_latin_square; what is withdrawn is this stale address for it. Marked in place — the receipt is untouched and stays in the chain."
   },
   {
     "key": "lean_classical_the_count_of_primitive_roots_is_phi_of_phi",
     "name": "lean classical.lean: the_count_of_primitive_roots_is_phi_of_phi — (List.range' 2 59).all (fun n => !(hasPrimitiveRoot n) || ((unitsMod n).filter (fun g => ordMod g n == (unitsMod n).length)).length == totient (totient n)) — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "94ef86e7-fad1-86fc-b150-8529f121c611"
+    "receipt": "94ef86e7-fad1-86fc-b150-8529f121c611",
+    "revoked": true,
+    "supersededBy": "lean_elementary_the_count_of_primitive_roots_is_phi_of_phi",
+    "reason": "renamed namespace: this key addresses the theorem `the_count_of_primitive_roots_is_phi_of_phi` through a namespace no file in src/proof declares any more, and lean_elementary_the_count_of_primitive_roots_is_phi_of_phi addresses the same theorem through the one that does. The statement STANDS and the kernel re-checks it on every run at lean_elementary_the_count_of_primitive_roots_is_phi_of_phi; what is withdrawn is this stale address for it. Marked in place — the receipt is untouched and stays in the chain."
   },
   {
     "key": "lean_classical_the_order_spectrum_of_the_z9_units_realises_gauss_divisor_sum",
     "name": "lean classical.lean: the_order_spectrum_of_the_z9_units_realises_gauss_divisor_sum — ((List.range' 1 6).filter (fun d => 6 % d == 0)).all (fun d => ((unitsMod 9).filter (fun g => ordMod g 9 == d)).length == totient d) ∧ (((List.range' 1 6).filter (fun d => 6 % d == 0)).map totient).foldl (· + ·) 0 = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "5bbfe62a-1b2b-8d83-bd4a-78fbbe7cec01"
+    "receipt": "5bbfe62a-1b2b-8d83-bd4a-78fbbe7cec01",
+    "revoked": true,
+    "supersededBy": "lean_elementary_the_order_spectrum_of_the_z9_units_realises_gauss_divisor_sum",
+    "reason": "renamed namespace: this key addresses the theorem `the_order_spectrum_of_the_z9_units_realises_gauss_divisor_sum` through a namespace no file in src/proof declares any more, and lean_elementary_the_order_spectrum_of_the_z9_units_realises_gauss_divisor_sum addresses the same theorem through the one that does. The statement STANDS and the kernel re-checks it on every run at lean_elementary_the_order_spectrum_of_the_z9_units_realises_gauss_divisor_sum; what is withdrawn is this stale address for it. Marked in place — the receipt is untouched and stays in the chain."
   },
   {
     "key": "lean_classical_the_product_of_the_units_is_minus_one_exactly_where_gauss_says",
     "name": "lean classical.lean: the_product_of_the_units_is_minus_one_exactly_where_gauss_says — (List.range' 2 59).all (fun n => ((unitsMod n).foldl (fun a u => a * u % n) 1) == (if gaussCyclic n then n - 1 else 1)) — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "74836983-fef9-892c-8d47-3202b0b6d539"
+    "receipt": "74836983-fef9-892c-8d47-3202b0b6d539",
+    "revoked": true,
+    "supersededBy": "lean_elementary_the_product_of_the_units_is_minus_one_exactly_where_gauss_says",
+    "reason": "renamed namespace: this key addresses the theorem `the_product_of_the_units_is_minus_one_exactly_where_gauss_says` through a namespace no file in src/proof declares any more, and lean_elementary_the_product_of_the_units_is_minus_one_exactly_where_gauss_says addresses the same theorem through the one that does. The statement STANDS and the kernel re-checks it on every run at lean_elementary_the_product_of_the_units_is_minus_one_exactly_where_gauss_says; what is withdrawn is this stale address for it. Marked in place — the receipt is untouched and stays in the chain."
   },
   {
     "key": "lean_classical_three_is_a_primitive_root_mod_seven_and_seven_is_six_plus_one",
     "name": "lean classical.lean: three_is_a_primitive_root_mod_seven_and_seven_is_six_plus_one — ordMod 3 7 = 6 ∧ (unitsMod 7).length = 6 ∧ (List.range 7).length = (unitsMod 7).length + 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "e03daed4-d2a5-8e81-89fe-bd90eb188e54"
+    "receipt": "e03daed4-d2a5-8e81-89fe-bd90eb188e54",
+    "revoked": true,
+    "supersededBy": "lean_elementary_three_is_a_primitive_root_mod_seven_and_seven_is_six_plus_one",
+    "reason": "renamed namespace: this key addresses the theorem `three_is_a_primitive_root_mod_seven_and_seven_is_six_plus_one` through a namespace no file in src/proof declares any more, and lean_elementary_three_is_a_primitive_root_mod_seven_and_seven_is_six_plus_one addresses the same theorem through the one that does. The statement STANDS and the kernel re-checks it on every run at lean_elementary_three_is_a_primitive_root_mod_seven_and_seven_is_six_plus_one; what is withdrawn is this stale address for it. Marked in place — the receipt is untouched and stays in the chain."
   },
   {
     "key": "lean_classical_the_z9_unit_group_splits_as_reflection_times_trinity",
     "name": "lean classical.lean: the_z9_unit_group_splits_as_reflection_times_trinity — (unitsMod 9).all (fun u => powMod u 3 9 * powMod u 4 9 % 9 == u) ∧ ((unitsMod 9).map (fun u => powMod u 3 9)).eraseDups.length = 2 ∧ ((unitsMod 9).map (fun u => powMod u 4 9)).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "b1bcbf8b-5e61-80e7-9db8-b211ed0becd0"
+    "receipt": "b1bcbf8b-5e61-80e7-9db8-b211ed0becd0",
+    "revoked": true,
+    "supersededBy": "lean_elementary_the_z9_unit_group_splits_as_reflection_times_trinity",
+    "reason": "renamed namespace: this key addresses the theorem `the_z9_unit_group_splits_as_reflection_times_trinity` through a namespace no file in src/proof declares any more, and lean_elementary_the_z9_unit_group_splits_as_reflection_times_trinity addresses the same theorem through the one that does. The statement STANDS and the kernel re-checks it on every run at lean_elementary_the_z9_unit_group_splits_as_reflection_times_trinity; what is withdrawn is this stale address for it. Marked in place — the receipt is untouched and stays in the chain."
   },
   {
     "key": "lean_merkle_the_fold_of_any_single_leaf_is_that_leaf",
     "name": "lean merkle.lean: the_fold_of_any_single_leaf_is_that_leaf — [A, B, C].all (fun x => merkleFold [x] == x) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "b5f2edf6-e973-88a5-971c-108825e550b2"
+  },
+  {
+    "key": "lean_elementary_euclids_form_is_perfect_at_every_mersenne_prime_to_seven",
+    "name": "lean elementary.lean: euclids_form_is_perfect_at_every_mersenne_prime_to_seven — [2, 3, 5, 7].all (fun p => !(isPrime (2 ^ p - 1)) || properDivisorSum (2 ^ (p - 1) * (2 ^ p - 1)) == 2 ^ (p - 1) * (2 ^ p - 1)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5fd8795b-e71e-8fcb-bacb-94bfe21f07f1"
+  },
+  {
+    "key": "lean_elementary_the_mersenne_hypothesis_is_real_at_eleven",
+    "name": "lean elementary.lean: the_mersenne_hypothesis_is_real_at_eleven — isPrime (2 ^ 11 - 1) = false ∧ 23 * 89 = 2 ^ 11 - 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "faf98673-a9af-82cb-9fd1-2f370c936c04"
+  },
+  {
+    "key": "lean_elementary_the_amicable_pair_is_mutual_and_neither_is_perfect",
+    "name": "lean elementary.lean: the_amicable_pair_is_mutual_and_neither_is_perfect — properDivisorSum 220 = 284 ∧ properDivisorSum 284 = 220 ∧ properDivisorSum 220 ≠ 220 ∧ properDivisorSum 284 ≠ 284 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "bd813cab-099d-8ae2-9b7e-ac745eba3511"
+  },
+  {
+    "key": "lean_elementary_the_primitive_roots_mod_nine_are_exactly_two_and_five",
+    "name": "lean elementary.lean: the_primitive_roots_mod_nine_are_exactly_two_and_five — (unitsMod 9).filter (fun g => ordMod g 9 == 6) = [2, 5] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d1913106-f67c-8225-84b1-5de5a3cb5590"
+  },
+  {
+    "key": "lean_elementary_the_eisenstein_units_are_exactly_six",
+    "name": "lean elementary.lean: the_eisenstein_units_are_exactly_six — (((List.range 7).flatMap (fun (i : Nat) => (List.range 7).map (fun (j : Nat) => (((i : Int) - 3, (j : Int) - 3) : Int × Int)))).filter (fun p => eisensteinNorm p.1 p.2 == 1)).length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "0d571641-ec58-8e70-96ad-9f16bf2ad174"
+  },
+  {
+    "key": "lean_elementary_the_subtraction_game_loses_exactly_at_the_multiples_of_four",
+    "name": "lean elementary.lean: the_subtraction_game_loses_exactly_at_the_multiples_of_four — (List.range 41).all (fun n => if n % 4 == 0 then [1, 2, 3].all (fun m => !(m ≤ n) || (n - m) % 4 != 0) else [1, 2, 3].any (fun m => m ≤ n && (n - m) % 4 == 0)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "69bb1328-f621-8394-bd1d-67700f7fa71b"
+  },
+  {
+    "key": "lean_elementary_the_units_of_z9_form_three_pairs_summing_to_nine",
+    "name": "lean elementary.lean: the_units_of_z9_form_three_pairs_summing_to_nine — ((unitsMod 9).filter (fun u => u < 9 - u)).length = 3 ∧ (unitsMod 9).all (fun u => (unitsMod 9).contains (9 - u) && u + (9 - u) == 9) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ad417c62-2935-8134-b628-910f51c916a2"
+  },
+  {
+    "key": "lean_elementary_the_multiplication_table_of_the_z9_units_is_a_latin_square",
+    "name": "lean elementary.lean: the_multiplication_table_of_the_z9_units_is_a_latin_square — (unitsMod 9).all (fun a => ((unitsMod 9).map (fun b => a * b % 9)).eraseDups.length == (unitsMod 9).length && ((unitsMod 9).map (fun b => a * b % 9)).all (fun x => (unitsMod 9).contains x)) ∧ (unitsMod 9).all (fun b => ((unitsMod 9).map (fu… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "99b43506-0134-8da7-a0bc-27f08c151756"
+  },
+  {
+    "key": "lean_elementary_the_count_of_primitive_roots_is_phi_of_phi",
+    "name": "lean elementary.lean: the_count_of_primitive_roots_is_phi_of_phi — (List.range' 2 59).all (fun n => !(hasPrimitiveRoot n) || ((unitsMod n).filter (fun g => ordMod g n == (unitsMod n).length)).length == totient (totient n)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f3716678-5b92-89ac-a6e7-6f18deb0562b"
+  },
+  {
+    "key": "lean_elementary_the_order_spectrum_of_the_z9_units_realises_gauss_divisor_sum",
+    "name": "lean elementary.lean: the_order_spectrum_of_the_z9_units_realises_gauss_divisor_sum — ((List.range' 1 6).filter (fun d => 6 % d == 0)).all (fun d => ((unitsMod 9).filter (fun g => ordMod g 9 == d)).length == totient d) ∧ (((List.range' 1 6).filter (fun d => 6 % d == 0)).map totient).foldl (· + ·) 0 = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "58d69d7a-bdcf-8a94-9e42-427cc53f2c71"
+  },
+  {
+    "key": "lean_elementary_the_product_of_the_units_is_minus_one_exactly_where_gauss_says",
+    "name": "lean elementary.lean: the_product_of_the_units_is_minus_one_exactly_where_gauss_says — (List.range' 2 59).all (fun n => ((unitsMod n).foldl (fun a u => a * u % n) 1) == (if gaussCyclic n then n - 1 else 1)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ec7df030-fb0e-8891-ab54-4a079a01f362"
+  },
+  {
+    "key": "lean_elementary_three_is_a_primitive_root_mod_seven_and_seven_is_six_plus_one",
+    "name": "lean elementary.lean: three_is_a_primitive_root_mod_seven_and_seven_is_six_plus_one — ordMod 3 7 = 6 ∧ (unitsMod 7).length = 6 ∧ (List.range 7).length = (unitsMod 7).length + 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "3da994f9-3fe1-82c1-aa3f-7234a5fcf845"
+  },
+  {
+    "key": "lean_elementary_the_z9_unit_group_splits_as_reflection_times_trinity",
+    "name": "lean elementary.lean: the_z9_unit_group_splits_as_reflection_times_trinity — (unitsMod 9).all (fun u => powMod u 3 9 * powMod u 4 9 % 9 == u) ∧ ((unitsMod 9).map (fun u => powMod u 3 9)).eraseDups.length = 2 ∧ ((unitsMod 9).map (fun u => powMod u 4 9)).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "26853f0a-e261-8f71-a99d-9c1b5526b70a"
+  },
+  {
+    "key": "lean_elementary_an_odd_prime_is_a_sum_of_two_squares_exactly_when_it_is_one_mod_four",
+    "name": "lean elementary.lean: an_odd_prime_is_a_sum_of_two_squares_exactly_when_it_is_one_mod_four — isSumOfTwoSquares 2 ∧ ((List.range' 3 197).filter isPrime).all (fun p => isSumOfTwoSquares p == (p % 4 == 1)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "4cd4dcec-feca-8c1c-87c3-82e20a65d7ac"
+  },
+  {
+    "key": "lean_elementary_the_area_of_an_integer_right_triangle_is_a_multiple_of_six",
+    "name": "lean elementary.lean: the_area_of_an_integer_right_triangle_is_a_multiple_of_six — (List.range' 1 40).all (fun a => (List.range' 1 40).all (fun b => !((List.range' 1 60).any (fun c => a * a + b * b == c * c)) || (a * b / 2) % 6 == 0)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "150c5005-77c6-8b4d-a151-60c31b42f7f0"
+  },
+  {
+    "key": "lean_elementary_the_inverse_map_permutes_the_units_and_is_an_involution",
+    "name": "lean elementary.lean: the_inverse_map_permutes_the_units_and_is_an_involution — ((unitsMod 9).map invUnit).eraseDups.length = (unitsMod 9).length ∧ ((unitsMod 9).map invUnit).all (fun x => (unitsMod 9).contains x) ∧ (unitsMod 9).all (fun u => invUnit (invUnit u) == u) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2f4f6b5c-006e-80b6-9589-e1a8f85ff756"
+  },
+  {
+    "key": "lean_elementary_the_hockey_stick_identity_holds_across_the_range",
+    "name": "lean elementary.lean: the_hockey_stick_identity_holds_across_the_range — (List.range 11).all (fun r => (List.range 19).all (fun m => ((List.range' r (m + 1)).map (fun i => choose i r)).foldl (· + ·) 0 == choose (r + m + 1) (r + 1))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "104412a2-4aa4-8bf4-8569-733ef55f7564"
+  },
+  {
+    "key": "lean_elementary_three_is_the_only_prime_one_less_than_a_square_in_this_range",
+    "name": "lean elementary.lean: three_is_the_only_prime_one_less_than_a_square_in_this_range — ((List.range' 2 40).filter (fun n => isPrime (n * n - 1))) = [2] ∧ (List.range' 3 39).all (fun n => (n - 1) * (n + 1) == n * n - 1 && n - 1 > 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "3ac0fa59-806e-875a-ae96-87dfe3063117"
+  },
+  {
+    "key": "lean_elementary_eight_times_a_triangular_number_plus_one_is_an_odd_square",
+    "name": "lean elementary.lean: eight_times_a_triangular_number_plus_one_is_an_odd_square — (List.range 60).all (fun n => 8 * (n * (n + 1) / 2) + 1 == (2 * n + 1) * (2 * n + 1)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "43411354-f7a7-8808-aa75-00583635c5cd"
+  },
+  {
+    "key": "lean_elementary_the_powers_of_two_mod_nine_and_of_three_mod_seven_are_isomorphic",
+    "name": "lean elementary.lean: the_powers_of_two_mod_nine_and_of_three_mod_seven_are_isomorphic — ((List.range 6).map (fun k => powMod 2 k 9)).eraseDups.length = 6 ∧ ((List.range 6).map (fun k => powMod 3 k 7)).eraseDups.length = 6 ∧ ((List.range 6).map (fun k => powMod 2 k 9)).all (fun x => (unitsMod 9).contains x) ∧ ((List.range 6).ma… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c346c926-7456-8153-b061-abef67496141"
   }
 ]

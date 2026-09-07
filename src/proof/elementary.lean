@@ -1,5 +1,5 @@
 import Families
--- title: Classical arithmetic
+-- title: Elementary arithmetic
 -- wing: the ring
 -- prior_art: named
 -- prior_art_domain: elementary number theory and combinatorial game theory
@@ -10,7 +10,7 @@ import Families
 --   stops short of what the older claim asserted.
 -- prior_art_search: the results are named in every undergraduate text; no search was needed to find them.
 -- prior_art_pool: named
--- Classical arithmetic, decided — the claims the ledger held in TypeScript, given a kernel.
+-- Elementary arithmetic, decided — the claims the ledger held in TypeScript, given a kernel.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --
 -- This file exists because families.lean had grown to about 140 seconds of kernel time and every theorem
@@ -18,7 +18,14 @@ import Families
 -- than behind them, and the helpers it needs — gcd', isPrime, unitsMod, ordMod — are imported rather than
 -- copied, because a second copy of gcdFuel would be a second thing to keep true.
 
-namespace Classical
+-- ── WHY THIS IS NOT CALLED `Classical` ──────────────────────────────────────────────────────────────────
+-- It was, for a day, and Lean's own `Classical` namespace shadowed it: `choose` inside this file resolved to
+-- `Classical.choose`, which rests on `Classical.choice` — an AXIOM, in a deposit whose entire standard is
+-- that no theorem depends on one. The compile error is the small cost; the real one is a reader seeing a
+-- file called Classical in an axiom-free record and drawing the obvious wrong conclusion. Thirteen keys were
+-- sealed under `lean_classical_*` before this was noticed and are carried, not withdrawn: the theorems are
+-- unchanged and are decided at their new address.
+namespace Elementary
 
 open Families
 
@@ -133,8 +140,67 @@ theorem the_z9_unit_group_splits_as_reflection_times_trinity :
   ((unitsMod 9).map (fun u => powMod u 3 9)).eraseDups.length = 2 ∧
   ((unitsMod 9).map (fun u => powMod u 4 9)).eraseDups.length = 3 := by decide
 
--- ── what these settle ──
-def settledHere : Nat := 13
-theorem classical_settles_its_range : settledHere = 13 := rfl
+-- ── A SIXTH WAVE, AND THE RULE THAT DECIDES WHICH OF THEM CARRY A LEDGER ROW ────────────────────────────
+--
+--    A bounded theorem carries an unbounded claim only when the ROW ITSELF states its bound. "Verified for
+--    all primes ≤ 100" is a claim a range can settle; "for every Pythagorean triple" is not, however wide
+--    the range. Both kinds are worth proving and only the first kind is carried, which is why some of the
+--    theorems below have no carry beside them in scripts/recover.ts.
 
-end Classical
+def invUnit (u : Nat) : Nat := ((List.range 9).find? (fun e => u * e % 9 == 1)).getD 0
+
+-- ── Fermat, at the primes: a sum of two squares exactly at 2 and the primes one mod four ────────────────
+set_option maxRecDepth 2000000 in
+theorem an_odd_prime_is_a_sum_of_two_squares_exactly_when_it_is_one_mod_four :
+  isSumOfTwoSquares 2 ∧
+  ((List.range' 3 197).filter isPrime).all (fun p => isSumOfTwoSquares p == (p % 4 == 1)) := by decide
+
+-- ── the area of an integer right triangle is a multiple of six ──────────────────────────────────────────
+set_option maxRecDepth 2000000 in
+set_option maxHeartbeats 2000000 in
+theorem the_area_of_an_integer_right_triangle_is_a_multiple_of_six :
+  (List.range' 1 40).all (fun a => (List.range' 1 40).all (fun b =>
+    !((List.range' 1 60).any (fun c => a * a + b * b == c * c)) || (a * b / 2) % 6 == 0)) := by decide
+
+-- ── the inverse map permutes the units and is its own inverse ───────────────────────────────────────────
+theorem the_inverse_map_permutes_the_units_and_is_an_involution :
+  ((unitsMod 9).map invUnit).eraseDups.length = (unitsMod 9).length ∧
+  ((unitsMod 9).map invUnit).all (fun x => (unitsMod 9).contains x) ∧
+  (unitsMod 9).all (fun u => invUnit (invUnit u) == u) := by decide
+
+-- ── the hockey stick: a diagonal run of binomials folds into the entry just past its end ────────────────
+set_option maxRecDepth 2000000 in
+theorem the_hockey_stick_identity_holds_across_the_range :
+  (List.range 11).all (fun r => (List.range 19).all (fun m =>
+    ((List.range' r (m + 1)).map (fun i => choose i r)).foldl (· + ·) 0 == choose (r + m + 1) (r + 1))) := by decide
+
+-- ── three is the only prime one less than a square, and the reason is the factorisation ─────────────────
+--    n² − 1 = (n−1)(n+1), and above n = 2 both factors exceed one. Decided over a range; the row claims it
+--    for every n, so the range does not carry it — the factorisation is the general argument and this is
+--    the check that the argument has no small counterexample.
+theorem three_is_the_only_prime_one_less_than_a_square_in_this_range :
+  ((List.range' 2 40).filter (fun n => isPrime (n * n - 1))) = [2] ∧
+  (List.range' 3 39).all (fun n => (n - 1) * (n + 1) == n * n - 1 && n - 1 > 1) := by decide
+
+-- ── eight triangular numbers and one make an odd square ─────────────────────────────────────────────────
+theorem eight_times_a_triangular_number_plus_one_is_an_odd_square :
+  (List.range 60).all (fun n => 8 * (n * (n + 1) / 2) + 1 == (2 * n + 1) * (2 * n + 1)) := by decide
+
+-- ── the vortex and the rosette carry the same group: 2^k mod 9 ↦ 3^k mod 7 is an isomorphism ────────────
+--    Both power maps are bijections onto their unit groups, and the map through the exponent sends a
+--    product to a product — which is what "preserves multiplication" means, stated rather than assumed
+--    from both groups merely having six elements.
+theorem the_powers_of_two_mod_nine_and_of_three_mod_seven_are_isomorphic :
+  ((List.range 6).map (fun k => powMod 2 k 9)).eraseDups.length = 6 ∧
+  ((List.range 6).map (fun k => powMod 3 k 7)).eraseDups.length = 6 ∧
+  ((List.range 6).map (fun k => powMod 2 k 9)).all (fun x => (unitsMod 9).contains x) ∧
+  ((List.range 6).map (fun k => powMod 3 k 7)).all (fun x => (unitsMod 7).contains x) ∧
+  (List.range 6).all (fun i => (List.range 6).all (fun j =>
+    powMod 2 i 9 * powMod 2 j 9 % 9 == powMod 2 ((i + j) % 6) 9 &&
+    powMod 3 i 7 * powMod 3 j 7 % 7 == powMod 3 ((i + j) % 6) 7)) := by decide
+
+-- ── what these settle ──
+def settledHere : Nat := 20
+theorem elementary_settles_its_range : settledHere = 20 := rfl
+
+end Elementary

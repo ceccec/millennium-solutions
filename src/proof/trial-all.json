@@ -15070,5 +15070,125 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "b5f2edf6-e973-88a5-971c-108825e550b2"
+  },
+  {
+    "key": "lean_elementary_euclids_form_is_perfect_at_every_mersenne_prime_to_seven",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5fd8795b-e71e-8fcb-bacb-94bfe21f07f1"
+  },
+  {
+    "key": "lean_elementary_the_mersenne_hypothesis_is_real_at_eleven",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "faf98673-a9af-82cb-9fd1-2f370c936c04"
+  },
+  {
+    "key": "lean_elementary_the_amicable_pair_is_mutual_and_neither_is_perfect",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "bd813cab-099d-8ae2-9b7e-ac745eba3511"
+  },
+  {
+    "key": "lean_elementary_the_primitive_roots_mod_nine_are_exactly_two_and_five",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d1913106-f67c-8225-84b1-5de5a3cb5590"
+  },
+  {
+    "key": "lean_elementary_the_eisenstein_units_are_exactly_six",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0d571641-ec58-8e70-96ad-9f16bf2ad174"
+  },
+  {
+    "key": "lean_elementary_the_subtraction_game_loses_exactly_at_the_multiples_of_four",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "69bb1328-f621-8394-bd1d-67700f7fa71b"
+  },
+  {
+    "key": "lean_elementary_the_units_of_z9_form_three_pairs_summing_to_nine",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ad417c62-2935-8134-b628-910f51c916a2"
+  },
+  {
+    "key": "lean_elementary_the_multiplication_table_of_the_z9_units_is_a_latin_square",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "99b43506-0134-8da7-a0bc-27f08c151756"
+  },
+  {
+    "key": "lean_elementary_the_count_of_primitive_roots_is_phi_of_phi",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f3716678-5b92-89ac-a6e7-6f18deb0562b"
+  },
+  {
+    "key": "lean_elementary_the_order_spectrum_of_the_z9_units_realises_gauss_divisor_sum",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "58d69d7a-bdcf-8a94-9e42-427cc53f2c71"
+  },
+  {
+    "key": "lean_elementary_the_product_of_the_units_is_minus_one_exactly_where_gauss_says",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ec7df030-fb0e-8891-ab54-4a079a01f362"
+  },
+  {
+    "key": "lean_elementary_three_is_a_primitive_root_mod_seven_and_seven_is_six_plus_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3da994f9-3fe1-82c1-aa3f-7234a5fcf845"
+  },
+  {
+    "key": "lean_elementary_the_z9_unit_group_splits_as_reflection_times_trinity",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "26853f0a-e261-8f71-a99d-9c1b5526b70a"
+  },
+  {
+    "key": "lean_elementary_an_odd_prime_is_a_sum_of_two_squares_exactly_when_it_is_one_mod_four",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4cd4dcec-feca-8c1c-87c3-82e20a65d7ac"
+  },
+  {
+    "key": "lean_elementary_the_area_of_an_integer_right_triangle_is_a_multiple_of_six",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "150c5005-77c6-8b4d-a151-60c31b42f7f0"
+  },
+  {
+    "key": "lean_elementary_the_inverse_map_permutes_the_units_and_is_an_involution",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2f4f6b5c-006e-80b6-9589-e1a8f85ff756"
+  },
+  {
+    "key": "lean_elementary_the_hockey_stick_identity_holds_across_the_range",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "104412a2-4aa4-8bf4-8569-733ef55f7564"
+  },
+  {
+    "key": "lean_elementary_three_is_the_only_prime_one_less_than_a_square_in_this_range",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3ac0fa59-806e-875a-ae96-87dfe3063117"
+  },
+  {
+    "key": "lean_elementary_eight_times_a_triangular_number_plus_one_is_an_odd_square",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "43411354-f7a7-8808-aa75-00583635c5cd"
+  },
+  {
+    "key": "lean_elementary_the_powers_of_two_mod_nine_and_of_three_mod_seven_are_isomorphic",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c346c926-7456-8153-b061-abef67496141"
   }
 ]

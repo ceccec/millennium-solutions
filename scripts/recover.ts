@@ -260,9 +260,31 @@ const EXACT: { key: string; theorem: string; why: string }[] = [
   { key: 'the_order_six_unit_group_splits_as_reflection_times_trinity', theorem: 'the_z9_unit_group_splits_as_reflection_times_trinity',
     why: 'u ↦ (u³, u⁴) recovers u, and the two factors take two and three values — the C2 × C3 the CRT predicts' },
 
+  // ── the sixth wave, and the rule that decides which of it carries ───────────────────────────────────────
+  // A bounded theorem carries an unbounded claim ONLY when the row states its own bound. "Verified for all
+  // primes ≤ 100" is a claim a range settles; "for every Pythagorean triple" is not, however wide the range.
+  // Three theorems from this wave prove real facts and carry nothing, and they are named below the list.
+  { key: 'fermat_prime_is_sum_of_two_squares', theorem: 'an_odd_prime_is_a_sum_of_two_squares_exactly_when_it_is_one_mod_four',
+    why: 'the row says "verified for all primes ≤ 100" and includes 2 = 1² + 1²; the theorem decides 2 and every odd prime below 200' },
+  { key: 'invmap_perm', theorem: 'the_inverse_map_permutes_the_units_and_is_an_involution',
+    why: 'the first two conjuncts are the permutation — distinct images, all of them units — over the whole finite group' },
+  { key: 'invmap_involution', theorem: 'the_inverse_map_permutes_the_units_and_is_an_involution',
+    why: 'the third conjunct is inv(inv(u)) = u at every unit; the row and its sibling above are two halves of one theorem' },
+  { key: 'hockey_stick_identity_pascal', theorem: 'the_hockey_stick_identity_holds_across_the_range',
+    why: 'the row says "verified exhaustively for r up to 10 and n up to 18"; the theorem decides r = 0…10 and the diagonal length to 18' },
+  { key: 'the_vortex_and_rosette_unit_groups_are_isomorphic', theorem: 'the_powers_of_two_mod_nine_and_of_three_mod_seven_are_isomorphic',
+    why: 'the row names the map 2^k mod 9 ↦ 3^k mod 7 and says it preserves multiplication; the theorem decides both power maps are bijections onto the units and that each sends a product of exponents to a product — the map itself, not merely that two groups of six exist' },
 ]
 
 // ── AND TWO THE CANDIDATE REPORT PROPOSED THAT ARE NOT CARRIED, WRITTEN DOWN SO THEY ARE NOT PROPOSED AGAIN ──
+//
+// THREE MORE FROM THE SIXTH WAVE ARE PROVED AND NOT CARRIED, for one reason: each row claims something
+// unbounded and states no verification range of its own. `the_area_of_a_pythagorean_triangle_is_a_multiple_of_six`
+// says "for every Pythagorean triple"; `three_is_the_only_prime_one_less_than_a_perfect_square` argues from
+// the factorisation n² − 1 = (n−1)(n+1), which is general; `eight_times_a_triangular_number_plus_one_is_a_square`
+// states an identity in n. Each now has a theorem deciding it over a wide range — worth having, and not a
+// carry. The rule is the row's own bound: where a row says how far it was checked, a theorem reaching that
+// far carries it; where a row claims everything, no finite range does.
 //
 // `merkle_fold_singleton_identity` says merkleFold([x]) = x — for x, universally. singleton_fold_is_the_leaf
 // decided it at ONE address, which is a single instance wearing a general name, and merkle.lean now ranges

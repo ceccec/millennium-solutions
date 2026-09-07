@@ -5,16 +5,16 @@ title: Every state change, dated
 # Provenance of this deposit's ledger
 
 **Recomputed on every build** from git history and the append-only ledger. Regenerate with
-`npm run forensic`. Content-address `d469610f-9cdc-80cd-94cc-76a55cc3c65d`.
+`npm run forensic`. Content-address `30c0a85d-c6b1-8e8d-a889-c0e97a745ff8`.
 
 ## What this record establishes
 
 | | |
 |---|---:|
-| ledger entries | **2,512** |
-| standing — proved and sealed | 600 |
-| carried — withdrawn, proved by a live theorem | 405 |
-| withdrawn — nothing currently proves them | 1,507 |
+| ledger entries | **2,532** |
+| standing — proved and sealed | 607 |
+| carried — withdrawn, proved by a live theorem | 423 |
+| withdrawn — nothing currently proves them | 1,502 |
 | receipt chain, recomputed | **0 breaks — intact** |
 | commits that changed ledger state | 569 |
 
@@ -24,15 +24,15 @@ Verbatim, as written when the entry was revoked. Not inferred afterwards.
 
 | withdrawn | reason as recorded |
 |---:|---|
-| 1,028 | dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a compu |
+| 1,023 | dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a compu |
 | 443 | revoked in place: its test asserted a lexical drain (computes(boast).binary === 0). The word-lis |
 | 12 | revoked in place: circular by construction AND dependent on the removed lexical gate. |
 | 12 | orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or rena |
 | 10 | revoked in place: circular by construction — the test defines the answer it checks, proving a de |
 | 1 | revoked in place: its test asserts that a list of proof-boasts written across many scripts and l |
 
-**1,028** of
-**1,507** withdrawn entries — 68.2% —
+**1,023** of
+**1,502** withdrawn entries — 68.1% —
 were withdrawn for want of a Lean proof while their evidence was a TypeScript test that **computed**.
 Withdrawal costs one line of record; proving costs real work, and a green gate rewards both identically.
 

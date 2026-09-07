@@ -1,5 +1,5 @@
 {
-  "produced": "631c17170",
+  "produced": "544251fd2",
   "method": "recomputed from git history of src/proof/discovered.json and the ledger itself; re-runnable with `npm run forensic`",
   "establishes": "what changed, when, in which commit, and the reason recorded at the time",
   "doesNotEstablish": [
@@ -7,10 +7,10 @@
     "authorship beyond the git author field (every commit here carries the repository owner)"
   ],
   "ledgerNow": {
-    "entries": 2512,
-    "carried": 405,
-    "withdrawn": 1507,
-    "standing": 600
+    "entries": 2532,
+    "carried": 423,
+    "withdrawn": 1502,
+    "standing": 607
   },
   "chainRecomputed": {
     "breaks": 0,
@@ -81,7 +81,7 @@
   "withdrawalReasonsAsRecorded": [
     [
       "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a compu",
-      1028
+      1023
     ],
     [
       "revoked in place: its test asserted a lexical drain (computes(boast).binary === 0). The word-lis",
@@ -109,5 +109,5 @@
     ]
   ],
   "totalStateChangingCommits": 569,
-  "address": "d469610f-9cdc-80cd-94cc-76a55cc3c65d"
+  "address": "30c0a85d-c6b1-8e8d-a889-c0e97a745ff8"
 }

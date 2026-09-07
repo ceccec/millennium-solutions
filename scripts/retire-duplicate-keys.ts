@@ -31,12 +31,52 @@ for (const e of ledger) {
   if (t) byThm.set(t.name, [...(byThm.get(t.name) ?? []), e.key])
 }
 
+// THE NAMESPACES THAT ACTUALLY EXIST. A key is `lean_<namespace>_<theorem>`, so when a namespace is RENAMED
+// the theorem keeps two live addresses and neither is bare — which the split below declined, correctly,
+// rather than guessing. Declining is right and it is not enough: the old address stays live, pointing at a
+// namespace no file declares. This set is read from the tree, so "the surviving address" is decided by what
+// Lean actually compiles and not by which key looks newer.
+const NAMESPACES = new Set((T as { namespace: string }[]).map((t) => t.namespace.toLowerCase()))
+const nsOf = (key: string, name: string): string | null => {
+  const rest = key.slice('lean_'.length)
+  return rest.endsWith('_' + name) ? rest.slice(0, rest.length - name.length - 1) : null
+}
+
 let retired = 0, skipped = 0
 for (const [name, keys] of byThm) {
   if (keys.length < 2) continue
   const namespaced = keys.filter((k) => k !== `lean_${name}`).sort((a, b) => b.length - a.length)[0]
   const bare = keys.find((k) => k === `lean_${name}`)
-  if (!namespaced || !bare) { skipped++; console.log(`  ○ ${name}: ${keys.length} keys and no clear bare/namespaced split — left alone`); continue }
+
+  // CASE 2 — A RENAMED NAMESPACE. Exactly one of the addresses names a namespace the tree still declares;
+  // the others name one nothing compiles. Retire those in favour of the surviving address. If two or more
+  // survive, or none does, this says so and leaves them: an address nobody can adjudicate is not one to
+  // guess at, which is the whole reason the bare/namespaced case was written narrowly in the first place.
+  if (!bare) {
+    const living = keys.filter((k) => { const ns = nsOf(k, name); return ns !== null && NAMESPACES.has(ns) })
+    const dead = keys.filter((k) => !living.includes(k))
+    if (living.length !== 1 || !dead.length) {
+      skipped++
+      console.log(`  ○ ${name}: ${keys.length} keys, ${living.length} of them naming a namespace the tree declares — left alone`)
+      continue
+    }
+    for (const d of dead) {
+      const e = ledger.find((x) => x.key === d)!
+      if (e.revoked) continue
+      if (process.argv.includes('--retire')) {
+        e.revoked = true
+        e.supersededBy = living[0]
+        e.reason = `renamed namespace: this key addresses the theorem \`${name}\` through a namespace no file in `
+          + `src/proof declares any more, and ${living[0]} addresses the same theorem through the one that does. `
+          + `The statement STANDS and the kernel re-checks it on every run at ${living[0]}; what is withdrawn is `
+          + `this stale address for it. Marked in place — the receipt is untouched and stays in the chain.`
+      }
+      retired++
+    }
+    continue
+  }
+
+  if (!namespaced) { skipped++; console.log(`  ○ ${name}: ${keys.length} keys and no clear bare/namespaced split — left alone`); continue }
   const e = ledger.find((x) => x.key === bare)!
   if (e.revoked) continue
   if (process.argv.includes('--retire')) {

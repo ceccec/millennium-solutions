@@ -11,12 +11,12 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 609 kernel-accepted declarations across 32 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `411b0991-b114-8045-9be6-324fc3208d9c`</sub>
-- 600 of those 609 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 9 close by rfl and are declarations.
-  <sub>SEALED · `b97e85dd-21e8-8c4c-95cf-e1c4d5d51c95`</sub>
-- 648 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `10257f5f-7738-8e7b-bcd9-22979f997c23`</sub>
+- The formal layer holds 616 kernel-accepted declarations across 32 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `6adab57f-ca0e-8356-a9fb-d51ac82e3d61`</sub>
+- 607 of those 616 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 9 close by rfl and are declarations.
+  <sub>SEALED · `877f649a-0a1d-8d0c-89be-5e609cbf7a55`</sub>
+- 668 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `0565e4ee-e2c9-85bb-b9bb-c116c4ce0f06`</sub>
 
 ## 2 · The ring
 
@@ -39,10 +39,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 2512 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `c75a6308-c6e3-806f-abde-9703a28005b2`</sub>
-- The count is an exact multiple of eight — 2512 is 314 octaves with no remainder.
-  <sub>SEALED · `e4b847e1-5979-8139-b9b0-0a8218e8b789`</sub>
+- The ledger records 2532 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `813859d8-682c-8e61-8a8b-64870e8324b0`</sub>
+- The count is 2532, which is 316 octaves and 4 over — the octave is a target the theorems earn, never a quota they are invented to fill.
+  <sub>SEALED · `05fcb79a-78d9-8ef7-9b9d-5d4e798459a4`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -76,11 +76,11 @@ walked, computed from the statements themselves. Nothing is chosen for this tabl
 | 152,568,360,000 | `bezouts_identity_is_attained_and_no_smaller_combination_exists` | `demand2.lean` |
 | 4,294,967,296 | `the_nim_sum_is_a_gf2_vector_addition` | `nim.lean` |
 | 7,529,536 | `gravity_holds_prose_code_and_paths` | `mechanical.lean` |
+| 96,000 | `the_area_of_an_integer_right_triangle_is_a_multiple_of_six` | `elementary.lean` |
 | 95,048 | `two_twenty_and_two_eighty_four_are_the_smallest_amicable_pair` | `demand2.lean` |
+| 46,656 | `the_powers_of_two_mod_nine_and_of_three_mod_seven_are_isomorphic` | `elementary.lean` |
 | 44,100 | `the_rejected_command_gets_a_receipt` | `mechanical.lean` |
 | 41,160 | `the_theorems_are_the_hull_and_hardware` | `mechanical.lean` |
-| 40,000 | `the_sequence_takes_both_values` | `sequences.lean` |
-| 30,400 | `nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number` | `demand2.lean` |
 
 The largest domain settled here is **152,568,360,000 cases**, and it is finite — as every
 entry in this ledger is, because `by decide` works by exhausting a domain and an infinite one cannot be
@@ -90,7 +90,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-32 Lean files in 7 wings, 609 declarations of which 600 are theorems. The prose in this section is read out of the
+32 Lean files in 7 wings, 616 declarations of which 607 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -106,9 +106,9 @@ this page; there is nowhere else to keep the description in step.
 
 ### the ring
 
-**Classical arithmetic** — `classical.lean`, 14 theorem(s). the DECISION of each over a stated finite range, axiom-free, and the honest record of where the range   stops short of what the older claim asserted. prior_art_search: the results are named in every undergraduate text; no search was needed to find them. prior_art_pool: named Classical arithmetic, decided — the claims the ledger held in TypeScript, given a kernel.
-
 **The two-sided coin** — `coin.lean`, 12 theorem(s). One involution on ten digits, two sides, one fixed point, and one digit that leaves.
+
+**Elementary arithmetic** — `elementary.lean`, 21 theorem(s). the DECISION of each over a stated finite range, axiom-free, and the honest record of where the range   stops short of what the older claim asserted. prior_art_search: the results are named in every undergraduate text; no search was needed to find them. prior_art_pool: named Elementary arithmetic, decided — the claims the ledger held in TypeScript, given a kernel.
 
 **Families over the ring** — `families.lean`, 41 theorem(s). The families, quantified. Proving at scale.
 
@@ -172,7 +172,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Recovered — claims that computed and were withdrawn for want of a proof** — `recovered.lean`, 15 theorem(s). material, credited. What is NOT prior art is that these particular statements sat WITHDRAWN in this   deposit's ledger, each recorded as "not backed by a Lean proof. Its evidence is a TypeScript test",   while every one is decidable in a line. prior_art_search: literature search performed 2026-09-05, terms "units and non-units of Z/9 multiplicative   inverses group of units modulo 9"; prior art found and credited.
 
-22 of 609 declarations carry no comment of their own and are shown here as the gap they are, not
+22 of 616 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -181,20 +181,20 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 2,512 — 314 octaves exactly |
-| standing — carries its own proof | **600** |
-| carried — withdrawn on its own evidence, proved by a live theorem | **405** |
-| withdrawn — nothing proves it | 1,507 |
-| proved in total | **1005** of 2,512 |
-| standing keys → distinct theorems | 600 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 32 · 600 theorems (closed by exhaustion) + 9 rfl declarations, all axiom-free |
-| proved `by decide` | 600 of 609 |
+| ledger entries | 2,532 — 316 octaves and 4 over |
+| standing — carries its own proof | **607** |
+| carried — withdrawn on its own evidence, proved by a live theorem | **423** |
+| withdrawn — nothing proves it | 1,502 |
+| proved in total | **1030** of 2,532 |
+| standing keys → distinct theorems | 607 sealed, 0 of them keyed twice, 0 unresolvable |
+| Lean files · theorems | 32 · 607 theorems (closed by exhaustion) + 9 rfl declarations, all axiom-free |
+| proved `by decide` | 607 of 616 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
-**On `carried`.** 405 entries were withdrawn for want of a Lean proof and have since been given one, at a new key. Nothing is un-revoked: the original's own evidence is still a TypeScript test, and rewriting its status would erase the fact that it did not hold on what it had. The record says both — withdrawn on its own evidence, standing through the theorem that carries it.
+**On `carried`.** 423 entries were withdrawn for want of a Lean proof and have since been given one, at a new key. Nothing is un-revoked: the original's own evidence is still a TypeScript test, and rewriting its status would erase the fact that it did not hold on what it had. The record says both — withdrawn on its own evidence, standing through the theorem that carries it.
 
-**Why the withdrawn were withdrawn.** 1,386 no Lean proof · 457 tested the removed lexical gate · 47 other · 12 its Lean source was deleted or renamed · 10 circular by construction. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
+**Why the withdrawn were withdrawn.** 1,386 no Lean proof · 457 tested the removed lexical gate · 60 other · 12 its Lean source was deleted or renamed · 10 circular by construction. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
 
 **What verification costs.** Proving the set touches all 16,384 leaves; verifying membership afterwards touches 14 — one sibling per level. That is **1,170× less work**, exactly, and the factor grows with the set because N/log N grows. Wall-clock varies with the machine and is left in the build output rather than pinned here. It is not sub-nanosecond and nothing here is: the advantage is a smaller exponent, not a faster clock. The counting is proved in `speed.lean`.
 
@@ -227,4 +227,4 @@ whether the work restates someone earlier. [The paper](/paper) typesets every st
 
 ---
 
-*17 claims, all verified · 600 Lean theorems · 2512 ledger entries · trial root `d462ef37-9338-846e-b015-9ea92bc75d49` · integrity, not truth · 0/7*
+*17 claims, all verified · 607 Lean theorems · 2532 ledger entries · trial root `c0b1bf0e-2872-88b4-a5a1-cbed81d2189b` · integrity, not truth · 0/7*
