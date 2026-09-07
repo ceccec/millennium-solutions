@@ -15022,5 +15022,53 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "cecea07f-4f2e-8199-8caf-eb814fc22e55"
+  },
+  {
+    "key": "lean_classical_the_units_of_z9_form_three_pairs_summing_to_nine",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "84003054-aa80-8cca-a206-dd0251b8dc6e"
+  },
+  {
+    "key": "lean_classical_the_multiplication_table_of_the_z9_units_is_a_latin_square",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "84b94f6b-435c-8889-84c8-9223850f1026"
+  },
+  {
+    "key": "lean_classical_the_count_of_primitive_roots_is_phi_of_phi",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "94ef86e7-fad1-86fc-b150-8529f121c611"
+  },
+  {
+    "key": "lean_classical_the_order_spectrum_of_the_z9_units_realises_gauss_divisor_sum",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5bbfe62a-1b2b-8d83-bd4a-78fbbe7cec01"
+  },
+  {
+    "key": "lean_classical_the_product_of_the_units_is_minus_one_exactly_where_gauss_says",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "74836983-fef9-892c-8d47-3202b0b6d539"
+  },
+  {
+    "key": "lean_classical_three_is_a_primitive_root_mod_seven_and_seven_is_six_plus_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e03daed4-d2a5-8e81-89fe-bd90eb188e54"
+  },
+  {
+    "key": "lean_classical_the_z9_unit_group_splits_as_reflection_times_trinity",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b1bcbf8b-5e61-80e7-9db8-b211ed0becd0"
+  },
+  {
+    "key": "lean_merkle_the_fold_of_any_single_leaf_is_that_leaf",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b5f2edf6-e973-88a5-971c-108825e550b2"
   }
 ]

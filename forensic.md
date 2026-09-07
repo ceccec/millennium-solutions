@@ -5,18 +5,18 @@ title: Every state change, dated
 # Provenance of this deposit's ledger
 
 **Recomputed on every build** from git history and the append-only ledger. Regenerate with
-`npm run forensic`. Content-address `aa6d0dfa-07f3-8722-80f0-07d444b9f966`.
+`npm run forensic`. Content-address `2a583ad2-84ad-81ba-b8a2-73fba029ed02`.
 
 ## What this record establishes
 
 | | |
 |---|---:|
-| ledger entries | **2,504** |
-| standing — proved and sealed | 593 |
-| carried — withdrawn, proved by a live theorem | 397 |
-| withdrawn — nothing currently proves them | 1,514 |
+| ledger entries | **2,512** |
+| standing — proved and sealed | 600 |
+| carried — withdrawn, proved by a live theorem | 405 |
+| withdrawn — nothing currently proves them | 1,507 |
 | receipt chain, recomputed | **0 breaks — intact** |
-| commits that changed ledger state | 567 |
+| commits that changed ledger state | 568 |
 
 ## Why entries were withdrawn — the reason recorded at the time
 
@@ -24,15 +24,15 @@ Verbatim, as written when the entry was revoked. Not inferred afterwards.
 
 | withdrawn | reason as recorded |
 |---:|---|
-| 1,035 | dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a compu |
+| 1,028 | dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a compu |
 | 443 | revoked in place: its test asserted a lexical drain (computes(boast).binary === 0). The word-lis |
 | 12 | revoked in place: circular by construction AND dependent on the removed lexical gate. |
 | 12 | orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or rena |
 | 10 | revoked in place: circular by construction — the test defines the answer it checks, proving a de |
 | 1 | revoked in place: its test asserts that a list of proof-boasts written across many scripts and l |
 
-**1,035** of
-**1,514** withdrawn entries — 68.4% —
+**1,028** of
+**1,507** withdrawn entries — 68.2% —
 were withdrawn for want of a Lean proof while their evidence was a TypeScript test that **computed**.
 Withdrawal costs one line of record; proving costs real work, and a green gate rewards both identically.
 

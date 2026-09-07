@@ -5,7 +5,7 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **602** report the same thing:
+axiom fails the build rather than earning a footnote. All **609** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
@@ -113,12 +113,12 @@ def UUIDNA : List Nat := [117, 117, 105, 100, 110, 97]      -- "uuidna"
 def settledHere : Nat := 17
 ```
 
-### `classical.lean` — 3 definition(s), 7 theorem(s)
+### `classical.lean` — 3 definition(s), 14 theorem(s)
 
 ```lean
 def properDivisorSum (n : Nat) : Nat := ((List.range' 1 (n - 1)).filter (fun d => n % d == 0)).foldl (· + ·) 0
 def eisensteinNorm (a b : Int) : Int := a * a - a * b + b * b
-def settledHere : Nat := 6
+def settledHere : Nat := 13
 ```
 
 ### `coin.lean` — 7 definition(s), 12 theorem(s)
@@ -345,7 +345,7 @@ def tri (n : Nat) : Nat := n * (n + 1) / 2
 def sumTri (n : Nat) : Nat := ((List.range' 1 n).map tri).foldl (· + ·) 0
 ```
 
-### `merkle.lean` — 18 definition(s), 11 theorem(s)
+### `merkle.lean` — 18 definition(s), 12 theorem(s)
 
 ```lean
 def hexDigit (n : Nat) : Nat := if n < 10 then 48 + n else 87 + n
@@ -362,7 +362,7 @@ def merkleFold (leaves : List (List Nat)) : List Nat :=
 def A : List Nat := toUuidBytes [97]     -- address of "a"
 def C : List Nat := toUuidBytes [99]     -- address of "c"
 def B : List Nat := toUuidBytes [98]     -- address of "b"
-def settledHere : Nat := 10
+def settledHere : Nat := 11
 def interleave (x : List Nat) : List (List Nat) → List (List (List Nat))
 def perms : List (List Nat) → List (List (List Nat))
 def D : List Nat := toUuidBytes [100]  -- address of "d"
@@ -530,6 +530,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**602** declarations, **0** axiom dependencies, **282** definitions they rest on.
+**609** declarations, **0** axiom dependencies, **282** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them. `0/7`.

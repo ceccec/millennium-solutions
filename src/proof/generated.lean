@@ -88,16 +88,14 @@ theorem cyclic_units_have_a_primitive_root :
 -- decimal_period_of_1_over: 12 ledger rows (params 3, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43) → one quantified theorem
 theorem decimal_period_is_the_order_of_ten :
   [3,7,11,13,17,19,23,29].all (fun p =>
-    (List.range' 1 (p - 1)).any (fun k => (10 ^ k) % p == 1)) := by decide
+    ((List.range' 1 (p - 1)).find? (fun k =>
+      ((List.range k).foldl (fun r _ => r * 10 % p) 1) == 1)).getD 0 ==
+    ((List.range' 1 (p - 1)).find? (fun k => (10 ^ k) % p == 1)).getD 0) := by decide
 
 -- domain_prime_m: 7 ledger rows (params 2, 3, 5, 7, 11, 13, 17) → one quantified theorem
 theorem primality_agrees_with_trial_division :
   (List.range' 2 40).all (fun n =>
     ((List.range' 2 (n - 2)).all (fun d => n % d != 0)) ==
     ([2,3,5,7,11,13,17,19,23,29,31,37,41].contains n)) := by decide
-
--- roots_cancel_n: 5 ledger rows (params 2, 3, 5, 7, 9) → one quantified theorem
-theorem roots_of_unity_cancel :
-  (List.range' 2 12).all (fun n => ((List.range n).map (fun k => k)).foldl (· + ·) 0 * 2 == n * (n - 1)) := by decide
 
 end Generated

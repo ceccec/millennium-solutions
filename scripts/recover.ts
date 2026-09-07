@@ -239,9 +239,36 @@ const EXACT: { key: string; theorem: string; why: string }[] = [
     why: 'the row claims exactly six norm-1 Eisenstein integers; the theorem counts them over the box −3…3, which is wider than any norm-1 element can reach' },
   { key: 'subtraction_game_mod4', theorem: 'the_subtraction_game_loses_exactly_at_the_multiples_of_four',
     why: 'the row claims the mover loses iff n ≡ 0 mod 4; the theorem decides both halves — every move from a multiple leaves a non-multiple, and some move from a non-multiple reaches one' },
+
+  // ── SEVEN ROWS ABOUT (ℤ/9)*, FOR WHICH THE RANKING PROPOSED ONE THEOREM AND WAS WRONG SEVEN TIMES ───────
+  // candidates.ts offered `units_are_six` as the heir for every one of these, on the strength of the shared
+  // words "units" and "six". Knowing the group has six elements decides none of them. Each got its own
+  // theorem in classical.lean, which is the outcome the ranking is FOR: it found the rows, and reading them
+  // found that the proposal was empty.
+  { key: 'the_units_of_z9_form_three_additive_inverse_pairs_summing_to_nine', theorem: 'the_units_of_z9_form_three_pairs_summing_to_nine',
+    why: 'the theorem decides the pair count and that every unit has its complement to nine inside the units' },
+  { key: 'the_multiplication_table_of_z9_units_is_a_latin_square', theorem: 'the_multiplication_table_of_the_z9_units_is_a_latin_square',
+    why: 'every row and every column is decided to be a permutation of the units — both, not rows alone leaning on an unstated commutativity' },
+  { key: 'the_count_of_primitive_roots_is_phi_of_phi', theorem: 'the_count_of_primitive_roots_is_phi_of_phi',
+    why: 'the row states the identity where the group is cyclic; the theorem decides it over the moduli 2…18 that have a primitive root' },
+  { key: 'the_order_spectrum_of_z9_units_realizes_gauss_divisor_sum', theorem: 'the_order_spectrum_of_the_z9_units_realises_gauss_divisor_sum',
+    why: 'φ(d) units of each order d dividing six, and the φ values summing to six — with the divisors computed rather than typed' },
+  { key: 'gauss_generalization_of_wilson_product_of_units', theorem: 'the_product_of_the_units_is_minus_one_exactly_where_gauss_says',
+    why: 'the product of the units is −1 exactly where a primitive root exists and +1 elsewhere, decided over 2…18 — Wilson is the prime case' },
+  { key: 'three_is_a_primitive_root_mod_seven_and_the_rosette_is_six_plus_one', theorem: 'three_is_a_primitive_root_mod_seven_and_seven_is_six_plus_one',
+    why: 'the order of 3 mod 7, the six units, and the seventh residue that is not one' },
+  { key: 'the_order_six_unit_group_splits_as_reflection_times_trinity', theorem: 'the_z9_unit_group_splits_as_reflection_times_trinity',
+    why: 'u ↦ (u³, u⁴) recovers u, and the two factors take two and three values — the C2 × C3 the CRT predicts' },
+
 ]
 
-// ── AND ONE THE CANDIDATE REPORT PROPOSED THAT IS NOT CARRIED, WRITTEN DOWN SO IT IS NOT PROPOSED AGAIN ──
+// ── AND TWO THE CANDIDATE REPORT PROPOSED THAT ARE NOT CARRIED, WRITTEN DOWN SO THEY ARE NOT PROPOSED AGAIN ──
+//
+// `merkle_fold_singleton_identity` says merkleFold([x]) = x — for x, universally. singleton_fold_is_the_leaf
+// decided it at ONE address, which is a single instance wearing a general name, and merkle.lean now ranges
+// over three. Three is not all: the claim quantifies over an infinite domain and `decide` cannot reach it.
+// The theorem is better than it was and the row still is not carried, which is the same standard applied to
+// merkle_fold_order_independent_k5 and k6.
 // `euclid_euler_perfect` says "even perfect numbers ARE 2^(p−1)(2^p−1) for a Mersenne prime". That is the
 // characterisation — Euclid's direction AND Euler's converse. classical.lean decides Euclid's: the form is
 // perfect whenever the Mersenne number is prime. It says nothing about every even perfect number having

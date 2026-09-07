@@ -162,13 +162,13 @@
   {
     "key": "decimal_period_is_the_order_of_ten",
     "name": "decimal_period_of_1_over, quantified over its whole parameter set (12 ledger rows)",
-    "statement": "[3,7,11,13,17,19,23,29].all (fun p => (List.range' 1 (p - 1)).any (fun k => (10 ^ k) % p == 1))",
+    "statement": "[3,7,11,13,17,19,23,29].all (fun p => ((List.range' 1 (p - 1)).find? (fun k => ((List.range k).foldl (fun r _ => r * 10 % p) 1) == 1)).getD 0 == ((List.range' 1 (p - 1)).find? (fun k => (10 ^ k) % p == 1)).getD 0)",
     "tactic": "decide",
     "file": "generated.lean",
     "principle": "The primes",
     "skill": "number-theory",
-    "lean": "theorem decimal_period_is_the_order_of_ten :\n  [3,7,11,13,17,19,23,29].all (fun p =>\n    (List.range' 1 (p - 1)).any (fun k => (10 ^ k) % p == 1)) := by decide",
-    "address": "2cb176cd-f76f-867b-aeab-ef6da14d26e7",
+    "lean": "theorem decimal_period_is_the_order_of_ten :\n  [3,7,11,13,17,19,23,29].all (fun p =>\n    ((List.range' 1 (p - 1)).find? (fun k =>\n      ((List.range k).foldl (fun r _ => r * 10 % p) 1) == 1)).getD 0 ==\n    ((List.range' 1 (p - 1)).find? (fun k => (10 ^ k) % p == 1)).getD 0) := by decide",
+    "address": "dccd7de1-54b9-862c-8c82-4cca9a7a557f",
     "subsumes": [
       "decimal_period_of_1_over_3",
       "decimal_period_of_1_over_7",
@@ -202,24 +202,6 @@
       "domain_prime_m_11",
       "domain_prime_m_13",
       "domain_prime_m_17"
-    ]
-  },
-  {
-    "key": "roots_of_unity_cancel",
-    "name": "roots_cancel_n, quantified over its whole parameter set (5 ledger rows)",
-    "statement": "(List.range' 2 12).all (fun n => ((List.range n).map (fun k => k)).foldl (· + ·) 0 * 2 == n * (n - 1))",
-    "tactic": "decide",
-    "file": "generated.lean",
-    "principle": "The rosette",
-    "skill": "symmetry",
-    "lean": "theorem roots_of_unity_cancel :\n  (List.range' 2 12).all (fun n => ((List.range n).map (fun k => k)).foldl (· + ·) 0 * 2 == n * (n - 1)) := by decide",
-    "address": "d85f338e-a0bf-87d0-932b-c6efea12b47e",
-    "subsumes": [
-      "roots_cancel_n_2",
-      "roots_cancel_n_3",
-      "roots_cancel_n_5",
-      "roots_cancel_n_7",
-      "roots_cancel_n_9"
     ]
   }
 ]

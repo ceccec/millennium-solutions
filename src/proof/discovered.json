@@ -5341,16 +5341,18 @@
     "name": "the six units of ℤ/9 form three additive-inverse pairs summing to nine: (ℤ/9)* = {1,2,4,5,7,8} splits into {1,8},{2,7},{4,5}, each pair {d, 9−d} summing to 9 ≡ 0 mod 9, so the whole group sums to 27 ≡ 0; multiplication by 8 ≡ −1 sends every unit to its additive inverse, swapping the pairs. Decidable by exhaustion over ℤ/9",
     "receipt": "7f57b768-13b6-86be-9823-970433a33378",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_classical_the_units_of_z9_form_three_pairs_summing_to_nine quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": true,
+    "supersededBy": "lean_classical_the_units_of_z9_form_three_pairs_summing_to_nine"
   },
   {
     "key": "three_is_a_primitive_root_mod_seven_and_the_rosette_is_six_plus_one",
     "name": "three is a primitive root mod 7 and the rosette is six plus one: the powers of 3 mod 7 cycle 3,2,6,4,5,1 with order 6, generating the full unit group (ℤ/7)* = {1,2,3,4,5,6}; so 7 decomposes as 6 units + 1 (the class of 0) — the seven-ray \"6+1\" structure — and the units pair by additive inverse {1,6},{2,5},{3,4}, each summing to 7. Decidable by exhaustion over ℤ/7",
     "receipt": "15050d64-20c7-893b-bf21-9cd15fe5d6fa",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_classical_three_is_a_primitive_root_mod_seven_and_seven_is_six_plus_one quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": true,
+    "supersededBy": "lean_classical_three_is_a_primitive_root_mod_seven_and_seven_is_six_plus_one"
   },
   {
     "key": "the_vortex_and_rosette_unit_groups_are_isomorphic",
@@ -5365,8 +5367,9 @@
     "name": "the order-6 unit group splits as reflection times trinity: by the Chinese remainder theorem the cyclic group of order 6 is C2 × C3, and in (ℤ/9)* this realizes as {1,8} × {1,4,7} — the order-2 factor {1, −1} is negation (8 ≡ −1 mod 9), the order-3 factor {1,4,7} is the trinity subgroup (the units ≡ 1 mod 3); the product map (s,r) ↦ s·r mod 9 is a bijective homomorphism, so every unit factors uniquely as a sign times a rotation. Decidable by exhaustion over ℤ/9",
     "receipt": "90f30729-7598-890b-ae96-fa3747b3de16",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_classical_the_z9_unit_group_splits_as_reflection_times_trinity quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": true,
+    "supersededBy": "lean_classical_the_z9_unit_group_splits_as_reflection_times_trinity"
   },
   {
     "key": "the_two_coins_are_minus_the_euler_characteristic_of_the_genus_two_surface",
@@ -5405,8 +5408,9 @@
     "name": "the order spectrum of (ℤ/9)* realizes Gauss's divisor-sum: the multiplicative orders of the six units are exactly the divisors of 6 — one element of order 1, one of order 2, two of order 3, two of order 6 — matching φ(d) for each d dividing 6, and the sum of φ(d) over the divisors of 6 equals 6, the group size. The presence of an element of order 6 shows the group is cyclic. Decidable by exhaustion over ℤ/9",
     "receipt": "c0dc094a-4316-85c9-aaed-b0a4819834b5",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_classical_the_order_spectrum_of_the_z9_units_realises_gauss_divisor_sum quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": true,
+    "supersededBy": "lean_classical_the_order_spectrum_of_the_z9_units_realises_gauss_divisor_sum"
   },
   {
     "key": "the_imprint_codec_is_injective_with_an_exact_115_bit_capacity",
@@ -5429,8 +5433,9 @@
     "name": "Gauss's generalization of Wilson: the product of the units mod n is ≡ −1 when n has a primitive root and ≡ +1 otherwise. For n = 9 (primitive root 2) the six units multiply to 1·2·4·5·7·8 ≡ −1 mod 9 (that is 8); for n = 8 (no primitive root, units ≅ C2×C2) they multiply to +1. Verified by exhaustion over the moduli up to 60",
     "receipt": "a5246422-b686-8024-86ec-6b92f2c00754",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_classical_the_product_of_the_units_is_minus_one_exactly_where_gauss_says quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_classical_the_product_of_the_units_is_minus_one_exactly_where_gauss_says"
   },
   {
     "key": "reorganizing_the_theorems_creates_theorems",
@@ -5541,8 +5546,9 @@
     "name": "the multiplication table of (ℤ/9)* is a Latin square: in the Cayley table of the six units under multiplication mod 9, every unit appears exactly once in each row and each column — which is exactly the group cancellation law (a·b ≡ a·c mod 9 implies b ≡ c for a unit a). Verified by full enumeration over ℤ/9",
     "receipt": "9eb06231-c20a-894a-8ff7-e71bf7ee9ff8",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_classical_the_multiplication_table_of_the_z9_units_is_a_latin_square quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": true,
+    "supersededBy": "lean_classical_the_multiplication_table_of_the_z9_units_is_a_latin_square"
   },
   {
     "key": "the_additive_generators_of_z9_are_exactly_the_multiplicative_units",
@@ -5849,8 +5855,9 @@
     "name": "the count of primitive roots is φ(φ(n)): when (ℤ/n)* is cyclic, the number of primitive roots — the generators of the unit group — equals φ(φ(n)). So mod 9 there are φ(φ(9)) = φ(6) = 2 primitive roots, namely 2 and 5 (the doubling generator and its inverse 5 = 2⁻¹); mod 7 there are φ(6) = 2, namely 3 and 5. Verified by counting the units of maximal order over the moduli up to 60",
     "receipt": "f659a146-4caf-8626-a332-578647d10cf4",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_classical_the_count_of_primitive_roots_is_phi_of_phi quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_classical_the_count_of_primitive_roots_is_phi_of_phi"
   },
   {
     "key": "any_drift_in_types_as_theorems_is_a_crack_the_type_gate_seals",
@@ -15244,7 +15251,10 @@
   {
     "key": "lean_generated_roots_of_unity_cancel",
     "name": "lean generated.lean: roots_of_unity_cancel — (List.range' 2 12).all (fun n => ((List.range n).map (fun k => k)).foldl (· + ·) 0 * 2 == n * (n - 1)) — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "90647c22-6e5d-8cbe-8018-b2b59a2dda23"
+    "receipt": "90647c22-6e5d-8cbe-8018-b2b59a2dda23",
+    "revoked": true,
+    "supersededBy": "lean_families_the_first_three_power_sums_hold_to_two_hundred",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_families_the_first_three_power_sums_hold_to_two_hundred now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_millenniumfloor_riemann_reflection_and_heart",
@@ -18159,5 +18169,45 @@
     "key": "lean_nim_bouton_holds_at_every_heap_size_to_six",
     "name": "lean nim.lean: bouton_holds_at_every_heap_size_to_six — (List.range 7).all (fun a => (List.range 7).all (fun b => isLost a b == (xorN a b == 0))) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "cecea07f-4f2e-8199-8caf-eb814fc22e55"
+  },
+  {
+    "key": "lean_classical_the_units_of_z9_form_three_pairs_summing_to_nine",
+    "name": "lean classical.lean: the_units_of_z9_form_three_pairs_summing_to_nine — ((unitsMod 9).filter (fun u => u < 9 - u)).length = 3 ∧ (unitsMod 9).all (fun u => (unitsMod 9).contains (9 - u) && u + (9 - u) == 9) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "84003054-aa80-8cca-a206-dd0251b8dc6e"
+  },
+  {
+    "key": "lean_classical_the_multiplication_table_of_the_z9_units_is_a_latin_square",
+    "name": "lean classical.lean: the_multiplication_table_of_the_z9_units_is_a_latin_square — (unitsMod 9).all (fun a => ((unitsMod 9).map (fun b => a * b % 9)).eraseDups.length == (unitsMod 9).length && ((unitsMod 9).map (fun b => a * b % 9)).all (fun x => (unitsMod 9).contains x)) ∧ (unitsMod 9).all (fun b => ((unitsMod 9).map (fu… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "84b94f6b-435c-8889-84c8-9223850f1026"
+  },
+  {
+    "key": "lean_classical_the_count_of_primitive_roots_is_phi_of_phi",
+    "name": "lean classical.lean: the_count_of_primitive_roots_is_phi_of_phi — (List.range' 2 59).all (fun n => !(hasPrimitiveRoot n) || ((unitsMod n).filter (fun g => ordMod g n == (unitsMod n).length)).length == totient (totient n)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "94ef86e7-fad1-86fc-b150-8529f121c611"
+  },
+  {
+    "key": "lean_classical_the_order_spectrum_of_the_z9_units_realises_gauss_divisor_sum",
+    "name": "lean classical.lean: the_order_spectrum_of_the_z9_units_realises_gauss_divisor_sum — ((List.range' 1 6).filter (fun d => 6 % d == 0)).all (fun d => ((unitsMod 9).filter (fun g => ordMod g 9 == d)).length == totient d) ∧ (((List.range' 1 6).filter (fun d => 6 % d == 0)).map totient).foldl (· + ·) 0 = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5bbfe62a-1b2b-8d83-bd4a-78fbbe7cec01"
+  },
+  {
+    "key": "lean_classical_the_product_of_the_units_is_minus_one_exactly_where_gauss_says",
+    "name": "lean classical.lean: the_product_of_the_units_is_minus_one_exactly_where_gauss_says — (List.range' 2 59).all (fun n => ((unitsMod n).foldl (fun a u => a * u % n) 1) == (if gaussCyclic n then n - 1 else 1)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "74836983-fef9-892c-8d47-3202b0b6d539"
+  },
+  {
+    "key": "lean_classical_three_is_a_primitive_root_mod_seven_and_seven_is_six_plus_one",
+    "name": "lean classical.lean: three_is_a_primitive_root_mod_seven_and_seven_is_six_plus_one — ordMod 3 7 = 6 ∧ (unitsMod 7).length = 6 ∧ (List.range 7).length = (unitsMod 7).length + 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e03daed4-d2a5-8e81-89fe-bd90eb188e54"
+  },
+  {
+    "key": "lean_classical_the_z9_unit_group_splits_as_reflection_times_trinity",
+    "name": "lean classical.lean: the_z9_unit_group_splits_as_reflection_times_trinity — (unitsMod 9).all (fun u => powMod u 3 9 * powMod u 4 9 % 9 == u) ∧ ((unitsMod 9).map (fun u => powMod u 3 9)).eraseDups.length = 2 ∧ ((unitsMod 9).map (fun u => powMod u 4 9)).eraseDups.length = 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b1bcbf8b-5e61-80e7-9db8-b211ed0becd0"
+  },
+  {
+    "key": "lean_merkle_the_fold_of_any_single_leaf_is_that_leaf",
+    "name": "lean merkle.lean: the_fold_of_any_single_leaf_is_that_leaf — [A, B, C].all (fun x => merkleFold [x] == x) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b5f2edf6-e973-88a5-971c-108825e550b2"
   }
 ]

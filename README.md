@@ -11,12 +11,12 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 602 kernel-accepted declarations across 32 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `fe54e3b6-a617-80cb-85e0-772b62fd4863`</sub>
-- 593 of those 602 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 9 close by rfl and are declarations.
-  <sub>SEALED · `af1595e0-e70a-83ff-8db6-29896d66a295`</sub>
-- 640 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `dadfb7ff-0e04-8b20-a46b-3dfe249c6cb3`</sub>
+- The formal layer holds 609 kernel-accepted declarations across 32 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `411b0991-b114-8045-9be6-324fc3208d9c`</sub>
+- 600 of those 609 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 9 close by rfl and are declarations.
+  <sub>SEALED · `b97e85dd-21e8-8c4c-95cf-e1c4d5d51c95`</sub>
+- 648 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `10257f5f-7738-8e7b-bcd9-22979f997c23`</sub>
 
 ## 2 · The ring
 
@@ -32,17 +32,17 @@ last because the orbit never reaches it.
 
 ## 8 · Addressing
 
-- The content-address is ported to the formal layer in fnv.lean, address.lean, merkle.lean — 42 theorems covering FNV-1a, the four seeded passes, the version and variant nibbles, and the fold, each agreeing with the shipped implementation at published values.
-  <sub>SEALED · `e53d5454-98bf-8619-934e-e0c1b2371d4c`</sub>
+- The content-address is ported to the formal layer in fnv.lean, address.lean, merkle.lean — 43 theorems covering FNV-1a, the four seeded passes, the version and variant nibbles, and the fold, each agreeing with the shipped implementation at published values.
+  <sub>SEALED · `ad9565e8-f0b9-8c94-abca-8c2e954b5b87`</sub>
 - The fold does not depend on the order its leaves arrive in, and that is not vacuous because merge itself is proved order-sensitive — the sort is what removes the dependence.
   <sub>SEALED · `7ee1de7d-d218-88d4-8dc9-6eec451ced72`</sub>
 
 ## 7 · The ledger
 
-- The ledger records 2504 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `e021c5c5-afbb-8bff-8946-09427c188f61`</sub>
-- The count is an exact multiple of eight — 2504 is 313 octaves with no remainder.
-  <sub>SEALED · `c9060964-e2ed-855e-8a1c-0e926ca7112c`</sub>
+- The ledger records 2512 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `c75a6308-c6e3-806f-abde-9703a28005b2`</sub>
+- The count is an exact multiple of eight — 2512 is 314 octaves with no remainder.
+  <sub>SEALED · `e4b847e1-5979-8139-b9b0-0a8218e8b789`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -90,7 +90,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-32 Lean files in 7 wings, 602 declarations of which 593 are theorems. The prose in this section is read out of the
+32 Lean files in 7 wings, 609 declarations of which 600 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -102,11 +102,11 @@ this page; there is nowhere else to keep the description in step.
 
 **What the ledger claims** — `ledgerclaims.lean`, 8 theorem(s). Bounded: what is not prior art is what THIS ledger claims — the 967-receipt case, the saving arithmetic,   and the 128-bit seal width as this deposit mints it. prior_art_search: literature search performed 2026-09-05, terms "Merkle tree membership proof logarithmic   verification path length"; prior art found and credited. prior_art_pool: unbounded   the subject is this deposit's own ledger; no external work can restate it.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: claims about this deposit's own ledger Three claims the prose made in words and cited to entries that no longer stand. Restated here as propositions the kernel decides, so the sentences keep a citation that is actually proved.
 
-**The fold** — `merkle.lean`, 11 theorem(s). The fold, ported to Lean — merge, merkleFold, and the order-independence the deposit calls its receipt.
+**The fold** — `merkle.lean`, 12 theorem(s). The fold, ported to Lean — merge, merkleFold, and the order-independence the deposit calls its receipt.
 
 ### the ring
 
-**Classical arithmetic** — `classical.lean`, 7 theorem(s). the DECISION of each over a stated finite range, axiom-free, and the honest record of where the range   stops short of what the older claim asserted. prior_art_search: the results are named in every undergraduate text; no search was needed to find them. prior_art_pool: named Classical arithmetic, decided — the claims the ledger held in TypeScript, given a kernel.
+**Classical arithmetic** — `classical.lean`, 14 theorem(s). the DECISION of each over a stated finite range, axiom-free, and the honest record of where the range   stops short of what the older claim asserted. prior_art_search: the results are named in every undergraduate text; no search was needed to find them. prior_art_pool: named Classical arithmetic, decided — the claims the ledger held in TypeScript, given a kernel.
 
 **The two-sided coin** — `coin.lean`, 12 theorem(s). One involution on ten digits, two sides, one fixed point, and one digit that leaves.
 
@@ -148,7 +148,7 @@ this page; there is nowhere else to keep the description in step.
 
 ### the machine
 
-**Generated at scale** — `generated.lean`, 14 theorem(s). Bounded, so the credit stops where the earlier work does: what is NOT prior art is the generator that enumerates propositions over this ring and   discards the ones true of every sibling; that machinery is this deposit's own.   Verification by exhaustion in Lean is this deposit's contribution, and verification is not discovery. prior_art_search: literature search performed 2026-09-05, terms "doubling sequence modulo 9 orbit   1 2 4 8 7 5 cyclic group generator digital root"; prior art found and credited. prior_art_pool: bounded   quantified ring arithmetic over Z/9; the underlying facts are classical and searchable.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: this deposit's own generator over its own ring Generated by scripts/lean-gen.ts — do not edit by hand; re-run the generator. Each theorem below quantifies over a whole ledger family. Every one is compiled, audited for axioms, and checked to compute what the ledger's own tests compute at every parameter of its family.
+**Generated at scale** — `generated.lean`, 13 theorem(s). Bounded, so the credit stops where the earlier work does: what is NOT prior art is the generator that enumerates propositions over this ring and   discards the ones true of every sibling; that machinery is this deposit's own.   Verification by exhaustion in Lean is this deposit's contribution, and verification is not discovery. prior_art_search: literature search performed 2026-09-05, terms "doubling sequence modulo 9 orbit   1 2 4 8 7 5 cyclic group generator digital root"; prior art found and credited. prior_art_pool: bounded   quantified ring arithmetic over Z/9; the underlying facts are classical and searchable.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: this deposit's own generator over its own ring Generated by scripts/lean-gen.ts — do not edit by hand; re-run the generator. Each theorem below quantifies over a whole ledger family. Every one is compiled, audited for axioms, and checked to compute what the ledger's own tests compute at every parameter of its family.
 
 **Mechanically translated** — `mechanical.lean`, 107 theorem(s). Generated by src/prove/emit.ts from the ledger's own tests — do not hand-edit; re-run the prover.
 
@@ -172,7 +172,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Recovered — claims that computed and were withdrawn for want of a proof** — `recovered.lean`, 15 theorem(s). material, credited. What is NOT prior art is that these particular statements sat WITHDRAWN in this   deposit's ledger, each recorded as "not backed by a Lean proof. Its evidence is a TypeScript test",   while every one is decidable in a line. prior_art_search: literature search performed 2026-09-05, terms "units and non-units of Z/9 multiplicative   inverses group of units modulo 9"; prior art found and credited.
 
-22 of 602 declarations carry no comment of their own and are shown here as the gap they are, not
+22 of 609 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -181,20 +181,20 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 2,504 — 313 octaves exactly |
-| standing — carries its own proof | **593** |
-| carried — withdrawn on its own evidence, proved by a live theorem | **397** |
-| withdrawn — nothing proves it | 1,514 |
-| proved in total | **990** of 2,504 |
-| standing keys → distinct theorems | 593 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 32 · 593 theorems (closed by exhaustion) + 9 rfl declarations, all axiom-free |
-| proved `by decide` | 593 of 602 |
+| ledger entries | 2,512 — 314 octaves exactly |
+| standing — carries its own proof | **600** |
+| carried — withdrawn on its own evidence, proved by a live theorem | **405** |
+| withdrawn — nothing proves it | 1,507 |
+| proved in total | **1005** of 2,512 |
+| standing keys → distinct theorems | 600 sealed, 0 of them keyed twice, 0 unresolvable |
+| Lean files · theorems | 32 · 600 theorems (closed by exhaustion) + 9 rfl declarations, all axiom-free |
+| proved `by decide` | 600 of 609 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
-**On `carried`.** 397 entries were withdrawn for want of a Lean proof and have since been given one, at a new key. Nothing is un-revoked: the original's own evidence is still a TypeScript test, and rewriting its status would erase the fact that it did not hold on what it had. The record says both — withdrawn on its own evidence, standing through the theorem that carries it.
+**On `carried`.** 405 entries were withdrawn for want of a Lean proof and have since been given one, at a new key. Nothing is un-revoked: the original's own evidence is still a TypeScript test, and rewriting its status would erase the fact that it did not hold on what it had. The record says both — withdrawn on its own evidence, standing through the theorem that carries it.
 
-**Why the withdrawn were withdrawn.** 1,386 no Lean proof · 457 tested the removed lexical gate · 46 other · 12 its Lean source was deleted or renamed · 10 circular by construction. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
+**Why the withdrawn were withdrawn.** 1,386 no Lean proof · 457 tested the removed lexical gate · 47 other · 12 its Lean source was deleted or renamed · 10 circular by construction. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
 
 **What verification costs.** Proving the set touches all 16,384 leaves; verifying membership afterwards touches 14 — one sibling per level. That is **1,170× less work**, exactly, and the factor grows with the set because N/log N grows. Wall-clock varies with the machine and is left in the build output rather than pinned here. It is not sub-nanosecond and nothing here is: the advantage is a smaller exponent, not a faster clock. The counting is proved in `speed.lean`.
 
@@ -227,4 +227,4 @@ whether the work restates someone earlier. [The paper](/paper) typesets every st
 
 ---
 
-*17 claims, all verified · 593 Lean theorems · 2504 ledger entries · trial root `b6166142-1e2b-891b-946e-9e5bb1e178f0` · integrity, not truth · 0/7*
+*17 claims, all verified · 600 Lean theorems · 2512 ledger entries · trial root `d462ef37-9338-846e-b015-9ea92bc75d49` · integrity, not truth · 0/7*

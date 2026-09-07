@@ -76,6 +76,12 @@ theorem empty_fold_agrees :
 
 theorem singleton_fold_is_the_leaf : merkleFold [A] = A := by decide
 
+-- ── and for more than one leaf, because "the fold of a single leaf is that leaf" is a claim about EVERY
+--    leaf and the line above decides it at one. A single instance reads as the general statement when the
+--    general statement is what the name says. ──
+theorem the_fold_of_any_single_leaf_is_that_leaf :
+  [A, B, C].all (fun x => merkleFold [x] == x) := by decide
+
 theorem pair_fold_agrees :
   merkleFold [A, B] = [181, 59, 237, 190, 211, 88, 129, 103, 143, 231, 158, 123, 139, 178, 38, 2] := by decide
 
@@ -89,8 +95,8 @@ theorem merge_is_order_sensitive : merge A B ≠ merge B A := by decide
 theorem sorting_is_what_makes_the_fold_order_free :
   sortB [A, B] = sortB [B, A] ∧ [A, B] ≠ [B, A] := by decide
 
-def settledHere : Nat := 10
-theorem merkle_settles_its_range : settledHere = 10 := rfl
+def settledHere : Nat := 11
+theorem merkle_settles_its_range : settledHere = 11 := rfl
 
 -- ── ORDER-INDEPENDENCE ON AN ODD NUMBER OF LEAVES. Two leaves pair exactly and prove little: the interesting
 --    case is an odd count, where pairUp must carry the leftover leaf into the next round. All six orderings of

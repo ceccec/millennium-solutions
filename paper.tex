@@ -61,8 +61,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free and axiom-free, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 602 of them across 32 files and
-7 wings; 593 close by exhaustion over a stated finite domain and the
+(\texttt{npm run latex-gate}). There are 609 of them across 32 files and
+7 wings; 600 close by exhaustion over a stated finite domain and the
 remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -285,6 +285,11 @@ remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
+\begin{theorem}[\texttt{the\_fold\_of\_any\_single\_leaf\_is\_that\_leaf}]
+\[ \forall x \in [A,\,B,\,C],\; \mathrm{merkleFold}\mathopen{}\left([x]\right) = x \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
 \begin{theorem}[\texttt{pair\_fold\_agrees}]
 \[ \mathrm{merkleFold}\mathopen{}\left([A,\,B]\right) = [181,\,59,\,237,\,190,\,211,\,88,\,129,\,103,\,143,\,231,\,158,\,123,\,139,\,178,\,38,\,2] \]
 \end{theorem}
@@ -306,7 +311,7 @@ remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{merkle\_settles\_its\_range}]
-\[ \mathrm{settledHere} = 10 \]
+\[ \mathrm{settledHere} = 11 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 
@@ -359,8 +364,43 @@ remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 369 cases. \hfill$\square$
 
+\begin{theorem}[\texttt{the\_units\_of\_z9\_form\_three\_pairs\_summing\_to\_nine}]
+\[ \left|\{\, u \in \mathrm{unitsMod}\mathopen{}\left(9\right) \mid u < 9 - u \,\}\right| = 3 \land \forall u \in \mathrm{unitsMod}\mathopen{}\left(9\right),\; 9 - u \in \mathrm{unitsMod}\mathopen{}\left(9\right) \land u + 9 - u = 9 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_multiplication\_table\_of\_the\_z9\_units\_is\_a\_latin\_square}]
+\[ \forall a \in \mathrm{unitsMod}\mathopen{}\left(9\right),\; \left|\operatorname{dedup}\left(\{\, a \cdot b \bmod 9 \mid b \in \mathrm{unitsMod}\mathopen{}\left(9\right) \,\}\right)\right| = \left|\mathrm{unitsMod}\mathopen{}\left(9\right)\right| \land \forall x \in \{\, a \cdot b \bmod 9 \mid b \in \mathrm{unitsMod}\mathopen{}\left(9\right) \,\},\; x \in \mathrm{unitsMod}\mathopen{}\left(9\right) \land \forall b \in \mathrm{unitsMod}\mathopen{}\left(9\right),\; \left|\operatorname{dedup}\left(\{\, a \cdot b \bmod 9 \mid a \in \mathrm{unitsMod}\mathopen{}\left(9\right) \,\}\right)\right| = \left|\mathrm{unitsMod}\mathopen{}\left(9\right)\right| \land \forall x \in \{\, a \cdot b \bmod 9 \mid a \in \mathrm{unitsMod}\mathopen{}\left(9\right) \,\},\; x \in \mathrm{unitsMod}\mathopen{}\left(9\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_count\_of\_primitive\_roots\_is\_phi\_of\_phi}]
+\[ \forall n \in \{2,\dots,60\},\; \lnot \mathrm{hasPrimitiveRoot}\mathopen{}\left(n\right) \lor \left|\{\, g \in \mathrm{unitsMod}\mathopen{}\left(n\right) \mid \mathrm{ordMod}\mathopen{}\left(g,\,n\right) = \left|\mathrm{unitsMod}\mathopen{}\left(n\right)\right| \,\}\right| = \mathrm{totient}\mathopen{}\left(\mathrm{totient}\mathopen{}\left(n\right)\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 59 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_order\_spectrum\_of\_the\_z9\_units\_realises\_gauss\_divisor\_sum}]
+\[ \forall d \in \{\, d \in \{1,\dots,6\} \mid 6 \bmod d = 0 \,\},\; \left|\{\, g \in \mathrm{unitsMod}\mathopen{}\left(9\right) \mid \mathrm{ordMod}\mathopen{}\left(g,\,9\right) = d \,\}\right| = \mathrm{totient}\mathopen{}\left(d\right) \land \sum \mathrm{totient}[\{\, d \in \{1,\dots,6\} \mid 6 \bmod d = 0 \,\}] = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_product\_of\_the\_units\_is\_minus\_one\_exactly\_where\_gauss\_says}]
+\[ \forall n \in \{2,\dots,60\},\; \operatorname{fold}_{a,\,u \mapsto a \cdot u \bmod n}\left(\mathrm{unitsMod}\mathopen{}\left(n\right),\, 1\right) = \begin{cases}n - 1 & \text{if } \mathrm{gaussCyclic}\mathopen{}\left(n\right)\\ 1 & \text{otherwise}\end{cases} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 59 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{three\_is\_a\_primitive\_root\_mod\_seven\_and\_seven\_is\_six\_plus\_one}]
+\[ \mathrm{ordMod}\mathopen{}\left(3,\,7\right) = 6 \land \left|\mathrm{unitsMod}\mathopen{}\left(7\right)\right| = 6 \land \left|\{0,\dots,6\}\right| = \left|\mathrm{unitsMod}\mathopen{}\left(7\right)\right| + 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 7 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_z9\_unit\_group\_splits\_as\_reflection\_times\_trinity}]
+\[ \forall u \in \mathrm{unitsMod}\mathopen{}\left(9\right),\; \mathrm{powMod}\mathopen{}\left(u,\,3,\,9\right) \cdot \mathrm{powMod}\mathopen{}\left(u,\,4,\,9\right) \bmod 9 = u \land \left|\operatorname{dedup}\left(\{\, \mathrm{powMod}\mathopen{}\left(u,\,3,\,9\right) \mid u \in \mathrm{unitsMod}\mathopen{}\left(9\right) \,\}\right)\right| = 2 \land \left|\operatorname{dedup}\left(\{\, \mathrm{powMod}\mathopen{}\left(u,\,4,\,9\right) \mid u \in \mathrm{unitsMod}\mathopen{}\left(9\right) \,\}\right)\right| = 3 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
 \begin{theorem}[\texttt{classical\_settles\_its\_range}]
-\[ \mathrm{settledHere} = 6 \]
+\[ \mathrm{settledHere} = 13 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 
@@ -1692,7 +1732,7 @@ remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{decimal\_period\_is\_the\_order\_of\_ten}]
-\[ \forall p \in [3,\,7,\,11,\,13,\,17,\,19,\,23,\,29],\; \exists k \in \{1,\dots,1+p - 1-1\} : 10^{k} \bmod p = 1 \]
+\texttt{[3,7,11,13,17,19,23,29].all (fun p => ((List.range' 1 (p - 1)).find? (fun k => ((List.range k).foldl (fun r \_ => r * 10 \% p) 1) == 1)).getD 0 == ((List.range' 1 (p - 1)).find? (fun k => (10 ^ k) \% p == 1)).getD 0)}
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 8 cases. \hfill$\square$
 
@@ -1700,11 +1740,6 @@ remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 \[ \forall n \in \{2,\dots,41\},\; \forall d \in \{2,\dots,2+n - 2-1\},\; n \bmod d \neq 0 = n \in [2,\,3,\,5,\,7,\,11,\,13,\,17,\,19,\,23,\,29,\,31,\,37,\,41] \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 520 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{roots\_of\_unity\_cancel}]
-\[ \forall n \in \{2,\dots,13\},\; \sum \{\, k \mid k \in \{0,\dots,n-1\} \,\} \cdot 2 = n \cdot n - 1 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 12 cases. \hfill$\square$
 
 \paragraph{\texttt{mechanical.lean}}
 

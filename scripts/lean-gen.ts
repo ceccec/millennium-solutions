@@ -138,7 +138,13 @@ const FAMILIES: Record<string, Fam> = {
     principle: 'The primes', skill: 'number-theory',
     name: 'decimal_period_is_the_order_of_ten',
     params: paramsOf('decimal_period_of_1_over'),
-    lean: `theorem decimal_period_is_the_order_of_ten :\n  [3,7,11,13,17,19,23,29].all (fun p =>\n    (List.range' 1 (p - 1)).any (fun k => (10 ^ k) % p == 1)) := by decide`,
+    // THE NAME SAID "IS THE ORDER OF TEN" AND THE STATEMENT SAID "AN ORDER EXISTS". Those are not the same
+    // proposition, and twelve LIVE ledger rows — each claiming the period of 1/p equals the multiplicative
+    // order of 10, "computed by long division and matched to the order" — were resting on the weaker one.
+    // The period is now computed the way the rows say it is: iterate the long-division remainder r ↦ 10r
+    // mod p from 1 and take the first return, then compare that to the least k with 10^k ≡ 1. Two routes to
+    // the same number is the claim; an existence proof was never it.
+    lean: `theorem decimal_period_is_the_order_of_ten :\n  [3,7,11,13,17,19,23,29].all (fun p =>\n    ((List.range' 1 (p - 1)).find? (fun k =>\n      ((List.range k).foldl (fun r _ => r * 10 % p) 1) == 1)).getD 0 ==\n    ((List.range' 1 (p - 1)).find? (fun k => (10 ^ k) % p == 1)).getD 0) := by decide`,
     ts: (p) => { if (p === 2 || p === 5 || !isPrime(p)) return true
       for (let k = 1; k < p; k++) if (modpow(10, k, p) === 1) return true
       return false },
@@ -152,17 +158,18 @@ const FAMILIES: Record<string, Fam> = {
     ts: (n) => { const trial = Array.from({ length: Math.max(0, n - 2) }, (_, i) => i + 2).every((d) => n % d !== 0)
       return trial === [2,3,5,7,11,13,17,19,23,29,31,37,41].includes(n) },
   },
-  roots_cancel_n: {
-    principle: 'The rosette', skill: 'symmetry',
-    name: 'roots_of_unity_cancel',
-    params: paramsOf('roots_cancel_n'),
-    lean: `theorem roots_of_unity_cancel :\n  (List.range' 2 12).all (fun n => ((List.range n).map (fun k => k)).foldl (· + ·) 0 * 2 == n * (n - 1)) := by decide`,
-    ts: (n) => Array.from({ length: n }, (_, k) => k).reduce((a, b) => a + b, 0) * 2 === n * (n - 1),
-  },
 }
 
 // Families whose claims cannot be stated in Lean without first porting a function to Lean. Named, not hidden.
 const NOT_GENERATABLE: Record<string, string> = {
+  // WAS GENERATED, AND SHOULD NOT HAVE BEEN. This family emitted `roots_of_unity_cancel`, whose statement is
+  // Σ_{k<n} k · 2 = n(n−1) — the arithmetic series, and nothing whatever to do with equally-spaced unit
+  // vectors in the plane. Its TypeScript check computed the same arithmetic, so the two agreed and the
+  // agreement meant nothing: both were the wrong statement. A theorem whose NAME asserts what its
+  // proposition does not decide is the shape this deposit has already deleted twice by hand, and this one
+  // was live and sealed. The rows are not generatable: the claim is about ℝ², which `decide` over Nat cannot
+  // reach, and pretending otherwise is what produced the lie.
+  roots_cancel_n: 'the claim is about unit vectors in the plane — real coordinates, which no decidable Nat statement reaches',
   digrev: 'needs digit-reversal — string manipulation, no small decidable form',
   merkle_fold_order_independent_k: 'needs merkleFold and toUuid (FNV-1a) ported to Lean',
   external_verifier_bijection_n: 'needs toUuid (FNV-1a) ported to Lean to state injectivity of addressing',
