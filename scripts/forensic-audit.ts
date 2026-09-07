@@ -93,8 +93,11 @@ writeFileSync('docs/forensic-audit.json', JSON.stringify(report, null, 2) + '\n'
 
 // ── 4 · THE PUBLIC PAGE. Every figure interpolated from the computation above; nothing typed. ─────────────
 const pct = (n: number, d: number): string => (100 * n / d).toFixed(1) + '%'
+// The title is short on purpose. VitePress appends " | Millennium Solutions", and seo.ts enforces the
+// 60-character SERP truncation on the RENDERED title — which the old one exceeded by exactly one. A title
+// sized to land on 60 would pass today and break the day the site title changes, so this one leaves slack.
 const md = `---
-title: Provenance — every state change, dated
+title: Every state change, dated
 ---
 
 # Provenance of this deposit's ledger

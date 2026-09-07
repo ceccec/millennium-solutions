@@ -222,8 +222,33 @@ set_option maxRecDepth 400000 in
 theorem totient_at_prime_powers_through_thirteen :
   [2, 3, 5, 7, 11, 13].all (fun p => (List.range' 1 3).all (fun k => totient (p ^ k) == p ^ k - p ^ (k - 1))) := by decide
 
+-- ── ROOTS OF UNITY IN A RING, AND THE CONVERSE THAT DOES NOT HOLD ───────────────────────────────────────
+--
+--    The ledger's roots_cancel_n rows say the n equally-spaced unit vectors cancel to the zero vector.
+--    That is plane geometry over the reals, and `decide` over Nat cannot express it, so those rows are NOT
+--    carried by anything below and stay withdrawn — saying so is the point of writing this here.
+--
+--    What IS decidable is the algebraic shadow of the same fact: in ℤ/m, the powers of an element g of
+--    multiplicative order n sum to zero. That is the identity (g − 1)·Σ = gⁿ − 1 = 0, and it gives Σ = 0
+--    only when g − 1 can be cancelled — so the statement carries its own hypothesis, gcd(g − 1, m) = 1.
+--
+--    The converse looked true and is not. Writing it as an equivalence would have been the stronger, more
+--    satisfying theorem; the kernel refuses it, and at m = 6 with g = 5 the sum 1 + 5 vanishes mod 6 while
+--    gcd(4, 6) = 2. The witness is kept as its own theorem, because a hypothesis nobody can see the need
+--    for gets deleted as clutter by the next reader.
+
+def rootSum (g m : Nat) : Nat := ((List.range (ordMod g m)).map (fun k => powMod g k m)).foldl (· + ·) 0
+
+set_option maxRecDepth 100000 in
+theorem the_powers_of_a_unit_sum_to_zero_when_g_minus_one_is_invertible :
+  (List.range' 2 19).all (fun m => (unitsMod m).all (fun g =>
+    !(gcd' (g - 1) m == 1) || (rootSum g m % m == 0))) := by decide
+
+theorem and_the_converse_fails_at_six :
+  ordMod 5 6 = 2 ∧ rootSum 5 6 % 6 = 0 ∧ gcd' 4 6 = 2 := by decide
+
 -- ── what these settle ──
-def settledHere : Nat := 22
-theorem families_settle_their_ranges : settledHere = 22 := rfl
+def settledHere : Nat := 24
+theorem families_settle_their_ranges : settledHere = 24 := rfl
 
 end Families

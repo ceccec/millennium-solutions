@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2478 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2480 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (567)
+### lean (569)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -591,6 +591,8 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_families_totient_at_prime_powers_through_thirteen](/theorem/lean_families_totient_at_prime_powers_through_thirteen) — lean families.lean: totient_at_prime_powers_through_thirteen — [2, 3, 5, 7, 11, 13].all (fun p =&gt; (List.range' 1 3).all (fun k =&gt; totient (p ^ k) == p ^ k - p ^ (k - 1))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7d34d10b-4aad…`
 - [lean_merkle_the_permutation_generator_is_complete](/theorem/lean_merkle_the_permutation_generator_is_complete) — lean merkle.lean: the_permutation_generator_is_complete — (perms [A, B, C, D]).length = 24 ∧ (perms [A, B, C]).length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `55237d06-afba…`
 - [lean_merkle_fold_is_order_independent_on_four](/theorem/lean_merkle_fold_is_order_independent_on_four) — lean merkle.lean: fold_is_order_independent_on_four — (perms [A, B, C, D]).all (fun p =&gt; merkleFold p == merkleFold [A, B, C, D]) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `ef9e704f-30b5…`
+- [lean_families_the_powers_of_a_unit_sum_to_zero_when_g_minus_one_is_invertible](/theorem/lean_families_the_powers_of_a_unit_sum_to_zero_when_g_minus_one_is_invertible) — lean families.lean: the_powers_of_a_unit_sum_to_zero_when_g_minus_one_is_invertible — (List.range' 2 19).all (fun m =&gt; (unitsMod m).all (fun g =&gt; !(gcd' (g - 1) m == 1) || (rootSum g m % m == 0))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `0b4c4781-05bd…`
+- [lean_families_and_the_converse_fails_at_six](/theorem/lean_families_and_the_converse_fails_at_six) — lean families.lean: and_the_converse_fails_at_six — ordMod 5 6 = 2 ∧ rootSum 5 6 % 6 = 0 ∧ gcd' 4 6 = 2 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `08da2de6-374d…`
 
 ### other — one-of-a-kind (0)
 
@@ -2266,4 +2268,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `1bc3fdf4-aead-80c2-b0cc-44c3f04777ec`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `5777d700-c9e5-80d4-9011-ae6031c73b16`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

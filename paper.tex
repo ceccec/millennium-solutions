@@ -61,8 +61,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free and axiom-free, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 575 of them across 31 files and
-7 wings; 567 close by exhaustion over a stated finite domain and the
+(\texttt{npm run latex-gate}). There are 577 of them across 31 files and
+7 wings; 569 close by exhaustion over a stated finite domain and the
 remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -501,8 +501,18 @@ remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 18 cases. \hfill$\square$
 
+\begin{theorem}[\texttt{the\_powers\_of\_a\_unit\_sum\_to\_zero\_when\_g\_minus\_one\_is\_invertible}]
+\[ \forall m \in \{2,\dots,20\},\; \forall g \in \mathrm{unitsMod}\mathopen{}\left(m\right),\; \lnot \mathrm{gcd'}\mathopen{}\left(g - 1,\,m\right) = 1 \lor \mathrm{rootSum}\mathopen{}\left(g,\,m\right) \bmod m = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 19 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{and\_the\_converse\_fails\_at\_six}]
+\[ \mathrm{ordMod}\mathopen{}\left(5,\,6\right) = 2 \land \mathrm{rootSum}\mathopen{}\left(5,\,6\right) \bmod 6 = 0 \land \mathrm{gcd'}\mathopen{}\left(4,\,6\right) = 2 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
 \begin{theorem}[\texttt{families\_settle\_their\_ranges}]
-\[ \mathrm{settledHere} = 22 \]
+\[ \mathrm{settledHere} = 24 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 

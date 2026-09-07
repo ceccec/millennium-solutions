@@ -17941,5 +17941,15 @@
     "key": "lean_merkle_fold_is_order_independent_on_four",
     "name": "lean merkle.lean: fold_is_order_independent_on_four — (perms [A, B, C, D]).all (fun p => merkleFold p == merkleFold [A, B, C, D]) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "ef9e704f-30b5-8abc-80a3-7dd7fe5649ee"
+  },
+  {
+    "key": "lean_families_the_powers_of_a_unit_sum_to_zero_when_g_minus_one_is_invertible",
+    "name": "lean families.lean: the_powers_of_a_unit_sum_to_zero_when_g_minus_one_is_invertible — (List.range' 2 19).all (fun m => (unitsMod m).all (fun g => !(gcd' (g - 1) m == 1) || (rootSum g m % m == 0))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "0b4c4781-05bd-8799-88d1-5e1fd3f1f138"
+  },
+  {
+    "key": "lean_families_and_the_converse_fails_at_six",
+    "name": "lean families.lean: and_the_converse_fails_at_six — ordMod 5 6 = 2 ∧ rootSum 5 6 % 6 = 0 ∧ gcd' 4 6 = 2 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "08da2de6-374d-8924-9380-056f8b0c8b8b"
   }
 ]

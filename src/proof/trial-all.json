@@ -14866,5 +14866,17 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "ef9e704f-30b5-8abc-80a3-7dd7fe5649ee"
+  },
+  {
+    "key": "lean_families_the_powers_of_a_unit_sum_to_zero_when_g_minus_one_is_invertible",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0b4c4781-05bd-8799-88d1-5e1fd3f1f138"
+  },
+  {
+    "key": "lean_families_and_the_converse_fails_at_six",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "08da2de6-374d-8924-9380-056f8b0c8b8b"
   }
 ]
