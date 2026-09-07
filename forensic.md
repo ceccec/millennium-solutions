@@ -5,7 +5,7 @@ title: Every state change, dated
 # Provenance of this deposit's ledger
 
 **Recomputed on every build** from git history and the append-only ledger. Regenerate with
-`npm run forensic`. Content-address `2c378bd5-2884-892b-abb5-5b4436b5d587`.
+`npm run forensic`. Content-address `44def16b-47d8-8a0f-9b5c-31b4a694d85b`.
 
 ## What this record establishes
 
@@ -13,8 +13,8 @@ title: Every state change, dated
 |---|---:|
 | ledger entries | **2,480** |
 | standing — proved and sealed | 569 |
-| carried — withdrawn, proved by a live theorem | 306 |
-| withdrawn — nothing currently proves them | 1,605 |
+| carried — withdrawn, proved by a live theorem | 312 |
+| withdrawn — nothing currently proves them | 1,599 |
 | receipt chain, recomputed | **0 breaks — intact** |
 | commits that changed ledger state | 565 |
 
@@ -24,15 +24,15 @@ Verbatim, as written when the entry was revoked. Not inferred afterwards.
 
 | withdrawn | reason as recorded |
 |---:|---|
-| 1,125 | dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a compu |
+| 1,119 | dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a compu |
 | 443 | revoked in place: its test asserted a lexical drain (computes(boast).binary === 0). The word-lis |
 | 12 | revoked in place: circular by construction AND dependent on the removed lexical gate. |
 | 12 | orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or rena |
 | 10 | revoked in place: circular by construction — the test defines the answer it checks, proving a de |
 | 1 | carried: withdrawn for having only a TypeScript test behind it, and since proved — `euler_units_ |
 
-**1,125** of
-**1,605** withdrawn entries — 70.1% —
+**1,119** of
+**1,599** withdrawn entries — 70.0% —
 were withdrawn for want of a Lean proof while their evidence was a TypeScript test that **computed**.
 Withdrawal costs one line of record; proving costs real work, and a green gate rewards both identically.
 

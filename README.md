@@ -181,16 +181,16 @@ Read from the artefacts at build time, never carried between runs.
 |---|---|
 | ledger entries | 2,480 — 310 octaves exactly |
 | standing — carries its own proof | **569** |
-| carried — withdrawn on its own evidence, proved by a live theorem | **306** |
-| withdrawn — nothing proves it | 1,605 |
-| proved in total | **875** of 2,480 |
+| carried — withdrawn on its own evidence, proved by a live theorem | **312** |
+| withdrawn — nothing proves it | 1,599 |
+| proved in total | **881** of 2,480 |
 | standing keys → distinct theorems | 569 sealed, 0 of them keyed twice, 0 unresolvable |
 | Lean files · theorems | 31 · 569 theorems (closed by exhaustion) + 8 rfl declarations, all axiom-free |
 | proved `by decide` | 569 of 577 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
-**On `carried`.** 306 entries were withdrawn for want of a Lean proof and have since been given one, at a new key. Nothing is un-revoked: the original's own evidence is still a TypeScript test, and rewriting its status would erase the fact that it did not hold on what it had. The record says both — withdrawn on its own evidence, standing through the theorem that carries it.
+**On `carried`.** 312 entries were withdrawn for want of a Lean proof and have since been given one, at a new key. Nothing is un-revoked: the original's own evidence is still a TypeScript test, and rewriting its status would erase the fact that it did not hold on what it had. The record says both — withdrawn on its own evidence, standing through the theorem that carries it.
 
 **Why the withdrawn were withdrawn.** 1,386 no Lean proof · 457 tested the removed lexical gate · 46 other · 12 its Lean source was deleted or renamed · 10 circular by construction. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
 

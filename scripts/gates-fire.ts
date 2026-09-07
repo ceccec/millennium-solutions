@@ -285,6 +285,12 @@ const CONTROLS: Control[] = [
   { gate: 'notice-reads-the-whole-table', cmd: 'node scripts/notice.ts', file: 'scripts/notice.ts',
     what: 'a reader that silently sees fewer instruments than the table holds, publishing a partial rights list',
     mutate: (s) => s.replace('/^\\s*[[,]\\s*\\(', '/^  , \\('), restore: 'node scripts/notice.ts' },
+  // recover.ts's carry table is a set of matchers, and a matcher that hits nothing looks exactly like one
+  // whose work is done. This is the control for that: change a rule's spelling and the run must refuse.
+  { gate: 'recover-dead-rule', cmd: 'node scripts/recover.ts', file: 'scripts/recover.ts',
+    what: 'a carry rule that matches no ledger key at all — silently carrying nothing while the report looks healthy',
+    mutate: (s) => s.replace('/^digrev_?(\\d+)$/', '/^digrev(\\d+)$/') },
+
   { gate: 'notice-refuses-an-overclaim', cmd: 'node scripts/notice.ts', file: 'src/proof/rights.lean',
     what: 'a right published in llms.txt that does not arise without formality — the overclaim reaching the public surface',
     mutate: (s) => s.replace('  , (5, 2, false, false)', '  , (5, 2, false, true )'), restore: 'node scripts/notice.ts' },

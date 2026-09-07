@@ -598,11 +598,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 
 
 
-## Revoked — 1605 entries that no longer stand
+## Revoked — 1599 entries that no longer stand
 
 The ledger is append-only: an entry that stops holding is marked in place, never deleted — deleting would break the receipt chain, and rewriting a receipt is tamper. These keep their receipts and stay in the record, but they are **not citable** and have no `/theorem/` page. Grouped by the reason they went:
 
-- **1125** — dirty: not backed by a Lean proof
+- **1119** — dirty: not backed by a Lean proof
 - **443** — revoked in place: its test asserted a lexical drain (computes(boast)
 - **12** — revoked in place: circular by construction AND dependent on the removed lexical gate
 - **12** — orphaned: the theorem this key was sealed from is no longer in src/proof
@@ -611,7 +611,7 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - **1** — revoked in place: its test asserts that a list of proof-boasts written across many scripts and languages ALL drain the gate — a lexical drain assertion, and the word-list gate was removed by order, so there is no lexicon to drain and the assertion tests nothing
 - **1** — revoked in place: it asserts adjudicate('we prove all seven')
 
-## Carried — 306 withdrawn entries whose statement a proof now carries
+## Carried — 312 withdrawn entries whose statement a proof now carries
 
 Each was withdrawn for want of a Lean proof and has since been given one, at a new key. The entry is not restored: its own evidence is still a TypeScript test, and it did not hold on what it had. What the record adds is where the statement stands now.
 
@@ -656,9 +656,9 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`hasinv_d4`~~ → [`lean_families_an_inverse_mod_nine_exists_at_exactly_the_units`](/theorem/lean_families_an_inverse_mod_nine_exists_at_exactly_the_units)
 - ~~`hasinv_d5`~~ → [`lean_families_an_inverse_mod_nine_exists_at_exactly_the_units`](/theorem/lean_families_an_inverse_mod_nine_exists_at_exactly_the_units)
 
-…and 266 more.
+…and 272 more.
 
-<details><summary>List all 1605 withdrawn keys — nothing proves these</summary>
+<details><summary>List all 1599 withdrawn keys — nothing proves these</summary>
 
 - ~~`euler_units_pow6`~~ — every unit u⁶ ≡ 1 mod 9 (Euler, φ(9)=6)  ·  `e70a44b2-6eb8…`
 - ~~`pisano_9_is_24`~~ — Fibonacci mod 9 has Pisano period 24  ·  `78a65039-07c5…`
@@ -673,12 +673,6 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`invmap_perm`~~ — the multiplicative inverse map permutes the units mod 9  ·  `8455c1ab-d297…`
 - ~~`invmap_involution`~~ — the multiplicative inverse map is an involution on the units mod 9  ·  `43418601-7a73…`
 - ~~`reverse_circuit`~~ — the halving map ×2⁻¹ traces the doubling circuit in reverse mod 9  ·  `205fe01b-d27f…`
-- ~~`digrev_12`~~ — the digital root of 12 equals that of its digit-reversal  ·  `750f5efd-3001…`
-- ~~`digrev_45`~~ — the digital root of 45 equals that of its digit-reversal  ·  `d447d1f0-3306…`
-- ~~`digrev_123`~~ — the digital root of 123 equals that of its digit-reversal  ·  `8b16af95-b502…`
-- ~~`digrev_1234`~~ — the digital root of 1234 equals that of its digit-reversal  ·  `b9c9d09f-a74a…`
-- ~~`digrev_9080`~~ — the digital root of 9080 equals that of its digit-reversal  ·  `e2efb528-c895…`
-- ~~`digrev_4321`~~ — the digital root of 4321 equals that of its digit-reversal  ·  `81d7ec86-3a35…`
 - ~~`bool_double_negation`~~ — double negation: ¬¬a = a (all inputs)  ·  `a4640234-4e32…`
 - ~~`bool_excluded_middle`~~ — excluded middle: a∨¬a = 1 (all inputs)  ·  `29468d4a-f416…`
 - ~~`bool_noncontradiction`~~ — non-contradiction: a∧¬a = 0 (all inputs)  ·  `1d8543d8-7d61…`

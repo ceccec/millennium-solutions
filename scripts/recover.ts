@@ -116,13 +116,30 @@ const inDomain: { theorem: string; key: RegExp; covers: (n: number) => boolean; 
   // ── the second octave of families, 2026-09-07 ───────────────────────────────────────────────────────────
   { theorem: 'power_sums_match_their_closed_forms', key: /^power_sum_k(\d+)$/, covers: (n) => n >= 1 && n <= 5,
     why: "decides Faulhaber's closed form against the loop for exponents 1…5 at every n to 40 — the range the rows themselves claim" },
-  { theorem: 'the_digital_root_is_invariant_under_digit_reversal', key: /^digrev(\d+)$/, covers: (n) => n < 10000,
+  // `digrev_12`, with an underscore. I wrote /^digrev(\d+)$/ from a survey that had normalised the keys to
+  // group them, and matched nothing — the sixth time this session that a matcher was written against a
+  // rendered view of the subject rather than the subject. The keys are the ledger's, not the report's.
+  { theorem: 'the_digital_root_is_invariant_under_digit_reversal', key: /^digrev_?(\d+)$/, covers: (n) => n < 10000,
     why: 'decides every n below ten thousand, which is why the range runs that far — the rows go up to 9080' },
   { theorem: 'geometric_series_across_bases_and_exponents', key: /^geometric_series_base_(\d+)$/, covers: (n) => n >= 2 && n <= 12,
     why: "quantifies over bases 2…12 and every exponent to six, widening the older theorem that fixed one exponent at bases 2…9" },
   { theorem: 'totient_at_prime_powers_through_thirteen', key: /^totient_prime_power_(\d+)$/, covers: (n) => [2, 3, 5, 7, 11, 13].includes(n),
     why: 'decides φ(pᵏ) = pᵏ − pᵏ⁻¹ at those six primes for k = 1…3' },
 ]
+// ── A RULE THAT MATCHES NOTHING IS BROKEN, AND LOOKS EXACTLY LIKE A RULE THAT IS FINISHED ────────────────
+// /^digrev(\d+)$/ matched zero keys for a whole run — the ledger spells them `digrev_12` — and the report
+// said "6 recoverable" instead of 12 without a word about the rule that had gone silent. A matcher that
+// hits nothing is either spent or wrong, and from the output those two are the same. So every rule is
+// checked against the WHOLE ledger, not the pool: a spent rule still matches its keys, which are carried
+// now; a wrong rule matches none at all. This refuses rather than warns, because the failure it catches is
+// invisible in every number the report prints.
+const dead = inDomain.filter((f) => !l.some((e) => f.key.test(String(e.key))))
+if (dead.length) {
+  console.log(`✗ recover: ${dead.length} rule(s) in scripts/recover.ts match no ledger key at all — a matcher written against a rendered view of the keys rather than the keys:`)
+  for (const f of dead) console.log(`    ${f.theorem}  ${f.key}`)
+  process.exit(1)
+}
+
 for (const f of inDomain) {
   const heir = [...live].find((k) => k.endsWith('_' + f.theorem) || k === f.theorem)
   if (!heir) { console.log(`  ? ${f.theorem} — not a live key, its family is not carried`); continue }

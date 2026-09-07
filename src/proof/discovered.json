@@ -543,48 +543,54 @@
     "name": "the digital root of 12 equals that of its digit-reversal",
     "receipt": "750f5efd-3001-8ef1-bb04-9d556f9a77a4",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_digital_root_is_invariant_under_digit_reversal quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_digital_root_is_invariant_under_digit_reversal"
   },
   {
     "key": "digrev_45",
     "name": "the digital root of 45 equals that of its digit-reversal",
     "receipt": "d447d1f0-3306-86cf-a944-89777bf354d8",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_digital_root_is_invariant_under_digit_reversal quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_digital_root_is_invariant_under_digit_reversal"
   },
   {
     "key": "digrev_123",
     "name": "the digital root of 123 equals that of its digit-reversal",
     "receipt": "8b16af95-b502-8c83-a0e0-6d05b3fff7e8",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_digital_root_is_invariant_under_digit_reversal quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_digital_root_is_invariant_under_digit_reversal"
   },
   {
     "key": "digrev_1234",
     "name": "the digital root of 1234 equals that of its digit-reversal",
     "receipt": "b9c9d09f-a74a-8e90-9506-c28af41776f7",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_digital_root_is_invariant_under_digit_reversal quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_digital_root_is_invariant_under_digit_reversal"
   },
   {
     "key": "digrev_9080",
     "name": "the digital root of 9080 equals that of its digit-reversal",
     "receipt": "e2efb528-c895-8ca8-aee7-01e4b1e67727",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_digital_root_is_invariant_under_digit_reversal quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_digital_root_is_invariant_under_digit_reversal"
   },
   {
     "key": "digrev_4321",
     "name": "the digital root of 4321 equals that of its digit-reversal",
     "receipt": "81d7ec86-3a35-8e20-8897-1786dce0818a",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_digital_root_is_invariant_under_digit_reversal quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_digital_root_is_invariant_under_digit_reversal"
   },
   {
     "key": "domain_prime_m2",
