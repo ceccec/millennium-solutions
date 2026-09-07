@@ -285,6 +285,12 @@ const CONTROLS: Control[] = [
   { gate: 'notice-reads-the-whole-table', cmd: 'node scripts/notice.ts', file: 'scripts/notice.ts',
     what: 'a reader that silently sees fewer instruments than the table holds, publishing a partial rights list',
     mutate: (s) => s.replace('/^\\s*[[,]\\s*\\(', '/^  , \\('), restore: 'node scripts/notice.ts' },
+  // A theorem quantified over an empty domain is true and decides nothing. The control plants exactly that
+  // and vacuity must find it; without this the sweep is trusted only because it reports zero.
+  { gate: 'vacuity', cmd: 'node scripts/vacuity.ts', file: 'src/proof/elementary.lean',
+    what: 'a theorem whose quantifier ranges over nothing — green, named, and deciding no case at all',
+    mutate: (s) => s.replace('-- ── what these settle ──', 'theorem vacuity_control_plant :\n  (List.range 0).all (fun n => n * n == n + 12345) := by decide\n\n-- ── what these settle ──') },
+
   // probe.ts is the control harness itself, and a harness that cannot fail is worth nothing. The control
   // breaks its extraction — the theorem regex is pointed at a name that is not there — and probe must say
   // so rather than silently testing an empty string.
