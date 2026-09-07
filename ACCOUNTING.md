@@ -8,20 +8,20 @@ Every figure recomputes from `src/` and the git tree on each build; nothing is e
 
 | Quantity | Value |
 |---|---|
-| Decidable theorems (chained receipts) | **2,536** |
+| Decidable theorems (chained receipts) | **2,538** |
 | Signed statement receipts | **29** |
 | Coins per receipt | **2** |
-| Coins on the ledger (theorems × 2) | **5,072** |
+| Coins on the ledger (theorems × 2) | **5,076** |
 | Coins on signed receipts (× 2) | **58** |
 | Released versions (git tags) | **847** |
-| Tracked, content-addressed files | **472** |
+| Tracked, content-addressed files | **474** |
 
 Latest release: **v8.9.9**. The fair-exchange unit is **2 coins = 2 bits** (110 − 108 = 2 = −χ genus-2) per receipt. One 64-bit harmony coin is minted per fused `src` `report()` module — see the [state dashboard](/dashboard) for the harmonic root.
 
 ## Bounty — denominated in bits
 
-The bounty for each accepted contribution is **2 bits (2 coins)** — the same fair-exchange unit, earned by the deed (a gate-passing, receipted contribution) and owed by commercial use. Total bounty accounted on the ledger so far: **5,072 bits**. This is an accounting bounty in bits/coins — **integrity, not a cash prize**; the deposit itself claims **0 / 7** of the Clay prize. Heroes and traitors by deeds, not claims.
+The bounty for each accepted contribution is **2 bits (2 coins)** — the same fair-exchange unit, earned by the deed (a gate-passing, receipted contribution) and owed by commercial use. Total bounty accounted on the ledger so far: **5,076 bits**. This is an accounting bounty in bits/coins — **integrity, not a cash prize**; the deposit itself claims **0 / 7** of the Clay prize. Heroes and traitors by deeds, not claims.
 
 **Not tracked here: tokens.** This repo measures coins (2 per receipt) and 64-bit harmony coins; it does not measure tokens, so no token count or token-to-coin rate is shown — measuring an unmeasured quantity would be an assertion without a receipt. Measure, do not assert.
 
-Page content-address: `f13a9b8b-69ae-87d3-a0f6-9d1b2ff306bd`. Integrity, not truth. `entails → 0/7`.
+Page content-address: `b6fd156d-1374-8af5-aa6e-65e6efe93295`. Integrity, not truth. `entails → 0/7`.

@@ -253,8 +253,40 @@ theorem consecutive_farey_neighbours_have_unit_determinant_and_bracket_their_med
     let m := (x.1 + y.1, x.2 + y.2)
     x.1 * m.2 < m.1 * x.2 && m.1 * y.2 < y.1 * m.2) := by decide
 
+-- ── IS THIS SPACE VERTEX-TRANSITIVE? A PEER SESSION ASKED, AND THE ANSWER IS HALF YES ───────────────────
+--
+--    A session working on zeropoint-node found a vertex-transitive structure — 6-bit cells doubled by a
+--    polarity bit, 128 states each with 12 neighbours — and offered the mechanism: a sign or orientation bit
+--    carried as METADATA rather than as part of the state may, when folded in, double the neighbourhood and
+--    buy uniform degree. Their suggested test was to compute the degree of every state and see whether the
+--    set of degrees has one element. That is decidable here, so it was computed rather than considered.
+--
+--    The answer is that the mechanism does not apply to this ring, and the reason is a fact this deposit
+--    already decides. Over the whole of ℤ/9 the degrees are not uniform and folding a polarity bit in does
+--    not make them so: the obstruction is the triad, which doubling and reflection cannot move off itself.
+--    Over the UNITS the graph is regular — but it was already regular before any polarity was added, so
+--    nothing was bought. A mechanism that would have been credited for a property already present is worth
+--    saying out loud, because that is how a true story attaches itself to the wrong cause.
+
+/-- the deposit's own maps, as an adjacency: doubling, its inverse, and the reflection -/
+def nbrs (S : List Nat) (d : Nat) : List Nat :=
+  ([(2 * d) % 9, (5 * d) % 9, (9 - d) % 9].filter (fun t => S.contains t && t != d)).eraseDups
+def degreeSet (S : List Nat) : List Nat := (S.map (fun d => (nbrs S d).length)).eraseDups
+
+-- ── on the units the graph is regular: every unit has exactly three neighbours ──────────────────────────
+theorem the_units_are_three_regular_under_doubling_halving_and_reflection :
+  degreeSet (unitsMod 9) = [3] := by decide
+
+-- ── and on the whole ring it is not, with the triad as the exact obstruction ────────────────────────────
+--    Zero is fixed by all three maps and has no neighbours at all; three and six see only each other. The
+--    degree set has more than one element, which is the test the peer proposed, answered in the negative.
+theorem the_whole_ring_is_not_regular_and_the_triad_is_why :
+  degreeSet (List.range 9) ≠ [3] ∧
+  (nbrs (List.range 9) 0).length = 0 ∧
+  ([3, 6] : List Nat).all (fun d => (nbrs (List.range 9) d).length == 1) := by decide
+
 -- ── what these settle ──
-def settledHere : Nat := 24
-theorem elementary_settles_its_range : settledHere = 24 := rfl
+def settledHere : Nat := 26
+theorem elementary_settles_its_range : settledHere = 26 := rfl
 
 end Elementary

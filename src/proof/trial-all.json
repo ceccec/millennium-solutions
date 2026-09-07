@@ -15214,5 +15214,17 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "9ddbfc15-bc93-8519-bc57-3c19b75212ae"
+  },
+  {
+    "key": "lean_elementary_the_units_are_three_regular_under_doubling_halving_and_reflection",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "dada3608-c5a8-849d-b377-2bb6b08ba035"
+  },
+  {
+    "key": "lean_elementary_the_whole_ring_is_not_regular_and_the_triad_is_why",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "32458786-9afb-8ee5-af16-d6253c6fb460"
   }
 ]

@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2536 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2538 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (611)
+### lean (613)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -635,6 +635,8 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_elementary_the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis](/theorem/lean_elementary_the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis) — lean elementary.lean: the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis — (List.range' 1 28).all (fun n =&gt; lucas n == fib (n - 1) + fib (n + 1)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `38750851-6260…`
 - [lean_elementary_the_pell_numbers_follow_their_recurrence_and_reach_their_named_values](/theorem/lean_elementary_the_pell_numbers_follow_their_recurrence_and_reach_their_named_values) — lean elementary.lean: the_pell_numbers_follow_their_recurrence_and_reach_their_named_values — pell 5 = 29 ∧ pell 6 = 70 ∧ (List.range' 2 24).all (fun n =&gt; pell n == 2 * pell (n - 1) + pell (n - 2)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `538c5a46-1de6…`
 - [lean_elementary_consecutive_farey_neighbours_have_unit_determinant_and_bracket_their_mediant](/theorem/lean_elementary_consecutive_farey_neighbours_have_unit_determinant_and_bracket_their_mediant) — lean elementary.lean: consecutive_farey_neighbours_have_unit_determinant_and_bracket_their_mediant — (List.range ((farey 4).length - 1)).all (fun i =&gt; let x := (farey 4).getD i (0, 1); let y := (farey 4).getD (i + 1) (0, 1) x.2 * y.1 == x.1 * y.2 + 1) ∧ (List.range ((farey 6).length - 1)).all (fun i =&gt; let x := (farey 6).getD i (0, 1); let… — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9ddbfc15-bc93…`
+- [lean_elementary_the_units_are_three_regular_under_doubling_halving_and_reflection](/theorem/lean_elementary_the_units_are_three_regular_under_doubling_halving_and_reflection) — lean elementary.lean: the_units_are_three_regular_under_doubling_halving_and_reflection — degreeSet (unitsMod 9) = [3] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `dada3608-c5a8…`
+- [lean_elementary_the_whole_ring_is_not_regular_and_the_triad_is_why](/theorem/lean_elementary_the_whole_ring_is_not_regular_and_the_triad_is_why) — lean elementary.lean: the_whole_ring_is_not_regular_and_the_triad_is_why — degreeSet (List.range 9) ≠ [3] ∧ (nbrs (List.range 9) 0).length = 0 ∧ ([3, 6] : List Nat).all (fun d =&gt; (nbrs (List.range 9) d).length == 1) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `32458786-9afb…`
 
 ### other — one-of-a-kind (0)
 
@@ -2201,4 +2203,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `a9c61e4b-f112-8f6c-b61a-4edd0385ad00`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `d63d00d5-6cca-83bb-8e84-ddbe3376c727`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

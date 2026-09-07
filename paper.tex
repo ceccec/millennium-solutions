@@ -61,8 +61,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free and axiom-free, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 620 of them across 32 files and
-7 wings; 611 close by exhaustion over a stated finite domain and the
+(\texttt{npm run latex-gate}). There are 622 of them across 32 files and
+7 wings; 613 close by exhaustion over a stated finite domain and the
 remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -516,8 +516,18 @@ remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
+\begin{theorem}[\texttt{the\_units\_are\_three\_regular\_under\_doubling\_halving\_and\_reflection}]
+\[ \mathrm{degreeSet}\mathopen{}\left(\mathrm{unitsMod}\mathopen{}\left(9\right)\right) = [3] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_whole\_ring\_is\_not\_regular\_and\_the\_triad\_is\_why}]
+\[ \mathrm{degreeSet}\mathopen{}\left(\{0,\dots,8\}\right) \neq [3] \land \left|\mathrm{nbrs}\mathopen{}\left(\{0,\dots,8\},\,0\right)\right| = 0 \land \forall d \in [3,\,6],\; \left|\mathrm{nbrs}\mathopen{}\left(\{0,\dots,8\},\,d\right)\right| = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 1,458 cases. \hfill$\square$
+
 \begin{theorem}[\texttt{elementary\_settles\_its\_range}]
-\[ \mathrm{settledHere} = 24 \]
+\[ \mathrm{settledHere} = 26 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 

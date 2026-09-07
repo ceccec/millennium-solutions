@@ -18378,5 +18378,15 @@
     "key": "lean_elementary_consecutive_farey_neighbours_have_unit_determinant_and_bracket_their_mediant",
     "name": "lean elementary.lean: consecutive_farey_neighbours_have_unit_determinant_and_bracket_their_mediant — (List.range ((farey 4).length - 1)).all (fun i => let x := (farey 4).getD i (0, 1); let y := (farey 4).getD (i + 1) (0, 1) x.2 * y.1 == x.1 * y.2 + 1) ∧ (List.range ((farey 6).length - 1)).all (fun i => let x := (farey 6).getD i (0, 1); let… — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "9ddbfc15-bc93-8519-bc57-3c19b75212ae"
+  },
+  {
+    "key": "lean_elementary_the_units_are_three_regular_under_doubling_halving_and_reflection",
+    "name": "lean elementary.lean: the_units_are_three_regular_under_doubling_halving_and_reflection — degreeSet (unitsMod 9) = [3] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "dada3608-c5a8-849d-b377-2bb6b08ba035"
+  },
+  {
+    "key": "lean_elementary_the_whole_ring_is_not_regular_and_the_triad_is_why",
+    "name": "lean elementary.lean: the_whole_ring_is_not_regular_and_the_triad_is_why — degreeSet (List.range 9) ≠ [3] ∧ (nbrs (List.range 9) 0).length = 0 ∧ ([3, 6] : List Nat).all (fun d => (nbrs (List.range 9) d).length == 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "32458786-9afb-8ee5-af16-d6253c6fb460"
   }
 ]

@@ -197,7 +197,13 @@ const mutantsOf = (st: string): { mut: string; what: string }[] => {
     const idx = l.index ?? 0
     out.push({ mut: st.slice(0, idx) + String(Number(l[1]) + 1) + st.slice(idx + l[1].length), what: `the literal ${l[1]} moved by one` })
   }
-  return out
+  // A MUTANT IDENTICAL TO THE ORIGINAL IS NOT A MUTANT. It would compile — it is the theorem — and this
+  // sweep would read that as "holds with the value changed" and report a finding from a probe that never
+  // ran. A peer session lost a whole result to exactly this today: a regex matched a re-export instead of
+  // the declaration, the edit never applied, the suite passed, and the write-up said the check was circular.
+  // The conclusion was the expected one; the probe had not happened. So the change is asserted, here, before
+  // anything is compiled or believed.
+  return out.filter((m) => m.mut !== st)
 }
 
 const insensitive: T[] = []
@@ -232,7 +238,7 @@ await lanes([...byFile2.entries()], async ([file, rows]) => {
   const has = new Set<string>()
   for (const t of rows) {
     const ms = mutantsOf(t.statement)
-    if (!ms.length) { untested.push({ t, why: 'no comparison and no literal to move — nothing to falsify' }); continue }
+    if (!ms.length) { untested.push({ t, why: 'no mutant differs from the statement — nothing to falsify, so nothing was tested' }); continue }
     has.add(t.name)
     for (const m of ms) {
       parts.push(`set_option maxRecDepth 4000000 in\ntheorem sens_${owner.length} : ${m.mut} := by decide`)

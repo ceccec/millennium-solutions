@@ -1,9 +1,9 @@
 {
   "repo": "millennium-solutions",
-  "generatedFrom": "02e8dfab9",
+  "generatedFrom": "d8240463b",
   "specWitness": {
-    "seed": "theorems\ndeclarations closing by exhaustion — the deposit's definition of a theorem\n611\nnode -e \"import('./src/api/index.ts').then(m=>console.log(m.census().byDecide))\"",
-    "receipt": "38216fdb-55ed-86ac-be58-32eb68ada8e3"
+    "seed": "theorems\ndeclarations closing by exhaustion — the deposit's definition of a theorem\n613\nnode -e \"import('./src/api/index.ts').then(m=>console.log(m.census().byDecide))\"",
+    "receipt": "81a5e5ea-c319-8781-bfd1-bd96f2481807"
   },
   "definition": "a declaration in src/proof that the Lean kernel accepts — sorry-free, axiom-free — and closes by exhaustion over a stated finite domain",
   "protocol": {
@@ -26,9 +26,9 @@
     {
       "key": "theorems",
       "claim": "declarations closing by exhaustion — the deposit's definition of a theorem",
-      "value": "611",
+      "value": "613",
       "command": "node -e \"import('./src/api/index.ts').then(m=>console.log(m.census().byDecide))\"",
-      "receipt": "38216fdb-55ed-86ac-be58-32eb68ada8e3"
+      "receipt": "81a5e5ea-c319-8781-bfd1-bd96f2481807"
     },
     {
       "key": "rfl-declarations",
@@ -40,9 +40,9 @@
     {
       "key": "kernel-accepted",
       "claim": "declarations the Lean kernel accepts, sorry-free and axiom-free",
-      "value": "620",
+      "value": "622",
       "command": "node scripts/lean.ts",
-      "receipt": "634cff9b-5688-8c6d-ac7c-01b2ab166505"
+      "receipt": "a4901837-ee71-8a01-a9d0-3fb43497c06b"
     },
     {
       "key": "lean-files",
@@ -54,23 +54,23 @@
     {
       "key": "live-keys",
       "claim": "live ledger keys — ADDRESSES, not theorems; some theorems carry two",
-      "value": "611",
+      "value": "613",
       "command": "node -e \"import('./src/api/index.ts').then(m=>console.log(m.census().liveKeys))\"",
-      "receipt": "64bd55d2-010c-8baf-a569-7ebacf50e86a"
+      "receipt": "6ac85a31-d0f1-8f15-bcd0-4feff53438c5"
     },
     {
       "key": "ledger-entries",
       "claim": "entries in the append-only ledger — RECEIPTS, most of them withdrawn",
-      "value": "2536",
+      "value": "2538",
       "command": "node scripts/forensics.ts",
-      "receipt": "a77023b4-181f-88dd-a322-07767a4b31c1"
+      "receipt": "82c4b842-c818-80c8-a649-4fa4be75e497"
     },
     {
       "key": "census-closes",
       "claim": "liveKeys = sealed + keyed-twice + unresolvable, asserted not reconciled by a reader",
-      "value": "611 = 611 + 0 + 0",
+      "value": "613 = 613 + 0 + 0",
       "command": "node scripts/contradictions.ts",
-      "receipt": "0f20bcc7-747c-8b5e-ba08-56494970d1c0"
+      "receipt": "21b90199-747d-8bba-afb0-bb271e12655d"
     },
     {
       "key": "clay-proved",
@@ -117,9 +117,9 @@
     {
       "key": "typeset",
       "claim": "statements rendering as mathematics, each round-trip clean against its source",
-      "value": "620/620",
+      "value": "622/622",
       "command": "node scripts/latex-gate.ts",
-      "receipt": "de919487-a93e-8de4-95fa-18f21b8685f1"
+      "receipt": "420d0d9e-312f-8bde-8b7d-613f4c71729a"
     },
     {
       "key": "coin-unlock",
@@ -171,5 +171,5 @@
       "receipt": "14c3168a-49d2-82b3-becf-5fb228c872ff"
     }
   ],
-  "root": "35394085-f787-8104-b893-0a4f12a0517e"
+  "root": "9abe1b3b-ea50-852d-a6cc-3e439007a24b"
 }
