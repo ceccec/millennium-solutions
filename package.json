@@ -132,6 +132,7 @@
     "candidates": "tsx scripts/candidates.ts",
     "probe": "tsx scripts/probe.ts",
     "vacuity": "tsx scripts/vacuity.ts",
+    "vacuity:deep": "tsx scripts/vacuity.ts --sensitivity",
     "covered-gate": "tsx scripts/covered-gate.ts",
     "independent": "tsx scripts/independent.ts",
     "recover": "tsx scripts/recover.ts",

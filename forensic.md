@@ -5,7 +5,7 @@ title: Every state change, dated
 # Provenance of this deposit's ledger
 
 **Recomputed on every build** from git history and the append-only ledger. Regenerate with
-`npm run forensic`. Content-address `0fb947ce-8688-821b-9fa3-82dfba14e2c5`.
+`npm run forensic`. Content-address `02f93445-cfab-8c84-bfac-960991fcdcb6`.
 
 ## What this record establishes
 
