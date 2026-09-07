@@ -14830,5 +14830,41 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "3524a556-9929-8d1c-afe4-8869c2771a38"
+  },
+  {
+    "key": "lean_families_power_sums_match_their_closed_forms",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "66d56adc-1d98-84fd-ac3a-b48e3f03693d"
+  },
+  {
+    "key": "lean_families_the_digital_root_is_invariant_under_digit_reversal",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "db592903-139d-83c5-81c2-c00ff415ecdc"
+  },
+  {
+    "key": "lean_families_geometric_series_across_bases_and_exponents",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d454ba68-811c-820e-861e-0085d9151bc9"
+  },
+  {
+    "key": "lean_families_totient_at_prime_powers_through_thirteen",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7d34d10b-4aad-8d1a-932a-c7a90d70ad39"
+  },
+  {
+    "key": "lean_merkle_the_permutation_generator_is_complete",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "55237d06-afba-8e92-b816-2c30ade0c3f2"
+  },
+  {
+    "key": "lean_merkle_fold_is_order_independent_on_four",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ef9e704f-30b5-8abc-80a3-7dd7fe5649ee"
   }
 ]

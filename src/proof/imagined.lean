@@ -89,10 +89,6 @@ theorem cubes_is_closed_under_negate :
 theorem units_is_closed_under_square :
   [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (d * d))) := by decide
 
--- the triad is closed under squaring
-theorem triad_is_closed_under_square :
-  [3, 6, 0].all (fun d => [3, 6, 0].contains (m9 (d * d))) := by decide
-
 -- the doubling orbit is closed under squaring
 theorem orbit_is_closed_under_square :
   [1, 2, 4, 8, 7, 5].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (d * d))) := by decide
@@ -440,10 +436,6 @@ theorem triple_collapses_tetA_to_one_value :
 -- tripling sends every element of the second tetrahedron to a single value
 theorem triple_collapses_tetB_to_one_value :
   ([2, 5, 8].map (fun d => m9 (3 * d))).eraseDups.length = 1 := by decide
-
--- squaring sends every element of the triad to a single value
-theorem square_collapses_triad_to_one_value :
-  ([3, 6, 0].map (fun d => m9 (d * d))).eraseDups.length = 1 := by decide
 
 -- cubing sends every element of the triad to a single value
 theorem cube_collapses_triad_to_one_value :

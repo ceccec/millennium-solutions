@@ -277,6 +277,18 @@ const CONTROLS: Control[] = [
     what: 'a right claimed that does not arise without formality — a registry\'s act asserted as an author\'s',
     mutate: (s) => s.replace('  , (4, 1, false, false)', '  , (4, 1, false, true )') },
 
+  // ── notice.ts: THE PUBLISHED RIGHTS LIST, AND THE TWO WAYS IT CAN LIE ──────────────────────────────────
+  // llms.txt is the machine-readable notice — the surface that tells an automated reader what this deposit
+  // claims. It refused twice while being written and had never been shown to refuse from a clean tree, so
+  // leads.ts named it as trusted only because it passes. Both of its guards get a control, because they
+  // catch opposite failures: the first that the READER is short, the second that the TABLE is wrong.
+  { gate: 'notice-reads-the-whole-table', cmd: 'node scripts/notice.ts', file: 'scripts/notice.ts',
+    what: 'a reader that silently sees fewer instruments than the table holds, publishing a partial rights list',
+    mutate: (s) => s.replace('/^\\s*[[,]\\s*\\(', '/^  , \\('), restore: 'node scripts/notice.ts' },
+  { gate: 'notice-refuses-an-overclaim', cmd: 'node scripts/notice.ts', file: 'src/proof/rights.lean',
+    what: 'a right published in llms.txt that does not arise without formality — the overclaim reaching the public surface',
+    mutate: (s) => s.replace('  , (5, 2, false, false)', '  , (5, 2, false, true )'), restore: 'node scripts/notice.ts' },
+
   { gate: 'readme', cmd: 'node scripts/readme.ts', file: 'src/proof/index.lean',
     what: 'one of the seven Clay theorems no longer being Clay-named, so the floor is measured over six',
     mutate: (s) => s.replace('theorem hodge_span_is_the_units', 'theorem span_is_the_units') },

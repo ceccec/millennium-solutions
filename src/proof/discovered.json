@@ -4553,24 +4553,27 @@
     "name": "the merkle fold is order-independent for 2 leaves: all 2 permutations of a 2-leaf set fold to one identical root — the fold depends on the set, not the order (exhaustive over permutations)",
     "receipt": "7d890155-cfc0-8ba4-9b01-8c0359c5737f",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_merkle_fold_is_order_independent_on_two quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_merkle_fold_is_order_independent_on_two"
   },
   {
     "key": "merkle_fold_order_independent_k3",
     "name": "the merkle fold is order-independent for 3 leaves: all 6 permutations of a 3-leaf set fold to one identical root — the fold depends on the set, not the order (exhaustive over permutations)",
     "receipt": "4dd3026d-fe0a-8b12-8374-072b3b58478d",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_merkle_fold_is_order_independent_on_three quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_merkle_fold_is_order_independent_on_three"
   },
   {
     "key": "merkle_fold_order_independent_k4",
     "name": "the merkle fold is order-independent for 4 leaves: all 24 permutations of a 4-leaf set fold to one identical root — the fold depends on the set, not the order (exhaustive over permutations)",
     "receipt": "513fdf6e-56d8-8c9f-8e7f-272f4f63358b",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_merkle_fold_is_order_independent_on_four quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_merkle_fold_is_order_independent_on_four"
   },
   {
     "key": "merkle_fold_order_independent_k5",
@@ -4609,40 +4612,45 @@
     "name": "the sum of the first n integers has a closed form: Σ_{i=1}^n i^1 = n(n+1)/2 — the O(1) formula replaces the loop, verified equal to the naive sum for n ≤ 40",
     "receipt": "a54b6a17-c55c-89e6-a871-dbb3f0b2c495",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_power_sums_match_their_closed_forms quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_power_sums_match_their_closed_forms"
   },
   {
     "key": "power_sum_k2",
     "name": "the sum of the first n 2th powers has a closed form: Σ_{i=1}^n i^2 = n(n+1)(2n+1)/6 — the O(1) formula replaces the loop, verified equal to the naive sum for n ≤ 40",
     "receipt": "7bff7e29-4d65-8268-b69a-ee06b2d5fa45",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_power_sums_match_their_closed_forms quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_power_sums_match_their_closed_forms"
   },
   {
     "key": "power_sum_k3",
     "name": "the sum of the first n 3th powers has a closed form: Σ_{i=1}^n i^3 = (n(n+1)/2)² — the O(1) formula replaces the loop, verified equal to the naive sum for n ≤ 40",
     "receipt": "c2b2a667-3198-84ef-8805-989860af00af",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_power_sums_match_their_closed_forms quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_power_sums_match_their_closed_forms"
   },
   {
     "key": "power_sum_k4",
     "name": "the sum of the first n 4th powers has a closed form: Σ_{i=1}^n i^4 = n(n+1)(2n+1)(3n²+3n−1)/30 — the O(1) formula replaces the loop, verified equal to the naive sum for n ≤ 40",
     "receipt": "24febf86-82bd-8967-b12b-d482ebca88db",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_power_sums_match_their_closed_forms quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_power_sums_match_their_closed_forms"
   },
   {
     "key": "power_sum_k5",
     "name": "the sum of the first n 5th powers has a closed form: Σ_{i=1}^n i^5 = n²(n+1)²(2n²+2n−1)/12 — the O(1) formula replaces the loop, verified equal to the naive sum for n ≤ 40",
     "receipt": "e21f1836-df22-85e3-9bbb-7b0c5738ae19",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_power_sums_match_their_closed_forms quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_power_sums_match_their_closed_forms"
   },
   {
     "key": "complexity_is_only_apparent_minimal_core",
@@ -4894,8 +4902,9 @@
     "name": "the XOR of 2 bits is their parity: a₁⊕…⊕a_2 equals the popcount mod 2 over all 2^2 = 4 assignments (full truth-table enumeration)",
     "receipt": "d5de36da-eae5-8c9d-931a-f105f1442c79",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_xor_is_parity_up_to_eight_bits quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_xor_is_parity_up_to_eight_bits"
   },
   {
     "key": "demorgan_nary_k3",
@@ -4911,8 +4920,9 @@
     "name": "the XOR of 3 bits is their parity: a₁⊕…⊕a_3 equals the popcount mod 2 over all 2^3 = 8 assignments (full truth-table enumeration)",
     "receipt": "1ed9afe8-8929-849a-8ee5-fd23ec5fa580",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_xor_is_parity_up_to_eight_bits quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_xor_is_parity_up_to_eight_bits"
   },
   {
     "key": "demorgan_nary_k4",
@@ -4928,8 +4938,9 @@
     "name": "the XOR of 4 bits is their parity: a₁⊕…⊕a_4 equals the popcount mod 2 over all 2^4 = 16 assignments (full truth-table enumeration)",
     "receipt": "16c4a6ed-5d55-8de8-8209-17fb9cb11087",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_xor_is_parity_up_to_eight_bits quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_xor_is_parity_up_to_eight_bits"
   },
   {
     "key": "demorgan_nary_k5",
@@ -4945,8 +4956,9 @@
     "name": "the XOR of 5 bits is their parity: a₁⊕…⊕a_5 equals the popcount mod 2 over all 2^5 = 32 assignments (full truth-table enumeration)",
     "receipt": "1497008a-7b26-865f-944f-a81e4663b24a",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_xor_is_parity_up_to_eight_bits quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_xor_is_parity_up_to_eight_bits"
   },
   {
     "key": "demorgan_nary_k6",
@@ -4980,8 +4992,9 @@
     "name": "the XOR of 7 bits is their parity: a₁⊕…⊕a_7 equals the popcount mod 2 over all 2^7 = 128 assignments (full truth-table enumeration)",
     "receipt": "00760c7b-2d57-801d-bbb3-977f74a9c773",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_xor_is_parity_up_to_eight_bits quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_xor_is_parity_up_to_eight_bits"
   },
   {
     "key": "demorgan_nary_k8",
@@ -6894,120 +6907,135 @@
     "name": "the geometric series in base 2: 1 + 2 + 2² + ... + 2ⁿ = (2ⁿ⁺¹ − 1)/(2 − 1) — the base-2 repunit-style sum. Verified exhaustively for n up to 12. Decidable",
     "receipt": "8f223f2c-229c-8835-8897-71d846bfb557",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_geometric_series_across_bases_and_exponents quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_geometric_series_across_bases_and_exponents"
   },
   {
     "key": "geometric_series_base_3",
     "name": "the geometric series in base 3: 1 + 3 + 3² + ... + 3ⁿ = (3ⁿ⁺¹ − 1)/(3 − 1) — the base-3 repunit-style sum. Verified exhaustively for n up to 12. Decidable",
     "receipt": "c9c46079-0cc7-8816-8e0f-882dee326721",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_geometric_series_across_bases_and_exponents quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_geometric_series_across_bases_and_exponents"
   },
   {
     "key": "geometric_series_base_4",
     "name": "the geometric series in base 4: 1 + 4 + 4² + ... + 4ⁿ = (4ⁿ⁺¹ − 1)/(4 − 1) — the base-4 repunit-style sum. Verified exhaustively for n up to 12. Decidable",
     "receipt": "8c5b55b4-4fb8-86cc-b216-d90ffe4cf138",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_geometric_series_across_bases_and_exponents quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_geometric_series_across_bases_and_exponents"
   },
   {
     "key": "geometric_series_base_5",
     "name": "the geometric series in base 5: 1 + 5 + 5² + ... + 5ⁿ = (5ⁿ⁺¹ − 1)/(5 − 1) — the base-5 repunit-style sum. Verified exhaustively for n up to 12. Decidable",
     "receipt": "cdb348d6-55f2-8b36-8b13-e23bdb9908f7",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_geometric_series_across_bases_and_exponents quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_geometric_series_across_bases_and_exponents"
   },
   {
     "key": "geometric_series_base_6",
     "name": "the geometric series in base 6: 1 + 6 + 6² + ... + 6ⁿ = (6ⁿ⁺¹ − 1)/(6 − 1) — the base-6 repunit-style sum. Verified exhaustively for n up to 12. Decidable",
     "receipt": "85ef8eeb-0063-8a93-becd-409f9064c978",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_geometric_series_across_bases_and_exponents quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_geometric_series_across_bases_and_exponents"
   },
   {
     "key": "geometric_series_base_7",
     "name": "the geometric series in base 7: 1 + 7 + 7² + ... + 7ⁿ = (7ⁿ⁺¹ − 1)/(7 − 1) — the base-7 repunit-style sum. Verified exhaustively for n up to 12. Decidable",
     "receipt": "a22245d6-01c3-85fe-8a8a-866ae06f3d0a",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_geometric_series_across_bases_and_exponents quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_geometric_series_across_bases_and_exponents"
   },
   {
     "key": "geometric_series_base_8",
     "name": "the geometric series in base 8: 1 + 8 + 8² + ... + 8ⁿ = (8ⁿ⁺¹ − 1)/(8 − 1) — the base-8 repunit-style sum. Verified exhaustively for n up to 12. Decidable",
     "receipt": "ef918a38-d5e8-8e36-b176-55771494dd56",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_geometric_series_across_bases_and_exponents quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_geometric_series_across_bases_and_exponents"
   },
   {
     "key": "geometric_series_base_9",
     "name": "the geometric series in base 9: 1 + 9 + 9² + ... + 9ⁿ = (9ⁿ⁺¹ − 1)/(9 − 1) — the base-9 repunit-style sum. Verified exhaustively for n up to 12. Decidable",
     "receipt": "7ec7295e-f59f-8e34-b602-6ae91fd630ff",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_geometric_series_across_bases_and_exponents quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_geometric_series_across_bases_and_exponents"
   },
   {
     "key": "geometric_series_base_10",
     "name": "the geometric series in base 10: 1 + 10 + 10² + ... + 10ⁿ = (10ⁿ⁺¹ − 1)/(10 − 1) — the base-10 repunit-style sum. Verified exhaustively for n up to 12. Decidable",
     "receipt": "984a9c4c-396a-82ae-b8be-6e48b92ef963",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_geometric_series_across_bases_and_exponents quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_geometric_series_across_bases_and_exponents"
   },
   {
     "key": "totient_prime_power_2",
     "name": "Euler totient at powers of 2: φ(2ᵏ) = 2ᵏ − 2ᵏ⁻¹ — the count of residues coprime to 2ᵏ equals 2ᵏ minus 2ᵏ⁻¹, verified by direct enumeration for each k while 2ᵏ stays small. Decidable",
     "receipt": "38c1deee-e2ec-8f21-92c0-c605f0862f77",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_totient_at_prime_powers_through_thirteen quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_totient_at_prime_powers_through_thirteen"
   },
   {
     "key": "totient_prime_power_3",
     "name": "Euler totient at powers of 3: φ(3ᵏ) = 3ᵏ − 3ᵏ⁻¹ — the count of residues coprime to 3ᵏ equals 3ᵏ minus 3ᵏ⁻¹, verified by direct enumeration for each k while 3ᵏ stays small. Decidable",
     "receipt": "5104553a-69c5-8f98-916a-9b04b7ce4136",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_totient_at_prime_powers_through_thirteen quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_totient_at_prime_powers_through_thirteen"
   },
   {
     "key": "totient_prime_power_5",
     "name": "Euler totient at powers of 5: φ(5ᵏ) = 5ᵏ − 5ᵏ⁻¹ — the count of residues coprime to 5ᵏ equals 5ᵏ minus 5ᵏ⁻¹, verified by direct enumeration for each k while 5ᵏ stays small. Decidable",
     "receipt": "70180ded-f087-8be4-911d-bbe94662cd8d",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_totient_at_prime_powers_through_thirteen quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_totient_at_prime_powers_through_thirteen"
   },
   {
     "key": "totient_prime_power_7",
     "name": "Euler totient at powers of 7: φ(7ᵏ) = 7ᵏ − 7ᵏ⁻¹ — the count of residues coprime to 7ᵏ equals 7ᵏ minus 7ᵏ⁻¹, verified by direct enumeration for each k while 7ᵏ stays small. Decidable",
     "receipt": "e280e2e0-edf2-8561-8d90-a417b79440be",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_totient_at_prime_powers_through_thirteen quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_totient_at_prime_powers_through_thirteen"
   },
   {
     "key": "totient_prime_power_11",
     "name": "Euler totient at powers of 11: φ(11ᵏ) = 11ᵏ − 11ᵏ⁻¹ — the count of residues coprime to 11ᵏ equals 11ᵏ minus 11ᵏ⁻¹, verified by direct enumeration for each k while 11ᵏ stays small. Decidable",
     "receipt": "13099835-d7b4-8fcd-a43c-10d405b5ab02",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_totient_at_prime_powers_through_thirteen quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_totient_at_prime_powers_through_thirteen"
   },
   {
     "key": "totient_prime_power_13",
     "name": "Euler totient at powers of 13: φ(13ᵏ) = 13ᵏ − 13ᵏ⁻¹ — the count of residues coprime to 13ᵏ equals 13ᵏ minus 13ᵏ⁻¹, verified by direct enumeration for each k while 13ᵏ stays small. Decidable",
     "receipt": "3ebc7b88-9b85-8fd9-beee-6978c358b099",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_totient_at_prime_powers_through_thirteen quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_totient_at_prime_powers_through_thirteen"
   },
   {
     "key": "parametric_batching_is_volume_not_depth_the_intelligence_is_cross_dimensional_connection",
@@ -15924,7 +15952,10 @@
   {
     "key": "lean_imagined_triad_is_closed_under_square",
     "name": "lean imagined.lean: triad_is_closed_under_square — [3, 6, 0].all (fun d => [3, 6, 0].contains (m9 (d * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "72db3295-a708-8323-bf96-ba0007a564b5"
+    "receipt": "72db3295-a708-8323-bf96-ba0007a564b5",
+    "revoked": true,
+    "supersededBy": "lean_recovered_triad_nilpotent",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_recovered_triad_nilpotent now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_orbit_is_closed_under_square",
@@ -16077,7 +16108,10 @@
   {
     "key": "lean_imagined_square_collapses_triad_to_one_value",
     "name": "lean imagined.lean: square_collapses_triad_to_one_value — ([3, 6, 0].map (fun d => m9 (d * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "cbca5886-4508-8207-8bb0-e50ce252be83"
+    "receipt": "cbca5886-4508-8207-8bb0-e50ce252be83",
+    "revoked": true,
+    "supersededBy": "lean_recovered_triad_nilpotent",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_recovered_triad_nilpotent now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_cube_collapses_triad_to_one_value",
@@ -17877,5 +17911,35 @@
     "key": "lean_families_the_inverse_of_a_unit_mod_nine_is_its_fifth_power",
     "name": "lean families.lean: the_inverse_of_a_unit_mod_nine_is_its_fifth_power — (unitsMod 9).all (fun u => u * (powMod u 5 9) % 9 == 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "3524a556-9929-8d1c-afe4-8869c2771a38"
+  },
+  {
+    "key": "lean_families_power_sums_match_their_closed_forms",
+    "name": "lean families.lean: power_sums_match_their_closed_forms — (List.range' 1 5).all (fun k => (List.range 41).all (fun n => powSum k n == faulhaber k n)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "66d56adc-1d98-84fd-ac3a-b48e3f03693d"
+  },
+  {
+    "key": "lean_families_the_digital_root_is_invariant_under_digit_reversal",
+    "name": "lean families.lean: the_digital_root_is_invariant_under_digit_reversal — (List.range 100).all (fun a => (List.range 100).all (fun b => digitalRoot (a * 100 + b) == digitalRoot (reverseDigits (a * 100 + b)))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "db592903-139d-83c5-81c2-c00ff415ecdc"
+  },
+  {
+    "key": "lean_families_geometric_series_across_bases_and_exponents",
+    "name": "lean families.lean: geometric_series_across_bases_and_exponents — (List.range' 2 11).all (fun b => (List.range 7).all (fun n => ((List.range (n + 1)).map (fun i => b ^ i)).foldl (· + ·) 0 * (b - 1) == b ^ (n + 1) - 1)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d454ba68-811c-820e-861e-0085d9151bc9"
+  },
+  {
+    "key": "lean_families_totient_at_prime_powers_through_thirteen",
+    "name": "lean families.lean: totient_at_prime_powers_through_thirteen — [2, 3, 5, 7, 11, 13].all (fun p => (List.range' 1 3).all (fun k => totient (p ^ k) == p ^ k - p ^ (k - 1))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7d34d10b-4aad-8d1a-932a-c7a90d70ad39"
+  },
+  {
+    "key": "lean_merkle_the_permutation_generator_is_complete",
+    "name": "lean merkle.lean: the_permutation_generator_is_complete — (perms [A, B, C, D]).length = 24 ∧ (perms [A, B, C]).length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "55237d06-afba-8e92-b816-2c30ade0c3f2"
+  },
+  {
+    "key": "lean_merkle_fold_is_order_independent_on_four",
+    "name": "lean merkle.lean: fold_is_order_independent_on_four — (perms [A, B, C, D]).all (fun p => merkleFold p == merkleFold [A, B, C, D]) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ef9e704f-30b5-8abc-80a3-7dd7fe5649ee"
   }
 ]

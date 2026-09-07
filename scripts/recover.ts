@@ -93,6 +93,35 @@ const inDomain: { theorem: string; key: RegExp; covers: (n: number) => boolean; 
     why: 'decides over all of ℤ/9 including zero that an inverse exists exactly at the units' },
   { theorem: 'the_inverse_of_a_unit_mod_nine_is_its_fifth_power', key: /^invpow_u(\d+)$/, covers: (n) => n >= 1 && n <= 8 && gcdJS(n, 9) === 1,
     why: 'quantifies over unitsMod 9, so every unit — and only a unit has a fifth power to be its inverse' },
+
+  // ── A FAMILY THAT WAS ALREADY PROVED AND NOBODY HAD LOOKED ──────────────────────────────────────────────
+  // xor_is_parity_up_to_eight_bits has been in families.lean the whole time, quantifying over exactly the
+  // parameters these five rows sit at. Five claims were carried as withdrawn beside their own proof because
+  // the link was never written down. Worth stating plainly: not every carry needs a new theorem — some need
+  // somebody to check whether the theorem is already there.
+  { theorem: 'xor_is_parity_up_to_eight_bits', key: /^xor_is_parity_k(\d+)$/, covers: (n) => n >= 1 && n <= 8,
+    why: "quantifies over List.range' 1 8 and, at each arity, over every assignment of its bits" },
+
+  // ── the merkle fold, permutation by permutation — and the three that are NOT carried ────────────────────
+  // Two, three and four leaves are decided over all of their orderings. Five and six are not: no theorem
+  // walks 120 or 720 folds, so merkle_fold_order_independent_k5 and k6 stay withdrawn. Carrying them on the
+  // strength of the four-leaf case would be induction by wishful thinking.
+  { theorem: 'fold_is_order_independent_on_two', key: /^merkle_fold_order_independent_k(\d+)$/, covers: (n) => n === 2,
+    why: 'decides both orderings of two leaves and nothing beyond them' },
+  { theorem: 'fold_is_order_independent_on_three', key: /^merkle_fold_order_independent_k(\d+)$/, covers: (n) => n === 3,
+    why: 'decides all six orderings of three leaves — the odd case, where pairUp must carry a leftover' },
+  { theorem: 'fold_is_order_independent_on_four', key: /^merkle_fold_order_independent_k(\d+)$/, covers: (n) => n === 4,
+    why: 'quantifies over perms [A,B,C,D], whose completeness at 24 is itself a theorem in merkle.lean' },
+
+  // ── the second octave of families, 2026-09-07 ───────────────────────────────────────────────────────────
+  { theorem: 'power_sums_match_their_closed_forms', key: /^power_sum_k(\d+)$/, covers: (n) => n >= 1 && n <= 5,
+    why: "decides Faulhaber's closed form against the loop for exponents 1…5 at every n to 40 — the range the rows themselves claim" },
+  { theorem: 'the_digital_root_is_invariant_under_digit_reversal', key: /^digrev(\d+)$/, covers: (n) => n < 10000,
+    why: 'decides every n below ten thousand, which is why the range runs that far — the rows go up to 9080' },
+  { theorem: 'geometric_series_across_bases_and_exponents', key: /^geometric_series_base_(\d+)$/, covers: (n) => n >= 2 && n <= 12,
+    why: "quantifies over bases 2…12 and every exponent to six, widening the older theorem that fixed one exponent at bases 2…9" },
+  { theorem: 'totient_at_prime_powers_through_thirteen', key: /^totient_prime_power_(\d+)$/, covers: (n) => [2, 3, 5, 7, 11, 13].includes(n),
+    why: 'decides φ(pᵏ) = pᵏ − pᵏ⁻¹ at those six primes for k = 1…3' },
 ]
 for (const f of inDomain) {
   const heir = [...live].find((k) => k.endsWith('_' + f.theorem) || k === f.theorem)
@@ -153,8 +182,10 @@ console.log(`  Those are claims the record says nothing proves, withdrawn becaus
 console.log(`  Under "involute instead of withdraw" each is a carry waiting for its theorem, not a dead entry.`)
 
 // ── THE WITHDRAWN REFUSALS — THEIR ENFORCEMENT MOVED, IT DID NOT LAPSE ───────────────────────────────────
-// 220 withdrawn entries are the deposit's OWN REFUSALS: "the deposit does not solve the Clay problems" is
+// Some of the withdrawn are the deposit's OWN REFUSALS: "the deposit does not solve the Clay problems" is
 // upheld, "the orbit solves the Clay problems" drains, "faster than light" drains and its negation signs.
+// The count is printed below from the ledger and deliberately not repeated here — it was written as a
+// literal, the pool moved under it, and stale-figures caught the comment claiming a present that had gone.
 //
 // Audited for the shape that condemned `this_file_settles_none_of_the_seven` — a NAME asserting what its
 // proposition cannot decide — and they do NOT carry it. A withdrawn entry has no proposition for a name to

@@ -61,8 +61,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free and axiom-free, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 571 of them across 31 files and
-7 wings; 563 close by exhaustion over a stated finite domain and the
+(\texttt{npm run latex-gate}). There are 575 of them across 31 files and
+7 wings; 567 close by exhaustion over a stated finite domain and the
 remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -306,9 +306,19 @@ remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{merkle\_settles\_its\_range}]
-\[ \mathrm{settledHere} = 8 \]
+\[ \mathrm{settledHere} = 10 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_permutation\_generator\_is\_complete}]
+\[ \left|\mathrm{perms}\mathopen{}\left([A,\,B,\,C,\,D]\right)\right| = 24 \land \left|\mathrm{perms}\mathopen{}\left([A,\,B,\,C]\right)\right| = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{fold\_is\_order\_independent\_on\_four}]
+\[ \forall p \in \mathrm{perms}\mathopen{}\left([A,\,B,\,C,\,D]\right),\; \mathrm{merkleFold}\mathopen{}\left(p\right) = \mathrm{merkleFold}\mathopen{}\left([A,\,B,\,C,\,D]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{fold\_is\_order\_independent\_on\_three}]
 \[ \mathrm{merkleFold}\mathopen{}\left([A,\,B,\,C]\right) = \mathrm{merkleFold}\mathopen{}\left([A,\,C,\,B]\right) \land \mathrm{merkleFold}\mathopen{}\left([A,\,B,\,C]\right) = \mathrm{merkleFold}\mathopen{}\left([B,\,A,\,C]\right) \land \mathrm{merkleFold}\mathopen{}\left([A,\,B,\,C]\right) = \mathrm{merkleFold}\mathopen{}\left([B,\,C,\,A]\right) \land \mathrm{merkleFold}\mathopen{}\left([A,\,B,\,C]\right) = \mathrm{merkleFold}\mathopen{}\left([C,\,A,\,B]\right) \land \mathrm{merkleFold}\mathopen{}\left([A,\,B,\,C]\right) = \mathrm{merkleFold}\mathopen{}\left([C,\,B,\,A]\right) \]
@@ -471,8 +481,28 @@ remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
+\begin{theorem}[\texttt{power\_sums\_match\_their\_closed\_forms}]
+\[ \forall k \in \{1,\dots,5\},\; \forall n \in \{0,\dots,40\},\; \mathrm{powSum}\mathopen{}\left(k,\,n\right) = \mathrm{faulhaber}\mathopen{}\left(k,\,n\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 205 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_digital\_root\_is\_invariant\_under\_digit\_reversal}]
+\[ \forall a \in \{0,\dots,99\},\; \forall b \in \{0,\dots,99\},\; \mathrm{digitalRoot}\mathopen{}\left(a \cdot 100 + b\right) = \mathrm{digitalRoot}\mathopen{}\left(\mathrm{reverseDigits}\mathopen{}\left(a \cdot 100 + b\right)\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 10,000 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{geometric\_series\_across\_bases\_and\_exponents}]
+\[ \forall b \in \{2,\dots,12\},\; \forall n \in \{0,\dots,6\},\; \sum \{\, b^{i} \mid i \in \{0,\dots,n + 1-1\} \,\} \cdot b - 1 = b^{n + 1} - 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 77 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{totient\_at\_prime\_powers\_through\_thirteen}]
+\[ \forall p \in [2,\,3,\,5,\,7,\,11,\,13],\; \forall k \in \{1,\dots,3\},\; \mathrm{totient}\mathopen{}\left(p^{k}\right) = p^{k} - p^{k - 1} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 18 cases. \hfill$\square$
+
 \begin{theorem}[\texttt{families\_settle\_their\_ranges}]
-\[ \mathrm{settledHere} = 18 \]
+\[ \mathrm{settledHere} = 22 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 
@@ -2311,11 +2341,6 @@ remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{triad\_is\_closed\_under\_square}]
-\[ \forall d \in [3,\,6,\,0],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [3,\,6,\,0] \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
-
 \begin{theorem}[\texttt{orbit\_is\_closed\_under\_square}]
 \[ \forall d \in [1,\,2,\,4,\,8,\,7,\,5],\; \mathrm{m9}\mathopen{}\left(d \cdot d\right) \in [1,\,2,\,4,\,8,\,7,\,5] \]
 \end{theorem}
@@ -2748,11 +2773,6 @@ remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \begin{theorem}[\texttt{triple\_collapses\_tetB\_to\_one\_value}]
 \[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(3 \cdot d\right) \mid d \in [2,\,5,\,8] \,\}\right)\right| = 1 \]
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
-
-\begin{theorem}[\texttt{square\_collapses\_triad\_to\_one\_value}]
-\[ \left|\operatorname{dedup}\left(\{\, \mathrm{m9}\mathopen{}\left(d \cdot d\right) \mid d \in [3,\,6,\,0] \,\}\right)\right| = 1 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
 

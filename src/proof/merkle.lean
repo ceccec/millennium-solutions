@@ -89,12 +89,35 @@ theorem merge_is_order_sensitive : merge A B ≠ merge B A := by decide
 theorem sorting_is_what_makes_the_fold_order_free :
   sortB [A, B] = sortB [B, A] ∧ [A, B] ≠ [B, A] := by decide
 
-def settledHere : Nat := 8
-theorem merkle_settles_its_range : settledHere = 8 := rfl
+def settledHere : Nat := 10
+theorem merkle_settles_its_range : settledHere = 10 := rfl
 
 -- ── ORDER-INDEPENDENCE ON AN ODD NUMBER OF LEAVES. Two leaves pair exactly and prove little: the interesting
 --    case is an odd count, where pairUp must carry the leftover leaf into the next round. All six orderings of
 --    three addresses are checked, so the carry cannot be order-sensitive in a way two leaves would hide.
+-- ── AND ON FOUR, over every permutation rather than a hand-listed few ────────────────────────────────────
+--    Three leaves were written out as five equations because six orderings fit on a page. Four do not:
+--    twenty-four orderings written by hand is where a missing case hides. `List.permutations` generates
+--    them, so the statement quantifies over ALL of them and cannot be short by one.
+--    `List.permutations` is not in Lean's core — it lives in Batteries, which this deposit does not import,
+--    for the same reason it does not import Mathlib. So the generator is written here, structurally.
+def interleave (x : List Nat) : List (List Nat) → List (List (List Nat))
+  | [] => [[x]]
+  | y :: ys => (x :: y :: ys) :: (interleave x ys).map (fun l => y :: l)
+def perms : List (List Nat) → List (List (List Nat))
+  | [] => [[]]
+  | x :: xs => (perms xs).flatMap (fun p => interleave x p)
+def D : List Nat := toUuidBytes [100]  -- address of "d"
+
+-- the generator is checked before it is trusted: four leaves have 4! = 24 orderings, and if `perms` were
+-- short the theorem below would quantify over fewer cases while looking exactly as strong
+theorem the_permutation_generator_is_complete :
+  (perms [A, B, C, D]).length = 24 ∧ (perms [A, B, C]).length = 6 := by decide
+
+set_option maxRecDepth 100000 in
+theorem fold_is_order_independent_on_four :
+  (perms [A, B, C, D]).all (fun p => merkleFold p == merkleFold [A, B, C, D]) := by decide
+
 theorem fold_is_order_independent_on_three :
   merkleFold [A, B, C] = merkleFold [A, C, B] ∧ merkleFold [A, B, C] = merkleFold [B, A, C] ∧
   merkleFold [A, B, C] = merkleFold [B, C, A] ∧ merkleFold [A, B, C] = merkleFold [C, A, B] ∧

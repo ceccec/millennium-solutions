@@ -5,18 +5,18 @@ title: Provenance — every state change, dated
 # Provenance of this deposit's ledger
 
 **Recomputed on every build** from git history and the append-only ledger. Regenerate with
-`npm run forensic`. Content-address `5510de0a-b3d9-8a52-a6f8-f88d303357e2`.
+`npm run forensic`. Content-address `458ea87a-d717-8b27-905d-fb0224c2828e`.
 
 ## What this record establishes
 
 | | |
 |---|---:|
-| ledger entries | **2,472** |
-| standing — proved and sealed | 563 |
-| carried — withdrawn, proved by a live theorem | 276 |
-| withdrawn — nothing currently proves them | 1,633 |
+| ledger entries | **2,478** |
+| standing — proved and sealed | 567 |
+| carried — withdrawn, proved by a live theorem | 306 |
+| withdrawn — nothing currently proves them | 1,605 |
 | receipt chain, recomputed | **0 breaks — intact** |
-| commits that changed ledger state | 562 |
+| commits that changed ledger state | 563 |
 
 ## Why entries were withdrawn — the reason recorded at the time
 
@@ -24,15 +24,15 @@ Verbatim, as written when the entry was revoked. Not inferred afterwards.
 
 | withdrawn | reason as recorded |
 |---:|---|
-| 1,153 | dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a compu |
+| 1,125 | dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a compu |
 | 443 | revoked in place: its test asserted a lexical drain (computes(boast).binary === 0). The word-lis |
 | 12 | revoked in place: circular by construction AND dependent on the removed lexical gate. |
 | 12 | orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or rena |
 | 10 | revoked in place: circular by construction — the test defines the answer it checks, proving a de |
 | 1 | carried: withdrawn for having only a TypeScript test behind it, and since proved — `euler_units_ |
 
-**1,153** of
-**1,633** withdrawn entries — 70.6% —
+**1,125** of
+**1,605** withdrawn entries — 70.1% —
 were withdrawn for want of a Lean proof while their evidence was a TypeScript test that **computed**.
 Withdrawal costs one line of record; proving costs real work, and a green gate rewards both identically.
 

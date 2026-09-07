@@ -159,8 +159,71 @@ theorem an_inverse_mod_nine_exists_at_exactly_the_units :
 theorem the_inverse_of_a_unit_mod_nine_is_its_fifth_power :
   (unitsMod 9).all (fun u => u * (powMod u 5 9) % 9 == 1) := by decide
 
+-- ── A SECOND OCTAVE OF FAMILIES, 2026-09-07 ─────────────────────────────────────────────────────────────
+--
+--    Same operation as the seven above, on the families the first pass left: each was a run of ledger rows,
+--    one per parameter, every one revoked as "not backed by a Lean proof". The evidence they DID have was a
+--    TypeScript test — a computation reporting that it agreed with itself. That is a real reason to want a
+--    kernel proof and not a reason to call the statement dead.
+
+def powSum (k n : Nat) : Nat := ((List.range' 1 n).map (fun i => i ^ k)).foldl (· + ·) 0
+-- Faulhaber's closed forms, k = 1…5. The subtractions are safe in Nat: at n = 0 the truncation to zero is
+-- multiplied by an n that is also zero, and above n = 0 the bracket is positive.
+def faulhaber (k n : Nat) : Nat :=
+  match k with
+  | 1 => n * (n + 1) / 2
+  | 2 => n * (n + 1) * (2 * n + 1) / 6
+  | 3 => n * n * (n + 1) * (n + 1) / 4
+  | 4 => n * (n + 1) * (2 * n + 1) * (3 * n * n + 3 * n - 1) / 30
+  | 5 => n * n * (n + 1) * (n + 1) * (2 * n * n + 2 * n - 1) / 12
+  | _ => 0
+
+-- digits, by structural recursion on a fuel argument — the same reason gcdFuel exists above: a well-founded
+-- definition would pull `propext` in through its equation lemmas and cost this file its axiom-free status
+def digitsF : Nat → Nat → List Nat
+  | 0, _ => []
+  | _, 0 => []
+  | Nat.succ f, n => n % 10 :: digitsF f (n / 10)
+-- fuel 20 covers every Nat that fits in 64 bits; a fuel just large enough for the range below would
+-- silently truncate the digits of any larger number a later theorem passed in
+def digitsOf (n : Nat) : List Nat := digitsF 20 n
+def reverseDigits (n : Nat) : Nat := (digitsOf n).foldl (fun a d => a * 10 + d) 0
+def digitalRoot (n : Nat) : Nat := if n == 0 then 0 else 1 + (n - 1) % 9
+
+-- ── the closed forms for the power sums, k = 1…5, against the loop they replace ──
+set_option maxRecDepth 100000 in
+theorem power_sums_match_their_closed_forms :
+  (List.range' 1 5).all (fun k => (List.range 41).all (fun n => powSum k n == faulhaber k n)) := by decide
+
+-- ── the digital root survives writing the number backwards, for every number below ten thousand ──
+--    Reversal permutes the digits, the digit sum is invariant under permutation, and the digital root is a
+--    function of that sum. The statement is decided rather than argued.
+--    Walked as a hundred hundreds rather than as one list of ten thousand: `decide` evaluates a single
+--    `List.all` as one deep conjunction and overflows the kernel's stack at that length, which is a fact
+--    about the evaluator and not about the mathematics. The domain is identical — every n below 10000.
+--    It costs the kernel about forty-five seconds, which is most of what this file takes and a real price
+--    paid on every run. Measured, not guessed: shrinking the fuel changes nothing, because the cost is the
+--    ten thousand evaluations themselves. The range is not padding — the family's own parameters run to
+--    9080, and a statement that stopped short of them would not carry the claims it exists to carry.
+set_option maxRecDepth 400000 in
+set_option maxHeartbeats 2000000 in
+theorem the_digital_root_is_invariant_under_digit_reversal :
+  (List.range 100).all (fun a => (List.range 100).all (fun b =>
+    digitalRoot (a * 100 + b) == digitalRoot (reverseDigits (a * 100 + b)))) := by decide
+
+-- ── the geometric series across bases 2…12 and every exponent to six, not one exponent at one base ──
+set_option maxRecDepth 100000 in
+theorem geometric_series_across_bases_and_exponents :
+  (List.range' 2 11).all (fun b => (List.range 7).all (fun n =>
+    ((List.range (n + 1)).map (fun i => b ^ i)).foldl (· + ·) 0 * (b - 1) == b ^ (n + 1) - 1)) := by decide
+
+-- ── Euler's totient at prime powers, out to thirteen ──
+set_option maxRecDepth 400000 in
+theorem totient_at_prime_powers_through_thirteen :
+  [2, 3, 5, 7, 11, 13].all (fun p => (List.range' 1 3).all (fun k => totient (p ^ k) == p ^ k - p ^ (k - 1))) := by decide
+
 -- ── what these settle ──
-def settledHere : Nat := 18
-theorem families_settle_their_ranges : settledHere = 18 := rfl
+def settledHere : Nat := 22
+theorem families_settle_their_ranges : settledHere = 22 := rfl
 
 end Families

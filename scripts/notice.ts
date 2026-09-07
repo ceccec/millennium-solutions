@@ -44,13 +44,13 @@ const decidedIds = rights.match(/^\s*instruments\.map idOf = \[([\d, ]+)\]/m)?.[
 if (!decidedIds) { console.log('✗ notice: rights.lean states no decided enumeration to check the parse against'); process.exit(1) }
 const readIds = rows.map((m) => m[1]).join(', ')
 if (readIds !== decidedIds) {
-  console.log(`✗ notice: read instruments [${readIds}] but the kernel decides [${decidedIds}] — refusing to publish a rights notice built on a partial read of the table`)
+  console.log(`✗ notice: read instruments [${readIds}] from src/proof/rights.lean but the kernel decides [${decidedIds}] — refusing to publish a rights notice built on a partial read of the table`)
   process.exit(1)
 }
 const autoIds = rows.filter((m) => m[2] === 'true').map((m) => m[1]).join(', ')
 const claimedIds = claimedRows.map((m) => m[1]).join(', ')
 if (autoIds !== claimedIds) {
-  console.log(`✗ notice: rows arising without formality [${autoIds}] but rows claimed [${claimedIds}] — the kernel decides these are the same set; refusing to publish`)
+  console.log(`✗ notice: in src/proof/rights.lean, rows arising without formality [${autoIds}] but rows claimed [${claimedIds}] — the kernel decides these are the same set; refusing to publish`)
   process.exit(1)
 }
 

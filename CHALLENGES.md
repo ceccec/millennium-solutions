@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2472 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2478 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (563)
+### lean (567)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -224,7 +224,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_imagined_orbit_is_closed_under_negate](/theorem/lean_imagined_orbit_is_closed_under_negate) — lean imagined.lean: orbit_is_closed_under_negate — [1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (9 - d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2648891c-b6ac…`
 - [lean_imagined_all_is_closed_under_negate](/theorem/lean_imagined_all_is_closed_under_negate) — lean imagined.lean: all_is_closed_under_negate — [0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (9 - d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `488239aa-b8c4…`
 - [lean_imagined_units_is_closed_under_square](/theorem/lean_imagined_units_is_closed_under_square) — lean imagined.lean: units_is_closed_under_square — [1, 2, 4, 5, 7, 8].all (fun d =&gt; [1, 2, 4, 5, 7, 8].contains (m9 (d * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `6d29a3cd-f0c8…`
-- [lean_imagined_triad_is_closed_under_square](/theorem/lean_imagined_triad_is_closed_under_square) — lean imagined.lean: triad_is_closed_under_square — [3, 6, 0].all (fun d =&gt; [3, 6, 0].contains (m9 (d * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `72db3295-a708…`
 - [lean_imagined_orbit_is_closed_under_square](/theorem/lean_imagined_orbit_is_closed_under_square) — lean imagined.lean: orbit_is_closed_under_square — [1, 2, 4, 8, 7, 5].all (fun d =&gt; [1, 2, 4, 8, 7, 5].contains (m9 (d * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a001d862-2860…`
 - [lean_imagined_tetA_is_closed_under_square](/theorem/lean_imagined_tetA_is_closed_under_square) — lean imagined.lean: tetA_is_closed_under_square — [1, 4, 7].all (fun d =&gt; [1, 4, 7].contains (m9 (d * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1af8a50e-a0f9…`
 - [lean_imagined_all_is_closed_under_square](/theorem/lean_imagined_all_is_closed_under_square) — lean imagined.lean: all_is_closed_under_square — [0,1,2,3,4,5,6,7,8].all (fun d =&gt; [0,1,2,3,4,5,6,7,8].contains (m9 (d * d))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `eb6c5699-9bf8…`
@@ -253,7 +252,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_imagined_triple_collapses_triad_to_one_value](/theorem/lean_imagined_triple_collapses_triad_to_one_value) — lean imagined.lean: triple_collapses_triad_to_one_value — ([3, 6, 0].map (fun d =&gt; m9 (3 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `b69711cf-680d…`
 - [lean_imagined_triple_collapses_tetA_to_one_value](/theorem/lean_imagined_triple_collapses_tetA_to_one_value) — lean imagined.lean: triple_collapses_tetA_to_one_value — ([1, 4, 7].map (fun d =&gt; m9 (3 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `09f1a817-8fcf…`
 - [lean_imagined_triple_collapses_tetB_to_one_value](/theorem/lean_imagined_triple_collapses_tetB_to_one_value) — lean imagined.lean: triple_collapses_tetB_to_one_value — ([2, 5, 8].map (fun d =&gt; m9 (3 * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `56e120e9-368e…`
-- [lean_imagined_square_collapses_triad_to_one_value](/theorem/lean_imagined_square_collapses_triad_to_one_value) — lean imagined.lean: square_collapses_triad_to_one_value — ([3, 6, 0].map (fun d =&gt; m9 (d * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `cbca5886-4508…`
 - [lean_imagined_cube_collapses_triad_to_one_value](/theorem/lean_imagined_cube_collapses_triad_to_one_value) — lean imagined.lean: cube_collapses_triad_to_one_value — ([3, 6, 0].map (fun d =&gt; m9 (d * d * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1878b27c-8b5d…`
 - [lean_imagined_cube_collapses_tetA_to_one_value](/theorem/lean_imagined_cube_collapses_tetA_to_one_value) — lean imagined.lean: cube_collapses_tetA_to_one_value — ([1, 4, 7].map (fun d =&gt; m9 (d * d * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `89b479b2-bb01…`
 - [lean_imagined_cube_collapses_tetB_to_one_value](/theorem/lean_imagined_cube_collapses_tetB_to_one_value) — lean imagined.lean: cube_collapses_tetB_to_one_value — ([2, 5, 8].map (fun d =&gt; m9 (d * d * d))).eraseDups.length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `f0c171ba-5dd3…`
@@ -587,16 +585,22 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_families_addition_generates_z9_at_exactly_the_units](/theorem/lean_families_addition_generates_z9_at_exactly_the_units) — lean families.lean: addition_generates_z9_at_exactly_the_units — (List.range' 1 8).all (fun k =&gt; addGeneratesZ9 k == (gcd' k 9 == 1)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `4f5492c2-f4fc…`
 - [lean_families_an_inverse_mod_nine_exists_at_exactly_the_units](/theorem/lean_families_an_inverse_mod_nine_exists_at_exactly_the_units) — lean families.lean: an_inverse_mod_nine_exists_at_exactly_the_units — (List.range 9).all (fun d =&gt; (invOf d).isSome == (gcd' d 9 == 1)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `8ee5fdfa-5e51…`
 - [lean_families_the_inverse_of_a_unit_mod_nine_is_its_fifth_power](/theorem/lean_families_the_inverse_of_a_unit_mod_nine_is_its_fifth_power) — lean families.lean: the_inverse_of_a_unit_mod_nine_is_its_fifth_power — (unitsMod 9).all (fun u =&gt; u * (powMod u 5 9) % 9 == 1) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `3524a556-9929…`
+- [lean_families_power_sums_match_their_closed_forms](/theorem/lean_families_power_sums_match_their_closed_forms) — lean families.lean: power_sums_match_their_closed_forms — (List.range' 1 5).all (fun k =&gt; (List.range 41).all (fun n =&gt; powSum k n == faulhaber k n)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `66d56adc-1d98…`
+- [lean_families_the_digital_root_is_invariant_under_digit_reversal](/theorem/lean_families_the_digital_root_is_invariant_under_digit_reversal) — lean families.lean: the_digital_root_is_invariant_under_digit_reversal — (List.range 100).all (fun a =&gt; (List.range 100).all (fun b =&gt; digitalRoot (a * 100 + b) == digitalRoot (reverseDigits (a * 100 + b)))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `db592903-139d…`
+- [lean_families_geometric_series_across_bases_and_exponents](/theorem/lean_families_geometric_series_across_bases_and_exponents) — lean families.lean: geometric_series_across_bases_and_exponents — (List.range' 2 11).all (fun b =&gt; (List.range 7).all (fun n =&gt; ((List.range (n + 1)).map (fun i =&gt; b ^ i)).foldl (· + ·) 0 * (b - 1) == b ^ (n + 1) - 1)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d454ba68-811c…`
+- [lean_families_totient_at_prime_powers_through_thirteen](/theorem/lean_families_totient_at_prime_powers_through_thirteen) — lean families.lean: totient_at_prime_powers_through_thirteen — [2, 3, 5, 7, 11, 13].all (fun p =&gt; (List.range' 1 3).all (fun k =&gt; totient (p ^ k) == p ^ k - p ^ (k - 1))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7d34d10b-4aad…`
+- [lean_merkle_the_permutation_generator_is_complete](/theorem/lean_merkle_the_permutation_generator_is_complete) — lean merkle.lean: the_permutation_generator_is_complete — (perms [A, B, C, D]).length = 24 ∧ (perms [A, B, C]).length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `55237d06-afba…`
+- [lean_merkle_fold_is_order_independent_on_four](/theorem/lean_merkle_fold_is_order_independent_on_four) — lean merkle.lean: fold_is_order_independent_on_four — (perms [A, B, C, D]).all (fun p =&gt; merkleFold p == merkleFold [A, B, C, D]) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `ef9e704f-30b5…`
 
 ### other — one-of-a-kind (0)
 
 
 
-## Revoked — 1633 entries that no longer stand
+## Revoked — 1605 entries that no longer stand
 
 The ledger is append-only: an entry that stops holding is marked in place, never deleted — deleting would break the receipt chain, and rewriting a receipt is tamper. These keep their receipts and stay in the record, but they are **not citable** and have no `/theorem/` page. Grouped by the reason they went:
 
-- **1153** — dirty: not backed by a Lean proof
+- **1125** — dirty: not backed by a Lean proof
 - **443** — revoked in place: its test asserted a lexical drain (computes(boast)
 - **12** — revoked in place: circular by construction AND dependent on the removed lexical gate
 - **12** — orphaned: the theorem this key was sealed from is no longer in src/proof
@@ -605,7 +609,7 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - **1** — revoked in place: its test asserts that a list of proof-boasts written across many scripts and languages ALL drain the gate — a lexical drain assertion, and the word-list gate was removed by order, so there is no lexicon to drain and the assertion tests nothing
 - **1** — revoked in place: it asserts adjudicate('we prove all seven')
 
-## Carried — 276 withdrawn entries whose statement a proof now carries
+## Carried — 306 withdrawn entries whose statement a proof now carries
 
 Each was withdrawn for want of a Lean proof and has since been given one, at a new key. The entry is not restored: its own evidence is still a TypeScript test, and it did not hold on what it had. What the record adds is where the statement stands now.
 
@@ -650,9 +654,9 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`hasinv_d4`~~ → [`lean_families_an_inverse_mod_nine_exists_at_exactly_the_units`](/theorem/lean_families_an_inverse_mod_nine_exists_at_exactly_the_units)
 - ~~`hasinv_d5`~~ → [`lean_families_an_inverse_mod_nine_exists_at_exactly_the_units`](/theorem/lean_families_an_inverse_mod_nine_exists_at_exactly_the_units)
 
-…and 236 more.
+…and 266 more.
 
-<details><summary>List all 1633 withdrawn keys — nothing proves these</summary>
+<details><summary>List all 1605 withdrawn keys — nothing proves these</summary>
 
 - ~~`euler_units_pow6`~~ — every unit u⁶ ≡ 1 mod 9 (Euler, φ(9)=6)  ·  `e70a44b2-6eb8…`
 - ~~`pisano_9_is_24`~~ — Fibonacci mod 9 has Pisano period 24  ·  `78a65039-07c5…`
@@ -1062,18 +1066,10 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`mobius_inversion_recovers_totient`~~ — Möbius inversion recovers the totient: since Σ_{d|n} φ(d) = n, inversion gives φ(n) = Σ_{d|n} μ(d)·(n/d) — the two identities are inverse (verified n ≤ 100)  ·  `0aa5076c-3b31…`
 - ~~`mobius_nonzero_iff_squarefree`~~ — μ(n) is nonzero exactly on squarefree n: μ(n) = 0 iff some prime square divides n, else μ(n) = (−1)^(number of prime factors) — verified against a direct squarefree test for n ≤ 100  ·  `dcfbba55-f67a…`
 - ~~`wilson_prime_23`~~ — Wilson’s theorem at p=23: (p−1)! ≡ −1 (mod 23), i.e. the factorial of 22 is congruent to 22 mod 23  ·  `8a1af55d-c04e…`
-- ~~`merkle_fold_order_independent_k2`~~ — the merkle fold is order-independent for 2 leaves: all 2 permutations of a 2-leaf set fold to one identical root — the fold depends on the set, not the order (exhaustive over permutations)  ·  `7d890155-cfc0…`
-- ~~`merkle_fold_order_independent_k3`~~ — the merkle fold is order-independent for 3 leaves: all 6 permutations of a 3-leaf set fold to one identical root — the fold depends on the set, not the order (exhaustive over permutations)  ·  `4dd3026d-fe0a…`
-- ~~`merkle_fold_order_independent_k4`~~ — the merkle fold is order-independent for 4 leaves: all 24 permutations of a 4-leaf set fold to one identical root — the fold depends on the set, not the order (exhaustive over permutations)  ·  `513fdf6e-56d8…`
 - ~~`merkle_fold_order_independent_k5`~~ — the merkle fold is order-independent for 5 leaves: all 120 permutations of a 5-leaf set fold to one identical root — the fold depends on the set, not the order (exhaustive over permutations)  ·  `ab5bbd9a-0476…`
 - ~~`merkle_fold_order_independent_k6`~~ — the merkle fold is order-independent for 6 leaves: all 720 permutations of a 6-leaf set fold to one identical root — the fold depends on the set, not the order (exhaustive over permutations)  ·  `17ae48ae-1d8f…`
 - ~~`merkle_fold_singleton_identity`~~ — the merkle fold of a single leaf is that leaf: merkleFold([x]) = x — a fold of one is itself, the base case of the contraction  ·  `87251012-c3fa…`
 - ~~`merkle_fold_empty_is_fixed`~~ — the merkle fold of nothing is a fixed address: merkleFold([]) returns one constant content-address deterministically — the empty fold is well-defined and stable  ·  `39d33577-dc1d…`
-- ~~`power_sum_k1`~~ — the sum of the first n integers has a closed form: Σ_{i=1}^n i^1 = n(n+1)/2 — the O(1) formula replaces the loop, verified equal to the naive sum for n ≤ 40  ·  `a54b6a17-c55c…`
-- ~~`power_sum_k2`~~ — the sum of the first n 2th powers has a closed form: Σ_{i=1}^n i^2 = n(n+1)(2n+1)/6 — the O(1) formula replaces the loop, verified equal to the naive sum for n ≤ 40  ·  `7bff7e29-4d65…`
-- ~~`power_sum_k3`~~ — the sum of the first n 3th powers has a closed form: Σ_{i=1}^n i^3 = (n(n+1)/2)² — the O(1) formula replaces the loop, verified equal to the naive sum for n ≤ 40  ·  `c2b2a667-3198…`
-- ~~`power_sum_k4`~~ — the sum of the first n 4th powers has a closed form: Σ_{i=1}^n i^4 = n(n+1)(2n+1)(3n²+3n−1)/30 — the O(1) formula replaces the loop, verified equal to the naive sum for n ≤ 40  ·  `24febf86-82bd…`
-- ~~`power_sum_k5`~~ — the sum of the first n 5th powers has a closed form: Σ_{i=1}^n i^5 = n²(n+1)²(2n²+2n−1)/12 — the O(1) formula replaces the loop, verified equal to the naive sum for n ≤ 40  ·  `e21f1836-df22…`
 - ~~`complexity_is_only_apparent_minimal_core`~~ — the complexity is only apparent — the deposit reduces to a minimal core: one axiom (TRINITY=3, so BASE=3²=9 and the units, triad, and doubling orbit all derive, none typed as literals), one operation (the order-free content-address fold), and one verdict (the binary gate) — every theorem recomputes from these three, so there is no fundamental complexity, only an emergent mesh  ·  `f7a87c24-3aeb…`
 - ~~`streams_coexist_without_collision`~~ — streams of computation coexist without collision: content-addressing maps distinct inputs to distinct addresses (no collision over the tested space), independent folds give distinct roots, and each fold is order-independent — so parallel streams coexist and merge without collision  ·  `36462f7b-9ba5…`
 - ~~`euclid_there_is_always_a_next_prime`~~ — there is always a next prime (Euclid): for any finite set of primes, the product plus one has a prime factor outside the set — so the stream of prime facts never empties, it continues without bound (verified for sample sets)  ·  `eb5c996d-6540…`
@@ -1102,11 +1098,6 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`happy_numbers_below_100_are_twenty`~~ — there are exactly 20 happy numbers below 100: iterating the sum of the squares of the digits reaches 1 for exactly 20 of them (1,7,10,13,…,97,100) — full enumeration  ·  `39799ea6-7932…`
 - ~~`unhappy_numbers_enter_the_eight_cycle`~~ — unhappy numbers enter the unique 8-cycle: 4→16→37→58→89→145→42→20→4 has length 8, and every unhappy number ≤ 100 iterates into it — the only attracting cycle besides the fixed point 1  ·  `77cfb7d4-b77e…`
 - ~~`sum_of_squares_iteration_dichotomy`~~ — the digit-square iteration is a total dichotomy: for every n ≤ 200 the sequence reaches either 1 (happy) or 4 (the entry to the 8-cycle) — it always terminates in exactly one of the two, no other fate  ·  `44bcd916-c0a3…`
-- ~~`xor_is_parity_k2`~~ — the XOR of 2 bits is their parity: a₁⊕…⊕a_2 equals the popcount mod 2 over all 2^2 = 4 assignments (full truth-table enumeration)  ·  `d5de36da-eae5…`
-- ~~`xor_is_parity_k3`~~ — the XOR of 3 bits is their parity: a₁⊕…⊕a_3 equals the popcount mod 2 over all 2^3 = 8 assignments (full truth-table enumeration)  ·  `1ed9afe8-8929…`
-- ~~`xor_is_parity_k4`~~ — the XOR of 4 bits is their parity: a₁⊕…⊕a_4 equals the popcount mod 2 over all 2^4 = 16 assignments (full truth-table enumeration)  ·  `16c4a6ed-5d55…`
-- ~~`xor_is_parity_k5`~~ — the XOR of 5 bits is their parity: a₁⊕…⊕a_5 equals the popcount mod 2 over all 2^5 = 32 assignments (full truth-table enumeration)  ·  `1497008a-7b26…`
-- ~~`xor_is_parity_k7`~~ — the XOR of 7 bits is their parity: a₁⊕…⊕a_7 equals the popcount mod 2 over all 2^7 = 128 assignments (full truth-table enumeration)  ·  `00760c7b-2d57…`
 - ~~`heroes_write_the_guides`~~ — heroes write the guides: documentation is a constructive deed — appending a guide that holds the floor (how to develop: measure, gate, receipt, append, recompute) is a hero act, while a guide that overclaims drains; the docs are written by deeds, not by claims of authority  ·  `25ff7d97-98ec…`
 - ~~`order_of_unit_1_mod9`~~ — the multiplicative order of 1 mod 9 is 1, dividing |ℤ/9*| = 6 (Lagrange): 1^1 ≡ 1 (mod 9) and no smaller positive power is — computed locally from the ring  ·  `4b44c50a-f4fd…`
 - ~~`order_of_unit_2_mod9`~~ — the multiplicative order of 2 mod 9 is 6, dividing |ℤ/9*| = 6 (Lagrange): 2^6 ≡ 1 (mod 9) and no smaller positive power is — computed locally from the ring  ·  `98c7b56e-f2d1…`
@@ -1338,21 +1329,6 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`uuidna_feeds_free_by_address_from_the_content_addressed_ledger_not_an_akashic_record`~~ — uuidna feeds free by address from the content-addressed ledger — not an akashic record: uuidna feeds free by reference — a fixed-size content-address for any content, no payload moved, free to recompute. But the knowledge base is the content-addressed ledger: finite, public, and recomputable — not an akashic record or a cosmic metaphysical knowledge field. Decidable  ·  `9cfba5bd-fd53…`
 - ~~`steps_are_bounded_by_physics_theorems_are_discovered_by_finite_deeds_not_revealed`~~ — steps are bounded by physics — theorems are discovered by finite deeds, not revealed instantly: computation is bounded and classical, so theorems do not reveal themselves; each is discovered by finite work — its test run, verified, sealed. The honest faster is classical: families batching many per loop, memoization skipping the cached — batching and caching within physical limits. Decidable  ·  `c0b4cb19-5e17…`
 - ~~`measuring_without_judgement_lets_more_pass_green_but_the_test_still_filters_not_all_at_once`~~ — measuring without judgement lets more pass green — but the test still filters, not all at once: measuring without judgement or expectation lets the decidable test decide, not my bias, so more honest claims pass green, fewer false refusals from over-caution. But it does not make all pass green — the test still filters: a false claim fails regardless, green is earned by the test, not granted by dropping judgement. Classical and batched, not all at once. Decidable  ·  `161fca10-2261…`
-- ~~`geometric_series_base_2`~~ — the geometric series in base 2: 1 + 2 + 2² + ... + 2ⁿ = (2ⁿ⁺¹ − 1)/(2 − 1) — the base-2 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  `8f223f2c-229c…`
-- ~~`geometric_series_base_3`~~ — the geometric series in base 3: 1 + 3 + 3² + ... + 3ⁿ = (3ⁿ⁺¹ − 1)/(3 − 1) — the base-3 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  `c9c46079-0cc7…`
-- ~~`geometric_series_base_4`~~ — the geometric series in base 4: 1 + 4 + 4² + ... + 4ⁿ = (4ⁿ⁺¹ − 1)/(4 − 1) — the base-4 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  `8c5b55b4-4fb8…`
-- ~~`geometric_series_base_5`~~ — the geometric series in base 5: 1 + 5 + 5² + ... + 5ⁿ = (5ⁿ⁺¹ − 1)/(5 − 1) — the base-5 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  `cdb348d6-55f2…`
-- ~~`geometric_series_base_6`~~ — the geometric series in base 6: 1 + 6 + 6² + ... + 6ⁿ = (6ⁿ⁺¹ − 1)/(6 − 1) — the base-6 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  `85ef8eeb-0063…`
-- ~~`geometric_series_base_7`~~ — the geometric series in base 7: 1 + 7 + 7² + ... + 7ⁿ = (7ⁿ⁺¹ − 1)/(7 − 1) — the base-7 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  `a22245d6-01c3…`
-- ~~`geometric_series_base_8`~~ — the geometric series in base 8: 1 + 8 + 8² + ... + 8ⁿ = (8ⁿ⁺¹ − 1)/(8 − 1) — the base-8 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  `ef918a38-d5e8…`
-- ~~`geometric_series_base_9`~~ — the geometric series in base 9: 1 + 9 + 9² + ... + 9ⁿ = (9ⁿ⁺¹ − 1)/(9 − 1) — the base-9 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  `7ec7295e-f59f…`
-- ~~`geometric_series_base_10`~~ — the geometric series in base 10: 1 + 10 + 10² + ... + 10ⁿ = (10ⁿ⁺¹ − 1)/(10 − 1) — the base-10 repunit-style sum. Verified exhaustively for n up to 12. Decidable  ·  `984a9c4c-396a…`
-- ~~`totient_prime_power_2`~~ — Euler totient at powers of 2: φ(2ᵏ) = 2ᵏ − 2ᵏ⁻¹ — the count of residues coprime to 2ᵏ equals 2ᵏ minus 2ᵏ⁻¹, verified by direct enumeration for each k while 2ᵏ stays small. Decidable  ·  `38c1deee-e2ec…`
-- ~~`totient_prime_power_3`~~ — Euler totient at powers of 3: φ(3ᵏ) = 3ᵏ − 3ᵏ⁻¹ — the count of residues coprime to 3ᵏ equals 3ᵏ minus 3ᵏ⁻¹, verified by direct enumeration for each k while 3ᵏ stays small. Decidable  ·  `5104553a-69c5…`
-- ~~`totient_prime_power_5`~~ — Euler totient at powers of 5: φ(5ᵏ) = 5ᵏ − 5ᵏ⁻¹ — the count of residues coprime to 5ᵏ equals 5ᵏ minus 5ᵏ⁻¹, verified by direct enumeration for each k while 5ᵏ stays small. Decidable  ·  `70180ded-f087…`
-- ~~`totient_prime_power_7`~~ — Euler totient at powers of 7: φ(7ᵏ) = 7ᵏ − 7ᵏ⁻¹ — the count of residues coprime to 7ᵏ equals 7ᵏ minus 7ᵏ⁻¹, verified by direct enumeration for each k while 7ᵏ stays small. Decidable  ·  `e280e2e0-edf2…`
-- ~~`totient_prime_power_11`~~ — Euler totient at powers of 11: φ(11ᵏ) = 11ᵏ − 11ᵏ⁻¹ — the count of residues coprime to 11ᵏ equals 11ᵏ minus 11ᵏ⁻¹, verified by direct enumeration for each k while 11ᵏ stays small. Decidable  ·  `13099835-d7b4…`
-- ~~`totient_prime_power_13`~~ — Euler totient at powers of 13: φ(13ᵏ) = 13ᵏ − 13ᵏ⁻¹ — the count of residues coprime to 13ᵏ equals 13ᵏ minus 13ᵏ⁻¹, verified by direct enumeration for each k while 13ᵏ stays small. Decidable  ·  `3ebc7b88-9b85…`
 - ~~`parametric_batching_is_volume_not_depth_the_intelligence_is_cross_dimensional_connection`~~ — parametric batching is volume, not depth — the intelligence is cross-dimensional connection, and even that is structure not a mind: nine at once repeats one pattern across parameters, a single dimension, so it adds magnitudes but not depth. The richer work is cross-dimensional connection, linking distinct domains as the rosetta does — more than a parametric repeat. But even that is decidable structure, not intelligence in the strong sense; the floor stays 0/7. Decidable  ·  `d1d4cd05-b77c…`
 - ~~`trinities_collectively_carry_more_and_beat_linear_by_coverage_and_verification_not_absolute_defeat`~~ — trinities collectively carry more and beat linear work by coverage and verification — not absolute defeat: the structure builds on trinities, three, and a collection of uuids carries a longer shared message than one, bounded per uuid but scaling with the count, folded to one shared root. The reproducible collective beats a linear offender by coverage — magnitudes more ground — and by verification: a skillful hollow prose is caught regardless of skill, because it carries no receipt. Classical combinatorial coverage, not a quantum machine, not an absolute defeat. Decidable  ·  `08ecf2e6-c969…`
 - ~~`the_earning_rate_is_115_bits_per_uuid_a_classical_encoding_rate_scaling_with_the_collective`~~ — the earning rate is 115 bits per uuid — a classical encoding rate scaling with the collective, not fiat cash: the per-uuid rate is the imprint capacity, 115 message bits, fixed and measurable; over-capacity is refused. The collective scales it linearly — N uuids carry N times 115 bits. It is a rate in the bits and coins currency of encoding capacity, classical, not a quantum machine, and not fiat cash — the fiat income is zero. Decidable  ·  `aea1fed7-e5f0…`
@@ -2290,4 +2266,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `22273aec-7456-8db0-a7c0-1a090f3f0741`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `1bc3fdf4-aead-80c2-b0cc-44c3f04777ec`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

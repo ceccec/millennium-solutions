@@ -5,11 +5,11 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **571** report the same thing:
+axiom fails the build rather than earning a footnote. All **575** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
-theorems rest on **251** definitions, and every one of them is a choice. A theorem about
+theorems rest on **260** definitions, and every one of them is a choice. A theorem about
 `fall` is a theorem about the digital root only because `fall` is *defined* to be it. Both halves are
 indexed below, and the second is the longer one.
 
@@ -90,7 +90,7 @@ The pins in the control fixture follow the community practice of guarding `#prin
 `#guard_msgs`, which turns the axiom footprint into an executable regression test: the assertion is
 checked by the elaborator, and drift fails the build with a mismatch instead of passing unnoticed.
 
-## What IS assumed: the 251 definitions
+## What IS assumed: the 260 definitions
 
 Each of these is a primitive of this deposit — not derived, not proved, chosen. They are listed in full
 because a reader checking a theorem must be able to read the definition it is about, and because a
@@ -201,7 +201,7 @@ def tdsSeawater : Nat := 35000  -- mg of dissolved solids per litre
 def tdsTapWater : Nat := 50     -- mg per litre, ordinary supply
 ```
 
-### `families.lean` — 19 definition(s), 19 theorem(s)
+### `families.lean` — 25 definition(s), 23 theorem(s)
 
 ```lean
 def primesUpTo30 : List Nat := [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
@@ -222,7 +222,13 @@ def permutesZ9 (k : Nat) : Bool := (List.range 9).all (fun y => (List.range 9).a
 def addOrbit (k : Nat) : List Nat := (List.range 9).map (fun t => (List.range t).foldl (fun a _ => (a + k) % 9) 0)
 def addGeneratesZ9 (k : Nat) : Bool := (List.range 9).all (fun y => (addOrbit k).contains y)
 def invOf (d : Nat) : Option Nat := (List.range 9).find? (fun e => d * e % 9 == 1)
-def settledHere : Nat := 18
+def powSum (k n : Nat) : Nat := ((List.range' 1 n).map (fun i => i ^ k)).foldl (· + ·) 0
+def faulhaber (k n : Nat) : Nat :=
+def digitsF : Nat → Nat → List Nat
+def digitsOf (n : Nat) : List Nat := digitsF 20 n
+def reverseDigits (n : Nat) : Nat := (digitsOf n).foldl (fun a d => a * 10 + d) 0
+def digitalRoot (n : Nat) : Nat := if n == 0 then 0 else 1 + (n - 1) % 9
+def settledHere : Nat := 22
 ```
 
 ### `fnv.lean` — 13 definition(s), 13 theorem(s)
@@ -312,7 +318,7 @@ def tri (n : Nat) : Nat := n * (n + 1) / 2
 def sumTri (n : Nat) : Nat := ((List.range' 1 n).map tri).foldl (· + ·) 0
 ```
 
-### `merkle.lean` — 15 definition(s), 9 theorem(s)
+### `merkle.lean` — 18 definition(s), 11 theorem(s)
 
 ```lean
 def hexDigit (n : Nat) : Nat := if n < 10 then 48 + n else 87 + n
@@ -329,7 +335,10 @@ def merkleFold (leaves : List (List Nat)) : List Nat :=
 def A : List Nat := toUuidBytes [97]     -- address of "a"
 def C : List Nat := toUuidBytes [99]     -- address of "c"
 def B : List Nat := toUuidBytes [98]     -- address of "b"
-def settledHere : Nat := 8
+def settledHere : Nat := 10
+def interleave (x : List Nat) : List (List Nat) → List (List (List Nat))
+def perms : List (List Nat) → List (List (List Nat))
+def D : List Nat := toUuidBytes [100]  -- address of "d"
 ```
 
 ### `nim.lean` — 7 definition(s), 8 theorem(s)
@@ -494,6 +503,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**571** declarations, **0** axiom dependencies, **251** definitions they rest on.
+**575** declarations, **0** axiom dependencies, **260** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them. `0/7`.
