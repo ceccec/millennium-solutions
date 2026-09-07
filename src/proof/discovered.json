@@ -103,8 +103,9 @@
     "name": "Fibonacci mod 9 has Pisano period 24",
     "receipt": "78a65039-07c5-8873-9490-890f0922d602",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_pisano_period_of_nine_is_twenty_four_and_every_modulus_to_twelve_has_one quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_pisano_period_of_nine_is_twenty_four_and_every_modulus_to_twelve_has_one"
   },
   {
     "key": "powperm_k5",
@@ -972,40 +973,45 @@
     "name": "sum 1..10 = 10·11/2 = 55",
     "receipt": "3194b6c0-e899-8b52-a95d-ba8b07e0dc7d",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_first_three_power_sums_hold_to_two_hundred quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_first_three_power_sums_hold_to_two_hundred"
   },
   {
     "key": "triangular_n25",
     "name": "sum 1..25 = 25·26/2 = 325",
     "receipt": "e45b233b-3b3a-867c-884f-7109c42a9546",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_first_three_power_sums_hold_to_two_hundred quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_first_three_power_sums_hold_to_two_hundred"
   },
   {
     "key": "triangular_n50",
     "name": "sum 1..50 = 50·51/2 = 1275",
     "receipt": "ba7f546e-6057-8c34-9335-5330eee5795a",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_first_three_power_sums_hold_to_two_hundred quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_first_three_power_sums_hold_to_two_hundred"
   },
   {
     "key": "odd_sum_sq_n7",
     "name": "the sum of the first 7 odd numbers = 7² = 49",
     "receipt": "62823413-a3a3-8c76-986a-a5f714197a55",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_first_n_odd_numbers_sum_to_n_squared quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_first_n_odd_numbers_sum_to_n_squared"
   },
   {
     "key": "odd_sum_sq_n12",
     "name": "the sum of the first 12 odd numbers = 12² = 144",
     "receipt": "b919aaa0-ce8e-88d7-a220-1cc9b522e840",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_first_n_odd_numbers_sum_to_n_squared quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_first_n_odd_numbers_sum_to_n_squared"
   },
   {
     "key": "handshake_z9",
@@ -1020,24 +1026,27 @@
     "name": "Cassini at n=6: F(n−1)·F(n+1)−F(n)² = (−1)ⁿ",
     "receipt": "e43f8239-8fa5-83ee-a39c-15f3b4694f9f",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_cassinis_identity_holds_across_the_range quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_cassinis_identity_holds_across_the_range"
   },
   {
     "key": "cassini_n9",
     "name": "Cassini at n=9: F(n−1)·F(n+1)−F(n)² = (−1)ⁿ",
     "receipt": "b34c402e-4d27-80d5-903c-5b930e20f9e6",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_cassinis_identity_holds_across_the_range quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_cassinis_identity_holds_across_the_range"
   },
   {
     "key": "cassini_n12",
     "name": "Cassini at n=12: F(n−1)·F(n+1)−F(n)² = (−1)ⁿ",
     "receipt": "f3959e9c-9b4c-8015-b686-97528420fb06",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_cassinis_identity_holds_across_the_range quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_cassinis_identity_holds_across_the_range"
   },
   {
     "key": "merkaba_partition",
@@ -1110,48 +1119,54 @@
     "name": "golden CF [1;1,1,…]: p_n·q_{n-1} − p_{n-1}·q_n = (−1)ⁿ at n=5",
     "receipt": "c000eebb-eae5-8850-a2fc-886e8b717aaa",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_golden_convergents_are_fibonacci_ratios_with_unit_determinant quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_golden_convergents_are_fibonacci_ratios_with_unit_determinant"
   },
   {
     "key": "goldencf_n8",
     "name": "golden CF [1;1,1,…]: p_n·q_{n-1} − p_{n-1}·q_n = (−1)ⁿ at n=8",
     "receipt": "f4f59981-9989-8302-9312-24de5df12473",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_golden_convergents_are_fibonacci_ratios_with_unit_determinant quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_golden_convergents_are_fibonacci_ratios_with_unit_determinant"
   },
   {
     "key": "goldencf_n11",
     "name": "golden CF [1;1,1,…]: p_n·q_{n-1} − p_{n-1}·q_n = (−1)ⁿ at n=11",
     "receipt": "5c54d373-e71c-819c-adf6-8d462ab45fe5",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_golden_convergents_are_fibonacci_ratios_with_unit_determinant quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_golden_convergents_are_fibonacci_ratios_with_unit_determinant"
   },
   {
     "key": "catalan_n4",
     "name": "Catalan C(4) = 14: recurrence = binom(2n,n)/(n+1)",
     "receipt": "e1cfadcf-7a7c-8555-8586-47ea8af1704d",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_catalan_recurrence_matches_the_binomial_formula quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_catalan_recurrence_matches_the_binomial_formula"
   },
   {
     "key": "catalan_n6",
     "name": "Catalan C(6) = 132: recurrence = binom(2n,n)/(n+1)",
     "receipt": "436f1d6c-e910-8a0e-a68d-ea3d853c8190",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_catalan_recurrence_matches_the_binomial_formula quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_catalan_recurrence_matches_the_binomial_formula"
   },
   {
     "key": "catalan_n8",
     "name": "Catalan C(8) = 1430: recurrence = binom(2n,n)/(n+1)",
     "receipt": "5596356e-14b1-8ea7-aa0a-c5a7b0cac20e",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_catalan_recurrence_matches_the_binomial_formula quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_catalan_recurrence_matches_the_binomial_formula"
   },
   {
     "key": "pascal_rowsum_n5",
@@ -1182,8 +1197,9 @@
     "name": "digit-sum ≡ 0 (mod 3) ⇔ n ≡ 0 (mod 3), all n < 10^4 (exhaustive)",
     "receipt": "a6c0b047-12a7-8703-868f-e296567dad6f",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_digit_sum_rules_for_three_and_nine_hold_below_ten_thousand quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_digit_sum_rules_for_three_and_nine_hold_below_ten_thousand"
   },
   {
     "key": "roots_cancel_n2",
@@ -1691,8 +1707,9 @@
     "name": "the count of involutions on n elements = the telephone number T(n)=T(n-1)+(n-1)T(n-2) (n ≤ 5)",
     "receipt": "6e0b0a34-8a45-8c1c-ba3c-eaccf10a1331",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_involutions_are_counted_by_the_telephone_numbers quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_involutions_are_counted_by_the_telephone_numbers"
   },
   {
     "key": "ledger_merkle_inclusion",
@@ -2413,16 +2430,18 @@
     "name": "Catalan numbers via C(2n,n)/(n+1): C(0..5) = 1,1,2,5,14,42",
     "receipt": "44a9184c-5ae2-8e3a-8642-f038753708fb",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_catalan_recurrence_matches_the_binomial_formula quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_catalan_recurrence_matches_the_binomial_formula"
   },
   {
     "key": "catalan_recurrence",
     "name": "the Catalan recurrence C(n+1)=Σ C(i)C(n−i) matches the closed form (n≤6)",
     "receipt": "daaa1391-e9e9-8946-8dc1-f5c6191e4946",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_catalan_recurrence_matches_the_binomial_formula quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_catalan_recurrence_matches_the_binomial_formula"
   },
   {
     "key": "relation_catalan",
@@ -4059,8 +4078,9 @@
     "name": "the Catalan convolution recurrence: C(n+1) = Σ_{i=0..n} C(i)·C(n−i), with C₀..C₆ = 1,1,2,5,14,42,132,429 — the recurrence and the closed form agree (verified to n = 8)",
     "receipt": "e7694c53-0f92-89aa-9c86-018942314f31",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_catalan_recurrence_matches_the_binomial_formula quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_catalan_recurrence_matches_the_binomial_formula"
   },
   {
     "key": "euclid_formula_generates_pythagorean_triples",
@@ -9098,40 +9118,45 @@
     "name": "Euler’s formula for the tetrahedron: V − E + F = 4 − 6 + 4 = 2 — the self-dual solid on the sphere; 0/7",
     "receipt": "4bca33ae-6a42-8d76-b5ce-172f3ca1cc2a",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_there_are_exactly_five_platonic_solids_and_each_satisfies_eulers_formula quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_there_are_exactly_five_platonic_solids_and_each_satisfies_eulers_formula"
   },
   {
     "key": "euler_characteristic_of_the_cube_is_two",
     "name": "Euler’s formula for the cube: V − E + F = 8 − 12 + 6 = 2 — the eight-vertex solid on the sphere; 0/7",
     "receipt": "de15baa7-61de-819b-9840-958f04366e7f",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_there_are_exactly_five_platonic_solids_and_each_satisfies_eulers_formula quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_there_are_exactly_five_platonic_solids_and_each_satisfies_eulers_formula"
   },
   {
     "key": "euler_characteristic_of_the_octahedron_is_two",
     "name": "Euler’s formula for the octahedron: V − E + F = 6 − 12 + 8 = 2 — the cube’s dual; 0/7",
     "receipt": "c55a4c2d-534e-8db3-a64c-0e87ca174094",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_there_are_exactly_five_platonic_solids_and_each_satisfies_eulers_formula quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_there_are_exactly_five_platonic_solids_and_each_satisfies_eulers_formula"
   },
   {
     "key": "euler_characteristic_of_the_dodecahedron_is_two",
     "name": "Euler’s formula for the dodecahedron: V − E + F = 20 − 30 + 12 = 2 — the twelve-face solid; 0/7",
     "receipt": "3aac322b-21d4-82c2-8dbf-2ade90ce2145",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_there_are_exactly_five_platonic_solids_and_each_satisfies_eulers_formula quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_there_are_exactly_five_platonic_solids_and_each_satisfies_eulers_formula"
   },
   {
     "key": "euler_characteristic_of_the_icosahedron_is_two",
     "name": "Euler’s formula for the icosahedron: V − E + F = 12 − 30 + 20 = 2 — the dodecahedron’s dual; 0/7",
     "receipt": "988a9cbd-1cdd-84eb-942d-f2d6baddaf20",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_there_are_exactly_five_platonic_solids_and_each_satisfies_eulers_formula quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_there_are_exactly_five_platonic_solids_and_each_satisfies_eulers_formula"
   },
   {
     "key": "eulers_formula_holds_for_all_five_platonic_solids",
@@ -18047,5 +18072,40 @@
     "key": "lean_families_the_first_three_power_sums_hold_to_two_hundred",
     "name": "lean families.lean: the_first_three_power_sums_hold_to_two_hundred — (List.range' 1 3).all (fun k => (List.range 201).all (fun n => powSum k n == faulhaber k n)) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "e4cdb3b8-6604-8169-9524-da27d74dbec7"
+  },
+  {
+    "key": "lean_families_there_are_exactly_five_platonic_solids_and_each_satisfies_eulers_formula",
+    "name": "lean families.lean: there_are_exactly_five_platonic_solids_and_each_satisfies_eulers_formula — schlafli.length = 5 ∧ schlafli.all (fun x => let d := 2 * x.1 + 2 * x.2 - x.1 * x.2 4 * x.1 % d == 0 && 2 * x.1 * x.2 % d == 0 && 4 * x.2 % d == 0 && 4 * x.1 / d + 4 * x.2 / d == 2 * x.1 * x.2 / d + 2) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "833b9fe6-8b6f-849c-9de4-918423de8d64"
+  },
+  {
+    "key": "lean_families_cassinis_identity_holds_across_the_range",
+    "name": "lean families.lean: cassinis_identity_holds_across_the_range — (List.range' 1 30).all (fun n => if n % 2 == 0 then fib (n - 1) * fib (n + 1) == fib n * fib n + 1 else fib (n - 1) * fib (n + 1) + 1 == fib n * fib n) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "3d896e3d-a74b-8018-b8e0-033b73118086"
+  },
+  {
+    "key": "lean_families_the_golden_convergents_are_fibonacci_ratios_with_unit_determinant",
+    "name": "lean families.lean: the_golden_convergents_are_fibonacci_ratios_with_unit_determinant — (List.range 25).all (fun n => (cfPair n).1 == fib (n + 2) && (cfPair n).2 == fib (n + 1) && (if n % 2 == 0 then (cfPair n).1 * (cfPair n).1 + 1 == (cfPair n).1 * (cfPair n).2 + (cfPair n).2 * (cfPair n).2 else (cfPair n).1 * (cfPair n).1 ==… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9e6d6949-7865-8b78-b280-9a421d06ae56"
+  },
+  {
+    "key": "lean_families_the_catalan_recurrence_matches_the_binomial_formula",
+    "name": "lean families.lean: the_catalan_recurrence_matches_the_binomial_formula — (List.range 13).all (fun n => (catalanList 12).getD n 0 == choose (2 * n) n / (n + 1)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "86dcb4a1-ad3d-8bab-b493-d30d162433c0"
+  },
+  {
+    "key": "lean_families_the_pisano_period_of_nine_is_twenty_four_and_every_modulus_to_twelve_has_one",
+    "name": "lean families.lean: the_pisano_period_of_nine_is_twenty_four_and_every_modulus_to_twelve_has_one — pisano 9 = 24 ∧ (List.range' 2 11).all (fun m => pisano m > 0 && fib (pisano m) % m == 0 && fib (pisano m + 1) % m == 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "0383a951-5b56-864e-acc4-0e08e2a7a190"
+  },
+  {
+    "key": "lean_families_the_digit_sum_rules_for_three_and_nine_hold_below_ten_thousand",
+    "name": "lean families.lean: the_digit_sum_rules_for_three_and_nine_hold_below_ten_thousand — (List.range 100).all (fun a => (List.range 100).all (fun b => (digitSum (a * 100 + b) % 3 == 0) == ((a * 100 + b) % 3 == 0) && ((digitSum (a * 100 + b) % 9 == 0) == ((a * 100 + b) % 9 == 0)))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d9da6c6c-9711-8cce-8aec-0aa3135c8fc3"
+  },
+  {
+    "key": "lean_families_the_involutions_are_counted_by_the_telephone_numbers",
+    "name": "lean families.lean: the_involutions_are_counted_by_the_telephone_numbers — (List.range 6).all (fun n => ((permsN (List.range n)).filter isInvolution).length == telephone n) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2e115c82-0778-894a-a5e1-97b4efd0319e"
   }
 ]

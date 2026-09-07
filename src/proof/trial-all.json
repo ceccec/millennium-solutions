@@ -14932,5 +14932,47 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "e4cdb3b8-6604-8169-9524-da27d74dbec7"
+  },
+  {
+    "key": "lean_families_there_are_exactly_five_platonic_solids_and_each_satisfies_eulers_formula",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "833b9fe6-8b6f-849c-9de4-918423de8d64"
+  },
+  {
+    "key": "lean_families_cassinis_identity_holds_across_the_range",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3d896e3d-a74b-8018-b8e0-033b73118086"
+  },
+  {
+    "key": "lean_families_the_golden_convergents_are_fibonacci_ratios_with_unit_determinant",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9e6d6949-7865-8b78-b280-9a421d06ae56"
+  },
+  {
+    "key": "lean_families_the_catalan_recurrence_matches_the_binomial_formula",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "86dcb4a1-ad3d-8bab-b493-d30d162433c0"
+  },
+  {
+    "key": "lean_families_the_pisano_period_of_nine_is_twenty_four_and_every_modulus_to_twelve_has_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0383a951-5b56-864e-acc4-0e08e2a7a190"
+  },
+  {
+    "key": "lean_families_the_digit_sum_rules_for_three_and_nine_hold_below_ten_thousand",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d9da6c6c-9711-8cce-8aec-0aa3135c8fc3"
+  },
+  {
+    "key": "lean_families_the_involutions_are_counted_by_the_telephone_numbers",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2e115c82-0778-894a-a5e1-97b4efd0319e"
   }
 ]

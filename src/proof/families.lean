@@ -331,8 +331,105 @@ set_option maxRecDepth 400000 in
 theorem the_first_three_power_sums_hold_to_two_hundred :
   (List.range' 1 3).all (fun k => (List.range 201).all (fun n => powSum k n == faulhaber k n)) := by decide
 
+-- ── A FOURTH OCTAVE: FIBONACCI, COUNTING, AND THE FIVE SOLIDS ───────────────────────────────────────────
+
+/-- Fibonacci by carrying a pair forward. The two-clause recurrence `fib n + fib (n+1)` is exponential when
+    the kernel evaluates it — `fib 25` alone is a quarter of a million calls — so it is written linearly. -/
+def fibPair : Nat → Nat × Nat
+  | 0 => (0, 1)
+  | Nat.succ n => let (a, b) := fibPair n; (b, a + b)
+def fib (n : Nat) : Nat := (fibPair n).1
+def digitSum (n : Nat) : Nat := (digitsOf n).foldl (· + ·) 0
+
+/-- the convergents of the continued fraction [1; 1, 1, 1, …], numerator and denominator carried together -/
+def cfPair : Nat → Nat × Nat
+  | 0 => (1, 1)
+  | Nat.succ n => let (p, q) := cfPair n; (p + q, p)
+
+/-- Catalan by the convolution recurrence, built as a list because C(n+1) needs every earlier term and a
+    direct recursive call on `n - i` is not structural — the well-founded version would cost the file its
+    axiom-free status, which is the same constraint that shaped gcdFuel and digitsF. -/
+def catalanList : Nat → List Nat
+  | 0 => [1]
+  | Nat.succ n =>
+    let prev := catalanList n
+    prev ++ [((List.range (n + 1)).map (fun i => prev.getD i 0 * prev.getD (n - i) 0)).foldl (· + ·) 0]
+
+def pisano (m : Nat) : Nat := ((List.range' 1 100).find? (fun k => fib k % m == 0 && fib (k + 1) % m == 1)).getD 0
+
+def interleaveN (x : Nat) : List Nat → List (List Nat)
+  | [] => [[x]]
+  | y :: ys => (x :: y :: ys) :: (interleaveN x ys).map (fun l => y :: l)
+def permsN : List Nat → List (List Nat)
+  | [] => [[]]
+  | x :: xs => (permsN xs).flatMap (fun p => interleaveN x p)
+def isInvolution (p : List Nat) : Bool := (List.range p.length).all (fun i => p.getD (p.getD i 0) 0 == i)
+def telephone : Nat → Nat
+  | 0 => 1
+  | 1 => 1
+  | Nat.succ (Nat.succ n) => telephone (n + 1) + (n + 1) * telephone n
+
+/-- the regular polyhedra, DERIVED rather than typed: (p, q) is p-gonal faces with q meeting at a vertex,
+    and a convex solid exists exactly where 2p + 2q > pq. Listing V, E, F for five solids would have been
+    five rows of hand-typed data, and Euler's formula on hand-typed data checks the typing. -/
+def schlafli : List (Nat × Nat) :=
+  ((List.range' 3 8).flatMap (fun p => (List.range' 3 8).map (fun q => (p, q)))).filter (fun x => 2 * x.1 + 2 * x.2 > x.1 * x.2)
+
+-- ── there are exactly five, and each satisfies V + F = E + 2 ──
+--    Written as V + F = E + 2 rather than V − E + F = 2: the subtraction is the same statement over ℤ and a
+--    truncation over Nat, and a theorem that is only true because a subtraction clipped is not a theorem.
+theorem there_are_exactly_five_platonic_solids_and_each_satisfies_eulers_formula :
+  schlafli.length = 5 ∧ schlafli.all (fun x =>
+    let d := 2 * x.1 + 2 * x.2 - x.1 * x.2
+    4 * x.1 % d == 0 && 2 * x.1 * x.2 % d == 0 && 4 * x.2 % d == 0 &&
+    4 * x.1 / d + 4 * x.2 / d == 2 * x.1 * x.2 / d + 2) := by decide
+
+-- ── Cassini: F(n−1)·F(n+1) − F(n)² alternates, so it is stated as the two cases Nat can express ──
+theorem cassinis_identity_holds_across_the_range :
+  (List.range' 1 30).all (fun n =>
+    if n % 2 == 0 then fib (n - 1) * fib (n + 1) == fib n * fib n + 1
+    else fib (n - 1) * fib (n + 1) + 1 == fib n * fib n) := by decide
+
+-- ── the golden continued fraction: its convergents ARE the Fibonacci ratios, and the determinant is ±1 ──
+--    More than Cassini restated: it identifies pₙ and qₙ, which is the part a determinant identity alone
+--    does not say.
+theorem the_golden_convergents_are_fibonacci_ratios_with_unit_determinant :
+  (List.range 25).all (fun n =>
+    (cfPair n).1 == fib (n + 2) && (cfPair n).2 == fib (n + 1) &&
+    -- pₙ² − pₙqₙ − qₙ² = (−1)^(n+1), which is the determinant pₙqₙ₊₁ − pₙ₊₁qₙ written out through
+    -- qₙ₊₁ = pₙ and pₙ₊₁ = pₙ + qₙ. My first attempt compared pₙqₙ against pₙ² and the kernel refused it —
+    -- the identity was misremembered, not the arithmetic.
+    (if n % 2 == 0 then (cfPair n).1 * (cfPair n).1 + 1 == (cfPair n).1 * (cfPair n).2 + (cfPair n).2 * (cfPair n).2
+     else (cfPair n).1 * (cfPair n).1 == (cfPair n).1 * (cfPair n).2 + (cfPair n).2 * (cfPair n).2 + 1)) := by decide
+
+-- ── Catalan: the convolution recurrence and the binomial formula are the same sequence ──
+set_option maxRecDepth 100000 in
+theorem the_catalan_recurrence_matches_the_binomial_formula :
+  (List.range 13).all (fun n => (catalanList 12).getD n 0 == choose (2 * n) n / (n + 1)) := by decide
+
+-- ── the Pisano period: 24 at nine, and every modulus to twelve has one ──
+set_option maxRecDepth 100000 in
+theorem the_pisano_period_of_nine_is_twenty_four_and_every_modulus_to_twelve_has_one :
+  pisano 9 = 24 ∧ (List.range' 2 11).all (fun m =>
+    pisano m > 0 && fib (pisano m) % m == 0 && fib (pisano m + 1) % m == 1) := by decide
+
+-- ── the digit-sum rules for three and nine, over every number below ten thousand ──
+set_option maxRecDepth 400000 in
+set_option maxHeartbeats 2000000 in
+theorem the_digit_sum_rules_for_three_and_nine_hold_below_ten_thousand :
+  (List.range 100).all (fun a => (List.range 100).all (fun b =>
+    (digitSum (a * 100 + b) % 3 == 0) == ((a * 100 + b) % 3 == 0) &&
+    ((digitSum (a * 100 + b) % 9 == 0) == ((a * 100 + b) % 9 == 0)))) := by decide
+
+-- ── the involutions of a finite set are counted by the telephone numbers ──
+--    Counted by ENUMERATING the permutations and filtering the self-inverse ones, so the recurrence is
+--    checked against the objects it claims to count rather than against another recurrence.
+set_option maxRecDepth 100000 in
+theorem the_involutions_are_counted_by_the_telephone_numbers :
+  (List.range 6).all (fun n => ((permsN (List.range n)).filter isInvolution).length == telephone n) := by decide
+
 -- ── what these settle ──
-def settledHere : Nat := 33
-theorem families_settle_their_ranges : settledHere = 33 := rfl
+def settledHere : Nat := 40
+theorem families_settle_their_ranges : settledHere = 40 := rfl
 
 end Families

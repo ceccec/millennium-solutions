@@ -61,8 +61,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free and axiom-free, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 586 of them across 31 files and
-7 wings; 578 close by exhaustion over a stated finite domain and the
+(\texttt{npm run latex-gate}). There are 593 of them across 31 files and
+7 wings; 585 close by exhaustion over a stated finite domain and the
 remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -556,8 +556,43 @@ remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 603 cases. \hfill$\square$
 
+\begin{theorem}[\texttt{there\_are\_exactly\_five\_platonic\_solids\_and\_each\_satisfies\_eulers\_formula}]
+\texttt{schlafli.length = 5 ∧ schlafli.all (fun x => let d := 2 * x.1 + 2 * x.2 - x.1 * x.2 4 * x.1 \% d == 0 \&\& 2 * x.1 * x.2 \% d == 0 \&\& 4 * x.2 \% d == 0 \&\& 4 * x.1 / d + 4 * x.2 / d == 2 * x.1 * x.2 / d + 2)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{cassinis\_identity\_holds\_across\_the\_range}]
+\[ \forall n \in \{1,\dots,30\},\; \begin{cases}\mathrm{fib}\mathopen{}\left(n - 1\right) \cdot \mathrm{fib}\mathopen{}\left(n + 1\right) = \mathrm{fib}\mathopen{}\left(n\right) \cdot \mathrm{fib}\mathopen{}\left(n\right) + 1 & \text{if } n \bmod 2 = 0\\ \mathrm{fib}\mathopen{}\left(n - 1\right) \cdot \mathrm{fib}\mathopen{}\left(n + 1\right) + 1 = \mathrm{fib}\mathopen{}\left(n\right) \cdot \mathrm{fib}\mathopen{}\left(n\right) & \text{otherwise}\end{cases} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 30 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_golden\_convergents\_are\_fibonacci\_ratios\_with\_unit\_determinant}]
+\[ \forall n \in \{0,\dots,24\},\; \mathrm{cfPair}\mathopen{}\left(n\right)_{1} = \mathrm{fib}\mathopen{}\left(n + 2\right) \land \mathrm{cfPair}\mathopen{}\left(n\right)_{2} = \mathrm{fib}\mathopen{}\left(n + 1\right) \land \begin{cases}\mathrm{cfPair}\mathopen{}\left(n\right)_{1} \cdot \mathrm{cfPair}\mathopen{}\left(n\right)_{1} + 1 = \mathrm{cfPair}\mathopen{}\left(n\right)_{1} \cdot \mathrm{cfPair}\mathopen{}\left(n\right)_{2} + \mathrm{cfPair}\mathopen{}\left(n\right)_{2} \cdot \mathrm{cfPair}\mathopen{}\left(n\right)_{2} & \text{if } n \bmod 2 = 0\\ \mathrm{cfPair}\mathopen{}\left(n\right)_{1} \cdot \mathrm{cfPair}\mathopen{}\left(n\right)_{1} = \mathrm{cfPair}\mathopen{}\left(n\right)_{1} \cdot \mathrm{cfPair}\mathopen{}\left(n\right)_{2} + \mathrm{cfPair}\mathopen{}\left(n\right)_{2} \cdot \mathrm{cfPair}\mathopen{}\left(n\right)_{2} + 1 & \text{otherwise}\end{cases} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 25 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_catalan\_recurrence\_matches\_the\_binomial\_formula}]
+\texttt{(List.range 13).all (fun n => (catalanList 12).getD n 0 == choose (2 * n) n / (n + 1))}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 13 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_pisano\_period\_of\_nine\_is\_twenty\_four\_and\_every\_modulus\_to\_twelve\_has\_one}]
+\[ \mathrm{pisano}\mathopen{}\left(9\right) = 24 \land \forall m \in \{2,\dots,12\},\; \mathrm{pisano}\mathopen{}\left(m\right) > 0 \land \mathrm{fib}\mathopen{}\left(\mathrm{pisano}\mathopen{}\left(m\right)\right) \bmod m = 0 \land \mathrm{fib}\mathopen{}\left(\mathrm{pisano}\mathopen{}\left(m\right) + 1\right) \bmod m = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 11 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_digit\_sum\_rules\_for\_three\_and\_nine\_hold\_below\_ten\_thousand}]
+\[ \forall a \in \{0,\dots,99\},\; \forall b \in \{0,\dots,99\},\; \mathrm{digitSum}\mathopen{}\left(a \cdot 100 + b\right) \bmod 3 = 0 = a \cdot 100 + b \bmod 3 = 0 \land \mathrm{digitSum}\mathopen{}\left(a \cdot 100 + b\right) \bmod 9 = 0 = a \cdot 100 + b \bmod 9 = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 10,000 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_involutions\_are\_counted\_by\_the\_telephone\_numbers}]
+\[ \forall n \in \{0,\dots,5\},\; \left|\{\, x \in \mathrm{permsN}\mathopen{}\left(\{0,\dots,n-1\}\right) \mid \mathrm{isInvolution}\mathopen{}\left(x\right) \,\}\right| = \mathrm{telephone}\mathopen{}\left(n\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
+
 \begin{theorem}[\texttt{families\_settle\_their\_ranges}]
-\[ \mathrm{settledHere} = 33 \]
+\[ \mathrm{settledHere} = 40 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 

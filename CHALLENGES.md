@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2489 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2496 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (578)
+### lean (585)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -602,16 +602,23 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_families_the_digit_square_iteration_reaches_one_or_four](/theorem/lean_families_the_digit_square_iteration_reaches_one_or_four) — lean families.lean: the_digit_square_iteration_reaches_one_or_four — (List.range' 1 200).all (fun n =&gt; iterF 60 n == 1 || iterF 60 n == 4) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `bc38ca6e-83ae…`
 - [lean_families_a_number_is_a_sum_of_two_squares_exactly_when_fermats_condition_holds](/theorem/lean_families_a_number_is_a_sum_of_two_squares_exactly_when_fermats_condition_holds) — lean families.lean: a_number_is_a_sum_of_two_squares_exactly_when_fermats_condition_holds — (List.range' 1 200).all (fun n =&gt; isSumOfTwoSquares n == everyThreeModFourPrimeIsEven n) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `3d6c7b50-3a94…`
 - [lean_families_the_first_three_power_sums_hold_to_two_hundred](/theorem/lean_families_the_first_three_power_sums_hold_to_two_hundred) — lean families.lean: the_first_three_power_sums_hold_to_two_hundred — (List.range' 1 3).all (fun k =&gt; (List.range 201).all (fun n =&gt; powSum k n == faulhaber k n)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e4cdb3b8-6604…`
+- [lean_families_there_are_exactly_five_platonic_solids_and_each_satisfies_eulers_formula](/theorem/lean_families_there_are_exactly_five_platonic_solids_and_each_satisfies_eulers_formula) — lean families.lean: there_are_exactly_five_platonic_solids_and_each_satisfies_eulers_formula — schlafli.length = 5 ∧ schlafli.all (fun x =&gt; let d := 2 * x.1 + 2 * x.2 - x.1 * x.2 4 * x.1 % d == 0 && 2 * x.1 * x.2 % d == 0 && 4 * x.2 % d == 0 && 4 * x.1 / d + 4 * x.2 / d == 2 * x.1 * x.2 / d + 2) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `833b9fe6-8b6f…`
+- [lean_families_cassinis_identity_holds_across_the_range](/theorem/lean_families_cassinis_identity_holds_across_the_range) — lean families.lean: cassinis_identity_holds_across_the_range — (List.range' 1 30).all (fun n =&gt; if n % 2 == 0 then fib (n - 1) * fib (n + 1) == fib n * fib n + 1 else fib (n - 1) * fib (n + 1) + 1 == fib n * fib n) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `3d896e3d-a74b…`
+- [lean_families_the_golden_convergents_are_fibonacci_ratios_with_unit_determinant](/theorem/lean_families_the_golden_convergents_are_fibonacci_ratios_with_unit_determinant) — lean families.lean: the_golden_convergents_are_fibonacci_ratios_with_unit_determinant — (List.range 25).all (fun n =&gt; (cfPair n).1 == fib (n + 2) && (cfPair n).2 == fib (n + 1) && (if n % 2 == 0 then (cfPair n).1 * (cfPair n).1 + 1 == (cfPair n).1 * (cfPair n).2 + (cfPair n).2 * (cfPair n).2 else (cfPair n).1 * (cfPair n).1 ==… — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9e6d6949-7865…`
+- [lean_families_the_catalan_recurrence_matches_the_binomial_formula](/theorem/lean_families_the_catalan_recurrence_matches_the_binomial_formula) — lean families.lean: the_catalan_recurrence_matches_the_binomial_formula — (List.range 13).all (fun n =&gt; (catalanList 12).getD n 0 == choose (2 * n) n / (n + 1)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `86dcb4a1-ad3d…`
+- [lean_families_the_pisano_period_of_nine_is_twenty_four_and_every_modulus_to_twelve_has_one](/theorem/lean_families_the_pisano_period_of_nine_is_twenty_four_and_every_modulus_to_twelve_has_one) — lean families.lean: the_pisano_period_of_nine_is_twenty_four_and_every_modulus_to_twelve_has_one — pisano 9 = 24 ∧ (List.range' 2 11).all (fun m =&gt; pisano m &gt; 0 && fib (pisano m) % m == 0 && fib (pisano m + 1) % m == 1) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `0383a951-5b56…`
+- [lean_families_the_digit_sum_rules_for_three_and_nine_hold_below_ten_thousand](/theorem/lean_families_the_digit_sum_rules_for_three_and_nine_hold_below_ten_thousand) — lean families.lean: the_digit_sum_rules_for_three_and_nine_hold_below_ten_thousand — (List.range 100).all (fun a =&gt; (List.range 100).all (fun b =&gt; (digitSum (a * 100 + b) % 3 == 0) == ((a * 100 + b) % 3 == 0) && ((digitSum (a * 100 + b) % 9 == 0) == ((a * 100 + b) % 9 == 0)))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d9da6c6c-9711…`
+- [lean_families_the_involutions_are_counted_by_the_telephone_numbers](/theorem/lean_families_the_involutions_are_counted_by_the_telephone_numbers) — lean families.lean: the_involutions_are_counted_by_the_telephone_numbers — (List.range 6).all (fun n =&gt; ((permsN (List.range n)).filter isInvolution).length == telephone n) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2e115c82-0778…`
 
 ### other — one-of-a-kind (0)
 
 
 
-## Revoked — 1554 entries that no longer stand
+## Revoked — 1529 entries that no longer stand
 
 The ledger is append-only: an entry that stops holding is marked in place, never deleted — deleting would break the receipt chain, and rewriting a receipt is tamper. These keep their receipts and stay in the record, but they are **not citable** and have no `/theorem/` page. Grouped by the reason they went:
 
-- **1074** — dirty: not backed by a Lean proof
+- **1049** — dirty: not backed by a Lean proof
 - **443** — revoked in place: its test asserted a lexical drain (computes(boast)
 - **12** — revoked in place: circular by construction AND dependent on the removed lexical gate
 - **12** — orphaned: the theorem this key was sealed from is no longer in src/proof
@@ -620,7 +627,7 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - **1** — revoked in place: its test asserts that a list of proof-boasts written across many scripts and languages ALL drain the gate — a lexical drain assertion, and the word-list gate was removed by order, so there is no lexicon to drain and the assertion tests nothing
 - **1** — revoked in place: it asserts adjudicate('we prove all seven')
 
-## Carried — 357 withdrawn entries whose statement a proof now carries
+## Carried — 382 withdrawn entries whose statement a proof now carries
 
 Each was withdrawn for want of a Lean proof and has since been given one, at a new key. The entry is not restored: its own evidence is still a TypeScript test, and it did not hold on what it had. What the record adds is where the statement stands now.
 
@@ -634,6 +641,7 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`squares_in_0_1_4_7`~~ → [`lean_z9plus_squares_land_exactly_in_zero_one_four_seven`](/theorem/lean_z9plus_squares_land_exactly_in_zero_one_four_seven)
 - ~~`order_of_2_is_6`~~ → [`lean_recovered_order_of_2_is_6`](/theorem/lean_recovered_order_of_2_is_6)
 - ~~`sum_1_to_9_zero`~~ → [`lean_recovered_sum_1_to_9_zero`](/theorem/lean_recovered_sum_1_to_9_zero)
+- ~~`pisano_9_is_24`~~ → [`lean_families_the_pisano_period_of_nine_is_twenty_four_and_every_modulus_to_twelve_has_one`](/theorem/lean_families_the_pisano_period_of_nine_is_twenty_four_and_every_modulus_to_twelve_has_one)
 - ~~`powperm_k5`~~ → [`lean_recovered_powperm_k5`](/theorem/lean_recovered_powperm_k5)
 - ~~`powperm_k7`~~ → [`lean_recovered_powperm_k7`](/theorem/lean_recovered_powperm_k7)
 - ~~`mulperm_k2`~~ → [`lean_families_multiplication_permutes_z9_at_exactly_the_units`](/theorem/lean_families_multiplication_permutes_z9_at_exactly_the_units)
@@ -663,14 +671,12 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`hasinv_d1`~~ → [`lean_families_an_inverse_mod_nine_exists_at_exactly_the_units`](/theorem/lean_families_an_inverse_mod_nine_exists_at_exactly_the_units)
 - ~~`hasinv_d2`~~ → [`lean_families_an_inverse_mod_nine_exists_at_exactly_the_units`](/theorem/lean_families_an_inverse_mod_nine_exists_at_exactly_the_units)
 - ~~`hasinv_d4`~~ → [`lean_families_an_inverse_mod_nine_exists_at_exactly_the_units`](/theorem/lean_families_an_inverse_mod_nine_exists_at_exactly_the_units)
-- ~~`hasinv_d5`~~ → [`lean_families_an_inverse_mod_nine_exists_at_exactly_the_units`](/theorem/lean_families_an_inverse_mod_nine_exists_at_exactly_the_units)
 
-…and 317 more.
+…and 342 more.
 
-<details><summary>List all 1554 withdrawn keys — nothing proves these</summary>
+<details><summary>List all 1529 withdrawn keys — nothing proves these</summary>
 
 - ~~`euler_units_pow6`~~ — every unit u⁶ ≡ 1 mod 9 (Euler, φ(9)=6)  ·  `e70a44b2-6eb8…`
-- ~~`pisano_9_is_24`~~ — Fibonacci mod 9 has Pisano period 24  ·  `78a65039-07c5…`
 - ~~`qr_u7`~~ — 7 is a quadratic residue mod 9  ·  `2a422f9b-761a…`
 - ~~`powinv_k5`~~ — u↦u^5 is an involution on the units mod 9  ·  `8e327990-c88f…`
 - ~~`powinv_k7`~~ — u↦u^7 is an involution on the units mod 9  ·  `469cfad5-9293…`
@@ -702,31 +708,16 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`gauss_four_units`~~ — ℤ[i] has exactly four units of norm 1: {1, i, −1, −i}  ·  `7b8ebbf0-0bf5…`
 - ~~`gauss_i_squared`~~ — in ℤ[i], i² = −1  ·  `185b3eda-935c…`
 - ~~`gauss_norm_multiplicative`~~ — the ℤ[i] norm is multiplicative: N(zw)=N(z)·N(w) (tested set)  ·  `7e709c97-78f3…`
-- ~~`triangular_n10`~~ — sum 1..10 = 10·11/2 = 55  ·  `3194b6c0-e899…`
-- ~~`triangular_n25`~~ — sum 1..25 = 25·26/2 = 325  ·  `e45b233b-3b3a…`
-- ~~`triangular_n50`~~ — sum 1..50 = 50·51/2 = 1275  ·  `ba7f546e-6057…`
-- ~~`odd_sum_sq_n7`~~ — the sum of the first 7 odd numbers = 7² = 49  ·  `62823413-a3a3…`
-- ~~`odd_sum_sq_n12`~~ — the sum of the first 12 odd numbers = 12² = 144  ·  `b919aaa0-ce8e…`
 - ~~`handshake_z9`~~ — handshake on the ×2 Cayley graph of ℤ/9: Σ degrees = 2·|edges|  ·  `44f09f3c-e542…`
-- ~~`cassini_n6`~~ — Cassini at n=6: F(n−1)·F(n+1)−F(n)² = (−1)ⁿ  ·  `e43f8239-8fa5…`
-- ~~`cassini_n9`~~ — Cassini at n=9: F(n−1)·F(n+1)−F(n)² = (−1)ⁿ  ·  `b34c402e-4d27…`
-- ~~`cassini_n12`~~ — Cassini at n=12: F(n−1)·F(n+1)−F(n)² = (−1)ⁿ  ·  `f3959e9c-9b4c…`
 - ~~`merkaba_partition`~~ — the mod-3 classes {3,6,9}·{1,4,7}·{2,5,8} partition ℤ/9 into 3+3+3  ·  `782ddd50-1c1a…`
 - ~~`merkaba_counter_rotation`~~ — doubling counter-rotates the two tetrahedra: {1,4,7} ↔ {2,5,8}  ·  `5acd8c30-cd18…`
 - ~~`merkaba_axis_closed`~~ — the axis {3,6,9} is closed under doubling (the merkaba spindle)  ·  `1b0e8f6a-2b64…`
 - ~~`merkaba_field_max_null`~~ — the merkaba field f(θ)=(1+cosθ)/2: co-rotating(0)→1 MAX, counter-rotating(π)→0 NULL  ·  `a9c3214f-3ec7…`
 - ~~`cover_one_tetra_partial`~~ — still: one tetrahedron {1,4,7} covers only 3 of the 6 units — 3 remain uncovered  ·  `8c7bcc8a-1869…`
 - ~~`cover_moving_pair_full`~~ — moving: the counter-rotating pair {1,4,7}∪{2,5,8} covers every uncovered unit — all 6, no gap  ·  `22b9e194-9be5…`
-- ~~`goldencf_n5`~~ — golden CF [1;1,1,…]: p_n·q_{n-1} − p_{n-1}·q_n = (−1)ⁿ at n=5  ·  `c000eebb-eae5…`
-- ~~`goldencf_n8`~~ — golden CF [1;1,1,…]: p_n·q_{n-1} − p_{n-1}·q_n = (−1)ⁿ at n=8  ·  `f4f59981-9989…`
-- ~~`goldencf_n11`~~ — golden CF [1;1,1,…]: p_n·q_{n-1} − p_{n-1}·q_n = (−1)ⁿ at n=11  ·  `5c54d373-e71c…`
-- ~~`catalan_n4`~~ — Catalan C(4) = 14: recurrence = binom(2n,n)/(n+1)  ·  `e1cfadcf-7a7c…`
-- ~~`catalan_n6`~~ — Catalan C(6) = 132: recurrence = binom(2n,n)/(n+1)  ·  `436f1d6c-e910…`
-- ~~`catalan_n8`~~ — Catalan C(8) = 1430: recurrence = binom(2n,n)/(n+1)  ·  `5596356e-14b1…`
 - ~~`pascal_rowsum_n5`~~ — Σ_k C(5,k) = 2^5 = 32  ·  `3b4e481c-bd45…`
 - ~~`pascal_rowsum_n8`~~ — Σ_k C(8,k) = 2^8 = 256  ·  `b62025f5-f7ec…`
 - ~~`pascal_rowsum_n10`~~ — Σ_k C(10,k) = 2^10 = 1024  ·  `099a0df7-929c…`
-- ~~`div3_rule_L4`~~ — digit-sum ≡ 0 (mod 3) ⇔ n ≡ 0 (mod 3), all n &lt; 10^4 (exhaustive)  ·  `a6c0b047-12a7…`
 - ~~`roots_cancel_n2`~~ — the 2 equally-spaced unit vectors (n-th roots of unity) cancel to the zero vector  ·  `f14563e3-9bf7…`
 - ~~`roots_cancel_n3`~~ — the 3 equally-spaced unit vectors (n-th roots of unity) cancel to the zero vector  ·  `0d08dcee-c228…`
 - ~~`roots_cancel_n5`~~ — the 5 equally-spaced unit vectors (n-th roots of unity) cancel to the zero vector  ·  `986f830c-ea1b…`
@@ -781,7 +772,6 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`nopayload_not_encryption`~~ — content-addressing breaks no cipher: "breaks encryption" drains; "does not break encryption, one-way integrity" signs  ·  `66c44e2d-e591…`
 - ~~`involution_sigma`~~ — σ: d↦−d is an involution on ℤ/9 (σ∘σ = id) with exactly one fixed point, the origin (odd base)  ·  `2032f25f-ca45…`
 - ~~`involution_reversible`~~ — evolution by involution is reversible: the multiplicative-inverse map applied twice is the identity on the units  ·  `09577a63-e630…`
-- ~~`involution_telephone`~~ — the count of involutions on n elements = the telephone number T(n)=T(n-1)+(n-1)T(n-2) (n ≤ 5)  ·  `6e0b0a34-8a45…`
 - ~~`ledger_merkle_inclusion`~~ — merkle inclusion proof: a leaf verifies against the root using only its proof path (light-client)  ·  `4c03b866-98e2…`
 - ~~`ledger_merkle_rejects_forgery`~~ — a leaf not in the tree fails its proof — no forged inclusion  ·  `65b1525f-07ad…`
 - ~~`ledger_tamper_changes_root`~~ — tampering any leaf changes the merkle root — the ledger is tamper-evident  ·  `ae5b2c11-de5b…`
@@ -858,8 +848,6 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`bernoulli_numbers`~~ — Bernoulli numbers via Σ C(n+1,j)B(j)=0: B(1)=−1/2, B(2)=1/6, B(4)=−1/30  ·  `e1488277-afe2…`
 - ~~`bernoulli_odd_zero`~~ — the odd Bernoulli numbers vanish: B(3)=B(5)=0 (for k≥1)  ·  `1c8c8337-a2d1…`
 - ~~`relation_three`~~ — 3 RELATES the base (9=3²) · the axis {3,6,9} · the mod-3 classes · the trinity — 3 generates the ring  ·  `81c99cf8-73de…`
-- ~~`catalan_numbers`~~ — Catalan numbers via C(2n,n)/(n+1): C(0..5) = 1,1,2,5,14,42  ·  `44a9184c-5ae2…`
-- ~~`catalan_recurrence`~~ — the Catalan recurrence C(n+1)=Σ C(i)C(n−i) matches the closed form (n≤6)  ·  `daaa1391-e9e9…`
 - ~~`relation_catalan`~~ — Catalan RELATES Dyck paths · binary trees · the pentagon (C(3)=5) — one count across many shapes  ·  `49db58c0-5101…`
 - ~~`totient_divisor_sum`~~ — Gauss divisor sum: Σ_{d|n} φ(d) = n (all n≤12)  ·  `48628d5b-053e…`
 - ~~`relation_superposition`~~ — now is a superposition: the folded root holds the six open Clay problems at once (order-independent); observing collapses it to one content-address — INCONCLUSIVE ≠ false, not a physical qubit  ·  `4c2d2d08-ab33…`
@@ -1049,7 +1037,6 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`stern_row_sum_is_power_of_three`~~ — Stern row sums are powers of three: summing a(n) over each binary row n ∈ [2^k, 2^(k+1)) gives exactly 3^k — a clean base-3 invariant over the base-2 index (verified k = 0..7)  ·  `88d1069b-4c2d…`
 - ~~`each_theorem_can_replace_code`~~ — each theorem can replace code: a closed form that holds by exhaustion equals its naive computation, so the formula substitutes for the loop — Gauss’s n(n+1)/2 replaces the summation loop and the sum of the first n odds equals n², each verified equal to the imperative version (the theorem is the optimized, checkable code)  ·  `02be2d16-4a80…`
 - ~~`dyck_paths_counted_by_catalan_closed_form`~~ — Dyck paths are counted by the Catalan closed form: the number of balanced parenthesis strings of length 2n (never dipping below zero) equals C(2n,n)/(n+1) — the O(1) formula replaces the exhaustive 2^(2n) enumeration (verified n = 1..6)  ·  `9e2ebe74-8b64…`
-- ~~`catalan_convolution_recurrence`~~ — the Catalan convolution recurrence: C(n+1) = Σ_{i=0..n} C(i)·C(n−i), with C₀..C₆ = 1,1,2,5,14,42,132,429 — the recurrence and the closed form agree (verified to n = 8)  ·  `e7694c53-0f92…`
 - ~~`euclid_formula_generates_pythagorean_triples`~~ — Euclid’s formula generates Pythagorean triples: for m &gt; n &gt; 0, (m²−n², 2mn, m²+n²) satisfies a² + b² = c² — verified for all m ≤ 12  ·  `9a6ecfe8-b922…`
 - ~~`primitive_triple_iff_coprime_opposite_parity`~~ — a Euclid triple is primitive iff m,n are coprime and of opposite parity: gcd of the legs is 1 exactly when gcd(m,n)=1 and m+n is odd — verified for all m ≤ 12  ·  `bd165e0e-bd64…`
 - ~~`every_primitive_triple_is_euclidean`~~ — Euclid’s parametrization is complete: every primitive Pythagorean triple with hypotenuse ≤ 100 arises from coprime m&gt;n of opposite parity — exhaustive brute-force triples all match a generated one  ·  `751e8a4e-c23c…`
@@ -1532,11 +1519,6 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`legendre_a_prime_lies_between_consecutive_squares`~~ — Legendre’s conjecture holds over the tested range: a prime lies between n² and (n+1)² for every n ≤ 60 — checked by computation, not a general result; 0/7  ·  `558f62ef-2176…`
 - ~~`goldbachs_even_sum_of_two_primes_to_a_thousand`~~ — Goldbach’s even conjecture holds over the tested range: every even number from 4 to 1000 is a sum of two primes — checked by computation, not a general result; 0/7  ·  `032ff03e-d893…`
 - ~~`the_gaps_between_primes_grow_without_bound`~~ — the gaps between primes grow without bound: the run n!+2 … n!+n is all composite, giving a prime-free stretch of length n−1 for any n; 0/7  ·  `47c4a1ae-6e87…`
-- ~~`euler_characteristic_of_the_tetrahedron_is_two`~~ — Euler’s formula for the tetrahedron: V − E + F = 4 − 6 + 4 = 2 — the self-dual solid on the sphere; 0/7  ·  `4bca33ae-6a42…`
-- ~~`euler_characteristic_of_the_cube_is_two`~~ — Euler’s formula for the cube: V − E + F = 8 − 12 + 6 = 2 — the eight-vertex solid on the sphere; 0/7  ·  `de15baa7-61de…`
-- ~~`euler_characteristic_of_the_octahedron_is_two`~~ — Euler’s formula for the octahedron: V − E + F = 6 − 12 + 8 = 2 — the cube’s dual; 0/7  ·  `c55a4c2d-534e…`
-- ~~`euler_characteristic_of_the_dodecahedron_is_two`~~ — Euler’s formula for the dodecahedron: V − E + F = 20 − 30 + 12 = 2 — the twelve-face solid; 0/7  ·  `3aac322b-21d4…`
-- ~~`euler_characteristic_of_the_icosahedron_is_two`~~ — Euler’s formula for the icosahedron: V − E + F = 12 − 30 + 20 = 2 — the dodecahedron’s dual; 0/7  ·  `988a9cbd-1cdd…`
 - ~~`eulers_formula_holds_for_all_five_platonic_solids`~~ — Euler’s polyhedron formula V − E + F = 2 holds for all five Platonic solids — one invariant across the whole family; 0/7  ·  `d0e63cc8-f120…`
 - ~~`platonic_duality_swaps_vertices_and_faces`~~ — Platonic duality swaps vertices and faces at fixed edges: cube(8,6)↔octahedron(6,8) and dodecahedron(20,12)↔icosahedron(12,20), the tetrahedron self-dual; 0/7  ·  `b8c9b01c-faea…`
 - ~~`the_platonic_solids_are_genus_zero_with_euler_number_two`~~ — the Platonic solids are genus-zero, Euler number 2 — the sphere’s characteristic, the opposite pole from the double torus’s χ = −2 (the two coins); 0/7  ·  `465e66fc-e32d…`
@@ -2226,4 +2208,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `b27d2de3-6293-893f-bd8f-c187ed1e8197`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `55608444-9825-8cef-9166-c3ed645cb75d`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

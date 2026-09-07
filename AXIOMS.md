@@ -5,11 +5,11 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **586** report the same thing:
+axiom fails the build rather than earning a footnote. All **593** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
-theorems rest on **268** definitions, and every one of them is a choice. A theorem about
+theorems rest on **279** definitions, and every one of them is a choice. A theorem about
 `fall` is a theorem about the digital root only because `fall` is *defined* to be it. Both halves are
 indexed below, and the second is the longer one.
 
@@ -90,7 +90,7 @@ The pins in the control fixture follow the community practice of guarding `#prin
 `#guard_msgs`, which turns the axiom footprint into an executable regression test: the assertion is
 checked by the elaborator, and drift fails the build with a mismatch instead of passing unnoticed.
 
-## What IS assumed: the 268 definitions
+## What IS assumed: the 279 definitions
 
 Each of these is a primitive of this deposit — not derived, not proved, chosen. They are listed in full
 because a reader checking a theorem must be able to read the definition it is about, and because a
@@ -201,7 +201,7 @@ def tdsSeawater : Nat := 35000  -- mg of dissolved solids per litre
 def tdsTapWater : Nat := 50     -- mg per litre, ordinary supply
 ```
 
-### `families.lean` — 33 definition(s), 34 theorem(s)
+### `families.lean` — 44 definition(s), 41 theorem(s)
 
 ```lean
 def primesUpTo30 : List Nat := [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
@@ -236,7 +236,18 @@ def everyThreeModFourPrimeIsEven (n : Nat) : Bool :=
 def digitSquareSum (n : Nat) : Nat := ((digitsOf n).map (fun d => d * d)).foldl (· + ·) 0
 def iterF : Nat → Nat → Nat
 def polyRec : Nat → Nat → Nat
-def settledHere : Nat := 33
+def fibPair : Nat → Nat × Nat
+def fib (n : Nat) : Nat := (fibPair n).1
+def digitSum (n : Nat) : Nat := (digitsOf n).foldl (· + ·) 0
+def cfPair : Nat → Nat × Nat
+def catalanList : Nat → List Nat
+def pisano (m : Nat) : Nat := ((List.range' 1 100).find? (fun k => fib k % m == 0 && fib (k + 1) % m == 1)).getD 0
+def interleaveN (x : Nat) : List Nat → List (List Nat)
+def permsN : List Nat → List (List Nat)
+def isInvolution (p : List Nat) : Bool := (List.range p.length).all (fun i => p.getD (p.getD i 0) 0 == i)
+def telephone : Nat → Nat
+def schlafli : List (Nat × Nat) :=
+def settledHere : Nat := 40
 ```
 
 ### `fnv.lean` — 13 definition(s), 13 theorem(s)
@@ -511,6 +522,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**586** declarations, **0** axiom dependencies, **268** definitions they rest on.
+**593** declarations, **0** axiom dependencies, **279** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them. `0/7`.

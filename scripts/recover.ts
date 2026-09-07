@@ -140,6 +140,18 @@ const inDomain: { theorem: string; key: RegExp; covers: (n: number) => boolean; 
     why: 'the k = 1 case is Σi = n(n+1)/2, decided to n = 200' },
   { theorem: 'the_first_three_power_sums_hold_to_two_hundred', key: /^sum_of_cubes_1_to_(\d+)_is_triangular_squared$/, covers: (n) => n <= 200,
     why: "the k = 3 case is Σi³ = n²(n+1)²/4, which is the square of the nth triangular number — Nicomachus's identity, decided to n = 200" },
+
+  // ── the fourth octave: Fibonacci, counting, and the five solids ─────────────────────────────────────────
+  { theorem: 'the_first_three_power_sums_hold_to_two_hundred', key: /^triangular_n(\d+)$/, covers: (n) => n <= 200,
+    why: 'the k = 1 case decided to n = 200; the rows sit at 10, 25 and 50' },
+  { theorem: 'the_first_n_odd_numbers_sum_to_n_squared', key: /^odd_sum_sq_n(\d+)$/, covers: (n) => n <= 200,
+    why: 'the same gnomon identity, decided to n = 200' },
+  { theorem: 'cassinis_identity_holds_across_the_range', key: /^cassini_n(\d+)$/, covers: (n) => n >= 1 && n <= 30,
+    why: 'decides both parities of Cassini for n = 1…30; the rows sit at 6, 9 and 12' },
+  { theorem: 'the_golden_convergents_are_fibonacci_ratios_with_unit_determinant', key: /^goldencf_n(\d+)$/, covers: (n) => n <= 24,
+    why: 'decides the convergents and the unit determinant for n = 0…24; the rows sit at 5, 8 and 11' },
+  { theorem: 'the_catalan_recurrence_matches_the_binomial_formula', key: /^catalan_n(\d+)$/, covers: (n) => n <= 12,
+    why: 'decides the convolution recurrence against C(2n,n)/(n+1) for n = 0…12' },
 ]
 
 // ── ONE-TO-ONE CARRIES: a claim with no parameter, and the theorem that decides exactly it ───────────────
@@ -162,6 +174,33 @@ const EXACT: { key: string; theorem: string; why: string }[] = [
     why: 'the row claims every n ≤ 200; the theorem decides 1…200' },
   { key: 'sum_of_two_squares_characterization', theorem: 'a_number_is_a_sum_of_two_squares_exactly_when_fermats_condition_holds',
     why: 'the row claims agreement for all n ≤ 100; the theorem decides 1…200, a superset' },
+
+  // the five solids, one row each — and the theorem does not take them as data. It derives every convex
+  // regular polyhedron from its Schläfli pair, finds exactly five, and checks Euler's formula on each, so
+  // the five rows are carried by a statement that would have caught a sixth if one existed.
+  { key: 'euler_characteristic_of_the_tetrahedron_is_two', theorem: 'there_are_exactly_five_platonic_solids_and_each_satisfies_eulers_formula',
+    why: 'the (3,3) case, derived from the Schläfli pair rather than read from typed V, E, F' },
+  { key: 'euler_characteristic_of_the_cube_is_two', theorem: 'there_are_exactly_five_platonic_solids_and_each_satisfies_eulers_formula',
+    why: 'the (4,3) case' },
+  { key: 'euler_characteristic_of_the_octahedron_is_two', theorem: 'there_are_exactly_five_platonic_solids_and_each_satisfies_eulers_formula',
+    why: 'the (3,4) case' },
+  { key: 'euler_characteristic_of_the_dodecahedron_is_two', theorem: 'there_are_exactly_five_platonic_solids_and_each_satisfies_eulers_formula',
+    why: 'the (5,3) case' },
+  { key: 'euler_characteristic_of_the_icosahedron_is_two', theorem: 'there_are_exactly_five_platonic_solids_and_each_satisfies_eulers_formula',
+    why: 'the (3,5) case' },
+
+  { key: 'pisano_9_is_24', theorem: 'the_pisano_period_of_nine_is_twenty_four_and_every_modulus_to_twelve_has_one',
+    why: 'the row states exactly the first conjunct, and pisano finds the LEAST period, so 24 is the period and not merely a period' },
+  { key: 'div3_rule_L4', theorem: 'the_digit_sum_rules_for_three_and_nine_hold_below_ten_thousand',
+    why: 'the row claims the rule for 3 exhaustively below 10⁴; the theorem decides that range for 3 AND for 9' },
+  { key: 'involution_telephone', theorem: 'the_involutions_are_counted_by_the_telephone_numbers',
+    why: 'the row claims n ≤ 5; the theorem enumerates the permutations of 0…5 and filters the self-inverse ones, so the count is checked against the objects rather than against another recurrence' },
+  { key: 'catalan_numbers', theorem: 'the_catalan_recurrence_matches_the_binomial_formula',
+    why: 'the row claims C(0…5) by the closed form; the theorem decides 0…12 against the convolution recurrence' },
+  { key: 'catalan_recurrence', theorem: 'the_catalan_recurrence_matches_the_binomial_formula',
+    why: 'the row claims the recurrence matches the closed form to n ≤ 6; the theorem decides to n = 12' },
+  { key: 'catalan_convolution_recurrence', theorem: 'the_catalan_recurrence_matches_the_binomial_formula',
+    why: 'the row claims agreement verified to n = 8; the theorem decides to n = 12' },
 ]
 // ── A RULE THAT MATCHES NOTHING IS BROKEN, AND LOOKS EXACTLY LIKE A RULE THAT IS FINISHED ────────────────
 // /^digrev(\d+)$/ matched zero keys for a whole run — the ledger spells them `digrev_12` — and the report
