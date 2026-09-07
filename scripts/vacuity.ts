@@ -17,9 +17,16 @@
  *      node scripts/vacuity.ts          check every readable domain
  *      node scripts/vacuity.ts --list   also name the theorems whose domain could not be read
  */
-import { writeFileSync, mkdtempSync, readFileSync } from 'node:fs'
-import { execFileSync } from 'node:child_process'
-import { tmpdir } from 'node:os'
+import { writeFileSync, mkdtempSync, readFileSync, existsSync } from 'node:fs'
+import { createHash } from 'node:crypto'
+import { execFile } from 'node:child_process'
+import { promisify } from 'node:util'
+// ASYNC, NOT SYNC. execFileSync BLOCKS the single JS thread, so the lanes below were a fiction: ten of them
+// took turns on one core while the report claimed parallelism. CPU sat at 37% and the wall clock got WORSE
+// after a change that cut total work by nearly half — which is what a fake lane looks like from outside.
+// (Named leanRun, not run: the lane helper already binds `run` for its callback.)
+const leanRun = promisify(execFile)
+import { tmpdir, availableParallelism } from 'node:os'
 import { join } from 'node:path'
 import { leanTheorems, leanFiles } from '../src/api/index.ts'
 
@@ -92,13 +99,30 @@ const messages = (log: string): { line: number; text: string }[] => {
   return out
 }
 
+// ── LANES AND A CACHE, because a sweep nobody waits for is a sweep nobody runs ────────────────────────────
+// The deep half compiled one file at a time and took five and a half minutes on a ten-core machine. Files
+// are independent — each carries its own definitions — so they run in lanes, and a file whose source has not
+// changed reuses its verdict. scripts/lean.ts has done both for a while; this had neither.
+const LANES = Math.max(1, Number(process.env.VACUITY_LANES) || (availableParallelism?.() ?? 4))
+const CACHE = '.vacuity-cache.json'
+type Verdict = { hash: string; empty: string[]; unchecked: [string, string][]; insensitive: string[]; untested: [string, string][]; tried?: number }
+const cache: Record<string, Verdict> = existsSync(CACHE) ? JSON.parse(readFileSync(CACHE, 'utf8')) : {}
+const hashOf = (file: string): string =>
+  createHash('sha256').update(readFileSync(`src/proof/${file}`)).digest('hex').slice(0, 16)
+const lanes = async <A>(items: A[], run: (a: A) => Promise<void>): Promise<void> => {
+  let next = 0
+  await Promise.all(Array.from({ length: Math.min(LANES, items.length || 1) }, async () => {
+    for (;;) { const i = next++; if (i >= items.length) return; await run(items[i]) }
+  }))
+}
+
 const dir = mkdtempSync(join(tmpdir(), 'vacuity-'))
 const empty: { t: T; dom: string }[] = []
 const unchecked: { t: T; dom: string; why: string }[] = []
 const byFile = new Map<string, { t: T; dom: string }[]>()
 for (const r of readable) byFile.set(r.t.file, [...(byFile.get(r.t.file) ?? []), r])
 
-for (const [file, rows] of byFile) {
+await lanes([...byFile.entries()], async ([file, rows]) => {
   const src = readFileSync(`src/proof/${file}`, 'utf8')
   const head = [...src.matchAll(/^(?:import\s+\S+|set_option\s+\S+\s+\S+)$/gm)].map((x) => x[0]).join('\n')
   const ns = src.match(/^namespace\s+(\S+)/m)?.[1]
@@ -109,9 +133,9 @@ for (const [file, rows] of byFile) {
   const out = join(dir, `V_${file.replace('.lean', '')}.lean`)
   writeFileSync(out, [head, ns ? `namespace ${ns}` : '', opens, defs, body, ns ? `end ${ns}` : ''].filter(Boolean).join('\n\n') + '\n')
   let log = ''
-  try { execFileSync('lean', [out], { env: { ...process.env, LEAN_PATH: 'src/proof' }, stdio: 'pipe' }) }
+  try { await leanRun('lean', [out], { env: { ...process.env, LEAN_PATH: 'src/proof' } }) }
   catch (e: any) { log = String(e?.stdout ?? '') + String(e?.stderr ?? '') }
-  if (!log) continue
+  if (!log) return
   // PER MESSAGE, NOT PER LOG. This tested `/proved that the proposition/` against the WHOLE log, so one
   // genuine refusal anywhere in a file would have classified every other error in it as an empty domain —
   // a check that turns an elaboration slip into a finding, which is the shape that makes a gate worthless.
@@ -122,7 +146,7 @@ for (const [file, rows] of byFile) {
     if (/proved that the proposition/.test(block.text)) empty.push(rows[idx])
     else unchecked.push({ ...rows[idx], why: block.text.split('\n')[0].slice(0, 90) })
   }
-}
+})
 
 // ── PHASE TWO: THE 275 WITH NO QUANTIFIER ────────────────────────────────────────────────────────────────
 //
@@ -159,7 +183,17 @@ const mutantsOf = (st: string): { mut: string; what: string }[] => {
   // `1048576 / 20 = 52428 ∧ …` is on the LEFT, and the digits on the right are a redundant restatement that
   // survives being moved. A sensitivity test that cannot reach the number the claim is about measures
   // nothing except which half of the line it was allowed to look at.
-  for (const l of [...st.matchAll(/\b(\d+)\b/g)].slice(0, MUTANTS)) {
+  // A RANGE BOUND IS NOT A CLAIM ABOUT A NUMBER, it is how far the check ran — and moving it is where the
+  // cost explodes, because the mutant decides a bigger problem than the original. Skipping them made the
+  // deep sweep several times faster AND the question sharper: what is tested is whether the statement is
+  // about its own values, not whether it survives being asked a larger question.
+  const bounds = new Set<number>()
+  for (const r of st.matchAll(/List\.range'?\s+(\d+)(?:\s+(\d+))?/g)) {
+    const at = (r.index ?? 0) + r[0].indexOf(r[1], 'List.range'.length)
+    bounds.add(at)
+    if (r[2]) bounds.add((r.index ?? 0) + r[0].lastIndexOf(r[2]))
+  }
+  for (const l of [...st.matchAll(/\b(\d+)\b/g)].filter((l) => !bounds.has(l.index ?? -1)).slice(0, MUTANTS)) {
     const idx = l.index ?? 0
     out.push({ mut: st.slice(0, idx) + String(Number(l[1]) + 1) + st.slice(idx + l[1].length), what: `the literal ${l[1]} moved by one` })
   }
@@ -176,7 +210,18 @@ const DEEP = process.argv.includes('--sensitivity')
 for (const t of noQuantifier) if (DEEP) byFile2.set(t.file, [...(byFile2.get(t.file) ?? []), t])
 let perturbed = 0
 
-for (const [file, rows] of byFile2) {
+const CK = (f: string) => `deep:${f}`
+await lanes([...byFile2.entries()], async ([file, rows]) => {
+  const h = hashOf(file)
+  const hit = cache[CK(file)]
+  if (hit && hit.hash === h) {
+    // the count of rows that actually had a mutant, not the row count — a cached run reported 275 where the
+    // cold run reported 267, and a figure that moves depending on whether a cache was warm is not a figure
+    perturbed += hit.tried ?? 0
+    for (const n of hit.insensitive) { const t = rows.find((r) => r.name === n); if (t) insensitive.push(t) }
+    for (const [n, why] of hit.untested) { const t = rows.find((r) => r.name === n); if (t) untested.push({ t, why }) }
+    return
+  }
   const src = readFileSync(`src/proof/${file}`, 'utf8')
   const head = [...src.matchAll(/^(?:import\s+\S+|set_option\s+\S+\s+\S+)$/gm)].map((x) => x[0]).join('\n')
   const ns = src.match(/^namespace\s+(\S+)/m)?.[1]
@@ -194,7 +239,7 @@ for (const [file, rows] of byFile2) {
       owner.push(t)
     }
   }
-  if (!parts.length) continue
+  if (!parts.length) return
   perturbed += has.size
   const out = join(dir, `S_${file.replace('.lean', '')}.lean`)
   writeFileSync(out, [head, ns ? `namespace ${ns}` : '', opens, defs, parts.join('\n\n'), ns ? `end ${ns}` : ''].filter(Boolean).join('\n\n') + '\n')
@@ -202,12 +247,17 @@ for (const [file, rows] of byFile2) {
   // second into minutes, and one such file held the whole sweep for over three minutes before this existed.
   // The budget is per file and a file that exceeds it is UNTESTED, by name — not a pass, and not a hang.
   let log = '', timedOut = false
-  try { execFileSync('lean', [out], { env: { ...process.env, LEAN_PATH: 'src/proof' }, stdio: 'pipe', timeout: BUDGET_MS }) }
+  try { await leanRun('lean', [out], { env: { ...process.env, LEAN_PATH: 'src/proof' }, timeout: BUDGET_MS }) }
   catch (e: any) {
     if (e?.signal === 'SIGTERM' || e?.code === 'ETIMEDOUT') timedOut = true
     log = String(e?.stdout ?? '') + String(e?.stderr ?? '')
   }
-  if (timedOut) { for (const t of rows) if (has.has(t.name)) untested.push({ t, why: `the mutants for ${file} exceeded the ${BUDGET_MS / 1000}s budget — a moved literal can cost far more than the original` }); continue }
+  if (timedOut) {
+    for (const t of rows) if (has.has(t.name)) untested.push({ t, why: `the mutants for ${file} exceeded the ${BUDGET_MS / 1000}s budget — a moved literal can cost far more than the original` })
+    cache[CK(file)] = { hash: h, empty: [], unchecked: [], insensitive: [], tried: has.size,
+      untested: rows.filter((t) => has.has(t.name)).map((t) => [t.name, `over the ${BUDGET_MS / 1000}s budget`] as [string, string]) }
+    return
+  }
   const written = readFileSync(out, 'utf8').split('\n')
   const sensitive = new Set<string>()
   const errored = new Map<string, string>()
@@ -224,7 +274,21 @@ for (const [file, rows] of byFile2) {
     if (errored.has(t.name)) untested.push({ t, why: `every mutant failed to elaborate — ${errored.get(t.name)}` })
     else insensitive.push(t)
   }
-}
+  cache[CK(file)] = { hash: h, empty: [], unchecked: [], tried: has.size,
+    insensitive: insensitive.filter((x) => x.file === file).map((x) => x.name),
+    untested: untested.filter((x) => x.t.file === file).map((x) => [x.t.name, x.why] as [string, string]) }
+})
+
+// SORTED, BECAUSE LANES FINISH IN WHATEVER ORDER THEY FINISH. A cold run and a cached run listed the same
+// four theorems in different orders — the scheduler leaking into the output. In a deposit that
+// content-addresses what it prints, a report that changes shape between identical runs is a defect even
+// when every line in it is true.
+const byName = <A extends { file: string; name: string }>(a: A, b: A) => (a.file + a.name).localeCompare(b.file + b.name)
+insensitive.sort(byName)
+untested.sort((a, b) => byName(a.t, b.t))
+unchecked.sort((a, b) => byName(a.t, b.t))
+unreadable.sort(byName)
+empty.sort((a, b) => byName(a.t, b.t))
 
 console.log(`vacuity — theorems whose quantifier ranges over nothing:\n`)
 console.log(`  theorems closing by decide          ${thms.length}`)
@@ -260,6 +324,7 @@ for (const u of untested.slice(0, 12)) console.log(`  ? ${u.t.file}:${u.t.name} 
 if (untested.length > 12) console.log(`  ? …and ${untested.length - 12} more not perturbed`)
 if (process.argv.includes('--list')) for (const u of unreadable) console.log(`  ○ ${u.file}:${u.name} — domain not in a shape this reads`)
 
+writeFileSync(CACHE, JSON.stringify(cache, null, 2) + '\n')
 console.log(`✓ vacuity: every readable domain is non-empty. ${noQuantifier.length} theorem(s) quantify over nothing at all —`)
 console.log(`  a concrete equality has no domain to be empty — and ${unreadable.length} state a domain in a shape this does not`)
 console.log(`  read; those are NOT claimed as checked. Run with --list to see them. A sweep that counted either`)

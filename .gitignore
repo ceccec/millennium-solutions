@@ -31,3 +31,4 @@ src/analytics.json
 src/readme-trial.md
 .release-snapshot.json
 .cern/
+.vacuity-cache.json
