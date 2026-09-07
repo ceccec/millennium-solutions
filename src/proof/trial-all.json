@@ -14878,5 +14878,59 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "08da2de6-374d-8924-9380-056f8b0c8b8b"
+  },
+  {
+    "key": "lean_families_the_first_n_odd_numbers_sum_to_n_squared",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f9aed271-938f-8ea8-96c8-e4da6f5d2cfe"
+  },
+  {
+    "key": "lean_families_the_powers_of_two_sum_to_one_less_than_the_next",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1f9ad1a4-69e8-89ca-8051-b24024344267"
+  },
+  {
+    "key": "lean_families_the_sums_of_triangular_numbers_are_the_tetrahedral_numbers",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "bfd9472c-691b-868d-8bf7-5fb0a7af7051"
+  },
+  {
+    "key": "lean_families_the_squares_of_a_pascal_row_sum_to_the_central_binomial",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e05dd0fe-1001-8efb-95f2-87d4f7178c0b"
+  },
+  {
+    "key": "lean_families_polygonal_closed_forms_match_their_recurrences",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9488578c-8d08-8e41-8dc4-83e758fce601"
+  },
+  {
+    "key": "lean_families_the_order_of_every_unit_mod_nine_divides_six",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a96e9853-244e-8608-ab67-de6b14112f6b"
+  },
+  {
+    "key": "lean_families_the_digit_square_iteration_reaches_one_or_four",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "bc38ca6e-83ae-82ad-8494-e27ae5055974"
+  },
+  {
+    "key": "lean_families_a_number_is_a_sum_of_two_squares_exactly_when_fermats_condition_holds",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3d6c7b50-3a94-850c-82d2-c3c0de39da8d"
+  },
+  {
+    "key": "lean_families_the_first_three_power_sums_hold_to_two_hundred",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e4cdb3b8-6604-8169-9524-da27d74dbec7"
   }
 ]

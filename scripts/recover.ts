@@ -125,6 +125,43 @@ const inDomain: { theorem: string; key: RegExp; covers: (n: number) => boolean; 
     why: "quantifies over bases 2…12 and every exponent to six, widening the older theorem that fixed one exponent at bases 2…9" },
   { theorem: 'totient_at_prime_powers_through_thirteen', key: /^totient_prime_power_(\d+)$/, covers: (n) => [2, 3, 5, 7, 11, 13].includes(n),
     why: 'decides φ(pᵏ) = pᵏ − pᵏ⁻¹ at those six primes for k = 1…3' },
+
+  // ── the third octave: the classical sums, 2026-09-07 ────────────────────────────────────────────────────
+  // EVERY RANGE BELOW WAS READ OFF THE CLAIM, and where the theorem was narrower the THEOREM moved. The rows
+  // say "verified by full enumeration over n up to 200" and the like; trimming a claim to the range I happened
+  // to write would carry it on a check nobody ran.
+  { theorem: 'the_first_n_odd_numbers_sum_to_n_squared', key: /^sum_first_(\d+)_odd_numbers_is_\d+_squared$/, covers: (n) => n <= 200,
+    why: 'decides the gnomon identity at every n to 200 — the range the rows themselves claim' },
+  { theorem: 'polygonal_closed_forms_match_their_recurrences', key: /^polygonal_numbers_s(\d+)_closed_form_equals_recurrence$/, covers: (n) => n >= 3 && n <= 10,
+    why: 'decides closed form against recurrence for s = 3…10 at every n to 50, which is the range the rows state' },
+  { theorem: 'the_order_of_every_unit_mod_nine_divides_six', key: /^order_of_unit_(\d+)_mod9$/, covers: (n) => n >= 1 && n <= 8 && gcdJS(n, 9) === 1,
+    why: "decides each unit's order, its division of 6, and that the power is 1 — ordMod finds the LEAST such exponent, so minimality is by construction" },
+  { theorem: 'the_first_three_power_sums_hold_to_two_hundred', key: /^triangular_number_(\d+)_is_\d+$/, covers: (n) => n <= 200,
+    why: 'the k = 1 case is Σi = n(n+1)/2, decided to n = 200' },
+  { theorem: 'the_first_three_power_sums_hold_to_two_hundred', key: /^sum_of_cubes_1_to_(\d+)_is_triangular_squared$/, covers: (n) => n <= 200,
+    why: "the k = 3 case is Σi³ = n²(n+1)²/4, which is the square of the nth triangular number — Nicomachus's identity, decided to n = 200" },
+]
+
+// ── ONE-TO-ONE CARRIES: a claim with no parameter, and the theorem that decides exactly it ───────────────
+// The table above reads a parameter out of a key, which is the right shape for a family and the wrong shape
+// for a singleton. These rows have no parameter at all — they were always single statements — and each names
+// the theorem that decides it together with the RANGE COMPARISON that justifies the carry, because a range
+// is the one thing a name never shows.
+const EXACT: { key: string; theorem: string; why: string }[] = [
+  { key: 'the_sum_of_the_first_n_odd_numbers_is_n_squared', theorem: 'the_first_n_odd_numbers_sum_to_n_squared',
+    why: 'the row claims enumeration to 200; the theorem decides to 200' },
+  { key: 'the_sum_of_the_first_n_squares', theorem: 'the_first_three_power_sums_hold_to_two_hundred',
+    why: 'the row claims enumeration to 200 — which is why this theorem exists; power_sums_match_their_closed_forms stops at 40 and would not have carried it' },
+  { key: 'the_sum_of_powers_of_two_is_one_less_than_the_next_power', theorem: 'the_powers_of_two_sum_to_one_less_than_the_next',
+    why: 'the row claims enumeration to 40; the theorem decides to 40' },
+  { key: 'the_sum_of_squares_of_a_pascal_row_is_the_central_binomial', theorem: 'the_squares_of_a_pascal_row_sum_to_the_central_binomial',
+    why: 'the row states no range; the theorem decides rows 0…12' },
+  { key: 'sum_of_triangular_is_tetrahedral', theorem: 'the_sums_of_triangular_numbers_are_the_tetrahedral_numbers',
+    why: 'the row claims exhaustion to 100; the theorem decides to 100' },
+  { key: 'sum_of_squares_iteration_dichotomy', theorem: 'the_digit_square_iteration_reaches_one_or_four',
+    why: 'the row claims every n ≤ 200; the theorem decides 1…200' },
+  { key: 'sum_of_two_squares_characterization', theorem: 'a_number_is_a_sum_of_two_squares_exactly_when_fermats_condition_holds',
+    why: 'the row claims agreement for all n ≤ 100; the theorem decides 1…200, a superset' },
 ]
 // ── A RULE THAT MATCHES NOTHING IS BROKEN, AND LOOKS EXACTLY LIKE A RULE THAT IS FINISHED ────────────────
 // /^digrev(\d+)$/ matched zero keys for a whole run — the ledger spells them `digrev_12` — and the report
@@ -138,6 +175,13 @@ if (dead.length) {
   console.log(`✗ recover: ${dead.length} rule(s) in scripts/recover.ts match no ledger key at all — a matcher written against a rendered view of the keys rather than the keys:`)
   for (const f of dead) console.log(`    ${f.theorem}  ${f.key}`)
   process.exit(1)
+}
+
+for (const x of EXACT) {
+  const heir = [...live].find((k) => k.endsWith('_' + x.theorem) || k === x.theorem)
+  if (!heir) { console.log(`  ? ${x.theorem} — not a live key, ${x.key} is not carried`); continue }
+  if (!l.some((e) => String(e.key) === x.key)) { console.log(`  ? ${x.key} — no such ledger key, the rule names nothing`); continue }
+  heirOf.set(x.key, heir)
 }
 
 for (const f of inDomain) {

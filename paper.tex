@@ -61,8 +61,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free and axiom-free, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 577 of them across 31 files and
-7 wings; 569 close by exhaustion over a stated finite domain and the
+(\texttt{npm run latex-gate}). There are 586 of them across 31 files and
+7 wings; 578 close by exhaustion over a stated finite domain and the
 remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -511,8 +511,53 @@ remaining 8 close by \texttt{rfl} and are counted separately, never as theorems.
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
+\begin{theorem}[\texttt{the\_first\_n\_odd\_numbers\_sum\_to\_n\_squared}]
+\[ \forall n \in \{0,\dots,200\},\; \sum \{\, 2 \cdot i + 1 \mid i \in \{0,\dots,n-1\} \,\} = n \cdot n \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 201 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_powers\_of\_two\_sum\_to\_one\_less\_than\_the\_next}]
+\[ \forall n \in \{0,\dots,40\},\; \sum \{\, 2^{i} \mid i \in \{0,\dots,n + 1-1\} \,\} = 2^{n + 1} - 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 41 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_sums\_of\_triangular\_numbers\_are\_the\_tetrahedral\_numbers}]
+\[ \forall n \in \{0,\dots,100\},\; \sum \{\, \frac{i \cdot i + 1}{2} \mid i \in \{1,\dots,1+n-1\} \,\} = \frac{n \cdot n + 1 \cdot n + 2}{6} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 101 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_squares\_of\_a\_pascal\_row\_sum\_to\_the\_central\_binomial}]
+\[ \forall n \in \{0,\dots,12\},\; \sum \{\, \mathrm{choose}\mathopen{}\left(n,\,k\right) \cdot \mathrm{choose}\mathopen{}\left(n,\,k\right) \mid k \in \{0,\dots,n + 1-1\} \,\} = \mathrm{choose}\mathopen{}\left(2 \cdot n,\,n\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 13 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{polygonal\_closed\_forms\_match\_their\_recurrences}]
+\[ \forall s \in \{3,\dots,10\},\; \forall n \in \{0,\dots,50\},\; \frac{s - 2 \cdot n \cdot n + 4 \cdot n - s \cdot n}{2} = \mathrm{polyRec}\mathopen{}\left(s,\,n\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 408 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_order\_of\_every\_unit\_mod\_nine\_divides\_six}]
+\[ \forall u \in \mathrm{unitsMod}\mathopen{}\left(9\right),\; \mathrm{ordMod}\mathopen{}\left(u,\,9\right) > 0 \land 6 \bmod \mathrm{ordMod}\mathopen{}\left(u,\,9\right) = 0 \land \mathrm{powMod}\mathopen{}\left(u,\,\mathrm{ordMod}\mathopen{}\left(u,\,9\right),\,9\right) = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_digit\_square\_iteration\_reaches\_one\_or\_four}]
+\[ \forall n \in \{1,\dots,200\},\; \mathrm{iterF}\mathopen{}\left(60,\,n\right) = 1 \lor \mathrm{iterF}\mathopen{}\left(60,\,n\right) = 4 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 200 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_number\_is\_a\_sum\_of\_two\_squares\_exactly\_when\_fermats\_condition\_holds}]
+\[ \forall n \in \{1,\dots,200\},\; \mathrm{isSumOfTwoSquares}\mathopen{}\left(n\right) = \mathrm{everyThreeModFourPrimeIsEven}\mathopen{}\left(n\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 200 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_first\_three\_power\_sums\_hold\_to\_two\_hundred}]
+\[ \forall k \in \{1,\dots,3\},\; \forall n \in \{0,\dots,200\},\; \mathrm{powSum}\mathopen{}\left(k,\,n\right) = \mathrm{faulhaber}\mathopen{}\left(k,\,n\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 603 cases. \hfill$\square$
+
 \begin{theorem}[\texttt{families\_settle\_their\_ranges}]
-\[ \mathrm{settledHere} = 24 \]
+\[ \mathrm{settledHere} = 33 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 

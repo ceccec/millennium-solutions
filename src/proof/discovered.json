@@ -4107,8 +4107,9 @@
     "name": "the sum-of-two-squares theorem: n is a sum of two squares iff every prime ≡ 3 (mod 4) in its factorization occurs to an even power — the brute-force check and the factorization criterion agree for all n ≤ 100",
     "receipt": "d4fcdaa1-8273-8174-9359-a799acd2a33c",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_a_number_is_a_sum_of_two_squares_exactly_when_fermats_condition_holds quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": true,
+    "supersededBy": "lean_families_a_number_is_a_sum_of_two_squares_exactly_when_fermats_condition_holds"
   },
   {
     "key": "three_distance_at_most_three_gaps",
@@ -4891,8 +4892,9 @@
     "name": "the digit-square iteration is a total dichotomy: for every n ≤ 200 the sequence reaches either 1 (happy) or 4 (the entry to the 8-cycle) — it always terminates in exactly one of the two, no other fate",
     "receipt": "44bcd916-c0a3-8d2e-abfe-35cb88dd73aa",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_digit_square_iteration_reaches_one_or_four quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_digit_square_iteration_reaches_one_or_four"
   },
   {
     "key": "demorgan_nary_k2",
@@ -5032,48 +5034,54 @@
     "name": "the multiplicative order of 1 mod 9 is 1, dividing |ℤ/9*| = 6 (Lagrange): 1^1 ≡ 1 (mod 9) and no smaller positive power is — computed locally from the ring",
     "receipt": "4b44c50a-f4fd-8b48-a4ac-da804bf4c5b0",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_order_of_every_unit_mod_nine_divides_six quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_order_of_every_unit_mod_nine_divides_six"
   },
   {
     "key": "order_of_unit_2_mod9",
     "name": "the multiplicative order of 2 mod 9 is 6, dividing |ℤ/9*| = 6 (Lagrange): 2^6 ≡ 1 (mod 9) and no smaller positive power is — computed locally from the ring",
     "receipt": "98c7b56e-f2d1-87ed-a0d6-7b4fd9d0aba7",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_order_of_every_unit_mod_nine_divides_six quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_order_of_every_unit_mod_nine_divides_six"
   },
   {
     "key": "order_of_unit_4_mod9",
     "name": "the multiplicative order of 4 mod 9 is 3, dividing |ℤ/9*| = 6 (Lagrange): 4^3 ≡ 1 (mod 9) and no smaller positive power is — computed locally from the ring",
     "receipt": "7bbdda25-484c-8b2d-b531-1c80f8bd6d28",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_order_of_every_unit_mod_nine_divides_six quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_order_of_every_unit_mod_nine_divides_six"
   },
   {
     "key": "order_of_unit_5_mod9",
     "name": "the multiplicative order of 5 mod 9 is 6, dividing |ℤ/9*| = 6 (Lagrange): 5^6 ≡ 1 (mod 9) and no smaller positive power is — computed locally from the ring",
     "receipt": "0f86f485-4cee-8ca6-a7fc-a6def7ce2ed1",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_order_of_every_unit_mod_nine_divides_six quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_order_of_every_unit_mod_nine_divides_six"
   },
   {
     "key": "order_of_unit_7_mod9",
     "name": "the multiplicative order of 7 mod 9 is 3, dividing |ℤ/9*| = 6 (Lagrange): 7^3 ≡ 1 (mod 9) and no smaller positive power is — computed locally from the ring",
     "receipt": "cfaa11a0-1154-852b-8478-57fa04e1742f",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_order_of_every_unit_mod_nine_divides_six quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_order_of_every_unit_mod_nine_divides_six"
   },
   {
     "key": "order_of_unit_8_mod9",
     "name": "the multiplicative order of 8 mod 9 is 2, dividing |ℤ/9*| = 6 (Lagrange): 8^2 ≡ 1 (mod 9) and no smaller positive power is — computed locally from the ring",
     "receipt": "88406d2d-0559-848b-b0c7-f153b7d989b1",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_order_of_every_unit_mod_nine_divides_six quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_order_of_every_unit_mod_nine_divides_six"
   },
   {
     "key": "decimal_period_of_1_over_3",
@@ -5868,8 +5876,9 @@
     "name": "the sum of the first n odd numbers is n squared: 1 + 3 + 5 + ... + (2n−1) = n², so the odd numbers build the perfect squares one gnomon at a time; equivalently, consecutive squares differ by an odd number, (m+1)² − m² = 2m + 1. Verified by full enumeration over n up to 200",
     "receipt": "6f3b1539-0b56-8044-8f4d-b0a8bfadc8e4",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_first_n_odd_numbers_sum_to_n_squared quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_first_n_odd_numbers_sum_to_n_squared"
   },
   {
     "key": "the_grand_jury_of_gates_admits_a_theorem_only_by_unanimous_stages",
@@ -6040,16 +6049,18 @@
     "name": "the sum of the first n squares is n(n+1)(2n+1)/6: 1² + 2² + ... + n² = n(n+1)(2n+1)/6 for every n — verified by full enumeration over n up to 200. Together with the sum of the first n cubes being a perfect square, the power sums have clean closed forms. Verified by enumeration",
     "receipt": "021952ba-2f3f-8815-9e41-d3f5213ee995",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_first_three_power_sums_hold_to_two_hundred quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_first_three_power_sums_hold_to_two_hundred"
   },
   {
     "key": "the_sum_of_powers_of_two_is_one_less_than_the_next_power",
     "name": "the sum of powers of two is one less than the next power: 2⁰ + 2¹ + ... + 2ⁿ = 2^(n+1) − 1 for every n — the geometric series with ratio 2, which is exactly why a Mersenne number 2^p − 1 is a run of p ones in binary. Verified by full enumeration over n up to 40",
     "receipt": "8255cf27-1b9c-8a02-909e-a4ed62e938a0",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_powers_of_two_sum_to_one_less_than_the_next quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_powers_of_two_sum_to_one_less_than_the_next"
   },
   {
     "key": "the_binomial_row_sums_and_alternating_sum",
@@ -6798,8 +6809,9 @@
     "name": "the sum of the first n triangular numbers is the nth tetrahedral number: T(1) + T(2) + ... + T(n) = n(n+1)(n+2)/6 = C(n+2, 3) — stacking triangular layers builds a tetrahedron. Verified exhaustively for n up to 100. Decidable",
     "receipt": "90ef4db9-a803-8c60-a948-d3c2de8f7e1d",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_sums_of_triangular_numbers_are_the_tetrahedral_numbers quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_sums_of_triangular_numbers_are_the_tetrahedral_numbers"
   },
   {
     "key": "exhaustion_is_finite_enumeration_structurally_like_summing_all_states_not_physical",
@@ -6828,64 +6840,72 @@
     "name": "the 3-gonal numbers — closed form equals recurrence: P = ((3−2)·n² − (3−4)·n) / 2 matches the recurrence P(n) = P(n−1) + ((3−2)(n−1) + 1) with P(1) = 1, term for term. Verified exhaustively for n up to 50. Decidable",
     "receipt": "a9aba186-a37a-8cf6-8863-552add032f15",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_polygonal_closed_forms_match_their_recurrences quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_polygonal_closed_forms_match_their_recurrences"
   },
   {
     "key": "polygonal_numbers_s4_closed_form_equals_recurrence",
     "name": "the 4-gonal numbers — closed form equals recurrence: P = ((4−2)·n² − (4−4)·n) / 2 matches the recurrence P(n) = P(n−1) + ((4−2)(n−1) + 1) with P(1) = 1, term for term. Verified exhaustively for n up to 50. Decidable",
     "receipt": "fb4fe338-6b20-88a9-8403-2d7425bc9638",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_polygonal_closed_forms_match_their_recurrences quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_polygonal_closed_forms_match_their_recurrences"
   },
   {
     "key": "polygonal_numbers_s5_closed_form_equals_recurrence",
     "name": "the 5-gonal numbers — closed form equals recurrence: P = ((5−2)·n² − (5−4)·n) / 2 matches the recurrence P(n) = P(n−1) + ((5−2)(n−1) + 1) with P(1) = 1, term for term. Verified exhaustively for n up to 50. Decidable",
     "receipt": "04266de4-c76d-8a62-bdda-b3c2d606d753",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_polygonal_closed_forms_match_their_recurrences quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_polygonal_closed_forms_match_their_recurrences"
   },
   {
     "key": "polygonal_numbers_s6_closed_form_equals_recurrence",
     "name": "the 6-gonal numbers — closed form equals recurrence: P = ((6−2)·n² − (6−4)·n) / 2 matches the recurrence P(n) = P(n−1) + ((6−2)(n−1) + 1) with P(1) = 1, term for term. Verified exhaustively for n up to 50. Decidable",
     "receipt": "1bb13df4-173f-8c7e-8163-6c390c8b6e7b",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_polygonal_closed_forms_match_their_recurrences quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_polygonal_closed_forms_match_their_recurrences"
   },
   {
     "key": "polygonal_numbers_s7_closed_form_equals_recurrence",
     "name": "the 7-gonal numbers — closed form equals recurrence: P = ((7−2)·n² − (7−4)·n) / 2 matches the recurrence P(n) = P(n−1) + ((7−2)(n−1) + 1) with P(1) = 1, term for term. Verified exhaustively for n up to 50. Decidable",
     "receipt": "5ea11c5b-7f68-8cc3-99dc-c1914b2ed2ad",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_polygonal_closed_forms_match_their_recurrences quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_polygonal_closed_forms_match_their_recurrences"
   },
   {
     "key": "polygonal_numbers_s8_closed_form_equals_recurrence",
     "name": "the 8-gonal numbers — closed form equals recurrence: P = ((8−2)·n² − (8−4)·n) / 2 matches the recurrence P(n) = P(n−1) + ((8−2)(n−1) + 1) with P(1) = 1, term for term. Verified exhaustively for n up to 50. Decidable",
     "receipt": "cc3176b9-2e83-819b-9614-e0a0ce9ac6c0",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_polygonal_closed_forms_match_their_recurrences quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_polygonal_closed_forms_match_their_recurrences"
   },
   {
     "key": "polygonal_numbers_s9_closed_form_equals_recurrence",
     "name": "the 9-gonal numbers — closed form equals recurrence: P = ((9−2)·n² − (9−4)·n) / 2 matches the recurrence P(n) = P(n−1) + ((9−2)(n−1) + 1) with P(1) = 1, term for term. Verified exhaustively for n up to 50. Decidable",
     "receipt": "b2da2f8a-bdd9-8313-bc8f-4f676870fc68",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_polygonal_closed_forms_match_their_recurrences quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_polygonal_closed_forms_match_their_recurrences"
   },
   {
     "key": "polygonal_numbers_s10_closed_form_equals_recurrence",
     "name": "the 10-gonal numbers — closed form equals recurrence: P = ((10−2)·n² − (10−4)·n) / 2 matches the recurrence P(n) = P(n−1) + ((10−2)(n−1) + 1) with P(1) = 1, term for term. Verified exhaustively for n up to 50. Decidable",
     "receipt": "f03c1061-c8ed-8e43-9443-5846cfcb4fdd",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_polygonal_closed_forms_match_their_recurrences quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_polygonal_closed_forms_match_their_recurrences"
   },
   {
     "key": "uuidna_feeds_free_by_address_from_the_content_addressed_ledger_not_an_akashic_record",
@@ -7921,192 +7941,216 @@
     "name": "the sum of the first 2 odd numbers is 2² = 4: 1+3+…+(2·2−1) = 4, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7",
     "receipt": "d4736903-83d6-8342-8ff5-4af239323788",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_first_n_odd_numbers_sum_to_n_squared quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_first_n_odd_numbers_sum_to_n_squared"
   },
   {
     "key": "sum_first_3_odd_numbers_is_3_squared",
     "name": "the sum of the first 3 odd numbers is 3² = 9: 1+3+…+(2·3−1) = 9, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7",
     "receipt": "0f3ab5e7-5de5-833d-b613-2a142bd269b9",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_first_n_odd_numbers_sum_to_n_squared quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_first_n_odd_numbers_sum_to_n_squared"
   },
   {
     "key": "sum_first_4_odd_numbers_is_4_squared",
     "name": "the sum of the first 4 odd numbers is 4² = 16: 1+3+…+(2·4−1) = 16, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7",
     "receipt": "58a18681-7247-8b6d-b350-ebc240d67519",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_first_n_odd_numbers_sum_to_n_squared quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_first_n_odd_numbers_sum_to_n_squared"
   },
   {
     "key": "sum_first_5_odd_numbers_is_5_squared",
     "name": "the sum of the first 5 odd numbers is 5² = 25: 1+3+…+(2·5−1) = 25, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7",
     "receipt": "d524a60f-f7a1-866c-939f-5993d4cf43a7",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_first_n_odd_numbers_sum_to_n_squared quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_first_n_odd_numbers_sum_to_n_squared"
   },
   {
     "key": "sum_first_6_odd_numbers_is_6_squared",
     "name": "the sum of the first 6 odd numbers is 6² = 36: 1+3+…+(2·6−1) = 36, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7",
     "receipt": "8c235dfe-1759-82b4-a1bd-4f3ab48a5d89",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_first_n_odd_numbers_sum_to_n_squared quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_first_n_odd_numbers_sum_to_n_squared"
   },
   {
     "key": "sum_first_7_odd_numbers_is_7_squared",
     "name": "the sum of the first 7 odd numbers is 7² = 49: 1+3+…+(2·7−1) = 49, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7",
     "receipt": "4d5818b4-f10c-8c34-b143-250bc217039d",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_first_n_odd_numbers_sum_to_n_squared quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_first_n_odd_numbers_sum_to_n_squared"
   },
   {
     "key": "sum_first_8_odd_numbers_is_8_squared",
     "name": "the sum of the first 8 odd numbers is 8² = 64: 1+3+…+(2·8−1) = 64, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7",
     "receipt": "6b5f98bd-b79d-8abd-8baa-8977090b2b3b",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_first_n_odd_numbers_sum_to_n_squared quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_first_n_odd_numbers_sum_to_n_squared"
   },
   {
     "key": "sum_first_9_odd_numbers_is_9_squared",
     "name": "the sum of the first 9 odd numbers is 9² = 81: 1+3+…+(2·9−1) = 81, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7",
     "receipt": "b38c5643-4326-8536-9e9f-63e1cda1fb13",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_first_n_odd_numbers_sum_to_n_squared quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_first_n_odd_numbers_sum_to_n_squared"
   },
   {
     "key": "sum_first_10_odd_numbers_is_10_squared",
     "name": "the sum of the first 10 odd numbers is 10² = 100: 1+3+…+(2·10−1) = 100, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7",
     "receipt": "86ea5403-d088-82b2-b559-d66964972b7f",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_first_n_odd_numbers_sum_to_n_squared quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_first_n_odd_numbers_sum_to_n_squared"
   },
   {
     "key": "sum_first_11_odd_numbers_is_11_squared",
     "name": "the sum of the first 11 odd numbers is 11² = 121: 1+3+…+(2·11−1) = 121, by direct summation — a decidable arithmetic identity; integrity not truth; 0/7",
     "receipt": "6c1e6094-08ab-86cd-9f4c-fb65aea91e36",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_first_n_odd_numbers_sum_to_n_squared quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_first_n_odd_numbers_sum_to_n_squared"
   },
   {
     "key": "sum_of_cubes_1_to_2_is_triangular_squared",
     "name": "the sum of cubes 1³+…+2³ = 3² = 9, the square of the 2-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7",
     "receipt": "30da4e62-e3b6-8bd5-977d-1e1bd0ac2cc4",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_first_three_power_sums_hold_to_two_hundred quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_first_three_power_sums_hold_to_two_hundred"
   },
   {
     "key": "sum_of_cubes_1_to_3_is_triangular_squared",
     "name": "the sum of cubes 1³+…+3³ = 6² = 36, the square of the 3-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7",
     "receipt": "0af95322-da4a-8800-a067-6f0e2bb77708",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_first_three_power_sums_hold_to_two_hundred quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_first_three_power_sums_hold_to_two_hundred"
   },
   {
     "key": "sum_of_cubes_1_to_4_is_triangular_squared",
     "name": "the sum of cubes 1³+…+4³ = 10² = 100, the square of the 4-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7",
     "receipt": "b902429f-4fc2-8838-b17d-901b312a4571",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_first_three_power_sums_hold_to_two_hundred quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_first_three_power_sums_hold_to_two_hundred"
   },
   {
     "key": "sum_of_cubes_1_to_5_is_triangular_squared",
     "name": "the sum of cubes 1³+…+5³ = 15² = 225, the square of the 5-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7",
     "receipt": "9f7754c1-589b-838b-8339-4e247389b0aa",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_first_three_power_sums_hold_to_two_hundred quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_first_three_power_sums_hold_to_two_hundred"
   },
   {
     "key": "sum_of_cubes_1_to_6_is_triangular_squared",
     "name": "the sum of cubes 1³+…+6³ = 21² = 441, the square of the 6-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7",
     "receipt": "b9c21a4d-776b-841e-bea1-6eccec7386c8",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_first_three_power_sums_hold_to_two_hundred quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_first_three_power_sums_hold_to_two_hundred"
   },
   {
     "key": "sum_of_cubes_1_to_7_is_triangular_squared",
     "name": "the sum of cubes 1³+…+7³ = 28² = 784, the square of the 7-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7",
     "receipt": "118130e3-c53a-82c9-94d8-78fbecc8f1d3",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_first_three_power_sums_hold_to_two_hundred quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_first_three_power_sums_hold_to_two_hundred"
   },
   {
     "key": "sum_of_cubes_1_to_8_is_triangular_squared",
     "name": "the sum of cubes 1³+…+8³ = 36² = 1296, the square of the 8-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7",
     "receipt": "2fe72e2f-285d-83fd-88e2-f762c2e9b779",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_first_three_power_sums_hold_to_two_hundred quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_first_three_power_sums_hold_to_two_hundred"
   },
   {
     "key": "sum_of_cubes_1_to_9_is_triangular_squared",
     "name": "the sum of cubes 1³+…+9³ = 45² = 2025, the square of the 9-th triangular number (Nicomachus’s identity), by direct summation; integrity not truth; 0/7",
     "receipt": "367f20c6-732e-83d9-99ad-2514175d3338",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_first_three_power_sums_hold_to_two_hundred quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_first_three_power_sums_hold_to_two_hundred"
   },
   {
     "key": "triangular_number_5_is_15",
     "name": "the 5-th triangular number is 15: 1+2+…+5 = 5·6/2 = 15, by direct summation — decidable; integrity not truth; 0/7",
     "receipt": "dfb6cdf1-6b6f-8474-8110-cf10451ca879",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_first_three_power_sums_hold_to_two_hundred quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_first_three_power_sums_hold_to_two_hundred"
   },
   {
     "key": "triangular_number_6_is_21",
     "name": "the 6-th triangular number is 21: 1+2+…+6 = 6·7/2 = 21, by direct summation — decidable; integrity not truth; 0/7",
     "receipt": "92c0df17-aaf8-8962-bc16-880cb2dccb09",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_first_three_power_sums_hold_to_two_hundred quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_first_three_power_sums_hold_to_two_hundred"
   },
   {
     "key": "triangular_number_7_is_28",
     "name": "the 7-th triangular number is 28: 1+2+…+7 = 7·8/2 = 28, by direct summation — decidable; integrity not truth; 0/7",
     "receipt": "66a8f84d-bcaf-8181-8899-c5afbbfbbe59",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_first_three_power_sums_hold_to_two_hundred quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_first_three_power_sums_hold_to_two_hundred"
   },
   {
     "key": "triangular_number_8_is_36",
     "name": "the 8-th triangular number is 36: 1+2+…+8 = 8·9/2 = 36, by direct summation — decidable; integrity not truth; 0/7",
     "receipt": "8d27c785-8174-88f9-a3ea-4f5a2cd8f9f6",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_first_three_power_sums_hold_to_two_hundred quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_first_three_power_sums_hold_to_two_hundred"
   },
   {
     "key": "triangular_number_9_is_45",
     "name": "the 9-th triangular number is 45: 1+2+…+9 = 9·10/2 = 45, by direct summation — decidable; integrity not truth; 0/7",
     "receipt": "fcade988-e6df-879d-bfc8-db07eef9d88e",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_first_three_power_sums_hold_to_two_hundred quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_first_three_power_sums_hold_to_two_hundred"
   },
   {
     "key": "triangular_number_10_is_55",
     "name": "the 10-th triangular number is 55: 1+2+…+10 = 10·11/2 = 55, by direct summation — decidable; integrity not truth; 0/7",
     "receipt": "6707610b-2336-8c17-bdba-6d048d05db0b",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content has no stated decidable form yet.",
-    "portable": false
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_first_three_power_sums_hold_to_two_hundred quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": false,
+    "supersededBy": "lean_families_the_first_three_power_sums_hold_to_two_hundred"
   },
   {
     "key": "factorial_3_is_6",
@@ -9238,8 +9282,9 @@
     "name": "the sum of squares of a Pascal row is the central binomial: Σ_k C(n,k)² = C(2n,n); 0/7",
     "receipt": "37e984a6-8818-8b2f-9e37-4fa78a9c74a9",
     "revoked": true,
-    "reason": "dirty: not backed by a Lean proof. Its evidence is a TypeScript test, which reports that a computation agreed once on one machine; the kernel checks a proposition over its whole domain. Its content is decidable arithmetic and is portable to Lean — it may return as a lean_ entry once proved.",
-    "portable": true
+    "reason": "carried: withdrawn as \"not backed by a Lean proof\", and it IS proved — lean_families_the_squares_of_a_pascal_row_sum_to_the_central_binomial quantifies over the whole family this claim is one parameter of, and the generator recorded the subsumption when it emitted that theorem. Marked in place; the receipt stays in the append-only chain.",
+    "portable": true,
+    "supersededBy": "lean_families_the_squares_of_a_pascal_row_sum_to_the_central_binomial"
   },
   {
     "key": "sum_of_the_first_n_integers_is_n_times_n_plus_one_over_two",
@@ -17957,5 +18002,50 @@
     "key": "lean_families_and_the_converse_fails_at_six",
     "name": "lean families.lean: and_the_converse_fails_at_six — ordMod 5 6 = 2 ∧ rootSum 5 6 % 6 = 0 ∧ gcd' 4 6 = 2 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "08da2de6-374d-8924-9380-056f8b0c8b8b"
+  },
+  {
+    "key": "lean_families_the_first_n_odd_numbers_sum_to_n_squared",
+    "name": "lean families.lean: the_first_n_odd_numbers_sum_to_n_squared — (List.range 201).all (fun n => ((List.range n).map (fun i => 2 * i + 1)).foldl (· + ·) 0 == n * n) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f9aed271-938f-8ea8-96c8-e4da6f5d2cfe"
+  },
+  {
+    "key": "lean_families_the_powers_of_two_sum_to_one_less_than_the_next",
+    "name": "lean families.lean: the_powers_of_two_sum_to_one_less_than_the_next — (List.range 41).all (fun n => ((List.range (n + 1)).map (fun i => 2 ^ i)).foldl (· + ·) 0 == 2 ^ (n + 1) - 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1f9ad1a4-69e8-89ca-8051-b24024344267"
+  },
+  {
+    "key": "lean_families_the_sums_of_triangular_numbers_are_the_tetrahedral_numbers",
+    "name": "lean families.lean: the_sums_of_triangular_numbers_are_the_tetrahedral_numbers — (List.range 101).all (fun n => ((List.range' 1 n).map (fun i => i * (i + 1) / 2)).foldl (· + ·) 0 == n * (n + 1) * (n + 2) / 6) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "bfd9472c-691b-868d-8bf7-5fb0a7af7051"
+  },
+  {
+    "key": "lean_families_the_squares_of_a_pascal_row_sum_to_the_central_binomial",
+    "name": "lean families.lean: the_squares_of_a_pascal_row_sum_to_the_central_binomial — (List.range 13).all (fun n => ((List.range (n + 1)).map (fun k => choose n k * choose n k)).foldl (· + ·) 0 == choose (2 * n) n) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e05dd0fe-1001-8efb-95f2-87d4f7178c0b"
+  },
+  {
+    "key": "lean_families_polygonal_closed_forms_match_their_recurrences",
+    "name": "lean families.lean: polygonal_closed_forms_match_their_recurrences — (List.range' 3 8).all (fun s => (List.range 51).all (fun n => ((s - 2) * n * n + 4 * n - s * n) / 2 == polyRec s n)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9488578c-8d08-8e41-8dc4-83e758fce601"
+  },
+  {
+    "key": "lean_families_the_order_of_every_unit_mod_nine_divides_six",
+    "name": "lean families.lean: the_order_of_every_unit_mod_nine_divides_six — (unitsMod 9).all (fun u => ordMod u 9 > 0 && 6 % ordMod u 9 == 0 && powMod u (ordMod u 9) 9 == 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a96e9853-244e-8608-ab67-de6b14112f6b"
+  },
+  {
+    "key": "lean_families_the_digit_square_iteration_reaches_one_or_four",
+    "name": "lean families.lean: the_digit_square_iteration_reaches_one_or_four — (List.range' 1 200).all (fun n => iterF 60 n == 1 || iterF 60 n == 4) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "bc38ca6e-83ae-82ad-8494-e27ae5055974"
+  },
+  {
+    "key": "lean_families_a_number_is_a_sum_of_two_squares_exactly_when_fermats_condition_holds",
+    "name": "lean families.lean: a_number_is_a_sum_of_two_squares_exactly_when_fermats_condition_holds — (List.range' 1 200).all (fun n => isSumOfTwoSquares n == everyThreeModFourPrimeIsEven n) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "3d6c7b50-3a94-850c-82d2-c3c0de39da8d"
+  },
+  {
+    "key": "lean_families_the_first_three_power_sums_hold_to_two_hundred",
+    "name": "lean families.lean: the_first_three_power_sums_hold_to_two_hundred — (List.range' 1 3).all (fun k => (List.range 201).all (fun n => powSum k n == faulhaber k n)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e4cdb3b8-6604-8169-9524-da27d74dbec7"
   }
 ]

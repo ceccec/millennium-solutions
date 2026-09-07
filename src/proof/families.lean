@@ -247,8 +247,92 @@ theorem the_powers_of_a_unit_sum_to_zero_when_g_minus_one_is_invertible :
 theorem and_the_converse_fails_at_six :
   ordMod 5 6 = 2 ∧ rootSum 5 6 % 6 = 0 ∧ gcd' 4 6 = 2 := by decide
 
+-- ── A THIRD OCTAVE: THE CLASSICAL SUMS, EACH QUANTIFIED OVER ITS RANGE ──────────────────────────────────
+--
+--    Same operation again, on the families the second pass left. Several of these rows were withdrawn while
+--    the fact they state was ALREADY decided here — sum_first_5_odd_numbers_is_5_squared sat beside a
+--    theorem quantifying over every n — so the octave below is written for the ones that were genuinely
+--    unproved, and the rest are carried by rules in scripts/recover.ts pointing at what already existed.
+
+def vpF : Nat → Nat → Nat → Nat
+  | 0, _, _ => 0
+  | _, _, 0 => 0
+  | Nat.succ f, p, n => if p > 1 && n % p == 0 then 1 + vpF f p (n / p) else 0
+/-- the exponent of p in n — the p-adic valuation, by fuel for the same axiom-free reason as gcdFuel -/
+def vp (p n : Nat) : Nat := vpF 20 p n
+def isSumOfTwoSquares (n : Nat) : Bool :=
+  (List.range 15).any (fun a => (List.range 15).any (fun b => a * a + b * b == n))
+/-- Fermat's condition: every prime ≡ 3 (mod 4) divides n to an even power -/
+def everyThreeModFourPrimeIsEven (n : Nat) : Bool :=
+  (List.range' 2 199).all (fun p => !(isPrime p && p % 4 == 3) || vp p n % 2 == 0)
+
+def digitSquareSum (n : Nat) : Nat := ((digitsOf n).map (fun d => d * d)).foldl (· + ·) 0
+def iterF : Nat → Nat → Nat
+  | 0, n => n
+  | Nat.succ f, n => if n == 1 || n == 4 then n else iterF f (digitSquareSum n)
+
+def polyRec : Nat → Nat → Nat
+  | _, 0 => 0
+  | s, Nat.succ m => polyRec s m + ((s - 2) * m + 1)
+
+-- ── the odd numbers build the squares, one gnomon at a time ──
+set_option maxRecDepth 400000 in
+theorem the_first_n_odd_numbers_sum_to_n_squared :
+  (List.range 201).all (fun n => ((List.range n).map (fun i => 2 * i + 1)).foldl (· + ·) 0 == n * n) := by decide
+
+-- ── the powers of two fall one short of the next power ──
+set_option maxRecDepth 400000 in
+theorem the_powers_of_two_sum_to_one_less_than_the_next :
+  (List.range 41).all (fun n =>
+    ((List.range (n + 1)).map (fun i => 2 ^ i)).foldl (· + ·) 0 == 2 ^ (n + 1) - 1) := by decide
+
+-- ── stacking triangles gives tetrahedra ──
+set_option maxRecDepth 400000 in
+theorem the_sums_of_triangular_numbers_are_the_tetrahedral_numbers :
+  (List.range 101).all (fun n =>
+    ((List.range' 1 n).map (fun i => i * (i + 1) / 2)).foldl (· + ·) 0 == n * (n + 1) * (n + 2) / 6) := by decide
+
+-- ── a Pascal row squared sums to the central binomial ──
+set_option maxRecDepth 100000 in
+theorem the_squares_of_a_pascal_row_sum_to_the_central_binomial :
+  (List.range 13).all (fun n =>
+    ((List.range (n + 1)).map (fun k => choose n k * choose n k)).foldl (· + ·) 0 == choose (2 * n) n) := by decide
+
+-- ── every polygonal family: the closed form and the recurrence are the same sequence, for s = 3…10 ──
+set_option maxRecDepth 400000 in
+theorem polygonal_closed_forms_match_their_recurrences :
+  (List.range' 3 8).all (fun s => (List.range 51).all (fun n =>
+    ((s - 2) * n * n + 4 * n - s * n) / 2 == polyRec s n)) := by decide
+
+-- ── Lagrange in the one group this deposit is built on: every unit's order divides the group's ──
+--    ordMod finds the LEAST positive exponent, so minimality is by construction and not asserted here.
+theorem the_order_of_every_unit_mod_nine_divides_six :
+  (unitsMod 9).all (fun u => ordMod u 9 > 0 && 6 % ordMod u 9 == 0 && powMod u (ordMod u 9) 9 == 1) := by decide
+
+-- ── the digit-square iteration is a dichotomy: every start below 201 lands on 1 or on 4 ──
+--    4 is the entry to the eight-cycle, so "not happy" is a single decidable destination rather than a
+--    negative that would need the whole cycle enumerating.
+set_option maxRecDepth 400000 in
+theorem the_digit_square_iteration_reaches_one_or_four :
+  (List.range' 1 200).all (fun n => iterF 60 n == 1 || iterF 60 n == 4) := by decide
+
+-- ── Fermat's two-squares theorem, decided both ways over the first two hundred ──
+set_option maxRecDepth 400000 in
+theorem a_number_is_a_sum_of_two_squares_exactly_when_fermats_condition_holds :
+  (List.range' 1 200).all (fun n => isSumOfTwoSquares n == everyThreeModFourPrimeIsEven n) := by decide
+
+-- ── AND THE POWER SUMS OUT TO TWO HUNDRED, WHICH IS THE RANGE THE ROWS ACTUALLY CLAIM ───────────────────
+--    power_sums_match_their_closed_forms decides k = 1…5 at every n to forty. `the_sum_of_the_first_n_squares`
+--    says "verified by full enumeration over n up to 200", and forty is not two hundred: carrying it on the
+--    narrower theorem would have been the easy move and would have recorded a range nobody had checked.
+--    Every range below was read off the claim it is meant to carry, and the four theorems above were widened
+--    the same way — to 200, 40, 100 and 50 — rather than the claims being trimmed to fit what I had written.
+set_option maxRecDepth 400000 in
+theorem the_first_three_power_sums_hold_to_two_hundred :
+  (List.range' 1 3).all (fun k => (List.range 201).all (fun n => powSum k n == faulhaber k n)) := by decide
+
 -- ── what these settle ──
-def settledHere : Nat := 24
-theorem families_settle_their_ranges : settledHere = 24 := rfl
+def settledHere : Nat := 33
+theorem families_settle_their_ranges : settledHere = 33 := rfl
 
 end Families
