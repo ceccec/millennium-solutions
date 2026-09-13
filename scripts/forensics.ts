@@ -22,7 +22,7 @@ const SEED = 'axiom:TRINITY'
 const GENESIS_BASELINE = new Set(['euler_units_pow6', 'units_sum_zero'])
 
 const LEDGER = 'src/proof/discovered.json'
-const ledger: { key: string; name: string; receipt: string }[] = JSON.parse(readFileSync(LEDGER, 'utf8'))
+const ledger: { key: string; name: string; receipt: string; revoked?: boolean }[] = JSON.parse(readFileSync(LEDGER, 'utf8'))
 
 let bad = 0
 

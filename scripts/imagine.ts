@@ -250,6 +250,17 @@ ${body}
 end Imagined
 `)
 console.log(`\nwrote src/proof/imagined.lean with ${t2.length} proposition(s) — putting them to the kernel:`)
+// NO TOOLCHAIN IS NOT A REFUSAL. Without `lean` on the PATH the shell answered "lean: command not found" and this
+// printed it as "the kernel refused some" — the mislabel lean-agree.ts already fixed. CI installs no Lean, and
+// covered-gate runs --emit, so the first deploy after that gate joined the chain went red on a kernel that was
+// never asked. Absent is reported as absent, loudly, and is not a verdict: the propositions are put to the kernel
+// where lean is installed — `npm run lean`, and the pre-commit hook.
+const hasLean = (() => { try { execSync('lean --version', { stdio: 'pipe' }); return true } catch { return false } })()
+if (!hasLean) {
+  console.log('  ○ NOT CHECKED HERE — no Lean toolchain on this machine, so the kernel was not asked')
+  console.log('    this does not mean they hold; they are checked where lean is installed (npm run lean, pre-commit).')
+  process.exit(0)
+}
 try {
   execSync('cd src/proof && LEAN_PATH=. lean imagined.lean', { encoding: 'utf8', stdio: 'pipe' })
   console.log('  ✓ the kernel accepted all ' + t2.length)
