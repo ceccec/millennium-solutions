@@ -22,6 +22,8 @@ concurrency:
 jobs:
   release:
     runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.rel.outputs.tag }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -101,3 +103,18 @@ jobs:
           # the annotated tag's own message carries the gravity signature and the content-address
           git for-each-ref "--format=%(contents)" "refs/tags/$tag" > /tmp/notes.txt
           gh release create "$tag" --title "$tag" --notes-file /tmp/notes.txt --verify-tag
+
+  # THE PUBLISH, CALLED. The release above is created with the Actions token, and GitHub never lets an event
+  # made by that token start another workflow — so publish.yml's `release: published` never fired for an
+  # automatic release, and npm sat at 0.1.1 through v9.0.1. Calling it from here puts the minted tag and its
+  # publish in one run: release vX.Y.Z → npm X.Y.Z (the version is written from the tag inside publish.yml).
+  publish:
+    needs: release
+    if: needs.release.outputs.tag != ''
+    uses: ./.github/workflows/publish.yml
+    with:
+      tag: ${{ needs.release.outputs.tag }}
+    secrets: inherit
+    permissions:
+      contents: read
+      id-token: write   # npm provenance

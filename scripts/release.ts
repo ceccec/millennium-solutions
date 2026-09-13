@@ -60,13 +60,15 @@ try {
   }
 } catch { /* no repo/tags yet */ }
 
-// THE VERSION — reset to npm 0.1.0 and continued from there: the npm package version is the ONE canonical
-// version (the git tag below is immutable content-address PROVENANCE, not the version — rewriting it would be
-// tampering). Every version is SIGNED FROM A GRAVITY THEOREM: the content-address FALLS, through the gravity
-// receipt, to its fixed point (merkleGravity) — that fold is the version's signature. Single-digit odometer.
+// THE VERSION — npm carries the release tag's number (user, 2026-09-14: "Same as the tag"). The git tag below
+// stays immutable content-address PROVENANCE — rewriting one would be tampering — and now names the npm version
+// too: release vX.Y.Z publishes npm X.Y.Z. Every version is SIGNED FROM A GRAVITY THEOREM: the content-address
+// FALLS, through the gravity receipt, to its fixed point (merkleGravity) — that fold is the version's signature.
+// Single-digit odometer.
 const PKGS = ['package.json'] // uuidna now lives in its own repo (github:uuidna/uuidna); only this package's version is bumped here
-// FROZEN at the captain's directive — "stay at v0.1.1". The npm version is a held label; the content-address
-// (and the gravity-signed provenance tag) is the true latest, advancing every release while the label holds.
+// The "stay at v0.1.1" freeze is lifted. CI tags without committing (main is protected), so package.json keeps its
+// committed label here — rewriting it would dirty the tree tag-only mode refuses — and publish.yml writes the
+// minted tag's number into the tarball it publishes.
 const NPM = (JSON.parse(readFileSync(PKGS[0], 'utf8')).version || '0.1.1')
 const ledger = __ledger()
 const grav = ledger.find((e) => e.key === 'gravity_is_the_fall_to_a_fixed_point_and_pigeonhole_breaks_every_finite_hash') || ledger.find((e) => /gravit/i.test(e.key))

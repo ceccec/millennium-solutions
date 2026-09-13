@@ -4,10 +4,22 @@ name: Publish packages to npm (after all safety measures)
 # 0/7-consistent deposit is published. Auth is an npm AUTOMATION token stored as the NPM_TOKEN
 # secret (set by the author) — automation tokens skip interactive OTP by design. No secret is in
 # this file; publishing cannot proceed without the secret, and cannot proceed if a gate fails.
+#
+# THE VERSION IS THE TAG (user, 2026-09-14: "Same as the tag"). Release vX.Y.Z publishes npm X.Y.Z. CI tags
+# without committing — main is protected — so the tagged tree's package.json keeps its committed label, and the
+# step before publish writes the tag's number into the tarball. Nothing is committed back.
 on:
+  # release.yml CALLS this right after it mints a tag. A release created with the Actions token fires no
+  # `release: published` workflow — GitHub never lets GITHUB_TOKEN events start other workflows — so every
+  # automatic release from v8.8.5 to v9.0.1 left npm at 0.1.1 without this workflow ever running.
+  workflow_call:
+    inputs:
+      tag:
+        type: string
+        required: true
   release:
-    types: [published]   # cut a GitHub Release → publish (also the Zenodo DOI trigger, if enabled)
-  workflow_dispatch:
+    types: [published]   # a release cut by a person still publishes (also the Zenodo DOI trigger, if enabled)
+  workflow_dispatch:     # publishes the latest tag
 
 permissions:
   contents: read
@@ -18,6 +30,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ inputs.tag || github.event.release.tag_name || github.ref }}   # the tagged tree, not a later main
+          fetch-depth: 0   # workflow_dispatch reads the latest tag from history
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: 22
@@ -57,17 +72,36 @@ jobs:
             echo 'packages/uuidna absent — no tarball to align'
           fi
 
+      # --- the version: the tag's number, written after the gates so they gate the tree exactly as tagged ---
+      - name: version = the release tag
+        id: ver
+        env:
+          TAG: ${{ inputs.tag || github.event.release.tag_name }}
+        run: |
+          [ -n "$TAG" ] || TAG=$(git tag --sort=version:refname | tail -1)
+          V="${TAG#v}"
+          echo "$V" | grep -Eq '^[0-9]\.[0-9]\.[0-9]$' || { echo "tag '$TAG' is not a single-digit vX.Y.Z — refusing to invent a version"; exit 1; }
+          npm version "$V" --no-git-tag-version --allow-same-version > /dev/null
+          echo "version=$V" >> "$GITHUB_OUTPUT"
+          echo "tag $TAG → @ceccec/millennium-solutions@$V (package.json committed as $(git show HEAD:package.json | node -pe 'JSON.parse(require("fs").readFileSync(0)).version'))"
+
       # --- publish (automation token → no OTP). Dependency first, then the scoped trinity. ---
-      # Releases are minted automatically now (release.yml), so this workflow fires on every release. The
-      # token may not be set — publish only when it is, and say so plainly otherwise rather than failing on
-      # an authentication error that means nothing. NB: the `secrets` context is unavailable in a job-level
-      # `if`, so the check belongs here, in the step.
+      # Releases are minted automatically now (release.yml), and release.yml calls this workflow for every one.
+      # The token may not be set — publish only when it is, and say so plainly otherwise rather than failing on
+      # an authentication error that means nothing. A version npm already has is skipped, not an error: the
+      # call from release.yml and a person's `release: published` can both reach the same tag. NB: the
+      # `secrets` context is unavailable in a job-level `if`, so the check belongs here, in the step.
       - name: publish @ceccec/millennium-solutions (only when NPM_TOKEN is set)
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          V: ${{ steps.ver.outputs.version }}
         run: |
           if [ -z "$NODE_AUTH_TOKEN" ]; then
             echo "NPM_TOKEN is not set — nothing published. Set the secret to enable publishing."
+            exit 0
+          fi
+          if npm view "@ceccec/millennium-solutions@$V" version > /dev/null 2>&1; then
+            echo "npm already has @ceccec/millennium-solutions@$V — nothing to publish"
             exit 0
           fi
           npm publish --access public --provenance
