@@ -111,9 +111,16 @@ jobs:
             exit 0
           fi
           if [ -n "$NPM_TOKEN" ]; then export NODE_AUTH_TOKEN="$NPM_TOKEN"; echo "auth: NPM_TOKEN secret"; else unset NODE_AUTH_TOKEN; echo "auth: trusted publishing (OIDC) — no token"; fi
-          npm publish --access public --provenance || {
+          # WHY A REFUSAL HAPPENED, PRINTED. v9.0.3 failed E404 with nothing else to read: npm logs the token
+          # exchange's result only at verbose level ("Failed token exchange request with body message: …") and then
+          # publishes WITHOUT credentials, so the registry's 404 is all a default log shows. The verbose output goes
+          # to a file and only its oidc lines and errors are printed — npm writes no token to its log.
+          if npm publish --access public --provenance --loglevel verbose > /tmp/publish.log 2>&1; then
+            grep -E "verbose oidc|provenance|\+ @ceccec|^npm notice (name|version|shasum|integrity):" /tmp/publish.log
+          else
+            grep -E "verbose oidc|silly oidc|npm error" /tmp/publish.log
             echo "✗ npm refused @ceccec/millennium-solutions@$V. With no NPM_TOKEN, npm must list this repository as a"
             echo "  trusted publisher for the calling workflow file (release.yml for automatic releases, publish.yml"
             echo "  for manual ones): npm trust github @ceccec/millennium-solutions --repo ceccec/millennium-solutions --file <file>"
             exit 1
-          }
+          fi
