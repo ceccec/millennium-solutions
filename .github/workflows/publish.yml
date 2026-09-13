@@ -1,9 +1,15 @@
 name: Publish packages to npm (after all safety measures)
 
 # npm deploy by CI: the safety gates run FIRST (gaps · seal · wholeness). Only an honest, whole,
-# 0/7-consistent deposit is published. Auth is an npm AUTOMATION token stored as the NPM_TOKEN
-# secret (set by the author) — automation tokens skip interactive OTP by design. No secret is in
-# this file; publishing cannot proceed without the secret, and cannot proceed if a gate fails.
+# 0/7-consistent deposit is published, and nothing is published if a gate fails.
+#
+# NO TOKEN (user, 2026-09-14: "the github release is enough for npm to publish"). Auth is npm TRUSTED
+# PUBLISHING: GitHub signs an OIDC identity for this run (id-token: write) and npm accepts it for
+# @ceccec/millennium-solutions because the package names this repository as a trusted publisher. That trust is
+# set once on npm by the author — `npm trust github` or the package's settings page — for BOTH workflow files:
+# release.yml (npm matches the CALLING workflow when this runs via workflow_call, i.e. every automatic release)
+# and publish.yml (a release cut by a person, or a manual run). Provenance is attested automatically. An
+# NPM_TOKEN secret, if one is ever added, is used instead; there is none today.
 #
 # THE VERSION IS THE TAG (user, 2026-09-14: "Same as the tag"). Release vX.Y.Z publishes npm X.Y.Z. CI tags
 # without committing — main is protected — so the tagged tree's package.json keeps its committed label, and the
@@ -37,6 +43,9 @@ jobs:
         with:
           node-version: 22
           registry-url: 'https://registry.npmjs.org'
+      # Trusted publishing needs npm >= 11.5.1 (and Node >= 22.14); Node 22 ships npm 10. Pinned, like the actions.
+      - name: npm 11 (trusted publishing)
+        run: npm install -g npm@11.12.1 && npm --version
 
       # The gates reach src/5/diamond.ts and src/the/apple/index.ts, which import @uuidna/uuidna, so
       # the workspace must be installed and built first — without it those modules cannot report and
@@ -85,23 +94,26 @@ jobs:
           echo "version=$V" >> "$GITHUB_OUTPUT"
           echo "tag $TAG → @ceccec/millennium-solutions@$V (package.json committed as $(git show HEAD:package.json | node -pe 'JSON.parse(require("fs").readFileSync(0)).version'))"
 
-      # --- publish (automation token → no OTP). Dependency first, then the scoped trinity. ---
-      # Releases are minted automatically now (release.yml), and release.yml calls this workflow for every one.
-      # The token may not be set — publish only when it is, and say so plainly otherwise rather than failing on
-      # an authentication error that means nothing. A version npm already has is skipped, not an error: the
-      # call from release.yml and a person's `release: published` can both reach the same tag. NB: the
-      # `secrets` context is unavailable in a job-level `if`, so the check belongs here, in the step.
-      - name: publish @ceccec/millennium-solutions (only when NPM_TOKEN is set)
+      # --- publish: trusted publishing (OIDC), no token. ---
+      # Releases are minted automatically (release.yml), and release.yml calls this workflow for every one. A
+      # version npm already has is skipped, not an error: the call from release.yml and a person's `release:
+      # published` can both reach the same tag. NODE_AUTH_TOKEN is exported ONLY when an NPM_TOKEN secret really
+      # exists — setup-node's .npmrc reads it, and an empty token must not stand in front of the OIDC exchange.
+      # The old step exited 0 when no token was set, so four releases "succeeded" and published nothing. Now a
+      # refused publish FAILS the job, because a green run is read as "it is on npm".
+      - name: publish @ceccec/millennium-solutions (trusted publishing)
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           V: ${{ steps.ver.outputs.version }}
         run: |
-          if [ -z "$NODE_AUTH_TOKEN" ]; then
-            echo "NPM_TOKEN is not set — nothing published. Set the secret to enable publishing."
-            exit 0
-          fi
           if npm view "@ceccec/millennium-solutions@$V" version > /dev/null 2>&1; then
             echo "npm already has @ceccec/millennium-solutions@$V — nothing to publish"
             exit 0
           fi
-          npm publish --access public --provenance
+          if [ -n "$NPM_TOKEN" ]; then export NODE_AUTH_TOKEN="$NPM_TOKEN"; echo "auth: NPM_TOKEN secret"; else unset NODE_AUTH_TOKEN; echo "auth: trusted publishing (OIDC) — no token"; fi
+          npm publish --access public --provenance || {
+            echo "✗ npm refused @ceccec/millennium-solutions@$V. With no NPM_TOKEN, npm must list this repository as a"
+            echo "  trusted publisher for the calling workflow file (release.yml for automatic releases, publish.yml"
+            echo "  for manual ones): npm trust github @ceccec/millennium-solutions --repo ceccec/millennium-solutions --file <file>"
+            exit 1
+          }
