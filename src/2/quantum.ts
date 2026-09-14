@@ -43,6 +43,6 @@ export function report(): string {
   o += 'HONEST: this is CLASSICAL state-vector simulation — exact for small systems, but the state has\n'
   o += '2^n amplitudes, so it is EXPONENTIAL in qubit count: NO quantum advantage, NOT a quantum\n'
   o += 'computer. The Bell correlation carries NO message (marginals unchanged). The paradox COMPUTES\n'
-  o += 'as simulation, not as quantum hardware. entails → 0/7.'
+  o += 'as simulation, not as quantum hardware.'
   return o
 }

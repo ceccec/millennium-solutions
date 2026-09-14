@@ -46,6 +46,6 @@ export function report(): string {
   o += '  Bulgarian; joining them (and the ℤ/9 sequence) is CULTURAL PERSPECTIVE (RESEARCH §12),\n'
   o += '  not a documented equivalence. What IS documented: Glagolitic\'s sequential numerals 1–9,\n'
   o += '  and the seven-rayed rosette artifact. The arithmetic overlay is exact; the fusion is\n'
-  o += '  interpretation. entails → 0/7.'
+  o += '  interpretation.'
   return o
 }

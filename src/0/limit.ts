@@ -24,6 +24,6 @@ export function report(): string {
   o += 'HONEST: standard calculus/topology — 1/x → ∞ as x → 0⁺, and 1/0 is UNDEFINED, not infinity-as-a-\n'
   o += 'value. "singularity never achieved" = an asymptote/attractor, not a destination. This is also the\n'
   o += 'honest reading of the framework\'s "division by zero": a change of domain / an unreached limit —\n'
-  o += 'never a completed operation, and never a proof. entails → 0/7.'
+  o += 'never a completed operation, and never a proof.'
   return o
 }

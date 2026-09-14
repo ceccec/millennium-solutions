@@ -19,7 +19,7 @@ computed; interpretation is the reader's.
 | 4 | `vortex.lean` | `4⁻¹=7` | 6 |
 | 5 | `vortex.lean`, `reflection.{lean,mjs}` | reflection center; `5⁻¹=2`; self-seal | 5 |
 | 6 | `vortex.lean` | `6²=0` nilpotent, no inverse | 4 |
-| 7 | `vortex.lean`, `entails.ts` | `7⁻¹=4`; the seven Clay statements | 3 |
+| 7 | `vortex.lean`, `rosetta-clay.ts` | `7⁻¹=4`; the rosette ↔ the seven Clay problems | 3 |
 | 8 | `vortex.lean`, `merkaba/…`, `nucleus/…` | `8·8=1`; merkaba/cube; nucleus | 2 |
 | 9 | `vortex.lean` | `9≡0` void; digit-sum 27; 432 | 1 |
 
@@ -70,7 +70,6 @@ node src/5/reflection.ts
 node src/8/nucleus/shell-model-magic.ts
 node src/8/nucleus/proton-mass-fit.ts
 node src/2/frequency-scales.ts
-node src/7/entails.ts
 # Lean: lake + Mathlib, then `lake build` over src/**/*.lean
 ```
 

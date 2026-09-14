@@ -21,6 +21,6 @@ export function report(): string {
   o += 'HONEST: this is an IDEALIZED superposition (f = (1+cos θ)/2, exact at these angles) — a model,\n'
   o += 'not the full Biot–Savart integral (see field.ts for the real on-axis magnitudes: counter→null,\n'
   o += 'co→max). The geometry itself is static; "moves when touched" describes the field\'s response to\n'
-  o += 'spin — not a self-moving object, and not any life-force. entails → 0/7.'
+  o += 'spin — not a self-moving object, and not any life-force.'
   return o
 }

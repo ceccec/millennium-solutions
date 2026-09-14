@@ -20,6 +20,6 @@ export function report(): string {
   o += '    funding sustains NEW development; it does not buy existing integrity.\n\n'
   o += 'HONEST: this is a BEHAVIORAL / gift-economy loop, not a guaranteed mechanism — wholeness does not\n'
   o += 'automatically generate money, and funding is non-obligatory. Transparency EARNS support (if any);\n'
-  o += 'support SUSTAINS further development; neither is forced, and integrity is never for sale. entails → 0/7.'
+  o += 'support SUSTAINS further development; neither is forced, and integrity is never for sale.'
   return o
 }

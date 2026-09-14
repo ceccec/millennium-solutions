@@ -20,6 +20,6 @@ export function report(): string {
   o += '  voluntary support (' + FUNDING.revolut + ') feeds the same loop.\n\n'
   o += 'HONEST: "two coins" is a motif (110−108 = 2 = −χ genus-2) for the commercial fare, not a\n'
   o += 'currency; donating them to ceccec is a REINVESTMENT intent, not an enforced financial mechanism.\n'
-  o += 'free for non-commercial use; commercial = permission + the fare (' + FUNDING.contact + '). entails → 0/7.'
+  o += 'free for non-commercial use; commercial = permission + the fare (' + FUNDING.contact + ').'
   return o
 }

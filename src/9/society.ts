@@ -19,7 +19,7 @@ export function report(): string {
   let o = 'live society — alive by participation, not by acceptance:\n\n'
   o += '  reflection 1 ↔ ' + reflects + ':  the one who ACCEPTS (digit 1) reflects to the many who VERIFY (digit 9).\n'
   o += '  passive society takes the claim on authority (acceptance = proof) — dead. see acceptance (1).\n'
-  o += '  live society recomputes, verifies, contributes — the same 0/7 checked by many hands.\n\n'
+  o += '  live society recomputes, verifies, contributes — the same results checked by many hands.\n\n'
   o += '  the participation surface (open to anyone):\n'
   channels.forEach(c => o += '    · ' + c + '\n')
   o += '  surface content-address: ' + surfaceRoot.slice(0, 13) + '…\n\n'
@@ -27,6 +27,6 @@ export function report(): string {
   o += '    contribution passes the same gate (gaps → seal) and every claim recomputes.\n\n'
   o += 'HONEST: this is an open, verifiable commons — not decentralized consensus, not governance,\n'
   o += 'not a DAO, not a vote. "Live" means active verification and contribution. The society does\n'
-  o += 'not change the mathematics; it checks it. entails → 0/7.'
+  o += 'not change the mathematics; it checks it.'
   return o
 }

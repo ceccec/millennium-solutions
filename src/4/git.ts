@@ -25,6 +25,6 @@ export function report(): string {
   o += '  and PROVEN in git with SHA.\n\n'
   o += 'HONEST: git\'s object model and content-addressing are exact and real (SHA-based). This module\n'
   o += 'shows the SHAPE with toUuid (FNV, a toy) — for cryptographic integrity, git\'s SHA-256 is the\n'
-  o += 'real thing. Fills the digit-4 development gap (audited: 4 and 6 were empty). entails → 0/7.'
+  o += 'real thing. Fills the digit-4 development gap (audited: 4 and 6 were empty).'
   return o
 }

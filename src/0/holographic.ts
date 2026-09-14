@@ -52,6 +52,6 @@ export function report(): string {
   o += 'integrity. "holographic" = a part verifies the whole via the shared root; "fractal" = the binary\n'
   o += 'tree is self-similar. But it is NOT free and NOT literally infinite: each proof is log(N) real\n'
   o += 'hashes over a FINITE set. Tiny resources, not zero; huge N, not ∞. Whole signed (Singularity),\n'
-  o += 'parts verifiable. entails → 0/7.'
+  o += 'parts verifiable.'
   return o
 }

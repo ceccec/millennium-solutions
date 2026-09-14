@@ -26,6 +26,6 @@ export function report(): string {
   o += 'HONEST: 6×7 = 7×6 = ' + count + ' is exact, and the fold is transpose-invariant because merkleFold\n'
   o += 'canonicalizes (sorts) — the content, never the order, sets the root. But "fuses all at no cost"\n'
   o += 'overstates it: each cell is a real hash (deterministic, cheap, NOT free), and this is a finite\n'
-  o += '' + count + '-cell table, not an infinite 7-dimensional space. Real cost, real bound. entails → 0/7.'
+  o += '' + count + '-cell table, not an infinite 7-dimensional space. Real cost, real bound.'
   return o
 }

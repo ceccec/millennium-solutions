@@ -23,6 +23,6 @@ export function report(): string {
   o += 'HONEST: validity here = MEMBERSHIP in the verified whole (it folds to the root; a merkle proof\n'
   o += 'exists — see holographic.ts), not any property of the token alone. A hash is one-way and a\n'
   o += 'public token is just a name (see security.ts) — it carries no authority by itself; it is valid\n'
-  o += 'only as a proven part of the fused, sealed deposit. entails → 0/7.'
+  o += 'only as a proven part of the fused, sealed deposit.'
   return o
 }

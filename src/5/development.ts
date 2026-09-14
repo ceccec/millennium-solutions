@@ -40,6 +40,6 @@ export function report(): string {
   o += '  it advances around it, two mirrors at a time.\n\n'
   o += 'HONEST: the group law (involution² = id; two reflections = a rotation) is exact. Mapping it\n'
   o += 'onto the human development process is an analogy — a way of seeing the cadence, not a theorem\n'
-  o += 'about software. The mathematics does not change: entails → 0/7.'
+  o += 'about software. The mathematics does not change.'
   return o
 }

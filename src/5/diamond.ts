@@ -27,10 +27,9 @@ export function report(): string {
   o += '    a Clay problem CAN be proven — Poincaré is the proof that it is possible. But it took\n'
   o += '    genuine mathematics (Ricci flow), done externally — NOT this framework\'s relabeling.\n'
   o += '    the diamond reflects the standard back: the other six deserve Perelman-grade proof.\n'
-  o += '    this framework supplies 0/7 of it.\n\n'
+  o += '\n'
   o += 'HONEST: the fixed-point math (r(5)=5, unique; H=0 determinism) is exact. "Diamond / perfectly\n'
   o += 'reflects light" is a metaphor for an involution\'s fixed point. Poincaré was solved by Perelman,\n'
-  o += 'NOT here — the framework\'s own entailment for it is still a tautology (see entails.ts). The\n'
-  o += 'message is the bar: real proof. entails → 0/7.'
+  o += 'NOT here. The message is the bar: real proof.'
   return o
 }

@@ -26,6 +26,6 @@ export function report(): string {
   o += '"rw-" at v1.1.6) is incidental, not a real permission. And single-digit versions run 0..9 while\n'
   o += 'rwx octal runs 0..7 — components 8,9 exceed rwx. Real access control here is the SEAL GATE +\n'
   o += 'CC BY-NC (public, no secret), not a filesystem ACL. RBAC is a LENS on the version, not an\n'
-  o += 'enforced system. entails → 0/7.'
+  o += 'enforced system.'
   return o
 }

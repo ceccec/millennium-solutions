@@ -21,6 +21,6 @@ export function report(): string {
   o += '    finite STRUCTURE, infinite GENERATIVITY — a bounded rule has unbounded reach.\n\n'
   o += 'HONEST: true for GENERATIVITY (finite rules → infinite output), NOT for CARDINALITY — a finite\n'
   o += 'set (9 digits, 42 cells) is not an infinite set. "finite is infinite by nature" holds as\n'
-  o += '"finite generators, infinite behavior", not as 9 = ∞. entails → 0/7.'
+  o += '"finite generators, infinite behavior", not as 9 = ∞.'
   return o
 }

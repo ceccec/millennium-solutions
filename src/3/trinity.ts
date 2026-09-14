@@ -34,6 +34,6 @@ export function report(): string {
   o += '  → three from the reflection, one from the fold. the one reflects the three.\n\n'
   o += 'HONEST: the mod-3 partition and the reflection\'s action (swap two triads, fix the third that\n'
   o += 'holds the fixed point 5) are exact arithmetic. "Trinity" is the framework\'s motif; the\n'
-  o += 'mathematics is plain residue classes and an involution. entails → 0/7.'
+  o += 'mathematics is plain residue classes and an involution.'
   return o
 }

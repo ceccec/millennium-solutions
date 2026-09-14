@@ -25,7 +25,6 @@ export function report(): string {
   const stream: Frame[] = [
     frame(() => 'doubling:1-2-4-8-7-5'),
     frame(() => 'reflection-fixed:5'),
-    frame(() => 'entailment:0/7'),
     frame(() => 'self-seal:1'),
   ]
 
@@ -43,6 +42,6 @@ export function report(): string {
   o += 'the payload; you LOAD the payload (recompute or fetch) and verify it against the id. The id\n'
   o += 'is a one-way checksum — you CANNOT reverse it to obtain the payload, and no payload travels\n'
   o += 'inside the id. Memory-free means "recompute, don\'t store", not "the message hides in the\n'
-  o += 'UUID". For cryptographic integrity use SHA-256 (toUuid is FNV). entails → 0/7.'
+  o += 'UUID". For cryptographic integrity use SHA-256 (toUuid is FNV).'
   return o
 }

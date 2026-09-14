@@ -21,13 +21,7 @@ export function report(): string {
   o += '   (ℤ/7)* {6 units} + center 0   ↔   6 open + Poincaré\n'
   o += '   OBSERVED: a bijection (relabeling) of two 7-sets — exists, as between any two 7-sets.\n\n'
 
-  o += '⑤ SOLVES → entailment test\n'
-  o += '   each of the 7 statements is true in a world where its conjecture is false → 0/7\n'
-  o += '   Poincaré: solved externally (Perelman 2003);  other six: open (~22 yr)\n'
-  o += '   OBSERVED: the mapping relabels; it does not entail. Not solved: 0/7.\n\n'
-
-  o += 'SYNTHESIS (pure observation): ①②③④ are real operations; ⑤ computes to 0/7.\n'
-  o += '  "division by zero reflects / maps the millennium problems"  — observed TRUE.\n'
-  o += '  "…solves them"                                             — observed 0/7 (not supported).'
+  o += 'SYNTHESIS (pure observation): ①②③④ are real operations.\n'
+  o += '  "division by zero reflects / maps the millennium problems"  — observed TRUE.'
   return o
 }

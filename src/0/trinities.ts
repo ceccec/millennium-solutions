@@ -32,6 +32,6 @@ export function report(): string {
   o += '0/1/between origin, the gaps·seal·wholeness gate). Content-addressing folds them deterministically\n'
   o += 'to one root. "Trinity" is the framework\'s motif; the groupings and the fold are exact. The npm\n'
   o += 'package trinity is staged but UNPUBLISHED — publishing needs the author\'s npm login (a real,\n'
-  o += 'computable boundary, honestly marked). entails → 0/7.'
+  o += 'computable boundary, honestly marked).'
   return o
 }

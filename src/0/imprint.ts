@@ -155,6 +155,6 @@ export function report(): string {
   o += '  readImprint(uuid)  → ' + back + '   round-trips: ' + (back === demo) + '\n'
   o += '  imprintText("Hi")  → ' + txt + '  → readImprintText → "' + txtBack + '"\n\n'
   o += '  HONEST: this CONSTRUCTS a uuid from a message and reads it back — a lossless codec (integrity).\n'
-  o += '  It does NOT undo the one-way FNV toUuid, and it is not encryption (no key, no secrecy). entails → 0/7.'
+  o += '  It does NOT undo the one-way FNV toUuid, and it is not encryption (no key, no secrecy).'
   return o
 }

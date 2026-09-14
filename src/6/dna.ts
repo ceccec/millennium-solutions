@@ -11,7 +11,7 @@ export function report(): string {
   let o = 'development DNA — heritable code, exact numbers (digit 6):\n\n'
   o += '  git IS the development\'s DNA — a heritable, content-addressed lineage:\n'
   o += '    commit → parent(s)   inheritance — each snapshot descends from its ancestor\n'
-  o += '    the seal gate        proofreading — no 0/7-violation replicates into a release\n'
+  o += '    the seal gate        proofreading — no unsealed claim replicates into a release\n'
   o += '    the version-seal     the accumulated lineage — all releases fold to one root\n\n'
   o += '  the genetic code — real biology (exact):\n'
   o += '    ' + bases + ' bases (A,T,G,C)         base-' + bases + ' code\n'
@@ -22,6 +22,6 @@ export function report(): string {
   o += 'HONEST: the biology is exact and real. Mapping its numbers (4 bases, 3-codon, 6 frames, 64)\n'
   o += 'onto the ℤ/9 framework is numerical ANALOGY / coincidence, not derivation — the framework does\n'
   o += 'not explain genetics, and DNA does not validate the framework. "git is the development\'s DNA"\n'
-  o += 'is an apt METAPHOR (heredity, replication, proofreading), not a claim that code is alive. entails → 0/7.'
+  o += 'is an apt METAPHOR (heredity, replication, proofreading), not a claim that code is alive.'
   return o
 }

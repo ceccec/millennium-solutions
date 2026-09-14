@@ -19,6 +19,6 @@ export function report(): string {
   o += 'HONEST: both are exact — the empty string maps to one fixed UUID, and "no secret" is a real\n'
   o += '(and for an open, public deposit, correct) security model. It does NOT mean "nothing is\n'
   o += 'everything" or that emptiness holds mystical power; it means absence is deterministically\n'
-  o += 'addressable, and openness draws its safety from having no secret to lose. entails → 0/7.'
+  o += 'addressable, and openness draws its safety from having no secret to lose.'
   return o
 }

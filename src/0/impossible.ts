@@ -25,9 +25,6 @@ export function report(): string {
   o += '  object level:  0\'s inverse is IMPOSSIBLE. it stays impossible.\n'
   o += '  meta level:    "0 has no inverse" is a POSSIBLE, true theorem (just proven above).\n'
   o += '  → both hold at once, no contradiction. what becomes "possible" is the PROOF, never the\n'
-  o += '    impossible object. an impossibility-proof is a positive result (cf. Gödel, halting problem).\n\n'
-  o += 'the one that matters: proving "this framework does NOT solve the Clay problems" (0/7) is a\n'
-  o += 'POSSIBLE, true proof — it does NOT make solving possible. The proof is real; the solving is not.\n'
-  o += 'The floor stands precisely because its impossibility is PROVEN. entails → 0/7.'
+  o += '    impossible object. an impossibility-proof is a positive result (cf. Gödel, halting problem).'
   return o
 }

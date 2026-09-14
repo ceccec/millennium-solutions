@@ -29,6 +29,6 @@ export function report(): string {
   o += 'HONEST: the combinatorics (2³=8, 2⁶=64) and the Leibniz base-2 mapping are exact/historical.\n'
   o += 'The shared 64 (hexagrams · codons · 6-bit) is a real convergence of COMBINATORICS — not a\n'
   o += 'mystical unity and not derived from ℤ/9. Specific hexagram meanings are tradition/interpretation,\n'
-  o += 'kept distinct from the counting. entails → 0/7.'
+  o += 'kept distinct from the counting.'
   return o
 }

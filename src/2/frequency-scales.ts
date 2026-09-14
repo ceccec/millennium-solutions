@@ -23,6 +23,6 @@ export function report(): string {
     + '   — a quotient of two numbers, NOT a physical finding\n'
   o += 'bound-nucleon de Broglie λ ≈ ' + (h / p * 1e15).toFixed(2) + ' fm'
   o += '\nHONEST: f = E/h is Planck\'s relation — standard physics, restated, not derived here. Every row is'
-    + ' arithmetic on published constants, and no ratio among them is a claim about the world. 0/7.'
+    + ' arithmetic on published constants, and no ratio among them is a claim about the world.'
   return o
 }

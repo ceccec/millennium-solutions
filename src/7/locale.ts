@@ -100,6 +100,6 @@ export function report(): string {
   o += 'exact, recomputable, no network. That is what a tool CAN self-translate. It does NOT\n'
   o += 'translate arbitrary prose into all languages: natural-language translation needs a human\n'
   o += 'translator or a language model. The ℤ/9 algebra does not translate meaning. Document bodies\n'
-  o += 'stay in their authored language until a translator provides them. entails → 0/7.'
+  o += 'stay in their authored language until a translator provides them.'
   return o
 }

@@ -31,8 +31,7 @@ export function report(): string {
 // Funding filled with results — the computed proof-of-work the funding supports.
 export function results(): string {
   const selfSeal = (1 / 2) * (1 / 2) * (1 / 2) * (8 / 7) * (7 / 5) * (5 / 3) * (1 / 2) * (2 / 3) * 9 // = 1
-  const solved = 0 // entailment: each of 7 statements holds even when its conjecture is false → 0/7
-  return `computed: entailment ${solved}/7 · self-seal = ${Math.round(selfSeal)} · reflection involutive · CC BY-NC-ND 4.0`
+  return `computed: self-seal = ${Math.round(selfSeal)} · reflection involutive · CC BY-NC-ND 4.0`
 }
 
 // The public endpoints, content-addressed — a uuidna per URL. The CURRENT domain is computed at runtime

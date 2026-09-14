@@ -30,6 +30,6 @@ export function report(): string {
   o += 'HONEST: reflection sums are ordinary integers (proven: Vortex.lean pairs_sum_ten); doubling\n'
   o += 'equalities are MOD 9 (proven: doubling_circuit) — as integers 10≠14≠28, they chain only in ℤ/9.\n'
   o += 'Two exact operations on nine digits; the structure closes. It reflects and doubles; it does not\n'
-  o += 'solve. entails → 0/7.'
+  o += 'solve.'
   return o
 }

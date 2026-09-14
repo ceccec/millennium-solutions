@@ -13,11 +13,8 @@ const mods = walk('src').filter(f => f.endsWith('.ts') && /export function repor
 // src/7/entails.ts — seven statements hard-wired to `true`, printed as "Clay problems solved: 0 / 7" — back on
 // the page each time it was taken off. A gate that re-imposes a constant is the defect (2026-09-14). The modules
 // sit in the protected digit folders and are shown to the author before they are changed.
-const WITHHELD: Record<string, string> = {
-  'src/7/entails.ts': 'a constant: each statement is `true && 1 === 1`, printed as a count out of seven',
-  'src/7/entails-all.ts': 'built on src/7/entails: "prove 0/7 across ALL possibilities" restates the constant',
-  'src/7/permissions.ts': 'built on src/7/entails: "0/7 = chmod 000" restates the constant',
-}
+// entails, entails-all and permissions were deleted on the author's approval (2026-09-14); the list stays for the next case.
+const WITHHELD: Record<string, string> = {}
 const om = mods.filter(m => !compute.includes(m.replace(/\.ts$/, '')) && !(m in WITHHELD))
 const held = mods.filter(m => m in WITHHELD && !compute.includes(m.replace(/\.ts$/, '')))
 console.log('report() modules:', mods.length, om.length ? '— GAP: ' + om.join(', ') : '✓ all fused')

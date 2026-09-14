@@ -36,6 +36,6 @@ export function report(): string {
   o += 'HONEST: content-addressing gives universal, language-neutral STRING identity — exact, global,\n'
   o += 'no middleman. It does not translate, cluster by meaning, or match dialects fuzzily. Meaning\n'
   o += 'lives in the human/translator alignment, not in the bytes. The lens sees strings; a translator\n'
-  o += 'supplies the meaning. entails → 0/7.'
+  o += 'supplies the meaning.'
   return o
 }

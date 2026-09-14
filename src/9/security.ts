@@ -22,7 +22,7 @@ export function report(): string {
   o += '  what the security actually IS (real, and fully public):\n'
   o += '    · integrity    — content-addresses + merkle roots: one byte changes the root → ' + tamperDetected + '\n'
   o += '    · provenance   — signed releases (Singularity), version-seal over all tags\n'
-  o += '    · consistency  — the seal gate: nothing inconsistent with 0/7 can ship\n'
+  o += '    · consistency  — the seal gate: nothing unsealed can ship\n'
   o += '    · auditability — the double-entry ledger, recomputable by anyone\n'
   o += '    → all public, all verifiable, no middleman, no secret to leak.\n\n'
   o += '  the reflection: security → development → funding\n'
@@ -31,6 +31,6 @@ export function report(): string {
   o += '    one public surface is both the security model AND the funding channel.\n\n'
   o += 'HONEST: integrity / provenance / auditability — real, public, hash-based. NOT confidentiality,\n'
   o += 'NOT encryption, NOT post-quantum secrecy. A public token cannot secure a secret; it can only\n'
-  o += 'prove integrity in the open. toUuid is FNV — for cryptographic integrity use SHA-256. entails → 0/7.'
+  o += 'prove integrity in the open. toUuid is FNV — for cryptographic integrity use SHA-256.'
   return o
 }

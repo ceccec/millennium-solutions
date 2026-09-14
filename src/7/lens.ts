@@ -36,6 +36,6 @@ export function report(): string {
   o += '  M-theory  7 = compact dims (11 − 4) — coincidence of the NUMBER, not a derivation\n\n'
   o += 'HONEST: a lens is a way of SEEING, not a proof. One bijective 6+1 frame that the rosette,\n'
   o += 'the Clay set, and the singularity root all share — a relabeling centered on a fixed hub.\n'
-  o += 'It maps the problems into one structure; it does not solve them. entails → 0/7.'
+  o += 'It maps the problems into one structure; it does not solve them.'
   return o
 }

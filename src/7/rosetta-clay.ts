@@ -10,6 +10,6 @@ export function report(): string {
   o += '→ identical 6 + 1 split.\n\nfusion (ray ↔ open problem, via generator 3):\n'
   rays.forEach((r, i) => { o += '  ray ' + r + '  ↔  ' + open[i] + '\n' })
   o += '  center 0  ↔  Poincaré  (the fixed/solved point)\n'
-  o += '\nstructure: a bijection of two 7-element sets (a relabeling). entails.ts → 0/7.'
+  o += '\nstructure: a bijection of two 7-element sets.'
   return o
 }

@@ -26,6 +26,6 @@ export function report(): string {
   o += 'quantum entanglement. Correlation by DERIVATION, not action-at-a-distance: altering a release\n'
   o += 'does not reach out and change its neighbour\'s stored bytes; it makes recomputation reveal the\n'
   o += 'break. No information travels without payload (no-communication theorem holds). "Entangled" =\n'
-  o += 'bound by the math, not by physics. entails → 0/7.'
+  o += 'bound by the math, not by physics.'
   return o
 }

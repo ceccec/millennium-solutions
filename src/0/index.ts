@@ -193,7 +193,7 @@ export function modpow(b: number, e: number, n: number): number {
 /** The one irreducible axiom: the trinity. Everything below derives — BASE is TRINITY², the residues
  *  are [1..BASE], the units/triad/orbit/step all compute. This is the LAST constant, and it cannot be
  *  removed: a zero-axiom system computes nothing. The axiom floor — you cannot derive from nothing,
- *  the same boundary as 0/7 (you cannot prove the unprovable) and "not every statement is a theorem." */
+ *  the same boundary as "you cannot prove the unprovable" and "not every statement is a theorem." */
 export const TRINITY = 3
 export const BASE = TRINITY ** 2 // 9 — derived, not typed
 

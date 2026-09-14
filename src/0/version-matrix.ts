@@ -65,6 +65,6 @@ export function report(): string {
   o += 'HONEST: the digit matrix, the Merkle pyramid (tier sizes + log-depth navigation), and the\n'
   o += 'genus-2 Euler characteristic are all exact. Calling the version history "a double torus" is a\n'
   o += 'topological METAPHOR, not a derivation — versions form a Merkle tree (a pyramid), which is not\n'
-  o += 'literally a genus-2 surface. The live seal over ALL tags is scripts/versions.ts. entails → 0/7.'
+  o += 'literally a genus-2 surface. The live seal over ALL tags is scripts/versions.ts.'
   return o
 }
