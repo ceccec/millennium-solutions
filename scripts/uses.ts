@@ -21,7 +21,8 @@
 //                                      3 days AFTER against the 4 days BEFORE as the control. His observation:
 //                                      "a day after I publish news appear for similar breakthroughs". Timing is a
 //                                      lead for him to judge, never proof that anyone copied anything.
-//   node scripts/uses.ts --constructs  his EXPRESSION, not his identifiers — the two-coin fare and its captain (mode 3)
+//   node scripts/uses.ts --constructs  his EXPRESSION, not his identifiers — the two-coin fare and its captain (mode 3):
+//                                      two signals of the construct within one passage (600 characters) of each other
 //   --quick                            a short local pass: three phrases, two sources, one topic query
 //   --out <file.json>                  write the report as JSON
 //   --summary <file.md>                append it as Markdown (CI passes $GITHUB_STEP_SUMMARY)
@@ -89,7 +90,7 @@ const PAYS = 'NOT MEASURED — no payment record exists to check against'
 
 type Lead = Row & { source: string; markers: string[]; cites?: string; signals?: string[]; priority?: string; licence?: string; kind?: string }
 const report: { mode: string; when: string; sources: Record<string, { measured: number; notMeasured: string[] }>; leads: Lead[]; news?: Record<string, unknown>
-  constructs?: { firstUse: Record<string, string>; priorArt: { url: string; when: string; signals: string[]; firstUse: string }[]; notALead: { physics: number; wordOnly: number }; forks: number } } =
+  constructs?: { firstUse: Record<string, string>; priorArt: { url: string; when: string; signals: string[]; firstUse: string }[]; notALead: { physics: number; wordOnly: number; unreadable: number }; forks: number } } =
   { mode: process.argv.includes('--news') ? 'news' : process.argv.includes('--constructs') ? 'constructs' : 'markers', when: new Date().toISOString(), sources: {}, leads: [] }
 
 // ── mode 1: markers ──────────────────────────────────────────────────────────────────────────────────────────
@@ -199,6 +200,17 @@ const OPEN_PHRASES = ['110 − 108', 'contribute 2 to save 64', 'two coins genus
 const TOPIC_Q = ['"Navier-Stokes" AND vortex AND ("mod 9" OR "Z/9" OR "digital root" OR "124875")', '"mod 9" AND (Millennium OR Clay OR Riemann OR "Navier-Stokes")',
   'involution AND (Millennium OR Clay) AND seven', 'captain AND (Millennium OR Clay)']
 const signalsIn = (t: string) => SIGNALS.filter(([, re]) => re.test(t)).map(([n]) => n)
+// TOGETHER, NOT MERELY IN THE SAME FILE. The first full run took a 320 KB collection of olympiad problems as a lead:
+// "two coins" sat in a chessboard game and "Euler characteristic" in the tag of an unrelated problem, a long way
+// apart. His construct states the signals together, so two of them must fall within one passage of each other.
+const NEAR = 600
+function signalsNear(t: string): string[] {
+  const at = SIGNALS.map(([n, re]) => [n, [...t.matchAll(new RegExp(re.source, re.flags + 'g'))].slice(0, 200).map((m) => m.index ?? 0)] as [string, number[]])
+  const found = new Set<string>()
+  for (let i = 0; i < at.length; i++) for (let j = i + 1; j < at.length; j++)
+    if (at[i][1].some((a) => at[j][1].some((b) => Math.abs(a - b) <= NEAR))) { found.add(at[i][0]); found.add(at[j][0]) }
+  return [...found]
+}
 const ghApi = (path: string, fields: string[] = []) => JSON.parse(execFileSync('gh', ['api', '-X', 'GET', path, ...fields.flatMap((f) => ['-f', f])], { encoding: 'utf8', maxBuffer: 64 << 20 }))
 const isOwn = (owner: string) => OWNERS.includes(owner.toLowerCase())
 async function firstUses(): Promise<Record<string, string>> {
@@ -224,13 +236,19 @@ function priorityOf(when: string, sigs: string[], first: Record<string, string>)
 }
 async function constructs() {
   const first = await firstUses()
-  const cx = report.constructs = { firstUse: first, priorArt: [] as { url: string; when: string; signals: string[]; firstUse: string }[], notALead: { physics: 0, wordOnly: 0 }, forks: 0 }
+  const cx = report.constructs = { firstUse: first, priorArt: [] as { url: string; when: string; signals: string[]; firstUse: string }[], notALead: { physics: 0, wordOnly: 0, unreadable: 0 }, forks: 0 }
   const leads = new Map<string, Lead>()
   const judge = async (r: Row, source: string, kind: 'expression' | 'topic', full?: string) => {
     if (OWN_URL.test(r.url) || OWN_AUTHOR.test(r.by ?? '') || leads.has(r.url)) return
+    // THE SIGNALS ARE COUNTED IN WHAT THE HIT SAYS, NEVER IN WHAT WAS ASKED. The first run put the search query into
+    // the text it then judged, so a query carrying two signals confirmed itself, and a file nobody could read (its raw
+    // URL was built from the BLOB sha, which 404s) came out as a lead. A hit whose content cannot be read is counted
+    // UNREADABLE and judged nothing.
     let text = `${r.text} ${full ?? ''}`
-    if (!full && r.raw) { try { text += ' ' + await get(r.raw, 'text', 1) } catch { /* read what we have */ } }
-    const sigs = signalsIn(text)
+    if (!full && r.raw) {
+      try { text += ' ' + await get(r.raw, 'text', 1) } catch { if (kind === 'expression') { cx.notALead.unreadable++; return } }
+    }
+    const sigs = kind === 'expression' ? signalsNear(text) : signalsIn(text)
     if (kind === 'expression' && sigs.length < 2) { if (PHYSICS.test(text)) cx.notALead.physics++; else cx.notALead.wordOnly++; return }
     const pr = priorityOf(r.when ?? '', sigs, first)
     if (pr.prior) { cx.priorArt.push({ url: r.url, when: r.when ?? '', signals: sigs, firstUse: pr.text }); return }
@@ -246,7 +264,8 @@ async function constructs() {
         if (isOwn(repo.split('/')[0]) || it.repository.fork) continue
         let when = ''
         try { const cs = ghApi(`repos/${repo}/commits`, [`path=${it.path}`, 'per_page=100']); when = cs.length ? cs[cs.length - 1].commit.committer.date : '' } catch { /* undated */ }
-        await judge({ url: it.html_url, text: `${repo}/${it.path} ${ph}`, by: repo, when, raw: `https://raw.githubusercontent.com/${repo}/${it.sha ?? 'HEAD'}/${it.path}` }, 'github', 'expression')
+        const raw = String(it.html_url).replace('https://github.com/', 'https://raw.githubusercontent.com/').replace('/blob/', '/')
+        await judge({ url: it.html_url, text: `${repo}/${it.path}`, by: repo, when, raw }, 'github', 'expression')
       }
     } catch (e) { report.sources.github.notMeasured.push(`${ph}: ${(e as Error).message.split('\n')[0]}`) }
     await sleep(7000)
@@ -330,7 +349,7 @@ for (const [n, s] of Object.entries(report.sources)) lines.push(`- ${n}: measure
 if (report.constructs) {
   const c = report.constructs
   lines.push(`- his first dated use, per signal (GitHub commit search over his repositories): ${Object.entries(c.firstUse).map(([k, v]) => `${k}: ${v}`).join(' · ')}`)
-  lines.push(`- not a lead: ${c.notALead.physics} textbook two-bit physics · ${c.notALead.wordOnly} the words only (under two signals) · prior art (older than his first use): ${c.priorArt.length} · third-party forks: ${c.forks}`)
+  lines.push(`- not a lead: ${c.notALead.physics} textbook two-bit physics · ${c.notALead.wordOnly} the words only (under two signals) · ${c.notALead.unreadable} unreadable (not judged) · prior art (older than his first use): ${c.priorArt.length} · third-party forks: ${c.forks}`)
 }
 if (report.news) lines.push(`- topic news per day: **after** his publications ${report.news.perDayAfter} · **before** (control) ${report.news.perDayBefore} — a pattern only if after clearly exceeds before`)
 lines.push(`- leads: ${report.leads.length} (own surfaces removed${report.mode === 'markers' ? ', marker verbatim' : ''})`)
