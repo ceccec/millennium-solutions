@@ -237,16 +237,20 @@ export const clayFloor = (): ClayFloor => {
  *  declared constant proves the declaration and nothing else — it is not evidence." That is why seal-lean
  *  seals `by decide` and refuses `rfl`, and it is the line taken here.
  *
- *  A THEOREM OF THIS DEPOSIT is a declaration in src/proof that the Lean kernel accepts, free of `sorry`
- *  and of axioms, and CLOSED BY EXHAUSTION over a stated finite domain. A declaration closed by `rfl` is a
- *  definitional unfolding and is counted separately, never as a theorem. A key is an address and an entry
- *  is a receipt; neither is a theorem, and scripts/contradictions.ts fails the build when either count is
- *  printed next to the word. */
+ *  A THEOREM OF THIS DEPOSIT is a declaration in src/proof that the Lean kernel accepts, free of `sorry`,
+ *  and closed EITHER by exhaustion over a stated finite domain with no axiom at all, OR by a proof for every
+ *  value resting only on the standard axioms propext and Quot.sound (lean.ts refuses anything else). The
+ *  second kind was added 2026-09-14 — the user: "Go", on making real kernel proofs sealable — and seal-lean
+ *  seals both, each marked as what it is. A declaration closed by `rfl` is a definitional unfolding and is
+ *  counted separately, never as a theorem. A key is an address and an entry is a receipt; neither is a
+ *  theorem, and scripts/contradictions.ts fails the build when either count is printed next to the word.
+ *  (The first deploy after the proofs landed failed on exactly this: PRIOR-ART.md counted 629 sealed
+ *  theorems while this count still read 625 exhaustions.) */
 export const THEOREM_DEFINITION =
-  'a declaration in src/proof that the Lean kernel accepts — sorry-free, axiom-free — and closes by exhaustion over a stated finite domain'
+  'a declaration in src/proof that the Lean kernel accepts — sorry-free — and closes either by exhaustion over a stated finite domain with no axiom, or by a proof for every value on the standard axioms propext and Quot.sound'
 
 /** The count that definition yields. Everything reporting "theorems" should read this. */
-export const theoremCount = (): number => census().byDecide
+export const theoremCount = (): number => { const c = census(); return c.byDecide + c.proved }
 
 /** THE DIGIT SPLIT, read off src/proof/split.lean rather than retyped.
  *

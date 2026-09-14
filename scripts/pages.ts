@@ -21,7 +21,7 @@ import { translate } from '../src/prove/translate.ts'
 import { adjudicate } from './adjudicate.ts'
 import { computes } from './honesty-gate.ts'
 import { toUuid, merkleFold } from '../src/0/index.ts'
-import { ledger as __ledger, triad, units, axis, domainOf, census, clayFloor, advantage, split, leanTheorems as leanTheoremsShared } from '../src/api/index.ts'
+import { ledger as __ledger, triad, units, axis, domainOf, census, clayFloor, advantage, split, leanTheorems as leanTheoremsShared, theoremCount } from '../src/api/index.ts'
 
 const CENSUS = census()
 const CLAY_FLOOR = clayFloor()
@@ -246,7 +246,7 @@ const body = (site: boolean) => {
   const docs = leanDocs()
   const wings = [...new Set(docs.map((d) => d.wing || 'unfiled'))]
   md += `## ${ORBIT[4] ?? 7} · The proofs, as they document themselves\n\n`
-  md += `${docs.length} Lean files in ${wings.length} wings, ${docs.reduce((n, d) => n + d.theorems.length, 0)} declarations of which ${CENSUS.byDecide} are theorems. The prose in this section is read out of the\nsources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits\nthis page; there is nowhere else to keep the description in step.\n\n`
+  md += `${docs.length} Lean files in ${wings.length} wings, ${docs.reduce((n, d) => n + d.theorems.length, 0)} declarations of which ${theoremCount()} are theorems. The prose in this section is read out of the\nsources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits\nthis page; there is nowhere else to keep the description in step.\n\n`
   for (const w of wings) {
     md += `### ${w}\n\n`
     for (const d of docs.filter((x) => (x.wing || 'unfiled') === w)) {
@@ -282,7 +282,7 @@ const body = (site: boolean) => {
   // theorems overstates the deposit. src/proof decides how many theorems there are; the reconciliation is
   // printed rather than left for the reader to assume.
   md += `| standing keys → distinct theorems | ${CENSUS.sealedTheorems} sealed, ${CENSUS.surplusKeys} of them keyed twice, ${CENSUS.unresolvableKeys} unresolvable |\n`
-  md += `| Lean files · theorems | ${A.lean.files} · ${CENSUS.byDecide} theorems (closed by exhaustion) + ${CENSUS.rfl} rfl declarations, all axiom-free |\n`
+  md += `| Lean files · theorems | ${A.lean.files} · ${theoremCount()} theorems (${CENSUS.byDecide} closed by exhaustion, axiom-free · ${CENSUS.proved} proved for every value on propext and Quot.sound) + ${CENSUS.rfl} rfl declarations |\n`
   md += `| proved \`by decide\` | ${A.lean.byDecide} of ${A.lean.theorems} |\n`
   md += `| claims a machine can render | ${renderable} of ${q.length.toLocaleString('en-US')} |\n`
   md += `| claims needing an author | ${(q.length - renderable).toLocaleString('en-US')} — reported, never faked |\n\n`
@@ -303,7 +303,7 @@ const body = (site: boolean) => {
   md += site
     ? `## Read\n\n[The seven, one theorem per problem](/theorem/lean_millenniumfloor_riemann_reflection_and_heart) · [the ledger](/proofs) · [the trial](/verify)\n\n`
     : `## Run it\n\nEverything here recomputes. Nothing below needs a key, an account or a network — clone the tree and run\nit, and the numbers on this page reappear or the command fails.\n\n\`\`\`bash\nnpm ci\nnpm run all               # every gate at once, with the parallel ratio measured on your machine\nnpm run lean              # compile and audit every Lean file: sorry-free, axiom-free, no Mathlib\nnpm run axiom-index       # what is NOT assumed, checked against a control, and the definitions that are\nnpm run contradictions    # the prose and the proof tree must agree\nnpm run zenodo            # the per-theorem deposition records, held to the tree and the published DOI\nnode scripts/forensics.ts # re-verify the append-only chain from its first receipt\nnode scripts/pages.ts     # regenerate this file and the homepage\n\`\`\`\n\n**Where to read next.** [The axiom index](/AXIOMS) states what this deposit does not assume and, at\ngreater length, the definitions it does. [The quantum field](/quantum) renders quantum.lean in three\ndimensions with every coordinate read from a theorem. [Prior art](/PRIOR-ART) records, per source file,\nwhether the work restates someone earlier. [The paper](/paper) typesets every statement.\n\n`
-  md += `---\n\n*${rows.length} claims, all verified · ${CENSUS.byDecide} Lean theorems · ${ledger.length} ledger entries · trial root \`${root}\` · integrity, not truth · 0/7*\n`
+  md += `---\n\n*${rows.length} claims, all verified · ${theoremCount()} Lean theorems · ${ledger.length} ledger entries · trial root \`${root}\` · integrity, not truth · 0/7*\n`
   return md
 }
 

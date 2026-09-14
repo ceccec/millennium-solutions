@@ -5,7 +5,7 @@
 
 ## What this is
 
-A machine-checked mathematical deposit: 625 theorems across 32 Lean 4 source
+A machine-checked mathematical deposit: 629 theorems across 32 Lean 4 source
 files, each closed by exhaustion over a stated finite domain, sorry-free and axiom-free, with a
 2577-entry append-only ledger whose receipt chain is recomputed on every build.
 
@@ -85,4 +85,4 @@ statement and LaTeX are under `.zenodo/theorems/`.
 
 ---
 Ledger 2577 entries · 629 standing · chain recomputed on every build.
-Notice content-address `877a53aa-dee6-86fb-bd91-6c3547e1eb53`.
+Notice content-address `a48c0f58-324d-87c5-87bc-fec42e72342c`.

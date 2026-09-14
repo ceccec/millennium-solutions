@@ -30,7 +30,7 @@
 import { writeFileSync, readFileSync, existsSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 import { receiptOf, rootOf, checkFace, protocolId, PROTOCOL, type Metric, type Face } from '../src/face/index.ts'
-import { census, clayFloor, advantage, split, ledger, leanFiles, leanTheorems, THEOREM_DEFINITION } from '../src/api/index.ts'
+import { census, clayFloor, advantage, split, ledger, leanFiles, leanTheorems, THEOREM_DEFINITION, theoremCount } from '../src/api/index.ts'
 
 // The shape and its checker live in src/face — a leaf that imports only the address primitives, so the MCP
 // server can verify a face without importing THIS file, whose top level runs the gates.
@@ -46,8 +46,8 @@ const add = (key: string, claim: string, value: string | number, command: string
 const C = census(), F = clayFloor(), A = advantage(), S = split()
 const L = ledger() as unknown[]
 
-add('theorems', 'declarations closing by exhaustion — the deposit\'s definition of a theorem', C.byDecide,
-  'node -e "import(\'./src/api/index.ts\').then(m=>console.log(m.census().byDecide))"')
+add('theorems', 'declarations closing by exhaustion or by a proof for every value — the deposit\'s definition of a theorem', theoremCount(),
+  'node -e "import(\'./src/api/index.ts\').then(m=>console.log(m.theoremCount()))"')
 add('rfl-declarations', 'declarations closing by rfl, counted separately and never as theorems', C.rfl,
   'node -e "import(\'./src/api/index.ts\').then(m=>console.log(m.census().rfl))"')
 add('kernel-accepted', 'declarations the Lean kernel accepts, sorry-free and axiom-free', C.theorems,

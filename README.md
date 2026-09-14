@@ -90,7 +90,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-32 Lean files in 7 wings, 638 declarations of which 625 are theorems. The prose in this section is read out of the
+32 Lean files in 7 wings, 638 declarations of which 629 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -187,7 +187,7 @@ Read from the artefacts at build time, never carried between runs.
 | withdrawn — nothing proves it | 1,514 |
 | proved in total | **1063** of 2,577 |
 | standing keys → distinct theorems | 629 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 32 · 625 theorems (closed by exhaustion) + 9 rfl declarations, all axiom-free |
+| Lean files · theorems | 32 · 629 theorems (625 closed by exhaustion, axiom-free · 4 proved for every value on propext and Quot.sound) + 9 rfl declarations |
 | proved `by decide` | 625 of 638 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
@@ -227,4 +227,4 @@ whether the work restates someone earlier. [The paper](/paper) typesets every st
 
 ---
 
-*17 claims, all verified · 625 Lean theorems · 2577 ledger entries · trial root `b272f281-1f13-861a-bfdb-4c2e8af05483` · integrity, not truth · 0/7*
+*17 claims, all verified · 629 Lean theorems · 2577 ledger entries · trial root `b272f281-1f13-861a-bfdb-4c2e8af05483` · integrity, not truth · 0/7*

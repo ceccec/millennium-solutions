@@ -22,7 +22,7 @@
 //      contradicts it.
 import { readFileSync, readdirSync, statSync } from 'node:fs'
 import { join } from 'node:path'
-import { census, leanFiles, leanSource, leanTheorems, theoremOfKey, clayFloor, advantage, split, ledger, THEOREM_DEFINITION } from '../src/api/index.ts'
+import { census, leanFiles, leanSource, leanTheorems, theoremOfKey, clayFloor, advantage, split, ledger, THEOREM_DEFINITION, theoremCount } from '../src/api/index.ts'
 
 /** Words that turn a theorem NAME into an assertion about the world rather than about a finite domain. This
  *  is a word list and says so: it is the one part of the check that is not derived, so it is kept short,
@@ -95,8 +95,14 @@ walk('.')
 // lines after the same file said "the 2380 receipts" correctly. Every count that is not the theorem count
 // is forbidden next to the word, and each is named so the failure says which number was mistaken for it.
 //
-// The theorem count itself is THEOREM_DEFINITION in src/api: a declaration the kernel accepts, sorry-free
-// and axiom-free, closed by exhaustion. A key is an address; an entry is a receipt.
+// The theorem count itself is theoremCount() under THEOREM_DEFINITION in src/api: a declaration the kernel
+// accepts, sorry-free, closed by exhaustion with no axiom OR by a proof for every value on the standard axioms.
+// A key is an address; an entry is a receipt. The guard below reads that one count — it compared against
+// C.byDecide, a copy of the old definition, and would have called every correct "629 theorems" a key count.
+// ONCE, not per line. theoremCount() runs the census — every .lean file re-read and the whole ledger walked — and
+// the guard below sits inside a loop over every line of every file: calling it there made this one check run for
+// ten minutes and time out predocs:build (2026-09-14). The count cannot change during one run.
+const THEOREMS = theoremCount()
 const NOT_THEOREM_COUNTS: [number, string][] = [
   [C.liveKeys, `the live KEY count — an address, and ${C.surplusKeys} theorems carry two`],
   [ledgerTotal, `the LEDGER ENTRY count — a receipt, and ${ledgerTotal - C.liveKeys} of them are withdrawn`],
@@ -112,14 +118,14 @@ for (const f of files) {
   const src = readFileSync(f, 'utf8')
   src.split('\n').forEach((line, i) => {
     for (const [n, what] of NOT_THEOREM_COUNTS) {
-      if (n === C.byDecide) continue
+      if (n === THEOREMS) continue
       // The number must be QUANTIFYING the word, not merely near it. A 40-character window that allowed
       // punctuation flagged "the ledger is held at 2380 (the captain's cap): improving a theorem's name…",
       // where 2380 counts entries and the later clause is about something else entirely. Clause breaks end
       // the window, so only an adjectival run between the number and the noun counts.
       const hit = new RegExp(`\\b${n}\\b[^.\\n:;()\\[\\]]{0,25}?\\btheorem`, 'i').exec(line)
       if (hit && !partitive(line, hit.index))
-        fail(`${f}:${i + 1} calls ${n} a theorem count — that is ${what}. Theorems: ${C.byDecide} (${THEOREM_DEFINITION})`)
+        fail(`${f}:${i + 1} calls ${n} a theorem count — that is ${what}. Theorems: ${THEOREMS} (${THEOREM_DEFINITION})`)
     }
   })
 }
@@ -530,5 +536,5 @@ if (worldNamed.length) console.log(`  ○ ${worldNamed.length} theorem(s) decide
 if (exempted.length) console.log(`  ○ ${exempted.length} physical-vocabulary name(s) exempted as denials, reported not hidden: ${exempted.join(' ')}`)
 console.log(bad
   ? `\n✗ contradictions: ${bad} finding(s) — prose or code disagrees with src/proof`
-  : `\n✓ contradictions: none — ${C.byDecide} theorems (closed by exhaustion) + ${C.rfl} rfl declarations = ${C.theorems} kernel-accepted; ${C.liveKeys} live keys = ${C.sealedTheorems} sealed + ${C.surplusKeys} keyed twice + ${C.unresolvableKeys} unresolvable; no sorry, no Mathlib, no native_decide, no axiom; nothing claims a Clay problem, all ${swept} Clay + ${qSwept} quantum overclaim phrasings are caught while ${HONEST.length} honest refusals survive; and ${PROVED.length} proved properties are stated on the pages, not only in the sources`)
+  : `\n✓ contradictions: none — ${theoremCount()} theorems (${C.byDecide} by exhaustion + ${C.proved} proved for every value) + ${C.rfl} rfl declarations = ${C.theorems} kernel-accepted; ${C.liveKeys} live keys = ${C.sealedTheorems} sealed + ${C.surplusKeys} keyed twice + ${C.unresolvableKeys} unresolvable; no sorry, no Mathlib, no native_decide, no axiom; nothing claims a Clay problem, all ${swept} Clay + ${qSwept} quantum overclaim phrasings are caught while ${HONEST.length} honest refusals survive; and ${PROVED.length} proved properties are stated on the pages, not only in the sources`)
 process.exit(bad ? 1 : 0)

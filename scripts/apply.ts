@@ -13,7 +13,7 @@
 // generated. That refusal is COMPUTED here rather than written as policy: if the number were ever not zero
 // this file would say so, which is the only way a refusal is worth anything.
 import { writeFileSync, mkdirSync, readFileSync } from 'node:fs'
-import { clayFloor, census, advantage } from '../src/api/index.ts'
+import { clayFloor, census, advantage, theoremCount } from '../src/api/index.ts'
 import { CONCEPT_DOI, FUNDING, REPO, SITE } from '../src/publication/index.ts'
 
 const C = census(), F = clayFloor(), A = advantage()
@@ -51,8 +51,8 @@ const OPPS: Opp[] = [
     reqs: [
       { says: 'free and open source, publicly available', holds: true,
         because: 'the whole tree is public under CC BY-NC-ND 4.0 with the reference implementation on npm' },
-      { says: 'a concrete technical deliverable, not a research promise', holds: C.byDecide > 0,
-        because: `${C.byDecide} kernel-accepted theorems closing by exhaustion, plus a working verifier, an MCP `
+      { says: 'a concrete technical deliverable, not a research promise', holds: theoremCount() > 0,
+        because: `${theoremCount()} kernel-accepted theorems (${C.byDecide} closing by exhaustion, ${C.proved} proved for every value), plus a working verifier, an MCP `
           + `server and a published package — all recomputable from source` },
       { says: 'grant size 5,000–50,000 EUR fits the work proposed', holds: true,
         because: 'the deliverables are tooling-scale: the verifier, the deposition pipeline and the axiom index' },
@@ -76,7 +76,7 @@ mkdirSync(OUT, { recursive: true })
 let wrote = 0
 // `F.seven` counts Clay-NAMED theorems present, not problems solved. Printed beside "0 of 7 proved" the
 // bare fraction reads as seven solved, which is the exact misreading this deposit spends its gates on.
-console.log(`  eligibility decided from this build — ${C.byDecide} theorems · Clay problems SOLVED: 0 of 7 `
+console.log(`  eligibility decided from this build — ${theoremCount()} theorems · Clay problems SOLVED: 0 of 7 `
   + `(${F.seven} Clay-named theorems present, ${F.reaches.length} reaching a conjecture) · `
   + `verification ratio ${A.ratio}×, classical\n`)
 
@@ -89,8 +89,9 @@ for (const o of OPPS) {
   }
   const body = `# Application — ${o.name}\n\n`
     + `**Applicant.** Tsvetan Rouschev, independent researcher. ${FUNDING.statement}\n\n`
-    + `**The work.** A machine-checked deposit: ${C.byDecide} theorems accepted by the Lean 4 kernel, each closing `
-    + `by exhaustion over a finite domain, sorry-free and axiom-free with no Mathlib dependency. Concept DOI `
+    + `**The work.** A machine-checked deposit: ${theoremCount()} theorems accepted by the Lean 4 kernel, sorry-free with no `
+    + `Mathlib dependency — ${C.byDecide} closing by exhaustion over a finite domain with no axiom, ${C.proved} proved for every value `
+    + `on the standard axioms propext and Quot.sound. Concept DOI `
     + `[${CONCEPT_DOI}](https://doi.org/${CONCEPT_DOI}). Source: ${REPO}. Pages: ${SITE}.\n\n`
     + `**What is deliberately not claimed.** No Clay Millennium Problem is settled (${F.seven}/7 present as named `
     + `theorems, none reaching a conjecture), and no quantum speedup is asserted. The verification advantage is `
