@@ -27,7 +27,7 @@ const SMTP_URL = process.env.SMTP_URL || 'smtp://mail.psg.bg:587'
 const MAX_DOSSIERS = 40
 if (!/@(uuidna\.com|psg\.bg)$/i.test(FROM)) { console.log(`✗ uses-mail: sender ${FROM} is not on uuidna.com or psg.bg — refused`); process.exit(1) }
 
-type Lead = { source: string; url: string; markers: string[]; cites?: string; by?: string; when?: string; text?: string }
+type Lead = { source: string; url: string; markers: string[]; cites?: string; by?: string; when?: string; text?: string; signals?: string[]; priority?: string; licence?: string; kind?: string }
 type Report = { mode: string; when: string; sources: Record<string, { measured: number; notMeasured: string[] }>; leads: Lead[]; news?: Record<string, number | string[]>; run?: string }
 
 const cff = readFileSync('CITATION.cff', 'utf8')
@@ -46,6 +46,9 @@ function dossier(l: Lead, r: Report, n: number, of: number): { subject: string; 
     `FINDING`,
     `  Where        ${l.url}`,
     `  Found by     ${l.source}${l.markers.length ? `  ·  markers matched verbatim: ${l.markers.join(', ')}` : ''}`,
+    ...(l.signals?.length ? [`  Construct    ${l.signals.join(' · ')}  (${l.kind === 'topic' ? 'the same field — not his expression' : 'his expression, two signals or more'})`] : []),
+    ...(l.priority ? [`  Priority     ${l.priority}`] : []),
+    ...(l.licence ? [`  Licence      ${l.licence}`] : []),
     `  Dated        ${l.when ?? 'not stated by the source'}`,
     `  Published by ${l.by ?? 'not stated by the source'}`,
     `  Title/text   ${(l.text ?? '').replace(/\s+/g, ' ').slice(0, 300) || '—'}`,

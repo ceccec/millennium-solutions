@@ -21,6 +21,8 @@
 //                                      3 days AFTER against the 4 days BEFORE as the control. His observation:
 //                                      "a day after I publish news appear for similar breakthroughs". Timing is a
 //                                      lead for him to judge, never proof that anyone copied anything.
+//   node scripts/uses.ts --constructs  his EXPRESSION, not his identifiers — the two-coin fare and its captain (mode 3)
+//   --quick                            a short local pass: three phrases, two sources, one topic query
 //   --out <file.json>                  write the report as JSON
 //   --summary <file.md>                append it as Markdown (CI passes $GITHUB_STEP_SUMMARY)
 //
@@ -85,9 +87,10 @@ async function citesBit(row: Row): Promise<string> {
 }
 const PAYS = 'NOT MEASURED — no payment record exists to check against'
 
-type Lead = Row & { source: string; markers: string[]; cites?: string }
-const report: { mode: string; when: string; sources: Record<string, { measured: number; notMeasured: string[] }>; leads: Lead[]; news?: Record<string, unknown> } =
-  { mode: process.argv.includes('--news') ? 'news' : 'markers', when: new Date().toISOString(), sources: {}, leads: [] }
+type Lead = Row & { source: string; markers: string[]; cites?: string; signals?: string[]; priority?: string; licence?: string; kind?: string }
+const report: { mode: string; when: string; sources: Record<string, { measured: number; notMeasured: string[] }>; leads: Lead[]; news?: Record<string, unknown>
+  constructs?: { firstUse: Record<string, string>; priorArt: { url: string; when: string; signals: string[]; firstUse: string }[]; notALead: { physics: number; wordOnly: number }; forks: number } } =
+  { mode: process.argv.includes('--news') ? 'news' : process.argv.includes('--constructs') ? 'constructs' : 'markers', when: new Date().toISOString(), sources: {}, leads: [] }
 
 // ── mode 1: markers ──────────────────────────────────────────────────────────────────────────────────────────
 async function markers() {
@@ -159,15 +162,179 @@ async function news() {
   for (const l of leads.values()) { l.cites = await citesBit(l); report.leads.push(l); await sleep(300) }
 }
 
+// ── mode 3: constructs — his EXPRESSION, not his identifiers ─────────────────────────────────────────────────
+// The author, 2026-09-14: "Find where the 2bits are used to unlock quantum. This is not algebra and is protected by
+// license … This is the core and is easy to find violations of captain rights." Mode 1 finds pages that NAME him;
+// this finds pages that use what he MADE — the two-coin fare and its captain — whether or not they name him. It is
+// saved from two hand-run sweeps of the same day (about 150 queries across GitHub, Zenodo, arXiv, npm, OpenAlex and
+// Hugging Face, which found no third-party use), so the search runs every week instead of once.
+//
+// NOT MERELY THE WORD. "Captain", "two coins" and "save 64" are ordinary words: Destiny 2 has Captain Coins, a
+// Minecraft mod has a Captain's Commission. A hit is a lead only when its full text carries at least TWO distinct
+// signals below. Textbook two-bit physics — teleportation (Bennett et al. 1993), superdense coding (Bennett and
+// Wiesner 1992) — is decades older and a different expression: counted as NOT A LEAD, never reported as one.
+//
+// PRIORITY IS MEASURED, NOT TYPED. His first dated use of each signal is read from GitHub commit search over his own
+// repositories. A code hit is dated by when its FILE first appeared in its repository (the file's oldest commit), not
+// by a paper: Prove2Me's "captain" reads 2026-08-28 from its paper and 2026-07-05 from its repository, and the second
+// is the true one. A hit older than his first use of what it matches is PRIOR ART, listed apart and never mailed.
+const OWNERS = ['ceccec', 'uuidna', 'erpax', 'hitsol']
+const SIGNALS: [string, RegExp, string][] = [ // name · recogniser · the commit-search query for his first dated use
+  ['the fare 110 − 108', /110\s*[−-]\s*108/, '"110 − 108"'],
+  ['two coins', /\btwo coins\b/i, '"two coins"'],
+  ['genus-2 · −χ', /genus[- ]?2|euler characteristic|[−-]χ/i, '"genus-2"'],
+  ['contribute 2 · save 64', /contribute 2|save 64|up to 64 per wave/i, '"save 64"'],
+  ['128-bit seal = 64 payments', /128[- ]bit (seal|address|fuse)|64 verifications|\bsealBits\b/i, '"128-bit"'],
+  ['the doubling orbit mod 9', /2\s*\^\s*6\s*(≡|mod)|doubling orbit|\b1\W{1,3}2\W{1,3}4\W{1,3}8\W{1,3}7\W{1,3}5\b/i, '"doubling orbit"'],
+  ['the captain construct', /captain('s)?\s+(coins?|commission|payment|message|unlocks?)/i, '"captain"'],
+  ['the 64→128 fuse · quantum rosette', /quantum rosette|21\s*→\s*42|two 8\s*[×x]\s*8 boards|\bcoin64\b/i, '"quantum rosette"'],
+]
+const PHYSICS = /teleportation|superdense|dense coding|holevo/i
+const QUICK = process.argv.includes('--quick')
+const GH_PHRASES = ['"110 - 108 = 2"', '"110 − 108 = 2"', '"two coins" genus', '"two coins" "Euler characteristic"', '"contribute 2 to save 64"',
+  '"contribute 2 to earn up to 64"', '"save 64" contribute', '"128-bit seal"', '"64 verifications"', 'sealBits coins', '"quantum rosette"',
+  '"two 8×8 boards"', '"two 8x8 boards"', 'coin64', '"captain coins"', '"captain\'s commission"', '"captain payment"', '"captain\'s message"',
+  '"free sailing angle"', '"two bits unlock"', '"the two coins" license']
+const OPEN_PHRASES = ['110 − 108', 'contribute 2 to save 64', 'two coins genus', 'quantum rosette', 'captain coins', "captain's commission", '128-bit seal', 'coin64']
+const TOPIC_Q = ['"Navier-Stokes" AND vortex AND ("mod 9" OR "Z/9" OR "digital root" OR "124875")', '"mod 9" AND (Millennium OR Clay OR Riemann OR "Navier-Stokes")',
+  'involution AND (Millennium OR Clay) AND seven', 'captain AND (Millennium OR Clay)']
+const signalsIn = (t: string) => SIGNALS.filter(([, re]) => re.test(t)).map(([n]) => n)
+const ghApi = (path: string, fields: string[] = []) => JSON.parse(execFileSync('gh', ['api', '-X', 'GET', path, ...fields.flatMap((f) => ['-f', f])], { encoding: 'utf8', maxBuffer: 64 << 20 }))
+const isOwn = (owner: string) => OWNERS.includes(owner.toLowerCase())
+async function firstUses(): Promise<Record<string, string>> {
+  const out: Record<string, string> = {}
+  for (const [name, , query] of SIGNALS) {
+    try {
+      const j = ghApi('search/commits', [`q=${query} ${OWNERS.map((o) => (o === 'ceccec' || o === 'uuidna' || o === 'erpax' || o === 'hitsol') ? `user:${o}` : '').join(' ')}`, 'sort=committer-date', 'order=asc', 'per_page=1'])
+      const c = j.items?.[0]
+      out[name] = c ? `${c.commit.committer.date.slice(0, 10)} ${c.repository.full_name}@${c.sha.slice(0, 9)}` : 'NOT FOUND in his commit messages'
+    } catch (e) { out[name] = `NOT MEASURED (${(e as Error).message.split('\n')[0]})` }
+    await sleep(2500)
+  }
+  return out
+}
+const dateOf = (s: string) => (/^\d{4}-\d{2}-\d{2}/.exec(s) ?? [''])[0]
+function priorityOf(when: string, sigs: string[], first: Record<string, string>): { prior: boolean; text: string } {
+  const dates = sigs.map((n) => dateOf(first[n] ?? '')).filter(Boolean).sort()
+  if (!when || !dates.length) return { prior: false, text: 'NOT MEASURED — no date for the hit or for his first use' }
+  const his = dates[0]
+  return when.slice(0, 10) < his
+    ? { prior: true, text: `PREDATES his first dated use (${his}) — prior art, not a lead` }
+    : { prior: false, text: `AFTER his first dated use of what it matches (${his}; ${sigs.map((n) => `${n}: ${first[n]}`).join(' · ')})` }
+}
+async function constructs() {
+  const first = await firstUses()
+  const cx = report.constructs = { firstUse: first, priorArt: [] as { url: string; when: string; signals: string[]; firstUse: string }[], notALead: { physics: 0, wordOnly: 0 }, forks: 0 }
+  const leads = new Map<string, Lead>()
+  const judge = async (r: Row, source: string, kind: 'expression' | 'topic', full?: string) => {
+    if (OWN_URL.test(r.url) || OWN_AUTHOR.test(r.by ?? '') || leads.has(r.url)) return
+    let text = `${r.text} ${full ?? ''}`
+    if (!full && r.raw) { try { text += ' ' + await get(r.raw, 'text', 1) } catch { /* read what we have */ } }
+    const sigs = signalsIn(text)
+    if (kind === 'expression' && sigs.length < 2) { if (PHYSICS.test(text)) cx.notALead.physics++; else cx.notALead.wordOnly++; return }
+    const pr = priorityOf(r.when ?? '', sigs, first)
+    if (pr.prior) { cx.priorArt.push({ url: r.url, when: r.when ?? '', signals: sigs, firstUse: pr.text }); return }
+    leads.set(r.url, { ...r, source, kind, markers: [], signals: sigs, priority: pr.text })
+  }
+  // GitHub code — the phrases as real search queries (the gh CLI would send a multi-word query as one exact phrase)
+  report.sources.github = { measured: 0, notMeasured: [] }
+  for (const ph of QUICK ? GH_PHRASES.slice(0, 3) : GH_PHRASES) {
+    try {
+      const items = ghApi('search/code', [`q=${ph}`, 'per_page=50']).items ?? []; report.sources.github.measured++
+      for (const it of items) {
+        const repo = it.repository.full_name as string
+        if (isOwn(repo.split('/')[0]) || it.repository.fork) continue
+        let when = ''
+        try { const cs = ghApi(`repos/${repo}/commits`, [`path=${it.path}`, 'per_page=100']); when = cs.length ? cs[cs.length - 1].commit.committer.date : '' } catch { /* undated */ }
+        await judge({ url: it.html_url, text: `${repo}/${it.path} ${ph}`, by: repo, when, raw: `https://raw.githubusercontent.com/${repo}/${it.sha ?? 'HEAD'}/${it.path}` }, 'github', 'expression')
+      }
+    } catch (e) { report.sources.github.notMeasured.push(`${ph}: ${(e as Error).message.split('\n')[0]}`) }
+    await sleep(7000)
+  }
+  // the open sources, the distinctive phrases verbatim
+  for (const name of QUICK ? ['zenodo'] : ['zenodo', 'openalex', 'npm', 'hackernews']) {
+    report.sources[name] = { measured: 0, notMeasured: [] }
+    for (const ph of QUICK ? OPEN_PHRASES.slice(0, 3) : OPEN_PHRASES) {
+      try { for (const r of await SOURCES[name].run(ph)) await judge(r, name, 'expression'); report.sources[name].measured++ }
+      catch (e) { report.sources[name].notMeasured.push(`${ph}: ${(e as Error).message}`) }
+      await sleep(SOURCES[name].pace)
+    }
+  }
+  // arXiv and Hugging Face
+  if (!QUICK) {
+    report.sources.arxiv = { measured: 0, notMeasured: [] }
+    for (const ph of OPEN_PHRASES) {
+      try {
+        const x: string = await get(`https://export.arxiv.org/api/query?search_query=${q(`all:"${ph}"`)}&max_results=25`, 'text')
+        for (const e of x.split('<entry>').slice(1)) {
+          const tag = (t: string) => (e.match(new RegExp(`<${t}[^>]*>([\\s\\S]*?)</${t}>`)) ?? ['', ''])[1].replace(/\s+/g, ' ').trim()
+          await judge({ url: tag('id'), text: `${tag('title')} ${tag('summary')}`, by: tag('name'), when: tag('published') }, 'arxiv', 'expression', tag('summary'))
+        }
+        report.sources.arxiv.measured++
+      } catch (e) { report.sources.arxiv.notMeasured.push(`${ph}: ${(e as Error).message}`) }
+      await sleep(3500)
+    }
+    report.sources.huggingface = { measured: 0, notMeasured: [] }
+    for (const kind of ['models', 'datasets', 'spaces']) for (const term of ['coin64', 'quantum-rosette', 'captain-coins', 'two-coins']) {
+      try { for (const h of await get(`https://huggingface.co/api/${kind}?search=${q(term)}&limit=50`)) await judge({ url: `https://huggingface.co/${kind === 'models' ? '' : kind + '/'}${h.id}`, text: h.id, by: String(h.id).split('/')[0], when: h.createdAt ?? h.lastModified }, 'huggingface', 'expression'); report.sources.huggingface.measured++ }
+      catch (e) { report.sources.huggingface.notMeasured.push(`${kind} ${term}: ${(e as Error).message}`) }
+      await sleep(800)
+    }
+  }
+  // the Zenodo topic watch — the same field after his first dated use, each record read for its licence and references
+  report.sources['zenodo-topic'] = { measured: 0, notMeasured: [] }
+  const earliest = Object.values(first).map(dateOf).filter(Boolean).sort()[0] ?? ''
+  for (const tq of QUICK ? TOPIC_Q.slice(0, 1) : TOPIC_Q) {
+    try {
+      const j = await get(`https://zenodo.org/api/records?q=${q(tq)}&size=25&sort=mostrecent`); report.sources['zenodo-topic'].measured++
+      for (const h of j.hits.hits) {
+        const m = h.metadata ?? {}
+        const by = (m.creators ?? []).map((c: any) => `${c.name} ${c.orcid ?? ''}`).join('; ')
+        if (OWN_AUTHOR.test(by) || (earliest && String(m.publication_date ?? '') < earliest)) continue
+        const url = h.links?.self_html ?? `https://zenodo.org/records/${h.id}`
+        if (leads.has(url)) continue
+        const text = `${m.title ?? ''} ${String(m.description ?? '').replace(/<[^>]+>/g, ' ')} ${JSON.stringify(m.references ?? [])} ${JSON.stringify(m.related_identifiers ?? [])}`
+        const sigs = signalsIn(text)
+        leads.set(url, { url, text: `${m.title ?? ''}`, by, when: m.publication_date, source: 'zenodo-topic', kind: 'topic', markers: [], signals: sigs,
+          licence: typeof m.license === 'object' ? m.license?.id : m.license, cites: CITES.test(text) ? 'YES' : 'NO',
+          priority: `published ${m.publication_date}, after his earliest dated use (${earliest}) — the same field, not his expression${sigs.length ? `; signals: ${sigs.join(', ')}` : ''}` })
+      }
+    } catch (e) { report.sources['zenodo-topic'].notMeasured.push(`${tq}: ${(e as Error).message}`) }
+    await sleep(3000)
+  }
+  // forks of his repositories by anyone else — a fork is a copy of the whole work
+  report.sources.forks = { measured: 0, notMeasured: [] }
+  for (const o of QUICK ? ['ceccec'] : OWNERS) {
+    try {
+      const repos = ghApi(`users/${o}/repos`, ['per_page=100']) as any[]; report.sources.forks.measured++
+      for (const r of repos.filter((x) => !x.fork && x.forks_count > 0)) {
+        for (const f of ghApi(`repos/${r.full_name}/forks`, ['per_page=100']) as any[]) {
+          if (isOwn(f.owner.login)) continue
+          cx.forks++
+          leads.set(f.html_url, { url: f.html_url, text: `fork of ${r.full_name} (${r.license?.spdx_id ?? 'licence not detected'})`, by: f.owner.login, when: f.created_at,
+            source: 'forks', kind: 'expression', markers: [], signals: ['a fork of his repository'], priority: `forked ${f.created_at.slice(0, 10)} from ${r.full_name}`,
+            cites: `YES — GitHub records it as forked from ${r.full_name}` })
+        }
+      }
+    } catch (e) { report.sources.forks.notMeasured.push(`${o}: ${(e as Error).message.split('\n')[0]}`) }
+  }
+  for (const l of leads.values()) { if (!l.cites) { l.cites = await citesBit(l); await sleep(300) } report.leads.push(l) }
+}
+
 // ── run, report ─────────────────────────────────────────────────────────────────────────────────────────────
-await (report.mode === 'news' ? news() : markers())
+await (report.mode === 'news' ? news() : report.mode === 'constructs' ? constructs() : markers())
 const lines: string[] = []
-lines.push(`## uses — ${report.mode === 'news' ? 'news after publication' : 'who uses the work'} · ${report.when.slice(0, 16)}Z`)
+lines.push(`## uses — ${report.mode === 'news' ? 'news after publication' : report.mode === 'constructs' ? 'who uses the constructs — the two-coin fare and its captain' : 'who uses the work'} · ${report.when.slice(0, 16)}Z`)
 lines.push(`Violations are exactly not citing and not paying. Each lead carries both bits; pays is ${PAYS.split(' — ')[0]} until a payment record exists.`)
 for (const [n, s] of Object.entries(report.sources)) lines.push(`- ${n}: measured ${s.measured}${s.notMeasured.length ? ` · NOT MEASURED ${s.notMeasured.length} (${s.notMeasured[0]})` : ''}`)
+if (report.constructs) {
+  const c = report.constructs
+  lines.push(`- his first dated use, per signal (GitHub commit search over his repositories): ${Object.entries(c.firstUse).map(([k, v]) => `${k}: ${v}`).join(' · ')}`)
+  lines.push(`- not a lead: ${c.notALead.physics} textbook two-bit physics · ${c.notALead.wordOnly} the words only (under two signals) · prior art (older than his first use): ${c.priorArt.length} · third-party forks: ${c.forks}`)
+}
 if (report.news) lines.push(`- topic news per day: **after** his publications ${report.news.perDayAfter} · **before** (control) ${report.news.perDayBefore} — a pattern only if after clearly exceeds before`)
 lines.push(`- leads: ${report.leads.length} (own surfaces removed${report.mode === 'markers' ? ', marker verbatim' : ''})`)
-for (const l of report.leads.slice(0, 200)) lines.push(`  - [${l.source}] ${l.url} — cites: **${l.cites}** · pays: NOT MEASURED${l.markers.length ? ` · markers: ${l.markers.join(', ')}` : ''}${l.by ? ` · ${String(l.by).slice(0, 60)}` : ''}`)
+for (const l of report.leads.slice(0, 200)) lines.push(`  - [${l.source}] ${l.url} — cites: **${l.cites}** · pays: NOT MEASURED${l.markers.length ? ` · markers: ${l.markers.join(', ')}` : ''}${l.signals?.length ? ` · signals: ${l.signals.join(', ')}` : ''}${l.licence ? ` · licence: ${l.licence}` : ''}${l.by ? ` · ${String(l.by).slice(0, 60)}` : ''}`)
 const text = lines.join('\n')
 console.log(text)
 const arg = (flag: string) => { const i = process.argv.indexOf(flag); return i > 0 ? process.argv[i + 1] : undefined }
