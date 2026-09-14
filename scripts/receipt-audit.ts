@@ -7,8 +7,9 @@
 //   (4) agent + role present        — the payload names the observer and their role;
 //   (5) every invited theorem still holds;
 //   (6) `complies` names the current licence and the sequence;
-//   (7) fourteen 2×7 signatures, one per cell, each by a ledger theorem whose address falls in that cell and whose
-//       tag recomputes (scripts/receipt-2x7.ts).
+//   (7) the 2×7 signature: one center at the receipt's own position and 2×7 apostilles around it, one from every
+//       position — fifteen ledger theorems whose addresses fall where they stand, all distinct, every tag
+//       recomputing: the center's from the receipt, an apostille's from the center (scripts/receipt-2x7.ts).
 // A receipt that fails (1)–(5), or carries a signature that does not verify, is FALSE — a forgery or a regression.
 // A receipt without (6)–(7) is INVALID: honest when written, but unsigned under the 2×7 rule (user, 2026-09-14:
 // "the old receipts are invalid without the attributes"), and fatal by the user's choice. It cannot be re-signed —
@@ -20,7 +21,7 @@ import { toUuid, merkleFold } from '../src/0/index.ts'
 import { computes } from './honesty-gate.ts'
 import { CANDIDATES } from './discover.ts'
 import { ledger as __ledger } from '../src/api/index.ts'
-import { CELLS, checkSignatures, type Signature } from './receipt-2x7.ts'
+import { PER_POSITION, checkSignatures, type Signature } from './receipt-2x7.ts'
 
 const byKey = new Map(CANDIDATES.map((c) => [c.key, c])) // for verifying invited theorems still hold
 // A receipt is IMMUTABLE — rewriting one is tamper — so when a theorem it invited is later withdrawn, the
@@ -52,7 +53,7 @@ if (!existsSync(dir)) { console.log(bad ? '\n✗ ' + bad + ' receipt(s) MISSING 
 const files = readdirSync(dir).filter((f) => f.endsWith('.json'))
 const roots: string[] = []
 for (const f of files) {
-  let r: { uuid?: string; message?: string; agent?: string; role?: string; invites?: string[]; complies?: string; signatures?: Signature[] }
+  let r: { uuid?: string; message?: string; agent?: string; role?: string; invites?: string[]; complies?: string; signature?: Signature }
   try { r = JSON.parse(readFileSync(dir + '/' + f, 'utf8')) } catch { console.log('  ✗ FALSE ' + f + ' — unparseable'); bad++; continue }
   const c1 = typeof r.message === 'string' && r.uuid === toUuid(r.message) // uuid = core message, no payload
   const c2 = f === r.uuid + '.json'
@@ -88,13 +89,13 @@ for (const f of files) {
     stale++
     roots.push(r.uuid!)
   } else {
-    console.log('  ✓ ' + f.slice(0, 18) + '…  ' + r.agent + ' as ' + r.role + ' · signed 2×7 by ' + CELLS.length + ' live theorems' + back)
+    console.log('  ✓ ' + f.slice(0, 18) + '…  ' + r.agent + ' as ' + r.role + ' · signed by ' + PER_POSITION + ' live theorems (the center at ' + r.signature!.cell + ' and the 2×7 around it)' + back)
     roots.push(r.uuid!)
   }
 }
 const staleNote = stale ? '\n  · ' + stale + ' receipt(s) carry WITHDRAWN BACKING — authentic evidence whose invited theorems were later withdrawn. A receipt is immutable, so there is no remedy and none is pretended: the record says what it says, and what it leaned on is gone.' : ''
 const falseN = bad - invalid - missing.length
 console.log(bad
-  ? '\n✗ ' + bad + ' receipt(s) fail of ' + files.length + ' — ' + falseN + ' FALSE (a forgery, a regression or a signature that does not verify) · ' + invalid + ' INVALID (unsigned under the 2×7 rule: no `complies` naming the current licence, or fewer than ' + CELLS.length + ' signatures)' + (missing.length ? ' · ' + missing.length + ' MISSING' : '') + staleNote
-  : '\n✓ ' + files.length + ' receipt(s) cross-check and are signed 2×7 (uuid = core message · payload names observer + role · ' + CELLS.length + ' live theorems each) → root ' + (roots.length ? merkleFold(roots).slice(0, 13) + '…' : 'none') + staleNote)
+  ? '\n✗ ' + bad + ' receipt(s) fail of ' + files.length + ' — ' + falseN + ' FALSE (a forgery, a regression or a signature that does not verify) · ' + invalid + ' INVALID (unsigned under the 2×7 rule: no `complies` naming the current licence, or no center with the 2×7 around it)' + (missing.length ? ' · ' + missing.length + ' MISSING' : '') + staleNote
+  : '\n✓ ' + files.length + ' receipt(s) cross-check and are signed 2×7 (uuid = core message · payload names observer + role · ' + PER_POSITION + ' live theorems each — a center and the 2×7 around it) → root ' + (roots.length ? merkleFold(roots).slice(0, 13) + '…' : 'none') + staleNote)
 process.exit(bad ? 1 : 0)
