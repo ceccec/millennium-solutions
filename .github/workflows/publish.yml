@@ -6,26 +6,29 @@ name: Publish packages to npm (after all safety measures)
 # NO TOKEN (user, 2026-09-14: "the github release is enough for npm to publish"). Auth is npm TRUSTED
 # PUBLISHING: GitHub signs an OIDC identity for this run (id-token: write) and npm accepts it for
 # @ceccec/millennium-solutions because the package names this repository as a trusted publisher. That trust is
-# set once on npm by the author — `npm trust github` or the package's settings page — for BOTH workflow files:
-# release.yml (npm matches the CALLING workflow when this runs via workflow_call, i.e. every automatic release)
-# and publish.yml (a release cut by a person, or a manual run). Provenance is attested automatically. An
-# NPM_TOKEN secret, if one is ever added, is used instead; there is none today.
+# set once on npm by the author, on the package's settings page, for publish.yml — and it must be publish.yml's
+# OWN run. Called from release.yml as a reusable workflow, the exchange answered "package not found" for v9.0.3,
+# v9.0.4 and v9.0.5 with BOTH release.yml and publish.yml trusted, while a direct run of this file published 9.0.4
+# (2026-09-13): npm does not honour a reusable workflow's identity. So release.yml dispatches this workflow as a
+# run of its own. Provenance is attested automatically. An NPM_TOKEN secret, if one is ever added, is used
+# instead; there is none today.
 #
 # THE VERSION IS THE TAG (user, 2026-09-14: "Same as the tag"). Release vX.Y.Z publishes npm X.Y.Z. CI tags
 # without committing — main is protected — so the tagged tree's package.json keeps its committed label, and the
 # step before publish writes the tag's number into the tarball. Nothing is committed back.
 on:
-  # release.yml CALLS this right after it mints a tag. A release created with the Actions token fires no
-  # `release: published` workflow — GitHub never lets GITHUB_TOKEN events start other workflows — so every
-  # automatic release from v8.8.5 to v9.0.1 left npm at 0.1.1 without this workflow ever running.
-  workflow_call:
+  # release.yml DISPATCHES this right after it mints a tag. A release created with the Actions token fires no
+  # `release: published` workflow — GitHub never lets GITHUB_TOKEN events start other workflows, workflow_dispatch
+  # excepted — so every automatic release from v8.8.5 to v9.0.1 left npm at 0.1.1. Called as a reusable
+  # workflow instead, it reached npm and was refused: see the auth note above.
+  workflow_dispatch:
     inputs:
       tag:
+        description: 'release tag to publish (vX.Y.Z); empty = the latest tag'
         type: string
-        required: true
+        required: false
   release:
     types: [published]   # a release cut by a person still publishes (also the Zenodo DOI trigger, if enabled)
-  workflow_dispatch:     # publishes the latest tag
 
 permissions:
   contents: read
@@ -95,8 +98,8 @@ jobs:
           echo "tag $TAG → @ceccec/millennium-solutions@$V (package.json committed as $(git show HEAD:package.json | node -pe 'JSON.parse(require("fs").readFileSync(0)).version'))"
 
       # --- publish: trusted publishing (OIDC), no token. ---
-      # Releases are minted automatically (release.yml), and release.yml calls this workflow for every one. A
-      # version npm already has is skipped, not an error: the call from release.yml and a person's `release:
+      # Releases are minted automatically (release.yml), and release.yml dispatches this workflow for every one. A
+      # version npm already has is skipped, not an error: the dispatch from release.yml and a person's `release:
       # published` can both reach the same tag. NODE_AUTH_TOKEN is exported ONLY when an NPM_TOKEN secret really
       # exists — setup-node's .npmrc reads it, and an empty token must not stand in front of the OIDC exchange.
       # The old step exited 0 when no token was set, so four releases "succeeded" and published nothing. Now a
