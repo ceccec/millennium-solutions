@@ -100,6 +100,7 @@ export const UNRUN_BY_DESIGN: Record<string, string> = {
   priorart: 'a generator; priorart-gen is the gate that holds its output',
   'stale-figures': 'REPORTS by design — a 75% false-positive rate is not something to gate a build on',
   'verify-theorems': 'covered by gates-fire, and its subject is re-verified by forensics on every commit',
+  probe: 'the control harness, not a gate: it takes a file, a theorem and a mutation as arguments, so no chain can run it bare; gates-fire holds its control — a mutation that never reaches the theorem must be refused',
 }
 
 /** Gates that REFUSE and that no routine chain runs. `seo` sat here with a real defect — paper.html
