@@ -10,7 +10,7 @@ import { execSync } from 'node:child_process'
 
 const version = (() => { try { return execSync('git tag --sort=version:refname', { encoding: 'utf8' }).trim().split('\n').pop() || 'v0' } catch { return 'v0' } })()
 // coverage = gate-enforced 100% (build fails otherwise); the live seal root is linked to /sitemap.json
-// (source of truth) — no stale/absent embed. floor (0/7) is invariant.
+// (source of truth) — no stale/absent embed.
 
 const card = (title: string, value: string, sub: string) =>
   `<div class="dash-card"><div class="dash-k">${title}</div><div class="dash-v">${value}</div><div class="dash-s">${sub}</div></div>`
@@ -71,8 +71,7 @@ import { withBase } from 'vitepress'
 
 <div class="dash-grid">
 ${card('Version', version, 'git tag (single source)')}
-${card('Millennium floor', '0 / 7', 'entailed — not solved, not claimed')}
-${card('Honesty gate', 'sealed', 'all prose consistent with 0/7')}
+${card('Honesty gate', 'sealed', 'every citation live in the ledger')}
 ${card('Link coverage', '100%', 'gate-enforced — the build fails below 100%')}
 <a class="dash-card" :href="withBase('/sitemap.json')" style="text-decoration:none;display:block"><div class="dash-k">Seal root</div><div class="dash-v" style="color:var(--vp-c-brand-1)">live →</div><div class="dash-s">merkle of the whole, current at /sitemap.json</div></a>
 ${card('CSP', 'every page', 'security gate — no external imports')}
@@ -94,7 +93,7 @@ ${horo}
 </div>
 </div>
 
-> These are suggestive patterns. Some are real structure (the palindrome, 3+5=8); some are imposed. **None are proofs**, and none imply any neurological or physical effect. \`0/7\` unchanged.
+> These are suggestive patterns. Some are real structure (the palindrome, 3+5=8); some are imposed. **None are proofs**, and none imply any neurological or physical effect.
 `
 
 writeFileSync('dashboard.md', md)

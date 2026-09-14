@@ -6,7 +6,7 @@ head:
 
 # How it folds — a guide for everyone
 
-For a child or an elder. No jargon needed. A content-address proves integrity, not truth. `0/7`.
+For a child or an elder. No jargon needed. A content-address proves integrity, not truth.
 
 ## 1. What a theorem is
 
@@ -62,4 +62,4 @@ the address, and the honest form. Browse every fact on [the organism](/organism)
 
 Every checked fact, freely shared, is a small **contribution** anyone can build on without asking permission and
 without being misled. That is the quiet aim: a fair, checkable commons where a claim is worth exactly what its
-re-computation shows — no more, no less. Earned, not minted. `0/7`.
+re-computation shows — no more, no less. Earned, not minted.

@@ -3,7 +3,7 @@
 // propulsion mass; higher collective gravity pushes low-gravity theorems up the seven levels until the top
 // is the level-7 HERO. The yacht cannot sail straight to the mark: it TACKS −60° and +60° (the gold string,
 // π/3, port and starboard) to make the ±90° beam (π/2). Every bearing is an integer — no decimal drift.
-// forward / reverse is the tack; inverse is come-about (mirror the bearing). Computed, not asserted. 0/7.
+// forward / reverse is the tack; inverse is come-about (mirror the bearing). Computed, not asserted.
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 // The sequence is computed, not quoted: this panel says what the captain KNOWS, and a known value typed
 // by hand is the one thing it must not contain.
@@ -177,7 +177,7 @@ const known = [
       </div>
       <figcaption>
         regatta: the ±60 tack sails <b>linear</b> and loses; the winner <b>folds recursively</b> — <b>{{ ratio }}×</b> fewer
-        steps, order-independent, converging to one root. The limit is <b>log N</b>, not O(1), not infinite, not FTL. <code>0/7</code>.
+        steps, order-independent, converging to one root. The limit is <b>log N</b>, not O(1), not infinite, not FTL.
       </figcaption>
     </figure>
 
@@ -197,7 +197,7 @@ const known = [
       turning, pointing off the limit costs <code>sec θ</code> (60°→<b>2×</b>, 75°→<b>3.9×</b>), and off the integer
       ladder the bearing <b>drifts</b>, the winding never <b>closes</b>, the seal breaks. Harmonic life reaches 90
       <b>whole</b> — integer, no drift; <b>recursive folding</b> stays whole (one root, order-independent, sealed), the
-      least work of all (O(log N)). <em>known ⇔ it round-trips.</em> Integrity, not truth. <code>0/7</code>.
+      least work of all (O(log N)). <em>known ⇔ it round-trips.</em> Integrity, not truth.
     </p>
   </div>
 </template>

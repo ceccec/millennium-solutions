@@ -5,7 +5,7 @@
 // first pass. This full trial is the opposite by design: it READS the ledger, RECOMPUTES every supporting
 // theorem's formula (test() === true), and FOLDS their receipts with the gate formula and the verdict into ONE
 // proof-of-verdict receipt via double-torus gravity. Valid because every cited formula recomputes; reproducible
-// by anyone; cost O(supporting theorems), not O(1). Integrity, not truth. 0/7.
+// by anyone; cost O(supporting theorems), not O(1). Integrity, not truth.
 import { adjudicate, type Verdict } from './adjudicate.ts'
 import { computes } from './honesty-gate.ts'
 import { CANDIDATES } from './discover.ts'

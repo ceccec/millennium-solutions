@@ -11,7 +11,7 @@
 //   · receipted — the harmonic root IS the receipt of the state: change any module's output and the root
 //                 moves. You cannot change a contribution without changing the root (the receipt).
 // BOUND: a shared green proves INTEGRITY and completeness of the computation, never the TRUTH of the
-// content. The floor stays 0/7.
+// content.
 import { readdirSync, statSync, readFileSync } from 'node:fs'
 import { pathToFileURL } from 'node:url'
 import { coin64 } from '../src/0/imprint.ts'

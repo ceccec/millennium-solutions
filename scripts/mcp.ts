@@ -38,11 +38,11 @@ const TOOLS = [
     inputSchema: { type: 'object', properties: {}, required: [] } },
   { name: 'verify', description: 'Audit any prose/message, or decode-and-verify a uuid across BOTH evidence sets. Prose → honesty-gate verdict + content-address. A uuid is a ONE-WAY address (never reversed); "decode" looks it up in (1) the agent-statement receipts (src/receipts/, verifies toUuid(message)===uuid + observer/role) then (2) the discovery ledger (reports the fact, chain position, and whether the chain-of-custody link is intact). In neither ⇒ opaque, honestly.',
     inputSchema: { type: 'object', properties: { text: { type: 'string' } }, required: ['text'] } },
-  { name: 'discover', description: 'The discovery engine: computationally-generated + curated candidate facts over ℤ/9, each tested by exhaustion. Returns discovered (provable) vs refuted + a discovery root. Decidable facts only — never a proof of the six OPEN Millennium conjectures. This deposit 0/7; humanity 1/7 (Poincaré, Perelman 2003).',
+  { name: 'discover', description: 'The discovery engine: computationally-generated + curated candidate facts over ℤ/9, each tested by exhaustion. Returns discovered (provable) vs refuted + a discovery root. Decidable facts only.',
     inputSchema: { type: 'object', properties: {}, required: [] } },
-  { name: 'recompute', description: 'Recompute ALL theorems: re-run every candidate\'s formula (its test) by exhaustion, report how many hold vs refuted, verify every RECORDED ledger theorem still recomputes true, and fold the recompute root — the whole deposit recomputes from its theorems, not from stored answers. A theorem without a formula that recomputes true is refused (hallucination). Decidable; deposit 0/7.',
+  { name: 'recompute', description: 'Recompute ALL theorems: re-run every candidate\'s formula (its test) by exhaustion, report how many hold vs refuted, verify every RECORDED ledger theorem still recomputes true, and fold the recompute root — the whole deposit recomputes from its theorems, not from stored answers. A theorem without a formula that recomputes true is refused (hallucination). Decidable.',
     inputSchema: { type: 'object', properties: {}, required: [] } },
-  { name: 'rosetta', description: 'The completed cross-domain rosetta as a reusable endpoint: every domain family one hop from the shared core, content-addressed and folded to one rosetta root, all addresses distinct (no collision unless consolidated or redistributed). Returns the core address, the domain list and count, the collision check, and the rosetta root. Integrity of the cross-domain map, not truth. Deposit 0/7.',
+  { name: 'rosetta', description: 'The completed cross-domain rosetta as a reusable endpoint: every domain family one hop from the shared core, content-addressed and folded to one rosetta root, all addresses distinct (no collision unless consolidated or redistributed). Returns the core address, the domain list and count, the collision check, and the rosetta root. Integrity of the cross-domain map, not truth.',
     inputSchema: { type: 'object', properties: {}, required: [] } },
   { name: 'audit', description: 'Self-audit of THIS MCP server: content-address every tool (name+description+schema), verify each declared tool has a handler and each handler is declared (coverage), fold to one self-audit root. Integrity of the tool surface, not truth.',
     inputSchema: { type: 'object', properties: {}, required: [] } },
@@ -156,18 +156,18 @@ const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
     // folds every supporting ledger theorem whose formula recomputes true (double-torus 7D). The bare gate
     // binary is the O(1) floor; proofReceipt is the valid ruling that cites its formulas — reproducible by anyone.
     const v = proveVerdict(t)
-    return JSON.stringify({ text: t, contentAddress: v.receipt, gate: v.gateBinary, hit: v.gateBinary ? null : computes(t).hit, verdict: v.verdict, formulas: v.formulas, recomputedTrue: v.recomputedTrue, proofReceipt: v.proofReceipt, note: v.note + ' — full trial: ' + v.recomputedTrue + '/' + v.formulas + ' theorem-formulas recompute true, folded to the proof-of-verdict receipt. integrity, not truth. 0/7' })
+    return JSON.stringify({ text: t, contentAddress: v.receipt, gate: v.gateBinary, hit: v.gateBinary ? null : computes(t).hit, verdict: v.verdict, formulas: v.formulas, recomputedTrue: v.recomputedTrue, proofReceipt: v.proofReceipt, note: v.note + ' — full trial: ' + v.recomputedTrue + '/' + v.formulas + ' theorem-formulas recompute true, folded to the proof-of-verdict receipt. integrity, not truth.' })
   },
   lineage: () => {
     const tags = execSync('git tag --sort=version:refname', { encoding: 'utf8' }).trim().split('\n').filter(Boolean)
     const byTree = new Map<string, string[]>()
     for (const t of tags) { const tree = execSync('git rev-parse ' + t + '^{tree}', { encoding: 'utf8' }).trim(); (byTree.get(tree) || byTree.set(tree, []).get(tree)!).push(t) }
     const churn = [...byTree.values()].filter((ts) => ts.length > 1)
-    return JSON.stringify({ tags: tags.length, delivered: byTree.size, churn: churn.map((ts) => ts.join(' ≡ ')), note: 'integrity-level: what was delivered, not whether true. 0/7' })
+    return JSON.stringify({ tags: tags.length, delivered: byTree.size, churn: churn.map((ts) => ts.join(' ≡ ')), note: 'integrity-level: what was delivered, not whether true.' })
   },
   discover: () => {
     const prov = provable()
-    return JSON.stringify({ candidates: CANDIDATES.length, discovered: prov.length, refuted: CANDIDATES.length - prov.length, facts: prov.map((c) => c.name), root: merkleFold(prov.map((c) => toUuid(c.key))), note: 'decidable facts by exhaustion; not a proof of the six open conjectures. deposit 0/7, humanity 1/7 (Poincaré).' })
+    return JSON.stringify({ candidates: CANDIDATES.length, discovered: prov.length, refuted: CANDIDATES.length - prov.length, facts: prov.map((c) => c.name), root: merkleFold(prov.map((c) => toUuid(c.key))), note: 'decidable facts by exhaustion;' })
   },
   recompute: () => {
     const prov = provable()
@@ -175,12 +175,12 @@ const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
     const recomputedKeys = new Set(prov.map((c) => c.key))
     const everyRecordedRecomputes = ledger.every((e) => recomputedKeys.has(e.key))
     const missing = ledger.filter((e) => !recomputedKeys.has(e.key)).map((e) => e.key)
-    return JSON.stringify({ candidates: CANDIDATES.length, recomputed: prov.length, refuted: CANDIDATES.length - prov.length, recordedTheorems: ledger.length, everyRecordedRecomputes, missing, recomputeRoot: merkleFold(prov.map((c) => toUuid(c.key))), note: 'every theorem recomputes from its formula by exhaustion; the whole deposit recomputes from its theorems, not from stored answers. integrity, not truth. 0/7' })
+    return JSON.stringify({ candidates: CANDIDATES.length, recomputed: prov.length, refuted: CANDIDATES.length - prov.length, recordedTheorems: ledger.length, everyRecordedRecomputes, missing, recomputeRoot: merkleFold(prov.map((c) => toUuid(c.key))), note: 'every theorem recomputes from its formula by exhaustion; the whole deposit recomputes from its theorems, not from stored answers. integrity, not truth.' })
   },
   rosetta: () => {
     const addrs = ROSETTA_DOMAINS.map((d) => toUuid(ROSETTA_CORE + '→' + d))
     const distinct = new Set(addrs).size
-    return JSON.stringify({ core: toUuid(ROSETTA_CORE), domains: ROSETTA_DOMAINS.length, list: ROSETTA_DOMAINS, distinctAddresses: distinct, noCollision: distinct === ROSETTA_DOMAINS.length, rosettaRoot: merkleFold(addrs), note: 'the cross-domain rosetta as a reusable API — every domain one hop from the core, content-addressed, all distinct (no collision unless consolidated or redistributed). integrity, not truth. 0/7' })
+    return JSON.stringify({ core: toUuid(ROSETTA_CORE), domains: ROSETTA_DOMAINS.length, list: ROSETTA_DOMAINS, distinctAddresses: distinct, noCollision: distinct === ROSETTA_DOMAINS.length, rosettaRoot: merkleFold(addrs), note: 'the cross-domain rosetta as a reusable API — every domain one hop from the core, content-addressed, all distinct (no collision unless consolidated or redistributed). integrity, not truth.' })
   },
   forensics: () => {
     const ledger = loadLedger()
@@ -191,7 +191,7 @@ const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
     const newBreaks = breaks.filter((b) => !GENESIS.has(b.key))
     const dupKeys = ledger.length - new Set(ledger.map((e) => e.key)).size
     const dupReceipts = ledger.length - new Set(ledger.map((e) => e.receipt)).size
-    return JSON.stringify({ receipts: ledger.length, chainIntact: newBreaks.length === 0, newBreaks, genesisBaseline: [...GENESIS], duplicateKeys: dupKeys, duplicateReceipts: dupReceipts, tamperSeal: merkleFold(ledger.map((e) => e.receipt)), note: 'chain-of-custody: a NEW break or a collision is tampering (legal trial). genesis discontinuities are documented. integrity, not truth. 0/7' })
+    return JSON.stringify({ receipts: ledger.length, chainIntact: newBreaks.length === 0, newBreaks, genesisBaseline: [...GENESIS], duplicateKeys: dupKeys, duplicateReceipts: dupReceipts, tamperSeal: merkleFold(ledger.map((e) => e.receipt)), note: 'chain-of-custody: a NEW break or a collision is tampering (legal trial). genesis discontinuities are documented. integrity, not truth.' })
   },
   audit: () => {
     const declared = TOOLS.map((t) => t.name)
@@ -217,7 +217,7 @@ const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
       everyDiamondCertified: diamonds.every((d) => d.certified),
     }
     const allComputeTrue = Object.values(theorems).every(Boolean)
-    return JSON.stringify({ tools: TOOLS.length, handlers: handled.length, ...theorems, allComputeTrue, undeclared, orphans, singleWords: singleWords.length, diamonds, links, selfAuditRoot: root, note: 'the MCP audits itself BY THEOREMS — every tool content-addressed and handled, every multi-word tool linked to its single words by double-torus gravity (7D), each check a decidable predicate recomputed true and each diamond re-run from the ledger. integrity of the surface, not truth. 0/7' })
+    return JSON.stringify({ tools: TOOLS.length, handlers: handled.length, ...theorems, allComputeTrue, undeclared, orphans, singleWords: singleWords.length, diamonds, links, selfAuditRoot: root, note: 'the MCP audits itself BY THEOREMS — every tool content-addressed and handled, every multi-word tool linked to its single words by double-torus gravity (7D), each check a decidable predicate recomputed true and each diamond re-run from the ledger. integrity of the surface, not truth.' })
   },
 }
 const run = async (name: string, a: any): Promise<string> => {

@@ -22,8 +22,5 @@ No Lean toolchain is checked in; to verify, set up `lake` + Mathlib and
 
 ## Clay entailment
 
-The mechanical entailment test (`src/7/entails.ts`, rendered on
-[Compute](/compute)) evaluates each of the seven statements in a world where its
-conjecture is false; each stays true, so **Clay problems solved: 0 / 7**.
 
 See also the [Proof of Concept](/PROOF-OF-CONCEPT) index.

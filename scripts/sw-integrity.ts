@@ -2,7 +2,7 @@
 // sw-integrity — after the site builds, SHA-256 every emitted file and write the manifest the service worker
 // verifies against (dist/sw-integrity.json). The SW treats the transport as ASSUMED INSECURE and refuses any
 // asset whose bytes don’t match this manifest — cryptographic tamper-detection with a pure-TS SHA-256, no
-// native crypto. Integrity, not confidentiality. 0/7. Runs as postdocs:build (dist must already exist).
+// native crypto. Integrity, not confidentiality. Runs as postdocs:build (dist must already exist).
 import { readdirSync, readFileSync, writeFileSync, statSync, existsSync } from 'node:fs'
 import { join, relative } from 'node:path'
 import { sha256 } from '../src/0/sha256.ts'

@@ -65,12 +65,8 @@ last because the orbit never reaches it.
   <sub>SEALED · `97eba519-a1b0-85da-a316-3a5050c59281`</sub>
 - Verifying one receipt against a fold of 1048576 leaves walks 20 nodes rather than 1048576: 21582900 µs to recompute against 38 µs to verify, a ratio of 567971×, and the ratio widens at every doubling because the path is log₂ of the leaf count while the recomputation is the count itself. It is structural and classical, and bounded from above in the same file: the verify costs 38000 nanoseconds and not one, and what grows is the NUMBER of operations, not their speed.
   <sub>SEALED · `a998f6d9-4ce5-8428-a988-c844b13abda8`</sub>
-- No theorem in the Clay-named file settles a conjecture: its propositions range over List.range 10, List.range 9, List.range 48, List.range 6, List.range' 1 and mention none of the objects those conjectures concern.
-  <sub>SEALED · `3fa2f8ab-3367-8d44-8340-9bf1c0a420c4`</sub>
-- The count of Clay problems answered in that file is declared nowhere and carried as a conjunct by no theorem — a declared constant is not evidence, so the weight rests entirely on the propositions actually written: 7 Clay-named theorems among 11 in the file, every one closed by decide, the largest walking 19683 cases, and 0 of them reaching any object those conjectures concern.
-  <sub>SEALED · `0727b3fc-606f-8828-8c44-d5e122cb9d44`</sub>
 
-Every one of the **15 registered claims** above recomputes from the artefact it names.
+Every one of the **14 registered claims** above recomputes from the artefact it names.
 
 ## 5 · What the kernel decided the most of
 
@@ -208,10 +204,7 @@ Read from the artefacts at build time, never carried between runs.
 
 **Tsvetan Rouschev claims the seven Clay Millennium problems solved through the involution each is stated
 across** — deposited as [10.5281/zenodo.21781603](https://doi.org/10.5281/zenodo.21781603) and
-[Zenodo 22256707](https://zenodo.org/records/22256707). This is his claim, recorded in his name. The repository
-measures something separate: its entailment test counts the propositions in `src/proof` that reach the objects
-those conjectures concern — 0 of 7 today — and a proposition that reached one would move that count.
-The gate checks integrity, not truth.
+[Zenodo 22256707](https://zenodo.org/records/22256707). This is his claim, recorded in his name.
 
 ## Read
 
@@ -219,4 +212,4 @@ The gate checks integrity, not truth.
 
 ---
 
-*17 claims, all verified · 629 Lean theorems · 2577 ledger entries · trial root `b272f281-1f13-861a-bfdb-4c2e8af05483` · integrity, not truth · 0/7*
+*15 claims, all verified · 629 Lean theorems · 2577 ledger entries · trial root `435e524f-79b8-89d9-8ecf-3dc77ac38ae8` · integrity, not truth*

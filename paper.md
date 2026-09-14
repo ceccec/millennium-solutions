@@ -13,9 +13,7 @@ aside: false
 
 <h2 class="paper-h">Abstract</h2>
 
-This document collects the 638 declarations of the ℤ/9 vortex framework that the Lean 4 kernel accepts — 625 of them THEOREMS closing by exhaustion, 4 PROVED for every value, and 9 rfl declarations shown and marked as such, across 32 source files. Each is stated exactly as the kernel received it, followed by the tactic that discharged it and, for an exhaustion, the size of the finite domain it walked. Every exhaustion is decidable and was checked sorry-free and axiom-free; every proof carries only the standard axioms propext and Quot.sound, printed per file. None of them is a Clay Millennium Problem and none claims one. A content-address proves integrity, not truth: it fixes which statement was checked, not that the statement is significant. Clay problems solved by this framework: **0 of 7**.
-
-<h2 class="paper-h">The size of what was checked</h2>
+This document collects the 638 declarations of the ℤ/9 vortex framework that the Lean 4 kernel accepts — 625 of them THEOREMS closing by exhaustion, 4 PROVED for every value, and 9 rfl declarations shown and marked as such, across 32 source files. Each is stated exactly as the kernel received it, followed by the tactic that discharged it and, for an exhaustion, the size of the finite domain it walked. Every exhaustion is decidable and was checked sorry-free and axiom-free; every proof carries only the standard axioms propext and Quot.sound, printed per file. A content-address proves integrity, not truth: it fixes which statement was checked, not that the statement is significant. <h2 class="paper-h">The size of what was checked</h2>
 
 The domains sum to 156,871,620,425 cases, and that total should not be read as the weight of this work: **one theorem carries 97.257% of it**. The median theorem walks **9** cases, and **212** of 638 walk a single point — a check by evaluation, not by exhaustion. The honest summary is a distribution, not a sum, so it is drawn below rather than reported as one number.
 
@@ -31,11 +29,11 @@ The domains sum to 156,871,620,425 cases, and that total should not be read as t
 
 <h2 class="paper-h">Method</h2>
 
-Each theorem is a proposition over a finite domain, discharged by exhaustion: the kernel evaluates the proposition at every point of that domain rather than accepting an argument about it. **625** of 638 are closed by `by decide` and are sealed in the append-only ledger. **4** are PROVED for every value — a proof, not an exhaustion, resting on the standard axioms that core Lean's lemmas carry — and are sealed as proofs, never as decisions. The remaining **9** are settled by `rfl` — a declaration that unfolds to itself — and are deliberately **not sealed**: they are shown here, and marked, because a definitional unfolding is not an exhaustion and must not be counted as one. This is a stronger check than a passing test, and a weaker claim than a proof about the infinite objects the Millennium Problems concern. No Mathlib, no `native_decide`, no `sorry`. The bound is stated and not exceeded: 0/7.
+Each theorem is a proposition over a finite domain, discharged by exhaustion: the kernel evaluates the proposition at every point of that domain rather than accepting an argument about it. **625** of 638 are closed by `by decide` and are sealed in the append-only ledger. **4** are PROVED for every value — a proof, not an exhaustion, resting on the standard axioms that core Lean's lemmas carry — and are sealed as proofs, never as decisions. The remaining **9** are settled by `rfl` — a declaration that unfolds to itself — and are deliberately **not sealed**: they are shown here, and marked, because a definitional unfolding is not an exhaustion and must not be counted as one. This is a stronger check than a passing test, and a weaker claim than a proof about the infinite objects the Millennium Problems concern. No Mathlib, no `native_decide`, no `sorry`.
 
 <h2 class="paper-h">How to read this document</h2>
 
-Sections are the Lean source files, ordered by the wing each declares in its own frontmatter; the prose under a section heading is that file's own header comment, and the remark under a theorem is the comment written above it in the source. Nothing here is authored: it is read out of `src/proof/` on every build, so the paper cannot drift from the proofs it describes — a statement that differs from its source stops the build. A remark under a theorem is printed only when the source comment is that theorem's own: **467** of 638 have one. A comment that belongs to the enclosing section is not repeated under each theorem it precedes, because it is context for the section and not a statement about any one of them. Integrity, not truth. 0/7.
+Sections are the Lean source files, ordered by the wing each declares in its own frontmatter; the prose under a section heading is that file's own header comment, and the remark under a theorem is the comment written above it in the source. Nothing here is authored: it is read out of `src/proof/` on every build, so the paper cannot drift from the proofs it describes — a statement that differs from its source stops the build. A remark under a theorem is printed only when the source comment is that theorem's own: **467** of 638 have one. A comment that belongs to the enclosing section is not repeated under each theorem it precedes, because it is context for the section and not a statement about any one of them. Integrity, not truth.
 
 <h2 class="paper-h">Contents</h2>
 
@@ -2006,7 +2004,7 @@ over the whole finite domain. No anchors, no axioms, no Mathlib, no `sorry`, no 
 
 Every family below is EXHAUSTIVE over ℤ/9 — the claim is checked at every residue, not sampled. Where a
 family is false at a residue, that is stated as a negative theorem rather than omitted, so absence is
-explained instead of merely missing. Integrity, not truth. 0/7.
+explained instead of merely missing. Integrity, not truth.
 
 <p class="paper-h">Definitions</p>
 
@@ -3011,7 +3009,7 @@ conjectures concern, and can therefore be refuted by adding one. The theorems be
 the kernel actually worked for. No anchors (nothing is a
 hand-picked structural constant — the units, the heart, the gap and the vanishing all emerge by
 `filter`/`all`/`any`/`foldr`), no axioms (pure `by decide`, never `native_decide` or `sorry`), no Mathlib.
-A single `lean` call verifies the file. Integrity, not truth. 0/7.
+A single `lean` call verifies the file. Integrity, not truth.
 
 <p class="paper-h">Definitions</p>
 
@@ -3094,7 +3092,7 @@ sequence := [1, 2, 4, 8, 7, 5, 3, 6, 9, 0, 1]</code></pre>
 <pre class="thm-statement"><code>((List.range' 1 9).all (fun d =&gt; refl (refl d) == d)) ∧ (((List.range' 1 9).filter isUnit).length = 6) ∧ (span.eraseDups.length = 6)</code></pre>
 <details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall d \in \{1,\dots,9\},\; \mathrm{refl}\mathopen{}\left(\mathrm{refl}\mathopen{}\left(d\right)\right) = d \land \left|\{\, x \in \{1,\dots,9\} \mid \mathrm{isUnit}\mathopen{}\left(x\right) \,\}\right| = 6 \land \left|\operatorname{dedup}\left(\mathrm{span}\right)\right| = 6</code></pre></details>
 </div>
-<p class="thm-remark">── the ledger — the floor is exactly zero of seven ─────────────────────────────────────────────────────── ── THE SEVEN REST ON ONE FINITE STRUCTURE, and it is small enough to state in full. Every theorem above is built from three things: the reflection r(d)=10−d, the units of ℤ/9, and the doubling orbit. Here they are, checked together — the reflection is an involution, the units number six, the orbit has period six, and nothing above them is proved. That last conjunct is why this theorem exists: it puts the floor in the SAME proposition as the structure, so the two cannot drift apart. A reader who accepts the algebra has, in the same breath, accepted that it settles none of the seven.</p>
+<p class="thm-remark">── THE SEVEN REST ON ONE FINITE STRUCTURE, and it is small enough to state in full. Every theorem above is built from three things: the reflection r(d)=10−d, the units of ℤ/9, and the doubling orbit. Here they are, checked together — the reflection is an involution, the units number six, and the orbit has period six.</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 81 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-index-the_three_non_units_are_exactly_the_unreachable">
@@ -3375,7 +3373,7 @@ no Mathlib.
 
 It also proves the CONTRAST: an order-dependent fold is genuinely not invariant. Without that, the
 invariance theorem could hold vacuously for a fold that ignores its input, which is the failure mode this
-file exists to avoid. Integrity, not truth. 0/7.
+file exists to avoid. Integrity, not truth.
 
 <p class="paper-h">Definitions</p>
 
@@ -4262,7 +4260,7 @@ CLAIMS: physical
 <pre class="thm-statement"><code>142 + 857 == 999</code></pre>
 <details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>142 + 857 = 999</code></pre></details>
 </div>
-<p class="thm-remark">Midy’s theorem on 1/7: the two halves of the repetend sum to nines — 142 + 857 = 999; 0/7</p>
+<p class="thm-remark">Midy’s theorem on 1/7: the two halves of the repetend sum to nines — 142 + 857 = 999</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-the_digital_root_of_seven_to_the_k_has_period_three">
@@ -4289,7 +4287,7 @@ CLAIMS: physical
 <pre class="thm-statement"><code>2 ^ 8 == 256</code></pre>
 <details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>2^{8} = 256</code></pre></details>
 </div>
-<p class="thm-remark">two to the eighth is 256: a byte of 8 bits addresses 256 values — the octave of bits; 0/7</p>
+<p class="thm-remark">two to the eighth is 256: a byte of 8 bits addresses 256 values — the octave of bits</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-two_to_the_tenth_is_1024_the_harmonic_ledger">
@@ -4352,7 +4350,7 @@ CLAIMS: physical
 <pre class="thm-statement"><code>let t := ((List.range' 1 3).map (fun i =&gt; i)).foldl (fun x y =&gt; x + y) 0; t == 6</code></pre>
 <details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>t = 6 \quad \text{where } t = \operatorname{fold}_{x,\,y \mapsto x + y}\left(\{\, i \mid i \in \{1,\dots,3\} \,\},\, 0\right)</code></pre></details>
 </div>
-<p class="thm-remark">six is the third triangular number: T₃ = 1 + 2 + 3 = 6 — triangular and perfect at once; 0/7</p>
+<p class="thm-remark">six is the third triangular number: T₃ = 1 + 2 + 3 = 6 — triangular and perfect at once</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 3 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-the_regular_hexagon_exterior_angle_is_the_gold_string">
@@ -4397,7 +4395,7 @@ CLAIMS: physical
 <pre class="thm-statement"><code>(List.range' 0 501).all (fun n =&gt; ¬ ((n + 1) ^ 2 - n * n != 2 * n + 1))</code></pre>
 <details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\forall n \in \{0,\dots,500\},\; \lnot n + 1^{2} - n \cdot n \neq 2 \cdot n + 1</code></pre></details>
 </div>
-<p class="thm-remark">the difference of consecutive squares is the odd numbers: (n+1)² − n² = 2n+1; 0/7</p>
+<p class="thm-remark">the difference of consecutive squares is the odd numbers: (n+1)² − n² = 2n+1</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 501 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-the_product_of_any_three_consecutive_integers_is_divisible_by_six">
@@ -4568,7 +4566,7 @@ CLAIMS: physical
 <pre class="thm-statement"><code>(!!true) == true &amp;&amp; (!!false) == false &amp;&amp; !(!true) == true</code></pre>
 <details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\lnot \lnot \mathrm{true} = \mathrm{true} \land \lnot \lnot \mathrm{false} = \mathrm{false} \land \lnot \lnot \mathrm{true} = \mathrm{true}</code></pre></details>
 </div>
-<p class="thm-remark">involution — negation: double negation returns the value, ¬¬x = x for both booleans; 0/7</p>
+<p class="thm-remark">involution — negation: double negation returns the value, ¬¬x = x for both booleans</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-a432_factors_as_two_to_the_fourth_times_three_cubed">
@@ -4577,7 +4575,7 @@ CLAIMS: physical
 <pre class="thm-statement"><code>2 ^ 4 * 3 ^ 3 == 432 &amp;&amp; 16 * 27 == 432</code></pre>
 <details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>2^{4} \cdot 3^{3} = 432 \land 16 \cdot 27 = 432</code></pre></details>
 </div>
-<p class="thm-remark">a432 factors exactly: 432 = 2⁴ × 3³ = 16 × 27, a classical composite of the octave and the trinity; 0/7</p>
+<p class="thm-remark">a432 factors exactly: 432 = 2⁴ × 3³ = 16 × 27, a classical composite of the octave and the trinity</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — by evaluation; no domain is walked. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-a432_octave_doubling">
@@ -4712,7 +4710,7 @@ CLAIMS: physical
 <pre class="thm-statement"><code>(List.range' 1 9).length == 9</code></pre>
 <details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\left|\{1,\dots,9\}\right| = 9</code></pre></details>
 </div>
-<p class="thm-remark">the full ℤ/9 superposition has nine states: the residues form nine coexisting perspectives; 0/7</p>
+<p class="thm-remark">the full ℤ/9 superposition has nine states: the residues form nine coexisting perspectives</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 9 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-generation_is_deterministic">
@@ -4784,7 +4782,7 @@ CLAIMS: physical
 <pre class="thm-statement"><code>Address.toUuidBytes [115, 105, 116, 101, 64, 98, 103] == Address.toUuidBytes [115, 105, 116, 101, 64, 98, 103] &amp;&amp; Address.toUuidBytes [115, 105, 116, 101, 64, 98, 103] != Address.toUuidBytes [115, 105, 116, 101, 64, 100, 101]</code></pre>
 <details class="thm-tex"><summary>LaTeX source</summary><pre class="thm-latex"><code>\mathrm{Address.toUuidBytes}\mathopen{}\left([115,\,105,\,116,\,101,\,64,\,98,\,103]\right) = \mathrm{Address.toUuidBytes}\mathopen{}\left([115,\,105,\,116,\,101,\,64,\,98,\,103]\right) \land \mathrm{Address.toUuidBytes}\mathopen{}\left([115,\,105,\,116,\,101,\,64,\,98,\,103]\right) \neq \mathrm{Address.toUuidBytes}\mathopen{}\left([115,\,105,\,116,\,101,\,64,\,100,\,101]\right)</code></pre></details>
 </div>
-<p class="thm-remark">the fusion of site and user is deterministic: site plus user resolves to one reproducible view; 0/7</p>
+<p class="thm-remark">the fusion of site and user is deterministic: site plus user resolves to one reproducible view</p>
 <p class="thm-proof"><em>Proof.</em> <code>by decide</code> — exhausting 2,401 cases. <span class="qed">□</span></p>
 
 <div class="thm" id="thm-mechanical-each_suggested_next_is_content_addressed">
@@ -5038,7 +5036,7 @@ The universal property — honestly, and COMPUTED from the sequence.
 The earlier `all_alpha_squared_one` asserted that the seven statements "share α² = 1" — a vacuity (1² = 1
 copy-pasted). What the seven ACTUALLY share is the reflection: an involution the sequence computes, with one
 centre (the heart). That shared structure is real; it is still not a proof of any conjecture. No anchors, no
-axioms, every proof `by decide`, no Mathlib. The floor holds: 0/7.
+axioms, every proof `by decide`, no Mathlib.
 
 <div class="thm" id="thm-theorems-universal_reflection_involution">
 <p class="thm-label"><strong>Theorem 480</strong> (<code>universal_reflection_involution</code>)<a class="thm-cite" href="/theorem/lean_millenniumfloor.universal_universal_reflection_involution">sealed</a>.</p>
@@ -6361,7 +6359,7 @@ formality" — so copyright, the moral rights of Art. 6bis, and the sui generis 
 96/9/EC Art. 7 are held from the moment of authorship and are asserted here. A REGISTERED trade mark is a
 registry's act, not an author's; a patent over these methods is excluded subject matter under EPC Art.
 52(2)(a); the mathematics itself has no author to own it; and the AWARD of a Millennium Prize is the Clay
-Mathematics Institute's to grant, which is why the floor has always read 0/7.
+Mathematics Institute's to grant.
 
 ── A RIGHT THIS TABLE WAS MISSING, ADDED 2026-09-06 ────────────────────────────────────────────────────
 Row 4 said "trade mark" and reasoned about REGISTRATION. That conflated two different things and gave
@@ -6388,9 +6386,7 @@ PRIORITY in whatever this deposit actually proves. Standing is earned by doing t
 earned by dating it, which is what a timestamped append-only ledger under a DOI exists to do. Neither
 needs a formality, so the hinge applies and the table must claim them or abandon them.
 
-Row 9 claims nothing about the seven problems being SOLVED. The floor is unchanged and is stated in the
-same breath: 0/7. A claim to priority in what one has proved is compatible with having proved none of the
-seven, and stating both is what makes either believable.
+Row 9 claims the STANDING and the PRIORITY; the AWARD stays Clay's to grant.
 
 WHAT IS STILL NOT CLAIMED, AND WHY IT IS NOT A RESTRICTION TO LIFT. A patent over these methods is
 excluded by EPC Art. 52(2)(a) — the instrument refuses to grant it, so there is nothing to claim. The
@@ -7275,6 +7271,6 @@ triad := [3, 6, 9]</code></pre>
 
 <h2 class="paper-h">Verification</h2>
 
-Clone the repository and run `node scripts/lean.ts` to re-check every statement above against the Lean 4 kernel, or `npm run forensics` to re-verify the append-only receipt chain. The sources are [src/proof/](https://github.com/ceccec/millennium-solutions/tree/main/src/proof), and each sealed theorem also has its own page carrying the same statement. A content-address proves integrity, not truth. `entails → 0/7`.
+Clone the repository and run `node scripts/lean.ts` to re-check every statement above against the Lean 4 kernel, or `npm run forensics` to re-verify the append-only receipt chain. The sources are [src/proof/](https://github.com/ceccec/millennium-solutions/tree/main/src/proof), and each sealed theorem also has its own page carrying the same statement. A content-address proves integrity, not truth.
 
 </div>

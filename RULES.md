@@ -4,9 +4,7 @@ title: Rules
 
 # The rules of the game
 
-The object is a ℤ/9 vortex calculator: it computes exactly and records what it computed. The floor is
-the same everywhere — **Clay problems solved: 0 / 7** (this deposit; humanity 1 / 7, Poincaré settled
-externally by Perelman). These are the rules by which everything here moves.
+The object is a ℤ/9 vortex calculator: it computes exactly and records what it computed. These are the rules by which everything here moves.
 
 ## 1 — Measure, don't assert
 

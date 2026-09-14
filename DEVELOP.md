@@ -20,9 +20,9 @@ development honest.
 
 ## The rules the gate enforces (so public development stays truthful)
 
-- **seal** — no abstract may claim the Clay problems are solved. `entails → 0/7`.
+- **seal** — no abstract may claim the Clay problems are solved.
 - **gaps** — every module fused, every page linked, every digit `0..9` covered.
-- **wholeness** — every module computes; the floor `0/7` is present.
+- **wholeness** — every module computes; the floor is present.
 - **your HONEST line** — each module marks where observation stops and interpretation would begin.
 
 ## What you keep
@@ -31,4 +31,4 @@ development honest.
 - **Commercial use** = the two coins (`110 − 108 = 2`), reinvested in development.
 
 > Honest: contribution here is public and verifiable, and the gates keep it truthful. Nothing lets
-> you publish "solved" — by design. Build vision, not overclaim. The floor holds for everyone: `0/7`.
+> you publish "solved" — by design. Build vision, not overclaim. The floor holds for everyone:

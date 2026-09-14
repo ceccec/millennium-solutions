@@ -1,6 +1,5 @@
 #!/usr/bin/env node
-// Review + seal orchestration. Reviews every abstract-bearing file for claims that contradict the honest
-// layer (0/7) or cite a theorem that does not stand, then content-address-seals the consistent set.
+// Review + seal orchestration. Reviews every abstract-bearing file for citations of a theorem that does not stand, then content-address-seals the consistent set.
 //
 // The audit itself lives in ./audit.ts, shared with precommit.ts so the two cannot disagree — see that file
 // for why the citation authority is this deposit's ledger and not the packaged gate's.
@@ -29,6 +28,6 @@ for (const f of FILES) {
 }
 console.log('\ndeposit merkle root:', merkleFold(leaves))
 console.log(flagged.length === 0
-  ? '\n✓ ALL SEALED — every abstract consistent with the 0/7 layer, every citation live in the ledger.'
+  ? '\n✓ ALL SEALED — every citation live in the ledger.'
   : '\n✗ ' + flagged.length + ' file(s) FLAGGED — reconcile before sealing:\n  ' + flagged.map((x) => x.f).join(', '))
 process.exit(flagged.length === 0 ? 0 : 1)

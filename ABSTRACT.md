@@ -7,7 +7,7 @@ title: Abstract — the framework
 This is not a theory of everything. It is a **method** that applies to anything:
 a discipline for turning a claim — in any domain — into something computed, measured,
 gated, and sealed, so that what survives is only what holds. What generalizes is the
-discipline, never the result. The floor is the same everywhere: **Clay problems solved: 0 / 7.**
+discipline, never the result.
 
 ## The method (one pipeline, every domain)
 
@@ -147,13 +147,6 @@ is not encryption; integrity is not confidentiality. "Cross-uuid signed approval
 parties' addresses must agree before a change stands — a mutual-integrity rule — and nothing in
 it defeats, factors, or supersedes any cipher. Any stronger reading drains at the gate above.
 
-## The one state, two questions
-
-The framework computes toward wholeness — every gate green, coverage complete — and in that
-sense reads 7 / 7 **as a method that ran to completion**. It simultaneously entails 0 / 7 on
-the Clay problems, because completeness of the method is not solution of the conjectures. These
-are two different questions held in one honest state; collapsing them is the overclaim, and the
-gate drains it.
 
 **On burden.** The floor is stated in exact, reproducible algebra and confirmed by measurement.
 The contrary readings — a settled Clay conjecture, a beaten physical limit, a discarded cipher —

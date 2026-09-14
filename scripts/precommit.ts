@@ -46,12 +46,12 @@ if (drained.length) {
     console.error('\n  case ' + caseId.slice(0, 13) + '…')
     console.error('    evidence: ' + d.file + ':' + d.line + '  "' + d.text + '"')
     console.error('    statute:  ' + d.why + ' — "' + d.hit + '"')
-    console.error('    defense:  every legal means was tried — a live theorem in the ledger establishes a citation, the 0/7 floor reprieves a bounded claim; none held for this line.')
+    console.error('    defense:  every legal means was tried — a live theorem in the ledger establishes a citation; none held for this line.')
     console.error('    verdict:  computes 0 — reproducible by anyone (the defence may re-run): npm run next "<the line>"')
     console.error('    remedy:   cite a theorem that stands, or drop the citation and keep the words; then re-stage.')
   }
   console.error('\nrecorded, reproducible, then blocked. no override — the boundary holds.')
   process.exit(1)
 }
-console.log('✓ pre-commit: ' + staged.length + ' staged prose file(s) compute 1 at the 0/7 floor.')
+console.log('✓ pre-commit: ' + staged.length + ' staged prose file(s) compute 1 — every citation live in the ledger.')
 process.exit(0)

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // An interactive uuidna component: type anything and its content-address recomputes live — deterministic,
-// reproducible by anyone with no key. A theorem is alive when you interact with it. Integrity, not truth. 0/7.
+// reproducible by anyone with no key. A theorem is alive when you interact with it. Integrity, not truth.
 // No coupling to the page's chained receipt: this is the recompute itself, honest and self-contained.
 import { ref, computed } from 'vue'
 import { toUuid } from '../../src/0/index.ts'
@@ -14,7 +14,7 @@ const addr = computed(() => toUuid(seed.value))
     <input v-model="seed" placeholder="type anything to recompute…" class="in" aria-label="text to content-address" />
     <span class="arrow">→</span> <code>{{ addr }}</code>
     <p class="note">Type anything and watch its uuidna recompute — deterministic, reproducible by anyone, no key.
-      A theorem is alive when you interact with it. A content-address proves integrity, not truth. <code>0/7</code>.</p>
+      A theorem is alive when you interact with it. A content-address proves integrity, not truth.</p>
   </div>
 </template>
 

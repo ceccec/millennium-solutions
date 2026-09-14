@@ -27,7 +27,7 @@ onMounted(async () => {
     <span class="latest">· newest: <a :href="withBase('/theorem/' + latest.key)">{{ latest.name.split('—')[0].trim() }}</a></span>
     <div class="note">The UI is a client-side harness — the same pure functions the build seals (content-address, gate,
       reeducate) run in your browser, deterministically. Realtime = per build and at view time; not a live MCP server,
-      not AI. Integrity, not truth. <code>0/7</code>.</div>
+      not AI. Integrity, not truth.</div>
   </div>
 </template>
 

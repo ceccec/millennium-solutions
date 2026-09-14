@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Live worked examples, organised by theorem. Every output below is computed here, from the real src/
-// functions — recompute the page and they recompute. Integrity, not truth. 0/7.
+// functions — recompute the page and they recompute. Integrity, not truth.
 import { ref, computed } from 'vue'
 import { withBase } from 'vitepress'
 import { toUuid, strictUuidna } from '../../src/0/index.ts'
@@ -47,7 +47,7 @@ const billFree = billUuidna({ commercial: false, recomputeOps: 100000, verifyOps
 <template>
   <div class="examples">
     <p class="lead">Every value below is <strong>computed live</strong> from the <code>src/</code> functions — recompute
-      the page and it recomputes. A content-address proves <strong>integrity, not truth</strong>. <code>0/7</code>.</p>
+      the page and it recomputes. A content-address proves <strong>integrity, not truth</strong>.</p>
 
     <section>
       <h3>1 · Content address <a :href="withBase('/theorem/a_content_address_is_a_pointer_not_the_payload')">theorem ↗</a></h3>

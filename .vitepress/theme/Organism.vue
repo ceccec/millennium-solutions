@@ -71,7 +71,7 @@ const W = 760, H = 340
       All is one organism, decoded from the ledger and encoded here. Each theorem is an <strong>organ</strong> —
       a fact that computes true. The <em>key</em> is the identity, the <em>label</em> the translatable surface, the
       <em>receipt</em> the content-address that encodes it. What is not an organ goes to <strong>trial</strong>:
-      the gate drains a boast, forensics names a non-theorem. Integrity, not truth — <code>0/7</code>.
+      the gate drains a boast, forensics names a non-theorem. Integrity, not truth.
     </p>
 
     <div class="vitals">

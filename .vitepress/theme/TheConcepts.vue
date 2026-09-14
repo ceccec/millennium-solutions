@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // The `the/*` concepts as a VitePress component itself — each module's report() runs at render,
 // so every card recomputes on page-load (no stored answers). Deterministic (pure toUuid/merkleFold),
-// so SSR and client hydration agree. Every card lands on the same floor: 0/7.
+// so SSR and client hydration agree. 
 import { report as theAll } from '../../src/the/index'
 import { report as theSequence } from '../../src/the/sequence/index'
 import { report as theTheorem } from '../../src/the/theorem/index'
@@ -52,7 +52,7 @@ const CONCEPTS = [
 
 // Make every card interactive: link anything linkable INSIDE the card — source-file paths (→ the repo)
 // and URLs (→ the target). Bare "/word" tokens are deliberately NOT linked, because the concept text
-// carries math like ℤ/9 and 0/7 that are not routes (no dead links, no prose poison).
+// carries math like ℤ/9 that is not a route (no dead links, no prose poison).
 const REPO = 'https://github.com/ceccec/millennium-solutions/blob/main/'
 const repoHref = (src: string) => REPO + src
 type Seg = { t: string; href?: string; ext?: boolean }

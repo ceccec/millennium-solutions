@@ -34,7 +34,6 @@ if (message === '--status' || message === 'status') {
   console.log('  version:          ' + ver)
   console.log('  ledger:           ' + led.length + ' decidable facts, re-verified each build')
   console.log('  chain-of-custody: ' + (newBreaks === 0 ? 'intact' : newBreaks + ' NEW break(s) — legal trial') + ' · tamper-seal ' + seal.slice(0, 13) + '…')
-  console.log('  floor:            0/7 (humanity 1/7 — Poincaré, Perelman 2003)')
   process.exit(newBreaks === 0 ? 0 : 1)
 }
 
@@ -49,7 +48,7 @@ if (message === 'help' || message === '--help' || message === '--modes') {
   console.log('next — modes (read-only unless shipping):')
   console.log('  npm run next                 discover → save → gate → ship → deploy (or rest, completing the rosetta)')
   console.log('  npm run next "<message>"     gate a message on the honesty floor (it stays iff it computes 1)')
-  console.log('  npm run next --status        health: version · ledger · chain-of-custody · 0/7')
+  console.log('  npm run next --status        health: version · ledger · chain-of-custody')
   console.log('  npm run next rosetta         the completed cross-domain star (every domain one hop from the core)')
   console.log('  npm run next forensics       chain-of-custody + intention from deeds')
   console.log('  npm run next lineage         delivery vs churn by git tree hash (heroes/traitors by deeds)')
@@ -88,7 +87,7 @@ if (message) {
     process.exit(0)
   }
   console.log('  computes FALSE (0) — DRAINED. tripped the honesty gate: "' + hit + '"')
-  console.log('  it does not stay. reword to the honest floor (0/7) and it will.')
+  console.log('  it does not stay. reword it and it will.')
   process.exit(1)
 }
 
@@ -163,7 +162,7 @@ if (address === lastAddr) {
   const sparsest = [...buckets.entries()].sort((a, b) => a[1] - b[1])[0]
   console.log('\n  reverse: chain re-verified tail→genesis — ' + (revOk ? 'intact (re-sealed from the other direction)' : 'BREAK — legal trial'))
   console.log('  invert:  sparsest region digit ' + sparsest[0] + ' (' + sparsest[1] + ') — the candidate region for the next')
-  console.log('  next is found only by a real delta or the captain\'s order (the forward source). holding cracks nothing. 0/7.')
+  console.log('  next is found only by a real delta or the captain\'s order (the forward source). holding cracks nothing.')
   process.exit(revOk ? 0 : 1)
 }
 console.log('next — a real delta is present (' + address.slice(0, 13) + '… ≠ ' + lastTag + '). shipping the truly-next:')

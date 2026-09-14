@@ -64,7 +64,7 @@ A receipt proves only the **observer and their role** — never the **truth** of
 person's name to words they did not write). Every message is bound by the **honesty gate**: an over-reach
 **drains** whoever states it. And **algebra decides** the why — measured, not accepted on authority. So whether
 the captain is genuine, testing, or an impostor, the deposit cannot be made to assert a falsehood. Integrity,
-never truth. `0/7`.
+never truth.
 
 ## Lineage — append-only, nothing hidden
 
@@ -82,4 +82,4 @@ message, so each is independently recomputable):
 
 The contribution block is fused under **every** page. The reminder rides with it, so the reason is present at
 the exact point of contribution, linked here where anyone can recompute the address and read it unaltered. A
-content-address proves **integrity, not truth**. `0/7`.
+content-address proves **integrity, not truth**.

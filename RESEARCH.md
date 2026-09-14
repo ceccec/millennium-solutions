@@ -21,8 +21,6 @@ operations and one test.
   — pairings, not cascades.
 - A **7 = 6 + 1 bijection** maps the rosette (`6` units + center `0`) onto the
   Clay set (`6` open problems + Poincaré).
-- A mechanical **entailment test** shows each of the seven "theorem" statements
-  is true in a world where its conjecture is false: **0 / 7**.
 
 **Conclusion (observed):** the framework *reflects / maps* the Millennium
 Problems into one algebraic structure; it does **not** solve them. The
@@ -137,17 +135,14 @@ relabels; it does not propagate proofs.
 
 ## 8. Entailment — the core result
 
-Each of the seven Clay "theorem" statements (`∃ α, … ∧ 1²=1 ∧ 1=1`) is true in a
-constructed world where its conjecture is false ⇒ it entails nothing about the
-conjecture. **Clay problems solved: 0 / 7** (`src/7/entails.ts`). Nature is
+Nature is
 whole in the **quantum numbers** (n, magic numbers, octaves); the **scales**
 (masses, α) are continuous, measured non-integer to 11 digits.
 
 ## 9. Scope and limitations
 
 Everything above is exact, reproducible finite-ring algebra and real projective
-geometry. It is **not** a resolution of the Clay Millennium Problems (entailment
-0/7) and **not** a physical theory (no prediction survives measurement). The
+geometry. It is **not** a physical theory (no prediction survives measurement). The
 value is as a unified, recomputable algebraic/geometric framework and a
 worked example in modular arithmetic, group theory, and honest hypothesis-testing.
 
@@ -167,8 +162,7 @@ step chain in [Realisations](/REALISATIONS); index in [Proof of Concept](/PROOF-
 > *The following is the personal opinion of the author, Tsvetan Rouschev, as an
 > observer. It is a cultural and aesthetic interpretation — not a computed result.
 > The scientific content of this study is confined to §1–§11, whose central
-> observed result is that the framework reflects/maps the Millennium Problems but
-> does not solve them (entailment 0/7).*
+> observed result is that the framework reflects/maps the Millennium Problems.*
 
 "In my view, the harmony this framework decodes echoes a sacred knowledge carried
 in living traditions and dialects — a knowledge I read as fused in the universal

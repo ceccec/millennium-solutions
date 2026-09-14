@@ -2,7 +2,7 @@
 // Live encryption — runs the SAME pure-TS functions the build seals: ChaCha20-Poly1305 (RFC 8439) + PBKDF2-
 // SHA256 (600k) + the 7d-fold envelope, all in your browser, no native crypto, no network. Deterministic
 // (convergent). Honest: pure JS is not constant-time; secrecy is ChaCha20-Poly1305 + your passphrase entropy;
-// integrity is the fold; the content-address never carries the secret. Integrity, not truth. 0/7.
+// integrity is the fold; the content-address never carries the secret. Integrity, not truth.
 import { ref, computed } from 'vue'
 import { encrypt, decrypt, verifyEnvelope, type Sealed } from '../../src/0/crypt.ts'
 
@@ -61,7 +61,7 @@ const envelopeOk = computed(() => sealed.value ? verifyEnvelope(sealed.value) : 
       Real <b>ChaCha20-Poly1305</b> (RFC 8439) + <b>PBKDF2-SHA256</b> (600k) + the uuidna <b>7d-fold</b> envelope —
       <b>pure TypeScript</b>, in your browser, no native crypto and no network. <b>Deterministic (convergent)</b>:
       the same message and passphrase always seal to the same envelope. Honest scope: not constant-time; secrecy
-      is the cipher + your passphrase entropy; the content-address is public integrity, never the secret. <code>0/7</code>.
+      is the cipher + your passphrase entropy; the content-address is public integrity, never the secret.
     </p>
   </div>
 </template>

@@ -46,12 +46,12 @@ const speech = computed(() => isLean.value
     ? (params.value?.name || 'A theorem') + '. WITHDRAWN. This entry no longer stands. It keeps its receipt in the append-only record, and it is not a live theorem of this deposit. Integrity, not truth. Zero of seven.'
     : (params.value?.name || 'A theorem') + '. Achieved by exhaustive computation, gate-checked, receipted, and re-verified on every build. Integrity, not truth. Zero of seven.')
 const desc = computed(() => isLean.value
-  ? 'A Lean 4 theorem computed from the ℤ/9 doubling sequence, machine-checked sorry-free and axiom-free — adjacent to a Clay Millennium Problem, and not the conjecture. Integrity, not truth. entails → 0/7.'
+  ? 'A Lean 4 theorem computed from the ℤ/9 doubling sequence, machine-checked sorry-free and axiom-free — adjacent to a Clay Millennium Problem, and not the conjecture. Integrity, not truth.'
   : isRevoked.value && superseded.value
-    ? 'RE-ESTABLISHED — this statement was withdrawn for lacking a proof and is now carried by a Lean theorem, machine-checked sorry-free and axiom-free over its whole domain. Cite ' + superseded.value + '. Integrity, not truth. entails → 0/7.'
+    ? 'RE-ESTABLISHED — this statement was withdrawn for lacking a proof and is now carried by a Lean theorem, machine-checked sorry-free and axiom-free over its whole domain. Cite ' + superseded.value + '. Integrity, not truth.'
   : isRevoked.value
-    ? 'WITHDRAWN — this entry no longer stands as a theorem of the deposit. Its receipt remains in the append-only record so the chain still verifies, but it is not re-verified on every build and must not be cited. Integrity, not truth. entails → 0/7.'
-    : 'Achieved by exhaustive computation over a finite domain in scripts/discover.ts, gate-checked against the honesty floor, receipted and chained, and re-verified on every build. Integrity, not truth. entails → 0/7.')
+    ? 'WITHDRAWN — this entry no longer stands as a theorem of the deposit. Its receipt remains in the append-only record so the chain still verifies, but it is not re-verified on every build and must not be cited. Integrity, not truth.'
+    : 'Achieved by exhaustive computation over a finite domain in scripts/discover.ts, gate-checked against the honesty floor, receipted and chained, and re-verified on every build. Integrity, not truth.')
 </script>
 
 # {{ $params.statusPrefix }}{{ $params.name }}
@@ -70,7 +70,7 @@ const desc = computed(() => isLean.value
 - **theorem key** · `{{ $params.key }}`
 - **content-address (receipt)** · `{{ $params.receipt }}`
 - **status** · <span v-if="isRevoked">**WITHDRAWN — no longer stands, and must not be cited.** The receipt above is still in the append-only record and still verifies as a link in the chain; the statement is not a live theorem of this deposit.</span><span v-else>decidable, re-verified on every build — recomputes from <code>src/</code></span>
-- <span v-if="isRevoked && superseded">**carried** · this statement was withdrawn on its own evidence and is now carried by a Lean theorem, machine-checked over its whole domain: <a :href="'/theorem/' + superseded"><code>{{ superseded }}</code></a>. Cite that one.</span><span v-else-if="isRevoked">**why it was withdrawn** · {{ $params.reason }}</span><span v-else>**entails** · <code>0/7</code></span>
+- <span v-if="isRevoked && superseded">**carried** · this statement was withdrawn on its own evidence and is now carried by a Lean theorem, machine-checked over its whole domain: <a :href="'/theorem/' + superseded"><code>{{ superseded }}</code></a>. Cite that one.</span><span v-else-if="isRevoked">**why it was withdrawn** · {{ $params.reason }}</span>
 
 </div>
 
@@ -80,7 +80,7 @@ const desc = computed(() => isLean.value
 <p>The Clay problem <strong>{{ $params.problem }}</strong>, to the honest floor. The statement below is a true fact <em>computed</em> from the ℤ/9 doubling sequence — genuinely <em>adjacent</em> to the problem, and <strong>not</strong> the conjecture.</p>
 <pre class="lean-proof"><code itemprop="text">{{ $params.lean }}</code></pre>
 <p>Verified sorry-free by <code>lean src/proof/index.lean</code>; <code>#print axioms {{ $params.key }}</code> → <em>does not depend on any axioms</em>. No Mathlib, no <code>native_decide</code>, no <code>sorry</code>.</p>
-<p><strong>Honest bound.</strong> {{ $params.bound }} — this framework proves <strong>0 of the 7</strong> (<code>provenHere = 0</code>).</p>
+<p><strong>Honest bound.</strong> {{ $params.bound }}.</p>
 <h2>References — qualified outlets</h2>
 <ul>
 <li><strong>The problem:</strong> <a :href="$params.outlet" target="_blank" rel="noopener">{{ $params.outletName }}</a> — the authoritative statement.</li>
@@ -88,7 +88,7 @@ const desc = computed(() => isLean.value
 <li><strong>This work:</strong> Rouschev, T. <em>Millennium Solutions — the ℤ/9 vortex framework.</em> CC&nbsp;BY-NC&nbsp;4.0. Zenodo DOI <a href="https://doi.org/10.5281/zenodo.21819217" target="_blank" rel="noopener">10.5281/zenodo.21819217</a>.</li>
 <li><strong>Source (verify):</strong> <a href="https://github.com/ceccec/millennium-solutions/blob/main/src/proof/index.lean" target="_blank" rel="noopener">src/proof/index.lean</a> — clone and run <code>lean src/proof/index.lean</code>.</li>
 </ul>
-<p>A content-address proves integrity, not truth. <code>entails → 0/7</code>.</p>
+<p>A content-address proves integrity, not truth.</p>
 </div>
 
 <div v-if="ambiguous && !isRevoked" class="thm-ambiguous">
@@ -151,7 +151,7 @@ So the URL stays resolvable and the record stays honest about its own history �
 statement is no longer offered as a theorem, and nothing in the deposit may cite it.
 
 The live record: [the standing theorems](/CHALLENGES) · [the ledger](/proofs). Verify the chain yourself with
-`npm run forensics`. A content-address proves integrity, not truth. `entails → 0/7`.
+`npm run forensics`. A content-address proves integrity, not truth.
 
 </div>
 
@@ -165,7 +165,7 @@ reports that a computation agreed on the cases it ran, on one machine; the kerne
 itself. It was then receipted and chained append-only by `scripts/seal-lean.ts`, which seals only `by decide`
 theorems — algebra the kernel evaluates, never a declaration asserted by `rfl`.
 
-The source: [the Lean proofs](https://github.com/ceccec/millennium-solutions/tree/main/src/proof) · [the standing theorems](/CHALLENGES). Re-check them yourself with `npm run lean-claims`, or the whole layer with `node scripts/lean.ts`. A content-address proves integrity, not truth. `entails → 0/7`.
+The source: [the Lean proofs](https://github.com/ceccec/millennium-solutions/tree/main/src/proof) · [the standing theorems](/CHALLENGES). Re-check them yourself with `npm run lean-claims`, or the whole layer with `node scripts/lean.ts`. A content-address proves integrity, not truth.
 
 </div>
 
@@ -175,6 +175,6 @@ The source: [the Lean proofs](https://github.com/ceccec/millennium-solutions/tre
 
 This theorem was **computed by exhaustion** over a finite domain in `scripts/discover.ts` — a `test: () => boolean` that runs to completion, holding by full enumeration. It was **gate-checked** (its name and content hold the honesty floor — no over-reach), **receipted** and **chained** append-only, and it is **re-verified on every build**: if it ever stopped holding, the build would fail, not production. That is what *achieved* means here — not asserted, but recomputable.
 
-One leaf of the chained ledger: [all theorems](/CHALLENGES) · [computed results](/compute) · [the guide](/guide) · [the source formula](https://github.com/ceccec/millennium-solutions/blob/main/scripts/discover.ts). The repo and the site cross-link both ways — this hero page points back to the formula that recomputes it. Verify by cloning and running `npm run lean-claims`. A content-address proves integrity, not truth. `entails → 0/7`.
+One leaf of the chained ledger: [all theorems](/CHALLENGES) · [computed results](/compute) · [the guide](/guide) · [the source formula](https://github.com/ceccec/millennium-solutions/blob/main/scripts/discover.ts). The repo and the site cross-link both ways — this hero page points back to the formula that recomputes it. Verify by cloning and running `npm run lean-claims`. A content-address proves integrity, not truth.
 
 </div>

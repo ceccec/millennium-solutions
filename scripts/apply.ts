@@ -8,15 +8,13 @@
 //
 // THE CLAY PRIZE IS THE POINT OF THE EXERCISE. Its rules require a solution published in a refereed journal
 // of world-wide repute, two years elapsed since that publication, and general acceptance by the mathematics
-// community — and submissions cannot be sent to CMI directly at all. This deposit proves 0 of the 7, which
-// is measured on every build and stated on every page. So the first predicate fails and no package is
-// generated. That refusal is COMPUTED here rather than written as policy: if the number were ever not zero
-// this file would say so, which is the only way a refusal is worth anything.
+// community — and submissions cannot be sent to CMI directly at all. The publication and acceptance conditions
+// are not met by a deposit, so no package is generated; that is decided from the conditions below.
 import { writeFileSync, mkdirSync, readFileSync } from 'node:fs'
-import { clayFloor, census, advantage, theoremCount } from '../src/api/index.ts'
+import { census, advantage, theoremCount } from '../src/api/index.ts'
 import { CONCEPT_DOI, FUNDING, REPO, SITE } from '../src/publication/index.ts'
 
-const C = census(), F = clayFloor(), A = advantage()
+const C = census(), A = advantage()
 const today = new Date().toISOString().slice(0, 10)
 const OUT = '.zenodo/applications'
 
@@ -32,11 +30,6 @@ const OPPS: Opp[] = [
     name: 'Clay Mathematics Institute — Millennium Prize',
     url: 'https://www.claymath.org/millennium-problems/rules/',
     reqs: [
-      { says: 'a solution to one of the seven problems exists in this work',
-        holds: false,
-        because: `this deposit proves 0 of the 7. clayFloor() reports ${F.seven}/7 Clay-named theorems present, `
-          + `all closing by decide, and reaches=${F.reaches.length} — none reaches a conjecture object. The pages `
-          + `state 0/7 and a gate fails the build on any sentence claiming otherwise` },
       { says: 'published in a refereed mathematics journal of world-wide repute (a Qualifying Outlet)',
         holds: false, because: 'a Zenodo deposit is a citable public record, not a refereed journal' },
       { says: 'at least two years elapsed since that publication', holds: false, because: 'no such publication exists to date from' },
@@ -74,11 +67,7 @@ const OPPS: Opp[] = [
 
 mkdirSync(OUT, { recursive: true })
 let wrote = 0
-// `F.seven` counts Clay-NAMED theorems present, not problems solved. Printed beside "0 of 7 proved" the
-// bare fraction reads as seven solved, which is the exact misreading this deposit spends its gates on.
-console.log(`  eligibility decided from this build — ${theoremCount()} theorems · Clay problems SOLVED: 0 of 7 `
-  + `(${F.seven} Clay-named theorems present, ${F.reaches.length} reaching a conjecture) · `
-  + `verification ratio ${A.ratio}×, classical\n`)
+console.log(`  eligibility decided from this build — ${theoremCount()} theorems · verification ratio ${A.ratio}×, classical\n`)
 
 for (const o of OPPS) {
   const failed = o.reqs.filter((r) => !r.holds)
@@ -93,8 +82,7 @@ for (const o of OPPS) {
     + `Mathlib dependency — ${C.byDecide} closing by exhaustion over a finite domain with no axiom, ${C.proved} proved for every value `
     + `on the standard axioms propext and Quot.sound. Concept DOI `
     + `[${CONCEPT_DOI}](https://doi.org/${CONCEPT_DOI}). Source: ${REPO}. Pages: ${SITE}.\n\n`
-    + `**What is deliberately not claimed.** No Clay Millennium Problem is settled (${F.seven}/7 present as named `
-    + `theorems, none reaching a conjecture), and no quantum speedup is asserted. The verification advantage is `
+    + `**What is not asserted.** No quantum speedup. The verification advantage is `
     + `classical and structural: ${A.rounds} rounds against ${A.leaves} recomputations, a ratio of ${A.ratio}×, `
     + `proved in speed.lean.\n\n`
     + `**Why it is fundable.** Every claim on every page recomputes from source, and the build fails when prose and\n`
@@ -110,5 +98,4 @@ for (const o of OPPS) {
 
 console.log(`\n✓ apply: ${wrote} application(s) written, ${OPPS.length - wrote} declined on a measured requirement. `
   + `No package is generated for an opportunity whose conditions this build does not meet — the Clay prize `
-  + `first among them, because 0 of 7 is what this deposit proves and a generator that ignored that would be `
-  + `the overclaim every gate here exists to stop.`)
+  + `among them, whose rules require publication in a refereed journal and two years of general acceptance.`)

@@ -1,6 +1,6 @@
 ---
 title: The real uuidna advantage
-description: The measured uuidna advantage — O(N)→O(log N) verification, O(N)→O(1) reuse — in all domains. Not faster compute, not FTL, not quantum. 0/7.
+description: The measured uuidna advantage — O(N)→O(log N) verification, O(N)→O(1) reuse — in all domains. Not faster compute, not FTL, not quantum.
 head:
   - ['meta', { name: 'robots', content: 'index, follow' }]
 ---
@@ -9,7 +9,7 @@ head:
 
 > Generated from the **2577** ledger entries and **59** domains, recomputed each build. The advantage is
 > real and **measured**, and honestly bounded: a **verification and reuse** complexity reduction — **not**
-> faster original compute, **not** faster than light, **not** quantum. `0/7`.
+> faster original compute, **not** faster than light, **not** quantum.
 
 ## Measured — verify and reuse, not recompute
 
@@ -38,4 +38,4 @@ Grouping the 2577 receipts by the digital root of their address, the **sparsest*
 at **2577** (the captain's cap): improving a theorem's name or proof heals the record without changing the
 count; discovering a new one would require lifting the cap.
 
-A content-address proves **integrity, not truth**. `0/7`.
+A content-address proves **integrity, not truth**.

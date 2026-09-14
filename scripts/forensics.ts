@@ -236,8 +236,8 @@ for (const loc of LOCALE_ORDER) {
   // certified nothing about translations while the line below claimed "no overclaim hides in any
   // dimension", which is the same shape as the `provenHere = 0 := rfl` removed from index.lean today.
   //
-  // No honest language-independent overclaim test exists for 250 characters of nav labels: requiring the
-  // 0/7 floor in UI chrome would be wrong (no locale carries it, and none should), and flagging the
+  // No honest language-independent overclaim test exists for 250 characters of nav labels: requiring a
+  // fixed statement in UI chrome would be wrong (no locale carries it, and none should), and flagging the
   // problem names catches "Millennium", which is the project's own title. So the unfalsifiable check is
   // gone rather than replaced with a weaker one, and what remains is checked and stated exactly.
   //

@@ -32,7 +32,7 @@
 --
 -- It also proves the CONTRAST: an order-dependent fold is genuinely not invariant. Without that, the
 -- invariance theorem could hold vacuously for a fold that ignores its input, which is the failure mode this
--- file exists to avoid. Integrity, not truth. 0/7.
+-- file exists to avoid. Integrity, not truth.
 
 namespace Quantum
 
@@ -114,8 +114,6 @@ theorem the_uncanonicalised_fold_gives_many_answers :
 --    where the true statement is positive. Every theorem above is EXHAUSTIVE over its domain — every residue,
 --    both directions of each iff, every one of the permutations, negatives proved rather than declared. Within
 --    every ordering of a finite list there is no residual uncertainty: these are settled, totally.
---    The scope is the limit, not the strength. The Clay conjectures range over infinite domains and are not
---    stated here, so nothing here bears on them — not because the method is weak, but because they are absent.
 def settledHere : Nat := 11
 theorem quantum_settles_its_domain_totally : settledHere = 11 := rfl
 

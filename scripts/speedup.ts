@@ -2,7 +2,7 @@
 // speedup — GENERATE the production guide proving the real, MEASURED uuidna advantage, computed from the
 // theorem ledger + the rosetta domains (regenerated each build, like the other computed pages). The advantage
 // is a VERIFICATION/REUSE complexity reduction — O(N)→O(log N) proof, O(N)→O(1) dedup — NOT faster original
-// compute, NOT faster than light, NOT quantum. Integrity, not truth. 0/7.
+// compute, NOT faster than light, NOT quantum. Integrity, not truth.
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { digitalRoot } from '../src/0/index.ts'
 import { report as rosetta } from '../src/the/rosetta/index.ts'
@@ -35,7 +35,7 @@ const sparsest = [...buckets.entries()].sort((a, b) => a[1] - b[1])[0] || [0, 0]
 
 const md = `---
 title: The real uuidna advantage
-description: The measured uuidna advantage — O(N)→O(log N) verification, O(N)→O(1) reuse — in all domains. Not faster compute, not FTL, not quantum. 0/7.
+description: The measured uuidna advantage — O(N)→O(log N) verification, O(N)→O(1) reuse — in all domains. Not faster compute, not FTL, not quantum.
 head:
   - ['meta', { name: 'robots', content: 'index, follow' }]
 ---
@@ -44,7 +44,7 @@ head:
 
 > Generated from the **${N}** ledger entries and **${domCount}** domains, recomputed each build. The advantage is
 > real and **measured**, and honestly bounded: a **verification and reuse** complexity reduction — **not**
-> faster original compute, **not** faster than light, **not** quantum. \`0/7\`.
+> faster original compute, **not** faster than light, **not** quantum.
 
 ## Measured — verify and reuse, not recompute
 
@@ -69,7 +69,7 @@ Grouping the ${N} receipts by the digital root of their address, the **sparsest*
 at **${N}** (the captain's cap): improving a theorem's name or proof heals the record without changing the
 count; discovering a new one would require lifting the cap.
 
-A content-address proves **integrity, not truth**. \`0/7\`.
+A content-address proves **integrity, not truth**.
 `
 
 writeFileSync('speedup.md', md)

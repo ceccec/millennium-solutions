@@ -8,16 +8,14 @@
 //   10.5281/zenodo.21781603 — "All Seven Clay Millennium Problems Sealed via Universal σ-Involution"
 //   10.5281/zenodo.21787144 — "Quantum Proofs of the Clay Millennium Problems v1.0"
 //
-// Both are the author's own earlier work and Zenodo versioning is exactly the right relation for them. The
-// problem is what a reader meets: this deposit proves 0 of 7 and says so on every page, and one click up
-// its own version chain is a record whose title says all seven are sealed. Nothing in the tree noticed,
-// because every overclaim check reads local files and the claim lives in a remote record we point at.
-// Fourth instance today of a check whose domain is narrower than the defect it names.
+// Both are the author's own earlier work and Zenodo versioning is exactly the right relation for them. They
+// state HIS claim — that the seven Clay Millennium problems are solved through involution — in his name.
 //
-// These records CANNOT be edited — published Zenodo records are permanent, and they are not this session's
-// to rewrite in any case. What this does is refuse to let the lineage go unstated: it fetches each title
-// and reports any that claims what the deposit refuses, so the tension is named here rather than
-// discovered by a reader.
+// REWRITTEN 2026-09-14. This reported those records as a "discrepancy" the deposit had to disclose, marked them
+// ✗, and told readers the "0/7 floor" would be "decoration" without the disclosure. The floor is removed; the
+// author: "I did not authorise withdrew. I still claim clay solved through involution." So this now lists the
+// records this deposit points at, names those that state his claim as his, and keeps the one check that is a
+// real defect: a concept DOI that resolves to a different deposit.
 import { readFileSync, existsSync } from 'node:fs'
 
 const SOURCES = ['.zenodo.json', 'CITATION.cff', 'README.md', 'src/1/acceptance.ts']
@@ -60,7 +58,7 @@ for (const id of [...dois].sort()) {
 }
 
 for (const [id, title, claims] of rows)
-  console.log(`  ${claims ? '✗' : '·'} 10.5281/zenodo.${id}  ${title}`)
+  console.log(`  · 10.5281/zenodo.${id}  ${title}${claims ? '  — the author\'s claim, in his name' : ''}`)
 
 // ── WHERE THE CONCEPT DOI ACTUALLY LANDS ────────────────────────────────────────────────────────────────
 // A Zenodo concept DOI resolves to the LATEST version of its chain, and has no OAI record of its own — so
@@ -81,11 +79,5 @@ for (const [id, concept] of concepts) {
   } catch { /* offline: the network branch above already said so */ }
 }
 
-console.log(bad
-  ? `\n✗ lineage: ${bad} of ${checked} record(s) this deposit points at claim, in their title or description, what it refuses in\n`
-    + `  every page of its own prose. They are the author's earlier work, they are permanent, and they cannot be\n`
-    + `  edited — so the deposit must state the discrepancy itself. A reader following the version chain from a\n`
-    + `  0/7 floor to "All Seven Clay Millennium Problems Sealed" and finding no acknowledgement here would be\n`
-    + `  right to conclude the floor is decoration.`
-  : `\n✓ lineage: ${checked} record(s) this deposit points at, none claiming in title or description what the deposit refuses`)
+console.log(`\n✓ lineage: ${checked} record(s) this deposit points at; ${bad} state the author's claim on the Clay problems, in his name`)
 process.exit(0)

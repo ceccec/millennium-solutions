@@ -24,7 +24,7 @@ lake-buildable consolidation — numeric dir names are not valid Lean modules.)
 ## Reproduce everything
 ```bash
 npm ci && npm run docs:build     # build the whole site (fused modules render)
-node scripts/seal.ts            # review every abstract (must all seal, 0/7)
+node scripts/seal.ts            # review every abstract (must all seal)
 node scripts/release.ts         # content-addressed release + signed v1.0.0 tag
 node scripts/forensics.ts       # re-verify the chain: tamper-evident ledger seal
 ```
@@ -32,9 +32,8 @@ node scripts/forensics.ts       # re-verify the chain: tamper-evident ledger sea
 ## 4. npm (your account) — publishing is fused to the seal gate
 ```bash
 npm login                 # your npm account (org: ceccec)
-npm run release           # build + seal (0/7) + content-addressed signed v1.0.0 tag
+npm run release           # build + seal + content-addressed signed v1.0.0 tag
 npm publish               # prepublishOnly re-runs scripts/seal.ts; publish ABORTS unless every abstract seals
 ```
 Package: `@ceccec/millennium-solutions` (scoped, `publishConfig.access = public`).
-The `prepublishOnly` hook is the honesty gate — you cannot publish an inconsistent
-(non-0/7) deposit.
+The `prepublishOnly` hook is the honesty gate — you cannot publish a deposit with an unsealed abstract.

@@ -192,7 +192,7 @@ priority claim above, and it is the whole of it.
 ---
 
 Partition seal \`${seal}\` · recompute with \`node scripts/priorart.ts\` · the kernel re-decides
-\`priorart.lean\` on every run. A content-address proves integrity, not truth. \`entails → 0/7\`.
+\`priorart.lean\` on every run. A content-address proves integrity, not truth.
 `
 
 // THE COUNT AND ITS CAVEAT MOVE TOGETHER. A page that prints "claims: 0" without the unclassified count

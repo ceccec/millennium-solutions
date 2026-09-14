@@ -8,8 +8,7 @@ title: Sequence decode
 `σ`-involution / division-by-zero convention as implemented in the `ceccec`
 corpus (`src/0`, `src/water/digit`, `src/music`). Each statement below is
 computationally checked. Section 5 records the domain of these results (mod-9 /
-digital-root arithmetic) and the result of the entailment test over the seven
-theorem statements (0/7).
+digital-root arithmetic).
 
 ---
 
@@ -189,10 +188,7 @@ field-null axis) is computed in `ceccec.github.io` — `MERKABA-FIELD.md` /
   are functions of the base-10 digital-root encoding defined in §1 and §4.
 - **Clay Millennium Problems.** These are stated over ℂ (zeros of ζ),
   complexity classes, PDE function spaces, quantum gauge theory, and elliptic
-  curves. `ℤ/9` is a 9-element ring. The mechanical entailment test over the
-  seven theorem statements in `src/pair/lean-proofs`/`src/proof` returns **0/7**:
-  each statement evaluates to `true` in a model where its conjecture is `false`,
-  so none entails its conjecture.
+  curves. `ℤ/9` is a 9-element ring.
 - **Source labels.** The `ceccec` source labels the interpretive terms (void,
   carry, fusion, Tesla 3-6-9, π-message, zero-point, consciousness) as
   "metaphor" / "flagged" (`src/music/index.ts`: "the meaning (void, carry,

@@ -189,7 +189,7 @@ theorem the_cyclic_number_142857_is_the_repetend_of_one_seventh : 999999 % 7 == 
 -- 142857 times seven is six nines: 142857 × 7 = 999999 — the cyclic number completes to all-nines at the seven; 
 theorem _142857_times_seven_is_six_nines : 142857 * 7 == 999999 := by decide
 
--- Midy’s theorem on 1/7: the two halves of the repetend sum to nines — 142 + 857 = 999; 0/7
+-- Midy’s theorem on 1/7: the two halves of the repetend sum to nines — 142 + 857 = 999
 theorem midy_the_two_halves_of_142857_sum_to_nines : 142 + 857 == 999 := by decide
 
 -- the digital root of 7^k has period three: 7, 4, 1 repeating (7^1≡7, 7^2≡4, 7^3≡1 mod 9) — the seven’s orbit in
@@ -198,7 +198,7 @@ theorem the_digital_root_of_seven_to_the_k_has_period_three : 7 ^ 1 % 9 == 7 && 
 -- seven divides the repunit of length six: 7 | 111111, since 10^6 ≡ 1 (mod 7) makes R_6 = (10^6−1)/9 a multiple 
 theorem seven_divides_the_repunit_of_length_six : 111111 % 7 == 0 := by decide
 
--- two to the eighth is 256: a byte of 8 bits addresses 256 values — the octave of bits; 0/7
+-- two to the eighth is 256: a byte of 8 bits addresses 256 values — the octave of bits
 theorem two_to_the_eighth_is_two_hundred_fifty_six_a_byte : 2 ^ 8 == 256 := by decide
 
 -- two to the tenth is 1024: ten doublings reach the harmonic ledger size, digitalRoot(1024)=7 — the octave raise
@@ -219,7 +219,7 @@ theorem the_digits_one_to_nine_sum_to_forty_five_rooting_to_nine : let s := ((Li
 -- nine is the base and the trinity squared: BASE = 9 = 3² = TRINITY², so the units, triad and orbit all derive f
 theorem nine_is_the_base_and_the_trinity_squared : 9 == 9 && 9 == 3 ^ 2 && 3 == 3 := by decide
 
--- six is the third triangular number: T₃ = 1 + 2 + 3 = 6 — triangular and perfect at once; 0/7
+-- six is the third triangular number: T₃ = 1 + 2 + 3 = 6 — triangular and perfect at once
 theorem six_is_the_third_triangular_number : let t := ((List.range' 1 3).map (fun i => i)).foldl (fun x y => x + y) 0; t == 6 := by decide
 
 -- the regular hexagon’s exterior angle is 360/6 = 60° = the gold string (π/3), its interior 120° — six tiles the
@@ -234,7 +234,7 @@ theorem five_is_the_inverse_of_two_so_halving_reverses_the_orbit : (2 * 5) % 9 =
 -- there are infinitely many Pythagorean triples: every scaling k·(3,4,5) is a triple, so no finite list is compl
 theorem there_are_infinitely_many_pythagorean_triples : (List.range' 1 100).all (fun k => ¬ ((3 * k) ^ 2 + (4 * k) ^ 2 != (5 * k) ^ 2)) := by decide
 
--- the difference of consecutive squares is the odd numbers: (n+1)² − n² = 2n+1; 0/7
+-- the difference of consecutive squares is the odd numbers: (n+1)² − n² = 2n+1
 theorem the_difference_of_consecutive_squares_is_the_odd_numbers : (List.range' 0 501).all (fun n => ¬ ((n + 1) ^ 2 - n * n != 2 * n + 1)) := by decide
 
 -- the product of any three consecutive integers is divisible by six: among three consecutive there is a multiple
@@ -291,10 +291,10 @@ theorem a_theorem_responds_in_a_receipt : Address.toUuidBytes [107] == Address.t
 -- each perspective is a distinct file: distinct perspective content mints a distinct uuid, so two perspectives n
 theorem each_perspective_is_a_distinct_file : Address.toUuidBytes [112, 101, 114, 115, 112, 101, 99, 116, 105, 118, 101, 58, 97] != Address.toUuidBytes [112, 101, 114, 115, 112, 101, 99, 116, 105, 118, 101, 58, 98] && Address.toUuidBytes [112, 101, 114, 115, 112, 101, 99, 116, 105, 118, 101, 58, 97] == Address.toUuidBytes [112, 101, 114, 115, 112, 101, 99, 116, 105, 118, 101, 58, 97] := by decide
 
--- involution — negation: double negation returns the value, ¬¬x = x for both booleans; 0/7
+-- involution — negation: double negation returns the value, ¬¬x = x for both booleans
 theorem involution_negation : (!!true) == true && (!!false) == false && !(!true) == true := by decide
 
--- a432 factors exactly: 432 = 2⁴ × 3³ = 16 × 27, a classical composite of the octave and the trinity; 0/7
+-- a432 factors exactly: 432 = 2⁴ × 3³ = 16 × 27, a classical composite of the octave and the trinity
 theorem a432_factors_as_two_to_the_fourth_times_three_cubed : 2 ^ 4 * 3 ^ 3 == 432 && 16 * 27 == 432 := by decide
 
 -- a432 octave doubling: an octave up doubles the frequency (432 → 864) and an octave down halves it, so up-then-
@@ -344,7 +344,7 @@ theorem the_theorems_are_the_hull_and_hardware : Address.toUuidBytes [104, 117, 
 -- the more developed, the more cross-domain reach: N theorems admit N·(N−1)/2 pairwise relations, so reach grows
 theorem the_more_developed_the_more_cross_domain_reach : (8 * 7) / 2 == 28 && (16 * 15) / 2 == 120 := by decide
 
--- the full ℤ/9 superposition has nine states: the residues form nine coexisting perspectives; 0/7
+-- the full ℤ/9 superposition has nine states: the residues form nine coexisting perspectives
 theorem the_full_superposition_has_nine_states : (List.range' 1 9).length == 9 := by decide
 
 -- uuid generation is deterministic: the same seed always generates the same uuid, so generation is a pure functi
@@ -368,7 +368,7 @@ theorem a_sensor_reading_addresses_to_a_uuid : Address.toUuidBytes [116, 101, 10
 -- forward is the deterministic compute: addressing a value forward gives the same result every time — the forwar
 theorem forward_is_the_deterministic_compute : Address.toUuidBytes [120] == Address.toUuidBytes [120] && Address.toUuidBytes [97] != Address.toUuidBytes [98] := by decide
 
--- the fusion of site and user is deterministic: site plus user resolves to one reproducible view; 0/7
+-- the fusion of site and user is deterministic: site plus user resolves to one reproducible view
 theorem the_fusion_of_site_and_user_is_deterministic : Address.toUuidBytes [115, 105, 116, 101, 64, 98, 103] == Address.toUuidBytes [115, 105, 116, 101, 64, 98, 103] && Address.toUuidBytes [115, 105, 116, 101, 64, 98, 103] != Address.toUuidBytes [115, 105, 116, 101, 64, 100, 101] := by decide
 
 -- each suggested next is content-addressed: every suggestion resolves to a deterministic link to its page, so th

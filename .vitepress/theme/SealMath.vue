@@ -29,7 +29,7 @@ const verifyBits = computed(() => depth.value * 2)                        // 2 b
     <p class="note">You verify the whole case at <b>{{ verifyBits }} bits</b> yet bill on the <b>{{ receipts }}</b> computations of
       value the customer would otherwise recompute — earning the measured saving, billing for value delivered, not hidden work.
       The seal stays {{ SEAL_BITS }} bits; verification grows only logarithmically. Structural speed on classical hardware,
-      no quantum machine and no advantage. Integrity, not truth. <code>0/7</code>.</p>
+      no quantum machine and no advantage. Integrity, not truth.</p>
   </div>
 </template>
 

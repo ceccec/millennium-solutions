@@ -8,7 +8,7 @@ head:
 
 > Every worked example below is **recomputed in your browser** from the deposit's own `src/` functions,
 > and each links to the theorem that proves it. Nothing is stored; recompute the page and it recomputes.
-> A content-address proves **integrity, not truth**. `entails → 0/7`.
+> A content-address proves **integrity, not truth**.
 
 <Examples />
 
@@ -42,6 +42,6 @@ larger on the wire than the message** — nothing is teleported cheaper than sen
 teleport; it **addresses**. Either a reversible container (exact, but bigger) or a content-address that
 **recalls** a payload only where it is already reconstructible — [a pointer, not the
 payload](/theorem/lean_ledgerclaims_the_address_does_not_determine_the_payload). Not faster-than-light, not quantum, not
-compression. Integrity, not magic. `0/7`.
+compression. Integrity, not magic.
 
 <Teleporter />

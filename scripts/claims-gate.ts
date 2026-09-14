@@ -5,10 +5,10 @@
 //   (2) gate-checks the claim text against the honesty floor (no named overclaim),
 //   (3) confirms every invited theorem key exists in the chain-verified discovery ledger (BACKING —
 //       the ledger's own link-by-link integrity is proven separately by forensics.ts),
-//   (4) reconciles the counts so they HARMONISE: the two coins = 2, |units| = 6, boundaries = 10,
+//   (4) reconciles the counts so they HARMONISE: the two coins = 2, |units| = 6, boundaries = what the claim states,
 //       and the front-page prose quotes the REAL registry size (no floating "every").
 // Pass ⇒ "every registered claim recomputes" is TRUE over the registry — bounded, gated, accounted.
-// It certifies the registry, never unmarked prose. Integrity, not truth. The floor stays 0/7.
+// It certifies the registry, never unmarked prose. Integrity, not truth.
 import { readFileSync, readdirSync } from 'node:fs'
 import { addressed, root, CLAIMS } from '../src/claims/index.ts'
 import { coins } from '../src/9/funding.ts'
@@ -45,7 +45,9 @@ const check = (label: string, got: unknown, want: unknown) => {
 const val = (id: string) => rows.find((r) => r.id === id)?.got
 check('the two coins (110 − 108)', val('coins'), 2)
 check('|units of Z/9| = |S3|', val('unitn'), 6)
-check('content-addressed boundaries', val('bounds'), 10)
+// The number the claim's own prose states, not a second typed-in copy of it: when a boundary was removed the
+// registry moved to 9 and this line still said 10 — two literals for one fact, and only one of them was checked.
+check('content-addressed boundaries', val('bounds'), (CLAIMS.find((c) => c.id === 'bounds')?.text.match(/\d+/) ?? [])[0])
 
 // the front-page prose must quote the REAL registry size — bind prose ↔ registry (no floating "every").
 for (const f of ['README.md', 'index.md']) {

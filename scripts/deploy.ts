@@ -34,7 +34,7 @@ if (target === 'pages') {
   for (const a of actions) console.log(`  api ${a.kind} ${a.verdict.padEnd(7)} ${a.uuid.slice(0, 13)}  ${a.target}`)
   console.log('deploy: pages published — live in ~1 min at https://ceccec.psg.bg/millennium-solutions/')
 } else if (target === 'packages') {
-  console.log('deploy: packages → npm (prepublishOnly runs the 0/7 seal gate; needs npm login)')
+  console.log('deploy: packages → npm (prepublishOnly runs the seal gate; needs npm login)')
   run('npm publish --access public') // one package: @ceccec/millennium-solutions
   console.log('deploy: packages published.')
 } else {

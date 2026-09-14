@@ -19,13 +19,13 @@ head:
 ---
 # Boundaries — the honest floor, delivered
 
-> Every statement below is **content-addressed** (uuid). Verify any of them: recompute \`toUuid(text)\` and it matches — that proves **integrity**, not truth. The floor is \`0/7\`.
+> Every statement below is **content-addressed** (uuid). Verify any of them: recompute \`toUuid(text)\` and it matches — that proves **integrity**, not truth.
 
 <table><thead><tr><th>uuid</th><th>statement</th></tr></thead><tbody>
 ${rows}
 </tbody></table>
 
-*The drains, delivered — measured, gated, and now in the UI, not only in chat. \`0/7\` entailed.*
+*The drains, delivered — measured, gated, and now in the UI, not only in chat.*
 `
 writeFileSync('boundaries.md', md)
 console.log('boundaries: delivered ' + kept.length + '/' + STATEMENTS.length + ' honest statements to UI (uuid each)' + (dropped.length ? ' · dropped ' + dropped.length + ' (gate-drained)' : '') + '.')

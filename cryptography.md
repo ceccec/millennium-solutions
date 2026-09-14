@@ -9,7 +9,7 @@ head:
 In **public service** — free, the [free sailing angle](/captain) — uuidna's **top priority is cryptography**:
 how it relates to all scientific domains, decoded with **ancient symbols** and **pure algebra**, **provable at
 each step**. Sealed: receipt `95bacad3-9e56-8741-b0f8-def2c6ecb050`. A content-address proves integrity, not
-truth. `0/7`.
+truth.
 
 ## The layered cipher — real, measured
 
@@ -53,4 +53,3 @@ waves, and the rest. AES-256-GCM supplies the nonlinear **security core**; the �
 
 Free for public interest and independent research (the free sailing angle); commercial use contributes the two
 coins (the prize earning waves) — the [captain's message](/captain). Cryptography, first, for everyone.
-`0/7`.

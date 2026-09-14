@@ -18,7 +18,7 @@ index because the statement computes false, like the non-units of ℤ/9). Nothin
 
 Each organ is reachable by content-address through the uuidna surface — the `/theorem/<key>` pages here, and
 the same keys via the [live examples](/examples), the [verifier](/verify), and the package API. A
-content-address proves **integrity, not truth**. `0/7`.
+content-address proves **integrity, not truth**.
 
 <Organism />
 

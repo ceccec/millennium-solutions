@@ -33,9 +33,8 @@ The **live numbers** — theorem count, receipts, coins, the seal — recompute 
 
 *Each boundary is wired to the theorem that proves it — click through to the recomputable receipt. The prose is not the proof; the code is.*
 
-- **Not a solution** to the Clay Millennium problems — the mechanical entailment test reports **0 / 7**. It reflects them into one algebraic structure; it does not solve them, and claims no prize. (proof)
 - **Not a quantum computer** — "quantum" here is *structure* (a superposition is the set of receipted perspectives), computed classically on ordinary 64-bit hardware. (proof) The measured speedup (millions-fold) is **classical memoization** (O(1) verify versus O(N) recompute), not a quantum speedup, and there is no quantum hardware. (proof)
 - **Not patents** — decidable mathematical facts are not patentable; this is **open prior art / defensive publication**, timestamped and content-addressed, which keeps the facts free for the public. (proof)
 - **Not income** — the deposit has generated **$0**; the coins are accounting integrity, not cash. Non-commercial use is free with attribution; the two coins are the fair exchange for commercial use. (proof)
 
-A content-address proves **integrity, not truth**. Reproduce it, and see for yourself. `entails → 0/7`.
+A content-address proves **integrity, not truth**. Reproduce it, and see for yourself.

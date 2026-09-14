@@ -37,6 +37,4 @@ property is a **sort**.
 The limit is proved too, in the same file and shown in the caption. A receipt lands in ℤ/9, so nine values
 must cover every possible set: `the_receipt_is_not_injective` decides that 45 two-element multisets share 9
 receipts. Order-invariant does not mean collision-free, and a receipt that cannot tell 45 things apart must
-never be read as naming one of them.
-
-`0/7` — this page settles no Clay conjecture and claims no quantum advantage in time.
+never be read as naming one of them. — this page settles no Clay conjecture and claims no quantum advantage in time.

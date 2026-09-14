@@ -17,7 +17,7 @@ head:
 - A single address **cannot store** an unbounded state — 128 bits is a fixed-width fingerprint, so by the pigeonhole principle it *references* a state, it does not *contain* it. You still need the data to recover it. ([proof](/theorem/lean_ledgerclaims_the_address_does_not_determine_the_payload))
 - Standards **break** — MD5 fell to collisions, SHA-1 fell (SHAttered). That is why "most secure" is not a claim anyone can make: security is provisional, always subject to the next cryptanalysis. And every finite digest — strong or weak — must eventually collide by pigeonhole. ([proof](/theorem/lean_ledgerclaims_more_payloads_than_addresses_must_collide))
 
-The deposit claims **fitness for content-addressing**, not supremacy. A content-address proves **integrity, not truth**. `entails → 0/7`.
+The deposit claims **fitness for content-addressing**, not supremacy. A content-address proves **integrity, not truth**.
 
 ## Coins vs real gold vs crypto — a measure, not a market
 
@@ -37,6 +37,6 @@ and [anyone chooses the terms and currency](/theorem/lean_address_addressing_is_
 Live per-token rates for many models, fetched at view time from a credible public no-key API (OpenRouter's
 models endpoint), shown per **trillion input tokens** — and where each stands once uuidna's content-addressing
 adds a caching/dedup layer. The **earnings** are the compute saved on the re-addressable fraction (set the
-cache-hit rate), **conditional, never a universal discount**. A content-address proves integrity, not truth. `0/7`.
+cache-hit rate), **conditional, never a universal discount**. A content-address proves integrity, not truth.
 
 <TokenCost />

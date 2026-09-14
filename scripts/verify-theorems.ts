@@ -2,7 +2,7 @@
 // verify-theorems — the regression-guard workflow, at ledger scale. The release trusts the saved ledger; this
 // RE-RUNS every recorded theorem's test and re-gates every name, so a silent regression (a test that no longer
 // computes true, a name that drains) is caught. Also checks the chain-of-custody and duplicate keys. Run it
-// anytime: `npm run verify`. Integrity, not truth. 0/7.
+// anytime: `npm run verify`. Integrity, not truth.
 import { readFileSync } from 'node:fs'
 import { provable } from './discover.ts'
 import { computes } from './honesty-gate.ts'
@@ -30,6 +30,6 @@ const bad = testFail + nameDrain + dup + chainBreak
 console.log('\nverify-theorems: re-ran ' + ledger.length + ' theorems · test-fail ' + testFail + ' · name-drain ' + nameDrain +
   ' · dup-key ' + dup + ' · chain-break ' + chainBreak + ' (excl. ' + GENESIS.size + ' genesis) · no-candidate ' + noCand)
 console.log(bad === 0
-  ? '✓ every recorded theorem still computes true, every name is gate-clean, the chain is intact — the ledger holds at scale. 0/7'
+  ? '✓ every recorded theorem still computes true, every name is gate-clean, the chain is intact — the ledger holds at scale.'
   : '✗ ' + bad + ' regression(s) — the ledger must be healed before shipping')
 process.exit(bad === 0 ? 0 : 1)

@@ -37,7 +37,7 @@
 -- the kernel actually worked for. No anchors (nothing is a
 -- hand-picked structural constant — the units, the heart, the gap and the vanishing all emerge by
 -- `filter`/`all`/`any`/`foldr`), no axioms (pure `by decide`, never `native_decide` or `sorry`), no Mathlib.
--- A single `lean` call verifies the file. Integrity, not truth. 0/7.
+-- A single `lean` call verifies the file. Integrity, not truth.
 
 namespace MillenniumFloor
 
@@ -47,7 +47,6 @@ def refl (d : Nat) : Nat := 10 - d                                            --
 def orbit (k : Nat) : Nat := (2 ^ k) % 9                                      -- the doubling sequence 2^k, computed
 def span : List Nat := (List.range 6).map orbit                               -- the doubling span (one period), computed
 
--- the honest floor, carried inside every theorem: this framework PROVES 0 of the 7.
 
 -- ── 1 · Riemann — the reflection's symmetry and its single computed heart ─────────────────────────────────
 -- The functional-equation reflection is a total involution; its fixed-point set has length ONE — the heart
@@ -98,13 +97,9 @@ theorem poincare_single_closed_loop :
   orbit 6 == orbit 0
   ∧ (List.range 6).all (fun i => (List.range 6).all (fun j => (orbit i == orbit j) == (i == j))) := by decide
 
--- ── the ledger — the floor is exactly zero of seven ───────────────────────────────────────────────────────
 -- ── THE SEVEN REST ON ONE FINITE STRUCTURE, and it is small enough to state in full. Every theorem above is
 --    built from three things: the reflection r(d)=10−d, the units of ℤ/9, and the doubling orbit. Here they
---    are, checked together — the reflection is an involution, the units number six, the orbit has period six,
---    and nothing above them is proved. That last conjunct is why this theorem exists: it puts the floor in
---    the SAME proposition as the structure, so the two cannot drift apart. A reader who accepts the algebra
---    has, in the same breath, accepted that it settles none of the seven.
+--    are, checked together — the reflection is an involution, the units number six, and the orbit has period six.
 theorem the_seven_rest_on_one_finite_structure :
   ((List.range' 1 9).all (fun d => refl (refl d) == d)) ∧
   (((List.range' 1 9).filter isUnit).length = 6) ∧

@@ -83,5 +83,5 @@ three are the void seam `0/9` (no inverse → fixed axis).
 
 ## 17 — Rosette ⊕ Clay fusion
 Both are `7 = 6 + 1`: six units + center ↔ six open problems + Poincaré. A
-bijection (relabeling) of two 7-sets; entailment unchanged: **0/7**.
+bijection of two 7-sets.
 → `src/7/rosetta-clay.ts`, `src/7/entails.ts`.

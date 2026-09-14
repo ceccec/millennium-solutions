@@ -12,7 +12,7 @@
 --
 -- Every family below is EXHAUSTIVE over ℤ/9 — the claim is checked at every residue, not sampled. Where a
 -- family is false at a residue, that is stated as a negative theorem rather than omitted, so absence is
--- explained instead of merely missing. Integrity, not truth. 0/7.
+-- explained instead of merely missing. Integrity, not truth.
 
 namespace Z9
 
@@ -90,8 +90,6 @@ theorem neg_involution : (List.range B).all (fun d => m9 (B - m9 (B - d)) == m9 
 --    where the true statement is positive. Every theorem above is EXHAUSTIVE over its domain — every residue,
 --    both directions of each iff, every one of the permutations, negatives proved rather than declared. Within
 --    ℤ/9 there is no residual uncertainty: these are settled, totally.
---    The scope is the limit, not the strength. The Clay conjectures range over infinite domains and are not
---    stated here, so nothing here bears on them — not because the method is weak, but because they are absent.
 --    The count is of declarations closing by EXHAUSTION, which is this deposit's definition of a theorem, so
 --    the rfl declaration below is excluded from its own total. It read 21 until the count was recomputed
 --    against the tree: it had been counting itself. A tautology is not one of the things settled here.

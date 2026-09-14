@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // All theorems — the full discovery ledger, rendered as a component itself. Every entry is a decidable
 // fact verified by exhaustion in scripts/discover.ts and re-verified on each build. None is a Clay
-// Millennium result: the six open conjectures stay open, the seventh is settled externally. Floor: 0/7.
+// Millennium result: the six open conjectures stay open, the seventh is settled externally.
 import { computed } from 'vue'
 import { withBase } from 'vitepress'
 import ledger from '../../src/proof/discovered.json'
@@ -24,7 +24,7 @@ const latest = computed(() => theorems.slice(-8).reverse())
     </div>
     <p class="count">
       <strong>{{ theorems.length }}</strong> theorems — each verified by exhaustion in code and
-      re-verified every build. Not one is a Clay Millennium result; every one lands on <code>0/7</code>.
+      re-verified every build. Not one is a Clay Millennium result; every one lands on
     </p>
     <ol>
       <li v-for="(t, i) in theorems" :key="t.key">

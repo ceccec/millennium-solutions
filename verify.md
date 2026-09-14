@@ -23,7 +23,7 @@ const target = ref(1836.15267), control = ref(1837.4)
 const fR = computed(() => curveFitCheck(Number(target.value), CONSTS, undefined, Number(control.value)))
 
 // 4) content-address
-const text = ref('entails → 0/7')
+const text = ref('integrity, not truth')
 const uR = computed(() => toUuid(text.value))
 </script>
 
@@ -64,4 +64,4 @@ vacuous?    = {{ fR.vacuous }}   (true → the fit also hits an unrelated target
 > nothing), curve-fit vacuity (a fit that hits anything predicts nothing), scale mismatch, and
 > content identity. They are a floor, **not a general truth-oracle**, and `toUuid` is FNV (use
 > SHA-256 for cryptographic use). The three questions for any bold claim: *does it ENTAIL? does the
-> FIT fit anything? do the SCALES match?* `entails → 0/7`.
+> FIT fit anything? do the SCALES match?*

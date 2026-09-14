@@ -82,7 +82,7 @@ ${rows.map(cell).join('\n')}
 
 ## What is not claimed, and will not be
 
-No patent is sought over these methods — EPC Art. 52(2)(a) excludes mathematical methods as such, and a claim drafted around that exclusion would be a claim over arithmetic. No property is asserted in the mathematics itself: a fact is found, not authored, and ℤ/9 belongs to nobody. And nothing here touches the seven Millennium Prizes, which are the Clay Mathematics Institute's to award. The floor is \`0/7\` and this page does not move it.
+No patent is sought over these methods — EPC Art. 52(2)(a) excludes mathematical methods as such, and a claim drafted around that exclusion would be a claim over arithmetic. No property is asserted in the mathematics itself: a fact is found, not authored, and ℤ/9 belongs to nobody. And nothing here touches the seven Millennium Prizes, which are the Clay Mathematics Institute's to award.
 
 *This states what the instruments say, drafted from their texts. It is not legal advice; rights that depend on a registry depend on a lawyer and a registrar, and neither has been engaged.*
 `

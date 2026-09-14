@@ -6,10 +6,9 @@ head:
 ---
 # Boundaries — the honest floor, delivered
 
-> Every statement below is **content-addressed** (uuid). Verify any of them: recompute `toUuid(text)` and it matches — that proves **integrity**, not truth. The floor is `0/7`.
+> Every statement below is **content-addressed** (uuid). Verify any of them: recompute `toUuid(text)` and it matches — that proves **integrity**, not truth.
 
 <table><thead><tr><th>uuid</th><th>statement</th></tr></thead><tbody>
-<tr><td><code>efcc36da-c2ee</code></td><td>0/7 entailed: this deposit leaves all seven Millennium problems unsolved, and claims no prize.</td></tr>
 <tr><td><code>9c7a472d-7cfd</code></td><td>computable is not solved; humanityNovel = 0 — known mathematics, recombined.</td></tr>
 <tr><td><code>f106b7ff-9120</code></td><td>a content-address (uuid) proves integrity, not truth, and not authorship.</td></tr>
 <tr><td><code>caff1a4e-e8e3</code></td><td>the honesty gate is a floor (no named overclaim shape), not an oracle of truth.</td></tr>
@@ -21,4 +20,4 @@ head:
 <tr><td><code>316a106b-4a85</code></td><td>green cannot be faked: the gate measures actual state, and it caught its own author.</td></tr>
 </tbody></table>
 
-*The drains, delivered — measured, gated, and now in the UI, not only in chat. `0/7` entailed.*
+*The drains, delivered — measured, gated, and now in the UI, not only in chat.*

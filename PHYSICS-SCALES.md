@@ -77,5 +77,4 @@ nuclear shell ≈ `10¹⁸`; proton ≈ `10²¹`.
   frequency).
 - The ℤ/9 vortex arithmetic and the merkaba/cube geometry (`SEQUENCE-DECODE.md`)
   are exact; the A432 tuning is real acoustics (`A432-RESEARCH` in the
-  `ceccec.github.io` repo). None of it bears on the Clay problems; the entailment
-  test remains 0/7 (`entails.ts`).
+  `ceccec.github.io` repo).

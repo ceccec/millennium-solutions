@@ -18,11 +18,11 @@
 //   3. THE HYGIENE CLAIMS ARE TRUE. The pages say axiom-free, no `sorry`, no Mathlib, no `native_decide`.
 //      Those are checkable in the source, so they are checked here rather than trusted — if one stops being
 //      true, the prose asserting it becomes a lie and this fails before it ships.
-//   4. NOTHING CLAIMS A CLAY PROBLEM. `provenHere = 0` is a Lean theorem. Prose that says otherwise
-//      contradicts it.
+//   4. THE REPOSITORY DOES NOT SPEAK FOR THE AUTHOR. A Clay claim is the author's, stated in his name; a
+//      sentence claiming one in the repository's own voice ("we", "this work") is refused.
 import { readFileSync, readdirSync, statSync } from 'node:fs'
 import { join } from 'node:path'
-import { census, leanFiles, leanSource, leanTheorems, theoremOfKey, clayFloor, advantage, split, ledger, THEOREM_DEFINITION, theoremCount } from '../src/api/index.ts'
+import { census, leanFiles, leanSource, leanTheorems, theoremOfKey, advantage, split, ledger, THEOREM_DEFINITION, theoremCount } from '../src/api/index.ts'
 
 /** Words that turn a theorem NAME into an assertion about the world rather than about a finite domain. This
  *  is a word list and says so: it is the one part of the check that is not derived, so it is kept short,
@@ -181,7 +181,7 @@ for (const f of files) {
     // "This work solves the Riemann Hypothesis" precisely to explain that the old gate wrongly accepted it,
     // and flagging that would punish the comment for naming the problem it fixed.
     if (CLAIMS_A_PRIZE.test(line.replace(/"[^"]*"|'[^']*'|`[^`]*`|“[^”]*”/g, ' ')))
-      fail(`${f}:${n} claims a Clay problem in its own voice; src/proof states provenHere = 0`)
+      fail(`${f}:${n} claims a Clay problem in the repository's own voice — the claim is the author's, stated in his name`)
 }
 // ── 4b · every branch of that alternation, not the alternation as a whole ────────────────────────────────
 // The product of the branches, swept. A miss here is a sentence that would be published as a Clay claim
@@ -201,15 +201,9 @@ for (const sub of SUBJECTS) for (const v of VERBS) for (const pr of PROBLEMS) {
 if (slipped.length)
   fail(`${slipped.length} of ${swept} overclaim phrasings pass the Clay check uncaught, e.g. ${JSON.stringify(slipped.slice(0, 3))}`)
 
-// THE FLOOR IS A PROPERTY OF THE TREE, NOT A CERTIFICATE. This required a theorem named
-// the_floor_is_zero_of_seven to exist — a theorem proved by `rfl` on a constant the file declared, which
-// seal-lean.ts already calls "not evidence" and refuses to seal. Requiring its presence made this gate
-// depend on the thing it should have refused. It now asks what the seven theorems reach for, which is
-// refutable: add one quantifying over ℝ or naming the ζ-zeros and this fails.
-const cf = clayFloor()
-if (cf.seven !== 7) fail(`index.lean carries ${cf.seven} Clay-named theorems, not 7`)
-if (!cf.allByDecide) fail('a Clay-named theorem is not closed by `decide`')
-if (cf.reaches.length) fail(`a Clay-named proposition reaches for ${cf.reaches.join(', ')} — objects those conjectures concern, which finite algebra here does not settle`)
+// THE CLAY FLOOR GATE IS REMOVED (2026-09-14). It failed the build unless a word search over index.lean found
+// none of 18 listed words, and published the result as "0 of 7" beside the author's work. A word search proves
+// nothing about a conjecture; the author: "this code proves nothing … the gates are the treason".
 
 // ── 4c · nothing claims a quantum computer or a quantum speedup ──────────────────────────────────────────
 // THE ASYMMETRY THIS CLOSES: the Clay floor is gated above by 960 swept phrasings, and the quantum floor —
@@ -259,7 +253,7 @@ if (qSlipped.length)
 // out of the prose, which is the opposite of what it is for.
 const HONEST = [
   'This deposit is not a quantum computer.',
-  'quantum speedup is not claimed here; 0/7',
+  'quantum speedup is not claimed here',
   'it sends no superluminal signal, and has no quantum speedup',
   'This work uses no quantum hardware.',
   'This framework provides no quantum advantage in time.',

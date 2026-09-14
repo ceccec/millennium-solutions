@@ -160,7 +160,7 @@ for (const [file, ds] of [...byFile].sort()) {
 }
 o += `---\n\n**${n(T.length)}** declarations, **0** axiom dependencies, **${n(defs.length)}** definitions they rest on.\n`
 o += `A content-address proves integrity, not truth, and an axiom index proves neither: it states what was\n`
-o += `assumed, so a reader can disagree with the assumptions rather than guess at them. \`0/7\`.\n`
+o += `assumed, so a reader can disagree with the assumptions rather than guess at them.\n`
 
 writeFileSync('AXIOMS.md', o)
 console.log(bad

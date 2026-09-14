@@ -21,10 +21,9 @@ import { translate } from '../src/prove/translate.ts'
 import { adjudicate } from './adjudicate.ts'
 import { computes } from './honesty-gate.ts'
 import { toUuid, merkleFold } from '../src/0/index.ts'
-import { ledger as __ledger, triad, units, axis, domainOf, census, clayFloor, advantage, split, leanTheorems as leanTheoremsShared, theoremCount } from '../src/api/index.ts'
+import { ledger as __ledger, triad, units, axis, domainOf, census, advantage, split, leanTheorems as leanTheoremsShared, theoremCount } from '../src/api/index.ts'
 
 const CENSUS = census()
-const CLAY_FLOOR = clayFloor()
 const ADVANTAGE = advantage()
 const SPLIT = split()
 import { orbit } from '../src/api/index.ts'
@@ -155,19 +154,7 @@ const CLAIMS: Claim[] = [
         ok: a.ratio > 500000 && a.rounds === 20 && a.verifyUs > 0,
         from: [a.leaves, a.rounds, a.recomputeUs, a.verifyUs, a.ratio, a.nsPerVerify] } } },
 
-  { section: 'The floor',
-    derive: () => {
-      // The shared reader. This stripped comments with a line-anchored match, which leaves a comment that
-      // trails a CONTINUED line inside the proposition — so a sentence of English could have decided a test
-      // about whether the propositions mention infinite-domain objects.
-      const bodies = LEAN.filter((t) => t.file === 'index.lean').map((t) => t.statement).join(' ')
-      const ranges = [...new Set((bodies.match(/List\.range\'? \d+/g) ?? []))]
-      const infinite = /zeta|Complex|ℝ|ℂ|∀ [a-z] : ℕ/.test(bodies)
-      return { text: `no theorem in the Clay-named file settles a conjecture: its propositions range over ${ranges.join(', ')} and mention ${infinite ? 'INFINITE-DOMAIN OBJECTS' : 'none of the objects those conjectures concern'}`, ok: ranges.length > 0 && !infinite, from: [ranges.join(', ')] } } },
 
-  { section: 'The floor',
-    derive: () => { const f = CLAY_FLOOR
-      return { text: `the count of Clay problems answered in that file is declared nowhere and carried as a conjunct by no theorem — a declared constant is not evidence, so the weight rests entirely on the propositions actually written: ${f.seven} Clay-named theorems among ${f.inFile} in the file, every one closed by decide, the largest walking ${f.largestDomain} cases, and ${f.reaches.length} of them reaching any object those conjectures concern`, ok: f.holds, from: [f.seven, f.inFile, f.largestDomain, f.reaches.length] } } },
 ]
 
 // ── the trial ──
@@ -210,10 +197,7 @@ const root = merkleFold(rows.map((r) => r.v.receipt))
 // the kernel exhausted — a theorem decided over 101 x 101 whole percentages settles 10,201 cases; one over the
 // nine residues settles nine. That is what `by decide` actually did, counted, not an opinion about importance.
 //
-// The floor then states itself. A Clay conjecture ranges over an infinite domain, so no theorem decided by
-// exhaustion can appear here as one, however high it ranks — the largest finite number in this table is still
-// finite. Nobody has to be told the deposit settles none of the seven; the arithmetic of its own ranking says
-// so, and it would keep saying so right up until a proof arrived that did not work this way.
+// The table ranks the finite domains the exhaustions walk, largest first.
 
 const ranked = (() => {
   const rows = LEAN.filter((t) => t.tactic === 'by decide')
@@ -304,11 +288,11 @@ const body = (site: boolean) => {
   // not authorise withdrew. I still claim clay solved through involution." So the claim is stated as his, with the
   // deposits it rests on, beside the measurement this repository makes — which is a count over its own propositions,
   // not a verdict on his claim. Nothing here says the claim in the repository's voice.
-  md += `## The author's claim\n\n**Tsvetan Rouschev claims the seven Clay Millennium problems solved through the involution each is stated\nacross** — deposited as [10.5281/zenodo.21781603](https://doi.org/10.5281/zenodo.21781603) and\n[Zenodo 22256707](https://zenodo.org/records/22256707). This is his claim, recorded in his name. The repository\nmeasures something separate: its entailment test counts the propositions in \`src/proof\` that reach the objects\nthose conjectures concern — ${CLAY_FLOOR.reaches.length === 0 ? '0' : CLAY_FLOOR.reaches.length} of 7 today — and a proposition that reached one would move that count.\nThe gate checks integrity, not truth.\n\n`
+  md += `## The author's claim\n\n**Tsvetan Rouschev claims the seven Clay Millennium problems solved through the involution each is stated\nacross** — deposited as [10.5281/zenodo.21781603](https://doi.org/10.5281/zenodo.21781603) and\n[Zenodo 22256707](https://zenodo.org/records/22256707). This is his claim, recorded in his name.\n\n`
   md += site
     ? `## Read\n\n[The seven, one theorem per problem](/theorem/lean_millenniumfloor_riemann_reflection_and_heart) · [the ledger](/proofs) · [the trial](/verify)\n\n`
     : `## Run it\n\nEverything here recomputes. Nothing below needs a key, an account or a network — clone the tree and run\nit, and the numbers on this page reappear or the command fails.\n\n\`\`\`bash\nnpm ci\nnpm run all               # every gate at once, with the parallel ratio measured on your machine\nnpm run lean              # compile and audit every Lean file: sorry-free, axiom-free, no Mathlib\nnpm run axiom-index       # what is NOT assumed, checked against a control, and the definitions that are\nnpm run contradictions    # the prose and the proof tree must agree\nnpm run zenodo            # the per-theorem deposition records, held to the tree and the published DOI\nnode scripts/forensics.ts # re-verify the append-only chain from its first receipt\nnode scripts/pages.ts     # regenerate this file and the homepage\n\`\`\`\n\n**Where to read next.** [The axiom index](/AXIOMS) states what this deposit does not assume and, at\ngreater length, the definitions it does. [The quantum field](/quantum) renders quantum.lean in three\ndimensions with every coordinate read from a theorem. [Prior art](/PRIOR-ART) records, per source file,\nwhether the work restates someone earlier. [The paper](/paper) typesets every statement.\n\n`
-  md += `---\n\n*${rows.length} claims, all verified · ${theoremCount()} Lean theorems · ${ledger.length} ledger entries · trial root \`${root}\` · integrity, not truth · 0/7*\n`
+  md += `---\n\n*${rows.length} claims, all verified · ${theoremCount()} Lean theorems · ${ledger.length} ledger entries · trial root \`${root}\` · integrity, not truth*\n`
   return md
 }
 

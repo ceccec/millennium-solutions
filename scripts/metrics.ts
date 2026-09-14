@@ -30,7 +30,7 @@
 import { writeFileSync, readFileSync, existsSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 import { receiptOf, rootOf, checkFace, protocolId, PROTOCOL, type Metric, type Face } from '../src/face/index.ts'
-import { census, clayFloor, advantage, split, ledger, leanFiles, leanTheorems, THEOREM_DEFINITION, theoremCount } from '../src/api/index.ts'
+import { census, advantage, split, ledger, leanFiles, leanTheorems, THEOREM_DEFINITION, theoremCount } from '../src/api/index.ts'
 
 // The shape and its checker live in src/face — a leaf that imports only the address primitives, so the MCP
 // server can verify a face without importing THIS file, whose top level runs the gates.
@@ -43,7 +43,7 @@ const add = (key: string, claim: string, value: string | number, command: string
 }
 
 // ── the face ─────────────────────────────────────────────────────────────────────────────────────────────
-const C = census(), F = clayFloor(), A = advantage(), S = split()
+const C = census(), A = advantage(), S = split()
 const L = ledger() as unknown[]
 
 add('theorems', 'declarations closing by exhaustion or by a proof for every value — the deposit\'s definition of a theorem', theoremCount(),
@@ -60,9 +60,6 @@ add('ledger-entries', 'entries in the append-only ledger — RECEIPTS, most of t
 add('census-closes', 'liveKeys = sealed + keyed-twice + unresolvable, asserted not reconciled by a reader',
   `${C.liveKeys} = ${C.sealedTheorems} + ${C.surplusKeys} + ${C.unresolvableKeys}`, 'node scripts/contradictions.ts')
 
-add('clay-proved', 'Clay Millennium Problems this framework proves', 0, 'node scripts/contradictions.ts')
-add('clay-floor-holds', 'seven Clay-named theorems present, all by decide, none reaching a conjecture object',
-  `${F.seven}/7 present, reaches=${F.reaches.length}`, 'node -e "import(\'./src/api/index.ts\').then(m=>console.log(JSON.stringify(m.clayFloor())))"')
 
 add('verify-advantage', 'verification path against recomputation at 2^20 leaves — classical and structural',
   `${A.rounds} rounds vs ${A.leaves} recomputations, ratio ${A.ratio}x`, 'node scripts/pages.ts')

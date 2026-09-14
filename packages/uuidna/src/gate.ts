@@ -19,9 +19,9 @@ export const RED_INTL = /wir haben bewiesen|bewiesen|nous avons prouv|prouvée?s
 const PROBLEM = '(clay|millennium|riemann|hodge|poincar[eé]|navier[- ]?stokes|yang[- ]?mills|birch|swinnerton|p ?vs\\.? ?np|p versus np|p ?= ?np|all (six|seven|6|7) [^.]{0,12}?(problems?|proofs?|conjectures?|hypoth\\w+|puzzles?))'
 // CLAIM stays at prove/solve. Widening it to settle/resolve/advance/crack was tried and reverted: it
 // drained three honest files that were denying or quoting the very shapes it matches, which is what careful
-// writing looks like. The residual gap and the reason are recorded in TRIAL.md, under test, rather than
-// argued here — this file is exempt from the prose self-gate so that patterns can be named, not so that
-// prose can hide in it.
+// writing looks like. The residual gap, stated here: a claim phrased with settle/resolve/advance/crack is not
+// matched. This file is exempt from the prose self-gate so that patterns can be named, not so that prose can
+// hide in it.
 const CLAIM = '(prov(e|es|ed|en|ing)|proofs? of|solv(e|es|ed|ing))'
 const CRYPTO = '(rsa|aes|ecdsa|sha-?\\d+|discrete log(arithm)?|encryption|crypto\\w*)'
 const BREAK = '(factor(s|ed|ing)?|break(s)?|broke(n)?|crack(s|ed)?|defeat(s|ed)?|reversed|replac(e|es|ed|ing)|supersed(e|es|ed|ing)|obsolet\\w*)'

@@ -107,7 +107,7 @@ const money = (n: number | null, d = 2) => n == null ? '—'
     <p class="note">Anyone chooses the terms and currency; uuidna computes the same reproducible measure regardless —
       the coins conserve at {{ twoCoins }}, the bits count real work saved. Implemented at scale those bits saved
       become globally material (modeled, conditional on adoption). Gold and crypto are shown only for measurable
-      scale. A measure, not a market. Integrity, not truth. <code>0/7</code>.</p>
+      scale. A measure, not a market. Integrity, not truth.</p>
   </div>
 </template>
 

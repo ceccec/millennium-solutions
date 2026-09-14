@@ -37,7 +37,7 @@ onUnmounted(() => { if (raf) cancelAnimationFrame(raf) })
     </svg>
     <div class="vortex-caption">
       <div class="vh-title">The ℤ/9 Vortex Framework</div>
-      <p><strong>0 / 7</strong> · recomputable proof of concept — the figure is the math, drawn live (not a video)</p>
+      <p>recomputable proof of concept — the figure is the math, drawn live (not a video)</p>
       <label class="combo">combinations
         <input type="range" min="0" max="42" v-model.number="combos" />
         <span>{{ combos }} / 42</span>

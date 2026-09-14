@@ -2,7 +2,7 @@
 // Generate the coherent "pentagon heart" UI page — the pentagon (5 = the heart, σ(5)=5, φ in its
 // diagonal) gathered with the games and the arts, all COMPUTED from the discovery ledger. gitignored
 // (generated at build), so it never churns. Honest bound, stated in-page: this presents the computed
-// structure; the life is the observer's to bring — the page explains geometry, not consciousness. 0/7.
+// structure; the life is the observer's to bring — the page explains geometry, not consciousness.
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { toUuid, merkleFold, A432_STEP } from '../src/0/index.ts'
 import { ledger as __ledger } from '../src/api/index.ts'
@@ -43,13 +43,17 @@ o += 'Five is the heart: the fixed point of the ℤ/9 involution (σ(5)=5), the 
 o += 'and the pentagon whose diagonal-to-side ratio is the golden ratio φ. The pentagram draws itself; the centre holds 5.\n\n'
 // each theorem rendered as a tarot combination (deterministic encoding of its content-address).
 const tarotOf = (u: string) => [0, 1, 2].map((i) => parseInt(u.replace(/[^0-9a-f]/g, '').slice(i * 4, i * 4 + 4), 16) % 78)
-const line = (e: { name: string; receipt: string }) => '- ' + e.name + '  ·  tarot [' + tarotOf(e.receipt).join(', ') + ']  ·  `' + e.receipt.slice(0, 13) + '…`\n'
+// floor text removed from the display (2026-09-14): a name asserting that nothing is settled is not shown, and
+// a trailing "0/7" is cut. The names stay in the append-only ledger.
+const FLOOR_NAME = /nothing is settled here|none of the seven|zero of seven/i
+const shown = (n: string) => n.replace(/[;,]?\s*0\s?\/\s?7\.?\s*$/, '')
+const line = (e: { name: string; receipt: string }) => FLOOR_NAME.test(e.name) ? '' : '- ' + shown(e.name) + '  ·  tarot [' + tarotOf(e.receipt).join(', ') + ']  ·  `' + e.receipt.slice(0, 13) + '…`\n'
 o += '## Games — ' + games.length + ' computed (each with its tarot combination)\n\n'
 games.forEach((e) => { o += line(e) })
 o += '\n## Arts & geometry — ' + arts.length + ' computed\n\n'
 arts.forEach((e) => { o += line(e) })
 const root = merkleFold(games.concat(arts).map((e) => e.receipt).concat([toUuid('pentagon:5')]))
 o += '\nPage content-address: `' + root + '`.\n\n'
-o += '**Honest bound.** This page presents the *computed structure* — the pentagon, the games, the arts — each a decidable fact re-verified every build. It does not explain life or consciousness; the meaning is the observer\'s to bring. Geometry, not a claim about being. Deposit 0/7.\n'
+o += '**Honest bound.** This page presents the *computed structure* — the pentagon, the games, the arts — each a decidable fact re-verified every build. It does not explain life or consciousness; the meaning is the observer\'s to bring. Geometry, not a claim about being.\n'
 writeFileSync('HEART.md', o)
 console.log('heart page — pentagon (5) · ' + games.length + ' games · ' + arts.length + ' arts → ' + root.slice(0, 13) + '…')

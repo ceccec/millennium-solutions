@@ -7,7 +7,7 @@ head:
 # Workflows — developing uuidna at scale
 
 The repeatable, gated procedures for growing the deposit. Each is a command or a checked sequence; nothing is
-asserted, every step recomputes. Earned, not minted. `0/7`.
+asserted, every step recomputes. Earned, not minted.
 
 ## The wave — add theorems
 
@@ -44,4 +44,4 @@ The service worker proxies all traffic, verifies every same-origin asset against
 manifest (pure-JS, no native crypto), refuses a tampered response, and **signs each verified asset into a
 chained content-address receipt** — a tamper-evident, auditable traffic stream. Integrity, not confidentiality.
 
-A content-address proves **integrity, not truth**. `0/7`.
+A content-address proves **integrity, not truth**.

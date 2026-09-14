@@ -146,4 +146,4 @@ priority claim above, and it is the whole of it.
 ---
 
 Partition seal `a77e6377-37a1-86ef-b493-c2fe0d2e7aba` · recompute with `node scripts/priorart.ts` · the kernel re-decides
-`priorart.lean` on every run. A content-address proves integrity, not truth. `entails → 0/7`.
+`priorart.lean` on every run. A content-address proves integrity, not truth.

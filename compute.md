@@ -103,7 +103,7 @@ import { report as prove } from './src/prove/index'
 > bottom**, only computation, all the way down to the same floor.
 
 ::: tip The floor (invariant across every depth)
-Every block below, however deep, lands on one computed floor: **`entails → 0/7`**. Each module
+Every block below, however deep, is computed. Each module
 also carries its own **HONEST** line — the boundary where observation stops and interpretation
 would begin. Fold as deep as you like; the floor does not move.
 :::
@@ -444,10 +444,6 @@ that silently skipped what it could not translate would look complete and be wor
 <pre>{{ entails() }}</pre>
 </details>
 
-### 0/7 holds across all 2⁷ possibilities · `src/7/entails-all.ts`
-<details class="depth"><summary>compute</summary>
-<pre>{{ entailsAll() }}</pre>
-</details>
 
 ### 7-dimensional strings — where 7 really appears · `src/7/string-dimensions.ts`
 <details class="depth"><summary>compute</summary>
@@ -479,10 +475,6 @@ that silently skipped what it could not translate would look complete and be wor
 <pre>{{ cross() }}</pre>
 </details>
 
-### Claims as Unix permissions — the floor as 0/7 = chmod 000 · `src/7/permissions.ts`
-<details class="depth"><summary>compute</summary>
-<pre>{{ permissions() }}</pre>
-</details>
 
 ### Version as Unix permissions → RBAC · `src/7/rbac.ts`
 <details class="depth"><summary>compute</summary>

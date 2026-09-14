@@ -10,7 +10,7 @@
 -- The earlier `all_alpha_squared_one` asserted that the seven statements "share α² = 1" — a vacuity (1² = 1
 -- copy-pasted). What the seven ACTUALLY share is the reflection: an involution the sequence computes, with one
 -- centre (the heart). That shared structure is real; it is still not a proof of any conjecture. No anchors, no
--- axioms, every proof `by decide`, no Mathlib. The floor holds: 0/7.
+-- axioms, every proof `by decide`, no Mathlib.
 
 namespace MillenniumFloor.Universal
 

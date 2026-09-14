@@ -3,7 +3,7 @@
 // A message rides INSIDE the uuid(s) (≤115 bits each, chained for longer) and re-forms EXACTLY — full aura,
 // by algebra. This is a reversible public encoding, NOT faster-than-light, NOT quantum teleportation, NOT
 // infinite compression: the bits are conserved (a chain scales linearly), no secrecy, pigeonhole holds.
-// It runs the SAME functions the build seals. Integrity, not magic. 0/7.
+// It runs the SAME functions the build seals. Integrity, not magic.
 import { ref, computed, watch } from 'vue'
 import { CAPACITY, imprintTextChain, readImprintTextChain } from '../../src/0/imprint.ts'
 
@@ -67,7 +67,7 @@ const teleport = () => { beam.value++ }
       there</b> (recall, not transport — zero new information crosses;
       <a href="/theorem/a_content_address_is_a_pointer_not_the_payload">the address is a pointer, not the payload</a>).
       <b>Not</b> faster-than-light, <b>not</b> quantum teleportation (classical, no qubits, no entanglement), <b>not</b> secrecy,
-      <b>not</b> compression. Integrity, not magic. <code>0/7</code>.
+      <b>not</b> compression. Integrity, not magic.
     </p>
   </div>
 </template>

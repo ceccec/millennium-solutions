@@ -10,7 +10,7 @@ Type any statement. The theorems compute the output live: the **gate verdict** (
 **content-address**, the **reeducated** form (an over-claim bounded until it holds), and the **seven-dimension
 audit**. Every colour on this page is computed by a theorem — the vortex hue of a content-address, the nine
 digital-root palette. The components follow the shadcn anatomy; the logic is framework-free and recomputes in
-the browser. A content-address proves integrity, not truth. `0/7`.
+the browser. A content-address proves integrity, not truth.
 
 <Harness />
 

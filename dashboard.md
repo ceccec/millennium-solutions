@@ -24,9 +24,8 @@ import { withBase } from 'vitepress'
 ## Fact — measured state
 
 <div class="dash-grid">
-<div class="dash-card"><div class="dash-k">Version</div><div class="dash-v">v9.1.4</div><div class="dash-s">git tag (single source)</div></div>
-<div class="dash-card"><div class="dash-k">Millennium floor</div><div class="dash-v">0 / 7</div><div class="dash-s">entailed — not solved, not claimed</div></div>
-<div class="dash-card"><div class="dash-k">Honesty gate</div><div class="dash-v">sealed</div><div class="dash-s">all prose consistent with 0/7</div></div>
+<div class="dash-card"><div class="dash-k">Version</div><div class="dash-v">v9.1.5</div><div class="dash-s">git tag (single source)</div></div>
+<div class="dash-card"><div class="dash-k">Honesty gate</div><div class="dash-v">sealed</div><div class="dash-s">every citation live in the ledger</div></div>
 <div class="dash-card"><div class="dash-k">Link coverage</div><div class="dash-v">100%</div><div class="dash-s">gate-enforced — the build fails below 100%</div></div>
 <a class="dash-card" :href="withBase('/sitemap.json')" style="text-decoration:none;display:block"><div class="dash-k">Seal root</div><div class="dash-v" style="color:var(--vp-c-brand-1)">live →</div><div class="dash-s">merkle of the whole, current at /sitemap.json</div></a>
 <div class="dash-card"><div class="dash-k">CSP</div><div class="dash-v">every page</div><div class="dash-s">security gate — no external imports</div></div>
@@ -48,4 +47,4 @@ import { withBase } from 'vitepress'
 </div>
 </div>
 
-> These are suggestive patterns. Some are real structure (the palindrome, 3+5=8); some are imposed. **None are proofs**, and none imply any neurological or physical effect. `0/7` unchanged.
+> These are suggestive patterns. Some are real structure (the palindrome, 3+5=8); some are imposed. **None are proofs**, and none imply any neurological or physical effect.

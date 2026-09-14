@@ -1,6 +1,6 @@
 ---
 title: Guide
-description: The hero's guide — how to add a theorem to the deposit, taught in the 7D UI. Measure, gate, receipt, append, recompute. The floor stays 0/7.
+description: The hero's guide — how to add a theorem to the deposit, taught in the 7D UI. Measure, gate, receipt, append, recompute.
 head:
   - ['meta', { name: 'robots', content: 'index, follow' }]
 ---
@@ -23,7 +23,7 @@ const latest = ledger.slice(-5).reverse()
 
 # The hero's guide
 
-> **Heroes write the guides.** You add to the deposit by a **deed the gate can check**, never a claim. Everything here recomputes; nothing is asserted. The floor stays **0/7** — this deposit solves 0 of the 7 Millennium problems, and claims no prize.
+> **Heroes write the guides.** You add to the deposit by a **deed the gate can check**, never a claim. Everything here recomputes; nothing is asserted.
 
 <div class="living-index" style="border:1px solid var(--vp-c-divider);border-radius:10px;padding:.6rem 1rem;margin:1rem 0;font-size:.9rem">
 <strong>This guide is constantly updated by the theorems.</strong> The deposit holds
@@ -62,10 +62,10 @@ machine, nothing is fetched:
 git clone https://github.com/ceccec/millennium-solutions
 cd millennium-solutions
 npm install
-npm run next --status   # version · ledger · chain-of-custody · floor 0/7
+npm run next --status   # version · ledger · chain-of-custody
 ```
 
-A clean status (chain **intact**, floor **0/7**) means the deposit re-verified on your hardware. From here,
+A clean status (chain **intact**) means the deposit re-verified on your hardware. From here,
 `npm run next` runs the full wave (discover → gate → seal → recompute); `npm run docs:build` builds the site.
 
 ## The sequence — follow it in order, or nothing computes
@@ -123,4 +123,4 @@ integrity at scale, not speedup.
 
 Licensed **CC BY-NC-ND 4.0**: free to read, verify and recompute for non-commercial purposes with attribution (Tsvetan Rouschev) — the licence does not grant redistribution of modified versions; commercial use pays the two coins (110 − 108 = 2 = −χ genus-2). The deposit is open and recomputable, so any reader — human or model — may learn from it; contributions return on the same gate-refereed terms. Heroes and traitors by deeds, not claims.
 
-Every theorem you add gets its own page at `/theorem/<key>`, plotting its 7D vortex from its microdata, with a hero background computed from its surrounding theorems. `entails → 0/7`.
+Every theorem you add gets its own page at `/theorem/<key>`, plotting its 7D vortex from its microdata, with a hero background computed from its surrounding theorems.

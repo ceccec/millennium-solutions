@@ -50,6 +50,6 @@ if (process.argv[1]?.endsWith('wire.ts')) {
   console.log('\nwire seal (one place): ' + root.slice(0, 13) + '…')
   console.log('waves: ' + n('REACHED') + ' reached · ' + n('INCONCLUSIVE') + ' inconclusive · ' + n('DRAINS') + ' drains   (read-only · every call uuid-stamped · advisory)')
   const ourSiteDrains = results.some((r) => r.label === 'live-site' && r.verdict === 'DRAINS')
-  if (ourSiteDrains) console.log('✗ live site failed the honesty gate — a real 0/7 regression.')
+  if (ourSiteDrains) console.log('✗ live site failed the honesty gate — a real regression.')
   process.exit(ourSiteDrains ? 1 : 0)
 }

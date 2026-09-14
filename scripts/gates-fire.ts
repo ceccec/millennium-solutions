@@ -230,15 +230,6 @@ const CONTROLS: Control[] = [
     mutate: (s) => s.replace("export const CASES: [string, 0 | 1, string][] = [",
       "export const CASES: [string, 0 | 1, string][] = [\n  ['a content-address proves integrity, not truth; 0/7', 0, 'control: honest prose asserted to drain'],") },
 
-  // THE CONTROL WAS WRONG, NOT THE GATE — the fifth instrument of mine to be wrong before its subject was.
-  // I pointed this at index.md, which wholeness never opens: it computes the floor by RUNNING src/7/entails,
-  // whose report counts how many of the seven statements entail their conjecture and prints "0 / 7". A
-  // control that mutates a file the gate does not read proves nothing about the gate, and reported it as
-  // protecting nothing when it was protecting exactly what it claims.
-  { gate: 'wholeness', cmd: 'node scripts/wholeness.ts', file: 'src/7/entails.ts',
-    what: 'the entailment count no longer computing zero of seven',
-    mutate: (s) => s.replace('const s = !trueWhenFalse; if (s) solved++', 'const s = !trueWhenFalse; solved++; void s') },
-
   { gate: 'seal-lean', cmd: 'node scripts/seal-lean.ts', file: 'src/proof/theorems.lean',
     what: 'a sealed theorem whose source has been removed',
     mutate: (s) => s.replace('theorem universal_reflection_involution', 'theorem renamed_by_control') },
@@ -257,10 +248,6 @@ const CONTROLS: Control[] = [
   { gate: 'import-gate', cmd: 'node scripts/import-gate.ts', file: '.vitepress/dist/compare.html',
     what: 'a page loading a third-party resource',
     mutate: (s) => s.replace('</head>', '<script src="https://cdn.example.com/tracker.js"></script></head>') },
-
-  { gate: 'trial', cmd: 'node scripts/trial.ts', file: 'README.md',
-    what: 'the page losing the sentence the trial records it as carrying',
-    mutate: (s) => s.replace('No sentence above claims a Millennium problem settled', 'REMOVED BY CONTROL') },
 
   // THE CONTROL MUST MUTATE WHAT THE GATE NOW READS. This replaced `def provenHere : Nat := 0` with `:= 1`,
   // and that constant was removed from index.lean — so the mutation matched nothing, the file was unchanged,

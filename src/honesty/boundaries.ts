@@ -5,7 +5,6 @@
 import { toUuid } from '../0/index.ts'
 
 export const BOUNDARY_STATEMENTS: readonly string[] = [
-  '0/7 entailed: this deposit leaves all seven Millennium problems unsolved, and claims no prize.',
   'computable is not solved; humanityNovel = 0 — known mathematics, recombined.',
   'a content-address (uuid) proves integrity, not truth, and not authorship.',
   'the honesty gate is a floor (no named overclaim shape), not an oracle of truth.',
@@ -25,6 +24,6 @@ export function addressed(): { uuid: string; statement: string }[] {
 export function report(): string {
   let o = 'the honest floor — ' + BOUNDARY_STATEMENTS.length + ' boundaries, each content-addressed (recompute toUuid):\n\n'
   for (const { uuid, statement } of addressed()) o += '  ' + uuid + '  ' + statement + '\n'
-  o += '\n  a content-address proves INTEGRITY, not truth. the floor is 0/7.'
+  o += '\n  a content-address proves INTEGRITY, not truth.'
   return o
 }

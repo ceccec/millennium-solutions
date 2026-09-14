@@ -11,11 +11,11 @@
 // returns below decide on the test before any gate result is consulted. The sentence described an era, not
 // the code, and a stale doc-comment is worse than none because it reads exactly like a live contract. Found
 // by measurement, not by rereading: an audit of the ledger's own gate-dependent claims turned it up.
-// Integrity, not truth. Everything content-addressed. 0/7.
+// Integrity, not truth. Everything content-addressed.
 import { toUuid } from '../src/0/index.ts'
 // The trial lives canonically in @uuidna/uuidna — one implementation, no duplication. adjudicate returns the
 // three-way verdict; proveVerdict folds the formula receipts through the order-invariant gravity to one proof-
-// of-verdict root; verifyUuidna folds the multi-perspective ("quantum") receipt. Integrity, not truth. 0/7.
+// of-verdict root; verifyUuidna folds the multi-perspective ("quantum") receipt. Integrity, not truth.
 export { proveVerdict, verifyUuidna } from '@uuidna/uuidna'
 export type { ProvenVerdict, UuidnaVerdict } from '@uuidna/uuidna'
 import { adjudicate as packaged, type Verdict as PackagedVerdict } from '@uuidna/uuidna'
@@ -92,6 +92,6 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       console.log(`  ${mark} ${v.verdict.padEnd(10)} ${v.receipt.slice(0, 13)}…  ${s}`)
       console.log(`      ${v.note}`)
     }
-    console.log('\n  verdicts are integrity, not truth — UNVERIFIED means bring a decidable test. 0/7.')
+    console.log('\n  verdicts are integrity, not truth — UNVERIFIED means bring a decidable test.')
   }
 }

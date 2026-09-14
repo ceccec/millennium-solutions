@@ -2,12 +2,12 @@
 title: Theorems
 ---
 
-# Theorems — the honest floor, established in code
+# Theorems — established in code
 
 Every result below is **established by measurement and verified in code** — the deposit's own
 discipline: argue in code, measure don't assert. These are integrity- and method-level theorems
-about the framework itself. **None of them is a Clay Millennium Problem, and none claims one.** The
-floor is unchanged: **Clay problems solved: 0 / 7.**
+about the framework itself. The author's claim on the Clay Millennium problems is stated in his name on the
+front page.
 
 ## T1 — The gate-crack theorem
 
@@ -85,15 +85,13 @@ time.
 
 ---
 
-All eight are integrity- and method-level theorems. **None solves, or claims, a Clay Millennium
-Problem.** The floor holds: **0 / 7.**
+All eight are integrity- and method-level theorems.
 
 ## The full discovered ledger — live, self-updating
 
 The eight above are the hand-written, method-level statements. Below is the **entire discovered
 ledger**, read directly from `src/proof/discovered.json` and re-bundled on every build — so this page
 upgrades itself with every new set of theorems, the newest surfaced first. Each is decidable, verified
-by exhaustion in `scripts/discover.ts`, and re-verified each build. None is a Clay result; every one
-lands on `0/7`.
+by exhaustion in `scripts/discover.ts`, and re-verified each build.
 
 <AllTheorems />

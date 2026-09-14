@@ -172,9 +172,8 @@ o += '<h2 class="paper-h">Abstract</h2>\n\n'
 o += `This document collects the ${n(theorems.length)} declarations of the ℤ/9 vortex framework that the Lean 4 kernel accepts — ${n(byDecide)} of them THEOREMS closing by exhaustion, ${n(proofs)} PROVED for every value, and ${n(rflOnly.length)} rfl declarations shown and marked as such, `
 o += `across ${docs.length} source files. Each is stated exactly as the kernel received it, followed by the tactic that `
 o += `discharged it and, for an exhaustion, the size of the finite domain it walked. Every exhaustion is decidable and was checked `
-o += `sorry-free and axiom-free; every proof carries only the standard axioms propext and Quot.sound, printed per file. None of them is a Clay Millennium Problem and none claims one. A content-address proves `
+o += `sorry-free and axiom-free; every proof carries only the standard axioms propext and Quot.sound, printed per file. A content-address proves `
 o += `integrity, not truth: it fixes which statement was checked, not that the statement is significant. `
-o += `Clay problems solved by this framework: **0 of 7**.\n\n`
 
 o += '<h2 class="paper-h">The size of what was checked</h2>\n\n'
 o += `The domains sum to ${n(totalCases)} cases, and that total should not be read as the weight of this work: `
@@ -197,7 +196,7 @@ o += `The remaining **${rflOnly.length}** are settled by `
 o += `\`rfl\` — a declaration that unfolds to itself — and are deliberately **not sealed**: they are shown here, and marked, `
 o += `because a definitional unfolding is not an exhaustion and must not be counted as one. This is a stronger check than a `
 o += `passing test, and a weaker claim than a proof about the infinite objects the Millennium Problems concern. No Mathlib, `
-o += `no \`native_decide\`, no \`sorry\`. The bound is stated and not exceeded: 0/7.\n\n`
+o += `no \`native_decide\`, no \`sorry\`.\n\n`
 
 o += '<h2 class="paper-h">How to read this document</h2>\n\n'
 o += `Sections are the Lean source files, ordered by the wing each declares in its own frontmatter; the prose under a section `
@@ -206,7 +205,7 @@ o += `Nothing here is authored: it is read out of \`src/proof/\` on every build,
 o += `describes — a statement that differs from its source stops the build. A remark under a theorem is printed only `
 o += `when the source comment is that theorem's own: **${n(ownDoc)}** of ${n(theorems.length)} have one. A comment that `
 o += `belongs to the enclosing section is not repeated under each theorem it precedes, because it is context for the `
-o += `section and not a statement about any one of them. Integrity, not truth. 0/7.\n\n`
+o += `section and not a statement about any one of them. Integrity, not truth.\n\n`
 
 o += '<h2 class="paper-h">Contents</h2>\n\n'
 for (const w of wings) {
@@ -286,7 +285,7 @@ o += '\n<h2 class="paper-h">Verification</h2>\n\n'
 o += 'Clone the repository and run `node scripts/lean.ts` to re-check every statement above against the Lean 4 kernel, '
 o += 'or `npm run forensics` to re-verify the append-only receipt chain. The sources are '
 o += '[src/proof/](https://github.com/ceccec/millennium-solutions/tree/main/src/proof), and each sealed theorem also has its own '
-o += 'page carrying the same statement. A content-address proves integrity, not truth. `entails → 0/7`.\n\n'
+o += 'page carrying the same statement. A content-address proves integrity, not truth.\n\n'
 o += '</div>\n'
 
 writeFileSync('paper.md', o)

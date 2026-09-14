@@ -2,7 +2,7 @@
 // The harness, sealed for reuse in the UI: paste any claim — an AI output, a boast, a proof — and watch it
 // be content-addressed (auditable) and, if it drains the honesty floor, REEDUCATED live: each overclaim
 // bounded until the text holds. Max free work (the honest remainder stays), max auditability (not IQ),
-// harmonic and efficient, by default. The same pure functions the build uses — verify for yourself. 0/7.
+// harmonic and efficient, by default. The same pure functions the build uses — verify for yourself.
 import { ref, computed } from 'vue'
 import { harness, reeducate } from '../../scripts/harness.ts'
 
@@ -24,7 +24,7 @@ const fixed = computed(() => reeducate(claim.value))
       <div class="fixed">{{ fixed.text }}</div>
       <div class="k muted">bounded overclaims: {{ fixed.steps.join(' · ') }} → holds the floor: <b class="ok">{{ fixed.passed }}</b></div>
     </div>
-    <div v-else class="already">Already harmonic — no reeducation needed. <span class="muted">Integrity, not truth. 0/7.</span></div>
+    <div v-else class="already">Already harmonic — no reeducation needed. <span class="muted">Integrity, not truth.</span></div>
     <p class="note">Mechanical correction bounds an overclaim; it never makes a false claim true. The gain is
       auditability, not intelligence. The same <code>harness</code> / <code>reeducate</code> the build runs.</p>
   </div>

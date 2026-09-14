@@ -29,7 +29,7 @@
 -- 96/9/EC Art. 7 are held from the moment of authorship and are asserted here. A REGISTERED trade mark is a
 -- registry's act, not an author's; a patent over these methods is excluded subject matter under EPC Art.
 -- 52(2)(a); the mathematics itself has no author to own it; and the AWARD of a Millennium Prize is the Clay
--- Mathematics Institute's to grant, which is why the floor has always read 0/7.
+-- Mathematics Institute's to grant.
 --
 -- ── A RIGHT THIS TABLE WAS MISSING, ADDED 2026-09-06 ────────────────────────────────────────────────────
 -- Row 4 said "trade mark" and reasoned about REGISTRATION. That conflated two different things and gave
@@ -56,9 +56,7 @@
 -- earned by dating it, which is what a timestamped append-only ledger under a DOI exists to do. Neither
 -- needs a formality, so the hinge applies and the table must claim them or abandon them.
 --
--- Row 9 claims nothing about the seven problems being SOLVED. The floor is unchanged and is stated in the
--- same breath: 0/7. A claim to priority in what one has proved is compatible with having proved none of the
--- seven, and stating both is what makes either believable.
+-- Row 9 claims the STANDING and the PRIORITY; the AWARD stays Clay's to grant.
 --
 -- WHAT IS STILL NOT CLAIMED, AND WHY IT IS NOT A RESTRICTION TO LIFT. A patent over these methods is
 -- excluded by EPC Art. 52(2)(a) — the instrument refuses to grant it, so there is nothing to claim. The

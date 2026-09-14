@@ -3,7 +3,7 @@
 // theorems compute the output — the gate verdict (a bit), the content-address, the reeducated form, and the
 // seven-dimension audit. Every colour is computed by a theorem (the vortex hue of a content-address, the
 // nine digital-root palette). shadcn component anatomy via data-slot; framework-free logic, CSP-safe.
-// Integrity, not truth. 0/7.
+// Integrity, not truth.
 import { ref, computed } from 'vue'
 import { withBase } from 'vitepress'
 import { toUuid, merkleFold, digitalRoot } from '../../src/0/index.ts'
@@ -35,7 +35,7 @@ const octaves = Math.floor(theorems.length / 8)
     <header data-slot="dashboard-header" class="head">
       <div>
         <h3>The harness — input, computed output</h3>
-        <p class="muted">Type a statement; the theorems compute the verdict, the address, the reeducation and the seven-dimension audit. Colours are computed by theorems. Integrity, not truth · 0/7.</p>
+        <p class="muted">Type a statement; the theorems compute the verdict, the address, the reeducation and the seven-dimension audit. Colours are computed by theorems. Integrity, not truth.</p>
       </div>
       <div class="vitals">
         <div class="vital"><span class="n">{{ theorems.length }}</span><span class="l">theorems</span></div>
@@ -64,7 +64,7 @@ const octaves = Math.floor(theorems.length / 8)
           <p v-if="verdict.hit" class="hit">tripped on: <code>{{ verdict.hit }}</code></p>
           <p v-else class="muted">no over-reach shape — it holds the floor</p>
         </div>
-        <div data-slot="card-footer"><small class="muted">a tripwire, not an oracle · 0/7</small></div>
+        <div data-slot="card-footer"><small class="muted">a tripwire, not an oracle</small></div>
       </section>
 
       <section data-slot="card" class="card">
@@ -89,7 +89,7 @@ const octaves = Math.floor(theorems.length / 8)
       </section>
     </div>
 
-    <p class="foot muted">Every output recomputes from the input — no payload stored. Browse the whole record on <a :href="withBase('/organism')">the organism</a>. 0/7.</p>
+    <p class="foot muted">Every output recomputes from the input — no payload stored. Browse the whole record on <a :href="withBase('/organism')">the organism</a>.</p>
   </div>
 </template>
 

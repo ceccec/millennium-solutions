@@ -26,7 +26,7 @@ let o = '---\ntitle: Challenges\n---\n\n# Millennium challenges — computed sta
 o += '<NextObserver />\n\n' // when no next is defined, next computes from the observer\'s referrer\n
 o += '| # | challenge | status |\n|---|---|---|\n'
 CLAY.forEach((c, i) => { o += '| ' + (i + 1) + ' | ' + c.name + ' | ' + (c.status === 'settled' ? 'settled — ' + c.by : 'open') + ' |\n' })
-o += '\n**Humanity: ' + settled + ' / 7** (' + open + ' open). **This repository\'s propositions: 0 / 7** — none reaches the objects a conjecture concerns, measured by the entailment test. The author\'s own claim, that the seven are solved through involution, is stated in his name on the front page.\n\n'
+o += '\n**Humanity: ' + settled + ' / 7** (' + open + ' open). The author\'s own claim, that the seven are solved through involution, is stated in his name on the front page.\n\n'
 // group by family (the key's first token) so theorems are easy to spot; each is its own monograph page.
 const catOf = (k: string) => k.replace(/^REF_/, '').split('_')[0]
 // The record is append-only: a revoked entry is never deleted (that would break the chain), but it is no
@@ -74,12 +74,15 @@ if (goneL.length) {
     }
     if (carriedL.length > 40) o += '\n…and ' + (carriedL.length - 40) + ' more.\n'
   }
+  // BY KEY AND RECEIPT ONLY (2026-09-14). This reprinted the full NAME of every withdrawn entry, and about a thousand
+  // of those names restate the Clay floor ("0/7") the author ordered removed from what the public reads. The names
+  // stay in the append-only ledger (src/proof/discovered.json) for anyone auditing the chain; the page lists keys.
   o += '\n<details><summary>List all ' + goneL.length + ' withdrawn keys — nothing proves these</summary>\n\n'
-  for (const e of goneL) o += '- ~~`' + e.key + '`~~ — ' + esc(e.name) + '  ·  `' + e.receipt.slice(0, 13) + '…`\n'
+  for (const e of goneL) o += '- ~~`' + e.key + '`~~  ·  `' + e.receipt.slice(0, 13) + '…`\n'
   o += '\n</details>\n'
 }
 
 const root = merkleFold(ledger.map((e) => e.receipt).concat(CLAY.map((c) => toUuid(c.name + ':' + c.status))))
-o += '\nPage content-address: `' + root + '`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.\n'
+o += '\nPage content-address: `' + root + '`. Integrity, not truth.\n'
 writeFileSync('CHALLENGES.md', o)
-console.log('challenges page — humanity ' + settled + '/7, deposit 0/7, ' + ledger.length + ' theorems computed → ' + root.slice(0, 13) + '…')
+console.log('challenges page — humanity ' + settled + '/7, ' + ledger.length + ' theorems computed → ' + root.slice(0, 13) + '…')

@@ -3,7 +3,7 @@
 // view time from OpenRouter's public models endpoint (openrouter.ai/api/v1/models, no key, CORS) — aggregated
 // live rates, not asserted by this deposit. uuidna's "earnings" is the SAVINGS from content-addressing as a
 // caching/dedup layer: for the re-addressable fraction (the hit-rate) you pay the cached read (~a small fraction
-// of input) instead of recomputing. Conditional on that fraction — never a universal discount. 0/7.
+// of input) instead of recomputing. Conditional on that fraction — never a universal discount.
 import { ref, onMounted, computed } from 'vue'
 
 const MTOK_PER_TTOK = 1_000_000 // a trillion tokens = 1,000,000 million-token units
@@ -75,7 +75,7 @@ const usd = (n: number) => n >= 1e6 ? '$' + (n / 1e6).toFixed(2) + 'M' : '$' + n
     <p class="note">Live rates via <b>OpenRouter's public models API</b> (no key, fetched in your browser) — aggregated vendor rates,
       not asserted by this deposit and not the vendors' official direct prices. Cost is per trillion <b>input</b> tokens, where caching
       applies. uuidna is a <b>content-addressing / caching layer</b>: earnings are the compute saved on the <b>re-addressable fraction</b>
-      only — conditional on the hit-rate, never a universal discount. Measured, not a promise. Integrity, not truth. <code>0/7</code>.</p>
+      only — conditional on the hit-rate, never a universal discount. Measured, not a promise. Integrity, not truth.</p>
     <p class="note"><b>Hardware saved</b> is the <i>waste</i> removed, not the hardware: on the re-addressable fraction, <b>compute</b> cycles
       (cache hits avoid recompute), <b>storage</b> (dedup by address stores identical content once, not N copies), and <b>bandwidth</b> (a
       36-byte address travels, not the payload). No component becomes useless — the distinct work still needs it. And <b>earnings come from

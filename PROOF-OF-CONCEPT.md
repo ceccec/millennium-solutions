@@ -58,9 +58,6 @@ computed; interpretation is the reader's.
 - vortex fit `108·17 = 1836` (exact); measured `m_p/m_e = 1836.15267343`.
 - `1836 ≠ 1836.1527`; the same `1836` fits arbitrary nearby targets.
 
-**Clay entailment** (`src/7/entails.ts`)
-- each of the 7 statements is true in a world where its conjecture is false.
-- **Clay problems solved: 0 / 7.**
 
 ## Lean coverage
 Per-digit theorems in `src/{1..9}/vortex.lean`, plus `src/5/reflection.lean`,
@@ -81,7 +78,5 @@ node src/7/entails.ts
 - ℤ/9 arithmetic, reflections, 432 factorization, geometry, self-seal: exact, reproducible.
 - shell-model magic numbers: reproduced exactly (2,8,20,28,50,82,126).
 - proton `m_p/m_e`: measured `1836.1527`; vortex integer fit `1836`.
-- Clay entailment: `0/7`.
-
 Companion docs: `SEQUENCE-DECODE.md` (ℤ/9 structure), `PHYSICS-SCALES.md`
 (shell model, frequency scales).

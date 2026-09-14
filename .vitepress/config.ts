@@ -59,7 +59,7 @@ const LD = {
   url: SITE,
   identifier: 'https://doi.org/10.5281/zenodo.21819217',
   programmingLanguage: ['TypeScript', 'Lean 4'],
-  keywords: ['ℤ/9', 'vortex', 'Pliska rosette', 'Clay Millennium Problems', 'Lean 4', 'recomputable', '0/7', THEOREMS + ' decidable theorems'],
+  keywords: ['ℤ/9', 'vortex', 'Pliska rosette', 'Clay Millennium Problems', 'Lean 4', 'recomputable', THEOREMS + ' decidable theorems'],
   // structured-data count computed from the ledger, not a typed literal
   mainEntity: { '@type': 'Collection', name: 'decidable theorems (ℤ/9, recomputable)', size: THEOREMS },
 }
@@ -87,7 +87,7 @@ export default defineConfig({
     ['meta', { name: 'twitter:image', content: OG_IMAGE }],
     ['meta', { name: 'author', content: 'Tsvetan Rouschev' }],
     ['meta', { name: 'robots', content: 'index, follow' }],
-    ['meta', { name: 'keywords', content: 'uuidna, ℤ/9, vortex, Pliska rosette, Clay Millennium Problems, Lean 4, recomputable, 0/7, ' + THEOREMS + ' decidable theorems' }],
+    ['meta', { name: 'keywords', content: 'uuidna, ℤ/9, vortex, Pliska rosette, Clay Millennium Problems, Lean 4, recomputable, ' + THEOREMS + ' decidable theorems' }],
     // uuidna brand + Creative Commons license + brand tracks (author's declared .org non-profit / .com commercial)
     ['meta', { name: 'application-name', content: 'uuidna' }],
     ['meta', { property: 'og:see_also', content: 'https://uuidna.org' }],
@@ -118,16 +118,16 @@ export default defineConfig({
       // the proofs now exist. The description is what a search result shows, so it is the first place the
       // correction has to land.
       pageData.description = p.revoked && p.supersededBy
-        ? 'CARRIED — withdrawn on its own evidence for lacking a proof, and now carried by the Lean theorem ' + p.supersededBy + ', machine-checked sorry-free and axiom-free over its whole domain. Integrity, not truth. entails → 0/7.'
+        ? 'CARRIED — withdrawn on its own evidence for lacking a proof, and now carried by the Lean theorem ' + p.supersededBy + ', machine-checked sorry-free and axiom-free over its whole domain. Integrity, not truth.'
         : p.revoked
-        ? 'WITHDRAWN — this entry no longer stands as a theorem of the deposit and must not be cited. Its receipt (' + p.receipt + ') remains in the append-only record so the chain still verifies, but the statement is not re-verified on every build. Integrity, not truth. entails → 0/7.'
+        ? 'WITHDRAWN — this entry no longer stands as a theorem of the deposit and must not be cited. Its receipt (' + p.receipt + ') remains in the append-only record so the chain still verifies, but the statement is not re-verified on every build. Integrity, not truth.'
         : p.key.startsWith('lean_')
         // Established by the Lean kernel, not by enumeration in discover.ts. Saying "computed by exhaustion"
         // of a machine-checked proof misdescribes the strongest evidence in the deposit as the weaker kind.
-        ? 'A Lean 4 theorem, machine-checked sorry-free and axiom-free by the kernel over its whole domain — not sampled, and not a TypeScript test that agreed once (content-address ' + p.receipt + '). A standing theorem of the ℤ/9 ledger. Integrity, not truth. entails → 0/7.'
+        ? 'A Lean 4 theorem, machine-checked sorry-free and axiom-free by the kernel over its whole domain — not sampled, and not a TypeScript test that agreed once (content-address ' + p.receipt + '). A standing theorem of the ℤ/9 ledger. Integrity, not truth.'
         : p.problem
-        ? 'A Lean 4 theorem computed from the ℤ/9 doubling sequence, machine-checked sorry-free and axiom-free (content-address ' + p.receipt + '). Adjacent to the Clay problem “' + p.problem + '” — and NOT the conjecture. Reference: ' + p.outletName + '. Integrity, not truth. entails → 0/7.'
-        : 'Achieved by exhaustive computation over a finite domain in scripts/discover.ts, gate-checked against the honesty floor, receipted and chained, and re-verified on every build (content-address ' + p.receipt + '). A decidable fact in the ℤ/9 ledger — integrity, not truth. entails → 0/7.'
+        ? 'A Lean 4 theorem computed from the ℤ/9 doubling sequence, machine-checked sorry-free and axiom-free (content-address ' + p.receipt + '). Adjacent to the Clay problem “' + p.problem + '” — and NOT the conjecture. Reference: ' + p.outletName + '. Integrity, not truth.'
+        : 'Achieved by exhaustive computation over a finite domain in scripts/discover.ts, gate-checked against the honesty floor, receipted and chained, and re-verified on every build (content-address ' + p.receipt + '). A decidable fact in the ℤ/9 ledger — integrity, not truth.'
     }
     const clean = pageData.relativePath.replace(/(^|\/)index\.md$/, '$1').replace(/\.md$/, '.html')
     const url = SITE + clean
@@ -161,7 +161,7 @@ export default defineConfig({
 
   themeConfig: {
     // Navigation pyramid (structure borrowed from ceccec.github.io's vortexGatewayPyramids —
-    // NOT its 7/7 framing; here the floor stays 0/7). The gateways [8,3,9,0] — the vortex tour's
+    // NOT its 7/7 framing). The gateways [8,3,9,0] — the vortex tour's
     // direction-reversal points — lift by peak/valley into a tetrahedron, the minimal pyramid
     // (4 vertices). So the nav folds to exactly four top-level anchors: three trinity-faces
     // (Read · Compute · Build) + the repo apex. Nine leaves fold up the pyramid to four.
@@ -287,7 +287,7 @@ export default defineConfig({
     ],
 
     footer: {
-      message: 'computed: entailment 0/7 · self-seal = 1 · reflection involutive · CC BY-NC-ND 4.0 — free for non-commercial use (attribution Tsvetan Rouschev); commercial = the two coins (110 − 108 = 2 = −χ genus-2)',
+      message: 'computed: self-seal = 1 · reflection involutive · CC BY-NC-ND 4.0 — free for non-commercial use (attribution Tsvetan Rouschev); commercial = the two coins (110 − 108 = 2 = −χ genus-2)',
       copyright: 'Source: <a href="https://github.com/ceccec/millennium-solutions" target="_blank" rel="noopener">github.com/ceccec/millennium-solutions</a> · Support: <a href="https://revolut.me/ceccec?note=uuid" target="_blank" rel="noopener">revolut.me/ceccec</a> · <a href="mailto:ceccec@psg.bg">ceccec@psg.bg</a> · © Tsvetan Rouschev',
     },
   },

@@ -39,4 +39,4 @@ if (bad.length) {
   process.exit(1)
 }
 console.log(`✓ cite-audit: ${cited} citation(s) across ${FILES.length} prose file(s), every one of them live in the ledger`)
-console.log(`  and consistent with the 0/7 floor. ${LIVE.size} keys stand.`)
+console.log(`  ${LIVE.size} keys stand.`)

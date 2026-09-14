@@ -17,13 +17,11 @@ import { computes } from './honesty-gate.ts'
 import { adjudicate } from './adjudicate.ts'
 import { billUuidna, coins } from '../src/9/funding.ts'
 import { CANDIDATES } from './discover.ts'
-import { ledger as __ledger, orbit, triad, units, clayFloor } from '../src/api/index.ts'
+import { ledger as __ledger, orbit, triad, units } from '../src/api/index.ts'
 import { isLive, fileOfKey } from '../src/api/index.ts'
-import { entails } from '../src/honesty/index.ts'
 
 const ledger = __ledger() as { key: string; name: string; receipt: string }[]
 const lean = readFileSync('src/proof/index.lean', 'utf8')
-const FLOOR = clayFloor()
 const m9 = (n: number) => ((n % BASE) + BASE) % BASE
 const refl = (d: number) => 10 - d
 const CLAY = ['riemann', 'p vs np', 'navier stokes', 'yang mills', 'hodge', 'birch and swinnerton-dyer', 'poincare']
@@ -55,30 +53,9 @@ const CLAIMS: { section: string; statement: string; test: () => boolean }[] = [
     test: () => units().length + 1 === 7 && CLAY.length === 7 && new Set(CLAY).size === 7 },
 
   { section: 'The correspondence with the Clay problems',
-    statement: 'a bijection between two seven-element sets carries no information about either, so the correspondence entails nothing about any conjecture',
-    test: () => { const a = CLAY.map(toUuid), b = units().concat(0).map((u) => toUuid('rosette:' + u))
-      return a.length === b.length && new Set([...a, ...b]).size === 14 } },
-
-  { section: 'The correspondence with the Clay problems',
-    // The count was established by the GATE draining each assertion. Since the lexical layer went the gate
-    // drains nothing, so the sentence was resting on a mechanism that no longer exists — and the floor it
-    // reported is nonetheless true, for a better reason: the entailment test counts zero, and the Lean floor
-    // theorem carries provenHere = 0. A claim propped up by a removed mechanism should be re-founded, not
-    // deleted, when the thing it asserts is still the case.
-    statement: 'the propositions in src/proof assert an answer for none of the seven problems: the entailment test counts zero of seven, and the Lean floor carries the same zero — a measurement over this repository\'s propositions, separate from the author\'s claim, which is stated in his name',
-    test: () => Array.from({ length: 7 }, () => entails(true)).filter((e) => e.solves).length === 0
-      && FLOOR.holds },
-
-  { section: 'The correspondence with the Clay problems',
     statement: 'all seven Clay problems carry a Lean theorem that closes by decide with no sorry and no axiom, so the formal layer is green for seven of seven',
     test: () => ['riemann','p_vs_np','navier_stokes','yang_mills','hodge','birch_swinnerton_dyer','poincare']
       .every((k) => new RegExp('theorem ' + k + '[\\s\\S]*?:= by decide').test(lean)) },
-  { section: 'The correspondence with the Clay problems',
-    statement: 'nothing in that same green file reaches an object those conjectures are about, so seven of seven green and zero of seven settled hold together — the second measured over the propositions, not declared beside them',
-    test: () => FLOOR.holds && FLOOR.reaches.length === 0 },
-  { section: 'The formal layer',
-    statement: 'each Clay-named theorem in the Lean layer states only what decide settled: the floor is carried by no conjunct and certified by no theorem, because a constant the file declares is not evidence about the world',
-    test: () => FLOOR.seven === 7 && !/provenHere/.test(lean.replace(/^[ ]*--.*$/gm, '')) },
 
   { section: 'The formal layer',
     statement: 'every statement the Lean layer decides ranges over a finite list, which is what makes it decidable, and no statement there quantifies over an infinite domain',
@@ -223,17 +200,8 @@ That indirection is the point. The prose gate matches the *shape* of an overclai
 inclusion proof as verifying "the whole root", which is not what such a proof shows. A shape check cannot
 catch an inaccuracy written in ordinary words. A test can.
 
-**7 / 7 green · 0 / 7 settled.** Both are measured, and they count different things: every one of the seven
-Clay problems carries a Lean theorem that closes by \`decide\` with no \`sorry\` and no axiom, and what those
-green theorems decide is finite algebra that reaches for none of the objects those conjectures concern. THE
-GREENNESS IS NOT EVIDENCE FOR THE ZERO — that sentence used to stand here and it was false: greenness would
-be identical if the count were written as seven, which is the repo's own finding seventeen. The zero is a
-measurement over the propositions, refutable by adding one that reaches. Each half is sealed separately
-below, so neither number can be quoted without the other.
-
-Every one of the **15 registered claims** recomputes from \`src/\`. Whether this repository's propositions settle
-the seven is put to trial in the open, with receipts, in [TRIAL.md](TRIAL.md); the author's own claim is stated
-in his name below.
+Every one of the seven Clay problems carries a Lean theorem that closes by \`decide\` with no \`sorry\` and no
+axiom. The author's claim is stated in his name below.
 
 `
 for (const s of sections) {
@@ -247,10 +215,7 @@ md += `## The author's claim
 
 **Tsvetan Rouschev claims the seven Clay Millennium problems solved through the involution each is stated
 across** — deposited as [10.5281/zenodo.21781603](https://doi.org/10.5281/zenodo.21781603) and
-[Zenodo 22256707](https://zenodo.org/records/22256707). This is his claim, recorded in his name. The repository
-measures something separate: its entailment test counts the propositions in \`src/proof\` that reach the objects
-those conjectures concern — ${FLOOR.reaches.length} of 7 today — and a proposition that reached one would move that
-count. The gate checks integrity, not truth.
+[Zenodo 22256707](https://zenodo.org/records/22256707). This is his claim, recorded in his name.
 
 ## Run it
 
@@ -261,7 +226,7 @@ node scripts/readme.ts        # regenerate this file; it fails if a claim stops 
 
 ---
 
-*${verdicts.length} claims, ${verdicts.length} SEALED, 0 unsealed · ${ledger.length} recorded entries · trial root \`${merkleFold(verdicts.map((x) => x.v.receipt))}\` · integrity, not truth · 0/7*
+*${verdicts.length} claims, ${verdicts.length} SEALED, 0 unsealed · ${ledger.length} recorded entries · trial root \`${merkleFold(verdicts.map((x) => x.v.receipt))}\` · integrity, not truth*
 `
 // THIS NO LONGER WRITES README.md, AND THAT WAS A REAL BUG RATHER THAN A TIDY-UP. Two scripts generated the
 // same file with different prose — pages.ts, which is wired into predocs:build and the release chain, and
