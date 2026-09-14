@@ -344,6 +344,14 @@ theorem a_knight_has_exactly_eight_leaps_and_every_one_flips_the_colour :
 theorem the_golden_beatty_identity_holds_across_the_range :
   (List.range' 1 40).all (fun n => upperWythoff n - lowerWythoff n == n) := by decide
 
+-- ── and the two sequences PARTITION the positive integers: every m up to fifty is hit by exactly one of the
+--    lower and upper Wythoff sequences, never both, never neither (Beatty's theorem, 1926, at φ and φ²). The
+--    identity above says how the two are paired; this says the pairing loses and duplicates nothing ──
+set_option maxRecDepth 2000000 in
+theorem the_wythoff_sequences_partition_the_integers :
+  (List.range' 1 50).all (fun m =>
+    ((List.range' 1 40).map lowerWythoff).count m + ((List.range' 1 40).map upperWythoff).count m == 1) := by decide
+
 -- ── the partition numbers count the partitions, and the Bell numbers count the set partitions ───────────
 --    Both are checked against an ENUMERATION of the objects rather than against another recurrence, which
 --    is the difference between confirming a formula and confirming what it counts.
@@ -387,7 +395,7 @@ theorem the_unit_graph_is_complete_bipartite_between_the_two_tetrahedra :
     (nbrs (unitsMod 9) d).all (fun y => x == y || !((nbrs (unitsMod 9) x).contains y)))) := by decide
 
 -- ── what these settle ──
-def settledHere : Nat := 31
-theorem elementary_settles_its_range : settledHere = 31 := rfl
+def settledHere : Nat := 32
+theorem elementary_settles_its_range : settledHere = 32 := rfl
 
 end Elementary

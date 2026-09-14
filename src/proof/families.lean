@@ -428,8 +428,23 @@ set_option maxRecDepth 100000 in
 theorem the_involutions_are_counted_by_the_telephone_numbers :
   (List.range 6).all (fun n => ((permsN (List.range n)).filter isInvolution).length == telephone n) := by decide
 
+-- ── the unit inverse, stated AS an inverse. That invOf finds something at exactly the units was proved above;
+--    this proves what it finds: the residue multiplies back to one, and inverting twice returns the unit — so
+--    invOf is an involution on the six units, and the non-units, where it finds nothing, are exactly the
+--    residues sharing a factor with nine ──
+theorem invOf_is_an_inverse_and_an_involution_on_the_units :
+  (List.range 9).all (fun d => match invOf d with
+    | some e => d * e % 9 == 1 && invOf e == some d
+    | none => gcd' d 9 != 1) := by decide
+
+-- ── the binomial coefficient does not see the involution k ↦ n − k: choosing k is choosing the n − k left
+--    behind, and applying the involution twice returns k, at every n to twelve and every k ──
+theorem choose_is_invariant_under_the_involution_k_to_n_minus_k :
+  (List.range 13).all (fun n => (List.range (n + 1)).all (fun k =>
+    choose n k == choose n (n - k) && n - (n - k) == k)) := by decide
+
 -- ── what these settle ──
-def settledHere : Nat := 40
-theorem families_settle_their_ranges : settledHere = 40 := rfl
+def settledHere : Nat := 42
+theorem families_settle_their_ranges : settledHere = 42 := rfl
 
 end Families

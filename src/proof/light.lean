@@ -53,6 +53,12 @@ def periods (seconds : Nat) : Nat := dNuCs * seconds -- caesium periods elapsed 
 
 theorem travel_at_one_returns_the_defined_constant : travel 1 = c := by decide
 
+-- AND THE CHAIN RUNS BACK. Dividing the metres by c returns the seconds, and dividing the periods by ΔνCs
+-- returns them too, at every whole second below a hundred: travel and periods are each undone by the
+-- constant that defines them, so a length and a count of periods both read back the same duration.
+theorem the_second_returns_from_the_metre_and_the_period :
+  (List.range 100).all (fun s => travel s / c == s && periods s / dNuCs == s) := by decide
+
 -- ONE INTERVAL, TWO UNITS: the same second is 299792458 metres of light and 9192631770 caesium periods.
 -- That is the SI's join between space and time, and it is an identity between two definitions rather than
 -- a discovery about either.

@@ -65,6 +65,15 @@ theorem orbit_closes : orbit 6 = orbit 0 := by decide
 theorem orbit_distinct : ((List.range 6).map orbit).eraseDups.length = 6 := by decide
 theorem orbit_covers_units : ((List.range 6).map orbit).eraseDups.length = units.length := by decide
 
+-- ── the orbit read back: a discrete log along the doubling circuit. orbit takes a step to its residue;
+--    logOrbit takes the residue back to its step. Every step below six returns itself, and every unit is
+--    reached and re-reached — the circuit and its log are inverse, which is what "2 generates the units" means ──
+def logOrbit (u : Nat) : Option Nat := (List.range 6).find? (fun k => orbit k == u)
+
+theorem the_orbit_step_is_read_back_by_its_log :
+  (List.range 6).all (fun k => logOrbit (orbit k) == some k) ∧
+  units.all (fun u => (logOrbit u).map orbit == some u) := by decide
+
 -- ── the triad {3,6,9} is off the circuit: no power of 3 or 6 ever reaches one ──
 theorem triad_never_reaches_one :
   ¬ ((List.range 12).any (fun k => pow9 3 (k + 1) == 1 || pow9 6 (k + 1) == 1)) := by decide
@@ -86,7 +95,7 @@ theorem neg_involution : (List.range B).all (fun d => m9 (B - m9 (B - d)) == m9 
 --    The count is of declarations closing by EXHAUSTION, which is this deposit's definition of a theorem, so
 --    the rfl declaration below is excluded from its own total. It read 21 until the count was recomputed
 --    against the tree: it had been counting itself. A tautology is not one of the things settled here.
-def settledHere : Nat := 20
-theorem z9_settles_its_domain_totally : settledHere = 20 := rfl
+def settledHere : Nat := 21
+theorem z9_settles_its_domain_totally : settledHere = 21 := rfl
 
 end Z9

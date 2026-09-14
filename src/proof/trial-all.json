@@ -15400,5 +15400,41 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "91a92ea5-bedd-8b9a-80b7-29130fbe5a93"
+  },
+  {
+    "key": "lean_elementary_the_wythoff_sequences_partition_the_integers",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "45729b78-1ded-8539-a2da-71459d8d4183"
+  },
+  {
+    "key": "lean_energy_the_atoms_read_back_from_the_mass",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e49b5ab6-4f44-8b3c-aec8-b5b0a5f4d681"
+  },
+  {
+    "key": "lean_families_invOf_is_an_inverse_and_an_involution_on_the_units",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "85ad9b47-1b45-8b65-9a6c-72779f4782b0"
+  },
+  {
+    "key": "lean_families_choose_is_invariant_under_the_involution_k_to_n_minus_k",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0affa1b0-91a0-8f5d-aa01-7f37496f2c87"
+  },
+  {
+    "key": "lean_light_the_second_returns_from_the_metre_and_the_period",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "04685db2-fda6-844b-8b36-5b7f858baaac"
+  },
+  {
+    "key": "lean_z9_the_orbit_step_is_read_back_by_its_log",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e29d831e-5bde-8104-95bd-fc374ac46155"
   }
 ]

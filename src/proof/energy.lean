@@ -261,4 +261,15 @@ theorem the_residue_ratio_is_the_same_at_every_volume :
   (List.range' 1 200).all (fun l => residueMg l tdsSeawater == 700 * residueMg l tdsTapWater) ∧
   residueMg 100 tdsSeawater / 1000 = 3500 ∧ residueMg 100 tdsTapWater / 1000 = 5 := by decide
 
+-- ── 19 · THE MASS READS BACK ITS ATOMS. `mass` takes a molecule's hydrogens and oxygens to its molar mass;
+--         `atomsOf` goes the other way, finding the counts whose mass it is. At every molecule of up to nine
+--         of each, reading the atoms back from the mass returns exactly those atoms — so on this range the
+--         mass names the molecule, and no two formulas share one. H₂, O₂ and H₂O are three of the hundred. ──
+def atomsOf (m : Nat) : Option (Nat × Nat) :=
+  ((List.range 10).flatMap (fun h => (List.range 10).map (fun o => (h, o)))).find? (fun p => mass p.1 p.2 == m)
+
+theorem the_atoms_read_back_from_the_mass :
+  (List.range 10).all (fun h => (List.range 10).all (fun o => atomsOf (mass h o) == some (h, o))) ∧
+  atomsOf mgH2 = some (2, 0) ∧ atomsOf mgO2 = some (0, 2) ∧ atomsOf mgH2O = some (2, 1) := by decide
+
 end Energy

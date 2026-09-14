@@ -61,8 +61,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free and axiom-free, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 628 of them across 32 files and
-7 wings; 619 close by exhaustion over a stated finite domain and the
+(\texttt{npm run latex-gate}). There are 634 of them across 32 files and
+7 wings; 625 close by exhaustion over a stated finite domain and the
 remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -541,6 +541,11 @@ remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 40 cases. \hfill$\square$
 
+\begin{theorem}[\texttt{the\_wythoff\_sequences\_partition\_the\_integers}]
+\texttt{(List.range' 1 50).all (fun m => ((List.range' 1 40).map lowerWythoff).count m + ((List.range' 1 40).map upperWythoff).count m == 1)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 80,000 cases. \hfill$\square$
+
 \begin{theorem}[\texttt{the\_partition\_and\_bell\_numbers\_count\_what\_they\_claim\_to\_count}]
 \[ \left|\mathrm{partitionsOf}\mathopen{}\left(5\right)\right| = 7 \land \left|\mathrm{partitionsOf}\mathopen{}\left(7\right)\right| = 15 \land \left|\mathrm{partitionsOf}\mathopen{}\left(10\right)\right| = 42 \land \forall n \in \{0,\dots,5\},\; \left|\mathrm{rgs}\mathopen{}\left(n\right)\right| = \mathrm{bellOf}\mathopen{}\left(n\right) \land \mathrm{bellOf}\mathopen{}\left(3\right) = 5 \land \mathrm{bellOf}\mathopen{}\left(4\right) = 15 \land \mathrm{bellOf}\mathopen{}\left(5\right) = 52 \]
 \end{theorem}
@@ -552,7 +557,7 @@ remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{elementary\_settles\_its\_range}]
-\[ \mathrm{settledHere} = 31 \]
+\[ \mathrm{settledHere} = 32 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 
@@ -758,8 +763,18 @@ remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
 
+\begin{theorem}[\texttt{invOf\_is\_an\_inverse\_and\_an\_involution\_on\_the\_units}]
+\texttt{(List.range 9).all (fun d => match invOf d with | some e => d * e \% 9 == 1 \&\& invOf e == some d | none => gcd' d 9 != 1)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{choose\_is\_invariant\_under\_the\_involution\_k\_to\_n\_minus\_k}]
+\[ \forall n \in \{0,\dots,12\},\; \forall k \in \{0,\dots,n + 1-1\},\; \mathrm{choose}\mathopen{}\left(n,\,k\right) = \mathrm{choose}\mathopen{}\left(n,\,n - k\right) \land n - n - k = k \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 13 cases. \hfill$\square$
+
 \begin{theorem}[\texttt{families\_settle\_their\_ranges}]
-\[ \mathrm{settledHere} = 40 \]
+\[ \mathrm{settledHere} = 42 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 
@@ -1088,6 +1103,11 @@ remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
 
+\begin{theorem}[\texttt{the\_orbit\_step\_is\_read\_back\_by\_its\_log}]
+\[ \forall k \in \{0,\dots,5\},\; \mathrm{logOrbit}\mathopen{}\left(\mathrm{orbit}\mathopen{}\left(k\right)\right) = \mathrm{some}\mathopen{}\left(k\right) \land \forall u \in \mathrm{units},\; \mathrm{orbit}[\mathrm{logOrbit}\mathopen{}\left(u\right)] = \mathrm{some}\mathopen{}\left(u\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
+
 \begin{theorem}[\texttt{triad\_never\_reaches\_one}]
 \[ \lnot \exists k \in \{0,\dots,11\} : \mathrm{pow9}\mathopen{}\left(3,\,k + 1\right) = 1 \lor \mathrm{pow9}\mathopen{}\left(6,\,k + 1\right) = 1 \]
 \end{theorem}
@@ -1109,7 +1129,7 @@ remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{z9\_settles\_its\_domain\_totally}]
-\[ \mathrm{settledHere} = 20 \]
+\[ \mathrm{settledHere} = 21 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 
@@ -1495,6 +1515,11 @@ remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 200 cases. \hfill$\square$
 
+\begin{theorem}[\texttt{the\_atoms\_read\_back\_from\_the\_mass}]
+\[ \forall h \in \{0,\dots,9\},\; \forall o \in \{0,\dots,9\},\; \mathrm{atomsOf}\mathopen{}\left(\mathrm{mass}\mathopen{}\left(h,\,o\right)\right) = \mathrm{some}\mathopen{}\left(\left(h,\,o\right)\right) \land \mathrm{atomsOf}\mathopen{}\left(\mathrm{mgH2}\right) = \mathrm{some}\mathopen{}\left(\left(2,\,0\right)\right) \land \mathrm{atomsOf}\mathopen{}\left(\mathrm{mgO2}\right) = \mathrm{some}\mathopen{}\left(\left(0,\,2\right)\right) \land \mathrm{atomsOf}\mathopen{}\left(\mathrm{mgH2O}\right) = \mathrm{some}\mathopen{}\left(\left(2,\,1\right)\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 100 cases. \hfill$\square$
+
 \paragraph{\texttt{index.lean}}
 
 \begin{theorem}[\texttt{riemann\_reflection\_and\_heart}]
@@ -1563,6 +1588,11 @@ remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 \[ \mathrm{travel}\mathopen{}\left(1\right) = c \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_second\_returns\_from\_the\_metre\_and\_the\_period}]
+\[ \forall s \in \{0,\dots,99\},\; \frac{\mathrm{travel}\mathopen{}\left(s\right)}{c} = s \land \frac{\mathrm{periods}\mathopen{}\left(s\right)}{\mathrm{dNuCs}} = s \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 100 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{travel\_and\_periods\_at\_one\_return\_their\_constants}]
 \[ \mathrm{travel}\mathopen{}\left(1\right) = 299792458 \land \mathrm{periods}\mathopen{}\left(1\right) = 9192631770 \]

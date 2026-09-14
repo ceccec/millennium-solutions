@@ -18586,5 +18586,35 @@
     "key": "lean_speed_hexbits_are_slower_and_the_ratio_multiplies_back",
     "name": "lean speed.lean: hexbits_are_slower_and_the_ratio_multiplies_back — (List.range' 1 20).all (fun b => (List.range 400).all (fun a => (a / b) * b ≤ a && a < (a / b + 1) * b)) ∧ hexbitMs > hexMs ∧ hexbitMs * 10 / hexMs = 18 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "91a92ea5-bedd-8b9a-80b7-29130fbe5a93"
+  },
+  {
+    "key": "lean_elementary_the_wythoff_sequences_partition_the_integers",
+    "name": "lean elementary.lean: the_wythoff_sequences_partition_the_integers — (List.range' 1 50).all (fun m => ((List.range' 1 40).map lowerWythoff).count m + ((List.range' 1 40).map upperWythoff).count m == 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "45729b78-1ded-8539-a2da-71459d8d4183"
+  },
+  {
+    "key": "lean_energy_the_atoms_read_back_from_the_mass",
+    "name": "lean energy.lean: the_atoms_read_back_from_the_mass — (List.range 10).all (fun h => (List.range 10).all (fun o => atomsOf (mass h o) == some (h, o))) ∧ atomsOf mgH2 = some (2, 0) ∧ atomsOf mgO2 = some (0, 2) ∧ atomsOf mgH2O = some (2, 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e49b5ab6-4f44-8b3c-aec8-b5b0a5f4d681"
+  },
+  {
+    "key": "lean_families_invOf_is_an_inverse_and_an_involution_on_the_units",
+    "name": "lean families.lean: invOf_is_an_inverse_and_an_involution_on_the_units — (List.range 9).all (fun d => match invOf d with | some e => d * e % 9 == 1 && invOf e == some d | none => gcd' d 9 != 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "85ad9b47-1b45-8b65-9a6c-72779f4782b0"
+  },
+  {
+    "key": "lean_families_choose_is_invariant_under_the_involution_k_to_n_minus_k",
+    "name": "lean families.lean: choose_is_invariant_under_the_involution_k_to_n_minus_k — (List.range 13).all (fun n => (List.range (n + 1)).all (fun k => choose n k == choose n (n - k) && n - (n - k) == k)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "0affa1b0-91a0-8f5d-aa01-7f37496f2c87"
+  },
+  {
+    "key": "lean_light_the_second_returns_from_the_metre_and_the_period",
+    "name": "lean light.lean: the_second_returns_from_the_metre_and_the_period — (List.range 100).all (fun s => travel s / c == s && periods s / dNuCs == s) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "04685db2-fda6-844b-8b36-5b7f858baaac"
+  },
+  {
+    "key": "lean_z9_the_orbit_step_is_read_back_by_its_log",
+    "name": "lean z9.lean: the_orbit_step_is_read_back_by_its_log — (List.range 6).all (fun k => logOrbit (orbit k) == some k) ∧ units.all (fun u => (logOrbit u).map orbit == some u) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e29d831e-5bde-8104-95bd-fc374ac46155"
   }
 ]

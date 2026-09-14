@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2567 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2573 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (619)
+### lean (625)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -643,6 +643,12 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_speed_the_verify_in_nanoseconds_reads_back_its_microseconds](/theorem/lean_speed_the_verify_in_nanoseconds_reads_back_its_microseconds) — lean speed.lean: the_verify_in_nanoseconds_reads_back_its_microseconds — (List.range 1000).all (fun u =&gt; u * 1000 / 1000 == u) ∧ nsPerVerify = verifyUs * 1000 ∧ nsPerVerify / 1000 = verifyUs ∧ nsPerVerify &gt; 10000 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e8a082ef-9515…`
 - [lean_speed_the_width_is_the_ceiling_of_128_bits_over_the_symbol](/theorem/lean_speed_the_width_is_the_ceiling_of_128_bits_over_the_symbol) — lean speed.lean: the_width_is_the_ceiling_of_128_bits_over_the_symbol — (List.range' 1 8).all (fun b =&gt; charsFor b * b ≥ 128 && (charsFor b - 1) * b &lt; 128) ∧ charsFor 4 = hexChars ∧ charsFor 6 = hexbitChars ∧ hexbitChars &lt; hexChars ∧ hexbitChars * 100 / hexChars = 68 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `5811891a-d052…`
 - [lean_speed_hexbits_are_slower_and_the_ratio_multiplies_back](/theorem/lean_speed_hexbits_are_slower_and_the_ratio_multiplies_back) — lean speed.lean: hexbits_are_slower_and_the_ratio_multiplies_back — (List.range' 1 20).all (fun b =&gt; (List.range 400).all (fun a =&gt; (a / b) * b ≤ a && a &lt; (a / b + 1) * b)) ∧ hexbitMs &gt; hexMs ∧ hexbitMs * 10 / hexMs = 18 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `91a92ea5-bedd…`
+- [lean_elementary_the_wythoff_sequences_partition_the_integers](/theorem/lean_elementary_the_wythoff_sequences_partition_the_integers) — lean elementary.lean: the_wythoff_sequences_partition_the_integers — (List.range' 1 50).all (fun m =&gt; ((List.range' 1 40).map lowerWythoff).count m + ((List.range' 1 40).map upperWythoff).count m == 1) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `45729b78-1ded…`
+- [lean_energy_the_atoms_read_back_from_the_mass](/theorem/lean_energy_the_atoms_read_back_from_the_mass) — lean energy.lean: the_atoms_read_back_from_the_mass — (List.range 10).all (fun h =&gt; (List.range 10).all (fun o =&gt; atomsOf (mass h o) == some (h, o))) ∧ atomsOf mgH2 = some (2, 0) ∧ atomsOf mgO2 = some (0, 2) ∧ atomsOf mgH2O = some (2, 1) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e49b5ab6-4f44…`
+- [lean_families_invOf_is_an_inverse_and_an_involution_on_the_units](/theorem/lean_families_invOf_is_an_inverse_and_an_involution_on_the_units) — lean families.lean: invOf_is_an_inverse_and_an_involution_on_the_units — (List.range 9).all (fun d =&gt; match invOf d with | some e =&gt; d * e % 9 == 1 && invOf e == some d | none =&gt; gcd' d 9 != 1) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `85ad9b47-1b45…`
+- [lean_families_choose_is_invariant_under_the_involution_k_to_n_minus_k](/theorem/lean_families_choose_is_invariant_under_the_involution_k_to_n_minus_k) — lean families.lean: choose_is_invariant_under_the_involution_k_to_n_minus_k — (List.range 13).all (fun n =&gt; (List.range (n + 1)).all (fun k =&gt; choose n k == choose n (n - k) && n - (n - k) == k)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `0affa1b0-91a0…`
+- [lean_light_the_second_returns_from_the_metre_and_the_period](/theorem/lean_light_the_second_returns_from_the_metre_and_the_period) — lean light.lean: the_second_returns_from_the_metre_and_the_period — (List.range 100).all (fun s =&gt; travel s / c == s && periods s / dNuCs == s) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `04685db2-fda6…`
+- [lean_z9_the_orbit_step_is_read_back_by_its_log](/theorem/lean_z9_the_orbit_step_is_read_back_by_its_log) — lean z9.lean: the_orbit_step_is_read_back_by_its_log — (List.range 6).all (fun k =&gt; logOrbit (orbit k) == some k) ∧ units.all (fun u =&gt; (logOrbit u).map orbit == some u) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e29d831e-5bde…`
 
 ### other — one-of-a-kind (0)
 
@@ -2227,4 +2233,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `739e6f7e-4b0a-84de-84bb-bcea6054d238`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `7b1d92f4-42f9-8577-8d05-79f3a3d552ff`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

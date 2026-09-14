@@ -1,5 +1,5 @@
 {
-  "produced": "8cf357496",
+  "produced": "49a43cbc8",
   "method": "recomputed from git history of src/proof/discovered.json and the ledger itself; re-runnable with `npm run forensic`",
   "establishes": "what changed, when, in which commit, and the reason recorded at the time",
   "doesNotEstablish": [
@@ -7,10 +7,10 @@
     "authorship beyond the git author field (every commit here carries the repository owner)"
   ],
   "ledgerNow": {
-    "entries": 2567,
+    "entries": 2573,
     "carried": 434,
     "withdrawn": 1514,
-    "standing": 619
+    "standing": 625
   },
   "chainRecomputed": {
     "breaks": 0,
@@ -48,6 +48,16 @@
       "dEnt": 0
     },
     {
+      "date": "2026-09-14",
+      "commit": "1c1b53f9a",
+      "author": "Tsvetan Rouschev",
+      "subject": "Nineteen more certificates become laws — the energy, speed, light and re",
+      "entries": 2567,
+      "revoked": 1948,
+      "dRev": 19,
+      "dEnt": 19
+    },
+    {
       "date": "2026-09-07",
       "commit": "301c67798",
       "author": "Tsvetan Rouschev",
@@ -66,16 +76,6 @@
       "revoked": 1905,
       "dRev": 7,
       "dEnt": 6
-    },
-    {
-      "date": "2026-09-14",
-      "commit": "8cf357496",
-      "author": "Tsvetan Rouschev",
-      "subject": "Certificates restated as laws with their inverses, and the rest listed a",
-      "entries": 2548,
-      "revoked": 1929,
-      "dRev": 5,
-      "dEnt": 5
     }
   ],
   "withdrawalReasonsAsRecorded": [
@@ -112,6 +112,6 @@
       1
     ]
   ],
-  "totalStateChangingCommits": 574,
-  "address": "a77fb27f-8538-8d41-b1d6-d6eddf1ef263"
+  "totalStateChangingCommits": 575,
+  "address": "d2ff7e87-7f32-8616-afb3-22a22b9b0f7b"
 }
