@@ -15436,5 +15436,29 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "e29d831e-5bde-8104-95bd-fc374ac46155"
+  },
+  {
+    "key": "lean_energy_splitting_then_burning_is_the_identity_at_every_ledger_value",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2105157a-992b-8d52-8c5d-b7103bc12c7a"
+  },
+  {
+    "key": "lean_light_the_second_returns_from_the_metre_and_the_period_at_every_duration",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e6d8871f-bee4-8268-a94a-bdd31fdd6302"
+  },
+  {
+    "key": "lean_reach_the_predecessor_returns_every_successor",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a1d55ab6-baca-8250-a413-285dc2cc2d5c"
+  },
+  {
+    "key": "lean_speed_the_microseconds_return_from_the_nanoseconds_at_every_count",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "98899238-b934-8157-ae53-8b60284e56ab"
   }
 ]

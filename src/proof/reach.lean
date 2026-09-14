@@ -61,6 +61,13 @@ theorem the_successor_leaves_every_domain_and_the_predecessor_returns :
   (bounds ++ [largestDomainHere]).all (fun n =>
     n + 1 > n && (n + 1) - 1 == n && (n + 1) % 2 != n % 2) := by decide
 
+-- ── AND FOR EVERY n, WHICH NO EXHAUSTION ABOVE CAN SAY. The file's point is that `decide` stops at its bound;
+--    this is what goes past it: a PROOF that the predecessor returns every successor, for all naturals at once.
+--    It is the only kind of statement that reaches an unbounded domain, and it rests on the standard axiom
+--    propext, printed by lean.ts. ──
+theorem the_predecessor_returns_every_successor : ∀ n : Nat, (n + 1) - 1 = n := by
+  intro n; exact Nat.add_sub_cancel n 1
+
 -- ── 5 · A THEOREM NAMED FOR THE CLAY PROBLEMS THAT DECIDED NOTHING ABOUT THEM — DELETED ─────────────────
 -- `this_file_settles_none_of_the_seven` stood here and decided:
 --

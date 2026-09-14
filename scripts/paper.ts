@@ -63,11 +63,12 @@ const sourceOf = new Map(T.map((t) => [at(t.file, t.name), t.statement]))
 
 // ── the gate: real, local, and able to fail ──────────────────────────────────────────────────────────────
 const printed = docs.flatMap((d) => d.theorems.map((t) => ({ ...t, wing: d.wing, file: d.file })))
-const unsealedDecide = printed.filter((t) => t.tactic === 'by decide' && !sealedKey.has(at(t.file, t.name)))
+// every theorem the kernel checks must be sealed — the exhaustions AND the proofs; only rfl declarations are exempt
+const unsealedDecide = printed.filter((t) => t.tactic !== 'rfl' && !sealedKey.has(at(t.file, t.name)))
 const drifted = printed.filter((t) => (sourceOf.get(at(t.file, t.name)) ?? '') !== t.statement)
 if (unsealedDecide.length || drifted.length) {
   if (unsealedDecide.length) {
-    console.log(`✗ paper: ${unsealedDecide.length} \`by decide\` theorem(s) are not sealed in the ledger — nothing written`)
+    console.log(`✗ paper: ${unsealedDecide.length} kernel-checked theorem(s) are not sealed in the ledger — nothing written`)
     for (const t of unsealedDecide.slice(0, 8)) console.log('  · ' + t.name)
   }
   if (drifted.length) {
@@ -83,14 +84,16 @@ for (const d of docs) if (!wings.includes(d.wing)) wings.push(d.wing)
 const wingLabel = (w: string) => w || 'unassigned'
 
 const theorems = printed
-const cases = theorems.map((t) => t.cases).sort((a, b) => a - b)
+// cases are what an EXHAUSTION walked; a proof for every value walks no domain, so it is not counted as one case
+const cases = theorems.filter((t) => t.tactic === 'by decide').map((t) => t.cases).sort((a, b) => a - b)
 const totalCases = cases.reduce((n, c) => n + c, 0)
 const median = cases[Math.floor(cases.length / 2)]
 const largest = Math.max(...cases)
 const topShare = (100 * largest) / totalCases
-const noExhaustion = theorems.filter((t) => t.cases <= 1).length
+const noExhaustion = theorems.filter((t) => t.tactic === 'by decide' && t.cases <= 1).length
 const byDecide = theorems.filter((t) => t.tactic === 'by decide').length
-const rflOnly = theorems.filter((t) => t.tactic !== 'by decide')
+const proofs = theorems.filter((t) => t.tactic !== 'by decide' && t.tactic !== 'rfl').length
+const rflOnly = theorems.filter((t) => t.tactic === 'rfl')
 const ownDoc = theorems.filter((t) => t.docFrom === 'own').length
 const typeset = theorems.filter((t) => toMathML(t.statement) !== null).length
 
@@ -162,14 +165,14 @@ o += '<div class="paper-masthead">\n'
 // which is in no gate chain and had therefore never been run against a clean tree by anyone.
 o += '<h1 class="paper-title">The collected theorems of the ℤ/9 vortex framework</h1>\n'
 o += '<div class="paper-byline">Rouschev, T. · <em>Millennium Solutions</em> · DOI <a href="https://doi.org/10.5281/zenodo.21819217">10.5281/zenodo.21819217</a> · CC BY-NC-ND 4.0</div>\n'
-o += `<div class="paper-addr">${n(byDecide)} theorems + ${n(theorems.length - byDecide)} rfl declarations · ${docs.length} sources · content-address <code>${seal}</code></div>\n`
+o += `<div class="paper-addr">${n(byDecide)} theorems by exhaustion + ${n(proofs)} proved for every value + ${n(rflOnly.length)} rfl declarations · ${docs.length} sources · content-address <code>${seal}</code></div>\n`
 o += '</div>\n\n'
 
 o += '<h2 class="paper-h">Abstract</h2>\n\n'
-o += `This document collects the ${n(theorems.length)} declarations of the ℤ/9 vortex framework that the Lean 4 kernel accepts — ${n(byDecide)} of them THEOREMS by this deposit's rule, closing by exhaustion, and ${n(theorems.length - byDecide)} rfl declarations shown and marked as such, `
+o += `This document collects the ${n(theorems.length)} declarations of the ℤ/9 vortex framework that the Lean 4 kernel accepts — ${n(byDecide)} of them THEOREMS closing by exhaustion, ${n(proofs)} PROVED for every value, and ${n(rflOnly.length)} rfl declarations shown and marked as such, `
 o += `across ${docs.length} source files. Each is stated exactly as the kernel received it, followed by the tactic that `
-o += `discharged it and the size of the finite domain that tactic exhausted. Every statement is decidable and was checked `
-o += `sorry-free and axiom-free. None of them is a Clay Millennium Problem and none claims one. A content-address proves `
+o += `discharged it and, for an exhaustion, the size of the finite domain it walked. Every exhaustion is decidable and was checked `
+o += `sorry-free and axiom-free; every proof carries only the standard axioms propext and Quot.sound, printed per file. None of them is a Clay Millennium Problem and none claims one. A content-address proves `
 o += `integrity, not truth: it fixes which statement was checked, not that the statement is significant. `
 o += `Clay problems solved by this framework: **0 of 7**.\n\n`
 
@@ -188,7 +191,9 @@ o += `<figcaption><strong>Figure 2.</strong> Theorems per wing — counts, becau
 o += '<h2 class="paper-h">Method</h2>\n\n'
 o += `Each theorem is a proposition over a finite domain, discharged by exhaustion: the kernel evaluates the proposition `
 o += `at every point of that domain rather than accepting an argument about it. **${n(byDecide)}** of ${n(theorems.length)} `
-o += `are closed by \`by decide\` and are sealed in the append-only ledger. The remaining **${rflOnly.length}** are settled by `
+o += `are closed by \`by decide\` and are sealed in the append-only ledger. **${n(proofs)}** are PROVED for every value — a proof, `
+o += `not an exhaustion, resting on the standard axioms that core Lean's lemmas carry — and are sealed as proofs, never as decisions. `
+o += `The remaining **${rflOnly.length}** are settled by `
 o += `\`rfl\` — a declaration that unfolds to itself — and are deliberately **not sealed**: they are shown here, and marked, `
 o += `because a definitional unfolding is not an exhaustion and must not be counted as one. This is a stronger check than a `
 o += `passing test, and a weaker claim than a proof about the infinite objects the Millennium Problems concern. No Mathlib, `
@@ -285,7 +290,7 @@ o += 'page carrying the same statement. A content-address proves integrity, not 
 o += '</div>\n'
 
 writeFileSync('paper.md', o)
-console.log(`✓ paper: ${n(theorems.length)} theorems (${n(byDecide)} sealed, ${rflOnly.length} rfl) · ${docs.length} sources · ${wings.length} wings · median ${n(median)} cases, top theorem ${topShare.toFixed(2)}% of the total · seal ${seal.slice(0, 13)}… → paper.md`)
+console.log(`✓ paper: ${n(theorems.length)} theorems (${n(byDecide)} by exhaustion, ${n(proofs)} proved for every value, ${rflOnly.length} rfl) · ${docs.length} sources · ${wings.length} wings · median ${n(median)} cases, top theorem ${topShare.toFixed(2)}% of the total · seal ${seal.slice(0, 13)}… → paper.md`)
 
 
 // ── THE SAME PAPER IN LaTeX, generated ──────────────────────────────────────────────────────────────────
@@ -307,11 +312,12 @@ const preamble = existing.includes(HEAD_END) ? existing.slice(0, existing.indexO
 
 let tex = preamble
 tex += `${HEAD_END}\n\n`
-tex += `Every statement below is a declaration the Lean~4 kernel accepts, sorry-free and axiom-free, and the\n`
+tex += `Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the\n`
+tex += `proofs carry only the standard axioms \\texttt{propext} and \\texttt{Quot.sound}, and the\n`
 tex += `\\LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it\n`
 tex += `(\\texttt{npm run latex-gate}). There are ${n(theorems.length)} of them across ${docs.length} files and\n`
-tex += `${wings.length} wings; ${n(byDecide)} close by exhaustion over a stated finite domain and the\n`
-tex += `remaining ${rflOnly.length} close by \\texttt{rfl} and are counted separately, never as theorems.\n\n`
+tex += `${wings.length} wings; ${n(byDecide)} close by exhaustion over a stated finite domain, ${n(proofs)} are proved\n`
+tex += `for every value, and the remaining ${rflOnly.length} close by \\texttt{rfl} and are counted separately, never as theorems.\n\n`
 for (const w of wings) {
   const inWing = docs.filter((d) => d.wing === w)
   if (!inWing.length) continue

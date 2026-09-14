@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2573 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2577 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (625)
+### lean (629)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -649,6 +649,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_families_choose_is_invariant_under_the_involution_k_to_n_minus_k](/theorem/lean_families_choose_is_invariant_under_the_involution_k_to_n_minus_k) — lean families.lean: choose_is_invariant_under_the_involution_k_to_n_minus_k — (List.range 13).all (fun n =&gt; (List.range (n + 1)).all (fun k =&gt; choose n k == choose n (n - k) && n - (n - k) == k)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `0affa1b0-91a0…`
 - [lean_light_the_second_returns_from_the_metre_and_the_period](/theorem/lean_light_the_second_returns_from_the_metre_and_the_period) — lean light.lean: the_second_returns_from_the_metre_and_the_period — (List.range 100).all (fun s =&gt; travel s / c == s && periods s / dNuCs == s) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `04685db2-fda6…`
 - [lean_z9_the_orbit_step_is_read_back_by_its_log](/theorem/lean_z9_the_orbit_step_is_read_back_by_its_log) — lean z9.lean: the_orbit_step_is_read_back_by_its_log — (List.range 6).all (fun k =&gt; logOrbit (orbit k) == some k) ∧ units.all (fun u =&gt; (logOrbit u).map orbit == some u) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e29d831e-5bde…`
+- [lean_energy_splitting_then_burning_is_the_identity_at_every_ledger_value](/theorem/lean_energy_splitting_then_burning_is_the_identity_at_every_ledger_value) — lean energy.lean: splitting_then_burning_is_the_identity_at_every_ledger_value — ∀ e : Nat, burnE (splitE e) = e — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `2105157a-992b…`
+- [lean_light_the_second_returns_from_the_metre_and_the_period_at_every_duration](/theorem/lean_light_the_second_returns_from_the_metre_and_the_period_at_every_duration) — lean light.lean: the_second_returns_from_the_metre_and_the_period_at_every_duration — ∀ s : Nat, travel s / c = s ∧ periods s / dNuCs = s — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `e6d8871f-bee4…`
+- [lean_reach_the_predecessor_returns_every_successor](/theorem/lean_reach_the_predecessor_returns_every_successor) — lean reach.lean: the_predecessor_returns_every_successor — ∀ n : Nat, (n + 1) - 1 = n — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `a1d55ab6-baca…`
+- [lean_speed_the_microseconds_return_from_the_nanoseconds_at_every_count](/theorem/lean_speed_the_microseconds_return_from_the_nanoseconds_at_every_count) — lean speed.lean: the_microseconds_return_from_the_nanoseconds_at_every_count — ∀ u : Nat, u * 1000 / 1000 = u — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `98899238-b934…`
 
 ### other — one-of-a-kind (0)
 
@@ -2233,4 +2241,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `7b1d92f4-42f9-8577-8d05-79f3a3d552ff`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `b3fe5a9f-cb56-8d7e-8407-35922ca264f8`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

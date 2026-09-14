@@ -44,10 +44,11 @@ const fail = (msg: string) => { console.log('  ✗ ' + msg); bad++ }
 // ── 1 · the census closes ────────────────────────────────────────────────────────────────────────────────
 if (C.liveKeys !== C.sealedTheorems + C.surplusKeys + C.unresolvableKeys)
   fail(`census does not close: ${C.liveKeys} live keys ≠ ${C.sealedTheorems} + ${C.surplusKeys} + ${C.unresolvableKeys}`)
-if (C.byDecide + C.rfl !== C.theorems)
-  fail(`tactics do not account for every theorem: ${C.byDecide} + ${C.rfl} ≠ ${C.theorems}`)
+// three kinds since 2026-09-14: exhaustions (by decide), proofs for every value (standard axioms), rfl declarations
+if (C.byDecide + C.proved + C.rfl !== C.theorems)
+  fail(`tactics do not account for every theorem: ${C.byDecide} + ${C.proved} + ${C.rfl} ≠ ${C.theorems}`)
 if (C.unsealed !== C.rfl)
-  fail(`${C.unsealed} theorems carry no live key but ${C.rfl} are rfl — seal-lean.ts seals \`by decide\` only, so these must be equal`)
+  fail(`${C.unsealed} theorems carry no live key but ${C.rfl} are rfl — seal-lean.ts seals exhaustions and proofs and leaves only rfl declarations unsealed, so these must be equal`)
 
 // ── 1b · the verifier's reader and the shared reader must agree ──────────────────────────────────────────
 // scripts/lean.ts finds theorem names with its own `^theorem NAME` match, and it keeps that independence

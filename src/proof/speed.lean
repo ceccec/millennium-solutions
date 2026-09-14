@@ -88,6 +88,11 @@ theorem verification_grows_it_is_not_constant :
 --        the ledger next to the impressive one rather than only the impressive one being quotable. ──
 --        The nanosecond figure is not a second typed input: it is the microsecond input converted, and the
 --        conversion reads back at every microsecond count below a thousand. ──
+-- ── The conversion reads back at EVERY count, proved rather than sampled — the theorem below it decides the
+--    first thousand. A proof over all naturals, carrying the standard axiom propext (printed by lean.ts). ──
+theorem the_microseconds_return_from_the_nanoseconds_at_every_count : ∀ u : Nat, u * 1000 / 1000 = u := by
+  intro u; exact Nat.mul_div_cancel u (by decide)
+
 theorem the_verify_in_nanoseconds_reads_back_its_microseconds :
   (List.range 1000).all (fun u => u * 1000 / 1000 == u) ∧
   nsPerVerify = verifyUs * 1000 ∧ nsPerVerify / 1000 = verifyUs ∧ nsPerVerify > 10000 := by decide

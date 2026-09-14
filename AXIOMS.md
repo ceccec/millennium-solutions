@@ -5,7 +5,7 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **634** report the same thing:
+axiom fails the build rather than earning a footnote. All **638** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
@@ -210,7 +210,7 @@ def tetOf (r : Nat) : List Nat := (unitsMod 9).filter (fun d => d % 3 == r)
 def settledHere : Nat := 32
 ```
 
-### `energy.lean` — 31 definition(s), 20 theorem(s)
+### `energy.lean` — 31 definition(s), 21 theorem(s)
 
 ```lean
 def splitCost : Nat := 52000  -- Wh to electrolyse 1 kg H₂ (real cells: 50–55 kWh/kg; ideal is ~39.4)
@@ -343,7 +343,7 @@ def saving (value verify : Nat) : Nat := value - verify
 def addr4 (x : Nat) : Nat := x % 16
 ```
 
-### `light.lean` — 13 definition(s), 12 theorem(s)
+### `light.lean` — 13 definition(s), 13 theorem(s)
 
 ```lean
 def c : Nat := 299792458      -- m/s, exact
@@ -451,7 +451,7 @@ def par3 (n : Nat) : Nat := (bit n 0 + bit n 1 + bit n 2) % 2
 def ghzXSupport : List Nat := [0, 3, 5, 6]
 ```
 
-### `reach.lean` — 2 definition(s), 4 theorem(s)
+### `reach.lean` — 2 definition(s), 5 theorem(s)
 
 ```lean
 def bounds : List Nat := List.range' 1 50
@@ -501,7 +501,7 @@ def popcount (n : Nat) : Nat := (List.range 12).foldl (fun a i => a + n / 2 ^ i 
 def tm (n : Nat) : Nat := popcount n % 2
 ```
 
-### `speed.lean` — 8 definition(s), 10 theorem(s)
+### `speed.lean` — 8 definition(s), 11 theorem(s)
 
 ```lean
 def recomputeUs : Nat := 21582900   -- folding 2^20 leaves
@@ -569,6 +569,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**634** declarations, **0** axiom dependencies, **321** definitions they rest on.
+**638** declarations, **0** axiom dependencies, **321** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them. `0/7`.

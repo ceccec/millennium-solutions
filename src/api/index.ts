@@ -136,13 +136,13 @@ export const domainOf = (statement: string): number => {
  *  before keys had a namespace (`lean_units_are_six`) and one after (`lean_z9_units_are_six`). Both were live
  *  and both are legitimate history, but counting a key as a theorem overstates the deposit. Those 24 second
  *  addresses were retired in favour of their namespaced form, so no theorem now carries two. The 8 `rfl`
- *  DECLARATIONS have no key at all, because seal-lean.ts seals `by decide` only — and they are declarations,
+ *  DECLARATIONS have no key at all, because seal-lean.ts seals exhaustions (`by decide`) and proofs, never rfl — and they are declarations,
  *  never theorems, by the definition this file states.
  *
  *  Lean decides what a theorem is. Every count of theorems is taken from src/proof; a count of keys is
  *  called a count of keys. */
 export interface Census {
-  theorems: number; byDecide: number; rfl: number
+  theorems: number; byDecide: number; proved: number; rfl: number
   liveKeys: number; sealedTheorems: number; surplusKeys: number; unresolvableKeys: number; unsealed: number
 }
 
@@ -303,6 +303,7 @@ export const census = (): Census => {
   return {
     theorems: T.length,
     byDecide: T.filter((t) => t.tactic === 'by decide').length,
+    proved: T.filter((t) => t.tactic !== 'by decide' && t.tactic !== 'rfl').length,
     rfl: T.filter((t) => t.tactic === 'rfl').length,
     liveKeys: keys.length,
     sealedTheorems: named.size,

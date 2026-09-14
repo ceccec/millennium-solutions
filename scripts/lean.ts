@@ -8,7 +8,9 @@
 //
 // Four checks per file, all of them mechanical:
 //   COMPILE  — lean accepts it
-//   AXIOMS   — `#print axioms` per theorem; anything that depends on an axiom is a failure, not a footnote
+//   AXIOMS   — `#print axioms` per theorem. A `by decide` theorem that depends on ANY axiom fails. A proof by
+//              any other tactic may carry only the standard axioms propext and Quot.sound, printed per file;
+//              Classical.choice, sorryAx or any other axiom fails, not a footnote
 //   HYGIENE  — no `sorry`, no `native_decide` outside comments
 //   COUNT    — theorems found, so a file that silently stops proving things is visible
 //
@@ -24,7 +26,7 @@ import { createHash } from 'node:crypto'
 // This is a cache of work, never of trust: the recorded verdict is the one the kernel gave for those exact
 // bytes, and `--full` ignores it entirely.
 const CACHE = 'src/proof/.lean-cache.json'
-const CACHE_FORMAT = 2
+const CACHE_FORMAT = 3
 const FULL = process.argv.includes('--full')
 type Cached = { hash: string; format: number; ok: boolean; line: string; theorems: number }
 const cache: Record<string, Cached> = !FULL && existsSync(CACHE) ? JSON.parse(readFileSync(CACHE, 'utf8')) : {}
@@ -121,14 +123,29 @@ const verify = async (f: string, at: number) => {
     ordered[at] = line; cache[f] = { hash, format: CACHE_FORMAT, ok: false, line, theorems: names.length }; bad++; return
   }
   unlinkSync(probe)
-  const dirty = out.split('\n').filter((l) => l.includes('depends on axioms'))
-  if (dirty.length) issues.push(`${dirty.length} carry axioms: ${dirty.map((d) => d.split("'")[1]?.split('.').pop()).join(' ')}`)
+  // A PROOF IS NOT AN EXHAUSTION (2026-09-14). Every theorem here was `by decide` over a finite domain, and those
+  // stay axiom-free: a decide that picks up propext has quietly stopped being a computation. A theorem over an
+  // UNBOUNDED domain is proved, not exhausted, and every core lemma that proves one rests on propext — measured:
+  // Nat.add_sub_cancel, Nat.mul_div_cancel, Nat.sub_sub_self and omega all carry it. The user: "use lemmas if
+  // this is the standard". So a proof by any other tactic may carry the standard axioms and they are printed;
+  // sorryAx, or any axiom outside the three, still fails, and so does a `by decide` carrying anything at all.
+  // Two, not three: Classical.choice makes the logic classical (Diaconescu), and ceccec's verify:lean refuses it
+  // too — the two repositories hold one rule.
+  const STANDARD = new Set(['propext', 'Quot.sound'])
+  const tacticOf = new Map([...src.matchAll(/^theorem\s+([A-Za-z_0-9]+)\s*:[\s\S]*?:=\s*(by decide|rfl|by\s+\w+)/gm)].map((m) => [m[1], m[2]]))
+  const nameOf = (l: string) => l.split("'")[1]?.split('.').pop() ?? ''
+  const axiomsOf = (l: string) => (l.match(/\[([^\]]*)\]/)?.[1] ?? '').split(',').map((a) => a.trim()).filter(Boolean)
+  const withAxioms = out.split('\n').filter((l) => l.includes('depends on axioms'))
+  const dirty = withAxioms.filter((l) => tacticOf.get(nameOf(l)) === 'by decide' || axiomsOf(l).some((a) => !STANDARD.has(a)))
+  const standard = withAxioms.filter((l) => !dirty.includes(l))
+  if (dirty.length) issues.push(`${dirty.length} carry axioms: ${dirty.map(nameOf).join(' ')}`)
   const audited = out.split('\n').filter((l) => l.includes('does not depend on any axioms')).length
-  if (audited + dirty.length !== names.length) issues.push(`audited ${audited + dirty.length}/${names.length}`)
+  if (audited + withAxioms.length !== names.length) issues.push(`audited ${audited + withAxioms.length}/${names.length}`)
+  const used = [...new Set(standard.flatMap(axiomsOf))].join(', ')
 
   const line = issues.length
     ? `  ✗ ${f.padEnd(18)} ${String(names.length).padStart(3)}  ${issues.join(', ')}`
-    : `  ✓ ${f.padEnd(18)} ${String(names.length).padStart(3)}  compiles · ${audited} axiom-free · no sorry`
+    : `  ✓ ${f.padEnd(18)} ${String(names.length).padStart(3)}  compiles · ${audited} axiom-free${standard.length ? ` · ${standard.length} proved for every value (standard axioms: ${used})` : ''} · no sorry`
   ordered[at] = line
   cache[f] = { hash, format: CACHE_FORMAT, ok: issues.length === 0, line, theorems: names.length }
   if (issues.length) bad++

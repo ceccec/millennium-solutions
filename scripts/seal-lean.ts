@@ -44,11 +44,16 @@ const found: Th[] = leanTheorems().map((t) => ({
 }))
 
 const algebraic = found.filter((t) => t.tactic === 'by decide')
-const declared = found.filter((t) => t.tactic !== 'by decide')
-const fresh = algebraic.filter((t) => !known.has(t.key) && !revoked.has(t.key))
-console.log(`lean theorems: ${found.length} · algebraic (by decide): ${algebraic.length} · declarations (rfl, not sealed): ${declared.length}`)
+// A PROOF IS SEALED TOO (2026-09-14). Sealing was `by decide` only, which made every sealed statement finite and
+// left no way to seal the one kind of statement that could ever reach an unbounded domain. A proof by any other
+// tactic is sealed when the kernel accepts it with the standard axioms only — lean.ts refuses anything else —
+// and its seal says it was PROVED for every value, never that it was decided over a finite domain.
+const proved = found.filter((t) => t.tactic !== 'by decide' && t.tactic !== 'rfl')
+const declared = found.filter((t) => t.tactic === 'rfl')
+const fresh = [...algebraic, ...proved].filter((t) => !known.has(t.key) && !revoked.has(t.key))
+console.log(`lean theorems: ${found.length} · algebraic (by decide): ${algebraic.length} · proved for every value (standard axioms): ${proved.length} · declarations (rfl, not sealed): ${declared.length}`)
 for (const d of declared) console.log(`    excluded: ${d.key.padEnd(46)} ${d.tactic} — a declaration, not algebra`)
-console.log(`already sealed: ${algebraic.length - fresh.length} · fresh: ${fresh.length}`)
+console.log(`already sealed: ${algebraic.length + proved.length - fresh.length} · fresh: ${fresh.length}`)
 
 // ── ORPHANS — a sealed theorem whose source is GONE. Sealing was one-way: it noticed new theorems and never
 // noticed disappearing ones, so deleting or renaming a proof left its key standing in the ledger as though
@@ -166,7 +171,10 @@ if (orphans.length) {
 if (process.argv.includes('--seal') && fresh.length) {
   let prev = ledger[ledger.length - 1].receipt
   for (const t of fresh) {
-    const name = `lean ${t.file}: ${t.name} — ${t.statement.slice(0, 240)}${t.statement.length > 240 ? '…' : ''} — decided by the Lean kernel over its whole finite domain, axiom-free`
+    const how = t.tactic === 'by decide'
+      ? 'decided by the Lean kernel over its whole finite domain, axiom-free'
+      : `proved by the Lean kernel for every value (${t.tactic}), standard axioms only — checked by lean.ts`
+    const name = `lean ${t.file}: ${t.name} — ${t.statement.slice(0, 240)}${t.statement.length > 240 ? '…' : ''} — ${how}`
     const receipt = toUuid(prev + '→' + t.key)
     prev = receipt
     ledger.push({ key: t.key, name, receipt })

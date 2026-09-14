@@ -59,11 +59,12 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 
 \section{Theorems}
 
-Every statement below is a declaration the Lean~4 kernel accepts, sorry-free and axiom-free, and the
+Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
+proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 634 of them across 32 files and
-7 wings; 625 close by exhaustion over a stated finite domain and the
-remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
+(\texttt{npm run latex-gate}). There are 638 of them across 32 files and
+7 wings; 625 close by exhaustion over a stated finite domain, 4 are proved
+for every value, and the remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
 
@@ -1480,6 +1481,12 @@ remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 1,000 cases. \hfill$\square$
 
+\begin{theorem}[\texttt{splitting\_then\_burning\_is\_the\_identity\_at\_every\_ledger\_value}]
+\texttt{∀ e : Nat, burnE (splitE e) = e}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
 \begin{theorem}[\texttt{the\_gas\_volume\_reads\_back\_its\_moles}]
 \[ \forall m \in \{0,\dots,999\},\; \mathrm{molesOf}\mathopen{}\left(\mathrm{litresOf}\mathopen{}\left(m\right)\right) \le m \land m \le \mathrm{molesOf}\mathopen{}\left(\mathrm{litresOf}\mathopen{}\left(m\right)\right) + 1 \land \mathrm{molH2} = 2 \cdot \mathrm{molO2} \land \mathrm{litresOf}\mathopen{}\left(\mathrm{molH2}\right) = 11117 \land \mathrm{litresOf}\mathopen{}\left(\mathrm{molO2}\right) = 5558 \land \frac{\mathrm{litresOf}\mathopen{}\left(\mathrm{molH2}\right) + \mathrm{litresOf}\mathopen{}\left(\mathrm{molO2}\right)}{9} = 1852 \]
 \end{theorem}
@@ -1593,6 +1600,12 @@ remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 \[ \forall s \in \{0,\dots,99\},\; \frac{\mathrm{travel}\mathopen{}\left(s\right)}{c} = s \land \frac{\mathrm{periods}\mathopen{}\left(s\right)}{\mathrm{dNuCs}} = s \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 100 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_second\_returns\_from\_the\_metre\_and\_the\_period\_at\_every\_duration}]
+\texttt{∀ s : Nat, travel s / c = s ∧ periods s / dNuCs = s}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{travel\_and\_periods\_at\_one\_return\_their\_constants}]
 \[ \mathrm{travel}\mathopen{}\left(1\right) = 299792458 \land \mathrm{periods}\mathopen{}\left(1\right) = 9192631770 \]
@@ -1745,6 +1758,12 @@ remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
+\begin{theorem}[\texttt{the\_predecessor\_returns\_every\_successor}]
+\texttt{∀ n : Nat, (n + 1) - 1 = n}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
 \paragraph{\texttt{speed.lean}}
 
 \begin{theorem}[\texttt{the\_verify\_path\_is\_the\_exponent}]
@@ -1771,6 +1790,12 @@ remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 \[ \mathrm{rounds}\mathopen{}\left(40,\,1024\right) < \mathrm{rounds}\mathopen{}\left(40,\,1048576\right) \land \forall k \in \{1,\dots,10\},\; \mathrm{rounds}\mathopen{}\left(40,\,2^{k}\right) = k \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 10 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_microseconds\_return\_from\_the\_nanoseconds\_at\_every\_count}]
+\texttt{∀ u : Nat, u * 1000 / 1000 = u}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_verify\_in\_nanoseconds\_reads\_back\_its\_microseconds}]
 \[ \forall u \in \{0,\dots,999\},\; \frac{u \cdot 1000}{1000} = u \land \mathrm{nsPerVerify} = \mathrm{verifyUs} \cdot 1000 \land \frac{\mathrm{nsPerVerify}}{1000} = \mathrm{verifyUs} \land \mathrm{nsPerVerify} > 10000 \]

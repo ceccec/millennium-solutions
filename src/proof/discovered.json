@@ -18616,5 +18616,25 @@
     "key": "lean_z9_the_orbit_step_is_read_back_by_its_log",
     "name": "lean z9.lean: the_orbit_step_is_read_back_by_its_log — (List.range 6).all (fun k => logOrbit (orbit k) == some k) ∧ units.all (fun u => (logOrbit u).map orbit == some u) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "e29d831e-5bde-8104-95bd-fc374ac46155"
+  },
+  {
+    "key": "lean_energy_splitting_then_burning_is_the_identity_at_every_ledger_value",
+    "name": "lean energy.lean: splitting_then_burning_is_the_identity_at_every_ledger_value — ∀ e : Nat, burnE (splitE e) = e — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "2105157a-992b-8d52-8c5d-b7103bc12c7a"
+  },
+  {
+    "key": "lean_light_the_second_returns_from_the_metre_and_the_period_at_every_duration",
+    "name": "lean light.lean: the_second_returns_from_the_metre_and_the_period_at_every_duration — ∀ s : Nat, travel s / c = s ∧ periods s / dNuCs = s — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "e6d8871f-bee4-8268-a94a-bdd31fdd6302"
+  },
+  {
+    "key": "lean_reach_the_predecessor_returns_every_successor",
+    "name": "lean reach.lean: the_predecessor_returns_every_successor — ∀ n : Nat, (n + 1) - 1 = n — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "a1d55ab6-baca-8250-a413-285dc2cc2d5c"
+  },
+  {
+    "key": "lean_speed_the_microseconds_return_from_the_nanoseconds_at_every_count",
+    "name": "lean speed.lean: the_microseconds_return_from_the_nanoseconds_at_every_count — ∀ u : Nat, u * 1000 / 1000 = u — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "98899238-b934-8157-ae53-8b60284e56ab"
   }
 ]

@@ -178,6 +178,13 @@ def burnE  (e : Nat) : Nat := e - bondHundredthsKJ
 theorem splitting_then_burning_is_the_identity_at_the_ideal :
   (List.range 1000).all (fun e => burnE (splitE e) == e) ∧ pct burnYield splitCost = 23 := by decide
 
+-- ── AND AT EVERY LEDGER VALUE, NOT A THOUSAND OF THEM. The theorem above decides the round trip below 1000;
+--    this one PROVES it for every natural number, by the cancellation law of addition. A proof, not an
+--    exhaustion — so it carries the standard axiom propext that core's lemmas rest on, and lean.ts prints it. ──
+theorem splitting_then_burning_is_the_identity_at_every_ledger_value :
+  ∀ e : Nat, burnE (splitE e) = e := by
+  intro e; exact Nat.add_sub_cancel e bondHundredthsKJ
+
 -- ── WHAT A BUILDER RUNS INTO NEXT ────────────────────────────────────────────────────────────────────────
 -- The stoichiometry above is exact and favourable; these are the numbers that decide whether the machine can
 -- be built rather than whether it balances. They are the reason hydrogen systems are hard even when the
