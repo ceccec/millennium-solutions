@@ -4,8 +4,15 @@
 //   (1) uuid = toUuid(message)      — the uuid is the core message, no payload;
 //   (2) file = <uuid>.json          — the filename is the uuid;
 //   (3) message is a non-empty decoded string, and still holds the honesty gate (computes 1);
-//   (4) agent + role present        — the payload names the observer and their role.
-// A receipt that fails is FALSE — the honest-observer experience it backs is invalid; the build fails.
+//   (4) agent + role present        — the payload names the observer and their role;
+//   (5) every invited theorem still holds;
+//   (6) `complies` names the current licence and the sequence;
+//   (7) fourteen 2×7 signatures, one per cell, each by a ledger theorem whose address falls in that cell and whose
+//       tag recomputes (scripts/receipt-2x7.ts).
+// A receipt that fails (1)–(5), or carries a signature that does not verify, is FALSE — a forgery or a regression.
+// A receipt without (6)–(7) is INVALID: honest when written, but unsigned under the 2×7 rule (user, 2026-09-14:
+// "the old receipts are invalid without the attributes"), and fatal by the user's choice. It cannot be re-signed —
+// the same message is the same uuid is the same file — so it stays on disk as evidence. Either way the build fails.
 // Integrity/provenance of observation, never authorship-proof or truth of the message.
 import { readdirSync, readFileSync, existsSync } from 'node:fs'
 import { execSync } from 'node:child_process'
@@ -13,6 +20,7 @@ import { toUuid, merkleFold } from '../src/0/index.ts'
 import { computes } from './honesty-gate.ts'
 import { CANDIDATES } from './discover.ts'
 import { ledger as __ledger } from '../src/api/index.ts'
+import { CELLS, checkSignatures, type Signature } from './receipt-2x7.ts'
 
 const byKey = new Map(CANDIDATES.map((c) => [c.key, c])) // for verifying invited theorems still hold
 // A receipt is IMMUTABLE — rewriting one is tamper — so when a theorem it invited is later withdrawn, the
@@ -30,6 +38,7 @@ const ledgerState = new Map(
 const dir = 'src/receipts'
 let bad = 0
 let stale = 0
+let invalid = 0
 
 // COMPLETENESS — a MISSING receipt is a traitor: destroyed evidence. Every git-tracked receipt must
 // still be present on disk. Evidence is append-only; deletion (git rm, manual) is the traitor act.
@@ -43,7 +52,7 @@ if (!existsSync(dir)) { console.log(bad ? '\n✗ ' + bad + ' receipt(s) MISSING 
 const files = readdirSync(dir).filter((f) => f.endsWith('.json'))
 const roots: string[] = []
 for (const f of files) {
-  let r: { uuid?: string; message?: string; agent?: string; role?: string; invites?: string[] }
+  let r: { uuid?: string; message?: string; agent?: string; role?: string; invites?: string[]; complies?: string; signatures?: Signature[] }
   try { r = JSON.parse(readFileSync(dir + '/' + f, 'utf8')) } catch { console.log('  ✗ FALSE ' + f + ' — unparseable'); bad++; continue }
   const c1 = typeof r.message === 'string' && r.uuid === toUuid(r.message) // uuid = core message, no payload
   const c2 = f === r.uuid + '.json'
@@ -62,21 +71,30 @@ for (const f of files) {
   }
   const c5 = broken.length === 0
   const ok = c1 && c2 && c3 && c4 && c5
+  // c6, c7 — the 2×7 signature. A signature that does not verify is a forgery (FALSE); a receipt without the
+  // attributes is INVALID. A signing theorem withdrawn after the receipt was written is WITHDRAWN BACKING, as above.
+  const sig = checkSignatures(r)
   const back = r.invites && r.invites.length ? ' · backed by ' + r.invites.length + ' theorem(s)' : ''
-  if (!ok) {
-    console.log('  ✗ FALSE ' + f.slice(0, 18) + '… — uuid:' + c1 + ' name:' + c2 + ' floor:' + c3 + ' observer:' + c4 + (broken.length ? ' · invited but not standing: ' + broken.join(', ') : ''))
+  if (!ok || sig.forged.length) {
+    console.log('  ✗ FALSE ' + f.slice(0, 18) + '… — uuid:' + c1 + ' name:' + c2 + ' floor:' + c3 + ' observer:' + c4 + (broken.length ? ' · invited but not standing: ' + broken.join(', ') : '') + (sig.forged.length ? ' · signature does not verify: ' + sig.forged.join('; ') : ''))
     bad++
-  } else if (withdrawn.length) {
-    console.log('  · WITHDRAWN BACKING ' + f.slice(0, 18) + '…  ' + r.agent + ' as ' + r.role + ' — the receipt is authentic; ' + withdrawn.length + ' theorem(s) it invited were withdrawn after it was written: ' + withdrawn.join(', '))
+  } else if (sig.unsigned.length) {
+    console.log('  ✗ INVALID ' + f.slice(0, 18) + '…  ' + r.agent + ' as ' + r.role + ' — unsigned under the 2×7 rule: ' + sig.unsigned.join('; '))
+    bad++
+    invalid++
+  } else if (withdrawn.length || sig.withdrawn.length) {
+    const gone = [...withdrawn, ...sig.withdrawn]
+    console.log('  · WITHDRAWN BACKING ' + f.slice(0, 18) + '…  ' + r.agent + ' as ' + r.role + ' — the receipt is authentic; ' + gone.length + ' theorem(s) it leaned on were withdrawn after it was written: ' + gone.join(', '))
     stale++
     roots.push(r.uuid!)
   } else {
-    console.log('  ✓ ' + f.slice(0, 18) + '…  ' + r.agent + ' as ' + r.role + back)
+    console.log('  ✓ ' + f.slice(0, 18) + '…  ' + r.agent + ' as ' + r.role + ' · signed 2×7 by ' + CELLS.length + ' live theorems' + back)
     roots.push(r.uuid!)
   }
 }
 const staleNote = stale ? '\n  · ' + stale + ' receipt(s) carry WITHDRAWN BACKING — authentic evidence whose invited theorems were later withdrawn. A receipt is immutable, so there is no remedy and none is pretended: the record says what it says, and what it leaned on is gone.' : ''
+const falseN = bad - invalid - missing.length
 console.log(bad
-  ? '\n✗ ' + bad + ' of ' + files.length + ' receipt(s) FALSE — cross-check failed; the observer experience is invalid' + staleNote
-  : '\n✓ ' + files.length + ' receipt(s) cross-check (uuid = core message · payload names observer + role) → root ' + (roots.length ? merkleFold(roots).slice(0, 13) + '…' : 'none') + staleNote)
+  ? '\n✗ ' + bad + ' receipt(s) fail of ' + files.length + ' — ' + falseN + ' FALSE (a forgery, a regression or a signature that does not verify) · ' + invalid + ' INVALID (unsigned under the 2×7 rule: no `complies` naming the current licence, or fewer than ' + CELLS.length + ' signatures)' + (missing.length ? ' · ' + missing.length + ' MISSING' : '') + staleNote
+  : '\n✓ ' + files.length + ' receipt(s) cross-check and are signed 2×7 (uuid = core message · payload names observer + role · ' + CELLS.length + ' live theorems each) → root ' + (roots.length ? merkleFold(roots).slice(0, 13) + '…' : 'none') + staleNote)
 process.exit(bad ? 1 : 0)

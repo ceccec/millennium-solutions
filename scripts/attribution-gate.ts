@@ -45,6 +45,20 @@ for (const f of SURFACES) {
   else if (names) { bad++; console.log(`  ✗ ${f.padEnd(34)} NAMES the author with no ORCID — a citation from here resolves to nobody`) }
   else { bad++; console.log(`  ✗ ${f.padEnd(34)} carries the ORCID but not the name`) }
 }
+// ── ONE LICENCE ON EVERY SURFACE (2026-09-14) ─────────────────────────────────────────────────────────────
+// paper.tex said "CC BY-NC 4.0" while package.json, CITATION.cff, .zenodo.json and the site said CC BY-NC-ND 4.0,
+// and this gate passed: it checked that a licence was present, never which one. Every Creative Commons licence
+// named on a citable surface must now be the one package.json declares.
+const LICENCE = String(JSON.parse(readFileSync('package.json', 'utf8')).license)
+const CC = /\b(?:cc[\s-]*)?by(?:[\s-]+(?:nc|nd|sa))+[\s/-]*4\.0/gi
+const ccKey = (m: string) => m.toLowerCase().replace(/^cc/, '').replace(/4\.0$/, '').replace(/[^a-z]/g, '')
+let licenceBad = 0
+for (const f of SURFACES) {
+  if (!existsSync(f)) continue
+  const off = [...new Set([...readFileSync(f, 'utf8').matchAll(CC)].map((m) => m[0]).filter((m) => ccKey(m) !== ccKey(LICENCE)))]
+  if (off.length) { licenceBad++; console.log(`  ✗ ${f.padEnd(34)} names ${off.join(', ')} — package.json says ${LICENCE}`) }
+}
+if (!licenceBad) console.log(`  ✓ every Creative Commons licence named on the citable surfaces is package.json's: ${LICENCE}`)
 // ── AND EVERY RENDERED PAGE, not only the seven source surfaces ─────────────────────────────────────────
 // The rows above check the files that DECLARE the attribution. What a reader and a citation index actually
 // meet is a built page, and there are 2464 of them. They all carry the name, the ORCID, the concept DOI and
@@ -83,4 +97,5 @@ if (!__ex(DIST)) {
 console.log(bad
   ? `\n✗ attribution: ${bad} of ${checked} citable surface(s) name the author without identifying them`
   : `\n✓ attribution: all ${checked} citable surfaces carry both the name and ORCID ${ORCID}`)
-process.exit(bad ? 1 : 0)
+if (licenceBad) console.log(`✗ attribution: ${licenceBad} citable surface(s) name a licence other than package.json's ${LICENCE}`)
+process.exit(bad || licenceBad ? 1 : 0)
