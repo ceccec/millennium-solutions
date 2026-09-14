@@ -1,5 +1,5 @@
 {
-  "produced": "f1526e454",
+  "produced": "7ceeb5819",
   "method": "recomputed from git history of src/proof/discovered.json and the ledger itself; re-runnable with `npm run forensic`",
   "establishes": "what changed, when, in which commit, and the reason recorded at the time",
   "doesNotEstablish": [
@@ -7,9 +7,9 @@
     "authorship beyond the git author field (every commit here carries the repository owner)"
   ],
   "ledgerNow": {
-    "entries": 2543,
-    "carried": 435,
-    "withdrawn": 1489,
+    "entries": 2548,
+    "carried": 434,
+    "withdrawn": 1495,
     "standing": 619
   },
   "chainRecomputed": {
@@ -88,12 +88,12 @@
       443
     ],
     [
-      "revoked in place: circular by construction AND dependent on the removed lexical gate.",
-      12
+      "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or rena",
+      16
     ],
     [
-      "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or rena",
-      11
+      "revoked in place: circular by construction AND dependent on the removed lexical gate.",
+      12
     ],
     [
       "revoked in place: circular by construction — the test defines the answer it checks, proving a de",
@@ -106,8 +106,12 @@
     [
       "revoked in place: it asserts adjudicate('we prove all seven').verdict === 'REFUTED'. The removed",
       1
+    ],
+    [
+      "carried: this key was sealed from a theorem no longer in src/proof. lean_coin_the_digits_are_ten",
+      1
     ]
   ],
   "totalStateChangingCommits": 573,
-  "address": "802cc79c-9cca-8a47-959a-029deb8f5dbb"
+  "address": "158f46c2-017e-8a94-bcc4-353a67d20c7c"
 }

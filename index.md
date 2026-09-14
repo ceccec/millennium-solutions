@@ -21,8 +21,8 @@ last because the orbit never reaches it.
   <sub>SEALED · `8a4b7616-bc25-8fb3-bc42-b0b8e606da96`</sub>
 - 619 of those 628 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 9 close by rfl and are declarations.
   <sub>SEALED · `4aaa302d-a672-8210-8f65-39e2a3026316`</sub>
-- 679 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `84a3c3c6-2e9f-83ad-ad07-341527db7383`</sub>
+- 684 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `a7d42c45-3ec9-827f-a0eb-598d3584c5cc`</sub>
 
 ## 2 · The ring
 
@@ -45,10 +45,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 2543 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `a734dac2-1a07-8b91-b0d4-40f517345194`</sub>
-- The count is 2543, which is 317 octaves and 7 over — the octave is a target the theorems earn, never a quota they are invented to fill.
-  <sub>SEALED · `aeacbdf8-4162-8275-aa83-ca675e985558`</sub>
+- The ledger records 2548 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `6ff7175a-68df-8828-9a61-c340e141692f`</sub>
+- The count is 2548, which is 318 octaves and 4 over — the octave is a target the theorems earn, never a quota they are invented to fill.
+  <sub>SEALED · `e550bc41-24b1-89ae-96bb-02741dc8090f`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -187,20 +187,20 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 2,543 — 317 octaves and 7 over |
+| ledger entries | 2,548 — 318 octaves and 4 over |
 | standing — carries its own proof | **619** |
-| carried — withdrawn on its own evidence, proved by a live theorem | **435** |
-| withdrawn — nothing proves it | 1,489 |
-| proved in total | **1054** of 2,543 |
+| carried — withdrawn on its own evidence, proved by a live theorem | **434** |
+| withdrawn — nothing proves it | 1,495 |
+| proved in total | **1053** of 2,548 |
 | standing keys → distinct theorems | 619 sealed, 0 of them keyed twice, 0 unresolvable |
 | Lean files · theorems | 32 · 619 theorems (closed by exhaustion) + 9 rfl declarations, all axiom-free |
 | proved `by decide` | 619 of 628 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
-**On `carried`.** 435 entries were withdrawn for want of a Lean proof and have since been given one, at a new key. Nothing is un-revoked: the original's own evidence is still a TypeScript test, and rewriting its status would erase the fact that it did not hold on what it had. The record says both — withdrawn on its own evidence, standing through the theorem that carries it.
+**On `carried`.** 434 entries were withdrawn for want of a Lean proof and have since been given one, at a new key. Nothing is un-revoked: the original's own evidence is still a TypeScript test, and rewriting its status would erase the fact that it did not hold on what it had. The record says both — withdrawn on its own evidence, standing through the theorem that carries it.
 
-**Why the withdrawn were withdrawn.** 1,386 no Lean proof · 457 tested the removed lexical gate · 60 other · 11 its Lean source was deleted or renamed · 10 circular by construction. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
+**Why the withdrawn were withdrawn.** 1,386 no Lean proof · 457 tested the removed lexical gate · 60 other · 16 its Lean source was deleted or renamed · 10 circular by construction. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
 
 **What verification costs.** Proving the set touches all 16,384 leaves; verifying membership afterwards touches 14 — one sibling per level. That is **1,170× less work**, exactly, and the factor grows with the set because N/log N grows. Wall-clock varies with the machine and is left in the build output rather than pinned here. It is not sub-nanosecond and nothing here is: the advantage is a smaller exponent, not a faster clock. The counting is proved in `speed.lean`.
 
@@ -216,4 +216,4 @@ because no test was written that would seal them.
 
 ---
 
-*17 claims, all verified · 619 Lean theorems · 2543 ledger entries · trial root `3c6fa12a-9a38-8b93-a4e3-a833970b0290` · integrity, not truth · 0/7*
+*17 claims, all verified · 619 Lean theorems · 2548 ledger entries · trial root `fe7047f9-d595-8601-8344-7815b2ca1626` · integrity, not truth · 0/7*

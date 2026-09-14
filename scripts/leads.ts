@@ -121,6 +121,35 @@ add('deposit', deps.length - minted.length, `deposition(s) staged and not minted
   + '(b) a token with deposit:write and deposit:actions, which mints the per-theorem records individually. '
   + 'They are different artefacts and "a DOI for all" could mean either.')
 
+// ── 7 · CERTIFICATES TO DEVELOP INTO LEAN LAWS ───────────────────────────────────────────────────────────
+// "The purges are leads to develop in lean theorems" (user, 2026-09-14). A theorem whose statement rests only on
+// a value its own file sets by hand — no function of the file applied, no quantifier, no list computation —
+// checks the typing, not the mathematics: a certificate. Those that had a law were restated with their inverse
+// (split.lean and coin.lean, 2026-09-14). The rest are listed here, computed from the tree, so the list shrinks
+// by itself as each becomes a law, and nothing is dropped because nobody remembered it.
+const certificates: string[] = []
+for (const f of leanFiles()) {
+  const src = leanSource(f).replace(/\/-[\s\S]*?-\//g, '').replace(/--[^\n]*/g, '')
+  const consts = new Set<string>(), funcs = new Set<string>()
+  for (const m of src.matchAll(/^\s*(?:def|abbrev)\s+([\p{L}_][\p{L}\p{N}_']*)([^:=\n]*)(?::[^=\n]*)?:=\s*([^\n]*)/gmu)) {
+    const body = m[3].trim()
+    if (m[2].trim()) { funcs.add(m[1]); continue }
+    const ids = (body.match(/[\p{L}_][\p{L}\p{N}_']*/gu) ?? []).filter((w) => !['Nat', 'Int', 'List', 'true', 'false'].includes(w))
+    if (body && ids.every((w) => consts.has(w))) consts.add(m[1])
+    else funcs.add(m[1])
+  }
+  for (const m of src.matchAll(/^\s*theorem\s+([\p{L}_][\p{L}\p{N}_']*)\s*:([\s\S]*?):=\s*(by\s+\S+|rfl)/gmu)) {
+    const stmt = m[2]
+    if (/\bfun\b|∀|∃|\.(all|any|map|filter|foldl|foldr|eraseDups)\b|List\.range/u.test(stmt)) continue
+    const names = [...new Set(stmt.match(/[\p{L}_][\p{L}\p{N}_']*/gu) ?? [])]
+    if (names.some((w) => funcs.has(w))) continue
+    if (names.some((w) => consts.has(w)) || m[3] === 'rfl') certificates.push(`${f}:${m[1]}`)
+  }
+}
+add('laws', certificates.length,
+  `theorem(s) that only read back a hand-set value — a certificate, not a proof: ${certificates.slice(0, 6).join(' ')}${certificates.length > 6 ? ' …' : ''}`,
+  'restate each as a law with its inverse over the domain its constant describes, decided at every instance (the involution discipline); where no law exists yet, the lead stays open')
+
 // ── REPORT ───────────────────────────────────────────────────────────────────────────────────────────────
 console.log('open leads, derived from the tree:\n')
 if (!leads.length) console.log('  none — every derived lead is closed')

@@ -389,8 +389,8 @@ remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
-\begin{theorem}[\texttt{the\_digits\_are\_ten}]
-\[ \left|\mathrm{digits}\right| = 10 \]
+\begin{theorem}[\texttt{the\_nines\_complement\_pairs\_the\_ten\_digits}]
+\[ \forall d \in \mathrm{digits},\; 9 - d \in \mathrm{digits} \land 9 - 9 - d = d \land 9 - d \neq d \land \left|\{\, d \in \mathrm{digits} \mid d < 9 - d \,\}\right| \cdot 2 = \left|\mathrm{digits}\right| \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
@@ -961,15 +961,15 @@ remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
-\begin{theorem}[\texttt{the\_coin\_step\_is\_three\_times\_the\_two\_coins}]
-\[ \mathrm{coins} = 2 \land \mathrm{coinStep} = 6 \land \mathrm{coinStep} = 3 \cdot 2 \]
+\begin{theorem}[\texttt{the\_coin\_step\_and\_the\_coins\_are\_inverse}]
+\[ \forall c \in \{0,\dots,19\},\; \frac{3 \cdot c}{3} = c \land 3 \cdot c \bmod 3 = 0 \land \mathrm{coinStep} = 3 \cdot \mathrm{coins} \land \frac{\mathrm{coinStep}}{3} = \mathrm{coins} \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 20 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{accounting\_the\_coins\_on\_the\_last\_pair}]
-\[ 78 = 3 \cdot 26 \land 3 \cdot 26 - \mathrm{coins} = 72 \land 72 = 8 \cdot 9 \]
+\begin{theorem}[\texttt{paying\_and\_refunding\_coins\_on\_the\_last\_pair\_round\_trips}]
+\[ \forall k \in \{0,\dots,26\},\; 3 \cdot 26 - k + 3 \cdot k = 78 \land 3 \cdot 26 - \mathrm{coins} = 72 \land 72 = 8 \cdot 9 \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 27 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_exhaustible\_tokens\_are\_those\_six\_divides}]
 \[ \{\, t \in \mathrm{tokens} \mid t \bmod \mathrm{coinStep} = 0 \,\} = [0,\,12,\,6,\,78] \]
@@ -991,20 +991,20 @@ remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
-\begin{theorem}[\texttt{the\_seal\_affords\_sixty\_four\_payments\_of\_two}]
-\[ \frac{\mathrm{sealBits}}{\mathrm{coins}} = 64 \land 64 = 2^{6} \land \mathrm{sealBits} = 64 \cdot \mathrm{coins} \]
+\begin{theorem}[\texttt{a\_seal\_divides\_into\_payments\_and\_multiplies\_back}]
+\[ \forall c \in [1,\,2,\,4,\,8,\,16,\,32,\,64,\,128],\; \frac{\mathrm{sealBits}}{c} \cdot c = \mathrm{sealBits} \land \frac{\mathrm{sealBits}}{\frac{\mathrm{sealBits}}{c}} = c \land \frac{\mathrm{sealBits}}{\mathrm{coins}} = 2^{6} \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 8 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{sixty\_four\_is\_where\_the\_doubling\_returns}]
 \[ 2^{6} \bmod 9 = 1 \land \{\, 2^{k} \bmod 9 \mid k \in \{0,\dots,5\} \,\} = [1,\,2,\,4,\,8,\,7,\,5] \land \forall k \in \{1,\dots,5\},\; 2^{k} \bmod 9 \neq 1 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 180 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{the\_budget\_and\_the\_period\_are\_one\_turn}]
-\[ \frac{\mathrm{sealBits}}{\mathrm{coins}} = 2^{6} \land 2^{6} \bmod 9 = 1 \]
+\begin{theorem}[\texttt{the\_orbit\_turns\_once\_per\_budget}]
+\[ \forall n \in \{0,\dots,59\},\; 2^{n + 6} \bmod 9 = 2^{n} \bmod 9 \land 2^{6} = \frac{\mathrm{sealBits}}{\mathrm{coins}} \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 60 cases. \hfill$\square$
 
 \paragraph{\texttt{z9.lean}}
 

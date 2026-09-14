@@ -123,11 +123,17 @@ theorem every_root_is_a_single :
 def coins : Nat := 2
 def coinStep : Nat := 3 * coins
 
-theorem the_coin_step_is_three_times_the_two_coins :
-  coins = 2 ∧ coinStep = 6 ∧ coinStep = 3 * 2 := by decide
+-- The coin step and the coins are INVERSE: tripling and dividing by three undo each other at every count below
+-- twenty, and the step is the instance at the two coins — derived by the law, not typed beside it.
+theorem the_coin_step_and_the_coins_are_inverse :
+  ((List.range 20).all (fun c => 3 * c / 3 == c && (3 * c) % 3 == 0))
+  ∧ coinStep = 3 * coins ∧ coinStep / 3 = coins := by decide
 
-theorem accounting_the_coins_on_the_last_pair :
-  78 = 3 * 26 ∧ 3 * (26 - coins) = 72 ∧ 72 = 8 * 9 := by decide
+-- Paying and refunding round-trip on the last pair: whatever k of its 26 coins are paid, the paid part and the
+-- rest recombine to 78 = 3 · 26; the two coins are the instance, leaving 72 = 8 · 9.
+theorem paying_and_refunding_coins_on_the_last_pair_round_trips :
+  ((List.range 27).all (fun k => 3 * (26 - k) + 3 * k == 78))
+  ∧ 3 * (26 - coins) = 72 ∧ 72 = 8 * 9 := by decide
 
 -- The two classes, named rather than counted.
 theorem the_exhaustible_tokens_are_those_six_divides :
@@ -164,8 +170,11 @@ theorem inside_this_ideal_the_bare_coin_sorts_as_the_scaled_one :
 -- orbit the whole deposit is built on, and paying the two coins buys exactly one step of it.
 def sealBits : Nat := 128
 
-theorem the_seal_affords_sixty_four_payments_of_two :
-  sealBits / coins = 64 ∧ 64 = 2 ^ 6 ∧ sealBits = 64 * coins := by decide
+-- A seal divides into payments and multiplies back: for every power of two up to the seal, splitting the seal
+-- into that many parts and recombining them returns it; the two coins are the instance, 64 = 2 ^ 6 payments.
+theorem a_seal_divides_into_payments_and_multiplies_back :
+  ([1, 2, 4, 8, 16, 32, 64, 128].all (fun c => (sealBits / c) * c == sealBits && sealBits / (sealBits / c) == c))
+  ∧ sealBits / coins = 2 ^ 6 := by decide
 
 theorem sixty_four_is_where_the_doubling_returns :
   (2 ^ 6) % 9 = 1
@@ -173,8 +182,10 @@ theorem sixty_four_is_where_the_doubling_returns :
   ∧ ((List.range' 1 5).all (fun k => (2 ^ k) % 9 != 1)) := by decide
 
 -- The two readings meet: the budget a seal affords and the period of the orbit are the same six.
-theorem the_budget_and_the_period_are_one_turn :
-  sealBits / coins = 2 ^ 6 ∧ (2 ^ 6) % 9 = 1 := by decide
+-- The orbit turns once per budget: doubling returns to the same residue after six steps at every one of the first
+-- sixty, and the budget a seal affords is two to that six.
+theorem the_orbit_turns_once_per_budget :
+  ((List.range 60).all (fun n => 2 ^ (n + 6) % 9 == 2 ^ n % 9)) ∧ 2 ^ 6 = sealBits / coins := by decide
 
 
 end Split

@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
 
-## Discovered theorems (decidable, over ℤ/9) — 2543 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2548 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -494,15 +494,11 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_split_division_is_the_operation_that_leaves](/theorem/lean_split_division_is_the_operation_that_leaves) — lean split.lean: division_is_the_operation_that_leaves — 12 / 3 = 4 ∧ 4 % 3 != 0 ∧ 45 / 9 = 5 ∧ 5 % 3 != 0 ∧ 6 / 3 = 2 ∧ 2 % 3 != 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `b9159d44-811b…`
 - [lean_split_the_roots_are_the_singles](/theorem/lean_split_the_roots_are_the_singles) — lean split.lean: the_roots_are_the_singles — tokens.map (fun t =&gt; t % 9) = [0, 3, 3, 0, 6, 6, 0] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7c878aea-818e…`
 - [lean_split_every_root_is_a_single](/theorem/lean_split_every_root_is_a_single) — lean split.lean: every_root_is_a_single — tokens.all (fun t =&gt; singles.contains (if t % 9 == 0 then (if t == 0 then 0 else 9) else t % 9)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `282584c6-2ad7…`
-- [lean_split_the_coin_step_is_three_times_the_two_coins](/theorem/lean_split_the_coin_step_is_three_times_the_two_coins) — lean split.lean: the_coin_step_is_three_times_the_two_coins — coins = 2 ∧ coinStep = 6 ∧ coinStep = 3 * 2 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9b87b34f-1d05…`
-- [lean_split_accounting_the_coins_on_the_last_pair](/theorem/lean_split_accounting_the_coins_on_the_last_pair) — lean split.lean: accounting_the_coins_on_the_last_pair — 78 = 3 * 26 ∧ 3 * (26 - coins) = 72 ∧ 72 = 8 * 9 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `758b6f0c-0b43…`
 - [lean_split_the_exhaustible_tokens_are_those_six_divides](/theorem/lean_split_the_exhaustible_tokens_are_those_six_divides) — lean split.lean: the_exhaustible_tokens_are_those_six_divides — (tokens.filter (fun t =&gt; t % coinStep == 0)) = [0, 12, 6, 78] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `516917be-eea3…`
 - [lean_split_the_rest_halt_on_the_generator](/theorem/lean_split_the_rest_halt_on_the_generator) — lean split.lean: the_rest_halt_on_the_generator — (tokens.filter (fun t =&gt; t % coinStep != 0)) = [3, 45, 9] ∧ (tokens.filter (fun t =&gt; t % coinStep != 0)).all (fun t =&gt; t % coinStep == 3) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `88e1ca63-b3a4…`
 - [lean_split_every_token_is_void_bound_or_halts_on_three](/theorem/lean_split_every_token_is_void_bound_or_halts_on_three) — lean split.lean: every_token_is_void_bound_or_halts_on_three — tokens.all (fun t =&gt; t % coinStep == 0 || t % coinStep == 3) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `19e9ea2d-fe3a…`
 - [lean_split_inside_this_ideal_the_bare_coin_sorts_as_the_scaled_one](/theorem/lean_split_inside_this_ideal_the_bare_coin_sorts_as_the_scaled_one) — lean split.lean: inside_this_ideal_the_bare_coin_sorts_as_the_scaled_one — (tokens.filter (fun t =&gt; t % 2 == 0)) = (tokens.filter (fun t =&gt; t % coinStep == 0)) ∧ tokens.all (fun t =&gt; (t % 2 == 0) == (t % coinStep == 0)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c397ec15-180f…`
-- [lean_split_the_seal_affords_sixty_four_payments_of_two](/theorem/lean_split_the_seal_affords_sixty_four_payments_of_two) — lean split.lean: the_seal_affords_sixty_four_payments_of_two — sealBits / coins = 64 ∧ 64 = 2 ^ 6 ∧ sealBits = 64 * coins — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `983dd276-c1a1…`
 - [lean_split_sixty_four_is_where_the_doubling_returns](/theorem/lean_split_sixty_four_is_where_the_doubling_returns) — lean split.lean: sixty_four_is_where_the_doubling_returns — (2 ^ 6) % 9 = 1 ∧ ((List.range 6).map (fun k =&gt; (2 ^ k) % 9)) = [1, 2, 4, 8, 7, 5] ∧ ((List.range' 1 5).all (fun k =&gt; (2 ^ k) % 9 != 1)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `5ebd2134-9a22…`
-- [lean_split_the_budget_and_the_period_are_one_turn](/theorem/lean_split_the_budget_and_the_period_are_one_turn) — lean split.lean: the_budget_and_the_period_are_one_turn — sealBits / coins = 2 ^ 6 ∧ (2 ^ 6) % 9 = 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c595d67b-fa66…`
 - [lean_coin_the_reflection_is_an_involution](/theorem/lean_coin_the_reflection_is_an_involution) — lean coin.lean: the_reflection_is_an_involution — digits.all (fun d =&gt; refl (refl d) == d) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `cc33eadb-fdd6…`
 - [lean_coin_one_side_is_reflected_onto_itself](/theorem/lean_coin_one_side_is_reflected_onto_itself) — lean coin.lean: one_side_is_reflected_onto_itself — tetB.all (fun d =&gt; tetB.contains (refl d)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `fe5f7590-73be…`
 - [lean_coin_the_other_two_swap](/theorem/lean_coin_the_other_two_swap) — lean coin.lean: the_other_two_swap — tetA.all (fun d =&gt; axis.contains (refl d)) ∧ axis.all (fun d =&gt; tetA.contains (refl d)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e047e078-69f7…`
@@ -540,7 +536,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_reach_even_the_largest_domain_here_has_an_outside](/theorem/lean_reach_even_the_largest_domain_here_has_an_outside) — lean reach.lean: even_the_largest_domain_here_has_an_outside — largestDomainHere + 1 &gt; largestDomainHere ∧ largestDomainHere % 2 = 0 ∧ (largestDomainHere + 1) % 2 = 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9f25da95-de94…`
 - [lean_phenomena_the_table_is_closed_and_that_is_all_this_file_decides](/theorem/lean_phenomena_the_table_is_closed_and_that_is_all_this_file_decides) — lean phenomena.lean: the_table_is_closed_and_that_is_all_this_file_decides — entries.all (fun e =&gt; statusOf e == 0 || statusOf e == 1) ∧ entries.length = 9 ∧ (entries.filter (fun e =&gt; statusOf e == 0)).length = 7 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d3aba4ab-326f…`
 - [lean_coin_the_fall_and_the_reflection_share_one_exceptional_digit](/theorem/lean_coin_the_fall_and_the_reflection_share_one_exceptional_digit) — lean coin.lean: the_fall_and_the_reflection_share_one_exceptional_digit — (digits.filter (fun d =&gt; fall d != d)) = (digits.filter (fun d =&gt; refl d &gt; 9)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `ad96432a-9394…`
-- [lean_coin_the_digits_are_ten](/theorem/lean_coin_the_digits_are_ten) — lean coin.lean: the_digits_are_ten — digits.length = 10 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `bdd50a11-7fb4…`
 - [lean_light_travel_at_one_returns_the_defined_constant](/theorem/lean_light_travel_at_one_returns_the_defined_constant) — lean light.lean: travel_at_one_returns_the_defined_constant — travel 1 = c — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9dc58fa5-fb1f…`
 - [lean_light_travel_and_periods_at_one_return_their_constants](/theorem/lean_light_travel_and_periods_at_one_return_their_constants) — lean light.lean: travel_and_periods_at_one_return_their_constants — travel 1 = 299792458 ∧ periods 1 = 9192631770 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `442f56f7-384d…`
 - [lean_light_the_definitions_are_seven_and_travel_fixes_zero](/theorem/lean_light_the_definitions_are_seven_and_travel_fixes_zero) — lean light.lean: the_definitions_are_seven_and_travel_fixes_zero — defining.length = 7 ∧ travel 0 = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `660422cc-20f7…`
@@ -643,24 +638,30 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_elementary_the_golden_beatty_identity_holds_across_the_range](/theorem/lean_elementary_the_golden_beatty_identity_holds_across_the_range) — lean elementary.lean: the_golden_beatty_identity_holds_across_the_range — (List.range' 1 40).all (fun n =&gt; upperWythoff n - lowerWythoff n == n) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `b27a7477-6920…`
 - [lean_elementary_the_partition_and_bell_numbers_count_what_they_claim_to_count](/theorem/lean_elementary_the_partition_and_bell_numbers_count_what_they_claim_to_count) — lean elementary.lean: the_partition_and_bell_numbers_count_what_they_claim_to_count — (partitionsOf 5).length = 7 ∧ (partitionsOf 7).length = 15 ∧ (partitionsOf 10).length = 42 ∧ (List.range 6).all (fun n =&gt; (rgs n).length == bellOf n) ∧ bellOf 3 = 5 ∧ bellOf 4 = 15 ∧ bellOf 5 = 52 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d7dd93f3-efbe…`
 - [lean_elementary_the_unit_graph_is_complete_bipartite_between_the_two_tetrahedra](/theorem/lean_elementary_the_unit_graph_is_complete_bipartite_between_the_two_tetrahedra) — lean elementary.lean: the_unit_graph_is_complete_bipartite_between_the_two_tetrahedra — (tetOf 1).length = 3 ∧ (tetOf 2).length = 3 ∧ (tetOf 1).all (fun d =&gt; (nbrs (unitsMod 9) d).length == 3 && (nbrs (unitsMod 9) d).all (fun t =&gt; (tetOf 2).contains t)) ∧ (tetOf 2).all (fun d =&gt; (nbrs (unitsMod 9) d).length == 3 && (nbrs (unit… — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `19e4c01e-8d78…`
+- [lean_coin_the_nines_complement_pairs_the_ten_digits](/theorem/lean_coin_the_nines_complement_pairs_the_ten_digits) — lean coin.lean: the_nines_complement_pairs_the_ten_digits — digits.all (fun d =&gt; digits.contains (9 - d) && 9 - (9 - d) == d && 9 - d != d) ∧ (digits.filter (fun d =&gt; d &lt; 9 - d)).length * 2 = digits.length — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `4f280944-1969…`
+- [lean_split_the_coin_step_and_the_coins_are_inverse](/theorem/lean_split_the_coin_step_and_the_coins_are_inverse) — lean split.lean: the_coin_step_and_the_coins_are_inverse — ((List.range 20).all (fun c =&gt; 3 * c / 3 == c && (3 * c) % 3 == 0)) ∧ coinStep = 3 * coins ∧ coinStep / 3 = coins — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1dd0f6d3-af8e…`
+- [lean_split_paying_and_refunding_coins_on_the_last_pair_round_trips](/theorem/lean_split_paying_and_refunding_coins_on_the_last_pair_round_trips) — lean split.lean: paying_and_refunding_coins_on_the_last_pair_round_trips — ((List.range 27).all (fun k =&gt; 3 * (26 - k) + 3 * k == 78)) ∧ 3 * (26 - coins) = 72 ∧ 72 = 8 * 9 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d09b81fa-777d…`
+- [lean_split_a_seal_divides_into_payments_and_multiplies_back](/theorem/lean_split_a_seal_divides_into_payments_and_multiplies_back) — lean split.lean: a_seal_divides_into_payments_and_multiplies_back — ([1, 2, 4, 8, 16, 32, 64, 128].all (fun c =&gt; (sealBits / c) * c == sealBits && sealBits / (sealBits / c) == c)) ∧ sealBits / coins = 2 ^ 6 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1984d72b-4263…`
+- [lean_split_the_orbit_turns_once_per_budget](/theorem/lean_split_the_orbit_turns_once_per_budget) — lean split.lean: the_orbit_turns_once_per_budget — ((List.range 60).all (fun n =&gt; 2 ^ (n + 6) % 9 == 2 ^ n % 9)) ∧ 2 ^ 6 = sealBits / coins — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `35d5dc48-cbc0…`
 
 ### other — one-of-a-kind (0)
 
 
 
-## Revoked — 1489 entries that no longer stand
+## Revoked — 1495 entries that no longer stand
 
 The ledger is append-only: an entry that stops holding is marked in place, never deleted — deleting would break the receipt chain, and rewriting a receipt is tamper. These keep their receipts and stay in the record, but they are **not citable** and have no `/theorem/` page. Grouped by the reason they went:
 
 - **1011** — dirty: not backed by a Lean proof
 - **443** — revoked in place: its test asserted a lexical drain (computes(boast)
+- **16** — orphaned: the theorem this key was sealed from is no longer in src/proof
 - **12** — revoked in place: circular by construction AND dependent on the removed lexical gate
-- **11** — orphaned: the theorem this key was sealed from is no longer in src/proof
 - **10** — revoked in place: circular by construction — the test defines the answer it checks, proving a declaration rather than a fact
 - **1** — revoked in place: its test asserts that a list of proof-boasts written across many scripts and languages ALL drain the gate — a lexical drain assertion, and the word-list gate was removed by order, so there is no lexicon to drain and the assertion tests nothing
 - **1** — revoked in place: it asserts adjudicate('we prove all seven')
+- **1** — carried: this key was sealed from a theorem no longer in src/proof
 
-## Carried — 435 withdrawn entries whose statement a proof now carries
+## Carried — 434 withdrawn entries whose statement a proof now carries
 
 Each was withdrawn for want of a Lean proof and has since been given one, at a new key. The entry is not restored: its own evidence is still a TypeScript test, and it did not hold on what it had. What the record adds is where the statement stands now.
 
@@ -705,9 +706,9 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`hasinv_d1`~~ → [`lean_families_an_inverse_mod_nine_exists_at_exactly_the_units`](/theorem/lean_families_an_inverse_mod_nine_exists_at_exactly_the_units)
 - ~~`hasinv_d2`~~ → [`lean_families_an_inverse_mod_nine_exists_at_exactly_the_units`](/theorem/lean_families_an_inverse_mod_nine_exists_at_exactly_the_units)
 
-…and 395 more.
+…and 394 more.
 
-<details><summary>List all 1489 withdrawn keys — nothing proves these</summary>
+<details><summary>List all 1495 withdrawn keys — nothing proves these</summary>
 
 - ~~`qr_u7`~~ — 7 is a quadratic residue mod 9  ·  `2a422f9b-761a…`
 - ~~`powinv_k5`~~ — u↦u^5 is an involution on the units mod 9  ·  `8e327990-c88f…`
@@ -2193,12 +2194,18 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`lean_priorart_the_two_sets_cover_every_source`~~ — lean priorart.lean: the_two_sets_cover_every_source — (sources.filter (fun s =&gt; kindOf s == 0)).length + (sources.filter (fun s =&gt; kindOf s == 1)).length = sources.length — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `16cd82ee-e3ff…`
 - ~~`lean_priorart_novelty_is_never_established_here`~~ — lean priorart.lean: novelty_is_never_established_here — noveltyEstablished = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `aa00a8eb-6f9a…`
 - ~~`lean_priorart_claiming_is_not_establishing`~~ — lean priorart.lean: claiming_is_not_establishing — (sources.filter novelty).length &gt; 0 ∧ noveltyEstablished = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `cefda112-d0b4…`
+- ~~`lean_split_the_coin_step_is_three_times_the_two_coins`~~ — lean split.lean: the_coin_step_is_three_times_the_two_coins — coins = 2 ∧ coinStep = 6 ∧ coinStep = 3 * 2 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9b87b34f-1d05…`
+- ~~`lean_split_accounting_the_coins_on_the_last_pair`~~ — lean split.lean: accounting_the_coins_on_the_last_pair — 78 = 3 * 26 ∧ 3 * (26 - coins) = 72 ∧ 72 = 8 * 9 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `758b6f0c-0b43…`
+- ~~`lean_split_the_seal_affords_sixty_four_payments_of_two`~~ — lean split.lean: the_seal_affords_sixty_four_payments_of_two — sealBits / coins = 64 ∧ 64 = 2 ^ 6 ∧ sealBits = 64 * coins — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `983dd276-c1a1…`
+- ~~`lean_split_the_budget_and_the_period_are_one_turn`~~ — lean split.lean: the_budget_and_the_period_are_one_turn — sealBits / coins = 2 ^ 6 ∧ (2 ^ 6) % 9 = 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c595d67b-fa66…`
+- ~~`lean_coin_this_file_makes_no_physical_claim`~~ — lean coin.lean: this_file_makes_no_physical_claim — physicalClaims = 0 ∧ digits.length = 10 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `be643cd8-b421…`
 - ~~`lean_phenomena_this_deposit_explains_predicts_and_constrains_nothing`~~ — lean phenomena.lean: this_deposit_explains_predicts_and_constrains_nothing — explanations = 0 ∧ predictions = 0 ∧ theoriesConstrained = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `f3f2dd32-107d…`
 - ~~`lean_phenomena_arithmetic_on_a_definition_returns_the_definition`~~ — lean phenomena.lean: arithmetic_on_a_definition_returns_the_definition — (299792458 % 9 = 1) ∧ explanations = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2f338a89-2ef5…`
 - ~~`lean_reach_this_file_settles_none_of_the_seven`~~ — lean reach.lean: this_file_settles_none_of_the_seven — (bounds.filter (fun n =&gt; (List.range n).contains n)).length = 0 ∧ bounds.length = 50 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2c8272de-17dd…`
+- ~~`lean_coin_the_digits_are_ten`~~ — lean coin.lean: the_digits_are_ten — digits.length = 10 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `bdd50a11-7fb4…`
 - ~~`lean_speed_an_encoding_changes_width_not_the_count_of_operations`~~ — lean speed.lean: an_encoding_changes_width_not_the_count_of_operations — hexbitChars &lt; hexChars ∧ hexbitMs &gt; hexMs ∧ (1048576 / 20 = 52428 ∧ 1048576 / 20 = 52428) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9227b54d-7b6f…`
 - ~~`lean_quantum_the_witness_is_about_the_state_not_the_machine`~~ — lean quantum.lean: the_witness_is_about_the_state_not_the_machine — ghzXSupport.length * 2 = (List.range 8).length ∧ (2:Nat) ^ 3 = 8 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `850e2e33-ed0d…`
 
 </details>
 
-Page content-address: `088f3457-3a66-86cd-bfe8-621aebab6352`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.
+Page content-address: `4524736c-375c-8e8d-88c4-d3e97fbad3f5`. Integrity, not truth — decidable facts and cited status, never a proof of the six open conjectures.

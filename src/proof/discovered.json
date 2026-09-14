@@ -17499,12 +17499,16 @@
   {
     "key": "lean_split_the_coin_step_is_three_times_the_two_coins",
     "name": "lean split.lean: the_coin_step_is_three_times_the_two_coins — coins = 2 ∧ coinStep = 6 ∧ coinStep = 3 * 2 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "9b87b34f-1d05-8b8c-b1df-35651fcf5da9"
+    "receipt": "9b87b34f-1d05-8b8c-b1df-35651fcf5da9",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_split_accounting_the_coins_on_the_last_pair",
     "name": "lean split.lean: accounting_the_coins_on_the_last_pair — 78 = 3 * 26 ∧ 3 * (26 - coins) = 72 ∧ 72 = 8 * 9 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "758b6f0c-0b43-8808-ab33-9680674d78b2"
+    "receipt": "758b6f0c-0b43-8808-ab33-9680674d78b2",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_split_the_exhaustible_tokens_are_those_six_divides",
@@ -17529,7 +17533,9 @@
   {
     "key": "lean_split_the_seal_affords_sixty_four_payments_of_two",
     "name": "lean split.lean: the_seal_affords_sixty_four_payments_of_two — sealBits / coins = 64 ∧ 64 = 2 ^ 6 ∧ sealBits = 64 * coins — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "983dd276-c1a1-88ba-9892-6904be2c16f4"
+    "receipt": "983dd276-c1a1-88ba-9892-6904be2c16f4",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_split_sixty_four_is_where_the_doubling_returns",
@@ -17539,7 +17545,9 @@
   {
     "key": "lean_split_the_budget_and_the_period_are_one_turn",
     "name": "lean split.lean: the_budget_and_the_period_are_one_turn — sealBits / coins = 2 ^ 6 ∧ (2 ^ 6) % 9 = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "c595d67b-fa66-8f5f-8077-a3a0c8432c3b"
+    "receipt": "c595d67b-fa66-8f5f-8077-a3a0c8432c3b",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_coin_the_reflection_is_an_involution",
@@ -17790,7 +17798,9 @@
   {
     "key": "lean_coin_the_digits_are_ten",
     "name": "lean coin.lean: the_digits_are_ten — digits.length = 10 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "bdd50a11-7fb4-82c4-b8ee-d588c40b6cc2"
+    "receipt": "bdd50a11-7fb4-82c4-b8ee-d588c40b6cc2",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_light_travel_at_one_returns_the_defined_constant",
@@ -18419,5 +18429,30 @@
     "key": "lean_elementary_the_unit_graph_is_complete_bipartite_between_the_two_tetrahedra",
     "name": "lean elementary.lean: the_unit_graph_is_complete_bipartite_between_the_two_tetrahedra — (tetOf 1).length = 3 ∧ (tetOf 2).length = 3 ∧ (tetOf 1).all (fun d => (nbrs (unitsMod 9) d).length == 3 && (nbrs (unitsMod 9) d).all (fun t => (tetOf 2).contains t)) ∧ (tetOf 2).all (fun d => (nbrs (unitsMod 9) d).length == 3 && (nbrs (unit… — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "19e4c01e-8d78-8ee5-8003-bcbbce30ce79"
+  },
+  {
+    "key": "lean_coin_the_nines_complement_pairs_the_ten_digits",
+    "name": "lean coin.lean: the_nines_complement_pairs_the_ten_digits — digits.all (fun d => digits.contains (9 - d) && 9 - (9 - d) == d && 9 - d != d) ∧ (digits.filter (fun d => d < 9 - d)).length * 2 = digits.length — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "4f280944-1969-89d7-951d-0861c1dae315"
+  },
+  {
+    "key": "lean_split_the_coin_step_and_the_coins_are_inverse",
+    "name": "lean split.lean: the_coin_step_and_the_coins_are_inverse — ((List.range 20).all (fun c => 3 * c / 3 == c && (3 * c) % 3 == 0)) ∧ coinStep = 3 * coins ∧ coinStep / 3 = coins — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1dd0f6d3-af8e-8fe5-8a17-5e4d06a303f8"
+  },
+  {
+    "key": "lean_split_paying_and_refunding_coins_on_the_last_pair_round_trips",
+    "name": "lean split.lean: paying_and_refunding_coins_on_the_last_pair_round_trips — ((List.range 27).all (fun k => 3 * (26 - k) + 3 * k == 78)) ∧ 3 * (26 - coins) = 72 ∧ 72 = 8 * 9 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d09b81fa-777d-8844-bfae-e43143c32ed6"
+  },
+  {
+    "key": "lean_split_a_seal_divides_into_payments_and_multiplies_back",
+    "name": "lean split.lean: a_seal_divides_into_payments_and_multiplies_back — ([1, 2, 4, 8, 16, 32, 64, 128].all (fun c => (sealBits / c) * c == sealBits && sealBits / (sealBits / c) == c)) ∧ sealBits / coins = 2 ^ 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1984d72b-4263-87d9-bfd6-70a282ac37ab"
+  },
+  {
+    "key": "lean_split_the_orbit_turns_once_per_budget",
+    "name": "lean split.lean: the_orbit_turns_once_per_budget — ((List.range 60).all (fun n => 2 ^ (n + 6) % 9 == 2 ^ n % 9)) ∧ 2 ^ 6 = sealBits / coins — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "35d5dc48-cbc0-8b91-aaaf-2976834a5f5f"
   }
 ]

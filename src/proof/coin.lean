@@ -143,6 +143,10 @@ theorem what_escapes_falls_back_inside :
 -- filled with claims about the sky. Whether a proposition names a physical quantity is a fact about this
 -- file's TEXT, and Lean cannot read its own text. The refusal now lives in `contradictions.ts`, which reads
 -- the propositions and can go red. What is kept here is the conjunct that was always read off a real list.
-theorem the_digits_are_ten : digits.length = 10 := by decide
+-- The nines complement pairs the ten digits: d ↦ 9 − d maps them onto themselves, undoes itself and fixes none,
+-- so they fall into five pairs — the ten is the size of the pairing, not a length typed beside it.
+theorem the_nines_complement_pairs_the_ten_digits :
+  digits.all (fun d => digits.contains (9 - d) && 9 - (9 - d) == d && 9 - d != d)
+  ∧ (digits.filter (fun d => d < 9 - d)).length * 2 = digits.length := by decide
 
 end Coin

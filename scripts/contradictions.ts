@@ -286,8 +286,8 @@ const PROVED: [string, RegExp, string][] = [
   // in the hundred-page paper and on their own theorem pages, and the homepage said nothing — including
   // the answer to what paying the two coins buys.
   ['the digit split is the ideal 3Z',    /multiple of 3/i,                             'split.lean every_token_is_a_multiple_of_three'],
-  ['the coin step is 3 x the two coins', new RegExp(`deducts ${split().coinStep} from the token`, 'i'), 'split.lean the_coin_step_is_three_times_the_two_coins'],
-  ['a seal buys one turn of the orbit',  /one complete turn of the orbit/i,            'split.lean the_budget_and_the_period_are_one_turn'],
+  ['the coin step is 3 x the two coins', new RegExp(`deducts ${split().coinStep} from the token`, 'i'), 'split.lean the_coin_step_and_the_coins_are_inverse'],
+  ['a seal buys one turn of the orbit',  /one complete turn of the orbit/i,            'split.lean the_orbit_turns_once_per_budget'],
 ]
 // DERIVED, so a new source cannot be added and left unmentioned. The list below is hand-written and says
 // so; this part is not. Every .lean file in src/proof must be NAMED on the front pages — coin.lean and
