@@ -15460,5 +15460,23 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "98899238-b934-8157-ae53-8b60284e56ab"
+  },
+  {
+    "key": "lean_flow_the_doubling_flow_repeats_every_six_steps",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d5dece46-994f-8c4c-a2cc-728f59529a41"
+  },
+  {
+    "key": "lean_flow_the_doubling_flow_is_its_first_six_steps",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "38c42166-8f6d-89e1-b0c4-4bfef0163552"
+  },
+  {
+    "key": "lean_flow_navier_stokes_flow_is_bounded_for_every_step",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6dec28f9-502b-86ee-8f87-d09f701ed7e7"
   }
 ]

@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). The author's own claim, that the seven are solved through involution, is stated in his name on the front page.
 
-## Discovered theorems (decidable, over ℤ/9) — 2577 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2580 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (629)
+### lean (632)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -657,6 +657,12 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
   intro), standard axioms only — checked by lean.ts  ·  `a1d55ab6-baca…`
 - [lean_speed_the_microseconds_return_from_the_nanoseconds_at_every_count](/theorem/lean_speed_the_microseconds_return_from_the_nanoseconds_at_every_count) — lean speed.lean: the_microseconds_return_from_the_nanoseconds_at_every_count — ∀ u : Nat, u * 1000 / 1000 = u — proved by the Lean kernel for every value (by
   intro), standard axioms only — checked by lean.ts  ·  `98899238-b934…`
+- [lean_flow_the_doubling_flow_repeats_every_six_steps](/theorem/lean_flow_the_doubling_flow_repeats_every_six_steps) — lean flow.lean: the_doubling_flow_repeats_every_six_steps — ∀ k : Nat, orbit (k + 6) = orbit k — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `d5dece46-994f…`
+- [lean_flow_the_doubling_flow_is_its_first_six_steps](/theorem/lean_flow_the_doubling_flow_is_its_first_six_steps) — lean flow.lean: the_doubling_flow_is_its_first_six_steps — ∀ k : Nat, orbit k = orbit (k % 6) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `38c42166-8f6d…`
+- [lean_flow_navier_stokes_flow_is_bounded_for_every_step](/theorem/lean_flow_navier_stokes_flow_is_bounded_for_every_step) — lean flow.lean: navier_stokes_flow_is_bounded_for_every_step — ∀ k : Nat, orbit k &lt; 9 ∧ span.contains (orbit k) = true — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `6dec28f9-502b…`
 
 ### other — one-of-a-kind (0)
 
@@ -2241,4 +2247,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `b3fe5a9f-cb56-8d7e-8407-35922ca264f8`. Integrity, not truth.
+Page content-address: `da2eba19-e8cf-89e5-a02e-57f3ce26d93a`. Integrity, not truth.

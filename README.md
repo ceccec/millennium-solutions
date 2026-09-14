@@ -11,12 +11,12 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 638 kernel-accepted declarations across 32 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `ab935eeb-3c6e-8296-b909-662988c0b358`</sub>
-- 625 of those 638 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 13 close by rfl and are declarations.
-  <sub>SEALED · `d99ad96a-152f-8c2f-a9fb-8553526bf5d6`</sub>
-- 713 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `e4b105b5-952f-8f03-9d59-38a411fb9817`</sub>
+- The formal layer holds 641 kernel-accepted declarations across 33 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `dbb57e34-5063-8d78-a206-4021b8dd0c2f`</sub>
+- 625 of those 641 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 16 close by rfl and are declarations.
+  <sub>SEALED · `ca68ef39-3e72-82e2-a118-905a38ce2952`</sub>
+- 716 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `61634d5b-2bf9-821d-8492-5613271238ff`</sub>
 
 ## 2 · The ring
 
@@ -39,10 +39,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 2577 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `20d842b9-73a7-8689-ba14-d864dd25263e`</sub>
-- The count is 2577, which is 322 octaves and 1 over — the octave is a target the theorems earn, never a quota they are invented to fill.
-  <sub>SEALED · `b7bfb85b-fa87-8132-b212-ee42bf396edd`</sub>
+- The ledger records 2580 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `36c898f0-711a-81ce-b468-5b315135af9c`</sub>
+- The count is 2580, which is 322 octaves and 4 over — the octave is a target the theorems earn, never a quota they are invented to fill.
+  <sub>SEALED · `33538e3a-cf2f-825b-9135-9fa436b64a0b`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -86,7 +86,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-32 Lean files in 7 wings, 638 declarations of which 629 are theorems. The prose in this section is read out of the
+33 Lean files in 7 wings, 641 declarations of which 632 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -107,6 +107,8 @@ this page; there is nowhere else to keep the description in step.
 **Elementary arithmetic** — `elementary.lean`, 33 theorem(s). the DECISION of each over a stated finite range, axiom-free, and the honest record of where the range   stops short of what the older claim asserted. prior_art_search: the results are named in every undergraduate text; no search was needed to find them. prior_art_pool: named Elementary arithmetic, decided — the claims the ledger held in TypeScript, given a kernel.
 
 **Families over the ring** — `families.lean`, 43 theorem(s). The families, quantified. Proving at scale.
+
+**The doubling flow, for every step** — `flow.lean`, 3 theorem(s). prior_art_search: literature search performed 2026-09-14, terms "powers of two modulo 9 period 6 order of 2   mod 9 Euler theorem"; prior art found and credited. prior_art_pool: bounded prior_art_own: the every-step bound of the doubling flow, stated for the Navier–Stokes theorem in index.lean
 
 **What every involution gives, and what it does not** — `involution.lean`, 8 theorem(s). transpositions, and that the number of fixed points therefore matches the parity of the set, is   classical and long predates this deposit. It is the orbit-counting argument in any first course.   What is this deposit's own here is the EXHAUSTIVE decision over ℤ/9 and the measured refusal below.
 
@@ -168,7 +170,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Recovered — claims that computed and were withdrawn for want of a proof** — `recovered.lean`, 15 theorem(s). material, credited. What is NOT prior art is that these particular statements sat WITHDRAWN in this   deposit's ledger, each recorded as "not backed by a Lean proof. Its evidence is a TypeScript test",   while every one is decidable in a line. prior_art_search: literature search performed 2026-09-05, terms "units and non-units of Z/9 multiplicative   inverses group of units modulo 9"; prior art found and credited.
 
-20 of 638 declarations carry no comment of their own and are shown here as the gap they are, not
+20 of 641 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -177,14 +179,14 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 2,577 — 322 octaves and 1 over |
-| standing — carries its own proof | **629** |
+| ledger entries | 2,580 — 322 octaves and 4 over |
+| standing — carries its own proof | **632** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **434** |
 | withdrawn — nothing proves it | 1,514 |
-| proved in total | **1063** of 2,577 |
-| standing keys → distinct theorems | 629 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 32 · 629 theorems (625 closed by exhaustion, axiom-free · 4 proved for every value on propext and Quot.sound) + 9 rfl declarations |
-| proved `by decide` | 625 of 638 |
+| proved in total | **1066** of 2,580 |
+| standing keys → distinct theorems | 632 sealed, 0 of them keyed twice, 0 unresolvable |
+| Lean files · theorems | 33 · 632 theorems (625 closed by exhaustion, axiom-free · 7 proved for every value on propext and Quot.sound) + 9 rfl declarations |
+| proved `by decide` | 625 of 641 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -223,4 +225,4 @@ whether the work restates someone earlier. [The paper](/paper) typesets every st
 
 ---
 
-*15 claims, all verified · 629 Lean theorems · 2577 ledger entries · trial root `435e524f-79b8-89d9-8ecf-3dc77ac38ae8` · integrity, not truth*
+*15 claims, all verified · 632 Lean theorems · 2580 ledger entries · trial root `105ee817-e02b-8788-8141-d3f64f4e58c3` · integrity, not truth*

@@ -18636,5 +18636,20 @@
     "key": "lean_speed_the_microseconds_return_from_the_nanoseconds_at_every_count",
     "name": "lean speed.lean: the_microseconds_return_from_the_nanoseconds_at_every_count — ∀ u : Nat, u * 1000 / 1000 = u — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
     "receipt": "98899238-b934-8157-ae53-8b60284e56ab"
+  },
+  {
+    "key": "lean_flow_the_doubling_flow_repeats_every_six_steps",
+    "name": "lean flow.lean: the_doubling_flow_repeats_every_six_steps — ∀ k : Nat, orbit (k + 6) = orbit k — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "d5dece46-994f-8c4c-a2cc-728f59529a41"
+  },
+  {
+    "key": "lean_flow_the_doubling_flow_is_its_first_six_steps",
+    "name": "lean flow.lean: the_doubling_flow_is_its_first_six_steps — ∀ k : Nat, orbit k = orbit (k % 6) — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "38c42166-8f6d-89e1-b0c4-4bfef0163552"
+  },
+  {
+    "key": "lean_flow_navier_stokes_flow_is_bounded_for_every_step",
+    "name": "lean flow.lean: navier_stokes_flow_is_bounded_for_every_step — ∀ k : Nat, orbit k < 9 ∧ span.contains (orbit k) = true — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "6dec28f9-502b-86ee-8f87-d09f701ed7e7"
   }
 ]

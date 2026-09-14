@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 638 of them across 32 files and
-7 wings; 625 close by exhaustion over a stated finite domain, 4 are proved
+(\texttt{npm run latex-gate}). There are 641 of them across 33 files and
+7 wings; 625 close by exhaustion over a stated finite domain, 7 are proved
 for every value, and the remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -778,6 +778,26 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 \[ \mathrm{settledHere} = 42 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{flow.lean}}
+
+\begin{theorem}[\texttt{the\_doubling\_flow\_repeats\_every\_six\_steps}]
+\texttt{∀ k : Nat, orbit (k + 6) = orbit k}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_doubling\_flow\_is\_its\_first\_six\_steps}]
+\texttt{∀ k : Nat, orbit k = orbit (k \% 6)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{navier\_stokes\_flow\_is\_bounded\_for\_every\_step}]
+\texttt{∀ k : Nat, orbit k < 9 ∧ span.contains (orbit k) = true}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
 
 \paragraph{\texttt{involution.lean}}
 
