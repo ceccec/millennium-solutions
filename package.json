@@ -140,7 +140,8 @@
     "covered-gate": "tsx scripts/covered-gate.ts",
     "independent": "tsx scripts/independent.ts",
     "recover": "tsx scripts/recover.ts",
-    "recover:gen": "tsx scripts/recover-gen.ts"
+    "recover:gen": "tsx scripts/recover-gen.ts",
+    "uses": "node scripts/uses.ts"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",

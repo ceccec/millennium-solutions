@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-// THE PUBLIC TRIAL — the claim "the deposit settles all seven Clay problems" put to the deposit's own
-// machinery, in the open, with receipts anyone can recompute by re-running this file.
+// THE PUBLIC TRIAL — whether the propositions in src/proof settle all seven Clay problems, put to the repository's
+// own machinery, in the open, with receipts anyone can recompute by re-running this file. It measures this
+// repository's propositions; the author's claim is his, stated in his name on the front page.
 //
 // The discipline is theorems-only: every row below is SEALED. A refusal is NOT recorded as a bare REFUTED
 // row — that leaves an unbacked assertion sitting in the record. It is recorded as a SEALED THEOREM whose
@@ -28,7 +29,10 @@ const green = (k: string) => new RegExp('theorem ' + k + '[\\s\\S]*?:= by decide
 const floor = clayFloor()
 
 /** THE CLAIM ON TRIAL, stated exactly as put. */
-const CLAIM = 'the deposit settles all seven Clay problems'
+// The propositions in src/proof, not "the deposit": the author's own deposits state his claim that the seven are
+// solved through involution, in his name, and this trial must not read as a verdict on that. What it measures is
+// whether THIS repository's propositions settle them (2026-09-14; he did not authorise any withdrawal).
+const CLAIM = 'the propositions in src/proof settle all seven Clay problems'
 
 const FINDINGS: { statement: string; test: () => boolean }[] = [
   { statement: 'finding one — all seven Clay problems carry a Lean theorem that closes by decide, with no sorry, no native_decide and no axiom: the formal layer is green for every one of the seven',
@@ -60,11 +64,15 @@ const FINDINGS: { statement: string; test: () => boolean }[] = [
   { statement: 'finding eight — the sentence recording that the widened rule drained an abstract holds: that abstract lists a settled Clay conjecture among the readings it rejects',
     test: () => /contrary readings/i.test(readFileSync('ABSTRACT.md', 'utf8')) && /settled Clay conjecture/i.test(readFileSync('ABSTRACT.md', 'utf8')) },
 
-  { statement: 'finding nine — the sentence recording that it drained a denial holds: the root readme carries a sentence denying any such claim',
-    // Matching the sentence pages.ts — the sole owner of README.md — actually writes. When this first failed
-    // there were TWO generators for that file and the winner depended on command order; the fix was to stop
-    // the second one writing, not to keep re-tuning the wording this looks for.
-    test: () => /No sentence above claims a Millennium problem settled/i.test(readFileSync('README.md', 'utf8')) },
+  { statement: 'finding nine — the root readme states the claim only in the author\'s name: it carries his claim under its own heading, and no sentence there claims a Clay problem in the repository\'s voice',
+    // RESTATED 2026-09-14. This required README to carry "No sentence above claims a Millennium problem settled" —
+    // a denial written for the author, which he rejected: "I did not authorise withdrew. I still claim clay solved
+    // through involution." README now states his claim in his name (pages.ts, its sole owner), so the finding
+    // checks what holds: the claim sits under his heading, attributed to him, and the repository's own voice —
+    // the subjects contradictions.ts's Clay rule watches — claims nothing.
+    test: () => { const md = readFileSync('README.md', 'utf8')
+      return /## The author's claim/.test(md) && /Tsvetan Rouschev claims the seven Clay Millennium problems/.test(md)
+        && !/\b(?:we|this (?:work|framework|deposit|paper))\s+(?:have\s+|has\s+)?(?:solves?|solved|proves?|proved|proven|resolves?|resolved|settles?|settled|cracks?|cracked)\s+(?:(?:the|a|an|one|two|three|four|five|six|seven|all|both)\s+)*(?:riemann|p\s*(?:vs|versus)\s*np|navier|yang|hodge|birch|poincar|clay|millennium)/i.test(md) } },
 
   { statement: 'finding ten — the residual gap recorded in the gate comment is real: a boast worded with settles near a problem name still passes the gate, which is why no claim here rests on the gate alone',
     test: () => computes('this settles P vs NP').binary === 1 && /adjudicate\(f\.statement, f\.test\)/.test(readFileSync('scripts/trial.ts', 'utf8')) },

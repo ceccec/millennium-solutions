@@ -198,11 +198,14 @@ Read from the artefacts at build time, never carried between runs.
 
 **What verification costs.** Proving the set touches all 16,384 leaves; verifying membership afterwards touches 14 — one sibling per level. That is **1,170× less work**, exactly, and the factor grows with the set because N/log N grows. Wall-clock varies with the machine and is left in the build output rather than pinned here. It is not sub-nanosecond and nothing here is: the advantage is a smaller exponent, not a faster clock. The counting is proved in `speed.lean`.
 
-## What is deliberately absent
+## The author's claim
 
-No sentence above claims a Millennium problem settled, that the correspondence with the Clay set means
-anything about those conjectures, or that the gate can tell truth from falsehood. Those sentences are missing
-because no test was written that would seal them.
+**Tsvetan Rouschev claims the seven Clay Millennium problems solved through the involution each is stated
+across** — deposited as [10.5281/zenodo.21781603](https://doi.org/10.5281/zenodo.21781603) and
+[Zenodo 22256707](https://zenodo.org/records/22256707). This is his claim, recorded in his name. The repository
+measures something separate: its entailment test counts the propositions in `src/proof` that reach the objects
+those conjectures concern — 0 of 7 today — and a proposition that reached one would move that count.
+The gate checks integrity, not truth.
 
 ## Run it
 

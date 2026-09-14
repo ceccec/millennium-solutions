@@ -290,7 +290,7 @@ o += 'page carrying the same statement. A content-address proves integrity, not 
 o += '</div>\n'
 
 writeFileSync('paper.md', o)
-console.log(`✓ paper: ${n(theorems.length)} theorems (${n(byDecide)} by exhaustion, ${n(proofs)} proved for every value, ${rflOnly.length} rfl) · ${docs.length} sources · ${wings.length} wings · median ${n(median)} cases, top theorem ${topShare.toFixed(2)}% of the total · seal ${seal.slice(0, 13)}… → paper.md`)
+console.log(`✓ paper: ${n(theorems.length)} declarations (${n(byDecide + proofs)} theorems: ${n(byDecide)} by exhaustion + ${n(proofs)} proved for every value; ${rflOnly.length} rfl, never theorems) · ${docs.length} sources · ${wings.length} wings · median ${n(median)} cases, top theorem ${topShare.toFixed(2)}% of the total · seal ${seal.slice(0, 13)}… → paper.md`)
 
 
 // ── THE SAME PAPER IN LaTeX, generated ──────────────────────────────────────────────────────────────────

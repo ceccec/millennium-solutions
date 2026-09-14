@@ -1,0 +1,43 @@
+# USES — who uses this work, weekly: does each use CITE the author, and PAY for commercial use?
+# "Violations are exactly not citing and not paying" (the author, 2026-09-14). Discovery only: it reads public
+# sources (GDELT, Hacker News, Zenodo, OpenAlex, npm, GitHub code search) and reports leads in this run's summary.
+# It contacts no one, opens nothing and commits nothing. A source that does not answer is NOT MEASURED, never
+# "found nothing"; the run fails only when no source measured anything at all.
+name: Uses — who cites, who pays (weekly)
+
+on:
+  schedule:
+    - cron: '17 6 * * 1'   # Mondays 06:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  uses:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: 22
+      - name: markers — the work's identifiers, searched in every source
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/uses.ts --out uses-markers.json --summary "$GITHUB_STEP_SUMMARY"
+      - name: news after publication — same-topic news in the 3 days after each release, against the 4 days before
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/uses.ts --news --out uses-news.json --summary "$GITHUB_STEP_SUMMARY"
+      # Each finding mailed to legal@psg.bg as a factual evidence dossier, FROM rights@uuidna.com THROUGH mail.psg.bg
+      # (the author: "uuidna from uuidna.com, but all use mail.psg.bg mx") by authenticated SMTP submission on 587.
+      # The credentials are repository secrets the author sets; until SMTP_USER and SMTP_PASS exist this step says
+      # "NOT CONFIGURED" in the summary and mails nothing. The recipient is fixed in scripts/uses-mail.ts.
+      - name: mail each finding to legal@psg.bg as an evidence dossier
+        if: always()
+        env:
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: node scripts/uses-mail.ts uses-markers.json uses-news.json | tee -a "$GITHUB_STEP_SUMMARY"

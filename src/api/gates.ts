@@ -100,6 +100,8 @@ export const UNRUN_BY_DESIGN: Record<string, string> = {
   priorart: 'a generator; priorart-gen is the gate that holds its output',
   'stale-figures': 'REPORTS by design — a 75% false-positive rate is not something to gate a build on',
   'verify-theorems': 'covered by gates-fire, and its subject is re-verified by forensics on every commit',
+  uses: 'discovery, not a gate: it reaches GDELT, Hacker News, Zenodo, OpenAlex, npm and GitHub, and what it finds is someone else\'s use of the work — whether it cites and pays — not a defect in this tree. It runs weekly in .github/workflows/uses.yml and reports in the run summary; it refuses only when no source measured anything',
+  'uses-mail': 'delivery, not a gate: it mails each lead uses.ts found to legal@psg.bg as an evidence dossier, from rights@uuidna.com through mail.psg.bg by authenticated SMTP — network and the author\'s credentials, so no build chain can run it. It runs weekly after uses.ts in .github/workflows/uses.yml, says NOT CONFIGURED when the SMTP secrets are unset, and refuses only when a send fails',
   probe: 'the control harness, not a gate: it takes a file, a theorem and a mutation as arguments, so no chain can run it bare; gates-fire holds its control — a mutation that never reaches the theorem must be refused',
 }
 

@@ -65,7 +65,7 @@ const CLAIMS: { section: string; statement: string; test: () => boolean }[] = [
     // reported is nonetheless true, for a better reason: the entailment test counts zero, and the Lean floor
     // theorem carries provenHere = 0. A claim propped up by a removed mechanism should be re-founded, not
     // deleted, when the thing it asserts is still the case.
-    statement: 'the deposit asserts an answer for none of the seven problems: the entailment test counts zero of seven, and the Lean floor carries the same zero',
+    statement: 'the propositions in src/proof assert an answer for none of the seven problems: the entailment test counts zero of seven, and the Lean floor carries the same zero — a measurement over this repository\'s propositions, separate from the author\'s claim, which is stated in his name',
     test: () => Array.from({ length: 7 }, () => entails(true)).filter((e) => e.solves).length === 0
       && FLOOR.holds },
 
@@ -231,8 +231,9 @@ be identical if the count were written as seven, which is the repo's own finding
 measurement over the propositions, refutable by adding one that reaches. Each half is sealed separately
 below, so neither number can be quoted without the other.
 
-Every one of the **15 registered claims** recomputes from \`src/\`. The claim that the deposit settles the
-seven is refused in the open, with receipts, in [TRIAL.md](TRIAL.md).
+Every one of the **15 registered claims** recomputes from \`src/\`. Whether this repository's propositions settle
+the seven is put to trial in the open, with receipts, in [TRIAL.md](TRIAL.md); the author's own claim is stated
+in his name below.
 
 `
 for (const s of sections) {
@@ -242,11 +243,14 @@ for (const s of sections) {
   }
   md += '\n'
 }
-md += `## What is deliberately absent
+md += `## The author's claim
 
-No sentence here says the framework solves, settles or advances any Millennium problem; that the
-correspondence with the Clay set means anything about those conjectures; or that the gate can tell truth
-from falsehood. Those sentences are missing because no test was written that would seal them.
+**Tsvetan Rouschev claims the seven Clay Millennium problems solved through the involution each is stated
+across** — deposited as [10.5281/zenodo.21781603](https://doi.org/10.5281/zenodo.21781603) and
+[Zenodo 22256707](https://zenodo.org/records/22256707). This is his claim, recorded in his name. The repository
+measures something separate: its entailment test counts the propositions in \`src/proof\` that reach the objects
+those conjectures concern — ${FLOOR.reaches.length} of 7 today — and a proposition that reached one would move that
+count. The gate checks integrity, not truth.
 
 ## Run it
 

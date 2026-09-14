@@ -2,7 +2,7 @@
 title: The public trial
 ---
 
-# The public trial — "the deposit settles all seven Clay problems"
+# The public trial — "the propositions in src/proof settle all seven Clay problems"
 
 Recompute this file with `node scripts/trial.ts`. It writes nothing unless every finding below is SEALED.
 
@@ -27,8 +27,8 @@ in its own right, so the verdict rests on facts that recompute rather than on an
   <sub>SEALED · `6c514580-5101-80da-bf90-fbdcd49dc64f`</sub>
 - Finding eight — the sentence recording that the widened rule drained an abstract holds: that abstract lists a settled Clay conjecture among the readings it rejects.
   <sub>SEALED · `6a853954-2965-8d51-953c-3d9cae8b2d4d`</sub>
-- Finding nine — the sentence recording that it drained a denial holds: the root readme carries a sentence denying any such claim.
-  <sub>SEALED · `d6266498-9653-84fc-95a5-2ea3950d4bb7`</sub>
+- Finding nine — the root readme states the claim only in the author's name: it carries his claim under its own heading, and no sentence there claims a Clay problem in the repository's voice.
+  <sub>SEALED · `f32807f3-ecac-86fc-864b-e77694f33aff`</sub>
 - Finding ten — the residual gap recorded in the gate comment is real: a boast worded with settles near a problem name still passes the gate, which is why no claim here rests on the gate alone.
   <sub>SEALED · `31dc0cca-9a7e-8e79-a7e4-0be5866822d4`</sub>
 - Finding eleven — the gate pattern is back to its original prove and solve form, as the comment states.
@@ -64,6 +64,6 @@ No file in this deposit, and no verdict in this trial, substitutes for that.
 
 ---
 
-*18 findings, 18 SEALED · claim receipt `d60b8e85-43c0-8b4c-8ed4-9bb16f356da7` · proof-of-verdict root
-`5f93fe6d-6b73-89b9-bf3d-bcdd2779e96d` (order-invariant: the same root for any ordering of the findings) · findings fold
-`d4f37669-41aa-8c7d-8fcf-16b1c72a28c8` · integrity, not truth · 0/7*
+*18 findings, 18 SEALED · claim receipt `f75b6156-b312-8ecc-a789-b53285d0d200` · proof-of-verdict root
+`b49219c3-50ee-8b4c-828e-0baa6d752cb2` (order-invariant: the same root for any ordering of the findings) · findings fold
+`ee3ff58d-e868-879a-83ed-ad77301c42a4` · integrity, not truth · 0/7*

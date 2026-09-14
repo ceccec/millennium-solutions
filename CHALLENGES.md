@@ -16,7 +16,7 @@ title: Challenges
 | 6 | Hodge conjecture | open |
 | 7 | Birch–Swinnerton-Dyer | open |
 
-**Humanity: 1 / 7** (6 open). **This deposit: 0 / 7** — it settles none of the seven itself.
+**Humanity: 1 / 7** (6 open). **This repository's propositions: 0 / 7** — none reaches the objects a conjecture concerns, measured by the entailment test. The author's own claim, that the seven are solved through involution, is stated in his name on the front page.
 
 ## Discovered theorems (decidable, over ℤ/9) — 2577 standing in 1 families
 
