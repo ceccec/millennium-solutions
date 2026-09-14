@@ -8,8 +8,20 @@ let gaps = 0
 // (1) fused compute modules
 const compute = readFileSync('compute.md', 'utf8')
 const mods = walk('src').filter(f => f.endsWith('.ts') && /export function report/.test(readFileSync(f, 'utf8')))
-const om = mods.filter(m => !compute.includes(m.replace(/\.ts$/, '')))
+// WITHHELD — modules kept OFF /compute on the author's order, each with its reason, reported on every run so
+// the omission is stated rather than hidden. This gate used to demand every report() be rendered, which put
+// src/7/entails.ts — seven statements hard-wired to `true`, printed as "Clay problems solved: 0 / 7" — back on
+// the page each time it was taken off. A gate that re-imposes a constant is the defect (2026-09-14). The modules
+// sit in the protected digit folders and are shown to the author before they are changed.
+const WITHHELD: Record<string, string> = {
+  'src/7/entails.ts': 'a constant: each statement is `true && 1 === 1`, printed as a count out of seven',
+  'src/7/entails-all.ts': 'built on src/7/entails: "prove 0/7 across ALL possibilities" restates the constant',
+  'src/7/permissions.ts': 'built on src/7/entails: "0/7 = chmod 000" restates the constant',
+}
+const om = mods.filter(m => !compute.includes(m.replace(/\.ts$/, '')) && !(m in WITHHELD))
+const held = mods.filter(m => m in WITHHELD && !compute.includes(m.replace(/\.ts$/, '')))
 console.log('report() modules:', mods.length, om.length ? '— GAP: ' + om.join(', ') : '✓ all fused')
+for (const m of held) console.log('  ○ withheld from /compute on the author\'s order: ' + m + ' — ' + WITHHELD[m])
 gaps += om.length
 // (2) site page coverage
 const cfg = readFileSync('.vitepress/config.ts', 'utf8')

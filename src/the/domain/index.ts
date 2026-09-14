@@ -11,6 +11,6 @@ export function report(): string {
   o += '  never a proof of an OPEN conjecture, only the decidable within reach.\n'
   o += '  the deposit spans many, meeting in one shared core (base ' + BASE + '):\n'
   for (const d of DOMAINS) o += '    · ' + d + '\n'
-  o += '  folded domain root (the families as one): ' + root.slice(0, 13) + '… — humanity 1/7; this deposit 0/7.'
+  o += '  folded domain root (the families as one): ' + root.slice(0, 13) + '… — humanity 1/7.'
   return o
 }

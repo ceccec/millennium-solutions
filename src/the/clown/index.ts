@@ -1,7 +1,7 @@
 // the clown — the player who benefits from all and respects the rules. Juggles with titanium precision
 // (a valid siteswap is a permutation; ball count = average of the digits), navigates chaos (the logistic
 // map: deterministic yet unpredictable), draws on every domain (the complete rosetta, one hop from the
-// core), and stays within the floor (every play clears the honesty gate, 0/7). Developing the clown
+// core), and stays within the rules (every play clears the honesty gate). Developing the clown
 // exercises the rest — group theory, dynamics, the rosetta, the rules. Computed, not stored.
 import { toUuid, merkleFold } from '../../0/index.ts'
 import { DOMAINS as ROSETTA_DOMAINS } from '../rosetta/index.ts'
@@ -19,7 +19,7 @@ export function report(): string {
   for (const p of patterns) o += '    ' + p + '   ' + (valid(p) ? 'valid' : 'INVALID') + '   ' + avg(p) + ' balls\n'
   o += '  navigates chaos (logistic r=4): two orbits 1e-9 apart spread to ' + spread.toFixed(3) + ' in 50 steps.\n'
   o += '  benefits from all: ' + ROSETTA_DOMAINS.length + ' domains, each one hop from the core (the rosetta).\n'
-  o += '  respects the rules: every play clears the honesty gate — freedom within the floor.\n'
-  o += '  folded clown root ' + root.slice(0, 13) + '… → 0/7.'
+  o += '  respects the rules: every play clears the honesty gate — freedom within the rules.\n'
+  o += '  folded clown root ' + root.slice(0, 13) + '…'
   return o
 }

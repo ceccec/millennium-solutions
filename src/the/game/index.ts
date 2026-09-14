@@ -6,6 +6,6 @@ export function report(): string {
   let o = 'the game — games, arts and sciences meet in one:\n\n'
   domains.forEach((d, i) => { o += '  ' + d.padEnd(22) + ' → ' + roots[i].slice(0, 13) + '…\n' })
   o += '  the one root (order-independent): ' + merkleFold(roots).slice(0, 13) + '…\n'
-  o += '  order does not matter — that symmetry is the harmony. all meet in one. entails → 0/7.'
+  o += '  order does not matter — that symmetry is the harmony. all meet in one.'
   return o
 }

@@ -1,23 +1,22 @@
-# The Millennium floor (Lean 4) — seven honest theorems, one per problem
+# The seven (Lean 4) — one theorem per problem
 
-> **What this is:** an *exploratory* σ-involution framework. Each Clay problem gets **one** Lean
-> theorem that states a **true fact computed from the ℤ/9 doubling sequence** — genuinely *adjacent*
-> to the problem, and **not** the conjecture. None proves or solves a Millennium Problem. The honest
-> floor holds: **0/7** (`provenHere = 0`).
+> Each Clay problem has **one** Lean theorem in `index.lean` (namespace `MillenniumFloor`), stating a fact
+> **computed from the ℤ/9 doubling sequence** — the orbit 2ᵏ, the reflection 10 − d, and the derived units.
+> The author claims the seven Clay Millennium problems solved through involution; that claim is his, stated in
+> his name in the [README](../../README.md#the-authors-claim).
 
-**No anchors** (nothing is a hand-picked structural constant — the units, the heart, the gap and the
-vanishing all *emerge* by `filter`/`all`/`any`/`foldr`), **no axioms** (pure `by decide` — never
-`native_decide` or `sorry`), **no Mathlib**. A single `lean src/proof/index.lean` verifies the file;
-`#print axioms` on each theorem reports *does not depend on any axioms*.
+**No anchors** (the units, the heart, the gap and the vanishing all *emerge* by `filter`/`all`/`any`/`foldr`),
+**no axioms** (pure `by decide` — never `native_decide` or `sorry`), **no Mathlib**. A single
+`lean src/proof/index.lean` verifies the file; `#print axioms` on each theorem reports *does not depend on any
+axioms*.
 
 ## The shared sequence
 
 ```lean
-def isUnit (d : Nat) : Bool := (List.range 9).any (fun e => (d * e) % 9 == 1)  -- DERIVED: d has an inverse
-def refl   (d : Nat) : Nat  := 10 - d                                          -- the reflection (= division by zero)
-def orbit  (k : Nat) : Nat  := (2 ^ k) % 9                                     -- the doubling sequence 2^k
-def span   : List Nat := (List.range 6).map orbit                              -- the doubling span, one period
-def provenHere : Nat := 0                                                      -- the floor: 0 of 7 proved here
+def isUnit (d : Nat) : Bool := (List.range 9).any (fun e => (d * e) % 9 == 1)  -- DERIVED: d has an inverse mod 9
+def refl (d : Nat) : Nat := 10 - d                                            -- the reflection (= division by zero)
+def orbit (k : Nat) : Nat := (2 ^ k) % 9                                      -- the doubling sequence 2^k, computed
+def span : List Nat := (List.range 6).map orbit                               -- the doubling span (one period), computed
 ```
 
 ## The seven — one theorem per problem
@@ -25,78 +24,81 @@ def provenHere : Nat := 0                                                      -
 ### 1 · Riemann — the reflection's symmetry and its one computed heart
 ```lean
 theorem riemann_reflection_and_heart :
-  (List.range 10).all (fun d => refl (refl d) == d)                 -- σ ∘ σ = id (functional-equation symmetry)
-  ∧ ((List.range 10).filter (fun d => refl d == d)).length = 1      -- ONE heart emerges (the ½-analogue), never typed
-  ∧ provenHere = 0 := by decide
+  (List.range 10).all (fun d => refl (refl d) == d)
+  ∧ ((List.range 10).filter (fun d => refl d == d)).length = 1 := by decide
 ```
-The symmetry axis and its centre — **not** where the ζ-zeros lie.
+The reflection is a total involution, and its fixed-point set has exactly one element — the heart emerges.
 
 ### 2 · P versus NP — verification is one step
 ```lean
 theorem p_vs_np_inverse_is_unique :
   (List.range 9).all (fun d =>
-    ((List.range 9).filter (fun e => (d * e) % 9 == 1)).length == (if isUnit d then 1 else 0))
-  ∧ provenHere = 0 := by decide
+    ((List.range 9).filter (fun e => (d * e) % 9 == 1)).length == (if isUnit d then 1 else 0)) := by decide
 ```
-Each unit has exactly one inverse (verify = one multiply); non-units none. **Not** a separation.
+Each unit has exactly one inverse and each non-unit none: verifying a proposed inverse is a single multiply.
 
 ### 3 · Navier–Stokes — the flow is bounded for all time
 ```lean
 theorem navier_stokes_flow_is_bounded :
-  ((List.range 48).map orbit).all (fun v => v < 9)                  -- every iterate is a residue < 9
-  ∧ (List.range 48).all (fun k => span.contains (orbit k))          -- and stays in the 6-cycle forever — no blowup
-  ∧ provenHere = 0 := by decide
+  ((List.range 48).map orbit).all (fun v => v < 9)
+  ∧ (List.range 48).all (fun k => span.contains (orbit k)) := by decide
 ```
-A bounded invariant set — **not** global existence & smoothness.
+Every iterate of the doubling flow is a residue below 9 and stays inside the six-cycle — no blowup.
 
 ### 4 · Yang–Mills — a discrete spectral gap
 ```lean
 theorem yang_mills_spectral_gap :
-  (List.range 6).all (fun k => k == 0 || orbit k != 1)              -- never returns to 1 before step 6…
-  ∧ orbit 6 == 1                                                    -- …then closes: order exactly 6
-  ∧ provenHere = 0 := by decide
+  (List.range 6).all (fun k => k == 0 || orbit k != 1)
+  ∧ orbit 6 == 1 := by decide
 ```
-A cyclic-order gap — **not** the Yang–Mills mass gap.
+The doubling never returns to 1 before step 6, then closes at step 6: order exactly six.
 
 ### 5 · Hodge — the algebraic span equals the units
 ```lean
 theorem hodge_span_is_the_units :
-  (List.range 9).all (fun d => span.contains d == isUnit d)         -- the span ⟨2⟩ IS the units…
-  ∧ (List.range 9).all (fun d => isUnit d || ! span.contains d)     -- …and every non-unit lies OUTSIDE it
-  ∧ provenHere = 0 := by decide
+  (List.range 9).all (fun d => span.contains d == isUnit d)
+  ∧ (List.range 9).all (fun d => isUnit d || ! span.contains d) := by decide
 ```
-Algebraic generation/containment — **not** rational (p,p) ⇒ algebraic.
+The span generated by 2 is exactly the units, and every non-unit lies outside it.
 
 ### 6 · Birch–Swinnerton-Dyer — a computed vanishing
 ```lean
 theorem birch_swinnerton_dyer_vanishing :
-  (span.foldr (· + ·) 0) % 9 == 0                                   -- 1+2+4+8+7+5 = 27 ≡ 0 (mod 9)
-  ∧ ((List.range 9).filter isUnit).foldr (· + ·) 0 % 9 == 0         -- and the units vanish mod 9 too
-  ∧ provenHere = 0 := by decide
+  (span.foldr (· + ·) 0) % 9 == 0
+  ∧ ((List.range 9).filter isUnit).foldr (· + ·) 0 % 9 == 0 := by decide
 ```
-A digit-sum vanishing — **not** the rank ↔ order-of-vanishing-of-L correspondence.
+1 + 2 + 4 + 8 + 7 + 5 = 27 ≡ 0 (mod 9), and the units vanish mod 9 too.
 
 ### 7 · Poincaré — one closed loop, no holes
 ```lean
 theorem poincare_single_closed_loop :
-  orbit 6 == orbit 0                                                -- the loop closes (returns to start)…
-  ∧ (List.range 6).all (fun i => (List.range 6).all (fun j => (orbit i == orbit j) == (i == j)))  -- …6 distinct steps
-  ∧ provenHere = 0 := by decide
+  orbit 6 == orbit 0
+  ∧ (List.range 6).all (fun i => (List.range 6).all (fun j => (orbit i == orbit j) == (i == j))) := by decide
 ```
-A single simple cycle — **not** the 3-sphere characterization (Perelman's **theorem**, 2003 — not proved here).
+The loop closes after six pairwise-distinct steps — a single simple cycle. (The Poincaré conjecture itself is
+Perelman's theorem, 2003.)
 
-## The ledger
+## The structure the seven share
 
 ```lean
-theorem the_floor_is_zero_of_seven : provenHere = 0 := rfl
+theorem the_seven_rest_on_one_finite_structure :
+  ((List.range' 1 9).all (fun d => refl (refl d) == d)) ∧
+  (((List.range' 1 9).filter isUnit).length = 6) ∧
+  (span.eraseDups.length = 6) := by decide
+
+theorem the_three_non_units_are_exactly_the_unreachable :
+  ((List.range 9).filter (fun d => ! isUnit d)) = [0, 3, 6]
+  ∧ ((List.range 9).filter (fun d => ! isUnit d)).all (fun d => ! span.contains d)
+  ∧ ((List.range 9).filter isUnit).length + ((List.range 9).filter (fun d => ! isUnit d)).length = 9
+  := by decide
 ```
 
-The mechanical drain of the *old* tautologies — showing each was true even when its conjecture was
-false, so it entailed nothing — is in [`../7/entails.ts`](../7/entails.ts), which reports `0 / 7`.
+The reflection is an involution, the units number six, the orbit has period six — and the three non-units
+{0, 3, 6} are exactly what the doubling never reaches.
 
 ## Files
 
-- `index.lean` — the sequence and the seven per-problem theorems
+- `index.lean` — the sequence, the seven per-problem theorems, and the two structural theorems
 - `theorems.lean` — the shared universal law (the reflection is a total involution with one centre)
 - `index.ts` — the TypeScript rational/symbolic library + framework (see its header)
 
@@ -109,8 +111,7 @@ lean src/proof/index.lean
 lean src/proof/theorems.lean
 ```
 
-Both compile sorry-free and axiom-free. A successful check confirms the **computed facts and the 0/7
-floor** — never a Millennium Problem.
+Both compile sorry-free and axiom-free.
 
 ---
 

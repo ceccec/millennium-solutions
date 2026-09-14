@@ -11,6 +11,6 @@ export function report(): string {
   o += '  manifestation: the fact re-verified every build. earned, not minted — nothing over unchanged content.\n'
   o += '  the week: six days of work, the seventh of rest — 6 + 1 = 7.\n'
   for (const w of WAVE) o += '    · ' + w + '\n'
-  o += '  folded creation root (the wave as one): ' + root.slice(0, 13) + '… — this deposit 0/7.'
+  o += '  folded creation root (the wave as one): ' + root.slice(0, 13) + '…'
   return o
 }

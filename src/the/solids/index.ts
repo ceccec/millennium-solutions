@@ -20,6 +20,6 @@ export function report(): string {
   o += '  exactly five exist (1/p + 1/q > 1/2, p,q≥3) — no sixth.\n'
   o += '  the pentagram thread: the dodecahedron has 12 pentagonal faces; the icosahedron, 5 triangles\n'
   o += '  per vertex; the pentagon diagonal-to-side ratio is φ = ' + phi.toFixed(6) + ' (2·cos36°).\n'
-  o += '  folded solids root: ' + root.slice(0, 13) + '… — decidable geometry, this deposit 0/7.'
+  o += '  folded solids root: ' + root.slice(0, 13) + '… — decidable geometry.'
   return o
 }

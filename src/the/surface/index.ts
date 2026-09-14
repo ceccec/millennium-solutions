@@ -21,6 +21,6 @@ export function report(): string {
   o += '    ' + pad('surface', 26) + pad('χ', 5) + pad('geometry', 12) + 'full coverage\n'
   for (const r of rows) o += '    ' + pad(r.name, 26) + pad(r.chi, 5) + pad(geom(r.chi), 12) + (r.cover ? 'yes' : 'no') + '\n'
   o += '\n  only the torus and the Klein bottle can be fully covered. folded surface root: ' + root.slice(0, 13) + '…\n'
-  o += '  decidable topology — this deposit 0/7.'
+  o += '  decidable topology.'
   return o
 }

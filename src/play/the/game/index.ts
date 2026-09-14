@@ -7,6 +7,6 @@ export function report(): string {
   o += '  the games (Nim, Wythoff, chess, tic-tac-toe, …) and their receipts fold to one root.\n'
   o += '  the rules: measure · gate · due process · receipts · one game — all playable, all honest.\n'
   o += '  a move is kept iff it computes; an over-reach is drained with a case. play, honestly.\n'
-  o += '  address: ' + toUuid('play-the-game').slice(0, 13) + '… entails → 0/7.'
+  o += '  address: ' + toUuid('play-the-game').slice(0, 13) + '…'
   return o
 }

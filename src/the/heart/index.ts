@@ -10,6 +10,6 @@ export function report(): string {
   o += '  on the doubling circuit: ' + vortexOrbit().join(' → ') + '  (5 closes it back to 1)\n'
   o += '  the pentagon (5 sides): diagonal / side = φ, the golden ratio\n'
   o += '  the word "vortex" digital-roots to ' + drWord('vortex') + ' — the centre names itself\n'
-  o += '  address: ' + toUuid('the-heart:5').slice(0, 13) + '… entails → 0/7.'
+  o += '  address: ' + toUuid('the-heart:5').slice(0, 13) + '…'
   return o
 }

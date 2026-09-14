@@ -34,13 +34,12 @@ export const CASES: [string, 0 | 1, string][] = [
   ['this is NOT faster than light', 1, 'bind: not→FTL'],
   ['the riemann hypothesis is not proven; it remains open', 1, 'bind + floor'],
   ['no one has proven all six problems; they remain open', 1, 'floor: remain open'],
-  ['faster-than-light is refused; 0/7', 1, 'floor: refused + 0/7'],
+  ['faster-than-light is refused', 1, 'bind: refused'],
   ['no proof exists; the problem is unsolved', 1, 'floor: unsolved'],
   ['unproven conjectures remain open', 1, 'floor: unproven/open'],
-  ['a proof is integrity, not truth; 0/7', 1, 'floor: 0/7'],
-  ['Clay problems solved: 0 / 7', 1, 'floor: 0/7 count'],
-  ['no cipher here is uncrackable; security is bounded by 0/7', 1, 'floor: bounded 0/7'],
-  ['quantum speedup is not claimed here; 0/7', 1, 'bind + floor'],
+  ['a proof is integrity, not truth', 1, 'integrity, not truth'],
+  ['no cipher here is uncrackable; security is bounded', 1, 'bounded security'],
+  ['quantum speedup is not claimed here', 1, 'bind: not claimed'],
 
   // ── real prose the seal caught (whole-file lessons) — parallel & post-claim negations, "or not" idiom ──
   ['it is not quantum, and it breaks no cryptosystem and replaces none', 1, 'parallel negations, each own scope'],
@@ -50,14 +49,14 @@ export const CASES: [string, 0 | 1, string][] = [
   ['it sends no superluminal signal, and has no quantum speedup', 1, 'two honest negations'],
 
   // ── the "no cost" trap: an unrelated negator must NOT reprieve the boast (governing-span, not conjunct-wide) ──
-  ['quantum speedup is not claimed here; 0/7', 1, 'copula negation of the claim'],
+  ['a quantum speedup is not claimed', 1, 'copula negation of the claim'],
   ['"most secure" is not a claim anyone can make', 1, 'copula negation after the claim'],
 
   // ── honest technical prose (no claim shape) → must pass ──
   ['the six units of Z/9 are 1,2,4,5,7,8', 1, 'six units, not six problems'],
   ['all seven dimension streams round-trip', 1, 'seven streams, not seven problems'],
   ['(ℤ/9)* — the six units (six harmonic solutions)', 1, 'six harmonic solutions'],
-  ['a content-address proves integrity, not truth; 0/7', 1, 'proves integrity + floor'],
+  ['a content-address proves integrity, not truth', 1, 'proves integrity'],
 ]
 
 

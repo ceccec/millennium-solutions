@@ -1,11 +1,12 @@
 <script setup lang="ts">
-// All theorems — the full discovery ledger, rendered as a component itself. Every entry is a decidable
-// fact verified by exhaustion in scripts/discover.ts and re-verified on each build. None is a Clay
-// Millennium result: the six open conjectures stay open, the seventh is settled externally.
+// All theorems — the live entries of the discovery ledger, rendered as a component itself. Every entry is a
+// decidable fact verified in scripts/discover.ts and re-verified on each build. Revoked entries stay in the
+// append-only ledger with the reason they went; they are not listed here — this listed all of them, and a
+// thousand revoked names that restated the removed Clay floor were printed on /the as if they stood.
 import { computed } from 'vue'
 import { withBase } from 'vitepress'
 import ledger from '../../src/proof/discovered.json'
-const theorems = ledger as { key: string; name: string; receipt: string }[]
+const theorems = (ledger as { key: string; name: string; receipt: string; revoked?: boolean }[]).filter((t) => !t.revoked)
 // The newest discoveries, newest first — this surfaces every new set automatically, because the list
 // is the ledger itself (imported), re-bundled on each build. No hand-maintained "what's new".
 const latest = computed(() => theorems.slice(-8).reverse())
@@ -23,8 +24,8 @@ const latest = computed(() => theorems.slice(-8).reverse())
       </ol>
     </div>
     <p class="count">
-      <strong>{{ theorems.length }}</strong> theorems — each verified by exhaustion in code and
-      re-verified every build. Not one is a Clay Millennium result; every one lands on
+      <strong>{{ theorems.length }}</strong> live theorems — each verified in code and re-verified every build.
+      Entries revoked in the append-only ledger are not listed.
     </p>
     <ol>
       <li v-for="(t, i) in theorems" :key="t.key">

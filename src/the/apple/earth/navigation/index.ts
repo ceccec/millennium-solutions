@@ -2,7 +2,7 @@
 // here the fixed reference is the content-address: every state has a deterministic address anyone can
 // recompute, so you LOCATE a state by re-deriving its address — no external index, no GPS, no trust.
 // The doubling orbit [1,2,4,8,7,5] is the compass: a closed cyclic route through the units of ℤ/9.
-// Lineage — the referrer chain — is the path you came by. Computed, not stored. Foots to 0/7.
+// Lineage — the referrer chain — is the path you came by. Computed, not stored.
 import { toUuid, vortexOrbit, merge } from '../../../../0/index.ts'
 
 /** The compass — the vortex doubling orbit, a closed cyclic route through the units of ℤ/9. */
@@ -23,6 +23,6 @@ export function report(): string {
   o += '  the compass: the doubling orbit [' + c.join(',') + '] — a closed cyclic route through the units\n'
   o += '  locate: navigation is recomputation — re-derive an address to find its state; no index, no trust\n'
   o += '  route: fold the steps into one address; reproduce it to retrace the path (lineage)\n'
-  o += '  the compass ' + (closes ? 'closes' : 'does NOT close') + ' — every route returns; and all of it foots to 0/7.'
+  o += '  the compass ' + (closes ? 'closes' : 'does NOT close') + ' — every route returns.'
   return o
 }

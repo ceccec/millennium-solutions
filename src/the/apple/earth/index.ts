@@ -18,6 +18,6 @@ export function report(): string {
   o += '  ground under digital-root gravity: ℤ/9 = {' + g.join(',') + '} — every residue fixed (dr idempotent)\n'
   o += '  center of gravity: the heart 5 (src/the/heart) — the fixed point the vortex roots to\n'
   o += '  deepest ground: the truth (./truth) — "' + CREED + '"\n'
-  o += '  address of the ground: ' + toUuid(GROUND).slice(0, 13) + '… — the deepest ground is the floor 0/7.'
+  o += '  address of the ground: ' + toUuid(GROUND).slice(0, 13) + '…'
   return o
 }

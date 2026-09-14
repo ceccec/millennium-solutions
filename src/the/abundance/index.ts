@@ -15,6 +15,6 @@ export function report(): string {
   o += '  the honey: the honeycomb — among regular polygons only {' + tiling.join(',') + '} tile the plane;\n'
   o += '    the hexagon is optimal (honeycomb theorem, Hales 2001).\n'
   o += '  the milk: the freely-given ledger — decidable facts, CC BY-NC; a copy costs nothing (non-rival).\n'
-  o += '  abundance is shared knowledge, not a fortune. folded root: ' + root.slice(0, 13) + '… entails → 0/7.'
+  o += '  abundance is shared knowledge, not a fortune. folded root: ' + root.slice(0, 13) + '…'
   return o
 }

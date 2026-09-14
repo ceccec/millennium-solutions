@@ -2,7 +2,7 @@
 // decidable fingerprints — φ² = φ + 1 (in the limit), and the Fibonacci ratios Fₙ₊₁/Fₙ climb to it
 // while Cassini keeps |Fₙ₊₁·Fₙ₋₁ − Fₙ²| = 1 at every rung. The pentagon's diagonal/side is φ; the
 // heart 5 lives here; its continued fraction is [1;1,1,1,…], the slowest of all to approximate.
-// Computed, not stored. Foots to 0/7.
+// Computed, not stored.
 import { toUuid } from '../../0/index.ts'
 
 /** Fibonacci — the ladder whose consecutive ratios climb to φ. */
@@ -30,6 +30,6 @@ export function report(): string {
   o += '  φ ≈ ' + p.toFixed(9) + ' — the ratio of consecutive Fibonacci numbers (F₂₁/F₂₀)\n'
   o += '  identity: φ² = φ + 1 (in the limit); Cassini |Fₙ₊₁Fₙ₋₁ − Fₙ²| = 1 at every step\n'
   o += '  the pentagon diagonal/side is φ; the heart 5 lives here; continued fraction [1;1,1,1,…]\n'
-  o += '  the compass: the golden angle (./compass); all of it foots to 0/7. address ' + toUuid('gold-phi').slice(0, 13) + '…'
+  o += '  the compass: the golden angle (./compass). address ' + toUuid('gold-phi').slice(0, 13) + '…'
   return o
 }

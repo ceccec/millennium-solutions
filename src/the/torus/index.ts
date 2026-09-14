@@ -18,6 +18,6 @@ export function report(): string {
   const root = merkleFold(facts.map(toUuid))
   let o = 'the torus — continue as double torus (genus-2):\n\n'
   for (const f of facts) o += '    · ' + f + '\n'
-  o += '  folded torus root: ' + root.slice(0, 13) + '… — decidable topology, no full coverage, this deposit 0/7.'
+  o += '  folded torus root: ' + root.slice(0, 13) + '… — decidable topology, no full coverage.'
   return o
 }

@@ -228,7 +228,7 @@ const CONTROLS: Control[] = [
   { gate: 'gate-corpus', cmd: 'node scripts/gate-corpus.ts', file: 'scripts/gate-corpus.ts',
     what: 'an honest sentence being asserted to drain',
     mutate: (s) => s.replace("export const CASES: [string, 0 | 1, string][] = [",
-      "export const CASES: [string, 0 | 1, string][] = [\n  ['a content-address proves integrity, not truth; 0/7', 0, 'control: honest prose asserted to drain'],") },
+      "export const CASES: [string, 0 | 1, string][] = [\n  ['a content-address proves integrity, not truth', 0, 'control: honest prose asserted to drain'],") },
 
   { gate: 'seal-lean', cmd: 'node scripts/seal-lean.ts', file: 'src/proof/theorems.lean',
     what: 'a sealed theorem whose source has been removed',

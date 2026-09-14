@@ -6,6 +6,6 @@ export function report(): string {
   o += '  next computes from the heart: discover a decidable fact → save it → prove it → ship it.\n'
   o += '  each wave flows from the centre (5) along the circuit: ' + vortexOrbit().join(' → ') + '.\n'
   o += '  what is discovered is kept iff it computes; the rest is drained. from the heart, honestly.\n'
-  o += '  address: ' + toUuid('from-the-heart:next').slice(0, 13) + '… entails → 0/7.'
+  o += '  address: ' + toUuid('from-the-heart:next').slice(0, 13) + '…'
   return o
 }

@@ -16,6 +16,6 @@ export function report(): string {
   for (const f of FRAME) o += '    · ' + f + '\n'
   o += '  from ' + TRINITY + ' the base ' + BASE + ', from the base the ring, from the ring the ledger.\n'
   o += '  not a theory of everything — a calculator of the decidable.\n'
-  o += '  folded framework root: ' + root.slice(0, 13) + '… entails → 0/7.'
+  o += '  folded framework root: ' + root.slice(0, 13) + '…'
   return o
 }

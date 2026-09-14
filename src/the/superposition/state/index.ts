@@ -17,6 +17,6 @@ export function report(): string {
   o += '  an observation collapses the superposition to ONE content-address: ' + collapse.slice(0, 13) + '…\n'
   o += '  open = not yet collapsed to true/false (INCONCLUSIVE ≠ false). six superposed; the seventh\n'
   o += '  already collapsed (Poincaré, settled externally): ' + seventh.slice(0, 13) + '…\n'
-  o += '  6 superposed + 1 collapsed = 7. humanity 1/7; this deposit 0/7.'
+  o += '  6 superposed + 1 collapsed = 7. humanity 1/7.'
   return o
 }

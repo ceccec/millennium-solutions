@@ -4,10 +4,10 @@
 // The "cryptography apple" (any finite-width hash) falls under this gravity too — and pigeonhole
 // gravity guarantees that no finite digest avoids collisions forever, which is exactly why
 // "unbreakable" is false for every hash (the strong ones resist computationally; FNV does not).
-// Computed, not stored. Falls, like all of it, to 0/7.
+// Computed, not stored.
 import { toUuid } from '../../0/index.ts'
 // Gravity lives canonically in @uuidna/uuidna (no duplication — one implementation, byte-identical addresses).
-// merkleGravity is ORDER-INVARIANT (the quantum receipt); doubleTorus covers the 7D field. NOT physics, 0/7.
+// merkleGravity is ORDER-INVARIANT (the quantum receipt); doubleTorus covers the 7D field. NOT physics.
 import { merkleGravity, doubleTorusGravity, doubleTorusField, fall, fixedPoints, seats } from '@uuidna/uuidna'
 export { merkleGravity, doubleTorusGravity, doubleTorusField, fall, fixedPoints, seats }
 
@@ -22,6 +22,6 @@ export function report(): string {
   o += '  double gravity: a hash lives under both — a content-address AND a digital root.\n'
   o += '  pigeonhole gravity: a b-bit digest has 2^b seats; past 2^b inputs a collision is forced —\n'
   o += '    so no finite hash avoids collisions forever (the strong ones resist computationally; FNV does not).\n'
-  o += '  the apple falls to the earth (./earth), and all of it to 0/7.'
+  o += '  the apple falls to the earth (./earth).'
   return o
 }

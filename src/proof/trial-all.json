@@ -1549,8 +1549,8 @@
   },
   {
     "key": "the_modules_self_compute",
-    "verdict": "SEALED",
-    "ground": "recomputes true, cites nothing fabricated",
+    "verdict": "REFUTED",
+    "ground": "its test does not recompute true — refuted by counterexample",
     "receipt": "e9948e15-ed3d-809d-b494-9580b8677bf8"
   },
   {
@@ -2089,8 +2089,8 @@
   },
   {
     "key": "development_enforced_at_gate",
-    "verdict": "SEALED",
-    "ground": "recomputes true, cites nothing fabricated",
+    "verdict": "REFUTED",
+    "ground": "its test does not recompute true — refuted by counterexample",
     "receipt": "5ec8d383-43d6-886c-b8e2-d3c5b674b74b"
   },
   {

@@ -28,6 +28,6 @@ export function report(): string {
   o += '  core: ' + toUuid(CORE).slice(0, 13) + '…\n'
   o += '  domains (' + DOMAINS.length + '): ' + DOMAINS.join(' · ') + '\n'
   o += '  each reachable in one hop; ' + distinct + ' distinct addresses (' + (distinct === DOMAINS.length ? 'no collision — complete' : 'COLLISION') + ')\n'
-  o += '  folded rosetta root ' + root.slice(0, 13) + '… — the cross-domain translation is complete. this deposit 0/7.'
+  o += '  folded rosetta root ' + root.slice(0, 13) + '… — the cross-domain translation is complete.'
   return o
 }

@@ -21,6 +21,6 @@ export function report(): string {
   o += '  the traitor drains to death and rises as a hero — the honest form. it dissolves BY ITSELF,\n'
   o += '  but the dissolution DEPENDS ON THE WAVES: every build re-verifies the whole ledger and re-runs\n'
   o += '  the gate, so a false claim drains on every pass and cannot persist — more waves, surer healing,\n'
-  o += '  no waste unrecycled. folded root: ' + root.slice(0, 13) + '… → 0/7.'
+  o += '  no waste unrecycled. folded root: ' + root.slice(0, 13) + '…'
   return o
 }

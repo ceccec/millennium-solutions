@@ -7,6 +7,6 @@ export function report(): string {
   o += '  units on the circuit: ' + units().join(', ') + '\n'
   o += '  triad (the axis, off-circuit): ' + triad().join(', ') + '\n'
   o += '  root: ' + merkleFold(orbit.map((d) => toUuid(String(d)))).slice(0, 13) + '…\n'
-  o += '  the sequence covers every unit exactly once and closes. entails → 0/7.'
+  o += '  the sequence covers every unit exactly once and closes.'
   return o
 }

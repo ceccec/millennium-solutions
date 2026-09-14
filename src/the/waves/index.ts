@@ -18,6 +18,6 @@ export function report(): string {
     o += '   | ' + b + ' → ' + ((b * A432_STEP) % 360) + '°   (d+b=' + (d + b) + ', hues sum ' + (((d * A432_STEP) + (b * A432_STEP)) % 360) + '°)\n'
   }
   o += '\n  the balancing wave 9−d harmonises: the two digits sum to 9 (the rest), their hues to 360°=0.\n'
-  o += '  same wave, same state; a different wave, a different point of view. deterministic — this deposit 0/7.'
+  o += '  same wave, same state; a different wave, a different point of view. deterministic.'
   return o
 }

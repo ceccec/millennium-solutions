@@ -68,8 +68,6 @@ import { report as rosetta } from './src/7/rosetta'
 import { report as rosettaClay } from './src/7/rosetta-clay'
 import { report as geometry } from './src/8/merkaba/geometry'
 import { report as field } from './src/8/merkaba/field'
-import { report as entails } from './src/7/entails'
-import { report as entailsAll } from './src/7/entails-all'
 import { report as shell } from './src/8/nucleus/shell-model-magic'
 import { report as frequency } from './src/2/frequency-scales'
 import { report as stringScale } from './src/2/string-scale'
@@ -86,7 +84,6 @@ import { report as locale } from './src/7/locale'
 import { report as languageLens } from './src/7/language-lens'
 import { report as glagolitic } from './src/7/glagolitic'
 import { report as cross } from './src/7/cross'
-import { report as permissions } from './src/7/permissions'
 import { report as rbac } from './src/7/rbac'
 import { report as proton } from './src/8/nucleus/proton-mass-fit'
 import { report as merkabaTouch } from './src/8/merkaba/touch'
@@ -437,11 +434,6 @@ that silently skipped what it could not translate would look complete and be wor
 ### Rosette ⊕ Clay — the 7 = 6 + 1 fusion · `src/7/rosetta-clay.ts`
 <details class="depth"><summary>compute</summary>
 <pre>{{ rosettaClay() }}</pre>
-</details>
-
-### Clay entailment — the floor itself · `src/7/entails.ts`
-<details class="depth" open><summary>compute (open by default)</summary>
-<pre>{{ entails() }}</pre>
 </details>
 
 

@@ -14,6 +14,6 @@ export function report(): string {
   o += '  the/crystal ≠ crystal/the — order carries meaning. rating = gravity (depth = specificity).\n\n'
   o += '    rank  gravity  path\n'
   rated.forEach((r, i) => { o += '    ' + String(i + 1).padStart(2) + '    ' + String(r.g).padStart(4) + '     /' + (r.p + ' ').padEnd(24) + r.a.slice(0, 13) + '…\n' })
-  o += '\n  meaning is a defined computable rating, not a truth judgment. this deposit 0/7.'
+  o += '\n  meaning is a defined computable rating, not a truth judgment.'
   return o
 }

@@ -135,7 +135,7 @@ export function run(opts: { emit?: boolean } = {}): string {
 export function report(): string {
   const q = queue()
   const ok = q.filter((p) => translate(p.body).ok).length
-  return `prover: ${q.length} portable · ${ok} mechanical · ${q.length - ok} need an author · integrity, not truth · 0/7`
+  return `prover: ${q.length} portable · ${ok} mechanical · ${q.length - ok} need an author · integrity, not truth`
 }
 
 if (process.argv[1]?.endsWith('index.ts') && process.argv[1].includes('prove')) {

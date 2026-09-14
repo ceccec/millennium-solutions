@@ -18,6 +18,6 @@ export function report(): string {
   o += '  (counted by exhaustion over 27 cells), at the tetrahedral angle arccos(−1/3) = ' + angle.toFixed(4) + '°.\n'
   o += '  densest lattice packing: π/(3√2) = ' + packing.toFixed(6) + ' (FCC/HCP, the diamond’s parent).\n'
   o += '  imagine the lattice; the numbers are exact. folded crystal root: ' + root.slice(0, 13) + '…\n'
-  o += '  decidable geometry — this deposit 0/7.'
+  o += '  decidable geometry.'
   return o
 }

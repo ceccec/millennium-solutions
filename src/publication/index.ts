@@ -302,8 +302,7 @@ export const publicationHtml = (t: LeanTheorem, opts: { novelty: string; files: 
   + ` A content-address proves integrity, not truth: it fixes which statement was checked, not that the statement is significant.</p>`
   + `<p><strong>Funding.</strong> ${FUNDING.statement}</p>`
   + `<p><strong>Scope, stated as plainly as the claim.</strong> The declaration is decided over a finite domain. `
-  + `It settles no Clay Millennium Problem, asserts no quantum speedup, and describes no physical system. `
-  + `<strong>0/7.</strong></p>`
+  + `It asserts no quantum speedup and describes no physical system.</p>`
 
 // ── the register, shared by the page and the deposition ─────────────────────────────────────────────────
 
