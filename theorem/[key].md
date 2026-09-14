@@ -150,6 +150,10 @@ link would break the chain that lets anyone verify every other entry, and rewrit
 So the URL stays resolvable and the record stays honest about its own history — what changed is that this
 statement is no longer offered as a theorem, and nothing in the deposit may cite it.
 
+<p v-if="$params.floorStripped">The name above is shown without the Clay floor wording, removed at the author's order on
+2026-09-14. The name as sealed is unchanged in the append-only ledger (<code>src/proof/discovered.json</code>), and the
+receipt addresses that sealed name.</p>
+
 The live record: [the standing theorems](/CHALLENGES) · [the ledger](/proofs). Verify the chain yourself with
 `npm run forensics`. A content-address proves integrity, not truth.
 

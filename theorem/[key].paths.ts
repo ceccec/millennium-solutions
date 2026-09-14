@@ -13,6 +13,7 @@ import { publicationHtml, structuredData, NOVELTY, kinds, closureOf, creditedIn 
 import { treeOf } from '../src/quantum/tree.ts'
 import { MILLENNIUM } from '../src/millennium/index.ts'
 import { toLatex, toMathML } from '../src/latex/index.ts'
+import { withoutFloor } from '../src/honesty/index.ts'
 
 // EVERY Lean-backed page carries its own formula, not only the seven. The seven Millennium pages had a
 // typeset statement and every other theorem in src/proof had prose about a proof the reader could not see, so
@@ -91,7 +92,9 @@ export default {
     // withdrawn theorem as live is the exact overclaim this deposit exists to refuse.
     const discovered = ledger.map((e, i) => ({
       params: {
-        key: e.key, name: e.name, receipt: e.receipt, hues: withHues(ledger, i, N),
+        // THE NAME AS SHOWN, NOT AS SEALED (2026-09-14): 1,017 revoked names were sealed carrying the Clay floor the author
+        // ordered removed. The ledger is append-only, so they stay as sealed; the page shows them without it and says so.
+        key: e.key, name: withoutFloor(e.name), floorStripped: withoutFloor(e.name) !== e.name, receipt: e.receipt, hues: withHues(ledger, i, N),
         revoked: e.revoked === true, reason: e.reason ?? '', supersededBy: e.supersededBy ?? '',
         // THE STATUS BELONGS IN THE TITLE, NOT ONLY IN THE BODY. 1,754 of 2,441 pages here serve a WITHDRAWN
         // claim. Each says so in its body — and a search result shows the TITLE. So the URL said /theorem/,

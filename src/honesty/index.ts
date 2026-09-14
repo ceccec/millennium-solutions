@@ -20,3 +20,44 @@ export function report(): string {
   o += 'three questions for any bold claim: does it ENTAIL? does the FIT fit anything? do the SCALES match?'
   return o
 }
+
+// The Clay floor, removed from what a page SHOWS of a name. The ledger is append-only and its names are sealed,
+// so a revoked entry keeps the wording it was sealed with; this is the display. Every rule strips the count and
+// the phrase built on it, and nothing else.
+const FLOOR_TEXT = /(?<![0-9.])0 ?\/ ?7(?![0-9])|\b0 of 7\b/
+const FLOOR_RULES: [RegExp, string | ((...m: string[]) => string)][] = [
+  [/;? ?the deposit claims 0 ?\/ ?7/g, ''],
+  [/deposit\(0\/7\) & humanity\(1\/7\)/g, 'the deposit & humanity'],
+  [/(\w)\(0\/7\)/g, '$1'],
+  [/(,|;|:|—) ?(the )?(honest )?(floor|count) (is|stays|holds at) 0\/7/g, ''],
+  [/ ?(—|,|;|:|and)? ?0\/7 (holds|stays)( from every perspective| regardless of reach| at any count)?/g, ''],
+  [/(at )?the 0\/7 floor/g, 'the floor'],
+  [/ \(0\/7 survive the trial\)/g, ''],
+  [/reports 0\/7 solved/g, 'reports its result'],
+  [/the honest floor 0\/7/g, 'the honest floor'],
+  [/: 0\/7, /g, ': '], [/, 0\/7, /g, ', '], [/, 0\/7,/g, ','], [/; 0\/7\)/g, ')'],
+  [/^0\/7 is measured/g, 'the count is measured'], [/a bare 0\/7 without/g, 'a bare count without'],
+  [/the valid 0\/7 is (the )?recomputed/g, 'the valid count is $1recomputed'],
+  [/ — 0\/7\)?\./g, '.'], [/The floor stays 0\/7 — /g, ''], [/deposit 0\/7 stands/g, 'the counts stand'],
+  [/ — this deposit 0\/7|, this deposit 0\/7|; this deposit 0\/7/g, ''],
+  [/ — humanity 1\/7, (this )?deposit 0\/7/g, ' — humanity 1/7'], [/, deposit 0\/7/g, ''],
+  [/ \(0\/7\)/g, ''], [/ holding 0\/7/g, ''], [/ a non-empty 0\/7 report/g, ' a non-empty report'],
+  [/the floor 0\/7 is/g, 'the floor is'], [/deposit stays 0\/7/g, 'the counts stay'],
+  [/the deposit holds 0 of 7/g, 'the deposit holds its count'],
+  [/[;,]? ?(—|–)? ?(entails → )?0\/7\.?$/g, ''],
+]
+const FLOOR_LAST: [RegExp, string | ((...m: string[]) => string)][] = [
+  [/the (honest )?0\/7/g, (_m, h) => 'the ' + (h ?? '') + 'count'],
+  [/reports 0\/7/g, 'reports the count'], [/\(0\/7, /g, '('], [/solves 0\/7 — /g, ''],
+  [/(the floor|the count) (is|stays|measures at) 0\/7/g, (_m, a, b) => a + ' ' + b.replace(' at', '')],
+  [/ ?(:|—|,|;)? ?0\/7 ?(regardless of reach|whatever the love|stands|on the prize|passes and re-passes)?(?=\s*($|[;,.)—]))/g, ''],
+  [/0 ?\/ ?7|0 of 7/g, 'the count'],
+  [/ {2,}/g, ' '], [/ ([,.;:])/g, '$1'], [/,,/g, ','], [/— —/g, '—'], [/— ,/g, '—'], [/: ,/g, ':'],
+]
+export function withoutFloor(name: string): string {
+  if (!FLOOR_TEXT.test(name)) return name
+  let s = name
+  for (const [a, b] of FLOOR_RULES) s = s.replace(a, b as never)
+  if (FLOOR_TEXT.test(s)) for (const [a, b] of FLOOR_LAST) s = s.replace(a, b as never)
+  return s.trim()
+}

@@ -6,7 +6,9 @@
 import { computed } from 'vue'
 import { withBase } from 'vitepress'
 import ledger from '../../src/proof/discovered.json'
-const theorems = ledger as { key: string; name: string; receipt: string }[]
+import { withoutFloor } from '../../src/honesty/index'
+// names as SHOWN: the sealed names of revoked entries carried the removed Clay floor; the ledger keeps them as sealed.
+const theorems = (ledger as { key: string; name: string; receipt: string }[]).map((t) => ({ ...t, name: withoutFloor(t.name) }))
 
 // the reflection: key → organ (the same key↔type map the theorems prove). Order matters (first match wins).
 const ORGANS: { id: string; label: string; note: string; re: RegExp }[] = [
