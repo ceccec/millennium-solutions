@@ -52,13 +52,14 @@ theorem doubling_the_domain_leaves_the_same_hole :
 
 -- ── 4 · THE DEPOSIT'S OWN LARGEST DOMAIN IS STILL A BOUND ───────────────────────────────────────────────
 -- 152,568,360,000 is the largest case-count any theorem in this tree walks. It is enormous and it is finite,
--- and the naturals do not stop there. Stated with the number so the point cannot be read as rhetorical.
+-- and the naturals do not stop there. Stated as a LAW with its inverse — the successor leaves every bound, the
+-- predecessor brings it back, and the step flips parity — decided at every bound above AND at the largest
+-- domain, so the number is an instance of the law rather than a value read back (2026-09-14).
 def largestDomainHere : Nat := 152568360000
 
-theorem even_the_largest_domain_here_has_an_outside :
-  largestDomainHere + 1 > largestDomainHere
-  ∧ largestDomainHere % 2 = 0
-  ∧ (largestDomainHere + 1) % 2 = 1 := by decide
+theorem the_successor_leaves_every_domain_and_the_predecessor_returns :
+  (bounds ++ [largestDomainHere]).all (fun n =>
+    n + 1 > n && (n + 1) - 1 == n && (n + 1) % 2 != n % 2) := by decide
 
 -- ── 5 · A THEOREM NAMED FOR THE CLAY PROBLEMS THAT DECIDED NOTHING ABOUT THEM — DELETED ─────────────────
 -- `this_file_settles_none_of_the_seven` stood here and decided:

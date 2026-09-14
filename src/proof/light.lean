@@ -40,7 +40,10 @@ def kcd    : Nat := 683            -- K_cd, lm/W, exact
 
 def defining : List Nat := [c, dNuCs, hDigits, eDigits, kDigits, naDigits, kcd]
 
-theorem the_si_fixes_exactly_seven_constants : defining.length = 7 := by decide
+-- Seven, and seven DIFFERENT ones: a list that repeated a constant would still have length seven. Each is
+-- nonzero, so each fixes a unit rather than annulling it. (Was `defining.length = 7`, a count of a typed list.)
+theorem the_si_fixes_seven_distinct_nonzero_constants :
+  defining.length = 7 ∧ defining.eraseDups = defining ∧ defining.all (fun x => x > 0) := by decide
 
 -- ── SPACE FROM TIME, THROUGH LIGHT ──────────────────────────────────────────────────────────────────────
 -- The chain is definitional and it runs one way. ΔνCs fixes the second; the second and c fix the metre. So

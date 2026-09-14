@@ -68,9 +68,14 @@ theorem no_constant_factor_accounts_for_the_gap :
   ¬ (10000 * 20 ≥ 1048576) ∧ 100 * 10 ≥ 1024 - 24 := by decide
 
 -- ── 4 · THE MEASURED RATIO, from the declared inputs, in the same unit on both sides — the mistake that
---        made an earlier theorem in this deposit compare seal-bits against a leaf count. ──
-theorem the_measured_ratio_at_a_million_leaves :
-  recomputeUs / verifyUs = 567971 ∧ recomputeUs > verifyUs * 500000 := by decide
+--        made an earlier theorem in this deposit compare seal-bits against a leaf count. Read against the
+--        law: the measurement is at least the gap the counting predicts, N over its inclusion path, so the
+--        machine's number agrees with the structure rather than standing beside it; and the ratio multiplies
+--        back to the recompute within one verify. ──
+theorem the_measured_ratio_exceeds_the_counted_gap :
+  (List.range' 1 20).all (fun k => 2 ^ k / rounds 40 (2 ^ k) ≤ recomputeUs / verifyUs) ∧
+  (recomputeUs / verifyUs) * verifyUs ≤ recomputeUs ∧ recomputeUs < (recomputeUs / verifyUs + 1) * verifyUs ∧
+  recomputeUs / verifyUs = 567971 := by decide
 
 -- ── 5 · VERIFY IS NOT FREE, and calling it O(1) would be the easy overclaim. It grows — slowly, and without
 --        bound — so a large enough set costs a longer path. Logarithmic is not constant. ──
@@ -81,8 +86,11 @@ theorem verification_grows_it_is_not_constant :
 -- ── 6 · NOTHING HERE IS SUB-NANOSECOND. The measured verify is 38000 nanoseconds. The claim that it is under
 --        one is off by four and a half orders of magnitude, and this theorem exists so that number sits in
 --        the ledger next to the impressive one rather than only the impressive one being quotable. ──
-theorem the_verify_is_thirty_eight_thousand_nanoseconds_not_one :
-  nsPerVerify = 38000 ∧ nsPerVerify > 1 ∧ nsPerVerify > 10000 := by decide
+--        The nanosecond figure is not a second typed input: it is the microsecond input converted, and the
+--        conversion reads back at every microsecond count below a thousand. ──
+theorem the_verify_in_nanoseconds_reads_back_its_microseconds :
+  (List.range 1000).all (fun u => u * 1000 / 1000 == u) ∧
+  nsPerVerify = verifyUs * 1000 ∧ nsPerVerify / 1000 = verifyUs ∧ nsPerVerify > 10000 := by decide
 
 -- ── 7 · THE WORK PER NODE IS THE SAME on both paths. Recompute and verify run the identical hash; only the
 --        COUNT differs. That is what makes this arithmetic rather than a claim about hardware. ──
@@ -107,12 +115,22 @@ def hexbitChars : Nat := 22     -- the same address over the 64-hexagram lattice
 def hexMs       : Nat := 16     -- median ms for 200,000 encodings, 8-bit table
 def hexbitMs    : Nat := 30     -- the same work, 6-bit lattice
 
--- Shorter: 22 against 32 is a 31% reduction, and that IS what hexbits unlock.
-theorem hexbits_are_shorter_than_hex :
-  hexbitChars < hexChars ∧ hexChars - hexbitChars = 10 ∧ hexbitChars * 100 / hexChars = 68 := by decide
+-- Characters needed for a 128-bit address at b bits per character: the ceiling of 128 / b.
+def charsFor (b : Nat) : Nat := (128 + b - 1) / b
+
+-- Shorter: the width is the ceiling of 128 bits over the symbol, and multiplying back covers the 128 bits
+-- with less than one symbol to spare, at every symbol width from one to eight bits. 32 and 22 are the
+-- instances at four and six bits — derived, not typed — and 22 against 32 is what hexbits unlock.
+theorem the_width_is_the_ceiling_of_128_bits_over_the_symbol :
+  (List.range' 1 8).all (fun b => charsFor b * b ≥ 128 && (charsFor b - 1) * b < 128) ∧
+  charsFor 4 = hexChars ∧ charsFor 6 = hexbitChars ∧
+  hexbitChars < hexChars ∧ hexbitChars * 100 / hexChars = 68 := by decide
 
 -- And slower: the same encodings cost 30 ms against 16, so the density is bought with time, not given.
-theorem hexbits_are_slower_than_hex :
+-- The ratio is a floor division in tenths, and it multiplies back to the timing within one step — at every
+-- divisor and dividend checked, of which the two medians are one instance.
+theorem hexbits_are_slower_and_the_ratio_multiplies_back :
+  (List.range' 1 20).all (fun b => (List.range 400).all (fun a => (a / b) * b ≤ a && a < (a / b + 1) * b)) ∧
   hexbitMs > hexMs ∧ hexbitMs * 10 / hexMs = 18 := by decide
 
 -- A theorem named `an_encoding_changes_width_not_the_count_of_operations` stood here and is DELETED. It

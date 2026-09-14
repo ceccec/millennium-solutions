@@ -1400,45 +1400,45 @@ remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \paragraph{\texttt{energy.lean}}
 
-\begin{theorem}[\texttt{the\_loop\_returns\_less\_than\_it\_took}]
-\[ \mathrm{burnYield} < \mathrm{splitCost} \land \frac{\mathrm{burnYield} \cdot 100}{\mathrm{splitCost}} = 23 \]
+\begin{theorem}[\texttt{any\_yield\_below\_its\_cost\_reads\_under\_the\_whole}]
+\[ \forall c \in \{1,\dots,60\},\; \forall y \in \{0,\dots,c-1\},\; \mathrm{pct}\mathopen{}\left(y,\,c\right) < 100 \land \mathrm{burnYield} < \mathrm{splitCost} \land \mathrm{pct}\mathopen{}\left(\mathrm{burnYield},\,\mathrm{splitCost}\right) = 23 \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 60 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{a\_chain\_of\_efficiencies\_can\_only\_lose}]
 \[ \forall a \in \{0,\dots,100\},\; \forall b \in \{0,\dots,100\},\; a \cdot b \le 100 \cdot a \land a \cdot b \le 100 \cdot b \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 10,201 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{as\_a\_purifier\_the\_loop\_costs\_a\_thousandfold}]
-\[ \frac{\mathrm{splitCost}}{\mathrm{waterOut}} = 5777 \land \frac{\mathrm{splitCost}}{\mathrm{waterOut}} > \mathrm{roPerLitre} \cdot 1000 \]
+\begin{theorem}[\texttt{the\_cost\_per\_litre\_multiplies\_back\_to\_the\_cost}]
+\[ \forall l \in \{1,\dots,20\},\; \frac{\mathrm{splitCost}}{l} \cdot l \le \mathrm{splitCost} \land \mathrm{splitCost} < \frac{\mathrm{splitCost}}{l} + 1 \cdot l \land \frac{\mathrm{splitCost}}{\mathrm{waterOut}} = 5777 \land \frac{\mathrm{splitCost}}{\mathrm{waterOut}} > \mathrm{roPerLitre} \cdot 1000 \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 20 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_two\_to\_one\_is\_forced\_by\_the\_oxygen}]
 \[ \mathrm{balances}\mathopen{}\left(2,\,2,\,1\right) = \mathrm{true} \land \mathrm{balances}\mathopen{}\left(1,\,1,\,1\right) = \mathrm{false} \land \left|\bigcup_{a \in \{1,\dots,9\}} \bigcup_{b \in \{1,\dots,9\}} \{\, c \in \{1,\dots,9\} \mid \mathrm{balances}\mathopen{}\left(a,\,b,\,c\right) \,\}\right| = 4 \land \mathrm{balances}\mathopen{}\left(4,\,4,\,2\right) = \mathrm{true} \land \mathrm{balances}\mathopen{}\left(6,\,6,\,3\right) = \mathrm{true} \land \mathrm{balances}\mathopen{}\left(8,\,8,\,4\right) = \mathrm{true} \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 729 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{the\_equation\_balances\_by\_mass}]
-\[ 2 \cdot \mathrm{mgH2O} = 2 \cdot \mathrm{mgH2} + \mathrm{mgO2} \land 2 \cdot \mathrm{mgH2O} = 36030 \]
+\begin{theorem}[\texttt{the\_mass\_balance\_is\_the\_atom\_balance}]
+\[ \mathrm{mgH2} = \mathrm{mass}\mathopen{}\left(2,\,0\right) \land \mathrm{mgO2} = \mathrm{mass}\mathopen{}\left(0,\,2\right) \land \mathrm{mgH2O} = \mathrm{mass}\mathopen{}\left(2,\,1\right) \land \forall a \in \{1,\dots,9\},\; \forall b \in \{1,\dots,9\},\; \forall c \in \{1,\dots,9\},\; a \cdot \mathrm{mass}\mathopen{}\left(2,\,1\right) = b \cdot \mathrm{mass}\mathopen{}\left(2,\,0\right) + c \cdot \mathrm{mass}\mathopen{}\left(0,\,2\right) = \mathrm{balances}\mathopen{}\left(a,\,b,\,c\right) \land 2 \cdot \mathrm{mgH2O} = 2 \cdot \mathrm{mgH2} + \mathrm{mgO2} \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 729 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{the\_equation\_balances\_by\_atom\_count}]
-\[ 2 \cdot \mathrm{atomsH2}_{1} + \mathrm{atomsO2}_{1} = 2 \cdot \mathrm{atomsH2O}_{1} \land 2 \cdot \mathrm{atomsH2}_{2} + \mathrm{atomsO2}_{2} = 2 \cdot \mathrm{atomsH2O}_{2} \]
+\begin{theorem}[\texttt{the\_atom\_table\_decides\_the\_balance}]
+\[ \forall a \in \{1,\dots,9\},\; \forall b \in \{1,\dots,9\},\; \forall c \in \{1,\dots,9\},\; a \cdot \mathrm{atomsH2O}_{1} = b \cdot \mathrm{atomsH2}_{1} + c \cdot \mathrm{atomsO2}_{1} \land a \cdot \mathrm{atomsH2O}_{2} = b \cdot \mathrm{atomsH2}_{2} + c \cdot \mathrm{atomsO2}_{2} = \mathrm{balances}\mathopen{}\left(a,\,b,\,c\right) \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 729 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_gases\_are\_two\_to\_one\_and\_consume\_each\_other\_exactly}]
 \[ 2 \cdot 1 = 2 \land \frac{2 \cdot 100}{3} = 66 \land \frac{1 \cdot 100}{3} = 33 \land \lnot 1 \cdot 1 = 2 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
-\begin{theorem}[\texttt{hydrogen\_is\_a\_ninth\_of\_the\_mass\_and\_oxygen\_the\_rest}]
-\[ \frac{\mathrm{mgO2} \cdot 100}{2 \cdot \mathrm{mgH2}} = 793 \land \frac{2 \cdot \mathrm{mgH2} \cdot 10000}{2 \cdot \mathrm{mgH2O}} = 1119 \land \frac{\mathrm{mgO2} \cdot 10000}{2 \cdot \mathrm{mgH2O}} = 8880 \land 1119 + 8880 = 9999 \]
+\begin{theorem}[\texttt{a\_part\_and\_its\_rest\_read\_back\_the\_whole}]
+\[ \forall w \in \{1,\dots,40\},\; \forall a \in \{0,\dots,w + 1-1\},\; \mathrm{per10k}\mathopen{}\left(a,\,w\right) + \mathrm{per10k}\mathopen{}\left(w - a,\,w\right) \le 10000 \land 10000 \le \mathrm{per10k}\mathopen{}\left(a,\,w\right) + \mathrm{per10k}\mathopen{}\left(w - a,\,w\right) + 1 \land \frac{\mathrm{mgO2} \cdot 100}{2 \cdot \mathrm{mgH2}} = 793 \land \mathrm{per10k}\mathopen{}\left(2 \cdot \mathrm{mgH2},\,2 \cdot \mathrm{mgH2O}\right) = 1119 \land \mathrm{per10k}\mathopen{}\left(\mathrm{mgO2},\,2 \cdot \mathrm{mgH2O}\right) = 8880 \land 2 \cdot \mathrm{mgH2O} - 2 \cdot \mathrm{mgH2} = \mathrm{mgO2} \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 40 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{mass\_is\_conserved\_at\_every\_scale\_so\_the\_loop\_cannot\_make\_water}]
 \[ \forall n \in \{1,\dots,100\},\; 2 \cdot n \cdot \mathrm{mgH2O} = 2 \cdot n \cdot \mathrm{mgH2} + n \cdot \mathrm{mgO2} \land \lnot \forall n \in \{1,\dots,100\},\; n \cdot \mathrm{mgH2O} = n \cdot \mathrm{mgH2} + n \cdot \mathrm{mgO2} \]
@@ -1455,45 +1455,45 @@ remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
-\begin{theorem}[\texttt{the\_ideal\_round\_trip\_is\_exactly\_zero}]
-\[ 28583 - 28583 = 0 \land 28583 \le 28583 \land \frac{\mathrm{burnYield} \cdot 100}{\mathrm{splitCost}} = 23 \]
+\begin{theorem}[\texttt{splitting\_then\_burning\_is\_the\_identity\_at\_the\_ideal}]
+\[ \forall e \in \{0,\dots,999\},\; \mathrm{burnE}\mathopen{}\left(\mathrm{splitE}\mathopen{}\left(e\right)\right) = e \land \mathrm{pct}\mathopen{}\left(\mathrm{burnYield},\,\mathrm{splitCost}\right) = 23 \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 1,000 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{the\_gases\_are\_eighteen\_hundred\_times\_the\_water\_they\_came\_from}]
-\[ \frac{\mathrm{molH2} \cdot \mathrm{mLperMol}}{1000} = 11117 \land \frac{\mathrm{molO2} \cdot \mathrm{mLperMol}}{1000} = 5558 \land \frac{\frac{\mathrm{molH2} \cdot \mathrm{mLperMol}}{1000} + \frac{\mathrm{molO2} \cdot \mathrm{mLperMol}}{1000}}{9} = 1852 \]
+\begin{theorem}[\texttt{the\_gas\_volume\_reads\_back\_its\_moles}]
+\[ \forall m \in \{0,\dots,999\},\; \mathrm{molesOf}\mathopen{}\left(\mathrm{litresOf}\mathopen{}\left(m\right)\right) \le m \land m \le \mathrm{molesOf}\mathopen{}\left(\mathrm{litresOf}\mathopen{}\left(m\right)\right) + 1 \land \mathrm{molH2} = 2 \cdot \mathrm{molO2} \land \mathrm{litresOf}\mathopen{}\left(\mathrm{molH2}\right) = 11117 \land \mathrm{litresOf}\mathopen{}\left(\mathrm{molO2}\right) = 5558 \land \frac{\mathrm{litresOf}\mathopen{}\left(\mathrm{molH2}\right) + \mathrm{litresOf}\mathopen{}\left(\mathrm{molO2}\right)}{9} = 1852 \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 1,000 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{two\_thirds\_of\_the\_volume\_carries\_a\_ninth\_of\_the\_mass}]
-\[ \frac{\mathrm{molH2} \cdot 100}{\mathrm{molH2} + \mathrm{molO2}} = 66 \land \frac{2 \cdot \mathrm{mgH2} \cdot 100}{2 \cdot \mathrm{mgH2O}} = 11 \]
+\begin{theorem}[\texttt{two\_parts\_in\_three\_is\_two\_thirds\_at\_every\_scale}]
+\[ \forall m \in \{1,\dots,500\},\; \mathrm{pct}\mathopen{}\left(2 \cdot m,\,3 \cdot m\right) = 66 \land \mathrm{pct}\mathopen{}\left(\mathrm{molH2},\,\mathrm{molH2} + \mathrm{molO2}\right) = 66 \land \mathrm{pct}\mathopen{}\left(2 \cdot \mathrm{mgH2},\,2 \cdot \mathrm{mgH2O}\right) = 11 \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 500 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{uncompressed\_hydrogen\_is\_three\_thousandfold\_worse\_by\_volume}]
-\[ \frac{\mathrm{whPerKgH2} \cdot 100}{\frac{\mathrm{molH2} \cdot \mathrm{mLperMol}}{1000}} = 299 \land \frac{\mathrm{petrolWhL} \cdot 100}{299} = 3244 \]
+\begin{theorem}[\texttt{the\_energy\_per\_litre\_multiplies\_back\_to\_the\_energy}]
+\[ \forall l \in \{1,\dots,30\},\; \frac{\mathrm{whPerKgH2} \cdot 100}{l} \cdot l \le \mathrm{whPerKgH2} \cdot 100 \land \mathrm{whPerKgH2} \cdot 100 < \frac{\mathrm{whPerKgH2} \cdot 100}{l} + 1 \cdot l \land \frac{\mathrm{whPerKgH2} \cdot 100}{\mathrm{litresOf}\mathopen{}\left(\mathrm{molH2}\right)} = 299 \land \frac{\mathrm{petrolWhL} \cdot 100}{299} = 3244 \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 30 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{even\_at\_seven\_hundred\_bar\_it\_is\_sevenfold\_worse\_by\_volume}]
-\[ \frac{42 \cdot \mathrm{whPerKgH2}}{1000} = 1398 \land \frac{\mathrm{petrolWhL}}{1398} = 6 \]
+\begin{theorem}[\texttt{compression\_scales\_the\_energy\_per\_litre\_linearly}]
+\[ \forall k \in \{0,\dots,99\},\; 2 \cdot \mathrm{whPerLitreAt}\mathopen{}\left(k\right) \le \mathrm{whPerLitreAt}\mathopen{}\left(2 \cdot k\right) \land \mathrm{whPerLitreAt}\mathopen{}\left(2 \cdot k\right) \le 2 \cdot \mathrm{whPerLitreAt}\mathopen{}\left(k\right) + 1 \land \mathrm{whPerLitreAt}\mathopen{}\left(42\right) = 1398 \land \frac{\mathrm{petrolWhL}}{\mathrm{whPerLitreAt}\mathopen{}\left(42\right)} = 6 \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 100 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{each\_delivered\_kilowatt\_hour\_costs\_four\_and\_cycles\_a\_litre}]
-\[ \frac{\mathrm{splitCost} \cdot 100}{\mathrm{burnYield}} = 433 \land \frac{9 \cdot 1000}{\frac{\mathrm{burnYield}}{1000}} = 750 \]
+\begin{theorem}[\texttt{a\_ratio\_and\_its\_reciprocal\_multiply\_back\_to\_the\_whole}]
+\[ \forall b \in \{1,\dots,40\},\; \forall a \in \{1,\dots,1+b-1\},\; \mathrm{pct}\mathopen{}\left(a,\,b\right) \cdot \mathrm{pct}\mathopen{}\left(b,\,a\right) \le 10000 \land 10000 < \mathrm{pct}\mathopen{}\left(a,\,b\right) + 1 \cdot \mathrm{pct}\mathopen{}\left(b,\,a\right) + 1 \land \mathrm{pct}\mathopen{}\left(\mathrm{splitCost},\,\mathrm{burnYield}\right) = 433 \land \mathrm{pct}\mathopen{}\left(\mathrm{burnYield},\,\mathrm{splitCost}\right) = 23 \land \frac{9 \cdot 1000}{\frac{\mathrm{burnYield}}{1000}} = 750 \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 40 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{three\_quarters\_of\_the\_input\_leaves\_as\_heat}]
-\[ \mathrm{splitCost} - \mathrm{burnYield} = 40000 \land \frac{\mathrm{splitCost} - \mathrm{burnYield} \cdot 100}{\mathrm{splitCost}} = 76 \]
+\begin{theorem}[\texttt{the\_loss\_and\_the\_yield\_read\_back\_the\_input}]
+\[ \forall c \in \{1,\dots,60\},\; \forall y \in \{0,\dots,c + 1-1\},\; c - y + y = c \land 99 \le \mathrm{pct}\mathopen{}\left(c - y,\,c\right) + \mathrm{pct}\mathopen{}\left(y,\,c\right) \land \mathrm{pct}\mathopen{}\left(c - y,\,c\right) + \mathrm{pct}\mathopen{}\left(y,\,c\right) \le 100 \land \mathrm{splitCost} - \mathrm{burnYield} = 40000 \land \mathrm{pct}\mathopen{}\left(\mathrm{splitCost} - \mathrm{burnYield},\,\mathrm{splitCost}\right) = 76 \land \mathrm{pct}\mathopen{}\left(\mathrm{burnYield},\,\mathrm{splitCost}\right) = 23 \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 60 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{what\_the\_feedwater\_leaves\_behind\_decides\_the\_maintenance}]
-\[ \frac{100 \cdot \mathrm{tdsSeawater}}{1000} = 3500 \land \frac{100 \cdot \mathrm{tdsTapWater}}{1000} = 5 \land \frac{\mathrm{tdsSeawater}}{\mathrm{tdsTapWater}} = 700 \]
+\begin{theorem}[\texttt{the\_residue\_ratio\_is\_the\_same\_at\_every\_volume}]
+\[ \forall l \in \{1,\dots,200\},\; \mathrm{residueMg}\mathopen{}\left(l,\,\mathrm{tdsSeawater}\right) = 700 \cdot \mathrm{residueMg}\mathopen{}\left(l,\,\mathrm{tdsTapWater}\right) \land \frac{\mathrm{residueMg}\mathopen{}\left(100,\,\mathrm{tdsSeawater}\right)}{1000} = 3500 \land \frac{\mathrm{residueMg}\mathopen{}\left(100,\,\mathrm{tdsTapWater}\right)}{1000} = 5 \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 200 cases. \hfill$\square$
 
 \paragraph{\texttt{index.lean}}
 
@@ -1554,8 +1554,8 @@ remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \paragraph{\texttt{light.lean}}
 
-\begin{theorem}[\texttt{the\_si\_fixes\_exactly\_seven\_constants}]
-\[ \left|\mathrm{defining}\right| = 7 \]
+\begin{theorem}[\texttt{the\_si\_fixes\_seven\_distinct\_nonzero\_constants}]
+\[ \left|\mathrm{defining}\right| = 7 \land \operatorname{dedup}\left(\mathrm{defining}\right) = \mathrm{defining} \land \forall x \in \mathrm{defining},\; x > 0 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
@@ -1710,8 +1710,8 @@ remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
-\begin{theorem}[\texttt{even\_the\_largest\_domain\_here\_has\_an\_outside}]
-\[ \mathrm{largestDomainHere} + 1 > \mathrm{largestDomainHere} \land \mathrm{largestDomainHere} \bmod 2 = 0 \land \mathrm{largestDomainHere} + 1 \bmod 2 = 1 \]
+\begin{theorem}[\texttt{the\_successor\_leaves\_every\_domain\_and\_the\_predecessor\_returns}]
+\[ \forall n \in \mathrm{bounds} \mathbin{+\!\!+} [\mathrm{largestDomainHere}],\; n + 1 > n \land n + 1 - 1 = n \land n + 1 \bmod 2 \neq n \bmod 2 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
@@ -1732,20 +1732,20 @@ remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
-\begin{theorem}[\texttt{the\_measured\_ratio\_at\_a\_million\_leaves}]
-\[ \frac{\mathrm{recomputeUs}}{\mathrm{verifyUs}} = 567971 \land \mathrm{recomputeUs} > \mathrm{verifyUs} \cdot 500000 \]
+\begin{theorem}[\texttt{the\_measured\_ratio\_exceeds\_the\_counted\_gap}]
+\[ \forall k \in \{1,\dots,20\},\; \frac{2^{k}}{\mathrm{rounds}\mathopen{}\left(40,\,2^{k}\right)} \le \frac{\mathrm{recomputeUs}}{\mathrm{verifyUs}} \land \frac{\mathrm{recomputeUs}}{\mathrm{verifyUs}} \cdot \mathrm{verifyUs} \le \mathrm{recomputeUs} \land \mathrm{recomputeUs} < \frac{\mathrm{recomputeUs}}{\mathrm{verifyUs}} + 1 \cdot \mathrm{verifyUs} \land \frac{\mathrm{recomputeUs}}{\mathrm{verifyUs}} = 567971 \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 20 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{verification\_grows\_it\_is\_not\_constant}]
 \[ \mathrm{rounds}\mathopen{}\left(40,\,1024\right) < \mathrm{rounds}\mathopen{}\left(40,\,1048576\right) \land \forall k \in \{1,\dots,10\},\; \mathrm{rounds}\mathopen{}\left(40,\,2^{k}\right) = k \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 10 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{the\_verify\_is\_thirty\_eight\_thousand\_nanoseconds\_not\_one}]
-\[ \mathrm{nsPerVerify} = 38000 \land \mathrm{nsPerVerify} > 1 \land \mathrm{nsPerVerify} > 10000 \]
+\begin{theorem}[\texttt{the\_verify\_in\_nanoseconds\_reads\_back\_its\_microseconds}]
+\[ \forall u \in \{0,\dots,999\},\; \frac{u \cdot 1000}{1000} = u \land \mathrm{nsPerVerify} = \mathrm{verifyUs} \cdot 1000 \land \frac{\mathrm{nsPerVerify}}{1000} = \mathrm{verifyUs} \land \mathrm{nsPerVerify} > 10000 \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 1,000 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_advantage\_is\_the\_count\_not\_the\_operation}]
 \[ 1048576 - 20 = 1048556 \land \frac{1048576}{20} = 52428 \]
@@ -1757,15 +1757,15 @@ remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
-\begin{theorem}[\texttt{hexbits\_are\_shorter\_than\_hex}]
-\[ \mathrm{hexbitChars} < \mathrm{hexChars} \land \mathrm{hexChars} - \mathrm{hexbitChars} = 10 \land \frac{\mathrm{hexbitChars} \cdot 100}{\mathrm{hexChars}} = 68 \]
+\begin{theorem}[\texttt{the\_width\_is\_the\_ceiling\_of\_128\_bits\_over\_the\_symbol}]
+\[ \forall b \in \{1,\dots,8\},\; \mathrm{charsFor}\mathopen{}\left(b\right) \cdot b \ge 128 \land \mathrm{charsFor}\mathopen{}\left(b\right) - 1 \cdot b < 128 \land \mathrm{charsFor}\mathopen{}\left(4\right) = \mathrm{hexChars} \land \mathrm{charsFor}\mathopen{}\left(6\right) = \mathrm{hexbitChars} \land \mathrm{hexbitChars} < \mathrm{hexChars} \land \frac{\mathrm{hexbitChars} \cdot 100}{\mathrm{hexChars}} = 68 \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 8 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{hexbits\_are\_slower\_than\_hex}]
-\[ \mathrm{hexbitMs} > \mathrm{hexMs} \land \frac{\mathrm{hexbitMs} \cdot 10}{\mathrm{hexMs}} = 18 \]
+\begin{theorem}[\texttt{hexbits\_are\_slower\_and\_the\_ratio\_multiplies\_back}]
+\[ \forall b \in \{1,\dots,20\},\; \forall a \in \{0,\dots,399\},\; \frac{a}{b} \cdot b \le a \land a < \frac{a}{b} + 1 \cdot b \land \mathrm{hexbitMs} > \mathrm{hexMs} \land \frac{\mathrm{hexbitMs} \cdot 10}{\mathrm{hexMs}} = 18 \]
 \end{theorem}
-\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 8,000 cases. \hfill$\square$
 
 \subsection{the machine}
 

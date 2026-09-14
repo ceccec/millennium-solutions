@@ -279,7 +279,7 @@ const PROVED: [string, RegExp, string][] = [
   ['closed by decide, not sampled',      /by\s*`?decide`?/i,                          'the tactic recorded per theorem'],
   ['verification is log rounds, not N',  /log₂|log2|logarithmic/i,                     'speed.lean the_verify_path_is_the_exponent'],
   ['the gap widens at every doubling',   /widen|unbounded|every doubling/i,            'speed.lean the_gap_widens_with_every_doubling'],
-  ['the measured ratio',                 new RegExp(String(advantage().ratio)),        'speed.lean the_measured_ratio_at_a_million_leaves'],
+  ['the measured ratio',                 new RegExp(String(advantage().ratio)),        'speed.lean the_measured_ratio_exceeds_the_counted_gap'],
   ['order-invariant over permutations',  /order.invarian|permutation/i,                'quantum.lean receipt_is_order_invariant'],
   ['the chain verifies end to end',      /chain intact|append-only|recei/i,            'forensics over the whole ledger'],
   // Added after measuring that ZERO of this session's five new results reached the front pages. They were

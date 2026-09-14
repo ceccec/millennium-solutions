@@ -16331,7 +16331,9 @@
   {
     "key": "lean_energy_the_loop_returns_less_than_it_took",
     "name": "lean energy.lean: the_loop_returns_less_than_it_took — burnYield < splitCost ∧ burnYield * 100 / splitCost = 23 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "8229c511-d4bd-8878-9abb-f498760675f7"
+    "receipt": "8229c511-d4bd-8878-9abb-f498760675f7",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_energy_a_chain_of_efficiencies_can_only_lose",
@@ -16341,18 +16343,23 @@
   {
     "key": "lean_energy_as_a_purifier_the_loop_costs_a_thousandfold",
     "name": "lean energy.lean: as_a_purifier_the_loop_costs_a_thousandfold — splitCost / waterOut = 5777 ∧ splitCost / waterOut > roPerLitre * 1000 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "840c66b6-b891-8807-a71e-eee3f14306a3"
+    "receipt": "840c66b6-b891-8807-a71e-eee3f14306a3",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_energy_the_equation_balances_by_atom_count",
     "name": "lean energy.lean: the_equation_balances_by_atom_count — (2 * 2 = 2 * 2) ∧ (2 * 1 = 1 * 2) ∧ 4 = 2 * 2 ∧ 2 = 1 * 2 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "ecfd70b1-b35b-89d8-a1b0-18ed0d051f27",
-    "reason": "reinstated: this entry was withdrawn as orphaned when a regenerated file briefly lacked its theorem. The theorem is in src/proof again and the kernel decides it on every run, so the withdrawal no longer describes anything true. The receipt is untouched and the withdrawal is recorded here rather than erased."
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand.",
+    "revoked": true
   },
   {
     "key": "lean_energy_the_equation_balances_by_mass",
     "name": "lean energy.lean: the_equation_balances_by_mass — 2 * mgH2O = 2 * mgH2 + mgO2 ∧ 2 * mgH2O = 36030 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "debf920f-a945-870b-83c0-84614ef723bc"
+    "receipt": "debf920f-a945-870b-83c0-84614ef723bc",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_energy_the_gases_are_two_to_one_and_consume_each_other_exactly",
@@ -16362,7 +16369,9 @@
   {
     "key": "lean_energy_hydrogen_is_a_ninth_of_the_mass_and_oxygen_the_rest",
     "name": "lean energy.lean: hydrogen_is_a_ninth_of_the_mass_and_oxygen_the_rest — mgO2 * 100 / (2 * mgH2) = 793 ∧ (2 * mgH2) * 10000 / (2 * mgH2O) = 1119 ∧ mgO2 * 10000 / (2 * mgH2O) = 8880 ∧ 1119 + 8880 = 9999 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "585ebc79-3eac-8bd9-83ab-1bae798a3662"
+    "receipt": "585ebc79-3eac-8bd9-83ab-1bae798a3662",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_energy_mass_is_conserved_at_every_scale_so_the_loop_cannot_make_water",
@@ -16382,7 +16391,9 @@
   {
     "key": "lean_energy_the_ideal_round_trip_is_exactly_zero",
     "name": "lean energy.lean: the_ideal_round_trip_is_exactly_zero — 28583 - 28583 = 0 ∧ 28583 ≤ 28583 ∧ burnYield * 100 / splitCost = 23 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "181481c2-3745-806e-a705-38e157a3e345"
+    "receipt": "181481c2-3745-806e-a705-38e157a3e345",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_energy_the_two_to_one_is_forced_by_the_oxygen",
@@ -16512,37 +16523,51 @@
   {
     "key": "lean_energy_the_gases_are_eighteen_hundred_times_the_water_they_came_from",
     "name": "lean energy.lean: the_gases_are_eighteen_hundred_times_the_water_they_came_from — molH2 * mLperMol / 1000 = 11117 ∧ molO2 * mLperMol / 1000 = 5558 ∧ (molH2 * mLperMol / 1000 + molO2 * mLperMol / 1000) / 9 = 1852 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "033b4a15-d8ee-8506-939c-a8ccbb3e2888"
+    "receipt": "033b4a15-d8ee-8506-939c-a8ccbb3e2888",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_energy_two_thirds_of_the_volume_carries_a_ninth_of_the_mass",
     "name": "lean energy.lean: two_thirds_of_the_volume_carries_a_ninth_of_the_mass — molH2 * 100 / (molH2 + molO2) = 66 ∧ (2 * mgH2) * 100 / (2 * mgH2O) = 11 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "f8780f77-c9ef-885b-bf7c-41d9e25555fa"
+    "receipt": "f8780f77-c9ef-885b-bf7c-41d9e25555fa",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_energy_uncompressed_hydrogen_is_three_thousandfold_worse_by_volume",
     "name": "lean energy.lean: uncompressed_hydrogen_is_three_thousandfold_worse_by_volume — whPerKgH2 * 100 / (molH2 * mLperMol / 1000) = 299 ∧ petrolWhL * 100 / 299 = 3244 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "9c0e0943-6e5a-8989-b048-611a90ff1895"
+    "receipt": "9c0e0943-6e5a-8989-b048-611a90ff1895",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_energy_even_at_seven_hundred_bar_it_is_sevenfold_worse_by_volume",
     "name": "lean energy.lean: even_at_seven_hundred_bar_it_is_sevenfold_worse_by_volume — 42 * whPerKgH2 / 1000 = 1398 ∧ petrolWhL / 1398 = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "a1413809-d6e9-820e-92c4-129ffb67272d"
+    "receipt": "a1413809-d6e9-820e-92c4-129ffb67272d",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_energy_each_delivered_kilowatt_hour_costs_four_and_cycles_a_litre",
     "name": "lean energy.lean: each_delivered_kilowatt_hour_costs_four_and_cycles_a_litre — splitCost * 100 / burnYield = 433 ∧ 9 * 1000 / (burnYield / 1000) = 750 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "574b2b86-71c5-8424-9cb9-b41f1f6744ed"
+    "receipt": "574b2b86-71c5-8424-9cb9-b41f1f6744ed",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_energy_three_quarters_of_the_input_leaves_as_heat",
     "name": "lean energy.lean: three_quarters_of_the_input_leaves_as_heat — splitCost - burnYield = 40000 ∧ (splitCost - burnYield) * 100 / splitCost = 76 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "35c25641-5b8d-8825-aa5f-94f0e2792339"
+    "receipt": "35c25641-5b8d-8825-aa5f-94f0e2792339",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_energy_what_the_feedwater_leaves_behind_decides_the_maintenance",
     "name": "lean energy.lean: what_the_feedwater_leaves_behind_decides_the_maintenance — 100 * tdsSeawater / 1000 = 3500 ∧ 100 * tdsTapWater / 1000 = 5 ∧ tdsSeawater / tdsTapWater = 700 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "2c3cf0b0-2ea7-80c7-916f-cdbefc6ac125"
+    "receipt": "2c3cf0b0-2ea7-80c7-916f-cdbefc6ac125",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_mechanical_relation_digital_root",
@@ -17246,7 +17271,9 @@
   {
     "key": "lean_speed_the_measured_ratio_at_a_million_leaves",
     "name": "lean speed.lean: the_measured_ratio_at_a_million_leaves — recomputeUs / verifyUs = 567971 ∧ recomputeUs > verifyUs * 500000 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "167a92e0-5d27-87aa-8735-a420d02b2705"
+    "receipt": "167a92e0-5d27-87aa-8735-a420d02b2705",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_speed_verification_grows_it_is_not_constant",
@@ -17256,7 +17283,9 @@
   {
     "key": "lean_speed_the_verify_is_thirty_eight_thousand_nanoseconds_not_one",
     "name": "lean speed.lean: the_verify_is_thirty_eight_thousand_nanoseconds_not_one — nsPerVerify = 38000 ∧ nsPerVerify > 1 ∧ nsPerVerify > 10000 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "8eb1b99d-9b78-8ac4-bb29-7455c8437987"
+    "receipt": "8eb1b99d-9b78-8ac4-bb29-7455c8437987",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_speed_the_advantage_is_the_count_not_the_operation",
@@ -17658,7 +17687,9 @@
   {
     "key": "lean_light_the_si_fixes_exactly_seven_constants",
     "name": "lean light.lean: the_si_fixes_exactly_seven_constants — defining.length = 7 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "34b3da62-a7f5-871c-90f4-e8cc3b63ea5d"
+    "receipt": "34b3da62-a7f5-871c-90f4-e8cc3b63ea5d",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_light_one_second_is_c_metres_of_light",
@@ -17776,7 +17807,9 @@
   {
     "key": "lean_reach_even_the_largest_domain_here_has_an_outside",
     "name": "lean reach.lean: even_the_largest_domain_here_has_an_outside — largestDomainHere + 1 > largestDomainHere ∧ largestDomainHere % 2 = 0 ∧ (largestDomainHere + 1) % 2 = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "9f25da95-de94-86b7-90b6-937888a7a0b4"
+    "receipt": "9f25da95-de94-86b7-90b6-937888a7a0b4",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_reach_this_file_settles_none_of_the_seven",
@@ -17835,12 +17868,16 @@
   {
     "key": "lean_speed_hexbits_are_shorter_than_hex",
     "name": "lean speed.lean: hexbits_are_shorter_than_hex — hexbitChars < hexChars ∧ hexChars - hexbitChars = 10 ∧ hexbitChars * 100 / hexChars = 68 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "d3b171cf-2487-8772-9d92-573a4f88e84e"
+    "receipt": "d3b171cf-2487-8772-9d92-573a4f88e84e",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_speed_hexbits_are_slower_than_hex",
     "name": "lean speed.lean: hexbits_are_slower_than_hex — hexbitMs > hexMs ∧ hexbitMs * 10 / hexMs = 18 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "cf4672e4-0be3-8640-bd5c-2be01c301098"
+    "receipt": "cf4672e4-0be3-8640-bd5c-2be01c301098",
+    "revoked": true,
+    "reason": "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or renamed, so nothing recomputes it and no kernel run confirms it. Revoked in place — the receipt stays in the append-only chain, the claim does not stand."
   },
   {
     "key": "lean_speed_an_encoding_changes_width_not_the_count_of_operations",
@@ -18454,5 +18491,100 @@
     "key": "lean_split_the_orbit_turns_once_per_budget",
     "name": "lean split.lean: the_orbit_turns_once_per_budget — ((List.range 60).all (fun n => 2 ^ (n + 6) % 9 == 2 ^ n % 9)) ∧ 2 ^ 6 = sealBits / coins — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "35d5dc48-cbc0-8b91-aaaf-2976834a5f5f"
+  },
+  {
+    "key": "lean_energy_any_yield_below_its_cost_reads_under_the_whole",
+    "name": "lean energy.lean: any_yield_below_its_cost_reads_under_the_whole — (List.range' 1 60).all (fun c => (List.range c).all (fun y => pct y c < 100)) ∧ burnYield < splitCost ∧ pct burnYield splitCost = 23 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "64823215-1e97-88ef-ab5f-46f0ed44534a"
+  },
+  {
+    "key": "lean_energy_the_cost_per_litre_multiplies_back_to_the_cost",
+    "name": "lean energy.lean: the_cost_per_litre_multiplies_back_to_the_cost — (List.range' 1 20).all (fun l => (splitCost / l) * l ≤ splitCost && splitCost < (splitCost / l + 1) * l) ∧ splitCost / waterOut = 5777 ∧ splitCost / waterOut > roPerLitre * 1000 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2fafc1e2-f58f-8431-8e73-cfaa3c48dc21"
+  },
+  {
+    "key": "lean_energy_the_mass_balance_is_the_atom_balance",
+    "name": "lean energy.lean: the_mass_balance_is_the_atom_balance — mgH2 = mass 2 0 ∧ mgO2 = mass 0 2 ∧ mgH2O = mass 2 1 ∧ (List.range' 1 9).all (fun a => (List.range' 1 9).all (fun b => (List.range' 1 9).all (fun c => (a * mass 2 1 == b * mass 2 0 + c * mass 0 2) == balances a b c))) ∧ 2 * mgH2O = 2 * mgH2… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2854e1d5-ab5d-8f6f-aae3-a6d17a1f5202"
+  },
+  {
+    "key": "lean_energy_the_atom_table_decides_the_balance",
+    "name": "lean energy.lean: the_atom_table_decides_the_balance — (List.range' 1 9).all (fun a => (List.range' 1 9).all (fun b => (List.range' 1 9).all (fun c => (a * atomsH2O.1 == b * atomsH2.1 + c * atomsO2.1 && a * atomsH2O.2 == b * atomsH2.2 + c * atomsO2.2) == balances a b c))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "98e0c98d-7b0c-8a11-a21f-84b31b36f426"
+  },
+  {
+    "key": "lean_energy_a_part_and_its_rest_read_back_the_whole",
+    "name": "lean energy.lean: a_part_and_its_rest_read_back_the_whole — (List.range' 1 40).all (fun w => (List.range (w + 1)).all (fun a => per10k a w + per10k (w - a) w ≤ 10000 && 10000 ≤ per10k a w + per10k (w - a) w + 1)) ∧ mgO2 * 100 / (2 * mgH2) = 793 ∧ per10k (2 * mgH2) (2 * mgH2O) = 1119 ∧ per10k mgO2 (2… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d4addfa7-6e96-8896-8574-0608cec8caf0"
+  },
+  {
+    "key": "lean_energy_splitting_then_burning_is_the_identity_at_the_ideal",
+    "name": "lean energy.lean: splitting_then_burning_is_the_identity_at_the_ideal — (List.range 1000).all (fun e => burnE (splitE e) == e) ∧ pct burnYield splitCost = 23 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f354845f-b6af-8133-a8b0-ac3c1c3c6c18"
+  },
+  {
+    "key": "lean_energy_the_gas_volume_reads_back_its_moles",
+    "name": "lean energy.lean: the_gas_volume_reads_back_its_moles — (List.range 1000).all (fun m => molesOf (litresOf m) ≤ m && m ≤ molesOf (litresOf m) + 1) ∧ molH2 = 2 * molO2 ∧ litresOf molH2 = 11117 ∧ litresOf molO2 = 5558 ∧ (litresOf molH2 + litresOf molO2) / 9 = 1852 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "464b601e-4839-8b4d-bdad-e1f82ff6be74"
+  },
+  {
+    "key": "lean_energy_two_parts_in_three_is_two_thirds_at_every_scale",
+    "name": "lean energy.lean: two_parts_in_three_is_two_thirds_at_every_scale — (List.range' 1 500).all (fun m => pct (2 * m) (3 * m) == 66) ∧ pct molH2 (molH2 + molO2) = 66 ∧ pct (2 * mgH2) (2 * mgH2O) = 11 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6913b23d-5d6d-832c-9992-426fc4755697"
+  },
+  {
+    "key": "lean_energy_the_energy_per_litre_multiplies_back_to_the_energy",
+    "name": "lean energy.lean: the_energy_per_litre_multiplies_back_to_the_energy — (List.range' 1 30).all (fun l => (whPerKgH2 * 100 / l) * l ≤ whPerKgH2 * 100 && whPerKgH2 * 100 < (whPerKgH2 * 100 / l + 1) * l) ∧ whPerKgH2 * 100 / litresOf molH2 = 299 ∧ petrolWhL * 100 / 299 = 3244 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6ca259eb-a048-889f-953f-ffb3af4e191d"
+  },
+  {
+    "key": "lean_energy_compression_scales_the_energy_per_litre_linearly",
+    "name": "lean energy.lean: compression_scales_the_energy_per_litre_linearly — (List.range 100).all (fun k => 2 * whPerLitreAt k ≤ whPerLitreAt (2 * k) && whPerLitreAt (2 * k) ≤ 2 * whPerLitreAt k + 1) ∧ whPerLitreAt 42 = 1398 ∧ petrolWhL / whPerLitreAt 42 = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "62f26437-7387-84fc-bed6-8afc5ccf0921"
+  },
+  {
+    "key": "lean_energy_a_ratio_and_its_reciprocal_multiply_back_to_the_whole",
+    "name": "lean energy.lean: a_ratio_and_its_reciprocal_multiply_back_to_the_whole — (List.range' 1 40).all (fun b => (List.range' 1 b).all (fun a => pct a b * pct b a ≤ 10000 && 10000 < (pct a b + 1) * (pct b a + 1))) ∧ pct splitCost burnYield = 433 ∧ pct burnYield splitCost = 23 ∧ 9 * 1000 / (burnYield / 1000) = 750 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "07ef3913-ea46-810b-85b9-be9b21a8f476"
+  },
+  {
+    "key": "lean_energy_the_loss_and_the_yield_read_back_the_input",
+    "name": "lean energy.lean: the_loss_and_the_yield_read_back_the_input — (List.range' 1 60).all (fun c => (List.range (c + 1)).all (fun y => (c - y) + y == c && 99 ≤ pct (c - y) c + pct y c && pct (c - y) c + pct y c ≤ 100)) ∧ splitCost - burnYield = 40000 ∧ pct (splitCost - burnYield) splitCost = 76 ∧ pct burnY… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "945f6f02-5f28-8c32-a3a8-226b5a6e37e4"
+  },
+  {
+    "key": "lean_energy_the_residue_ratio_is_the_same_at_every_volume",
+    "name": "lean energy.lean: the_residue_ratio_is_the_same_at_every_volume — (List.range' 1 200).all (fun l => residueMg l tdsSeawater == 700 * residueMg l tdsTapWater) ∧ residueMg 100 tdsSeawater / 1000 = 3500 ∧ residueMg 100 tdsTapWater / 1000 = 5 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b0b19d5b-1924-8383-b871-740fdb759594"
+  },
+  {
+    "key": "lean_light_the_si_fixes_seven_distinct_nonzero_constants",
+    "name": "lean light.lean: the_si_fixes_seven_distinct_nonzero_constants — defining.length = 7 ∧ defining.eraseDups = defining ∧ defining.all (fun x => x > 0) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b8191727-00d7-8658-a6ea-e9b71aed9e9d"
+  },
+  {
+    "key": "lean_reach_the_successor_leaves_every_domain_and_the_predecessor_returns",
+    "name": "lean reach.lean: the_successor_leaves_every_domain_and_the_predecessor_returns — (bounds ++ [largestDomainHere]).all (fun n => n + 1 > n && (n + 1) - 1 == n && (n + 1) % 2 != n % 2) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e11c16ca-5d37-8dc4-9af3-7a3488c33cd8"
+  },
+  {
+    "key": "lean_speed_the_measured_ratio_exceeds_the_counted_gap",
+    "name": "lean speed.lean: the_measured_ratio_exceeds_the_counted_gap — (List.range' 1 20).all (fun k => 2 ^ k / rounds 40 (2 ^ k) ≤ recomputeUs / verifyUs) ∧ (recomputeUs / verifyUs) * verifyUs ≤ recomputeUs ∧ recomputeUs < (recomputeUs / verifyUs + 1) * verifyUs ∧ recomputeUs / verifyUs = 567971 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f8640798-50bd-8c98-b980-085593d93807"
+  },
+  {
+    "key": "lean_speed_the_verify_in_nanoseconds_reads_back_its_microseconds",
+    "name": "lean speed.lean: the_verify_in_nanoseconds_reads_back_its_microseconds — (List.range 1000).all (fun u => u * 1000 / 1000 == u) ∧ nsPerVerify = verifyUs * 1000 ∧ nsPerVerify / 1000 = verifyUs ∧ nsPerVerify > 10000 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e8a082ef-9515-8029-bfae-0a73deba82b4"
+  },
+  {
+    "key": "lean_speed_the_width_is_the_ceiling_of_128_bits_over_the_symbol",
+    "name": "lean speed.lean: the_width_is_the_ceiling_of_128_bits_over_the_symbol — (List.range' 1 8).all (fun b => charsFor b * b ≥ 128 && (charsFor b - 1) * b < 128) ∧ charsFor 4 = hexChars ∧ charsFor 6 = hexbitChars ∧ hexbitChars < hexChars ∧ hexbitChars * 100 / hexChars = 68 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5811891a-d052-8382-8f7c-9a3d6def88cc"
+  },
+  {
+    "key": "lean_speed_hexbits_are_slower_and_the_ratio_multiplies_back",
+    "name": "lean speed.lean: hexbits_are_slower_and_the_ratio_multiplies_back — (List.range' 1 20).all (fun b => (List.range 400).all (fun a => (a / b) * b ≤ a && a < (a / b + 1) * b)) ∧ hexbitMs > hexMs ∧ hexbitMs * 10 / hexMs = 18 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "91a92ea5-bedd-8b9a-80b7-29130fbe5a93"
   }
 ]

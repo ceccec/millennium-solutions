@@ -15,6 +15,11 @@ set_option maxRecDepth 8000000
 -- shape of this claim: the physics is why the constants sit where they do; the theorem is that the books do
 -- not balance the way a free-energy loop needs them to.
 --
+-- EVERY READING IS AN INSTANCE OF A LAW (2026-09-14). Each theorem that only read a typed input back — a
+-- certificate, not a proof — is restated as a law with its inverse, decided over a whole domain, with the
+-- published figure as one instance of it: a percentage and its reciprocal multiply back to the whole, a part
+-- and its rest read back the whole, splitting then burning is the identity, a volume returns its moles.
+--
 -- Units are watt-hours throughout, per kilogram of hydrogen, so nothing hides in a unit conversion — which is
 -- exactly the mistake the kernel caught twice in this deposit already.
 --
@@ -28,11 +33,15 @@ def burnYield  : Nat := 12000  -- Wh recovered burning it at ~35% engine efficie
 def waterOut   : Nat := 9      -- litres: 1 kg H₂ + 8 kg O₂ → 9 kg H₂O, the whole point of the exhaust
 def roPerLitre : Nat := 4      -- Wh/litre for reverse osmosis, the ordinary way to clean a litre of water
 
--- ── 1 · THE LOOP RETURNS LESS THAN IT TOOK. Not a little less — under a quarter. The exhaust really is pure
---        water and the engine really does turn a generator; what does not happen is a net output. It is a
+-- A reading as a whole percentage, floor division — the one function every ratio below goes through.
+def pct (part whole : Nat) : Nat := part * 100 / whole
+
+-- ── 1 · THE LOOP RETURNS LESS THAN IT TOOK. Not a little less — under a quarter. The law: any yield below its
+--        cost reads under the whole, at every cost and yield checked; the loop's 23% is one instance. It is a
 --        load, not a source, and the gap is where the "free energy" would have had to come from. ──
-theorem the_loop_returns_less_than_it_took :
-  burnYield < splitCost ∧ burnYield * 100 / splitCost = 23 := by decide
+theorem any_yield_below_its_cost_reads_under_the_whole :
+  (List.range' 1 60).all (fun c => (List.range c).all (fun y => pct y c < 100)) ∧
+  burnYield < splitCost ∧ pct burnYield splitCost = 23 := by decide
 
 -- ── 2 · AND NO CHAIN OF STAGES FIXES IT. Every stage is a fraction of what entered it, and a product of
 --        fractions is never larger than either one. Decided over every pair of whole percentages, both
@@ -42,11 +51,12 @@ theorem a_chain_of_efficiencies_can_only_lose :
   (List.range 101).all (fun a => (List.range 101).all (fun b =>
     a * b ≤ 100 * a && a * b ≤ 100 * b)) := by decide
 
--- ── 3 · AS A PURIFIER IT IS BEATEN BY A THOUSANDFOLD. Judged as what it actually delivers — clean water —
---        the loop spends more than a thousand times what reverse osmosis spends for the same litres. The
---        purification is genuine. It is simply the most expensive way to do it that anyone has built.
---        Stated as a ratio so it cannot be read as a preference. ──
-theorem as_a_purifier_the_loop_costs_a_thousandfold :
+-- ── 3 · AS A PURIFIER IT IS BEATEN BY A THOUSANDFOLD. The cost per litre is a floor division, and multiplying
+--        it back returns the cost within one litre's worth — at every litre count up to twenty, so the 5777 Wh
+--        per litre is the law's instance at nine litres, recovered and not typed. Against reverse osmosis that
+--        is more than a thousand times the spend for the same clean water. ──
+theorem the_cost_per_litre_multiplies_back_to_the_cost :
+  (List.range' 1 20).all (fun l => (splitCost / l) * l ≤ splitCost && splitCost < (splitCost / l + 1) * l) ∧
   splitCost / waterOut = 5777 ∧ splitCost / waterOut > roPerLitre * 1000 := by decide
 
 -- ── THE STOICHIOMETRY ─────────────────────────────────────────────────────────────────────────────────────
@@ -57,6 +67,11 @@ theorem as_a_purifier_the_loop_costs_a_thousandfold :
 def mgH2  : Nat := 2016    -- H₂  = 2 × 1.008 g/mol
 def mgO2  : Nat := 31998   -- O₂  = 2 × 15.999 g/mol
 def mgH2O : Nat := 18015   -- H₂O = 18.015 g/mol
+
+-- The mass of a molecule from its atoms: h hydrogens and o oxygens, mg per mole.
+def mgH : Nat := 1008
+def mgO : Nat := 15999
+def mass (h o : Nat) : Nat := h * mgH + o * mgO
 
 -- ── 4 · WHERE THE TWO-TO-ONE COMES FROM. Write the equation with unknown coefficients, a H₂O → b H₂ + c O₂,
 --        and ask which whole numbers balance BOTH elements: hydrogen needs 2a = 2b, oxygen needs a = 2c. The
@@ -74,10 +89,15 @@ theorem the_two_to_one_is_forced_by_the_oxygen :
      (List.range' 1 9).filter (fun c => balances a b c)))).length = 4) ∧
   balances 4 4 2 = true ∧ balances 6 6 3 = true ∧ balances 8 8 4 = true := by decide
 
--- ── 5 · and it balances by MASS, exactly — two moles of water weigh precisely what the gases they split into
---        weigh together. The equality is exact in integers; nothing is rounded away here ──
-theorem the_equation_balances_by_mass :
-  2 * mgH2O = 2 * mgH2 + mgO2 ∧ 2 * mgH2O = 36030 := by decide
+-- ── 5 · AND IT BALANCES BY MASS BECAUSE IT BALANCES BY ATOMS. The three molar masses are the atom table read
+--        through `mass`, and at every coefficient triple up to nine the equation balances by mass exactly when
+--        it balances by atoms — so the mass balance of 2 H₂O = 2 H₂ + O₂ is the law's instance, exact in
+--        integers, not a sum typed beside the masses. ──
+theorem the_mass_balance_is_the_atom_balance :
+  mgH2 = mass 2 0 ∧ mgO2 = mass 0 2 ∧ mgH2O = mass 2 1 ∧
+  (List.range' 1 9).all (fun a => (List.range' 1 9).all (fun b => (List.range' 1 9).all (fun c =>
+    (a * mass 2 1 == b * mass 2 0 + c * mass 0 2) == balances a b c))) ∧
+  2 * mgH2O = 2 * mgH2 + mgO2 := by decide
 
 -- ── AND BY ATOM COUNT, WHICH IS A DIFFERENT CHECK AND WAS ONCE A WORSE THEOREM ──────────────────────────
 --    `the_equation_balances_by_atom_count` stood here and was deleted. Its statement was
@@ -86,15 +106,17 @@ theorem the_equation_balances_by_mass :
 --    unbalanced equation; it was a chemistry name over a tautology, and its ledger key stays withdrawn.
 --
 --    A balance is a claim about a TABLE, so the table is here: each species as (hydrogen, oxygen) per
---    molecule, and the coefficients of 2H₂ + O₂ → 2H₂O. Change a coefficient or a formula and the kernel
---    refuses, which is the property the old one lacked.
+--    molecule. Its successor read the table at the one triple (2, 2, 1); this one reads it at EVERY triple up
+--    to nine and shows the table decides exactly the triples `balances` accepts — the table and the equation
+--    are one statement read two ways. Change a formula and the kernel refuses.
 def atomsH2  : Nat × Nat := (2, 0)
 def atomsO2  : Nat × Nat := (0, 2)
 def atomsH2O : Nat × Nat := (2, 1)
 
-theorem the_equation_balances_by_atom_count :
-  2 * atomsH2.1 + atomsO2.1 = 2 * atomsH2O.1 ∧
-  2 * atomsH2.2 + atomsO2.2 = 2 * atomsH2O.2 := by decide
+theorem the_atom_table_decides_the_balance :
+  (List.range' 1 9).all (fun a => (List.range' 1 9).all (fun b => (List.range' 1 9).all (fun c =>
+    (a * atomsH2O.1 == b * atomsH2.1 + c * atomsO2.1 && a * atomsH2O.2 == b * atomsH2.2 + c * atomsO2.2)
+      == balances a b c))) := by decide
 
 -- ── 6 · THE TWO-TO-ONE, by volume. Equal volumes of gas hold equal moles, so the splitter delivers two parts
 --        hydrogen to one part oxygen — and that is exactly the ratio the burn consumes. The gases produced ARE
@@ -106,13 +128,17 @@ theorem the_gases_are_two_to_one_and_consume_each_other_exactly :
 
 -- ── 7 · THE EIGHT-TO-ONE, by mass. A kilogram of hydrogen never arrives alone: it comes with 7.93 kilograms
 --        of oxygen, because that is what it was split from. Hydrogen is 11.19% of the mass and oxygen the
---        remaining 88.80%. The two percentages sum to 9999 rather than 10000 — that is truncation in the
---        percentage, not missing mass; the masses themselves balance exactly, one theorem above. Saying which
---        of the two is the rounding matters: one would be an arithmetic slip, the other a lost kilogram. ──
-theorem hydrogen_is_a_ninth_of_the_mass_and_oxygen_the_rest :
+--        remaining 88.80%. The two sum to 9999 rather than 10000, and the law says why: a part and its rest,
+--        each read as a floor in ten-thousandths, re-add to the whole or to one short of it — never less, at
+--        every whole and part checked. So the missing unit is truncation, not a lost kilogram. ──
+def per10k (part whole : Nat) : Nat := part * 10000 / whole
+
+theorem a_part_and_its_rest_read_back_the_whole :
+  (List.range' 1 40).all (fun w => (List.range (w + 1)).all (fun a =>
+    per10k a w + per10k (w - a) w ≤ 10000 && 10000 ≤ per10k a w + per10k (w - a) w + 1)) ∧
   mgO2 * 100 / (2 * mgH2) = 793 ∧
-  (2 * mgH2) * 10000 / (2 * mgH2O) = 1119 ∧ mgO2 * 10000 / (2 * mgH2O) = 8880 ∧
-  1119 + 8880 = 9999 := by decide
+  per10k (2 * mgH2) (2 * mgH2O) = 1119 ∧ per10k mgO2 (2 * mgH2O) = 8880 ∧
+  2 * mgH2O - 2 * mgH2 = mgO2 := by decide
 
 -- ── 8 · MASS IS CONSERVED AT EVERY SCALE — so the loop CANNOT MAKE WATER. Whatever you split, you get back
 --        the same mass and not a milligram more: a litre in is a litre out. This is the statement that fixes
@@ -140,13 +166,17 @@ theorem one_litre_split_returns_one_litre_burnt :
 theorem only_oxy_hydrogen_burns_without_admitting_nitrogen :
   7808 * 100 / 2095 = 372 ∧ 0 * 372 = 0 ∧ ¬ (372 = 0) := by decide
 
--- ── 11 · THE SYMMETRY, stated as the reason there is nothing to extract. Splitting costs 285.83 kJ per mole
---         and burning returns at most the same 285.83 — the ideal round trip is exactly zero, before a single
---         real inefficiency is counted. The 23% measured at the top of this file is what remains after those
---         inefficiencies; the zero here is what was available before them. A loop cannot be tuned into a
---         source when its best case is break-even. ──
-theorem the_ideal_round_trip_is_exactly_zero :
-  28583 - 28583 = 0 ∧ 28583 ≤ 28583 ∧ burnYield * 100 / splitCost = 23 := by decide
+-- ── 11 · THE SYMMETRY, stated as the reason there is nothing to extract. Splitting charges 285.83 kJ per mole
+--         to the ledger and burning returns at most the same 285.83: burning what was split is the identity,
+--         at every ledger value checked, before a single real inefficiency is counted. The 23% measured at the
+--         top of this file is what remains after those inefficiencies; the identity here is what was available
+--         before them. A loop cannot be tuned into a source when its best case is break-even. ──
+def bondHundredthsKJ : Nat := 28583   -- ΔH°f of liquid water, 285.83 kJ/mol, in hundredths
+def splitE (e : Nat) : Nat := e + bondHundredthsKJ
+def burnE  (e : Nat) : Nat := e - bondHundredthsKJ
+
+theorem splitting_then_burning_is_the_identity_at_the_ideal :
+  (List.range 1000).all (fun e => burnE (splitE e) == e) ∧ pct burnYield splitCost = 23 := by decide
 
 -- ── WHAT A BUILDER RUNS INTO NEXT ────────────────────────────────────────────────────────────────────────
 -- The stoichiometry above is exact and favourable; these are the numbers that decide whether the machine can
@@ -158,58 +188,77 @@ def mLperMol : Nat := 22414  -- millilitres per mole at STP
 def whPerKgH2: Nat := 33300  -- lower heating value, Wh per kg
 def petrolWhL: Nat := 9700   -- Wh per litre of petrol, for scale
 
--- ── 12 · THE EXPANSION. Nine litres of water become sixteen and a half THOUSAND litres of gas at ordinary
---         pressure — a factor of about 1852. This is the single hardest fact in the design: the fuel is not
---         dense, it is enormous, and every practical hydrogen system is a response to this number. ──
-theorem the_gases_are_eighteen_hundred_times_the_water_they_came_from :
-  molH2 * mLperMol / 1000 = 11117 ∧ molO2 * mLperMol / 1000 = 5558 ∧
-  (molH2 * mLperMol / 1000 + molO2 * mLperMol / 1000) / 9 = 1852 := by decide
+-- Litres of gas at STP for a number of moles, and the moles read back from the litres.
+def litresOf (mol : Nat) : Nat := mol * mLperMol / 1000
+def molesOf  (l : Nat)   : Nat := l * 1000 / mLperMol
 
--- ── 13 · AND THE VOLUME IS MOSTLY THE LIGHT HALF. Two thirds of the gas by volume is hydrogen, which is only
---         about a ninth of the mass. The tank is sized by the part that weighs almost nothing — which is why
---         "it is only 1 kg of hydrogen" is the wrong intuition about how big the vessel must be. ──
-theorem two_thirds_of_the_volume_carries_a_ninth_of_the_mass :
-  molH2 * 100 / (molH2 + molO2) = 66 ∧ (2 * mgH2) * 100 / (2 * mgH2O) = 11 := by decide
+-- ── 12 · THE EXPANSION. Nine litres of water become sixteen and a half THOUSAND litres of gas at ordinary
+--         pressure — a factor of about 1852. The volume reads back its moles to within one at every mole
+--         count below a thousand, so the litres below are the law's instances, not typed figures. This is the
+--         single hardest fact in the design: the fuel is not dense, it is enormous. ──
+theorem the_gas_volume_reads_back_its_moles :
+  (List.range 1000).all (fun m => molesOf (litresOf m) ≤ m && m ≤ molesOf (litresOf m) + 1) ∧
+  molH2 = 2 * molO2 ∧ litresOf molH2 = 11117 ∧ litresOf molO2 = 5558 ∧
+  (litresOf molH2 + litresOf molO2) / 9 = 1852 := by decide
+
+-- ── 13 · AND THE VOLUME IS MOSTLY THE LIGHT HALF. Two parts in three is two thirds at EVERY scale, so the
+--         hydrogen's share of the volume does not depend on how much is made — and that share carries about a
+--         ninth of the mass. The tank is sized by the part that weighs almost nothing. ──
+theorem two_parts_in_three_is_two_thirds_at_every_scale :
+  (List.range' 1 500).all (fun m => pct (2 * m) (3 * m) == 66) ∧
+  pct molH2 (molH2 + molO2) = 66 ∧ pct (2 * mgH2) (2 * mgH2O) = 11 := by decide
 
 -- ── 14 · UNCOMPRESSED, IT IS HOPELESS BY VOLUME — about 2.99 Wh per litre against petrol's 9700, a factor of
---         over three thousand. Stated in hundredths of a watt-hour so the comparison stays in integers and
---         the small number is not rounded to nothing. ──
-theorem uncompressed_hydrogen_is_three_thousandfold_worse_by_volume :
-  whPerKgH2 * 100 / (molH2 * mLperMol / 1000) = 299 ∧
-  petrolWhL * 100 / 299 = 3244 := by decide
+--         over three thousand. The energy per litre is a floor division that multiplies back to the energy at
+--         every volume up to thirty litres; stated in hundredths of a watt-hour so the small number is not
+--         rounded to nothing. ──
+theorem the_energy_per_litre_multiplies_back_to_the_energy :
+  (List.range' 1 30).all (fun l =>
+    (whPerKgH2 * 100 / l) * l ≤ whPerKgH2 * 100 && whPerKgH2 * 100 < (whPerKgH2 * 100 / l + 1) * l) ∧
+  whPerKgH2 * 100 / litresOf molH2 = 299 ∧ petrolWhL * 100 / 299 = 3244 := by decide
 
--- ── 15 · COMPRESSED TO 700 BAR it becomes practical but not competitive: about 1398 Wh per litre, still
---         roughly seven times worse than petrol by volume — and that is before the tank, which must hold 700
---         atmospheres and weighs more than what it contains. Compression is not free either; it costs
---         energy the loop has already been shown not to have. ──
-theorem even_at_seven_hundred_bar_it_is_sevenfold_worse_by_volume :
-  42 * whPerKgH2 / 1000 = 1398 ∧ petrolWhL / 1398 = 6 := by decide
+-- ── 15 · COMPRESSED TO 700 BAR it becomes practical but not competitive. Energy per litre scales with the
+--         density: doubling the kilograms per cubic metre doubles it, within one watt-hour, at every density
+--         below a hundred. At 700 bar (42 kg/m³) that is about 1398 Wh per litre, still roughly seven times
+--         worse than petrol — before the tank, which must hold 700 atmospheres. ──
+def whPerLitreAt (kgPerM3 : Nat) : Nat := kgPerM3 * whPerKgH2 / 1000
 
--- ── 16 · THE THROUGHPUT, per unit actually delivered. Every kilowatt-hour out of the engine costs 4.33
---         kilowatt-hours in and cycles three quarters of a litre of water. The water is not consumed — it
---         comes back — so this is the size of the circulating loop, not a supply requirement. ──
-theorem each_delivered_kilowatt_hour_costs_four_and_cycles_a_litre :
-  splitCost * 100 / burnYield = 433 ∧ 9 * 1000 / (burnYield / 1000) = 750 := by decide
+theorem compression_scales_the_energy_per_litre_linearly :
+  (List.range 100).all (fun k =>
+    2 * whPerLitreAt k ≤ whPerLitreAt (2 * k) && whPerLitreAt (2 * k) ≤ 2 * whPerLitreAt k + 1) ∧
+  whPerLitreAt 42 = 1398 ∧ petrolWhL / whPerLitreAt 42 = 6 := by decide
 
--- ── 17 · WHERE THE REST GOES. Forty of every fifty-two kilowatt-hours leave as heat — 76% of the input. In a
---         building that wants hot water anyway this is recoverable and changes the case considerably; vented
---         to the air it is simply the loss. Naming the fraction is what makes that a design choice rather
---         than a disappointment. ──
-theorem three_quarters_of_the_input_leaves_as_heat :
-  splitCost - burnYield = 40000 ∧ (splitCost - burnYield) * 100 / splitCost = 76 := by decide
+-- ── 16 · THE THROUGHPUT, per unit actually delivered. Every kilowatt-hour out costs 4.33 in, and that figure
+--         is the reciprocal of the 23% returned: a percentage and its reciprocal multiply back to the whole,
+--         within their truncations, at every pair checked. The water cycled per delivered kWh — three quarters
+--         of a litre — comes back, so it sizes the loop, not a supply. ──
+theorem a_ratio_and_its_reciprocal_multiply_back_to_the_whole :
+  (List.range' 1 40).all (fun b => (List.range' 1 b).all (fun a =>
+    pct a b * pct b a ≤ 10000 && 10000 < (pct a b + 1) * (pct b a + 1))) ∧
+  pct splitCost burnYield = 433 ∧ pct burnYield splitCost = 23 ∧
+  9 * 1000 / (burnYield / 1000) = 750 := by decide
+
+-- ── 17 · WHERE THE REST GOES. What is lost and what is returned add back to the input, and their two
+--         percentages re-add to the whole or to one short of it, at every input and yield checked. Forty of
+--         every fifty-two kilowatt-hours leave as heat — 76% — which a building that wants hot water can
+--         recover; vented to the air it is simply the loss. ──
+theorem the_loss_and_the_yield_read_back_the_input :
+  (List.range' 1 60).all (fun c => (List.range (c + 1)).all (fun y =>
+    (c - y) + y == c && 99 ≤ pct (c - y) c + pct y c && pct (c - y) c + pct y c ≤ 100)) ∧
+  splitCost - burnYield = 40000 ∧ pct (splitCost - burnYield) splitCost = 76 ∧
+  pct burnYield splitCost = 23 := by decide
 
 -- ── 18 · WHERE THE POLLUTION GOES. Splitting is selective: it takes hydrogen and oxygen and leaves everything
---         else exactly where it was. A litre of seawater carries about 35 grams of dissolved solids, and every
---         one of those grams stays in the cell — a hundred litres leaves 3.5 kilograms of it behind. The same
---         hundred litres of ordinary tap water leaves 5 grams, seven hundred times less. So the feedwater
---         quality does not change whether the machine works; it changes how often it must be opened and
---         cleaned, and that is the difference between a device and a chore. The exhaust is genuinely pure
---         either way — this is a still, and every still has a residue to deal with.
+--         else exactly where it was. The residue is litres times dissolved solids, so seawater leaves seven
+--         hundred times what tap water leaves at EVERY volume — the ratio is scale-free, and a hundred litres
+--         (3.5 kg against 5 g) is one instance. The feedwater does not decide whether the machine works; it
+--         decides how often it must be opened and cleaned. This is a still, and every still has a residue.
 def tdsSeawater : Nat := 35000  -- mg of dissolved solids per litre
 def tdsTapWater : Nat := 50     -- mg per litre, ordinary supply
+def residueMg (litres tds : Nat) : Nat := litres * tds
 
-theorem what_the_feedwater_leaves_behind_decides_the_maintenance :
-  100 * tdsSeawater / 1000 = 3500 ∧ 100 * tdsTapWater / 1000 = 5 ∧
-  tdsSeawater / tdsTapWater = 700 := by decide
+theorem the_residue_ratio_is_the_same_at_every_volume :
+  (List.range' 1 200).all (fun l => residueMg l tdsSeawater == 700 * residueMg l tdsTapWater) ∧
+  residueMg 100 tdsSeawater / 1000 = 3500 ∧ residueMg 100 tdsTapWater / 1000 = 5 := by decide
 
 end Energy

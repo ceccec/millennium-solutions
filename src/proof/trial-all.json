@@ -15286,5 +15286,119 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "35d5dc48-cbc0-8b91-aaaf-2976834a5f5f"
+  },
+  {
+    "key": "lean_energy_any_yield_below_its_cost_reads_under_the_whole",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "64823215-1e97-88ef-ab5f-46f0ed44534a"
+  },
+  {
+    "key": "lean_energy_the_cost_per_litre_multiplies_back_to_the_cost",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2fafc1e2-f58f-8431-8e73-cfaa3c48dc21"
+  },
+  {
+    "key": "lean_energy_the_mass_balance_is_the_atom_balance",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2854e1d5-ab5d-8f6f-aae3-a6d17a1f5202"
+  },
+  {
+    "key": "lean_energy_the_atom_table_decides_the_balance",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "98e0c98d-7b0c-8a11-a21f-84b31b36f426"
+  },
+  {
+    "key": "lean_energy_a_part_and_its_rest_read_back_the_whole",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d4addfa7-6e96-8896-8574-0608cec8caf0"
+  },
+  {
+    "key": "lean_energy_splitting_then_burning_is_the_identity_at_the_ideal",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f354845f-b6af-8133-a8b0-ac3c1c3c6c18"
+  },
+  {
+    "key": "lean_energy_the_gas_volume_reads_back_its_moles",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "464b601e-4839-8b4d-bdad-e1f82ff6be74"
+  },
+  {
+    "key": "lean_energy_two_parts_in_three_is_two_thirds_at_every_scale",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6913b23d-5d6d-832c-9992-426fc4755697"
+  },
+  {
+    "key": "lean_energy_the_energy_per_litre_multiplies_back_to_the_energy",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6ca259eb-a048-889f-953f-ffb3af4e191d"
+  },
+  {
+    "key": "lean_energy_compression_scales_the_energy_per_litre_linearly",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "62f26437-7387-84fc-bed6-8afc5ccf0921"
+  },
+  {
+    "key": "lean_energy_a_ratio_and_its_reciprocal_multiply_back_to_the_whole",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "07ef3913-ea46-810b-85b9-be9b21a8f476"
+  },
+  {
+    "key": "lean_energy_the_loss_and_the_yield_read_back_the_input",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "945f6f02-5f28-8c32-a3a8-226b5a6e37e4"
+  },
+  {
+    "key": "lean_energy_the_residue_ratio_is_the_same_at_every_volume",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b0b19d5b-1924-8383-b871-740fdb759594"
+  },
+  {
+    "key": "lean_light_the_si_fixes_seven_distinct_nonzero_constants",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b8191727-00d7-8658-a6ea-e9b71aed9e9d"
+  },
+  {
+    "key": "lean_reach_the_successor_leaves_every_domain_and_the_predecessor_returns",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e11c16ca-5d37-8dc4-9af3-7a3488c33cd8"
+  },
+  {
+    "key": "lean_speed_the_measured_ratio_exceeds_the_counted_gap",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f8640798-50bd-8c98-b980-085593d93807"
+  },
+  {
+    "key": "lean_speed_the_verify_in_nanoseconds_reads_back_its_microseconds",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e8a082ef-9515-8029-bfae-0a73deba82b4"
+  },
+  {
+    "key": "lean_speed_the_width_is_the_ceiling_of_128_bits_over_the_symbol",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5811891a-d052-8382-8f7c-9a3d6def88cc"
+  },
+  {
+    "key": "lean_speed_hexbits_are_slower_and_the_ratio_multiplies_back",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "91a92ea5-bedd-8b9a-80b7-29130fbe5a93"
   }
 ]

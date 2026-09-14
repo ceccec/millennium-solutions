@@ -9,7 +9,7 @@ axiom fails the build rather than earning a footnote. All **628** report the sam
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
-theorems rest on **306** definitions, and every one of them is a choice. A theorem about
+theorems rest on **319** definitions, and every one of them is a choice. A theorem about
 `fall` is a theorem about the digital root only because `fall` is *defined* to be it. Both halves are
 indexed below, and the second is the longer one.
 
@@ -90,7 +90,7 @@ The pins in the control fixture follow the community practice of guarding `#prin
 `#guard_msgs`, which turns the axiom footprint into an executable regression test: the assertion is
 checked by the elaborator, and drift fails the build with a mismatch instead of passing unnoticed.
 
-## What IS assumed: the 306 definitions
+## What IS assumed: the 319 definitions
 
 Each of these is a primitive of this deposit — not derived, not proved, chosen. They are listed in full
 because a reader checking a theorem must be able to read the definition it is about, and because a
@@ -210,27 +210,39 @@ def tetOf (r : Nat) : List Nat := (unitsMod 9).filter (fun d => d % 3 == r)
 def settledHere : Nat := 31
 ```
 
-### `energy.lean` — 18 definition(s), 19 theorem(s)
+### `energy.lean` — 30 definition(s), 19 theorem(s)
 
 ```lean
 def splitCost : Nat := 52000  -- Wh to electrolyse 1 kg H₂ (real cells: 50–55 kWh/kg; ideal is ~39.4)
 def burnYield : Nat := 12000  -- Wh recovered burning it at ~35% engine efficiency (LHV 33.3 kWh/kg)
 def waterOut : Nat := 9      -- litres: 1 kg H₂ + 8 kg O₂ → 9 kg H₂O, the whole point of the exhaust
 def roPerLitre : Nat := 4      -- Wh/litre for reverse osmosis, the ordinary way to clean a litre of water
+def pct (part whole : Nat) : Nat := part * 100 / whole
 def mgH2 : Nat := 2016    -- H₂  = 2 × 1.008 g/mol
 def mgO2 : Nat := 31998   -- O₂  = 2 × 15.999 g/mol
 def mgH2O : Nat := 18015   -- H₂O = 18.015 g/mol
+def mgH : Nat := 1008
+def mgO : Nat := 15999
+def mass (h o : Nat) : Nat := h * mgH + o * mgO
 def balances (a b c : Nat) : Bool := (2 * a == 2 * b) && (a == 2 * c)
 def atomsH2 : Nat × Nat := (2, 0)
 def atomsO2 : Nat × Nat := (0, 2)
 def atomsH2O : Nat × Nat := (2, 1)
+def per10k (part whole : Nat) : Nat := part * 10000 / whole
+def bondHundredthsKJ : Nat := 28583   -- ΔH°f of liquid water, 285.83 kJ/mol, in hundredths
+def splitE (e : Nat) : Nat := e + bondHundredthsKJ
+def burnE (e : Nat) : Nat := e - bondHundredthsKJ
 def molH2 : Nat := 496    -- moles in 1 kg of H₂ (1000 g ÷ 2.016)
 def molO2 : Nat := 248    -- the oxygen that comes with it, half as many moles
 def mLperMol : Nat := 22414  -- millilitres per mole at STP
 def whPerKgH2 : Nat := 33300  -- lower heating value, Wh per kg
 def petrolWhL : Nat := 9700   -- Wh per litre of petrol, for scale
+def litresOf (mol : Nat) : Nat := mol * mLperMol / 1000
+def molesOf (l : Nat)   : Nat := l * 1000 / mLperMol
+def whPerLitreAt (kgPerM3 : Nat) : Nat := kgPerM3 * whPerKgH2 / 1000
 def tdsSeawater : Nat := 35000  -- mg of dissolved solids per litre
 def tdsTapWater : Nat := 50     -- mg per litre, ordinary supply
+def residueMg (litres tds : Nat) : Nat := litres * tds
 ```
 
 ### `families.lean` — 44 definition(s), 41 theorem(s)
@@ -488,7 +500,7 @@ def popcount (n : Nat) : Nat := (List.range 12).foldl (fun a i => a + n / 2 ^ i 
 def tm (n : Nat) : Nat := popcount n % 2
 ```
 
-### `speed.lean` — 7 definition(s), 10 theorem(s)
+### `speed.lean` — 8 definition(s), 10 theorem(s)
 
 ```lean
 def recomputeUs : Nat := 21582900   -- folding 2^20 leaves
@@ -498,6 +510,7 @@ def hexChars : Nat := 32     -- an address in the 8-bit hex form fixed by RFC 95
 def hexbitChars : Nat := 22     -- the same address over the 64-hexagram lattice
 def hexMs : Nat := 16     -- median ms for 200,000 encodings, 8-bit table
 def hexbitMs : Nat := 30     -- the same work, 6-bit lattice
+def charsFor (b : Nat) : Nat := (128 + b - 1) / b
 ```
 
 ### `split.lean` — 8 definition(s), 19 theorem(s)
@@ -554,6 +567,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**628** declarations, **0** axiom dependencies, **306** definitions they rest on.
+**628** declarations, **0** axiom dependencies, **319** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them. `0/7`.

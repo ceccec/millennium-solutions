@@ -1,5 +1,5 @@
 {
-  "produced": "7ceeb5819",
+  "produced": "8cf357496",
   "method": "recomputed from git history of src/proof/discovered.json and the ledger itself; re-runnable with `npm run forensic`",
   "establishes": "what changed, when, in which commit, and the reason recorded at the time",
   "doesNotEstablish": [
@@ -7,9 +7,9 @@
     "authorship beyond the git author field (every commit here carries the repository owner)"
   ],
   "ledgerNow": {
-    "entries": 2548,
+    "entries": 2567,
     "carried": 434,
-    "withdrawn": 1495,
+    "withdrawn": 1514,
     "standing": 619
   },
   "chainRecomputed": {
@@ -68,14 +68,14 @@
       "dEnt": 6
     },
     {
-      "date": "2026-09-04",
-      "commit": "810b378e5",
+      "date": "2026-09-14",
+      "commit": "8cf357496",
       "author": "Tsvetan Rouschev",
-      "subject": "Prior art: attributed 167, unclassified 303, claimed 0 — and zero is not",
-      "entries": 2358,
-      "revoked": 1872,
-      "dRev": 4,
-      "dEnt": 14
+      "subject": "Certificates restated as laws with their inverses, and the rest listed a",
+      "entries": 2548,
+      "revoked": 1929,
+      "dRev": 5,
+      "dEnt": 5
     }
   ],
   "withdrawalReasonsAsRecorded": [
@@ -89,7 +89,7 @@
     ],
     [
       "orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or rena",
-      16
+      35
     ],
     [
       "revoked in place: circular by construction AND dependent on the removed lexical gate.",
@@ -112,6 +112,6 @@
       1
     ]
   ],
-  "totalStateChangingCommits": 573,
-  "address": "158f46c2-017e-8a94-bcc4-353a67d20c7c"
+  "totalStateChangingCommits": 574,
+  "address": "a77fb27f-8538-8d41-b1d6-d6eddf1ef263"
 }

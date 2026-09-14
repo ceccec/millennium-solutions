@@ -149,6 +149,7 @@ for (const f of leanFiles()) {
 add('laws', certificates.length,
   `theorem(s) that only read back a hand-set value — a certificate, not a proof: ${certificates.slice(0, 6).join(' ')}${certificates.length > 6 ? ' …' : ''}`,
   'restate each as a law with its inverse over the domain its constant describes, decided at every instance (the involution discipline); where no law exists yet, the lead stays open')
+if (process.argv.includes('--laws')) { for (const c of certificates) console.log(c); process.exit(0) }
 
 // ── REPORT ───────────────────────────────────────────────────────────────────────────────────────────────
 console.log('open leads, derived from the tree:\n')
