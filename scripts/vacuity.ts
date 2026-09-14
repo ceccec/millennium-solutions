@@ -100,6 +100,18 @@ const messages = (log: string): { line: number; text: string }[] => {
   return out
 }
 
+// ── NO LEAN, NO VERDICT ────────────────────────────────────────────────────────────────────────────────────
+// Without a toolchain every probe below failed to spawn, the catch kept an empty log, and `if (!log) return`
+// read that as "this domain is inhabited" — so on CI, where no workflow installs Lean, this gate passed having
+// compiled nothing. Absent is reported as absent, loudly, and is not a verdict: the rule lean-agree.ts and
+// imagine.ts already follow. The sweep runs where lean is installed — locally, in `npm run gates`.
+const hasLean = await leanRun('lean', ['--version']).then(() => true, () => false)
+if (!hasLean) {
+  console.log('○ vacuity: NOT CHECKED HERE — no Lean toolchain on this machine, so no domain was compiled')
+  console.log('  this does not mean every domain is inhabited; the sweep runs where lean is installed (npm run gates).')
+  process.exit(0)
+}
+
 // ── LANES AND A CACHE, because a sweep nobody waits for is a sweep nobody runs ────────────────────────────
 // The deep half compiled one file at a time and took five and a half minutes on a ten-core machine. Files
 // are independent — each carries its own definitions — so they run in lanes, and a file whose source has not
