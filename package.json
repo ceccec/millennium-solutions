@@ -10,14 +10,17 @@
   "license": "CC-BY-NC-ND-4.0",
   "type": "module",
   "exports": {
-    ".": "./mod.core.ts"
+    ".": {
+      "types": "./dist/mod.core.d.ts",
+      "default": "./dist/mod.core.js"
+    },
+    "./package.json": "./package.json"
   },
+  "types": "./dist/mod.core.d.ts",
   "files": [
-    "mod.core.ts",
-    "src",
-    "*.md",
+    "dist",
+    "README.md",
     "LICENSE",
-    ".zenodo.json",
     "CITATION.cff"
   ],
   "funding": {
@@ -143,11 +146,14 @@
     "independent": "tsx scripts/independent.ts",
     "recover": "tsx scripts/recover.ts",
     "recover:gen": "tsx scripts/recover-gen.ts",
-    "uses": "node scripts/uses.ts"
+    "uses": "node scripts/uses.ts",
+    "build:dist": "node scripts/build-dist.ts",
+    "prepack": "node scripts/build-dist.ts"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",
     "@types/three": "^0.185.4",
+    "@uuidna/uuidna": "^0.2.6",
     "three": "^0.185.1",
     "typescript": "7.0.2",
     "vitepress": "^2.0.0-alpha.19",
@@ -164,7 +170,18 @@
   "publishConfig": {
     "access": "public"
   },
-  "dependencies": {
-    "@uuidna/uuidna": "^0.2.6"
-  }
+  "engines": {
+    "node": ">=22.12"
+  },
+  "sideEffects": false,
+  "keywords": [
+    "content-addressing",
+    "uuid",
+    "merkle",
+    "audit-ledger",
+    "exact-arithmetic",
+    "verifiable",
+    "recomputable",
+    "lean4"
+  ]
 }

@@ -97,6 +97,18 @@ jobs:
           echo "version=$V" >> "$GITHUB_OUTPUT"
           echo "tag $TAG → @ceccec/millennium-solutions@$V (package.json committed as $(git show HEAD:package.json | node -pe 'JSON.parse(require("fs").readFileSync(0)).version'))"
 
+      # THE TARBALL A USER GETS MUST INSTALL AND IMPORT. 9.3.2 was published with its entry pointing at a .ts file, which
+      # Node refuses to strip under node_modules — every gate was green and nobody could import it. The real tarball is
+      # packed (prepack builds dist/), installed into an empty project, and imported and required there before publish.
+      - name: the tarball installs, imports and requires
+        run: |
+          T="$(npm pack --silent | tail -1)"
+          D="$(mktemp -d)"
+          (cd "$D" && npm init -y > /dev/null && npm install --silent --no-audit --no-fund "$GITHUB_WORKSPACE/$T")
+          (cd "$D" && node --input-type=module -e "import * as m from '@ceccec/millennium-solutions'; if (typeof m.toUuid !== 'function') throw new Error('import: no toUuid'); console.log('import ok ·', Object.keys(m).length, 'exports ·', m.toUuid('hello'))")
+          (cd "$D" && node -e "const m = require('@ceccec/millennium-solutions'); if (typeof m.toUuid !== 'function') throw new Error('require: no toUuid'); console.log('require ok')")
+          rm -f "$T"
+
       # --- publish: trusted publishing (OIDC), no token. ---
       # Releases are minted automatically (release.yml), and release.yml dispatches this workflow for every one. A
       # version npm already has is skipped, not an error: the dispatch from release.yml and a person's `release:
