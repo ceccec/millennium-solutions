@@ -5,7 +5,7 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **668** report the same thing:
+axiom fails the build rather than earning a footnote. All **690** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
@@ -343,7 +343,7 @@ def saving (value verify : Nat) : Nat := value - verify
 def addr4 (x : Nat) : Nat := x % 16
 ```
 
-### `light.lean` — 13 definition(s), 13 theorem(s)
+### `light.lean` — 13 definition(s), 14 theorem(s)
 
 ```lean
 def c : Nat := 299792458      -- m/s, exact
@@ -361,7 +361,7 @@ def kcdDoubled : Nat := 1366     -- K_cd expressed against a unit half the size;
 def alternative : List Nat := [c, dNuCs, hDigits, eDigits, kDigits, naDigits, kcdDoubled]
 ```
 
-### `mechanical.lean` — 5 definition(s), 112 theorem(s)
+### `mechanical.lean` — 5 definition(s), 119 theorem(s)
 
 ```lean
 def M9 (n : Nat) : Nat := n % 9
@@ -451,7 +451,7 @@ def par3 (n : Nat) : Nat := (bit n 0 + bit n 1 + bit n 2) % 2
 def ghzXSupport : List Nat := [0, 3, 5, 6]
 ```
 
-### `reach.lean` — 2 definition(s), 5 theorem(s)
+### `reach.lean` — 2 definition(s), 8 theorem(s)
 
 ```lean
 def bounds : List Nat := List.range' 1 50
@@ -546,7 +546,7 @@ def logOrbit (u : Nat) : Option Nat := (List.range 6).find? (fun k => orbit k ==
 def settledHere : Nat := 21
 ```
 
-### `z9plus.lean` — 16 definition(s), 32 theorem(s)
+### `z9plus.lean` — 16 definition(s), 43 theorem(s)
 
 ```lean
 def m9 (n : Nat) : Nat := n % 9
@@ -569,6 +569,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**668** declarations, **0** axiom dependencies, **321** definitions they rest on.
+**690** declarations, **0** axiom dependencies, **321** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them.

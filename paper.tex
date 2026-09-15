@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 668 of them across 33 files and
-7 wings; 625 close by exhaustion over a stated finite domain, 34 are proved
+(\texttt{npm run latex-gate}). There are 690 of them across 33 files and
+7 wings; 625 close by exhaustion over a stated finite domain, 56 are proved
 for every value, and the remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -1358,6 +1358,72 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
+\begin{theorem}[\texttt{doubling\_has\_period\_six\_for\_every\_k}]
+\texttt{∀ k : Nat, pw 2 (k + 6) = pw 2 k}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{orbit\_digital\_roots\_have\_period\_six\_for\_every\_k}]
+\texttt{∀ k : Nat, dr (pw 2 (k + 6)) = dr (pw 2 k)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_doubling\_orbit\_is\_read\_from\_the\_exponent\_mod\_six}]
+\texttt{∀ k : Nat, pw 2 k = pw 2 (k \% 6)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_orbit\_never\_meets\_the\_triad\_for\_every\_k}]
+\texttt{∀ k : Nat, pw 2 k ≠ 0 ∧ pw 2 k ≠ 3 ∧ pw 2 k ≠ 6}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{fibonacci\_residues\_mod\_nine\_repeat\_every\_twenty\_four\_steps}]
+\texttt{∀ k : Nat, fib (k + 24) \% 9 = fib k \% 9 ∧ fib (k + 25) \% 9 = fib (k + 1) \% 9}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{pisano\_period\_mod\_nine\_is\_twenty\_four\_for\_every\_k}]
+\texttt{∀ k : Nat, fib9 (k + 24) = fib9 k}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_fuelled\_gcd\_is\_the\_gcd\_when\_the\_fuel\_exceeds\_the\_second\_argument}]
+\texttt{∀ f a b : Nat, b < f → gcdF f a b = Nat.gcd a b}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{consecutive\_fibonacci\_numbers\_are\_coprime}]
+\texttt{∀ n : Nat, Nat.gcd (fib n) (fib (n + 1)) = 1}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{consecutive\_fibonacci\_are\_coprime\_for\_every\_n}]
+\texttt{∀ n : Nat, gcd9 (fib n) (fib (n + 1)) = 1}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{digital\_root\_agrees\_with\_the\_residue\_for\_every\_n}]
+\texttt{∀ n : Nat, 0 < n → (dr n = 9 ↔ m9 n = 0)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{digital\_root\_is\_the\_digit\_sum\_residue\_for\_every\_n}]
+\texttt{∀ n : Nat, m9 (digitSum n) = m9 n}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
 \subsection{the floor}
 
 \paragraph{\texttt{demand.lean}}
@@ -1768,6 +1834,12 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
+\begin{theorem}[\texttt{the\_second\_returns\_from\_the\_metre\_and\_the\_period\_for\_every\_s}]
+\texttt{∀ s : Nat, travel s / c = s ∧ periods s / dNuCs = s}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
 \paragraph{\texttt{phenomena.lean}}
 
 \begin{theorem}[\texttt{every\_phenomenon\_is\_definitional\_or\_credited}]
@@ -1876,6 +1948,24 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 
 \begin{theorem}[\texttt{the\_predecessor\_returns\_every\_successor}]
 \texttt{∀ n : Nat, (n + 1) - 1 = n}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{exhaustion\_never\_reaches\_its\_own\_bound\_for\_every\_n}]
+\texttt{∀ n : Nat, (List.range n).length = n ∧ n ∉ List.range n}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_successor\_of\_every\_bound\_lies\_outside\_for\_every\_n}]
+\texttt{∀ n : Nat, n + 1 ∉ List.range n}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{doubling\_the\_domain\_leaves\_the\_same\_hole\_for\_every\_n}]
+\texttt{∀ n : Nat, 2 * n ∉ List.range (2 * n)}
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by
   intro} --- by evaluation; no domain is walked. \hfill$\square$
@@ -2570,6 +2660,48 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 
 \begin{theorem}[\texttt{the\_product\_of\_any\_three\_consecutive\_integers\_is\_divisible\_by\_six\_for\_every\_n}]
 \texttt{∀ n : Nat, n * (n + 1) * (n + 2) \% 6 = 0}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{repeated\_doubling\_is\_the\_power\_of\_two\_for\_every\_k}]
+\texttt{∀ k : Nat, dbl k = 2 ^ k}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{relation\_digitroot\_is\_residue\_mod9\_for\_every\_n}]
+\texttt{∀ n : Nat, 0 < n → DR n = (n - 1) \% 9 + 1}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_nine\_times\_table\_always\_digital\_roots\_to\_nine\_for\_every\_k}]
+\texttt{∀ k : Nat, 0 < k → DR (9 * k) = 9}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_digital\_root\_has\_the\_residue\_of\_its\_number}]
+\texttt{∀ n : Nat, DR n \% 9 = n \% 9}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_digital\_root\_lies\_between\_one\_and\_nine}]
+\texttt{∀ n : Nat, 0 < n → 1 ≤ DR n ∧ DR n ≤ 9}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{casting\_out\_nines\_is\_multiplicative\_for\_every\_a\_b}]
+\texttt{∀ a b : Nat, DR (a * b) = DR (DR a * DR b)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_moduli\_dimensions\_are\_three\_g\_minus\_three\_and\_six\_g\_minus\_six\_for\_every\_g}]
+\texttt{∀ g : Nat, 3 * g - 3 = (6 * g - 6) / 2 ∧ 6 * g - 6 = 2 * (3 * g - 3)}
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by
   intro} --- by evaluation; no domain is walked. \hfill$\square$

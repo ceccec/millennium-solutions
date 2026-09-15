@@ -452,4 +452,73 @@ theorem the_product_of_any_three_consecutive_integers_is_divisible_by_six_for_ev
   have h3 := the_product_of_three_consecutive_numbers_is_a_multiple_of_three n
   omega
 
+
+-- ── the capped rows above, proved for every value — no bound ─────────────────────────────────────────────────
+-- relation_digitroot_is_residue_mod9 (n ≤ 200), the_nine_times_table_always_digital_roots_to_nine (k ≤ 60),
+-- casting_out_nines_is_multiplicative (a, b ≤ 60), repeated_doubling_is_the_power_of_two (k ≤ 20) and
+-- the_moduli_dimensions (g ≤ 20) were checked up to a bound; these prove them for every value.
+theorem repeated_doubling_is_the_power_of_two_for_every_k : ∀ k : Nat, dbl k = 2 ^ k := by
+  intro k
+  induction k with
+  | zero => rfl
+  | succ k ih =>
+    show 2 * dbl k = 2 ^ (k + 1)
+    rw [ih, Nat.pow_succ, Nat.mul_comm]
+
+theorem relation_digitroot_is_residue_mod9_for_every_n : ∀ n : Nat, 0 < n → DR n = (n - 1) % 9 + 1 := by
+  intro n hn
+  unfold DR
+  rw [if_neg (show ¬ ((n == 0) = true) by simp; omega)]
+  omega
+
+theorem the_nine_times_table_always_digital_roots_to_nine_for_every_k : ∀ k : Nat, 0 < k → DR (9 * k) = 9 := by
+  intro k hk
+  rw [relation_digitroot_is_residue_mod9_for_every_n (9 * k) (by omega)]
+  omega
+
+theorem the_digital_root_has_the_residue_of_its_number : ∀ n : Nat, DR n % 9 = n % 9 := by
+  intro n
+  cases n with
+  | zero => rfl
+  | succ m =>
+    rw [relation_digitroot_is_residue_mod9_for_every_n (m + 1) (Nat.succ_pos m)]
+    omega
+
+theorem a_digital_root_lies_between_one_and_nine : ∀ n : Nat, 0 < n → 1 ≤ DR n ∧ DR n ≤ 9 := by
+  intro n hn
+  rw [relation_digitroot_is_residue_mod9_for_every_n n hn]
+  have := Nat.mod_lt (n - 1) (show 0 < 9 by decide)
+  exact ⟨by omega, by omega⟩
+
+theorem casting_out_nines_is_multiplicative_for_every_a_b : ∀ a b : Nat, DR (a * b) = DR (DR a * DR b) := by
+  intro a b
+  cases a with
+  | zero => rw [Nat.zero_mul, show DR 0 = 0 from rfl, Nat.zero_mul]; rfl
+  | succ a =>
+    cases b with
+    | zero => rw [Nat.mul_zero, show DR 0 = 0 from rfl, Nat.mul_zero]; rfl
+    | succ b =>
+      have hab : 0 < (a + 1) * (b + 1) := Nat.mul_pos (Nat.succ_pos a) (Nat.succ_pos b)
+      have ha := a_digital_root_lies_between_one_and_nine (a + 1) (Nat.succ_pos a)
+      have hb := a_digital_root_lies_between_one_and_nine (b + 1) (Nat.succ_pos b)
+      have hp : 0 < DR (a + 1) * DR (b + 1) := Nat.mul_pos (by omega) (by omega)
+      have r1 := the_digital_root_has_the_residue_of_its_number ((a + 1) * (b + 1))
+      have r2 := the_digital_root_has_the_residue_of_its_number (DR (a + 1) * DR (b + 1))
+      have r3 : DR (a + 1) * DR (b + 1) % 9 = (a + 1) * (b + 1) % 9 := by
+        rw [Nat.mul_mod, the_digital_root_has_the_residue_of_its_number,
+          the_digital_root_has_the_residue_of_its_number, ← Nat.mul_mod]
+      obtain ⟨b1l, b1r⟩ := a_digital_root_lies_between_one_and_nine _ hab
+      obtain ⟨b2l, b2r⟩ := a_digital_root_lies_between_one_and_nine _ hp
+      clear ha hb
+      generalize DR ((a + 1) * (b + 1)) = x at *
+      generalize DR (DR (a + 1) * DR (b + 1)) = y at *
+      generalize (a + 1) * (b + 1) = m at *
+      generalize DR (a + 1) * DR (b + 1) = p at *
+      omega
+
+theorem the_moduli_dimensions_are_three_g_minus_three_and_six_g_minus_six_for_every_g :
+    ∀ g : Nat, 3 * g - 3 = (6 * g - 6) / 2 ∧ 6 * g - 6 = 2 * (3 * g - 3) := by
+  intro g
+  exact ⟨by omega, by omega⟩
+
 end Mechanical

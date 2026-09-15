@@ -15640,5 +15640,137 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "1c1ebe41-4e80-80ad-b352-e90a09922838"
+  },
+  {
+    "key": "lean_light_the_second_returns_from_the_metre_and_the_period_for_every_s",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1de974bb-854a-879c-a8f0-712b59f8d7bc"
+  },
+  {
+    "key": "lean_mechanical_repeated_doubling_is_the_power_of_two_for_every_k",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "71d6eeaa-fd06-8af1-893f-dfa60297892d"
+  },
+  {
+    "key": "lean_mechanical_relation_digitroot_is_residue_mod9_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "22aed33c-e7ff-80ef-aded-b466c40bf0e4"
+  },
+  {
+    "key": "lean_mechanical_the_nine_times_table_always_digital_roots_to_nine_for_every_k",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "36b3b4ea-25f1-8083-b075-d707f2fb91ea"
+  },
+  {
+    "key": "lean_mechanical_the_digital_root_has_the_residue_of_its_number",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "efc4383f-1f52-8cfc-9d4a-d291f4aa5bd4"
+  },
+  {
+    "key": "lean_mechanical_a_digital_root_lies_between_one_and_nine",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "298da32e-60d7-8bf9-9135-c6e904ae937f"
+  },
+  {
+    "key": "lean_mechanical_casting_out_nines_is_multiplicative_for_every_a_b",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "58842a8d-45b2-8316-b9a6-440b595e6782"
+  },
+  {
+    "key": "lean_mechanical_the_moduli_dimensions_are_three_g_minus_three_and_six_g_minus_six_for_every_g",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "633ba212-336a-8600-90d6-836751f6b813"
+  },
+  {
+    "key": "lean_reach_exhaustion_never_reaches_its_own_bound_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "dfc2849f-3870-823b-ade5-f036c5f40166"
+  },
+  {
+    "key": "lean_reach_the_successor_of_every_bound_lies_outside_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1113761c-4967-898e-a9d9-d836a27b42ae"
+  },
+  {
+    "key": "lean_reach_doubling_the_domain_leaves_the_same_hole_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f57338c8-104b-8058-90f6-b86622f64f86"
+  },
+  {
+    "key": "lean_z9plus_doubling_has_period_six_for_every_k",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2c9ca8bc-08a6-87e8-ba10-0390547c7318"
+  },
+  {
+    "key": "lean_z9plus_orbit_digital_roots_have_period_six_for_every_k",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e88dfdf8-3c33-87c9-b480-65d2db2769ac"
+  },
+  {
+    "key": "lean_z9plus_the_doubling_orbit_is_read_from_the_exponent_mod_six",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c688c966-b59f-8e39-91d8-fa1f9fc564a0"
+  },
+  {
+    "key": "lean_z9plus_the_orbit_never_meets_the_triad_for_every_k",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8c3dfc38-91e6-8a00-9d2f-ac18974cd169"
+  },
+  {
+    "key": "lean_z9plus_fibonacci_residues_mod_nine_repeat_every_twenty_four_steps",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "04f6a9cd-b19f-8b13-b5d9-7d88fec0139e"
+  },
+  {
+    "key": "lean_z9plus_pisano_period_mod_nine_is_twenty_four_for_every_k",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "985c1ebe-dc19-877e-8573-82765db72126"
+  },
+  {
+    "key": "lean_z9plus_the_fuelled_gcd_is_the_gcd_when_the_fuel_exceeds_the_second_argument",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "73c32b16-76ca-8bbc-91f3-3d550cd02477"
+  },
+  {
+    "key": "lean_z9plus_consecutive_fibonacci_numbers_are_coprime",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5ae6ebcf-4c89-80d4-bc8c-1e5fed479a69"
+  },
+  {
+    "key": "lean_z9plus_consecutive_fibonacci_are_coprime_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "424d4751-1648-8d01-b6aa-e31be117166a"
+  },
+  {
+    "key": "lean_z9plus_digital_root_agrees_with_the_residue_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "20da0230-2b9f-8735-848e-8009809d9f04"
+  },
+  {
+    "key": "lean_z9plus_digital_root_is_the_digit_sum_residue_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "694fefdf-a71b-8019-84e5-04477e7be3d8"
   }
 ]

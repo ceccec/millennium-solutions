@@ -18786,5 +18786,115 @@
     "key": "lean_split_the_coin_step_and_the_coins_are_inverse_for_every_c",
     "name": "lean split.lean: the_coin_step_and_the_coins_are_inverse_for_every_c — ∀ c : Nat, 3 * c / 3 = c ∧ (3 * c) % 3 = 0 — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
     "receipt": "1c1ebe41-4e80-80ad-b352-e90a09922838"
+  },
+  {
+    "key": "lean_light_the_second_returns_from_the_metre_and_the_period_for_every_s",
+    "name": "lean light.lean: the_second_returns_from_the_metre_and_the_period_for_every_s — ∀ s : Nat, travel s / c = s ∧ periods s / dNuCs = s — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "1de974bb-854a-879c-a8f0-712b59f8d7bc"
+  },
+  {
+    "key": "lean_mechanical_repeated_doubling_is_the_power_of_two_for_every_k",
+    "name": "lean mechanical.lean: repeated_doubling_is_the_power_of_two_for_every_k — ∀ k : Nat, dbl k = 2 ^ k — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "71d6eeaa-fd06-8af1-893f-dfa60297892d"
+  },
+  {
+    "key": "lean_mechanical_relation_digitroot_is_residue_mod9_for_every_n",
+    "name": "lean mechanical.lean: relation_digitroot_is_residue_mod9_for_every_n — ∀ n : Nat, 0 < n → DR n = (n - 1) % 9 + 1 — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "22aed33c-e7ff-80ef-aded-b466c40bf0e4"
+  },
+  {
+    "key": "lean_mechanical_the_nine_times_table_always_digital_roots_to_nine_for_every_k",
+    "name": "lean mechanical.lean: the_nine_times_table_always_digital_roots_to_nine_for_every_k — ∀ k : Nat, 0 < k → DR (9 * k) = 9 — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "36b3b4ea-25f1-8083-b075-d707f2fb91ea"
+  },
+  {
+    "key": "lean_mechanical_the_digital_root_has_the_residue_of_its_number",
+    "name": "lean mechanical.lean: the_digital_root_has_the_residue_of_its_number — ∀ n : Nat, DR n % 9 = n % 9 — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "efc4383f-1f52-8cfc-9d4a-d291f4aa5bd4"
+  },
+  {
+    "key": "lean_mechanical_a_digital_root_lies_between_one_and_nine",
+    "name": "lean mechanical.lean: a_digital_root_lies_between_one_and_nine — ∀ n : Nat, 0 < n → 1 ≤ DR n ∧ DR n ≤ 9 — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "298da32e-60d7-8bf9-9135-c6e904ae937f"
+  },
+  {
+    "key": "lean_mechanical_casting_out_nines_is_multiplicative_for_every_a_b",
+    "name": "lean mechanical.lean: casting_out_nines_is_multiplicative_for_every_a_b — ∀ a b : Nat, DR (a * b) = DR (DR a * DR b) — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "58842a8d-45b2-8316-b9a6-440b595e6782"
+  },
+  {
+    "key": "lean_mechanical_the_moduli_dimensions_are_three_g_minus_three_and_six_g_minus_six_for_every_g",
+    "name": "lean mechanical.lean: the_moduli_dimensions_are_three_g_minus_three_and_six_g_minus_six_for_every_g — ∀ g : Nat, 3 * g - 3 = (6 * g - 6) / 2 ∧ 6 * g - 6 = 2 * (3 * g - 3) — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "633ba212-336a-8600-90d6-836751f6b813"
+  },
+  {
+    "key": "lean_reach_exhaustion_never_reaches_its_own_bound_for_every_n",
+    "name": "lean reach.lean: exhaustion_never_reaches_its_own_bound_for_every_n — ∀ n : Nat, (List.range n).length = n ∧ n ∉ List.range n — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "dfc2849f-3870-823b-ade5-f036c5f40166"
+  },
+  {
+    "key": "lean_reach_the_successor_of_every_bound_lies_outside_for_every_n",
+    "name": "lean reach.lean: the_successor_of_every_bound_lies_outside_for_every_n — ∀ n : Nat, n + 1 ∉ List.range n — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "1113761c-4967-898e-a9d9-d836a27b42ae"
+  },
+  {
+    "key": "lean_reach_doubling_the_domain_leaves_the_same_hole_for_every_n",
+    "name": "lean reach.lean: doubling_the_domain_leaves_the_same_hole_for_every_n — ∀ n : Nat, 2 * n ∉ List.range (2 * n) — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "f57338c8-104b-8058-90f6-b86622f64f86"
+  },
+  {
+    "key": "lean_z9plus_doubling_has_period_six_for_every_k",
+    "name": "lean z9plus.lean: doubling_has_period_six_for_every_k — ∀ k : Nat, pw 2 (k + 6) = pw 2 k — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "2c9ca8bc-08a6-87e8-ba10-0390547c7318"
+  },
+  {
+    "key": "lean_z9plus_orbit_digital_roots_have_period_six_for_every_k",
+    "name": "lean z9plus.lean: orbit_digital_roots_have_period_six_for_every_k — ∀ k : Nat, dr (pw 2 (k + 6)) = dr (pw 2 k) — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "e88dfdf8-3c33-87c9-b480-65d2db2769ac"
+  },
+  {
+    "key": "lean_z9plus_the_doubling_orbit_is_read_from_the_exponent_mod_six",
+    "name": "lean z9plus.lean: the_doubling_orbit_is_read_from_the_exponent_mod_six — ∀ k : Nat, pw 2 k = pw 2 (k % 6) — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "c688c966-b59f-8e39-91d8-fa1f9fc564a0"
+  },
+  {
+    "key": "lean_z9plus_the_orbit_never_meets_the_triad_for_every_k",
+    "name": "lean z9plus.lean: the_orbit_never_meets_the_triad_for_every_k — ∀ k : Nat, pw 2 k ≠ 0 ∧ pw 2 k ≠ 3 ∧ pw 2 k ≠ 6 — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "8c3dfc38-91e6-8a00-9d2f-ac18974cd169"
+  },
+  {
+    "key": "lean_z9plus_fibonacci_residues_mod_nine_repeat_every_twenty_four_steps",
+    "name": "lean z9plus.lean: fibonacci_residues_mod_nine_repeat_every_twenty_four_steps — ∀ k : Nat, fib (k + 24) % 9 = fib k % 9 ∧ fib (k + 25) % 9 = fib (k + 1) % 9 — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "04f6a9cd-b19f-8b13-b5d9-7d88fec0139e"
+  },
+  {
+    "key": "lean_z9plus_pisano_period_mod_nine_is_twenty_four_for_every_k",
+    "name": "lean z9plus.lean: pisano_period_mod_nine_is_twenty_four_for_every_k — ∀ k : Nat, fib9 (k + 24) = fib9 k — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "985c1ebe-dc19-877e-8573-82765db72126"
+  },
+  {
+    "key": "lean_z9plus_the_fuelled_gcd_is_the_gcd_when_the_fuel_exceeds_the_second_argument",
+    "name": "lean z9plus.lean: the_fuelled_gcd_is_the_gcd_when_the_fuel_exceeds_the_second_argument — ∀ f a b : Nat, b < f → gcdF f a b = Nat.gcd a b — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "73c32b16-76ca-8bbc-91f3-3d550cd02477"
+  },
+  {
+    "key": "lean_z9plus_consecutive_fibonacci_numbers_are_coprime",
+    "name": "lean z9plus.lean: consecutive_fibonacci_numbers_are_coprime — ∀ n : Nat, Nat.gcd (fib n) (fib (n + 1)) = 1 — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "5ae6ebcf-4c89-80d4-bc8c-1e5fed479a69"
+  },
+  {
+    "key": "lean_z9plus_consecutive_fibonacci_are_coprime_for_every_n",
+    "name": "lean z9plus.lean: consecutive_fibonacci_are_coprime_for_every_n — ∀ n : Nat, gcd9 (fib n) (fib (n + 1)) = 1 — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "424d4751-1648-8d01-b6aa-e31be117166a"
+  },
+  {
+    "key": "lean_z9plus_digital_root_agrees_with_the_residue_for_every_n",
+    "name": "lean z9plus.lean: digital_root_agrees_with_the_residue_for_every_n — ∀ n : Nat, 0 < n → (dr n = 9 ↔ m9 n = 0) — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "20da0230-2b9f-8735-848e-8009809d9f04"
+  },
+  {
+    "key": "lean_z9plus_digital_root_is_the_digit_sum_residue_for_every_n",
+    "name": "lean z9plus.lean: digital_root_is_the_digit_sum_residue_for_every_n — ∀ n : Nat, m9 (digitSum n) = m9 n — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "694fefdf-a71b-8019-84e5-04477e7be3d8"
   }
 ]

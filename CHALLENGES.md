@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). The author's own claim, that the seven are solved through involution, is stated in his name on the front page.
 
-## Discovered theorems (decidable, over ℤ/9) — 2607 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2629 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (659)
+### lean (681)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -717,6 +717,50 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
   intro), standard axioms only — checked by lean.ts  ·  `3159b043-f18c…`
 - [lean_split_the_coin_step_and_the_coins_are_inverse_for_every_c](/theorem/lean_split_the_coin_step_and_the_coins_are_inverse_for_every_c) — lean split.lean: the_coin_step_and_the_coins_are_inverse_for_every_c — ∀ c : Nat, 3 * c / 3 = c ∧ (3 * c) % 3 = 0 — proved by the Lean kernel for every value (by
   intro), standard axioms only — checked by lean.ts  ·  `1c1ebe41-4e80…`
+- [lean_light_the_second_returns_from_the_metre_and_the_period_for_every_s](/theorem/lean_light_the_second_returns_from_the_metre_and_the_period_for_every_s) — lean light.lean: the_second_returns_from_the_metre_and_the_period_for_every_s — ∀ s : Nat, travel s / c = s ∧ periods s / dNuCs = s — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `1de974bb-854a…`
+- [lean_mechanical_repeated_doubling_is_the_power_of_two_for_every_k](/theorem/lean_mechanical_repeated_doubling_is_the_power_of_two_for_every_k) — lean mechanical.lean: repeated_doubling_is_the_power_of_two_for_every_k — ∀ k : Nat, dbl k = 2 ^ k — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `71d6eeaa-fd06…`
+- [lean_mechanical_relation_digitroot_is_residue_mod9_for_every_n](/theorem/lean_mechanical_relation_digitroot_is_residue_mod9_for_every_n) — lean mechanical.lean: relation_digitroot_is_residue_mod9_for_every_n — ∀ n : Nat, 0 &lt; n → DR n = (n - 1) % 9 + 1 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `22aed33c-e7ff…`
+- [lean_mechanical_the_nine_times_table_always_digital_roots_to_nine_for_every_k](/theorem/lean_mechanical_the_nine_times_table_always_digital_roots_to_nine_for_every_k) — lean mechanical.lean: the_nine_times_table_always_digital_roots_to_nine_for_every_k — ∀ k : Nat, 0 &lt; k → DR (9 * k) = 9 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `36b3b4ea-25f1…`
+- [lean_mechanical_the_digital_root_has_the_residue_of_its_number](/theorem/lean_mechanical_the_digital_root_has_the_residue_of_its_number) — lean mechanical.lean: the_digital_root_has_the_residue_of_its_number — ∀ n : Nat, DR n % 9 = n % 9 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `efc4383f-1f52…`
+- [lean_mechanical_a_digital_root_lies_between_one_and_nine](/theorem/lean_mechanical_a_digital_root_lies_between_one_and_nine) — lean mechanical.lean: a_digital_root_lies_between_one_and_nine — ∀ n : Nat, 0 &lt; n → 1 ≤ DR n ∧ DR n ≤ 9 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `298da32e-60d7…`
+- [lean_mechanical_casting_out_nines_is_multiplicative_for_every_a_b](/theorem/lean_mechanical_casting_out_nines_is_multiplicative_for_every_a_b) — lean mechanical.lean: casting_out_nines_is_multiplicative_for_every_a_b — ∀ a b : Nat, DR (a * b) = DR (DR a * DR b) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `58842a8d-45b2…`
+- [lean_mechanical_the_moduli_dimensions_are_three_g_minus_three_and_six_g_minus_six_for_every_g](/theorem/lean_mechanical_the_moduli_dimensions_are_three_g_minus_three_and_six_g_minus_six_for_every_g) — lean mechanical.lean: the_moduli_dimensions_are_three_g_minus_three_and_six_g_minus_six_for_every_g — ∀ g : Nat, 3 * g - 3 = (6 * g - 6) / 2 ∧ 6 * g - 6 = 2 * (3 * g - 3) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `633ba212-336a…`
+- [lean_reach_exhaustion_never_reaches_its_own_bound_for_every_n](/theorem/lean_reach_exhaustion_never_reaches_its_own_bound_for_every_n) — lean reach.lean: exhaustion_never_reaches_its_own_bound_for_every_n — ∀ n : Nat, (List.range n).length = n ∧ n ∉ List.range n — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `dfc2849f-3870…`
+- [lean_reach_the_successor_of_every_bound_lies_outside_for_every_n](/theorem/lean_reach_the_successor_of_every_bound_lies_outside_for_every_n) — lean reach.lean: the_successor_of_every_bound_lies_outside_for_every_n — ∀ n : Nat, n + 1 ∉ List.range n — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `1113761c-4967…`
+- [lean_reach_doubling_the_domain_leaves_the_same_hole_for_every_n](/theorem/lean_reach_doubling_the_domain_leaves_the_same_hole_for_every_n) — lean reach.lean: doubling_the_domain_leaves_the_same_hole_for_every_n — ∀ n : Nat, 2 * n ∉ List.range (2 * n) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `f57338c8-104b…`
+- [lean_z9plus_doubling_has_period_six_for_every_k](/theorem/lean_z9plus_doubling_has_period_six_for_every_k) — lean z9plus.lean: doubling_has_period_six_for_every_k — ∀ k : Nat, pw 2 (k + 6) = pw 2 k — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `2c9ca8bc-08a6…`
+- [lean_z9plus_orbit_digital_roots_have_period_six_for_every_k](/theorem/lean_z9plus_orbit_digital_roots_have_period_six_for_every_k) — lean z9plus.lean: orbit_digital_roots_have_period_six_for_every_k — ∀ k : Nat, dr (pw 2 (k + 6)) = dr (pw 2 k) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `e88dfdf8-3c33…`
+- [lean_z9plus_the_doubling_orbit_is_read_from_the_exponent_mod_six](/theorem/lean_z9plus_the_doubling_orbit_is_read_from_the_exponent_mod_six) — lean z9plus.lean: the_doubling_orbit_is_read_from_the_exponent_mod_six — ∀ k : Nat, pw 2 k = pw 2 (k % 6) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `c688c966-b59f…`
+- [lean_z9plus_the_orbit_never_meets_the_triad_for_every_k](/theorem/lean_z9plus_the_orbit_never_meets_the_triad_for_every_k) — lean z9plus.lean: the_orbit_never_meets_the_triad_for_every_k — ∀ k : Nat, pw 2 k ≠ 0 ∧ pw 2 k ≠ 3 ∧ pw 2 k ≠ 6 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `8c3dfc38-91e6…`
+- [lean_z9plus_fibonacci_residues_mod_nine_repeat_every_twenty_four_steps](/theorem/lean_z9plus_fibonacci_residues_mod_nine_repeat_every_twenty_four_steps) — lean z9plus.lean: fibonacci_residues_mod_nine_repeat_every_twenty_four_steps — ∀ k : Nat, fib (k + 24) % 9 = fib k % 9 ∧ fib (k + 25) % 9 = fib (k + 1) % 9 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `04f6a9cd-b19f…`
+- [lean_z9plus_pisano_period_mod_nine_is_twenty_four_for_every_k](/theorem/lean_z9plus_pisano_period_mod_nine_is_twenty_four_for_every_k) — lean z9plus.lean: pisano_period_mod_nine_is_twenty_four_for_every_k — ∀ k : Nat, fib9 (k + 24) = fib9 k — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `985c1ebe-dc19…`
+- [lean_z9plus_the_fuelled_gcd_is_the_gcd_when_the_fuel_exceeds_the_second_argument](/theorem/lean_z9plus_the_fuelled_gcd_is_the_gcd_when_the_fuel_exceeds_the_second_argument) — lean z9plus.lean: the_fuelled_gcd_is_the_gcd_when_the_fuel_exceeds_the_second_argument — ∀ f a b : Nat, b &lt; f → gcdF f a b = Nat.gcd a b — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `73c32b16-76ca…`
+- [lean_z9plus_consecutive_fibonacci_numbers_are_coprime](/theorem/lean_z9plus_consecutive_fibonacci_numbers_are_coprime) — lean z9plus.lean: consecutive_fibonacci_numbers_are_coprime — ∀ n : Nat, Nat.gcd (fib n) (fib (n + 1)) = 1 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `5ae6ebcf-4c89…`
+- [lean_z9plus_consecutive_fibonacci_are_coprime_for_every_n](/theorem/lean_z9plus_consecutive_fibonacci_are_coprime_for_every_n) — lean z9plus.lean: consecutive_fibonacci_are_coprime_for_every_n — ∀ n : Nat, gcd9 (fib n) (fib (n + 1)) = 1 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `424d4751-1648…`
+- [lean_z9plus_digital_root_agrees_with_the_residue_for_every_n](/theorem/lean_z9plus_digital_root_agrees_with_the_residue_for_every_n) — lean z9plus.lean: digital_root_agrees_with_the_residue_for_every_n — ∀ n : Nat, 0 &lt; n → (dr n = 9 ↔ m9 n = 0) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `20da0230-2b9f…`
+- [lean_z9plus_digital_root_is_the_digit_sum_residue_for_every_n](/theorem/lean_z9plus_digital_root_is_the_digit_sum_residue_for_every_n) — lean z9plus.lean: digital_root_is_the_digit_sum_residue_for_every_n — ∀ n : Nat, m9 (digitSum n) = m9 n — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `694fefdf-a71b…`
 
 ### other — one-of-a-kind (0)
 
@@ -2301,4 +2345,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `4e169beb-6823-88a4-837b-857f530d6f0b`. Integrity, not truth.
+Page content-address: `4eab8f99-5ece-8e3f-9955-eb22719fd56d`. Integrity, not truth.

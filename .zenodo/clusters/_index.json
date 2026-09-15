@@ -13,20 +13,20 @@
         {
           "file": "energy.lean",
           "pairs": 13,
-          "expected": 3.98,
-          "lift": 3.27
+          "expected": 3.85,
+          "lift": 3.38
         },
         {
           "file": "demand.lean",
           "pairs": 4,
-          "expected": 1.63,
-          "lift": 2.46
+          "expected": 1.57,
+          "lift": 2.54
         },
         {
-          "file": "families.lean",
-          "pairs": 17,
-          "expected": 8.14,
-          "lift": 2.09
+          "file": "demand3.lean",
+          "pairs": 5,
+          "expected": 2.45,
+          "lift": 2.04
         }
       ]
     },
@@ -38,22 +38,22 @@
       "joint": "e085bd35-36da-8011-a2b1-f08c6394f507",
       "neighbours": [
         {
-          "file": "reach.lean",
-          "pairs": 3,
-          "expected": 0.64,
-          "lift": 4.7
-        },
-        {
           "file": "generated.lean",
           "pairs": 4,
-          "expected": 1.66,
-          "lift": 2.41
+          "expected": 1.61,
+          "lift": 2.49
         },
         {
           "file": "light.lean",
           "pairs": 4,
-          "expected": 1.66,
-          "lift": 2.41
+          "expected": 1.73,
+          "lift": 2.31
+        },
+        {
+          "file": "elementary.lean",
+          "pairs": 9,
+          "expected": 4.32,
+          "lift": 2.08
         }
       ]
     },
@@ -65,22 +65,22 @@
       "joint": "c432e103-7e2a-872a-be65-cc8c8fab660f",
       "neighbours": [
         {
-          "file": "light.lean",
-          "pairs": 3,
-          "expected": 1.24,
-          "lift": 2.41
-        },
-        {
           "file": "energy.lean",
           "pairs": 5,
-          "expected": 2.11,
-          "lift": 2.37
+          "expected": 2.04,
+          "lift": 2.45
+        },
+        {
+          "file": "light.lean",
+          "pairs": 3,
+          "expected": 1.3,
+          "lift": 2.31
         },
         {
           "file": "elementary.lean",
           "pairs": 7,
-          "expected": 3.35,
-          "lift": 2.09
+          "expected": 3.24,
+          "lift": 2.16
         }
       ]
     },
@@ -94,20 +94,20 @@
         {
           "file": "reversal.lean",
           "pairs": 4,
-          "expected": 1.19,
-          "lift": 3.36
+          "expected": 1.15,
+          "lift": 3.47
         },
         {
           "file": "coin.lean",
           "pairs": 3,
-          "expected": 1.02,
-          "lift": 2.94
+          "expected": 0.99,
+          "lift": 3.04
         },
         {
           "file": "light.lean",
           "pairs": 3,
-          "expected": 1.11,
-          "lift": 2.71
+          "expected": 1.15,
+          "lift": 2.6
         }
       ]
     },
@@ -121,20 +121,20 @@
         {
           "file": "flow.lean",
           "pairs": 3,
-          "expected": 0.45,
-          "lift": 6.71
+          "expected": 0.43,
+          "lift": 6.94
         },
         {
           "file": "index.lean",
           "pairs": 5,
-          "expected": 1.64,
-          "lift": 3.05
+          "expected": 1.59,
+          "lift": 3.15
         },
         {
           "file": "ledgerclaims.lean",
           "pairs": 3,
-          "expected": 1.19,
-          "lift": 2.52
+          "expected": 1.15,
+          "lift": 2.6
         }
       ]
     },
@@ -148,20 +148,20 @@
         {
           "file": "flow.lean",
           "pairs": 5,
-          "expected": 1.12,
-          "lift": 4.48
+          "expected": 1.08,
+          "lift": 4.63
         },
         {
           "file": "demand.lean",
           "pairs": 9,
-          "expected": 3.35,
-          "lift": 2.69
+          "expected": 3.24,
+          "lift": 2.78
         },
         {
           "file": "merkaba.lean",
-          "pairs": 8,
-          "expected": 2.98,
-          "lift": 2.69
+          "pairs": 7,
+          "expected": 2.88,
+          "lift": 2.43
         }
       ]
     },
@@ -175,20 +175,20 @@
         {
           "file": "demand.lean",
           "pairs": 6,
-          "expected": 2.11,
-          "lift": 2.85
+          "expected": 2.04,
+          "lift": 2.94
         },
         {
           "file": "address.lean",
           "pairs": 10,
-          "expected": 3.98,
-          "lift": 2.51
+          "expected": 3.85,
+          "lift": 2.6
         },
         {
           "file": "generated.lean",
           "pairs": 6,
-          "expected": 3.04,
-          "lift": 1.97
+          "expected": 2.94,
+          "lift": 2.04
         }
       ]
     },
@@ -202,20 +202,20 @@
         {
           "file": "address.lean",
           "pairs": 18,
-          "expected": 8.14,
-          "lift": 2.21
+          "expected": 7.88,
+          "lift": 2.29
         },
         {
           "file": "phenomena.lean",
           "pairs": 4,
-          "expected": 1.91,
-          "lift": 2.09
+          "expected": 1.85,
+          "lift": 2.16
         },
         {
           "file": "demand3.lean",
-          "pairs": 10,
-          "expected": 6.7,
-          "lift": 1.49
+          "pairs": 9,
+          "expected": 6.49,
+          "lift": 1.39
         }
       ]
     },
@@ -229,14 +229,14 @@
         {
           "file": "elementary.lean",
           "pairs": 4,
-          "expected": 1.12,
-          "lift": 3.58
+          "expected": 1.08,
+          "lift": 3.7
         },
         {
           "file": "imagined.lean",
           "pairs": 5,
-          "expected": 3.77,
-          "lift": 1.33
+          "expected": 3.64,
+          "lift": 1.37
         }
       ]
     },
@@ -250,20 +250,20 @@
         {
           "file": "demand.lean",
           "pairs": 4,
-          "expected": 1.15,
-          "lift": 3.48
+          "expected": 1.11,
+          "lift": 3.6
         },
         {
           "file": "involution.lean",
           "pairs": 3,
-          "expected": 1.02,
-          "lift": 2.94
+          "expected": 0.99,
+          "lift": 3.04
         },
         {
           "file": "index.lean",
           "pairs": 3,
-          "expected": 1.4,
-          "lift": 2.14
+          "expected": 1.36,
+          "lift": 2.21
         }
       ]
     },
@@ -277,20 +277,20 @@
         {
           "file": "theorems.lean",
           "pairs": 4,
-          "expected": 1.11,
-          "lift": 3.62
+          "expected": 1.07,
+          "lift": 3.74
         },
         {
           "file": "coin.lean",
           "pairs": 4,
-          "expected": 1.66,
-          "lift": 2.41
+          "expected": 1.61,
+          "lift": 2.49
         },
         {
           "file": "address.lean",
           "pairs": 5,
-          "expected": 2.35,
-          "lift": 2.13
+          "expected": 2.27,
+          "lift": 2.2
         }
       ]
     },
@@ -302,22 +302,22 @@
       "joint": "37fe0337-e772-8eb0-861c-2ee17049b0cf",
       "neighbours": [
         {
-          "file": "energy.lean",
-          "pairs": 46,
-          "expected": 27.62,
-          "lift": 1.67
-        },
-        {
           "file": "demand.lean",
           "pairs": 18,
-          "expected": 11.3,
-          "lift": 1.59
+          "expected": 10.93,
+          "lift": 1.65
         },
         {
           "file": "demand2.lean",
           "pairs": 16,
-          "expected": 10.04,
-          "lift": 1.59
+          "expected": 9.72,
+          "lift": 1.65
+        },
+        {
+          "file": "energy.lean",
+          "pairs": 44,
+          "expected": 26.72,
+          "lift": 1.65
         }
       ]
     },
@@ -331,20 +331,20 @@
         {
           "file": "demand3.lean",
           "pairs": 6,
-          "expected": 1.64,
-          "lift": 3.66
+          "expected": 1.59,
+          "lift": 3.78
         },
         {
           "file": "address.lean",
           "pairs": 5,
-          "expected": 1.99,
-          "lift": 2.51
+          "expected": 1.93,
+          "lift": 2.6
         },
         {
           "file": "elementary.lean",
           "pairs": 10,
-          "expected": 4.1,
-          "lift": 2.44
+          "expected": 3.96,
+          "lift": 2.52
         }
       ]
     },
@@ -358,20 +358,20 @@
         {
           "file": "priorart.lean",
           "pairs": 3,
-          "expected": 0.77,
-          "lift": 3.92
+          "expected": 0.74,
+          "lift": 4.05
         },
         {
           "file": "coin.lean",
           "pairs": 3,
-          "expected": 1.02,
-          "lift": 2.94
+          "expected": 0.99,
+          "lift": 3.04
         },
         {
           "file": "fnv.lean",
           "pairs": 3,
-          "expected": 1.02,
-          "lift": 2.94
+          "expected": 0.99,
+          "lift": 3.04
         }
       ]
     },
@@ -385,74 +385,74 @@
         {
           "file": "demand3.lean",
           "pairs": 3,
-          "expected": 1.19,
-          "lift": 2.52
+          "expected": 1.15,
+          "lift": 2.6
         },
         {
           "file": "address.lean",
           "pairs": 3,
-          "expected": 1.45,
-          "lift": 2.07
+          "expected": 1.4,
+          "lift": 2.14
         },
         {
           "file": "elementary.lean",
           "pairs": 5,
-          "expected": 2.98,
-          "lift": 1.68
+          "expected": 2.88,
+          "lift": 1.73
         }
       ]
     },
     {
       "file": "light.lean",
-      "title": "Light, space and time — arithmetic on numbers a standards body fixed — 13 machine-checked theorems and how they are bound",
+      "title": "Light, space and time — arithmetic on numbers a standards body fixed — 14 machine-checked theorems and how they are bound",
       "wing": "the floor",
-      "sealed": 13,
-      "joint": "1d15e71b-e63b-8c65-8264-bc045b9154d1",
+      "sealed": 14,
+      "joint": "4342e573-9a8e-8099-a04f-f5d4b170b5b2",
       "neighbours": [
         {
           "file": "demand2.lean",
           "pairs": 5,
-          "expected": 1.11,
-          "lift": 4.52
+          "expected": 1.15,
+          "lift": 4.34
         },
         {
           "file": "coin.lean",
           "pairs": 7,
-          "expected": 1.66,
-          "lift": 4.22
+          "expected": 1.73,
+          "lift": 4.05
         },
         {
           "file": "merkaba.lean",
           "pairs": 3,
-          "expected": 1.11,
-          "lift": 2.71
+          "expected": 1.15,
+          "lift": 2.6
         }
       ]
     },
     {
       "file": "mechanical.lean",
-      "title": "Mechanically translated — 112 machine-checked theorems and how they are bound",
+      "title": "Mechanically translated — 119 machine-checked theorems and how they are bound",
       "wing": "the machine",
-      "sealed": 112,
-      "joint": "cab3818e-6e57-87f3-8a16-91658848ec91",
+      "sealed": 119,
+      "joint": "31b8d7d9-571e-8741-9afa-61db1fd23ad1",
       "neighbours": [
-        {
-          "file": "address.lean",
-          "pairs": 36,
-          "expected": 20.26,
-          "lift": 1.78
-        },
         {
           "file": "priorart.lean",
           "pairs": 18,
-          "expected": 10.72,
-          "lift": 1.68
+          "expected": 11.03,
+          "lift": 1.63
         },
         {
-          "file": "fnv.lean",
-          "pairs": 21,
-          "expected": 14.3,
-          "lift": 1.47
+          "file": "address.lean",
+          "pairs": 33,
+          "expected": 20.82,
+          "lift": 1.58
+        },
+        {
+          "file": "phenomena.lean",
+          "pairs": 7,
+          "expected": 4.9,
+          "lift": 1.43
         }
       ]
     },
@@ -465,21 +465,21 @@
       "neighbours": [
         {
           "file": "address.lean",
-          "pairs": 5,
-          "expected": 1.45,
-          "lift": 3.46
+          "pairs": 4,
+          "expected": 1.4,
+          "lift": 2.86
         },
         {
           "file": "light.lean",
           "pairs": 3,
-          "expected": 1.11,
-          "lift": 2.71
+          "expected": 1.15,
+          "lift": 2.6
         },
         {
           "file": "elementary.lean",
           "pairs": 7,
-          "expected": 2.98,
-          "lift": 2.35
+          "expected": 2.88,
+          "lift": 2.43
         }
       ]
     },
@@ -493,20 +493,20 @@
         {
           "file": "nim.lean",
           "pairs": 3,
-          "expected": 1.17,
-          "lift": 2.56
+          "expected": 1.13,
+          "lift": 2.65
         },
         {
           "file": "demand3.lean",
           "pairs": 4,
-          "expected": 1.64,
-          "lift": 2.44
+          "expected": 1.59,
+          "lift": 2.52
         },
         {
           "file": "families.lean",
-          "pairs": 12,
-          "expected": 5.27,
-          "lift": 2.28
+          "pairs": 11,
+          "expected": 5.1,
+          "lift": 2.16
         }
       ]
     },
@@ -520,20 +520,20 @@
         {
           "file": "rights.lean",
           "pairs": 3,
-          "expected": 0.85,
-          "lift": 3.52
+          "expected": 0.82,
+          "lift": 3.64
         },
         {
           "file": "demand3.lean",
           "pairs": 3,
-          "expected": 1.49,
-          "lift": 2.01
+          "expected": 1.44,
+          "lift": 2.08
         },
         {
           "file": "families.lean",
           "pairs": 9,
-          "expected": 4.79,
-          "lift": 1.88
+          "expected": 4.63,
+          "lift": 1.94
         }
       ]
     },
@@ -547,20 +547,20 @@
         {
           "file": "families.lean",
           "pairs": 5,
-          "expected": 1.91,
-          "lift": 2.61
+          "expected": 1.85,
+          "lift": 2.7
         },
         {
           "file": "elementary.lean",
           "pairs": 3,
-          "expected": 1.49,
-          "lift": 2.01
+          "expected": 1.44,
+          "lift": 2.08
         },
         {
           "file": "mechanical.lean",
           "pairs": 6,
-          "expected": 4.77,
-          "lift": 1.26
+          "expected": 4.9,
+          "lift": 1.22
         }
       ]
     },
@@ -574,20 +574,20 @@
         {
           "file": "involution.lean",
           "pairs": 4,
-          "expected": 0.77,
-          "lift": 5.22
+          "expected": 0.74,
+          "lift": 5.4
         },
         {
           "file": "energy.lean",
           "pairs": 4,
-          "expected": 2.11,
-          "lift": 1.9
+          "expected": 2.04,
+          "lift": 1.96
         },
         {
-          "file": "families.lean",
-          "pairs": 6,
-          "expected": 4.31,
-          "lift": 1.39
+          "file": "mechanical.lean",
+          "pairs": 14,
+          "expected": 11.03,
+          "lift": 1.27
         }
       ]
     },
@@ -601,47 +601,47 @@
         {
           "file": "elementary.lean",
           "pairs": 9,
-          "expected": 4.1,
-          "lift": 2.2
+          "expected": 3.96,
+          "lift": 2.27
         },
         {
           "file": "z9plus.lean",
-          "pairs": 5,
-          "expected": 3.74,
-          "lift": 1.34
+          "pairs": 7,
+          "expected": 4.87,
+          "lift": 1.44
         },
         {
           "file": "energy.lean",
           "pairs": 3,
-          "expected": 2.57,
-          "lift": 1.17
+          "expected": 2.49,
+          "lift": 1.2
         }
       ]
     },
     {
       "file": "reach.lean",
-      "title": "What exhaustion reaches, and what lies outside it — 5 machine-checked theorems and how they are bound",
+      "title": "What exhaustion reaches, and what lies outside it — 8 machine-checked theorems and how they are bound",
       "wing": "the floor",
-      "sealed": 5,
-      "joint": "05528d94-5d7d-8142-9aa4-b7a650cd30e0",
+      "sealed": 8,
+      "joint": "fa9dcd6d-5209-8845-b954-584568daaac6",
       "neighbours": [
         {
           "file": "ledgerclaims.lean",
           "pairs": 3,
-          "expected": 0.43,
-          "lift": 7.05
+          "expected": 0.66,
+          "lift": 4.55
         },
         {
           "file": "coin.lean",
           "pairs": 4,
-          "expected": 0.64,
-          "lift": 6.27
+          "expected": 0.99,
+          "lift": 4.05
         },
         {
-          "file": "energy.lean",
-          "pairs": 3,
-          "expected": 1.17,
-          "lift": 2.56
+          "file": "elementary.lean",
+          "pairs": 7,
+          "expected": 2.88,
+          "lift": 2.43
         }
       ]
     },
@@ -655,20 +655,20 @@
         {
           "file": "theorems.lean",
           "pairs": 4,
-          "expected": 1.28,
-          "lift": 3.13
+          "expected": 1.24,
+          "lift": 3.24
         },
         {
           "file": "generated.lean",
           "pairs": 6,
-          "expected": 2.07,
-          "lift": 2.89
+          "expected": 2.01,
+          "lift": 2.99
         },
         {
           "file": "demand3.lean",
           "pairs": 4,
-          "expected": 2.23,
-          "lift": 1.79
+          "expected": 2.16,
+          "lift": 1.85
         }
       ]
     },
@@ -682,20 +682,20 @@
         {
           "file": "demand2.lean",
           "pairs": 3,
-          "expected": 1.19,
-          "lift": 2.52
-        },
-        {
-          "file": "ledgerclaims.lean",
-          "pairs": 3,
-          "expected": 1.19,
-          "lift": 2.52
+          "expected": 1.15,
+          "lift": 2.6
         },
         {
           "file": "rights.lean",
           "pairs": 3,
-          "expected": 1.19,
-          "lift": 2.52
+          "expected": 1.15,
+          "lift": 2.6
+        },
+        {
+          "file": "coin.lean",
+          "pairs": 4,
+          "expected": 1.73,
+          "lift": 2.31
         }
       ]
     },
@@ -709,20 +709,20 @@
         {
           "file": "nim.lean",
           "pairs": 3,
-          "expected": 0.85,
-          "lift": 3.52
+          "expected": 0.82,
+          "lift": 3.64
         },
         {
           "file": "sequences.lean",
           "pairs": 3,
-          "expected": 1.02,
-          "lift": 2.94
+          "expected": 0.99,
+          "lift": 3.04
         },
         {
           "file": "energy.lean",
           "pairs": 3,
-          "expected": 1.87,
-          "lift": 1.6
+          "expected": 1.81,
+          "lift": 1.66
         }
       ]
     },
@@ -736,20 +736,20 @@
         {
           "file": "rights.lean",
           "pairs": 3,
-          "expected": 1.02,
-          "lift": 2.94
+          "expected": 0.99,
+          "lift": 3.04
         },
         {
           "file": "priorart.lean",
           "pairs": 3,
-          "expected": 1.15,
-          "lift": 2.61
+          "expected": 1.11,
+          "lift": 2.7
         },
         {
           "file": "address.lean",
           "pairs": 4,
-          "expected": 2.17,
-          "lift": 1.84
+          "expected": 2.1,
+          "lift": 1.9
         }
       ]
     },
@@ -763,20 +763,20 @@
         {
           "file": "demand.lean",
           "pairs": 5,
-          "expected": 1.05,
-          "lift": 4.75
+          "expected": 1.02,
+          "lift": 4.91
         },
         {
           "file": "demand3.lean",
           "pairs": 5,
-          "expected": 1.64,
-          "lift": 3.05
+          "expected": 1.59,
+          "lift": 3.15
         },
         {
           "file": "z9.lean",
-          "pairs": 7,
-          "expected": 2.46,
-          "lift": 2.85
+          "pairs": 6,
+          "expected": 2.38,
+          "lift": 2.52
         }
       ]
     },
@@ -790,20 +790,20 @@
         {
           "file": "demand2.lean",
           "pairs": 5,
-          "expected": 1.7,
-          "lift": 2.94
+          "expected": 1.65,
+          "lift": 3.04
         },
         {
           "file": "theorems.lean",
           "pairs": 4,
-          "expected": 1.7,
-          "lift": 2.35
+          "expected": 1.65,
+          "lift": 2.43
         },
         {
           "file": "families.lean",
           "pairs": 18,
-          "expected": 9.57,
-          "lift": 1.88
+          "expected": 9.26,
+          "lift": 1.94
         }
       ]
     },
@@ -817,20 +817,20 @@
         {
           "file": "generated.lean",
           "pairs": 4,
-          "expected": 1.11,
-          "lift": 3.62
+          "expected": 1.07,
+          "lift": 3.74
         },
         {
           "file": "coin.lean",
           "pairs": 3,
-          "expected": 1.02,
-          "lift": 2.94
+          "expected": 0.99,
+          "lift": 3.04
         },
         {
           "file": "recovered.lean",
           "pairs": 3,
-          "expected": 1.28,
-          "lift": 2.35
+          "expected": 1.24,
+          "lift": 2.43
         }
       ]
     },
@@ -843,48 +843,48 @@
       "neighbours": [
         {
           "file": "demand.lean",
-          "pairs": 6,
-          "expected": 2.01,
-          "lift": 2.98
+          "pairs": 5,
+          "expected": 1.95,
+          "lift": 2.57
         },
         {
           "file": "speed.lean",
           "pairs": 6,
-          "expected": 2.46,
-          "lift": 2.44
+          "expected": 2.38,
+          "lift": 2.52
         },
         {
           "file": "demand3.lean",
           "pairs": 7,
-          "expected": 3.13,
-          "lift": 2.24
+          "expected": 3.03,
+          "lift": 2.31
         }
       ]
     },
     {
       "file": "z9plus.lean",
-      "title": "Entanglement in the ring — 32 machine-checked theorems and how they are bound",
+      "title": "Entanglement in the ring — 43 machine-checked theorems and how they are bound",
       "wing": "the ring",
-      "sealed": 32,
-      "joint": "c33aca9a-7c2b-8fb6-856f-d6d5edf66b39",
+      "sealed": 43,
+      "joint": "49d7127a-322e-824e-980a-901b45ec0468",
       "neighbours": [
         {
+          "file": "coin.lean",
+          "pairs": 10,
+          "expected": 5.31,
+          "lift": 1.88
+        },
+        {
           "file": "fnv.lean",
-          "pairs": 6,
-          "expected": 4.09,
-          "lift": 1.47
+          "pairs": 10,
+          "expected": 5.31,
+          "lift": 1.88
         },
         {
-          "file": "imagined.lean",
-          "pairs": 57,
-          "expected": 40.17,
-          "lift": 1.42
-        },
-        {
-          "file": "families.lean",
-          "pairs": 21,
-          "expected": 15.32,
-          "lift": 1.37
+          "file": "phenomena.lean",
+          "pairs": 3,
+          "expected": 1.77,
+          "lift": 1.69
         }
       ]
     }

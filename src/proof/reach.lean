@@ -89,4 +89,17 @@ theorem the_predecessor_returns_every_successor : ∀ n : Nat, (n + 1) - 1 = n :
 -- named for one it cannot observe is worse than no theorem: it reads as a kernel-checked proof of a
 -- statement the kernel never saw.
 
+
+-- ── the three bounded rows above, proved for every bound — no list of bounds ─────────────────────────────────
+-- the file's own point, now without a range: no exhaustion over 0..n-1 contains n, n + 1, or (at 2n) 2n.
+theorem exhaustion_never_reaches_its_own_bound_for_every_n : ∀ n : Nat, (List.range n).length = n ∧ n ∉ List.range n := by
+  intro n
+  exact ⟨List.length_range n, fun h => Nat.lt_irrefl n (List.mem_range.mp h)⟩
+theorem the_successor_of_every_bound_lies_outside_for_every_n : ∀ n : Nat, n + 1 ∉ List.range n := by
+  intro n h
+  exact Nat.lt_irrefl n (Nat.lt_trans (Nat.lt_succ_self n) (List.mem_range.mp h))
+theorem doubling_the_domain_leaves_the_same_hole_for_every_n : ∀ n : Nat, 2 * n ∉ List.range (2 * n) := by
+  intro n h
+  exact Nat.lt_irrefl (2 * n) (List.mem_range.mp h)
+
 end Reach

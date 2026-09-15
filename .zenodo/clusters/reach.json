@@ -1,7 +1,7 @@
 {
   "upload_type": "publication",
   "publication_type": "preprint",
-  "title": "What exhaustion reaches, and what lies outside it — 5 machine-checked theorems and how they are bound",
+  "title": "What exhaustion reaches, and what lies outside it — 8 machine-checked theorems and how they are bound",
   "creators": [
     {
       "name": "Rouschev, Tsvetan",
@@ -9,7 +9,7 @@
       "affiliation": "PSG, Bulgaria"
     }
   ],
-  "description": "<p><strong>What exhaustion reaches, and what lies outside it</strong>. 5 machine-checked theorems from the Lean 4 source file <code>src/proof/reach.lean</code>, by Tsvetan Rouschev, licensed CC BY-NC-ND 4.0. Lean 4 is a proof checker: a theorem it accepts has been checked by its kernel, not argued in prose. 4 are checked case by case over a stated finite domain (<code>by decide</code>). 1 is proved for every value, on the standard axioms only (<code>propext</code>, <code>Quot.sound</code>; the verifier refuses any other). Every theorem listed is sealed live in the deposit's ledger, where a withdrawal is marked in place; 63 earlier rows removed on 2026-08-09 are listed in <a href=\"https://github.com/ceccec/millennium-solutions/blob/83213ac8f1ad8bb0b5fe7eed9360838215b71bac/src/proof/revoked.json\">src/proof/revoked.json</a>.</p><p><strong>How these theorems are bound.</strong> \"Entangled\" is used here in a precise, non-quantum sense: theorems are bound when they derive from shared definitions (section 1), when their files import one another (section 2), and when their content-addressed receipts fold into one address that changes if any one of them changes (section 3). It is correlation by derivation; no information travels through it.</p><p><strong>1 · Shared definitions.</strong> 1 definition is used by two or more theorems, binding 6 pairs; the theorems fall into 2 strands, the largest of 4. Most binding: <code>bounds</code> (4). 1 theorem names no definition of the file and stands on its own statement.</p><p><strong>2 · Imports.</strong> Built on: no other cluster. Built on it: no other cluster. Checking this cluster needs 1 file: <code>src/proof/reach.lean</code>.</p><p><strong>3 · The joint address.</strong> The 5 sealed receipts fold to <code>05528d94-5d7d-8142-9aa4-b7a650cd30e0</code>. Order-invariant: yes — the same root in reverse order. Altering one receipt changes it: yes, computed when this record was generated. A content-address proves integrity, not truth.</p><p><strong>4 · The address lattice.</strong> Each theorem sits at the seven ray values its page plots from its receipt, taken mod 9: a point of (ℤ/9)⁷. This cluster's centre is (2, 6, 2, 3, 6, 4, 5). Its nearest clusters, ranked by lift — pairs counted from this cluster's theorems' seven nearest points, over the pairs expected by chance from the two clusters' sizes: <code>ledgerclaims.lean</code> (3 observed, 0.43 expected, lift 7.05), <code>coin.lean</code> (4 observed, 0.64 expected, lift 6.27), <code>energy.lean</code> (3 observed, 1.17 expected, lift 2.56). A best lift is the largest of about 32 small ratios, so chance alone gives a typical best lift of 2.82 here (the median over 200 seeded reshufflings of which cluster each point belongs to); one at least as high as this cluster's arose in 3.5% of them — above chance by this measure, though with 33 clusters about 1.65 are expected there by chance alone. Mean distance between two of its theorems: 16.3; from one of its theorems to a theorem of another cluster: 15.39. A receipt is a hash, so nearness on this lattice is a property of the addresses, not of the mathematics; the mathematical binding is (1) and (2). These figures are as of commit <code>83213ac8f1ad</code> (2026-09-15), over 659 points; a new seal anywhere moves them.</p><p><strong>Prior art.</strong> That no finite set contains every natural number is Euclid's argument in form and is as old as mathematics; the deposit claims none of it. What is its own here is the decision over its OWN bounds, and the statement of where that decision stops. Per-theorem prior-art searches — OEIS, zbMATH Open, OpenAlex, Crossref, arXiv — are recorded, with what was searched, where and when, in the living ledger <a href=\"https://github.com/ceccec/millennium-solutions/blob/main/src/proof/novelty.json\">src/proof/novelty.json</a> (main branch). No novelty is claimed here.</p><p><strong>The theorems.</strong></p><ol><li><code>exhaustion_never_reaches_its_own_bound</code> — <code>bounds.all (fun n =&gt; (List.range n).length == n &amp;&amp; ¬ (List.range n).contains n)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reach_exhaustion_never_reaches_its_own_bound\">record</a></li><li><code>the_successor_of_every_bound_lies_outside</code> — <code>bounds.all (fun n =&gt; ¬ (List.range n).contains (n + 1))</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reach_the_successor_of_every_bound_lies_outside\">record</a></li><li><code>doubling_the_domain_leaves_the_same_hole</code> — <code>bounds.all (fun n =&gt; ¬ (List.range (2 * n)).contains (2 * n))</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reach_doubling_the_domain_leaves_the_same_hole\">record</a></li><li><code>the_successor_leaves_every_domain_and_the_predecessor_returns</code> — <code>(bounds ++ [largestDomainHere]).all (fun n =&gt; n + 1 &gt; n &amp;&amp; (n + 1) - 1 == n &amp;&amp; (n + 1) % 2 != n % 2)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reach_the_successor_leaves_every_domain_and_the_predecessor_returns\">record</a></li><li><code>the_predecessor_returns_every_successor</code> — <code>∀ n : Nat, (n + 1) - 1 = n</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reach_the_predecessor_returns_every_successor\">record</a></li></ol><p><strong>Recompute.</strong> Clone <a href=\"https://github.com/ceccec/millennium-solutions\">https://github.com/ceccec/millennium-solutions</a> at commit <code>83213ac8f1ad</code> and run <code>npm ci && npm run lean</code>, which checks every Lean file in dependency order. This record was generated by <a href=\"https://github.com/ceccec/millennium-solutions/blob/83213ac8f1ad8bb0b5fe7eed9360838215b71bac/scripts/clusters.ts\">scripts/clusters.ts</a> from the source and the ledger.</p><p><strong>Licence.</strong> CC BY-NC-ND 4.0 — free for non-commercial use with attribution to Tsvetan Rouschev; commercial use by arrangement with the author.</p>",
+  "description": "<p><strong>What exhaustion reaches, and what lies outside it</strong>. 8 machine-checked theorems from the Lean 4 source file <code>src/proof/reach.lean</code>, by Tsvetan Rouschev, licensed CC BY-NC-ND 4.0. Lean 4 is a proof checker: a theorem it accepts has been checked by its kernel, not argued in prose. 4 are checked case by case over a stated finite domain (<code>by decide</code>). 4 are proved for every value, on the standard axioms only (<code>propext</code>, <code>Quot.sound</code>; the verifier refuses any other). Every theorem listed is sealed live in the deposit's ledger, where a withdrawal is marked in place; 63 earlier rows removed on 2026-08-09 are listed in <a href=\"https://github.com/ceccec/millennium-solutions/blob/7b6f6e8d1e91a5d366271094cdf1b26214a8ba8f/src/proof/revoked.json\">src/proof/revoked.json</a>.</p><p><strong>How these theorems are bound.</strong> \"Entangled\" is used here in a precise, non-quantum sense: theorems are bound when they derive from shared definitions (section 1), when their files import one another (section 2), and when their content-addressed receipts fold into one address that changes if any one of them changes (section 3). It is correlation by derivation; no information travels through it.</p><p><strong>1 · Shared definitions.</strong> 1 definition is used by two or more theorems, binding 6 pairs; the theorems fall into 5 strands, the largest of 4. Most binding: <code>bounds</code> (4). 4 theorems name no definition of the file and stand on their own statement.</p><p><strong>2 · Imports.</strong> Built on: no other cluster. Built on it: no other cluster. Checking this cluster needs 1 file: <code>src/proof/reach.lean</code>.</p><p><strong>3 · The joint address.</strong> The 8 sealed receipts fold to <code>fa9dcd6d-5209-8845-b954-584568daaac6</code>. Order-invariant: yes — the same root in reverse order. Altering one receipt changes it: yes, computed when this record was generated. A content-address proves integrity, not truth.</p><p><strong>4 · The address lattice.</strong> Each theorem sits at the seven ray values its page plots from its receipt, taken mod 9: a point of (ℤ/9)⁷. This cluster's centre is (0, 6, 2, 2, 8, 4, 4). Its nearest clusters, ranked by lift — pairs counted from this cluster's theorems' seven nearest points, over the pairs expected by chance from the two clusters' sizes: <code>ledgerclaims.lean</code> (3 observed, 0.66 expected, lift 4.55), <code>coin.lean</code> (4 observed, 0.99 expected, lift 4.05), <code>elementary.lean</code> (7 observed, 2.88 expected, lift 2.43). A best lift is the largest of about 32 small ratios, so chance alone gives a typical best lift of 3.31 here (the median over 200 seeded reshufflings of which cluster each point belongs to); one at least as high as this cluster's arose in 23.0% of them — consistent with chance. Mean distance between two of its theorems: 15.5; from one of its theorems to a theorem of another cluster: 15.45. A receipt is a hash, so nearness on this lattice is a property of the addresses, not of the mathematics; the mathematical binding is (1) and (2). These figures are as of commit <code>7b6f6e8d1e91</code> (2026-09-15), over 681 points; a new seal anywhere moves them.</p><p><strong>Prior art.</strong> That no finite set contains every natural number is Euclid's argument in form and is as old as mathematics; the deposit claims none of it. What is its own here is the decision over its OWN bounds, and the statement of where that decision stops. Per-theorem prior-art searches — OEIS, zbMATH Open, OpenAlex, Crossref, arXiv — are recorded, with what was searched, where and when, in the living ledger <a href=\"https://github.com/ceccec/millennium-solutions/blob/main/src/proof/novelty.json\">src/proof/novelty.json</a> (main branch). No novelty is claimed here.</p><p><strong>The theorems.</strong></p><ol><li><code>exhaustion_never_reaches_its_own_bound</code> — <code>bounds.all (fun n =&gt; (List.range n).length == n &amp;&amp; ¬ (List.range n).contains n)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reach_exhaustion_never_reaches_its_own_bound\">record</a></li><li><code>the_successor_of_every_bound_lies_outside</code> — <code>bounds.all (fun n =&gt; ¬ (List.range n).contains (n + 1))</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reach_the_successor_of_every_bound_lies_outside\">record</a></li><li><code>doubling_the_domain_leaves_the_same_hole</code> — <code>bounds.all (fun n =&gt; ¬ (List.range (2 * n)).contains (2 * n))</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reach_doubling_the_domain_leaves_the_same_hole\">record</a></li><li><code>the_successor_leaves_every_domain_and_the_predecessor_returns</code> — <code>(bounds ++ [largestDomainHere]).all (fun n =&gt; n + 1 &gt; n &amp;&amp; (n + 1) - 1 == n &amp;&amp; (n + 1) % 2 != n % 2)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reach_the_successor_leaves_every_domain_and_the_predecessor_returns\">record</a></li><li><code>the_predecessor_returns_every_successor</code> — <code>∀ n : Nat, (n + 1) - 1 = n</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reach_the_predecessor_returns_every_successor\">record</a></li><li><code>exhaustion_never_reaches_its_own_bound_for_every_n</code> — <code>∀ n : Nat, (List.range n).length = n ∧ n ∉ List.range n</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reach_exhaustion_never_reaches_its_own_bound_for_every_n\">record</a></li><li><code>the_successor_of_every_bound_lies_outside_for_every_n</code> — <code>∀ n : Nat, n + 1 ∉ List.range n</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reach_the_successor_of_every_bound_lies_outside_for_every_n\">record</a></li><li><code>doubling_the_domain_leaves_the_same_hole_for_every_n</code> — <code>∀ n : Nat, 2 * n ∉ List.range (2 * n)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reach_doubling_the_domain_leaves_the_same_hole_for_every_n\">record</a></li></ol><p><strong>Recompute.</strong> Clone <a href=\"https://github.com/ceccec/millennium-solutions\">https://github.com/ceccec/millennium-solutions</a> at commit <code>7b6f6e8d1e91</code> and run <code>npm ci && npm run lean</code>, which checks every Lean file in dependency order. This record was generated by <a href=\"https://github.com/ceccec/millennium-solutions/blob/7b6f6e8d1e91a5d366271094cdf1b26214a8ba8f/scripts/clusters.ts\">scripts/clusters.ts</a> from the source and the ledger.</p><p><strong>Licence.</strong> CC BY-NC-ND 4.0 — free for non-commercial use with attribution to Tsvetan Rouschev; commercial use by arrangement with the author.</p>",
   "license": "cc-by-nc-nd-4.0",
   "access_right": "open",
   "language": "eng",
@@ -30,7 +30,7 @@
       "scheme": "doi"
     },
     {
-      "identifier": "https://github.com/ceccec/millennium-solutions/blob/83213ac8f1ad8bb0b5fe7eed9360838215b71bac/src/proof/reach.lean",
+      "identifier": "https://github.com/ceccec/millennium-solutions/blob/7b6f6e8d1e91a5d366271094cdf1b26214a8ba8f/src/proof/reach.lean",
       "relation": "isSupplementTo",
       "scheme": "url"
     },
@@ -58,25 +58,40 @@
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_reach_the_predecessor_returns_every_successor",
       "relation": "hasPart",
       "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_reach_exhaustion_never_reaches_its_own_bound_for_every_n",
+      "relation": "hasPart",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_reach_the_successor_of_every_bound_lies_outside_for_every_n",
+      "relation": "hasPart",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_reach_doubling_the_domain_leaves_the_same_hole_for_every_n",
+      "relation": "hasPart",
+      "scheme": "url"
     }
   ],
-  "notes": "cluster reach.lean · 5 sealed · joint address 05528d94-5d7d-8142-9aa4-b7a650cd30e0 · figures as of commit 83213ac8f1ad (2026-09-15) · concept DOI 10.5281/zenodo.21819217 · generated by scripts/clusters.ts",
+  "notes": "cluster reach.lean · 8 sealed · joint address fa9dcd6d-5209-8845-b954-584568daaac6 · figures as of commit 7b6f6e8d1e91 (2026-09-15) · concept DOI 10.5281/zenodo.21819217 · generated by scripts/clusters.ts",
   "files": [
     "src/proof/reach.lean"
   ],
   "cluster": {
     "file": "reach.lean",
     "wing": "the floor",
-    "sealed": 5,
+    "sealed": 8,
     "decided": 4,
-    "proved": 1,
+    "proved": 4,
     "declarations": 0,
     "joint": {
-      "root": "05528d94-5d7d-8142-9aa4-b7a650cd30e0",
+      "root": "fa9dcd6d-5209-8845-b954-584568daaac6",
       "orderInvariant": true,
       "bindsEveryReceipt": true
     },
-    "strands": 2,
+    "strands": 5,
     "binding": [
       {
         "def": "bounds",
@@ -87,40 +102,40 @@
     "dependents": [],
     "lattice": {
       "centre": [
-        2,
+        0,
         6,
         2,
-        3,
-        6,
+        2,
+        8,
         4,
-        5
+        4
       ],
-      "within": 16.3,
-      "between": 15.39,
+      "within": 15.5,
+      "between": 15.45,
       "top": [
         {
           "file": "ledgerclaims.lean",
           "pairs": 3,
-          "expected": 0.43,
-          "lift": 7.05
+          "expected": 0.66,
+          "lift": 4.55
         },
         {
           "file": "coin.lean",
           "pairs": 4,
-          "expected": 0.64,
-          "lift": 6.27
+          "expected": 0.99,
+          "lift": 4.05
         },
         {
-          "file": "energy.lean",
-          "pairs": 3,
-          "expected": 1.17,
-          "lift": 2.56
+          "file": "elementary.lean",
+          "pairs": 7,
+          "expected": 2.88,
+          "lift": 2.43
         }
       ],
-      "chanceShare": 0.035,
-      "nullMedian": 2.82,
+      "chanceShare": 0.23,
+      "nullMedian": 3.31,
       "shuffles": 200
     },
-    "asOf": "83213ac8f1ad8bb0b5fe7eed9360838215b71bac"
+    "asOf": "7b6f6e8d1e91a5d366271094cdf1b26214a8ba8f"
   }
 }

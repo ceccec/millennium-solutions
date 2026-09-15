@@ -205,4 +205,96 @@ theorem both_parts_sum_to_zero :
   m9 ((R.filter (fun d => R.any (fun e => m9 (d * e) == 1))).foldl (· + ·) 0) == 0
   ∧ m9 ((R.filter (fun d => ! R.any (fun e => m9 (d * e) == 1))).foldl (· + ·) 0) == 0 := by decide
 
+
+-- ── the capped rows above, proved for every value — no bound ─────────────────────────────────────────────────
+-- doubling_has_period_six (k < 30), orbit_digital_roots_have_period_six (k < 24), the_orbit_never_meets_the_triad
+-- (k < 40), pisano_period_mod_nine_is_twenty_four (k < 30), consecutive_fibonacci_are_coprime (n ≤ 25) and
+-- digital_root_agrees_with_the_residue (n ≤ 300) were checked up to a bound; these prove them for every value.
+-- 2⁶ ≡ 1 mod 9 turns the orbit; the pair (fib k, fib (k+1)) mod 9 returns after 24 steps; gcd9 is Euclid with fuel
+-- a + b + 1, which always exceeds what Euclid needs, so it is the gcd.
+theorem doubling_has_period_six_for_every_k : ∀ k : Nat, pw 2 (k + 6) = pw 2 k := by
+  intro k
+  unfold pw m9
+  rw [Nat.pow_add, Nat.mul_mod]
+  have h : 2 ^ 6 % 9 = 1 := by decide
+  rw [h, Nat.mul_one, Nat.mod_mod]
+
+theorem orbit_digital_roots_have_period_six_for_every_k : ∀ k : Nat, dr (pw 2 (k + 6)) = dr (pw 2 k) := by
+  intro k
+  rw [doubling_has_period_six_for_every_k]
+
+theorem the_doubling_orbit_is_read_from_the_exponent_mod_six : ∀ k : Nat, pw 2 k = pw 2 (k % 6) := by
+  intro k
+  induction k using Nat.strongRecOn with
+  | _ k ih =>
+    if hk : k < 6 then rw [Nat.mod_eq_of_lt hk]
+    else
+      have e : k = (k - 6) + 6 := by omega
+      rw [e, doubling_has_period_six_for_every_k, ih (k - 6) (by omega), Nat.add_mod_right]
+
+theorem the_orbit_never_meets_the_triad_for_every_k : ∀ k : Nat, pw 2 k ≠ 0 ∧ pw 2 k ≠ 3 ∧ pw 2 k ≠ 6 := by
+  intro k
+  rw [the_doubling_orbit_is_read_from_the_exponent_mod_six]
+  have h : k % 6 < 6 := Nat.mod_lt _ (by decide)
+  generalize k % 6 = j at h ⊢
+  revert j
+  decide
+
+theorem fibonacci_residues_mod_nine_repeat_every_twenty_four_steps :
+    ∀ k : Nat, fib (k + 24) % 9 = fib k % 9 ∧ fib (k + 25) % 9 = fib (k + 1) % 9 := by
+  intro k
+  induction k with
+  | zero => decide
+  | succ k ih =>
+    refine ⟨ih.2, ?_⟩
+    show (fib (k + 24) + fib (k + 25)) % 9 = (fib k + fib (k + 1)) % 9
+    rw [Nat.add_mod, ih.1, ih.2, ← Nat.add_mod]
+
+theorem pisano_period_mod_nine_is_twenty_four_for_every_k : ∀ k : Nat, fib9 (k + 24) = fib9 k := by
+  intro k
+  exact (fibonacci_residues_mod_nine_repeat_every_twenty_four_steps k).1
+
+theorem the_fuelled_gcd_is_the_gcd_when_the_fuel_exceeds_the_second_argument :
+    ∀ f a b : Nat, b < f → gcdF f a b = Nat.gcd a b := by
+  intro f
+  induction f with
+  | zero => intro a b h; exact absurd h (Nat.not_lt_zero b)
+  | succ f ih =>
+    intro a b h
+    cases b with
+    | zero => show a = Nat.gcd a 0; rw [Nat.gcd_zero_right]
+    | succ b =>
+      show gcdF f (b + 1) (a % (b + 1)) = Nat.gcd a (b + 1)
+      have hm : a % (b + 1) < b + 1 := Nat.mod_lt a (Nat.succ_pos b)
+      rw [ih (b + 1) (a % (b + 1)) (by omega), Nat.gcd_comm a (b + 1), Nat.gcd_rec (b + 1) a, Nat.gcd_comm]
+
+theorem consecutive_fibonacci_numbers_are_coprime : ∀ n : Nat, Nat.gcd (fib n) (fib (n + 1)) = 1 := by
+  intro n
+  induction n with
+  | zero => show Nat.gcd 0 1 = 1; exact Nat.gcd_zero_left 1
+  | succ n ih =>
+    show Nat.gcd (fib (n + 1)) (fib n + fib (n + 1)) = 1
+    rw [Nat.gcd_rec, Nat.add_mod_right, ← Nat.gcd_rec, Nat.gcd_comm, ih]
+
+theorem consecutive_fibonacci_are_coprime_for_every_n : ∀ n : Nat, gcd9 (fib n) (fib (n + 1)) = 1 := by
+  intro n
+  unfold gcd9
+  rw [the_fuelled_gcd_is_the_gcd_when_the_fuel_exceeds_the_second_argument _ _ _ (by omega)]
+  exact consecutive_fibonacci_numbers_are_coprime n
+
+theorem digital_root_agrees_with_the_residue_for_every_n : ∀ n : Nat, 0 < n → (dr n = 9 ↔ m9 n = 0) := by
+  intro n hn
+  unfold dr m9
+  rw [if_neg (show ¬ ((n == 0) = true) by simp; omega)]
+  by_cases h : n % 9 = 0
+  · simp [h]
+  · rw [if_neg (show ¬ ((n % 9 == 0) = true) by simpa using h)]
+    constructor
+    · intro e; have := Nat.mod_lt n (show 0 < 9 by decide); omega
+    · intro e; exact absurd e h
+
+theorem digital_root_is_the_digit_sum_residue_for_every_n : ∀ n : Nat, m9 (digitSum n) = m9 n := by
+  intro n
+  exact Reversal.the_digit_sum_has_the_residue_of_the_number_mod_nine_for_every_n n
+
 end Z9Plus
