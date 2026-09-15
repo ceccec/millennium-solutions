@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). The author's own claim, that the seven are solved through involution, is stated in his name on the front page.
 
-## Discovered theorems (decidable, over ℤ/9) — 2643 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2658 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (695)
+### lean (710)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -789,6 +789,36 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
   have), standard axioms only — checked by lean.ts  ·  `43b9cdd8-7110…`
 - [lean_sequences_cassinis_identity_for_every_m](/theorem/lean_sequences_cassinis_identity_for_every_m) — lean sequences.lean: cassinis_identity_for_every_m — ∀ m : Nat, fib (2 * m + 1) * fib (2 * m + 3) = fib (2 * m + 2) * fib (2 * m + 2) + 1 ∧ fib (2 * m) * fib (2 * m + 2) + 1 = fib (2 * m + 1) * fib (2 * m + 1) — proved by the Lean kernel for every value (by
   intro), standard axioms only — checked by lean.ts  ·  `3b815427-42b8…`
+- [lean_nim_the_xor_of_two_bits_is_their_sum_mod_two](/theorem/lean_nim_the_xor_of_two_bits_is_their_sum_mod_two) — lean nim.lean: the_xor_of_two_bits_is_their_sum_mod_two — ∀ x y : Nat, (if x % 2 == y % 2 then 0 else 1) = (x + y) % 2 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `322304d5-f000…`
+- [lean_nim_xor_commutes_at_every_fuel](/theorem/lean_nim_xor_commutes_at_every_fuel) — lean nim.lean: xor_commutes_at_every_fuel — ∀ f a b : Nat, xorF f a b = xorF f b a — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `b091d5a8-4e4a…`
+- [lean_nim_one_more_step_of_fuel_changes_nothing_once_it_exceeds_an_argument](/theorem/lean_nim_one_more_step_of_fuel_changes_nothing_once_it_exceeds_an_argument) — lean nim.lean: one_more_step_of_fuel_changes_nothing_once_it_exceeds_an_argument — ∀ f a b : Nat, (a &lt; f ∨ b &lt; f) → xorF (f + 1) a b = xorF f a b — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `adf2ef5a-ef44…`
+- [lean_nim_more_fuel_changes_nothing_once_it_exceeds_an_argument](/theorem/lean_nim_more_fuel_changes_nothing_once_it_exceeds_an_argument) — lean nim.lean: more_fuel_changes_nothing_once_it_exceeds_an_argument — ∀ k f a b : Nat, (a &lt; f ∨ b &lt; f) → xorF (f + k) a b = xorF f a b — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `961d94be-959c…`
+- [lean_nim_xor_reads_the_same_at_every_sufficient_fuel](/theorem/lean_nim_xor_reads_the_same_at_every_sufficient_fuel) — lean nim.lean: xor_reads_the_same_at_every_sufficient_fuel — ∀ g a b : Nat, (a &lt; g ∨ b &lt; g) → xorN a b = xorF g a b — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `e04a45b5-8834…`
+- [lean_nim_a_number_xored_with_itself_is_zero_at_every_fuel](/theorem/lean_nim_a_number_xored_with_itself_is_zero_at_every_fuel) — lean nim.lean: a_number_xored_with_itself_is_zero_at_every_fuel — ∀ f b : Nat, xorF f b b = 0 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `409e78df-b565…`
+- [lean_nim_xor_splits_off_its_lowest_bit](/theorem/lean_nim_xor_splits_off_its_lowest_bit) — lean nim.lean: xor_splits_off_its_lowest_bit — ∀ g x c : Nat, 1 ≤ g → xorF (g + 1) x c = (x + c) % 2 + 2 * xorF g (x / 2) (c / 2) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `fa8f797f-95fa…`
+- [lean_nim_xor_undoes_itself_when_the_fuel_suffices](/theorem/lean_nim_xor_undoes_itself_when_the_fuel_suffices) — lean nim.lean: xor_undoes_itself_when_the_fuel_suffices — ∀ f a b g : Nat, (a &lt; f ∨ b &lt; f) → b &lt; g → xorF g (xorF f a b) b = a — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `ba799e13-9cb6…`
+- [lean_nim_xor_is_commutative_for_every_a_b](/theorem/lean_nim_xor_is_commutative_for_every_a_b) — lean nim.lean: xor_is_commutative_for_every_a_b — ∀ a b : Nat, xorN a b = xorN b a — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `e62bc467-f90b…`
+- [lean_nim_xor_zero_is_identity_for_every_a](/theorem/lean_nim_xor_zero_is_identity_for_every_a) — lean nim.lean: xor_zero_is_identity_for_every_a — ∀ a : Nat, xorN a 0 = a — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `667bd69d-51ea…`
+- [lean_nim_xor_is_its_own_inverse_for_every_a_b](/theorem/lean_nim_xor_is_its_own_inverse_for_every_a_b) — lean nim.lean: xor_is_its_own_inverse_for_every_a_b — ∀ a b : Nat, xorN (xorN a b) b = a — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `e2f6d0f1-2fa2…`
+- [lean_nim_xor_is_the_sum_of_the_bits_plus_twice_the_xor_of_the_halves](/theorem/lean_nim_xor_is_the_sum_of_the_bits_plus_twice_the_xor_of_the_halves) — lean nim.lean: xor_is_the_sum_of_the_bits_plus_twice_the_xor_of_the_halves — ∀ a b : Nat, xorN a b = (a + b) % 2 + 2 * xorN (a / 2) (b / 2) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `07c467d9-8226…`
+- [lean_nim_xor_is_associative_below_every_bound](/theorem/lean_nim_xor_is_associative_below_every_bound) — lean nim.lean: xor_is_associative_below_every_bound — ∀ n a b c : Nat, a + b + c ≤ n → xorN (xorN a b) c = xorN a (xorN b c) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `0c3ef805-2811…`
+- [lean_nim_xor_is_associative_for_every_a_b_c](/theorem/lean_nim_xor_is_associative_for_every_a_b_c) — lean nim.lean: xor_is_associative_for_every_a_b_c — ∀ a b c : Nat, xorN (xorN a b) c = xorN a (xorN b c) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `d2a922d9-f09d…`
+- [lean_nim_the_nim_sum_is_a_gf2_vector_addition_for_every_a_b_c](/theorem/lean_nim_the_nim_sum_is_a_gf2_vector_addition_for_every_a_b_c) — lean nim.lean: the_nim_sum_is_a_gf2_vector_addition_for_every_a_b_c — ∀ a b c : Nat, xorN a b = xorN b a ∧ xorN (xorN a b) c = xorN a (xorN b c) ∧ xorN (xorN a b) b = a ∧ xorN a 0 = a — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `caa5c327-62cf…`
 
 ### other — one-of-a-kind (0)
 
@@ -2373,4 +2403,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `3778356e-7bfa-806f-8d89-3df0fc8dd2d0`. Integrity, not truth.
+Page content-address: `5a2e0a2b-7098-8bae-a674-038aab427755`. Integrity, not truth.

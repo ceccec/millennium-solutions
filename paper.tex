@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 704 of them across 33 files and
-7 wings; 625 close by exhaustion over a stated finite domain, 70 are proved
+(\texttt{npm run latex-gate}). There are 719 of them across 33 files and
+7 wings; 625 close by exhaustion over a stated finite domain, 85 are proved
 for every value, and the remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -2841,6 +2841,96 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 \[ \forall a \in \{0,\dots,6\},\; \forall b \in \{0,\dots,6\},\; \mathrm{isLost}\mathopen{}\left(a,\,b\right) = \mathrm{xorN}\mathopen{}\left(a,\,b\right) = 0 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 49 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_xor\_of\_two\_bits\_is\_their\_sum\_mod\_two}]
+\texttt{∀ x y : Nat, (if x \% 2 == y \% 2 then 0 else 1) = (x + y) \% 2}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{xor\_commutes\_at\_every\_fuel}]
+\texttt{∀ f a b : Nat, xorF f a b = xorF f b a}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{one\_more\_step\_of\_fuel\_changes\_nothing\_once\_it\_exceeds\_an\_argument}]
+\texttt{∀ f a b : Nat, (a < f ∨ b < f) → xorF (f + 1) a b = xorF f a b}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{more\_fuel\_changes\_nothing\_once\_it\_exceeds\_an\_argument}]
+\texttt{∀ k f a b : Nat, (a < f ∨ b < f) → xorF (f + k) a b = xorF f a b}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{xor\_reads\_the\_same\_at\_every\_sufficient\_fuel}]
+\texttt{∀ g a b : Nat, (a < g ∨ b < g) → xorN a b = xorF g a b}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_number\_xored\_with\_itself\_is\_zero\_at\_every\_fuel}]
+\texttt{∀ f b : Nat, xorF f b b = 0}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{xor\_splits\_off\_its\_lowest\_bit}]
+\texttt{∀ g x c : Nat, 1 ≤ g → xorF (g + 1) x c = (x + c) \% 2 + 2 * xorF g (x / 2) (c / 2)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{xor\_undoes\_itself\_when\_the\_fuel\_suffices}]
+\texttt{∀ f a b g : Nat, (a < f ∨ b < f) → b < g → xorF g (xorF f a b) b = a}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{xor\_is\_commutative\_for\_every\_a\_b}]
+\texttt{∀ a b : Nat, xorN a b = xorN b a}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{xor\_zero\_is\_identity\_for\_every\_a}]
+\texttt{∀ a : Nat, xorN a 0 = a}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{xor\_is\_its\_own\_inverse\_for\_every\_a\_b}]
+\texttt{∀ a b : Nat, xorN (xorN a b) b = a}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{xor\_is\_the\_sum\_of\_the\_bits\_plus\_twice\_the\_xor\_of\_the\_halves}]
+\texttt{∀ a b : Nat, xorN a b = (a + b) \% 2 + 2 * xorN (a / 2) (b / 2)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{xor\_is\_associative\_below\_every\_bound}]
+\texttt{∀ n a b c : Nat, a + b + c ≤ n → xorN (xorN a b) c = xorN a (xorN b c)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{xor\_is\_associative\_for\_every\_a\_b\_c}]
+\texttt{∀ a b c : Nat, xorN (xorN a b) c = xorN a (xorN b c)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_nim\_sum\_is\_a\_gf2\_vector\_addition\_for\_every\_a\_b\_c}]
+\texttt{∀ a b c : Nat, xorN a b = xorN b a ∧ xorN (xorN a b) c = xorN a (xorN b c) ∧ xorN (xorN a b) b = a ∧ xorN a 0 = a}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
 
 \paragraph{\texttt{reversal.lean}}
 
