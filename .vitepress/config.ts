@@ -209,6 +209,7 @@ export default defineConfig({
       { text: 'Build', items: [
         { text: 'Guide (7D)', link: '/guide' },
         { text: 'Nature, proved', link: '/nature' },
+        { text: 'Navier–Stokes, stated', link: '/navierstokes' },
         { text: 'Workflows', link: '/WORKFLOWS' },
         { text: 'Develop', link: '/DEVELOP' },
         { text: 'Proofs', link: '/proofs' },
@@ -238,6 +239,7 @@ export default defineConfig({
           { text: 'Abstract', link: '/ABSTRACT' },
           { text: 'Guide (7D)', link: '/guide' },
           { text: 'Nature, proved', link: '/nature' },
+          { text: 'Navier–Stokes, stated', link: '/navierstokes' },
           { text: 'How it folds (for everyone)', link: '/folds' },
           { text: 'Workflows', link: '/WORKFLOWS' },
           { text: 'The (concepts)', link: '/the' },

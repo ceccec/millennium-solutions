@@ -16528,5 +16528,71 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "43332821-10bc-8bb2-babe-07c8f97d8607"
+  },
+  {
+    "key": "lean_flow_a_ring_sum_splits_over_a_sum",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "def0f698-6e8c-8f46-9f77-dd0397d12ff8"
+  },
+  {
+    "key": "lean_flow_a_ring_sum_of_negatives_is_the_negated_sum",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "86a56512-64df-8d76-8764-ecfbeb32c089"
+  },
+  {
+    "key": "lean_flow_ring_sums_agree_where_their_terms_agree",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "233f29d5-6b29-849a-8050-83b84377704f"
+  },
+  {
+    "key": "lean_flow_a_ring_sum_peels_its_first_term",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4b3735a1-b114-84e0-9a59-70de89a8efdc"
+  },
+  {
+    "key": "lean_flow_a_cyclic_sum_is_unchanged_by_one_step_of_rotation",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d6a6e517-ae76-87a0-8c6b-d2f5ded0a59f"
+  },
+  {
+    "key": "lean_flow_the_site_before_the_next_is_the_site",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e200c2f1-8c10-8794-a028-3306f904d6bb"
+  },
+  {
+    "key": "lean_flow_a_bond_sum_reads_the_same_from_either_end",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9920e848-6b06-8791-ba51-dea1e15e5a29"
+  },
+  {
+    "key": "lean_flow_the_skew_symmetric_burgers_term_does_no_work_on_every_ring",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a2e54b88-8b2f-8019-9aad-4546c31e4571"
+  },
+  {
+    "key": "lean_flow_the_discrete_laplacian_dissipates_exactly_the_squared_differences",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "289b45b9-0cbe-821c-9a95-2ff688e0530c"
+  },
+  {
+    "key": "lean_flow_a_sum_of_squares_is_never_negative",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b5817e6d-005d-8b0a-8f22-3a02558971a4"
+  },
+  {
+    "key": "lean_flow_the_discrete_energy_never_increases_on_every_ring",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d25bc6d6-19e4-84e1-98a3-0bd4bbbfc85c"
   }
 ]

@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). The author's own claim, that the seven are solved through involution, is stated in his name on the front page.
 
-## Discovered theorems (decidable, over ℤ/9) — 2755 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2766 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (806)
+### lean (817)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -1006,6 +1006,28 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
   intro), standard axioms only — checked by lean.ts  ·  `20cda95a-c30a…`
 - [lean_z9plus_reversal_cannot_change_the_digital_root_for_every_n](/theorem/lean_z9plus_reversal_cannot_change_the_digital_root_for_every_n) — lean z9plus.lean: reversal_cannot_change_the_digital_root_for_every_n — ∀ n : Nat, dr (reverseNum n) = dr n — proved by the Lean kernel for every value (by
   intro), standard axioms only — checked by lean.ts  ·  `43332821-10bc…`
+- [lean_flow_a_ring_sum_splits_over_a_sum](/theorem/lean_flow_a_ring_sum_splits_over_a_sum) — lean flow.lean: a_ring_sum_splits_over_a_sum — ∀ (f g : Nat → Int) (n : Nat), ringSum (fun i =&gt; f i + g i) n = ringSum f n + ringSum g n — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `def0f698-6e8c…`
+- [lean_flow_a_ring_sum_of_negatives_is_the_negated_sum](/theorem/lean_flow_a_ring_sum_of_negatives_is_the_negated_sum) — lean flow.lean: a_ring_sum_of_negatives_is_the_negated_sum — ∀ (f : Nat → Int) (n : Nat), ringSum (fun i =&gt; - f i) n = - ringSum f n — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `86a56512-64df…`
+- [lean_flow_ring_sums_agree_where_their_terms_agree](/theorem/lean_flow_ring_sums_agree_where_their_terms_agree) — lean flow.lean: ring_sums_agree_where_their_terms_agree — ∀ (f g : Nat → Int) (n : Nat), (∀ i, i &lt; n → f i = g i) → ringSum f n = ringSum g n — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `233f29d5-6b29…`
+- [lean_flow_a_ring_sum_peels_its_first_term](/theorem/lean_flow_a_ring_sum_peels_its_first_term) — lean flow.lean: a_ring_sum_peels_its_first_term — ∀ (f : Nat → Int) (n : Nat), ringSum f (n + 1) = f 0 + ringSum (fun i =&gt; f (i + 1)) n — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `4b3735a1-b114…`
+- [lean_flow_a_cyclic_sum_is_unchanged_by_one_step_of_rotation](/theorem/lean_flow_a_cyclic_sum_is_unchanged_by_one_step_of_rotation) — lean flow.lean: a_cyclic_sum_is_unchanged_by_one_step_of_rotation — ∀ (N : Nat) (f : Nat → Int), 0 &lt; N → ringSum (fun i =&gt; f (ringNext N i)) N = ringSum f N — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `d6a6e517-ae76…`
+- [lean_flow_the_site_before_the_next_is_the_site](/theorem/lean_flow_the_site_before_the_next_is_the_site) — lean flow.lean: the_site_before_the_next_is_the_site — ∀ N i : Nat, i &lt; N → ringPrev N (ringNext N i) = i — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `e200c2f1-8c10…`
+- [lean_flow_a_bond_sum_reads_the_same_from_either_end](/theorem/lean_flow_a_bond_sum_reads_the_same_from_either_end) — lean flow.lean: a_bond_sum_reads_the_same_from_either_end — ∀ (N : Nat) (F : Nat → Nat → Int), 0 &lt; N → ringSum (fun i =&gt; F (ringPrev N i) i) N = ringSum (fun i =&gt; F i (ringNext N i)) N — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `9920e848-6b06…`
+- [lean_flow_the_skew_symmetric_burgers_term_does_no_work_on_every_ring](/theorem/lean_flow_the_skew_symmetric_burgers_term_does_no_work_on_every_ring) — lean flow.lean: the_skew_symmetric_burgers_term_does_no_work_on_every_ring — ∀ (N : Nat) (u : Nat → Int), 0 &lt; N → ringSum (fun i =&gt; u i * burgersSkew3 N u i) N = 0 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `a2e54b88-8b2f…`
+- [lean_flow_the_discrete_laplacian_dissipates_exactly_the_squared_differences](/theorem/lean_flow_the_discrete_laplacian_dissipates_exactly_the_squared_differences) — lean flow.lean: the_discrete_laplacian_dissipates_exactly_the_squared_differences — ∀ (N : Nat) (u : Nat → Int), 0 &lt; N → ringSum (fun i =&gt; u i * ringLap N u i) N = - ringSum (fun i =&gt; (u (ringNext N i) - u i) * (u (ringNext N i) - u i)) N — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `289b45b9-0cbe…`
+- [lean_flow_a_sum_of_squares_is_never_negative](/theorem/lean_flow_a_sum_of_squares_is_never_negative) — lean flow.lean: a_sum_of_squares_is_never_negative — ∀ (f : Nat → Int) (n : Nat), 0 ≤ ringSum (fun i =&gt; f i * f i) n — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `b5817e6d-005d…`
+- [lean_flow_the_discrete_energy_never_increases_on_every_ring](/theorem/lean_flow_the_discrete_energy_never_increases_on_every_ring) — lean flow.lean: the_discrete_energy_never_increases_on_every_ring — ∀ (N : Nat) (u : Nat → Int) (ν : Int), 0 &lt; N → 0 ≤ ν → ringSum (fun i =&gt; u i * (3 * ν * ringLap N u i - burgersSkew3 N u i)) N ≤ 0 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `d25bc6d6-19e4…`
 
 ### other — one-of-a-kind (0)
 
@@ -2590,4 +2612,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `73df5db3-796d-8cbe-8af7-2c4dcfbbe856`. Integrity, not truth.
+Page content-address: `873096ba-f5a0-84f9-a75b-6c1391976966`. Integrity, not truth.

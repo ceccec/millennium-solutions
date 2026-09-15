@@ -19529,5 +19529,60 @@
     "key": "lean_z9plus_reversal_cannot_change_the_digital_root_for_every_n",
     "name": "lean z9plus.lean: reversal_cannot_change_the_digital_root_for_every_n — ∀ n : Nat, dr (reverseNum n) = dr n — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
     "receipt": "43332821-10bc-8bb2-babe-07c8f97d8607"
+  },
+  {
+    "key": "lean_flow_a_ring_sum_splits_over_a_sum",
+    "name": "lean flow.lean: a_ring_sum_splits_over_a_sum — ∀ (f g : Nat → Int) (n : Nat), ringSum (fun i => f i + g i) n = ringSum f n + ringSum g n — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "def0f698-6e8c-8f46-9f77-dd0397d12ff8"
+  },
+  {
+    "key": "lean_flow_a_ring_sum_of_negatives_is_the_negated_sum",
+    "name": "lean flow.lean: a_ring_sum_of_negatives_is_the_negated_sum — ∀ (f : Nat → Int) (n : Nat), ringSum (fun i => - f i) n = - ringSum f n — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "86a56512-64df-8d76-8764-ecfbeb32c089"
+  },
+  {
+    "key": "lean_flow_ring_sums_agree_where_their_terms_agree",
+    "name": "lean flow.lean: ring_sums_agree_where_their_terms_agree — ∀ (f g : Nat → Int) (n : Nat), (∀ i, i < n → f i = g i) → ringSum f n = ringSum g n — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "233f29d5-6b29-849a-8050-83b84377704f"
+  },
+  {
+    "key": "lean_flow_a_ring_sum_peels_its_first_term",
+    "name": "lean flow.lean: a_ring_sum_peels_its_first_term — ∀ (f : Nat → Int) (n : Nat), ringSum f (n + 1) = f 0 + ringSum (fun i => f (i + 1)) n — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "4b3735a1-b114-84e0-9a59-70de89a8efdc"
+  },
+  {
+    "key": "lean_flow_a_cyclic_sum_is_unchanged_by_one_step_of_rotation",
+    "name": "lean flow.lean: a_cyclic_sum_is_unchanged_by_one_step_of_rotation — ∀ (N : Nat) (f : Nat → Int), 0 < N → ringSum (fun i => f (ringNext N i)) N = ringSum f N — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "d6a6e517-ae76-87a0-8c6b-d2f5ded0a59f"
+  },
+  {
+    "key": "lean_flow_the_site_before_the_next_is_the_site",
+    "name": "lean flow.lean: the_site_before_the_next_is_the_site — ∀ N i : Nat, i < N → ringPrev N (ringNext N i) = i — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "e200c2f1-8c10-8794-a028-3306f904d6bb"
+  },
+  {
+    "key": "lean_flow_a_bond_sum_reads_the_same_from_either_end",
+    "name": "lean flow.lean: a_bond_sum_reads_the_same_from_either_end — ∀ (N : Nat) (F : Nat → Nat → Int), 0 < N → ringSum (fun i => F (ringPrev N i) i) N = ringSum (fun i => F i (ringNext N i)) N — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "9920e848-6b06-8791-ba51-dea1e15e5a29"
+  },
+  {
+    "key": "lean_flow_the_skew_symmetric_burgers_term_does_no_work_on_every_ring",
+    "name": "lean flow.lean: the_skew_symmetric_burgers_term_does_no_work_on_every_ring — ∀ (N : Nat) (u : Nat → Int), 0 < N → ringSum (fun i => u i * burgersSkew3 N u i) N = 0 — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "a2e54b88-8b2f-8019-9aad-4546c31e4571"
+  },
+  {
+    "key": "lean_flow_the_discrete_laplacian_dissipates_exactly_the_squared_differences",
+    "name": "lean flow.lean: the_discrete_laplacian_dissipates_exactly_the_squared_differences — ∀ (N : Nat) (u : Nat → Int), 0 < N → ringSum (fun i => u i * ringLap N u i) N = - ringSum (fun i => (u (ringNext N i) - u i) * (u (ringNext N i) - u i)) N — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "289b45b9-0cbe-821c-9a95-2ff688e0530c"
+  },
+  {
+    "key": "lean_flow_a_sum_of_squares_is_never_negative",
+    "name": "lean flow.lean: a_sum_of_squares_is_never_negative — ∀ (f : Nat → Int) (n : Nat), 0 ≤ ringSum (fun i => f i * f i) n — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "b5817e6d-005d-8b0a-8f22-3a02558971a4"
+  },
+  {
+    "key": "lean_flow_the_discrete_energy_never_increases_on_every_ring",
+    "name": "lean flow.lean: the_discrete_energy_never_increases_on_every_ring — ∀ (N : Nat) (u : Nat → Int) (ν : Int), 0 < N → 0 ≤ ν → ringSum (fun i => u i * (3 * ν * ringLap N u i - burgersSkew3 N u i)) N ≤ 0 — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "d25bc6d6-19e4-84e1-98a3-0bd4bbbfc85c"
   }
 ]

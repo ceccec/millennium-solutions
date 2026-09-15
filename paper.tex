@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 815 of them across 33 files and
-7 wings; 630 close by exhaustion over a stated finite domain, 176 are proved
+(\texttt{npm run latex-gate}). There are 826 of them across 33 files and
+7 wings; 630 close by exhaustion over a stated finite domain, 187 are proved
 for every value, and the remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -1038,6 +1038,72 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 
 \begin{theorem}[\texttt{every\_state\_of\_the\_flow\_returns\_within\_six\_steps}]
 \texttt{∀ k s : Nat, ∃ j, j < 6 ∧ orbit (k + j) = orbit s}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_ring\_sum\_splits\_over\_a\_sum}]
+\texttt{∀ (f g : Nat → Int) (n : Nat), ringSum (fun i => f i + g i) n = ringSum f n + ringSum g n}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_ring\_sum\_of\_negatives\_is\_the\_negated\_sum}]
+\texttt{∀ (f : Nat → Int) (n : Nat), ringSum (fun i => - f i) n = - ringSum f n}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{ring\_sums\_agree\_where\_their\_terms\_agree}]
+\texttt{∀ (f g : Nat → Int) (n : Nat), (∀ i, i < n → f i = g i) → ringSum f n = ringSum g n}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_ring\_sum\_peels\_its\_first\_term}]
+\texttt{∀ (f : Nat → Int) (n : Nat), ringSum f (n + 1) = f 0 + ringSum (fun i => f (i + 1)) n}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_cyclic\_sum\_is\_unchanged\_by\_one\_step\_of\_rotation}]
+\texttt{∀ (N : Nat) (f : Nat → Int), 0 < N → ringSum (fun i => f (ringNext N i)) N = ringSum f N}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_site\_before\_the\_next\_is\_the\_site}]
+\texttt{∀ N i : Nat, i < N → ringPrev N (ringNext N i) = i}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_bond\_sum\_reads\_the\_same\_from\_either\_end}]
+\texttt{∀ (N : Nat) (F : Nat → Nat → Int), 0 < N → ringSum (fun i => F (ringPrev N i) i) N = ringSum (fun i => F i (ringNext N i)) N}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_skew\_symmetric\_burgers\_term\_does\_no\_work\_on\_every\_ring}]
+\texttt{∀ (N : Nat) (u : Nat → Int), 0 < N → ringSum (fun i => u i * burgersSkew3 N u i) N = 0}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_discrete\_laplacian\_dissipates\_exactly\_the\_squared\_differences}]
+\texttt{∀ (N : Nat) (u : Nat → Int), 0 < N → ringSum (fun i => u i * ringLap N u i) N = - ringSum (fun i => (u (ringNext N i) - u i) * (u (ringNext N i) - u i)) N}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_sum\_of\_squares\_is\_never\_negative}]
+\texttt{∀ (f : Nat → Int) (n : Nat), 0 ≤ ringSum (fun i => f i * f i) n}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_discrete\_energy\_never\_increases\_on\_every\_ring}]
+\texttt{∀ (N : Nat) (u : Nat → Int) (ν : Int), 0 < N → 0 ≤ ν → ringSum (fun i => u i * (3 * ν * ringLap N u i - burgersSkew3 N u i)) N ≤ 0}
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by
   intro} --- by evaluation; no domain is walked. \hfill$\square$
