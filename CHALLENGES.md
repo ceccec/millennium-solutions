@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). The author's own claim, that the seven are solved through involution, is stated in his name on the front page.
 
-## Discovered theorems (decidable, over ℤ/9) — 2580 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2607 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (632)
+### lean (659)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -663,6 +663,60 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
   intro), standard axioms only — checked by lean.ts  ·  `38c42166-8f6d…`
 - [lean_flow_navier_stokes_flow_is_bounded_for_every_step](/theorem/lean_flow_navier_stokes_flow_is_bounded_for_every_step) — lean flow.lean: navier_stokes_flow_is_bounded_for_every_step — ∀ k : Nat, orbit k &lt; 9 ∧ span.contains (orbit k) = true — proved by the Lean kernel for every value (by
   intro), standard axioms only — checked by lean.ts  ·  `6dec28f9-502b…`
+- [lean_demand_mantels_bound_is_n_squared_over_four_for_every_n](/theorem/lean_demand_mantels_bound_is_n_squared_over_four_for_every_n) — lean demand.lean: mantels_bound_is_n_squared_over_four_for_every_n — ∀ n : Nat, (n / 2) * (n - n / 2) = n * n / 4 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `b9212e56-a3ea…`
+- [lean_demand3_the_euler_characteristic_of_a_genus_g_surface_for_every_g](/theorem/lean_demand3_the_euler_characteristic_of_a_genus_g_surface_for_every_g) — lean demand3.lean: the_euler_characteristic_of_a_genus_g_surface_for_every_g — ∀ g : Nat, chi g + 2 * (g : Int) = 2 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `a1a899d7-b3c5…`
+- [lean_demand3_a_repunit_has_the_residue_of_its_length_mod_three](/theorem/lean_demand3_a_repunit_has_the_residue_of_its_length_mod_three) — lean demand3.lean: a_repunit_has_the_residue_of_its_length_mod_three — ∀ n : Nat, repunit n % 3 = n % 3 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `732113b8-a6d4…`
+- [lean_demand3_a_repunit_is_divisible_by_three_exactly_when_its_length_is_for_every_n](/theorem/lean_demand3_a_repunit_is_divisible_by_three_exactly_when_its_length_is_for_every_n) — lean demand3.lean: a_repunit_is_divisible_by_three_exactly_when_its_length_is_for_every_n — ∀ n : Nat, (repunit n % 3 = 0) ↔ (n % 3 = 0) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `93c43bd9-4707…`
+- [lean_demand3_repunit_of_a_sum](/theorem/lean_demand3_repunit_of_a_sum) — lean demand3.lean: repunit_of_a_sum — ∀ n k : Nat, repunit (n + k) = 10 ^ k * repunit n + repunit k — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `5558e77e-438c…`
+- [lean_demand3_repunits_repeat_mod_seven_every_six_digits](/theorem/lean_demand3_repunits_repeat_mod_seven_every_six_digits) — lean demand3.lean: repunits_repeat_mod_seven_every_six_digits — ∀ n : Nat, repunit (n + 6) % 7 = repunit n % 7 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `a67a8eec-997b…`
+- [lean_demand3_a_repunit_has_the_residue_of_its_length_mod_six_mod_seven](/theorem/lean_demand3_a_repunit_has_the_residue_of_its_length_mod_six_mod_seven) — lean demand3.lean: a_repunit_has_the_residue_of_its_length_mod_six_mod_seven — ∀ n : Nat, repunit n % 7 = repunit (n % 6) % 7 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `ec5bf7fe-1dd8…`
+- [lean_demand3_a_repunit_is_divisible_by_seven_exactly_when_six_divides_its_length_for_every_n](/theorem/lean_demand3_a_repunit_is_divisible_by_seven_exactly_when_six_divides_its_length_for_every_n) — lean demand3.lean: a_repunit_is_divisible_by_seven_exactly_when_six_divides_its_length_for_every_n — ∀ n : Nat, (repunit n % 7 = 0) ↔ (n % 6 = 0) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `2bb98278-186d…`
+- [lean_elementary_the_interior_and_exterior_angles_are_n_straight_angles_for_every_n](/theorem/lean_elementary_the_interior_and_exterior_angles_are_n_straight_angles_for_every_n) — lean elementary.lean: the_interior_and_exterior_angles_are_n_straight_angles_for_every_n — ∀ n : Nat, 2 ≤ n → (n - 2) * 180 + 360 = n * 180 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `d1fbd7f1-d1df…`
+- [lean_elementary_a_product_of_consecutive_numbers_is_even](/theorem/lean_elementary_a_product_of_consecutive_numbers_is_even) — lean elementary.lean: a_product_of_consecutive_numbers_is_even — ∀ n : Nat, n * (n + 1) % 2 = 0 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `cf763033-1ed3…`
+- [lean_elementary_eight_times_a_triangular_number_plus_one_is_an_odd_square_for_every_n](/theorem/lean_elementary_eight_times_a_triangular_number_plus_one_is_an_odd_square_for_every_n) — lean elementary.lean: eight_times_a_triangular_number_plus_one_is_an_odd_square_for_every_n — ∀ n : Nat, 8 * (n * (n + 1) / 2) + 1 = (2 * n + 1) * (2 * n + 1) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `1aa59ef6-880c…`
+- [lean_energy_two_parts_in_three_is_two_thirds_at_every_scale_for_every_m](/theorem/lean_energy_two_parts_in_three_is_two_thirds_at_every_scale_for_every_m) — lean energy.lean: two_parts_in_three_is_two_thirds_at_every_scale_for_every_m — ∀ m : Nat, 0 &lt; m → pct (2 * m) (3 * m) = 66 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `9177c3d3-8280…`
+- [lean_families_the_powers_of_two_sum_to_one_less_than_the_next_for_every_n](/theorem/lean_families_the_powers_of_two_sum_to_one_less_than_the_next_for_every_n) — lean families.lean: the_powers_of_two_sum_to_one_less_than_the_next_for_every_n — ∀ n : Nat, ((List.range (n + 1)).map (fun i =&gt; 2 ^ i)).foldl (· + ·) 0 = 2 ^ (n + 1) - 1 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `3cab57ca-4d36…`
+- [lean_families_square_of_successor](/theorem/lean_families_square_of_successor) — lean families.lean: square_of_successor — ∀ n : Nat, (n + 1) * (n + 1) = n * n + 2 * n + 1 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `f9826dc5-b85d…`
+- [lean_families_the_first_n_odd_numbers_sum_to_n_squared_for_every_n](/theorem/lean_families_the_first_n_odd_numbers_sum_to_n_squared_for_every_n) — lean families.lean: the_first_n_odd_numbers_sum_to_n_squared_for_every_n — ∀ n : Nat, ((List.range n).map (fun i =&gt; 2 * i + 1)).foldl (· + ·) 0 = n * n — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `7baff487-adea…`
+- [lean_mechanical_consecutive_squares_differ_by_the_odd_numbers](/theorem/lean_mechanical_consecutive_squares_differ_by_the_odd_numbers) — lean mechanical.lean: consecutive_squares_differ_by_the_odd_numbers — ∀ n : Nat, (n + 1) ^ 2 - n * n = 2 * n + 1 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `65131201-9df7…`
+- [lean_mechanical_every_multiple_of_three_four_five_is_pythagorean](/theorem/lean_mechanical_every_multiple_of_three_four_five_is_pythagorean) — lean mechanical.lean: every_multiple_of_three_four_five_is_pythagorean — ∀ k : Nat, (3 * k) ^ 2 + (4 * k) ^ 2 = (5 * k) ^ 2 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `a20992d7-56ea…`
+- [lean_mechanical_the_product_of_three_consecutive_numbers_is_even](/theorem/lean_mechanical_the_product_of_three_consecutive_numbers_is_even) — lean mechanical.lean: the_product_of_three_consecutive_numbers_is_even — ∀ n : Nat, n * (n + 1) * (n + 2) % 2 = 0 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `0eb7327f-0789…`
+- [lean_mechanical_the_product_of_three_consecutive_numbers_is_a_multiple_of_three](/theorem/lean_mechanical_the_product_of_three_consecutive_numbers_is_a_multiple_of_three) — lean mechanical.lean: the_product_of_three_consecutive_numbers_is_a_multiple_of_three — ∀ n : Nat, n * (n + 1) * (n + 2) % 3 = 0 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `f3e2ee80-28d1…`
+- [lean_mechanical_the_product_of_any_three_consecutive_integers_is_divisible_by_six_for_every_n](/theorem/lean_mechanical_the_product_of_any_three_consecutive_integers_is_divisible_by_six_for_every_n) — lean mechanical.lean: the_product_of_any_three_consecutive_integers_is_divisible_by_six_for_every_n — ∀ n : Nat, n * (n + 1) * (n + 2) % 6 = 0 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `65518577-2bc3…`
+- [lean_reversal_foldl_add_start](/theorem/lean_reversal_foldl_add_start) — lean reversal.lean: foldl_add_start — ∀ (l : List Nat) (a : Nat), l.foldl (· + ·) a = a + l.foldl (· + ·) 0 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `70a7cff5-e668…`
+- [lean_reversal_the_digits_sum_to_the_number_mod_nine_when_the_fuel_covers_them](/theorem/lean_reversal_the_digits_sum_to_the_number_mod_nine_when_the_fuel_covers_them) — lean reversal.lean: the_digits_sum_to_the_number_mod_nine_when_the_fuel_covers_them — ∀ f n : Nat, n &lt; 10 ^ f → (digitsF f n).foldl (· + ·) 0 % 9 = n % 9 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `58d4c502-7f73…`
+- [lean_reversal_a_number_is_below_ten_to_its_own_successor](/theorem/lean_reversal_a_number_is_below_ten_to_its_own_successor) — lean reversal.lean: a_number_is_below_ten_to_its_own_successor — ∀ n : Nat, n &lt; 10 ^ (n + 1) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `dc7330c0-7a4c…`
+- [lean_reversal_the_digit_sum_has_the_residue_of_the_number_mod_nine_for_every_n](/theorem/lean_reversal_the_digit_sum_has_the_residue_of_the_number_mod_nine_for_every_n) — lean reversal.lean: the_digit_sum_has_the_residue_of_the_number_mod_nine_for_every_n — ∀ n : Nat, digitSum n % 9 = n % 9 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `1a8922c4-c55c…`
+- [lean_reversal_folding_by_ten_keeps_the_residue_of_the_digit_sum](/theorem/lean_reversal_folding_by_ten_keeps_the_residue_of_the_digit_sum) — lean reversal.lean: folding_by_ten_keeps_the_residue_of_the_digit_sum — ∀ (l : List Nat) (a : Nat), (l.foldl (fun a d =&gt; a * 10 + d) a) % 9 = (a + l.foldl (· + ·) 0) % 9 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `c7ce0223-8884…`
+- [lean_reversal_reversal_keeps_the_residue_mod_nine_for_every_n](/theorem/lean_reversal_reversal_keeps_the_residue_mod_nine_for_every_n) — lean reversal.lean: reversal_keeps_the_residue_mod_nine_for_every_n — ∀ n : Nat, reverseNum n % 9 = n % 9 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `3159b043-f18c…`
+- [lean_split_the_coin_step_and_the_coins_are_inverse_for_every_c](/theorem/lean_split_the_coin_step_and_the_coins_are_inverse_for_every_c) — lean split.lean: the_coin_step_and_the_coins_are_inverse_for_every_c — ∀ c : Nat, 3 * c / 3 = c ∧ (3 * c) % 3 = 0 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `1c1ebe41-4e80…`
 
 ### other — one-of-a-kind (0)
 
@@ -2247,4 +2301,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `da2eba19-e8cf-89e5-a02e-57f3ce26d93a`. Integrity, not truth.
+Page content-address: `4e169beb-6823-88a4-837b-857f530d6f0b`. Integrity, not truth.

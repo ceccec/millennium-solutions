@@ -70,4 +70,79 @@ theorem reversal_is_involutive_exactly_off_the_trailing_zeros :
 def settledHere : Nat := 8
 theorem reversal_settles_its_range : settledHere = 8 := rfl
 
+
+-- ── the capped rows above, proved for every value by induction — no bound ────────────────────────────────────
+-- casting out nines, in general: a number, its digit sum and its reversal share their residue mod 9.
+theorem foldl_add_start : ∀ (l : List Nat) (a : Nat), l.foldl (· + ·) a = a + l.foldl (· + ·) 0 := by
+  intro l
+  induction l with
+  | nil => intro a; simp
+  | cons x xs ih =>
+    intro a
+    simp only [List.foldl]
+    rw [ih (a + x), ih (0 + x)]
+    omega
+
+theorem the_digits_sum_to_the_number_mod_nine_when_the_fuel_covers_them :
+    ∀ f n : Nat, n < 10 ^ f → (digitsF f n).foldl (· + ·) 0 % 9 = n % 9 := by
+  intro f
+  induction f with
+  | zero =>
+    intro n h
+    have : n = 0 := by simp at h; omega
+    subst this
+    simp [digitsF]
+  | succ f ih =>
+    intro n h
+    cases n with
+    | zero => simp [digitsF]
+    | succ m =>
+      simp only [digitsF, List.foldl]
+      rw [foldl_add_start]
+      have hlt : (m + 1) / 10 < 10 ^ f := by
+        rw [Nat.pow_succ] at h
+        omega
+      have := ih ((m + 1) / 10) hlt
+      omega
+
+theorem a_number_is_below_ten_to_its_own_successor : ∀ n : Nat, n < 10 ^ (n + 1) := by
+  intro n
+  induction n with
+  | zero => decide
+  | succ n ih =>
+    rw [Nat.pow_succ]
+    omega
+
+theorem the_digit_sum_has_the_residue_of_the_number_mod_nine_for_every_n :
+    ∀ n : Nat, digitSum n % 9 = n % 9 := by
+  intro n
+  unfold digitSum digits
+  split
+  · rename_i h
+    have : n = 0 := by simpa using h
+    subst this
+    rfl
+  · exact the_digits_sum_to_the_number_mod_nine_when_the_fuel_covers_them (n + 1) n (a_number_is_below_ten_to_its_own_successor n)
+
+theorem folding_by_ten_keeps_the_residue_of_the_digit_sum :
+    ∀ (l : List Nat) (a : Nat), (l.foldl (fun a d => a * 10 + d) a) % 9 = (a + l.foldl (· + ·) 0) % 9 := by
+  intro l
+  induction l with
+  | nil => intro a; simp
+  | cons x xs ih =>
+    intro a
+    simp only [List.foldl]
+    rw [ih (a * 10 + x), foldl_add_start xs (0 + x)]
+    omega
+
+-- digital_root_is_invariant_under_reversal checked 1 ≤ n ≤ 300; this proves it for every n.
+theorem reversal_keeps_the_residue_mod_nine_for_every_n :
+    ∀ n : Nat, reverseNum n % 9 = n % 9 := by
+  intro n
+  have h1 : reverseNum n % 9 = digitSum n % 9 := by
+    unfold reverseNum digitSum
+    rw [folding_by_ten_keeps_the_residue_of_the_digit_sum]
+    simp
+  rw [h1, the_digit_sum_has_the_residue_of_the_number_mod_nine_for_every_n]
+
 end Reversal

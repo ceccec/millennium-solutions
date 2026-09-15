@@ -5,7 +5,7 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **641** report the same thing:
+axiom fails the build rather than earning a footnote. All **668** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
@@ -125,7 +125,7 @@ def fall (n : Nat) : Nat := if n == 0 then 9 else 1 + (n - 1) % 9
 def nonzero : List Nat := [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
-### `demand.lean` — 12 definition(s), 8 theorem(s)
+### `demand.lean` — 12 definition(s), 9 theorem(s)
 
 ```lean
 def divisors (n : Nat) : List Nat := (List.range' 1 n).filter (fun d => n % d == 0)
@@ -164,7 +164,7 @@ def pp2000 : List Nat := perfectPowersUpTo 2000
 def aliquot (n : Nat) : Nat := ((List.range' 1 (n - 1)).filter (fun d => n % d == 0)).foldl (· + ·) 0
 ```
 
-### `demand3.lean` — 12 definition(s), 7 theorem(s)
+### `demand3.lean` — 12 definition(s), 14 theorem(s)
 
 ```lean
 def isSumOfFour (n : Nat) : Bool :=
@@ -181,7 +181,7 @@ def step : List Nat → List Nat
 def hh : Nat → List Nat → Bool
 ```
 
-### `elementary.lean` — 24 definition(s), 33 theorem(s)
+### `elementary.lean` — 24 definition(s), 36 theorem(s)
 
 ```lean
 def properDivisorSum (n : Nat) : Nat := ((List.range' 1 (n - 1)).filter (fun d => n % d == 0)).foldl (· + ·) 0
@@ -210,7 +210,7 @@ def tetOf (r : Nat) : List Nat := (unitsMod 9).filter (fun d => d % 3 == r)
 def settledHere : Nat := 32
 ```
 
-### `energy.lean` — 31 definition(s), 21 theorem(s)
+### `energy.lean` — 31 definition(s), 22 theorem(s)
 
 ```lean
 def splitCost : Nat := 52000  -- Wh to electrolyse 1 kg H₂ (real cells: 50–55 kWh/kg; ideal is ~39.4)
@@ -246,7 +246,7 @@ def residueMg (litres tds : Nat) : Nat := litres * tds
 def atomsOf (m : Nat) : Option (Nat × Nat) :=
 ```
 
-### `families.lean` — 44 definition(s), 43 theorem(s)
+### `families.lean` — 44 definition(s), 46 theorem(s)
 
 ```lean
 def primesUpTo30 : List Nat := [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
@@ -270,7 +270,7 @@ def invOf (d : Nat) : Option Nat := (List.range 9).find? (fun e => d * e % 9 == 
 def powSum (k n : Nat) : Nat := ((List.range' 1 n).map (fun i => i ^ k)).foldl (· + ·) 0
 def faulhaber (k n : Nat) : Nat :=
 def digitsF : Nat → Nat → List Nat
-def digitsOf (n : Nat) : List Nat := digitsF 20 n
+def digitsOf (n : Nat) : List Nat := digitsF (n + 1) n
 def reverseDigits (n : Nat) : Nat := (digitsOf n).foldl (fun a d => a * 10 + d) 0
 def digitalRoot (n : Nat) : Nat := if n == 0 then 0 else 1 + (n - 1) % 9
 def rootSum (g m : Nat) : Nat := ((List.range (ordMod g m)).map (fun k => powMod g k m)).foldl (· + ·) 0
@@ -361,7 +361,7 @@ def kcdDoubled : Nat := 1366     -- K_cd expressed against a unit half the size;
 def alternative : List Nat := [c, dNuCs, hDigits, eDigits, kDigits, naDigits, kcdDoubled]
 ```
 
-### `mechanical.lean` — 5 definition(s), 107 theorem(s)
+### `mechanical.lean` — 5 definition(s), 112 theorem(s)
 
 ```lean
 def M9 (n : Nat) : Nat := n % 9
@@ -466,7 +466,7 @@ def triad : List Nat := [3, 6, 9]
 def pow9 (b k : Nat) : Nat := (List.range k).foldl (fun a _ => a * b % 9) 1
 ```
 
-### `reversal.lean` — 6 definition(s), 9 theorem(s)
+### `reversal.lean` — 6 definition(s), 15 theorem(s)
 
 ```lean
 def digitsF : Nat → Nat → List Nat
@@ -514,7 +514,7 @@ def hexbitMs : Nat := 30     -- the same work, 6-bit lattice
 def charsFor (b : Nat) : Nat := (128 + b - 1) / b
 ```
 
-### `split.lean` — 8 definition(s), 19 theorem(s)
+### `split.lean` — 8 definition(s), 20 theorem(s)
 
 ```lean
 def tokens : List Nat := [0, 12, 3, 45, 6, 78, 9]
@@ -569,6 +569,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**641** declarations, **0** axiom dependencies, **321** definitions they rest on.
+**668** declarations, **0** axiom dependencies, **321** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them.

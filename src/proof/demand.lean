@@ -109,4 +109,26 @@ theorem factorial_seven_is_five_thousand_and_forty :
 theorem mantels_bound_is_n_squared_over_four :
   (List.range' 1 20).all (fun n => (n / 2) * (n - n / 2) == n * n / 4) := by decide
 
+
+-- ── the capped row above, proved for every value — no bound ───────────────────────────────────────────────────
+-- mantels_bound_is_n_squared_over_four checked 1 ≤ n ≤ 20; this proves the identity for every n.
+theorem mantels_bound_is_n_squared_over_four_for_every_n :
+    ∀ n : Nat, (n / 2) * (n - n / 2) = n * n / 4 := by
+  intro n
+  rcases Nat.mod_two_eq_zero_or_one n with h | h
+  · obtain ⟨m, rfl⟩ : ∃ m, n = 2 * m := ⟨n / 2, by omega⟩
+    have h1 : 2 * m / 2 = m := by omega
+    have h2 : 2 * m * (2 * m) = 4 * (m * m) := by
+      rw [Nat.mul_assoc 2 m (2 * m), Nat.mul_comm m (2 * m), Nat.mul_assoc 2 m m]; omega
+    rw [h1, show 2 * m - m = m by omega, h2]
+    omega
+  · obtain ⟨m, rfl⟩ : ∃ m, n = 2 * m + 1 := ⟨n / 2, by omega⟩
+    have h1 : (2 * m + 1) / 2 = m := by omega
+    have h2 : (2 * m + 1) * (2 * m + 1) = 4 * (m * (m + 1)) + 1 := by
+      rw [Nat.mul_add m m 1, Nat.mul_one, Nat.add_mul, Nat.mul_add, Nat.mul_add, Nat.mul_one, Nat.one_mul]
+      rw [Nat.mul_assoc 2 m (2 * m), Nat.mul_comm m (2 * m), Nat.mul_assoc 2 m m]
+      omega
+    rw [h1, show 2 * m + 1 - m = m + 1 by omega, h2]
+    omega
+
 end Demand

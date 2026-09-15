@@ -114,4 +114,64 @@ theorem havel_hakimi_decides_graphical_sequences :
   hh 12 [3, 3, 3, 3] = true ∧ hh 12 [2, 2, 2] = true ∧
   hh 12 [3, 3, 1, 1] = false ∧ hh 12 [4, 1, 1, 1, 1] = true ∧ hh 12 [5, 1, 1, 1, 1] = false := by decide
 
+
+-- ── the capped rows above, proved for every value by induction — no bound ────────────────────────────────────
+-- the_euler_characteristic_of_a_genus_g_surface checked g < 12; this proves χ(g) + 2g = 2 for every g.
+theorem the_euler_characteristic_of_a_genus_g_surface_for_every_g :
+    ∀ g : Nat, chi g + 2 * (g : Int) = 2 := by
+  intro g
+  unfold chi
+  omega
+
+theorem a_repunit_has_the_residue_of_its_length_mod_three : ∀ n : Nat, repunit n % 3 = n % 3 := by
+  intro n
+  induction n with
+  | zero => rfl
+  | succ n ih =>
+    show (10 * repunit n + 1) % 3 = (n + 1) % 3
+    rw [Nat.add_mod, Nat.mul_mod, ih]
+    have h : n % 3 = 0 ∨ n % 3 = 1 ∨ n % 3 = 2 := by omega
+    rcases h with h | h | h <;> simp [h] <;> omega
+
+-- repunit_divisibility_by_three_and_seven checked n ≤ 18; these prove both halves for every n.
+theorem a_repunit_is_divisible_by_three_exactly_when_its_length_is_for_every_n :
+    ∀ n : Nat, (repunit n % 3 = 0) ↔ (n % 3 = 0) := by
+  intro n
+  rw [a_repunit_has_the_residue_of_its_length_mod_three]
+
+theorem repunit_of_a_sum : ∀ n k : Nat, repunit (n + k) = 10 ^ k * repunit n + repunit k := by
+  intro n k
+  induction k with
+  | zero => simp [repunit]
+  | succ k ih =>
+    show 10 * repunit (n + k) + 1 = 10 ^ (k + 1) * repunit n + (10 * repunit k + 1)
+    rw [ih, Nat.pow_succ, Nat.mul_add, ← Nat.mul_assoc, Nat.mul_comm 10 (10 ^ k)]
+    omega
+
+theorem repunits_repeat_mod_seven_every_six_digits : ∀ n : Nat, repunit (n + 6) % 7 = repunit n % 7 := by
+  intro n
+  rw [repunit_of_a_sum, Nat.add_mod, Nat.mul_mod]
+  have h1 : 10 ^ 6 % 7 = 1 := by decide
+  have h2 : repunit 6 % 7 = 0 := by decide
+  rw [h1, h2, Nat.one_mul, Nat.add_zero]
+  omega
+
+theorem a_repunit_has_the_residue_of_its_length_mod_six_mod_seven : ∀ n : Nat, repunit n % 7 = repunit (n % 6) % 7 := by
+  intro n
+  induction n using Nat.strongRecOn with
+  | _ n ih =>
+    if hn : n < 6 then rw [Nat.mod_eq_of_lt hn]
+    else
+      have e : n = (n - 6) + 6 := by omega
+      rw [e, repunits_repeat_mod_seven_every_six_digits, ih (n - 6) (by omega), Nat.add_mod_right]
+
+theorem a_repunit_is_divisible_by_seven_exactly_when_six_divides_its_length_for_every_n :
+    ∀ n : Nat, (repunit n % 7 = 0) ↔ (n % 6 = 0) := by
+  intro n
+  rw [a_repunit_has_the_residue_of_its_length_mod_six_mod_seven]
+  have h : n % 6 < 6 := Nat.mod_lt _ (by decide)
+  generalize n % 6 = j at h ⊢
+  revert j
+  decide
+
 end Demand3

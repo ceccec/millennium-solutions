@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 641 of them across 33 files and
-7 wings; 625 close by exhaustion over a stated finite domain, 7 are proved
+(\texttt{npm run latex-gate}). There are 668 of them across 33 files and
+7 wings; 625 close by exhaustion over a stated finite domain, 34 are proved
 for every value, and the remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -562,6 +562,24 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 
+\begin{theorem}[\texttt{the\_interior\_and\_exterior\_angles\_are\_n\_straight\_angles\_for\_every\_n}]
+\texttt{∀ n : Nat, 2 ≤ n → (n - 2) * 180 + 360 = n * 180}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_product\_of\_consecutive\_numbers\_is\_even}]
+\texttt{∀ n : Nat, n * (n + 1) \% 2 = 0}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{eight\_times\_a\_triangular\_number\_plus\_one\_is\_an\_odd\_square\_for\_every\_n}]
+\texttt{∀ n : Nat, 8 * (n * (n + 1) / 2) + 1 = (2 * n + 1) * (2 * n + 1)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
 \paragraph{\texttt{families.lean}}
 
 \begin{theorem}[\texttt{flt\_all\_primes\_under\_thirty}]
@@ -778,6 +796,24 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 \[ \mathrm{settledHere} = 42 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_powers\_of\_two\_sum\_to\_one\_less\_than\_the\_next\_for\_every\_n}]
+\texttt{∀ n : Nat, ((List.range (n + 1)).map (fun i => 2 ^ i)).foldl (· + ·) 0 = 2 ^ (n + 1) - 1}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{square\_of\_successor}]
+\texttt{∀ n : Nat, (n + 1) * (n + 1) = n * n + 2 * n + 1}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_first\_n\_odd\_numbers\_sum\_to\_n\_squared\_for\_every\_n}]
+\texttt{∀ n : Nat, ((List.range n).map (fun i => 2 * i + 1)).foldl (· + ·) 0 = n * n}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
 
 \paragraph{\texttt{flow.lean}}
 
@@ -1041,6 +1077,12 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 \[ \forall n \in \{0,\dots,59\},\; 2^{n + 6} \bmod 9 = 2^{n} \bmod 9 \land 2^{6} = \frac{\mathrm{sealBits}}{\mathrm{coins}} \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 60 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_coin\_step\_and\_the\_coins\_are\_inverse\_for\_every\_c}]
+\texttt{∀ c : Nat, 3 * c / 3 = c ∧ (3 * c) \% 3 = 0}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
 
 \paragraph{\texttt{z9.lean}}
 
@@ -1360,6 +1402,12 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 20 cases. \hfill$\square$
 
+\begin{theorem}[\texttt{mantels\_bound\_is\_n\_squared\_over\_four\_for\_every\_n}]
+\texttt{∀ n : Nat, (n / 2) * (n - n / 2) = n * n / 4}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
 \paragraph{\texttt{demand2.lean}}
 
 \begin{theorem}[\texttt{nicomachus\_sum\_of\_cubes\_is\_the\_square\_of\_the\_triangular\_number}]
@@ -1438,6 +1486,48 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 \[ \mathrm{hh}\mathopen{}\left(12,\,[3,\,3,\,3,\,3]\right) = \mathrm{true} \land \mathrm{hh}\mathopen{}\left(12,\,[2,\,2,\,2]\right) = \mathrm{true} \land \mathrm{hh}\mathopen{}\left(12,\,[3,\,3,\,1,\,1]\right) = \mathrm{false} \land \mathrm{hh}\mathopen{}\left(12,\,[4,\,1,\,1,\,1,\,1]\right) = \mathrm{true} \land \mathrm{hh}\mathopen{}\left(12,\,[5,\,1,\,1,\,1,\,1]\right) = \mathrm{false} \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 1,200 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_euler\_characteristic\_of\_a\_genus\_g\_surface\_for\_every\_g}]
+\texttt{∀ g : Nat, chi g + 2 * (g : Int) = 2}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_repunit\_has\_the\_residue\_of\_its\_length\_mod\_three}]
+\texttt{∀ n : Nat, repunit n \% 3 = n \% 3}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_repunit\_is\_divisible\_by\_three\_exactly\_when\_its\_length\_is\_for\_every\_n}]
+\texttt{∀ n : Nat, (repunit n \% 3 = 0) ↔ (n \% 3 = 0)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{repunit\_of\_a\_sum}]
+\texttt{∀ n k : Nat, repunit (n + k) = 10 ^ k * repunit n + repunit k}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{repunits\_repeat\_mod\_seven\_every\_six\_digits}]
+\texttt{∀ n : Nat, repunit (n + 6) \% 7 = repunit n \% 7}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_repunit\_has\_the\_residue\_of\_its\_length\_mod\_six\_mod\_seven}]
+\texttt{∀ n : Nat, repunit n \% 7 = repunit (n \% 6) \% 7}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_repunit\_is\_divisible\_by\_seven\_exactly\_when\_six\_divides\_its\_length\_for\_every\_n}]
+\texttt{∀ n : Nat, (repunit n \% 7 = 0) ↔ (n \% 6 = 0)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
 
 \paragraph{\texttt{energy.lean}}
 
@@ -1546,6 +1636,12 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 \[ \forall h \in \{0,\dots,9\},\; \forall o \in \{0,\dots,9\},\; \mathrm{atomsOf}\mathopen{}\left(\mathrm{mass}\mathopen{}\left(h,\,o\right)\right) = \mathrm{some}\mathopen{}\left(\left(h,\,o\right)\right) \land \mathrm{atomsOf}\mathopen{}\left(\mathrm{mgH2}\right) = \mathrm{some}\mathopen{}\left(\left(2,\,0\right)\right) \land \mathrm{atomsOf}\mathopen{}\left(\mathrm{mgO2}\right) = \mathrm{some}\mathopen{}\left(\left(0,\,2\right)\right) \land \mathrm{atomsOf}\mathopen{}\left(\mathrm{mgH2O}\right) = \mathrm{some}\mathopen{}\left(\left(2,\,1\right)\right) \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 100 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{two\_parts\_in\_three\_is\_two\_thirds\_at\_every\_scale\_for\_every\_m}]
+\texttt{∀ m : Nat, 0 < m → pct (2 * m) (3 * m) = 66}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
 
 \paragraph{\texttt{index.lean}}
 
@@ -2448,6 +2544,36 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
+\begin{theorem}[\texttt{consecutive\_squares\_differ\_by\_the\_odd\_numbers}]
+\texttt{∀ n : Nat, (n + 1) ^ 2 - n * n = 2 * n + 1}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{every\_multiple\_of\_three\_four\_five\_is\_pythagorean}]
+\texttt{∀ k : Nat, (3 * k) ^ 2 + (4 * k) ^ 2 = (5 * k) ^ 2}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_product\_of\_three\_consecutive\_numbers\_is\_even}]
+\texttt{∀ n : Nat, n * (n + 1) * (n + 2) \% 2 = 0}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_product\_of\_three\_consecutive\_numbers\_is\_a\_multiple\_of\_three}]
+\texttt{∀ n : Nat, n * (n + 1) * (n + 2) \% 3 = 0}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_product\_of\_any\_three\_consecutive\_integers\_is\_divisible\_by\_six\_for\_every\_n}]
+\texttt{∀ n : Nat, n * (n + 1) * (n + 2) \% 6 = 0}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
 \paragraph{\texttt{nim.lean}}
 
 \begin{theorem}[\texttt{bouton\_two\_heaps\_lost\_iff\_xor\_zero}]
@@ -2546,6 +2672,42 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 \[ \mathrm{settledHere} = 8 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{foldl\_add\_start}]
+\texttt{∀ (l : List Nat) (a : Nat), l.foldl (· + ·) a = a + l.foldl (· + ·) 0}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_digits\_sum\_to\_the\_number\_mod\_nine\_when\_the\_fuel\_covers\_them}]
+\texttt{∀ f n : Nat, n < 10 ^ f → (digitsF f n).foldl (· + ·) 0 \% 9 = n \% 9}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_number\_is\_below\_ten\_to\_its\_own\_successor}]
+\texttt{∀ n : Nat, n < 10 ^ (n + 1)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_digit\_sum\_has\_the\_residue\_of\_the\_number\_mod\_nine\_for\_every\_n}]
+\texttt{∀ n : Nat, digitSum n \% 9 = n \% 9}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{folding\_by\_ten\_keeps\_the\_residue\_of\_the\_digit\_sum}]
+\texttt{∀ (l : List Nat) (a : Nat), (l.foldl (fun a d => a * 10 + d) a) \% 9 = (a + l.foldl (· + ·) 0) \% 9}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{reversal\_keeps\_the\_residue\_mod\_nine\_for\_every\_n}]
+\texttt{∀ n : Nat, reverseNum n \% 9 = n \% 9}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
 
 \paragraph{\texttt{theorems.lean}}
 

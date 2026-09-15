@@ -1,7 +1,7 @@
 {
   "upload_type": "publication",
   "publication_type": "preprint",
-  "title": "FNV-1a, the address function — 12 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+  "title": "FNV-1a, the address function — 12 machine-checked theorems and how they are bound",
   "creators": [
     {
       "name": "Rouschev, Tsvetan",
@@ -9,7 +9,7 @@
       "affiliation": "PSG, Bulgaria"
     }
   ],
-  "description": "<p><strong>FNV-1a, the address function</strong> — 12 machine-checked theorems of the ℤ/9 vortex deposit, one Lean namespace, wing <em>the address</em>. 12 close by exhaustion over a finite domain (<code>by decide</code>); 1 <code>rfl</code> declaration(s) are listed and not sealed, by design. Every one is sealed live in the append-only ledger.</p><p><strong>How these theorems are bound.</strong> \"Entangled\" is used in this deposit's honest sense: correlation by derivation, not quantum entanglement, and no information travels through it.</p><p><strong>1 · Shared definitions.</strong> 1 definition(s) are used by two or more theorems, binding 66 pair(s); the theorems fall into 1 strand(s), the largest of 12. Most binding: <code>hash32</code> (12).</p><p><strong>2 · Imports.</strong> Built on: no other cluster. Built on it: <code>address.lean</code>, <code>nim.lean</code>, <code>sequences.lean</code>. Checking this cluster needs 1 file(s): <code>src/proof/fnv.lean</code>.</p><p><strong>3 · The joint address.</strong> The 12 sealed receipts fold to <code>4f060cb7-40aa-8d0f-a756-a18a83e19033</code>. Order-invariant: yes — the same root in reverse order. Altering one receipt changes it: yes, computed on this run. A content-address proves integrity, not truth.</p><p><strong>4 · The address lattice.</strong> Each theorem sits at the seven ray values its page plots from its receipt, taken mod 9: a point of (ℤ/9)⁷. This cluster's centre is (7, 5, 4, 4, 8, 2, 3). Its nearest clusters, ranked by lift — pairs observed among each theorem's seven nearest points, over the pairs expected by chance from the two clusters' sizes: <code>demand.lean</code> (4 observed, 1.06 expected, lift 3.76), <code>involution.lean</code> (3 observed, 1.06 expected, lift 2.82), <code>index.lean</code> (3 observed, 1.46 expected, lift 2.05). A lift near 1 is what chance gives. Mean distance between two of its theorems: 14.94; from one of its theorems to a theorem of another cluster: 15.52. A receipt is a hash, so nearness on this lattice is a property of the addresses, not of the mathematics; the mathematical binding is (1) and (2). Chance, measured: over 200 reshufflings of which cluster each point belongs to (seeded, so every rebuild gives the same numbers), a best lift at least this high arose in 28.0% of them — consistent with chance.</p><p><strong>Prior art.</strong> FNV-1a — Glenn Fowler, Landon Curt Noll and Phong Vo, 1991 Per-theorem prior-art searches — OEIS, zbMATH Open, OpenAlex, Crossref, arXiv — are recorded, with what was searched, where and when, in the living ledger <a href=\"https://github.com/ceccec/millennium-solutions/blob/main/src/proof/novelty.json\">src/proof/novelty.json</a>. No novelty is claimed here.</p><p><strong>The theorems.</strong></p><ol><li><code>hash_a_seed_zero</code> — <code>hash32 0 [97] = 1484191995</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_hash_a_seed_zero\">record</a></li><li><code>hash_ab_seed_zero</code> — <code>hash32 0 [97, 98] = 2049961697</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_hash_ab_seed_zero\">record</a></li><li><code>hash_a_seed_golden</code> — <code>hash32 2654435769 [97] = 1066733258</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_hash_a_seed_golden\">record</a></li><li><code>hash_uuidna_seed_zero</code> — <code>hash32 0 [117, 117, 105, 100, 110, 97] = 4233172274</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_hash_uuidna_seed_zero\">record</a></li><li><code>hash_is_deterministic</code> — <code>(List.range 32).all (fun c =&gt; hash32 0 [c] == hash32 0 [c])</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_hash_is_deterministic\">record</a></li><li><code>hash_is_injective_on_single_characters</code> — <code>(((List.range 64).map (fun c =&gt; hash32 0 [c])).eraseDups).length = 64</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_hash_is_injective_on_single_characters\">record</a></li><li><code>the_seed_separates</code> — <code>(List.range 16).all (fun c =&gt; hash32 0 [c] != hash32 2654435769 [c])</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_the_seed_separates\">record</a></li><li><code>hash_is_not_the_identity</code> — <code>hash32 0 [7] != 7</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_hash_is_not_the_identity\">record</a></li><li><code>hash_is_not_constant</code> — <code>hash32 0 [1] != hash32 0 [2]</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_hash_is_not_constant\">record</a></li><li><code>hash_is_thirty_two_bit</code> — <code>(List.range 40).all (fun c =&gt; hash32 0 [c] &lt; M32)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_hash_is_thirty_two_bit\">record</a></li><li><code>the_hash_is_order_sensitive</code> — <code>hash32 0 [97, 98] ≠ hash32 0 [98, 97]</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_the_hash_is_order_sensitive\">record</a></li><li><code>the_empty_input_is_still_mixed</code> — <code>hash32 0 [] = 2872998923 ∧ hash32 FNV_OFFSET [] = 0 ∧ avalanche 0 = 0</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_the_empty_input_is_still_mixed\">record</a></li></ol><p><strong>Recompute.</strong> <code>lake env lean src/proof/fnv.lean</code>, or clone <a href=\"https://github.com/ceccec/millennium-solutions\">https://github.com/ceccec/millennium-solutions</a> and run <code>npm run lean</code>. This record was generated by scripts/clusters.ts from the source and the ledger.</p><p><strong>Funding.</strong> Independent research. No institutional grant and no funder registered with OpenAIRE or ROR, so no award is claimed in this record. Development is supported by direct contribution: https://revolut.me/ceccec</p>",
+  "description": "<p><strong>FNV-1a, the address function</strong>. 12 machine-checked theorems from the Lean 4 source file <code>src/proof/fnv.lean</code>, by Tsvetan Rouschev, licensed CC BY-NC-ND 4.0. Lean 4 is a proof checker: a theorem it accepts has been checked by its kernel, not argued in prose. All are checked case by case over a stated finite domain (<code>by decide</code>). One further declaration closes by <code>rfl</code>, checked by evaluation, and is not included here, by design. Every theorem listed is sealed live in the deposit's ledger, where a withdrawal is marked in place; 63 earlier rows removed on 2026-08-09 are listed in <a href=\"https://github.com/ceccec/millennium-solutions/blob/83213ac8f1ad8bb0b5fe7eed9360838215b71bac/src/proof/revoked.json\">src/proof/revoked.json</a>.</p><p><strong>How these theorems are bound.</strong> \"Entangled\" is used here in a precise, non-quantum sense: theorems are bound when they derive from shared definitions (section 1), when their files import one another (section 2), and when their content-addressed receipts fold into one address that changes if any one of them changes (section 3). It is correlation by derivation; no information travels through it.</p><p><strong>1 · Shared definitions.</strong> 1 definition is used by two or more theorems, binding 66 pairs; the theorems fall into 1 strand. Most binding: <code>hash32</code> (12).</p><p><strong>2 · Imports.</strong> Built on: no other cluster. Built on it: <code>address.lean</code>, <code>nim.lean</code>, <code>sequences.lean</code>. Checking this cluster needs 1 file: <code>src/proof/fnv.lean</code>.</p><p><strong>3 · The joint address.</strong> The 12 sealed receipts fold to <code>4f060cb7-40aa-8d0f-a756-a18a83e19033</code>. Order-invariant: yes — the same root in reverse order. Altering one receipt changes it: yes, computed when this record was generated. A content-address proves integrity, not truth.</p><p><strong>4 · The address lattice.</strong> Each theorem sits at the seven ray values its page plots from its receipt, taken mod 9: a point of (ℤ/9)⁷. This cluster's centre is (7, 5, 4, 4, 8, 2, 3). Its nearest clusters, ranked by lift — pairs counted from this cluster's theorems' seven nearest points, over the pairs expected by chance from the two clusters' sizes: <code>demand.lean</code> (4 observed, 1.15 expected, lift 3.48), <code>involution.lean</code> (3 observed, 1.02 expected, lift 2.94), <code>index.lean</code> (3 observed, 1.4 expected, lift 2.14). A best lift is the largest of about 32 small ratios, so chance alone gives a typical best lift of 2.94 here (the median over 200 seeded reshufflings of which cluster each point belongs to); one at least as high as this cluster's arose in 29.0% of them — consistent with chance. Mean distance between two of its theorems: 14.94; from one of its theorems to a theorem of another cluster: 15.53. A receipt is a hash, so nearness on this lattice is a property of the addresses, not of the mathematics; the mathematical binding is (1) and (2). These figures are as of commit <code>83213ac8f1ad</code> (2026-09-15), over 659 points; a new seal anywhere moves them.</p><p><strong>Prior art.</strong> FNV-1a — Glenn Fowler, Landon Curt Noll and Phong Vo, 1991. Per-theorem prior-art searches — OEIS, zbMATH Open, OpenAlex, Crossref, arXiv — are recorded, with what was searched, where and when, in the living ledger <a href=\"https://github.com/ceccec/millennium-solutions/blob/main/src/proof/novelty.json\">src/proof/novelty.json</a> (main branch). No novelty is claimed here.</p><p><strong>The theorems.</strong></p><ol><li><code>hash_a_seed_zero</code> — <code>hash32 0 [97] = 1484191995</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_hash_a_seed_zero\">record</a></li><li><code>hash_ab_seed_zero</code> — <code>hash32 0 [97, 98] = 2049961697</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_hash_ab_seed_zero\">record</a></li><li><code>hash_a_seed_golden</code> — <code>hash32 2654435769 [97] = 1066733258</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_hash_a_seed_golden\">record</a></li><li><code>hash_uuidna_seed_zero</code> — <code>hash32 0 [117, 117, 105, 100, 110, 97] = 4233172274</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_hash_uuidna_seed_zero\">record</a></li><li><code>hash_is_deterministic</code> — <code>(List.range 32).all (fun c =&gt; hash32 0 [c] == hash32 0 [c])</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_hash_is_deterministic\">record</a></li><li><code>hash_is_injective_on_single_characters</code> — <code>(((List.range 64).map (fun c =&gt; hash32 0 [c])).eraseDups).length = 64</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_hash_is_injective_on_single_characters\">record</a></li><li><code>the_seed_separates</code> — <code>(List.range 16).all (fun c =&gt; hash32 0 [c] != hash32 2654435769 [c])</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_the_seed_separates\">record</a></li><li><code>hash_is_not_the_identity</code> — <code>hash32 0 [7] != 7</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_hash_is_not_the_identity\">record</a></li><li><code>hash_is_not_constant</code> — <code>hash32 0 [1] != hash32 0 [2]</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_hash_is_not_constant\">record</a></li><li><code>hash_is_thirty_two_bit</code> — <code>(List.range 40).all (fun c =&gt; hash32 0 [c] &lt; M32)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_hash_is_thirty_two_bit\">record</a></li><li><code>the_hash_is_order_sensitive</code> — <code>hash32 0 [97, 98] ≠ hash32 0 [98, 97]</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_the_hash_is_order_sensitive\">record</a></li><li><code>the_empty_input_is_still_mixed</code> — <code>hash32 0 [] = 2872998923 ∧ hash32 FNV_OFFSET [] = 0 ∧ avalanche 0 = 0</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_the_empty_input_is_still_mixed\">record</a></li></ol><p><strong>Recompute.</strong> Clone <a href=\"https://github.com/ceccec/millennium-solutions\">https://github.com/ceccec/millennium-solutions</a> at commit <code>83213ac8f1ad</code> and run <code>npm ci && npm run lean</code>, which checks every Lean file in dependency order. This record was generated by <a href=\"https://github.com/ceccec/millennium-solutions/blob/83213ac8f1ad8bb0b5fe7eed9360838215b71bac/scripts/clusters.ts\">scripts/clusters.ts</a> from the source and the ledger.</p><p><strong>Licence.</strong> CC BY-NC-ND 4.0 — free for non-commercial use with attribution to Tsvetan Rouschev; commercial use by arrangement with the author.</p>",
   "license": "cc-by-nc-nd-4.0",
   "access_right": "open",
   "language": "eng",
@@ -17,72 +17,85 @@
     "Lean 4",
     "machine-checked proof",
     "formal verification",
-    "Z/9",
+    "modular arithmetic",
     "content-addressing",
     "theorem cluster",
-    "the address",
     "fnv"
   ],
   "communities": [],
   "related_identifiers": [
     {
       "identifier": "10.5281/zenodo.21819217",
-      "relation": "isPartOf"
+      "relation": "isPartOf",
+      "scheme": "doi"
     },
     {
-      "identifier": "https://github.com/ceccec/millennium-solutions/blob/main/src/proof/fnv.lean",
-      "relation": "isSupplementTo"
+      "identifier": "https://github.com/ceccec/millennium-solutions/blob/83213ac8f1ad8bb0b5fe7eed9360838215b71bac/src/proof/fnv.lean",
+      "relation": "isSupplementTo",
+      "scheme": "url"
     },
     {
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_hash_a_seed_zero",
-      "relation": "hasPart"
+      "relation": "hasPart",
+      "scheme": "url"
     },
     {
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_hash_ab_seed_zero",
-      "relation": "hasPart"
+      "relation": "hasPart",
+      "scheme": "url"
     },
     {
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_hash_a_seed_golden",
-      "relation": "hasPart"
+      "relation": "hasPart",
+      "scheme": "url"
     },
     {
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_hash_uuidna_seed_zero",
-      "relation": "hasPart"
+      "relation": "hasPart",
+      "scheme": "url"
     },
     {
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_hash_is_deterministic",
-      "relation": "hasPart"
+      "relation": "hasPart",
+      "scheme": "url"
     },
     {
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_hash_is_injective_on_single_characters",
-      "relation": "hasPart"
+      "relation": "hasPart",
+      "scheme": "url"
     },
     {
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_the_seed_separates",
-      "relation": "hasPart"
+      "relation": "hasPart",
+      "scheme": "url"
     },
     {
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_hash_is_not_the_identity",
-      "relation": "hasPart"
+      "relation": "hasPart",
+      "scheme": "url"
     },
     {
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_hash_is_not_constant",
-      "relation": "hasPart"
+      "relation": "hasPart",
+      "scheme": "url"
     },
     {
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_hash_is_thirty_two_bit",
-      "relation": "hasPart"
+      "relation": "hasPart",
+      "scheme": "url"
     },
     {
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_the_hash_is_order_sensitive",
-      "relation": "hasPart"
+      "relation": "hasPart",
+      "scheme": "url"
     },
     {
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_fnv_the_empty_input_is_still_mixed",
-      "relation": "hasPart"
+      "relation": "hasPart",
+      "scheme": "url"
     }
   ],
-  "notes": "cluster fnv.lean · wing the address · 12 sealed · joint address 4f060cb7-40aa-8d0f-a756-a18a83e19033 · lattice centre (7,5,4,4,8,2,3) · neighbours demand.lean, involution.lean, index.lean · concept DOI 10.5281/zenodo.21819217 · generated by scripts/clusters.ts — prepared, not uploaded",
+  "notes": "cluster fnv.lean · 12 sealed · joint address 4f060cb7-40aa-8d0f-a756-a18a83e19033 · figures as of commit 83213ac8f1ad (2026-09-15) · concept DOI 10.5281/zenodo.21819217 · generated by scripts/clusters.ts",
   "files": [
     "src/proof/fnv.lean"
   ],
@@ -122,29 +135,31 @@
         3
       ],
       "within": 14.94,
-      "between": 15.52,
+      "between": 15.53,
       "top": [
         {
           "file": "demand.lean",
           "pairs": 4,
-          "expected": 1.06,
-          "lift": 3.76
+          "expected": 1.15,
+          "lift": 3.48
         },
         {
           "file": "involution.lean",
           "pairs": 3,
-          "expected": 1.06,
-          "lift": 2.82
+          "expected": 1.02,
+          "lift": 2.94
         },
         {
           "file": "index.lean",
           "pairs": 3,
-          "expected": 1.46,
-          "lift": 2.05
+          "expected": 1.4,
+          "lift": 2.14
         }
       ],
-      "chanceShare": 0.28,
+      "chanceShare": 0.29,
+      "nullMedian": 2.94,
       "shuffles": 200
-    }
+    },
+    "asOf": "83213ac8f1ad8bb0b5fe7eed9360838215b71bac"
   }
 }

@@ -398,4 +398,29 @@ theorem the_unit_graph_is_complete_bipartite_between_the_two_tetrahedra :
 def settledHere : Nat := 32
 theorem elementary_settles_its_range : settledHere = 32 := rfl
 
+
+-- ── the capped rows above, proved for every value — no bound ──────────────────────────────────────────────────
+-- the_interior_and_exterior_angles_are_n_straight_angles checked 3 ≤ n ≤ 32; this proves it for every n ≥ 2.
+theorem the_interior_and_exterior_angles_are_n_straight_angles_for_every_n :
+    ∀ n : Nat, 2 ≤ n → (n - 2) * 180 + 360 = n * 180 := by
+  intro n h
+  omega
+
+theorem a_product_of_consecutive_numbers_is_even : ∀ n : Nat, n * (n + 1) % 2 = 0 := by
+  intro n
+  rcases Nat.mod_two_eq_zero_or_one n with h | h <;> simp [Nat.mul_mod, Nat.add_mod, h]
+
+-- eight_times_a_triangular_number_plus_one_is_an_odd_square checked n < 60; this proves it for every n.
+theorem eight_times_a_triangular_number_plus_one_is_an_odd_square_for_every_n :
+    ∀ n : Nat, 8 * (n * (n + 1) / 2) + 1 = (2 * n + 1) * (2 * n + 1) := by
+  intro n
+  have hdiv : n * (n + 1) / 2 * 2 = n * (n + 1) :=
+    Nat.div_mul_cancel (Nat.dvd_of_mod_eq_zero (a_product_of_consecutive_numbers_is_even n))
+  have hexp : (2 * n + 1) * (2 * n + 1) = 4 * (n * (n + 1)) + 1 := by
+    rw [Nat.mul_add n n 1, Nat.mul_one, Nat.add_mul, Nat.mul_add, Nat.mul_add, Nat.mul_one, Nat.one_mul]
+    rw [Nat.mul_assoc 2 n (2 * n), Nat.mul_comm n (2 * n), Nat.mul_assoc 2 n n]
+    omega
+  rw [hexp]
+  omega
+
 end Elementary

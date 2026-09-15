@@ -15478,5 +15478,167 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "6dec28f9-502b-86ee-8f87-d09f701ed7e7"
+  },
+  {
+    "key": "lean_demand_mantels_bound_is_n_squared_over_four_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b9212e56-a3ea-8d6d-be87-f946b87d6b6c"
+  },
+  {
+    "key": "lean_demand3_the_euler_characteristic_of_a_genus_g_surface_for_every_g",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a1a899d7-b3c5-8941-b02c-55f111d49fca"
+  },
+  {
+    "key": "lean_demand3_a_repunit_has_the_residue_of_its_length_mod_three",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "732113b8-a6d4-8b14-8681-6f31d2a78e30"
+  },
+  {
+    "key": "lean_demand3_a_repunit_is_divisible_by_three_exactly_when_its_length_is_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "93c43bd9-4707-8199-be02-c954c8916904"
+  },
+  {
+    "key": "lean_demand3_repunit_of_a_sum",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5558e77e-438c-84e4-9a58-2520685771a3"
+  },
+  {
+    "key": "lean_demand3_repunits_repeat_mod_seven_every_six_digits",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a67a8eec-997b-86f2-adbe-b77355dafc70"
+  },
+  {
+    "key": "lean_demand3_a_repunit_has_the_residue_of_its_length_mod_six_mod_seven",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ec5bf7fe-1dd8-863d-8443-8682088d254b"
+  },
+  {
+    "key": "lean_demand3_a_repunit_is_divisible_by_seven_exactly_when_six_divides_its_length_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2bb98278-186d-8284-9c6e-9c9e74177679"
+  },
+  {
+    "key": "lean_elementary_the_interior_and_exterior_angles_are_n_straight_angles_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d1fbd7f1-d1df-8c7f-bb56-d565780d1db2"
+  },
+  {
+    "key": "lean_elementary_a_product_of_consecutive_numbers_is_even",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "cf763033-1ed3-82d8-866e-88ea2a38b2d1"
+  },
+  {
+    "key": "lean_elementary_eight_times_a_triangular_number_plus_one_is_an_odd_square_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1aa59ef6-880c-8e39-b946-1b88e426040e"
+  },
+  {
+    "key": "lean_energy_two_parts_in_three_is_two_thirds_at_every_scale_for_every_m",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9177c3d3-8280-8d65-9df5-c27b42454279"
+  },
+  {
+    "key": "lean_families_the_powers_of_two_sum_to_one_less_than_the_next_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3cab57ca-4d36-8f80-a221-21c11d25adc9"
+  },
+  {
+    "key": "lean_families_square_of_successor",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f9826dc5-b85d-8a85-800b-f6027e83a0cf"
+  },
+  {
+    "key": "lean_families_the_first_n_odd_numbers_sum_to_n_squared_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7baff487-adea-8866-9d67-71fbbb0cdee6"
+  },
+  {
+    "key": "lean_mechanical_consecutive_squares_differ_by_the_odd_numbers",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "65131201-9df7-8805-8427-c1407fcd92cf"
+  },
+  {
+    "key": "lean_mechanical_every_multiple_of_three_four_five_is_pythagorean",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a20992d7-56ea-8048-a939-96fc2fdc451d"
+  },
+  {
+    "key": "lean_mechanical_the_product_of_three_consecutive_numbers_is_even",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0eb7327f-0789-8918-8365-8d4188436e01"
+  },
+  {
+    "key": "lean_mechanical_the_product_of_three_consecutive_numbers_is_a_multiple_of_three",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f3e2ee80-28d1-89e3-92c7-082265ef98dc"
+  },
+  {
+    "key": "lean_mechanical_the_product_of_any_three_consecutive_integers_is_divisible_by_six_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "65518577-2bc3-82a2-97f8-f6cd4f7d1b62"
+  },
+  {
+    "key": "lean_reversal_foldl_add_start",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "70a7cff5-e668-8f44-a8d0-797abfa246c8"
+  },
+  {
+    "key": "lean_reversal_the_digits_sum_to_the_number_mod_nine_when_the_fuel_covers_them",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "58d4c502-7f73-8e6c-923e-76fdf25fc81c"
+  },
+  {
+    "key": "lean_reversal_a_number_is_below_ten_to_its_own_successor",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "dc7330c0-7a4c-8d99-9874-37c4c10fd1bb"
+  },
+  {
+    "key": "lean_reversal_the_digit_sum_has_the_residue_of_the_number_mod_nine_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1a8922c4-c55c-88a0-b55a-23663d22fe49"
+  },
+  {
+    "key": "lean_reversal_folding_by_ten_keeps_the_residue_of_the_digit_sum",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c7ce0223-8884-8e3a-84a1-dded449c3cb0"
+  },
+  {
+    "key": "lean_reversal_reversal_keeps_the_residue_mod_nine_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3159b043-f18c-8c28-b831-114d6dc70ce2"
+  },
+  {
+    "key": "lean_split_the_coin_step_and_the_coins_are_inverse_for_every_c",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1c1ebe41-4e80-80ad-b352-e90a09922838"
   }
 ]

@@ -188,4 +188,12 @@ theorem the_orbit_turns_once_per_budget :
   ((List.range 60).all (fun n => 2 ^ (n + 6) % 9 == 2 ^ n % 9)) ∧ 2 ^ 6 = sealBits / coins := by decide
 
 
+
+-- ── the capped row above, proved for every value — no bound ───────────────────────────────────────────────────
+-- the_coin_step_and_the_coins_are_inverse checked c < 20; this proves tripling and dividing by three undo each other for every c.
+theorem the_coin_step_and_the_coins_are_inverse_for_every_c :
+    ∀ c : Nat, 3 * c / 3 = c ∧ (3 * c) % 3 = 0 := by
+  intro c
+  exact ⟨Nat.mul_div_cancel_left c (by decide), Nat.mul_mod_right 3 c⟩
+
 end Split

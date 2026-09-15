@@ -1,7 +1,7 @@
 {
   "upload_type": "publication",
   "publication_type": "preprint",
-  "title": "Theorems — 8 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+  "title": "Theorems — 8 machine-checked theorems and how they are bound",
   "creators": [
     {
       "name": "Rouschev, Tsvetan",
@@ -9,7 +9,7 @@
       "affiliation": "PSG, Bulgaria"
     }
   ],
-  "description": "<p><strong>Theorems</strong> — 8 machine-checked theorems of the ℤ/9 vortex deposit, one Lean namespace, wing <em>the machine</em>. 8 close by exhaustion over a finite domain (<code>by decide</code>). Every one is sealed live in the append-only ledger.</p><p><strong>How these theorems are bound.</strong> \"Entangled\" is used in this deposit's honest sense: correlation by derivation, not quantum entanglement, and no information travels through it.</p><p><strong>1 · Shared definitions.</strong> 1 definition(s) are used by two or more theorems, binding 15 pair(s); the theorems fall into 3 strand(s), the largest of 6. Most binding: <code>refl</code> (6). 2 theorem(s) name no definition of the file and stand on their own statement.</p><p><strong>2 · Imports.</strong> Built on: no other cluster. Built on it: no other cluster. Checking this cluster needs 1 file(s): <code>src/proof/theorems.lean</code>.</p><p><strong>3 · The joint address.</strong> The 8 sealed receipts fold to <code>eb4c79f8-2e2d-8e98-9847-2a64689b1f0e</code>. Order-invariant: yes — the same root in reverse order. Altering one receipt changes it: yes, computed on this run. A content-address proves integrity, not truth.</p><p><strong>4 · The address lattice.</strong> Each theorem sits at the seven ray values its page plots from its receipt, taken mod 9: a point of (ℤ/9)⁷. This cluster's centre is (1, 8, 7, 8, 1, 7, 5). Its nearest clusters, ranked by lift — pairs observed among each theorem's seven nearest points, over the pairs expected by chance from the two clusters' sizes: <code>generated.lean</code> (4 observed, 1.15 expected, lift 3.47), <code>coin.lean</code> (3 observed, 1.06 expected, lift 2.82), <code>recovered.lean</code> (3 observed, 1.33 expected, lift 2.25). A lift near 1 is what chance gives. Mean distance between two of its theorems: 15.75; from one of its theorems to a theorem of another cluster: 15.48. A receipt is a hash, so nearness on this lattice is a property of the addresses, not of the mathematics; the mathematical binding is (1) and (2). Chance, measured: over 200 reshufflings of which cluster each point belongs to (seeded, so every rebuild gives the same numbers), a best lift at least this high arose in 47.0% of them — consistent with chance.</p><p><strong>Prior art.</strong> the universal reflection here is the same ten's complement d ↦ 10 − d as coin.lean, with its centre and its pairs summing to ten. Method of complements, long prior to this deposit. Searched 2026-09-04 Per-theorem prior-art searches — OEIS, zbMATH Open, OpenAlex, Crossref, arXiv — are recorded, with what was searched, where and when, in the living ledger <a href=\"https://github.com/ceccec/millennium-solutions/blob/main/src/proof/novelty.json\">src/proof/novelty.json</a>. No novelty is claimed here.</p><p><strong>The theorems.</strong></p><ol><li><code>universal_reflection_involution</code> — <code>(List.range 11).all (fun d =&gt; refl (refl d) == d) ∧ ((List.range 10).filter (fun d =&gt; refl d == d)).length = 1</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_millenniumfloor.universal_universal_reflection_involution\">record</a></li><li><code>universal_centre_is_five</code> — <code>((List.range 10).filter (fun d =&gt; refl d == d)) = [5]</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_millenniumfloor.universal_universal_centre_is_five\">record</a></li><li><code>universal_pairs_sum_to_ten</code> — <code>(List.range 11).all (fun d =&gt; d + refl d == 10)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_millenniumfloor.universal_universal_pairs_sum_to_ten\">record</a></li><li><code>universal_reflection_reverses_the_domain</code> — <code>(List.range 11).map refl = (List.range 11).reverse</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_millenniumfloor.universal_universal_reflection_reverses_the_domain\">record</a></li><li><code>universal_reflection_is_not_an_involution_above_ten</code> — <code>((List.range 10).map (fun k =&gt; k + 11)).all (fun d =&gt; ¬ (refl (refl d) == d))</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_millenniumfloor.universal_universal_reflection_is_not_an_involution_above_ten\">record</a></li><li><code>universal_z9_reflection_permutes_the_units</code> — <code>([1, 2, 4, 5, 7, 8].map (fun d =&gt; (9 - d) % 9)) = [8, 7, 5, 4, 2, 1]</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_millenniumfloor.universal_universal_z9_reflection_permutes_the_units\">record</a></li><li><code>universal_millennium_reflection_escapes_the_units</code> — <code>¬ ([1, 2, 4, 5, 7, 8].all (fun u =&gt; [1, 2, 4, 5, 7, 8].contains (refl u)))</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_millenniumfloor.universal_universal_millennium_reflection_escapes_the_units\">record</a></li><li><code>universal_reflection_is_the_vortex_reflection_shifted</code> — <code>(List.range 10).all (fun d =&gt; (10 - d) % 9 == ((9 - d) % 9 + 1) % 9)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_millenniumfloor.universal_universal_reflection_is_the_vortex_reflection_shifted\">record</a></li></ol><p><strong>Recompute.</strong> <code>lake env lean src/proof/theorems.lean</code>, or clone <a href=\"https://github.com/ceccec/millennium-solutions\">https://github.com/ceccec/millennium-solutions</a> and run <code>npm run lean</code>. This record was generated by scripts/clusters.ts from the source and the ledger.</p><p><strong>Funding.</strong> Independent research. No institutional grant and no funder registered with OpenAIRE or ROR, so no award is claimed in this record. Development is supported by direct contribution: https://revolut.me/ceccec</p>",
+  "description": "<p><strong>Theorems</strong>. 8 machine-checked theorems from the Lean 4 source file <code>src/proof/theorems.lean</code>, by Tsvetan Rouschev, licensed CC BY-NC-ND 4.0. Lean 4 is a proof checker: a theorem it accepts has been checked by its kernel, not argued in prose. All are checked case by case over a stated finite domain (<code>by decide</code>). Every theorem listed is sealed live in the deposit's ledger, where a withdrawal is marked in place; 63 earlier rows removed on 2026-08-09 are listed in <a href=\"https://github.com/ceccec/millennium-solutions/blob/83213ac8f1ad8bb0b5fe7eed9360838215b71bac/src/proof/revoked.json\">src/proof/revoked.json</a>.</p><p><strong>How these theorems are bound.</strong> \"Entangled\" is used here in a precise, non-quantum sense: theorems are bound when they derive from shared definitions (section 1), when their files import one another (section 2), and when their content-addressed receipts fold into one address that changes if any one of them changes (section 3). It is correlation by derivation; no information travels through it.</p><p><strong>1 · Shared definitions.</strong> 1 definition is used by two or more theorems, binding 15 pairs; the theorems fall into 3 strands, the largest of 6. Most binding: <code>refl</code> (6). 2 theorems name no definition of the file and stand on their own statement.</p><p><strong>2 · Imports.</strong> Built on: no other cluster. Built on it: no other cluster. Checking this cluster needs 1 file: <code>src/proof/theorems.lean</code>.</p><p><strong>3 · The joint address.</strong> The 8 sealed receipts fold to <code>eb4c79f8-2e2d-8e98-9847-2a64689b1f0e</code>. Order-invariant: yes — the same root in reverse order. Altering one receipt changes it: yes, computed when this record was generated. A content-address proves integrity, not truth.</p><p><strong>4 · The address lattice.</strong> Each theorem sits at the seven ray values its page plots from its receipt, taken mod 9: a point of (ℤ/9)⁷. This cluster's centre is (1, 8, 7, 8, 1, 7, 5). Its nearest clusters, ranked by lift — pairs counted from this cluster's theorems' seven nearest points, over the pairs expected by chance from the two clusters' sizes: <code>generated.lean</code> (4 observed, 1.11 expected, lift 3.62), <code>coin.lean</code> (3 observed, 1.02 expected, lift 2.94), <code>recovered.lean</code> (3 observed, 1.28 expected, lift 2.35). A best lift is the largest of about 32 small ratios, so chance alone gives a typical best lift of 3.2 here (the median over 200 seeded reshufflings of which cluster each point belongs to); one at least as high as this cluster's arose in 33.5% of them — consistent with chance. Mean distance between two of its theorems: 15.75; from one of its theorems to a theorem of another cluster: 15.49. A receipt is a hash, so nearness on this lattice is a property of the addresses, not of the mathematics; the mathematical binding is (1) and (2). These figures are as of commit <code>83213ac8f1ad</code> (2026-09-15), over 659 points; a new seal anywhere moves them.</p><p><strong>Prior art.</strong> The universal reflection here is the same ten's complement d ↦ 10 − d as coin.lean, with its centre and its pairs summing to ten. Method of complements, long prior to this deposit. Searched 2026-09-04. Per-theorem prior-art searches — OEIS, zbMATH Open, OpenAlex, Crossref, arXiv — are recorded, with what was searched, where and when, in the living ledger <a href=\"https://github.com/ceccec/millennium-solutions/blob/main/src/proof/novelty.json\">src/proof/novelty.json</a> (main branch). No novelty is claimed here.</p><p><strong>The theorems.</strong></p><ol><li><code>universal_reflection_involution</code> — <code>(List.range 11).all (fun d =&gt; refl (refl d) == d) ∧ ((List.range 10).filter (fun d =&gt; refl d == d)).length = 1</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_millenniumfloor.universal_universal_reflection_involution\">record</a></li><li><code>universal_centre_is_five</code> — <code>((List.range 10).filter (fun d =&gt; refl d == d)) = [5]</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_millenniumfloor.universal_universal_centre_is_five\">record</a></li><li><code>universal_pairs_sum_to_ten</code> — <code>(List.range 11).all (fun d =&gt; d + refl d == 10)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_millenniumfloor.universal_universal_pairs_sum_to_ten\">record</a></li><li><code>universal_reflection_reverses_the_domain</code> — <code>(List.range 11).map refl = (List.range 11).reverse</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_millenniumfloor.universal_universal_reflection_reverses_the_domain\">record</a></li><li><code>universal_reflection_is_not_an_involution_above_ten</code> — <code>((List.range 10).map (fun k =&gt; k + 11)).all (fun d =&gt; ¬ (refl (refl d) == d))</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_millenniumfloor.universal_universal_reflection_is_not_an_involution_above_ten\">record</a></li><li><code>universal_z9_reflection_permutes_the_units</code> — <code>([1, 2, 4, 5, 7, 8].map (fun d =&gt; (9 - d) % 9)) = [8, 7, 5, 4, 2, 1]</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_millenniumfloor.universal_universal_z9_reflection_permutes_the_units\">record</a></li><li><code>universal_millennium_reflection_escapes_the_units</code> — <code>¬ ([1, 2, 4, 5, 7, 8].all (fun u =&gt; [1, 2, 4, 5, 7, 8].contains (refl u)))</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_millenniumfloor.universal_universal_millennium_reflection_escapes_the_units\">record</a></li><li><code>universal_reflection_is_the_vortex_reflection_shifted</code> — <code>(List.range 10).all (fun d =&gt; (10 - d) % 9 == ((9 - d) % 9 + 1) % 9)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_millenniumfloor.universal_universal_reflection_is_the_vortex_reflection_shifted\">record</a></li></ol><p><strong>Recompute.</strong> Clone <a href=\"https://github.com/ceccec/millennium-solutions\">https://github.com/ceccec/millennium-solutions</a> at commit <code>83213ac8f1ad</code> and run <code>npm ci && npm run lean</code>, which checks every Lean file in dependency order. This record was generated by <a href=\"https://github.com/ceccec/millennium-solutions/blob/83213ac8f1ad8bb0b5fe7eed9360838215b71bac/scripts/clusters.ts\">scripts/clusters.ts</a> from the source and the ledger.</p><p><strong>Licence.</strong> CC BY-NC-ND 4.0 — free for non-commercial use with attribution to Tsvetan Rouschev; commercial use by arrangement with the author.</p>",
   "license": "cc-by-nc-nd-4.0",
   "access_right": "open",
   "language": "eng",
@@ -17,56 +17,65 @@
     "Lean 4",
     "machine-checked proof",
     "formal verification",
-    "Z/9",
+    "modular arithmetic",
     "content-addressing",
     "theorem cluster",
-    "the machine",
     "theorems"
   ],
   "communities": [],
   "related_identifiers": [
     {
       "identifier": "10.5281/zenodo.21819217",
-      "relation": "isPartOf"
+      "relation": "isPartOf",
+      "scheme": "doi"
     },
     {
-      "identifier": "https://github.com/ceccec/millennium-solutions/blob/main/src/proof/theorems.lean",
-      "relation": "isSupplementTo"
+      "identifier": "https://github.com/ceccec/millennium-solutions/blob/83213ac8f1ad8bb0b5fe7eed9360838215b71bac/src/proof/theorems.lean",
+      "relation": "isSupplementTo",
+      "scheme": "url"
     },
     {
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_millenniumfloor.universal_universal_reflection_involution",
-      "relation": "hasPart"
+      "relation": "hasPart",
+      "scheme": "url"
     },
     {
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_millenniumfloor.universal_universal_centre_is_five",
-      "relation": "hasPart"
+      "relation": "hasPart",
+      "scheme": "url"
     },
     {
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_millenniumfloor.universal_universal_pairs_sum_to_ten",
-      "relation": "hasPart"
+      "relation": "hasPart",
+      "scheme": "url"
     },
     {
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_millenniumfloor.universal_universal_reflection_reverses_the_domain",
-      "relation": "hasPart"
+      "relation": "hasPart",
+      "scheme": "url"
     },
     {
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_millenniumfloor.universal_universal_reflection_is_not_an_involution_above_ten",
-      "relation": "hasPart"
+      "relation": "hasPart",
+      "scheme": "url"
     },
     {
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_millenniumfloor.universal_universal_z9_reflection_permutes_the_units",
-      "relation": "hasPart"
+      "relation": "hasPart",
+      "scheme": "url"
     },
     {
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_millenniumfloor.universal_universal_millennium_reflection_escapes_the_units",
-      "relation": "hasPart"
+      "relation": "hasPart",
+      "scheme": "url"
     },
     {
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_millenniumfloor.universal_universal_reflection_is_the_vortex_reflection_shifted",
-      "relation": "hasPart"
+      "relation": "hasPart",
+      "scheme": "url"
     }
   ],
-  "notes": "cluster theorems.lean · wing the machine · 8 sealed · joint address eb4c79f8-2e2d-8e98-9847-2a64689b1f0e · lattice centre (1,8,7,8,1,7,5) · neighbours generated.lean, coin.lean, recovered.lean · concept DOI 10.5281/zenodo.21819217 · generated by scripts/clusters.ts — prepared, not uploaded",
+  "notes": "cluster theorems.lean · 8 sealed · joint address eb4c79f8-2e2d-8e98-9847-2a64689b1f0e · figures as of commit 83213ac8f1ad (2026-09-15) · concept DOI 10.5281/zenodo.21819217 · generated by scripts/clusters.ts",
   "files": [
     "src/proof/theorems.lean"
   ],
@@ -102,29 +111,31 @@
         5
       ],
       "within": 15.75,
-      "between": 15.48,
+      "between": 15.49,
       "top": [
         {
           "file": "generated.lean",
           "pairs": 4,
-          "expected": 1.15,
-          "lift": 3.47
+          "expected": 1.11,
+          "lift": 3.62
         },
         {
           "file": "coin.lean",
           "pairs": 3,
-          "expected": 1.06,
-          "lift": 2.82
+          "expected": 1.02,
+          "lift": 2.94
         },
         {
           "file": "recovered.lean",
           "pairs": 3,
-          "expected": 1.33,
-          "lift": 2.25
+          "expected": 1.28,
+          "lift": 2.35
         }
       ],
-      "chanceShare": 0.47,
+      "chanceShare": 0.335,
+      "nullMedian": 3.2,
       "shuffles": 200
-    }
+    },
+    "asOf": "83213ac8f1ad8bb0b5fe7eed9360838215b71bac"
   }
 }

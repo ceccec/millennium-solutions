@@ -17,12 +17,12 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 641 kernel-accepted declarations across 33 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `dbb57e34-5063-8d78-a206-4021b8dd0c2f`</sub>
-- 625 of those 641 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 16 close by rfl and are declarations.
-  <sub>SEALED · `ca68ef39-3e72-82e2-a118-905a38ce2952`</sub>
-- 716 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `61634d5b-2bf9-821d-8492-5613271238ff`</sub>
+- The formal layer holds 668 kernel-accepted declarations across 33 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `5b572b0c-b2d2-818d-a04b-872fb40cf148`</sub>
+- 625 of those 668 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 43 close by rfl and are declarations.
+  <sub>SEALED · `60127119-9f91-8237-ab90-32e842954a26`</sub>
+- 743 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `df22e3e4-7d4e-8cbd-9325-d8cc5bf95d14`</sub>
 
 ## 2 · The ring
 
@@ -45,10 +45,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 2580 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `36c898f0-711a-81ce-b468-5b315135af9c`</sub>
-- The count is 2580, which is 322 octaves and 4 over — the octave is a target the theorems earn, never a quota they are invented to fill.
-  <sub>SEALED · `33538e3a-cf2f-825b-9135-9fa436b64a0b`</sub>
+- The ledger records 2607 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `68aab3ce-8188-83a5-830d-756a4e441dd3`</sub>
+- The count is 2607, which is 325 octaves and 7 over — the octave is a target the theorems earn, never a quota they are invented to fill.
+  <sub>SEALED · `d5875268-0019-81c3-a3bc-6779c8ffb6ee`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -92,7 +92,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-33 Lean files in 7 wings, 641 declarations of which 632 are theorems. The prose in this section is read out of the
+33 Lean files in 7 wings, 668 declarations of which 659 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -110,9 +110,9 @@ this page; there is nowhere else to keep the description in step.
 
 **The two-sided coin** — `coin.lean`, 12 theorem(s). One involution on ten digits, two sides, one fixed point, and one digit that leaves.
 
-**Elementary arithmetic** — `elementary.lean`, 33 theorem(s). the DECISION of each over a stated finite range, axiom-free, and the honest record of where the range   stops short of what the older claim asserted. prior_art_search: the results are named in every undergraduate text; no search was needed to find them. prior_art_pool: named Elementary arithmetic, decided — the claims the ledger held in TypeScript, given a kernel.
+**Elementary arithmetic** — `elementary.lean`, 36 theorem(s). the DECISION of each over a stated finite range, axiom-free, and the honest record of where the range   stops short of what the older claim asserted. prior_art_search: the results are named in every undergraduate text; no search was needed to find them. prior_art_pool: named Elementary arithmetic, decided — the claims the ledger held in TypeScript, given a kernel.
 
-**Families over the ring** — `families.lean`, 43 theorem(s). The families, quantified. Proving at scale.
+**Families over the ring** — `families.lean`, 46 theorem(s). The families, quantified. Proving at scale.
 
 **The doubling flow, for every step** — `flow.lean`, 3 theorem(s). prior_art_search: literature search performed 2026-09-14, terms "powers of two modulo 9 period 6 order of 2   mod 9 Euler theorem"; prior art found and credited. prior_art_pool: bounded prior_art_own: the every-step bound of the doubling flow, stated for the Navier–Stokes theorem in index.lean
 
@@ -122,7 +122,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Sequences** — `sequences.lean`, 12 theorem(s). The ledger held these as TypeScript tests. Each is a classical identity with a real proof; what is done here is to DECIDE each over a stated finite range, which is what `decide` can honestly deliver — the range is named in every theorem rather than implied, and no theorem claims the general case.
 
-**The digit split** — `split.lean`, 19 theorem(s). mathematics and claim nothing.   Stated precisely so the credit does not run past the earlier work: what is NOT claimed as prior art is   the tokenisation itself — reading the digits as 0|12|3|45|6|78|9 by concatenating consecutive units into   two-digit tokens, and the arithmetic that follows from it (every token a multiple of three, closure of   the tokens under addition and multiplication). That arrangement is this deposit's presentation of a   standard fact, and its verification is by exhaustion here. Crediting an earlier author for a   presentation they did not make is the same defect as claiming their result, pointed the other way. prior_art_search: literature search performed 2026-09-05, terms "units and non-units of Z/9 multiplicative   inverses group of units modulo 9"; prior art found and credited. prior_art_pool: mixed   the digit grouping is generic arithmetic; the coin accounting it feeds is this deposit's.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: the digit grouping 0|12|3|45|6|78|9 as this deposit reads it The ten digits read in order and grouped 0 | 12 | 3 | 45 | 6 | 78 | 9 — and what that grouping is.
+**The digit split** — `split.lean`, 20 theorem(s). mathematics and claim nothing.   Stated precisely so the credit does not run past the earlier work: what is NOT claimed as prior art is   the tokenisation itself — reading the digits as 0|12|3|45|6|78|9 by concatenating consecutive units into   two-digit tokens, and the arithmetic that follows from it (every token a multiple of three, closure of   the tokens under addition and multiplication). That arrangement is this deposit's presentation of a   standard fact, and its verification is by exhaustion here. Crediting an earlier author for a   presentation they did not make is the same defect as claiming their result, pointed the other way. prior_art_search: literature search performed 2026-09-05, terms "units and non-units of Z/9 multiplicative   inverses group of units modulo 9"; prior art found and credited. prior_art_pool: mixed   the digit grouping is generic arithmetic; the coin accounting it feeds is this deposit's.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: the digit grouping 0|12|3|45|6|78|9 as this deposit reads it The ten digits read in order and grouped 0 | 12 | 3 | 45 | 6 | 78 | 9 — and what that grouping is.
 
 **The ring ℤ/9** — `z9.lean`, 22 theorem(s). The ℤ/9 families — mechanically generated theorems, proved by decide rather than tested in TypeScript.
 
@@ -130,13 +130,13 @@ this page; there is nowhere else to keep the description in step.
 
 ### the floor
 
-**What is actually being asked for** — `demand.lean`, 8 theorem(s). THE ONE WING THAT DID NOT COME FROM THIS DEPOSIT'S OWN INTERESTS. Every other file here proves what the ℤ/9 construction led to. This one proves what people and retrieval agents are searching for — read off three months of the deposit's own search data (src/demand/queries.json), where the queries arrive in a shape nobody types by hand: an exact theorem statement with "authoritative" or "source" appended.
+**What is actually being asked for** — `demand.lean`, 9 theorem(s). THE ONE WING THAT DID NOT COME FROM THIS DEPOSIT'S OWN INTERESTS. Every other file here proves what the ℤ/9 construction led to. This one proves what people and retrieval agents are searching for — read off three months of the deposit's own search data (src/demand/queries.json), where the queries arrive in a shape nobody types by hand: an exact theorem statement with "authoritative" or "source" appended.
 
 **The next tier of what is asked for** — `demand2.lean`, 8 theorem(s). THE SECOND COURSE OF THE SAME FLOOR. `demand.lean` closed the top eight topics in src/demand/queries.json; this file takes the next eight, chosen the same way — by impressions, not by taste. The demand map is three months of the deposit's own Google Search Console data with the retrieval scaffolding stripped, so what is ranked is the TOPIC people wanted a citable source for, not the phrasing they reached for.
 
-**The named theorems people ask for** — `demand3.lean`, 7 theorem(s). The third and last tier the search data supports. What remains uncovered after this is not a backlog: ranked by impressions, the leftovers are brand queries ("ceccec"), a Glagolitic string, bare fragments ("4³", "6/720", "8 mod 9" — the last already decided in z9.lean), and the real-analysis cluster that was refused in demand2.lean and stays refused. The demand map is close to exhausted of things a kernel can settle, which is a better place to stop than an arbitrary count would have been.
+**The named theorems people ask for** — `demand3.lean`, 14 theorem(s). The third and last tier the search data supports. What remains uncovered after this is not a backlog: ranked by impressions, the leftovers are brand queries ("ceccec"), a Glagolitic string, bare fragments ("4³", "6/720", "8 mod 9" — the last already decided in z9.lean), and the real-analysis cluster that was refused in demand2.lean and stays refused. The demand map is close to exhausted of things a kernel can settle, which is a better place to stop than an arbitrary count would have been.
 
-**The water loop** — `energy.lean`, 21 theorem(s). THE WATER LOOP, ACCOUNTED. Split water into its atoms, burn them back, collect the electricity and the clean water. Every step of that is real and buildable. The question is only ever the ledger, so here it is.
+**The water loop** — `energy.lean`, 22 theorem(s). THE WATER LOOP, ACCOUNTED. Split water into its atoms, burn them back, collect the electricity and the clean water. Every step of that is real and buildable. The question is only ever the ledger, so here it is.
 
 **The Millennium floor** — `index.lean`, 11 theorem(s). Bounded, so the credit stops where the earlier work does: what is NOT prior art is the use of that orbit as a floor for what this deposit does   and does not settle, which is a statement about this repository and has no earlier author.   Verification by exhaustion in Lean is this deposit's contribution, and verification is not discovery. prior_art_search: literature search performed 2026-09-05, terms "doubling sequence modulo 9 orbit   1 2 4 8 7 5 cyclic group generator digital root"; prior art found and credited. prior_art_pool: bounded   digit arithmetic of the doubling sequence; searchable independently of this deposit.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: the Millennium floor, computed from this sequence The Millennium floor — seven honest theorems, one per problem, COMPUTED from the sequence.
 
@@ -154,11 +154,11 @@ this page; there is nowhere else to keep the description in step.
 
 **Generated at scale** — `generated.lean`, 13 theorem(s). Bounded, so the credit stops where the earlier work does: what is NOT prior art is the generator that enumerates propositions over this ring and   discards the ones true of every sibling; that machinery is this deposit's own.   Verification by exhaustion in Lean is this deposit's contribution, and verification is not discovery. prior_art_search: literature search performed 2026-09-05, terms "doubling sequence modulo 9 orbit   1 2 4 8 7 5 cyclic group generator digital root"; prior art found and credited. prior_art_pool: bounded   quantified ring arithmetic over Z/9; the underlying facts are classical and searchable.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: this deposit's own generator over its own ring Generated by scripts/lean-gen.ts — do not edit by hand; re-run the generator. Each theorem below quantifies over a whole ledger family. Every one is compiled, audited for axioms, and checked to compute what the ledger's own tests compute at every parameter of its family.
 
-**Mechanically translated** — `mechanical.lean`, 107 theorem(s). Generated by src/prove/emit.ts from the ledger's own tests — do not hand-edit; re-run the prover.
+**Mechanically translated** — `mechanical.lean`, 112 theorem(s). Generated by src/prove/emit.ts from the ledger's own tests — do not hand-edit; re-run the prover.
 
 **Nim** — `nim.lean`, 10 theorem(s). Nim — Bouton's theorem and Sprague–Grundy, decided.
 
-**Digit reversal** — `reversal.lean`, 9 theorem(s). Digit reversal — arithmetic, not string handling.
+**Digit reversal** — `reversal.lean`, 15 theorem(s). Digit reversal — arithmetic, not string handling.
 
 **Theorems** — `theorems.lean`, 8 theorem(s). The universal property — honestly, and COMPUTED from the sequence.
 
@@ -176,7 +176,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Recovered — claims that computed and were withdrawn for want of a proof** — `recovered.lean`, 15 theorem(s). material, credited. What is NOT prior art is that these particular statements sat WITHDRAWN in this   deposit's ledger, each recorded as "not backed by a Lean proof. Its evidence is a TypeScript test",   while every one is decidable in a line. prior_art_search: literature search performed 2026-09-05, terms "units and non-units of Z/9 multiplicative   inverses group of units modulo 9"; prior art found and credited.
 
-20 of 641 declarations carry no comment of their own and are shown here as the gap they are, not
+20 of 668 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -185,14 +185,14 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 2,580 — 322 octaves and 4 over |
-| standing — carries its own proof | **632** |
+| ledger entries | 2,607 — 325 octaves and 7 over |
+| standing — carries its own proof | **659** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **434** |
 | withdrawn — nothing proves it | 1,514 |
-| proved in total | **1066** of 2,580 |
-| standing keys → distinct theorems | 632 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 33 · 632 theorems (625 closed by exhaustion, axiom-free · 7 proved for every value on propext and Quot.sound) + 9 rfl declarations |
-| proved `by decide` | 625 of 641 |
+| proved in total | **1093** of 2,607 |
+| standing keys → distinct theorems | 659 sealed, 0 of them keyed twice, 0 unresolvable |
+| Lean files · theorems | 33 · 659 theorems (625 closed by exhaustion, axiom-free · 34 proved for every value on propext and Quot.sound) + 9 rfl declarations |
+| proved `by decide` | 625 of 668 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -214,4 +214,4 @@ across** — deposited as [10.5281/zenodo.21781603](https://doi.org/10.5281/zeno
 
 ---
 
-*15 claims, all verified · 632 Lean theorems · 2580 ledger entries · trial root `105ee817-e02b-8788-8141-d3f64f4e58c3` · integrity, not truth*
+*15 claims, all verified · 659 Lean theorems · 2607 ledger entries · trial root `5729b212-ba9e-8a33-b660-c705ff6f3d3f` · integrity, not truth*

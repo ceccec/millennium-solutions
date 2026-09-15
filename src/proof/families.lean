@@ -184,9 +184,9 @@ def digitsF : Nat → Nat → List Nat
   | 0, _ => []
   | _, 0 => []
   | Nat.succ f, n => n % 10 :: digitsF f (n / 10)
--- fuel 20 covers every Nat that fits in 64 bits; a fuel just large enough for the range below would
--- silently truncate the digits of any larger number a later theorem passed in
-def digitsOf (n : Nat) : List Nat := digitsF 20 n
+-- the fuel is n + 1, which covers every digit of every n: the earlier fuel of 20 capped this at twenty digits
+-- and silently truncated anything larger
+def digitsOf (n : Nat) : List Nat := digitsF (n + 1) n
 def reverseDigits (n : Nat) : Nat := (digitsOf n).foldl (fun a d => a * 10 + d) 0
 def digitalRoot (n : Nat) : Nat := if n == 0 then 0 else 1 + (n - 1) % 9
 
@@ -446,5 +446,37 @@ theorem choose_is_invariant_under_the_involution_k_to_n_minus_k :
 -- ── what these settle ──
 def settledHere : Nat := 42
 theorem families_settle_their_ranges : settledHere = 42 := rfl
+
+
+-- ── the capped rows above, proved for every value by induction — no bound ────────────────────────────────────
+-- the_powers_of_two_sum_to_one_less_than_the_next checked n ≤ 40; this proves it for every n.
+theorem the_powers_of_two_sum_to_one_less_than_the_next_for_every_n :
+    ∀ n : Nat, ((List.range (n + 1)).map (fun i => 2 ^ i)).foldl (· + ·) 0 = 2 ^ (n + 1) - 1 := by
+  intro n
+  induction n with
+  | zero => decide
+  | succ n ih =>
+    rw [List.range_succ, List.map_append, List.foldl_append, ih]
+    simp only [List.map, List.foldl]
+    have h : 1 ≤ 2 ^ (n + 1) := Nat.one_le_two_pow
+    rw [Nat.pow_succ 2 (n + 1)]
+    omega
+
+theorem square_of_successor : ∀ n : Nat, (n + 1) * (n + 1) = n * n + 2 * n + 1 := by
+  intro n
+  rw [Nat.add_mul, Nat.mul_add, Nat.mul_one, Nat.one_mul]
+  omega
+
+-- the_first_n_odd_numbers_sum_to_n_squared checked n ≤ 200; this proves it for every n.
+theorem the_first_n_odd_numbers_sum_to_n_squared_for_every_n :
+    ∀ n : Nat, ((List.range n).map (fun i => 2 * i + 1)).foldl (· + ·) 0 = n * n := by
+  intro n
+  induction n with
+  | zero => decide
+  | succ n ih =>
+    rw [List.range_succ, List.map_append, List.foldl_append, ih]
+    simp only [List.map, List.foldl]
+    rw [square_of_successor]
+    omega
 
 end Families

@@ -1,7 +1,7 @@
 {
   "upload_type": "publication",
   "publication_type": "preprint",
-  "title": "Every phenomenon this deposit touches, and the rule for the rest — 4 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+  "title": "Every phenomenon this deposit touches, and the rule for the rest — 4 machine-checked theorems and how they are bound",
   "creators": [
     {
       "name": "Rouschev, Tsvetan",
@@ -9,7 +9,7 @@
       "affiliation": "PSG, Bulgaria"
     }
   ],
-  "description": "<p><strong>Every phenomenon this deposit touches, and the rule for the rest</strong> — 4 machine-checked theorems of the ℤ/9 vortex deposit, one Lean namespace, wing <em>the floor</em>. 4 close by exhaustion over a finite domain (<code>by decide</code>). Every one is sealed live in the append-only ledger.</p><p><strong>How these theorems are bound.</strong> \"Entangled\" is used in this deposit's honest sense: correlation by derivation, not quantum entanglement, and no information travels through it.</p><p><strong>1 · Shared definitions.</strong> 2 definition(s) are used by two or more theorems, binding 12 pair(s); the theorems fall into 1 strand(s), the largest of 4. Most binding: <code>entries</code> (4), <code>statusOf</code> (4).</p><p><strong>2 · Imports.</strong> Built on: no other cluster. Built on it: no other cluster. Checking this cluster needs 1 file(s): <code>src/proof/phenomena.lean</code>.</p><p><strong>3 · The joint address.</strong> The 4 sealed receipts fold to <code>7c2c40c6-89f6-8eb8-bc77-10aca5a1c56f</code>. Order-invariant: yes — the same root in reverse order. Altering one receipt changes it: yes, computed on this run. A content-address proves integrity, not truth.</p><p><strong>4 · The address lattice.</strong> Each theorem sits at the seven ray values its page plots from its receipt, taken mod 9: a point of (ℤ/9)⁷. This cluster's centre is (7, 5, 2, 8, 4, 2, 0). Its nearest clusters, ranked by lift — pairs observed among each theorem's seven nearest points, over the pairs expected by chance from the two clusters' sizes: <code>families.lean</code> (4 observed, 1.86 expected, lift 2.15), <code>elementary.lean</code> (3 observed, 1.42 expected, lift 2.11), <code>mechanical.lean</code> (6 observed, 4.75 expected, lift 1.26). A lift near 1 is what chance gives. Mean distance between two of its theorems: 16.33; from one of its theorems to a theorem of another cluster: 15.6. A receipt is a hash, so nearness on this lattice is a property of the addresses, not of the mathematics; the mathematical binding is (1) and (2). Chance, measured: over 200 reshufflings of which cluster each point belongs to (seeded, so every rebuild gives the same numbers), a best lift at least this high arose in 56.0% of them — consistent with chance.</p><p><strong>Prior art.</strong> the SI base quantities and their defining constants are definitions of the Conférence Générale des Poids et Mesures (2019 revision, effective 20 May 2019); the electrochemical results are Michael Faraday's laws of electrolysis, 1834, and the standard enthalpy of combustion of hydrogen. Every physical result named here has an earlier author or a standards body, and none is this deposit's. Per-theorem prior-art searches — OEIS, zbMATH Open, OpenAlex, Crossref, arXiv — are recorded, with what was searched, where and when, in the living ledger <a href=\"https://github.com/ceccec/millennium-solutions/blob/main/src/proof/novelty.json\">src/proof/novelty.json</a>. No novelty is claimed here.</p><p><strong>The theorems.</strong></p><ol><li><code>every_phenomenon_is_definitional_or_credited</code> — <code>entries.all (fun e =&gt; statusOf e == 0 || statusOf e == 1)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_phenomena_every_phenomenon_is_definitional_or_credited\">record</a></li><li><code>seven_definitional_and_two_credited</code> — <code>(entries.filter (fun e =&gt; statusOf e == 0)).length = 7 ∧ (entries.filter (fun e =&gt; statusOf e == 1)).length = 2 ∧ entries.length = 9</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_phenomena_seven_definitional_and_two_credited\">record</a></li><li><code>the_definitional_half_is_the_whole_si</code> — <code>(entries.filter (fun e =&gt; statusOf e == 0)).length = 7</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_phenomena_the_definitional_half_is_the_whole_si\">record</a></li><li><code>the_table_is_closed_and_that_is_all_this_file_decides</code> — <code>entries.all (fun e =&gt; statusOf e == 0 || statusOf e == 1) ∧ entries.length = 9 ∧ (entries.filter (fun e =&gt; statusOf e == 0)).length = 7</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_phenomena_the_table_is_closed_and_that_is_all_this_file_decides\">record</a></li></ol><p><strong>Recompute.</strong> <code>lake env lean src/proof/phenomena.lean</code>, or clone <a href=\"https://github.com/ceccec/millennium-solutions\">https://github.com/ceccec/millennium-solutions</a> and run <code>npm run lean</code>. This record was generated by scripts/clusters.ts from the source and the ledger.</p><p><strong>Funding.</strong> Independent research. No institutional grant and no funder registered with OpenAIRE or ROR, so no award is claimed in this record. Development is supported by direct contribution: https://revolut.me/ceccec</p>",
+  "description": "<p><strong>Every phenomenon this deposit touches, and the rule for the rest</strong>. 4 machine-checked theorems from the Lean 4 source file <code>src/proof/phenomena.lean</code>, by Tsvetan Rouschev, licensed CC BY-NC-ND 4.0. Lean 4 is a proof checker: a theorem it accepts has been checked by its kernel, not argued in prose. All are checked case by case over a stated finite domain (<code>by decide</code>). Every theorem listed is sealed live in the deposit's ledger, where a withdrawal is marked in place; 63 earlier rows removed on 2026-08-09 are listed in <a href=\"https://github.com/ceccec/millennium-solutions/blob/83213ac8f1ad8bb0b5fe7eed9360838215b71bac/src/proof/revoked.json\">src/proof/revoked.json</a>.</p><p><strong>How these theorems are bound.</strong> \"Entangled\" is used here in a precise, non-quantum sense: theorems are bound when they derive from shared definitions (section 1), when their files import one another (section 2), and when their content-addressed receipts fold into one address that changes if any one of them changes (section 3). It is correlation by derivation; no information travels through it.</p><p><strong>1 · Shared definitions.</strong> 2 definitions are used by two or more theorems, binding 12 pairs; the theorems fall into 1 strand. Most binding: <code>entries</code> (4), <code>statusOf</code> (4).</p><p><strong>2 · Imports.</strong> Built on: no other cluster. Built on it: no other cluster. Checking this cluster needs 1 file: <code>src/proof/phenomena.lean</code>.</p><p><strong>3 · The joint address.</strong> The 4 sealed receipts fold to <code>7c2c40c6-89f6-8eb8-bc77-10aca5a1c56f</code>. Order-invariant: yes — the same root in reverse order. Altering one receipt changes it: yes, computed when this record was generated. A content-address proves integrity, not truth.</p><p><strong>4 · The address lattice.</strong> Each theorem sits at the seven ray values its page plots from its receipt, taken mod 9: a point of (ℤ/9)⁷. This cluster's centre is (7, 5, 2, 8, 4, 2, 0). Its nearest clusters, ranked by lift — pairs counted from this cluster's theorems' seven nearest points, over the pairs expected by chance from the two clusters' sizes: <code>families.lean</code> (5 observed, 1.91 expected, lift 2.61), <code>elementary.lean</code> (3 observed, 1.49 expected, lift 2.01), <code>mechanical.lean</code> (6 observed, 4.77 expected, lift 1.26). A best lift is the largest of about 32 small ratios, so chance alone gives a typical best lift of 2.2 here (the median over 200 seeded reshufflings of which cluster each point belongs to); one at least as high as this cluster's arose in 49.0% of them — consistent with chance. Mean distance between two of its theorems: 16.33; from one of its theorems to a theorem of another cluster: 15.6. A receipt is a hash, so nearness on this lattice is a property of the addresses, not of the mathematics; the mathematical binding is (1) and (2). These figures are as of commit <code>83213ac8f1ad</code> (2026-09-15), over 659 points; a new seal anywhere moves them.</p><p><strong>Prior art.</strong> The SI base quantities and their defining constants are definitions of the Conférence Générale des Poids et Mesures (2019 revision, effective 20 May 2019); the electrochemical results are Michael Faraday's laws of electrolysis, 1834, and the standard enthalpy of combustion of hydrogen. Every physical result named here has an earlier author or a standards body, and none is this deposit's. Per-theorem prior-art searches — OEIS, zbMATH Open, OpenAlex, Crossref, arXiv — are recorded, with what was searched, where and when, in the living ledger <a href=\"https://github.com/ceccec/millennium-solutions/blob/main/src/proof/novelty.json\">src/proof/novelty.json</a> (main branch). No novelty is claimed here.</p><p><strong>The theorems.</strong></p><ol><li><code>every_phenomenon_is_definitional_or_credited</code> — <code>entries.all (fun e =&gt; statusOf e == 0 || statusOf e == 1)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_phenomena_every_phenomenon_is_definitional_or_credited\">record</a></li><li><code>seven_definitional_and_two_credited</code> — <code>(entries.filter (fun e =&gt; statusOf e == 0)).length = 7 ∧ (entries.filter (fun e =&gt; statusOf e == 1)).length = 2 ∧ entries.length = 9</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_phenomena_seven_definitional_and_two_credited\">record</a></li><li><code>the_definitional_half_is_the_whole_si</code> — <code>(entries.filter (fun e =&gt; statusOf e == 0)).length = 7</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_phenomena_the_definitional_half_is_the_whole_si\">record</a></li><li><code>the_table_is_closed_and_that_is_all_this_file_decides</code> — <code>entries.all (fun e =&gt; statusOf e == 0 || statusOf e == 1) ∧ entries.length = 9 ∧ (entries.filter (fun e =&gt; statusOf e == 0)).length = 7</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_phenomena_the_table_is_closed_and_that_is_all_this_file_decides\">record</a></li></ol><p><strong>Recompute.</strong> Clone <a href=\"https://github.com/ceccec/millennium-solutions\">https://github.com/ceccec/millennium-solutions</a> at commit <code>83213ac8f1ad</code> and run <code>npm ci && npm run lean</code>, which checks every Lean file in dependency order. This record was generated by <a href=\"https://github.com/ceccec/millennium-solutions/blob/83213ac8f1ad8bb0b5fe7eed9360838215b71bac/scripts/clusters.ts\">scripts/clusters.ts</a> from the source and the ledger.</p><p><strong>Licence.</strong> CC BY-NC-ND 4.0 — free for non-commercial use with attribution to Tsvetan Rouschev; commercial use by arrangement with the author.</p>",
   "license": "cc-by-nc-nd-4.0",
   "access_right": "open",
   "language": "eng",
@@ -17,40 +17,45 @@
     "Lean 4",
     "machine-checked proof",
     "formal verification",
-    "Z/9",
+    "modular arithmetic",
     "content-addressing",
     "theorem cluster",
-    "the floor",
     "phenomena"
   ],
   "communities": [],
   "related_identifiers": [
     {
       "identifier": "10.5281/zenodo.21819217",
-      "relation": "isPartOf"
+      "relation": "isPartOf",
+      "scheme": "doi"
     },
     {
-      "identifier": "https://github.com/ceccec/millennium-solutions/blob/main/src/proof/phenomena.lean",
-      "relation": "isSupplementTo"
+      "identifier": "https://github.com/ceccec/millennium-solutions/blob/83213ac8f1ad8bb0b5fe7eed9360838215b71bac/src/proof/phenomena.lean",
+      "relation": "isSupplementTo",
+      "scheme": "url"
     },
     {
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_phenomena_every_phenomenon_is_definitional_or_credited",
-      "relation": "hasPart"
+      "relation": "hasPart",
+      "scheme": "url"
     },
     {
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_phenomena_seven_definitional_and_two_credited",
-      "relation": "hasPart"
+      "relation": "hasPart",
+      "scheme": "url"
     },
     {
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_phenomena_the_definitional_half_is_the_whole_si",
-      "relation": "hasPart"
+      "relation": "hasPart",
+      "scheme": "url"
     },
     {
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_phenomena_the_table_is_closed_and_that_is_all_this_file_decides",
-      "relation": "hasPart"
+      "relation": "hasPart",
+      "scheme": "url"
     }
   ],
-  "notes": "cluster phenomena.lean · wing the floor · 4 sealed · joint address 7c2c40c6-89f6-8eb8-bc77-10aca5a1c56f · lattice centre (7,5,2,8,4,2,0) · neighbours families.lean, elementary.lean, mechanical.lean · concept DOI 10.5281/zenodo.21819217 · generated by scripts/clusters.ts — prepared, not uploaded",
+  "notes": "cluster phenomena.lean · 4 sealed · joint address 7c2c40c6-89f6-8eb8-bc77-10aca5a1c56f · figures as of commit 83213ac8f1ad (2026-09-15) · concept DOI 10.5281/zenodo.21819217 · generated by scripts/clusters.ts",
   "files": [
     "src/proof/phenomena.lean"
   ],
@@ -94,25 +99,27 @@
       "top": [
         {
           "file": "families.lean",
-          "pairs": 4,
-          "expected": 1.86,
-          "lift": 2.15
+          "pairs": 5,
+          "expected": 1.91,
+          "lift": 2.61
         },
         {
           "file": "elementary.lean",
           "pairs": 3,
-          "expected": 1.42,
-          "lift": 2.11
+          "expected": 1.49,
+          "lift": 2.01
         },
         {
           "file": "mechanical.lean",
           "pairs": 6,
-          "expected": 4.75,
+          "expected": 4.77,
           "lift": 1.26
         }
       ],
-      "chanceShare": 0.56,
+      "chanceShare": 0.49,
+      "nullMedian": 2.2,
       "shuffles": 200
-    }
+    },
+    "asOf": "83213ac8f1ad8bb0b5fe7eed9360838215b71bac"
   }
 }

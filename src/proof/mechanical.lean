@@ -418,4 +418,38 @@ theorem a_reflexive_address_claim_holds_for_a_constant_function :
 -- recording. What is now published beside them is exactly where a critic should aim, which is the whole of
 -- what "claim boldly" can honestly mean — the falsifier travels with the claim.
 
+
+-- ── the capped rows above, proved for every value by induction and case analysis — no bound ──────────────────
+-- the_difference_of_consecutive_squares_is_the_odd_numbers checked n ≤ 500; this proves it for every n.
+theorem consecutive_squares_differ_by_the_odd_numbers : ∀ n : Nat, (n + 1) ^ 2 - n * n = 2 * n + 1 := by
+  intro n
+  have h : (n + 1) ^ 2 = n * n + (2 * n + 1) := by
+    rw [Nat.pow_two, Nat.add_mul, Nat.mul_add, Nat.mul_one, Nat.one_mul]
+    omega
+  omega
+
+-- there_are_infinitely_many_pythagorean_triples checked k ≤ 100; here every multiple of (3, 4, 5) is a triple, for every k.
+-- prior_art_theorem: every_multiple_of_three_four_five_is_pythagorean — the 3-4-5 triangle, known in antiquity
+theorem every_multiple_of_three_four_five_is_pythagorean : ∀ k : Nat, (3 * k) ^ 2 + (4 * k) ^ 2 = (5 * k) ^ 2 := by
+  intro k
+  rw [Nat.mul_pow, Nat.mul_pow, Nat.mul_pow]
+  omega
+
+theorem the_product_of_three_consecutive_numbers_is_even : ∀ n : Nat, n * (n + 1) * (n + 2) % 2 = 0 := by
+  intro n
+  rcases Nat.mod_two_eq_zero_or_one n with h | h <;> simp [Nat.mul_mod, Nat.add_mod, h]
+
+theorem the_product_of_three_consecutive_numbers_is_a_multiple_of_three : ∀ n : Nat, n * (n + 1) * (n + 2) % 3 = 0 := by
+  intro n
+  have : n % 3 = 0 ∨ n % 3 = 1 ∨ n % 3 = 2 := by omega
+  rcases this with h | h | h <;> simp [Nat.mul_mod, Nat.add_mod, h]
+
+-- the_product_of_any_three_consecutive_integers_is_divisible_by_six checked n ≤ 500; this proves it for every n.
+theorem the_product_of_any_three_consecutive_integers_is_divisible_by_six_for_every_n :
+    ∀ n : Nat, n * (n + 1) * (n + 2) % 6 = 0 := by
+  intro n
+  have h2 := the_product_of_three_consecutive_numbers_is_even n
+  have h3 := the_product_of_three_consecutive_numbers_is_a_multiple_of_three n
+  omega
+
 end Mechanical

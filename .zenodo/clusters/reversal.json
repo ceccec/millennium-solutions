@@ -1,7 +1,7 @@
 {
   "upload_type": "publication",
   "publication_type": "preprint",
-  "title": "Digit reversal — 8 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+  "title": "Digit reversal — 14 machine-checked theorems and how they are bound",
   "creators": [
     {
       "name": "Rouschev, Tsvetan",
@@ -9,7 +9,7 @@
       "affiliation": "PSG, Bulgaria"
     }
   ],
-  "description": "<p><strong>Digit reversal</strong> — 8 machine-checked theorems of the ℤ/9 vortex deposit, one Lean namespace, wing <em>the machine</em>. 8 close by exhaustion over a finite domain (<code>by decide</code>); 1 <code>rfl</code> declaration(s) are listed and not sealed, by design. Every one is sealed live in the append-only ledger.</p><p><strong>How these theorems are bound.</strong> \"Entangled\" is used in this deposit's honest sense: correlation by derivation, not quantum entanglement, and no information travels through it.</p><p><strong>1 · Shared definitions.</strong> 2 definition(s) are used by two or more theorems, binding 29 pair(s); the theorems fall into 1 strand(s), the largest of 8. Most binding: <code>reverseNum</code> (8), <code>isPrime</code> (2).</p><p><strong>2 · Imports.</strong> Built on: no other cluster. Built on it: <code>z9plus.lean</code>. Checking this cluster needs 1 file(s): <code>src/proof/reversal.lean</code>.</p><p><strong>3 · The joint address.</strong> The 8 sealed receipts fold to <code>3b083fac-92a3-8d45-a737-199fd51e8f0e</code>. Order-invariant: yes — the same root in reverse order. Altering one receipt changes it: yes, computed on this run. A content-address proves integrity, not truth.</p><p><strong>4 · The address lattice.</strong> Each theorem sits at the seven ray values its page plots from its receipt, taken mod 9: a point of (ℤ/9)⁷. This cluster's centre is (8, 3, 1, 7, 7, 7, 5). Its nearest clusters, ranked by lift — pairs observed among each theorem's seven nearest points, over the pairs expected by chance from the two clusters' sizes: <code>address.lean</code> (3 observed, 1.51 expected, lift 1.99), <code>families.lean</code> (7 observed, 3.73 expected, lift 1.88), <code>energy.lean</code> (3 observed, 1.86 expected, lift 1.61). A lift near 1 is what chance gives. Mean distance between two of its theorems: 16.57; from one of its theorems to a theorem of another cluster: 15.49. A receipt is a hash, so nearness on this lattice is a property of the addresses, not of the mathematics; the mathematical binding is (1) and (2). Chance, measured: over 200 reshufflings of which cluster each point belongs to (seeded, so every rebuild gives the same numbers), a best lift at least this high arose in 91.0% of them — consistent with chance.</p><p><strong>Prior art.</strong> digit reversal and digit sums; casting out nines, in use by the 12th century Per-theorem prior-art searches — OEIS, zbMATH Open, OpenAlex, Crossref, arXiv — are recorded, with what was searched, where and when, in the living ledger <a href=\"https://github.com/ceccec/millennium-solutions/blob/main/src/proof/novelty.json\">src/proof/novelty.json</a>. No novelty is claimed here.</p><p><strong>The theorems.</strong></p><ol><li><code>reversal_preserves_digit_sum</code> — <code>(List.range' 1 300).all (fun n =&gt; digitSum (reverseNum n) == digitSum n)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_reversal_preserves_digit_sum\">record</a></li><li><code>digital_root_is_invariant_under_reversal</code> — <code>(List.range' 1 300).all (fun n =&gt; (reverseNum n) % 9 == n % 9)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_digital_root_is_invariant_under_reversal\">record</a></li><li><code>the_ledger_reversal_cases</code> — <code>(reverseNum 12) % 9 == 12 % 9 ∧ (reverseNum 45) % 9 == 45 % 9 ∧ (reverseNum 123) % 9 == 123 % 9 ∧ (reverseNum 1234) % 9 == 1234 % 9 ∧ (reverseNum 4321) % 9 == 4321 % 9 ∧ (reverseNum 9080) % 9 == 9080 % 9</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_the_ledger_reversal_cases\">record</a></li><li><code>reversal_is_not_the_identity</code> — <code>¬ ((List.range' 10 90).all (fun n =&gt; reverseNum n == n))</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_reversal_is_not_the_identity\">record</a></li><li><code>palindromes_are_the_fixed_points</code> — <code>((List.range' 10 90).filter (fun n =&gt; reverseNum n == n)).length = 9</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_palindromes_are_the_fixed_points\">record</a></li><li><code>emirps_exist_below_one_hundred</code> — <code>((List.range' 10 90).filter (fun n =&gt; isPrime n &amp;&amp; isPrime (reverseNum n) &amp;&amp; reverseNum n != n)).length &gt; 0</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_emirps_exist_below_one_hundred\">record</a></li><li><code>reversal_does_not_preserve_primality</code> — <code>¬ ((List.range' 10 90).all (fun n =&gt; isPrime n == isPrime (reverseNum n)))</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_reversal_does_not_preserve_primality\">record</a></li><li><code>reversal_is_involutive_exactly_off_the_trailing_zeros</code> — <code>(List.range' 1 300).all (fun n =&gt; (reverseNum (reverseNum n) == n) == (n % 10 != 0))</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_reversal_is_involutive_exactly_off_the_trailing_zeros\">record</a></li></ol><p><strong>Recompute.</strong> <code>lake env lean src/proof/reversal.lean</code>, or clone <a href=\"https://github.com/ceccec/millennium-solutions\">https://github.com/ceccec/millennium-solutions</a> and run <code>npm run lean</code>. This record was generated by scripts/clusters.ts from the source and the ledger.</p><p><strong>Funding.</strong> Independent research. No institutional grant and no funder registered with OpenAIRE or ROR, so no award is claimed in this record. Development is supported by direct contribution: https://revolut.me/ceccec</p>",
+  "description": "<p><strong>Digit reversal</strong>. 14 machine-checked theorems from the Lean 4 source file <code>src/proof/reversal.lean</code>, by Tsvetan Rouschev, licensed CC BY-NC-ND 4.0. Lean 4 is a proof checker: a theorem it accepts has been checked by its kernel, not argued in prose. 8 are checked case by case over a stated finite domain (<code>by decide</code>). 6 are proved for every value, on the standard axioms only (<code>propext</code>, <code>Quot.sound</code>; the verifier refuses any other). One further declaration closes by <code>rfl</code>, checked by evaluation, and is not included here, by design. Every theorem listed is sealed live in the deposit's ledger, where a withdrawal is marked in place; 63 earlier rows removed on 2026-08-09 are listed in <a href=\"https://github.com/ceccec/millennium-solutions/blob/83213ac8f1ad8bb0b5fe7eed9360838215b71bac/src/proof/revoked.json\">src/proof/revoked.json</a>.</p><p><strong>How these theorems are bound.</strong> \"Entangled\" is used here in a precise, non-quantum sense: theorems are bound when they derive from shared definitions (section 1), when their files import one another (section 2), and when their content-addressed receipts fold into one address that changes if any one of them changes (section 3). It is correlation by derivation; no information travels through it.</p><p><strong>1 · Shared definitions.</strong> 3 definitions are used by two or more theorems, binding 38 pairs; the theorems fall into 5 strands, the largest of 10. Most binding: <code>reverseNum</code> (9), <code>digitSum</code> (2), <code>isPrime</code> (2). 3 theorems name no definition of the file and stand on their own statement.</p><p><strong>2 · Imports.</strong> Built on: no other cluster. Built on it: <code>z9plus.lean</code>. Checking this cluster needs 1 file: <code>src/proof/reversal.lean</code>.</p><p><strong>3 · The joint address.</strong> The 14 sealed receipts fold to <code>f7d572e9-6010-899d-912e-778ba70de9a0</code>. Order-invariant: yes — the same root in reverse order. Altering one receipt changes it: yes, computed when this record was generated. A content-address proves integrity, not truth.</p><p><strong>4 · The address lattice.</strong> Each theorem sits at the seven ray values its page plots from its receipt, taken mod 9: a point of (ℤ/9)⁷. This cluster's centre is (5, 4, 1, 6, 7, 5, 6). Its nearest clusters, ranked by lift — pairs counted from this cluster's theorems' seven nearest points, over the pairs expected by chance from the two clusters' sizes: <code>demand2.lean</code> (3 observed, 1.19 expected, lift 2.52), <code>ledgerclaims.lean</code> (3 observed, 1.19 expected, lift 2.52), <code>rights.lean</code> (3 observed, 1.19 expected, lift 2.52). A best lift is the largest of about 32 small ratios, so chance alone gives a typical best lift of 2.76 here (the median over 200 seeded reshufflings of which cluster each point belongs to); one at least as high as this cluster's arose in 76.0% of them — consistent with chance. Mean distance between two of its theorems: 16.09; from one of its theorems to a theorem of another cluster: 15.53. A receipt is a hash, so nearness on this lattice is a property of the addresses, not of the mathematics; the mathematical binding is (1) and (2). These figures are as of commit <code>83213ac8f1ad</code> (2026-09-15), over 659 points; a new seal anywhere moves them.</p><p><strong>Prior art.</strong> Digit reversal and digit sums; casting out nines, in use by the 12th century. Per-theorem prior-art searches — OEIS, zbMATH Open, OpenAlex, Crossref, arXiv — are recorded, with what was searched, where and when, in the living ledger <a href=\"https://github.com/ceccec/millennium-solutions/blob/main/src/proof/novelty.json\">src/proof/novelty.json</a> (main branch). No novelty is claimed here.</p><p><strong>The theorems.</strong></p><ol><li><code>reversal_preserves_digit_sum</code> — <code>(List.range' 1 300).all (fun n =&gt; digitSum (reverseNum n) == digitSum n)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_reversal_preserves_digit_sum\">record</a></li><li><code>digital_root_is_invariant_under_reversal</code> — <code>(List.range' 1 300).all (fun n =&gt; (reverseNum n) % 9 == n % 9)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_digital_root_is_invariant_under_reversal\">record</a></li><li><code>the_ledger_reversal_cases</code> — <code>(reverseNum 12) % 9 == 12 % 9 ∧ (reverseNum 45) % 9 == 45 % 9 ∧ (reverseNum 123) % 9 == 123 % 9 ∧ (reverseNum 1234) % 9 == 1234 % 9 ∧ (reverseNum 4321) % 9 == 4321 % 9 ∧ (reverseNum 9080) % 9 == 9080 % 9</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_the_ledger_reversal_cases\">record</a></li><li><code>reversal_is_not_the_identity</code> — <code>¬ ((List.range' 10 90).all (fun n =&gt; reverseNum n == n))</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_reversal_is_not_the_identity\">record</a></li><li><code>palindromes_are_the_fixed_points</code> — <code>((List.range' 10 90).filter (fun n =&gt; reverseNum n == n)).length = 9</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_palindromes_are_the_fixed_points\">record</a></li><li><code>emirps_exist_below_one_hundred</code> — <code>((List.range' 10 90).filter (fun n =&gt; isPrime n &amp;&amp; isPrime (reverseNum n) &amp;&amp; reverseNum n != n)).length &gt; 0</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_emirps_exist_below_one_hundred\">record</a></li><li><code>reversal_does_not_preserve_primality</code> — <code>¬ ((List.range' 10 90).all (fun n =&gt; isPrime n == isPrime (reverseNum n)))</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_reversal_does_not_preserve_primality\">record</a></li><li><code>reversal_is_involutive_exactly_off_the_trailing_zeros</code> — <code>(List.range' 1 300).all (fun n =&gt; (reverseNum (reverseNum n) == n) == (n % 10 != 0))</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_reversal_is_involutive_exactly_off_the_trailing_zeros\">record</a></li><li><code>foldl_add_start</code> — <code>∀ (l : List Nat) (a : Nat), l.foldl (· + ·) a = a + l.foldl (· + ·) 0</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_foldl_add_start\">record</a></li><li><code>the_digits_sum_to_the_number_mod_nine_when_the_fuel_covers_them</code> — <code>∀ f n : Nat, n &lt; 10 ^ f → (digitsF f n).foldl (· + ·) 0 % 9 = n % 9</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_the_digits_sum_to_the_number_mod_nine_when_the_fuel_covers_them\">record</a></li><li><code>a_number_is_below_ten_to_its_own_successor</code> — <code>∀ n : Nat, n &lt; 10 ^ (n + 1)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_a_number_is_below_ten_to_its_own_successor\">record</a></li><li><code>the_digit_sum_has_the_residue_of_the_number_mod_nine_for_every_n</code> — <code>∀ n : Nat, digitSum n % 9 = n % 9</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_the_digit_sum_has_the_residue_of_the_number_mod_nine_for_every_n\">record</a></li><li><code>folding_by_ten_keeps_the_residue_of_the_digit_sum</code> — <code>∀ (l : List Nat) (a : Nat), (l.foldl (fun a d =&gt; a * 10 + d) a) % 9 = (a + l.foldl (· + ·) 0) % 9</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_folding_by_ten_keeps_the_residue_of_the_digit_sum\">record</a></li><li><code>reversal_keeps_the_residue_mod_nine_for_every_n</code> — <code>∀ n : Nat, reverseNum n % 9 = n % 9</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_reversal_keeps_the_residue_mod_nine_for_every_n\">record</a></li></ol><p><strong>Recompute.</strong> Clone <a href=\"https://github.com/ceccec/millennium-solutions\">https://github.com/ceccec/millennium-solutions</a> at commit <code>83213ac8f1ad</code> and run <code>npm ci && npm run lean</code>, which checks every Lean file in dependency order. This record was generated by <a href=\"https://github.com/ceccec/millennium-solutions/blob/83213ac8f1ad8bb0b5fe7eed9360838215b71bac/scripts/clusters.ts\">scripts/clusters.ts</a> from the source and the ledger.</p><p><strong>Licence.</strong> CC BY-NC-ND 4.0 — free for non-commercial use with attribution to Tsvetan Rouschev; commercial use by arrangement with the author.</p>",
   "license": "cc-by-nc-nd-4.0",
   "access_right": "open",
   "language": "eng",
@@ -17,76 +17,119 @@
     "Lean 4",
     "machine-checked proof",
     "formal verification",
-    "Z/9",
+    "modular arithmetic",
     "content-addressing",
     "theorem cluster",
-    "the machine",
     "reversal"
   ],
   "communities": [],
   "related_identifiers": [
     {
       "identifier": "10.5281/zenodo.21819217",
-      "relation": "isPartOf"
+      "relation": "isPartOf",
+      "scheme": "doi"
     },
     {
-      "identifier": "https://github.com/ceccec/millennium-solutions/blob/main/src/proof/reversal.lean",
-      "relation": "isSupplementTo"
+      "identifier": "https://github.com/ceccec/millennium-solutions/blob/83213ac8f1ad8bb0b5fe7eed9360838215b71bac/src/proof/reversal.lean",
+      "relation": "isSupplementTo",
+      "scheme": "url"
     },
     {
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_reversal_preserves_digit_sum",
-      "relation": "hasPart"
+      "relation": "hasPart",
+      "scheme": "url"
     },
     {
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_digital_root_is_invariant_under_reversal",
-      "relation": "hasPart"
+      "relation": "hasPart",
+      "scheme": "url"
     },
     {
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_the_ledger_reversal_cases",
-      "relation": "hasPart"
+      "relation": "hasPart",
+      "scheme": "url"
     },
     {
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_reversal_is_not_the_identity",
-      "relation": "hasPart"
+      "relation": "hasPart",
+      "scheme": "url"
     },
     {
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_palindromes_are_the_fixed_points",
-      "relation": "hasPart"
+      "relation": "hasPart",
+      "scheme": "url"
     },
     {
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_emirps_exist_below_one_hundred",
-      "relation": "hasPart"
+      "relation": "hasPart",
+      "scheme": "url"
     },
     {
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_reversal_does_not_preserve_primality",
-      "relation": "hasPart"
+      "relation": "hasPart",
+      "scheme": "url"
     },
     {
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_reversal_is_involutive_exactly_off_the_trailing_zeros",
-      "relation": "hasPart"
+      "relation": "hasPart",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_foldl_add_start",
+      "relation": "hasPart",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_the_digits_sum_to_the_number_mod_nine_when_the_fuel_covers_them",
+      "relation": "hasPart",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_a_number_is_below_ten_to_its_own_successor",
+      "relation": "hasPart",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_the_digit_sum_has_the_residue_of_the_number_mod_nine_for_every_n",
+      "relation": "hasPart",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_folding_by_ten_keeps_the_residue_of_the_digit_sum",
+      "relation": "hasPart",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_reversal_reversal_keeps_the_residue_mod_nine_for_every_n",
+      "relation": "hasPart",
+      "scheme": "url"
     }
   ],
-  "notes": "cluster reversal.lean · wing the machine · 8 sealed · joint address 3b083fac-92a3-8d45-a737-199fd51e8f0e · lattice centre (8,3,1,7,7,7,5) · neighbours address.lean, families.lean, energy.lean · concept DOI 10.5281/zenodo.21819217 · generated by scripts/clusters.ts — prepared, not uploaded",
+  "notes": "cluster reversal.lean · 14 sealed · joint address f7d572e9-6010-899d-912e-778ba70de9a0 · figures as of commit 83213ac8f1ad (2026-09-15) · concept DOI 10.5281/zenodo.21819217 · generated by scripts/clusters.ts",
   "files": [
     "src/proof/reversal.lean"
   ],
   "cluster": {
     "file": "reversal.lean",
     "wing": "the machine",
-    "sealed": 8,
+    "sealed": 14,
     "decided": 8,
-    "proved": 0,
+    "proved": 6,
     "declarations": 1,
     "joint": {
-      "root": "3b083fac-92a3-8d45-a737-199fd51e8f0e",
+      "root": "f7d572e9-6010-899d-912e-778ba70de9a0",
       "orderInvariant": true,
       "bindsEveryReceipt": true
     },
-    "strands": 1,
+    "strands": 5,
     "binding": [
       {
         "def": "reverseNum",
-        "theorems": 8
+        "theorems": 9
+      },
+      {
+        "def": "digitSum",
+        "theorems": 2
       },
       {
         "def": "isPrime",
@@ -99,38 +142,40 @@
     ],
     "lattice": {
       "centre": [
-        8,
-        3,
+        5,
+        4,
         1,
+        6,
         7,
-        7,
-        7,
-        5
+        5,
+        6
       ],
-      "within": 16.57,
-      "between": 15.49,
+      "within": 16.09,
+      "between": 15.53,
       "top": [
         {
-          "file": "address.lean",
+          "file": "demand2.lean",
           "pairs": 3,
-          "expected": 1.51,
-          "lift": 1.99
+          "expected": 1.19,
+          "lift": 2.52
         },
         {
-          "file": "families.lean",
-          "pairs": 7,
-          "expected": 3.73,
-          "lift": 1.88
+          "file": "ledgerclaims.lean",
+          "pairs": 3,
+          "expected": 1.19,
+          "lift": 2.52
         },
         {
-          "file": "energy.lean",
+          "file": "rights.lean",
           "pairs": 3,
-          "expected": 1.86,
-          "lift": 1.61
+          "expected": 1.19,
+          "lift": 2.52
         }
       ],
-      "chanceShare": 0.91,
+      "chanceShare": 0.76,
+      "nullMedian": 2.76,
       "shuffles": 200
-    }
+    },
+    "asOf": "83213ac8f1ad8bb0b5fe7eed9360838215b71bac"
   }
 }

@@ -279,4 +279,13 @@ theorem the_atoms_read_back_from_the_mass :
   (List.range 10).all (fun h => (List.range 10).all (fun o => atomsOf (mass h o) == some (h, o))) ∧
   atomsOf mgH2 = some (2, 0) ∧ atomsOf mgO2 = some (0, 2) ∧ atomsOf mgH2O = some (2, 1) := by decide
 
+
+-- ── the capped row above, proved for every value — no bound ───────────────────────────────────────────────────
+-- two_parts_in_three_is_two_thirds_at_every_scale checked 1 ≤ m ≤ 500; this proves the ratio part for every m.
+theorem two_parts_in_three_is_two_thirds_at_every_scale_for_every_m :
+    ∀ m : Nat, 0 < m → pct (2 * m) (3 * m) = 66 := by
+  intro m hm
+  unfold pct
+  rw [Nat.mul_comm 2 m, Nat.mul_assoc, Nat.mul_comm 3 m, Nat.mul_div_mul_left _ _ hm]
+
 end Energy

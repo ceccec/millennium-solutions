@@ -5,34 +5,34 @@
   "clusters": [
     {
       "file": "address.lean",
-      "title": "Addressing — 17 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+      "title": "Addressing — 17 machine-checked theorems and how they are bound",
       "wing": "the address",
       "sealed": 17,
       "joint": "2d9dd7f2-b9d7-88ff-a41f-139d893a3ad0",
       "neighbours": [
         {
           "file": "energy.lean",
-          "pairs": 12,
-          "expected": 3.96,
-          "lift": 3.03
+          "pairs": 13,
+          "expected": 3.98,
+          "lift": 3.27
         },
         {
           "file": "demand.lean",
           "pairs": 4,
-          "expected": 1.51,
-          "lift": 2.65
+          "expected": 1.63,
+          "lift": 2.46
         },
         {
           "file": "families.lean",
-          "pairs": 20,
-          "expected": 7.92,
-          "lift": 2.53
+          "pairs": 17,
+          "expected": 8.14,
+          "lift": 2.09
         }
       ]
     },
     {
       "file": "coin.lean",
-      "title": "The two-sided coin — 12 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+      "title": "The two-sided coin — 12 machine-checked theorems and how they are bound",
       "wing": "the ring",
       "sealed": 12,
       "joint": "e085bd35-36da-8011-a2b1-f08c6394f507",
@@ -40,188 +40,188 @@
         {
           "file": "reach.lean",
           "pairs": 3,
-          "expected": 0.67,
-          "lift": 4.51
+          "expected": 0.64,
+          "lift": 4.7
         },
         {
           "file": "generated.lean",
           "pairs": 4,
-          "expected": 1.73,
-          "lift": 2.31
+          "expected": 1.66,
+          "lift": 2.41
         },
         {
           "file": "light.lean",
           "pairs": 4,
-          "expected": 1.73,
-          "lift": 2.31
+          "expected": 1.66,
+          "lift": 2.41
         }
       ]
     },
     {
       "file": "demand.lean",
-      "title": "What is actually being asked for — 8 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+      "title": "What is actually being asked for — 9 machine-checked theorems and how they are bound",
       "wing": "the floor",
-      "sealed": 8,
-      "joint": "98a92a92-3e41-8fdb-9f2a-2638081e4672",
+      "sealed": 9,
+      "joint": "c432e103-7e2a-872a-be65-cc8c8fab660f",
       "neighbours": [
         {
           "file": "light.lean",
           "pairs": 3,
-          "expected": 1.15,
-          "lift": 2.6
+          "expected": 1.24,
+          "lift": 2.41
         },
         {
           "file": "energy.lean",
-          "pairs": 4,
-          "expected": 1.86,
-          "lift": 2.15
+          "pairs": 5,
+          "expected": 2.11,
+          "lift": 2.37
         },
         {
           "file": "elementary.lean",
-          "pairs": 6,
-          "expected": 2.84,
-          "lift": 2.11
+          "pairs": 7,
+          "expected": 3.35,
+          "lift": 2.09
         }
       ]
     },
     {
       "file": "demand2.lean",
-      "title": "The next tier of what is asked for — 8 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+      "title": "The next tier of what is asked for — 8 machine-checked theorems and how they are bound",
       "wing": "the floor",
       "sealed": 8,
       "joint": "3923cc7a-f137-8f83-a0dc-fb8c4bcaba45",
       "neighbours": [
         {
           "file": "reversal.lean",
-          "pairs": 3,
-          "expected": 0.71,
-          "lift": 4.23
+          "pairs": 4,
+          "expected": 1.19,
+          "lift": 3.36
         },
         {
           "file": "coin.lean",
           "pairs": 3,
-          "expected": 1.06,
-          "lift": 2.82
+          "expected": 1.02,
+          "lift": 2.94
         },
         {
           "file": "light.lean",
           "pairs": 3,
-          "expected": 1.15,
-          "lift": 2.6
+          "expected": 1.11,
+          "lift": 2.71
         }
       ]
     },
     {
       "file": "demand3.lean",
-      "title": "The named theorems people ask for — 7 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+      "title": "The named theorems people ask for — 14 machine-checked theorems and how they are bound",
       "wing": "the floor",
-      "sealed": 7,
-      "joint": "86438702-d5db-8609-ae70-f4272ca5370d",
+      "sealed": 14,
+      "joint": "6d6cdb33-33e8-8e1a-bd52-9b45e4a0bd2a",
       "neighbours": [
         {
-          "file": "index.lean",
+          "file": "flow.lean",
           "pairs": 3,
-          "expected": 0.85,
-          "lift": 3.51
+          "expected": 0.45,
+          "lift": 6.71
         },
         {
-          "file": "address.lean",
-          "pairs": 4,
-          "expected": 1.32,
-          "lift": 3.03
+          "file": "index.lean",
+          "pairs": 5,
+          "expected": 1.64,
+          "lift": 3.05
         },
         {
-          "file": "families.lean",
-          "pairs": 7,
-          "expected": 3.26,
-          "lift": 2.15
+          "file": "ledgerclaims.lean",
+          "pairs": 3,
+          "expected": 1.19,
+          "lift": 2.52
         }
       ]
     },
     {
       "file": "elementary.lean",
-      "title": "Elementary arithmetic — 32 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+      "title": "Elementary arithmetic — 35 machine-checked theorems and how they are bound",
       "wing": "the ring",
-      "sealed": 32,
-      "joint": "b018e6fb-dc7a-86e7-bc49-d59e7e057f65",
+      "sealed": 35,
+      "joint": "1fa0a1e3-0272-818b-806b-cccbbccda156",
       "neighbours": [
         {
           "file": "flow.lean",
-          "pairs": 4,
-          "expected": 1.06,
-          "lift": 3.76
+          "pairs": 5,
+          "expected": 1.12,
+          "lift": 4.48
         },
         {
           "file": "demand.lean",
-          "pairs": 8,
-          "expected": 2.84,
-          "lift": 2.82
+          "pairs": 9,
+          "expected": 3.35,
+          "lift": 2.69
         },
         {
-          "file": "reach.lean",
-          "pairs": 4,
-          "expected": 1.77,
-          "lift": 2.25
+          "file": "merkaba.lean",
+          "pairs": 8,
+          "expected": 2.98,
+          "lift": 2.69
         }
       ]
     },
     {
       "file": "energy.lean",
-      "title": "The water loop — 21 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+      "title": "The water loop — 22 machine-checked theorems and how they are bound",
       "wing": "the floor",
-      "sealed": 21,
-      "joint": "1dadd6fb-87ec-8e61-8aca-ff9c25110203",
+      "sealed": 22,
+      "joint": "4eeb764d-2d82-8fc2-8359-16cbab272581",
       "neighbours": [
         {
           "file": "demand.lean",
-          "pairs": 5,
-          "expected": 1.86,
-          "lift": 2.68
+          "pairs": 6,
+          "expected": 2.11,
+          "lift": 2.85
         },
         {
           "file": "address.lean",
           "pairs": 10,
-          "expected": 3.96,
-          "lift": 2.53
+          "expected": 3.98,
+          "lift": 2.51
         },
         {
           "file": "generated.lean",
           "pairs": 6,
-          "expected": 3.03,
-          "lift": 1.98
+          "expected": 3.04,
+          "lift": 1.97
         }
       ]
     },
     {
       "file": "families.lean",
-      "title": "Families over the ring — 42 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+      "title": "Families over the ring — 45 machine-checked theorems and how they are bound",
       "wing": "the ring",
-      "sealed": 42,
-      "joint": "07169aa9-011e-8535-b8f4-b3256bae3a46",
+      "sealed": 45,
+      "joint": "a25d083c-b627-8958-9b97-d9d79fdae1a4",
       "neighbours": [
         {
           "file": "address.lean",
-          "pairs": 19,
-          "expected": 7.92,
-          "lift": 2.4
-        },
-        {
-          "file": "demand3.lean",
-          "pairs": 6,
-          "expected": 3.26,
-          "lift": 1.84
+          "pairs": 18,
+          "expected": 8.14,
+          "lift": 2.21
         },
         {
           "file": "phenomena.lean",
-          "pairs": 3,
-          "expected": 1.86,
-          "lift": 1.61
+          "pairs": 4,
+          "expected": 1.91,
+          "lift": 2.09
+        },
+        {
+          "file": "demand3.lean",
+          "pairs": 10,
+          "expected": 6.7,
+          "lift": 1.49
         }
       ]
     },
     {
       "file": "flow.lean",
-      "title": "The doubling flow, for every step — 3 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+      "title": "The doubling flow, for every step — 3 machine-checked theorems and how they are bound",
       "wing": "the ring",
       "sealed": 3,
       "joint": "e2bdf7b9-c448-8590-92aa-bcc9867e1d95",
@@ -229,20 +229,20 @@
         {
           "file": "elementary.lean",
           "pairs": 4,
-          "expected": 1.06,
-          "lift": 3.76
+          "expected": 1.12,
+          "lift": 3.58
         },
         {
           "file": "imagined.lean",
           "pairs": 5,
-          "expected": 3.93,
-          "lift": 1.27
+          "expected": 3.77,
+          "lift": 1.33
         }
       ]
     },
     {
       "file": "fnv.lean",
-      "title": "FNV-1a, the address function — 12 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+      "title": "FNV-1a, the address function — 12 machine-checked theorems and how they are bound",
       "wing": "the address",
       "sealed": 12,
       "joint": "4f060cb7-40aa-8d0f-a756-a18a83e19033",
@@ -250,26 +250,26 @@
         {
           "file": "demand.lean",
           "pairs": 4,
-          "expected": 1.06,
-          "lift": 3.76
+          "expected": 1.15,
+          "lift": 3.48
         },
         {
           "file": "involution.lean",
           "pairs": 3,
-          "expected": 1.06,
-          "lift": 2.82
+          "expected": 1.02,
+          "lift": 2.94
         },
         {
           "file": "index.lean",
           "pairs": 3,
-          "expected": 1.46,
-          "lift": 2.05
+          "expected": 1.4,
+          "lift": 2.14
         }
       ]
     },
     {
       "file": "generated.lean",
-      "title": "Generated at scale — 13 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+      "title": "Generated at scale — 13 machine-checked theorems and how they are bound",
       "wing": "the machine",
       "sealed": 13,
       "joint": "15b7d231-34fd-8268-866a-d5ba6bc01ba0",
@@ -277,26 +277,26 @@
         {
           "file": "theorems.lean",
           "pairs": 4,
-          "expected": 1.15,
-          "lift": 3.47
+          "expected": 1.11,
+          "lift": 3.62
         },
         {
           "file": "coin.lean",
           "pairs": 4,
-          "expected": 1.73,
-          "lift": 2.31
+          "expected": 1.66,
+          "lift": 2.41
         },
         {
           "file": "address.lean",
           "pairs": 5,
-          "expected": 2.45,
-          "lift": 2.04
+          "expected": 2.35,
+          "lift": 2.13
         }
       ]
     },
     {
       "file": "imagined.lean",
-      "title": "What enumeration proposed and the kernel kept — 118 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+      "title": "What enumeration proposed and the kernel kept — 118 machine-checked theorems and how they are bound",
       "wing": "the imagined",
       "sealed": 118,
       "joint": "37fe0337-e772-8eb0-861c-2ee17049b0cf",
@@ -304,53 +304,53 @@
         {
           "file": "energy.lean",
           "pairs": 46,
-          "expected": 27.49,
+          "expected": 27.62,
           "lift": 1.67
+        },
+        {
+          "file": "demand.lean",
+          "pairs": 18,
+          "expected": 11.3,
+          "lift": 1.59
         },
         {
           "file": "demand2.lean",
           "pairs": 16,
-          "expected": 10.47,
-          "lift": 1.53
-        },
-        {
-          "file": "address.lean",
-          "pairs": 32,
-          "expected": 22.25,
-          "lift": 1.44
+          "expected": 10.04,
+          "lift": 1.59
         }
       ]
     },
     {
       "file": "index.lean",
-      "title": "The Millennium floor — 11 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+      "title": "The Millennium floor — 11 machine-checked theorems and how they are bound",
       "wing": "the floor",
       "sealed": 11,
       "joint": "fa3e62be-f31f-8dd3-ac67-0dce4564fc6a",
       "neighbours": [
         {
           "file": "demand3.lean",
-          "pairs": 3,
-          "expected": 0.85,
-          "lift": 3.51
+          "pairs": 6,
+          "expected": 1.64,
+          "lift": 3.66
         },
         {
           "file": "address.lean",
           "pairs": 5,
-          "expected": 2.07,
-          "lift": 2.41
+          "expected": 1.99,
+          "lift": 2.51
         },
         {
           "file": "elementary.lean",
-          "pairs": 9,
-          "expected": 3.9,
-          "lift": 2.3
+          "pairs": 10,
+          "expected": 4.1,
+          "lift": 2.44
         }
       ]
     },
     {
       "file": "involution.lean",
-      "title": "What every involution gives, and what it does not — 8 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+      "title": "What every involution gives, and what it does not — 8 machine-checked theorems and how they are bound",
       "wing": "the ring",
       "sealed": 8,
       "joint": "980210d1-24d9-8a7f-a759-3e28e4faa442",
@@ -358,53 +358,53 @@
         {
           "file": "priorart.lean",
           "pairs": 3,
-          "expected": 0.8,
-          "lift": 3.76
+          "expected": 0.77,
+          "lift": 3.92
         },
         {
           "file": "coin.lean",
           "pairs": 3,
-          "expected": 1.06,
-          "lift": 2.82
+          "expected": 1.02,
+          "lift": 2.94
         },
         {
           "file": "fnv.lean",
           "pairs": 3,
-          "expected": 1.06,
-          "lift": 2.82
+          "expected": 1.02,
+          "lift": 2.94
         }
       ]
     },
     {
       "file": "ledgerclaims.lean",
-      "title": "What the ledger claims — 8 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+      "title": "What the ledger claims — 8 machine-checked theorems and how they are bound",
       "wing": "the address",
       "sealed": 8,
       "joint": "ca6ad553-fa5e-854d-8d19-3c2829bfe6cd",
       "neighbours": [
         {
-          "file": "reach.lean",
+          "file": "demand3.lean",
           "pairs": 3,
-          "expected": 0.44,
-          "lift": 6.76
+          "expected": 1.19,
+          "lift": 2.52
         },
         {
           "file": "address.lean",
-          "pairs": 4,
-          "expected": 1.51,
-          "lift": 2.65
+          "pairs": 3,
+          "expected": 1.45,
+          "lift": 2.07
         },
         {
-          "file": "energy.lean",
-          "pairs": 3,
-          "expected": 1.86,
-          "lift": 1.61
+          "file": "elementary.lean",
+          "pairs": 5,
+          "expected": 2.98,
+          "lift": 1.68
         }
       ]
     },
     {
       "file": "light.lean",
-      "title": "Light, space and time — arithmetic on numbers a standards body fixed — 13 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+      "title": "Light, space and time — arithmetic on numbers a standards body fixed — 13 machine-checked theorems and how they are bound",
       "wing": "the floor",
       "sealed": 13,
       "joint": "1d15e71b-e63b-8c65-8264-bc045b9154d1",
@@ -412,53 +412,53 @@
         {
           "file": "demand2.lean",
           "pairs": 5,
-          "expected": 1.15,
-          "lift": 4.33
+          "expected": 1.11,
+          "lift": 4.52
         },
         {
           "file": "coin.lean",
           "pairs": 7,
-          "expected": 1.73,
-          "lift": 4.04
+          "expected": 1.66,
+          "lift": 4.22
         },
         {
-          "file": "demand.lean",
+          "file": "merkaba.lean",
           "pairs": 3,
-          "expected": 1.15,
-          "lift": 2.6
+          "expected": 1.11,
+          "lift": 2.71
         }
       ]
     },
     {
       "file": "mechanical.lean",
-      "title": "Mechanically translated — 107 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+      "title": "Mechanically translated — 112 machine-checked theorems and how they are bound",
       "wing": "the machine",
-      "sealed": 107,
-      "joint": "dcd36e87-128c-8d3b-8505-0cf4c78ba141",
+      "sealed": 112,
+      "joint": "cab3818e-6e57-87f3-8a16-91658848ec91",
       "neighbours": [
+        {
+          "file": "address.lean",
+          "pairs": 36,
+          "expected": 20.26,
+          "lift": 1.78
+        },
         {
           "file": "priorart.lean",
           "pairs": 18,
-          "expected": 10.68,
+          "expected": 10.72,
           "lift": 1.68
         },
         {
-          "file": "address.lean",
-          "pairs": 32,
-          "expected": 20.18,
-          "lift": 1.59
-        },
-        {
           "file": "fnv.lean",
-          "pairs": 20,
-          "expected": 14.24,
-          "lift": 1.4
+          "pairs": 21,
+          "expected": 14.3,
+          "lift": 1.47
         }
       ]
     },
     {
       "file": "merkaba.lean",
-      "title": "The merkaba — 8 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+      "title": "The merkaba — 8 machine-checked theorems and how they are bound",
       "wing": "the ring",
       "sealed": 8,
       "joint": "4d1e4226-de62-81f2-9e4e-1f28aad0eb1d",
@@ -466,26 +466,26 @@
         {
           "file": "address.lean",
           "pairs": 5,
-          "expected": 1.51,
-          "lift": 3.31
+          "expected": 1.45,
+          "lift": 3.46
         },
         {
           "file": "light.lean",
           "pairs": 3,
-          "expected": 1.15,
-          "lift": 2.6
+          "expected": 1.11,
+          "lift": 2.71
         },
         {
           "file": "elementary.lean",
-          "pairs": 5,
-          "expected": 2.84,
-          "lift": 1.76
+          "pairs": 7,
+          "expected": 2.98,
+          "lift": 2.35
         }
       ]
     },
     {
       "file": "merkle.lean",
-      "title": "The fold — 11 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+      "title": "The fold — 11 machine-checked theorems and how they are bound",
       "wing": "the address",
       "sealed": 11,
       "joint": "05a04d64-88a2-82b9-8c59-f26c36cd4312",
@@ -493,26 +493,26 @@
         {
           "file": "nim.lean",
           "pairs": 3,
-          "expected": 1.22,
-          "lift": 2.46
+          "expected": 1.17,
+          "lift": 2.56
+        },
+        {
+          "file": "demand3.lean",
+          "pairs": 4,
+          "expected": 1.64,
+          "lift": 2.44
         },
         {
           "file": "families.lean",
           "pairs": 12,
-          "expected": 5.13,
-          "lift": 2.34
-        },
-        {
-          "file": "address.lean",
-          "pairs": 4,
-          "expected": 2.07,
-          "lift": 1.93
+          "expected": 5.27,
+          "lift": 2.28
         }
       ]
     },
     {
       "file": "nim.lean",
-      "title": "Nim — 10 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+      "title": "Nim — 10 machine-checked theorems and how they are bound",
       "wing": "the machine",
       "sealed": 10,
       "joint": "e5bc31c0-3223-8019-8629-1935188c7fe5",
@@ -520,53 +520,53 @@
         {
           "file": "rights.lean",
           "pairs": 3,
-          "expected": 0.89,
-          "lift": 3.38
+          "expected": 0.85,
+          "lift": 3.52
         },
         {
-          "file": "energy.lean",
-          "pairs": 4,
-          "expected": 2.33,
-          "lift": 1.72
+          "file": "demand3.lean",
+          "pairs": 3,
+          "expected": 1.49,
+          "lift": 2.01
         },
         {
           "file": "families.lean",
-          "pairs": 8,
-          "expected": 4.66,
-          "lift": 1.72
+          "pairs": 9,
+          "expected": 4.79,
+          "lift": 1.88
         }
       ]
     },
     {
       "file": "phenomena.lean",
-      "title": "Every phenomenon this deposit touches, and the rule for the rest — 4 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+      "title": "Every phenomenon this deposit touches, and the rule for the rest — 4 machine-checked theorems and how they are bound",
       "wing": "the floor",
       "sealed": 4,
       "joint": "7c2c40c6-89f6-8eb8-bc77-10aca5a1c56f",
       "neighbours": [
         {
           "file": "families.lean",
-          "pairs": 4,
-          "expected": 1.86,
-          "lift": 2.15
+          "pairs": 5,
+          "expected": 1.91,
+          "lift": 2.61
         },
         {
           "file": "elementary.lean",
           "pairs": 3,
-          "expected": 1.42,
-          "lift": 2.11
+          "expected": 1.49,
+          "lift": 2.01
         },
         {
           "file": "mechanical.lean",
           "pairs": 6,
-          "expected": 4.75,
+          "expected": 4.77,
           "lift": 1.26
         }
       ]
     },
     {
       "file": "priorart.lean",
-      "title": "Prior art, and what novelty is claimed — 9 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+      "title": "Prior art, and what novelty is claimed — 9 machine-checked theorems and how they are bound",
       "wing": "the record",
       "sealed": 9,
       "joint": "dce2284f-5e64-85d5-92f0-c6bc93b315b9",
@@ -574,53 +574,53 @@
         {
           "file": "involution.lean",
           "pairs": 4,
-          "expected": 0.8,
-          "lift": 5.01
+          "expected": 0.77,
+          "lift": 5.22
         },
         {
           "file": "energy.lean",
-          "pairs": 3,
-          "expected": 2.1,
-          "lift": 1.43
+          "pairs": 4,
+          "expected": 2.11,
+          "lift": 1.9
         },
         {
           "file": "families.lean",
           "pairs": 6,
-          "expected": 4.19,
-          "lift": 1.43
+          "expected": 4.31,
+          "lift": 1.39
         }
       ]
     },
     {
       "file": "quantum.lean",
-      "title": "Order-invariance — 11 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+      "title": "Order-invariance — 11 machine-checked theorems and how they are bound",
       "wing": "the floor",
       "sealed": 11,
       "joint": "18d30f2b-d336-8caf-9a47-146ae047dfc4",
       "neighbours": [
         {
-          "file": "rights.lean",
-          "pairs": 3,
-          "expected": 0.98,
-          "lift": 3.07
-        },
-        {
           "file": "elementary.lean",
-          "pairs": 8,
-          "expected": 3.9,
-          "lift": 2.05
+          "pairs": 9,
+          "expected": 4.1,
+          "lift": 2.2
         },
         {
-          "file": "recovered.lean",
+          "file": "z9plus.lean",
+          "pairs": 5,
+          "expected": 3.74,
+          "lift": 1.34
+        },
+        {
+          "file": "energy.lean",
           "pairs": 3,
-          "expected": 1.83,
-          "lift": 1.64
+          "expected": 2.57,
+          "lift": 1.17
         }
       ]
     },
     {
       "file": "reach.lean",
-      "title": "What exhaustion reaches, and what lies outside it — 5 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+      "title": "What exhaustion reaches, and what lies outside it — 5 machine-checked theorems and how they are bound",
       "wing": "the floor",
       "sealed": 5,
       "joint": "05528d94-5d7d-8142-9aa4-b7a650cd30e0",
@@ -628,134 +628,134 @@
         {
           "file": "ledgerclaims.lean",
           "pairs": 3,
-          "expected": 0.44,
-          "lift": 6.76
+          "expected": 0.43,
+          "lift": 7.05
         },
         {
           "file": "coin.lean",
           "pairs": 4,
-          "expected": 0.67,
-          "lift": 6.01
+          "expected": 0.64,
+          "lift": 6.27
         },
         {
-          "file": "elementary.lean",
-          "pairs": 4,
-          "expected": 1.77,
-          "lift": 2.25
+          "file": "energy.lean",
+          "pairs": 3,
+          "expected": 1.17,
+          "lift": 2.56
         }
       ]
     },
     {
       "file": "recovered.lean",
-      "title": "Recovered — claims that computed and were withdrawn for want of a proof — 15 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+      "title": "Recovered — claims that computed and were withdrawn for want of a proof — 15 machine-checked theorems and how they are bound",
       "wing": "the returned",
       "sealed": 15,
       "joint": "31d07f8b-f421-81f8-a182-748948c44492",
       "neighbours": [
         {
-          "file": "generated.lean",
-          "pairs": 7,
-          "expected": 2.16,
-          "lift": 3.24
-        },
-        {
           "file": "theorems.lean",
           "pairs": 4,
-          "expected": 1.33,
-          "lift": 3
+          "expected": 1.28,
+          "lift": 3.13
         },
         {
-          "file": "speed.lean",
-          "pairs": 3,
-          "expected": 1.83,
-          "lift": 1.64
+          "file": "generated.lean",
+          "pairs": 6,
+          "expected": 2.07,
+          "lift": 2.89
+        },
+        {
+          "file": "demand3.lean",
+          "pairs": 4,
+          "expected": 2.23,
+          "lift": 1.79
         }
       ]
     },
     {
       "file": "reversal.lean",
-      "title": "Digit reversal — 8 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+      "title": "Digit reversal — 14 machine-checked theorems and how they are bound",
       "wing": "the machine",
-      "sealed": 8,
-      "joint": "3b083fac-92a3-8d45-a737-199fd51e8f0e",
+      "sealed": 14,
+      "joint": "f7d572e9-6010-899d-912e-778ba70de9a0",
       "neighbours": [
         {
-          "file": "address.lean",
+          "file": "demand2.lean",
           "pairs": 3,
-          "expected": 1.51,
-          "lift": 1.99
+          "expected": 1.19,
+          "lift": 2.52
         },
         {
-          "file": "families.lean",
-          "pairs": 7,
-          "expected": 3.73,
-          "lift": 1.88
+          "file": "ledgerclaims.lean",
+          "pairs": 3,
+          "expected": 1.19,
+          "lift": 2.52
         },
         {
-          "file": "energy.lean",
+          "file": "rights.lean",
           "pairs": 3,
-          "expected": 1.86,
-          "lift": 1.61
+          "expected": 1.19,
+          "lift": 2.52
         }
       ]
     },
     {
       "file": "rights.lean",
-      "title": "Rights — 8 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+      "title": "Rights — 8 machine-checked theorems and how they are bound",
       "wing": "the record",
       "sealed": 8,
       "joint": "6ae9baad-d17f-8059-be52-438399bff840",
       "neighbours": [
         {
           "file": "nim.lean",
-          "pairs": 4,
-          "expected": 0.89,
-          "lift": 4.51
+          "pairs": 3,
+          "expected": 0.85,
+          "lift": 3.52
         },
         {
           "file": "sequences.lean",
           "pairs": 3,
-          "expected": 1.06,
-          "lift": 2.82
+          "expected": 1.02,
+          "lift": 2.94
         },
         {
-          "file": "imagined.lean",
-          "pairs": 16,
-          "expected": 10.47,
-          "lift": 1.53
+          "file": "energy.lean",
+          "pairs": 3,
+          "expected": 1.87,
+          "lift": 1.6
         }
       ]
     },
     {
       "file": "sequences.lean",
-      "title": "Sequences — 12 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+      "title": "Sequences — 12 machine-checked theorems and how they are bound",
       "wing": "the ring",
       "sealed": 12,
       "joint": "7850badf-1d06-819a-a625-34cc65765e57",
       "neighbours": [
         {
-          "file": "priorart.lean",
-          "pairs": 4,
-          "expected": 1.2,
-          "lift": 3.34
-        },
-        {
           "file": "rights.lean",
           "pairs": 3,
-          "expected": 1.06,
-          "lift": 2.82
+          "expected": 1.02,
+          "lift": 2.94
+        },
+        {
+          "file": "priorart.lean",
+          "pairs": 3,
+          "expected": 1.15,
+          "lift": 2.61
         },
         {
           "file": "address.lean",
           "pairs": 4,
-          "expected": 2.26,
-          "lift": 1.77
+          "expected": 2.17,
+          "lift": 1.84
         }
       ]
     },
     {
       "file": "speed.lean",
-      "title": "Why verification is fast, and what it is not — 11 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+      "title": "Why verification is fast, and what it is not — 11 machine-checked theorems and how they are bound",
       "wing": "the floor",
       "sealed": 11,
       "joint": "7d92d6c4-dbf8-85d1-bb47-06923a3b753f",
@@ -763,53 +763,53 @@
         {
           "file": "demand.lean",
           "pairs": 5,
-          "expected": 0.98,
-          "lift": 5.12
+          "expected": 1.05,
+          "lift": 4.75
+        },
+        {
+          "file": "demand3.lean",
+          "pairs": 5,
+          "expected": 1.64,
+          "lift": 3.05
         },
         {
           "file": "z9.lean",
           "pairs": 7,
-          "expected": 2.56,
-          "lift": 2.73
-        },
-        {
-          "file": "coin.lean",
-          "pairs": 3,
-          "expected": 1.46,
-          "lift": 2.05
+          "expected": 2.46,
+          "lift": 2.85
         }
       ]
     },
     {
       "file": "split.lean",
-      "title": "The digit split — 19 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+      "title": "The digit split — 20 machine-checked theorems and how they are bound",
       "wing": "the ring",
-      "sealed": 19,
-      "joint": "f2559dc3-4948-8db4-b488-b9d61eaf226e",
+      "sealed": 20,
+      "joint": "5543267d-338d-8042-9603-abf741d3fdf8",
       "neighbours": [
         {
           "file": "demand2.lean",
           "pairs": 5,
-          "expected": 1.69,
-          "lift": 2.97
+          "expected": 1.7,
+          "lift": 2.94
         },
         {
           "file": "theorems.lean",
           "pairs": 4,
-          "expected": 1.69,
-          "lift": 2.37
+          "expected": 1.7,
+          "lift": 2.35
         },
         {
           "file": "families.lean",
-          "pairs": 17,
-          "expected": 8.85,
-          "lift": 1.92
+          "pairs": 18,
+          "expected": 9.57,
+          "lift": 1.88
         }
       ]
     },
     {
       "file": "theorems.lean",
-      "title": "Theorems — 8 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+      "title": "Theorems — 8 machine-checked theorems and how they are bound",
       "wing": "the machine",
       "sealed": 8,
       "joint": "eb4c79f8-2e2d-8e98-9847-2a64689b1f0e",
@@ -817,74 +817,74 @@
         {
           "file": "generated.lean",
           "pairs": 4,
-          "expected": 1.15,
-          "lift": 3.47
+          "expected": 1.11,
+          "lift": 3.62
         },
         {
           "file": "coin.lean",
           "pairs": 3,
-          "expected": 1.06,
-          "lift": 2.82
+          "expected": 1.02,
+          "lift": 2.94
         },
         {
           "file": "recovered.lean",
           "pairs": 3,
-          "expected": 1.33,
-          "lift": 2.25
+          "expected": 1.28,
+          "lift": 2.35
         }
       ]
     },
     {
       "file": "z9.lean",
-      "title": "The ring ℤ/9 — 21 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+      "title": "The ring ℤ/9 — 21 machine-checked theorems and how they are bound",
       "wing": "the ring",
       "sealed": 21,
       "joint": "508fb2d3-44b1-8a7e-a137-3f5118040a72",
       "neighbours": [
         {
           "file": "demand.lean",
-          "pairs": 5,
-          "expected": 1.86,
-          "lift": 2.68
+          "pairs": 6,
+          "expected": 2.01,
+          "lift": 2.98
         },
         {
           "file": "speed.lean",
           "pairs": 6,
-          "expected": 2.56,
-          "lift": 2.34
+          "expected": 2.46,
+          "lift": 2.44
         },
         {
-          "file": "elementary.lean",
-          "pairs": 14,
-          "expected": 7.45,
-          "lift": 1.88
+          "file": "demand3.lean",
+          "pairs": 7,
+          "expected": 3.13,
+          "lift": 2.24
         }
       ]
     },
     {
       "file": "z9plus.lean",
-      "title": "Entanglement in the ring — 32 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+      "title": "Entanglement in the ring — 32 machine-checked theorems and how they are bound",
       "wing": "the ring",
       "sealed": 32,
       "joint": "c33aca9a-7c2b-8fb6-856f-d6d5edf66b39",
       "neighbours": [
         {
-          "file": "coin.lean",
+          "file": "fnv.lean",
           "pairs": 6,
-          "expected": 4.26,
-          "lift": 1.41
+          "expected": 4.09,
+          "lift": 1.47
         },
         {
-          "file": "demand.lean",
-          "pairs": 4,
-          "expected": 2.84,
-          "lift": 1.41
+          "file": "imagined.lean",
+          "pairs": 57,
+          "expected": 40.17,
+          "lift": 1.42
         },
         {
           "file": "families.lean",
           "pairs": 21,
-          "expected": 14.91,
-          "lift": 1.41
+          "expected": 15.32,
+          "lift": 1.37
         }
       ]
     }
