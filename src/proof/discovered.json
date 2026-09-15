@@ -18790,7 +18790,10 @@
   {
     "key": "lean_light_the_second_returns_from_the_metre_and_the_period_for_every_s",
     "name": "lean light.lean: the_second_returns_from_the_metre_and_the_period_for_every_s — ∀ s : Nat, travel s / c = s ∧ periods s / dNuCs = s — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
-    "receipt": "1de974bb-854a-879c-a8f0-712b59f8d7bc"
+    "receipt": "1de974bb-854a-879c-a8f0-712b59f8d7bc",
+    "revoked": true,
+    "supersededBy": "lean_light_the_second_returns_from_the_metre_and_the_period_at_every_duration",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_light_the_second_returns_from_the_metre_and_the_period_at_every_duration now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_mechanical_repeated_doubling_is_the_power_of_two_for_every_k",

@@ -148,12 +148,6 @@ theorem the_definitions_are_seven_and_travel_fixes_zero :
   defining.length = 7 ∧ travel 0 = 0 := by decide
 
 
--- ── the capped row above, proved for every whole number of seconds — no bound ───────────────────────────────
--- the second reads back from the metre and from the caesium period at every s, not only s < 100.
-theorem the_second_returns_from_the_metre_and_the_period_for_every_s :
-    ∀ s : Nat, travel s / c = s ∧ periods s / dNuCs = s := by
-  intro s
-  exact ⟨Nat.mul_div_cancel_left s (by decide), Nat.mul_div_cancel_left s (by decide)⟩
 
 
 -- ── reflections, from the easy batch: each law beside its inverse (the 2×7 ↔ 1+6 wave) ──

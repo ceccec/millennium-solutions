@@ -22,7 +22,7 @@ title: Challenges
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (807)
+### lean (806)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -717,8 +717,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
   intro), standard axioms only — checked by lean.ts  ·  `3159b043-f18c…`
 - [lean_split_the_coin_step_and_the_coins_are_inverse_for_every_c](/theorem/lean_split_the_coin_step_and_the_coins_are_inverse_for_every_c) — lean split.lean: the_coin_step_and_the_coins_are_inverse_for_every_c — ∀ c : Nat, 3 * c / 3 = c ∧ (3 * c) % 3 = 0 — proved by the Lean kernel for every value (by
   intro), standard axioms only — checked by lean.ts  ·  `1c1ebe41-4e80…`
-- [lean_light_the_second_returns_from_the_metre_and_the_period_for_every_s](/theorem/lean_light_the_second_returns_from_the_metre_and_the_period_for_every_s) — lean light.lean: the_second_returns_from_the_metre_and_the_period_for_every_s — ∀ s : Nat, travel s / c = s ∧ periods s / dNuCs = s — proved by the Lean kernel for every value (by
-  intro), standard axioms only — checked by lean.ts  ·  `1de974bb-854a…`
 - [lean_mechanical_repeated_doubling_is_the_power_of_two_for_every_k](/theorem/lean_mechanical_repeated_doubling_is_the_power_of_two_for_every_k) — lean mechanical.lean: repeated_doubling_is_the_power_of_two_for_every_k — ∀ k : Nat, dbl k = 2 ^ k — proved by the Lean kernel for every value (by
   intro), standard axioms only — checked by lean.ts  ·  `71d6eeaa-fd06…`
 - [lean_mechanical_relation_digitroot_is_residue_mod9_for_every_n](/theorem/lean_mechanical_relation_digitroot_is_residue_mod9_for_every_n) — lean mechanical.lean: relation_digitroot_is_residue_mod9_for_every_n — ∀ n : Nat, 0 &lt; n → DR n = (n - 1) % 9 + 1 — proved by the Lean kernel for every value (by
@@ -1026,7 +1024,7 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - **1** — revoked in place: it asserts adjudicate('we prove all seven')
 - **1** — carried: this key was sealed from a theorem no longer in src/proof
 
-## Carried — 434 withdrawn entries whose statement a proof now carries
+## Carried — 435 withdrawn entries whose statement a proof now carries
 
 Each was withdrawn for want of a Lean proof and has since been given one, at a new key. The entry is not restored: its own evidence is still a TypeScript test, and it did not hold on what it had. What the record adds is where the statement stands now.
 
@@ -1071,7 +1069,7 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`hasinv_d1`~~ → [`lean_families_an_inverse_mod_nine_exists_at_exactly_the_units`](/theorem/lean_families_an_inverse_mod_nine_exists_at_exactly_the_units)
 - ~~`hasinv_d2`~~ → [`lean_families_an_inverse_mod_nine_exists_at_exactly_the_units`](/theorem/lean_families_an_inverse_mod_nine_exists_at_exactly_the_units)
 
-…and 394 more.
+…and 395 more.
 
 <details><summary>List all 1514 withdrawn keys — nothing proves these</summary>
 

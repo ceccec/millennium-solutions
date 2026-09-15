@@ -25,10 +25,10 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 816 kernel-accepted declarations across 33 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `03bb8fd7-8470-8985-b90f-d597fa390e42`</sub>
-- 630 of those 816 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 186 close by rfl and are declarations.
-  <sub>SEALED · `d27b2416-8049-8b5b-ac51-a8cefb31d7c2`</sub>
+- The formal layer holds 815 kernel-accepted declarations across 33 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `9180458c-b88e-8e53-a424-7f6b62f8a719`</sub>
+- 630 of those 815 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 185 close by rfl and are declarations.
+  <sub>SEALED · `e1a852b2-7a11-82db-a82f-0bc1cc99104c`</sub>
 - 891 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
   <sub>SEALED · `f09699de-82af-8255-ace6-52cc69755a6f`</sub>
 
@@ -100,7 +100,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-33 Lean files in 7 wings, 816 declarations of which 807 are theorems. The prose in this section is read out of the
+33 Lean files in 7 wings, 815 declarations of which 806 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -148,7 +148,7 @@ this page; there is nowhere else to keep the description in step.
 
 **The Millennium floor** — `index.lean`, 11 theorem(s). Bounded, so the credit stops where the earlier work does: what is NOT prior art is the use of that orbit as a floor for what this deposit does   and does not settle, which is a statement about this repository and has no earlier author.   Verification by exhaustion in Lean is this deposit's contribution, and verification is not discovery. prior_art_search: literature search performed 2026-09-05, terms "doubling sequence modulo 9 orbit   1 2 4 8 7 5 cyclic group generator digital root"; prior art found and credited. prior_art_pool: bounded   digit arithmetic of the doubling sequence; searchable independently of this deposit.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: the Millennium floor, computed from this sequence The Millennium floor — seven honest theorems, one per problem, COMPUTED from the sequence.
 
-**Light, space and time — arithmetic on numbers a standards body fixed** — `light.lean`, 16 theorem(s). Poids et Mesures, not results of this deposit: the metre from the speed of light (17th CGPM, 1983) and   the seven defining constants fixed exactly in the 2019 revision of the SI, effective 20 May 2019   (BIPM, https://www.bipm.org/en/measurement-units/si-defining-constants). Nothing here measures anything.
+**Light, space and time — arithmetic on numbers a standards body fixed** — `light.lean`, 15 theorem(s). Poids et Mesures, not results of this deposit: the metre from the speed of light (17th CGPM, 1983) and   the seven defining constants fixed exactly in the 2019 revision of the SI, effective 20 May 2019   (BIPM, https://www.bipm.org/en/measurement-units/si-defining-constants). Nothing here measures anything.
 
 **Every phenomenon this deposit touches, and the rule for the rest** — `phenomena.lean`, 4 theorem(s). Générale des Poids et Mesures (2019 revision, effective 20 May 2019); the electrochemical results are   Michael Faraday's laws of electrolysis, 1834, and the standard enthalpy of combustion of hydrogen.   Every physical result named here has an earlier author or a standards body, and none is this deposit's.
 
@@ -184,7 +184,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Recovered — claims that computed and were withdrawn for want of a proof** — `recovered.lean`, 15 theorem(s). material, credited. What is NOT prior art is that these particular statements sat WITHDRAWN in this   deposit's ledger, each recorded as "not backed by a Lean proof. Its evidence is a TypeScript test",   while every one is decidable in a line. prior_art_search: literature search performed 2026-09-05, terms "units and non-units of Z/9 multiplicative   inverses group of units modulo 9"; prior art found and credited.
 
-20 of 816 declarations carry no comment of their own and are shown here as the gap they are, not
+20 of 815 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -194,19 +194,19 @@ Read from the artefacts at build time, never carried between runs.
 | measure | value |
 |---|---|
 | ledger entries | 2,755 — 344 octaves and 3 over |
-| standing — carries its own proof | **807** |
-| carried — withdrawn on its own evidence, proved by a live theorem | **434** |
+| standing — carries its own proof | **806** |
+| carried — withdrawn on its own evidence, proved by a live theorem | **435** |
 | withdrawn — nothing proves it | 1,514 |
 | proved in total | **1241** of 2,755 |
-| standing keys → distinct theorems | 807 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 33 · 807 theorems (630 closed by exhaustion, axiom-free · 177 proved for every value on propext and Quot.sound) + 9 rfl declarations |
-| proved `by decide` | 630 of 816 |
+| standing keys → distinct theorems | 806 sealed, 0 of them keyed twice, 0 unresolvable |
+| Lean files · theorems | 33 · 806 theorems (630 closed by exhaustion, axiom-free · 176 proved for every value on propext and Quot.sound) + 9 rfl declarations |
+| proved `by decide` | 630 of 815 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
-**On `carried`.** 434 entries were withdrawn for want of a Lean proof and have since been given one, at a new key. Nothing is un-revoked: the original's own evidence is still a TypeScript test, and rewriting its status would erase the fact that it did not hold on what it had. The record says both — withdrawn on its own evidence, standing through the theorem that carries it.
+**On `carried`.** 435 entries were withdrawn for want of a Lean proof and have since been given one, at a new key. Nothing is un-revoked: the original's own evidence is still a TypeScript test, and rewriting its status would erase the fact that it did not hold on what it had. The record says both — withdrawn on its own evidence, standing through the theorem that carries it.
 
-**Why the withdrawn were withdrawn.** 1,386 no Lean proof · 457 tested the removed lexical gate · 60 other · 35 its Lean source was deleted or renamed · 10 circular by construction. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
+**Why the withdrawn were withdrawn.** 1,386 no Lean proof · 457 tested the removed lexical gate · 61 other · 35 its Lean source was deleted or renamed · 10 circular by construction. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
 
 **What verification costs.** Proving the set touches all 16,384 leaves; verifying membership afterwards touches 14 — one sibling per level. That is **1,170× less work**, exactly, and the factor grows with the set because N/log N grows. Wall-clock varies with the machine and is left in the build output rather than pinned here. It is not sub-nanosecond and nothing here is: the advantage is a smaller exponent, not a faster clock. The counting is proved in `speed.lean`.
 
@@ -239,4 +239,4 @@ whether the work restates someone earlier. [The paper](/paper) typesets every st
 
 ---
 
-*15 claims, all verified · 807 Lean theorems · 2755 ledger entries · trial root `549339aa-28bc-899a-86e9-5c2d8a42080e` · integrity, not truth*
+*15 claims, all verified · 806 Lean theorems · 2755 ledger entries · trial root `fa3c08c7-7003-80ea-9a50-de79f9225ad7` · integrity, not truth*

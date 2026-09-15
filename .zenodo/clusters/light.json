@@ -1,7 +1,7 @@
 {
   "upload_type": "publication",
   "publication_type": "preprint",
-  "title": "Light, space and time — arithmetic on numbers a standards body fixed — 16 machine-checked theorems and how they are bound",
+  "title": "Light, space and time — arithmetic on numbers a standards body fixed — 15 machine-checked theorems and how they are bound",
   "creators": [
     {
       "name": "Rouschev, Tsvetan",
@@ -9,7 +9,7 @@
       "affiliation": "PSG, Bulgaria"
     }
   ],
-  "description": "<p><strong>Light, space and time — arithmetic on numbers a standards body fixed</strong>. 16 machine-checked theorems from the Lean 4 source file <code>src/proof/light.lean</code>, by Tsvetan Rouschev, licensed CC BY-NC-ND 4.0. Lean 4 is a proof checker: a theorem it accepts has been checked by its kernel, not argued in prose. 12 are checked case by case over a stated finite domain (<code>by decide</code>). 4 are proved for every value, on the standard axioms only (<code>propext</code>, <code>Quot.sound</code>; the verifier refuses any other). Every theorem listed is sealed live in the deposit's ledger, where a withdrawal is marked in place; 63 earlier rows removed on 2026-08-09 are listed in <a href=\"https://github.com/ceccec/millennium-solutions/blob/7b6ebaaa9854bc963c4e33ec904d40705fc6f917/src/proof/revoked.json\">src/proof/revoked.json</a>.</p><p><strong>How these theorems are bound.</strong> \"Entangled\" is used here in a precise, non-quantum sense: theorems are bound when they derive from shared definitions (section 1), when their files import one another (section 2), and when their content-addressed receipts fold into one address that changes if any one of them changes (section 3). It is correlation by derivation; no information travels through it.</p><p><strong>1 · Shared definitions.</strong> 6 definitions are used by two or more theorems, binding 110 pairs; the theorems fall into 1 strand. Most binding: <code>travel</code> (8), <code>defining</code> (7), <code>c</code> (7), <code>periods</code> (6), <code>root</code> (6), <code>dNuCs</code> (5).</p><p><strong>2 · Imports.</strong> Built on: no other cluster. Built on it: no other cluster. Checking this cluster needs 1 file: <code>src/proof/light.lean</code>.</p><p><strong>3 · The joint address.</strong> The 16 sealed receipts fold to <code>0a2c7345-7707-86d0-a910-58a18e6dac0e</code>. Order-invariant: yes — the same root in reverse order. Altering one receipt changes it: yes, computed when this record was generated. A content-address proves integrity, not truth.</p><p><strong>4 · The address lattice.</strong> Each theorem sits at the seven ray values its page plots from its receipt, taken mod 9: a point of (ℤ/9)⁷. This cluster's centre is (3, 8, 8, 5, 3, 4, 4). Its nearest clusters, ranked by lift — pairs counted from this cluster's theorems' seven nearest points, over the pairs expected by chance from the two clusters' sizes: <code>demand2.lean</code> (7 observed, 1.67 expected, lift 4.2), <code>coin.lean</code> (6 observed, 1.67 expected, lift 3.6), <code>merkaba.lean</code> (3 observed, 1.11 expected, lift 2.7). A best lift is the largest of about 32 small ratios, so chance alone gives a typical best lift of 2.7 here (the median over 200 seeded reshufflings of which cluster each point belongs to); one at least as high as this cluster's arose in 7.5% of them — consistent with chance. Mean distance between two of its theorems: 15.61; from one of its theorems to a theorem of another cluster: 15.59. A receipt is a hash, so nearness on this lattice is a property of the addresses, not of the mathematics; the mathematical binding is (1) and (2). These figures are as of commit <code>7b6ebaaa9854</code> (2026-09-15), over 807 points; a new seal anywhere moves them.</p><p><strong>Prior art.</strong> The exact numerical values below are DEFINITIONS adopted by the Conférence Générale des Poids et Mesures, not results of this deposit: the metre from the speed of light (17th CGPM, 1983) and the seven defining constants fixed exactly in the 2019 revision of the SI, effective 20 May 2019 (BIPM, https://www.bipm.org/en/measurement-units/si-defining-constants). Nothing here measures anything. Per-theorem prior-art searches — OEIS, zbMATH Open, OpenAlex, Crossref, arXiv — are recorded, with what was searched, where and when, in the living ledger <a href=\"https://github.com/ceccec/millennium-solutions/blob/main/src/proof/novelty.json\">src/proof/novelty.json</a> (main branch). No novelty is claimed here.</p><p><strong>The theorems.</strong></p><ol><li><code>the_si_fixes_seven_distinct_nonzero_constants</code> — <code>defining.length = 7 ∧ defining.eraseDups = defining ∧ defining.all (fun x =&gt; x &gt; 0)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_light_the_si_fixes_seven_distinct_nonzero_constants\">record</a></li><li><code>travel_at_one_returns_the_defined_constant</code> — <code>travel 1 = c</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_light_travel_at_one_returns_the_defined_constant\">record</a></li><li><code>the_second_returns_from_the_metre_and_the_period</code> — <code>(List.range 100).all (fun s =&gt; travel s / c == s &amp;&amp; periods s / dNuCs == s)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_light_the_second_returns_from_the_metre_and_the_period\">record</a></li><li><code>the_second_returns_from_the_metre_and_the_period_at_every_duration</code> — <code>∀ s : Nat, travel s / c = s ∧ periods s / dNuCs = s</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_light_the_second_returns_from_the_metre_and_the_period_at_every_duration\">record</a></li><li><code>travel_and_periods_at_one_return_their_constants</code> — <code>travel 1 = 299792458 ∧ periods 1 = 9192631770</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_light_travel_and_periods_at_one_return_their_constants\">record</a></li><li><code>the_chain_scales</code> — <code>([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].all (fun s =&gt; travel s == c * s)) ∧ ([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].all (fun s =&gt; periods s == dNuCs * s))</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_light_the_chain_scales\">record</a></li><li><code>the_roots_of_the_seven</code> — <code>defining.map root = [1, 9, 6, 9, 4, 1, 8]</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_light_the_roots_of_the_seven\">record</a></li><li><code>three_on_the_triad_and_four_on_the_units</code> — <code>(defining.filter (fun n =&gt; [3, 6, 9].contains (root n))).length = 3 ∧ (defining.filter (fun n =&gt; [1, 2, 4, 5, 7, 8].contains (root n))).length = 4</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_light_three_on_the_triad_and_four_on_the_units\">record</a></li><li><code>the_seven_roots_miss_four_residues</code> — <code>(defining.map root).eraseDups.length = 5 ∧ ([1, 2, 3, 4, 5, 6, 7, 8, 9].filter (fun d =&gt; ¬ (defining.map root).contains d)) = [2, 3, 5, 7]</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_light_the_seven_roots_miss_four_residues\">record</a></li><li><code>the_absent_residues_are_the_primes_below_nine</code> — <code>([1, 2, 3, 4, 5, 6, 7, 8, 9].filter (fun d =&gt; ¬ (defining.map root).contains d)) = [2, 3, 5, 7]</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_light_the_absent_residues_are_the_primes_below_nine\">record</a></li><li><code>and_a_change_of_unit_destroys_it</code> — <code>([1, 2, 3, 4, 5, 6, 7, 8, 9].filter (fun d =&gt; ¬ (alternative.map root).contains d)) = [2, 3, 5, 8] ∧ alternative.length = defining.length</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_light_and_a_change_of_unit_destroys_it\">record</a></li><li><code>the_root_moves_with_the_unit_so_it_is_not_about_light</code> — <code>root c = 1 ∧ root (2 * c) = 2 ∧ root (100 * c) = 1</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_light_the_root_moves_with_the_unit_so_it_is_not_about_light\">record</a></li><li><code>the_definitions_are_seven_and_travel_fixes_zero</code> — <code>defining.length = 7 ∧ travel 0 = 0</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_light_the_definitions_are_seven_and_travel_fixes_zero\">record</a></li><li><code>the_second_returns_from_the_metre_and_the_period_for_every_s</code> — <code>∀ s : Nat, travel s / c = s ∧ periods s / dNuCs = s</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_light_the_second_returns_from_the_metre_and_the_period_for_every_s\">record</a></li><li><code>the_metre_returns_from_the_second_for_every_whole_length</code> — <code>∀ m : Nat, m % c = 0 → travel (m / c) = m</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_light_the_metre_returns_from_the_second_for_every_whole_length\">record</a></li><li><code>the_period_count_returns_from_the_second_for_every_whole_count</code> — <code>∀ p : Nat, p % dNuCs = 0 → periods (p / dNuCs) = p</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_light_the_period_count_returns_from_the_second_for_every_whole_count\">record</a></li></ol><p><strong>Recompute.</strong> Clone <a href=\"https://github.com/ceccec/millennium-solutions\">https://github.com/ceccec/millennium-solutions</a> at commit <code>7b6ebaaa9854</code> and run <code>npm ci && npm run lean</code>, which checks every Lean file in dependency order. This record was generated by <a href=\"https://github.com/ceccec/millennium-solutions/blob/7b6ebaaa9854bc963c4e33ec904d40705fc6f917/scripts/clusters.ts\">scripts/clusters.ts</a> from the source and the ledger.</p><p><strong>Licence.</strong> CC BY-NC-ND 4.0 — free for non-commercial use with attribution to Tsvetan Rouschev; commercial use by arrangement with the author.</p>",
+  "description": "<p><strong>Light, space and time — arithmetic on numbers a standards body fixed</strong>. 15 machine-checked theorems from the Lean 4 source file <code>src/proof/light.lean</code>, by Tsvetan Rouschev, licensed CC BY-NC-ND 4.0. Lean 4 is a proof checker: a theorem it accepts has been checked by its kernel, not argued in prose. 12 are checked case by case over a stated finite domain (<code>by decide</code>). 3 are proved for every value, on the standard axioms only (<code>propext</code>, <code>Quot.sound</code>; the verifier refuses any other). Every theorem listed is sealed live in the deposit's ledger, where a withdrawal is marked in place; 63 earlier rows removed on 2026-08-09 are listed in <a href=\"https://github.com/ceccec/millennium-solutions/blob/088ec1cc76f52b6f5dcece216a9bf08fb57f0437/src/proof/revoked.json\">src/proof/revoked.json</a>.</p><p><strong>How these theorems are bound.</strong> \"Entangled\" is used here in a precise, non-quantum sense: theorems are bound when they derive from shared definitions (section 1), when their files import one another (section 2), and when their content-addressed receipts fold into one address that changes if any one of them changes (section 3). It is correlation by derivation; no information travels through it.</p><p><strong>1 · Shared definitions.</strong> 6 definitions are used by two or more theorems, binding 88 pairs; the theorems fall into 1 strand. Most binding: <code>defining</code> (7), <code>travel</code> (7), <code>c</code> (6), <code>root</code> (6), <code>periods</code> (5), <code>dNuCs</code> (4).</p><p><strong>2 · Imports.</strong> Built on: no other cluster. Built on it: no other cluster. Checking this cluster needs 1 file: <code>src/proof/light.lean</code>.</p><p><strong>3 · The joint address.</strong> The 15 sealed receipts fold to <code>424c4f92-8eff-8adc-aade-f5089fac5485</code>. Order-invariant: yes — the same root in reverse order. Altering one receipt changes it: yes, computed when this record was generated. A content-address proves integrity, not truth.</p><p><strong>4 · The address lattice.</strong> Each theorem sits at the seven ray values its page plots from its receipt, taken mod 9: a point of (ℤ/9)⁷. This cluster's centre is (3, 0, 8, 5, 3, 4, 4). Its nearest clusters, ranked by lift — pairs counted from this cluster's theorems' seven nearest points, over the pairs expected by chance from the two clusters' sizes: <code>demand2.lean</code> (7 observed, 1.57 expected, lift 4.47), <code>coin.lean</code> (6 observed, 1.57 expected, lift 3.83), <code>merkaba.lean</code> (3 observed, 1.04 expected, lift 2.88). A best lift is the largest of about 32 small ratios, so chance alone gives a typical best lift of 2.88 here (the median over 200 seeded reshufflings of which cluster each point belongs to); one at least as high as this cluster's arose in 5.5% of them — consistent with chance. Mean distance between two of its theorems: 15.6; from one of its theorems to a theorem of another cluster: 15.56. A receipt is a hash, so nearness on this lattice is a property of the addresses, not of the mathematics; the mathematical binding is (1) and (2). These figures are as of commit <code>088ec1cc76f5</code> (2026-09-15), over 806 points; a new seal anywhere moves them.</p><p><strong>Prior art.</strong> The exact numerical values below are DEFINITIONS adopted by the Conférence Générale des Poids et Mesures, not results of this deposit: the metre from the speed of light (17th CGPM, 1983) and the seven defining constants fixed exactly in the 2019 revision of the SI, effective 20 May 2019 (BIPM, https://www.bipm.org/en/measurement-units/si-defining-constants). Nothing here measures anything. Per-theorem prior-art searches — OEIS, zbMATH Open, OpenAlex, Crossref, arXiv — are recorded, with what was searched, where and when, in the living ledger <a href=\"https://github.com/ceccec/millennium-solutions/blob/main/src/proof/novelty.json\">src/proof/novelty.json</a> (main branch). No novelty is claimed here.</p><p><strong>The theorems.</strong></p><ol><li><code>the_si_fixes_seven_distinct_nonzero_constants</code> — <code>defining.length = 7 ∧ defining.eraseDups = defining ∧ defining.all (fun x =&gt; x &gt; 0)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_light_the_si_fixes_seven_distinct_nonzero_constants\">record</a></li><li><code>travel_at_one_returns_the_defined_constant</code> — <code>travel 1 = c</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_light_travel_at_one_returns_the_defined_constant\">record</a></li><li><code>the_second_returns_from_the_metre_and_the_period</code> — <code>(List.range 100).all (fun s =&gt; travel s / c == s &amp;&amp; periods s / dNuCs == s)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_light_the_second_returns_from_the_metre_and_the_period\">record</a></li><li><code>the_second_returns_from_the_metre_and_the_period_at_every_duration</code> — <code>∀ s : Nat, travel s / c = s ∧ periods s / dNuCs = s</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_light_the_second_returns_from_the_metre_and_the_period_at_every_duration\">record</a></li><li><code>travel_and_periods_at_one_return_their_constants</code> — <code>travel 1 = 299792458 ∧ periods 1 = 9192631770</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_light_travel_and_periods_at_one_return_their_constants\">record</a></li><li><code>the_chain_scales</code> — <code>([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].all (fun s =&gt; travel s == c * s)) ∧ ([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].all (fun s =&gt; periods s == dNuCs * s))</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_light_the_chain_scales\">record</a></li><li><code>the_roots_of_the_seven</code> — <code>defining.map root = [1, 9, 6, 9, 4, 1, 8]</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_light_the_roots_of_the_seven\">record</a></li><li><code>three_on_the_triad_and_four_on_the_units</code> — <code>(defining.filter (fun n =&gt; [3, 6, 9].contains (root n))).length = 3 ∧ (defining.filter (fun n =&gt; [1, 2, 4, 5, 7, 8].contains (root n))).length = 4</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_light_three_on_the_triad_and_four_on_the_units\">record</a></li><li><code>the_seven_roots_miss_four_residues</code> — <code>(defining.map root).eraseDups.length = 5 ∧ ([1, 2, 3, 4, 5, 6, 7, 8, 9].filter (fun d =&gt; ¬ (defining.map root).contains d)) = [2, 3, 5, 7]</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_light_the_seven_roots_miss_four_residues\">record</a></li><li><code>the_absent_residues_are_the_primes_below_nine</code> — <code>([1, 2, 3, 4, 5, 6, 7, 8, 9].filter (fun d =&gt; ¬ (defining.map root).contains d)) = [2, 3, 5, 7]</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_light_the_absent_residues_are_the_primes_below_nine\">record</a></li><li><code>and_a_change_of_unit_destroys_it</code> — <code>([1, 2, 3, 4, 5, 6, 7, 8, 9].filter (fun d =&gt; ¬ (alternative.map root).contains d)) = [2, 3, 5, 8] ∧ alternative.length = defining.length</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_light_and_a_change_of_unit_destroys_it\">record</a></li><li><code>the_root_moves_with_the_unit_so_it_is_not_about_light</code> — <code>root c = 1 ∧ root (2 * c) = 2 ∧ root (100 * c) = 1</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_light_the_root_moves_with_the_unit_so_it_is_not_about_light\">record</a></li><li><code>the_definitions_are_seven_and_travel_fixes_zero</code> — <code>defining.length = 7 ∧ travel 0 = 0</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_light_the_definitions_are_seven_and_travel_fixes_zero\">record</a></li><li><code>the_metre_returns_from_the_second_for_every_whole_length</code> — <code>∀ m : Nat, m % c = 0 → travel (m / c) = m</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_light_the_metre_returns_from_the_second_for_every_whole_length\">record</a></li><li><code>the_period_count_returns_from_the_second_for_every_whole_count</code> — <code>∀ p : Nat, p % dNuCs = 0 → periods (p / dNuCs) = p</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_light_the_period_count_returns_from_the_second_for_every_whole_count\">record</a></li></ol><p><strong>Recompute.</strong> Clone <a href=\"https://github.com/ceccec/millennium-solutions\">https://github.com/ceccec/millennium-solutions</a> at commit <code>088ec1cc76f5</code> and run <code>npm ci && npm run lean</code>, which checks every Lean file in dependency order. This record was generated by <a href=\"https://github.com/ceccec/millennium-solutions/blob/088ec1cc76f52b6f5dcece216a9bf08fb57f0437/scripts/clusters.ts\">scripts/clusters.ts</a> from the source and the ledger.</p><p><strong>Licence.</strong> CC BY-NC-ND 4.0 — free for non-commercial use with attribution to Tsvetan Rouschev; commercial use by arrangement with the author.</p>",
   "license": "cc-by-nc-nd-4.0",
   "access_right": "open",
   "language": "eng",
@@ -30,7 +30,7 @@
       "scheme": "doi"
     },
     {
-      "identifier": "https://github.com/ceccec/millennium-solutions/blob/7b6ebaaa9854bc963c4e33ec904d40705fc6f917/src/proof/light.lean",
+      "identifier": "https://github.com/ceccec/millennium-solutions/blob/088ec1cc76f52b6f5dcece216a9bf08fb57f0437/src/proof/light.lean",
       "relation": "isSupplementTo",
       "scheme": "url"
     },
@@ -100,11 +100,6 @@
       "scheme": "url"
     },
     {
-      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_light_the_second_returns_from_the_metre_and_the_period_for_every_s",
-      "relation": "hasPart",
-      "scheme": "url"
-    },
-    {
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_light_the_metre_returns_from_the_second_for_every_whole_length",
       "relation": "hasPart",
       "scheme": "url"
@@ -115,38 +110,34 @@
       "scheme": "url"
     }
   ],
-  "notes": "cluster light.lean · 16 sealed · joint address 0a2c7345-7707-86d0-a910-58a18e6dac0e · figures as of commit 7b6ebaaa9854 (2026-09-15) · concept DOI 10.5281/zenodo.21819217 · generated by scripts/clusters.ts",
+  "notes": "cluster light.lean · 15 sealed · joint address 424c4f92-8eff-8adc-aade-f5089fac5485 · figures as of commit 088ec1cc76f5 (2026-09-15) · concept DOI 10.5281/zenodo.21819217 · generated by scripts/clusters.ts",
   "files": [
     "src/proof/light.lean"
   ],
   "cluster": {
     "file": "light.lean",
     "wing": "the floor",
-    "sealed": 16,
+    "sealed": 15,
     "decided": 12,
-    "proved": 4,
+    "proved": 3,
     "declarations": 0,
     "joint": {
-      "root": "0a2c7345-7707-86d0-a910-58a18e6dac0e",
+      "root": "424c4f92-8eff-8adc-aade-f5089fac5485",
       "orderInvariant": true,
       "bindsEveryReceipt": true
     },
     "strands": 1,
     "binding": [
       {
-        "def": "travel",
-        "theorems": 8
-      },
-      {
         "def": "defining",
         "theorems": 7
       },
       {
-        "def": "c",
+        "def": "travel",
         "theorems": 7
       },
       {
-        "def": "periods",
+        "def": "c",
         "theorems": 6
       },
       {
@@ -154,8 +145,12 @@
         "theorems": 6
       },
       {
-        "def": "dNuCs",
+        "def": "periods",
         "theorems": 5
+      },
+      {
+        "def": "dNuCs",
+        "theorems": 4
       }
     ],
     "imports": [],
@@ -163,39 +158,39 @@
     "lattice": {
       "centre": [
         3,
-        8,
+        0,
         8,
         5,
         3,
         4,
         4
       ],
-      "within": 15.61,
-      "between": 15.59,
+      "within": 15.6,
+      "between": 15.56,
       "top": [
         {
           "file": "demand2.lean",
           "pairs": 7,
-          "expected": 1.67,
-          "lift": 4.2
+          "expected": 1.57,
+          "lift": 4.47
         },
         {
           "file": "coin.lean",
           "pairs": 6,
-          "expected": 1.67,
-          "lift": 3.6
+          "expected": 1.57,
+          "lift": 3.83
         },
         {
           "file": "merkaba.lean",
           "pairs": 3,
-          "expected": 1.11,
-          "lift": 2.7
+          "expected": 1.04,
+          "lift": 2.88
         }
       ],
-      "chanceShare": 0.075,
-      "nullMedian": 2.7,
+      "chanceShare": 0.055,
+      "nullMedian": 2.88,
       "shuffles": 200
     },
-    "asOf": "7b6ebaaa9854bc963c4e33ec904d40705fc6f917"
+    "asOf": "088ec1cc76f52b6f5dcece216a9bf08fb57f0437"
   }
 }

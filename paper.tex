@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 816 of them across 33 files and
-7 wings; 630 close by exhaustion over a stated finite domain, 177 are proved
+(\texttt{npm run latex-gate}). There are 815 of them across 33 files and
+7 wings; 630 close by exhaustion over a stated finite domain, 176 are proved
 for every value, and the remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -2296,12 +2296,6 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 \[ \left|\mathrm{defining}\right| = 7 \land \mathrm{travel}\mathopen{}\left(0\right) = 0 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
-
-\begin{theorem}[\texttt{the\_second\_returns\_from\_the\_metre\_and\_the\_period\_for\_every\_s}]
-\texttt{∀ s : Nat, travel s / c = s ∧ periods s / dNuCs = s}
-\end{theorem}
-\noindent\emph{Proof.} \texttt{by
-  intro} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_metre\_returns\_from\_the\_second\_for\_every\_whole\_length}]
 \texttt{∀ m : Nat, m \% c = 0 → travel (m / c) = m}
