@@ -288,4 +288,42 @@ theorem two_parts_in_three_is_two_thirds_at_every_scale_for_every_m :
   unfold pct
   rw [Nat.mul_comm 2 m, Nat.mul_assoc, Nat.mul_comm 3 m, Nat.mul_div_mul_left _ _ hm]
 
+
+-- ── reflections, from the easy batch: each law beside its inverse (the 2×7 ↔ 1+6 wave) ──
+theorem burning_then_splitting_is_the_identity_above_the_bond :
+    ∀ e : Nat, bondHundredthsKJ ≤ e → splitE (burnE e) = e := by
+  intro e h; unfold splitE burnE; omega
+
+theorem one_part_in_three_is_a_third_at_every_scale_for_every_m :
+    ∀ m : Nat, 0 < m → pct m (3 * m) = 33 := by
+  intro m hm; unfold pct
+  rw [Nat.mul_comm 3 m, Nat.mul_div_mul_left 100 3 hm]
+
+theorem the_gas_volume_reads_back_its_moles_for_every_m :
+    ∀ m : Nat, molesOf (litresOf m) ≤ m ∧ m ≤ molesOf (litresOf m) + 1 := by
+  intro m; unfold molesOf litresOf mLperMol; exact ⟨by omega, by omega⟩
+
+
+-- ── reflections, from the extra batch: each law beside its inverse (the 2×7 ↔ 1+6 wave) ──
+-- the_atoms_read_back_from_the_mass holds on h, o < 10 and is FALSE in general: mass 5333 0 = mass 0 336.
+-- The true boundary: below 5333 hydrogens the mass names the molecule, at any oxygen count.
+theorem the_mass_names_the_molecule_below_5333_hydrogens :
+    ∀ h o h' o' : Nat, h < 5333 → h' < 5333 → mass h o = mass h' o' → h = h' ∧ o = o' := by
+  intro h o h' o' h1 h2 e
+  unfold mass mgH mgO at e
+  exact ⟨by omega, by omega⟩
+
+theorem the_boundary_is_sharp : mass 5333 0 = mass 0 336 := by decide
+
+-- the_cost_per_litre / the_energy_per_litre / hexbits rows: a floor division multiplies back within one divisor
+theorem a_floor_division_multiplies_back_within_one_divisor :
+    ∀ a l : Nat, 0 < l → a / l * l ≤ a ∧ a < (a / l + 1) * l := by
+  intro a l hl
+  have e := Nat.div_add_mod a l
+  have hr := Nat.mod_lt a hl
+  refine ⟨Nat.div_mul_le_self a l, ?_⟩
+  rw [Nat.add_mul, Nat.one_mul, Nat.mul_comm (a / l) l]
+  generalize l * (a / l) = X at e ⊢
+  omega
+
 end Energy

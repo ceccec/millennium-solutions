@@ -16042,5 +16042,491 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "71d78d5c-0f87-8ff8-84ed-47fb86f64116"
+  },
+  {
+    "key": "lean_energy_the_boundary_is_sharp",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6237820f-0a7b-8486-9881-2ff730413293"
+  },
+  {
+    "key": "lean_address_the_unstamped_bits_read_back_from_every_stamped_byte",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "69a4f3a2-4653-8fa2-9a1c-def31a7802b9"
+  },
+  {
+    "key": "lean_address_the_twelve_hash_bits_read_back_from_the_third_group",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "221f974c-1535-8b78-9067-631b2ca17996"
+  },
+  {
+    "key": "lean_address_the_fourteen_hash_bits_read_back_from_the_fourth_group",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "edc4013a-9ea0-88dc-9022-22072a84bfb1"
+  },
+  {
+    "key": "lean_demand_four_times_a_near_product_is_at_most_the_square",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "61fde2f2-4a84-8825-8c14-36391ea7f96f"
+  },
+  {
+    "key": "lean_demand_no_cut_beats_the_balanced_one_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f87585db-e4be-8f0d-8660-3e5983b57020"
+  },
+  {
+    "key": "lean_demand2_the_squared_triangular_numbers_difference_back_to_the_cubes_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "76f6ba26-b6dd-8d33-8a7d-0e63c055c8ee"
+  },
+  {
+    "key": "lean_demand3_the_genus_reads_back_from_chi_for_every_g",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b2627057-efa5-8f5e-8f32-eb9988d42765"
+  },
+  {
+    "key": "lean_demand3_chi_is_injective_for_every_g_h",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9259ab3c-4bbc-846b-947f-3a1534dbc9f5"
+  },
+  {
+    "key": "lean_demand3_a_repunit_is_below_ten_to_its_length",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "63e37ea7-0f19-8bea-b622-6cce3c740436"
+  },
+  {
+    "key": "lean_demand3_a_repunit_splits_back_into_its_two_parts_for_every_n_k",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "56ed7d0a-28d5-81e6-9563-56bff7af5faf"
+  },
+  {
+    "key": "lean_elementary_the_polygon_side_count_reads_back_from_its_angle_sum",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0ad62680-b148-8390-bff3-0c2f5a1bc203"
+  },
+  {
+    "key": "lean_elementary_every_odd_square_one_more_than_eight_times_m_makes_m_triangular",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "958b6261-542d-8e25-8df0-b6b19ecae11a"
+  },
+  {
+    "key": "lean_elementary_the_fibonaccis_are_a_fifth_of_the_neighbouring_lucas_numbers_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "16091996-5977-8dbc-8039-96f7dc68409f"
+  },
+  {
+    "key": "lean_elementary_half_a_product_of_consecutive_numbers_multiplies_back_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "cf74f953-f0e2-81bd-be91-59bc297df346"
+  },
+  {
+    "key": "lean_energy_burning_then_splitting_is_the_identity_above_the_bond",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "fe87a66a-6ac9-8d5a-a9bc-3025533941f6"
+  },
+  {
+    "key": "lean_energy_one_part_in_three_is_a_third_at_every_scale_for_every_m",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b2c52079-42f3-89a2-89f0-8895d2cd34ed"
+  },
+  {
+    "key": "lean_energy_the_gas_volume_reads_back_its_moles_for_every_m",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "21c3d846-9c3e-8112-bbaf-a531fd70fc4a"
+  },
+  {
+    "key": "lean_energy_the_mass_names_the_molecule_below_5333_hydrogens",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a30f7f70-4bfa-8bc2-9d76-484eb4626c02"
+  },
+  {
+    "key": "lean_energy_a_floor_division_multiplies_back_within_one_divisor",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c6871639-adb9-8647-b445-116e8dc0bae0"
+  },
+  {
+    "key": "lean_families_choose_is_invariant_under_the_involution_k_to_n_minus_k_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6133e3a1-254e-8385-8d6a-5d7deacf83b5"
+  },
+  {
+    "key": "lean_families_the_closed_forms_difference_back_to_the_next_power_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b1d34ef3-9b6d-80de-94ba-8b5c67bc4005"
+  },
+  {
+    "key": "lean_families_the_tetrahedral_numbers_difference_back_to_the_triangular_numbers_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e811a0a1-22b9-82d2-b93d-a3a2418a17d2"
+  },
+  {
+    "key": "lean_families_the_powers_of_two_difference_back_to_the_next_power_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9c202e7c-40cb-8382-864c-c5f8119fdf3e"
+  },
+  {
+    "key": "lean_families_the_odd_numbers_difference_back_to_the_next_odd_number_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "404c2b65-4bb4-8918-8dfe-a2f78dad6317"
+  },
+  {
+    "key": "lean_families_foldl_add_start",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e29e2887-b564-877a-bcde-e36fde641559"
+  },
+  {
+    "key": "lean_families_the_digits_sum_to_the_number_mod_nine_when_the_fuel_covers_them",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "bdb7dd00-a595-8044-9817-e90462f887b7"
+  },
+  {
+    "key": "lean_families_a_number_is_below_ten_to_its_own_successor",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6021fd10-1371-857a-a778-b0229ea2f574"
+  },
+  {
+    "key": "lean_families_the_digit_sum_rules_for_three_and_nine_hold_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e4b7bd43-9725-8b09-a08d-852d3f6ca8ba"
+  },
+  {
+    "key": "lean_flow_the_reverse_flow_undoes_every_step",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8a31d5e4-e83d-8386-aa0c-5fee601a89e9"
+  },
+  {
+    "key": "lean_flow_every_state_of_the_flow_returns_within_six_steps",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "fd1cecb4-13df-80ec-befb-9d40a35f6b84"
+  },
+  {
+    "key": "lean_fnv_multiplying_by_the_fnv_prime_is_undone_by_its_inverse_for_every_h",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "30b021d3-5d2e-8d27-8cd9-1fe8c4829e2d"
+  },
+  {
+    "key": "lean_light_the_metre_returns_from_the_second_for_every_whole_length",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "01829703-d2a6-8d75-af32-f41de3d1bf6f"
+  },
+  {
+    "key": "lean_light_the_period_count_returns_from_the_second_for_every_whole_count",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "917672f5-d4d0-8ce6-b8ff-6cefdd6ee768"
+  },
+  {
+    "key": "lean_mechanical_DR_eq",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "dec26379-71e5-8ef4-9435-5bccc3d05d4a"
+  },
+  {
+    "key": "lean_mechanical_halving_undoes_every_doubling_step_for_every_k",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7ac609a7-0ed5-8516-b137-38804ba28ece"
+  },
+  {
+    "key": "lean_mechanical_casting_out_nines_is_additive_for_every_a_b",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f63b1a76-759a-8e07-a0a6-adc164288c48"
+  },
+  {
+    "key": "lean_mechanical_the_digital_root_fixes_exactly_one_to_nine",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7f66abca-14de-8d8b-8537-2fc812addc7c"
+  },
+  {
+    "key": "lean_mechanical_the_digital_root_is_idempotent_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "cc3d43b3-c3ea-8cba-99c9-ff65a5cdc9aa"
+  },
+  {
+    "key": "lean_mechanical_a_digital_root_of_nine_means_a_multiple_of_nine_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "48527c27-d129-8067-961f-75b23ff00fc2"
+  },
+  {
+    "key": "lean_mechanical_the_hypotenuse_reads_back_from_every_three_four_five_multiple",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "38ab856f-2051-8fb8-a2c8-54afa15e9545"
+  },
+  {
+    "key": "lean_mechanical_the_sixth_of_three_consecutive_integers_multiplies_back_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "23e7c1bf-1835-867d-aa00-049ae5abc183"
+  },
+  {
+    "key": "lean_nim_a_number_xored_with_itself_is_zero_for_every_a",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4eb0eb7c-9115-8fa6-b8eb-80eb0790215b"
+  },
+  {
+    "key": "lean_nim_xor_is_zero_only_on_equal_arguments_for_every_a_b",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c117a38f-0ab9-882e-b0c0-51af71a33d0e"
+  },
+  {
+    "key": "lean_nim_the_halves_and_the_low_bit_read_back_from_the_xor_for_every_a_b",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c526ac9a-e469-8ad7-a79e-7785137b9be4"
+  },
+  {
+    "key": "lean_reach_the_successor_returns_every_positive_predecessor",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "23e0a041-8135-8623-bc50-d16004de1d7d"
+  },
+  {
+    "key": "lean_reach_exhaustion_reaches_everything_below_its_bound_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ca669c32-5df9-805e-804a-813f277e6444"
+  },
+  {
+    "key": "lean_reach_the_predecessor_of_every_positive_bound_lies_inside",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9f5d69b8-d238-8ea5-ab12-433aed39e730"
+  },
+  {
+    "key": "lean_reach_halving_the_domain_keeps_the_half_inside_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "be05a537-ee2d-88bc-926a-58b712b0eff8"
+  },
+  {
+    "key": "lean_reversal_digitsF_zero",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e37e7ee7-d6b6-8efd-9b8e-3538b589bee9"
+  },
+  {
+    "key": "lean_reversal_every_digit_is_below_ten",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "45e2714e-6f2d-89b9-8890-4e33447a14a8"
+  },
+  {
+    "key": "lean_reversal_the_digits_rebuild_the_number_when_the_fuel_covers_them",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "06a08633-fb89-81ec-b8d1-d53790d43bcf"
+  },
+  {
+    "key": "lean_reversal_the_number_is_rebuilt_from_its_digits_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "cbb228e9-06c9-8816-af87-03547f4a97c7"
+  },
+  {
+    "key": "lean_reversal_a_sum_is_the_same_read_backwards",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1b350dab-b05b-8d0b-9995-452fb56e7f05"
+  },
+  {
+    "key": "lean_reversal_the_top_digit_is_nonzero",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "da813af5-c2e3-8fc3-97dd-ead120f26031"
+  },
+  {
+    "key": "lean_reversal_reversal_leaves_no_trailing_zero",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "edae203a-46d3-89f4-bea6-be4eb07539a1"
+  },
+  {
+    "key": "lean_reversal_reading_a_list_back_from_the_top",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ac35a0e6-3280-8d87-83be-4b7937b9bc46"
+  },
+  {
+    "key": "lean_reversal_the_digits_of_the_reversal_are_the_reversed_digits",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "91c9f620-0c4f-8266-9bb7-9bb899b026b4"
+  },
+  {
+    "key": "lean_reversal_reversal_is_involutive_off_the_trailing_zeros_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6ea99113-8427-8659-adf1-b082bbf93392"
+  },
+  {
+    "key": "lean_reversal_reversal_is_involutive_exactly_off_the_trailing_zeros_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4861172d-e203-8efc-8a28-51e017326b62"
+  },
+  {
+    "key": "lean_reversal_more_fuel_changes_no_digit",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6dcd0667-a81f-8c4a-aef4-a1cfdb94b00a"
+  },
+  {
+    "key": "lean_reversal_a_trailing_zero_is_a_leading_zero_of_the_digits",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c8aa36fc-ef29-8836-bde5-34670ef29c3c"
+  },
+  {
+    "key": "lean_reversal_reversal_preserves_the_digit_sum_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ab260836-a2cf-8f37-a1e7-a24eba70930e"
+  },
+  {
+    "key": "lean_reversal_the_fixed_points_of_reversal_are_the_palindromes_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6b0761d8-d62a-84af-a262-915506a414df"
+  },
+  {
+    "key": "lean_sequences_halving_removes_exactly_the_low_bit_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "977069d5-f1b5-8a5c-80a9-e374d19d5fdf"
+  },
+  {
+    "key": "lean_sequences_the_thue_morse_halving_recurrence_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "864ba163-a3f8-8003-b0bd-14d016b4814d"
+  },
+  {
+    "key": "lean_sequences_doubling_shifts_every_bit_up_by_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c6f05e84-b232-815d-8a9b-0b442e434d7b"
+  },
+  {
+    "key": "lean_sequences_the_residue_below_the_next_power_adds_one_bit",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2607d9ae-7836-8693-b295-01328e947772"
+  },
+  {
+    "key": "lean_sequences_the_low_bits_rebuild_the_number_below_every_power",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c79eff54-9841-8325-9147-a780a5b5c014"
+  },
+  {
+    "key": "lean_sequences_the_number_is_rebuilt_from_its_bits_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4e6421ba-ab59-8bb4-8f80-1d01bf5fbb35"
+  },
+  {
+    "key": "lean_speed_the_nanoseconds_return_from_the_microseconds_at_every_whole_count",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7e0b39fe-b643-826c-96e2-8a64bb9cbbae"
+  },
+  {
+    "key": "lean_split_the_coins_return_from_the_coin_step_for_every_multiple_of_three",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0a785a11-be04-823d-a50c-cd301d6bc552"
+  },
+  {
+    "key": "lean_split_paying_and_refunding_round_trips_for_every_count",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "31ce2f16-8ab7-8367-b170-6da1a743bc84"
+  },
+  {
+    "key": "lean_z9_orbit_repeats_every_six",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1d6bb6c2-2c76-8036-8d3a-961ef5879d0d"
+  },
+  {
+    "key": "lean_z9_orbit_is_its_exponent_mod_six",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "af2bb754-dd58-8c00-8064-1e2687197c86"
+  },
+  {
+    "key": "lean_z9_the_orbit_step_is_read_back_by_its_log_for_every_k",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b806a941-659e-8ecc-b553-f7e8787d4b28"
+  },
+  {
+    "key": "lean_z9plus_halving_undoes_doubling_at_every_step",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "87e5a9d4-3319-83f8-a311-3cf45eecaa4b"
+  },
+  {
+    "key": "lean_z9plus_halving_has_period_six_for_every_k",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d07f608f-90d3-8dd9-bbe3-b203a21c6957"
+  },
+  {
+    "key": "lean_z9plus_halving_orbit_digital_roots_have_period_six_for_every_k",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "147581f3-c75f-8635-a4d5-83f53afe23ab"
+  },
+  {
+    "key": "lean_z9plus_the_reflected_orbit_meets_the_triad_exactly_at_one_four_seven_for_every_k",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "20cda95a-c30a-8490-8886-a05f7ce1b338"
+  },
+  {
+    "key": "lean_z9plus_reversal_cannot_change_the_digital_root_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "43332821-10bc-8bb2-babe-07c8f97d8607"
   }
 ]

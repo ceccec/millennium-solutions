@@ -5,28 +5,28 @@
   "clusters": [
     {
       "file": "address.lean",
-      "title": "Addressing — 22 machine-checked theorems and how they are bound",
+      "title": "Addressing — 25 machine-checked theorems and how they are bound",
       "wing": "the address",
-      "sealed": 22,
-      "joint": "386f2b4b-aff9-8c6c-8be2-5bb5abbd1c45",
+      "sealed": 25,
+      "joint": "8e465bb0-95bd-8686-8b31-53a918d1eaa6",
       "neighbours": [
         {
-          "file": "demand3.lean",
-          "pairs": 8,
-          "expected": 3.19,
-          "lift": 2.51
-        },
-        {
-          "file": "energy.lean",
-          "pairs": 11,
-          "expected": 4.67,
-          "lift": 2.35
+          "file": "demand.lean",
+          "pairs": 5,
+          "expected": 2.39,
+          "lift": 2.09
         },
         {
           "file": "merkle.lean",
           "pairs": 5,
-          "expected": 2.34,
-          "lift": 2.14
+          "expected": 2.39,
+          "lift": 2.09
+        },
+        {
+          "file": "energy.lean",
+          "pairs": 12,
+          "expected": 6.08,
+          "lift": 1.97
         }
       ]
     },
@@ -40,14 +40,14 @@
         {
           "file": "generated.lean",
           "pairs": 4,
-          "expected": 1.51,
-          "lift": 2.66
+          "expected": 1.35,
+          "lift": 2.95
         },
         {
-          "file": "light.lean",
-          "pairs": 4,
-          "expected": 1.62,
-          "lift": 2.47
+          "file": "demand2.lean",
+          "pairs": 3,
+          "expected": 1.25,
+          "lift": 2.4
         },
         {
           "file": "elementary.lean",
@@ -59,211 +59,217 @@
     },
     {
       "file": "demand.lean",
-      "title": "What is actually being asked for — 9 machine-checked theorems and how they are bound",
+      "title": "What is actually being asked for — 11 machine-checked theorems and how they are bound",
       "wing": "the floor",
-      "sealed": 9,
-      "joint": "c432e103-7e2a-872a-be65-cc8c8fab660f",
+      "sealed": 11,
+      "joint": "a339e0d2-aa1d-8751-8260-8f5a491f1fb9",
       "neighbours": [
         {
           "file": "fnv.lean",
-          "pairs": 3,
-          "expected": 1.13,
-          "lift": 2.66
+          "pairs": 4,
+          "expected": 1.34,
+          "lift": 2.99
         },
         {
-          "file": "light.lean",
+          "file": "demand2.lean",
           "pairs": 3,
-          "expected": 1.22,
-          "lift": 2.47
+          "expected": 1.15,
+          "lift": 2.62
         },
         {
-          "file": "elementary.lean",
-          "pairs": 7,
-          "expected": 3.13,
-          "lift": 2.24
+          "file": "energy.lean",
+          "pairs": 5,
+          "expected": 2.67,
+          "lift": 1.87
         }
       ]
     },
     {
       "file": "demand2.lean",
-      "title": "The next tier of what is asked for — 11 machine-checked theorems and how they are bound",
+      "title": "The next tier of what is asked for — 12 machine-checked theorems and how they are bound",
       "wing": "the floor",
-      "sealed": 11,
-      "joint": "02ef7200-8f0b-82b3-a349-6b0f01112b10",
+      "sealed": 12,
+      "joint": "5f37d227-2044-8f6c-9584-6eb3bb9d319c",
       "neighbours": [
         {
-          "file": "reversal.lean",
-          "pairs": 4,
-          "expected": 1.49,
-          "lift": 2.69
+          "file": "demand.lean",
+          "pairs": 3,
+          "expected": 1.15,
+          "lift": 2.62
         },
         {
           "file": "coin.lean",
           "pairs": 3,
-          "expected": 1.27,
-          "lift": 2.35
+          "expected": 1.25,
+          "lift": 2.4
         },
         {
-          "file": "energy.lean",
+          "file": "light.lean",
           "pairs": 4,
-          "expected": 2.34,
-          "lift": 1.71
+          "expected": 1.67,
+          "lift": 2.4
         }
       ]
     },
     {
       "file": "demand3.lean",
-      "title": "The named theorems people ask for — 15 machine-checked theorems and how they are bound",
+      "title": "The named theorems people ask for — 19 machine-checked theorems and how they are bound",
       "wing": "the floor",
-      "sealed": 15,
-      "joint": "9d6f471f-ac6e-847c-b7af-49ac578ce01a",
+      "sealed": 19,
+      "joint": "ad3b6564-c548-8496-9743-0f38398dba8a",
       "neighbours": [
         {
           "file": "index.lean",
           "pairs": 5,
-          "expected": 1.59,
-          "lift": 3.14
+          "expected": 1.82,
+          "lift": 2.75
+        },
+        {
+          "file": "address.lean",
+          "pairs": 10,
+          "expected": 4.13,
+          "lift": 2.42
         },
         {
           "file": "ledgerclaims.lean",
           "pairs": 3,
-          "expected": 1.16,
-          "lift": 2.59
-        },
-        {
-          "file": "address.lean",
-          "pairs": 8,
-          "expected": 3.19,
-          "lift": 2.51
+          "expected": 1.32,
+          "lift": 2.27
         }
       ]
     },
     {
       "file": "elementary.lean",
-      "title": "Elementary arithmetic — 36 machine-checked theorems and how they are bound",
+      "title": "Elementary arithmetic — 40 machine-checked theorems and how they are bound",
       "wing": "the ring",
-      "sealed": 36,
-      "joint": "5b9619f8-e97a-8656-93b0-09fde27ee1d8",
+      "sealed": 40,
+      "joint": "bd3be957-7726-8d6b-b7cc-e314c7fa2844",
       "neighbours": [
         {
           "file": "flow.lean",
           "pairs": 5,
-          "expected": 1.04,
-          "lift": 4.79
+          "expected": 1.74,
+          "lift": 2.88
+        },
+        {
+          "file": "coin.lean",
+          "pairs": 10,
+          "expected": 4.17,
+          "lift": 2.4
         },
         {
           "file": "demand.lean",
           "pairs": 9,
-          "expected": 3.13,
-          "lift": 2.88
-        },
-        {
-          "file": "merkaba.lean",
-          "pairs": 7,
-          "expected": 2.78,
-          "lift": 2.52
+          "expected": 3.82,
+          "lift": 2.36
         }
       ]
     },
     {
       "file": "energy.lean",
-      "title": "The water loop — 22 machine-checked theorems and how they are bound",
+      "title": "The water loop — 28 machine-checked theorems and how they are bound",
       "wing": "the floor",
-      "sealed": 22,
-      "joint": "4eeb764d-2d82-8fc2-8359-16cbab272581",
+      "sealed": 28,
+      "joint": "e98e2a32-7df5-83b7-988a-8206e44a3384",
       "neighbours": [
         {
           "file": "demand.lean",
-          "pairs": 5,
-          "expected": 1.91,
-          "lift": 2.62
+          "pairs": 6,
+          "expected": 2.67,
+          "lift": 2.24
         },
         {
-          "file": "address.lean",
-          "pairs": 10,
-          "expected": 4.67,
-          "lift": 2.14
+          "file": "merkaba.lean",
+          "pairs": 4,
+          "expected": 1.95,
+          "lift": 2.06
         },
         {
           "file": "demand3.lean",
-          "pairs": 6,
-          "expected": 3.19,
-          "lift": 1.88
+          "pairs": 8,
+          "expected": 4.62,
+          "lift": 1.73
         }
       ]
     },
     {
       "file": "families.lean",
-      "title": "Families over the ring — 54 machine-checked theorems and how they are bound",
+      "title": "Families over the ring — 63 machine-checked theorems and how they are bound",
       "wing": "the ring",
-      "sealed": 54,
-      "joint": "f72e9b98-4555-8116-b380-ed843cffe984",
+      "sealed": 63,
+      "joint": "5ebe59a9-4536-8224-97b7-4aeb617734b4",
       "neighbours": [
         {
           "file": "phenomena.lean",
           "pairs": 5,
-          "expected": 2.09,
-          "lift": 2.4
+          "expected": 2.19,
+          "lift": 2.28
         },
         {
           "file": "address.lean",
-          "pairs": 23,
-          "expected": 11.47,
-          "lift": 2.01
+          "pairs": 26,
+          "expected": 13.68,
+          "lift": 1.9
         },
         {
-          "file": "demand3.lean",
-          "pairs": 11,
-          "expected": 7.82,
-          "lift": 1.41
+          "file": "fnv.lean",
+          "pairs": 12,
+          "expected": 7.66,
+          "lift": 1.57
         }
       ]
     },
     {
       "file": "flow.lean",
-      "title": "The doubling flow, for every step — 3 machine-checked theorems and how they are bound",
+      "title": "The doubling flow, for every step — 5 machine-checked theorems and how they are bound",
       "wing": "the ring",
-      "sealed": 3,
-      "joint": "e2bdf7b9-c448-8590-92aa-bcc9867e1d95",
+      "sealed": 5,
+      "joint": "bfa322df-8785-864a-9803-718399daf47f",
       "neighbours": [
         {
           "file": "elementary.lean",
-          "pairs": 4,
-          "expected": 1.04,
-          "lift": 3.84
+          "pairs": 5,
+          "expected": 1.74,
+          "lift": 2.88
         },
         {
           "file": "imagined.lean",
-          "pairs": 5,
-          "expected": 3.42,
-          "lift": 1.46
+          "pairs": 8,
+          "expected": 5.12,
+          "lift": 1.56
+        },
+        {
+          "file": "mechanical.lean",
+          "pairs": 4,
+          "expected": 5.51,
+          "lift": 0.73
         }
       ]
     },
     {
       "file": "fnv.lean",
-      "title": "FNV-1a, the address function — 13 machine-checked theorems and how they are bound",
+      "title": "FNV-1a, the address function — 14 machine-checked theorems and how they are bound",
       "wing": "the address",
-      "sealed": 13,
-      "joint": "54058a68-1669-8bca-b860-24007a7a0cdd",
+      "sealed": 14,
+      "joint": "a10057d3-cb3f-8eda-b8e3-fb98e3696617",
       "neighbours": [
         {
           "file": "demand.lean",
           "pairs": 5,
-          "expected": 1.13,
-          "lift": 4.43
+          "expected": 1.34,
+          "lift": 3.74
         },
         {
-          "file": "index.lean",
-          "pairs": 3,
-          "expected": 1.38,
-          "lift": 2.17
+          "file": "reach.lean",
+          "pairs": 4,
+          "expected": 1.46,
+          "lift": 2.74
         },
         {
-          "file": "energy.lean",
-          "pairs": 5,
-          "expected": 2.76,
-          "lift": 1.81
+          "file": "families.lean",
+          "pairs": 11,
+          "expected": 7.66,
+          "lift": 1.44
         }
       ]
     },
@@ -277,20 +283,20 @@
         {
           "file": "theorems.lean",
           "pairs": 3,
-          "expected": 1,
-          "lift": 2.99
+          "expected": 0.9,
+          "lift": 3.32
         },
         {
           "file": "coin.lean",
           "pairs": 4,
-          "expected": 1.51,
-          "lift": 2.66
+          "expected": 1.35,
+          "lift": 2.95
         },
         {
           "file": "address.lean",
           "pairs": 6,
-          "expected": 2.76,
-          "lift": 2.17
+          "expected": 2.82,
+          "lift": 2.13
         }
       ]
     },
@@ -302,22 +308,22 @@
       "joint": "37fe0337-e772-8eb0-861c-2ee17049b0cf",
       "neighbours": [
         {
-          "file": "address.lean",
-          "pairs": 42,
-          "expected": 25.06,
-          "lift": 1.68
-        },
-        {
           "file": "energy.lean",
-          "pairs": 42,
-          "expected": 25.06,
-          "lift": 1.68
+          "pairs": 47,
+          "expected": 28.69,
+          "lift": 1.64
         },
         {
-          "file": "demand.lean",
-          "pairs": 16,
-          "expected": 10.25,
-          "lift": 1.56
+          "file": "address.lean",
+          "pairs": 41,
+          "expected": 25.62,
+          "lift": 1.6
+        },
+        {
+          "file": "merkaba.lean",
+          "pairs": 13,
+          "expected": 8.2,
+          "lift": 1.59
         }
       ]
     },
@@ -330,21 +336,21 @@
       "neighbours": [
         {
           "file": "demand3.lean",
-          "pairs": 6,
-          "expected": 1.59,
-          "lift": 3.77
+          "pairs": 5,
+          "expected": 1.82,
+          "lift": 2.75
         },
         {
-          "file": "elementary.lean",
-          "pairs": 9,
-          "expected": 3.82,
-          "lift": 2.35
+          "file": "address.lean",
+          "pairs": 6,
+          "expected": 2.39,
+          "lift": 2.51
         },
         {
           "file": "fnv.lean",
           "pairs": 3,
-          "expected": 1.38,
-          "lift": 2.17
+          "expected": 1.34,
+          "lift": 2.24
         }
       ]
     },
@@ -358,20 +364,20 @@
         {
           "file": "priorart.lean",
           "pairs": 3,
-          "expected": 0.7,
-          "lift": 4.32
-        },
-        {
-          "file": "coin.lean",
-          "pairs": 3,
-          "expected": 0.93,
-          "lift": 3.24
+          "expected": 0.63,
+          "lift": 4.8
         },
         {
           "file": "fnv.lean",
           "pairs": 3,
-          "expected": 1,
-          "lift": 2.99
+          "expected": 0.97,
+          "lift": 3.08
+        },
+        {
+          "file": "elementary.lean",
+          "pairs": 7,
+          "expected": 2.78,
+          "lift": 2.52
         }
       ]
     },
@@ -385,8 +391,8 @@
         {
           "file": "demand3.lean",
           "pairs": 3,
-          "expected": 1.16,
-          "lift": 2.59
+          "expected": 1.32,
+          "lift": 2.27
         },
         {
           "file": "elementary.lean",
@@ -397,62 +403,62 @@
         {
           "file": "imagined.lean",
           "pairs": 12,
-          "expected": 9.11,
-          "lift": 1.32
+          "expected": 8.2,
+          "lift": 1.46
         }
       ]
     },
     {
       "file": "light.lean",
-      "title": "Light, space and time — arithmetic on numbers a standards body fixed — 14 machine-checked theorems and how they are bound",
+      "title": "Light, space and time — arithmetic on numbers a standards body fixed — 16 machine-checked theorems and how they are bound",
       "wing": "the floor",
-      "sealed": 14,
-      "joint": "4342e573-9a8e-8099-a04f-f5d4b170b5b2",
+      "sealed": 16,
+      "joint": "0a2c7345-7707-86d0-a910-58a18e6dac0e",
       "neighbours": [
         {
-          "file": "coin.lean",
+          "file": "demand2.lean",
           "pairs": 7,
-          "expected": 1.62,
-          "lift": 4.32
+          "expected": 1.67,
+          "lift": 4.2
         },
         {
-          "file": "demand2.lean",
-          "pairs": 5,
-          "expected": 1.49,
-          "lift": 3.36
+          "file": "coin.lean",
+          "pairs": 6,
+          "expected": 1.67,
+          "lift": 3.6
         },
         {
           "file": "merkaba.lean",
           "pairs": 3,
-          "expected": 1.08,
-          "lift": 2.77
+          "expected": 1.11,
+          "lift": 2.7
         }
       ]
     },
     {
       "file": "mechanical.lean",
-      "title": "Mechanically translated — 119 machine-checked theorems and how they are bound",
+      "title": "Mechanically translated — 127 machine-checked theorems and how they are bound",
       "wing": "the machine",
-      "sealed": 119,
-      "joint": "31b8d7d9-571e-8741-9afa-61db1fd23ad1",
+      "sealed": 127,
+      "joint": "f5598011-b4c7-82c7-8d87-d77d94acf11a",
       "neighbours": [
-        {
-          "file": "priorart.lean",
-          "pairs": 18,
-          "expected": 10.34,
-          "lift": 1.74
-        },
         {
           "file": "phenomena.lean",
           "pairs": 7,
-          "expected": 4.6,
-          "lift": 1.52
+          "expected": 4.41,
+          "lift": 1.59
         },
         {
           "file": "address.lean",
-          "pairs": 35,
-          "expected": 25.28,
-          "lift": 1.38
+          "pairs": 39,
+          "expected": 27.57,
+          "lift": 1.41
+        },
+        {
+          "file": "priorart.lean",
+          "pairs": 14,
+          "expected": 9.93,
+          "lift": 1.41
         }
       ]
     },
@@ -466,8 +472,8 @@
         {
           "file": "light.lean",
           "pairs": 3,
-          "expected": 1.08,
-          "lift": 2.77
+          "expected": 1.11,
+          "lift": 2.7
         },
         {
           "file": "elementary.lean",
@@ -478,8 +484,8 @@
         {
           "file": "address.lean",
           "pairs": 4,
-          "expected": 1.7,
-          "lift": 2.35
+          "expected": 1.74,
+          "lift": 2.3
         }
       ]
     },
@@ -491,49 +497,49 @@
       "joint": "05a04d64-88a2-82b9-8c59-f26c36cd4312",
       "neighbours": [
         {
-          "file": "demand3.lean",
-          "pairs": 4,
-          "expected": 1.59,
+          "file": "address.lean",
+          "pairs": 6,
+          "expected": 2.39,
           "lift": 2.51
         },
         {
-          "file": "address.lean",
-          "pairs": 5,
-          "expected": 2.34,
-          "lift": 2.14
+          "file": "families.lean",
+          "pairs": 13,
+          "expected": 6.02,
+          "lift": 2.16
         },
         {
-          "file": "families.lean",
-          "pairs": 10,
-          "expected": 5.74,
-          "lift": 1.74
+          "file": "split.lean",
+          "pairs": 3,
+          "expected": 2.1,
+          "lift": 1.43
         }
       ]
     },
     {
       "file": "nim.lean",
-      "title": "Nim — 25 machine-checked theorems and how they are bound",
+      "title": "Nim — 28 machine-checked theorems and how they are bound",
       "wing": "the machine",
-      "sealed": 25,
-      "joint": "a72a333d-d84f-8e5b-83d0-2798bc36ac34",
+      "sealed": 28,
+      "joint": "c002124f-d671-8e3f-8609-9335b0759a96",
       "neighbours": [
+        {
+          "file": "flow.lean",
+          "pairs": 3,
+          "expected": 1.22,
+          "lift": 2.47
+        },
         {
           "file": "rights.lean",
           "pairs": 4,
-          "expected": 1.93,
-          "lift": 2.07
-        },
-        {
-          "file": "theorems.lean",
-          "pairs": 4,
-          "expected": 1.93,
-          "lift": 2.07
+          "expected": 1.95,
+          "lift": 2.06
         },
         {
           "file": "index.lean",
           "pairs": 5,
-          "expected": 2.66,
-          "lift": 1.88
+          "expected": 2.67,
+          "lift": 1.87
         }
       ]
     },
@@ -547,20 +553,20 @@
         {
           "file": "address.lean",
           "pairs": 3,
-          "expected": 0.85,
-          "lift": 3.53
+          "expected": 0.87,
+          "lift": 3.45
         },
         {
           "file": "families.lean",
           "pairs": 6,
-          "expected": 2.09,
-          "lift": 2.88
+          "expected": 2.19,
+          "lift": 2.74
         },
         {
           "file": "mechanical.lean",
           "pairs": 5,
-          "expected": 4.6,
-          "lift": 1.09
+          "expected": 4.41,
+          "lift": 1.13
         }
       ]
     },
@@ -573,21 +579,21 @@
       "neighbours": [
         {
           "file": "involution.lean",
-          "pairs": 4,
-          "expected": 0.7,
-          "lift": 5.75
+          "pairs": 3,
+          "expected": 0.63,
+          "lift": 4.8
         },
         {
           "file": "energy.lean",
-          "pairs": 4,
-          "expected": 1.91,
-          "lift": 2.09
+          "pairs": 5,
+          "expected": 2.19,
+          "lift": 2.28
         },
         {
           "file": "mechanical.lean",
           "pairs": 14,
-          "expected": 10.34,
-          "lift": 1.35
+          "expected": 9.93,
+          "lift": 1.41
         }
       ]
     },
@@ -599,49 +605,49 @@
       "joint": "18d30f2b-d336-8caf-9a47-146ae047dfc4",
       "neighbours": [
         {
-          "file": "address.lean",
-          "pairs": 5,
-          "expected": 2.34,
-          "lift": 2.14
+          "file": "elementary.lean",
+          "pairs": 9,
+          "expected": 3.82,
+          "lift": 2.36
         },
         {
-          "file": "elementary.lean",
-          "pairs": 8,
-          "expected": 3.82,
+          "file": "address.lean",
+          "pairs": 5,
+          "expected": 2.39,
           "lift": 2.09
         },
         {
-          "file": "z9plus.lean",
-          "pairs": 7,
-          "expected": 4.57,
-          "lift": 1.53
+          "file": "energy.lean",
+          "pairs": 4,
+          "expected": 2.67,
+          "lift": 1.5
         }
       ]
     },
     {
       "file": "reach.lean",
-      "title": "What exhaustion reaches, and what lies outside it — 8 machine-checked theorems and how they are bound",
+      "title": "What exhaustion reaches, and what lies outside it — 12 machine-checked theorems and how they are bound",
       "wing": "the floor",
-      "sealed": 8,
-      "joint": "fa9dcd6d-5209-8845-b954-584568daaac6",
+      "sealed": 12,
+      "joint": "1e5286bc-361a-824b-80da-a0f84a53bb55",
       "neighbours": [
         {
           "file": "ledgerclaims.lean",
           "pairs": 3,
-          "expected": 0.62,
-          "lift": 4.85
+          "expected": 0.83,
+          "lift": 3.6
         },
         {
           "file": "coin.lean",
           "pairs": 4,
-          "expected": 0.93,
-          "lift": 4.32
+          "expected": 1.25,
+          "lift": 3.2
         },
         {
-          "file": "elementary.lean",
-          "pairs": 7,
-          "expected": 2.78,
-          "lift": 2.52
+          "file": "demand.lean",
+          "pairs": 3,
+          "expected": 1.15,
+          "lift": 2.62
         }
       ]
     },
@@ -655,47 +661,47 @@
         {
           "file": "theorems.lean",
           "pairs": 4,
-          "expected": 1.16,
-          "lift": 3.45
+          "expected": 1.04,
+          "lift": 3.84
         },
         {
           "file": "generated.lean",
-          "pairs": 5,
-          "expected": 1.88,
-          "lift": 2.66
+          "pairs": 3,
+          "expected": 1.69,
+          "lift": 1.77
         },
         {
-          "file": "speed.lean",
-          "pairs": 3,
-          "expected": 1.59,
-          "lift": 1.88
+          "file": "families.lean",
+          "pairs": 12,
+          "expected": 8.21,
+          "lift": 1.46
         }
       ]
     },
     {
       "file": "reversal.lean",
-      "title": "Digit reversal — 14 machine-checked theorems and how they are bound",
+      "title": "Digit reversal — 29 machine-checked theorems and how they are bound",
       "wing": "the machine",
-      "sealed": 14,
-      "joint": "f7d572e9-6010-899d-912e-778ba70de9a0",
+      "sealed": 29,
+      "joint": "f8c1598c-52ae-8195-861d-6b0ee64102cd",
       "neighbours": [
         {
-          "file": "rights.lean",
-          "pairs": 3,
-          "expected": 1.08,
-          "lift": 2.77
-        },
-        {
           "file": "demand2.lean",
-          "pairs": 3,
-          "expected": 1.49,
-          "lift": 2.02
+          "pairs": 6,
+          "expected": 3.02,
+          "lift": 1.99
         },
         {
-          "file": "coin.lean",
+          "file": "energy.lean",
+          "pairs": 12,
+          "expected": 7.05,
+          "lift": 1.7
+        },
+        {
+          "file": "ledgerclaims.lean",
           "pairs": 3,
-          "expected": 1.62,
-          "lift": 1.85
+          "expected": 2.01,
+          "lift": 1.49
         }
       ]
     },
@@ -707,103 +713,103 @@
       "joint": "6ae9baad-d17f-8059-be52-438399bff840",
       "neighbours": [
         {
+          "file": "energy.lean",
+          "pairs": 4,
+          "expected": 1.95,
+          "lift": 2.06
+        },
+        {
           "file": "nim.lean",
           "pairs": 4,
-          "expected": 1.93,
-          "lift": 2.07
+          "expected": 1.95,
+          "lift": 2.06
         },
         {
-          "file": "energy.lean",
-          "pairs": 3,
-          "expected": 1.7,
-          "lift": 1.77
-        },
-        {
-          "file": "sequences.lean",
-          "pairs": 3,
-          "expected": 1.7,
-          "lift": 1.77
+          "file": "imagined.lean",
+          "pairs": 15,
+          "expected": 8.2,
+          "lift": 1.83
         }
       ]
     },
     {
       "file": "sequences.lean",
-      "title": "Sequences — 22 machine-checked theorems and how they are bound",
+      "title": "Sequences — 28 machine-checked theorems and how they are bound",
       "wing": "the ring",
-      "sealed": 22,
-      "joint": "04dbb068-bef5-872f-8778-a8115d6accd3",
+      "sealed": 28,
+      "joint": "ba405d9e-a92b-8525-a8ff-5ac89301f613",
       "neighbours": [
         {
-          "file": "reversal.lean",
-          "pairs": 7,
-          "expected": 2.97,
-          "lift": 2.35
-        },
-        {
           "file": "demand2.lean",
-          "pairs": 5,
-          "expected": 2.34,
-          "lift": 2.14
+          "pairs": 6,
+          "expected": 2.92,
+          "lift": 2.06
         },
         {
-          "file": "rights.lean",
+          "file": "speed.lean",
+          "pairs": 5,
+          "expected": 2.92,
+          "lift": 1.71
+        },
+        {
+          "file": "involution.lean",
           "pairs": 3,
-          "expected": 1.7,
-          "lift": 1.77
+          "expected": 1.95,
+          "lift": 1.54
         }
       ]
     },
     {
       "file": "speed.lean",
-      "title": "Why verification is fast, and what it is not — 11 machine-checked theorems and how they are bound",
+      "title": "Why verification is fast, and what it is not — 12 machine-checked theorems and how they are bound",
       "wing": "the floor",
-      "sealed": 11,
-      "joint": "7d92d6c4-dbf8-85d1-bb47-06923a3b753f",
+      "sealed": 12,
+      "joint": "708362fb-f357-85e7-9eef-c89b318bbc08",
       "neighbours": [
         {
           "file": "demand.lean",
-          "pairs": 5,
-          "expected": 0.96,
-          "lift": 5.23
-        },
-        {
-          "file": "z9.lean",
-          "pairs": 5,
-          "expected": 2.23,
-          "lift": 2.24
+          "pairs": 4,
+          "expected": 1.15,
+          "lift": 3.49
         },
         {
           "file": "fnv.lean",
           "pairs": 3,
-          "expected": 1.38,
-          "lift": 2.17
+          "expected": 1.46,
+          "lift": 2.06
+        },
+        {
+          "file": "demand3.lean",
+          "pairs": 4,
+          "expected": 1.98,
+          "lift": 2.02
         }
       ]
     },
     {
       "file": "split.lean",
-      "title": "The digit split — 20 machine-checked theorems and how they are bound",
+      "title": "The digit split — 22 machine-checked theorems and how they are bound",
       "wing": "the ring",
-      "sealed": 20,
-      "joint": "5543267d-338d-8042-9603-abf741d3fdf8",
+      "sealed": 22,
+      "joint": "f519b381-6632-8d18-8a71-601ce07909b1",
       "neighbours": [
+        {
+          "file": "flow.lean",
+          "pairs": 3,
+          "expected": 0.96,
+          "lift": 3.14
+        },
         {
           "file": "demand2.lean",
           "pairs": 5,
-          "expected": 2.12,
-          "lift": 2.35
+          "expected": 2.29,
+          "lift": 2.18
         },
         {
           "file": "theorems.lean",
           "pairs": 3,
-          "expected": 1.54,
-          "lift": 1.94
-        },
-        {
-          "file": "families.lean",
-          "pairs": 19,
-          "expected": 10.43,
-          "lift": 1.82
+          "expected": 1.53,
+          "lift": 1.96
         }
       ]
     },
@@ -816,75 +822,75 @@
       "neighbours": [
         {
           "file": "generated.lean",
-          "pairs": 4,
-          "expected": 1,
-          "lift": 3.98
+          "pairs": 3,
+          "expected": 0.9,
+          "lift": 3.32
         },
         {
           "file": "recovered.lean",
           "pairs": 3,
-          "expected": 1.16,
-          "lift": 2.59
+          "expected": 1.04,
+          "lift": 2.88
         },
         {
-          "file": "nim.lean",
-          "pairs": 4,
-          "expected": 1.93,
-          "lift": 2.07
+          "file": "elementary.lean",
+          "pairs": 6,
+          "expected": 2.78,
+          "lift": 2.16
         }
       ]
     },
     {
       "file": "z9.lean",
-      "title": "The ring ℤ/9 — 21 machine-checked theorems and how they are bound",
+      "title": "The ring ℤ/9 — 24 machine-checked theorems and how they are bound",
       "wing": "the ring",
-      "sealed": 21,
-      "joint": "508fb2d3-44b1-8a7e-a137-3f5118040a72",
+      "sealed": 24,
+      "joint": "d64f9352-f528-84ef-ad67-57ae1d3c2b59",
       "neighbours": [
         {
           "file": "demand.lean",
-          "pairs": 5,
-          "expected": 1.82,
-          "lift": 2.74
+          "pairs": 6,
+          "expected": 2.29,
+          "lift": 2.62
         },
         {
           "file": "speed.lean",
           "pairs": 6,
-          "expected": 2.23,
-          "lift": 2.69
+          "expected": 2.5,
+          "lift": 2.4
         },
         {
           "file": "demand3.lean",
-          "pairs": 6,
-          "expected": 3.04,
-          "lift": 1.97
+          "pairs": 9,
+          "expected": 3.96,
+          "lift": 2.27
         }
       ]
     },
     {
       "file": "z9plus.lean",
-      "title": "Entanglement in the ring — 43 machine-checked theorems and how they are bound",
+      "title": "Entanglement in the ring — 48 machine-checked theorems and how they are bound",
       "wing": "the ring",
-      "sealed": 43,
-      "joint": "49d7127a-322e-824e-980a-901b45ec0468",
+      "sealed": 48,
+      "joint": "143829e0-d1d9-81d8-83e6-ee0388d9dc84",
       "neighbours": [
         {
           "file": "coin.lean",
-          "pairs": 10,
-          "expected": 4.98,
-          "lift": 2.01
+          "pairs": 11,
+          "expected": 5,
+          "lift": 2.2
         },
         {
-          "file": "fnv.lean",
+          "file": "demand2.lean",
           "pairs": 10,
-          "expected": 5.4,
-          "lift": 1.85
+          "expected": 5,
+          "lift": 2
         },
         {
-          "file": "phenomena.lean",
-          "pairs": 3,
-          "expected": 1.66,
-          "lift": 1.81
+          "file": "energy.lean",
+          "pairs": 22,
+          "expected": 11.67,
+          "lift": 1.88
         }
       ]
     }

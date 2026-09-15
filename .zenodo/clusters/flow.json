@@ -1,7 +1,7 @@
 {
   "upload_type": "publication",
   "publication_type": "preprint",
-  "title": "The doubling flow, for every step — 3 machine-checked theorems and how they are bound",
+  "title": "The doubling flow, for every step — 5 machine-checked theorems and how they are bound",
   "creators": [
     {
       "name": "Rouschev, Tsvetan",
@@ -9,7 +9,7 @@
       "affiliation": "PSG, Bulgaria"
     }
   ],
-  "description": "<p><strong>The doubling flow, for every step</strong>. 3 machine-checked theorems from the Lean 4 source file <code>src/proof/flow.lean</code>, by Tsvetan Rouschev, licensed CC BY-NC-ND 4.0. Lean 4 is a proof checker: a theorem it accepts has been checked by its kernel, not argued in prose. All are proved for every value, on the standard axioms only (<code>propext</code>, <code>Quot.sound</code>; the verifier refuses any other). Every theorem listed is sealed live in the deposit's ledger, where a withdrawal is marked in place; 63 earlier rows removed on 2026-08-09 are listed in <a href=\"https://github.com/ceccec/millennium-solutions/blob/614abe8701b2e388343f6434eb21cb2ff0f434c5/src/proof/revoked.json\">src/proof/revoked.json</a>.</p><p><strong>How these theorems are bound.</strong> \"Entangled\" is used here in a precise, non-quantum sense: theorems are bound when they derive from shared definitions (section 1), when their files import one another (section 2), and when their content-addressed receipts fold into one address that changes if any one of them changes (section 3). It is correlation by derivation; no information travels through it.</p><p><strong>1 · Shared definitions.</strong> 1 definition is used by two or more theorems, binding 3 pairs; the theorems fall into 1 strand. Most binding: <code>orbit</code> (3).</p><p><strong>2 · Imports.</strong> Built on: <code>index.lean</code>. Built on it: no other cluster. Checking this cluster needs 2 files: <code>src/proof/flow.lean</code>, <code>src/proof/index.lean</code>.</p><p><strong>3 · The joint address.</strong> The 3 sealed receipts fold to <code>e2bdf7b9-c448-8590-92aa-bcc9867e1d95</code>. Order-invariant: yes — the same root in reverse order. Altering one receipt changes it: yes, computed when this record was generated. A content-address proves integrity, not truth.</p><p><strong>4 · The address lattice.</strong> Each theorem sits at the seven ray values its page plots from its receipt, taken mod 9: a point of (ℤ/9)⁷. This cluster's centre is (2, 6, 6, 6, 8, 8, 6). Its nearest clusters, ranked by lift — pairs counted from this cluster's theorems' seven nearest points, over the pairs expected by chance from the two clusters' sizes: <code>elementary.lean</code> (4 observed, 1.04 expected, lift 3.84), <code>imagined.lean</code> (5 observed, 3.42 expected, lift 1.46). A best lift is the largest of about 32 small ratios, so chance alone gives a typical best lift of 1.92 here (the median over 200 seeded reshufflings of which cluster each point belongs to); one at least as high as this cluster's arose in 20.5% of them — consistent with chance. Mean distance between two of its theorems: 17; from one of its theorems to a theorem of another cluster: 15.61. A receipt is a hash, so nearness on this lattice is a property of the addresses, not of the mathematics; the mathematical binding is (1) and (2). These figures are as of commit <code>614abe8701b2</code> (2026-09-15), over 726 points; a new seal anywhere moves them.</p><p><strong>Prior art.</strong> 2⁶ = 64 ≡ 1 (mod 9), so the powers of two modulo 9 repeat with period six — Euler's theorem for φ(9) = 6, and the order of 2 in U(9), both textbook. Credited, and bounded: what this file adds is the kernel proof that the flow used by <code>navier_stokes_flow_is_bounded</code> stays bounded at EVERY step, not only at the 48 that theorem checks. Per-theorem prior-art searches — OEIS, zbMATH Open, OpenAlex, Crossref, arXiv — are recorded, with what was searched, where and when, in the living ledger <a href=\"https://github.com/ceccec/millennium-solutions/blob/main/src/proof/novelty.json\">src/proof/novelty.json</a> (main branch). No novelty is claimed here.</p><p><strong>The theorems.</strong></p><ol><li><code>the_doubling_flow_repeats_every_six_steps</code> — <code>∀ k : Nat, orbit (k + 6) = orbit k</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_flow_the_doubling_flow_repeats_every_six_steps\">record</a></li><li><code>the_doubling_flow_is_its_first_six_steps</code> — <code>∀ k : Nat, orbit k = orbit (k % 6)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_flow_the_doubling_flow_is_its_first_six_steps\">record</a></li><li><code>navier_stokes_flow_is_bounded_for_every_step</code> — <code>∀ k : Nat, orbit k &lt; 9 ∧ span.contains (orbit k) = true</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_flow_navier_stokes_flow_is_bounded_for_every_step\">record</a></li></ol><p><strong>Recompute.</strong> Clone <a href=\"https://github.com/ceccec/millennium-solutions\">https://github.com/ceccec/millennium-solutions</a> at commit <code>614abe8701b2</code> and run <code>npm ci && npm run lean</code>, which checks every Lean file in dependency order. This record was generated by <a href=\"https://github.com/ceccec/millennium-solutions/blob/614abe8701b2e388343f6434eb21cb2ff0f434c5/scripts/clusters.ts\">scripts/clusters.ts</a> from the source and the ledger.</p><p><strong>Licence.</strong> CC BY-NC-ND 4.0 — free for non-commercial use with attribution to Tsvetan Rouschev; commercial use by arrangement with the author.</p>",
+  "description": "<p><strong>The doubling flow, for every step</strong>. 5 machine-checked theorems from the Lean 4 source file <code>src/proof/flow.lean</code>, by Tsvetan Rouschev, licensed CC BY-NC-ND 4.0. Lean 4 is a proof checker: a theorem it accepts has been checked by its kernel, not argued in prose. All are proved for every value, on the standard axioms only (<code>propext</code>, <code>Quot.sound</code>; the verifier refuses any other). Every theorem listed is sealed live in the deposit's ledger, where a withdrawal is marked in place; 63 earlier rows removed on 2026-08-09 are listed in <a href=\"https://github.com/ceccec/millennium-solutions/blob/90fe8c5706062e7f3f5b1c44fcca89fc8758566c/src/proof/revoked.json\">src/proof/revoked.json</a>.</p><p><strong>How these theorems are bound.</strong> \"Entangled\" is used here in a precise, non-quantum sense: theorems are bound when they derive from shared definitions (section 1), when their files import one another (section 2), and when their content-addressed receipts fold into one address that changes if any one of them changes (section 3). It is correlation by derivation; no information travels through it.</p><p><strong>1 · Shared definitions.</strong> 1 definition is used by two or more theorems, binding 10 pairs; the theorems fall into 1 strand. Most binding: <code>orbit</code> (5).</p><p><strong>2 · Imports.</strong> Built on: <code>index.lean</code>. Built on it: no other cluster. Checking this cluster needs 2 files: <code>src/proof/flow.lean</code>, <code>src/proof/index.lean</code>.</p><p><strong>3 · The joint address.</strong> The 5 sealed receipts fold to <code>bfa322df-8785-864a-9803-718399daf47f</code>. Order-invariant: yes — the same root in reverse order. Altering one receipt changes it: yes, computed when this record was generated. A content-address proves integrity, not truth.</p><p><strong>4 · The address lattice.</strong> Each theorem sits at the seven ray values its page plots from its receipt, taken mod 9: a point of (ℤ/9)⁷. This cluster's centre is (2, 4, 6, 5, 8, 7, 4). Its nearest clusters, ranked by lift — pairs counted from this cluster's theorems' seven nearest points, over the pairs expected by chance from the two clusters' sizes: <code>elementary.lean</code> (5 observed, 1.74 expected, lift 2.88), <code>imagined.lean</code> (8 observed, 5.12 expected, lift 1.56), <code>mechanical.lean</code> (4 observed, 5.51 expected, lift 0.73). A best lift is the largest of about 32 small ratios, so chance alone gives a typical best lift of 2.88 here (the median over 200 seeded reshufflings of which cluster each point belongs to); one at least as high as this cluster's arose in 53.5% of them — consistent with chance. Mean distance between two of its theorems: 15; from one of its theorems to a theorem of another cluster: 15.56. A receipt is a hash, so nearness on this lattice is a property of the addresses, not of the mathematics; the mathematical binding is (1) and (2). These figures are as of commit <code>90fe8c570606</code> (2026-09-15), over 807 points; a new seal anywhere moves them.</p><p><strong>Prior art.</strong> 2⁶ = 64 ≡ 1 (mod 9), so the powers of two modulo 9 repeat with period six — Euler's theorem for φ(9) = 6, and the order of 2 in U(9), both textbook. Credited, and bounded: what this file adds is the kernel proof that the flow used by <code>navier_stokes_flow_is_bounded</code> stays bounded at EVERY step, not only at the 48 that theorem checks. Per-theorem prior-art searches — OEIS, zbMATH Open, OpenAlex, Crossref, arXiv — are recorded, with what was searched, where and when, in the living ledger <a href=\"https://github.com/ceccec/millennium-solutions/blob/main/src/proof/novelty.json\">src/proof/novelty.json</a> (main branch). No novelty is claimed here.</p><p><strong>The theorems.</strong></p><ol><li><code>the_doubling_flow_repeats_every_six_steps</code> — <code>∀ k : Nat, orbit (k + 6) = orbit k</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_flow_the_doubling_flow_repeats_every_six_steps\">record</a></li><li><code>the_doubling_flow_is_its_first_six_steps</code> — <code>∀ k : Nat, orbit k = orbit (k % 6)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_flow_the_doubling_flow_is_its_first_six_steps\">record</a></li><li><code>navier_stokes_flow_is_bounded_for_every_step</code> — <code>∀ k : Nat, orbit k &lt; 9 ∧ span.contains (orbit k) = true</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_flow_navier_stokes_flow_is_bounded_for_every_step\">record</a></li><li><code>the_reverse_flow_undoes_every_step</code> — <code>∀ k : Nat, orbit (k + 1) * 5 % 9 = orbit k</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_flow_the_reverse_flow_undoes_every_step\">record</a></li><li><code>every_state_of_the_flow_returns_within_six_steps</code> — <code>∀ k s : Nat, ∃ j, j &lt; 6 ∧ orbit (k + j) = orbit s</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_flow_every_state_of_the_flow_returns_within_six_steps\">record</a></li></ol><p><strong>Recompute.</strong> Clone <a href=\"https://github.com/ceccec/millennium-solutions\">https://github.com/ceccec/millennium-solutions</a> at commit <code>90fe8c570606</code> and run <code>npm ci && npm run lean</code>, which checks every Lean file in dependency order. This record was generated by <a href=\"https://github.com/ceccec/millennium-solutions/blob/90fe8c5706062e7f3f5b1c44fcca89fc8758566c/scripts/clusters.ts\">scripts/clusters.ts</a> from the source and the ledger.</p><p><strong>Licence.</strong> CC BY-NC-ND 4.0 — free for non-commercial use with attribution to Tsvetan Rouschev; commercial use by arrangement with the author.</p>",
   "license": "cc-by-nc-nd-4.0",
   "access_right": "open",
   "language": "eng",
@@ -30,12 +30,12 @@
       "scheme": "doi"
     },
     {
-      "identifier": "https://github.com/ceccec/millennium-solutions/blob/614abe8701b2e388343f6434eb21cb2ff0f434c5/src/proof/flow.lean",
+      "identifier": "https://github.com/ceccec/millennium-solutions/blob/90fe8c5706062e7f3f5b1c44fcca89fc8758566c/src/proof/flow.lean",
       "relation": "isSupplementTo",
       "scheme": "url"
     },
     {
-      "identifier": "https://github.com/ceccec/millennium-solutions/blob/614abe8701b2e388343f6434eb21cb2ff0f434c5/src/proof/index.lean",
+      "identifier": "https://github.com/ceccec/millennium-solutions/blob/90fe8c5706062e7f3f5b1c44fcca89fc8758566c/src/proof/index.lean",
       "relation": "references",
       "scheme": "url"
     },
@@ -53,9 +53,19 @@
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_flow_navier_stokes_flow_is_bounded_for_every_step",
       "relation": "hasPart",
       "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_flow_the_reverse_flow_undoes_every_step",
+      "relation": "hasPart",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_flow_every_state_of_the_flow_returns_within_six_steps",
+      "relation": "hasPart",
+      "scheme": "url"
     }
   ],
-  "notes": "cluster flow.lean · 3 sealed · joint address e2bdf7b9-c448-8590-92aa-bcc9867e1d95 · figures as of commit 614abe8701b2 (2026-09-15) · concept DOI 10.5281/zenodo.21819217 · generated by scripts/clusters.ts",
+  "notes": "cluster flow.lean · 5 sealed · joint address bfa322df-8785-864a-9803-718399daf47f · figures as of commit 90fe8c570606 (2026-09-15) · concept DOI 10.5281/zenodo.21819217 · generated by scripts/clusters.ts",
   "files": [
     "src/proof/flow.lean",
     "src/proof/index.lean"
@@ -63,12 +73,12 @@
   "cluster": {
     "file": "flow.lean",
     "wing": "the ring",
-    "sealed": 3,
+    "sealed": 5,
     "decided": 0,
-    "proved": 3,
+    "proved": 5,
     "declarations": 0,
     "joint": {
-      "root": "e2bdf7b9-c448-8590-92aa-bcc9867e1d95",
+      "root": "bfa322df-8785-864a-9803-718399daf47f",
       "orderInvariant": true,
       "bindsEveryReceipt": true
     },
@@ -76,7 +86,7 @@
     "binding": [
       {
         "def": "orbit",
-        "theorems": 3
+        "theorems": 5
       }
     ],
     "imports": [
@@ -86,33 +96,39 @@
     "lattice": {
       "centre": [
         2,
+        4,
         6,
-        6,
-        6,
+        5,
         8,
-        8,
-        6
+        7,
+        4
       ],
-      "within": 17,
-      "between": 15.61,
+      "within": 15,
+      "between": 15.56,
       "top": [
         {
           "file": "elementary.lean",
-          "pairs": 4,
-          "expected": 1.04,
-          "lift": 3.84
+          "pairs": 5,
+          "expected": 1.74,
+          "lift": 2.88
         },
         {
           "file": "imagined.lean",
-          "pairs": 5,
-          "expected": 3.42,
-          "lift": 1.46
+          "pairs": 8,
+          "expected": 5.12,
+          "lift": 1.56
+        },
+        {
+          "file": "mechanical.lean",
+          "pairs": 4,
+          "expected": 5.51,
+          "lift": 0.73
         }
       ],
-      "chanceShare": 0.205,
-      "nullMedian": 1.92,
+      "chanceShare": 0.535,
+      "nullMedian": 2.88,
       "shuffles": 200
     },
-    "asOf": "614abe8701b2e388343f6434eb21cb2ff0f434c5"
+    "asOf": "90fe8c5706062e7f3f5b1c44fcca89fc8758566c"
   }
 }

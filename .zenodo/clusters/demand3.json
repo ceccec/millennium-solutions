@@ -1,7 +1,7 @@
 {
   "upload_type": "publication",
   "publication_type": "preprint",
-  "title": "The named theorems people ask for — 15 machine-checked theorems and how they are bound",
+  "title": "The named theorems people ask for — 19 machine-checked theorems and how they are bound",
   "creators": [
     {
       "name": "Rouschev, Tsvetan",
@@ -9,7 +9,7 @@
       "affiliation": "PSG, Bulgaria"
     }
   ],
-  "description": "<p><strong>The named theorems people ask for</strong>. 15 machine-checked theorems from the Lean 4 source file <code>src/proof/demand3.lean</code>, by Tsvetan Rouschev, licensed CC BY-NC-ND 4.0. Lean 4 is a proof checker: a theorem it accepts has been checked by its kernel, not argued in prose. 8 are checked case by case over a stated finite domain (<code>by decide</code>). 7 are proved for every value, on the standard axioms only (<code>propext</code>, <code>Quot.sound</code>; the verifier refuses any other). Every theorem listed is sealed live in the deposit's ledger, where a withdrawal is marked in place; 63 earlier rows removed on 2026-08-09 are listed in <a href=\"https://github.com/ceccec/millennium-solutions/blob/614abe8701b2e388343f6434eb21cb2ff0f434c5/src/proof/revoked.json\">src/proof/revoked.json</a>.</p><p><strong>How these theorems are bound.</strong> \"Entangled\" is used here in a precise, non-quantum sense: theorems are bound when they derive from shared definitions (section 1), when their files import one another (section 2), and when their content-addressed receipts fold into one address that changes if any one of them changes (section 3). It is correlation by derivation; no information travels through it.</p><p><strong>1 · Shared definitions.</strong> 2 definitions are used by two or more theorems, binding 24 pairs; the theorems fall into 7 strands, the largest of 7. Most binding: <code>repunit</code> (7), <code>chi</code> (3).</p><p><strong>2 · Imports.</strong> Built on: <code>demand.lean</code>, <code>sequences.lean</code>. Built on it: no other cluster. Checking this cluster needs 5 files: <code>src/proof/demand3.lean</code>, <code>src/proof/demand.lean</code>, <code>src/proof/families.lean</code>, <code>src/proof/fnv.lean</code>, <code>src/proof/sequences.lean</code>.</p><p><strong>3 · The joint address.</strong> The 15 sealed receipts fold to <code>9d6f471f-ac6e-847c-b7af-49ac578ce01a</code>. Order-invariant: yes — the same root in reverse order. Altering one receipt changes it: yes, computed when this record was generated. A content-address proves integrity, not truth.</p><p><strong>4 · The address lattice.</strong> Each theorem sits at the seven ray values its page plots from its receipt, taken mod 9: a point of (ℤ/9)⁷. This cluster's centre is (4, 6, 5, 1, 6, 8, 7). Its nearest clusters, ranked by lift — pairs counted from this cluster's theorems' seven nearest points, over the pairs expected by chance from the two clusters' sizes: <code>index.lean</code> (5 observed, 1.59 expected, lift 3.14), <code>ledgerclaims.lean</code> (3 observed, 1.16 expected, lift 2.59), <code>address.lean</code> (8 observed, 3.19 expected, lift 2.51). A best lift is the largest of about 32 small ratios, so chance alone gives a typical best lift of 2.59 here (the median over 200 seeded reshufflings of which cluster each point belongs to); one at least as high as this cluster's arose in 31.5% of them — consistent with chance. Mean distance between two of its theorems: 15.71; from one of its theorems to a theorem of another cluster: 15.58. A receipt is a hash, so nearness on this lattice is a property of the addresses, not of the mathematics; the mathematical binding is (1) and (2). These figures are as of commit <code>614abe8701b2</code> (2026-09-15), over 726 points; a new seal anywhere moves them.</p><p><strong>Prior art.</strong> Legendre’s three-square theorem — Adrien-Marie Legendre, 1797; Carmichael numbers — Robert Carmichael, 1910; amicable pairs — known to antiquity. Per-theorem prior-art searches — OEIS, zbMATH Open, OpenAlex, Crossref, arXiv — are recorded, with what was searched, where and when, in the living ledger <a href=\"https://github.com/ceccec/millennium-solutions/blob/main/src/proof/novelty.json\">src/proof/novelty.json</a> (main branch). No novelty is claimed here.</p><p><strong>The theorems.</strong></p><ol><li><code>wilsons_theorem_and_its_converse</code> — <code>((List.range' 2 18).all (fun p =&gt; ¬ isPrime p || Sequences.fact (p - 1) % p == p - 1)) ∧ ((List.range' 5 15).all (fun n =&gt; isPrime n || Sequences.fact (n - 1) % n == 0))</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_wilsons_theorem_and_its_converse\">record</a></li><li><code>every_number_is_a_sum_of_four_squares</code> — <code>(List.range 60).all isSumOfFour ∧ isSumOfThree 7 = false ∧ isSumOfFour 7 = true</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_every_number_is_a_sum_of_four_squares\">record</a></li><li><code>the_cantor_pairing_is_injective_and_covers_an_initial_segment</code> — <code>block.eraseDups.length = 64 ∧ ((List.range 36).all (fun n =&gt; block.contains n))</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_the_cantor_pairing_is_injective_and_covers_an_initial_segment\">record</a></li><li><code>repunit_divisibility_by_three_and_seven</code> — <code>((List.range' 1 18).all (fun n =&gt; (repunit n % 3 == 0) == (n % 3 == 0))) ∧ ((List.range' 1 18).all (fun n =&gt; (repunit n % 7 == 0) == (n % 6 == 0)))</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_repunit_divisibility_by_three_and_seven\">record</a></li><li><code>the_euler_characteristic_of_a_genus_g_surface</code> — <code>((List.range 12).all (fun g =&gt; chi g + 2 * (g : Int) == 2)) ∧ chi 0 = 2 ∧ chi 1 = 0 ∧ chi 2 = -2</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_the_euler_characteristic_of_a_genus_g_surface\">record</a></li><li><code>odd_divisor_count_iff_perfect_square</code> — <code>(List.range' 1 120).all (fun n =&gt; ((divisors n).length % 2 == 1) == isSquare n)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_odd_divisor_count_iff_perfect_square\">record</a></li><li><code>havel_hakimi_decides_graphical_sequences</code> — <code>hh 12 [3, 3, 3, 3] = true ∧ hh 12 [2, 2, 2] = true ∧ hh 12 [3, 3, 1, 1] = false ∧ hh 12 [4, 1, 1, 1, 1] = true ∧ hh 12 [5, 1, 1, 1, 1] = false</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_havel_hakimi_decides_graphical_sequences\">record</a></li><li><code>the_euler_characteristic_of_a_genus_g_surface_for_every_g</code> — <code>∀ g : Nat, chi g + 2 * (g : Int) = 2</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_the_euler_characteristic_of_a_genus_g_surface_for_every_g\">record</a></li><li><code>a_repunit_has_the_residue_of_its_length_mod_three</code> — <code>∀ n : Nat, repunit n % 3 = n % 3</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_a_repunit_has_the_residue_of_its_length_mod_three\">record</a></li><li><code>a_repunit_is_divisible_by_three_exactly_when_its_length_is_for_every_n</code> — <code>∀ n : Nat, (repunit n % 3 = 0) ↔ (n % 3 = 0)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_a_repunit_is_divisible_by_three_exactly_when_its_length_is_for_every_n\">record</a></li><li><code>repunit_of_a_sum</code> — <code>∀ n k : Nat, repunit (n + k) = 10 ^ k * repunit n + repunit k</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_repunit_of_a_sum\">record</a></li><li><code>repunits_repeat_mod_seven_every_six_digits</code> — <code>∀ n : Nat, repunit (n + 6) % 7 = repunit n % 7</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_repunits_repeat_mod_seven_every_six_digits\">record</a></li><li><code>a_repunit_has_the_residue_of_its_length_mod_six_mod_seven</code> — <code>∀ n : Nat, repunit n % 7 = repunit (n % 6) % 7</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_a_repunit_has_the_residue_of_its_length_mod_six_mod_seven\">record</a></li><li><code>a_repunit_is_divisible_by_seven_exactly_when_six_divides_its_length_for_every_n</code> — <code>∀ n : Nat, (repunit n % 7 = 0) ↔ (n % 6 = 0)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_a_repunit_is_divisible_by_seven_exactly_when_six_divides_its_length_for_every_n\">record</a></li><li><code>the_two_coin_fare_is_minus_the_euler_characteristic_at_genus_two</code> — <code>(110 : Int) - 108 = - chi 2</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_the_two_coin_fare_is_minus_the_euler_characteristic_at_genus_two\">record</a></li></ol><p><strong>Recompute.</strong> Clone <a href=\"https://github.com/ceccec/millennium-solutions\">https://github.com/ceccec/millennium-solutions</a> at commit <code>614abe8701b2</code> and run <code>npm ci && npm run lean</code>, which checks every Lean file in dependency order. This record was generated by <a href=\"https://github.com/ceccec/millennium-solutions/blob/614abe8701b2e388343f6434eb21cb2ff0f434c5/scripts/clusters.ts\">scripts/clusters.ts</a> from the source and the ledger.</p><p><strong>Licence.</strong> CC BY-NC-ND 4.0 — free for non-commercial use with attribution to Tsvetan Rouschev; commercial use by arrangement with the author.</p>",
+  "description": "<p><strong>The named theorems people ask for</strong>. 19 machine-checked theorems from the Lean 4 source file <code>src/proof/demand3.lean</code>, by Tsvetan Rouschev, licensed CC BY-NC-ND 4.0. Lean 4 is a proof checker: a theorem it accepts has been checked by its kernel, not argued in prose. 8 are checked case by case over a stated finite domain (<code>by decide</code>). 11 are proved for every value, on the standard axioms only (<code>propext</code>, <code>Quot.sound</code>; the verifier refuses any other). Every theorem listed is sealed live in the deposit's ledger, where a withdrawal is marked in place; 63 earlier rows removed on 2026-08-09 are listed in <a href=\"https://github.com/ceccec/millennium-solutions/blob/90fe8c5706062e7f3f5b1c44fcca89fc8758566c/src/proof/revoked.json\">src/proof/revoked.json</a>.</p><p><strong>How these theorems are bound.</strong> \"Entangled\" is used here in a precise, non-quantum sense: theorems are bound when they derive from shared definitions (section 1), when their files import one another (section 2), and when their content-addressed receipts fold into one address that changes if any one of them changes (section 3). It is correlation by derivation; no information travels through it.</p><p><strong>1 · Shared definitions.</strong> 2 definitions are used by two or more theorems, binding 46 pairs; the theorems fall into 7 strands, the largest of 9. Most binding: <code>repunit</code> (9), <code>chi</code> (5).</p><p><strong>2 · Imports.</strong> Built on: <code>demand.lean</code>, <code>sequences.lean</code>. Built on it: no other cluster. Checking this cluster needs 5 files: <code>src/proof/demand3.lean</code>, <code>src/proof/demand.lean</code>, <code>src/proof/families.lean</code>, <code>src/proof/fnv.lean</code>, <code>src/proof/sequences.lean</code>.</p><p><strong>3 · The joint address.</strong> The 19 sealed receipts fold to <code>ad3b6564-c548-8496-9743-0f38398dba8a</code>. Order-invariant: yes — the same root in reverse order. Altering one receipt changes it: yes, computed when this record was generated. A content-address proves integrity, not truth.</p><p><strong>4 · The address lattice.</strong> Each theorem sits at the seven ray values its page plots from its receipt, taken mod 9: a point of (ℤ/9)⁷. This cluster's centre is (4, 6, 6, 0, 6, 7, 7). Its nearest clusters, ranked by lift — pairs counted from this cluster's theorems' seven nearest points, over the pairs expected by chance from the two clusters' sizes: <code>index.lean</code> (5 observed, 1.82 expected, lift 2.75), <code>address.lean</code> (10 observed, 4.13 expected, lift 2.42), <code>ledgerclaims.lean</code> (3 observed, 1.32 expected, lift 2.27). A best lift is the largest of about 32 small ratios, so chance alone gives a typical best lift of 2.53 here (the median over 200 seeded reshufflings of which cluster each point belongs to); one at least as high as this cluster's arose in 43.5% of them — consistent with chance. Mean distance between two of its theorems: 15.86; from one of its theorems to a theorem of another cluster: 15.55. A receipt is a hash, so nearness on this lattice is a property of the addresses, not of the mathematics; the mathematical binding is (1) and (2). These figures are as of commit <code>90fe8c570606</code> (2026-09-15), over 807 points; a new seal anywhere moves them.</p><p><strong>Prior art.</strong> Legendre’s three-square theorem — Adrien-Marie Legendre, 1797; Carmichael numbers — Robert Carmichael, 1910; amicable pairs — known to antiquity. Per-theorem prior-art searches — OEIS, zbMATH Open, OpenAlex, Crossref, arXiv — are recorded, with what was searched, where and when, in the living ledger <a href=\"https://github.com/ceccec/millennium-solutions/blob/main/src/proof/novelty.json\">src/proof/novelty.json</a> (main branch). No novelty is claimed here.</p><p><strong>The theorems.</strong></p><ol><li><code>wilsons_theorem_and_its_converse</code> — <code>((List.range' 2 18).all (fun p =&gt; ¬ isPrime p || Sequences.fact (p - 1) % p == p - 1)) ∧ ((List.range' 5 15).all (fun n =&gt; isPrime n || Sequences.fact (n - 1) % n == 0))</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_wilsons_theorem_and_its_converse\">record</a></li><li><code>every_number_is_a_sum_of_four_squares</code> — <code>(List.range 60).all isSumOfFour ∧ isSumOfThree 7 = false ∧ isSumOfFour 7 = true</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_every_number_is_a_sum_of_four_squares\">record</a></li><li><code>the_cantor_pairing_is_injective_and_covers_an_initial_segment</code> — <code>block.eraseDups.length = 64 ∧ ((List.range 36).all (fun n =&gt; block.contains n))</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_the_cantor_pairing_is_injective_and_covers_an_initial_segment\">record</a></li><li><code>repunit_divisibility_by_three_and_seven</code> — <code>((List.range' 1 18).all (fun n =&gt; (repunit n % 3 == 0) == (n % 3 == 0))) ∧ ((List.range' 1 18).all (fun n =&gt; (repunit n % 7 == 0) == (n % 6 == 0)))</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_repunit_divisibility_by_three_and_seven\">record</a></li><li><code>the_euler_characteristic_of_a_genus_g_surface</code> — <code>((List.range 12).all (fun g =&gt; chi g + 2 * (g : Int) == 2)) ∧ chi 0 = 2 ∧ chi 1 = 0 ∧ chi 2 = -2</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_the_euler_characteristic_of_a_genus_g_surface\">record</a></li><li><code>odd_divisor_count_iff_perfect_square</code> — <code>(List.range' 1 120).all (fun n =&gt; ((divisors n).length % 2 == 1) == isSquare n)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_odd_divisor_count_iff_perfect_square\">record</a></li><li><code>havel_hakimi_decides_graphical_sequences</code> — <code>hh 12 [3, 3, 3, 3] = true ∧ hh 12 [2, 2, 2] = true ∧ hh 12 [3, 3, 1, 1] = false ∧ hh 12 [4, 1, 1, 1, 1] = true ∧ hh 12 [5, 1, 1, 1, 1] = false</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_havel_hakimi_decides_graphical_sequences\">record</a></li><li><code>the_euler_characteristic_of_a_genus_g_surface_for_every_g</code> — <code>∀ g : Nat, chi g + 2 * (g : Int) = 2</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_the_euler_characteristic_of_a_genus_g_surface_for_every_g\">record</a></li><li><code>a_repunit_has_the_residue_of_its_length_mod_three</code> — <code>∀ n : Nat, repunit n % 3 = n % 3</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_a_repunit_has_the_residue_of_its_length_mod_three\">record</a></li><li><code>a_repunit_is_divisible_by_three_exactly_when_its_length_is_for_every_n</code> — <code>∀ n : Nat, (repunit n % 3 = 0) ↔ (n % 3 = 0)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_a_repunit_is_divisible_by_three_exactly_when_its_length_is_for_every_n\">record</a></li><li><code>repunit_of_a_sum</code> — <code>∀ n k : Nat, repunit (n + k) = 10 ^ k * repunit n + repunit k</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_repunit_of_a_sum\">record</a></li><li><code>repunits_repeat_mod_seven_every_six_digits</code> — <code>∀ n : Nat, repunit (n + 6) % 7 = repunit n % 7</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_repunits_repeat_mod_seven_every_six_digits\">record</a></li><li><code>a_repunit_has_the_residue_of_its_length_mod_six_mod_seven</code> — <code>∀ n : Nat, repunit n % 7 = repunit (n % 6) % 7</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_a_repunit_has_the_residue_of_its_length_mod_six_mod_seven\">record</a></li><li><code>a_repunit_is_divisible_by_seven_exactly_when_six_divides_its_length_for_every_n</code> — <code>∀ n : Nat, (repunit n % 7 = 0) ↔ (n % 6 = 0)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_a_repunit_is_divisible_by_seven_exactly_when_six_divides_its_length_for_every_n\">record</a></li><li><code>the_two_coin_fare_is_minus_the_euler_characteristic_at_genus_two</code> — <code>(110 : Int) - 108 = - chi 2</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_the_two_coin_fare_is_minus_the_euler_characteristic_at_genus_two\">record</a></li><li><code>the_genus_reads_back_from_chi_for_every_g</code> — <code>∀ g : Nat, ((2 - chi g) / 2).toNat = g</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_the_genus_reads_back_from_chi_for_every_g\">record</a></li><li><code>chi_is_injective_for_every_g_h</code> — <code>∀ g h : Nat, chi g = chi h → g = h</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_chi_is_injective_for_every_g_h\">record</a></li><li><code>a_repunit_is_below_ten_to_its_length</code> — <code>∀ k : Nat, repunit k &lt; 10 ^ k</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_a_repunit_is_below_ten_to_its_length\">record</a></li><li><code>a_repunit_splits_back_into_its_two_parts_for_every_n_k</code> — <code>∀ n k : Nat, repunit (n + k) / 10 ^ k = repunit n ∧ repunit (n + k) % 10 ^ k = repunit k</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_a_repunit_splits_back_into_its_two_parts_for_every_n_k\">record</a></li></ol><p><strong>Recompute.</strong> Clone <a href=\"https://github.com/ceccec/millennium-solutions\">https://github.com/ceccec/millennium-solutions</a> at commit <code>90fe8c570606</code> and run <code>npm ci && npm run lean</code>, which checks every Lean file in dependency order. This record was generated by <a href=\"https://github.com/ceccec/millennium-solutions/blob/90fe8c5706062e7f3f5b1c44fcca89fc8758566c/scripts/clusters.ts\">scripts/clusters.ts</a> from the source and the ledger.</p><p><strong>Licence.</strong> CC BY-NC-ND 4.0 — free for non-commercial use with attribution to Tsvetan Rouschev; commercial use by arrangement with the author.</p>",
   "license": "cc-by-nc-nd-4.0",
   "access_right": "open",
   "language": "eng",
@@ -30,17 +30,17 @@
       "scheme": "doi"
     },
     {
-      "identifier": "https://github.com/ceccec/millennium-solutions/blob/614abe8701b2e388343f6434eb21cb2ff0f434c5/src/proof/demand3.lean",
+      "identifier": "https://github.com/ceccec/millennium-solutions/blob/90fe8c5706062e7f3f5b1c44fcca89fc8758566c/src/proof/demand3.lean",
       "relation": "isSupplementTo",
       "scheme": "url"
     },
     {
-      "identifier": "https://github.com/ceccec/millennium-solutions/blob/614abe8701b2e388343f6434eb21cb2ff0f434c5/src/proof/demand.lean",
+      "identifier": "https://github.com/ceccec/millennium-solutions/blob/90fe8c5706062e7f3f5b1c44fcca89fc8758566c/src/proof/demand.lean",
       "relation": "references",
       "scheme": "url"
     },
     {
-      "identifier": "https://github.com/ceccec/millennium-solutions/blob/614abe8701b2e388343f6434eb21cb2ff0f434c5/src/proof/sequences.lean",
+      "identifier": "https://github.com/ceccec/millennium-solutions/blob/90fe8c5706062e7f3f5b1c44fcca89fc8758566c/src/proof/sequences.lean",
       "relation": "references",
       "scheme": "url"
     },
@@ -118,9 +118,29 @@
       "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_the_two_coin_fare_is_minus_the_euler_characteristic_at_genus_two",
       "relation": "hasPart",
       "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_the_genus_reads_back_from_chi_for_every_g",
+      "relation": "hasPart",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_chi_is_injective_for_every_g_h",
+      "relation": "hasPart",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_a_repunit_is_below_ten_to_its_length",
+      "relation": "hasPart",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_a_repunit_splits_back_into_its_two_parts_for_every_n_k",
+      "relation": "hasPart",
+      "scheme": "url"
     }
   ],
-  "notes": "cluster demand3.lean · 15 sealed · joint address 9d6f471f-ac6e-847c-b7af-49ac578ce01a · figures as of commit 614abe8701b2 (2026-09-15) · concept DOI 10.5281/zenodo.21819217 · generated by scripts/clusters.ts",
+  "notes": "cluster demand3.lean · 19 sealed · joint address ad3b6564-c548-8496-9743-0f38398dba8a · figures as of commit 90fe8c570606 (2026-09-15) · concept DOI 10.5281/zenodo.21819217 · generated by scripts/clusters.ts",
   "files": [
     "src/proof/demand3.lean",
     "src/proof/demand.lean",
@@ -131,12 +151,12 @@
   "cluster": {
     "file": "demand3.lean",
     "wing": "the floor",
-    "sealed": 15,
+    "sealed": 19,
     "decided": 8,
-    "proved": 7,
+    "proved": 11,
     "declarations": 0,
     "joint": {
-      "root": "9d6f471f-ac6e-847c-b7af-49ac578ce01a",
+      "root": "ad3b6564-c548-8496-9743-0f38398dba8a",
       "orderInvariant": true,
       "bindsEveryReceipt": true
     },
@@ -144,11 +164,11 @@
     "binding": [
       {
         "def": "repunit",
-        "theorems": 7
+        "theorems": 9
       },
       {
         "def": "chi",
-        "theorems": 3
+        "theorems": 5
       }
     ],
     "imports": [
@@ -160,38 +180,38 @@
       "centre": [
         4,
         6,
-        5,
-        1,
         6,
-        8,
+        0,
+        6,
+        7,
         7
       ],
-      "within": 15.71,
-      "between": 15.58,
+      "within": 15.86,
+      "between": 15.55,
       "top": [
         {
           "file": "index.lean",
           "pairs": 5,
-          "expected": 1.59,
-          "lift": 3.14
+          "expected": 1.82,
+          "lift": 2.75
+        },
+        {
+          "file": "address.lean",
+          "pairs": 10,
+          "expected": 4.13,
+          "lift": 2.42
         },
         {
           "file": "ledgerclaims.lean",
           "pairs": 3,
-          "expected": 1.16,
-          "lift": 2.59
-        },
-        {
-          "file": "address.lean",
-          "pairs": 8,
-          "expected": 3.19,
-          "lift": 2.51
+          "expected": 1.32,
+          "lift": 2.27
         }
       ],
-      "chanceShare": 0.315,
-      "nullMedian": 2.59,
+      "chanceShare": 0.435,
+      "nullMedian": 2.53,
       "shuffles": 200
     },
-    "asOf": "614abe8701b2e388343f6434eb21cb2ff0f434c5"
+    "asOf": "90fe8c5706062e7f3f5b1c44fcca89fc8758566c"
   }
 }

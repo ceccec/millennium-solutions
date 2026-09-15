@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 735 of them across 33 files and
-7 wings; 629 close by exhaustion over a stated finite domain, 97 are proved
+(\texttt{npm run latex-gate}). There are 816 of them across 33 files and
+7 wings; 630 close by exhaustion over a stated finite domain, 177 are proved
 for every value, and the remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -187,6 +187,24 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 \noindent\emph{Proof.} \texttt{by
   intro} --- by evaluation; no domain is walked. \hfill$\square$
 
+\begin{theorem}[\texttt{the\_unstamped\_bits\_read\_back\_from\_every\_stamped\_byte}]
+\texttt{∀ b : Nat, b < 256 → and8 (or8 (and8 b 15) 128) 15 = b \% 16 ∧ and8 (or8 (and8 b 63) 128) 63 = b \% 64}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_twelve\_hash\_bits\_read\_back\_from\_the\_third\_group}]
+\texttt{∀ b6 b7 : Nat, b6 < 256 → b7 < 256 → ((or8 (and8 b6 15) 128) * 256 + b7) / 4096 = 8 ∧ ((or8 (and8 b6 15) 128) * 256 + b7) \% 4096 = b6 \% 16 * 256 + b7}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_fourteen\_hash\_bits\_read\_back\_from\_the\_fourth\_group}]
+\texttt{∀ b8 b9 : Nat, b8 < 256 → b9 < 256 → ((or8 (and8 b8 63) 128) * 256 + b9) / 16384 = 2 ∧ ((or8 (and8 b8 63) 128) * 256 + b9) \% 16384 = b8 \% 64 * 256 + b9}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
 \paragraph{\texttt{fnv.lean}}
 
 \begin{theorem}[\texttt{hash\_a\_seed\_zero}]
@@ -256,6 +274,12 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 
 \begin{theorem}[\texttt{the\_split\_multiply\_is\_the\_exact\_thirty\_two\_bit\_product}]
 \texttt{∀ a b : Nat, (a \% 65536 * b + a / 65536 * b \% 65536 * 65536) \% M32 = mul32 a b}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{multiplying\_by\_the\_fnv\_prime\_is\_undone\_by\_its\_inverse\_for\_every\_h}]
+\texttt{∀ h : Nat, mul32 (mul32 h FNV\_PRIME) 899433627 = h \% M32}
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by
   intro} --- by evaluation; no domain is walked. \hfill$\square$
@@ -619,6 +643,30 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 \noindent\emph{Proof.} \texttt{by
   have} --- by evaluation; no domain is walked. \hfill$\square$
 
+\begin{theorem}[\texttt{the\_polygon\_side\_count\_reads\_back\_from\_its\_angle\_sum}]
+\texttt{∀ n : Nat, 2 ≤ n → ((n - 2) * 180 + 360) / 180 = n}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{every\_odd\_square\_one\_more\_than\_eight\_times\_m\_makes\_m\_triangular}]
+\texttt{∀ m r : Nat, 8 * m + 1 = r * r → m = r / 2 * (r / 2 + 1) / 2}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_fibonaccis\_are\_a\_fifth\_of\_the\_neighbouring\_lucas\_numbers\_for\_every\_n}]
+\texttt{∀ n : Nat, 5 * fib (n + 1) = lucas n + lucas (n + 2)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{half\_a\_product\_of\_consecutive\_numbers\_multiplies\_back\_for\_every\_n}]
+\texttt{∀ n : Nat, n * (n + 1) / 2 * 2 = n * (n + 1)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
 \paragraph{\texttt{families.lean}}
 
 \begin{theorem}[\texttt{flt\_all\_primes\_under\_thirty}]
@@ -908,6 +956,60 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 \noindent\emph{Proof.} \texttt{by
   have} --- by evaluation; no domain is walked. \hfill$\square$
 
+\begin{theorem}[\texttt{choose\_is\_invariant\_under\_the\_involution\_k\_to\_n\_minus\_k\_for\_every\_n}]
+\texttt{∀ n k : Nat, k ≤ n → choose n k = choose n (n - k) ∧ n - (n - k) = k}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_closed\_forms\_difference\_back\_to\_the\_next\_power\_for\_every\_n}]
+\texttt{∀ k n : Nat, 1 ≤ k → k ≤ 5 → faulhaber k (n + 1) = faulhaber k n + (n + 1) ^ k}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_tetrahedral\_numbers\_difference\_back\_to\_the\_triangular\_numbers\_for\_every\_n}]
+\texttt{∀ n : Nat, (n + 1) * (n + 1 + 1) * (n + 1 + 2) / 6 = n * (n + 1) * (n + 2) / 6 + (n + 1) * (n + 1 + 1) / 2}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_powers\_of\_two\_difference\_back\_to\_the\_next\_power\_for\_every\_n}]
+\texttt{∀ n : Nat, (2 ^ (n + 2) - 1) - (2 ^ (n + 1) - 1) = 2 ^ (n + 1)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_odd\_numbers\_difference\_back\_to\_the\_next\_odd\_number\_for\_every\_n}]
+\texttt{∀ n : Nat, ((List.range (n + 1)).map (fun i => 2 * i + 1)).foldl (· + ·) 0 - ((List.range n).map (fun i => 2 * i + 1)).foldl (· + ·) 0 = 2 * n + 1}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{foldl\_add\_start}]
+\texttt{∀ (l : List Nat) (a : Nat), l.foldl (· + ·) a = a + l.foldl (· + ·) 0}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_digits\_sum\_to\_the\_number\_mod\_nine\_when\_the\_fuel\_covers\_them}]
+\texttt{∀ f n : Nat, n < 10 ^ f → (digitsF f n).foldl (· + ·) 0 \% 9 = n \% 9}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_number\_is\_below\_ten\_to\_its\_own\_successor}]
+\texttt{∀ n : Nat, n < 10 ^ (n + 1)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_digit\_sum\_rules\_for\_three\_and\_nine\_hold\_for\_every\_n}]
+\texttt{∀ n : Nat, (digitSum n \% 3 = 0 ↔ n \% 3 = 0) ∧ (digitSum n \% 9 = 0 ↔ n \% 9 = 0)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
 \paragraph{\texttt{flow.lean}}
 
 \begin{theorem}[\texttt{the\_doubling\_flow\_repeats\_every\_six\_steps}]
@@ -924,6 +1026,18 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 
 \begin{theorem}[\texttt{navier\_stokes\_flow\_is\_bounded\_for\_every\_step}]
 \texttt{∀ k : Nat, orbit k < 9 ∧ span.contains (orbit k) = true}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_reverse\_flow\_undoes\_every\_step}]
+\texttt{∀ k : Nat, orbit (k + 1) * 5 \% 9 = orbit k}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{every\_state\_of\_the\_flow\_returns\_within\_six\_steps}]
+\texttt{∀ k s : Nat, ∃ j, j < 6 ∧ orbit (k + j) = orbit s}
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by
   intro} --- by evaluation; no domain is walked. \hfill$\square$
@@ -1134,6 +1248,42 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 \noindent\emph{Proof.} \texttt{by
   intro} --- by evaluation; no domain is walked. \hfill$\square$
 
+\begin{theorem}[\texttt{halving\_removes\_exactly\_the\_low\_bit\_for\_every\_n}]
+\texttt{∀ n : Nat, popcount n = n \% 2 + popcount (n / 2)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_thue\_morse\_halving\_recurrence\_for\_every\_n}]
+\texttt{∀ n : Nat, tm n = (n \% 2 + tm (n / 2)) \% 2}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{doubling\_shifts\_every\_bit\_up\_by\_one}]
+\texttt{∀ m i : Nat, 2 * m / 2 ^ (i + 1) = m / 2 ^ i}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_residue\_below\_the\_next\_power\_adds\_one\_bit}]
+\texttt{∀ m F : Nat, m \% 2 ^ (F + 1) = m \% 2 ^ F + m / 2 ^ F \% 2 * 2 ^ F}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_low\_bits\_rebuild\_the\_number\_below\_every\_power}]
+\texttt{∀ F m : Nat, (List.range F).foldl (fun a i => a + m / 2 ^ i \% 2 * 2 ^ i) 0 = m \% 2 ^ F}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_number\_is\_rebuilt\_from\_its\_bits\_for\_every\_n}]
+\texttt{∀ n : Nat, (List.range (n + 1)).foldl (fun a i => a + n / 2 ^ i \% 2 * 2 ^ i) 0 = n}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
 \paragraph{\texttt{split.lean}}
 
 \begin{theorem}[\texttt{the\_singles\_are\_exactly\_the\_non\_units}]
@@ -1233,6 +1383,18 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 
 \begin{theorem}[\texttt{the\_coin\_step\_and\_the\_coins\_are\_inverse\_for\_every\_c}]
 \texttt{∀ c : Nat, 3 * c / 3 = c ∧ (3 * c) \% 3 = 0}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_coins\_return\_from\_the\_coin\_step\_for\_every\_multiple\_of\_three}]
+\texttt{∀ t : Nat, t \% 3 = 0 → 3 * (t / 3) = t}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{paying\_and\_refunding\_round\_trips\_for\_every\_count}]
+\texttt{∀ n k : Nat, k ≤ n → 3 * (n - k) + 3 * k = 3 * n}
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by
   intro} --- by evaluation; no domain is walked. \hfill$\square$
@@ -1348,6 +1510,24 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 \[ \mathrm{settledHere} = 21 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{orbit\_repeats\_every\_six}]
+\texttt{∀ k : Nat, orbit (k + 6) = orbit k}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{orbit\_is\_its\_exponent\_mod\_six}]
+\texttt{∀ k : Nat, orbit k = orbit (k \% 6)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_orbit\_step\_is\_read\_back\_by\_its\_log\_for\_every\_k}]
+\texttt{∀ k : Nat, logOrbit (orbit k) = some (k \% 6)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
 
 \paragraph{\texttt{z9plus.lean}}
 
@@ -1577,6 +1757,36 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 \noindent\emph{Proof.} \texttt{by
   intro} --- by evaluation; no domain is walked. \hfill$\square$
 
+\begin{theorem}[\texttt{halving\_undoes\_doubling\_at\_every\_step}]
+\texttt{∀ k : Nat, m9 (pw 2 k * pw 5 k) = 1}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{halving\_has\_period\_six\_for\_every\_k}]
+\texttt{∀ k : Nat, pw 5 (k + 6) = pw 5 k}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{halving\_orbit\_digital\_roots\_have\_period\_six\_for\_every\_k}]
+\texttt{∀ k : Nat, dr (pw 5 (k + 6)) = dr (pw 5 k)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_reflected\_orbit\_meets\_the\_triad\_exactly\_at\_one\_four\_seven\_for\_every\_k}]
+\texttt{∀ k : Nat, [3, 6, 9].contains (refl (pw 2 k)) = [1, 4, 7].contains (pw 2 k)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{reversal\_cannot\_change\_the\_digital\_root\_for\_every\_n}]
+\texttt{∀ n : Nat, dr (reverseNum n) = dr n}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
 \subsection{the floor}
 
 \paragraph{\texttt{demand.lean}}
@@ -1623,6 +1833,18 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 
 \begin{theorem}[\texttt{mantels\_bound\_is\_n\_squared\_over\_four\_for\_every\_n}]
 \texttt{∀ n : Nat, (n / 2) * (n - n / 2) = n * n / 4}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{four\_times\_a\_near\_product\_is\_at\_most\_the\_square}]
+\texttt{∀ a d : Nat, a * (a + d) * 4 ≤ (a + (a + d)) * (a + (a + d))}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{no\_cut\_beats\_the\_balanced\_one\_for\_every\_n}]
+\texttt{∀ n a : Nat, a ≤ n → a * (n - a) ≤ n * n / 4}
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by
   intro} --- by evaluation; no domain is walked. \hfill$\square$
@@ -1683,6 +1905,12 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 
 \begin{theorem}[\texttt{the\_sum\_of\_fifth\_powers\_has\_the\_closed\_form\_for\_every\_n}]
 \texttt{∀ n : Nat, 12 * sumPow 5 n = n * n * (n + 1) * (n + 1) * (2 * n * n + 2 * n - 1)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_squared\_triangular\_numbers\_difference\_back\_to\_the\_cubes\_for\_every\_n}]
+\texttt{∀ n : Nat, tri (n + 1) * tri (n + 1) = tri n * tri n + (n + 1) ^ 3}
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by
   intro} --- by evaluation; no domain is walked. \hfill$\square$
@@ -1770,6 +1998,30 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 \[ 110 - 108 = -\mathrm{chi}\mathopen{}\left(2\right) \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_genus\_reads\_back\_from\_chi\_for\_every\_g}]
+\texttt{∀ g : Nat, ((2 - chi g) / 2).toNat = g}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{chi\_is\_injective\_for\_every\_g\_h}]
+\texttt{∀ g h : Nat, chi g = chi h → g = h}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_repunit\_is\_below\_ten\_to\_its\_length}]
+\texttt{∀ k : Nat, repunit k < 10 ^ k}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_repunit\_splits\_back\_into\_its\_two\_parts\_for\_every\_n\_k}]
+\texttt{∀ n k : Nat, repunit (n + k) / 10 ^ k = repunit n ∧ repunit (n + k) \% 10 ^ k = repunit k}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
 
 \paragraph{\texttt{energy.lean}}
 
@@ -1881,6 +2133,41 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 
 \begin{theorem}[\texttt{two\_parts\_in\_three\_is\_two\_thirds\_at\_every\_scale\_for\_every\_m}]
 \texttt{∀ m : Nat, 0 < m → pct (2 * m) (3 * m) = 66}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{burning\_then\_splitting\_is\_the\_identity\_above\_the\_bond}]
+\texttt{∀ e : Nat, bondHundredthsKJ ≤ e → splitE (burnE e) = e}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{one\_part\_in\_three\_is\_a\_third\_at\_every\_scale\_for\_every\_m}]
+\texttt{∀ m : Nat, 0 < m → pct m (3 * m) = 33}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_gas\_volume\_reads\_back\_its\_moles\_for\_every\_m}]
+\texttt{∀ m : Nat, molesOf (litresOf m) ≤ m ∧ m ≤ molesOf (litresOf m) + 1}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_mass\_names\_the\_molecule\_below\_5333\_hydrogens}]
+\texttt{∀ h o h' o' : Nat, h < 5333 → h' < 5333 → mass h o = mass h' o' → h = h' ∧ o = o'}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_boundary\_is\_sharp}]
+\[ \mathrm{mass}\mathopen{}\left(5333,\,0\right) = \mathrm{mass}\mathopen{}\left(0,\,336\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_floor\_division\_multiplies\_back\_within\_one\_divisor}]
+\texttt{∀ a l : Nat, 0 < l → a / l * l ≤ a ∧ a < (a / l + 1) * l}
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by
   intro} --- by evaluation; no domain is walked. \hfill$\square$
@@ -2016,6 +2303,18 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 \noindent\emph{Proof.} \texttt{by
   intro} --- by evaluation; no domain is walked. \hfill$\square$
 
+\begin{theorem}[\texttt{the\_metre\_returns\_from\_the\_second\_for\_every\_whole\_length}]
+\texttt{∀ m : Nat, m \% c = 0 → travel (m / c) = m}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_period\_count\_returns\_from\_the\_second\_for\_every\_whole\_count}]
+\texttt{∀ p : Nat, p \% dNuCs = 0 → periods (p / dNuCs) = p}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
 \paragraph{\texttt{phenomena.lean}}
 
 \begin{theorem}[\texttt{every\_phenomenon\_is\_definitional\_or\_credited}]
@@ -2146,6 +2445,30 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 \noindent\emph{Proof.} \texttt{by
   intro} --- by evaluation; no domain is walked. \hfill$\square$
 
+\begin{theorem}[\texttt{the\_successor\_returns\_every\_positive\_predecessor}]
+\texttt{∀ n : Nat, 0 < n → (n - 1) + 1 = n}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{exhaustion\_reaches\_everything\_below\_its\_bound\_for\_every\_n}]
+\texttt{∀ n k : Nat, k < n → k ∈ List.range n}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_predecessor\_of\_every\_positive\_bound\_lies\_inside}]
+\texttt{∀ n : Nat, 0 < n → n - 1 ∈ List.range n}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{halving\_the\_domain\_keeps\_the\_half\_inside\_for\_every\_n}]
+\texttt{∀ n : Nat, 0 < n → n ∈ List.range (2 * n)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
 \paragraph{\texttt{speed.lean}}
 
 \begin{theorem}[\texttt{the\_verify\_path\_is\_the\_exponent}]
@@ -2203,6 +2526,12 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 \[ \forall b \in \{1,\dots,20\},\; \forall a \in \{0,\dots,399\},\; \frac{a}{b} \cdot b \le a \land a < \frac{a}{b} + 1 \cdot b \land \mathrm{hexbitMs} > \mathrm{hexMs} \land \frac{\mathrm{hexbitMs} \cdot 10}{\mathrm{hexMs}} = 18 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 8,000 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_nanoseconds\_return\_from\_the\_microseconds\_at\_every\_whole\_count}]
+\texttt{∀ n : Nat, n \% 1000 = 0 → n / 1000 * 1000 = n}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
 
 \subsection{the machine}
 
@@ -2882,6 +3211,54 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 \noindent\emph{Proof.} \texttt{by
   intro} --- by evaluation; no domain is walked. \hfill$\square$
 
+\begin{theorem}[\texttt{DR\_eq}]
+\texttt{∀ n : Nat, DR n = if n = 0 then 0 else 1 + (n - 1) \% 9}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{halving\_undoes\_every\_doubling\_step\_for\_every\_k}]
+\texttt{∀ k : Nat, dbl (k + 1) / 2 = dbl k}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{casting\_out\_nines\_is\_additive\_for\_every\_a\_b}]
+\texttt{∀ a b : Nat, DR (a + b) = DR (DR a + DR b)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_digital\_root\_fixes\_exactly\_one\_to\_nine}]
+\texttt{∀ d : Nat, 1 ≤ d → d ≤ 9 → DR d = d}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_digital\_root\_is\_idempotent\_for\_every\_n}]
+\texttt{∀ n : Nat, DR (DR n) = DR n}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_digital\_root\_of\_nine\_means\_a\_multiple\_of\_nine\_for\_every\_n}]
+\texttt{∀ n : Nat, 0 < n → DR n = 9 → n \% 9 = 0}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_hypotenuse\_reads\_back\_from\_every\_three\_four\_five\_multiple}]
+\texttt{∀ k c : Nat, (3 * k) ^ 2 + (4 * k) ^ 2 = c ^ 2 → c = 5 * k}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_sixth\_of\_three\_consecutive\_integers\_multiplies\_back\_for\_every\_n}]
+\texttt{∀ n : Nat, n * (n + 1) * (n + 2) / 6 * 6 = n * (n + 1) * (n + 2)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
 \paragraph{\texttt{nim.lean}}
 
 \begin{theorem}[\texttt{bouton\_two\_heaps\_lost\_iff\_xor\_zero}]
@@ -3024,6 +3401,24 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 \noindent\emph{Proof.} \texttt{by
   intro} --- by evaluation; no domain is walked. \hfill$\square$
 
+\begin{theorem}[\texttt{a\_number\_xored\_with\_itself\_is\_zero\_for\_every\_a}]
+\texttt{∀ a : Nat, xorN a a = 0}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{xor\_is\_zero\_only\_on\_equal\_arguments\_for\_every\_a\_b}]
+\texttt{∀ a b : Nat, xorN a b = 0 ↔ a = b}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_halves\_and\_the\_low\_bit\_read\_back\_from\_the\_xor\_for\_every\_a\_b}]
+\texttt{∀ a b : Nat, xorN a b / 2 = xorN (a / 2) (b / 2) ∧ xorN a b \% 2 = (a + b) \% 2}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
 \paragraph{\texttt{reversal.lean}}
 
 \begin{theorem}[\texttt{reversal\_preserves\_digit\_sum}]
@@ -3103,6 +3498,96 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 
 \begin{theorem}[\texttt{reversal\_keeps\_the\_residue\_mod\_nine\_for\_every\_n}]
 \texttt{∀ n : Nat, reverseNum n \% 9 = n \% 9}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{digitsF\_zero}]
+\texttt{∀ f : Nat, digitsF f 0 = []}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{every\_digit\_is\_below\_ten}]
+\texttt{∀ f n : Nat, ∀ d ∈ digitsF f n, d < 10}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_digits\_rebuild\_the\_number\_when\_the\_fuel\_covers\_them}]
+\texttt{∀ f n : Nat, n < 10 ^ f → (digitsF f n).foldr (fun d a => a * 10 + d) 0 = n}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_number\_is\_rebuilt\_from\_its\_digits\_for\_every\_n}]
+\texttt{∀ n : Nat, (digits n).foldr (fun d a => a * 10 + d) 0 = n}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_sum\_is\_the\_same\_read\_backwards}]
+\texttt{∀ (l : List Nat), l.reverse.foldl (· + ·) 0 = l.foldl (· + ·) 0}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_top\_digit\_is\_nonzero}]
+\texttt{∀ f n : Nat, 0 < n → n < 10 ^ f → ∃ L b, digitsF f n = L ++ [b] ∧ 0 < b ∧ b < 10}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{reversal\_leaves\_no\_trailing\_zero}]
+\texttt{∀ n : Nat, 0 < n → 0 < reverseNum n ∧ reverseNum n \% 10 ≠ 0}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{reading\_a\_list\_back\_from\_the\_top}]
+\texttt{∀ r : List Nat, r ≠ [] → (∀ d ∈ r, d < 10) → r.reverse.head? ≠ some 0 → 0 < r.reverse.foldl (fun a d => a * 10 + d) 0 ∧ r.length ≤ r.reverse.foldl (fun a d => a * 10 + d) 0 ∧ ∀ f, r.length ≤ f → digitsF f (r.reverse.foldl (fun a d => a * 10 + d) 0) = r}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_digits\_of\_the\_reversal\_are\_the\_reversed\_digits}]
+\texttt{∀ n : Nat, n \% 10 ≠ 0 → digits (reverseNum n) = (digitsF (n + 1) n).reverse ∧ digits n = digitsF (n + 1) n}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{reversal\_is\_involutive\_off\_the\_trailing\_zeros\_for\_every\_n}]
+\texttt{∀ n : Nat, n \% 10 ≠ 0 → reverseNum (reverseNum n) = n}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{reversal\_is\_involutive\_exactly\_off\_the\_trailing\_zeros\_for\_every\_n}]
+\texttt{∀ n : Nat, 0 < n → (reverseNum (reverseNum n) = n ↔ n \% 10 ≠ 0)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{more\_fuel\_changes\_no\_digit}]
+\texttt{∀ f n k : Nat, n < 10 ^ f → digitsF (f + k) n = digitsF f n}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_trailing\_zero\_is\_a\_leading\_zero\_of\_the\_digits}]
+\texttt{∀ m : Nat, 0 < m → digits (10 * m) = 0 :: digits m}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{reversal\_preserves\_the\_digit\_sum\_for\_every\_n}]
+\texttt{∀ n : Nat, digitSum (reverseNum n) = digitSum n}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_fixed\_points\_of\_reversal\_are\_the\_palindromes\_for\_every\_n}]
+\texttt{∀ n : Nat, n \% 10 ≠ 0 → (reverseNum n = n ↔ (digits n).reverse = digits n)}
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by
   intro} --- by evaluation; no domain is walked. \hfill$\square$

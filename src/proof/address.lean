@@ -144,4 +144,25 @@ theorem the_fourth_group_is_variant_two_over_fourteen_hash_bits :
   rw [the_variant_stamp_keeps_the_low_six_bits_of_every_byte b8 h8]
   exact ⟨by omega, by omega⟩
 
+
+-- ── reflections, from the xor batch: each law beside its inverse (the 2×7 ↔ 1+6 wave) ──
+-- REFLECTIONS: the unstamped bits read back from the stamped byte, and the hash bits from the group
+theorem the_unstamped_bits_read_back_from_every_stamped_byte :
+    ∀ b : Nat, b < 256 → and8 (or8 (and8 b 15) 128) 15 = b % 16 ∧ and8 (or8 (and8 b 63) 128) 63 = b % 64 := by
+  decide
+
+theorem the_twelve_hash_bits_read_back_from_the_third_group :
+    ∀ b6 b7 : Nat, b6 < 256 → b7 < 256 →
+      ((or8 (and8 b6 15) 128) * 256 + b7) / 4096 = 8 ∧ ((or8 (and8 b6 15) 128) * 256 + b7) % 4096 = b6 % 16 * 256 + b7 := by
+  intro b6 b7 h6 h7
+  rw [the_version_stamp_keeps_the_low_nibble_of_every_byte b6 h6]
+  exact ⟨by omega, by omega⟩
+
+theorem the_fourteen_hash_bits_read_back_from_the_fourth_group :
+    ∀ b8 b9 : Nat, b8 < 256 → b9 < 256 →
+      ((or8 (and8 b8 63) 128) * 256 + b9) / 16384 = 2 ∧ ((or8 (and8 b8 63) 128) * 256 + b9) % 16384 = b8 % 64 * 256 + b9 := by
+  intro b8 b9 h8 h9
+  rw [the_variant_stamp_keeps_the_low_six_bits_of_every_byte b8 h8]
+  exact ⟨by omega, by omega⟩
+
 end Address

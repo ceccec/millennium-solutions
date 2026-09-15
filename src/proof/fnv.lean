@@ -113,4 +113,15 @@ theorem the_split_multiply_is_the_exact_thirty_two_bit_product :
   generalize a % 65536 * b = Q
   omega
 
+
+-- ── reflections, from the xor batch: each law beside its inverse (the 2×7 ↔ 1+6 wave) ──
+-- REFLECTION of the exact 32-bit multiply: multiplying by the FNV prime is undone by its inverse mod 2^32
+theorem multiplying_by_the_fnv_prime_is_undone_by_its_inverse_for_every_h :
+    ∀ h : Nat, mul32 (mul32 h FNV_PRIME) 899433627 = h % M32 := by
+  intro h
+  unfold mul32
+  rw [Nat.mod_mul_mod, Nat.mul_assoc,
+    show FNV_PRIME * 899433627 = 1 + 3513497 * M32 by decide,
+    Nat.mul_add, Nat.mul_one, ← Nat.mul_assoc, Nat.add_mul_mod_self_right]
+
 end Fnv

@@ -521,4 +521,43 @@ theorem the_moduli_dimensions_are_three_g_minus_three_and_six_g_minus_six_for_ev
   intro g
   exact ⟨by omega, by omega⟩
 
+
+-- ── reflections, from the easy batch: each law beside its inverse (the 2×7 ↔ 1+6 wave) ──
+theorem DR_eq : ∀ n : Nat, DR n = if n = 0 then 0 else 1 + (n - 1) % 9 := by
+  intro n; unfold DR; by_cases h : n = 0 <;> simp [h]
+
+theorem halving_undoes_every_doubling_step_for_every_k : ∀ k : Nat, dbl (k + 1) / 2 = dbl k := by
+  intro k; show 2 * dbl k / 2 = dbl k; omega
+
+theorem casting_out_nines_is_additive_for_every_a_b : ∀ a b : Nat, DR (a + b) = DR (DR a + DR b) := by
+  intro a b
+  simp only [DR_eq]
+  by_cases ha : a = 0 <;> by_cases hb : b = 0 <;> simp only [ha, hb, if_true, if_false] <;>
+    (repeat' split) <;> omega
+
+theorem the_digital_root_fixes_exactly_one_to_nine : ∀ d : Nat, 1 ≤ d → d ≤ 9 → DR d = d := by
+  intro d h1 h9; rw [DR_eq, if_neg (by omega)]; omega
+
+theorem the_digital_root_is_idempotent_for_every_n : ∀ n : Nat, DR (DR n) = DR n := by
+  intro n; simp only [DR_eq]; (repeat' split) <;> omega
+
+theorem a_digital_root_of_nine_means_a_multiple_of_nine_for_every_n :
+    ∀ n : Nat, 0 < n → DR n = 9 → n % 9 = 0 := by
+  intro n hn h; rw [DR_eq, if_neg (by omega)] at h; omega
+
+theorem the_hypotenuse_reads_back_from_every_three_four_five_multiple :
+    ∀ k c : Nat, (3 * k) ^ 2 + (4 * k) ^ 2 = c ^ 2 → c = 5 * k := by
+  intro k c h
+  rw [every_multiple_of_three_four_five_is_pythagorean] at h
+  rw [Nat.pow_two, Nat.pow_two] at h
+  rcases Nat.lt_trichotomy c (5 * k) with hl | he | hg
+  · have := Nat.mul_lt_mul_of_lt_of_lt hl hl; omega
+  · exact he
+  · have := Nat.mul_lt_mul_of_lt_of_lt hg hg; omega
+
+theorem the_sixth_of_three_consecutive_integers_multiplies_back_for_every_n :
+    ∀ n : Nat, n * (n + 1) * (n + 2) / 6 * 6 = n * (n + 1) * (n + 2) := by
+  intro n
+  exact Nat.div_mul_cancel (Nat.dvd_of_mod_eq_zero (the_product_of_any_three_consecutive_integers_is_divisible_by_six_for_every_n n))
+
 end Mechanical

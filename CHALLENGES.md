@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). The author's own claim, that the seven are solved through involution, is stated in his name on the front page.
 
-## Discovered theorems (decidable, over ℤ/9) — 2674 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2755 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (726)
+### lean (807)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -847,6 +847,167 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
   intro), standard axioms only — checked by lean.ts  ·  `087841c4-271d…`
 - [lean_fnv_the_split_multiply_is_the_exact_thirty_two_bit_product](/theorem/lean_fnv_the_split_multiply_is_the_exact_thirty_two_bit_product) — lean fnv.lean: the_split_multiply_is_the_exact_thirty_two_bit_product — ∀ a b : Nat, (a % 65536 * b + a / 65536 * b % 65536 * 65536) % M32 = mul32 a b — proved by the Lean kernel for every value (by
   intro), standard axioms only — checked by lean.ts  ·  `71d78d5c-0f87…`
+- [lean_energy_the_boundary_is_sharp](/theorem/lean_energy_the_boundary_is_sharp) — lean energy.lean: the_boundary_is_sharp — mass 5333 0 = mass 0 336 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `6237820f-0a7b…`
+- [lean_address_the_unstamped_bits_read_back_from_every_stamped_byte](/theorem/lean_address_the_unstamped_bits_read_back_from_every_stamped_byte) — lean address.lean: the_unstamped_bits_read_back_from_every_stamped_byte — ∀ b : Nat, b &lt; 256 → and8 (or8 (and8 b 15) 128) 15 = b % 16 ∧ and8 (or8 (and8 b 63) 128) 63 = b % 64 — proved by the Lean kernel for every value (by
+  decide), standard axioms only — checked by lean.ts  ·  `69a4f3a2-4653…`
+- [lean_address_the_twelve_hash_bits_read_back_from_the_third_group](/theorem/lean_address_the_twelve_hash_bits_read_back_from_the_third_group) — lean address.lean: the_twelve_hash_bits_read_back_from_the_third_group — ∀ b6 b7 : Nat, b6 &lt; 256 → b7 &lt; 256 → ((or8 (and8 b6 15) 128) * 256 + b7) / 4096 = 8 ∧ ((or8 (and8 b6 15) 128) * 256 + b7) % 4096 = b6 % 16 * 256 + b7 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `221f974c-1535…`
+- [lean_address_the_fourteen_hash_bits_read_back_from_the_fourth_group](/theorem/lean_address_the_fourteen_hash_bits_read_back_from_the_fourth_group) — lean address.lean: the_fourteen_hash_bits_read_back_from_the_fourth_group — ∀ b8 b9 : Nat, b8 &lt; 256 → b9 &lt; 256 → ((or8 (and8 b8 63) 128) * 256 + b9) / 16384 = 2 ∧ ((or8 (and8 b8 63) 128) * 256 + b9) % 16384 = b8 % 64 * 256 + b9 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `edc4013a-9ea0…`
+- [lean_demand_four_times_a_near_product_is_at_most_the_square](/theorem/lean_demand_four_times_a_near_product_is_at_most_the_square) — lean demand.lean: four_times_a_near_product_is_at_most_the_square — ∀ a d : Nat, a * (a + d) * 4 ≤ (a + (a + d)) * (a + (a + d)) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `61fde2f2-4a84…`
+- [lean_demand_no_cut_beats_the_balanced_one_for_every_n](/theorem/lean_demand_no_cut_beats_the_balanced_one_for_every_n) — lean demand.lean: no_cut_beats_the_balanced_one_for_every_n — ∀ n a : Nat, a ≤ n → a * (n - a) ≤ n * n / 4 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `f87585db-e4be…`
+- [lean_demand2_the_squared_triangular_numbers_difference_back_to_the_cubes_for_every_n](/theorem/lean_demand2_the_squared_triangular_numbers_difference_back_to_the_cubes_for_every_n) — lean demand2.lean: the_squared_triangular_numbers_difference_back_to_the_cubes_for_every_n — ∀ n : Nat, tri (n + 1) * tri (n + 1) = tri n * tri n + (n + 1) ^ 3 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `76f6ba26-b6dd…`
+- [lean_demand3_the_genus_reads_back_from_chi_for_every_g](/theorem/lean_demand3_the_genus_reads_back_from_chi_for_every_g) — lean demand3.lean: the_genus_reads_back_from_chi_for_every_g — ∀ g : Nat, ((2 - chi g) / 2).toNat = g — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `b2627057-efa5…`
+- [lean_demand3_chi_is_injective_for_every_g_h](/theorem/lean_demand3_chi_is_injective_for_every_g_h) — lean demand3.lean: chi_is_injective_for_every_g_h — ∀ g h : Nat, chi g = chi h → g = h — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `9259ab3c-4bbc…`
+- [lean_demand3_a_repunit_is_below_ten_to_its_length](/theorem/lean_demand3_a_repunit_is_below_ten_to_its_length) — lean demand3.lean: a_repunit_is_below_ten_to_its_length — ∀ k : Nat, repunit k &lt; 10 ^ k — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `63e37ea7-0f19…`
+- [lean_demand3_a_repunit_splits_back_into_its_two_parts_for_every_n_k](/theorem/lean_demand3_a_repunit_splits_back_into_its_two_parts_for_every_n_k) — lean demand3.lean: a_repunit_splits_back_into_its_two_parts_for_every_n_k — ∀ n k : Nat, repunit (n + k) / 10 ^ k = repunit n ∧ repunit (n + k) % 10 ^ k = repunit k — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `56ed7d0a-28d5…`
+- [lean_elementary_the_polygon_side_count_reads_back_from_its_angle_sum](/theorem/lean_elementary_the_polygon_side_count_reads_back_from_its_angle_sum) — lean elementary.lean: the_polygon_side_count_reads_back_from_its_angle_sum — ∀ n : Nat, 2 ≤ n → ((n - 2) * 180 + 360) / 180 = n — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `0ad62680-b148…`
+- [lean_elementary_every_odd_square_one_more_than_eight_times_m_makes_m_triangular](/theorem/lean_elementary_every_odd_square_one_more_than_eight_times_m_makes_m_triangular) — lean elementary.lean: every_odd_square_one_more_than_eight_times_m_makes_m_triangular — ∀ m r : Nat, 8 * m + 1 = r * r → m = r / 2 * (r / 2 + 1) / 2 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `958b6261-542d…`
+- [lean_elementary_the_fibonaccis_are_a_fifth_of_the_neighbouring_lucas_numbers_for_every_n](/theorem/lean_elementary_the_fibonaccis_are_a_fifth_of_the_neighbouring_lucas_numbers_for_every_n) — lean elementary.lean: the_fibonaccis_are_a_fifth_of_the_neighbouring_lucas_numbers_for_every_n — ∀ n : Nat, 5 * fib (n + 1) = lucas n + lucas (n + 2) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `16091996-5977…`
+- [lean_elementary_half_a_product_of_consecutive_numbers_multiplies_back_for_every_n](/theorem/lean_elementary_half_a_product_of_consecutive_numbers_multiplies_back_for_every_n) — lean elementary.lean: half_a_product_of_consecutive_numbers_multiplies_back_for_every_n — ∀ n : Nat, n * (n + 1) / 2 * 2 = n * (n + 1) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `cf74f953-f0e2…`
+- [lean_energy_burning_then_splitting_is_the_identity_above_the_bond](/theorem/lean_energy_burning_then_splitting_is_the_identity_above_the_bond) — lean energy.lean: burning_then_splitting_is_the_identity_above_the_bond — ∀ e : Nat, bondHundredthsKJ ≤ e → splitE (burnE e) = e — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `fe87a66a-6ac9…`
+- [lean_energy_one_part_in_three_is_a_third_at_every_scale_for_every_m](/theorem/lean_energy_one_part_in_three_is_a_third_at_every_scale_for_every_m) — lean energy.lean: one_part_in_three_is_a_third_at_every_scale_for_every_m — ∀ m : Nat, 0 &lt; m → pct m (3 * m) = 33 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `b2c52079-42f3…`
+- [lean_energy_the_gas_volume_reads_back_its_moles_for_every_m](/theorem/lean_energy_the_gas_volume_reads_back_its_moles_for_every_m) — lean energy.lean: the_gas_volume_reads_back_its_moles_for_every_m — ∀ m : Nat, molesOf (litresOf m) ≤ m ∧ m ≤ molesOf (litresOf m) + 1 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `21c3d846-9c3e…`
+- [lean_energy_the_mass_names_the_molecule_below_5333_hydrogens](/theorem/lean_energy_the_mass_names_the_molecule_below_5333_hydrogens) — lean energy.lean: the_mass_names_the_molecule_below_5333_hydrogens — ∀ h o h' o' : Nat, h &lt; 5333 → h' &lt; 5333 → mass h o = mass h' o' → h = h' ∧ o = o' — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `a30f7f70-4bfa…`
+- [lean_energy_a_floor_division_multiplies_back_within_one_divisor](/theorem/lean_energy_a_floor_division_multiplies_back_within_one_divisor) — lean energy.lean: a_floor_division_multiplies_back_within_one_divisor — ∀ a l : Nat, 0 &lt; l → a / l * l ≤ a ∧ a &lt; (a / l + 1) * l — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `c6871639-adb9…`
+- [lean_families_choose_is_invariant_under_the_involution_k_to_n_minus_k_for_every_n](/theorem/lean_families_choose_is_invariant_under_the_involution_k_to_n_minus_k_for_every_n) — lean families.lean: choose_is_invariant_under_the_involution_k_to_n_minus_k_for_every_n — ∀ n k : Nat, k ≤ n → choose n k = choose n (n - k) ∧ n - (n - k) = k — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `6133e3a1-254e…`
+- [lean_families_the_closed_forms_difference_back_to_the_next_power_for_every_n](/theorem/lean_families_the_closed_forms_difference_back_to_the_next_power_for_every_n) — lean families.lean: the_closed_forms_difference_back_to_the_next_power_for_every_n — ∀ k n : Nat, 1 ≤ k → k ≤ 5 → faulhaber k (n + 1) = faulhaber k n + (n + 1) ^ k — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `b1d34ef3-9b6d…`
+- [lean_families_the_tetrahedral_numbers_difference_back_to_the_triangular_numbers_for_every_n](/theorem/lean_families_the_tetrahedral_numbers_difference_back_to_the_triangular_numbers_for_every_n) — lean families.lean: the_tetrahedral_numbers_difference_back_to_the_triangular_numbers_for_every_n — ∀ n : Nat, (n + 1) * (n + 1 + 1) * (n + 1 + 2) / 6 = n * (n + 1) * (n + 2) / 6 + (n + 1) * (n + 1 + 1) / 2 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `e811a0a1-22b9…`
+- [lean_families_the_powers_of_two_difference_back_to_the_next_power_for_every_n](/theorem/lean_families_the_powers_of_two_difference_back_to_the_next_power_for_every_n) — lean families.lean: the_powers_of_two_difference_back_to_the_next_power_for_every_n — ∀ n : Nat, (2 ^ (n + 2) - 1) - (2 ^ (n + 1) - 1) = 2 ^ (n + 1) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `9c202e7c-40cb…`
+- [lean_families_the_odd_numbers_difference_back_to_the_next_odd_number_for_every_n](/theorem/lean_families_the_odd_numbers_difference_back_to_the_next_odd_number_for_every_n) — lean families.lean: the_odd_numbers_difference_back_to_the_next_odd_number_for_every_n — ∀ n : Nat, ((List.range (n + 1)).map (fun i =&gt; 2 * i + 1)).foldl (· + ·) 0 - ((List.range n).map (fun i =&gt; 2 * i + 1)).foldl (· + ·) 0 = 2 * n + 1 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `404c2b65-4bb4…`
+- [lean_families_foldl_add_start](/theorem/lean_families_foldl_add_start) — lean families.lean: foldl_add_start — ∀ (l : List Nat) (a : Nat), l.foldl (· + ·) a = a + l.foldl (· + ·) 0 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `e29e2887-b564…`
+- [lean_families_the_digits_sum_to_the_number_mod_nine_when_the_fuel_covers_them](/theorem/lean_families_the_digits_sum_to_the_number_mod_nine_when_the_fuel_covers_them) — lean families.lean: the_digits_sum_to_the_number_mod_nine_when_the_fuel_covers_them — ∀ f n : Nat, n &lt; 10 ^ f → (digitsF f n).foldl (· + ·) 0 % 9 = n % 9 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `bdb7dd00-a595…`
+- [lean_families_a_number_is_below_ten_to_its_own_successor](/theorem/lean_families_a_number_is_below_ten_to_its_own_successor) — lean families.lean: a_number_is_below_ten_to_its_own_successor — ∀ n : Nat, n &lt; 10 ^ (n + 1) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `6021fd10-1371…`
+- [lean_families_the_digit_sum_rules_for_three_and_nine_hold_for_every_n](/theorem/lean_families_the_digit_sum_rules_for_three_and_nine_hold_for_every_n) — lean families.lean: the_digit_sum_rules_for_three_and_nine_hold_for_every_n — ∀ n : Nat, (digitSum n % 3 = 0 ↔ n % 3 = 0) ∧ (digitSum n % 9 = 0 ↔ n % 9 = 0) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `e4b7bd43-9725…`
+- [lean_flow_the_reverse_flow_undoes_every_step](/theorem/lean_flow_the_reverse_flow_undoes_every_step) — lean flow.lean: the_reverse_flow_undoes_every_step — ∀ k : Nat, orbit (k + 1) * 5 % 9 = orbit k — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `8a31d5e4-e83d…`
+- [lean_flow_every_state_of_the_flow_returns_within_six_steps](/theorem/lean_flow_every_state_of_the_flow_returns_within_six_steps) — lean flow.lean: every_state_of_the_flow_returns_within_six_steps — ∀ k s : Nat, ∃ j, j &lt; 6 ∧ orbit (k + j) = orbit s — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `fd1cecb4-13df…`
+- [lean_fnv_multiplying_by_the_fnv_prime_is_undone_by_its_inverse_for_every_h](/theorem/lean_fnv_multiplying_by_the_fnv_prime_is_undone_by_its_inverse_for_every_h) — lean fnv.lean: multiplying_by_the_fnv_prime_is_undone_by_its_inverse_for_every_h — ∀ h : Nat, mul32 (mul32 h FNV_PRIME) 899433627 = h % M32 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `30b021d3-5d2e…`
+- [lean_light_the_metre_returns_from_the_second_for_every_whole_length](/theorem/lean_light_the_metre_returns_from_the_second_for_every_whole_length) — lean light.lean: the_metre_returns_from_the_second_for_every_whole_length — ∀ m : Nat, m % c = 0 → travel (m / c) = m — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `01829703-d2a6…`
+- [lean_light_the_period_count_returns_from_the_second_for_every_whole_count](/theorem/lean_light_the_period_count_returns_from_the_second_for_every_whole_count) — lean light.lean: the_period_count_returns_from_the_second_for_every_whole_count — ∀ p : Nat, p % dNuCs = 0 → periods (p / dNuCs) = p — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `917672f5-d4d0…`
+- [lean_mechanical_DR_eq](/theorem/lean_mechanical_DR_eq) — lean mechanical.lean: DR_eq — ∀ n : Nat, DR n = if n = 0 then 0 else 1 + (n - 1) % 9 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `dec26379-71e5…`
+- [lean_mechanical_halving_undoes_every_doubling_step_for_every_k](/theorem/lean_mechanical_halving_undoes_every_doubling_step_for_every_k) — lean mechanical.lean: halving_undoes_every_doubling_step_for_every_k — ∀ k : Nat, dbl (k + 1) / 2 = dbl k — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `7ac609a7-0ed5…`
+- [lean_mechanical_casting_out_nines_is_additive_for_every_a_b](/theorem/lean_mechanical_casting_out_nines_is_additive_for_every_a_b) — lean mechanical.lean: casting_out_nines_is_additive_for_every_a_b — ∀ a b : Nat, DR (a + b) = DR (DR a + DR b) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `f63b1a76-759a…`
+- [lean_mechanical_the_digital_root_fixes_exactly_one_to_nine](/theorem/lean_mechanical_the_digital_root_fixes_exactly_one_to_nine) — lean mechanical.lean: the_digital_root_fixes_exactly_one_to_nine — ∀ d : Nat, 1 ≤ d → d ≤ 9 → DR d = d — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `7f66abca-14de…`
+- [lean_mechanical_the_digital_root_is_idempotent_for_every_n](/theorem/lean_mechanical_the_digital_root_is_idempotent_for_every_n) — lean mechanical.lean: the_digital_root_is_idempotent_for_every_n — ∀ n : Nat, DR (DR n) = DR n — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `cc3d43b3-c3ea…`
+- [lean_mechanical_a_digital_root_of_nine_means_a_multiple_of_nine_for_every_n](/theorem/lean_mechanical_a_digital_root_of_nine_means_a_multiple_of_nine_for_every_n) — lean mechanical.lean: a_digital_root_of_nine_means_a_multiple_of_nine_for_every_n — ∀ n : Nat, 0 &lt; n → DR n = 9 → n % 9 = 0 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `48527c27-d129…`
+- [lean_mechanical_the_hypotenuse_reads_back_from_every_three_four_five_multiple](/theorem/lean_mechanical_the_hypotenuse_reads_back_from_every_three_four_five_multiple) — lean mechanical.lean: the_hypotenuse_reads_back_from_every_three_four_five_multiple — ∀ k c : Nat, (3 * k) ^ 2 + (4 * k) ^ 2 = c ^ 2 → c = 5 * k — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `38ab856f-2051…`
+- [lean_mechanical_the_sixth_of_three_consecutive_integers_multiplies_back_for_every_n](/theorem/lean_mechanical_the_sixth_of_three_consecutive_integers_multiplies_back_for_every_n) — lean mechanical.lean: the_sixth_of_three_consecutive_integers_multiplies_back_for_every_n — ∀ n : Nat, n * (n + 1) * (n + 2) / 6 * 6 = n * (n + 1) * (n + 2) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `23e7c1bf-1835…`
+- [lean_nim_a_number_xored_with_itself_is_zero_for_every_a](/theorem/lean_nim_a_number_xored_with_itself_is_zero_for_every_a) — lean nim.lean: a_number_xored_with_itself_is_zero_for_every_a — ∀ a : Nat, xorN a a = 0 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `4eb0eb7c-9115…`
+- [lean_nim_xor_is_zero_only_on_equal_arguments_for_every_a_b](/theorem/lean_nim_xor_is_zero_only_on_equal_arguments_for_every_a_b) — lean nim.lean: xor_is_zero_only_on_equal_arguments_for_every_a_b — ∀ a b : Nat, xorN a b = 0 ↔ a = b — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `c117a38f-0ab9…`
+- [lean_nim_the_halves_and_the_low_bit_read_back_from_the_xor_for_every_a_b](/theorem/lean_nim_the_halves_and_the_low_bit_read_back_from_the_xor_for_every_a_b) — lean nim.lean: the_halves_and_the_low_bit_read_back_from_the_xor_for_every_a_b — ∀ a b : Nat, xorN a b / 2 = xorN (a / 2) (b / 2) ∧ xorN a b % 2 = (a + b) % 2 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `c526ac9a-e469…`
+- [lean_reach_the_successor_returns_every_positive_predecessor](/theorem/lean_reach_the_successor_returns_every_positive_predecessor) — lean reach.lean: the_successor_returns_every_positive_predecessor — ∀ n : Nat, 0 &lt; n → (n - 1) + 1 = n — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `23e0a041-8135…`
+- [lean_reach_exhaustion_reaches_everything_below_its_bound_for_every_n](/theorem/lean_reach_exhaustion_reaches_everything_below_its_bound_for_every_n) — lean reach.lean: exhaustion_reaches_everything_below_its_bound_for_every_n — ∀ n k : Nat, k &lt; n → k ∈ List.range n — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `ca669c32-5df9…`
+- [lean_reach_the_predecessor_of_every_positive_bound_lies_inside](/theorem/lean_reach_the_predecessor_of_every_positive_bound_lies_inside) — lean reach.lean: the_predecessor_of_every_positive_bound_lies_inside — ∀ n : Nat, 0 &lt; n → n - 1 ∈ List.range n — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `9f5d69b8-d238…`
+- [lean_reach_halving_the_domain_keeps_the_half_inside_for_every_n](/theorem/lean_reach_halving_the_domain_keeps_the_half_inside_for_every_n) — lean reach.lean: halving_the_domain_keeps_the_half_inside_for_every_n — ∀ n : Nat, 0 &lt; n → n ∈ List.range (2 * n) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `be05a537-ee2d…`
+- [lean_reversal_digitsF_zero](/theorem/lean_reversal_digitsF_zero) — lean reversal.lean: digitsF_zero — ∀ f : Nat, digitsF f 0 = [] — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `e37e7ee7-d6b6…`
+- [lean_reversal_every_digit_is_below_ten](/theorem/lean_reversal_every_digit_is_below_ten) — lean reversal.lean: every_digit_is_below_ten — ∀ f n : Nat, ∀ d ∈ digitsF f n, d &lt; 10 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `45e2714e-6f2d…`
+- [lean_reversal_the_digits_rebuild_the_number_when_the_fuel_covers_them](/theorem/lean_reversal_the_digits_rebuild_the_number_when_the_fuel_covers_them) — lean reversal.lean: the_digits_rebuild_the_number_when_the_fuel_covers_them — ∀ f n : Nat, n &lt; 10 ^ f → (digitsF f n).foldr (fun d a =&gt; a * 10 + d) 0 = n — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `06a08633-fb89…`
+- [lean_reversal_the_number_is_rebuilt_from_its_digits_for_every_n](/theorem/lean_reversal_the_number_is_rebuilt_from_its_digits_for_every_n) — lean reversal.lean: the_number_is_rebuilt_from_its_digits_for_every_n — ∀ n : Nat, (digits n).foldr (fun d a =&gt; a * 10 + d) 0 = n — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `cbb228e9-06c9…`
+- [lean_reversal_a_sum_is_the_same_read_backwards](/theorem/lean_reversal_a_sum_is_the_same_read_backwards) — lean reversal.lean: a_sum_is_the_same_read_backwards — ∀ (l : List Nat), l.reverse.foldl (· + ·) 0 = l.foldl (· + ·) 0 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `1b350dab-b05b…`
+- [lean_reversal_the_top_digit_is_nonzero](/theorem/lean_reversal_the_top_digit_is_nonzero) — lean reversal.lean: the_top_digit_is_nonzero — ∀ f n : Nat, 0 &lt; n → n &lt; 10 ^ f → ∃ L b, digitsF f n = L ++ [b] ∧ 0 &lt; b ∧ b &lt; 10 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `da813af5-c2e3…`
+- [lean_reversal_reversal_leaves_no_trailing_zero](/theorem/lean_reversal_reversal_leaves_no_trailing_zero) — lean reversal.lean: reversal_leaves_no_trailing_zero — ∀ n : Nat, 0 &lt; n → 0 &lt; reverseNum n ∧ reverseNum n % 10 ≠ 0 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `edae203a-46d3…`
+- [lean_reversal_reading_a_list_back_from_the_top](/theorem/lean_reversal_reading_a_list_back_from_the_top) — lean reversal.lean: reading_a_list_back_from_the_top — ∀ r : List Nat, r ≠ [] → (∀ d ∈ r, d &lt; 10) → r.reverse.head? ≠ some 0 → 0 &lt; r.reverse.foldl (fun a d =&gt; a * 10 + d) 0 ∧ r.length ≤ r.reverse.foldl (fun a d =&gt; a * 10 + d) 0 ∧ ∀ f, r.length ≤ f → digitsF f (r.reverse.foldl (fun a d =&gt; a * 10… — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `ac35a0e6-3280…`
+- [lean_reversal_the_digits_of_the_reversal_are_the_reversed_digits](/theorem/lean_reversal_the_digits_of_the_reversal_are_the_reversed_digits) — lean reversal.lean: the_digits_of_the_reversal_are_the_reversed_digits — ∀ n : Nat, n % 10 ≠ 0 → digits (reverseNum n) = (digitsF (n + 1) n).reverse ∧ digits n = digitsF (n + 1) n — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `91c9f620-0c4f…`
+- [lean_reversal_reversal_is_involutive_off_the_trailing_zeros_for_every_n](/theorem/lean_reversal_reversal_is_involutive_off_the_trailing_zeros_for_every_n) — lean reversal.lean: reversal_is_involutive_off_the_trailing_zeros_for_every_n — ∀ n : Nat, n % 10 ≠ 0 → reverseNum (reverseNum n) = n — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `6ea99113-8427…`
+- [lean_reversal_reversal_is_involutive_exactly_off_the_trailing_zeros_for_every_n](/theorem/lean_reversal_reversal_is_involutive_exactly_off_the_trailing_zeros_for_every_n) — lean reversal.lean: reversal_is_involutive_exactly_off_the_trailing_zeros_for_every_n — ∀ n : Nat, 0 &lt; n → (reverseNum (reverseNum n) = n ↔ n % 10 ≠ 0) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `4861172d-e203…`
+- [lean_reversal_more_fuel_changes_no_digit](/theorem/lean_reversal_more_fuel_changes_no_digit) — lean reversal.lean: more_fuel_changes_no_digit — ∀ f n k : Nat, n &lt; 10 ^ f → digitsF (f + k) n = digitsF f n — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `6dcd0667-a81f…`
+- [lean_reversal_a_trailing_zero_is_a_leading_zero_of_the_digits](/theorem/lean_reversal_a_trailing_zero_is_a_leading_zero_of_the_digits) — lean reversal.lean: a_trailing_zero_is_a_leading_zero_of_the_digits — ∀ m : Nat, 0 &lt; m → digits (10 * m) = 0 :: digits m — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `c8aa36fc-ef29…`
+- [lean_reversal_reversal_preserves_the_digit_sum_for_every_n](/theorem/lean_reversal_reversal_preserves_the_digit_sum_for_every_n) — lean reversal.lean: reversal_preserves_the_digit_sum_for_every_n — ∀ n : Nat, digitSum (reverseNum n) = digitSum n — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `ab260836-a2cf…`
+- [lean_reversal_the_fixed_points_of_reversal_are_the_palindromes_for_every_n](/theorem/lean_reversal_the_fixed_points_of_reversal_are_the_palindromes_for_every_n) — lean reversal.lean: the_fixed_points_of_reversal_are_the_palindromes_for_every_n — ∀ n : Nat, n % 10 ≠ 0 → (reverseNum n = n ↔ (digits n).reverse = digits n) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `6b0761d8-d62a…`
+- [lean_sequences_halving_removes_exactly_the_low_bit_for_every_n](/theorem/lean_sequences_halving_removes_exactly_the_low_bit_for_every_n) — lean sequences.lean: halving_removes_exactly_the_low_bit_for_every_n — ∀ n : Nat, popcount n = n % 2 + popcount (n / 2) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `977069d5-f1b5…`
+- [lean_sequences_the_thue_morse_halving_recurrence_for_every_n](/theorem/lean_sequences_the_thue_morse_halving_recurrence_for_every_n) — lean sequences.lean: the_thue_morse_halving_recurrence_for_every_n — ∀ n : Nat, tm n = (n % 2 + tm (n / 2)) % 2 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `864ba163-a3f8…`
+- [lean_sequences_doubling_shifts_every_bit_up_by_one](/theorem/lean_sequences_doubling_shifts_every_bit_up_by_one) — lean sequences.lean: doubling_shifts_every_bit_up_by_one — ∀ m i : Nat, 2 * m / 2 ^ (i + 1) = m / 2 ^ i — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `c6f05e84-b232…`
+- [lean_sequences_the_residue_below_the_next_power_adds_one_bit](/theorem/lean_sequences_the_residue_below_the_next_power_adds_one_bit) — lean sequences.lean: the_residue_below_the_next_power_adds_one_bit — ∀ m F : Nat, m % 2 ^ (F + 1) = m % 2 ^ F + m / 2 ^ F % 2 * 2 ^ F — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `2607d9ae-7836…`
+- [lean_sequences_the_low_bits_rebuild_the_number_below_every_power](/theorem/lean_sequences_the_low_bits_rebuild_the_number_below_every_power) — lean sequences.lean: the_low_bits_rebuild_the_number_below_every_power — ∀ F m : Nat, (List.range F).foldl (fun a i =&gt; a + m / 2 ^ i % 2 * 2 ^ i) 0 = m % 2 ^ F — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `c79eff54-9841…`
+- [lean_sequences_the_number_is_rebuilt_from_its_bits_for_every_n](/theorem/lean_sequences_the_number_is_rebuilt_from_its_bits_for_every_n) — lean sequences.lean: the_number_is_rebuilt_from_its_bits_for_every_n — ∀ n : Nat, (List.range (n + 1)).foldl (fun a i =&gt; a + n / 2 ^ i % 2 * 2 ^ i) 0 = n — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `4e6421ba-ab59…`
+- [lean_speed_the_nanoseconds_return_from_the_microseconds_at_every_whole_count](/theorem/lean_speed_the_nanoseconds_return_from_the_microseconds_at_every_whole_count) — lean speed.lean: the_nanoseconds_return_from_the_microseconds_at_every_whole_count — ∀ n : Nat, n % 1000 = 0 → n / 1000 * 1000 = n — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `7e0b39fe-b643…`
+- [lean_split_the_coins_return_from_the_coin_step_for_every_multiple_of_three](/theorem/lean_split_the_coins_return_from_the_coin_step_for_every_multiple_of_three) — lean split.lean: the_coins_return_from_the_coin_step_for_every_multiple_of_three — ∀ t : Nat, t % 3 = 0 → 3 * (t / 3) = t — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `0a785a11-be04…`
+- [lean_split_paying_and_refunding_round_trips_for_every_count](/theorem/lean_split_paying_and_refunding_round_trips_for_every_count) — lean split.lean: paying_and_refunding_round_trips_for_every_count — ∀ n k : Nat, k ≤ n → 3 * (n - k) + 3 * k = 3 * n — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `31ce2f16-8ab7…`
+- [lean_z9_orbit_repeats_every_six](/theorem/lean_z9_orbit_repeats_every_six) — lean z9.lean: orbit_repeats_every_six — ∀ k : Nat, orbit (k + 6) = orbit k — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `1d6bb6c2-2c76…`
+- [lean_z9_orbit_is_its_exponent_mod_six](/theorem/lean_z9_orbit_is_its_exponent_mod_six) — lean z9.lean: orbit_is_its_exponent_mod_six — ∀ k : Nat, orbit k = orbit (k % 6) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `af2bb754-dd58…`
+- [lean_z9_the_orbit_step_is_read_back_by_its_log_for_every_k](/theorem/lean_z9_the_orbit_step_is_read_back_by_its_log_for_every_k) — lean z9.lean: the_orbit_step_is_read_back_by_its_log_for_every_k — ∀ k : Nat, logOrbit (orbit k) = some (k % 6) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `b806a941-659e…`
+- [lean_z9plus_halving_undoes_doubling_at_every_step](/theorem/lean_z9plus_halving_undoes_doubling_at_every_step) — lean z9plus.lean: halving_undoes_doubling_at_every_step — ∀ k : Nat, m9 (pw 2 k * pw 5 k) = 1 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `87e5a9d4-3319…`
+- [lean_z9plus_halving_has_period_six_for_every_k](/theorem/lean_z9plus_halving_has_period_six_for_every_k) — lean z9plus.lean: halving_has_period_six_for_every_k — ∀ k : Nat, pw 5 (k + 6) = pw 5 k — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `d07f608f-90d3…`
+- [lean_z9plus_halving_orbit_digital_roots_have_period_six_for_every_k](/theorem/lean_z9plus_halving_orbit_digital_roots_have_period_six_for_every_k) — lean z9plus.lean: halving_orbit_digital_roots_have_period_six_for_every_k — ∀ k : Nat, dr (pw 5 (k + 6)) = dr (pw 5 k) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `147581f3-c75f…`
+- [lean_z9plus_the_reflected_orbit_meets_the_triad_exactly_at_one_four_seven_for_every_k](/theorem/lean_z9plus_the_reflected_orbit_meets_the_triad_exactly_at_one_four_seven_for_every_k) — lean z9plus.lean: the_reflected_orbit_meets_the_triad_exactly_at_one_four_seven_for_every_k — ∀ k : Nat, [3, 6, 9].contains (refl (pw 2 k)) = [1, 4, 7].contains (pw 2 k) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `20cda95a-c30a…`
+- [lean_z9plus_reversal_cannot_change_the_digital_root_for_every_n](/theorem/lean_z9plus_reversal_cannot_change_the_digital_root_for_every_n) — lean z9plus.lean: reversal_cannot_change_the_digital_root_for_every_n — ∀ n : Nat, dr (reverseNum n) = dr n — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `43332821-10bc…`
 
 ### other — one-of-a-kind (0)
 
@@ -2431,4 +2592,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `d6ba53ba-1a3b-8cf9-90c0-a7b187457d7f`. Integrity, not truth.
+Page content-address: `73df5db3-796d-8cbe-8af7-2c4dcfbbe856`. Integrity, not truth.

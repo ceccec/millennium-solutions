@@ -7,7 +7,7 @@ head:
 
 # The real uuidna advantage — measured, in all domains
 
-> Generated from the **2674** ledger entries and **59** domains, recomputed each build. The advantage is
+> Generated from the **2755** ledger entries and **59** domains, recomputed each build. The advantage is
 > real and **measured**, and honestly bounded: a **verification and reuse** complexity reduction — **not**
 > faster original compute, **not** faster than light, **not** quantum.
 
@@ -33,9 +33,9 @@ theorems verify in `⌈log₂N⌉`. So one proof covers the whole [rosetta](/): 
 
 ## Discovery lead — a lead, never a verdict
 
-Grouping the 2674 receipts by the digital root of their address, the **sparsest** region is digit
-**3** (270) — a candidate area to examine, not a finding. The ledger is currently held
-at **2674** (the captain's cap): improving a theorem's name or proof heals the record without changing the
+Grouping the 2755 receipts by the digital root of their address, the **sparsest** region is digit
+**3** (276) — a candidate area to examine, not a finding. The ledger is currently held
+at **2755** (the captain's cap): improving a theorem's name or proof heals the record without changing the
 count; discovering a new one would require lifting the cap.
 
 A content-address proves **integrity, not truth**.

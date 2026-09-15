@@ -51,4 +51,28 @@ theorem navier_stokes_flow_is_bounded_for_every_step :
   revert j
   decide
 
+
+-- ── reflections, from the orbit batch: each law beside its inverse (the 2×7 ↔ 1+6 wave) ──
+-- orbit and span are MillenniumFloor's (index.lean), opened above — not redefined here
+-- REFLECTION: the reverse flow (halving, ×5) steps every state back one, at every step
+theorem the_reverse_flow_undoes_every_step : ∀ k : Nat, orbit (k + 1) * 5 % 9 = orbit k := by
+  intro k
+  unfold orbit
+  rw [Nat.mul_mod, Nat.mod_mod, ← Nat.mul_mod, Nat.pow_succ, Nat.mul_assoc, Nat.mul_mod]
+  show 2 ^ k % 9 * 1 % 9 = 2 ^ k % 9
+  rw [Nat.mul_one, Nat.mod_mod]
+
+-- REFLECTION of "bounded": recurrent — from every step, every state of the span returns within six steps
+theorem every_state_of_the_flow_returns_within_six_steps :
+    ∀ k s : Nat, ∃ j, j < 6 ∧ orbit (k + j) = orbit s := by
+  intro k s
+  have key : ∀ r, r < 6 → ∀ t, t < 6 → ∃ j, j < 6 ∧ orbit ((r + j) % 6) = orbit t := by
+    decide
+  obtain ⟨j, hj, e⟩ := key (k % 6) (Nat.mod_lt _ (by decide)) (s % 6) (Nat.mod_lt _ (by decide))
+  refine ⟨j, hj, ?_⟩
+  rw [the_doubling_flow_is_its_first_six_steps (k + j), the_doubling_flow_is_its_first_six_steps s]
+  have hm : (k + j) % 6 = (k % 6 + j) % 6 := by omega
+  rw [hm]
+  exact e
+
 end Flow

@@ -216,4 +216,69 @@ theorem thue_morse_doubling_recurrence_for_every_n : ∀ n : Nat, tm (2 * n) = t
   rw [doubling_preserves_the_bit_count_for_every_n, the_odd_step_sets_exactly_one_further_bit_for_every_n]
   exact ⟨rfl, by omega⟩
 
+
+-- ── reflections, from the bits batch: each law beside its inverse (the 2×7 ↔ 1+6 wave) ──
+-- REFLECTION of doubling_preserves_the_bit_count / the_odd_step_sets_exactly_one_further_bit:
+-- halving removes exactly the low bit, for every n
+theorem halving_removes_exactly_the_low_bit_for_every_n : ∀ n : Nat, popcount n = n % 2 + popcount (n / 2) := by
+  intro n
+  cases n with
+  | zero => rfl
+  | succ m =>
+    unfold popcount
+    rw [the_bits_of_a_number_are_its_low_bit_then_the_bits_of_its_half (m + 1) (m + 1)]
+    have hlt := a_number_is_below_two_to_its_own_successor ((m + 1) / 2)
+    rw [show List.range (m + 1) = List.range ((m + 1) / 2 + 1 + (m - (m + 1) / 2)) by congr 1; omega,
+      bits_above_the_number_add_nothing (m - (m + 1) / 2) ((m + 1) / 2 + 1) ((m + 1) / 2) hlt]
+
+theorem the_thue_morse_halving_recurrence_for_every_n : ∀ n : Nat, tm n = (n % 2 + tm (n / 2)) % 2 := by
+  intro n
+  unfold tm
+  rw [halving_removes_exactly_the_low_bit_for_every_n n]
+  omega
+
+-- REFLECTION of halving_shifts_every_bit_down_by_one: doubling shifts every bit up by one
+theorem doubling_shifts_every_bit_up_by_one : ∀ m i : Nat, 2 * m / 2 ^ (i + 1) = m / 2 ^ i := by
+  intro m i
+  rw [Nat.pow_succ, Nat.mul_comm (2 ^ i) 2, ← Nat.div_div_eq_div_mul, Nat.mul_div_cancel_left _ (by decide)]
+
+-- core's Nat.mod_pow_succ carries Classical.choice, so the one step it gives is proved here by hand
+theorem the_residue_below_the_next_power_adds_one_bit :
+    ∀ m F : Nat, m % 2 ^ (F + 1) = m % 2 ^ F + m / 2 ^ F % 2 * 2 ^ F := by
+  intro m F
+  have hP : 0 < 2 ^ F := Nat.lt_of_le_of_lt (Nat.zero_le F) (a_number_is_below_two_to_its_own_power F)
+  have e1 := Nat.div_add_mod m (2 ^ F)
+  have e2 := Nat.div_add_mod (m / 2 ^ F) 2
+  have hr : m % 2 ^ F < 2 ^ F := Nat.mod_lt _ hP
+  have hb : m / 2 ^ F % 2 < 2 := Nat.mod_lt _ (by decide)
+  rw [Nat.pow_succ]
+  generalize m / 2 ^ F / 2 = s at e2
+  generalize m / 2 ^ F % 2 = t at e2 hb ⊢
+  generalize m / 2 ^ F = q at e1 e2
+  generalize m % 2 ^ F = r at e1 hr ⊢
+  generalize 2 ^ F = P at hP e1 hr ⊢
+  subst e2
+  rw [← e1, show P * (2 * s + t) + r = (r + t * P) + P * 2 * s by
+    rw [Nat.mul_add, Nat.mul_comm P t, ← Nat.mul_assoc]; omega]
+  rw [Nat.add_mul_mod_self_left]
+  have htP : t * P ≤ P := by
+    rcases (by omega : t = 0 ∨ t = 1) with h | h <;> subst h <;> omega
+  exact Nat.mod_eq_of_lt (by omega)
+
+-- REFLECTION of the_bits_of_a_number…: the number is rebuilt from its bits
+theorem the_low_bits_rebuild_the_number_below_every_power :
+    ∀ F m : Nat, (List.range F).foldl (fun a i => a + m / 2 ^ i % 2 * 2 ^ i) 0 = m % 2 ^ F := by
+  intro F m
+  induction F with
+  | zero => show 0 = m % 1; rw [Nat.mod_one]
+  | succ F ih =>
+    rw [List.range_succ, List.foldl_append, ih]
+    simp only [List.foldl]
+    rw [the_residue_below_the_next_power_adds_one_bit]
+
+theorem the_number_is_rebuilt_from_its_bits_for_every_n :
+    ∀ n : Nat, (List.range (n + 1)).foldl (fun a i => a + n / 2 ^ i % 2 * 2 ^ i) 0 = n := by
+  intro n
+  rw [the_low_bits_rebuild_the_number_below_every_power, Nat.mod_eq_of_lt (a_number_is_below_two_to_its_own_successor n)]
+
 end Sequences

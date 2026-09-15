@@ -308,4 +308,25 @@ theorem the_nim_sum_is_a_gf2_vector_addition_for_every_a_b_c :
   exact ⟨xor_is_commutative_for_every_a_b a b, xor_is_associative_for_every_a_b_c a b c,
     xor_is_its_own_inverse_for_every_a_b a b, xor_zero_is_identity_for_every_a a⟩
 
+
+-- ── reflections, from the xor batch: each law beside its inverse (the 2×7 ↔ 1+6 wave) ──
+-- REFLECTIONS
+theorem a_number_xored_with_itself_is_zero_for_every_a : ∀ a : Nat, xorN a a = 0 := by
+  intro a; unfold xorN; exact a_number_xored_with_itself_is_zero_at_every_fuel _ a
+
+theorem xor_is_zero_only_on_equal_arguments_for_every_a_b : ∀ a b : Nat, xorN a b = 0 ↔ a = b := by
+  intro a b
+  constructor
+  · intro h
+    have := xor_is_its_own_inverse_for_every_a_b a b
+    rw [h, xor_is_commutative_for_every_a_b, xor_zero_is_identity_for_every_a] at this
+    exact this.symm
+  · intro h; subst h; exact a_number_xored_with_itself_is_zero_for_every_a a
+
+theorem the_halves_and_the_low_bit_read_back_from_the_xor_for_every_a_b :
+    ∀ a b : Nat, xorN a b / 2 = xorN (a / 2) (b / 2) ∧ xorN a b % 2 = (a + b) % 2 := by
+  intro a b
+  have h := xor_is_the_sum_of_the_bits_plus_twice_the_xor_of_the_halves a b
+  constructor <;> omega
+
 end Nim

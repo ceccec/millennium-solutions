@@ -96,4 +96,31 @@ theorem neg_involution : (List.range B).all (fun d => m9 (B - m9 (B - d)) == m9 
 def settledHere : Nat := 21
 theorem z9_settles_its_domain_totally : settledHere = 21 := rfl
 
+
+-- ── reflections, from the orbit batch: each law beside its inverse (the 2×7 ↔ 1+6 wave) ──
+theorem orbit_repeats_every_six : ∀ k : Nat, orbit (k + 6) = orbit k := by
+  intro k
+  unfold orbit m9 B
+  rw [Nat.pow_add, Nat.mul_mod]
+  have h : 2 ^ 6 % 9 = 1 := by decide
+  rw [h, Nat.mul_one, Nat.mod_mod]
+
+theorem orbit_is_its_exponent_mod_six : ∀ k : Nat, orbit k = orbit (k % 6) := by
+  intro k
+  induction k using Nat.strongRecOn with
+  | _ k ih =>
+    if hk : k < 6 then rw [Nat.mod_eq_of_lt hk]
+    else
+      have e : k = (k - 6) + 6 := by omega
+      rw [e, orbit_repeats_every_six, ih (k - 6) (by omega), Nat.add_mod_right]
+
+-- REFLECTION of "the orbit is read from the exponent mod six": the exponent mod six is read back from the orbit
+theorem the_orbit_step_is_read_back_by_its_log_for_every_k : ∀ k : Nat, logOrbit (orbit k) = some (k % 6) := by
+  intro k
+  rw [orbit_is_its_exponent_mod_six]
+  have h : k % 6 < 6 := Nat.mod_lt _ (by decide)
+  generalize k % 6 = j at h ⊢
+  revert j
+  decide
+
 end Z9

@@ -149,4 +149,10 @@ theorem hexbits_are_slower_and_the_ratio_multiplies_back :
 -- encoding changes how many characters carry a value, not how many operations are performed. §7 above proves
 -- the operation-count claim; the two theorems above prove the width and the cost. Nothing was lost.
 
+
+-- ── reflections, from the easy batch: each law beside its inverse (the 2×7 ↔ 1+6 wave) ──
+theorem the_nanoseconds_return_from_the_microseconds_at_every_whole_count :
+    ∀ n : Nat, n % 1000 = 0 → n / 1000 * 1000 = n := by
+  intro n h; omega
+
 end Speed

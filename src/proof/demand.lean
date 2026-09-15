@@ -131,4 +131,30 @@ theorem mantels_bound_is_n_squared_over_four_for_every_n :
     rw [h1, show 2 * m + 1 - m = m + 1 by omega, h2]
     omega
 
+
+-- ── reflections, from the easy batch: each law beside its inverse (the 2×7 ↔ 1+6 wave) ──
+theorem four_times_a_near_product_is_at_most_the_square :
+    ∀ a d : Nat, a * (a + d) * 4 ≤ (a + (a + d)) * (a + (a + d)) := by
+  intro a d
+  have e1 : a * (a + d) = a * a + a * d := Nat.mul_add a a d
+  have e2 : (a + (a + d)) * (a + (a + d)) = 4 * (a * a) + 4 * (a * d) + d * d := by
+    rw [show a + (a + d) = 2 * a + d by omega, Nat.add_mul, Nat.mul_add, Nat.mul_add,
+      Nat.mul_assoc 2 a (2 * a), Nat.mul_comm a (2 * a), Nat.mul_assoc 2 a a, Nat.mul_assoc 2 a d,
+      Nat.mul_comm d (2 * a), Nat.mul_assoc 2 a d]
+    omega
+  rw [e1, e2]
+  omega
+
+theorem no_cut_beats_the_balanced_one_for_every_n :
+    ∀ n a : Nat, a ≤ n → a * (n - a) ≤ n * n / 4 := by
+  intro n a h
+  obtain ⟨b, rfl⟩ : ∃ b, n = a + b := ⟨n - a, by omega⟩
+  rw [show a + b - a = b by omega, Nat.le_div_iff_mul_le (by decide)]
+  rcases Nat.le_total a b with hab | hab
+  · obtain ⟨d, rfl⟩ : ∃ d, b = a + d := ⟨b - a, by omega⟩
+    exact four_times_a_near_product_is_at_most_the_square a d
+  · obtain ⟨d, rfl⟩ : ∃ d, a = b + d := ⟨a - b, by omega⟩
+    rw [Nat.mul_comm (b + d) b, show b + d + b = b + (b + d) by omega]
+    exact four_times_a_near_product_is_at_most_the_square b d
+
 end Demand

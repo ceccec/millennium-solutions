@@ -155,4 +155,14 @@ theorem the_second_returns_from_the_metre_and_the_period_for_every_s :
   intro s
   exact ⟨Nat.mul_div_cancel_left s (by decide), Nat.mul_div_cancel_left s (by decide)⟩
 
+
+-- ── reflections, from the easy batch: each law beside its inverse (the 2×7 ↔ 1+6 wave) ──
+theorem the_metre_returns_from_the_second_for_every_whole_length :
+    ∀ m : Nat, m % c = 0 → travel (m / c) = m := by
+  intro m h; unfold travel; exact Nat.mul_div_cancel' (Nat.dvd_of_mod_eq_zero h)
+
+theorem the_period_count_returns_from_the_second_for_every_whole_count :
+    ∀ p : Nat, p % dNuCs = 0 → periods (p / dNuCs) = p := by
+  intro p h; unfold periods; exact Nat.mul_div_cancel' (Nat.dvd_of_mod_eq_zero h)
+
 end Light

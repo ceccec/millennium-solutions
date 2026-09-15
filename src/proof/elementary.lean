@@ -443,4 +443,53 @@ theorem the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis_for_every_n
   intro n
   exact (key n).1
 
+
+-- ── reflections, from the easy batch: each law beside its inverse (the 2×7 ↔ 1+6 wave) ──
+theorem the_polygon_side_count_reads_back_from_its_angle_sum : ∀ n : Nat, 2 ≤ n → ((n - 2) * 180 + 360) / 180 = n := by
+  intro n h; omega
+
+theorem every_odd_square_one_more_than_eight_times_m_makes_m_triangular :
+    ∀ m r : Nat, 8 * m + 1 = r * r → m = r / 2 * (r / 2 + 1) / 2 := by
+  intro m r h
+  have hodd : r % 2 = 1 := by
+    rcases Nat.mod_two_eq_zero_or_one r with e | e
+    · have : r * r % 2 = 0 := by simp [Nat.mul_mod, e]
+      omega
+    · exact e
+  obtain ⟨t, rfl⟩ : ∃ t, r = 2 * t + 1 := ⟨r / 2, by omega⟩
+  rw [show (2 * t + 1) / 2 = t by omega]
+  have hexp : (2 * t + 1) * (2 * t + 1) = 4 * (t * (t + 1)) + 1 := by
+    rw [Nat.mul_add t t 1, Nat.mul_one, Nat.add_mul, Nat.mul_add, Nat.mul_add, Nat.mul_one, Nat.one_mul]
+    rw [Nat.mul_assoc 2 t (2 * t), Nat.mul_comm t (2 * t), Nat.mul_assoc 2 t t]
+    omega
+  have hev := a_product_of_consecutive_numbers_is_even t
+  rw [hexp] at h
+  generalize t * (t + 1) = P at h hev ⊢
+  omega
+
+
+-- ── reflections, from the sums batch: each law beside its inverse (the 2×7 ↔ 1+6 wave) ──
+-- REFLECTION of the Lucas law: the Fibonacci numbers read back from the neighbouring Lucas numbers
+theorem the_fibonaccis_are_a_fifth_of_the_neighbouring_lucas_numbers_for_every_n :
+    ∀ n : Nat, 5 * fib (n + 1) = lucas n + lucas (n + 2) := by
+  intro n
+  cases n with
+  | zero => decide
+  | succ n =>
+    have l1 := the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis_for_every_n n
+    have l3 := the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis_for_every_n (n + 2)
+    have f2 : fib (n + 2) = fib n + fib (n + 1) := rfl
+    have f3 : fib (n + 3) = fib (n + 1) + fib (n + 2) := rfl
+    have f4 : fib (n + 4) = fib (n + 2) + fib (n + 3) := rfl
+    show 5 * fib (n + 2) = lucas (n + 1) + lucas (n + 2 + 1)
+    rw [l1, l3, show n + 2 + 2 = n + 4 from rfl, f4]
+    omega
+
+
+-- ── reflections, from the extra batch: each law beside its inverse (the 2×7 ↔ 1+6 wave) ──
+theorem half_a_product_of_consecutive_numbers_multiplies_back_for_every_n :
+    ∀ n : Nat, n * (n + 1) / 2 * 2 = n * (n + 1) := by
+  intro n
+  exact Nat.div_mul_cancel (Nat.dvd_of_mod_eq_zero (a_product_of_consecutive_numbers_is_even n))
+
 end Elementary

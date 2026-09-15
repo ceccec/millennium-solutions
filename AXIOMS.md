@@ -5,7 +5,7 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **735** report the same thing:
+axiom fails the build rather than earning a footnote. All **816** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
@@ -96,7 +96,7 @@ Each of these is a primitive of this deposit — not derived, not proved, chosen
 because a reader checking a theorem must be able to read the definition it is about, and because a
 deposit that reports its axiom count and hides its definition count is reporting the flattering half.
 
-### `address.lean` — 12 definition(s), 23 theorem(s)
+### `address.lean` — 12 definition(s), 26 theorem(s)
 
 ```lean
 def andF : Nat → Nat → Nat → Nat
@@ -125,7 +125,7 @@ def fall (n : Nat) : Nat := if n == 0 then 9 else 1 + (n - 1) % 9
 def nonzero : List Nat := [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
-### `demand.lean` — 12 definition(s), 9 theorem(s)
+### `demand.lean` — 12 definition(s), 11 theorem(s)
 
 ```lean
 def divisors (n : Nat) : List Nat := (List.range' 1 n).filter (fun d => n % d == 0)
@@ -142,7 +142,7 @@ def isCarmichael (n : Nat) : Bool :=
 def bitsF : Nat → Nat → Nat
 ```
 
-### `demand2.lean` — 17 definition(s), 11 theorem(s)
+### `demand2.lean` — 17 definition(s), 12 theorem(s)
 
 ```lean
 def sumPow (p n : Nat) : Nat := (List.range' 1 n).foldl (fun a k => a + k ^ p) 0
@@ -164,7 +164,7 @@ def pp2000 : List Nat := perfectPowersUpTo 2000
 def aliquot (n : Nat) : Nat := ((List.range' 1 (n - 1)).filter (fun d => n % d == 0)).foldl (· + ·) 0
 ```
 
-### `demand3.lean` — 12 definition(s), 15 theorem(s)
+### `demand3.lean` — 12 definition(s), 19 theorem(s)
 
 ```lean
 def isSumOfFour (n : Nat) : Bool :=
@@ -181,7 +181,7 @@ def step : List Nat → List Nat
 def hh : Nat → List Nat → Bool
 ```
 
-### `elementary.lean` — 24 definition(s), 37 theorem(s)
+### `elementary.lean` — 24 definition(s), 41 theorem(s)
 
 ```lean
 def properDivisorSum (n : Nat) : Nat := ((List.range' 1 (n - 1)).filter (fun d => n % d == 0)).foldl (· + ·) 0
@@ -210,7 +210,7 @@ def tetOf (r : Nat) : List Nat := (unitsMod 9).filter (fun d => d % 3 == r)
 def settledHere : Nat := 32
 ```
 
-### `energy.lean` — 31 definition(s), 22 theorem(s)
+### `energy.lean` — 31 definition(s), 28 theorem(s)
 
 ```lean
 def splitCost : Nat := 52000  -- Wh to electrolyse 1 kg H₂ (real cells: 50–55 kWh/kg; ideal is ~39.4)
@@ -246,7 +246,7 @@ def residueMg (litres tds : Nat) : Nat := litres * tds
 def atomsOf (m : Nat) : Option (Nat × Nat) :=
 ```
 
-### `families.lean` — 44 definition(s), 55 theorem(s)
+### `families.lean` — 44 definition(s), 64 theorem(s)
 
 ```lean
 def primesUpTo30 : List Nat := [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
@@ -295,7 +295,7 @@ def schlafli : List (Nat × Nat) :=
 def settledHere : Nat := 42
 ```
 
-### `fnv.lean` — 13 definition(s), 14 theorem(s)
+### `fnv.lean` — 13 definition(s), 15 theorem(s)
 
 ```lean
 def xorF : Nat → Nat → Nat → Nat
@@ -343,7 +343,7 @@ def saving (value verify : Nat) : Nat := value - verify
 def addr4 (x : Nat) : Nat := x % 16
 ```
 
-### `light.lean` — 13 definition(s), 14 theorem(s)
+### `light.lean` — 13 definition(s), 16 theorem(s)
 
 ```lean
 def c : Nat := 299792458      -- m/s, exact
@@ -361,7 +361,7 @@ def kcdDoubled : Nat := 1366     -- K_cd expressed against a unit half the size;
 def alternative : List Nat := [c, dNuCs, hDigits, eDigits, kDigits, naDigits, kcdDoubled]
 ```
 
-### `mechanical.lean` — 5 definition(s), 119 theorem(s)
+### `mechanical.lean` — 5 definition(s), 127 theorem(s)
 
 ```lean
 def M9 (n : Nat) : Nat := n % 9
@@ -405,7 +405,7 @@ def perms : List (List Nat) → List (List (List Nat))
 def D : List Nat := toUuidBytes [100]  -- address of "d"
 ```
 
-### `nim.lean` — 7 definition(s), 25 theorem(s)
+### `nim.lean` — 7 definition(s), 28 theorem(s)
 
 ```lean
 def xorN (a b : Nat) : Nat := xorF (a + b + 1) a b
@@ -451,7 +451,7 @@ def par3 (n : Nat) : Nat := (bit n 0 + bit n 1 + bit n 2) % 2
 def ghzXSupport : List Nat := [0, 3, 5, 6]
 ```
 
-### `reach.lean` — 2 definition(s), 8 theorem(s)
+### `reach.lean` — 2 definition(s), 12 theorem(s)
 
 ```lean
 def bounds : List Nat := List.range' 1 50
@@ -466,7 +466,7 @@ def triad : List Nat := [3, 6, 9]
 def pow9 (b k : Nat) : Nat := (List.range k).foldl (fun a _ => a * b % 9) 1
 ```
 
-### `reversal.lean` — 6 definition(s), 15 theorem(s)
+### `reversal.lean` — 6 definition(s), 30 theorem(s)
 
 ```lean
 def digitsF : Nat → Nat → List Nat
@@ -489,7 +489,7 @@ def instruments : List Instrument :=
 def settledHere : Nat := 8
 ```
 
-### `sequences.lean` — 7 definition(s), 22 theorem(s)
+### `sequences.lean` — 7 definition(s), 28 theorem(s)
 
 ```lean
 def fib : Nat → Nat
@@ -501,7 +501,7 @@ def popcount (n : Nat) : Nat := (List.range (n + 1)).foldl (fun a i => a + n / 2
 def tm (n : Nat) : Nat := popcount n % 2
 ```
 
-### `speed.lean` — 8 definition(s), 11 theorem(s)
+### `speed.lean` — 8 definition(s), 12 theorem(s)
 
 ```lean
 def recomputeUs : Nat := 21582900   -- folding 2^20 leaves
@@ -514,7 +514,7 @@ def hexbitMs : Nat := 30     -- the same work, 6-bit lattice
 def charsFor (b : Nat) : Nat := (128 + b - 1) / b
 ```
 
-### `split.lean` — 8 definition(s), 20 theorem(s)
+### `split.lean` — 8 definition(s), 22 theorem(s)
 
 ```lean
 def tokens : List Nat := [0, 12, 3, 45, 6, 78, 9]
@@ -533,7 +533,7 @@ def sealBits : Nat := 128
 def refl (d : Nat) : Nat := 10 - d  -- the shared reflection r(d) = 10 − d (the ½/heart-analogue centre)
 ```
 
-### `z9.lean` — 8 definition(s), 22 theorem(s)
+### `z9.lean` — 8 definition(s), 25 theorem(s)
 
 ```lean
 def B : Nat := 9
@@ -546,7 +546,7 @@ def logOrbit (u : Nat) : Option Nat := (List.range 6).find? (fun k => orbit k ==
 def settledHere : Nat := 21
 ```
 
-### `z9plus.lean` — 16 definition(s), 43 theorem(s)
+### `z9plus.lean` — 16 definition(s), 48 theorem(s)
 
 ```lean
 def m9 (n : Nat) : Nat := n % 9
@@ -569,6 +569,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**735** declarations, **0** axiom dependencies, **321** definitions they rest on.
+**816** declarations, **0** axiom dependencies, **321** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them.

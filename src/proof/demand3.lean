@@ -180,4 +180,30 @@ theorem a_repunit_is_divisible_by_seven_exactly_when_six_divides_its_length_for_
 -- proved for every genus above; at genus 2 its negative is exactly the fare.
 theorem the_two_coin_fare_is_minus_the_euler_characteristic_at_genus_two : (110 : Int) - 108 = - chi 2 := by decide
 
+
+-- ── reflections, from the easy batch: each law beside its inverse (the 2×7 ↔ 1+6 wave) ──
+theorem the_genus_reads_back_from_chi_for_every_g : ∀ g : Nat, ((2 - chi g) / 2).toNat = g := by
+  intro g; unfold chi; omega
+
+theorem chi_is_injective_for_every_g_h : ∀ g h : Nat, chi g = chi h → g = h := by
+  intro g h e; unfold chi at e; omega
+
+theorem a_repunit_is_below_ten_to_its_length : ∀ k : Nat, repunit k < 10 ^ k := by
+  intro k
+  induction k with
+  | zero => decide
+  | succ k ih =>
+    show 10 * repunit k + 1 < 10 ^ (k + 1)
+    rw [Nat.pow_succ]; omega
+
+theorem a_repunit_splits_back_into_its_two_parts_for_every_n_k :
+    ∀ n k : Nat, repunit (n + k) / 10 ^ k = repunit n ∧ repunit (n + k) % 10 ^ k = repunit k := by
+  intro n k
+  have hk := a_repunit_is_below_ten_to_its_length k
+  have hp : 0 < 10 ^ k := by omega
+  rw [repunit_of_a_sum, Nat.add_comm]
+  constructor
+  · rw [Nat.add_mul_div_left _ _ hp, Nat.div_eq_of_lt hk, Nat.zero_add]
+  · rw [Nat.add_mul_mod_self_left, Nat.mod_eq_of_lt hk]
+
 end Demand3

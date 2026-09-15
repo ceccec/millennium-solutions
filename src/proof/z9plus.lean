@@ -297,4 +297,49 @@ theorem digital_root_is_the_digit_sum_residue_for_every_n : ∀ n : Nat, m9 (dig
   intro n
   exact Reversal.the_digit_sum_has_the_residue_of_the_number_mod_nine_for_every_n n
 
+
+-- ── reflections, from the orbit batch: each law beside its inverse (the 2×7 ↔ 1+6 wave) ──
+-- REFLECTION: halving (×5, the inverse of ×2 mod 9) undoes doubling at every step
+theorem halving_undoes_doubling_at_every_step : ∀ k : Nat, m9 (pw 2 k * pw 5 k) = 1 := by
+  intro k
+  unfold pw m9
+  rw [← Nat.mul_mod, ← Nat.mul_pow]
+  induction k with
+  | zero => rfl
+  | succ k ih => rw [Nat.pow_succ, Nat.mul_mod, ih]
+
+theorem halving_has_period_six_for_every_k : ∀ k : Nat, pw 5 (k + 6) = pw 5 k := by
+  intro k
+  unfold pw m9
+  rw [Nat.pow_add, Nat.mul_mod]
+  have h : 5 ^ 6 % 9 = 1 := by decide
+  rw [h, Nat.mul_one, Nat.mod_mod]
+
+theorem halving_orbit_digital_roots_have_period_six_for_every_k : ∀ k : Nat, dr (pw 5 (k + 6)) = dr (pw 5 k) := by
+  intro k; rw [halving_has_period_six_for_every_k]
+
+-- REFLECTION of "the orbit never meets the triad": its mirror meets the triad exactly at 1, 4, 7, at every step
+theorem the_reflected_orbit_meets_the_triad_exactly_at_one_four_seven_for_every_k :
+    ∀ k : Nat, [3, 6, 9].contains (refl (pw 2 k)) = [1, 4, 7].contains (pw 2 k) := by
+  intro k
+  rw [the_doubling_orbit_is_read_from_the_exponent_mod_six]
+  have h : k % 6 < 6 := Nat.mod_lt _ (by decide)
+  generalize k % 6 = j at h ⊢
+  revert j
+  decide
+
+
+-- ── reflections, from the rev batch: each law beside its inverse (the 2×7 ↔ 1+6 wave) ──
+-- reversal_cannot_change_the_digital_root was decided for 1 ≤ n < 300; for every n:
+theorem reversal_cannot_change_the_digital_root_for_every_n : ∀ n : Nat, dr (reverseNum n) = dr n := by
+  intro n
+  by_cases h0 : n = 0
+  · subst h0; rfl
+  have hp := (Reversal.reversal_leaves_no_trailing_zero n (by omega)).1
+  have hr := Reversal.reversal_keeps_the_residue_mod_nine_for_every_n n
+  have h1 : ¬ ((reverseNum n == 0) = true) := by simp; omega
+  have h2 : ¬ ((n == 0) = true) := by simp; omega
+  unfold dr m9
+  rw [if_neg h1, if_neg h2, hr]
+
 end Z9Plus

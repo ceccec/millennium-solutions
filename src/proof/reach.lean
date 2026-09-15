@@ -102,4 +102,20 @@ theorem doubling_the_domain_leaves_the_same_hole_for_every_n : ∀ n : Nat, 2 * 
   intro n h
   exact Nat.lt_irrefl (2 * n) (List.mem_range.mp h)
 
+
+-- ── reflections, from the easy batch: each law beside its inverse (the 2×7 ↔ 1+6 wave) ──
+theorem the_successor_returns_every_positive_predecessor : ∀ n : Nat, 0 < n → (n - 1) + 1 = n := by
+  intro n h; omega
+
+theorem exhaustion_reaches_everything_below_its_bound_for_every_n : ∀ n k : Nat, k < n → k ∈ List.range n := by
+  intro n k h; exact List.mem_range.mpr h
+
+theorem the_predecessor_of_every_positive_bound_lies_inside : ∀ n : Nat, 0 < n → n - 1 ∈ List.range n := by
+  intro n h; exact List.mem_range.mpr (by omega)
+
+
+-- ── reflections, from the extra batch: each law beside its inverse (the 2×7 ↔ 1+6 wave) ──
+theorem halving_the_domain_keeps_the_half_inside_for_every_n : ∀ n : Nat, 0 < n → n ∈ List.range (2 * n) := by
+  intro n h; exact List.mem_range.mpr (by omega)
+
 end Reach

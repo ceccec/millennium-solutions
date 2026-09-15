@@ -128,12 +128,23 @@ const t3 = t1.filter((c) => (byKind.get(c.kind) ?? []).some((o) => !o.holds))
 // dropped when an existing theorem mentions BOTH the same set and the same multiplier — the ingredients of a
 // statement, not its spelling. A generator that cannot recognise its own output as already-known is a
 // duplication machine with a progress bar.
+function reflAlias(): [RegExp, string][] {
+  const bodies = [...new Set(readdirSync('src/proof').filter((f) => f.endsWith('.lean'))
+    .flatMap((f) => [...readFileSync('src/proof/' + f, 'utf8').matchAll(/^def refl \(d : Nat\) : Nat := ([^\n]+?)\s*(?:--.*)?$/gm)]
+      .map((m) => m[1]!.replace(/\s+/g, ''))))]
+  return bodies.length === 1 ? [[/\brefl\b/g, `m9(${bodies[0]})`]] : []
+}
 const ALIAS: [RegExp, string][] = [
   // the alias table's right-hand sides are computed for the same reason the sets are
   [/\bdbl\b/g, 'm9(2*d)'], [/\baxis\b/g, asLean(apiTriad()).replace(/ /g, '')],
   [/\btetA\b/g, asLean(apiTetA()).replace(/ /g, '')], [/\btetB\b/g, asLean(apiTetB()).replace(/ /g, '')],
   [/\bunits\b/g, asLean(apiUnits()).replace(/ /g, '')], [/\btriad\b/g, asLean(apiTriad()).replace(/ /g, '')],
-  [/\brefl\b/g, 'm9(9-d)'],
+  // `refl` IS WHAT ITS DEFINITION SAYS. This entry was typed as m9(9-d) — negation — while every definition of refl
+  // in src/proof is 10 − d, the ten-complement. So any theorem using refl read as a negation theorem, and a true
+  // imagined theorem (negation carries tetA onto tetB) was dropped as "already said" by one that says something
+  // else, and covered.json named that theorem as its carrier. The expansion is read from the definitions; if they
+  // ever disagree, refl is not aliased at all rather than aliased wrong.
+  ...reflAlias(),
 ]
 let said = readdirSync('src/proof').filter((f) => f.endsWith('.lean') && f !== 'imagined.lean')
   .map((f) => readFileSync('src/proof/' + f, 'utf8')).join('\n').replace(/\s+/g, '')

@@ -196,4 +196,14 @@ theorem the_coin_step_and_the_coins_are_inverse_for_every_c :
   intro c
   exact ⟨Nat.mul_div_cancel_left c (by decide), Nat.mul_mod_right 3 c⟩
 
+
+-- ── reflections, from the easy batch: each law beside its inverse (the 2×7 ↔ 1+6 wave) ──
+theorem the_coins_return_from_the_coin_step_for_every_multiple_of_three :
+    ∀ t : Nat, t % 3 = 0 → 3 * (t / 3) = t := by
+  intro t h; omega
+
+theorem paying_and_refunding_round_trips_for_every_count :
+    ∀ n k : Nat, k ≤ n → 3 * (n - k) + 3 * k = 3 * n := by
+  intro n k h; omega
+
 end Split

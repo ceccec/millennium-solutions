@@ -204,4 +204,16 @@ theorem the_sum_of_fifth_powers_has_the_closed_form_for_every_n :
   rw [the_two_power_sums_are_one_sum]
   exact the_fifth_powers_sum_to_their_closed_form_for_every_n n
 
+
+-- ── reflections, from the sums batch: each law beside its inverse (the 2×7 ↔ 1+6 wave) ──
+-- REFLECTION of Nicomachus: the squared triangular numbers difference back to the cubes
+theorem the_squared_triangular_numbers_difference_back_to_the_cubes_for_every_n :
+    ∀ n : Nat, tri (n + 1) * tri (n + 1) = tri n * tri n + (n + 1) ^ 3 := by
+  intro n
+  rw [← nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number_for_every_n (n + 1),
+    ← nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number_for_every_n n,
+    the_two_power_sums_are_one_sum, the_two_power_sums_are_one_sum]
+  unfold powSum
+  exact a_sum_over_one_to_n_plus_one_adds_the_last_term (fun i => i ^ 3) n
+
 end Demand2

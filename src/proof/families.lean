@@ -645,4 +645,96 @@ theorem the_sums_of_triangular_numbers_are_the_tetrahedral_numbers_for_every_n :
   intro n
   rw [← six n, Nat.mul_div_cancel_left _ (by decide)]
 
+
+-- ── reflections, from the easy batch: each law beside its inverse (the 2×7 ↔ 1+6 wave) ──
+theorem choose_is_invariant_under_the_involution_k_to_n_minus_k_for_every_n :
+    ∀ n k : Nat, k ≤ n → choose n k = choose n (n - k) ∧ n - (n - k) = k := by
+  intro n k h
+  unfold choose
+  rw [Nat.sub_sub_self h, Nat.mul_comm]
+  exact ⟨rfl, rfl⟩
+
+
+-- ── reflections, from the sums batch: each law beside its inverse (the 2×7 ↔ 1+6 wave) ──
+-- REFLECTIONS: each closed form differences back to its term
+theorem the_closed_forms_difference_back_to_the_next_power_for_every_n :
+    ∀ k n : Nat, 1 ≤ k → k ≤ 5 → faulhaber k (n + 1) = faulhaber k n + (n + 1) ^ k := by
+  intro k n h1 h5
+  rw [← power_sums_match_their_closed_forms_for_every_n k (n + 1) h1 h5,
+    ← power_sums_match_their_closed_forms_for_every_n k n h1 h5]
+  unfold powSum
+  exact a_sum_over_one_to_n_plus_one_adds_the_last_term (fun i => i ^ k) n
+
+theorem the_tetrahedral_numbers_difference_back_to_the_triangular_numbers_for_every_n :
+    ∀ n : Nat, (n + 1) * (n + 1 + 1) * (n + 1 + 2) / 6 = n * (n + 1) * (n + 2) / 6 + (n + 1) * (n + 1 + 1) / 2 := by
+  intro n
+  rw [← the_sums_of_triangular_numbers_are_the_tetrahedral_numbers_for_every_n (n + 1),
+    ← the_sums_of_triangular_numbers_are_the_tetrahedral_numbers_for_every_n n]
+  exact a_sum_over_one_to_n_plus_one_adds_the_last_term (fun i => i * (i + 1) / 2) n
+
+theorem the_powers_of_two_difference_back_to_the_next_power_for_every_n :
+    ∀ n : Nat, (2 ^ (n + 2) - 1) - (2 ^ (n + 1) - 1) = 2 ^ (n + 1) := by
+  intro n
+  have h : 1 ≤ 2 ^ (n + 1) := Nat.one_le_two_pow
+  rw [Nat.pow_succ 2 (n + 1)]
+  omega
+
+theorem the_odd_numbers_difference_back_to_the_next_odd_number_for_every_n :
+    ∀ n : Nat, ((List.range (n + 1)).map (fun i => 2 * i + 1)).foldl (· + ·) 0 - ((List.range n).map (fun i => 2 * i + 1)).foldl (· + ·) 0 = 2 * n + 1 := by
+  intro n
+  rw [the_first_n_odd_numbers_sum_to_n_squared_for_every_n, the_first_n_odd_numbers_sum_to_n_squared_for_every_n,
+    square_of_successor]
+  omega
+
+
+-- ── reflections, from the extra batch: each law beside its inverse (the 2×7 ↔ 1+6 wave) ──
+theorem foldl_add_start : ∀ (l : List Nat) (a : Nat), l.foldl (· + ·) a = a + l.foldl (· + ·) 0 := by
+  intro l
+  induction l with
+  | nil => intro a; simp
+  | cons x xs ih =>
+    intro a
+    simp only [List.foldl]
+    rw [ih (a + x), ih (0 + x)]
+    omega
+
+theorem the_digits_sum_to_the_number_mod_nine_when_the_fuel_covers_them :
+    ∀ f n : Nat, n < 10 ^ f → (digitsF f n).foldl (· + ·) 0 % 9 = n % 9 := by
+  intro f
+  induction f with
+  | zero =>
+    intro n h
+    have : n = 0 := by simp at h; omega
+    subst this
+    simp [digitsF]
+  | succ f ih =>
+    intro n h
+    cases n with
+    | zero => simp [digitsF]
+    | succ m =>
+      simp only [digitsF, List.foldl]
+      rw [foldl_add_start]
+      have hlt : (m + 1) / 10 < 10 ^ f := by
+        rw [Nat.pow_succ] at h
+        omega
+      have := ih ((m + 1) / 10) hlt
+      omega
+
+theorem a_number_is_below_ten_to_its_own_successor : ∀ n : Nat, n < 10 ^ (n + 1) := by
+  intro n
+  induction n with
+  | zero => decide
+  | succ n ih =>
+    rw [Nat.pow_succ]
+    omega
+
+-- the_digit_sum_rules_for_three_and_nine_hold_below_ten_thousand, for every n
+theorem the_digit_sum_rules_for_three_and_nine_hold_for_every_n :
+    ∀ n : Nat, (digitSum n % 3 = 0 ↔ n % 3 = 0) ∧ (digitSum n % 9 = 0 ↔ n % 9 = 0) := by
+  intro n
+  have h := the_digits_sum_to_the_number_mod_nine_when_the_fuel_covers_them (n + 1) n (a_number_is_below_ten_to_its_own_successor n)
+  unfold digitSum digitsOf
+  generalize (digitsF (n + 1) n).foldl (· + ·) 0 = s at h ⊢
+  exact ⟨⟨fun a => by omega, fun a => by omega⟩, ⟨fun a => by omega, fun a => by omega⟩⟩
+
 end Families
