@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress'
-import { readFileSync } from 'node:fs'
+import { readFileSync , existsSync } from 'node:fs'
 import { LOCALES, LOCALE_ORDER } from '../src/7/locale'
 import { CSP } from '../src/0/csp.ts'
 import { A432_STEP } from '../src/0/index.ts'
@@ -148,8 +148,12 @@ export default defineConfig({
     // hreflang alternates in <head> — the base page across all locales + x-default. Dynamic pages (e.g.
     // /theorem/<key>) exist only at root, so they get en + x-default only (no locale variants to point at).
     const base = clean.replace(/^(bg|de|fr|es|ru|zh)\//, '')
+    // A locale is announced only where its page exists: the locale folders hold their home pages, so /navierstokes in
+    // bg/de/… would be a 404 that search engines were told to index. The source file decides, at build.
+    const page = (base.replace(/\.html$/, '') || 'index').replace(/\/$/, '/index')
+    const translated = (loc: string) => loc === 'en' || existsSync(new URL(`../${loc}/${page}.md`, import.meta.url))
     const localised = !base.startsWith('theorem/')
-    for (const loc of (localised ? ['en', 'bg', 'de', 'fr', 'es', 'ru', 'zh'] : ['en']))
+    for (const loc of (localised ? ['en', 'bg', 'de', 'fr', 'es', 'ru', 'zh'].filter(translated) : ['en']))
       pageData.frontmatter.head.push(['link', { rel: 'alternate', hreflang: loc, href: SITE + (loc === 'en' ? '' : loc + '/') + base }])
     pageData.frontmatter.head.push(['link', { rel: 'alternate', hreflang: 'x-default', href: SITE + base }])
   },
@@ -202,7 +206,6 @@ export default defineConfig({
         { text: 'Real advantage', link: '/speedup' },
         { text: 'Verify', link: '/verify' },
         { text: 'Solutions (adjudicated)', link: '/solutions' },
-        { text: 'The public trial', link: '/TRIAL' },
         { text: L.nav.decode, link: '/SEQUENCE-DECODE' },
         { text: 'Physics scales', link: '/PHYSICS-SCALES' },
       ] },
@@ -218,10 +221,12 @@ export default defineConfig({
         { text: "Captain's message", link: '/captain' },
       ] },
       { text: 'Repo ↗', link: 'https://github.com/ceccec/millennium-solutions' },
+      { text: 'npm ↗', link: 'https://www.npmjs.com/package/@ceccec/millennium-solutions' },
     ],
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/ceccec/millennium-solutions' },
+      { icon: 'npm', link: 'https://www.npmjs.com/package/@ceccec/millennium-solutions' },
     ],
 
     // Realtime, client-side full-text search — the site reflecting its own content, offline.
@@ -276,7 +281,6 @@ export default defineConfig({
           { text: 'Examples (live)', link: '/examples' },
           { text: 'Verify (live app)', link: '/verify' },
           { text: 'Solutions (adjudicated)', link: '/solutions' },
-          { text: 'The public trial', link: '/TRIAL' },
         ],
       },
       {

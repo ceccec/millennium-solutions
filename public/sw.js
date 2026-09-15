@@ -6,7 +6,7 @@
 // SIGNED into a chained content-address RECEIPT (toUuid, ported from the ledger) and posted to the clients, so
 // the traffic is an audited, tamper-evident stream — forensics (a broken link localises tampering) and
 // analytics run on the receipts. Honest scope: INTEGRITY and provenance, NOT confidentiality; a receipt is a
-// content-address, not a keyed signature; opaque cross-origin responses cannot be hash-verified. 0/7.
+// content-address, not a keyed signature; opaque cross-origin responses cannot be hash-verified.
 
 // ── pure-JS SHA-256 (FIPS 180-4), a port of src/0/sha256.ts → lowercase hex. KAT: sha256("abc") = ba7816bf… ──
 const K = new Uint32Array([
@@ -102,7 +102,7 @@ function runSkillRoute(url) {
   return new Response(JSON.stringify(receipt), { headers: { 'content-type': 'application/json' } })
 }
 
-const CACHE = 'millennium-v5'
+const CACHE = 'millennium-v6'
 // OFFLINE SHELL — precached on install so the site opens offline on first revisit; the start page doubles as
 // the SPA navigation fallback. A minimal offline page is served only when nothing at all is cached yet.
 const SHELL = ['./', './index.html', './sw-integrity.json']
@@ -110,7 +110,7 @@ const offlineResponse = () => new Response(
   '<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
   + '<title>Offline — uuidna</title><body style="font:16px/1.6 system-ui,sans-serif;max-width:34rem;margin:12vh auto;padding:0 1.2rem">'
   + '<h1>Offline</h1><p>This page is not cached yet. Reconnect to load it — verified content is cached for offline use as you browse.</p>'
-  + '<p style="color:#888">A content-address proves integrity, not truth. 0/7.</p>',
+  + '<p style="color:#888">A content-address proves integrity, not truth.</p>',
   { headers: { 'content-type': 'text/html; charset=utf-8' }, status: 200 },
 )
 let INTEGRITY = null

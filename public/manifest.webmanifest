@@ -1,7 +1,7 @@
 {
   "name": "Millennium Solutions — ℤ/9 Vortex",
   "short_name": "Millennium",
-  "description": "Recomputable ℤ/9 vortex framework — verify claims live. entails → 0/7.",
+  "description": "Recomputable ℤ/9 vortex framework — verify claims live.",
   "start_url": "/millennium-solutions/",
   "scope": "/millennium-solutions/",
   "display": "standalone",
