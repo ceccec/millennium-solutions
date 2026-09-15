@@ -220,35 +220,44 @@ const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
     return JSON.stringify({ tools: TOOLS.length, handlers: handled.length, ...theorems, allComputeTrue, undeclared, orphans, singleWords: singleWords.length, diamonds, links, selfAuditRoot: root, note: 'the MCP audits itself BY THEOREMS — every tool content-addressed and handled, every multi-word tool linked to its single words by double-torus gravity (7D), each check a decidable predicate recomputed true and each diamond re-run from the ledger. integrity of the surface, not truth.' })
   },
 }
-// TWO TOOLS COVER ALL. Every operation in TOOLS stays callable, but tools/list advertises only `run` and `describe`:
-// a client loads two short schemas instead of every operation's description (measured before: twenty tools, 7,541
-// bytes of tools/list), and asks `describe` for an operation's arguments only when it needs them. Any operation's own
-// name still works in tools/call, so no existing caller breaks. TOOLS remains the catalogue the audit checks against
-// HANDLERS; `run` and `describe` are the door, not operations, so they are not in either.
+// TWO TOOLS COVER ALL, IN MCP'S OWN WORDS. tools/list advertises `list_tools` and `call_tool`, and every tool in TOOLS
+// stays callable. `list_tools` answers with the fields tools/list itself uses — { tools: [{ name, description }] }, or
+// one tool's { name, description, inputSchema } — and `call_tool` takes { name, arguments }, the fields of tools/call.
+// A client loads two short schemas instead of twenty (7,541 bytes of tools/list before), and fetches one tool's schema
+// only when it needs it. Unlisted but still answered, so no caller breaks: every tool's own name, and the first door
+// (`run {op, args}`, `describe {op}`, with its old reply). TOOLS remains the catalogue the audit checks against HANDLERS;
+// the doors are not tools, so they are in neither.
 const LISTED = [
   {
-    name: 'run',
-    description: "Run one of this server's operations by name, with its arguments. `describe` lists them.",
-    inputSchema: { type: 'object', properties: { op: { type: 'string', enum: TOOLS.map((t) => t.name) }, args: { type: 'object' } }, required: ['op'] },
+    name: 'list_tools',
+    description: "List this server's tools, or give one tool's description and inputSchema.",
+    inputSchema: { type: 'object', properties: { name: { type: 'string' } } },
   },
   {
-    name: 'describe',
-    description: 'List the operations `run` accepts, or give one operation\'s description and arguments.',
-    inputSchema: { type: 'object', properties: { op: { type: 'string' } } },
+    name: 'call_tool',
+    description: "Call one of this server's tools by name with its arguments. `list_tools` lists them.",
+    inputSchema: { type: 'object', properties: { name: { type: 'string', enum: TOOLS.map((t) => t.name) }, arguments: { type: 'object' } }, required: ['name'] },
   },
 ]
-const describe = (op?: unknown): string => {
-  if (op) {
-    const t = TOOLS.find((x) => x.name === String(op))
-    if (!t) throw new Error('unknown operation: ' + String(op) + ' — call describe with no op for the list')
-    return JSON.stringify({ op: t.name, description: t.description, args: t.inputSchema })
-  }
-  const first = (d: string) => (d.split(/(?<=[.—])\s/)[0] ?? d).slice(0, 140)
+const first = (d: string) => (d.split(/(?<=[.—])\s/)[0] ?? d).slice(0, 140)
+const toolOf = (name: unknown) => {
+  const t = TOOLS.find((x) => x.name === String(name))
+  if (!t) throw new Error('unknown tool: ' + String(name) + ' — call list_tools with no name for the list')
+  return t
+}
+const listTools = (name?: unknown): string => {
+  if (name) { const t = toolOf(name); return JSON.stringify({ name: t.name, description: t.description, inputSchema: t.inputSchema }) }
+  return JSON.stringify({ tools: TOOLS.map((t) => ({ name: t.name, description: first(t.description) })) })
+}
+const describeFirstDoor = (op?: unknown): string => {
+  if (op) { const t = toolOf(op); return JSON.stringify({ op: t.name, description: t.description, args: t.inputSchema }) }
   return JSON.stringify({ ops: TOOLS.map((t) => ({ op: t.name, does: first(t.description) })) })
 }
 const run = async (name: string, a: any): Promise<string> => {
+  if (name === 'call_tool') return run(String(a?.name ?? ''), a?.arguments ?? {})
+  if (name === 'list_tools') return listTools(a?.name)
   if (name === 'run') return run(String(a?.op ?? ''), a?.args ?? {})
-  if (name === 'describe') return describe(a?.op)
+  if (name === 'describe') return describeFirstDoor(a?.op)
   const h = HANDLERS[name]
   if (!h) throw new Error('unknown tool: ' + name)
   return await h(a)
