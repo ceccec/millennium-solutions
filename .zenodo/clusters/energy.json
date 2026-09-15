@@ -1,0 +1,226 @@
+{
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "title": "The water loop — 21 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+  "creators": [
+    {
+      "name": "Rouschev, Tsvetan",
+      "orcid": "0009-0000-7312-9778",
+      "affiliation": "PSG, Bulgaria"
+    }
+  ],
+  "description": "<p><strong>The water loop</strong> — 21 machine-checked theorems of the ℤ/9 vortex deposit, one Lean namespace, wing <em>the floor</em>. 20 close by exhaustion over a finite domain (<code>by decide</code>), 1 are proved for every value on the standard axioms. Every one is sealed live in the append-only ledger.</p><p><strong>How these theorems are bound.</strong> \"Entangled\" is used in this deposit's honest sense: correlation by derivation, not quantum entanglement, and no information travels through it.</p><p><strong>1 · Shared definitions.</strong> 14 definition(s) are used by two or more theorems, binding 64 pair(s); the theorems fall into 6 strand(s), the largest of 16. Most binding: <code>splitCost</code> (5), <code>pct</code> (5), <code>mgH2</code> (5), <code>mgH2O</code> (5), <code>burnYield</code> (4), <code>mgO2</code> (4). 4 theorem(s) name no definition of the file and stand on their own statement.</p><p><strong>2 · Imports.</strong> Built on: no other cluster. Built on it: no other cluster. Checking this cluster needs 1 file(s): <code>src/proof/energy.lean</code>.</p><p><strong>3 · The joint address.</strong> The 21 sealed receipts fold to <code>1dadd6fb-87ec-8e61-8aca-ff9c25110203</code>. Order-invariant: yes — the same root in reverse order. Altering one receipt changes it: yes, computed on this run. A content-address proves integrity, not truth.</p><p><strong>4 · The address lattice.</strong> Each theorem sits at the seven ray values its page plots from its receipt, taken mod 9: a point of (ℤ/9)⁷. This cluster's centre is (6, 4, 4, 1, 0, 8, 3). Its nearest clusters, ranked by lift — pairs observed among each theorem's seven nearest points, over the pairs expected by chance from the two clusters' sizes: <code>demand.lean</code> (5 observed, 1.86 expected, lift 2.68), <code>address.lean</code> (10 observed, 3.96 expected, lift 2.53), <code>generated.lean</code> (6 observed, 3.03 expected, lift 1.98). A lift near 1 is what chance gives. Mean distance between two of its theorems: 15.62; from one of its theorems to a theorem of another cluster: 15.54. A receipt is a hash, so nearness on this lattice is a property of the addresses, not of the mathematics; the mathematical binding is (1) and (2). Chance, measured: over 200 reshufflings of which cluster each point belongs to (seeded, so every rebuild gives the same numbers), a best lift at least this high arose in 50.5% of them — consistent with chance.</p><p><strong>Prior art.</strong> the laws of electrolysis — Michael Faraday, 1834; the enthalpy of combustion of hydrogen, standard physical chemistry Per-theorem prior-art searches — OEIS, zbMATH Open, OpenAlex, Crossref, arXiv — are recorded, with what was searched, where and when, in the living ledger <a href=\"https://github.com/ceccec/millennium-solutions/blob/main/src/proof/novelty.json\">src/proof/novelty.json</a>. No novelty is claimed here.</p><p><strong>The theorems.</strong></p><ol><li><code>any_yield_below_its_cost_reads_under_the_whole</code> — <code>(List.range' 1 60).all (fun c =&gt; (List.range c).all (fun y =&gt; pct y c &lt; 100)) ∧ burnYield &lt; splitCost ∧ pct burnYield splitCost = 23</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_any_yield_below_its_cost_reads_under_the_whole\">record</a></li><li><code>a_chain_of_efficiencies_can_only_lose</code> — <code>(List.range 101).all (fun a =&gt; (List.range 101).all (fun b =&gt; a * b ≤ 100 * a &amp;&amp; a * b ≤ 100 * b))</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_a_chain_of_efficiencies_can_only_lose\">record</a></li><li><code>the_cost_per_litre_multiplies_back_to_the_cost</code> — <code>(List.range' 1 20).all (fun l =&gt; (splitCost / l) * l ≤ splitCost &amp;&amp; splitCost &lt; (splitCost / l + 1) * l) ∧ splitCost / waterOut = 5777 ∧ splitCost / waterOut &gt; roPerLitre * 1000</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_the_cost_per_litre_multiplies_back_to_the_cost\">record</a></li><li><code>the_two_to_one_is_forced_by_the_oxygen</code> — <code>balances 2 2 1 = true ∧ balances 1 1 1 = false ∧ (((List.range' 1 9).flatMap (fun a =&gt; (List.range' 1 9).flatMap (fun b =&gt; (List.range' 1 9).filter (fun c =&gt; balances a b c)))).length = 4) ∧ balances 4 4 2 = true ∧ balances 6 6 3 = true ∧ balances 8 8 4 = true</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_the_two_to_one_is_forced_by_the_oxygen\">record</a></li><li><code>the_mass_balance_is_the_atom_balance</code> — <code>mgH2 = mass 2 0 ∧ mgO2 = mass 0 2 ∧ mgH2O = mass 2 1 ∧ (List.range' 1 9).all (fun a =&gt; (List.range' 1 9).all (fun b =&gt; (List.range' 1 9).all (fun c =&gt; (a * mass 2 1 == b * mass 2 0 + c * mass 0 2) == balances a b c))) ∧ 2 * mgH2O = 2 * mgH2 + mgO2</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_the_mass_balance_is_the_atom_balance\">record</a></li><li><code>the_atom_table_decides_the_balance</code> — <code>(List.range' 1 9).all (fun a =&gt; (List.range' 1 9).all (fun b =&gt; (List.range' 1 9).all (fun c =&gt; (a * atomsH2O.1 == b * atomsH2.1 + c * atomsO2.1 &amp;&amp; a * atomsH2O.2 == b * atomsH2.2 + c * atomsO2.2) == balances a b c)))</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_the_atom_table_decides_the_balance\">record</a></li><li><code>the_gases_are_two_to_one_and_consume_each_other_exactly</code> — <code>2 * 1 = 2 ∧ (2 * 100 / 3 = 66) ∧ (1 * 100 / 3 = 33) ∧ ¬ (1 * 1 = 2)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_the_gases_are_two_to_one_and_consume_each_other_exactly\">record</a></li><li><code>a_part_and_its_rest_read_back_the_whole</code> — <code>(List.range' 1 40).all (fun w =&gt; (List.range (w + 1)).all (fun a =&gt; per10k a w + per10k (w - a) w ≤ 10000 &amp;&amp; 10000 ≤ per10k a w + per10k (w - a) w + 1)) ∧ mgO2 * 100 / (2 * mgH2) = 793 ∧ per10k (2 * mgH2) (2 * mgH2O) = 1119 ∧ per10k mgO2 (2 * mgH2O) = 8880 ∧ 2 * mgH2O - 2 * mgH2 = mgO2</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_a_part_and_its_rest_read_back_the_whole\">record</a></li><li><code>mass_is_conserved_at_every_scale_so_the_loop_cannot_make_water</code> — <code>(List.range' 1 100).all (fun n =&gt; 2 * n * mgH2O == 2 * n * mgH2 + n * mgO2) ∧ ¬ ((List.range' 1 100).all (fun n =&gt; n * mgH2O == n * mgH2 + n * mgO2))</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_mass_is_conserved_at_every_scale_so_the_loop_cannot_make_water\">record</a></li><li><code>one_litre_split_returns_one_litre_burnt</code> — <code>111900 + 888100 = 1000000 ∧ 888100 * 100 / 111900 = 793</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_one_litre_split_returns_one_litre_burnt\">record</a></li><li><code>only_oxy_hydrogen_burns_without_admitting_nitrogen</code> — <code>7808 * 100 / 2095 = 372 ∧ 0 * 372 = 0 ∧ ¬ (372 = 0)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_only_oxy_hydrogen_burns_without_admitting_nitrogen\">record</a></li><li><code>splitting_then_burning_is_the_identity_at_the_ideal</code> — <code>(List.range 1000).all (fun e =&gt; burnE (splitE e) == e) ∧ pct burnYield splitCost = 23</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_splitting_then_burning_is_the_identity_at_the_ideal\">record</a></li><li><code>splitting_then_burning_is_the_identity_at_every_ledger_value</code> — <code>∀ e : Nat, burnE (splitE e) = e</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_splitting_then_burning_is_the_identity_at_every_ledger_value\">record</a></li><li><code>the_gas_volume_reads_back_its_moles</code> — <code>(List.range 1000).all (fun m =&gt; molesOf (litresOf m) ≤ m &amp;&amp; m ≤ molesOf (litresOf m) + 1) ∧ molH2 = 2 * molO2 ∧ litresOf molH2 = 11117 ∧ litresOf molO2 = 5558 ∧ (litresOf molH2 + litresOf molO2) / 9 = 1852</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_the_gas_volume_reads_back_its_moles\">record</a></li><li><code>two_parts_in_three_is_two_thirds_at_every_scale</code> — <code>(List.range' 1 500).all (fun m =&gt; pct (2 * m) (3 * m) == 66) ∧ pct molH2 (molH2 + molO2) = 66 ∧ pct (2 * mgH2) (2 * mgH2O) = 11</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_two_parts_in_three_is_two_thirds_at_every_scale\">record</a></li><li><code>the_energy_per_litre_multiplies_back_to_the_energy</code> — <code>(List.range' 1 30).all (fun l =&gt; (whPerKgH2 * 100 / l) * l ≤ whPerKgH2 * 100 &amp;&amp; whPerKgH2 * 100 &lt; (whPerKgH2 * 100 / l + 1) * l) ∧ whPerKgH2 * 100 / litresOf molH2 = 299 ∧ petrolWhL * 100 / 299 = 3244</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_the_energy_per_litre_multiplies_back_to_the_energy\">record</a></li><li><code>compression_scales_the_energy_per_litre_linearly</code> — <code>(List.range 100).all (fun k =&gt; 2 * whPerLitreAt k ≤ whPerLitreAt (2 * k) &amp;&amp; whPerLitreAt (2 * k) ≤ 2 * whPerLitreAt k + 1) ∧ whPerLitreAt 42 = 1398 ∧ petrolWhL / whPerLitreAt 42 = 6</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_compression_scales_the_energy_per_litre_linearly\">record</a></li><li><code>a_ratio_and_its_reciprocal_multiply_back_to_the_whole</code> — <code>(List.range' 1 40).all (fun b =&gt; (List.range' 1 b).all (fun a =&gt; pct a b * pct b a ≤ 10000 &amp;&amp; 10000 &lt; (pct a b + 1) * (pct b a + 1))) ∧ pct splitCost burnYield = 433 ∧ pct burnYield splitCost = 23 ∧ 9 * 1000 / (burnYield / 1000) = 750</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_a_ratio_and_its_reciprocal_multiply_back_to_the_whole\">record</a></li><li><code>the_loss_and_the_yield_read_back_the_input</code> — <code>(List.range' 1 60).all (fun c =&gt; (List.range (c + 1)).all (fun y =&gt; (c - y) + y == c &amp;&amp; 99 ≤ pct (c - y) c + pct y c &amp;&amp; pct (c - y) c + pct y c ≤ 100)) ∧ splitCost - burnYield = 40000 ∧ pct (splitCost - burnYield) splitCost = 76 ∧ pct burnYield splitCost = 23</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_the_loss_and_the_yield_read_back_the_input\">record</a></li><li><code>the_residue_ratio_is_the_same_at_every_volume</code> — <code>(List.range' 1 200).all (fun l =&gt; residueMg l tdsSeawater == 700 * residueMg l tdsTapWater) ∧ residueMg 100 tdsSeawater / 1000 = 3500 ∧ residueMg 100 tdsTapWater / 1000 = 5</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_the_residue_ratio_is_the_same_at_every_volume\">record</a></li><li><code>the_atoms_read_back_from_the_mass</code> — <code>(List.range 10).all (fun h =&gt; (List.range 10).all (fun o =&gt; atomsOf (mass h o) == some (h, o))) ∧ atomsOf mgH2 = some (2, 0) ∧ atomsOf mgO2 = some (0, 2) ∧ atomsOf mgH2O = some (2, 1)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_the_atoms_read_back_from_the_mass\">record</a></li></ol><p><strong>Recompute.</strong> <code>lake env lean src/proof/energy.lean</code>, or clone <a href=\"https://github.com/ceccec/millennium-solutions\">https://github.com/ceccec/millennium-solutions</a> and run <code>npm run lean</code>. This record was generated by scripts/clusters.ts from the source and the ledger.</p><p><strong>Funding.</strong> Independent research. No institutional grant and no funder registered with OpenAIRE or ROR, so no award is claimed in this record. Development is supported by direct contribution: https://revolut.me/ceccec</p>",
+  "license": "cc-by-nc-nd-4.0",
+  "access_right": "open",
+  "language": "eng",
+  "keywords": [
+    "Lean 4",
+    "machine-checked proof",
+    "formal verification",
+    "Z/9",
+    "content-addressing",
+    "theorem cluster",
+    "the floor",
+    "energy"
+  ],
+  "communities": [],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.21819217",
+      "relation": "isPartOf"
+    },
+    {
+      "identifier": "https://github.com/ceccec/millennium-solutions/blob/main/src/proof/energy.lean",
+      "relation": "isSupplementTo"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_any_yield_below_its_cost_reads_under_the_whole",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_a_chain_of_efficiencies_can_only_lose",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_the_cost_per_litre_multiplies_back_to_the_cost",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_the_two_to_one_is_forced_by_the_oxygen",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_the_mass_balance_is_the_atom_balance",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_the_atom_table_decides_the_balance",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_the_gases_are_two_to_one_and_consume_each_other_exactly",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_a_part_and_its_rest_read_back_the_whole",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_mass_is_conserved_at_every_scale_so_the_loop_cannot_make_water",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_one_litre_split_returns_one_litre_burnt",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_only_oxy_hydrogen_burns_without_admitting_nitrogen",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_splitting_then_burning_is_the_identity_at_the_ideal",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_splitting_then_burning_is_the_identity_at_every_ledger_value",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_the_gas_volume_reads_back_its_moles",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_two_parts_in_three_is_two_thirds_at_every_scale",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_the_energy_per_litre_multiplies_back_to_the_energy",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_compression_scales_the_energy_per_litre_linearly",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_a_ratio_and_its_reciprocal_multiply_back_to_the_whole",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_the_loss_and_the_yield_read_back_the_input",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_the_residue_ratio_is_the_same_at_every_volume",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_energy_the_atoms_read_back_from_the_mass",
+      "relation": "hasPart"
+    }
+  ],
+  "notes": "cluster energy.lean · wing the floor · 21 sealed · joint address 1dadd6fb-87ec-8e61-8aca-ff9c25110203 · lattice centre (6,4,4,1,0,8,3) · neighbours demand.lean, address.lean, generated.lean · concept DOI 10.5281/zenodo.21819217 · generated by scripts/clusters.ts — prepared, not uploaded",
+  "files": [
+    "src/proof/energy.lean"
+  ],
+  "cluster": {
+    "file": "energy.lean",
+    "wing": "the floor",
+    "sealed": 21,
+    "decided": 20,
+    "proved": 1,
+    "declarations": 0,
+    "joint": {
+      "root": "1dadd6fb-87ec-8e61-8aca-ff9c25110203",
+      "orderInvariant": true,
+      "bindsEveryReceipt": true
+    },
+    "strands": 6,
+    "binding": [
+      {
+        "def": "splitCost",
+        "theorems": 5
+      },
+      {
+        "def": "pct",
+        "theorems": 5
+      },
+      {
+        "def": "mgH2",
+        "theorems": 5
+      },
+      {
+        "def": "mgH2O",
+        "theorems": 5
+      },
+      {
+        "def": "burnYield",
+        "theorems": 4
+      },
+      {
+        "def": "mgO2",
+        "theorems": 4
+      },
+      {
+        "def": "balances",
+        "theorems": 3
+      },
+      {
+        "def": "molH2",
+        "theorems": 3
+      },
+      {
+        "def": "mass",
+        "theorems": 2
+      },
+      {
+        "def": "splitE",
+        "theorems": 2
+      },
+      {
+        "def": "burnE",
+        "theorems": 2
+      },
+      {
+        "def": "molO2",
+        "theorems": 2
+      }
+    ],
+    "imports": [],
+    "dependents": [],
+    "lattice": {
+      "centre": [
+        6,
+        4,
+        4,
+        1,
+        0,
+        8,
+        3
+      ],
+      "within": 15.62,
+      "between": 15.54,
+      "top": [
+        {
+          "file": "demand.lean",
+          "pairs": 5,
+          "expected": 1.86,
+          "lift": 2.68
+        },
+        {
+          "file": "address.lean",
+          "pairs": 10,
+          "expected": 3.96,
+          "lift": 2.53
+        },
+        {
+          "file": "generated.lean",
+          "pairs": 6,
+          "expected": 3.03,
+          "lift": 1.98
+        }
+      ],
+      "chanceShare": 0.505,
+      "shuffles": 200
+    }
+  }
+}

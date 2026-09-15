@@ -1,0 +1,118 @@
+{
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "title": "What exhaustion reaches, and what lies outside it — 5 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+  "creators": [
+    {
+      "name": "Rouschev, Tsvetan",
+      "orcid": "0009-0000-7312-9778",
+      "affiliation": "PSG, Bulgaria"
+    }
+  ],
+  "description": "<p><strong>What exhaustion reaches, and what lies outside it</strong> — 5 machine-checked theorems of the ℤ/9 vortex deposit, one Lean namespace, wing <em>the floor</em>. 4 close by exhaustion over a finite domain (<code>by decide</code>), 1 are proved for every value on the standard axioms. Every one is sealed live in the append-only ledger.</p><p><strong>How these theorems are bound.</strong> \"Entangled\" is used in this deposit's honest sense: correlation by derivation, not quantum entanglement, and no information travels through it.</p><p><strong>1 · Shared definitions.</strong> 1 definition(s) are used by two or more theorems, binding 6 pair(s); the theorems fall into 2 strand(s), the largest of 4. Most binding: <code>bounds</code> (4). 1 theorem(s) name no definition of the file and stand on their own statement.</p><p><strong>2 · Imports.</strong> Built on: no other cluster. Built on it: no other cluster. Checking this cluster needs 1 file(s): <code>src/proof/reach.lean</code>.</p><p><strong>3 · The joint address.</strong> The 5 sealed receipts fold to <code>05528d94-5d7d-8142-9aa4-b7a650cd30e0</code>. Order-invariant: yes — the same root in reverse order. Altering one receipt changes it: yes, computed on this run. A content-address proves integrity, not truth.</p><p><strong>4 · The address lattice.</strong> Each theorem sits at the seven ray values its page plots from its receipt, taken mod 9: a point of (ℤ/9)⁷. This cluster's centre is (2, 6, 2, 3, 6, 4, 5). Its nearest clusters, ranked by lift — pairs observed among each theorem's seven nearest points, over the pairs expected by chance from the two clusters' sizes: <code>ledgerclaims.lean</code> (3 observed, 0.44 expected, lift 6.76), <code>coin.lean</code> (4 observed, 0.67 expected, lift 6.01), <code>elementary.lean</code> (4 observed, 1.77 expected, lift 2.25). A lift near 1 is what chance gives. Mean distance between two of its theorems: 16.3; from one of its theorems to a theorem of another cluster: 15.39. A receipt is a hash, so nearness on this lattice is a property of the addresses, not of the mathematics; the mathematical binding is (1) and (2). Chance, measured: over 200 reshufflings of which cluster each point belongs to (seeded, so every rebuild gives the same numbers), a best lift at least this high arose in 7.0% of them — consistent with chance.</p><p><strong>Prior art.</strong> that no finite set contains every natural number is Euclid's argument in form and is as old as mathematics; the deposit claims none of it. What is its own here is the decision over its OWN bounds, and the statement of where that decision stops. Per-theorem prior-art searches — OEIS, zbMATH Open, OpenAlex, Crossref, arXiv — are recorded, with what was searched, where and when, in the living ledger <a href=\"https://github.com/ceccec/millennium-solutions/blob/main/src/proof/novelty.json\">src/proof/novelty.json</a>. No novelty is claimed here.</p><p><strong>The theorems.</strong></p><ol><li><code>exhaustion_never_reaches_its_own_bound</code> — <code>bounds.all (fun n =&gt; (List.range n).length == n &amp;&amp; ¬ (List.range n).contains n)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reach_exhaustion_never_reaches_its_own_bound\">record</a></li><li><code>the_successor_of_every_bound_lies_outside</code> — <code>bounds.all (fun n =&gt; ¬ (List.range n).contains (n + 1))</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reach_the_successor_of_every_bound_lies_outside\">record</a></li><li><code>doubling_the_domain_leaves_the_same_hole</code> — <code>bounds.all (fun n =&gt; ¬ (List.range (2 * n)).contains (2 * n))</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reach_doubling_the_domain_leaves_the_same_hole\">record</a></li><li><code>the_successor_leaves_every_domain_and_the_predecessor_returns</code> — <code>(bounds ++ [largestDomainHere]).all (fun n =&gt; n + 1 &gt; n &amp;&amp; (n + 1) - 1 == n &amp;&amp; (n + 1) % 2 != n % 2)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reach_the_successor_leaves_every_domain_and_the_predecessor_returns\">record</a></li><li><code>the_predecessor_returns_every_successor</code> — <code>∀ n : Nat, (n + 1) - 1 = n</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_reach_the_predecessor_returns_every_successor\">record</a></li></ol><p><strong>Recompute.</strong> <code>lake env lean src/proof/reach.lean</code>, or clone <a href=\"https://github.com/ceccec/millennium-solutions\">https://github.com/ceccec/millennium-solutions</a> and run <code>npm run lean</code>. This record was generated by scripts/clusters.ts from the source and the ledger.</p><p><strong>Funding.</strong> Independent research. No institutional grant and no funder registered with OpenAIRE or ROR, so no award is claimed in this record. Development is supported by direct contribution: https://revolut.me/ceccec</p>",
+  "license": "cc-by-nc-nd-4.0",
+  "access_right": "open",
+  "language": "eng",
+  "keywords": [
+    "Lean 4",
+    "machine-checked proof",
+    "formal verification",
+    "Z/9",
+    "content-addressing",
+    "theorem cluster",
+    "the floor",
+    "reach"
+  ],
+  "communities": [],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.21819217",
+      "relation": "isPartOf"
+    },
+    {
+      "identifier": "https://github.com/ceccec/millennium-solutions/blob/main/src/proof/reach.lean",
+      "relation": "isSupplementTo"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_reach_exhaustion_never_reaches_its_own_bound",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_reach_the_successor_of_every_bound_lies_outside",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_reach_doubling_the_domain_leaves_the_same_hole",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_reach_the_successor_leaves_every_domain_and_the_predecessor_returns",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_reach_the_predecessor_returns_every_successor",
+      "relation": "hasPart"
+    }
+  ],
+  "notes": "cluster reach.lean · wing the floor · 5 sealed · joint address 05528d94-5d7d-8142-9aa4-b7a650cd30e0 · lattice centre (2,6,2,3,6,4,5) · neighbours ledgerclaims.lean, coin.lean, elementary.lean · concept DOI 10.5281/zenodo.21819217 · generated by scripts/clusters.ts — prepared, not uploaded",
+  "files": [
+    "src/proof/reach.lean"
+  ],
+  "cluster": {
+    "file": "reach.lean",
+    "wing": "the floor",
+    "sealed": 5,
+    "decided": 4,
+    "proved": 1,
+    "declarations": 0,
+    "joint": {
+      "root": "05528d94-5d7d-8142-9aa4-b7a650cd30e0",
+      "orderInvariant": true,
+      "bindsEveryReceipt": true
+    },
+    "strands": 2,
+    "binding": [
+      {
+        "def": "bounds",
+        "theorems": 4
+      }
+    ],
+    "imports": [],
+    "dependents": [],
+    "lattice": {
+      "centre": [
+        2,
+        6,
+        2,
+        3,
+        6,
+        4,
+        5
+      ],
+      "within": 16.3,
+      "between": 15.39,
+      "top": [
+        {
+          "file": "ledgerclaims.lean",
+          "pairs": 3,
+          "expected": 0.44,
+          "lift": 6.76
+        },
+        {
+          "file": "coin.lean",
+          "pairs": 4,
+          "expected": 0.67,
+          "lift": 6.01
+        },
+        {
+          "file": "elementary.lean",
+          "pairs": 4,
+          "expected": 1.77,
+          "lift": 2.25
+        }
+      ],
+      "chanceShare": 0.07,
+      "shuffles": 200
+    }
+  }
+}

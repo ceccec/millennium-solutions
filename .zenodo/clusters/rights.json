@@ -1,0 +1,142 @@
+{
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "title": "Rights — 8 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+  "creators": [
+    {
+      "name": "Rouschev, Tsvetan",
+      "orcid": "0009-0000-7312-9778",
+      "affiliation": "PSG, Bulgaria"
+    }
+  ],
+  "description": "<p><strong>Rights</strong> — 8 machine-checked theorems of the ℤ/9 vortex deposit, one Lean namespace, wing <em>the record</em>. 8 close by exhaustion over a finite domain (<code>by decide</code>); 1 <code>rfl</code> declaration(s) are listed and not sealed, by design. Every one is sealed live in the append-only ledger.</p><p><strong>How these theorems are bound.</strong> \"Entangled\" is used in this deposit's honest sense: correlation by derivation, not quantum entanglement, and no information travels through it.</p><p><strong>1 · Shared definitions.</strong> 4 definition(s) are used by two or more theorems, binding 58 pair(s); the theorems fall into 1 strand(s), the largest of 8. Most binding: <code>instruments</code> (8), <code>claim</code> (7), <code>idOf</code> (4), <code>kindOf</code> (3).</p><p><strong>2 · Imports.</strong> Built on: no other cluster. Built on it: no other cluster. Checking this cluster needs 1 file(s): <code>src/proof/rights.lean</code>.</p><p><strong>3 · The joint address.</strong> The 8 sealed receipts fold to <code>6ae9baad-d17f-8059-be52-438399bff840</code>. Order-invariant: yes — the same root in reverse order. Altering one receipt changes it: yes, computed on this run. A content-address proves integrity, not truth.</p><p><strong>4 · The address lattice.</strong> Each theorem sits at the seven ray values its page plots from its receipt, taken mod 9: a point of (ℤ/9)⁷. This cluster's centre is (0, 0, 2, 5, 1, 5, 5). Its nearest clusters, ranked by lift — pairs observed among each theorem's seven nearest points, over the pairs expected by chance from the two clusters' sizes: <code>nim.lean</code> (4 observed, 0.89 expected, lift 4.51), <code>sequences.lean</code> (3 observed, 1.06 expected, lift 2.82), <code>imagined.lean</code> (16 observed, 10.47 expected, lift 1.53). A lift near 1 is what chance gives. Mean distance between two of its theorems: 15.93; from one of its theorems to a theorem of another cluster: 15.4. A receipt is a hash, so nearness on this lattice is a property of the addresses, not of the mathematics; the mathematical binding is (1) and (2). Chance, measured: over 200 reshufflings of which cluster each point belongs to (seeded, so every rebuild gives the same numbers), a best lift at least this high arose in 11.0% of them — consistent with chance.</p><p><strong>Prior art.</strong> this file already NAMED its prior art in prose while the attribution table recorded none. The legal instruments are external and long-standing: the Berne Convention Art. 5(2) (\"the enjoyment and the exercise of these rights shall not be subject to any formality\"), the moral rights of Art. 6bis, and the sui generis database right of Directive 96/9/EC. `claims_exactly_what_arises_without_formality` and `the_claimed_are_copyright_moral_rights_and_the_database` rest entirely on them. Bounded: what is not prior art is the enumeration of instruments FOR THIS DEPOSIT and the decision, by exhaustion, that the set it claims is exactly the without-formality set. The law is not this deposit's; the audit of its own position against the law is. Per-theorem prior-art searches — OEIS, zbMATH Open, OpenAlex, Crossref, arXiv — are recorded, with what was searched, where and when, in the living ledger <a href=\"https://github.com/ceccec/millennium-solutions/blob/main/src/proof/novelty.json\">src/proof/novelty.json</a>. No novelty is claimed here.</p><p><strong>The theorems.</strong></p><ol><li><code>claims_exactly_what_arises_without_formality</code> — <code>instruments.all (fun r =&gt; auto r == claim r)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_rights_claims_exactly_what_arises_without_formality\">record</a></li><li><code>the_claimed_are_copyright_moral_rights_and_the_database</code> — <code>([1, 2, 3] : List Nat).all (fun i =&gt; ((instruments.filter claim).map idOf).contains i)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_rights_the_claimed_are_copyright_moral_rights_and_the_database\">record</a></li><li><code>the_claimed_set_is_exactly_those_three_and_the_unregistered_mark</code> — <code>([1, 2, 3, 8] : List Nat).all (fun i =&gt; ((instruments.filter claim).map idOf).contains i)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_rights_the_claimed_set_is_exactly_those_three_and_the_unregistered_mark\">record</a></li><li><code>the_unclaimed_are_the_registry_the_excluded_and_the_unownable</code> — <code>(instruments.filter (fun r =&gt; ¬ claim r)).map idOf = [4, 5, 6, 7]</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_rights_the_unclaimed_are_the_registry_the_excluded_and_the_unownable\">record</a></li><li><code>no_right_that_needs_a_registry_act_is_claimed</code> — <code>(instruments.filter (fun r =&gt; kindOf r == 1)).all (fun r =&gt; claim r == false)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_rights_no_right_that_needs_a_registry_act_is_claimed\">record</a></li><li><code>no_excluded_subject_matter_is_claimed</code> — <code>(instruments.filter (fun r =&gt; kindOf r == 2)).all (fun r =&gt; claim r == false)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_rights_no_excluded_subject_matter_is_claimed\">record</a></li><li><code>nothing_incapable_of_ownership_is_claimed</code> — <code>(instruments.filter (fun r =&gt; kindOf r == 3)).all (fun r =&gt; claim r == false)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_rights_nothing_incapable_of_ownership_is_claimed\">record</a></li><li><code>the_enumeration_is_complete_and_unduplicated</code> — <code>instruments.map idOf = [1, 2, 3, 4, 5, 6, 7, 8, 9]</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_rights_the_enumeration_is_complete_and_unduplicated\">record</a></li></ol><p><strong>Recompute.</strong> <code>lake env lean src/proof/rights.lean</code>, or clone <a href=\"https://github.com/ceccec/millennium-solutions\">https://github.com/ceccec/millennium-solutions</a> and run <code>npm run lean</code>. This record was generated by scripts/clusters.ts from the source and the ledger.</p><p><strong>Funding.</strong> Independent research. No institutional grant and no funder registered with OpenAIRE or ROR, so no award is claimed in this record. Development is supported by direct contribution: https://revolut.me/ceccec</p>",
+  "license": "cc-by-nc-nd-4.0",
+  "access_right": "open",
+  "language": "eng",
+  "keywords": [
+    "Lean 4",
+    "machine-checked proof",
+    "formal verification",
+    "Z/9",
+    "content-addressing",
+    "theorem cluster",
+    "the record",
+    "rights"
+  ],
+  "communities": [],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.21819217",
+      "relation": "isPartOf"
+    },
+    {
+      "identifier": "https://github.com/ceccec/millennium-solutions/blob/main/src/proof/rights.lean",
+      "relation": "isSupplementTo"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_rights_claims_exactly_what_arises_without_formality",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_rights_the_claimed_are_copyright_moral_rights_and_the_database",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_rights_the_claimed_set_is_exactly_those_three_and_the_unregistered_mark",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_rights_the_unclaimed_are_the_registry_the_excluded_and_the_unownable",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_rights_no_right_that_needs_a_registry_act_is_claimed",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_rights_no_excluded_subject_matter_is_claimed",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_rights_nothing_incapable_of_ownership_is_claimed",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_rights_the_enumeration_is_complete_and_unduplicated",
+      "relation": "hasPart"
+    }
+  ],
+  "notes": "cluster rights.lean · wing the record · 8 sealed · joint address 6ae9baad-d17f-8059-be52-438399bff840 · lattice centre (0,0,2,5,1,5,5) · neighbours nim.lean, sequences.lean, imagined.lean · concept DOI 10.5281/zenodo.21819217 · generated by scripts/clusters.ts — prepared, not uploaded",
+  "files": [
+    "src/proof/rights.lean"
+  ],
+  "cluster": {
+    "file": "rights.lean",
+    "wing": "the record",
+    "sealed": 8,
+    "decided": 8,
+    "proved": 0,
+    "declarations": 1,
+    "joint": {
+      "root": "6ae9baad-d17f-8059-be52-438399bff840",
+      "orderInvariant": true,
+      "bindsEveryReceipt": true
+    },
+    "strands": 1,
+    "binding": [
+      {
+        "def": "instruments",
+        "theorems": 8
+      },
+      {
+        "def": "claim",
+        "theorems": 7
+      },
+      {
+        "def": "idOf",
+        "theorems": 4
+      },
+      {
+        "def": "kindOf",
+        "theorems": 3
+      }
+    ],
+    "imports": [],
+    "dependents": [],
+    "lattice": {
+      "centre": [
+        0,
+        0,
+        2,
+        5,
+        1,
+        5,
+        5
+      ],
+      "within": 15.93,
+      "between": 15.4,
+      "top": [
+        {
+          "file": "nim.lean",
+          "pairs": 4,
+          "expected": 0.89,
+          "lift": 4.51
+        },
+        {
+          "file": "sequences.lean",
+          "pairs": 3,
+          "expected": 1.06,
+          "lift": 2.82
+        },
+        {
+          "file": "imagined.lean",
+          "pairs": 16,
+          "expected": 10.47,
+          "lift": 1.53
+        }
+      ],
+      "chanceShare": 0.11,
+      "shuffles": 200
+    }
+  }
+}

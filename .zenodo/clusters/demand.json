@@ -1,0 +1,141 @@
+{
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "title": "What is actually being asked for — 8 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+  "creators": [
+    {
+      "name": "Rouschev, Tsvetan",
+      "orcid": "0009-0000-7312-9778",
+      "affiliation": "PSG, Bulgaria"
+    }
+  ],
+  "description": "<p><strong>What is actually being asked for</strong> — 8 machine-checked theorems of the ℤ/9 vortex deposit, one Lean namespace, wing <em>the floor</em>. 8 close by exhaustion over a finite domain (<code>by decide</code>). Every one is sealed live in the append-only ledger.</p><p><strong>How these theorems are bound.</strong> \"Entangled\" is used in this deposit's honest sense: correlation by derivation, not quantum entanglement, and no information travels through it.</p><p><strong>1 · Shared definitions.</strong> 0 definition(s) are used by two or more theorems, binding 0 pair(s); the theorems fall into 8 strand(s), the largest of 1. 3 theorem(s) name no definition of the file and stand on their own statement.</p><p><strong>2 · Imports.</strong> Built on: <code>families.lean</code>, <code>sequences.lean</code>. Built on it: <code>demand3.lean</code>. Checking this cluster needs 4 file(s): <code>src/proof/demand.lean</code>, <code>src/proof/families.lean</code>, <code>src/proof/fnv.lean</code>, <code>src/proof/sequences.lean</code>.</p><p><strong>3 · The joint address.</strong> The 8 sealed receipts fold to <code>98a92a92-3e41-8fdb-9f2a-2638081e4672</code>. Order-invariant: yes — the same root in reverse order. Altering one receipt changes it: yes, computed on this run. A content-address proves integrity, not truth.</p><p><strong>4 · The address lattice.</strong> Each theorem sits at the seven ray values its page plots from its receipt, taken mod 9: a point of (ℤ/9)⁷. This cluster's centre is (5, 0, 5, 2, 2, 3, 7). Its nearest clusters, ranked by lift — pairs observed among each theorem's seven nearest points, over the pairs expected by chance from the two clusters' sizes: <code>light.lean</code> (3 observed, 1.15 expected, lift 2.6), <code>energy.lean</code> (4 observed, 1.86 expected, lift 2.15), <code>elementary.lean</code> (6 observed, 2.84 expected, lift 2.11). A lift near 1 is what chance gives. Mean distance between two of its theorems: 15.96; from one of its theorems to a theorem of another cluster: 15.64. A receipt is a hash, so nearness on this lattice is a property of the addresses, not of the mathematics; the mathematical binding is (1) and (2). Chance, measured: over 200 reshufflings of which cluster each point belongs to (seeded, so every rebuild gives the same numbers), a best lift at least this high arose in 83.5% of them — consistent with chance.</p><p><strong>Prior art.</strong> the named results the search data asks for — Bézout’s identity (Étienne Bézout, 1779; Bachet, 1624), the Chinese remainder theorem (Sunzi, c. 3rd–5th century), and others named in their theorems Per-theorem prior-art searches — OEIS, zbMATH Open, OpenAlex, Crossref, arXiv — are recorded, with what was searched, where and when, in the living ledger <a href=\"https://github.com/ceccec/millennium-solutions/blob/main/src/proof/novelty.json\">src/proof/novelty.json</a>. No novelty is claimed here.</p><p><strong>The theorems.</strong></p><ol><li><code>fibonacci_gcd_is_the_fibonacci_of_the_gcd</code> — <code>(List.range' 1 14).all (fun m =&gt; (List.range' 1 14).all (fun n =&gt; Families.gcd' (Sequences.fib m) (Sequences.fib n) == Sequences.fib (Families.gcd' m n)))</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand_fibonacci_gcd_is_the_fibonacci_of_the_gcd\">record</a></li><li><code>the_mobius_divisor_sum_is_the_identity</code> — <code>(List.range' 1 30).all (fun n =&gt; ((divisors n).map mu).foldl (· + ·) 0 == (if n == 1 then (1 : Int) else 0))</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand_the_mobius_divisor_sum_is_the_identity\">record</a></li><li><code>the_derangement_recurrence_holds</code> — <code>(List.range' 2 11).all (fun n =&gt; derange n == (n - 1) * (derange (n - 1) + derange (n - 2))) ∧ derange 4 = 9 ∧ derange 5 = 44 ∧ derange 6 = 265</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand_the_derangement_recurrence_holds\">record</a></li><li><code>legendres_three_square_theorem</code> — <code>(List.range 200).all (fun n =&gt; isSumOfThreeSquares n == ¬ isExcludedForm n)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand_legendres_three_square_theorem\">record</a></li><li><code>five_six_one_is_the_smallest_carmichael_number</code> — <code>isCarmichael 561 = true ∧ (List.range' 2 559).all (fun n =&gt; ¬ isCarmichael n)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand_five_six_one_is_the_smallest_carmichael_number\">record</a></li><li><code>the_parity_of_popcount_is_the_xor_of_the_bits</code> — <code>(List.range 128).all (fun n =&gt; bitsF 10 n % 2 == (List.range' 0 8).foldl (fun acc i =&gt; (acc + (n / (2 ^ i)) % 2) % 2) 0)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand_the_parity_of_popcount_is_the_xor_of_the_bits\">record</a></li><li><code>factorial_seven_is_five_thousand_and_forty</code> — <code>Sequences.fact 7 = 5040 ∧ Sequences.fact 6 = 720 ∧ Sequences.fact 8 = 40320</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand_factorial_seven_is_five_thousand_and_forty\">record</a></li><li><code>mantels_bound_is_n_squared_over_four</code> — <code>(List.range' 1 20).all (fun n =&gt; (n / 2) * (n - n / 2) == n * n / 4)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand_mantels_bound_is_n_squared_over_four\">record</a></li></ol><p><strong>Recompute.</strong> <code>lake env lean src/proof/demand.lean src/proof/families.lean src/proof/fnv.lean src/proof/sequences.lean</code>, or clone <a href=\"https://github.com/ceccec/millennium-solutions\">https://github.com/ceccec/millennium-solutions</a> and run <code>npm run lean</code>. This record was generated by scripts/clusters.ts from the source and the ledger.</p><p><strong>Funding.</strong> Independent research. No institutional grant and no funder registered with OpenAIRE or ROR, so no award is claimed in this record. Development is supported by direct contribution: https://revolut.me/ceccec</p>",
+  "license": "cc-by-nc-nd-4.0",
+  "access_right": "open",
+  "language": "eng",
+  "keywords": [
+    "Lean 4",
+    "machine-checked proof",
+    "formal verification",
+    "Z/9",
+    "content-addressing",
+    "theorem cluster",
+    "the floor",
+    "demand"
+  ],
+  "communities": [],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.21819217",
+      "relation": "isPartOf"
+    },
+    {
+      "identifier": "https://github.com/ceccec/millennium-solutions/blob/main/src/proof/demand.lean",
+      "relation": "isSupplementTo"
+    },
+    {
+      "identifier": "https://github.com/ceccec/millennium-solutions/blob/main/src/proof/families.lean",
+      "relation": "references"
+    },
+    {
+      "identifier": "https://github.com/ceccec/millennium-solutions/blob/main/src/proof/sequences.lean",
+      "relation": "references"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand_fibonacci_gcd_is_the_fibonacci_of_the_gcd",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand_the_mobius_divisor_sum_is_the_identity",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand_the_derangement_recurrence_holds",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand_legendres_three_square_theorem",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand_five_six_one_is_the_smallest_carmichael_number",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand_the_parity_of_popcount_is_the_xor_of_the_bits",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand_factorial_seven_is_five_thousand_and_forty",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand_mantels_bound_is_n_squared_over_four",
+      "relation": "hasPart"
+    }
+  ],
+  "notes": "cluster demand.lean · wing the floor · 8 sealed · joint address 98a92a92-3e41-8fdb-9f2a-2638081e4672 · lattice centre (5,0,5,2,2,3,7) · neighbours light.lean, energy.lean, elementary.lean · concept DOI 10.5281/zenodo.21819217 · generated by scripts/clusters.ts — prepared, not uploaded",
+  "files": [
+    "src/proof/demand.lean",
+    "src/proof/families.lean",
+    "src/proof/fnv.lean",
+    "src/proof/sequences.lean"
+  ],
+  "cluster": {
+    "file": "demand.lean",
+    "wing": "the floor",
+    "sealed": 8,
+    "decided": 8,
+    "proved": 0,
+    "declarations": 0,
+    "joint": {
+      "root": "98a92a92-3e41-8fdb-9f2a-2638081e4672",
+      "orderInvariant": true,
+      "bindsEveryReceipt": true
+    },
+    "strands": 8,
+    "binding": [],
+    "imports": [
+      "families.lean",
+      "sequences.lean"
+    ],
+    "dependents": [
+      "demand3.lean"
+    ],
+    "lattice": {
+      "centre": [
+        5,
+        0,
+        5,
+        2,
+        2,
+        3,
+        7
+      ],
+      "within": 15.96,
+      "between": 15.64,
+      "top": [
+        {
+          "file": "light.lean",
+          "pairs": 3,
+          "expected": 1.15,
+          "lift": 2.6
+        },
+        {
+          "file": "energy.lean",
+          "pairs": 4,
+          "expected": 1.86,
+          "lift": 2.15
+        },
+        {
+          "file": "elementary.lean",
+          "pairs": 6,
+          "expected": 2.84,
+          "lift": 2.11
+        }
+      ],
+      "chanceShare": 0.835,
+      "shuffles": 200
+    }
+  }
+}

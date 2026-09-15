@@ -1,0 +1,141 @@
+{
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "title": "The next tier of what is asked for — 8 machine-checked theorems of the ℤ/9 vortex deposit and how they are bound",
+  "creators": [
+    {
+      "name": "Rouschev, Tsvetan",
+      "orcid": "0009-0000-7312-9778",
+      "affiliation": "PSG, Bulgaria"
+    }
+  ],
+  "description": "<p><strong>The next tier of what is asked for</strong> — 8 machine-checked theorems of the ℤ/9 vortex deposit, one Lean namespace, wing <em>the floor</em>. 8 close by exhaustion over a finite domain (<code>by decide</code>). Every one is sealed live in the append-only ledger.</p><p><strong>How these theorems are bound.</strong> \"Entangled\" is used in this deposit's honest sense: correlation by derivation, not quantum entanglement, and no information travels through it.</p><p><strong>1 · Shared definitions.</strong> 2 definition(s) are used by two or more theorems, binding 2 pair(s); the theorems fall into 7 strand(s), the largest of 2. Most binding: <code>sumPow</code> (2), <code>tri</code> (2). 1 theorem(s) name no definition of the file and stand on their own statement.</p><p><strong>2 · Imports.</strong> Built on: <code>families.lean</code>. Built on it: no other cluster. Checking this cluster needs 2 file(s): <code>src/proof/demand2.lean</code>, <code>src/proof/families.lean</code>.</p><p><strong>3 · The joint address.</strong> The 8 sealed receipts fold to <code>3923cc7a-f137-8f83-a0dc-fb8c4bcaba45</code>. Order-invariant: yes — the same root in reverse order. Altering one receipt changes it: yes, computed on this run. A content-address proves integrity, not truth.</p><p><strong>4 · The address lattice.</strong> Each theorem sits at the seven ray values its page plots from its receipt, taken mod 9: a point of (ℤ/9)⁷. This cluster's centre is (7, 0, 6, 0, 5, 8, 6). Its nearest clusters, ranked by lift — pairs observed among each theorem's seven nearest points, over the pairs expected by chance from the two clusters' sizes: <code>reversal.lean</code> (3 observed, 0.71 expected, lift 4.23), <code>coin.lean</code> (3 observed, 1.06 expected, lift 2.82), <code>light.lean</code> (3 observed, 1.15 expected, lift 2.6). A lift near 1 is what chance gives. Mean distance between two of its theorems: 15.07; from one of its theorems to a theorem of another cluster: 15.56. A receipt is a hash, so nearness on this lattice is a property of the addresses, not of the mathematics; the mathematical binding is (1) and (2). Chance, measured: over 200 reshufflings of which cluster each point belongs to (seeded, so every rebuild gives the same numbers), a best lift at least this high arose in 29.0% of them — consistent with chance.</p><p><strong>Prior art.</strong> Wilson’s theorem — John Wilson; first proved by Joseph-Louis Lagrange, 1771; the Catalan conjecture on consecutive perfect powers — Eugène Catalan, 1844; proved by Preda Mihăilescu, 2002 Per-theorem prior-art searches — OEIS, zbMATH Open, OpenAlex, Crossref, arXiv — are recorded, with what was searched, where and when, in the living ledger <a href=\"https://github.com/ceccec/millennium-solutions/blob/main/src/proof/novelty.json\">src/proof/novelty.json</a>. No novelty is claimed here.</p><p><strong>The theorems.</strong></p><ol><li><code>nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number</code> — <code>(List.range' 1 40).all (fun n =&gt; sumPow 3 n == tri n * tri n) ∧ (List.range' 1 40).all (fun n =&gt; sumPow 3 n == sumPow 1 n * sumPow 1 n) ∧ (List.range' 2 19).all (fun n =&gt; ¬ isSquareBelow 900 (sumPow 4 n)) ∧ isSquareBelow 900 (sumPow 4 1) = true</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand2_nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number\">record</a></li><li><code>picks_theorem_holds_for_every_lattice_triangle_in_the_four_grid</code> — <code>pts.all (fun a =&gt; pts.all (fun b =&gt; pts.all (fun c =&gt; cross a b c ≤ 0 || cross a b c == 2 * interiorCount a b c + boundaryCount a b c - 2))) ∧ ¬ pts.any (fun a =&gt; pts.any (fun b =&gt; pts.any (fun c =&gt; cross a b c &gt; 0 &amp;&amp; cross a b c == 2 * interiorCount a b c + boundaryCount a b c))) ∧ (triples.filter (fun t =&gt; cross t.1 t.2.1 t.2.2 &gt; 0)).length = 1548 ∧ (triples.filter (fun t =&gt; cross t.1 t.2.1 t.2. …</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand2_picks_theorem_holds_for_every_lattice_triangle_in_the_four_grid\">record</a></li><li><code>bezouts_identity_is_attained_and_no_smaller_combination_exists</code> — <code>(List.range' 1 30).all (fun a =&gt; (List.range' 1 30).all (fun b =&gt; (List.range 31).any (fun x =&gt; (List.range 31).any (fun y =&gt; a * x == b * y + Families.gcd' a b)))) ∧ (List.range' 1 20).all (fun a =&gt; (List.range' 1 20).all (fun b =&gt; (List.range 21).all (fun x =&gt; (List.range 21).all (fun y =&gt; a * x &lt; b * y || (a * x - b * y) % Families.gcd' a b == 0)))) ∧ Families.gcd' 240 46 = 2 ∧ 46 * 47 = 240 *  …</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand2_bezouts_identity_is_attained_and_no_smaller_combination_exists\">record</a></li><li><code>the_latin_squares_of_order_four_number_five_hundred_and_seventy_six</code> — <code>latinSquares 4 = 576 ∧ latinSquares 3 = 12 ∧ latinSquares 2 = 2 ∧ latinSquares 1 = 1 ∧ ¬ (latinSquares 4 = 24 * 24 * 24)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand2_the_latin_squares_of_order_four_number_five_hundred_and_seventy_six\">record</a></li><li><code>the_sum_of_fifth_powers_has_the_closed_form_asked_for</code> — <code>(List.range' 1 20).all (fun n =&gt; 12 * sumPow 5 n == n * n * (n + 1) * (n + 1) * (2 * n * n + 2 * n - 1)) ∧ (List.range' 2 19).all (fun n =&gt; ¬ (sumPow 5 n == tri n * tri n * tri n)) ∧ sumPow 5 1 = 1 ∧ sumPow 5 2 = 33 ∧ sumPow 5 4 = 1300</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand2_the_sum_of_fifth_powers_has_the_closed_form_asked_for\">record</a></li><li><code>the_chinese_remainder_theorem_holds_exactly_when_the_moduli_are_coprime</code> — <code>(List.range' 1 9).all (fun m =&gt; (List.range' 1 9).all (fun n =&gt; crtCoversAllPairs m n == (Families.gcd' m n == 1))) ∧ (List.range 105).filter (fun x =&gt; x % 3 == 2 &amp;&amp; x % 5 == 3 &amp;&amp; x % 7 == 2) = [23]</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand2_the_chinese_remainder_theorem_holds_exactly_when_the_moduli_are_coprime\">record</a></li><li><code>eight_and_nine_are_the_only_consecutive_perfect_powers_below_two_thousand</code> — <code>(List.range' 1 1999).filter (fun n =&gt; pp2000.contains n &amp;&amp; pp2000.contains (n + 1)) = [8] ∧ pp2000.length = 55 ∧ pp2000.contains 8 = true ∧ pp2000.contains 9 = true</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand2_eight_and_nine_are_the_only_consecutive_perfect_powers_below_two_thousand\">record</a></li><li><code>two_twenty_and_two_eighty_four_are_the_smallest_amicable_pair</code> — <code>aliquot 220 = 284 ∧ aliquot 284 = 220 ∧ (List.range' 2 218).all (fun a =&gt; ¬ (aliquot (aliquot a) == a &amp;&amp; ¬ (aliquot a == a))) ∧ (List.range' 2 218).filter (fun a =&gt; aliquot a == a) = [6, 28]</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand2_two_twenty_and_two_eighty_four_are_the_smallest_amicable_pair\">record</a></li></ol><p><strong>Recompute.</strong> <code>lake env lean src/proof/demand2.lean src/proof/families.lean</code>, or clone <a href=\"https://github.com/ceccec/millennium-solutions\">https://github.com/ceccec/millennium-solutions</a> and run <code>npm run lean</code>. This record was generated by scripts/clusters.ts from the source and the ledger.</p><p><strong>Funding.</strong> Independent research. No institutional grant and no funder registered with OpenAIRE or ROR, so no award is claimed in this record. Development is supported by direct contribution: https://revolut.me/ceccec</p>",
+  "license": "cc-by-nc-nd-4.0",
+  "access_right": "open",
+  "language": "eng",
+  "keywords": [
+    "Lean 4",
+    "machine-checked proof",
+    "formal verification",
+    "Z/9",
+    "content-addressing",
+    "theorem cluster",
+    "the floor",
+    "demand2"
+  ],
+  "communities": [],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.21819217",
+      "relation": "isPartOf"
+    },
+    {
+      "identifier": "https://github.com/ceccec/millennium-solutions/blob/main/src/proof/demand2.lean",
+      "relation": "isSupplementTo"
+    },
+    {
+      "identifier": "https://github.com/ceccec/millennium-solutions/blob/main/src/proof/families.lean",
+      "relation": "references"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand2_nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand2_picks_theorem_holds_for_every_lattice_triangle_in_the_four_grid",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand2_bezouts_identity_is_attained_and_no_smaller_combination_exists",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand2_the_latin_squares_of_order_four_number_five_hundred_and_seventy_six",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand2_the_sum_of_fifth_powers_has_the_closed_form_asked_for",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand2_the_chinese_remainder_theorem_holds_exactly_when_the_moduli_are_coprime",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand2_eight_and_nine_are_the_only_consecutive_perfect_powers_below_two_thousand",
+      "relation": "hasPart"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand2_two_twenty_and_two_eighty_four_are_the_smallest_amicable_pair",
+      "relation": "hasPart"
+    }
+  ],
+  "notes": "cluster demand2.lean · wing the floor · 8 sealed · joint address 3923cc7a-f137-8f83-a0dc-fb8c4bcaba45 · lattice centre (7,0,6,0,5,8,6) · neighbours reversal.lean, coin.lean, light.lean · concept DOI 10.5281/zenodo.21819217 · generated by scripts/clusters.ts — prepared, not uploaded",
+  "files": [
+    "src/proof/demand2.lean",
+    "src/proof/families.lean"
+  ],
+  "cluster": {
+    "file": "demand2.lean",
+    "wing": "the floor",
+    "sealed": 8,
+    "decided": 8,
+    "proved": 0,
+    "declarations": 0,
+    "joint": {
+      "root": "3923cc7a-f137-8f83-a0dc-fb8c4bcaba45",
+      "orderInvariant": true,
+      "bindsEveryReceipt": true
+    },
+    "strands": 7,
+    "binding": [
+      {
+        "def": "sumPow",
+        "theorems": 2
+      },
+      {
+        "def": "tri",
+        "theorems": 2
+      }
+    ],
+    "imports": [
+      "families.lean"
+    ],
+    "dependents": [],
+    "lattice": {
+      "centre": [
+        7,
+        0,
+        6,
+        0,
+        5,
+        8,
+        6
+      ],
+      "within": 15.07,
+      "between": 15.56,
+      "top": [
+        {
+          "file": "reversal.lean",
+          "pairs": 3,
+          "expected": 0.71,
+          "lift": 4.23
+        },
+        {
+          "file": "coin.lean",
+          "pairs": 3,
+          "expected": 1.06,
+          "lift": 2.82
+        },
+        {
+          "file": "light.lean",
+          "pairs": 3,
+          "expected": 1.15,
+          "lift": 2.6
+        }
+      ],
+      "chanceShare": 0.29,
+      "shuffles": 200
+    }
+  }
+}

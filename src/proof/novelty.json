@@ -1,0 +1,751 @@
+{
+ "lean_address_address_bytes_are_bytes": {
+  "key": "lean_address_address_bytes_are_bytes",
+  "file": "address.lean",
+  "name": "address_bytes_are_bytes",
+  "statementHash": "984aa1ef05246f44",
+  "searched": "2026-09-15T04:46:29.066Z",
+  "queries": {
+   "zbmath": "address bytes content addressing",
+   "openalex": "address bytes content addressing",
+   "crossref": "address bytes content addressing",
+   "arxiv": "address AND bytes"
+  },
+  "notMeasured": [
+   "arxiv: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "crossref",
+    "title": "Bytes and Barriers: Addressing Technology-Facilitated Gender-Based Violence for Women and Girls with Disabilities - Roadmap",
+    "year": 2025,
+    "url": "https://doi.org/10.32920/29521907",
+    "relevance": 1,
+    "text": "Bytes and Barriers: Addressing Technology-Facilitated Gender-Based Violence for Women and Girls with Disabilities - Roadmap &lt;p dir=\"ltr\"&gt;The Bytes and Barriers Symposium was a one-day event, focused on technology-facilitated gender-based violence (TFGBV) against women and girls with disabiliti"
+   },
+   {
+    "source": "crossref",
+    "title": "Bytes and Barriers: Addressing Technology-Facilitated Gender-Based Violence for Women and Girls with Disabilities - Roadmap",
+    "year": 2025,
+    "url": "https://doi.org/10.32920/29521907.v1",
+    "relevance": 1,
+    "text": "Bytes and Barriers: Addressing Technology-Facilitated Gender-Based Violence for Women and Girls with Disabilities - Roadmap &lt;p dir=\"ltr\"&gt;The Bytes and Barriers Symposium was a one-day event, focused on technology-facilitated gender-based violence (TFGBV) against women and girls with disabiliti"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_address_address_is_sixteen_bytes": {
+  "key": "lean_address_address_is_sixteen_bytes",
+  "file": "address.lean",
+  "name": "address_is_sixteen_bytes",
+  "statementHash": "0507a5dbcc165f10",
+  "searched": "2026-09-15T04:45:30.175Z",
+  "queries": {
+   "zbmath": "address sixteen bytes content addressing",
+   "openalex": "address sixteen bytes content addressing",
+   "crossref": "address sixteen bytes content addressing",
+   "arxiv": "address AND sixteen AND bytes"
+  },
+  "notMeasured": [
+   "arxiv: rate-limited after backoff"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "openalex",
+    "title": "End-User Mapping",
+    "year": 2015,
+    "url": "https://doi.org/10.1145/2785956.2787500",
+    "relevance": 0.6666666666666666,
+    "text": "End-User Mapping Content Delivery Networks (CDNs) deliver much of the world's web, video, and application content on the Internet today. A key component of a CDN is the mapping system that uses the DNS protocol to route each client's request to a ``proximal'' server that serves the requested content"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_address_addressing_is_deterministic": {
+  "key": "lean_address_addressing_is_deterministic",
+  "file": "address.lean",
+  "name": "addressing_is_deterministic",
+  "statementHash": "903e74e9a953c342",
+  "searched": "2026-09-15T04:46:46.873Z",
+  "queries": {
+   "zbmath": "addressing deterministic content",
+   "openalex": "addressing deterministic content",
+   "crossref": "addressing deterministic content",
+   "arxiv": "addressing AND deterministic"
+  },
+  "notMeasured": [
+   "arxiv: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "HARTEX - a safe real-time kernel for distributed computer control systems",
+    "year": "2002",
+    "url": "https://zbmath.org/1934692",
+    "relevance": 1,
+    "text": "HARTEX - a safe real-time kernel for distributed computer control systems [{\"language\":\"English\",\"reviewer\":{\"author_code\":null,\"reviewer_id\":null,\"name\":null,\"sign\":null},\"text\":\"Summary: A hard real-time kernel is presented for distributed computer control systems (DCCS), highlighting a number of "
+   },
+   {
+    "source": "crossref",
+    "title": "Deterministic Futexes: Addressing WCET and Bounded Interference Concerns",
+    "year": 2019,
+    "url": "https://doi.org/10.1109/rtas.2019.00014",
+    "relevance": 1,
+    "text": "Deterministic Futexes: Addressing WCET and Bounded Interference Concerns "
+   },
+   {
+    "source": "crossref",
+    "title": "Deterministic Addressing of Nanoscale Devices Assembled at Sublithographic Pitches",
+    "year": 2005,
+    "url": "https://doi.org/10.1109/tnano.2005.858587",
+    "relevance": 1,
+    "text": "Deterministic Addressing of Nanoscale Devices Assembled at Sublithographic Pitches "
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_address_addressing_is_injective_on_single_characters": {
+  "key": "lean_address_addressing_is_injective_on_single_characters",
+  "file": "address.lean",
+  "name": "addressing_is_injective_on_single_characters",
+  "statementHash": "1e918d0f50259075",
+  "searched": "2026-09-15T04:46:58.787Z",
+  "queries": {
+   "zbmath": "addressing injective single characters content",
+   "openalex": "addressing injective single characters content",
+   "crossref": "addressing injective single characters content",
+   "arxiv": "addressing AND injective AND single AND characters"
+  },
+  "notMeasured": [
+   "openalex: rate-limited after backoff",
+   "arxiv: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_address_distinct_seeds_give_distinct_addresses": {
+  "key": "lean_address_distinct_seeds_give_distinct_addresses",
+  "file": "address.lean",
+  "name": "distinct_seeds_give_distinct_addresses",
+  "statementHash": "0994ea842625c7b7",
+  "searched": "2026-09-15T04:46:52.806Z",
+  "queries": {
+   "zbmath": "distinct seeds give addresses content addressing",
+   "openalex": "distinct seeds give addresses content addressing",
+   "crossref": "distinct seeds give addresses content addressing",
+   "arxiv": "distinct AND seeds AND give AND addresses"
+  },
+  "notMeasured": [
+   "arxiv: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_address_raw_bytes_of_a": {
+  "key": "lean_address_raw_bytes_of_a",
+  "file": "address.lean",
+  "name": "raw_bytes_of_a",
+  "statementHash": "22d7f250d5a60df9",
+  "searched": "2026-09-15T04:43:05.354Z",
+  "queries": {
+   "zbmath": "raw bytes content addressing",
+   "openalex": "raw bytes content addressing",
+   "crossref": "raw bytes content addressing",
+   "arxiv": "raw AND bytes"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "TOO_FEW_TERMS"
+ },
+ "lean_address_to_uuid_bytes_of_a": {
+  "key": "lean_address_to_uuid_bytes_of_a",
+  "file": "address.lean",
+  "name": "to_uuid_bytes_of_a",
+  "statementHash": "58daeefc12bf7453",
+  "searched": "2026-09-15T04:43:05.356Z",
+  "queries": {
+   "zbmath": "uuid bytes content addressing",
+   "openalex": "uuid bytes content addressing",
+   "crossref": "uuid bytes content addressing",
+   "arxiv": "uuid AND bytes"
+  },
+  "notMeasured": [
+   "arxiv: rate-limited after backoff"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_address_to_uuid_bytes_of_uuidna": {
+  "key": "lean_address_to_uuid_bytes_of_uuidna",
+  "file": "address.lean",
+  "name": "to_uuid_bytes_of_uuidna",
+  "statementHash": "a2ddd1cf2e209e2a",
+  "searched": "2026-09-15T04:44:48.304Z",
+  "queries": {
+   "zbmath": "uuid bytes uuidna content addressing",
+   "openalex": "uuid bytes uuidna content addressing",
+   "crossref": "uuid bytes uuidna content addressing",
+   "arxiv": "uuid AND bytes AND uuidna"
+  },
+  "notMeasured": [
+   "arxiv: rate-limited after backoff"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_address_variant_bits_are_forced": {
+  "key": "lean_address_variant_bits_are_forced",
+  "file": "address.lean",
+  "name": "variant_bits_are_forced",
+  "statementHash": "0a5f6b61b8e81af1",
+  "searched": "2026-09-15T04:46:40.957Z",
+  "queries": {
+   "zbmath": "variant bits forced content addressing",
+   "openalex": "variant bits forced content addressing",
+   "crossref": "variant bits forced content addressing",
+   "arxiv": "variant AND bits AND forced"
+  },
+  "notMeasured": [
+   "arxiv: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_address_version_nibble_is_forced": {
+  "key": "lean_address_version_nibble_is_forced",
+  "file": "address.lean",
+  "name": "version_nibble_is_forced",
+  "statementHash": "9ca200276d2bf5c8",
+  "searched": "2026-09-15T04:46:35.092Z",
+  "queries": {
+   "zbmath": "version nibble forced content addressing",
+   "openalex": "version nibble forced content addressing",
+   "crossref": "version nibble forced content addressing",
+   "arxiv": "version AND nibble AND forced"
+  },
+  "notMeasured": [
+   "arxiv: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_flow_navier_stokes_flow_is_bounded_for_every_step": {
+  "key": "lean_flow_navier_stokes_flow_is_bounded_for_every_step",
+  "file": "flow.lean",
+  "name": "navier_stokes_flow_is_bounded_for_every_step",
+  "statementHash": "5507f4d0706d60e9",
+  "searched": "2026-09-15T04:20:12.898Z",
+  "queries": {
+   "zbmath": "flow bounded step multiplicative order modulo",
+   "openalex": "flow bounded step multiplicative order modulo",
+   "crossref": "flow bounded step multiplicative order modulo",
+   "arxiv": "flow AND bounded AND step"
+  },
+  "notMeasured": [
+   "arxiv: rate-limited after backoff"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_flow_the_doubling_flow_is_its_first_six_steps": {
+  "key": "lean_flow_the_doubling_flow_is_its_first_six_steps",
+  "file": "flow.lean",
+  "name": "the_doubling_flow_is_its_first_six_steps",
+  "statementHash": "f3535270611672a4",
+  "searched": "2026-09-15T04:18:50.273Z",
+  "queries": {
+   "zbmath": "doubling flow steps multiplicative order modulo",
+   "openalex": "doubling flow steps multiplicative order modulo",
+   "crossref": "doubling flow steps multiplicative order modulo",
+   "arxiv": "doubling AND flow AND steps"
+  },
+  "notMeasured": [
+   "arxiv: rate-limited after backoff"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_flow_the_doubling_flow_repeats_every_six_steps": {
+  "key": "lean_flow_the_doubling_flow_repeats_every_six_steps",
+  "file": "flow.lean",
+  "name": "the_doubling_flow_repeats_every_six_steps",
+  "statementHash": "30a13ca709cc2212",
+  "searched": "2026-09-15T04:18:07.030Z",
+  "queries": {
+   "zbmath": "doubling flow repeats steps multiplicative order modulo",
+   "openalex": "doubling flow repeats steps multiplicative order modulo",
+   "crossref": "doubling flow repeats steps multiplicative order modulo",
+   "arxiv": "doubling AND flow AND repeats AND steps"
+  },
+  "notMeasured": [
+   "arxiv: rate-limited after backoff"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NOT_MEASURED"
+ },
+ "lean_split_a_seal_divides_into_payments_and_multiplies_back": {
+  "key": "lean_split_a_seal_divides_into_payments_and_multiplies_back",
+  "file": "split.lean",
+  "name": "a_seal_divides_into_payments_and_multiplies_back",
+  "statementHash": "2bd7913032d6d578",
+  "searched": "2026-09-15T04:41:50.935Z",
+  "queries": {
+   "oeis 1,2,4,8,16,32,64,128": "1,2,4,8,16,32,64,128",
+   "zbmath": "seal divides payments multiplies back",
+   "openalex": "seal divides payments multiplies back",
+   "crossref": "seal divides payments multiplies back",
+   "arxiv": "seal AND divides AND payments AND multiplies AND back"
+  },
+  "notMeasured": [
+   "arxiv: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [
+   {
+    "a": "A000079",
+    "name": "Powers of 2: a(n) = 2^n.",
+    "query": "1,2,4,8,16,32,64,128"
+   },
+   {
+    "a": "A320487",
+    "name": "a(0) = 1; thereafter a(n) is obtained by applying the \"delete multiple digits\" map m -> A320485(m) to 2*a(n-1).",
+    "query": "1,2,4,8,16,32,64,128"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_split_addition_and_multiplication_stay_inside": {
+  "key": "lean_split_addition_and_multiplication_stay_inside",
+  "file": "split.lean",
+  "name": "addition_and_multiplication_stay_inside",
+  "statementHash": "b4b265c45ea0a779",
+  "searched": "2026-09-15T04:40:38.686Z",
+  "queries": {
+   "zbmath": "addition multiplication stay inside",
+   "openalex": "addition multiplication stay inside",
+   "crossref": "addition multiplication stay inside",
+   "arxiv": "addition AND multiplication AND stay AND inside"
+  },
+  "notMeasured": [
+   "arxiv: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_split_division_is_the_operation_that_leaves": {
+  "key": "lean_split_division_is_the_operation_that_leaves",
+  "file": "split.lean",
+  "name": "division_is_the_operation_that_leaves",
+  "statementHash": "6d7599905c245f27",
+  "searched": "2026-09-15T04:40:50.859Z",
+  "queries": {
+   "zbmath": "division operation leaves",
+   "openalex": "division operation leaves",
+   "crossref": "division operation leaves",
+   "arxiv": "division AND operation AND leaves"
+  },
+  "notMeasured": [
+   "arxiv: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_split_each_pair_is_two_consecutive_units": {
+  "key": "lean_split_each_pair_is_two_consecutive_units",
+  "file": "split.lean",
+  "name": "each_pair_is_two_consecutive_units",
+  "statementHash": "385d57d08a5bfa8f",
+  "searched": "2026-09-15T04:37:49.726Z",
+  "queries": {
+   "zbmath": "pair consecutive units",
+   "openalex": "pair consecutive units",
+   "crossref": "pair consecutive units",
+   "arxiv": "pair AND consecutive AND units"
+  },
+  "notMeasured": [
+   "arxiv: rate-limited after backoff"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_split_every_root_is_a_single": {
+  "key": "lean_split_every_root_is_a_single",
+  "file": "split.lean",
+  "name": "every_root_is_a_single",
+  "statementHash": "62d50c1db319aa56",
+  "searched": "2026-09-15T04:41:05.781Z",
+  "queries": {
+   "zbmath": "root single",
+   "openalex": "root single",
+   "crossref": "root single",
+   "arxiv": "root AND single"
+  },
+  "notMeasured": [
+   "arxiv: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_split_every_token_is_a_multiple_of_three": {
+  "key": "lean_split_every_token_is_a_multiple_of_three",
+  "file": "split.lean",
+  "name": "every_token_is_a_multiple_of_three",
+  "statementHash": "6aa07116db5bf21b",
+  "searched": "2026-09-15T04:39:02.082Z",
+  "queries": {
+   "zbmath": "token multiple",
+   "openalex": "token multiple",
+   "crossref": "token multiple",
+   "arxiv": "token AND multiple"
+  },
+  "notMeasured": [
+   "arxiv: rate-limited after backoff"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_split_every_token_is_void_bound_or_halts_on_three": {
+  "key": "lean_split_every_token_is_void_bound_or_halts_on_three",
+  "file": "split.lean",
+  "name": "every_token_is_void_bound_or_halts_on_three",
+  "statementHash": "b461fd11a2188c4b",
+  "searched": "2026-09-15T04:41:38.561Z",
+  "queries": {
+   "zbmath": "token void bound halts",
+   "openalex": "token void bound halts",
+   "crossref": "token void bound halts",
+   "arxiv": "token AND void AND bound AND halts"
+  },
+  "notMeasured": [
+   "arxiv: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_split_inside_this_ideal_the_bare_coin_sorts_as_the_scaled_one": {
+  "key": "lean_split_inside_this_ideal_the_bare_coin_sorts_as_the_scaled_one",
+  "file": "split.lean",
+  "name": "inside_this_ideal_the_bare_coin_sorts_as_the_scaled_one",
+  "statementHash": "5fd3ff702cf1fd25",
+  "searched": "2026-09-15T04:41:44.535Z",
+  "queries": {
+   "zbmath": "inside ideal bare coin sorts",
+   "openalex": "inside ideal bare coin sorts",
+   "crossref": "inside ideal bare coin sorts",
+   "arxiv": "inside AND ideal AND bare AND coin AND sorts"
+  },
+  "notMeasured": [
+   "arxiv: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_split_paying_and_refunding_coins_on_the_last_pair_round_trips": {
+  "key": "lean_split_paying_and_refunding_coins_on_the_last_pair_round_trips",
+  "file": "split.lean",
+  "name": "paying_and_refunding_coins_on_the_last_pair_round_trips",
+  "statementHash": "167eaa2e32fa9f30",
+  "searched": "2026-09-15T04:41:17.579Z",
+  "queries": {
+   "zbmath": "paying refunding coins pair round",
+   "openalex": "paying refunding coins pair round",
+   "crossref": "paying refunding coins pair round",
+   "arxiv": "paying AND refunding AND coins AND pair AND round"
+  },
+  "notMeasured": [
+   "arxiv: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_split_sixty_four_is_where_the_doubling_returns": {
+  "key": "lean_split_sixty_four_is_where_the_doubling_returns",
+  "file": "split.lean",
+  "name": "sixty_four_is_where_the_doubling_returns",
+  "statementHash": "b8dd21a22f2cd4b2",
+  "searched": "2026-09-15T04:41:58.940Z",
+  "queries": {
+   "oeis 1,2,4,8,7,5": "1,2,4,8,7,5",
+   "zbmath": "sixty doubling returns",
+   "openalex": "sixty doubling returns",
+   "crossref": "sixty doubling returns",
+   "arxiv": "sixty AND doubling AND returns"
+  },
+  "notMeasured": [
+   "arxiv: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [
+   {
+    "a": "A001370",
+    "name": "Sum of digits of 2^n.",
+    "query": "1,2,4,8,7,5"
+   },
+   {
+    "a": "A153130",
+    "name": "Period 6: repeat [1, 2, 4, 8, 7, 5].",
+    "query": "1,2,4,8,7,5"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_split_subtraction_stays_inside": {
+  "key": "lean_split_subtraction_stays_inside",
+  "file": "split.lean",
+  "name": "subtraction_stays_inside",
+  "statementHash": "994fef3f211ac348",
+  "searched": "2026-09-15T04:40:44.696Z",
+  "queries": {
+   "zbmath": "subtraction stays inside",
+   "openalex": "subtraction stays inside",
+   "crossref": "subtraction stays inside",
+   "arxiv": "subtraction AND stays AND inside"
+  },
+  "notMeasured": [
+   "arxiv: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_split_the_coin_step_and_the_coins_are_inverse": {
+  "key": "lean_split_the_coin_step_and_the_coins_are_inverse",
+  "file": "split.lean",
+  "name": "the_coin_step_and_the_coins_are_inverse",
+  "statementHash": "75a15bb39967b3f8",
+  "searched": "2026-09-15T04:41:11.819Z",
+  "queries": {
+   "zbmath": "coin step coins inverse",
+   "openalex": "coin step coins inverse",
+   "crossref": "coin step coins inverse",
+   "arxiv": "coin AND step AND coins AND inverse"
+  },
+  "notMeasured": [
+   "arxiv: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_split_the_exhaustible_tokens_are_those_six_divides": {
+  "key": "lean_split_the_exhaustible_tokens_are_those_six_divides",
+  "file": "split.lean",
+  "name": "the_exhaustible_tokens_are_those_six_divides",
+  "statementHash": "c74bed3627607126",
+  "searched": "2026-09-15T04:41:23.249Z",
+  "queries": {
+   "oeis 0,12,6,78": "0,12,6,78",
+   "zbmath": "exhaustible tokens divides",
+   "openalex": "exhaustible tokens divides",
+   "crossref": "exhaustible tokens divides",
+   "arxiv": "exhaustible AND tokens AND divides"
+  },
+  "notMeasured": [
+   "arxiv: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_split_the_orbit_turns_once_per_budget": {
+  "key": "lean_split_the_orbit_turns_once_per_budget",
+  "file": "split.lean",
+  "name": "the_orbit_turns_once_per_budget",
+  "statementHash": "1b2e0383ed7d1dfc",
+  "searched": "2026-09-15T04:42:07.484Z",
+  "queries": {
+   "zbmath": "orbit turns once budget",
+   "openalex": "orbit turns once budget",
+   "crossref": "orbit turns once budget",
+   "arxiv": "orbit AND turns AND once AND budget"
+  },
+  "notMeasured": [
+   "arxiv: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_split_the_pairs_are_exactly_the_units_in_order": {
+  "key": "lean_split_the_pairs_are_exactly_the_units_in_order",
+  "file": "split.lean",
+  "name": "the_pairs_are_exactly_the_units_in_order",
+  "statementHash": "a3ff64e9d198c8cb",
+  "searched": "2026-09-15T04:36:35.131Z",
+  "queries": {
+   "oeis 1,2,4,5,7,8": "1,2,4,5,7,8",
+   "zbmath": "pairs units order",
+   "openalex": "pairs units order",
+   "crossref": "pairs units order",
+   "arxiv": "pairs AND units AND order"
+  },
+  "notMeasured": [
+   "arxiv: rate-limited after backoff"
+  ],
+  "oeis": [
+   {
+    "a": "A001651",
+    "name": "Numbers not divisible by 3.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A032924",
+    "name": "Numbers whose ternary expansion contains no 0.",
+    "query": "1,2,4,5,7,8"
+   },
+   {
+    "a": "A020914",
+    "name": "Number of digits in the base-2 representation of 3^n.",
+    "query": "1,2,4,5,7,8"
+   }
+  ],
+  "catalogued": true,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_split_the_rest_halt_on_the_generator": {
+  "key": "lean_split_the_rest_halt_on_the_generator",
+  "file": "split.lean",
+  "name": "the_rest_halt_on_the_generator",
+  "statementHash": "3b5c089f16d7315a",
+  "searched": "2026-09-15T04:41:32.527Z",
+  "queries": {
+   "zbmath": "rest halt generator",
+   "openalex": "rest halt generator",
+   "crossref": "rest halt generator",
+   "arxiv": "rest AND halt AND generator"
+  },
+  "notMeasured": [
+   "arxiv: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_split_the_roots_are_the_singles": {
+  "key": "lean_split_the_roots_are_the_singles",
+  "file": "split.lean",
+  "name": "the_roots_are_the_singles",
+  "statementHash": "9402aac2112ef0ef",
+  "searched": "2026-09-15T04:40:57.251Z",
+  "queries": {
+   "oeis 0,3,3,0,6,6,0": "0,3,3,0,6,6,0",
+   "zbmath": "roots singles",
+   "openalex": "roots singles",
+   "crossref": "roots singles",
+   "arxiv": "roots AND singles"
+  },
+  "notMeasured": [
+   "arxiv: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "The Weierstrass preparation theorem and resultants of \\(p\\)-adic power series",
+    "year": "2021",
+    "url": "https://zbmath.org/7324085",
+    "relevance": 1,
+    "text": "The Weierstrass preparation theorem and resultants of \\(p\\)-adic power series [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"moutaoukil.mouad\",\"reviewer_id\":\"17494\",\"name\":\"Mouad Moutaoukil\",\"sign\":\"Mouad Moutaoukil (Fès)\"},\"text\":\"In this article, the author defines the resultant of two power se"
+   },
+   {
+    "source": "zbmath",
+    "title": "Tits polygons. With an appendix by Holger P. Petersson",
+    "year": "2022",
+    "url": "https://zbmath.org/7492810",
+    "relevance": 1,
+    "text": "Tits polygons. With an appendix by Holger P. Petersson [{\"language\":\"English\",\"reviewer\":{\"author_code\":\"van-maldeghem.hendrik-j\",\"reviewer_id\":\"6515\",\"name\":\"Hendrik Van Maldeghem\",\"sign\":\"Hendrik Van Maldeghem (Gent)\"},\"text\":\"Tits \\\\(n\\\\)-gons are a generalization of Moufang \\\\(n\\\\)-gons in that "
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_split_the_singles_are_exactly_the_non_units": {
+  "key": "lean_split_the_singles_are_exactly_the_non_units",
+  "file": "split.lean",
+  "name": "the_singles_are_exactly_the_non_units",
+  "statementHash": "5ff017edd1913884",
+  "searched": "2026-09-15T04:36:21.558Z",
+  "queries": {
+   "zbmath": "singles non units",
+   "openalex": "singles non units",
+   "crossref": "singles non units",
+   "arxiv": "singles AND non AND units"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
+ "lean_split_the_tokens_are_three_times_these": {
+  "key": "lean_split_the_tokens_are_three_times_these",
+  "file": "split.lean",
+  "name": "the_tokens_are_three_times_these",
+  "statementHash": "b7a7634ea044b963",
+  "searched": "2026-09-15T04:40:29.621Z",
+  "queries": {
+   "oeis 0,4,1,15,2,26,3": "0,4,1,15,2,26,3",
+   "zbmath": "tokens times",
+   "openalex": "tokens times",
+   "crossref": "tokens times",
+   "arxiv": "tokens AND times"
+  },
+  "notMeasured": [
+   "arxiv: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ }
+}
