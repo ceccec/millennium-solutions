@@ -16000,5 +16000,47 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "50c8ad36-d08a-835c-8d63-559ac849c2cc"
+  },
+  {
+    "key": "lean_address_the_version_stamp_keeps_the_low_nibble_of_every_byte",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "913d0338-59bc-8288-9605-1d01e8840e56"
+  },
+  {
+    "key": "lean_address_the_variant_stamp_keeps_the_low_six_bits_of_every_byte",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "fbc0f2d4-3490-8d68-826a-409a50982c5a"
+  },
+  {
+    "key": "lean_address_stamping_twice_is_stamping_once",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c397ec59-2a56-80ab-b46d-0635a5fccb92"
+  },
+  {
+    "key": "lean_demand3_the_two_coin_fare_is_minus_the_euler_characteristic_at_genus_two",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "665800be-8ca8-82b8-8b2e-d80ed0b448d9"
+  },
+  {
+    "key": "lean_address_the_third_group_is_version_eight_over_twelve_hash_bits",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "136a86a7-b50b-8cf4-b273-943a5144e674"
+  },
+  {
+    "key": "lean_address_the_fourth_group_is_variant_two_over_fourteen_hash_bits",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "087841c4-271d-88a9-bc1e-0f97cbea43a6"
+  },
+  {
+    "key": "lean_fnv_the_split_multiply_is_the_exact_thirty_two_bit_product",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "71d78d5c-0f87-8ff8-84ed-47fb86f64116"
   }
 ]

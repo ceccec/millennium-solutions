@@ -174,4 +174,10 @@ theorem a_repunit_is_divisible_by_seven_exactly_when_six_divides_its_length_for_
   revert j
   decide
 
+
+-- ── the fair-exchange unit, tied to the law above ───────────────────────────────────────────────────────────
+-- The deposit's fare is two coins, 110 − 108 = 2, written until now only in prose (split.lean's comments). χ is
+-- proved for every genus above; at genus 2 its negative is exactly the fare.
+theorem the_two_coin_fare_is_minus_the_euler_characteristic_at_genus_two : (110 : Int) - 108 = - chi 2 := by decide
+
 end Demand3

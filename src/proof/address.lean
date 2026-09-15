@@ -88,8 +88,8 @@ theorem addressing_is_not_constant : toUuidBytes [1] ≠ toUuidBytes [2] := by d
 -- ── the four seeds genuinely differ, so the four words are independent draws ──
 theorem the_four_seeds_are_distinct : (SEEDS.eraseDups).length = 4 := by decide
 
-def settledHere : Nat := 17
-theorem address_settles_its_range : settledHere = 17 := rfl
+def settledHere : Nat := 20
+theorem address_settles_its_range : settledHere = 20 := rfl
 
 
 
@@ -113,5 +113,35 @@ theorem the_address_is_not_the_payload :
 -- any function of the multiset alone makes these equal
 theorem the_address_is_order_sensitive :
   toUuidBytes [97, 98] ≠ toUuidBytes [98, 97] := by decide
+
+
+-- ── the stamp's fields, for every byte ──────────────────────────────────────────────────────────────────────
+-- 128 bits − 4 (version) − 2 (variant) = 122 hash bits. Byte 6 keeps its low nibble under the version 8, byte 8
+-- keeps its low six bits under the variant 10, stamping twice is stamping once, and so the third group is always
+-- version 8 over exactly twelve hash bits and the fourth is always variant 10 over exactly fourteen. The address
+-- is a commitment to its content, not a store of it: 122 bits is also all a 122-qubit register could yield (Holevo).
+theorem the_version_stamp_keeps_the_low_nibble_of_every_byte :
+    ∀ b : Nat, b < 256 → or8 (and8 b 15) 128 = 128 + b % 16 := by decide
+
+theorem the_variant_stamp_keeps_the_low_six_bits_of_every_byte :
+    ∀ b : Nat, b < 256 → or8 (and8 b 63) 128 = 128 + b % 64 := by decide
+
+theorem stamping_twice_is_stamping_once :
+    ∀ b : Nat, b < 256 → or8 (and8 (or8 (and8 b 15) 128) 15) 128 = or8 (and8 b 15) 128 ∧
+      or8 (and8 (or8 (and8 b 63) 128) 63) 128 = or8 (and8 b 63) 128 := by decide
+
+theorem the_third_group_is_version_eight_over_twelve_hash_bits :
+    ∀ b6 b7 : Nat, b6 < 256 → b7 < 256 →
+      (or8 (and8 b6 15) 128) * 256 + b7 = 8 * 4096 + (b6 % 16 * 256 + b7) ∧ b6 % 16 * 256 + b7 < 4096 := by
+  intro b6 b7 h6 h7
+  rw [the_version_stamp_keeps_the_low_nibble_of_every_byte b6 h6]
+  exact ⟨by omega, by omega⟩
+
+theorem the_fourth_group_is_variant_two_over_fourteen_hash_bits :
+    ∀ b8 b9 : Nat, b8 < 256 → b9 < 256 →
+      (or8 (and8 b8 63) 128) * 256 + b9 = 2 * 16384 + (b8 % 64 * 256 + b9) ∧ b8 % 64 * 256 + b9 < 16384 := by
+  intro b8 b9 h8 h9
+  rw [the_variant_stamp_keeps_the_low_six_bits_of_every_byte b8 h8]
+  exact ⟨by omega, by omega⟩
 
 end Address

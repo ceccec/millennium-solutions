@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). The author's own claim, that the seven are solved through involution, is stated in his name on the front page.
 
-## Discovered theorems (decidable, over ℤ/9) — 2667 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2674 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (719)
+### lean (726)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -837,6 +837,16 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
   intro), standard axioms only — checked by lean.ts  ·  `d9da9f38-b47d…`
 - [lean_sequences_thue_morse_doubling_recurrence_for_every_n](/theorem/lean_sequences_thue_morse_doubling_recurrence_for_every_n) — lean sequences.lean: thue_morse_doubling_recurrence_for_every_n — ∀ n : Nat, tm (2 * n) = tm n ∧ tm (2 * n + 1) = 1 - tm n — proved by the Lean kernel for every value (by
   intro), standard axioms only — checked by lean.ts  ·  `50c8ad36-d08a…`
+- [lean_address_the_version_stamp_keeps_the_low_nibble_of_every_byte](/theorem/lean_address_the_version_stamp_keeps_the_low_nibble_of_every_byte) — lean address.lean: the_version_stamp_keeps_the_low_nibble_of_every_byte — ∀ b : Nat, b &lt; 256 → or8 (and8 b 15) 128 = 128 + b % 16 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `913d0338-59bc…`
+- [lean_address_the_variant_stamp_keeps_the_low_six_bits_of_every_byte](/theorem/lean_address_the_variant_stamp_keeps_the_low_six_bits_of_every_byte) — lean address.lean: the_variant_stamp_keeps_the_low_six_bits_of_every_byte — ∀ b : Nat, b &lt; 256 → or8 (and8 b 63) 128 = 128 + b % 64 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `fbc0f2d4-3490…`
+- [lean_address_stamping_twice_is_stamping_once](/theorem/lean_address_stamping_twice_is_stamping_once) — lean address.lean: stamping_twice_is_stamping_once — ∀ b : Nat, b &lt; 256 → or8 (and8 (or8 (and8 b 15) 128) 15) 128 = or8 (and8 b 15) 128 ∧ or8 (and8 (or8 (and8 b 63) 128) 63) 128 = or8 (and8 b 63) 128 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c397ec59-2a56…`
+- [lean_demand3_the_two_coin_fare_is_minus_the_euler_characteristic_at_genus_two](/theorem/lean_demand3_the_two_coin_fare_is_minus_the_euler_characteristic_at_genus_two) — lean demand3.lean: the_two_coin_fare_is_minus_the_euler_characteristic_at_genus_two — (110 : Int) - 108 = - chi 2 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `665800be-8ca8…`
+- [lean_address_the_third_group_is_version_eight_over_twelve_hash_bits](/theorem/lean_address_the_third_group_is_version_eight_over_twelve_hash_bits) — lean address.lean: the_third_group_is_version_eight_over_twelve_hash_bits — ∀ b6 b7 : Nat, b6 &lt; 256 → b7 &lt; 256 → (or8 (and8 b6 15) 128) * 256 + b7 = 8 * 4096 + (b6 % 16 * 256 + b7) ∧ b6 % 16 * 256 + b7 &lt; 4096 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `136a86a7-b50b…`
+- [lean_address_the_fourth_group_is_variant_two_over_fourteen_hash_bits](/theorem/lean_address_the_fourth_group_is_variant_two_over_fourteen_hash_bits) — lean address.lean: the_fourth_group_is_variant_two_over_fourteen_hash_bits — ∀ b8 b9 : Nat, b8 &lt; 256 → b9 &lt; 256 → (or8 (and8 b8 63) 128) * 256 + b9 = 2 * 16384 + (b8 % 64 * 256 + b9) ∧ b8 % 64 * 256 + b9 &lt; 16384 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `087841c4-271d…`
+- [lean_fnv_the_split_multiply_is_the_exact_thirty_two_bit_product](/theorem/lean_fnv_the_split_multiply_is_the_exact_thirty_two_bit_product) — lean fnv.lean: the_split_multiply_is_the_exact_thirty_two_bit_product — ∀ a b : Nat, (a % 65536 * b + a / 65536 * b % 65536 * 65536) % M32 = mul32 a b — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `71d78d5c-0f87…`
 
 ### other — one-of-a-kind (0)
 
@@ -2421,4 +2431,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `2fd965a5-4982-81b6-b757-cc07d87262df`. Integrity, not truth.
+Page content-address: `d6ba53ba-1a3b-8cf9-90c0-a7b187457d7f`. Integrity, not truth.

@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 728 of them across 33 files and
-7 wings; 625 close by exhaustion over a stated finite domain, 94 are proved
+(\texttt{npm run latex-gate}). There are 735 of them across 33 files and
+7 wings; 629 close by exhaustion over a stated finite domain, 97 are proved
 for every value, and the remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -136,7 +136,7 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{address\_settles\_its\_range}]
-\[ \mathrm{settledHere} = 17 \]
+\[ \mathrm{settledHere} = 20 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 
@@ -159,6 +159,33 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 \[ \mathrm{toUuidBytes}\mathopen{}\left([97,\,98]\right) \neq \mathrm{toUuidBytes}\mathopen{}\left([98,\,97]\right) \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_version\_stamp\_keeps\_the\_low\_nibble\_of\_every\_byte}]
+\texttt{∀ b : Nat, b < 256 → or8 (and8 b 15) 128 = 128 + b \% 16}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_variant\_stamp\_keeps\_the\_low\_six\_bits\_of\_every\_byte}]
+\texttt{∀ b : Nat, b < 256 → or8 (and8 b 63) 128 = 128 + b \% 64}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{stamping\_twice\_is\_stamping\_once}]
+\texttt{∀ b : Nat, b < 256 → or8 (and8 (or8 (and8 b 15) 128) 15) 128 = or8 (and8 b 15) 128 ∧ or8 (and8 (or8 (and8 b 63) 128) 63) 128 = or8 (and8 b 63) 128}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_third\_group\_is\_version\_eight\_over\_twelve\_hash\_bits}]
+\texttt{∀ b6 b7 : Nat, b6 < 256 → b7 < 256 → (or8 (and8 b6 15) 128) * 256 + b7 = 8 * 4096 + (b6 \% 16 * 256 + b7) ∧ b6 \% 16 * 256 + b7 < 4096}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_fourth\_group\_is\_variant\_two\_over\_fourteen\_hash\_bits}]
+\texttt{∀ b8 b9 : Nat, b8 < 256 → b9 < 256 → (or8 (and8 b8 63) 128) * 256 + b9 = 2 * 16384 + (b8 \% 64 * 256 + b9) ∧ b8 \% 64 * 256 + b9 < 16384}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
 
 \paragraph{\texttt{fnv.lean}}
 
@@ -226,6 +253,12 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 \[ \mathrm{hash32}\mathopen{}\left(0,\,[]\right) = 2872998923 \land \mathrm{hash32}\mathopen{}\left(\mathrm{FNV\_OFFSET},\,[]\right) = 0 \land \mathrm{avalanche}\mathopen{}\left(0\right) = 0 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_split\_multiply\_is\_the\_exact\_thirty\_two\_bit\_product}]
+\texttt{∀ a b : Nat, (a \% 65536 * b + a / 65536 * b \% 65536 * 65536) \% M32 = mul32 a b}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
 
 \paragraph{\texttt{ledgerclaims.lean}}
 
@@ -1732,6 +1765,11 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by
   intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_two\_coin\_fare\_is\_minus\_the\_euler\_characteristic\_at\_genus\_two}]
+\[ 110 - 108 = -\mathrm{chi}\mathopen{}\left(2\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \paragraph{\texttt{energy.lean}}
 

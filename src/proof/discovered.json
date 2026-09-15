@@ -19086,5 +19086,40 @@
     "key": "lean_sequences_thue_morse_doubling_recurrence_for_every_n",
     "name": "lean sequences.lean: thue_morse_doubling_recurrence_for_every_n — ∀ n : Nat, tm (2 * n) = tm n ∧ tm (2 * n + 1) = 1 - tm n — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
     "receipt": "50c8ad36-d08a-835c-8d63-559ac849c2cc"
+  },
+  {
+    "key": "lean_address_the_version_stamp_keeps_the_low_nibble_of_every_byte",
+    "name": "lean address.lean: the_version_stamp_keeps_the_low_nibble_of_every_byte — ∀ b : Nat, b < 256 → or8 (and8 b 15) 128 = 128 + b % 16 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "913d0338-59bc-8288-9605-1d01e8840e56"
+  },
+  {
+    "key": "lean_address_the_variant_stamp_keeps_the_low_six_bits_of_every_byte",
+    "name": "lean address.lean: the_variant_stamp_keeps_the_low_six_bits_of_every_byte — ∀ b : Nat, b < 256 → or8 (and8 b 63) 128 = 128 + b % 64 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "fbc0f2d4-3490-8d68-826a-409a50982c5a"
+  },
+  {
+    "key": "lean_address_stamping_twice_is_stamping_once",
+    "name": "lean address.lean: stamping_twice_is_stamping_once — ∀ b : Nat, b < 256 → or8 (and8 (or8 (and8 b 15) 128) 15) 128 = or8 (and8 b 15) 128 ∧ or8 (and8 (or8 (and8 b 63) 128) 63) 128 = or8 (and8 b 63) 128 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c397ec59-2a56-80ab-b46d-0635a5fccb92"
+  },
+  {
+    "key": "lean_demand3_the_two_coin_fare_is_minus_the_euler_characteristic_at_genus_two",
+    "name": "lean demand3.lean: the_two_coin_fare_is_minus_the_euler_characteristic_at_genus_two — (110 : Int) - 108 = - chi 2 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "665800be-8ca8-82b8-8b2e-d80ed0b448d9"
+  },
+  {
+    "key": "lean_address_the_third_group_is_version_eight_over_twelve_hash_bits",
+    "name": "lean address.lean: the_third_group_is_version_eight_over_twelve_hash_bits — ∀ b6 b7 : Nat, b6 < 256 → b7 < 256 → (or8 (and8 b6 15) 128) * 256 + b7 = 8 * 4096 + (b6 % 16 * 256 + b7) ∧ b6 % 16 * 256 + b7 < 4096 — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "136a86a7-b50b-8cf4-b273-943a5144e674"
+  },
+  {
+    "key": "lean_address_the_fourth_group_is_variant_two_over_fourteen_hash_bits",
+    "name": "lean address.lean: the_fourth_group_is_variant_two_over_fourteen_hash_bits — ∀ b8 b9 : Nat, b8 < 256 → b9 < 256 → (or8 (and8 b8 63) 128) * 256 + b9 = 2 * 16384 + (b8 % 64 * 256 + b9) ∧ b8 % 64 * 256 + b9 < 16384 — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "087841c4-271d-88a9-bc1e-0f97cbea43a6"
+  },
+  {
+    "key": "lean_fnv_the_split_multiply_is_the_exact_thirty_two_bit_product",
+    "name": "lean fnv.lean: the_split_multiply_is_the_exact_thirty_two_bit_product — ∀ a b : Nat, (a % 65536 * b + a / 65536 * b % 65536 * 65536) % M32 = mul32 a b — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
+    "receipt": "71d78d5c-0f87-8ff8-84ed-47fb86f64116"
   }
 ]

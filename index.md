@@ -17,12 +17,12 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 728 kernel-accepted declarations across 33 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `3b8d9270-258d-88a3-bd23-7e0eb433194d`</sub>
-- 625 of those 728 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 103 close by rfl and are declarations.
-  <sub>SEALED · `b0e81bc2-09ff-87e3-8328-a5fb592f8ed5`</sub>
-- 803 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `e9d67e29-0473-8eda-8d19-e02a368f63a7`</sub>
+- The formal layer holds 735 kernel-accepted declarations across 33 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `70327bfe-a124-8316-8a39-2d90c7a2e3b5`</sub>
+- 629 of those 735 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 106 close by rfl and are declarations.
+  <sub>SEALED · `6a4db423-80e6-8296-a688-c52a7f375436`</sub>
+- 810 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `9250535d-47e0-83a7-b331-bc1114e53b4a`</sub>
 
 ## 2 · The ring
 
@@ -38,17 +38,17 @@ last because the orbit never reaches it.
 
 ## 8 · Addressing
 
-- The content-address is ported to the formal layer in fnv.lean, address.lean, merkle.lean — 43 theorems covering FNV-1a, the four seeded passes, the version and variant nibbles, and the fold, each agreeing with the shipped implementation at published values.
-  <sub>SEALED · `ad9565e8-f0b9-8c94-abca-8c2e954b5b87`</sub>
+- The content-address is ported to the formal layer in fnv.lean, address.lean, merkle.lean — 49 theorems covering FNV-1a, the four seeded passes, the version and variant nibbles, and the fold, each agreeing with the shipped implementation at published values.
+  <sub>SEALED · `ea278ba2-b4aa-864d-b22c-7d1ef73c789f`</sub>
 - The fold does not depend on the order its leaves arrive in, and that is not vacuous because merge itself is proved order-sensitive — the sort is what removes the dependence.
   <sub>SEALED · `7ee1de7d-d218-88d4-8dc9-6eec451ced72`</sub>
 
 ## 7 · The ledger
 
-- The ledger records 2667 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `0fd051c2-4803-8fad-9d46-c98f8473f7bf`</sub>
-- The count is 2667, which is 333 octaves and 3 over — the octave is a target the theorems earn, never a quota they are invented to fill.
-  <sub>SEALED · `32c53502-acb6-82d1-9b5e-468de308db17`</sub>
+- The ledger records 2674 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `7ec9e4e8-4f93-8c59-97a1-feec0fd43baf`</sub>
+- The count is 2674, which is 334 octaves and 2 over — the octave is a target the theorems earn, never a quota they are invented to fill.
+  <sub>SEALED · `d4a804ab-b977-878b-824a-6eb770c050ec`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -92,15 +92,15 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-33 Lean files in 7 wings, 728 declarations of which 719 are theorems. The prose in this section is read out of the
+33 Lean files in 7 wings, 735 declarations of which 726 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
 ### the address
 
-**Addressing** — `address.lean`, 18 theorem(s). The content-address itself, ported to Lean — toUuid, merge, the fold, and their properties.
+**Addressing** — `address.lean`, 23 theorem(s). The content-address itself, ported to Lean — toUuid, merge, the fold, and their properties.
 
-**FNV-1a, the address function** — `fnv.lean`, 13 theorem(s). FNV-1a, ported to Lean — the hash the whole deposit's addressing rests on.
+**FNV-1a, the address function** — `fnv.lean`, 14 theorem(s). FNV-1a, ported to Lean — the hash the whole deposit's addressing rests on.
 
 **What the ledger claims** — `ledgerclaims.lean`, 8 theorem(s). Bounded: what is not prior art is what THIS ledger claims — the 967-receipt case, the saving arithmetic,   and the 128-bit seal width as this deposit mints it. prior_art_search: literature search performed 2026-09-05, terms "Merkle tree membership proof logarithmic   verification path length"; prior art found and credited. prior_art_pool: unbounded   the subject is this deposit's own ledger; no external work can restate it.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: claims about this deposit's own ledger Three claims the prose made in words and cited to entries that no longer stand. Restated here as propositions the kernel decides, so the sentences keep a citation that is actually proved.
 
@@ -134,7 +134,7 @@ this page; there is nowhere else to keep the description in step.
 
 **The next tier of what is asked for** — `demand2.lean`, 11 theorem(s). THE SECOND COURSE OF THE SAME FLOOR. `demand.lean` closed the top eight topics in src/demand/queries.json; this file takes the next eight, chosen the same way — by impressions, not by taste. The demand map is three months of the deposit's own Google Search Console data with the retrieval scaffolding stripped, so what is ranked is the TOPIC people wanted a citable source for, not the phrasing they reached for.
 
-**The named theorems people ask for** — `demand3.lean`, 14 theorem(s). The third and last tier the search data supports. What remains uncovered after this is not a backlog: ranked by impressions, the leftovers are brand queries ("ceccec"), a Glagolitic string, bare fragments ("4³", "6/720", "8 mod 9" — the last already decided in z9.lean), and the real-analysis cluster that was refused in demand2.lean and stays refused. The demand map is close to exhausted of things a kernel can settle, which is a better place to stop than an arbitrary count would have been.
+**The named theorems people ask for** — `demand3.lean`, 15 theorem(s). The third and last tier the search data supports. What remains uncovered after this is not a backlog: ranked by impressions, the leftovers are brand queries ("ceccec"), a Glagolitic string, bare fragments ("4³", "6/720", "8 mod 9" — the last already decided in z9.lean), and the real-analysis cluster that was refused in demand2.lean and stays refused. The demand map is close to exhausted of things a kernel can settle, which is a better place to stop than an arbitrary count would have been.
 
 **The water loop** — `energy.lean`, 22 theorem(s). THE WATER LOOP, ACCOUNTED. Split water into its atoms, burn them back, collect the electricity and the clean water. Every step of that is real and buildable. The question is only ever the ledger, so here it is.
 
@@ -176,7 +176,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Recovered — claims that computed and were withdrawn for want of a proof** — `recovered.lean`, 15 theorem(s). material, credited. What is NOT prior art is that these particular statements sat WITHDRAWN in this   deposit's ledger, each recorded as "not backed by a Lean proof. Its evidence is a TypeScript test",   while every one is decidable in a line. prior_art_search: literature search performed 2026-09-05, terms "units and non-units of Z/9 multiplicative   inverses group of units modulo 9"; prior art found and credited.
 
-20 of 728 declarations carry no comment of their own and are shown here as the gap they are, not
+20 of 735 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -185,14 +185,14 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 2,667 — 333 octaves and 3 over |
-| standing — carries its own proof | **719** |
+| ledger entries | 2,674 — 334 octaves and 2 over |
+| standing — carries its own proof | **726** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **434** |
 | withdrawn — nothing proves it | 1,514 |
-| proved in total | **1153** of 2,667 |
-| standing keys → distinct theorems | 719 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 33 · 719 theorems (625 closed by exhaustion, axiom-free · 94 proved for every value on propext and Quot.sound) + 9 rfl declarations |
-| proved `by decide` | 625 of 728 |
+| proved in total | **1160** of 2,674 |
+| standing keys → distinct theorems | 726 sealed, 0 of them keyed twice, 0 unresolvable |
+| Lean files · theorems | 33 · 726 theorems (629 closed by exhaustion, axiom-free · 97 proved for every value on propext and Quot.sound) + 9 rfl declarations |
+| proved `by decide` | 629 of 735 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -214,4 +214,4 @@ across** — deposited as [10.5281/zenodo.21781603](https://doi.org/10.5281/zeno
 
 ---
 
-*15 claims, all verified · 719 Lean theorems · 2667 ledger entries · trial root `b9bdd086-3a49-83ef-b134-ee87429bf324` · integrity, not truth*
+*15 claims, all verified · 726 Lean theorems · 2674 ledger entries · trial root `4bffd265-48f0-8cb1-90f3-968481f2f185` · integrity, not truth*

@@ -9,7 +9,7 @@
       "affiliation": "PSG, Bulgaria"
     }
   ],
-  "description": "<p><strong>Every phenomenon this deposit touches, and the rule for the rest</strong>. 4 machine-checked theorems from the Lean 4 source file <code>src/proof/phenomena.lean</code>, by Tsvetan Rouschev, licensed CC BY-NC-ND 4.0. Lean 4 is a proof checker: a theorem it accepts has been checked by its kernel, not argued in prose. All are checked case by case over a stated finite domain (<code>by decide</code>). Every theorem listed is sealed live in the deposit's ledger, where a withdrawal is marked in place; 63 earlier rows removed on 2026-08-09 are listed in <a href=\"https://github.com/ceccec/millennium-solutions/blob/95155bc810f50b7e762b9735ee569b1a4e5bfc08/src/proof/revoked.json\">src/proof/revoked.json</a>.</p><p><strong>How these theorems are bound.</strong> \"Entangled\" is used here in a precise, non-quantum sense: theorems are bound when they derive from shared definitions (section 1), when their files import one another (section 2), and when their content-addressed receipts fold into one address that changes if any one of them changes (section 3). It is correlation by derivation; no information travels through it.</p><p><strong>1 · Shared definitions.</strong> 2 definitions are used by two or more theorems, binding 12 pairs; the theorems fall into 1 strand. Most binding: <code>entries</code> (4), <code>statusOf</code> (4).</p><p><strong>2 · Imports.</strong> Built on: no other cluster. Built on it: no other cluster. Checking this cluster needs 1 file: <code>src/proof/phenomena.lean</code>.</p><p><strong>3 · The joint address.</strong> The 4 sealed receipts fold to <code>7c2c40c6-89f6-8eb8-bc77-10aca5a1c56f</code>. Order-invariant: yes — the same root in reverse order. Altering one receipt changes it: yes, computed when this record was generated. A content-address proves integrity, not truth.</p><p><strong>4 · The address lattice.</strong> Each theorem sits at the seven ray values its page plots from its receipt, taken mod 9: a point of (ℤ/9)⁷. This cluster's centre is (7, 5, 2, 8, 4, 2, 0). Its nearest clusters, ranked by lift — pairs counted from this cluster's theorems' seven nearest points, over the pairs expected by chance from the two clusters' sizes: <code>families.lean</code> (6 observed, 2.11 expected, lift 2.85), <code>elementary.lean</code> (3 observed, 1.4 expected, lift 2.14), <code>mechanical.lean</code> (5 observed, 4.64 expected, lift 1.08). A best lift is the largest of about 32 small ratios, so chance alone gives a typical best lift of 2.39 here (the median over 200 seeded reshufflings of which cluster each point belongs to); one at least as high as this cluster's arose in 47.5% of them — consistent with chance. Mean distance between two of its theorems: 16.33; from one of its theorems to a theorem of another cluster: 15.58. A receipt is a hash, so nearness on this lattice is a property of the addresses, not of the mathematics; the mathematical binding is (1) and (2). These figures are as of commit <code>95155bc810f5</code> (2026-09-15), over 719 points; a new seal anywhere moves them.</p><p><strong>Prior art.</strong> The SI base quantities and their defining constants are definitions of the Conférence Générale des Poids et Mesures (2019 revision, effective 20 May 2019); the electrochemical results are Michael Faraday's laws of electrolysis, 1834, and the standard enthalpy of combustion of hydrogen. Every physical result named here has an earlier author or a standards body, and none is this deposit's. Per-theorem prior-art searches — OEIS, zbMATH Open, OpenAlex, Crossref, arXiv — are recorded, with what was searched, where and when, in the living ledger <a href=\"https://github.com/ceccec/millennium-solutions/blob/main/src/proof/novelty.json\">src/proof/novelty.json</a> (main branch). No novelty is claimed here.</p><p><strong>The theorems.</strong></p><ol><li><code>every_phenomenon_is_definitional_or_credited</code> — <code>entries.all (fun e =&gt; statusOf e == 0 || statusOf e == 1)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_phenomena_every_phenomenon_is_definitional_or_credited\">record</a></li><li><code>seven_definitional_and_two_credited</code> — <code>(entries.filter (fun e =&gt; statusOf e == 0)).length = 7 ∧ (entries.filter (fun e =&gt; statusOf e == 1)).length = 2 ∧ entries.length = 9</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_phenomena_seven_definitional_and_two_credited\">record</a></li><li><code>the_definitional_half_is_the_whole_si</code> — <code>(entries.filter (fun e =&gt; statusOf e == 0)).length = 7</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_phenomena_the_definitional_half_is_the_whole_si\">record</a></li><li><code>the_table_is_closed_and_that_is_all_this_file_decides</code> — <code>entries.all (fun e =&gt; statusOf e == 0 || statusOf e == 1) ∧ entries.length = 9 ∧ (entries.filter (fun e =&gt; statusOf e == 0)).length = 7</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_phenomena_the_table_is_closed_and_that_is_all_this_file_decides\">record</a></li></ol><p><strong>Recompute.</strong> Clone <a href=\"https://github.com/ceccec/millennium-solutions\">https://github.com/ceccec/millennium-solutions</a> at commit <code>95155bc810f5</code> and run <code>npm ci && npm run lean</code>, which checks every Lean file in dependency order. This record was generated by <a href=\"https://github.com/ceccec/millennium-solutions/blob/95155bc810f50b7e762b9735ee569b1a4e5bfc08/scripts/clusters.ts\">scripts/clusters.ts</a> from the source and the ledger.</p><p><strong>Licence.</strong> CC BY-NC-ND 4.0 — free for non-commercial use with attribution to Tsvetan Rouschev; commercial use by arrangement with the author.</p>",
+  "description": "<p><strong>Every phenomenon this deposit touches, and the rule for the rest</strong>. 4 machine-checked theorems from the Lean 4 source file <code>src/proof/phenomena.lean</code>, by Tsvetan Rouschev, licensed CC BY-NC-ND 4.0. Lean 4 is a proof checker: a theorem it accepts has been checked by its kernel, not argued in prose. All are checked case by case over a stated finite domain (<code>by decide</code>). Every theorem listed is sealed live in the deposit's ledger, where a withdrawal is marked in place; 63 earlier rows removed on 2026-08-09 are listed in <a href=\"https://github.com/ceccec/millennium-solutions/blob/8abd3e4f535bc6b60a2cff368de8fbe49bb9edda/src/proof/revoked.json\">src/proof/revoked.json</a>.</p><p><strong>How these theorems are bound.</strong> \"Entangled\" is used here in a precise, non-quantum sense: theorems are bound when they derive from shared definitions (section 1), when their files import one another (section 2), and when their content-addressed receipts fold into one address that changes if any one of them changes (section 3). It is correlation by derivation; no information travels through it.</p><p><strong>1 · Shared definitions.</strong> 2 definitions are used by two or more theorems, binding 12 pairs; the theorems fall into 1 strand. Most binding: <code>entries</code> (4), <code>statusOf</code> (4).</p><p><strong>2 · Imports.</strong> Built on: no other cluster. Built on it: no other cluster. Checking this cluster needs 1 file: <code>src/proof/phenomena.lean</code>.</p><p><strong>3 · The joint address.</strong> The 4 sealed receipts fold to <code>7c2c40c6-89f6-8eb8-bc77-10aca5a1c56f</code>. Order-invariant: yes — the same root in reverse order. Altering one receipt changes it: yes, computed when this record was generated. A content-address proves integrity, not truth.</p><p><strong>4 · The address lattice.</strong> Each theorem sits at the seven ray values its page plots from its receipt, taken mod 9: a point of (ℤ/9)⁷. This cluster's centre is (7, 5, 2, 8, 4, 2, 0). Its nearest clusters, ranked by lift — pairs counted from this cluster's theorems' seven nearest points, over the pairs expected by chance from the two clusters' sizes: <code>address.lean</code> (3 observed, 0.85 expected, lift 3.53), <code>families.lean</code> (6 observed, 2.09 expected, lift 2.88), <code>mechanical.lean</code> (5 observed, 4.6 expected, lift 1.09). A best lift is the largest of about 32 small ratios, so chance alone gives a typical best lift of 2.16 here (the median over 200 seeded reshufflings of which cluster each point belongs to); one at least as high as this cluster's arose in 35.0% of them — consistent with chance. Mean distance between two of its theorems: 16.33; from one of its theorems to a theorem of another cluster: 15.58. A receipt is a hash, so nearness on this lattice is a property of the addresses, not of the mathematics; the mathematical binding is (1) and (2). These figures are as of commit <code>8abd3e4f535b</code> (2026-09-15), over 726 points; a new seal anywhere moves them.</p><p><strong>Prior art.</strong> The SI base quantities and their defining constants are definitions of the Conférence Générale des Poids et Mesures (2019 revision, effective 20 May 2019); the electrochemical results are Michael Faraday's laws of electrolysis, 1834, and the standard enthalpy of combustion of hydrogen. Every physical result named here has an earlier author or a standards body, and none is this deposit's. Per-theorem prior-art searches — OEIS, zbMATH Open, OpenAlex, Crossref, arXiv — are recorded, with what was searched, where and when, in the living ledger <a href=\"https://github.com/ceccec/millennium-solutions/blob/main/src/proof/novelty.json\">src/proof/novelty.json</a> (main branch). No novelty is claimed here.</p><p><strong>The theorems.</strong></p><ol><li><code>every_phenomenon_is_definitional_or_credited</code> — <code>entries.all (fun e =&gt; statusOf e == 0 || statusOf e == 1)</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_phenomena_every_phenomenon_is_definitional_or_credited\">record</a></li><li><code>seven_definitional_and_two_credited</code> — <code>(entries.filter (fun e =&gt; statusOf e == 0)).length = 7 ∧ (entries.filter (fun e =&gt; statusOf e == 1)).length = 2 ∧ entries.length = 9</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_phenomena_seven_definitional_and_two_credited\">record</a></li><li><code>the_definitional_half_is_the_whole_si</code> — <code>(entries.filter (fun e =&gt; statusOf e == 0)).length = 7</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_phenomena_the_definitional_half_is_the_whole_si\">record</a></li><li><code>the_table_is_closed_and_that_is_all_this_file_decides</code> — <code>entries.all (fun e =&gt; statusOf e == 0 || statusOf e == 1) ∧ entries.length = 9 ∧ (entries.filter (fun e =&gt; statusOf e == 0)).length = 7</code> <a href=\"https://ceccec.psg.bg/millennium-solutions/theorem/lean_phenomena_the_table_is_closed_and_that_is_all_this_file_decides\">record</a></li></ol><p><strong>Recompute.</strong> Clone <a href=\"https://github.com/ceccec/millennium-solutions\">https://github.com/ceccec/millennium-solutions</a> at commit <code>8abd3e4f535b</code> and run <code>npm ci && npm run lean</code>, which checks every Lean file in dependency order. This record was generated by <a href=\"https://github.com/ceccec/millennium-solutions/blob/8abd3e4f535bc6b60a2cff368de8fbe49bb9edda/scripts/clusters.ts\">scripts/clusters.ts</a> from the source and the ledger.</p><p><strong>Licence.</strong> CC BY-NC-ND 4.0 — free for non-commercial use with attribution to Tsvetan Rouschev; commercial use by arrangement with the author.</p>",
   "license": "cc-by-nc-nd-4.0",
   "access_right": "open",
   "language": "eng",
@@ -30,7 +30,7 @@
       "scheme": "doi"
     },
     {
-      "identifier": "https://github.com/ceccec/millennium-solutions/blob/95155bc810f50b7e762b9735ee569b1a4e5bfc08/src/proof/phenomena.lean",
+      "identifier": "https://github.com/ceccec/millennium-solutions/blob/8abd3e4f535bc6b60a2cff368de8fbe49bb9edda/src/proof/phenomena.lean",
       "relation": "isSupplementTo",
       "scheme": "url"
     },
@@ -55,7 +55,7 @@
       "scheme": "url"
     }
   ],
-  "notes": "cluster phenomena.lean · 4 sealed · joint address 7c2c40c6-89f6-8eb8-bc77-10aca5a1c56f · figures as of commit 95155bc810f5 (2026-09-15) · concept DOI 10.5281/zenodo.21819217 · generated by scripts/clusters.ts",
+  "notes": "cluster phenomena.lean · 4 sealed · joint address 7c2c40c6-89f6-8eb8-bc77-10aca5a1c56f · figures as of commit 8abd3e4f535b (2026-09-15) · concept DOI 10.5281/zenodo.21819217 · generated by scripts/clusters.ts",
   "files": [
     "src/proof/phenomena.lean"
   ],
@@ -98,28 +98,28 @@
       "between": 15.58,
       "top": [
         {
-          "file": "families.lean",
-          "pairs": 6,
-          "expected": 2.11,
-          "lift": 2.85
+          "file": "address.lean",
+          "pairs": 3,
+          "expected": 0.85,
+          "lift": 3.53
         },
         {
-          "file": "elementary.lean",
-          "pairs": 3,
-          "expected": 1.4,
-          "lift": 2.14
+          "file": "families.lean",
+          "pairs": 6,
+          "expected": 2.09,
+          "lift": 2.88
         },
         {
           "file": "mechanical.lean",
           "pairs": 5,
-          "expected": 4.64,
-          "lift": 1.08
+          "expected": 4.6,
+          "lift": 1.09
         }
       ],
-      "chanceShare": 0.475,
-      "nullMedian": 2.39,
+      "chanceShare": 0.35,
+      "nullMedian": 2.16,
       "shuffles": 200
     },
-    "asOf": "95155bc810f50b7e762b9735ee569b1a4e5bfc08"
+    "asOf": "8abd3e4f535bc6b60a2cff368de8fbe49bb9edda"
   }
 }

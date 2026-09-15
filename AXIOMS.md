@@ -5,7 +5,7 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **728** report the same thing:
+axiom fails the build rather than earning a footnote. All **735** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
@@ -96,7 +96,7 @@ Each of these is a primitive of this deposit — not derived, not proved, chosen
 because a reader checking a theorem must be able to read the definition it is about, and because a
 deposit that reports its axiom count and hides its definition count is reporting the flattering half.
 
-### `address.lean` — 12 definition(s), 18 theorem(s)
+### `address.lean` — 12 definition(s), 23 theorem(s)
 
 ```lean
 def andF : Nat → Nat → Nat → Nat
@@ -110,7 +110,7 @@ def stamp (bs : List Nat) : List Nat :=
 def toUuidBytes (cs : List Nat) : List Nat := stamp (rawBytes cs)
 def A : List Nat := [97]                                    -- "a"
 def UUIDNA : List Nat := [117, 117, 105, 100, 110, 97]      -- "uuidna"
-def settledHere : Nat := 17
+def settledHere : Nat := 20
 ```
 
 ### `coin.lean` — 7 definition(s), 12 theorem(s)
@@ -164,7 +164,7 @@ def pp2000 : List Nat := perfectPowersUpTo 2000
 def aliquot (n : Nat) : Nat := ((List.range' 1 (n - 1)).filter (fun d => n % d == 0)).foldl (· + ·) 0
 ```
 
-### `demand3.lean` — 12 definition(s), 14 theorem(s)
+### `demand3.lean` — 12 definition(s), 15 theorem(s)
 
 ```lean
 def isSumOfFour (n : Nat) : Bool :=
@@ -295,7 +295,7 @@ def schlafli : List (Nat × Nat) :=
 def settledHere : Nat := 42
 ```
 
-### `fnv.lean` — 13 definition(s), 13 theorem(s)
+### `fnv.lean` — 13 definition(s), 14 theorem(s)
 
 ```lean
 def xorF : Nat → Nat → Nat → Nat
@@ -569,6 +569,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**728** declarations, **0** axiom dependencies, **321** definitions they rest on.
+**735** declarations, **0** axiom dependencies, **321** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them.
