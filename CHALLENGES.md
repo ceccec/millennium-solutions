@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). The author's own claim, that the seven are solved through involution, is stated in his name on the front page.
 
-## Discovered theorems (decidable, over ℤ/9) — 2658 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2667 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (710)
+### lean (719)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -819,6 +819,24 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
   intro), standard axioms only — checked by lean.ts  ·  `d2a922d9-f09d…`
 - [lean_nim_the_nim_sum_is_a_gf2_vector_addition_for_every_a_b_c](/theorem/lean_nim_the_nim_sum_is_a_gf2_vector_addition_for_every_a_b_c) — lean nim.lean: the_nim_sum_is_a_gf2_vector_addition_for_every_a_b_c — ∀ a b c : Nat, xorN a b = xorN b a ∧ xorN (xorN a b) c = xorN a (xorN b c) ∧ xorN (xorN a b) b = a ∧ xorN a 0 = a — proved by the Lean kernel for every value (by
   intro), standard axioms only — checked by lean.ts  ·  `caa5c327-62cf…`
+- [lean_sequences_a_bit_sum_over_one_more_position_adds_that_bit](/theorem/lean_sequences_a_bit_sum_over_one_more_position_adds_that_bit) — lean sequences.lean: a_bit_sum_over_one_more_position_adds_that_bit — ∀ F m : Nat, (List.range (F + 1)).foldl (fun a i =&gt; a + m / 2 ^ i % 2) 0 = (List.range F).foldl (fun a i =&gt; a + m / 2 ^ i % 2) 0 + m / 2 ^ F % 2 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `f5e71d05-068c…`
+- [lean_sequences_halving_shifts_every_bit_down_by_one](/theorem/lean_sequences_halving_shifts_every_bit_down_by_one) — lean sequences.lean: halving_shifts_every_bit_down_by_one — ∀ m i : Nat, m / 2 ^ (i + 1) = m / 2 / 2 ^ i — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `a5201a6e-8f86…`
+- [lean_sequences_the_bits_of_a_number_are_its_low_bit_then_the_bits_of_its_half](/theorem/lean_sequences_the_bits_of_a_number_are_its_low_bit_then_the_bits_of_its_half) — lean sequences.lean: the_bits_of_a_number_are_its_low_bit_then_the_bits_of_its_half — ∀ F m : Nat, (List.range (F + 1)).foldl (fun a i =&gt; a + m / 2 ^ i % 2) 0 = m % 2 + (List.range F).foldl (fun a i =&gt; a + m / 2 / 2 ^ i % 2) 0 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `2c2dcdbf-8b9f…`
+- [lean_sequences_bits_above_the_number_add_nothing](/theorem/lean_sequences_bits_above_the_number_add_nothing) — lean sequences.lean: bits_above_the_number_add_nothing — ∀ k F n : Nat, n &lt; 2 ^ F → (List.range (F + k)).foldl (fun a i =&gt; a + n / 2 ^ i % 2) 0 = (List.range F).foldl (fun a i =&gt; a + n / 2 ^ i % 2) 0 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `77439845-748b…`
+- [lean_sequences_a_number_is_below_two_to_its_own_power](/theorem/lean_sequences_a_number_is_below_two_to_its_own_power) — lean sequences.lean: a_number_is_below_two_to_its_own_power — ∀ n : Nat, n &lt; 2 ^ n — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `4f5a709a-5de5…`
+- [lean_sequences_a_number_is_below_two_to_its_own_successor](/theorem/lean_sequences_a_number_is_below_two_to_its_own_successor) — lean sequences.lean: a_number_is_below_two_to_its_own_successor — ∀ n : Nat, n &lt; 2 ^ (n + 1) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `586b3088-ac85…`
+- [lean_sequences_doubling_preserves_the_bit_count_for_every_n](/theorem/lean_sequences_doubling_preserves_the_bit_count_for_every_n) — lean sequences.lean: doubling_preserves_the_bit_count_for_every_n — ∀ n : Nat, popcount (2 * n) = popcount n — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `7006c6f5-3c8d…`
+- [lean_sequences_the_odd_step_sets_exactly_one_further_bit_for_every_n](/theorem/lean_sequences_the_odd_step_sets_exactly_one_further_bit_for_every_n) — lean sequences.lean: the_odd_step_sets_exactly_one_further_bit_for_every_n — ∀ n : Nat, popcount (2 * n + 1) = popcount n + 1 — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `d9da9f38-b47d…`
+- [lean_sequences_thue_morse_doubling_recurrence_for_every_n](/theorem/lean_sequences_thue_morse_doubling_recurrence_for_every_n) — lean sequences.lean: thue_morse_doubling_recurrence_for_every_n — ∀ n : Nat, tm (2 * n) = tm n ∧ tm (2 * n + 1) = 1 - tm n — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `50c8ad36-d08a…`
 
 ### other — one-of-a-kind (0)
 
@@ -2403,4 +2421,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `5a2e0a2b-7098-8bae-a674-038aab427755`. Integrity, not truth.
+Page content-address: `2fd965a5-4982-81b6-b757-cc07d87262df`. Integrity, not truth.

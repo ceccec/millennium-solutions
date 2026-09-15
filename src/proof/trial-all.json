@@ -15946,5 +15946,59 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "caa5c327-62cf-8171-9507-6453cfdaed0c"
+  },
+  {
+    "key": "lean_sequences_a_bit_sum_over_one_more_position_adds_that_bit",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f5e71d05-068c-8beb-8470-541d3b4e8e8f"
+  },
+  {
+    "key": "lean_sequences_halving_shifts_every_bit_down_by_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a5201a6e-8f86-8eba-b004-a9c565b42613"
+  },
+  {
+    "key": "lean_sequences_the_bits_of_a_number_are_its_low_bit_then_the_bits_of_its_half",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2c2dcdbf-8b9f-8899-a682-4e33aabab23a"
+  },
+  {
+    "key": "lean_sequences_bits_above_the_number_add_nothing",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "77439845-748b-811f-9015-a2c92709f76b"
+  },
+  {
+    "key": "lean_sequences_a_number_is_below_two_to_its_own_power",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "4f5a709a-5de5-8424-881d-0c2675c278b0"
+  },
+  {
+    "key": "lean_sequences_a_number_is_below_two_to_its_own_successor",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "586b3088-ac85-8e47-84f8-d82edb5f5aba"
+  },
+  {
+    "key": "lean_sequences_doubling_preserves_the_bit_count_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7006c6f5-3c8d-8158-a54e-6619e289159e"
+  },
+  {
+    "key": "lean_sequences_the_odd_step_sets_exactly_one_further_bit_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d9da9f38-b47d-836c-8b32-84ce53c93e9c"
+  },
+  {
+    "key": "lean_sequences_thue_morse_doubling_recurrence_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "50c8ad36-d08a-835c-8d63-559ac849c2cc"
   }
 ]

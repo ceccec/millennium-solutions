@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 719 of them across 33 files and
-7 wings; 625 close by exhaustion over a stated finite domain, 85 are proved
+(\texttt{npm run latex-gate}). There are 728 of them across 33 files and
+7 wings; 625 close by exhaustion over a stated finite domain, 94 are proved
 for every value, and the remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -1043,6 +1043,60 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 
 \begin{theorem}[\texttt{cassinis\_identity\_for\_every\_m}]
 \texttt{∀ m : Nat, fib (2 * m + 1) * fib (2 * m + 3) = fib (2 * m + 2) * fib (2 * m + 2) + 1 ∧ fib (2 * m) * fib (2 * m + 2) + 1 = fib (2 * m + 1) * fib (2 * m + 1)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_bit\_sum\_over\_one\_more\_position\_adds\_that\_bit}]
+\texttt{∀ F m : Nat, (List.range (F + 1)).foldl (fun a i => a + m / 2 ^ i \% 2) 0 = (List.range F).foldl (fun a i => a + m / 2 ^ i \% 2) 0 + m / 2 ^ F \% 2}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{halving\_shifts\_every\_bit\_down\_by\_one}]
+\texttt{∀ m i : Nat, m / 2 ^ (i + 1) = m / 2 / 2 ^ i}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_bits\_of\_a\_number\_are\_its\_low\_bit\_then\_the\_bits\_of\_its\_half}]
+\texttt{∀ F m : Nat, (List.range (F + 1)).foldl (fun a i => a + m / 2 ^ i \% 2) 0 = m \% 2 + (List.range F).foldl (fun a i => a + m / 2 / 2 ^ i \% 2) 0}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{bits\_above\_the\_number\_add\_nothing}]
+\texttt{∀ k F n : Nat, n < 2 ^ F → (List.range (F + k)).foldl (fun a i => a + n / 2 ^ i \% 2) 0 = (List.range F).foldl (fun a i => a + n / 2 ^ i \% 2) 0}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_number\_is\_below\_two\_to\_its\_own\_power}]
+\texttt{∀ n : Nat, n < 2 ^ n}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_number\_is\_below\_two\_to\_its\_own\_successor}]
+\texttt{∀ n : Nat, n < 2 ^ (n + 1)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{doubling\_preserves\_the\_bit\_count\_for\_every\_n}]
+\texttt{∀ n : Nat, popcount (2 * n) = popcount n}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_odd\_step\_sets\_exactly\_one\_further\_bit\_for\_every\_n}]
+\texttt{∀ n : Nat, popcount (2 * n + 1) = popcount n + 1}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by
+  intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{thue\_morse\_doubling\_recurrence\_for\_every\_n}]
+\texttt{∀ n : Nat, tm (2 * n) = tm n ∧ tm (2 * n + 1) = 1 - tm n}
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by
   intro} --- by evaluation; no domain is walked. \hfill$\square$

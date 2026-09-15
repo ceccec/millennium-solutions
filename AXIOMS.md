@@ -5,7 +5,7 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **719** report the same thing:
+axiom fails the build rather than earning a footnote. All **728** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
@@ -489,7 +489,7 @@ def instruments : List Instrument :=
 def settledHere : Nat := 8
 ```
 
-### `sequences.lean` — 7 definition(s), 13 theorem(s)
+### `sequences.lean` — 7 definition(s), 22 theorem(s)
 
 ```lean
 def fib : Nat → Nat
@@ -497,7 +497,7 @@ def fact (n : Nat) : Nat := (List.range n).foldl (fun a k => a * (k + 1)) 1
 def choose (n k : Nat) : Nat := fact n / (fact k * fact (n - k))
 def andF : Nat → Nat → Nat → Nat
 def andN (a b : Nat) : Nat := andF 33 a b
-def popcount (n : Nat) : Nat := (List.range 12).foldl (fun a i => a + n / 2 ^ i % 2) 0
+def popcount (n : Nat) : Nat := (List.range (n + 1)).foldl (fun a i => a + n / 2 ^ i % 2) 0
 def tm (n : Nat) : Nat := popcount n % 2
 ```
 
@@ -569,6 +569,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**719** declarations, **0** axiom dependencies, **321** definitions they rest on.
+**728** declarations, **0** axiom dependencies, **321** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them.

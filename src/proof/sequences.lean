@@ -1,5 +1,6 @@
 import Fnv
 set_option maxRecDepth 4000000
+set_option maxHeartbeats 2000000
 -- title: Sequences
 -- wing: the ring
 -- prior_art: named
@@ -79,13 +80,15 @@ theorem pisano_twentyfour_is_four_sixes :
 -- Withdrawn for want of a proof, not because it is false — and it HAS a decidable form. t(n) is the parity
 -- of the 1-bits of n. Doubling shifts every bit one place and introduces no new one, so the popcount is
 -- unchanged and t(2n) = t(n). 2n+1 sets exactly one further bit, so the parity flips: t(2n+1) = 1 − t(n).
--- Both are decided below over a stated finite domain, which is what the withdrawal said was missing.
-def popcount (n : Nat) : Nat := (List.range 12).foldl (fun a i => a + n / 2 ^ i % 2) 0
+-- Both are decided below over a stated finite domain, which is what the withdrawal said was missing, and
+-- proved for every n at the end of this file.
+-- The fuel is n + 1, which covers every bit of every n (n < 2^(n+1)); the earlier fuel of 12 counted only the
+-- low twelve bits — a cap every statement here had to stay under.
+def popcount (n : Nat) : Nat := (List.range (n + 1)).foldl (fun a i => a + n / 2 ^ i % 2) 0
 def tm (n : Nat) : Nat := popcount n % 2
 
--- Domain: n < 200, so 2n+1 < 400 < 2^12 = 4096 and the twelve-bit popcount is exact over every value the
--- statement touches. The bound is stated rather than assumed, because a popcount that silently truncated
--- would make this hold for the wrong reason.
+-- Domain: n < 200 — the decided instance of the law proved for every n at the end of this file. The popcount
+-- no longer stops at twelve bits, so no statement here can hold for the wrong reason at any size.
 theorem thue_morse_doubling_recurrence :
   (List.range 200).all (fun n => tm (2 * n) == tm n && tm (2 * n + 1) == 1 - tm n) := by decide
 
@@ -132,5 +135,85 @@ theorem cassinis_identity_for_every_m :
       try simp only [Nat.mul_assoc, Nat.mul_comm, Nat.mul_left_comm, Nat.reduceMul] at *
       try simp only [Nat.mul_comm _ (OfNat.ofNat _), Nat.mul_left_comm _ (OfNat.ofNat _), Nat.reduceMul] at *
       all_goals omega
+
+
+-- ── the popcount rows above, proved for every n — no bound ───────────────────────────────────────────────
+-- thue_morse_doubling_recurrence, doubling_preserves_the_parity_of_the_bits and the_odd_step_sets_exactly_one_
+-- further_bit were decided over n < 200; these prove them for every n. The bits of m are its low bit and then the
+-- bits of m / 2; positions above the number add nothing; so doubling keeps the count and the odd step adds one.
+theorem a_bit_sum_over_one_more_position_adds_that_bit :
+    ∀ F m : Nat, (List.range (F + 1)).foldl (fun a i => a + m / 2 ^ i % 2) 0 =
+      (List.range F).foldl (fun a i => a + m / 2 ^ i % 2) 0 + m / 2 ^ F % 2 := by
+  intro F m
+  rw [List.range_succ, List.foldl_append]
+  rfl
+
+theorem halving_shifts_every_bit_down_by_one : ∀ m i : Nat, m / 2 ^ (i + 1) = m / 2 / 2 ^ i := by
+  intro m i
+  rw [Nat.div_div_eq_div_mul, Nat.pow_succ, Nat.mul_comm]
+
+theorem the_bits_of_a_number_are_its_low_bit_then_the_bits_of_its_half :
+    ∀ F m : Nat, (List.range (F + 1)).foldl (fun a i => a + m / 2 ^ i % 2) 0 =
+      m % 2 + (List.range F).foldl (fun a i => a + m / 2 / 2 ^ i % 2) 0 := by
+  intro F
+  induction F with
+  | zero => intro m; show 0 + m / 2 ^ 0 % 2 = m % 2 + 0; rw [Nat.pow_zero, Nat.div_one]; omega
+  | succ F ih =>
+    intro m
+    rw [a_bit_sum_over_one_more_position_adds_that_bit (F + 1) m, ih m,
+      a_bit_sum_over_one_more_position_adds_that_bit F (m / 2), halving_shifts_every_bit_down_by_one]
+    omega
+
+theorem bits_above_the_number_add_nothing :
+    ∀ k F n : Nat, n < 2 ^ F → (List.range (F + k)).foldl (fun a i => a + n / 2 ^ i % 2) 0 =
+      (List.range F).foldl (fun a i => a + n / 2 ^ i % 2) 0 := by
+  intro k
+  induction k with
+  | zero => intro F n _; rfl
+  | succ k ih =>
+    intro F n h
+    rw [← Nat.add_assoc, a_bit_sum_over_one_more_position_adds_that_bit, ih F n h]
+    have hp : 2 ^ F ≤ 2 ^ (F + k) := Nat.pow_le_pow_right (by decide) (Nat.le_add_right F k)
+    rw [Nat.div_eq_of_lt (by omega), Nat.zero_mod, Nat.add_zero]
+
+theorem a_number_is_below_two_to_its_own_power : ∀ n : Nat, n < 2 ^ n := by
+  intro n
+  induction n with
+  | zero => decide
+  | succ n ih =>
+    rw [Nat.pow_succ]
+    omega
+
+theorem a_number_is_below_two_to_its_own_successor : ∀ n : Nat, n < 2 ^ (n + 1) := by
+  intro n
+  have h := a_number_is_below_two_to_its_own_power n
+  rw [Nat.pow_succ]
+  omega
+
+theorem doubling_preserves_the_bit_count_for_every_n : ∀ n : Nat, popcount (2 * n) = popcount n := by
+  intro n
+  unfold popcount
+  rw [the_bits_of_a_number_are_its_low_bit_then_the_bits_of_its_half (2 * n) (2 * n),
+    show 2 * n / 2 = n by omega, show 2 * n % 2 = 0 by omega, Nat.zero_add]
+  cases n with
+  | zero => rfl
+  | succ m =>
+    have hlt : m + 1 < 2 ^ (m + 1 + 1) := a_number_is_below_two_to_its_own_successor (m + 1)
+    rw [show 2 * (m + 1) = m + 1 + 1 + m by omega, bits_above_the_number_add_nothing m (m + 1 + 1) (m + 1) hlt]
+
+theorem the_odd_step_sets_exactly_one_further_bit_for_every_n : ∀ n : Nat, popcount (2 * n + 1) = popcount n + 1 := by
+  intro n
+  unfold popcount
+  rw [the_bits_of_a_number_are_its_low_bit_then_the_bits_of_its_half (2 * n + 1) (2 * n + 1),
+    show (2 * n + 1) / 2 = n by omega, show (2 * n + 1) % 2 = 1 by omega]
+  have hlt : n < 2 ^ (n + 1) := a_number_is_below_two_to_its_own_successor n
+  rw [show 2 * n + 1 = n + 1 + n by omega, bits_above_the_number_add_nothing n (n + 1) n hlt]
+  omega
+
+theorem thue_morse_doubling_recurrence_for_every_n : ∀ n : Nat, tm (2 * n) = tm n ∧ tm (2 * n + 1) = 1 - tm n := by
+  intro n
+  unfold tm
+  rw [doubling_preserves_the_bit_count_for_every_n, the_odd_step_sets_exactly_one_further_bit_for_every_n]
+  exact ⟨rfl, by omega⟩
 
 end Sequences
