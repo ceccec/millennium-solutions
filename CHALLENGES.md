@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). The author's own claim, that the seven are solved through involution, is stated in his name on the front page.
 
-## Discovered theorems (decidable, over ℤ/9) — 2629 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2643 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (681)
+### lean (695)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -761,6 +761,34 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
   intro), standard axioms only — checked by lean.ts  ·  `20da0230-2b9f…`
 - [lean_z9plus_digital_root_is_the_digit_sum_residue_for_every_n](/theorem/lean_z9plus_digital_root_is_the_digit_sum_residue_for_every_n) — lean z9plus.lean: digital_root_is_the_digit_sum_residue_for_every_n — ∀ n : Nat, m9 (digitSum n) = m9 n — proved by the Lean kernel for every value (by
   intro), standard axioms only — checked by lean.ts  ·  `694fefdf-a71b…`
+- [lean_demand2_the_two_power_sums_are_one_sum](/theorem/lean_demand2_the_two_power_sums_are_one_sum) — lean demand2.lean: the_two_power_sums_are_one_sum — ∀ p n : Nat, sumPow p n = powSum p n — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `6551630b-4917…`
+- [lean_demand2_nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number_for_every_n](/theorem/lean_demand2_nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number_for_every_n) — lean demand2.lean: nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number_for_every_n — ∀ n : Nat, sumPow 3 n = tri n * tri n — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `7aa0bbe0-b4ae…`
+- [lean_demand2_the_sum_of_fifth_powers_has_the_closed_form_for_every_n](/theorem/lean_demand2_the_sum_of_fifth_powers_has_the_closed_form_for_every_n) — lean demand2.lean: the_sum_of_fifth_powers_has_the_closed_form_for_every_n — ∀ n : Nat, 12 * sumPow 5 n = n * n * (n + 1) * (n + 1) * (2 * n * n + 2 * n - 1) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `6916652f-bda2…`
+- [lean_elementary_the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis_for_every_n](/theorem/lean_elementary_the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis_for_every_n) — lean elementary.lean: the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis_for_every_n — ∀ n : Nat, lucas (n + 1) = fib n + fib (n + 2) — proved by the Lean kernel for every value (by
+  have), standard axioms only — checked by lean.ts  ·  `cacb33f1-2fc1…`
+- [lean_families_cassinis_identity_for_every_m](/theorem/lean_families_cassinis_identity_for_every_m) — lean families.lean: cassinis_identity_for_every_m — ∀ m : Nat, fib (2 * m + 1) * fib (2 * m + 3) = fib (2 * m + 2) * fib (2 * m + 2) + 1 ∧ fib (2 * m) * fib (2 * m + 2) + 1 = fib (2 * m + 1) * fib (2 * m + 1) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `75a810f1-ae27…`
+- [lean_families_a_sum_over_one_to_n_plus_one_adds_the_last_term](/theorem/lean_families_a_sum_over_one_to_n_plus_one_adds_the_last_term) — lean families.lean: a_sum_over_one_to_n_plus_one_adds_the_last_term — ∀ (g : Nat → Nat) (n : Nat), ((List.range' 1 (n + 1)).map g).foldl (· + ·) 0 = ((List.range' 1 n).map g).foldl (· + ·) 0 + g (n + 1) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `f664ca1d-8371…`
+- [lean_families_the_numbers_sum_to_their_closed_form_for_every_n](/theorem/lean_families_the_numbers_sum_to_their_closed_form_for_every_n) — lean families.lean: the_numbers_sum_to_their_closed_form_for_every_n — ∀ n : Nat, 2 * powSum 1 n = n * (n + 1) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `34fa9fc8-b8ed…`
+- [lean_families_the_squares_sum_to_their_closed_form_for_every_n](/theorem/lean_families_the_squares_sum_to_their_closed_form_for_every_n) — lean families.lean: the_squares_sum_to_their_closed_form_for_every_n — ∀ n : Nat, 6 * powSum 2 n = n * (n + 1) * (2 * n + 1) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `0b7a0569-fb3f…`
+- [lean_families_the_cubes_sum_to_their_closed_form_for_every_n](/theorem/lean_families_the_cubes_sum_to_their_closed_form_for_every_n) — lean families.lean: the_cubes_sum_to_their_closed_form_for_every_n — ∀ n : Nat, 4 * powSum 3 n = n * n * (n + 1) * (n + 1) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `96b0047e-cf09…`
+- [lean_families_the_fourth_powers_sum_to_their_closed_form_for_every_n](/theorem/lean_families_the_fourth_powers_sum_to_their_closed_form_for_every_n) — lean families.lean: the_fourth_powers_sum_to_their_closed_form_for_every_n — ∀ n : Nat, 30 * powSum 4 n = n * (n + 1) * (2 * n + 1) * (3 * n * n + 3 * n - 1) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `3419aabd-970f…`
+- [lean_families_the_fifth_powers_sum_to_their_closed_form_for_every_n](/theorem/lean_families_the_fifth_powers_sum_to_their_closed_form_for_every_n) — lean families.lean: the_fifth_powers_sum_to_their_closed_form_for_every_n — ∀ n : Nat, 12 * powSum 5 n = n * n * (n + 1) * (n + 1) * (2 * n * n + 2 * n - 1) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `790310ea-f06d…`
+- [lean_families_power_sums_match_their_closed_forms_for_every_n](/theorem/lean_families_power_sums_match_their_closed_forms_for_every_n) — lean families.lean: power_sums_match_their_closed_forms_for_every_n — ∀ k n : Nat, 1 ≤ k → k ≤ 5 → powSum k n = faulhaber k n — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `04b04822-598b…`
+- [lean_families_the_sums_of_triangular_numbers_are_the_tetrahedral_numbers_for_every_n](/theorem/lean_families_the_sums_of_triangular_numbers_are_the_tetrahedral_numbers_for_every_n) — lean families.lean: the_sums_of_triangular_numbers_are_the_tetrahedral_numbers_for_every_n — ∀ n : Nat, ((List.range' 1 n).map (fun i =&gt; i * (i + 1) / 2)).foldl (· + ·) 0 = n * (n + 1) * (n + 2) / 6 — proved by the Lean kernel for every value (by
+  have), standard axioms only — checked by lean.ts  ·  `43b9cdd8-7110…`
+- [lean_sequences_cassinis_identity_for_every_m](/theorem/lean_sequences_cassinis_identity_for_every_m) — lean sequences.lean: cassinis_identity_for_every_m — ∀ m : Nat, fib (2 * m + 1) * fib (2 * m + 3) = fib (2 * m + 2) * fib (2 * m + 2) + 1 ∧ fib (2 * m) * fib (2 * m + 2) + 1 = fib (2 * m + 1) * fib (2 * m + 1) — proved by the Lean kernel for every value (by
+  intro), standard axioms only — checked by lean.ts  ·  `3b815427-42b8…`
 
 ### other — one-of-a-kind (0)
 
@@ -2345,4 +2373,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `4eab8f99-5ece-8e3f-9955-eb22719fd56d`. Integrity, not truth.
+Page content-address: `3778356e-7bfa-806f-8d89-3df0fc8dd2d0`. Integrity, not truth.

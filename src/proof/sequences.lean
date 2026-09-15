@@ -102,4 +102,35 @@ theorem the_sequence_takes_both_values :
   ((List.range 200).filter (fun n => tm n == 0)).length = 100
   ∧ ((List.range 200).filter (fun n => tm n == 1)).length = 100 := by decide
 
+
+-- ── the capped rows above, proved for every value — no bound ─────────────────────────────────────────────────
+-- cassini_at_even_indices, cassini_at_odd_indices and cassini_deviation_is_exactly_one were checked n ≤ 20; one law
+-- carries all three: at every index the product of the neighbours is the square, plus or minus one.
+theorem cassinis_identity_for_every_m :
+    ∀ m : Nat, fib (2 * m + 1) * fib (2 * m + 3) = fib (2 * m + 2) * fib (2 * m + 2) + 1 ∧
+      fib (2 * m) * fib (2 * m + 2) + 1 = fib (2 * m + 1) * fib (2 * m + 1) := by
+  intro m
+  induction m with
+  | zero => decide
+  | succ m ih =>
+    have r3 : fib (2 * m + 3) = fib (2 * m + 1) + fib (2 * m + 2) := rfl
+    have r4 : fib (2 * m + 4) = fib (2 * m + 2) + fib (2 * m + 3) := rfl
+    have r5 : fib (2 * m + 5) = fib (2 * m + 3) + fib (2 * m + 4) := rfl
+    show fib (2 * m + 3) * fib (2 * m + 5) = fib (2 * m + 4) * fib (2 * m + 4) + 1 ∧
+      fib (2 * m + 2) * fib (2 * m + 4) + 1 = fib (2 * m + 3) * fib (2 * m + 3)
+    have h := ih.1
+    rw [r5, r4, r3]
+    rw [r3] at h
+    generalize fib (2 * m + 1) = a at h ⊢
+    generalize fib (2 * m + 2) = b at h ⊢
+    constructor
+    · try simp only [Nat.mul_add, Nat.add_mul, Nat.pow_succ, Nat.pow_zero, Nat.one_mul, Nat.mul_one, Nat.reduceMul, Nat.reduceAdd] at *
+      try simp only [Nat.mul_assoc, Nat.mul_comm, Nat.mul_left_comm, Nat.reduceMul] at *
+      try simp only [Nat.mul_comm _ (OfNat.ofNat _), Nat.mul_left_comm _ (OfNat.ofNat _), Nat.reduceMul] at *
+      all_goals omega
+    · try simp only [Nat.mul_add, Nat.add_mul, Nat.pow_succ, Nat.pow_zero, Nat.one_mul, Nat.mul_one, Nat.reduceMul, Nat.reduceAdd] at *
+      try simp only [Nat.mul_assoc, Nat.mul_comm, Nat.mul_left_comm, Nat.reduceMul] at *
+      try simp only [Nat.mul_comm _ (OfNat.ofNat _), Nat.mul_left_comm _ (OfNat.ofNat _), Nat.reduceMul] at *
+      all_goals omega
+
 end Sequences

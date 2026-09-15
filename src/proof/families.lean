@@ -479,4 +479,170 @@ theorem the_first_n_odd_numbers_sum_to_n_squared_for_every_n :
     rw [square_of_successor]
     omega
 
+
+-- ── the capped rows above, proved for every value by induction — no bound ──────────────────────────────────
+-- cassinis_identity_holds_across_the_range (n ≤ 30), power_sums_match_their_closed_forms (k = 1..5, n ≤ 40),
+-- the_first_three_power_sums_hold_to_two_hundred (n ≤ 200) and the_sums_of_triangular_numbers_are_the_tetrahedral_
+-- numbers (n ≤ 100) were checked up to a bound; these prove them for every value. Core Lean has no ring tactic, so each
+-- polynomial step is expanded, each monomial sorted, its numeral moved to the front, and omega closes what is left.
+theorem cassinis_identity_for_every_m :
+    ∀ m : Nat, fib (2 * m + 1) * fib (2 * m + 3) = fib (2 * m + 2) * fib (2 * m + 2) + 1 ∧
+      fib (2 * m) * fib (2 * m + 2) + 1 = fib (2 * m + 1) * fib (2 * m + 1) := by
+  intro m
+  induction m with
+  | zero => decide
+  | succ m ih =>
+    have r3 : fib (2 * m + 3) = fib (2 * m + 1) + fib (2 * m + 2) := rfl
+    have r4 : fib (2 * m + 4) = fib (2 * m + 2) + fib (2 * m + 3) := rfl
+    have r5 : fib (2 * m + 5) = fib (2 * m + 3) + fib (2 * m + 4) := rfl
+    show fib (2 * m + 3) * fib (2 * m + 5) = fib (2 * m + 4) * fib (2 * m + 4) + 1 ∧
+      fib (2 * m + 2) * fib (2 * m + 4) + 1 = fib (2 * m + 3) * fib (2 * m + 3)
+    have h := ih.1
+    rw [r5, r4, r3]
+    rw [r3] at h
+    generalize fib (2 * m + 1) = a at h ⊢
+    generalize fib (2 * m + 2) = b at h ⊢
+    constructor
+    · try simp only [Nat.mul_add, Nat.add_mul, Nat.pow_succ, Nat.pow_zero, Nat.one_mul, Nat.mul_one, Nat.reduceMul, Nat.reduceAdd] at *
+      try simp only [Nat.mul_assoc, Nat.mul_comm, Nat.mul_left_comm, Nat.reduceMul] at *
+      try simp only [Nat.mul_comm _ (OfNat.ofNat _), Nat.mul_left_comm _ (OfNat.ofNat _), Nat.reduceMul] at *
+      all_goals omega
+    · try simp only [Nat.mul_add, Nat.add_mul, Nat.pow_succ, Nat.pow_zero, Nat.one_mul, Nat.mul_one, Nat.reduceMul, Nat.reduceAdd] at *
+      try simp only [Nat.mul_assoc, Nat.mul_comm, Nat.mul_left_comm, Nat.reduceMul] at *
+      try simp only [Nat.mul_comm _ (OfNat.ofNat _), Nat.mul_left_comm _ (OfNat.ofNat _), Nat.reduceMul] at *
+      all_goals omega
+
+theorem a_sum_over_one_to_n_plus_one_adds_the_last_term :
+    ∀ (g : Nat → Nat) (n : Nat),
+      ((List.range' 1 (n + 1)).map g).foldl (· + ·) 0 = ((List.range' 1 n).map g).foldl (· + ·) 0 + g (n + 1) := by
+  intro g n
+  rw [List.range'_concat, List.map_append, List.foldl_append]
+  simp only [List.map, List.foldl, Nat.one_mul, Nat.add_comm 1 n]
+
+theorem the_numbers_sum_to_their_closed_form_for_every_n : ∀ n : Nat, 2 * powSum 1 n = n * (n + 1) := by
+  intro n
+  induction n with
+  | zero => rfl
+  | succ n ih =>
+    unfold powSum at *
+    rw [a_sum_over_one_to_n_plus_one_adds_the_last_term]
+    generalize ((List.range' 1 n).map (fun i => i ^ 1)).foldl (· + ·) 0 = s at ih ⊢
+    try simp only [Nat.mul_add, Nat.add_mul, Nat.pow_succ, Nat.pow_zero, Nat.one_mul, Nat.mul_one, Nat.reduceMul, Nat.reduceAdd] at *
+    try simp only [Nat.mul_assoc, Nat.mul_comm, Nat.mul_left_comm, Nat.reduceMul] at *
+    try simp only [Nat.mul_comm _ (OfNat.ofNat _), Nat.mul_left_comm _ (OfNat.ofNat _), Nat.reduceMul] at *
+    all_goals omega
+
+theorem the_squares_sum_to_their_closed_form_for_every_n : ∀ n : Nat, 6 * powSum 2 n = n * (n + 1) * (2 * n + 1) := by
+  intro n
+  induction n with
+  | zero => rfl
+  | succ n ih =>
+    unfold powSum at *
+    rw [a_sum_over_one_to_n_plus_one_adds_the_last_term]
+    generalize ((List.range' 1 n).map (fun i => i ^ 2)).foldl (· + ·) 0 = s at ih ⊢
+    try simp only [Nat.mul_add, Nat.add_mul, Nat.pow_succ, Nat.pow_zero, Nat.one_mul, Nat.mul_one, Nat.reduceMul, Nat.reduceAdd] at *
+    try simp only [Nat.mul_assoc, Nat.mul_comm, Nat.mul_left_comm, Nat.reduceMul] at *
+    try simp only [Nat.mul_comm _ (OfNat.ofNat _), Nat.mul_left_comm _ (OfNat.ofNat _), Nat.reduceMul] at *
+    all_goals omega
+
+theorem the_cubes_sum_to_their_closed_form_for_every_n : ∀ n : Nat, 4 * powSum 3 n = n * n * (n + 1) * (n + 1) := by
+  intro n
+  induction n with
+  | zero => rfl
+  | succ n ih =>
+    unfold powSum at *
+    rw [a_sum_over_one_to_n_plus_one_adds_the_last_term]
+    generalize ((List.range' 1 n).map (fun i => i ^ 3)).foldl (· + ·) 0 = s at ih ⊢
+    try simp only [Nat.mul_add, Nat.add_mul, Nat.pow_succ, Nat.pow_zero, Nat.one_mul, Nat.mul_one, Nat.reduceMul, Nat.reduceAdd] at *
+    try simp only [Nat.mul_assoc, Nat.mul_comm, Nat.mul_left_comm, Nat.reduceMul] at *
+    try simp only [Nat.mul_comm _ (OfNat.ofNat _), Nat.mul_left_comm _ (OfNat.ofNat _), Nat.reduceMul] at *
+    all_goals omega
+
+set_option maxRecDepth 200000 in
+set_option maxHeartbeats 4000000 in
+theorem the_fourth_powers_sum_to_their_closed_form_for_every_n :
+    ∀ n : Nat, 30 * powSum 4 n = n * (n + 1) * (2 * n + 1) * (3 * n * n + 3 * n - 1) := by
+  intro n
+  induction n with
+  | zero => rfl
+  | succ n ih =>
+    unfold powSum at *
+    rw [a_sum_over_one_to_n_plus_one_adds_the_last_term]
+    generalize ((List.range' 1 n).map (fun i => i ^ 4)).foldl (· + ·) 0 = s at ih ⊢
+    have e2 : 3 * (n + 1) * (n + 1) + 3 * (n + 1) - 1 = 3 * n * n + 9 * n + 5 := by
+      simp only [Nat.mul_add, Nat.add_mul, Nat.mul_one, Nat.one_mul]; omega
+    rw [e2]
+    cases n with
+    | zero => simp at ih ⊢; omega
+    | succ m =>
+      have e1 : 3 * (m + 1) * (m + 1) + 3 * (m + 1) - 1 = 3 * m * m + 9 * m + 5 := by
+        simp only [Nat.mul_add, Nat.add_mul, Nat.mul_one, Nat.one_mul]; omega
+      rw [e1] at ih
+      try simp only [Nat.mul_add, Nat.add_mul, Nat.pow_succ, Nat.pow_zero, Nat.one_mul, Nat.mul_one, Nat.reduceMul, Nat.reduceAdd] at *
+      try simp only [Nat.mul_assoc, Nat.mul_comm, Nat.mul_left_comm, Nat.reduceMul] at *
+      try simp only [Nat.mul_comm _ (OfNat.ofNat _), Nat.mul_left_comm _ (OfNat.ofNat _), Nat.reduceMul] at *
+      all_goals omega
+
+set_option maxRecDepth 200000 in
+set_option maxHeartbeats 4000000 in
+theorem the_fifth_powers_sum_to_their_closed_form_for_every_n :
+    ∀ n : Nat, 12 * powSum 5 n = n * n * (n + 1) * (n + 1) * (2 * n * n + 2 * n - 1) := by
+  intro n
+  induction n with
+  | zero => rfl
+  | succ n ih =>
+    unfold powSum at *
+    rw [a_sum_over_one_to_n_plus_one_adds_the_last_term]
+    generalize ((List.range' 1 n).map (fun i => i ^ 5)).foldl (· + ·) 0 = s at ih ⊢
+    have e2 : 2 * (n + 1) * (n + 1) + 2 * (n + 1) - 1 = 2 * n * n + 6 * n + 3 := by
+      simp only [Nat.mul_add, Nat.add_mul, Nat.mul_one, Nat.one_mul]; omega
+    rw [e2]
+    cases n with
+    | zero => simp at ih ⊢; omega
+    | succ m =>
+      have e1 : 2 * (m + 1) * (m + 1) + 2 * (m + 1) - 1 = 2 * m * m + 6 * m + 3 := by
+        simp only [Nat.mul_add, Nat.add_mul, Nat.mul_one, Nat.one_mul]; omega
+      rw [e1] at ih
+      try simp only [Nat.mul_add, Nat.add_mul, Nat.pow_succ, Nat.pow_zero, Nat.one_mul, Nat.mul_one, Nat.reduceMul, Nat.reduceAdd] at *
+      try simp only [Nat.mul_assoc, Nat.mul_comm, Nat.mul_left_comm, Nat.reduceMul] at *
+      try simp only [Nat.mul_comm _ (OfNat.ofNat _), Nat.mul_left_comm _ (OfNat.ofNat _), Nat.reduceMul] at *
+      all_goals omega
+
+theorem power_sums_match_their_closed_forms_for_every_n :
+    ∀ k n : Nat, 1 ≤ k → k ≤ 5 → powSum k n = faulhaber k n := by
+  intro k n h1 h5
+  have c : k = 1 ∨ k = 2 ∨ k = 3 ∨ k = 4 ∨ k = 5 := by omega
+  rcases c with rfl | rfl | rfl | rfl | rfl
+  · show powSum 1 n = n * (n + 1) / 2
+    rw [← the_numbers_sum_to_their_closed_form_for_every_n n, Nat.mul_div_cancel_left _ (by decide)]
+  · show powSum 2 n = n * (n + 1) * (2 * n + 1) / 6
+    rw [← the_squares_sum_to_their_closed_form_for_every_n n, Nat.mul_div_cancel_left _ (by decide)]
+  · show powSum 3 n = n * n * (n + 1) * (n + 1) / 4
+    rw [← the_cubes_sum_to_their_closed_form_for_every_n n, Nat.mul_div_cancel_left _ (by decide)]
+  · show powSum 4 n = n * (n + 1) * (2 * n + 1) * (3 * n * n + 3 * n - 1) / 30
+    rw [← the_fourth_powers_sum_to_their_closed_form_for_every_n n, Nat.mul_div_cancel_left _ (by decide)]
+  · show powSum 5 n = n * n * (n + 1) * (n + 1) * (2 * n * n + 2 * n - 1) / 12
+    rw [← the_fifth_powers_sum_to_their_closed_form_for_every_n n, Nat.mul_div_cancel_left _ (by decide)]
+
+theorem the_sums_of_triangular_numbers_are_the_tetrahedral_numbers_for_every_n :
+    ∀ n : Nat, ((List.range' 1 n).map (fun i => i * (i + 1) / 2)).foldl (· + ·) 0 = n * (n + 1) * (n + 2) / 6 := by
+  have six : ∀ n : Nat, 6 * ((List.range' 1 n).map (fun i => i * (i + 1) / 2)).foldl (· + ·) 0 = n * (n + 1) * (n + 2) := by
+    intro n
+    induction n with
+    | zero => rfl
+    | succ n ih =>
+      rw [a_sum_over_one_to_n_plus_one_adds_the_last_term]
+      have ev : (n + 1) * (n + 1 + 1) % 2 = 0 := by
+        rcases Nat.mod_two_eq_zero_or_one n with e | e <;> simp [Nat.mul_mod, Nat.add_mod, e]
+      have hd : (n + 1) * (n + 1 + 1) / 2 * 2 = (n + 1) * (n + 1 + 1) := Nat.div_mul_cancel (Nat.dvd_of_mod_eq_zero ev)
+      generalize ((List.range' 1 n).map (fun i => i * (i + 1) / 2)).foldl (· + ·) 0 = s at ih ⊢
+      generalize (n + 1) * (n + 1 + 1) / 2 = t at hd ⊢
+      rw [Nat.mul_two] at hd
+      try simp only [Nat.mul_add, Nat.add_mul, Nat.pow_succ, Nat.pow_zero, Nat.one_mul, Nat.mul_one, Nat.reduceMul, Nat.reduceAdd] at *
+      try simp only [Nat.mul_assoc, Nat.mul_comm, Nat.mul_left_comm, Nat.reduceMul] at *
+      try simp only [Nat.mul_comm _ (OfNat.ofNat _), Nat.mul_left_comm _ (OfNat.ofNat _), Nat.reduceMul] at *
+      all_goals omega
+  intro n
+  rw [← six n, Nat.mul_div_cancel_left _ (by decide)]
+
 end Families

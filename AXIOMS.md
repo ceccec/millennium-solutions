@@ -5,7 +5,7 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **690** report the same thing:
+axiom fails the build rather than earning a footnote. All **704** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
@@ -142,7 +142,7 @@ def isCarmichael (n : Nat) : Bool :=
 def bitsF : Nat → Nat → Nat
 ```
 
-### `demand2.lean` — 17 definition(s), 8 theorem(s)
+### `demand2.lean` — 17 definition(s), 11 theorem(s)
 
 ```lean
 def sumPow (p n : Nat) : Nat := (List.range' 1 n).foldl (fun a k => a + k ^ p) 0
@@ -181,7 +181,7 @@ def step : List Nat → List Nat
 def hh : Nat → List Nat → Bool
 ```
 
-### `elementary.lean` — 24 definition(s), 36 theorem(s)
+### `elementary.lean` — 24 definition(s), 37 theorem(s)
 
 ```lean
 def properDivisorSum (n : Nat) : Nat := ((List.range' 1 (n - 1)).filter (fun d => n % d == 0)).foldl (· + ·) 0
@@ -246,7 +246,7 @@ def residueMg (litres tds : Nat) : Nat := litres * tds
 def atomsOf (m : Nat) : Option (Nat × Nat) :=
 ```
 
-### `families.lean` — 44 definition(s), 46 theorem(s)
+### `families.lean` — 44 definition(s), 55 theorem(s)
 
 ```lean
 def primesUpTo30 : List Nat := [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
@@ -489,7 +489,7 @@ def instruments : List Instrument :=
 def settledHere : Nat := 8
 ```
 
-### `sequences.lean` — 7 definition(s), 12 theorem(s)
+### `sequences.lean` — 7 definition(s), 13 theorem(s)
 
 ```lean
 def fib : Nat → Nat
@@ -569,6 +569,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**690** declarations, **0** axiom dependencies, **321** definitions they rest on.
+**704** declarations, **0** axiom dependencies, **321** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them.

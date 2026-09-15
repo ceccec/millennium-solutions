@@ -168,4 +168,40 @@ theorem two_twenty_and_two_eighty_four_are_the_smallest_amicable_pair :
   (List.range' 2 218).all (fun a => ¬ (aliquot (aliquot a) == a && ¬ (aliquot a == a))) ∧
   (List.range' 2 218).filter (fun a => aliquot a == a) = [6, 28] := by decide
 
+
+-- ── the capped rows above, proved for every value — no bound ─────────────────────────────────────────────────
+-- sumPow is Families.powSum written as a single fold, so the Faulhaber laws proved there carry
+-- nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number (n ≤ 40) and
+-- the_sum_of_fifth_powers_has_the_closed_form_asked_for (n ≤ 20) to every n.
+theorem the_two_power_sums_are_one_sum : ∀ p n : Nat, sumPow p n = powSum p n := by
+  intro p n
+  unfold sumPow powSum
+  rw [List.foldl_map]
+
+theorem nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number_for_every_n :
+    ∀ n : Nat, sumPow 3 n = tri n * tri n := by
+  intro n
+  have c := the_cubes_sum_to_their_closed_form_for_every_n n
+  rw [← the_two_power_sums_are_one_sum] at c
+  have ev : n * (n + 1) % 2 = 0 := by
+    rcases Nat.mod_two_eq_zero_or_one n with e | e <;> simp [Nat.mul_mod, Nat.add_mod, e]
+  have hd : n * (n + 1) / 2 * 2 = n * (n + 1) := Nat.div_mul_cancel (Nat.dvd_of_mod_eq_zero ev)
+  unfold tri
+  generalize n * (n + 1) / 2 = t at hd ⊢
+  generalize sumPow 3 n = s at c ⊢
+  have q : 4 * s = 4 * (t * t) := by
+    have hsq : (t * 2) * (t * 2) = (n * (n + 1)) * (n * (n + 1)) := by rw [hd]
+    clear hd ev
+    try simp only [Nat.mul_add, Nat.add_mul, Nat.pow_succ, Nat.pow_zero, Nat.one_mul, Nat.mul_one, Nat.reduceMul, Nat.reduceAdd] at *
+    try simp only [Nat.mul_assoc, Nat.mul_comm, Nat.mul_left_comm, Nat.reduceMul] at *
+    try simp only [Nat.mul_comm _ (OfNat.ofNat _), Nat.mul_left_comm _ (OfNat.ofNat _), Nat.reduceMul] at *
+    all_goals omega
+  exact Nat.eq_of_mul_eq_mul_left (by decide) q
+
+theorem the_sum_of_fifth_powers_has_the_closed_form_for_every_n :
+    ∀ n : Nat, 12 * sumPow 5 n = n * n * (n + 1) * (n + 1) * (2 * n * n + 2 * n - 1) := by
+  intro n
+  rw [the_two_power_sums_are_one_sum]
+  exact the_fifth_powers_sum_to_their_closed_form_for_every_n n
+
 end Demand2

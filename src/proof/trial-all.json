@@ -15772,5 +15772,89 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "694fefdf-a71b-8019-84e5-04477e7be3d8"
+  },
+  {
+    "key": "lean_demand2_the_two_power_sums_are_one_sum",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6551630b-4917-8c1c-999f-4728c266cfd1"
+  },
+  {
+    "key": "lean_demand2_nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7aa0bbe0-b4ae-82e8-8319-7aed7047d654"
+  },
+  {
+    "key": "lean_demand2_the_sum_of_fifth_powers_has_the_closed_form_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "6916652f-bda2-80d1-882e-009dee2d791d"
+  },
+  {
+    "key": "lean_elementary_the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "cacb33f1-2fc1-8887-87a8-67aa352b3ac6"
+  },
+  {
+    "key": "lean_families_cassinis_identity_for_every_m",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "75a810f1-ae27-8fb7-b4d3-b257c0c917c7"
+  },
+  {
+    "key": "lean_families_a_sum_over_one_to_n_plus_one_adds_the_last_term",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "f664ca1d-8371-8bd5-a369-060e34e5baaf"
+  },
+  {
+    "key": "lean_families_the_numbers_sum_to_their_closed_form_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "34fa9fc8-b8ed-8895-bb81-c92f4515e9fe"
+  },
+  {
+    "key": "lean_families_the_squares_sum_to_their_closed_form_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0b7a0569-fb3f-8ba7-a49a-900c19bf369d"
+  },
+  {
+    "key": "lean_families_the_cubes_sum_to_their_closed_form_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "96b0047e-cf09-8755-be28-1cb49080d466"
+  },
+  {
+    "key": "lean_families_the_fourth_powers_sum_to_their_closed_form_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3419aabd-970f-8738-ae26-0adbfd4cf7fb"
+  },
+  {
+    "key": "lean_families_the_fifth_powers_sum_to_their_closed_form_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "790310ea-f06d-875d-89aa-2aba93d133e3"
+  },
+  {
+    "key": "lean_families_power_sums_match_their_closed_forms_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "04b04822-598b-8529-a44c-7881174ec382"
+  },
+  {
+    "key": "lean_families_the_sums_of_triangular_numbers_are_the_tetrahedral_numbers_for_every_n",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "43b9cdd8-7110-8f6f-887b-297d0262ae80"
+  },
+  {
+    "key": "lean_sequences_cassinis_identity_for_every_m",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "3b815427-42b8-8b8c-abf3-423b1e268af3"
   }
 ]

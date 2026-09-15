@@ -423,4 +423,24 @@ theorem eight_times_a_triangular_number_plus_one_is_an_odd_square_for_every_n :
   rw [hexp]
   omega
 
+
+-- ── the capped row above, proved for every value — no bound ──────────────────────────────────────────────────
+-- the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis was checked n ≤ 28; this proves it for every n.
+theorem the_lucas_numbers_are_the_sum_of_the_neighbouring_fibonaccis_for_every_n :
+    ∀ n : Nat, lucas (n + 1) = fib n + fib (n + 2) := by
+  have key : ∀ n : Nat, lucas (n + 1) = fib n + fib (n + 2) ∧ lucas (n + 2) = fib (n + 1) + fib (n + 3) := by
+    intro n
+    induction n with
+    | zero => decide
+    | succ n ih =>
+      refine ⟨ih.2, ?_⟩
+      have l : lucas (n + 3) = lucas (n + 1) + lucas (n + 2) := rfl
+      have f4 : fib (n + 4) = fib (n + 2) + fib (n + 3) := rfl
+      have f2 : fib (n + 2) = fib n + fib (n + 1) := rfl
+      show lucas (n + 3) = fib (n + 2) + fib (n + 4)
+      rw [l, ih.1, ih.2, f4]
+      omega
+  intro n
+  exact (key n).1
+
 end Elementary
