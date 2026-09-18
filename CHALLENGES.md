@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). The author's own claim, that the seven are solved through involution, is stated in his name on the front page.
 
-## Discovered theorems (decidable, over ℤ/9) — 2833 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2840 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (884)
+### lean (891)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -1095,6 +1095,13 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_program_an_untouched_container_reads_intact](/theorem/lean_program_an_untouched_container_reads_intact) — lean program.lean: an_untouched_container_reads_intact — [(P0, M0), (P1, M1), (PZ, MZ)].all (fun pm =&gt; intact (encodeBits pm.1 pm.2)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `24e09b9f-fa04…`
 - [lean_program_a_damaged_container_is_refused_at_every_program_position](/theorem/lean_program_a_damaged_container_is_refused_at_every_program_position) — lean program.lean: a_damaged_container_is_refused_at_every_program_position — (List.range 42).all (fun i =&gt; !(intact (flipBit (encodeBits P0 M0) (programF.getD i 0)))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `4cb0515d-b4c1…`
 - [lean_program_the_reserved_six_are_where_the_rendering_puts_them](/theorem/lean_program_the_reserved_six_are_where_the_rendering_puts_them) — lean program.lean: the_reserved_six_are_where_the_rendering_puts_them — RESERVED = [48, 49, 50, 51, 64, 65] ∧ byteAt 2 = 6 ∧ byteAt 3 = 8 ∧ byteAt 4 = 10 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `4d490971-9f9a…`
+- [lean_roots_the_cube_root_is_the_floor](/theorem/lean_roots_the_cube_root_is_the_floor) — lean roots.lean: the_cube_root_is_the_floor — iroot 3 (2 * 2 ^ 192) ^ 3 &lt;= 2 * 2 ^ 192 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `60dc4761-9a49…`
+- [lean_roots_the_cube_root_is_not_one_short](/theorem/lean_roots_the_cube_root_is_not_one_short) — lean roots.lean: the_cube_root_is_not_one_short — 2 * 2 ^ 192 &lt; (iroot 3 (2 * 2 ^ 192) + 1) ^ 3 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `80fe22fd-a510…`
+- [lean_roots_the_square_root_is_the_floor_and_not_one_short](/theorem/lean_roots_the_square_root_is_the_floor_and_not_one_short) — lean roots.lean: the_square_root_is_the_floor_and_not_one_short — iroot 2 (2 * 2 ^ 128) ^ 2 &lt;= 2 * 2 ^ 128 ∧ 2 * 2 ^ 128 &lt; (iroot 2 (2 * 2 ^ 128) + 1) ^ 2 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `73292676-fefa…`
+- [lean_roots_the_prime_generator_is_complete](/theorem/lean_roots_the_prime_generator_is_complete) — lean roots.lean: the_prime_generator_is_complete — firstPrimes 40 8 = [2, 3, 5, 7, 11, 13, 17, 19] ∧ (firstPrimes 40 8).all isPrime ∧ ((List.range' 2 18).filter isPrime).length = 8 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `999c4094-b5b6…`
+- [lean_roots_the_first_round_constant_is_that_cube_root_fraction](/theorem/lean_roots_the_first_round_constant_is_that_cube_root_fraction) — lean roots.lean: the_first_round_constant_is_that_cube_root_fraction — frac64 3 2 = 0x428a2f98d728ae22 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e464678b-2899…`
+- [lean_roots_the_first_initial_value_is_that_square_root_fraction](/theorem/lean_roots_the_first_initial_value_is_that_square_root_fraction) — lean roots.lean: the_first_initial_value_is_that_square_root_fraction — frac64 2 2 = 0x6a09e667f3bcc908 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e9398daf-fd28…`
+- [lean_roots_the_cube_and_the_square_do_not_agree](/theorem/lean_roots_the_cube_and_the_square_do_not_agree) — lean roots.lean: the_cube_and_the_square_do_not_agree — frac64 3 2 != frac64 2 2 ∧ frac64 3 3 != frac64 2 3 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `28cb8c6b-7c2c…`
 
 ### other — one-of-a-kind (0)
 
@@ -2679,4 +2686,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `5b9a7dc7-0a4f-8797-a509-168faa9a1de8`. Integrity, not truth.
+Page content-address: `959f6843-e675-8486-9c60-ef27a9cf3cc9`. Integrity, not truth.

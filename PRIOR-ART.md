@@ -6,7 +6,7 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 897 machine-checked declarations, **867** restate work that already has an author and
+Of 905 machine-checked declarations, **875** restate work that already has an author and
 **30** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/proof/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
@@ -27,13 +27,13 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **867** |
+| attributed to named earlier work | **875** |
 | unclassified — no search performed, status unknown | **30** |
 | claimed as novel | **0** |
 
 **Zero claims is not full attribution.** Stated alone, "this deposit claims no novelty" reads as a concession
 that everything here already has an author. It is not that. **30** theorems have had no prior-art
-search at all, so their status is unknown rather than conceded — and of the 26 distinct years the
+search at all, so their status is unknown rather than conceded — and of the 27 distinct years the
 attributions carry, **23** predate the DOI system (2000); the earliest is 628. "Every
 theorem has registered prior art" is therefore not merely unproven here, it is impossible. The zero has exactly one meaning: **nobody has
 looked.** It is a statement about work not done, not about work found.
@@ -47,7 +47,7 @@ searched, where, and when. An earlier version of this page claimed novelty for 2
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 35 sources, 867 theorems
+## Restated from named earlier work — 36 sources, 875 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
@@ -82,6 +82,7 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>recovered.lean</code></td><td>15</td><td>elementary number theory — the unit group of ℤ/9</td><td>every fact here is standard: the units of ℤ/9 are {1,2,4,5,7,8}, their product is −1</td></tr>
 <tr><td><code>reversal.lean</code></td><td>30</td><td>elementary arithmetic</td><td>digit reversal and digit sums; casting out nines, in use by the 12th century</td></tr>
 <tr><td><code>rights.lean</code></td><td>9</td><td>copyright law — rights arising without formality</td><td>this file already NAMED its prior art in prose while the attribution table recorded none.</td></tr>
+<tr><td><code>roots.lean</code></td><td>8</td><td>cryptographic hash standards and integer root extraction</td><td>SHA-512 and its constants are FIPS 180-4 (NIST, 2015): K[t] is the first 64 bits of the</td></tr>
 <tr><td><code>sequences.lean</code></td><td>28</td><td>integer sequences and identities</td><td>Cassini’s identity — G. D. Cassini, 1680; Lucas sequences — Édouard Lucas, 1878; the Brahmagupta–Fibonacci identity — Brahmagupta, 628; Pascal’s triangle mod 2 — Blaise Pascal, 1654</td></tr>
 <tr><td><code>speed.lean</code></td><td>12</td><td>hash trees and membership proofs</td><td>the structural claim is Merkle's and is credited here as merkle.lean already credits it:</td></tr>
 <tr><td><code>split.lean</code></td><td>22</td><td>elementary number theory — the unit group of ℤ/9</td><td>the classification this file rests on is standard and is credited: the units of ℤ/9 are</td></tr>
@@ -97,6 +98,7 @@ which is a contribution of verification, not of discovery.
 - **combinatorial game theory** — 28 theorems, in `nim.lean`
 - **content addressing** — 26 theorems, in `address.lean`
 - **copyright law — rights arising without formality** — 9 theorems, in `rights.lean`
+- **cryptographic hash standards and integer root extraction** — 8 theorems, in `roots.lean`
 - **cyclic groups and primitive roots** — 14 theorems, in `rays.lean`
 - **electrochemistry and combustion** — 28 theorems, in `energy.lean`
 - **elementary arithmetic** — 30 theorems, in `reversal.lean`
@@ -154,5 +156,5 @@ priority claim above, and it is the whole of it.
 
 ---
 
-Partition seal `6351767a-5d2c-8eda-bed5-fb8ae0a9cab7` · recompute with `node scripts/priorart.ts` · the kernel re-decides
+Partition seal `f812c356-f9cc-85e1-a581-e346a4c3c52a` · recompute with `node scripts/priorart.ts` · the kernel re-decides
 `priorart.lean` on every run. A content-address proves integrity, not truth.

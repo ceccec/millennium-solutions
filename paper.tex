@@ -62,9 +62,9 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 897 of them across 37 files and
-7 wings; 697 close by exhaustion over a stated finite domain, 187 are proved
-for every value, and the remaining 13 close by \texttt{rfl} and are counted separately, never as theorems.
+(\texttt{npm run latex-gate}). There are 905 of them across 38 files and
+7 wings; 704 close by exhaustion over a stated finite domain, 187 are proved
+for every value, and the remaining 14 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
 
@@ -2891,6 +2891,48 @@ for every value, and the remaining 13 close by \texttt{rfl} and are counted sepa
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by
   intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{roots.lean}}
+
+\begin{theorem}[\texttt{the\_cube\_root\_is\_the\_floor}]
+\[ \mathrm{iroot}\mathopen{}\left(3,\,2 \cdot 2^{192}\right)^{3} \le 2 \cdot 2^{192} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_cube\_root\_is\_not\_one\_short}]
+\[ 2 \cdot 2^{192} < \mathrm{iroot}\mathopen{}\left(3,\,2 \cdot 2^{192}\right) + 1^{3} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_square\_root\_is\_the\_floor\_and\_not\_one\_short}]
+\[ \mathrm{iroot}\mathopen{}\left(2,\,2 \cdot 2^{128}\right)^{2} \le 2 \cdot 2^{128} \land 2 \cdot 2^{128} < \mathrm{iroot}\mathopen{}\left(2,\,2 \cdot 2^{128}\right) + 1^{2} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_prime\_generator\_is\_complete}]
+\[ \mathrm{firstPrimes}\mathopen{}\left(40,\,8\right) = [2,\,3,\,5,\,7,\,11,\,13,\,17,\,19] \land \forall x \in \mathrm{firstPrimes}\mathopen{}\left(40,\,8\right),\; \mathrm{isPrime}\mathopen{}\left(x\right) \land \left|\{\, x \in \{2,\dots,19\} \mid \mathrm{isPrime}\mathopen{}\left(x\right) \,\}\right| = 8 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 144 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_first\_round\_constant\_is\_that\_cube\_root\_fraction}]
+\[ \mathrm{frac64}\mathopen{}\left(3,\,2\right) = 0\mathopen{}\left(\mathrm{x428a2f98d728ae22}\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_first\_initial\_value\_is\_that\_square\_root\_fraction}]
+\[ \mathrm{frac64}\mathopen{}\left(2,\,2\right) = 0\mathopen{}\left(\mathrm{x6a09e667f3bcc908}\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_cube\_and\_the\_square\_do\_not\_agree}]
+\[ \mathrm{frac64}\mathopen{}\left(3,\,2\right) \neq \mathrm{frac64}\mathopen{}\left(2,\,2\right) \land \mathrm{frac64}\mathopen{}\left(3,\,3\right) \neq \mathrm{frac64}\mathopen{}\left(2,\,3\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{roots\_settles\_its\_range}]
+\[ \mathrm{settledHere} = 7 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 
 \paragraph{\texttt{speed.lean}}
 
