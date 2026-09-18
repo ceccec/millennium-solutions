@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 888 of them across 37 files and
-7 wings; 688 close by exhaustion over a stated finite domain, 187 are proved
+(\texttt{npm run latex-gate}). There are 894 of them across 37 files and
+7 wings; 694 close by exhaustion over a stated finite domain, 187 are proved
 for every value, and the remaining 13 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -522,8 +522,38 @@ for every value, and the remaining 13 close by \texttt{rfl} and are counted sepa
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
+\begin{theorem}[\texttt{the\_fields\_read\_back\_exactly}]
+\[ \mathrm{readField}\mathopen{}\left(\mathrm{programF},\,\mathrm{encodeBits}\mathopen{}\left(\mathrm{P0},\,\mathrm{M0}\right)\right) = \mathrm{P0} \land \mathrm{readField}\mathopen{}\left(\mathrm{messageF},\,\mathrm{encodeBits}\mathopen{}\left(\mathrm{P0},\,\mathrm{M0}\right)\right) = \mathrm{M0} \land \mathrm{readField}\mathopen{}\left(\mathrm{programF},\,\mathrm{encodeBits}\mathopen{}\left(\mathrm{P1},\,\mathrm{M1}\right)\right) = \mathrm{P1} \land \mathrm{readField}\mathopen{}\left(\mathrm{messageF},\,\mathrm{encodeBits}\mathopen{}\left(\mathrm{P1},\,\mathrm{M1}\right)\right) = \mathrm{M1} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_check\_field\_carries\_the\_check}]
+\[ \mathrm{readField}\mathopen{}\left(\mathrm{checkF},\,\mathrm{encodeBits}\mathopen{}\left(\mathrm{P0},\,\mathrm{M0}\right)\right) = \mathrm{checkBits}\mathopen{}\left(\mathrm{P0},\,\mathrm{M0}\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_reserved\_six\_survive\_any\_payload}]
+\texttt{[(P0, M0), (P1, M1), (P0, M1), (P1, M0), (PZ, MZ)].all (fun pm => let b := encodeBits pm.1 pm.2 (b.getD 48 false == true) \&\& (b.getD 49 false == false) \&\& (b.getD 50 false == false) \&\& (b.getD 51 false == false) \&\& (b.getD 64 false == true) \&\& (b.getD 65 false == false))}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_flip\_reaches\_every\_payload\_position}]
+\[ \forall i \in \{0,\dots,41\},\; \mathrm{flipAt}\mathopen{}\left(\mathrm{P0},\,i\right) \neq \mathrm{P0} \land \forall i \in \{0,\dots,47\},\; \mathrm{flipAt}\mathopen{}\left(\mathrm{M0},\,i\right) \neq \mathrm{M0} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 2,016 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{flipping\_any\_program\_bit\_moves\_the\_check}]
+\[ \forall i \in \{0,\dots,41\},\; \mathrm{checkBits}\mathopen{}\left(\mathrm{flipAt}\mathopen{}\left(\mathrm{P0},\,i\right),\,\mathrm{M0}\right) \neq \mathrm{checkBits}\mathopen{}\left(\mathrm{P0},\,\mathrm{M0}\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 42 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{flipping\_any\_message\_bit\_moves\_the\_check}]
+\[ \forall i \in \{0,\dots,47\},\; \mathrm{checkBits}\mathopen{}\left(\mathrm{P0},\,\mathrm{flipAt}\mathopen{}\left(\mathrm{M0},\,i\right)\right) \neq \mathrm{checkBits}\mathopen{}\left(\mathrm{P0},\,\mathrm{M0}\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 48 cases. \hfill$\square$
+
 \begin{theorem}[\texttt{program\_settles\_its\_range}]
-\[ \mathrm{settledHere} = 12 \]
+\[ \mathrm{settledHere} = 18 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 

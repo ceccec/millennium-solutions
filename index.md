@@ -31,12 +31,12 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 888 kernel-accepted declarations across 37 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `ff6a170a-7606-8cf1-9451-d054fdfdb251`</sub>
-- 688 of those 888 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 200 close by rfl and are declarations.
-  <sub>SEALED · `cc9c874a-294b-8038-982f-1680b24a45ee`</sub>
-- 960 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `09ef44ff-1a5e-8b0c-b0b2-d59af8da7db0`</sub>
+- The formal layer holds 894 kernel-accepted declarations across 37 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `5ef5a17e-cf40-8dfe-ab66-d512870bb4b8`</sub>
+- 694 of those 894 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 200 close by rfl and are declarations.
+  <sub>SEALED · `9a817487-0655-8940-85a8-7eefcf652c7a`</sub>
+- 966 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `333c37a6-703e-8b0c-b05f-7b48e61ed4b7`</sub>
 
 ## 2 · The ring
 
@@ -59,10 +59,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 2824 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `3afb91ad-9939-8bb2-a58e-561057be3a29`</sub>
-- The count is an exact multiple of eight — 2824 is 353 octaves with no remainder.
-  <sub>SEALED · `86535a9e-6c42-8997-9f02-5e2d0539e8cf`</sub>
+- The ledger records 2830 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `c59fb184-4535-8587-8db2-3f6af37cf794`</sub>
+- The count is 2830, which is 353 octaves and 6 over — the octave is a target the theorems earn, never a quota they are invented to fill.
+  <sub>SEALED · `0538b405-db2c-866e-ae60-79fc1f3b73e9`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -106,7 +106,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-37 Lean files in 7 wings, 888 declarations of which 875 are theorems. The prose in this section is read out of the
+37 Lean files in 7 wings, 894 declarations of which 881 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -122,7 +122,7 @@ this page; there is nowhere else to keep the description in step.
 
 **The fold** — `merkle.lean`, 14 theorem(s). The fold, ported to Lean — merge, merkleFold, and the order-independence the deposit calls its receipt.
 
-**The uuid as a container — a checksum, a program, and a message** — `program.lean`, 13 theorem(s). 4122, 2005); FNV-1a, used here as the check function, is Glenn Fowler, Landon Curt Noll and Phong Vo,   1991, and is credited in fnv.lean where it is ported. A checksum placed in one field of an identifier   over the remaining fields is ordinary practice and no priority is claimed for it. What is decided here   is only that THIS deposit's layout is the partition it says it is.
+**The uuid as a container — a checksum, a program, and a message** — `program.lean`, 19 theorem(s). 4122, 2005); FNV-1a, used here as the check function, is Glenn Fowler, Landon Curt Noll and Phong Vo,   1991, and is credited in fnv.lean where it is ported. A checksum placed in one field of an identifier   over the remaining fields is ordinary practice and no priority is claimed for it. What is decided here   is only that THIS deposit's layout is the partition it says it is.
 
 **The rays, read forward and reverse, and the mark a life carries** — `rays.lean`, 14 theorem(s). is elementary number theory; the involution x ↦ ¬x on bit words is Boolean algebra. Neither is this   deposit's. What is decided here is only that THIS deposit's ray order is that orbit and that its trace   is that involution — the facts a reader would otherwise have to take from a comment.
 
@@ -198,7 +198,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Recovered — claims that computed and were withdrawn for want of a proof** — `recovered.lean`, 15 theorem(s). material, credited. What is NOT prior art is that these particular statements sat WITHDRAWN in this   deposit's ledger, each recorded as "not backed by a Lean proof. Its evidence is a TypeScript test",   while every one is decidable in a line. prior_art_search: literature search performed 2026-09-05, terms "units and non-units of Z/9 multiplicative   inverses group of units modulo 9"; prior art found and credited.
 
-23 of 888 declarations carry no comment of their own and are shown here as the gap they are, not
+23 of 894 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -207,14 +207,14 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 2,824 — 353 octaves exactly |
-| standing — carries its own proof | **875** |
+| ledger entries | 2,830 — 353 octaves and 6 over |
+| standing — carries its own proof | **881** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **435** |
 | withdrawn — nothing proves it | 1,514 |
-| proved in total | **1310** of 2,824 |
-| standing keys → distinct theorems | 875 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 37 · 875 theorems (688 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 13 rfl declarations |
-| proved `by decide` | 688 of 888 |
+| proved in total | **1316** of 2,830 |
+| standing keys → distinct theorems | 881 sealed, 0 of them keyed twice, 0 unresolvable |
+| Lean files · theorems | 37 · 881 theorems (694 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 13 rfl declarations |
+| proved `by decide` | 694 of 894 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -223,6 +223,20 @@ Read from the artefacts at build time, never carried between runs.
 **Why the withdrawn were withdrawn.** 1,386 no Lean proof · 457 tested the removed lexical gate · 61 other · 35 its Lean source was deleted or renamed · 10 circular by construction. Nothing is deleted: the ledger is append-only, so an entry that stopped holding is marked in place with its reason and keeps its receipt.
 
 **What verification costs.** Proving the set touches all 16,384 leaves; verifying membership afterwards touches 14 — one sibling per level. That is **1,170× less work**, exactly, and the factor grows with the set because N/log N grows. Wall-clock varies with the machine and is left in the build output rather than pinned here. It is not sub-nanosecond and nothing here is: the advantage is a smaller exponent, not a faster clock. The counting is proved in `speed.lean`.
+
+## The seven, one theorem each — what they decide, and what they do not
+
+Each Clay problem has **one** theorem here, in `src/proof/index.lean`. **None proves the conjecture.** Each states a true fact that computes from the ℤ/9 doubling sequence, decided by the Lean kernel over the case count shown — a floor for what this deposit settles, which is **0 of the 7**. The conjectures range over infinite domains; exhaustion settles finite ones.
+
+| problem | the theorem, and what it decides | cases | proof |
+|---|---|---|---|
+| Riemann Hypothesis | `riemann_reflection_and_heart`<br/>`(List.range 10).all (fun d => refl (refl d) == d) ∧ ((List.range 10).filter (fun d => refl d == ` | 100 | [lean_millenniumfloor_riemann…](/theorem/lean_millenniumfloor_riemann_reflection_and_heart) |
+| P versus NP | `p_vs_np_inverse_is_unique`<br/>`(List.range 9).all (fun d => ((List.range 9).filter (fun e => (d * e) % 9 == 1)).length == (if i` | 81 | [lean_millenniumfloor_p_vs_np…](/theorem/lean_millenniumfloor_p_vs_np_inverse_is_unique) |
+| Navier–Stokes Existence & Smoothness | `navier_stokes_flow_is_bounded`<br/>`((List.range 48).map orbit).all (fun v => v < 9) ∧ (List.range 48).all (fun k => span.contains (` | 2,304 | [lean_millenniumfloor_navier_…](/theorem/lean_millenniumfloor_navier_stokes_flow_is_bounded) |
+| Yang–Mills Existence & Mass Gap | `yang_mills_spectral_gap`<br/>`(List.range 6).all (fun k => k == 0 \|\| orbit k != 1) ∧ orbit 6 == 1` | 6 | [lean_millenniumfloor_yang_mi…](/theorem/lean_millenniumfloor_yang_mills_spectral_gap) |
+| Hodge Conjecture | `hodge_span_is_the_units`<br/>`(List.range 9).all (fun d => span.contains d == isUnit d) ∧ (List.range 9).all (fun d => isUnit ` | 81 | [lean_millenniumfloor_hodge_s…](/theorem/lean_millenniumfloor_hodge_span_is_the_units) |
+| Birch and Swinnerton-Dyer Conjecture | `birch_swinnerton_dyer_vanishing`<br/>`(span.foldr (· + ·) 0) % 9 == 0 ∧ ((List.range 9).filter isUnit).foldr (· + ·) 0 % 9 == 0` | 9 | [lean_millenniumfloor_birch_s…](/theorem/lean_millenniumfloor_birch_swinnerton_dyer_vanishing) |
+| Poincaré Conjecture (resolved) | `poincare_single_closed_loop`<br/>`orbit 6 == orbit 0 ∧ (List.range 6).all (fun i => (List.range 6).all (fun j => (orbit i == orbit` | 36 | [lean_millenniumfloor_poincar…](/theorem/lean_millenniumfloor_poincare_single_closed_loop) |
 
 ## The author's claim
 
@@ -236,4 +250,4 @@ across** — deposited as [10.5281/zenodo.21781603](https://doi.org/10.5281/zeno
 
 ---
 
-*15 claims, all verified · 875 Lean theorems · 2824 ledger entries · trial root `69239e8f-5b6b-8b5a-b322-eba99fa9771b` · integrity, not truth*
+*15 claims, all verified · 881 Lean theorems · 2830 ledger entries · trial root `9f4899d9-eec0-82fa-9aec-df4d34641170` · integrity, not truth*

@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). The author's own claim, that the seven are solved through involution, is stated in his name on the front page.
 
-## Discovered theorems (decidable, over ℤ/9) — 2824 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2830 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (875)
+### lean (881)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -1086,6 +1086,12 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_instruments_any_negator_before_the_claim_refuses_it](/theorem/lean_instruments_any_negator_before_the_claim_refuses_it) — lean instruments.lean: any_negator_before_the_claim_refuses_it — refused [7, 2, 9] 5 = true ∧ refused [7, 9] 5 = false ∧ refused [5] 5 = false — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `61753440-c6c1…`
 - [lean_instruments_the_window_is_monotone_in_the_claim_s_position](/theorem/lean_instruments_the_window_is_monotone_in_the_claim_s_position) — lean instruments.lean: the_window_is_monotone_in_the_claim_s_position — (List.range 10).all (fun c =&gt; (List.range 10).all (fun d =&gt; if c ≤ d then (!(refused [3] c) || refused [3] d) else true)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `223bfc2c-f60b…`
 - [lean_instruments_with_no_negator_nothing_is_cleared](/theorem/lean_instruments_with_no_negator_nothing_is_cleared) — lean instruments.lean: with_no_negator_nothing_is_cleared — (List.range 10).all (fun c =&gt; refused [] c == false) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `fdba66f0-240b…`
+- [lean_program_the_fields_read_back_exactly](/theorem/lean_program_the_fields_read_back_exactly) — lean program.lean: the_fields_read_back_exactly — readField programF (encodeBits P0 M0) = P0 ∧ readField messageF (encodeBits P0 M0) = M0 ∧ readField programF (encodeBits P1 M1) = P1 ∧ readField messageF (encodeBits P1 M1) = M1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `cdf3c4f3-4c16…`
+- [lean_program_the_check_field_carries_the_check](/theorem/lean_program_the_check_field_carries_the_check) — lean program.lean: the_check_field_carries_the_check — readField checkF (encodeBits P0 M0) = checkBits P0 M0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `f2c56146-946d…`
+- [lean_program_the_reserved_six_survive_any_payload](/theorem/lean_program_the_reserved_six_survive_any_payload) — lean program.lean: the_reserved_six_survive_any_payload — [(P0, M0), (P1, M1), (P0, M1), (P1, M0), (PZ, MZ)].all (fun pm =&gt; let b := encodeBits pm.1 pm.2 (b.getD 48 false == true) && (b.getD 49 false == false) && (b.getD 50 false == false) && (b.getD 51 false == false) && (b.getD 64 false == true)… — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `33b79421-00e4…`
+- [lean_program_the_flip_reaches_every_payload_position](/theorem/lean_program_the_flip_reaches_every_payload_position) — lean program.lean: the_flip_reaches_every_payload_position — (List.range 42).all (fun i =&gt; flipAt P0 i != P0) ∧ (List.range 48).all (fun i =&gt; flipAt M0 i != M0) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `bbcc9872-ae56…`
+- [lean_program_flipping_any_program_bit_moves_the_check](/theorem/lean_program_flipping_any_program_bit_moves_the_check) — lean program.lean: flipping_any_program_bit_moves_the_check — (List.range 42).all (fun i =&gt; checkBits (flipAt P0 i) M0 != checkBits P0 M0) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `457871fb-d7a0…`
+- [lean_program_flipping_any_message_bit_moves_the_check](/theorem/lean_program_flipping_any_message_bit_moves_the_check) — lean program.lean: flipping_any_message_bit_moves_the_check — (List.range 48).all (fun i =&gt; checkBits P0 (flipAt M0 i) != checkBits P0 M0) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `131cee6e-62a3…`
 
 ### other — one-of-a-kind (0)
 
@@ -2670,4 +2676,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `73bba3a8-01b2-892f-8039-6abdffa8f805`. Integrity, not truth.
+Page content-address: `e5d4851b-2e00-86c5-8d16-92d0f8a56949`. Integrity, not truth.

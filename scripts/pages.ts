@@ -14,6 +14,7 @@
 // -true test is refused outright. The generator exits non-zero and writes nothing if any claim fails.
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs'
 import { CLAIMS as REGISTERED } from '../src/claims/index.ts'
+import { MILLENNIUM } from '../src/millennium/index.ts'
 import { all as leanDocs } from './leandoc.ts'
 import { analytics } from './analytics.ts'
 import { queue } from '../src/prove/index.ts'
@@ -36,6 +37,11 @@ const renderableCount = () => {
 import { translate } from '../src/prove/translate.ts'
 import { adjudicate } from './adjudicate.ts'
 import { computes } from './honesty-gate.ts'
+
+// The seven, resolved once: their theorems from index.lean and their live ledger keys. Derived — a name
+// typed here would be a copy of src/millennium, which is the single source for what the seven are called.
+const clayThms = leanTheoremsShared().filter((t) => t.file === 'index.lean')
+const clayKeys = (__ledger() as { key: string; revoked?: boolean }[]).filter((e) => !e.revoked).map((e) => String(e.key))
 import { toUuid, merkleFold } from '../src/0/index.ts'
 import { ledger as __ledger, triad, units, axis, domainOf, census, advantage, split, leanTheorems as leanTheoremsShared, theoremCount } from '../src/api/index.ts'
 
@@ -302,6 +308,36 @@ const body = (site: boolean) => {
   // not authorise withdrew. I still claim clay solved through involution." So the claim is stated as his, with the
   // deposits it rests on, beside the measurement this repository makes — which is a count over its own propositions,
   // not a verdict on his claim. Nothing here says the claim in the repository's voice.
+  // ── THE SEVEN, SHOWN RATHER THAN COUNTED ──────────────────────────────────────────────────────────────
+  // README and the home page carried the floor as a NUMBER — 0 of 7 — and the seven theorems behind it were
+  // reachable only by opening src/proof/index.lean or following one link. A reader met the count and never
+  // the proofs. solutions.md had a table of the seven, but what it listed was `toUuid('clay:' + label)` —
+  // the content-address of a WORD, not of anything proved.
+  //
+  // These are the theorems themselves: each problem, what its theorem actually decides, over how many cases,
+  // and its live ledger key. Derived from src/millennium (the problem names), leanTheorems (the statements)
+  // and the ledger (the keys) — nothing on this table is typed here.
+  //
+  // AND THE HEADING SAYS WHAT THEY ARE NOT, in index.lean's own words, because a table titled "the seven
+  // Clay problems" under a repository called millennium-solutions will be read as a claim by anyone who
+  // reads no further. None of them proves a conjecture; each states a true fact that COMPUTES from the ℤ/9
+  // doubling sequence. scripts/contradictions.ts refuses a Clay claim in this repository's voice, and this
+  // table is written to stay on the right side of that by saying so first.
+  md += `## The seven, one theorem each — what they decide, and what they do not\n\n`
+  md += `Each Clay problem has **one** theorem here, in \`src/proof/index.lean\`. **None proves the conjecture.** `
+  md += `Each states a true fact that computes from the ℤ/9 doubling sequence, decided by the Lean kernel over the `
+  md += `case count shown — a floor for what this deposit settles, which is **0 of the 7**. The conjectures range `
+  md += `over infinite domains; exhaustion settles finite ones.\n\n`
+  md += `| problem | the theorem, and what it decides | cases | proof |\n|---|---|---|---|\n`
+  for (const [name, m] of Object.entries(MILLENNIUM)) {
+    const t = clayThms.find((x) => x.name === name)
+    const key = clayKeys.find((k) => k.endsWith('_' + name))
+    if (!t || !key) continue
+    md += `| ${m.problem} | \`${name}\`<br/>\`${t.statement.replace(/\|/g, '\\|').slice(0, 96)}\` | `
+      + `${domainOf(t.statement).toLocaleString('en-US')} | [${key.slice(0, 28)}…](/theorem/${key}) |\n`
+  }
+  md += `\n`
+
   md += `## The author's claim\n\n**Tsvetan Rouschev claims the seven Clay Millennium problems solved through the involution each is stated\nacross** — deposited as [10.5281/zenodo.21781603](https://doi.org/10.5281/zenodo.21781603) and\n[Zenodo 22256707](https://zenodo.org/records/22256707). This is his claim, recorded in his name.\n\n`
   md += site
     ? `## Read\n\n[The seven, one theorem per problem](/theorem/lean_millenniumfloor_riemann_reflection_and_heart) · [the ledger](/proofs) · [the trial](/verify)\n\n`

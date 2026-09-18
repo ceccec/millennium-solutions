@@ -6,7 +6,7 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 888 machine-checked declarations, **858** restate work that already has an author and
+Of 894 machine-checked declarations, **864** restate work that already has an author and
 **30** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/proof/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
@@ -27,7 +27,7 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **858** |
+| attributed to named earlier work | **864** |
 | unclassified — no search performed, status unknown | **30** |
 | claimed as novel | **0** |
 
@@ -47,7 +47,7 @@ searched, where, and when. An earlier version of this page claimed novelty for 2
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 35 sources, 858 theorems
+## Restated from named earlier work — 35 sources, 864 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
@@ -75,7 +75,7 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>merkle.lean</code></td><td>14</td><td>hash trees and membership proofs</td><td>the hash tree — Ralph Merkle, 1979 (thesis); CRYPTO 1987</td></tr>
 <tr><td><code>nim.lean</code></td><td>28</td><td>combinatorial game theory</td><td>Nim — Charles L. Bouton, 1901; the Sprague–Grundy theorem — Roland Sprague, 1935 and Patrick M. Grundy, 1939</td></tr>
 <tr><td><code>phenomena.lean</code></td><td>4</td><td>metrology and classical physical chemistry</td><td>the SI base quantities and their defining constants are definitions of the Conférence</td></tr>
-<tr><td><code>program.lean</code></td><td>13</td><td>identifier formats and error-detecting codes</td><td>the UUID layout and its version and variant fields are RFC 9562 (2024, obsoleting RFC</td></tr>
+<tr><td><code>program.lean</code></td><td>19</td><td>identifier formats and error-detecting codes</td><td>the UUID layout and its version and variant fields are RFC 9562 (2024, obsoleting RFC</td></tr>
 <tr><td><code>quantum.lean</code></td><td>12</td><td>canonical forms and order-invariant commitments</td><td>sorting a multiset into a canonical order BEFORE folding it is standard practice, not a</td></tr>
 <tr><td><code>rays.lean</code></td><td>14</td><td>cyclic groups and primitive roots</td><td>that 3 is a primitive root modulo 7 and that (ℤ/7)* is cyclic of order six is Gauss and</td></tr>
 <tr><td><code>reach.lean</code></td><td>12</td><td>elementary set theory — the naturals are not exhausted by any finite list</td><td>that no finite set contains every natural number is Euclid's argument in form and is as</td></tr>
@@ -112,7 +112,7 @@ which is a contribution of verification, not of discovery.
 - **elementary number theory, second tier** — 12 theorems, in `demand2.lean`
 - **elementary set theory — the naturals are not exhausted by any finite list** — 12 theorems, in `reach.lean`
 - **hash trees and membership proofs** — 34 theorems, in `ledgerclaims.lean`, `merkle.lean`, `speed.lean`
-- **identifier formats and error-detecting codes** — 13 theorems, in `program.lean`
+- **identifier formats and error-detecting codes** — 19 theorems, in `program.lean`
 - **integer sequences and identities** — 28 theorems, in `sequences.lean`
 - **metrology and classical physical chemistry** — 4 theorems, in `phenomena.lean`
 - **metrology — the International System of Units** — 15 theorems, in `light.lean`

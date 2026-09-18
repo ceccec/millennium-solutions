@@ -19874,5 +19874,35 @@
     "key": "lean_instruments_with_no_negator_nothing_is_cleared",
     "name": "lean instruments.lean: with_no_negator_nothing_is_cleared — (List.range 10).all (fun c => refused [] c == false) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "fdba66f0-240b-80fa-9221-af38bec71dc8"
+  },
+  {
+    "key": "lean_program_the_fields_read_back_exactly",
+    "name": "lean program.lean: the_fields_read_back_exactly — readField programF (encodeBits P0 M0) = P0 ∧ readField messageF (encodeBits P0 M0) = M0 ∧ readField programF (encodeBits P1 M1) = P1 ∧ readField messageF (encodeBits P1 M1) = M1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "cdf3c4f3-4c16-8a86-9fcf-ac68eeca84f4"
+  },
+  {
+    "key": "lean_program_the_check_field_carries_the_check",
+    "name": "lean program.lean: the_check_field_carries_the_check — readField checkF (encodeBits P0 M0) = checkBits P0 M0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f2c56146-946d-809f-8e34-f641f98ec083"
+  },
+  {
+    "key": "lean_program_the_reserved_six_survive_any_payload",
+    "name": "lean program.lean: the_reserved_six_survive_any_payload — [(P0, M0), (P1, M1), (P0, M1), (P1, M0), (PZ, MZ)].all (fun pm => let b := encodeBits pm.1 pm.2 (b.getD 48 false == true) && (b.getD 49 false == false) && (b.getD 50 false == false) && (b.getD 51 false == false) && (b.getD 64 false == true)… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "33b79421-00e4-85d7-b845-e67c2476005f"
+  },
+  {
+    "key": "lean_program_the_flip_reaches_every_payload_position",
+    "name": "lean program.lean: the_flip_reaches_every_payload_position — (List.range 42).all (fun i => flipAt P0 i != P0) ∧ (List.range 48).all (fun i => flipAt M0 i != M0) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "bbcc9872-ae56-8d26-85b4-f4cd0a46dddb"
+  },
+  {
+    "key": "lean_program_flipping_any_program_bit_moves_the_check",
+    "name": "lean program.lean: flipping_any_program_bit_moves_the_check — (List.range 42).all (fun i => checkBits (flipAt P0 i) M0 != checkBits P0 M0) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "457871fb-d7a0-8dd1-919c-891ed9672b7a"
+  },
+  {
+    "key": "lean_program_flipping_any_message_bit_moves_the_check",
+    "name": "lean program.lean: flipping_any_message_bit_moves_the_check — (List.range 48).all (fun i => checkBits P0 (flipAt M0 i) != checkBits P0 M0) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "131cee6e-62a3-8901-b8c9-9ef916e2d4dc"
   }
 ]

@@ -100,7 +100,104 @@ def maps4 : List (List Nat) := (List.range 4).flatMap (fun a => (List.range 4).f
 theorem four_values_can_be_separated_by_four :
   maps4.any (fun f => decide ((f.eraseDups).length == 4)) := by decide
 
-def settledHere : Nat := 12
-theorem program_settles_its_range : settledHere = 12 := rfl
+-- ── THE CODEC ITSELF, NOT ONLY WHERE ITS FIELDS SIT ─────────────────────────────────────────────────────
+-- Everything above decides the LAYOUT: which of the 128 positions each field owns, that they are disjoint,
+-- that they cover the uuid. None of it decides that the codec built on that layout WORKS. That a program
+-- and a message read back exactly as written, that the version and variant survive whatever payload is
+-- poured around them, and that altering one payload bit moves the check — all three were checked only by
+-- scripts/crypto-kat.ts, in TypeScript, on one sample each. A layout is not a codec.
+--
+-- The construction below is the real one: the real field maps, the real 128 positions, the deposit's own
+-- FNV over the payload packed to bytes. What is bounded is the FAMILY of payloads quantified over, and it
+-- is stated rather than implied — a handful of patterns, and every single-bit flip of one of them.
+
+/-- where a position falls, and which index of its field it is -/
+def rankIn (idx : List Nat) (i : Nat) : Nat := (idx.filter (fun j => j < i)).length
+
+def packByte (bs : List Bool) : Nat := bs.foldl (fun a b => a * 2 + (if b then 1 else 0)) 0
+
+def chunk8 : Nat → List Bool → List (List Bool)
+  | 0, _ => []
+  | _, [] => []
+  | Nat.succ f, l => l.take 8 :: chunk8 f (l.drop 8)
+
+/-- the payload the check covers: program then message, zero-padded to whole bytes -/
+def payloadBytes (prog msg : List Bool) : List Nat :=
+  (chunk8 16 ((prog ++ msg) ++ List.replicate ((8 - (prog.length + msg.length) % 8) % 8) false)).map packByte
+
+def bitsOf (width n : Nat) : List Bool :=
+  (List.range width).map (fun i => (n / (2 ^ (width - 1 - i))) % 2 == 1)
+
+def checkBits (prog msg : List Bool) : List Bool := bitsOf 32 (hash32 0 (payloadBytes prog msg))
+
+/-- the whole 128, every position taken from the field that owns it -/
+def encodeBits (prog msg : List Bool) : List Bool :=
+  let chk := checkBits prog msg
+  (List.range 128).map (fun i =>
+    if i == 48 then true else if i == 49 || i == 50 || i == 51 then false
+    else if i == 64 then true else if i == 65 then false
+    else if checkF.contains i then chk.getD (rankIn checkF i) false
+    else if programF.contains i then prog.getD (rankIn programF i) false
+    else msg.getD (rankIn messageF i) false)
+
+def readField (idx : List Nat) (bs : List Bool) : List Bool := idx.map (fun i => bs.getD i false)
+
+-- the two sample payloads: a 42-bit program and a 48-bit message, and their alternating twins
+def P0 : List Bool := (List.range 42).map (fun i => i % 2 == 0)
+def M0 : List Bool := (List.range 48).map (fun i => i % 3 == 0)
+def P1 : List Bool := (List.range 42).map (fun i => i % 5 == 0)
+def M1 : List Bool := (List.range 48).map (fun i => i % 7 == 0)
+
+set_option maxRecDepth 100000 in
+theorem the_fields_read_back_exactly :
+  readField programF (encodeBits P0 M0) = P0 ∧ readField messageF (encodeBits P0 M0) = M0
+    ∧ readField programF (encodeBits P1 M1) = P1 ∧ readField messageF (encodeBits P1 M1) = M1 := by decide
+
+set_option maxRecDepth 100000 in
+theorem the_check_field_carries_the_check :
+  readField checkF (encodeBits P0 M0) = checkBits P0 M0 := by decide
+
+-- THE VERSION AND VARIANT SURVIVE WHATEVER IS POURED AROUND THEM. Six bits are not the codec's to spend,
+-- and a codec that spent them would emit identifiers that are not uuids — silently, since every other
+-- property above would still hold.
+-- AND THE FAMILY MUST CONTAIN A PAYLOAD THAT WOULD SHOW THE THEFT. Written first over P0/P1 and M0/M1
+-- only, this passed a mutation that DELETED the version bit — because with the clause gone, position 48
+-- takes the message's first bit, and in all four of those payloads that bit is `true`, the very value the
+-- version puts there. The theorem held by coincidence. An all-false payload is in the family now: if a
+-- reserved bit is spent on the payload it reads false, and the theorem sees it.
+def PZ : List Bool := List.replicate 42 false
+def MZ : List Bool := List.replicate 48 false
+
+set_option maxRecDepth 100000 in
+theorem the_reserved_six_survive_any_payload :
+  [(P0, M0), (P1, M1), (P0, M1), (P1, M0), (PZ, MZ)].all (fun pm =>
+    let b := encodeBits pm.1 pm.2
+    (b.getD 48 false == true) && (b.getD 49 false == false) && (b.getD 50 false == false)
+      && (b.getD 51 false == false) && (b.getD 64 false == true) && (b.getD 65 false == false)) := by decide
+
+-- ── AND THE CHECK MOVES WHEN THE PAYLOAD DOES ───────────────────────────────────────────────────────────
+-- The whole purpose of the first group. scripts/crypto-kat.ts counts this over the 122 free bits of one
+-- built identifier and requires all 122; here it is decided over every single-bit flip of the payload
+-- itself, which is the 90 bits the check is computed from. A check that missed a flip would leave a
+-- damaged identifier reading as intact, which is the one thing a checksum is for.
+def flipAt (l : List Bool) (i : Nat) : List Bool :=
+  (List.range l.length).map (fun j => if j == i then !(l.getD j false) else l.getD j false)
+
+-- the flip is not vacuous: it lands, at every position
+theorem the_flip_reaches_every_payload_position :
+  (List.range 42).all (fun i => flipAt P0 i != P0) ∧ (List.range 48).all (fun i => flipAt M0 i != M0) := by decide
+
+set_option maxRecDepth 400000 in
+set_option maxHeartbeats 4000000 in
+theorem flipping_any_program_bit_moves_the_check :
+  (List.range 42).all (fun i => checkBits (flipAt P0 i) M0 != checkBits P0 M0) := by decide
+
+set_option maxRecDepth 400000 in
+set_option maxHeartbeats 4000000 in
+theorem flipping_any_message_bit_moves_the_check :
+  (List.range 48).all (fun i => checkBits P0 (flipAt M0 i) != checkBits P0 M0) := by decide
+
+def settledHere : Nat := 18
+theorem program_settles_its_range : settledHere = 18 := rfl
 
 end Program

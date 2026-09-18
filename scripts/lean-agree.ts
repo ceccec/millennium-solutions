@@ -17,7 +17,7 @@
 import { BASE, units, triad, vortexOrbit } from '../src/0/index.ts'
 import { precedes, staleTail } from '../src/api/gates.ts'
 import { unreflect } from '../src/honesty/index.ts'
-import { FIELDS } from '../src/0/program.ts'
+import { FIELDS, encode as encodeContainer } from '../src/0/program.ts'
 import { P as ED_P, L as ED_L } from '../src/0/ed25519.ts'
 import { vortexOrder, vortexOrderReversed } from '../src/7/rays.ts'
 import { refused } from '../src/honesty/claims.ts'
@@ -46,6 +46,13 @@ const staleGrid = (): number[] => bits(4).flatMap((l) => {
   return l.map((p, i) => p ? 0 : holes.includes(i) ? 1 : 2)
 })
 const codes = (s: string): number[] => [...s].map((c) => c.charCodeAt(0))
+// the same two payloads program.lean quantifies over — built from the same rule, not copied as literals
+const P0 = Array.from({ length: 42 }, (_, i) => (i % 2 === 0 ? '1' : '0')).join('')
+const M0 = Array.from({ length: 48 }, (_, i) => (i % 3 === 0 ? '1' : '0')).join('')
+const encodedBits = (): number[] => {
+  const hex = encodeContainer(P0, M0).replace(/-/g, '')
+  return [...hex].flatMap((c) => { const n = parseInt(c, 16); return [3, 2, 1, 0].map((b) => (n >> b) & 1) })
+}
 const UA_T = 'ua:site', ECHO_T = '<p>' + UA_T + '</p>', TWICE_T = UA_T + ' ' + UA_T
 
 const PAIRS = [
@@ -77,6 +84,16 @@ const PAIRS = [
   { what: 'the check field',    runtime: FIELDS.check,   mod: 'Program', raw: true, expr: 'Program.checkF' },
   { what: 'the program field',  runtime: FIELDS.program, mod: 'Program', raw: true, expr: 'Program.programF' },
   { what: 'the message field',  runtime: FIELDS.message, mod: 'Program', raw: true, expr: 'Program.messageF' },
+
+  // THE CODEC END TO END, not only where its fields sit. src/proof/program.lean now builds the whole 128
+  // bits — the deposit's FNV over the packed payload, the fields at their own positions, the reserved six —
+  // and that is a SECOND implementation of the shipped codec. Two implementations nobody compares is the
+  // defect this repository keeps finding, so the two are compared on the same payload, bit for bit: if they
+  // differ anywhere in the 128 this refuses, and a codec that agreed on every count and differed on every
+  // position could not survive it.
+  { what: 'the codec, 128 bits', mod: 'Program', raw: true,
+    runtime: encodedBits(),
+    expr: '(Program.encodeBits Program.P0 Program.M0).map (fun b => if b then 1 else 0)' },
 
   // THE CURVE'S FIELD, compared as the residues the implementation actually branches on rather than as a
   // 78-digit number nobody reads. src/0/ed25519.ts recovers x by raising to (p+3)/8, which is the rule for
