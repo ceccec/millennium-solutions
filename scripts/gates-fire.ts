@@ -411,6 +411,14 @@ const CONTROLS: Control[] = [
     what: 'a fold under which a cluster\'s joint address depends on the order its receipts arrive in',
     mutate: (s) => s.replace('let layer = [...leaves].sort()', 'let layer = [...leaves]') },
 
+  // THE PRIMITIVES AGAINST SOMEONE ELSE'S NUMBERS. A hand-written Ed25519 that verifies its own signatures
+  // proves nothing — a broken implementation is perfectly self-consistent. The control breaks the curve
+  // constant `d`, which leaves every internal operation coherent and moves the whole group: the published
+  // RFC 8032 public keys stop reproducing, which is exactly what a vector is for.
+  { gate: 'crypto-kat', cmd: 'node scripts/crypto-kat.ts', file: 'src/0/ed25519.ts',
+    what: 'a curve whose published test vectors no longer reproduce — self-consistent and not Ed25519',
+    mutate: (s) => s.replace('const D = -121665n * inv(121666n) % P', 'const D = -121664n * inv(121666n) % P') },
+
   { gate: 'gaps', cmd: 'node scripts/gaps.ts', file: '.vitepress/config.ts',
     what: 'a published page dropped from the sidebar',
     mutate: (s) => s.replace(/\{ text: 'Verify \(live app\)', link: '\/verify' \},/, '') },

@@ -5,11 +5,11 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **846** report the same thing:
+axiom fails the build rather than earning a footnote. All **869** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
-theorems rest on **344** definitions, and every one of them is a choice. A theorem about
+theorems rest on **361** definitions, and every one of them is a choice. A theorem about
 `fall` is a theorem about the digital root only because `fall` is *defined* to be it. Both halves are
 indexed below, and the second is the longer one.
 
@@ -90,7 +90,7 @@ The pins in the control fixture follow the community practice of guarding `#prin
 `#guard_msgs`, which turns the axiom footprint into an executable regression test: the assertion is
 checked by the elaborator, and drift fails the build with a mismatch instead of passing unnoticed.
 
-## What IS assumed: the 344 definitions
+## What IS assumed: the 361 definitions
 
 Each of these is a primitive of this deposit — not derived, not proved, chosen. They are listed in full
 because a reader checking a theorem must be able to read the definition it is about, and because a
@@ -111,6 +111,19 @@ def toUuidBytes (cs : List Nat) : List Nat := stamp (rawBytes cs)
 def A : List Nat := [97]                                    -- "a"
 def UUIDNA : List Nat := [117, 117, 105, 100, 110, 97]      -- "uuidna"
 def settledHere : Nat := 20
+```
+
+### `asymmetric.lean` — 8 definition(s), 10 theorem(s)
+
+```lean
+def uuidBytes : Nat := 16
+def publicKeyBytes : Nat := 32
+def signatureBytes : Nat := 64
+def checkBits : Nat := 32
+def payloadBits : Nat := 42 + 48
+def checkOf (_secret payload : Nat) : Nat := payload % 4
+def tagOf (secret payload : Nat) : Nat := (secret * 7 + payload * 3) % 16
+def settledHere : Nat := 9
 ```
 
 ### `coin.lean` — 7 definition(s), 12 theorem(s)
@@ -468,6 +481,20 @@ def novelty (s : Source) : Bool := s.2.2
 def sources : List Source :=
 ```
 
+### `program.lean` — 9 definition(s), 13 theorem(s)
+
+```lean
+def RESERVED : List Nat := [48, 49, 50, 51, 64, 65]
+def checkF : List Nat := List.range 32
+def programF : List Nat := ((List.range 48).map (· + 32)).filter (fun i => !(RESERVED.contains i))
+def messageF : List Nat := (List.range 48).map (· + 80)
+def inExactlyOne (i : Nat) : Nat :=
+def ascending : List Nat → Bool
+def maps3 : List (List Nat) := (List.range 3).flatMap (fun a => (List.range 3).flatMap (fun b =>
+def maps4 : List (List Nat) := (List.range 4).flatMap (fun a => (List.range 4).flatMap (fun b =>
+def settledHere : Nat := 12
+```
+
 ### `quantum.lean` — 11 definition(s), 12 theorem(s)
 
 ```lean
@@ -602,6 +629,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**846** declarations, **0** axiom dependencies, **344** definitions they rest on.
+**869** declarations, **0** axiom dependencies, **361** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them.

@@ -17,6 +17,7 @@
 import { BASE, units, triad, vortexOrbit } from '../src/0/index.ts'
 import { precedes, staleTail } from '../src/api/gates.ts'
 import { unreflect } from '../src/honesty/index.ts'
+import { FIELDS } from '../src/0/program.ts'
 import { execSync } from 'node:child_process'
 import { writeFileSync, unlinkSync } from 'node:fs'
 
@@ -65,6 +66,14 @@ const PAIRS = [
 
   { what: 'the page untouched', runtime: codes(unreflect('<p>site</p>', UA_T)), mod: 'Instruments', raw: true,
     expr: 'Instruments.clip Instruments.genuine' },
+
+  // THE CONTAINER'S LAYOUT. The field WIDTHS are the error class here — the middle of a uuid is 48 bits and
+  // only 42 of them are free, because the version nibble and the variant each open a group inside it — so
+  // the three field maps are compared position by position, not by their lengths. A codec built to the
+  // obvious reading of "the middle" would agree on every count and differ on every position.
+  { what: 'the check field',    runtime: FIELDS.check,   mod: 'Program', raw: true, expr: 'Program.checkF' },
+  { what: 'the program field',  runtime: FIELDS.program, mod: 'Program', raw: true, expr: 'Program.programF' },
+  { what: 'the message field',  runtime: FIELDS.message, mod: 'Program', raw: true, expr: 'Program.messageF' },
 ]
 
 const mod9 = (xs: number[]) => xs.map((n) => ((n % 9) + 9) % 9)

@@ -19679,5 +19679,110 @@
     "key": "lean_instruments_text_without_the_witness_is_untouched",
     "name": "lean instruments.lean: text_without_the_witness_is_untouched — clip SITE = SITE ∧ clip [60, 112, 62] = [60, 112, 62] — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "113a3e4a-e3d5-8cfa-9b70-c6886494d92d"
+  },
+  {
+    "key": "lean_asymmetric_a_signature_is_four_uuids_and_a_key_is_two",
+    "name": "lean asymmetric.lean: a_signature_is_four_uuids_and_a_key_is_two — signatureBytes = 4 * uuidBytes ∧ publicKeyBytes = 2 * uuidBytes — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "78459e31-65a2-8dbc-9afb-e538e04b8a12"
+  },
+  {
+    "key": "lean_asymmetric_neither_the_key_nor_the_signature_fits_in_a_uuid",
+    "name": "lean asymmetric.lean: neither_the_key_nor_the_signature_fits_in_a_uuid — uuidBytes < publicKeyBytes ∧ uuidBytes < signatureBytes ∧ uuidBytes * 8 < signatureBytes * 8 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b4fa9d0f-ece5-890f-b59b-2042b52eae81"
+  },
+  {
+    "key": "lean_asymmetric_not_even_the_whole_uuid_would_hold_one",
+    "name": "lean asymmetric.lean: not_even_the_whole_uuid_would_hold_one — uuidBytes * 8 = 128 ∧ signatureBytes * 8 = 512 ∧ 128 < 512 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2e3ba4c9-f281-8413-92ee-82cb1fd9bdb8"
+  },
+  {
+    "key": "lean_asymmetric_what_travels_beside_the_identifier",
+    "name": "lean asymmetric.lean: what_travels_beside_the_identifier — publicKeyBytes + signatureBytes = 96 ∧ 96 = 6 * uuidBytes — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "00ac5e64-215d-8dac-9de6-929dc0cecf89"
+  },
+  {
+    "key": "lean_asymmetric_the_check_cannot_separate_the_payloads",
+    "name": "lean asymmetric.lean: the_check_cannot_separate_the_payloads — 2 ^ checkBits < 2 ^ payloadBits ∧ payloadBits = 90 ∧ checkBits = 32 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "df641661-41c4-8423-a5e3-6873b74ef970"
+  },
+  {
+    "key": "lean_asymmetric_the_gap_is_fifty_eight_bits",
+    "name": "lean asymmetric.lean: the_gap_is_fifty_eight_bits — payloadBits - checkBits = 58 ∧ 2 ^ payloadBits = 2 ^ 58 * 2 ^ checkBits — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a0740c1c-cc73-8fcc-a631-cc935b981d54"
+  },
+  {
+    "key": "lean_asymmetric_a_checksum_is_the_same_whoever_computes_it",
+    "name": "lean asymmetric.lean: a_checksum_is_the_same_whoever_computes_it — (List.range 6).all (fun s => (List.range 6).all (fun t => (List.range 12).all (fun p => checkOf s p == checkOf t p))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "38a9023c-ed6d-8c8f-b5a5-f867616460c2"
+  },
+  {
+    "key": "lean_asymmetric_two_secrets_part_company_on_every_payload",
+    "name": "lean asymmetric.lean: two_secrets_part_company_on_every_payload — (List.range 12).all (fun p => tagOf 1 p != tagOf 2 p) ∧ ¬ ((List.range 6).all (fun s => (List.range 6).all (fun t => (List.range 12).all (fun p => tagOf s p == tagOf t p)))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "61826d5e-d6b7-80b1-8ced-c41f4dfbe517"
+  },
+  {
+    "key": "lean_asymmetric_the_tag_moves_with_the_payload",
+    "name": "lean asymmetric.lean: the_tag_moves_with_the_payload — (List.range 11).all (fun p => tagOf 1 p != tagOf 1 (p + 1)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2c10db8a-11f2-83cd-a321-19e43cf117e4"
+  },
+  {
+    "key": "lean_program_the_program_field_is_forty_two_bits_not_forty_eight",
+    "name": "lean program.lean: the_program_field_is_forty_two_bits_not_forty_eight — programF.length = 42 ∧ ((List.range 48).map (· + 32)).length = 48 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9f6fb2bb-27a6-867f-8c1a-ce31dc68cdbd"
+  },
+  {
+    "key": "lean_program_the_three_fields_and_the_reserved_six_are_the_whole_uuid",
+    "name": "lean program.lean: the_three_fields_and_the_reserved_six_are_the_whole_uuid — checkF.length + programF.length + messageF.length + RESERVED.length = 128 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ed6043cd-3b33-843a-9e22-65eaea357a00"
+  },
+  {
+    "key": "lean_program_the_widths_are_what_the_layout_says",
+    "name": "lean program.lean: the_widths_are_what_the_layout_says — checkF.length = 32 ∧ messageF.length = 48 ∧ RESERVED.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "47c47e33-a9a0-8501-a93d-04f068143404"
+  },
+  {
+    "key": "lean_program_every_reserved_bit_is_in_the_middle_group",
+    "name": "lean program.lean: every_reserved_bit_is_in_the_middle_group — RESERVED.all (fun r => 32 ≤ r && r < 80) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8e8e33c0-1383-876d-a0c4-b24d49af4b40"
+  },
+  {
+    "key": "lean_program_neither_the_check_nor_the_message_gives_up_a_bit",
+    "name": "lean program.lean: neither_the_check_nor_the_message_gives_up_a_bit — (checkF.all (fun i => !(RESERVED.contains i))) ∧ (messageF.all (fun i => !(RESERVED.contains i))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a7b062c6-ab2f-8ecc-bbc0-bea4fb30b2e1"
+  },
+  {
+    "key": "lean_program_every_position_belongs_to_exactly_one_field",
+    "name": "lean program.lean: every_position_belongs_to_exactly_one_field — (List.range 128).all (fun i => inExactlyOne i == 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "68c1c3ef-b289-87ba-8f5b-a3785b9688cf"
+  },
+  {
+    "key": "lean_program_nothing_outside_the_uuid_is_claimed",
+    "name": "lean program.lean: nothing_outside_the_uuid_is_claimed — (List.range' 128 32).all (fun i => inExactlyOne i == 0) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c58dcc5c-bb67-89fd-9441-4210fda3ec1c"
+  },
+  {
+    "key": "lean_program_each_field_is_ascending_and_repeats_nothing",
+    "name": "lean program.lean: each_field_is_ascending_and_repeats_nothing — ascending checkF ∧ ascending programF ∧ ascending messageF — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "dd9f31cc-fd90-8d08-8425-bd7ebd968768"
+  },
+  {
+    "key": "lean_program_the_check_is_the_deposit_s_own_fnv",
+    "name": "lean program.lean: the_check_is_the_deposit_s_own_fnv — hash32 0 (List.replicate 12 0) = 1661287312 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f5fafbe0-1997-8abb-82b9-79cad0a214b6"
+  },
+  {
+    "key": "lean_program_the_payload_outruns_the_check",
+    "name": "lean program.lean: the_payload_outruns_the_check — 2 ^ 32 < 2 ^ (42 + 48) ∧ 42 + 48 = 90 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "78f23d08-e771-82a6-87f2-b35281b08361"
+  },
+  {
+    "key": "lean_program_no_map_from_four_onto_three_separates_them_all",
+    "name": "lean program.lean: no_map_from_four_onto_three_separates_them_all — maps3.all (fun f => decide ((f.eraseDups).length < 4)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "3f50ffb1-28f6-89bd-ab25-a7294af70733"
+  },
+  {
+    "key": "lean_program_four_values_can_be_separated_by_four",
+    "name": "lean program.lean: four_values_can_be_separated_by_four — maps4.any (fun f => decide ((f.eraseDups).length == 4)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5a28096c-369c-8583-a43b-0cd77801e623"
   }
 ]

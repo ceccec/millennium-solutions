@@ -62,9 +62,9 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 846 of them across 34 files and
-7 wings; 649 close by exhaustion over a stated finite domain, 187 are proved
-for every value, and the remaining 10 close by \texttt{rfl} and are counted separately, never as theorems.
+(\texttt{npm run latex-gate}). There are 869 of them across 36 files and
+7 wings; 670 close by exhaustion over a stated finite domain, 187 are proved
+for every value, and the remaining 12 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
 
@@ -204,6 +204,58 @@ for every value, and the remaining 10 close by \texttt{rfl} and are counted sepa
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by
   intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{asymmetric.lean}}
+
+\begin{theorem}[\texttt{a\_signature\_is\_four\_uuids\_and\_a\_key\_is\_two}]
+\[ \mathrm{signatureBytes} = 4 \cdot \mathrm{uuidBytes} \land \mathrm{publicKeyBytes} = 2 \cdot \mathrm{uuidBytes} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{neither\_the\_key\_nor\_the\_signature\_fits\_in\_a\_uuid}]
+\[ \mathrm{uuidBytes} < \mathrm{publicKeyBytes} \land \mathrm{uuidBytes} < \mathrm{signatureBytes} \land \mathrm{uuidBytes} \cdot 8 < \mathrm{signatureBytes} \cdot 8 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{not\_even\_the\_whole\_uuid\_would\_hold\_one}]
+\[ \mathrm{uuidBytes} \cdot 8 = 128 \land \mathrm{signatureBytes} \cdot 8 = 512 \land 128 < 512 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{what\_travels\_beside\_the\_identifier}]
+\[ \mathrm{publicKeyBytes} + \mathrm{signatureBytes} = 96 \land 96 = 6 \cdot \mathrm{uuidBytes} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_check\_cannot\_separate\_the\_payloads}]
+\[ 2^{\mathrm{checkBits}} < 2^{\mathrm{payloadBits}} \land \mathrm{payloadBits} = 90 \land \mathrm{checkBits} = 32 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_gap\_is\_fifty\_eight\_bits}]
+\[ \mathrm{payloadBits} - \mathrm{checkBits} = 58 \land 2^{\mathrm{payloadBits}} = 2^{58} \cdot 2^{\mathrm{checkBits}} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_checksum\_is\_the\_same\_whoever\_computes\_it}]
+\[ \forall s \in \{0,\dots,5\},\; \forall t \in \{0,\dots,5\},\; \forall p \in \{0,\dots,11\},\; \mathrm{checkOf}\mathopen{}\left(s,\,p\right) = \mathrm{checkOf}\mathopen{}\left(t,\,p\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 432 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{two\_secrets\_part\_company\_on\_every\_payload}]
+\[ \forall p \in \{0,\dots,11\},\; \mathrm{tagOf}\mathopen{}\left(1,\,p\right) \neq \mathrm{tagOf}\mathopen{}\left(2,\,p\right) \land \lnot \forall s \in \{0,\dots,5\},\; \forall t \in \{0,\dots,5\},\; \forall p \in \{0,\dots,11\},\; \mathrm{tagOf}\mathopen{}\left(s,\,p\right) = \mathrm{tagOf}\mathopen{}\left(t,\,p\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 5,184 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_tag\_moves\_with\_the\_payload}]
+\[ \forall p \in \{0,\dots,10\},\; \mathrm{tagOf}\mathopen{}\left(1,\,p\right) \neq \mathrm{tagOf}\mathopen{}\left(1,\,p + 1\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 11 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{asymmetric\_settles\_its\_range}]
+\[ \mathrm{settledHere} = 9 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 
 \paragraph{\texttt{fnv.lean}}
 
@@ -397,6 +449,73 @@ for every value, and the remaining 10 close by \texttt{rfl} and are counted sepa
 \[ \forall i \in \{0,\dots,3\},\; \mathrm{merkleFold}\mathopen{}\left(\mathrm{setAt}\mathopen{}\left([A,\,B,\,C,\,D],\,i,\,E\right)\right) \neq \mathrm{merkleFold}\mathopen{}\left([A,\,B,\,C,\,D]\right) \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
+
+\paragraph{\texttt{program.lean}}
+
+\begin{theorem}[\texttt{the\_program\_field\_is\_forty\_two\_bits\_not\_forty\_eight}]
+\texttt{programF.length = 42 ∧ ((List.range 48).map (· + 32)).length = 48}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 48 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_three\_fields\_and\_the\_reserved\_six\_are\_the\_whole\_uuid}]
+\[ \left|\mathrm{checkF}\right| + \left|\mathrm{programF}\right| + \left|\mathrm{messageF}\right| + \mathrm{RESERVED.length} = 128 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_widths\_are\_what\_the\_layout\_says}]
+\[ \left|\mathrm{checkF}\right| = 32 \land \left|\mathrm{messageF}\right| = 48 \land \mathrm{RESERVED.length} = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{every\_reserved\_bit\_is\_in\_the\_middle\_group}]
+\[ \mathrm{RESERVED.all}\mathopen{}\left(r \mapsto 32 \le r \land r < 80\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{neither\_the\_check\_nor\_the\_message\_gives\_up\_a\_bit}]
+\[ \forall i \in \mathrm{checkF},\; \lnot \mathrm{RESERVED.contains}\mathopen{}\left(i\right) \land \forall i \in \mathrm{messageF},\; \lnot \mathrm{RESERVED.contains}\mathopen{}\left(i\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{every\_position\_belongs\_to\_exactly\_one\_field}]
+\[ \forall i \in \{0,\dots,127\},\; \mathrm{inExactlyOne}\mathopen{}\left(i\right) = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 128 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{nothing\_outside\_the\_uuid\_is\_claimed}]
+\[ \forall i \in \{128,\dots,159\},\; \mathrm{inExactlyOne}\mathopen{}\left(i\right) = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 32 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{each\_field\_is\_ascending\_and\_repeats\_nothing}]
+\[ \mathrm{ascending}\mathopen{}\left(\mathrm{checkF}\right) \land \mathrm{ascending}\mathopen{}\left(\mathrm{programF}\right) \land \mathrm{ascending}\mathopen{}\left(\mathrm{messageF}\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_check\_is\_the\_deposit\_s\_own\_fnv}]
+\[ \mathrm{hash32}\mathopen{}\left(0,\,\mathrm{List.replicate}\mathopen{}\left(12,\,0\right)\right) = 1661287312 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_payload\_outruns\_the\_check}]
+\[ 2^{32} < 2^{42 + 48} \land 42 + 48 = 90 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{no\_map\_from\_four\_onto\_three\_separates\_them\_all}]
+\[ \forall f \in \mathrm{maps3},\; \mathrm{decide}\mathopen{}\left(\left|\operatorname{dedup}\left(f\right)\right| < 4\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{four\_values\_can\_be\_separated\_by\_four}]
+\[ \exists f \in \mathrm{maps4} : \mathrm{decide}\mathopen{}\left(\left|\operatorname{dedup}\left(f\right)\right| = 4\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{program\_settles\_its\_range}]
+\[ \mathrm{settledHere} = 12 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 
 \subsection{the ring}
 

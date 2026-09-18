@@ -45,6 +45,8 @@ const DECLARED = new Set([
   'RFC 6070',                     // the PBKDF2 test vectors
   'RFC 4287',                     // Atom — the syndication feed the monographs are exposed as
   'RFC-3339',                     // the timestamp format, taken from git rather than from a clock
+  'RFC 8032',                     // Ed25519 — the signature scheme, and the §7.1 vectors crypto-kat checks against
+  'RFC 4122',                     // the 2005 UUID spec RFC 9562 obsoletes, named where the layout's history matters
 ])
 
 // WHOLE CITATIONS, NOT A PREFIX PLUS AN OPTIONAL TAIL. The first version matched an instrument name, then
