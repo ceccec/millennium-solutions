@@ -19859,5 +19859,20 @@
     "key": "lean_rays_the_triangle_inequality_holds_on_every_triple",
     "name": "lean rays.lean: the_triangle_inequality_holds_on_every_triple — (List.range 9).all (fun a => (List.range 9).all (fun b => (List.range 9).all (fun c => decide (d1 a c ≤ d1 a b + d1 b c)))) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "5f6fe76f-c6ea-8424-a0fc-2f3ebbc4b95c"
+  },
+  {
+    "key": "lean_instruments_any_negator_before_the_claim_refuses_it",
+    "name": "lean instruments.lean: any_negator_before_the_claim_refuses_it — refused [7, 2, 9] 5 = true ∧ refused [7, 9] 5 = false ∧ refused [5] 5 = false — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "61753440-c6c1-83ec-a45f-0a43bd367415"
+  },
+  {
+    "key": "lean_instruments_the_window_is_monotone_in_the_claim_s_position",
+    "name": "lean instruments.lean: the_window_is_monotone_in_the_claim_s_position — (List.range 10).all (fun c => (List.range 10).all (fun d => if c ≤ d then (!(refused [3] c) || refused [3] d) else true)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "223bfc2c-f60b-8f7b-9449-571dce5f4d9d"
+  },
+  {
+    "key": "lean_instruments_with_no_negator_nothing_is_cleared",
+    "name": "lean instruments.lean: with_no_negator_nothing_is_cleared — (List.range 10).all (fun c => refused [] c == false) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "fdba66f0-240b-80fa-9221-af38bec71dc8"
   }
 ]

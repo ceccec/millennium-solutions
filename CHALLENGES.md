@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). The author's own claim, that the seven are solved through involution, is stated in his name on the front page.
 
-## Discovered theorems (decidable, over ℤ/9) — 2821 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2824 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (872)
+### lean (875)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -1083,6 +1083,9 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_rays_the_wrap_is_what_makes_it_a_torus](/theorem/lean_rays_the_wrap_is_what_makes_it_a_torus) — lean rays.lean: the_wrap_is_what_makes_it_a_torus — d1 0 8 = 1 ∧ d1 8 0 = 1 ∧ d1 0 4 = 4 ∧ d1 4 0 = 4 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `85e8c4fa-30b9…`
 - [lean_rays_the_distance_is_symmetric_and_zero_only_on_itself](/theorem/lean_rays_the_distance_is_symmetric_and_zero_only_on_itself) — lean rays.lean: the_distance_is_symmetric_and_zero_only_on_itself — (List.range 9).all (fun a =&gt; (List.range 9).all (fun b =&gt; (d1 a b == d1 b a) && ((d1 a b == 0) == (a == b)))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `4eae84a8-ac4c…`
 - [lean_rays_the_triangle_inequality_holds_on_every_triple](/theorem/lean_rays_the_triangle_inequality_holds_on_every_triple) — lean rays.lean: the_triangle_inequality_holds_on_every_triple — (List.range 9).all (fun a =&gt; (List.range 9).all (fun b =&gt; (List.range 9).all (fun c =&gt; decide (d1 a c ≤ d1 a b + d1 b c)))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `5f6fe76f-c6ea…`
+- [lean_instruments_any_negator_before_the_claim_refuses_it](/theorem/lean_instruments_any_negator_before_the_claim_refuses_it) — lean instruments.lean: any_negator_before_the_claim_refuses_it — refused [7, 2, 9] 5 = true ∧ refused [7, 9] 5 = false ∧ refused [5] 5 = false — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `61753440-c6c1…`
+- [lean_instruments_the_window_is_monotone_in_the_claim_s_position](/theorem/lean_instruments_the_window_is_monotone_in_the_claim_s_position) — lean instruments.lean: the_window_is_monotone_in_the_claim_s_position — (List.range 10).all (fun c =&gt; (List.range 10).all (fun d =&gt; if c ≤ d then (!(refused [3] c) || refused [3] d) else true)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `223bfc2c-f60b…`
+- [lean_instruments_with_no_negator_nothing_is_cleared](/theorem/lean_instruments_with_no_negator_nothing_is_cleared) — lean instruments.lean: with_no_negator_nothing_is_cleared — (List.range 10).all (fun c =&gt; refused [] c == false) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `fdba66f0-240b…`
 
 ### other — one-of-a-kind (0)
 
@@ -2667,4 +2670,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `d2a6228f-c615-85ba-a242-a86139b17e5d`. Integrity, not truth.
+Page content-address: `73bba3a8-01b2-892f-8039-6abdffa8f805`. Integrity, not truth.

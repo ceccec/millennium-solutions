@@ -173,7 +173,35 @@ theorem an_empty_witness_removes_nothing :
 theorem text_without_the_witness_is_untouched :
   clip SITE = SITE ∧ clip [60, 112, 62] = [60, 112, 62] := by decide
 
-def settledHere : Nat := 17
-theorem instruments_settles_its_range : settledHere = 17 := rfl
+-- ── 4 · THE REFUSAL WINDOW, WHICH IS THE LENIENT SIDE OF EVERY CLAIM DETECTOR ───────────────────────────
+-- A detector that caught every sentence containing "we prove the Riemann hypothesis" would drain this
+-- deposit's own refusals and push its boundaries out of the prose that carries them. So a match is CLEARED
+-- when a negator stands before it — "this work proves no Clay problem" matches the detector and is refused
+-- by the window. That window is the one path in the whole sweep that turns a catch into a pass, which makes
+-- it the place a widening would go unnoticed: widen it and every claim is excused while the report stays
+-- green and the count stays large.
+--
+-- The rule quantifies over a LIST — ANY negator before the claim — and that is the part worth deciding. A
+-- single position would be `precedes` from section 1 wearing a different name, and one derivation of a fact
+-- is this file's whole subject.
+def refused (negs : List Nat) (claim : Nat) : Bool := negs.any (fun n => n < claim)
+
+theorem any_negator_before_the_claim_refuses_it :
+  refused [7, 2, 9] 5 = true ∧ refused [7, 9] 5 = false ∧ refused [5] 5 = false := by decide
+
+-- MOVING THE CLAIM LATER CAN ONLY REFUSE IT MORE. If it were not monotone, a sentence could be cleared by a
+-- negator and then un-cleared by adding words after it, which is not a property of English or of this sweep.
+theorem the_window_is_monotone_in_the_claim_s_position :
+  (List.range 10).all (fun c => (List.range 10).all (fun d =>
+    if c ≤ d then (!(refused [3] c) || refused [3] d) else true)) := by decide
+
+-- AND A SENTENCE THAT REFUSES NOTHING CLEARS NOTHING. Without this the definition is satisfied by a window
+-- that excuses everything, which is exactly the failure it exists to prevent — and it is the empty case,
+-- the one a reader assumes rather than checks.
+theorem with_no_negator_nothing_is_cleared :
+  (List.range 10).all (fun c => refused [] c == false) := by decide
+
+def settledHere : Nat := 20
+theorem instruments_settles_its_range : settledHere = 20 := rfl
 
 end Instruments

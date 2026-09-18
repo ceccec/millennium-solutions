@@ -5,11 +5,11 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **885** report the same thing:
+axiom fails the build rather than earning a footnote. All **888** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
-theorems rest on **375** definitions, and every one of them is a choice. A theorem about
+theorems rest on **376** definitions, and every one of them is a choice. A theorem about
 `fall` is a theorem about the digital root only because `fall` is *defined* to be it. Both halves are
 indexed below, and the second is the longer one.
 
@@ -90,7 +90,7 @@ The pins in the control fixture follow the community practice of guarding `#prin
 `#guard_msgs`, which turns the axiom footprint into an executable regression test: the assertion is
 checked by the elaborator, and drift fails the build with a mismatch instead of passing unnoticed.
 
-## What IS assumed: the 375 definitions
+## What IS assumed: the 376 definitions
 
 Each of these is a primitive of this deposit — not derived, not proved, chosen. They are listed in full
 because a reader checking a theorem must be able to read the definition it is about, and because a
@@ -348,7 +348,7 @@ def span : List Nat := (List.range 6).map orbit                               --
 def sequence : List Nat := [1, 2, 4, 8, 7, 5, 3, 6, 9, 0, 1]
 ```
 
-### `instruments.lean` — 16 definition(s), 18 theorem(s)
+### `instruments.lean` — 17 definition(s), 21 theorem(s)
 
 ```lean
 def precedes : Option Nat → Option Nat → Bool
@@ -366,7 +366,8 @@ def contains (t : List Nat) (n : List Nat) : Bool :=
 def echoed : List Nat := [60, 112, 62] ++ UA ++ [60, 47, 112, 62]        -- "<p>ua:site</p>"
 def genuine : List Nat := [60, 112, 62] ++ SITE ++ [60, 47, 112, 62]     -- "<p>site</p>"
 def twice : List Nat := UA ++ [32] ++ UA
-def settledHere : Nat := 17
+def refused (negs : List Nat) (claim : Nat) : Bool := negs.any (fun n => n < claim)
+def settledHere : Nat := 20
 ```
 
 ### `involution.lean` — 7 definition(s), 8 theorem(s)
@@ -648,6 +649,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**885** declarations, **0** axiom dependencies, **375** definitions they rest on.
+**888** declarations, **0** axiom dependencies, **376** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them.

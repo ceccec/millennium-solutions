@@ -31,12 +31,12 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 885 kernel-accepted declarations across 37 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `0dd7cc77-e6d0-8888-b9a2-147763b5a70b`</sub>
-- 685 of those 885 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 200 close by rfl and are declarations.
-  <sub>SEALED · `b62bbc0a-762d-8865-861d-1ee4d909f09f`</sub>
-- 957 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `98a69deb-2553-84d5-ab46-4a564d58276b`</sub>
+- The formal layer holds 888 kernel-accepted declarations across 37 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `ff6a170a-7606-8cf1-9451-d054fdfdb251`</sub>
+- 688 of those 888 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 200 close by rfl and are declarations.
+  <sub>SEALED · `cc9c874a-294b-8038-982f-1680b24a45ee`</sub>
+- 960 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `09ef44ff-1a5e-8b0c-b0b2-d59af8da7db0`</sub>
 
 ## 2 · The ring
 
@@ -59,10 +59,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 2821 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `3fc2f4d6-9899-8716-8577-81c11aa12c0f`</sub>
-- The count is 2821, which is 352 octaves and 5 over — the octave is a target the theorems earn, never a quota they are invented to fill.
-  <sub>SEALED · `cfc78516-5776-8cfe-bead-631d4c25dcc2`</sub>
+- The ledger records 2824 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `3afb91ad-9939-8bb2-a58e-561057be3a29`</sub>
+- The count is an exact multiple of eight — 2824 is 353 octaves with no remainder.
+  <sub>SEALED · `86535a9e-6c42-8997-9f02-5e2d0539e8cf`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -106,7 +106,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-37 Lean files in 7 wings, 885 declarations of which 872 are theorems. The prose in this section is read out of the
+37 Lean files in 7 wings, 888 declarations of which 875 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -160,7 +160,7 @@ this page; there is nowhere else to keep the description in step.
 
 **The Millennium floor** — `index.lean`, 11 theorem(s). Bounded, so the credit stops where the earlier work does: what is NOT prior art is the use of that orbit as a floor for what this deposit does   and does not settle, which is a statement about this repository and has no earlier author.   Verification by exhaustion in Lean is this deposit's contribution, and verification is not discovery. prior_art_search: literature search performed 2026-09-05, terms "doubling sequence modulo 9 orbit   1 2 4 8 7 5 cyclic group generator digital root"; prior art found and credited. prior_art_pool: bounded   digit arithmetic of the doubling sequence; searchable independently of this deposit.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: the Millennium floor, computed from this sequence The Millennium floor — seven honest theorems, one per problem, COMPUTED from the sequence.
 
-**The instruments, and the three rules they are allowed to have** — `instruments.lean`, 18 theorem(s). occurrence of a substring — and each is standard enough that naming one author would be arbitrary. This   row is kind 1 rather than kind 2 because kind 2 asserts that a search was performed and found nothing,   and no such search was performed for these. What is this deposit's is not the rules: it is that three of   its own instruments hold them by decision of the kernel, instead of by a block of reasoning written   inside the instrument that needs them and checked by that same instrument.
+**The instruments, and the three rules they are allowed to have** — `instruments.lean`, 21 theorem(s). occurrence of a substring — and each is standard enough that naming one author would be arbitrary. This   row is kind 1 rather than kind 2 because kind 2 asserts that a search was performed and found nothing,   and no such search was performed for these. What is this deposit's is not the rules: it is that three of   its own instruments hold them by decision of the kernel, instead of by a block of reasoning written   inside the instrument that needs them and checked by that same instrument.
 
 **Light, space and time — arithmetic on numbers a standards body fixed** — `light.lean`, 15 theorem(s). Poids et Mesures, not results of this deposit: the metre from the speed of light (17th CGPM, 1983) and   the seven defining constants fixed exactly in the 2019 revision of the SI, effective 20 May 2019   (BIPM, https://www.bipm.org/en/measurement-units/si-defining-constants). Nothing here measures anything.
 
@@ -198,7 +198,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Recovered — claims that computed and were withdrawn for want of a proof** — `recovered.lean`, 15 theorem(s). material, credited. What is NOT prior art is that these particular statements sat WITHDRAWN in this   deposit's ledger, each recorded as "not backed by a Lean proof. Its evidence is a TypeScript test",   while every one is decidable in a line. prior_art_search: literature search performed 2026-09-05, terms "units and non-units of Z/9 multiplicative   inverses group of units modulo 9"; prior art found and credited.
 
-23 of 885 declarations carry no comment of their own and are shown here as the gap they are, not
+23 of 888 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -207,14 +207,14 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 2,821 — 352 octaves and 5 over |
-| standing — carries its own proof | **872** |
+| ledger entries | 2,824 — 353 octaves exactly |
+| standing — carries its own proof | **875** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **435** |
 | withdrawn — nothing proves it | 1,514 |
-| proved in total | **1307** of 2,821 |
-| standing keys → distinct theorems | 872 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 37 · 872 theorems (685 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 13 rfl declarations |
-| proved `by decide` | 685 of 885 |
+| proved in total | **1310** of 2,824 |
+| standing keys → distinct theorems | 875 sealed, 0 of them keyed twice, 0 unresolvable |
+| Lean files · theorems | 37 · 875 theorems (688 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 13 rfl declarations |
+| proved `by decide` | 688 of 888 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -236,4 +236,4 @@ across** — deposited as [10.5281/zenodo.21781603](https://doi.org/10.5281/zeno
 
 ---
 
-*15 claims, all verified · 872 Lean theorems · 2821 ledger entries · trial root `5815968f-c80f-8281-96ec-21bc03fe9c22` · integrity, not truth*
+*15 claims, all verified · 875 Lean theorems · 2824 ledger entries · trial root `69239e8f-5b6b-8b5a-b322-eba99fa9771b` · integrity, not truth*

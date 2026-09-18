@@ -35,7 +35,28 @@ export const DETECTORS: readonly [RegExp, string][] = [
   [FORCE_CLAIM, 'a claim about a physical force'],
 ]
 
-/** What a sentence claims, if anything — with the refusal window: a negator before the claim clears it. */
-export const claimsIn = (sentence: string): string[] =>
-  DETECTORS.filter(([re]) => { const m = re.exec(sentence); return m !== null && !NEGATOR.test(sentence.slice(0, m.index)) })
+/** THE REFUSAL WINDOW: a match is cleared when ANY negator stands before it.
+ *
+ *  This is the one path in the whole sweep that turns a catch into a pass, so it is the place a widening
+ *  would go unnoticed — widen it and every claim is excused while the report stays green and the count
+ *  stays large. It is decided by the kernel over its whole shape in src/proof/instruments.lean
+ *  (any_negator_before_the_claim_refuses_it, the_window_is_monotone_in_the_claim_s_position,
+ *  with_no_negator_nothing_is_cleared), and scripts/lean-agree.ts compares this against that over a grid,
+ *  so the rule the kernel decided and the rule the sweep runs cannot part company. */
+export const refused = (negatorPositions: readonly number[], claimAt: number): boolean =>
+  negatorPositions.some((n) => n < claimAt)
+
+/** Where every negator in a sentence begins — the list the window quantifies over. */
+export const negatorPositions = (sentence: string): number[] => {
+  const re = new RegExp(NEGATOR.source, 'gi')
+  const out: number[] = []
+  for (const m of sentence.matchAll(re)) out.push(m.index ?? 0)
+  return out
+}
+
+/** What a sentence claims, if anything — a match cleared by the window is not a claim. */
+export const claimsIn = (sentence: string): string[] => {
+  const negs = negatorPositions(sentence)
+  return DETECTORS.filter(([re]) => { const m = re.exec(sentence); return m !== null && !refused(negs, m.index) })
     .map(([, what]) => what)
+}

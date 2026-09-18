@@ -20,6 +20,7 @@ import { unreflect } from '../src/honesty/index.ts'
 import { FIELDS } from '../src/0/program.ts'
 import { P as ED_P, L as ED_L } from '../src/0/ed25519.ts'
 import { vortexOrder, vortexOrderReversed } from '../src/7/rays.ts'
+import { refused } from '../src/honesty/claims.ts'
 import { execSync } from 'node:child_process'
 import { writeFileSync, unlinkSync } from 'node:fs'
 
@@ -93,6 +94,18 @@ const PAIRS = [
   // like seven rays. Both orders are derived from the generator on both sides; this compares the results.
   { what: 'the vortex order',   runtime: vortexOrder(),         mod: 'Rays', raw: true, expr: 'Rays.vortexOrder' },
   { what: 'the reversed order', runtime: vortexOrderReversed(), mod: 'Rays', raw: true, expr: 'Rays.vortexReversed' },
+
+  // THE REFUSAL WINDOW — the lenient side of every claim detector, where a widening goes unnoticed because
+  // the report stays green and the count stays large. Compared over every claim position against a fixed
+  // negator, and over the empty sentence, which is the case a reader assumes rather than checks.
+  { what: 'the refusal window', mod: 'Instruments', raw: true,
+    runtime: [...Array.from({ length: 10 }, (_, c) => refused([3], c) ? 1 : 0),
+      ...Array.from({ length: 10 }, (_, c) => refused([], c) ? 1 : 0),
+      refused([7, 2, 9], 5) ? 1 : 0, refused([7, 9], 5) ? 1 : 0, refused([5], 5) ? 1 : 0],
+    expr: '((List.range 10).map (fun c => if Instruments.refused [3] c then 1 else 0)) '
+      + '++ ((List.range 10).map (fun c => if Instruments.refused [] c then 1 else 0)) '
+      + '++ [if Instruments.refused [7, 2, 9] 5 then 1 else 0, if Instruments.refused [7, 9] 5 then 1 else 0, '
+      + 'if Instruments.refused [5] 5 then 1 else 0]' },
 ]
 
 const mod9 = (xs: number[]) => xs.map((n) => ((n % 9) + 9) % 9)
