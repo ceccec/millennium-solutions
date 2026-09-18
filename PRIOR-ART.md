@@ -6,7 +6,7 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 915 machine-checked declarations, **885** restate work that already has an author and
+Of 923 machine-checked declarations, **893** restate work that already has an author and
 **30** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/proof/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
@@ -27,7 +27,7 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **885** |
+| attributed to named earlier work | **893** |
 | unclassified — no search performed, status unknown | **30** |
 | claimed as novel | **0** |
 
@@ -47,7 +47,7 @@ searched, where, and when. An earlier version of this page claimed novelty for 2
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 37 sources, 885 theorems
+## Restated from named earlier work — 38 sources, 893 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
@@ -87,6 +87,7 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>sequences.lean</code></td><td>28</td><td>integer sequences and identities</td><td>Cassini’s identity — G. D. Cassini, 1680; Lucas sequences — Édouard Lucas, 1878; the Brahmagupta–Fibonacci identity — Brahmagupta, 628; Pascal’s triangle mod 2 — Blaise Pascal, 1654</td></tr>
 <tr><td><code>speed.lean</code></td><td>12</td><td>hash trees and membership proofs</td><td>the structural claim is Merkle's and is credited here as merkle.lean already credits it:</td></tr>
 <tr><td><code>split.lean</code></td><td>22</td><td>elementary number theory — the unit group of ℤ/9</td><td>the classification this file rests on is standard and is credited: the units of ℤ/9 are</td></tr>
+<tr><td><code>theology.lean</code></td><td>8</td><td>elementary number theory — the unit group of ℤ/9, the doubling map, and the ten's complement</td><td>the structure is the same standard one index.lean credits: U(9) = {1,2,4,5,7,8}, the</td></tr>
 <tr><td><code>theorems.lean</code></td><td>8</td><td>the method of complements</td><td>the universal reflection here is the same ten's complement d ↦ 10 − d as coin.lean, with its centre and its pairs summing to ten. Method of complements, long prior to this deposit. Searched 2026-09-04</td></tr>
 <tr><td><code>z9.lean</code></td><td>25</td><td>modular arithmetic</td><td>Fermat’s little theorem — Pierre de Fermat, 1640; Euler’s theorem — Leonhard Euler, 1763; primitive roots — Carl Friedrich Gauss, 1801</td></tr>
 <tr><td><code>z9plus.lean</code></td><td>48</td><td>modular arithmetic and periodicity</td><td>digital roots (casting out nines) — in use by the 12th century; the Pisano period — after Leonardo Pisano; studied by Joseph-Louis Lagrange, 1774</td></tr>
@@ -111,6 +112,7 @@ which is a contribution of verification, not of discovery.
 - **elementary number theory — the unit group of Z/9** — 118 theorems, in `imagined.lean`
 - **elementary number theory — the unit group of ℤ/9** — 37 theorems, in `recovered.lean`, `split.lean`
 - **elementary number theory — the unit group of ℤ/9 and the doubling orbit** — 24 theorems, in `generated.lean`, `index.lean`
+- **elementary number theory — the unit group of ℤ/9, the doubling map, and the ten's complement** — 8 theorems, in `theology.lean`
 - **elementary number theory, named results** — 19 theorems, in `demand3.lean`
 - **elementary number theory, second tier** — 12 theorems, in `demand2.lean`
 - **elementary set theory — the naturals are not exhausted by any finite list** — 12 theorems, in `reach.lean`
@@ -158,5 +160,5 @@ priority claim above, and it is the whole of it.
 
 ---
 
-Partition seal `ee9ced36-279c-878e-81ea-642e96218c08` · recompute with `node scripts/priorart.ts` · the kernel re-decides
+Partition seal `eeb3b72a-2436-8795-9b0e-92442d8b77c4` · recompute with `node scripts/priorart.ts` · the kernel re-decides
 `priorart.lean` on every run. A content-address proves integrity, not truth.

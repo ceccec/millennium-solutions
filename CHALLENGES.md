@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). The author's own claim, that the seven are solved through involution, is stated in his name on the front page.
 
-## Discovered theorems (decidable, over ℤ/9) — 2856 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2864 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (900)
+### lean (908)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -1111,6 +1111,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_millenniumfloor_the_span_is_exactly_the_units_of_the_ring](/theorem/lean_millenniumfloor_the_span_is_exactly_the_units_of_the_ring) — lean index.lean: the_span_is_exactly_the_units_of_the_ring — (List.range 9).all (fun d =&gt; span.contains d == isUnit d) ∧ (List.range 9).all (fun d =&gt; isUnit d || ! span.contains d) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2d45299e-ed42…`
 - [lean_millenniumfloor_the_span_and_the_units_both_sum_to_zero_mod_nine](/theorem/lean_millenniumfloor_the_span_and_the_units_both_sum_to_zero_mod_nine) — lean index.lean: the_span_and_the_units_both_sum_to_zero_mod_nine — (span.foldr (· + ·) 0) % 9 == 0 ∧ ((List.range 9).filter isUnit).foldr (· + ·) 0 % 9 == 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a6bd7475-788f…`
 - [lean_millenniumfloor_the_orbit_is_one_closed_loop_of_six_distinct_points](/theorem/lean_millenniumfloor_the_orbit_is_one_closed_loop_of_six_distinct_points) — lean index.lean: the_orbit_is_one_closed_loop_of_six_distinct_points — orbit 6 == orbit 0 ∧ (List.range 6).all (fun i =&gt; (List.range 6).all (fun j =&gt; (orbit i == orbit j) == (i == j))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `10ad046c-32e7…`
+- [lean_theology_the_mirror_and_the_doubling_agree_at_no_residue](/theorem/lean_theology_the_mirror_and_the_doubling_agree_at_no_residue) — lean theology.lean: the_mirror_and_the_doubling_agree_at_no_residue — (List.range 9).all (fun d =&gt; refl (dbl d) % 9 != (2 * refl d) % 9) ∧ ((List.range 9).filter (fun d =&gt; refl (dbl d) % 9 == (2 * refl d) % 9)).length = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `28708e4a-fe0f…`
+- [lean_theology_confirming_a_witness_is_uniform_while_finding_one_is_not](/theorem/lean_theology_confirming_a_witness_is_uniform_while_finding_one_is_not) — lean theology.lean: confirming_a_witness_is_uniform_while_finding_one_is_not — ((List.range 9).filter isUnit).all (fun d =&gt; (d * invOf d) % 9 == 1) ∧ (((List.range 9).filter isUnit).map searchCost).eraseDups.length &gt; 1 ∧ ((List.range 9).filter isUnit).any (fun d =&gt; searchCost d &gt; searchCost 1) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2241453d-2a19…`
+- [lean_theology_no_start_ever_crosses_between_the_units_and_the_non_units](/theorem/lean_theology_no_start_ever_crosses_between_the_units_and_the_non_units) — lean theology.lean: no_start_ever_crosses_between_the_units_and_the_non_units — (List.range 9).all (fun s =&gt; (List.range 48).all (fun k =&gt; isUnit (iter k s) == isUnit s)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `0582fb57-6ae9…`
+- [lean_theology_the_origin_is_reached_at_every_step_exactly_by_the_origin](/theorem/lean_theology_the_origin_is_reached_at_every_step_exactly_by_the_origin) — lean theology.lean: the_origin_is_reached_at_every_step_exactly_by_the_origin — (List.range 9).all (fun s =&gt; (List.range 48).all (fun k =&gt; (iter k s == 0) == (s == 0))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `b31744a1-62f3…`
+- [lean_theology_generating_the_same_set_is_exactly_being_of_the_same_kind](/theorem/lean_theology_generating_the_same_set_is_exactly_being_of_the_same_kind) — lean theology.lean: generating_the_same_set_is_exactly_being_of_the_same_kind — (List.range 9).all (fun g =&gt; (List.range 9).all (fun h =&gt; sameSet (spanOf g) (spanOf h) == ((isUnit g == isUnit h) && ((g == 0) == (h == 0))))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c5a06c7c-8c41…`
+- [lean_theology_the_orbit_is_antipodal_and_each_opposite_pair_sums_to_nine](/theorem/lean_theology_the_orbit_is_antipodal_and_each_opposite_pair_sums_to_nine) — lean theology.lean: the_orbit_is_antipodal_and_each_opposite_pair_sums_to_nine — (List.range 3).all (fun i =&gt; orbit i + orbit (i + 3) == 9) ∧ (span.foldr (· + ·) 0) % 9 == 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `dceecba8-5d64…`
+- [lean_theology_the_orbit_has_no_doubling_closed_part_but_nothing_and_itself](/theorem/lean_theology_the_orbit_has_no_doubling_closed_part_but_nothing_and_itself) — lean theology.lean: the_orbit_has_no_doubling_closed_part_but_nothing_and_itself — (List.range 64).all (fun m =&gt; let s := subsetOf m (! s.all (fun v =&gt; s.contains (dbl v))) || s.length == 0 || s.length == span.length) ∧ span.all (fun v =&gt; span.contains (dbl v)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `412804db-ea5f…`
+- [lean_theology_the_pairing_is_one_ordering_of_seven_out_of_all_of_them](/theorem/lean_theology_the_pairing_is_one_ordering_of_seven_out_of_all_of_them) — lean theology.lean: the_pairing_is_one_ordering_of_seven_out_of_all_of_them — pairing.eraseDups.length = 7 ∧ (List.range 7).all (fun i =&gt; pairing.contains i) ∧ pairing.length = (List.range 7).length ∧ fact pairing.length = 5040 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `4db1d76e-da5a…`
 
 ### other — one-of-a-kind (0)
 
@@ -2703,4 +2711,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `71d24cd1-9f81-8bc0-b23a-075e8a311b85`. Integrity, not truth.
+Page content-address: `f10b3f21-7220-8ff8-9058-c8a85b945af7`. Integrity, not truth.

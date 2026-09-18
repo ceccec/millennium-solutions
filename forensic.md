@@ -5,18 +5,18 @@ title: Every state change, dated
 # Provenance of this deposit's ledger
 
 **Recomputed on every build** from git history and the append-only ledger. Regenerate with
-`npm run forensic`. Content-address `339941d9-c28f-806f-841a-d8aba3836178`.
+`npm run forensic`. Content-address `894f5c0d-e416-82c9-b9d8-9c7a0fc6b1a9`.
 
 ## What this record establishes
 
 | | |
 |---|---:|
-| ledger entries | **2,766** |
-| standing — proved and sealed | 817 |
+| ledger entries | **2,864** |
+| standing — proved and sealed | 908 |
 | carried — withdrawn, proved by a live theorem | 435 |
-| withdrawn — nothing currently proves them | 1,514 |
+| withdrawn — nothing currently proves them | 1,521 |
 | receipt chain, recomputed | **0 breaks — intact** |
-| commits that changed ledger state | 587 |
+| commits that changed ledger state | 598 |
 
 ## Why entries were withdrawn — the reason recorded at the time
 
@@ -29,10 +29,10 @@ Verbatim, as written when the entry was revoked. Not inferred afterwards.
 | 35 | orphaned: the theorem this key was sealed from is no longer in src/proof. It was deleted or rena |
 | 12 | revoked in place: circular by construction AND dependent on the removed lexical gate. |
 | 10 | revoked in place: circular by construction — the test defines the answer it checks, proving a de |
-| 1 | revoked in place: its test asserts that a list of proof-boasts written across many scripts and l |
+| 7 | renamed to what it decides (2026-09-18, by the author's order). The theorem carried a Clay probl |
 
 **1,011** of
-**1,514** withdrawn entries — 66.8% —
+**1,521** withdrawn entries — 66.5% —
 were withdrawn for want of a Lean proof while their evidence was a TypeScript test that **computed**.
 Withdrawal costs one line of record; proving costs real work, and a green gate rewards both identically.
 

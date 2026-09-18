@@ -1,5 +1,5 @@
 {
-  "produced": "8f0ad88d7",
+  "produced": "b4f892ccf",
   "method": "recomputed from git history of src/proof/discovered.json and the ledger itself; re-runnable with `npm run forensic`",
   "establishes": "what changed, when, in which commit, and the reason recorded at the time",
   "doesNotEstablish": [
@@ -7,10 +7,10 @@
     "authorship beyond the git author field (every commit here carries the repository owner)"
   ],
   "ledgerNow": {
-    "entries": 2766,
+    "entries": 2864,
     "carried": 435,
-    "withdrawn": 1514,
-    "standing": 817
+    "withdrawn": 1521,
+    "standing": 908
   },
   "chainRecomputed": {
     "breaks": 0,
@@ -100,18 +100,18 @@
       10
     ],
     [
+      "renamed to what it decides (2026-09-18, by the author's order). The theorem carried a Clay probl",
+      7
+    ],
+    [
       "revoked in place: its test asserts that a list of proof-boasts written across many scripts and l",
       1
     ],
     [
       "revoked in place: it asserts adjudicate('we prove all seven').verdict === 'REFUTED'. The removed",
       1
-    ],
-    [
-      "carried: this key was sealed from a theorem no longer in src/proof. lean_coin_the_digits_are_ten",
-      1
     ]
   ],
-  "totalStateChangingCommits": 587,
-  "address": "339941d9-c28f-806f-841a-d8aba3836178"
+  "totalStateChangingCommits": 598,
+  "address": "894f5c0d-e416-82c9-b9d8-9c7a0fc6b1a9"
 }
