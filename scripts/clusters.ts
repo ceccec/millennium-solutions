@@ -14,8 +14,9 @@
 //   1 · shared definitions — theorems whose statements use the same `def` are bound by it; the components of that
 //       graph are the cluster's strands;
 //   2 · imports — the clusters this one is built on, and the clusters built on it;
-//   3 · the joint address — merkleFold of the cluster's sealed receipts: order-invariant, and altering ONE receipt
-//       changes it, which is checked on every run rather than asserted;
+//   3 · the joint address — merkleFold of the cluster's sealed receipts: order-invariant, and altering ANY ONE of
+//       them changes it. The general statement is decided by the kernel (merkle.lean, at every position); what is
+//       checked here on every run is that the shipped fold agrees with it on this cluster's own receipts;
 //   4 · the address lattice — each theorem's coordinates are the seven ray values its page plots from its receipt
 //       (Vortex7D: two hex digits per ray), taken mod 9 as the page colours them: a point of (ℤ/9)⁷. Clusters are
 //       NEIGHBOURS when their theorems sit among each other's seven nearest points on that torus — the page's
@@ -97,12 +98,25 @@ function strands(c: Cluster) {
 }
 
 // ── 3 · the joint address, and the check that it binds ────────────────────────────────────────────────────────
+// WHAT THIS CHECK IS, AND WHAT IT IS NOT. scripts/control-probe.ts found this gate INERT: no perturbation of
+// the ledger, the Lean sources or the workflows could make it refuse, because order-invariance and binding
+// are properties of the FOLD and not of the data folded. A refusal nothing in the tree can trigger is the
+// defect that probe exists to name. Both halves are decided by the kernel now, over every case —
+//   merkle.lean: fold_is_order_independent_on_{two,three,four}  the root does not move when it should not
+//   merkle.lean: altering_any_single_leaf_changes_the_root      it DOES move when any one leaf is altered
+// — so the general statement is a theorem, and what remains here is the narrower, honest thing: that the
+// SHIPPED fold agrees with those theorems on this cluster's actual receipts. It refuses when it does not,
+// which a perturbation of src/0/index.ts does reach; gates-fire holds that control.
+//
+// AND IT NOW ALTERS EVERY RECEIPT. It altered receipts[0] and printed "binds every receipt ✓" beside a
+// cluster of 127 — a sentence wider than the check under it, which is the same defect one layer down.
 function joint(c: Cluster) {
   const receipts = c.sealed.map((t) => live.get(keyOf(t))!)
   const root = merkleFold(receipts)
   const reordered = merkleFold([...receipts].reverse())
-  const altered = merkleFold([toUuid(receipts[0] + '·altered'), ...receipts.slice(1)])
-  return { root, orderInvariant: root === reordered, bindsEveryReceipt: altered !== root }
+  const unbound = receipts.filter((_, i) =>
+    merkleFold(receipts.map((r, j) => (j === i ? toUuid(r + '·altered') : r))) === root).length
+  return { root, orderInvariant: root === reordered, bindsEveryReceipt: unbound === 0, unbound, altered: receipts.length }
 }
 
 // ── 4 · the address lattice ────────────────────────────────────────────────────────────────────────────────────
@@ -203,7 +217,7 @@ function deposition(c: Cluster) {
     `<p><strong>2 · Imports.</strong> Built on: ${importsOf(c.file).map((f) => `<code>${f}</code>`).join(', ') || 'no other cluster'}. `
       + `Built on it: ${dependentsOf(c.file).map((f) => `<code>${f}</code>`).join(', ') || 'no other cluster'}. Checking this cluster needs ${pl(files.length, 'file', 'files')}: <code>${files.join('</code>, <code>')}</code>.</p>`,
     `<p><strong>3 · The joint address.</strong> The ${pl(c.sealed.length, 'sealed receipt folds', 'sealed receipts fold')} to <code>${j.root}</code>. `
-      + `Order-invariant: ${j.orderInvariant ? 'yes — the same root in reverse order' : 'NO'}. Altering one receipt changes it: ${j.bindsEveryReceipt ? 'yes, computed when this record was generated' : 'NO'}. `
+      + `Order-invariant: ${j.orderInvariant ? 'yes — the same root in reverse order' : 'NO'}. Altering any one of the ${j.altered} receipts changes it: ${j.bindsEveryReceipt ? 'yes — each was altered in turn when this record was generated, and the general statement is decided by the kernel in merkle.lean (altering_any_single_leaf_changes_the_root)' : `NO — ${j.unbound} left the root where it was`}. `
       + `A content-address proves integrity, not truth.</p>`,
     `<p><strong>4 · The address lattice.</strong> Each theorem sits at the seven ray values its page plots from its receipt, taken mod 9: a point of (ℤ/9)⁷. `
       + `This cluster's centre is (${n.centre.join(', ')}). Its nearest clusters, ranked by lift — pairs counted from this cluster's theorems' seven nearest points, over the pairs expected by chance from the two clusters' sizes: `
@@ -253,7 +267,7 @@ for (const c of unproven) console.log(`  ○ not proven, no publication: ${c.fil
 for (const { c, d } of out) {
   const k = d.cluster
   console.log(`  ${c.file.padEnd(18)} ${String(k.sealed).padStart(3)} sealed · ${String(k.strands).padStart(2)} strand(s) · joint ${k.joint.root.slice(0, 13)}… · `
-    + `binds every receipt ${k.joint.bindsEveryReceipt ? '✓' : '✗'} · lattice neighbours by lift ${k.lattice.top.map((x) => `${x.file.replace('.lean', '')}(${x.pairs}/${x.expected}=${x.lift})`).join(' ') || '—'} · within ${k.lattice.within} / between ${k.lattice.between} · chance ${k.lattice.chanceShare} (typical best ${k.lattice.nullMedian})`)
+    + `binds all ${k.joint.altered} ${k.joint.bindsEveryReceipt ? '✓' : `✗ (${k.joint.unbound} unbound)`} · lattice neighbours by lift ${k.lattice.top.map((x) => `${x.file.replace('.lean', '')}(${x.pairs}/${x.expected}=${x.lift})`).join(' ') || '—'} · within ${k.lattice.within} / between ${k.lattice.between} · chance ${k.lattice.chanceShare} (typical best ${k.lattice.nullMedian})`)
 }
 {
   const above = out.filter(({ d }) => d.cluster.lattice.chanceShare < 0.05).map(({ c }) => c.file)

@@ -5,11 +5,11 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **826** report the same thing:
+axiom fails the build rather than earning a footnote. All **828** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
-theorems rest on **326** definitions, and every one of them is a choice. A theorem about
+theorems rest on **328** definitions, and every one of them is a choice. A theorem about
 `fall` is a theorem about the digital root only because `fall` is *defined* to be it. Both halves are
 indexed below, and the second is the longer one.
 
@@ -90,7 +90,7 @@ The pins in the control fixture follow the community practice of guarding `#prin
 `#guard_msgs`, which turns the axiom footprint into an executable regression test: the assertion is
 checked by the elaborator, and drift fails the build with a mismatch instead of passing unnoticed.
 
-## What IS assumed: the 326 definitions
+## What IS assumed: the 328 definitions
 
 Each of these is a primitive of this deposit — not derived, not proved, chosen. They are listed in full
 because a reader checking a theorem must be able to read the definition it is about, and because a
@@ -392,7 +392,7 @@ def tri (n : Nat) : Nat := n * (n + 1) / 2
 def sumTri (n : Nat) : Nat := ((List.range' 1 n).map tri).foldl (· + ·) 0
 ```
 
-### `merkle.lean` — 18 definition(s), 12 theorem(s)
+### `merkle.lean` — 20 definition(s), 14 theorem(s)
 
 ```lean
 def hexDigit (n : Nat) : Nat := if n < 10 then 48 + n else 87 + n
@@ -409,10 +409,12 @@ def merkleFold (leaves : List (List Nat)) : List Nat :=
 def A : List Nat := toUuidBytes [97]     -- address of "a"
 def C : List Nat := toUuidBytes [99]     -- address of "c"
 def B : List Nat := toUuidBytes [98]     -- address of "b"
-def settledHere : Nat := 11
+def settledHere : Nat := 13
 def interleave (x : List Nat) : List (List Nat) → List (List (List Nat))
 def perms : List (List Nat) → List (List (List Nat))
 def D : List Nat := toUuidBytes [100]  -- address of "d"
+def E : List Nat := toUuidBytes [101]    -- address of "e", a leaf none of A B C D is
+def setAt (l : List (List Nat)) (i : Nat) (x : List Nat) : List (List Nat) :=
 ```
 
 ### `nim.lean` — 7 definition(s), 28 theorem(s)
@@ -579,6 +581,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**826** declarations, **0** axiom dependencies, **326** definitions they rest on.
+**828** declarations, **0** axiom dependencies, **328** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them.

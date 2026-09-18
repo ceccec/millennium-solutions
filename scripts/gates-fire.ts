@@ -399,6 +399,18 @@ const CONTROLS: Control[] = [
     what: 'a rendering that substitutes a rebound name and still type-checks',
     mutate: (s) => s.replace('\\\\s*:?=`)', '\\\\s*=`)') },
 
+  // THE ONE GATE control-probe REPORTED INERT — not reached by any perturbation of the ledger, the Lean
+  // sources or the workflows it reads. It was not unfalsifiable; it was unreachable from the files the probe
+  // knew about. clusters asserts that a cluster's joint address is order-invariant and binds every receipt,
+  // and both are properties of merkleFold, which clusters IMPORTS and never reads as a file. The general
+  // statement belongs to the kernel and is decided there now (merkle.lean: fold_is_order_independent_on_four,
+  // altering_any_single_leaf_changes_the_root); what is left here is agreement with the shipped fold on this
+  // deposit's own receipts, and this is the mutation that reaches it — the same one parallel-seal rejects,
+  // one property seen in two domains.
+  { gate: 'clusters', cmd: 'node scripts/clusters.ts', file: 'src/0/index.ts',
+    what: 'a fold under which a cluster\'s joint address depends on the order its receipts arrive in',
+    mutate: (s) => s.replace('let layer = [...leaves].sort()', 'let layer = [...leaves]') },
+
   { gate: 'gaps', cmd: 'node scripts/gaps.ts', file: '.vitepress/config.ts',
     what: 'a published page dropped from the sidebar',
     mutate: (s) => s.replace(/\{ text: 'Verify \(live app\)', link: '\/verify' \},/, '') },

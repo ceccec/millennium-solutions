@@ -95,8 +95,8 @@ theorem merge_is_order_sensitive : merge A B ≠ merge B A := by decide
 theorem sorting_is_what_makes_the_fold_order_free :
   sortB [A, B] = sortB [B, A] ∧ [A, B] ≠ [B, A] := by decide
 
-def settledHere : Nat := 11
-theorem merkle_settles_its_range : settledHere = 11 := rfl
+def settledHere : Nat := 13
+theorem merkle_settles_its_range : settledHere = 13 := rfl
 
 -- ── ORDER-INDEPENDENCE ON AN ODD NUMBER OF LEAVES. Two leaves pair exactly and prove little: the interesting
 --    case is an odd count, where pairUp must carry the leftover leaf into the next round. All six orderings of
@@ -128,5 +128,27 @@ theorem fold_is_order_independent_on_three :
   merkleFold [A, B, C] = merkleFold [A, C, B] ∧ merkleFold [A, B, C] = merkleFold [B, A, C] ∧
   merkleFold [A, B, C] = merkleFold [B, C, A] ∧ merkleFold [A, B, C] = merkleFold [C, A, B] ∧
   merkleFold [A, B, C] = merkleFold [C, B, A] := by decide
+
+-- ── AND THE OTHER HALF OF THE RECEIPT: THE FOLD BINDS EVERY LEAF ────────────────────────────────────────
+--    Order-independence says the root does not move when it should not. Binding says it DOES move when a
+--    leaf is altered — and the two together are what makes a root a receipt. Only the first was decided
+--    here. The second was asserted at runtime by the cluster report, which altered the FIRST receipt and
+--    printed "binds every receipt": a check narrower than the sentence it printed, and one no perturbation
+--    of this tree could ever make false, since it is a property of the fold rather than of the ledger.
+--    It belongs here, decided at EVERY position.
+def E : List Nat := toUuidBytes [101]    -- address of "e", a leaf none of A B C D is
+
+/-- l with position i replaced by x -/
+def setAt (l : List (List Nat)) (i : Nat) (x : List Nat) : List (List Nat) :=
+  (List.range l.length).map (fun j => if j == i then x else l.getD j [])
+
+-- the alteration is not vacuous: it lands, at every position, on a leaf that was not there before
+theorem the_alteration_reaches_every_position :
+  (List.range 4).all (fun i => setAt [A, B, C, D] i E != [A, B, C, D]) := by decide
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 2000000 in
+theorem altering_any_single_leaf_changes_the_root :
+  (List.range 4).all (fun i => merkleFold (setAt [A, B, C, D] i E) != merkleFold [A, B, C, D]) := by decide
 
 end Merkle

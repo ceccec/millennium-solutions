@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). The author's own claim, that the seven are solved through involution, is stated in his name on the front page.
 
-## Discovered theorems (decidable, over ℤ/9) — 2766 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2768 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (817)
+### lean (819)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -1028,6 +1028,8 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
   intro), standard axioms only — checked by lean.ts  ·  `b5817e6d-005d…`
 - [lean_flow_the_discrete_energy_never_increases_on_every_ring](/theorem/lean_flow_the_discrete_energy_never_increases_on_every_ring) — lean flow.lean: the_discrete_energy_never_increases_on_every_ring — ∀ (N : Nat) (u : Nat → Int) (ν : Int), 0 &lt; N → 0 ≤ ν → ringSum (fun i =&gt; u i * (3 * ν * ringLap N u i - burgersSkew3 N u i)) N ≤ 0 — proved by the Lean kernel for every value (by
   intro), standard axioms only — checked by lean.ts  ·  `d25bc6d6-19e4…`
+- [lean_merkle_the_alteration_reaches_every_position](/theorem/lean_merkle_the_alteration_reaches_every_position) — lean merkle.lean: the_alteration_reaches_every_position — (List.range 4).all (fun i =&gt; setAt [A, B, C, D] i E != [A, B, C, D]) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `302ce1bd-f8b6…`
+- [lean_merkle_altering_any_single_leaf_changes_the_root](/theorem/lean_merkle_altering_any_single_leaf_changes_the_root) — lean merkle.lean: altering_any_single_leaf_changes_the_root — (List.range 4).all (fun i =&gt; merkleFold (setAt [A, B, C, D] i E) != merkleFold [A, B, C, D]) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `b37b91cf-2814…`
 
 ### other — one-of-a-kind (0)
 
@@ -2612,4 +2614,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `873096ba-f5a0-84f9-a75b-6c1391976966`. Integrity, not truth.
+Page content-address: `77241bc6-3eaf-8e99-8c5b-ff3ff9b85e10`. Integrity, not truth.

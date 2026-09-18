@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 826 of them across 33 files and
-7 wings; 630 close by exhaustion over a stated finite domain, 187 are proved
+(\texttt{npm run latex-gate}). There are 828 of them across 33 files and
+7 wings; 632 close by exhaustion over a stated finite domain, 187 are proved
 for every value, and the remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -369,7 +369,7 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{merkle\_settles\_its\_range}]
-\[ \mathrm{settledHere} = 11 \]
+\[ \mathrm{settledHere} = 13 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 
@@ -387,6 +387,16 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 \[ \mathrm{merkleFold}\mathopen{}\left([A,\,B,\,C]\right) = \mathrm{merkleFold}\mathopen{}\left([A,\,C,\,B]\right) \land \mathrm{merkleFold}\mathopen{}\left([A,\,B,\,C]\right) = \mathrm{merkleFold}\mathopen{}\left([B,\,A,\,C]\right) \land \mathrm{merkleFold}\mathopen{}\left([A,\,B,\,C]\right) = \mathrm{merkleFold}\mathopen{}\left([B,\,C,\,A]\right) \land \mathrm{merkleFold}\mathopen{}\left([A,\,B,\,C]\right) = \mathrm{merkleFold}\mathopen{}\left([C,\,A,\,B]\right) \land \mathrm{merkleFold}\mathopen{}\left([A,\,B,\,C]\right) = \mathrm{merkleFold}\mathopen{}\left([C,\,B,\,A]\right) \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_alteration\_reaches\_every\_position}]
+\[ \forall i \in \{0,\dots,3\},\; \mathrm{setAt}\mathopen{}\left([A,\,B,\,C,\,D],\,i,\,E\right) \neq [A,\,B,\,C,\,D] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{altering\_any\_single\_leaf\_changes\_the\_root}]
+\[ \forall i \in \{0,\dots,3\},\; \mathrm{merkleFold}\mathopen{}\left(\mathrm{setAt}\mathopen{}\left([A,\,B,\,C,\,D],\,i,\,E\right)\right) \neq \mathrm{merkleFold}\mathopen{}\left([A,\,B,\,C,\,D]\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
 
 \subsection{the ring}
 

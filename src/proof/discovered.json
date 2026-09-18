@@ -19584,5 +19584,15 @@
     "key": "lean_flow_the_discrete_energy_never_increases_on_every_ring",
     "name": "lean flow.lean: the_discrete_energy_never_increases_on_every_ring — ∀ (N : Nat) (u : Nat → Int) (ν : Int), 0 < N → 0 ≤ ν → ringSum (fun i => u i * (3 * ν * ringLap N u i - burgersSkew3 N u i)) N ≤ 0 — proved by the Lean kernel for every value (by\n  intro), standard axioms only — checked by lean.ts",
     "receipt": "d25bc6d6-19e4-84e1-98a3-0bd4bbbfc85c"
+  },
+  {
+    "key": "lean_merkle_the_alteration_reaches_every_position",
+    "name": "lean merkle.lean: the_alteration_reaches_every_position — (List.range 4).all (fun i => setAt [A, B, C, D] i E != [A, B, C, D]) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "302ce1bd-f8b6-8a0f-be2e-a331bbcc2606"
+  },
+  {
+    "key": "lean_merkle_altering_any_single_leaf_changes_the_root",
+    "name": "lean merkle.lean: altering_any_single_leaf_changes_the_root — (List.range 4).all (fun i => merkleFold (setAt [A, B, C, D] i E) != merkleFold [A, B, C, D]) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b37b91cf-2814-8ec2-b7a0-7ffede74f303"
   }
 ]
