@@ -19904,5 +19904,20 @@
     "key": "lean_program_flipping_any_message_bit_moves_the_check",
     "name": "lean program.lean: flipping_any_message_bit_moves_the_check — (List.range 48).all (fun i => checkBits P0 (flipAt M0 i) != checkBits P0 M0) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "131cee6e-62a3-8901-b8c9-9ef916e2d4dc"
+  },
+  {
+    "key": "lean_program_an_untouched_container_reads_intact",
+    "name": "lean program.lean: an_untouched_container_reads_intact — [(P0, M0), (P1, M1), (PZ, MZ)].all (fun pm => intact (encodeBits pm.1 pm.2)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "24e09b9f-fa04-87b4-9e57-d2afdc0ccc4c"
+  },
+  {
+    "key": "lean_program_a_damaged_container_is_refused_at_every_program_position",
+    "name": "lean program.lean: a_damaged_container_is_refused_at_every_program_position — (List.range 42).all (fun i => !(intact (flipBit (encodeBits P0 M0) (programF.getD i 0)))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "4cb0515d-b4c1-8005-a983-eb77ca3458a3"
+  },
+  {
+    "key": "lean_program_the_reserved_six_are_where_the_rendering_puts_them",
+    "name": "lean program.lean: the_reserved_six_are_where_the_rendering_puts_them — RESERVED = [48, 49, 50, 51, 64, 65] ∧ byteAt 2 = 6 ∧ byteAt 3 = 8 ∧ byteAt 4 = 10 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "4d490971-9f9a-8d9f-8d8e-5d926e3687bb"
   }
 ]

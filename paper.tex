@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 894 of them across 37 files and
-7 wings; 694 close by exhaustion over a stated finite domain, 187 are proved
+(\texttt{npm run latex-gate}). There are 897 of them across 37 files and
+7 wings; 697 close by exhaustion over a stated finite domain, 187 are proved
 for every value, and the remaining 13 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -462,6 +462,11 @@ for every value, and the remaining 13 close by \texttt{rfl} and are counted sepa
 
 \paragraph{\texttt{program.lean}}
 
+\begin{theorem}[\texttt{the\_reserved\_six\_are\_where\_the\_rendering\_puts\_them}]
+\[ \mathrm{RESERVED} = [48,\,49,\,50,\,51,\,64,\,65] \land \mathrm{byteAt}\mathopen{}\left(2\right) = 6 \land \mathrm{byteAt}\mathopen{}\left(3\right) = 8 \land \mathrm{byteAt}\mathopen{}\left(4\right) = 10 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
+
 \begin{theorem}[\texttt{the\_program\_field\_is\_forty\_two\_bits\_not\_forty\_eight}]
 \texttt{programF.length = 42 ∧ ((List.range 48).map (· + 32)).length = 48}
 \end{theorem}
@@ -552,8 +557,18 @@ for every value, and the remaining 13 close by \texttt{rfl} and are counted sepa
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 48 cases. \hfill$\square$
 
+\begin{theorem}[\texttt{an\_untouched\_container\_reads\_intact}]
+\[ \forall \mathrm{pm} \in [\left(\mathrm{P0},\,\mathrm{M0}\right),\,\left(\mathrm{P1},\,\mathrm{M1}\right),\,\left(\mathrm{PZ},\,\mathrm{MZ}\right)],\; \mathrm{intact}\mathopen{}\left(\mathrm{encodeBits}\mathopen{}\left(\mathrm{pm}_{1},\,\mathrm{pm}_{2}\right)\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_damaged\_container\_is\_refused\_at\_every\_program\_position}]
+\texttt{(List.range 42).all (fun i => !(intact (flipBit (encodeBits P0 M0) (programF.getD i 0))))}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 42 cases. \hfill$\square$
+
 \begin{theorem}[\texttt{program\_settles\_its\_range}]
-\[ \mathrm{settledHere} = 18 \]
+\[ \mathrm{settledHere} = 21 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 

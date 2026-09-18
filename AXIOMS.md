@@ -5,11 +5,11 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **894** report the same thing:
+axiom fails the build rather than earning a footnote. All **897** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
-theorems rest on **391** definitions, and every one of them is a choice. A theorem about
+theorems rest on **396** definitions, and every one of them is a choice. A theorem about
 `fall` is a theorem about the digital root only because `fall` is *defined* to be it. Both halves are
 indexed below, and the second is the longer one.
 
@@ -90,7 +90,7 @@ The pins in the control fixture follow the community practice of guarding `#prin
 `#guard_msgs`, which turns the axiom footprint into an executable regression test: the assertion is
 checked by the elaborator, and drift fails the build with a mismatch instead of passing unnoticed.
 
-## What IS assumed: the 391 definitions
+## What IS assumed: the 396 definitions
 
 Each of these is a primitive of this deposit — not derived, not proved, chosen. They are listed in full
 because a reader checking a theorem must be able to read the definition it is about, and because a
@@ -484,13 +484,16 @@ def novelty (s : Source) : Bool := s.2.2
 def sources : List Source :=
 ```
 
-### `program.lean` — 24 definition(s), 19 theorem(s)
+### `program.lean` — 29 definition(s), 22 theorem(s)
 
 ```lean
-def RESERVED : List Nat := [48, 49, 50, 51, 64, 65]
-def checkF : List Nat := List.range 32
-def programF : List Nat := ((List.range 48).map (· + 32)).filter (fun i => !(RESERVED.contains i))
-def messageF : List Nat := (List.range 48).map (· + 80)
+def GROUPS : List Nat := [4, 2, 2, 2, 6]
+def byteAt (g : Nat) : Nat := ((GROUPS.take g).foldl (· + ·) 0)
+def RESERVED : List Nat :=
+def checkF : List Nat := List.range (byteAt 1 * 8)
+def middleF : List Nat := (List.range ((byteAt 4 - byteAt 1) * 8)).map (· + byteAt 1 * 8)
+def programF : List Nat := middleF.filter (fun i => !(RESERVED.contains i))
+def messageF : List Nat := (List.range ((GROUPS.getD 4 0) * 8)).map (· + byteAt 4 * 8)
 def inExactlyOne (i : Nat) : Nat :=
 def ascending : List Nat → Bool
 def maps3 : List (List Nat) := (List.range 3).flatMap (fun a => (List.range 3).flatMap (fun b =>
@@ -510,7 +513,9 @@ def M1 : List Bool := (List.range 48).map (fun i => i % 7 == 0)
 def PZ : List Bool := List.replicate 42 false
 def MZ : List Bool := List.replicate 48 false
 def flipAt (l : List Bool) (i : Nat) : List Bool :=
-def settledHere : Nat := 18
+def intact (bs : List Bool) : Bool :=
+def flipBit (bs : List Bool) (i : Nat) : List Bool :=
+def settledHere : Nat := 21
 ```
 
 ### `quantum.lean` — 11 definition(s), 12 theorem(s)
@@ -664,6 +669,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**894** declarations, **0** axiom dependencies, **391** definitions they rest on.
+**897** declarations, **0** axiom dependencies, **396** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them.

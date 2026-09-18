@@ -92,7 +92,7 @@ const PAIRS = [
   // differ anywhere in the 128 this refuses, and a codec that agreed on every count and differed on every
   // position could not survive it.
   { what: 'the codec, 128 bits', mod: 'Program', raw: true,
-    runtime: encodedBits(),
+    runtime: encodedBits,
     expr: '(Program.encodeBits Program.P0 Program.M0).map (fun b => if b then 1 else 0)' },
 
   // THE CURVE'S FIELD, compared as the residues the implementation actually branches on rather than as a
@@ -196,14 +196,29 @@ unlinkSync(probe)
 const values = out.trim().split('\n').map((l) => l.trim())
 let bad = 0
 console.log(`runtime ↔ Lean — evaluated, not read (${built} module(s) compiled, ${reused} reused from an olean newer than its sources):`)
+// A RUNTIME THAT THROWS IS A DRIFT, NOT A CRASH. The codec guards its own field widths, so a layout that
+// disagreed with the kernel threw inside `encode` while this array was still being BUILT — before a single
+// pair was compared — and the gate died with a stack trace. That is the right verdict reached the wrong
+// way: a reader sees a broken script rather than "these two describe different things", and a grep for the
+// ✗ line finds nothing because there is no line. Values that can throw are passed as thunks and evaluated
+// here, one pair at a time, so a throw is reported against the pair that caused it.
 PAIRS.forEach((p, i) => {
   const got = (values[i] ?? '').replace(/[\[\]]/g, '').split(',').map((x) => Number(x.trim())).filter((n) => !Number.isNaN(n))
   const N = (p as { raw?: boolean }).raw ? (xs: number[]) => xs : mod9
-  const a = JSON.stringify(N(p.runtime)), b = JSON.stringify(N(got))
+  let rt: number[] | null = null
+  let threw = ''
+  try { rt = typeof p.runtime === 'function' ? (p.runtime as () => number[])() : p.runtime }
+  catch (e) { threw = (e as Error).message }
+  if (rt === null) {
+    bad++
+    console.log(`  ✗ ${p.what.padEnd(20)} the runtime REFUSED to produce a value — ${threw.slice(0, 96)}`)
+    return
+  }
+  const a = JSON.stringify(N(rt)), b = JSON.stringify(N(got))
   const ok = a === b
   if (!ok) bad++
   const show = (x: string) => x.length > 46 ? x.slice(0, 43) + '…' : x
-  console.log(`  ${ok ? '✓' : '✗'} ${p.what.padEnd(20)} runtime ${show(JSON.stringify(p.runtime)).padEnd(47)} lean ${show(values[i] ?? '(no value)')}`)
+  console.log(`  ${ok ? '✓' : '✗'} ${p.what.padEnd(20)} runtime ${show(JSON.stringify(rt)).padEnd(47)} lean ${show(values[i] ?? '(no value)')}`)
 })
 console.log(bad
   ? `\n✗ lean-agree: ${bad} constant(s) differ between the runtime and the proofs — one of them is describing something the other does not`

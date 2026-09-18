@@ -28,9 +28,16 @@
 // every theorem page: moving them would rewrite all of those pages to hide a measurement. (No count is
 // written here — a figure in a comment is a claim about the present, and stale-figures reads it as one.)
 // The reverse seven read digits 18..31, which hold no reserved nibble, and all seven of them are strong.
-export const RAYS = 7
+// NEITHER OF THESE IS TYPED. The seven is the deposit's seven LOCALE DIMENSIONS — the same seven the 2×7
+// signature lattice stands on (scripts/receipt-2x7.ts reads the identical list) — so a ray count written as
+// `7` here would be a second copy of that fact, free to drift from it. The modulus is BASE, which is itself
+// TRINITY squared in src/0. A constant this file could invent is a constant this file could get wrong.
+import { LOCALE_ORDER } from './locale.ts'
+import { BASE } from '../0/index.ts'
+
+export const RAYS = LOCALE_ORDER.length
 export const DIRECTIONS = ['fwd', 'rev'] as const
-export const MOD = 9
+export const MOD = BASE
 
 const hexOf = (receipt: string): string => receipt.replace(/-/g, '')
 

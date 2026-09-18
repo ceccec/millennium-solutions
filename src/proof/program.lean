@@ -33,10 +33,25 @@ namespace Program
 
 open Fnv
 
-def RESERVED : List Nat := [48, 49, 50, 51, 64, 65]
-def checkF   : List Nat := List.range 32
-def programF : List Nat := ((List.range 48).map (· + 32)).filter (fun i => !(RESERVED.contains i))
-def messageF : List Nat := (List.range 48).map (· + 80)
+-- DERIVED FROM THE RENDERING, NOT TYPED. `[48, 49, 50, 51, 64, 65]` is the right answer written the wrong
+-- way: those six positions are a consequence of where RFC 9562 puts the version and the variant — the high
+-- nibble of byte 6 and the top two bits of byte 8 — and typed as six numerals nothing connects them to it.
+-- Every partition theorem below would hold just as well over the WRONG six, and the codec would emit
+-- identifiers that are not uuids. The 8-4-4-4-12 group sizes are the one thing stated; everything else is
+-- arithmetic on them, on both sides of the kernel (src/0/program.ts derives the same way).
+def GROUPS : List Nat := [4, 2, 2, 2, 6]
+def byteAt (g : Nat) : Nat := ((GROUPS.take g).foldl (· + ·) 0)
+
+def RESERVED : List Nat :=
+  ((List.range 4).map (fun i => byteAt 2 * 8 + i)) ++ ((List.range 2).map (fun i => byteAt 3 * 8 + i))
+def checkF   : List Nat := List.range (byteAt 1 * 8)
+def middleF  : List Nat := (List.range ((byteAt 4 - byteAt 1) * 8)).map (· + byteAt 1 * 8)
+def programF : List Nat := middleF.filter (fun i => !(RESERVED.contains i))
+def messageF : List Nat := (List.range ((GROUPS.getD 4 0) * 8)).map (· + byteAt 4 * 8)
+
+-- the derivation lands exactly where the rendering says, or nothing below means what it claims
+theorem the_reserved_six_are_where_the_rendering_puts_them :
+  RESERVED = [48, 49, 50, 51, 64, 65] ∧ byteAt 2 = 6 ∧ byteAt 3 = 8 ∧ byteAt 4 = 10 := by decide
 
 -- ── THE WIDTHS ───────────────────────────────────────────────────────────────────────────────────────────
 theorem the_program_field_is_forty_two_bits_not_forty_eight :
@@ -197,7 +212,32 @@ set_option maxHeartbeats 4000000 in
 theorem flipping_any_message_bit_moves_the_check :
   (List.range 48).all (fun i => checkBits P0 (flipAt M0 i) != checkBits P0 M0) := by decide
 
-def settledHere : Nat := 18
-theorem program_settles_its_range : settledHere = 18 := rfl
+-- ── THE READER'S SIDE: THE VERDICT, NOT ONLY THE CONSTRUCTION ───────────────────────────────────────────
+-- Everything above decides what ENCODE builds. A verifier does not encode; it receives 128 bits it did not
+-- make and asks one question — does the check still cover the payload? That verdict is the whole of what
+-- the first group is for, and it was decided nowhere: `intact` existed only in TypeScript, and the flip
+-- theorems above prove the CHECK moves without ever asking what the reader concludes when it does.
+def intact (bs : List Bool) : Bool :=
+  readField checkF bs == checkBits (readField programF bs) (readField messageF bs)
+
+def flipBit (bs : List Bool) (i : Nat) : List Bool :=
+  (List.range bs.length).map (fun j => if j == i then !(bs.getD j false) else bs.getD j false)
+
+-- the control first, or the refusal below proves nothing: an untouched container must READ intact, over
+-- every payload family this file uses, including the all-false one
+set_option maxRecDepth 400000 in
+set_option maxHeartbeats 4000000 in
+theorem an_untouched_container_reads_intact :
+  [(P0, M0), (P1, M1), (PZ, MZ)].all (fun pm => intact (encodeBits pm.1 pm.2)) := by decide
+
+-- and one flipped PROGRAM bit, anywhere in the forty-two, is refused by the reader — the check is not
+-- recomputed for it, because a damaged container carries the check it was built with
+set_option maxRecDepth 400000 in
+set_option maxHeartbeats 4000000 in
+theorem a_damaged_container_is_refused_at_every_program_position :
+  (List.range 42).all (fun i => !(intact (flipBit (encodeBits P0 M0) (programF.getD i 0)))) := by decide
+
+def settledHere : Nat := 21
+theorem program_settles_its_range : settledHere = 21 := rfl
 
 end Program

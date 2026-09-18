@@ -28,15 +28,30 @@
 import { toUuid } from './index.ts'
 import { publicKey, sign, verify } from './ed25519.ts'
 
-const RESERVED = new Set([48, 49, 50, 51, 64, 65])
-export const CHECK_BITS = 32
-export const PROGRAM_BITS = Array.from({ length: 48 }, (_, i) => 32 + i).filter((i) => !RESERVED.has(i)).length  // 42
-export const MESSAGE_BITS = 48
+// ── THE LAYOUT IS DERIVED FROM THE RENDERING, NOT TYPED ──────────────────────────────────────────────────
+// `[48, 49, 50, 51, 64, 65]` is the right answer and it is the wrong way to write it: those six positions
+// are not a fact about this codec, they are a consequence of where RFC 9562 puts the version and the
+// variant — the high nibble of byte 6, and the top two bits of byte 8. Typed as six numerals, nothing
+// connects them to that, and nothing would notice if one were mistyped: every partition theorem in
+// program.lean would still hold over the wrong six, and the codec would emit identifiers that are not
+// uuids. The same for the field widths, which are the 8-4-4-4-12 group boundaries and nothing else.
+const GROUPS = [4, 2, 2, 2, 6] as const                     // bytes per group of the 8-4-4-4-12 rendering
+const byteAt = (g: number): number => GROUPS.slice(0, g).reduce((a, b) => a + b, 0)
+const VERSION_NIBBLE_BYTE = byteAt(2)                       // byte 6 — opens the third group
+const VARIANT_BYTE = byteAt(3)                              // byte 8 — opens the fourth
+const RESERVED = new Set([
+  ...Array.from({ length: 4 }, (_, i) => VERSION_NIBBLE_BYTE * 8 + i),   // the version nibble
+  ...Array.from({ length: 2 }, (_, i) => VARIANT_BYTE * 8 + i),          // the variant
+])
+export const CHECK_BITS = byteAt(1) * 8                                  // the first group
+const MIDDLE = Array.from({ length: (byteAt(4) - byteAt(1)) * 8 }, (_, i) => byteAt(1) * 8 + i)
+export const PROGRAM_BITS = MIDDLE.filter((i) => !RESERVED.has(i)).length
+export const MESSAGE_BITS = GROUPS[4] * 8                                // the last group
 /** Where each field's bits live, in order. Derived from the reserved set, never written out. */
 export const FIELDS = {
   check: Array.from({ length: CHECK_BITS }, (_, i) => i),
-  program: Array.from({ length: 48 }, (_, i) => 32 + i).filter((i) => !RESERVED.has(i)),
-  message: Array.from({ length: MESSAGE_BITS }, (_, i) => 80 + i),
+  program: MIDDLE.filter((i) => !RESERVED.has(i)),
+  message: Array.from({ length: MESSAGE_BITS }, (_, i) => byteAt(4) * 8 + i),
 }
 
 const isBits = (s: string): boolean => /^[01]*$/.test(s)

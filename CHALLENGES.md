@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). The author's own claim, that the seven are solved through involution, is stated in his name on the front page.
 
-## Discovered theorems (decidable, over ℤ/9) — 2830 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2833 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (881)
+### lean (884)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -1092,6 +1092,9 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_program_the_flip_reaches_every_payload_position](/theorem/lean_program_the_flip_reaches_every_payload_position) — lean program.lean: the_flip_reaches_every_payload_position — (List.range 42).all (fun i =&gt; flipAt P0 i != P0) ∧ (List.range 48).all (fun i =&gt; flipAt M0 i != M0) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `bbcc9872-ae56…`
 - [lean_program_flipping_any_program_bit_moves_the_check](/theorem/lean_program_flipping_any_program_bit_moves_the_check) — lean program.lean: flipping_any_program_bit_moves_the_check — (List.range 42).all (fun i =&gt; checkBits (flipAt P0 i) M0 != checkBits P0 M0) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `457871fb-d7a0…`
 - [lean_program_flipping_any_message_bit_moves_the_check](/theorem/lean_program_flipping_any_message_bit_moves_the_check) — lean program.lean: flipping_any_message_bit_moves_the_check — (List.range 48).all (fun i =&gt; checkBits P0 (flipAt M0 i) != checkBits P0 M0) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `131cee6e-62a3…`
+- [lean_program_an_untouched_container_reads_intact](/theorem/lean_program_an_untouched_container_reads_intact) — lean program.lean: an_untouched_container_reads_intact — [(P0, M0), (P1, M1), (PZ, MZ)].all (fun pm =&gt; intact (encodeBits pm.1 pm.2)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `24e09b9f-fa04…`
+- [lean_program_a_damaged_container_is_refused_at_every_program_position](/theorem/lean_program_a_damaged_container_is_refused_at_every_program_position) — lean program.lean: a_damaged_container_is_refused_at_every_program_position — (List.range 42).all (fun i =&gt; !(intact (flipBit (encodeBits P0 M0) (programF.getD i 0)))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `4cb0515d-b4c1…`
+- [lean_program_the_reserved_six_are_where_the_rendering_puts_them](/theorem/lean_program_the_reserved_six_are_where_the_rendering_puts_them) — lean program.lean: the_reserved_six_are_where_the_rendering_puts_them — RESERVED = [48, 49, 50, 51, 64, 65] ∧ byteAt 2 = 6 ∧ byteAt 3 = 8 ∧ byteAt 4 = 10 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `4d490971-9f9a…`
 
 ### other — one-of-a-kind (0)
 
@@ -2676,4 +2679,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `e5d4851b-2e00-86c5-8d16-92d0f8a56949`. Integrity, not truth.
+Page content-address: `5b9a7dc7-0a4f-8797-a509-168faa9a1de8`. Integrity, not truth.
