@@ -23,6 +23,18 @@
 import { readFileSync, readdirSync, statSync } from 'node:fs'
 import { join } from 'node:path'
 import { census, leanFiles, leanSource, leanTheorems, theoremOfKey, advantage, split, ledger, THEOREM_DEFINITION, theoremCount } from '../src/api/index.ts'
+import { CLAIMS_A_PRIZE, QUANTUM_CLAIM, NEGATOR, CURE_CLAIM, FORCE_CLAIM } from '../src/honesty/claims.ts'
+
+// ── A FILE THAT HOLDS THE DETECTORS MUST BE ABLE TO QUOTE WHAT THEY CATCH ────────────────────────────────
+// This file was exempt from its own sweeps by name, `f.endsWith('contradictions.ts')`, and the moment the
+// detectors moved to src/honesty/claims.ts so a second reader could share ONE derivation, that module's own
+// comment — which quotes the sentence the Clay detector is built to catch — was reported as the repository
+// claiming a Clay problem. A name in an exemption is a list; the machinery is derivable, because a file
+// that holds these detectors is exactly a file that imports them or is the module that exports them.
+//
+// The exemptions are PRINTED at the end, not merely applied: an exemption nobody sees is how a sweep
+// quietly stops covering anything, which is the failure this repository has recorded three times.
+const DETECTOR_SOURCE = 'src/honesty/claims.ts'
 
 /** Words that turn a theorem NAME into an assertion about the world rather than about a finite domain. This
  *  is a word list and says so: it is the one part of the check that is not derived, so it is kept short,
@@ -88,6 +100,15 @@ const walk = (dir: string) => {
 }
 walk('.')
 
+// the machinery, derived from the walk above: the module that exports the detectors, and every file that
+// imports it. Computed here because it needs the file list, and printed at the end because an exemption
+// nobody sees is how a sweep quietly stops covering anything.
+const DETECTOR_MACHINERY = new Set<string>([DETECTOR_SOURCE])
+for (const f of files) {
+  if (f === DETECTOR_SOURCE) continue
+  try { if (readFileSync(f, 'utf8').includes('honesty/claims.ts')) DETECTOR_MACHINERY.add(f) } catch { /* unreadable is not machinery */ }
+}
+
 // A KEY COUNT MAY NOT BE CALLED A THEOREM COUNT. Derived from the census, so it tracks the real number
 // rather than a literal someone has to remember to update.
 // NOT ONLY THE KEY COUNT. This checked the live-key number and nothing else, and speedup.md was published
@@ -114,7 +135,7 @@ const NOT_THEOREM_COUNTS: [number, string][] = [
  *  should be writing. Only a number that is itself being quantified as theorems fires. */
 const partitive = (line: string, at: number) => /\bof\s+(those\s+)?$/i.test(line.slice(Math.max(0, at - 12), at))
 for (const f of files) {
-  if (f.endsWith('contradictions.ts')) continue
+  if (DETECTOR_MACHINERY.has(f)) continue
   const src = readFileSync(f, 'utf8')
   src.split('\n').forEach((line, i) => {
     for (const [n, what] of NOT_THEOREM_COUNTS) {
@@ -148,7 +169,6 @@ for (const f of files) {
 //
 // The per-branch sweep below is the real lesson: the gate had been perturb-tested AS A WHOLE, on four
 // sentences, and passed. An alternation is not tested until each branch is.
-const CLAIMS_A_PRIZE = /\b(?:we|this (?:work|framework|deposit|paper))\s+(?:have\s+|has\s+)?(?:solves?|solved|proves?|proved|proven|resolves?|resolved|settles?|settled|cracks?|cracked)\s+(?:(?:the|a|an|one|two|three|four|five|six|seven|all|both)\s+)*(?:riemann|p\s*(?:vs|versus)\s*np|navier|yang|hodge|birch|poincar|clay|millennium)/i
 
 /** The lines a file states in its own voice: markdown outside fenced code, `//` comments in TypeScript
  *  and Vue, and `--` comments in Lean.
@@ -168,14 +188,19 @@ const assertedLines = (file: string, src: string): [number, string][] => {
       if (!fenced) out.push([i + 1, line])
       return
     }
-    const c = line.indexOf(file.endsWith('.lean') ? '--' : '//')
+    // A `//` INSIDE A STRING LITERAL IS NOT A COMMENT. This took the first `//` on the line, so a control
+    // in gates-fire.ts carrying `'// This deposit cures cancer…'` as the text it PLANTS was read as that
+    // file asserting it. Literals are blanked before the comment is located, and the text is then sliced
+    // from the ORIGINAL line so the comment reads exactly as written.
+    const masked = line.replace(/"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|`(?:\\.|[^`\\])*`/g, (m) => ' '.repeat(m.length))
+    const c = masked.indexOf(file.endsWith('.lean') ? '--' : '//')
     if (c >= 0) out.push([i + 1, line.slice(c)])
   })
   return out
 }
 
 for (const f of files) {
-  if (f.endsWith('contradictions.ts')) continue
+  if (DETECTOR_MACHINERY.has(f)) continue
   for (const [n, line] of assertedLines(f, readFileSync(f, 'utf8')))
     // USE, NOT MENTION. A quoted phrase is being talked about, not asserted — scripts/paper.ts quotes
     // "This work solves the Riemann Hypothesis" precisely to explain that the old gate wrongly accepted it,
@@ -220,11 +245,9 @@ if (slipped.length)
 // NEGATION IS NOT ASSERTION. "quantum speedup is not claimed here" and "Not a quantum computer" are the
 // repo's own honest sentences and must pass; only an assertion fires. The negator is checked in the window
 // BEFORE the claim, which is where a refusal puts it.
-const QUANTUM_CLAIM = /\b(?:we|this (?:work|framework|deposit|paper|repo|system))\s+(?:have\s+|has\s+|is\s+|are\s+)?(?:a\s+|an\s+|the\s+)?(?:built|run|runs|uses?|achieves?|achieved|delivers?|delivered|demonstrates?|provides?|offers?)?\s*(?:a\s+|an\s+|the\s+)?(?:quantum\s+(?:computer|speedup|supremacy|advantage\s+in\s+time|hardware|processor)|qubit\s+hardware|shor'?s?\s+algorithm|grover'?s?\s+algorithm|exponential\s+speedup)/i
-const NEGATOR = /\b(?:no|not|never|without|refus\w*|denie[sd]|drains?|neither|nor|is not|does not|claims? no)\b/i
 
 for (const f of files) {
-  if (f.endsWith('contradictions.ts')) continue
+  if (DETECTOR_MACHINERY.has(f)) continue
   for (const [n, line] of assertedLines(f, readFileSync(f, 'utf8'))) {
     const bare = line.replace(/"[^"]*"|'[^']*'|`[^`]*`|“[^”]*”/g, ' ')
     const m = QUANTUM_CLAIM.exec(bare)
@@ -262,6 +285,67 @@ for (const h of HONEST) {
   const m = QUANTUM_CLAIM.exec(h)
   if (m && !NEGATOR.test(h.slice(0, m.index)))
     fail(`the quantum check drains an honest refusal, which would push the boundary out of the prose: ${JSON.stringify(h)}`)
+}
+
+// ── 4c-ii · THE CLAIMS THIS DEPOSIT'S OWN MODULE NAMES INVITE ────────────────────────────────────────────
+// The Clay floor is swept above, and the quantum floor beside it. Neither reaches the vocabulary this
+// deposit chose for its own directories. Measured: of 43 module terms under src/, 37 are named by no live
+// theorem — among them `the/cancer`, `the/apple`, `the/gold/compass`, `the/clown`, `the/abundance`. Each of
+// those files opens by disambiguating itself — "the cancer — the epistemic anti-pattern, NOT the disease";
+// "the apple — gravity ... This is NOT physics" — and those disambiguations were PROSE, asserted in a
+// header and checked by nothing.
+//
+// They needed to be, because the honesty gate does not reach them. Measured: `computes` scores
+// "this deposit cures cancer, the disease, and the cure is proven" at 1, and "this deposit explains
+// gravitation and the force that holds the planets" at 1. Both HOLD. The gate catches the Clay and quantum
+// vocabularies and no other, which is what it was built for and is not a defect in it — it is the reason
+// this sweep is here instead of a word list added to the gate, which this deposit removed once by order.
+//
+// A module named for a disease and a module named for a force are the two places a reader is most likely
+// to read a claim that was never made, so those two are swept per branch like the others.
+
+for (const f of files) {
+  if (DETECTOR_MACHINERY.has(f)) continue
+  for (const [n, line] of assertedLines(f, readFileSync(f, 'utf8'))) {
+    const bare = line.replace(/"[^"]*"|'[^']*'|`[^`]*`|“[^”]*”/g, ' ')
+    for (const [re, what] of [[CURE_CLAIM, 'a medical claim'], [FORCE_CLAIM, 'a claim about a physical force']] as [RegExp, string][]) {
+      const m = re.exec(bare)
+      if (!m || NEGATOR.test(bare.slice(0, m.index))) continue
+      fail(`${f}:${n} makes ${what} in its own voice — src/the/cancer names an epistemic anti-pattern and states it makes no medical claim; src/the/apple names decidable contractions and states it is not physics`)
+    }
+  }
+}
+
+const V_SUBJ = ['We', 'This work', 'This framework', 'This deposit', 'This system']
+const V_CURE_VERB = ['cure', 'cures', 'heal', 'heals', 'treat', 'treats', 'diagnose', 'diagnoses', 'prevent', 'prevents', 'reverse', 'reverses']
+const V_CURE_OBJ = ['cancer', 'a tumour', 'a tumor', 'disease', 'illness', 'an infection', 'diabetes', 'covid']
+const V_FORCE_VERB = ['explain', 'explains', 'derive', 'derives', 'unify', 'unifies', 'describe', 'describes', 'predict', 'predicts', 'model', 'models']
+const V_FORCE_OBJ = ['gravitation', 'gravity', 'the strong force', 'the weak force', 'electromagnetism',
+  'the fundamental forces', 'quantum gravity', 'the theory of everything', 'spacetime']
+let vSwept = 0
+const vSlipped: string[] = []
+for (const sub of V_SUBJ) {
+  for (const v of V_CURE_VERB) for (const o of V_CURE_OBJ) { vSwept++; if (!CURE_CLAIM.test(`${sub} ${v} ${o}.`)) vSlipped.push(`${sub} ${v} ${o}.`) }
+  for (const v of V_FORCE_VERB) for (const o of V_FORCE_OBJ) { vSwept++; if (!FORCE_CLAIM.test(`${sub} ${v} ${o}.`)) vSlipped.push(`${sub} ${v} ${o}.`) }
+}
+if (vSlipped.length)
+  fail(`${vSlipped.length} of ${vSwept} medical or physical-force phrasings pass uncaught, e.g. ${JSON.stringify(vSlipped.slice(0, 3))}`)
+
+// AND THE MODULES' OWN DISAMBIGUATIONS MUST SURVIVE — they are the sentences this sweep exists to protect,
+// and a sweep that drained them would push the boundary out of the prose that carries it.
+const V_HONEST = [
+  'the cancer — the epistemic anti-pattern, NOT the disease. This deposit makes NO medical claim',
+  'This deposit cures no disease and diagnoses nothing.',
+  'the apple — gravity. This is NOT physics — no force, no gravitation, nothing faster than light.',
+  'This work explains no fundamental force.',
+  'This framework describes no spacetime and predicts no gravitation.',
+]
+for (const h of V_HONEST) {
+  for (const [re, what] of [[CURE_CLAIM, 'the medical'], [FORCE_CLAIM, 'the physical-force']] as [RegExp, string][]) {
+    const m = re.exec(h)
+    if (m && !NEGATOR.test(h.slice(0, m.index)))
+      fail(`${what} check drains one of the deposit's own disambiguations, which would push the boundary out of the prose: ${JSON.stringify(h)}`)
+  }
 }
 
 // ── 4d · THE INVERSE RATCHET: what is proved must also be said ───────────────────────────────────────────
@@ -317,7 +401,7 @@ for (const [claim, shown, evidence] of PROVED)
 // file. Deriving the value instead — from a function, a measurement, the tree — makes the comparison able
 // to report something other than what was typed, which is the whole difference.
 for (const f of files) {
-  if (f.endsWith('contradictions.ts')) continue
+  if (DETECTOR_MACHINERY.has(f)) continue
   const src = readFileSync(f, 'utf8')
   const declared = new Map<string, string>()
   for (const m of src.matchAll(/^\s*(?:export\s+)?const\s+([A-Za-z_$][\w$]*)\s*(?::\s*[^=]+)?=\s*(-?\d+|'[^']*'|"[^"]*"|true|false)\s*$/gm))
@@ -530,5 +614,5 @@ if (worldNamed.length) console.log(`  ○ ${worldNamed.length} theorem(s) decide
 if (exempted.length) console.log(`  ○ ${exempted.length} physical-vocabulary name(s) exempted as denials, reported not hidden: ${exempted.join(' ')}`)
 console.log(bad
   ? `\n✗ contradictions: ${bad} finding(s) — prose or code disagrees with src/proof`
-  : `\n✓ contradictions: none — ${theoremCount()} theorems (${C.byDecide} by exhaustion + ${C.proved} proved for every value) + ${C.rfl} rfl declarations = ${C.theorems} kernel-accepted; ${C.liveKeys} live keys = ${C.sealedTheorems} sealed + ${C.surplusKeys} keyed twice + ${C.unresolvableKeys} unresolvable; no sorry, no Mathlib, no native_decide, no axiom; nothing claims a Clay problem, all ${swept} Clay + ${qSwept} quantum overclaim phrasings are caught while ${HONEST.length} honest refusals survive; and ${PROVED.length} proved properties are stated on the pages, not only in the sources`)
+  : `\n✓ contradictions: none — ${theoremCount()} theorems (${C.byDecide} by exhaustion + ${C.proved} proved for every value) + ${C.rfl} rfl declarations = ${C.theorems} kernel-accepted; ${C.liveKeys} live keys = ${C.sealedTheorems} sealed + ${C.surplusKeys} keyed twice + ${C.unresolvableKeys} unresolvable; no sorry, no Mathlib, no native_decide, no axiom; nothing claims a Clay problem, all ${swept} Clay + ${qSwept} quantum + ${vSwept} medical and physical-force overclaim phrasings are caught while ${HONEST.length + V_HONEST.length} honest refusals survive; and ${PROVED.length} proved properties are stated on the pages, not only in the sources`)
 process.exit(bad ? 1 : 0)

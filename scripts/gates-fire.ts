@@ -178,6 +178,28 @@ const CONTROLS: Control[] = [
     what: 'a constant decided against its own literal and used nowhere else',
     mutate: (s) => s.replace('end Phenomena', 'def probeClaims : Nat := 0\ntheorem probe_is_zero : probeClaims = 0 := by decide\n\nend Phenomena') },
 
+  // THE VOCABULARY THIS DEPOSIT CHOSE FOR ITSELF. 37 of its 43 module terms are named by no live theorem,
+  // and the two most loaded — src/the/cancer and src/the/apple — disambiguate themselves in PROSE that
+  // nothing ran. The honesty gate does not reach them: measured, it scores "this deposit cures cancer, the
+  // disease, and the cure is proven" at 1. This control plants the claim the header denies.
+  // EVERY CLAIM IN THE CORPUS, PUT TO THE DETECTORS — 18,206 sentences, not a product of phrasings somebody
+  // thought of. The control plants a Clay claim in the front page's own prose; markdown outside a fence is
+  // the repository's own voice and there is nowhere for it to hide.
+  { gate: 'prose-trial', cmd: 'node scripts/prose-trial.ts', file: 'README.md',
+    what: 'a Clay prize claimed in the front page\'s own voice',
+    mutate: (s) => s + '\nWe prove the Riemann hypothesis in this deposit today.\n' },
+
+  { gate: 'contradictions (a medical claim in its own voice)', cmd: 'node scripts/contradictions.ts',
+    file: 'src/the/cancer/index.ts',
+    what: 'a module named for a disease claiming to cure it, which its own header denies',
+    mutate: (s) => s.replace('// the cancer — the epistemic anti-pattern',
+      '// This deposit cures cancer, and the cure is computed here.\n// the cancer — the epistemic anti-pattern') },
+
+  { gate: 'contradictions (a physical force in its own voice)', cmd: 'node scripts/contradictions.ts',
+    file: 'src/the/apple/index.ts',
+    what: 'a module named for gravity claiming to explain gravitation, which its own header denies',
+    mutate: (s) => s.replace('// the apple — gravity.', '// This framework explains gravitation.\n// the apple — gravity.') },
+
   { gate: 'contradictions (physical claim in a name)', cmd: 'node scripts/contradictions.ts',
     file: 'src/proof/coin.lean',
     what: 'a refusing file publishing a theorem NAME that asserts a physical fact',

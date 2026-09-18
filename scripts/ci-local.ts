@@ -43,6 +43,7 @@ const STEPS: Step[] = [
   { name: 'wholeness',                       cmd: 'node scripts/wholeness.ts' },
   { name: 'gaps (nav + sidebar coverage)',   cmd: 'node scripts/gaps.ts' },
   { name: 'crypto-kat (published vectors)',  cmd: 'node scripts/crypto-kat.ts' },
+  { name: 'prose-trial (every claim)',       cmd: 'node scripts/prose-trial.ts' },
   // THE WORKSPACE STEPS. packages/uuidna is NOT a declared npm workspace — package.json has no
   // `workspaces` field — so these only make sense from inside that directory, which is exactly what the
   // workflows do and exactly what I got wrong.
