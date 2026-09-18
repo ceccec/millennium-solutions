@@ -18,6 +18,7 @@ import { BASE, units, triad, vortexOrbit } from '../src/0/index.ts'
 import { precedes, staleTail } from '../src/api/gates.ts'
 import { unreflect } from '../src/honesty/index.ts'
 import { FIELDS } from '../src/0/program.ts'
+import { P as ED_P, L as ED_L } from '../src/0/ed25519.ts'
 import { execSync } from 'node:child_process'
 import { writeFileSync, unlinkSync } from 'node:fs'
 
@@ -74,6 +75,17 @@ const PAIRS = [
   { what: 'the check field',    runtime: FIELDS.check,   mod: 'Program', raw: true, expr: 'Program.checkF' },
   { what: 'the program field',  runtime: FIELDS.program, mod: 'Program', raw: true, expr: 'Program.programF' },
   { what: 'the message field',  runtime: FIELDS.message, mod: 'Program', raw: true, expr: 'Program.messageF' },
+
+  // THE CURVE'S FIELD, compared as the residues the implementation actually branches on rather than as a
+  // 78-digit number nobody reads. src/0/ed25519.ts recovers x by raising to (p+3)/8, which is the rule for
+  // a prime ≡ 5 (mod 8) and for no other; a port to another field would change these and nothing else here
+  // would notice. `4L < p < 8L` pins the cofactor by bracket, so the 8 cannot be edited to anything.
+  { what: 'the curve field',    mod: 'Asymmetric', raw: true,
+    runtime: [Number(ED_P % 8n), Number((ED_P + 3n) % 8n), Number(ED_P % 4n),
+      4n * ED_L < ED_P ? 1 : 0, ED_P < 8n * ED_L ? 1 : 0, ED_L < ED_P ? 1 : 0],
+    expr: '[Asymmetric.p % 8, (Asymmetric.p + 3) % 8, Asymmetric.p % 4, '
+      + 'if 4 * Asymmetric.L < Asymmetric.p then 1 else 0, if Asymmetric.p < 8 * Asymmetric.L then 1 else 0, '
+      + 'if Asymmetric.L < Asymmetric.p then 1 else 0]' },
 ]
 
 const mod9 = (xs: number[]) => xs.map((n) => ((n % 9) + 9) % 9)

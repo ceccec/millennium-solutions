@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 869 of them across 36 files and
-7 wings; 670 close by exhaustion over a stated finite domain, 187 are proved
+(\texttt{npm run latex-gate}). There are 871 of them across 36 files and
+7 wings; 672 close by exhaustion over a stated finite domain, 187 are proved
 for every value, and the remaining 12 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -252,8 +252,18 @@ for every value, and the remaining 12 close by \texttt{rfl} and are counted sepa
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 11 cases. \hfill$\square$
 
+\begin{theorem}[\texttt{the\_square\_root\_rule\_is\_the\_one\_this\_prime\_admits}]
+\[ p \bmod 8 = 5 \land p + 3 \bmod 8 = 0 \land p \bmod 4 = 1 \land p \bmod 4 \neq 3 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_cofactor\_is\_bracketed\_at\_eight}]
+\[ 4 \cdot L < p \land p < 8 \cdot L \land L < p \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
 \begin{theorem}[\texttt{asymmetric\_settles\_its\_range}]
-\[ \mathrm{settledHere} = 9 \]
+\[ \mathrm{settledHere} = 11 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 

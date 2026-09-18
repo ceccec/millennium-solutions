@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). The author's own claim, that the seven are solved through involution, is stated in his name on the front page.
 
-## Discovered theorems (decidable, over ℤ/9) — 2806 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2808 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (857)
+### lean (859)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -1068,6 +1068,8 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_program_the_payload_outruns_the_check](/theorem/lean_program_the_payload_outruns_the_check) — lean program.lean: the_payload_outruns_the_check — 2 ^ 32 &lt; 2 ^ (42 + 48) ∧ 42 + 48 = 90 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `78f23d08-e771…`
 - [lean_program_no_map_from_four_onto_three_separates_them_all](/theorem/lean_program_no_map_from_four_onto_three_separates_them_all) — lean program.lean: no_map_from_four_onto_three_separates_them_all — maps3.all (fun f =&gt; decide ((f.eraseDups).length &lt; 4)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `3f50ffb1-28f6…`
 - [lean_program_four_values_can_be_separated_by_four](/theorem/lean_program_four_values_can_be_separated_by_four) — lean program.lean: four_values_can_be_separated_by_four — maps4.any (fun f =&gt; decide ((f.eraseDups).length == 4)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `5a28096c-369c…`
+- [lean_asymmetric_the_square_root_rule_is_the_one_this_prime_admits](/theorem/lean_asymmetric_the_square_root_rule_is_the_one_this_prime_admits) — lean asymmetric.lean: the_square_root_rule_is_the_one_this_prime_admits — p % 8 = 5 ∧ (p + 3) % 8 = 0 ∧ p % 4 = 1 ∧ p % 4 ≠ 3 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `b2d4dab4-6281…`
+- [lean_asymmetric_the_cofactor_is_bracketed_at_eight](/theorem/lean_asymmetric_the_cofactor_is_bracketed_at_eight) — lean asymmetric.lean: the_cofactor_is_bracketed_at_eight — 4 * L &lt; p ∧ p &lt; 8 * L ∧ L &lt; p — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a882288a-1ac0…`
 
 ### other — one-of-a-kind (0)
 
@@ -2652,4 +2654,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `a73fb2cf-19f0-8136-9cbc-c7162ce9d52c`. Integrity, not truth.
+Page content-address: `0420b05d-727a-8fdf-bb92-b34becf5c4c5`. Integrity, not truth.

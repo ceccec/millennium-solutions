@@ -91,7 +91,25 @@ theorem two_secrets_part_company_on_every_payload :
 theorem the_tag_moves_with_the_payload :
   (List.range 11).all (fun p => tagOf 1 p != tagOf 1 (p + 1)) := by decide
 
-def settledHere : Nat := 9
-theorem asymmetric_settles_its_range : settledHere = 9 := rfl
+-- ── THE FIELD THE IMPLEMENTATION RESTS ON, AND THE ONE FACT IT BRANCHES ON ───────────────────────────────
+-- src/0/ed25519.ts recovers x from y by raising to (p+3)/8 and multiplying by a square root of −1 when that
+-- misses. That rule is not general: it is valid exactly for a prime ≡ 5 (mod 8), and for p ≡ 3 (mod 4) the
+-- rule is the different (p+1)/4 with no fallback. The implementation therefore depends on an arithmetic
+-- property of this specific prime, and depending on it silently is how a curve implementation ports itself
+-- to another field and stops working. It is decided here, with the rule that does NOT apply stated beside
+-- it so the theorem distinguishes rather than merely asserts.
+def p : Nat := 2 ^ 255 - 19
+def L : Nat := 2 ^ 252 + 27742317777372353535851937790883648493
+
+theorem the_square_root_rule_is_the_one_this_prime_admits :
+  p % 8 = 5 ∧ (p + 3) % 8 = 0 ∧ p % 4 = 1 ∧ p % 4 ≠ 3 := by decide
+
+-- and the base point's order is the prime part of a group whose cofactor is eight — bracketed, so the 8 is
+-- pinned by two inequalities rather than restated as a number somebody could edit to anything
+theorem the_cofactor_is_bracketed_at_eight :
+  4 * L < p ∧ p < 8 * L ∧ L < p := by decide
+
+def settledHere : Nat := 11
+theorem asymmetric_settles_its_range : settledHere = 11 := rfl
 
 end Asymmetric

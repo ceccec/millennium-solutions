@@ -19784,5 +19784,15 @@
     "key": "lean_program_four_values_can_be_separated_by_four",
     "name": "lean program.lean: four_values_can_be_separated_by_four — maps4.any (fun f => decide ((f.eraseDups).length == 4)) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "5a28096c-369c-8583-a43b-0cd77801e623"
+  },
+  {
+    "key": "lean_asymmetric_the_square_root_rule_is_the_one_this_prime_admits",
+    "name": "lean asymmetric.lean: the_square_root_rule_is_the_one_this_prime_admits — p % 8 = 5 ∧ (p + 3) % 8 = 0 ∧ p % 4 = 1 ∧ p % 4 ≠ 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b2d4dab4-6281-8d62-b3b3-8327a96a4810"
+  },
+  {
+    "key": "lean_asymmetric_the_cofactor_is_bracketed_at_eight",
+    "name": "lean asymmetric.lean: the_cofactor_is_bracketed_at_eight — 4 * L < p ∧ p < 8 * L ∧ L < p — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a882288a-1ac0-8d57-8b63-057c8e070b7f"
   }
 ]
