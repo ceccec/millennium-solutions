@@ -120,3 +120,26 @@ export const refusersNoChainRuns = (): string[] => {
 
 /** Of those, the ones nobody has decided about. */
 export const unrunUndecided = (): string[] => refusersNoChainRuns().filter((g) => !UNRUN_BY_DESIGN[g])
+
+/** ── A BOUNDARY IN TIME ADMITS EXACTLY WHAT PRECEDES IT ───────────────────────────────────────────────────
+ *  A rule made on a date cannot be broken by something written before that date, and a gate that says
+ *  otherwise is a red light nobody can turn off. receipt-audit needs this for the 29 receipts written five
+ *  weeks before the 2×7 rule existed. The whole of it: both instants must be KNOWN, and the earlier one
+ *  must be strictly earlier. An unknown date is never excused — the lenient side takes no case it cannot
+ *  prove, because that is the side a new unsigned receipt would quietly slip into. */
+export const precedes = (at: number | null, boundary: number | null): boolean =>
+  at !== null && boundary !== null && at < boundary
+
+/** ── A STALE BUILD IS A TAIL; A REAL DEFECT IS A HOLE ─────────────────────────────────────────────────────
+ *  Given, in ledger order, whether each entry has its built artefact, the two causes of "missing" are told
+ *  apart with no flag to set, because the ledger is APPEND-ONLY: a build that has not been run since the
+ *  ledger grew has artefacts for a PREFIX and none after, while a genuine defect leaves a HOLE — an entry
+ *  with nothing built that has a LATER entry that does. `built` is the last index that has one, -1 when
+ *  nothing is built at all. theorem-pages-gate printed one line per missing key and read as hundreds of
+ *  broken theorems when the only thing wrong was an unrun build. */
+export const staleTail = (present: readonly boolean[]): { built: number; holes: number[]; tail: number[] } => {
+  const built = present.lastIndexOf(true)
+  const holes: number[] = [], tail: number[] = []
+  present.forEach((p, i) => { if (!p) (i < built ? holes : tail).push(i) })
+  return { built, holes, tail }
+}

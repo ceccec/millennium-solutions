@@ -62,9 +62,9 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 828 of them across 33 files and
-7 wings; 632 close by exhaustion over a stated finite domain, 187 are proved
-for every value, and the remaining 9 close by \texttt{rfl} and are counted separately, never as theorems.
+(\texttt{npm run latex-gate}). There are 846 of them across 34 files and
+7 wings; 649 close by exhaustion over a stated finite domain, 187 are proved
+for every value, and the remaining 10 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
 
@@ -2304,6 +2304,98 @@ for every value, and the remaining 9 close by \texttt{rfl} and are counted separ
 \[ \mathrm{sequence} = \mathrm{span} \mathbin{+\!\!+} [3,\,6,\,9] \mathbin{+\!\!+} [0] \mathbin{+\!\!+} [1] \land \left|\mathrm{sequence}\right| = 11 \land \operatorname{head}\left(\mathrm{sequence}\right) = \operatorname{last}\left(\mathrm{sequence}\right) \land 9 \bmod 9 = 0 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\paragraph{\texttt{instruments.lean}}
+
+\begin{theorem}[\texttt{the\_strict\_order\_is\_what\_is\_admitted}]
+\[ \mathrm{precedes}\mathopen{}\left(\mathrm{some}\mathopen{}\left(4\right),\,\mathrm{some}\mathopen{}\left(5\right)\right) = \mathrm{true} \land \mathrm{precedes}\mathopen{}\left(\mathrm{some}\mathopen{}\left(5\right),\,\mathrm{some}\mathopen{}\left(5\right)\right) = \mathrm{false} \land \mathrm{precedes}\mathopen{}\left(\mathrm{some}\mathopen{}\left(6\right),\,\mathrm{some}\mathopen{}\left(5\right)\right) = \mathrm{false} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{admission\_is\_exactly\_the\_strict\_order}]
+\[ \forall a \in \{0,\dots,11\},\; \forall b \in \{0,\dots,11\},\; \mathrm{precedes}\mathopen{}\left(\mathrm{some}\mathopen{}\left(a\right),\,\mathrm{some}\mathopen{}\left(b\right)\right) = \mathrm{decide}\mathopen{}\left(a < b\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 144 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{an\_unknown\_instant\_is\_never\_admitted}]
+\[ \forall t \in \{0,\dots,11\},\; \mathrm{precedes}\mathopen{}\left(\mathrm{none},\,\mathrm{some}\mathopen{}\left(t\right)\right) = \mathrm{false} \land \mathrm{precedes}\mathopen{}\left(\mathrm{some}\mathopen{}\left(t\right),\,\mathrm{none}\right) = \mathrm{false} \land \mathrm{precedes}\mathopen{}\left(\mathrm{none},\,\mathrm{none}\right) = \mathrm{false} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 12 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_boundary\_refuses\_more\_than\_it\_admits}]
+\texttt{let cases := (List.range 8).map (fun a => precedes (some a) (some 4)) cases.count true = 4 ∧ cases.count false = 4}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 8 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_hole\_is\_an\_absence\_with\_a\_later\_presence}]
+\[ \mathrm{holes}\mathopen{}\left([\mathrm{true},\,\mathrm{false},\,\mathrm{true},\,\mathrm{true}]\right) = [1] \land \mathrm{tail}\mathopen{}\left([\mathrm{true},\,\mathrm{false},\,\mathrm{true},\,\mathrm{true}]\right) = [] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_stale\_tail\_is\_an\_absence\_with\_nothing\_after\_it}]
+\[ \mathrm{tail}\mathopen{}\left([\mathrm{true},\,\mathrm{true},\,\mathrm{false},\,\mathrm{false}]\right) = [2,\,3] \land \mathrm{holes}\mathopen{}\left([\mathrm{true},\,\mathrm{true},\,\mathrm{false},\,\mathrm{false}]\right) = [] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 2 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_two\_causes\_occur\_together\_and\_stay\_apart}]
+\[ \mathrm{holes}\mathopen{}\left([\mathrm{true},\,\mathrm{false},\,\mathrm{true},\,\mathrm{false}]\right) = [1] \land \mathrm{tail}\mathopen{}\left([\mathrm{true},\,\mathrm{false},\,\mathrm{true},\,\mathrm{false}]\right) = [3] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{nothing\_built\_is\_all\_tail\_and\_no\_hole}]
+\[ \mathrm{holes}\mathopen{}\left([\mathrm{false},\,\mathrm{false},\,\mathrm{false}]\right) = [] \land \mathrm{tail}\mathopen{}\left([\mathrm{false},\,\mathrm{false},\,\mathrm{false}]\right) = [0,\,1,\,2] \land \mathrm{lastPresent}\mathopen{}\left([\mathrm{false},\,\mathrm{false},\,\mathrm{false}]\right) = \mathrm{none} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{everything\_built\_accuses\_nobody}]
+\[ \mathrm{holes}\mathopen{}\left([\mathrm{true},\,\mathrm{true},\,\mathrm{true}]\right) = [] \land \mathrm{tail}\mathopen{}\left([\mathrm{true},\,\mathrm{true},\,\mathrm{true}]\right) = [] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_pattern\_generator\_is\_complete}]
+\[ \left|\mathrm{bits}\mathopen{}\left(5\right)\right| = 32 \land \left|\mathrm{bits}\mathopen{}\left(3\right)\right| = 8 \land \left|\operatorname{dedup}\left(\mathrm{bits}\mathopen{}\left(3\right)\right)\right| = 8 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{every\_absence\_is\_charged\_to\_exactly\_one\_cause}]
+\texttt{((bits 1) ++ (bits 2) ++ (bits 3) ++ (bits 4) ++ (bits 5)).all (fun l => let h := holes l let t := tail l let missing := (idx l).filterMap (fun p => if !p.2 then some p.1 else none) (h.all (fun x => !(t.contains x))) \&\& ((h ++ t).length == missing.length) \&\& missing.all (fun m => (h ++ t).contains m))}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{an\_echo\_carries\_the\_signal\_only\_until\_it\_is\_subtracted}]
+\[ \mathrm{contains}\mathopen{}\left(\mathrm{echoed},\,\mathrm{SITE}\right) = \mathrm{true} \land \mathrm{contains}\mathopen{}\left(\mathrm{clip}\mathopen{}\left(\mathrm{echoed}\right),\,\mathrm{SITE}\right) = \mathrm{false} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_page\_s\_own\_words\_survive\_the\_subtraction}]
+\[ \mathrm{contains}\mathopen{}\left(\mathrm{genuine},\,\mathrm{SITE}\right) = \mathrm{true} \land \mathrm{contains}\mathopen{}\left(\mathrm{clip}\mathopen{}\left(\mathrm{genuine}\right),\,\mathrm{SITE}\right) = \mathrm{true} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{every\_copy\_of\_the\_witness\_is\_removed}]
+\[ \mathrm{contains}\mathopen{}\left(\mathrm{clip}\mathopen{}\left(\mathrm{twice}\right),\,\mathrm{SITE}\right) = \mathrm{false} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{subtracting\_twice\_is\_subtracting\_once}]
+\[ \mathrm{clip}\mathopen{}\left(\mathrm{clip}\mathopen{}\left(\mathrm{echoed}\right)\right) = \mathrm{clip}\mathopen{}\left(\mathrm{echoed}\right) \land \mathrm{clip}\mathopen{}\left(\mathrm{clip}\mathopen{}\left(\mathrm{genuine}\right)\right) = \mathrm{clip}\mathopen{}\left(\mathrm{genuine}\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{an\_empty\_witness\_removes\_nothing}]
+\[ \mathrm{unreflect}\mathopen{}\left(\left|\mathrm{genuine}\right|,\,[],\,\mathrm{genuine}\right) = \mathrm{genuine} \land \mathrm{unreflect}\mathopen{}\left(\left|\mathrm{echoed}\right|,\,[],\,\mathrm{echoed}\right) = \mathrm{echoed} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{text\_without\_the\_witness\_is\_untouched}]
+\[ \mathrm{clip}\mathopen{}\left(\mathrm{SITE}\right) = \mathrm{SITE} \land \mathrm{clip}\mathopen{}\left([60,\,112,\,62]\right) = [60,\,112,\,62] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{instruments\_settles\_its\_range}]
+\[ \mathrm{settledHere} = 17 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 
 \paragraph{\texttt{light.lean}}
 

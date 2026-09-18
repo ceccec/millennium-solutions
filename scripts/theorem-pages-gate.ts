@@ -16,14 +16,18 @@
 // has a later key with one. So the missing keys are split at the last key that does have a page.
 import { readFileSync, existsSync } from 'node:fs'
 import { ledger as __ledger } from '../src/api/index.ts'
+import { staleTail } from '../src/api/gates.ts'
 
 const DIST = '.vitepress/dist/theorem'
 const ledger: { key: string }[] = __ledger()
 
+// The split is not written here. `staleTail` is a pure predicate in src/api/gates.ts and the ledger decides
+// it — lean_… the_hole_and_the_stale_tail_are_told_apart_by_order — so what this file does is read the disk
+// and report. Logic nobody has put to the trial is logic nobody has checked.
 const present = ledger.map((e) => existsSync(DIST + '/' + e.key + '.html'))
-const built = present.lastIndexOf(true)                     // -1 when nothing is built at all
-const holes = ledger.filter((_, i) => !present[i] && i < built)   // missing, with a later page — a real defect
-const tail = ledger.filter((_, i) => !present[i] && i > built)    // missing, and nothing after — the build is behind
+const { built, holes: holeAt, tail: tailAt } = staleTail(present)
+const holes = holeAt.map((i) => ledger[i])
+const tail = tailAt.map((i) => ledger[i])
 
 let bad = 0
 for (const e of holes) { console.log('  ✗ no page: ' + e.key); bad++ }

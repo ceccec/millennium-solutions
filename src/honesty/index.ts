@@ -21,6 +21,19 @@ export function report(): string {
   return o
 }
 
+
+// ── SUBTRACT WHAT THE MEASURER PUT THERE ────────────────────────────────────────────────────────────────
+// A measurement that finds its own fingerprint has measured nothing. scripts/uses.ts searches pages for
+// whether they cite the author, and returned exactly one YES across 85 leads — a page that cites nobody.
+// YouTube echoes the request's User-Agent into the HTML it serves, that User-Agent carries the author's
+// site so a log reader knows who is asking, and the site is one of the strings a citation is recognised by.
+// The instrument matched the string it had just sent, and it was the single flattering result in the run.
+//
+// The rule is general and has nothing to do with citations: before testing a response for a signal, remove
+// what the request injected into it. `self` is whatever the measurer sent — a User-Agent, a referer, a
+// callback URL, a query echoed back. Everything the page itself says survives untouched.
+export const unreflect = (text: string, self: string): string => self ? text.split(self).join(' ') : text
+
 // The Clay floor, removed from what a page SHOWS of a name. The ledger is append-only and its names are sealed,
 // so a revoked entry keeps the wording it was sealed with; this is the display. Every rule strips the count and
 // the phrase built on it, and nothing else.

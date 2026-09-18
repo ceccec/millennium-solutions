@@ -38,6 +38,7 @@ import { computes } from './honesty-gate.ts'
 import { CANDIDATES } from './discover.ts'
 import { ledger as __ledger } from '../src/api/index.ts'
 import { PER_POSITION, checkSignatures, type Signature } from './receipt-2x7.ts'
+import { precedes } from '../src/api/gates.ts'
 
 const byKey = new Map(CANDIDATES.map((c) => [c.key, c])) // for verifying invited theorems still hold
 // A receipt is IMMUTABLE — rewriting one is tamper — so when a theorem it invited is later withdrawn, the
@@ -67,30 +68,14 @@ const born = (path: string): number | null => {
   } catch { return null }
 }
 const RULE_AT = born('scripts/receipt-2x7.ts')
-/** A receipt written before the rule existed. Undatable — a rule with no birth, or a receipt with none (so:
- *  untracked, i.e. being written now) — is NOT pre-rule: the strict side takes every case it cannot prove. */
-const isPreRule = (at: number | null): boolean => RULE_AT !== null && at !== null && at < RULE_AT
-const preRule = (file: string): boolean => isPreRule(born(dir + '/' + file))
-
-// THE LENIENT BRANCH PROVES ITS OWN DISCRIMINATION, ON EVERY RUN. `preRule` is the one path here that turns a
-// fatal finding into a note, so the way it fails is by widening until it covers a receipt written today — and
-// a lenience that has quietly swallowed everything looks exactly like a clean build. The control cannot live
-// in gates-fire: that harness mutates an existing file, and what has to be planted here is a NEW receipt.
-// So it is planted against the predicate directly, with dates rather than files: a second before the rule
-// must be pre-rule, a second after it must not, and neither must an undatable one. This costs nothing, runs
-// always, and goes red the moment the boundary stops being a boundary.
-if (RULE_AT !== null) {
-  const wrong = [
-    !isPreRule(RULE_AT - 1) && 'a receipt written one second BEFORE the rule is not recognised as pre-rule',
-    isPreRule(RULE_AT + 1) && 'a receipt written one second AFTER the rule is excused as pre-rule',
-    isPreRule(null) && 'an undatable receipt is excused as pre-rule — the lenient side must never take a case it cannot prove',
-  ].filter(Boolean)
-  if (wrong.length) {
-    console.log('  ✗ receipt-audit: the pre-rule boundary does not discriminate — ' + wrong.join('; '))
-    console.log('\n✗ receipt-audit: its own lenience is unbounded, so no verdict below can be trusted')
-    process.exit(1)
-  }
-}
+// WHAT COUNTS AS BEFORE IS NOT DECIDED HERE. `preRule` is the one path in this file that turns a fatal
+// finding into a note, so the way it fails is by widening until it excuses a receipt written today — and a
+// lenience that has swallowed everything looks exactly like a clean build. That is too load-bearing to be
+// logic written in a gate and checked by the same gate. The rule is `precedes` in src/api/gates.ts, and the
+// ledger decides it: lean_… a_boundary_in_time_admits_exactly_what_precedes_it puts a second before, a
+// second after, the instant itself and an unknown date to the test, and `npm run` runs every theorem on
+// every commit. A widened boundary goes red at the court, not in a block this file writes about itself.
+const preRule = (file: string): boolean => precedes(born(dir + '/' + file), RULE_AT)
 
 // COMPLETENESS — a MISSING receipt is a traitor: destroyed evidence. Every git-tracked receipt must
 // still be present on disk. Evidence is append-only; deletion (git rm, manual) is the traitor act.

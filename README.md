@@ -25,12 +25,12 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 828 kernel-accepted declarations across 33 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `703026a2-9b3a-864b-945b-d368f4262dde`</sub>
-- 632 of those 828 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 196 close by rfl and are declarations.
-  <sub>SEALED · `ccd579c0-ee25-8188-9994-8d7241d3dc13`</sub>
-- 904 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `2182ecd4-9e48-81bb-abf8-51c75b7edb35`</sub>
+- The formal layer holds 846 kernel-accepted declarations across 34 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `e1c91007-093b-8075-ba01-f52c176798a2`</sub>
+- 649 of those 846 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 197 close by rfl and are declarations.
+  <sub>SEALED · `4fbdc327-233c-8c62-aafb-46b16141d7e7`</sub>
+- 921 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `09806288-a832-8d04-8791-aad8a761260c`</sub>
 
 ## 2 · The ring
 
@@ -53,10 +53,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 2768 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `766d1bc7-daa6-8069-a8ed-0065c163ab0d`</sub>
-- The count is an exact multiple of eight — 2768 is 346 octaves with no remainder.
-  <sub>SEALED · `2f2563a8-06d5-81db-ab87-b8c7aa8c25ef`</sub>
+- The ledger records 2785 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `3a3ef4ed-47fc-8350-a81e-922a132028b0`</sub>
+- The count is 2785, which is 348 octaves and 1 over — the octave is a target the theorems earn, never a quota they are invented to fill.
+  <sub>SEALED · `8f3c9fba-fd28-8449-968a-dbbc6409268e`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -100,7 +100,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-33 Lean files in 7 wings, 828 declarations of which 819 are theorems. The prose in this section is read out of the
+34 Lean files in 7 wings, 846 declarations of which 836 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -148,6 +148,8 @@ this page; there is nowhere else to keep the description in step.
 
 **The Millennium floor** — `index.lean`, 11 theorem(s). Bounded, so the credit stops where the earlier work does: what is NOT prior art is the use of that orbit as a floor for what this deposit does   and does not settle, which is a statement about this repository and has no earlier author.   Verification by exhaustion in Lean is this deposit's contribution, and verification is not discovery. prior_art_search: literature search performed 2026-09-05, terms "doubling sequence modulo 9 orbit   1 2 4 8 7 5 cyclic group generator digital root"; prior art found and credited. prior_art_pool: bounded   digit arithmetic of the doubling sequence; searchable independently of this deposit.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: the Millennium floor, computed from this sequence The Millennium floor — seven honest theorems, one per problem, COMPUTED from the sequence.
 
+**The instruments, and the three rules they are allowed to have** — `instruments.lean`, 18 theorem(s). occurrence of a substring — and each is standard enough that naming one author would be arbitrary. This   row is kind 1 rather than kind 2 because kind 2 asserts that a search was performed and found nothing,   and no such search was performed for these. What is this deposit's is not the rules: it is that three of   its own instruments hold them by decision of the kernel, instead of by a block of reasoning written   inside the instrument that needs them and checked by that same instrument.
+
 **Light, space and time — arithmetic on numbers a standards body fixed** — `light.lean`, 15 theorem(s). Poids et Mesures, not results of this deposit: the metre from the speed of light (17th CGPM, 1983) and   the seven defining constants fixed exactly in the 2019 revision of the SI, effective 20 May 2019   (BIPM, https://www.bipm.org/en/measurement-units/si-defining-constants). Nothing here measures anything.
 
 **Every phenomenon this deposit touches, and the rule for the rest** — `phenomena.lean`, 4 theorem(s). Générale des Poids et Mesures (2019 revision, effective 20 May 2019); the electrochemical results are   Michael Faraday's laws of electrolysis, 1834, and the standard enthalpy of combustion of hydrogen.   Every physical result named here has an earlier author or a standards body, and none is this deposit's.
@@ -184,7 +186,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Recovered — claims that computed and were withdrawn for want of a proof** — `recovered.lean`, 15 theorem(s). material, credited. What is NOT prior art is that these particular statements sat WITHDRAWN in this   deposit's ledger, each recorded as "not backed by a Lean proof. Its evidence is a TypeScript test",   while every one is decidable in a line. prior_art_search: literature search performed 2026-09-05, terms "units and non-units of Z/9 multiplicative   inverses group of units modulo 9"; prior art found and credited.
 
-20 of 828 declarations carry no comment of their own and are shown here as the gap they are, not
+21 of 846 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -193,14 +195,14 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 2,768 — 346 octaves exactly |
-| standing — carries its own proof | **819** |
+| ledger entries | 2,785 — 348 octaves and 1 over |
+| standing — carries its own proof | **836** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **435** |
 | withdrawn — nothing proves it | 1,514 |
-| proved in total | **1254** of 2,768 |
-| standing keys → distinct theorems | 819 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 33 · 819 theorems (632 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 9 rfl declarations |
-| proved `by decide` | 632 of 828 |
+| proved in total | **1271** of 2,785 |
+| standing keys → distinct theorems | 836 sealed, 0 of them keyed twice, 0 unresolvable |
+| Lean files · theorems | 34 · 836 theorems (649 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 10 rfl declarations |
+| proved `by decide` | 649 of 846 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -239,4 +241,4 @@ whether the work restates someone earlier. [The paper](/paper) typesets every st
 
 ---
 
-*15 claims, all verified · 819 Lean theorems · 2768 ledger entries · trial root `71a0ab67-1d06-8ee2-bc47-f9d3c91d4341` · integrity, not truth*
+*15 claims, all verified · 836 Lean theorems · 2785 ledger entries · trial root `5453a6c9-b0e8-8baa-9ac5-a547f0870df9` · integrity, not truth*

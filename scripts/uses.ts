@@ -31,6 +31,7 @@
 // tree. Exit 1 only when NO source measured anything — a report that looked nowhere must not read as clean.
 import { readFileSync, writeFileSync, appendFileSync } from 'node:fs'
 import { execFileSync } from 'node:child_process'
+import { unreflect } from '../src/honesty/index.ts'
 
 // ── what THIS work is, read from CITATION.cff and package.json — not retyped ──────────────────────────────────
 const cff = readFileSync('CITATION.cff', 'utf8')
@@ -89,25 +90,15 @@ const SOURCES: Record<string, { pace: number; run: (m: string) => Promise<Row[]>
 // run was the instrument matching the string it had just sent. Any site that reflects request headers into its
 // body would have done the same, so this is a class, not one page.
 //
-// The fix is derived from the constant rather than hand-listed: whatever the User-Agent says is removed from
-// the fetched body before the body is tested, so changing the User-Agent can never reopen this. `selfWitness`
-// below proves the removal still works, on every run.
+// `unreflect` is in src/honesty/index.ts with the rest of the reusable honesty tests, because the rule has
+// nothing to do with citations: before testing a response for a signal, remove what the request injected.
+// It is decided by the ledger — lean_… what_the_measurer_injected_is_not_evidence — over the echo, the honest
+// page and the empty witness, so a strip that silently stopped removing anything would go red at the court
+// rather than here, where it would be this file checking its own guard.
 const SELF = UA['User-Agent']
-const unreflect = (text: string) => text.split(SELF).join(' ')
 async function citesBit(row: Row): Promise<string> {
-  if (CITES.test(unreflect(row.text))) return 'YES'
-  try { return CITES.test(unreflect(await get(row.raw ?? row.url, 'text', 1))) ? 'YES' : 'NO' } catch (e) { return `UNREADABLE (${(e as Error).message})` }
-}
-// AND IT PROVES ITSELF, because a strip that silently stops matching looks exactly like a page that cites
-// nobody. A body consisting of the User-Agent alone must read NO; the same body with a real citation in it
-// must read YES. Both are checked here, with no network, before anything is searched.
-{
-  const echoed = `<html><head><meta name="ua" content="${SELF}"></head><body>nothing here</body></html>`
-  const wrong = [
-    CITES.test(unreflect(echoed)) && 'a page that merely echoes this scanner\'s User-Agent reads as CITING',
-    !CITES.test(unreflect(echoed.replace('nothing here', `by ${FAMILY}, ORCID ${ORCID}`))) && 'a page that really does name the author reads as NOT citing',
-  ].filter(Boolean)
-  if (wrong.length) { console.log('✗ uses: the self-reflection guard does not discriminate — ' + wrong.join('; ')); process.exit(1) }
+  if (CITES.test(unreflect(row.text, SELF))) return 'YES'
+  try { return CITES.test(unreflect(await get(row.raw ?? row.url, 'text', 1), SELF)) ? 'YES' : 'NO' } catch (e) { return `UNREADABLE (${(e as Error).message})` }
 }
 const PAYS = 'NOT MEASURED — no payment record exists to check against'
 

@@ -15,17 +15,56 @@
 // The triad is normalised mod 9 before comparing: the runtime writes {3,6,9} and the proofs write {3,6,0},
 // which is the same class named by its residue — stated here rather than hidden in a lenient comparison.
 import { BASE, units, triad, vortexOrbit } from '../src/0/index.ts'
+import { precedes, staleTail } from '../src/api/gates.ts'
+import { unreflect } from '../src/honesty/index.ts'
 import { execSync } from 'node:child_process'
 import { writeFileSync, unlinkSync } from 'node:fs'
 
 // `mod` is the MODULE (which Lean derives from the file name) and `expr` uses the NAMESPACE declared inside
 // it — index.lean is the module `Index` and the namespace `MillenniumFloor`, and conflating the two is why
 // the first run could not find anything.
+// ── AND NOT ONLY CONSTANTS. A rule is as capable of drifting as a number, and worse: instruments.lean
+// decides three rules its TypeScript twins implement separately, so without this the kernel would be
+// deciding a Lean copy while the gates ran something else. Each pair below evaluates the LEAN rule over a
+// finite grid and compares it to the TypeScript rule over the same grid, so agreement is exhaustive on that
+// grid rather than argued. `raw` turns off the mod-9 normalisation, which exists for the triad {3,6,9} ↔
+// {3,6,0} and would fold character codes on top of each other (117 mod 9 = 0).
+const GRID = 12
+const bits = (n: number): boolean[][] => n === 0 ? [[]] : bits(n - 1).flatMap((l) => [[false, ...l], [true, ...l]])
+const precedesGrid = (): number[] => [
+  ...Array.from({ length: GRID }, (_, a) => Array.from({ length: GRID }, (_, b) => precedes(a, b) ? 1 : 0)).flat(),
+  precedes(null, 3) ? 1 : 0, precedes(3, null) ? 1 : 0, precedes(null, null) ? 1 : 0,
+]
+// 0 present · 1 a hole (an absence with a later presence) · 2 a stale tail — a total classification, so the
+// comparison cannot be satisfied by two rules that merely agree on how MANY are missing
+const staleGrid = (): number[] => bits(4).flatMap((l) => {
+  const { holes } = staleTail(l)
+  return l.map((p, i) => p ? 0 : holes.includes(i) ? 1 : 2)
+})
+const codes = (s: string): number[] => [...s].map((c) => c.charCodeAt(0))
+const UA_T = 'ua:site', ECHO_T = '<p>' + UA_T + '</p>', TWICE_T = UA_T + ' ' + UA_T
+
 const PAIRS = [
   { what: 'the modulus',        runtime: [BASE],        mod: 'Z9',      expr: 'Z9.B' },
   { what: 'the units',          runtime: units(),       mod: 'Z9',      expr: 'Z9.units' },
   { what: 'the triad',          runtime: triad(),       mod: 'Merkaba', expr: 'Merkaba.axis' },
   { what: 'the doubling orbit', runtime: vortexOrbit(), mod: 'Index',   expr: 'MillenniumFloor.span' },
+
+  { what: 'the time boundary',  runtime: precedesGrid(), mod: 'Instruments', raw: true,
+    expr: '((List.range 12).flatMap (fun a => (List.range 12).map (fun b => if Instruments.precedes (some a) (some b) then 1 else 0))) '
+      + '++ [if Instruments.precedes none (some 3) then 1 else 0, if Instruments.precedes (some 3) none then 1 else 0, if Instruments.precedes none none then 1 else 0]' },
+
+  { what: 'hole vs stale tail', runtime: staleGrid(), mod: 'Instruments', raw: true,
+    expr: '(Instruments.bits 4).flatMap (fun l => (List.range 4).map (fun i => if l.getD i false then 0 else if (Instruments.holes l).contains i then 1 else 2))' },
+
+  { what: 'the echo removed',   runtime: codes(unreflect(ECHO_T, UA_T)), mod: 'Instruments', raw: true,
+    expr: 'Instruments.clip Instruments.echoed' },
+
+  { what: 'every copy removed', runtime: codes(unreflect(TWICE_T, UA_T)), mod: 'Instruments', raw: true,
+    expr: 'Instruments.clip Instruments.twice' },
+
+  { what: 'the page untouched', runtime: codes(unreflect('<p>site</p>', UA_T)), mod: 'Instruments', raw: true,
+    expr: 'Instruments.clip Instruments.genuine' },
 ]
 
 const mod9 = (xs: number[]) => xs.map((n) => ((n % 9) + 9) % 9)
@@ -58,7 +97,15 @@ for (const m of mods) {
   try { execSync(`lean -o src/proof/${m}.olean src/proof/${file}`, { stdio: 'pipe', env: ENV }) }
   catch { console.error(`✗ lean-agree: the kernel rejects src/proof/${file} — fix that before comparing constants`); process.exit(1) }
 }
-writeFileSync(probe, mods.map((m) => `import ${m}`).join('\n') + '\n' + PAIRS.map((p) => `#eval ${p.expr}`).join('\n') + '\n')
+// ONE LINE PER VALUE, OR THE PAIRING IS WRONG. The verdicts are matched to PAIRS by line index, and a bare
+// `#eval` hands its value to Lean's PRETTY PRINTER, which wraps a long list across several lines — so the
+// moment a compared value grew past the default width every pair after it was read against the wrong
+// expression, and five rules that agree exactly were reported as five disagreements. `set_option
+// format.width` does not reach `#eval`; printing the value as a STRING does, because `IO.println` emits
+// what it is given and nothing else. The four short constants never showed this, which is why it waited
+// until a long one arrived.
+writeFileSync(probe, mods.map((m) => `import ${m}`).join('\n') + '\n'
+  + PAIRS.map((p) => `#eval IO.println (toString (${p.expr}))`).join('\n') + '\n')
 let out = ''
 try { out = execSync(`lean ${probe}`, { encoding: 'utf8', env: ENV }) }
 catch (e) {
@@ -73,10 +120,12 @@ let bad = 0
 console.log('runtime ↔ Lean — evaluated, not read:')
 PAIRS.forEach((p, i) => {
   const got = (values[i] ?? '').replace(/[\[\]]/g, '').split(',').map((x) => Number(x.trim())).filter((n) => !Number.isNaN(n))
-  const a = JSON.stringify(mod9(p.runtime)), b = JSON.stringify(mod9(got))
+  const N = (p as { raw?: boolean }).raw ? (xs: number[]) => xs : mod9
+  const a = JSON.stringify(N(p.runtime)), b = JSON.stringify(N(got))
   const ok = a === b
   if (!ok) bad++
-  console.log(`  ${ok ? '✓' : '✗'} ${p.what.padEnd(20)} runtime ${JSON.stringify(p.runtime).padEnd(22)} ${p.expr} = ${values[i] ?? '(no value)'}`)
+  const show = (x: string) => x.length > 46 ? x.slice(0, 43) + '…' : x
+  console.log(`  ${ok ? '✓' : '✗'} ${p.what.padEnd(20)} runtime ${show(JSON.stringify(p.runtime)).padEnd(47)} lean ${show(values[i] ?? '(no value)')}`)
 })
 console.log(bad
   ? `\n✗ lean-agree: ${bad} constant(s) differ between the runtime and the proofs — one of them is describing something the other does not`
