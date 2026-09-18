@@ -24,7 +24,7 @@ import { withBase } from 'vitepress'
 ## Fact — measured state
 
 <div class="dash-grid">
-<div class="dash-card"><div class="dash-k">Version</div><div class="dash-v">v9.4.8</div><div class="dash-s">git tag (single source)</div></div>
+<div class="dash-card"><div class="dash-k">Version</div><div class="dash-v">v9.4.9</div><div class="dash-s">git tag (single source)</div></div>
 <div class="dash-card"><div class="dash-k">Honesty gate</div><div class="dash-v">sealed</div><div class="dash-s">every citation live in the ledger</div></div>
 <div class="dash-card"><div class="dash-k">Link coverage</div><div class="dash-v">100%</div><div class="dash-s">gate-enforced — the build fails below 100%</div></div>
 <a class="dash-card" :href="withBase('/sitemap.json')" style="text-decoration:none;display:block"><div class="dash-k">Seal root</div><div class="dash-v" style="color:var(--vp-c-brand-1)">live →</div><div class="dash-s">merkle of the whole, current at /sitemap.json</div></a>
