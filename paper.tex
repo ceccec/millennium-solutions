@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 915 of them across 39 files and
-7 wings; 713 close by exhaustion over a stated finite domain, 187 are proved
+(\texttt{npm run latex-gate}). There are 923 of them across 40 files and
+7 wings; 721 close by exhaustion over a stated finite domain, 187 are proved
 for every value, and the remaining 15 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -3049,6 +3049,48 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by
   intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{theology.lean}}
+
+\begin{theorem}[\texttt{the\_mirror\_and\_the\_doubling\_agree\_at\_no\_residue}]
+\[ \forall d \in \{0,\dots,8\},\; \mathrm{refl}\mathopen{}\left(\mathrm{dbl}\mathopen{}\left(d\right)\right) \bmod 9 \neq 2 \cdot \mathrm{refl}\mathopen{}\left(d\right) \bmod 9 \land \left|\{\, d \in \{0,\dots,8\} \mid \mathrm{refl}\mathopen{}\left(\mathrm{dbl}\mathopen{}\left(d\right)\right) \bmod 9 = 2 \cdot \mathrm{refl}\mathopen{}\left(d\right) \bmod 9 \,\}\right| = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{confirming\_a\_witness\_is\_uniform\_while\_finding\_one\_is\_not}]
+\[ \forall d \in \{\, x \in \{0,\dots,8\} \mid \mathrm{isUnit}\mathopen{}\left(x\right) \,\},\; d \cdot \mathrm{invOf}\mathopen{}\left(d\right) \bmod 9 = 1 \land \left|\operatorname{dedup}\left(\mathrm{searchCost}[\{\, x \in \{0,\dots,8\} \mid \mathrm{isUnit}\mathopen{}\left(x\right) \,\}]\right)\right| > 1 \land \exists d \in \{\, x \in \{0,\dots,8\} \mid \mathrm{isUnit}\mathopen{}\left(x\right) \,\} : \mathrm{searchCost}\mathopen{}\left(d\right) > \mathrm{searchCost}\mathopen{}\left(1\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 729 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{no\_start\_ever\_crosses\_between\_the\_units\_and\_the\_non\_units}]
+\[ \forall s \in \{0,\dots,8\},\; \forall k \in \{0,\dots,47\},\; \mathrm{isUnit}\mathopen{}\left(\mathrm{iter}\mathopen{}\left(k,\,s\right)\right) = \mathrm{isUnit}\mathopen{}\left(s\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 432 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_origin\_is\_reached\_at\_every\_step\_exactly\_by\_the\_origin}]
+\[ \forall s \in \{0,\dots,8\},\; \forall k \in \{0,\dots,47\},\; \mathrm{iter}\mathopen{}\left(k,\,s\right) = 0 = s = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 432 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{generating\_the\_same\_set\_is\_exactly\_being\_of\_the\_same\_kind}]
+\[ \forall g \in \{0,\dots,8\},\; \forall h \in \{0,\dots,8\},\; \mathrm{sameSet}\mathopen{}\left(\mathrm{spanOf}\mathopen{}\left(g\right),\,\mathrm{spanOf}\mathopen{}\left(h\right)\right) = \mathrm{isUnit}\mathopen{}\left(g\right) = \mathrm{isUnit}\mathopen{}\left(h\right) \land g = 0 = h = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_orbit\_is\_antipodal\_and\_each\_opposite\_pair\_sums\_to\_nine}]
+\[ \forall i \in \{0,\dots,2\},\; \mathrm{orbit}\mathopen{}\left(i\right) + \mathrm{orbit}\mathopen{}\left(i + 3\right) = 9 \land \sum \mathrm{span} \bmod 9 = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_orbit\_has\_no\_doubling\_closed\_part\_but\_nothing\_and\_itself}]
+\texttt{(List.range 64).all (fun m => let s := subsetOf m (! s.all (fun v => s.contains (dbl v))) || s.length == 0 || s.length == span.length) ∧ span.all (fun v => span.contains (dbl v))}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 64 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_pairing\_is\_one\_ordering\_of\_seven\_out\_of\_all\_of\_them}]
+\[ \left|\operatorname{dedup}\left(\mathrm{pairing}\right)\right| = 7 \land \forall i \in \{0,\dots,6\},\; i \in \mathrm{pairing} \land \left|\mathrm{pairing}\right| = \left|\{0,\dots,6\}\right| \land \mathrm{fact}\mathopen{}\left(\left|\mathrm{pairing}\right|\right) = 5040 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 49 cases. \hfill$\square$
 
 \subsection{the machine}
 
