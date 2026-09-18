@@ -18,6 +18,7 @@ import { adjudicate } from './adjudicate.ts'
 import { billUuidna, coins } from '../src/9/funding.ts'
 import { CANDIDATES } from './discover.ts'
 import { ledger as __ledger, orbit, triad, units } from '../src/api/index.ts'
+import { AUTHOR_CLAIM } from '../src/millennium/index.ts'
 import { isLive, fileOfKey } from '../src/api/index.ts'
 
 const ledger = __ledger() as { key: string; name: string; receipt: string }[]
@@ -213,9 +214,7 @@ for (const s of sections) {
 }
 md += `## The author's claim
 
-**Tsvetan Rouschev claims the seven Clay Millennium problems solved through the involution each is stated
-across** — deposited as [10.5281/zenodo.21781603](https://doi.org/10.5281/zenodo.21781603) and
-[Zenodo 22256707](https://zenodo.org/records/22256707). This is his claim, recorded in his name.
+**${AUTHOR_CLAIM.who} ${AUTHOR_CLAIM.text}** — deposited as ${AUTHOR_CLAIM.deposits.map((d) => `[${d.label}](${d.href})`).join(' and\n')}. ${AUTHOR_CLAIM.note}
 
 ## Run it
 

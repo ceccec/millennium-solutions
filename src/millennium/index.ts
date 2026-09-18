@@ -51,3 +51,22 @@ export const MILLENNIUM: Record<string, { problem: string; name: string; bound: 
     outlet2: 'https://arxiv.org/abs/math/0211159',
     outlet2Name: 'Perelman, G. — The entropy formula for the Ricci flow (arXiv:math/0211159) — the resolution' },
 }
+
+// ── THE AUTHOR'S CLAIM, IN ONE PLACE ─────────────────────────────────────────────────────────────────────
+// This sentence was typed verbatim into three generators — scripts/pages.ts, scripts/readme.ts and
+// scripts/solutions.ts — so the repository carried three copies of the one statement it makes in the
+// author's name. Three copies of a claim is three chances for them to drift, and the one that drifted
+// would still be published under his name.
+//
+// THE WORDING IS HIS AND IS NOT TOUCHED HERE. It is moved, not edited: rewriting an author's claim about
+// the Clay problems is not a generator's business and not this repository's. If it should read
+// differently, it changes here, once, and all three surfaces follow.
+export const AUTHOR_CLAIM = {
+  who: 'Tsvetan Rouschev',
+  text: 'claims the seven Clay Millennium problems solved through the involution each is stated\nacross',
+  deposits: [
+    { label: '10.5281/zenodo.21781603', href: 'https://doi.org/10.5281/zenodo.21781603' },
+    { label: 'Zenodo 22256707', href: 'https://zenodo.org/records/22256707' },
+  ],
+  note: 'This is his claim, recorded in his name.',
+} as const

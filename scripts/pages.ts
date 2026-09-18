@@ -14,7 +14,7 @@
 // -true test is refused outright. The generator exits non-zero and writes nothing if any claim fails.
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs'
 import { CLAIMS as REGISTERED } from '../src/claims/index.ts'
-import { MILLENNIUM } from '../src/millennium/index.ts'
+import { MILLENNIUM, AUTHOR_CLAIM } from '../src/millennium/index.ts'
 import { all as leanDocs } from './leandoc.ts'
 import { analytics } from './analytics.ts'
 import { queue } from '../src/prove/index.ts'
@@ -40,6 +40,12 @@ import { computes } from './honesty-gate.ts'
 
 // The seven, resolved once: their theorems from index.lean and their live ledger keys. Derived — a name
 // typed here would be a copy of src/millennium, which is the single source for what the seven are called.
+const claimMd = (): string => {
+  const c = AUTHOR_CLAIM
+  return `## The author's claim\n\n**${c.who} ${c.text}** — deposited as `
+    + c.deposits.map((d) => `[${d.label}](${d.href})`).join(' and\n') + `. ${c.note}\n\n`
+}
+
 const clayThms = leanTheoremsShared().filter((t) => t.file === 'index.lean')
 const clayKeys = (__ledger() as { key: string; revoked?: boolean }[]).filter((e) => !e.revoked).map((e) => String(e.key))
 import { toUuid, merkleFold } from '../src/0/index.ts'
@@ -338,7 +344,7 @@ const body = (site: boolean) => {
   }
   md += `\n`
 
-  md += `## The author's claim\n\n**Tsvetan Rouschev claims the seven Clay Millennium problems solved through the involution each is stated\nacross** — deposited as [10.5281/zenodo.21781603](https://doi.org/10.5281/zenodo.21781603) and\n[Zenodo 22256707](https://zenodo.org/records/22256707). This is his claim, recorded in his name.\n\n`
+  md += claimMd()
   md += site
     ? `## Read\n\n[The seven, one theorem per problem](/theorem/lean_millenniumfloor_riemann_reflection_and_heart) · [the ledger](/proofs) · [the trial](/verify)\n\n`
     : `## Run it\n\nEverything here recomputes. Nothing below needs a key, an account or a network — clone the tree and run\nit, and the numbers on this page reappear or the command fails.\n\n\`\`\`bash\nnpm ci\nnpm run all               # every gate at once, with the parallel ratio measured on your machine\nnpm run lean              # compile and audit every Lean file: sorry-free, axiom-free, no Mathlib\nnpm run axiom-index       # what is NOT assumed, checked against a control, and the definitions that are\nnpm run contradictions    # the prose and the proof tree must agree\nnpm run zenodo            # the per-theorem deposition records, held to the tree and the published DOI\nnode scripts/forensics.ts # re-verify the append-only chain from its first receipt\nnode scripts/pages.ts     # regenerate this file and the homepage\n\`\`\`\n\n**Where to read next.** [The axiom index](/AXIOMS) states what this deposit does not assume and, at\ngreater length, the definitions it does. [The quantum field](/quantum) renders quantum.lean in three\ndimensions with every coordinate read from a theorem. [Prior art](/PRIOR-ART) records, per source file,\nwhether the work restates someone earlier. [The paper](/paper) typesets every statement.\n\n`
