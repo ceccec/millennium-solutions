@@ -20,7 +20,7 @@
 // deposition prose, which told every record it had walked its whole domain. 112 of 336 had not.
 import { readFileSync } from 'node:fs'
 import { createHash } from 'node:crypto'
-import { domainOf, leanSource, type LeanTheorem } from '../api/index.ts'
+import { domainOf, leanSource, frontmatter, type LeanTheorem } from '../api/index.ts'
 import { toUuid } from '../0/index.ts'
 import { toLatex } from '../latex/index.ts'
 import { treeOf, stats } from '../quantum/tree.ts'
@@ -257,6 +257,59 @@ export const structuredData = (t: LeanTheorem, opts: { novelty: string; files: s
 })
 
 /** The canonical body. `novelty` and `files` come from the register and the import closure. */
+// ── THE DEFINITIONS THE STATEMENT RESTS ON, IN THE RECORD ITSELF ───────────────────────────────────────
+// A published statement reads `sources.all (fun s => kindOf s == 0 || kindOf s == 1 || kindOf s == 2)`, and
+// `sources` and `kindOf` are defined nowhere a reader of the RECORD can see. The .lean file is attached, so
+// the proof is checkable — but the body of the deposition, which is what a reader actually looks at on the
+// landing page, showed a formula over undefined symbols and asked to be believed. A record whose central
+// claim is unreadable without downloading an attachment is a record that is cited and not read.
+//
+// The definitions are extracted from the SOURCES THE PROOF ALREADY NEEDS (closureOf, the same list the
+// files are taken from), TRANSITIVELY: a definition the statement names may rest on others, and stopping at
+// one hop would show `kindOf` while hiding what `kindOf` is written in terms of. Order is the order they
+// are declared, because that is the order the kernel accepts them in.
+const DEF_RE = /^(?:private\s+)?(?:def|abbrev)\s+([A-Za-z_][A-Za-z0-9_']*)\b/gm
+const tokensOf = (text: string): Set<string> => new Set(text.match(/[A-Za-z_][A-Za-z0-9_']*/g) ?? [])
+
+/** Every `def` in these files, as name → its source text, in declaration order. */
+const declarationsIn = (files: readonly string[]): { name: string; file: string; text: string }[] => {
+  const out: { name: string; file: string; text: string }[] = []
+  for (const f of files) {
+    let src = ''
+    try { src = leanSource(f.replace(/^src\/proof\//, '')) } catch { continue }
+    const lines = src.split('\n')
+    for (let i = 0; i < lines.length; i++) {
+      const m = /^(?:private\s+)?(?:def|abbrev)\s+([A-Za-z_][A-Za-z0-9_']*)\b/.exec(lines[i])
+      if (!m) continue
+      // a declaration runs to the next blank line or the next top-level keyword, whichever comes first
+      const body: string[] = [lines[i]]
+      for (let j = i + 1; j < lines.length; j++) {
+        if (!lines[j].trim()) break
+        if (/^(?:private\s+)?(?:def|abbrev|theorem|lemma|namespace|end|set_option|open|import|--)/.test(lines[j])) break
+        body.push(lines[j])
+      }
+      out.push({ name: m[1], file: f, text: body.join('\n') })
+    }
+  }
+  return out
+}
+
+/** The definitions a statement needs, transitively, in declaration order. */
+export const definitionsFor = (statement: string, files: readonly string[]): { name: string; file: string; text: string }[] => {
+  const all = declarationsIn(files)
+  const byName = new Map(all.map((d) => [d.name, d]))
+  const want = new Set<string>()
+  const visit = (text: string) => {
+    for (const tok of tokensOf(text)) {
+      if (want.has(tok) || !byName.has(tok)) continue
+      want.add(tok)
+      visit(byName.get(tok)!.text)
+    }
+  }
+  visit(statement)
+  return all.filter((d) => want.has(d.name))
+}
+
 export const publicationHtml = (t: LeanTheorem, opts: { novelty: string; files: string[]; key: string | null }): string =>
   `<p><strong>${humanise(t.name)}</strong> — ${claimLine(t)}</p>`
   + `<p><strong>Statement (Lean):</strong></p><pre><code>${esc(t.statement)}</code></pre>`
@@ -272,6 +325,15 @@ export const publicationHtml = (t: LeanTheorem, opts: { novelty: string; files: 
         + `grammar in <code>src/latex</code> does not cover. The Lean above is the statement; nothing is `
         + `omitted from it.</p>`)(toLatex(t.statement))
   + `<p>${proofLine(t)}</p>`
+  + (() => {
+      const defs = definitionsFor(t.statement, opts.files)
+      if (!defs.length) return `<p><strong>Definitions.</strong> The statement names no defined constant of this `
+        + `deposit — every symbol in it is Lean's own, so it can be read exactly as written.</p>`
+      return `<p><strong>Definitions.</strong> Everything the statement above rests on, taken from the `
+        + `attached sources and closed transitively, so the proposition can be read here without opening `
+        + `an attachment. ${defs.length === 1 ? 'One definition' : `${defs.length} definitions`}, in the `
+        + `order the kernel accepts them:</p><pre><code>${esc(defs.map((d) => d.text).join('\n\n'))}</code></pre>`
+    })()
   // ── THE STATEMENT'S STRUCTURE, carried by the record as well as drawn on the page ──────────────────
   // The theorem page renders this parse tree in three dimensions. A Zenodo record cannot run a script, so
   // it carries the same structure as figures instead — the record and the page describe one object, and
@@ -301,8 +363,15 @@ export const publicationHtml = (t: LeanTheorem, opts: { novelty: string; files: 
   + (opts.key ? ` The content-address of this declaration is recorded as <code>${opts.key}</code> at <a href="${SITE}/theorem/${opts.key}">${SITE}/theorem/${opts.key}</a>.` : '')
   + ` A content-address proves integrity, not truth: it fixes which statement was checked, not that the statement is significant.</p>`
   + `<p><strong>Funding.</strong> ${FUNDING.statement}</p>`
+  // THE FLOOR IN THE RECORD, not only in the repository. scripts/zenodo-gate.ts requires `0/7` in every
+  // description and every description omitted it — the gate had been red on this since it was written. A
+  // permanent citable record of a Millennium-adjacent deposit that does not say, in its own text, that it
+  // settles none of the seven is a record whose scope a reader has to go elsewhere to find; and where a
+  // reader does not go is exactly where an overclaim is read into the silence.
   + `<p><strong>Scope, stated as plainly as the claim.</strong> The declaration is decided over a finite domain. `
-  + `It asserts no quantum speedup and describes no physical system.</p>`
+  + `It asserts no quantum speedup and describes no physical system. Of the seven Millennium Prize problems `
+  + `this deposit settles <strong>0/7</strong>; humanity's count stands at 1/7, and that one is Perelman's `
+  + `proof of the Poincaré conjecture (2003), not this deposit's work.</p>`
 
 // ── the register, shared by the page and the deposition ─────────────────────────────────────────────────
 
@@ -325,7 +394,24 @@ export const KIND: Record<string, string> = {
 export const kinds = (): Map<string, string> =>
   new Map([...leanSource('priorart.lean').matchAll(/\(\s*\d+,\s*(\d+),\s*(?:true|false)\)\s*--\s*(\S+\.lean)/g)]
     .map((m) => [m[2], m[1]] as [string, string]))
-export const ownFiles = (): string[] => [...kinds()].filter(([, k]) => k === '1').map(([f]) => f)
+/** THE FILES A PRIORITY DEPOSIT MAY BE MINTED FOR — and the search is the gate, not the kind.
+ *
+ *  This was `kind === '1'` alone: every file declaring `prior_art: unclassified` entered the queue as "this
+ *  deposit's own work". But UNCLASSIFIED DOES NOT MEAN OWN — it means nobody has looked. Minting a dated
+ *  priority record for a file whose literature nobody has searched claims priority without the search,
+ *  which is the exact thing scripts/priorart.ts already refuses one kind up: it will not accept
+ *  `none-known` from a file that names no search.
+ *
+ *  Found when a new source file declared `unclassified` honestly — no search was performed for a strict
+ *  order, a list partition and substring removal — and the queue went from nine depositions to twenty-seven
+ *  without anyone deciding anything. A standing instruction says that queue is not to be regrown.
+ *
+ *  So a file qualifies when it declares kind 1 AND records a search that was actually performed.
+ *  priorart.lean does: it names its terms and its date, and stays kind 1 because the taxonomy does not fit
+ *  what the search found. A file with no `prior_art_search` line is not refused anything — it is simply not
+ *  put forward for a priority DOI, which is the claim it has no evidence for. */
+export const ownFiles = (): string[] =>
+  [...kinds()].filter(([f, k]) => k === '1' && Boolean(frontmatter(f).prior_art_search)).map(([f]) => f)
 
 /** THE FILES A RECORD MUST CARRY FOR ITS PROOF TO CHECK — the transitive closure of its imports.
  *

@@ -164,8 +164,12 @@ const CONTROLS: Control[] = [
     what: 'prose telling a reader to run a command that does not exist',
     mutate: (s) => s.replace('`npm run cern`', '`npm run a-command-that-was-never-wired`') },
 
+  // THE CONTROL NAMED A DEPOSITION THAT NO LONGER EXISTS, so gates-fire reported `? absent — cannot
+  // control` and nobody read it as a gap. Meanwhile zenodo-gate itself was RED — it has required `0/7` in
+  // every description since it was written and no description carried it. A control pointed at a missing
+  // file is how a gate stays broken in plain sight. It names a deposition the tree actually holds now.
   { gate: 'zenodo-gate', cmd: 'node scripts/zenodo-gate.ts',
-    file: '.zenodo/theorems/lean_a_proof_is_smaller_than_its_set_across_the_octave.json',
+    file: '.zenodo/theorems/lean_every_source_is_classified.json',
     what: 'a deposition quoting a statement the kernel never accepted',
     mutate: (s) => s.replace('"description": "', '"description": "FALSIFIED CONTROL — this no longer matches its theorem. ') },
 

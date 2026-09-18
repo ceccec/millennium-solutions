@@ -10,7 +10,7 @@
 import { readFileSync, existsSync, readdirSync } from 'node:fs'
 import { leanTheorems } from '../src/api/index.ts'
 import { deposition, namesIn, keyOf } from './zenodo-theorems.ts'
-import { ownFiles, creditedIn, closureOf } from '../src/publication/index.ts'
+import { ownFiles, creditedIn, closureOf, definitionsFor } from '../src/publication/index.ts'
 
 let bad = 0
 const fail = (m: string) => { console.log('  ✗ ' + m); bad++ }
@@ -208,6 +208,25 @@ for (const f of new Set(leanTheorems().map((t) => t.file))) {
     if (existsSync(p4) && !readFileSync(p4, 'utf8').includes('NAMED AND CREDITED for this declaration'))
       fail(`${p4} does not carry the per-theorem credit its source declares`)
   }
+}
+
+// ── EVERY DEFINED SYMBOL THE STATEMENT NAMES MUST BE IN THE RECORD ──────────────────────────────────────
+// A deposition's statement read `sources.all (fun s => kindOf s == 0 || ...)` and defined neither `sources`
+// nor `kindOf` anywhere a reader of the RECORD could see. The .lean file is attached, so the proof was
+// always checkable — but the landing page, which is what anyone actually reads, showed a formula over
+// undefined symbols. The definitions are carried now, closed transitively.
+//
+// This is the check that keeps them there. It is not "the block is non-empty": an extractor that silently
+// stopped resolving would leave a shorter block and still look healthy, so the test is per SYMBOL — every
+// name the statement mentions that this deposit DEFINES must appear as a definition in the description.
+// Lean's own vocabulary is not required, and is not claimed to be defined here.
+for (const t of rows) {
+  const p = `${OUT}/lean_${t.name}.json`
+  if (!existsSync(p)) continue
+  const dep = JSON.parse(readFileSync(p, 'utf8')) as { description?: string }
+  const needed = definitionsFor(t.statement, [t.file, ...closureOf(t.file)].map((f) => 'src/proof/' + f))
+  const missing = needed.filter((d) => !String(dep.description ?? '').includes(d.text.split('\n')[0]))
+  if (missing.length) fail(`lean_${t.name} quotes ${missing.length} symbol(s) its record never defines: ${missing.map((m) => m.name).join(', ')}`)
 }
 
 // ── SURFACED, NOT ACTED ON: own-work theorems whose OWN TEXT names an earlier author ────────────────────
