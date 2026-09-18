@@ -8,6 +8,7 @@
 // curl carries SMTP itself, so this adds no dependency.
 //
 //   node scripts/uses-mail.ts uses-markers.json uses-news.json
+//   node scripts/uses-mail.ts uses-news.json --dry-run out/   render every dossier to out/ and send NOTHING
 //
 // LOCKED: the recipient is legal@psg.bg in code, and nothing else is accepted. CREDENTIALS are the author's:
 // SMTP_USER and SMTP_PASS come from the environment (GitHub secrets in CI) and are never written anywhere. Without
@@ -15,7 +16,7 @@
 // which markers matched verbatim, when, by whom, whether the page cites the author and how that was measured,
 // that paying is NOT MEASURED, and which sources were not measured that run — and it closes by saying what it is
 // not: a lead for the author to judge, not a legal conclusion.
-import { readFileSync, existsSync, writeFileSync, unlinkSync } from 'node:fs'
+import { readFileSync, existsSync, writeFileSync, unlinkSync, mkdirSync } from 'node:fs'
 import { execFileSync } from 'node:child_process'
 import { randomUUID } from 'node:crypto'
 import { tmpdir } from 'node:os'
@@ -88,8 +89,43 @@ function send(subject: string, body: string) {
 }
 
 const files = process.argv.slice(2).filter((f) => f.endsWith('.json'))
+
+// ── --dry-run <dir>: RENDER WHAT WOULD BE SENT, SEND NOTHING ─────────────────────────────────────────────
+// A dossier to a legal address naming a real party is not a step anyone should take unseen, and until now
+// the only way to read one was to have already sent it. The dossiers are the same bytes either way — the
+// same `dossier()` renders both — so what lands in the directory is the mail, not a description of it.
+// It is also the honest answer for anyone without the author's SMTP credentials, which is everyone but him
+// and the weekly workflow: they can prepare the dossiers and he can read them before any of it leaves.
+const dry = process.argv.indexOf('--dry-run')
+const DRY = dry >= 0 ? (process.argv[dry + 1] ?? 'dossiers') : null
+if (DRY) {
+  mkdirSync(DRY, { recursive: true })
+  let n = 0
+  for (const f of files) {
+    if (!existsSync(f)) { console.log(`${f} missing — that step produced no report`); continue }
+    const r = JSON.parse(readFileSync(f, 'utf8')) as Report
+    const stem = f.replace(/^.*\//, '').replace(/\.json$/, '')
+    const leads = r.leads.slice(0, MAX_DOSSIERS)
+    for (let i = 0; i < leads.length; i++) {
+      const d = dossier(leads[i], r, i + 1, r.leads.length)
+      writeFileSync(join(DRY, `${stem}-${String(i + 1).padStart(3, '0')}.txt`), `To: ${TO}\nFrom: ${FROM}\nSubject: ${d.subject}\n\n${d.body}\n`)
+      n++
+    }
+    const rest = r.leads.slice(MAX_DOSSIERS)
+    if (rest.length) {
+      writeFileSync(join(DRY, `${stem}-digest.txt`), `To: ${TO}\nFrom: ${FROM}\nSubject: [rights findings] ${rest.length} more leads in this run — listed, not dropped\n\n`
+        + [`${rest.length} further leads from the run recorded ${r.when}, beyond the ${MAX_DOSSIERS} mailed as dossiers:`, '', ...rest.map((l) => `  ${l.url}  —  cites: ${l.cites ?? 'NOT MEASURED'} · pays: NOT MEASURED  —  ${l.source}`)].join('\n') + '\n')
+      n++
+    }
+    console.log(`${f}: ${leads.length} dossier(s)${rest.length ? ` + 1 digest of ${rest.length}` : ''} for ${r.leads.length} lead(s)`)
+  }
+  console.log(`uses-mail --dry-run: ${n} message(s) written to ${DRY}/ and NOTHING sent. Read them, then send with SMTP_USER/SMTP_PASS set, or by dispatching .github/workflows/uses.yml.`)
+  process.exit(0)
+}
+
 if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
   console.log(`uses-mail NOT CONFIGURED — SMTP_USER / SMTP_PASS are unset, so nothing was mailed (sender ${FROM} via ${SMTP_URL} → ${TO})`)
+  console.log(`  to read what WOULD be sent without sending it: node scripts/uses-mail.ts <report.json…> --dry-run <dir>`)
   process.exit(0)
 }
 let mailed = 0, failed = 0
