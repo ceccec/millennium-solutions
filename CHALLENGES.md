@@ -18,7 +18,7 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). The author's own claim, that the seven are solved through involution, is stated in his name on the front page.
 
-## Discovered theorems (decidable, over ℤ/9) — 2849 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2856 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
@@ -71,13 +71,6 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_generated_cyclic_units_have_a_primitive_root](/theorem/lean_generated_cyclic_units_have_a_primitive_root) — lean generated.lean: cyclic_units_have_a_primitive_root — [2,3,5,7,11,13].all (fun p =&gt; (List.range' 1 (p - 1)).any (fun g =&gt; (((List.range' 1 (p - 1)).map (fun k =&gt; (g ^ k) % p)).eraseDups).length == p - 1)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `21d5e557-5625…`
 - [lean_generated_decimal_period_is_the_order_of_ten](/theorem/lean_generated_decimal_period_is_the_order_of_ten) — lean generated.lean: decimal_period_is_the_order_of_ten — [3,7,11,13,17,19,23,29].all (fun p =&gt; (List.range' 1 (p - 1)).any (fun k =&gt; (10 ^ k) % p == 1)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `85e474a6-76c3…`
 - [lean_generated_primality_agrees_with_trial_division](/theorem/lean_generated_primality_agrees_with_trial_division) — lean generated.lean: primality_agrees_with_trial_division — (List.range' 2 40).all (fun n =&gt; ((List.range' 2 (n - 2)).all (fun d =&gt; n % d != 0)) == ([2,3,5,7,11,13,17,19,23,29,31,37,41].contains n)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `86e633b3-cc43…`
-- [lean_millenniumfloor_riemann_reflection_and_heart](/theorem/lean_millenniumfloor_riemann_reflection_and_heart) — lean index.lean: riemann_reflection_and_heart — (List.range 10).all (fun d =&gt; refl (refl d) == d) ∧ ((List.range 10).filter (fun d =&gt; refl d == d)).length = 1 ∧ provenHere = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `bed99ddf-9717…`
-- [lean_millenniumfloor_p_vs_np_inverse_is_unique](/theorem/lean_millenniumfloor_p_vs_np_inverse_is_unique) — lean index.lean: p_vs_np_inverse_is_unique — (List.range 9).all (fun d =&gt; ((List.range 9).filter (fun e =&gt; (d * e) % 9 == 1)).length == (if isUnit d then 1 else 0)) ∧ provenHere = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `61ed32b1-0fcf…`
-- [lean_millenniumfloor_navier_stokes_flow_is_bounded](/theorem/lean_millenniumfloor_navier_stokes_flow_is_bounded) — lean index.lean: navier_stokes_flow_is_bounded — ((List.range 48).map orbit).all (fun v =&gt; v &lt; 9) ∧ (List.range 48).all (fun k =&gt; span.contains (orbit k)) ∧ provenHere = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `dafe2bb3-c1f5…`
-- [lean_millenniumfloor_yang_mills_spectral_gap](/theorem/lean_millenniumfloor_yang_mills_spectral_gap) — lean index.lean: yang_mills_spectral_gap — (List.range 6).all (fun k =&gt; k == 0 || orbit k != 1) ∧ orbit 6 == 1 ∧ provenHere = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1152fb8f-f7d8…`
-- [lean_millenniumfloor_hodge_span_is_the_units](/theorem/lean_millenniumfloor_hodge_span_is_the_units) — lean index.lean: hodge_span_is_the_units — (List.range 9).all (fun d =&gt; span.contains d == isUnit d) ∧ (List.range 9).all (fun d =&gt; isUnit d || ! span.contains d) ∧ provenHere = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `dd0efc5b-a2ff…`
-- [lean_millenniumfloor_birch_swinnerton_dyer_vanishing](/theorem/lean_millenniumfloor_birch_swinnerton_dyer_vanishing) — lean index.lean: birch_swinnerton_dyer_vanishing — (span.foldr (· + ·) 0) % 9 == 0 ∧ ((List.range 9).filter isUnit).foldr (· + ·) 0 % 9 == 0 ∧ provenHere = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `57ed1964-529c…`
-- [lean_millenniumfloor_poincare_single_closed_loop](/theorem/lean_millenniumfloor_poincare_single_closed_loop) — lean index.lean: poincare_single_closed_loop — orbit 6 == orbit 0 ∧ (List.range 6).all (fun i =&gt; (List.range 6).all (fun j =&gt; (orbit i == orbit j) == (i == j))) ∧ provenHere = 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7b9dd11f-6b04…`
 - [lean_merkle_merge_agrees](/theorem/lean_merkle_merge_agrees) — lean merkle.lean: merge_agrees — merge A B = [181, 59, 237, 190, 211, 88, 129, 103, 143, 231, 158, 123, 139, 178, 38, 2] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `4298a48c-8e29…`
 - [lean_merkle_empty_fold_agrees](/theorem/lean_merkle_empty_fold_agrees) — lean merkle.lean: empty_fold_agrees — merkleFold [] = [147, 146, 154, 45, 72, 16, 138, 198, 159, 50, 78, 208, 125, 158, 1, 108] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `f96bc0ca-dac7…`
 - [lean_merkle_singleton_fold_is_the_leaf](/theorem/lean_merkle_singleton_fold_is_the_leaf) — lean merkle.lean: singleton_fold_is_the_leaf — merkleFold [A] = A — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a1f8cb03-417c…`
@@ -1111,12 +1104,19 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_imprint_the_header_records_the_length](/theorem/lean_imprint_the_header_records_the_length) — lean imprint.lean: the_header_records_the_length — (List.range 9).all (fun n =&gt; natOf ((FREE.map (fun i =&gt; (encodeBits (alt n)).getD i false)).take LEN_BITS) == n) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `ad8567b8-120e…`
 - [lean_imprint_a_shorter_message_is_not_a_longer_one](/theorem/lean_imprint_a_shorter_message_is_not_a_longer_one) — lean imprint.lean: a_shorter_message_is_not_a_longer_one — encodeBits (alt 3) != encodeBits (alt 4) ∧ encodeBits (ones 0) != encodeBits (ones 1) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7c00d44d-8834…`
 - [lean_imprint_the_reserved_six_survive_any_message](/theorem/lean_imprint_the_reserved_six_survive_any_message) — lean imprint.lean: the_reserved_six_survive_any_message — [alt 0, alt 5, ones 8, alt 115].all (fun m =&gt; let b := encodeBits m (b.getD 48 false == true) && (b.getD 49 false == false) && (b.getD 50 false == false) && (b.getD 51 false == false) && (b.getD 64 false == true) && (b.getD 65 false == fals… — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `12a83c85-7690…`
+- [lean_millenniumfloor_the_tens_complement_is_an_involution_with_one_fixed_point](/theorem/lean_millenniumfloor_the_tens_complement_is_an_involution_with_one_fixed_point) — lean index.lean: the_tens_complement_is_an_involution_with_one_fixed_point — (List.range 10).all (fun d =&gt; refl (refl d) == d) ∧ ((List.range 10).filter (fun d =&gt; refl d == d)).length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e9dd9619-515b…`
+- [lean_millenniumfloor_each_unit_has_exactly_one_inverse_and_each_non_unit_none](/theorem/lean_millenniumfloor_each_unit_has_exactly_one_inverse_and_each_non_unit_none) — lean index.lean: each_unit_has_exactly_one_inverse_and_each_non_unit_none — (List.range 9).all (fun d =&gt; ((List.range 9).filter (fun e =&gt; (d * e) % 9 == 1)).length == (if isUnit d then 1 else 0)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `661bba08-39e9…`
+- [lean_millenniumfloor_the_doubling_orbit_stays_in_the_ring_for_forty_eight_steps](/theorem/lean_millenniumfloor_the_doubling_orbit_stays_in_the_ring_for_forty_eight_steps) — lean index.lean: the_doubling_orbit_stays_in_the_ring_for_forty_eight_steps — ((List.range 48).map orbit).all (fun v =&gt; v &lt; 9) ∧ (List.range 48).all (fun k =&gt; span.contains (orbit k)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `98c5c4b5-949a…`
+- [lean_millenniumfloor_the_doubling_orbit_first_returns_to_one_at_six](/theorem/lean_millenniumfloor_the_doubling_orbit_first_returns_to_one_at_six) — lean index.lean: the_doubling_orbit_first_returns_to_one_at_six — (List.range 6).all (fun k =&gt; k == 0 || orbit k != 1) ∧ orbit 6 == 1 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `996a80a9-10d3…`
+- [lean_millenniumfloor_the_span_is_exactly_the_units_of_the_ring](/theorem/lean_millenniumfloor_the_span_is_exactly_the_units_of_the_ring) — lean index.lean: the_span_is_exactly_the_units_of_the_ring — (List.range 9).all (fun d =&gt; span.contains d == isUnit d) ∧ (List.range 9).all (fun d =&gt; isUnit d || ! span.contains d) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2d45299e-ed42…`
+- [lean_millenniumfloor_the_span_and_the_units_both_sum_to_zero_mod_nine](/theorem/lean_millenniumfloor_the_span_and_the_units_both_sum_to_zero_mod_nine) — lean index.lean: the_span_and_the_units_both_sum_to_zero_mod_nine — (span.foldr (· + ·) 0) % 9 == 0 ∧ ((List.range 9).filter isUnit).foldr (· + ·) 0 % 9 == 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a6bd7475-788f…`
+- [lean_millenniumfloor_the_orbit_is_one_closed_loop_of_six_distinct_points](/theorem/lean_millenniumfloor_the_orbit_is_one_closed_loop_of_six_distinct_points) — lean index.lean: the_orbit_is_one_closed_loop_of_six_distinct_points — orbit 6 == orbit 0 ∧ (List.range 6).all (fun i =&gt; (List.range 6).all (fun j =&gt; (orbit i == orbit j) == (i == j))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `10ad046c-32e7…`
 
 ### other — one-of-a-kind (0)
 
 
 
-## Revoked — 1514 entries that no longer stand
+## Revoked — 1521 entries that no longer stand
 
 The ledger is append-only: an entry that stops holding is marked in place, never deleted — deleting would break the receipt chain, and rewriting a receipt is tamper. These keep their receipts and stay in the record, but they are **not citable** and have no `/theorem/` page. Grouped by the reason they went:
 
@@ -1125,6 +1125,7 @@ The ledger is append-only: an entry that stops holding is marked in place, never
 - **35** — orphaned: the theorem this key was sealed from is no longer in src/proof
 - **12** — revoked in place: circular by construction AND dependent on the removed lexical gate
 - **10** — revoked in place: circular by construction — the test defines the answer it checks, proving a declaration rather than a fact
+- **7** — renamed to what it decides (2026-09-18, by the author's order)
 - **1** — revoked in place: its test asserts that a list of proof-boasts written across many scripts and languages ALL drain the gate — a lexical drain assertion, and the word-list gate was removed by order, so there is no lexicon to drain and the assertion tests nothing
 - **1** — revoked in place: it asserts adjudicate('we prove all seven')
 - **1** — carried: this key was sealed from a theorem no longer in src/proof
@@ -1176,7 +1177,7 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 …and 395 more.
 
-<details><summary>List all 1514 withdrawn keys — nothing proves these</summary>
+<details><summary>List all 1521 withdrawn keys — nothing proves these</summary>
 
 - ~~`qr_u7`~~  ·  `2a422f9b-761a…`
 - ~~`powinv_k5`~~  ·  `8e327990-c88f…`
@@ -2656,6 +2657,13 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 - ~~`pure_ts_pbkdf2_hmac_sha256_truncates_a_partial_final_block`~~  ·  `cf6f888e-151d…`
 - ~~`the_pure_ts_aead_rejects_a_flipped_additional_data_bit`~~  ·  `57305d0f-ed04…`
 - ~~`the_pure_ts_aead_tag_depends_on_the_additional_data`~~  ·  `5daa79d5-5154…`
+- ~~`lean_millenniumfloor_riemann_reflection_and_heart`~~  ·  `bed99ddf-9717…`
+- ~~`lean_millenniumfloor_p_vs_np_inverse_is_unique`~~  ·  `61ed32b1-0fcf…`
+- ~~`lean_millenniumfloor_navier_stokes_flow_is_bounded`~~  ·  `dafe2bb3-c1f5…`
+- ~~`lean_millenniumfloor_yang_mills_spectral_gap`~~  ·  `1152fb8f-f7d8…`
+- ~~`lean_millenniumfloor_hodge_span_is_the_units`~~  ·  `dd0efc5b-a2ff…`
+- ~~`lean_millenniumfloor_birch_swinnerton_dyer_vanishing`~~  ·  `57ed1964-529c…`
+- ~~`lean_millenniumfloor_poincare_single_closed_loop`~~  ·  `7b9dd11f-6b04…`
 - ~~`lean_energy_the_loop_returns_less_than_it_took`~~  ·  `8229c511-d4bd…`
 - ~~`lean_energy_as_a_purifier_the_loop_costs_a_thousandfold`~~  ·  `840c66b6-b891…`
 - ~~`lean_energy_the_equation_balances_by_atom_count`~~  ·  `ecfd70b1-b35b…`
@@ -2695,4 +2703,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `321e3e4b-9728-809a-a176-3f7c61d78418`. Integrity, not truth.
+Page content-address: `71d24cd1-9f81-8bc0-b23a-075e8a311b85`. Integrity, not truth.

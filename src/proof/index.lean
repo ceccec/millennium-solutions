@@ -51,49 +51,49 @@ def span : List Nat := (List.range 6).map orbit                               --
 -- ── 1 · Riemann — the reflection's symmetry and its single computed heart ─────────────────────────────────
 -- The functional-equation reflection is a total involution; its fixed-point set has length ONE — the heart
 -- emerges (never typed as "5"), the ½-analogue of the critical-line centre. The SYMMETRY, not the zeros' place.
-theorem riemann_reflection_and_heart :
+theorem the_tens_complement_is_an_involution_with_one_fixed_point :
   (List.range 10).all (fun d => refl (refl d) == d)
   ∧ ((List.range 10).filter (fun d => refl d == d)).length = 1 := by decide
 
 -- ── 2 · P versus NP — verification is one step, computed ───────────────────────────────────────────────────
 -- Each unit has EXACTLY ONE inverse and each non-unit none: to VERIFY a proposed inverse is a single multiply,
 -- while the map d ↦ d⁻¹ permutes the units. Cheap verification is not a separation; P vs NP is not decided.
-theorem p_vs_np_inverse_is_unique :
+theorem each_unit_has_exactly_one_inverse_and_each_non_unit_none :
   (List.range 9).all (fun d =>
     ((List.range 9).filter (fun e => (d * e) % 9 == 1)).length == (if isUnit d then 1 else 0)) := by decide
 
 -- ── 3 · Navier–Stokes — the flow is bounded for all time, computed ────────────────────────────────────────
 -- Every iterate of the doubling flow is a residue < 9 and stays inside the 6-cycle forever — a bounded
 -- invariant set, no blowup. Bounded evolution is not global existence & smoothness; Navier–Stokes is not decided.
-theorem navier_stokes_flow_is_bounded :
+theorem the_doubling_orbit_stays_in_the_ring_for_forty_eight_steps :
   ((List.range 48).map orbit).all (fun v => v < 9)
   ∧ (List.range 48).all (fun k => span.contains (orbit k)) := by decide
 
 -- ── 4 · Yang–Mills — a discrete spectral gap, computed ────────────────────────────────────────────────────
 -- The doubling has order exactly 6: it never returns to 1 before step 6, then closes at step 6 — a gap in the
 -- cyclic spectrum. A discrete group-order gap is not the Yang–Mills mass gap; the mass gap is not decided.
-theorem yang_mills_spectral_gap :
+theorem the_doubling_orbit_first_returns_to_one_at_six :
   (List.range 6).all (fun k => k == 0 || orbit k != 1)
   ∧ orbit 6 == 1 := by decide
 
 -- ── 5 · Hodge — the algebraic span equals the units, computed ─────────────────────────────────────────────
 -- The doubling span (algebraic generation from 2) is exactly the units, and every non-unit lies OUTSIDE it.
 -- Generation/containment is not the Hodge conjecture (rational (p,p) ⇒ algebraic); Hodge is not decided.
-theorem hodge_span_is_the_units :
+theorem the_span_is_exactly_the_units_of_the_ring :
   (List.range 9).all (fun d => span.contains d == isUnit d)
   ∧ (List.range 9).all (fun d => isUnit d || ! span.contains d) := by decide
 
 -- ── 6 · Birch–Swinnerton-Dyer — a computed vanishing ──────────────────────────────────────────────────────
 -- The orbit's digit sum vanishes mod 9 (1+2+4+8+7+5 = 27 ≡ 0), and so do the units (1+2+4+5+7+8 ≡ 0) — a
 -- computed vanishing. A digit-sum vanishing is not the rank ↔ order-of-vanishing-of-L correspondence; BSD is not decided.
-theorem birch_swinnerton_dyer_vanishing :
+theorem the_span_and_the_units_both_sum_to_zero_mod_nine :
   (span.foldr (· + ·) 0) % 9 == 0
   ∧ ((List.range 9).filter isUnit).foldr (· + ·) 0 % 9 == 0 := by decide
 
 -- ── 7 · Poincaré — one closed loop, no holes, computed ────────────────────────────────────────────────────
 -- The sequence closes (orbit 6 = orbit 0) after six pairwise-distinct steps — a single simple loop. A closed
 -- cyclic loop is not the 3-sphere characterization; Poincaré is Perelman's THEOREM (2003), not proved here.
-theorem poincare_single_closed_loop :
+theorem the_orbit_is_one_closed_loop_of_six_distinct_points :
   orbit 6 == orbit 0
   ∧ (List.range 6).all (fun i => (List.range 6).all (fun j => (orbit i == orbit j) == (i == j))) := by decide
 

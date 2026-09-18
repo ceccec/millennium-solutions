@@ -2548,37 +2548,37 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 
 \paragraph{\texttt{index.lean}}
 
-\begin{theorem}[\texttt{riemann\_reflection\_and\_heart}]
+\begin{theorem}[\texttt{the\_tens\_complement\_is\_an\_involution\_with\_one\_fixed\_point}]
 \[ \forall d \in \{0,\dots,9\},\; \mathrm{refl}\mathopen{}\left(\mathrm{refl}\mathopen{}\left(d\right)\right) = d \land \left|\{\, d \in \{0,\dots,9\} \mid \mathrm{refl}\mathopen{}\left(d\right) = d \,\}\right| = 1 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 100 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{p\_vs\_np\_inverse\_is\_unique}]
+\begin{theorem}[\texttt{each\_unit\_has\_exactly\_one\_inverse\_and\_each\_non\_unit\_none}]
 \[ \forall d \in \{0,\dots,8\},\; \left|\{\, e \in \{0,\dots,8\} \mid d \cdot e \bmod 9 = 1 \,\}\right| = \begin{cases}1 & \text{if } \mathrm{isUnit}\mathopen{}\left(d\right)\\ 0 & \text{otherwise}\end{cases} \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{navier\_stokes\_flow\_is\_bounded}]
+\begin{theorem}[\texttt{the\_doubling\_orbit\_stays\_in\_the\_ring\_for\_forty\_eight\_steps}]
 \[ \forall v \in \mathrm{orbit}[\{0,\dots,47\}],\; v < 9 \land \forall k \in \{0,\dots,47\},\; \mathrm{orbit}\mathopen{}\left(k\right) \in \mathrm{span} \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 2,304 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{yang\_mills\_spectral\_gap}]
+\begin{theorem}[\texttt{the\_doubling\_orbit\_first\_returns\_to\_one\_at\_six}]
 \[ \forall k \in \{0,\dots,5\},\; k = 0 \lor \mathrm{orbit}\mathopen{}\left(k\right) \neq 1 \land \mathrm{orbit}\mathopen{}\left(6\right) = 1 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{hodge\_span\_is\_the\_units}]
+\begin{theorem}[\texttt{the\_span\_is\_exactly\_the\_units\_of\_the\_ring}]
 \[ \forall d \in \{0,\dots,8\},\; d \in \mathrm{span} = \mathrm{isUnit}\mathopen{}\left(d\right) \land \forall d \in \{0,\dots,8\},\; \mathrm{isUnit}\mathopen{}\left(d\right) \lor \lnot d \in \mathrm{span} \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{birch\_swinnerton\_dyer\_vanishing}]
+\begin{theorem}[\texttt{the\_span\_and\_the\_units\_both\_sum\_to\_zero\_mod\_nine}]
 \[ \sum \mathrm{span} \bmod 9 = 0 \land \sum \{\, x \in \{0,\dots,8\} \mid \mathrm{isUnit}\mathopen{}\left(x\right) \,\} \bmod 9 = 0 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
 
-\begin{theorem}[\texttt{poincare\_single\_closed\_loop}]
+\begin{theorem}[\texttt{the\_orbit\_is\_one\_closed\_loop\_of\_six\_distinct\_points}]
 \[ \mathrm{orbit}\mathopen{}\left(6\right) = \mathrm{orbit}\mathopen{}\left(0\right) \land \forall i \in \{0,\dots,5\},\; \forall j \in \{0,\dots,5\},\; \mathrm{orbit}\mathopen{}\left(i\right) = \mathrm{orbit}\mathopen{}\left(j\right) = i = j \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 36 cases. \hfill$\square$

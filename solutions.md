@@ -22,12 +22,12 @@ This deposit settles **0 of the 7**: the conjectures range over infinite domains
 
 | problem | theorem | cases | proof |
 |---|---|---|---|
-| Riemann Hypothesis | `riemann_reflection_and_heart` | 100 | [lean_millenniumfloor_riema…](/theorem/lean_millenniumfloor_riemann_reflection_and_heart) |
-| P versus NP | `p_vs_np_inverse_is_unique` | 81 | [lean_millenniumfloor_p_vs_…](/theorem/lean_millenniumfloor_p_vs_np_inverse_is_unique) |
-| Navier–Stokes Existence & Smoothness | `navier_stokes_flow_is_bounded` | 2,304 | [lean_millenniumfloor_navie…](/theorem/lean_millenniumfloor_navier_stokes_flow_is_bounded) |
-| Yang–Mills Existence & Mass Gap | `yang_mills_spectral_gap` | 6 | [lean_millenniumfloor_yang_…](/theorem/lean_millenniumfloor_yang_mills_spectral_gap) |
-| Hodge Conjecture | `hodge_span_is_the_units` | 81 | [lean_millenniumfloor_hodge…](/theorem/lean_millenniumfloor_hodge_span_is_the_units) |
-| Birch and Swinnerton-Dyer Conjecture | `birch_swinnerton_dyer_vanishing` | 9 | [lean_millenniumfloor_birch…](/theorem/lean_millenniumfloor_birch_swinnerton_dyer_vanishing) |
-| Poincaré Conjecture (resolved) | `poincare_single_closed_loop` | 36 | [lean_millenniumfloor_poinc…](/theorem/lean_millenniumfloor_poincare_single_closed_loop) |
+| Riemann Hypothesis | `the_tens_complement_is_an_involution_with_one_fixed_point` | 100 | [lean_millenniumfloor_the_t…](/theorem/lean_millenniumfloor_the_tens_complement_is_an_involution_with_one_fixed_point) |
+| P versus NP | `each_unit_has_exactly_one_inverse_and_each_non_unit_none` | 81 | [lean_millenniumfloor_each_…](/theorem/lean_millenniumfloor_each_unit_has_exactly_one_inverse_and_each_non_unit_none) |
+| Navier–Stokes Existence & Smoothness | `the_doubling_orbit_stays_in_the_ring_for_forty_eight_steps` | 2,304 | [lean_millenniumfloor_the_d…](/theorem/lean_millenniumfloor_the_doubling_orbit_stays_in_the_ring_for_forty_eight_steps) |
+| Yang–Mills Existence & Mass Gap | `the_doubling_orbit_first_returns_to_one_at_six` | 6 | [lean_millenniumfloor_the_d…](/theorem/lean_millenniumfloor_the_doubling_orbit_first_returns_to_one_at_six) |
+| Hodge Conjecture | `the_span_is_exactly_the_units_of_the_ring` | 81 | [lean_millenniumfloor_the_s…](/theorem/lean_millenniumfloor_the_span_is_exactly_the_units_of_the_ring) |
+| Birch and Swinnerton-Dyer Conjecture | `the_span_and_the_units_both_sum_to_zero_mod_nine` | 9 | [lean_millenniumfloor_the_s…](/theorem/lean_millenniumfloor_the_span_and_the_units_both_sum_to_zero_mod_nine) |
+| Poincaré Conjecture (resolved) | `the_orbit_is_one_closed_loop_of_six_distinct_points` | 36 | [lean_millenniumfloor_the_o…](/theorem/lean_millenniumfloor_the_orbit_is_one_closed_loop_of_six_distinct_points) |
 
 <Funding/>

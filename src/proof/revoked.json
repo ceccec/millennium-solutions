@@ -313,5 +313,40 @@
     "key": "risk_reward_is_a_measured_proportion_reward_cases_over_risk_one_counterexample",
     "receipt": "8f7fe35d-04e1-8bd1-a239-dd018af4d574",
     "reason": "revoked by the captain's order to cap the ledger at exactly 1024 (v6.2.8) — a valid theorem removed to hold the milestone count, documented not hidden"
+  },
+  {
+    "key": "lean_millenniumfloor_riemann_reflection_and_heart",
+    "receipt": "bed99ddf-9717-89b7-ab41-044197938855",
+    "reason": "renamed to what it decides (2026-09-18, by the author's order). The theorem carried a Clay problem's name and decided ℤ/9 arithmetic: this one settled nothing about that conjecture, and the name was load-bearing — a claim that all seven Clay problems carried a Lean theorem rested on the seven names, and renaming one refuted it. The statement is unchanged and is sealed under a name that says what it decides; the key is revoked rather than rewritten, because the ledger is append-only and altering a sealed row is tamper."
+  },
+  {
+    "key": "lean_millenniumfloor_p_vs_np_inverse_is_unique",
+    "receipt": "61ed32b1-0fcf-81bc-b255-71f39404187e",
+    "reason": "renamed to what it decides (2026-09-18, by the author's order). The theorem carried a Clay problem's name and decided ℤ/9 arithmetic: this one settled nothing about that conjecture, and the name was load-bearing — a claim that all seven Clay problems carried a Lean theorem rested on the seven names, and renaming one refuted it. The statement is unchanged and is sealed under a name that says what it decides; the key is revoked rather than rewritten, because the ledger is append-only and altering a sealed row is tamper."
+  },
+  {
+    "key": "lean_millenniumfloor_navier_stokes_flow_is_bounded",
+    "receipt": "dafe2bb3-c1f5-8197-a981-5092d81bf85f",
+    "reason": "renamed to what it decides (2026-09-18, by the author's order). The theorem carried a Clay problem's name and decided ℤ/9 arithmetic: this one settled nothing about that conjecture, and the name was load-bearing — a claim that all seven Clay problems carried a Lean theorem rested on the seven names, and renaming one refuted it. The statement is unchanged and is sealed under a name that says what it decides; the key is revoked rather than rewritten, because the ledger is append-only and altering a sealed row is tamper."
+  },
+  {
+    "key": "lean_millenniumfloor_yang_mills_spectral_gap",
+    "receipt": "1152fb8f-f7d8-8ded-a8fb-e9f718974e4b",
+    "reason": "renamed to what it decides (2026-09-18, by the author's order). The theorem carried a Clay problem's name and decided ℤ/9 arithmetic: this one settled nothing about that conjecture, and the name was load-bearing — a claim that all seven Clay problems carried a Lean theorem rested on the seven names, and renaming one refuted it. The statement is unchanged and is sealed under a name that says what it decides; the key is revoked rather than rewritten, because the ledger is append-only and altering a sealed row is tamper."
+  },
+  {
+    "key": "lean_millenniumfloor_hodge_span_is_the_units",
+    "receipt": "dd0efc5b-a2ff-8eb8-977c-d18a4ae47986",
+    "reason": "renamed to what it decides (2026-09-18, by the author's order). The theorem carried a Clay problem's name and decided ℤ/9 arithmetic: this one settled nothing about that conjecture, and the name was load-bearing — a claim that all seven Clay problems carried a Lean theorem rested on the seven names, and renaming one refuted it. The statement is unchanged and is sealed under a name that says what it decides; the key is revoked rather than rewritten, because the ledger is append-only and altering a sealed row is tamper."
+  },
+  {
+    "key": "lean_millenniumfloor_birch_swinnerton_dyer_vanishing",
+    "receipt": "57ed1964-529c-8f22-b06b-51b840edacf8",
+    "reason": "renamed to what it decides (2026-09-18, by the author's order). The theorem carried a Clay problem's name and decided ℤ/9 arithmetic: this one settled nothing about that conjecture, and the name was load-bearing — a claim that all seven Clay problems carried a Lean theorem rested on the seven names, and renaming one refuted it. The statement is unchanged and is sealed under a name that says what it decides; the key is revoked rather than rewritten, because the ledger is append-only and altering a sealed row is tamper."
+  },
+  {
+    "key": "lean_millenniumfloor_poincare_single_closed_loop",
+    "receipt": "7b9dd11f-6b04-8c0c-a2b1-541c328d2f0d",
+    "reason": "renamed to what it decides (2026-09-18, by the author's order). The theorem carried a Clay problem's name and decided ℤ/9 arithmetic: this one settled nothing about that conjecture, and the name was load-bearing — a claim that all seven Clay problems carried a Lean theorem rested on the seven names, and renaming one refuted it. The statement is unchanged and is sealed under a name that says what it decides; the key is revoked rather than rewritten, because the ledger is append-only and altering a sealed row is tamper."
   }
 ]

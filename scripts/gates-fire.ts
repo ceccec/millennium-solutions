@@ -358,9 +358,18 @@ const CONTROLS: Control[] = [
     what: 'a right published in llms.txt that does not arise without formality — the overclaim reaching the public surface',
     mutate: (s) => s.replace('  , (5, 2, false, false)', '  , (5, 2, false, true )'), restore: 'node scripts/notice.ts' },
 
+  // THE CONTROL USED TO MUTATE A CLAY NAME — it renamed `hodge_span_is_the_units` and required readme to
+  // notice the floor was measured over six. That control went with the claim it guarded: the seven are named
+  // for what they decide now, and no readme claim rests on a theorem's NAME any more. Its replacement was
+  // written blind and was a NO-OP — it substituted `def span : List Nat := [1, 2, 4, 8, 7, 5]`, a literal
+  // this file has not contained since span became `(List.range 6).map orbit`. gates-fire caught it on the
+  // first run, which is the whole reason a control is checked for matching anything at all: a mutation that
+  // edits nothing makes any gate look vigilant. This one breaks the FINITE-DOMAIN claim, whose test reads
+  // the source for a quantifier over ℕ — readme must refuse to write a sentence the file has stopped earning.
   { gate: 'readme', cmd: 'node scripts/readme.ts', file: 'src/proof/index.lean',
-    what: 'one of the seven Clay theorems no longer being Clay-named, so the floor is measured over six',
-    mutate: (s) => s.replace('theorem hodge_span_is_the_units', 'theorem span_is_the_units') },
+    what: 'a statement quantified over an infinite domain, which the finite-domain claim says is not there',
+    mutate: (s) => s.replace('theorem the_seven_rest_on_one_finite_structure :',
+      'theorem the_seven_reach_past_the_finite (n : Nat) : \u2200 m : \u2115, m = m := by intro m; rfl\ntheorem the_seven_rest_on_one_finite_structure :') },
 
   // My first mutation renamed the header to "Content-Security-Policy-Removed-By-Control", which still
   // CONTAINS the string the gate greps for, so the gate passed and I read that as the gate being broken. The
@@ -398,7 +407,7 @@ const CONTROLS: Control[] = [
 
   { gate: 'pages', cmd: 'node scripts/pages.ts', file: 'scripts/pages.ts',
     what: 'the front page citing a theorem that is not live in the ledger',
-    mutate: (s) => s.replace('/theorem/lean_millenniumfloor_riemann_reflection_and_heart', '/theorem/a_key_that_was_never_sealed'),
+    mutate: (s) => s.replace('/theorem/lean_millenniumfloor_the_seven_rest_on_one_finite_structure', '/theorem/a_key_that_was_never_sealed'),
     restore: 'node scripts/pages.ts' },
 
   { gate: 'orphan-gate', cmd: 'node scripts/orphan-gate.ts', file: 'package.json',

@@ -53,10 +53,15 @@ const CLAIMS: { section: string; statement: string; test: () => boolean }[] = [
     statement: 'the rosette carries seven elements, six units and the identity, so a bijection onto the seven Clay problems exists as a counting fact',
     test: () => units().length + 1 === 7 && CLAY.length === 7 && new Set(CLAY).size === 7 },
 
-  { section: 'The correspondence with the Clay problems',
-    statement: 'all seven Clay problems carry a Lean theorem that closes by decide with no sorry and no axiom, so the formal layer is green for seven of seven',
-    test: () => ['riemann','p_vs_np','navier_stokes','yang_mills','hodge','birch_swinnerton_dyer','poincare']
-      .every((k) => new RegExp('theorem ' + k + '[\\s\\S]*?:= by decide').test(lean)) },
+  // REMOVED, NOT REFUTED-AND-LEFT (2026-09-18, by the author's order). This claimed "all seven Clay
+  // problems carry a Lean theorem … green for seven of seven", and it tested for the WORDS `riemann`,
+  // `hodge`, `poincare` in theorem names. Those seven theorems decide ℤ/9 arithmetic and settle nothing
+  // about any conjecture — index.lean says so itself — so the claim was true of the file and false of
+  // what a reader takes from it, and the Clay words in the names were the only thing holding it up.
+  // The theorems are renamed to what they decide, so the claim cannot be made and is not made. A claim
+  // left standing as REFUTED would be a crack; a claim deleted with the reason recorded is a decision.
+  // What survives beside it is the counting fact above, which needs no theorem name: the rosette carries
+  // seven elements and a bijection onto seven problems exists, which is arithmetic and not coverage.
 
   { section: 'The formal layer',
     statement: 'every statement the Lean layer decides ranges over a finite list, which is what makes it decidable, and no statement there quantifies over an infinite domain',

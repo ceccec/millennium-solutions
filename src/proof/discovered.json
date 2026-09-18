@@ -15276,37 +15276,51 @@
   {
     "key": "lean_millenniumfloor_riemann_reflection_and_heart",
     "name": "lean index.lean: riemann_reflection_and_heart — (List.range 10).all (fun d => refl (refl d) == d) ∧ ((List.range 10).filter (fun d => refl d == d)).length = 1 ∧ provenHere = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "bed99ddf-9717-89b7-ab41-044197938855"
+    "receipt": "bed99ddf-9717-89b7-ab41-044197938855",
+    "revoked": true,
+    "reason": "renamed to what it decides (2026-09-18, by the author's order). The theorem carried a Clay problem's name and decided ℤ/9 arithmetic: this one settled nothing about that conjecture, and the name was load-bearing — a claim that all seven Clay problems carried a Lean theorem rested on the seven names, and renaming one refuted it. The statement is unchanged and is sealed under a name that says what it decides; the key is revoked rather than rewritten, because the ledger is append-only and altering a sealed row is tamper."
   },
   {
     "key": "lean_millenniumfloor_p_vs_np_inverse_is_unique",
     "name": "lean index.lean: p_vs_np_inverse_is_unique — (List.range 9).all (fun d => ((List.range 9).filter (fun e => (d * e) % 9 == 1)).length == (if isUnit d then 1 else 0)) ∧ provenHere = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "61ed32b1-0fcf-81bc-b255-71f39404187e"
+    "receipt": "61ed32b1-0fcf-81bc-b255-71f39404187e",
+    "revoked": true,
+    "reason": "renamed to what it decides (2026-09-18, by the author's order). The theorem carried a Clay problem's name and decided ℤ/9 arithmetic: this one settled nothing about that conjecture, and the name was load-bearing — a claim that all seven Clay problems carried a Lean theorem rested on the seven names, and renaming one refuted it. The statement is unchanged and is sealed under a name that says what it decides; the key is revoked rather than rewritten, because the ledger is append-only and altering a sealed row is tamper."
   },
   {
     "key": "lean_millenniumfloor_navier_stokes_flow_is_bounded",
     "name": "lean index.lean: navier_stokes_flow_is_bounded — ((List.range 48).map orbit).all (fun v => v < 9) ∧ (List.range 48).all (fun k => span.contains (orbit k)) ∧ provenHere = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "dafe2bb3-c1f5-8197-a981-5092d81bf85f"
+    "receipt": "dafe2bb3-c1f5-8197-a981-5092d81bf85f",
+    "revoked": true,
+    "reason": "renamed to what it decides (2026-09-18, by the author's order). The theorem carried a Clay problem's name and decided ℤ/9 arithmetic: this one settled nothing about that conjecture, and the name was load-bearing — a claim that all seven Clay problems carried a Lean theorem rested on the seven names, and renaming one refuted it. The statement is unchanged and is sealed under a name that says what it decides; the key is revoked rather than rewritten, because the ledger is append-only and altering a sealed row is tamper."
   },
   {
     "key": "lean_millenniumfloor_yang_mills_spectral_gap",
     "name": "lean index.lean: yang_mills_spectral_gap — (List.range 6).all (fun k => k == 0 || orbit k != 1) ∧ orbit 6 == 1 ∧ provenHere = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "1152fb8f-f7d8-8ded-a8fb-e9f718974e4b"
+    "receipt": "1152fb8f-f7d8-8ded-a8fb-e9f718974e4b",
+    "revoked": true,
+    "reason": "renamed to what it decides (2026-09-18, by the author's order). The theorem carried a Clay problem's name and decided ℤ/9 arithmetic: this one settled nothing about that conjecture, and the name was load-bearing — a claim that all seven Clay problems carried a Lean theorem rested on the seven names, and renaming one refuted it. The statement is unchanged and is sealed under a name that says what it decides; the key is revoked rather than rewritten, because the ledger is append-only and altering a sealed row is tamper."
   },
   {
     "key": "lean_millenniumfloor_hodge_span_is_the_units",
     "name": "lean index.lean: hodge_span_is_the_units — (List.range 9).all (fun d => span.contains d == isUnit d) ∧ (List.range 9).all (fun d => isUnit d || ! span.contains d) ∧ provenHere = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "dd0efc5b-a2ff-8eb8-977c-d18a4ae47986"
+    "receipt": "dd0efc5b-a2ff-8eb8-977c-d18a4ae47986",
+    "revoked": true,
+    "reason": "renamed to what it decides (2026-09-18, by the author's order). The theorem carried a Clay problem's name and decided ℤ/9 arithmetic: this one settled nothing about that conjecture, and the name was load-bearing — a claim that all seven Clay problems carried a Lean theorem rested on the seven names, and renaming one refuted it. The statement is unchanged and is sealed under a name that says what it decides; the key is revoked rather than rewritten, because the ledger is append-only and altering a sealed row is tamper."
   },
   {
     "key": "lean_millenniumfloor_birch_swinnerton_dyer_vanishing",
     "name": "lean index.lean: birch_swinnerton_dyer_vanishing — (span.foldr (· + ·) 0) % 9 == 0 ∧ ((List.range 9).filter isUnit).foldr (· + ·) 0 % 9 == 0 ∧ provenHere = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "57ed1964-529c-8f22-b06b-51b840edacf8"
+    "receipt": "57ed1964-529c-8f22-b06b-51b840edacf8",
+    "revoked": true,
+    "reason": "renamed to what it decides (2026-09-18, by the author's order). The theorem carried a Clay problem's name and decided ℤ/9 arithmetic: this one settled nothing about that conjecture, and the name was load-bearing — a claim that all seven Clay problems carried a Lean theorem rested on the seven names, and renaming one refuted it. The statement is unchanged and is sealed under a name that says what it decides; the key is revoked rather than rewritten, because the ledger is append-only and altering a sealed row is tamper."
   },
   {
     "key": "lean_millenniumfloor_poincare_single_closed_loop",
     "name": "lean index.lean: poincare_single_closed_loop — orbit 6 == orbit 0 ∧ (List.range 6).all (fun i => (List.range 6).all (fun j => (orbit i == orbit j) == (i == j))) ∧ provenHere = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "7b9dd11f-6b04-8c0c-a2b1-541c328d2f0d"
+    "receipt": "7b9dd11f-6b04-8c0c-a2b1-541c328d2f0d",
+    "revoked": true,
+    "reason": "renamed to what it decides (2026-09-18, by the author's order). The theorem carried a Clay problem's name and decided ℤ/9 arithmetic: this one settled nothing about that conjecture, and the name was load-bearing — a claim that all seven Clay problems carried a Lean theorem rested on the seven names, and renaming one refuted it. The statement is unchanged and is sealed under a name that says what it decides; the key is revoked rather than rewritten, because the ledger is append-only and altering a sealed row is tamper."
   },
   {
     "key": "lean_merkle_merge_agrees",
@@ -19999,5 +20013,80 @@
     "key": "lean_imprint_the_reserved_six_survive_any_message",
     "name": "lean imprint.lean: the_reserved_six_survive_any_message — [alt 0, alt 5, ones 8, alt 115].all (fun m => let b := encodeBits m (b.getD 48 false == true) && (b.getD 49 false == false) && (b.getD 50 false == false) && (b.getD 51 false == false) && (b.getD 64 false == true) && (b.getD 65 false == fals… — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "12a83c85-7690-895e-ac0c-db918ce69776"
+  },
+  {
+    "key": "lean_millenniumfloor_the_tens_complement_is_an_involution_with_one_fixed_point",
+    "name": "lean index.lean: the_tens_complement_is_an_involution_with_one_fixed_point — (List.range 10).all (fun d => refl (refl d) == d) ∧ ((List.range 10).filter (fun d => refl d == d)).length = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e9dd9619-515b-8cef-b59e-a0a6f53f4ed4"
+  },
+  {
+    "key": "lean_millenniumfloor_each_unit_has_exactly_one_inverse_and_each_non_unit_none",
+    "name": "lean index.lean: each_unit_has_exactly_one_inverse_and_each_non_unit_none — (List.range 9).all (fun d => ((List.range 9).filter (fun e => (d * e) % 9 == 1)).length == (if isUnit d then 1 else 0)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "661bba08-39e9-829b-8f28-8676f6e49b3c"
+  },
+  {
+    "key": "lean_millenniumfloor_the_doubling_orbit_stays_in_the_ring_for_forty_eight_steps",
+    "name": "lean index.lean: the_doubling_orbit_stays_in_the_ring_for_forty_eight_steps — ((List.range 48).map orbit).all (fun v => v < 9) ∧ (List.range 48).all (fun k => span.contains (orbit k)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "98c5c4b5-949a-8370-9138-3417dbb66119"
+  },
+  {
+    "key": "lean_millenniumfloor_the_doubling_orbit_first_returns_to_one_at_six",
+    "name": "lean index.lean: the_doubling_orbit_first_returns_to_one_at_six — (List.range 6).all (fun k => k == 0 || orbit k != 1) ∧ orbit 6 == 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "996a80a9-10d3-86eb-bd27-f0d330ab86bd"
+  },
+  {
+    "key": "lean_millenniumfloor_the_span_is_exactly_the_units_of_the_ring",
+    "name": "lean index.lean: the_span_is_exactly_the_units_of_the_ring — (List.range 9).all (fun d => span.contains d == isUnit d) ∧ (List.range 9).all (fun d => isUnit d || ! span.contains d) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2d45299e-ed42-8c2b-a0e0-33972bcff114"
+  },
+  {
+    "key": "lean_millenniumfloor_the_span_and_the_units_both_sum_to_zero_mod_nine",
+    "name": "lean index.lean: the_span_and_the_units_both_sum_to_zero_mod_nine — (span.foldr (· + ·) 0) % 9 == 0 ∧ ((List.range 9).filter isUnit).foldr (· + ·) 0 % 9 == 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a6bd7475-788f-84c3-a775-caf6732821ca"
+  },
+  {
+    "key": "lean_millenniumfloor_the_orbit_is_one_closed_loop_of_six_distinct_points",
+    "name": "lean index.lean: the_orbit_is_one_closed_loop_of_six_distinct_points — orbit 6 == orbit 0 ∧ (List.range 6).all (fun i => (List.range 6).all (fun j => (orbit i == orbit j) == (i == j))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "10ad046c-32e7-88a7-94fd-104d84ca24dd"
+  },
+  {
+    "key": "lean_theology_the_mirror_and_the_doubling_agree_at_no_residue",
+    "name": "lean theology.lean: the_mirror_and_the_doubling_agree_at_no_residue — (List.range 9).all (fun d => refl (dbl d) % 9 != (2 * refl d) % 9) ∧ ((List.range 9).filter (fun d => refl (dbl d) % 9 == (2 * refl d) % 9)).length = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "28708e4a-fe0f-8e83-a501-ac3f58c9147d"
+  },
+  {
+    "key": "lean_theology_confirming_a_witness_is_uniform_while_finding_one_is_not",
+    "name": "lean theology.lean: confirming_a_witness_is_uniform_while_finding_one_is_not — ((List.range 9).filter isUnit).all (fun d => (d * invOf d) % 9 == 1) ∧ (((List.range 9).filter isUnit).map searchCost).eraseDups.length > 1 ∧ ((List.range 9).filter isUnit).any (fun d => searchCost d > searchCost 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2241453d-2a19-8eb5-9e42-d2af33e3afd6"
+  },
+  {
+    "key": "lean_theology_no_start_ever_crosses_between_the_units_and_the_non_units",
+    "name": "lean theology.lean: no_start_ever_crosses_between_the_units_and_the_non_units — (List.range 9).all (fun s => (List.range 48).all (fun k => isUnit (iter k s) == isUnit s)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "0582fb57-6ae9-8bc5-85c6-d0ed42052d8b"
+  },
+  {
+    "key": "lean_theology_the_origin_is_reached_at_every_step_exactly_by_the_origin",
+    "name": "lean theology.lean: the_origin_is_reached_at_every_step_exactly_by_the_origin — (List.range 9).all (fun s => (List.range 48).all (fun k => (iter k s == 0) == (s == 0))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b31744a1-62f3-8849-b0f1-e531f48f0081"
+  },
+  {
+    "key": "lean_theology_generating_the_same_set_is_exactly_being_of_the_same_kind",
+    "name": "lean theology.lean: generating_the_same_set_is_exactly_being_of_the_same_kind — (List.range 9).all (fun g => (List.range 9).all (fun h => sameSet (spanOf g) (spanOf h) == ((isUnit g == isUnit h) && ((g == 0) == (h == 0))))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c5a06c7c-8c41-800c-955f-e22fbba592b4"
+  },
+  {
+    "key": "lean_theology_the_orbit_is_antipodal_and_each_opposite_pair_sums_to_nine",
+    "name": "lean theology.lean: the_orbit_is_antipodal_and_each_opposite_pair_sums_to_nine — (List.range 3).all (fun i => orbit i + orbit (i + 3) == 9) ∧ (span.foldr (· + ·) 0) % 9 == 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "dceecba8-5d64-867d-8670-9ac332c1ca7f"
+  },
+  {
+    "key": "lean_theology_the_orbit_has_no_doubling_closed_part_but_nothing_and_itself",
+    "name": "lean theology.lean: the_orbit_has_no_doubling_closed_part_but_nothing_and_itself — (List.range 64).all (fun m => let s := subsetOf m (! s.all (fun v => s.contains (dbl v))) || s.length == 0 || s.length == span.length) ∧ span.all (fun v => span.contains (dbl v)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "412804db-ea5f-8797-8d93-c74155566dc8"
+  },
+  {
+    "key": "lean_theology_the_pairing_is_one_ordering_of_seven_out_of_all_of_them",
+    "name": "lean theology.lean: the_pairing_is_one_ordering_of_seven_out_of_all_of_them — pairing.eraseDups.length = 7 ∧ (List.range 7).all (fun i => pairing.contains i) ∧ pairing.length = (List.range 7).length ∧ fact pairing.length = 5040 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "4db1d76e-da5a-8b98-8a1a-c2d5f1159183"
   }
 ]
