@@ -15,7 +15,6 @@
 // FRONTMATTER is the explicit part — `-- key: value` lines in a leading block, before the prose. Only `title`
 // and `wing` are read; anything else is carried through untouched so a field can be added without editing
 // this file. A file without frontmatter falls back to its own name, which is honest but plainer.
-import { readFileSync } from 'node:fs'
 import { leanFiles, leanSource, frontmatter as fmOf, domainOf, normalizeStatement } from '../src/api/index.ts'
 
 export { domainOf }

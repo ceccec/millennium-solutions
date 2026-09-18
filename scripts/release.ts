@@ -1,21 +1,11 @@
 #!/usr/bin/env node
 // Content-addressed release orchestration (idempotent).
 import { execSync } from 'node:child_process'
-import { existsSync, readFileSync, writeFileSync, readdirSync, statSync } from 'node:fs'
-import { join } from 'node:path'
+import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 import { merkleGravity } from '../src/the/apple/index.ts'
 import { ledger as __ledger } from '../src/api/index.ts'
 
-const SKIP_DIR = new Set(['node_modules', '.git', 'cache', 'dist'])
-function walk(dir, acc = []) {
-  for (const name of readdirSync(dir)) {
-    const p = join(dir, name)
-    if (statSync(p).isDirectory()) { if (!SKIP_DIR.has(name)) walk(p, acc) }
-    else acc.push(p)
-  }
-  return acc
-}
 // Version: explicit arg wins; otherwise DERIVE the next patch from the latest tag.
 // (Never default to v1.0.0 — that would re-tag an already-published release.)
 function nextVersion() {

@@ -22,7 +22,7 @@ import { P as ED_P, L as ED_L } from '../src/0/ed25519.ts'
 import { vortexOrder, vortexOrderReversed } from '../src/7/rays.ts'
 import { refused } from '../src/honesty/claims.ts'
 import { execSync } from 'node:child_process'
-import { writeFileSync, unlinkSync } from 'node:fs'
+import { writeFileSync, unlinkSync, statSync, readFileSync } from 'node:fs'
 
 // `mod` is the MODULE (which Lean derives from the file name) and `expr` uses the NAMESPACE declared inside
 // it — index.lean is the module `Index` and the namespace `MillenniumFloor`, and conflating the two is why
@@ -133,9 +133,29 @@ if (!hasLean) {
 }
 
 const ENV = { ...process.env, LEAN_PATH: 'src/proof' }
+// AN OLEAN IS A CACHE OF WORK, NEVER OF TRUST — the same rule scripts/lean.ts states for its own. This
+// rebuilt every module on every run and took 9.4 seconds to compare a handful of values, and the number of
+// modules only grows: four constants became nine rows across five modules today. A rebuild is skipped when
+// the compiled artefact is newer than the source AND newer than every source that source imports, which is
+// exactly the condition under which a rebuild would reproduce it. `--full` rebuilds regardless.
+const FULL = process.argv.includes('--full')
+const newest = (file: string, seen = new Set<string>()): number => {
+  if (seen.has(file)) return 0
+  seen.add(file)
+  let t = 0
+  try { t = statSync(`src/proof/${file}`).mtimeMs } catch { return Date.now() }   // unreadable: always rebuild
+  for (const m of readFileSync(`src/proof/${file}`, 'utf8').matchAll(/^import\s+(\w+)/gm))
+    t = Math.max(t, newest(m[1].toLowerCase() + '.lean', seen))
+  return t
+}
+let built = 0, reused = 0
 for (const m of mods) {
   const file = m.toLowerCase() + '.lean'
-  try { execSync(`lean -o src/proof/${m}.olean src/proof/${file}`, { stdio: 'pipe', env: ENV }) }
+  const olean = `src/proof/${m}.olean`
+  let fresh = false
+  if (!FULL) { try { fresh = statSync(olean).mtimeMs > newest(file) } catch { fresh = false } }
+  if (fresh) { reused++; continue }
+  try { execSync(`lean -o ${olean} src/proof/${file}`, { stdio: 'pipe', env: ENV }); built++ }
   catch { console.error(`✗ lean-agree: the kernel rejects src/proof/${file} — fix that before comparing constants`); process.exit(1) }
 }
 // ONE LINE PER VALUE, OR THE PAIRING IS WRONG. The verdicts are matched to PAIRS by line index, and a bare
@@ -158,7 +178,7 @@ unlinkSync(probe)
 
 const values = out.trim().split('\n').map((l) => l.trim())
 let bad = 0
-console.log('runtime ↔ Lean — evaluated, not read:')
+console.log(`runtime ↔ Lean — evaluated, not read (${built} module(s) compiled, ${reused} reused from an olean newer than its sources):`)
 PAIRS.forEach((p, i) => {
   const got = (values[i] ?? '').replace(/[\[\]]/g, '').split(',').map((x) => Number(x.trim())).filter((n) => !Number.isNaN(n))
   const N = (p as { raw?: boolean }).raw ? (xs: number[]) => xs : mod9

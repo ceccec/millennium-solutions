@@ -3,7 +3,7 @@
 // hand-written. The challenge status is cited (Poincaré settled externally); the deposit's own count
 // and the discovered theorems are computed from src/proof/discovered.json. gitignored (generated at
 // build), so it never enters the content-address and never churns a phantom version.
-import { readFileSync, writeFileSync, existsSync } from 'node:fs'
+import { writeFileSync, existsSync } from 'node:fs'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 import { ledger as __ledger, statusOf as __statusOf, carrierOf } from '../src/api/index.ts'
 import { isLive as __isLive, isWithdrawn as __isWithdrawn } from '../src/api/index.ts'

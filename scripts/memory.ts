@@ -25,7 +25,6 @@ const led = __ledger() as
   { key: string; revoked?: boolean; portable?: boolean }[]
 const live = led.filter(__isLive)
 const leanFiles = readdirSync('src/proof').filter((f) => f.endsWith('.lean')).sort()
-const src = Object.fromEntries(leanFiles.map((f) => [f, readFileSync(`src/proof/${f}`, 'utf8')]))
 const LEAN = leanTheoremsShared()
 const theorems = LEAN.length
 const byDecide = LEAN.filter((t) => t.tactic === 'by decide').length

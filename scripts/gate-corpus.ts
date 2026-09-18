@@ -12,7 +12,7 @@
 // says so, and the case is promoted back into CASES. A limit you measure on every ship is not a blind spot.
 //
 // Each case is [text, want, why]. want=0 → must DRAIN. want=1 → must PASS.
-// Run: npx tsx scripts/gate-corpus.ts
+// Run: node scripts/gate-corpus.ts
 import { computes } from './honesty-gate.ts'
 import { createRequire } from 'node:module'
 

@@ -26,9 +26,9 @@ import { promisify } from 'node:util'
 // after a change that cut total work by nearly half — which is what a fake lane looks like from outside.
 // (Named leanRun, not run: the lane helper already binds `run` for its callback.)
 const leanRun = promisify(execFile)
-import { tmpdir, availableParallelism } from 'node:os'
+import { tmpdir} from 'node:os'
 import { join } from 'node:path'
-import { leanTheorems, leanFiles } from '../src/api/index.ts'
+import { leanTheorems} from '../src/api/index.ts'
 import { laneBudget } from '../src/api/lanes.ts'
 
 type T = { name: string; file: string; tactic: string; statement: string; namespace: string }

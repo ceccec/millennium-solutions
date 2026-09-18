@@ -5,7 +5,7 @@
 //   • PATTERN (numerology) — a432 wheel / palindrome / 3-5-8. LABELED coincidence, NOT proof (you conceded this).
 // Perception-aware: static SVG, no motion (respects reduced-motion by having none). NO "convincing" rhetoric,
 // NO neurological/health claims. Regenerated each build => computed, not hardcoded.
-import { readFileSync, existsSync, writeFileSync } from 'node:fs'
+import { writeFileSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 
 const version = (() => { try { return execSync('git tag --sort=version:refname', { encoding: 'utf8' }).trim().split('\n').pop() || 'v0' } catch { return 'v0' } })()

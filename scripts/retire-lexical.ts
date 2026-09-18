@@ -45,7 +45,7 @@
 //
 // Run: node scripts/retire-lexical.ts           measure and report, write nothing
 //      node scripts/retire-lexical.ts --write   also record the reason on entries that lack it
-import { readFileSync, writeFileSync } from 'node:fs'
+import { writeFileSync } from 'node:fs'
 import { registerHooks, type LoadFnOutput, type LoadHookContext } from 'node:module'
 import { ledger as __ledger } from '../src/api/index.ts'
 import { isLive as __isLive, isWithdrawn as __isWithdrawn } from '../src/api/index.ts'

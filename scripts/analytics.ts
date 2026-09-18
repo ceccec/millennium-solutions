@@ -10,7 +10,7 @@
 // Everything here is READ FROM ARTEFACTS on disk — the ledger, the Lean sources, the prover's own queue. No
 // figure is passed in and none is remembered between runs, so a stale number cannot survive a rebuild. The
 // one measured timing is labelled as belonging to the machine that produced it, because it does.
-import { readFileSync, writeFileSync } from 'node:fs'
+import { writeFileSync } from 'node:fs'
 import { leanTheorems as leanTheoremsShared } from '../src/api/index.ts'
 
 const LEAN = leanTheoremsShared()

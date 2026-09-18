@@ -36,18 +36,41 @@ function expmod(b: bigint, e: bigint, m: bigint): bigint {
 }
 function inv(a: bigint): bigint { return expmod(a, P - 2n, P) }
 
-// Edwards curve points in extended coordinates would be faster; affine is shorter and this signs uuids.
+// EXTENDED COORDINATES, BECAUSE AFFINE PUT AN INVERSION INSIDE EVERY ADDITION. The first version added
+// points as (x, y) and each addition called `inv` twice — a 255-step modular exponentiation apiece — so a
+// single scalar multiplication paid for roughly five hundred of them. crypto-kat took 3.8 seconds to check
+// three published vectors. In extended coordinates (X : Y : Z : T), with x = X/Z, y = Y/Z and T = XY/Z, an
+// addition is multiplications only; ONE inversion is paid, at the end, when a point is encoded. The
+// formulas are the standard ones for a twisted Edwards curve with a = −1 (Hisil, Wong, Carter and Dawson,
+// 2008, "add-2008-hwcd-3"), and RFC 8032's vectors are what says the port is faithful — they are checked on
+// every run by scripts/crypto-kat.ts, which is the only reason to believe any of this.
 type Pt = [bigint, bigint]
-function edwards(a: Pt, b: Pt): Pt {
-  const [x1, y1] = a, [x2, y2] = b
-  const t = mod(D * x1 * x2 * y1 * y2)
-  return [mod((x1 * y2 + x2 * y1) * inv(1n + t)), mod((y1 * y2 + x1 * x2) * inv(1n - t))]
+type Ext = [bigint, bigint, bigint, bigint]
+const toExt = ([x, y]: Pt): Ext => [mod(x), mod(y), 1n, mod(x * y)]
+const toAffine = ([X, Y, Z]: Ext): Pt => { const zi = inv(Z); return [mod(X * zi), mod(Y * zi)] }
+const D2 = mod(2n * D)
+
+function extAdd(p: Ext, q: Ext): Ext {
+  const [X1, Y1, Z1, T1] = p, [X2, Y2, Z2, T2] = q
+  const A = mod((Y1 - X1) * (Y2 - X2))
+  const B = mod((Y1 + X1) * (Y2 + X2))
+  const C = mod(T1 * D2 * T2)
+  const Dd = mod(Z1 * 2n * Z2)
+  const E = B - A, F = Dd - C, G = Dd + C, H = B + A
+  return [mod(E * F), mod(G * H), mod(F * G), mod(E * H)]
 }
+function extDouble(p: Ext): Ext { return extAdd(p, p) }
+
 function scalarMult(p: Pt, e: bigint): Pt {
-  if (e === 0n) return [0n, 1n]
-  const q = scalarMult(p, e >> 1n)
-  const d = edwards(q, q)
-  return (e & 1n) ? edwards(d, p) : d
+  let acc: Ext = [0n, 1n, 1n, 0n]          // the neutral element
+  let base = toExt(p)
+  let k = e
+  while (k > 0n) {
+    if (k & 1n) acc = extAdd(acc, base)
+    base = extDouble(base)
+    k >>= 1n
+  }
+  return toAffine(acc)
 }
 function recoverX(y: bigint, sign: bigint): bigint | null {
   const y2 = y * y % P
@@ -110,7 +133,7 @@ export function verify(pub: readonly number[], msg: readonly number[], sig: read
   if (S >= L) return false                                  // a non-canonical S is rejected
   const k = mod(le(sha512([...sig.slice(0, 32), ...pub, ...msg])), L)
   const lhs = scalarMult(B, S)
-  const rhs = edwards(R, scalarMult(A, k))
+  const rhs = toAffine(extAdd(toExt(R), toExt(scalarMult(A, k))))
   return lhs[0] === rhs[0] && lhs[1] === rhs[1]
 }
 

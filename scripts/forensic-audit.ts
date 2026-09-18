@@ -33,7 +33,7 @@
  *      be: thue_morse_doubling_recurrence was withdrawn as having "no stated decidable form yet" and was
  *      proved in twenty lines on 2026-09-05.
  */
-import { readFileSync, writeFileSync } from 'node:fs'
+import { writeFileSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 import { toUuid } from '../src/0/index.ts'
 import { ledger, statusOf } from '../src/api/index.ts'

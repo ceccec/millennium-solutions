@@ -3,7 +3,6 @@
 // RE-RUNS every recorded theorem's test and re-gates every name, so a silent regression (a test that no longer
 // computes true, a name that drains) is caught. Also checks the chain-of-custody and duplicate keys. Run it
 // anytime: `npm run verify`. Integrity, not truth.
-import { readFileSync } from 'node:fs'
 import { provable } from './discover.ts'
 import { computes } from './honesty-gate.ts'
 import { toUuid } from '../src/0/index.ts'

@@ -17,7 +17,7 @@
 // identifier for someone else's paper would be a fabricated citation, and a fabricated citation in a
 // document about attribution is the worst possible place for one. Where a reader needs the identifier they
 // have the author, the year and the title, which is enough to find it.
-import { writeFileSync, readFileSync } from 'node:fs'
+import { writeFileSync} from 'node:fs'
 import { leanFiles, leanSource, leanTheorems, frontmatter } from '../src/api/index.ts'
 import { escapeHtml } from '../src/html/index.ts'
 import { toUuid, merkleFold } from '../src/0/index.ts'

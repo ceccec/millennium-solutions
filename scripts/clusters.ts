@@ -37,7 +37,7 @@ import { execFileSync } from 'node:child_process'
 import { leanTheorems, type LeanTheorem } from '../src/api/index.ts'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 import { rays2x7, toCoords, torusDistance, MOD, DIMENSIONS } from '../src/7/rays.ts'
-import { CONCEPT_DOI, SITE, REPO, FUNDING, humanise, closureOf, creditedIn } from '../src/publication/index.ts'
+import { CONCEPT_DOI, SITE, REPO, closureOf, creditedIn } from '../src/publication/index.ts'
 
 const OUT = '.zenodo/clusters'
 // WHAT A PERMANENT RECORD IS AS OF. Every figure here moves when anything is sealed anywhere, and a link to `main` moves

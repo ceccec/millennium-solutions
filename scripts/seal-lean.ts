@@ -11,7 +11,7 @@
 //
 //   node scripts/seal-lean.ts          report what would be sealed
 //   node scripts/seal-lean.ts --seal   seal it
-import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs'
+import { readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 import { toUuid } from '../src/0/index.ts'
 import { leanTheorems, ledger as __ledger } from '../src/api/index.ts'

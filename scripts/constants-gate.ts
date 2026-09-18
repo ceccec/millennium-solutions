@@ -26,7 +26,11 @@ const GENERATED = ['README.md', 'index.md', 'paper.md']
 // protecting anything". A gate that fixes the defect before looking for it reports green, for the same
 // reason an empty extractor does.
 const before = new Map(GENERATED.map((f) => [f, readFileSync(f, 'utf8')]))
-execSync('npx tsx scripts/pages.ts', { stdio: 'ignore' })
+// `node`, NOT `npx tsx` — every other invocation in this repository runs a script with plain node, and one
+// spelling for one thing is the rule this tree keeps. MEASURED, because the first version of this comment
+// claimed the npx spawn was why the gate took 17.3 seconds and that was wrong: it is 17.4 with node, and
+// `pages.ts` alone is 17.3. The cost is the page build, not the runtime that starts it.
+execSync('node scripts/pages.ts', { stdio: 'ignore' })
 const unexpected = GENERATED.filter((f) => readFileSync(f, 'utf8') !== before.get(f))
 
 if (unexpected.length) {

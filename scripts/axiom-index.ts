@@ -15,7 +15,7 @@
 //   THE DEFINITIONS USED — every `def` and `abbrev` in src/proof, with its body. These are the primitives.
 //     A theorem about `fall` is a theorem about the digital root only because `fall` is defined to be it;
 //     read the definition or the theorem means nothing. That is the honest base of the research.
-import { writeFileSync, readFileSync, readdirSync, existsSync } from 'node:fs'
+import { writeFileSync, readFileSync, existsSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 import { leanTheorems, leanFiles, leanSource } from '../src/api/index.ts'
 
@@ -72,7 +72,6 @@ if (!compiles) fail(`the negative control does not elaborate — a pinned axiom 
 if (!pinnedFree) fail(`${CONTROL} no longer pins the axiom-free footprint`)
 if (!pinnedAll3) fail(`${CONTROL} no longer pins the all-three footprint — the control cannot show the check distinguishes`)
 if (guards < 2) fail(`${CONTROL} has ${guards} \`#guard_msgs\` guard(s); both footprints must be pinned or the fixture only compiles, it does not assert`)
-const controlOk = compiles && pinnedFree && pinnedAll3 && guards >= 2
 
 // ── every declaration in the tree, and every definition under them ───────────────────────────────────────
 const T = leanTheorems()

@@ -7,7 +7,6 @@
  *  set. A zero that cannot go non-zero is not a measurement, so this run carries a control that must fire. */
 import { readFileSync } from 'node:fs'
 import { homedir } from 'node:os'
-import { createHash } from 'node:crypto'
 import { ledger } from '../src/api/index.ts'
 import { mergeKey } from '../src/publication/index.ts'
 

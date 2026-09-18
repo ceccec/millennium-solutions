@@ -4,7 +4,7 @@
 // number and the address moves). Integrity, not valuation: a coin proves the bytes, not their worth.
 // gitignored (generated at build), so it never enters the tracked content-address and never churns a
 // phantom version. Mirrors challenges.ts / dashboard.ts.
-import { readFileSync, readdirSync, existsSync, writeFileSync } from 'node:fs'
+import { readdirSync, existsSync, writeFileSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 import { ledger as __ledger } from '../src/api/index.ts'

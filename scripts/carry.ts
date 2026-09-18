@@ -21,7 +21,7 @@
 // So this REPORTS candidates and carries only keys on an explicit list, each read against the theorem's
 // STATEMENT rather than its name. Marking a claim proved when it is not would be the one error this ledger
 // cannot take back.
-import { writeFileSync, readFileSync } from 'node:fs'
+import { writeFileSync} from 'node:fs'
 import { ledger as __ledger, leanTheorems, statusOf, theoremOfKey } from '../src/api/index.ts'
 
 // THE HEIR IS A LEDGER KEY, NOT `lean_` + THE THEOREM NAME. A theorem's live key is an address and is often

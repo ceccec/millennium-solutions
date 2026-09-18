@@ -25,7 +25,7 @@
 //   node scripts/lean-gen.ts --emit     write, compile, audit, and check agreement
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { execSync } from 'node:child_process'
-import { toUuid, digitalRoot, units as uUnits, modpow, merkleFold, gcd as uGcd, isPrime, vortexOrbit, BASE } from '@uuidna/uuidna'
+import { toUuid, modpow, isPrime, BASE } from '@uuidna/uuidna'
 import { ledger as __ledger, units as apiUnits, axis } from '../src/api/index.ts'
 
 // LEARNED FROM uuidna's own Lean corpus (1329 theorems, read from the package): a theorem there carries more

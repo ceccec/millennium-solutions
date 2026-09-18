@@ -3,9 +3,9 @@
 // no Lean toolchain needed. Fills a real gap: CI can't run `lake build`, but it can confirm the
 // facts are true. Feeds trust in the formal layer; fails loudly if any claim stops being true.
 import { toUuid, units, triad, vortexOrbit, merkleFold, digitalRoot, digits } from '../src/0/index.ts'
-import { readFileSync, existsSync } from 'node:fs'
+import { existsSync } from 'node:fs'
 import { CANDIDATES } from './discover.ts'
-import { ledger as __ledger, orbit, isLive } from '../src/api/index.ts'
+import { ledger as __ledger, isLive } from '../src/api/index.ts'
 
 // REVOKED ENTRIES ARE NOT LIVE CLAIMS. The ledger is append-only and its receipts are immutable, so an entry
 // that no longer holds is marked in place rather than deleted — deleting would break the chain, and rewriting

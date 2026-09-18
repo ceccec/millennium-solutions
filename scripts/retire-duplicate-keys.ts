@@ -19,7 +19,7 @@
 // WHICH ONE SURVIVES needs no judgment: the namespaced key is unambiguous and the bare one is not — that is
 // why the convention exists, and it is why `lean_add_group` remains unresolvable, being a bare name declared
 // in two files with no namespaced key to fall back to.
-import { readFileSync, writeFileSync } from 'node:fs'
+import { writeFileSync } from 'node:fs'
 import { ledger as __ledger, leanTheorems, theoremOfKey } from '../src/api/index.ts'
 
 const ledger = __ledger() as { key: string; name: string; revoked?: boolean; reason?: string; supersededBy?: string }[]

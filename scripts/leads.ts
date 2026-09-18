@@ -8,7 +8,7 @@
  *  This REPORTS. A lead is not a failure — it is work that has not been done, which is a different thing
  *  from work that is wrong, and gating a build on an open question would only teach people to close
  *  questions cheaply. What it refuses to do is let the list be silent. */
-import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs'
+import { readFileSync, readdirSync, existsSync} from 'node:fs'
 import { homedir } from 'node:os'
 import { execSync } from 'node:child_process'
 import { leanFiles, leanSource, ledger, live, theoremCount } from '../src/api/index.ts'

@@ -3,7 +3,7 @@
 // diagonal) gathered with the games and the arts, all COMPUTED from the discovery ledger. gitignored
 // (generated at build), so it never churns. Honest bound, stated in-page: this presents the computed
 // structure; the life is the observer's to bring — the page explains geometry, not consciousness.
-import { readFileSync, writeFileSync, existsSync } from 'node:fs'
+import { writeFileSync, existsSync } from 'node:fs'
 import { toUuid, merkleFold, A432_STEP } from '../src/0/index.ts'
 import { ledger as __ledger } from '../src/api/index.ts'
 

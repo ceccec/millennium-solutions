@@ -34,7 +34,6 @@ const sha = (t: string) => createHash('sha256').update(t).digest('hex')
 import { execSync, execFile } from 'node:child_process'
 import { laneBudget } from '../src/api/lanes.ts'
 import { promisify } from 'node:util'
-import { availableParallelism } from 'node:os'
 const run = promisify(execFile)
 
 const DIR = 'src/proof'

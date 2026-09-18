@@ -19,9 +19,6 @@ import { join } from 'node:path'
 const LEAN_CACHE = 'src/proof/.lean-cache.json'
 import { ledger as __ledger, live, leanTheorems, fileOfKey } from '../src/api/index.ts'
 
-const ledger = (): { key: string; name: string; receipt: string }[] =>
-  existsSync('src/proof/discovered.json') ? __ledger() : []
-
 // A supporting formula is a ledger theorem whose predicate establishes the FLOOR relevant to the statement: the
 // trial theorems always apply; the disputed-cluster theorems apply when the statement names a disputed problem.
 const TRIAL = /trial|gate|drain|refus|overclaim|honest|floor|diamond|involution|double_torus|audit|only_claims|integrity|unsolved|remains|0_7/i

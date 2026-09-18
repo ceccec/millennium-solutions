@@ -229,7 +229,6 @@ const enNav = Object.keys(LOCALES.en.nav).sort().join(',')
 let sevenBad = 0
 for (const loc of LOCALE_ORDER) {
   const s = LOCALES[loc]
-  const blob = [s.title, s.description, s.support, s.fallback.notice, s.fallback.cta, ...Object.values(s.nav)].join(' · ')
   // THE GATE CHECK THAT USED TO SIT HERE COULD NOT FAIL. It read `computes(blob).binary !== 1`, and
   // computes() returns 1 for every string in every language — measured: an overclaim in English, German,
   // Bulgarian and Russian all score 1, as does an honest sentence. It is not a lexicon. So the sweep

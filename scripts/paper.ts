@@ -95,7 +95,6 @@ const byDecide = theorems.filter((t) => t.tactic === 'by decide').length
 const proofs = theorems.filter((t) => t.tactic !== 'by decide' && t.tactic !== 'rfl').length
 const rflOnly = theorems.filter((t) => t.tactic === 'rfl')
 const ownDoc = theorems.filter((t) => t.docFrom === 'own').length
-const typeset = theorems.filter((t) => toMathML(t.statement) !== null).length
 
 const esc = escapeHtml
 const n = (x: number) => x.toLocaleString('en-US')

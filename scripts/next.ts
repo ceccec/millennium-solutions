@@ -12,8 +12,7 @@
 //
 // Not blind iteration — understanding, then the binary.
 import { execSync } from 'node:child_process'
-import { readFileSync, readdirSync, statSync, existsSync, writeFileSync } from 'node:fs'
-import { join } from 'node:path'
+import { readFileSync, existsSync, writeFileSync } from 'node:fs'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 import { computes } from './honesty-gate.ts'
 import { provable } from './discover.ts'

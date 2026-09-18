@@ -6,7 +6,7 @@
 // exhaustion over a finite domain — genuinely true, genuinely found. It reaches none of the SIX open
 // Millennium conjectures; the seventh (Poincaré) is Perelman's proof (2003), not the deposit's.
 // Two counts, kept distinct: humanity 1/7; this deposit
-import { toUuid, merkleFold, units, triad, digitalRoot, digits, BASE, TRINITY, A432_STEP, vortexOrbit, foldPair, gcd, isPrime, modpow, strictUuidna } from '../src/0/index.ts'
+import { toUuid, merkleFold, units, triad, digitalRoot, digits, BASE, TRINITY, A432_STEP, vortexOrbit, foldPair, strictUuidna } from '../src/0/index.ts'
 import { fall as appleFall, merkleGravity as appleMerkleGravity, seats as appleSeats, fixedPoints as appleFixedPoints, doubleTorusGravity, doubleTorusField } from '../src/the/apple/index.ts'
 import { imprint, readImprint, roundTrips, coin64, CAPACITY, imprintChain, readImprintChain, imprintTextChain, readImprintTextChain } from '../src/0/imprint.ts'
 import { adjudicate, verifyUuidna, domainChallenge, verifyDomainControl } from './adjudicate.ts'
@@ -18,7 +18,7 @@ import { merkleRoot, merkleProof, verifyProof } from '../src/0/merkle-proof.ts'
 import { sha256, hmacSha256, pbkdf2Sha256 } from '../src/0/sha256.ts'
 import { aeadEncrypt, aeadDecrypt, chachaBlock, chacha20, poly1305 } from '../src/0/chacha.ts'
 import { report as theAll } from '../src/the/index.ts'
-import { diamond, DIAMOND_FIXED, involute, involutionFixed } from '../src/5/diamond.ts'
+import { diamond, DIAMOND_FIXED} from '../src/5/diamond.ts'
 import { report as theSeq } from '../src/the/sequence/index.ts'
 import { report as theThm } from '../src/the/theorem/index.ts'
 import { report as theGameR } from '../src/the/game/index.ts'
@@ -4136,7 +4136,6 @@ function generated(): typeof curated {
   // layer are both cheap, but reversing across all seven dimensions is not — the seven must all hold (a
   // conjunction), each an involution or a keyed layer, cross-linked by the rosetta.
   {
-    const enc = (s: string) => new TextEncoder().encode(s)
     const rev = (s: string) => s.split('').reverse().join('')
     const dims = Array.from({ length: 7 }, (_, i) => 'd' + (i + 1))
     const reverse7 = (claim: string[], actual: string[]) => claim.length === actual.length && claim.every((c, i) => c === actual[i]) // all 7 must match

@@ -10,7 +10,7 @@
 // of world-wide repute, two years elapsed since that publication, and general acceptance by the mathematics
 // community — and submissions cannot be sent to CMI directly at all. The publication and acceptance conditions
 // are not met by a deposit, so no package is generated; that is decided from the conditions below.
-import { writeFileSync, mkdirSync, readFileSync } from 'node:fs'
+import { writeFileSync, mkdirSync} from 'node:fs'
 import { census, advantage, theoremCount } from '../src/api/index.ts'
 import { CONCEPT_DOI, FUNDING, REPO, SITE } from '../src/publication/index.ts'
 

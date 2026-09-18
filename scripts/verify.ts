@@ -50,7 +50,7 @@ const signature = (text: string): Sig => {
   // entries. The modulus is the most discriminating fact in this deposit; failing to read the form it is
   // actually written in disabled the whole check while leaving it looking like it ran.
   for (const m of text.matchAll(/\b[Mm]([0-9]{1,3})\b/g)) mods.add(Number(m[1]))
-  for (const m of text.matchAll(/\bBASE\b/g)) mods.add(9)
+  if (/\bBASE\b/.test(text)) mods.add(9)   // a Set: one add is every add
   const nums = new Set<number>()
   for (const m of text.matchAll(/(?<![a-z0-9_])([0-9]{1,4})(?![0-9])/gi)) {
     const n = Number(m[1])

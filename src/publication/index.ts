@@ -268,7 +268,6 @@ export const structuredData = (t: LeanTheorem, opts: { novelty: string; files: s
 // files are taken from), TRANSITIVELY: a definition the statement names may rest on others, and stopping at
 // one hop would show `kindOf` while hiding what `kindOf` is written in terms of. Order is the order they
 // are declared, because that is the order the kernel accepts them in.
-const DEF_RE = /^(?:private\s+)?(?:def|abbrev)\s+([A-Za-z_][A-Za-z0-9_']*)\b/gm
 const tokensOf = (text: string): Set<string> => new Set(text.match(/[A-Za-z_][A-Za-z0-9_']*/g) ?? [])
 
 /** Every `def` in these files, as name → its source text, in declaration order. */

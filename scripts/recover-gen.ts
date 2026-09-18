@@ -63,7 +63,7 @@ if (process.argv.includes('--write')) {
   }
   writeFileSync(target, next)
   console.log(`\n✓ recover-gen: ${cands.length} theorem(s) written into ${target} — put them to the kernel with`)
-  console.log(`  npx tsx scripts/lean.ts ${target}`)
+  console.log(`  node scripts/lean.ts ${target}`)
   process.exit(0)
 }
 

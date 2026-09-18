@@ -17,12 +17,11 @@
 //
 // The honesty of this file rests on that second list being reported, not hidden. A prover that silently skips
 // what it cannot do looks complete and is not.
-import { readFileSync, writeFileSync, existsSync } from 'node:fs'
+import { readFileSync} from 'node:fs'
 import { ledger as loadLedger } from '../api/index.ts'
 import { execSync } from 'node:child_process'
 import { translate } from './translate.ts'
 
-const LEDGER = 'src/proof/discovered.json'
 const DISCOVER = 'scripts/discover.ts'
 
 export type Portable = { key: string; name: string; body: string; shape: Shape }

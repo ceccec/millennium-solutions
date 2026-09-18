@@ -3,7 +3,7 @@
 // theorem ledger + the rosetta domains (regenerated each build, like the other computed pages). The advantage
 // is a VERIFICATION/REUSE complexity reduction — O(N)→O(log N) proof, O(N)→O(1) dedup — NOT faster original
 // compute, NOT faster than light, NOT quantum. Integrity, not truth.
-import { readFileSync, writeFileSync, existsSync } from 'node:fs'
+import { writeFileSync, existsSync } from 'node:fs'
 import { digitalRoot } from '../src/0/index.ts'
 import { report as rosetta } from '../src/the/rosetta/index.ts'
 import { ledger as __ledger } from '../src/api/index.ts'
