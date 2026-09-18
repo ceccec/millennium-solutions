@@ -82,9 +82,32 @@ const SOURCES: Record<string, { pace: number; run: (m: string) => Promise<Row[]>
 }
 
 // ── the two bits ─────────────────────────────────────────────────────────────────────────────────────────────
+// THE SCANNER MUST NOT READ ITS OWN REFLECTION. This returned exactly one CITES **YES** across 85 news leads,
+// on a YouTube page — and the page cited nobody. YouTube echoes the request's User-Agent back into the HTML it
+// serves, the User-Agent above carries `+https://ceccec.github.io` so a machine reading the log knows who is
+// asking, and `ceccec.github.io` is one of the CITES alternatives. The single flattering result in the whole
+// run was the instrument matching the string it had just sent. Any site that reflects request headers into its
+// body would have done the same, so this is a class, not one page.
+//
+// The fix is derived from the constant rather than hand-listed: whatever the User-Agent says is removed from
+// the fetched body before the body is tested, so changing the User-Agent can never reopen this. `selfWitness`
+// below proves the removal still works, on every run.
+const SELF = UA['User-Agent']
+const unreflect = (text: string) => text.split(SELF).join(' ')
 async function citesBit(row: Row): Promise<string> {
-  if (CITES.test(row.text)) return 'YES'
-  try { return CITES.test(await get(row.raw ?? row.url, 'text', 1)) ? 'YES' : 'NO' } catch (e) { return `UNREADABLE (${(e as Error).message})` }
+  if (CITES.test(unreflect(row.text))) return 'YES'
+  try { return CITES.test(unreflect(await get(row.raw ?? row.url, 'text', 1))) ? 'YES' : 'NO' } catch (e) { return `UNREADABLE (${(e as Error).message})` }
+}
+// AND IT PROVES ITSELF, because a strip that silently stops matching looks exactly like a page that cites
+// nobody. A body consisting of the User-Agent alone must read NO; the same body with a real citation in it
+// must read YES. Both are checked here, with no network, before anything is searched.
+{
+  const echoed = `<html><head><meta name="ua" content="${SELF}"></head><body>nothing here</body></html>`
+  const wrong = [
+    CITES.test(unreflect(echoed)) && 'a page that merely echoes this scanner\'s User-Agent reads as CITING',
+    !CITES.test(unreflect(echoed.replace('nothing here', `by ${FAMILY}, ORCID ${ORCID}`))) && 'a page that really does name the author reads as NOT citing',
+  ].filter(Boolean)
+  if (wrong.length) { console.log('✗ uses: the self-reflection guard does not discriminate — ' + wrong.join('; ')); process.exit(1) }
 }
 const PAYS = 'NOT MEASURED — no payment record exists to check against'
 
