@@ -19,6 +19,7 @@ import { precedes, staleTail } from '../src/api/gates.ts'
 import { unreflect } from '../src/honesty/index.ts'
 import { FIELDS } from '../src/0/program.ts'
 import { P as ED_P, L as ED_L } from '../src/0/ed25519.ts'
+import { vortexOrder, vortexOrderReversed } from '../src/7/rays.ts'
 import { execSync } from 'node:child_process'
 import { writeFileSync, unlinkSync } from 'node:fs'
 
@@ -86,6 +87,12 @@ const PAIRS = [
     expr: '[Asymmetric.p % 8, (Asymmetric.p + 3) % 8, Asymmetric.p % 4, '
       + 'if 4 * Asymmetric.L < Asymmetric.p then 1 else 0, if Asymmetric.p < 8 * Asymmetric.L then 1 else 0, '
       + 'if Asymmetric.L < Asymmetric.p then 1 else 0]' },
+
+  // THE RAY ORDER. The seven are visited in the (ℤ/7)* orbit, not in byte order, and the reverse direction
+  // walks it backwards — so a transposed entry on either side is a different lattice that would still look
+  // like seven rays. Both orders are derived from the generator on both sides; this compares the results.
+  { what: 'the vortex order',   runtime: vortexOrder(),         mod: 'Rays', raw: true, expr: 'Rays.vortexOrder' },
+  { what: 'the reversed order', runtime: vortexOrderReversed(), mod: 'Rays', raw: true, expr: 'Rays.vortexReversed' },
 ]
 
 const mod9 = (xs: number[]) => xs.map((n) => ((n % 9) + 9) % 9)

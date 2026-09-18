@@ -36,6 +36,7 @@ import { readFileSync, writeFileSync, mkdirSync, rmSync } from 'node:fs'
 import { execFileSync } from 'node:child_process'
 import { leanTheorems, type LeanTheorem } from '../src/api/index.ts'
 import { toUuid, merkleFold } from '../src/0/index.ts'
+import { rays2x7, toCoords, torusDistance, MOD, DIMENSIONS } from '../src/7/rays.ts'
 import { CONCEPT_DOI, SITE, REPO, FUNDING, humanise, closureOf, creditedIn } from '../src/publication/index.ts'
 
 const OUT = '.zenodo/clusters'
@@ -119,10 +120,17 @@ function joint(c: Cluster) {
   return { root, orderInvariant: root === reordered, bindsEveryReceipt: unbound === 0, unbound, altered: receipts.length }
 }
 
-// ── 4 · the address lattice ────────────────────────────────────────────────────────────────────────────────────
-const RAYS = 7, MOD = 9
-const coords = (receipt: string) => { const h = receipt.replace(/-/g, ''); return Array.from({ length: RAYS }, (_, i) => parseInt(h.slice(i * 2, i * 2 + 2), 16) % MOD) }
-const dist = (a: number[], b: number[]) => a.reduce((s, x, i) => { const d = Math.abs(x - b[i]); return s + Math.min(d, MOD - d) }, 0)
+// ── 4 · the address lattice, on the 2×7 ────────────────────────────────────────────────────────────────────────
+// THE RAYS ARE NOT COMPUTED HERE ANY MORE. `h.slice(i*2, i*2+2)` was written out in this file and again in
+// .vitepress/theme/Vortex7D.vue, which draws the figure on every theorem page — two derivations of one
+// fact, the defect this repository keeps finding. Both read src/7/rays.ts now.
+//
+// And the lattice is the 2×7 rather than the 7: seven rays read 14 of a receipt's 32 hex digits and threw
+// the other 18 away, so half of every address was invisible to the neighbour search. Forward seven and
+// reverse seven read 28, walked in the vortex order the group gives rather than in byte order.
+const coords = (receipt: string) => toCoords(rays2x7(receipt))
+const dist = torusDistance
+const RAYS = DIMENSIONS   // 14 now: the centre is taken over every coordinate the lattice has, not the first seven
 const points = clusters.filter((c) => c.proven).flatMap((c) => c.sealed.map((t) => ({ key: keyOf(t), file: c.file, at: coords(live.get(keyOf(t))!) })))
 const nearest = new Map(points.map((p) => [p.key, points.filter((q) => q.key !== p.key).map((q) => ({ q, d: dist(p.at, q.at) }))
   .sort((a, b) => a.d - b.d || a.q.key.localeCompare(b.q.key)).slice(0, RAYS)]))

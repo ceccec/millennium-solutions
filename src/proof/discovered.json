@@ -19794,5 +19794,70 @@
     "key": "lean_asymmetric_the_cofactor_is_bracketed_at_eight",
     "name": "lean asymmetric.lean: the_cofactor_is_bracketed_at_eight — 4 * L < p ∧ p < 8 * L ∧ L < p — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "a882288a-1ac0-8d57-8b63-057c8e070b7f"
+  },
+  {
+    "key": "lean_rays_the_orbit_is_the_six_units",
+    "name": "lean rays.lean: the_orbit_is_the_six_units — orbit 6 1 = [3, 2, 6, 4, 5, 1] ∧ (orbit 6 1).length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d625db75-2feb-8017-8a00-391003a68935"
+  },
+  {
+    "key": "lean_rays_the_order_visits_every_ray_exactly_once",
+    "name": "lean rays.lean: the_order_visits_every_ray_exactly_once — vortexOrder.length = 7 ∧ (vortexOrder.eraseDups).length = 7 ∧ (List.range 7).all (fun i => vortexOrder.contains i) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "51ce4368-821c-82e0-9c9a-16135b161330"
+  },
+  {
+    "key": "lean_rays_the_reversed_order_is_also_a_permutation",
+    "name": "lean rays.lean: the_reversed_order_is_also_a_permutation — vortexReversed.length = 7 ∧ (vortexReversed.eraseDups).length = 7 ∧ (List.range 7).all (fun i => vortexReversed.contains i) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "cfd8d572-6ff9-8e8d-87f1-868119c09dde"
+  },
+  {
+    "key": "lean_rays_the_two_senses_are_not_the_same_walk",
+    "name": "lean rays.lean: the_two_senses_are_not_the_same_walk — vortexOrder ≠ vortexReversed ∧ vortexOrder.head? = vortexReversed.head? — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ccac8571-dd1d-8bba-a598-fffb356f124c"
+  },
+  {
+    "key": "lean_rays_reversing_the_sense_twice_is_the_identity",
+    "name": "lean rays.lean: reversing_the_sense_twice_is_the_identity — (0 :: ((vortexReversed.tail).reverse)) = vortexOrder — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "92578972-73dd-876b-9b04-b746a8f7d5cd"
+  },
+  {
+    "key": "lean_rays_inverting_twice_is_the_identity",
+    "name": "lean rays.lean: inverting_twice_is_the_identity — ((List.range 40).map (fun n => invert (invert (lowBits [n, n + 1, n + 2])) == lowBits [n, n + 1, n + 2])).all id — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "69b33021-cafb-8db8-94cb-fa86a6873d0e"
+  },
+  {
+    "key": "lean_rays_a_trace_and_its_inversion_agree_nowhere",
+    "name": "lean rays.lean: a_trace_and_its_inversion_agree_nowhere — (List.range 40).all (fun n => let t := lowBits [n, n + 1, n + 2, n + 3] (List.range 4).all (fun i => (t.getD i 0) + ((invert t).getD i 0) == 1)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "cface271-a819-86bb-bf64-ae8a450c1f7c"
+  },
+  {
+    "key": "lean_rays_the_low_bit_sees_what_the_residue_cannot",
+    "name": "lean rays.lean: the_low_bit_sees_what_the_residue_cannot — (0 % 9 == 9 % 9) ∧ (0 % 9 == 18 % 9) ∧ ¬ (0 % 2 == 9 % 2) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f21dc8c1-025d-8ced-8100-d659fcba3e2f"
+  },
+  {
+    "key": "lean_rays_the_two_by_seven_reads_more_than_the_seven",
+    "name": "lean rays.lean: the_two_by_seven_reads_more_than_the_seven — DIMENSIONS = 14 ∧ DIGITS_READ = 28 ∧ 2 * N = 14 ∧ DIGITS_READ > 2 * N — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2181ea1e-20b3-8d05-adbe-29cd2c868b01"
+  },
+  {
+    "key": "lean_rays_four_digits_stay_unread_and_are_counted",
+    "name": "lean rays.lean: four_digits_stay_unread_and_are_counted — DIGITS_TOTAL - DIGITS_READ = 4 ∧ DIGITS_READ < DIGITS_TOTAL — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "cfdf098a-f7a8-84e3-8f9d-0fa2b3746249"
+  },
+  {
+    "key": "lean_rays_the_wrap_is_what_makes_it_a_torus",
+    "name": "lean rays.lean: the_wrap_is_what_makes_it_a_torus — d1 0 8 = 1 ∧ d1 8 0 = 1 ∧ d1 0 4 = 4 ∧ d1 4 0 = 4 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "85e8c4fa-30b9-8143-8836-d0d3010de30f"
+  },
+  {
+    "key": "lean_rays_the_distance_is_symmetric_and_zero_only_on_itself",
+    "name": "lean rays.lean: the_distance_is_symmetric_and_zero_only_on_itself — (List.range 9).all (fun a => (List.range 9).all (fun b => (d1 a b == d1 b a) && ((d1 a b == 0) == (a == b)))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "4eae84a8-ac4c-87bd-814b-343939dde8ce"
+  },
+  {
+    "key": "lean_rays_the_triangle_inequality_holds_on_every_triple",
+    "name": "lean rays.lean: the_triangle_inequality_holds_on_every_triple — (List.range 9).all (fun a => (List.range 9).all (fun b => (List.range 9).all (fun c => decide (d1 a c ≤ d1 a b + d1 b c)))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5f6fe76f-c6ea-8424-a0fc-2f3ebbc4b95c"
   }
 ]

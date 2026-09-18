@@ -64,6 +64,7 @@ import { report as development } from './src/5/development'
 import { report as folds } from './src/5/folds'
 import { report as diamond } from './src/5/diamond'
 import { report as center } from './src/5/center'
+import { report as rays } from './src/7/rays'
 import { report as rosetta } from './src/7/rosetta'
 import { report as rosettaClay } from './src/7/rosetta-clay'
 import { report as geometry } from './src/8/merkaba/geometry'
@@ -425,6 +426,11 @@ that silently skipped what it could not translate would look complete and be wor
 </details>
 
 ## `7/` — the rosette · 7 = 6 + 1
+
+### The rays — 2×7, walked in the (ℤ/7)\* orbit · `src/7/rays.ts`
+<details class="depth"><summary>compute</summary>
+<pre>{{ rays() }}</pre>
+</details>
 
 ### Pliska rosette — (ℤ/7)\* · `src/7/rosetta.ts`
 <details class="depth"><summary>compute</summary>

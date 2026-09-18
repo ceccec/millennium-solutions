@@ -62,9 +62,9 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 871 of them across 36 files and
-7 wings; 672 close by exhaustion over a stated finite domain, 187 are proved
-for every value, and the remaining 12 close by \texttt{rfl} and are counted separately, never as theorems.
+(\texttt{npm run latex-gate}). There are 885 of them across 37 files and
+7 wings; 685 close by exhaustion over a stated finite domain, 187 are proved
+for every value, and the remaining 13 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
 
@@ -524,6 +524,78 @@ for every value, and the remaining 12 close by \texttt{rfl} and are counted sepa
 
 \begin{theorem}[\texttt{program\_settles\_its\_range}]
 \[ \mathrm{settledHere} = 12 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{rays.lean}}
+
+\begin{theorem}[\texttt{the\_orbit\_is\_the\_six\_units}]
+\[ \mathrm{orbit}\mathopen{}\left(6,\,1\right) = [3,\,2,\,6,\,4,\,5,\,1] \land \left|\mathrm{orbit}\mathopen{}\left(6,\,1\right)\right| = 6 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 6 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_order\_visits\_every\_ray\_exactly\_once}]
+\[ \left|\mathrm{vortexOrder}\right| = 7 \land \left|\operatorname{dedup}\left(\mathrm{vortexOrder}\right)\right| = 7 \land \forall i \in \{0,\dots,6\},\; i \in \mathrm{vortexOrder} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 7 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_reversed\_order\_is\_also\_a\_permutation}]
+\[ \left|\mathrm{vortexReversed}\right| = 7 \land \left|\operatorname{dedup}\left(\mathrm{vortexReversed}\right)\right| = 7 \land \forall i \in \{0,\dots,6\},\; i \in \mathrm{vortexReversed} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 7 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_two\_senses\_are\_not\_the\_same\_walk}]
+\[ \mathrm{vortexOrder} \neq \mathrm{vortexReversed} \land \operatorname{head}\left(\mathrm{vortexOrder}\right) = \operatorname{head}\left(\mathrm{vortexReversed}\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{reversing\_the\_sense\_twice\_is\_the\_identity}]
+\texttt{(0 :: ((vortexReversed.tail).reverse)) = vortexOrder}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{inverting\_twice\_is\_the\_identity}]
+\[ \forall x \in \{\, \mathrm{invert}\mathopen{}\left(\mathrm{invert}\mathopen{}\left(\mathrm{lowBits}\mathopen{}\left([n,\,n + 1,\,n + 2]\right)\right)\right) = \mathrm{lowBits}\mathopen{}\left([n,\,n + 1,\,n + 2]\right) \mid n \in \{0,\dots,39\} \,\},\; \mathrm{id}\mathopen{}\left(x\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 40 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_trace\_and\_its\_inversion\_agree\_nowhere}]
+\texttt{(List.range 40).all (fun n => let t := lowBits [n, n + 1, n + 2, n + 3] (List.range 4).all (fun i => (t.getD i 0) + ((invert t).getD i 0) == 1))}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 160 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_low\_bit\_sees\_what\_the\_residue\_cannot}]
+\[ 0 \bmod 9 = 9 \bmod 9 \land 0 \bmod 9 = 18 \bmod 9 \land \lnot 0 \bmod 2 = 9 \bmod 2 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_two\_by\_seven\_reads\_more\_than\_the\_seven}]
+\[ \mathrm{DIMENSIONS} = 14 \land \mathrm{DIGITS\_READ} = 28 \land 2 \cdot N = 14 \land \mathrm{DIGITS\_READ} > 2 \cdot N \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{four\_digits\_stay\_unread\_and\_are\_counted}]
+\[ \mathrm{DIGITS\_TOTAL} - \mathrm{DIGITS\_READ} = 4 \land \mathrm{DIGITS\_READ} < \mathrm{DIGITS\_TOTAL} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_wrap\_is\_what\_makes\_it\_a\_torus}]
+\[ \mathrm{d1}\mathopen{}\left(0,\,8\right) = 1 \land \mathrm{d1}\mathopen{}\left(8,\,0\right) = 1 \land \mathrm{d1}\mathopen{}\left(0,\,4\right) = 4 \land \mathrm{d1}\mathopen{}\left(4,\,0\right) = 4 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_distance\_is\_symmetric\_and\_zero\_only\_on\_itself}]
+\[ \forall a \in \{0,\dots,8\},\; \forall b \in \{0,\dots,8\},\; \mathrm{d1}\mathopen{}\left(a,\,b\right) = \mathrm{d1}\mathopen{}\left(b,\,a\right) \land \mathrm{d1}\mathopen{}\left(a,\,b\right) = 0 = a = b \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 81 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_triangle\_inequality\_holds\_on\_every\_triple}]
+\[ \forall a \in \{0,\dots,8\},\; \forall b \in \{0,\dots,8\},\; \forall c \in \{0,\dots,8\},\; \mathrm{decide}\mathopen{}\left(\mathrm{d1}\mathopen{}\left(a,\,c\right) \le \mathrm{d1}\mathopen{}\left(a,\,b\right) + \mathrm{d1}\mathopen{}\left(b,\,c\right)\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 729 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{rays\_settles\_its\_range}]
+\[ \mathrm{settledHere} = 13 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 

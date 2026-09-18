@@ -16,6 +16,7 @@
 // built-in Web Audio + Web Speech APIs — no external assets.
 import { computed, ref, onMounted, onUnmounted, watch } from 'vue'
 import { orbit as orbitOf } from '../../src/api/index.ts'  // the doubling orbit, computed — not retyped here
+import { forwardRays } from '../../src/7/rays.ts'   // the ray extraction, computed once and shared with the lattice
 
 const props = defineProps({
   receipt: { type: String, default: '' },       // this object's content-address — the microdata the rays plot
@@ -27,17 +28,13 @@ const props = defineProps({
 
 const A432 = 432 // the reference the timings and tones are tuned to
 
-// own 7 rays — plotted from the content-address bytes (two hex digits per ray)
-const petals = computed(() => {
-  const h = (props.receipt || '').replace(/-/g, '')
-  const a = []
-  for (let i = 0; i < 7; i++) {
-    const v = parseInt(h.slice(i * 2, i * 2 + 2) || '0', 16)
-    const ang = (i * 360 / 7) * Math.PI / 180
-    a.push({ x: (Math.cos(ang) * 40).toFixed(2), y: (Math.sin(ang) * 40).toFixed(2), r: 6 + (v % 8), hue: (v * 40) % 360, dur: (2 + i * 0.4).toFixed(1) })
-  }
-  return a
-})
+// own 7 rays — plotted from the content-address bytes. THE EXTRACTION IS NOT WRITTEN HERE: this file had
+// `h.slice(i*2, i*2+2)` and scripts/clusters.ts had the same expression written again, and nothing compared
+// them. One derivation, in src/7/rays.ts, which the cluster lattice reads too.
+const petals = computed(() => forwardRays(props.receipt || '').map((v, i) => {
+  const ang = (i * 360 / 7) * Math.PI / 180
+  return { x: (Math.cos(ang) * 40).toFixed(2), y: (Math.sin(ang) * 40).toFixed(2), r: 6 + (v % 8), hue: (v * 40) % 360, dur: (2 + i * 0.4).toFixed(1) }
+}))
 
 // hero background — the seven surrounding objects' hues, in slow analog rotation (inner torus)
 const wedges = computed(() => {
