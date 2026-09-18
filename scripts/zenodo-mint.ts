@@ -34,6 +34,13 @@ if (!SANDBOX && !LIVE) {
   console.log('    --limit=N            how many to mint this run (default 1)')
 }
 
+// WHO IS ASKING — derived from the package and the repository, never typed. A client that will not name
+// itself is what Zenodo's edge refuses.
+const PKG = JSON.parse(readFileSync('package.json', 'utf8')) as { name: string; version: string }
+const PKG_NAME = PKG.name
+const PKG_VERSION = PKG.version
+const REPO = 'https://github.com/ceccec/millennium-solutions'
+
 const tokenPath = join(homedir(), '.zenodo', SANDBOX ? 'sandbox-token' : 'token')
 const token = existsSync(tokenPath) ? readFileSync(tokenPath, 'utf8').trim() : ''
 
@@ -48,7 +55,18 @@ if (!token) { console.error(`  ✗ no token at ${tokenPath} — create it there;
 const api = async (path: string, init: RequestInit = {}) => {
   const r = await fetch(`${HOST}/api${path}`, {
     ...init,
-    headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json', ...(init.headers ?? {}) },
+    // A REQUEST WITH NO USER-AGENT IS REFUSED BEFORE ZENODO EVER SEES IT. Node's fetch sends none, and
+    // Zenodo's edge answers an HTML "403 Forbidden — unusual traffic" page: not an API error, not JSON,
+    // and nothing a reader can act on. Measured side by side on the same token and endpoint — without a
+    // User-Agent, that HTML page; with one, `{"status": 403, "message": "Permission denied."}`, which is
+    // the real answer and names the real problem. Identifying the client turns an unreadable block into a
+    // readable refusal, which is the difference between "Zenodo is down" and "this token lacks the scope".
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+      'User-Agent': `${PKG_NAME}/${PKG_VERSION} (+${REPO})`,
+      ...(init.headers ?? {}),
+    },
   })
   const body = await r.text()
   if (!r.ok) throw new Error(`${r.status} ${r.statusText} — ${body.slice(0, 300)}`)
@@ -74,7 +92,7 @@ for (const key of pending.slice(0, LIMIT)) {
     ]
     for (const [name, content] of payload) {
       if (!content) continue
-      const r = await fetch(`${bucket}/${name}`, { method: 'PUT', headers: { Authorization: `Bearer ${token}` }, body: content })
+      const r = await fetch(`${bucket}/${name}`, { method: 'PUT', headers: { Authorization: `Bearer ${token}`, 'User-Agent': `${PKG_NAME}/${PKG_VERSION} (+${REPO})` }, body: content })
       if (!r.ok) throw new Error(`file ${name}: ${r.status} ${await r.text()}`)
     }
     // STRIP LOCAL BOOKKEEPING. `files` records which sources the proof needs so this script knows what to
