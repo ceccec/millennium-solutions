@@ -16,9 +16,7 @@
 // and `wing` are read; anything else is carried through untouched so a field can be added without editing
 // this file. A file without frontmatter falls back to its own name, which is honest but plainer.
 import { readFileSync } from 'node:fs'
-import { leanFiles, leanSource, frontmatter as fmOf, PROOF_DIR, domainOf, normalizeStatement } from '../src/api/index.ts'
-
-const DIR = PROOF_DIR
+import { leanFiles, leanSource, frontmatter as fmOf, domainOf, normalizeStatement } from '../src/api/index.ts'
 
 export { domainOf }
 

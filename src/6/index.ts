@@ -59,5 +59,4 @@ export const bsd_exact: ExactTheoremState = {
   `,
 }
 
-export const theorem6 = bsd_exact
 export default bsd_exact

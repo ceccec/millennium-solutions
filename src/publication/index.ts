@@ -190,7 +190,7 @@ const normalise = (statement: string): string =>
 /** The normaliser, EXPORTED so a peer reimplementing the shared key reads the rule instead of a sentence
  *  describing it. Sending prose cost zeropoint-node six variants and an exhaustive apostrophe check, because
  *  "remove a space only where it is not doing lexical work" is an intent, not an algorithm. */
-export const normaliseForFixture = (statement: string): string => normalise(statement)
+export const normaliseForFixture = normalise
 
 export const statementAddress = (statement: string): string => toUuid(normalise(statement))
 

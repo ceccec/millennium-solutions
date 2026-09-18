@@ -74,5 +74,4 @@ export const p_vs_np_exact: ExactTheoremState = {
   `,
 }
 
-export const theorem2 = p_vs_np_exact
 export default p_vs_np_exact

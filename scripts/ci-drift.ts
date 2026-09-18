@@ -28,10 +28,10 @@ const ci = readFileSync('scripts/ci-local.ts', 'utf8')
 // BOTH SIDES NORMALISED. The first version normalised only the workflow's command and compared it against
 // ci-local's raw strings, so `npm run -s build` never matched `npm run build` and the gate reported a gap
 // that was not there. A comparison is only as good as the weaker side of it.
-const norm0 = (c: string) => c.replace(/^npm run -s /, 'npm run ').trim()
-const known = new Set([...ci.matchAll(/cmd: '([^']+)'/g)].map((m) => norm0(m[1])))
+const norm = (c: string) => c.replace(/^npm run -s /, 'npm run ').trim()
+const known = new Set([...ci.matchAll(/cmd: '([^']+)'/g)].map((m) => norm(m[1])))
 // Steps ci-local deliberately does not run get a row of their own with a reason; both count as accounted for.
-for (const m of ci.matchAll(/name: '([^']+)',\s*cmd: '([^']+)',\s*why:/g)) known.add(norm0(m[2]))
+for (const m of ci.matchAll(/name: '([^']+)',\s*cmd: '([^']+)',\s*why:/g)) known.add(norm(m[2]))
 
 const WF = '.github/workflows'
 const found: { file: string; cmd: string }[] = []
@@ -55,7 +55,6 @@ for (const f of readdirSync(WF).filter((x) => /\.ya?ml$/.test(x))) {
 // UNRUN_BY_DESIGN, under the script's own name, and src/api/gates.ts opens by saying why two derivations of
 // one fact is the defect. So this reads that one, and the exemptions are PRINTED rather than merely applied:
 // an exemption nobody sees is how a list quietly stops covering anything.
-const norm = norm0
 const CI_ONLY = /^npm (ci|install)/
 const byDesign: { file: string; cmd: string; script: string }[] = []
 for (const { file, cmd } of found) {

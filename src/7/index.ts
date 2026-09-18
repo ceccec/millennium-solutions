@@ -63,5 +63,4 @@ export const poincare_exact: ExactTheoremState = {
   `,
 }
 
-export const theorem7 = poincare_exact
 export default poincare_exact

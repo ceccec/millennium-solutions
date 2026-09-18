@@ -59,5 +59,4 @@ export const yang_mills_exact: ExactTheoremState = {
   `,
 }
 
-export const theorem4 = yang_mills_exact
 export default yang_mills_exact

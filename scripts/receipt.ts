@@ -22,17 +22,15 @@ const invites = (invitesArg || '').split(',').map((s) => s.trim()).filter(Boolea
 const { binary, hit } = computes(message)
 if (binary === 0) { console.error('✗ no receipt — the statement drains the gate ("' + hit + '"). Only floor-holding statements are recorded.'); process.exit(1) }
 
-// Signing IS agreeing: recording a receipt is the observer's acknowledgment that they understand and
-// comply with the law (the license + the sequence) before proceeding — part of the receipt itself.
-const complies = COMPLIES
-
 const uuid = toUuid(message) // the uuid IS the core message, without payload
 const dir = 'src/receipts'
 if (existsSync(dir + '/' + uuid + '.json')) { console.error('✗ no receipt — src/receipts/' + uuid + '.json already exists; a receipt is immutable and this message is already on the record.'); process.exit(1) }
 let signature: Signature
 try { signature = sign(uuid) } catch (e) { console.error('✗ no receipt — ' + (e as Error).message); process.exit(1) }
 if (!existsSync(dir)) mkdirSync(dir, { recursive: true })
-const receipt: Record<string, unknown> = { uuid, message, agent, role, complies, signature }
+// `complies` IS the agreeing: recording a receipt is the observer's acknowledgment that they understand and
+// comply with the law (the license + the sequence) before proceeding — part of the receipt itself.
+const receipt: Record<string, unknown> = { uuid, message, agent, role, complies: COMPLIES, signature }
 if (invites.length) receipt.invites = invites
 writeFileSync(dir + '/' + uuid + '.json', JSON.stringify(receipt, null, 2) + '\n')
 console.log('✓ receipt (signed by ' + PER_POSITION + ' live theorems — the center at ' + signature.cell + ' and 2×7 = ' + CELLS.length + ' apostilles around it — understands & complies with the license and the sequence): ' + agent + ' as ' + role + (invites.length ? ' · invites ' + invites.length + ' theorem(s)' : '') + ' → src/receipts/' + uuid + '.json')

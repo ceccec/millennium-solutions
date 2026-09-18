@@ -35,12 +35,11 @@ for (const { name, path } of mods) {
 
 // THE FLOOR REQUIREMENT IS REMOVED (2026-09-14): this failed the release unless src/7/entails printed "0/7" — a
 // count whose "test" answers false by construction. Whole now means what it says: every fused module computes.
-const whole = allCompute
 console.log('modules fused:            ' + mods.length)
 console.log('all compute (non-empty):  ' + allCompute + (empties.length ? '  missing: ' + empties.join(', ') : ''))
 console.log('reports containing a boundary WORD: ' + boundary + '/' + mods.length + ' (a text search, not a judgement about the reasoning)')
-console.log('AURA COMPUTATIONALLY WHOLE = ' + whole)
-if (!whole) {
+console.log('AURA COMPUTATIONALLY WHOLE = ' + allCompute)
+if (!allCompute) {
   // aura heal — the wound names its own cure.
   const cure = []
   if (empties.length) cure.push('implement report() in: ' + empties.join(', '))

@@ -59,5 +59,4 @@ export const navier_stokes_exact: ExactTheoremState = {
   `,
 }
 
-export const theorem3 = navier_stokes_exact
 export default navier_stokes_exact

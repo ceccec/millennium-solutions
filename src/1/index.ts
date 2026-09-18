@@ -76,5 +76,4 @@ export const riemann_exact: ExactTheoremState = {
   `,
 }
 
-export const theorem1 = riemann_exact
 export default riemann_exact

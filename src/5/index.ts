@@ -59,5 +59,4 @@ export const hodge_exact: ExactTheoremState = {
   `,
 }
 
-export const theorem5 = hodge_exact
 export default hodge_exact
