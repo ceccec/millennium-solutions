@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). The author's own claim, that the seven are solved through involution, is stated in his name on the front page.
 
-## Discovered theorems (decidable, over ℤ/9) — 2840 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2849 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (891)
+### lean (900)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -1102,6 +1102,15 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_roots_the_first_round_constant_is_that_cube_root_fraction](/theorem/lean_roots_the_first_round_constant_is_that_cube_root_fraction) — lean roots.lean: the_first_round_constant_is_that_cube_root_fraction — frac64 3 2 = 0x428a2f98d728ae22 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e464678b-2899…`
 - [lean_roots_the_first_initial_value_is_that_square_root_fraction](/theorem/lean_roots_the_first_initial_value_is_that_square_root_fraction) — lean roots.lean: the_first_initial_value_is_that_square_root_fraction — frac64 2 2 = 0x6a09e667f3bcc908 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e9398daf-fd28…`
 - [lean_roots_the_cube_and_the_square_do_not_agree](/theorem/lean_roots_the_cube_and_the_square_do_not_agree) — lean roots.lean: the_cube_and_the_square_do_not_agree — frac64 3 2 != frac64 2 2 ∧ frac64 3 3 != frac64 2 3 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `28cb8c6b-7c2c…`
+- [lean_imprint_the_free_region_is_a_hundred_and_twenty_two](/theorem/lean_imprint_the_free_region_is_a_hundred_and_twenty_two) — lean imprint.lean: the_free_region_is_a_hundred_and_twenty_two — FREE.length = 122 ∧ RESERVED.length = 6 ∧ FREE.length + RESERVED.length = 128 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `82c2c108-cf5f…`
+- [lean_imprint_the_capacity_is_the_free_region_less_the_header](/theorem/lean_imprint_the_capacity_is_the_free_region_less_the_header) — lean imprint.lean: the_capacity_is_the_free_region_less_the_header — CAPACITY = 115 ∧ CAPACITY + LEN_BITS = FREE.length — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `05ee2cb9-0963…`
+- [lean_imprint_no_reserved_bit_is_free](/theorem/lean_imprint_no_reserved_bit_is_free) — lean imprint.lean: no_reserved_bit_is_free — RESERVED.all (fun r =&gt; !(FREE.contains r)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `dddd46cc-3c26…`
+- [lean_imprint_seven_bits_count_past_the_capacity](/theorem/lean_imprint_seven_bits_count_past_the_capacity) — lean imprint.lean: seven_bits_count_past_the_capacity — 2 ^ LEN_BITS &gt; CAPACITY ∧ 2 ^ (LEN_BITS - 1) &lt; CAPACITY — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9c0e2abe-7301…`
+- [lean_imprint_every_short_message_comes_back](/theorem/lean_imprint_every_short_message_comes_back) — lean imprint.lean: every_short_message_comes_back — (List.range 9).all (fun n =&gt; decodeBits (encodeBits (alt n)) == alt n) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `5d24f33c-b06b…`
+- [lean_imprint_the_all_set_message_comes_back_too](/theorem/lean_imprint_the_all_set_message_comes_back_too) — lean imprint.lean: the_all_set_message_comes_back_too — (List.range 9).all (fun n =&gt; decodeBits (encodeBits (ones n)) == ones n) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c6ae9fbf-82c8…`
+- [lean_imprint_the_header_records_the_length](/theorem/lean_imprint_the_header_records_the_length) — lean imprint.lean: the_header_records_the_length — (List.range 9).all (fun n =&gt; natOf ((FREE.map (fun i =&gt; (encodeBits (alt n)).getD i false)).take LEN_BITS) == n) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `ad8567b8-120e…`
+- [lean_imprint_a_shorter_message_is_not_a_longer_one](/theorem/lean_imprint_a_shorter_message_is_not_a_longer_one) — lean imprint.lean: a_shorter_message_is_not_a_longer_one — encodeBits (alt 3) != encodeBits (alt 4) ∧ encodeBits (ones 0) != encodeBits (ones 1) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7c00d44d-8834…`
+- [lean_imprint_the_reserved_six_survive_any_message](/theorem/lean_imprint_the_reserved_six_survive_any_message) — lean imprint.lean: the_reserved_six_survive_any_message — [alt 0, alt 5, ones 8, alt 115].all (fun m =&gt; let b := encodeBits m (b.getD 48 false == true) && (b.getD 49 false == false) && (b.getD 50 false == false) && (b.getD 51 false == false) && (b.getD 64 false == true) && (b.getD 65 false == fals… — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `12a83c85-7690…`
 
 ### other — one-of-a-kind (0)
 
@@ -2686,4 +2695,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `959f6843-e675-8486-9c60-ef27a9cf3cc9`. Integrity, not truth.
+Page content-address: `321e3e4b-9728-809a-a176-3f7c61d78418`. Integrity, not truth.

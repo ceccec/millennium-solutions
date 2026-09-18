@@ -19954,5 +19954,50 @@
     "key": "lean_roots_the_cube_and_the_square_do_not_agree",
     "name": "lean roots.lean: the_cube_and_the_square_do_not_agree — frac64 3 2 != frac64 2 2 ∧ frac64 3 3 != frac64 2 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "28cb8c6b-7c2c-8111-80cb-c7d3600d3184"
+  },
+  {
+    "key": "lean_imprint_the_free_region_is_a_hundred_and_twenty_two",
+    "name": "lean imprint.lean: the_free_region_is_a_hundred_and_twenty_two — FREE.length = 122 ∧ RESERVED.length = 6 ∧ FREE.length + RESERVED.length = 128 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "82c2c108-cf5f-88a5-aba9-8e256f15f359"
+  },
+  {
+    "key": "lean_imprint_the_capacity_is_the_free_region_less_the_header",
+    "name": "lean imprint.lean: the_capacity_is_the_free_region_less_the_header — CAPACITY = 115 ∧ CAPACITY + LEN_BITS = FREE.length — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "05ee2cb9-0963-8880-813e-2c2bd4da0112"
+  },
+  {
+    "key": "lean_imprint_no_reserved_bit_is_free",
+    "name": "lean imprint.lean: no_reserved_bit_is_free — RESERVED.all (fun r => !(FREE.contains r)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "dddd46cc-3c26-8680-a411-99020ec1ebfd"
+  },
+  {
+    "key": "lean_imprint_seven_bits_count_past_the_capacity",
+    "name": "lean imprint.lean: seven_bits_count_past_the_capacity — 2 ^ LEN_BITS > CAPACITY ∧ 2 ^ (LEN_BITS - 1) < CAPACITY — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9c0e2abe-7301-86fd-a787-78199218f8f0"
+  },
+  {
+    "key": "lean_imprint_every_short_message_comes_back",
+    "name": "lean imprint.lean: every_short_message_comes_back — (List.range 9).all (fun n => decodeBits (encodeBits (alt n)) == alt n) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5d24f33c-b06b-888b-8ff0-71ca72426215"
+  },
+  {
+    "key": "lean_imprint_the_all_set_message_comes_back_too",
+    "name": "lean imprint.lean: the_all_set_message_comes_back_too — (List.range 9).all (fun n => decodeBits (encodeBits (ones n)) == ones n) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c6ae9fbf-82c8-885f-abe4-71103867eeb0"
+  },
+  {
+    "key": "lean_imprint_the_header_records_the_length",
+    "name": "lean imprint.lean: the_header_records_the_length — (List.range 9).all (fun n => natOf ((FREE.map (fun i => (encodeBits (alt n)).getD i false)).take LEN_BITS) == n) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ad8567b8-120e-8458-a2ed-1fdbafe5ce0b"
+  },
+  {
+    "key": "lean_imprint_a_shorter_message_is_not_a_longer_one",
+    "name": "lean imprint.lean: a_shorter_message_is_not_a_longer_one — encodeBits (alt 3) != encodeBits (alt 4) ∧ encodeBits (ones 0) != encodeBits (ones 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7c00d44d-8834-8224-9903-30ded40a3457"
+  },
+  {
+    "key": "lean_imprint_the_reserved_six_survive_any_message",
+    "name": "lean imprint.lean: the_reserved_six_survive_any_message — [alt 0, alt 5, ones 8, alt 115].all (fun m => let b := encodeBits m (b.getD 48 false == true) && (b.getD 49 false == false) && (b.getD 50 false == false) && (b.getD 51 false == false) && (b.getD 64 false == true) && (b.getD 65 false == fals… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "12a83c85-7690-895e-ac0c-db918ce69776"
   }
 ]

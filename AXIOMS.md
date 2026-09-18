@@ -5,11 +5,11 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **905** report the same thing:
+axiom fails the build rather than earning a footnote. All **915** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
-theorems rest on **402** definitions, and every one of them is a choice. A theorem about
+theorems rest on **414** definitions, and every one of them is a choice. A theorem about
 `fall` is a theorem about the digital root only because `fall` is *defined* to be it. Both halves are
 indexed below, and the second is the longer one.
 
@@ -90,7 +90,7 @@ The pins in the control fixture follow the community practice of guarding `#prin
 `#guard_msgs`, which turns the axiom footprint into an executable regression test: the assertion is
 checked by the elaborator, and drift fails the build with a mismatch instead of passing unnoticed.
 
-## What IS assumed: the 402 definitions
+## What IS assumed: the 414 definitions
 
 Each of these is a primitive of this deposit — not derived, not proved, chosen. They are listed in full
 because a reader checking a theorem must be able to read the definition it is about, and because a
@@ -336,6 +336,23 @@ def step (h c : Nat) : Nat :=
 def avalanche (h : Nat) : Nat :=
 def hash32 (seed : Nat) (cs : List Nat) : Nat := avalanche (cs.foldl step (xor32 FNV_OFFSET seed))
 def settledHere : Nat := 12
+```
+
+### `imprint.lean` — 12 definition(s), 10 theorem(s)
+
+```lean
+def RESERVED : List Nat := [48, 49, 50, 51, 64, 65]
+def FREE : List Nat := (List.range 128).filter (fun i => !(RESERVED.contains i))
+def LEN_BITS : Nat := 7
+def CAPACITY : Nat := FREE.length - LEN_BITS
+def bitsOf (width n : Nat) : List Bool :=
+def natOf (bs : List Bool) : Nat := bs.foldl (fun a b => a * 2 + (if b then 1 else 0)) 0
+def payload (msg : List Bool) : List Bool :=
+def encodeBits (msg : List Bool) : List Bool :=
+def decodeBits (bs : List Bool) : List Bool :=
+def alt (n : Nat) : List Bool := (List.range n).map (fun i => i % 2 == 0)
+def ones (n : Nat) : List Bool := List.replicate n true
+def settledHere : Nat := 9
 ```
 
 ### `index.lean` — 5 definition(s), 11 theorem(s)
@@ -680,6 +697,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**905** declarations, **0** axiom dependencies, **402** definitions they rest on.
+**915** declarations, **0** axiom dependencies, **414** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them.

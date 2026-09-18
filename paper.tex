@@ -62,9 +62,9 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 905 of them across 38 files and
-7 wings; 704 close by exhaustion over a stated finite domain, 187 are proved
-for every value, and the remaining 14 close by \texttt{rfl} and are counted separately, never as theorems.
+(\texttt{npm run latex-gate}). There are 915 of them across 39 files and
+7 wings; 713 close by exhaustion over a stated finite domain, 187 are proved
+for every value, and the remaining 15 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
 
@@ -345,6 +345,58 @@ for every value, and the remaining 14 close by \texttt{rfl} and are counted sepa
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by
   intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{imprint.lean}}
+
+\begin{theorem}[\texttt{the\_free\_region\_is\_a\_hundred\_and\_twenty\_two}]
+\[ \mathrm{FREE.length} = 122 \land \mathrm{RESERVED.length} = 6 \land \mathrm{FREE.length} + \mathrm{RESERVED.length} = 128 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_capacity\_is\_the\_free\_region\_less\_the\_header}]
+\[ \mathrm{CAPACITY} = 115 \land \mathrm{CAPACITY} + \mathrm{LEN\_BITS} = \mathrm{FREE.length} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{no\_reserved\_bit\_is\_free}]
+\[ \mathrm{RESERVED.all}\mathopen{}\left(r \mapsto \lnot \mathrm{FREE.contains}\mathopen{}\left(r\right)\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{seven\_bits\_count\_past\_the\_capacity}]
+\[ 2^{\mathrm{LEN\_BITS}} > \mathrm{CAPACITY} \land 2^{\mathrm{LEN\_BITS} - 1} < \mathrm{CAPACITY} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{every\_short\_message\_comes\_back}]
+\[ \forall n \in \{0,\dots,8\},\; \mathrm{decodeBits}\mathopen{}\left(\mathrm{encodeBits}\mathopen{}\left(\mathrm{alt}\mathopen{}\left(n\right)\right)\right) = \mathrm{alt}\mathopen{}\left(n\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_all\_set\_message\_comes\_back\_too}]
+\[ \forall n \in \{0,\dots,8\},\; \mathrm{decodeBits}\mathopen{}\left(\mathrm{encodeBits}\mathopen{}\left(\mathrm{ones}\mathopen{}\left(n\right)\right)\right) = \mathrm{ones}\mathopen{}\left(n\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_header\_records\_the\_length}]
+\texttt{(List.range 9).all (fun n => natOf ((FREE.map (fun i => (encodeBits (alt n)).getD i false)).take LEN\_BITS) == n)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 9 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_shorter\_message\_is\_not\_a\_longer\_one}]
+\[ \mathrm{encodeBits}\mathopen{}\left(\mathrm{alt}\mathopen{}\left(3\right)\right) \neq \mathrm{encodeBits}\mathopen{}\left(\mathrm{alt}\mathopen{}\left(4\right)\right) \land \mathrm{encodeBits}\mathopen{}\left(\mathrm{ones}\mathopen{}\left(0\right)\right) \neq \mathrm{encodeBits}\mathopen{}\left(\mathrm{ones}\mathopen{}\left(1\right)\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_reserved\_six\_survive\_any\_message}]
+\texttt{[alt 0, alt 5, ones 8, alt 115].all (fun m => let b := encodeBits m (b.getD 48 false == true) \&\& (b.getD 49 false == false) \&\& (b.getD 50 false == false) \&\& (b.getD 51 false == false) \&\& (b.getD 64 false == true) \&\& (b.getD 65 false == false))}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{imprint\_settles\_its\_range}]
+\[ \mathrm{settledHere} = 9 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 
 \paragraph{\texttt{ledgerclaims.lean}}
 
