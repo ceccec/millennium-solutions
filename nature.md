@@ -1,6 +1,6 @@
 ---
 title: Nature, proved
-description: Where the deposit's proved laws meet nature and daily life — each one labelled as a fact of nature, a practice you can use, or a metaphor, and linked to the theorem the kernel checked.
+description: Where the deposit's proved laws meet nature and daily life — each labelled a fact of nature, a practice, or a metaphor, and linked to its theorem.
 head:
   - ['meta', { name: 'robots', content: 'index, follow' }]
 ---

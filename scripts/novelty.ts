@@ -7,8 +7,9 @@
 // a file is `named` because the ℤ/9 arithmetic under it is Euler's, while a statement inside it may have no
 // earlier author at all, and nothing looked. The author asked for novelty discovery at scale; this is it.
 //
-// For each of the 632 theorems — the kernel's 641 declarations less the 9 that close by rfl, which the seal calls
-// declarations, not theorems — with no key and no account:
+// For every theorem in the tree — the kernel's declarations less the ones that close by rfl, which the seal
+// calls declarations, not theorems; the counts are derived per run and printed, never written here — with no
+// key and no account:
 //   OEIS       — every integer list in the statement that could be a sequence (not a hash digest, not ASCII
 //                text, not a constant run) is looked up by its terms: the most exact prior-art check there is;
 //   zbMATH Open, OpenAlex, Crossref, arXiv — the theorem's own terms, with its file's declared domain.
@@ -26,7 +27,7 @@
 // or its record is older than --days. The file is written every ten theorems, so a long run resumes.
 //
 //   node scripts/novelty.ts                     search what is new, changed or stale (default: older than 30 days)
-//   node scripts/novelty.ts --limit 12          at most 12 theorems this run
+//   node scripts/novelty.ts --limit N           at most N theorems this run
 //   node scripts/novelty.ts --only flow.lean    one source file
 //   node scripts/novelty.ts --all               search everything again
 //   --days N · --summary <file.md>
