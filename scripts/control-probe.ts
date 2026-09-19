@@ -15,9 +15,10 @@
  *  gates-fire verbatim. A probe that never fires is the finding.
  *
  *  Every mutation is applied to a backup-and-restore copy, and the tree is verified clean at the end. */
-import { readFileSync, writeFileSync, copyFileSync, existsSync, unlinkSync } from 'node:fs'
+import { readFileSync, writeFileSync, existsSync, mkdtempSync, rmSync, symlinkSync } from 'node:fs'
 import { execSync } from 'node:child_process'
-import { resolve, dirname } from 'node:path'
+import { resolve, dirname, join } from 'node:path'
+import { tmpdir } from 'node:os'
 import { leanFiles } from '../src/api/index.ts'
 import { uncontrolledRefusers } from '../src/api/gates.ts'
 
@@ -30,11 +31,35 @@ import { uncontrolledRefusers } from '../src/api/gates.ts'
 const LIMIT_MS = 180_000
 type Verdict = 'pass' | 'refuse' | 'unfinished'
 const run = (cmd: string): Verdict => {
-  try { execSync(cmd, { stdio: 'pipe', timeout: LIMIT_MS }); return 'pass' }
+  try { execSync(cmd, { stdio: 'pipe', timeout: LIMIT_MS, cwd: WT }); return 'pass' }
   catch (e: any) { return e?.killed === true || e?.signal === 'SIGTERM' ? 'unfinished' : 'refuse' }
 }
 const clean = (): boolean => execSync('git status --porcelain').toString().trim() === ''
 if (!clean()) { console.log('✗ control-probe: working tree is dirty — refusing to mutate it'); process.exit(1) }
+
+// ── THE PROBE DOES NOT TOUCH THE WORKING TREE AT ALL ──────────────────────────────────────────────────────
+// It used to mutate the developer's own checkout and undo the damage with `git checkout -- .`, defended by
+// the refusal above: start clean, so anything dirty afterwards is mine. That reasoning is wrong in one exact
+// way — it assumes nobody else writes while the probe runs, and the probe runs for minutes. On 2026-09-20 it
+// discarded two source files being edited during a run, silently, and the only symptom was a syntax error
+// reported in a file that no longer had the syntax.
+//
+// The first fix scoped the revert to paths that turned dirty during one gate's run. That was still a guess,
+// and the test said so: a marker written into a tracked file mid-run was destroyed again, and NAMED as the
+// probe's own doing. There is no content the probe can inspect that distinguishes its own damage from
+// somebody's work, so it must stop needing to tell them apart.
+//
+// A DISPOSABLE WORKTREE at HEAD removes the question. Every perturbation, every gate run and every revert
+// happens in a checkout that exists for this process and is deleted at the end; node_modules is a symlink,
+// so nothing is installed and nothing is copied. Reverting inside it is `git checkout -- . && git clean -fdq`,
+// which is safe precisely because the worktree holds nothing but HEAD and the probe's own mess. The
+// developer's tree is untouched BY CONSTRUCTION rather than by an argument about timing.
+const WT = mkdtempSync(join(tmpdir(), 'control-probe-'))
+execSync(`git worktree add --detach ${JSON.stringify(WT)} HEAD`, { stdio: 'pipe' })
+try { symlinkSync(resolve('node_modules'), join(WT, 'node_modules')) } catch { /* already there */ }
+const w = (f: string): string => join(WT, f)
+const teardown = () => { try { execSync(`git worktree remove --force ${JSON.stringify(WT)}`, { stdio: 'pipe' }) } catch { rmSync(WT, { recursive: true, force: true }) } }
+process.on('exit', teardown)
 
 // ── the uncontrolled refusers, DERIVED exactly as leads.ts derives them ──────────────────────────────────
 const targets = uncontrolledRefusers()
@@ -109,50 +134,29 @@ const unmeasured: string[] = []
 // "the tree did not come back clean" about a file its own control flow had left there. It is a function now,
 // called on every path out.
 //
-// IT REVERTED THE WHOLE TREE, AND ON 2026-09-20 IT TOOK WORK THAT WAS NOT ITS OWN. The line was
-// `if (!clean()) execSync('git checkout -- .')`, justified by the sentence above it: the probe refuses to
-// start on a dirty tree, so anything dirty afterwards is the probe's doing. That is true only if nothing
-// else writes to the repository while the probe runs, and a probe runs for minutes. Two source files edited
-// during one were discarded between one tool call and the next, with no message — the edits were simply
-// gone, and the first evidence was a syntax error in a file that no longer contained the syntax. It is the
-// second time: gates-fire.ts:107 still carries a comment about controls lost the same way.
-//
-// So the scope is now MEASURED rather than assumed. The paths dirty before a gate runs are recorded, the
-// paths dirty after are compared against them, and only the difference is reverted — the generator output
-// the probe actually caused. A path that was already dirty is somebody else's and is left alone. Untracked
-// files are never touched at all, because deleting a file a person has just written is worse than the mess
-// it would tidy. Everything reverted is named at the end, so a revert can never again be silent.
-const dirtyPaths = (): { path: string; tracked: boolean }[] =>
-  execSync('git status --porcelain', { encoding: 'utf8' }).split('\n').filter(Boolean)
-    .map((l) => ({ path: l.slice(3).trim().replace(/^"|"$/g, ''), tracked: !l.startsWith('??') }))
-const reverted = new Set<string>()
-const restore = (pre: { path: string; tracked: boolean }[]) => {
-  const was = new Set(pre.map((d) => d.path))
-  const mine = dirtyPaths().filter((d) => d.tracked && !was.has(d.path)).map((d) => d.path)
-  if (!mine.length) return
-  execSync('git checkout -- ' + mine.map((f) => JSON.stringify(f)).join(' '), { stdio: 'pipe' })
-  for (const f of mine) reverted.add(f)
+// EVERY REVERT IS NOW A WORKTREE RESET. There is nothing to attribute and nothing to get wrong: the
+// worktree holds HEAD plus whatever this process did to it, so discarding all of it is exactly right.
+const resetWorktree = () => {
+  execSync(`git -C ${JSON.stringify(WT)} checkout -- .`, { stdio: 'pipe' })
+  execSync(`git -C ${JSON.stringify(WT)} clean -fdq`, { stdio: 'pipe' })
 }
 for (const g of targets.sort()) {
   const cmd = `node scripts/${g}.ts`
-  const pre = dirtyPaths()
   const base = run(cmd)
   if (base === 'unfinished') {
-    restore(pre); unmeasured.push(g)
+    resetWorktree(); unmeasured.push(g)
     console.log(`  ⏱ ${g.padEnd(18)} did not finish inside ${LIMIT_MS / 1000}s — NOT MEASURED, and not a refusal`)
     continue
   }
-  if (base === 'refuse') { restore(pre); console.log(`  ? ${g.padEnd(18)} already red on a clean tree — not probed`); continue }
+  if (base === 'refuse') { resetWorktree(); console.log(`  ? ${g.padEnd(18)} already red on a clean tree — not probed`); continue }
   let fired: string | null = null
   let onlyUnloadable = false
   for (const p of PROBES) {
-    if (!existsSync(p.file)) continue
-    const backup = `/tmp/cp_${p.file.replace(/[\/.]/g, '_')}`
-    copyFileSync(p.file, backup)
-    const before = readFileSync(p.file, 'utf8')
+    if (!existsSync(w(p.file))) continue
+    const before = readFileSync(w(p.file), 'utf8')
     const after = p.mutate(before)
-    if (after !== before) { writeFileSync(p.file, after); if (run(cmd) === 'refuse') fired = p.name }
-    copyFileSync(backup, p.file); unlinkSync(backup)
+    if (after !== before) { writeFileSync(w(p.file), after); if (run(cmd) === 'refuse') fired = p.name }
+    resetWorktree()
     if (fired) break
   }
   if (!fired) {
@@ -162,23 +166,22 @@ for (const g of targets.sort()) {
     // reachability hit is remembered and the search continues; it is only reported when nothing better came.
     let weak: string | null = null
     for (const f of readsOf(g)) {
-      const backup = `/tmp/cp2_${f.replace(/[\/.]/g, '_')}`
-      copyFileSync(f, backup)
-      const before = readFileSync(f, 'utf8')
+      if (!existsSync(w(f))) continue
+      const before = readFileSync(w(f), 'utf8')
       const after = perturb(f, before)
       if (after !== before) {
-        writeFileSync(f, after)
+        writeFileSync(w(f), after)
         if (run(cmd) === 'refuse') {
           if (after.endsWith(UNLOADABLE)) weak ??= `perturbing ${f}, which it is built on`
           else fired = `perturbing ${f}, which it is built on`
         }
       }
-      copyFileSync(backup, f); unlinkSync(backup)
+      resetWorktree()
       if (fired) break
     }
     if (!fired && weak) { fired = weak; onlyUnloadable = true }
   }
-  restore(pre)
+  resetWorktree()
   // A GATE REACHED ONLY BY AN UNLOADABLE MODULE IS NOT A CANDIDATE CONTROL. It proves the gate depends on
   // that module and nothing more, and lifting "make the import throw" into gates-fire would be a control
   // that passes for every gate that imports anything. Reported as its own verdict so it is not counted as
@@ -188,16 +191,16 @@ for (const g of targets.sort()) {
   else { inert.push(g); console.log(`  ○ ${g.padEnd(18)} not reached, even by perturbing the files it is built on`) }
 }
 
-// THE END CHECK EXISTS TO CATCH THE PROBE LEAVING ITS OWN MUTATION BEHIND, and with the revert now scoped it
-// has to say which of the two it found. A path the probe reverted that is dirty AGAIN is the failure this
-// script was written to report. A path the probe never touched is somebody else's work, and the probe's job
-// is to name it and leave it alone — the previous version's job was to delete it.
-const endDirty = dirtyPaths().filter((d) => d.tracked).map((d) => d.path)
-const mineLeft = endDirty.filter((f) => reverted.has(f))
-const notMine = endDirty.filter((f) => !reverted.has(f))
-if (reverted.size) console.log(`\n○ reverted ${reverted.size} path(s) the probe itself dirtied: ${[...reverted].join(', ')}`)
-if (notMine.length) console.log(`○ ${notMine.length} path(s) changed during the run and were NOT touched: ${notMine.join(', ')} — the probe does not own them`)
-if (mineLeft.length) { console.log(`\n✗ control-probe: the tree did not come back clean — ${mineLeft.join(', ')}`); process.exit(1) }
+// THE END CHECK HAS ONE THING LEFT TO VERIFY, and it is not the probe's own mess — that lives in a
+// worktree which is about to be deleted. It is that the DEVELOPER'S tree is exactly as it was found. If it
+// is not, the probe says so without touching it: after this rewrite the probe has no code path that writes
+// there, so a difference is someone else's work and deleting it is what caused this rewrite.
+const endDirty = execSync('git status --porcelain').toString().split('\n').filter(Boolean)
+  .map((l) => l.slice(3).trim().replace(/^"|"$/g, ''))
+if (endDirty.length)
+  console.log(`\n○ ${endDirty.length} path(s) in the working tree changed while the probe ran: ${endDirty.slice(0, 5).join(', ')}`
+    + ` — left exactly as found. The probe writes only to its own worktree.`)
+teardown()
 console.log(`\n○ control-probe: ${falsifiable.length} of ${targets.length} can be made red by a generic perturbation`)
 console.log(`  those are candidate controls — lift the named mutation into scripts/gates-fire.ts.`)
 console.log(`  ${inert.length} were not reached, which is NOT proof they are unfalsifiable: a gate about`)
