@@ -382,6 +382,26 @@ const PROVED: [string, RegExp, string][] = [
 // It is weaker than the rows below — naming a file is not stating its result — and the two are kept apart
 // rather than blended, because a derived check that quietly stands in for a specific one is how a gate
 // starts reporting the health of something other than what it claims.
+// A DECLARED CHOICE MUST NOT SPREAD. theology.lean's eighth theorem is that file's whole thesis: the pairing
+// of seven readings onto seven problems is a CHOICE, is typed out as one where every other definition in the
+// file is derived, and is counted against the 5040 orderings that nothing in the ring prefers it to. That
+// account of itself is true only while the pairing reaches nothing. Let a second theorem come to depend on
+// it — there or in another source, through `Theology.pairing` or an `open Theology` — and the choice has
+// quietly become load-bearing while every gate stays green and the header keeps saying it is not.
+//
+// This is the same defect the seven Clay names carried for months, caught one layer earlier. There the names
+// were load-bearing and no check knew it; renaming one turned a README claim red, which is how it surfaced.
+// Measured 2026-09-20: one declaration, used by exactly one theorem, referenced by no other file.
+const CHOICE = 'pairing'
+const choiceUsers = [...leanSource('theology.lean').matchAll(/^theorem\s+([A-Za-z_0-9]+)([\s\S]*?):= by decide/gm)]
+  .filter((m) => new RegExp('\\b' + CHOICE + '\\b').test(m[2])).map((m) => m[1])
+if (choiceUsers.length !== 1)
+  fail(`theology.lean's typed choice \`${CHOICE}\` is depended on by ${choiceUsers.length} theorem(s) — ${choiceUsers.join(', ') || 'none'}. It is declared as a choice and counted against the orderings it is not evidence for; a choice carrying more than the one theorem that states what it is has become load-bearing`)
+const choiceElsewhere = leanFiles().filter((f) => f !== 'theology.lean')
+  .filter((f) => /\bTheology\.pairing\b|open\s+Theology\b/.test(leanSource(f)))
+if (choiceElsewhere.length)
+  fail(`${choiceElsewhere.length} other Lean source(s) reach into theology.lean's declared choice: ${choiceElsewhere.join(', ')} — the pairing is one of 5040 and must stay inert outside the theorem that says so`)
+
 const unnamed = leanFiles().filter((f) => !front.includes(f))
 if (unnamed.length)
   fail(`${unnamed.length} Lean source(s) are named nowhere on the front pages: ${unnamed.join(', ')} — proved and unmentioned`)

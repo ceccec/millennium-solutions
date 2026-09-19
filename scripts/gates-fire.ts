@@ -178,6 +178,16 @@ const CONTROLS: Control[] = [
     what: 'a constant decided against its own literal and used nowhere else',
     mutate: (s) => s.replace('end Phenomena', 'def probeClaims : Nat := 0\ntheorem probe_is_zero : probeClaims = 0 := by decide\n\nend Phenomena') },
 
+  // A DECLARED CHOICE SPREADING. theology.lean types out ONE list — the pairing of seven readings onto seven
+  // problems — and its eighth theorem says what that costs: it is one ordering of 5040 and it is evidence
+  // for none of them. That honesty holds only while nothing else leans on the list, so this plants a second
+  // theorem that does. The defect it guards is the one the seven Clay names carried for months undetected:
+  // something typed by a person quietly becoming load-bearing while every gate stays green.
+  { gate: 'contradictions (a declared choice spreading)', cmd: 'node scripts/contradictions.ts',
+    file: 'src/proof/theology.lean',
+    what: 'a second theorem leaning on the one list the file types out as a choice',
+    mutate: (s) => s.replace('end Theology', 'theorem probe_leans_on_the_choice :\n  pairing.length = span.length + 1 := by decide\n\nend Theology') },
+
   // THE VOCABULARY THIS DEPOSIT CHOSE FOR ITSELF. 37 of its 43 module terms are named by no live theorem,
   // and the two most loaded — src/the/cancer and src/the/apple — disambiguate themselves in PROSE that
   // nothing ran. The honesty gate does not reach them: measured, it scores "this deposit cures cancer, the

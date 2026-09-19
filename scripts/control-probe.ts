@@ -108,16 +108,41 @@ const unmeasured: string[] = []
 // src/proof/novelty.json on the clean-tree run, the skip jumped the restore, and the probe ended with
 // "the tree did not come back clean" about a file its own control flow had left there. It is a function now,
 // called on every path out.
-const restore = () => { if (!clean()) execSync('git checkout -- .', { stdio: 'pipe' }) }
+//
+// IT REVERTED THE WHOLE TREE, AND ON 2026-09-20 IT TOOK WORK THAT WAS NOT ITS OWN. The line was
+// `if (!clean()) execSync('git checkout -- .')`, justified by the sentence above it: the probe refuses to
+// start on a dirty tree, so anything dirty afterwards is the probe's doing. That is true only if nothing
+// else writes to the repository while the probe runs, and a probe runs for minutes. Two source files edited
+// during one were discarded between one tool call and the next, with no message — the edits were simply
+// gone, and the first evidence was a syntax error in a file that no longer contained the syntax. It is the
+// second time: gates-fire.ts:107 still carries a comment about controls lost the same way.
+//
+// So the scope is now MEASURED rather than assumed. The paths dirty before a gate runs are recorded, the
+// paths dirty after are compared against them, and only the difference is reverted — the generator output
+// the probe actually caused. A path that was already dirty is somebody else's and is left alone. Untracked
+// files are never touched at all, because deleting a file a person has just written is worse than the mess
+// it would tidy. Everything reverted is named at the end, so a revert can never again be silent.
+const dirtyPaths = (): { path: string; tracked: boolean }[] =>
+  execSync('git status --porcelain', { encoding: 'utf8' }).split('\n').filter(Boolean)
+    .map((l) => ({ path: l.slice(3).trim().replace(/^"|"$/g, ''), tracked: !l.startsWith('??') }))
+const reverted = new Set<string>()
+const restore = (pre: { path: string; tracked: boolean }[]) => {
+  const was = new Set(pre.map((d) => d.path))
+  const mine = dirtyPaths().filter((d) => d.tracked && !was.has(d.path)).map((d) => d.path)
+  if (!mine.length) return
+  execSync('git checkout -- ' + mine.map((f) => JSON.stringify(f)).join(' '), { stdio: 'pipe' })
+  for (const f of mine) reverted.add(f)
+}
 for (const g of targets.sort()) {
   const cmd = `node scripts/${g}.ts`
+  const pre = dirtyPaths()
   const base = run(cmd)
   if (base === 'unfinished') {
-    restore(); unmeasured.push(g)
+    restore(pre); unmeasured.push(g)
     console.log(`  ⏱ ${g.padEnd(18)} did not finish inside ${LIMIT_MS / 1000}s — NOT MEASURED, and not a refusal`)
     continue
   }
-  if (base === 'refuse') { restore(); console.log(`  ? ${g.padEnd(18)} already red on a clean tree — not probed`); continue }
+  if (base === 'refuse') { restore(pre); console.log(`  ? ${g.padEnd(18)} already red on a clean tree — not probed`); continue }
   let fired: string | null = null
   let onlyUnloadable = false
   for (const p of PROBES) {
@@ -153,7 +178,7 @@ for (const g of targets.sort()) {
     }
     if (!fired && weak) { fired = weak; onlyUnloadable = true }
   }
-  restore()
+  restore(pre)
   // A GATE REACHED ONLY BY AN UNLOADABLE MODULE IS NOT A CANDIDATE CONTROL. It proves the gate depends on
   // that module and nothing more, and lifting "make the import throw" into gates-fire would be a control
   // that passes for every gate that imports anything. Reported as its own verdict so it is not counted as
@@ -163,7 +188,16 @@ for (const g of targets.sort()) {
   else { inert.push(g); console.log(`  ○ ${g.padEnd(18)} not reached, even by perturbing the files it is built on`) }
 }
 
-if (!clean()) { console.log('\n✗ control-probe: the tree did not come back clean'); process.exit(1) }
+// THE END CHECK EXISTS TO CATCH THE PROBE LEAVING ITS OWN MUTATION BEHIND, and with the revert now scoped it
+// has to say which of the two it found. A path the probe reverted that is dirty AGAIN is the failure this
+// script was written to report. A path the probe never touched is somebody else's work, and the probe's job
+// is to name it and leave it alone — the previous version's job was to delete it.
+const endDirty = dirtyPaths().filter((d) => d.tracked).map((d) => d.path)
+const mineLeft = endDirty.filter((f) => reverted.has(f))
+const notMine = endDirty.filter((f) => !reverted.has(f))
+if (reverted.size) console.log(`\n○ reverted ${reverted.size} path(s) the probe itself dirtied: ${[...reverted].join(', ')}`)
+if (notMine.length) console.log(`○ ${notMine.length} path(s) changed during the run and were NOT touched: ${notMine.join(', ')} — the probe does not own them`)
+if (mineLeft.length) { console.log(`\n✗ control-probe: the tree did not come back clean — ${mineLeft.join(', ')}`); process.exit(1) }
 console.log(`\n○ control-probe: ${falsifiable.length} of ${targets.length} can be made red by a generic perturbation`)
 console.log(`  those are candidate controls — lift the named mutation into scripts/gates-fire.ts.`)
 console.log(`  ${inert.length} were not reached, which is NOT proof they are unfalsifiable: a gate about`)
