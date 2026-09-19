@@ -23,7 +23,13 @@
 -- What CAN be sealed is the arithmetic each reading was drawn from, and this file seals eight facts that
 -- index.lean does not already decide — sharper ones, chosen because each is the exact place a reading
 -- either has a foothold or does not. The readings appear only as comments. Not one theorem below mentions
--- one, not one depends on one, and deleting every comment in this file changes nothing the kernel checks.
+-- one, and not one depends on one.
+--
+-- THAT LAST SENTENCE WAS AN ASSERTION FOR TWO DAYS, so it is now a measurement. On 2026-09-20 every comment
+-- in this file was stripped — 8401 characters, 148 lines down to 46 — and the remainder was handed to the
+-- kernel on its own: the same eight theorems, still compiling, still axiom-free. The prose carries no weight
+-- here and that has been checked rather than promised. It is a cheap check and it is the only kind of
+-- evidence a claim of inertness can have, because a reader cannot see an absence by reading.
 --
 -- THAT ARRANGEMENT IS THE POINT, AND IT WAS LEARNED THE HARD WAY THIS SESSION. Until an hour ago the seven
 -- theorems in index.lean were named `riemann_…`, `hodge_…`, `poincare_…`, and a README claim asserted that
