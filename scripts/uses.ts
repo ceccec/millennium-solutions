@@ -41,6 +41,20 @@ const FAMILY = cff.match(/family-names:\s*"?([^"\n]+?)"?\s*$/m)?.[1] ?? ''
 const GIVEN = cff.match(/given-names:\s*"?([^"\n]+?)"?\s*$/m)?.[1] ?? ''
 const PKG = (JSON.parse(readFileSync('package.json', 'utf8')) as { name: string }).name
 if (!ORCID || !DOI || !FAMILY) { console.log('✗ uses: CITATION.cff no longer carries orcid, doi and family-names — nothing to search for'); process.exit(1) }
+// ── PREFLIGHT: THE LOCAL PRECONDITIONS, WITHOUT SPENDING ONE API CALL ─────────────────────────────────────────────
+// The refusal above is this script's only one that does not need the network, and it is the only one a control can
+// reach: the other ("no source measured anything") requires every endpoint to go silent at once, which no file in
+// this tree can cause. That is why control-probe reported `uses` UNMEASURED rather than inert.
+//
+// A control also has to pass on a CLEAN tree, and a clean run of this script searches GitHub, Zenodo, OpenAlex, npm
+// and Hacker News — minutes, on every release. So the preconditions get a mode of their own. It searches nothing and
+// writes nothing, which is what makes it safe to add: there is no arrangement of flags in which this mode produces a
+// report, so it cannot be mistaken for one or used to manufacture a clean result.
+if (process.argv.includes('--preflight')) {
+  console.log(`✓ uses --preflight: the identity this report searches for reads clean — ${GIVEN} ${FAMILY} · ORCID ${ORCID} · DOI ${DOI} · package ${PKG}.`)
+  console.log('  No source was contacted and no report was written. This is the precondition, not the result.')
+  process.exit(0)
+}
 // The sibling work by the same author, which this CITATION.cff does not describe — declared, each with its source.
 const SIBLING = [
   '10.5281/zenodo.21787144', // ceccec.github.io — the repository DOI in its CITATION.cff

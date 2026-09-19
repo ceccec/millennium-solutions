@@ -195,6 +195,29 @@ const CONTROLS: Control[] = [
   // EVERY CLAIM IN THE CORPUS, PUT TO THE DETECTORS — 18,206 sentences, not a product of phrasings somebody
   // thought of. The control plants a Clay claim in the front page's own prose; markdown outside a fence is
   // the repository's own voice and there is nowhere for it to hide.
+  // THE TWO GATES control-probe COULD NOT MEASURE, CONTROLLED BY HAND. Its four generic perturbations never
+  // reached `novelty` or `uses`, and the probe was right to report them UNMEASURED rather than inert: the only
+  // refusal each had needed every endpoint it knows to go silent at once, which nothing in this tree can cause.
+  // A gate whose refusal no mutation can reach has no control and no way to write one, so both were given a
+  // refusal that a file in this tree CAN reach, and these are those refusals fired.
+
+  // novelty's record is what priorart.lean's kind 2 rests on — "these searches, on this date, returned nothing".
+  // The mutation empties every recorded query while leaving the verdicts claiming a completed search, which is a
+  // dated prior-art record with nothing whatsoever behind it. `--limit 0` searches nothing, so this control costs
+  // no API call in either direction; the record check runs before any search precisely so it can.
+  { gate: 'novelty', cmd: 'node scripts/novelty.ts --limit 0', file: 'src/proof/novelty.json',
+    what: 'a prior-art record claiming a completed search that records no query',
+    mutate: (s) => s.replace(/"queries": \{[^}]*\}/g, '"queries": {}') },
+
+  // uses searches for THIS work by its identity — ORCID, DOI, family name, package. Strip one and the report
+  // still runs, still finds nothing, and still reads as a clean empty result: it looked for nobody. The gate
+  // refuses before it contacts a source, and `--preflight` stops there, so the clean baseline costs nothing
+  // either — without it a control here would spend minutes on GitHub, Zenodo, OpenAlex, npm and Hacker News
+  // on every release.
+  { gate: 'uses', cmd: 'node scripts/uses.ts --preflight', file: 'CITATION.cff',
+    what: 'a citation search run without the identity it is supposed to search for',
+    mutate: (s) => s.replace(/^\s*orcid:.*$\n/m, '') },
+
   { gate: 'prose-trial', cmd: 'node scripts/prose-trial.ts', file: 'README.md',
     what: 'a Clay prize claimed in the front page\'s own voice',
     mutate: (s) => s + '\nWe prove the Riemann hypothesis in this deposit today.\n' },

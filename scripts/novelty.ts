@@ -157,6 +157,35 @@ const todo = leanTheorems().filter((t) => (!ONLY || t.file === ONLY) && t.tactic
   .filter(({ key, h }) => stale(ledger[key], h)).slice(0, LIMIT)
 console.log(`novelty: ${todo.length} theorem(s) to search this run · ${Object.keys(ledger).length} already on record`)
 
+// ── THE RECORD IS EVIDENCE, SO IT IS CHECKED BEFORE ANY SEARCH ────────────────────────────────────────────────────
+// src/proof/novelty.json is what priorart.lean's kind 2 rests on — "these searches, on this date, returned
+// nothing". Nothing checked the record itself. The only refusal this script had is the one at the very bottom, and
+// it needs every endpoint it knows to go silent at once, so no mutation of any file in this tree can reach it:
+// control-probe correctly reported `novelty` UNMEASURED rather than inert, which is a gate with no control and no
+// way to write one. These two are decidable here, locally, in milliseconds, and both are the record contradicting
+// itself rather than a guess about what a search should have found:
+//
+//   HOLLOW — a row whose verdict claims a COMPLETED search while recording no query. A search that left no trace
+//            of having run is not evidence that one ran; it is the unfalsifiable-check shape this repository hunts,
+//            wearing the authority of a dated record.
+//   ORPHAN — a row keyed to a theorem this tree does not hold. Evidence filed for a statement that is not here. It
+//            survives a rename in silence, and renames are not rare: seven happened on 2026-09-18, and the reason
+//            none of them orphaned a row is that the search had reached only 32 records by then — luck, not design.
+//
+// Measured on a clean tree on 2026-09-20: 32 rows on record, 0 hollow and 0 orphan, and the live key set they
+// were checked against held 908 that day.
+const CLAIMS_A_SEARCH = new Set<Verdict>(['NONE_FOUND', 'NONE_FOUND_PARTIAL'])
+const liveKeys = new Set(leanTheorems().filter((t) => t.tactic !== 'rfl').map((t) => `lean_${t.namespace.toLowerCase()}_${t.name}`))
+const hollowRows = Object.entries(ledger).filter(([, r]) => CLAIMS_A_SEARCH.has(r.verdict) && Object.keys(r.queries ?? {}).length === 0).map(([k]) => k)
+const orphanRows = Object.keys(ledger).filter((k) => !liveKeys.has(k))
+if (hollowRows.length || orphanRows.length) {
+  if (hollowRows.length)
+    console.log(`✗ novelty: ${OUT} holds ${hollowRows.length} record(s) that claim a completed search and record no query — ${hollowRows.slice(0, 3).join(', ')} — a search that left no trace of having run is not evidence that one ran`)
+  if (orphanRows.length)
+    console.log(`✗ novelty: ${OUT} holds ${orphanRows.length} record(s) keyed to a theorem this tree does not hold — ${orphanRows.slice(0, 3).join(', ')} — prior-art evidence filed for a statement that is not here`)
+  process.exit(1)
+}
+
 // THREE REFUSALS IN A ROW AND A SOURCE IS LEFT FOR THE NEXT RUN — any source, not only arXiv. The first full run stalled
 // on OpenAlex answering 429 to every call, each refusal costing ~100 s of backoff: hours spent learning nothing. A
 // refusing source now costs seconds, its records say so, and the next run asks it again.
