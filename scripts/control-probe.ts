@@ -54,6 +54,13 @@ if (!clean()) { console.log('✗ control-probe: working tree is dirty — refusi
 // so nothing is installed and nothing is copied. Reverting inside it is `git checkout -- . && git clean -fdq`,
 // which is safe precisely because the worktree holds nothing but HEAD and the probe's own mess. The
 // developer's tree is untouched BY CONSTRUCTION rather than by an argument about timing.
+//
+// VERIFIED THE WAY THE FIRST FIX WAS NOT. Both times the test was the same: start the probe, write a marker
+// into a tracked file while it runs, see whether the marker is there at the end. Under the scoped revert the
+// marker was destroyed AND reported as the probe's own doing, which is what said the scoping was still a
+// guess. Under the worktree it survived, and the run ended with "1 path(s) in the working tree changed while
+// the probe ran — left exactly as found". A fix to a destructive defect that has not been run against the
+// destruction is a hope, and this one had already been wrong once.
 const WT = mkdtempSync(join(tmpdir(), 'control-probe-'))
 execSync(`git worktree add --detach ${JSON.stringify(WT)} HEAD`, { stdio: 'pipe' })
 try { symlinkSync(resolve('node_modules'), join(WT, 'node_modules')) } catch { /* already there */ }
