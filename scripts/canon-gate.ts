@@ -18,6 +18,7 @@
 // the tree should have one of them. That keeps the gate's own claim narrow enough to be true.
 import { readFileSync } from 'node:fs'
 import { execSync } from 'node:child_process'
+import { stripComments } from '../src/source/index.ts'
 
 type Canon = { job: string; owner: string; pattern: RegExp; use: string }
 const CANON: Canon[] = [
@@ -34,6 +35,10 @@ const CANON: Canon[] = [
   // and each missing the existsSync guard the canonical one carries.
   { job: 'enumerating the Lean sources', owner: 'src/api/index.ts', use: 'leanFiles() from src/api',
     pattern: /readdirSync\((?:'|")src\/proof/ },
+  // Two copies, and the second was about to be written when this caught it. A gate reading the tree reads
+  // its own explanation; both gates need the same answer to "is this code or prose about code".
+  { job: 'reading source as code', owner: 'src/source/index.ts', use: 'stripComments from src/source',
+    pattern: /filter\(\(l\) => !\/\^\\s\*\(\\\/\\\//  },
 ]
 
 const files = execSync('git ls-files "*.ts" "*.vue"', { encoding: 'utf8' }).split('\n').filter(Boolean)
@@ -55,9 +60,6 @@ for (const c of CANON) {
 // A COMMENT QUOTING THE PATTERN IS NOT A COPY OF IT. This file quotes both patterns in its own header, and
 // so does src/html/index.ts; a gate that counts its own explanation as a violation is the instrument lying
 // about its subject, which is the defect this repository keeps finding in its own checks.
-function stripComments(s: string): string {
-  return s.replace(/\/\*[\s\S]*?\*\//g, ' ').split('\n').filter((l) => !/^\s*(\/\/|\*)/.test(l)).join('\n')
-}
 
 if (bad) {
   console.log(`\n✗ canon: ${bad} second implementation(s) of a job this tree derives once — fold them into the owner`)

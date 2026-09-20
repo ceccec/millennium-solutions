@@ -214,6 +214,20 @@ const CONTROLS: Control[] = [
   // every export now, after a sweep found eight named nowhere but their own definition — and one of the
   // eight was unused because its value had been typed out as a literal instead, so the honest fix was to use
   // the constant, not delete it. The control plants a fresh one in the module the tree derives escaping in.
+  // A TRACKED FILE NOTHING NAMES. The mutation cannot add a file, so it empties one instead: src/cli/index.ts
+  // loses the exports every caller imports by name, leaving a tracked file the tree no longer references.
+  // The same check is the most dangerous one in that gate — src/receipts/<uuid>.json is addressed by a
+  // filename computed at RUNTIME, so every receipt reads as unreferenced and deleting them would destroy the
+  // signed record. The exemption is written into orphan-gate.ts rather than remembered, and this control
+  // exists so the check that needs the exemption is known to work.
+  // THE CONTROL REMOVES THE LAST REFERENCE, which is what orphaning a file actually means. Emptying the file
+  // was the first attempt and it did nothing: its importers still named it, so it was still referenced, and
+  // gates-fire said so — "ACCEPTS a tracked file that nothing in the tree names". src/prove/emit.ts has
+  // exactly one referrer, the dynamic import in scripts/fold.ts, so cutting that line orphans it.
+  { gate: 'orphan-files', cmd: 'node scripts/orphan-gate.ts', file: 'scripts/fold.ts',
+    what: 'a module whose only referrer stopped naming it',
+    mutate: (s) => s.replace(/^.*src\/prove\/emit\.ts.*$/m, '// referrer removed by a control') },
+
   { gate: 'orphan-exports', cmd: 'node scripts/orphan-gate.ts', file: 'src/html/index.ts',
     what: 'an exported name that nothing in the tree ever names',
     // ASSEMBLED, for the same reason the canon control is. Written whole, the planted name appears HERE too —
