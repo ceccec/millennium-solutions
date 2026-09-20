@@ -21,9 +21,12 @@
  *  roughly a quarter of the handle space. Two of the three four-character groups are degraded. The handle
  *  is taken from the FRONT, off the undashed hex, for that reason and not for looks.
  *
- *  WHAT A HANDLE IS NOT. Sixteen bits over 2,912 entries is a birthday problem, and it has already
- *  happened: 71 collisions covering 143 entries, largest bucket 3. Theory predicts 64.7 for this
- *  population; the measurement is 71. A handle therefore ROUTES and REJECTS, it does not identify:
+ *  WHAT A HANDLE IS NOT. Sixteen bits over the sealed ledger is a birthday problem, and it has already
+ *  happened: the collisions are counted by `handleCollisions()` below rather than quoted here, because
+ *  the two figures that used to stand in this sentence — the ledger size and the number of colliding
+ *  entries — moved the moment eight theorems were sealed, and stale-figures caught them in the present
+ *  tense. A count of a growing record does not belong in a comment. `src/proof/handle.lean` decides the
+ *  same bound without a population: 65,536 addresses cannot separate more than 65,536 messages. A handle therefore ROUTES and REJECTS, it does not identify:
  *
  *    · it routes — 65,536 buckets, about 2.2 entries each at today's size, located without reading;
  *    · it rejects cheaply — a substituted or corrupted message fails on sixteen bits before any work;

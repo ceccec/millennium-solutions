@@ -694,7 +694,24 @@ for (const c of CONTROLS) {
     else { broken++; console.log(`  ✗ ${c.gate.padEnd(17)} ACCEPTS ${c.what} — this gate is not protecting anything`) }
   } finally {
     copyFileSync(backup, c.file); unlinkSync(backup)
-    if (c.restore) { try { execSync(c.restore, { stdio: 'pipe' }) } catch { /* reported by the leftover check */ } }
+    // A RESTORE THAT FAILS SILENTLY POISONS EVERY GATE AFTER IT. This swallowed the error and left the
+    // comment "reported by the leftover check", which is false: the leftover check compares TRACKED files,
+    // and what a restore rebuilds here is `.vitepress/dist`, which is not tracked. So a failed rebuild is
+    // invisible to it. Measured on 2026-09-21: `locale-fold` wrote its 17,832 locale stubs one line before
+    // gates-fire started, a control rebuilt the site, its restore did not put them back, and the four gates
+    // that read the built site — sitemap-mesh, zenodo-gate and both stale-figures — were reported as
+    // FAILING ON A CLEAN TREE. The tree was not clean. sitemap-mesh alone counted 17,832 broken links and
+    // was accused of not testing what it claims, while it was testing exactly that, correctly, against a
+    // site the harness had broken. Three of the four passed standalone, which is the signature.
+    if (c.restore) {
+      try { execSync(c.restore, { stdio: 'pipe' }) }
+      catch (e) {
+        broken++
+        console.log(`  ✗ ${c.gate.padEnd(17)} ITS RESTORE FAILED — every gate checked after this one saw a tree`)
+        console.log(`      this control was supposed to have put back: ${c.restore}`)
+        console.log(`      ${String((e as { stderr?: Buffer }).stderr ?? (e as Error).message).slice(0, 200)}`)
+      }
+    }
     if (existsSync(RESTORE_MARK)) unlinkSync(RESTORE_MARK)
   }
 }

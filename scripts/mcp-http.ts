@@ -29,7 +29,7 @@
  *          POST /mcp         JSON-RPC 2.0: initialize · tools/list · tools/call */
 import { createServer } from 'node:http'
 import { randomBytes } from 'node:crypto'
-import { TOOLS, LISTED, run, version } from './mcp.ts'
+import { TOOLS, LISTED, WRITES, run, version } from './mcp.ts'
 import { arg, flag, num } from '../src/cli/index.ts'
 
 const PORT = num('--port', 8787)
@@ -39,7 +39,7 @@ const TOKEN = process.env.MCP_TOKEN || randomBytes(24).toString('hex')
 
 // THE WRITERS, NAMED RATHER THAN GUESSED. A prefix rule ("anything called seal_*") would have let the next
 // writing tool through by being named differently. These are the tools whose handlers change the tree.
-const WRITES = new Set(['lean_seal', 'lean_generate', 'pages', 'ledger_trial'])
+
 
 // FULL FEATURED MEANS THE BROWSER SEES ALL OF THEM. The stdio server advertises a NARROW DOOR — `LISTED`
 // is two meta-tools, `list_tools` and `call_tool`, and the twenty-two real tools are reached through the
