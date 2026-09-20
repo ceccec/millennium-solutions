@@ -1,0 +1,91 @@
+{
+  "measured": "2026-09-20",
+  "tracked": [
+    {
+      "doi": "10.5281/zenodo.21781603",
+      "citing": [
+        {
+          "doi": "https://doi.org/10.5281/zenodo.22127374",
+          "date": "2026-08-27",
+          "title": "uuidna — content-addressed identity, honest by construction: 2039 dist",
+          "authors": [
+            "Tsvetan Rouschev"
+          ],
+          "self": true
+        },
+        {
+          "doi": "https://doi.org/10.5281/zenodo.22127377",
+          "date": "2026-08-27",
+          "title": "uuidna — content-addressed identity, honest by construction: 2039 dist",
+          "authors": [
+            "Tsvetan Rouschev"
+          ],
+          "self": true
+        },
+        {
+          "doi": "https://doi.org/10.5281/zenodo.22256731",
+          "date": "2026-09-02",
+          "title": "uuidna — content-addressed identity, honest by construction: 2499 dist",
+          "authors": [
+            "Tsvetan Rouschev"
+          ],
+          "self": true
+        },
+        {
+          "doi": "https://doi.org/10.5281/zenodo.22256708",
+          "date": "2026-09-02",
+          "title": "uuidna — content-addressed identity, honest by construction: 2499 dist",
+          "authors": [
+            "Tsvetan Rouschev"
+          ],
+          "self": true
+        },
+        {
+          "doi": "https://doi.org/10.5281/zenodo.22700098",
+          "date": "2026-09-13",
+          "title": "QPU",
+          "authors": [
+            "Tsvetan Rouschev"
+          ],
+          "self": true
+        },
+        {
+          "doi": "https://doi.org/10.5281/zenodo.22730576",
+          "date": "2026-09-13",
+          "title": "QPU",
+          "authors": [
+            "Tsvetan Rouschev"
+          ],
+          "self": true
+        },
+        {
+          "doi": "https://doi.org/10.5281/zenodo.22717782",
+          "date": "2026-09-12",
+          "title": "QPU",
+          "authors": [
+            "Tsvetan Rouschev"
+          ],
+          "self": true
+        }
+      ],
+      "notMeasured": [],
+      "datacite": 9,
+      "openalex": 7
+    },
+    {
+      "doi": "10.5281/zenodo.21819217",
+      "citing": [],
+      "notMeasured": [],
+      "datacite": 0,
+      "openalex": 0
+    },
+    {
+      "doi": "10.5281/zenodo.22256707",
+      "citing": [],
+      "notMeasured": [
+        "openalex: HTTP 404"
+      ],
+      "datacite": 1
+    }
+  ]
+}

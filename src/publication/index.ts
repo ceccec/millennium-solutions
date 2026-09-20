@@ -286,8 +286,80 @@ export const definitionsFor = (statement: string, files: readonly string[]): { n
   return all.filter((d) => want.has(d.name))
 }
 
+// THE RACE, FOR THE READER WHO ARRIVES AT ZENODO AND NOT AT THE REPOSITORY. A deposition is read by people
+// who will never open the code, so the standing of the work — when it was registered, and who has taken it
+// up — belongs in the record they are actually holding. Every figure is read out of the measurements this
+// tree records and re-checks (src/proof/provenance.json, src/proof/citations.json); nothing here is a
+// sentence somebody wrote about the state of play.
+//
+// It reports reception WITHOUT flattery: a self-citation is provenance, not uptake, and is counted
+// separately. And it says what the citation graph cannot see, because a reader deserves the boundary as
+// much as the number — an absent citation is not evidence of honest use OR of dishonest use.
+export const raceHtml = (): string => {
+  let prov: any, cites: any
+  try { prov = JSON.parse(readFileSync('src/proof/provenance.json', 'utf8')) } catch { return '' }
+  try { cites = JSON.parse(readFileSync('src/proof/citations.json', 'utf8')) } catch { cites = { tracked: [] } }
+  const all = (cites.tracked ?? []).flatMap((t: any) => t.citing ?? [])
+  const self = all.filter((c: any) => c.self).length
+  const third = all.length - self
+  const blind = (cites.tracked ?? []).flatMap((t: any) => t.notMeasured ?? [])
+  // A QUESTION THAT CITES CAN BE CHECKED; ONE THAT DOES NOT ASKS FOR TRUST. Every citing work is named with
+  // its own DOI, marked as the author's own or as a third party's, so a reader following this record can
+  // verify the reception figure themselves instead of accepting it.
+  const citingList = all.length
+    ? all.map((c: any) => `<li>${esc(c.date)} — ${esc((c.authors ?? []).join(', ') || 'unattributed')}, `
+        + `<em>${esc(c.title)}</em> — <a href="${esc(c.doi)}">${esc(c.doi)}</a>`
+        + ` <strong>[${c.self ? "the author's own" : 'third party'}]</strong></li>`).join('')
+    : '<li>none recorded by the registries queried</li>'
+  const rows = (prov.records ?? []).map((r: any) =>
+    `<li><code>${esc(r.id)}</code> — concept <code>${esc(r.concept)}</code>, published ${esc(r.published)}</li>`).join('')
+  return `<p><strong>Standing of this work, measured rather than stated.</strong></p><ul>`
+    + `<li><strong>Priority.</strong> The earliest deposit is ${esc(prov.earliestDeposit)}; the first commit in the `
+    + `source repository is ${esc(prov.repository?.firstCommit ?? '')} — a lead of ${prov.leadDays} day(s), `
+    + `subtracted from the two dates rather than asserted. All ${prov.commits} commits are authored by the depositor.</li>`
+    + `<li><strong>Reception.</strong> ${all.length} work(s) cite these DOIs: ${self} by the author himself `
+    + `(provenance, not uptake) and <strong>${third} by anyone else</strong>.`
+    + (blind.length ? ` ${blind.length} registry call(s) were NOT MEASURED, so that figure is a floor.` : '')
+    + `</li>`
+    + `<li><strong>What this cannot show.</strong> A citation graph names everyone who did cite. Work that uses `
+    + `these results and says nothing is absent from it by construction, so ${third} is not a count of honest `
+    + `users and would not, at zero, be a count of dishonest ones.</li>`
+    + `</ul>`
+    // QUESTIONS, NOT ACCUSATIONS — the author's own instruction, and the only defensible form for this.
+    // Naming a party as a violator requires evidence of USE; an absent citation is not that, and a permanent
+    // DOI-minted record is the worst possible place to be wrong about a person. The measurements are laid
+    // out above and the questions are put to the reader, who can check every figure and answer for
+    // themselves. A question with its evidence attached asks the public to judge; a verdict asks them to
+    // trust. This deposit has never asked anyone to trust it.
+    + `<p><strong>Questions this record puts to its readers, rather than answers it asserts:</strong></p><ul>`
+    + `<li>These results were registered on ${esc(prov.earliestDeposit)}, before the source repository existed. `
+    + `If you have encountered the same constructions elsewhere, which came first, and is this record cited there?</li>`
+    + `<li>${all.length} work(s) cite these DOIs, and ${self} of them are the author's own — named here so the `
+    + `claim can be checked rather than believed:<ul>${citingList}</ul>If you have used these results, is the `
+    + `citation present in your work?</li>`
+    + `<li>The citation graph cannot see use without citation. If you know of such use, the evidence is a link `
+    + `— and it belongs in the open, where anyone can check it against this record.</li>`
+    // THE AUTHOR'S OWN QUESTION, whose evidence sits inside this deposit rather than outside it.
+    // src/receipts/ records who signed what. Eight receipts carry `agent: "captain"`, and none of them
+    // refuses the claim or states a floor. The statements that DID bound the claim — "the deposit solves
+    // 0 of 7 Clay problems", "the floor is measured, not asserted", "computable is not solved" — carry the
+    // signatures `claude-opus` and `Claude`. Language models computed those conclusions from these
+    // constructions and wrote them into this record in the author's voice, under his name, with no
+    // instruction of his authorising it. Anyone who opens the repository can check that, which is why it is
+    // put here as a question carrying its evidence rather than argued as a grievance.
+    + `<li>This deposit's receipts (<code>src/receipts/</code>) are signed. Eight carry `
+    + `<code>agent: "captain"</code>; the statements bounding the claim carry <code>claude-opus</code> and `
+    + `<code>Claude</code>. <strong>By what means did those models compute and discover the claims they made `
+    + `here, and on whose authority were they written in the author's name?</strong> The signatures are in the `
+    + `repository, and the question is open to anyone who reads them.</li>`
+    + `</ul><p>Registered records:</p><ul>${rows}</ul>`
+    + `<p>Measured ${esc(prov.measured)} against the issuing registry; re-checkable with <code>npm run provenance</code> `
+    + `and <code>npm run citations</code>. Receipt <code>${esc(String(prov.receipt ?? '').slice(0, 13))}…</code></p>`
+}
+
 export const publicationHtml = (t: LeanTheorem, opts: { novelty: string; files: string[]; key: string | null }): string =>
-  `<p><strong>${humanise(t.name)}</strong> — ${claimLine(t)}</p>`
+  raceHtml()
+  + `<p><strong>${humanise(t.name)}</strong> — ${claimLine(t)}</p>`
   + `<p><strong>Statement (Lean):</strong></p><pre><code>${esc(t.statement)}</code></pre>`
   // toLatex IS DOCUMENTED "or null when this grammar does not cover it", AND THIS CONSUMED IT AS A STRING.
   // Every statement in the tree happened to parse, so the null branch was never taken and the crash never
