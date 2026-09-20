@@ -7,6 +7,8 @@ import { createInterface } from 'node:readline'
 import { execSync } from 'node:child_process'
 import { readFileSync, existsSync, readdirSync } from 'node:fs'
 import { toUuid, merkleFold } from '../src/0/index.ts'
+import { handle as __handle, resolve as __resolve, HANDLE_HEX as __HANDLE_HEX } from '../src/handle/index.ts'
+const __toUuidForHandle = toUuid
 import { checkFace, type Face } from '../src/face/index.ts'
 import { doubleTorusGravity } from '../src/the/apple/index.ts'
 import { diamond } from '../src/5/diamond.ts'
@@ -24,6 +26,8 @@ const loadLedger = (): LedgerEntry[] => existsSync('src/proof/discovered.json') 
 const send = (m: unknown) => process.stdout.write(JSON.stringify(m) + '\n')
 
 export const TOOLS = [
+  { name: 'handle', description: 'The SHORT FORM: the first four hex of an address, plus the message, determine the whole address — so nothing but the message ever travels. Pass text to mint a handle; pass handle AND text to resolve one. ROUTES and REJECTS, never identifies: 16 bits over 2912 sealed receipts collide 71 times (birthday expectation 64.7), and the collision-free minimum today is 7 hex. The window is the FRONT four hex because hex 12..16 and 16..20 overlap the forced version/variant bits and carry less — and hex 12..16 is the third dash-group of the display form, the one an eye would reach for.',
+    inputSchema: { type: 'object', properties: { text: { type: 'string' }, handle: { type: 'string' } }, required: ['text'] } },
   { name: 'content_address', description: 'Content-address (uuid) any text — INTEGRITY/provenance, NOT encryption or proof.',
     inputSchema: { type: 'object', properties: { text: { type: 'string' } }, required: ['text'] } },
   { name: 'honesty_gate', description: 'Run the honesty gate: binary 1 (no named overclaim) or 0 (drains) + the hit. A lexical FLOOR, not a truth oracle; passing != true.',
@@ -71,6 +75,15 @@ export const TOOLS = [
 ]
 
 export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
+  handle: (a) => {
+    const text = String(a?.text ?? '')
+    if (!text) throw new Error('handle: text is required — the message is the payload, so there is nothing to address without it')
+    if (a?.handle) {
+      const r = __resolve(String(a.handle), text)
+      return JSON.stringify({ ...r, width: __HANDLE_HEX, note: r.carries ? 'this message carries that handle — which rejects an unrelated message, and does not establish this is the one meant' : 'this message does NOT carry that handle' }, null, 1)
+    }
+    return JSON.stringify({ handle: __handle(text), uuid: __toUuidForHandle(text), width: __HANDLE_HEX, note: 'send the handle and the message; the address is recomputable from the message alone' }, null, 1)
+  },
   lean_verify: (a) => { try { return execSync(`node scripts/lean.ts${a?.file ? ' ' + a.file : ''}`, { encoding: 'utf8' }) }
     catch (e) { return 'FAILED\n' + String((e as { stdout?: Buffer }).stdout ?? e) } },
   lean_seal: (a) => { try { return execSync(`node scripts/seal-lean.ts${a?.dry ? '' : ' --seal'}`, { encoding: 'utf8' }) }
