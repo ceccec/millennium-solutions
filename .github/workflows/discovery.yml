@@ -1,0 +1,76 @@
+# DISCOVERY — the generative path, on a timer, because verification was the only thing on one.
+#
+# Measured 2026-09-20: the scheduled cadence was trinity (gaps · lean-claims · seal · wholeness), all four of
+# them verification, and uses (who cites). The generative path — imagine proposing propositions to the
+# kernel, lean-gen proving ledger families at scale, seal-lean admitting what compiles — ran only inside the
+# release chain, and the release chain runs on a push. So the deposit checked itself on a schedule and found
+# new facts only when somebody decided to push. The default was verification.
+#
+# This inverts that. It proposes, hands every proposition to the kernel, and keeps what the kernel accepts.
+# Nothing here decides whether a statement is TRUE: `by decide` does, over a finite domain, and a proposition
+# the kernel refuses is discarded by the same tools that would refuse it in a push.
+#
+# IT SEALS NOTHING INTO MAIN. The ledger is append-only, so a seal is permanent and a wrong one cannot be
+# withdrawn, only revoked beside itself. The run therefore opens a PR: discovery is automatic, admission to
+# the record stays a decision. The PR states the octave — the ledger is kept an exact multiple of eight — so
+# a run that would leave it off-octave is visible before it is merged rather than after.
+name: Discovery — propose, decide, and offer what the kernel kept (daily)
+
+on:
+  schedule:
+    - cron: '11 4 * * *'   # daily 04:11 UTC, ahead of trinity at 06:00 so the heartbeat verifies the result
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: 22
+      - run: npm ci
+
+      - name: propose — every proposition this ring admits, put to the kernel
+        run: |
+          node scripts/imagine.ts --emit | tee -a "$GITHUB_STEP_SUMMARY"
+          node scripts/lean-gen.ts --emit | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: decide — the kernel, not this workflow, says what is true
+        run: node scripts/lean.ts | tail -5 | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: keep — seal only what compiled, and report the octave
+        run: node scripts/seal-lean.ts --seal | tail -4 | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: offer it, rather than commit it
+        run: |
+          set -euo pipefail
+          if git diff --quiet; then
+            echo "discovery: the kernel kept nothing new this run — the ring is exhausted at this depth" | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          OCTAVE=$(node -e "const l=require('./src/proof/discovered.json').length; console.log(l + (l % 8 ? ' — NOT a multiple of eight, the octave is open' : ' = ' + (l/8) + ' × 8, exact'))")
+          BRANCH="discovery/$(date -u +%Y-%m-%d)"
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add -A
+          git commit -m "discovery: what the kernel kept, $(date -u +%Y-%m-%d) — ledger $OCTAVE"
+          git push --force-with-lease origin "$BRANCH"
+          gh pr create --base main --head "$BRANCH" \
+            --title "discovery: what the kernel kept, $(date -u +%Y-%m-%d)" \
+            --body "Automated daily run of the generative path: \`imagine --emit\`, \`lean-gen --emit\`, then the kernel, then \`seal-lean --seal\`.
+
+          Nothing here judged a statement true — \`by decide\` did, over a finite domain, and anything it refused was discarded.
+
+          **Ledger: $OCTAVE**
+
+          A run that leaves the ledger off-octave is visible here rather than after merging. The step summary carries what was proposed, what compiled and what was sealed." \
+            || gh pr edit "$BRANCH" --title "discovery: what the kernel kept, $(date -u +%Y-%m-%d)"
+        env:
+          GH_TOKEN: ${{ github.token }}
