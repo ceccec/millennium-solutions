@@ -12,6 +12,7 @@
 // the opposite conclusion from the same evidence. This gate exists so the next orphan is noticed while
 // somebody still remembers what it was for, instead of being found during a purge and judged in a hurry.
 import { readFileSync, readdirSync, existsSync } from 'node:fs'
+import { execSync } from 'node:child_process'
 
 const pkg = JSON.parse(readFileSync('package.json', 'utf8')) as { scripts: Record<string, string> }
 const npmText = Object.values(pkg.scripts).join(' ')
@@ -40,4 +41,36 @@ if (orphans.length) {
   console.log(`  someone still knows what it was for. Three of the last four turned out to be worth keeping.`)
   process.exit(1)
 }
-console.log(`\n✓ orphan-gate: every script is reachable`)
+// ── AN EXPORT NOTHING NAMES IS THE SAME DEFECT, ONE SCALE DOWN ───────────────────────────────────────────
+// A script nothing runs and a function nothing calls are the same thing, and this gate had only ever looked
+// at the first. Measured 2026-09-20: eight exports were named nowhere but their own definition —
+// seedFromText, memoByRoot, createAnimationEngine, addressOf, MERGE_KEY_SPEC, EARTH, an Analytics type, and
+// SEED_BYTES. None reached the published package surface; mod.core.ts names its exports explicitly.
+//
+// SEVEN WERE DEAD AND ONE WAS NOT, which is the same split this gate's own header records for scripts.
+// SEED_BYTES was unused because ed25519.ts typed `32` as a literal three lines above it — so deleting the
+// constant would have removed the NAME and kept three copies of the NUMBER. It is used now. That is why this
+// reports rather than assumes: "nothing names it" is evidence about the tree, not a verdict about the code.
+//
+// Deliberately blunt: one appearance of the name across every .ts, .vue, .md and .json this repository
+// tracks. A name used dynamically, or only in prose, does not trip it. It cannot see re-export chains, so a
+// name that reaches the world through one will read as dead — check the published surface before deleting,
+// which is what mod.core.ts is for.
+const tracked = execSync('git ls-files "*.ts" "*.vue" "*.md" "*.json" "*.yml"', { encoding: 'utf8' })
+  .split('\n').filter(Boolean).filter((f) => !f.startsWith('packages/') && !f.startsWith('dist/'))
+const corpus = tracked.map((f) => { try { return readFileSync(f, 'utf8') } catch { return '' } }).join('\n')
+const dead: string[] = []
+for (const f of tracked.filter((x) => x.endsWith('.ts') || x.endsWith('.vue'))) {
+  const body = readFileSync(f, 'utf8')
+  for (const m of body.matchAll(/^export (?:const|function|class|interface|type) (\w+)/gm)) {
+    const hits = (corpus.match(new RegExp('\\b' + m[1] + '\\b', 'g')) ?? []).length
+    if (hits <= 1) dead.push(`${f}  ${m[1]}`)
+  }
+}
+if (dead.length) {
+  for (const d of dead) console.log(`  ✗ ${d} — exported, and named nowhere else in the tree`)
+  console.log(`\n✗ orphan-gate: ${dead.length} export(s) nothing names. Delete it, or find out why it is unused —`)
+  console.log(`  the last sweep found one that was unused because its value had been typed out as a literal instead.`)
+  process.exit(1)
+}
+console.log(`\n✓ orphan-gate: every script is reachable, and every export is named — ${tracked.length} tracked files read`)

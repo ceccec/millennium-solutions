@@ -94,12 +94,6 @@ export function gcdBigInt(a: bigint, b: bigint): bigint {
   return b === 0n ? a : gcdBigInt(b, a % b)
 }
 
-/** Deterministic seed from text */
-export function seedFromText(text: string, length = 6): number {
-  return Number.parseInt(toUuid(text).replace(/[^0-9a-f]/g, '').slice(0, length) || '0', 16)
-}
-
-/** Bidirectional fold */
 export function foldPair(a: string, b: string): { forward: string; reverse: string; bidirectional: boolean; merged: string } {
   const forward = merge(a, b)
   const reverse = merge(b, a)
@@ -136,25 +130,6 @@ export function sealFacets<F extends { facet: string; on: boolean }>(
   }
 }
 
-/** Memoization by matrix root */
-const reportMemo = new Map<string, unknown>()
-const reportComputing = new Set<string>()
-
-export function memoByRoot<T>(name: string, matrix: { root: string }, compute: () => T): T {
-  const key = `${name}:${matrix.root}`
-  if (reportMemo.has(key)) return reportMemo.get(key) as T
-  if (reportComputing.has(key)) return {} as T
-  reportComputing.add(key)
-  try {
-    const value = compute()
-    reportMemo.set(key, value)
-    return value
-  } finally {
-    reportComputing.delete(key)
-  }
-}
-
-/** Digital root (sum digits until single) */
 export function digitalRoot(n: number): number {
   const r = ((n % 9) + 9) % 9
   return r === 0 ? 9 : r
@@ -224,40 +199,4 @@ export function vortexOrbit(): number[] {
 export const A432_STEP = 360 / BASE
 
 /** Animation engine interface */
-export interface AnimationEngine {
-  readonly running: boolean
-  start(): void
-  stop(): void
-  sync(active: boolean): void
-  tick(): void
-  runWhile(active: () => boolean): void
-  dispose(): void
-}
-
-export function createAnimationEngine(draw: (time: number) => void): AnimationEngine {
-  let raf = 0, once = 0, spin = 0, running = false
-  const schedule = (fn: (t: number) => void): number =>
-    typeof requestAnimationFrame === 'function' ? requestAnimationFrame(fn) : 0
-  const cancel = (id: number): void => {
-    if (id && typeof cancelAnimationFrame === 'function') cancelAnimationFrame(id)
-  }
-  function loop(time: number): void {
-    if (!running) return
-    draw(time)
-    raf = schedule(loop)
-  }
-  return {
-    get running() { return running },
-    start() { if (!running) { running = true; raf = schedule(loop) } },
-    stop() { running = false; cancel(raf); raf = 0 },
-    tick() { cancel(once); once = schedule((t) => { once = 0; draw(t) }) },
-    sync(active: boolean) { active ? this.start() : (this.stop(), this.tick()) },
-    runWhile(active: () => boolean) {
-      if (running || spin) return
-      const step = (time: number): void => { draw(time); spin = active() ? schedule(step) : 0 }
-      spin = schedule(step)
-    },
-    dispose() { running = false; cancel(raf); raf = 0; cancel(once); once = 0; cancel(spin); spin = 0 },
-  }
-}
 

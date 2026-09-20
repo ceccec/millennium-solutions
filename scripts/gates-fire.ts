@@ -210,6 +210,14 @@ const CONTROLS: Control[] = [
   // copies grew afterwards — two missing `&`, one missing `>` — plus four of the tag stripper, and the gate
   // that would have caught them did not exist because the first consolidation felt like the fix. The
   // mutation plants a fresh copy in a file that currently uses the owner.
+  // AN EXPORT NOTHING NAMES. orphan-gate has always asked whether a SCRIPT is reachable; it asks the same of
+  // every export now, after a sweep found eight named nowhere but their own definition — and one of the
+  // eight was unused because its value had been typed out as a literal instead, so the honest fix was to use
+  // the constant, not delete it. The control plants a fresh one in the module the tree derives escaping in.
+  { gate: 'orphan-exports', cmd: 'node scripts/orphan-gate.ts', file: 'src/html/index.ts',
+    what: 'an exported name that nothing in the tree ever names',
+    mutate: (s) => s + '\nexport const probeUnusedExport = 1\n' },
+
   { gate: 'canon', cmd: 'node scripts/canon-gate.ts', file: 'scripts/clusters.ts',
     what: 'a second implementation of a job this tree derives exactly once',
     // ASSEMBLED FROM PIECES ON PURPOSE. Written out whole, this literal IS a second implementation sitting

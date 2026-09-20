@@ -99,6 +99,14 @@ function decodePoint(bytes: readonly number[]): Pt | null {
   return x === null ? null : [x, y]
 }
 
+// THE SIZES, NAMED ONCE. `SEED_BYTES` was exported and used nowhere, which read as dead weight — and the
+// reason it was unused is that every check below typed `32` and `64` as literals instead. Deleting the
+// constant would have removed the name and kept three copies of the number; this keeps the name and removes
+// the copies, which is the rule this deposit states as never type a constant.
+export const PUBLIC_KEY_BYTES = 32
+export const SIGNATURE_BYTES = 64
+export const SEED_BYTES = 32
+
 /** The secret scalar and the prefix, derived from a 32-byte seed (RFC 8032 §5.1.5). */
 function expand(seed: readonly number[]): { a: bigint; prefix: number[] } {
   const h = sha512(seed)
@@ -109,13 +117,13 @@ function expand(seed: readonly number[]): { a: bigint; prefix: number[] } {
 
 /** The public key for a 32-byte seed. */
 export function publicKey(seed: readonly number[]): number[] {
-  if (seed.length !== 32) throw new Error('ed25519: a seed is 32 bytes')
+  if (seed.length !== SEED_BYTES) throw new Error(`ed25519: a seed is ${SEED_BYTES} bytes`)
   return encodePoint(scalarMult(B, expand(seed).a))
 }
 
 /** A 64-byte signature over `msg` by the holder of `seed`. */
 export function sign(seed: readonly number[], msg: readonly number[]): number[] {
-  if (seed.length !== 32) throw new Error('ed25519: a seed is 32 bytes')
+  if (seed.length !== SEED_BYTES) throw new Error(`ed25519: a seed is ${SEED_BYTES} bytes`)
   const { a, prefix } = expand(seed)
   const A = encodePoint(scalarMult(B, a))
   const r = mod(le(sha512([...prefix, ...msg])), L)
@@ -126,7 +134,7 @@ export function sign(seed: readonly number[], msg: readonly number[]): number[] 
 
 /** Does `sig` verify against `pub` for `msg`? Anyone can ask; only the seed's holder can produce one. */
 export function verify(pub: readonly number[], msg: readonly number[], sig: readonly number[]): boolean {
-  if (pub.length !== 32 || sig.length !== 64) return false
+  if (pub.length !== PUBLIC_KEY_BYTES || sig.length !== SIGNATURE_BYTES) return false
   const A = decodePoint(pub); if (!A) return false
   const R = decodePoint(sig.slice(0, 32)); if (!R) return false
   const S = le(sig.slice(32))
@@ -137,6 +145,3 @@ export function verify(pub: readonly number[], msg: readonly number[], sig: read
   return lhs[0] === rhs[0] && lhs[1] === rhs[1]
 }
 
-export const PUBLIC_KEY_BYTES = 32
-export const SIGNATURE_BYTES = 64
-export const SEED_BYTES = 32

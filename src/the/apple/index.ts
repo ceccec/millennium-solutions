@@ -11,8 +11,6 @@ import { toUuid } from '../../0/index.ts'
 import { merkleGravity, doubleTorusGravity, doubleTorusField, fall, fixedPoints, seats } from '@uuidna/uuidna'
 export { merkleGravity, doubleTorusGravity, doubleTorusField, fall, fixedPoints, seats }
 
-export const EARTH = 'earth' // the ground the apple rests on — see ./earth
-
 export function report(): string {
   const fp = fixedPoints()
   const oneRoot = merkleGravity(['a', 'b', 'c'].map((x) => toUuid(x)))

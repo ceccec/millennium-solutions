@@ -25,7 +25,7 @@
 // fixed to 10). BOTH FALL IN THE MIDDLE, which is why the program field is 42 bits and not 48 — the middle is
 // three groups of the rendering and the two structural fields begin two of them. A layout that assumed 48
 // would produce uuids that are not uuids.
-import { toUuid } from './index.ts'
+
 import { publicKey, sign, verify } from './ed25519.ts'
 
 // ── THE LAYOUT IS DERIVED FROM THE RENDERING, NOT TYPED ──────────────────────────────────────────────────
@@ -121,18 +121,6 @@ export function decode(uuid: string): { check: string; program: string; message:
   return { check, program, message, intact: check === checksum(program, message) }
 }
 
-/** The address OF a container — one-way, so a container can be cited without being carried. */
-export const addressOf = (uuid: string): string => toUuid(uuid)
-
-// ── THE ASYMMETRIC HALF, WHICH IS BESIDE THE UUID AND NOT INSIDE IT ──────────────────────────────────────
-// The checksum above answers "was this damaged?". It cannot answer "who wrote this?", because anyone who
-// edits the payload recomputes it — that is what a checksum IS, and calling it authentication would be the
-// overclaim this deposit's own gate drains. Authentication needs a key the verifier does not have to hold,
-// and Ed25519 is that: 32 bytes of public key, 64 bytes of signature.
-//
-// NEITHER FITS. The uuid is 16 bytes in total, so the signature is carried alongside — the same shape the
-// deposit already uses for receipts, where the uuid is the address and the payload travels beside it. A
-// "signature in the uuid" would have to be a truncation, and a truncated signature is not a signature.
 export const uuidBytes = (uuid: string): number[] => {
   const hex = uuid.replace(/-/g, '')
   if (!/^[0-9a-f]{32}$/i.test(hex)) throw new Error('program: not a 32-hex uuid')

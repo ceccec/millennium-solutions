@@ -17,8 +17,6 @@ const LEAN = leanTheoremsShared()
 import { ledger as loadLedger, live as liveOf, withdrawn as goneOf, superseded as supOf, carried as carriedOf, proved as provedOf, octave, leanFiles, leanSource } from '../src/api/index.ts'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 
-export type Analytics = ReturnType<typeof analytics>
-
 export function analytics() {
   const led = loadLedger()
   const live = liveOf(led)

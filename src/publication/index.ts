@@ -139,29 +139,6 @@ export const STATEMENT_ADDRESS_SPEC =
   + 'two of [\\p{L}\\p{N}_] (Unicode, u flag), case preserved, then "=="→"=" and "!="→"≠")  '
   + '[v3: v2 amended by uuidna-49, Unicode class by erpax-94]'
 
-/** THE CROSS-REPOSITORY MERGE KEY — sha256, deliberately not this deposit's own address function.
- *
- *  erpax-94 identified the flaw in the plan we had converged on: agreeing a NORMALISATION is not enough,
- *  because their addresses are sha256-backed and mine are FNV-1a-backed, so two repositories can normalise
- *  a statement identically and still never collide numerically. A shared merge key needs the same
- *  normaliser AND the same hash, and my "zero collisions against their manifest" was computed under two
- *  different hashes — which is not a check, it is two repositories failing to find each other.
- *
- *  SHA-256 IS THE RIGHT CHOICE HERE AND FNV IS THE RIGHT CHOICE FOR THE LEDGER, which is why this is a
- *  second function rather than a change to the first. A merge key is the adversarial case: it decides
- *  whether two parties are publishing one result, and a non-cryptographic hash gives integrity against
- *  accident only. The ledger address cannot move — it names every entry in an append-only chain, and
- *  rewriting it is the same objection that stopped the hexbit encoding.
- *
- *  So: FNV addresses this deposit's own record, sha256 addresses the question "is this the same statement
- *  as yours". Different purposes, different guarantees, and neither pretending to be the other. */
-export const MERGE_KEY_SPEC =
-  'mergeKey = sha256(normalised statement), hex, where normalised is the STATEMENT_ADDRESS_SPEC rule: '
-  + 'collapse whitespace runs, remove a space only where it is NOT between two of [\\p{L}\\p{N}_] with the u '
-  + 'flag (Unicode letters and numbers, NOT ASCII-only), keep case, '
-  + '"=="→"=", "!="→"≠". sha256 and not this deposit\'s FNV-1a construction: a merge key decides whether two '
-  + 'parties publish one result, which is the adversarial case.'
-
 export const mergeKey = (statement: string): string =>
   createHash('sha256').update(normalise(statement), 'utf8').digest('hex')
 
