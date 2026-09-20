@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 947 of them across 42 files and
-7 wings; 745 close by exhaustion over a stated finite domain, 187 are proved
+(\texttt{npm run latex-gate}). There are 963 of them across 43 files and
+7 wings; 761 close by exhaustion over a stated finite domain, 187 are proved
 for every value, and the remaining 15 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -1468,6 +1468,88 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 
 \begin{theorem}[\texttt{the\_table\_is\_closed\_and\_that\_is\_all\_this\_file\_decides}]
 \[ \forall e \in \mathrm{entries},\; \mathrm{statusOf}\mathopen{}\left(e\right) = 0 \lor \mathrm{statusOf}\mathopen{}\left(e\right) = 1 \land \left|\mathrm{entries}\right| = 9 \land \left|\{\, e \in \mathrm{entries} \mid \mathrm{statusOf}\mathopen{}\left(e\right) = 0 \,\}\right| = 7 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{planck.lean}}
+
+\begin{theorem}[\texttt{the\_three\_planck\_units\_share\_one\_relative\_uncertainty}]
+\[ \mathrm{ppm}\mathopen{}\left(\mathrm{ellP},\,\mathrm{ellPUnc}\right) = 11 \land \mathrm{ppm}\mathopen{}\left(\mathrm{tP},\,\mathrm{tPUnc}\right) = 11 \land \mathrm{ppm}\mathopen{}\left(\mathrm{mP},\,\mathrm{mPUnc}\right) = 11 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_square\_root\_halves\_what\_is\_known\_about\_the\_measured\_constant}]
+\[ 2 \cdot \mathrm{ppm}\mathopen{}\left(\mathrm{ellP},\,\mathrm{ellPUnc}\right) = \mathrm{ppm}\mathopen{}\left(\mathrm{bigG},\,\mathrm{bigGUnc}\right) \land 2 \cdot \mathrm{ppm}\mathopen{}\left(\mathrm{tP},\,\mathrm{tPUnc}\right) = \mathrm{ppm}\mathopen{}\left(\mathrm{bigG},\,\mathrm{bigGUnc}\right) \land 2 \cdot \mathrm{ppm}\mathopen{}\left(\mathrm{mP},\,\mathrm{mPUnc}\right) = \mathrm{ppm}\mathopen{}\left(\mathrm{bigG},\,\mathrm{bigGUnc}\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_measurement\_admits\_thirty\_seven\_values\_and\_not\_one}]
+\[ \left|\mathrm{window}\right| = 37 \land \operatorname{head}\left(\mathrm{window}\right) = \mathrm{some}\mathopen{}\left(\mathrm{ellP} - \mathrm{ellPUnc}\right) \land \operatorname{last}\left(\mathrm{window}\right) = \mathrm{some}\mathopen{}\left(\mathrm{ellP} + \mathrm{ellPUnc}\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_digital\_root\_tracks\_the\_unit\_and\_not\_the\_scale}]
+\[ \mathrm{dr}\mathopen{}\left(\mathrm{ellP}\right) = 8 \land \mathrm{dr}\mathopen{}\left(\mathrm{tP}\right) = 4 \land \mathrm{dr}\mathopen{}\left(\mathrm{mP}\right) = 9 \land \mathrm{dr}\mathopen{}\left(\mathrm{ellP}\right) \neq \mathrm{dr}\mathopen{}\left(\mathrm{tP}\right) \land \mathrm{dr}\mathopen{}\left(\mathrm{tP}\right) \neq \mathrm{dr}\mathopen{}\left(\mathrm{mP}\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_orbit\_holds\_two\_thirds\_of\_the\_ring\_so\_landing\_on\_it\_says\_little}]
+\[ \left|\mathrm{orbit}\right| = 6 \land \left|\mathrm{axis}\right| = 3 \land \left|\mathrm{orbit}\right| + \left|\mathrm{axis}\right| = 9 \land \mathrm{dr}\mathopen{}\left(\mathrm{ellP}\right) \in \mathrm{orbit} \land \mathrm{dr}\mathopen{}\left(\mathrm{tP}\right) \in \mathrm{orbit} \land \mathrm{dr}\mathopen{}\left(\mathrm{mP}\right) \in \mathrm{axis} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{no\_product\_of\_three\_lattice\_constants\_lands\_where\_the\_planck\_length\_is}]
+\[ \left|\mathrm{products}\right| = 2197 \land \forall v \in \mathrm{products},\; v < \mathrm{ellP} - \mathrm{ellPUnc} \lor v > \mathrm{ellP} + \mathrm{ellPUnc} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_same\_search\_does\_reach\_the\_magnitude}]
+\[ \left|\{\, v \in \mathrm{products} \mid 1600000 \le v \land v \le 1700000 \,\}\right| = 9 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_search\_expecting\_less\_than\_one\_hit\_settles\_nothing\_either\_way}]
+\[ \frac{9 \cdot 2 \cdot \mathrm{ellPUnc} + 1}{100001} = 0 \land 9 \cdot 2 \cdot \mathrm{ellPUnc} + 1 < 100001 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{every\_planck\_unit\_is\_a\_square\_root\_and\_not\_a\_plain\_product}]
+\[ \mathrm{dimEllP}_{1} \bmod 2 \neq 0 \land \mathrm{dimTP}_{1} \bmod 2 \neq 0 \land \mathrm{dimMP}_{1} \bmod 2 \neq 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{length\_over\_time\_cancels\_both\_and\_leaves\_the\_defined\_constant}]
+\[ \mathrm{ddiv}\mathopen{}\left(\mathrm{dimEllP},\,\mathrm{dimTP}\right) = \left(0,\,0,\,2\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{length\_times\_mass\_cancels\_gravity\_and\_leaves\_the\_quantum}]
+\[ \mathrm{dmul}\mathopen{}\left(\mathrm{dimEllP},\,\mathrm{dimMP}\right) = \left(2,\,0,\,-2\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{length\_over\_mass\_cancels\_the\_quantum\_and\_leaves\_gravity}]
+\[ \mathrm{ddiv}\mathopen{}\left(\mathrm{dimEllP},\,\mathrm{dimMP}\right) = \left(0,\,2,\,-4\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_gravitational\_exponent\_predicts\_every\_published\_uncertainty}]
+\[ \mathrm{gPpm}\mathopen{}\left(\mathrm{dimEllP}\right) = 11 \land \mathrm{gPpm}\mathopen{}\left(\mathrm{dimTP}\right) = 11 \land \mathrm{gPpm}\mathopen{}\left(\mathrm{dimMP}\right) = 11 \land \mathrm{gPpm}\mathopen{}\left(\mathrm{ddiv}\mathopen{}\left(\mathrm{dimEllP},\,\mathrm{dimTP}\right)\right) = 0 \land \mathrm{gPpm}\mathopen{}\left(\mathrm{dmul}\mathopen{}\left(\mathrm{dimEllP},\,\mathrm{dimMP}\right)\right) = 0 \land \mathrm{gPpm}\mathopen{}\left(\mathrm{ddiv}\mathopen{}\left(\mathrm{dimEllP},\,\mathrm{dimMP}\right)\right) = \mathrm{ppm}\mathopen{}\left(\mathrm{bigG},\,\mathrm{bigGUnc}\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_three\_uncertainties\_are\_one\_uncertainty\_wearing\_three\_faces}]
+\[ \mathrm{ddiv}\mathopen{}\left(\mathrm{dimEllP},\,\mathrm{dimTP}\right)_{2}_{1} = 0 \land \mathrm{dmul}\mathopen{}\left(\mathrm{dimEllP},\,\mathrm{dimMP}\right)_{2}_{1} = 0 \land \mathrm{ddiv}\mathopen{}\left(\mathrm{dimEllP},\,\mathrm{dimMP}\right)_{2}_{1} \neq 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_published\_digits\_miss\_an\_identity\_that\_has\_no\_measurement\_in\_it}]
+\[ \mathrm{ratioFromDigits} = 299792422 \land \mathrm{ratioFromDigits} \neq \mathrm{cDefined} \land \mathrm{cDefined} - \mathrm{ratioFromDigits} = 36 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_miss\_is\_rounding\_and\_sits\_far\_below\_the\_uncertainty}]
+\[ \mathrm{cDefined} - \mathrm{ratioFromDigits} \cdot 1000000 < 11 \cdot \mathrm{cDefined} \land \frac{11 \cdot \mathrm{cDefined}}{\mathrm{cDefined} - \mathrm{ratioFromDigits} \cdot 1000000} = 91 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 

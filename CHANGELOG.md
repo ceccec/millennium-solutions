@@ -5,9 +5,21 @@ description: One row per annotated git tag, each with the content-address that t
 
 # Changelog
 
-Derived by `node scripts/changelog.ts` from this repository's annotated tags. **917 releases**, 917 of them carrying a content-address in the tag itself. A row cannot claim an address its tag does not carry, because the row is read out of the tag.
+Derived by `node scripts/changelog.ts` from this repository's annotated tags. **919 releases**, 919 of them carrying a content-address in the tag itself. A row cannot claim an address its tag does not carry, because the row is read out of the tag.
 
 ## The last 20 releases, with what they contain
+
+### v9.7.1 — 2026-09-20
+
+Content-address `ba7a688d-97cc-8aed-8d65-8e9d92c925d4`.
+
+- _no commits between this tag and the previous one — a re-tag of the same tree_
+
+### v9.7.0 — 2026-09-20
+
+Content-address `e75ac007-efd7-879c-8b4c-bdbc0c2945ea`.
+
+- the derived surfaces follow the tag v9.6.9
 
 ### v9.6.9 — 2026-09-20
 
@@ -147,26 +159,12 @@ Content-address `eb2ca35a-aac4-89c7-be1f-b8e4c2a84d9a`.
 
 - accounting and dashboard follow the tag
 
-### v9.5.1 — 2026-09-20
-
-Content-address `7022ceb9-e9a1-81ac-bd49-1915687781d0`.
-
-- paper follows theology.lean's header — the measurement that replaced the assertion reaches the paper too
-- control-probe: the worktree fix verified against the destruction it fixes — marker written mid-run survived, and the run named it instead of deleting it
-- control-probe runs in a disposable worktree — the scoped revert was still a guess and the test destroyed the marker again
-- control-probe reverted the whole tree and took work that was not its own — the revert is scoped and named now
-- theology: the inertness claim measured instead of asserted — 8401 characters of comment stripped, 148 lines to 46, the same eight theorems still compile axiom-free
-
-### v9.5.0 — 2026-09-18
-
-Content-address `0787a9d2-08a9-87de-9d35-17a7e1a2eddb`.
-
-- accounting and dashboard follow the tag
-
 ## Every release
 
 | version | date | content-address |
 | --- | --- | --- |
+| v9.7.1 | 2026-09-20 | `ba7a688d-97cc-8aed-8d65-8e9d92c925d4` |
+| v9.7.0 | 2026-09-20 | `e75ac007-efd7-879c-8b4c-bdbc0c2945ea` |
 | v9.6.9 | 2026-09-20 | `d51ee804-17b4-8af2-9fdf-2458c3066576` |
 | v9.6.8 | 2026-09-20 | `ee25116b-c7b6-8a89-834a-b0606300e805` |
 | v9.6.7 | 2026-09-20 | `01228357-5b0c-83fe-bb0c-29787536ec9c` |

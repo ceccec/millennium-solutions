@@ -776,7 +776,14 @@ const walkChain = (name: string, seen = new Set<string>(), found = new Set<strin
   return found
 }
 const inChain = [...walkChain('release')]
-const controlled = new Set(CONTROLS.map((c) => c.gate))
+// KEYED ON WHAT THE CONTROL RUNS, NOT ON WHAT IT IS CALLED. `c.gate` is a human label — 'canon', 'css',
+// 'notice-refuses-an-overclaim' — and this compared those labels against chain script BASENAMES, so a
+// control whose label was not spelled exactly like its script counted as absent. Eight working controls
+// were hidden behind four names, and the coverage line under-reported itself: canon-gate, css-gate,
+// notice and contradictions all carry controls and all were listed as "trusted only because they pass".
+// The cmd is the only place the two spellings are already joined, so it is read instead of maintained.
+const controlled = new Set(CONTROLS.flatMap((c) =>
+  [...c.cmd.matchAll(/scripts\/([a-z0-9-]+)\.ts/g)].map((m) => m[1])))
 // A GENERATOR IS NOT A GATE, and demanding a negative control from one is a category error. Nine of the
 // thirteen I was reporting as "trusted only because they pass" never pass or fail at all — they produce a
 // file and exit 0 unconditionally. Listing them as untested gates overstated the gap and would have sent

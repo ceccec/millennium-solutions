@@ -215,7 +215,21 @@ const BOUND = 'x'
 const applied = (f: Node, texOf: (n: Node) => string) => `${texOf(f)}\\mathopen{}\\left(${BOUND}\\right)`
 
 // ── LaTeX ────────────────────────────────────────────────────────────────────────────────────────────────
+/** THE TYPE OF AN ASCRIPTION IS PART OF THE STATEMENT. `tex` used to return `tex(n.e)` for an ascription,
+ *  dropping the type: `(110 : Int) - 108 = -chi 2` typeset as `110 - 108 = -chi(2)`, which over ℕ is a
+ *  different claim — subtraction truncates and the negation is meaningless. Three published theorems were
+ *  rendered this way. `unparse` had always kept it (line "case 'asc'"), so the Lean round-trip was green
+ *  throughout: the round-trip never looks at the LaTeX, which is precisely the blindness this map closes. */
+export const TYPE_NAME: Record<string, string> = {
+  Int: '\\mathbb{Z}', Nat: '\\mathbb{N}', Rat: '\\mathbb{Q}', Bool: '\\mathbb{B}',
+  UInt8: '\\mathbb{B}_{8}', UInt16: '\\mathbb{B}_{16}', UInt32: '\\mathbb{B}_{32}', UInt64: '\\mathbb{B}_{64}',
+}
+
 export const LATEX_NAME: Record<string, string> = { '==': '=', '=': '=', '!=': '\\neq', '≠': '\\neq', '<=': '\\le', '≤': '\\le', '>=': '\\ge', '≥': '\\ge', '<': '<', '>': '>', '+': '+', '-': '-', '*': '\\cdot', '/': '/', '%': '\\bmod', '∧': '\\land', '∨': '\\lor', '→': '\\to', '↔': '\\leftrightarrow', '++': '\\mathbin{+\\!\\!+}' }
+
+/** A type as mathematics. Unknown types fall back to their Lean spelling rather than being dropped —
+ *  a name a reader does not recognise is honest; a name that is not there is not. */
+const typeTex = (ty: Node): string => (ty.t === 'id' && TYPE_NAME[ty.v]) ? TYPE_NAME[ty.v] : tex(ty)
 
 const idTex = (v: string) => (/^[a-zA-Z]$/.test(v) ? v : '\\mathrm{' + v.replace(/_/g, '\\_') + '}')
 
@@ -252,7 +266,7 @@ export function tex(n: Node): string {
     case 'un': return n.op === '¬' ? `\\lnot ${tex(n.e)}` : `-${tex(n.e)}`
     case 'lam': return `${n.ps.map(idTex).join(',\\,')} \\mapsto ${tex(n.b)}`
     case 'list': return `[${n.xs.map(tex).join(',\\,')}]`
-    case 'asc': return tex(n.e)
+    case 'asc': return `\\left(${tex(n.e)} : ${typeTex(n.ty)}\\right)`
     case 'tuple': return `\\left(${n.xs.map(tex).join(',\\,')}\\right)`
     case 'proj': return `${tex(n.o)}_{${n.i}}`
     case 'let': return `${tex(n.b)} \\quad \\text{where } ${idTex(n.name)} = ${tex(n.e)}`
@@ -347,7 +361,7 @@ function ml(n: Node): string {
     case 'un': return `<mrow>${mo(n.op === '¬' ? '¬' : '−')}${ml(n.e)}</mrow>`
     case 'lam': return `<mrow>${n.ps.map(mi).join(mo(','))}${mo('↦')}${ml(n.b)}</mrow>`
     case 'list': return `<mrow>${mo('[')}${n.xs.map(ml).join(mo(','))}${mo(']')}</mrow>`
-    case 'asc': return ml(n.e)
+    case 'asc': return `<mrow><mo>(</mo>${ml(n.e)}<mo>:</mo>${ml(n.ty)}<mo>)</mo></mrow>`
     case 'tuple': return `<mrow>${mo('(')}${n.xs.map(ml).join(mo(','))}${mo(')')}</mrow>`
     case 'proj': return `<msub>${ml(n.o)}<mn>${X(n.i)}</mn></msub>`
     case 'let': return `<mrow>${ml(n.b)}${mo('where')}${mi(n.name)}${mo('=')}${ml(n.e)}</mrow>`

@@ -114,6 +114,61 @@ for (const t of T) {
 for (const f of failures.slice(0, 10)) console.log('  ✗ ' + f)
 bad += failures.length
 
+// ── THE OTHER DIRECTION, WITHOUT WHICH THE FIRST ONE PROVES ONLY THE PARSER ──────────────────────────────
+// Everything above runs Lean -> parse -> unparse -> LEAN. That proves the PARSER is faithful. It never
+// reads the LaTeX back, so the typeset form is write-only: a rendering that loses information passes,
+// because nothing ever asks it to give the information back.
+//
+// A rendering proves a theorem only if it DETERMINES it. If two different theorems typeset identically,
+// then a reader holding the LaTeX cannot say which theorem they are looking at, and the typeset form is
+// not evidence for either. That is injectivity, and it is the exact statement of "the Lean and the LaTeX
+// prove each other": the Lean determines the LaTeX (above), and the LaTeX determines the Lean (here).
+//
+// Measured when this was written: 963 statements, 752 rendered, 741 distinct LaTeX strings — 11 strings
+// carrying 22 theorems between them. Every one is reported as a LEAD with its cause, because the two
+// causes need opposite fixes and lumping them would hide the smaller one:
+//
+//   NAMESPACE DROPPED (11 of 11) — the statements parse to the same tree and live in different files.
+//     `settledHere = 11` is a true statement of asymmetric.lean and of quantum.lean, and the renderer
+//     prints no namespace, so the page cannot say whose it is. The fix is in the renderer's scope.
+//   RENDERER LOSS (0 of 11) — the trees DIFFER and typeset the same. That is the rendering asserting an
+//     equality the Lean does not, and it is the one that makes a published page wrong. None today, and
+//     the check is kept because "none today" is the only honest reason to believe there are none.
+const byTex = new Map<string, { name: string; statement: string }[]>()
+for (const t of T) {
+  let x: string | null = null
+  try { x = toLatex(t.statement) } catch { /* verbatim fallback, counted above */ }
+  if (!x) continue
+  if (!byTex.has(x)) byTex.set(x, [])
+  byTex.get(x)!.push({ name: t.name, statement: t.statement.replace(/\s+/g, ' ').trim() })
+}
+// COMPARE THE TREE, NOT THE TEXT. The first version of this compared source strings with whitespace
+// collapsed, and reported `demorgan_holds_at_every_arity_to_eight` against `demorgan_all_widths` as a
+// renderer loss. They differ by one redundant bracket — `(! (xs).all …)` against `(!((xs).all …))` — and
+// mean the same thing, so typesetting them identically is the renderer being RIGHT. Judging a rendering
+// by the spelling of its input accuses it of every difference the language does not care about. What a
+// collision has to be judged against is the parsed tree, which is what the rendering is built from.
+const norm = (xs: { statement: string }[]) =>
+  new Set(xs.map((x) => { try { return unparse(parse(x.statement)) } catch { return x.statement } }))
+const collisions = [...byTex.entries()].filter(([, xs]) => new Set(xs.map((x) => x.name)).size > 1)
+const losses = collisions.filter(([, xs]) => norm(xs).size > 1)
+const scoped = collisions.filter(([, xs]) => norm(xs).size === 1)
+if (collisions.length) {
+  console.log(`\n· ${collisions.length} LaTeX string(s) do not determine the theorem — ${byTex.size} distinct renderings over ${rendered} statements:`)
+  for (const [x, xs] of losses) {
+    console.log(`  ✗ RENDERER LOSS — ${[...new Set(xs.map((v) => v.name))].join(' and ')} differ in Lean and typeset identically`)
+    for (const st of norm(xs)) console.log(`      lean: ${st.slice(0, 104)}`)
+    console.log(`      tex:  ${x.slice(0, 104)}`)
+  }
+  for (const [x, xs] of scoped.slice(0, 6))
+    console.log(`  ○ SAME PROPOSITION, TWO NAMES — ${[...new Set(xs.map((v) => v.name))].join(', ')} share the statement \`${xs[0].statement.slice(0, 40)}\` → ${x.slice(0, 52)}`)
+  if (scoped.length > 6) console.log(`  ○ …and ${scoped.length - 6} more sharing a statement across files`)
+}
+// ONLY THE LOSSES FAIL. A namespace the renderer never had is a lead about its scope, not a wrong formula
+// on a page; failing it would stop the release over something no reader is misled by. A renderer loss IS a
+// wrong formula: two theorems shown as one. Reported separately, enforced separately.
+bad += losses.length
+
 const pct = ((100 * rendered) / T.length).toFixed(1)
 console.log(bad
   ? `\n✗ latex-gate: ${bad} finding(s) — a statement renders as mathematics that is not the statement`

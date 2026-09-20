@@ -18,14 +18,12 @@ import { CORE as ROSETTA_CORE, DOMAINS as ROSETTA_DOMAINS } from '../src/the/ros
 import { ledger as __ledger } from '../src/api/index.ts'
 import { isLive as __isLive, isWithdrawn as __isWithdrawn } from '../src/api/index.ts'
 
-const version = (() => { try { return execSync('git tag --sort=version:refname', { encoding: 'utf8' }).trim().split('\n').pop() || 'v0' } catch { return 'v0' } })()
+export const version = (() => { try { return execSync('git tag --sort=version:refname', { encoding: 'utf8' }).trim().split('\n').pop() || 'v0' } catch { return 'v0' } })()
 type LedgerEntry = { key: string; name: string; receipt: string }
 const loadLedger = (): LedgerEntry[] => existsSync('src/proof/discovered.json') ? __ledger() : []
 const send = (m: unknown) => process.stdout.write(JSON.stringify(m) + '\n')
-const reply = (id: unknown, result: unknown) => send({ jsonrpc: '2.0', id, result })
-const fail = (id: unknown, code: number, message: string) => send({ jsonrpc: '2.0', id, error: { code, message } })
 
-const TOOLS = [
+export const TOOLS = [
   { name: 'content_address', description: 'Content-address (uuid) any text — INTEGRITY/provenance, NOT encryption or proof.',
     inputSchema: { type: 'object', properties: { text: { type: 'string' } }, required: ['text'] } },
   { name: 'honesty_gate', description: 'Run the honesty gate: binary 1 (no named overclaim) or 0 (drains) + the hit. A lexical FLOOR, not a truth oracle; passing != true.',
@@ -72,7 +70,7 @@ const TOOLS = [
     inputSchema: { type: 'object', properties: {}, required: [] } },
 ]
 
-const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
+export const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
   lean_verify: (a) => { try { return execSync(`node scripts/lean.ts${a?.file ? ' ' + a.file : ''}`, { encoding: 'utf8' }) }
     catch (e) { return 'FAILED\n' + String((e as { stdout?: Buffer }).stdout ?? e) } },
   lean_seal: (a) => { try { return execSync(`node scripts/seal-lean.ts${a?.dry ? '' : ' --seal'}`, { encoding: 'utf8' }) }
@@ -227,7 +225,7 @@ const HANDLERS: Record<string, (a: any) => string | Promise<string>> = {
 // only when it needs it. Unlisted but still answered, so no caller breaks: every tool's own name, and the first door
 // (`run {op, args}`, `describe {op}`, with its old reply). TOOLS remains the catalogue the audit checks against HANDLERS;
 // the doors are not tools, so they are in neither.
-const LISTED = [
+export const LISTED = [
   {
     name: 'list_tools',
     description: "List this server's tools, or give one tool's description and inputSchema.",
@@ -253,7 +251,7 @@ const describeFirstDoor = (op?: unknown): string => {
   if (op) { const t = toolOf(op); return JSON.stringify({ op: t.name, description: t.description, args: t.inputSchema }) }
   return JSON.stringify({ ops: TOOLS.map((t) => ({ op: t.name, does: first(t.description) })) })
 }
-const run = async (name: string, a: any): Promise<string> => {
+export const run = async (name: string, a: any): Promise<string> => {
   if (name === 'call_tool') return run(String(a?.name ?? ''), a?.arguments ?? {})
   if (name === 'list_tools') return listTools(a?.name)
   if (name === 'run') return run(String(a?.op ?? ''), a?.args ?? {})
@@ -263,17 +261,41 @@ const run = async (name: string, a: any): Promise<string> => {
   return await h(a)
 }
 
-createInterface({ input: process.stdin }).on('line', (line) => {
-  let msg: any; try { msg = JSON.parse(line) } catch { return }
+// ── THE PROTOCOL, SEPARATED FROM THE PIPE IT ARRIVES ON ──────────────────────────────────────────────────
+// This used to be one block: parse a line of stdin, decide what the message means, write to stdout. That
+// works for a desktop client that can spawn a process, and it is unreachable from a browser, which cannot
+// spawn anything and speaks HTTP. The obvious move — a second server with the same tools — is the defect
+// this repository is named for: two derivations of one fact, and the copy that drifts is the one nobody
+// runs. So the DECISION is a function of the message and nothing else, and a transport is the small piece
+// that carries bytes to it. stdio is below; scripts/mcp-http.ts is the other caller, and it adds no tool,
+// no schema and no dispatch of its own.
+export type Rpc = { id?: unknown; method?: string; params?: any }
+/** One JSON-RPC message in, one reply out — or null for a notification, which is answered by silence. */
+export const handle = async (msg: Rpc): Promise<object | null> => {
   const { id, method, params } = msg
-  if (method === 'initialize') return reply(id, { protocolVersion: '2024-11-05', capabilities: { tools: {} }, serverInfo: { name: 'millennium-solutions', version } })
-  if (method === 'notifications/initialized' || method === 'notifications/cancelled') return
-  if (method === 'tools/list') return reply(id, { tools: LISTED })
+  const ok = (result: unknown) => ({ jsonrpc: '2.0', id, result })
+  const err = (code: number, message: string) => ({ jsonrpc: '2.0', id, error: { code, message } })
+  if (method === 'initialize') return ok({ protocolVersion: '2024-11-05', capabilities: { tools: {} }, serverInfo: { name: 'millennium-solutions', version } })
+  if (method === 'notifications/initialized' || method === 'notifications/cancelled') return null
+  if (method === 'tools/list') return ok({ tools: LISTED })
   if (method === 'tools/call') {
-    run(params?.name, params?.arguments || {})
-      .then((text) => reply(id, { content: [{ type: 'text', text }] }))
-      .catch((e: any) => fail(id, -32603, e?.message || 'error'))
-    return
+    try { return ok({ content: [{ type: 'text', text: await run(params?.name, params?.arguments || {}) }] }) }
+    catch (e: any) { return err(-32603, e?.message || 'error') }
   }
-  if (id !== undefined) fail(id, -32601, 'method not found: ' + method)
-})
+  return id === undefined ? null : err(-32601, 'method not found: ' + method)
+}
+
+// stdio — the transport a desktop client spawns. Unchanged in behaviour; it now asks `handle` what to say.
+if (!process.env.MCP_NO_STDIO) {
+  // THE TRANSPORT IS NOT THE SERVER. Everything above is the tool surface; the loop below is one way to
+// reach it. `scripts/mcp-http.ts` is another, and it IMPORTS the surface rather than restating it — two
+// transports over two copies of a tool table is two descriptions of one tool, and the one nobody runs is
+// the one that drifts. Importing this module must therefore not seize stdin, so the loop is guarded the
+// same way scripts/discover.ts guards its CLI.
+if (process.argv[1] && /mcp\.ts$/.test(process.argv[1])) {
+createInterface({ input: process.stdin }).on('line', (line) => {
+    let msg: Rpc; try { msg = JSON.parse(line) } catch { return }
+    handle(msg).then((r) => { if (r) send(r) })
+  })
+}
+}

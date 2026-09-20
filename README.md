@@ -25,12 +25,12 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 947 kernel-accepted declarations across 42 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `944cfcf2-3033-834b-b171-c3263d2b54e5`</sub>
-- 745 of those 947 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 202 close by rfl and are declarations.
-  <sub>SEALED · `19d6b59c-36f6-81cb-ba67-aa9c917755d3`</sub>
-- 1024 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `b9fe4b69-85dd-838b-8119-b836b5321f5b`</sub>
+- The formal layer holds 963 kernel-accepted declarations across 43 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `e68c7f41-554e-856d-baf9-27588ff87c77`</sub>
+- 761 of those 963 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 202 close by rfl and are declarations.
+  <sub>SEALED · `09af2edc-b69a-844b-97d0-7314e9a3ae5c`</sub>
+- 1040 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `46a75260-4c10-8b4e-9402-244d30638663`</sub>
 
 ## 2 · The ring
 
@@ -53,10 +53,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 2888 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `81e0873c-7539-8b22-a11e-b1cfcbbaf0eb`</sub>
-- The count is an exact multiple of eight — 2888 is 361 octaves with no remainder.
-  <sub>SEALED · `8dd0759e-26f6-8ce8-b0cf-6151a586aeea`</sub>
+- The ledger records 2904 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `543603cb-4866-8ecc-a028-6a88d92a71be`</sub>
+- The count is an exact multiple of eight — 2904 is 363 octaves with no remainder.
+  <sub>SEALED · `519f4cf6-a9f8-8139-b53d-05266fc5aa14`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -100,7 +100,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-42 Lean files in 7 wings, 947 declarations of which 932 are theorems. The prose in this section is read out of the
+43 Lean files in 7 wings, 963 declarations of which 948 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -143,6 +143,8 @@ this page; there is nowhere else to keep the description in step.
 **The three facts the unchecked files held alone** — `nucleus.lean`, 8 theorem(s). is decided here is ARITHMETIC over lists of small naturals and nothing else: that certain prefix sums   of a typed capacity list take certain values, that a product of numerators equals a product of   denominators, and that one integer is not another. No theorem below decides anything about a nucleus. prior_art_search: not performed for these rows — the sources are named above rather than searched for,   which is kind 1 and not kind 2. Nothing here claims a search returned nothing. prior_art_pool: bounded prior_art_own: nothing; this file exists to bring three facts under the kernel, not to find them
 
 **Every phenomenon this deposit touches, and the rule for the rest** — `phenomena.lean`, 4 theorem(s). Générale des Poids et Mesures (2019 revision, effective 20 May 2019); the electrochemical results are   Michael Faraday's laws of electrolysis, 1834, and the standard enthalpy of combustion of hydrogen.   Every physical result named here has an earlier author or a standards body, and none is this deposit's.
+
+**The Planck length, and what a lattice may say about it** — `planck.lean`, 16 theorem(s). here and none is asserted. What is decided below is arithmetic on those digit sequences: a quotient, a   list length, a residue, and an exhaustion over 13,824 products. prior_art_search: not performed — the source is named above rather than searched for. Nothing here claims   a search of the literature returned nothing. prior_art_pool: bounded prior_art_own: nothing about nature; the one thing this file contributes is the REFUSAL below, decided
 
 **Order-invariance** — `quantum.lean`, 12 theorem(s). form is invariant under permutation of its input, which is why `receipt_is_order_invariant` holds. What   this file contributes is the Lean verification over a stated finite domain and the negative controls   beside it — `naive_fold_is_not_order_invariant` shows the property is bought by the sort and not free,   and `the_receipt_is_not_injective` and `the_invariance_is_canonicalisation_not_physics` state its limits.   Verification and refusal, not discovery. prior_art_search: literature search performed 2026-09-05, terms "sorted Merkle tree order-invariant set   commitment canonical ordering leaves"; prior art found and credited. This file was `unclassified` — no   search had ever been run for it — and it is one of the 8 files whose 86 theorems are staged for DOIs. prior_art_pool: mixed   canonicalisation before folding is a searchable technique; the receipt it folds is ours.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: order-invariance of this deposit's receipt The quantum receipt — order invariance, proved rather than asserted.
 
@@ -202,7 +204,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Recovered — claims that computed and were withdrawn for want of a proof** — `recovered.lean`, 15 theorem(s). material, credited. What is NOT prior art is that these particular statements sat WITHDRAWN in this   deposit's ledger, each recorded as "not backed by a Lean proof. Its evidence is a TypeScript test",   while every one is decidable in a line. prior_art_search: literature search performed 2026-09-05, terms "units and non-units of Z/9 multiplicative   inverses group of units modulo 9"; prior art found and credited.
 
-31 of 947 declarations carry no comment of their own and are shown here as the gap they are, not
+31 of 963 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -211,14 +213,14 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 2,888 — 361 octaves exactly |
-| standing — carries its own proof | **932** |
+| ledger entries | 2,904 — 363 octaves exactly |
+| standing — carries its own proof | **948** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **435** |
 | withdrawn — nothing proves it | 1,521 |
-| proved in total | **1367** of 2,888 |
-| standing keys → distinct theorems | 932 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 42 · 932 theorems (745 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 15 rfl declarations |
-| proved `by decide` | 745 of 947 |
+| proved in total | **1383** of 2,904 |
+| standing keys → distinct theorems | 948 sealed, 0 of them keyed twice, 0 unresolvable |
+| Lean files · theorems | 43 · 948 theorems (761 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 15 rfl declarations |
+| proved `by decide` | 761 of 963 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -273,4 +275,4 @@ whether the work restates someone earlier. [The paper](/paper) typesets every st
 
 ---
 
-*15 claims, all verified · 932 Lean theorems · 2888 ledger entries · trial root `32d80b77-5d07-8b4e-a531-36747eb153f5` · integrity, not truth*
+*15 claims, all verified · 948 Lean theorems · 2904 ledger entries · trial root `2bd7fd63-1151-8c1f-a9bc-7c38a2768725` · integrity, not truth*
