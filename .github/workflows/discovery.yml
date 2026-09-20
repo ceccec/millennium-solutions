@@ -31,11 +31,9 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
-      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+      - uses: ./.github/actions/node
         with:
-          node-version: 22
-      - run: npm ci
-
+          kernel: 'true'
       # THE KERNEL HAS TO BE HERE, or "discovery" decides nothing and says so quietly. The first run of this
       # workflow finished in sixteen seconds and reported success: no lean on the runner, so lean.ts read
       # "41 files · 939 theorems · 41 FAILING", seal-lean refused, and `| tail | tee` swallowed both exit

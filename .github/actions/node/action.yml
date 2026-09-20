@@ -1,0 +1,53 @@
+# THE SETUP EVERY WORKFLOW REPEATS, once.
+#
+# Measured 2026-09-20: eight workflows, each pinning actions/setup-node by SHA and most calling `npm ci`.
+# Eleven copies of one pin. A pinned SHA is a supply-chain decision, and a decision recorded in eleven places
+# is one that gets updated in ten — the same story src/html/index.ts tells about HTML escaping, at the layer
+# where being wrong costs more than a broken page.
+#
+# `actions/checkout` stays in each workflow and cannot move here: a local composite action does not exist
+# until the repository has been checked out. That is a real limit, so it is stated rather than worked around.
+name: node
+description: The Node version this repository builds with, its dependencies, and optionally the Lean kernel it pins.
+
+inputs:
+  deps:
+    description: run npm ci (set "false" for jobs that only need node itself)
+    required: false
+    default: 'true'
+  kernel:
+    description: install the Lean toolchain named in lean-toolchain
+    required: false
+    default: 'false'
+  cache:
+    description: npm cache key for setup-node ("npm", or empty for none)
+    required: false
+    default: ''
+  registry-url:
+    description: npm registry, for the job that publishes
+    required: false
+    default: ''
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+      with:
+        node-version: 22
+        cache: ${{ inputs.cache }}
+        registry-url: ${{ inputs.registry-url }}
+    - if: inputs.deps == 'true'
+      shell: bash
+      run: npm ci
+    # The kernel is installed from the version this repository pins, never "latest": a toolchain that moves
+    # under a proof is a proof about a different system.
+    - if: inputs.kernel == 'true'
+      shell: bash
+      run: |
+        set -euo pipefail
+        curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o elan-init.sh
+        sh elan-init.sh -y --default-toolchain "$(cat lean-toolchain)"
+        echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+    - if: inputs.kernel == 'true'
+      shell: bash
+      run: lean --version

@@ -37,11 +37,16 @@ const CANON: Canon[] = [
     pattern: /readdirSync\((?:'|")src\/proof/ },
   // Two copies, and the second was about to be written when this caught it. A gate reading the tree reads
   // its own explanation; both gates need the same answer to "is this code or prose about code".
+  // Eleven copies of one pinned SHA across eight workflows. A pin is a supply-chain decision, and a decision
+  // recorded in eleven places is updated in ten. The owner is a composite action; `actions/checkout` cannot
+  // move into it, because a local action does not exist until the checkout has run.
+  { job: 'the workflow node setup', owner: '.github/actions/node/action.yml', use: './.github/actions/node',
+    pattern: /actions\/setup-node@/ },
   { job: 'reading source as code', owner: 'src/source/index.ts', use: 'stripComments from src/source',
     pattern: /filter\(\(l\) => !\/\^\\s\*\(\\\/\\\//  },
 ]
 
-const files = execSync('git ls-files "*.ts" "*.vue"', { encoding: 'utf8' }).split('\n').filter(Boolean)
+const files = execSync('git ls-files "*.ts" "*.vue" ".github/**/*.yml"', { encoding: 'utf8' }).split('\n').filter(Boolean)
   .filter((f) => !f.startsWith('packages/'))
 
 let bad = 0
