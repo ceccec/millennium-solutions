@@ -296,6 +296,7 @@ export default defineConfig({
           { text: 'Axiom index', link: '/AXIOMS' },
           { text: 'Lessons', link: '/LESSONS' },
           { text: 'Findings', link: '/FINDINGS' },
+          { text: 'Changelog (derived from the tags)', link: '/CHANGELOG' },
           { text: 'Compare (standards)', link: '/compare' },
           { text: 'Examples (live)', link: '/examples' },
           { text: 'Verify (live app)', link: '/verify' },

@@ -72,7 +72,9 @@ const subjectsFor = (t: Tag, prev: Tag | undefined): string[] => {
 
 const lines: string[] = []
 lines.push('---')
-lines.push('title: Changelog — every release, derived from its own provenance tag')
+// THE TITLE IS A SERP LINE, NOT A SUMMARY. The first one ran to 85 characters with the site suffix and
+// seo.ts refused the release: a title Google truncates is a title whose end nobody reads.
+lines.push('title: Changelog — every release from its tag')
 lines.push('description: One row per annotated git tag, each with the content-address that tag carries. Computed by scripts/changelog.ts; nothing here is typed.')
 lines.push('---')
 lines.push('')
