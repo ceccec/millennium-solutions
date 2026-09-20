@@ -85,8 +85,20 @@ for (const key of pending.slice(0, LIMIT)) {
     // The typeset statement travels with the proof: a deposited record should be readable as mathematics,
     // not only compilable as Lean. Synthesised here from the same translator latex-gate round-trips.
     const thm = leanTheorems().find((x) => 'lean_' + x.name === key || key.endsWith('_' + x.name))
+    // THE README AND THE CHANGELOG TRAVEL WITH EVERY RELEASE. The captain's instruction, signed as a receipt
+    // (`agent: "captain"`, role "the captain's release instruction"): "update zenodo on each release
+    // programatically to include readme and changelog". A deposition is what a reader who never opens the
+    // repository actually holds, and without these it hands them a theorem with no account of the work it
+    // came from and no history of how it got there.
+    //
+    // Both are DERIVED files: README.md is written by scripts/pages.ts from claims that each carry a
+    // decidable test, and CHANGELOG.md by scripts/changelog.ts from the annotated provenance tags, each row
+    // carrying the content-address its tag records. Attaching them ships the account and the history, not a
+    // description of them — and neither can say anything the tree does not already verify.
+    const RELEASE_DOCS = ['README.md', 'CHANGELOG.md']
     const payload: [string, string][] = [
       ...(thm ? [[`${key}.tex`, theoremTex(thm, { key: (meta.notes.match(/key (\S+)/) ?? [])[1] ?? null })] as [string, string]] : []),
+      ...RELEASE_DOCS.filter((f) => existsSync(f)).map((f) => [f, readFileSync(f, 'utf8')] as [string, string]),
       ...files.filter((f) => existsSync(f)).map((f) => [f.split('/').pop()!, readFileSync(f, 'utf8')] as [string, string]),
       [`${key}.deposition.json`, JSON.stringify(meta, null, 2)],
     ]

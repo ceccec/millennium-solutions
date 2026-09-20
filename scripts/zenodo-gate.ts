@@ -177,6 +177,16 @@ if (existsSync(DIST0)) {
   if (drift > 3) fail(`…and ${drift - 3} more pages differ from what would be deposited for them`)
 }
 
+// OBSERVED AND NOT EXPLAINED (2026-09-20). Immediately after a full `npm run docs:build`, this loop
+// reported 9 dead `theorem/<key>` URLs whose pages were present on disk both before and after the run —
+// `ls` showed the file, an independent node script using this exact predicate said OK, and eight
+// consecutive gate runs since have been green with no file touched. So it is not the depositions and not
+// the paths; it is this existsSync in the window right after ~2,887 pages are written. Cause unknown.
+// It is written down rather than smoothed over because the failure is INVERTED for a reader: the gate
+// says the site does not serve a page that it does serve, and an agent who trusts the message will go
+// looking for a missing page, or worse, "fix" the deposition's URL to something wrong. In the release
+// chain the long gates-fire run sits between the build and this gate, which is likely why the chain has
+// never seen it. If you see it, check the file on disk before believing the gate.
 const DIST = '.vitepress/dist'
 if (!existsSync(DIST)) {
   console.log('  ○ site not built — the 336 published theorem-page URLs were NOT checked for resolution here;'

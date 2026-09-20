@@ -1,0 +1,80 @@
+{
+  "derived": "2026-09-20T18:45:04.949Z",
+  "concept": "10.5281/zenodo.21819217",
+  "tag": "v9.6.8",
+  "host": "https://zenodo.org",
+  "files": [
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "discoveries": {
+    "ledger": 2880,
+    "live": 924,
+    "theorems": 924,
+    "files": 41
+  },
+  "citations": {
+    "measured": "2026-09-20",
+    "total": 7,
+    "self": 7,
+    "thirdParty": 0,
+    "unresolved": 0
+  },
+  "violations": {
+    "established": 0,
+    "basis": "FINDINGS.md §6 — no violator is identified by this deposit; zero third-party citations is the shape of a citation graph, not a count of dishonest users. Uncited use has not been searched for."
+  },
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.21819217",
+      "relation": "isVersionOf",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/FINDINGS",
+      "relation": "isDocumentedBy",
+      "resource_type": "publication-report"
+    },
+    {
+      "identifier": "https://ceccec.psg.bg/millennium-solutions/CHANGELOG",
+      "relation": "isDocumentedBy",
+      "resource_type": "publication-other"
+    },
+    {
+      "identifier": "10.5281/zenodo.22127374",
+      "relation": "isCitedBy",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "10.5281/zenodo.22127377",
+      "relation": "isCitedBy",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "10.5281/zenodo.22256731",
+      "relation": "isCitedBy",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "10.5281/zenodo.22256708",
+      "relation": "isCitedBy",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "10.5281/zenodo.22700098",
+      "relation": "isCitedBy",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "10.5281/zenodo.22730576",
+      "relation": "isCitedBy",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "10.5281/zenodo.22717782",
+      "relation": "isCitedBy",
+      "resource_type": "publication-preprint"
+    }
+  ],
+  "description": "<p><strong>Release v9.6.8 of the ℤ/9 Vortex Framework deposit.</strong> 924 theorems across 41 Lean 4 files, each closed by exhaustion over a stated finite domain, sorry-free and axiom-free; an append-only ledger of 2880 entries, 924 standing, whose receipt chain is recomputed on every build. README.md and CHANGELOG.md travel with this version; the changelog is derived from the annotated tags themselves, so a row cannot claim a content-address its tag does not carry.</p><p><strong>Citing works, and the role of each.</strong> Measured 2026-09-20 from DataCite and OpenAlex. 7 work(s) cite these DOIs: <strong>7</strong> written by the author, <strong>0</strong> by a third party, <strong>0</strong> whose identifier did not resolve. A self-citation is provenance and is counted separately, because counting it as uptake is the flattering direction.</p><table><tr><th>DOI</th><th>date</th><th>title</th><th>role</th></tr><tr><td><code>https://doi.org/10.5281/zenodo.22127374</code></td><td>2026-08-27</td><td>uuidna — content-addressed identity, honest by construction: 2039 dist</td><td>the author’s own — provenance, not uptake</td></tr><tr><td><code>https://doi.org/10.5281/zenodo.22127377</code></td><td>2026-08-27</td><td>uuidna — content-addressed identity, honest by construction: 2039 dist</td><td>the author’s own — provenance, not uptake</td></tr><tr><td><code>https://doi.org/10.5281/zenodo.22256731</code></td><td>2026-09-02</td><td>uuidna — content-addressed identity, honest by construction: 2499 dist</td><td>the author’s own — provenance, not uptake</td></tr><tr><td><code>https://doi.org/10.5281/zenodo.22256708</code></td><td>2026-09-02</td><td>uuidna — content-addressed identity, honest by construction: 2499 dist</td><td>the author’s own — provenance, not uptake</td></tr><tr><td><code>https://doi.org/10.5281/zenodo.22700098</code></td><td>2026-09-13</td><td>QPU</td><td>the author’s own — provenance, not uptake</td></tr><tr><td><code>https://doi.org/10.5281/zenodo.22730576</code></td><td>2026-09-13</td><td>QPU</td><td>the author’s own — provenance, not uptake</td></tr><tr><td><code>https://doi.org/10.5281/zenodo.22717782</code></td><td>2026-09-12</td><td>QPU</td><td>the author’s own — provenance, not uptake</td></tr></table><p><strong>Open questions this record puts, rather than answers it asserts.</strong> These results were registered before the source repository existed; if the same constructions appear elsewhere, which came first, and is this record cited there? No third-party citation has resolved to date, and uncited use has NOT been searched for — that needs content matching, not citation tracking, and it has not been run. Absence in a citation graph is not evidence of anyone’s conduct. This deposit’s receipts are signed by agent: eight carry <code>agent: \"captain\"</code>; statements bounding the claim carried <code>claude-opus</code> and <code>Claude</code>. By what means did those models compute the claims they made here, and on whose authority were they written in the author’s name? The signatures are in the repository, at <a href=\"https://ceccec.psg.bg/millennium-solutions/FINDINGS\">https://ceccec.psg.bg/millennium-solutions/FINDINGS</a>.</p>"
+}
