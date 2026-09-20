@@ -254,6 +254,14 @@ const CONTROLS: Control[] = [
     what: 'the themed hue starting somewhere other than the heart the ring computes',
     mutate: (s) => s.replace('initial-value: 200', 'initial-value: 210') },
 
+  // THE SEVEN DIRECTIONS, AS SERVED PAGES. forensics.ts sweeps the locales already and says plainly that it
+  // checks structural parity of the CONFIG, not what the translations say. Nothing had opened the seven
+  // pages. The mutation takes the language off one of them — a page that cannot tell a screen reader which
+  // voice to use, which no build step and no link check would ever notice.
+  { gate: 'seven', cmd: 'node scripts/seven.ts', file: '.vitepress/dist/zh/index.html',
+    what: 'a direction whose page no longer declares its own language',
+    mutate: (s) => s.replace(/<html([^>]*)\blang="[^"]*"/i, '<html$1'), restore: 'npm run docs:build' },
+
   { gate: 'css', cmd: 'node scripts/css-gate.ts', file: '.vitepress/theme/custom.css',
     what: 'a custom property used on every page and defined nowhere',
     mutate: (s) => s + '\n.probe { color: var(--a-colour' + '-nobody-defined); }\n' },
