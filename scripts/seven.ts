@@ -16,6 +16,7 @@
 import { readFileSync, existsSync } from 'node:fs'
 import { LOCALE_ORDER } from '../src/7/locale.ts'
 import { flag } from '../src/cli/index.ts'
+import { stripTags } from '../src/html/index.ts'
 
 const DIST = '.vitepress/dist'
 const SITE = 'https://ceccec.psg.bg/millennium-solutions'
@@ -60,7 +61,7 @@ async function check(dir: string): Promise<Verdict> {
   // A DIRECTION EITHER SERVES CONTENT OR SAYS IT DOES NOT. The locale fallback stubs are deliberate and
   // correct — noindex, canonical to English — but a page that is INDEXABLE must carry something to index.
   const noindex = /<meta[^>]+name=["']robots["'][^>]+noindex/i.test(html)
-  const text = (/<main[\s\S]*?<\/main>/.exec(html)?.[0] ?? '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim()
+  const text = stripTags(/<main[\s\S]*?<\/main>/.exec(html)?.[0] ?? '').replace(/\s+/g, ' ').trim()
   // WEIGHTED BY SCRIPT, for the same reason the title rule is. The Chinese homepage carries 168 characters
   // where its French sibling carries 394 — the same page, and 63 of those 168 are ideographs. Counting
   // characters measures the writing system, not whether a reader is given anything. This sweep reported zh
