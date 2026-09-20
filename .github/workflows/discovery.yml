@@ -49,6 +49,18 @@ jobs:
       - name: the kernel answers before anything is proposed
         run: lean --version
 
+      # BUILD BEFORE PROPOSING, because the emitted file IMPORTS. scripts/lean-gen.ts writes a module that
+      # begins `import Z9`, and Lean resolves that from a compiled Z9.olean on LEAN_PATH — which scripts/
+      # lean.ts produces. Those oleans are gitignored, so a developer's machine always has them from an
+      # earlier run and a fresh runner never does: the second run of this workflow failed with "unknown
+      # module prefix 'Z9'" on a tree that compiles cleanly at home. A dependency on untracked build output
+      # cannot be found locally, by construction, so the order is written down here rather than discovered
+      # again.
+      - name: build the kernel artefacts the proposals will import
+        run: |
+          set -euo pipefail
+          node scripts/lean.ts | tail -3 | tee -a "$GITHUB_STEP_SUMMARY"
+
       # `set -o pipefail` on every step below: without it a failing command feeding `tee` reports success,
       # which is how the sixteen-second run went green. It is class two on LESSONS.md — a check that could
       # not go red — committed into this workflow an hour after that page was published.
