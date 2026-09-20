@@ -243,6 +243,13 @@ const CONTROLS: Control[] = [
     what: 'a published count of what the tree has learned that the tree no longer supports',
     mutate: (s) => s.replace(/\*\*\d+ corrections\*\*/, '**1 corrections**'), restore: 'node scripts/lessons.ts --write' },
 
+  // A CSS GAP IS SILENT. An undefined custom property renders as nothing and an animation with no keyframes
+  // does not play; the build passes and the surface is wrong, with no stack trace for a colour that resolved
+  // to empty. The mutation plants a variable nobody defines in the stylesheet every page loads.
+  { gate: 'css', cmd: 'node scripts/css-gate.ts', file: '.vitepress/theme/custom.css',
+    what: 'a custom property used on every page and defined nowhere',
+    mutate: (s) => s + '\n.probe { color: var(--a-colour' + '-nobody-defined); }\n' },
+
   { gate: 'canon', cmd: 'node scripts/canon-gate.ts', file: 'scripts/clusters.ts',
     what: 'a second implementation of a job this tree derives exactly once',
     // ASSEMBLED FROM PIECES ON PURPOSE. Written out whole, this literal IS a second implementation sitting

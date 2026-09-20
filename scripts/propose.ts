@@ -33,8 +33,27 @@ const sh = (cmd: string, input?: string): string =>
   execSync(cmd, { encoding: 'utf8', input, maxBuffer: 64 * 1024 * 1024 })
 
 // the branch must exist before a commit can be placed on it
+// A CATCH THAT ASSUMES ONE CAUSE IS AN INSTRUMENT THAT LIES. This swallowed every failure as "the branch
+// already exists"; the run that taught it otherwise had been refused with 403 "Resource not accessible by
+// integration" and then died on a 404 for a ref that was never created, with the log cheerfully saying the
+// branch was there. The two cases need opposite responses, so they are told apart.
 try { sh(`gh api -X POST /repos/${repo}/git/refs -f ref=refs/heads/${branch} -f sha=${head}`) }
-catch { console.log(`propose: ${branch} already exists — the commit will be added to it`) }
+catch (e) {
+  const msg = String((e as { stderr?: string }).stderr ?? (e as Error).message)
+  if (/already exists|Reference already exists/i.test(msg)) {
+    console.log(`propose: ${branch} already exists — the commit will be added to it`)
+  } else if (/not accessible by integration|403/i.test(msg)) {
+    console.log(`✗ propose: this repository does not let the Actions token create a branch — ${msg.trim()}`)
+    console.log('  The run did its work and cannot offer it. Someone with admin rights has to allow it, in')
+    console.log('  Settings → Actions → General → Workflow permissions (read and write), or by letting the')
+    console.log('  GitHub Actions app bypass the ruleset that governs branch creation. Nothing here can')
+    console.log('  grant itself that, and a job that quietly skipped the offer would be worse than failing.')
+    process.exit(1)
+  } else {
+    console.log(`✗ propose: could not create ${branch} — ${msg.trim()}`)
+    process.exit(1)
+  }
+}
 
 // createCommitOnBranch signs the commit with GitHub's own key, which is what the ruleset asks for
 const additions = changed.filter((c) => c.status !== 'D').map((c) => ({
