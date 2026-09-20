@@ -1,6 +1,6 @@
 # Lessons — what the tree has learned
 
-Derived on every run from 285 sources: **139 corrections** the deposit recorded about itself,
+Derived on every run from 287 sources: **140 corrections** the deposit recorded about itself,
 in the comments of the files where each one happened. Nobody wrote this list; it is counted.
 
 The taxonomy is a choice — six classes, because six are what the record shows — and it is stated so a
@@ -13,7 +13,7 @@ reader can disagree with the classes rather than with the arithmetic.
 | 27 | the instrument was wrong, not the code | a finding is evidence about the finder until the finder has been run against a known case |
 | 12 | domain narrower than the defect | the claim reads over the whole tree and the scan covered part of it |
 | 10 | the check read its own explanation | a gate that scans the tree scans the prose describing what it scans for |
-| 8 | a flattering number survived | a result that clears you is checked less than one that accuses you |
+| 9 | a flattering number survived | a result that clears you is checked less than one that accuses you |
 
 ## Where they were learned
 

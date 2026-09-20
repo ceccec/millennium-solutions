@@ -6,8 +6,8 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 939 machine-checked declarations, **901** restate work that already has an author and
-**38** are about this deposit's own construction. Each source file declares which it is, in its own
+Of 947 machine-checked declarations, **901** restate work that already has an author and
+**46** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/proof/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
 
@@ -28,11 +28,11 @@ fact about the world, and this deposit does not assert it.
 | | theorems |
 |---|---|
 | attributed to named earlier work | **901** |
-| unclassified — no search performed, status unknown | **38** |
+| unclassified — no search performed, status unknown | **46** |
 | claimed as novel | **0** |
 
 **Zero claims is not full attribution.** Stated alone, "this deposit claims no novelty" reads as a concession
-that everything here already has an author. It is not that. **38** theorems have had no prior-art
+that everything here already has an author. It is not that. **46** theorems have had no prior-art
 search at all, so their status is unknown rather than conceded — and of the 27 distinct years the
 attributions carry, **23** predate the DOI system (2000); the earliest is 628. "Every
 theorem has registered prior art" is therefore not merely unproven here, it is impossible. The zero has exactly one meaning: **nobody has
@@ -42,8 +42,8 @@ looked.** It is a statement about work not done, not about work found.
 caveat cannot be separated by an edit.
 
 A source may claim novelty only if it names a prior-art search that was actually performed — what was
-searched, where, and when. An earlier version of this page claimed novelty for 2 sources and
-38 theorems on the strength of their own self-description, with nobody having looked. Asserting
+searched, where, and when. An earlier version of this page claimed novelty for 3 sources and
+46 theorems on the strength of their own self-description, with nobody having looked. Asserting
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
@@ -138,7 +138,7 @@ is worth saying precisely, because it is both smaller than a discovery claim and
 Author and year are given rather than a resolver identifier. Asserting a DOI for someone else's paper without
 verifying it would be a fabricated citation, and this is the worst document in the deposit to put one in.
 
-## This deposit's own construction — 2 sources, 38 theorems, none claimed
+## This deposit's own construction — 3 sources, 46 theorems, none claimed
 
 The ℤ/9 vortex framework, its ledger, its receipts, and the enumeration its own generators proposed. These are
 **unclassified**: no prior-art search has been performed for them, so nothing is claimed about them either
@@ -149,6 +149,7 @@ To move a source out of this table, add `-- prior_art_search:` to it naming the 
 refuses a `none-known` declaration that does not carry one.
 
 <table><thead><tr><th>source</th><th>theorems</th><th>note</th></tr></thead><tbody>
+<tr><td><code>authority.lean</code></td><td>8</td><td>NO NOVELTY IS CLAIMED AND NONE IS DENIED. Membership, set difference and monotonicity over</td></tr>
 <tr><td><code>instruments.lean</code></td><td>29</td><td>NO NOVELTY IS CLAIMED AND NONE IS DENIED. The three rules are elementary — a strict order</td></tr>
 <tr><td><code>priorart.lean</code></td><td>9</td><td>THE PRACTICE IS PRIOR ART AND IS CREDITED. Recording provenance and attribution per</td></tr>
 </tbody></table>
@@ -162,5 +163,5 @@ priority claim above, and it is the whole of it.
 
 ---
 
-Partition seal `bb88753e-f5f8-88f8-a186-532efec35cb6` · recompute with `node scripts/priorart.ts` · the kernel re-decides
+Partition seal `b91c3154-e5bf-8bc1-9261-cc7d4923d4fc` · recompute with `node scripts/priorart.ts` · the kernel re-decides
 `priorart.lean` on every run. A content-address proves integrity, not truth.

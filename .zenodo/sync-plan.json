@@ -1,5 +1,5 @@
 {
-  "derived": "2026-09-20T18:45:04.949Z",
+  "derived": "2026-09-20T18:53:13.041Z",
   "concept": "10.5281/zenodo.21819217",
   "tag": "v9.6.8",
   "host": "https://zenodo.org",
@@ -76,5 +76,657 @@
       "resource_type": "publication-preprint"
     }
   ],
-  "description": "<p><strong>Release v9.6.8 of the ℤ/9 Vortex Framework deposit.</strong> 924 theorems across 41 Lean 4 files, each closed by exhaustion over a stated finite domain, sorry-free and axiom-free; an append-only ledger of 2880 entries, 924 standing, whose receipt chain is recomputed on every build. README.md and CHANGELOG.md travel with this version; the changelog is derived from the annotated tags themselves, so a row cannot claim a content-address its tag does not carry.</p><p><strong>Citing works, and the role of each.</strong> Measured 2026-09-20 from DataCite and OpenAlex. 7 work(s) cite these DOIs: <strong>7</strong> written by the author, <strong>0</strong> by a third party, <strong>0</strong> whose identifier did not resolve. A self-citation is provenance and is counted separately, because counting it as uptake is the flattering direction.</p><table><tr><th>DOI</th><th>date</th><th>title</th><th>role</th></tr><tr><td><code>https://doi.org/10.5281/zenodo.22127374</code></td><td>2026-08-27</td><td>uuidna — content-addressed identity, honest by construction: 2039 dist</td><td>the author’s own — provenance, not uptake</td></tr><tr><td><code>https://doi.org/10.5281/zenodo.22127377</code></td><td>2026-08-27</td><td>uuidna — content-addressed identity, honest by construction: 2039 dist</td><td>the author’s own — provenance, not uptake</td></tr><tr><td><code>https://doi.org/10.5281/zenodo.22256731</code></td><td>2026-09-02</td><td>uuidna — content-addressed identity, honest by construction: 2499 dist</td><td>the author’s own — provenance, not uptake</td></tr><tr><td><code>https://doi.org/10.5281/zenodo.22256708</code></td><td>2026-09-02</td><td>uuidna — content-addressed identity, honest by construction: 2499 dist</td><td>the author’s own — provenance, not uptake</td></tr><tr><td><code>https://doi.org/10.5281/zenodo.22700098</code></td><td>2026-09-13</td><td>QPU</td><td>the author’s own — provenance, not uptake</td></tr><tr><td><code>https://doi.org/10.5281/zenodo.22730576</code></td><td>2026-09-13</td><td>QPU</td><td>the author’s own — provenance, not uptake</td></tr><tr><td><code>https://doi.org/10.5281/zenodo.22717782</code></td><td>2026-09-12</td><td>QPU</td><td>the author’s own — provenance, not uptake</td></tr></table><p><strong>Open questions this record puts, rather than answers it asserts.</strong> These results were registered before the source repository existed; if the same constructions appear elsewhere, which came first, and is this record cited there? No third-party citation has resolved to date, and uncited use has NOT been searched for — that needs content matching, not citation tracking, and it has not been run. Absence in a citation graph is not evidence of anyone’s conduct. This deposit’s receipts are signed by agent: eight carry <code>agent: \"captain\"</code>; statements bounding the claim carried <code>claude-opus</code> and <code>Claude</code>. By what means did those models compute the claims they made here, and on whose authority were they written in the author’s name? The signatures are in the repository, at <a href=\"https://ceccec.psg.bg/millennium-solutions/FINDINGS\">https://ceccec.psg.bg/millennium-solutions/FINDINGS</a>.</p>"
+  "description": "<p><strong>Release v9.6.8 of the ℤ/9 Vortex Framework deposit.</strong> 924 theorems across 41 Lean 4 files, each closed by exhaustion over a stated finite domain, sorry-free and axiom-free; an append-only ledger of 2880 entries, 924 standing, whose receipt chain is recomputed on every build. README.md and CHANGELOG.md travel with this version; the changelog is derived from the annotated tags themselves, so a row cannot claim a content-address its tag does not carry.</p><p><strong>Do it with your hands — the whole idea, without a computer.</strong> Hold up your first two fingers. Turn each one a quarter turn, then another quarter turn: two times ninety degrees. They are curled now into two little circles. Two baby zeroes, one on each hand — and if you dip them and blow, two soap bubbles. That is the picture to keep: a bubble is a nought you can see. Round, with a skin you can point at, and nothing at all inside.</p><p><em>First finger — turn it twice and you are back.</em> A quarter turn and a quarter turn is a half turn; do the half turn again and the finger is exactly where it started. Counting works the same way. Take a digit away from ten, then take the answer away from ten again, and you have your digit back — every time, for all ten digits. And exactly one digit never moves at all, sitting in the middle while the others swap around it. Nobody chose which one; it falls out of the counting. The kernel checks all ten cases: <code>(List.range 10).all (fun d =&gt; refl (refl d) == d) ∧ ((List.range 10).filter (fun d =&gt; refl d == d)).length = 1</code> (<code>src/proof/index.lean</code>, <code>the_tens_complement_is_an_involution_with_one_fixed_point</code>).</p><p><em>Second finger — sharing with nobody.</em> You have twelve sweets and you share them among zero friends. There is no friend, so nothing leaves your hand: all twelve stay. How many did each friend get? The answer is not something you found by sharing — there was no sharing. Somebody had to DECIDE what to write, and what is written is nought. That is the second baby zero, and it is a different kind from the first: the twelve you kept were counted, the nought was <strong>given</strong>. The sharing rule still balances — nought each, nought given away, twelve still in your hand, twelve altogether. The kernel checks it: <code>(12 / 0) = 0 ∧ (12 % 0) = 12 ∧ (12 / 0) * 0 + (12 % 0) == 12</code> (<code>src/proof/families.lean</code>, <code>at_a_zero_divisor_the_identity_is_carried_by_the_remainder</code>).</p><p><strong>What this does and does not say.</strong> It does NOT say that dividing by zero gives zero. An earlier name in this very repository said that, and it was wrong and was corrected — the source records the correction beside the theorem. The point is the opposite one: at a zero divisor the value is not found in the arithmetic, it is supplied by the definition. Dividing by zero is a CHANGE OF DOMAIN — you have stepped into a different room, where somebody has already decided what the answer is called. A child who can feel the difference between the twelve they counted and the nought they were handed has understood the move this deposit is built on.</p><p><strong>Exactly how much the two bubbles hold.</strong> Counted from the statements, not the titles. <strong>14</strong> theorem(s) of 924 in this deposit. The turning finger: <strong>12</strong> — 11 stating the property and 1 stating where it FAILS, which is a boundary and not support — across 6 domain(s) (<code>coin</code>, <code>demand2</code>, <code>elementary</code>, <code>index</code>, <code>reversal</code>, <code>theorems</code>) and 6 ledger subdomain(s) (<code>coin</code>, <code>demand2</code>, <code>elementary</code>, <code>millenniumfloor</code>, <code>millenniumfloor.universal</code>, <code>reversal</code>). The nought that was given: <strong>2</strong> — 2 stating the property, 0 boundary — across 1 domain(s) (<code>families</code>) and 1 subdomain(s) (<code>families</code>). The two sets do not overlap. Recount with <code>node scripts/zenodo-sync.ts --print</code>.</p><p><em>Why two bubbles and not one.</em> Blow a bubble and you are holding a boundary, not a filling. The first bubble is the turn that undoes itself — the skin closes back on where it began. The second is the nought you were handed: perfectly round, perfectly empty, and it came from the ring your fingers made rather than from anything you counted. Both are zeroes and they are not the same zero, which is the whole of it. Then they pop, and the twelve sweets are still in your hand.</p><p><strong>Evidence, so nothing here has to be taken on trust.</strong> Each figure with the artefact it was read from and the command that recomputes it.</p><table><tr><th>what</th><th>value</th><th>read from</th><th>recompute with</th></tr><tr><td>theorems the kernel accepts</td><td><strong>924</strong> over 41 files</td><td><code>src/proof/*.lean</code></td><td><code>npm run lean</code></td></tr><tr><td>ledger entries / standing</td><td><strong>2880</strong> / 924</td><td><code>src/proof/discovered.json</code></td><td><code>node scripts/forensics.ts</code></td></tr><tr><td>receipt chain</td><td><strong>intact</strong>, 0 break(s)</td><td><code>docs/forensic-audit.json</code></td><td><code>npm run forensic</code></td></tr><tr><td>ledger address at the audited commit</td><td><code>37ef2fdb-f95e-8aa8-bc6e-3b626da71aac</code></td><td><code>docs/forensic-audit.json</code></td><td><code>npm run forensic</code></td></tr><tr><td>content-address of this version</td><td><code>ee25116b-c7b6-8a89-834a-b0606300e805</code></td><td><code>git tag v9.6.8</code></td><td><code>git for-each-ref refs/tags/v9.6.8</code></td></tr><tr><td>earliest deposit vs first commit</td><td>2026-08-03 vs 2026-08-06 — lead <strong>3 days</strong>, subtracted not asserted</td><td><code>src/proof/provenance.json</code></td><td><code>npm run provenance</code></td></tr><tr><td>commits, all by one git identity</td><td><strong>1072</strong></td><td><code>git log</code></td><td><code>git shortlog -sn</code></td></tr><tr><td>citing works / of them the author’s own</td><td><strong>7</strong> / 7</td><td><code>src/proof/citations.json</code></td><td><code>npm run citations</code></td></tr><tr><td>third-party citations</td><td><strong>0</strong></td><td><code>src/proof/citations.json</code></td><td><code>npm run citations</code></td></tr><tr><td>violators identified by this deposit</td><td><strong>0</strong> — and uncited use has not been searched for</td><td><code>FINDINGS.md §6</code></td><td><code>open https://ceccec.psg.bg/millennium-solutions/FINDINGS</code></td></tr></table><p><strong>Citing works, and the role of each.</strong> Measured 2026-09-20 from DataCite and OpenAlex. 7 work(s) cite these DOIs: <strong>7</strong> written by the author, <strong>0</strong> by a third party, <strong>0</strong> whose identifier did not resolve. A self-citation is provenance and is counted separately, because counting it as uptake is the flattering direction.</p><table><tr><th>DOI</th><th>date</th><th>title</th><th>role</th></tr><tr><td><code>https://doi.org/10.5281/zenodo.22127374</code></td><td>2026-08-27</td><td>uuidna — content-addressed identity, honest by construction: 2039 dist</td><td>the author’s own — provenance, not uptake</td></tr><tr><td><code>https://doi.org/10.5281/zenodo.22127377</code></td><td>2026-08-27</td><td>uuidna — content-addressed identity, honest by construction: 2039 dist</td><td>the author’s own — provenance, not uptake</td></tr><tr><td><code>https://doi.org/10.5281/zenodo.22256731</code></td><td>2026-09-02</td><td>uuidna — content-addressed identity, honest by construction: 2499 dist</td><td>the author’s own — provenance, not uptake</td></tr><tr><td><code>https://doi.org/10.5281/zenodo.22256708</code></td><td>2026-09-02</td><td>uuidna — content-addressed identity, honest by construction: 2499 dist</td><td>the author’s own — provenance, not uptake</td></tr><tr><td><code>https://doi.org/10.5281/zenodo.22700098</code></td><td>2026-09-13</td><td>QPU</td><td>the author’s own — provenance, not uptake</td></tr><tr><td><code>https://doi.org/10.5281/zenodo.22730576</code></td><td>2026-09-13</td><td>QPU</td><td>the author’s own — provenance, not uptake</td></tr><tr><td><code>https://doi.org/10.5281/zenodo.22717782</code></td><td>2026-09-12</td><td>QPU</td><td>the author’s own — provenance, not uptake</td></tr></table><p><strong>Open questions this record puts, rather than answers it asserts.</strong> These results were registered before the source repository existed; if the same constructions appear elsewhere, which came first, and is this record cited there? No third-party citation has resolved to date, and uncited use has NOT been searched for — that needs content matching, not citation tracking, and it has not been run. Absence in a citation graph is not evidence of anyone’s conduct. This deposit’s receipts are signed by agent: eight carry <code>agent: \"captain\"</code>; statements bounding the claim carried <code>claude-opus</code> and <code>Claude</code>. By what means did those models compute the claims they made here, and on whose authority were they written in the author’s name? The signatures are in the repository, at <a href=\"https://ceccec.psg.bg/millennium-solutions/FINDINGS\">https://ceccec.psg.bg/millennium-solutions/FINDINGS</a>.</p>",
+  "metadata": {
+    "upload_type": "publication",
+    "publication_type": "preprint",
+    "title": "The ℤ/9 Vortex Framework: reflections, division-by-zero as domain change, and a 7 = 6 + 1 correspondence with the Clay Millennium Problems (observation-based, recomputable)",
+    "creators": [
+      {
+        "name": "Rouschev, Tsvetan",
+        "orcid": "0009-0000-7312-9778",
+        "affiliation": "PSG, Bulgaria"
+      }
+    ],
+    "description": "<p><strong>Release v9.6.8 of the ℤ/9 Vortex Framework deposit.</strong> 924 theorems across 41 Lean 4 files, each closed by exhaustion over a stated finite domain, sorry-free and axiom-free; an append-only ledger of 2880 entries, 924 standing, whose receipt chain is recomputed on every build. README.md and CHANGELOG.md travel with this version; the changelog is derived from the annotated tags themselves, so a row cannot claim a content-address its tag does not carry.</p><p><strong>Do it with your hands — the whole idea, without a computer.</strong> Hold up your first two fingers. Turn each one a quarter turn, then another quarter turn: two times ninety degrees. They are curled now into two little circles. Two baby zeroes, one on each hand — and if you dip them and blow, two soap bubbles. That is the picture to keep: a bubble is a nought you can see. Round, with a skin you can point at, and nothing at all inside.</p><p><em>First finger — turn it twice and you are back.</em> A quarter turn and a quarter turn is a half turn; do the half turn again and the finger is exactly where it started. Counting works the same way. Take a digit away from ten, then take the answer away from ten again, and you have your digit back — every time, for all ten digits. And exactly one digit never moves at all, sitting in the middle while the others swap around it. Nobody chose which one; it falls out of the counting. The kernel checks all ten cases: <code>(List.range 10).all (fun d =&gt; refl (refl d) == d) ∧ ((List.range 10).filter (fun d =&gt; refl d == d)).length = 1</code> (<code>src/proof/index.lean</code>, <code>the_tens_complement_is_an_involution_with_one_fixed_point</code>).</p><p><em>Second finger — sharing with nobody.</em> You have twelve sweets and you share them among zero friends. There is no friend, so nothing leaves your hand: all twelve stay. How many did each friend get? The answer is not something you found by sharing — there was no sharing. Somebody had to DECIDE what to write, and what is written is nought. That is the second baby zero, and it is a different kind from the first: the twelve you kept were counted, the nought was <strong>given</strong>. The sharing rule still balances — nought each, nought given away, twelve still in your hand, twelve altogether. The kernel checks it: <code>(12 / 0) = 0 ∧ (12 % 0) = 12 ∧ (12 / 0) * 0 + (12 % 0) == 12</code> (<code>src/proof/families.lean</code>, <code>at_a_zero_divisor_the_identity_is_carried_by_the_remainder</code>).</p><p><strong>What this does and does not say.</strong> It does NOT say that dividing by zero gives zero. An earlier name in this very repository said that, and it was wrong and was corrected — the source records the correction beside the theorem. The point is the opposite one: at a zero divisor the value is not found in the arithmetic, it is supplied by the definition. Dividing by zero is a CHANGE OF DOMAIN — you have stepped into a different room, where somebody has already decided what the answer is called. A child who can feel the difference between the twelve they counted and the nought they were handed has understood the move this deposit is built on.</p><p><strong>Exactly how much the two bubbles hold.</strong> Counted from the statements, not the titles. <strong>14</strong> theorem(s) of 924 in this deposit. The turning finger: <strong>12</strong> — 11 stating the property and 1 stating where it FAILS, which is a boundary and not support — across 6 domain(s) (<code>coin</code>, <code>demand2</code>, <code>elementary</code>, <code>index</code>, <code>reversal</code>, <code>theorems</code>) and 6 ledger subdomain(s) (<code>coin</code>, <code>demand2</code>, <code>elementary</code>, <code>millenniumfloor</code>, <code>millenniumfloor.universal</code>, <code>reversal</code>). The nought that was given: <strong>2</strong> — 2 stating the property, 0 boundary — across 1 domain(s) (<code>families</code>) and 1 subdomain(s) (<code>families</code>). The two sets do not overlap. Recount with <code>node scripts/zenodo-sync.ts --print</code>.</p><p><em>Why two bubbles and not one.</em> Blow a bubble and you are holding a boundary, not a filling. The first bubble is the turn that undoes itself — the skin closes back on where it began. The second is the nought you were handed: perfectly round, perfectly empty, and it came from the ring your fingers made rather than from anything you counted. Both are zeroes and they are not the same zero, which is the whole of it. Then they pop, and the twelve sweets are still in your hand.</p><p><strong>Evidence, so nothing here has to be taken on trust.</strong> Each figure with the artefact it was read from and the command that recomputes it.</p><table><tr><th>what</th><th>value</th><th>read from</th><th>recompute with</th></tr><tr><td>theorems the kernel accepts</td><td><strong>924</strong> over 41 files</td><td><code>src/proof/*.lean</code></td><td><code>npm run lean</code></td></tr><tr><td>ledger entries / standing</td><td><strong>2880</strong> / 924</td><td><code>src/proof/discovered.json</code></td><td><code>node scripts/forensics.ts</code></td></tr><tr><td>receipt chain</td><td><strong>intact</strong>, 0 break(s)</td><td><code>docs/forensic-audit.json</code></td><td><code>npm run forensic</code></td></tr><tr><td>ledger address at the audited commit</td><td><code>37ef2fdb-f95e-8aa8-bc6e-3b626da71aac</code></td><td><code>docs/forensic-audit.json</code></td><td><code>npm run forensic</code></td></tr><tr><td>content-address of this version</td><td><code>ee25116b-c7b6-8a89-834a-b0606300e805</code></td><td><code>git tag v9.6.8</code></td><td><code>git for-each-ref refs/tags/v9.6.8</code></td></tr><tr><td>earliest deposit vs first commit</td><td>2026-08-03 vs 2026-08-06 — lead <strong>3 days</strong>, subtracted not asserted</td><td><code>src/proof/provenance.json</code></td><td><code>npm run provenance</code></td></tr><tr><td>commits, all by one git identity</td><td><strong>1072</strong></td><td><code>git log</code></td><td><code>git shortlog -sn</code></td></tr><tr><td>citing works / of them the author’s own</td><td><strong>7</strong> / 7</td><td><code>src/proof/citations.json</code></td><td><code>npm run citations</code></td></tr><tr><td>third-party citations</td><td><strong>0</strong></td><td><code>src/proof/citations.json</code></td><td><code>npm run citations</code></td></tr><tr><td>violators identified by this deposit</td><td><strong>0</strong> — and uncited use has not been searched for</td><td><code>FINDINGS.md §6</code></td><td><code>open https://ceccec.psg.bg/millennium-solutions/FINDINGS</code></td></tr></table><p><strong>Citing works, and the role of each.</strong> Measured 2026-09-20 from DataCite and OpenAlex. 7 work(s) cite these DOIs: <strong>7</strong> written by the author, <strong>0</strong> by a third party, <strong>0</strong> whose identifier did not resolve. A self-citation is provenance and is counted separately, because counting it as uptake is the flattering direction.</p><table><tr><th>DOI</th><th>date</th><th>title</th><th>role</th></tr><tr><td><code>https://doi.org/10.5281/zenodo.22127374</code></td><td>2026-08-27</td><td>uuidna — content-addressed identity, honest by construction: 2039 dist</td><td>the author’s own — provenance, not uptake</td></tr><tr><td><code>https://doi.org/10.5281/zenodo.22127377</code></td><td>2026-08-27</td><td>uuidna — content-addressed identity, honest by construction: 2039 dist</td><td>the author’s own — provenance, not uptake</td></tr><tr><td><code>https://doi.org/10.5281/zenodo.22256731</code></td><td>2026-09-02</td><td>uuidna — content-addressed identity, honest by construction: 2499 dist</td><td>the author’s own — provenance, not uptake</td></tr><tr><td><code>https://doi.org/10.5281/zenodo.22256708</code></td><td>2026-09-02</td><td>uuidna — content-addressed identity, honest by construction: 2499 dist</td><td>the author’s own — provenance, not uptake</td></tr><tr><td><code>https://doi.org/10.5281/zenodo.22700098</code></td><td>2026-09-13</td><td>QPU</td><td>the author’s own — provenance, not uptake</td></tr><tr><td><code>https://doi.org/10.5281/zenodo.22730576</code></td><td>2026-09-13</td><td>QPU</td><td>the author’s own — provenance, not uptake</td></tr><tr><td><code>https://doi.org/10.5281/zenodo.22717782</code></td><td>2026-09-12</td><td>QPU</td><td>the author’s own — provenance, not uptake</td></tr></table><p><strong>Open questions this record puts, rather than answers it asserts.</strong> These results were registered before the source repository existed; if the same constructions appear elsewhere, which came first, and is this record cited there? No third-party citation has resolved to date, and uncited use has NOT been searched for — that needs content matching, not citation tracking, and it has not been run. Absence in a citation graph is not evidence of anyone’s conduct. This deposit’s receipts are signed by agent: eight carry <code>agent: \"captain\"</code>; statements bounding the claim carried <code>claude-opus</code> and <code>Claude</code>. By what means did those models compute the claims they made here, and on whose authority were they written in the author’s name? The signatures are in the repository, at <a href=\"https://ceccec.psg.bg/millennium-solutions/FINDINGS\">https://ceccec.psg.bg/millennium-solutions/FINDINGS</a>.</p>",
+    "access_right": "open",
+    "license": "cc-by-nc-nd-4.0",
+    "language": "eng",
+    "version": "v9.6.8",
+    "publication_date": "2026-09-20",
+    "keywords": [
+      "modular arithmetic",
+      "Z/9",
+      "group theory",
+      "Pliska rosette",
+      "Clay Millennium Problems",
+      "recreational mathematics",
+      "content-addressing",
+      "Lean 4",
+      "VitePress",
+      "quantum algorithm simulation",
+      "sacred geometry (interpretation)"
+    ],
+    "subjects": [
+      {
+        "term": "raw bytes of a",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_address_raw_bytes_of_a",
+        "scheme": "url"
+      },
+      {
+        "term": "to uuid bytes of a",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_address_to_uuid_bytes_of_a",
+        "scheme": "url"
+      },
+      {
+        "term": "to uuid bytes of uuidna",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_address_to_uuid_bytes_of_uuidna",
+        "scheme": "url"
+      },
+      {
+        "term": "address is sixteen bytes",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_address_address_is_sixteen_bytes",
+        "scheme": "url"
+      },
+      {
+        "term": "address bytes are bytes",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_address_address_bytes_are_bytes",
+        "scheme": "url"
+      },
+      {
+        "term": "version nibble is forced",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_address_version_nibble_is_forced",
+        "scheme": "url"
+      },
+      {
+        "term": "variant bits are forced",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_address_variant_bits_are_forced",
+        "scheme": "url"
+      },
+      {
+        "term": "addressing is deterministic",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_address_addressing_is_deterministic",
+        "scheme": "url"
+      },
+      {
+        "term": "distinct seeds give distinct addresses",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_address_distinct_seeds_give_distinct_addresses",
+        "scheme": "url"
+      },
+      {
+        "term": "addressing is injective on single characters",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_address_addressing_is_injective_on_single_characters",
+        "scheme": "url"
+      },
+      {
+        "term": "addressing is not the identity",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_address_addressing_is_not_the_identity",
+        "scheme": "url"
+      },
+      {
+        "term": "addressing is not constant",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_address_addressing_is_not_constant",
+        "scheme": "url"
+      },
+      {
+        "term": "the four seeds are distinct",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_address_the_four_seeds_are_distinct",
+        "scheme": "url"
+      },
+      {
+        "term": "address settles its range",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_address_address_settles_its_range",
+        "scheme": "url"
+      },
+      {
+        "term": "the address is sixteen bytes whatever the input length",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_address_the_address_is_sixteen_bytes_whatever_the_input_length",
+        "scheme": "url"
+      },
+      {
+        "term": "distinct inputs give distinct addresses",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_address_distinct_inputs_give_distinct_addresses",
+        "scheme": "url"
+      },
+      {
+        "term": "the address is not the payload",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_address_the_address_is_not_the_payload",
+        "scheme": "url"
+      },
+      {
+        "term": "the address is order sensitive",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_address_the_address_is_order_sensitive",
+        "scheme": "url"
+      },
+      {
+        "term": "the version stamp keeps the low nibble of every byte",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_address_the_version_stamp_keeps_the_low_nibble_of_every_byte",
+        "scheme": "url"
+      },
+      {
+        "term": "the variant stamp keeps the low six bits of every byte",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_address_the_variant_stamp_keeps_the_low_six_bits_of_every_byte",
+        "scheme": "url"
+      },
+      {
+        "term": "stamping twice is stamping once",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_address_stamping_twice_is_stamping_once",
+        "scheme": "url"
+      },
+      {
+        "term": "the third group is version eight over twelve hash bits",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_address_the_third_group_is_version_eight_over_twelve_hash_bits",
+        "scheme": "url"
+      },
+      {
+        "term": "the fourth group is variant two over fourteen hash bits",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_address_the_fourth_group_is_variant_two_over_fourteen_hash_bits",
+        "scheme": "url"
+      },
+      {
+        "term": "the unstamped bits read back from every stamped byte",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_address_the_unstamped_bits_read_back_from_every_stamped_byte",
+        "scheme": "url"
+      },
+      {
+        "term": "the twelve hash bits read back from the third group",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_address_the_twelve_hash_bits_read_back_from_the_third_group",
+        "scheme": "url"
+      },
+      {
+        "term": "the fourteen hash bits read back from the fourth group",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_address_the_fourteen_hash_bits_read_back_from_the_fourth_group",
+        "scheme": "url"
+      },
+      {
+        "term": "a signature is four uuids and a key is two",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_asymmetric_a_signature_is_four_uuids_and_a_key_is_two",
+        "scheme": "url"
+      },
+      {
+        "term": "neither the key nor the signature fits in a uuid",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_asymmetric_neither_the_key_nor_the_signature_fits_in_a_uuid",
+        "scheme": "url"
+      },
+      {
+        "term": "not even the whole uuid would hold one",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_asymmetric_not_even_the_whole_uuid_would_hold_one",
+        "scheme": "url"
+      },
+      {
+        "term": "what travels beside the identifier",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_asymmetric_what_travels_beside_the_identifier",
+        "scheme": "url"
+      },
+      {
+        "term": "the check cannot separate the payloads",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_asymmetric_the_check_cannot_separate_the_payloads",
+        "scheme": "url"
+      },
+      {
+        "term": "the gap is fifty eight bits",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_asymmetric_the_gap_is_fifty_eight_bits",
+        "scheme": "url"
+      },
+      {
+        "term": "a checksum is the same whoever computes it",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_asymmetric_a_checksum_is_the_same_whoever_computes_it",
+        "scheme": "url"
+      },
+      {
+        "term": "two secrets part company on every payload",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_asymmetric_two_secrets_part_company_on_every_payload",
+        "scheme": "url"
+      },
+      {
+        "term": "the tag moves with the payload",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_asymmetric_the_tag_moves_with_the_payload",
+        "scheme": "url"
+      },
+      {
+        "term": "the square root rule is the one this prime admits",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_asymmetric_the_square_root_rule_is_the_one_this_prime_admits",
+        "scheme": "url"
+      },
+      {
+        "term": "the cofactor is bracketed at eight",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_asymmetric_the_cofactor_is_bracketed_at_eight",
+        "scheme": "url"
+      },
+      {
+        "term": "asymmetric settles its range",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_asymmetric_asymmetric_settles_its_range",
+        "scheme": "url"
+      },
+      {
+        "term": "the reflection is an involution",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_coin_the_reflection_is_an_involution",
+        "scheme": "url"
+      },
+      {
+        "term": "one side is reflected onto itself",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_coin_one_side_is_reflected_onto_itself",
+        "scheme": "url"
+      },
+      {
+        "term": "the other two swap",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_coin_the_other_two_swap",
+        "scheme": "url"
+      },
+      {
+        "term": "exactly one digit is unmoved",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_coin_exactly_one_digit_is_unmoved",
+        "scheme": "url"
+      },
+      {
+        "term": "exactly one digit reflects out of range",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_coin_exactly_one_digit_reflects_out_of_range",
+        "scheme": "url"
+      },
+      {
+        "term": "the classes partition the nine",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_coin_the_classes_partition_the_nine",
+        "scheme": "url"
+      },
+      {
+        "term": "every digit is sorted exactly once",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_coin_every_digit_is_sorted_exactly_once",
+        "scheme": "url"
+      },
+      {
+        "term": "the fall fixes every digit but the void",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_coin_the_fall_fixes_every_digit_but_the_void",
+        "scheme": "url"
+      },
+      {
+        "term": "the fall and the reflection share one exceptional digit",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_coin_the_fall_and_the_reflection_share_one_exceptional_digit",
+        "scheme": "url"
+      },
+      {
+        "term": "on the fixed points the reflection never leaves",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_coin_on_the_fixed_points_the_reflection_never_leaves",
+        "scheme": "url"
+      },
+      {
+        "term": "what escapes falls back inside",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_coin_what_escapes_falls_back_inside",
+        "scheme": "url"
+      },
+      {
+        "term": "the nines complement pairs the ten digits",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_coin_the_nines_complement_pairs_the_ten_digits",
+        "scheme": "url"
+      },
+      {
+        "term": "fibonacci gcd is the fibonacci of the gcd",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand_fibonacci_gcd_is_the_fibonacci_of_the_gcd",
+        "scheme": "url"
+      },
+      {
+        "term": "the mobius divisor sum is the identity",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand_the_mobius_divisor_sum_is_the_identity",
+        "scheme": "url"
+      },
+      {
+        "term": "the derangement recurrence holds",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand_the_derangement_recurrence_holds",
+        "scheme": "url"
+      },
+      {
+        "term": "legendres three square theorem",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand_legendres_three_square_theorem",
+        "scheme": "url"
+      },
+      {
+        "term": "five six one is the smallest carmichael number",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand_five_six_one_is_the_smallest_carmichael_number",
+        "scheme": "url"
+      },
+      {
+        "term": "the parity of popcount is the xor of the bits",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand_the_parity_of_popcount_is_the_xor_of_the_bits",
+        "scheme": "url"
+      },
+      {
+        "term": "factorial seven is five thousand and forty",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand_factorial_seven_is_five_thousand_and_forty",
+        "scheme": "url"
+      },
+      {
+        "term": "mantels bound is n squared over four",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand_mantels_bound_is_n_squared_over_four",
+        "scheme": "url"
+      },
+      {
+        "term": "mantels bound is n squared over four for every n",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand_mantels_bound_is_n_squared_over_four_for_every_n",
+        "scheme": "url"
+      },
+      {
+        "term": "four times a near product is at most the square",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand_four_times_a_near_product_is_at_most_the_square",
+        "scheme": "url"
+      },
+      {
+        "term": "no cut beats the balanced one for every n",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand_no_cut_beats_the_balanced_one_for_every_n",
+        "scheme": "url"
+      },
+      {
+        "term": "nicomachus sum of cubes is the square of the triangular number",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand2_nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number",
+        "scheme": "url"
+      },
+      {
+        "term": "picks theorem holds for every lattice triangle in the four grid",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand2_picks_theorem_holds_for_every_lattice_triangle_in_the_four_grid",
+        "scheme": "url"
+      },
+      {
+        "term": "bezouts identity is attained and no smaller combination exists",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand2_bezouts_identity_is_attained_and_no_smaller_combination_exists",
+        "scheme": "url"
+      },
+      {
+        "term": "the latin squares of order four number five hundred and seventy six",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand2_the_latin_squares_of_order_four_number_five_hundred_and_seventy_six",
+        "scheme": "url"
+      },
+      {
+        "term": "the sum of fifth powers has the closed form asked for",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand2_the_sum_of_fifth_powers_has_the_closed_form_asked_for",
+        "scheme": "url"
+      },
+      {
+        "term": "the chinese remainder theorem holds exactly when the moduli are coprime",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand2_the_chinese_remainder_theorem_holds_exactly_when_the_moduli_are_coprime",
+        "scheme": "url"
+      },
+      {
+        "term": "eight and nine are the only consecutive perfect powers below two thousand",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand2_eight_and_nine_are_the_only_consecutive_perfect_powers_below_two_thousand",
+        "scheme": "url"
+      },
+      {
+        "term": "two twenty and two eighty four are the smallest amicable pair",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand2_two_twenty_and_two_eighty_four_are_the_smallest_amicable_pair",
+        "scheme": "url"
+      },
+      {
+        "term": "the two power sums are one sum",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand2_the_two_power_sums_are_one_sum",
+        "scheme": "url"
+      },
+      {
+        "term": "nicomachus sum of cubes is the square of the triangular number for every n",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand2_nicomachus_sum_of_cubes_is_the_square_of_the_triangular_number_for_every_n",
+        "scheme": "url"
+      },
+      {
+        "term": "the sum of fifth powers has the closed form for every n",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand2_the_sum_of_fifth_powers_has_the_closed_form_for_every_n",
+        "scheme": "url"
+      },
+      {
+        "term": "the squared triangular numbers difference back to the cubes for every n",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand2_the_squared_triangular_numbers_difference_back_to_the_cubes_for_every_n",
+        "scheme": "url"
+      },
+      {
+        "term": "wilsons theorem and its converse",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_wilsons_theorem_and_its_converse",
+        "scheme": "url"
+      },
+      {
+        "term": "every number is a sum of four squares",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_every_number_is_a_sum_of_four_squares",
+        "scheme": "url"
+      },
+      {
+        "term": "the cantor pairing is injective and covers an initial segment",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_the_cantor_pairing_is_injective_and_covers_an_initial_segment",
+        "scheme": "url"
+      },
+      {
+        "term": "repunit divisibility by three and seven",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_repunit_divisibility_by_three_and_seven",
+        "scheme": "url"
+      },
+      {
+        "term": "the euler characteristic of a genus g surface",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_the_euler_characteristic_of_a_genus_g_surface",
+        "scheme": "url"
+      },
+      {
+        "term": "odd divisor count iff perfect square",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_odd_divisor_count_iff_perfect_square",
+        "scheme": "url"
+      },
+      {
+        "term": "havel hakimi decides graphical sequences",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_havel_hakimi_decides_graphical_sequences",
+        "scheme": "url"
+      },
+      {
+        "term": "the euler characteristic of a genus g surface for every g",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_the_euler_characteristic_of_a_genus_g_surface_for_every_g",
+        "scheme": "url"
+      },
+      {
+        "term": "a repunit has the residue of its length mod three",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_a_repunit_has_the_residue_of_its_length_mod_three",
+        "scheme": "url"
+      },
+      {
+        "term": "a repunit is divisible by three exactly when its length is for every n",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_a_repunit_is_divisible_by_three_exactly_when_its_length_is_for_every_n",
+        "scheme": "url"
+      },
+      {
+        "term": "repunit of a sum",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_repunit_of_a_sum",
+        "scheme": "url"
+      },
+      {
+        "term": "repunits repeat mod seven every six digits",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_repunits_repeat_mod_seven_every_six_digits",
+        "scheme": "url"
+      },
+      {
+        "term": "a repunit has the residue of its length mod six mod seven",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_a_repunit_has_the_residue_of_its_length_mod_six_mod_seven",
+        "scheme": "url"
+      },
+      {
+        "term": "a repunit is divisible by seven exactly when six divides its length for every n",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_a_repunit_is_divisible_by_seven_exactly_when_six_divides_its_length_for_every_n",
+        "scheme": "url"
+      },
+      {
+        "term": "the two coin fare is minus the euler characteristic at genus two",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_the_two_coin_fare_is_minus_the_euler_characteristic_at_genus_two",
+        "scheme": "url"
+      },
+      {
+        "term": "the genus reads back from chi for every g",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_the_genus_reads_back_from_chi_for_every_g",
+        "scheme": "url"
+      },
+      {
+        "term": "chi is injective for every g h",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_chi_is_injective_for_every_g_h",
+        "scheme": "url"
+      },
+      {
+        "term": "a repunit is below ten to its length",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_a_repunit_is_below_ten_to_its_length",
+        "scheme": "url"
+      },
+      {
+        "term": "a repunit splits back into its two parts for every n k",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_demand3_a_repunit_splits_back_into_its_two_parts_for_every_n_k",
+        "scheme": "url"
+      },
+      {
+        "term": "euclids form is perfect at every mersenne prime to seven",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_elementary_euclids_form_is_perfect_at_every_mersenne_prime_to_seven",
+        "scheme": "url"
+      },
+      {
+        "term": "the mersenne hypothesis is real at eleven",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_elementary_the_mersenne_hypothesis_is_real_at_eleven",
+        "scheme": "url"
+      },
+      {
+        "term": "the amicable pair is mutual and neither is perfect",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_elementary_the_amicable_pair_is_mutual_and_neither_is_perfect",
+        "scheme": "url"
+      },
+      {
+        "term": "the primitive roots mod nine are exactly two and five",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_elementary_the_primitive_roots_mod_nine_are_exactly_two_and_five",
+        "scheme": "url"
+      },
+      {
+        "term": "the eisenstein units are exactly six",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_elementary_the_eisenstein_units_are_exactly_six",
+        "scheme": "url"
+      },
+      {
+        "term": "the subtraction game loses exactly at the multiples of four",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_elementary_the_subtraction_game_loses_exactly_at_the_multiples_of_four",
+        "scheme": "url"
+      },
+      {
+        "term": "the units of z9 form three pairs summing to nine",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_elementary_the_units_of_z9_form_three_pairs_summing_to_nine",
+        "scheme": "url"
+      },
+      {
+        "term": "the multiplication table of the z9 units is a latin square",
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/theorem/lean_elementary_the_multiplication_table_of_the_z9_units_is_a_latin_square",
+        "scheme": "url"
+      }
+    ],
+    "references": [
+      "Euler's polyhedron formula V − E + F = 2 (Leonhard Euler, 1758). The file as a whole is this deposit's own construction, and this ONE declaration restates a named classical result: its third conjunct 4 + 4 - 6 = 2 IS the Euler characteristic of the tetrahedron. The comment above that theorem already named Euler; the register did not, because prior art was routed on the FILE and a file-level row cannot say \"own work except theorem 7\". No priority over Euler is claimed. What is this deposit's own here is the pairing of the two tetrahedra with the cube Q₃ and the vertex and edge counts around it, not the characteristic.",
+      "address.lean: composes FNV-1a (Fowler, Noll, Vo, 1991) with the Merkle hash tree (Merkle, 1979)",
+      "asymmetric.lean: Ed25519 — Daniel J. Bernstein, Niels Duif, Tanja Lange, Peter Schwabe and Bo-Yin Yang, 2011; standardised as RFC 8032 (Josefsson and Liusvaara, 2017). SHA-512 is FIPS 180-4 (NIST). The curve, the signature scheme and the hash are all theirs and none is this deposit's. The implementation in src/0/ed25519.ts is checked against their published vectors by scripts/crypto-kat.ts, which is where the assurance for the PRIMITIVE lives — not here. Nothing below decides that Ed25519 is secure, and a file that appeared to would be claiming a result nobody has.",
+      "coin.lean: the reflection d ↦ 10 − d is the TEN'S COMPLEMENT, and its sibling 9 − d the nines' complement — the method of complements, used to turn subtraction into addition in Pascal's calculator (1642), the Comptometer and the Curta, and in modern computer arithmetic. That it is an involution with a single fixed point is the property those machines rely on. Searched 2026-09-04, term \"method of complements / nines' complement / ten's complement\"; prior art found and credited",
+      "demand.lean: the named results the search data asks for — Bézout’s identity (Étienne Bézout, 1779; Bachet, 1624), the Chinese remainder theorem (Sunzi, c. 3rd–5th century), and others named in their theorems",
+      "demand2.lean: Wilson’s theorem — John Wilson; first proved by Joseph-Louis Lagrange, 1771; the Catalan conjecture on consecutive perfect powers — Eugène Catalan, 1844; proved by Preda Mihăilescu, 2002",
+      "demand3.lean: Legendre’s three-square theorem — Adrien-Marie Legendre, 1797; Carmichael numbers — Robert Carmichael, 1910; amicable pairs — known to antiquity",
+      "elementary.lean: Euclid (Elements IX.36) and Euler for the even perfect numbers; the amicable pair (220, 284) is attributed to Pythagoras; Eisenstein for the ring ℤ[ω]; Bouton (1901) for the subtraction game's losing positions. None of these results is this deposit's. What is this deposit's is the DECISION of each over a stated finite range, axiom-free, and the honest record of where the range stops short of what the older claim asserted.",
+      "energy.lean: the laws of electrolysis — Michael Faraday, 1834; the enthalpy of combustion of hydrogen, standard physical chemistry",
+      "families.lean: quantifies the ℤ/9 arithmetic above; the underlying results are Fermat’s, Euler’s and Gauss’s",
+      "flow.lean: 2⁶ = 64 ≡ 1 (mod 9), so the powers of two modulo 9 repeat with period six — Euler's theorem for φ(9) = 6, and the order of 2 in U(9), both textbook. Credited, and bounded: what this file adds is the kernel proof that the flow used by `navier_stokes_flow_is_bounded` stays bounded at EVERY step, not only at the 48 that theorem checks.",
+      "fnv.lean: FNV-1a — Glenn Fowler, Landon Curt Noll and Phong Vo, 1991",
+      "generated.lean: the structure underneath is standard and is credited. The doubling orbit 1 → 2 → 4 → 8 → 7 → 5 → 1 modulo 9 is the cyclic group generated by 2 in U(9), of order 6 because that is the multiplicative order of 2 mod 9; the units are {1,2,4,5,7,8} and the non-units {0,3,6}. Textbook abstract algebra, and treated directly in the literature on doubling maps modulo odd integers. Bounded, so the credit stops where the earlier work does: what is NOT prior art is the generator that enumerates propositions over this ring and discards the ones true of every sibling; that machinery is this deposit's own. Verification by exhaustion in Lean is this deposit's contribution, and verification is not discovery.",
+      "imagined.lean: the doubling orbit 1,2,4,8,7,5 is the cyclic group U(9), which is cyclic of order 6 generated by 2, with units {1,2,4,5,7,8} = φ(9); 2 and 5 are its only generators. Standard elementary number theory, in Gauss and in every abstract-algebra text. The closure statements quantify that structure. Searched 2026-09-04, term \"multiplicative group of units mod 9 cyclic order 6 generated by 2\"; prior art found and credited",
+      "imprint.lean: the UUID layout and its version and variant fields are RFC 9562 (2024, obsoleting RFC 4122, 2005). A length-prefixed payload is ordinary practice with no single author and no priority is claimed for it. What is decided here is only that THIS deposit's codec is reversible where it says it is, and refuses where it says it refuses.",
+      "index.lean: the structure underneath is standard and is credited. The doubling orbit 1 → 2 → 4 → 8 → 7 → 5 → 1 modulo 9 is the cyclic group generated by 2 in U(9), of order 6 because that is the multiplicative order of 2 mod 9; the units are {1,2,4,5,7,8} and the non-units {0,3,6}. Textbook abstract algebra, and treated directly in the literature on doubling maps modulo odd integers. Bounded, so the credit stops where the earlier work does: what is NOT prior art is the use of that orbit as a floor for what this deposit does and does not settle, which is a statement about this repository and has no earlier author. Verification by exhaustion in Lean is this deposit's contribution, and verification is not discovery.",
+      "instruments.lean: NO NOVELTY IS CLAIMED AND NONE IS DENIED. The three rules are elementary — a strict order with an unknown value, a partition of a list at its last marked position, and removal of every occurrence of a substring — and each is standard enough that naming one author would be arbitrary. This row is kind 1 rather than kind 2 because kind 2 asserts that a search was performed and found nothing, and no such search was performed for these. What is this deposit's is not the rules: it is that three of its own instruments hold them by decision of the kernel, instead of by a block of reasoning written inside the instrument that needs them and checked by that same instrument.",
+      "involution.lean: that a permutation of order two decomposes a finite set into fixed points and transpositions, and that the number of fixed points therefore matches the parity of the set, is classical and long predates this deposit. It is the orbit-counting argument in any first course. What is this deposit's own here is the EXHAUSTIVE decision over ℤ/9 and the measured refusal below.",
+      "ledgerclaims.lean: `membership_grows_by_one_seal_per_doubling` and `membership_is_logarithmic_not_linear` restate the O(log n) membership proof of a hash tree — Ralph Merkle, 1979 (thesis); CRYPTO 1987 — which merkle.lean in this same deposit already credits. Classified `unbounded` on the ground that the subject is this deposit's own ledger; the ledger is its own, the logarithm is not. Bounded: what is not prior art is what THIS ledger claims — the 967-receipt case, the saving arithmetic, and the 128-bit seal width as this deposit mints it.",
+      "light.lean: the exact numerical values below are DEFINITIONS adopted by the Conférence Générale des Poids et Mesures, not results of this deposit: the metre from the speed of light (17th CGPM, 1983) and the seven defining constants fixed exactly in the 2019 revision of the SI, effective 20 May 2019 (BIPM, https://www.bipm.org/en/measurement-units/si-defining-constants). Nothing here measures anything.",
+      "mechanical.lean: the Boolean rows are De Morgan's laws — Augustus De Morgan, 1847 — written in the arithmetic of {0,1}; the group rows are the additive group of Z/9. Both long prior. Searched 2026-09-04, terms \"De Morgan's laws boolean algebra\" and \"additive group mod 9\"; prior art found and credited",
+      "merkaba.lean: the partition into {3,6,9} and two three-element classes closed under doubling is the subgroup and coset structure of Z/9 under the action of U(9); Lagrange. One theorem already credits Euler for the polyhedron formula. Searched 2026-09-04; prior art found and credited",
+      "merkle.lean: the hash tree — Ralph Merkle, 1979 (thesis); CRYPTO 1987",
+      "nim.lean: Nim — Charles L. Bouton, 1901; the Sprague–Grundy theorem — Roland Sprague, 1935 and Patrick M. Grundy, 1939",
+      "nucleus.lean: THE PHYSICS IS NOT THIS DEPOSIT'S AND NONE OF IT IS CLAIMED. The shell model and its closed-shell numbers 2, 8, 20, 28, 50, 82, 126 are Maria Goeppert Mayer and J. Hans D. Jensen, 1949, who shared the 1963 Nobel Prize for them; the level capacities below are 2j+1 in the standard filling order, which is textbook. The proton-to-electron mass ratio is measured, and CODATA publishes it. What is decided here is ARITHMETIC over lists of small naturals and nothing else: that certain prefix sums of a typed capacity list take certain values, that a product of numerators equals a product of denominators, and that one integer is not another. No theorem below decides anything about a nucleus.",
+      "phenomena.lean: the SI base quantities and their defining constants are definitions of the Conférence Générale des Poids et Mesures (2019 revision, effective 20 May 2019); the electrochemical results are Michael Faraday's laws of electrolysis, 1834, and the standard enthalpy of combustion of hydrogen. Every physical result named here has an earlier author or a standards body, and none is this deposit's.",
+      "priorart.lean: THE PRACTICE IS PRIOR ART AND IS CREDITED. Recording provenance and attribution per artefact is long established and formalised: W3C PROV-O, the DataCite metadata schema, Dublin Core Metadata Terms, PREMIS for archived digital objects, the Open Provenance Model, and the software citation principles' credit-and-attribution requirement. Nothing about keeping an attribution table is new, and this deposit does not suggest otherwise.",
+      "program.lean: the UUID layout and its version and variant fields are RFC 9562 (2024, obsoleting RFC 4122, 2005); FNV-1a, used here as the check function, is Glenn Fowler, Landon Curt Noll and Phong Vo, 1991, and is credited in fnv.lean where it is ported. A checksum placed in one field of an identifier over the remaining fields is ordinary practice and no priority is claimed for it. What is decided here is only that THIS deposit's layout is the partition it says it is.",
+      "quantum.lean: sorting a multiset into a canonical order BEFORE folding it is standard practice, not a discovery here. Sorted-leaf Merkle trees are the recommended construction for multiproofs and are shipped that way in OpenZeppelin's merkle-tree library; canonical ordering before hashing is long-established in cryptographic serialisation generally. The mathematical content is elementary: any function of a canonical form is invariant under permutation of its input, which is why `receipt_is_order_invariant` holds. What this file contributes is the Lean verification over a stated finite domain and the negative controls beside it — `naive_fold_is_not_order_invariant` shows the property is bought by the sort and not free, and `the_receipt_is_not_injective` and `the_invariance_is_canonicalisation_not_physics` state its limits. Verification and refusal, not discovery.",
+      "rays.lean: that 3 is a primitive root modulo 7 and that (ℤ/7)* is cyclic of order six is Gauss and is elementary number theory; the involution x ↦ ¬x on bit words is Boolean algebra. Neither is this deposit's. What is decided here is only that THIS deposit's ray order is that orbit and that its trace is that involution — the facts a reader would otherwise have to take from a comment.",
+      "reach.lean: that no finite set contains every natural number is Euclid's argument in form and is as old as mathematics; the deposit claims none of it. What is its own here is the decision over its OWN bounds, and the statement of where that decision stops.",
+      "recovered.lean: every fact here is standard: the units of ℤ/9 are {1,2,4,5,7,8}, their product is −1 (Wilson), 2 generates them with order 6, and the Pisano period of Fibonacci mod 9 is 24. Textbook material, credited. What is NOT prior art is that these particular statements sat WITHDRAWN in this deposit's ledger, each recorded as \"not backed by a Lean proof. Its evidence is a TypeScript test\", while every one is decidable in a line.",
+      "reversal.lean: digit reversal and digit sums; casting out nines, in use by the 12th century",
+      "rights.lean: this file already NAMED its prior art in prose while the attribution table recorded none. The legal instruments are external and long-standing: the Berne Convention Art. 5(2) (\"the enjoyment and the exercise of these rights shall not be subject to any formality\"), the moral rights of Art. 6bis, and the sui generis database right of Directive 96/9/EC. `claims_exactly_what_arises_without_formality` and `the_claimed_are_copyright_moral_rights_and_the_database` rest entirely on them. Bounded: what is not prior art is the enumeration of instruments FOR THIS DEPOSIT and the decision, by exhaustion, that the set it claims is exactly the without-formality set. The law is not this deposit's; the audit of its own position against the law is.",
+      "roots.lean: SHA-512 and its constants are FIPS 180-4 (NIST, 2015): K[t] is the first 64 bits of the fractional part of the cube root of the t-th prime (§4.2.3) and H[i] the same of the square root (§5.3.5). Newton's method for integer roots is classical. Neither is this deposit's. What is decided here is only that THIS deposit's derivation computes those definitions and not something near them.",
+      "sequences.lean: Cassini’s identity — G. D. Cassini, 1680; Lucas sequences — Édouard Lucas, 1878; the Brahmagupta–Fibonacci identity — Brahmagupta, 628; Pascal’s triangle mod 2 — Blaise Pascal, 1654",
+      "speed.lean: the structural claim is Merkle's and is credited here as merkle.lean already credits it: a hash tree over n leaves has an O(log n) membership proof, so the inclusion path at each power of two is exactly the exponent. Ralph Merkle, 1979 (thesis); CRYPTO 1987. `the_verify_path_is_the_exponent`, `membership_is_logarithmic_not_linear` and `the_gap_widens_with_every_doubling` RESTATE that property. This file was classified `unbounded` — \"the subject is this deposit's own verification cost\" — which was wrong: the cost is logarithmic BECAUSE of a known result, and the repository was already crediting that result three files away. Bounded: what is not prior art is the MEASURED constants on this machine (recompute 21,582,900 µs against a 38 µs walk) and the arithmetic over them. A measurement is not a discovery either, and the file says so.",
+      "split.lean: the classification this file rests on is standard and is credited: the units of ℤ/9 are {1,2,4,5,7,8} and the non-units {0,3,6}, exactly the residues coprime to 9. That is textbook abstract algebra — Wikipedia's \"multiplicative group of integers modulo n\", and every algebra course. So `the_singles_are_exactly_the_non_units` and `the_pairs_are_exactly_the_units_in_order` RESTATE known mathematics and claim nothing. Stated precisely so the credit does not run past the earlier work: what is NOT claimed as prior art is the tokenisation itself — reading the digits as 0|12|3|45|6|78|9 by concatenating consecutive units into two-digit tokens, and the arithmetic that follows from it (every token a multiple of three, closure of the tokens under addition and multiplication). That arrangement is this deposit's presentation of a standard fact, and its verification is by exhaustion here. Crediting an earlier author for a presentation they did not make is the same defect as claiming their result, pointed the other way.",
+      "the 3-4-5 triangle, known in antiquity",
+      "theology.lean: the structure is the same standard one index.lean credits: U(9) = {1,2,4,5,7,8}, the non-units {0,3,6}, and the doubling orbit 1 → 2 → 4 → 8 → 7 → 5 → 1 of order six because 2 has multiplicative order six mod 9. Textbook abstract algebra, not this deposit's. The permutation count 7! = 5040 is likewise classical. What is NOT prior art is which facts were chosen and why — and that choosing is not a mathematical act, which is the whole subject of this file.",
+      "theorems.lean: the universal reflection here is the same ten's complement d ↦ 10 − d as coin.lean, with its centre and its pairs summing to ten. Method of complements, long prior to this deposit. Searched 2026-09-04",
+      "z9.lean: Fermat’s little theorem — Pierre de Fermat, 1640; Euler’s theorem — Leonhard Euler, 1763; primitive roots — Carl Friedrich Gauss, 1801",
+      "z9plus.lean: digital roots (casting out nines) — in use by the 12th century; the Pisano period — after Leonardo Pisano; studied by Joseph-Louis Lagrange, 1774"
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "10.5281/zenodo.21819217",
+        "relation": "isVersionOf",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/FINDINGS",
+        "relation": "isDocumentedBy",
+        "resource_type": "publication-report"
+      },
+      {
+        "identifier": "https://ceccec.psg.bg/millennium-solutions/CHANGELOG",
+        "relation": "isDocumentedBy",
+        "resource_type": "publication-other"
+      },
+      {
+        "identifier": "10.5281/zenodo.22127374",
+        "relation": "isCitedBy",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "identifier": "10.5281/zenodo.22127377",
+        "relation": "isCitedBy",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "identifier": "10.5281/zenodo.22256731",
+        "relation": "isCitedBy",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "identifier": "10.5281/zenodo.22256708",
+        "relation": "isCitedBy",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "identifier": "10.5281/zenodo.22700098",
+        "relation": "isCitedBy",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "identifier": "10.5281/zenodo.22730576",
+        "relation": "isCitedBy",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "identifier": "10.5281/zenodo.22717782",
+        "relation": "isCitedBy",
+        "resource_type": "publication-preprint"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Claude",
+        "type": "Other",
+        "affiliation": "automated session acting in this repository"
+      },
+      {
+        "name": "claude-opus",
+        "type": "Other",
+        "affiliation": "automated session acting in this repository"
+      }
+    ],
+    "dates": [
+      {
+        "start": "2026-08-06",
+        "end": "2026-09-20",
+        "type": "Collected",
+        "description": "first commit of the source repository to the commit this version tags"
+      }
+    ],
+    "method": "Every declaration is decided by the Lean 4 kernel over a stated finite domain — no axioms, no sorry, no native_decide. Every figure in the prose is recomputed by a script in this repository on every build, and every ledger entry is a receipt over content that can be rehashed. Reproduce: clone https://github.com/ceccec/millennium-solutions, then `npm run lean` for the kernel and `node scripts/forensics.ts` for the receipt chain. Neither needs an account, an API key, a network, or a model.",
+    "notes": "Provenance tag v9.6.8, content-address ee25116b-c7b6-8a89-834a-b0606300e805. 924 theorems over 41 files; ledger 2880 entries, 924 standing. Citing works measured 2026-09-20: 7 total, 7 the author's own, 0 third party, 0 unresolved. No violator is identified by this deposit and none is named here; uncited use has not been searched for. Statements in this tree are signed by agent in src/receipts/; the contributors listed are the automated sessions that signed there."
+  }
 }

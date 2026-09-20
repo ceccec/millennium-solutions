@@ -20168,5 +20168,45 @@
     "key": "lean_nucleus_the_fit_is_not_the_measured_ratio",
     "name": "lean nucleus.lean: the_fit_is_not_the_measured_ratio — 1836 * 10000 ≠ 18361527 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "3e5b63c7-5ca0-89f0-8eb7-65f50ec5cfa8"
+  },
+  {
+    "key": "lean_authority_nothing_withdrawn_is_live",
+    "name": "lean authority.lean: nothing_withdrawn_is_live — withdrawn.all (fun k => ! live.contains k) ∧ live.all (fun k => ! withdrawn.contains k) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "504b6638-5a8f-8c77-a82e-353f9d77f687"
+  },
+  {
+    "key": "lean_authority_every_sealed_statement_is_live_or_withdrawn_and_not_both",
+    "name": "lean authority.lean: every_sealed_statement_is_live_or_withdrawn_and_not_both — sealed.all (fun k => (live.contains k || withdrawn.contains k) && ! (live.contains k && withdrawn.contains k)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f797d801-3e74-8de5-85a9-21cd3c842162"
+  },
+  {
+    "key": "lean_authority_withdrawing_shrinks_the_live_set_and_never_the_record",
+    "name": "lean authority.lean: withdrawing_shrinks_the_live_set_and_never_the_record — live.length + withdrawn.length = sealed.length ∧ withdrawn.all (fun k => sealed.contains k) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d2b796e8-29d1-85e4-a588-1102861890aa"
+  },
+  {
+    "key": "lean_authority_a_rider_and_a_verdict_are_different_things",
+    "name": "lean authority.lean: a_rider_and_a_verdict_are_different_things — (carriesRider.any (fun k => ! isVerdict.contains k)) ∧ (isVerdict.any (fun k => ! carriesRider.contains k)) ∧ (carriesRider.any (fun k => isVerdict.contains k)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "71fe6459-9e87-8cf9-9b6c-f0cb257f0e65"
+  },
+  {
+    "key": "lean_authority_withdrawing_never_raises_the_frozen_count",
+    "name": "lean authority.lean: withdrawing_never_raises_the_frozen_count — (List.range 256).all (fun m => let taken := bits m let after := carriesRider.filter (fun k => ! taken.contains k) after.length ≤ carriesRider.length) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1aac6788-923f-81ce-bd2a-3481886d474f"
+  },
+  {
+    "key": "lean_authority_clearing_changes_no_seal",
+    "name": "lean authority.lean: clearing_changes_no_seal — cleared.all (fun k => sealed.contains k) ∧ (sealed.filter (fun k => ! cleared.contains k)).length + cleared.length = sealed.length — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7bd9776a-18f2-8633-bc34-eb689e3f8580"
+  },
+  {
+    "key": "lean_authority_a_cleared_statement_leaves_the_queue_and_stays_on_the_record",
+    "name": "lean authority.lean: a_cleared_statement_leaves_the_queue_and_stays_on_the_record — (isVerdict.filter (fun k => ! cleared.contains k)).all (fun k => sealed.contains k) ∧ (isVerdict.filter (fun k => ! cleared.contains k)).length ≤ isVerdict.length — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a357fd68-31d0-8812-a5e2-37b8facad530"
+  },
+  {
+    "key": "lean_authority_refusing_every_verdict_never_refuses_the_whole_record",
+    "name": "lean authority.lean: refusing_every_verdict_never_refuses_the_whole_record — isVerdict.all (fun k => sealed.contains k) ∧ sealed.any (fun k => ! isVerdict.contains k) ∧ isVerdict.length < sealed.length — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6e853633-d7fe-87a3-9049-dd79ce648dbb"
   }
 ]
