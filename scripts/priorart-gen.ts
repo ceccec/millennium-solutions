@@ -15,13 +15,14 @@
 // IDEMPOTENT BY REQUIREMENT: run on an unchanged tree it must produce byte-identical output. A generator
 // that rewrites what it did not need to change makes every diff unreadable, and this deposit has been
 // bitten by generators that silently dropped content they carried.
-import { readFileSync, writeFileSync, readdirSync } from 'node:fs'
+import { readFileSync, writeFileSync } from 'node:fs'
+import { leanFiles } from '../src/api/index.ts'
 
 const KINDS: Record<string, string> = { named: '0', unclassified: '1', 'none-known': '2' }
 const TARGET = 'src/proof/priorart.lean'
 
 export const table = (): string => {
-  const files = readdirSync('src/proof').filter((f) => f.endsWith('.lean')).sort()
+  const files = leanFiles()
   const rows: string[] = []
   const width = Math.max(...files.map((f) => f.length))
   files.forEach((f, i) => {

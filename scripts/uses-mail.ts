@@ -21,6 +21,7 @@ import { execFileSync } from 'node:child_process'
 import { randomUUID } from 'node:crypto'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
+import { arg, flag } from '../src/cli/index.ts'
 
 const TO = 'legal@psg.bg'
 const FROM = process.env.MAIL_FROM || 'rights@uuidna.com'
@@ -96,8 +97,7 @@ const files = process.argv.slice(2).filter((f) => f.endsWith('.json'))
 // same `dossier()` renders both — so what lands in the directory is the mail, not a description of it.
 // It is also the honest answer for anyone without the author's SMTP credentials, which is everyone but him
 // and the weekly workflow: they can prepare the dossiers and he can read them before any of it leaves.
-const dry = process.argv.indexOf('--dry-run')
-const DRY = dry >= 0 ? (process.argv[dry + 1] ?? 'dossiers') : null
+const DRY = flag('--dry-run') ? (arg('--dry-run') ?? 'dossiers') : null
 if (DRY) {
   mkdirSync(DRY, { recursive: true })
   let n = 0

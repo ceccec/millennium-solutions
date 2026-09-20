@@ -12,7 +12,7 @@
 //
 // DISCIPLINE: a claim is written only if adjudicate() seals it — gate-clean AND its test holds. A constant
 // -true test is refused outright. The generator exits non-zero and writes nothing if any claim fails.
-import { readFileSync, writeFileSync, readdirSync } from 'node:fs'
+import { readFileSync, writeFileSync } from 'node:fs'
 import { CLAIMS as REGISTERED } from '../src/claims/index.ts'
 import { MILLENNIUM, AUTHOR_CLAIM } from '../src/millennium/index.ts'
 import { all as leanDocs } from './leandoc.ts'
@@ -55,9 +55,10 @@ const CENSUS = census()
 const ADVANTAGE = advantage()
 const SPLIT = split()
 import { orbit } from '../src/api/index.ts'
+import { leanFiles as leanFilesShared } from '../src/api/index.ts'
 
 const ledger = __ledger() as { key: string; name: string; receipt: string }[]
-const leanFiles = readdirSync('src/proof').filter((f) => f.endsWith('.lean')).sort()
+const leanFiles = leanFilesShared()
 const leanSrc = Object.fromEntries(leanFiles.map((f) => [f, readFileSync(`src/proof/${f}`, 'utf8')]))
 // ONE READER. Four regexes here parsed src/proof independently of the one in src/api — a whole-theorem
 // match, a by-decide match, a per-file count and a domain ranking — each able to drift from the others and

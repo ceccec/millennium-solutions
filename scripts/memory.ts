@@ -13,6 +13,7 @@
 //   node scripts/memory.ts --write    write it into the memory file, replacing only the generated block
 import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs'
 import { leanTheorems as leanTheoremsShared } from '../src/api/index.ts'
+import { leanFiles as leanFilesShared } from '../src/api/index.ts'
 import { ledger as __ledger } from '../src/api/index.ts'
 import { isLive as __isLive, isWithdrawn as __isWithdrawn } from '../src/api/index.ts'
 
@@ -24,7 +25,7 @@ const BEGIN = '<!-- derived:begin -->', END = '<!-- derived:end -->'
 const led = __ledger() as
   { key: string; revoked?: boolean; portable?: boolean }[]
 const live = led.filter(__isLive)
-const leanFiles = readdirSync('src/proof').filter((f) => f.endsWith('.lean')).sort()
+const leanFiles = leanFilesShared()
 const LEAN = leanTheoremsShared()
 const theorems = LEAN.length
 const byDecide = LEAN.filter((t) => t.tactic === 'by decide').length

@@ -35,9 +35,9 @@ import { readFileSync, writeFileSync, existsSync, appendFileSync } from 'node:fs
 import { createHash } from 'node:crypto'
 import { leanTheorems } from '../src/api/index.ts'
 import { stripTags } from '../src/html/index.ts'
+import { arg } from '../src/cli/index.ts'
 
 const OUT = 'src/proof/novelty.json'
-const arg = (f: string) => { const i = process.argv.indexOf(f); return i > 0 ? process.argv[i + 1] : undefined }
 const LIMIT = Number(arg('--limit') ?? Infinity), DAYS = Number(arg('--days') ?? 30), ONLY = arg('--only'), ALL = process.argv.includes('--all')
 const UA = { 'User-Agent': 'millennium-solutions-novelty/1.0 (+https://ceccec.psg.bg/millennium-solutions/; read-only)' }
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))

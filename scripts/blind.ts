@@ -24,14 +24,12 @@
 import { readFileSync, writeFileSync } from 'node:fs'
 import { execFile } from 'node:child_process'
 import { promisify } from 'node:util'
+import { arg, num } from '../src/cli/index.ts'
 const run = promisify(execFile)
 
-const arg = (k: string, d: number): number => {
-  const i = process.argv.indexOf(k)
-  return i >= 0 ? Number(process.argv[i + 1]) : d
-}
-const TRIALS = arg('--trials', 12)
-const SEED = arg('--seed', 7)
+
+const TRIALS = num('--trials', 12)
+const SEED = num('--seed', 7)
 
 // A seeded generator, so a run is reproducible and a miss can be reproduced by whoever doubts it.
 let state = SEED >>> 0
@@ -95,8 +93,7 @@ const mutate = (file: string, src: string): Trial | null => {
 // the Lean kernel — so a flag flipped in a table the kernel DECIDES came back as a miss, and the reported
 // rate was about my choice of chain as much as about the gates. `ci:local` is what runs on every commit, so
 // that is the default and the report names it. A detection rate without the chain beside it is not a figure.
-const chainArg = process.argv.indexOf('--chain')
-const CHAIN = chainArg >= 0 ? process.argv[chainArg + 1] : 'npm run -s ci:local'
+const CHAIN = arg('--chain') ?? 'npm run -s ci:local'
 const caught: Trial[] = []
 const missed: Trial[] = []
 const skipped: string[] = []

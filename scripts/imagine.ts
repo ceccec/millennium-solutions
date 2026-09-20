@@ -30,9 +30,10 @@
 //
 // Run: node scripts/imagine.ts          (propose and report)
 //      node scripts/imagine.ts --emit   (also write src/proof/imagined.lean and verify it)
-import { existsSync, readFileSync, writeFileSync, readdirSync } from 'node:fs'
+import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 import { units as apiUnits, triad as apiTriad, orbit as apiOrbit, tetA as apiTetA, tetB as apiTetB } from '../src/api/index.ts'
+import { leanFiles } from '../src/api/index.ts'
 
 const m9 = (n: number) => ((n % 9) + 9) % 9
 
@@ -129,7 +130,7 @@ const t3 = t1.filter((c) => (byKind.get(c.kind) ?? []).some((o) => !o.holds))
 // statement, not its spelling. A generator that cannot recognise its own output as already-known is a
 // duplication machine with a progress bar.
 function reflAlias(): [RegExp, string][] {
-  const bodies = [...new Set(readdirSync('src/proof').filter((f) => f.endsWith('.lean'))
+  const bodies = [...new Set(leanFiles()
     .flatMap((f) => [...readFileSync('src/proof/' + f, 'utf8').matchAll(/^def refl \(d : Nat\) : Nat := ([^\n]+?)\s*(?:--.*)?$/gm)]
       .map((m) => m[1]!.replace(/\s+/g, ''))))]
   return bodies.length === 1 ? [[/\brefl\b/g, `m9(${bodies[0]})`]] : []
@@ -146,7 +147,7 @@ const ALIAS: [RegExp, string][] = [
   // ever disagree, refl is not aliased at all rather than aliased wrong.
   ...reflAlias(),
 ]
-let said = readdirSync('src/proof').filter((f) => f.endsWith('.lean') && f !== 'imagined.lean')
+let said = leanFiles().filter((f) => f !== 'imagined.lean')
   .map((f) => readFileSync('src/proof/' + f, 'utf8')).join('\n').replace(/\s+/g, '')
 for (const [re, to] of ALIAS) said = said.replace(re, to)
 const setOf = new Map(SETS.map((S) => [S.id, S.lean.replace(/\s+/g, '')]))

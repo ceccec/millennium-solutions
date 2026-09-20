@@ -33,6 +33,7 @@ import { readFileSync, writeFileSync, appendFileSync } from 'node:fs'
 import { execFileSync } from 'node:child_process'
 import { unreflect } from '../src/honesty/index.ts'
 import { stripTags } from '../src/html/index.ts'
+import { arg } from '../src/cli/index.ts'
 
 // ── what THIS work is, read from CITATION.cff and package.json — not retyped ──────────────────────────────────
 const cff = readFileSync('CITATION.cff', 'utf8')
@@ -385,7 +386,6 @@ lines.push(`- leads: ${report.leads.length} (own surfaces removed${report.mode =
 for (const l of report.leads.slice(0, 200)) lines.push(`  - [${l.source}] ${l.url} — cites: **${l.cites}** · pays: NOT MEASURED${l.markers.length ? ` · markers: ${l.markers.join(', ')}` : ''}${l.signals?.length ? ` · signals: ${l.signals.join(', ')}` : ''}${l.licence ? ` · licence: ${l.licence}` : ''}${l.by ? ` · ${String(l.by).slice(0, 60)}` : ''}`)
 const text = lines.join('\n')
 console.log(text)
-const arg = (flag: string) => { const i = process.argv.indexOf(flag); return i > 0 ? process.argv[i + 1] : undefined }
 const out = arg('--out'); if (out) writeFileSync(out, JSON.stringify(report, null, 2) + '\n')
 const summary = arg('--summary'); if (summary) appendFileSync(summary, text + '\n\n')
 const measured = Object.values(report.sources).reduce((n, s) => n + s.measured, 0)

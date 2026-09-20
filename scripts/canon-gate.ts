@@ -25,6 +25,15 @@ const CANON: Canon[] = [
     pattern: /\.replace\(\/[<>&]\/g,\s*'&(?:lt|gt|amp);'\)/ },
   { job: 'stripping HTML tags', owner: 'src/html/index.ts', use: 'stripTags (or TAG, mid-chain) from src/html',
     pattern: /\.replace\(\/<\[\^>\]\+>\/g,/ },
+  // Three copies, and they were not the same function: two tested `i > 0` and returned a string, one tested
+  // `i >= 0` and coerced to a number. The difference could not bite — argv[0] is the node binary — which is
+  // what makes it the kind of divergence that survives until the day it can.
+  { job: 'reading an argv flag value', owner: 'src/cli/index.ts', use: 'arg/num/flag from src/cli',
+    pattern: /process\.argv\.indexOf\(/ },
+  // Four copies of the line that enumerates the proof directory, each re-deriving what leanFiles() returns —
+  // and each missing the existsSync guard the canonical one carries.
+  { job: 'enumerating the Lean sources', owner: 'src/api/index.ts', use: 'leanFiles() from src/api',
+    pattern: /readdirSync\((?:'|")src\/proof/ },
 ]
 
 const files = execSync('git ls-files "*.ts" "*.vue"', { encoding: 'utf8' }).split('\n').filter(Boolean)
