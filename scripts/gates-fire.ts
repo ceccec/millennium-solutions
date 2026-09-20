@@ -246,6 +246,14 @@ const CONTROLS: Control[] = [
   // A CSS GAP IS SILENT. An undefined custom property renders as nothing and an animation with no keyframes
   // does not play; the build passes and the surface is wrong, with no stack trace for a colour that resolved
   // to empty. The mutation plants a variable nobody defines in the stylesheet every page loads.
+  // THE SUBSTRATE'S OWN CONSTANT. --a432-hue is a registered, typed, interpolatable value every themed
+  // colour on every page is computed from, and it starts at the heart's ray: the reflection's single fixed
+  // point, 5, times the ring's 40° per digit. The mutation moves it off that ray by ten degrees — a change
+  // no page would report and every page would show.
+  { gate: 'css (the derived ray)', cmd: 'node scripts/css-gate.ts', file: '.vitepress/theme/custom.css',
+    what: 'the themed hue starting somewhere other than the heart the ring computes',
+    mutate: (s) => s.replace('initial-value: 200', 'initial-value: 210') },
+
   { gate: 'css', cmd: 'node scripts/css-gate.ts', file: '.vitepress/theme/custom.css',
     what: 'a custom property used on every page and defined nowhere',
     mutate: (s) => s + '\n.probe { color: var(--a-colour' + '-nobody-defined); }\n' },

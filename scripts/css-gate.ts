@@ -18,6 +18,7 @@
 // says zero is worth more than one that said 19 the first time and was believed.
 import { readFileSync } from 'node:fs'
 import { execSync } from 'node:child_process'
+import { A432_STEP, digits } from '../src/0/index.ts'
 
 // Defined elsewhere by the framework, on purpose. A prefix is a CHOICE and is listed as one: adding to it is
 // how a real gap gets hidden, so it stays short and each entry says whose it is.
@@ -63,6 +64,38 @@ for (const f of files) {
 for (const v of missingVars) { console.log(`  ✗ ${v} — used and never defined; it renders as nothing`); bad++ }
 for (const k of missingKeyframes) { console.log(`  ✗ ${k} — animated with no @keyframes; it simply does not play`); bad++ }
 
+// ── THE SUBSTRATE COMPUTES, SO ITS NUMBERS MUST DERIVE ───────────────────────────────────────────────────
+// This stylesheet is not decoration: `@property --a432-hue` is a REGISTERED, typed, interpolatable value the
+// browser computes with, and every themed colour on every page is `hsl(var(--a432-hue) …)`. It had
+// `initial-value: 200` typed into it — and hardcode-gate, which was extended to .vue after Hero.vue was
+// caught hand-typing the units, never reached .css at all. The one file every page loads sat outside the
+// rule the rest of the tree obeys.
+//
+// 200 is not arbitrary and was never documented as anything. The reflection d ↦ 10 − d has exactly one fixed
+// point over the digits, and the ring is divided into A432_STEP = 360/9 = 40 degrees per digit. The heart is
+// 5, and 5 × 40 = 200: the initial hue IS the heart's ray. That is a derivation, so it is checked as one —
+// change the step or the reflection and this refuses, instead of every page quietly re-theming around a
+// number nobody could still explain.
+const CSS = '.vitepress/theme/custom.css'
+const refl = (d: number): number => 10 - d
+const heart = digits().filter((d) => refl(d) === d)
+const themed = readFileSync(CSS, 'utf8')
+const declared = /@property\s+--a432-hue\s*\{[^}]*initial-value:\s*([0-9.]+)/.exec(themed)
+if (!declared) {
+  console.log(`  ✗ ${CSS} — @property --a432-hue no longer declares an initial-value; the themed colours have no ray to start from`)
+  bad++
+} else if (heart.length !== 1) {
+  console.log(`  ✗ the reflection has ${heart.length} fixed point(s); the initial hue is derived from there being exactly one`)
+  bad++
+} else {
+  const expected = heart[0] * A432_STEP
+  if (Number(declared[1]) !== expected) {
+    console.log(`  ✗ ${CSS} — --a432-hue starts at ${declared[1]}, and the heart's ray is ${heart[0]} × ${A432_STEP} = ${expected}`)
+    console.log(`      the substrate computes; a number it carries that the tree derives must be that number`)
+    bad++
+  }
+}
+
 if (bad) {
   console.log(`\n✗ css: ${bad} gap(s). Neither raises an error anywhere — the page loads and is quietly wrong.`)
   process.exit(1)
@@ -70,3 +103,4 @@ if (bad) {
 console.log(`✓ css: ${files.length} stylesheet(s) and component(s) — every custom property resolves in its own`)
 console.log(`  file or in the global theme, every animation names keyframes that exist`
   + `, and ${EXTERNAL.length} prefix(es) are declared external (${EXTERNAL.map((e) => e.prefix + ' — ' + e.whose).join('; ')})`)
+console.log(`  --a432-hue starts at the heart's ray — ${heart[0]} × ${A432_STEP}° = ${heart[0] * A432_STEP}° — derived from the ring, not typed into the sheet`)

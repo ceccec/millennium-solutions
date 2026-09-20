@@ -1,6 +1,6 @@
 # Lessons — what the tree has learned
 
-Derived on every run from 279 sources: **128 corrections** the deposit recorded about itself,
+Derived on every run from 280 sources: **128 corrections** the deposit recorded about itself,
 in the comments of the files where each one happened. Nobody wrote this list; it is counted.
 
 The taxonomy is a choice — six classes, because six are what the record shows — and it is stated so a
