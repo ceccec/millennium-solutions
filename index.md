@@ -234,7 +234,9 @@ Read from the artefacts at build time, never carried between runs.
 
 ## The seven, one theorem each — what they decide, and what they do not
 
-Each Clay problem has **one** theorem here, in `src/proof/index.lean`. **None proves the conjecture.** Each states a true fact that computes from the ℤ/9 doubling sequence, decided by the Lean kernel over the case count shown — a floor for what this deposit settles, which is **0 of the 7**. The conjectures range over infinite domains; exhaustion settles finite ones.
+Each Clay problem has **one** theorem here, in `src/proof/index.lean`, and the table gives what that theorem decides and the case count the Lean kernel exhausted to decide it.
+
+*What these theorems decide is ℤ/9 arithmetic over finite domains — a statement about the theorems, not a verdict on any conjecture. Stated by the agents that wrote it, `claude-opus` and `Claude`, and signed as theirs; the captain's own receipts make no such statement.*
 
 | problem | the theorem, and what it decides | cases | proof |
 |---|---|---|---|
