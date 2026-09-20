@@ -57,7 +57,9 @@ const rows = [...found].sort((a, b) => b.at.length - a.at.length)
 const worst = Object.entries(byFile).sort((a, b) => b[1] - a[1]).slice(0, 8)
 
 const md = [
-  '# Lessons — what this tree has already learned',
+  // The heading is short because scripts/seo.ts measures the rendered <title>, site suffix included, and
+  // refuses one a search result would truncate. 67 characters was the first attempt.
+  '# Lessons — what the tree has learned',
   '',
   `Derived on every run from ${files.length} sources: **${total} corrections** the deposit recorded about itself,`,
   'in the comments of the files where each one happened. Nobody wrote this list; it is counted.',
