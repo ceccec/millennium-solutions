@@ -18,6 +18,25 @@ let fail = 0
 if (existsSync(DIST)) {
   const pages = readdirSync(DIST, { recursive: true }).map(String).filter((f) => f.endsWith('.html'))
   const missing = pages.filter((p) => !/Content-Security-Policy/.test(readFileSync(join(DIST, p), 'utf8')))
+
+  // A DIRECTIVE THE BROWSER THROWS AWAY IS NOT A PROTECTION. `frame-ancestors`, `sandbox` and `report-uri`
+  // are header-only by specification and are IGNORED in a <meta> CSP — the console says so on every page
+  // load. This deposit shipped `frame-ancestors 'none'` in its meta policy: the clickjacking defence read as
+  // present, was discarded by every browser, and the gate above was satisfied because it asked whether a CSP
+  // existed, not whether the CSP could act. Presence is the easier question and it is the wrong one.
+  const METAIGNORED = ['frame-ancestors', 'sandbox', 'report-uri']
+  const inert: string[] = []
+  for (const p of pages.slice(0, 200)) {
+    const html = readFileSync(join(DIST, p), 'utf8')
+    const meta = /http-equiv="Content-Security-Policy"[^>]*content="([^"]*)"/i.exec(html)?.[1] ?? ''
+    for (const d of METAIGNORED) if (new RegExp('(^|;)\\s*' + d + '\\b').test(meta)) inert.push(`${p}: ${d}`)
+  }
+  if (inert.length) {
+    console.log(`  ✗ ${inert.length} page(s) carry a CSP directive a <meta> tag cannot deliver — ${inert[0]}`)
+    console.log(`      it is discarded by every browser, so the page reads as protected and is not.`)
+    console.log(`      Keep it for a host that can send headers (src/0/csp.ts exports CSP_FULL) and take it out of the meta.`)
+    fail++
+  }
   console.log(`CSP coverage: ${pages.length - missing.length}/${pages.length} pages`)
   if (missing.length) { console.log('  ✗ missing CSP: ' + missing.slice(0, 8).join(', ') + (missing.length > 8 ? ' …' : '')); fail += missing.length }
 } else {
