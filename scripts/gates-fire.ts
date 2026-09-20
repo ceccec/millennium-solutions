@@ -260,7 +260,13 @@ const CONTROLS: Control[] = [
   // voice to use, which no build step and no link check would ever notice.
   { gate: 'seven', cmd: 'node scripts/seven.ts', file: '.vitepress/dist/zh/index.html',
     what: 'a direction whose page no longer declares its own language',
-    mutate: (s) => s.replace(/<html([^>]*)\blang="[^"]*"/i, '<html$1'), restore: 'npm run docs:build' },
+    // RESTORE WHAT THE REBUILD TAKES WITH IT. `npm run docs:build` empties dist, and the 17,580 locale
+    // fallback stubs are written after it by locale-fold — so restoring this control with a build alone
+    // deleted a sixth of the site in the middle of the suite, and the next gate to read the build,
+    // sitemap-mesh, reported 17,580 broken links and was marked as failing on a clean tree. The gate was
+    // right both times; the control was the thing removing its input.
+    mutate: (s) => s.replace(/<html([^>]*)\blang="[^"]*"/i, '<html$1'),
+    restore: 'npm run docs:build && node scripts/locale-fold.ts' },
 
   { gate: 'css', cmd: 'node scripts/css-gate.ts', file: '.vitepress/theme/custom.css',
     what: 'a custom property used on every page and defined nowhere',
