@@ -1,6 +1,6 @@
 # Lessons — what the tree has learned
 
-Derived on every run from 282 sources: **132 corrections** the deposit recorded about itself,
+Derived on every run from 283 sources: **134 corrections** the deposit recorded about itself,
 in the comments of the files where each one happened. Nobody wrote this list; it is counted.
 
 The taxonomy is a choice — six classes, because six are what the record shows — and it is stated so a
@@ -8,7 +8,7 @@ reader can disagree with the classes rather than with the arithmetic.
 
 | corrections | class | why it costs something |
 | ---: | --- | --- |
-| 47 | a constant typed instead of derived | the value and its meaning drift apart, and the copy is the one nobody updates |
+| 49 | a constant typed instead of derived | the value and its meaning drift apart, and the copy is the one nobody updates |
 | 32 | a check that could not go red | it reports health it never measured, and deleting it would change nothing |
 | 25 | the instrument was wrong, not the code | a finding is evidence about the finder until the finder has been run against a known case |
 | 12 | domain narrower than the defect | the claim reads over the whole tree and the scan covered part of it |
