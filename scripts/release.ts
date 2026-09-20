@@ -10,6 +10,15 @@ import { ledger as __ledger } from '../src/api/index.ts'
 // (Never default to v1.0.0 — that would re-tag an already-published release.)
 function nextVersion() {
   try {
+    // THE REMOTE'S TAGS COUNT, OR TWO COMMITS CLAIM ONE VERSION. Measured 2026-09-20: this computed v9.5.8
+    // from the local tags while the remote already carried v9.5.8, minted by CI for a different commit with
+    // a different content-address. The push was refused — correctly — and the only safe resolutions were to
+    // drop the local tag or to rewrite published provenance, which is the tampering this file exists to
+    // prevent. A provenance tag is an immutable content address; two of them under one number is the exact
+    // thing it must never be. Fetching first costs a second and removes the race: CI and a local run now
+    // read the same history. Offline, the fetch fails and the local tags are used, which is the old
+    // behaviour and the old risk — stated rather than hidden.
+    try { execSync('git fetch --tags --quiet', { stdio: 'ignore', timeout: 20_000 }) } catch { /* offline */ }
     const tags = execSync('git tag --sort=version:refname', { encoding: 'utf8' }).trim().split('\n').filter(Boolean)
     const last = tags[tags.length - 1]
     const m = last && last.match(/^v(\d+)\.(\d+)\.(\d+)$/)
