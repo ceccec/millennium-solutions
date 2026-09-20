@@ -17326,5 +17326,101 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "6e853633-d7fe-87a3-9049-dd79ce648dbb"
+  },
+  {
+    "key": "lean_planck_the_three_planck_units_share_one_relative_uncertainty",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "55140311-eb5c-8394-a13e-a5f9e8ed82a2"
+  },
+  {
+    "key": "lean_planck_the_square_root_halves_what_is_known_about_the_measured_constant",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "b8782530-4860-875b-8501-3a1ef1db1981"
+  },
+  {
+    "key": "lean_planck_the_measurement_admits_thirty_seven_values_and_not_one",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "de29e184-4c40-8d76-8aec-60604261d956"
+  },
+  {
+    "key": "lean_planck_the_digital_root_tracks_the_unit_and_not_the_scale",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e53500b7-2ac3-8aec-b3c2-29b778591235"
+  },
+  {
+    "key": "lean_planck_the_orbit_holds_two_thirds_of_the_ring_so_landing_on_it_says_little",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ef62fe1e-e10c-8159-b962-51a1898be9fb"
+  },
+  {
+    "key": "lean_planck_no_product_of_three_lattice_constants_lands_where_the_planck_length_is",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9a16e510-2ed2-85cf-8064-d10744fba5df"
+  },
+  {
+    "key": "lean_planck_the_same_search_does_reach_the_magnitude",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "eb57a919-a1ee-89c0-87bd-1bb344fc090c"
+  },
+  {
+    "key": "lean_planck_a_search_expecting_less_than_one_hit_settles_nothing_either_way",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "10ecab4b-c2be-8ea2-8654-8230388bfdf7"
+  },
+  {
+    "key": "lean_planck_every_planck_unit_is_a_square_root_and_not_a_plain_product",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "089656ee-28f2-845d-90c3-785a26298107"
+  },
+  {
+    "key": "lean_planck_length_over_time_cancels_both_and_leaves_the_defined_constant",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "c47bf818-f597-84ce-8bba-e913ed3f8bf3"
+  },
+  {
+    "key": "lean_planck_length_times_mass_cancels_gravity_and_leaves_the_quantum",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "16811f4a-d0ee-86ac-9bca-398f0895b104"
+  },
+  {
+    "key": "lean_planck_length_over_mass_cancels_the_quantum_and_leaves_gravity",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8c098abf-9aa3-8f03-9a4d-9e528c37a933"
+  },
+  {
+    "key": "lean_planck_the_gravitational_exponent_predicts_every_published_uncertainty",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "53bf0add-fed9-8445-8ecd-9040f0d491b0"
+  },
+  {
+    "key": "lean_planck_the_three_uncertainties_are_one_uncertainty_wearing_three_faces",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9879b17b-0c42-8aa1-a28f-e0db40ccbade"
+  },
+  {
+    "key": "lean_planck_the_published_digits_miss_an_identity_that_has_no_measurement_in_it",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "d9c40976-6f84-8b78-80b3-6687c6d66205"
+  },
+  {
+    "key": "lean_planck_the_miss_is_rounding_and_sits_far_below_the_uncertainty",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "e0719e22-4940-899e-8dcc-a7b7dd22e5b0"
   }
 ]
