@@ -1,0 +1,55 @@
+{
+  "measured": "2026-09-20",
+  "records": [
+    {
+      "id": "21781603",
+      "concept": "21781602",
+      "title": "All Seven Clay Millennium Problems Sealed via Universal σ-Involution",
+      "published": "2026-08-04",
+      "created": "2026-08-03",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": ""
+        }
+      ]
+    },
+    {
+      "id": "21819217",
+      "concept": "21787143",
+      "title": "Millennium Solutions - The ℤ/9 Vortex Framework",
+      "published": "2026-08-04",
+      "created": "2026-08-07",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": ""
+        }
+      ]
+    },
+    {
+      "id": "22256707",
+      "concept": "21781602",
+      "title": "All Seven Clay Millennium Problems Sealed via Universal σ-Involution",
+      "published": "2026-08-04",
+      "created": "2026-09-02",
+      "creators": [
+        {
+          "name": "Rouschev, Tsvetan",
+          "orcid": ""
+        }
+      ]
+    }
+  ],
+  "repository": {
+    "firstCommit": "2026-08-06",
+    "hash": "e3860db95"
+  },
+  "earliestDeposit": "2026-08-03",
+  "leadDays": 3,
+  "commits": 1072,
+  "authors": {
+    "Tsvetan Rouschev": 1072
+  },
+  "receipt": "017f9612-cce9-8fb2-aaef-280aab05ee84"
+}

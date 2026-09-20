@@ -290,6 +290,18 @@ const CONTROLS: Control[] = [
   // NOT in the release chain: it needs the network, and a chain step that fails when an external API has a
   // bad afternoon would make a green build depend on somebody else's uptime. It is `npm run sources`, run
   // before an investigation is believed — which is exactly when it matters.
+  // PRIORITY IS THE STRONGEST THING THE AUTHOR HAS, so its record is the last place a typed date belongs.
+  // src/proof/provenance.json is computed from the registry that issued the DOIs and from this repository's
+  // root commit; the page renders every figure out of it. The mutation moves the recorded deposit date, and
+  // the check must notice that the registry no longer says what the record says.
+  //
+  // The first version of the measurement had `git log --reverse -1`, which applies the limit BEFORE
+  // reversing and returns the NEWEST commit — it reported the lead as 48 days instead of 3, inflating the
+  // author's priority. A wrong number that flatters the claim its page is about is the kind that survives.
+  { gate: 'provenance', cmd: 'node scripts/provenance.ts', file: 'src/proof/provenance.json',
+    what: 'a recorded priority date the issuing registry no longer agrees with',
+    mutate: (s) => s.replace(/"earliestDeposit":\s*"[0-9-]+"/, '"earliestDeposit": "2026-08-01"') },
+
   { gate: 'sources', cmd: 'node scripts/sources.ts', file: 'scripts/sources.ts',
     what: 'a live reader that answers without the answer known to be in it',
     mutate: (s) => s.replace('/Powers of 2/i', '/a string no sequence database will ever return/i') },

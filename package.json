@@ -155,7 +155,8 @@
     "lessons": "node scripts/lessons.ts",
     "css": "node scripts/css-gate.ts",
     "seven": "node scripts/seven.ts",
-    "sources": "node scripts/sources.ts"
+    "sources": "node scripts/sources.ts",
+    "provenance": "node scripts/provenance.ts"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",

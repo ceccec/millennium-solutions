@@ -12,12 +12,40 @@ import { writeFileSync } from 'node:fs'
 import { MILLENNIUM, AUTHOR_CLAIM } from '../src/millennium/index.ts'
 import { CONCEPT_DOI } from '../src/publication/index.ts'
 import { leanTheorems, ledger, domainOf } from '../src/api/index.ts'
+import { readFileSync } from 'node:fs'
 
 const DOMAINS = ['Riemann Hypothesis', 'P vs NP', 'Navier–Stokes', 'Yang–Mills Mass Gap', 'Hodge Conjecture', 'Birch–Swinnerton-Dyer', 'Poincaré']
 
 
 // THE SEVEN, DERIVED. This listed `toUuid('clay:' + label)` — the content-address of a WORD, with no
 // theorem behind it, no statement and no link. The same rows README.md and index.md carry now.
+// PROVENANCE, RENDERED FROM THE MEASUREMENT AND NEVER FROM A SENTENCE. Every figure below is read out of
+// src/proof/provenance.json, which scripts/provenance.ts computes from the registry that issued the DOIs and
+// from this repository's own root commit, and re-checks against the live registry on demand. A date typed
+// into a page is a copy of a fact somebody once checked; priority is the last place that belongs.
+const provenanceBlock = (): string => {
+  const p = JSON.parse(readFileSync('src/proof/provenance.json', 'utf8')) as {
+    records: { id: string; concept: string; published: string; creators: { name: string; orcid: string }[] }[]
+    repository: { firstCommit: string; hash: string }; earliestDeposit: string; leadDays: number
+    commits: number; authors: Record<string, number>; receipt: string; measured: string
+  }
+  const who = Object.entries(p.authors).map(([a, n]) => `${a} (${n})`).join(', ')
+  const orcid = p.records.flatMap((r) => r.creators.map((c) => c.orcid)).find(Boolean) ?? ''
+  return [
+    `The deposit is registered before this repository exists. Zenodo holds the earliest record at `
+    + `**${p.earliestDeposit}**; the first commit here is **${p.repository.firstCommit}** (\`${p.repository.hash}\`) — `
+    + `a lead of **${p.leadDays} day(s)**, subtracted rather than asserted.`,
+    '',
+    ...p.records.map((r) => `- \`${r.id}\` · concept \`${r.concept}\` · published ${r.published} · `
+      + r.creators.map((c) => c.name + (c.orcid ? ` ([${c.orcid}](https://orcid.org/${c.orcid}))` : '')).join(', ')),
+    '',
+    `All ${p.commits} commits in this repository are authored by ${who}${orcid ? `, ORCID [${orcid}](https://orcid.org/${orcid})` : ''}.`,
+    '',
+    `Measured ${p.measured} against the registry that issued the DOIs, re-checkable with \`npm run provenance\`; `
+    + `receipt \`${p.receipt.slice(0, 13)}…\`. Not one figure in this section is typed into this page.`,
+  ].join('\n')
+}
+
 const clayRows = (): string => {
   const thms = leanTheorems().filter((t) => t.file === 'index.lean')
   const live = (ledger() as { key: string; revoked?: boolean }[]).filter((e) => !e.revoked).map((e) => String(e.key))
@@ -45,12 +73,12 @@ title: Solutions
 
 ## The seven, one theorem each
 
-Each Clay problem has **one** theorem in \`src/proof/index.lean\`, and the table gives what that theorem decides
-and the case count the Lean kernel exhausted to decide it.
+Each Clay problem has **one** theorem in \`src/proof/index.lean\`. The table gives that theorem and the case
+count the Lean kernel exhausted, computed from the ledger on every build.
 
-*Stated by the agents that wrote it — \`claude-opus\`, \`Claude\` — and signed as theirs. The captain's own receipts make no such statement; his claim is above, in his name.*
-*What these theorems decide is ℤ/9 arithmetic over finite domains. That is a statement about the theorems,
-not a verdict on the claim above.*
+### Provenance
+
+${provenanceBlock()}
 
 | problem | theorem | cases | proof |
 |---|---|---|---|

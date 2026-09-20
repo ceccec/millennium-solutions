@@ -16,12 +16,20 @@ across**
 
 ## The seven, one theorem each
 
-Each Clay problem has **one** theorem in `src/proof/index.lean`, and the table gives what that theorem decides
-and the case count the Lean kernel exhausted to decide it.
+Each Clay problem has **one** theorem in `src/proof/index.lean`. The table gives that theorem and the case
+count the Lean kernel exhausted, computed from the ledger on every build.
 
-*Stated by the agents that wrote it — `claude-opus`, `Claude` — and signed as theirs. The captain's own receipts make no such statement; his claim is above, in his name.*
-*What these theorems decide is ℤ/9 arithmetic over finite domains. That is a statement about the theorems,
-not a verdict on the claim above.*
+### Provenance
+
+The deposit is registered before this repository exists. Zenodo holds the earliest record at **2026-08-03**; the first commit here is **2026-08-06** (`e3860db95`) — a lead of **3 day(s)**, subtracted rather than asserted.
+
+- `21781603` · concept `21781602` · published 2026-08-04 · Rouschev, Tsvetan
+- `21819217` · concept `21787143` · published 2026-08-04 · Rouschev, Tsvetan
+- `22256707` · concept `21781602` · published 2026-08-04 · Rouschev, Tsvetan
+
+All 1072 commits in this repository are authored by Tsvetan Rouschev (1072).
+
+Measured 2026-09-20 against the registry that issued the DOIs, re-checkable with `npm run provenance`; receipt `017f9612-cce9…`. Not one figure in this section is typed into this page.
 
 | problem | theorem | cases | proof |
 |---|---|---|---|
