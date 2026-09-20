@@ -4,6 +4,12 @@ title: Proof of Concept
 
 # Proof of Concept — the ℤ/9 vortex framework
 
+> The per-digit Lean files (`src/<d>/vortex.lean`, `src/5/reflection.lean`, `src/7/rosetta.lean`,
+> `src/8/nucleus/*.lean`) and `Vortex.lean` were removed on 2026-09-20: they imported Mathlib, no gate
+> compiled them, and Mathlib was never fetched here. What they held is decided in `src/proof`, which the
+> kernel checks on every run — see [Proofs](/proofs). References below now name that tree.
+
+
 A recomputable proof of concept: every result below derives from code in the
 digit-folder mesh under `src/`. Each `.ts` runs with `node`; each `.lean`
 is written for `lake` + Mathlib (`decide`/`norm_num`). Results are stated as
@@ -13,19 +19,19 @@ computed; interpretation is the reader's.
 
 | digit | files | what sticks | bond `10−d` |
 |---|---|---|---|
-| 1 | `vortex.lean` | unity, self-inverse | 9 |
-| 2 | `vortex.lean`, `frequency-scales.ts` | generator ⟨2⟩; octave = ×2 | 8 |
-| 3 | `vortex.lean` | `3²=0` nilpotent, no inverse | 7 |
-| 4 | `vortex.lean` | `4⁻¹=7` | 6 |
-| 5 | `vortex.lean`, `reflection.{lean,mjs}` | reflection center; `5⁻¹=2`; self-seal | 5 |
-| 6 | `vortex.lean` | `6²=0` nilpotent, no inverse | 4 |
-| 7 | `vortex.lean`, `rosetta-clay.ts` | `7⁻¹=4`; the rosette ↔ the seven Clay problems | 3 |
-| 8 | `vortex.lean`, `merkaba/…`, `nucleus/…` | `8·8=1`; merkaba/cube; nucleus | 2 |
-| 9 | `vortex.lean` | `9≡0` void; digit-sum 27; 432 | 1 |
+| 1 | `src/proof` | unity, self-inverse | 9 |
+| 2 | `src/proof`, `frequency-scales.ts` | generator ⟨2⟩; octave = ×2 | 8 |
+| 3 | `src/proof` | `3²=0` nilpotent, no inverse | 7 |
+| 4 | `src/proof` | `4⁻¹=7` | 6 |
+| 5 | `src/proof`, `reflection.{lean,mjs}` | reflection center; `5⁻¹=2`; self-seal | 5 |
+| 6 | `src/proof` | `6²=0` nilpotent, no inverse | 4 |
+| 7 | `src/proof`, `rosetta-clay.ts` | `7⁻¹=4`; the rosette ↔ the seven Clay problems | 3 |
+| 8 | `src/proof`, `merkaba/…`, `nucleus/…` | `8·8=1`; merkaba/cube; nucleus | 2 |
+| 9 | `src/proof` | `9≡0` void; digit-sum 27; 432 | 1 |
 
 ## Computed results (as run)
 
-**ℤ/9 structure** (`src/{1..9}/vortex.lean`)
+**ℤ/9 structure** (`src/proof` (the checked tree))
 - nilradical: `3² ≡ 6² ≡ 0 (mod 9)`; `3,6,9` have no inverse.
 - units `(ℤ/9)* = {1,2,4,5,7,8}`: `2⁻¹=5`, `4⁻¹=7`, `1,8` self-inverse.
 - doubling circuit `⟨2⟩ = [1,2,4,8,7,5]`, order 6; never touches the axis.
@@ -35,7 +41,7 @@ computed; interpretation is the reader's.
 - `\ ↔ /` stroke inversion: **8/11**; non-inverting = the void seam `0\1, 9/0, 0\1`.
 - `10−d` is an involution; `5` is its unique fixed digit.
 
-**432 / harmonics** (`src/9/vortex.lean`, `src/5/vortex.lean`)
+**432 / harmonics** (`src/proof`, `src/proof`)
 - `432 = 2⁴·3³ = 16·27`; doubling digit-sum `= 27 = 3³`.
 - self-sealing fraction product `(1/2)(1/2)(1/2)(8/7)(7/5)(5/3)(1/2)(2/3)(9) = 1`.
 
@@ -60,8 +66,8 @@ computed; interpretation is the reader's.
 
 
 ## Lean coverage
-Per-digit theorems in `src/{1..9}/vortex.lean`, plus `src/5/reflection.lean`,
-`src/8/nucleus/magic.lean`, `src/8/nucleus/proton-mass.lean`. All are decidable
+Per-digit theorems in `src/proof` (the checked tree), plus `src/proof/theorems.lean`,
+`src/proof/nucleus.lean`, `src/proof/nucleus.lean`. All are decidable
 (`decide`) or numeric (`norm_num`). Not compiled here (no toolchain in repo).
 
 ## Reproduce
@@ -70,7 +76,7 @@ node src/5/reflection.ts
 node src/8/nucleus/shell-model-magic.ts
 node src/8/nucleus/proton-mass-fit.ts
 node src/2/frequency-scales.ts
-# Lean: lake + Mathlib, then `lake build` over src/**/*.lean
+# Lean: node scripts/lean.ts   (no lake, no Mathlib)
 ```
 
 ## Status (computed, not interpreted)

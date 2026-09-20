@@ -25,12 +25,12 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 923 kernel-accepted declarations across 40 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `d136d75e-948d-86c1-9116-d94b66038772`</sub>
-- 721 of those 923 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 202 close by rfl and are declarations.
-  <sub>SEALED · `c682dffa-4e83-8cab-953f-828b658e5dce`</sub>
-- 1000 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `987ce998-e136-8038-be04-91fa8ea245f0`</sub>
+- The formal layer holds 939 kernel-accepted declarations across 41 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `4fbbee52-f94d-81bf-b745-753df9646f45`</sub>
+- 737 of those 939 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 202 close by rfl and are declarations.
+  <sub>SEALED · `4bf71a4a-3a3d-8da3-8651-60419b72bf34`</sub>
+- 1016 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `c64ac22b-8407-88b4-a93a-2016e24c0b88`</sub>
 
 ## 2 · The ring
 
@@ -53,10 +53,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 2864 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `e8a1c1ff-5e4a-8d95-8ca1-6ad97ab63ffd`</sub>
-- The count is an exact multiple of eight — 2864 is 358 octaves with no remainder.
-  <sub>SEALED · `dacf8277-84f8-8c4c-987a-621742de0541`</sub>
+- The ledger records 2880 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `d876df9c-d913-8074-ac4a-717e48b82743`</sub>
+- The count is an exact multiple of eight — 2880 is 360 octaves with no remainder.
+  <sub>SEALED · `a2681e20-5f23-83ad-b348-cbbf333bf82c`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -100,7 +100,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-40 Lean files in 7 wings, 923 declarations of which 908 are theorems. The prose in this section is read out of the
+41 Lean files in 7 wings, 939 declarations of which 924 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -156,9 +156,11 @@ this page; there is nowhere else to keep the description in step.
 
 **The Millennium floor** — `index.lean`, 11 theorem(s). Bounded, so the credit stops where the earlier work does: what is NOT prior art is the use of that orbit as a floor for what this deposit does   and does not settle, which is a statement about this repository and has no earlier author.   Verification by exhaustion in Lean is this deposit's contribution, and verification is not discovery. prior_art_search: literature search performed 2026-09-05, terms "doubling sequence modulo 9 orbit   1 2 4 8 7 5 cyclic group generator digital root"; prior art found and credited. prior_art_pool: bounded   digit arithmetic of the doubling sequence; searchable independently of this deposit.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: the Millennium floor, computed from this sequence The Millennium floor — seven honest theorems, one per problem, COMPUTED from the sequence.
 
-**The instruments, and the three rules they are allowed to have** — `instruments.lean`, 21 theorem(s). occurrence of a substring — and each is standard enough that naming one author would be arbitrary. This   row is kind 1 rather than kind 2 because kind 2 asserts that a search was performed and found nothing,   and no such search was performed for these. What is this deposit's is not the rules: it is that three of   its own instruments hold them by decision of the kernel, instead of by a block of reasoning written   inside the instrument that needs them and checked by that same instrument.
+**The instruments, and the three rules they are allowed to have** — `instruments.lean`, 29 theorem(s). occurrence of a substring — and each is standard enough that naming one author would be arbitrary. This   row is kind 1 rather than kind 2 because kind 2 asserts that a search was performed and found nothing,   and no such search was performed for these. What is this deposit's is not the rules: it is that three of   its own instruments hold them by decision of the kernel, instead of by a block of reasoning written   inside the instrument that needs them and checked by that same instrument.
 
 **Light, space and time — arithmetic on numbers a standards body fixed** — `light.lean`, 15 theorem(s). Poids et Mesures, not results of this deposit: the metre from the speed of light (17th CGPM, 1983) and   the seven defining constants fixed exactly in the 2019 revision of the SI, effective 20 May 2019   (BIPM, https://www.bipm.org/en/measurement-units/si-defining-constants). Nothing here measures anything.
+
+**The three facts the unchecked files held alone** — `nucleus.lean`, 8 theorem(s). is decided here is ARITHMETIC over lists of small naturals and nothing else: that certain prefix sums   of a typed capacity list take certain values, that a product of numerators equals a product of   denominators, and that one integer is not another. No theorem below decides anything about a nucleus. prior_art_search: not performed for these rows — the sources are named above rather than searched for,   which is kind 1 and not kind 2. Nothing here claims a search returned nothing. prior_art_pool: bounded prior_art_own: nothing; this file exists to bring three facts under the kernel, not to find them
 
 **Every phenomenon this deposit touches, and the rule for the rest** — `phenomena.lean`, 4 theorem(s). Générale des Poids et Mesures (2019 revision, effective 20 May 2019); the electrochemical results are   Michael Faraday's laws of electrolysis, 1834, and the standard enthalpy of combustion of hydrogen.   Every physical result named here has an earlier author or a standards body, and none is this deposit's.
 
@@ -198,7 +200,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Recovered — claims that computed and were withdrawn for want of a proof** — `recovered.lean`, 15 theorem(s). material, credited. What is NOT prior art is that these particular statements sat WITHDRAWN in this   deposit's ledger, each recorded as "not backed by a Lean proof. Its evidence is a TypeScript test",   while every one is decidable in a line. prior_art_search: literature search performed 2026-09-05, terms "units and non-units of Z/9 multiplicative   inverses group of units modulo 9"; prior art found and credited.
 
-31 of 923 declarations carry no comment of their own and are shown here as the gap they are, not
+31 of 939 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -207,14 +209,14 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 2,864 — 358 octaves exactly |
-| standing — carries its own proof | **908** |
+| ledger entries | 2,880 — 360 octaves exactly |
+| standing — carries its own proof | **924** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **435** |
 | withdrawn — nothing proves it | 1,521 |
-| proved in total | **1343** of 2,864 |
-| standing keys → distinct theorems | 908 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 40 · 908 theorems (721 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 15 rfl declarations |
-| proved `by decide` | 721 of 923 |
+| proved in total | **1359** of 2,880 |
+| standing keys → distinct theorems | 924 sealed, 0 of them keyed twice, 0 unresolvable |
+| Lean files · theorems | 41 · 924 theorems (737 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 15 rfl declarations |
+| proved `by decide` | 737 of 939 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -267,4 +269,4 @@ whether the work restates someone earlier. [The paper](/paper) typesets every st
 
 ---
 
-*15 claims, all verified · 908 Lean theorems · 2864 ledger entries · trial root `6895764e-4100-8722-a0dc-5416c7e6f870` · integrity, not truth*
+*15 claims, all verified · 924 Lean theorems · 2880 ledger entries · trial root `bc0d1eb4-5bd5-858b-9f12-dbfe83890792` · integrity, not truth*

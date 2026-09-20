@@ -4,17 +4,23 @@ title: Realisations
 
 # Realisations — the step chain
 
+> The per-digit Lean files (`src/<d>/vortex.lean`, `src/5/reflection.lean`, `src/7/rosetta.lean`,
+> `src/8/nucleus/*.lean`) and `Vortex.lean` were removed on 2026-09-20: they imported Mathlib, no gate
+> compiled them, and Mathlib was never fetched here. What they held is decided in `src/proof`, which the
+> kernel checks on every run — see [Proofs](/proofs). References below now name that tree.
+
+
 Each step: the realisation, the file that computes/proves it, and the result.
 Everything recomputes from the digit-folder mesh; see [Compute](/compute).
 
 ## 1 — Division by zero changes the domain
 `n/0 := n⁻¹ (mod 9)` on the units; `0` still has no inverse. Any value for `x/0`
 requires leaving the field (Riemann sphere, wheel, ℤ/9…), each dropping an axiom.
-→ `src/9/vortex.lean`, `SEQUENCE-DECODE.md §2`.
+→ `src/proof`, `SEQUENCE-DECODE.md §2`.
 
 ## 2 — The sequence reflects itself (three ways)
 Self-sealing fraction product `= 1`; additive `m(d)=10−d`; multiplicative `n↔n⁻¹`.
-→ `src/5/vortex.lean` (`self_seal`), `SEQUENCE-DECODE.md §3`.
+→ `src/proof` (`self_seal`), `SEQUENCE-DECODE.md §3`.
 
 ## 3 — Gateways `[8,3,9,0]`
 The stroke-reversal digits of the cyclic walk.
@@ -23,7 +29,7 @@ The stroke-reversal digits of the cyclic walk.
 ## 4 — Ring structure: units vs nilradical
 `3² ≡ 6² ≡ 0 (mod 9)` → `{3,6,9}` is the nilradical (no inverse); units `⟨2⟩`
 are the doubling hexagon; `432 = 2⁴·3³ = 16·27`, digit-sum `27`.
-→ `src/{1..9}/vortex.lean`, `SEQUENCE-DECODE.md §5`.
+→ `src/proof` (the checked tree), `SEQUENCE-DECODE.md §5`.
 
 ## 5 — Nonagon geometry
 Three mod-3 cosets = three equilateral triangles; two counter-rotating flows.
@@ -31,7 +37,7 @@ Three mod-3 cosets = three equilateral triangles; two counter-rotating flows.
 
 ## 6 — Inter-ring lattice
 Ten's-complement bonds `d ↔ 10−d` (sum 10 = carry); trinity = 3 outbound legs.
-→ `src/5/reflection.lean`, `SEQUENCE-DECODE.md §7`.
+→ `src/proof/theorems.lean`, `SEQUENCE-DECODE.md §7`.
 
 ## 7 — Merkaba = cube (the "8")
 A star tetrahedron's 8 vertices are a cube; the trinity-bond lattice is the cube
@@ -50,7 +56,7 @@ Fruit (13) → Metatron (78 lines). Verified projection.
 
 ## 10 — 5 is the center
 `5 = 2⁻¹`, primitive root, the `10−d` fixed digit; the still self-inverse pivot.
-→ `src/5/vortex.lean`.
+→ `src/proof`.
 
 ## 11 — Shell-model magic numbers
 `2, 8, 20, 28, 50, 82, 126` = cumulative `2j+1` (oscillator + spin-orbit).

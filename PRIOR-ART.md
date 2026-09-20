@@ -6,8 +6,8 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 923 machine-checked declarations, **893** restate work that already has an author and
-**30** are about this deposit's own construction. Each source file declares which it is, in its own
+Of 939 machine-checked declarations, **901** restate work that already has an author and
+**38** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/proof/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
 
@@ -27,12 +27,12 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **893** |
-| unclassified — no search performed, status unknown | **30** |
+| attributed to named earlier work | **901** |
+| unclassified — no search performed, status unknown | **38** |
 | claimed as novel | **0** |
 
 **Zero claims is not full attribution.** Stated alone, "this deposit claims no novelty" reads as a concession
-that everything here already has an author. It is not that. **30** theorems have had no prior-art
+that everything here already has an author. It is not that. **38** theorems have had no prior-art
 search at all, so their status is unknown rather than conceded — and of the 27 distinct years the
 attributions carry, **23** predate the DOI system (2000); the earliest is 628. "Every
 theorem has registered prior art" is therefore not merely unproven here, it is impossible. The zero has exactly one meaning: **nobody has
@@ -43,11 +43,11 @@ caveat cannot be separated by an edit.
 
 A source may claim novelty only if it names a prior-art search that was actually performed — what was
 searched, where, and when. An earlier version of this page claimed novelty for 2 sources and
-30 theorems on the strength of their own self-description, with nobody having looked. Asserting
+38 theorems on the strength of their own self-description, with nobody having looked. Asserting
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 38 sources, 893 theorems
+## Restated from named earlier work — 39 sources, 901 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
@@ -75,6 +75,7 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>merkaba.lean</code></td><td>8</td><td>elementary group theory — subgroups and cosets of Z/9</td><td>the partition into {3,6,9} and two three-element classes closed under doubling is the subgroup and coset structure of Z/9 under the action of U(9); Lagrange. One theorem already credits Euler for the polyhedron formula. Searched 2026-09-04; prior art found and credited</td></tr>
 <tr><td><code>merkle.lean</code></td><td>14</td><td>hash trees and membership proofs</td><td>the hash tree — Ralph Merkle, 1979 (thesis); CRYPTO 1987</td></tr>
 <tr><td><code>nim.lean</code></td><td>28</td><td>combinatorial game theory</td><td>Nim — Charles L. Bouton, 1901; the Sprague–Grundy theorem — Roland Sprague, 1935 and Patrick M. Grundy, 1939</td></tr>
+<tr><td><code>nucleus.lean</code></td><td>8</td><td>the nuclear shell model, and the proton-to-electron mass ratio</td><td>THE PHYSICS IS NOT THIS DEPOSIT'S AND NONE OF IT IS CLAIMED. The shell model and its</td></tr>
 <tr><td><code>phenomena.lean</code></td><td>4</td><td>metrology and classical physical chemistry</td><td>the SI base quantities and their defining constants are definitions of the Conférence</td></tr>
 <tr><td><code>program.lean</code></td><td>22</td><td>identifier formats and error-detecting codes</td><td>the UUID layout and its version and variant fields are RFC 9562 (2024, obsoleting RFC</td></tr>
 <tr><td><code>quantum.lean</code></td><td>12</td><td>canonical forms and order-invariant commitments</td><td>sorting a multiset into a canonical order BEFORE folding it is standard practice, not a</td></tr>
@@ -128,6 +129,7 @@ which is a contribution of verification, not of discovery.
 - **non-cryptographic hashing** — 15 theorems, in `fnv.lean`
 - **public-key signatures on elliptic curves** — 12 theorems, in `asymmetric.lean`
 - **the method of complements** — 20 theorems, in `coin.lean`, `theorems.lean`
+- **the nuclear shell model, and the proton-to-electron mass ratio** — 8 theorems, in `nucleus.lean`
 
 Each is a field with an existing literature, and each is where this deposit's contribution actually sits: not
 a new result, but an exhaustive machine-checked decision of a known one over a **stated finite domain**. That
@@ -136,7 +138,7 @@ is worth saying precisely, because it is both smaller than a discovery claim and
 Author and year are given rather than a resolver identifier. Asserting a DOI for someone else's paper without
 verifying it would be a fabricated citation, and this is the worst document in the deposit to put one in.
 
-## This deposit's own construction — 2 sources, 30 theorems, none claimed
+## This deposit's own construction — 2 sources, 38 theorems, none claimed
 
 The ℤ/9 vortex framework, its ledger, its receipts, and the enumeration its own generators proposed. These are
 **unclassified**: no prior-art search has been performed for them, so nothing is claimed about them either
@@ -147,7 +149,7 @@ To move a source out of this table, add `-- prior_art_search:` to it naming the 
 refuses a `none-known` declaration that does not carry one.
 
 <table><thead><tr><th>source</th><th>theorems</th><th>note</th></tr></thead><tbody>
-<tr><td><code>instruments.lean</code></td><td>21</td><td>NO NOVELTY IS CLAIMED AND NONE IS DENIED. The three rules are elementary — a strict order</td></tr>
+<tr><td><code>instruments.lean</code></td><td>29</td><td>NO NOVELTY IS CLAIMED AND NONE IS DENIED. The three rules are elementary — a strict order</td></tr>
 <tr><td><code>priorart.lean</code></td><td>9</td><td>THE PRACTICE IS PRIOR ART AND IS CREDITED. Recording provenance and attribution per</td></tr>
 </tbody></table>
 
@@ -160,5 +162,5 @@ priority claim above, and it is the whole of it.
 
 ---
 
-Partition seal `eeb3b72a-2436-8795-9b0e-92442d8b77c4` · recompute with `node scripts/priorart.ts` · the kernel re-decides
+Partition seal `bb88753e-f5f8-88f8-a186-532efec35cb6` · recompute with `node scripts/priorart.ts` · the kernel re-decides
 `priorart.lean` on every run. A content-address proves integrity, not truth.

@@ -31,7 +31,7 @@ correspondence carries labels, not proofs.
 All results are computed. TypeScript modules under `src/` expose `report()`
 functions rendered live on [Compute](/compute); per-digit Lean 4 theorems
 (`decide` / `norm_num`) formalize the exact facts. Reproduce with `node` and
-(for the formal layer) `lake build`. Nothing here is hand-asserted.
+(for the formal layer) `node scripts/lean.ts`. Nothing here is hand-asserted.
 
 ## 1a. The identity substrate — the UUID "trinity matrix"
 
@@ -150,7 +150,7 @@ worked example in modular arithmetic, group theory, and honest hypothesis-testin
 ```bash
 npm run docs:build            # builds this site; renders all report() modules
 node --input-type=module -e "import('./src/5/aspects.ts').then(m=>console.log(m.report()))"
-# formal layer: lake + Mathlib, then  lake build  over src/**/*.lean
+# formal layer: node scripts/lean.ts  over src/proof/*.lean — no lake, no Mathlib
 ```
 
 ## 11. Source

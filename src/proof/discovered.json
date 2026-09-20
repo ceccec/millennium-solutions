@@ -20088,5 +20088,85 @@
     "key": "lean_theology_the_pairing_is_one_ordering_of_seven_out_of_all_of_them",
     "name": "lean theology.lean: the_pairing_is_one_ordering_of_seven_out_of_all_of_them — pairing.eraseDups.length = 7 ∧ (List.range 7).all (fun i => pairing.contains i) ∧ pairing.length = (List.range 7).length ∧ fact pairing.length = 5040 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "4db1d76e-da5a-8b98-8a1a-c2d5f1159183"
+  },
+  {
+    "key": "lean_instruments_a_path_dirty_before_the_run_is_never_attributed_to_it",
+    "name": "lean instruments.lean: a_path_dirty_before_the_run_is_never_attributed_to_it — (List.range 16).all (fun a => (List.range 16).all (fun b => (List.range 16).all (fun t => (mine (setOf a) (setOf b) (setOf t)).all (fun p => ! (setOf a).contains p)))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8652f875-b425-8e00-84e1-7f9133ed7fed"
+  },
+  {
+    "key": "lean_instruments_an_untracked_path_is_never_attributed",
+    "name": "lean instruments.lean: an_untracked_path_is_never_attributed — (List.range 16).all (fun a => (List.range 16).all (fun b => (List.range 16).all (fun t => (mine (setOf a) (setOf b) (setOf t)).all (fun p => (setOf t).contains p)))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d3932ec5-4ae8-8d51-bead-eef2951e25fb"
+  },
+  {
+    "key": "lean_instruments_nothing_is_attributed_that_is_not_dirty_afterwards",
+    "name": "lean instruments.lean: nothing_is_attributed_that_is_not_dirty_afterwards — (List.range 16).all (fun a => (List.range 16).all (fun b => (List.range 16).all (fun t => subset (mine (setOf a) (setOf b) (setOf t)) (setOf b)))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2419d78b-a4c4-8302-b185-5601618d68cf"
+  },
+  {
+    "key": "lean_instruments_a_wider_record_of_what_was_dirty_attributes_no_more",
+    "name": "lean instruments.lean: a_wider_record_of_what_was_dirty_attributes_no_more — (List.range 16).all (fun a => (List.range 16).all (fun a' => (List.range 16).all (fun b => ! subset (setOf a) (setOf a') || subset (mine (setOf a') (setOf b) paths) (mine (setOf a) (setOf b) paths)))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f530a405-14d0-8e80-b734-2f6c5fe73885"
+  },
+  {
+    "key": "lean_instruments_a_change_made_by_another_hand_during_the_run_is_charged_to_the_run",
+    "name": "lean instruments.lean: a_change_made_by_another_hand_during_the_run_is_charged_to_the_run — (List.range 16).any (fun a => (List.range 16).any (fun b => paths.any (fun p => ! (setOf a).contains p && (setOf b).contains p && (mine (setOf a) (setOf b) paths).contains p))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "90355aa7-fd8b-83ee-8fa2-9b5552c9169b"
+  },
+  {
+    "key": "lean_instruments_a_run_that_changes_nothing_attributes_nothing",
+    "name": "lean instruments.lean: a_run_that_changes_nothing_attributes_nothing — (List.range 16).all (fun a => (List.range 16).all (fun t => mine (setOf a) (setOf a) (setOf t) == [])) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1c832cbd-2887-8dd4-98a4-997efd62bfa6"
+  },
+  {
+    "key": "lean_instruments_reverting_once_leaves_nothing_further_to_attribute",
+    "name": "lean instruments.lean: reverting_once_leaves_nothing_further_to_attribute — (List.range 16).all (fun a => (List.range 16).all (fun b => (List.range 16).all (fun t => let m := mine (setOf a) (setOf b) (setOf t) mine (setOf a) ((setOf b).filter (fun p => ! m.contains p)) (setOf t) == []))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "4426c91f-28f6-89de-84ba-e9bbafaab855"
+  },
+  {
+    "key": "lean_instruments_the_reverted_and_the_untouched_partition_what_is_dirty",
+    "name": "lean instruments.lean: the_reverted_and_the_untouched_partition_what_is_dirty — (List.range 16).all (fun a => (List.range 16).all (fun b => let m := mine (setOf a) (setOf b) paths let rest := (setOf b).filter (fun p => ! m.contains p) m.all (fun p => ! rest.contains p) && (setOf b).all (fun p => m.contains p || rest.co… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9fda16c2-ca54-8a60-b64c-e415e496fd3f"
+  },
+  {
+    "key": "lean_nucleus_every_capacity_is_even",
+    "name": "lean nucleus.lean: every_capacity_is_even — caps.all (fun c => c % 2 == 0) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f2d535a0-1bf8-890a-ba5a-7f681399ebab"
+  },
+  {
+    "key": "lean_nucleus_the_seven_marked_prefixes_take_the_published_values",
+    "name": "lean nucleus.lean: the_seven_marked_prefixes_take_the_published_values — closures = [2, 8, 20, 28, 50, 82, 126] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "91efa07e-77cd-8b01-8ab4-b346cc5e76d0"
+  },
+  {
+    "key": "lean_nucleus_each_of_the_seven_is_reached_exactly_once_among_all_prefixes",
+    "name": "lean nucleus.lean: each_of_the_seven_is_reached_exactly_once_among_all_prefixes — closures.all (fun m => (prefixes.filter (fun p => p == m)).length == 1) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "65a430c2-6e73-8318-8388-9a474caca807"
+  },
+  {
+    "key": "lean_nucleus_the_capacities_sum_to_the_last_of_the_seven",
+    "name": "lean nucleus.lean: the_capacities_sum_to_the_last_of_the_seven — total caps = 126 ∧ total caps = closures.foldr (fun a b => max a b) 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ec4d7a37-fa3b-895f-b6a2-e6496369463c"
+  },
+  {
+    "key": "lean_nucleus_the_seven_increase_strictly",
+    "name": "lean nucleus.lean: the_seven_increase_strictly — (List.range (closures.length - 1)).all (fun i => closures.getD i 0 < closures.getD (i + 1) 0) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d3355931-131e-8317-845f-036bde11dd1f"
+  },
+  {
+    "key": "lean_nucleus_the_seal_multiplies_back_to_one",
+    "name": "lean nucleus.lean: the_seal_multiplies_back_to_one — product numerators = product denominators — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "aedef66f-0f69-84dc-9213-fa3d4c468285"
+  },
+  {
+    "key": "lean_nucleus_the_fit_is_an_exact_integer_identity",
+    "name": "lean nucleus.lean: the_fit_is_an_exact_integer_identity — 108 * 17 = 1836 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7c33b6d2-060d-81e5-8045-15a6cc3d040a"
+  },
+  {
+    "key": "lean_nucleus_the_fit_is_not_the_measured_ratio",
+    "name": "lean nucleus.lean: the_fit_is_not_the_measured_ratio — 1836 * 10000 ≠ 18361527 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "3e5b63c7-5ca0-89f0-8eb7-65f50ec5cfa8"
   }
 ]

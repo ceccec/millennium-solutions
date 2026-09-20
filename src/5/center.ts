@@ -27,7 +27,7 @@ export function report(): string {
   o += '  the two anchors:\n'
   o += '    5 — the CENTRE: fixed under reflection (10−5=5), sits on the doubling circuit.\n'
   o += '    0 — the VOID: additive identity, multiplicative absorber, no inverse; the seam & origin.\n\n'
-  o += 'HONEST: reflection sums are ordinary integers (proven: Vortex.lean pairs_sum_ten); doubling\n'
+  o += 'HONEST: reflection sums are ordinary integers (proven: lean_millenniumfloor.universal_universal_pairs_sum_to_ten); doubling\n'
   o += 'equalities are MOD 9 (proven: doubling_circuit) — as integers 10≠14≠28, they chain only in ℤ/9.\n'
   o += 'Two exact operations on nine digits; the structure closes. It reflects and doubles; it does not\n'
   o += 'solve.'

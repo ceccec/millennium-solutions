@@ -12,14 +12,15 @@ git push -u origin main --tags
 - Zenodo archives it, reads `.zenodo.json` / `CITATION.cff`, and mints the DOI —
   carrying the honest abstract, your ORCID, CC BY-NC-ND 4.0, and the funding.
 
-## 3. Verify the formal layer (optional)
-`lean-toolchain` must match the Mathlib you pull. Simplest:
+## 3. Verify the formal layer
+The formal layer is `src/proof/*.lean` and needs no Mathlib and no `lake`:
 ```bash
-# align the toolchain to Mathlib's, then:
-lake update && lake exe cache get && lake build   # checks Vortex.lean
+node scripts/lean.ts          # compiles every file, reports axioms and any sorry
+node scripts/seal-lean.ts     # checks each one against its ledger entry
 ```
-(The per-digit `src/<d>/vortex.lean` are the mesh view; `Vortex.lean` is the
-lake-buildable consolidation — numeric dir names are not valid Lean modules.)
+The `lake` + Mathlib instructions that stood here built `Vortex.lean` and the per-digit
+`src/<d>/vortex.lean` files. Those were removed on 2026-09-20 — no gate compiled them, Mathlib was never
+fetched, and what they held is decided in `src/proof` instead. See [Proofs](/proofs).
 
 ## Reproduce everything
 ```bash

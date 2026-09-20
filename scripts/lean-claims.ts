@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Independently verify the ARITHMETIC each Lean theorem (Vortex.lean) asserts — recomputed here,
+// Independently verify the ARITHMETIC each Lean theorem in src/proof asserts — recomputed here,
 // no Lean toolchain needed. Fills a real gap: CI can't run `lake build`, but it can confirm the
 // facts are true. Feeds trust in the formal layer; fails loudly if any claim stops being true.
 import { toUuid, units, triad, vortexOrbit, merkleFold, digitalRoot, digits } from '../src/0/index.ts'

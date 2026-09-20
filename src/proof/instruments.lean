@@ -201,7 +201,81 @@ theorem the_window_is_monotone_in_the_claim_s_position :
 theorem with_no_negator_nothing_is_cleared :
   (List.range 10).all (fun c => refused [] c == false) := by decide
 
-def settledHere : Nat := 20
-theorem instruments_settles_its_range : settledHere = 20 := rfl
+-- ── THE FOURTH INSTRUMENT, AND THE RULE IT GOT WRONG TWICE ───────────────────────────────────────────────
+-- control-probe.ts perturbs files to find out whether a gate notices, and then has to put the tree back. It
+-- put it back with `git checkout -- .` — the whole tree — defended by one sentence: the probe refuses to
+-- start on a dirty tree, so anything dirty afterwards is the probe's own doing. On 2026-09-20 that reverted
+-- two source files being edited while it ran. The first repair narrowed the claim: record what is dirty
+-- BEFORE each gate runs, attribute only what appeared during it. That was still wrong, and the test said so
+-- — a marker written mid-run was destroyed again and reported as the probe's own.
+--
+-- The rule is small enough to decide, so it is decided here rather than argued in the instrument. `mine` is
+-- the scoped attribution exactly as it was written: of the paths dirty afterwards, those that are tracked
+-- and were not dirty before. Four theorems say what it gets right — and they are worth having, because the
+-- rule is not stupid. The fifth says what it cannot do, and that one is the finding: there is a case where a
+-- path somebody else wrote during the run is attributed to the run, and no examination of the sets can tell
+-- it from the run's own output. A revert built on `mine` deletes that person's work.
+--
+-- The sixth and seventh are why the second repair is different in kind rather than merely tighter. If the
+-- run changes nothing in a tree, `mine` is empty there for every prior state whatsoever — so a probe that
+-- does its work in a disposable worktree reverts nothing in this one, and the question the first two
+-- versions were trying to answer stops being asked. The eighth says the split is a partition: nothing is
+-- both reverted and left alone, and nothing is neither.
+def paths : List Nat := List.range 4
+def setOf (m : Nat) : List Nat := paths.filter (fun i => (m >>> i) % 2 == 1)
+def mine (pre post tracked : List Nat) : List Nat :=
+  post.filter (fun p => tracked.contains p && ! pre.contains p)
+def subset (a b : List Nat) : Bool := a.all (fun x => b.contains x)
+
+-- 1 · what was already dirty is never charged to the run
+theorem a_path_dirty_before_the_run_is_never_attributed_to_it :
+  (List.range 16).all (fun a => (List.range 16).all (fun b => (List.range 16).all (fun t =>
+    (mine (setOf a) (setOf b) (setOf t)).all (fun p => ! (setOf a).contains p)))) := by decide
+
+-- 2 · nor is anything the tool was told not to touch
+theorem an_untracked_path_is_never_attributed :
+  (List.range 16).all (fun a => (List.range 16).all (fun b => (List.range 16).all (fun t =>
+    (mine (setOf a) (setOf b) (setOf t)).all (fun p => (setOf t).contains p)))) := by decide
+
+-- 3 · the attribution is contained in what is actually dirty — it never invents a path
+theorem nothing_is_attributed_that_is_not_dirty_afterwards :
+  (List.range 16).all (fun a => (List.range 16).all (fun b => (List.range 16).all (fun t =>
+    subset (mine (setOf a) (setOf b) (setOf t)) (setOf b)))) := by decide
+
+-- 4 · knowing MORE was already dirty can only ever charge the run with less
+theorem a_wider_record_of_what_was_dirty_attributes_no_more :
+  (List.range 16).all (fun a => (List.range 16).all (fun a' => (List.range 16).all (fun b =>
+    ! subset (setOf a) (setOf a') || subset (mine (setOf a') (setOf b) paths) (mine (setOf a) (setOf b) paths)))) := by decide
+
+-- 5 · THE FINDING. A path that was clean when the run began, was written by somebody else during it, and is
+--     tracked, is attributed to the run. The sets cannot distinguish it from the run's own output, so a
+--     revert built on this rule deletes that work. This is the case that was hit twice.
+theorem a_change_made_by_another_hand_during_the_run_is_charged_to_the_run :
+  (List.range 16).any (fun a => (List.range 16).any (fun b => paths.any (fun p =>
+    ! (setOf a).contains p && (setOf b).contains p && (mine (setOf a) (setOf b) paths).contains p))) := by decide
+
+-- 6 · a run that changed nothing here charges nothing here, whatever was dirty before
+theorem a_run_that_changes_nothing_attributes_nothing :
+  (List.range 16).all (fun a => (List.range 16).all (fun t => mine (setOf a) (setOf a) (setOf t) == [])) := by decide
+
+-- 7 · THIS WAS A SECOND SPELLING OF 6 — `.length = 0` beside `== []`, two derivations of one fact, which is
+--     the defect this repository is named for catching. It says something of its own now: the revert is
+--     complete in ONE pass. Attribute again over what is left after reverting and nothing is attributed, so
+--     no sweep can find more to delete on a second look. An instrument that had to run its own revert twice
+--     would be one whose first pass did not mean what it said.
+theorem reverting_once_leaves_nothing_further_to_attribute :
+  (List.range 16).all (fun a => (List.range 16).all (fun b => (List.range 16).all (fun t =>
+    let m := mine (setOf a) (setOf b) (setOf t)
+    mine (setOf a) ((setOf b).filter (fun p => ! m.contains p)) (setOf t) == []))) := by decide
+
+-- 8 · reverted and left-alone partition what is dirty: nothing is both, nothing is neither
+theorem the_reverted_and_the_untouched_partition_what_is_dirty :
+  (List.range 16).all (fun a => (List.range 16).all (fun b =>
+    let m := mine (setOf a) (setOf b) paths
+    let rest := (setOf b).filter (fun p => ! m.contains p)
+    m.all (fun p => ! rest.contains p) && (setOf b).all (fun p => m.contains p || rest.contains p))) := by decide
+
+def settledHere : Nat := 28
+theorem instruments_settles_its_range : settledHere = 28 := rfl
 
 end Instruments
