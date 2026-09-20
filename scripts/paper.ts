@@ -220,7 +220,13 @@ for (const w of wings) {
   for (const d of docs.filter((x) => x.wing === w)) {
     o += `\n### ${d.title} {#${d.file.replace('.lean', '')}}\n\n`
     o += `<p class="paper-src"><code>src/proof/${d.file}</code> · namespace <code>${d.namespace}</code> · ${d.theorems.length} theorems</p>\n\n`
-    if (d.summary) o += d.summary + '\n\n'
+    // THE FILE HEADER WENT OUT RAW, AND ANY ANGLE BRACKET IN IT WAS AN HTML TAG. Every other prose here is
+    // escaped; this one line was not, so a header mentioning `src/<d>/vortex.lean` emitted an unclosed <d>
+    // element and the VitePress build died — in a DIFFERENT file, hundreds of lines later, where the parser
+    // finally gave up. Nothing pointed at the source. Angle brackets are the deposit's own vocabulary here
+    // (⟨2⟩, a path template, a type), so the fix is to escape rather than to ask authors to avoid them.
+    // Only the brackets: the summary is markdown and its emphasis and code spans are meant to render.
+    if (d.summary) o += d.summary.replace(/</g, '&lt;').replace(/>(?!\s)/g, '&gt;') + '\n\n'
     if (d.defs.length) {
       o += '<p class="paper-h">Definitions</p>\n\n<pre class="thm-statement paper-defs"><code>'
       o += d.defs.map((f) => esc(`${f.name} := ${f.value}`)).join('\n')

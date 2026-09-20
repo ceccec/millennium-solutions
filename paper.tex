@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 923 of them across 40 files and
-7 wings; 721 close by exhaustion over a stated finite domain, 187 are proved
+(\texttt{npm run latex-gate}). There are 939 of them across 41 files and
+7 wings; 737 close by exhaustion over a stated finite domain, 187 are proved
 for every value, and the remaining 15 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -2705,8 +2705,48 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 10 cases. \hfill$\square$
 
+\begin{theorem}[\texttt{a\_path\_dirty\_before\_the\_run\_is\_never\_attributed\_to\_it}]
+\[ \forall a \in \{0,\dots,15\},\; \forall b \in \{0,\dots,15\},\; \forall t \in \{0,\dots,15\},\; \forall p \in \mathrm{mine}\mathopen{}\left(\mathrm{setOf}\mathopen{}\left(a\right),\,\mathrm{setOf}\mathopen{}\left(b\right),\,\mathrm{setOf}\mathopen{}\left(t\right)\right),\; \lnot p \in \mathrm{setOf}\mathopen{}\left(a\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4,096 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{an\_untracked\_path\_is\_never\_attributed}]
+\[ \forall a \in \{0,\dots,15\},\; \forall b \in \{0,\dots,15\},\; \forall t \in \{0,\dots,15\},\; \forall p \in \mathrm{mine}\mathopen{}\left(\mathrm{setOf}\mathopen{}\left(a\right),\,\mathrm{setOf}\mathopen{}\left(b\right),\,\mathrm{setOf}\mathopen{}\left(t\right)\right),\; p \in \mathrm{setOf}\mathopen{}\left(t\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4,096 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{nothing\_is\_attributed\_that\_is\_not\_dirty\_afterwards}]
+\[ \forall a \in \{0,\dots,15\},\; \forall b \in \{0,\dots,15\},\; \forall t \in \{0,\dots,15\},\; \mathrm{subset}\mathopen{}\left(\mathrm{mine}\mathopen{}\left(\mathrm{setOf}\mathopen{}\left(a\right),\,\mathrm{setOf}\mathopen{}\left(b\right),\,\mathrm{setOf}\mathopen{}\left(t\right)\right),\,\mathrm{setOf}\mathopen{}\left(b\right)\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4,096 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_wider\_record\_of\_what\_was\_dirty\_attributes\_no\_more}]
+\[ \forall a \in \{0,\dots,15\},\; \forall \mathrm{a'} \in \{0,\dots,15\},\; \forall b \in \{0,\dots,15\},\; \lnot \mathrm{subset}\mathopen{}\left(\mathrm{setOf}\mathopen{}\left(a\right),\,\mathrm{setOf}\mathopen{}\left(\mathrm{a'}\right)\right) \lor \mathrm{subset}\mathopen{}\left(\mathrm{mine}\mathopen{}\left(\mathrm{setOf}\mathopen{}\left(\mathrm{a'}\right),\,\mathrm{setOf}\mathopen{}\left(b\right),\,\mathrm{paths}\right),\,\mathrm{mine}\mathopen{}\left(\mathrm{setOf}\mathopen{}\left(a\right),\,\mathrm{setOf}\mathopen{}\left(b\right),\,\mathrm{paths}\right)\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4,096 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_change\_made\_by\_another\_hand\_during\_the\_run\_is\_charged\_to\_the\_run}]
+\[ \exists a \in \{0,\dots,15\} : \exists b \in \{0,\dots,15\} : \exists p \in \mathrm{paths} : \lnot p \in \mathrm{setOf}\mathopen{}\left(a\right) \land p \in \mathrm{setOf}\mathopen{}\left(b\right) \land p \in \mathrm{mine}\mathopen{}\left(\mathrm{setOf}\mathopen{}\left(a\right),\,\mathrm{setOf}\mathopen{}\left(b\right),\,\mathrm{paths}\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 256 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_run\_that\_changes\_nothing\_attributes\_nothing}]
+\[ \forall a \in \{0,\dots,15\},\; \forall t \in \{0,\dots,15\},\; \mathrm{mine}\mathopen{}\left(\mathrm{setOf}\mathopen{}\left(a\right),\,\mathrm{setOf}\mathopen{}\left(a\right),\,\mathrm{setOf}\mathopen{}\left(t\right)\right) = [] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 256 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{reverting\_once\_leaves\_nothing\_further\_to\_attribute}]
+\texttt{(List.range 16).all (fun a => (List.range 16).all (fun b => (List.range 16).all (fun t => let m := mine (setOf a) (setOf b) (setOf t) mine (setOf a) ((setOf b).filter (fun p => ! m.contains p)) (setOf t) == [])))}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 4,096 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_reverted\_and\_the\_untouched\_partition\_what\_is\_dirty}]
+\texttt{(List.range 16).all (fun a => (List.range 16).all (fun b => let m := mine (setOf a) (setOf b) paths let rest := (setOf b).filter (fun p => ! m.contains p) m.all (fun p => ! rest.contains p) \&\& (setOf b).all (fun p => m.contains p || rest.contains p)))}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 256 cases. \hfill$\square$
+
 \begin{theorem}[\texttt{instruments\_settles\_its\_range}]
-\[ \mathrm{settledHere} = 20 \]
+\[ \mathrm{settledHere} = 28 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{rfl} --- by evaluation; no domain is walked. \hfill$\square$
 
@@ -2789,6 +2829,48 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by
   intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{nucleus.lean}}
+
+\begin{theorem}[\texttt{every\_capacity\_is\_even}]
+\[ \forall c \in \mathrm{caps},\; c \bmod 2 = 0 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_seven\_marked\_prefixes\_take\_the\_published\_values}]
+\[ \mathrm{closures} = [2,\,8,\,20,\,28,\,50,\,82,\,126] \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 7 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{each\_of\_the\_seven\_is\_reached\_exactly\_once\_among\_all\_prefixes}]
+\[ \forall m \in \mathrm{closures},\; \left|\{\, p \in \mathrm{prefixes} \mid p = m \,\}\right| = 1 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_capacities\_sum\_to\_the\_last\_of\_the\_seven}]
+\[ \mathrm{total}\mathopen{}\left(\mathrm{caps}\right) = 126 \land \mathrm{total}\mathopen{}\left(\mathrm{caps}\right) = \operatorname{fold}_{a,\,b \mapsto \mathrm{max}\mathopen{}\left(a,\,b\right)}\left(\mathrm{closures},\, 0\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_seven\_increase\_strictly}]
+\texttt{(List.range (closures.length - 1)).all (fun i => closures.getD i 0 < closures.getD (i + 1) 0)}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_seal\_multiplies\_back\_to\_one}]
+\[ \mathrm{product}\mathopen{}\left(\mathrm{numerators}\right) = \mathrm{product}\mathopen{}\left(\mathrm{denominators}\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_fit\_is\_an\_exact\_integer\_identity}]
+\[ 108 \cdot 17 = 1836 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_fit\_is\_not\_the\_measured\_ratio}]
+\[ 1836 \cdot 10000 \neq 18361527 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \paragraph{\texttt{phenomena.lean}}
 
