@@ -236,6 +236,13 @@ const CONTROLS: Control[] = [
     // in the tree ever names`. A control whose own text makes its defect disappear tests nothing.
     mutate: (s) => s + '\nexport const probe' + 'UnusedExport = 1\n' },
 
+  // THE LESSONS ARE COUNTED, NOT REMEMBERED, so the counter must be shown to count. The mutation empties the
+  // file that carries the most self-recorded corrections; if lessons.ts still reports the same total
+  // afterwards it is reading something other than the tree.
+  { gate: 'lessons', cmd: 'node scripts/lessons.ts', file: 'LESSONS.md',
+    what: 'a published count of what the tree has learned that the tree no longer supports',
+    mutate: (s) => s.replace(/\*\*\d+ corrections\*\*/, '**1 corrections**'), restore: 'node scripts/lessons.ts --write' },
+
   { gate: 'canon', cmd: 'node scripts/canon-gate.ts', file: 'scripts/clusters.ts',
     what: 'a second implementation of a job this tree derives exactly once',
     // ASSEMBLED FROM PIECES ON PURPOSE. Written out whole, this literal IS a second implementation sitting
