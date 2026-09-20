@@ -205,6 +205,18 @@ const CONTROLS: Control[] = [
   // The mutation empties every recorded query while leaving the verdicts claiming a completed search, which is a
   // dated prior-art record with nothing whatsoever behind it. `--limit 0` searches nothing, so this control costs
   // no API call in either direction; the record check runs before any search precisely so it can.
+  // ONE DERIVATION FOR ONE JOB, and the reason it needs a gate rather than a tidy-up: src/html/index.ts was
+  // created to end four copies of HTML escaping, one of which escaped `&` and `<` but not `>`. Four more
+  // copies grew afterwards — two missing `&`, one missing `>` — plus four of the tag stripper, and the gate
+  // that would have caught them did not exist because the first consolidation felt like the fix. The
+  // mutation plants a fresh copy in a file that currently uses the owner.
+  { gate: 'canon', cmd: 'node scripts/canon-gate.ts', file: 'scripts/clusters.ts',
+    what: 'a second implementation of a job this tree derives exactly once',
+    // ASSEMBLED FROM PIECES ON PURPOSE. Written out whole, this literal IS a second implementation sitting
+    // in this file, and canon-gate flagged gates-fire.ts the first time it ran — correctly. The control has
+    // to plant the pattern without containing it, so the mutated file matches and this one does not.
+    mutate: (s) => s.replace('const receipts =', 'const __probe = (x: string) => x.replace(/' + "</g, '&" + "lt;')\nconst receipts =") },
+
   { gate: 'novelty', cmd: 'node scripts/novelty.ts --limit 0', file: 'src/proof/novelty.json',
     what: 'a prior-art record claiming a completed search that records no query',
     mutate: (s) => s.replace(/"queries": \{[^}]*\}/g, '"queries": {}') },

@@ -30,6 +30,7 @@ namespace Light
 -- ── THE SEVEN, as exact integers. h, e, k and N_A are recorded as their DIGIT SEQUENCES: their defining
 --    values carry powers of ten that Nat cannot hold, and the arithmetic below concerns the digits. Saying
 --    so here rather than letting a reader assume the number is the quantity. ────────────────────────────
+-- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 def c      : Nat := 299792458      -- m/s, exact
 def dNuCs  : Nat := 9192631770     -- Hz, exact — the caesium-133 hyperfine transition
 def hDigits : Nat := 662607015     -- h = 6.62607015 × 10⁻³⁴ J s

@@ -11,6 +11,7 @@ import { readFileSync, existsSync, readdirSync } from 'node:fs'
 import { leanTheorems } from '../src/api/index.ts'
 import { deposition, namesIn, keyOf } from './zenodo-theorems.ts'
 import { ownFiles, creditedIn, closureOf, definitionsFor } from '../src/publication/index.ts'
+import { stripTags } from '../src/html/index.ts'
 
 let bad = 0
 const fail = (m: string) => { console.log('  ✗ ' + m); bad++ }
@@ -153,7 +154,7 @@ const DIST0 = '.vitepress/dist'
 // cases" while the deposition omitted the number as inexact, and the page told all 336 the kernel had
 // walked their whole domain when 112 are closed identities that walk none. One body in src/publication
 // now feeds both, and this compares what actually shipped.
-const strip = (x: string) => x.replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<')
+const strip = (x: string) => stripTags(x).replace(/&amp;/g, '&').replace(/&lt;/g, '<')
   .replace(/&#39;/g, "'").replace(/&quot;/g, '"').replace(/\s+/g, ' ').trim()
 if (existsSync(DIST0)) {
   let drift = 0

@@ -42,7 +42,7 @@ import { live, theoremOfKey, leanTheorems } from '../src/api/index.ts'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 import { MILLENNIUM } from '../src/millennium/index.ts'
 import { toLatex, toMathML } from '../src/latex/index.ts'
-import { escapeHtml } from '../src/html/index.ts'
+import { escapeAngles, escapeHtml } from '../src/html/index.ts'
 
 const docs = leanDocs()
 const T = leanTheorems()
@@ -226,7 +226,7 @@ for (const w of wings) {
     // finally gave up. Nothing pointed at the source. Angle brackets are the deposit's own vocabulary here
     // (⟨2⟩, a path template, a type), so the fix is to escape rather than to ask authors to avoid them.
     // Only the brackets: the summary is markdown and its emphasis and code spans are meant to render.
-    if (d.summary) o += d.summary.replace(/</g, '&lt;').replace(/>(?!\s)/g, '&gt;') + '\n\n'
+    if (d.summary) o += escapeAngles(d.summary) + '\n\n'
     if (d.defs.length) {
       o += '<p class="paper-h">Definitions</p>\n\n<pre class="thm-statement paper-defs"><code>'
       o += d.defs.map((f) => esc(`${f.name} := ${f.value}`)).join('\n')

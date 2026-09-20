@@ -23,6 +23,7 @@ set_option maxRecDepth 8000000
 --   NOT ALWAYS — "every swapped pair sums to the same value", which is what `refl d = 10 - d` does and
 --             what makes the coin's two sides sides of one thing. That is RARE: 90 of 2620, about one in
 --             twenty-nine. It is a property of a particular involution, never of involutions.
+-- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 
 namespace Involution
 

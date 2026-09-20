@@ -34,6 +34,7 @@
 import { readFileSync, writeFileSync, existsSync, appendFileSync } from 'node:fs'
 import { createHash } from 'node:crypto'
 import { leanTheorems } from '../src/api/index.ts'
+import { stripTags } from '../src/html/index.ts'
 
 const OUT = 'src/proof/novelty.json'
 const arg = (f: string) => { const i = process.argv.indexOf(f); return i > 0 ? process.argv[i + 1] : undefined }
@@ -130,7 +131,7 @@ const SOURCES: Record<string, { pace: number; run: (terms: string[], query: stri
     .map((w: any) => { const text = `${w.title ?? ''} ${invert(w.abstract_inverted_index)}`; return { source: 'openalex', title: w.title ?? '', year: w.publication_year, url: w.doi ?? w.id, relevance: relevance(terms, text), text } }) },
   crossref: { pace: 1200, run: async (terms, query) => ((await get(`https://api.crossref.org/works?query=${q(query)}&rows=5`)).message?.items ?? [])
     // Crossref carries no subject, so a hit there must carry EVERY distinctive term of the theorem
-    .map((w: any) => { const text = `${(w.title ?? [''])[0]} ${String(w.abstract ?? '').replace(/<[^>]+>/g, ' ')}`; const r = relevance(terms, text); return { source: 'crossref', title: (w.title ?? [''])[0], year: w.issued?.['date-parts']?.[0]?.[0], url: w.DOI ? `https://doi.org/${w.DOI}` : w.URL, relevance: r < 1 ? 0 : r, text } }) },
+    .map((w: any) => { const text = `${(w.title ?? [''])[0]} ${stripTags(String(w.abstract ?? ''))}`; const r = relevance(terms, text); return { source: 'crossref', title: (w.title ?? [''])[0], year: w.issued?.['date-parts']?.[0]?.[0], url: w.DOI ? `https://doi.org/${w.DOI}` : w.URL, relevance: r < 1 ? 0 : r, text } }) },
   arxiv: { pace: 6000, run: async (terms) => {
     // two tries, not four: a refusing arXiv costs half a minute per call, and three in a row set it aside for the run
     const x: string = await get(`https://export.arxiv.org/api/query?search_query=${q(terms.slice(0, 5).map((t) => `all:${t}`).join(' AND '))}&max_results=5`, 'text', 2)

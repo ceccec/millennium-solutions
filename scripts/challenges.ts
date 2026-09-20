@@ -7,6 +7,7 @@ import { writeFileSync, existsSync } from 'node:fs'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 import { ledger as __ledger, statusOf as __statusOf, carrierOf } from '../src/api/index.ts'
 import { isLive as __isLive, isWithdrawn as __isWithdrawn } from '../src/api/index.ts'
+import { escapeHtml as esc } from '../src/html/index.ts'
 
 const CLAY = [
   { name: 'Poincaré conjecture', status: 'settled', by: 'Perelman, 2003 (external)' },
@@ -44,7 +45,6 @@ const multi = cats.filter((c) => groups[c].length >= 2)
 const singles = cats.filter((c) => groups[c].length === 1)
 // escape markdown/Vue hazards so a stray angle-tag in a theorem name renders as literal text, never a
 // broken build — prose cannot poison the reproducible material.
-const esc = (s: string) => s.replace(/</g, '&lt;').replace(/>/g, '&gt;')
 const line = (e: typeof ledger[number]) => '- [' + e.key + '](/theorem/' + e.key + ') — ' + esc(e.name) + '  ·  `' + e.receipt.slice(0, 13) + '…`\n'
 o += '## Discovered theorems (decidable, over ℤ/9) — ' + ledger.length + ' standing in ' + cats.length + ' families\n\n'
 o += 'Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:\n\n'

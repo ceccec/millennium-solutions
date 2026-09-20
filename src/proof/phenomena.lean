@@ -23,6 +23,7 @@ set_option maxRecDepth 8000000
 --       moved to the other side of the definition in 1983 and 2019. See light.lean.
 --
 --   1 — NAMED PRIOR ART. A classical result with an earlier author, restated and credited. See energy.lean.
+-- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --
 -- Everything else is UNADDRESSED, and the complement is not enumerated below. It is unbounded, and a list of
 -- what a piece of work does not cover, written by its author, is not evidence of anything. The rule is

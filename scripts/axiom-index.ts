@@ -61,7 +61,11 @@ const fail = (m: string) => { console.log('  ✗ ' + m); bad++ }
 // right thing: a fixture whose assertions were deleted or weakened would compile just as quietly.
 let control = ''
 let compiles = true
-try { execSync('lake env lean axiom-control.lean', { cwd: 'src/proof/fixtures', encoding: 'utf8' }) }
+// `lake env lean` until 2026-09-20, which stopped being right when lakefile.lean was deleted with the
+// fifteen Mathlib sources nothing compiled. It kept EXITING ZERO, because lake resolves a package from
+// outside this repository — so the control went on elaborating and nothing said the command no longer
+// described the tree. scripts/lean.ts has always called `lean` directly; this does now too.
+try { execSync('lean axiom-control.lean', { cwd: 'src/proof/fixtures', encoding: 'utf8' }) }
 catch (e) { compiles = false; control = String((e as { stdout?: string }).stdout ?? (e as Error).message) }
 const fixture = existsSync(CONTROL) ? readFileSync(CONTROL, 'utf8') : ''
 const pinnedFree = fixture.includes(`/-- info: ${EXPECT_FREE} -/`)

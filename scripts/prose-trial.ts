@@ -31,6 +31,7 @@
 import { readFileSync, readdirSync, statSync } from 'node:fs'
 import { join } from 'node:path'
 import { claimsIn, DETECTORS } from '../src/honesty/claims.ts'
+import { TAG } from '../src/html/index.ts'
 
 // THE SAME CORPUS scripts/contradictions.ts READS, and for the same reason. This asked `git ls-files`, so a
 // file that existed but had never been added was invisible — and the first file that happened to was
@@ -87,7 +88,7 @@ const clean = (s: string): string => s
   .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
   .replace(/https?:\/\/\S+/g, ' ')
   .replace(/\.?\/?[\w.\-]*\/[\w.\-/[\]]+/g, ' ')   // any path-shaped token: routes, module paths, files
-  .replace(/<[^>]+>/g, ' ')
+  .replace(TAG, ' ')
   .replace(/\s+/g, ' ')
   .trim()
 

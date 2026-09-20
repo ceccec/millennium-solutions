@@ -38,6 +38,7 @@ import { leanTheorems, type LeanTheorem } from '../src/api/index.ts'
 import { toUuid, merkleFold } from '../src/0/index.ts'
 import { rays2x7, toCoords, torusDistance, MOD, DIMENSIONS } from '../src/7/rays.ts'
 import { CONCEPT_DOI, SITE, REPO, closureOf, creditedIn } from '../src/publication/index.ts'
+import { escapeHtml as esc } from '../src/html/index.ts'
 
 const OUT = '.zenodo/clusters'
 // WHAT A PERMANENT RECORD IS AS OF. Every figure here moves when anything is sealed anywhere, and a link to `main` moves
@@ -58,7 +59,6 @@ const front = (f: string, k: string) => {
   for (let j = i + 1; j < lines.length && /^--\s{2,}\S/.test(lines[j]); j++) out += ' ' + lines[j].replace(/^--\s+/, '').trim()
   return out
 }
-const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 const zen = JSON.parse(readFileSync('.zenodo.json', 'utf8'))
 
 // ── the ledger: which declarations are sealed live, and their receipts ──────────────────────────────────────────

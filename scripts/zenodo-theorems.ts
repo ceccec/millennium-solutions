@@ -193,7 +193,7 @@ export const deposition = (t: LeanTheorem) => {
     // than merged here. Carried in `notes`, which is a documented Zenodo field; `alternateName` is not one.
     notes: `statement-address ${statementAddress(t.statement)} (${STATEMENT_ADDRESS_SPEC}) · ${FUNDING.statement} · key ${key ?? '(no live ledger key)'} · receipt ${key ? toUuid(key) : '—'} · source file src/proof/${t.file} · `
       + `namespace ${t.namespace || '(none)'} · closed by ${t.tactic} · concept DOI ${CONCEPT_DOI} · `
-      + `recompute: lake env lean ${needs2.join(' ')} — or git clone ${REPO} && npm ci && npm run lean`,
+      + `recompute: lean ${needs2.join(' ')} — or git clone ${REPO} && npm ci && npm run lean`,
   }
 }
 

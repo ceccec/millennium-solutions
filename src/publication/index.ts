@@ -24,6 +24,7 @@ import { domainOf, leanSource, frontmatter, type LeanTheorem } from '../api/inde
 import { toUuid } from '../0/index.ts'
 import { toLatex } from '../latex/index.ts'
 import { treeOf, stats } from '../quantum/tree.ts'
+import { escapeHtml as esc } from '../html/index.ts'
 
 /** THE FUNDING STATEMENT, read from .github/FUNDING.yml so the repository declares it in one place.
  *
@@ -75,7 +76,6 @@ export const CONCEPT_DOI = (() => {
   return m[1]
 })()
 
-const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;')
 export const humanise = (n: string) => n.replace(/_/g, ' ')
 
 /** Exhaustion is a claim about a domain. A closed identity is not one, and must not be dressed as one. */
@@ -357,7 +357,7 @@ export const publicationHtml = (t: LeanTheorem, opts: { novelty: string; files: 
   + `<p><strong>${opts.novelty}</strong></p>`
   + `<p><strong>Verification.</strong> The proof needs ${opts.files.length === 1 ? 'one file' : `${opts.files.length} files`}, `
   + `all attached: <code>${opts.files.join('</code>, <code>')}</code>. Check it with `
-  + `<code>lake env lean ${opts.files.join(' ')}</code>, or clone <a href="${REPO}">${REPO}</a> and run `
+  + `<code>lean ${opts.files.join(' ')}</code>, or clone <a href="${REPO}">${REPO}</a> and run `
   + `<code>npm run lean</code>.`
   + (opts.key ? ` The content-address of this declaration is recorded as <code>${opts.key}</code> at <a href="${SITE}/theorem/${opts.key}">${SITE}/theorem/${opts.key}</a>.` : '')
   + ` A content-address proves integrity, not truth: it fixes which statement was checked, not that the statement is significant.</p>`

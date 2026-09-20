@@ -5,11 +5,11 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **923** report the same thing:
+axiom fails the build rather than earning a footnote. All **939** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
-theorems rest on **427** definitions, and every one of them is a choice. A theorem about
+theorems rest on **439** definitions, and every one of them is a choice. A theorem about
 `fall` is a theorem about the digital root only because `fall` is *defined* to be it. Both halves are
 indexed below, and the second is the longer one.
 
@@ -90,7 +90,7 @@ The pins in the control fixture follow the community practice of guarding `#prin
 `#guard_msgs`, which turns the axiom footprint into an executable regression test: the assertion is
 checked by the elaborator, and drift fails the build with a mismatch instead of passing unnoticed.
 
-## What IS assumed: the 427 definitions
+## What IS assumed: the 439 definitions
 
 Each of these is a primitive of this deposit — not derived, not proved, chosen. They are listed in full
 because a reader checking a theorem must be able to read the definition it is about, and because a
@@ -365,7 +365,7 @@ def span : List Nat := (List.range 6).map orbit                               --
 def sequence : List Nat := [1, 2, 4, 8, 7, 5, 3, 6, 9, 0, 1]
 ```
 
-### `instruments.lean` — 17 definition(s), 21 theorem(s)
+### `instruments.lean` — 21 definition(s), 29 theorem(s)
 
 ```lean
 def precedes : Option Nat → Option Nat → Bool
@@ -384,7 +384,11 @@ def echoed : List Nat := [60, 112, 62] ++ UA ++ [60, 47, 112, 62]        -- "<p>
 def genuine : List Nat := [60, 112, 62] ++ SITE ++ [60, 47, 112, 62]     -- "<p>site</p>"
 def twice : List Nat := UA ++ [32] ++ UA
 def refused (negs : List Nat) (claim : Nat) : Bool := negs.any (fun n => n < claim)
-def settledHere : Nat := 20
+def paths : List Nat := List.range 4
+def setOf (m : Nat) : List Nat := paths.filter (fun i => (m >>> i) % 2 == 1)
+def mine (pre post tracked : List Nat) : List Nat :=
+def subset (a b : List Nat) : Bool := a.all (fun x => b.contains x)
+def settledHere : Nat := 28
 ```
 
 ### `involution.lean` — 7 definition(s), 8 theorem(s)
@@ -481,6 +485,19 @@ def lost : Nat → Nat → Nat → Bool
 def isLost (a b : Nat) : Bool := lost (a + b + 1) a b
 def mex (s : List Nat) : Nat := ((List.range (s.length + 1)).filter (fun m => ! s.contains m)).headD 0
 def grundy1 : Nat → Nat → Nat
+```
+
+### `nucleus.lean` — 8 definition(s), 8 theorem(s)
+
+```lean
+def caps : List Nat := [2, 4, 2, 6, 2, 4, 8, 4, 6, 2, 10, 8, 6, 4, 2, 12, 10, 8, 6, 4, 2, 14]
+def total (l : List Nat) : Nat := l.foldr (· + ·) 0
+def prefixes : List Nat := (List.range (caps.length + 1)).map (fun i => total (caps.take i))
+def marks : List Nat := [1, 3, 6, 7, 11, 16, 22]        -- the positions, from the filling order above
+def closures : List Nat := marks.map (fun i => total (caps.take i))
+def numerators : List Nat := [1, 1, 1, 8, 7, 5, 1, 2, 9]
+def denominators : List Nat := [2, 2, 2, 7, 5, 3, 2, 3]
+def product (l : List Nat) : Nat := l.foldr (· * ·) 1
 ```
 
 ### `phenomena.lean` — 3 definition(s), 4 theorem(s)
@@ -715,6 +732,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**923** declarations, **0** axiom dependencies, **427** definitions they rest on.
+**939** declarations, **0** axiom dependencies, **439** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them.

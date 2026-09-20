@@ -1,0 +1,57 @@
+#!/usr/bin/env node
+// CANON — one derivation for one job, enforced instead of tidied.
+//
+// src/html/index.ts exists because four byte-identical copies of HTML escaping had grown across the tree and
+// a fifth, in scripts/rights.ts, escaped `&` and `<` but not `>`. Its own header says so. That consolidation
+// was done, and then FOUR MORE copies grew — scripts/challenges.ts and scripts/discover.ts escaping `<` and
+// `>` but not `&`, src/publication/index.ts escaping `&` and `<` but not `>`, scripts/clusters.ts complete
+// and still its own. Four more copies of the tag STRIPPER grew beside them. On 2026-09-20 a missing escape
+// in scripts/paper.ts killed the VitePress build, and the error pointed at a file hundreds of lines from the
+// cause.
+//
+// A leaf helper does not stay consolidated because somebody tidied it once. The tidying is not the fix; this
+// is. Every pattern below names a job the tree has exactly one implementation of, and the check fails when a
+// second one appears anywhere outside its owner.
+//
+// WHAT THIS DOES NOT DO. It does not look for similar code, and it is not a duplicate detector: it knows a
+// fixed list of jobs, each with an owner. A new job is added here deliberately, by someone who has decided
+// the tree should have one of them. That keeps the gate's own claim narrow enough to be true.
+import { readFileSync } from 'node:fs'
+import { execSync } from 'node:child_process'
+
+type Canon = { job: string; owner: string; pattern: RegExp; use: string }
+const CANON: Canon[] = [
+  { job: 'HTML escaping', owner: 'src/html/index.ts', use: 'escapeHtml from src/html',
+    pattern: /\.replace\(\/[<>&]\/g,\s*'&(?:lt|gt|amp);'\)/ },
+  { job: 'stripping HTML tags', owner: 'src/html/index.ts', use: 'stripTags (or TAG, mid-chain) from src/html',
+    pattern: /\.replace\(\/<\[\^>\]\+>\/g,/ },
+]
+
+const files = execSync('git ls-files "*.ts" "*.vue"', { encoding: 'utf8' }).split('\n').filter(Boolean)
+  .filter((f) => !f.startsWith('packages/'))
+
+let bad = 0
+for (const c of CANON) {
+  // The owner is where the job lives; a hit there is the implementation, not a copy.
+  const copies = files.filter((f) => f !== c.owner && c.pattern.test(stripComments(readFileSync(f, 'utf8'))))
+  if (copies.length) {
+    bad += copies.length
+    console.log(`  ✗ ${copies.length} file(s) carry their own ${c.job} instead of using ${c.use}:`)
+    for (const f of copies) console.log(`      ${f}`)
+  } else {
+    console.log(`  ✓ ${c.job.padEnd(22)} one implementation, in ${c.owner}`)
+  }
+}
+
+// A COMMENT QUOTING THE PATTERN IS NOT A COPY OF IT. This file quotes both patterns in its own header, and
+// so does src/html/index.ts; a gate that counts its own explanation as a violation is the instrument lying
+// about its subject, which is the defect this repository keeps finding in its own checks.
+function stripComments(s: string): string {
+  return s.replace(/\/\*[\s\S]*?\*\//g, ' ').split('\n').filter((l) => !/^\s*(\/\/|\*)/.test(l)).join('\n')
+}
+
+if (bad) {
+  console.log(`\n✗ canon: ${bad} second implementation(s) of a job this tree derives once — fold them into the owner`)
+  process.exit(1)
+}
+console.log(`\n✓ canon: ${CANON.length} job(s) checked over ${files.length} files — each has exactly one implementation, in the module that owns it`)

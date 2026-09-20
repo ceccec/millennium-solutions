@@ -32,6 +32,7 @@
 import { readFileSync, writeFileSync, appendFileSync } from 'node:fs'
 import { execFileSync } from 'node:child_process'
 import { unreflect } from '../src/honesty/index.ts'
+import { stripTags } from '../src/html/index.ts'
 
 // ── what THIS work is, read from CITATION.cff and package.json — not retyped ──────────────────────────────────
 const cff = readFileSync('CITATION.cff', 'utf8')
@@ -340,7 +341,7 @@ async function constructs() {
         if (OWN_AUTHOR.test(by) || (earliest && String(m.publication_date ?? '') < earliest)) continue
         const url = h.links?.self_html ?? `https://zenodo.org/records/${h.id}`
         if (leads.has(url)) continue
-        const text = `${m.title ?? ''} ${String(m.description ?? '').replace(/<[^>]+>/g, ' ')} ${JSON.stringify(m.references ?? [])} ${JSON.stringify(m.related_identifiers ?? [])}`
+        const text = `${m.title ?? ''} ${stripTags(String(m.description ?? ''))} ${JSON.stringify(m.references ?? [])} ${JSON.stringify(m.related_identifiers ?? [])}`
         const sigs = signalsIn(text)
         leads.set(url, { url, text: `${m.title ?? ''}`, by, when: m.publication_date, source: 'zenodo-topic', kind: 'topic', markers: [], signals: sigs,
           licence: typeof m.license === 'object' ? m.license?.id : m.license, cites: CITES.test(text) ? 'YES' : 'NO',

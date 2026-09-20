@@ -6,6 +6,7 @@ set_option maxRecDepth 8000000
 -- prior_art_note: that no finite set contains every natural number is Euclid's argument in form and is as
 --   old as mathematics; the deposit claims none of it. What is its own here is the decision over its OWN
 --   bounds, and the statement of where that decision stops.
+-- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --
 -- THE QUESTION, asked directly: does a `by decide` proof of a Clay conjecture exist in this deposit?
 --
