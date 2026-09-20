@@ -1,0 +1,73 @@
+# NOVELTY — the per-theorem prior-art search, weekly, resuming where the last run stopped.
+#
+# It ran by hand until 2026-09-20, which is why it had reached 32 of 924 theorems: a record that only grows
+# when somebody remembers is a record that does not grow. src/proof/novelty.json is what priorart.lean's
+# kind 2 rests on — "these searches, on this date, returned nothing" — so the gap was in the evidence under
+# the deposit's central claim, not in a convenience.
+#
+# The run is INCREMENTAL and bounded by TIME rather than by a count. A batch size is a guess about how many
+# theorems fit; the real constraint is how the sources answer that hour, and `--minutes` spends the budget
+# and stops on a whole theorem. The next run resumes from what is stale or unsearched.
+#
+# IT COMMITS NOTHING TO MAIN. Main requires signed commits and pull requests, and a bot must never attempt
+# either — so the run opens a PR with the updated record and the author merges it. The PR is then gated by
+# the ordinary release workflow like any other change, which is the point: the search is automatic, and
+# admitting its results to the record stays a decision.
+name: Novelty — prior-art search per theorem (weekly)
+
+on:
+  schedule:
+    - cron: '43 5 * * 2'   # Tuesdays 05:43 UTC, clear of trinity (06:00) and uses (Mon 06:17)
+  workflow_dispatch:
+    inputs:
+      minutes:
+        description: 'search budget in minutes (default 35)'
+        required: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  # The budget must stay below timeout-minutes below, with room for checkout, install and the PR step.
+  BUDGET_MINUTES: ${{ github.event.inputs.minutes || '35' }}
+
+jobs:
+  novelty:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: 22
+
+      - name: search — stale rows first, then theorems never searched
+        run: node scripts/novelty.ts --minutes "$BUDGET_MINUTES" --summary "$GITHUB_STEP_SUMMARY"
+
+      # The record integrity check runs inside novelty.ts before any search, so a hollow or orphaned row
+      # fails this step rather than being committed.
+      - name: open a pull request when the record moved
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- src/proof/novelty.json; then
+            echo "novelty: the record did not move this run — nothing to propose" | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          BRANCH="novelty/$(date -u +%Y-%m-%d)"
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add src/proof/novelty.json
+          git commit -m "novelty: prior-art search, $(date -u +%Y-%m-%d) — the record advanced under the floors it records"
+          git push --force-with-lease origin "$BRANCH"
+          gh pr create --base main --head "$BRANCH" \
+            --title "novelty: prior-art search, $(date -u +%Y-%m-%d)" \
+            --body "Automated weekly run of \`scripts/novelty.ts\`, bounded by a ${BUDGET_MINUTES}-minute budget.
+
+          Every row carries the floors it was searched under — relevance threshold and results per source — so a verdict cannot be read apart from the domain that produced it. NONE_FOUND means nothing cleared that floor in that many results, which is narrower than \"nothing earlier exists\".
+
+          The step summary for this run carries the coverage figure and the verdict counts." \
+            || gh pr edit "$BRANCH" --title "novelty: prior-art search, $(date -u +%Y-%m-%d)"
+        env:
+          GH_TOKEN: ${{ github.token }}

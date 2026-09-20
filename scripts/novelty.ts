@@ -39,6 +39,13 @@ import { arg } from '../src/cli/index.ts'
 
 const OUT = 'src/proof/novelty.json'
 const LIMIT = Number(arg('--limit') ?? Infinity), DAYS = Number(arg('--days') ?? 30), ONLY = arg('--only'), ALL = process.argv.includes('--all')
+// A BUDGET, BECAUSE A BATCH SIZE IS A GUESS. `--limit 8` was a number somebody picked, and the thing it was
+// standing in for is TIME: every theorem costs four paced source calls plus an OEIS lookup, and how many fit
+// depends on how the sources answer that hour, not on a count chosen in advance. `--minutes` spends a real
+// budget and stops on a whole theorem, so a scheduled run fills whatever its job allows and the next one
+// resumes — the record grows by itself instead of when somebody remembers to pick a number.
+const BUDGET_MS = arg('--minutes') ? Number(arg('--minutes')) * 60_000 : Infinity
+const startedAt = Date.now()
 const UA = { 'User-Agent': 'millennium-solutions-novelty/1.0 (+https://ceccec.psg.bg/millennium-solutions/; read-only)' }
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
 async function get(url: string, as: 'json' | 'text' = 'json', tries = 4): Promise<any> {
@@ -171,6 +178,7 @@ const hash = (s: string) => createHash('sha256').update(s).digest('hex').slice(0
 // A record a source did not answer is searched again on the next run, whatever its age: NOT_MEASURED is a gap, not a result.
 const stale = (r: Rec | undefined, h: string) => ALL || !r || !r.limits || r.statementHash !== h || r.verdict === 'NOT_MEASURED' || r.verdict === 'NONE_FOUND_PARTIAL' || Date.now() - Date.parse(r.searched) > DAYS * 86400000
 
+const eligible = leanTheorems().filter((t) => t.tactic !== 'rfl').length
 const todo = leanTheorems().filter((t) => (!ONLY || t.file === ONLY) && t.tactic !== 'rfl')
   .map((t) => ({ t, key: `lean_${t.namespace.toLowerCase()}_${t.name}`, h: hash(t.statement) }))
   .filter(({ key, h }) => stale(ledger[key], h)).slice(0, LIMIT)
@@ -258,6 +266,11 @@ for (const { t, key, h } of todo) {
     : searchable && litMissing <= 1 && !oeisMissing ? 'NONE_FOUND_PARTIAL' : 'NOT_MEASURED'
   ledger[key] = rec
   if (++n % 10 === 0) { save(); console.log(`  … ${n}/${todo.length}`) }
+  if (Date.now() - startedAt > BUDGET_MS) {
+    save()
+    console.log(`  … budget of ${(BUDGET_MS / 60_000).toFixed(0)} minute(s) spent after ${n} theorem(s); ${todo.length - n} of this run's queue remain and the next run resumes there`)
+    break
+  }
 }
 save()
 
@@ -267,6 +280,11 @@ const by = (v: Verdict) => all.filter((r) => r.verdict === v)
 const lines = [
   `## novelty — a prior-art search per theorem · ${new Date().toISOString().slice(0, 16)}Z`,
   `${all.length} theorems on record · searched this run: ${todo.length} · source calls answered: ${measured}`,
+  // THE COVERAGE, STATED EVERY RUN. The per-theorem search had reached 32 of 924 and nothing said so on any
+  // surface: a reader met the verdicts without meeting the fraction of the tree they cover. An incomplete
+  // search is not a defect — stopping and not saying where you stopped is.
+  `- coverage: ${all.length} of ${eligible} theorem(s) eligible for a per-theorem search have one on record `
+  + `(${((100 * all.length) / eligible).toFixed(1)}%). The rest have not been searched, which is not the same as searched and found clear.`,
   `- every verdict below is relative to the floors this run applied: relevance ≥ ${LIMITS.relevanceFloor} over the first `
   + `${LIMITS.perSource} result(s) from each of ${LIMITS.sources.join(', ')}. They are choices, not findings — NONE_FOUND means `
   + `nothing cleared that floor in that many results, which is narrower than "nothing earlier exists". Rows carry the floors they were searched under.`,

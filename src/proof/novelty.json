@@ -4,16 +4,25 @@
   "file": "address.lean",
   "name": "address_bytes_are_bytes",
   "statementHash": "984aa1ef05246f44",
-  "searched": "2026-09-15T04:46:29.066Z",
+  "searched": "2026-09-20T12:21:12.219Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
   "queries": {
    "zbmath": "address bytes content addressing",
    "openalex": "address bytes content addressing",
    "crossref": "address bytes content addressing",
    "arxiv": "address AND bytes"
   },
-  "notMeasured": [
-   "arxiv: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [
@@ -41,16 +50,25 @@
   "file": "address.lean",
   "name": "address_is_sixteen_bytes",
   "statementHash": "0507a5dbcc165f10",
-  "searched": "2026-09-15T04:45:30.175Z",
+  "searched": "2026-09-20T12:20:54.636Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
   "queries": {
    "zbmath": "address sixteen bytes content addressing",
    "openalex": "address sixteen bytes content addressing",
    "crossref": "address sixteen bytes content addressing",
    "arxiv": "address AND sixteen AND bytes"
   },
-  "notMeasured": [
-   "arxiv: rate-limited after backoff"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [
@@ -70,16 +88,25 @@
   "file": "address.lean",
   "name": "addressing_is_deterministic",
   "statementHash": "903e74e9a953c342",
-  "searched": "2026-09-15T04:46:46.873Z",
+  "searched": "2026-09-20T12:21:54.567Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
   "queries": {
    "zbmath": "addressing deterministic content",
    "openalex": "addressing deterministic content",
    "crossref": "addressing deterministic content",
    "arxiv": "addressing AND deterministic"
   },
-  "notMeasured": [
-   "arxiv: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [
@@ -100,12 +127,12 @@
     "text": "Deterministic Futexes: Addressing WCET and Bounded Interference Concerns "
    },
    {
-    "source": "crossref",
-    "title": "Deterministic Addressing of Nanoscale Devices Assembled at Sublithographic Pitches",
-    "year": 2005,
-    "url": "https://doi.org/10.1109/tnano.2005.858587",
+    "source": "arxiv",
+    "title": "ForeSight: A Predictive-Scheduling Deterministic Database",
+    "year": "2025",
+    "url": "http://arxiv.org/abs/2508.17375v2",
     "relevance": 1,
-    "text": "Deterministic Addressing of Nanoscale Devices Assembled at Sublithographic Pitches "
+    "text": "ForeSight: A Predictive-Scheduling Deterministic Database Deterministic databases enable scalable replicated systems by executing transactions in a predetermined order. However, existing designs fail to capture transaction dependencies, leading to insufficient scheduling, high abort rates, and poor "
    }
   ],
   "verdict": "CANDIDATES"
@@ -115,48 +142,184 @@
   "file": "address.lean",
   "name": "addressing_is_injective_on_single_characters",
   "statementHash": "1e918d0f50259075",
-  "searched": "2026-09-15T04:46:58.787Z",
+  "searched": "2026-09-20T12:25:22.558Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
   "queries": {
    "zbmath": "addressing injective single characters content",
    "openalex": "addressing injective single characters content",
    "crossref": "addressing injective single characters content",
    "arxiv": "addressing AND injective AND single AND characters"
   },
-  "notMeasured": [
-   "openalex: rate-limited after backoff",
-   "arxiv: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NOT_MEASURED"
+  "verdict": "NONE_FOUND"
+ },
+ "lean_address_addressing_is_not_constant": {
+  "key": "lean_address_addressing_is_not_constant",
+  "file": "address.lean",
+  "name": "addressing_is_not_constant",
+  "statementHash": "910e5ee5119c88b1",
+  "searched": "2026-09-20T12:25:52.116Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "addressing constant content",
+   "openalex": "addressing constant content",
+   "crossref": "addressing constant content",
+   "arxiv": "addressing AND constant"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "zbmath",
+    "title": "HARTEX - a safe real-time kernel for distributed computer control systems",
+    "year": "2002",
+    "url": "https://zbmath.org/1934692",
+    "relevance": 1,
+    "text": "HARTEX - a safe real-time kernel for distributed computer control systems [{\"language\":\"English\",\"reviewer\":{\"author_code\":null,\"reviewer_id\":null,\"name\":null,\"sign\":null},\"text\":\"Summary: A hard real-time kernel is presented for distributed computer control systems (DCCS), highlighting a number of "
+   },
+   {
+    "source": "zbmath",
+    "title": "Large-scale structure challenges dilaton gravity in a 5D brane scenario with AdS bulk",
+    "year": "2014",
+    "url": "https://zbmath.org/6291067",
+    "relevance": 1,
+    "text": "Large-scale structure challenges dilaton gravity in a 5D brane scenario with AdS bulk [{\"language\":\"English\",\"reviewer\":{\"author_code\":null,\"reviewer_id\":null,\"name\":null,\"sign\":null},\"text\":\"Summary: We study a theory of dilaton gravity in a five-dimensional brane scenario, with a non-minimal coupl"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_address_addressing_is_not_the_identity": {
+  "key": "lean_address_addressing_is_not_the_identity",
+  "file": "address.lean",
+  "name": "addressing_is_not_the_identity",
+  "statementHash": "df08236523a20ab9",
+  "searched": "2026-09-20T12:25:38.393Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "addressing identity content",
+   "openalex": "addressing identity content",
+   "crossref": "addressing identity content",
+   "arxiv": "addressing AND identity"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "crossref",
+    "title": "Addressing identity/redressing the museum.",
+    "year": null,
+    "url": "https://doi.org/10.18297/etd/222",
+    "relevance": 1,
+    "text": "Addressing identity/redressing the museum. "
+   },
+   {
+    "source": "crossref",
+    "title": "International Trends in Addressing Identity Crime",
+    "year": 2020,
+    "url": "https://doi.org/10.1163/9789004395978_006",
+    "relevance": 1,
+    "text": "International Trends in Addressing Identity Crime "
+   },
+   {
+    "source": "crossref",
+    "title": "Addressing Social Justice and Cultural Identity in Pakistani Education: A Qualitative Content Analysis of Curriculum Policy",
+    "year": 2019,
+    "url": "https://doi.org/10.1007/978-981-13-3125-1_14",
+    "relevance": 1,
+    "text": "Addressing Social Justice and Cultural Identity in Pakistani Education: A Qualitative Content Analysis of Curriculum Policy "
+   },
+   {
+    "source": "arxiv",
+    "title": "On Addressing Isolation in Blockchain-Based Self-Sovereign Identity",
+    "year": "2025",
+    "url": "http://arxiv.org/abs/2511.18379v1",
+    "relevance": 1,
+    "text": "On Addressing Isolation in Blockchain-Based Self-Sovereign Identity Self-Sovereign Identity (SSI) grants holders full ownership and control of their digital identities, being the ultimate digital identity model. Operating in a decentralized manner, SSI enables the verification of claims, including p"
+   }
+  ],
+  "verdict": "CANDIDATES"
  },
  "lean_address_distinct_seeds_give_distinct_addresses": {
   "key": "lean_address_distinct_seeds_give_distinct_addresses",
   "file": "address.lean",
   "name": "distinct_seeds_give_distinct_addresses",
   "statementHash": "0994ea842625c7b7",
-  "searched": "2026-09-15T04:46:52.806Z",
+  "searched": "2026-09-20T12:25:09.111Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
   "queries": {
    "zbmath": "distinct seeds give addresses content addressing",
    "openalex": "distinct seeds give addresses content addressing",
    "crossref": "distinct seeds give addresses content addressing",
    "arxiv": "distinct AND seeds AND give AND addresses"
   },
-  "notMeasured": [
-   "arxiv: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NONE_FOUND"
  },
  "lean_address_raw_bytes_of_a": {
   "key": "lean_address_raw_bytes_of_a",
   "file": "address.lean",
   "name": "raw_bytes_of_a",
   "statementHash": "22d7f250d5a60df9",
-  "searched": "2026-09-15T04:43:05.354Z",
+  "searched": "2026-09-20T12:20:29.526Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
   "queries": {
    "zbmath": "raw bytes content addressing",
    "openalex": "raw bytes content addressing",
@@ -169,85 +332,159 @@
   "candidates": [],
   "verdict": "TOO_FEW_TERMS"
  },
+ "lean_address_the_four_seeds_are_distinct": {
+  "key": "lean_address_the_four_seeds_are_distinct",
+  "file": "address.lean",
+  "name": "the_four_seeds_are_distinct",
+  "statementHash": "a7104220c0a9ff23",
+  "searched": "2026-09-20T12:26:05.192Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "seeds distinct content addressing",
+   "openalex": "seeds distinct content addressing",
+   "crossref": "seeds distinct content addressing",
+   "arxiv": "seeds AND distinct"
+  },
+  "notMeasured": [],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND"
+ },
  "lean_address_to_uuid_bytes_of_a": {
   "key": "lean_address_to_uuid_bytes_of_a",
   "file": "address.lean",
   "name": "to_uuid_bytes_of_a",
   "statementHash": "58daeefc12bf7453",
-  "searched": "2026-09-15T04:43:05.356Z",
+  "searched": "2026-09-20T12:20:29.527Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
   "queries": {
    "zbmath": "uuid bytes content addressing",
    "openalex": "uuid bytes content addressing",
    "crossref": "uuid bytes content addressing",
    "arxiv": "uuid AND bytes"
   },
-  "notMeasured": [
-   "arxiv: rate-limited after backoff"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
-  "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Source Known Identifiers: A Three-Tier Identity System for Distributed Applications",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2604.00151v1",
+    "relevance": 1,
+    "text": "Source Known Identifiers: A Three-Tier Identity System for Distributed Applications Distributed applications need identifiers that satisfy storage efficiency, chronological sortability, origin metadata embedding, zero-lookup verifiability, confidentiality for external consumers, and multi-century ad"
+   }
+  ],
+  "verdict": "CANDIDATES"
  },
  "lean_address_to_uuid_bytes_of_uuidna": {
   "key": "lean_address_to_uuid_bytes_of_uuidna",
   "file": "address.lean",
   "name": "to_uuid_bytes_of_uuidna",
   "statementHash": "a2ddd1cf2e209e2a",
-  "searched": "2026-09-15T04:44:48.304Z",
+  "searched": "2026-09-20T12:20:42.640Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
   "queries": {
    "zbmath": "uuid bytes uuidna content addressing",
    "openalex": "uuid bytes uuidna content addressing",
    "crossref": "uuid bytes uuidna content addressing",
    "arxiv": "uuid AND bytes AND uuidna"
   },
-  "notMeasured": [
-   "arxiv: rate-limited after backoff"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NONE_FOUND"
  },
  "lean_address_variant_bits_are_forced": {
   "key": "lean_address_variant_bits_are_forced",
   "file": "address.lean",
   "name": "variant_bits_are_forced",
   "statementHash": "0a5f6b61b8e81af1",
-  "searched": "2026-09-15T04:46:40.957Z",
+  "searched": "2026-09-20T12:21:42.083Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
   "queries": {
    "zbmath": "variant bits forced content addressing",
    "openalex": "variant bits forced content addressing",
    "crossref": "variant bits forced content addressing",
    "arxiv": "variant AND bits AND forced"
   },
-  "notMeasured": [
-   "arxiv: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NONE_FOUND"
  },
  "lean_address_version_nibble_is_forced": {
   "key": "lean_address_version_nibble_is_forced",
   "file": "address.lean",
   "name": "version_nibble_is_forced",
   "statementHash": "9ca200276d2bf5c8",
-  "searched": "2026-09-15T04:46:35.092Z",
+  "searched": "2026-09-20T12:21:29.253Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
   "queries": {
    "zbmath": "version nibble forced content addressing",
    "openalex": "version nibble forced content addressing",
    "crossref": "version nibble forced content addressing",
    "arxiv": "version AND nibble AND forced"
   },
-  "notMeasured": [
-   "arxiv: refusing this run (three refusals in a row) — retried next run"
-  ],
+  "notMeasured": [],
   "oeis": [],
   "catalogued": false,
   "candidates": [],
-  "verdict": "NONE_FOUND_PARTIAL"
+  "verdict": "NONE_FOUND"
  },
  "lean_flow_navier_stokes_flow_is_bounded_for_every_step": {
   "key": "lean_flow_navier_stokes_flow_is_bounded_for_every_step",
