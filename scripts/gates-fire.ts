@@ -216,7 +216,11 @@ const CONTROLS: Control[] = [
   // the constant, not delete it. The control plants a fresh one in the module the tree derives escaping in.
   { gate: 'orphan-exports', cmd: 'node scripts/orphan-gate.ts', file: 'src/html/index.ts',
     what: 'an exported name that nothing in the tree ever names',
-    mutate: (s) => s + '\nexport const probeUnusedExport = 1\n' },
+    // ASSEMBLED, for the same reason the canon control is. Written whole, the planted name appears HERE too —
+    // and this file is in the corpus orphan-gate reads, so the name it plants is named twice and the gate is
+    // right not to flag it. gates-fire caught that on the first run: `ACCEPTS an exported name that nothing
+    // in the tree ever names`. A control whose own text makes its defect disappear tests nothing.
+    mutate: (s) => s + '\nexport const probe' + 'UnusedExport = 1\n' },
 
   { gate: 'canon', cmd: 'node scripts/canon-gate.ts', file: 'scripts/clusters.ts',
     what: 'a second implementation of a job this tree derives exactly once',

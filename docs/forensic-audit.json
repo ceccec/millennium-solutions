@@ -1,5 +1,5 @@
 {
-  "produced": "b3f8348f5",
+  "produced": "e80122089",
   "method": "recomputed from git history of src/proof/discovered.json and the ledger itself; re-runnable with `npm run forensic`",
   "establishes": "what changed, when, in which commit, and the reason recorded at the time",
   "doesNotEstablish": [
@@ -113,5 +113,5 @@
     ]
   ],
   "totalStateChangingCommits": 599,
-  "address": "92371e03-6562-8a61-b173-afceda52aa96"
+  "address": "5974503c-eb33-870f-8ac7-c432408259d2"
 }
