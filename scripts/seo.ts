@@ -5,6 +5,7 @@
 import { readFileSync, readdirSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { toUuid, merkleFold } from '../src/0/index.ts'
+import { TITLE_CAP, DECLARATION_CAP } from '../src/7/serp.ts'
 
 const DIST = '.vitepress/dist'
 if (!existsSync(DIST)) { console.error('seo: no dist/ — run `npm run docs:build` first.'); process.exit(1) }
@@ -86,10 +87,13 @@ for (const p of pages) {
   // declaration's own, set where the heading is derived in theorem/[key].paths.ts.
   //
   // This is a CHOICE and is written as one, not slipped in as an exemption: the rule is not relaxed for
-  // whatever happens to be failing, it is stated for a class of page with a reason a reader can reject. If
-  // the cap in paths.ts grows, this grows with it — and if the suffix changes, both move together.
-  const DECLARATION_CAP = 72 + ' | Millennium Solutions'.length
-  const limit = p.startsWith('theorem/') ? DECLARATION_CAP : 60
+  // whatever happens to be failing, it is stated for a class of page with a reason a reader can reject.
+  //
+  // BOTH CAPS AND THE SUFFIX NOW COME FROM src/7/serp.ts, because this file was judging titles against a
+  // suffix it typed while .vitepress/config.ts composed them from a suffix IT typed, and scripts/changelog.ts
+  // chose its words by counting against a limit it could not see at all. That is three copies of one fact,
+  // and the copy that drifted shipped a 61-character title against a cap of 60.
+  const limit = p.startsWith('theorem/') ? DECLARATION_CAP : TITLE_CAP
   if (title.length > limit) warns.push('title ' + title.length + '>' + limit + ' (SERP truncates)')
   // A CJK TITLE IS NOT THIN AT FOUR CHARACTERS. `千禧年解` is the Chinese homepage's title and says what
   // "Millennium Solutions" says; counting characters across scripts measures the writing system, not the

@@ -27,6 +27,7 @@
 // is data rather than syntax.
 import { execFileSync } from 'node:child_process'
 import { writeFileSync, readFileSync, existsSync } from 'node:fs'
+import { fitsSerp, serpRoom } from '../src/7/serp.ts'
 
 const OUT = 'CHANGELOG.md'
 const DETAIL = 20 // releases carried with their commit subjects; every release is in the table regardless
@@ -73,8 +74,20 @@ const subjectsFor = (t: Tag, prev: Tag | undefined): string[] => {
 const lines: string[] = []
 lines.push('---')
 // THE TITLE IS A SERP LINE, NOT A SUMMARY. The first one ran to 85 characters with the site suffix and
-// seo.ts refused the release: a title Google truncates is a title whose end nobody reads.
-lines.push('title: Changelog — every release from its tag')
+// seo.ts refused the release: a title Google truncates is a title whose end nobody reads. The second ran to
+// 61 against a cap of 60 — one character over, chosen by counting on fingers against a limit in another
+// file, in the commit whose own message said the title now fits a search result.
+//
+// So it is no longer counted here. `fitsSerp` composes the site suffix and applies the cap from
+// src/7/serp.ts, the same values seo.ts judges with and .vitepress/config.ts renders with, and this refuses
+// at the GENERATOR rather than shipping a page for a gate seven chain steps later to reject.
+const CHANGELOG_TITLE = 'Changelog — each release from its tag'
+if (!fitsSerp(CHANGELOG_TITLE)) {
+  console.error(`  ✗ changelog: the title is ${CHANGELOG_TITLE.length} characters and a search result leaves`
+    + ` room for ${serpRoom()} — shorten it here, not in the gate that refuses it`)
+  process.exit(1)
+}
+lines.push('title: ' + CHANGELOG_TITLE)
 lines.push('description: One row per annotated git tag, each with the content-address that tag carries. Computed by scripts/changelog.ts; nothing here is typed.')
 lines.push('---')
 lines.push('')

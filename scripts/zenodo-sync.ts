@@ -286,8 +286,10 @@ const agents = [...new Set(readdirSync('src/receipts').filter((f) => f.endsWith(
 // TWO PLACES DECLARE PRIOR ART AND ONLY ONE WAS BEING READ. `creditedIn` returns the PER-THEOREM credits,
 // of which this tree has two; the FILE-level `-- prior_art_note:` lines are where the rest of the crediting
 // actually lives. A references list built from the per-theorem markers alone would put two references on a
-// permanent record for a deposit that credits named prior art in 40 of its 41 files — an omission that
-// flatters, which is the direction that gets checked least.
+// permanent record for a deposit that credits named prior art in all but one of its files — an omission
+// that flatters, which is the direction that gets checked least. The ratio is deliberately not a figure
+// here: it moves with every source added, and a count typed into a comment is a claim nothing recomputes —
+// stale-figures caught exactly that on this line when authority.lean made the tree 42 files.
 const fileCredits = (): string[] => {
   const out: string[] = []
   for (const f of [...new Set([...ownFiles(), ...kinds().keys()])]) {

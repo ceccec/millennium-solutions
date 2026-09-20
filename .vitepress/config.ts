@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 import { readFileSync , existsSync } from 'node:fs'
 import { LOCALES, LOCALE_ORDER } from '../src/7/locale'
+import { serpTitle } from '../src/7/serp.ts'
 import { CSP } from '../src/0/csp.ts'
 import { A432_STEP } from '../src/0/index.ts'
 
@@ -146,7 +147,7 @@ export default defineConfig({
     }
     const clean = pageData.relativePath.replace(/(^|\/)index\.md$/, '$1').replace(/\.md$/, '.html')
     const url = SITE + clean
-    const title = pageData.title ? pageData.title + ' | Millennium Solutions' : 'Millennium Solutions'
+    const title = serpTitle(pageData.title)
     const desc = fit(pageData.description || pageData.frontmatter?.description || L.description)
     const lk = ['bg', 'de', 'fr', 'es', 'ru', 'zh'].find((l) => pageData.relativePath.startsWith(l + '/')) || 'en'
     const ogLocale = { en: 'en_US', bg: 'bg_BG', de: 'de_DE', fr: 'fr_FR', es: 'es_ES', ru: 'ru_RU', zh: 'zh_CN' }[lk]

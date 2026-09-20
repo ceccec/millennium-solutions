@@ -757,8 +757,25 @@ if (leftover.length) {
 // raises. Twelve of the release chain's gates are demonstrated to fail when they should; the rest are trusted
 // on the strength of passing, which is exactly the standing this file exists to withdraw. They are listed so
 // the gap is a work item rather than an assumption.
-const chain = readFileSync('package.json', 'utf8')
-const inChain = [...(JSON.parse(chain).scripts.release as string).matchAll(/node scripts\/([a-z-]+)\.ts/g)].map((m) => m[1])
+// THE CHAIN IS WHAT npm ACTUALLY RUNS, not what the `release` line spells out. Reading only that string
+// missed every step reached through `npm run` and — the one that bit — every `pre`/`post` hook npm invokes
+// on its own. `predocs:build` alone runs fifteen scripts, paper.ts and priorart.ts and solutions.ts among
+// them, and none of them were in this list: the coverage report below understated the chain by seven, and
+// the unwired-restore check further down would have accused any of them of not being in a chain that runs
+// them on every build. A correct walk rooted at the wrong subtree is still blind.
+const scripts = JSON.parse(readFileSync('package.json', 'utf8')).scripts as Record<string, string>
+const walkChain = (name: string, seen = new Set<string>(), found = new Set<string>()): Set<string> => {
+  if (seen.has(name)) return found
+  seen.add(name)
+  for (const key of ['pre' + name, name, 'post' + name]) {
+    const body = scripts[key]
+    if (!body) continue
+    for (const m of body.matchAll(/node scripts\/([a-z0-9-]+)\.ts/g)) found.add(m[1])
+    for (const m of body.matchAll(/npm run ([a-z0-9:-]+)/g)) walkChain(m[1], seen, found)
+  }
+  return found
+}
+const inChain = [...walkChain('release')]
 const controlled = new Set(CONTROLS.map((c) => c.gate))
 // A GENERATOR IS NOT A GATE, and demanding a negative control from one is a category error. Nine of the
 // thirteen I was reporting as "trusted only because they pass" never pass or fail at all — they produce a
@@ -768,6 +785,31 @@ const controlled = new Set(CONTROLS.map((c) => c.gate))
 const canFail = (g: string): boolean => {
   try { return /process\.exit\((?!0\))/.test(readFileSync(`scripts/${g}.ts`, 'utf8')) } catch { return false }
 }
+// EVERY RESTORE GENERATOR MUST BE A CHAIN STEP, and this is derived from the two lists rather than kept.
+// A control declares `restore` when its gate WRITES something — the mutation's consequence outlives the
+// mutated input, so a generator has to be re-run to undo it. That makes the restore command a statement
+// about the tree: this file is derived, and it is derived by THAT program. If the release chain never runs
+// that program, the derived file is published from whatever bytes were last committed and drifts silently
+// against the source it claims to summarise.
+//
+// Measured on 2026-09-20: `llms.txt` and `public/llms.txt` — the machine-readable notice that tells an
+// automated reader what this deposit claims — stood 8 theorems and 8 ledger entries stale, saying 924 and
+// 2880 where the tree held 932 and 2888. `notice.ts` was in no chain step, so the ONLY thing in the repo
+// that regenerated it was the restore of the two notice controls below; the leftover check then saw a file
+// that differed from HEAD, reverted the correct regeneration, and reported it as a control that failed to
+// clean up. The chain failed on a true difference with a false diagnosis, and the stale notice survived.
+//
+// Nothing here is listed: the restores are read off CONTROLS and the steps off the release script, so a
+// control added tomorrow with a generator nobody wired in fails on the same line.
+const restoreScripts = new Set(CONTROLS.flatMap((c) =>
+  [...(c.restore ?? '').matchAll(/scripts\/([a-z-]+)\.ts/g)].map((m) => m[1])))
+const unwired = [...restoreScripts].filter((g) => !inChain.includes(g)).sort()
+if (unwired.length) {
+  console.log(`\n\u2717 a control restores by running a generator the release chain never runs — whatever it writes is`)
+  console.log(`  published from the last commit and drifts against its source:\n    ${unwired.join(' ')}`)
+  process.exit(1)
+}
+
 const rest = inChain.filter((g) => !controlled.has(g) && g !== 'gates-fire' && g !== 'release')
 const uncontrolled = rest.filter(canFail)
 const generators = rest.filter((g) => !canFail(g))

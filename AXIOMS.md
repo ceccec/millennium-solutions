@@ -5,11 +5,11 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **939** report the same thing:
+axiom fails the build rather than earning a footnote. All **947** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
-theorems rest on **439** definitions, and every one of them is a choice. A theorem about
+theorems rest on **446** definitions, and every one of them is a choice. A theorem about
 `fall` is a theorem about the digital root only because `fall` is *defined* to be it. Both halves are
 indexed below, and the second is the longer one.
 
@@ -90,7 +90,7 @@ The pins in the control fixture follow the community practice of guarding `#prin
 `#guard_msgs`, which turns the axiom footprint into an executable regression test: the assertion is
 checked by the elaborator, and drift fails the build with a mismatch instead of passing unnoticed.
 
-## What IS assumed: the 439 definitions
+## What IS assumed: the 446 definitions
 
 Each of these is a primitive of this deposit — not derived, not proved, chosen. They are listed in full
 because a reader checking a theorem must be able to read the definition it is about, and because a
@@ -126,6 +126,18 @@ def tagOf (secret payload : Nat) : Nat := (secret * 7 + payload * 3) % 16
 def p : Nat := 2 ^ 255 - 19
 def L : Nat := 2 ^ 252 + 27742317777372353535851937790883648493
 def settledHere : Nat := 11
+```
+
+### `authority.lean` — 7 definition(s), 8 theorem(s)
+
+```lean
+def sealed : List Nat := [0, 1, 2, 3, 4, 5, 6, 7]
+def withdrawn : List Nat := [2, 5]
+def live : List Nat := sealed.filter (fun k => ! withdrawn.contains k)
+def carriesRider : List Nat := [0, 1, 3, 4, 6]
+def isVerdict : List Nat := [1, 6, 7]
+def bits : Nat → List Nat := fun m => sealed.filter (fun i => (m >>> i) % 2 == 1)
+def cleared : List Nat := [3, 4]
 ```
 
 ### `coin.lean` — 7 definition(s), 12 theorem(s)
@@ -732,6 +744,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**939** declarations, **0** axiom dependencies, **439** definitions they rest on.
+**947** declarations, **0** axiom dependencies, **446** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them.

@@ -1,5 +1,5 @@
 ---
-title: Changelog — every release from its tag
+title: Changelog — each release from its tag
 description: One row per annotated git tag, each with the content-address that tag carries. Computed by scripts/changelog.ts; nothing here is typed.
 ---
 

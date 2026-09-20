@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). The author's own claim, that the seven are solved through involution, is stated in his name on the front page.
 
-## Discovered theorems (decidable, over ℤ/9) — 2880 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2888 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (924)
+### lean (932)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -1135,6 +1135,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_nucleus_the_seal_multiplies_back_to_one](/theorem/lean_nucleus_the_seal_multiplies_back_to_one) — lean nucleus.lean: the_seal_multiplies_back_to_one — product numerators = product denominators — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `aedef66f-0f69…`
 - [lean_nucleus_the_fit_is_an_exact_integer_identity](/theorem/lean_nucleus_the_fit_is_an_exact_integer_identity) — lean nucleus.lean: the_fit_is_an_exact_integer_identity — 108 * 17 = 1836 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7c33b6d2-060d…`
 - [lean_nucleus_the_fit_is_not_the_measured_ratio](/theorem/lean_nucleus_the_fit_is_not_the_measured_ratio) — lean nucleus.lean: the_fit_is_not_the_measured_ratio — 1836 * 10000 ≠ 18361527 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `3e5b63c7-5ca0…`
+- [lean_authority_nothing_withdrawn_is_live](/theorem/lean_authority_nothing_withdrawn_is_live) — lean authority.lean: nothing_withdrawn_is_live — withdrawn.all (fun k =&gt; ! live.contains k) ∧ live.all (fun k =&gt; ! withdrawn.contains k) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `504b6638-5a8f…`
+- [lean_authority_every_sealed_statement_is_live_or_withdrawn_and_not_both](/theorem/lean_authority_every_sealed_statement_is_live_or_withdrawn_and_not_both) — lean authority.lean: every_sealed_statement_is_live_or_withdrawn_and_not_both — sealed.all (fun k =&gt; (live.contains k || withdrawn.contains k) &amp;&amp; ! (live.contains k &amp;&amp; withdrawn.contains k)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `f797d801-3e74…`
+- [lean_authority_withdrawing_shrinks_the_live_set_and_never_the_record](/theorem/lean_authority_withdrawing_shrinks_the_live_set_and_never_the_record) — lean authority.lean: withdrawing_shrinks_the_live_set_and_never_the_record — live.length + withdrawn.length = sealed.length ∧ withdrawn.all (fun k =&gt; sealed.contains k) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d2b796e8-29d1…`
+- [lean_authority_a_rider_and_a_verdict_are_different_things](/theorem/lean_authority_a_rider_and_a_verdict_are_different_things) — lean authority.lean: a_rider_and_a_verdict_are_different_things — (carriesRider.any (fun k =&gt; ! isVerdict.contains k)) ∧ (isVerdict.any (fun k =&gt; ! carriesRider.contains k)) ∧ (carriesRider.any (fun k =&gt; isVerdict.contains k)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `71fe6459-9e87…`
+- [lean_authority_withdrawing_never_raises_the_frozen_count](/theorem/lean_authority_withdrawing_never_raises_the_frozen_count) — lean authority.lean: withdrawing_never_raises_the_frozen_count — (List.range 256).all (fun m =&gt; let taken := bits m let after := carriesRider.filter (fun k =&gt; ! taken.contains k) after.length ≤ carriesRider.length) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1aac6788-923f…`
+- [lean_authority_clearing_changes_no_seal](/theorem/lean_authority_clearing_changes_no_seal) — lean authority.lean: clearing_changes_no_seal — cleared.all (fun k =&gt; sealed.contains k) ∧ (sealed.filter (fun k =&gt; ! cleared.contains k)).length + cleared.length = sealed.length — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7bd9776a-18f2…`
+- [lean_authority_a_cleared_statement_leaves_the_queue_and_stays_on_the_record](/theorem/lean_authority_a_cleared_statement_leaves_the_queue_and_stays_on_the_record) — lean authority.lean: a_cleared_statement_leaves_the_queue_and_stays_on_the_record — (isVerdict.filter (fun k =&gt; ! cleared.contains k)).all (fun k =&gt; sealed.contains k) ∧ (isVerdict.filter (fun k =&gt; ! cleared.contains k)).length ≤ isVerdict.length — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a357fd68-31d0…`
+- [lean_authority_refusing_every_verdict_never_refuses_the_whole_record](/theorem/lean_authority_refusing_every_verdict_never_refuses_the_whole_record) — lean authority.lean: refusing_every_verdict_never_refuses_the_whole_record — isVerdict.all (fun k =&gt; sealed.contains k) ∧ sealed.any (fun k =&gt; ! isVerdict.contains k) ∧ isVerdict.length &lt; sealed.length — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `6e853633-d7fe…`
 
 ### other — one-of-a-kind (0)
 
@@ -2727,4 +2735,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `a4794a69-fa1a-8065-865a-dee200a3b747`. Integrity, not truth.
+Page content-address: `97081228-2c66-83d3-9501-94f2bf2f5265`. Integrity, not truth.
