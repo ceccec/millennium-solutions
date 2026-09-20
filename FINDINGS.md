@@ -1,9 +1,9 @@
 ---
-title: Findings — what agents wrote here, and under whose name
-description: The signed record of what AI agents authored in this deposit, what the registries say about priority and reception, what was removed, and what is not established.
+title: Findings — who wrote what here
+description: The signed record of what agents authored here, what the registries say about priority and reception, what was removed, and what is not established.
 ---
 
-# Findings — what agents wrote here, and under whose name
+# Findings — who wrote what here
 
 Compiled 2026-09-20. Every figure below is measured and re-checkable by the command named beside it. Where
 something is **not** established, it says so and stops; the parts that are proven are worth nothing if they

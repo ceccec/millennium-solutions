@@ -105,7 +105,6 @@ theorem the_orbit_is_one_closed_loop_of_six_distinct_points :
 -- ── THE SEVEN REST ON ONE FINITE STRUCTURE, and it is small enough to state in full. Every theorem above is
 --    built from three things: the reflection r(d)=10−d, the units of ℤ/9, and the doubling orbit. Here they
 --    are, checked together — the reflection is an involution, the units number six, and the orbit has period six.
-theorem the_seven_reach_past_the_finite (n : Nat) : ∀ m : ℕ, m = m := by intro m; rfl
 theorem the_seven_rest_on_one_finite_structure :
   ((List.range' 1 9).all (fun d => refl (refl d) == d)) ∧
   (((List.range' 1 9).filter isUnit).length = 6) ∧
