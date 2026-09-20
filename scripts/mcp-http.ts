@@ -41,6 +41,20 @@ const TOKEN = process.env.MCP_TOKEN || randomBytes(24).toString('hex')
 // writing tool through by being named differently. These are the tools whose handlers change the tree.
 const WRITES = new Set(['lean_seal', 'lean_generate', 'pages', 'ledger_trial'])
 
+// FULL FEATURED MEANS THE BROWSER SEES ALL OF THEM. The stdio server advertises a NARROW DOOR — `LISTED`
+// is two meta-tools, `list_tools` and `call_tool`, and the twenty-two real tools are reached through the
+// second. That is the right trade for an LLM client, which pays for every tool description in its context
+// on every turn. A browser pays nothing for a list and cannot guess what it was not shown: served the door
+// alone, it sees two tools and no way to learn the rest without already knowing the protocol.
+//
+// So HTTP serves the whole surface, with the door kept beside it for clients written against the stdio
+// server. `--narrow` restores the two-tool list for a client that wants it.
+const NARROW = flag('--narrow')
+const byName = new Map<string, { name: string; description: string; inputSchema?: unknown }>()
+for (const t of [...LISTED, ...TOOLS] as { name: string; description: string; inputSchema?: unknown }[]) if (!byName.has(t.name)) byName.set(t.name, t)
+const SURFACE = NARROW ? (LISTED as { name: string; description: string }[]) : [...byName.values()]
+const served = () => SURFACE.filter((t) => ALLOW_WRITE || !WRITES.has(t.name))
+
 // An origin allowlist, not a wildcard. `*` plus a bearer token is survivable, but a page cannot read a
 // response it is not allowed to read, and that is one more thing between a stray tab and the ledger.
 const ORIGINS = new Set([`http://localhost:${PORT}`, `http://127.0.0.1:${PORT}`, ...(arg('--origin') ? [String(arg('--origin'))] : [])])
@@ -70,7 +84,8 @@ const server = createServer((req, res) => {
   if (req.method === 'GET' && req.url?.startsWith('/mcp/tools')) {
     return json(res, 200, {
       server: 'millennium-solutions', version, writesAllowed: ALLOW_WRITE,
-      tools: LISTED.map((t: { name: string; description: string }) => ({
+      narrow: NARROW,
+      tools: SURFACE.map((t) => ({
         name: t.name, description: t.description, writes: WRITES.has(t.name),
         available: ALLOW_WRITE || !WRITES.has(t.name),
       })),
@@ -88,7 +103,7 @@ const server = createServer((req, res) => {
     const no = (code: number, message: string) => json(res, 200, { jsonrpc: '2.0', id, error: { code, message } }, origin)
     if (method === 'initialize') return ok({ protocolVersion: '2024-11-05', capabilities: { tools: {} }, serverInfo: { name: 'millennium-solutions', version } })
     if (method === 'notifications/initialized' || method === 'notifications/cancelled') return res.end()
-    if (method === 'tools/list') return ok({ tools: LISTED.filter((t: { name: string }) => ALLOW_WRITE || !WRITES.has(t.name)) })
+    if (method === 'tools/list') return ok({ tools: served() })
     if (method === 'tools/call') {
       const name = String(params?.name ?? '')
       // REFUSED, NOT SILENTLY SKIPPED. A writing tool that returns an empty result reads as "it did nothing
@@ -103,9 +118,14 @@ const server = createServer((req, res) => {
 })
 
 server.listen(PORT, HOST, () => {
-  const writable = TOOLS.filter((t: { name: string }) => WRITES.has(t.name)).length
+  // COUNT WHAT IS SERVED, NOT TWO DIFFERENT THINGS. The first version printed `LISTED.length` beside the
+  // number of writers in `TOOLS` and announced "2 tool(s) declared · 4 of them write" — four of two. Two
+  // counts from two collections read as one sentence, which is how a status line lies without a single
+  // wrong number in it.
+  const shown = served()
+  const writable = SURFACE.filter((t) => WRITES.has(t.name)).length
   console.log(`mcp-http ${version} — http://${HOST}:${PORT}/mcp`)
-  console.log(`  ${LISTED.length} tool(s) declared · ${writable} of them write · writes ${ALLOW_WRITE ? 'ALLOWED (--allow-write)' : 'REFUSED (default)'}`)
+  console.log(`  ${shown.length} tool(s) served of ${SURFACE.length} on the surface${NARROW ? ' (--narrow: the two-tool door)' : ''} · ${writable} write · writes ${ALLOW_WRITE ? 'ALLOWED (--allow-write)' : `REFUSED (default) — ${SURFACE.length - shown.length} withheld`}`)
   console.log(`  token: ${TOKEN}`)
   console.log(`  probe: curl -s -H "Authorization: Bearer ${TOKEN}" http://${HOST}:${PORT}/mcp/tools`)
   if (HOST !== '127.0.0.1' && HOST !== 'localhost') console.log(`  ⚠ bound to ${HOST}, not loopback — this is reachable from the network. The token is the only thing between it and anyone who can route to this machine.`)
