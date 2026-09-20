@@ -1,5 +1,6 @@
 ---
 title: Solutions du millénaire
+description: Le cadre vortex ℤ/9 — un dépôt recalculable de théorèmes vérifiés par le noyau Lean, avec registre en append-only et adresses de contenu.
 ---
 # Cadre vortex ℤ/9
 **Auteur :** Tsvetan Rouschev · Licence : CC BY-NC-ND 4.0 · preuve de concept recalculable

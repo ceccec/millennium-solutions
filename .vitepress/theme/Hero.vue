@@ -3,7 +3,15 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 // Imported, not retyped: these are the sets the API computes and the theorems prove. Hand-typing them here
 // meant the first page a visitor sees could drift from the ring it draws, and hardcode-gate did not walk
 // .vue until it was widened to catch exactly this.
-import { units as unitsOf, orbit as orbitOf } from '../../src/api/index.ts'
+// THE LEDGER-BACKED API CANNOT RUN IN A BROWSER, and importing it here put `existsSync` into the client
+// bundle: every page on the live site threw `TypeError: (0, Ka.existsSync) is not a function` before
+// hydrating. src/api guards each value by reading the ledger from DISK and refusing to serve one whose
+// theorem is not live — a guarantee worth having, and one a browser has no filesystem to honour.
+//
+// The guard is not lost, it moves to where it can actually run: the release chain verifies on every build
+// that each of these keys is live, and a stale ledger fails there long before a page is served. What ships
+// to the browser is the computation from src/0, which is the same value the guard would have released.
+import { units as unitsOf, vortexOrbit as orbitOf } from '../../src/0/index.ts'
 
 // The hero renders the ACTUAL underlying math — not a stock video. Nonagon (ℤ/9), the doubling
 // circuit 1→2→4→8→7→5, reflection pairs (d ↔ 10−d about the centre 5), and the 6×7 = 42

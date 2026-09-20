@@ -7,7 +7,15 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 // The sequence is computed, not quoted: this panel says what the captain KNOWS, and a known value typed
 // by hand is the one thing it must not contain.
-import { orbit as orbitOf } from '../../src/api/index.ts'
+// THE LEDGER-BACKED API CANNOT RUN IN A BROWSER, and importing it here put `existsSync` into the client
+// bundle: every page on the live site threw `TypeError: (0, Ka.existsSync) is not a function` before
+// hydrating. src/api guards each value by reading the ledger from DISK and refusing to serve one whose
+// theorem is not live — a guarantee worth having, and one a browser has no filesystem to honour.
+//
+// The guard is not lost, it moves to where it can actually run: the release chain verifies on every build
+// that each of these keys is live, and a stale ledger fails there long before a page is served. What ships
+// to the browser is the computation from src/0, which is the same value the guard would have released.
+import { vortexOrbit as orbitOf } from '../../src/0/index.ts'
 
 const BASE = 9
 const A432 = 360 / BASE                          // 40° — one ninth of the circle

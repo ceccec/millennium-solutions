@@ -64,6 +64,15 @@ const LD = {
   mainEntity: { '@type': 'Collection', name: 'decidable theorems (ℤ/9, recomputable)', size: THEOREMS },
 }
 
+// THE DESCRIPTION IS THE LINE A SEARCH RESULT SHOWS, so it is written to fit one. The per-theorem text is
+// accurate and runs to about 280 characters, which every search engine cuts mid-word; 2,888 pages shipped
+// that way. VitePress emits <meta name="description"> from pageData.description itself, so the trim belongs
+// at the assignment — trimming further downstream changed the og tag and left the meta untouched, which is
+// how the first attempt at this reported no change at all. Cut on a word boundary, with the full statement
+// still on the page where it has always been.
+const fit = (t: string, n = 155): string => t.length <= n ? t
+  : t.slice(0, t.lastIndexOf(' ', n) > 0 ? t.lastIndexOf(' ', n) : n).replace(/[,;:—-]$/, '') + '…'
+
 export default defineConfig({
   title: L.title,
   description: L.description,
@@ -109,7 +118,13 @@ export default defineConfig({
       // a search engine. Built in src/publication from the same values as the prose body and the Zenodo
       // record, so the three cannot disagree.
       if (p.jsonld) (pageData.frontmatter.head ??= []).push(['script', { type: 'application/ld+json' }, p.jsonld])
-      pageData.title = p.name
+      // THE TITLE IS THE DECLARATION, NOT THE WHOLE RECORD. `p.name` is the ledger's name — file, theorem,
+      // up to 240 characters of Lean statement and the tactic that closed it — and assigning it here put
+      // titles of up to 700 characters on 2,828 pages, against the 60 this repository enforces elsewhere.
+      // A search result showed a truncated `(List.range 6).all (fun i =>` and nothing a reader could use.
+      // The full record is still the <h1>'s subtitle and the statement is still on the page in its own
+      // <pre>; the ledger name is untouched, because it is append-only and the defect was in the display.
+      pageData.title = p.short || p.name
       // A WITHDRAWN ENTRY MUST NOT BE DESCRIBED AS STANDING. The OG/meta description is what a search result
       // and a shared link show — the one line most people ever read — so it is the last place a stale claim
       // may survive. An entry that no longer holds says so here first.
@@ -117,7 +132,7 @@ export default defineConfig({
       // These are the deposit's highest-traffic pages: every one was withdrawn for lacking a Lean proof, and
       // the proofs now exist. The description is what a search result shows, so it is the first place the
       // correction has to land.
-      pageData.description = p.revoked && p.supersededBy
+      pageData.description = fit(p.revoked && p.supersededBy
         ? 'CARRIED — withdrawn on its own evidence for lacking a proof, and now carried by the Lean theorem ' + p.supersededBy + ', machine-checked sorry-free and axiom-free over its whole domain. Integrity, not truth.'
         : p.revoked
         ? 'WITHDRAWN — this entry no longer stands as a theorem of the deposit and must not be cited. Its receipt (' + p.receipt + ') remains in the append-only record so the chain still verifies, but the statement is not re-verified on every build. Integrity, not truth.'
@@ -127,12 +142,12 @@ export default defineConfig({
         ? 'A Lean 4 theorem, machine-checked sorry-free and axiom-free by the kernel over its whole domain — not sampled, and not a TypeScript test that agreed once (content-address ' + p.receipt + '). A standing theorem of the ℤ/9 ledger. Integrity, not truth.'
         : p.problem
         ? 'A Lean 4 theorem computed from the ℤ/9 doubling sequence, machine-checked sorry-free and axiom-free (content-address ' + p.receipt + '). Adjacent to the Clay problem “' + p.problem + '” — and NOT the conjecture. Reference: ' + p.outletName + '. Integrity, not truth.'
-        : 'Achieved by exhaustive computation over a finite domain in scripts/discover.ts, gate-checked against the honesty floor, receipted and chained, and re-verified on every build (content-address ' + p.receipt + '). A decidable fact in the ℤ/9 ledger — integrity, not truth.'
+        : 'Achieved by exhaustive computation over a finite domain in scripts/discover.ts, gate-checked against the honesty floor, receipted and chained, and re-verified on every build (content-address ' + p.receipt + '). A decidable fact in the ℤ/9 ledger — integrity, not truth.')
     }
     const clean = pageData.relativePath.replace(/(^|\/)index\.md$/, '$1').replace(/\.md$/, '.html')
     const url = SITE + clean
     const title = pageData.title ? pageData.title + ' | Millennium Solutions' : 'Millennium Solutions'
-    const desc = pageData.description || pageData.frontmatter?.description || L.description
+    const desc = fit(pageData.description || pageData.frontmatter?.description || L.description)
     const lk = ['bg', 'de', 'fr', 'es', 'ru', 'zh'].find((l) => pageData.relativePath.startsWith(l + '/')) || 'en'
     const ogLocale = { en: 'en_US', bg: 'bg_BG', de: 'de_DE', fr: 'fr_FR', es: 'es_ES', ru: 'ru_RU', zh: 'zh_CN' }[lk]
     pageData.frontmatter.head ??= []

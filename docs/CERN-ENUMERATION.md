@@ -1,4 +1,4 @@
-# Enumerating CERN Open Data: four routes, none complete
+# CERN Open Data: four routes, one gap
 
 Measured 2026-09-05 against `opendata.cern.ch`. Reproduce with `npm run cern` and `npm run cern:oai`.
 

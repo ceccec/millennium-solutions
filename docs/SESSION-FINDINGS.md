@@ -1,4 +1,4 @@
-# What this session measured, and what it learned
+# What a session measured, and learned
 
 Findings computed in the 2026-09-04 session, exported from the agent's own memory store into this
 repository, because they were computed here and belong here. Each is a rail derived from a measured

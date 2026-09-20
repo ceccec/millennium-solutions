@@ -64,6 +64,28 @@ for (const f of files) {
 for (const v of missingVars) { console.log(`  ✗ ${v} — used and never defined; it renders as nothing`); bad++ }
 for (const k of missingKeyframes) { console.log(`  ✗ ${k} — animated with no @keyframes; it simply does not play`); bad++ }
 
+// ── A RULE WHOSE SELECTOR NOTHING CAN MATCH IS DEAD STYLE ────────────────────────────────────────────────
+// The first version of this gate passed `:root[data-a432]` because the variables inside it are defined and
+// used — it never asked whether the block could apply. Nothing in the repository set that attribute, so the
+// whole shadcn-style token orchestration was inert on every page of the live site, and --primary, --ring and
+// --accent resolved to empty. The gap was found in a browser, not here, which is the reason this exists.
+//
+// It checks attribute selectors only, and only for attributes this tree would have to set itself: `data-*`.
+// A class or an element selector can be matched by content from anywhere; a data attribute in a repository
+// that never writes it is a rule waiting for a hand that never arrives.
+const setters = files.concat(execSync('git ls-files "*.ts" "*.vue" "*.md" "*.html"', { encoding: 'utf8' }).split('\n').filter(Boolean))
+const setterText = [...new Set(setters)].map((f) => readFileSync(f, 'utf8')).join('\n')
+for (const f of files) {
+  for (const m of readFileSync(f, 'utf8').matchAll(/\[(data-[A-Za-z0-9-]+)[\]=]/g)) {
+    const attr = m[1]
+    const set = new RegExp(`setAttribute\\(\\s*['"\`]${attr}|${attr}\\s*=|:${attr}|\\b${attr}\\b\\s*:`).test(setterText)
+    if (!set) {
+      console.log(`  ✗ ${f} — [${attr}] is styled and nothing in this tree ever sets it; the rule can never apply`)
+      bad++
+    }
+  }
+}
+
 // ── THE SUBSTRATE COMPUTES, SO ITS NUMBERS MUST DERIVE ───────────────────────────────────────────────────
 // This stylesheet is not decoration: `@property --a432-hue` is a REGISTERED, typed, interpolatable value the
 // browser computes with, and every themed colour on every page is `hsl(var(--a432-hue) …)`. It had

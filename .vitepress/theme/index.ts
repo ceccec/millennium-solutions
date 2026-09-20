@@ -35,7 +35,17 @@ export default {
     'layout-bottom': () => h(Funding),
     'aside-bottom': () => h(Sponsor),
   }),
+  // THE A432 TOKENS WERE INERT ON EVERY PAGE. custom.css gates the whole shadcn-style token block behind
+  // `:root[data-a432]`, and NOTHING set that attribute — the selector appeared in exactly one place in the
+  // repository, its own definition. So --primary, --ring and --accent resolved to empty everywhere, on a
+  // live site, for as long as the block has existed. Measured in the browser: data-a432 null, all three
+  // tokens empty, while --a432-hue itself resolved correctly to 200.
+  //
+  // It is set here, on the client, rather than by removing the gate from the CSS: the attribute is what lets
+  // a page opt OUT of the orchestration, and deleting it would take that with it. The guard is for the
+  // server pass, where there is no document.
   enhanceApp({ app }) {
+    if (typeof document !== 'undefined') document.documentElement.setAttribute('data-a432', '')
     app.component('Funding', Funding)
     app.component('Sponsor', Sponsor)
     app.component('Hero', Hero)

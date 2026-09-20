@@ -79,6 +79,15 @@ const extractLean = (key: string): string => {
   return m ? ('theorem ' + key + ' :' + m[1] + ':= by decide').replace(/[ \t]+$/gm, '') : ''
 }
 
+// THE HEADING, DERIVED ONCE. The ledger name carries the file, the declaration, up to 240 characters of Lean
+// statement and the tactic that closed it — a complete record, and far too much for an <h1>. VitePress takes
+// <title> from the heading, so theorem pages shipped titles up to 700 characters against the 60 this
+// repository enforces elsewhere; on a phone the heading was a wall of `(List.range 6).all (fun i => …)`.
+// The statement is still on the page in its own <pre>, and the ledger name is untouched — it is append-only,
+// and the defect was in the display, not in the record.
+const shortHeading = (name: string): string =>
+  (/lean [^:]+: ([^—]+)/.exec(name)?.[1] ?? name).trim().slice(0, 72)
+
 export default {
   paths() {
     // 1 · the discovery ledger — unchanged
@@ -94,6 +103,17 @@ export default {
       params: {
         // THE NAME AS SHOWN, NOT AS SEALED (2026-09-14): 1,017 revoked names were sealed carrying the Clay floor the author
         // ordered removed. The ledger is append-only, so they stay as sealed; the page shows them without it and says so.
+        // THE HEADING, SHORT ENOUGH TO BE A HEADING. The ledger name carries the file, the declaration, up
+        // to 240 characters of Lean statement and the tactic that closed it — everything a record needs and
+        // far too much for an <h1>. VitePress derives <title> from the heading, so 2,828 theorem pages
+        // shipped titles over the 60-character limit this repository enforces elsewhere, the longest of them
+        // 700. On a phone the heading was a wall of `(List.range 6).all (fun i => …)` where a title belongs.
+        //
+        // The statement is not lost: it is on the page, in its own <pre>, where it can be read as code. What
+        // is dropped from the HEADING is the part that was never a title. The ledger name is untouched —
+        // it is append-only, and rewriting 2,880 of them to tidy a page would be tampering with the record
+        // to fix the presentation of it.
+        short: shortHeading(withoutFloor(e.name)),
         key: e.key, name: withoutFloor(e.name), floorStripped: withoutFloor(e.name) !== e.name, receipt: e.receipt, hues: withHues(ledger, i, N),
         revoked: e.revoked === true, reason: e.reason ?? '', supersededBy: e.supersededBy ?? '',
         // THE STATUS BELONGS IN THE TITLE, NOT ONLY IN THE BODY. 1,754 of 2,441 pages here serve a WITHDRAWN
@@ -133,6 +153,7 @@ export default {
     const S = seven.length
     const millennium = seven.map((e, i) => ({
       params: {
+        short: shortHeading(e.name),
         key: e.key, name: e.name, receipt: e.receipt, hues: withHues(seven, i, S),
         lean: e.lean, problem: e.meta.problem, bound: e.meta.bound,
         outlet: e.meta.outlet, outletName: e.meta.outletName,

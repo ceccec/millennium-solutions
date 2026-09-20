@@ -92,7 +92,6 @@ import { report as infinite } from './src/8/infinite'
 import { report as claims } from './src/claims/index'
 import { report as imprint } from './src/0/imprint'
 import { report as boundariesFloor } from './src/honesty/boundaries'
-import { report as prove } from './src/prove/index'
 </script>
 
 > Descend: **page → digit → module → its computation → the floor.** Fold into any digit,
@@ -154,7 +153,11 @@ Renders the deposit's own test vocabulary into Lean for the kernel to check, and
 **cannot** render as needing an author rather than faking them. The second list is the honest half: a prover
 that silently skipped what it could not translate would look complete and be worthless.
 
-<pre>{{ prove() }}</pre>
+> This is the one module on this page that does **not** recompute in your browser, and saying so is the
+> point of the page. `queue()` reads `scripts/discover.ts` from disk and the translation runs against the
+> repository itself — there is no filesystem here to read. Importing it anyway is what put `existsSync` into
+> the client bundle and threw `TypeError: (0, Ka.existsSync) is not a function` on every page of this site
+> before it finished hydrating. Run it where it can run: `node scripts/fold.ts`.
 
 ### The game · `src/the/game/index.ts`
 

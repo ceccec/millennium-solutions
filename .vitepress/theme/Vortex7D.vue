@@ -15,7 +15,15 @@
 // the animateTransform/animate tags land in the static HTML). Hue drift is CSS. Audio uses the
 // built-in Web Audio + Web Speech APIs — no external assets.
 import { computed, ref, onMounted, onUnmounted, watch } from 'vue'
-import { orbit as orbitOf } from '../../src/api/index.ts'  // the doubling orbit, computed — not retyped here
+// THE LEDGER-BACKED API CANNOT RUN IN A BROWSER, and importing it here put `existsSync` into the client
+// bundle: every page on the live site threw `TypeError: (0, Ka.existsSync) is not a function` before
+// hydrating. src/api guards each value by reading the ledger from DISK and refusing to serve one whose
+// theorem is not live — a guarantee worth having, and one a browser has no filesystem to honour.
+//
+// The guard is not lost, it moves to where it can actually run: the release chain verifies on every build
+// that each of these keys is live, and a stale ledger fails there long before a page is served. What ships
+// to the browser is the computation from src/0, which is the same value the guard would have released.
+import { vortexOrbit as orbitOf } from '../../src/0/index.ts'
 import { forwardRays } from '../../src/7/rays.ts'   // the ray extraction, computed once and shared with the lattice
 
 const props = defineProps({
