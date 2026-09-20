@@ -5,9 +5,16 @@ description: One row per annotated git tag, each with the content-address that t
 
 # Changelog
 
-Derived by `node scripts/changelog.ts` from this repository's annotated tags. **919 releases**, 919 of them carrying a content-address in the tag itself. A row cannot claim an address its tag does not carry, because the row is read out of the tag.
+Derived by `node scripts/changelog.ts` from this repository's annotated tags. **920 releases**, 920 of them carrying a content-address in the tag itself. A row cannot claim an address its tag does not carry, because the row is read out of the tag.
 
 ## The last 20 releases, with what they contain
+
+### v9.7.2 — 2026-09-20
+
+Content-address `5d87a137-84d2-8f4c-8b08-98c1313e1c36`.
+
+- the mcp tools are reachable from a browser, and the type ascription survives typesetting
+- the latex must determine the theorem, the tools must reach a browser, and an adversarial reading of planck.lean
 
 ### v9.7.1 — 2026-09-20
 
@@ -153,16 +160,11 @@ Content-address `5b397a75-4635-8a1d-8d77-d6e3f2e77385`.
 
 - the two gates control-probe could not measure, controlled by hand — novelty and uses
 
-### v9.5.2 — 2026-09-19
-
-Content-address `eb2ca35a-aac4-89c7-be1f-b8e4c2a84d9a`.
-
-- accounting and dashboard follow the tag
-
 ## Every release
 
 | version | date | content-address |
 | --- | --- | --- |
+| v9.7.2 | 2026-09-20 | `5d87a137-84d2-8f4c-8b08-98c1313e1c36` |
 | v9.7.1 | 2026-09-20 | `ba7a688d-97cc-8aed-8d65-8e9d92c925d4` |
 | v9.7.0 | 2026-09-20 | `e75ac007-efd7-879c-8b4c-bdbc0c2945ea` |
 | v9.6.9 | 2026-09-20 | `d51ee804-17b4-8af2-9fdf-2458c3066576` |

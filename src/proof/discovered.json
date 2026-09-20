@@ -20328,5 +20328,45 @@
     "key": "lean_planck_the_planck_mantissa_factors_outside_the_lattice",
     "name": "lean planck.lean: the_planck_mantissa_factors_outside_the_lattice — ellP = 5 * 323251 ∧ (List.range' 2 568).all (fun d => 323251 % d ≠ 0) ∧ ! reachable ellP — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "a8b669c6-e11d-8b66-a7b5-58cccea759b4"
+  },
+  {
+    "key": "lean_handle_the_four_hex_field_round_trips_over_its_whole_space",
+    "name": "lean handle.lean: the_four_hex_field_round_trips_over_its_whole_space — (List.range 16).all (fun a => (List.range 16).all (fun b => (List.range 16).all (fun c => (List.range 16).all (fun d => let n := fromNibs a b c d nib n 0 == a && nib n 1 == b && nib n 2 == c && nib n 3 == d && n < 65536)))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a2d36cba-f5e8-8d33-ad99-46ab5fc697c9"
+  },
+  {
+    "key": "lean_handle_the_field_runs_from_zero_to_its_last_value",
+    "name": "lean handle.lean: the_field_runs_from_zero_to_its_last_value — fromNibs 0 0 0 0 = 0 ∧ fromNibs 15 15 15 15 = 65535 ∧ (List.range 16).all (fun d => fromNibs 0 0 0 d == 4096 * d) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7714e0a9-e35c-8230-b107-5a18a75b7c3f"
+  },
+  {
+    "key": "lean_handle_a_uuid_is_thirty_two_hex_and_exactly_three_groups_are_four_wide",
+    "name": "lean handle.lean: a_uuid_is_thirty_two_hex_and_exactly_three_groups_are_four_wide — groups.foldl (· + ·) 0 = 32 ∧ (groups.filter (fun g => g == 4)).length = 3 ∧ groups.length = 5 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a998790f-3068-8735-af18-19889c088f19"
+  },
+  {
+    "key": "lean_handle_the_address_space_is_finite_so_enough_messages_must_share_an_address",
+    "name": "lean handle.lean: the_address_space_is_finite_so_enough_messages_must_share_an_address — space = 16 ^ 4 ∧ space = 2 ^ 16 ∧ ((List.range 17).map (fun m => m % 16)).eraseDups.length < 17 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1d85c5d8-e141-816f-86f8-2ab7c7c02b99"
+  },
+  {
+    "key": "lean_handle_one_address_two_messages_and_the_handle_is_what_tells_them_apart",
+    "name": "lean handle.lean: one_address_two_messages_and_the_handle_is_what_tells_them_apart — addr 3 = addr 19 ∧ under 0 3 = under 0 19 ∧ under 0 3 ≠ under 1 19 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1b3ee59d-ca46-8a30-bfba-a11d8a8565b2"
+  },
+  {
+    "key": "lean_handle_the_same_message_at_two_positions_never_seals_alike",
+    "name": "lean handle.lean: the_same_message_at_two_positions_never_seals_alike — (List.range 32).all (fun m => (List.range 8).all (fun i => (List.range 8).all (fun j => i == j || sealAt m i != sealAt m j))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "606fefb8-c2ab-86e5-b55c-a1a3240c6ba1"
+  },
+  {
+    "key": "lean_handle_reordering_the_handles_always_moves_the_fifth",
+    "name": "lean handle.lean: reordering_the_handles_always_moves_the_fifth — (perms.map (fun p => fold4 (p.get! 0) (p.get! 1) (p.get! 2) (p.get! 3))).eraseDups.length = 24 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "0509ef1a-9b13-85e0-a20c-325d6c60bcb5"
+  },
+  {
+    "key": "lean_handle_an_address_never_determines_the_message_it_addresses",
+    "name": "lean handle.lean: an_address_never_determines_the_message_it_addresses — (List.range 16).all (fun a => 1 < ((List.range 64).filter (fun m => addr m == a)).length) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "147d6591-a70a-8fa8-8bb8-7459813acfe5"
   }
 ]
