@@ -295,6 +295,7 @@ export default defineConfig({
           { text: 'Provenance', link: '/forensic' },
           { text: 'Axiom index', link: '/AXIOMS' },
           { text: 'Lessons', link: '/LESSONS' },
+          { text: 'Findings', link: '/FINDINGS' },
           { text: 'Compare (standards)', link: '/compare' },
           { text: 'Examples (live)', link: '/examples' },
           { text: 'Verify (live app)', link: '/verify' },
