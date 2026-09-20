@@ -202,7 +202,7 @@ const t2 = t3.filter((c) => {
 {
   const prior: Record<string, string> = existsSync('src/proof/covered.json')
     ? JSON.parse(readFileSync('src/proof/covered.json', 'utf8')) : {}
-  const merged = Object.fromEntries([...coveredBy])
+  const merged = { ...prior, ...Object.fromEntries([...coveredBy]) }
   writeFileSync('src/proof/covered.json', JSON.stringify(Object.fromEntries(Object.entries(merged).sort()), null, 2) + '\n')
 }
 const overlap = t3.length - t2.length

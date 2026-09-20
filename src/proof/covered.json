@@ -2,7 +2,9 @@
   "double_carries_tetA_onto_tetB": "the_counter_rotation_has_period_two",
   "double_carries_tetB_onto_tetA": "the_counter_rotation_has_period_two",
   "negate_carries_units_onto_orbit": "universal_z9_reflection_permutes_the_units",
+  "roots_of_unity_cancel": "the_first_three_power_sums_hold_to_two_hundred",
   "square_collapses_triad_to_one_value": "triad_nilpotent",
+  "the_second_returns_from_the_metre_and_the_period_for_every_s": "the_second_returns_from_the_metre_and_the_period_at_every_duration",
   "triad_is_closed_under_square": "triad_nilpotent",
   "units_is_closed_under_negate": "universal_z9_reflection_permutes_the_units"
 }
