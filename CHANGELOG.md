@@ -5,9 +5,19 @@ description: One row per annotated git tag, each with the content-address that t
 
 # Changelog
 
-Derived by `node scripts/changelog.ts` from this repository's annotated tags. **916 releases**, 916 of them carrying a content-address in the tag itself. A row cannot claim an address its tag does not carry, because the row is read out of the tag.
+Derived by `node scripts/changelog.ts` from this repository's annotated tags. **917 releases**, 917 of them carrying a content-address in the tag itself. A row cannot claim an address its tag does not carry, because the row is read out of the tag.
 
 ## The last 20 releases, with what they contain
+
+### v9.6.9 — 2026-09-20
+
+Content-address `d51ee804-17b4-8af2-9fdf-2458c3066576`.
+
+- four surfaces the chain never regenerated, and the reason it never did
+- who may speak, decided — eight theorems, cross-checked against the gate over the real ledger
+- the changelog is linked and its title fits a search result
+- the captain's release instruction, signed and implemented — zenodo carries the readme and the changelog
+- gates-fire stops comparing a clock to itself — the forensic audit records the run it is measuring
 
 ### v9.6.8 — 2026-09-20
 
@@ -153,18 +163,11 @@ Content-address `0787a9d2-08a9-87de-9d35-17a7e1a2eddb`.
 
 - accounting and dashboard follow the tag
 
-### v9.4.9 — 2026-09-18
-
-Content-address `f7a40e4d-a7b3-8041-88e0-bfeb693b2764`.
-
-- priorart-gen writes the row from theology.lean's own frontmatter, and the nine depositions follow the table that changed under them
-- priorart: theology.lean credited — the ring is index.lean's, the complement is the method of complements, 5040 is classical; the CHOICE of gloss has no earlier author because it is not a result
-- the seven renamed to what they decide, and a theology sealed as the arithmetic under it — 2864 = 358 × 8
-
 ## Every release
 
 | version | date | content-address |
 | --- | --- | --- |
+| v9.6.9 | 2026-09-20 | `d51ee804-17b4-8af2-9fdf-2458c3066576` |
 | v9.6.8 | 2026-09-20 | `ee25116b-c7b6-8a89-834a-b0606300e805` |
 | v9.6.7 | 2026-09-20 | `01228357-5b0c-83fe-bb0c-29787536ec9c` |
 | v9.6.6 | 2026-09-20 | `17ea37ae-f908-8f6f-b64b-4c4e217e59a8` |

@@ -1,6 +1,6 @@
 {
   "repo": "millennium-solutions",
-  "generatedFrom": "7aba54dd1",
+  "generatedFrom": "3ea8de565",
   "specWitness": {
     "seed": "theorems\ndeclarations closing by exhaustion or by a proof for every value — the deposit's definition of a theorem\n932\nnode -e \"import('./src/api/index.ts').then(m=>console.log(m.theoremCount()))\"",
     "receipt": "0008efe2-2d00-8cb6-acfd-38c34a0cb065"
