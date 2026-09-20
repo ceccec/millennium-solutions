@@ -65,6 +65,12 @@ const formulaOf = (key: string) => {
 }
 
 const hueOf = (rec: string) => (parseInt(rec.replace(/-/g, '').slice(0, 2), 16) * 40) % 360
+// THE BYTE ITSELF, so the page can hand it to CSS and let the stylesheet do the arithmetic. hueOf above is
+// the same rule custom.css computes as mod(b0 × --a432-step, 360); scripts/css-gate.ts checks the two agree
+// over all 256 values a byte can take. Emitting b0 rather than the finished hue is what makes the colour a
+// property of the ADDRESS rather than of a script: the page carries its first byte, and every tint on it
+// follows from that with nothing running.
+const firstByte = (rec: string) => parseInt(rec.replace(/-/g, '').slice(0, 2), 16)
 const withHues = <T extends { receipt: string }>(list: T[], i: number, N: number) => {
   const hues: number[] = []
   for (let k = -3; k <= 3; k++) hues.push(hueOf(list[(i + k + N) % N].receipt)) // 7 surrounding theorems
@@ -113,7 +119,7 @@ export default {
         // is dropped from the HEADING is the part that was never a title. The ledger name is untouched —
         // it is append-only, and rewriting 2,880 of them to tidy a page would be tampering with the record
         // to fix the presentation of it.
-        short: shortHeading(withoutFloor(e.name)),
+        short: shortHeading(withoutFloor(e.name)), b0: firstByte(e.receipt),
         key: e.key, name: withoutFloor(e.name), floorStripped: withoutFloor(e.name) !== e.name, receipt: e.receipt, hues: withHues(ledger, i, N),
         revoked: e.revoked === true, reason: e.reason ?? '', supersededBy: e.supersededBy ?? '',
         // THE STATUS BELONGS IN THE TITLE, NOT ONLY IN THE BODY. 1,754 of 2,441 pages here serve a WITHDRAWN
@@ -153,7 +159,7 @@ export default {
     const S = seven.length
     const millennium = seven.map((e, i) => ({
       params: {
-        short: shortHeading(e.name),
+        short: shortHeading(e.name), b0: firstByte(e.receipt),
         key: e.key, name: e.name, receipt: e.receipt, hues: withHues(seven, i, S),
         lean: e.lean, problem: e.meta.problem, bound: e.meta.bound,
         outlet: e.meta.outlet, outletName: e.meta.outletName,

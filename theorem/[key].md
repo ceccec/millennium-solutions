@@ -56,7 +56,10 @@ const desc = computed(() => isLean.value
 
 # {{ $params.statusPrefix }}{{ $params.short || $params.name }}
 
-<p class="thm-fullname">{{ $params.name }}</p>
+<p class="thm-fullname address-tinted" :style="{ '--b0': $params.b0 }">{{ $params.name }}</p>
+
+<!-- the colour above is computed by custom.css from this page's own content-address: its first
+     byte times the ring's degrees per digit. No script computes it; the stylesheet does. -->
 
 <div itemscope itemtype="https://schema.org/CreativeWork">
 <meta itemprop="name" :content="$params.name" />

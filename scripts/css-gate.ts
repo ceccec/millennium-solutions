@@ -118,6 +118,36 @@ if (!declared) {
   }
 }
 
+// ── THE STYLESHEET'S ARITHMETIC AGREES WITH THE TREE'S, OVER EVERY BYTE ──────────────────────────────────
+// custom.css computes a page's colour from its content-address: --address-hue = mod(b0 × step, 360). The
+// tree computes the same thing in theorem/[key].paths.ts and scripts/discover.ts as
+// `(parseInt(rec.slice(0,2), 16) * 40) % 360`. Two derivations of one fact is this repository's named
+// defect, and here it is unavoidable — CSS cannot import a TypeScript function — so the second derivation
+// is checked against the first instead of trusted: the formula is READ OUT of the stylesheet, its step must
+// be the A432_STEP the tree computes, and the two are compared over all 256 values a byte can take.
+//
+// That is the lean-agree pattern pointed at the UI. A stylesheet that drifts from the ring it renders would
+// otherwise look perfect and be showing a different deposit.
+const stepDecl = /@property\s+--a432-step[^}]*initial-value:\s*([0-9.]+)/.exec(themed)
+const hueRule = /--address-hue:\s*mod\(calc\(var\(--b0\)\s*\*\s*var\(--a432-step\)\),\s*([0-9]+)\)/.exec(themed)
+if (!stepDecl || !hueRule) {
+  console.log(`  ✗ ${CSS} — the address-to-hue derivation is not in the shape this gate can check against the tree`)
+  bad++
+} else if (Number(stepDecl[1]) !== A432_STEP) {
+  console.log(`  ✗ ${CSS} — --a432-step is ${stepDecl[1]} and the tree computes ${A432_STEP}; the page would colour by a different ring`)
+  bad++
+} else {
+  const modulus = Number(hueRule[1])
+  const fromCss = (b: number): number => (b * Number(stepDecl[1])) % modulus
+  const fromTree = (b: number): number => (b * A432_STEP) % 360
+  const disagree = Array.from({ length: 256 }, (_, b) => b).filter((b) => fromCss(b) !== fromTree(b))
+  if (disagree.length) {
+    console.log(`  ✗ ${CSS} — the stylesheet's hue disagrees with the tree's at ${disagree.length} of 256 byte value(s),`)
+    console.log(`      first at ${disagree[0]}: css ${fromCss(disagree[0])}° vs tree ${fromTree(disagree[0])}°`)
+    bad++
+  }
+}
+
 if (bad) {
   console.log(`\n✗ css: ${bad} gap(s). Neither raises an error anywhere — the page loads and is quietly wrong.`)
   process.exit(1)
@@ -125,4 +155,5 @@ if (bad) {
 console.log(`✓ css: ${files.length} stylesheet(s) and component(s) — every custom property resolves in its own`)
 console.log(`  file or in the global theme, every animation names keyframes that exist`
   + `, and ${EXTERNAL.length} prefix(es) are declared external (${EXTERNAL.map((e) => e.prefix + ' — ' + e.whose).join('; ')})`)
+console.log(`  the address computes its own colour: mod(b0 × ${A432_STEP}, 360) agrees with the tree at all 256 byte values`)
 console.log(`  --a432-hue starts at the heart's ray — ${heart[0]} × ${A432_STEP}° = ${heart[0] * A432_STEP}° — derived from the ring, not typed into the sheet`)

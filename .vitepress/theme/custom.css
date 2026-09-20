@@ -50,6 +50,33 @@
    Cosmetic only — no fact, no 0/7, changes. The aura, made responsive. */
 @property --a432-hue { syntax: '<number>'; initial-value: 200; inherits: true; }
 
+/* ── THE ADDRESS COMPUTES ITS OWN COLOUR, IN CSS ───────────────────────────────────────────────────────────
+   A content-address is 16 bytes and every hue in this deposit is one function of its first: hueOf(rec) =
+   (byte0 × A432_STEP) mod 360, the same rule scripts/discover.ts and theorem/[key].paths.ts apply. That
+   arithmetic was done in JavaScript and handed to the page as a finished number.
+
+   CSS can do it. `mod()` and `calc()` compute it, `@property` makes the result a typed, interpolatable
+   value, and a page that already knows its receipt at build time can set --b0 in an inline style — so the
+   colour of a page is derived from its address with no script running at all. Verified in a browser before
+   it was written here: mod(119 × 40, 360) = 80, identical to the JavaScript.
+
+   --a432-step is NOT decoration and is not free: scripts/css-gate.ts refuses it unless it equals the
+   A432_STEP the tree computes, and checks this formula against hueOf over all 256 byte values. */
+@property --b0        { syntax: '<number>'; initial-value: 5;  inherits: true; }
+@property --a432-step { syntax: '<number>'; initial-value: 40; inherits: true; }
+
+/* THE HUE IS COMPUTED WHERE THE BYTE IS, NOT AT THE ROOT. Declaring --address-hue on :root and setting --b0
+   on an element does not work, and the browser says so plainly once you look: the element carried --b0: 16
+   while its hue read `mod(calc(5 * 40), 360)` — the registered INITIAL value. Custom properties inherit,
+   but a property is computed where it is DECLARED, so :root resolved var(--b0) against :root's own. Every
+   page rendered the same colour and looked deliberate. Declared on the element that carries the byte, each
+   page now takes the hue of its own address. */
+.address-tinted {
+  --address-hue: mod(calc(var(--b0) * var(--a432-step)), 360);
+  color: hsl(var(--address-hue) 70% 45%);
+  border-color: hsl(var(--address-hue) 60% 55%);
+}
+
 /* shadcn-style HSL design tokens, all derived from the one vortex hue — a documented
    token layer for components. The live VitePress brand re-theme is driven directly in
    JS (theme/index.ts) with concrete hsl() strings, because nesting these vars across a
