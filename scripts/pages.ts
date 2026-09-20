@@ -12,12 +12,15 @@
 //
 // DISCIPLINE: a claim is written only if adjudicate() seals it — gate-clean AND its test holds. A constant
 // -true test is refused outright. The generator exits non-zero and writes nothing if any claim fails.
-import { readFileSync, writeFileSync } from 'node:fs'
+import { readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { CLAIMS as REGISTERED } from '../src/claims/index.ts'
 import { MILLENNIUM, AUTHOR_CLAIM } from '../src/millennium/index.ts'
 import { all as leanDocs } from './leandoc.ts'
 import { analytics } from './analytics.ts'
 import { queue } from '../src/prove/index.ts'
+// The tool surface, imported from the module that owns it. Counting `{ name: '` in its source would be a
+// second implementation of enumerating the tools, and the count nobody runs is the one that drifts.
+import { TOOLS as MCP_TOOLS, WRITES as MCP_WRITES, LISTED as MCP_DOOR } from './mcp.ts'
 
 // ONCE, NOT ONCE PER PAGE. `body()` is called twice — for README.md and for index.md — and it walked the
 // whole publication queue through `translate` each time. Measured: 1,555 items at about 4 ms apiece, twice,
@@ -157,6 +160,21 @@ const CLAIMS: Claim[] = [
   { section: S(5, 'What the gate does and does not do'),
     derive: () => { const falseHolds = computes('two plus two equals five').binary === 1
       return { text: `the gate does not decide whether a statement is true: "two plus two equals five" ${falseHolds ? 'passes it' : 'is drained by it'}, so holding means not drained, never correct`, ok: falseHolds, from: ['two plus two equals five'] } } },
+
+  // REACHABLE FROM A PROGRAM, SAID ON THE PAGES A READER OPENS. Measured 2026-09-20: the MCP server was
+  // named in CHALLENGES.md, WHITEPAPER.md, guide.md and harness.md, and in neither README.md nor the
+  // homepage nor llms.txt — the three surfaces a reader and a crawler actually arrive at. A machine
+  // interface nobody is told about is one nobody uses.
+  { section: S(5, 'What the gate does and does not do'),
+    derive: () => { const n = MCP_TOOLS.length, w = MCP_WRITES.size
+      const transports = ['scripts/mcp.ts', 'scripts/mcp-http.ts'].filter((f) => existsSync(f))
+      return { text: `the tools are reachable from a program: ${n} of them over ${transports.length} transport(s) — JSON-RPC on stdio for a model client, and the same surface over HTTP for a browser — of which ${w} write to this tree and are refused unless the server is started with --allow-write`,
+        ok: n > 0 && transports.length > 0 && w < n, from: [n, transports.length, w] } } },
+
+  { section: S(5, 'What the gate does and does not do'),
+    derive: () => { const door = MCP_DOOR.length, n = MCP_TOOLS.length
+      return { text: `the stdio server advertises ${door} of those ${n} and reaches the rest through call_tool, because a model client pays for every tool description on every turn; the HTTP server lists them all, because a browser pays nothing for a list and cannot guess what it was not shown`,
+        ok: door > 0 && door < n, from: [door, n] } } },
 
   // THE ADVANTAGE, SAID WHERE IT IS READ. Measured against the front pages, four of eight proved properties
   // were stated and the four missing ones were the whole advantage — the log path, the widening gap, the

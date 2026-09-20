@@ -70,6 +70,10 @@ last because the orbit never reaches it.
   <sub>SEALED · `37ab7769-a1ac-8ef6-9809-e214d6285057`</sub>
 - The gate does not decide whether a statement is true: "two plus two equals five" passes it, so holding means not drained, never correct.
   <sub>SEALED · `f63cc6c5-44f9-8d92-afa7-ab9483573b28`</sub>
+- The tools are reachable from a program: 21 of them over 2 transport(s) — JSON-RPC on stdio for a model client, and the same surface over HTTP for a browser — of which 4 write to this tree and are refused unless the server is started with --allow-write.
+  <sub>SEALED · `e15edd81-96c8-81fa-8c15-b971c7cb49e5`</sub>
+- The stdio server advertises 2 of those 21 and reaches the rest through call_tool, because a model client pays for every tool description on every turn; the HTTP server lists them all, because a browser pays nothing for a list and cannot guess what it was not shown.
+  <sub>SEALED · `fd43fc14-9388-8bd2-ae57-e99b1c5c1b8e`</sub>
 
 ## The floor
 
@@ -266,4 +270,4 @@ across** — deposited as [10.5281/zenodo.21781603](https://doi.org/10.5281/zeno
 
 ---
 
-*15 claims, all verified · 964 Lean theorems · 2920 ledger entries · trial root `b9eae99d-3b7e-8d16-b09b-2575f7e67b88` · integrity, not truth*
+*17 claims, all verified · 964 Lean theorems · 2920 ledger entries · trial root `0ac33a9a-4a52-8693-9b2d-029bed919420` · integrity, not truth*

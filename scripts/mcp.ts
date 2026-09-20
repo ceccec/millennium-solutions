@@ -25,6 +25,13 @@ type LedgerEntry = { key: string; name: string; receipt: string }
 const loadLedger = (): LedgerEntry[] => existsSync('src/proof/discovered.json') ? __ledger() : []
 const send = (m: unknown) => process.stdout.write(JSON.stringify(m) + '\n')
 
+// WHETHER A TOOL WRITES IS A PROPERTY OF THE TOOL, NOT OF THE TRANSPORT THAT REACHES IT. This set lived in
+// scripts/mcp-http.ts, which meant anything wanting to know it had to import a module that calls
+// server.listen() at load — so the only way to ask "which tools write?" was to start a server. It belongs
+// beside the tools. Named rather than matched by prefix: a rule like "anything called seal_*" lets the next
+// writing tool through by being named differently.
+export const WRITES = new Set(['lean_seal', 'lean_generate', 'pages', 'ledger_trial'])
+
 export const TOOLS = [
   { name: 'handle', description: 'The SHORT FORM: the first four hex of an address, plus the message, determine the whole address — so nothing but the message ever travels. Pass text to mint a handle; pass handle AND text to resolve one. ROUTES and REJECTS, never identifies: 16 bits over 2912 sealed receipts collide 71 times (birthday expectation 64.7), and the collision-free minimum today is 7 hex. The window is the FRONT four hex because hex 12..16 and 16..20 overlap the forced version/variant bits and carry less — and hex 12..16 is the third dash-group of the display form, the one an eye would reach for.',
     inputSchema: { type: 'object', properties: { text: { type: 'string' }, handle: { type: 'string' } }, required: ['text'] } },

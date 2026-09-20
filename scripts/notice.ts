@@ -11,6 +11,11 @@
 import { writeFileSync, readFileSync, readdirSync } from 'node:fs'
 import { ledger, statusOf, theoremCount, leanFiles } from '../src/api/index.ts'
 import { toUuid } from '../src/0/index.ts'
+// Imported from the module that owns the tool surface, so this notice cannot claim a tool count the server
+// does not have. Importing scripts/mcp.ts is safe: its stdio loop is guarded on argv, so loading it starts
+// nothing. scripts/mcp-http.ts is deliberately NOT imported — it calls server.listen() at load, and a
+// documentation generator must not be able to open a port.
+import { TOOLS as MCP_TOOLS, WRITES as MCP_WRITES } from './mcp.ts'
 
 // THE ORCID IS READ, NOT TYPED. attribution-gate refused the first version of this file: it named the
 // author with no ORCID, so "a citation from here resolves to nobody" — the correct catch for a notice whose
@@ -148,6 +153,24 @@ Independently verifiable by a third party, without trusting the depositor — cl
   settles. The two are stated separately here so neither is read into the other.
 - **It is not legal advice**, and nothing in this file is a legal conclusion. It states what is recorded and
   what a reader can check.
+
+## Reaching this from a program, not only reading it
+
+Everything above can be asked for rather than parsed. This deposit ships an MCP server — JSON-RPC 2.0,
+${MCP_TOOLS.length} tools, no SDK dependency — so a model client or a browser can recompute what this notice states
+instead of trusting it.
+
+    node scripts/mcp.ts            JSON-RPC over stdio, for a model client
+    node scripts/mcp-http.ts       the same surface over HTTP, for a browser
+
+The tools that matter for checking a claim made here: \`ledger_status\` (composition of the ledger),
+\`forensics\` (recompute the receipt chain link by link), \`lean_verify\` (put every theorem to the kernel),
+\`recompute\` (re-run every candidate's own test), \`handle\` (the four-hex short form), and \`verify\` (audit a
+sentence, or look a uuid up in both evidence sets). None of them requires an account or a key.
+
+${MCP_WRITES.size} of the ${MCP_TOOLS.length} write to the tree. Over HTTP they are refused outright unless the server is
+started with \`--allow-write\`, the server binds to loopback, and every request needs a bearer token minted at
+startup — because a page in any tab can POST to localhost, and these tools compile Lean and write the ledger.
 
 ## For model developers and crawlers
 

@@ -53,15 +53,52 @@ const imported = new Set(all.flatMap((f) => [...readFileSync(`${DIR}/${f}`, 'utf
 // unconditionally on every run cost more than the verification it exists to support — the warm run was slower
 // than the cold one until this was keyed on the same content hash. Keyed on the SOURCE bytes: if the file has
 // not changed and its .olean is on disk, the compiled artefact is exactly what a rebuild would produce.
-for (const mod of imported) {
-  const src = all.find((f) => f.toLowerCase() === mod.toLowerCase() + '.lean')
+// DEPENDENCY ORDER, NOT DIRECTORY ORDER. This loop ran over `imported` in readdir order — Fnv, Families,
+// Sequences, Demand, Index, Z9, Merkle, Address, … — and merkle.lean imports Address, which came AFTER it.
+// In a tree that already holds .olean files the order never mattered, because every module was already
+// built by an earlier run; .olean is gitignored, so a CLEAN CHECKOUT is the only place this shows, and
+// there it fails: Merkle cannot build, the error is swallowed below, and ledgerclaims.lean then reports
+// `unknown module prefix 'Merkle'` while speed.lean follows it down. Two files that "do not compile" with
+// nothing wrong in either of them.
+//
+// Found by verifying a detached worktree at HEAD rather than the working tree — which is the only place a
+// fresh clone is simulated, and the only place the deposit's own instruction ("clone it and run npm run
+// lean") is actually tested. The tree passed the whole time.
+//
+// The walk is depth-first over each module's OWN imports, so a transitive dependency that nothing names at
+// top level is built too, and a cycle is named rather than silently half-built.
+const srcOf = (mod: string) => all.find((f) => f.toLowerCase() === mod.toLowerCase() + '.lean')
+const importsOfModule = (mod: string): string[] => {
+  const f = srcOf(mod)
+  return f ? [...readFileSync(`${DIR}/${f}`, 'utf8').matchAll(/^import\s+([A-Za-z_0-9.]+)/gm)].map((m) => m[1]).filter(srcOf) : []
+}
+const buildOrder: string[] = []
+const placed = new Set<string>()
+const visit = (mod: string, stack: string[] = []) => {
+  if (placed.has(mod)) return
+  if (stack.includes(mod)) throw new Error(`lean: import cycle — ${[...stack, mod].join(' → ')}`)
+  for (const d of importsOfModule(mod)) visit(d, [...stack, mod])
+  placed.add(mod)
+  buildOrder.push(mod)
+}
+for (const m of imported) visit(m)
+
+for (const mod of buildOrder) {
+  const src = srcOf(mod)
   if (!src) continue
   const olean = `${DIR}/${mod}.olean`
   const key = 'olean:' + mod
   const h = sha(readFileSync(`${DIR}/${src}`, 'utf8'))
   if (!FULL && existsSync(olean) && cache[key]?.hash === h) continue
+  // A SWALLOWED DEPENDENCY FAILURE IS REPORTED AS THE WRONG FILE'S FAULT. The bare catch here said
+  // "reported below", and what got reported below was ledgerclaims.lean failing to find a module — a file
+  // with nothing wrong in it, named as the defect, while the build that actually failed said nothing.
+  // Blaming the subject for the instrument, at the level of the build itself.
   try { execSync(`lean -o ${olean} ${DIR}/${src}`, { stdio: 'pipe', env: ENV })
-        cache[key] = { hash: h, format: CACHE_FORMAT, ok: true, line: '', theorems: 0 } } catch { /* reported below */ }
+        cache[key] = { hash: h, format: CACHE_FORMAT, ok: true, line: '', theorems: 0 } } catch (e) {
+    const msg = String((e as { stderr?: Buffer }).stderr ?? (e as Error).message ?? '').trim().split('\n').slice(0, 3).join(' · ')
+    console.log(`  ✗ ${src} is imported by another file and does NOT build — every file importing ${mod} will fail after this, for this reason: ${msg}`)
+  }
 }
 
 let bad = 0, total = 0
