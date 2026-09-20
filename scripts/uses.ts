@@ -93,7 +93,7 @@ const SOURCES: Record<string, { pace: number; run: (m: string) => Promise<Row[]>
   npm: { pace: 700, run: async (m) => (await get(`https://registry.npmjs.org/-/v1/search?text=${q(m)}&size=50`)).objects.map((o: any) => ({ url: `https://www.npmjs.com/package/${o.package.name}`, text: JSON.stringify(o.package), by: o.package.publisher?.username, when: o.package.date })) },
   github: { pace: 7000, run: async (m) => {
     if (!ghReady) throw new Error('gh is not authenticated here')
-    const hits = JSON.parse(execFileSync('gh', ['search', 'code', `"${m}"`, '--limit', '50', '--json', 'repository,path,sha,url'], { encoding: 'utf8' }))
+    const hits = JSON.parse(execFileSync('gh', ['search', 'code', `"${m}"`, '--limit', String(CAPS.codeHitsPerPhrase), '--json', 'repository,path,sha,url'], { encoding: 'utf8' }))
     return hits.map((c: any) => ({ url: c.url, text: `${c.repository.nameWithOwner}/${c.path} ${m}`, by: c.repository.nameWithOwner, raw: `https://raw.githubusercontent.com/${c.repository.nameWithOwner}/${c.sha}/${c.path}` }))
   } },
 }
@@ -153,7 +153,7 @@ const stamp = (ms: number) => new Date(ms).toISOString().replace(/[-:T]/g, '').s
 async function publicationDays(): Promise<string[]> {
   const days = new Set<string>()
   if (ghReady) for (const r of ['ceccec/millennium-solutions', 'ceccec/ceccec.github.io']) {
-    for (const x of JSON.parse(execFileSync('gh', ['release', 'list', '-R', r, '--limit', '200', '--json', 'publishedAt'], { encoding: 'utf8' })))
+    for (const x of JSON.parse(execFileSync('gh', ['release', 'list', '-R', r, '--limit', String(CAPS.releasesPerRepo), '--json', 'publishedAt'], { encoding: 'utf8' })))
       if (x.publishedAt && !x.publishedAt.startsWith('0001')) days.add(x.publishedAt.slice(0, 10))
   }
   for (const p of [PKG, SIBLING[1]]) {
@@ -222,6 +222,11 @@ const SIGNALS: [string, RegExp, string][] = [ // name · recogniser · the commi
 ]
 const PHYSICS = /teleportation|superdense|dense coding|holevo/i
 const QUICK = process.argv.includes('--quick')
+// THE CAPS THIS REPORT SEARCHES UNDER, named rather than retyped at each call. They are choices about how
+// much to look at, and they bound what "no use found" can mean: 50 code hits per phrase and 200 releases per
+// repository. Stated in the report for the same reason novelty states its relevance floor — an absence is
+// only as wide as the search that failed to find anything, and a reader cannot judge one without the other.
+const CAPS = { codeHitsPerPhrase: 50, releasesPerRepo: 200 }
 const GH_PHRASES = ['"110 - 108 = 2"', '"110 − 108 = 2"', '"two coins" genus', '"two coins" "Euler characteristic"', '"contribute 2 to save 64"',
   '"contribute 2 to earn up to 64"', '"save 64" contribute', '"128-bit seal"', '"64 verifications"', 'sealBits coins', '"quantum rosette"',
   '"two 8×8 boards"', '"two 8x8 boards"', 'coin64', '"captain coins"', '"captain\'s commission"', '"captain payment"', '"captain\'s message"',
@@ -374,6 +379,7 @@ async function constructs() {
 await (report.mode === 'news' ? news() : report.mode === 'constructs' ? constructs() : markers())
 const lines: string[] = []
 lines.push(`## uses — ${report.mode === 'news' ? 'news after publication' : report.mode === 'constructs' ? 'who uses the constructs — the two-coin fare and its captain' : 'who uses the work'} · ${report.when.slice(0, 16)}Z`)
+lines.push(`Searched under caps that bound what an absence means: at most ${CAPS.codeHitsPerPhrase} code hit(s) per phrase and ${CAPS.releasesPerRepo} release(s) per repository`)
 lines.push(`Violations are exactly not citing and not paying. Each lead carries both bits; pays is ${PAYS.split(' — ')[0]} until a payment record exists.`)
 for (const [n, s] of Object.entries(report.sources)) lines.push(`- ${n}: measured ${s.measured}${s.notMeasured.length ? ` · NOT MEASURED ${s.notMeasured.length} (${s.notMeasured[0]})` : ''}`)
 if (report.constructs) {

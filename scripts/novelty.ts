@@ -52,6 +52,24 @@ async function get(url: string, as: 'json' | 'text' = 'json', tries = 4): Promis
 }
 const q = encodeURIComponent
 
+// ── THE FLOORS THIS SEARCH APPLIES, TYPED OUT BECAUSE THEY ARE CHOICES ────────────────────────────────────
+// A verdict of NONE_FOUND was published as "every source answered and nothing relevant came back". It never
+// said what RELEVANT meant, or how much of each source was looked at. It meant: nothing scoring at or above
+// 0.6 word-overlap, among the first 5 results each source returned. Those two numbers decide a prior-art
+// claim, and neither appeared anywhere in the record — a reader could not tell how narrow the search was,
+// and neither could the next run.
+//
+// THEY CANNOT BE DERIVED, and pretending otherwise would be worse than typing them. There is no fact about
+// this ring, or about the literature, that fixes where "relevant" begins; any number here is a judgement
+// about how much noise to accept. So they get the treatment theology.lean gives its one typed list: written
+// out AS a choice, carried in every row they produce, and stated in the report — so the verdict can never be
+// read apart from the domain that made it. A floor you can see is a floor a reader can disagree with.
+const LIMITS = {
+  relevanceFloor: 0.6,   // word-overlap at or above which a hit is considered for candidacy
+  perSource: 5,          // results requested from each literature source
+  sources: ['zbmath', 'openalex', 'crossref', 'arxiv', 'oeis'],
+}
+
 // ── the theorem's own terms, and its file's declared domain ───────────────────────────────────────────────────────
 const STOP = new Set(('the a an and or of to in on by for with as at is are be it its this that these those one two three four five six seven eight nine ' +
   'ten every each all any no not only same exactly from under over into onto which when where while than then there here holds hold decide decided ' +
@@ -114,7 +132,7 @@ const invert = (ix: Record<string, number[]> | undefined) => ix ? Object.entries
 const SOURCES: Record<string, { pace: number; run: (terms: string[], query: string) => Promise<Hit[]> }> = {
   // zbMATH answers an empty search with HTTP 404 and "successful access. No results found." — an answer, not a failure.
   zbmath: { pace: 1200, run: async (terms, query) => {
-    const url = `https://api.zbmath.org/v1/document/_search?search_string=${q(query)}&results_per_page=5`
+    const url = `https://api.zbmath.org/v1/document/_search?search_string=${q(query)}&results_per_page=${LIMITS.perSource}`
     let j: any
     try { j = await get(url) } catch (e) {
       if (!/HTTP 404/.test((e as Error).message)) throw e
@@ -125,16 +143,16 @@ const SOURCES: Record<string, { pace: number; run: (terms: string[], query: stri
     return (j.result ?? []).map((d: any) => { const title = d.title?.title ?? d.title ?? ''; const text = `${title} ${JSON.stringify(d.editorial_contributions ?? d.abstract ?? '').slice(0, 3000)}`
       return { source: 'zbmath', title: String(title), year: d.year, url: d.zbmath_url ?? (d.identifier ? `https://zbmath.org/?q=an:${d.identifier}` : `https://zbmath.org/?q=${q(query)}`), relevance: relevance(terms, text), text } })
   } },
-  openalex: { pace: 1200, run: async (terms, query) => ((await get(`https://api.openalex.org/works?search=${q(query)}&per-page=5`)).results ?? [])
+  openalex: { pace: 1200, run: async (terms, query) => ((await get(`https://api.openalex.org/works?search=${q(query)}&per-page=${LIMITS.perSource}`)).results ?? [])
     // mathematics or computer science only, by OpenAlex's own classification of the work
     .filter((w: any) => ['Mathematics', 'Computer Science'].includes(w.primary_topic?.field?.display_name ?? ''))
     .map((w: any) => { const text = `${w.title ?? ''} ${invert(w.abstract_inverted_index)}`; return { source: 'openalex', title: w.title ?? '', year: w.publication_year, url: w.doi ?? w.id, relevance: relevance(terms, text), text } }) },
-  crossref: { pace: 1200, run: async (terms, query) => ((await get(`https://api.crossref.org/works?query=${q(query)}&rows=5`)).message?.items ?? [])
+  crossref: { pace: 1200, run: async (terms, query) => ((await get(`https://api.crossref.org/works?query=${q(query)}&rows=${LIMITS.perSource}`)).message?.items ?? [])
     // Crossref carries no subject, so a hit there must carry EVERY distinctive term of the theorem
     .map((w: any) => { const text = `${(w.title ?? [''])[0]} ${stripTags(String(w.abstract ?? ''))}`; const r = relevance(terms, text); return { source: 'crossref', title: (w.title ?? [''])[0], year: w.issued?.['date-parts']?.[0]?.[0], url: w.DOI ? `https://doi.org/${w.DOI}` : w.URL, relevance: r < 1 ? 0 : r, text } }) },
   arxiv: { pace: 6000, run: async (terms) => {
     // two tries, not four: a refusing arXiv costs half a minute per call, and three in a row set it aside for the run
-    const x: string = await get(`https://export.arxiv.org/api/query?search_query=${q(terms.slice(0, 5).map((t) => `all:${t}`).join(' AND '))}&max_results=5`, 'text', 2)
+    const x: string = await get(`https://export.arxiv.org/api/query?search_query=${q(terms.slice(0, 5).map((t) => `all:${t}`).join(' AND '))}&max_results=${LIMITS.perSource}`, 'text', 2)
     return x.split('<entry>').slice(1).filter((e) => /<category term="(math|cs)\./.test(e)).map((e) => {
       const tag = (t: string) => (e.match(new RegExp(`<${t}[^>]*>([\\s\\S]*?)</${t}>`)) ?? ['', ''])[1].replace(/\s+/g, ' ').trim()
       const text = `${tag('title')} ${tag('summary')}`
@@ -145,13 +163,13 @@ const SOURCES: Record<string, { pace: number; run: (terms: string[], query: stri
 
 // ── the record ───────────────────────────────────────────────────────────────────────────────────────────────────
 type Verdict = 'CANDIDATES' | 'NONE_FOUND' | 'NONE_FOUND_PARTIAL' | 'NOT_MEASURED' | 'TOO_FEW_TERMS'
-type Rec = { key: string; file: string; name: string; statementHash: string; searched: string; queries: Record<string, string>
+type Rec = { key: string; file: string; name: string; statementHash: string; searched: string; limits?: typeof LIMITS; queries: Record<string, string>
   notMeasured: string[]; oeis: { a: string; name: string; query: string }[]; catalogued: boolean; candidates: Hit[]; verdict: Verdict }
 const ledger: Record<string, Rec> = existsSync(OUT) ? JSON.parse(readFileSync(OUT, 'utf8')) : {}
 const save = () => writeFileSync(OUT, JSON.stringify(Object.fromEntries(Object.entries(ledger).sort(([a], [b]) => a.localeCompare(b))), null, 1) + '\n')
 const hash = (s: string) => createHash('sha256').update(s).digest('hex').slice(0, 16)
 // A record a source did not answer is searched again on the next run, whatever its age: NOT_MEASURED is a gap, not a result.
-const stale = (r: Rec | undefined, h: string) => ALL || !r || r.statementHash !== h || r.verdict === 'NOT_MEASURED' || r.verdict === 'NONE_FOUND_PARTIAL' || Date.now() - Date.parse(r.searched) > DAYS * 86400000
+const stale = (r: Rec | undefined, h: string) => ALL || !r || !r.limits || r.statementHash !== h || r.verdict === 'NOT_MEASURED' || r.verdict === 'NONE_FOUND_PARTIAL' || Date.now() - Date.parse(r.searched) > DAYS * 86400000
 
 const todo = leanTheorems().filter((t) => (!ONLY || t.file === ONLY) && t.tactic !== 'rfl')
   .map((t) => ({ t, key: `lean_${t.namespace.toLowerCase()}_${t.name}`, h: hash(t.statement) }))
@@ -196,7 +214,7 @@ const oeisSeen = new Map<string, { a: string; name: string; query: string }[] | 
 for (const { t, key, h } of todo) {
   const terms = termsOf(t.name).filter((w) => !LABELS.has(w)), dom = domainOf(t.file)
   const query = [...terms.slice(0, 5), ...dom.filter((d) => !terms.includes(d)).slice(0, 3)].join(' ')
-  const rec: Rec = { key, file: t.file, name: t.name, statementHash: h, searched: new Date().toISOString(), queries: {}, notMeasured: [], oeis: [], catalogued: false, candidates: [], verdict: 'NOT_MEASURED' }
+  const rec: Rec = { key, file: t.file, name: t.name, statementHash: h, searched: new Date().toISOString(), limits: LIMITS, queries: {}, notMeasured: [], oeis: [], catalogued: false, candidates: [], verdict: 'NOT_MEASURED' }
   for (const seq of sequencesIn(t.statement)) {
     rec.queries[`oeis ${seq}`] = seq
     // ONE QUESTION PER SEQUENCE: the units 1,2,4,5,7,8 sit in 43 statements and would be asked 43 times.
@@ -222,7 +240,7 @@ for (const { t, key, h } of todo) {
       // RELEVANT = most of the theorem's own terms AND a specific word of its file's domain, in the same hit.
       // RELEVANT = most of the theorem's own terms AND an anchor of its file's field; no anchor, no candidate claimed.
       const anchors = anchorsOf(t.file)
-      rec.candidates.push(...hits.filter((x) => x.relevance >= 0.6 && anchors.length > 0 && anchors.some((a) => (x.text ?? '').toLowerCase().includes(a)))
+      rec.candidates.push(...hits.filter((x) => x.relevance >= LIMITS.relevanceFloor && anchors.length > 0 && anchors.some((a) => (x.text ?? '').toLowerCase().includes(a)))
         .map((x) => ({ ...x, text: (x.text ?? '').replace(/\s+/g, ' ').slice(0, 300) })))
     } catch (e) { rec.notMeasured.push(`${name}: ${(e as Error).message}`); refusals.set(name, (refusals.get(name) ?? 0) + 1) }
     await sleep(s.pace)
@@ -249,6 +267,10 @@ const by = (v: Verdict) => all.filter((r) => r.verdict === v)
 const lines = [
   `## novelty — a prior-art search per theorem · ${new Date().toISOString().slice(0, 16)}Z`,
   `${all.length} theorems on record · searched this run: ${todo.length} · source calls answered: ${measured}`,
+  `- every verdict below is relative to the floors this run applied: relevance ≥ ${LIMITS.relevanceFloor} over the first `
+  + `${LIMITS.perSource} result(s) from each of ${LIMITS.sources.join(', ')}. They are choices, not findings — NONE_FOUND means `
+  + `nothing cleared that floor in that many results, which is narrower than "nothing earlier exists". Rows carry the floors they were searched under.`,
+  `- ${all.filter((r) => !r.limits).length} row(s) predate the floors being recorded and are re-searched on the next run, because a verdict whose domain is unknown is not a verdict`,
   `- CANDIDATES ${by('CANDIDATES').length} — relevant literature to read before anything is claimed`,
   `- NONE_FOUND ${by('NONE_FOUND').length} — every source answered and nothing relevant came back: these searches, on this date — not "nothing earlier exists"`,
   `- NONE_FOUND_PARTIAL ${by('NONE_FOUND_PARTIAL').length} — three of the four literature sources answered with nothing relevant; the fourth is named in the record and asked again next run`,
