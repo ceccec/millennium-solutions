@@ -162,7 +162,8 @@
     "changelog": "node scripts/changelog.ts",
     "zenodo-sync": "node scripts/zenodo-sync.ts",
     "mcp-http": "node scripts/mcp-http.ts",
-    "handle-gate": "node scripts/handle-gate.ts"
+    "handle-gate": "node scripts/handle-gate.ts",
+    "affected": "node scripts/affected.ts"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",
