@@ -47,27 +47,16 @@ jobs:
 
       # The record integrity check runs inside novelty.ts before any search, so a hollow or orphaned row
       # fails this step rather than being committed.
+      # THE COMMIT MUST BE SIGNED. The first run searched for twenty minutes and then could not offer the
+      # result: this repository requires verified signatures on EVERY branch, not only main, and a bot has
+      # no key. scripts/propose.ts creates the commit through the GitHub API, which signs it.
       - name: open a pull request when the record moved
         run: |
           set -euo pipefail
-          if git diff --quiet -- src/proof/novelty.json; then
-            echo "novelty: the record did not move this run — nothing to propose" | tee -a "$GITHUB_STEP_SUMMARY"
-            exit 0
-          fi
-          BRANCH="novelty/$(date -u +%Y-%m-%d)"
-          git config user.name  "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout -b "$BRANCH"
-          git add src/proof/novelty.json
-          git commit -m "novelty: prior-art search, $(date -u +%Y-%m-%d) — the record advanced under the floors it records"
-          git push --force-with-lease origin "$BRANCH"
-          gh pr create --base main --head "$BRANCH" \
+          node scripts/propose.ts \
+            --branch "novelty/$(date -u +%Y-%m-%d)" \
             --title "novelty: prior-art search, $(date -u +%Y-%m-%d)" \
-            --body "Automated weekly run of \`scripts/novelty.ts\`, bounded by a ${BUDGET_MINUTES}-minute budget.
-
-          Every row carries the floors it was searched under — relevance threshold and results per source — so a verdict cannot be read apart from the domain that produced it. NONE_FOUND means nothing cleared that floor in that many results, which is narrower than \"nothing earlier exists\".
-
-          The step summary for this run carries the coverage figure and the verdict counts." \
-            || gh pr edit "$BRANCH" --title "novelty: prior-art search, $(date -u +%Y-%m-%d)"
+            --body "Automated run of scripts/novelty.ts under a ${BUDGET_MINUTES}-minute budget. Every row carries the floors it was searched under - relevance threshold and results per source - so a verdict cannot be read apart from the domain that produced it. NONE_FOUND means nothing cleared that floor in that many results, which is narrower than 'nothing earlier exists'." \
+            | tee -a "$GITHUB_STEP_SUMMARY"
         env:
           GH_TOKEN: ${{ github.token }}

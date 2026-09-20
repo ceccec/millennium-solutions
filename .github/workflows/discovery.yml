@@ -36,41 +36,46 @@ jobs:
           node-version: 22
       - run: npm ci
 
+      # THE KERNEL HAS TO BE HERE, or "discovery" decides nothing and says so quietly. The first run of this
+      # workflow finished in sixteen seconds and reported success: no lean on the runner, so lean.ts read
+      # "41 files · 939 theorems · 41 FAILING", seal-lean refused, and `| tail | tee` swallowed both exit
+      # codes. A daily job that proposes nothing and passes is worse than no daily job.
+      - name: install the kernel this repository pins
+        run: |
+          set -euo pipefail
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o elan-init.sh
+          sh elan-init.sh -y --default-toolchain "$(cat lean-toolchain)"
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: the kernel answers before anything is proposed
+        run: lean --version
+
+      # `set -o pipefail` on every step below: without it a failing command feeding `tee` reports success,
+      # which is how the sixteen-second run went green. It is class two on LESSONS.md — a check that could
+      # not go red — committed into this workflow an hour after that page was published.
       - name: propose — every proposition this ring admits, put to the kernel
         run: |
+          set -euo pipefail
           node scripts/imagine.ts --emit | tee -a "$GITHUB_STEP_SUMMARY"
           node scripts/lean-gen.ts --emit | tee -a "$GITHUB_STEP_SUMMARY"
 
       - name: decide — the kernel, not this workflow, says what is true
-        run: node scripts/lean.ts | tail -5 | tee -a "$GITHUB_STEP_SUMMARY"
+        run: |
+          set -euo pipefail
+          node scripts/lean.ts | tail -5 | tee -a "$GITHUB_STEP_SUMMARY"
 
       - name: keep — seal only what compiled, and report the octave
-        run: node scripts/seal-lean.ts --seal | tail -4 | tee -a "$GITHUB_STEP_SUMMARY"
+        run: |
+          set -euo pipefail
+          node scripts/seal-lean.ts --seal | tail -4 | tee -a "$GITHUB_STEP_SUMMARY"
 
       - name: offer it, rather than commit it
         run: |
           set -euo pipefail
-          if git diff --quiet; then
-            echo "discovery: the kernel kept nothing new this run — the ring is exhausted at this depth" | tee -a "$GITHUB_STEP_SUMMARY"
-            exit 0
-          fi
-          OCTAVE=$(node -e "const l=require('./src/proof/discovered.json').length; console.log(l + (l % 8 ? ' — NOT a multiple of eight, the octave is open' : ' = ' + (l/8) + ' × 8, exact'))")
-          BRANCH="discovery/$(date -u +%Y-%m-%d)"
-          git config user.name  "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout -b "$BRANCH"
-          git add -A
-          git commit -m "discovery: what the kernel kept, $(date -u +%Y-%m-%d) — ledger $OCTAVE"
-          git push --force-with-lease origin "$BRANCH"
-          gh pr create --base main --head "$BRANCH" \
+          OCTAVE=$(node -e "const l=require('./src/proof/discovered.json').length; console.log(l + (l % 8 ? ' — NOT a multiple of eight, the octave is open' : ' = ' + (l/8) + ' x 8, exact'))")
+          node scripts/propose.ts \
+            --branch "discovery/$(date -u +%Y-%m-%d)" \
             --title "discovery: what the kernel kept, $(date -u +%Y-%m-%d)" \
-            --body "Automated daily run of the generative path: \`imagine --emit\`, \`lean-gen --emit\`, then the kernel, then \`seal-lean --seal\`.
-
-          Nothing here judged a statement true — \`by decide\` did, over a finite domain, and anything it refused was discarded.
-
-          **Ledger: $OCTAVE**
-
-          A run that leaves the ledger off-octave is visible here rather than after merging. The step summary carries what was proposed, what compiled and what was sealed." \
-            || gh pr edit "$BRANCH" --title "discovery: what the kernel kept, $(date -u +%Y-%m-%d)"
+            --body "Automated daily run of the generative path: imagine --emit, lean-gen --emit, the kernel, then seal-lean --seal. Nothing here judged a statement true: by decide did, over a finite domain, and anything it refused was discarded. Ledger: $OCTAVE" \
+            | tee -a "$GITHUB_STEP_SUMMARY"
         env:
           GH_TOKEN: ${{ github.token }}
