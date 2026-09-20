@@ -279,6 +279,21 @@ const CONTROLS: Control[] = [
     // to plant the pattern without containing it, so the mutated file matches and this one does not.
     mutate: (s) => s.replace('const receipts =', 'const __probe = (x: string) => x.replace(/' + "</g, '&" + "lt;')\nconst receipts =") },
 
+  // A READER THAT ANSWERS WRONGLY IS WORSE THAN ONE THAT IS DOWN. scripts/sources.ts asks fifteen live APIs
+  // a question whose answer is known before it is asked — the axiom-control fixture, pointed at the network
+  // — because a broken reader returns nothing and reads as "found nothing". This deposit has been bitten
+  // there twice: a CERN filter that returned exactly the API's own total and was believed because the number
+  // agreed, and a citation scan that found one hit on a page citing nobody, having matched the User-Agent it
+  // had just sent. The mutation makes a probe expect something that is NOT in the answer, and the gate must
+  // call the reader broken rather than report a finding.
+  //
+  // NOT in the release chain: it needs the network, and a chain step that fails when an external API has a
+  // bad afternoon would make a green build depend on somebody else's uptime. It is `npm run sources`, run
+  // before an investigation is believed — which is exactly when it matters.
+  { gate: 'sources', cmd: 'node scripts/sources.ts', file: 'scripts/sources.ts',
+    what: 'a live reader that answers without the answer known to be in it',
+    mutate: (s) => s.replace('/Powers of 2/i', '/a string no sequence database will ever return/i') },
+
   { gate: 'novelty', cmd: 'node scripts/novelty.ts --limit 0', file: 'src/proof/novelty.json',
     what: 'a prior-art record claiming a completed search that records no query',
     mutate: (s) => s.replace(/"queries": \{[^}]*\}/g, '"queries": {}') },

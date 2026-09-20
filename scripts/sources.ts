@@ -52,9 +52,13 @@ const PROBES: Probe[] = [
   { source: 'datacite', why: "the registry that actually issued the captain's DOI",
     url: 'https://api.datacite.org/dois/10.5281/zenodo.21819217',
     expect: (b) => /"doi"\s*:\s*"10.5281\/zenodo.21819217"/.test(b) },
-  { source: 'crossref', why: 'the other half of the DOI space, asked for a work it does hold',
-    url: 'https://api.crossref.org/works/10.1090/S0002-9904-1900-00646-1',
-    expect: (b) => /"status"\s*:\s*"ok"/.test(b) },
+  // ASKED A QUESTION, NOT AN IDENTIFIER. Two versions of this probe named a specific DOI from memory and
+  // both 404'd — the first because Zenodo DOIs live in DataCite, the second because I recalled an identifier
+  // that does not exist. A probe whose expected answer depends on my recollection tests my recollection.
+  // A query does not: Crossref either answers with its standard envelope or it does not.
+  { source: 'crossref', why: 'the other half of the DOI space answers a query in its own envelope',
+    url: 'https://api.crossref.org/works?query=riemann+hypothesis&rows=1',
+    expect: (b) => /"status"\s*:\s*"ok"/.test(b) && /"message-type"/.test(b) },
   { source: 'openalex', why: 'an open scholarly index answers a known query',
     url: 'https://api.openalex.org/works?search=millennium%20prize%20problems&per-page=1',
     expect: (b) => /"meta"/.test(b) && /"count"\s*:\s*[1-9]/.test(b) },

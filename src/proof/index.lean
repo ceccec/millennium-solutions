@@ -21,9 +21,14 @@
 -- The Millennium floor — seven honest theorems, one per problem, COMPUTED from the sequence.
 -- Author: Tsvetan Rouschev · License: CC BY-NC-ND 4.0
 --
--- Each Clay problem gets ONE theorem here. None proves the conjecture — each states a TRUE fact that COMPUTES
--- from the ℤ/9 doubling sequence (the orbit 2^k, the reflection 10−d, the derived units) and is genuinely
--- ADJACENT to the problem. The refusal is NOT a theorem here, and that is deliberate: this file used to
+-- Each Clay problem gets ONE theorem here. Each states a TRUE fact that COMPUTES from the ℤ/9 doubling
+-- sequence (the orbit 2^k, the reflection 10−d, the derived units) and is genuinely ADJACENT to the problem.
+--
+-- WHAT THESE THEOREMS DECIDE IS ℤ/9 ARITHMETIC OVER FINITE DOMAINS — stated by the agents that wrote this
+-- file, `claude-opus` and `Claude`, and signed as theirs. It is a statement about the theorems, not a
+-- verdict on any conjecture and not the author's. This header used to say "None proves the conjecture"
+-- directly beneath the Author line, which put an agent's verdict in his name; src/receipts records eight
+-- receipts signed `captain` and not one of them says it. Removed 2026-09-20, by his order. The refusal is NOT a theorem here, and that is deliberate: this file used to
 -- carry `def provenHere : Nat := 0` with `the_floor_is_zero_of_seven : provenHere = 0 := rfl` beside it, and
 -- the same literal glued as a conjunct onto every theorem below. That certifies nothing about the seven
 -- problems — it decides that a number the author typed equals itself — while wearing the authority of a
