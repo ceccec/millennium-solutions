@@ -387,7 +387,23 @@ if (report.constructs) {
   lines.push(`- his first dated use, per signal (GitHub commit search over his repositories): ${Object.entries(c.firstUse).map(([k, v]) => `${k}: ${v}`).join(' · ')}`)
   lines.push(`- not a lead: ${c.notALead.physics} textbook two-bit physics · ${c.notALead.wordOnly} the words only (under two signals) · ${c.notALead.unreadable} unreadable (not judged) · prior art (older than his first use): ${c.priorArt.length} · third-party forks: ${c.forks}`)
 }
-if (report.news) lines.push(`- topic news per day: **after** his publications ${report.news.perDayAfter} · **before** (control) ${report.news.perDayBefore} — a pattern only if after clearly exceeds before`)
+// A RATE FROM A READER THAT DID NOT READ IS THE WRONG SIDE OF A BOUNDARY. This printed "after 1.47 ·
+// before 3.33" on a run where GDELT failed 30 of 35 windows with HTTP TypeError — five points became a
+// rate and the rate became a comparison. NOT MEASURED and FOUND NOTHING are the two sides of one silence
+// and they lead opposite ways: look again, or there is nothing there. The numbers are still shown, because
+// hiding them would be its own distortion, but they are shown WITH the coverage that produced them and the
+// comparison is withheld when the reader mostly could not see. scripts/sources.ts proves these readers
+// against a known answer; this is the same boundary, enforced where the number is written.
+if (report.news) {
+  const seen = Object.values(report.sources).reduce((n, s) => n + s.measured, 0)
+  const blind = Object.values(report.sources).reduce((n, s) => n + s.notMeasured.length, 0)
+  const coverage = seen + blind ? seen / (seen + blind) : 0
+  lines.push(`- topic news per day: **after** his publications ${report.news.perDayAfter} · **before** (control) ${report.news.perDayBefore}`)
+  lines.push(coverage < 0.5
+    ? `  — WITHHELD: the readers answered ${seen} of ${seen + blind} windows (${(coverage * 100).toFixed(0)}%). `
+      + `Below half, these rates are a measurement of the outage, not of the news. Not measured is not found nothing.`
+    : `  — a pattern only if after clearly exceeds before; readers answered ${seen} of ${seen + blind} windows.`)
+}
 lines.push(`- leads: ${report.leads.length} (own surfaces removed${report.mode === 'markers' ? ', marker verbatim' : ''})`)
 for (const l of report.leads.slice(0, 200)) lines.push(`  - [${l.source}] ${l.url} — cites: **${l.cites}** · pays: NOT MEASURED${l.markers.length ? ` · markers: ${l.markers.join(', ')}` : ''}${l.signals?.length ? ` · signals: ${l.signals.join(', ')}` : ''}${l.licence ? ` · licence: ${l.licence}` : ''}${l.by ? ` · ${String(l.by).slice(0, 60)}` : ''}`)
 const text = lines.join('\n')

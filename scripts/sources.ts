@@ -80,6 +80,17 @@ const PROBES: Probe[] = [
   { source: 'npm', why: 'the registry answers for this deposit’s own package',
     url: 'https://registry.npmjs.org/@ceccec%2Fmillennium-solutions',
     expect: (b) => /"name"\s*:\s*"@ceccec\/millennium-solutions"/.test(b) },
+  // THE TWO SIDES OF SILENCE. A news scan ran today and printed "topic news per day: after 1.47, before
+  // 3.33" from a GDELT that had failed 30 of 35 windows with HTTP TypeError. Five points became a rate, and
+  // a rate became a comparison. NOT MEASURED and FOUND NOTHING are the two sides of one boundary and they
+  // lead to opposite conclusions: one says look again, the other says there is nothing there. Neither news
+  // source was proven before its numbers were used, so they are proven here now.
+  { source: 'gdelt', why: 'the news index that carried five of thirty-five windows and was still quoted',
+    url: 'https://api.gdeltproject.org/api/v2/doc/doc?query=mathematics&mode=artlist&maxrecords=1&format=json',
+    expect: (b) => /"articles"\s*:/.test(b) || /"url"\s*:/.test(b) },
+  { source: 'hackernews', why: 'the other half of the same scan',
+    url: 'https://hn.algolia.com/api/v1/search?query=millennium+prize&hitsPerPage=1',
+    expect: (b) => /"hits"\s*:/.test(b) && /"nbHits"\s*:/.test(b) },
   { source: 'claymath', why: 'the body that defines the problems is reachable',
     url: 'https://www.claymath.org/millennium-problems/',
     expect: (b) => /millennium/i.test(b) },
