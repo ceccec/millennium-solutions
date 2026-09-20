@@ -411,15 +411,27 @@ export const publicationHtml = (t: LeanTheorem, opts: { novelty: string; files: 
   + (opts.key ? ` The content-address of this declaration is recorded as <code>${opts.key}</code> at <a href="${SITE}/theorem/${opts.key}">${SITE}/theorem/${opts.key}</a>.` : '')
   + ` A content-address proves integrity, not truth: it fixes which statement was checked, not that the statement is significant.</p>`
   + `<p><strong>Funding.</strong> ${FUNDING.statement}</p>`
-  // THE FLOOR IN THE RECORD, not only in the repository. scripts/zenodo-gate.ts requires `0/7` in every
-  // description and every description omitted it — the gate had been red on this since it was written. A
-  // permanent citable record of a Millennium-adjacent deposit that does not say, in its own text, that it
-  // settles none of the seven is a record whose scope a reader has to go elsewhere to find; and where a
-  // reader does not go is exactly where an overclaim is read into the silence.
-  + `<p><strong>Scope, stated as plainly as the claim.</strong> The declaration is decided over a finite domain. `
-  + `It asserts no quantum speedup and describes no physical system. Of the seven Millennium Prize problems `
-  + `this deposit settles <strong>0/7</strong>; humanity's count stands at 1/7, and that one is Perelman's `
-  + `proof of the Poincaré conjecture (2003), not this deposit's work.</p>`
+  // SCOPE IS THE INSTRUMENT'S; THE VERDICT IS NOT. This paragraph used to end: "Of the seven Millennium
+  // Prize problems this deposit settles 0/7". That sentence was an agent's conclusion about the author's
+  // claim, and `scripts/zenodo-gate.ts` REQUIRED the literal token `0/7` in every description, so the build
+  // went red without it. A verdict nobody authorised, made mandatory by a gate, on 336 records that would
+  // each carry a permanent DOI under the author's name and ORCID. None had been minted when this was found
+  // (`.zenodo/theorems` held no `doi` field), so it was caught before it became citable.
+  //
+  // What a scope line is FOR survives: a reader meeting a Millennium-adjacent deposit must be able to see,
+  // in the record itself, how far the proof reaches. That is a property of the method — exhaustion over a
+  // stated finite domain — and it is measurable. How far the AUTHOR'S CLAIM reaches is a different question,
+  // and no receipt in `src/receipts/` gives an agent the standing to answer it (FINDINGS.md, sections 1 and 5).
+  // The gate now requires SCOPE_MARK, exported here so the requirement and the text have ONE derivation.
+  + `<p><strong>Scope, stated as plainly as the claim.</strong> The declaration is ${SCOPE_MARK}. `
+  + `It asserts no quantum speedup and describes no physical system. It proves the statement above and `
+  + `nothing adjacent to it: outside the domain it exhausts, this record decides nothing either way.</p>`
+
+// THE ONE DERIVATION OF THE SCOPE REQUIREMENT. `scripts/zenodo-gate.ts` imports this and tests the
+// description against it, so the sentence a record carries and the sentence a gate demands cannot drift
+// apart — the repo's named defect is two derivations of one fact. It replaced a gate that demanded the
+// literal token `0/7`, which is why this constant states the METHOD's reach and not a count of problems.
+export const SCOPE_MARK = 'decided over a finite domain'
 
 // ── the register, shared by the page and the deposition ─────────────────────────────────────────────────
 

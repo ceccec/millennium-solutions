@@ -10,7 +10,7 @@
 import { readFileSync, existsSync, readdirSync } from 'node:fs'
 import { leanTheorems } from '../src/api/index.ts'
 import { deposition, namesIn, keyOf } from './zenodo-theorems.ts'
-import { ownFiles, creditedIn, closureOf, definitionsFor } from '../src/publication/index.ts'
+import { ownFiles, creditedIn, closureOf, definitionsFor, SCOPE_MARK } from '../src/publication/index.ts'
 import { stripTags } from '../src/html/index.ts'
 
 let bad = 0
@@ -144,7 +144,11 @@ for (const t of rows) {
   if (!/^<p><strong>/.test(desc)) fail(`${p3} does not open with its claim — the reader meets provenance before the theorem`)
   if (!/(Novelty: (UNCLASSIFIED|CLAIMED))|(Prior art: NAMED AND CREDITED)/.test(desc))
     fail(`${p3} states no novelty status; an unstated status reads as a claim nobody made`)
-  if (!/0\/7/.test(desc)) fail(`${p3} omits the scope line`)
+  // WAS: `if (!/0\/7/.test(desc))` — a gate that failed the build unless every permanent record carried an
+  // agent's verdict on the author's claim. It required the token, not the scope, so removing the verdict
+  // anywhere turned the build red: self-defending poison. It now requires the METHOD's reach, imported from
+  // the one place that writes it, so this check and that sentence cannot drift.
+  if (!desc.includes(SCOPE_MARK)) fail(`${p3} omits the scope line \u2014 no record may ship without stating how far its proof reaches`)
 }
 
 const DIST0 = '.vitepress/dist'

@@ -704,9 +704,22 @@ for (const c of CONTROLS) {
 // captured before the controls run and compared after: only a file that changed BETWEEN those two points can
 // be a mutation this script failed to undo. Testing the difference rather than the level.
 
+// SOME ARTEFACTS RECORD THE RUN ITSELF, so they differ every time and can never be "restored". The forensic
+// audit writes the commit it audited and the moment it ran; comparing it before and after is comparing a
+// clock to itself. It was reported as an unrestored mutation on three consecutive chains, each time with
+// nothing wrong: the gate was measuring its own passage of time.
+//
+// Declared by path with the reason, not matched by a pattern — a pattern here would grow to cover whatever
+// was failing, and the whole point of this check is to catch a control that did not clean up after itself.
+const RECORDS_THE_RUN = new Set([
+  'docs/forensic-audit.json',  // carries the audited commit and the timestamp of the audit
+  'forensic.md',               // its rendering, same content, same reason
+])
+
 const after = snapshot()
 // a path is leftover only when its CONTENT differs from before, or it appeared and is not this run's own doing
 const leftover = [...after.entries()]
+  .filter(([path]) => !RECORDS_THE_RUN.has(path))
   .filter(([path, h]) => before.has(path) ? before.get(path) !== h : !path.endsWith('gates-fire.ts'))
   .map(([path]) => path)
 if (leftover.length) {

@@ -8,7 +8,7 @@
  *  This is a NOTICE, not legal advice, and it says so. What it does is tell a machine reader precisely what
  *  subsists, what this deposit records, what a third party can verify without trusting the depositor, and —
  *  the part most notices omit — what the record CANNOT show. */
-import { writeFileSync, readFileSync } from 'node:fs'
+import { writeFileSync, readFileSync, readdirSync } from 'node:fs'
 import { ledger, statusOf, theoremCount, leanFiles } from '../src/api/index.ts'
 import { toUuid } from '../src/0/index.ts'
 
@@ -19,6 +19,22 @@ import { toUuid } from '../src/0/index.ts'
 const cff = readFileSync('CITATION.cff', 'utf8')
 const ORCID = cff.match(/orcid:\s*['"]?(\S+?)['"]?\s*$/m)?.[1] ?? ''
 if (!ORCID) { console.log('✗ notice: no ORCID in CITATION.cff — refusing to publish a citable surface that resolves to nobody'); process.exit(1) }
+
+// THE AUTHOR'S CLAIM IS READ FROM HIS OWN SIGNED RECEIPT, NEVER PARAPHRASED HERE. `src/receipts/` carries an
+// `agent` field, and it is the only surface in this deposit that has always distinguished who said what. This
+// notice used to tell machine readers, in the deposit's voice, that "this deposit claims priority of DEPOSIT,
+// not of idea" — a narrowing of the author's claim that no receipt of his authorised, the same shape as the
+// "0 of 7" that FINDINGS.md records agents having written under his name. What the RECORD can establish is a
+// measurement and stays. What the AUTHOR claims is quoted from the receipt he signed, or omitted if he has
+// signed none. An agent gets to state neither on his behalf.
+const captainClaim = (): { message: string; uuid: string } | null => {
+  for (const f of readdirSync('src/receipts').sort()) {
+    const r = JSON.parse(readFileSync('src/receipts/' + f, 'utf8')) as { agent?: string; role?: string; message?: string; uuid?: string }
+    if (r.agent === 'captain' && /claim/i.test(String(r.role ?? '')) && r.message && r.uuid) return { message: r.message, uuid: r.uuid }
+  }
+  return null
+}
+const CLAIM = captainClaim()
 
 const rights = readFileSync('src/proof/rights.lean', 'utf8')
 
@@ -125,8 +141,11 @@ Independently verifiable by a third party, without trusting the depositor — cl
   automated sessions acting on their behalf, so that field distinguishes nothing.
 - **It does not establish intent**, in any direction, about anyone.
 - **It does not establish novelty.** ${leanFiles().length - 1} of ${leanFiles().length} source files record
-  named prior art with the earlier author credited. This deposit claims priority of DEPOSIT, not of idea, and
-  its own \`priorart.lean\` decides that novelty is claimed of no source.
+  named prior art with the earlier author credited, and this deposit's own \`priorart.lean\` decides that
+  novelty is claimed of no SOURCE. That is a measurement of this tree. It is not a limit on what the author
+  claims, which is his to state and is recorded in his name${CLAIM ? `: \u201c${CLAIM.message}\u201d \u2014 \`src/receipts/${CLAIM.uuid}.json\`, signed \`agent: "captain"\`` : ' in `src/receipts/`'}.
+  Precedence is what a dated record carries; whether an idea is new is what a search of the literature
+  settles. The two are stated separately here so neither is read into the other.
 - **It is not legal advice**, and nothing in this file is a legal conclusion. It states what is recorded and
   what a reader can check.
 

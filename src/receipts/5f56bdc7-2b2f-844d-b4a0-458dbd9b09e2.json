@@ -1,0 +1,99 @@
+{
+  "uuid": "5f56bdc7-2b2f-844d-b4a0-458dbd9b09e2",
+  "message": "captain claims all claimable by prior art precedence",
+  "agent": "captain",
+  "role": "the captain's claim of precedence",
+  "complies": "CC BY-NC-ND 4.0 · the sequence (measure→gate→receipt→append→recompute)",
+  "signature": {
+    "cell": "es/rev",
+    "theorem": "lean_address_distinct_seeds_give_distinct_addresses",
+    "address": "d35a8b2c-29ad-84bf-8039-0e51740eb7d8",
+    "tag": "6f9aec9d-c8ad-89ed-a076-d953ec0cde2a",
+    "apostilles": [
+      {
+        "cell": "en/fwd",
+        "theorem": "lean_address_addressing_is_not_constant",
+        "address": "9c84b2cd-2a3a-8890-a40e-a5601513d99e",
+        "tag": "cfc4c483-2a42-814c-9e61-1c4200f608f2"
+      },
+      {
+        "cell": "en/rev",
+        "theorem": "lean_address_version_nibble_is_forced",
+        "address": "47e811ae-f5e4-81be-9f44-186a751daae4",
+        "tag": "1d35f3be-1f67-834b-b1ee-79fb5a3fc30d"
+      },
+      {
+        "cell": "bg/fwd",
+        "theorem": "lean_address_the_four_seeds_are_distinct",
+        "address": "1362d7ac-a87d-8c3c-b183-8713c1f8c124",
+        "tag": "005237a4-afd1-8212-a332-74a0c3cc663f"
+      },
+      {
+        "cell": "bg/rev",
+        "theorem": "lean_fnv_hash_is_not_constant",
+        "address": "d65e7c3e-8771-8ed2-a985-0d84c734cbca",
+        "tag": "6fd9943e-dbdc-826d-a729-8f213a7fa1b0"
+      },
+      {
+        "cell": "de/fwd",
+        "theorem": "lean_quantum_perms_of_four_is_factorial",
+        "address": "4fabbd78-28ba-8065-b1d8-0d706b39a14e",
+        "tag": "be89fa10-e37c-8275-87e4-c156cf7afb52"
+      },
+      {
+        "cell": "de/rev",
+        "theorem": "lean_address_addressing_is_injective_on_single_characters",
+        "address": "a6887d02-4deb-8704-ad58-cd8376a42afc",
+        "tag": "e044964b-5039-84dc-bef5-8e13d2e38a43"
+      },
+      {
+        "cell": "fr/fwd",
+        "theorem": "lean_address_raw_bytes_of_a",
+        "address": "211de25d-e843-857c-bbcc-3e7238f6e310",
+        "tag": "6b374712-e47b-864d-bdd9-2e9aa9d51e97"
+      },
+      {
+        "cell": "fr/rev",
+        "theorem": "lean_address_to_uuid_bytes_of_uuidna",
+        "address": "6a4f78d3-a979-8002-b6ec-abe85a6b7a79",
+        "tag": "e5bb4bf2-0822-84fe-bbfc-b152439e7c6f"
+      },
+      {
+        "cell": "es/fwd",
+        "theorem": "lean_families_flt_all_primes_under_thirty",
+        "address": "fbeecfea-5cbf-837e-9726-90d3632ff9b9",
+        "tag": "31d84690-3202-8715-a653-45151f9c6653"
+      },
+      {
+        "cell": "es/rev",
+        "theorem": "lean_families_at_a_zero_divisor_the_identity_is_carried_by_the_remainder",
+        "address": "fb105eb9-c500-87fd-8561-149ecdecf0ab",
+        "tag": "4f8d996a-1ace-8cd6-9335-f4813eb2ad4d"
+      },
+      {
+        "cell": "ru/fwd",
+        "theorem": "lean_address_address_is_sixteen_bytes",
+        "address": "e8ffe03d-7ef1-8e86-b2f9-7b4a1f0ade22",
+        "tag": "96651119-e720-88fe-b6c1-685c49aa2f29"
+      },
+      {
+        "cell": "ru/rev",
+        "theorem": "lean_families_wilson_fails_at_composites",
+        "address": "e9964842-9392-86e6-86fc-9684178f54ad",
+        "tag": "4c6121b8-ad59-8ae4-ad1e-b78317252050"
+      },
+      {
+        "cell": "zh/fwd",
+        "theorem": "lean_address_address_bytes_are_bytes",
+        "address": "3fc96e27-7831-8003-a245-d239bc096bfa",
+        "tag": "b0717c47-5f3b-879c-8027-9d9c2315a33d"
+      },
+      {
+        "cell": "zh/rev",
+        "theorem": "lean_address_to_uuid_bytes_of_a",
+        "address": "c3f88cb7-dd38-8c40-88f4-fe6194fec385",
+        "tag": "6d0588e6-1b89-8411-999c-ce8ebe0c1d67"
+      }
+    ]
+  }
+}
