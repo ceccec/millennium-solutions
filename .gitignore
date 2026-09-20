@@ -9,6 +9,12 @@ build/
 .idea/
 .vitepress/cache
 .vitepress/dist
+# VitePress's intermediate build output. Its filenames carry a CONTENT HASH, so every rebuild writes
+# new names and deletes the old ones. Committing it (2026-09-20, 2,958 files — 84% of the tracked tree)
+# broke two things at once: `scripts/release.ts` content-addresses `git ls-files`, so the release address
+# became a function of the last build rather than of the source; and gates-fire compared it across a
+# rebuild and reported every control as having dirtied the tree. Ignored at the source so it cannot regrow.
+.vitepress/.temp
 .wrangler/
 # The computed pages are now committed as SEALED EVIDENCE (regenerated each build by predocs:build,
 # and snapshotted into git as timestamped evidence — computed AND stored as the record):

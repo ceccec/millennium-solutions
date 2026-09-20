@@ -4376,6 +4376,13 @@ if (process.argv[1] && process.argv[1].endsWith('discover.ts')) {
     else console.log('  · refuted (discarded)  ' + c.name)
   }
   console.log('\n  ' + recs.length + ' provable of ' + CANDIDATES.length + ' candidates, chained → discovery root ' + merkleFold(recs))
-  console.log('  bound: decidable facts by exhaustion over a finite domain. Reaches none of the SIX open Millennium')
-  console.log('  conjectures; the seventh (Poincaré) is Perelman\'s, 2003 — not here. Humanity 1/7; this deposit 0/7.')
+  // SCOPE, NOT VERDICT. This line used to end "Humanity 1/7; this deposit 0/7" — a conclusion about the
+  // author's claim, printed in the deposit's own voice at the end of every run. No receipt in `src/receipts/`
+  // authorises it: the eight signed `agent: "captain"` carry no refusal, and every "0 of 7" that could be
+  // traced is signed `claude-opus` or `Claude` (FINDINGS.md §1). What stays is what this enumeration MEASURES
+  // about itself — the method is exhaustion over finite domains, so its reach is bounded by the domains it
+  // exhausts. That bound is a fact about the instrument. The standing of the author's claim is not the
+  // instrument's to state, and an instrument that states it is no longer measuring.
+  console.log('  bound: decidable facts by exhaustion over a finite domain — the reach of the method, measured.')
+  console.log('  What this run decided is the ' + recs.length + ' rows above; it decides nothing beyond them.')
 }

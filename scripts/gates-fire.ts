@@ -616,10 +616,24 @@ const rescue = () => {
 // lines read that as a leftover mutation. It reported a failure whose entire cause was that I had staged two
 // files earlier. What a restore has to guarantee is that the bytes are as they were, so the bytes are what is
 // compared: every path git mentions, mapped to a hash of what is on disk.
+// BUILD SCRATCH CANNOT BE COMPARED ACROSS A REBUILD. `.vitepress/.temp` holds VitePress's intermediate
+// files, and their names carry a CONTENT HASH — `@localSearchIndexroot.c0hsPUeo.js` becomes a different
+// filename every time the site is built. Several controls restore by running `npm run docs:build`, so those
+// paths necessarily differ between the snapshot before the controls and the one after, and the run reported
+// its own build scratch as an unrestored mutation. It is regenerated output, owned by the build and by no
+// control, so it is out of scope for a question about what the controls left behind.
+// THIS EXCLUSION IS THE SECOND FIX, NOT THE FIRST. The scratch was reaching this comparison because it had
+// been COMMITTED — 2,958 files, 84% of the tracked tree, in one commit of mine on 2026-09-20. Writing this
+// filter first treated the symptom and left `scripts/release.ts` content-addressing `git ls-files` over a
+// tree that was mostly build output, which silently made the release address a function of the last build.
+// The scratch is now ignored in `.gitignore` at the source. The filter stays because untracked scratch still
+// appears in `git status`, but it is no longer carrying a defect underneath it.
+const SCRATCH = /^\.vitepress\/\.temp\//
 const snapshot = (): Map<string, string> => {
   const m = new Map<string, string>()
   for (const line of execSync('git status --porcelain', { encoding: 'utf8' }).split('\n').filter(Boolean)) {
     const path = line.slice(3).trim().replace(/^"|"$/g, '')
+    if (SCRATCH.test(path)) continue
     let h = 'absent'
     try { h = createHash('sha256').update(readFileSync(path)).digest('hex').slice(0, 16) } catch { /* deleted */ }
     m.set(path, h)
@@ -696,7 +710,33 @@ const leftover = [...after.entries()]
   .filter(([path, h]) => before.has(path) ? before.get(path) !== h : !path.endsWith('gates-fire.ts'))
   .map(([path]) => path)
 if (leftover.length) {
+  // AND PUT THEM BACK, BECAUSE REPORTING ALONE POISONS THE NEXT RUN. This printed the leftovers and exited,
+  // which starts a loop the suite cannot leave: a control's mutation stays in the tree, the NEXT chain runs
+  // contradictions — which sits earlier, inside docs:build — and that aborts on the stranded `probeClaims`
+  // before gates-fire is reached at all, so nothing ever restores it. Two chains died that way today, each
+  // failure guaranteeing the next.
+  //
+  // Restoring is safe here in a way it is not in control-probe: these paths are the DIFFERENCE between a
+  // snapshot taken before the controls ran and one taken after, so they are this run's own doing by
+  // construction, not a guess about whose dirt it is. Anything a person changed meanwhile is identical in
+  // both snapshots and is never touched. The failure still stands — a control that does not clean up after
+  // itself is a defect and the exit code says so — but it no longer hands the mess to the next run.
+  // EVERY LEFTOVER, NOT JUST THE ONES ALREADY DIRTY. The first version of this restore filtered on
+  // `before.has(p)` — and `snapshot()` is built from `git status --porcelain`, so it holds only files that
+  // were ALREADY dirty. A control mutating a CLEAN file appears in `after` alone, which is precisely the
+  // shape of a real control mutation, and the filter skipped exactly those. The prose-trial control appends
+  // "We prove the Riemann hypothesis in this deposit today." to README.md; it survived a run and the next
+  // chain refused the whole build on a Clay claim in the deposit's own voice.
+  //
+  // `leftover` is already the set that changed BETWEEN the two snapshots, so every member is this run's
+  // doing by construction. Restoring all of them is correct; an untracked file has nothing to check out and
+  // the catch covers it.
+  if (leftover.length) {
+    try { execSync('git checkout -- ' + leftover.map((p) => JSON.stringify(p)).join(' '), { stdio: 'pipe' }) } catch { /* untracked, nothing to restore */ }
+  }
+  const own = leftover
   console.log(`\n✗ gates-fire changed the tree and did not restore it:\n${leftover.slice(0, 5).join('\n')}`)
+  if (own.length) console.log(`  ${own.length} of them were this run's own mutation and have been put back; the failure stands.`)
   process.exit(1)
 }
 
