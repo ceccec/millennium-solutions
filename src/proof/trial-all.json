@@ -17422,5 +17422,53 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "e0719e22-4940-899e-8dcc-a7b7dd22e5b0"
+  },
+  {
+    "key": "lean_planck_not_one_value_the_world_admits_is_reachable_from_this_lattice",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7ff9784c-dea6-8a3f-b2a1-eed91af6dec1"
+  },
+  {
+    "key": "lean_planck_every_seed_factors_over_those_primes_so_every_product_does",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "2bb01390-5215-846d-aac7-e8a8f71880e6"
+  },
+  {
+    "key": "lean_planck_the_exponent_predicts_the_registry_with_a_literal_on_neither_side",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9f8f686c-bb89-82ed-9304-4bd62eb61204"
+  },
+  {
+    "key": "lean_planck_the_exact_halving_survives_only_because_the_division_truncated",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "927f3553-ab6d-8518-a609-10cf95a02017"
+  },
+  {
+    "key": "lean_planck_no_power_of_ten_moves_the_root",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5247f951-6e3b-8ae9-b58d-40706be49d29"
+  },
+  {
+    "key": "lean_planck_an_exactly_defined_non_decimal_unit_moves_the_root",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1c80d362-10a2-81d7-a6b6-bb4083518076"
+  },
+  {
+    "key": "lean_planck_the_miss_fits_inside_the_printed_precision_and_not_inside_the_measurement",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "261b31f7-51a9-8553-8cca-533b9d21e2ca"
+  },
+  {
+    "key": "lean_planck_the_planck_mantissa_factors_outside_the_lattice",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a8b669c6-e11d-8b66-a7b5-58cccea759b4"
   }
 ]

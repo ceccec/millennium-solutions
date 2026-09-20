@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). The author's own claim, that the seven are solved through involution, is stated in his name on the front page.
 
-## Discovered theorems (decidable, over ℤ/9) — 2904 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2912 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (948)
+### lean (956)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -1159,6 +1159,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_planck_the_three_uncertainties_are_one_uncertainty_wearing_three_faces](/theorem/lean_planck_the_three_uncertainties_are_one_uncertainty_wearing_three_faces) — lean planck.lean: the_three_uncertainties_are_one_uncertainty_wearing_three_faces — (ddiv dimEllP dimTP).2.1 = 0 ∧ (dmul dimEllP dimMP).2.1 = 0 ∧ (ddiv dimEllP dimMP).2.1 ≠ 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9879b17b-0c42…`
 - [lean_planck_the_published_digits_miss_an_identity_that_has_no_measurement_in_it](/theorem/lean_planck_the_published_digits_miss_an_identity_that_has_no_measurement_in_it) — lean planck.lean: the_published_digits_miss_an_identity_that_has_no_measurement_in_it — ratioFromDigits = 299792422 ∧ ratioFromDigits ≠ cDefined ∧ cDefined - ratioFromDigits = 36 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `d9c40976-6f84…`
 - [lean_planck_the_miss_is_rounding_and_sits_far_below_the_uncertainty](/theorem/lean_planck_the_miss_is_rounding_and_sits_far_below_the_uncertainty) — lean planck.lean: the_miss_is_rounding_and_sits_far_below_the_uncertainty — (cDefined - ratioFromDigits) * 1000000 &lt; 11 * cDefined ∧ 11 * cDefined / ((cDefined - ratioFromDigits) * 1000000) = 91 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e0719e22-4940…`
+- [lean_planck_not_one_value_the_world_admits_is_reachable_from_this_lattice](/theorem/lean_planck_not_one_value_the_world_admits_is_reachable_from_this_lattice) — lean planck.lean: not_one_value_the_world_admits_is_reachable_from_this_lattice — window.all (fun v =&gt; ! reachable v) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7ff9784c-dea6…`
+- [lean_planck_every_seed_factors_over_those_primes_so_every_product_does](/theorem/lean_planck_every_seed_factors_over_those_primes_so_every_product_does) — lean planck.lean: every_seed_factors_over_those_primes_so_every_product_does — seeds.all (fun s =&gt; reachable s) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `2bb01390-5215…`
+- [lean_planck_the_exponent_predicts_the_registry_with_a_literal_on_neither_side](/theorem/lean_planck_the_exponent_predicts_the_registry_with_a_literal_on_neither_side) — lean planck.lean: the_exponent_predicts_the_registry_with_a_literal_on_neither_side — gPpm dimEllP = ppm ellP ellPUnc ∧ gPpm dimTP = ppm tP tPUnc ∧ gPpm dimMP = ppm mP mPUnc — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `9f8f686c-bb89…`
+- [lean_planck_the_exact_halving_survives_only_because_the_division_truncated](/theorem/lean_planck_the_exact_halving_survives_only_because_the_division_truncated) — lean planck.lean: the_exact_halving_survives_only_because_the_division_truncated — ppm4 ellP ellPUnc = 111368 ∧ ppm4 bigG bigGUnc = 224742 ∧ 2 * ppm4 ellP ellPUnc ≠ ppm4 bigG bigGUnc — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `927f3553-ab6d…`
+- [lean_planck_no_power_of_ten_moves_the_root](/theorem/lean_planck_no_power_of_ten_moves_the_root) — lean planck.lean: no_power_of_ten_moves_the_root — (List.range 8).all (fun k =&gt; dr (ellP * 10 ^ k) = dr ellP) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `5247f951-6e3b…`
+- [lean_planck_an_exactly_defined_non_decimal_unit_moves_the_root](/theorem/lean_planck_an_exactly_defined_non_decimal_unit_moves_the_root) — lean planck.lean: an_exactly_defined_non_decimal_unit_moves_the_root — ellPInches = 63632086614 ∧ dr ellPInches = 9 ∧ dr ellPInches ≠ dr ellP — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1c80d362-10a2…`
+- [lean_planck_the_miss_fits_inside_the_printed_precision_and_not_inside_the_measurement](/theorem/lean_planck_the_miss_fits_inside_the_printed_precision_and_not_inside_the_measurement) — lean planck.lean: the_miss_fits_inside_the_printed_precision_and_not_inside_the_measurement — displayBudget = 120 ∧ cDefined - ratioFromDigits ≤ displayBudget ∧ displayBudget * 10000 &lt; 11 * cDefined — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `261b31f7-51a9…`
+- [lean_planck_the_planck_mantissa_factors_outside_the_lattice](/theorem/lean_planck_the_planck_mantissa_factors_outside_the_lattice) — lean planck.lean: the_planck_mantissa_factors_outside_the_lattice — ellP = 5 * 323251 ∧ (List.range' 2 568).all (fun d =&gt; 323251 % d ≠ 0) ∧ ! reachable ellP — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a8b669c6-e11d…`
 
 ### other — one-of-a-kind (0)
 
@@ -2751,4 +2759,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `48d6f9e3-47fb-8069-8f50-e1e14df2c5cb`. Integrity, not truth.
+Page content-address: `cdceac20-ce7e-85ff-93ce-b4716f6cdc21`. Integrity, not truth.

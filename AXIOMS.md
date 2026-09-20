@@ -5,11 +5,11 @@ title: The axiom index — what is assumed
 # The axiom index
 
 Every declaration in `src/proof` is checked with `#print axioms` on each build, and a dependency on any
-axiom fails the build rather than earning a footnote. All **963** report the same thing:
+axiom fails the build rather than earning a footnote. All **971** report the same thing:
 *does not depend on any axioms*.
 
 That is a real property, and it is not the whole picture. **Axiom-free is not assumption-free.** These
-theorems rest on **470** definitions, and every one of them is a choice. A theorem about
+theorems rest on **478** definitions, and every one of them is a choice. A theorem about
 `fall` is a theorem about the digital root only because `fall` is *defined* to be it. Both halves are
 indexed below, and the second is the longer one.
 
@@ -90,7 +90,7 @@ The pins in the control fixture follow the community practice of guarding `#prin
 `#guard_msgs`, which turns the axiom footprint into an executable regression test: the assertion is
 checked by the elaborator, and drift fails the build with a mismatch instead of passing unnoticed.
 
-## What IS assumed: the 470 definitions
+## What IS assumed: the 478 definitions
 
 Each of these is a primitive of this deposit — not derived, not proved, chosen. They are listed in full
 because a reader checking a theorem must be able to read the definition it is about, and because a
@@ -520,7 +520,7 @@ def entries : List Entry :=
 def statusOf (e : Entry) : Nat := e.2
 ```
 
-### `planck.lean` — 24 definition(s), 16 theorem(s)
+### `planck.lean` — 32 definition(s), 24 theorem(s)
 
 ```lean
 def ellP : Nat := 1616255       -- 1.616255(18) e-35 m
@@ -547,6 +547,14 @@ def ddiv (x y : Dim) : Dim := (x.1 - y.1, x.2.1 - y.2.1, x.2.2 - y.2.2)
 def gPpm (d : Dim) : Nat := d.2.1.natAbs * 11
 def cDefined : Nat := 299792458
 def ratioFromDigits : Nat := ellP * 1000000000 / tP
+def strip (p : Nat) : Nat → Nat → Nat
+def latticePrimes : List Nat := [2, 3, 5, 7, 17]
+def smoothPart (n : Nat) : Nat := latticePrimes.foldl (fun m p => strip p 40 m) n
+def reachable (n : Nat) : Bool := smoothPart n == 1
+def ppm4 (digits unc : Nat) : Nat := unc * 10000000000 / digits
+def ellPInches : Nat := ellP * 10000000 / 254
+def halfUlpPpm4 (digits : Nat) : Nat := 5000000000 / digits
+def displayBudget : Nat := (halfUlpPpm4 ellP + halfUlpPpm4 tP) * cDefined / 10000000000
 ```
 
 ### `priorart.lean` — 5 definition(s), 9 theorem(s)
@@ -773,6 +781,6 @@ def gcd9 (a b : Nat) : Nat := gcdF (a + b + 1) a b
 
 ---
 
-**963** declarations, **0** axiom dependencies, **470** definitions they rest on.
+**971** declarations, **0** axiom dependencies, **478** definitions they rest on.
 A content-address proves integrity, not truth, and an axiom index proves neither: it states what was
 assumed, so a reader can disagree with the assumptions rather than guess at them.

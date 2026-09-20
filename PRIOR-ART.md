@@ -6,7 +6,7 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 963 machine-checked declarations, **917** restate work that already has an author and
+Of 971 machine-checked declarations, **925** restate work that already has an author and
 **46** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/proof/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
@@ -27,7 +27,7 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **917** |
+| attributed to named earlier work | **925** |
 | unclassified — no search performed, status unknown | **46** |
 | claimed as novel | **0** |
 
@@ -47,7 +47,7 @@ searched, where, and when. An earlier version of this page claimed novelty for 3
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 40 sources, 917 theorems
+## Restated from named earlier work — 40 sources, 925 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
@@ -77,7 +77,7 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>nim.lean</code></td><td>28</td><td>combinatorial game theory</td><td>Nim — Charles L. Bouton, 1901; the Sprague–Grundy theorem — Roland Sprague, 1935 and Patrick M. Grundy, 1939</td></tr>
 <tr><td><code>nucleus.lean</code></td><td>8</td><td>the nuclear shell model, and the proton-to-electron mass ratio</td><td>THE PHYSICS IS NOT THIS DEPOSIT'S AND NONE OF IT IS CLAIMED. The shell model and its</td></tr>
 <tr><td><code>phenomena.lean</code></td><td>4</td><td>metrology and classical physical chemistry</td><td>the SI base quantities and their defining constants are definitions of the Conférence</td></tr>
-<tr><td><code>planck.lean</code></td><td>16</td><td>the CODATA recommended values, and the SI's 2019 definition of the seven base constants</td><td>NONE OF THE PHYSICS IS THIS DEPOSIT'S AND NONE OF IT IS CLAIMED. The Planck units are</td></tr>
+<tr><td><code>planck.lean</code></td><td>24</td><td>the CODATA recommended values, and the SI's 2019 definition of the seven base constants</td><td>NONE OF THE PHYSICS IS THIS DEPOSIT'S AND NONE OF IT IS CLAIMED. The Planck units are</td></tr>
 <tr><td><code>program.lean</code></td><td>22</td><td>identifier formats and error-detecting codes</td><td>the UUID layout and its version and variant fields are RFC 9562 (2024, obsoleting RFC</td></tr>
 <tr><td><code>quantum.lean</code></td><td>12</td><td>canonical forms and order-invariant commitments</td><td>sorting a multiset into a canonical order BEFORE folding it is standard practice, not a</td></tr>
 <tr><td><code>rays.lean</code></td><td>14</td><td>cyclic groups and primitive roots</td><td>that 3 is a primitive root modulo 7 and that (ℤ/7)* is cyclic of order six is Gauss and</td></tr>
@@ -129,7 +129,7 @@ which is a contribution of verification, not of discovery.
 - **modular arithmetic, quantified** — 64 theorems, in `families.lean`
 - **non-cryptographic hashing** — 15 theorems, in `fnv.lean`
 - **public-key signatures on elliptic curves** — 12 theorems, in `asymmetric.lean`
-- **the CODATA recommended values, and the SI's 2019 definition of the seven base constants** — 16 theorems, in `planck.lean`
+- **the CODATA recommended values, and the SI's 2019 definition of the seven base constants** — 24 theorems, in `planck.lean`
 - **the method of complements** — 20 theorems, in `coin.lean`, `theorems.lean`
 - **the nuclear shell model, and the proton-to-electron mass ratio** — 8 theorems, in `nucleus.lean`
 

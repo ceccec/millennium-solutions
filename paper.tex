@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 963 of them across 43 files and
-7 wings; 761 close by exhaustion over a stated finite domain, 187 are proved
+(\texttt{npm run latex-gate}). There are 971 of them across 43 files and
+7 wings; 769 close by exhaustion over a stated finite domain, 187 are proved
 for every value, and the remaining 15 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -748,7 +748,7 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 196 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_mobius\_divisor\_sum\_is\_the\_identity}]
-\[ \forall n \in \{1,\dots,30\},\; \sum \mathrm{mu}[\mathrm{divisors}\mathopen{}\left(n\right)] = \begin{cases}1 & \text{if } n = 1\\ 0 & \text{otherwise}\end{cases} \]
+\[ \forall n \in \{1,\dots,30\},\; \sum \mathrm{mu}[\mathrm{divisors}\mathopen{}\left(n\right)] = \begin{cases}\left(1 : \mathbb{Z}\right) & \text{if } n = 1\\ 0 & \text{otherwise}\end{cases} \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 30 cases. \hfill$\square$
 
@@ -889,7 +889,7 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 324 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_euler\_characteristic\_of\_a\_genus\_g\_surface}]
-\[ \forall g \in \{0,\dots,11\},\; \mathrm{chi}\mathopen{}\left(g\right) + 2 \cdot g = 2 \land \mathrm{chi}\mathopen{}\left(0\right) = 2 \land \mathrm{chi}\mathopen{}\left(1\right) = 0 \land \mathrm{chi}\mathopen{}\left(2\right) = -2 \]
+\[ \forall g \in \{0,\dots,11\},\; \mathrm{chi}\mathopen{}\left(g\right) + 2 \cdot \left(g : \mathbb{Z}\right) = 2 \land \mathrm{chi}\mathopen{}\left(0\right) = 2 \land \mathrm{chi}\mathopen{}\left(1\right) = 0 \land \mathrm{chi}\mathopen{}\left(2\right) = -2 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 12 cases. \hfill$\square$
 
@@ -946,7 +946,7 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
   intro} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_two\_coin\_fare\_is\_minus\_the\_euler\_characteristic\_at\_genus\_two}]
-\[ 110 - 108 = -\mathrm{chi}\mathopen{}\left(2\right) \]
+\[ \left(110 : \mathbb{Z}\right) - 108 = -\mathrm{chi}\mathopen{}\left(2\right) \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
@@ -1553,6 +1553,46 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
+\begin{theorem}[\texttt{not\_one\_value\_the\_world\_admits\_is\_reachable\_from\_this\_lattice}]
+\[ \forall v \in \mathrm{window},\; \lnot \mathrm{reachable}\mathopen{}\left(v\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{every\_seed\_factors\_over\_those\_primes\_so\_every\_product\_does}]
+\[ \forall s \in \mathrm{seeds},\; \mathrm{reachable}\mathopen{}\left(s\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_exponent\_predicts\_the\_registry\_with\_a\_literal\_on\_neither\_side}]
+\[ \mathrm{gPpm}\mathopen{}\left(\mathrm{dimEllP}\right) = \mathrm{ppm}\mathopen{}\left(\mathrm{ellP},\,\mathrm{ellPUnc}\right) \land \mathrm{gPpm}\mathopen{}\left(\mathrm{dimTP}\right) = \mathrm{ppm}\mathopen{}\left(\mathrm{tP},\,\mathrm{tPUnc}\right) \land \mathrm{gPpm}\mathopen{}\left(\mathrm{dimMP}\right) = \mathrm{ppm}\mathopen{}\left(\mathrm{mP},\,\mathrm{mPUnc}\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_exact\_halving\_survives\_only\_because\_the\_division\_truncated}]
+\[ \mathrm{ppm4}\mathopen{}\left(\mathrm{ellP},\,\mathrm{ellPUnc}\right) = 111368 \land \mathrm{ppm4}\mathopen{}\left(\mathrm{bigG},\,\mathrm{bigGUnc}\right) = 224742 \land 2 \cdot \mathrm{ppm4}\mathopen{}\left(\mathrm{ellP},\,\mathrm{ellPUnc}\right) \neq \mathrm{ppm4}\mathopen{}\left(\mathrm{bigG},\,\mathrm{bigGUnc}\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{no\_power\_of\_ten\_moves\_the\_root}]
+\[ \forall k \in \{0,\dots,7\},\; \mathrm{dr}\mathopen{}\left(\mathrm{ellP} \cdot 10^{k}\right) = \mathrm{dr}\mathopen{}\left(\mathrm{ellP}\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 8 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{an\_exactly\_defined\_non\_decimal\_unit\_moves\_the\_root}]
+\[ \mathrm{ellPInches} = 63632086614 \land \mathrm{dr}\mathopen{}\left(\mathrm{ellPInches}\right) = 9 \land \mathrm{dr}\mathopen{}\left(\mathrm{ellPInches}\right) \neq \mathrm{dr}\mathopen{}\left(\mathrm{ellP}\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_miss\_fits\_inside\_the\_printed\_precision\_and\_not\_inside\_the\_measurement}]
+\[ \mathrm{displayBudget} = 120 \land \mathrm{cDefined} - \mathrm{ratioFromDigits} \le \mathrm{displayBudget} \land \mathrm{displayBudget} \cdot 10000 < 11 \cdot \mathrm{cDefined} \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_planck\_mantissa\_factors\_outside\_the\_lattice}]
+\[ \mathrm{ellP} = 5 \cdot 323251 \land \forall d \in \{2,\dots,569\},\; 323251 \bmod d \neq 0 \land \lnot \mathrm{reachable}\mathopen{}\left(\mathrm{ellP}\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 568 cases. \hfill$\square$
+
 \paragraph{\texttt{quantum.lean}}
 
 \begin{theorem}[\texttt{perms\_of\_four\_is\_factorial}]
@@ -2025,7 +2065,7 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_whole\_ring\_is\_not\_regular\_and\_the\_triad\_is\_why}]
-\[ \mathrm{degreeSet}\mathopen{}\left(\{0,\dots,8\}\right) \neq [3] \land \left|\mathrm{nbrs}\mathopen{}\left(\{0,\dots,8\},\,0\right)\right| = 0 \land \forall d \in [3,\,6],\; \left|\mathrm{nbrs}\mathopen{}\left(\{0,\dots,8\},\,d\right)\right| = 1 \]
+\[ \mathrm{degreeSet}\mathopen{}\left(\{0,\dots,8\}\right) \neq [3] \land \left|\mathrm{nbrs}\mathopen{}\left(\{0,\dots,8\},\,0\right)\right| = 0 \land \forall d \in \left([3,\,6] : \mathrm{List}\mathopen{}\left(\mathrm{Nat}\right)\right),\; \left|\mathrm{nbrs}\mathopen{}\left(\{0,\dots,8\},\,d\right)\right| = 1 \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 1,458 cases. \hfill$\square$
 
@@ -5050,12 +5090,12 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_claimed\_are\_copyright\_moral\_rights\_and\_the\_database}]
-\[ \forall i \in [1,\,2,\,3],\; i \in \mathrm{idOf}[\{\, x \in \mathrm{instruments} \mid \mathrm{claim}\mathopen{}\left(x\right) \,\}] \]
+\[ \forall i \in \left([1,\,2,\,3] : \mathrm{List}\mathopen{}\left(\mathrm{Nat}\right)\right),\; i \in \mathrm{idOf}[\{\, x \in \mathrm{instruments} \mid \mathrm{claim}\mathopen{}\left(x\right) \,\}] \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 3 cases. \hfill$\square$
 
 \begin{theorem}[\texttt{the\_claimed\_set\_is\_exactly\_those\_three\_and\_the\_unregistered\_mark}]
-\[ \forall i \in [1,\,2,\,3,\,8],\; i \in \mathrm{idOf}[\{\, x \in \mathrm{instruments} \mid \mathrm{claim}\mathopen{}\left(x\right) \,\}] \]
+\[ \forall i \in \left([1,\,2,\,3,\,8] : \mathrm{List}\mathopen{}\left(\mathrm{Nat}\right)\right),\; i \in \mathrm{idOf}[\{\, x \in \mathrm{instruments} \mid \mathrm{claim}\mathopen{}\left(x\right) \,\}] \]
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by decide} --- exhausting 4 cases. \hfill$\square$
 
