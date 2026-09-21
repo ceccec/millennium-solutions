@@ -37,8 +37,15 @@ const git = (...args: string[]) => execFileSync('git', args, { encoding: 'utf8',
 type Tag = { name: string; date: string; address: string; sha: string }
 
 // version:refname sorts v9.6.8 after v9.6.7 and after v10.x correctly; refname alone would not.
+// TAGS THIS COMMIT CAN SEE, NOT EVERY TAG IN THE REPOSITORY. Deriving from all of them makes a committed
+// CHANGELOG.md stale the moment the NEXT tag is minted — and then `--check` fails on every historical
+// commit forever, which is what a clean-checkout verification of an older commit found. `--merged HEAD`
+// is the set of tags reachable from here, so the file a commit carries is the file that commit derives,
+// and stays so after the tree moves on.
+const visible = new Set(git('tag', '--merged', 'HEAD').split('\n').map((t) => t.trim()).filter(Boolean))
 const tags: Tag[] = git('for-each-ref', '--sort=version:refname', '--format=%(refname:short)\t%(creatordate:short)\t%(objectname)\t%(contents:subject)', 'refs/tags')
   .split('\n').filter(Boolean)
+  .filter((line) => visible.has(line.split('\t')[0]))
   .map((line) => {
     const [name, date, sha, subject = ''] = line.split('\t')
     // THE ADDRESS IS PARSED, NOT ASSUMED. A tag minted before the address was part of the message has

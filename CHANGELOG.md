@@ -5,9 +5,35 @@ description: One row per annotated git tag, each with the content-address that t
 
 # Changelog
 
-Derived by `node scripts/changelog.ts` from this repository's annotated tags. **920 releases**, 920 of them carrying a content-address in the tag itself. A row cannot claim an address its tag does not carry, because the row is read out of the tag.
+Derived by `node scripts/changelog.ts` from this repository's annotated tags. **922 releases**, 922 of them carrying a content-address in the tag itself. A row cannot claim an address its tag does not carry, because the row is read out of the tag.
 
 ## The last 20 releases, with what they contain
+
+### v9.7.4 — 2026-09-21
+
+Content-address `bc6a4354-9108-8342-91f9-2052a0055702`.
+
+- the elan installer stops landing in the checkout
+- the release workflow runs the kernel — it has been minting provenance tags without it
+
+### v9.7.3 — 2026-09-21
+
+Content-address `ffd2aaab-7fa8-8869-9f35-94e9c4efddf1`.
+
+- a generator is not a gate — zenodo-sync gets a mode that writes nothing
+- the sync plan stops changing when nothing changed
+- the independence gate runs in the chain, and changelog gets the control I talked myself out of
+- the five new theorems are sealed — proved is not citable
+- light: the two constants the 2019 redefinition made exact, and one theorem I had to delete
+- planck: the other two relations were dimensions only, and the digits refuse what they predict
+- the gates I added today get controls that live in the tree, not in my transcript
+- the tool table moves off the verification path — I had put a network call on it
+- a fresh clone could not build the Lean layer, and nothing in the tree could see it
+- a restore that fails silently poisons every gate after it
+- run the steps a change can reach, and stop quoting a step count as a saving
+- four hex, exactly computed — and the bound that says what the handle must carry
+- .zenodo.json is derived from the tree, and the author's paragraph is not touched
+- four hex and the message, and nothing else travels
 
 ### v9.7.2 — 2026-09-20
 
@@ -148,22 +174,12 @@ Content-address `d38bbb11-5048-8ccb-901e-48c99197beac`.
 - paper.ts escaped every prose but one: a file header's angle brackets became an HTML tag and killed the build hundreds of lines away, in another file
 - two waves of theorems, and fifteen unchecked Lean files purged — 2880 = 360 × 8
 
-### v9.5.4 — 2026-09-20
-
-Content-address `b98b51a2-a9bc-845e-8b06-7eb6d7699abc`.
-
-- accounting and dashboard follow the tag
-
-### v9.5.3 — 2026-09-20
-
-Content-address `5b397a75-4635-8a1d-8d77-d6e3f2e77385`.
-
-- the two gates control-probe could not measure, controlled by hand — novelty and uses
-
 ## Every release
 
 | version | date | content-address |
 | --- | --- | --- |
+| v9.7.4 | 2026-09-21 | `bc6a4354-9108-8342-91f9-2052a0055702` |
+| v9.7.3 | 2026-09-21 | `ffd2aaab-7fa8-8869-9f35-94e9c4efddf1` |
 | v9.7.2 | 2026-09-20 | `5d87a137-84d2-8f4c-8b08-98c1313e1c36` |
 | v9.7.1 | 2026-09-20 | `ba7a688d-97cc-8aed-8d65-8e9d92c925d4` |
 | v9.7.0 | 2026-09-20 | `e75ac007-efd7-879c-8b4c-bdbc0c2945ea` |
