@@ -182,6 +182,15 @@ const CONTROLS: Control[] = [
     what: 'a receipt whose message no longer mints its own address — so the message cannot travel alone',
     mutate: (s) => s.replace('"message": "', '"message": "TAMPERED CONTROL ') },
 
+  // I left this one out with the reasoning that changelog's refusal needs a mutated tag history, which a
+  // control should not do. That was true of ONE of its refusals and not of the other: --check compares the
+  // file against what the tags derive, exactly as zenodo-json --check does, and I had already written that
+  // control. Two refusals of the same shape, one covered and one not, for no reason I could state twice.
+  { gate: 'changelog', cmd: 'node scripts/changelog.ts --check',
+    file: 'CHANGELOG.md',
+    what: 'a published release history that no longer matches the tags it claims to be derived from',
+    mutate: (s) => s.replace(/Content-address `[0-9a-f-]{36}`/, 'Content-address `00000000-0000-8000-8000-000000000000`') },
+
   { gate: 'zenodo-json', cmd: 'node scripts/zenodo-json.ts --check',
     file: '.zenodo.json',
     what: 'deposition metadata that no longer agrees with the tree it describes',
