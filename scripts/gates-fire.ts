@@ -186,6 +186,24 @@ const CONTROLS: Control[] = [
   // control should not do. That was true of ONE of its refusals and not of the other: --check compares the
   // file against what the tags derive, exactly as zenodo-json --check does, and I had already written that
   // control. Two refusals of the same shape, one covered and one not, for no reason I could state twice.
+  // THE LAST THREE GATES WITHOUT ONE. None of these is mine; all three were listed as "trusted only
+  // because they pass", which is the same standing my own four had this morning.
+
+  { gate: 'authority-gate', cmd: 'node scripts/authority-gate.ts',
+    file: 'index.md',
+    what: 'a verdict on the author\'s claim back in the deposit\'s own voice, on the page a reader opens first',
+    mutate: (s) => s + '\nThis deposit settles **0 of the 7** Clay Millennium problems.\n' },
+
+  { gate: 'wholeness', cmd: 'node scripts/wholeness.ts',
+    file: 'compute.md',
+    what: 'a fused module whose report() no longer computes, so the deposit cannot state itself',
+    mutate: (s) => s.replace("from './src/honesty/index'", "from './src/honesty/absent-control'") },
+
+  { gate: 'metrics', cmd: 'node scripts/metrics.ts --verify metrics.json',
+    file: 'metrics.json',
+    what: 'a published face whose row no longer matches the receipt it was sealed under',
+    mutate: (s) => s.replace(/"value": "[^"]*"/, '"value": "TAMPERED"') },
+
   { gate: 'changelog', cmd: 'node scripts/changelog.ts --check',
     file: 'CHANGELOG.md',
     what: 'a published release history that no longer matches the tags it claims to be derived from',

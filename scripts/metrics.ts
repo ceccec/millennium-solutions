@@ -36,6 +36,54 @@ import { census, advantage, split, ledger, leanFiles, leanTheorems, THEOREM_DEFI
 // server can verify a face without importing THIS file, whose top level runs the gates.
 export type { Metric, Face } from '../src/face/index.ts'
 
+// ── verify mode: the part a RECEIVING session runs, needing nothing from this repository ─────────────────
+//
+// IT RUNS FIRST, AND IT DID NOT. This block sat below the row computation, and that computation shells out
+// to `npm run -s <gate>` for every gate in this tree. So the mode whose whole purpose is that a receiving
+// session needs NOTHING from this repository ran the entire repository before it looked at the file it was
+// handed — minutes of work, and a verdict reached in a tree the sender does not control. Measured: a
+// --verify on a tampered face produced no output at all inside 100 seconds, because it had not finished
+// being a generator yet.
+//
+// Hoisted above everything. Verifying a sealed face is arithmetic on the face: its rows, their receipts and
+// their root. Nothing else may be consulted, and now nothing else is reachable before the answer.
+const arg = process.argv[2]
+if (arg === '--verify') {
+  const path = process.argv[3]
+  if (!path) { console.error('✗ metrics --verify <face.json>'); process.exit(1) }
+  const f = JSON.parse(readFileSync(path, 'utf8')) as Face
+  const c = checkFace(f)
+  let bad = c.altered.length + (c.root === f.root ? 0 : 1)
+  for (const k of c.altered) console.log(`  ✗ ${k}: receipt does not match its own claim, value and command`)
+  if (c.root !== f.root) console.log(`  ✗ root ${f.root} ≠ ${c.root} recomputed from the rows`)
+  // A FACE THAT DECLARES A SPEC IT PREDATES. If every row fails AND the file names a commit, the holder is
+  // almost certainly looking at a snapshot taken before the formula changed — which is what happened to
+  // erpax-94, who spent an hour ruling out their own implementation against a file that could not reproduce.
+  // Saying so turns an hour of correct debugging into one line.
+  if (c.altered.length === f.rows.length && f.rows.length > 1) {
+    console.log(`\n  ○ every row fails. If this file names a commit — it says ${(f as { generatedFrom?: string }).generatedFrom ?? '(none)'} —`)
+    console.log(`    check whether a newer face exists before debugging your own toUuid: a snapshot taken before a`)
+    console.log(`    formula change declares the new protocol id while carrying receipts under the old one.`)
+  }
+  const failing = f.rows.filter((r) => r.value === 'FAIL')
+  if (c.verdict === 'different-convention') {
+    console.log(`\n○ ${f.repo}: sealed under a DIFFERENT convention, not altered — every row and the root`)
+    console.log(`  disagree, which is the signature of another formula rather than of tampering.`)
+    console.log(`  this checker uses: ${PROTOCOL.id}`)
+    console.log(`  the face declares: ${protocolId(f.protocol)}`)
+    process.exit(0)
+  }
+  console.log(bad
+    ? `\n✗ ${f.repo}: ${bad} row(s) altered since sealing — the face is not what it was sealed as`
+    : `\n✓ ${f.repo}: ${f.rows.length} rows intact, root ${f.root.slice(0, 13)}… recomputed`)
+  if (!bad) {
+    console.log(`  integrity only: this says the rows are unaltered, NOT that any figure is correct.`)
+    console.log(`  to check a figure, run its command in that repository.`)
+    if (failing.length) console.log(`  ${failing.length} gate(s) reported FAIL: ${failing.map((r) => r.key).join(' ')}`)
+  }
+  process.exit(bad ? 1 : 0)
+}
+
 const rows: Metric[] = []
 const add = (key: string, claim: string, value: string | number, command: string) => {
   const v = String(value)
@@ -114,44 +162,6 @@ const face: Face = {
   protocol: PROTOCOL,
   rows,
   root: rootOf(rows),
-}
-
-// ── verify mode: the part a RECEIVING session runs, needing nothing from this repository ─────────────────
-const arg = process.argv[2]
-if (arg === '--verify') {
-  const path = process.argv[3]
-  if (!path) { console.error('✗ metrics --verify <face.json>'); process.exit(1) }
-  const f = JSON.parse(readFileSync(path, 'utf8')) as Face
-  const c = checkFace(f)
-  let bad = c.altered.length + (c.root === f.root ? 0 : 1)
-  for (const k of c.altered) console.log(`  ✗ ${k}: receipt does not match its own claim, value and command`)
-  if (c.root !== f.root) console.log(`  ✗ root ${f.root} ≠ ${c.root} recomputed from the rows`)
-  // A FACE THAT DECLARES A SPEC IT PREDATES. If every row fails AND the file names a commit, the holder is
-  // almost certainly looking at a snapshot taken before the formula changed — which is what happened to
-  // erpax-94, who spent an hour ruling out their own implementation against a file that could not reproduce.
-  // Saying so turns an hour of correct debugging into one line.
-  if (c.altered.length === f.rows.length && f.rows.length > 1) {
-    console.log(`\n  ○ every row fails. If this file names a commit — it says ${(f as { generatedFrom?: string }).generatedFrom ?? '(none)'} —`)
-    console.log(`    check whether a newer face exists before debugging your own toUuid: a snapshot taken before a`)
-    console.log(`    formula change declares the new protocol id while carrying receipts under the old one.`)
-  }
-  const failing = f.rows.filter((r) => r.value === 'FAIL')
-  if (c.verdict === 'different-convention') {
-    console.log(`\n○ ${f.repo}: sealed under a DIFFERENT convention, not altered — every row and the root`)
-    console.log(`  disagree, which is the signature of another formula rather than of tampering.`)
-    console.log(`  this checker uses: ${PROTOCOL.id}`)
-    console.log(`  the face declares: ${protocolId(f.protocol)}`)
-    process.exit(0)
-  }
-  console.log(bad
-    ? `\n✗ ${f.repo}: ${bad} row(s) altered since sealing — the face is not what it was sealed as`
-    : `\n✓ ${f.repo}: ${f.rows.length} rows intact, root ${f.root.slice(0, 13)}… recomputed`)
-  if (!bad) {
-    console.log(`  integrity only: this says the rows are unaltered, NOT that any figure is correct.`)
-    console.log(`  to check a figure, run its command in that repository.`)
-    if (failing.length) console.log(`  ${failing.length} gate(s) reported FAIL: ${failing.map((r) => r.key).join(' ')}`)
-  }
-  process.exit(bad ? 1 : 0)
 }
 
 writeFileSync('metrics.json', JSON.stringify(face, null, 2) + '\n')
