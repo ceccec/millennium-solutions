@@ -20368,5 +20368,30 @@
     "key": "lean_handle_an_address_never_determines_the_message_it_addresses",
     "name": "lean handle.lean: an_address_never_determines_the_message_it_addresses — (List.range 16).all (fun a => 1 < ((List.range 64).filter (fun m => addr m == a)).length) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "147d6591-a70a-8fa8-8bb8-7459813acfe5"
+  },
+  {
+    "key": "lean_light_the_molar_gas_constant_is_an_exact_product_of_two_defined_constants",
+    "name": "lean light.lean: the_molar_gas_constant_is_an_exact_product_of_two_defined_constants — molarGas = 831446261815324 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8b8f7b5c-e29c-85e8-8c53-e395bdc5a339"
+  },
+  {
+    "key": "lean_light_the_faraday_constant_is_an_exact_product_of_two_defined_constants",
+    "name": "lean light.lean: the_faraday_constant_is_an_exact_product_of_two_defined_constants — faraday = 964853321233100184 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ce0f984b-550e-8a6a-ab10-4247d780edb4"
+  },
+  {
+    "key": "lean_planck_length_times_mass_meets_the_quantum_in_the_digits",
+    "name": "lean planck.lean: length_times_mass_meets_the_quantum_in_the_digits — missPpb quantumLhs quantumRhs = 171 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5da05fbd-34e5-8d47-89ee-a638c8ce3581"
+  },
+  {
+    "key": "lean_planck_length_over_mass_meets_gravity_in_the_digits",
+    "name": "lean planck.lean: length_over_mass_meets_gravity_in_the_digits — missPpb gravityLhs gravityRhs = 142 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9c98e0ea-4fdb-8927-bce2-314b28dd1b41"
+  },
+  {
+    "key": "lean_planck_the_relations_cannot_express_the_uncertainty_they_inherit",
+    "name": "lean planck.lean: the_relations_cannot_express_the_uncertainty_they_inherit — missPpb quantumLhs quantumRhs > missPpb gravityLhs gravityRhs ∧ missPpb gravityLhs gravityRhs * 1000 < ppm bigG bigGUnc * 1000000 ∧ gPpm dimMP = 11 ∧ gPpm (dmul dimEllP dimMP) = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9e420848-d43d-8697-99b3-0a9daef48263"
   }
 ]

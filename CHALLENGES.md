@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). The author's own claim, that the seven are solved through involution, is stated in his name on the front page.
 
-## Discovered theorems (decidable, over ℤ/9) — 2912 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 2920 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (956)
+### lean (964)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -1167,6 +1167,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_planck_an_exactly_defined_non_decimal_unit_moves_the_root](/theorem/lean_planck_an_exactly_defined_non_decimal_unit_moves_the_root) — lean planck.lean: an_exactly_defined_non_decimal_unit_moves_the_root — ellPInches = 63632086614 ∧ dr ellPInches = 9 ∧ dr ellPInches ≠ dr ellP — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1c80d362-10a2…`
 - [lean_planck_the_miss_fits_inside_the_printed_precision_and_not_inside_the_measurement](/theorem/lean_planck_the_miss_fits_inside_the_printed_precision_and_not_inside_the_measurement) — lean planck.lean: the_miss_fits_inside_the_printed_precision_and_not_inside_the_measurement — displayBudget = 120 ∧ cDefined - ratioFromDigits ≤ displayBudget ∧ displayBudget * 10000 &lt; 11 * cDefined — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `261b31f7-51a9…`
 - [lean_planck_the_planck_mantissa_factors_outside_the_lattice](/theorem/lean_planck_the_planck_mantissa_factors_outside_the_lattice) — lean planck.lean: the_planck_mantissa_factors_outside_the_lattice — ellP = 5 * 323251 ∧ (List.range' 2 568).all (fun d =&gt; 323251 % d ≠ 0) ∧ ! reachable ellP — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a8b669c6-e11d…`
+- [lean_handle_the_four_hex_field_round_trips_over_its_whole_space](/theorem/lean_handle_the_four_hex_field_round_trips_over_its_whole_space) — lean handle.lean: the_four_hex_field_round_trips_over_its_whole_space — (List.range 16).all (fun a =&gt; (List.range 16).all (fun b =&gt; (List.range 16).all (fun c =&gt; (List.range 16).all (fun d =&gt; let n := fromNibs a b c d nib n 0 == a &amp;&amp; nib n 1 == b &amp;&amp; nib n 2 == c &amp;&amp; nib n 3 == d &amp;&amp; n &lt; 65536)))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a2d36cba-f5e8…`
+- [lean_handle_the_field_runs_from_zero_to_its_last_value](/theorem/lean_handle_the_field_runs_from_zero_to_its_last_value) — lean handle.lean: the_field_runs_from_zero_to_its_last_value — fromNibs 0 0 0 0 = 0 ∧ fromNibs 15 15 15 15 = 65535 ∧ (List.range 16).all (fun d =&gt; fromNibs 0 0 0 d == 4096 * d) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7714e0a9-e35c…`
+- [lean_handle_a_uuid_is_thirty_two_hex_and_exactly_three_groups_are_four_wide](/theorem/lean_handle_a_uuid_is_thirty_two_hex_and_exactly_three_groups_are_four_wide) — lean handle.lean: a_uuid_is_thirty_two_hex_and_exactly_three_groups_are_four_wide — groups.foldl (· + ·) 0 = 32 ∧ (groups.filter (fun g =&gt; g == 4)).length = 3 ∧ groups.length = 5 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `a998790f-3068…`
+- [lean_handle_the_address_space_is_finite_so_enough_messages_must_share_an_address](/theorem/lean_handle_the_address_space_is_finite_so_enough_messages_must_share_an_address) — lean handle.lean: the_address_space_is_finite_so_enough_messages_must_share_an_address — space = 16 ^ 4 ∧ space = 2 ^ 16 ∧ ((List.range 17).map (fun m =&gt; m % 16)).eraseDups.length &lt; 17 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1d85c5d8-e141…`
+- [lean_handle_one_address_two_messages_and_the_handle_is_what_tells_them_apart](/theorem/lean_handle_one_address_two_messages_and_the_handle_is_what_tells_them_apart) — lean handle.lean: one_address_two_messages_and_the_handle_is_what_tells_them_apart — addr 3 = addr 19 ∧ under 0 3 = under 0 19 ∧ under 0 3 ≠ under 1 19 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `1b3ee59d-ca46…`
+- [lean_handle_the_same_message_at_two_positions_never_seals_alike](/theorem/lean_handle_the_same_message_at_two_positions_never_seals_alike) — lean handle.lean: the_same_message_at_two_positions_never_seals_alike — (List.range 32).all (fun m =&gt; (List.range 8).all (fun i =&gt; (List.range 8).all (fun j =&gt; i == j || sealAt m i != sealAt m j))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `606fefb8-c2ab…`
+- [lean_handle_reordering_the_handles_always_moves_the_fifth](/theorem/lean_handle_reordering_the_handles_always_moves_the_fifth) — lean handle.lean: reordering_the_handles_always_moves_the_fifth — (perms.map (fun p =&gt; fold4 (p.get! 0) (p.get! 1) (p.get! 2) (p.get! 3))).eraseDups.length = 24 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `0509ef1a-9b13…`
+- [lean_handle_an_address_never_determines_the_message_it_addresses](/theorem/lean_handle_an_address_never_determines_the_message_it_addresses) — lean handle.lean: an_address_never_determines_the_message_it_addresses — (List.range 16).all (fun a =&gt; 1 &lt; ((List.range 64).filter (fun m =&gt; addr m == a)).length) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `147d6591-a70a…`
 
 ### other — one-of-a-kind (0)
 
@@ -2759,4 +2767,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `cdceac20-ce7e-85ff-93ce-b4716f6cdc21`. Integrity, not truth.
+Page content-address: `37b0dd98-d963-8863-8324-10726097ebfd`. Integrity, not truth.

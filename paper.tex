@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 971 of them across 43 files and
-7 wings; 769 close by exhaustion over a stated finite domain, 187 are proved
+(\texttt{npm run latex-gate}). There are 979 of them across 44 files and
+7 wings; 777 close by exhaustion over a stated finite domain, 187 are proved
 for every value, and the remaining 15 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -1122,6 +1122,48 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by
   intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{handle.lean}}
+
+\begin{theorem}[\texttt{the\_four\_hex\_field\_round\_trips\_over\_its\_whole\_space}]
+\texttt{(List.range 16).all (fun a => (List.range 16).all (fun b => (List.range 16).all (fun c => (List.range 16).all (fun d => let n := fromNibs a b c d nib n 0 == a \&\& nib n 1 == b \&\& nib n 2 == c \&\& nib n 3 == d \&\& n < 65536))))}
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 65,536 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_field\_runs\_from\_zero\_to\_its\_last\_value}]
+\[ \mathrm{fromNibs}\mathopen{}\left(0,\,0,\,0,\,0\right) = 0 \land \mathrm{fromNibs}\mathopen{}\left(15,\,15,\,15,\,15\right) = 65535 \land \forall d \in \{0,\dots,15\},\; \mathrm{fromNibs}\mathopen{}\left(0,\,0,\,0,\,d\right) = 4096 \cdot d \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 16 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_uuid\_is\_thirty\_two\_hex\_and\_exactly\_three\_groups\_are\_four\_wide}]
+\[ \sum \mathrm{groups} = 32 \land \left|\{\, g \in \mathrm{groups} \mid g = 4 \,\}\right| = 3 \land \left|\mathrm{groups}\right| = 5 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_address\_space\_is\_finite\_so\_enough\_messages\_must\_share\_an\_address}]
+\[ \mathrm{space} = 16^{4} \land \mathrm{space} = 2^{16} \land \left|\operatorname{dedup}\left(\{\, m \bmod 16 \mid m \in \{0,\dots,16\} \,\}\right)\right| < 17 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 17 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{one\_address\_two\_messages\_and\_the\_handle\_is\_what\_tells\_them\_apart}]
+\[ \mathrm{addr}\mathopen{}\left(3\right) = \mathrm{addr}\mathopen{}\left(19\right) \land \mathrm{under}\mathopen{}\left(0,\,3\right) = \mathrm{under}\mathopen{}\left(0,\,19\right) \land \mathrm{under}\mathopen{}\left(0,\,3\right) \neq \mathrm{under}\mathopen{}\left(1,\,19\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_same\_message\_at\_two\_positions\_never\_seals\_alike}]
+\[ \forall m \in \{0,\dots,31\},\; \forall i \in \{0,\dots,7\},\; \forall j \in \{0,\dots,7\},\; i = j \lor \mathrm{sealAt}\mathopen{}\left(m,\,i\right) \neq \mathrm{sealAt}\mathopen{}\left(m,\,j\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 2,048 cases. \hfill$\square$
+
+\begin{theorem}[\texttt{reordering\_the\_handles\_always\_moves\_the\_fifth}]
+\[ \left|\operatorname{dedup}\left(\{\, \mathrm{fold4}\mathopen{}\left(p_{0},\,p_{1},\,p_{2},\,p_{3}\right) \mid p \in \mathrm{perms} \,\}\right)\right| = 24 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{an\_address\_never\_determines\_the\_message\_it\_addresses}]
+\[ \forall a \in \{0,\dots,15\},\; 1 < \left|\{\, m \in \{0,\dots,63\} \mid \mathrm{addr}\mathopen{}\left(m\right) = a \,\}\right| \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- exhausting 1,024 cases. \hfill$\square$
 
 \paragraph{\texttt{index.lean}}
 
