@@ -164,7 +164,8 @@
     "mcp-http": "node scripts/mcp-http.ts",
     "handle-gate": "node scripts/handle-gate.ts",
     "affected": "node scripts/affected.ts",
-    "verify-clone": "node scripts/verify-clone.ts"
+    "verify-clone": "node scripts/verify-clone.ts",
+    "perturb": "node scripts/perturb-gate.ts"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",

@@ -17470,5 +17470,83 @@
     "verdict": "UNVERIFIED",
     "ground": "no candidate in the current space — nothing to recompute",
     "receipt": "a8b669c6-e11d-8b66-a7b5-58cccea759b4"
+  },
+  {
+    "key": "lean_handle_the_four_hex_field_round_trips_over_its_whole_space",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a2d36cba-f5e8-8d33-ad99-46ab5fc697c9"
+  },
+  {
+    "key": "lean_handle_the_field_runs_from_zero_to_its_last_value",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "7714e0a9-e35c-8230-b107-5a18a75b7c3f"
+  },
+  {
+    "key": "lean_handle_a_uuid_is_thirty_two_hex_and_exactly_three_groups_are_four_wide",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "a998790f-3068-8735-af18-19889c088f19"
+  },
+  {
+    "key": "lean_handle_the_address_space_is_finite_so_enough_messages_must_share_an_address",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1d85c5d8-e141-816f-86f8-2ab7c7c02b99"
+  },
+  {
+    "key": "lean_handle_one_address_two_messages_and_the_handle_is_what_tells_them_apart",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "1b3ee59d-ca46-8a30-bfba-a11d8a8565b2"
+  },
+  {
+    "key": "lean_handle_the_same_message_at_two_positions_never_seals_alike",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "606fefb8-c2ab-86e5-b55c-a1a3240c6ba1"
+  },
+  {
+    "key": "lean_handle_reordering_the_handles_always_moves_the_fifth",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "0509ef1a-9b13-85e0-a20c-325d6c60bcb5"
+  },
+  {
+    "key": "lean_handle_an_address_never_determines_the_message_it_addresses",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "147d6591-a70a-8fa8-8bb8-7459813acfe5"
+  },
+  {
+    "key": "lean_light_the_molar_gas_constant_is_an_exact_product_of_two_defined_constants",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "8b8f7b5c-e29c-85e8-8c53-e395bdc5a339"
+  },
+  {
+    "key": "lean_light_the_faraday_constant_is_an_exact_product_of_two_defined_constants",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "ce0f984b-550e-8a6a-ab10-4247d780edb4"
+  },
+  {
+    "key": "lean_planck_length_times_mass_meets_the_quantum_in_the_digits",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "5da05fbd-34e5-8d47-89ee-a638c8ce3581"
+  },
+  {
+    "key": "lean_planck_length_over_mass_meets_gravity_in_the_digits",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9c98e0ea-4fdb-8927-bce2-314b28dd1b41"
+  },
+  {
+    "key": "lean_planck_the_relations_cannot_express_the_uncertainty_they_inherit",
+    "verdict": "UNVERIFIED",
+    "ground": "no candidate in the current space — nothing to recompute",
+    "receipt": "9e420848-d43d-8697-99b3-0a9daef48263"
   }
 ]

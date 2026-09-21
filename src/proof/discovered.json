@@ -20393,5 +20393,45 @@
     "key": "lean_planck_the_relations_cannot_express_the_uncertainty_they_inherit",
     "name": "lean planck.lean: the_relations_cannot_express_the_uncertainty_they_inherit — missPpb quantumLhs quantumRhs > missPpb gravityLhs gravityRhs ∧ missPpb gravityLhs gravityRhs * 1000 < ppm bigG bigGUnc * 1000000 ∧ gPpm dimMP = 11 ∧ gPpm (dmul dimEllP dimMP) = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "9e420848-d43d-8697-99b3-0a9daef48263"
+  },
+  {
+    "key": "lean_lanes_a_lane_is_always_granted",
+    "name": "lean lanes.lean: a_lane_is_always_granted — (List.range 9).all (fun c => (List.range 9).all (fun m => (List.range 9).all (fun r => lanesKnown c m r ≥ 1 && lanesUnknown c m ≥ 1))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d5814a1b-e4b8-8fc4-90db-e2a872f654e9"
+  },
+  {
+    "key": "lean_lanes_lanes_never_exceed_the_cores_but_for_the_floor",
+    "name": "lean lanes.lean: lanes_never_exceed_the_cores_but_for_the_floor — (List.range 9).all (fun c => (List.range 9).all (fun m => (List.range 9).all (fun r => lanesKnown c m r ≤ max 1 c && lanesUnknown c m ≤ max 1 c))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "da821612-6f51-8848-9d55-b47106e30b90"
+  },
+  {
+    "key": "lean_lanes_lanes_never_exceed_what_memory_affords",
+    "name": "lean lanes.lean: lanes_never_exceed_what_memory_affords — (List.range 9).all (fun c => (List.range 9).all (fun m => (List.range 9).all (fun r => lanesKnown c m r ≤ max 1 m && lanesUnknown c m ≤ max 1 m))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "06b34bd0-88e6-8625-8f21-6a5561891cb3"
+  },
+  {
+    "key": "lean_lanes_unknown_is_never_better_than_measuring_an_empty_machine",
+    "name": "lean lanes.lean: unknown_is_never_better_than_measuring_an_empty_machine — (List.range 9).all (fun c => (List.range 9).all (fun m => lanesUnknown c m ≤ lanesKnown c m 0)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6a59c635-dc50-881f-ade7-ad6c9f6264d8"
+  },
+  {
+    "key": "lean_lanes_more_memory_never_costs_a_lane",
+    "name": "lean lanes.lean: more_memory_never_costs_a_lane — (List.range 8).all (fun c => (List.range 8).all (fun m => (List.range 8).all (fun r => lanesKnown c m r ≤ lanesKnown c (m + 1) r))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "19fd5ad4-81ee-833c-aa54-63ef154c06bf"
+  },
+  {
+    "key": "lean_lanes_more_neighbours_never_buys_a_lane",
+    "name": "lean lanes.lean: more_neighbours_never_buys_a_lane — (List.range 9).all (fun c => (List.range 9).all (fun m => (List.range 8).all (fun r => lanesKnown c m (r + 1) ≤ lanesKnown c m r))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "0c54d172-0e9b-8b57-a9b1-8e2c88bd9686"
+  },
+  {
+    "key": "lean_lanes_the_fallback_costs_half_the_lanes_at_the_size_that_prompted_this",
+    "name": "lean lanes.lean: the_fallback_costs_half_the_lanes_at_the_size_that_prompted_this — lanesKnown 4 2 0 = 2 ∧ lanesKnown 4 4 0 = 4 ∧ lanesKnown 4 2 0 * 2 = lanesKnown 4 4 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5c562e3e-3039-893e-ad0b-a2458128ca8c"
+  },
+  {
+    "key": "lean_lanes_an_unmeasurable_host_still_builds_and_still_fits",
+    "name": "lean lanes.lean: an_unmeasurable_host_still_builds_and_still_fits — (List.range 9).all (fun c => (List.range 9).all (fun m => lanesUnknown c m ≥ 1 && lanesUnknown c m ≤ max 1 m && lanesUnknown c m ≤ max 1 c)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "eeebd599-e5f1-8b89-bb05-d81bfef644d4"
   }
 ]

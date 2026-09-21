@@ -6,7 +6,7 @@ head:
 ---
 # Prior art — what is restated, what is claimed, and the difference
 
-Of 979 machine-checked declarations, **933** restate work that already has an author and
+Of 984 machine-checked declarations, **938** restate work that already has an author and
 **46** are about this deposit's own construction. Each source file declares which it is, in its own
 frontmatter; [`src/proof/priorart.lean`](https://github.com/ceccec/millennium-solutions/blob/main/src/proof/priorart.lean)
 holds the same partition as a table the kernel decides over, and the build fails if the two disagree.
@@ -27,7 +27,7 @@ fact about the world, and this deposit does not assert it.
 
 | | theorems |
 |---|---|
-| attributed to named earlier work | **933** |
+| attributed to named earlier work | **938** |
 | unclassified — no search performed, status unknown | **46** |
 | claimed as novel | **0** |
 
@@ -47,7 +47,7 @@ searched, where, and when. An earlier version of this page claimed novelty for 3
 that nothing earlier exists because no one went to check is the same defect as asserting a proof because no
 one went to read it.
 
-## Restated from named earlier work — 41 sources, 933 theorems
+## Restated from named earlier work — 41 sources, 938 theorems
 
 No novelty is claimed over any of these. What is done here is to decide each over a stated finite domain,
 which is a contribution of verification, not of discovery.
@@ -71,14 +71,14 @@ which is a contribution of verification, not of discovery.
 <tr><td><code>index.lean</code></td><td>11</td><td>elementary number theory — the unit group of ℤ/9 and the doubling orbit</td><td>the structure underneath is standard and is credited. The doubling orbit</td></tr>
 <tr><td><code>involution.lean</code></td><td>8</td><td>elementary group theory — orbit decomposition of an order-two permutation</td><td>that a permutation of order two decomposes a finite set into fixed points and</td></tr>
 <tr><td><code>ledgerclaims.lean</code></td><td>8</td><td>hash trees and membership proofs</td><td>`membership_grows_by_one_seal_per_doubling` and `membership_is_logarithmic_not_linear`</td></tr>
-<tr><td><code>light.lean</code></td><td>15</td><td>metrology — the International System of Units</td><td>the exact numerical values below are DEFINITIONS adopted by the Conférence Générale des</td></tr>
+<tr><td><code>light.lean</code></td><td>17</td><td>metrology — the International System of Units</td><td>the exact numerical values below are DEFINITIONS adopted by the Conférence Générale des</td></tr>
 <tr><td><code>mechanical.lean</code></td><td>127</td><td>Boolean algebra and elementary modular arithmetic</td><td>the Boolean rows are De Morgan's laws — Augustus De Morgan, 1847 — written in the arithmetic of {0,1}; the group rows are the additive group of Z/9. Both long prior. Searched 2026-09-04, terms "De Morgan's laws boolean algebra" and "additive group mod 9"; prior art found and credited</td></tr>
 <tr><td><code>merkaba.lean</code></td><td>8</td><td>elementary group theory — subgroups and cosets of Z/9</td><td>the partition into {3,6,9} and two three-element classes closed under doubling is the subgroup and coset structure of Z/9 under the action of U(9); Lagrange. One theorem already credits Euler for the polyhedron formula. Searched 2026-09-04; prior art found and credited</td></tr>
 <tr><td><code>merkle.lean</code></td><td>14</td><td>hash trees and membership proofs</td><td>the hash tree — Ralph Merkle, 1979 (thesis); CRYPTO 1987</td></tr>
 <tr><td><code>nim.lean</code></td><td>28</td><td>combinatorial game theory</td><td>Nim — Charles L. Bouton, 1901; the Sprague–Grundy theorem — Roland Sprague, 1935 and Patrick M. Grundy, 1939</td></tr>
 <tr><td><code>nucleus.lean</code></td><td>8</td><td>the nuclear shell model, and the proton-to-electron mass ratio</td><td>THE PHYSICS IS NOT THIS DEPOSIT'S AND NONE OF IT IS CLAIMED. The shell model and its</td></tr>
 <tr><td><code>phenomena.lean</code></td><td>4</td><td>metrology and classical physical chemistry</td><td>the SI base quantities and their defining constants are definitions of the Conférence</td></tr>
-<tr><td><code>planck.lean</code></td><td>24</td><td>the CODATA recommended values, and the SI's 2019 definition of the seven base constants</td><td>NONE OF THE PHYSICS IS THIS DEPOSIT'S AND NONE OF IT IS CLAIMED. The Planck units are</td></tr>
+<tr><td><code>planck.lean</code></td><td>27</td><td>the CODATA recommended values, and the SI's 2019 definition of the seven base constants</td><td>NONE OF THE PHYSICS IS THIS DEPOSIT'S AND NONE OF IT IS CLAIMED. The Planck units are</td></tr>
 <tr><td><code>program.lean</code></td><td>22</td><td>identifier formats and error-detecting codes</td><td>the UUID layout and its version and variant fields are RFC 9562 (2024, obsoleting RFC</td></tr>
 <tr><td><code>quantum.lean</code></td><td>12</td><td>canonical forms and order-invariant commitments</td><td>sorting a multiset into a canonical order BEFORE folding it is standard practice, not a</td></tr>
 <tr><td><code>rays.lean</code></td><td>14</td><td>cyclic groups and primitive roots</td><td>that 3 is a primitive root modulo 7 and that (ℤ/7)* is cyclic of order six is Gauss and</td></tr>
@@ -124,13 +124,13 @@ which is a contribution of verification, not of discovery.
 - **identifier formats and length-prefixed encodings** — 10 theorems, in `imprint.lean`
 - **integer sequences and identities** — 28 theorems, in `sequences.lean`
 - **metrology and classical physical chemistry** — 4 theorems, in `phenomena.lean`
-- **metrology — the International System of Units** — 15 theorems, in `light.lean`
+- **metrology — the International System of Units** — 17 theorems, in `light.lean`
 - **modular arithmetic** — 25 theorems, in `z9.lean`
 - **modular arithmetic and periodicity** — 48 theorems, in `z9plus.lean`
 - **modular arithmetic, quantified** — 64 theorems, in `families.lean`
 - **non-cryptographic hashing** — 15 theorems, in `fnv.lean`
 - **public-key signatures on elliptic curves** — 12 theorems, in `asymmetric.lean`
-- **the CODATA recommended values, and the SI's 2019 definition of the seven base constants** — 24 theorems, in `planck.lean`
+- **the CODATA recommended values, and the SI's 2019 definition of the seven base constants** — 27 theorems, in `planck.lean`
 - **the UUID text format, and the pigeonhole principle** — 8 theorems, in `handle.lean`
 - **the method of complements** — 20 theorems, in `coin.lean`, `theorems.lean`
 - **the nuclear shell model, and the proton-to-electron mass ratio** — 8 theorems, in `nucleus.lean`

@@ -24,6 +24,7 @@
  */
 import { availableParallelism, totalmem } from 'node:os'
 import { execFileSync } from 'node:child_process'
+import { readFileSync } from 'node:fs'
 
 /** Memory a checker may actually take: free plus the pages the OS can reclaim without swapping. `freemem()`
  *  counts only the free list and reports a few gigabytes on a machine with twenty reclaimable — budgeting
@@ -36,7 +37,20 @@ export const reclaimableMB = (): number => {
     const usable = pages('free') + pages('inactive') + pages('speculative') + pages('purgeable')
     if (usable > 0) return (usable * page) / (1024 * 1024)
   } catch { /* not macOS, or vm_stat unavailable — fall through */ }
-  return (totalmem() / (1024 * 1024)) / 2   // half of physical: a guess, and named as one
+  // LINUX PUBLISHES THE SAME MEASUREMENT AND NOTHING READ IT. `vm_stat` is macOS, so every Linux host fell
+  // straight to the guess below — including the release runner, which reported `memory 2 at ~2900MB each`
+  // from `totalmem()/2` and spent 21.6 minutes on a cold build with two lanes. /proc/meminfo's MemAvailable
+  // is the kernel's own estimate of what a new process can take without swapping: the same quantity the
+  // vm_stat branch assembles by hand, already computed, on the platform that was getting the guess.
+  //
+  // Safe to prefer because src/proof/lanes.lean decides it: `more_memory_never_costs_a_lane` says a host
+  // that reports honestly is never punished for it, and `lanes_never_exceed_what_memory_affords` bounds
+  // what any reading can grant. A larger true number cannot produce an unsafe budget.
+  try {
+    const mb = Number(readFileSync('/proc/meminfo', 'utf8').match(/^MemAvailable:\s+(\d+) kB/m)?.[1] ?? 0) / 1024
+    if (mb > 0) return mb
+  } catch { /* not Linux, or /proc unreadable — fall through */ }
+  return (totalmem() / (1024 * 1024)) / 2   // half of physical: a guess, and named as one, and now the LAST resort
 }
 
 /** Jobs of this kind already running, whoever started them — or NULL when it could not be measured.

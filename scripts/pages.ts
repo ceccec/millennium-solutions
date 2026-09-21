@@ -18,6 +18,7 @@ import { MILLENNIUM, AUTHOR_CLAIM } from '../src/millennium/index.ts'
 import { all as leanDocs } from './leandoc.ts'
 import { analytics } from './analytics.ts'
 import { queue } from '../src/prove/index.ts'
+import { laneBudget } from '../src/api/lanes.ts'
 // The tool surface, imported from the module that owns it. Counting `{ name: '` in its source would be a
 // second implementation of enumerating the tools, and the count nobody runs is the one that drifts.
 import { TOOLS as MCP_TOOLS, WRITES as MCP_WRITES, LISTED as MCP_DOOR } from '../src/mcp/index.ts'
@@ -160,6 +161,17 @@ const CLAIMS: Claim[] = [
   { section: S(5, 'What the gate does and does not do'),
     derive: () => { const falseHolds = computes('two plus two equals five').binary === 1
       return { text: `the gate does not decide whether a statement is true: "two plus two equals five" ${falseHolds ? 'passes it' : 'is drained by it'}, so holding means not drained, never correct`, ok: falseHolds, from: ['two plus two equals five'] } } },
+
+  // TIME AND SPACE, DECIDED RATHER THAN GUESSED. The lane budget is this tree's only statement about what a
+  // verification may take from a machine, and it held a safety bound in a comment that called itself a
+  // guess. src/proof/lanes.lean decides it; this says so where a reader meets the deposit.
+  { section: S(5, 'What the gate does and does not do'),
+    derive: () => { const t = leanTheorems.filter((x) => x.file === 'lanes.lean')
+      const src = leanSrc['lanes.lean'] ?? ''
+      const bound = /theorem lanes_never_exceed_what_memory_affords/.test(src)
+      const b = laneBudget({ perJobMB: 2900, procName: 'lean' })
+      return { text: `how much of a machine a check may take is decided, not assumed: ${t.length} theorems in lanes.lean exhaust the budget arithmetic, and the one that matters bounds the lanes granted by the memory measured — so more lanes are safe exactly when the arithmetic says so. On this host: ${b.why}`,
+        ok: t.length > 0 && bound && b.lanes >= 1, from: [t.length, b.lanes, b.cores] } } },
 
   // REACHABLE FROM A PROGRAM, SAID ON THE PAGES A READER OPENS. Measured 2026-09-20: the MCP server was
   // named in CHALLENGES.md, WHITEPAPER.md, guide.md and harness.md, and in neither README.md nor the
