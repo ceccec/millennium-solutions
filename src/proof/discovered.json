@@ -20568,5 +20568,45 @@
     "key": "lean_claimed_the_step_is_the_circle_divided_by_the_base_and_nine_steps_close_it",
     "name": "lean claimed.lean: the_step_is_the_circle_divided_by_the_base_and_nine_steps_close_it — 360 / B = 40 ∧ B * 40 = 360 ∧ (((List.range' 1 9).map hue).eraseDups).length = 9 ∧ hue B = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "0966a9d8-9f9b-851b-8fc3-9d6d61372c9d"
+  },
+  {
+    "key": "lean_claimed_the_units_are_exactly_the_residues_coprime_to_the_base",
+    "name": "lean claimed.lean: the_units_are_exactly_the_residues_coprime_to_the_base — ((List.range' 1 9).filter (fun d => gcd9 d == 1)) = [1, 2, 4, 5, 7, 8] ∧ units = [1, 2, 4, 5, 7, 8] ∧ ((List.range' 1 9).filter (fun d => gcd9 d != 1)) = [3, 6, 9] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d3d6739c-05a2-8fa1-a880-d9cce5218b4a"
+  },
+  {
+    "key": "lean_claimed_the_triad_is_the_multiples_of_three_and_the_nilpotents",
+    "name": "lean claimed.lean: the_triad_is_the_multiples_of_three_and_the_nilpotents — ((List.range' 1 9).filter (fun d => d % 3 == 0)) = [3, 6, 9] ∧ ((List.range' 1 9).filter (fun d => !(units.contains d))) = [3, 6, 9] ∧ ((List.range' 1 9).filter (fun d => (List.range' 1 4).any (fun k => m9 (d ^ k) == 0))) = [3, 6, 9] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2f11b5e5-9101-84d6-8a37-ecbd3c07d053"
+  },
+  {
+    "key": "lean_claimed_the_unit_group_sums_to_zero_and_its_product_is_the_reflection_of_one",
+    "name": "lean claimed.lean: the_unit_group_sums_to_zero_and_its_product_is_the_reflection_of_one — m9 (units.foldl (· + ·) 0) = 0 ∧ units.foldl (· + ·) 0 = 27 ∧ m9 (units.foldl (· * ·) 1) = 8 ∧ m9 (8 + 1) = 0 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "28ced42f-55ed-8700-922c-f434cd419e8e"
+  },
+  {
+    "key": "lean_claimed_the_step_base_factors_as_two_to_the_fourth_times_three_cubed",
+    "name": "lean claimed.lean: the_step_base_factors_as_two_to_the_fourth_times_three_cubed — 432 = 16 * 27 ∧ 2 ^ 4 = 16 ∧ 3 ^ 3 = 27 ∧ 432 = 2 ^ 4 * 3 ^ 3 ∧ root 432 = 9 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8e39fb0a-de01-89e3-ac8c-aa18ecab3c7e"
+  },
+  {
+    "key": "lean_claimed_the_tens_complement_fixes_exactly_the_centre",
+    "name": "lean claimed.lean: the_tens_complement_fixes_exactly_the_centre — ((List.range' 1 10).filter (fun d => refl10 d == d)) = [5] ∧ (List.range' 1 10).all (fun d => refl10 (refl10 d) == d) ∧ (List.range' 1 10).all (fun d => refl10 d + d == 10) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a2365fc3-f51e-8daf-93c6-e74cde8870c7"
+  },
+  {
+    "key": "lean_claimed_the_balancing_complement_permutes_the_units",
+    "name": "lean claimed.lean: the_balancing_complement_permutes_the_units — (units.map (fun d => 9 - d)) = [8, 7, 5, 4, 2, 1] ∧ ((units.map (fun d => 9 - d)).eraseDups).length = 6 ∧ units.all (fun d => units.contains (9 - d)) ∧ units.all (fun d => 9 - (9 - d) == d) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5c72da69-f790-8bc3-942b-d27b116ca370"
+  },
+  {
+    "key": "lean_claimed_every_cube_mod_nine_is_zero_one_or_eight",
+    "name": "lean claimed.lean: every_cube_mod_nine_is_zero_one_or_eight — (List.range 9).all (fun d => [0, 1, 8].contains (m9 (d ^ 3))) ∧ (((List.range 9).map (fun d => m9 (d ^ 3))).eraseDups).length = 3 ∧ ((List.range 9).filter (fun d => m9 (d ^ 3) == 0)) = [0, 3, 6] ∧ ((List.range 9).filter (fun d => m9 (d ^ 3)… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "860ca08f-7e81-8da0-96e3-78e4add9a122"
+  },
+  {
+    "key": "lean_claimed_doubling_is_multiplication_by_two_and_the_reduction_commutes",
+    "name": "lean claimed.lean: doubling_is_multiplication_by_two_and_the_reduction_commutes — (List.range 9).all (fun d => m9 (2 * d) == m9 (m9 d * 2)) ∧ (List.range 9).all (fun d => 2 * d == d + d) ∧ (List.range 6).all (fun k => m9 (2 ^ (k + 1)) == m9 (2 * 2 ^ k)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "506662a7-e8b9-8c9d-a97c-db5e07f5bb4c"
   }
 ]

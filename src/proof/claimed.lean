@@ -341,4 +341,75 @@ theorem the_step_is_the_circle_divided_by_the_base_and_nine_steps_close_it :
   ∧ (((List.range' 1 9).map hue).eraseDups).length = 9
   ∧ hue B = 0 := by decide
 
+-- ── 28 · THE UNITS ARE THE RESIDUES COPRIME TO THE BASE ───────────────────────────────────────────────────
+-- ledger: relation_units_are_coprime_to_base — "{1,2,4,5,7,8} = {d ∈ 1..9 : gcd(d,9) = 1}". The units were
+-- defined by having an inverse; this decides that the two descriptions pick out the same six, so the
+-- algebraic definition and the arithmetic one are one set and not two that happen to agree here.
+def gcd9 (d : Nat) : Nat := ((List.range' 1 9).filter (fun g => d % g == 0 && 9 % g == 0)).foldl max 1
+theorem the_units_are_exactly_the_residues_coprime_to_the_base :
+  ((List.range' 1 9).filter (fun d => gcd9 d == 1)) = [1, 2, 4, 5, 7, 8]
+  ∧ units = [1, 2, 4, 5, 7, 8]
+  ∧ ((List.range' 1 9).filter (fun d => gcd9 d != 1)) = [3, 6, 9] := by decide
+
+-- ── 29 · THE TRIAD IS THE MULTIPLES OF THREE, AND THE NILPOTENTS ──────────────────────────────────────────
+-- ledger: relation_triad_is_multiples_of_three — "{3,6,9} = {d : 3∣d} = the nilpotents". Three descriptions,
+-- decided to name one set: divisible by three, no inverse, and some power lands on zero.
+theorem the_triad_is_the_multiples_of_three_and_the_nilpotents :
+  ((List.range' 1 9).filter (fun d => d % 3 == 0)) = [3, 6, 9]
+  ∧ ((List.range' 1 9).filter (fun d => !(units.contains d))) = [3, 6, 9]
+  ∧ ((List.range' 1 9).filter (fun d => (List.range' 1 4).any (fun k => m9 (d ^ k) == 0))) = [3, 6, 9] := by decide
+
+-- ── 30 · THE UNITS BIND ADDITIVELY AND MULTIPLICATIVELY ───────────────────────────────────────────────────
+-- ledger: relation_units_sum_and_product — "the units sum to 0 mod 9". Both halves computed: the sum and
+-- the product of the whole unit group, each reduced.
+theorem the_unit_group_sums_to_zero_and_its_product_is_the_reflection_of_one :
+  m9 (units.foldl (· + ·) 0) = 0
+  ∧ units.foldl (· + ·) 0 = 27
+  ∧ m9 (units.foldl (· * ·) 1) = 8
+  ∧ m9 (8 + 1) = 0 := by decide
+
+-- ── 31 · 432 FACTORS INTO THE TRINITY AND THE OCTAVE ──────────────────────────────────────────────────────
+-- ledger: relation_432_factors — "432 = 16·27 = 2⁴·3³, and its digital root". The factorisation is computed
+-- and the root is taken with the map theorem 26 established, so this rests on that rather than restating it.
+theorem the_step_base_factors_as_two_to_the_fourth_times_three_cubed :
+  432 = 16 * 27 ∧ 2 ^ 4 = 16 ∧ 3 ^ 3 = 27 ∧ 432 = 2 ^ 4 * 3 ^ 3
+  ∧ root 432 = 9 := by decide
+
+-- ── 32 · THE REFLECTION FIXES ONLY THE CENTRE ─────────────────────────────────────────────────────────────
+-- ledger: relation_reflection_center_five — "10−d fixes exactly the centre 5". The fixed point is found by
+-- filtering, not exhibited: what is decided is that the set of fixed points has exactly one member and that
+-- member is 5, over all ten digits.
+def refl10 (d : Nat) : Nat := 10 - d
+theorem the_tens_complement_fixes_exactly_the_centre :
+  ((List.range' 1 10).filter (fun d => refl10 d == d)) = [5]
+  ∧ (List.range' 1 10).all (fun d => refl10 (refl10 d) == d)
+  ∧ (List.range' 1 10).all (fun d => refl10 d + d == 10) := by decide
+
+-- ── 33 · THE NINE-COMPLEMENT PERMUTES THE UNITS ───────────────────────────────────────────────────────────
+-- ledger: relation_ninecomplement_permutes_units — "{1,2,4,5,7,8} ↦ {8,7,5,4,2,1}". A permutation, decided
+-- as one: the image is the same set, the map is injective on it, and it pairs each unit with another.
+theorem the_balancing_complement_permutes_the_units :
+  (units.map (fun d => 9 - d)) = [8, 7, 5, 4, 2, 1]
+  ∧ ((units.map (fun d => 9 - d)).eraseDups).length = 6
+  ∧ units.all (fun d => units.contains (9 - d))
+  ∧ units.all (fun d => 9 - (9 - d) == d) := by decide
+
+-- ── 34 · CUBES FOLD TO THREE VALUES ───────────────────────────────────────────────────────────────────────
+-- ledger: relation_cubes_fold_to_0_1_8 — "every d³ ≡ 0, 1, or 8 mod 9". Decided over the whole ring, and
+-- the three classes are exhibited with which residues land in each, so the fold is shown and not only counted.
+theorem every_cube_mod_nine_is_zero_one_or_eight :
+  (List.range 9).all (fun d => [0, 1, 8].contains (m9 (d ^ 3)))
+  ∧ (((List.range 9).map (fun d => m9 (d ^ 3))).eraseDups).length = 3
+  ∧ ((List.range 9).filter (fun d => m9 (d ^ 3) == 0)) = [0, 3, 6]
+  ∧ ((List.range 9).filter (fun d => m9 (d ^ 3) == 1)) = [1, 4, 7] := by decide
+
+-- ── 35 · AND DOUBLING IS THE BINARY LEFT SHIFT ────────────────────────────────────────────────────────────
+-- ledger: doubling_is_binary_left_shift — "n→2n mod 9 is the binary left-shift reduced". Decided without
+-- the shift operator, which carries propext: doubling IS multiplication by two, and the claim is that the
+-- reduction commutes with it — m9 (2·d) is the same whether you reduce before or after.
+theorem doubling_is_multiplication_by_two_and_the_reduction_commutes :
+  (List.range 9).all (fun d => m9 (2 * d) == m9 (m9 d * 2))
+  ∧ (List.range 9).all (fun d => 2 * d == d + d)
+  ∧ (List.range 6).all (fun k => m9 (2 ^ (k + 1)) == m9 (2 * 2 ^ k)) := by decide
+
 end Claimed
