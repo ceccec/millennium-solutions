@@ -19,6 +19,7 @@
 // receipts or the chain.
 import { readFileSync, writeFileSync, existsSync, copyFileSync, unlinkSync } from 'node:fs'
 import { createHash } from 'node:crypto'
+import { resolve } from 'node:path'
 import { execSync } from 'node:child_process'
 
 // Returns BOTH the verdict and what the gate said. hitsol-8d's upgrade: a gate going red for the wrong
@@ -649,7 +650,24 @@ const CONTROLS: Control[] = [
 // where the next lean run found it and reported the file broken. The mutation window is now as short as it
 // can be, and a stale backup from a previous run is restored BEFORE anything else happens — so the damage a
 // kill can do is bounded by one run rather than left for whoever next builds.
-const RESTORE_MARK = '/tmp/gf_inflight.json'
+// THE MARK AND THE BACKUPS CARRY THIS PROCESS. Both were fixed paths in /tmp, shared by every gates-fire
+// on the machine — and this session ran two at once routinely: one in the working tree, one inside a
+// verify-clone worktree. They overwrote each other's backups, so a restore wrote whichever run had copied
+// last, and `constants-gate ITS RESTORE FAILED — every gate checked after this one saw a tree` is what that
+// looks like from inside. Every gate after it was judged against a tree another process had dirtied.
+//
+// The mark is worse than the backups. It stores a RELATIVE file path for crash recovery, resolved against
+// the current directory — so a mark written by the main tree and read by a worktree restores one tree's
+// backup into the OTHER tree's file of the same name. Cross-tree contamination, from a filename.
+//
+// scripts/lean.ts records the same lesson for its audit probe: "The probe path carries the PROCESS ID.
+// Keyed on the filename alone it was unique across the lanes within" one run and collided across runs.
+// SCOPED TO THE TREE, NOT TO THIS PROCESS. Keying the mark on the pid was my first fix and it silently
+// removes the feature: the mark exists so the NEXT run — after a kill, with a different pid — finds the
+// interrupted mutation and puts it back. A pid-keyed mark is never found again. The tree is what must not
+// be shared, so the key is the working directory, and the BACKUP inside it carries the pid so two runs in
+// one tree still do not overwrite each other's copy.
+const RESTORE_MARK = `/tmp/gf_inflight_${createHash('sha256').update(process.cwd()).digest('hex').slice(0, 12)}.json`
 const rescue = () => {
   if (!existsSync(RESTORE_MARK)) return
   try {
@@ -703,9 +721,10 @@ let checked = 0
 console.log('gates-fire — each gate must reject its negative control:\n')
 for (const c of CONTROLS) {
   if (!existsSync(c.file)) { console.log(`  ? ${c.gate.padEnd(17)} ${c.file} absent — cannot control`); continue }
-  const backup = `/tmp/gf_${c.file.replace(/[\/.]/g, '_')}`
+  const backup = `/tmp/gf_${process.pid}_${c.file.replace(/[\/.]/g, '_')}`
   copyFileSync(c.file, backup)
-  writeFileSync(RESTORE_MARK, JSON.stringify({ file: c.file, backup }))   // survives a kill; read on next run
+  // ABSOLUTE, so a mark that somehow reaches another tree cannot resolve to that tree's file of the same name.
+  writeFileSync(RESTORE_MARK, JSON.stringify({ file: resolve(c.file), backup }))   // survives a kill; read on next run
   try {
     const clean = run(c.cmd)
     const cleanPasses = clean.ok

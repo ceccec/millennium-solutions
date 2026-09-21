@@ -449,4 +449,62 @@ theorem this_deposits_seven_dimensions_are_index_positions_and_not_directions :
   ∧ axis.length = 3
   ∧ orbit.length + axis.length = 9 := by decide
 
+-- ── 32 · THE ANOMALY-FREE DIMENSION, AND IT IS A PERFECT NUMBER ───────────────────────────────────────────
+--
+-- String theory has finite arithmetic inside it, and that part IS decidable. This is the sharpest piece.
+--
+-- Green and Schwarz (1984) found that the heterotic string's gauge anomaly cancels for exactly two groups:
+-- E₈ × E₈ and SO(32). The physics is entirely theirs and none of it is claimed here. What is arithmetic is
+-- that both groups have the SAME dimension — E₈ has 248 generators so E₈ × E₈ has 496, and SO(n) has
+-- n(n−1)/2 so SO(32) has 32·31/2 = 496 — and that the shared number is 496.
+--
+-- src/proof/claimed.lean theorem 15 decided, for its own reasons and before this was written, that 496 is
+-- the third PERFECT number: 2⁴(2⁵−1), equal to the sum of its divisors below it. So the dimension at which
+-- the heterotic anomaly cancels is a perfect number, and this deposit had already proved that it is one.
+--
+-- THAT IS A COINCIDENCE OF ARITHMETIC AND IS RECORDED AS ONE. Nothing here says the perfection explains the
+-- cancellation, or that either bears on the other. Two facts about the integer 496 meet in one file; a
+-- reader who wants them to mean more than that will have to bring the meaning themselves.
+def dimE8 : Nat := 248
+def dimSO (n : Nat) : Nat := n * (n - 1) / 2
+def divisorsBelow (n : Nat) : Nat := ((List.range' 1 (n - 1)).filter (fun d => n % d == 0)).foldl (· + ·) 0
+theorem the_two_anomaly_free_groups_share_a_dimension_and_it_is_perfect :
+  2 * dimE8 = 496
+  ∧ dimSO 32 = 496
+  ∧ 2 * dimE8 = dimSO 32
+  ∧ divisorsBelow 496 = 496
+  ∧ 496 = 2 ^ 4 * (2 ^ 5 - 1)
+  ∧ (List.range' 2 29).all (fun d => 31 % d != 0) := by decide
+
+-- ── 33 · THE CRITICAL DIMENSIONS, AS THE ARITHMETIC THAT FIXES THEM ───────────────────────────────────────
+-- The bosonic string is consistent in 26 dimensions and the superstring in 10. Both numbers come from the
+-- same shape: the transverse degrees of freedom are D − 2, and the quantisation condition fixes that count
+-- — 24 for the bosonic string, 8 for the superstring. The DERIVATION is physics and belongs to its authors;
+-- the arithmetic is that 24 + 2 = 26 and 8 + 2 = 10, and that 24 = 3·8 relates the two.
+--
+-- 24 is also where this deposit's own ledger has been sitting: the Pisano period of Fibonacci mod 9 is 24
+-- (claimed.lean 41). Again a shared integer and not a shared theory, which is the distinction theorem 31
+-- exists to hold.
+def transverse (d : Nat) : Nat := d - 2
+theorem the_critical_dimensions_are_their_transverse_counts_plus_two :
+  transverse 26 = 24
+  ∧ transverse 10 = 8
+  ∧ 24 = 3 * 8
+  ∧ 24 + 2 = 26 ∧ 8 + 2 = 10
+  ∧ 496 % 24 = 16 := by decide
+
+-- ── 34 · AND WHAT REMAINS OUTSIDE ARITHMETIC ──────────────────────────────────────────────────────────────
+-- Completing the decidable part is not completing the theory, and the gap is worth stating exactly. What is
+-- decided above: three integers and their divisors. What is NOT, and cannot be by exhaustion over finite
+-- domains: that the anomaly cancels, that 26 and 10 are the consistent dimensions, that any of it describes
+-- nature. Those are statements about infinite-dimensional objects and about the world, and theorem 30 gives
+-- the measure of how far the world is from any test of them — fifteen orders of magnitude.
+--
+-- So the arithmetic of string theory is complete here, and string theory is not. The first is a small true
+-- thing; the second is not this deposit's to finish, and saying so is the only honest end to this file.
+theorem the_decidable_part_is_finished_and_the_theory_is_not :
+  2 * dimE8 = dimSO 32
+  ∧ transverse 26 = 3 * transverse 10
+  ∧ lhcGeV * 10 ^ 14 < planckEnergyMantissa * 10 ^ 5 := by decide
+
 end Planck

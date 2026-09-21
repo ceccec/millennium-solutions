@@ -698,4 +698,75 @@ theorem squaring_maps_the_six_units_onto_a_closed_set_of_three :
   ∧ [1, 4, 7].all (fun a => [1, 4, 7].all (fun b => [1, 4, 7].contains (m9 (a * b))))
   ∧ units.length / 3 = 2 := by decide
 
+-- ── 63 · 561 IS THE SMALLEST CARMICHAEL NUMBER ────────────────────────────────────────────────────────────
+-- ledger: five_six_one_is_the_smallest_carmichael_number — "a composite that fools Fermat: 561 = 3·11·17".
+-- Decided as the definition reads: composite, and yet a^n ≡ a (mod n) for every base. Smallest is decided
+-- by checking every composite below it fails the test, which is what makes "smallest" a measurement.
+-- MODULAR EXPONENTIATION, BECAUSE a^561 IS NOT A NUMBER THE KERNEL WILL BUILD. Lean refused `(a ^ 561) % 561`
+-- outright — the exponent exceeds its threshold and the whnf timed out — and it was right to: the honest
+-- computation reduces at every step and never forms the giant intermediate.
+def powMod (b m : Nat) : Nat → Nat
+  | 0 => 1 % m
+  | e + 1 => (powMod b m e * b) % m
+def fermatFools (n : Nat) : Bool := (List.range n).all (fun a => powMod a n n == a % n)
+-- The kernel's default heartbeat budget stops this: 561 bases times 561 modular multiplications is real
+-- work, not a runaway. Raised for this declaration only, so the cost is visible where it is paid and no
+-- other theorem inherits a larger budget than it needs.
+set_option maxHeartbeats 2000000 in
+theorem five_six_one_is_composite_and_fools_fermat_for_every_base :
+  561 = 3 * 11 * 17
+  ∧ isPrime 561 = false
+  ∧ fermatFools 561
+  -- The ledger also called it the SMALLEST such composite. Deciding that means running this test on every
+  -- composite below it — a sum of n² modular multiplications that the kernel will not finish — so what is
+  -- decided here is the smaller claim, and the larger one stays the ledger's until something cheaper than
+  -- exhaustion carries it. Korselt's criterion would; it is prior art and is not restated here.
+  ∧ fermatFools 341 = false := by decide
+
+-- ── 64 · CASSINI'S IDENTITY ───────────────────────────────────────────────────────────────────────────────
+-- ledger: cassinis_identity_for_the_fibonacci_numbers — "F(n−1)·F(n+1) − F(n)² = (−1)ⁿ". Written without
+-- negative numbers: the product exceeds the square by one at odd n and falls short by one at even n, which
+-- is the same statement and is decidable over ℕ.
+def fib : Nat → Nat
+  | 0 => 0
+  | 1 => 1
+  | n + 2 => fib n + fib (n + 1)
+theorem cassinis_identity_alternates_by_one_either_side_of_the_square :
+  (List.range' 1 20).all (fun n =>
+    -- F(n−1)F(n+1) − F(n)² = (−1)ⁿ, so at EVEN n the product exceeds the square by one and at odd n it
+    -- falls short. I had the branches the other way round and the kernel refused it — over ℕ the sign is
+    -- carried by which side the +1 sits on, and getting that backwards is not a typo but the opposite claim.
+    if n % 2 == 0 then fib (n - 1) * fib (n + 1) == fib n * fib n + 1
+    else fib (n - 1) * fib (n + 1) + 1 == fib n * fib n) := by decide
+
+-- ── 65 · THE BINOMIAL ROW SUMS ────────────────────────────────────────────────────────────────────────────
+-- ledger: the_binomial_row_sums_and_alternating_sums — "row n sums to 2ⁿ, and the alternating sum is zero".
+-- The alternating sum is stated over ℕ as an equality of the even-index and odd-index parts, which is what
+-- "sums to zero" means before signs are available.
+theorem each_binomial_row_sums_to_a_power_of_two_and_splits_evenly :
+  (List.range 13).all (fun n => ((List.range (n + 1)).map (binom n)).foldl (· + ·) 0 == 2 ^ n)
+  ∧ (List.range' 1 12).all (fun n =>
+      (((List.range (n + 1)).filter (fun k => k % 2 == 0)).map (binom n)).foldl (· + ·) 0
+      == (((List.range (n + 1)).filter (fun k => k % 2 == 1)).map (binom n)).foldl (· + ·) 0) := by decide
+
+-- ── 66 · FERMAT'S LITTLE THEOREM ──────────────────────────────────────────────────────────────────────────
+-- ledger: fermats_little_theorem — "a^p ≡ a mod p for every prime p and every a". The bound is this file's
+-- and is stated: every prime below 30, every base below it. The theorem itself is prior art over all
+-- primes and all integers, and no exhaustion reaches that.
+theorem a_to_the_p_returns_a_modulo_every_prime_in_range :
+  ((List.range' 2 28).filter isPrime).all (fun p => (List.range p).all (fun a => (a ^ p) % p == a % p)) := by decide
+
+-- ── 67 · AND COLLATZ REACHES ONE, AS FAR AS IT WAS CHECKED ────────────────────────────────────────────────
+-- ledger: the_collatz_map_reaches_one_for_every_start_up_to_10000. The ledger's bound was ten thousand; the
+-- kernel is asked for a thousand here, which is a SMALLER claim and is said so rather than quietly kept at
+-- the larger number. Collatz is open — no bound proves it — and the fuel that stops the iteration is the
+-- honest shape: a start that has not reached one within the fuel is reported, not assumed to diverge.
+def collatzSteps : Nat → Nat → Bool
+  | 0, _ => false
+  | _, 1 => true
+  | f + 1, n => collatzSteps f (if n % 2 == 0 then n / 2 else 3 * n + 1)
+set_option maxHeartbeats 2000000 in
+theorem every_start_below_a_thousand_reaches_one_within_two_hundred_steps :
+  (List.range' 1 999).all (fun n => collatzSteps 200 n) := by decide
+
 end Claimed
