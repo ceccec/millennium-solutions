@@ -198,5 +198,15 @@ export function vortexOrbit(): number[] {
 /** a432 angular quantum — one BASE-th of the circle: 360/9 = 40°, derived. */
 export const A432_STEP = 360 / BASE
 
+/** The hue a digit carries: d · A432_STEP, taken on the circle.
+ *
+ *  ONE IMPLEMENTATION, AND THE KERNEL DECIDES ITS PROPERTIES. scripts/dashboard.ts drew the nine-point
+ *  wheel from its own copy of `(d * 40) % 360` — a second derivation of arithmetic that
+ *  `src/proof/claimed.lean` now decides as `the_nine_point_wheel_the_dashboard_draws_closes_the_circle`:
+ *  nine distinct hues, each step 40°, and the ninth closing at 0. A drawing whose numbers are computed
+ *  somewhere other than where they are proved is a drawing that can drift away from its own theorem, and
+ *  the theorem would stay true while the picture stopped showing it. */
+export const hue = (d: number): number => (d * A432_STEP) % 360
+
 /** Animation engine interface */
 

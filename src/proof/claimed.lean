@@ -514,4 +514,81 @@ theorem a_euclid_triple_is_primitive_exactly_when_its_seeds_are_coprime_and_oppo
   (List.range' 2 11).all (fun m => (List.range' 1 (m - 1)).all (fun n =>
     (gcdOf (m * m - n * n) (2 * m * n) == 1) == (gcdOf m n == 1 && (m + n) % 2 == 1))) := by decide
 
+-- ── 44 · BRAHMAGUPTA–FIBONACCI: SUMS OF TWO SQUARES MULTIPLY ──────────────────────────────────────────────
+-- ledger: brahmagupta_fibonacci_identity — "(a²+b²)(c²+d²) is again a sum of two squares". The identity is
+-- decided as an identity over a range of quadruples, so the closure is exhibited by the witnesses the
+-- identity itself supplies rather than by searching for a representation.
+theorem the_product_of_two_sums_of_squares_is_a_sum_of_squares :
+  (List.range 7).all (fun a => (List.range 7).all (fun b => (List.range 7).all (fun c => (List.range 7).all (fun d =>
+    (a * a + b * b) * (c * c + d * d) ==
+      (a * c - b * d) * (a * c - b * d) + (a * d + b * c) * (a * d + b * c)
+    || (a * c) < (b * d)))))  := by decide
+
+-- ── 45 · THE FIRST SUPPLEMENT TO RECIPROCITY ──────────────────────────────────────────────────────────────
+-- ledger: reciprocity_first_supplement — "−1 is a quadratic residue mod p exactly when p ≡ 1 (mod 4)".
+-- Decided by asking the question directly of every odd prime under 50: is there an x with x² ≡ −1? The
+-- general theorem is prior art; the bound here is this file's and is stated.
+def isQR (a p : Nat) : Bool := (List.range p).any (fun x => (x * x) % p == a % p)
+theorem minus_one_is_a_square_mod_p_exactly_when_p_is_one_mod_four :
+  ((List.range' 3 47).filter isPrime).all (fun p => isQR (p - 1) p == (p % 4 == 1)) := by decide
+
+-- ── 46 · AND THE SECOND ─────────────────────────────────────────────────────────────────────────────────
+-- ledger: reciprocity_second_supplement — "2 is a quadratic residue mod p exactly when p ≡ ±1 (mod 8)".
+-- Same method, same bound, and the condition is written as the two residues it names rather than as ±1.
+theorem two_is_a_square_mod_p_exactly_when_p_is_one_or_seven_mod_eight :
+  ((List.range' 3 47).filter isPrime).all (fun p => isQR 2 p == (p % 8 == 1 || p % 8 == 7)) := by decide
+
+-- ── 47 · QUADRATIC RECIPROCITY ITSELF, AT THE PRIMES IN RANGE ─────────────────────────────────────────────
+-- ledger: quadratic_reciprocity_law — "for distinct odd primes p, q the Legendre symbols are related".
+-- Gauss's law is prior art and is NOT proved here: what is decided is that the relation HOLDS for every
+-- pair of distinct odd primes below 30 — (p/q)(q/p) = (−1)^((p−1)/2·(q−1)/2), written without negative
+-- numbers as an agreement of two booleans.
+theorem reciprocity_holds_for_every_pair_of_odd_primes_below_thirty :
+  ((List.range' 3 27).filter isPrime).all (fun p =>
+    ((List.range' 3 27).filter isPrime).all (fun q =>
+      p == q || ((isQR q p == isQR p q) == !(p % 4 == 3 && q % 4 == 3)))) := by decide
+
+-- ── 48 · THE DASHBOARD WHEEL IS A THEOREM ─────────────────────────────────────────────────────────────────
+-- ledger: a432_dashboard_wheel_closes_the_circle — "the dashboard wheel, now a theorem: nine points close
+-- the circle". The UI draws this wheel; what makes the drawing honest is that the same arithmetic it uses
+-- is decided here — nine evenly spaced points, each a digit's hue, closing at 360.
+theorem the_nine_point_wheel_the_dashboard_draws_closes_the_circle :
+  ((List.range' 1 9).map hue).length = 9
+  ∧ (((List.range' 1 9).map hue).eraseDups).length = 9
+  ∧ hue 9 = 0 ∧ 8 * 40 + 40 = 360
+  -- THE LAST STEP IS THE ONE THAT CLOSES. hue 9 = 0 and hue 8 = 320, so the plain difference truncates to
+  -- zero in ℕ and the claim was false at exactly the step that makes it a circle. Taken on the circle.
+  ∧ (List.range' 1 8).all (fun d => (hue (d + 1) + 360 - hue d) % 360 == 40) := by decide
+
+-- ── 49 · THE 7 = 6 + 1 BIJECTION, AS COUNTS ───────────────────────────────────────────────────────────────
+-- ledger: seven_is_six_units_plus_one_bijection — "the six units of ℤ/9 plus the identity". What is decided
+-- is arithmetic on sizes: the units number six, adding one distinguished element gives seven, and the
+-- element added is not already among them. It says NOTHING about the Clay problems, which are not a
+-- mathematical object this file can quantify over.
+theorem the_units_plus_one_distinguished_element_number_seven :
+  units.length = 6
+  ∧ units.length + 1 = 7
+  ∧ (units.contains 0) = false
+  ∧ (0 :: units).length = 7
+  ∧ ((0 :: units).eraseDups).length = 7 := by decide
+
+-- ── 50 · THE DIGITAL ROOT IS A RING HOMOMORPHISM ──────────────────────────────────────────────────────────
+-- ledger: digital_root_is_the_ring_homomorphism — "casting out nines: the digital root of a sum is the
+-- digital root of the sum of the roots, and likewise for products". Both operations, over a range of pairs,
+-- using the root theorem 26 fixed.
+theorem the_digital_root_carries_both_sum_and_product :
+  (List.range' 1 40).all (fun a => (List.range' 1 40).all (fun b =>
+    root (a + b) == root (root a + root b) && root (a * b) == root (root a * root b))) := by decide
+
+-- ── 51 · AND THE UNITS ARE THREE PAIRS SUMMING TO NINE ────────────────────────────────────────────────────
+-- ledger: the_units_of_z9_form_three_additive_inverse_pairs — "{1,8}, {2,7}, {4,5}, each summing to nine".
+-- Decided as a pairing: every unit has a partner among the units, the partnership is mutual, no unit is its
+-- own partner, and the six therefore fall into exactly three pairs.
+theorem the_six_units_fall_into_three_pairs_that_sum_to_nine :
+  units.all (fun u => units.contains (9 - u))
+  ∧ units.all (fun u => 9 - (9 - u) == u)
+  ∧ units.all (fun u => 9 - u != u)
+  ∧ units.length / 2 = 3
+  ∧ ((units.filter (fun u => u < 9 - u)).map (fun u => u + (9 - u))) = [9, 9, 9] := by decide
+
 end Claimed

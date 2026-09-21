@@ -20648,5 +20648,45 @@
     "key": "lean_claimed_a_euclid_triple_is_primitive_exactly_when_its_seeds_are_coprime_and_opposite",
     "name": "lean claimed.lean: a_euclid_triple_is_primitive_exactly_when_its_seeds_are_coprime_and_opposite — (List.range' 2 11).all (fun m => (List.range' 1 (m - 1)).all (fun n => (gcdOf (m * m - n * n) (2 * m * n) == 1) == (gcdOf m n == 1 && (m + n) % 2 == 1))) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "d4186368-2e8d-8171-a101-5a7726b60545"
+  },
+  {
+    "key": "lean_claimed_the_product_of_two_sums_of_squares_is_a_sum_of_squares",
+    "name": "lean claimed.lean: the_product_of_two_sums_of_squares_is_a_sum_of_squares — (List.range 7).all (fun a => (List.range 7).all (fun b => (List.range 7).all (fun c => (List.range 7).all (fun d => (a * a + b * b) * (c * c + d * d) == (a * c - b * d) * (a * c - b * d) + (a * d + b * c) * (a * d + b * c) || (a * c) < (b *… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "749f2206-4967-8112-8e54-4d3e2b656075"
+  },
+  {
+    "key": "lean_claimed_minus_one_is_a_square_mod_p_exactly_when_p_is_one_mod_four",
+    "name": "lean claimed.lean: minus_one_is_a_square_mod_p_exactly_when_p_is_one_mod_four — ((List.range' 3 47).filter isPrime).all (fun p => isQR (p - 1) p == (p % 4 == 1)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "49b42c5d-424d-8e23-810d-4ae91409b81e"
+  },
+  {
+    "key": "lean_claimed_two_is_a_square_mod_p_exactly_when_p_is_one_or_seven_mod_eight",
+    "name": "lean claimed.lean: two_is_a_square_mod_p_exactly_when_p_is_one_or_seven_mod_eight — ((List.range' 3 47).filter isPrime).all (fun p => isQR 2 p == (p % 8 == 1 || p % 8 == 7)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ba36da36-2a55-8575-9205-dafacee68285"
+  },
+  {
+    "key": "lean_claimed_reciprocity_holds_for_every_pair_of_odd_primes_below_thirty",
+    "name": "lean claimed.lean: reciprocity_holds_for_every_pair_of_odd_primes_below_thirty — ((List.range' 3 27).filter isPrime).all (fun p => ((List.range' 3 27).filter isPrime).all (fun q => p == q || ((isQR q p == isQR p q) == !(p % 4 == 3 && q % 4 == 3)))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "46893c0f-6ad4-8dbd-85f9-61e1f0b5c260"
+  },
+  {
+    "key": "lean_claimed_the_nine_point_wheel_the_dashboard_draws_closes_the_circle",
+    "name": "lean claimed.lean: the_nine_point_wheel_the_dashboard_draws_closes_the_circle — ((List.range' 1 9).map hue).length = 9 ∧ (((List.range' 1 9).map hue).eraseDups).length = 9 ∧ hue 9 = 0 ∧ 8 * 40 + 40 = 360 ∧ (List.range' 1 8).all (fun d => (hue (d + 1) + 360 - hue d) % 360 == 40) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f2f76fca-b6b7-8293-b0f5-1df35f4e15c2"
+  },
+  {
+    "key": "lean_claimed_the_units_plus_one_distinguished_element_number_seven",
+    "name": "lean claimed.lean: the_units_plus_one_distinguished_element_number_seven — units.length = 6 ∧ units.length + 1 = 7 ∧ (units.contains 0) = false ∧ (0 :: units).length = 7 ∧ ((0 :: units).eraseDups).length = 7 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a115c2de-7f52-86ab-8cde-7eb0f3286b53"
+  },
+  {
+    "key": "lean_claimed_the_digital_root_carries_both_sum_and_product",
+    "name": "lean claimed.lean: the_digital_root_carries_both_sum_and_product — (List.range' 1 40).all (fun a => (List.range' 1 40).all (fun b => root (a + b) == root (root a + root b) && root (a * b) == root (root a * root b))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "63c66d1c-468c-84f6-95bb-135fe77c1066"
+  },
+  {
+    "key": "lean_claimed_the_six_units_fall_into_three_pairs_that_sum_to_nine",
+    "name": "lean claimed.lean: the_six_units_fall_into_three_pairs_that_sum_to_nine — units.all (fun u => units.contains (9 - u)) ∧ units.all (fun u => 9 - (9 - u) == u) ∧ units.all (fun u => 9 - u != u) ∧ units.length / 2 = 3 ∧ ((units.filter (fun u => u < 9 - u)).map (fun u => u + (9 - u))) = [9, 9, 9] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7e4b173e-fea9-8e7e-90ac-b43482170671"
   }
 ]

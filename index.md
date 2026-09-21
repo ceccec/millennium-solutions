@@ -31,12 +31,12 @@ last because the orbit never reaches it.
 
 ## 1 · What is proved
 
-- The formal layer holds 1035 kernel-accepted declarations across 46 files, and no file uses sorry or native_decide outside a comment.
-  <sub>SEALED · `83bc5f87-472e-8382-b97f-135f67bee3ff`</sub>
-- 833 of those 1035 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 202 close by rfl and are declarations.
-  <sub>SEALED · `3fcd9f84-502f-817a-b32a-234f304e9ebf`</sub>
-- 1112 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
-  <sub>SEALED · `82da1040-c65f-873b-860b-f3ee777a56f2`</sub>
+- The formal layer holds 1043 kernel-accepted declarations across 46 files, and no file uses sorry or native_decide outside a comment.
+  <sub>SEALED · `4d80b7c9-dc55-8e8f-9516-9b66c00113da`</sub>
+- 841 of those 1043 are THEOREMS by this deposit's own rule — they close by decide, which is to say the kernel evaluates the proposition over its whole finite domain rather than accepting a declaration; the remaining 202 close by rfl and are declarations.
+  <sub>SEALED · `8158a0da-711a-8424-994b-2dcf2a3b2add`</sub>
+- 1120 of them are sealed into the ledger, each carrying a receipt derived from the one before it.
+  <sub>SEALED · `73a24633-5f06-80d3-8bf9-3df68c89fb52`</sub>
 
 ## 2 · The ring
 
@@ -59,10 +59,10 @@ last because the orbit never reaches it.
 
 ## 7 · The ledger
 
-- The ledger records 2976 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
-  <sub>SEALED · `27425a88-539c-8e7a-9620-2a222b80cc36`</sub>
-- The count is an exact multiple of eight — 2976 is 372 octaves with no remainder.
-  <sub>SEALED · `aece3af8-439c-8e61-8ec1-cb75a19d6fb7`</sub>
+- The ledger records 2984 entries with 0 chain breaks, 0 duplicate keys and 0 duplicate receipts.
+  <sub>SEALED · `dc345e76-07d0-838f-af79-12e46e577da8`</sub>
+- The count is an exact multiple of eight — 2984 is 373 octaves with no remainder.
+  <sub>SEALED · `a01bb493-dad9-8b75-b094-253fcc61695f`</sub>
 
 ## 5 · What the gate does and does not do
 
@@ -70,8 +70,8 @@ last because the orbit never reaches it.
   <sub>SEALED · `37ab7769-a1ac-8ef6-9809-e214d6285057`</sub>
 - The gate does not decide whether a statement is true: "two plus two equals five" passes it, so holding means not drained, never correct.
   <sub>SEALED · `f63cc6c5-44f9-8d92-afa7-ab9483573b28`</sub>
-- 176 withdrawn entries are marked portable — the deposit's own judgement that the kernel could reach them — and 43 of those are now proved in claimed.lean, each over its whole finite domain. The rest are a queue, not a floor: a claim this deposit says it could prove and has not is it understating what it holds.
-  <sub>SEALED · `1851286e-ce68-8805-88c3-5d3ed2134738`</sub>
+- 176 withdrawn entries are marked portable — the deposit's own judgement that the kernel could reach them — and 51 of those are now proved in claimed.lean, each over its whole finite domain. The rest are a queue, not a floor: a claim this deposit says it could prove and has not is it understating what it holds.
+  <sub>SEALED · `db516313-e11e-8886-b448-5b58e91745c7`</sub>
 - How much of a machine a check may take is decided, not assumed: 8 theorems in lanes.lean exhaust the budget arithmetic, and the one that matters bounds the lanes granted by the memory measured — so more lanes are safe exactly when the arithmetic says so. On this host: min(cores 10, memory 5 at ~2900MB each) minus 0 already running.
   <sub>SEALED · `3cc8cd05-cf74-8638-992e-867ea43cfd73`</sub>
 - The tools are reachable from a program: 21 of them over 2 transport(s) — JSON-RPC on stdio for a model client, and the same surface over HTTP for a browser — of which 4 write to this tree and are refused unless the server is started with --allow-write.
@@ -114,7 +114,7 @@ results; it is the result, read off the same arithmetic that produced the table.
 
 ## 7 · The proofs, as they document themselves
 
-46 Lean files in 7 wings, 1035 declarations of which 1020 are theorems. The prose in this section is read out of the
+46 Lean files in 7 wings, 1043 declarations of which 1028 are theorems. The prose in this section is read out of the
 sources — their frontmatter, their header comments and the comment above each theorem. Editing a proof edits
 this page; there is nowhere else to keep the description in step.
 
@@ -176,7 +176,7 @@ this page; there is nowhere else to keep the description in step.
 
 ### the returned
 
-**Claims the ledger marked reachable, now reached** — `claimed.lean`, 43 theorem(s). 180° apart on the wheel. What is NOT prior art is that these particular statements sat WITHDRAWN in this   deposit's ledger, each marked `portable` — its own judgement that a Lean proof was reachable — and each   recorded as "not backed by a Lean proof. Its evidence is a TypeScript test" while nobody wrote one. prior_art_search: not performed — the results are named above rather than searched for. prior_art_pool: bounded prior_art_own: nothing mathematical; only that the deposit now proves what it had already claimed was provable
+**Claims the ledger marked reachable, now reached** — `claimed.lean`, 51 theorem(s). 180° apart on the wheel. What is NOT prior art is that these particular statements sat WITHDRAWN in this   deposit's ledger, each marked `portable` — its own judgement that a Lean proof was reachable — and each   recorded as "not backed by a Lean proof. Its evidence is a TypeScript test" while nobody wrote one. prior_art_search: not performed — the results are named above rather than searched for. prior_art_pool: bounded prior_art_own: nothing mathematical; only that the deposit now proves what it had already claimed was provable
 
 **Recovered — claims that computed and were withdrawn for want of a proof** — `recovered.lean`, 15 theorem(s). material, credited. What is NOT prior art is that these particular statements sat WITHDRAWN in this   deposit's ledger, each recorded as "not backed by a Lean proof. Its evidence is a TypeScript test",   while every one is decidable in a line. prior_art_search: literature search performed 2026-09-05, terms "units and non-units of Z/9 multiplicative   inverses group of units modulo 9"; prior art found and credited.
 
@@ -224,7 +224,7 @@ this page; there is nowhere else to keep the description in step.
 
 **Rights** — `rights.lean`, 9 theorem(s). Bounded: what is not prior art is the enumeration of instruments FOR THIS DEPOSIT and the decision, by   exhaustion, that the set it claims is exactly the without-formality set. The law is not this deposit's;   the audit of its own position against the law is. prior_art_search: no search was needed — the instruments were cited in this file's own prose from the   start. Recorded 2026-09-05, when the table was found to disagree with the file. prior_art_pool: unbounded   the subject is this deposit's own rights table.   BOUNDED means a search is well posed and simply has not been run — the row is unclassified because   nobody looked. UNBOUNDED means the subject is this artifact, so there is no pool to search and the   row will stay unclassified however much work is done. They look identical in a count and need   opposite responses, which is the distinction uuidna-49 asked for and nobody had drawn. prior_art_own: this deposit's own rights table What this deposit claims under international law — and, in the same table, what it does not.
 
-31 of 1035 declarations carry no comment of their own and are shown here as the gap they are, not
+31 of 1043 declarations carry no comment of their own and are shown here as the gap they are, not
 filled with a template.
 
 ## 8 · What this build measured about itself
@@ -233,14 +233,14 @@ Read from the artefacts at build time, never carried between runs.
 
 | measure | value |
 |---|---|
-| ledger entries | 2,976 — 372 octaves exactly |
-| standing — carries its own proof | **1020** |
+| ledger entries | 2,984 — 373 octaves exactly |
+| standing — carries its own proof | **1028** |
 | carried — withdrawn on its own evidence, proved by a live theorem | **435** |
 | withdrawn — nothing proves it | 1,521 |
-| proved in total | **1455** of 2,976 |
-| standing keys → distinct theorems | 1020 sealed, 0 of them keyed twice, 0 unresolvable |
-| Lean files · theorems | 46 · 1020 theorems (833 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 15 rfl declarations |
-| proved `by decide` | 833 of 1035 |
+| proved in total | **1463** of 2,984 |
+| standing keys → distinct theorems | 1028 sealed, 0 of them keyed twice, 0 unresolvable |
+| Lean files · theorems | 46 · 1028 theorems (841 closed by exhaustion, axiom-free · 187 proved for every value on propext and Quot.sound) + 15 rfl declarations |
+| proved `by decide` | 841 of 1043 |
 | claims a machine can render | 103 of 1,555 |
 | claims needing an author | 1,452 — reported, never faked |
 
@@ -278,4 +278,4 @@ across** — deposited as [10.5281/zenodo.21781603](https://doi.org/10.5281/zeno
 
 ---
 
-*19 claims, all verified · 1020 Lean theorems · 2976 ledger entries · trial root `d342f32f-597f-8eeb-ae93-237ddd16c8ba` · integrity, not truth*
+*19 claims, all verified · 1028 Lean theorems · 2984 ledger entries · trial root `cb07f0a2-e41f-8942-813c-6e012ae794cf` · integrity, not truth*

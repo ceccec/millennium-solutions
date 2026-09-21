@@ -6,6 +6,7 @@
 // Perception-aware: static SVG, no motion (respects reduced-motion by having none). NO "convincing" rhetoric,
 // NO neurological/health claims. Regenerated each build => computed, not hardcoded.
 import { writeFileSync } from 'node:fs'
+import { hue, A432_STEP } from '../src/0/index.ts'
 import { execSync } from 'node:child_process'
 
 const version = (() => { try { return execSync('git tag --sort=version:refname', { encoding: 'utf8' }).trim().split('\n').pop() || 'v0' } catch { return 'v0' } })()
@@ -15,12 +16,18 @@ const version = (() => { try { return execSync('git tag --sort=version:refname',
 const card = (title: string, value: string, sub: string) =>
   `<div class="dash-card"><div class="dash-k">${title}</div><div class="dash-v">${value}</div><div class="dash-s">${sub}</div></div>`
 
-// a432 wheel: 9 points, hue = digit*40deg. pure computed, static SVG.
+// a432 wheel: 9 points, hue = digit × A432_STEP, taken on the circle. Pure computed, static SVG.
+//
+// THE ARITHMETIC IS DECIDED, NOT COPIED. This held its own `(d * 40) % 360`, which is the same formula
+// src/proof/claimed.lean puts to the kernel as `the_nine_point_wheel_the_dashboard_draws_closes_the_circle`
+// — nine distinct hues, every step 40°, and the ninth closing at 0. Two derivations of one fact, and the
+// drawing was the copy: the theorem could have stayed true while the picture drifted away from it. Both now
+// come from `hue` in src/0, and the theorem decides what that function does.
 const wheel = (() => {
   const pts = Array.from({ length: 9 }, (_, i) => {
-    const d = i + 1, ang = ((d * 40) - 90) * Math.PI / 180, hue = (d * 40) % 360
+    const d = i + 1, ang = ((d * A432_STEP) - 90) * Math.PI / 180, h = hue(d)
     const x = 100 + 78 * Math.cos(ang), y = 100 + 78 * Math.sin(ang)
-    return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="14" fill="hsl(${hue} 70% 55%)"></circle>`
+    return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="14" fill="hsl(${h} 70% 55%)"></circle>`
       + `<text x="${x.toFixed(1)}" y="${(y + 4).toFixed(1)}" text-anchor="middle" font-size="12" fill="#fff">${d}</text>`
   }).join('')
   return `<svg viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="a432 nine-point hue wheel (digit times 40 degrees)">${pts}<circle cx="100" cy="100" r="20" fill="hsl(200 70% 55%)"></circle><text x="100" y="104" text-anchor="middle" font-size="12" fill="#fff">5</text></svg>`
