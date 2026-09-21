@@ -33,6 +33,7 @@ const cache: Record<string, Cached> = !FULL && existsSync(CACHE) ? JSON.parse(re
 const sha = (t: string) => createHash('sha256').update(t).digest('hex')
 import { execSync, execFile } from 'node:child_process'
 import { laneBudget } from '../src/api/lanes.ts'
+import { merkleFold, toUuid } from '../src/0/index.ts'
 import { promisify } from 'node:util'
 const run = promisify(execFile)
 
@@ -112,6 +113,8 @@ const rows: string[] = []
 // families.lean peaks near 2.9 GB — so ten lanes is 29 GB of demand on a 32 GB machine and the run swaps
 // while every core reads as busy. The budget also subtracts lean processes already running, whoever started
 // them, so two sessions checking at once do not each claim the whole machine. See src/api/lanes.ts.
+const leaves: string[] = []   // one per file, folded at the end; see the note above the lane loop
+
 const BUDGET = laneBudget({ perJobMB: Number(process.env.LEAN_JOB_MB) || 2900, procName: 'lean', envLanes: process.env.LEAN_LANES })
 const LANES = Math.max(1, Math.min(BUDGET.lanes, files.length))
 const ordered: string[] = new Array(files.length)
@@ -128,6 +131,12 @@ const verify = async (f: string, at: number) => {
   const hit = cache[f]
   if (hit && hit.hash === hash && hit.format === CACHE_FORMAT) {
     ordered[at] = hit.line
+    // THE LEAF IS EMITTED ON THE CACHED PATH TOO, and leaving it out was the whole defect: every file was
+    // cached on a warm run, no leaf was pushed, and merkleFold over an EMPTY list returns a fixed address —
+    // so the root printed the same value whatever the tree contained. A constant dressed as a verification,
+    // and it would have read as green forever. The leaf is the same either way because it is built from the
+    // same three facts: the source hash, the verdict, the count.
+    leaves.push(toUuid(`${f}:${hash}:${hit.ok ? 'ok' : 'bad'}:${hit.theorems}`))
     if (!hit.ok) bad++
     return
   }
@@ -156,7 +165,8 @@ const verify = async (f: string, at: number) => {
     unlinkSync(probe)
     issues.push('does not compile')
     const line = `  ✗ ${f.padEnd(18)} ${String(names.length).padStart(3)}  ${issues.join(', ')}`
-    ordered[at] = line; cache[f] = { hash, format: CACHE_FORMAT, ok: false, line, theorems: names.length }; bad++; return
+    ordered[at] = line; cache[f] = { hash, format: CACHE_FORMAT, ok: false, line, theorems: names.length }
+    leaves.push(toUuid(`${f}:${hash}:bad:${names.length}`)); bad++; return
   }
   unlinkSync(probe)
   // A PROOF IS NOT AN EXHAUSTION (2026-09-14). Every theorem here was `by decide` over a finite domain, and those
@@ -184,9 +194,22 @@ const verify = async (f: string, at: number) => {
     : `  ✓ ${f.padEnd(18)} ${String(names.length).padStart(3)}  compiles · ${audited} axiom-free${standard.length ? ` · ${standard.length} proved for every value (standard axioms: ${used})` : ''} · no sorry`
   ordered[at] = line
   cache[f] = { hash, format: CACHE_FORMAT, ok: issues.length === 0, line, theorems: names.length }
+  // THE LEAF IS WHAT THIS FILE'S VERIFICATION FOUND, ADDRESSED. Its source hash, whether the kernel accepted
+  // it, and how many declarations it carries — the three things a re-run must reproduce. It deliberately
+  // does NOT include timing or lane index, which differ between machines and say nothing about the proof.
+  leaves.push(toUuid(`${f}:${hash}:${issues.length === 0 ? 'ok' : 'bad'}:${names.length}`))
   if (issues.length) bad++
 }
 
+// ── ONE ADDRESS FOR WHAT WAS VERIFIED, WHATEVER THE SCHEDULE (declared above verify, used inside it) ────
+// The lanes make this fast and the fold makes it comparable. Results were collected BY INDEX, which keeps
+// the printed order stable — a diff of two builds still means something — but leaves no way to ask whether
+// two machines verified the same thing. merkleFold sorts its leaves, so the root is a function of the SET
+// of per-file outcomes: a laptop at seven lanes and a runner at two produce the same address for the same
+// tree, and a different one the moment any file's source or verdict differs.
+//
+// That matters for what this deposit claims. "Clone it and run npm run lean" is an invitation to reproduce
+// a result; until now the result was 44 lines of prose to eyeball. It is an address now.
 await Promise.all(Array.from({ length: LANES }, async () => {
   for (;;) { const i = next++; if (i >= files.length) return; await verify(files[i], i) }
 }))
@@ -196,4 +219,5 @@ writeFileSync(CACHE, JSON.stringify(cache, null, 2) + '\n')
 console.log(rows.join('\n'))
 console.log(`\n  ${files.length} files · ${total} theorems · ${bad ? bad + ' FAILING' : 'all clean'}`)
 console.log(`  ${LANES} lane(s): ${BUDGET.why}`)
+console.log(`  verification root ${merkleFold(leaves)} — over ${leaves.length} file(s), the same at any lane count`)
 process.exit(bad ? 1 : 0)
