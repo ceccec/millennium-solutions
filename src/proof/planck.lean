@@ -311,4 +311,61 @@ theorem the_planck_mantissa_factors_outside_the_lattice :
   ∧ (List.range' 2 568).all (fun d => 323251 % d ≠ 0)
   ∧ ! reachable ellP := by decide
 
+-- ── 25 · THE OTHER TWO RELATIONS, CHECKED IN DIGITS AND NOT ONLY IN DIMENSIONS ─────────────────────────────
+-- Theorems 10, 11 and 12 decide the dimensional skeleton for all three combinations, and only ONE of them
+-- was ever put to the published digits: length over time, against the defined c, in theorems 14 to 16. The
+-- other two were left as exponent triples, and theorem 11 carries a sentence saying the quantum combination
+-- "is exact too" — a claim about the numbers, stated in a comment, that nothing below it ever evaluated.
+-- That is the same shape this file's own FIFTH section warns about, left in the file by the section that
+-- warns about it.
+--
+-- Both are arithmetic on digit sequences, so both can be decided. hbar is not an SI-defined constant — h is,
+-- and hbar = h / 2π is irrational — so the digits below are CODATA's published rounding of it and are
+-- treated as a rounded decimal like every other mantissa here, never as an exact quantity.
+def hbar : Nat := 1054571817    -- 1.054571817 e-34 J s, CODATA's rounding of h / 2π
+
+-- Both sides are brought to one decimal scale and compared as integers. Parts per 10^9, because both misses
+-- are below one part per million and an integer ppm would report each of them as zero — a comparison whose
+-- resolution hides the thing being compared.
+def missPpb (a b : Nat) : Nat := (if a > b then a - b else b - a) * 1000000000 / b
+
+-- LENGTH × MASS × c = hbar. G cancels: this is the combination theorem 13 predicts to carry NO share of
+-- the gravitational uncertainty at all.
+def quantumLhs : Nat := ellP * mP * cDefined          -- scaled 10^-55
+def quantumRhs : Nat := hbar * 1000000000000          -- 10^-43 brought to 10^-55
+
+theorem length_times_mass_meets_the_quantum_in_the_digits :
+  missPpb quantumLhs quantumRhs = 171 := by decide
+
+-- LENGTH × c² = MASS × G. hbar cancels and G survives whole: theorem 13 predicts this one carries G's FULL
+-- 22 parts per million.
+-- THE SCALE HAS TO BE BROUGHT, NOT DESCRIBED. The first version of this line carried the comment
+-- "brought below" and did not bring it: the left side sits at 10^-41 and the right at 10^-30, and the
+-- comparison was between numbers eleven decades apart. `decide` refused it, which is the only reason the
+-- sentence and the arithmetic did not ship disagreeing with each other.
+def gravityLhs : Nat := ellP * cDefined * cDefined              -- 10^-41
+def gravityRhs : Nat := mP * bigG * 100000000000                -- 10^-14 · 10^-16 = 10^-30, × 10^11 → 10^-41
+
+theorem length_over_mass_meets_gravity_in_the_digits :
+  missPpb gravityLhs gravityRhs = 142 := by decide
+
+-- ── 26 · AND THE PREDICTION THE TWO TOGETHER REFUSE ───────────────────────────────────────────────────────
+-- Theorem 13 says the gravitational exponent predicts the published uncertainty: zero where G cancels, the
+-- full 22 parts per million where it survives. Put to the digits, the combination predicted to be EXACT
+-- misses by MORE than the combination predicted to carry 22 ppm — 171 parts per 10^9 against 142.
+--
+-- The reason is not noise and it is not a defect in the tabulation. CODATA does not measure the Planck
+-- units; it DERIVES them from G and the exactly defined constants. The same measured G stands on both sides
+-- of the gravity identity and cancels, so the identity cannot express G's uncertainty — it is correlated,
+-- not independent, and what survives on both lines is the rounding of seven printed digits.
+--
+-- This matters for how theorem 13 may be read. A reader meeting "the identity holds to 0.14 ppm, far inside
+-- G's 22 ppm" will take it as the measurement confirmed. It is not: a relation among quantities all computed
+-- from one input can confirm the arithmetic of the table and nothing about the input. Decided here rather
+-- than left for a reader to assume the flattering direction.
+theorem the_relations_cannot_express_the_uncertainty_they_inherit :
+  missPpb quantumLhs quantumRhs > missPpb gravityLhs gravityRhs
+  ∧ missPpb gravityLhs gravityRhs * 1000 < ppm bigG bigGUnc * 1000000
+  ∧ gPpm dimMP = 11 ∧ gPpm (dmul dimEllP dimMP) = 0 := by decide
+
 end Planck
