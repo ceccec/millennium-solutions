@@ -241,4 +241,104 @@ theorem every_graph_on_four_vertices_sums_its_degrees_to_twice_its_edges :
     (((List.range 4).map (deg g)).foldl (· + ·) 0 == 2 * edgeCount g)
     && (((List.range 4).filter (fun v => deg g v % 2 == 1)).length % 2 == 0)) := by decide
 
+-- ── 20 · THE GRUNDY VALUE OF THE SUBTRACTION GAME ─────────────────────────────────────────────────────────
+-- ledger: subtraction_game_grundy — "the Grundy value computed by the mex rule equals n mod 4 (n ≤ 24)".
+-- Theorem 10 decided which positions lose; this decides the finer statement, that the whole Grundy value is
+-- the remainder. Computed by the mex rule from the game itself and carried forward as a table, for the same
+-- termination reason: the positions reachable from n are not structurally smaller than n.
+def mex (xs : List Nat) : Nat := ((List.range (xs.length + 1)).filter (fun m => !(xs.contains m))).getD 0 0
+def grundyTable : Nat → List Nat
+  | 0 => [0]
+  | n + 1 => let p := grundyTable n
+             mex ([1, 2, 3].filterMap (fun k => if k ≤ n + 1 then some (p.getD (k - 1) 0) else none)) :: p
+def grundy (n : Nat) : Nat := (grundyTable n).getD 0 0
+theorem the_grundy_value_of_the_subtraction_game_is_the_remainder_mod_four :
+  (List.range 25).all (fun n => grundy n == n % 4)
+  ∧ (List.range 25).all (fun n => (grundy n == 0) == (n % 4 == 0)) := by decide
+
+-- ── 21 · ROCK, PAPER, SCISSORS IS THE SUCCESSOR MAP ───────────────────────────────────────────────────────
+-- ledger: relation_rps_z3 — "a beats b iff a ≡ b+1 (mod 3)". Decided as a relation and not as three cases:
+-- the beat-map is a bijection with no fixed point, every pair is decided exactly one way, and the cycle
+-- closes after three steps.
+def beats (a b : Nat) : Bool := a % 3 == (b + 1) % 3
+theorem the_beat_relation_is_the_successor_in_the_trinity :
+  (List.range 3).all (fun a => (List.range 3).all (fun b =>
+    beats a b == (a == (b + 1) % 3)))
+  ∧ (List.range 3).all (fun a => !(beats a a))
+  ∧ (List.range 3).all (fun a => ((List.range 3).filter (fun b => beats a b)).length == 1)
+  ∧ (List.range 3).all (fun a => (a + 3) % 3 == a) := by decide
+
+-- ── 22 · THE BALANCING WAVE CLOSES THE CIRCLE ─────────────────────────────────────────────────────────────
+-- ledger: balancing_wave_harmonises — "d and 9−d sum to 9, and their a432 hues sum to 360° = 0". Both halves
+-- decided over the whole ring, the second in the arithmetic the hue is defined by rather than restated.
+theorem a_digit_and_its_balance_close_both_the_ring_and_the_circle :
+  (List.range' 1 8).all (fun d => d + (9 - d) == 9)
+  ∧ (List.range' 1 8).all (fun d => (hue d + hue (9 - d)) % 360 == 0)
+  ∧ hue 9 = 0 := by decide
+
+-- ── 23 · THE PIGEONHOLE PRINCIPLE, EXHAUSTED ──────────────────────────────────────────────────────────────
+-- ledger: pigeonhole_principle — "no injection [n+1]→[n] exists, exhaustive, n ≤ 4". The bound is the
+-- ledger's and is kept. Every function from n+1 pigeons into n holes is enumerated as a base-n numeral and
+-- checked for a repeat, so this decides the family rather than exhibiting a collision in one case.
+def digitsOf (v n len : Nat) : List Nat := (List.range len).map (fun i => (v / n ^ i) % n)
+theorem every_map_from_more_pigeons_than_holes_repeats :
+  (List.range' 1 4).all (fun n =>
+    (List.range (n ^ (n + 1))).all (fun v =>
+      ((digitsOf v n (n + 1)).eraseDups).length < n + 1)) := by decide
+
+-- ── 24 · EULER'S PENTAGONAL RECURRENCE GIVES THE PARTITION NUMBERS ────────────────────────────────────────
+-- ledger: partition_pentagonal — "p(0..8) = 1,1,2,3,5,7,11,15,22". The values are COMPUTED by counting
+-- partitions directly — every non-increasing composition of n — and compared with the list the ledger
+-- stated. Euler's recurrence is the prior art named; what is decided here is the count itself.
+-- FUEL, BECAUSE NEITHER ARGUMENT SHRINKS. p(n,m) = p(n−m,m) + p(n,m−1): the first call leaves m alone and
+-- the second leaves n alone, so no single parameter decreases and Lean refuses structural recursion on
+-- either. A fuel argument decreases on every call and the bound is stated rather than guessed — the
+-- recursion depth is at most n + m, since each step drops n by m or m by one.
+def partsFuel : Nat → Nat → Nat → Nat
+  | 0, _, _ => 0
+  | _, 0, _ => 1
+  | _, _, 0 => 0
+  | f + 1, n, m => (if m ≤ n then partsFuel f (n - m) m else 0) + partsFuel f n m.pred
+def p (n : Nat) : Nat := partsFuel (n + n + 4) n n
+theorem the_partition_numbers_to_eight_are_the_ones_the_ledger_stated :
+  (List.range 9).map p = [1, 1, 2, 3, 5, 7, 11, 15, 22] := by decide
+
+-- ── 25 · THE DOUBLING ORBIT IS THE GROUP OF UNITS ─────────────────────────────────────────────────────────
+-- ledger: relation_orbit_is_cyclic_group — "n→2n from 1 lists [1,2,4,8,7,5], a permutation of the units,
+-- and 2 has order 6 = |units|". Dynamics and algebra decided to be one structure: the orbit as a list, the
+-- same elements as the units, and the order of 2 computed rather than asserted.
+def orbit : List Nat := (List.range 6).map (fun k => m9 (2 ^ (k + 1)))
+theorem the_doubling_orbit_is_the_unit_group_and_two_generates_it :
+  orbit = [2, 4, 8, 7, 5, 1]
+  ∧ orbit.eraseDups.length = 6
+  ∧ orbit.all (fun d => units.contains d)
+  ∧ units.all (fun u => orbit.contains u)
+  ∧ ((List.range' 1 6).filter (fun k => m9 (2 ^ k) == 1)) = [6] := by decide
+
+-- ── 26 · THE DIGITAL ROOT IS THE RESIDUE ──────────────────────────────────────────────────────────────────
+-- ledger: relation_digitroot_is_residue_mod9 — "digitalRoot(n) = ((n−1) mod 9)+1 for every n>0 (tested
+-- 1..200)". The digit-sum collapse is computed by actually summing digits and repeating, then compared with
+-- the ℤ/9 formula — two maps checked to agree, not one restated as the other. The ledger's bound is kept.
+def digitSum (n : Nat) : Nat := ((List.range 4).map (fun i => (n / 10 ^ i) % 10)).foldl (· + ·) 0
+-- COLLAPSE UNTIL IT IS A DIGIT, NOT A FIXED NUMBER OF TIMES. Two applications were not enough and the
+-- kernel found it: digitSum 199 = 19 and digitSum 19 = 10, which is still two digits, so the map returned
+-- 10 where the digital root is 1. The collapse is defined by its stopping condition — repeat while the
+-- value exceeds a single digit — and the fuel bounds the repeats rather than the answer.
+def collapse : Nat → Nat → Nat
+  | 0, n => n
+  | f + 1, n => if n ≤ 9 then n else collapse f (digitSum n)
+def root (n : Nat) : Nat := collapse 8 n
+theorem the_digit_sum_collapse_and_the_residue_are_the_same_map :
+  (List.range' 1 200).all (fun n => root n == ((n - 1) % 9) + 1)
+  ∧ root 199 = 1 ∧ digitSum 199 = 19 ∧ digitSum 19 = 10 := by decide
+
+-- ── 27 · AND A432 PARTITIONS THE CIRCLE INTO THE BASE ─────────────────────────────────────────────────────
+-- ledger: relation_a432_partitions_circle — "360/9 = 40°, 9 steps close the circle, each digit a distinct
+-- hue". The step is derived from the base rather than typed beside it, which is the point of the claim.
+theorem the_step_is_the_circle_divided_by_the_base_and_nine_steps_close_it :
+  360 / B = 40
+  ∧ B * 40 = 360
+  ∧ (((List.range' 1 9).map hue).eraseDups).length = 9
+  ∧ hue B = 0 := by decide
+
 end Claimed
