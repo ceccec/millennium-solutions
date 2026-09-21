@@ -73,7 +73,33 @@ console.log(`  Uncited use is found by matching CONTENT, not by reading a citati
 console.log(`  against a named party needs evidence of use, not the absence of a reference.`)
 if (blind.length) console.log(`\n  ${blind.length} registry call(s) NOT MEASURED: ${blind.join(', ')} — silence here is outage, not absence.`)
 
+// THE SOURCES NOT CONSULTED, NAMED — because "zero" is bounded by where you looked. This measurement reads
+// DataCite and OpenAlex. Zenodo's own record pages draw on a DIFFERENT set, published in its help: NASA
+// Astrophysics Data System, DataCite and Crossref Event Data, and Europe PMC. Only DataCite is common to
+// both. So a citation could stand on the deposit's own landing page and be absent from this report, and
+// this report's "0 third-party" would still be true of what it read.
+//
+// Zenodo also names why a record shows none: not yet cited; not yet discovered by its sources; the domain
+// not covered by any of them; or the citing work not freely available. Three of those four are properties
+// of the INSTRUMENTS, not of the work — which is the distinction this file exists to keep.
+const CONSULTED = ['datacite', 'openalex']
+const ZENODO_USES = ['NASA ADS', 'Crossref Event Data', 'Europe PMC']
+console.log(`\n  SOURCE BOUNDARY: read ${CONSULTED.join(' and ')}. NOT read — ${ZENODO_USES.join(', ')} — which are what`)
+console.log(`  Zenodo's own record pages use (support.zenodo.org, "Who are your citation data sources?").`)
+console.log(`  Only DataCite is common to both, so a citation may appear on the landing page and not here.`)
+console.log(`  Zenodo's stated reasons for a record showing none: not yet cited · not yet discovered by its`)
+console.log(`  sources · domain not covered · citing work not freely available. Three of the four describe`)
+console.log(`  the instrument rather than the work.`)
+
 if (flag('--write')) {
-  writeFileSync('src/proof/citations.json', JSON.stringify({ measured: new Date().toISOString().slice(0, 10), tracked }, null, 2) + '\n')
+  // The boundary travels with the measurement, so anything reading this file inherits it rather than
+  // inheriting a bare zero.
+  writeFileSync('src/proof/citations.json', JSON.stringify({
+    measured: new Date().toISOString().slice(0, 10),
+    consulted: CONSULTED,
+    notConsulted: ZENODO_USES,
+    boundary: 'Zenodo\'s own record pages use NASA ADS, DataCite and Crossref Event Data, and Europe PMC. Only DataCite is common with this measurement, so a third-party citation may appear there and not here.',
+    tracked,
+  }, null, 2) + '\n')
   console.log('\n  recorded → src/proof/citations.json')
 }

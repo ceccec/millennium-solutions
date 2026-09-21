@@ -53,6 +53,22 @@ counting it as uptake is the flattering direction.
 `10.5281/zenodo.22256707` returns HTTP 404 from OpenAlex, so its reception is **not measured** rather than
 zero.
 
+**The boundary on that zero, added 2026-09-21.** This measurement reads DataCite and OpenAlex. Zenodo's own
+record pages draw on a different set, published in its help under *"Who are your citation data sources?"* —
+NASA Astrophysics Data System, DataCite **and Crossref Event Data**, and Europe PMC. Only DataCite is common
+to both. So a third-party citation could stand on this deposit's own landing page and be absent from this
+report, and the report would still be true of what it read. "Zero" is bounded by where one looked, and until
+now that bound was implicit.
+
+Zenodo also publishes why a record may show none: not yet cited; not yet discovered by its sources; the
+domain not covered by any of them; or the citing work not freely available. **Three of those four describe
+the instrument, not the work** — which is the distinction this document exists to keep, applied to itself.
+
+**Measured but never reported here: attention.** The three records carry **592 views and 65 downloads**
+(340/31 on `21819217`, 126/17 on each of the others; Zenodo record API, 2026-09-21). A download is not
+use and certainly not a citation, so it is not uptake — but it is a measurement that existed and that a
+document about reception did not mention, and omitting a measurement is how a record understates itself.
+
 ## 4 · The news scan found no pattern, and mostly could not see
 
 `npm run uses -- --news`. Topic news after the author's publications: **1.47/day**. The before-control:
