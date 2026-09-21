@@ -43,10 +43,19 @@ runs:
     # under a proof is a proof about a different system.
     - if: inputs.kernel == 'true'
       shell: bash
+      # THE INSTALLER IS NOT DOWNLOADED INTO THE REPOSITORY. This wrote elan-init.sh to the working
+      # directory and left it there, so every job using `kernel` finished with an untracked file in the
+      # tree. Nothing caught it until release.yml asked for the kernel: release.ts mints its tag in
+      # tag-only mode, which refuses a dirty tree — correctly, since the tag claims a content-address HEAD
+      # must carry — and the whole release failed on `?? elan-init.sh`. discovery.yml had been dropping the
+      # same file for as long as it has used this input, and mints no tag, so nobody saw it.
+      #
+      # Piped straight to sh, so nothing is written into the checkout at all. A tool that leaves an
+      # artefact behind is a tool whose next caller inherits a defect it did not cause.
       run: |
         set -euo pipefail
-        curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o elan-init.sh
-        sh elan-init.sh -y --default-toolchain "$(cat lean-toolchain)"
+        curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh \
+          | sh -s -- -y --default-toolchain "$(cat lean-toolchain)"
         echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
     - if: inputs.kernel == 'true'
       shell: bash
