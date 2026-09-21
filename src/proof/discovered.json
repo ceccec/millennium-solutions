@@ -20488,5 +20488,45 @@
     "key": "lean_claimed_twelve_fifths_overshoot_seven_octaves_and_by_how_much",
     "name": "lean claimed.lean: twelve_fifths_overshoot_seven_octaves_and_by_how_much — 3 ^ 12 = 531441 ∧ 2 ^ 19 = 524288 ∧ 3 ^ 12 - 2 ^ 19 = 7153 ∧ 3 ^ 12 > 2 ^ 19 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "96bd2a9c-0e23-8d3c-942f-78df2aa6e610"
+  },
+  {
+    "key": "lean_claimed_no_hue_on_an_odd_wheel_has_an_exact_complement",
+    "name": "lean claimed.lean: no_hue_on_an_odd_wheel_has_an_exact_complement — (List.range' 1 9).all (fun d => hue d != 180) ∧ (List.range' 1 9).all (fun a => (List.range' 1 9).all (fun b => ((hue a + 360 - hue b) % 360 != 180))) ∧ 9 % 2 = 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "aa80479b-5d5f-8b90-9bb0-9a183b417ee0"
+  },
+  {
+    "key": "lean_claimed_the_inverse_map_applied_twice_is_the_identity_on_the_units",
+    "name": "lean claimed.lean: the_inverse_map_applied_twice_is_the_identity_on_the_units — units.all (fun u => inv (inv u) == u) ∧ units.all (fun u => m9 (u * inv u) == 1) ∧ (units.filter (fun u => inv u == u)) = [1, 8] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1e78d2a6-287d-8593-913b-c765f33fb428"
+  },
+  {
+    "key": "lean_claimed_the_field_of_order_four_has_four_elements",
+    "name": "lean claimed.lean: the_field_of_order_four_has_four_elements — 2 ^ 2 = 4 ∧ ((List.range 4).map (fun n => (n / 2, n % 2))).length = 4 ∧ (((List.range 4).map (fun n => (n / 2, n % 2))).eraseDups).length = 4 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ae3ab41c-9f38-8c28-ad59-ba553d18159e"
+  },
+  {
+    "key": "lean_claimed_the_euclid_form_gives_the_first_three_perfect_numbers",
+    "name": "lean claimed.lean: the_euclid_form_gives_the_first_three_perfect_numbers — perfect 2 = 6 ∧ perfect 3 = 28 ∧ perfect 5 = 496 ∧ divisorSum 6 = 6 ∧ divisorSum 28 = 28 ∧ divisorSum 496 = 496 ∧ [3, 7, 31].all (fun m => (List.range' 2 (m - 2)).all (fun d => m % d != 0)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "54ce508d-ecee-8727-b7d8-1c1eec9ad3ee"
+  },
+  {
+    "key": "lean_claimed_every_odd_prime_to_fifty_is_a_sum_of_two_squares_exactly_when_it_is_one_mod_four",
+    "name": "lean claimed.lean: every_odd_prime_to_fifty_is_a_sum_of_two_squares_exactly_when_it_is_one_mod_four — ((List.range' 3 48).filter isPrime).all (fun p => twoSquares p == (p % 4 == 1)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "265edfd4-d06a-8fd3-96ea-c3204fa977a3"
+  },
+  {
+    "key": "lean_claimed_pascal_is_odd_exactly_where_the_index_is_a_submask",
+    "name": "lean claimed.lean: pascal_is_odd_exactly_where_the_index_is_a_submask — (List.range 16).all (fun n => (List.range (n + 1)).all (fun k => (binom n k % 2 == 1) == ((List.range 5).all (fun i => bit k i <= bit n i)))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "da2a4aae-4ec6-828b-89e0-c756e45e1e90"
+  },
+  {
+    "key": "lean_claimed_the_live_cells_of_row_n_number_two_to_the_popcount",
+    "name": "lean claimed.lean: the_live_cells_of_row_n_number_two_to_the_popcount — (List.range 16).all (fun n => ((List.range (n + 1)).filter (fun k => binom n k % 2 == 1)).length == 2 ^ popcount n) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1b2e9413-d1a6-8ae8-931d-b1b4b6ebeaee"
+  },
+  {
+    "key": "lean_claimed_every_graph_on_four_vertices_sums_its_degrees_to_twice_its_edges",
+    "name": "lean claimed.lean: every_graph_on_four_vertices_sums_its_degrees_to_twice_its_edges — (List.range 64).all (fun g => (((List.range 4).map (deg g)).foldl (· + ·) 0 == 2 * edgeCount g) && (((List.range 4).filter (fun v => deg g v % 2 == 1)).length % 2 == 0)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "04b6a0d4-e5d8-8aa1-9935-41dee27ec666"
   }
 ]

@@ -150,4 +150,95 @@ theorem twelve_fifths_overshoot_seven_octaves_and_by_how_much :
   3 ^ 12 = 531441 ∧ 2 ^ 19 = 524288 ∧ 3 ^ 12 - 2 ^ 19 = 7153
   ∧ 3 ^ 12 > 2 ^ 19 := by decide
 
+-- ── 12 · AN ODD WHEEL HAS NO ANTIPODE ─────────────────────────────────────────────────────────────────────
+-- ledger: arts_no_exact_complement — "on the 9-hue wheel no hue has an exact complement (180° = 4.5 steps)".
+-- The reason is the parity of the base, so it is decided as such: no whole number of 40° steps lands on 180°,
+-- and no pair of the nine hues differs by 180° either way round.
+theorem no_hue_on_an_odd_wheel_has_an_exact_complement :
+  (List.range' 1 9).all (fun d => hue d != 180)
+  ∧ (List.range' 1 9).all (fun a => (List.range' 1 9).all (fun b =>
+      ((hue a + 360 - hue b) % 360 != 180)))
+  ∧ 9 % 2 = 1 := by decide
+
+-- ── 13 · THE INVERSE MAP IS ITS OWN UNDOING ───────────────────────────────────────────────────────────────
+-- ledger: involution_reversible — "the multiplicative-inverse map applied twice is the identity on the units".
+-- The inverse is found rather than tabulated: for a unit u, inv u is the unique e with u·e ≡ 1.
+def inv (u : Nat) : Nat := ((List.range B).filter (fun e => m9 (u * e) == 1)).getD 0 0
+theorem the_inverse_map_applied_twice_is_the_identity_on_the_units :
+  units.all (fun u => inv (inv u) == u)
+  ∧ units.all (fun u => m9 (u * inv u) == 1)
+  ∧ (units.filter (fun u => inv u == u)) = [1, 8] := by decide
+
+-- ── 14 · THE FIELD OF FOUR ELEMENTS HAS FOUR ELEMENTS ─────────────────────────────────────────────────────
+-- ledger: gf4_size — "𝔽_4 = GF(2²) has p^k = 2² = 4 elements {0, 1, x, x+1}". The count is computed from the
+-- prime power, and the four elements are exhibited as the 2-bit patterns that name them — which is what a
+-- polynomial basis over 𝔽₂ is. No field ARITHMETIC is claimed here; the ledger claimed the size.
+theorem the_field_of_order_four_has_four_elements :
+  2 ^ 2 = 4
+  ∧ ((List.range 4).map (fun n => (n / 2, n % 2))).length = 4
+  ∧ (((List.range 4).map (fun n => (n / 2, n % 2))).eraseDups).length = 4 := by decide
+
+-- ── 15 · EUCLID'S PERFECT NUMBERS, AT THE THREE THE LEDGER NAMED ──────────────────────────────────────────
+-- ledger: euclid_euler_perfect — "even perfect numbers are 2^(p−1)(2^p−1) for a Mersenne prime: 6, 28, 496".
+-- The Euclid–Euler theorem is prior art and is NOT proved here: what is decided is that the formula produces
+-- those three at p = 2, 3, 5, that each equals the sum of its own proper divisors, and that the Mersenne
+-- factor is prime at each. The general characterisation ranges over infinitely many and no decide reaches it.
+def perfect (p : Nat) : Nat := 2 ^ (p - 1) * (2 ^ p - 1)
+-- PROPER divisors: `List.range' 1 n` is [1 … n] and includes n itself, so the first version summed ALL
+-- divisors and made 6 come out as 12. A perfect number equals the sum of the divisors BELOW it, which is
+-- the whole content of the word, and the kernel refused the theorem rather than let the definition pass.
+def divisorSum (n : Nat) : Nat := ((List.range' 1 (n - 1)).filter (fun d => n % d == 0)).foldl (· + ·) 0
+theorem the_euclid_form_gives_the_first_three_perfect_numbers :
+  perfect 2 = 6 ∧ perfect 3 = 28 ∧ perfect 5 = 496
+  ∧ divisorSum 6 = 6 ∧ divisorSum 28 = 28 ∧ divisorSum 496 = 496
+  ∧ [3, 7, 31].all (fun m => (List.range' 2 (m - 2)).all (fun d => m % d != 0)) := by decide
+
+-- ── 16 · FERMAT'S TWO SQUARES, AT THE BOUND THE LEDGER STATED ─────────────────────────────────────────────
+-- ledger: fermat_two_squares — "an odd prime p is a sum of two squares iff p ≡ 1 (mod 4) (p ≤ 50)". The
+-- bound is the ledger's own and is kept: this decides the biconditional for every odd prime up to 50 and
+-- claims nothing beyond it. Fermat's theorem itself is prior art and ranges over infinitely many primes.
+def isPrime (n : Nat) : Bool := n > 1 && (List.range' 2 n).all (fun d => d * d > n || n % d != 0)
+def twoSquares (n : Nat) : Bool :=
+  (List.range (n + 1)).any (fun a => (List.range (n + 1)).any (fun b => a * a + b * b == n))
+theorem every_odd_prime_to_fifty_is_a_sum_of_two_squares_exactly_when_it_is_one_mod_four :
+  ((List.range' 3 48).filter isPrime).all (fun p => twoSquares p == (p % 4 == 1)) := by decide
+
+-- ── 17 · PASCAL MOD TWO IS THE AND-MASK ───────────────────────────────────────────────────────────────────
+-- ledger: pascal_mod2_lucas — "C(n,k) is odd iff (k AND n) = k". Lucas's theorem at p = 2, decided over a
+-- triangle rather than asserted: the binomial is built by the recurrence so nothing is assumed about it.
+-- BITS BY ARITHMETIC, NOT BY THE BITWISE OPERATORS. `&&&` and `>>>` on Nat carry `propext` through their
+-- decidability instances, and scripts/lean.ts accepts a standard axiom only for a theorem proved for every
+-- value — never for one closed by decide, where the whole claim is that the kernel walked a finite domain
+-- and needed nothing else. Division and remainder reach the same bits and carry nothing.
+def bit (n i : Nat) : Nat := (n / 2 ^ i) % 2
+
+def binom : Nat → Nat → Nat
+  | _, 0 => 1
+  | 0, _ => 0
+  | n + 1, k + 1 => binom n k + binom n (k + 1)
+theorem pascal_is_odd_exactly_where_the_index_is_a_submask :
+  (List.range 16).all (fun n => (List.range (n + 1)).all (fun k =>
+    (binom n k % 2 == 1) == ((List.range 5).all (fun i => bit k i <= bit n i)))) := by decide
+
+-- ── 18 · AND RULE 90 COUNTS BY POPCOUNT ───────────────────────────────────────────────────────────────────
+-- ledger: rule90_sierpinski — "row n has 2^(popcount n) live cells". Follows from theorem 17, and is decided
+-- independently rather than inferred: the live cells of row n are the k with C(n,k) odd, counted directly.
+def popcount (n : Nat) : Nat := ((List.range 8).filter (fun i => bit n i == 1)).length
+theorem the_live_cells_of_row_n_number_two_to_the_popcount :
+  (List.range 16).all (fun n =>
+    ((List.range (n + 1)).filter (fun k => binom n k % 2 == 1)).length == 2 ^ popcount n) := by decide
+
+-- ── 19 · THE HANDSHAKE LEMMA, AND ITS CONSEQUENCE ─────────────────────────────────────────────────────────
+-- ledger: handshake_lemma — "Σ deg(v) = 2·|E|, so the number of odd-degree vertices is even". Decided over
+-- every graph on four labelled vertices — all 2^6 = 64 of them — so it is a statement about the family and
+-- not about an example.
+def pairs : List (Nat × Nat) := [(0,1),(0,2),(0,3),(1,2),(1,3),(2,3)]
+def deg (g : Nat) (v : Nat) : Nat :=
+  ((List.range 6).filter (fun i => bit g i == 1 && ((pairs.getD i (0,0)).1 == v || (pairs.getD i (0,0)).2 == v))).length
+def edgeCount (g : Nat) : Nat := ((List.range 6).filter (fun i => bit g i == 1)).length
+theorem every_graph_on_four_vertices_sums_its_degrees_to_twice_its_edges :
+  (List.range 64).all (fun g =>
+    (((List.range 4).map (deg g)).foldl (· + ·) 0 == 2 * edgeCount g)
+    && (((List.range 4).filter (fun v => deg g v % 2 == 1)).length % 2 == 0)) := by decide
+
 end Claimed
