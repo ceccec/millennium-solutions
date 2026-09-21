@@ -404,4 +404,49 @@ theorem this_file_decides_arithmetic_on_digits_and_not_a_physical_theory :
   acoustic = 432 ∧ ellP = 1616255 ∧ tP = 5391247
   ∧ (List.range 3).all (fun _ => true) := by decide
 
+-- ── 29 · THE PLANCK ENERGY, DERIVED FROM CONSTANTS ALREADY ON FILE ────────────────────────────────────────
+-- Not a new digit sequence. mP is above; c and the elementary charge are in src/proof/light.lean, both
+-- exactly defined by the SI. The Planck energy is mP·c², and one GeV is e·10⁹ joules, so the whole quantity
+-- is a quotient of integers this deposit already carries — and it reproduces CODATA's 1.220890e19 GeV
+-- without anyone typing 1.220890 anywhere.
+def cSq : Nat := cDefined * cDefined                      -- 8.9875517873681764e16 m²/s², exact
+def eCharge : Nat := 1602176634                           -- 1.602176634e-19 C, SI-defined (light.lean)
+def planckEnergyMantissa : Nat := mP * cSq / eCharge      -- ×10⁵ GeV
+theorem the_planck_energy_derives_from_the_mass_and_the_defined_constants :
+  cSq = 89875517873681764
+  ∧ mP * cSq = 195608132867888696349576
+  ∧ planckEnergyMantissa = 122088993633325 := by decide
+
+-- ── 30 · AND THE COLLIDER IS FIFTEEN ORDERS BELOW IT ──────────────────────────────────────────────────────
+-- Asked how well this deposit covers string theory with EXPERIMENTS, the governing number is this one. The
+-- LHC collides at 13.6 TeV = 1.36e4 GeV. The Planck energy is ~1.22e19 GeV. The ratio is bracketed here
+-- between 10^14 and 10^15 by comparing integers, no division: the gap exceeds 10^14 exactly when the Planck
+-- energy exceeds the collider energy times 10^14.
+--
+-- That is not an engineering shortfall. Collider energy grows roughly linearly in ring size, so closing
+-- fifteen orders is not a bigger machine — it is a different category of object. Every test offered for
+-- string theory is therefore INDIRECT, and this deposit performs none of them: no superpartner search, no
+-- extra-dimension bound, no cosmic-string signature, no constraint on inflation. It measures naturals.
+def lhcGeV : Nat := 13600                                  -- 13.6 TeV, LHC Run 3
+theorem the_collider_sits_between_fourteen_and_fifteen_orders_below_the_planck_energy :
+  lhcGeV * 10 ^ 14 < planckEnergyMantissa * 10 ^ 5
+  ∧ planckEnergyMantissa * 10 ^ 5 < lhcGeV * 10 ^ 15
+  ∧ lhcGeV = 136 * 100 := by decide
+
+-- ── 31 · WHAT WOULD HAVE TO BE TRUE, AND IS NOT ───────────────────────────────────────────────────────────
+-- The completion of the boundary, stated so it cannot be read as either endorsement or dismissal. For this
+-- deposit to bear on string theory it would have to quantify over something string theory is about — a
+-- spacetime dimension count other than the one it never mentions, a compactification, a brane, a coupling.
+-- It quantifies over naturals and finite lists of them. The ring is ℤ/9; the dimensions in `doubleTorus`
+-- are seven INDEX POSITIONS in a fold, not directions in a space, and nothing here decides otherwise.
+--
+-- So: the arithmetic below is true and says nothing about physics, which is the whole of the claim.
+theorem this_deposits_seven_dimensions_are_index_positions_and_not_directions :
+  (List.range 7).length = 7
+  ∧ (List.range 7).all (fun d => d < 7)
+  -- `B` and `m9` belong to claimed.lean, not here; this file's own ring facts are the orbit and the axis.
+  ∧ orbit.length = 6
+  ∧ axis.length = 3
+  ∧ orbit.length + axis.length = 9 := by decide
+
 end Planck

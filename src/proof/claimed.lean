@@ -649,4 +649,53 @@ theorem the_nonzero_residues_vanish_exactly_for_an_odd_modulus :
   ∧ (List.range' 2 30).all (fun n =>
     ((List.range' 1 (n - 1)).foldl (· + ·) 0) == n * (n - 1) / 2) := by decide
 
+-- ── 58 · THE CAYLEY TABLE OF THE UNITS IS A LATIN SQUARE ──────────────────────────────────────────────────
+-- ledger: the_multiplication_table_of_z9_units_is_a_latin_square. Decided as the property is defined: every
+-- row and every column contains each unit exactly once. That is what a group table must be, and here it is
+-- checked rather than inherited from the word "group".
+theorem the_unit_multiplication_table_is_a_latin_square :
+  units.all (fun a => ((units.map (fun b => m9 (a * b))).eraseDups).length == 6)
+  ∧ units.all (fun b => ((units.map (fun a => m9 (a * b))).eraseDups).length == 6)
+  ∧ units.all (fun a => units.all (fun b => units.contains (m9 (a * b)))) := by decide
+
+-- ── 59 · THE ADDITIVE GENERATORS ARE EXACTLY THE UNITS ────────────────────────────────────────────────────
+-- ledger: the_additive_generators_of_z9_are_exactly_the_multiplicative_units. Two different operations
+-- picking out one set: d generates ℤ/9 additively — its multiples reach all nine — exactly when d has a
+-- multiplicative inverse. Both sides computed.
+def addSpan (d : Nat) : List Nat := (List.range 9).map (fun k => m9 (k * d))
+theorem the_additive_generators_are_exactly_the_multiplicative_units :
+  ((List.range' 1 9).filter (fun d => (addSpan d).eraseDups.length == 9)) = [1, 2, 4, 5, 7, 8]
+  ∧ units = [1, 2, 4, 5, 7, 8] := by decide
+
+-- ── 60 · THE AXIS IS THE MAXIMAL IDEAL ────────────────────────────────────────────────────────────────────
+-- ledger: the_w_axis_is_the_maximal_ideal_of_z9. An ideal is closed under addition within itself and under
+-- multiplication by ANYTHING in the ring; maximal here means the only larger one is the whole ring. Both
+-- closure properties are decided; maximality is stated as its size, three of nine, which is what the ledger
+-- claimed and is the part arithmetic can reach.
+def axis3 : List Nat := [0, 3, 6]
+theorem the_axis_is_closed_under_addition_and_under_multiplication_by_the_ring :
+  axis3.all (fun a => axis3.all (fun b => axis3.contains (m9 (a + b))))
+  ∧ axis3.all (fun a => (List.range 9).all (fun r => axis3.contains (m9 (a * r))))
+  ∧ axis3.length = 3
+  ∧ ((List.range 9).filter (fun d => !(units.contains d))) = [0, 3, 6] := by decide
+
+-- ── 61 · ℤ/n IS A FIELD EXACTLY WHEN n IS PRIME ───────────────────────────────────────────────────────────
+-- ledger: z_mod_n_is_a_field_exactly_when_n_is_prime, "so ℤ/9 is not". The biconditional over a range of
+-- moduli, decided by the definition — every nonzero residue has an inverse — and 9 appears in it as one
+-- case rather than as the point.
+theorem the_ring_of_residues_is_a_field_exactly_at_a_prime_modulus :
+  (List.range' 2 20).all (fun n =>
+    ((List.range' 1 (n - 1)).all (fun d => (List.range n).any (fun e => (d * e) % n == 1))) == isPrime n)
+  ∧ isPrime 9 = false := by decide
+
+-- ── 62 · AND THE SQUARES OF THE UNITS ARE A SUBGROUP OF THREE ─────────────────────────────────────────────
+-- ledger: the_squares_of_the_units_of_z9_are_the_trinity_subgroup. Squaring is two-to-one on a cyclic group
+-- of even order, so six units land on three squares — decided by computing the image and checking it is
+-- closed, which is what makes it a subgroup rather than merely a set of three.
+theorem squaring_maps_the_six_units_onto_a_closed_set_of_three :
+  ((units.map (fun u => m9 (u * u))).eraseDups).length = 3
+  ∧ ((units.map (fun u => m9 (u * u))).eraseDups) = [1, 4, 7]
+  ∧ [1, 4, 7].all (fun a => [1, 4, 7].all (fun b => [1, 4, 7].contains (m9 (a * b))))
+  ∧ units.length / 3 = 2 := by decide
+
 end Claimed

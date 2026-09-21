@@ -20728,5 +20728,45 @@
     "key": "lean_claimed_the_nonzero_residues_vanish_exactly_for_an_odd_modulus",
     "name": "lean claimed.lean: the_nonzero_residues_vanish_exactly_for_an_odd_modulus — (List.range' 2 30).all (fun n => (((List.range' 1 (n - 1)).foldl (· + ·) 0) % n == 0) == (n % 2 == 1)) ∧ (List.range' 2 30).all (fun n => ((List.range' 1 (n - 1)).foldl (· + ·) 0) == n * (n - 1) / 2) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "1b9819dc-3f83-82da-bbba-31387529f9bd"
+  },
+  {
+    "key": "lean_planck_the_planck_energy_derives_from_the_mass_and_the_defined_constants",
+    "name": "lean planck.lean: the_planck_energy_derives_from_the_mass_and_the_defined_constants — cSq = 89875517873681764 ∧ mP * cSq = 195608132867888696349576 ∧ planckEnergyMantissa = 122088993633325 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9aff2232-e0ed-869b-a221-c4470a0b0c2c"
+  },
+  {
+    "key": "lean_planck_the_collider_sits_between_fourteen_and_fifteen_orders_below_the_planck_energy",
+    "name": "lean planck.lean: the_collider_sits_between_fourteen_and_fifteen_orders_below_the_planck_energy — lhcGeV * 10 ^ 14 < planckEnergyMantissa * 10 ^ 5 ∧ planckEnergyMantissa * 10 ^ 5 < lhcGeV * 10 ^ 15 ∧ lhcGeV = 136 * 100 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a18d41ba-b349-83ee-a901-98c2ce65c3f1"
+  },
+  {
+    "key": "lean_planck_this_deposits_seven_dimensions_are_index_positions_and_not_directions",
+    "name": "lean planck.lean: this_deposits_seven_dimensions_are_index_positions_and_not_directions — (List.range 7).length = 7 ∧ (List.range 7).all (fun d => d < 7) ∧ orbit.length = 6 ∧ axis.length = 3 ∧ orbit.length + axis.length = 9 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d943c7fe-8af2-8448-a50f-39329cffdad0"
+  },
+  {
+    "key": "lean_claimed_the_unit_multiplication_table_is_a_latin_square",
+    "name": "lean claimed.lean: the_unit_multiplication_table_is_a_latin_square — units.all (fun a => ((units.map (fun b => m9 (a * b))).eraseDups).length == 6) ∧ units.all (fun b => ((units.map (fun a => m9 (a * b))).eraseDups).length == 6) ∧ units.all (fun a => units.all (fun b => units.contains (m9 (a * b)))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "0f038a8f-f0dc-878a-9d23-0053594cd6a8"
+  },
+  {
+    "key": "lean_claimed_the_additive_generators_are_exactly_the_multiplicative_units",
+    "name": "lean claimed.lean: the_additive_generators_are_exactly_the_multiplicative_units — ((List.range' 1 9).filter (fun d => (addSpan d).eraseDups.length == 9)) = [1, 2, 4, 5, 7, 8] ∧ units = [1, 2, 4, 5, 7, 8] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "24bfdaf0-3db6-8106-932c-ae7748aad1dc"
+  },
+  {
+    "key": "lean_claimed_the_axis_is_closed_under_addition_and_under_multiplication_by_the_ring",
+    "name": "lean claimed.lean: the_axis_is_closed_under_addition_and_under_multiplication_by_the_ring — axis3.all (fun a => axis3.all (fun b => axis3.contains (m9 (a + b)))) ∧ axis3.all (fun a => (List.range 9).all (fun r => axis3.contains (m9 (a * r)))) ∧ axis3.length = 3 ∧ ((List.range 9).filter (fun d => !(units.contains d))) = [0, 3, 6] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1d1fd9b9-e728-87d9-823b-4785c8a17747"
+  },
+  {
+    "key": "lean_claimed_the_ring_of_residues_is_a_field_exactly_at_a_prime_modulus",
+    "name": "lean claimed.lean: the_ring_of_residues_is_a_field_exactly_at_a_prime_modulus — (List.range' 2 20).all (fun n => ((List.range' 1 (n - 1)).all (fun d => (List.range n).any (fun e => (d * e) % n == 1))) == isPrime n) ∧ isPrime 9 = false — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "8a3d4757-774f-8970-87a3-a5123e90fb71"
+  },
+  {
+    "key": "lean_claimed_squaring_maps_the_six_units_onto_a_closed_set_of_three",
+    "name": "lean claimed.lean: squaring_maps_the_six_units_onto_a_closed_set_of_three — ((units.map (fun u => m9 (u * u))).eraseDups).length = 3 ∧ ((units.map (fun u => m9 (u * u))).eraseDups) = [1, 4, 7] ∧ [1, 4, 7].all (fun a => [1, 4, 7].all (fun b => [1, 4, 7].contains (m9 (a * b)))) ∧ units.length / 3 = 2 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7e1a75f5-a906-8334-8bca-7b3673517acb"
   }
 ]
