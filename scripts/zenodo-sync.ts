@@ -37,6 +37,7 @@ import { ledger, theoremCount, leanFiles, leanTheorems } from '../src/api/index.
 
 const args = process.argv.slice(2)
 const LIVE = args.includes('--production')
+const flag = (f: string) => args.includes(f)
 const PLAN = '.zenodo/sync-plan.json'
 const HOST = 'https://zenodo.org'
 
@@ -364,6 +365,18 @@ const plan = {
 
 if (bad) { console.log(`\n✗ zenodo-sync: ${bad} finding(s) — nothing planned; fix the above and re-run`); process.exit(1) }
 
+// --check ASKS WHETHER THE PLAN CAN BE BUILT, AND WRITES NOTHING. gates-fire ran this script as a
+// gate-under-test and it stranded .zenodo/sync-plan.json on every cold run: a control restores the file it
+// MUTATED, never the file a generator WROTE. Making the plan deterministic was not enough, because its
+// content depends on the tag and the ledger — and zenodo-sync runs after release.ts, so the committed plan
+// is one release behind by construction and any run outside that order rewrites it honestly.
+//
+// The fault was using a generator as a control. This mode runs every refusal above and stops before the
+// write, so the control exercises what it meant to exercise and leaves the tree exactly as it found it.
+if (flag('--check')) {
+  console.log(`  ✓ zenodo-sync: the plan for ${tag} derives with no finding — ${FILES.length} file(s), ${related.length} related identifier(s). Nothing written.`)
+  process.exit(0)
+}
 writeFileSync(PLAN, JSON.stringify(plan, null, 2) + '\n')
 if (args.includes('--print')) console.log(description + '\n')
 console.log(`  ✓ zenodo-sync: plan for ${tag} → ${PLAN} · ${FILES.length} file(s) · ${related.length} related identifier(s) · `

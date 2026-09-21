@@ -196,7 +196,7 @@ const CONTROLS: Control[] = [
     what: 'deposition metadata that no longer agrees with the tree it describes',
     mutate: (s) => s.replace(/"version": "[^"]+"/, '"version": "1.3.5"') },
 
-  { gate: 'zenodo-sync', cmd: 'node scripts/zenodo-sync.ts',
+  { gate: 'zenodo-sync', cmd: 'node scripts/zenodo-sync.ts --check',
     file: 'src/proof/citations.json',
     what: 'a reception measurement with no date — which would publish "0 citing works" where the truth is NOT MEASURED',
     mutate: (s) => s.replace(/"measured":\s*"[^"]*"/, '"measured": ""') },
