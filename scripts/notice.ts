@@ -15,7 +15,7 @@ import { toUuid } from '../src/0/index.ts'
 // does not have. Importing scripts/mcp.ts is safe: its stdio loop is guarded on argv, so loading it starts
 // nothing. scripts/mcp-http.ts is deliberately NOT imported — it calls server.listen() at load, and a
 // documentation generator must not be able to open a port.
-import { TOOLS as MCP_TOOLS, WRITES as MCP_WRITES } from './mcp.ts'
+import { TOOLS as MCP_TOOLS, WRITES as MCP_WRITES } from '../src/mcp/index.ts'
 
 // THE ORCID IS READ, NOT TYPED. attribution-gate refused the first version of this file: it named the
 // author with no ORCID, so "a citation from here resolves to nobody" — the correct catch for a notice whose

@@ -20,7 +20,7 @@ import { analytics } from './analytics.ts'
 import { queue } from '../src/prove/index.ts'
 // The tool surface, imported from the module that owns it. Counting `{ name: '` in its source would be a
 // second implementation of enumerating the tools, and the count nobody runs is the one that drifts.
-import { TOOLS as MCP_TOOLS, WRITES as MCP_WRITES, LISTED as MCP_DOOR } from './mcp.ts'
+import { TOOLS as MCP_TOOLS, WRITES as MCP_WRITES, LISTED as MCP_DOOR } from '../src/mcp/index.ts'
 
 // ONCE, NOT ONCE PER PAGE. `body()` is called twice — for README.md and for index.md — and it walked the
 // whole publication queue through `translate` each time. Measured: 1,555 items at about 4 ms apiece, twice,

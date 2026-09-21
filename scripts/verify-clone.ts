@@ -26,7 +26,7 @@
  *  directory. Everything before it runs, gates-fire included.
  *
  *  usage:  node scripts/verify-clone.ts [--ref HEAD] [--keep] */
-import { readFileSync, rmSync, symlinkSync, readdirSync, unlinkSync } from 'node:fs'
+import { readFileSync, writeFileSync, rmSync, symlinkSync, readdirSync, unlinkSync } from 'node:fs'
 import { execFileSync, execSync } from 'node:child_process'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
@@ -67,8 +67,18 @@ try {
     try { execSync(cmd, { cwd: W, stdio: 'pipe', encoding: 'utf8', env }); console.log(`  ✓ ${label}`) }
     catch (e) {
       failed++
+      // DO NOT SLICE AWAY THE EVIDENCE. The first version printed the last twenty lines, and gates-fire's
+      // summary is longer than that: the run reported "1 of 74 gate(s) do not reject what they exist to
+      // reject" and the line naming WHICH gate had been cut off above the window. A verification tool whose
+      // output omits the finding costs a second full run to recover what it already had in memory.
       const out = String((e as { stdout?: string }).stdout ?? '') + String((e as { stderr?: string }).stderr ?? '')
-      console.log(`  ✗ ${label}\n${out.split('\n').filter(Boolean).slice(-20).map((l) => '      ' + l).join('\n')}`)
+      const full = join(tmpdir(), `verify-clone-${sha}-${label.replace(/[^\w-]/g, '_')}.log`)
+      writeFileSync(full, out)
+      const lines = out.split('\n').filter(Boolean)
+      // Every line a reader would act on, then the tail for context — not the tail alone.
+      const marked = lines.filter((l) => /✗|ACCEPTS|FAILS ON|does not reject|error|Error/.test(l))
+      const show = [...new Set([...marked, ...lines.slice(-12)])]
+      console.log(`  ✗ ${label}\n${show.map((l) => '      ' + l).join('\n')}\n      full output (${lines.length} lines) → ${full}`)
       break   // the chain is `&&`; stopping where it would stop keeps this honest about what was reached
     }
   }
