@@ -26,6 +26,12 @@
  *    · A perturbation that breaks elaboration for an unrelated reason tells us nothing about any theorem in
  *      that file, and is reported as an unusable probe rather than as every theorem noticing.
  *
+ *  WHAT IT COSTS, MEASURED — because a tool nobody can afford to run is a tool nobody runs. One compile per
+ *  definition per perturbation size, and the compile is the expensive part: energy.lean is 17 definitions,
+ *  51 compiles, 688 seconds. Across the tree that is 76 definitions and 228 compiles, hours rather than
+ *  minutes. So this is a PER-FILE instrument, run against a file whose constants you are reading, and not a
+ *  sweep and not a gate. `--file energy.lean` is the intended use.
+ *
  *  usage:  node scripts/perturb-gate.ts [--file planck.lean] [--list] */
 import { readFileSync, writeFileSync, mkdtempSync, rmSync, readdirSync } from 'node:fs'
 import { execFileSync } from 'node:child_process'
@@ -34,7 +40,14 @@ import { join } from 'node:path'
 import { arg, flag } from '../src/cli/index.ts'
 
 const DIR = 'src/proof'
-const DEF = /^def ([a-zA-Z_][a-zA-Z0-9_]*) *: *Nat *:= *(\d+) *$/
+// THE COMMENT IS NOT OPTIONAL IN THIS TREE, SO THE PATTERN CANNOT TREAT IT AS ABSENT. This required the
+// line to END with the literal, and every constant carrying an explanation was skipped:
+//   def splitCost : Nat := 52000  -- Wh to electrolyse 1 kg H₂
+// A constant with a comment saying where the number came from is the NORMAL case here — the doctrine is to
+// say where a number came from — so the probe systematically skipped the best-documented constants and
+// reported their theorems as having nothing to notice. 35 definitions seen of 76 that exist, and the 41 it
+// missed were the ones somebody had bothered to source.
+const DEF = /^def ([a-zA-Z_][a-zA-Z0-9_]*) *: *Nat *:= *(\d+) *(--.*)?$/
 const THM = /^theorem ([a-zA-Z_][a-zA-Z0-9_']*)/
 
 const only = arg('--file')
@@ -93,7 +106,7 @@ for (const f of files) {
     let anyUsable = false
     for (const to of [...new Set(sizes)]) {
       const variant = [...lines]
-      variant[d.i] = `def ${name} : Nat := ${to}`
+      variant[d.i] = `def ${name} : Nat := ${to}${d.m[3] ? ' ' + d.m[3] : ''}`
       const path = join(work, f)
       writeFileSync(path, variant.join('\n'))
       const e = compile(path)
