@@ -34,6 +34,28 @@ const PROBES: Probe[] = [
   { source: 'zenodo:concept', why: 'the concept DOI that groups its versions',
     url: 'https://zenodo.org/api/records/22256707',
     expect: (b) => /"conceptrecid"\s*:\s*"21781602"/.test(b) },
+  // THE CITATION SOURCE ZENODO NAMES AND THIS DEPOSIT CANNOT REACH. Zenodo's help lists NASA ADS, DataCite
+  // AND CROSSREF EVENT DATA, and Europe PMC as what feeds the citation panel on a record page. Measured
+  // 2026-09-21: api.eventdata.crossref.org resolves in DNS to 34.251.73.224 and then never completes a TCP
+  // connection — `connect=0.000000s`, timeout at 30s — while api.crossref.org and zenodo.org both answer
+  // 200 from the same machine in the same second. So this is that host, not this network.
+  //
+  // It is probed rather than assumed because "we could not add this source" is a claim about the world, and
+  // the kind that quietly becomes folklore. If the endpoint returns, this probe goes green and the source
+  // can be read; until then FINDINGS.md's boundary on "zero third-party citations" stands on a measurement.
+  { source: 'crossref:eventdata', why: 'a citation source Zenodo names for its own record pages',
+    url: 'https://api.eventdata.crossref.org/v1/events?rows=1',
+    expect: (b) => /"status"\s*:\s*"ok"/.test(b) || /total-results/.test(b) },
+  // The control that tells a dead endpoint apart from a dead registry: Crossref's main API, same host,
+  // answered in the same run. A Zenodo DOI is 404 there and should be — Zenodo registers with DataCite —
+  // so the fact asked for is one about a Crossref-registered work.
+  { source: 'crossref:rest', why: 'Crossref itself answers, so an Event Data failure is that service alone',
+    url: 'https://api.crossref.org/works/10.1038/nature12373',
+    // JSON ESCAPES THE SLASH AND THE FIRST VERSION OF THIS DID NOT EXPECT IT. Crossref serialises the field
+    // as "10.1038\/nature12373", so a pattern written with a bare slash matched nothing and the probe
+    // reported WRONG — answered without the answer — against a service that had answered correctly. The
+    // gate naming it WRONG rather than passing is why it was caught in the run that introduced it.
+    expect: (b) => /"DOI"\s*:\s*"10\.1038\\?\/nature12373"/i.test(b) },
   { source: 'doi.org', why: 'content negotiation resolves a DOI to metadata',
     url: 'https://doi.org/api/handles/10.5281/zenodo.21819217',
     expect: (b) => /"responseCode"\s*:\s*1/.test(b) },

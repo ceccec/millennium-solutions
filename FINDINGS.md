@@ -60,6 +60,14 @@ to both. So a third-party citation could stand on this deposit's own landing pag
 report, and the report would still be true of what it read. "Zero" is bounded by where one looked, and until
 now that bound was implicit.
 
+**And one of those three sources cannot be read from here — measured, not assumed.** `npm run sources`
+probes `api.eventdata.crossref.org` alongside a control on Crossref's own API. Result on 2026-09-21:
+Event Data **NOT MEASURED, fetch failed** — DNS resolves it to `34.251.73.224` and TCP never completes,
+timing out at 30s with `connect=0.000000s` — while `api.crossref.org` answered **PROVEN** from the same
+machine in the same run. That is the service, not this network. So Crossref Event Data could not be added
+as a source here, and the citation panel on Zenodo's own record pages may be missing whatever it would
+have contributed.
+
 Zenodo also publishes why a record may show none: not yet cited; not yet discovered by its sources; the
 domain not covered by any of them; or the citing work not freely available. **Three of those four describe
 the instrument, not the work** — which is the distinction this document exists to keep, applied to itself.
