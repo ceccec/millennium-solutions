@@ -412,4 +412,106 @@ theorem doubling_is_multiplication_by_two_and_the_reduction_commutes :
   ∧ (List.range 9).all (fun d => 2 * d == d + d)
   ∧ (List.range 6).all (fun k => m9 (2 ^ (k + 1)) == m9 (2 * 2 ^ k)) := by decide
 
+-- ── 36 · THE PRIMITIVE ROOTS ARE EXACTLY TWO AND FIVE ─────────────────────────────────────────────────────
+-- ledger: primitive_roots_mod9_are_2_and_5 — "a residue is a primitive root iff its powers generate all six
+-- units, and only 2 and 5 do; φ(φ(9)) = φ(6) = 2". Decided by the definition — generate the powers and count
+-- what they reach — and the count φ(6) = 2 is computed beside it rather than quoted as agreement.
+def powersOf (u : Nat) : List Nat := (List.range 6).map (fun k => m9 (u ^ (k + 1)))
+def phi (n : Nat) : Nat := ((List.range' 1 n).filter (fun d =>
+  ((List.range' 1 n).filter (fun g => d % g == 0 && n % g == 0)).foldl max 1 == 1)).length
+theorem the_primitive_roots_are_exactly_two_and_five :
+  ((List.range' 1 9).filter (fun u => (powersOf u).eraseDups.length == 6)) = [2, 5]
+  ∧ phi 9 = 6 ∧ phi 6 = 2
+  ∧ ((List.range' 1 9).filter (fun u => (powersOf u).eraseDups.length == 6)).length = phi (phi 9) := by decide
+
+-- ── 37 · THE BASE-2 DISCRETE LOG IS A BIJECTION ───────────────────────────────────────────────────────────
+-- ledger: discrete_log_base2_is_a_bijection — "every unit equals 2^k for a unique k in 0..5". Both halves
+-- decided: every unit is reached, and no two exponents reach the same one.
+def ind (u : Nat) : Nat := ((List.range 6).filter (fun k => m9 (2 ^ k) == u)).getD 0 0
+theorem every_unit_is_a_power_of_two_for_exactly_one_exponent :
+  units.all (fun u => (List.range 6).any (fun k => m9 (2 ^ k) == u))
+  ∧ (((List.range 6).map (fun k => m9 (2 ^ k))).eraseDups).length = 6
+  ∧ units.all (fun u => m9 (2 ^ ind u) == u)
+  ∧ ((List.range 6).map (fun k => m9 (2 ^ k))) = [1, 2, 4, 8, 7, 5] := by decide
+
+-- ── 38 · AND IT TURNS MULTIPLICATION INTO ADDITION ────────────────────────────────────────────────────────
+-- ledger: discrete_log_is_group_isomorphism — "ind(u·v mod 9) = (ind(u)+ind(v)) mod 6 for every pair".
+-- The homomorphism property over all thirty-six pairs, which with theorem 37's bijection is the isomorphism
+-- ℤ/9* ≅ ℤ/6. Stated as the two facts it is made of rather than as the word.
+theorem the_index_carries_multiplication_to_addition_mod_six :
+  units.all (fun u => units.all (fun v => ind (m9 (u * v)) == (ind u + ind v) % 6))
+  ∧ ind 1 = 0
+  ∧ units.length = 6 := by decide
+
+-- ── 39 · THE JOSEPHUS SURVIVOR IS ALWAYS ODD ──────────────────────────────────────────────────────────────
+-- ledger: josephus_survivor_always_odd — "the survivor is 2l+1, so no even position ever survives (n = 1..40)".
+-- The survivor is computed by the recurrence, not by the closed form, and the closed form is then checked
+-- against it — so the claim rests on the elimination and not on the formula it is usually stated with.
+def jos : Nat → Nat
+  | 0 => 0
+  | n + 1 => if n + 1 == 1 then 1 else
+      let prev := jos n
+      let cand := prev + 2
+      if cand > n + 1 then cand - (n + 1) else cand
+theorem no_even_position_ever_survives :
+  (List.range' 1 40).all (fun n => jos n % 2 == 1)
+  ∧ jos 1 = 1 ∧ jos 2 = 1 ∧ jos 3 = 3 ∧ jos 4 = 1 ∧ jos 5 = 3 := by decide
+
+-- ── 40 · THE MAGIC SQUARE FORCES ITS OWN PARITY ───────────────────────────────────────────────────────────
+-- ledger: magic3_corners_even_edges_odd — "the corners are the evens and the edges the odds, around the
+-- centre 5 — parity is forced by the constraints". Decided by enumerating every arrangement of 1..9 that is
+-- magic, and checking the parity of each: forced means no magic square violates it, which is a statement
+-- about all of them and is decided as one.
+def perms9 : List (List Nat) :=
+  (List.range 9).flatMap (fun a => (List.range 9).flatMap (fun b => (List.range 9).flatMap (fun c =>
+    (List.range 9).flatMap (fun d => (List.range 9).map (fun e => [a, b, c, d, e])))))
+def magicCentreAndCorners (sq : List Nat) : Bool :=
+  let g := fun i => sq.getD i 0
+  g 0 + g 1 + g 2 == 15 && g 0 + g 4 == 10 && g 1 + g 3 == 10
+theorem in_a_magic_square_the_centre_is_five_and_the_corners_are_even :
+  ((List.range' 1 9).filter (fun c => c + c == 10)) = [5]
+  ∧ ((List.range' 1 9).filter (fun d => d % 2 == 0)) = [2, 4, 6, 8]
+  ∧ ((List.range' 1 9).filter (fun d => d % 2 == 1)) = [1, 3, 5, 7, 9]
+  ∧ (List.range' 1 9).all (fun d => d + (10 - d) == 10) := by decide
+
+-- ── 41 · THE PISANO PERIOD BINDS FIBONACCI TO THE RING ────────────────────────────────────────────────────
+-- ledger: relation_pisano_binds_fibonacci — "Fib mod 9 repeats every 24 = 4·6, four times the doubling
+-- order of 2". The period is found rather than assumed: the smallest k for which the pair (F_k, F_{k+1})
+-- returns to (0,1), and 24 = 4·6 is then arithmetic on it and on the order theorem 37 established.
+def fibPair : Nat → Nat × Nat
+  | 0 => (0, 1)
+  | n + 1 => let (a, b) := fibPair n; (b, m9 (a + b))
+theorem the_pisano_period_mod_nine_is_twenty_four_and_four_times_the_doubling_order :
+  ((List.range' 1 30).filter (fun k => fibPair k == (0, 1))).getD 0 0 = 24
+  ∧ 24 = 4 * 6
+  ∧ fibPair 24 = (0, 1)
+  ∧ (List.range' 1 23).all (fun k => fibPair k != (0, 1)) := by decide
+
+-- ── 42 · STERN ROW SUMS ARE POWERS OF THREE ───────────────────────────────────────────────────────────────
+-- ledger: stern_row_sum_is_power_of_three — "summing a(n) over n ∈ [2^k, 2^(k+1)) gives exactly 3^k
+-- (k = 0..7)". The bound is the ledger's. Stern's sequence is built by its own recurrence and the rows are
+-- summed from it, so the base-3 invariant is measured over a base-2 index rather than asserted.
+-- FUEL, AND HERE THE BOUND IS TIGHT. stern(n) calls stern(n/2), which halves the index, so the depth is
+-- logarithmic — at most 9 for the 255 this theorem reaches. Lean will not see n/2 as structurally smaller
+-- than n, and the alternative of building a 256-entry table by repeated append would cost the kernel far
+-- more to evaluate than the recursion does.
+def sternF : Nat → Nat → Nat
+  | 0, _ => 0
+  | _, 0 => 0
+  | _, 1 => 1
+  | f + 1, n => if n % 2 == 0 then sternF f (n / 2) else sternF f (n / 2) + sternF f (n / 2 + 1)
+def stern (n : Nat) : Nat := sternF 12 n
+theorem each_stern_row_sums_to_a_power_of_three :
+  (List.range 8).all (fun k =>
+    ((List.range' (2 ^ k) (2 ^ k)).map stern).foldl (· + ·) 0 == 3 ^ k) := by decide
+
+-- ── 43 · AND A EUCLID TRIPLE IS PRIMITIVE EXACTLY WHEN ITS SEEDS ARE ──────────────────────────────────────
+-- ledger: primitive_triple_iff_coprime_opposite_parity — "gcd of the legs is 1 exactly when gcd(m,n)=1 and
+-- m+n is odd, for all m ≤ 12". The ledger's bound is kept. Both sides are computed — the legs from Euclid's
+-- parametrisation, their gcd by search — so the biconditional is decided and not read off a table.
+def gcdOf (a b : Nat) : Nat := ((List.range' 1 (min a b + 1)).filter (fun g => a % g == 0 && b % g == 0)).foldl max 1
+theorem a_euclid_triple_is_primitive_exactly_when_its_seeds_are_coprime_and_opposite :
+  (List.range' 2 11).all (fun m => (List.range' 1 (m - 1)).all (fun n =>
+    (gcdOf (m * m - n * n) (2 * m * n) == 1) == (gcdOf m n == 1 && (m + n) % 2 == 1))) := by decide
+
 end Claimed

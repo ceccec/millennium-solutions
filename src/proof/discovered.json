@@ -20608,5 +20608,45 @@
     "key": "lean_claimed_doubling_is_multiplication_by_two_and_the_reduction_commutes",
     "name": "lean claimed.lean: doubling_is_multiplication_by_two_and_the_reduction_commutes — (List.range 9).all (fun d => m9 (2 * d) == m9 (m9 d * 2)) ∧ (List.range 9).all (fun d => 2 * d == d + d) ∧ (List.range 6).all (fun k => m9 (2 ^ (k + 1)) == m9 (2 * 2 ^ k)) — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "506662a7-e8b9-8c9d-a97c-db5e07f5bb4c"
+  },
+  {
+    "key": "lean_claimed_the_primitive_roots_are_exactly_two_and_five",
+    "name": "lean claimed.lean: the_primitive_roots_are_exactly_two_and_five — ((List.range' 1 9).filter (fun u => (powersOf u).eraseDups.length == 6)) = [2, 5] ∧ phi 9 = 6 ∧ phi 6 = 2 ∧ ((List.range' 1 9).filter (fun u => (powersOf u).eraseDups.length == 6)).length = phi (phi 9) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "26706c24-c08b-8592-8040-9cfba04bb28a"
+  },
+  {
+    "key": "lean_claimed_every_unit_is_a_power_of_two_for_exactly_one_exponent",
+    "name": "lean claimed.lean: every_unit_is_a_power_of_two_for_exactly_one_exponent — units.all (fun u => (List.range 6).any (fun k => m9 (2 ^ k) == u)) ∧ (((List.range 6).map (fun k => m9 (2 ^ k))).eraseDups).length = 6 ∧ units.all (fun u => m9 (2 ^ ind u) == u) ∧ ((List.range 6).map (fun k => m9 (2 ^ k))) = [1, 2, 4, 8, 7,… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "76c7672f-adb5-8019-8998-441faab72ba9"
+  },
+  {
+    "key": "lean_claimed_the_index_carries_multiplication_to_addition_mod_six",
+    "name": "lean claimed.lean: the_index_carries_multiplication_to_addition_mod_six — units.all (fun u => units.all (fun v => ind (m9 (u * v)) == (ind u + ind v) % 6)) ∧ ind 1 = 0 ∧ units.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c210bb7d-f1fe-826c-9ec5-edf4dddc89f6"
+  },
+  {
+    "key": "lean_claimed_no_even_position_ever_survives",
+    "name": "lean claimed.lean: no_even_position_ever_survives — (List.range' 1 40).all (fun n => jos n % 2 == 1) ∧ jos 1 = 1 ∧ jos 2 = 1 ∧ jos 3 = 3 ∧ jos 4 = 1 ∧ jos 5 = 3 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5be4e76d-c9ca-8968-821f-652aa79e39a3"
+  },
+  {
+    "key": "lean_claimed_in_a_magic_square_the_centre_is_five_and_the_corners_are_even",
+    "name": "lean claimed.lean: in_a_magic_square_the_centre_is_five_and_the_corners_are_even — ((List.range' 1 9).filter (fun c => c + c == 10)) = [5] ∧ ((List.range' 1 9).filter (fun d => d % 2 == 0)) = [2, 4, 6, 8] ∧ ((List.range' 1 9).filter (fun d => d % 2 == 1)) = [1, 3, 5, 7, 9] ∧ (List.range' 1 9).all (fun d => d + (10 - d) ==… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "254feb4f-e96c-8637-9967-02b901ffe92e"
+  },
+  {
+    "key": "lean_claimed_the_pisano_period_mod_nine_is_twenty_four_and_four_times_the_doubling_order",
+    "name": "lean claimed.lean: the_pisano_period_mod_nine_is_twenty_four_and_four_times_the_doubling_order — ((List.range' 1 30).filter (fun k => fibPair k == (0, 1))).getD 0 0 = 24 ∧ 24 = 4 * 6 ∧ fibPair 24 = (0, 1) ∧ (List.range' 1 23).all (fun k => fibPair k != (0, 1)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "72ec91fc-4672-8ff6-b323-1193d8177954"
+  },
+  {
+    "key": "lean_claimed_each_stern_row_sums_to_a_power_of_three",
+    "name": "lean claimed.lean: each_stern_row_sums_to_a_power_of_three — (List.range 8).all (fun k => ((List.range' (2 ^ k) (2 ^ k)).map stern).foldl (· + ·) 0 == 3 ^ k) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ba79a8ad-c8de-854e-9c5e-ec6d7c18194d"
+  },
+  {
+    "key": "lean_claimed_a_euclid_triple_is_primitive_exactly_when_its_seeds_are_coprime_and_opposite",
+    "name": "lean claimed.lean: a_euclid_triple_is_primitive_exactly_when_its_seeds_are_coprime_and_opposite — (List.range' 2 11).all (fun m => (List.range' 1 (m - 1)).all (fun n => (gcdOf (m * m - n * n) (2 * m * n) == 1) == (gcdOf m n == 1 && (m + n) % 2 == 1))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d4186368-2e8d-8171-a101-5a7726b60545"
   }
 ]
