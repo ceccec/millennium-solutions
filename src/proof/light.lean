@@ -160,4 +160,51 @@ theorem the_period_count_returns_from_the_second_for_every_whole_count :
     ∀ p : Nat, p % dNuCs = 0 → periods (p / dNuCs) = p := by
   intro p h; unfold periods; exact Nat.mul_div_cancel' (Nat.dvd_of_mod_eq_zero h)
 
+-- ── WHAT THE 2019 REDEFINITION MADE EXACT, AND WHAT IT DID NOT ────────────────────────────────────────────
+--
+-- This file holds all seven defining constants and decides nothing about the quantities BUILT from them.
+-- Two of those became exact in 2019 and are the clearest consequence of the redefinition, because their
+-- defining relation is a plain product of two constants the SI now fixes:
+--
+--   the molar gas constant   R = k · N_A
+--   the Faraday constant     F = e · N_A
+--
+-- Before 2019 both carried an experimental uncertainty. They carry none now, and not because anyone
+-- measured them better — because their inputs stopped being measurements. That is arithmetic on digit
+-- sequences and the kernel can decide it, so it is decided here rather than described.
+--
+-- THE BOUNDARY, said in the same breath. Not every derived constant became exact, and the ones that did not
+-- are the ones whose defining relation is not a product of the seven. The reduced Planck constant needs
+-- h / 2π and the Stefan–Boltzmann constant needs 2π⁵k⁴ / 15h³c², and π is not among the defining constants
+-- and is not rational. Neither can be stated in this file at all — not as a hard theorem, not as an
+-- approximate one — and src/proof/planck.lean accordingly treats its hbar digits as a rounded decimal and
+-- never as an exact quantity. What makes R and F exact is the SHAPE of their definition, not their
+-- importance, and a reader who takes "exact since 2019" as a property of the 2019 revision rather than of
+-- multiplication will expect it of constants that cannot have it.
+def molarGas : Nat := kDigits * naDigits        -- 10⁻²⁹ · 10¹⁵ = 10⁻¹⁴ · R = 8.31446261815324 J mol⁻¹ K⁻¹
+def faraday  : Nat := eDigits * naDigits        -- 10⁻²⁸ · 10¹⁵ = 10⁻¹³ · F = 96485.33212331… C mol⁻¹
+
+theorem the_molar_gas_constant_is_an_exact_product_of_two_defined_constants :
+  molarGas = 831446261815324 := by decide
+
+theorem the_faraday_constant_is_an_exact_product_of_two_defined_constants :
+  faraday = 964853321233100184 := by decide
+
+-- ── WHAT CANNOT BE DECIDED HERE ONCE R AND F ARE DEFINED THIS WAY ─────────────────────────────────────────
+-- A third theorem stood here and was removed before it shipped. It asserted that each product divides back
+-- to either input with no remainder — and `molarGas` IS `kDigits * naDigits`, so that cannot fail for any
+-- product whatsoever. It restated its own definition and decided nothing, while reading like a test of
+-- exactness. The comment above it went further and claimed the same division on the Planck relations does
+-- NOT return its input; those are products too, so it does, and the sentence was simply false.
+--
+-- The lesson is narrow and worth keeping: once R and F are DEFINED as those products, every relation among
+-- them is definitional. F / R = e / k, the product divides back, the factors commute — all true, all empty.
+-- The only content is the one thing above: that the product of two SI-defined digit sequences reproduces,
+-- digit for digit, the value CODATA publishes for a constant nobody multiplied to get there. That match is
+-- external to this file and could have failed. Everything else here could not.
+--
+-- The vacuity gate did not catch it. That gate rejects a theorem whose QUANTIFIER ranges over nothing, and
+-- this one has no quantifier — it is a conjunction of concrete equalities true by unfolding. A theorem that
+-- restates its definitions is a second shape of deciding nothing, and the tree has no check for it.
+
 end Light
