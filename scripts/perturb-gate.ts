@@ -63,6 +63,12 @@ for (const f of files) {
   if (!thms.length) continue
   if (!defs.length) { unprobed += thms.length; continue }
   filesWithDefs++
+  // A TOOL THAT SAYS NOTHING FOR EIGHT MINUTES IS INDISTINGUISHABLE FROM A HUNG ONE. Each file needs one
+  // compile per definition per perturbation size, and planck alone is five definitions at ten seconds a
+  // compile. Progress is printed as it goes, so a reader can see which file is being probed and stop
+  // waiting on a guess about whether it is working.
+  process.stdout.write(`  probing ${f.padEnd(20)} ${defs.length} def(s) × 3 size(s) …`)
+  const t0 = Date.now()
   const owner = (line: number) => {
     let best: string | null = null
     for (const t of thms) if (t.line <= line - 1) best = t.name
@@ -100,6 +106,8 @@ for (const f of files) {
     for (const line of errs) { const o = owner(line); if (o) noticed.get(o)?.add(name) }
   }
   for (const t of thms) rows.push({ file: f, thm: t.name, noticed: [...(noticed.get(t.name) ?? [])], probes })
+  const seen = thms.filter((t) => (noticed.get(t.name)?.size ?? 0) > 0).length
+  console.log(` ${((Date.now() - t0) / 1000).toFixed(0)}s · ${seen}/${thms.length} noticed`)
 }
 rmSync(work, { recursive: true, force: true })
 

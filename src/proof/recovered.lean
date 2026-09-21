@@ -1,3 +1,4 @@
+import Z9
 set_option maxRecDepth 8000000
 -- title: Recovered — claims that computed and were withdrawn for want of a proof
 -- wing: the returned
@@ -19,9 +20,18 @@ set_option maxRecDepth 8000000
 
 namespace Recovered
 
-def units : List Nat := [1, 2, 4, 5, 7, 8]
+-- DERIVED, NOT RESTATED. This read `[1, 2, 4, 5, 7, 8]` — the units of ℤ/9, written out by hand beside
+-- z9.lean, which DERIVES the same list as `(List.range B).filter isUnit`. Two definitions of one set, and
+-- the hand-written one cannot be wrong in a way anything notices: it is not checked against the derivation,
+-- it IS a second derivation. scripts/hardcode-gate.ts exists to catch exactly this and excludes .lean on
+-- the ground that "the .lean proofs state these sets on purpose, being the source" — true of z9.lean, which
+-- computes it, and false of this file, which copied it.
+def units : List Nat := Z9.units
 def triad : List Nat := [3, 6, 9]
-def pow9 (b k : Nat) : Nat := (List.range k).foldl (fun a _ => a * b % 9) 1
+-- THE SAME DEFECT AGAIN, ONE LINE DOWN. z9.lean defines pow9 as `m9 (b ^ e)`; this folded a multiplication
+-- k times. Two algorithms for one function, neither checked against the other, and a theorem here proving
+-- something about "pow9" proves it about THIS one only. Derived from the same place the units now come from.
+def pow9 (b k : Nat) : Nat := Z9.pow9 b k
 
 theorem units_sum_zero : (units.foldl (· + ·) 0) = 27 ∧ (units.foldl (· + ·) 0) % 9 = 0 := by decide
 
