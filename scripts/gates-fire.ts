@@ -168,6 +168,30 @@ const CONTROLS: Control[] = [
   // control` and nobody read it as a gap. Meanwhile zenodo-gate itself was RED — it has required `0/7` in
   // every description since it was written and no description carried it. A control pointed at a missing
   // file is how a gate stays broken in plain sight. It names a deposition the tree actually holds now.
+  // CONTROLS FOR THE GATES I ADDED TODAY. gates-fire reported them among the seven "without one, trusted
+  // only because they pass" — and I had proved handle-gate's two controls BY HAND in the session that wrote
+  // it, which re-proves nothing on any later run. A control that lives in my transcript is not a control.
+
+  { gate: 'handle-gate', cmd: 'node scripts/handle-gate.ts',
+    file: 'src/handle/index.ts',
+    what: 'a handle window moved onto the forced version nibble, where it carries fewer bits than the module claims',
+    mutate: (s) => s.replace('export const HANDLE_OFFSET = 0', 'export const HANDLE_OFFSET = 12') },
+
+  { gate: 'handle-gate (no-payload invariant)', cmd: 'node scripts/handle-gate.ts',
+    file: 'src/receipts/593b546a-36b4-8553-941a-0e03b7053a64.json',
+    what: 'a receipt whose message no longer mints its own address — so the message cannot travel alone',
+    mutate: (s) => s.replace('"message": "', '"message": "TAMPERED CONTROL ') },
+
+  { gate: 'zenodo-json', cmd: 'node scripts/zenodo-json.ts --check',
+    file: '.zenodo.json',
+    what: 'deposition metadata that no longer agrees with the tree it describes',
+    mutate: (s) => s.replace(/"version": "[^"]+"/, '"version": "1.3.5"') },
+
+  { gate: 'zenodo-sync', cmd: 'node scripts/zenodo-sync.ts',
+    file: 'src/proof/citations.json',
+    what: 'a reception measurement with no date — which would publish "0 citing works" where the truth is NOT MEASURED',
+    mutate: (s) => s.replace(/"measured":\s*"[^"]*"/, '"measured": ""') },
+
   { gate: 'zenodo-gate', cmd: 'node scripts/zenodo-gate.ts',
     file: '.zenodo/theorems/lean_every_source_is_classified.json',
     what: 'a deposition quoting a statement the kernel never accepted',
