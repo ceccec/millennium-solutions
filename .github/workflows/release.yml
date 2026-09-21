@@ -31,6 +31,18 @@ jobs:
         with:
           deps: 'false'
           cache: npm
+          # THE KERNEL RUNS HERE OR THE TAG MEANS LESS THAN IT SAYS. This job mints the provenance tag, cuts
+          # the release and dispatches the npm publish, and until 2026-09-21 it did all of that without Lean
+          # installed — seven checks, none of them a compile. What stood in for the kernel was
+          # scripts/lean-claims.ts, which re-implements each theorem's arithmetic in TypeScript and says so
+          # in its own header: "no Lean toolchain needed". That is two derivations of one fact, and CI
+          # trusted the one that is not the kernel.
+          #
+          # The cost of that was measured the same day: scripts/lean.ts compiled imported modules in
+          # directory order, so a clean checkout could not build the Lean layer at all — and this workflow
+          # could not have noticed, because it never built it. The composite action has supported `kernel`
+          # all along; this job simply never asked.
+          kernel: 'true'
       - run: npm ci
       # packages/uuidna is COMMITTED but is not an npm workspace — package.json declares no `workspaces`
       # field, so `-w @uuidna/uuidna` fails with "No workspaces found" and took three workflows down with
@@ -51,6 +63,18 @@ jobs:
           fi
 
       # --- the gates: nothing is tagged unless every one of them holds ---
+      # THE KERNEL FIRST. Every other check in this job reasons about theorems; this is the one that decides
+      # whether Lean accepts them, on a runner with no .olean files from any earlier run — which is the only
+      # environment that tests what a reader gets when they clone.
+      - name: lean (the kernel accepts every theorem, from a cold checkout)
+        run: node scripts/lean.ts
+      - name: contradictions (the prose and the proofs agree)
+        run: node scripts/contradictions.ts
+      # 0.16 seconds, and it guards the claim llms.txt makes in this deposit's own voice: that it can be
+      # checked with lean and node and nothing else. It was absent from the local chain too until today,
+      # which is how a network call reached the verification path and survived a full green run.
+      - name: independent (no network, credential or model on the verification path)
+        run: node scripts/independent.ts
       - name: gaps (coverage)
         run: node scripts/gaps.ts
       - name: seal (consistency, 0/7)
