@@ -34,7 +34,10 @@
  *
  *  usage:  node scripts/perturb-gate.ts [--file planck.lean] [--list] */
 import { readFileSync, writeFileSync, mkdtempSync, rmSync, readdirSync } from 'node:fs'
-import { execFileSync } from 'node:child_process'
+import { execFile } from 'node:child_process'
+import { promisify } from 'node:util'
+import { laneBudget } from '../src/api/lanes.ts'
+import { merkleFold, toUuid } from '../src/0/index.ts'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { arg, flag } from '../src/cli/index.ts'
@@ -55,13 +58,30 @@ const files = readdirSync(DIR).filter((f) => f.endsWith('.lean')).filter((f) => 
 const work = mkdtempSync(join(tmpdir(), 'perturb-'))
 
 type Row = { file: string; thm: string; noticed: string[]; probes: number }
+type Job = { file: string; lines: string[]; defIndex: number; name: string; to: bigint; comment: string
+             thms: { name: string; line: number }[]; owner: (line: number) => string | null; noticed: Map<string, Set<string>> }
+const jobs: Job[] = []
+const fileOf = new Map<string, { thms: { name: string; line: number }[]; noticed: Map<string, Set<string>>; defs: number }>()
 const rows: Row[] = []
 let unprobed = 0, unusable = 0, filesWithDefs = 0
 
-const compile = (path: string): number[] => {
-  try { execFileSync('lean', [path], { env: { ...process.env, LEAN_PATH: DIR }, stdio: 'pipe' }); return [] }
+// ── SPLIT ACROSS LANES, COMBINED BY A FOLD THAT DOES NOT CARE WHEN ANYTHING FINISHED ────────────────────
+//
+// Every probe is one compile and they are independent: perturbing `ellP` tells you nothing about the probe
+// of `tP`, and neither waits on the other. That is the shape a computation has to have before it may be
+// split, and the second half of the shape is how the pieces come back together — `merkleFold` SORTS its
+// leaves before combining, so the root is a function of the SET of outcomes and not of the order they
+// arrived in. Run the same work over two lanes or over ten and the address is the same, which is what makes
+// the split safe to trust rather than merely fast.
+//
+// The lane count is the one src/proof/lanes.lean decides: never zero, never more than the cores, and never
+// more than the measured memory affords at ~2.9 GB per lean process. Those theorems are why raising it here
+// is safe — and why it is bounded rather than set to the number of jobs.
+const runAsync = promisify(execFile)
+const compileAsync = async (path: string): Promise<number[]> => {
+  try { await runAsync('lean', [path], { env: { ...process.env, LEAN_PATH: DIR } }); return [] }
   catch (e) {
-    const out = String((e as { stdout?: Buffer }).stdout ?? '') + String((e as { stderr?: Buffer }).stderr ?? '')
+    const out = String((e as { stdout?: string }).stdout ?? '') + String((e as { stderr?: string }).stderr ?? '')
     return [...out.matchAll(/^[^\s:]+:(\d+):\d+: error/gm)].map((m) => Number(m[1]))
   }
 }
@@ -80,48 +100,70 @@ for (const f of files) {
   // compile per definition per perturbation size, and planck alone is five definitions at ten seconds a
   // compile. Progress is printed as it goes, so a reader can see which file is being probed and stop
   // waiting on a guess about whether it is working.
-  process.stdout.write(`  probing ${f.padEnd(20)} ${defs.length} def(s) × 3 size(s) …`)
-  const t0 = Date.now()
+  // Every (definition × size) is one independent compile. They are collected as JOBS here and run across
+  // lanes below, rather than one after another inside this loop.
   const owner = (line: number) => {
     let best: string | null = null
     for (const t of thms) if (t.line <= line - 1) best = t.name
     return best
   }
   const noticed = new Map<string, Set<string>>(thms.map((t) => [t.name, new Set<string>()]))
-  let probes = 0
   for (const d of defs) {
     const name = d.m[1], lit = BigInt(d.m[2])
-    // ONE PERTURBATION IS NOT A PROBE, IT IS A GUESS ABOUT SCALE. The first version moved each literal by
-    // +1 and reported 19 of planck's 27 theorems as noticing nothing — including
-    // `the_three_planck_units_share_one_relative_uncertainty`, which computes parts per million:
-    // 18 × 10⁶ / 1616255 is 11, and so is 18 × 10⁶ / 1616256. A +1 on a seven-digit mantissa is 0.6 ppm,
-    // below anything that rounds, so the probe could not move what those theorems measure. Sound theorems,
-    // reported as candidates for deciding nothing, by an instrument too weak to disturb them.
-    //
-    // Three sizes now — one, a tenth, and double — and a theorem counts as having noticed if ANY of them
-    // reaches it. A theorem that survives all three is a stronger candidate than one that survived a nudge,
-    // and still only a candidate.
-    const sizes = [lit + 1n, lit + (lit / 10n > 0n ? lit / 10n : 1n), lit * 2n]
-    const errs: number[] = []
-    let anyUsable = false
-    for (const to of [...new Set(sizes)]) {
-      const variant = [...lines]
-      variant[d.i] = `def ${name} : Nat := ${to}${d.m[3] ? ' ' + d.m[3] : ''}`
-      const path = join(work, f)
-      writeFileSync(path, variant.join('\n'))
-      const e = compile(path)
-      if (e.length && Math.min(...e) < thms[0].line) continue   // broken probe, measures nothing
-      anyUsable = true
-      errs.push(...e)
-    }
-    if (!anyUsable) { unusable++; continue }
-    probes++
-    for (const line of errs) { const o = owner(line); if (o) noticed.get(o)?.add(name) }
+    // ONE PERTURBATION IS NOT A PROBE, IT IS A GUESS ABOUT SCALE. A +1 on a seven-digit mantissa is 0.6 ppm,
+    // below anything that rounds, and it reported 19 of planck's 27 theorems as noticing nothing — including
+    // one that measures parts per million. Three sizes: one, a tenth, and double.
+    const sizes = [...new Set([lit + 1n, lit + (lit / 10n > 0n ? lit / 10n : 1n), lit * 2n])]
+    for (const to of sizes) jobs.push({ file: f, lines, defIndex: d.i, name, to, comment: d.m[3] ?? '', thms, owner, noticed })
   }
-  for (const t of thms) rows.push({ file: f, thm: t.name, noticed: [...(noticed.get(t.name) ?? [])], probes })
-  const seen = thms.filter((t) => (noticed.get(t.name)?.size ?? 0) > 0).length
-  console.log(` ${((Date.now() - t0) / 1000).toFixed(0)}s · ${seen}/${thms.length} noticed`)
+  fileOf.set(f, { thms, noticed, defs: defs.length })
 }
+
+// ── THE LANES, AND THE FOLD ─────────────────────────────────────────────────────────────────────────────
+// PERTURB_LANES forces the count, which is how the order-independence is TESTED rather than asserted: run
+// the same probes over one lane and over many, and the fold root must be identical. Without this the claim
+// "the same at any lane count" could only be checked by luck.
+const BUDGET = laneBudget({ perJobMB: 2900, procName: 'lean', envLanes: process.env.PERTURB_LANES })
+const LANES = Math.max(1, Math.min(BUDGET.lanes, jobs.length))
+console.log(`  ${jobs.length} independent probe(s) across ${LANES} lane(s): ${BUDGET.why}`)
+
+// EACH LANE WRITES ITS OWN FILE. lean.ts records the same lesson: a variant path keyed on the source name
+// alone collides the moment two lanes probe the same file, and one lane then compiles the other's mutation.
+// The lane index is in the path.
+let next = 0
+const leaves: string[] = []
+let done = 0
+const t0 = Date.now()
+await Promise.all(Array.from({ length: LANES }, async (_unused, lane) => {
+  for (;;) {
+    const i = next++
+    if (i >= jobs.length) return
+    const j = jobs[i]
+    const variant = [...j.lines]
+    variant[j.defIndex] = `def ${j.name} : Nat := ${j.to}${j.comment ? ' ' + j.comment : ''}`
+    const path = join(work, `lane${lane}_${j.file}`)
+    writeFileSync(path, variant.join('\n'))
+    const errs = await compileAsync(path)
+    // A PROBE THAT BREAKS BEFORE THE FIRST THEOREM MEASURES NOTHING — reading that as "everything noticed"
+    // would turn a broken probe into a clean bill of health.
+    const usable = !(errs.length && Math.min(...errs) < j.thms[0].line)
+    if (usable) { for (const line of errs) { const o = j.owner(line); if (o) j.noticed.get(o)?.add(j.name) } }
+    else unusable++
+    // The leaf is a content-address of THIS probe's outcome. Folding the set of leaves gives a root that is
+    // the same however the lanes were scheduled — which is the property that makes splitting safe, and is
+    // checked by running the sweep at two different lane counts and comparing.
+    leaves.push(toUuid(`${j.file}:${j.name}:${j.to}:${usable ? [...new Set(errs)].sort((a, b) => a - b).join(',') : 'unusable'}`))
+    done++
+    if (done % 10 === 0) process.stdout.write(`\r  ${done}/${jobs.length} probes …`)
+  }
+}))
+process.stdout.write(`\r  ${done}/${jobs.length} probes in ${((Date.now() - t0) / 1000).toFixed(0)}s${' '.repeat(20)}\n`)
+
+for (const [f, st] of fileOf) {
+  for (const t of st.thms) rows.push({ file: f, thm: t.name, noticed: [...(st.noticed.get(t.name) ?? [])], probes: st.defs })
+}
+const root = merkleFold(leaves)
+
 rmSync(work, { recursive: true, force: true })
 
 const probed = rows.filter((r) => r.probes > 0)
@@ -132,6 +174,7 @@ console.log(`  ${filesWithDefs} file(s) carry a perturbable \`def … : Nat := <
 console.log(`  ${pinned.length} NOTICED a perturbed definition — those pin the values they are about`)
 console.log(`  ${blind.length} noticed none of the perturbations run against their file`)
 console.log(`  ${unprobed} theorem(s) sit in files with no such def and were NOT MEASURED · ${unusable} probe(s) unusable`)
+console.log(`  fold root ${root} — the same at any lane count, because merkleFold sorts its leaves`)
 
 if (flag('--list')) {
   for (const r of blind) console.log(`    · ${r.file.replace(/\.lean$/, '').padEnd(14)} ${r.thm}`)
