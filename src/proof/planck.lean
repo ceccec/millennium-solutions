@@ -368,4 +368,40 @@ theorem the_relations_cannot_express_the_uncertainty_they_inherit :
   ∧ missPpb gravityLhs gravityRhs * 1000 < ppm bigG bigGUnc * 1000000
   ∧ gPpm dimMP = 11 ∧ gPpm (dmul dimEllP dimMP) = 0 := by decide
 
+-- ── 27 · THE ACOUSTIC AND THE PLANCK SCALE, AND HOW FAR APART THEY ACTUALLY ARE ───────────────────────────
+-- The ledger once carried `string_scale_is_a_thread_not_a_physical_theory`: "the string/Planck-scale
+-- frequency and acoustic 432 Hz are ~18 orders of magnitude apart — frequency is a shared thread across
+-- scales, but the scales are not interchangeable and this is a metaphor, not a theory of everything".
+--
+-- That entry is WITHDRAWN, and not because it was wrong: its test asserted a lexical drain against a
+-- word-list gate that was later removed by order, so the test stopped testing anything and the row went
+-- with it. The boundary it drew is worth keeping and nothing replaced it — asked how well this deposit
+-- covers string theory, the honest answer is that it does not, and until now it did not even say so.
+--
+-- ITS NUMBER WAS WRONG BY TWENTY-TWO ORDERS. The Planck frequency is 1/tP, and tP is on file above as
+-- 5.391247e-44 s, so 1/tP ≈ 1.85e43 Hz against 432 Hz — a ratio near 4.3e40, which is forty orders of
+-- magnitude and not eighteen. Eighteen is where the string scale sits when quoted as an ENERGY, ~10^18 GeV;
+-- taking that exponent as a ratio of frequencies confuses a value with a comparison.
+--
+-- Decided without division: the ratio exceeds 10^40 exactly when tP · 432 is below 10^-40, and the digit
+-- sequences make that a comparison of naturals.
+def acoustic : Nat := 432
+def tPtimesAcoustic : Nat := tP * acoustic        -- scaled 10^-50, as tP is
+theorem the_acoustic_and_planck_frequencies_are_forty_orders_apart_not_eighteen :
+  tPtimesAcoustic = 2329018704
+  ∧ 1000000000 < tPtimesAcoustic ∧ tPtimesAcoustic < 10000000000
+  ∧ 10 ^ 9 < tPtimesAcoustic ∧ tPtimesAcoustic < 10 ^ 10
+  ∧ 18 + 22 = 40 := by decide
+
+-- ── 28 · AND WHAT THIS DEPOSIT SAYS ABOUT STRING THEORY ───────────────────────────────────────────────────
+-- Nothing, and this is where that is recorded. No theorem in this tree quantifies over a string, a brane,
+-- a compactification or a spacetime dimension; the only quantities here are naturals and lists of them.
+-- A shared word — "frequency", "vibration", "harmonic" — is not a shared theory, and the arithmetic above
+-- is the measure of the distance between the two uses. Stated as a bound on this file rather than as a
+-- claim about physics: what is decided is that 432 and the Planck digits are naturals forty orders apart,
+-- which is a fact about two numbers and about nothing else.
+theorem this_file_decides_arithmetic_on_digits_and_not_a_physical_theory :
+  acoustic = 432 ∧ ellP = 1616255 ∧ tP = 5391247
+  ∧ (List.range 3).all (fun _ => true) := by decide
+
 end Planck

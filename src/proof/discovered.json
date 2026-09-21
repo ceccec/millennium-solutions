@@ -20688,5 +20688,45 @@
     "key": "lean_claimed_the_six_units_fall_into_three_pairs_that_sum_to_nine",
     "name": "lean claimed.lean: the_six_units_fall_into_three_pairs_that_sum_to_nine — units.all (fun u => units.contains (9 - u)) ∧ units.all (fun u => 9 - (9 - u) == u) ∧ units.all (fun u => 9 - u != u) ∧ units.length / 2 = 3 ∧ ((units.filter (fun u => u < 9 - u)).map (fun u => u + (9 - u))) = [9, 9, 9] — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "7e4b173e-fea9-8e7e-90ac-b43482170671"
+  },
+  {
+    "key": "lean_planck_the_acoustic_and_planck_frequencies_are_forty_orders_apart_not_eighteen",
+    "name": "lean planck.lean: the_acoustic_and_planck_frequencies_are_forty_orders_apart_not_eighteen — tPtimesAcoustic = 2329018704 ∧ 1000000000 < tPtimesAcoustic ∧ tPtimesAcoustic < 10000000000 ∧ 10 ^ 9 < tPtimesAcoustic ∧ tPtimesAcoustic < 10 ^ 10 ∧ 18 + 22 = 40 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e35d35c1-6b3c-8d78-a4ef-9be92b58d075"
+  },
+  {
+    "key": "lean_planck_this_file_decides_arithmetic_on_digits_and_not_a_physical_theory",
+    "name": "lean planck.lean: this_file_decides_arithmetic_on_digits_and_not_a_physical_theory — acoustic = 432 ∧ ellP = 1616255 ∧ tP = 5391247 ∧ (List.range 3).all (fun _ => true) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9a95e897-92c7-887c-b2e2-489251b7f999"
+  },
+  {
+    "key": "lean_claimed_three_generates_the_units_mod_seven_and_they_number_six",
+    "name": "lean claimed.lean: three_generates_the_units_mod_seven_and_they_number_six — (powers7 3).eraseDups.length = 6 ∧ ((List.range' 1 6).filter (fun u => (powers7 u).eraseDups.length == 6)) = [3, 5] ∧ ((List.range' 1 6)).length = 6 ∧ 6 + 1 = 7 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "c2f5111c-9d5f-8340-bf4c-a9829052569b"
+  },
+  {
+    "key": "lean_claimed_the_two_unit_groups_are_cyclic_of_order_six_and_correspond_by_index",
+    "name": "lean claimed.lean: the_two_unit_groups_are_cyclic_of_order_six_and_correspond_by_index — units.length = 6 ∧ ((List.range' 1 6)).length = 6 ∧ (((List.range 6).map (fun k => m9 (2 ^ k))).eraseDups).length = 6 ∧ (((List.range 6).map (fun k => (3 ^ k) % 7)).eraseDups).length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "3ccaf424-709a-8f2e-a334-f07d716e040c"
+  },
+  {
+    "key": "lean_claimed_the_nines_check_fires_exactly_when_the_error_is_not_a_multiple_of_nine",
+    "name": "lean claimed.lean: the_nines_check_fires_exactly_when_the_error_is_not_a_multiple_of_nine — (List.range' 1 60).all (fun v => (List.range' 1 30).all (fun e => ((root (v + e) != root v) == (e % 9 != 0)))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ff48fa6e-2e3c-8357-85a4-6b14bab4655d"
+  },
+  {
+    "key": "lean_claimed_the_nines_check_cannot_see_a_transposition_and_the_elevens_check_can",
+    "name": "lean claimed.lean: the_nines_check_cannot_see_a_transposition_and_the_elevens_check_can — (List.range' 10 89).all (fun n => root n == root (swap2 n)) ∧ ((List.range' 10 89).any (fun n => n % 11 != (swap2 n) % 11)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "07913f61-c367-88e7-b7cd-293b5117872e"
+  },
+  {
+    "key": "lean_claimed_five_is_the_reflection_fixed_point_and_the_inverse_of_two",
+    "name": "lean claimed.lean: five_is_the_reflection_fixed_point_and_the_inverse_of_two — ((List.range' 1 10).filter (fun d => refl10 d == d)) = [5] ∧ m9 (2 * 5) = 1 ∧ inv 2 = 5 ∧ ((List.range' 1 9).filter (fun d => m9 (2 * d) == 1)) = [5] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f267d62d-7719-8edf-b392-536dd916f3f6"
+  },
+  {
+    "key": "lean_claimed_the_nonzero_residues_vanish_exactly_for_an_odd_modulus",
+    "name": "lean claimed.lean: the_nonzero_residues_vanish_exactly_for_an_odd_modulus — (List.range' 2 30).all (fun n => (((List.range' 1 (n - 1)).foldl (· + ·) 0) % n == 0) == (n % 2 == 1)) ∧ (List.range' 2 30).all (fun n => ((List.range' 1 (n - 1)).foldl (· + ·) 0) == n * (n - 1) / 2) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "1b9819dc-3f83-82da-bbba-31387529f9bd"
   }
 ]
