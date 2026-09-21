@@ -343,8 +343,13 @@ const metadata: Record<string, unknown> = {
     + `Statements in this tree are signed by agent in src/receipts/; the contributors listed are the automated sessions that signed there.`,
 }
 
+// NO TIMESTAMP. This carried `derived: new Date().toISOString()`, so the file differed on every run whether
+// or not anything about the plan had changed — which dirtied the tree after each chain, and stranded this
+// file when gates-fire ran zenodo-sync as a gate-under-test: the control restores the file it MUTATED, not
+// the file the generator WROTE. An artefact that changes when nothing changed is noise that has to be
+// excluded everywhere it is compared, and the exclusions are where real leftovers go to hide. The tag dates
+// the plan, and git dates the commit.
 const plan = {
-  derived: new Date().toISOString(),
   concept: CONCEPT_DOI, tag, host: HOST,
   files: FILES, discoveries,
   citations: { measured: cites.measured, total: allCiting.length, self: selfCites.length, thirdParty: thirdParty.length, unresolved: roleUnknown.length },
