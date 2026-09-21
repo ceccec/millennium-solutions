@@ -162,6 +162,15 @@ const CLAIMS: Claim[] = [
     derive: () => { const falseHolds = computes('two plus two equals five').binary === 1
       return { text: `the gate does not decide whether a statement is true: "two plus two equals five" ${falseHolds ? 'passes it' : 'is drained by it'}, so holding means not drained, never correct`, ok: falseHolds, from: ['two plus two equals five'] } } },
 
+  // THE QUEUE NOBODY WORKED, SAID ON THE FRONT PAGE. 176 withdrawn entries carry `portable: true` — the
+  // deposit's own judgement that a Lean proof is reachable — and every one of them was withdrawn. A claim
+  // the deposit says it could prove, left unproved, is the deposit understating what it holds.
+  { section: S(5, 'What the gate does and does not do'),
+    derive: () => { const port = (__ledger() as { portable?: boolean }[]).filter((e) => e.portable === true)
+      const t = leanTheorems.filter((x) => x.file === 'claimed.lean')
+      return { text: `${port.length} withdrawn entries are marked portable — the deposit's own judgement that the kernel could reach them — and ${t.length} of those are now proved in claimed.lean, each over its whole finite domain. The rest are a queue, not a floor: a claim this deposit says it could prove and has not is it understating what it holds`,
+        ok: port.length > 0 && t.length > 0, from: [port.length, t.length] } } },
+
   // TIME AND SPACE, DECIDED RATHER THAN GUESSED. The lane budget is this tree's only statement about what a
   // verification may take from a machine, and it held a safety bound in a comment that called itself a
   // guess. src/proof/lanes.lean decides it; this says so where a reader meets the deposit.
