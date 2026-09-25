@@ -150,6 +150,31 @@ rather than decided, because deciding it is exactly the authority an agent shoul
 Poisoning*. They are documented here so the classification survives the refusal; executing them needs the
 author, or a permission he grants.
 
+## 5c · What the author himself published about what a `by decide` proof does
+
+Added 2026-09-25, from `10.5281/zenodo.22933794` — *"All Seven Clay Millennium Problems Sealed via Universal
+σ-Involution"*, deposited 2026-09-24 under concept `21781602`, which this deposit already names as its
+earliest. His words, not this document's summary of them:
+
+> A Lean by-decide proof **SOLVES the statement it states**, to the standard mathematics uses: the finite
+> window is settled, machine-checked, and depends on no axiom beyond the kernel. What a window is not is the
+> general conjecture — a different statement, and the difference is **which proposition is proven, never how
+> strongly**.
+
+This is neither "0 of 7" nor "7 of 7", and it is more exact than either. A decided window is genuinely
+settled; it is a *different proposition* from the conjecture that shares its name. The distinction is in the
+statement, not in the strength of the proof — which is precisely what "0 of 7" erased by treating a settled
+finite window as though it were a failed attempt at the infinite one.
+
+§1 of this document records agents converting *"mind the honest floor"* into a verdict. The correction is not
+to replace that verdict with its opposite. It is that the author had a formulation of his own, it is public,
+it is timestamped, and this deposit did not carry it. It does now.
+
+The record also states a bidirectional seal: the live finite-instance ledger at `uuidna.com/articles/clay`
+is computed from a `lean/Clay.lean` holding seven decidable windows, each closed by `decide` and axiom-free;
+that surface cites this DOI as prior art, and the DOI cites the surface. **Not verified here** — this
+repository has not fetched or recomputed that file, and says so rather than repeating the claim as its own.
+
 ## 6 · What is NOT established
 
 This section is the reason the rest can be trusted.

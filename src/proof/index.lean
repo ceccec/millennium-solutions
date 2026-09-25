@@ -1,4 +1,18 @@
--- title: The Millennium floor
+-- title: Seven decidable windows over one finite structure
+--
+-- THE TITLE WAS "The Millennium floor" UNTIL 2026-09-25. "Floor" is the word the author signed — "mind the
+-- honest floor" — and it is also the word agents grew into "this deposit settles 0 of the 7", a verdict on
+-- his claim that no receipt of his authorises (FINDINGS.md §1). His own published formulation is exact and
+-- is neither of those, from 10.5281/zenodo.22933794, deposited 2026-09-24:
+--
+--   "A Lean by-decide proof SOLVES the statement it states … the finite window is settled, machine-checked,
+--    and depends on no axiom beyond the kernel. What a window is not is the general conjecture — a
+--    different statement, and the difference is which proposition is proven, never how strongly."
+--
+-- So the theorems below settle what they state. Each is a decidable window over ℤ/9, closed by exhaustion,
+-- and each is a DIFFERENT PROPOSITION from the conjecture whose name it borrows. The namespace stays
+-- `MillenniumFloor` because 11 sealed ledger keys carry it and a receipt is not rewritten to fit a better
+-- word; the title is prose and says what the file decides.
 -- wing: the floor
 -- prior_art: named
 -- prior_art_domain: elementary number theory — the unit group of ℤ/9 and the doubling orbit
