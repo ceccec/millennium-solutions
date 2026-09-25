@@ -165,7 +165,9 @@
     "handle-gate": "node scripts/handle-gate.ts",
     "affected": "node scripts/affected.ts",
     "verify-clone": "node scripts/verify-clone.ts",
-    "perturb": "node scripts/perturb-gate.ts"
+    "perturb": "node scripts/perturb-gate.ts",
+    "coils": "node scripts/coils.ts",
+    "coils:emit": "node scripts/coils.ts --emit"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",

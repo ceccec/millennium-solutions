@@ -16034,7 +16034,10 @@
   {
     "key": "lean_imagined_units_is_closed_under_double",
     "name": "lean imagined.lean: units_is_closed_under_double — [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 5, 7, 8].contains (m9 (2 * d))) — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "74b1c18a-9944-8da9-b1da-6f3f8886cd32"
+    "receipt": "74b1c18a-9944-8da9-b1da-6f3f8886cd32",
+    "revoked": true,
+    "supersededBy": "lean_reached_doubling_is_multiplication_by_two_and_the_reduction_commutes",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_reached_doubling_is_multiplication_by_two_and_the_reduction_commutes now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_orbit_is_closed_under_double",
@@ -16145,7 +16148,10 @@
   {
     "key": "lean_imagined_double_carries_units_onto_orbit",
     "name": "lean imagined.lean: double_carries_units_onto_orbit — [1, 2, 4, 5, 7, 8].all (fun d => [1, 2, 4, 8, 7, 5].contains (m9 (2 * d))) ∧ ([1, 2, 4, 5, 7, 8].map (fun d => m9 (2 * d))).eraseDups.length = 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
-    "receipt": "9c9d13f8-a0b4-8118-95bd-9b50824d43de"
+    "receipt": "9c9d13f8-a0b4-8118-95bd-9b50824d43de",
+    "revoked": true,
+    "supersededBy": "lean_reached_doubling_is_multiplication_by_two_and_the_reduction_commutes",
+    "reason": "carried: the theorem this key was sealed from is no longer in src/proof, because lean_reached_doubling_is_multiplication_by_two_and_the_reduction_commutes now expresses the same statement and the generator recognised it as already said. The fact is still checked by the kernel on every run, at that key. Marked in place — the receipt stays in the append-only chain."
   },
   {
     "key": "lean_imagined_double_carries_orbit_onto_units",
@@ -21826,5 +21832,165 @@
     "key": "lean_digits_the_constants_are_ten_times_the_repunits",
     "name": "lean digits.lean: the_constants_are_ten_times_the_repunits — 10 == 10 * 1 && 110 == 10 * 11 && 1110 == 10 * 111 && 11110 == 10 * 1111 && 11 == 1 * 10 + 1 && 111 == 11 * 10 + 1 && 1111 == 111 * 10 + 1 — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "571c43da-830f-84fa-babe-50824d929dfa"
+  },
+  {
+    "key": "lean_turns_doubling_returns_in_six_two_or_one",
+    "name": "lean turns.lean: doubling_returns_in_six_two_or_one — ring.map (cycLen dbl) == [1, 6, 6, 2, 6, 6, 2, 6, 6] && (ring.map (cycLen dbl)).eraseDups.length == 3 && 6 + 2 + 1 == 9 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "3e447d38-9a20-8f13-bbe0-a45b54f204fc"
+  },
+  {
+    "key": "lean_turns_the_long_loop_is_the_span_and_the_short_one_is_the_triad_pair",
+    "name": "lean turns.lean: the_long_loop_is_the_span_and_the_short_one_is_the_triad_pair — ring.filter (fun d => cycLen dbl d == 6) == [1, 2, 4, 5, 7, 8] && ring.filter (fun d => cycLen dbl d == 2) == [3, 6] && ring.filter (fun d => cycLen dbl d == 1) == [0] — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f5c60ff8-1e71-8101-8eb7-fe59cac36d0f"
+  },
+  {
+    "key": "lean_turns_both_loops_complete_three_hundred_and_sixty_degrees",
+    "name": "lean turns.lean: both_loops_complete_three_hundred_and_sixty_degrees — (ring.filter (fun d => cycLen dbl d > 1)).length == 8 && 360 / 6 == 60 && 360 / 2 == 180 && 6 * 60 == 360 && 2 * 180 == 360 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6871f570-8d7c-8ac8-aaa1-08c1efb99365"
+  },
+  {
+    "key": "lean_turns_three_steps_of_the_long_loop_are_one_step_of_the_short",
+    "name": "lean turns.lean: three_steps_of_the_long_loop_are_one_step_of_the_short — 3 * 60 == 180 && 2 * 90 == 180 && 180 * 2 == 360 && 6 / 2 == 3 && iter dbl 1 3 == 8 && iter dbl 3 1 == 6 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e6e7759a-d671-8c66-b56e-6e411b2da01c"
+  },
+  {
+    "key": "lean_turns_the_orbits_are_disjoint_and_cover_the_ring",
+    "name": "lean turns.lean: the_orbits_are_disjoint_and_cover_the_ring — (ring.filter (fun d => cycLen dbl d == 6)).length + (ring.filter (fun d => cycLen dbl d == 2)).length + (ring.filter (fun d => cycLen dbl d == 1)).length == 9 && ring.all (fun d => cycLen dbl d == 6 || cycLen dbl d == 2 || cycLen dbl d == 1… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "18ef07b8-5448-8746-8f4c-089e2df1e624"
+  },
+  {
+    "key": "lean_turns_the_reflection_leaves_four_loops_on_the_same_ring",
+    "name": "lean turns.lean: the_reflection_leaves_four_loops_on_the_same_ring — ring.map (cycLen rfl9) == [2, 2, 2, 2, 2, 1, 2, 2, 2] && (ring.filter (fun d => cycLen rfl9 d == 2)).length == 8 && (ring.filter (fun d => cycLen rfl9 d == 2)).length / 2 == 4 && 4 != 2 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "bd77b273-a75c-8d72-9ede-cf89120da842"
+  },
+  {
+    "key": "lean_turns_no_orbit_fails_to_return_under_either_map",
+    "name": "lean turns.lean: no_orbit_fails_to_return_under_either_map — ring.all (fun d => cycLen dbl d > 0 && cycLen rfl9 d > 0) && ring.all (fun d => iter dbl d (cycLen dbl d) == d) && ring.all (fun d => iter rfl9 d (cycLen rfl9 d) == d) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "73422e16-24d9-88e6-945e-9e4e728c40c1"
+  },
+  {
+    "key": "lean_turns_the_genus_is_the_definition_applied_to_the_count",
+    "name": "lean turns.lean: the_genus_is_the_definition_applied_to_the_count — 2 - 2 * 1 == 0 && (2 : Int) - 2 * 2 == -2 && (ring.filter (fun d => cycLen dbl d == 6)).length / 6 + (ring.filter (fun d => cycLen dbl d == 2)).length / 2 == 2 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "18b2fd76-ffc9-8002-9d1c-5739e28a7bfd"
+  },
+  {
+    "key": "lean_coils_the_coil_on_one_two_four_five_seven_eight_has_14_expressions",
+    "name": "lean coils.lean: the_coil_on_one_two_four_five_seven_eight_has_14_expressions — (([1, 2, 4, 5, 7, 8]).all (fun x => [1, 2, 4, 5, 7, 8].contains x) && [1, 2, 4, 5, 7, 8].all (fun x => ([1, 2, 4, 5, 7, 8]).contains x)) && (([1, 2, 4, 8, 7, 5]).all (fun x => [1, 2, 4, 5, 7, 8].contains x) && [1, 2, 4, 5, 7, 8].all (fun x … — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "0962a067-fa02-84ed-a4d3-2e2bea9bed83"
+  },
+  {
+    "key": "lean_coils_the_coil_on_zero_three_six_has_14_expressions",
+    "name": "lean coils.lean: the_coil_on_zero_three_six_has_14_expressions — (([3, 6, 0]).all (fun x => [0, 3, 6].contains x) && [0, 3, 6].all (fun x => ([3, 6, 0]).contains x)) && (([3, 6, 0].map (fun d => m9 (2 * d))).all (fun x => [0, 3, 6].contains x) && [0, 3, 6].all (fun x => ([3, 6, 0].map (fun d => m9 (2 * d… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "88760ab8-c700-856d-9034-6ce26a5be1da"
+  },
+  {
+    "key": "lean_coils_the_coil_on_one_four_seven_has_12_expressions",
+    "name": "lean coils.lean: the_coil_on_one_four_seven_has_12_expressions — (([1, 4, 7]).all (fun x => [1, 4, 7].contains x) && [1, 4, 7].all (fun x => ([1, 4, 7]).contains x)) && (([2, 5, 8].map (fun d => m9 (2 * d))).all (fun x => [1, 4, 7].contains x) && [1, 4, 7].all (fun x => ([2, 5, 8].map (fun d => m9 (2 * d… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d71e4e51-2d03-8970-9896-e075ec272af8"
+  },
+  {
+    "key": "lean_coils_the_coil_on_zero_has_10_expressions",
+    "name": "lean coils.lean: the_coil_on_zero_has_10_expressions — (([3, 6, 0].map (fun d => m9 (3 * d))).all (fun x => [0].contains x) && [0].all (fun x => ([3, 6, 0].map (fun d => m9 (3 * d))).contains x) && ([3, 6, 0].map (fun d => m9 (3 * d))).eraseDups.length == 1) && (([3, 6, 0].map (fun d => m9 (d *… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e67506ad-fdea-81c8-bbaf-c49e8b35fc07"
+  },
+  {
+    "key": "lean_coils_the_coil_on_two_five_eight_has_8_expressions",
+    "name": "lean coils.lean: the_coil_on_two_five_eight_has_8_expressions — (([2, 5, 8]).all (fun x => [2, 5, 8].contains x) && [2, 5, 8].all (fun x => ([2, 5, 8]).contains x)) && (([1, 4, 7].map (fun d => m9 (2 * d))).all (fun x => [2, 5, 8].contains x) && [2, 5, 8].all (fun x => ([1, 4, 7].map (fun d => m9 (2 * d… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7b89acb2-e01b-823d-a5d3-752b78a90398"
+  },
+  {
+    "key": "lean_coils_the_coil_on_zero_one_two_three_four_five_six_seven_eight_has_8_expressions",
+    "name": "lean coils.lean: the_coil_on_zero_one_two_three_four_five_six_seven_eight_has_8_expressions — (([0, 1, 2, 3, 4, 5, 6, 7, 8]).all (fun x => [0, 1, 2, 3, 4, 5, 6, 7, 8].contains x) && [0, 1, 2, 3, 4, 5, 6, 7, 8].all (fun x => ([0, 1, 2, 3, 4, 5, 6, 7, 8]).contains x)) && (([0, 1, 2, 3, 4, 5, 6, 7, 8].map (fun d => m9 (2 * d))).all (fu… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "0ca114a1-0a50-83ca-97ba-742bb1d721bd"
+  },
+  {
+    "key": "lean_coils_the_coil_on_zero_one_eight_has_6_expressions",
+    "name": "lean coils.lean: the_coil_on_zero_one_eight_has_6_expressions — (([0, 1, 8]).all (fun x => [0, 1, 8].contains x) && [0, 1, 8].all (fun x => ([0, 1, 8]).contains x)) && (([0, 1, 8].map (fun d => m9 (9 - d))).all (fun x => [0, 1, 8].contains x) && [0, 1, 8].all (fun x => ([0, 1, 8].map (fun d => m9 (9 - d… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "15b236b3-23dd-8875-a598-8a96a4934d48"
+  },
+  {
+    "key": "lean_coils_the_coil_on_one_eight_has_6_expressions",
+    "name": "lean coils.lean: the_coil_on_one_eight_has_6_expressions — (([1, 8]).all (fun x => [1, 8].contains x) && [1, 8].all (fun x => ([1, 8]).contains x)) && (([1, 8].map (fun d => m9 (9 - d))).all (fun x => [1, 8].contains x) && [1, 8].all (fun x => ([1, 8].map (fun d => m9 (9 - d))).contains x) && ([1, … — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f4fc8e7f-17b9-8e94-929d-af272d4b92f0"
+  },
+  {
+    "key": "lean_coils_the_coil_on_three_six_has_6_expressions",
+    "name": "lean coils.lean: the_coil_on_three_six_has_6_expressions — (([1, 2, 4, 5, 7, 8].map (fun d => m9 (3 * d))).all (fun x => [3, 6].contains x) && [3, 6].all (fun x => ([1, 2, 4, 5, 7, 8].map (fun d => m9 (3 * d))).contains x) && ([1, 2, 4, 5, 7, 8].map (fun d => m9 (3 * d))).eraseDups.length == 2) && … — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5f3fa399-bc82-8d96-971f-6aaa30e14d59"
+  },
+  {
+    "key": "lean_coils_the_coil_on_zero_one_four_seven_has_5_expressions",
+    "name": "lean coils.lean: the_coil_on_zero_one_four_seven_has_5_expressions — (([0, 1, 4, 7]).all (fun x => [0, 1, 4, 7].contains x) && [0, 1, 4, 7].all (fun x => ([0, 1, 4, 7]).contains x)) && (([0, 1, 4, 7].map (fun d => m9 (4 * d))).all (fun x => [0, 1, 4, 7].contains x) && [0, 1, 4, 7].all (fun x => ([0, 1, 4, 7]… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f258a71b-c09d-8b84-9934-9d67f79bc704"
+  },
+  {
+    "key": "lean_coils_the_coil_on_zero_two_five_eight_has_4_expressions",
+    "name": "lean coils.lean: the_coil_on_zero_two_five_eight_has_4_expressions — (([0, 1, 4, 7].map (fun d => m9 (2 * d))).all (fun x => [0, 2, 5, 8].contains x) && [0, 2, 5, 8].all (fun x => ([0, 1, 4, 7].map (fun d => m9 (2 * d))).contains x) && ([0, 1, 4, 7].map (fun d => m9 (2 * d))).eraseDups.length == 4) && (([0, … — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "2211e65b-3b11-85f2-8bc6-f4863f5932bf"
+  },
+  {
+    "key": "lean_coils_the_coil_on_five_has_3_expressions",
+    "name": "lean coils.lean: the_coil_on_five_has_3_expressions — (([5]).all (fun x => [5].contains x) && [5].all (fun x => ([5]).contains x)) && (([5].map (fun d => m9 (10 - d))).all (fun x => [5].contains x) && [5].all (fun x => ([5].map (fun d => m9 (10 - d))).contains x) && ([5].map (fun d => m9 (10 -… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "9649dd1e-ac74-89f6-84b2-85e9744dae7d"
+  },
+  {
+    "key": "lean_coils_the_coil_on_one_has_3_expressions",
+    "name": "lean coils.lean: the_coil_on_one_has_3_expressions — (([5].map (fun d => m9 (2 * d))).all (fun x => [1].contains x) && [1].all (fun x => ([5].map (fun d => m9 (2 * d))).contains x) && ([5].map (fun d => m9 (2 * d))).eraseDups.length == 1) && (([1, 8].map (fun d => m9 (d * d))).all (fun x => [… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "24d6dde7-3b7a-8c21-952d-33700fe151d3"
+  },
+  {
+    "key": "lean_coils_the_coil_on_three_has_3_expressions",
+    "name": "lean coils.lean: the_coil_on_three_has_3_expressions — (([1, 4, 7].map (fun d => m9 (3 * d))).all (fun x => [3].contains x) && [3].all (fun x => ([1, 4, 7].map (fun d => m9 (3 * d))).contains x) && ([1, 4, 7].map (fun d => m9 (3 * d))).eraseDups.length == 1) && (([2, 5, 8].map (fun d => m9 (6 *… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "a86e4c8a-1642-8210-85e9-421289a164e7"
+  },
+  {
+    "key": "lean_coils_the_coil_on_six_has_3_expressions",
+    "name": "lean coils.lean: the_coil_on_six_has_3_expressions — (([2, 5, 8].map (fun d => m9 (3 * d))).all (fun x => [6].contains x) && [6].all (fun x => ([2, 5, 8].map (fun d => m9 (3 * d))).contains x) && ([2, 5, 8].map (fun d => m9 (3 * d))).eraseDups.length == 1) && (([5].map (fun d => m9 (3 * d))).… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d49c79d0-9260-8511-b43e-bb268b633242"
+  },
+  {
+    "key": "lean_coils_the_coil_on_zero_one_has_3_expressions",
+    "name": "lean coils.lean: the_coil_on_zero_one_has_3_expressions — (([0, 1, 8].map (fun d => m9 (d * d))).all (fun x => [0, 1].contains x) && [0, 1].all (fun x => ([0, 1, 8].map (fun d => m9 (d * d))).contains x) && ([0, 1, 8].map (fun d => m9 (d * d))).eraseDups.length == 2) && (([0, 1, 4, 7].map (fun d =… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "cfecd7b7-0d09-8cec-a71e-b481366267ac"
+  },
+  {
+    "key": "lean_coils_the_coil_on_eight_has_3_expressions",
+    "name": "lean coils.lean: the_coil_on_eight_has_3_expressions — (([2, 5, 8].map (fun d => m9 (d * d * d))).all (fun x => [8].contains x) && [8].all (fun x => ([2, 5, 8].map (fun d => m9 (d * d * d))).contains x) && ([2, 5, 8].map (fun d => m9 (d * d * d))).eraseDups.length == 1) && (([5].map (fun d => m… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "d320c632-74bf-8904-890e-0cc24b73f2e9"
+  },
+  {
+    "key": "lean_coils_the_coil_on_zero_two_seven_has_2_expressions",
+    "name": "lean coils.lean: the_coil_on_zero_two_seven_has_2_expressions — (([0, 1, 8].map (fun d => m9 (2 * d))).all (fun x => [0, 2, 7].contains x) && [0, 2, 7].all (fun x => ([0, 1, 8].map (fun d => m9 (2 * d))).contains x) && ([0, 1, 8].map (fun d => m9 (2 * d))).eraseDups.length == 3) && (([0, 1, 8].map (fun … — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "19a286e3-6ea9-84a8-bcee-821ebc3df51f"
+  },
+  {
+    "key": "lean_coils_the_coil_on_two_seven_has_2_expressions",
+    "name": "lean coils.lean: the_coil_on_two_seven_has_2_expressions — (([1, 8].map (fun d => m9 (2 * d))).all (fun x => [2, 7].contains x) && [2, 7].all (fun x => ([1, 8].map (fun d => m9 (2 * d))).contains x) && ([1, 8].map (fun d => m9 (2 * d))).eraseDups.length == 2) && (([1, 8].map (fun d => m9 (7 * d))).… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "e05485a6-43cb-8390-bd5a-166438b1ce39"
+  },
+  {
+    "key": "lean_coils_the_coil_on_zero_four_five_has_2_expressions",
+    "name": "lean coils.lean: the_coil_on_zero_four_five_has_2_expressions — (([0, 1, 8].map (fun d => m9 (4 * d))).all (fun x => [0, 4, 5].contains x) && [0, 4, 5].all (fun x => ([0, 1, 8].map (fun d => m9 (4 * d))).contains x) && ([0, 1, 8].map (fun d => m9 (4 * d))).eraseDups.length == 3) && (([0, 1, 8].map (fun … — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "0d1a3ba4-5627-85e3-8600-71d4da4ff258"
+  },
+  {
+    "key": "lean_coils_the_coil_on_four_five_has_2_expressions",
+    "name": "lean coils.lean: the_coil_on_four_five_has_2_expressions — (([1, 8].map (fun d => m9 (4 * d))).all (fun x => [4, 5].contains x) && [4, 5].all (fun x => ([1, 8].map (fun d => m9 (4 * d))).contains x) && ([1, 8].map (fun d => m9 (4 * d))).eraseDups.length == 2) && (([1, 8].map (fun d => m9 (5 * d))).… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "f20d5f4a-3588-846b-a3dc-f51c208b4043"
+  },
+  {
+    "key": "lean_coils_the_coil_on_four_has_2_expressions",
+    "name": "lean coils.lean: the_coil_on_four_has_2_expressions — (([5].map (fun d => m9 (9 - d))).all (fun x => [4].contains x) && [4].all (fun x => ([5].map (fun d => m9 (9 - d))).contains x) && ([5].map (fun d => m9 (9 - d))).eraseDups.length == 1) && (([5].map (fun d => m9 (8 * d))).all (fun x => [4].… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b9ada670-9a47-8511-b056-f36784605996"
+  },
+  {
+    "key": "lean_coils_the_coil_on_zero_two_three_five_six_eight_has_2_expressions",
+    "name": "lean coils.lean: the_coil_on_zero_two_three_five_six_eight_has_2_expressions — (([1, 2, 4, 5, 7, 8].map (fun d => m9 (10 - d))).all (fun x => [0, 2, 3, 5, 6, 8].contains x) && [0, 2, 3, 5, 6, 8].all (fun x => ([1, 2, 4, 5, 7, 8].map (fun d => m9 (10 - d))).contains x) && ([1, 2, 4, 5, 7, 8].map (fun d => m9 (10 - d)))… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5b9106ef-b181-86ad-957b-ee8c0d634860"
+  },
+  {
+    "key": "lean_coils_the_coil_on_seven_has_2_expressions",
+    "name": "lean coils.lean: the_coil_on_seven_has_2_expressions — (([5].map (fun d => m9 (d * d))).all (fun x => [7].contains x) && [7].all (fun x => ([5].map (fun d => m9 (d * d))).contains x) && ([5].map (fun d => m9 (d * d))).eraseDups.length == 1) && (([5].map (fun d => m9 (5 * d))).all (fun x => [7].… — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "ca84c8b3-9e96-8945-90a3-3e712d39a94d"
   }
 ]
