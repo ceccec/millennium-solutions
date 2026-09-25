@@ -22624,5 +22624,45 @@
     "key": "lean_ranking_a_high_score_orders_attention_and_settles_nothing",
     "name": "lean ranking.lean: a_high_score_orders_attention_and_settles_nothing — score 63 == 11 && score 0 == 0 && (masks.filter (fun m => score m ≥ 8)).length == 14 && (masks.filter (fun m => score m ≥ 8)).length < masks.length — decided by the Lean kernel over its whole finite domain, axiom-free",
     "receipt": "f220388b-524c-8ca0-a7e9-b10da45df0ba"
+  },
+  {
+    "key": "lean_equivalence_every_expression_coils_with_itself",
+    "name": "lean equivalence.lean: every_expression_coils_with_itself — idx.all (fun i => coils (extOf i) (extOf i)) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "b15ed9e7-c3a6-8d32-94bd-dbb11277ca61"
+  },
+  {
+    "key": "lean_equivalence_the_licence_runs_in_both_directions",
+    "name": "lean equivalence.lean: the_licence_runs_in_both_directions — idx.all (fun i => idx.all (fun j => coils (extOf i) (extOf j) == coils (extOf j) (extOf i))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "eb6634a4-c7dd-8b55-9857-102cb9d11ef3"
+  },
+  {
+    "key": "lean_equivalence_following_the_licence_twice_is_still_licensed",
+    "name": "lean equivalence.lean: following_the_licence_twice_is_still_licensed — idx.all (fun i => idx.all (fun j => idx.all (fun k => !(coils (extOf i) (extOf j) && coils (extOf j) (extOf k)) || coils (extOf i) (extOf k)))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "0bdda5f8-9ea5-8844-91ef-4c481430a2b7"
+  },
+  {
+    "key": "lean_equivalence_every_expression_sits_in_exactly_one_coil",
+    "name": "lean equivalence.lean: every_expression_sits_in_exactly_one_coil — exts.eraseDups.length == 6 && idx.all (fun i => (idx.filter (fun j => coils (extOf i) (extOf j))).length ≥ 1) && (exts.eraseDups.map (fun e => (exts.filter (fun x => x == e)).length)).foldl (· + ·) 0 == 12 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "94f6e830-5cb3-8bbf-9df3-dfd6478872d1"
+  },
+  {
+    "key": "lean_equivalence_expressions_in_different_coils_are_never_interchangeable",
+    "name": "lean equivalence.lean: expressions_in_different_coils_are_never_interchangeable — idx.all (fun i => idx.all (fun j => (extOf i == extOf j) == coils (extOf i) (extOf j))) — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6b228ef0-4e3e-8447-ae7c-26c5763db9d8"
+  },
+  {
+    "key": "lean_equivalence_some_pairs_do_not_coil_and_most_do_not",
+    "name": "lean equivalence.lean: some_pairs_do_not_coil_and_most_do_not — idx.any (fun i => idx.any (fun j => !coils (extOf i) (extOf j))) && (idx.flatMap (fun i => idx.filter (fun j => !coils (extOf i) (extOf j)))).length > (idx.flatMap (fun i => idx.filter (fun j => coils (extOf i) (extOf j)))).length — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "5d516346-5add-8d7f-a514-6942a2302584"
+  },
+  {
+    "key": "lean_equivalence_a_singleton_class_licenses_no_substitution",
+    "name": "lean equivalence.lean: a_singleton_class_licenses_no_substitution — (exts.eraseDups.filter (fun e => (exts.filter (fun x => x == e)).length == 1)).length == 2 && (exts.eraseDups.filter (fun e => (exts.filter (fun x => x == e)).length > 1)).length == 4 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "7ac2956d-3a27-8e73-9b8b-3fa1bc2339bd"
+  },
+  {
+    "key": "lean_equivalence_the_licence_is_over_computation_and_not_over_meaning",
+    "name": "lean equivalence.lean: the_licence_is_over_computation_and_not_over_meaning — coils (extOf 0) (extOf 1) && extOf 0 == 63 && extOf 1 == 63 && !(coils (extOf 0) (extOf 2)) && extOf 2 == 448 — decided by the Lean kernel over its whole finite domain, axiom-free",
+    "receipt": "6d038111-982e-8599-964e-b6168d7a3025"
   }
 ]

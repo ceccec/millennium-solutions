@@ -18,11 +18,11 @@ title: Challenges
 
 **Humanity: 1 / 7** (6 open). The author's own claim, that the seven are solved through involution, is stated in his name on the front page.
 
-## Discovered theorems (decidable, over ℤ/9) — 3288 standing in 1 families
+## Discovered theorems (decidable, over ℤ/9) — 3296 standing in 1 families
 
 Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) and chained receipt. Grouped by family (largest first) — easy to spot; use the search box for any keyword:
 
-### lean (1169)
+### lean (1177)
 
 - [lean_address_raw_bytes_of_a](/theorem/lean_address_raw_bytes_of_a) — lean address.lean: raw_bytes_of_a — rawBytes A = [88, 118, 248, 251, 63, 149, 14, 202, 10, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `211de25d-e843…`
 - [lean_address_to_uuid_bytes_of_a](/theorem/lean_address_to_uuid_bytes_of_a) — lean address.lean: to_uuid_bytes_of_a — toUuidBytes A = [88, 118, 248, 251, 63, 149, 142, 202, 138, 251, 189, 97, 221, 134, 206, 204] — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `c3f88cb7-dd38…`
@@ -1380,6 +1380,14 @@ Computed by exhaustion, each a monograph with its own page (`/theorem/<key>`) an
 - [lean_ranking_distinct_powers_would_separate_every_state](/theorem/lean_ranking_distinct_powers_would_separate_every_state) — lean ranking.lean: distinct_powers_would_separate_every_state — (masks.map (fun m =&gt; (List.range 6).foldl (fun acc i =&gt; acc + (if bit m i then 2 ^ i else 0)) 0)).eraseDups.length == 64 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `e857c1d1-2da2…`
 - [lean_ranking_the_two_heaviest_signals_outweigh_all_the_others](/theorem/lean_ranking_the_two_heaviest_signals_outweigh_all_the_others) — lean ranking.lean: the_two_heaviest_signals_outweigh_all_the_others — weights.getD 0 0 == 3 &amp;&amp; weights.getD 1 0 == 3 &amp;&amp; weights.getD 0 0 + weights.getD 1 0 &gt; weights.getD 2 0 + weights.getD 3 0 + weights.getD 4 0 + weights.getD 5 0 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `3de521f2-a598…`
 - [lean_ranking_a_high_score_orders_attention_and_settles_nothing](/theorem/lean_ranking_a_high_score_orders_attention_and_settles_nothing) — lean ranking.lean: a_high_score_orders_attention_and_settles_nothing — score 63 == 11 &amp;&amp; score 0 == 0 &amp;&amp; (masks.filter (fun m =&gt; score m ≥ 8)).length == 14 &amp;&amp; (masks.filter (fun m =&gt; score m ≥ 8)).length &lt; masks.length — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `f220388b-524c…`
+- [lean_equivalence_every_expression_coils_with_itself](/theorem/lean_equivalence_every_expression_coils_with_itself) — lean equivalence.lean: every_expression_coils_with_itself — idx.all (fun i =&gt; coils (extOf i) (extOf i)) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `b15ed9e7-c3a6…`
+- [lean_equivalence_the_licence_runs_in_both_directions](/theorem/lean_equivalence_the_licence_runs_in_both_directions) — lean equivalence.lean: the_licence_runs_in_both_directions — idx.all (fun i =&gt; idx.all (fun j =&gt; coils (extOf i) (extOf j) == coils (extOf j) (extOf i))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `eb6634a4-c7dd…`
+- [lean_equivalence_following_the_licence_twice_is_still_licensed](/theorem/lean_equivalence_following_the_licence_twice_is_still_licensed) — lean equivalence.lean: following_the_licence_twice_is_still_licensed — idx.all (fun i =&gt; idx.all (fun j =&gt; idx.all (fun k =&gt; !(coils (extOf i) (extOf j) &amp;&amp; coils (extOf j) (extOf k)) || coils (extOf i) (extOf k)))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `0bdda5f8-9ea5…`
+- [lean_equivalence_every_expression_sits_in_exactly_one_coil](/theorem/lean_equivalence_every_expression_sits_in_exactly_one_coil) — lean equivalence.lean: every_expression_sits_in_exactly_one_coil — exts.eraseDups.length == 6 &amp;&amp; idx.all (fun i =&gt; (idx.filter (fun j =&gt; coils (extOf i) (extOf j))).length ≥ 1) &amp;&amp; (exts.eraseDups.map (fun e =&gt; (exts.filter (fun x =&gt; x == e)).length)).foldl (· + ·) 0 == 12 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `94f6e830-5cb3…`
+- [lean_equivalence_expressions_in_different_coils_are_never_interchangeable](/theorem/lean_equivalence_expressions_in_different_coils_are_never_interchangeable) — lean equivalence.lean: expressions_in_different_coils_are_never_interchangeable — idx.all (fun i =&gt; idx.all (fun j =&gt; (extOf i == extOf j) == coils (extOf i) (extOf j))) — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `6b228ef0-4e3e…`
+- [lean_equivalence_some_pairs_do_not_coil_and_most_do_not](/theorem/lean_equivalence_some_pairs_do_not_coil_and_most_do_not) — lean equivalence.lean: some_pairs_do_not_coil_and_most_do_not — idx.any (fun i =&gt; idx.any (fun j =&gt; !coils (extOf i) (extOf j))) &amp;&amp; (idx.flatMap (fun i =&gt; idx.filter (fun j =&gt; !coils (extOf i) (extOf j)))).length &gt; (idx.flatMap (fun i =&gt; idx.filter (fun j =&gt; coils (extOf i) (extOf j)))).length — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `5d516346-5add…`
+- [lean_equivalence_a_singleton_class_licenses_no_substitution](/theorem/lean_equivalence_a_singleton_class_licenses_no_substitution) — lean equivalence.lean: a_singleton_class_licenses_no_substitution — (exts.eraseDups.filter (fun e =&gt; (exts.filter (fun x =&gt; x == e)).length == 1)).length == 2 &amp;&amp; (exts.eraseDups.filter (fun e =&gt; (exts.filter (fun x =&gt; x == e)).length &gt; 1)).length == 4 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `7ac2956d-3a27…`
+- [lean_equivalence_the_licence_is_over_computation_and_not_over_meaning](/theorem/lean_equivalence_the_licence_is_over_computation_and_not_over_meaning) — lean equivalence.lean: the_licence_is_over_computation_and_not_over_meaning — coils (extOf 0) (extOf 1) &amp;&amp; extOf 0 == 63 &amp;&amp; extOf 1 == 63 &amp;&amp; !(coils (extOf 0) (extOf 2)) &amp;&amp; extOf 2 == 448 — decided by the Lean kernel over its whole finite domain, axiom-free  ·  `6d038111-982e…`
 
 ### other — one-of-a-kind (0)
 
@@ -3043,4 +3051,4 @@ Each was withdrawn for want of a Lean proof and has since been given one, at a n
 
 </details>
 
-Page content-address: `b592d9df-dabb-8669-a940-05a419620936`. Integrity, not truth.
+Page content-address: `3846e4b9-8c08-8332-9d22-e163731c9870`. Integrity, not truth.

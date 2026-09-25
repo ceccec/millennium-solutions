@@ -62,8 +62,8 @@ TypeScript modules recompute every result; Lean~4 theorems (\texttt{decide},
 Every statement below is a declaration the Lean~4 kernel accepts, sorry-free; the exhaustions are axiom-free and the
 proofs carry only the standard axioms \texttt{propext} and \texttt{Quot.sound}, and the
 \LaTeX{} is generated from the Lean source and checked to read back symbol for symbol against it
-(\texttt{npm run latex-gate}). There are 1,184 of them across 60 files and
-7 wings; 982 close by exhaustion over a stated finite domain, 187 are proved
+(\texttt{npm run latex-gate}). There are 1,192 of them across 61 files and
+7 wings; 990 close by exhaustion over a stated finite domain, 187 are proved
 for every value, and the remaining 15 close by \texttt{rfl} and are counted separately, never as theorems.
 
 \subsection{the address}
@@ -2731,6 +2731,48 @@ for every value, and the remaining 15 close by \texttt{rfl} and are counted sepa
 \end{theorem}
 \noindent\emph{Proof.} \texttt{by
   intro} --- by evaluation; no domain is walked. \hfill$\square$
+
+\paragraph{\texttt{equivalence.lean}}
+
+\begin{theorem}[\texttt{every\_expression\_coils\_with\_itself}]
+\[ \forall i \in \mathrm{idx},\; \mathrm{coils}\mathopen{}\left(\mathrm{extOf}\mathopen{}\left(i\right),\,\mathrm{extOf}\mathopen{}\left(i\right)\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_licence\_runs\_in\_both\_directions}]
+\[ \forall i \in \mathrm{idx},\; \forall j \in \mathrm{idx},\; \mathrm{coils}\mathopen{}\left(\mathrm{extOf}\mathopen{}\left(i\right),\,\mathrm{extOf}\mathopen{}\left(j\right)\right) = \mathrm{coils}\mathopen{}\left(\mathrm{extOf}\mathopen{}\left(j\right),\,\mathrm{extOf}\mathopen{}\left(i\right)\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{following\_the\_licence\_twice\_is\_still\_licensed}]
+\[ \forall i \in \mathrm{idx},\; \forall j \in \mathrm{idx},\; \forall k \in \mathrm{idx},\; \lnot \mathrm{coils}\mathopen{}\left(\mathrm{extOf}\mathopen{}\left(i\right),\,\mathrm{extOf}\mathopen{}\left(j\right)\right) \land \mathrm{coils}\mathopen{}\left(\mathrm{extOf}\mathopen{}\left(j\right),\,\mathrm{extOf}\mathopen{}\left(k\right)\right) \lor \mathrm{coils}\mathopen{}\left(\mathrm{extOf}\mathopen{}\left(i\right),\,\mathrm{extOf}\mathopen{}\left(k\right)\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{every\_expression\_sits\_in\_exactly\_one\_coil}]
+\[ \left|\operatorname{dedup}\left(\mathrm{exts}\right)\right| = 6 \land \forall i \in \mathrm{idx},\; \left|\{\, j \in \mathrm{idx} \mid \mathrm{coils}\mathopen{}\left(\mathrm{extOf}\mathopen{}\left(i\right),\,\mathrm{extOf}\mathopen{}\left(j\right)\right) \,\}\right| \ge 1 \land \sum \{\, \left|\{\, x \in \mathrm{exts} \mid x = e \,\}\right| \mid e \in \operatorname{dedup}\left(\mathrm{exts}\right) \,\} = 12 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{expressions\_in\_different\_coils\_are\_never\_interchangeable}]
+\[ \forall i \in \mathrm{idx},\; \forall j \in \mathrm{idx},\; \mathrm{extOf}\mathopen{}\left(i\right) = \mathrm{extOf}\mathopen{}\left(j\right) = \mathrm{coils}\mathopen{}\left(\mathrm{extOf}\mathopen{}\left(i\right),\,\mathrm{extOf}\mathopen{}\left(j\right)\right) \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{some\_pairs\_do\_not\_coil\_and\_most\_do\_not}]
+\[ \exists i \in \mathrm{idx} : \exists j \in \mathrm{idx} : \lnot \mathrm{coils}\mathopen{}\left(\mathrm{extOf}\mathopen{}\left(i\right),\,\mathrm{extOf}\mathopen{}\left(j\right)\right) \land \left|\bigcup_{i \in \mathrm{idx}} \{\, j \in \mathrm{idx} \mid \lnot \mathrm{coils}\mathopen{}\left(\mathrm{extOf}\mathopen{}\left(i\right),\,\mathrm{extOf}\mathopen{}\left(j\right)\right) \,\}\right| > \left|\bigcup_{i \in \mathrm{idx}} \{\, j \in \mathrm{idx} \mid \mathrm{coils}\mathopen{}\left(\mathrm{extOf}\mathopen{}\left(i\right),\,\mathrm{extOf}\mathopen{}\left(j\right)\right) \,\}\right| \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{a\_singleton\_class\_licenses\_no\_substitution}]
+\[ \left|\{\, e \in \operatorname{dedup}\left(\mathrm{exts}\right) \mid \left|\{\, x \in \mathrm{exts} \mid x = e \,\}\right| = 1 \,\}\right| = 2 \land \left|\{\, e \in \operatorname{dedup}\left(\mathrm{exts}\right) \mid \left|\{\, x \in \mathrm{exts} \mid x = e \,\}\right| > 1 \,\}\right| = 4 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
+
+\begin{theorem}[\texttt{the\_licence\_is\_over\_computation\_and\_not\_over\_meaning}]
+\[ \mathrm{coils}\mathopen{}\left(\mathrm{extOf}\mathopen{}\left(0\right),\,\mathrm{extOf}\mathopen{}\left(1\right)\right) \land \mathrm{extOf}\mathopen{}\left(0\right) = 63 \land \mathrm{extOf}\mathopen{}\left(1\right) = 63 \land \lnot \mathrm{coils}\mathopen{}\left(\mathrm{extOf}\mathopen{}\left(0\right),\,\mathrm{extOf}\mathopen{}\left(2\right)\right) \land \mathrm{extOf}\mathopen{}\left(2\right) = 448 \]
+\end{theorem}
+\noindent\emph{Proof.} \texttt{by decide} --- by evaluation; no domain is walked. \hfill$\square$
 
 \paragraph{\texttt{families.lean}}
 

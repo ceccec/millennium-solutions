@@ -5727,6 +5727,192 @@
   "candidates": [],
   "verdict": "NONE_FOUND_PARTIAL"
  },
+ "lean_digits_eight_times_eight_is_the_pair_six_four_read_both_ways": {
+  "key": "lean_digits_eight_times_eight_is_the_pair_six_four_read_both_ways",
+  "file": "digits.lean",
+  "name": "eight_times_eight_is_the_pair_six_four_read_both_ways",
+  "statementHash": "9cb94671f7798189",
+  "searched": "2026-09-25T14:45:36.645Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "nines tens complement basis times",
+   "openalex": "nines tens complement basis times",
+   "crossref": "nines tens complement basis times",
+   "arxiv": "nines AND tens AND complement AND basis AND times"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_digits_every_pair_written_as_two_digits_is_one_mod_nine": {
+  "key": "lean_digits_every_pair_written_as_two_digits_is_one_mod_nine",
+  "file": "digits.lean",
+  "name": "every_pair_written_as_two_digits_is_one_mod_nine",
+  "statementHash": "df8ecb5fbdb12453",
+  "searched": "2026-09-25T14:45:47.050Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "nines tens complement basis written digits",
+   "openalex": "nines tens complement basis written digits",
+   "crossref": "nines tens complement basis written digits",
+   "arxiv": "nines AND tens AND complement AND basis AND written"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_digits_exactly_one_two_digit_number_reflects_past_its_width_and_it_is_ten": {
+  "key": "lean_digits_exactly_one_two_digit_number_reflects_past_its_width_and_it_is_ten",
+  "file": "digits.lean",
+  "name": "exactly_one_two_digit_number_reflects_past_its_width_and_it_is_ten",
+  "statementHash": "f39a0c127b80af4d",
+  "searched": "2026-09-25T14:46:08.705Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "nines tens complement basis digit reflects width",
+   "openalex": "nines tens complement basis digit reflects width",
+   "crossref": "nines tens complement basis digit reflects width",
+   "arxiv": "nines AND tens AND complement AND basis AND digit"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_digits_reflecting_both_digits_twice_returns_the_number": {
+  "key": "lean_digits_reflecting_both_digits_twice_returns_the_number",
+  "file": "digits.lean",
+  "name": "reflecting_both_digits_twice_returns_the_number",
+  "statementHash": "a306ac9694a2bbc7",
+  "searched": "2026-09-25T14:45:57.572Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "nines tens complement basis reflecting digits twice",
+   "openalex": "nines tens complement basis reflecting digits twice",
+   "crossref": "nines tens complement basis reflecting digits twice",
+   "arxiv": "nines AND tens AND complement AND basis AND reflecting"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_digits_the_constants_are_ten_times_the_repunits": {
+  "key": "lean_digits_the_constants_are_ten_times_the_repunits",
+  "file": "digits.lean",
+  "name": "the_constants_are_ten_times_the_repunits",
+  "statementHash": "40e523f3be654c91",
+  "searched": "2026-09-25T14:46:29.781Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "nines tens complement basis constants times repunits",
+   "openalex": "nines tens complement basis constants times repunits",
+   "crossref": "nines tens complement basis constants times repunits",
+   "arxiv": "nines AND tens AND complement AND basis AND constants"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_digits_the_nines_complement_gives_no_such_constant": {
+  "key": "lean_digits_the_nines_complement_gives_no_such_constant",
+  "file": "digits.lean",
+  "name": "the_nines_complement_gives_no_such_constant",
+  "statementHash": "97b2cbb854cac6a5",
+  "searched": "2026-09-25T14:46:18.929Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "nines tens complement basis gives constant",
+   "openalex": "nines tens complement basis gives constant",
+   "crossref": "nines tens complement basis gives constant",
+   "arxiv": "nines AND tens AND complement AND basis AND gives"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
  "lean_digits_the_reflected_sum_is_ten_one_hundred_ten_and_one_thousand_one_hundred_ten": {
   "key": "lean_digits_the_reflected_sum_is_ten_one_hundred_ten_and_one_thousand_one_hundred_ten",
   "file": "digits.lean",
@@ -5749,6 +5935,484 @@
    "openalex": "nines tens complement basis reflected hundred thousand",
    "crossref": "nines tens complement basis reflected hundred thousand",
    "arxiv": "nines AND tens AND complement AND basis AND reflected"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_dimensions_a_looser_condition_returns_many": {
+  "key": "lean_dimensions_a_looser_condition_returns_many",
+  "file": "dimensions.lean",
+  "name": "a_looser_condition_returns_many",
+  "statementHash": "5ff910a7d505d4c8",
+  "searched": "2026-09-25T14:47:32.841Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "dimensional analysis buckingham method looser condition returns",
+   "openalex": "dimensional analysis buckingham method looser condition returns",
+   "crossref": "dimensional analysis buckingham method looser condition returns",
+   "arxiv": "dimensional AND analysis AND buckingham AND method AND looser"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_dimensions_each_triple_produces_the_dimension_it_claims": {
+  "key": "lean_dimensions_each_triple_produces_the_dimension_it_claims",
+  "file": "dimensions.lean",
+  "name": "each_triple_produces_the_dimension_it_claims",
+  "statementHash": "a5760062d24e3366",
+  "searched": "2026-09-25T14:47:12.031Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "dimensional analysis buckingham method triple produces dimension",
+   "openalex": "dimensional analysis buckingham method triple produces dimension",
+   "crossref": "dimensional analysis buckingham method triple produces dimension",
+   "arxiv": "dimensional AND analysis AND buckingham AND method AND triple"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_dimensions_some_targets_have_no_solution_at_all": {
+  "key": "lean_dimensions_some_targets_have_no_solution_at_all",
+  "file": "dimensions.lean",
+  "name": "some_targets_have_no_solution_at_all",
+  "statementHash": "5b604d063ea5fbbd",
+  "searched": "2026-09-25T14:47:22.579Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "dimensional analysis buckingham method targets solution",
+   "openalex": "dimensional analysis buckingham method targets solution",
+   "crossref": "dimensional analysis buckingham method targets solution",
+   "arxiv": "dimensional AND analysis AND buckingham AND method AND targets"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_dimensions_the_coefficient_is_undetermined_and_the_exponents_are_not": {
+  "key": "lean_dimensions_the_coefficient_is_undetermined_and_the_exponents_are_not",
+  "file": "dimensions.lean",
+  "name": "the_coefficient_is_undetermined_and_the_exponents_are_not",
+  "statementHash": "5781d49663410245",
+  "searched": "2026-09-25T14:47:53.710Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "dimensional analysis buckingham method coefficient undetermined exponents",
+   "openalex": "dimensional analysis buckingham method coefficient undetermined exponents",
+   "crossref": "dimensional analysis buckingham method coefficient undetermined exponents",
+   "arxiv": "dimensional AND analysis AND buckingham AND method AND coefficient"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "Dimensionally Consistent Learning with Buckingham Pi",
+    "year": "2022",
+    "url": "http://arxiv.org/abs/2202.04643v1",
+    "relevance": 0.7142857142857143,
+    "text": "Dimensionally Consistent Learning with Buckingham Pi In the absence of governing equations, dimensional analysis is a robust technique for extracting insights and finding symmetries in physical systems. Given measurement variables and parameters, the Buckingham Pi theorem provides a procedure for fi"
+   },
+   {
+    "source": "arxiv",
+    "title": "The Algebra of Units: From Buckingham's Pi-grec Theorem to Latent-Variable Learning",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2606.16737v1",
+    "relevance": 0.8571428571428571,
+    "text": "The Algebra of Units: From Buckingham's Pi-grec Theorem to Latent-Variable Learning Engineers often measure many quantities-speed, pressure, temperature, length-expressed in different physical units. The Buckingham Pi-grec theorem states that these variables can always be combined into a smaller set"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_dimensions_the_length_exponents_are_unique": {
+  "key": "lean_dimensions_the_length_exponents_are_unique",
+  "file": "dimensions.lean",
+  "name": "the_length_exponents_are_unique",
+  "statementHash": "625a4272288d9a33",
+  "searched": "2026-09-25T14:46:40.683Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "dimensional analysis buckingham method length exponents unique",
+   "openalex": "dimensional analysis buckingham method length exponents unique",
+   "crossref": "dimensional analysis buckingham method length exponents unique",
+   "arxiv": "dimensional AND analysis AND buckingham AND method AND length"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "The Algebra of Units: From Buckingham's Pi-grec Theorem to Latent-Variable Learning",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2606.16737v1",
+    "relevance": 0.8571428571428571,
+    "text": "The Algebra of Units: From Buckingham's Pi-grec Theorem to Latent-Variable Learning Engineers often measure many quantities-speed, pressure, temperature, length-expressed in different physical units. The Buckingham Pi-grec theorem states that these variables can always be combined into a smaller set"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_dimensions_the_mass_exponents_are_unique": {
+  "key": "lean_dimensions_the_mass_exponents_are_unique",
+  "file": "dimensions.lean",
+  "name": "the_mass_exponents_are_unique",
+  "statementHash": "8cf12401b56ea84f",
+  "searched": "2026-09-25T14:47:01.791Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "dimensional analysis buckingham method exponents unique",
+   "openalex": "dimensional analysis buckingham method exponents unique",
+   "crossref": "dimensional analysis buckingham method exponents unique",
+   "arxiv": "dimensional AND analysis AND buckingham AND method AND exponents"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "The Algebra of Units: From Buckingham's Pi-grec Theorem to Latent-Variable Learning",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2606.16737v1",
+    "relevance": 0.8333333333333334,
+    "text": "The Algebra of Units: From Buckingham's Pi-grec Theorem to Latent-Variable Learning Engineers often measure many quantities-speed, pressure, temperature, length-expressed in different physical units. The Buckingham Pi-grec theorem states that these variables can always be combined into a smaller set"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_dimensions_the_three_constants_are_dimensionally_independent": {
+  "key": "lean_dimensions_the_three_constants_are_dimensionally_independent",
+  "file": "dimensions.lean",
+  "name": "the_three_constants_are_dimensionally_independent",
+  "statementHash": "9326e33d9e40a5fc",
+  "searched": "2026-09-25T14:47:43.545Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "dimensional analysis buckingham method constants dimensionally independent",
+   "openalex": "dimensional analysis buckingham method constants dimensionally independent",
+   "crossref": "dimensional analysis buckingham method constants dimensionally independent",
+   "arxiv": "dimensional AND analysis AND buckingham AND method AND constants"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_dimensions_the_time_exponents_are_unique": {
+  "key": "lean_dimensions_the_time_exponents_are_unique",
+  "file": "dimensions.lean",
+  "name": "the_time_exponents_are_unique",
+  "statementHash": "a4ae9240c12d7e2d",
+  "searched": "2026-09-25T14:46:50.896Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "dimensional analysis buckingham method exponents unique",
+   "openalex": "dimensional analysis buckingham method exponents unique",
+   "crossref": "dimensional analysis buckingham method exponents unique",
+   "arxiv": "dimensional AND analysis AND buckingham AND method AND exponents"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [
+   {
+    "source": "arxiv",
+    "title": "The Algebra of Units: From Buckingham's Pi-grec Theorem to Latent-Variable Learning",
+    "year": "2026",
+    "url": "http://arxiv.org/abs/2606.16737v1",
+    "relevance": 0.8333333333333334,
+    "text": "The Algebra of Units: From Buckingham's Pi-grec Theorem to Latent-Variable Learning Engineers often measure many quantities-speed, pressure, temperature, length-expressed in different physical units. The Buckingham Pi-grec theorem states that these variables can always be combined into a smaller set"
+   }
+  ],
+  "verdict": "CANDIDATES"
+ },
+ "lean_discount_a_figure_above_its_floor_is_worth_something": {
+  "key": "lean_discount_a_figure_above_its_floor_is_worth_something",
+  "file": "discount.lean",
+  "name": "a_figure_above_its_floor_is_worth_something",
+  "statementHash": "9338e3a73974a538",
+  "searched": "2026-09-25T14:48:25.521Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "positive rate classifier correction figure above floor",
+   "openalex": "positive rate classifier correction figure above floor",
+   "crossref": "positive rate classifier correction figure above floor",
+   "arxiv": "positive AND rate AND classifier AND correction AND figure"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_discount_a_figure_at_or_below_its_floor_is_worth_nothing": {
+  "key": "lean_discount_a_figure_at_or_below_its_floor_is_worth_nothing",
+  "file": "discount.lean",
+  "name": "a_figure_at_or_below_its_floor_is_worth_nothing",
+  "statementHash": "60087483870c1eb3",
+  "searched": "2026-09-25T14:48:15.203Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "positive rate classifier correction figure below floor",
+   "openalex": "positive rate classifier correction figure below floor",
+   "crossref": "positive rate classifier correction figure below floor",
+   "arxiv": "positive AND rate AND classifier AND correction AND figure"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_discount_the_discount_is_exactly_the_excess_over_the_control": {
+  "key": "lean_discount_the_discount_is_exactly_the_excess_over_the_control",
+  "file": "discount.lean",
+  "name": "the_discount_is_exactly_the_excess_over_the_control",
+  "statementHash": "f5b9211ec26085ef",
+  "searched": "2026-09-25T14:48:37.880Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "positive rate classifier correction discount excess control",
+   "openalex": "positive rate classifier correction discount excess control",
+   "crossref": "positive rate classifier correction discount excess control",
+   "arxiv": "positive AND rate AND classifier AND correction AND discount"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_discount_the_discount_never_raises_the_figure": {
+  "key": "lean_discount_the_discount_never_raises_the_figure",
+  "file": "discount.lean",
+  "name": "the_discount_never_raises_the_figure",
+  "statementHash": "8df7c89ef88c4ba7",
+  "searched": "2026-09-25T14:48:04.815Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "positive rate classifier correction discount never raises",
+   "openalex": "positive rate classifier correction discount never raises",
+   "crossref": "positive rate classifier correction discount never raises",
+   "arxiv": "positive AND rate AND classifier AND correction AND discount"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_discount_the_matcher_is_blind_below_its_floor_and_not_above": {
+  "key": "lean_discount_the_matcher_is_blind_below_its_floor_and_not_above",
+  "file": "discount.lean",
+  "name": "the_matcher_is_blind_below_its_floor_and_not_above",
+  "statementHash": "11dc368d7d891fec",
+  "searched": "2026-09-25T14:48:48.080Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "positive rate classifier correction matcher blind below",
+   "openalex": "positive rate classifier correction matcher blind below",
+   "crossref": "positive rate classifier correction matcher blind below",
+   "arxiv": "positive AND rate AND classifier AND correction AND matcher"
+  },
+  "notMeasured": [
+   "openalex: refusing this run (three refusals in a row) — retried next run"
+  ],
+  "oeis": [],
+  "catalogued": false,
+  "candidates": [],
+  "verdict": "NONE_FOUND_PARTIAL"
+ },
+ "lean_discount_the_measured_ring_clears_its_floor_by_eleven": {
+  "key": "lean_discount_the_measured_ring_clears_its_floor_by_eleven",
+  "file": "discount.lean",
+  "name": "the_measured_ring_clears_its_floor_by_eleven",
+  "statementHash": "d5463feaa6bb49a1",
+  "searched": "2026-09-25T14:48:58.173Z",
+  "limits": {
+   "relevanceFloor": 0.6,
+   "perSource": 5,
+   "sources": [
+    "zbmath",
+    "openalex",
+    "crossref",
+    "arxiv",
+    "oeis"
+   ]
+  },
+  "queries": {
+   "zbmath": "positive rate classifier correction measured clears floor",
+   "openalex": "positive rate classifier correction measured clears floor",
+   "crossref": "positive rate classifier correction measured clears floor",
+   "arxiv": "positive AND rate AND classifier AND correction AND measured"
   },
   "notMeasured": [
    "openalex: refusing this run (three refusals in a row) — retried next run"
